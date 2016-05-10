@@ -13,29 +13,30 @@ about the basics of form creation:
 
 This article covers more advanced use cases for forms, and a basic knowledge of
 the Forms application is assumed. Here's a current list of the features you can
-use in your forms:
+use in your forms that are covered in this article:
 
-- Populate a Select or Radio field with a REST Data Provider
-- Make a field appear based on the value entered into another field
+- Populating a Select field with a REST Data Provider
+- Making a field appear based on the value entered into another field
 - Add extra pages to the form
-- Enable workflow for the form
-- Provide a default value (entered if left alone by the user) or a placeholder
-  value (not entered if left alone by user) for each field
-- Validate fields using a number of different criteria
+- Enabling workflow for the form
+- Providing a predefined value or a placeholder value
+- Validating fields using a number of different criteria
+- Configuring form permissions
+- Laying out the form
 
 Aside from those features, which enhance the building of your forms, there are
-some settings and processing features to look at:
+some settings and processing features to explore:
 
-- Store results in JSON
+<!-- - Store results in JSON -->
 - Enable CAPTCHA for a form
 - Redirect to a different URL after a successful form submission
-- Send an email notification to administrators whenever a form is submitted
+- Send an email notification whenever a form entry is submitted
 
 More features are being planned, so don't despair if you need a feature that's
 not yet present in the Forms application.
 <!--Add a list of planned features?-->
 
-## Lunar Resort Application
+## The Lunar Resort Employment Application Form
 
 At The Lunar Resort, management is VERY particular in its hiring practices. Lots
 of people think they want to work on the moon full time, but it takes a special
@@ -58,14 +59,13 @@ Liferay's Forms application supports multi-page forms. To add one, click the
 Actions (![Action](../../../images/icon-actions.png)) button at the top right hand
 corner of the form, and then click *Add New Page*.
 
-![Figure x: You can add new pages or reset the current page from the Page
-Actions menu.](../../../images/forms-page-actions.png)
+![Figure x: You can add new pages or reset the current page from the Page Actions menu.](../../../images/forms-page-actions.png)
 
 You also have the option to *Reset Page*. If you click this, the title,
 description, and any fields you added to the page will be deleted. It gives you
 a blank slate.
 
-The Lunar Resort employment form should have three pages with clear page
+The Lunar Resort employment form needs three pages with clear page
 descriptions:
 
 -  Personal Details: This page requires you to give us some pretty personal information.
@@ -75,8 +75,7 @@ descriptions:
 Once you create the form's pages, you'll see how navigating the pages is easy
 with the form page navigation wizard.
 
-![Figure x: Multi-page forms have a default *Wizard Mode* that makes navigating
-the form easy for users.](../../../images/forms-pagination-modes.png)
+![Figure x: Multi-page forms have a default *Wizard Mode* that makes navigating the form easy for users.](../../../images/forms-pagination-modes.png)
 
 Once you have the form pages created, navigate back to the first page, Personal
 Details.
@@ -122,10 +121,7 @@ user enters a number less than *30*.
 can enter an error message *You must enter your age in years, and it must be
 greater than 0*.
 
-    ![Figure x: The Age field in the employment form. It uses validation to
-ensure that a number greater than zero is entered.It has a
-placeholder value to help users understand what you are looking
-for.](../../../images/forms-employment-age.png)
+    ![Figure x: The Age field in the employment form. It uses validation to ensure that a number greater than zero is entered.](../../../images/forms-employment-age.png)
 
 +$$$
 
@@ -196,10 +192,11 @@ $$$
 
 ## Populating Select Fields with REST Data Providers
 
-The Lunar Resort application form needs no less than five select fields, all
-populated with the complete list of the countries of earth. Read the sidebar
-note below to find out why this field is needed (it's just a fictional story, so
-skip if you don't have time for some light entertainment).
+On its final page (*Extremely Personal Details*) The Lunar Resort application
+form needs five select fields, all populated with the complete list
+of the countries of earth. Read the sidebar note below to find out why this
+field is needed (it's just a fictional story, so skip if you don't have time for
+some light entertainment).
 
 +$$$
 
@@ -224,9 +221,9 @@ with all the countries of earth.
 
 $$$
 
-Unless you have an intern, you don't want to enter all the countries of earth
-into five different select fields. No, you want to populate the fields using a
-Data Provider.
+Unless you have an intern, you don't want to manually enter all the countries of
+earth into five different select fields. No, you want to populate the fields
+using a Data Provider.
 
 ### Adding and Configuring a Data Provider
 
@@ -298,19 +295,39 @@ fields that list all the countries of earth in no time.
 ### Using a Data Provider in a Select Field
 
 Back in the application form, go to the third page, Extremely Personal
-Details, and add a required Select field named *Relocation Country: First
-Choice*. For Help Text, write *If relocation becomes necessary, to which country
-on earth would you most like to go?*. Select the radio button to *Create List
-From Data Provider*, and choose *Countries List*. Click *Save*.
+Details. Add a select field.
+
+-  **Relocation Country: First Choice**: Make the select field required, and
+   enter *If relocation becomes necessary, to which country on earth would you
+most like to go?* as Help Text. Select the radio button to *Create List From
+Data Provider*, and choose *Countries List*. Click *Save*.
 
 If you're building the example application form, do the same thing four more
 times, using field labels to reflect the choice number. For example, you'd call
 the second select field *Relocation Country: Second Choice*, and so on until you
 have five of them. You can decide what help text to provide, if any.
 
-That concludes the actual development of the form. The rest of the article
-covers features of the Forms application that you'll use during or after the
-form entry is submitted.
+![Figure x: You can configure a data provider and use it to populate a select field.](../../../images/forms-data-provider-list.png)
+
+Your Data Provider is now being used to populate your select fields. However,
+this form is going to be submitted by Guest users, who don't currently have
+permission to see the list of results from the data provider.
+
+### Granting Data Provider Permissions
+
+To configure the data provider's permissions, navigate to the Forms application (*Site Administration* &rarr; *Content* &rarr;
+*Forms*). Open the Options menu (![Options](../../../images/icon-options.png))
+and select *Data Providers*. For the data provider you want to configure, click
+the Actions button (![Actions](../../../images/icon-actions.png)), then
+*Permissions*. 
+
+For the employment application form in The Lunar Resort, Guest users need the
+*View* permission, or else they won't be able to see the options provided by the
+data provider in the select fields. Once you grant the permission, click *Save*.
+
+That concludes the actual development of the form (adding pages and form
+fields). The rest of the article covers features of the Forms application that
+you'll use during or after form entry submission.
 
 <!--Picture of full form?-->
 <!-- Should these Form Settings options be covered separately? -->
@@ -329,6 +346,8 @@ Enable the *Require CAPTCHA* setting, click *Done*, save the form, and that's
 all there is to it!
 
 ![Figure x: Once you enable CAPTCHA, your form has protection against bot submissions.](../../../images/forms-captcha.png)
+
+Now, you're much more likely to receive form submissions from humans!
 
 You can move on to enabling workflow for your form.
 
@@ -375,28 +394,114 @@ any notification from the Forms application itself.
 
 You can send users to any URL you want upon form submission. You might have a
 particular *Thanks for your submission!* type page with a link to the home page,
-or you might want to direct a user somewher specific based on the form they just
+or you might want to direct a user somewhere specific based on the form they just
 submitted.
 
 Whatever your use case is, you can set up a redirect URL by opening the form's
 Form Settings section (click the *Options*
 (![Options](../../../images/icon-options.png)) button &rarr; *Settings*). In the
-*Redirect URL* just type the URL, and that's it.
+*Redirect URL* just type the URL. That's it.
+
+So, your form is all set up ready to be filled out by users. However, you
+haven't configured the permissions yet, so the only user with permission to add
+records is you, the owner! There's a good chance you'll want to customize the
+form's permissions.
+
+## Configuring Form Permissions
+<!-- Is this better in the basic forms article? -->
+
+By default, you can grant the following permissions for a form:
+
+-  Delete: Permission to delete the form.
+-  Permissions: This gives any role with the permission the ability to configure
+   the form's permissions.
+-  Add Record: Permission to submit form entries.
+-  Update: Permission to update form entries.
+-  View: All the other permissions you can configure for the form depend on this
+   one. Think about it: if you can't see the form, how can you add a record?
+
+![Figure x: You can configure the permissions for a form.](../../../images/forms-form-permissions.png)
+
+If you want to allow unauthenticated visitors to your site to view and fill out
+forms, give the *Guest* role the *View* and *Add Record* permissions.
+
+Navigate to the Forms application (*Site Administration* &rarr; *Content* &rarr;
+*Forms*). Click the application employment form's  *Actions* button
+(![Actions](../../../images/icon-actions.png)), and select *Permissions*.
+Give the Guest role the View and Add permissions, then click *Save*.
+
++$$$
+
+**Note:** By default, all users inherit the Guest role's permissions. The Guest
+role represents unauthenticated visitors of your site, and it makes sense that
+if you want to allow Guest users to submit forms, you're fine with your site
+members and portal users submitting forms, as well. If you want to disable the
+automatic inheritance of the Guest role permissions, there's a
+[property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Permissions) you can set in your `portal-ext.properties` file:
+
+    permissions.check.guest.enabled=false
+
+$$$
+
+## Form Layouts
+
+Sometimes, it doesn't make sense to have a single column, vertically oriented
+form, which is what you get by default, if you just keep clicking the large *Add
+Field* button on the form.
+
+Instead, you might use more than one column in your form.
+
+![Figure x: An example of a multiple column form layout.](../../../images/forms-layout-multicolumn.png)
+
+As you can see, the multi-column approach saves a lot of space in the pictured
+form. You can also use a mixed approach, with each row broken into a different
+number of columns.
+
+![Figure x: There are many ways to lay out your Liferay forms.](../../../images/forms-layout-mixed.png)
+
+If you're going to lay out your forms, you'll be working with two entities in
+the form builder interface: Rows and Field Slots. You've already added and
+configured fields. All you're doing here is learning to resize them and move them
+around. Rows are just that, the rows of the form.
+
+If you've added a field to the form, you've also added a row. By default,
+clicking the large *Add Field* button on the form will add a field that
+occupies the entire row. 
+
+![Figure x: By default, fields in your form will occupy an entire row.](../../../images/forms-form-row.png)
+
+If you'd like, you can design your forms before you add the fields. Just start
+resizing the row using the form layout functionality (drag the chevrons to
+resize the field slots in a row). As you make a field slot smaller, the new
+space is taken up by another field slot. You'll end by having divided the row
+into two columns. Resizing again will make three columns. Once you have the row
+situated how you'd like, start adding the form fields.
 
 
+![Figure x: It's easy to resize form rows and make new form slots.](../../../images/forms-row-resizing.gif)
+<!-- Remake with better quality for publication-->
+
+You can also cut entire rows from the form and paste them elsewhere. Any fields
+you added and configured will be pasted with the field. Once you click the cut
+icon (the scissors), you'll be alerted to the available positions where you can
+paste the row and its fields.
+
+![Figure x: Cut and past an entire row, including its fields, in your form layout.](../../../images/forms-cut-row.png)
+
+Did you notice the delete icon (![Trash](../../../images/icon-trash.png))?
+Clicking it deletes the entire row, with all its fields. 
+
+Just like you can cut and paste an entire row, you can move an individual field
+to any unoccupied field slot, in any row. Just open the field's actions menu by
+clicking the Actions button (![Actions](../../../images/icon-actions.png)),
+which will appear when you hover your mouse over the field in the layout.
+
+![Figure x: Move an individual field in your form layout.](../../../images/forms-move-field.png)
+
+In addition to moving the field, you can edit the field or delete it.
 
 
-
-<!-- There's a bug that makes switching pagination modes not work. Revisit when
-it's resolved.
-Create those pages. Once you do, click the
-Actions (![Action](../../../images/icon-actions.png)) button again, and you'll
-see that there are new options:
-
--  **Add New Page:** This adds a new page, of course.
--  **Delete Current Page:** This deletes the current page.
--  **Switch Pagination Mode:** Two pagination modes are supported--
--->
-
-
-
+Now it's done. Your users, including Guest users, can submit applications to The
+Lunar Resort. The form is multi-page, full of features, and there's even some
+processing that's done on form submission. As you can see, there's a lot of flexibility built in to Liferay's Forms
+application. 
