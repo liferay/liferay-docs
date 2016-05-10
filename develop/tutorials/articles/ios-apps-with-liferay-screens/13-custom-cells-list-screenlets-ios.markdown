@@ -13,9 +13,11 @@ example, if you're using
 [Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios), 
 create a child class in your theme that extends from the 
 [`AssetListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/AssetListScreenlet/AssetListView_default.swift). 
-You should call your class `AssetListView_mytheme`. 
-In case of [WebContent List Screenlet](/develop/reference/-/knowledge_base/6-2/web-content-lists-creenlet-for-ios), you'll use [`WebContentListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/WebContent/ListScreenlet/WebContentListView_default.swift) and you'll call your call `WebContentListView_mytheme`.
-
+You should call your class `AssetListView_mytheme`. If you're using 
+[Web Content List Screenlet](/develop/reference/-/knowledge_base/6-2/web-content-lists-creenlet-for-ios), 
+subclass the 
+[`WebContentListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/WebContent/ListScreenlet/WebContentListView_default.swift), 
+and name your class `WebContentListView_mytheme`. 
 
 Then create the XIB file for your custom cell. As usual, create this file and 
 its companion class, and create as many outlets and actions as you need. If you 
@@ -49,7 +51,8 @@ your theme with Asset List Screenlet, the method could look like this:
 
 Next, you must override the `doCreateCell` method to create the cell when 
 needed, depending on the cell type. Again, this method's contents depend on your 
-use case. For example, you may want to create a different layour for "in progress" cells.
+use case. For example, you may want to create a different layout for in-progress 
+cells: 
 
     override public func doCreateCell(cellId: String) -> UITableViewCell {
         // Create a new cell when needed.
@@ -67,8 +70,12 @@ use case. For example, you may want to create a different layour for "in progres
     }
 
 To fill the cell with the row's data, override the `doFillLoadedCell` method. 
-Note that this method is not called for in-progress cells; it's only called for 
-cells with data. Here it's important to note that the source data will be stored in the `object` argument. This is a generic object, and you'll need to cast it down to the specific type of the element. In case of `WebContentListScreenlet`, this will be the type `WebContent` while in an `AssetListScreenlet` it may be either `WebContent` or `Asset`.
+Note that this method isn't called for in-progress cells; it's only called for 
+cells with data. Also note that the source data is stored in the method's 
+`object` argument. This is a generic object that you must cast to the specific 
+element type. In the case of Web Content List Screenlet, this is `WebContent`. 
+In Asset List Screenlet, it may be either `WebContent` or `Asset`. Here's an 
+example of such a method: 
 
     override public func doFillLoadedCell(row row: Int, cell: UITableViewCell, object: AnyObject) {
         // Fill the cell from the object supplied.
@@ -79,7 +86,7 @@ cells with data. Here it's important to note that the source data will be stored
         guard let cell as? MyCell else {
             return
         }
-       
+
         if let webContent = object as? WebContent {
             // treat as WebContent
             cell.outlet = webContent.property
@@ -92,7 +99,7 @@ cells with data. Here it's important to note that the source data will be stored
             cell.outlet = asset.property
             ...
         }
-        
+
         cell.accessoryType = .None
         cell.accessoryView = nil      
     }
@@ -106,7 +113,7 @@ do it, the Default theme's style is used for in-progress cells:
         guard let wipCell as? MyInProgressCell else {
             return
         }
-        
+
         wipCell.textLabel?.text = "Loading..."
         wipCell.accessoryType = .None
         let myImage = ...

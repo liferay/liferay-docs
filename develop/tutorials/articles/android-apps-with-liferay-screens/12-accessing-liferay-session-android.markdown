@@ -100,8 +100,8 @@ next section lists some additional `SessionContext` methods.
 | Method | Return Type | Explanation |
 |--------|-------------|-------------| 
 | `logout()` | `void` | Clears the stored user attributes and session. |
-| `relogin(LoginListener)` | `void` | Refreshes user data from the server. This recreates `currentUser` object if successful, or calls `logout()` on failure. When the server data is recevied, the listener method `onLoginSuccess` is called with received user's attributes. If an error occurrs, the listener method `onLoginFailure` is called. |
-| `isLoggedIn()` | `boolean` | returns `true` if there is a stored Liferay Session in `SessionContext`. |
+| `relogin(LoginListener)` | `void` | Refreshes user data from the server. This recreates the `currentUser` object if successful, or calls `logout()` on failure. When the server data is received, the listener method `onLoginSuccess` is called with received user's attributes. If an error occurs, the listener method `onLoginFailure` is called. |
+| `isLoggedIn()` | `boolean` | Returns `true` if there is a stored Liferay Session in `SessionContext`. |
 | `createBasicSession(String username, String password)` | `Session` | Creates a Liferay Session using the default server and the supplied username and password. |
 | `createSessionFromCurrentSession()` | `Session` | Creates a Liferay Session based on the stored credentials and server. |
 | `getCurrentUser()` | `User` | Returns a `User` object containing the server attributes of the logged-in user. This includes the user's email, user ID, name, and portrait ID. |
