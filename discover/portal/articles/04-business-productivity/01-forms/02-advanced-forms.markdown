@@ -477,7 +477,6 @@ space is taken up by another field slot. You'll end by having divided the row
 into two columns. Resizing again will make three columns. Once you have the row
 situated how you'd like, start adding the form fields.
 
-
 ![Figure x: It's easy to resize form rows and make new form slots.](../../../images/forms-row-resizing.gif)
 <!-- Remake with better quality for publication-->
 
