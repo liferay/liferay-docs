@@ -271,6 +271,7 @@
 				</filterreader>
 			</filterchain>
 		</copy>
+		<mkdir dir="${temp.dir}/images"/>
 		<copy todir="${temp.dir}">
 			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
 				<include name="images/**/*.png"/>
