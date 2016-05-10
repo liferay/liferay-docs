@@ -1,4 +1,4 @@
-# Migrating a 6.2 Theme to Liferay 7 
+# Migrating a 6.2 Theme to Liferay 7 [](id=migrating-a-6-2-theme-to-liferay-7)
 
 Migrating your theme from Liferay 6.2 to Liferay 7 is easier than you may think,
 thanks to the [themes generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator). 
@@ -11,7 +11,7 @@ This tutorial demonstrates how to:
 
 Go ahead and get started.
 
-## Importing Your 6.2 Theme
+## Importing Your 6.2 Theme [](id=importing-your-6-2-theme)
 
 The first thing you will need to do is import your 6.2 theme to use the new node
 theme development tools. Follow the steps below to get your theme set up:
@@ -46,7 +46,7 @@ Your theme is now set up to use the node build tools and theme gulp tasks.
 However, the theme is still configured for Liferay 6.2. To upgrade your theme to
 Liferay 7, follow the steps in the next section.
 
-## Updating Your Theme with the Gulp Upgrade Task
+## Updating Your Theme with the Gulp Upgrade Task [](id=updating-your-theme-with-the-gulp-upgrade-task)
 
 Now that your theme is set up to use the node build tools, you can use the 
 `gulp upgrade` task to start the upgrade process. Follow the steps below to
@@ -89,7 +89,7 @@ upgrade your theme:
     Once you've made any remaining changes to your theme files, you can move on 
     to the next section.
 
-## Updating Your CSS Responsiveness
+## Updating Your CSS Responsiveness [](id=updating-your-css-responsiveness)
 
 The `respond-to` media queries that were used in @product@ 6.2 have been
 replaced with the explicit media queries. Follow the step below to update your
@@ -118,13 +118,13 @@ responsiveness.
     Now that your CSS and theme templates are updated, you can move on to the 
     resources importer next.
 
-## Updating the Resources Importer
+## Updating the Resources Importer [](id=updating-the-resources-importer)
 
 The resources importer has undergone several changes that affect the
 configuration files and directory structure. Follow the steps in the sections 
 below to make the required changes.
 
-### Updating liferay-plugin-package.properties
+### Updating liferay-plugin-package.properties [](id=updating-liferay-plugin-package-properties)
 
 1.  Open the `liferay-plugin-package.properties` file and remove the 
     `required-deployment-contexts` line. 
@@ -143,7 +143,7 @@ below to make the required changes.
     With your configuration files updated, you can move onto the directory 
     structure and web content article changes next.
     
-### Updating the Web Content Articles
+### Updating the Web Content Articles [](id=updating-the-web-content-articles)
 
 In versions prior to @product@ 7, basic web content articles did not require a
 structure and template, and could be of type HTML. In @product@ 7 all articles
@@ -233,7 +233,7 @@ the `name` `content`.
 
 Your theme is ready to be deployed to @product@ 7!
 
-## Related Articles
+## Related Articles [](id=related-articles)
 
 [Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
 

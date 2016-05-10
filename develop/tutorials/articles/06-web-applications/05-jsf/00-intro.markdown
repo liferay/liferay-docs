@@ -1,4 +1,4 @@
-# JSF
+# JSF [](id=jsf)
 
 Liferay supports developing and deploying JSF portlets on Liferay Portal by
 using

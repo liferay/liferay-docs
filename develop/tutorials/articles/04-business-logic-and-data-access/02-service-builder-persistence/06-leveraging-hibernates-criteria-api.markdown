@@ -12,15 +12,15 @@ significantly easier to understand and maintain than the equivalent custom SQL
 (or HQL) queries. While you technically don't need to know SQL to construct
 queries via Hibernate's Criteria API, you still need to take care to construct
 efficient queries. For information on Hibernate's Criteria API, please see
-[Hibernate's manual](http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html_single/#querycriteria).
+[Hibernate's manual](http://docs.jboss.org/hibernate/orm/5.0/userguide/html_single/chapters/query/criteria/Criteria.html).
 In this tutorial, you'll learn how to create custom finders for Liferay
 applications using Service Builder and Liferay's Dynamic Query API.
 
 To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
-application.  See the
-[Developing a Web Application for Liferay (not yet written)]()
+application. See the
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 learning path for more information on using Service Builder. This tutorial,
 like the learning path, assumes that you're creating a Liferay application that
 consists of a service module, and API module, and a web module. Once you've
@@ -50,16 +50,15 @@ the generated `[package path].service.persistence` package of your service
 module's `docroot/WEB-INF/src` folder. Recall that you specify the package path
 in `service.xml`. Here's an example:
 
-<service-builder package-path="com.liferay.docs.guestbook">
-...
-</service-builder>
+    <service-builder package-path="com.liferay.docs.guestbook">
+    ...
+    </service-builder>
 
 Then define a `findBy-` finder method in the class you created. Make sure to
 add any required arguments to your finder method's method signature.
 
-For example, consider the Guestbook application that we discussed in the
-[Developing a Web Application for Liferay (not yet written)]() learning path.
-In that application, there are two entities: guestbooks and entries. Each entry
+For example, consider a fictitous Guestbook application.
+In this application, there are two entities: guestbooks and entries. Each entry
 belongs to a guestbook so the entry entity has a `guestbookId` field as a
 foreign key. Suppose you need to create a custom finder to search for guestbook
 entries by the entry name and the guestbook name. In this case, you'd add a
@@ -297,7 +296,9 @@ Lastly, you apply the order defined earlier to the entries returned by the
 This orders the list of guestbook entities by the `modifiedDate` attribute, from
 most recent to least recent.
 
-Note: Service Builder not only generates a `public List
++$$$
+
+**Note:** Service Builder not only generates a `public List
 dynamicQuery(DynamicQuery dynamicQuery)` method in `-LocalServiceBaseImpl` but it
 also generates `public List dynamicQuery(DynamicQuery dynamicQuery, int start,
 int end)` and `public List dynamicQuery(DynamicQuery dynamicQuery, int start,
@@ -308,6 +309,8 @@ parameters. The `int start` and `int end` parameters are useful when paginating
 a result list. `start` is the lower bound of the range of model entity instances
 and `end` is the upper bound. The `OrderByComparator orderByComparator` is the
 comparator by which to order the results.
+
+$$$
 
 To use the overloaded `dynamicQuery` methods of your `-LocalServiceBaseImpl`
 class in the (optionally overloaded) custom finders of your `-FinderImpl` class,
@@ -353,3 +356,11 @@ JSP by calling `EntryLocalServiceUtil.findByEntryNameGuestbookName(...)`!
 
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet!
+
+## Related Topics [](id=related-topics)
+
+[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-0/service-builder-web-services)
+
+[Creating Local Service](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)
+
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)

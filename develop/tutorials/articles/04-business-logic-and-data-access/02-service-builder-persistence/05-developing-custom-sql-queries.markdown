@@ -10,17 +10,17 @@ you'd like to do more complicated searches that incorporate attributes from
 multiple entities? You can always write your own custom SQL queries. You'll
 learn how in this tutorial.
 
-For example, consider the [Guestbook (not yet written)]() application. Suppose
-you want to find a guestbook entry based on its name, message, and guestbook
-name. In the Guestbook application, the entry entity refers to its guestbook by
-the guestbook's ID, not by its name. That is, the entry entity table,
-`GB_Entry`, refers to an entry's guestbook by its long integer ID in the
-table's `guestbookId` column. But you need to access the *name* of the entry's
+For example, consider a fictitous Guestbook application. Suppose you want to
+find a guestbook entry based on its name, message, and guestbook name. In the
+Guestbook application, the entry entity refers to its guestbook by the
+guestbook's ID, not by its name. That is, the entry entity table, `GB_Entry`,
+refers to an entry's guestbook by its long integer ID in the table's
+`guestbookId` column. But you need to access the *name* of the entry's
 guestbook. Of course, with SQL you can join the entry and guestbook tables to
 include the guestbook name. But how would you incorporate custom SQL into your
-application? And how would you invoke the SQL from your service? Service
-Builder lets you do this by specifying the SQL as *Liferay custom SQL* and
-invoking it in your service via a *custom finder method*.
+application? And how would you invoke the SQL from your service? Service Builder
+lets you do this by specifying the SQL as *Liferay custom SQL* and invoking it
+in your service via a *custom finder method*.
 
 Liferay custom SQL is a Service Builder-supported method for performing complex
 and custom queries against the database. Invoking custom SQL from a finder
@@ -34,7 +34,7 @@ these steps:
 
 3. Access your finder method from your service.
 
-Next, using the [Guestbook]() application as an example, you'll learn how to
+Next, using the Guestbook application as an example, you'll learn how to
 accomplish these steps.
 
 ## Step 1: Specify Your Custom SQL [](id=step-1-specify-your-custom-sql)
@@ -224,3 +224,9 @@ want to include this in the solution. - Jim -->
 
 Congratulations on developing a custom SQL query and custom finder for your
 application!
+
+## Related Topics [](id=related-topics)
+
+[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
+
+[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-0/service-builder-web-services)

@@ -30,12 +30,12 @@ includes three Application Decorators:
 
 +$$$
 
-**Note:** Upgrading to Liferay 7 will automatically assign the “borderless”
-decorator to those applications that had the “Show Borders” option set to false 
+**Note:** Upgrading to Liferay 7 will automatically assign the *borderless*
+decorator to those applications that had the *Show Borders* option set to false 
 in previous versions of Liferay.
 
 As mentioned, you should consider to update your Liferay Themes to provide at 
-least one for the “decorate”, “borderless” and “barebone” use cases.
+least one for the *decorate*, *borderless* and *barebone* use cases.
 
 $$$
 
@@ -109,13 +109,13 @@ Application Decorator:
 -   default-portlet-decorator: use this optional element to identify the default 
     Application Decorator for your theme.
 
-You can define as many Application Decorators as you want, but it’s recommended 
+You can define as many Application Decorators as you want, but it's recommended 
 to include at least one for the *decorate*, *borderless* and *barebone* use 
 cases.
 
 ### Define the Styles for Your Application Decorator CSS Class [](id=define-the-styles-for-your-application-decorator-css-class)
 
-Once you’ve declared your Application Decorators, it’s time to define their 
+Once you've declared your Application Decorators, it's time to define their 
 effect in the application look and feel. While the previous step was quite 
 straightforward, this depends on your creativity.
 
@@ -142,10 +142,10 @@ the next section.
 
 ### Changing Your Application Markup with Application Decorators [](id=changing-your-application-markup-with-application-decorators)
 
-So far you’ve seen how to use Application Decorators to change the look and feel 
+So far you've seen how to use Application Decorators to change the look and feel 
 of an application with styles.
 
-It’s possible to go a step further and alter the markup of your application 
+It's possible to go a step further and alter the markup of your application 
 based on the Application Decorator applied. For this, you simply have to edit
 the `portlet.ftl` template for your theme, retrieve the `portletDecoratorId` of 
 the current Application Decorator from the `portlet_display` object and make 
