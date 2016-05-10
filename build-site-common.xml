@@ -306,6 +306,7 @@
 				</filterreader>
 			</filterchain>
 		</copy>
+		<mkdir dir="${temp.dir}/images"/>
 		<!-- Cannot use filtering for images (due to corruption), so must copy separately -->
 		<copy todir="${temp.dir}">
 			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
