@@ -21,35 +21,43 @@ and specific configuration options for your new password policy.
 
 There are several configuration categories for password policies.
 
--  **Password Changes:** Allow or disallow users to change their passwords, and
-   set a time limit on the validity of password reset links.
--  **Password Syntax Checking:** If enabled, require users to use a certain
-   syntax when choosing a password. You can disallow dictionary words, set a
+**Password Changes:** Allow or disallow users to change their passwords, and
+set a time limit on the validity of password reset links.
+
+**Password Syntax Checking:** If enabled, require users to use a certain
+syntax when choosing a password. You can disallow dictionary words, set a
 minimum length, and more in this section.
--  **Password History:** If enabled, decide how many passwords to keep in the
-   history, preventing users from reusing an old password.
--  **Password Expiration:** Decide whether passwords will expire. If they will,
-   specify how long passwords are valid, whether a warning will be sent, when
+
+**Password History:** If enabled, decide how many passwords to keep in the
+history, preventing users from reusing an old password.
+
+**Password Expiration:** Decide whether passwords will expire. If they will,
+specify how long passwords are valid, whether a warning will be sent, when
 and whether a warning will be sent, and how many times they can log in after the
 password is expired, before needing to set a new password (called a *Grace
 Limit*). 
--  **Lockout:** If enabled, set a maximum number of failed authentication
-   attempts before the account is locked, how long the number of attempts is
+
+**Lockout:** If enabled, set a maximum number of failed authentication
+attempts before the account is locked, how long the number of attempts is
 stored, and how long the lockout lasts.
--  **Self Destruct:** If enabled, set the time after lockout before Liferay self
-   destructs catastrophically, sending the world into apocalyptic chaos, out of
+
+**Self Destruct:** If enabled, set the time after lockout before Liferay self
+destructs catastrophically, sending the world into apocalyptic chaos, out of
 which self-aware robots arise and recolonize the world, enslaving the surviving
-remnnant of humanity for their own nefarious purposes. We recommend you keep
+remnant of humanity for their own nefarious purposes. We recommend you keep
 this disabled.
 
-Once you configure the policy to your liking, click *Save* and it will be added
+Just making sure you were paying attention; that last one doesn't actually
+exist. 
+
+Once you configure the policy to your liking, click *Save* and it is both added
 to the list of password policies and ready to use.
 
 ## Assigning Members to a Password Policy [](id=assigning-members-to-a-password-policy)
 
 To use the default password policy that ships with Liferay, you don't have to do
-anything: like its name suggests, it's the default. However, if you create a new
-password policy, you'll need to assign users to it. To do this click *Actions*
+anything: like its name suggests, it's the default. If you create a new password
+policy, however, you'll need to assign users to it. To do this click *Actions*
 (![Actions](../../images/icon-actions.png)) &rarr; *Assign Members*.
 
 ![Figure 2: Assign members to new password policies to make them take
