@@ -38,7 +38,7 @@ decide whether or not your portal design should include organization, think
 about your portal's function. A simple photo-sharing web site could be powered
 by sites only. On the other hand, organizations are useful for corporations or
 educational institutions since their users can easily be placed into a
-hierarchical structure. Don't think taht organizations are only for large
+hierarchical structure. Don't think that organizations are only for large
 enterprises, though. Any group hierarchy, from large government agencies all the
 way down to small clubs, can be modeled with organizations. Also, don't think
 that you must decide between an organization based structure or a site based
@@ -118,55 +118,22 @@ Site Administrators. Site Administrators are responsible for the pages,
 portlets, and content of their site. They are also responsible for managing the
 membership of their site. To this end, they can set the membership type to Open,
 Restricted, or Private. They can also add users to or remove users from their
-site but cannot manage the users themselves (meaning they won't be adding new
-members to a. If an organization has a site attached to it, the Organization
-Administrator has the same administrative ability as a Site Administrator when
-it comes to managing the site's content, but the site membership management is
-different. An organization site's members will simply be the members of the
-organization. Organization Administrators have more user management permissions
-than Site Administrators; they can edit users belonging to their organization or
-any suborganization. They cannot add existing portal users to their
-organization, but they can create new users within their organization. Only
-portal administrators can add existing users to an organization.
+site but cannot manage the users themselves. If an organization has a site
+attached to it, the Organization Administrator has the same administrative
+ability as a Site Administrator when it comes to managing the site's content,
+but the site membership management is different. An organization site's members
+will simply be the members of the organization. Organization Administrators have
+more user management permissions than Site Administrators; they can edit users
+belonging to their organization or any sub-organization. They cannot add
+existing portal users to their organization, but they can create new users
+within their organization. Only portal administrators can add existing users to
+an organization.
 
-+$$$
+Organization Administrators can't access the Control Panel by default, but they
+don't need to. In their personal site, organization administrators can click on
+the *My Organizations* link to gain access to any organizations they manage.
 
-**Note:** While Organization Administrators do have the permissions for
-adding new users to their organization and managing their organization's users,
-they can't access the Control Panel by default. To take advantage of the
-Organization Administrator's user management permissions, you need to grant them
-the Go To control Panel permission. This is easily done:
-
-1.  Go to *Roles* and create a new Regular Role, called Control Panel Access Role.
-    -  Once created, define the permissions of the new role, giving it only the
-       *Control Panel* &rarr; *General Permissions* &rarr; *Go to Control Panel*
-        permission. 
-2.  Go to the *User Groups* section of the Control Panel and create a new User
-    Group, called Control Panel Access Group.
-    -  Once created, go back to *Roles* and assign the members of the new User
-       Group to the new Role.
-3.  Place any users you wish (definitely the Organization Administrators) into
-the new User group.
-
-Now the Organization Administrators can actually add users to and manage the
-organization's existing users. If you're not familiar with
-[roles](discover/portal/-/knowledge_base/6-2/roles-and-permissions) and 
-[user groups](discover/portal/-/knowledge_base/6-2/user-groups), refer to those
-sections as needed.
-
-$$$
-
-<!-- Does some sort of table make sense? There's a lot of text here Also, a
-table on Organizations vs User Groups vs Site Teams might be worthwhile
-
-   | Organization Administrators | Site Administrators | Portal Administrators
-:----: | :-------------------------: | :-----------------: | :---------------:
-Add existing users to an organization| No | No | Yes
-Add and manage new users| Yes, to their organization | No | Yes
-Manage a site's content | Yes, if it is an organization site | Yes, for their specific site | Yes
-Manage the users of a child organization |Yes | No | Yes
-
--->
+![Figure 1: The My Organizations application lets Organization Administrators manage their organizations in their personal site.](../../images/organizations-my-organizations.png)
 
 A huge time-saving benefit of including organizations into your portal design is
 that organization administrators can assign organization-scoped roles to members
@@ -183,9 +150,6 @@ roles the HR organization has (such as access to a benefits system in the
 portal) are transferred to the user. In this manner, you can design your portal
 to correspond with your existing organization chart and users' permissions are
 granted according to their positions in the chart.
-
-<!-- Is there too much discussion of roles here? Some discussion is certainly
-necessary, but it could perhaps be made more concise. -->
 
 Of course, this is only one way to set up your portal. If you have more complex
 requirements for permissions within an organization, you can create custom
@@ -210,8 +174,6 @@ That's a lot of information on organizations. Next, learn how to create and
 manage organizations. 
 
 ## Adding Organizations [](id=adding-organizations)
-
-<!-- Yikes, these steps are buried in the above paragraphs -->
 
 Now add an organization to the portal (perhaps start by adding the *Physical
 Plant Department* organization to the Lunar Resort): 
