@@ -103,8 +103,9 @@ available -->
 
 ## Configuring tc Server
 
-There are a few configurations to edit so Liferay runs well on tc Server. All of
-these configuration changes should be made in your tc Server runtime instance.
+There are a few configuration edits to make so Liferay runs well on tc Server.
+All of these configuration changes should be made in your tc Server runtime
+instance.
 
 1. Navigate to the `bin` folder. In `setenv.sh` replace this line
 
