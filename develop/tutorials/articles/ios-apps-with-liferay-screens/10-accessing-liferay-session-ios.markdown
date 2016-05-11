@@ -80,18 +80,30 @@ a typical implementation of this:
 
     if SessionContext.loadStoredCredentials() {
         // user auto-logged in
+	    // consider doing a relogin here (see next section)
     }
     else {
         // send user to login screen with the login screenlet
     }
 
-Note that this auto-login feature doesn't check to make sure the stored user is 
-still valid in the server (still exists, and has the same credentials). You must 
-perform this check manually by using the `SessionContext` method `relogin`. This 
-method performs a request to verify the stored user, and updates the stored 
-attributes the data it receives. The following Swift code shows a typical 
-implementation of this (note the trailing closure is used because the operation 
-is asynchronous): 
+Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
+You've also seen how handy `SessionContext` can be. It can do even more! The 
+next section lists some additional `SessionContext` methods. 
+
+## Relogin a session [](id=relogin-a-session)
+
+If you have a session already created (either by Login Screenlet or auto-login feature), it will hold some data binded to the user logged in. If that data changes in the server, then your session will be outdated and it may lead to some inconsistency due to the old data.
+
+Also, if a user is deleted, deactivated or her password has changed, the auto-login feature won't deny the access because no transaction with the server is done. And probably you want that user is verified before considering the auto-login is successfull.
+
+For those scenarios, you have the relogin feature. It's just a simple method intented to verify the current session is still valid. If so, the new user data associated to the session will be updated.
+
+To start a relogin, just call the `relogin` method in `SessionContext.currentContext`.
+
+    SessionContext.currentContext?.relogin(closure)
+
+Notice this operation is asynchronous (in a background thread). The `closure` argument is a function that eventually will receive the new user attributes. In case of error, the closure will be called with `nil` attributes, and the session will be logged out.
+The typical Swift code for a full relogin is as follows (note a trailing closure is used):
 
     SessionContext.currentContext?.relogin { userAttributes in
         if userAttributes == nil {
@@ -101,10 +113,6 @@ is asynchronous):
             // full re-login made. Everything is updated
         }
     }
-
-Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
-You've also seen how handy `SessionContext` can be. It can do even more! The 
-next section lists some additional `SessionContext` methods. 
 
 ## Methods [](id=methods)
 

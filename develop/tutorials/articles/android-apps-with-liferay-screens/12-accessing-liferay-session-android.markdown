@@ -87,6 +87,7 @@ typical implementation of this:
 
     if (SessionContext.hasSession()) {
 	    // logged in
+	    // consider doing a relogin here (see next section)
     } else {
 	    // send user to login form
     }
@@ -94,6 +95,31 @@ typical implementation of this:
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
 You've also seen how handy `SessionContext` can be. It can do even more! The 
 next section lists some additional `SessionContext` methods. 
+
+## Relogin a session [](id=relogin-a-session)
+
+If you have a session already created (either by Login Screenlet or auto-login feature), it will hold some data binded to the user logged in. If that data changes in the server, then your session will be outdated and it may lead to some inconsistency due to the old data.
+
+Also, if a user is deleted, deactivated or her password has changed, the auto-login feature will work because no transaction with the server is done. And probably you want that user is verified before considering the auto-login is successfull.
+
+For those scenarios, you have the relogin feature. It's just a simple method intented to verify the current session is still valid. If so, the new user data associated to the session will be updated.
+
+To start a relogin, just call the `relogin` method in `SessionContext`:
+
+    SessionContext.relogin(listener);
+
+The listener argument is an object implementing `LoginListener` interface. In that object, interface's methods `onLoginSuccess` and `onLoginFailure` will be called.
+Notice this operation is done asynchronously (in a background thread), so the listener will be called in that thread. If you want to do any UI task, you need to do it in your UI thread. This is the typical code for that:
+
+	@Override
+	public void onLoginSuccess(final User user) {
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				// do any UI operation here
+			}
+		});
+	}
 
 ## Methods [](id=methods)
 
