@@ -94,7 +94,7 @@ In this section, you'll learn about the versioning scheme for each component of
 Liferay Faces for releases following Liferay Faces GA6. Once you have the
 versioning scheme mastered, you can view several example configurations.
 
-### Liferay Faces Alloy [](id=com.liferay.faces.alloy)
+### Liferay Faces Alloy [](id=liferay-faces-alloy)
 
 *Provides a suite of JSF components that utilize [AlloyUI](http://alloyui.com/).*
 
@@ -116,7 +116,7 @@ versioning scheme mastered, you can view several example configurations.
 |API: [2.0.x](https://github.com/liferay/liferay-faces-bridge-api/tree/2.0.x)<br/>IMPL: [2.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/2.0.x)|com.liferay.faces.bridge.api-2.0.0.jar<br/>com.liferay.faces.bridge.impl-2.0.0.jar|2.0|1.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329) (MR1)|*Includes support for Maintenance Release 1 (MR1).*|
 |1.0.x|N/A|1.0|1.2|[JSR 301](https://www.jcp.org/en/jsr/detail?id=301)|*N/A (Not Applicable) since Liferay Faces Bridge has never implemented JSR 301.*|
 
-### Liferay Faces Bridge Ext [](id=com.liferay.faces.bridge.ext)
+### Liferay Faces Bridge Ext [](id=liferay-faces-bridge-ext)
 
 *Extension to Liferay Faces Bridge that provides compatibility with [Liferay Portal](http://www.liferay.com/community/liferay-projects/liferay-portal/overview) and also takes advantage of Liferay-specific features such as friendly URLs.*
 
@@ -129,7 +129,7 @@ versioning scheme mastered, you can view several example configurations.
 |[2.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/2.0.x)|com.liferay.faces.bridge.ext-2.0.0.jar|6.2.x|3.0.x|2.0|2.1|
 |[1.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/1.0.x)|com.liferay.faces.bridge.ext-1.0.0.jar|6.2.x|2.0.x|2.0|1.2|
 
-### Liferay Faces Metal [](id=com.liferay.faces.metal)
+### Liferay Faces Metal [](id=liferay-faces-metal)
 
 *Provides a suite of JSF components that utilize [metal.js](http://http://metaljs.com/).*
 
@@ -137,7 +137,7 @@ versioning scheme mastered, you can view several example configurations.
 |------|----------------|:---------:|:-------:|---------------|
 |[master (1.0.x)](https://github.com/liferay/liferay-faces-metal/tree/master)|com.liferay.faces.metal-1.0.0.jar|1.0.x|2.1+|*CrystalUI 1.0.x is the version that comes bundled with Liferay Portal 7.0.*|
 
-### Liferay Faces Portal [](id=com.liferay.faces.portal)
+### Liferay Faces Portal [](id=liferay-faces-portal)
 
 *Provides a suite of JSF components that are based on the JSP tags provided by [Liferay Portal](http://www.liferay.com/community/liferay-projects/liferay-portal/overview).*
 
@@ -147,7 +147,7 @@ versioning scheme mastered, you can view several example configurations.
 |[2.0.x](https://github.com/liferay/liferay-faces-portal/tree/2.0.x)|com.liferay.faces.portal-2.0.0.jar|6.2.x|2.1+|
 |[1.0.x](https://github.com/liferay/liferay-faces-portal/tree/1.0.x)|com.liferay.faces.portal-1.0.0.jar|6.2.x|1.2|
 
-### Liferay Faces Util [](id=com.liferay.faces.util)
+### Liferay Faces Util [](id=liferay-faces-util)
 
 *Library that contains general purpose JSF utilities to support many of the sub-projects that comprise Liferay Faces.*
 
@@ -168,7 +168,7 @@ in action.
 
 ## Example Configurations [](id=example-configurations)
 
-### Liferay Portal 7.0: AlloyUI 3.0 / Metal 1.0 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-7-0-alloyui-3-0--metaljs-1-0--portlet-2-0--jsf-2-2)
+### Liferay Portal 7.0: AlloyUI 3.0 / MetalJS 1.0 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-7-0-alloyui-3-0--metaljs-1-0--portlet-2-0--jsf-2-2)
 
 	<dependencies>
 		<dependency>
