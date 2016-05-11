@@ -1,4 +1,4 @@
-# Simulating User Segments and Campaigns [](id=simulating-user-segments-and-campaigns)
+# Simulating User Segments and Campaigns
 
 The Audience Targeting app includes a simulator feature. The Audience Targeting
 Simulator allows administrators to preview the way portal pages appear to

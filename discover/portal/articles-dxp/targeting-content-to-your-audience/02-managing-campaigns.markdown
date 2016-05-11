@@ -1,4 +1,4 @@
-# Managing Campaigns [](id=managing-campaigns)
+# Managing Campaigns
 
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To manage campaigns for a site,
@@ -42,7 +42,7 @@ visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
 *Define Permissions* button corresponding to the role you'd like to configure
 permissions for, and search for *Audience Targeting Resources*.
 
-## Managing Campaign Priorities [](id=managing-campaign-priorities)
+## Managing Campaign Priorities
 
 The priority of your campaigns becomes important when multiple campaigns are
 running at the same time on your website. The Campaign Content Display
@@ -57,7 +57,7 @@ applications. Similarly, if a campaign is deactivated or if a campaign's date
 range is exceeded, all of the Campaign Content Display applications on your
 website are affected.
 
-## Defining Tracking Actions [](id=defining-tracking-actions)
+## Defining Tracking Actions
 
 One of the most interesting features of campaigns is that they allow you to
 measure the effectiveness of a campaign. This provides your marketing team with
@@ -98,7 +98,7 @@ Settings*. To configure it per portal instance, go to *Control Panel* &rarr;
 users) can be a very heavy load for your server. Therefore, it's best to disable
 the tracking of any actions about which you don't need information.
 
-## Campaign Reports [](id=campaign-reports)
+## Campaign Reports
 
 Reports are available for campaigns. You can click *Actions* &rarr; *Reports*
 next to a campaign to see the list of reports available. More reports can be

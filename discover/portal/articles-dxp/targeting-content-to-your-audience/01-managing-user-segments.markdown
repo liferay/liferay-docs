@@ -1,10 +1,10 @@
-# Managing User Segments [](id=managing-user-segments)
+# Managing User Segments
 
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Menu allows you to manage user segments and
 campaigns.
 
-![Figure 1: Click on *Configuration* &rarr; *Audience Targeting* in Site Administration to manage user segments and campaigns for a site.](../../images/audience-targeting-admin.png)
+![Figure 1: Click on *Configuration* &rarr; *Audience Targeting* in Site Administration to manage user segments and campaigns for a site.](../../images-dxp/audience-targeting-admin.png)
 
 A user segment represents a subset of the total group of portal users (logged in
 or not). A user segment is defined by one or more rules that users have to match
@@ -22,7 +22,7 @@ than* attribute to *30*. Once you've customized the rules for the new user
 segment, entered a name and, optionally, a description, click *Save* to actually
 create the user segment.
 
-![Figure 2: After applying the rule, click the rule to expland/collapse it.](../../images/audience-targeting-rules.png)
+![Figure 2: After applying the rule, click the rule to expland/collapse it.](../../images-dxp/audience-targeting-rules.png)
 
 To configure permissions for creating, editing, and deleting user segments,
 visit the *Users* &rarr; *Roles* section of the Control Panel. Then click on the
@@ -35,7 +35,7 @@ Therefore, user segments and campaigns defined in the Global scope will be
 available to any site. User segments and campaigns created in a site will be
 available to all of its child sites.
 
-## User Segment Rules [](id=user-segment-rules)
+## User Segment Rules
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
 [Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types)
@@ -81,7 +81,7 @@ Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
 Content Display application.
 
-## Categorizing Pages and Content for User Segments [](id=categorizing-pages-and-content-for-user-segments)
+## Categorizing Pages and Content for User Segments
 
 Each new user segment that's created can be used to categorize pages or content.
 
@@ -108,7 +108,7 @@ segments are distinct from regular vocabularies. The Categorization section of
 pages and assets contains distinct select buttons for user segments and regular
 vocabularies.
 
-## Managing User Segment Reports [](id=managing-user-segment-reports)
+## Managing User Segment Reports
 
 When managing user segments, you can click *Actions* &rarr; *Reports* next to a
 user segment to see the list of reports available for each user segment. Click
