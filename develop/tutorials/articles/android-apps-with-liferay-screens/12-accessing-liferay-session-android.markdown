@@ -58,7 +58,7 @@ following code creates a session with `createBasicSession` and then uses
     Session session = SessionContext.createBasicSession(USERNAME, PASSWORD);
     SessionContext.setLoggedUser(USER);
 
-Note that you can acheive the same thing by calling the interactor directly: 
+Note that you can achieve the same thing by calling the interactor directly: 
 
     LoginBasicInteractor loginBasicInteractor = new LoginBasicInteractor(0);
     loginBasicInteractor.onScreenletAttached(this);
@@ -67,7 +67,7 @@ Note that you can acheive the same thing by calling the interactor directly:
     loginBasicInteractor.login();
 
 Super! Now you know how to create a session manually. The next section shows you 
-how to implement auto-login, and save or restore a session.
+how to implement auto-login, and save or restore a session. 
 
 ## Implementing Auto-login and Saving or Restoring a Session [](id=implementing-auto-login-and-saving-or-restoring-a-session)
 
@@ -86,40 +86,59 @@ typical implementation of this:
     SessionContext.loadStoredCredentials(SHARED_PREFERENCES);
 
     if (SessionContext.hasSession()) {
-	    // logged in
-	    // consider doing a relogin here (see next section)
+        // logged in
+        // consider doing a relogin here (see next section)
     } else {
-	    // send user to login form
+        // send user to login form
     }
 
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
-You've also seen how handy `SessionContext` can be. It can do even more! The 
-next section lists some additional `SessionContext` methods. 
+For more information on available `SessionContext` methods, see the 
+[Methods section](/develop/tutorials/-/knowledge_base/6-2/accessing-the-liferay-session-in-android#methods) 
+at the end of this tutorial. Next, you'll learn how to implement relogin for 
+cases where a user's credentials change on the server while they're logged in. 
 
-## Relogin a session [](id=relogin-a-session)
+## Implementing Relogin [](id=implementing-relogin)
 
-If you have a session already created (either by Login Screenlet or auto-login feature), it will hold some data binded to the user logged in. If that data changes in the server, then your session will be outdated and it may lead to some inconsistency due to the old data.
+A session, whether created via Login Screenlet or auto-login, contains basic 
+user data that verifies the user in the Liferay instance. If that data changes 
+in the server, then your session is outdated, which may cause your app to behave 
+inconsistently. Also, if a user is deleted, deactivated, or otherwise changes 
+their credentials in the server, the auto-login feature won't deny access 
+because it doesn't perform server transactions: it only retrieves an existing 
+session from local storage. This isn't an optimal situation! 
 
-Also, if a user is deleted, deactivated or her password has changed, the auto-login feature will work because no transaction with the server is done. And probably you want that user is verified before considering the auto-login is successfull.
+For such scenarios, you can use the relogin feature. This feature is implemented 
+in a simple method that determines if the current session is still valid. If the 
+session is still valid, the user's data is updated with the most recent data 
+from the server. If the session isn't valid, the user is logged out and must 
+then log in again to create a new session. 
 
-For those scenarios, you have the relogin feature. It's just a simple method intented to verify the current session is still valid. If so, the new user data associated to the session will be updated.
-
-To start a relogin, just call the `relogin` method in `SessionContext`:
+To use this feature, call the `SessionContext` method `relogin`, with an object 
+that implements the `LoginListener` interface as an argument: 
 
     SessionContext.relogin(listener);
 
-The listener argument is an object implementing `LoginListener` interface. In that object, interface's methods `onLoginSuccess` and `onLoginFailure` will be called.
-Notice this operation is done asynchronously (in a background thread), so the listener will be called in that thread. If you want to do any UI task, you need to do it in your UI thread. This is the typical code for that:
+This method handles success or failure via the listener's `onLoginSuccess` and 
+`onLoginFailure` methods, respectively. Note that this operation is done 
+asynchronously in a background thread, so the listener is called in that thread. 
+If you also want to perform any UI operations, you must do so in your UI thread. 
+For example: 
 
-	@Override
-	public void onLoginSuccess(final User user) {
-		runOnUiThread(new Runnable() {
-			@Override
-			public void run() {
-				// do any UI operation here
-			}
-		});
-	}
+    @Override
+    public void onLoginSuccess(final User user) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                // do any UI operation here
+            }
+        });
+    }
+
+Great! Now you know how to implement relogin in your app. You've also seen how 
+handy `SessionContext` can be. It can do even more! The next section lists some 
+additional `SessionContext` methods, and some more detail on the ones used in 
+this tutorial. 
 
 ## Methods [](id=methods)
 
