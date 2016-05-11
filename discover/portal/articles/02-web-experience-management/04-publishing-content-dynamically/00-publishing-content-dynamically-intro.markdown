@@ -29,6 +29,7 @@ This chapter covers the following topics:
 - Tagging and categorizing content
 - Using targeted, single value, and multi-value vocabularies
 - Adding relationships between assets
+- Geolocating assets
 - Using faceted search
 - Publishing assets
 - Publishing RSS feeds
