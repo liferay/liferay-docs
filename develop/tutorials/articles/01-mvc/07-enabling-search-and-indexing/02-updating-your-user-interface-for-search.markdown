@@ -73,7 +73,7 @@ each guestbook entry in the results. The Search bar should also appear on the
 search results JSP so that users can edit their queries and resubmit them
 without having to click the *Back* link to go to the portlet's default view.
 
-![Figure 1: The search results should appear in a Search Container and the Actions button should appear for each entry. The search bar should also be displayed.](../../images/guestbook-portlet-search-results.png)
+![Figure 1: The search results should appear in a Search Container and the Actions button should appear for each entry. The search bar should also be displayed.](../../../images/guestbook-portlet-search-results.png)
 
 Create a new file called `view_search.jsp` in your guestbook-portlet project's
 `docroot/html/guestbook` folder. Add the following contents to it:
@@ -306,7 +306,7 @@ is not null. If it's not null, it calls the
 `PortalUtil.addPortletBreadCrumbEntry` method to add the search query to the
 portlet breadcrumb. The breadcrumb looks like this:
 
-![Figure 2: You can customize the portlet breadcrumb so that it displays the search query entered by the user.](../../images/guestbook-portlet-search-breadcrumb.png)
+![Figure 2: You can customize the portlet breadcrumb so that it displays the search query entered by the user.](../../../images/guestbook-portlet-search-breadcrumb.png)
 
 The declaration at the bottom of `view_search.jsp` declares a `Log` object for
 the JSP. You used this log in the `catch` clauses of the `try` clause that calls

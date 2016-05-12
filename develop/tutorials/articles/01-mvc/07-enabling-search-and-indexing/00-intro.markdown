@@ -22,5 +22,5 @@ indexer. In this learning path, you'll create a guestbook indexer and update the
 guestbook service layer to use it since it's a prerequisite for asset-enabling
 guestbooks.
 
-![Figure 1: You'll add a search bar to the Guestbook portlet so that users can search for guestbook entries. If a guestbook entry's message or name matches the search query, it's displayed in the search results.](../../images/guestbook-portlet-search.png)
+![Figure 1: You'll add a search bar to the Guestbook portlet so that users can search for guestbook entries. If a guestbook entry's message or name matches the search query, it's displayed in the search results.](../../../images/guestbook-portlet-search.png)
 

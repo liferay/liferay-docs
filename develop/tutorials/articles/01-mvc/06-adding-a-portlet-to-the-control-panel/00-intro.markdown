@@ -17,5 +17,5 @@ guestbook's permissions. In this learning path, you'll add this functionality to
 a new portlet called the Guestbook Admin portlet which you'll add to the Control
 Panel.
 
-![Figure 1: The Guestbook Admin portlet lives in Liferay's Control Panel and allows administrators to add, edit, and delete guestbooks and to configure their permissions.](../../images/guestbook-admin-portlet.png)
+![Figure 1: The Guestbook Admin portlet lives in Liferay's Control Panel and allows administrators to add, edit, and delete guestbooks and to configure their permissions.](../../../images/guestbook-admin-portlet.png)
 

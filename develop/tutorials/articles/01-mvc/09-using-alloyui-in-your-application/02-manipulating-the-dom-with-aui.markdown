@@ -77,7 +77,7 @@ Confirm that the panel appears, that its title is *Populate*, and that the
 *Use My Full Name* and *Use My Email Address* buttons appear when you're signed
 in.
 
-![Figure 1: This is how the Add Entry form should appear with the Populate panel expanded.](../../images/guestbook-populate-use-buttons.png)
+![Figure 1: This is how the Add Entry form should appear with the Populate panel expanded.](../../../images/guestbook-populate-use-buttons.png)
 
 Now it's time to make the buttons work. Add the following lines near the bottom
 of `edit_entry.jsp`, just above the `aui:script use="aui-char-counter">` tag:
@@ -433,7 +433,7 @@ Check out the new functionality of the Guestbook portlet's Add Entry form. Click
 on the *Generate Sample Messages* button. Click on it multiple times. Click on
 some of the *Use Message* buttons. Test the Hide Sample Messages button.
 
-![The Add Entry form should look like this after you've clicked on the *Generate Sample Messages* button and have clicked on *Use My Full Name*, *Use My Email Address*, and *Use Message*.](../../images/guestbook-populate-all-buttons.png)
+![The Add Entry form should look like this after you've clicked on the *Generate Sample Messages* button and have clicked on *Use My Full Name*, *Use My Email Address*, and *Use Message*.](../../../images/guestbook-populate-all-buttons.png)
 
 Great job! You've added a handy Populate panel with useful buttons for
 populating the Add Entry form's fields. You've used AUI's node and event modules

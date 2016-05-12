@@ -5,7 +5,7 @@ to the functions you just created in both your controller and your service
 layer. A common way to do this in Liferay, which makes your application operate
 like the other ones that ship with Liferay, is to create action buttons. 
 
-![Figure 1: A common Liferay user interface element is the action button.](../../images/entity-action-buttons.png)
+![Figure 1: A common Liferay user interface element is the action button.](../../../images/entity-action-buttons.png)
 
 Because action buttons are implemented using a tag, they're very easy to create.
 You'll use the building blocks you've already used to test for permissions to

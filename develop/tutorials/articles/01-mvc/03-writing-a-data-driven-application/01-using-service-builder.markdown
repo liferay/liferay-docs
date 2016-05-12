@@ -88,7 +88,7 @@ and ready to go.
 21. Use the + button to add a column of type *long* to hold the foreign key to
     the Guestbook entity. Call this column *guestbookId*. 
 
-![Figure 1: When your entities have been defined, you should have a configuration like this one.](../../images/lds-sb-1.png)
+![Figure 1: When your entities have been defined, you should have a configuration like this one.](../../../images/lds-sb-1.png)
 
 Excellent! You've now defined your entities. Since Service Builder is an
 object-relational mapper, at the same time you did that, you also defined your
@@ -138,7 +138,7 @@ sites, and its data would be different. In other words, it would be *scoped* to
 that site. You can change an application's scope to the page, and in that case,
 one site could host different wikis on different pages. 
 
-![Figure 2: Scope is important in Liferay Portal.](../../images/portal-scope.png)
+![Figure 2: Scope is important in Liferay Portal.](../../../images/portal-scope.png)
 
 If you write your application to support this, Liferay handles all of it
 automatically for you. You've already taken steps to support scope in your
@@ -156,7 +156,7 @@ the Group ID. Generating queries, or *finders*, is what you'll do next.
 Assuming users add guestbook entries to your application, how should they be
 found? To determine that, you'll need to look at your data design. 
 
-![Figure 3: Your data design generally dictates the queries you can build.](../../images/guestbook-tables.png)
+![Figure 3: Your data design generally dictates the queries you can build.](../../../images/guestbook-tables.png)
 
 As you can see, you have two tables. The first stores Guestbooks themselves:
 besides the default fields, it has only two: a primary key and a name. The
@@ -233,7 +233,7 @@ button, a tooltip pops up which says that this is the Build Services button.
 Click it. At this point, Liferay's Service Builder utility runs. When it
 completes, check out your project's `src` folder. 
 
-![Figure 4: Service Builder generates a number of packages containing your model, service, and persistence layers.](../../images/lds-service-builder-packages.png)
+![Figure 4: Service Builder generates a number of packages containing your model, service, and persistence layers.](../../../images/lds-service-builder-packages.png)
 
 Note that your project now has errors. It's because the model class, `Entry`,
 that you created in the last tutorial, was replaced. As noted above, Service
@@ -250,7 +250,7 @@ service, and the persistence layers. The application is designed in such a way
 that you can swap out the persistence layer with little to no change in the
 model and service layers. 
 
-![Figure 5: At a macro level, Service Builder generates three layers.](../../images/application-layers.png)
+![Figure 5: At a macro level, Service Builder generates three layers.](../../../images/application-layers.png)
 
 At a micro level, each layer is implemented using Java Interfaces and various
 implementations of those interfaces. Rather than have one `Entry` class that

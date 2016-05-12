@@ -459,7 +459,7 @@ entries. Edit a few of them too. Then check the Asset Publisher portlet. By
 default, the Asset Publisher is configured to dynamically display assets of any
 kind from the current site.
 
-![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../images/custom-entities-asset-publisher.png)
+![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../../images/custom-entities-asset-publisher.png)
 
 Confirm that the Asset Publisher is displaying the guestbooks and guestbook
 entries that you added.
@@ -482,13 +482,13 @@ Here is a sample icon for the Guestbook portlet that's intended to represent a
 guestbook entry. Download this icon and add it to your guestbook-portlet
 project's `docroot` folder.
 
-![Figure 2: This is the icon for the Guestbook portlet that represents a guestbook entry.](../../images/entry.png)
+![Figure 2: This is the icon for the Guestbook portlet that represents a guestbook entry.](../../../images/entry.png)
 
 Here is a sample icon for the Guestbook Admin portlet that's intended to
 represent a guestbook. Download this icon and add it to your guestbook-portlet
 project's `docroot` folder.
 
-![Figure 3: This is the icon for the Guestbook Admin portlet that represents a guestbook.](../../images/guestbook.png)
+![Figure 3: This is the icon for the Guestbook Admin portlet that represents a guestbook.](../../../images/guestbook.png)
 
 The default contents of each `<icon>` element is `/icon.png`. Change this path
 to `/entry.png` for the Guestbook portlet's `<icon>` element and to
@@ -521,7 +521,7 @@ of the class, just above the `_log` variable declaration:
 Confirm that the Asset Publisher now uses the correct icons when displaying
 guestbook and guestbook entry assets.
 
-![Figure 4: After you've implemented the `getIconPath` method in your `*AssetRenderer` classes, your custom icons are displayed with your custom assets in the Asset Publisher.](../../images/custom-icons-custom-entities-asset-publisher.png)
+![Figure 4: After you've implemented the `getIconPath` method in your `*AssetRenderer` classes, your custom icons are displayed with your custom assets in the Asset Publisher.](../../../images/custom-icons-custom-entities-asset-publisher.png)
 
 Great! In the next section, you'll update your portlets' user interfaces to use
 several features of Liferay's asset framework: comments, ratings, tags,

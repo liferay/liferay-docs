@@ -8,4 +8,4 @@ scale well, and the amount of data you can store is limited. This learning path
 picks up where that one left off: here, you'll learn how to turn the Guestbook
 into a full-fledged, database-driven application. 
 
-![The data-driven guestbook can store and display entries for many different guestbooks.](../../images/data-driven-guestbook-1.png)
+![The data-driven guestbook can store and display entries for many different guestbooks.](../../../images/data-driven-guestbook-1.png)

@@ -8,7 +8,7 @@ want inside your application. All the permissions checks that go into the code
 derive their permission definitions from this file. Think of it as the Borg
 queen that directs the rest of the drones to do its bidding. 
 
-![Figure 1: The permissions configuration file is at the heart of Liferay's permissions system.](../../images/liferay-permissions.png)
+![Figure 1: The permissions configuration file is at the heart of Liferay's permissions system.](../../../images/liferay-permissions.png)
 
 To implement permissions, you perform three straightforward steps: 
 
@@ -67,7 +67,7 @@ should think about the security model for your application. What exactly do you
 want to protect, and from whom? To determine that, you should look at your
 application's user interface. 
 
-![Figure 2: Determine your application's security by looking at its user interface.](../../images/guestbook-security.png)
+![Figure 2: Determine your application's security by looking at its user interface.](../../../images/guestbook-security.png)
 
 In the image above, you can see three areas where you might want to protect data
 with a security check. Two of them are outlined in red, because they have to do

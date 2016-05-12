@@ -35,7 +35,7 @@ to use is already used by Liferay.
 
 5.  Save the file. 
 
-![Figure 1: The liferay-plugin-package.properties editor in Liferay IDE/Developer Studio makes it easy to configure new .jars and tag libraries in your applications](../../images/lds-liferay-plugin-package-properties.png)
+![Figure 1: The liferay-plugin-package.properties editor in Liferay IDE/Developer Studio makes it easy to configure new .jars and tag libraries in your applications](../../../images/lds-liferay-plugin-package-properties.png)
 
 You've now successfully configured your application to use the JSTL tags. Note
 that you just used a graphical editor to configure a properties file. If you're

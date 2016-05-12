@@ -35,7 +35,7 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
    page. Copy the URL to the update site you're interested in (stable or
    milestone). 
 
-    ![Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
+    ![Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../../images/liferay-ide-download.png)
 
 3. Go back to Eclipse and click the *Add* button to add a repository. 
 
@@ -91,7 +91,7 @@ editor. Because of this, your next task is to get both of these installed.
    recommend unzipping it next to the `bundles` folder you created in the last
    step. 
 
-![Figure 2: The directory structure for Liferay development is pretty simple.](../../images/developer-directory-structure.png)
+![Figure 2: The directory structure for Liferay development is pretty simple.](../../../images/developer-directory-structure.png)
 
 When you've finished installing everything, you should have a folder structure
 like the one above. Next, you need to get all these components talking to each
@@ -103,12 +103,12 @@ other. Launch IDE.
 2. The tab on the low left corner is labeled *Servers*. Click the link to create
    a new server. 
 
-	![Figure 3: The Servers tab has no servers by default.](../../images/lds-servers.png)
+	![Figure 3: The Servers tab has no servers by default.](../../../images/lds-servers.png)
 
 3. In the dialog that appears, select the server that matches the runtime you
    downloaded and installed. Click *Next*. 
 
-	![Figure 4: Select the Liferay server runtime you downloaded.](../../images/lds-select-server.png)
+	![Figure 4: Select the Liferay server runtime you downloaded.](../../../images/lds-select-server.png)
 
 4. Browse to the Tomcat folder inside the runtime and click *Finish*. 
 

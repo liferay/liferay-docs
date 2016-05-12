@@ -99,7 +99,7 @@ portlet. Alternatively, you can click on the title of the guestbook or guestbook
 entry asset. Your `full_content.jsp` should be rendered by the Asset Publisher
 portlet:
 
-![Figure 1: When you click on the *Read More* link for a guestbook or guestbook entry that's displayed by the Asset Publisher, your `full_content.jsp` should be displayed.](../../images/asset-publisher-full-content.png)
+![Figure 1: When you click on the *Read More* link for a guestbook or guestbook entry that's displayed by the Asset Publisher, your `full_content.jsp` should be displayed.](../../../images/asset-publisher-full-content.png)
 
 By default, when displaying the full view of an asset, the Asset Publisher
 displays additional links for Twitter, Facebook, and Google Plus. These links
@@ -207,7 +207,7 @@ Test your updated `edit_guestbook.jsp` page by navigating to your Guestbook
 Admin portlet in the Control Panel and clicking on *Add Guestbook*. You'll see a
 field for adding tags and a selector for selecting related assets.
 
-![Figure 2: Once you've updated your Guestbook Admin portlet's `edit_guestbook.jsp` page, you'll see forms for adding tags and selecting related assets.](../../images/guestbook-tags-related-assets.png)
+![Figure 2: Once you've updated your Guestbook Admin portlet's `edit_guestbook.jsp` page, you'll see forms for adding tags and selecting related assets.](../../../images/guestbook-tags-related-assets.png)
 
 Where is the field for selecting categories? It's been enabled but it won't
 appear until you create a vocabulary and add at least one category to it. Create
@@ -341,7 +341,7 @@ the portlet breadcrumb is not visible. However, it would be visible if you added
 the portlet to a regular portal page. (The Breadcrumb portlet appears on regular
 portal pages, by default.)
 
-![Figure 3: The Breadcrumb portlet appears on regular portal pages, by default. It appears just beneath the main page navigation menu and displays the path to the current page or portlet.](../../images/portlet-breadcrumb.png)
+![Figure 3: The Breadcrumb portlet appears on regular portal pages, by default. It appears just beneath the main page navigation menu and displays the path to the current page or portlet.](../../../images/portlet-breadcrumb.png)
 
 At the end of the scriptlet, you add the names of the existing asset tags for
 the current guestbook as keywords to the portal page. These tag names appear in

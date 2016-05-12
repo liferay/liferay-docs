@@ -255,7 +255,7 @@ adding entries, except of course that the URL names are different and the field
 is different. Since each action URL maps to an action method in your portlet
 class, when this form is submitted, the `addGuestbook()` method is called. 
 
-![Figure 1: The completed guestbook application shows guestbooks in different tabs. ](../../images/data-driven-guestbook-2.png)
+![Figure 1: The completed guestbook application shows guestbooks in different tabs. ](../../../images/data-driven-guestbook-2.png)
 
 Congratulations! You've used Liferay's Service Builder persistence framework to
 create a data-driven application! Of course, there are many more things you'll

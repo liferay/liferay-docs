@@ -196,7 +196,7 @@ and click on the Context Path selector. Notice that `/guestbook-portlet` now
 appears as an option. Select the `/guestbook-portlet` context path and confirm
 that your remote service methods appear in the list.
 
-![Figure 1: After you've added remote service methods to your project's `*ServiceImpl` classes, run Service Builder and redeploy your project. Then check that your remote services are accessible.](../../images/jsonws-guestbook.png) 
+![Figure 1: After you've added remote service methods to your project's `*ServiceImpl` classes, run Service Builder and redeploy your project. Then check that your remote services are accessible.](../../../images/jsonws-guestbook.png) 
 
 To test that your remote services are working, choose a method to invoke. Pick
 a simple method that does not require a Service Context parameter, like
@@ -212,7 +212,7 @@ the JavaScript console. Copy it to your system clipboard. Next, navigate to
 [http://\[host name\]:\[port name\]/api/jsonws?contextPath=/guestbook-portlet](http://\[host name\]:\[port name\]/api/jsonws?contextPath=/guestbook-portlet) and click on the
 `get-guestbooks-count` method.
 
-![Figure 2: After you've added remote service methods to your project's `*ServiceImpl` classes, run Service Builder and redeploy your project. Then check that your remote services are accessible.](../../images/jsonws-guestbook-invoke.png) 
+![Figure 2: After you've added remote service methods to your project's `*ServiceImpl` classes, run Service Builder and redeploy your project. Then check that your remote services are accessible.](../../../images/jsonws-guestbook-invoke.png) 
 
 Paste the scope group ID that you copied into the group ID field and click
 *Invoke*. Confirm that the correct number of guestbooks is returned. Great! Your

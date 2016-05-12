@@ -174,7 +174,7 @@ Search Container, which is how all of Liferay's portlets work. Like those
 portlets, you should include the workflow status as a column in the Search
 Container.
 
-![Figure 1: The Message Boards Admin portlet displays the workflow status of its entities.](../../images/message-boards-admin.png)
+![Figure 1: The Message Boards Admin portlet displays the workflow status of its entities.](../../../images/message-boards-admin.png)
 
 Open `docroot/html/guestbookadmin/view.jsp` and find the section where both
 columns of the search container are populated:
@@ -217,7 +217,7 @@ portal and go to *Admin* &rarr; *Control Panel* &rarr; *Configuration*
 &rarr; *Workflow*. Click on *Default Configuration* and select 
 *Single Approver* for both *Entry* and *Guestbook*.
 
-![Figure 2: Enable workflow for entities in the Control Panel.](../../images/test-workflow-1.png)
+![Figure 2: Enable workflow for entities in the Control Panel.](../../../images/test-workflow-1.png)
 
 After saving your selections, navigate to the Guestbook Portlet and try to add a
 new Guestbook and then a new Entry. If you are the portal administrator, you
@@ -233,6 +233,6 @@ approve them in the workflow. There are a couple of additional things to note:
   marked as *Approved*, with no review necessary and no workflow notifications
   sent.
 
-![Figure 3: The Guestbook Admin portlet now displays the workflow status of each `Guestbook` in the site.](../../images/guestbook-admin.png)
+![Figure 3: The Guestbook Admin portlet now displays the workflow status of each `Guestbook` in the site.](../../../images/guestbook-admin.png)
 
 Your Guestbook Application now supports workflow!

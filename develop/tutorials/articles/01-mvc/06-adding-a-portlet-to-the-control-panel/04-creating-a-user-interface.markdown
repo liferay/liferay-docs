@@ -5,7 +5,7 @@ view of the portlet should have a button for adding new guestbooks. It should
 also display a list of all the guestbooks that have already been added to the
 current site.
 
-![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../images/guestbook-admin-portlet.png)
+![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../images/guestbook-admin-portlet.png)
 
 Each guestbook's name should displayed along with an Actions button. The Actions
 button should display options for editing the guestbook, configuring its

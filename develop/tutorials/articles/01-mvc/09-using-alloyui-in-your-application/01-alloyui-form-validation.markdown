@@ -83,7 +83,7 @@ Attempt to save a guestbook message with all of the fields left empty. Check
 that the default error messages, along with your custom error message, are
 displayed. Your Add Entry form should look like this: 
 
-![Figure 1: Leave the Add Entry input fields empty and attempt to submit the form. It should look like this.](../../images/guestbook-form-validation.png)
+![Figure 1: Leave the Add Entry input fields empty and attempt to submit the form. It should look like this.](../../../images/guestbook-form-validation.png)
 
 Good! You've implemented form validation using AUI's validator tag. Next, you'll
 learn how to limit the length of guestbook entry messages.
@@ -194,7 +194,7 @@ Entry* button to test out the guestbook entry form. Complete the form and check
 that your fancy new character counter displays the number of remaining
 characters for your message. Your form should look like the one below:
  
-![Figure 2: With your new character counter, your form should look like this one.](../../images/guestbook-char-counter.png)
+![Figure 2: With your new character counter, your form should look like this one.](../../../images/guestbook-char-counter.png)
 
 Excellent! Your front-end form validation is now complete! Next, you'll learn
 how to manipulate the DOM with AlloyUI.

@@ -13,5 +13,5 @@ This Learning Path instructs the reader in workflow-enabling the Guestbook
 App's `Guestbook` and `Entry` entities to ensure that only approved content is
 published after review.
 
-![Figure 1: Your custom entities can be workflow enabled, just like the core portal's entities.](../../images/test-workflow-1.png)
+![Figure 1: Your custom entities can be workflow enabled, just like the core portal's entities.](../../../images/test-workflow-1.png)
 

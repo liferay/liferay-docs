@@ -12,6 +12,6 @@ for updating guestbook entries, deleting entries, and setting permissions for
 entries, along with the user interface elements to trigger them. In this way,
 you'll give your users total control over their own guestbook entries. 
 
-![Figure 1: You'll add actions for managing guestbook entries in this learning path.](../../images/entity-actions.png)
+![Figure 1: You'll add actions for managing guestbook entries in this learning path.](../../../images/entity-actions.png)
 
 
