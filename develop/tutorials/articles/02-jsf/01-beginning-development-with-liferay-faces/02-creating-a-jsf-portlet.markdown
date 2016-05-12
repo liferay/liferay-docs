@@ -10,7 +10,7 @@ to creating a JSF application. Applications in Liferay Portal are called
    JSF Portlet. Select *Yes* to open a New Liferay Plugin Project wizard to
    create the JSF plugin project, first. The new plugin project wizard appears. 
 
-    ![Figure 1: Liferay IDE/Developer Studio's new plugin project wizard makes it very easy to create a portlet project.](../../images/lds-new-jsf-plugin-project.png)
+    ![Figure 1: Liferay IDE/Developer Studio's new plugin project wizard makes it very easy to create a portlet project.](../../../images/lds-new-jsf-plugin-project.png)
 
 2. Fill in the *Project name* and *Display name* as *guestbook-jsf-portlet* and
    *Guestbook*, respectively. 
@@ -43,7 +43,7 @@ to creating a JSF application. Applications in Liferay Portal are called
    you. For the guestbook portlet, you'll use the *Liferay Faces Alloy* UI
    component suite, so select that radio option and click *Finish*. 
 
-    ![Figure 2: The list of component suites includes the JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces.](../../images/jsf-ui-component-suite-wizard.png)
+    ![Figure 2: The list of component suites includes the JSF Standard suite, ICEfaces, Liferay Faces Alloy, PrimeFaces, and RichFaces.](../../../images/jsf-ui-component-suite-wizard.png)
 
 Your project can now be found in the Package Explorer on the left side of your
 development environment. You've just created a blank JSF Liferay project. Projects
@@ -78,7 +78,7 @@ So where is the bridge in our new guestbook portlet?
 In your Package Explorer, navigate to the *Ivy* library and you'll discover
 there are a list of JARs that are related to JSF, including the bridge JARs. 
 
-![Figure 3: Ivy downloads the required JARs for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../images/jsf-jars-package-explorer.png)
+![Figure 3: Ivy downloads the required JARs for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../../images/jsf-jars-package-explorer.png)
 
 When using a Plugins SDK to build a Liferay portlet,
 [Ivy](http://ant.apache.org/ivy/index.html) is used to download dependencies
@@ -98,7 +98,7 @@ Portal instance to see what it looks like.
 To deploy this portlet, simply drag the project from the Package Explorer onto
 your Liferay server. 
 
-![Figure 4: Drag and drop your project onto the Liferay server to deploy it.](../../images/deploy-jsf-portlet.png)
+![Figure 4: Drag and drop your project onto the Liferay server to deploy it.](../../../images/deploy-jsf-portlet.png)
 
 +$$$
 
@@ -121,7 +121,7 @@ sign) and choosing *Applications*. Then from the Sample category, drag the JSF
 Guestbook onto the page. The portlet display a simple message, which comes by
 default when creating a Liferay portlet through IDE/Developer Studio. 
 
-![Figure 5: The JSF Guestbook only displays a default message--for now.](../../images/jsf-guestbook-bare.png)
+![Figure 5: The JSF Guestbook only displays a default message--for now.](../../../images/jsf-guestbook-bare.png)
 
 +$$$
 

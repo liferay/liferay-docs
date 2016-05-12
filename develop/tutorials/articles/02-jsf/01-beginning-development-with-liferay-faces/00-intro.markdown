@@ -6,7 +6,7 @@ In particular, you'll develop a guestbook application which users can use to add
 messages to a page. When you're finished, the final guestbook application will
 look like this: 
 
-![Figure 1: The JSF guestbook can store and display entries for many different guestbooks.](../../images/final-jsf-guestbook.png)
+![Figure 1: The JSF guestbook can store and display entries for many different guestbooks.](../../../images/final-jsf-guestbook.png)
 
 You may be wondering how and why JSF is so easy to deploy to Liferay. Isn't JSF
 a separate technology? Liferay supports JSF applications with the use of

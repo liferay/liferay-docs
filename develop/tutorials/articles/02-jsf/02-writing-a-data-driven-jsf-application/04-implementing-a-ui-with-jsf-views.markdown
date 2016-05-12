@@ -144,14 +144,14 @@ created guestbooks and their entries.
 The final `master` view will appear in your guestbook portlet similar to the
 figure below: 
 
-![Figure 1: The `master` view provides the *Add Guestbook* and *Add Entry* buttons, allowing a user to navigate to the `guestbook` and `entry` views.](../../images/jsf-master-view.png)
+![Figure 1: The `master` view provides the *Add Guestbook* and *Add Entry* buttons, allowing a user to navigate to the `guestbook` and `entry` views.](../../../images/jsf-master-view.png)
 
 Follow the steps below to create the `master` view for your guestbook portlet. 
 
 1. Right-click on your guestbook's `docroot/views` folder and select *New*
    &rarr; *File*. Name the file `master.xhtml` and click *Finish*. 
 
-    ![Figure 2: Make sure to specify the full name and extension of the view and click *Finish*.](../../images/master-view-wizard.png)
+    ![Figure 2: Make sure to specify the full name and extension of the view and click *Finish*.](../../../images/master-view-wizard.png)
 
 2. Add the following XML version and `<f:view>...</f:view>` tags: 
 
@@ -304,7 +304,7 @@ The `guestbook` view will serve as the view that is displayed when a user clicks
 the *Add Guestbook* button. The final `guestbook` view will appear in your
 Guestbook portlet like the figure below: 
 
-![Figure 3: The `guestbook` view displays a Name field, a button to save the guestbook, and a button to cancel out of the view.](../../images/jsf-guestbook-view.png)
+![Figure 3: The `guestbook` view displays a Name field, a button to save the guestbook, and a button to cancel out of the view.](../../../images/jsf-guestbook-view.png)
 
 1. Right-click on your guestbook portlet's `docroot/views` folder and select
    *New* &rarr; *File*. Give it the name `guestbook.xhtml` and click *Finish*. 
@@ -391,7 +391,7 @@ Now that you can add guestbooks, it's time to create the view that allows users
 to create guestbook entries. The `entry` view will display when clicking on the
 *Add Entry* button. 
 
-![Figure 4: The `entry` view displays three text fields, a button to save the entry, and a button to cancel out of the view.](../../images/entry-view.png)
+![Figure 4: The `entry` view displays three text fields, a button to save the entry, and a button to cancel out of the view.](../../../images/entry-view.png)
 
 1. Right-click on your guestbook portlet's `docroot/views` folder and select
    *New* &rarr; *File*. Give it the name `entry.xhtml` and click *Finish*. 
@@ -477,7 +477,7 @@ to create guestbook entries. The `entry` view will display when clicking on the
     database, safeguarding against malicious content, or even syntactically
     incorrect text like the guestbook's Email field. 
 
-    ![Figure 5: With the insertion of an angle bracket, rather than a period, the guestbook portlet immediately displays an error message.](../../images/email-validation-jsf.png)
+    ![Figure 5: With the insertion of an angle bracket, rather than a period, the guestbook portlet immediately displays an error message.](../../../images/email-validation-jsf.png)
 
 5. Create your `entry` view's buttons by adding the following code below the
    `</aui:fieldset>` tag: 

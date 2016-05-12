@@ -104,7 +104,7 @@ next.
     This method generates the permissions URL used when clicking the entry
     entity's Permissions button. 
 
-    ![Figure 1: The permissions URL generates the Permissions menu for the guestbook.](../../images/jsf-permissions-url.png)
+    ![Figure 1: The permissions URL generates the Permissions menu for the guestbook.](../../../images/jsf-permissions-url.png)
 
     In summary, this method grabs the underlying `HttpServletRequest`,
     `HttpServletResponse`, and `ELContext` to create a

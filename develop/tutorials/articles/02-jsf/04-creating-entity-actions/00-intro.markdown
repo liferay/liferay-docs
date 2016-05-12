@@ -11,7 +11,7 @@ set permissions for entries, and delete entries. You'll use many of the same
 concepts you've already been introduced to, like adding action methods to a
 managed bean and adding buttons that trigger those methods using a JSF view. 
 
-![Figure 1: In this learning path, you'll add the *Edit*, *Permissions*, and *Delete* buttons for your *Entry* entities.](../../images/edit-permissions-delete.png)
+![Figure 1: In this learning path, you'll add the *Edit*, *Permissions*, and *Delete* buttons for your *Entry* entities.](../../../images/edit-permissions-delete.png)
 
 In this learning path, you'll only create entity actions for your guestbook
 entries. The same will be done for your guestbooks, but will be completed later
