@@ -9,7 +9,7 @@ steps.
     in the last section of the Learning Path. You can refer to this diagram 
     again for reference:
     
-    ![Figure 1: The HTML is broken up into sections.](../../images/html-diagram.png)
+    ![Figure 1: The HTML is broken up into sections.](../../../images/html-diagram.png)
 
     It's a good practice to add a roadmap to your CSS file before you start, to
     keep things organized as you go along.

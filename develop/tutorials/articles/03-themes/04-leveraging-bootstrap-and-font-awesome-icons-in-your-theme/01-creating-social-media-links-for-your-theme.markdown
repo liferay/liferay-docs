@@ -51,12 +51,12 @@ choices for each brand icon:
     a whole, but does not give you control over the position or styling of the 
     logo itself.
 
-    ![Figure 1: Font Awesome brand icons can have the logo made up of empty pixels.](../../images/font-awesome-icon-01.png)
+    ![Figure 1: Font Awesome brand icons can have the logo made up of empty pixels.](../../../images/font-awesome-icon-01.png)
  
 2.  One set of icons where the brand logo does not have a border. This allows you 
     to position and style the logo and create the border yourself.
 
-    ![Figure 2: Font Awesome brand icons also offer logos without borders.](../../images/font-awesome-icon-02.png)
+    ![Figure 2: Font Awesome brand icons also offer logos without borders.](../../../images/font-awesome-icon-02.png)
 
 For the purposes of the social media links, you need control over the background 
 color and the logo's position. If you look at the

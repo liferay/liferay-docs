@@ -16,7 +16,7 @@ select the proper Plugins SDK and matching Liferay runtime.
 4. Leave the *Theme parent* and *Theme framework* as *_styled* and *Freemarker* 
 and click *Finish*.
 
-![Figure 1: The Project Wizard makes it easy to build a theme.](../../images/theme-creation-01.png)
+![Figure 1: The Project Wizard makes it easy to build a theme.](../../../images/theme-creation-01.png)
 
 +$$$
 

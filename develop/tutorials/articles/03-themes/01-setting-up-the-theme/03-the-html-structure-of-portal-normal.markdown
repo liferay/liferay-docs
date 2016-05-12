@@ -6,7 +6,7 @@ Liferay site are rendered.
 Look at the figure below to see what the finished HTML structure will look 
 like:
 
-![Figure 1: The HTML is broken up into sections.](../../images/html-diagram.png)
+![Figure 1: The HTML is broken up into sections.](../../../images/html-diagram.png)
 
 The HTML structure is broken up into three main sections: Banner, Content, and
 Footer. The Banner contains the logo for the site, its name, the page title, and 

@@ -42,7 +42,7 @@ for the Resources Importer.
 
 Your theme should look like the image below:
 
-![Figure 1: The Resources Importer adds pages and content to your site.](../../images/resources-importer-fin-theme.png)
+![Figure 1: The Resources Importer adds pages and content to your site.](../../../images/resources-importer-fin-theme.png)
 
 Now that your theme has these initial pages and content, you can disable the
 Resources Importer. If you don't do this, the pages, web content, and documents 

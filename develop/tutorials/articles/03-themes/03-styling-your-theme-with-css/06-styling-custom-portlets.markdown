@@ -17,7 +17,7 @@ know the existing classes to override.
 4.  At the top of the section you'll see a box highlighted in blue that reads
     *Your current portlet information is as follows*
 
-    ![Figure 1: You can view a custom portlet's class in the *Look and Feel* configuration menu.](../../images/current-portlet-info.png)
+    ![Figure 1: You can view a custom portlet's class in the *Look and Feel* configuration menu.](../../../images/current-portlet-info.png)
 
 Now you can see that the class for the Guestbook portlet is
 `.guestbook-portlet`. It follows an easy pattern: `.project-name`. You could
@@ -87,7 +87,7 @@ Some additional styling has been added for the Guestbook portlet's title and
 search bar using the classes found in the browser's inspector. With the updates
 to the styling, the Guestbook portlet should look similar to the figure below:
 
-![Figure 2: The Guestbook portlet's styles now complement the theme.](../../images/guestbook-portlet-fin.png)
+![Figure 2: The Guestbook portlet's styles now complement the theme.](../../../images/guestbook-portlet-fin.png)
 
 In the next section you'll learn how you can use Bootstrap markup and styles to
 give your theme's UI a consistent look.

@@ -157,7 +157,7 @@ the theme next.
 You'll now see your new theme is in place. It should look similar to the figure 
 below:
 
-![Figure 1: Liferay's *_styled* base theme is a good starting point.](../../images/theme-creation-02.png)
+![Figure 1: Liferay's *_styled* base theme is a good starting point.](../../../images/theme-creation-02.png)
 
 The theme appears broken at the moment, but this is to be expected. In the 
 sections that follow, you'll fix this. This shows you the starting point the 

@@ -88,6 +88,6 @@ content a little breathing room.
 
 Your theme should look similar to the figure below:
 
-![Figure 1: The content is clearer to read now that the there is some padding.](../../images/css-content.png)
+![Figure 1: The content is clearer to read now that the there is some padding.](../../../images/css-content.png)
 
 Three down and one to go! You can move on to the Footer's styling next.

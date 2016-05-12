@@ -368,6 +368,6 @@ tablet in one mixin.
 The `@include respond-to(phone)` mixin is then used to wrap the remaining styles
 that are unique to the phone only.
 
-![Figure 1: With the updates to the CSS, the theme now responds well to the Smartphone.](../../images/phone-preview-04.png)
+![Figure 1: With the updates to the CSS, the theme now responds well to the Smartphone.](../../../images/phone-preview-04.png)
 
 Congratulations! Your theme is now responsive. 

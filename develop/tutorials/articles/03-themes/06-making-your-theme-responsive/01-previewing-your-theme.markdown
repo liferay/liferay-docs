@@ -5,7 +5,7 @@ to see how the theme responds with the existing CSS styles. Locate the Dockbar
 icons on the left side of the screen. Underneath the plus icon, you'll see a 
 screen icon: this is the *Preview button*.
 
-![Figure 1: You can open the *Preview menu* to preview your portal in other devices](../../images/preview-button.png)
+![Figure 1: You can open the *Preview menu* to preview your portal in other devices](../../../images/preview-button.png)
 
 Click the *Preview button* to bring up the *Preview window*. Make sure you have
 the page scrolled all the way to the top before clicking the Preview button.
@@ -33,7 +33,7 @@ just keep it in mind.
     not very tablet friendly, so you need to change it. Finally, while the logo 
     looks okay, it could be scaled down some. 
 
-    ![Figure 2: You can identify the elements that need modified in tablet view using the Preview window.](../../images/tablet-preview-01.png)
+    ![Figure 2: You can identify the elements that need modified in tablet view using the Preview window.](../../../images/tablet-preview-01.png)
 
     As a best practice, you should also see how the theme responds in landscape 
     view. 
@@ -58,7 +58,7 @@ in this view.
 Everything else seems to be responding well. Switching to landscape view 
 confirms the same. 
 
-![Figure 3: Viewing the theme in the phone's landscape and portrait views clearly shows the areas that need modifed.](../../images/phone-preview-03.png)
+![Figure 3: Viewing the theme in the phone's landscape and portrait views clearly shows the areas that need modifed.](../../../images/phone-preview-03.png)
 
 Now that you have identified the elements needing modification for
 responsiveness, you can move on to the next section.

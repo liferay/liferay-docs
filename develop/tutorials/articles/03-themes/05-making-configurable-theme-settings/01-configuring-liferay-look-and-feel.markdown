@@ -45,7 +45,7 @@ need to add the theme settings to `liferay-look-and-feel.xml`.
 5.  Select the *Settings* drop-down panel. The theme settings you just 
     configured are now available.
 
-![Figure 1: The *Settings* panel allows you to set theme settings for the entire site.](../../images/settings-panel.png)
+![Figure 1: The *Settings* panel allows you to set theme settings for the entire site.](../../../images/settings-panel.png)
 
 The steps you've completed so far have added the custom theme settings to the 
 *Look and Feel* menu for the theme. In order to make them actually work, you'll

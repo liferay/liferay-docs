@@ -121,6 +121,6 @@ items have been given a blue background when active and on hover. At the moment,
 the links in the `Activities` drop-down are hidden by the carousel. This will be 
 fixed in the next section. Your theme should now look like the following figure:
 
-![Figure 1: The updated navigation bar brings the banner together and completes the header.](../../images/css-banner.png)
+![Figure 1: The updated navigation bar brings the banner together and completes the header.](../../../images/css-banner.png)
 
 The Banner is now styled! You can move on to the Content `<div>` styling next.

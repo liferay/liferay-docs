@@ -39,7 +39,7 @@ the dimensions and background for the theme.
     
     Your theme should look like the following figure:
     
-    ![Figure 1: The theme is starting to take shape.](../../images/css-wrapper.png)
+    ![Figure 1: The theme is starting to take shape.](../../../images/css-wrapper.png)
     
     Now that the Wrapper for the content is styled, you can move on to the
     Banner next.
