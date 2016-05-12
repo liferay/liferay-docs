@@ -3,17 +3,14 @@
 The easiest way to get Liferay running on tc Server is to [download a bundle](https://web.liferay.com/group/customer/downloads/portal/product). If
 that's not an option, you can install Liferay onto tc Server. In addition to a
 supported version of [tc Server](https://network.pivotal.io/products/pivotal-tcserver) (version 3 or
-higher), make sure you have acquired
+higher), make sure you have acquired the following (from [Liferay's customer portal](https://web.liferay.com/group/customer/downloads/portal/product))
 
--  A Liferay WAR file, which you can get from 
+-  A Liferay WAR file
 
--  The OSGi JARs that contain much of Liferay's functionality (use the link
-   above)
+-  A compressed file with The OSGi JARs that contain much of Liferay's functionality
 
--  The necessary Liferay dependencies and additional libraries you need for your
-   installation
-
-All of these files can be obtained from [Liferay's Customer Portal](https://web.liferay.com/group/customer/downloads/portal/product).
+-  A compressed file with the necessary Liferay dependencies and additional
+   libraries you need for your installation
 
 Once you have those pieces of the puzzle, you just need to assemble them.
 
@@ -98,9 +95,6 @@ Liferay includes an OSGi runtime. Extract the OSGi ZIP file that you downloaded
 and copy the `osgi` folder to your Liferay Home folder. The `osgi` folder
 contains many required JAR files and a few configuration files.
 
-<!-- Above step should be replaced by downloading only OSGi JAR ZIP, when
-available -->
-
 ## Configuring tc Server
 
 There are a few configuration edits to make so Liferay runs well on tc Server.
@@ -171,7 +165,8 @@ If you want tc Server to manage your data source, use this procedure:
    on a different machine, make sure it's accessible from your Liferay machine.
 
 2. Add your data source as a resource in the context of your web application
-   specified in `/conf/Catalina/localhost/ROOT.xml`:
+specified in `/conf/Catalina/localhost/ROOT.xml` (create this file if you don't
+have it already):
 
         <Resource
             name="jdbc/LiferayPool"
@@ -242,14 +237,13 @@ to the `portal-ext.properties` file in your *Liferay Home*.
 
         mail.session.jndi.name=mail/MailSession
 
-<!-- Before you deploy Liferay, consider enabling Portal Access Control Lists.
--->
-<!--
+Before you deploy Liferay, you should configure a Portal Access Control List
+(PACL).
+
 ## Enabling PACL
 
 To enable PACL, you need to enable Tomcat’s security manager. Make sure
-`$TCSERVER_INSTANCE_HOME/conf/catalina.policy` specifies the required
-permissions:
+`$TCSERVER_INSTANCE_HOME/conf/catalina.policy` specifies the permissions
 
     grant {
         permission java.security.AllPermission;
@@ -259,19 +253,10 @@ Open `$TCSERVER_INSTANCE_HOME/bin/setenv.sh` if on Linux, Unix, or Mac OS, or
 `setenv.bat` if on Windows. Enable the security manager by inserting the
 following code into the `CATALINA_OPTS` variable (inside quotation marks):
 
-    -Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy
-
-
-To enable the security manager on tc Server, the server must be started with the
-*-security* command line option. Shut down your Tomcat instance and then restart
-it with the following command:
-
-    ./startup.sh -security
-
-Tomcat reports the message *Using Security Manager* to your terminal.
+    -Djava.security.manager -Djava.security.policy==$CATALINA_BASE/conf/catalina.policy
 
 Now you have PACL enabled and configured for your portal.
--->
+
 ## Deploying Liferay
 
 Now you're ready to deploy Liferay using your Liferay WAR file.
