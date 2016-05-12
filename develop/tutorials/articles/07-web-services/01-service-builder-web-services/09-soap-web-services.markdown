@@ -43,8 +43,8 @@ services specified in the Web Services Definition Language (WSDL) file for each
 service. The `-Soap` classes are the serializable implementations of the models. 
 
 So how do you determine the URLs for these services? This is a most excellent 
-question! You can see a list of the services deployed on your portal by opening 
-your browser to the following URL: 
+question! You can see a list of the services deployed on your Liferay instance 
+by opening your browser to the following URL: 
 
     http://[host]:[port]/api/axis
 
@@ -96,7 +96,7 @@ you'll do this by setting up a Java web services client in Eclipse. You can use
 Eclipse's Web Service Client wizard to either create a new web service client 
 project or add a client to an existing project. You must add a new web service 
 client to your project for each service that you want to consume in your client 
-code. For this example, you'll build a web service client to invoke the portal's 
+code. For this example, you'll build a web service client to invoke Liferay's 
 `Company`, `User`, and `UserGroup` services. 
 
 To create a new web service client project in Eclipse, click *File* &rarr;

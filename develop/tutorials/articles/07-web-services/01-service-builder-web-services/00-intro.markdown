@@ -39,9 +39,9 @@ section includes the following tutorials:
   See examples of how to invoke Liferay's JSON web services via JavaScript, URL, 
   and cURL. 
 
-- [Portal Configuration of JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services):
-  Learn which portal properties you can use to control how JSON web services 
-  behave in your Liferay instance. 
+- [Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services):
+  Learn which properties you can use to control how JSON web services behave in 
+  your Liferay instance. 
 
 - [SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services):
   Learn how SOAP web services work in Liferay. 

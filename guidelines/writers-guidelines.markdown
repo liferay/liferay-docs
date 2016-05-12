@@ -284,16 +284,27 @@ dashes (-) to replace spaces in multi-word file names.
 ## Capitalization 
 
 Platform: Always platform
+
 Configuration: Always Configuration
+
 Site: Always Site
+
 Site Administration: Always Site Administration
+
 Personal Site: Always Personal Site
+
 Role: Always Role
+
 User: Always User
+
 User Group: Always User Group
+
 Organization: Always Organization
+
 Control Menu: Always Control Menu
+
 Navigation: Always Navigation
+
 Account Settings: Always Account Settings
 
 ## Common Documentation and Phraseology Issues 

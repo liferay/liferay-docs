@@ -1,13 +1,13 @@
 # Building a site with Liferay Web Experience [](id=building-a-site-with-liferay-web-experience)
 
-When you log into Liferay and look at its default screen, one thing to notice is
+When you log into @product@ and look at its default screen, one thing to notice is
 that it's built for all clients that access the web, not just desktop browsers. 
 
 ![Figure 1.1: If you click this button, a preview appears that lets you see how the page would look when displayed at various device resolutions.](../../images/01-simulate.png)
 
 Another thing to notice is that all the page controls are right there for you.
 For example, to add content or applications to the page, click the *+* button,
-and then you can add any kind of content Liferay supports. The interface has
+and then you can add any kind of content @product@ supports. The interface has
 been designed to get out of your way and let you do your work. 
 
 Liferay Web Experience Management scales to work for the tiniest of sites all
@@ -22,13 +22,13 @@ approval process.
 
 That's powerful. 
 
-By default, Liferay Portal starts with a single site that has a single page. You
+By default, @product@ starts with a single site that has a single page. You
 can build any website you wish out of this, complete with multi-nested page
 hierarchies, as the figure below shows. 
 
 ![Figure 1.2: Liferay's page hierarchies are easy to create, using a tree structure that's familiar to anyone who has used a file manager.](../../images/01-page-hierarchy.png)
 
-These pages can have any layout you like: Liferay Portal ships with several
+These pages can have any layout you like: @product@ ships with several
 built-in, and you can create your own custom layouts and deploy them easily.
 Pages can be added, removed, or reordered any time, and you have the full
 flexibility of all the HTML page attributes, such as meta tags and robot file
@@ -47,7 +47,7 @@ made up of multiple, predefined pages.
 
 There's even more. If you have a very large site, you might need multiple people
 to work on it. And you certainly don't want the live site changing before your
-users' eyes. For that reason, Liferay Portal provides a feature called
+users' eyes. For that reason, @product@ provides a feature called
 *staging* that lets you place your changes in a holding area while they're
 being worked on. You can have a local staging server, where the staged site
 resides on the same server as the live site, or you can have a remote staging
@@ -57,7 +57,7 @@ site, either manually or on a schedule.
 
 ![Figure 1.3: Staging supports publishing manually or on a schedule.](../../images/web-content-staging-publish.png)
 
-Liferay Portal's web content creation tools are easy and intuitive to use at all
+@product@'s web content creation tools are easy and intuitive to use at all
 levels. If you need only basic content management capabilities for your site,
 you can jump right in. You can add new content from the Add menu and drag it
 right into place. It's easy to go from this basic level of content management to
@@ -99,13 +99,13 @@ content is published and when it should be taken down (or reviewed), define
 related assets, and more. 
 
 This is just the web content portion of Liferay's content management system.
-Liferay Portal is also great at managing file-based content. 
+@product@ is also great at managing file-based content. 
 
 ## Keeping track of documents, images, video, and more [](id=keeping-track-of-documents-images-video-and-more)
 
 It's rare to find a full-featured content management system in an open source
 project. Most of the time, you'll find web content management systems and
-file-based content management systems as separate projects. Liferay Portal,
+file-based content management systems as separate projects. @product@,
 however, provides you with both. As shown above, the web content management
 system is as robust as any other you'll find, and its file-based content
 management system is the same. 
@@ -116,7 +116,7 @@ Administration page or can be added to any page, and, as shown below, looks very
 much like the file manager that you're already familiar with from your operating
 system. 
 
-![Figure 1.5: Liferay Portal's Documents and Media library was purposefully designed to be familiar to anyone who uses a computer.](../../images/01-docs-and-media.png)
+![Figure 1.5: @product@'s Documents and Media library was purposefully designed to be familiar to anyone who uses a computer.](../../images/01-docs-and-media.png)
 
 Like a file manager, you can browse files and folders in nested hierarchies. You
 can also mount other repositories that you might have in your environment, such
@@ -128,7 +128,7 @@ Of course, if you still want to use your operating system's file manager, you
 can, because Liferay's Documents and Media library supports WebDAV, using the
 same credentials you use to log in to Liferay. 
 
-Liferay Portal's Documents and Media library, however, is much more robust than
+@product@'s Documents and Media library, however, is much more robust than
 a file manager is, because it's a full content management system. You can define
 ways of classifying files that may be of different types, but are meant for the
 same, overarching purpose. 
@@ -158,8 +158,8 @@ added to folders to run files through an approval process that you define. In
 short, Liferay's file-based content management system gives you all the features
 you need to manage and share files in a group. 
 
-Many Liferay Portal users see it as a robust content management system, and they
+Many @product@ users see it as a robust content management system, and they
 use it primarily for that purpose. Now, hopefully, you can see why. We'll cover
 the system in-depth in the relevant section on the left, but for now we need to
-look at some of the other ways you can use Liferay Portal, starting with its
+look at some of the other ways you can use @product@, starting with its
 fantastic collaborative tools. 

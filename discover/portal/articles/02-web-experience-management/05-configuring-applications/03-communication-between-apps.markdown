@@ -1,6 +1,6 @@
 # Communication Between Apps [](id=communication-between-apps)
 
-Liferay implements several communication mechanisms across apps including
+@product@ implements several communication mechanisms across apps including
 those specified by the JSR-286 standard: public render parameters and events.
 Public render parameters are easy to use and can be quite powerful. Some
 Liferay apps provide a configuration UI to help you get the most out of

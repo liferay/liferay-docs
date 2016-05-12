@@ -24,7 +24,7 @@ Scoping by site means that you can only have one Message Boards app per site. If
 you add one Message Boards app to a page in a site and add another Message
 Boards app to a different page in the same site, the second Message Boards app
 contains exactly the same data as the first. This is because, by default, the
-Message Boards app is scoped by site. Most of Liferay's other apps also default
+Message Boards app is scoped by site. Most of @product@'s other apps also default
 to being scoped by site.
 
 To avoid this limitation, many Liferay apps can be scoped by page. In this case,

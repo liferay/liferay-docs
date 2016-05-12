@@ -6,7 +6,7 @@ However, staging the house with some furniture and decorations helps prospective
 buyers imagine what the house might look like with their belongings. Liferay's
 [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) 
 module is a tool that allows a theme developer to have files and web content 
-automatically imported into the platform when a theme is deployed. Usually, the 
+automatically imported into @product@ when a theme is deployed. Usually, the 
 resources are imported into a site template but they can also be imported 
 directly into a site. Liferay Administrators can use the site or site template 
 created by the resources importer to showcase the theme. This is a great way for 
@@ -14,9 +14,9 @@ theme developers to provide a sample context that optimizes the design of their
 theme. In fact, all standalone themes that are uploaded to Liferay Marketplace 
 must use the resources importer. This ensures a uniform experience for 
 Marketplace users: a user can download a theme from Marketplace, install it on 
-their platform, go to Sites or Site Templates in the Control Panel and 
-immediately see their new theme in action. In this tutorial, we explain how to 
-include resources with your theme.
+@product@, go to Sites or Site Templates in the Control Panel and immediately 
+see their new theme in action. In this tutorial, we explain how to include 
+resources with your theme.
 
 +$$$
 

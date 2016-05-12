@@ -21,7 +21,7 @@ accounts) are removed. All of the account information is kept with the OpenID
 provider, making it much easier to manage this information and keep it up to
 date.
 
-Liferay Portal can act as an OpenID consumer, allowing users to automatically
+@product@ can act as an OpenID consumer, allowing users to automatically
 register and sign in with their OpenID accounts. Internally, the product uses
 [OpenID4Java](https://github.com/jbufu/openid4java) to implement the feature.
 

@@ -20,11 +20,11 @@ using a Web Services Description Language (WSDL) document.
 presents it to the user in a portlet window. 
 
 Below, you'll see how the components interact with each other. So without
-further ado, let's explore WSRP in Liferay!
+further ado, let's explore WSRP in @product@!
 
 ## WSRP with Liferay [](id=wsrp-with-liferay)
 
-Liferay provides a deployable WSRP portlet that supports the 1.0 and 2.0
+@product@ provides a deployable WSRP portlet that supports the 1.0 and 2.0
 specifications. The portlet is available from Liferay Marketplace as a CE or EE
 app. Once you've downloaded and installed the WSRP app, you have instant access
 to the portlet by navigating to the Control Panel and, under *Apps*, selecting
@@ -32,7 +32,7 @@ to the portlet by navigating to the Control Panel and, under *Apps*, selecting
 
 ![Figure 1: Once deployed, you can find the WSRP Admin portlet in the Control Panel.](../../images/wsrp-admin-control-panel.png)
 
-Liferay Portal can be used as a WSRP producer or consumer. As a producer, it
+@product@ can be used as a WSRP producer or consumer. As a producer, it
 hosts portlets that are consumed by other portal servers (Liferay or
 non-Liferay) acting as WSRP consumers. The image below illustrates WSRP
 producers and consumers and how they interact.
@@ -65,13 +65,13 @@ receiving feedback from the consumer portlet itself, but rather its producer
 portlet located remotely.
 
 Now that you know a little bit about the WSRP process, let's begin configuring
-WSRP on Liferay Portal. For this demonstration, you'll assume you have two 
+WSRP on @product@. For this demonstration, you'll assume you have two 
 portal servers.
 
 +$$$
 
 **Tip**: If you're following along with this example and don't have an 
-additional portal server, you can download another instance of Liferay Portal 
+additional portal server, you can download another instance of @product@
 and have it running at the same time as your current Liferay instance to 
 simulate an additional portal server. Remember, typical use cases have WSRP 
 producers and consumers linked on differing portal servers. To run two portal 
@@ -124,7 +124,7 @@ Next, you'll learn how to create custom remote portlets.
 ## Creating Custom Remote Portlets [](id=creating-custom-remote-portlets)
 
 With the demand for dynamic portlets by end users, sometimes a finite,
-pre-selected list of remote portlets isn't enough. Because of this, Liferay
+pre-selected list of remote portlets isn't enough. Because of this, @product@
 allows you to make custom developed portlets remotely accessible for WSRP.
 
 To enable your custom portlet for WSRP, you'll need to add the

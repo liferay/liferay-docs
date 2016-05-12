@@ -5,7 +5,10 @@ create your own custom templates.
 
 This tutorial assumes you've already created your layout template project. For 
 example, execute `./create.sh hello-world "Hello World"` from the `layouttpl` 
-folder of the Plugins SDK.
+folder of the Plugins SDK. For detailed steps on how to create your layout
+template, checkout the [Creating a Layout Template in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk) 
+tutorial. If you would like to know more about the Plugins SDK itself, checkout 
+the [Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk) tutorial.
 
 This tutorial demonstrates how to:
 
@@ -188,7 +191,7 @@ portlet.
 folder with your own custom thumbnail PNG.
 
 Believe it or not, you've just created a layout template! You can deploy it to 
-your platform and apply it to your pages. 
+your server and apply it to your pages.
 
 If you want to see more examples of layout templates, look at the
 source of Liferay's layout templates available in the

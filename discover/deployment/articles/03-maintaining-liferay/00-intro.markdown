@@ -1,6 +1,6 @@
 # Maintaining Liferay [](id=maintaining-liferay)
 
-In this section, you'll about how to maintain a Liferay installation. You'll
+In this section, you'll about how to maintain a @product@ installation. You'll
 learn how to back up a Liferay installation, how to patch a Liferay
 installation, and how to upgrade Liferay. It's generally not much more
 complicated to maintain a running Liferay installation than it is to maintain

@@ -30,11 +30,12 @@ documents.
 
 +$$$
 
-**Note:** The `portal.properties` file resides on the portal host machine and is
-controlled by the portal administrator. Portal administrators can configure
-security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring
-Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV
-Servlet. The `portal.properties` file (online version is available at
+**Note:** The `portal.properties` file resides on the Liferay instance's host 
+machine and is controlled by the instance administrator. Instance administrators 
+can configure security settings for the Axis Servlet, the Liferay Tunnel 
+Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service 
+Servlet, and the WebDAV Servlet. The `portal.properties` file (online version is 
+available at 
 [http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html))
 describes these properties. 
 
@@ -50,18 +51,18 @@ the credentials are invalid, the web service invocation is aborted. Otherwise,
 processing enters Liferay's user permission layer. 
 
 Liferay's user permission layer is the last Liferay security layer triggered
-when services are invoked remotely. It's used for every object in the portal,
-regardless of whether a local or remote service is involved. The user ID 
-associated with a web service invocation must possess the proper permission 
+when services are invoked remotely. It's used for every object in the Liferay 
+instance, regardless of whether a local or remote service is involved. The user 
+ID associated with a web service invocation must possess the proper permission 
 to operate on the objects it's trying to access. A remote exception is thrown if
-the user ID doesn't possess the required permissions. A portal administrator
+the user ID doesn't possess the required permissions. An instance administrator
 can grant users access to these resources. For example, suppose you created a
 Documents and Media Library folder called *Documents* in a site, created a role
 called *Document Uploaders*, and granted this role the rights to add documents
 to your new folder. If your batch job accesses Liferay's web services to upload
 documents into the folder, you must call the web service using a user ID of a
 member of this role (or using the user ID of a user with individual rights to
-add documents to this folder, such as a portal administrator). If you don't,
+add documents to this folder, such as an instance administrator). If you don't,
 Liferay denies you access to the web service. 
 
 When invoking remote Liferay services from a non-browser client, you can specify
@@ -77,8 +78,9 @@ credentials in the URL--this is very handy for testing.
 
 **Important:** To invoke a Liferay web service via your browser, you must be
 logged in to Liferay. You must also supply an authentication token (the `p_auth`
-parameter). If you navigate to your portal's JSON web services API page
-([localhost:8080/api/jsonws](localhost:8080/api/jsonws), by default) and click
+parameter). If you navigate to your Liferay instance's JSON web services API 
+page (
+[localhost:8080/api/jsonws](localhost:8080/api/jsonws), by default) and click
 on a remote service method, you'll see the `p_auth` token for your browser
 session. This token is automatically supplied when you invoke a Liferay web
 service via the JSON web services API page or via JavaScript using
@@ -92,11 +94,11 @@ Use the following syntax to call the Axis web service using credentials.
     [port]/api/axis/" + serviceName
 
 The `emailAddressOrScreenNameOrUserIdAsString` should be the user's email
-address, screen name, or user ID. The portal's authentication type setting
-determines which one to use. A user can find his or her ID by logging in as the
-user and accessing *My Account* &rarr; *Account Settings* from the User Menu. 
-On this interface, the user ID appears below the user's profile picture and 
-above the birthday field. 
+address, screen name, or user ID. The Liferay instance's authentication type 
+setting determines which one to use. A user can find his or her ID by logging in 
+as the user and accessing *My Account* &rarr; *Account Settings* from the User 
+Menu. On this interface, the user ID appears below the user's profile picture 
+and above the birthday field. 
 
 Suppose that your Liferay instance is set to authenticate by user ID, and that 
 there's a user with an ID of `2` and a password of `test`. You can access 
@@ -147,7 +149,7 @@ layers of security checks:
 - *IP permission layer*: The IP address must be pre-configured in the server's
   portal properties. 
 - *Authentication/verification layer (web services only)*: Liferay verifies that
-  the caller's authorization token can be associated with a portal user.  
+  the caller's authorization token can be associated with an instance user.  
 - *User permission layer*: The user needs permission to access the related
   resources. 
 
@@ -157,7 +159,7 @@ have been configured to allow access.
 
 **Related Topics**
 
-[Portal Configuration of JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services)
+[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services)
 
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)
 
