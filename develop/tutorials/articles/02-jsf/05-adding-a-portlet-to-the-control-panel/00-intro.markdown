@@ -13,7 +13,7 @@ a new portlet in your portlet project that can be accessed through the Control
 Panel. This will be used by administrators to add, delete, modify, and control
 permissions of guestbooks that are displayed in your JSF Guestbook portlet. 
 
-![Figure 1: In this learning path, you'll migrate your administrative guestbook functionalities to a new Guestbook Admin portlet.](../../images/guestbook-admin.png)
+![Figure 1: In this learning path, you'll migrate your administrative guestbook functionalities to a new Guestbook Admin portlet.](../../images/guestbook-admin-jsf.png)
 
 After this learning path, adding, editing, deleting, and controlling permissions
 of guestbook entities will all be available exclusively from the new Guestbook

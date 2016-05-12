@@ -5,7 +5,7 @@ left to do is create the portlet's user interface. The default view should have
 a button for adding new guestbooks, and it should also display a list of the
 guestbooks that have been added to the site. 
 
-![Figure 1: The Guestbook Admin's UI will contain buttons to add, edit, delete, and control permissions of guestbook entities.](../../images/guestbook-admin.png)
+![Figure 1: The Guestbook Admin's UI will contain buttons to add, edit, delete, and control permissions of guestbook entities.](../../images/guestbook-admin-jsf.png)
 
 Each guestbook should also be accompanied with the action buttons Edit, Delete,
 and Permissions. You'll begin by creating the buttons, then you'll check for
