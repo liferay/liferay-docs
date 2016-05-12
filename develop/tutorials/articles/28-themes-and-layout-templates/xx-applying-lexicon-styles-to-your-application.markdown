@@ -6,10 +6,11 @@ built-in apps achieve this by using the
 Lexicon is optimized to provide you with a consistent, user-friendly UI for your 
 Liferay apps. 
 
-Liferay's default themes, Admin and Classic, include an implementation of the 
-Lexicon Experience Language. Also, Lexicon's base styles are provided in the 
-`aui.scss` file of the `_styled` base theme. This means that you can use Lexicon 
-markup and components in your custom Liferay apps. 
+The Lexicon Experience Language is included in all themes based on the `_styled`
+base theme. The `_styled` base theme uses Bootstrap with a Lexicon base, giving 
+you access to all components documented on the [Lexicon](lexicon site url) site.
+This means that you can use Lexicon markup and components in your custom Liferay 
+apps. 
 
 This tutorial shows you how to:
 
