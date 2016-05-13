@@ -8,7 +8,7 @@ Liferay apps.
 
 The Lexicon Experience Language is included in all themes based on the `_styled`
 base theme. The `_styled` base theme uses Bootstrap with a Lexicon base, giving
-you access to all the components documented on the [Lexicon](lexicon site url)
+you access to all the components documented on the [Lexicon](http://liferay.github.io/lexicon/)
 site. This means that you can use Lexicon markup and components in your custom
 Liferay apps.
 
@@ -42,16 +42,16 @@ For an example of how this is implemented, take a look at the Blogs Admin
 application's [`edit_entry.jsp`](https://github.com/liferay/liferay-portal/blob/b74496b5c450c134957347e7ebabd25dec1c763d/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp)
 :
 
-portletDisplay.setShowBackIcon(true);
-portletDisplay.setURLBack(redirect);
-
-renderResponse.setTitle((entry != null) ? entry.getTitle() : 
-LanguageUtil.get(request, "new-blog-entry"));
+    portletDisplay.setShowBackIcon(true);
+    portletDisplay.setURLBack(redirect);
+    
+    renderResponse.setTitle((entry != null) ? entry.getTitle() : 
+    LanguageUtil.get(request, "new-blog-entry"));
 
 If you open the Blogs Admin application in the control panel and add a new
 blog entry, you'll see this behaviour in action:
 
-![Figure X: Adding a new blog entry displays the portlet title at the top, along with a back link.](../../images/new-blog-entry-title.png)
+![Figure 1: Adding a new blog entry displays the portlet title at the top, along with a back link.](../../images/new-blog-entry-title.png)
 
 Now that you know how to configure your app's title and back URL, you'll
 learn how to leverage Liferay's taglibs in your app next.
@@ -72,7 +72,7 @@ pattern gives you a clean, minimal UI for such a button. You can use it in any
 of your app's screens. The add button pattern consists of an `add-menu` tag and
 at least one `add-menu-item` tag.
 
-![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../images/add-button-diagram.png)
+![Figure 2: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../images/add-button-diagram.png)
 
 If there's only one item, the plus icon acts as a button that triggers the item.
 If there's more than one item, clicking the plus icon displays a menu containing
@@ -144,7 +144,7 @@ grid, or display only a specific type of content. You can also customize your
 app's Management Bar. The Management Bar in Liferay's Message Boards Admin
 application is shown here:
 
-![Figure 2: The Management Bar lets the user customize how the app displays content.](../../images/message-boards-management-bar.png)
+![Figure 3: The Management Bar lets the user customize how the app displays content.](../../images/message-boards-management-bar.png)
 
 The Management Bar is divided into a few key sections. Each section is grouped
 and configured using different taglibs. For example, here's the Management Bar
@@ -196,7 +196,7 @@ configuration in Liferay's Trash app:
 The `<liferay-frontend:management-bar-buttons>` tag wraps the Management Bar's
 button elements:
 
-![Figure 3: The `management-bar-buttons` tag contains the Management Bar's main buttons.](../../images/management-bar-buttons.png)
+![Figure 4: The `management-bar-buttons` tag contains the Management Bar's main buttons.](../../images/management-bar-buttons.png)
 
 The `<liferay-frontend:management-bar-sidenav-toggler-button>` tag implements
 slide-out navigation for the info button.
@@ -204,21 +204,21 @@ slide-out navigation for the info button.
 The `<liferay-frontend:management-bar-display-buttons>` tag renders the app's
 display style options:
 
-![Figure 4: The `management-bar-display-buttons` tag contains the content's display options.](../../images/management-bar-display-buttons.png)
+![Figure 5: The `management-bar-display-buttons` tag contains the content's display options.](../../images/management-bar-display-buttons.png)
 
 The `<liferay-frontend:management-bar-filters>` tag wraps the app's
 filtering options. This filter should be included in all control panel
 applications. Filtering options can include sort criteria, sort ordering, and
 more:
 
-![Figure 5: The `management-bar-filters` tag contains the content filtering options.](../../images/management-bar-filters.png)
+![Figure 6: The `management-bar-filters` tag contains the content filtering options.](../../images/management-bar-filters.png)
 
 Finally, the `<liferay-frontend:management-bar-action-buttons>` tag wraps the
 actions that you can execute over selected items. In @product@ 7, you can select
 multiple items between pages. The management bar keeps track of the number of
 selected items for you:
 
-![Figure X: The management bar keeps track of the items selected and displays the actions to execute on them.](../../images/management-bar-action-buttons.png)
+![Figure 7: The management bar keeps track of the items selected and displays the actions to execute on them.](../../images/management-bar-action-buttons.png)
 
 When there's no content in the app, the management bar disables all the buttons
 except the info button.
@@ -440,16 +440,16 @@ There are three built-in classes that you can choose from for the animation:
 
 "taglib-empty-result-message-header" which is the default one
 
-![Figure 6: ](../../images/no-content-found-blog.png)
+![Figure 8: ](../../images/no-content-found-blog.png)
 
 "taglib-empty-search-result-message-header" used when searching
 
-![Figure 7: ](../../images/no-web-content-found-search.png)
+![Figure 9: ](../../images/no-web-content-found-search.png)
 
 "taglib-empty-result-message-header-has-plus-btn" used when there is a plus
 button:
 
-![Figure 8: ](../../images/no-tags-found-plus-button.png)
+![Figure 10: ](../../images/no-tags-found-plus-button.png)
 
 For example, the Roles Admin application uses the following code to set its
 animation:
@@ -510,7 +510,7 @@ pattern is to move all of these actions to the upper right menu, leaving the
 primary action(often an "Add" operation) visible in the add menu. For example,
 the web content application has the actions menu shown below:
 
-![Figure X: The upper right ellipsis menu contains most of the actions for the app.](../../images/actions-menu.png)
+![Figure 11: The upper right ellipsis menu contains most of the actions for the app.](../../images/actions-menu.png)
 
 To add an action to the upper right menu you will need to first create a 
 `PortletConfigurationIcon` component. This class specifies the portlet where the
