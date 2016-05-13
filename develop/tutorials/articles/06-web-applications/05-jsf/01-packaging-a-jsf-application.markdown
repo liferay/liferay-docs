@@ -148,7 +148,7 @@ file and also does *NOT* include a Java class annotated with `@Component`:
   [WAB Generator](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-generator),
   which automatically creates an OSGi-ready `META-INF/MANIFEST.MF`.
 - Can affect the content of `META-INF/MANIFEST.MF` by putting BND directives and
-  OSGi headers into the `WEB-INF/liferay-plugin/packages.properties` file.
+  OSGi headers into the `WEB-INF/liferay-plugin-package.properties` file.
 
 **Drawbacks:**
 
