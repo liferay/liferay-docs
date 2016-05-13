@@ -89,7 +89,7 @@ steps:
 We'll go through the steps in order, so first we'll look at the Liferay
 database.
 
-## Step 1: Choose a Database Server and Create a New Database
+## Step 1: Choose a Database Server and Create a New Database [](id=step-1-choose-a-database-server-and-create-a-new-database)
 
 The recommended way of setting up your Liferay database is also the simplest.
 @product@ takes care of just about everything. You only need to take two
@@ -163,7 +163,7 @@ database before you attempt to install them.
 
 Once you have your database ready, you can install @product@ on your server.
 
-## Step Two: Gather Your Mail Credentials
+## Step Two: Gather Your Mail Credentials [](id=step-two-gather-your-mail-credentials)
 
 Liferay uses a mail server to send email notifications. As part of the install,
 therefore, you will need to have credentials that Liferay can use to connect to
@@ -179,7 +179,7 @@ your mail server. Specifically, you'll need to have the following information:
 
 Once you've gathered this information, you're ready to move on to the next step. 
 
-## Step Three: Install
+## Step Three: Install [](id=step-three-install)
 
 The next step is to install @product@. You can do this in one of two ways: by
 installing a @product@ bundled with an application server, or by installing
@@ -189,7 +189,7 @@ By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into
 full, production-ready instances of @product@. 
 
-## Step Four: Configure Elastic Search
+## Step Four: Configure Elastic Search [](id=step-four-configure-elastic-search)
 
 Liferay by default ships with an embedded version of Elastic Search. While this
 configuration works well for demo purposes, it is not supported in a production
@@ -199,7 +199,7 @@ installation, this standalone instance of Elastic can reside either on the same
 machine you have Liferay on or a different machine. For performance purposes, it
 is better to install it on a separate machine. 
 
-## Step Five: Liferay Marketplace and Portal Security
+## Step Five: Liferay Marketplace and Portal Security [](id=step-five-liferay-marketplace-and-portal-security)
 
 The Liferay Marketplace is an integral part of the @product@ experience.
 The Marketplace plugin is required to be installed on @product@. The

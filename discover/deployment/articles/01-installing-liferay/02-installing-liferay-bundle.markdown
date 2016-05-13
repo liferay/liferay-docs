@@ -11,7 +11,7 @@ Now you're ready. You've created a blank database for @product@ and have
 gathered the credentials you need for your mail server. The next step is to
 install @product@. 
 
-## Liferay Home
+## Liferay Home [](id=liferay-home)
 
 Liferay bundles contain the same folder structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder
@@ -58,7 +58,7 @@ is running Liferay. In this case, the `liferay` folder becomes Liferay Home.
 For example, if the operating system user's name was jbloggs, the Liferay Home
 folder could be `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
-## Extracting a Liferay Bundle 
+## Extracting a Liferay Bundle [](id=extracting-a-liferay-bundle)
 
 Getting a Liferay bundle up and running is as easy as uncompressing the
 archive, possibly copying a JDBC driver, and then starting the application
@@ -79,7 +79,7 @@ finished with the installation (and before you've started @product@ for the
 first time), come back to this spot, because you need to hook it up to your
 database. 
 
-## Connecting @product@ to Your Database
+## Connecting @product@ to Your Database [](id=connecting-product-to-your-database)
 
 You can connect Liferay through either your app server's data source or the one
 that ships with Liferay. Because of its suitability for tuning, it is
@@ -96,7 +96,7 @@ for your database and paste it into this file.
 Now all you have to do is customize it. Enter the proper host name and user and
 password credentials for your database, and then save the file. 
 
-## Running @product@ for the First Time
+## Running @product@ for the First Time [](id=running-product-for-the-first-time)
 
 Next, start your app server, or start the Liferay app in your app server. For
 example, if you're using the Liferay-Tomcat bundle, start Tomcat as if you had
@@ -179,7 +179,7 @@ After you've entered the information requested by the Basic Configuration page,
 Liferay should bring you to its home page. You should set up your mail
 configuration next. 
 
-## Configuring Mail 
+## Configuring Mail [](id=configuring-mail)
 
 Now that @product@ is up and running, log in as the administrative user you
 created in the setup wizard. Click the menu icon and then go to Control Panel
@@ -222,7 +222,7 @@ When you're finished setting up your mail configuration, click *Save*.
 Your final step for basic @product@ configuration is to convert the search
 implementation from its default demo mode into a production-ready mode. 
 
-## Configuring Elastic Search 
+## Configuring Elastic Search [](id=configuring-elastic-search)
 
 Liferay uses Elasticsearch to index its content. By default, Liferay uses
 Elastic as an embedded service. It works, but this is not a supported
@@ -253,7 +253,7 @@ Installing Elasticsearch for Liferay is pretty easy and takes only five steps:
 Now you'll actually perform these steps, and when you're done, you'll have a
 production-ready instance of @product@ up and running. 
 
-### Step One: Find the Right Version of Elasticsearch
+### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
 If Liferay isn't running, start it. Then, using a browser, visit port 9200 of
 the machine on which Liferay's running. For example, if you're browsing from the same machine
@@ -283,7 +283,7 @@ In this example, it's 2.2.0.
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
 
-### Step Two: Install Elasticsearch
+### Step Two: Install Elasticsearch [](id=step-two-install-elasticsearch)
 
 Most of this step entails deciding where you want to run Elasticsearch. Do you
 want to run it on the same machine as Liferay, or do you want to run it on its
@@ -296,7 +296,7 @@ Once you have a copy of the right version of Elasticsearch, extract it to a
 folder on the machine where you want it running. That's all there is to this
 step. 
 
-### Step Three: Name Your Elastic Cluster
+### Step Three: Name Your Elastic Cluster [](id=step-three-name-your-elastic-cluster)
 
 A *cluster* in Elasticsearch is a collection of nodes (servers) identified as a
 cluster by a shared cluster name. The nodes work together to share data and
@@ -331,7 +331,7 @@ Elastic starts, and one of its status messages includes a transport address:
 Take note of this address; you'll need to give it to your Liferay server so it
 can find Elastic on the network. 
 
-### Step Four: Configure Liferay to Connect to your Elastic Cluster
+### Step Four: Configure Liferay to Connect to your Elastic Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
 
 Now you're ready to configure Liferay. Start Liferay if you haven't already, log
 in, and then go to Control Panel &rarr; Configuration &rarr; System Settings
@@ -349,7 +349,7 @@ you started.
 
 When finished, click *Save*. You're almost done. 
 
-### Step Five: Restart Liferay and Reindex
+### Step Five: Restart Liferay and Reindex [](id=step-five-restart-liferay-and-reindex)
 
 Stop and restart Liferay. When it's back up, log in as an administrative user
 and go to Control Panel &rarr; Configuration &rarr; Server Administration and
@@ -359,7 +359,7 @@ you should see some messages scroll up in the Elasticsearch log.
 You're almost done! The only thing left is to make sure Marketplace is working
 and optionally configure portal security. 
 
-## Configuring Liferay Marketplace
+## Configuring Liferay Marketplace [](id=configuring-liferay-marketplace)
 
 Liferay Marketplace is more than just a store for Liferay applications. Under
 the hood, it not only provides the store, it also provides @product@'s
