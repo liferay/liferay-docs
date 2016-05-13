@@ -23,7 +23,8 @@ Liferay's reference docs are your fingertips.
 Here you'll find Javadoc for Liferay Portal 7.0 CE modules at the time of the
 latest GA release.
 
-<head>
+### CE Java APIs
+
 <style>
 table, th, td {
     border: 1px solid black;
@@ -37,11 +38,8 @@ caption {
     text-align: left;
 }
 </style>
-</head>
-<body>
 <table style="width:100%">
   <caption>
-    <h3>CE Java APIs</h3>
     This table links you to some commonly used Liferay API modules. Although the
     <a href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/" target="_blank">
     Liferay artifact repository<span class="opens-new-window-accessible"> (Opens New Window) </span>
@@ -539,7 +537,8 @@ available in JARs here.
 Here you'll find tag library documentation for Liferay Portal 7.0 Community Edition
 (CE) and Liferay Faces.
 
-<head>
+### CE Taglibs
+
 <style>
 table, th, td {
     border: 1px solid black;
@@ -553,11 +552,9 @@ caption {
     text-align: left;
 }
 </style>
-</head>
-<body>
+
 <table style="width:100%">
   <caption>
-    <h3>CE Taglibs</h3>
     <ul>
        <li>
 		<em>(HTML)</em>: for an online description the tag library used in the
