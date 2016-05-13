@@ -14,12 +14,47 @@ Liferay apps.
 
 This tutorial shows you how to:
 
+- configure your portlet title and back link
 - leverage Liferay's taglibs to create a consistent UI
 - set search container animations
 - use Lexicon to improve your app's forms
+- configure your app's actions menu
 - use Lexicon icons in your app
 
-First, you'll learn how to leverage Liferay's taglibs in your app.
+First, you'll learn how to configure your application's title and back link.
+
+## Configuring Your Application's Title and Back Link [](id=configuring-your-applications-title-and-back-link)
+
+For @product@ 7 administration applications, the title should be moved to the
+inner views, and the associated back link should be moved to the portlet titles.
+
+Follow the pattern below for the title:
+
+    renderResponse.setTitle();
+    
+Follow this pattern for the Back link:
+
+    portletDisplay.setShowBackIcon(true);
+    
+    portletDisplay.setURLBack(redirect);
+    
+For an example of how this is implemented, take a look at the Blogs Admin
+application's [`edit_entry.jsp`](https://github.com/liferay/liferay-portal/blob/b74496b5c450c134957347e7ebabd25dec1c763d/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp)
+:
+
+portletDisplay.setShowBackIcon(true);
+portletDisplay.setURLBack(redirect);
+
+renderResponse.setTitle((entry != null) ? entry.getTitle() : 
+LanguageUtil.get(request, "new-blog-entry"));
+
+If you open the Blogs Admin application in the control panel and add a new
+blog entry, you'll see this behaviour in action:
+
+![Figure X: Adding a new blog entry displays the portlet title at the top, along with a back link.](../../images/new-blog-entry-title.png)
+
+Now that you know how to configure your app's title and back URL, you'll
+learn how to leverage Liferay's taglibs in your app next.
 
 ## Leveraging Liferay’s Taglibs to Create a Pleasant UI [](id=leveraging-liferays-taglibs-to-create-a-pleasant-ui)
 
@@ -51,7 +86,7 @@ Here's an example of the add button pattern with a single item:
     <liferay-frontend:add-menu>
 
 You can also find the add button pattern in Liferay's built-in apps. For
-example, the [Message Boards Admin portlet](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/message-boards/message-boards-web/src/main/resources/META-INF/resources/message_boards_admin/add_button.jsp)
+example, the [Message Boards Admin application](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/message-boards/message-boards-web/src/main/resources/META-INF/resources/message_boards_admin/add_button.jsp)
 uses the following add button pattern:
 
     <liferay-frontend:add-menu>
@@ -107,7 +142,7 @@ The Management Bar lets users change the view the app displays content with. For
 example, a user can use the Management Bar to display content in a list or a
 grid, or display only a specific type of content. You can also customize your
 app's Management Bar. The Management Bar in Liferay's Message Boards Admin
-portlet is shown here:
+application is shown here:
 
 ![Figure 2: The Management Bar lets the user customize how the app displays content.](../../images/message-boards-management-bar.png)
 
@@ -210,7 +245,188 @@ the corresponding tag:
 Now that you've managed your app's management bar, you can learn how to apply
 Lexicon to the search iterator next.
 
-## Setting Search Container Animations
+### Implementing the Different Management Bar Views [](id=implementing-the-different-management-bar-views)
+
+As you saw in the last section, the management bar offers a few options for
+display styles: icon, descriptive, and list. These views are standard in 
+control panel apps. In order to provide these views in your app, you'll need to 
+configure some settings for your search result columns. Follow the patterns
+below to configure your app.
+
+Follow the patterns below to create your icon view. Your icon view should be 
+responsive to different devices.
+
+For vertical cards use the following pattern:
+
+    <%
+    row.setCssClass("col-md-2 col-sm-4 col-xs-6");
+    %>
+    
+For horizontal cards use the following pattern:
+
+    <%
+    row.setCssClass("col-md-3 col-sm-4 col-xs-12");
+    %>
+
+Once your cards are responsive, you'll need to add search container column text,
+using the pattern below:
+
+    <liferay-ui:search-container-column-text>
+        <%-- include your vertical card or horizontal card here --%>
+    </liferay-ui:search-container-column-text>
+    
+Use one of the following tags for your vertical card:
+
+    <liferay-frontend:vertical-card/>
+    
+    <liferay-frontend:user-vertical-card/>
+    
+    <liferay-frontend:icon-vertical-card/>
+    
+For horizontal cards you can use the tag below:
+
+    <liferay-frontend:horizontal-card/>
+    
+Now that your icon view is configured, you can move onto your descriptive view
+next.
+
+Your descriptive view should have three columns. The first column usually
+contains an icon, image, or user portrait.
+
+For an icon use the following tag:
+
+    <liferay-ui:search-container-column-icon/>
+    
+For an image use the following tag:
+
+    <liferay-ui:search-container-column-image/>    
+
+For a user use the following pattern:
+
+    <liferay-ui:search-container-column-text>
+        <liferay-ui:user-portrait/>
+    </liferay-ui:search-container-column-text>
+
+The second column should contain the descriptions. For example, the 
+[site teams application](https://github.com/liferay/liferay-portal/blob/98d332c8fa884ab229c848e7eabd5b9a8da514d6/modules/apps/web-experience/site/site-teams-web/src/main/resources/META-INF/resources/user_group_columns.jspf)
+is configured with the settings below: 
+
+    <liferay-ui:search-container-column-text
+        colspan="<%=2%>"
+    >
+        <h5><%= userGroup.getName() %></h5>
+        
+        <h6 class="text-default">
+            <span><%= userGroup.getDescription() %></span>
+        </h6>
+        
+        <h6 class="text-default">
+            <span><liferay-ui:message arguments="<%= usersCount%>" key="x-users" 
+            /></span>
+        </h6>
+    
+    </liferay-ui:search-container-column-text>
+    
+Finally, the third column contains the actions. For example, the site teams 
+application uses the configuration below:
+
+    <liferay-ui:search-container-column-jsp
+        path="/edit_team_assignments_user_groups_action.jsp"
+    />
+    
+Now that your descriptive view is configured you can setup your list view next.
+The list view is the default view that is shown for most applications. For
+example, the [mobile device rules application](https://github.com/liferay/liferay-portal/blob/fe808e45473fc1491ac79b396b822629df5b052c/modules/apps/foundation/mobile-device-rules/mobile-device-rules-web/src/main/resources/META-INF/resources/rule_columns.jspf)
+configures its list view using the pattern below:
+
+    <liferay-ui:search-container-column-text
+            cssClass="content-column name-column title-column"
+            name="name"
+            truncate="<%= true %>"
+            value="<%= rule.getName(locale) %>"
+    />
+    
+    <liferay-ui:search-container-column-text
+            cssClass="content-column description-column"
+            name="description"
+            truncate="<%= true %>"
+            value="<%= rule.getDescription(locale) %>"
+    />
+    
+    <liferay-ui:search-container-column-date
+            cssClass="create-date-column text-column"
+            name="create-date"
+            property="createDate"
+    />
+    
+    <liferay-ui:search-container-column-text
+            cssClass="text-column type-column"
+            name="type"
+            translate="<%= true %>"
+            value="<%= rule.getType() %>"
+    />
+    
+    <liferay-ui:search-container-column-jsp
+            cssClass="entry-action-column"
+            path="/rule_actions.jsp"
+    />
+    
+Your display views are configured! As best practice, you should set your 
+`liferay-ui:search-iterator />`'s `displayStyle` attribute to the current style
+being used, and make sure the `markupView` attribute is set to use `lexicon`.
+You'll take a closer look at the search iterator next.
+
+### Applying Lexicon to the Search Iterator [](id=applying-lexicon-to-the-search-iterator)
+
+To apply Lexicon to your search iterator you will just need to add one
+attribute. Using the existing `liferay-ui:search-iterator` tag, you can add the
+`markupView="lexicon"` attribute:
+
+    <liferay-ui:search-iterator
+
+           displayStyle="<%= displayStyle %>"
+           markupView="lexicon"
+           searchContainer="<%= searchContainer %>"
+    />
+
+If the results contain different set of entries (folders and documents,
+categories and threads, etc.) you will need to use a ResultRowSplitter to
+divide the results. The result row splitter is an attribute that is
+provided to the liferay-ui:search-iterator taglib as shown below:
+
+    <liferay-ui:search-iterator
+
+           displayStyle="<%= displayStyle %>"
+           markupView="lexicon"
+
+           markupView="<%= new DLResultRowSplitter() %>"
+           searchContainer="<%= searchContainer %>"
+    />
+
+You will need to create a java class that implements the ResultRowSplitter
+interface. The ResultRowSplitter class is responsible for dividing and
+categorizing the results based on the different entry types. See the Bookmarks
+application's [BookmarksResultRowSplitter.java](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/collaboration/bookmarks/bookmarks-web/src/main/java/com/liferay/bookmarks/web/dao/search/BookmarksResultRowSplitter.java) 
+class for example.
+
+Finally, the action menu style should be changed to use the vertical ellipsis
+icon (icon-ellipsis-vertical). The taglib should look like this:
+
+    <liferay-ui:icon-menu
+           direction="left-side"
+           icon="<%= StringPool.BLANK %>"
+           markupView="lexicon"
+           message="<%= StringPool.BLANK %>"
+           showWhenSingleIcon="<%= true %>"
+    >
+    
+Setting the `icon` and `message` values to `StringPool.BLANK` defaults the value 
+to the vertical ellipsis icon.
+
+Now that your search iterator is configured, you can learn how to set search
+container animations next.
+
+## Setting Search Container Animations [](id=setting-search-container-animations)
 
 If you've taken a tour around @product@ 7's UI, you've probably noticed some new
 animations in the search containers.
@@ -224,18 +440,18 @@ There are three built-in classes that you can choose from for the animation:
 
 "taglib-empty-result-message-header" which is the default one
 
-![Figure x: ](../../images/no-content-found-blog.png)
+![Figure 6: ](../../images/no-content-found-blog.png)
 
 "taglib-empty-search-result-message-header" used when searching
 
-![Figure x: ](../../images/no-web-content-found-search.png)
+![Figure 7: ](../../images/no-web-content-found-search.png)
 
 "taglib-empty-result-message-header-has-plus-btn" used when there is a plus
 button:
 
-![Figure x: ](../../images/no-tags-found-plus-button.png)
+![Figure 8: ](../../images/no-tags-found-plus-button.png)
 
-For example, the Roles Admin portlet uses the following code to set its
+For example, the Roles Admin application uses the following code to set its
 animation:
 
     if (!searchTerms.isSearch()) {
@@ -284,6 +500,123 @@ Follow these steps to apply Lexicon to your forms:
 
 Your forms are now configured for Lexicon!
 
+You'll learn how to configure the actions for your app next.
+
+## Configuring Your Apps Actions Menu [](id=configuring-your-apps-actions-menu)
+
+In previous versions of Liferay it was common to have a series of buttons or
+menus with actions in the different views of the app. In Liferay 7 the proposed
+pattern is to move all of these actions to the upper right menu, leaving the
+primary action(often an "Add" operation) visible in the add menu. For example,
+the web content application has the actions menu shown below:
+
+![Figure X: The upper right ellipsis menu contains most of the actions for the app.](../../images/actions-menu.png)
+
+To add an action to the upper right menu you will need to first create a 
+`PortletConfigurationIcon` component. This class specifies the portlet where the
+action will be added, the screen in which it will be shown, and the order
+(by specifying a weight).
+
+In this example, the action will be shown in the home page of the System
+Settings portlet. To make it appear in a secondary screen you can use the `path`
+property as shown below:
+
+    @Component(
+      immediate = true,
+      property = {
+         "javax.portlet.name=" +
+            ConfigurationAdminPortletKeys.SYSTEM_SETTINGS,
+         "path=/view_factory_instances"
+      },
+      service = PortletConfigurationIconFactory.class
+    )
+    public class ExportFactoryInstancesIconFactory
+      extends BasePortletConfigurationIconFactory {
+    
+      @Override
+      public PortletConfigurationIcon create(PortletRequest portletRequest) {
+         return new ExportFactoryInstancesIcon(portletRequest);
+      }
+    
+      @Override
+      public double getWeight() {
+         return 1;
+      }
+    
+    }
+
+The value of the `path` property depends on the MVC framework being used to
+develop the app.
+
+For the MVCPortlet framework you should provide the path(often a JSP) that is 
+used in the mvcPath parameter.
+
+For MVCPortlet with MVCCommands the path should contain the mvcRenderCommandName
+where the actions should be displayed
+(such as /document_library/edit_folder for example).
+
+The second class that you need to write specifies the label of the action,
+whether it should be invoked with a GET or POST method and the URL
+(or onClick JavaScript method) that should be invoked when the action is
+clicked. It can also implement some custom code to determine whether the action
+should be shown for the current request. For example the class below creates a
+`export-all-settings` label and specfies the `GET` method for the action:
+
+    public class ExportAllConfigurationIcon extends BasePortletConfigurationIcon {
+    
+      public ExportAllConfigurationIcon(PortletRequest portletRequest) {
+         super(portletRequest);
+      }
+    
+      @Override
+      public String getMessage() {
+         return "export-all-settings";
+      }
+    
+      @Override
+      public String getMethod() {
+         return "GET";
+      }
+    
+      @Override
+      public String getURL() {
+         LiferayPortletURL liferayPortletURL =
+            (LiferayPortletURL)PortalUtil.getControlPanelPortletURL(
+               portletRequest, ConfigurationAdminPortletKeys.SYSTEM_SETTINGS,
+               PortletRequest.RESOURCE_PHASE);
+    
+         liferayPortletURL.setResourceID("export");
+    
+         return liferayPortletURL.toString();
+      }
+    
+      @Override
+      public boolean isShow() {
+         return true;
+      }
+    
+    }
+
+By default, if the portlet uses mvcPath, the global actions 
+(such as configuration, export/import, maximized, etc) will be displayed for the 
+jsp indicated in the init param of the portlet 
+`javax.portlet.init-param.view-template=/view.jsp`. The value indicates the jsp 
+where the global actions should be displayed.
+
+However, if the portlet uses MVCCommand, the views for the global actions need 
+to be indicated with the init-parameter 
+`javax.portlet.init-param.mvc-command-names-default-views=/wiki_admin/view` and 
+the value must contain the mvcRenderCommandName where the global actions should 
+be displayed.
+
+For portlets that can be added to a page, if the desired behaviour is to always 
+include the configuration options, the following init-parameter should be added 
+to the portlet:
+
+    javax.portlet.init-param.always-display-default-configuration-icons=true
+    
+Your actions are configured for your menu!
+    
 In the next section, you'll learn to leverage Lexicon's icons throughout your
 app.
 
