@@ -110,8 +110,11 @@ files, it's time to deploy Liferay.
 	NOTE: The autodeploy folder must be set with the full name of the folder;
 	you can't use any variables to define the location.
 
-		auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy 
-		auto.deploy.deploy.dir=C:/JBoss-<version>/deploy
+		auto.deploy.jboss.dest.dir=$JBOSS_HOME/server/default/deploy 
+		auto.deploy.deploy.dir=$LIFERAY_HOME/deploy
+
+	The first line is the value for the default server. The path in the second
+	line should point to the `deploy` folder configured for JBoss.
 
 7. Increase the memory given to the JVM
 
@@ -152,15 +155,9 @@ this configuration before deployment. Otherwise, if there's a JAR conflict,
 you'll have to shut down your server, configure the plugin to use the Liferay
 domain, and restart the server.
 
-To set up a hot deploy folder and have plugins automatically copied to the right
-place, add the following lines to your `portal-ext.properties` file:
-
-	auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy
-	auto.deploy.deploy.dir=G:/jboss-eap-5.1/deploy
-
-The first line is the value for the default server; if you've installed Liferay
-in something other than the default, change it accordingly. The path in the
-second line should point to the `deploy` folder configured for JBoss. 
+You should've already set up your hot deploy folder in the previous section. To
+deploy your plugins, simply copy them into your configured Liferay Home `deploy`
+folder, and they are automatically copied to JBoss's default deploy folder.
 
 Liferay also runs on JBoss 7. Let's see how we'd get it installed on that
 version of JBoss. 
