@@ -23,7 +23,7 @@ Liferay's reference docs are your fingertips.
 Here you'll find Javadoc for Liferay Portal 7.0 CE modules at the time of the
 latest GA release.
 
-### CE Java APIs
+### CE Java APIs [](id=ce-java-apis)
 
 <style>
 table, th, td {
@@ -537,7 +537,7 @@ available in JARs here.
 Here you'll find tag library documentation for Liferay Portal 7.0 Community Edition
 (CE) and Liferay Faces.
 
-### CE Taglibs
+### CE Taglibs [](id=ce-taglibs)
 
 <style>
 table, th, td {
@@ -752,7 +752,7 @@ caption {
 
 </table>                                                                                     
 
-### Faces Taglibs
+### Faces Taglibs [](id=faces-taglibs)
 
 [**Faces 3.2 Taglibs**](https://docs.liferay.com/faces/3.2/vdldoc/): the latest
 version of Liferay Faces JSF tag docs in View Declaration Language (VDL) format.
