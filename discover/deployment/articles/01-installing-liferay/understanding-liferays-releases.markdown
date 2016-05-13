@@ -1,4 +1,4 @@
-# Understanding Liferay's Releases
+# Understanding Liferay's Releases [](id=understanding-liferays-releases)
 
 Liferay's release process follows a prescribed structure that is consistent
 from one release to the next. Each release has a specific number sequence
