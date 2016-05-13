@@ -21,7 +21,7 @@ similar to the Guestbook portlet's design: it shows a list of the first
 guestbook's entries by default. When the user selects a different guestbook, you
 can then use the same UI to show the selected guestbook's entries instead. 
 
-![Figure 1: By default, the first guestbook in the portlet is selected.](../../images/guestbook-portlet.png)
+![Figure 1: By default, the first guestbook in the portlet is selected.](../../../images/guestbook-portlet.png)
 
 You also need to decide how you'll let users select a different guestbook. There 
 are many ways to do this, but using a navigation drawer that slides out from the 
@@ -45,7 +45,7 @@ need to create an additional activity and a fragment: `GuestbooksActivity` and
 The following diagram shows the app's three different screens. Each activity and
 fragment is labeled, along with the Screenlets and the navigation drawer. 
 
-![Figure 2: The Liferay Guestbook app's design uses two activities and a fragment.](../../images/android-app-design-screenlets.png)
+![Figure 2: The Liferay Guestbook app's design uses two activities and a fragment.](../../../images/android-app-design-screenlets.png)
 
 After sign in, the user transitions to `GuestbooksActivity`. This activity uses 
 Get Entries Screenlet in `EntriesFragment` to display the selected guestbook's 

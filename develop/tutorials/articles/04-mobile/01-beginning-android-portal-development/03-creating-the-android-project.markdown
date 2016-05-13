@@ -32,7 +32,7 @@ These fields are used to fill in your app's *Package name* and
 *Project location* automatically. For location, choose a location on your system
 that's convenient for you. Click *Next*. 
 
-![Figure 1: The first screen of Android Studio's Create New Project wizard asks you to enter your app's name and Company Domain.](../../images/android-studio-new-project-01.png)
+![Figure 1: The first screen of Android Studio's Create New Project wizard asks you to enter your app's name and Company Domain.](../../../images/android-studio-new-project-01.png)
 
 The next screen asks you to specify your app's supported form factors and
 minimum Android SDK. Make sure that only the *Phone and Tablet* checkbox is
@@ -43,7 +43,7 @@ API level. You can view a graphical representation of these estimates by
 clicking the *Help me choose* link in the text below the Minimum SDK menu. 
 Click *Next* when you're finished. 
 
-![Figure 2: The second screen of Android Studio's Create New Project wizard lets you select your app's form factors and minimum Android API level.](../../images/android-studio-new-project-02.png)
+![Figure 2: The second screen of Android Studio's Create New Project wizard lets you select your app's form factors and minimum Android API level.](../../../images/android-studio-new-project-02.png)
 
 You now need to specify your app's first activity. Although you'll use this 
 activity to authenticate users with the portal, don't select Login Activity in 
@@ -62,12 +62,12 @@ just helping you keep up the pretense. Now stop thinking about magic, and return
 your attention to the wizard in Android Studio. Select *Empty Activity*, and
 click *Next*.
 
-![Figure 3: The third screen of Android Studio's Create New Project wizard lets you specify an activity for your app.](../../images/android-studio-new-project-03.png)
+![Figure 3: The third screen of Android Studio's Create New Project wizard lets you specify an activity for your app.](../../../images/android-studio-new-project-03.png)
 
 The final screen of the New Project Wizard asks you to enter the activity's name 
 and the name of its layout file. Accept the defaults and click *Finish*.
 
-![Figure 4: The final screen of Android Studio's Create New Project wizard asks you to name your activity and its layout file.](../../images/android-studio-new-project-04.png)
+![Figure 4: The final screen of Android Studio's Create New Project wizard asks you to name your activity and its layout file.](../../../images/android-studio-new-project-04.png)
 
 A progress indicator appears that indicates your project is building. Android 
 Studio then opens the project with the activity's class and layout ready to edit. 
@@ -86,7 +86,7 @@ source files. See the
 [Android Studio Overview](http://developer.android.com/tools/studio/index.html) 
 for more information on the project view.
 
-![Figure 5: Project view in Android Studio.](../../images/android-studio-project-view.png)
+![Figure 5: Project view in Android Studio.](../../../images/android-studio-project-view.png)
 
 Well done! You've successfully created the initial Guestbook app and know how to 
 access its files in Android Studio. Now it's time to put the Guestbook Mobile 

@@ -17,7 +17,7 @@ alongside the package containing the app's activity and fragment
 (`liferayguestbook`). If it doesn't appear at first, you may need to collapse 
 and reopen the *java* folder in project view. 
 
-![Figure 1: The new package for the Get Guestbooks Screenlet is highlighted.](../../images/android-guestbooks-screenlet-package.png)
+![Figure 1: The new package for the Get Guestbooks Screenlet is highlighted.](../../../images/android-guestbooks-screenlet-package.png)
 
 Next, you'll create the model class the Screenlet needs. 
 

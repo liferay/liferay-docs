@@ -15,7 +15,7 @@ wizard, check only the box for *Create layout XML?*, name the fragment
 `EntriesFragment`, and then click *Finish*. The following screenshot illustrates 
 this: 
 
-![Figure 1: Create a new blank fragment for the entries.](../../images/android-create-fragment.png)
+![Figure 1: Create a new blank fragment for the entries.](../../../images/android-create-fragment.png)
 
 This creates the `EntriesFragment` class and its layout file 
 `fragment_entries.xml`. Replace the class's contents with the following code: 

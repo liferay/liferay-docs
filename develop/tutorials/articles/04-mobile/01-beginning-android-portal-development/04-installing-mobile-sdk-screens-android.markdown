@@ -35,7 +35,7 @@ two `build.gradle` files: one for the project, and another for the app module.
 You can find them under *Gradle Scripts* in Android Studio's project view. The
 app module's `build.gradle` file is highlighted in this screenshot: 
 
-![Figure 1: The app module's `build.gradle` file.](../../images/android-build-gradle-app-module.png)
+![Figure 1: The app module's `build.gradle` file.](../../../images/android-build-gradle-app-module.png)
 
 In the app module's `build.gradle` file, add these lines just after the closing `buildTypes` brace: 
 
@@ -65,7 +65,7 @@ added. Sync the Gradle files now by clicking the *Sync Now* link in the message.
 The following screenshot shows the edited `build.gradle` file with the Sync Now
 link highlighted in a red box: 
 
-![Figure 2: After editing the `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../images/android-build-gradle-sync.png)
+![Figure 2: After editing the `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../../images/android-build-gradle-sync.png)
  
 Great! Now you're ready to test your Screens and Mobile SDK installations. 
 

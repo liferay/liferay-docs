@@ -67,7 +67,7 @@ guestbook in the portlet and an entry or two to each. When you create the
 Guestbook Android app, this ensures there's some content to display in it. The 
 Guestbook portlet on your site should now look like this: 
 
-![Figure 1: The Guestbook portlet, with a new guestbook and some entries.](../../images/guestbook-portlet-01.png)
+![Figure 1: The Guestbook portlet, with a new guestbook and some entries.](../../../images/guestbook-portlet-01.png)
 
 Stupendous! You've successfully set up a Liferay installation and added the 
 Guestbook portlet to it. Now you're ready to get started with the Liferay Mobile 

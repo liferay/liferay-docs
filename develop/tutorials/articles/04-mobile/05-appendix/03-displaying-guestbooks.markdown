@@ -5,7 +5,7 @@ from the left side of the screen. Now that you've made the server call, you're
 ready to display the guestbooks in this drawer. Currently, the drawer contains 
 some simple placeholder content. The following screenshot shows this. 
 
-![Figure 1: The navigation drawer currently contains placeholder content that Android Studio generated for you when you created the activity.](../../images/android-guestbook-initial-drawer.png)
+![Figure 1: The navigation drawer currently contains placeholder content that Android Studio generated for you when you created the activity.](../../../images/android-guestbook-initial-drawer.png)
 
 When you used Get Guestbooks Screenlet, you replaced this content with the 
 Screenlet. This was possible because Screenlets have their own UIs. Now, though, 
@@ -356,8 +356,8 @@ drawer to reveal the guestbook list. Select a different guestbook from the
 drawer. The drawer then closes and the Action Bar displays the selected 
 guestbook's name. Awesome! It works! 
 
-![Figure 2: The app now displays the first guestbook's name in the Action Bar.](../../images/android-first-guestbook.png)
+![Figure 2: The app now displays the first guestbook's name in the Action Bar.](../../../images/android-first-guestbook.png)
 
-![Figure 3: The navigation drawer now contains the guestbook list. The header contains the app's name and a greeting.](../../images/android-guestbook-drawer-02.png)
+![Figure 3: The navigation drawer now contains the guestbook list. The header contains the app's name and a greeting.](../../../images/android-guestbook-drawer-02.png)
 
 Great! Now you're ready to retrieve guestbook entries. 

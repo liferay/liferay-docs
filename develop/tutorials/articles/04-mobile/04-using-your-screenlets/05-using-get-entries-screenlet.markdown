@@ -112,9 +112,9 @@ work! Your app now uses the Get Guestbooks and Get Entries Screenlets to show
 the same guestbooks and entries as the Guestbook portlet. The following 
 screenshots show these Screenlets in action. 
 
-![Figure 1: Get Entries Screenlet displays guestbook entries in your app.](../../images/android-guestbooks-entries-screenlets.png)
+![Figure 1: Get Entries Screenlet displays guestbook entries in your app.](../../../images/android-guestbooks-entries-screenlets.png)
 
-![Figure 2: Get Guestbooks Screenlet displays guestbooks in the navigation drawer.](../../images/android-guestbook-screenlet-drawer-01.png)
+![Figure 2: Get Guestbooks Screenlet displays guestbooks in the navigation drawer.](../../../images/android-guestbook-screenlet-drawer-01.png)
 
 Although your Screenlets work, you may have noticed something odd about the 
 navigation drawer: its header displays the text *Android Studio* and 
@@ -127,7 +127,7 @@ that's relevant to your app. In the `TextView` elements, replace
 `"android.studio@android.com"` with `"Welcome!"`. Run the app again, and open 
 the drawer after signing in. The drawer header now shows your greeting. 
 
-![Figure 3: The drawer displays your greeting after you change the text in `nav_header_guestbooks.xml`.](../../images/android-guestbook-screenlet-drawer-02.png)
+![Figure 3: The drawer displays your greeting after you change the text in `nav_header_guestbooks.xml`.](../../../images/android-guestbook-screenlet-drawer-02.png)
 
 Congratulations! Now you know how to use Liferay Screens and create your own 
 Screenlets. This opens up a world of possibilities for developing your own apps. 

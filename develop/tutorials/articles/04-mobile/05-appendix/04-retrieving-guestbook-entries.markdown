@@ -6,7 +6,7 @@ Guestbook portlet. But that's all your app does. Tapping a guestbook in the
 navigation drawer doesn't do anything besides close the drawer to show the 
 Action Bar and an empty screen. 
 
-![Figure 1: Guestbook entries aren't showing yet in the app.](../../images/android-first-guestbook.png)
+![Figure 1: Guestbook entries aren't showing yet in the app.](../../../images/android-first-guestbook.png)
 
 Next, you'll use the Guestbook Mobile SDK to retrieve guestbook entries from the 
 Guestbook portlet. These steps are almost the same as those you used to retrieve 
@@ -57,7 +57,7 @@ fragment. Now you'll create this fragment. Right click the
 the checkboxes, name the fragment `EntriesFragment`, and then click *Finish*. 
 The following screenshot illustrates this: 
 
-![Figure 2: Create a new blank fragment for the entries.](../../images/android-create-fragment-02.png)
+![Figure 2: Create a new blank fragment for the entries.](../../../images/android-create-fragment-02.png)
 
 Replace the fragment's contents with the following code: 
 

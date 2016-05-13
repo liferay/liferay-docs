@@ -19,7 +19,7 @@ though, you should focus on Mobile SDK calls.
 The following diagram illustrates how you'll make and process Guestbook Mobile 
 SDK calls. 
 
-![Figure 1: A call made with the Guestbook Mobile SDK requires that you create a Mobile SDK service instance, use it to call the Liferay service, transform the resulting JSON into model objects, and pass those model objects back to the Screenlet Interactor class that issued the call.](../../images/android-mobile-sdk.png)
+![Figure 1: A call made with the Guestbook Mobile SDK requires that you create a Mobile SDK service instance, use it to call the Liferay service, transform the resulting JSON into model objects, and pass those model objects back to the Screenlet Interactor class that issued the call.](../../../images/android-mobile-sdk.png)
 
 This diagram is broken down into four basic steps:
 

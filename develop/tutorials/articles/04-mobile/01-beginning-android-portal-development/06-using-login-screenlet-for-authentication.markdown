@@ -111,7 +111,7 @@ emulator once it launches. Your app then automatically opens to the Login
 Screenlet. Enter your credentials and click *SIGN IN*. The toast message then 
 pops up saying that the login succeeded. 
 
-![Figure 1: Login Screenlet successfully authenticated you with the portal.](../../images/android-login-screenlet-success.png)
+![Figure 1: Login Screenlet successfully authenticated you with the portal.](../../../images/android-login-screenlet-success.png)
 
 The toast message goes away and you remain on the login screen. Nothing else 
 happens. Don't worry, this is supposed to happen; you haven't added any other 
@@ -137,7 +137,7 @@ When login succeeds, this code creates an `Intent` and uses it to start
 Now you're ready to see the intent in action! Run the app in the emulator and 
 log in when prompted. When login succeeds, the `GuestbooksActivity` opens. 
 
-![Figure 2: The app takes you to the new activity after you log in.](../../images/android-login-success-intent.png)
+![Figure 2: The app takes you to the new activity after you log in.](../../../images/android-login-success-intent.png)
 
 Nice work! You've successfully implemented portal authentication in the Android 
 app. It didn't take you that long, either. You only have signing in working so

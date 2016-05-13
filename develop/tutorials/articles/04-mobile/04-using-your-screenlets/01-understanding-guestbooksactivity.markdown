@@ -56,7 +56,7 @@ adds the layout defined in `app_bar_guestbooks.xml` as the activity's main
 content (the content shown when the navigation drawer is closed). The following 
 diagram illustrates how `activity_guestbooks.xml` maps to the UI. 
 
-![Figure 1: The layout `activity_guestbooks.xml` defines the app's main UI components.](../../images/android-activity-guestbooks.png)
+![Figure 1: The layout `activity_guestbooks.xml` defines the app's main UI components.](../../../images/android-activity-guestbooks.png)
 
 The activity's main content also contains a toolbar, some text, and a 
 [floating action button](https://www.google.com/design/spec/components/buttons-floating-action-button.html). 
@@ -146,7 +146,7 @@ The following figure illustrates how the layout defined in
 lists each UI component defined in `app_bar_guestbooks.xml`. An arrow drawn from 
 each points to its rendering on the right. 
 
-![Figure 2: The layout `app_bar_guestbooks.xml` defines the activity's main content.](../../images/android-app-bar-guestbooks.png)
+![Figure 2: The layout `app_bar_guestbooks.xml` defines the activity's main content.](../../../images/android-app-bar-guestbooks.png)
 
 Awesome! Now you know which layout files in the project define 
 `GuestbookActivity`'s UI. You also know the exact UI components defined in these 

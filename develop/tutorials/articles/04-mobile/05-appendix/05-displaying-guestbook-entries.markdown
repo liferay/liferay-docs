@@ -188,7 +188,7 @@ This requires you to import `android.support.v4.app.FragmentTransaction` in
 That's it! Make sure your portal is running and then run the app. The app now 
 displays the selected guestbook's entries. 
 
-![Figure 1: The entries for the selected guestbook now appear in your app.](../../images/android-guestbook-entries.png)
+![Figure 1: The entries for the selected guestbook now appear in your app.](../../../images/android-guestbook-entries.png)
 
 Congratulations! You've successfully used the Guestbook Mobile SDK to develop an 
 Android app that displays the Guestbook portlet's entities. Remember, however, 

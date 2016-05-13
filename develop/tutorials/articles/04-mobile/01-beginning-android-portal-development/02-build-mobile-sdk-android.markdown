@@ -47,7 +47,7 @@ page's upper left, there's a menu for selecting the context path. Select
 *guestbook-portlet*. The UI updates to show only the remote services available 
 in the selected context path. 
 
-![Figure 1: The guestbook-portlet context path on the server.](../../images/remote-services-context.png)
+![Figure 1: The guestbook-portlet context path on the server.](../../../images/remote-services-context.png)
 
 The Mobile SDK Builder needs this value so that it knows what remote services to 
 generate classes and methods for. Return to the terminal and enter 
@@ -62,7 +62,7 @@ required for the build to run, enter `Guestbook Portlet SDK`. The following
 screenshot shows the `Context`, `Package Name`, and `POM Description` properties 
 entered in the Mobile SDK Builder: 
 
-![Figure 2: The command line wizard for building the Mobile SDK.](../../images/mobile-sdk-build-wizard.png)
+![Figure 2: The command line wizard for building the Mobile SDK.](../../../images/mobile-sdk-build-wizard.png)
 
 Once you enter the final property, the Mobile SDK Builder runs and generates a 
 `BUILD SUCCESSFUL` message. Great! You're probably wondering, however, what just
