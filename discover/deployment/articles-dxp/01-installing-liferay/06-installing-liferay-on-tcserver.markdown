@@ -3,7 +3,7 @@
 The easiest way to get Liferay running on tc Server is to [download a bundle](https://web.liferay.com/group/customer/downloads/portal/product). If
 that's not an option, you can install Liferay onto tc Server. In addition to a
 supported version of [tc Server](https://network.pivotal.io/products/pivotal-tcserver) (version 3 or
-higher), make sure you have acquired the following (from [Liferay's customer portal](https://web.liferay.com/group/customer/downloads/portal/product))
+higher), make sure you have acquired the following items (from [Liferay's customer portal](https://web.liferay.com/group/customer/downloads/portal/product))
 
 -  A Liferay WAR file
 
