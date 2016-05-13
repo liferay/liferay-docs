@@ -8,7 +8,7 @@ about the basics of form creation:
 -  Navigating to the Forms application
 -  Adding form fields, and supported field types
 -  Configuring form fields
--  Exporting form entries
+-  Viewing and Exporting form entries
 -  Deleting form entries
 
 This article covers more advanced use cases for forms, and a basic knowledge of
@@ -27,14 +27,24 @@ use in your forms that are covered in this article:
 Aside from those features, which enhance the building of your forms, there are
 some settings and processing features to explore:
 
-<!-- - Store results in JSON -->
 - Enable CAPTCHA for a form
 - Redirect to a different URL after a successful form submission
 - Send an email notification whenever a form entry is submitted
 
++$$$
+
+**Note:** By default, form entries are stored in Liferay's database using JSON
+format. If you navigate to Form Settings (click the *Options*
+(![Options](../../../images/icon-options.png)) button &rarr; *Settings*), you'll
+see that the only storage option is JSON. Keep in mind that developers can
+implement their own storage types if JSON is not desirable. If they do, the
+option will appear here in Form Settings. See the tutorial on custom storage
+types (not yet written) for more information.
+
+$$$
+
 More features are being planned, so don't despair if you need a feature that's
 not yet present in the Forms application.
-<!--Add a list of planned features?-->
 
 ## The Lunar Resort Employment Application Form
 
@@ -83,7 +93,7 @@ Details.
 ## Adding Placeholder Text and Predefined Values
 
 To populate the employment application form for The Lunar Resort, you should
-start by adding some of the usual fields:
+start by adding some of the usual fields, like a Full Name field:
 
 -  **Full Name:** Add a required text field titled *Full Name*, with a description that reads
    *Enter your full name, no matter how long.* Under Show More Options, enter
@@ -109,9 +119,9 @@ blank, so you don't have to worry about getting a bunch of applications from
 The HR department needs to weed prospective employees out if they're not mature
 enough. If the user is under a certain age, make sure to ask them if they've
 ever been away for an extended period of time. This can be done using a text
-field that accepts only numbers (age), and then a couple of fields to probe
+field that accepts only numbers (age), and then a field to probe
 whether the applicant can handle being away from home for a long period of time.
-In those fields, you can use a Field Visibility Expression so they only appear if the
+In that field, you can use a Field Visibility Expression so it only appears if the
 user enters a number less than *30*.
 
 -  **Age:** Add a required text field called *Age*, with a description that says, *Enter
@@ -151,10 +161,11 @@ convenience?
        submitted.
     -  Is less than: Entries must be less than the specified number.
 
-    ![Figure x: You can validate number submissions for text
-fields.](../../../images/forms-number-validation.png)
+    ![Figure x: You can validate number submissions for text fields.](../../../images/forms-number-validation.png)
+
 It can be helpful to alert users to your validation rules in help text or
 placeholder text (for example, *You must enter a number greater than 0*).
+
 
 If you mark a field as *Required*, that's another form of validation. Liferay is
 going to make sure that the field is not empty. If it is, an error message will
@@ -162,31 +173,49 @@ appear, directing the user to enter something into the required field.
 
 $$$
 
-Now you need to create some fields that will be displayed only if the user enters any
-number less than *30*.
+Make one more required field on the first page:
+
+-  **Email Address:** A required text field that only accepts email address. Use
+   the validation rule for *Text* &rarr; *Email* to make sure that a valid email
+address is entered.
+
+Next create a field that will be displayed only if the user enters any number
+less than *30* in the Age field.
 
 ## Using Field Visibility Expressions
 
 Sometimes you only want a form field to appear if a certain value is entered in
 another field. In the Lunar Resort  application for employment, you want to ask
-a few additional questions to users who are less than 30 years old, to make sure
+an additional questions to users who are less than 30 years old, to make sure
 they're comfortable with being away from home for a long period of time.
 
 -  **Maximum Time Away From Home:** This is a required select field with the description
    *What's the longest time, in consecutive months, that you've spent away from
-your permanent residence?* Give it the following options: *<1*, *1-3*, *6-12*,
+your permanent residence?* Give it the following options: *<1*, *1-3*, *4-12*,
 *>12*.
 
     Enter a Predefined Value of *<1*.
 
     Now comes the interesting part. Under Field Visibility Expression, enter
-*lessThan(Age,"30")*.
-<!-- Find out the real syntax and update -->
+*between(Age,0,29)*. This expression will cause the field to appear *only* if
+the Age field has a value between 0 and 29 entered. Another expression that will
+produce the desired result is *(Age>0)&&(Age<30)*. In this case, the expression is
+checking to make sure that the Age value is greater than zero and it's checking
+to make sure that the entered Age value is less than 30. 
+
+![Figure x: You can make a field appear based on the value of another field in your form.](../../../images/forms-vis-expr-fields.png)
 
 +$$$
 
-**Note:** There are several expressions you can use to control field visibility.
+**Note:** There are several expressions and operators you can use to control
+field visibility based on the value entered in another field.
 <!-- Find this and doc it here. -->
+-  **between(Field Label,lower bound, upperbound)**: Used with numeric fields
+   (see the section on validation for more information), the between operator
+checks whether the entered value of the specified field is between a lower and
+upper bound. If it is in the specified range, the field will appear on the form.
+-  **equals(Field Label, value)**: Display your field only if a specific value
+   was entered in the specified field.
 
 $$$
 
@@ -227,8 +256,9 @@ using a Data Provider.
 
 ### Adding and Configuring a Data Provider
 
-To set up a data provider that you can use in your forms, navigate to the Forms
-application in *Site Administration* &rarr; *Content*, and click the Options
+Before using a Data Provider in your select fields, you need to configure one
+that you can use in your forms. Navigate to the Forms application in *Site
+Administration* &rarr; *Content*, and click the Options
 (![Options](../../../images/icon-options.png)) button.
 
 ![Figure x: Set up a data provider that can be reused in all your forms.](../../../images/forms-options-menu.png)
@@ -325,10 +355,18 @@ For the employment application form in The Lunar Resort, Guest users need the
 *View* permission, or else they won't be able to see the options provided by the
 data provider in the select fields. Once you grant the permission, click *Save*.
 
+
++$$$
+
+**Note:** If you're developing The Lunar Resort employment application form,
+you'll notice we skipped over the second page, Very Personal Details. It will be
+dealt with in the section on laying out your forms.
+
+$$$
+
 That concludes the actual development of the form (adding pages and form
 fields). The rest of the article covers features of the Forms application that
 you'll use during or after form entry submission.
-
 <!--Picture of full form?-->
 <!-- Should these Form Settings options be covered separately? -->
 
@@ -499,8 +537,19 @@ which will appear when you hover your mouse over the field in the layout.
 
 In addition to moving the field, you can edit the field or delete it.
 
++$$$
+
+**Note:** If you're following along with the employment application form, it's
+time to build the second page of the form (Very Personal Details). Combining
+your form building knowledge with your ability to customize the form layout,
+build the form to match the screenshot below. It will use paragraph, date,
+radio, text, and checkbox fields, laid out in two columns.
+
+![Figure x: The second page of The Lunar Resort employment application.](../../../images/forms-page2.png)
+
+$$$
 
 Now it's done. Your users, including Guest users, can submit applications to The
 Lunar Resort. The form is multi-page, full of features, and there's even some
-processing that's done on form submission. As you can see, there's a lot of flexibility built in to Liferay's Forms
-application. 
+processing that's done on form submission. As you can see, there's a lot of
+flexibility built in to Liferay's Forms application. 
