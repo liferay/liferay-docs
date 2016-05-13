@@ -207,10 +207,10 @@ to make sure that the entered Age value is less than 30.
 
 +$$$
 
-**Note:** There are several expressions and operators you can use to control
+**Note:** There are several functions and operators you can use to control
 field visibility based on the value entered in another field.
 <!-- Find this and doc it here. -->
--  **between(Field Label,lower bound, upperbound)**: Used with numeric fields
+-  **between(Field Label,lower bound, upper bound)**: Used with numeric fields
    (see the section on validation for more information), the between operator
 checks whether the entered value of the specified field is between a lower and
 upper bound. If it is in the specified range, the field will appear on the form.
