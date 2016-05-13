@@ -36,10 +36,9 @@ download the required JARs from third-parties, as described below.
    and put its `.jar` file into the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
-3. Download the remaining required JARs and insert them into the same folder. 
-
-<!--    - `com.liferay.osgi.service.tracker.collections.jar` - [http://central.maven.org/maven2/com/liferay/com.liferay.osgi.service.tracker.collections/2.0.1/com.liferay.osgi.service.tracker.collections-2.0.1.jar](http://central.maven.org/maven2/com/liferay/com.liferay.osgi.service.tracker.collections/2.0.1/com.liferay.osgi.service.tracker.collections-2.0.1.jar)-->
-    - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api)
+3. Download the
+   [com.liferay.registry.api.jar](https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api)
+   JAR and insert it into the same folder. 
 
 4. Create the file `module.xml` in the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the
@@ -133,10 +132,10 @@ Make the following modifications to `standalone.xml`:
         </system-properties>
 
 2. Add a timeout for the deployment scanner by setting
-`deployment-timeout="120"` as seen in the excerpt below.
+`deployment-timeout="360"` as seen in the excerpt below.
 
         <subsystem xmlns="urn:jboss:domain:deployment-scanner:2.0">
-            <deployment-scanner deployment-timeout="120" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+            <deployment-scanner deployment-timeout="360" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
         </subsystem>
 
 3. Add the following JAAS security domain to the security subsystem
@@ -149,26 +148,20 @@ Make the following modifications to `standalone.xml`:
             </authentication>
         </security-domain>
 
-<!-- Explain the following two code pieces, once they've been addressed:
+4. Disable the default JBoss Welcome page by setting the `enable-welcome-root`
+   attribute to `false`, as seen in the snippet below.
 
-<replace file="${app.server.jboss.dir}/standalone/configuration/standalone.xml">
-			<replacetoken><![CDATA[enable-welcome-root="true"]]></replacetoken>
-			<replacevalue><![CDATA[enable-welcome-root="false"]]></replacevalue>
-		</replace>
+        <subsystem xmlns="urn:jboss:domain:web:2.2" default-virtual-server="default-host" native="false">
+            <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
+            <virtual-server name="default-host" enable-welcome-root="false">
+            ...
 
------
+5. In the same `<subsystem ... />` element that was outlined in the previous
+   step, add the following snippet above the `<connector ... />` element:
 
-<replace file="${app.server.jboss.instance.dir}/configuration/standalone.xml">
-			<replacetoken><![CDATA[<subsystem default-virtual-server="default-host" native="false" xmlns="urn:jboss:domain:web:1.1">]]></replacetoken>
-			<replacevalue>
-				<![CDATA[
-					<subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host" native="false">
-						<configuration>
-							<jsp-configuration development="true" />
-						</configuration>
-				]]>
-			</replacevalue>
--->
+        <configuration>
+            <jsp-configuration development="true" />
+        </configuration>
 
 Now it's time for some changes to your configuration and startup scripts.
  
@@ -187,24 +180,22 @@ Make the following edits as applicable to your operating system:
 On Windows, comment out the initial `JAVA_OPTS` assignment as demonstrated in
 the following line:
 
-    rem set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m"
+    rem set "JAVA_OPTS=-Xms1G -Xmx1G -XX:MaxPermSize=256M"
 
 Then add the following `JAVA_OPTS` assignment one line above the
 `:JAVA_OPTS_SET` line found at end of the file:
 
-    set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m"
+    set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m"
 
 On Unix, merge the following values into your settings for `JAVA_OPTS`, 
 replacing any matching attributes with the ones found in the assignment
 below:
 
-    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m
+    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m"
 
 Make sure you replace the `$JBOSS_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
 the Java security options in the *Security Configuration* section. 
-
-<!-- Make sure the above has been checked. This seems inconsistent. -Cody -->
 
 +$$$
 
@@ -273,7 +264,7 @@ Modify `standalone.xml` and add your data source and driver in the
 
 Your final data sources subsystem should look like this:
 
-        <subsystem xmlns="urn:jboss:domain:datasources:1.0">
+        <subsystem xmlns="urn:jboss:domain:datasources:1.2">
             <datasources>
                 <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
                     <connection-url>jdbc:mysql://localhost/lportal</connection-url>
@@ -298,9 +289,11 @@ If you want to use the built-in Liferay mail session, you can skip this section.
 
 Specify your mail subsystem in `standalone.xml` as in the following example:
 
-    <subsystem xmlns="urn:jboss:domain:mail:2.0">
+    <subsystem xmlns="urn:jboss:domain:mail:1.2">
         <mail-session jndi-name="java:jboss/mail/MailSession" >
-            <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp" username="USERNAME" password="PASSWORD"/>
+            <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
+                <login username="USERNAME" password="PASSWORD"/>
+            </smtp-server>
        </mail-session>
     </subsystem>
     ...
@@ -387,6 +380,10 @@ tutorial to learn how to configure Liferay plugin access to resources.
    `$JBOSS_HOME/standalone/deployments/ROOT.war`.
 
 2. Unzip the Liferay `.war` file into the `ROOT.war` folder.
+
+3. Download the
+   [tomcat-juli.jar](http://www.java2s.com/Code/JarDownload/tomcat/tomcat-juli.jar.zip)
+   file and insert it into your `ROOT.war/WEB-INF/lib` folder.
 
 3. To trigger deployment of `ROOT.war`, create an empty file named
    `ROOT.war.dodeploy` in  your `$JBOSS_HOME/standalone/deployments/` folder.
