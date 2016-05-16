@@ -161,7 +161,7 @@ capability. It's also possible to develop your own implementation of Liferay's
 social API to use different social relationships. Please refer to the [Liferay
 Developer Tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction) or
 the
-[Javadocs](http://docs.liferay.com/portal/7.0/javadocs/portal-service/com/liferay/social/kernel/service/package-summary.html)
+[Javadocs](http://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/social/kernel/service/package-summary.html)
 for information about Liferay's social API. 
 
 Probably the core Social application is Activities. It displays information
