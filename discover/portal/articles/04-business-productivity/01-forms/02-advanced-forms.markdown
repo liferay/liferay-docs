@@ -184,6 +184,11 @@ less than *30* in the Age field.
 
 ## Using Field Visibility Expressions
 
+As you saw in the section on validation, text fields are often made to accept
+either text values or numeric values. Using a *Field Visibility Expression*, you
+can check text fields for a given value and display your field based on the
+value the user entered.
+
 Sometimes you only want a form field to appear if a certain value is entered in
 another field. In the Lunar Resort  application for employment, you want to ask
 an additional questions to users who are less than 30 years old, to make sure
@@ -199,7 +204,7 @@ your permanent residence?* Give it the following options: *<1*, *1-3*, *4-12*,
     Now comes the interesting part. Under Field Visibility Expression, enter
 *between(Age,0,29)*. This expression will cause the field to appear *only* if
 the Age field has a value between 0 and 29 entered. Another expression that will
-produce the desired result is *(Age>0)&&(Age<30)*. In this case, the expression is
+produce the same result is *(Age>=0)&&(Age=<29)*. In this case, the expression is
 checking to make sure that the Age value is greater than zero and it's checking
 to make sure that the entered Age value is less than 30. 
 
@@ -208,14 +213,96 @@ to make sure that the entered Age value is less than 30.
 +$$$
 
 **Note:** There are several functions and operators you can use to control
-field visibility based on the value entered in another field.
-<!-- Find this and doc it here. -->
--  **between(Field Label,lower bound, upper bound)**: Used with numeric fields
-   (see the section on validation for more information), the between operator
-checks whether the entered value of the specified field is between a lower and
-upper bound. If it is in the specified range, the field will appear on the form.
--  **equals(Field Label, value)**: Display your field only if a specific value
-   was entered in the specified field.
+field visibility based on the value entered in another field. An expression can
+be as simple as containing a single operator:
+
+    Age<29
+
+Alternatively, operators and functions can be combined to make a more complex
+expression:
+
+    sum(Housing,CarPayment)>MonthlySalary
+
+In this fictional situation, if you entered the above expression, the field
+would only be displayed if the sum of the *Housing* field and the *Car Payment*
+field is greater than the *Monthly Salary* field. 
+
+As demonstrated above, you can always use a form field value in place of a hard
+coded value, by entering the Field Name instead of the value. 
+
+![Figure x: A form field's Field Name is automatically generated from the Label you give the field.](../../../images/forms-field-name.png)
+
+There are functions and operators for your use in your field visibility
+expressions. First consider the functions: 
+
+-  **between(FieldName,lower bound value, upper bound value)**: Check whether
+   the entered value of the specified numeric field is between a lower and upper
+bound. If it is in the specified range, the field will appear on the form. For
+example:
+
+        between(Age,0,29)
+
+-  **equals(FieldName, value)**: Display your field only if the value entered
+   into the specified field equals a specific numeric value (or if it equals the
+value of another field). For example:
+
+        equals(Salary,TotalExpenses)
+
+-  **sum(FieldName1, FieldName2, ...)**: Add numeric fields together, usually for
+   comparing to a given value using one of the operators covered below. For
+example:
+
+        sum(Expense1,Expense2,Expense3)>Salary
+
+-  **min(value, FieldName1, FieldName2,...)**: Get the lowest numeric value in the list of
+   parameters (you can use Field Names and/or values), usually for comparing to
+a given value using one of the operators below. For example:
+
+        Salary>min(TotalExpenses,TotalDebt)
+
+-  **max(Field Name, value)**: Get the largest numeric value in the list of
+   parameters, usually for comparing to a given value using one of the operators
+covered below. For example:
+
+        Salary<max(TotalExpenses,TotalDebt)
+
+-  **contains(Field Name, value)**: Used to check a field for a specific string
+   of text or the text entered in another field. The text value can be in the
+beginning, middle, or end of the field being checked. For example:
+
+        contains(FullName,LastName)
+
+-  **concat(Field Name, value)**: Concatenate a string of text with a given
+   text value, usually used in constructing a larger expression. For example:
+
+        contains(FullName,concat(FirstName, " ", LastName))
+
+In addition to the functions above, there are a bunch of operators you can use in
+building your Field Visibility Expressions:
+
+-  **+**: Addition operator
+-  **-**: Subtraction operator
+-  **\***: Multiplication operator
+-  **/**: Division operator
+-  **%**: Division remainder operator
+-  **^**: Power operator
+-  **&&**: *And* condition operator
+-  **||**: *Or* condition operator
+-  **>**: *Greater than* relational operator
+-  **>=**: *Greater than or equal to* relational operator
+-  **<**: *Less than* relational operator
+-  **<=**: *Less than or equal to* relational operator
+-  **==**: *Equals* relational operator
+-  **!=**: Relation operator to make sure the arguments are *not* equal
+-  **NOT**: Negates a boolean expression (so you can check for a *false*
+   condition). If you write a boolean expression, by default it is checked for a *true*
+condition. You can use *NOT* to check the opposite:
+
+        NOT(contains(FullName,concat(FirstName, " ", LastName)))
+
+    The above expression checks for the opposite of the example given in the
+*concat* function description above. If the *FullName* field does *not* contain
+the *FirstName*, a space character, and *LastName*, then your field will appear.
 
 $$$
 
@@ -231,7 +318,7 @@ some light entertainment).
 
 **Note:** Interstellar citizenship rules are strange, and since the moon
 declared independence from earth (Lunar Independence Day is a big deal at The
-Lunar resort), it has its own set of citizenship rules. Among other things, the
+Lunar Resort), it has its own set of citizenship rules. Among other things, the
 rules require employees of The Lunar Resort to be citizens of the moon.
 
 Moon citizenship is cool, especially if you're a dual citizen of your native
@@ -251,7 +338,7 @@ with all the countries of earth.
 $$$
 
 Unless you have an intern, you don't want to manually enter all the countries of
-earth into five different select fields. No, you want to populate the fields
+earth into five different select fields. Instead, you want to populate the fields
 using a Data Provider.
 
 ### Adding and Configuring a Data Provider
@@ -279,9 +366,7 @@ Fill out the Data Providers form, passing in the following values:
 
 You're probably wondering what the *URL*, *Displayed JSON Attribute*, and
 *Stored JSON Attribute* fields are all about. First, it's good to understand
-that what you're doing when setting up a data provider is accessing a [JSON web
-service that has been registered in
-Liferay](develop/tutorials/-/knowledge_base/7-0/registering-json-web-services).
+that what you're doing when setting up a data provider is accessing a [JSON web service that has been registered in Liferay](develop/tutorials/-/knowledge_base/7-0/registering-json-web-services).
 Service registration is a prerequisite for using a service in the Forms
 application to set up a data provider. To find a list of the ready-to-use
 registered JSON web services, navigate to `http://localhost:8080/api/jsonws`
@@ -484,8 +569,8 @@ $$$
 ## Form Layouts
 
 Sometimes, it doesn't make sense to have a single column, vertically oriented
-form, which is what you get by default, if you just keep clicking the large *Add
-Field* button on the form.
+form, which is what you get by default when you just keep clicking the large *Add
+Field* button on the form as you build the form.
 
 Instead, you might use more than one column in your form.
 
