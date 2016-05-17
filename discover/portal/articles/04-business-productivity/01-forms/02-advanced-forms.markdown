@@ -27,9 +27,9 @@ use in your forms that are covered in this article:
 Aside from those features, which enhance the building of your forms, there are
 some settings and processing features to explore:
 
-- Enable CAPTCHA for a form
-- Redirect to a different URL after a successful form submission
-- Send an email notification whenever a form entry is submitted
+- Enabling CAPTCHA for a form
+- Redirecting to a different URL after a successful form submission
+- Sending an email notification whenever a form entry is submitted
 
 +$$$
 
@@ -184,11 +184,6 @@ less than *30* in the Age field.
 
 ## Using Field Visibility Expressions
 
-As you saw in the section on validation, text fields are often made to accept
-either text values or numeric values. Using a *Field Visibility Expression*, you
-can check text fields for a given value and display your field based on the
-value the user entered.
-
 Sometimes you only want a form field to appear if a certain value is entered in
 another field. In the Lunar Resort  application for employment, you want to ask
 an additional questions to users who are less than 30 years old, to make sure
@@ -227,8 +222,9 @@ In this fictional situation, if you entered the above expression, the field
 would only be displayed if the sum of the *Housing* field and the *Car Payment*
 field is greater than the *Monthly Salary* field. 
 
-As demonstrated above, you can always use a form field value in place of a hard
-coded value, by entering the Field Name instead of the value. 
+As demonstrated above, you can use a form field value (whether text or numeric)
+in place of a hard coded value, by entering the Field Name instead of a specific
+value. 
 
 ![Figure x: A form field's Field Name is automatically generated from the Label you give the field.](../../../images/forms-field-name.png)
 
@@ -275,10 +271,10 @@ beginning, middle, or end of the field being checked. For example:
 -  **concat(Field Name, value)**: Concatenate a string of text with a given
    text value, usually used in constructing a larger expression. For example:
 
-        contains(FullName,concat(FirstName, " ", LastName))
+        contains(FullName,concat(FirstName, " Smith"))
 
-In addition to the functions above, there are a bunch of operators you can use in
-building your Field Visibility Expressions:
+In addition to the functions described above, there are a bunch of operators you
+can use in building your Field Visibility Expressions:
 
 -  **+**: Addition operator
 -  **-**: Subtraction operator
@@ -294,17 +290,31 @@ building your Field Visibility Expressions:
 -  **<=**: *Less than or equal to* relational operator
 -  **==**: *Equals* relational operator
 -  **!=**: Relation operator to make sure the arguments are *not* equal
--  **NOT**: Negates a boolean expression (so you can check for a *false*
-   condition). If you write a boolean expression, by default it is checked for a *true*
-condition. You can use *NOT* to check the opposite:
+-  **NOT**: Negates a boolean expression. Boolean (true or false) expressions
+   check for a *true* condition by default. You can use *NOT* to check the opposite:
 
-        NOT(contains(FullName,concat(FirstName, " ", LastName)))
+        NOT(contains(FullName, FirstName))
 
-    The above expression checks for the opposite of the example given in the
-*concat* function description above. If the *FullName* field does *not* contain
-the *FirstName*, a space character, and *LastName*, then your field will appear.
+    The above expression checks whether the *FullName* field contains the value
+entered in the *FirstName* field. If it does *not* then your field will appear.
+
+To check for a value in a select field, you need to use the Field Name for
+the field, and as the value, use the Field Name for the select option you
+entered.
+
+![Figure x: A select field's options will be given Field Names. These are used as the value in your Field Visibility Expression.](../../../images/forms-select-option-name.png)
+
+For example, if you want to display a field only if the *Maximum Time Away From
+Home* field's *>12* option is selected, you could write this Field Visibility
+Expression:
+
+    contains(MaximumTimeAwayFromHome,12)
 
 $$$
+
+Field Visibility Expressions are cool for dynamically displaying a field based
+on another field's entered data. Did you know you can dynamically populate a
+select list from a Data Provider?
 
 ## Populating Select Fields with REST Data Providers
 
@@ -595,7 +605,7 @@ occupies the entire row.
 
 If you'd like, you can design your forms before you add the fields. Just start
 resizing the row using the form layout functionality (drag the chevrons to
-resize the field slots in a row). As you make a field slot smaller, the new
+resize the field slots, or columns, in a row). As you make a field slot smaller, the new
 space is taken up by another field slot. You'll end by having divided the row
 into two columns. Resizing again will make three columns. Once you have the row
 situated how you'd like, start adding the form fields.
