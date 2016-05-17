@@ -4,9 +4,9 @@ The Audience Targeting app not only adds the Audience Targeting application to
 the Site Administration area of the Control Panel, it also includes the
 following instanceable applications which can be added to any portal page:
 
+- Campaign Content Display
 - User Segment Content Display
 - User Segment Content List
-- Campaign Content Display
 
 All of these applications support Application Display Templates (ADTs) so that
 site administrators can customize the look and feel of the application. Any of
@@ -25,12 +25,12 @@ format:
   \[specify a specific asset\].
  
 You can specify any number of *if* clauses when configuring the User Segment
-Content Display application's rules. However, an *otherwise* clause always follows
-the last *if* clause so that the application knows what to display if the user
-doesn't match any user segments. *Don't display anything* is an option for the
-*otherwise* clause.
+Content Display application's rules. However, an *otherwise* clause always
+follows the last *if* clause so that the application knows what to display if
+the user doesn't match any user segments. *Don't display anything* is an option
+for the *otherwise* clause.
 
-![Figure 7.7: You can configure the User Segment Content Display application to display content according to rules that you define in the application's configuration window.](../../images/user-segment-content-display-config.png)
+![Figure 1: You can configure the User Segment Content Display application to display content according to rules that you define in the application's configuration window.](../../images-dxp/user-segment-content-display-config.png)
 
 For example, you can add a User Segment Content Display application to a page and
 configure the following rules for it:
@@ -43,12 +43,13 @@ configure the following rules for it:
   display this content: *soccer_picture.jpg*.
 - Otherwise, *Don't display anything*.
 
-Once a User Segment Content Display application has been added to a page and been
-configured this way, users (even guest users) will see a different image based
-on the user segment to which they belong. The application won't even be visible
-to a user if the user doesn't belong to any of the configured user segments.
+Once a User Segment Content Display application has been added to a page and
+been configured this way, users (even guest users) will see a different image
+based on the user segment to which they belong. The application won't even be
+visible to a user if the user doesn't belong to any of the configured user
+segments.
 
-![Figure 7.8: In the User Segment Content Display application, site administrators can preview the various assets that have been configured to be displayed to different user segments.](../../images/07-audience-targeting-uscd.png)
+![Figure 2: In the User Segment Content Display application, site administrators can preview the various assets that have been configured to be displayed to different user segments.](../../images-dxp/audience-targeting-uscd.png)
 
 The User Segment Content Display application allows site administrators to
 preview the various assets that have been configured to be displayed to
@@ -66,7 +67,7 @@ for the Tennis fans user segment. If the user belongs to multiple user segments,
 then a list of articles that have been categorized for any of the matching user
 segments will be shown.
 
-![Figure 7.9: The User Segment Content List application displays content that matches the user segments which fit the current user. You can configure the User Segment Content List application to display assets of any kind or only specific kinds of assets.](../../images/user-segment-content-list.png)
+![Figure 3: The User Segment Content List application displays content that matches the user segments which fit the current user. You can configure the User Segment Content List application to display assets of any kind or only specific kinds of assets.](../../images-dxp/user-segment-content-list.png)
 
 By default, the User Segment Content List application is configured to display
 assets of any type that have been categorized for any user segment that matches
@@ -96,7 +97,7 @@ campaigns. These rules cannot be ordered manually as they can with the User
 Segment Content Display application. The order of the rules is based on the
 priority of the campaigns.
 
-![Figure 7.10: The rules for configuring the Campaign Content Display application to display content are similar to the rules of the User Segment Content Display application, but simpler.](../../images/campaign-content-display-config.png)
+![Figure 4: The rules for configuring the Campaign Content Display application to display content are similar to the rules of the User Segment Content Display application, but simpler.](../../images-dxp/campaign-content-display-config.png)
 
 For example, suppose that you've created two campaigns called *World Cup* and
 *Stanley Cup*, designed to target users who are interested in the World Cup of
@@ -104,9 +105,9 @@ soccer and the Stanley Cup of hockey. You could add a Campaign Content Display
 application to a page and configure it with the following rules:
 
 - If the user belongs to this campaign: *World Cup*, then display this content:
-  *soccer-jersey.jpg*.
+  *soccer-ball.jpg*.
 - If the user belongs to this campaign: *Stanley Cup*, then display this
-  content: *hockey-jersey.jpg*.
+  content: *hockey-.png*.
 - Otherwise, display this content: *generic-sports-jersey.jpg*
 
 Once a Campaign Content Display application has been added to a page and been
@@ -125,8 +126,12 @@ your server for optimal performance. Visit the
 [Performance Tuning](/discover/deployment/-/knowledge_base/6-2/performance-tuning)
 section for details.
 
+<!-- Update link above, when available. -Cody -->
+
 $$$
 
 The Campaign Content Display application, like the User Segment Content Display
 application, allows site administrators to preview the different assets that
 will be displayed for different campaigns.
+
+Next you'll learn how to simulate your user segments and campaigns.

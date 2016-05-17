@@ -3,7 +3,8 @@
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To manage campaigns for a site,
 navigate to *Site Administration* &rarr; *Configuration* &rarr; *Audience
-Targeting* &rarr; *Campaigns*. To create a new campaign, you need to select a
+Targeting* &rarr; *Campaigns*. To create a new campaign, select the
+(![Add Campaign](../../images-dxp/icon-add.png)) button. You need to select a
 user segment to target, a start date and an end date, and a priority, as well as
 a name and, optionally, a description. You also have to indicate whether or not
 the campaign you create should be active or inactive. When you've entered the
@@ -13,14 +14,14 @@ dates together specify the duration of the campaign. There can be multiple
 campaigns active at the same time that target the same user segment. In these
 situations, the priority attribute of the campaigns determines which campaign
 takes precedence. Finally, you can activate or deactivate a campaign via the
-active attribute of a campaign. Deactivating a campaign disables the effect of
+*Active* attribute of a campaign. Deactivating a campaign disables the effect of
 the campaign within the portal. Deactivating a campaign is like deleting the
 campaign except that a deactivated campaign can be reactivated later. It can be
 useful to deactivate a campaign if a problem is found with the way content is
 being displayed. Once the problem has been corrected, the campaign can be
 reactivated.
 
-![Figure 7.5: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* to manage campaigns for a site.](../../images/07-audience-targeting-user-campaigns.png)
+![Figure 1: Navigate to Site Administration and click *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* to manage campaigns for a site.](../../images-dxp/audience-targeting-user-campaigns.png)
 
 For example, suppose you wanted the ability to display certain content (for
 example, advertisements about your new Android app) to female baseball fans
@@ -40,7 +41,7 @@ Campaign Content Display application.
 To configure permissions for creating, editing, and deleting user segments,
 visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
 *Define Permissions* button corresponding to the role you'd like to configure
-permissions for, and search for *Audience Targeting Resources*.
+permissions for, and search for *Audience Targeting*.
 
 ## Managing Campaign Priorities
 
@@ -83,7 +84,9 @@ something not working as your team expected:
  - Number of users who completed the registration
 
 ![Figure 7.6: Drag and drop tracking actions to the right to configure a campaign.](../../images/07-audience-targeting-tracking-actions.png)
- 
+
+<!-- Figure out where campaign tracking actions are and update image above. -->
+
 You could drag and drop *tracking actions* from the palette to track all the
 actions mentioned above. More types of tracking actions can be created by
 developers and deployed as OSGI plugins. See the
@@ -92,16 +95,18 @@ tutorial for details.
 
 The tracking actions use an analytics engine called *Audience Targeting
 Analytics* that can be configured per site or per portal instance. To configure
-the analytics engine per site, go to *Site Administration* &rarr; *Site
-Settings*. To configure it per portal instance, go to *Control Panel* &rarr;
-*Portal Configuration*. Tracking all the actions of all your users (even guest
-users) can be a very heavy load for your server. Therefore, it's best to disable
-the tracking of any actions about which you don't need information.
+the analytics engine per site, go to Site Administration and click
+*Configuration* &rarr; *Site Settings* &rarr; *Advanced* &rarr; *Audience
+Targeting Analytics*. To configure it per portal instance, go to *Control Panel*
+&rarr; *Configuration* &rarr; *Instance Settings* &rarr; *Audience Targeting
+Analytics*. Tracking all the actions of all your users (even guest users) can be
+a very heavy load for your server. Therefore, it's best to disable the tracking
+of any actions about which you don't need information.
 
 ## Campaign Reports
 
-Reports are available for campaigns. You can click *Actions* &rarr; *Reports*
-next to a campaign to see the list of reports available. More reports can be
+Reports are available for campaigns. You can select the campaign name and click
+the *Reports* tab to see the list of reports available. More reports can be
 created by developers and deployed as OSGI plugins. See the
 [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
 tutorial for details. 
@@ -110,7 +115,7 @@ The Content Views report shows the number of times that different assets have
 been viewed via the Campaign Content Display application by users in the context
 of the current campaign. For example, if you configured five Campaign Content
 Display applications around your website to display content for a campaign, the
-Content View report for the campaign would show how many times was that content
+Content View report for the campaign would show how many times that content was
 displayed to different users.
 
 The Tracking Actions report shows the number of times that the actions tracked
