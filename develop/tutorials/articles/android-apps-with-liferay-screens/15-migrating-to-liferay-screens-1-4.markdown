@@ -35,4 +35,5 @@ AppCompat 23 to your app:
   been replaced by a better theming system, based on the default color names in 
   [Google's material design specification](https://www.google.com/design/spec/material-design/introduction.html#) 
   (like `primaryColor`, `secondaryColor`, etc...). Liferay Screens detects these 
-  values and applies them to all the Screenlets. 
+  values and applies them to all the Screenlets.
+- The screenlet `WebContentDisplayScreenlet` has been moved to the package `com.liferay.mobile.screens.webcontent.display` (instead of screens.webcontentdisplay) due to the new `WebContentListScreenlet`.
