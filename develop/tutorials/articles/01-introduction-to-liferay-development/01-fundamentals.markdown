@@ -45,7 +45,7 @@ using web or mobile clients.
 Applications can be created by leveraging Liferay's many building blocks that
 are commonly needed by today's applications. For example, a commenting system
 allows developers to attach comments to any asset that they define, whether they
-be assets they develop or assets that ship with the system.  Assets are shared
+be assets they develop or assets that ship with the system. Assets are shared
 by the system and are used to represent many common elements, such as Users,
 Organizations, Sites, User Groups, blog entries, and even folders and files. 
 
@@ -87,7 +87,9 @@ Liferay bundle, which is a distribution of Liferay bundled with an app server.
 
 $$$
 
-Modules may have one or more *components*. Creating a component can be as easy
+Modules may have one or more *components*. A component is a POJO whose lifecycle
+is managed by the container. In Liferay, a component is generally part of the
+Declarative Services framework. Creating a component can be as easy
 as writing a Java class with the `@Component` annotation. In software
 engineering terms, a component is the smallest building block of a larger
 application, and that application is itself made up of many small components.
@@ -98,10 +100,23 @@ with small, well-defined, bite-sized chunks of code at a time.
 Components can also be extension points. A dynamic extension points module. -->
 
 Components are managed by a component container, which keeps track of the
-components that are installed and active. Components offer services, and
-it's the container's job to manage the available services by providing
+components that are installed and active. In this way, components have these
+benefits: 
+
+- The container can start and stop components. 
+- A component *may* publish itself as an OSGi service, but not all components
+    are services. 
+- A component may use or consume an OSGi service. 
+- The framework can manage the binding of the services a component consumes. 
+
+It's the container's job to manage the available services by providing
 components the services they need. It does this through a robust dependency
-management system that's handled automatically at runtime. 
+management system that's handled automatically at runtime. The benefit to you as
+a developer is a framework defining a contract allowing simple POJOs to interact
+with each other through OSGi services, with all the necessary
+infrastructure--such as dependency injection--that comes with it. And because
+you have a container that manages it all, it's dynamic--meaning restarts are not
+necessary for starting, stopping, adding, or removing components and services. 
 
 <!-- Mention dependency injection and the fact that it's better than Spring
 because it's dynamic. -->
