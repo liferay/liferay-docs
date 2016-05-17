@@ -1,4 +1,4 @@
-# Creating Advanced Forms
+# Creating Advanced Forms [](id=creating-advanced-forms)
 
 Liferay's built-in Forms application supports your most basic form building
 needs (something like a one question survey), and your most advanced (like a
@@ -46,7 +46,7 @@ $$$
 More features are being planned, so don't despair if you need a feature that's
 not yet present in the Forms application.
 
-## The Lunar Resort Employment Application Form
+## The Lunar Resort Employment Application Form [](id=the-lunar-resort-employment-application-form)
 
 At The Lunar Resort, management is VERY particular in its hiring practices. Lots
 of people think they want to work on the moon full time, but it takes a special
@@ -63,13 +63,13 @@ kind of person to really make it work. There's so much that can go wrong:
 There are more hiring pitfalls than the phobias listed above, but it's time to
 start building the application form, starting with the creation of its pages.
 
-## Creating Form Pages
+## Creating Form Pages [](id=creating-form-pages)
 
 Liferay's Forms application supports multi-page forms. To add one, click the
 Actions (![Action](../../../images/icon-actions.png)) button at the top right hand
 corner of the form, and then click *Add New Page*.
 
-![Figure x: You can add new pages or reset the current page from the Page Actions menu.](../../../images/forms-page-actions.png)
+![Figure 1: You can add new pages or reset the current page from the Page Actions menu.](../../../images/forms-page-actions.png)
 
 You also have the option to *Reset Page*. If you click this, the title,
 description, and any fields you added to the page will be deleted. It gives you
@@ -85,12 +85,12 @@ descriptions:
 Once you create the form's pages, you'll see how navigating the pages is easy
 with the form page navigation wizard.
 
-![Figure x: Multi-page forms have a default *Wizard Mode* that makes navigating the form easy for users.](../../../images/forms-pagination-modes.png)
+![Figure 2: Multi-page forms have a default *Wizard Mode* that makes navigating the form easy for users.](../../../images/forms-pagination-modes.png)
 
 Once you have the form pages created, navigate back to the first page, Personal
 Details.
 
-## Adding Placeholder Text and Predefined Values
+## Adding Placeholder Text and Predefined Values [](id=adding-placeholder-text-and-predefined-values)
 
 To populate the employment application form for The Lunar Resort, you should
 start by adding some of the usual fields, like a Full Name field:
@@ -99,7 +99,7 @@ start by adding some of the usual fields, like a Full Name field:
    *Enter your full name, no matter how long.* Under Show More Options, enter
 Placeholder Text: *e.g., Maximillian Aurelius Piroux the 11th*.
 
-    ![Figure x: The Full Name field in the employment form. It has a placeholder value to help users understand what you are looking for.](../../../images/forms-employment-full-name.png)
+    ![Figure 3: The Full Name field in the employment form. It has a placeholder value to help users understand what you are looking for.](../../../images/forms-employment-full-name.png)
 
 +$$$
 
@@ -114,7 +114,7 @@ Remember that placeholder values will not be submitted if the field is left
 blank, so you don't have to worry about getting a bunch of applications from
 *Maximillian Aurelius Piroux the 11th*.
 
-## Validating Text Fields
+## Validating Text Fields [](id=validating-text-fields)
 
 The HR department needs to weed prospective employees out if they're not mature
 enough. If the user is under a certain age, make sure to ask them if they've
@@ -131,7 +131,7 @@ user enters a number less than *30*.
 can enter an error message *You must enter your age in years, and it must be
 greater than 0*.
 
-    ![Figure x: The Age field in the employment form. It uses validation to ensure that a number greater than zero is entered.](../../../images/forms-employment-age.png)
+    ![Figure 4: The Age field in the employment form. It uses validation to ensure that a number greater than zero is entered.](../../../images/forms-employment-age.png)
 
 +$$$
 
@@ -150,7 +150,7 @@ convenience?
     -  URL: Submissions must be URLs with the proper syntax.
     -  Email: Submissions must be email addresses with the proper syntax.
 
-    ![Figure x: You can validate text submissions for text fields.](../../../images/forms-text-validation.png)
+    ![Figure 5: You can validate text submissions for text fields.](../../../images/forms-text-validation.png)
 -  Number: If you select *Number*, only number submissions are allowed for your
    form field.
     -  Is greater than or equal to: Specify the smallest number that can be
@@ -161,7 +161,7 @@ convenience?
        submitted.
     -  Is less than: Entries must be less than the specified number.
 
-    ![Figure x: You can validate number submissions for text fields.](../../../images/forms-number-validation.png)
+    ![Figure 6: You can validate number submissions for text fields.](../../../images/forms-number-validation.png)
 
 It can be helpful to alert users to your validation rules in help text or
 placeholder text (for example, *You must enter a number greater than 0*).
@@ -182,7 +182,7 @@ address is entered.
 Next create a field that will be displayed only if the user enters any number
 less than *30* in the Age field.
 
-## Using Field Visibility Expressions
+## Using Field Visibility Expressions [](id=using-field-visibility-expressions)
 
 Sometimes you only want a form field to appear if a certain value is entered in
 another field. In the Lunar Resort  application for employment, you want to ask
@@ -199,11 +199,12 @@ your permanent residence?* Give it the following options: *<1*, *1-3*, *4-12*,
     Now comes the interesting part. Under Field Visibility Expression, enter
 *between(Age,0,29)*. This expression will cause the field to appear *only* if
 the Age field has a value between 0 and 29 entered. Another expression that will
-produce the same result is *(Age>=0)&&(Age=<29)*. In this case, the expression is
-checking to make sure that the Age value is greater than zero and it's checking
-to make sure that the entered Age value is less than 30. 
+produce the same result is *(Age>=0)&&(Age=<29)*. In this case, the expression
+is checking to make sure that the Age value is greater than or equal to zero and
+it's checking to make sure that the entered Age value is less than or equal to
+29. 
 
-![Figure x: You can make a field appear based on the value of another field in your form.](../../../images/forms-vis-expr-fields.png)
+![Figure 7: You can make a field appear based on the value of another field in your form.](../../../images/forms-vis-expr-fields.png)
 
 +$$$
 
@@ -218,15 +219,15 @@ expression:
 
     sum(Housing,CarPayment)>MonthlySalary
 
-In this fictional situation, if you entered the above expression, the field
-would only be displayed if the sum of the *Housing* field and the *Car Payment*
-field is greater than the *Monthly Salary* field. 
+In this expression, the field would only be displayed if the sum of the
+*Housing* field and the *Car Payment* field is greater than the *Monthly Salary*
+field. 
 
 As demonstrated above, you can use a form field value (whether text or numeric)
 in place of a hard coded value, by entering the Field Name instead of a specific
 value. 
 
-![Figure x: A form field's Field Name is automatically generated from the Label you give the field.](../../../images/forms-field-name.png)
+![Figure 8: A form field's Field Name is automatically generated from the Label you give the field.](../../../images/forms-field-name.png)
 
 There are functions and operators for your use in your field visibility
 expressions. First consider the functions: 
@@ -289,7 +290,7 @@ can use in building your Field Visibility Expressions:
 -  **<**: *Less than* relational operator
 -  **<=**: *Less than or equal to* relational operator
 -  **==**: *Equals* relational operator
--  **!=**: Relation operator to make sure the arguments are *not* equal
+-  **!=**: Relational operator to make sure the arguments are *not* equal
 -  **NOT**: Negates a boolean expression. Boolean (true or false) expressions
    check for a *true* condition by default. You can use *NOT* to check the opposite:
 
@@ -302,7 +303,7 @@ To check for a value in a select field, you need to use the Field Name for
 the field, and as the value, use the Field Name for the select option you
 entered.
 
-![Figure x: A select field's options will be given Field Names. These are used as the value in your Field Visibility Expression.](../../../images/forms-select-option-name.png)
+![Figure 9: A select field's options will be given Field Names. These are used as the value in your Field Visibility Expression.](../../../images/forms-select-option-name.png)
 
 For example, if you want to display a field only if the *Maximum Time Away From
 Home* field's *>12* option is selected, you could write this Field Visibility
@@ -312,11 +313,11 @@ Expression:
 
 $$$
 
-Field Visibility Expressions are cool for dynamically displaying a field based
-on another field's entered data. Did you know you can dynamically populate a
-select list from a Data Provider?
+Field Visibility Expressions are great for dynamically displaying a field based
+on another field's entered data. Next, find out how to dynamically populate a
+select list from a Data Provider.
 
-## Populating Select Fields with REST Data Providers
+## Populating Select Fields with REST Data Providers [](id=populating-select-fields-with-rest-data-providers)
 
 On its final page (*Extremely Personal Details*) The Lunar Resort application
 form needs five select fields, all populated with the complete list
@@ -351,14 +352,14 @@ Unless you have an intern, you don't want to manually enter all the countries of
 earth into five different select fields. Instead, you want to populate the fields
 using a Data Provider.
 
-### Adding and Configuring a Data Provider
+### Adding and Configuring a Data Provider [](id=adding-and-configuring-a-data-provider)
 
 Before using a Data Provider in your select fields, you need to configure one
 that you can use in your forms. Navigate to the Forms application in *Site
 Administration* &rarr; *Content*, and click the Options
 (![Options](../../../images/icon-options.png)) button.
 
-![Figure x: Set up a data provider that can be reused in all your forms.](../../../images/forms-options-menu.png)
+![Figure 10: Set up a data provider that can be reused in all your forms.](../../../images/forms-options-menu.png)
 
 If you click on *Data Providers*, the data providers window opens, and you can
 see any existing data providers or add a new one. Click the *Add* button
@@ -417,7 +418,7 @@ the database for the form entry. The `name` field was selected in this example.
 Once you set up the data provider, click *Save*. Now you can set up five select
 fields that list all the countries of earth in no time.
 
-### Using a Data Provider in a Select Field
+### Using a Data Provider in a Select Field [](id=using-a-data-provider-in-a-select-field)
 
 Back in the application form, go to the third page, Extremely Personal
 Details. Add a select field.
@@ -432,13 +433,13 @@ times, using field labels to reflect the choice number. For example, you'd call
 the second select field *Relocation Country: Second Choice*, and so on until you
 have five of them. You can decide what help text to provide, if any.
 
-![Figure x: You can configure a data provider and use it to populate a select field.](../../../images/forms-data-provider-list.png)
+![Figure 11: You can configure a data provider and use it to populate a select field.](../../../images/forms-data-provider-list.png)
 
 Your Data Provider is now being used to populate your select fields. However,
 this form is going to be submitted by Guest users, who don't currently have
 permission to see the list of results from the data provider.
 
-### Granting Data Provider Permissions
+### Granting Data Provider Permissions [](id=granting-data-provider-permissions)
 
 To configure the data provider's permissions, navigate to the Forms application (*Site Administration* &rarr; *Content* &rarr;
 *Forms*). Open the Options menu (![Options](../../../images/icon-options.png))
@@ -465,26 +466,26 @@ you'll use during or after form entry submission.
 <!--Picture of full form?-->
 <!-- Should these Form Settings options be covered separately? -->
 
-## Enabling CAPTCHA on Form Submissions
+## Enabling CAPTCHA on Form Submissions [](id=enabling-captcha-on-form-submissions)
 
 You're probably familiar with CAPTCHA, the program used to prevent a bot from
 submitting forms. It's often used in [Login applications](discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay),
 but you can use it in the Forms application, too. 
 
-![Figure x: You can enable CAPTCHA for your form in the Form Settings window.](../../../images/forms-settings-captcha.png)
+![Figure 12: You can enable CAPTCHA for your form in the Form Settings window.](../../../images/forms-settings-captcha.png)
 
 To enable CAPTCHA, click the form's *Options*
 (![Options](../../../images/icon-options.png)) button, then *Settings*.
 Enable the *Require CAPTCHA* setting, click *Done*, save the form, and that's
 all there is to it!
 
-![Figure x: Once you enable CAPTCHA, your form has protection against bot submissions.](../../../images/forms-captcha.png)
+![Figure 13: Once you enable CAPTCHA, your form has protection against bot submissions.](../../../images/forms-captcha.png)
 
 Now, you're much more likely to receive form submissions from humans!
 
 You can move on to enabling workflow for your form.
 
-## Enabling Workflow for Forms
+## Enabling Workflow for Forms [](id=enabling-workflow-for-forms)
 <!--For story purposes, we could have the workflow developed in the Designing
 Workflow article (not yet written) be used in this article. An applicant submits
 the form, then it goew to an HR rep, tehn to a lower management person, then an
@@ -496,12 +497,12 @@ To enable [workflow](discover/portal/-/knowledge_base/7-0/using-workflow) for a 
 Select a Workflow field, select the workflow you want to use for the form, then
 click *Done* and save the form.
 
-![Figure x: Enable workflow on a form from its Form Settings window.](../../../images/forms-workflow.png)
+![Figure 14: Enable workflow on a form from its Form Settings window.](../../../images/forms-workflow.png)
 
 Because each form can be so different, it makes sense to configure workflow for
 forms in each form's Form Settings section.
 
-## Setting Up Form Notifications
+## Setting Up Form Notifications [](id=setting-up-form-notifications)
 
 It's possible to have a notification email sent each time a form entry is
 successfully submitted. Open the form's Form Settings section (click the
@@ -523,7 +524,7 @@ If you enabled workflow for the form, and there's already a notification going
 to the people who need to process the form entry, you might not need to generate
 any notification from the Forms application itself.
 
-## Redirecting Users after Form Submission
+## Redirecting Users after Form Submission [](id=redirecting-users-after-form-submission)
 
 You can send users to any URL you want upon form submission. You might have a
 particular *Thanks for your submission!* type page with a link to the home page,
@@ -540,7 +541,7 @@ haven't configured the permissions yet, so the only user with permission to add
 records is you, the owner! There's a good chance you'll want to customize the
 form's permissions.
 
-## Configuring Form Permissions
+## Configuring Form Permissions [](id=configuring-form-permissions)
 <!-- Is this better in the basic forms article? -->
 
 By default, you can grant the following permissions for a form:
@@ -553,7 +554,7 @@ By default, you can grant the following permissions for a form:
 -  View: All the other permissions you can configure for the form depend on this
    one. Think about it: if you can't see the form, how can you add a record?
 
-![Figure x: You can configure the permissions for a form.](../../../images/forms-form-permissions.png)
+![Figure 15: You can configure the permissions for a form.](../../../images/forms-form-permissions.png)
 
 If you want to allow unauthenticated visitors to your site to view and fill out
 forms, give the *Guest* role the *View* and *Add Record* permissions.
@@ -576,7 +577,7 @@ automatic inheritance of the Guest role permissions, there's a
 
 $$$
 
-## Form Layouts
+## Form Layouts [](id=form-layouts)
 
 Sometimes, it doesn't make sense to have a single column, vertically oriented
 form, which is what you get by default when you just keep clicking the large *Add
@@ -584,13 +585,13 @@ Field* button on the form as you build the form.
 
 Instead, you might use more than one column in your form.
 
-![Figure x: An example of a multiple column form layout.](../../../images/forms-layout-multicolumn.png)
+![Figure 16: An example of a multiple column form layout.](../../../images/forms-layout-multicolumn.png)
 
 As you can see, the multi-column approach saves a lot of space in the pictured
 form. You can also use a mixed approach, with each row broken into a different
 number of columns.
 
-![Figure x: There are many ways to lay out your Liferay forms.](../../../images/forms-layout-mixed.png)
+![Figure 17: There are many ways to lay out your Liferay forms.](../../../images/forms-layout-mixed.png)
 
 If you're going to lay out your forms, you'll be working with two entities in
 the form builder interface: Rows and Field Slots. You've already added and
@@ -601,7 +602,7 @@ If you've added a field to the form, you've also added a row. By default,
 clicking the large *Add Field* button on the form will add a field that
 occupies the entire row. 
 
-![Figure x: By default, fields in your form will occupy an entire row.](../../../images/forms-form-row.png)
+![Figure 18: By default, fields in your form will occupy an entire row.](../../../images/forms-form-row.png)
 
 If you'd like, you can design your forms before you add the fields. Just start
 resizing the row using the form layout functionality (drag the chevrons to
@@ -610,7 +611,7 @@ space is taken up by another field slot. You'll end by having divided the row
 into two columns. Resizing again will make three columns. Once you have the row
 situated how you'd like, start adding the form fields.
 
-![Figure x: It's easy to resize form rows and make new form slots.](../../../images/forms-row-resizing.gif)
+![Figure 19: It's easy to resize form rows and make new form slots.](../../../images/forms-row-resizing.gif)
 <!-- Remake with better quality for publication-->
 
 You can also cut entire rows from the form and paste them elsewhere. Any fields
@@ -618,7 +619,7 @@ you added and configured will be pasted with the field. Once you click the cut
 icon (the scissors), you'll be alerted to the available positions where you can
 paste the row and its fields.
 
-![Figure x: Cut and past an entire row, including its fields, in your form layout.](../../../images/forms-cut-row.png)
+![Figure 20: Cut and past an entire row, including its fields, in your form layout.](../../../images/forms-cut-row.png)
 
 Did you notice the delete icon (![Trash](../../../images/icon-trash.png))?
 Clicking it deletes the entire row, with all its fields. 
@@ -628,7 +629,7 @@ to any unoccupied field slot, in any row. Just open the field's actions menu by
 clicking the Actions button (![Actions](../../../images/icon-actions.png)),
 which will appear when you hover your mouse over the field in the layout.
 
-![Figure x: Move an individual field in your form layout.](../../../images/forms-move-field.png)
+![Figure 21: Move an individual field in your form layout.](../../../images/forms-move-field.png)
 
 In addition to moving the field, you can edit the field or delete it.
 
@@ -640,7 +641,7 @@ your form building knowledge with your ability to customize the form layout,
 build the form to match the screenshot below. It will use paragraph, date,
 radio, text, and checkbox fields, laid out in two columns.
 
-![Figure x: The second page of The Lunar Resort employment application.](../../../images/forms-page2.png)
+![Figure 22: The second page of The Lunar Resort employment application.](../../../images/forms-page2.png)
 
 $$$
 
