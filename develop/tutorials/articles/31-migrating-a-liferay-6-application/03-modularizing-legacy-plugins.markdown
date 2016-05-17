@@ -230,7 +230,7 @@ The table below serves as a quick reference guide. It summarizes the migration
 process for many of your WAR-style application's directories, packages, and files.
 This is a sample table for a fictitious *tasks* applications.
 
-| Legacy Package | Module Package |
+| Plugin Package | Module Package |
 |----------------|----------------|
 | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.asset` | `tasks-web/src/main/java/com.liferay.tasks.asset` |
 | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.portlet` | `tasks-web/src/main/java/com.liferay.tasks.portlet` |
@@ -325,7 +325,7 @@ implementation code.
     methodologies that make the most sense for your application. One size does
     not fit all with your modules' directory schemes.
 
-    | Legacy Package | Module Package |
+    | Plugin Package | Module Package |
     |----------------|----------------|
     | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.model.impl` | `tasks-service/src/main/java/com.liferay.tasks.model.impl` | 
     | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.impl` | `tasks-service/src/main/java/com.liferay.tasks.service.impl` |
