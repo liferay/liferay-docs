@@ -29,9 +29,9 @@ to the migration process.
 
 The standard migration process consists of two general steps: 
 
-[**Step 1:  Converting your 6.2 WAR-style plugins to 7.0 WAR-style plugins**](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)
+**Step 1:  Converting your 6.2 WAR-style plugins to 7.0 WAR-style plugins** <!--(/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
 
-[**Step 2:  Converting your WAR-style plugins to OSGi modules**](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
+**Step 2:  Converting your WAR-style plugins to OSGi modules** <!--(/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)-->
 
 Converting your legacy application to modules might not always be the best
 choice. In some scenarios, it makes better sense to stick with traditional WAR
@@ -92,6 +92,6 @@ to Liferay 7's APIs.
 
 **Related Topics**
 
-[Adapting to Liferay 7's API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)
+<!--[Adapting to Liferay 7's API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
 
 [Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
