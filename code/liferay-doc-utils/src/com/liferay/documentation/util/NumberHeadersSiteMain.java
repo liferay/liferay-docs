@@ -9,8 +9,10 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
@@ -38,19 +40,36 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		List<File> docSetDirFolders = new ArrayList<File>();
+		Queue<File> q = new LinkedList<File>();
+		
 		File articlesDirContents[] = articlesDir.listFiles();
-		for(int i=0; i < articlesDirContents.length; i++) {
-			if(articlesDirContents[i].isDirectory()) {
-				docSetDirFolders.add(articlesDirContents[i]);
+		for (File f : articlesDirContents) {
+			if (f.isDirectory()) {
+				q.add(f);
+			}
+		}
+	
+		while (!q.isEmpty()) {
+			File f = q.remove();
+			docSetDirFolders.add(f);
+			File[] files = f.listFiles();
+		
+			for (File file : files) {
+				if (file.isDirectory()) {
+					q.add(file);
+				}
 			}
 		}
 		
+		docSetDirFolders.add(articlesDir);
 		docSetDirFolders.add(docSetDir);
 		
+		// Create an Array from the article directories ArrayList
 		File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
 		
 		List<String> fileList = new ArrayList<String>();
 
+		// Add the markdown articles in each articles directory to the fileList ArrayList
 		for(int i=0; i < docSetDirFoldersArray.length; i++) {
 			
 			File files[] = docSetDirFoldersArray[i].listFiles(new FilenameFilter() {
@@ -74,6 +93,7 @@ public class NumberHeadersSiteMain extends Task {
 				"FAILURE - no markdown files found in " + articlesDir);
 		}
 
+		// Number the headers for each file in fileList
 		for (int i = 0; i < fileList.size(); i++) {
 			String filename = fileList.get(i);
 			File inFile = new File(filename);
