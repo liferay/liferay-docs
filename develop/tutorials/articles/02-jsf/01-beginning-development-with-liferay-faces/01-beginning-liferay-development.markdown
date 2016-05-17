@@ -1,4 +1,4 @@
-# Beginning Liferay JSF Development
+# Beginning Liferay JSF Development [](id=beginning-liferay-jsf-development)
 
 Before you begin developing a JSF application, you'll need to install a Liferay
 development environment. Although it's possible to use anything from a text

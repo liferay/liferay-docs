@@ -1,4 +1,4 @@
-# Creating a User Interface [](id=creating-a-user-interface)
+# Creating Your JSF Application's User Interface [](id=creating-your-jsf-applications-user-interface)
 
 All of the Guestbook Admin portlet's back-end code is developed; the only thing
 left to do is create the portlet's user interface. The default view should have

@@ -1,4 +1,4 @@
-# Updating Your Service Layer [](id=updating-your-service-layer)
+# Updating Your JSF Application's Service Layer [](id=updating-your-jsf-applications-service-layer)
 
 Just as you did in a previous JSF learning path on
 [Adding Permissions Resources to the Service Layer](/develop/learning-paths/jsf/-/knowledge_base/jsf/adding-permissions-resources-to-the-service-layer),

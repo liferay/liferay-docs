@@ -1,4 +1,4 @@
-# Adding a Portlet to the Control Panel [](id=adding-a-portlet-to-the-control-panel)
+# Adding a JSF Portlet to the Control Panel [](id=adding-a-jsf-portlet-to-the-control-panel)
 
 Up to this point, you've created a fully-functional, data-driven JSF application
 using Service Builder. You've also created managed beans and JSF views to

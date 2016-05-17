@@ -1,4 +1,4 @@
-# Creating Entity Actions [](id=creating-entity-actions)
+# Creating Your JSF Application's Entity Actions [](id=creating-your-jsf-applications-entity-actions)
 
 To this point, you've created a JSF guestbook application that uses a database
 to store its entries. Also, the application is integrated with Liferay's

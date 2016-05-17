@@ -1,4 +1,4 @@
-# Creating Action Buttons [](id=creating-action-buttons)
+# Creating Your JSF Application's Action Buttons [](id=creating-your-jsf-applications-action-buttons)
 
 Now that you have the power to edit and delete entries, and also control their
 permissions, it's time to expose those capabilities to your users through your
