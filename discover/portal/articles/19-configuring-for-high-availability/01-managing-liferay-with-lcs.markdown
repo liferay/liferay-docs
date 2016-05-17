@@ -350,7 +350,7 @@ available in LCS:
   applying fix packs, monitoring server status, viewing server metrics, and 
   more. 
 
-- [**Using Web Notifications:**](/discover/portal/-/knowledge_base/6-1/using-lcs#using-web-notifications) 
+- [**Using Web Notifications:**](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#using-web-notifications) 
   LCS displays web notifications that you can view by clicking the bell icon 
   next to the user menu in the Dockbar. Learn how to manage these. 
 
@@ -713,7 +713,7 @@ As you can see, the LCS Dashboard is a powerful tool that greatly simplifies
 the update process and also gives you extensive information on how your servers 
 are running. Next, you'll learn how to use LCS web notifications. 
 
-## Using Web Notifications
+### Using Web Notifications [](id=using-web-notifications)
 
 LCS also displays web notifications that you can view by clicking the bell icon 
 next to the user menu in the Dockbar. A red badge on the bell icon shows your 
