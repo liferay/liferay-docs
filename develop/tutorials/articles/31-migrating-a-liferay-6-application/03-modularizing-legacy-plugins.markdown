@@ -23,7 +23,7 @@ Here's what's involved:
 
 The first thing you'll do is create your application's web (client) module.
 
-## Converting Your Application's Portlet Classes and UI
+## Converting Your Application's Portlet Classes and UI [](id=converting-your-applications-portlet-classes-and-ui)
 
 The first thing you'll do is create your application's parent directory and the
 directory structure for your application's *web* client module. This module
@@ -246,7 +246,7 @@ applications, such as Liferay Service Builder applications, require additional
 modules to hold their service API and service implementation logic. You'll
 learn how to create these modules next.
 
-## Converting Your Application's Service Builder API and Implementation
+## Converting Your Application's Service Builder API and Implementation [](id=converting-your-applications-service-builder-api-and-implementation)
 
 In this section, you'll learn about converting a Liferay 6 Service Builder
 application to a Liferay 7 style application. In the previous section, you
