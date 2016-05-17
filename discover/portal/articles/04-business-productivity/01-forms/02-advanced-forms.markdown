@@ -380,7 +380,7 @@ You're probably wondering what the *URL*, *Displayed JSON Attribute*, and
 that what you're doing when setting up a data provider is accessing a [REST web service](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&cad=rja&uact=8&ved=0ahUKEwj5xqa_nOLMAhWDYpoKHXCSAl8QFgg-MAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRepresentational_state_transfer&usg=AFQjCNEbs7wls7WPYkz8WvaaxEkpyhJdeQ&sig2=_HSCpCVSb_gzRMpEwKm3mw). You can use the [JSON web services registered in Liferay](develop/tutorials/-/knowledge_base/7-0/registering-json-web-services),
 or any other REST web service you have access to. To find a list of the
 ready-to-use registered JSON web services in Liferay, navigate to
-`http://localhost:8080/api/jsonws` (assuming you're running Liferay locally). If
+http://localhost:8080/api/jsonws (assuming you're running Liferay locally). If
 you do that, you'll be able to browse the available Liferay services that you can use to
 populate your list. The services useful to you in the Forms application will get
 a list of something.  The service you are calling in the data provider you set
