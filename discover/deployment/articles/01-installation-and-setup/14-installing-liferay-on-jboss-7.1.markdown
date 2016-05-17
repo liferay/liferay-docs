@@ -189,6 +189,23 @@ insert the following path names inside the `<paths>...</paths>` element:
 The added paths resolve issues with portal deployment exceptions and image
 uploading problems on a Liferay Portal instance running on JBoss 7.1.x. 
 
++$$$
+
+**Warning:** There are a few known issues with JBoss 7.1.1 that should be noted
+when using your Liferay instance with it.
+
+- JBoss 7.1.1 does not read JSP configurations
+([AS7-4187](https://issues.jboss.org/browse/AS7-4187)). Because of this issue,
+developers must manually remove the portlet and empty the JBoss `/tmp` folder
+before deploying a new version of a file to ensure that changes to JSP files are
+recognized.
+- JBoss 7.1.1 causes web services not to work with Spring MVC
+([JBWS-3453](https://issues.jboss.org/browse/JBWS-3453)). This issue may be
+significant for developers who are using Spring MVC and connecting to remote web
+services.
+
+$$$
+
 The prescribed script modifications are now complete for your Liferay
 installation on JBoss. Next you'll configure mail and the database. 
 
