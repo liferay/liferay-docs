@@ -1,13 +1,21 @@
 # Introduction [](id=tutorials)
 
-Welcome to Liferay Tutorials! 
-These tutorials show you how to build powerful, robust apps using Liferay's
-tools, frameworks, and APIs. The tutorials compliment the fundamentals that you
-can master in Liferay's
-[Learning Paths](/develop/learning-paths/-/knowledge_base/6-2/welcome),
-giving you keen insight into the Liferay platform for building top-notch apps,
-designing stylish themes, and customizing Liferay Portal to meet your needs. The
-tutorials cover the following three main areas: 
+Welcome to Liferay's tutorials and learning paths! Both show you how to build 
+powerful, robust apps using Liferay's tools, frameworks, and APIs. The first few 
+sections here are learning paths. Learning paths walk you through the 
+development of an example Liferay project from start to finish. Currently, 
+Liferay offers the following learning paths: 
+
+- [Writing a Liferay MVC Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application)
+- [Writing a JSF Application Using Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
+- [Developing a Liferay Theme](/develop/tutorials/-/knowledge_base/6-2/developing-a-liferay-theme)
+- [Writing an Android App for Your Portal](/develop/tutorials/-/knowledge_base/6-2/writing-an-android-app-for-your-portal)
+
+The sections that follow the learning paths are tutorials. Tutorials give 
+instruction on a per-topic basis, without developing a single example across 
+articles. This lets you jump in at any point to get valuable instructions on 
+only the topics that you're interested in. The tutorials cover the following 
+three main areas: 
 
 - Using Liferay Development Tools
 - Developing Liferay Applications
@@ -35,9 +43,9 @@ If you don't like Eclipse (which Liferay IDE is based on) and prefer to use
 NetBeans, IntelliJ IDEA, or something else, you certainly can. Liferay code can
 be written in any way Java code is written. 
 
-Here are some links to tutorials on Liferay development tools:
+Here are some links to instructions on Liferay development tools:
 
-[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
+[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development) 
 
 [Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
@@ -55,20 +63,11 @@ be written using any of the Java web frameworks that support portlet
 development, including Liferay's MVC Portlet framework and JavaServer&#8482;
 Faces (JSF).
 
-As you write apps, you'll want to leverage powerful frameworks that work
+As you write apps, you'll want to leverage powerful frameworks that work 
 seamlessly with Liferay and help you complete your app faster. Liferay contains
-several frameworks that give you all the tools you need to perform various
-common tasks that you don't want to write yourself, such as handling
-permissions and letting users enter comments, categories, and tags. 
-
-<!-- Here
-are just a few of the framework topics the tutorials cover in detail. 
-
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)<br>
-Implementing Roles and Permissions<br>
-Leveraging the Asset Framework<br>
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
--->
+several frameworks that give you all the tools you need to perform various 
+common tasks that you don't want to write yourself, such as handling permissions 
+and letting users enter comments, categories, and tags. 
 
 In addition to Liferay's frameworks, you'll want to check out the powerful
 tag libraries and snazzy UI components that
@@ -78,18 +77,17 @@ provide.
 
 Start learning to develop apps for Liferay:
 
-[Writing Your First Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-your-first-liferay-application)
+[Writing Your First Application](/develop/tutorials/-/knowledge_base/6-2/writing-your-first-liferay-application)
 
-[Developing Portlets Using Liferay MVC](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
 [Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets)
 
 [OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/6-2/opensocial-gadgets)
 
-
 #### Styling and Customizing Liferay [](id=styling-and-customizing-liferay)
 
-What if you want to skin Liferay or customize it? Creating themes and
+What if you want to skin Liferay or customize it? Creating themes and 
 customizations is easy in Liferay. 
 
 Here are some good tutorials to start with:
@@ -98,6 +96,5 @@ Here are some good tutorials to start with:
 
 [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
-Now that you know what Liferay Tutorials offers, it's time to discover new
-things as you develop sites in Liferay. 
-
+Now that you know what the articles here offer, it's time to discover new things 
+as you develop sites in Liferay. 
