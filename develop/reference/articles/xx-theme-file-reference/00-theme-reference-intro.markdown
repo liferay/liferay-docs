@@ -16,63 +16,67 @@ and themes built using the Plugins SDK.
 For themes developed with the themes generator, your theme anatomy is organized
 with the structure shown below. Although themes developed with the Plugins SDK 
 have a slightly different anatomy, the core theme files are the same. Note that 
-the `build` directory is shown for reference, and is not created by default.
+the `build` directory is shown for reference, and is generated when the theme is 
+compiled.
 
 - `theme-name/`
-    - `build/`(not created automatically)
+    - `build/`(generated when the theme is compiled)
         - `css/`
-            - [`_application.scss`](#application-scss)
-            - [`_aui_custom.scss`](#auicustom-scss)
-            - [`_aui_variables.scss`](#auivariables-scss)
-            - [`_base.scss`](#base-scss)
-            - [`_custom.scss`](#custom-scss)
-            - [`_extras.scss`](#extras-scss)
-            - [`_imports.scss`](#imports-scss)
-            - [`_layout.scss`](#layout-scss)
-            - [`_liferay_custom.scss`](#liferaycustom-scss)
-            - [`_liferay_variables_custom.scss`](#liferayvariablescustom-scss)
-            - [`_liferay_variables.scss`](#liferayvariables-scss)
-            - [`_navigation.scss`](#navigation-scss)
-            - [`_portal.scss`](#portal-scss)
-            - [`_portlet.scss`](#portlet-scss)
-            - [`_taglib.scss`](#taglib-scss)
+            - [`_application.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#application-scss)
+            - [`_aui_custom.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#auicustom-scss)
+            - [`_aui_variables.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#auivariables-scss)
+            - [`_base.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#base-scss)
+            - [`_custom.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#custom-scss)
+            - [`_extras.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#extras-scss)
+            - [`_imports.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#imports-scss)
+            - [`_layout.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#layout-scss)
+            - [`_liferay_custom.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferaycustom-scss)
+            - [`_liferay_variables_custom.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferayvariablescustom-scss)
+            - [`_liferay_variables.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferayvariables-scss)
+            - [`_navigation.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#navigation-scss)
+            - [`_portal.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portal-scss)
+            - [`_portlet.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portlet-scss)
+            - [`_taglib.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#taglib-scss)
             - `application/`
             - `aui/`
-            - [`aui.scss`](#aui-scss)
+            - [`aui.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#aui-scss)
             - `base/`
             - `layout/`
-            - [`main.scss`](#main-scss)
+            - [`main.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#main-scss)
             - `navigation/`
             - `portal/`
             - `portlet/`
             - `taglib/`
         - `templates/`
-            - [`init_custom.ftl`](#initcustom-ftl)
-            - [`init.ftl`](#init-ftl)
-            - [`navigation.ftl`](#navigation-ftl)
-            - [`portal_normal.ftl`](#portalnormal-ftl)
-            - [`portal_pop_up.ftl`](#portalpopup-ftl)
-            - [`portlet.ftl`](#portlet-ftl)
+            - [`init_custom.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#initcustom-ftl)
+            - [`init.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#init-ftl)
+            - [`navigation.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#navigation-ftl)
+            - [`portal_normal.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portalnormal-ftl)
+            - [`portal_pop_up.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portalpopup-ftl)
+            - [`portlet.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portlet-ftl)
             - (other directories that have been copied from src)
-    - `dist/` (not created automatically)
-    - [`gulpfile.js`](#gulpfile-js)
-    - [`liferay-theme.json`](#liferay-theme-json)
-    - `node_modules/`
+    - `dist/` (generated when the theme is compiled. This is where the theme's 
+    war file is placed after a build/deploy.)
+    - [`gulpfile.js`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#gulpfile-js)
+    - [`liferay-theme.json`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-theme-json)
+    - `node_modules/` (generated when an `npm install` command is run from the 
+    root of the theme, and can be deleted at anytime and re-generated by running 
+    `npm install`.)
         - (many directories)
-    - [`package.json`](#package-json)
+    - [`package.json`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#package-json)
     - `src/`
         - `css/`
             - (modified CSS files)
         - `images/`
             -   (many directories)
         - `js/`
-            - [`main.js`](#main-js)
+            - [`main.js`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#main-js)
         - `templates/`
             - (Modified theme templates)
         - `WEB-INF/`
                 - `lib/`
-            - [`liferay-look-and-feel.xml`](#liferay-look-and-feel-xml)
-            - [`liferay-plugin-package.properties`](#liferay-plugin-package-properties)
+            - [`liferay-look-and-feel.xml`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-look-and-feel-xml)
+            - [`liferay-plugin-package.properties`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-plugin-package-properties)
             - `src/`
                 - `resources-importer/`
                     - (Many directories)
@@ -83,9 +87,7 @@ Regarding CSS files, it is recommended that you only modify
 
 You can of course overwrite any CSS file that you wish, but if you modify any 
 other files, you will most likely be removing styling that @product@ 7 needs to 
-work properly. It's recommended that you overwrite the individual files that 
-aren't in the root `css` directory instead, i.e. 
-`css/application/_cards.scss for example`, if you want to modify core styling.
+work properly.
 
 ## Theme Files [](id=theme-files)
 
@@ -212,22 +214,6 @@ Defines the required gulp tasks for node tool developed themes.
 
 **It's recommended that you NOT overwrite this file.**
 
-### main.js [](id=main-js)
-
-Used for custom JavaScript.
-
-### liferay-plugin-package.properties [](id=liferay-plugin-package-properties)
-
-Contains general properties for the theme. [Resources Importer]{/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme} 
-configuration settings are also placed in this file. For a full explanation of 
-the properties available for this file please see the [7.0 Propertiesdoc](https://docs.liferay.com/portal/7.0/propertiesdoc/liferay-plugin-package_7_0_0.properties.html).
-
-### liferay-look-and-feel.xml [](id=liferay-look-and-feel-xml)
-
-Contains basic information for the theme. If your theme has [theme settings](),
-they are defined in this file. For a full explanation of this file please see
-the [Definitions docs](https://docs.liferay.com/portal/7.0/definitions/liferay-look-and-feel_7_0_0.dtd.html).
-
 ### liferay-theme.json [](id=liferay-theme-json)
 
 Contains the configuration settings for your app server, in node tool based 
@@ -239,3 +225,19 @@ settings. The file can also be updated via the `gulp init` task.
 contains theme setting information such as the theme template langauge, version, 
 and base theme, for node tool developed themes. This file can be updated 
 manually. The `gulp extend` task can also be used to change the base theme.
+
+### main.js [](id=main-js)
+
+Used for custom JavaScript.
+
+### liferay-look-and-feel.xml [](id=liferay-look-and-feel-xml)
+
+Contains basic information for the theme. If your theme has [theme settings](/develop/learning-paths/themes/-/knowledge_base/6-2/making-configurable-theme-settings)
+, they are defined in this file. For a full explanation of this file please see
+the [Definitions docs](https://docs.liferay.com/portal/7.0/definitions/liferay-look-and-feel_7_0_0.dtd.html).
+
+### liferay-plugin-package.properties [](id=liferay-plugin-package-properties)
+
+Contains general properties for the theme. [Resources Importer]{/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme} 
+configuration settings are also placed in this file. For a full explanation of 
+the properties available for this file please see the [7.0 Propertiesdoc](https://docs.liferay.com/portal/7.0/propertiesdoc/liferay-plugin-package_7_0_0.properties.html).
