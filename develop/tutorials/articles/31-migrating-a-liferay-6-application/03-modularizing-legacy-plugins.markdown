@@ -1,4 +1,4 @@
-# Modularizing Plugins [](id=modularizing-legacy-plugins)
+# Modularizing an Existing Portlet [](id=modularizing-an-existing-portlet)
 
 An application with properly modularized plugins offers several benefits. You
 can release individually its plugins without releasing the entire application.

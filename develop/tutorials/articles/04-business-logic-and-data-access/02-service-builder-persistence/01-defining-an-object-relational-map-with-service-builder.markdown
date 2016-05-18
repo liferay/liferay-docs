@@ -24,7 +24,7 @@ this section. The application's view layer is implemented in the JSPs in the
 
 You can learn how to generate a generic modular application from scratch that
 includes the `*api`, `*service`, and `*web` modules by default in the
-[Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
+[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
 tutorial. This tutorial assumes you've assembled your application's modules
 similarly to the linked tutorial above. Be sure to also visit the
 [OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity)

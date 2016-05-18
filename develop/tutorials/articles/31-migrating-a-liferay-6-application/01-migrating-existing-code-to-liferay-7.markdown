@@ -31,7 +31,7 @@ The standard migration process consists of two general steps:
 
 **Step 1:  Adapting your 6.2 traditional plugins to Liferay 7's API** <!--(/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
 
-**Step 2:  Converting your traditional plugins to OSGi modules** <!--(/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)-->
+**Step 2:  Converting your traditional plugins to OSGi modules** <!--(/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)-->
 
 Converting your application to modules might not always be the best choice. In
 some scenarios, it makes better sense to stick with traditional WAR model
@@ -92,4 +92,4 @@ adapting plugins to Liferay 7's API.
 
 <!--[Adapting to Liferay 7's API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
 
-[Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
+[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
