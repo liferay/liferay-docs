@@ -6,7 +6,7 @@
     var Logger = jsLoggerLoggerEs;
 
     var loggerOne = new Logger('*** -> ');
-    loggerOne.log('Hello from the other side');
+    loggerOne.log('Hello');
  
     var loggerDefault = new Logger(); 
     loggerDefault.log('World');
