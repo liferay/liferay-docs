@@ -46,7 +46,7 @@ is use it.
 
 You'll notice in both of these updated methods, you call the `addResources(...)`
 method from the `resourceLocalService` class. Visit the
-[Adding Permissions Resources to Your Service Layer](/develop/learning-paths/mvc/-/knowledge_base/6-2/adding-permissions-resources-to-your-service-layer)
+[Adding Permissions Resources to Your Service Layer](/develop/tutorials/-/knowledge_base/6-2/writing-permissions-java-code#adding-permissions-resources-to-your-service-layer)
 section of the MVC portlet-based learning path for more information on this new
 method call, and adding resources to your service layer. 
 

@@ -33,7 +33,8 @@ The completed Insults portlet code that uses this feature is on GitHub, [here](h
 
 Now go ahead and get started learning how to add ratings to your portlets!
 
-If you've implemented [asset rendering](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+If you've implemented 
+[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers) 
 for your custom entity, you can display ratings in the full content view
 of your entity. You can, of course, also display this asset feature in any view
 JSP you create for viewing the entity. 
@@ -78,14 +79,16 @@ portlets.
 Another thing you might want to do is perform permissions checks to make sure
 only the proper users can rate content. For example, the Add Insult and 
 Permissions buttons of the Insults portlet are wrapped in a permissions check in 
-its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information on this, see the learning path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+its 
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
+For more information on this, see the learning path 
+[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui). 
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

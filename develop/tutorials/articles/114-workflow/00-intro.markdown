@@ -24,8 +24,7 @@ access to the Kaleo Designer directly from Liferay Portal (*Control Panel* &rarr
 *Configuration* &rarr; *Kaleo Designer*).
 
 Kaleo Designer for Java is a workflow development tool that can be accessed in
-[Liferay Developer
-Studio](https://dev.liferay.com/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu),
+[Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu),
 providing workflow developers with a robust set of functionality:
 
 - A graphical workflow editor to visualize the workflow as it's developed, and

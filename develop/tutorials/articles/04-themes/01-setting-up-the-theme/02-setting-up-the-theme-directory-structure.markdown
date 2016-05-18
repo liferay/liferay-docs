@@ -98,10 +98,12 @@ housekeeping items to take care of before you move on to the next section.
 2.  Copy the *lunar-resort-logo.png* from the `/images` directory of the code
     folder into the `_diffs/images` directory of the theme.
  
-3.  Finally, install the `guestbook-portlet.war` file from the last step of the
-    [MVC](https://dev.liferay.com/develop/learning-paths/mvc) Learning Path by
-    copying it into your Liferay bundle's `/deploy` directory.
- 
+3.  Finally, install the `guestbook-portlet.war` file developed in the
+    [MVC Learning Path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application) 
+    by copying it into your Liferay bundle's `/deploy` directory. You can 
+    download this WAR file 
+    [from this directory in GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/04-mobile). 
+
 If you haven't gone through the MVC Learning Path, you should check it out if
 you are interested in developing applications for Liferay.
 

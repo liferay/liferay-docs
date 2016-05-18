@@ -1,7 +1,7 @@
 # Retrieving Guestbook Entries [](id=retrieving-guestbook-entries)
 
 So far, you have an Android app that uses the Guestbook Mobile SDK to retrieve 
-and display guestbooks from the [MVC Learning Path's](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
+and display guestbooks from the [MVC Learning Path's](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application) 
 Guestbook portlet. But that's all your app does. Tapping a guestbook in the 
 navigation drawer doesn't do anything besides close the drawer to show the 
 Action Bar and an empty screen. 
@@ -38,7 +38,7 @@ a `JSONArray` that contains each entry in a `JSONObject`. Just as you did when
 creating Get Entries Screenlet, you must create a model class that turns each 
 `JSONObject` into a proper entry model object. You'll do this the exact same way 
 you did in Get Entries Screenlet. To create this model class, follow 
-[these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-get-entries-screenlet#creating-the-model-class-for-entries) 
+[these instructions](/develop/tutorials/-/knowledge_base/6-2/getting-started-with-get-entries-screenlet#creating-the-model-class-for-entries) 
 from the article on getting started with Get Entries Screenlet. When you finish, 
 you'll have an identical `EntryModel` class inside the package 
 `com.liferay.docs.model`. Once this class exists, you can create the fragment 
@@ -47,7 +47,7 @@ you'll use to retrieve and display the entries.
 ## Creating a Fragment for the Entries [](id=creating-a-fragment-for-the-entries)
 
 When you used the Screenlets, 
-[you used a fragment for Get Entries Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-a-fragment-for-get-entries-screenlet). 
+[you used a fragment for Get Entries Screenlet](/develop/tutorials/-/knowledge_base/6-2/creating-a-fragment-for-get-entries-screenlet). 
 This let you swap out part of `GuestbookActivity`'s contents without recreating 
 the entire activity from scratch each time a guestbook was selected. You'll do 
 the same thing here, except you'll make the Guestbook Mobile SDK call from the 
@@ -189,7 +189,7 @@ class for retrieving entries. In the `callback` package, create the
 
 Besides using entries instead of guestbooks and `EntriesFragment` instead of 
 `GuestbooksActivity`, this class works the same as `GetGuestbooksCallback`. See 
-[the article on retrieving guestbooks](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks#creating-a-callback-class) 
+[the article on retrieving guestbooks](/develop/tutorials/-/knowledge_base/6-2/retrieving-guestbooks#creating-a-callback-class) 
 for details on how this class works. 
 
 Great! Your app now contains the basic infrastructure it needs to retrieve 

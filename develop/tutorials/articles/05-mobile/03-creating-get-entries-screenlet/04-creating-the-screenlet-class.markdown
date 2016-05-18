@@ -20,7 +20,7 @@ Due to the similarity with `GetGuestbooksScreenlet`, this article doesn't
 explain `GetEntriesScreenlet` in detail. Focus is instead placed on the code 
 unique to `GetEntriesScreenlet`. For a detailed explanation of the rest of the 
 class, see 
-[the article on creating `GetGuestbooksScreenlet`](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-screenlet-class). 
+[the article on creating `GetGuestbooksScreenlet`](/develop/tutorials/-/knowledge_base/6-2/creating-the-screenlet-class). 
 
 You'll get started here by defining the attributes `GetEntriesScreenlet` needs. 
 

@@ -10,14 +10,14 @@ Liferay IDE is Liferay's free development environment that is based on Eclipse,
 a widely used open source IDE. In fact, Liferay IDE is a plugin for Eclipse that
 brings many Liferay-specific features to the table. If you'd like to use IDE and
 need installation instructions, visit the
-[Developing Applications with Liferay IDE](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+[Developing Applications with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
 learning path. 
 
 Furthermore, Liferay Developer Studio is available for Liferay Enterprise
 Edition subscribers, or those interested in Liferay's premier development
 environment. For installation instruction for Liferay Developer Studio, visit
 the 
-[Developing Applications with Liferay Developer Studio](https://dev.liferay.com/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu)
+[Developing Applications with Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu)
 learning path. 
 
 +$$$

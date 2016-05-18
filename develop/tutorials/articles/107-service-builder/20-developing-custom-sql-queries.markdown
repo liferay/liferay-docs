@@ -225,6 +225,6 @@ portlet!
 
 ## Related Topics [](id=related-topics)
 
-[Writing a Data Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
 
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)

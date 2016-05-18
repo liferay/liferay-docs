@@ -51,7 +51,7 @@ existing portal frameworks such as faceted search. If you want to asset-enable
 your entities, creating an indexer for them is a necessary step. When
 creating an indexer class, you can use the indexer classes that correspond to
 Liferay assets as examples. These include `BlogsIndexer`,
-`JournalArticleIndexer`, `WikiPageIndexer`, etc. You can refer to the [Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing-for-guestbook-entries)
+`JournalArticleIndexer`, `WikiPageIndexer`, etc. You can refer to the [Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
 learning path for another example.
 
 If your indexer class extends `com.liferay.portal.kernel.search.BaseIndexer` (as
@@ -74,8 +74,10 @@ constant and a `public static final String PORTLET_ID` constant. These constants
 should contain the names of the entity classes and the name of the associated
 portlet. Liferay's `*Indexer` classes follow this convention. Using these
 constants in your plugin ensures that you are consistently using the correct
-class names and portlet ID throughout your indexing code. The [search and indexing learning path](develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing) referenced above explains how to implement the
-required methods. Liferay's `*Indexer` classes also provide good examples.
+class names and portlet ID throughout your indexing code. The 
+[search and indexing learning path](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing) 
+referenced above explains how to implement the required methods. Liferay's 
+`*Indexer` classes also provide good examples.
 
 Once you've written an indexer class for your entity, you need to register this
 class with Liferay. To do so, open your portlet project's
@@ -469,7 +471,7 @@ Or you can retrieve the documents in list form:
 To display the search results, you have to iterate over the array or list of
 documents. Each document is essentially a hash map of the indexed fields and
 their values. Please refer to the
-[Search and Indexing Learning Path](https://dev.liferay.com/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Search and Indexing Learning Path](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
 for an explanation of how to create a portlet user interface that facilitates
 searching and viewing search results. In that Learning Path's example, a search
 bar is added to the JSP that renders the main portlet view. When a search query

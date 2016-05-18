@@ -11,7 +11,7 @@ projects, see the tutorial
 or the tutorial
 [Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin).
 If you're completely new to Liferay, you may first want to go through the 
-[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
+[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development) 
 learning path. 
 
 First up is creating a portlet with Liferay IDE, so go ahead and get 
@@ -185,9 +185,9 @@ have two handy ways to create them in your bag O'trix!
 
 ## Related Topics [](id=related-topics)
 
-[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development)
+[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development)
 
-[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
 
 [Creating Liferay Maven Plugins from IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 

@@ -75,7 +75,7 @@ namespace.
 
 With the main aspects of JSF portlet bridges described, you can learn how
 a JSF application uses the bridge in the
-[Creating a JSF Portlet](/develop/learning-paths/jsf/-/knowledge_base/6-2/creating-a-jsf-portlet)
+[Creating a JSF Portlet](/develop/tutorials/-/knowledge_base/6-2/creating-a-jsf-portlet)
 learning path. Next, you'll learn how to configure Liferay Faces Bridge,
 starting with configuring its scope behavior. 
 

@@ -127,7 +127,7 @@ This class creates `GuestbookModel` objects that effectively represent
 parameters from the `JSONObject` returned by the Mobile SDK's remote service 
 calls. The constructor does this by using the `getLong` and `getString` methods. 
 To see how the `Guestbook` parameters are defined in the portlet, see the 
-[Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/mvc/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
+[Liferay MVC Learning Path article on Service Builder](/develop/tutorials/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in this class are `guestbookId` and 
 `name`. Because you might need the rest later, however, it's best to add 
 support for all of them now. 

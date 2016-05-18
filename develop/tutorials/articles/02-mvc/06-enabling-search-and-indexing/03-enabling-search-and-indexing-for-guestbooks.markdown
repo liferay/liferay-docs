@@ -301,4 +301,4 @@ learning path.
 
 ## Next Steps [](id=next-steps)
 
-[Asset-Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset-Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)

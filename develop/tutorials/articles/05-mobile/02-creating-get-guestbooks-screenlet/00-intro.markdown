@@ -42,4 +42,4 @@ This section of the Learning Path follows the same basic steps as this tutorial,
 plus a few additional steps specific to Get Guestbooks Screenlet. If you get 
 confused or stuck while creating the Screenlet, refer to the finished app that 
 contains the Screenlet code 
-[here in GitHub](https://github.com/liferay/liferay-docs/develop/learning-paths/mobile/code/screenlets-app/LiferayGuestbook). 
+[here in GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/04-mobile/screenlets-app/LiferayGuestbook). 

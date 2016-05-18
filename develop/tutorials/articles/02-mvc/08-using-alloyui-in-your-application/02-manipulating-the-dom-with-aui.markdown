@@ -665,4 +665,4 @@ completed this section:
 
 ## Next Steps [](id=next-steps)
 
-[Making URLs Friendly](/develop/learning-paths/mvc/-/knowledge_base/making-urls-friendly)
+[Making URLs Friendly](/develop/tutorials/-/knowledge_base/6-2/making-urls-friendly)

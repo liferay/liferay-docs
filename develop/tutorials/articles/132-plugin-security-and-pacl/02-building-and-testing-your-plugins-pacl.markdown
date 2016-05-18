@@ -369,7 +369,7 @@ Manager.
 
 ## Related Topics [](id=related-topics)
 
-[Setting Permissions](/develop/learning-paths/mvc/-/knowledge_base/6-2/setting-permissions)
+[Setting Permissions](/develop/tutorials/-/knowledge_base/6-2/setting-permissions)
 
 [Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 

@@ -1,7 +1,7 @@
 # Updating Your JSF Application's Service Layer [](id=updating-your-jsf-applications-service-layer)
 
 Just as you did in a previous JSF learning path on
-[Adding Permissions Resources to the Service Layer](/develop/learning-paths/jsf/-/knowledge_base/jsf/adding-permissions-resources-to-the-service-layer),
+[Adding Permissions Resources to the Service Layer](/develop/tutorials/-/knowledge_base/6-2/adding-permissions-resources-to-the-service-layer),
 you'll need to add a service method in your `GuestbookLocalServiceImpl` class.
 The new service method you'll create needs to delete a guestbook and its
 resources from the database. By creating this method, you'll be able to create

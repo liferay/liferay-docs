@@ -2,7 +2,8 @@
 
 This tutorial covers how to implement restoring entries from the Recycle Bin. If
 you haven't yet implemented the framework for using the Recycle Bin in your
-apps, refer to the tutorial [Moving Entries to the Recycle Bin](/develop/tutorials/-/knowledge_base/moving-entries-to-the-recycle-bin).
+apps, refer to the tutorial 
+[Moving Entries to the Recycle Bin](/develop/tutorials/-/knowledge_base/moving-entries-to-the-recycle-bin).
 Once you can move entries *to* the Recycle Bin, you then want to be able to
 restore entries *from* the Recycle Bin. What's the point of having a
 Recycle Bin if you can't restore its entries?
@@ -144,8 +145,8 @@ from the Recycle Bin!
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
 
 [Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)

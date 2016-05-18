@@ -25,5 +25,3 @@ Congrats! Now you know how to create a thumbnail image for your theme!
 **Related Topics**
 
 [Developing Liferay Theme Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-theme-plugins-with-maven)
-
-[Creating a User Interface](/develop/learning-paths/mvc/-/knowledge_base/6-2/creating-a-user-interface)

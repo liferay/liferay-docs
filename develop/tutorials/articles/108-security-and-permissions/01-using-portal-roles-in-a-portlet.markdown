@@ -13,10 +13,10 @@ portlets in their `docroot/WEB-INF/portlet.xml` descriptors. The role names
 themselves, however, are not standardized. When these portlets run in Liferay,
 you'll recognize familiar role names. For example, consider the Guestbook
 project:
-[Guestbook Project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/learning-paths/mvc/code/learning-sdk/portlets/guestbook-portlet).
+[Guestbook Project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/01-mvc/learning-sdk/portlets/guestbook-portlet).
 The Guestbook project is the sample project that you create by
 following the steps of Liferay's
-[Learning Paths](https://dev.liferay.com/develop/learning-paths).
+[MVC Learning Path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application).
 The Guestbook project contains two portlets: The Guestbook portlet and the
 Guestbook Admin portlet. Notice that Guestbook project's `portlet.xml` file
 references the *administrator*, *guest*, *power-user*, and *user* roles: 

@@ -303,4 +303,4 @@ permissions, and deleting guestbooks.
 
 ## Next Steps [](id=next-steps)
 
-[Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/creating-entity-indexers)
+[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)

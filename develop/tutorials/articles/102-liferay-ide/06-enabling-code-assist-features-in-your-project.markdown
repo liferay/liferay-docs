@@ -56,6 +56,6 @@ Your project is now set up to use IDE's Tern features.
 
 [Using Front-End Development Code Assist Features in IDE](/develop/tutorials/-/knowledge_base/6-2/using-front-end-development-code-assist-features-in-ide)
 
-[Developing Applications with Liferay IDE](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+[Developing Applications with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
 
 [Using the AlloyUI Form Validator in a Portlet](/develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet)

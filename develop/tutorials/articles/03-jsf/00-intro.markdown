@@ -8,7 +8,7 @@ from scratch, deploying it, and developing it into a Guestbook portlet.
 
 Before beginning, make sure you have a Liferay development environment
 installed. You can learn how to install Liferay IDE or Liferay Developer Studio
-in the [Beginning Liferay Development](/develop/learning-paths/jsf/-/knowledge_base/6-2/beginning-liferay-development)
+in the [Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-jsf-development)
 learning path. Though you can use the command line or any Java IDE that's
 available, Liferay provides these development tools, which make it much easier
 to write code on Liferay's platform. You'll use it throughout the development

@@ -42,7 +42,7 @@ Find the following `<h:column>...</h:column>` tag:
     **Note:** Currently, the drop-down *Actions* button used in many MVC
     portlets is not supported in Liferay Faces. If your unfamiliar with MVC
     portlets' Actions button, visit the
-    [Creating Action Buttons](/develop/learning-paths/mvc/-/knowledge_base/6-2/creating-action-buttons)
+    [Creating Action Buttons](/develop/tutorials/-/knowledge_base/6-2/creating-action-buttons)
     learning path to learn more about its functionality. 
 
     $$$

@@ -27,7 +27,7 @@ creating your application's service and persistence layers.
 
 This learning path starts with the development environment and application you 
 created in the first learning path. If you haven't followed that path, you'll 
-need to create that application first, or download it from [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/learning-paths/mvc/code/learning-sdk). 
+need to create that application first, or download it from [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/01-mvc/learning-sdk). 
 From here on, we'll assume you have Liferay IDE and your application all set up 
 and ready to go. 
 

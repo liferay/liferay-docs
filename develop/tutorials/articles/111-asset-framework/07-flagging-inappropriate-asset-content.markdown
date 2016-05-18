@@ -37,7 +37,8 @@ enabled on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/t
 
 Now it's time to get on with the flagging!
 
-If you've implemented [asset rendering](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+If you've implemented 
+[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
 for your entity, you can use flags in the full content view of an Asset
 Publisher portlet. You can also use flags in any view JSP you create for viewing
 the entity. 
@@ -85,7 +86,8 @@ Another thing you might want to do is perform permissions checks to control
 who can flag content. For example, the Add Insult and Permissions buttons of the
 Insults portlet are wrapped in a permissions check in the 
 [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information on this, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+For more information on this, see the Learning Path 
+[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 

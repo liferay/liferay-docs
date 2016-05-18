@@ -11,7 +11,7 @@ doesn't have permission.
 
 **Note:** The Guestbook project is used in this tutorial to illustrate how to
 run permissions checks. You can find it in the Liferay Docs repository here:
-[Liferay Guestbook project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/learning-paths/mvc/code/learning-sdk/portlets/guestbook-portlet).
+[Liferay Guestbook project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/01-mvc/learning-sdk/portlets/guestbook-portlet).
 
 $$$
 

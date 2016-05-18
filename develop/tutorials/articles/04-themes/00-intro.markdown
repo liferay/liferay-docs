@@ -19,7 +19,7 @@ configurable theme settings.
 
 Before you start, make sure you have a Liferay development environment installed. 
 You can learn how to install Liferay IDE or Liferay Developer Studio in the 
-[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development)
+[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development)
 Learning Path. You can use other tools for development, but Liferay's
 development tools are the most natural to use, since they're designed for
 Liferay. Because you'll be deploying a lot of changes throughout this

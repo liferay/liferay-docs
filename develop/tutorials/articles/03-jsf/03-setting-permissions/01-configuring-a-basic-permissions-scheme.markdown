@@ -12,7 +12,7 @@ identical to the MVC portlet's process. Therefore, you can refer to the learning
 path for the MVC portlet to successfully create you configuration file. 
 
 Navigate to the
-[Configuring Your Permissions Scheme](/develop/learning-paths/mvc/-/knowledge_base/6-2/configuring-your-permissions-scheme)
+[Configuring Your Permissions Scheme](/develop/tutorials/-/knowledge_base/6-2/configuring-your-permissions-scheme)
 learning path and follow the instructions beneath the *Defining Permissions For
 Your Application*. Once you've completed the section, navigate back to this spot
 in the document to continue configuring your permissions scheme for your JSF

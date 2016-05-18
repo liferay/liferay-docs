@@ -30,7 +30,8 @@ Without any further ado, go ahead and get started enabling comments in your
 portlet!
 
 You can display the comments component in your portlet's view 
-or, if you've implemented [asset rendering](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers),
+or, if you've implemented 
+[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers),
 you can display it in the full content view in the Asset Publisher portlet. 
 
 As an example, the Insult portlet's view JSP file
@@ -109,14 +110,16 @@ the portal:
 
 This is just one way of controlling access to the discussion. You 
 could also perform more specific permissions checks as the Insults 
-portlet does for the Add Insults and Permissions buttons in its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+portlet does for the Add Insults and Permissions buttons in its 
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
+For more information, see the learning path 
+[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

@@ -21,7 +21,7 @@ first launches. You'll implement this functionality by using the following
 steps: 
 
 1. Refactor the Action Bar. This step is identical to when you 
-   [refactored the Action Bar before using Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#refactoring-the-action-bar).
+   [refactored the Action Bar before using Get Guestbooks Screenlet](/develop/tutorials/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#refactoring-the-action-bar).
 
 2. Put guestbooks in the navigation drawer.
 
@@ -35,7 +35,7 @@ the first step, return here to complete the remaining steps.
 ## Putting Guestbooks in the Navigation Drawer [](id=putting-guestbooks-in-the-navigation-drawer)
 
 Recall that when you created Get Guestbooks Screenlet's UI, 
-[you created its View class to extend `ListView`](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-ui#creating-the-view-class). 
+[you created its View class to extend `ListView`](/develop/tutorials/-/knowledge_base/6-2/creating-get-guestbook-screenlets-ui#creating-the-view-class). 
 This gave the View class an implicit 
 [`ListView`](http://developer.android.com/reference/android/widget/ListView.html) 
 object that you used to display the guestbooks in a list. Since you're now using 
@@ -70,7 +70,7 @@ resource file used to create the drawer's items. Since you'll instead use the
 Now that you've defined the drawer's layout, you must write the code that 
 controls the drawer. You'll do this in `GuestbooksActivity`. As you'll see, the 
 code you'll write here is similar to 
-[the navigation drawer code you refactored](/develop/learning-paths/mobile/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#refactoring-the-navigation-drawer) 
+[the navigation drawer code you refactored](/develop/tutorials/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#refactoring-the-navigation-drawer) 
 when you prepared `GuestbooksActivity` for Get Guestbooks Screenlet. You still 
 need an instance variable for the `DrawerLayout`, but you also need instance 
 variables for the `ListView` and its 
@@ -152,11 +152,11 @@ set what happens when a guestbook is selected in the drawer.
 To enable guestbook selection in the drawer, `GuestbooksActivity` must implement 
 `AdapterView.OnItemClickListener`. Recall that Get Guestbooks Screenlet handled 
 guestbook selection the same way, 
-[but did so in its View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-ui#creating-the-view-class). 
+[but did so in its View class](/develop/tutorials/-/knowledge_base/6-2/creating-get-guestbook-screenlets-ui#creating-the-view-class). 
 Currently, `GuestbooksActivity` implements 
 `NavigationView.OnNavigationItemSelectedListener`. You must first remove this 
 implementation. Recall that you also removed this implementation when 
-[preparing `GuestbooksActivity` for Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#deleting-the-navigationview-onnavigationitemselectedlistener-implementation). 
+[preparing `GuestbooksActivity` for Get Guestbooks Screenlet](/develop/tutorials/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#deleting-the-navigationview). 
 
 First, change the `GuestbooksActivity` class to implement 
 `AdapterView.OnItemClickListener` instead of 
@@ -348,7 +348,7 @@ from overlapping with the guestbook list, you must pad the top of the drawer's
 Recall that when you used the Screenlets, you changed the drawer's header text 
 to reflect the app's contents. You'll do the same thing here, using the exact 
 same steps. You can find these steps at the end of 
-[the article on using Get Entries Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/using-get-entries-screenlet). 
+[the article on using Get Entries Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-get-entries-screenlet). 
 
 That's it! Run the app. After you log in, the app retrieves the guestbooks from 
 the portal and displays the first guestbook's name in the Action Bar. Open the 

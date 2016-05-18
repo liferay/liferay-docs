@@ -57,7 +57,7 @@ This requires you to add the following imports:
     import android.widget.TextView;
 
 This adapter is identical to 
-[the one you used when creating Get Entries Screenlet's View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-entries-screenlets-ui#creating-the-view-class). 
+[the one you used when creating Get Entries Screenlet's View class](/develop/tutorials/-/knowledge_base/6-2/creating-get-entries-screenlets-ui#creating-the-view-class). 
 Recall that it displays two lines of text: one for the entry, and one for the 
 name of the person who left it. The only difference is that you set the adapter 
 here with `setListAdapter` instead of `setAdapter`. Using `setListAdapter` is 
@@ -159,7 +159,7 @@ add the fragment to `GuestbooksActivity`. When you used the Screenlets, you did
 this prior to using Get Entries Screenlet. You'll use the same steps to add the 
 fragment to `GuestbooksActivity`: 
 
-- [Adding the Fragment to `GuestbooksActivity`](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-a-fragment-for-get-entries-screenlet#adding-the-fragment-to-guestbooksactivity)
+- [Adding the Fragment to `GuestbooksActivity`](/develop/tutorials/-/knowledge_base/6-2/creating-a-fragment-for-get-entries-screenlet#adding-the-fragment-to-guestbooksactivity)
 
 The only difference is that 
 `GuestbooksActivity` now uses the `onItemClick` method instead of the Screenlet 

@@ -23,6 +23,6 @@ You'll follow these steps when adding your Screenlets to the app:
 
 If you get confused or stuck at any point in this section of the Learning Path, 
 refer to the finished app's code 
-[here in GitHub](https://github.com/liferay/liferay-docs/develop/learning-paths/mobile/code/screenlets-app/LiferayGuestbook). 
+[here in GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/04-mobile/screenlets-app/LiferayGuestbook). 
 
 First, you'll see how `GuestbooksActivity`'s UI works. 

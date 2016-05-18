@@ -123,8 +123,8 @@ the Undo functionality for your app's trash-enabled entities!
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
 
 [Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)

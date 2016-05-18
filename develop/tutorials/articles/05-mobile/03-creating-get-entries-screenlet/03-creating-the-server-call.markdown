@@ -21,7 +21,7 @@ Guestbooks Screenlet's Interactor. Likewise, the components you create here are
 almost identical to the analogous components in Get Guestbooks Screenlet. 
 Therefore, this article only explains the parts unique to Get Entries Screenlet. 
 For a detailed explanation of each component, see 
-[the article on creating Get Guestbooks Screenlet's server calls](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call). 
+[the article on creating Get Guestbooks Screenlet's server calls](/develop/tutorials/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call). 
 
 First, you'll create the event class. 
 

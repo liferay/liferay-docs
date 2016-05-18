@@ -146,5 +146,5 @@ Ready to move on? The next Learning Path covers action buttons.
 
 ## Next Steps [](id=next-steps)
 
-[Creating Entity Actions](/develop/learning-paths/mvc/-/knowledge_base/6-2/creating-entity-actions)
+[Creating Entity Actions](/develop/tutorials/-/knowledge_base/6-2/creating-entity-actions)
 

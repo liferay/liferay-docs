@@ -3,7 +3,8 @@
 If you're unfamiliar with the Liferay Faces project, it's important to know that
 Liferay Faces is an umbrella project that provides support for the JavaServer
 Faces (JSF) standard in Liferay Portal. Thus, Liferay Faces portlets and JSF
-portlets are closely related. Visit the [JSF-related learning path](/develop/learning-paths/jsf/-/knowledge_base/6-2/writing-your-first-jsf-application)
+portlets are closely related. Visit the 
+[JSF-related learning path](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
 for further details on JSF portlets and the Liferay Faces project. 
 
 This tutorial explains the Liferay Faces portlets generation process using

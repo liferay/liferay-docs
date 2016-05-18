@@ -27,4 +27,4 @@ discusses the code unique to Get Entries Screenlet. You can refer back to the
 previous section for detailed explanations of the code shared with Get 
 Guestbooks Screenlet. If you get confused or stuck, refer to the finished app 
 that contains the Screenlet code 
-[here in GitHub](https://github.com/liferay/liferay-docs/develop/learning-paths/mobile/code/screenlets-app/LiferayGuestbook). 
+[here in GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/04-mobile/screenlets-app/LiferayGuestbook). 

@@ -8,7 +8,7 @@ pre-built Mobile SDK provided by Liferay includes only classes for calling the
 remote services of Liferay's *core* portlets. Core portlets are the portlets 
 included with every Liferay installation (also referred to as *out-of-the-box* 
 portlets). Since you'll be calling the 
-[Guestbook portlet's](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
+[Guestbook portlet's](/develop/tutorials/-/knowledge_base/6-2/writing-your-first-liferay-application) 
 remote services, you have to build a separate Mobile SDK for them. This is the 
 case with any non-core portlet: you must build a Mobile SDK if you want to use 
 it to call your portlet's remote services. Now it's time to get building! 
@@ -20,7 +20,7 @@ code. For the Mobile SDK Builder to generate the classes that can call a
 non-core portlet's remote services, those services must be available and 
 accompanied by a Web Service Deployment Descriptor (WSDD). To learn how the 
 Guestbook portlet's remote services and WSDD were generated, please see 
-[Creating Web Services for Your Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/creating-web-services-for-your-application).
+[Creating Web Services for Your Application](/develop/tutorials/-/knowledge_base/6-2/creating-web-services-for-your-application).
 Since the Guestbook application's web services have already been generated, you
 don't need to take this step here. Just remember that you need to generate web
 services when developing your own applications.

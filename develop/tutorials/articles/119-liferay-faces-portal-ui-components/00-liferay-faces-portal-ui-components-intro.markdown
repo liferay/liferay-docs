@@ -18,7 +18,8 @@ out the [Liferay Faces Showcase](www.liferayfaces.org).
 The Liferay Faces Portal project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/portal>. 
 
-Because Liferay Faces has several active [versions](/develop/learning-paths/jsf/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+Because Liferay Faces has several active 
+[versions](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags: 

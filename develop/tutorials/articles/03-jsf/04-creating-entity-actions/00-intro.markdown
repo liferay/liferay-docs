@@ -16,7 +16,7 @@ managed bean and adding buttons that trigger those methods using a JSF view.
 In this learning path, you'll only create entity actions for your guestbook
 entries. The same will be done for your guestbooks, but will be completed later
 in the
-[Adding a JSF Portlet to the Control Panel](/develop/learning-paths/jsf/-/knowledge_base/6-2/adding-a-jsf-portlet-to-the-control-panel)
+[Adding a JSF Portlet to the Control Panel](/develop/tutorials/-/knowledge_base/6-2/adding-a-jsf-portlet-to-the-control-panel)
 learning path.
 
 By providing entity actions, your users possess complete control over the

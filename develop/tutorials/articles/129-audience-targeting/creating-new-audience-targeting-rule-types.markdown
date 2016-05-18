@@ -374,4 +374,4 @@ deployable sample weather rule, you can download its
 
 [Localization](/develop/tutorials/-/knowledge_base/6-2/localization)
 
-[Using Service Builder to Generate a Persistence Framework](/develop/learning-paths/mvc/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr)
+[Using Service Builder to Generate a Persistence Framework](/develop/tutorials/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr)

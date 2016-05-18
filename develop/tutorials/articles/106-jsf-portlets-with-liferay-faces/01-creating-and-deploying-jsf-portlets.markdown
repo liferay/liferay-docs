@@ -26,7 +26,7 @@ create your JSF portlet project.
 In this tutorial, you'll create a JSF portlet project using Liferay
 IDE/Developer Studio, so you can see just how easy it is. If you don't have it
 installed yet, see the
-[Developing Apps with Liferay IDE](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+[Developing Apps with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
 learning path for full details. If you do have it installed, launch it. 
 
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 

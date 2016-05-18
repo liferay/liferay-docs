@@ -134,7 +134,8 @@ just so they can view related assets!
 ## Showing Related Assets [](id=showing-related-assets)
 
 You can show related assets in your portlet's view of that entity or, if you've
-implemented [asset rendering](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+implemented 
+[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
 for your custom entity, you can show related assets in the full content view of
 your entity for users to view in an Asset Publisher portlet. 
 
@@ -220,13 +221,14 @@ Another thing you might want to do is investigate permissioning in the UI. For
 example, the Insults portlet only allows assets to be related by those with
 `ADD_INSULT` or `UPDATE` permissions. These permissions are checked in the
 Insults portlet's `view.jsp` and `insult_actions.jsp`, respectively. For more
-information on this, see the learning path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+information on this, see the learning path 
+[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 ## Related Topics [](id=related-topics)
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

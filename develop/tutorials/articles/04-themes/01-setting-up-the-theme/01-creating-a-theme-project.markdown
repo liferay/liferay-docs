@@ -1,8 +1,8 @@
 # Creating a Theme Project [](id=creating-a-theme-project)
 
 The rest of this Learning Path assumes you've followed the instructions for
-setting up [Liferay IDE](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
-or [Liferay Developer Studio](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu). 
+setting up [Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+or [Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu). 
 If you've done that, you're ready to begin! 
 
 1. Select *File* &rarr; *New* &rarr; *Liferay Plugin Project*.

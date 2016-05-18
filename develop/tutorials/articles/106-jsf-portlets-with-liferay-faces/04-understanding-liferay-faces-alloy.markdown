@@ -11,7 +11,7 @@ the option of choosing the portlet's JSF Component Suite. The options include
 [*PrimeFaces*](http://primefaces.org/),
 [*RichFaces*](http://richfaces.jboss.org/), and *Liferay Faces Alloy*. You can
 visit the
-[JSF learning path](/develop/learning-paths/jsf/-/knowledge_base/6-2/creating-a-jsf-portlet)
+[JSF learning path](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
 to walk through this process. 
 
 If you selected the Liferay Faces Alloy JSF Component Suite during your

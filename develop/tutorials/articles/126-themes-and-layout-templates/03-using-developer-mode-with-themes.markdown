@@ -94,4 +94,4 @@ overwritten when you redeploy your theme.
 
 [Designing a Layout Template](/develop/tutorials/-/knowledge_base/6-2/designing-a-layout-template)
 
-[Developing Applications with Liferay Developer Studio](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu)
+[Developing Applications with Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu)

@@ -183,7 +183,7 @@ Replace the class's contents with the following code:
     }
 
 This View class works almost exactly like 
-[Get Guestbook Screenlet's View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-ui#creating-the-view-class). 
+[Get Guestbook Screenlet's View class](/develop/tutorials/-/knowledge_base/6-2/creating-get-guestbook-screenlets-ui#creating-the-view-class). 
 Besides using `EntryModel` instead of `GuestbookModel`, the `ListView` adapter 
 is the only difference. The adapter in `GetEntriesView` has significantly more 
 code than the guestbooks adapter. This is because the entries adapter uses the 

@@ -14,9 +14,9 @@ app. It also includes helper classes that you'll use to authenticate your Mobile
 SDK calls. 
 
 To get started, follow the earlier instructions from the 
-[article on creating the Android project](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-android-project) 
+[article on creating the Android project](/develop/tutorials/-/knowledge_base/6-2/creating-the-android-project) 
 through the 
-[article on authenticating with Login Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/using-login-screenlet-for-authentication). 
+[article on authenticating with Login Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-login-screenlet-for-authentication). 
 In the article on designing your app, skip to the end and create 
 `GuestbooksActivity`. Once you've authenticated with Login Screenlet, return 
 here to resume this portion of the Learning Path. You'll then use the Guestbook 

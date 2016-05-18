@@ -24,7 +24,7 @@ Recall that the Guestbook Mobile SDK returns guestbooks from the portlet in a
 creating Get Guestbooks Screenlet, you must create a model class that turns each 
 `JSONObject` into a proper guestbook object. You'll do this the exact same way 
 you did in Get Guestbooks Screenlet. To create this model class, follow 
-[these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks) 
+[these instructions](/develop/tutorials/-/knowledge_base/6-2/getting-started-with-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks) 
 from the article on getting started with Get Guestbooks Screenlet. When you 
 finish, you'll have an identical `GuestbookModel` class inside the new package 
 `com.liferay.docs.model`. 
@@ -128,7 +128,7 @@ with the following:
     }
 
 This class is similar to 
-[the callback class you created for Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call#creating-the-callback-class).
+[the callback class you created for Get Guestbooks Screenlet](/develop/tutorials/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call#creating-the-callback-class).
 The `transform` methods in both classes are identical. Recall that this method 
 transforms each `JSONObject` into a `GuestbookModel` object. The callback class 
 here also contains the code required to pass these results to the class that 
@@ -148,7 +148,7 @@ portlet, you're ready to make the server call.
 ## Making the Server Call [](id=making-the-server-call)
 
 The Guestbook Mobile SDK call to retrieve guestbooks is almost identical to 
-[the one in Get Guestbooks Screenlet's `GetGuestbooksInteractorImpl` class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call#creating-and-implementing-the-interactor-interface).
+[the one in Get Guestbooks Screenlet's `GetGuestbooksInteractorImpl` class](/develop/tutorials/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call#creating-and-implementing-the-interactor-interface).
 The only difference is the `getGuestbooks` method you'll create here doesn't 
 take a group ID as a parameter. The Screenlet's `getGuestbooks` method requires 
 this parameter to account for group ID changes made by the app developer. You'll 

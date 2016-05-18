@@ -278,17 +278,17 @@ portlet's select lists. This tutorial's example demonstrates only getting the
 option and alerting the user of that option. You can, however, build off of
 these principles to use the select list's input in your app's business logic. To
 learn how to do this, check out the article
-[Writing Your First Liferay Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-your-first-liferay-application)
+[Writing Your First Liferay Application](/develop/tutorials/-/knowledge_base/6-2/writing-your-first-liferay-application)
 in the Learning Path
-[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development)
+[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development)
 or dive in to the Learning Path
-[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application).
+[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application).
 
 ## Related Topics [](id=related-topics)
 
-[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development)
+[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development)
 
-[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
 
 [User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

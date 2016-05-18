@@ -306,7 +306,7 @@ Enjoy making your carousel the best that it can be!
 
 ## Related Topics [](id=related-topics)
 
-[Implementing a UI with Liferay Taglibs](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
+[Implementing a UI with Liferay Taglibs](/develop/tutorials/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

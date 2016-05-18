@@ -12,8 +12,10 @@ liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-en
 Make sure to read their README files.
 -->
 
-At this point, you've [asset-enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
-your entities. In addition to that, you should make sure to [implement asset renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+At this point, you've 
+[asset-enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities) 
+your entities. In addition to that, you should make sure to 
+[implement asset renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers) 
 for them. Content authors, however, still can't specify the tags and categories
 for these entities in the UI. Don't fret! Liferay provides a set of JSP tags for
 showing category and tag inputs in your UI. 
@@ -90,9 +92,9 @@ portlet's content authors.
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

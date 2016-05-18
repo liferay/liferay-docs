@@ -2,12 +2,12 @@
 
 In this Learning Path's previous sections, you developed an app that retrieved 
 and displayed guestbooks and entries from the Guestbooks portlet developed in 
-[the Liferay MVC Learning Path](/develop/learning-paths/mvc). You did this by 
-creating two new Screenlets: Get Guestbooks Screenlet and Get Entries Screenlet. 
-Creating these Screenlets, however, isn't required. You can accomplish the same 
-thing by calling the Mobile SDK directly in your app's activity or fragment 
-code, and skip the extra time it takes to write the Screenlet components. So why 
-bother creating Screenlets? 
+[the Liferay MVC Learning Path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application). 
+You did this by creating two new Screenlets: Get Guestbooks Screenlet and Get 
+Entries Screenlet. Creating these Screenlets, however, isn't required. You can 
+accomplish the same thing by calling the Mobile SDK directly in your app's 
+activity or fragment code, and skip the extra time it takes to write the 
+Screenlet components. So why bother creating Screenlets? 
 
 Creating Screenlets for your custom portlets is a best practice for several 
 reasons. One is that you use a consistent, repeatable development model to 
