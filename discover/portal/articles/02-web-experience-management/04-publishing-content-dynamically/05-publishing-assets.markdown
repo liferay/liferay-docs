@@ -213,7 +213,9 @@ default site:
     the global scope. The Rich Summary template provides a summary view of each
     asset along with a *Read More* link to the article's full content. The Map
     template displays [geolocalized assets](/discover/portal/-/knowledge_base/7-0/geolocating-assets) 
-    in a map.
+    in either a Google Map or an Open Street Map provider. The map provider can
+    be configured in Instance Settings, and Site Settings in the Advanced 
+    section.
 
 **Abstract Length**: This selector lets you select the number of characters to
 display for abstracts. The default is `200`.

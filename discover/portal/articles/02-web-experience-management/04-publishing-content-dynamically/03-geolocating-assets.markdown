@@ -1,4 +1,4 @@
-# Geolocating Assets
+# Geolocating Assets [](id=geolocating-assets)
 
 Geolocation is a feature that enables you to add the geographic coordinates 
 where an asset was created, as metadata to your assets. You can add geolocation 
@@ -12,30 +12,39 @@ experience that caters to the needs of the end user.
 
 Next, you'll examine how you can enable geolocation in your web content.
 
-## Geolocating Web Content
+## Geolocating Web Content [](id=geolocating-web-content)
 
 To use geolocation in your web content, make sure your [structure](/discover/portal/-/knowledge_base/7-0/designing-uniform-content) 
 includes a Geolocation field.
 
-![Figure x: Add a geolocation field to your structure to enable geolocation in your web content.](../../../images/geo-structure.png)
+![Figure 1: Add a geolocation field to your structure to enable geolocation in your web content.](../../../images/geo-structure.png)
 
-Once the structure is created, with a matching template, all a content creator 
-has to do is create web content using the new structure and their location is 
-obtained from the browser and automatically added as metadata to their web 
-content.
+Once the structure is created, creating a template that uses the geolocation is 
+a piece of cake. Create a new template and select the structure you just created 
+with the geolocation field. Scroll down to the *Script* heading and locate the 
+*Fields* section. Here you will see *Content* and *Geolocation* snippets. Click 
+on the snippets to add them to the template, and *Save*.
 
-![Figure x: The browser automatically obtains your location and adds it as metadata to the web content.](../../../images/web-content-geo-create.png)
+![Figure 2: Add the Content and Geolocation snippets to quickly create your web content template.](../../../images/web-content-geolocation-template.png)
+
+To set your location for the web content, you can share your location with the 
+browser, type a specific address into the address bar on the map, or even drag 
+the indicator and drop it in any point in the map and the address will be 
+automatically updated to reflect the new point. Once the web content is saved, 
+the location is added as metadata to the web content.
+
+![Figure 3: You can enter your location in the address bar, move the indicator to a location, or share your location with the browser.](../../../images/web-content-geo-create.png)
 
 +$$$
 
 Note: Depending on your browser settings, you may need to configure it, so the
 geolocation can obtain your location.
 
-![Figure X: Make sure your browser is configured to share your location.](../../../images/share-location-dialog.png)
+![Figure 4: Make sure your browser is configured to share your location.](../../../images/share-location-dialog.png)
 
 $$$
 
-## Geolocating Data Lists
+## Geolocating Data Lists [](id=geolocating-data-lists)
 
 To use geolocation in your dynamic data lists, you first have to create a data
 definition that includes a geolocation field. To do this, open the *Menu* and 
@@ -50,7 +59,7 @@ choose the newly created data definition. Now that your data list is complete
 you can use the [Data List Display portlet](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
 to display it.
 
-## Geolocating Documents and Media
+## Geolocating Documents and Media [](id=geolocating-documents-and-media)
 
 To enable geolocation in your documents & media, you must first create a custom
 document type that includes geolocation metadata. You can add geolocation
@@ -78,7 +87,9 @@ automatically obtained from the browser and added to your document.
 
 Once your assets are geolocation enabled, you can use the [Asset Publisher](/discover/portal/-/knowledge_base/7-0/publishing-assets) 
 to display the location of the assets on a map, using the map display template.
+Check out the [Configuring Display Settings](/discover/portal/-/knowledge_base/6-2/using-the-asset-publisher#configuring-display-settings)
+section to learn more.
 
-![Figure X: The Asset Publisher can ](../../../images/geo-map.png)
+![Figure 5: The Asset Publisher can display your geolocated assets on a map.](../../../images/geo-map.png)
 
 Next, you'll learn about @product@'s Search application.
