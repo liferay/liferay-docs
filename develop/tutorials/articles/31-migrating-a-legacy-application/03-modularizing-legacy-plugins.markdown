@@ -21,6 +21,9 @@ Here's what's involved:
 - Converting Service Builder interfaces and implementations
 - Building and deploying modules
 
+The instructions covered in this tutorial apply to both the commercial and open 
+source versions of Liferay.
+
 The first thing you'll do is create your application's web (client) module.
 
 ## Converting Your Legacy Application's Portlet Classes and UI [](id=converting-your-legacy-applications-portlet-classes-and-ui)

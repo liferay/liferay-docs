@@ -20,6 +20,9 @@ attempting to create a Liferay Workspace via Blade CLI in the command prompt,
 make sure you've installed Blade, which is covered in the section
 [Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli).
 
+The instructions covered in this tutorial apply to both the commercial and open 
+source versions of Liferay.
+
 Buckle up! You're about to create your own Liferay 7.0 Workspace!
 
 ## Using Blade CLI to Create Your Workspace [](id=using-blade-to-create-your-workspace)
