@@ -37,6 +37,10 @@ available in LCS:
   Learn how to use environment tokens to automatically register your Liferay 
   servers with LCS. This is crucial in auto-scaling environments. 
 
+- [**Managing Liferay EE Subscriptions**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-ee-subscriptions)
+  Learn how to view and manage your Liferay EE subscriptions for the servers in 
+  your LCS project. 
+
 First, you'll learn what information LCS stores about your Liferay servers.
 
 ## What LCS Stores About Your Liferay Servers [](id=what-lcs-stores-about-your-liferay-servers)
@@ -537,7 +541,7 @@ instances with LCS.
 
 Next, you'll learn how to use LCS to manage your Liferay EE subscriptions. 
 
-## Managing Liferay EE Subscriptions
+## Managing Liferay EE Subscriptions [](id=managing-liferay-ee-subscriptions)
 
 LCS also lets you view and manage your Liferay EE subscriptions. You can view 
 your project's subscriptions, see how they're being used, assign an environment 
