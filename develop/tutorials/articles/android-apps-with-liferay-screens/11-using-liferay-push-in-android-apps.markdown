@@ -15,23 +15,26 @@ to configure the Liferay Push app to use the project's GCM API.
 Follow these steps to create and configure a Google project to support cloud
 messaging: 
 
-1.  In the [Google Cloud Messaging page](https://developers.google.com/cloud-messaging/android/start/),
-    create a [configuration file](https://developers.google.com/mobile/add?platform=android&cntapi=gcm&cntapp=Default%20Demo%20App&cntpkg=gcm.play.android.samples.com.gcmquickstart&cnturl=https:%2F%2Fdevelopers.google.com%2Fcloud-messaging%2Fandroid%2Fstart%3Fconfigured%3Dtrue&cntlbl=Continue%20with%20Try%20Cloud%20Messaging). Set up your *App name* and *Android package name*.
-    
-2.	Enable Cloud Messaging for your new project by clicking on *Enable Google Cloud Messaging*. After that you will receive a server key and project id.
-  
-       ![Figure 1: The Google Developers Console displays the Project Number and the Server key.](../../images/screens-android-push-project-and-server-key.png)  
-    
+1. On the 
+   [Google Cloud Messaging page](https://developers.google.com/cloud-messaging/android/start/), 
+   create a configuration file by clicking *Get a Configuration File*. On the 
+   screen that appears, set your *App name* and *Android package name*, and then 
+   click *Continue To Choose and Configure Services*. On the next screen, click 
+   *Enable Google Cloud Messaging*. 
 
-3.  Copy and save those values, the *Server API Key* and the *Sender ID* for specifying later as the push
-    notifications API keys for Liferay Push.
+2. Copy and save the *Server API Key* and *Sender ID* values you're presented 
+   with. You'll need to use these values later as the push notifications API 
+   keys for Liferay Push. 
 
-Now that you've set up your Google project, you can configure the Liferay Push
-app to use the project's GCM API. Install the Liferay Push app from the [Liferay Marketplace](http://www.liferay.com/marketplace). In the portal's control panel,
-set the Push Notifications *API Key* to the value of the API key you generated
-earlier in your Google project.
+       ![Figure 1: You need the Server API Key and Sender ID to enable Liferay Push.](../../images/screens-android-push-project-and-server-key.png)
 
-![Figure 3: In the portal, you can configure the API Key for the Liferay Push app to send notifications to your Android apps.](../../images/push-portlet.png)
+Now that you've set up your Google project, you can configure the Liferay Push 
+app to use the project's GCM API. Install the Liferay Push app from the 
+[Liferay Marketplace](http://www.liferay.com/marketplace). 
+In the portal's control panel, set the Push Notifications *API Key* to the value 
+of the Server API Key you generated in your Google project. 
+
+![Figure 2: In the portal, you can configure the API Key for the Liferay Push app to send notifications to your Android apps.](../../images/push-portlet.png)
 
 Your portal is now ready to send push notifications to your Android apps!
 
