@@ -58,8 +58,8 @@ or succeeds. The `onFailure()` method is called if an exception occurs during
 the request. This could be triggered by a connection exception (e.g., a request 
 timeout) or a `ServerException`. If a `ServerException` occurs, it's because 
 something went wrong on the server side. For example, if you pass a `groupId` 
-that doesn't exist, the portal complains about it, and the Mobile SDK wraps the 
-error message with `ServerException`. 
+that doesn't exist, the Liferay instance complains about it, and the Mobile SDK 
+wraps the error message with `ServerException`. 
 
 The `onSuccess` method is called on the main UI thread after the request 
 finishes. Since the request is asynchronous, the service call immediately

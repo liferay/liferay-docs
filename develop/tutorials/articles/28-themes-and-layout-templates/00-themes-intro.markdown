@@ -1,6 +1,6 @@
 # Themes and Layout Templates [](id=themes-and-layout-templates)
 
-Do you want to transform the look and feel of your Liferay Portal? Create your
+Do you want to transform the look and feel of your @product@? Create your
 own Liferay Theme! Themes are hot deployable modules unique to a site. With
 themes, you can create whatever user interface you want for your site.
 

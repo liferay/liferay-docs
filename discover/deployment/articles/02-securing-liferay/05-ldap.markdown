@@ -1,6 +1,6 @@
 # LDAP [](id=ldap)
 
-Liferay can connect to external LDAP servers. Users can be imported into
+@product@ can connect to external LDAP servers. Users can be imported into
 Liferay from LDAP or exported to LDAP from Liferay. If your organization
 already stores user information on an LDAP server, it can be very convenient
 for both users and administrators to simply have the LDAP user information
@@ -8,14 +8,14 @@ imported into Liferay. Importing LDAP user information to Liferay means that
 users don't have to remember an extra set of credentials for Liferay. Importing
 LDAP user information to Liferay also means that administrators don't have to
 create a whole new set of user accounts for Liferay. In this article, you'll
-learn how to connect Liferay to an LDAP server and how to configure import
+learn how to connect @product@ to an LDAP server and how to configure import
 settings, export settings, and related LDAP configuration settings. <!-- For a
 technical overview of Liferay's LDAP authentication module, please see the (not
 yet written) tutorial. -->
 
 ## Configuring Liferay's LDAP Settings [](id=configuring-liferays-ldap-settings)
 
-To access Liferay's LDAP configuration settings, navigate to the Control Panel
+To access @product@'s LDAP configuration settings, navigate to the Control Panel
 and click on *Configuration* &rarr; *Instance Settings*. Then click on
 *Authentication* on the right and then on the *LDAP* tab at the top. You can
 use this page to connect Liferay to an LDAP directory. There are two places for
@@ -30,7 +30,7 @@ database will be merged with the settings in `portal-ext.properties`. If
 there's a conflict or overlapping data, the LDAP settings in the database take
 precedence over the settings specified in the `portal-ext.properties` file.
 Configuring the LDAP settings from the Control Panel is easier and does not
-require a restart of Liferay. The only compelling reason to use the
+require a restart of @product@. The only compelling reason to use the
 `portal-ext.properties` file is if you have many Liferay nodes which need to be
 configured to run against the same LDAP directory. In that case, for your
 initial deployment, it may be easier to copy the `portal-ext.properties` file
@@ -46,14 +46,14 @@ then not allow a user to log in unless he or she can successfully bind to the
 LDAP directory first. Uncheck this box if you want to allow users with Liferay
 accounts but no LDAP accounts to log in to the portal.
 
-**LDAP Servers:** Liferay supports connections to multiple LDAP servers. You can
+**LDAP Servers:** @product@ supports connections to multiple LDAP servers. You can
 use the Add button beneath this heading to add LDAP servers. We explain how to
 configure new LDAP servers below.
 
 **Import/Export:** You can import and export user data from LDAP directories
 using the following options:
 
-- *Import Enabled:* Checking this box instructs Liferay to do a mass import
+- *Import Enabled:* Checking this box instructs @product@ to do a mass import
   from your LDAP directories. If you want Liferay to only synchronize users
   when they log in, leave this box unchecked. <!-- (Check if the following two
   sentences can be removed due to the fixes for LPS-58816 and LPP-19372.)
@@ -61,12 +61,12 @@ using the following options:
   environment. Otherwise, all of your nodes would try to do a mass import when
   each of them starts up. -->
 
-- *Import on Startup Enabled:* Checking this box instructs Liferay to run the
+- *Import on Startup Enabled:* Checking this box instructs @product@ to run the
   LDAP user import when it starts up. Note: This box only appears if you check
   the *Import Enabled* box above.
 
-- *Export Enabled:* Check this box to enable Liferay to export user accounts
-  from its database to LDAP. Liferay uses a listener to track any changes made
+- *Export Enabled:* Check this box to enable @product@ to export user accounts
+  from its database to LDAP. @product@ uses a listener to track any changes made
   to the `User` object. Liferay pushes updates out to the LDAP server whenever
   a `User` object is modified. Note that by default on every login, fields such
   as `lastLoginDate` are updated. When export is enabled, this has the effect
@@ -161,7 +161,7 @@ LDAP URL in the Base DN field to the secure version by changing the protocol to
 
     ldaps://myLdapServerHostname:636
 
-Save the changes. Your Liferay Portal will now use LDAP in secure mode for
+Save the changes. Your @product@ will now use LDAP in secure mode for
 authentication.
 
 **Users:** This section contains settings for finding users in your LDAP
@@ -271,7 +271,7 @@ to all of your LDAP server connections.
 Although most of the LDAP configuration can be done from the Control Panel,
 there are several configuration parameters that are only available by adding to
 your Liferay server's `portal-ext.properties` file. These options may be
-available in the GUI in future versions of Liferay Portal but for now they can
+available in the GUI in future versions of @product@ but for now they can
 only be configured by editing the properties file.
 
 If you need to change any of these options, copy the LDAP section from Liferay's
@@ -298,7 +298,7 @@ passwords if the property `ldap.auth.method` is set to `password-compare`.
 
     ldap.import.method=[user,group]
 
-If you set the property above to `user`, Liferay will import all users from the
+If you set the property above to `user`, @product@ will import all users from the
 specified portion of the LDAP tree. If you set this to `group`, Liferay will
 search all the groups and import the users in each group. If you have users who
 do not belong to any groups, they will not be imported.
@@ -320,10 +320,10 @@ messages can be different. The properties described here contain snippets of
 words from those messages and will work with Red Hat's Fedora Directory Server.
 If you are not using that server, the word snippets may not work with your LDAP
 server. If they don't, you can replace the values of these properties with
-phrases from your server's error messages. This will enable Liferay to
+phrases from your server's error messages. This will enable @product@ to
 recognize them.
 
-Great! Now you know how to an LDAP server connection to Liferay and how to
+Great! Now you know how to an LDAP server connection to @product@ and how to
 configure user import behavior, export behavior, and other LDAP settings.
 
 <!--

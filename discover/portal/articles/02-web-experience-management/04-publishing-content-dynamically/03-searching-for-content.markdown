@@ -11,19 +11,19 @@ hard to find stuff. Did you put the note about buying your daughter that special
 birthday gift in the notes section or in the family section? Or maybe it was on
 your *While Out* list, so you'd remember to buy it before her birthday? 
 
-Liferay content can be like this. That important information you remember
+@product@ content can be like this. That important information you remember
 seeing--was it in a wiki article, a message boards post, or web content? Did you
 remember to tag it? If you don't have this kind of information, browsing to the
-content you're looking for could be difficult. Thankfully, Liferay includes a
+content you're looking for could be difficult. Thankfully, @product@ includes a
 powerful, faceted search function. You can access this function through the
 Search application, which lets you drill down through the different types of
 content, tags, and categories to refine your search. Next, you'll look at the
-search features Liferay provides for specific kinds of content and then examine
-how to use Liferay's faceted search.
+search features @product@ provides for specific kinds of content and then examine
+how to use @product@'s faceted search.
 
 ## Searching for Specific Types of Content [](id=searching-for-specific-types-of-content)
 
-Liferay provides several applications that let users and administrators search
+@product@ provides several applications that let users and administrators search
 for content. First, there's the Search application, which can be placed on a
 page to let users search for web content articles. The Search application only
 searches for web content. However, apps like Blogs, Wiki, Message Boards, and
@@ -39,21 +39,21 @@ to search for web content.
 
 +$$$
 
-**Note:** The Web Content Search application is deprecated in Liferay 7.0 and
+**Note:** The Web Content Search application is deprecated in @product@ 7.0 and
 will be removed in Liferay 7.1. The Web Content Search app's functionality has
 been replaced by the Search app, which is configured to search for web content. 
 
 $$$
 
-In order for content to be searchable, it must first be indexed. Liferay uses
+In order for content to be searchable, it must first be indexed. @product@ uses
 Lucene for indexing and searching for content. Please refer to the Lucene
-section of the portal properties file if you'd like to customize Liferay's
-indexing and search behavior. By default, Liferay indexes blog posts, wiki
+section of the portal properties file if you'd like to customize @product@'s
+indexing and search behavior. By default, @product@ indexes blog posts, wiki
 articles, message board posts, Documents and Media files' descriptions, and web
 content articles. If a Documents and Media file is a text file, the file's
 content is indexed as well. Comments on blog posts, wiki articles, and Documents
 and Media files and text file attachments to wiki articles and message board
-posts are also indexed. Liferay automatically indexes content as it's added to
+posts are also indexed. @product@ automatically indexes content as it's added to
 the instance.
 
 If you'd like to search among assets of a specific type and you'd like to
@@ -68,17 +68,17 @@ Wiki articles, comments, and text file attachments containing the word *Lunar*
 or *Resort* are returned as search results. The search results clearly show
 whether an individual search result is a wiki article, a comment, or an
 attachment. In the next section, you'll see how the Search application can be
-used to search through web content on Liferay. Its faceted search
+used to search through web content on @product@. Its faceted search
 feature is a powerful tool that allows users to include or not include specific
 types of assets in a search. However, the Search application does not return
 comments or attachments as search results.
 
 ## Searching for Localized Web Content [](id=searching-for-localized-web-content)
 
-Liferay supports localizing web content as well as searching for localized web
+@product@ supports localizing web content as well as searching for localized web
 content. Recall that to add a translation of a web content article, you need to
 edit the article, choose a language, and then add the translation and click
-*Save*. Here's how searching for localized content works in Liferay:
+*Save*. Here's how searching for localized content works in @product@:
 
 - Web content articles whose default language matches the Liferay instance's
   default language are searched.
@@ -99,7 +99,7 @@ the *Actions* button next to a version of the article, then click on *Expire*.
 
 $$$
 
-Next you'll learn about searching content in Liferay using facets.
+Next you'll learn about searching content in @product@ using facets.
 
 ## Searching for Content Using Facets [](id=searching-for-content-using-facets)
 
@@ -168,15 +168,15 @@ needle within the haystack.
 ### Asset Types [](id=asset-types)
 
 Searching can only be done on assets. As has already been described in this
-chapter, just about any entity in Liferay is an asset and can be indexed and
+chapter, just about any entity in @product@ is an asset and can be indexed and
 searched. Under the hood, this means that these entities use Liferay's Asset API
 and have an Indexer class defined. 
 
-Developers can create custom searchable assets within Liferay. This is
+Developers can create custom searchable assets within @product@. This is
 described in the
 [Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
 tutorials. For this reason, you can have additional asset
-types defined in Liferay beyond the ones that Liferay ships with by default.
+types defined in @product@ beyond the ones that Liferay ships with by default.
 If this is the case, you might want to tweak the *Frequency Threshold* and the
 *Max Terms* settings to increase the number of asset types displayed past the
 default of 10. This is covered in the section below on search options.
@@ -197,7 +197,7 @@ To disable public personal pages, you can set the following portal properties:
 The technical reason for this behavior is that although an `AssetEntry` object
 is created for each `User` object, the `AssetEntries` objects of users are
 created as non-visible assets. Instead of displaying users in the Asset
-Publisher, Liferay uses the `displayURL` of each user as the link from a list of
+Publisher, @product@ uses the `displayURL` of each user as the link from a list of
 search results.
 
 ### Asset Tags [](id=asset-tags)
@@ -284,7 +284,7 @@ Next, you'll look at how the Search application can be configured.
 
 ## Setting Options for Detailed Search Results [](id=setting-options-for-detailed-search-results)
 
-As with Liferay's other applications, you can configure the Search application
+As with @product@'s other applications, you can configure the Search application
 via the configuration screen, which looks like the below illustration. 
 
 ![Figure 6: You have three separate tabs for choosing your search configuration: *Display Settings*, *Spell Check Settings*, and *Other Settings*.](../../../images/faceted-search-configuration.png)
@@ -305,7 +305,7 @@ For each facet, you can click the *Configure* button to modify the display
 settings for that particular facet. The configurations you set for each facet is
 used to apply advanced search configuration settings in the form of a JSON
 string. If you don't know what JSON is, don't worry, your configurations are
-automatically inserted into a JSON object by Liferay, so you only have to worry
+automatically inserted into a JSON object by @product@, so you only have to worry
 about the values for your facets' configuration options. You can learn more
 about this in the
 [Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)
@@ -373,7 +373,7 @@ purposes only.
 **Display Open Search Results:** Shows results from third party Open Search
 plugins, if they are installed. This is for backward compatibility only:
 developers are encouraged to re-design their search code, and then custom assets
-are aggregated with native Liferay assets seamlessly. 
+are aggregated with native @product@ assets seamlessly. 
 
 +$$$
 
@@ -389,12 +389,12 @@ this information was no longer relevant. The removed information may be useful
 for the faceted-search-and-customized-search-filtering tutorial. For reference,
 the JSON info in this section was removed as part of LRDOCS-2108. -Cody -->
 
-Search is a powerful component of Liferay's asset framework. The proclivity of
+Search is a powerful component of @product@'s asset framework. The proclivity of
 assets means that there is an extensible, robust, and configurable search
 mechanism throughout the portal that allows administrators to optimize the
 search experience of their users. Users also get an easy to use search interface
 that makes use of the tags and categories that they themselves apply to various
-pieces of content, regardless of the type of content. This makes Liferay's
+pieces of content, regardless of the type of content. This makes @product@'s
 search truly "for the people."
 
 Power users can learn an extended search syntax that lets them craft very
@@ -404,4 +404,4 @@ can tune the configuration of search apps so that they are optimized for the
 contents of their communities. 
 
 Next, you'll look at how the Asset Publisher app makes even more extensive use
-of Liferay's asset framework to bring relevant content to users.
+of @product@'s asset framework to bring relevant content to users.

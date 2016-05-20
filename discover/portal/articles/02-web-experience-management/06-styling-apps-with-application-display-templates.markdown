@@ -145,5 +145,5 @@ your Liferay instance.
 	ADTs have that kind of power to transform your site into an enjoyable and
 	convenient home for users.
 
-Customizing the user interface of Liferay's bundled apps provides the ultimate
+Customizing the user interface of @product@'s bundled apps provides the ultimate
 customization experience for Liferay users.

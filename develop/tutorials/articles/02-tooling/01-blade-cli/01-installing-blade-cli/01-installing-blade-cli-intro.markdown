@@ -45,6 +45,6 @@ $$$
 
 You've successfully downloaded and installed Blade CLI using JPM and verified
 your installation using a basic `blade` command. Blade CLI offers many `create`
-templates to help build Liferay 7.0 applications, and also offers various ways
+templates to help build @product@ 7.0 applications, and also offers various ways
 to deploy those apps and interact with your Liferay server. Be sure to explore
 more Blade CLI tutorials to learn how.

@@ -12,7 +12,7 @@ embedded a YouTube video on your own web site so that users could watch a video
 without actually having to visit [www.youtube.com](http://youtube.com/), then
 you've already used a widget.
 
-Liferay supports serving its apps as widgets. You can embed a particular
+@product@ supports serving its apps as widgets. You can embed a particular
 instance of an application running on your site into another site, such as
 Facebook. This opens up a whole new avenue of exposure to your web site that you
 would not have had otherwise. In fact, this is how all those Facebook games
@@ -45,14 +45,14 @@ in Facebook, the correct callback URL is used to render the application. You can
 also enable the *Allow users to add [application-name] to Facebook*. Then you
 can navigate to your app's Options menu and select *Add to Facebook*.
 
-By having the ability to share your apps, this makes Liferay a fantastic
+By having the ability to share your apps, this makes @product@ a fantastic
 platform upon which to build applications for Facebook.
 
 ## OpenSocial Gadget [](id=opensocial-gadget)
 
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. iGoogle is a service provided by Google that lets users
-create a customizable page and add *Gadgets* to that page. Liferay can serve up
+create a customizable page and add *Gadgets* to that page. @product@ can serve up
 applications to be used as OpenSocial Gadgets on any OpenSocial-compatible
 pages.
 
@@ -70,7 +70,7 @@ to place on their OpenSocial pages.
 
 From the Sharing tab in the Configuration menu, you can also enable the selector
 *Allow users to add [application-name] to an OpenSocial platform*. Click *Save*
-and revisit the *Options* button of your application in Liferay. You'll notice a
+and revisit the *Options* button of your application in @product@. You'll notice a
 new button named *Add to an OpenSocial Platform*. When selecting this new
 button, the URL is provided to you for sharing the application to an OpenSocial
 platform. This option provides a shortcut for obtaining the URL and also gives a

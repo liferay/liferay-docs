@@ -28,7 +28,7 @@ edit existing pages. Note that you can also switch to managing a set of pages in
 the Pages menu. Click on *Public Pages* or *Private Pages* (if private pages
 exist in your site) to manage that page group.
 
-Liferay's page groups are always associated with sites. Even users' personal
+@product@'s page groups are always associated with sites. Even users' personal
 pages are part of their personal sites. All pages belong to one of two types of
 page sets: public pages and private pages. By default, public pages are
 accessible to anyone, even non-logged in users (guests). Private pages are
@@ -36,7 +36,7 @@ accessible only to users who are members of the site which owns the pages. This
 means the private pages of an organization's site would only be viewable by
 site members and members of the organization. 
 
-Regardless of whether the pages are public or private, Liferay uses the same
+Regardless of whether the pages are public or private, @product@ uses the same
 interface to manage them. You'll look at this interface more closely next. 
 
 ## Creating Pages [](id=creating-pages)
@@ -251,7 +251,7 @@ Note that this merging of pages is not a "hard merge". For example, suppose that
 the site administrators of twenty different sites on your Liferay instance all
 enabled the *Merge Liferay public pages* option. Would the pages of all these
 different sites be merged into each site's navigation menu? No, that would make a
-mess! Instead, Liferay keeps track of the current `scopeGroupId` (the ID of the
+mess! Instead, @product@ keeps track of the current `scopeGroupId` (the ID of the
 current site) and the previous `scopeGroupId` (the ID of the previously visited
 site). If the *Merge Liferay public pages* option is enabled for either the
 current site or the previous site, the pages of the default site are merged in
@@ -304,7 +304,7 @@ If you select the *Sitemap* option from the *Advanced* tab for a page set, you
 can send a sitemap to some search engines so they can crawl your site. It uses
 the sitemap protocol, which is an industry standard. You can publish your site
 to Yahoo or Google and their web crawlers will use the sitemap to index your
-site. Liferay makes this very simple for administrators by generating the
+site. @product@ makes this very simple for administrators by generating the
 sitemap XML for all public web sites.
 
 By selecting one of the search engine links, the sitemap will be sent to them.
@@ -399,7 +399,7 @@ Page Settings. -Cody -->
 #### Embedded Portlets [](id=embedded-portlets)
 
 This option only appears if you have embedded one or more portlets on
-the page. Previous to Liferay 7.0, you were able to embed portlets on a page by
+the page. Previous to @product@ 7.0, you were able to embed portlets on a page by
 acquring their portlet ID and using a `runtime-portlet` tag in the Web Content
 Display app to embed a portlet on a page. This is no longer possible.
 
@@ -432,7 +432,7 @@ indexer that's crawling the page, which is accessible from the *SEO* tab. You
 can set the various meta tags for description, keywords and robots. There's also
 a separate Robots section that lets you tell indexing robots how frequently the
 page is updated and how it should be prioritized. If the page is localized, you
-can select a box to make Liferay generate canonical links by language. If you
+can select a box to make @product@ generate canonical links by language. If you
 want to set some of these settings for the entire site, you can specify them
 from the Sitemaps and Robots tabs of the Manage Site Settings dialog box (see
 below).
@@ -442,7 +442,7 @@ could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
 same page will only create one entry in the index. Previously, the simple URL
 *http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
 versions of the URL which provided additional information about the referring
-page had different entries in the index. In Liferay 7.0, each asset (web
+page had different entries in the index. In @product@ 7.0, each asset (web
 content article, blog entry, etc.) has a unique URL. From the search engine's
 point of view, this will make your pages rank higher since any references to
 variations of a specific URL will all be considered references to the same
@@ -474,7 +474,7 @@ Next you'll learn how to add applications to a site page.
 
 ## Adding Applications to a Page [](id=adding-applications-to-a-page)
 
-Liferay pages are composed of applications. All of your site's functionality,
+@product@ pages are composed of applications. All of your site's functionality,
 from blogs to shopping, is composed of apps. Even static web content can be
 displayed through Web Content Display apps. To add an app to a page, just click
 the *Add* button
@@ -571,7 +571,7 @@ apps to or remove apps from the customizable regions.
 
 ![Figure 9: Customizable areas are highlighted green when organizing apps on the page.](../../../images/customizable-regions.png)
 
-Liferay doesn't allow users to change a non-instanceable app's configuration
+@product@ doesn't allow users to change a non-instanceable app's configuration
 inside a customizable region since those kinds of apps are tied to the site to
 which they've been added. If this were allowed, the customization would affect
 all users, not just the one who customized the region. Therefore, changes to the
@@ -644,11 +644,11 @@ Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
 Other users, even members of this site, won't have permission to see it.
 
-Pages in Liferay are as flexible as pages you'd create manually without a
+Pages in @product@ are as flexible as pages you'd create manually without a
 Liferay instance. Using a point and click interface, you can define your site
 any way you want. You can create and remove pages, export and import them, set
 their layouts, define how they are indexed by search engines, and more.
 
-You now understand how to manage pages in Liferay. It's time to move on
+You now understand how to manage pages in @product@. It's time to move on
 to further customizing those pages for mobile devices and building standardized
 pages using custom templates.
