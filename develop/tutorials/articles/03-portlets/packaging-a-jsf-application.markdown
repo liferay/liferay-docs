@@ -239,4 +239,4 @@ too.
 
 [Creating A Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
 
-[Migrating A Legacy Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-legacy-application)
+[Migrating A Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)

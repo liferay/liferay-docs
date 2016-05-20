@@ -1,4 +1,4 @@
-# Migrating a Legacy Application [](id=migrating-a-legacy-application)
+# Migrating a Liferay 6 Application [](id=migrating-a-liferay-6-application)
 
 Liferay 7's one and only plugin type is a [*module*](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module). 
 It's an OSGi-based module that Liferay's module framework hands off to OSGi for
@@ -16,6 +16,6 @@ ones.
 What does all this mean to you with regards to your existing applications?
 That's what you'll learn in these tutorials.
 
-We'll start by explaining what's involved with migrating a legacy application, so you
-can make an informed decision on how to structure your application for Liferay 7
-and upgrade it for deployment on Liferay 7. 
+We'll start by explaining what's involved with migrating a traditional
+application, so you can make an informed decision on how to structure your
+application for Liferay 7 and upgrade it for deployment on Liferay 7. 

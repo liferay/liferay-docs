@@ -1,4 +1,4 @@
-# Modularizing Legacy Plugins [](id=modularizing-legacy-plugins)
+# Modularizing an Existing Portlet [](id=modularizing-an-existing-portlet)
 
 An application with properly modularized plugins offers several benefits. You
 can release individually its plugins without releasing the entire application.
@@ -7,7 +7,7 @@ depend on an entire application. And by splitting up large amounts of code into
 concise modules, teams can more easily focus on particular areas of the
 application. These are just a few reasons to modularize application plugins. 
 
-In this tutorial, you'll learn how to convert your legacy WAR
+In this tutorial, you'll learn how to convert your traditional
 application into modules. Before getting started, it's important to reiterate
 that the module structure shown in this tutorial is just one of many ways for
 structuring your application's modules. It's also important to remember that
@@ -23,7 +23,7 @@ Here's what's involved:
 
 The first thing you'll do is create your application's web (client) module.
 
-## Converting Your Legacy Application's Portlet Classes and UI [](id=converting-your-legacy-applications-portlet-classes-and-ui)
+## Converting Your Application's Portlet Classes and UI [](id=converting-your-applications-portlet-classes-and-ui)
 
 The first thing you'll do is create your application's parent directory and the
 directory structure for your application's *web* client module. This module
@@ -90,7 +90,7 @@ $$$
     `com.liferay.tasks.web`, your class's directory should be
     `/src/main/java/com/liferay/tasks/web`. Also, remove the `init.jsp` and
     `view.jsp` files located in the `src/main/resources/META-INF/resources`
-    folder. You'll insert your legacy application's Java code and JSPs, so the
+    folder. You'll insert your traditional application's Java code and JSPs, so the
     generated default code is not necessary.
 
 
@@ -138,7 +138,7 @@ $$$
     dependencies are not bundled with your module. Instead, they're available
     from Liferay's OSGi container.
 
-7.  Copy your legacy application's JSP files into the
+7.  Copy your traditional application's JSP files into the
     `/src/main/resources/META-INF/resources` directory. In most cases, all of
     your application's JSP files should reside in the web client module.
 
@@ -170,7 +170,7 @@ $$$
     tutorial assumes that you're using Declarative Services. You can, however,
     use any other OSGi component framework in Liferay.
 
-    Review your legacy application's XML files and migrate the configuration
+    Review your traditional application's XML files and migrate the configuration
     and metadata information to the portlet class as properties. You can do
     this by adding the `@Component` annotation to your portlet class and adding
     the necessary properties to that annotation. The end result should look
@@ -201,7 +201,7 @@ $$$
     class name of the portlet, replacing all periods with underscores (e.g.,
     `com_liferay_web_proxy_portlet_WebProxyPortlet`).
 
-11.  If your legacy application has resource actions, you'll need to migrate
+11.  If your traditional application has resource actions, you'll need to migrate
     those into your client module. Create the
     `/src/main/resources/resource-actions/default.xml` file, and copy your
     resource actions there. Make sure to create the `src/portlet.properties`
@@ -227,10 +227,10 @@ section.
 <!-- The Creating a Client Module link above refers to instructions on creating generic OSGi client modules. Once the Creating a Service Builder application tutorial has been written, the link above should be replaced to the section in the Creating a Service Builder application tutorial on creating a web client module. -Jesse -->
 
 The table below serves as a quick reference guide. It summarizes the migration
-process for many of your legacy application's directories, packages, and files.
+process for many of your application's directories, packages, and files.
 This is a sample table for a fictitious *tasks* applications.
 
-| Legacy Package | Module Package |
+| Plugin Package | Module Package |
 |----------------|----------------|
 | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.asset` | `tasks-web/src/main/java/com.liferay.tasks.asset` |
 | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.portlet` | `tasks-web/src/main/java/com.liferay.tasks.portlet` |
@@ -246,9 +246,9 @@ applications, such as Liferay Service Builder applications, require additional
 modules to hold their service API and service implementation logic. You'll
 learn how to create these modules next.
 
-## Converting Your Legacy Application's Service Builder API and Implementation [](id=converting-your-legacy-applications-api-and-service-builder-implementation)
+## Converting Your Application's Service Builder API and Implementation [](id=converting-your-applications-service-builder-api-and-implementation)
 
-In this section, you'll learn about converting a legacy Service Builder
+In this section, you'll learn about converting a Liferay 6 Service Builder
 application to a Liferay 7 style application. In the previous section, you
 learned how to generate your implementation and API modules. If you haven't yet
 run the `servicebuilder` blade command outlined in step 2 of the previous
@@ -267,7 +267,7 @@ Your root project directory should now be in good shape. Next, you'll learn how
 to use Service Builder to generate your application's service API and service
 implementation code.
 
-1.  Copy your legacy application's `service.xml` file and paste it into the
+1.  Copy your traditional application's `service.xml` file and paste it into the
     implementation module's root directory (e.g., `tasks/tasks-service`).
 
 2.  Blade generated a `bnd.bnd` file for your service implementation module.
@@ -318,14 +318,14 @@ implementation code.
     block's configuration.
 
 7.  Now that you've run Service Builder, continue copying custom classes into
-    your implementation module. The table below highlights popular legacy
+    your implementation module. The table below highlights popular Liferay 6
     classes and packages and where they should be placed in your application.
     This table is intended to aid in the organization of your classes and
     configuration files; however, remember to follow the organizational
     methodologies that make the most sense for your application. One size does
     not fit all with your modules' directory schemes.
 
-    | Legacy Package | Module Package |
+    | Plugin Package | Module Package |
     |----------------|----------------|
     | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.model.impl` | `tasks-service/src/main/java/com.liferay.tasks.model.impl` | 
     | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.impl` | `tasks-service/src/main/java/com.liferay.tasks.service.impl` |
@@ -415,7 +415,7 @@ shell as shown below.
 
 ![Figure 1: Once you've connected to your Liferay instance in your Gogo shell prompt, run *lb* to list your new converted modules.](../../images/deploy-converted-modules.png)
 
-This tutorial explained how to convert your legacy application into the modular
+This tutorial explained how to convert your traditional application into the modular
 format of a Liferay 7 style applicaton. You first created a web client
 (`*-web`) module that holds your application's portlet classes and UI. Then you
 learned how to create a service implementation module and a service API module.

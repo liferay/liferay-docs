@@ -226,5 +226,5 @@ You now know how to find Liferay component API modules and their Javadoc.
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
-[Adapting to Liferay 7's API](/develop/reference/-/knowledge_base/7-0/adapting-to-liferay-7s-api)
+<!--[Adapting to Liferay 7's API](/develop/reference/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
 
