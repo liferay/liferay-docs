@@ -7,9 +7,8 @@ Even if you want to manually install Liferay on an existing Wildfly 10
 application server, it can be helpful to download a Liferay Wildfly bundle. The
 bundle contains many required dependencies and configuration files. Before
 proceeding, you should also download the latest Liferay WAR file from
-[https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
-as well as the dependencies ZIP file and OSGi JARs ZIP file. This installation
-guide assumes you're running Java 8.
+[https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
+as well as the dependencies ZIP file and OSGi JARs ZIP file.
 
 Installing Liferay manually requires these basic steps:
 
@@ -44,7 +43,7 @@ third-parties, as described below.
 
 3. Download the remaining required JARs and insert them into the same folder. 
 
-    - `com.liferay.osgi.service.tracker.collections.jar`
+    - `com.liferay.osgi.service.tracker.collections.jar` - [http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
     - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api)
 
 4. Create the file `module.xml` in the
@@ -57,7 +56,7 @@ third-parties, as described below.
             <resources>
                 <resource-root path="com.liferay.registry.api.jar" />
                 <resource-root path="mysql-connector-java-[version]-bin.jar" />
-                <resource-root path="portal-service.jar" />
+                <resource-root path="portal-kernel.jar" />
                 <resource-root path="portlet.jar" />
             </resources>
             <dependencies>
@@ -73,14 +72,11 @@ third-parties, as described below.
     driver. If you are using a different database, replace the MySQL `.jar` with 
     the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
-5. Liferay includes an OSGi runtime. Extract the OSGi ZIP file that you
-   downloaded and copy the `osgi` folder to your Liferay Home folder. The
-   `osgi` folder contains many required JAR files and a few configuration
-   files. If you're working with a bundle, you can simply copy the `osgi`
-   folder from your bundle to your Liferay Home folder.
+5. Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
+   ZIP file that you downloaded into the `osgi` folder.
 
-<!-- Above step should be replaced by downloading only OSGi JAR ZIP, when
-available -->
+    Liferay requires an OSGi runtime, and the `osgi` folder provides this with
+    many required JAR files and configuration files.
 
 Great! You have your `.jar` files ready. 
 
@@ -142,10 +138,10 @@ Make the following modifications to `standalone.xml`:
         </system-properties>
 
 2. Add a timeout for the deployment scanner by setting
-`deployment-timeout="240"` as seen in the excerpt below.
+`deployment-timeout="360"` as seen in the excerpt below.
 
         <subsystem xmlns="urn:jboss:domain:deployment-scanner:2.0">
-            <deployment-scanner deployment-timeout="240" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000" runtime-failure-causes-rollback="${jboss.deployment.scanner.rollback.on.failure:false}"/>
+            <deployment-scanner deployment-timeout="360" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000" runtime-failure-causes-rollback="${jboss.deployment.scanner.rollback.on.failure:false}"/>
         </subsystem>
 
 3. Add the following JAAS security domain to the security subsystem
