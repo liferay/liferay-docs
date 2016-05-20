@@ -14,32 +14,12 @@ want to add some additional logging functionality to some of Liferay's APIs.
 Whatever your case may be, Liferay's service wrappers provide easy-to-use
 extension points for customizing Liferay's services.
 
-To create a module that overrides one of Liferay's services, use the
-`servicewrapper` project type. For example, use the below command in a Liferay
-Workspace to create a Gradle-based service wrapper project that overrides
-Liferay's `UserLocalService`: 
+To create a module that overrides one of Liferay's services, follow the 
+[Using the Service Wrapper Template](/develop/tutorials/-/knowledge_base/7-0/using-the-service-wrapper-template)
+tutorial to create a `servicewrapper` project type.
 
-    blade create -t servicewrapper -s com.liferay.portal.kernel.service.UserLocalServiceWrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride service-override
-
-This creates a project called `service-override` in your current folder. The `-c
-UserLocalServiceOverride` parameter specifies the name of the component class
-that you're creating. The `-p com.liferay.docs.serviceoverride` argument
-specifies the package in which your component class is to be created. The `-s
-com.liferay.portal.service.UserLocalServiceWrapper` argument specifies the
-specific type of service wrapper that your component class should extend. 
-
-Here's the project structure: 
-
-- `service-override`
-    - `src`
-        - `main`
-            - `java`
-                - `com/liferay/docs/serviceoverride`
-                    - `UserLocalServiceOverride.java`
-    - `bnd.bnd`
-    - `build.gradle`
-
-Here's the `UserLocalServiceOverride` class that's generated:
+As an example, here's the `UserLocalServiceOverride` class that's 
+generated in the Service Wrapper Template tutorial:
 
     package com.liferay.docs.serviceoverride;
 
