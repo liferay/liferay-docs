@@ -16,15 +16,17 @@ extension. To deploy these files, drop them into a running Liferay instance's
 hot-deploy folder (`[Liferay_Home]/deploy`), like any other plugin. 
 
 As an app developer, you're not required to create the `.lpkg` files. Instead,
-your app's individual plugins (WAR files, OSGi modules in JAR files) are 
-uploaded as part of the publication process, along with information (name, 
-description, version, icon, etc.) that identifies the app. The publication 
-process is described in detail later.
+your app's individual plugins (WAR files for traditional plugins or JAR files
+for OSGi modules) are uploaded as part of the publication process, along with
+information (name, description, version, icon, etc.) that identifies the app.
+The publication process is described in detail later.
 
-At this point in preparing to publish your app, you've developed your app. And 
-if you're preparing a paid app, you've specified a portal access control list 
-[\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl), 
-so that your app can be deployed on Liferay instances that have their 
+At this point in preparing to publish your app, you've developed your app. And
+if you're preparing a paid app, you've specified a permission descriptor (a
+portal access control list
+[\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl) for
+traditional plugins or a `OSGI-INF/permissions.perm` file for OSGi modules), so
+that your app can be deployed on Liferay instances that have their
 [Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager) 
 running. But before you start the formal publishing process, you must prepare 
 your app's files and app metadata. 
@@ -34,7 +36,7 @@ your app's files and app metadata.
 The following app metadata guidelines are intended to ensure that apps are
 submitted with important and necessary supporting information. The metadata that
 you submit with your app will serve both as necessary information for your app's
-buyers (eg., your contact info) and as promotional assets (eg., description,
+buyers (e.g., your contact info) and as promotional assets (e.g., description,
 screenshots, etc.) that can help drive traffic to and downloads of your app!
 
 ![Figure 1: Check out how good your app can look on the Markeplace.](../../images/dev-portal-app-metadata-guidelines.png)
@@ -154,8 +156,8 @@ metadata requirements and produce an appealing advertisement for your app.
 				<a href="https://web.liferay.com/marketplace">Markeplace</a>.
 				<p>
 					It's important that you specify any plugin dependencies
-					(eg., plugins that must be installed prior to running your
-					app) and environment compatibilities (eg., compatibility
+					(e.g., plugins that must be installed prior to running your
+					app) and environment compatibilities (e.g., compatibility
 					with specific app servers) here, so that potential buyers 
 					and the Liferay app review team are aware of these 
 					requirements.
@@ -178,7 +180,7 @@ metadata requirements and produce an appealing advertisement for your app.
 			<td class="">
 				Please include a "+" at the end of the latest version when
 				specifying version constraints in your
-				liferay-plugin-package.properties file (eg.,
+				liferay-plugin-package.properties file (e.g.,
 				"liferay-versions=6.1.1+, 6.1.20+"). This will ensure that your
 				app will continue to be deployable to future versions of Liferay
 				within a minor release. If, in the future, you discover your app
@@ -191,12 +193,13 @@ metadata requirements and produce an appealing advertisement for your app.
 				Increase Your Potential User Base </td>
 			<td class="">
 				In most cases, an app that is compatible with CE portal will
-				also run under EE portal, and vice versa. Specifying
-				compatibility with both EE and CE versions of the portal will
-				ensure that a wider audience has access to your app!
+				also run under Liferay Digital Enterprise (DE) or  EE portal,
+				and vice versa. Specifying compatibility with both DE/EE and CE
+				versions of the portal will ensure that a wider audience has
+				access to your app!
 				<p>
 					You can <a href="https://www.liferay.com/web/developer/marketplace/license">request
-					a Liferay EE Developer License </a> to support testing and
+					a Liferay DE/EE Developer License </a> to support testing and
 					confirm compatibility.
 				</p>
 			</td>
@@ -239,8 +242,8 @@ metadata requirements and produce an appealing advertisement for your app.
 Make sure your icons, images, descriptions, and tags are free of profanity or 
 other offensive material.
 
-During the publication process, you upload your app's individual plugins (WAR 
-files, OSGi modules in JAR files) along with its metadata (name, description, 
+During the publication process, you upload your app's individual plugin WAR
+files and module JAR files along with the app's metadata (name, description,
 version, icon, etc.).
 
 **Additional Requirements for Themes/Site Templates**
@@ -345,11 +348,13 @@ There are some additional requirements for uploading Liferay 7.0 apps:
 
 +$$$
 
-**Important:** If you're developing a paid app or want your free app to satisfy 
-Liferay's Plugin Security Manager, see the tutorial 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl) 
-for details. Give yourself adequate time to develop your app's PACL and time to 
-test your app thoroughly with the security manager enabled. 
+**Important:** If you're developing a paid app or want your free app to satisfy
+Liferay's Plugin Security Manager, make sure to specify PACLs for your
+traditional plugins and a `OSGI-INF/permissions.perm` file for each of your
+modules. See the article [Plugin Security Manager](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portal+Security+Manager) 
+for details. Give yourself adequate time to develop your app's permission
+descriptors and time to test your app thoroughly with the security manager
+enabled. 
 
 $$$
 

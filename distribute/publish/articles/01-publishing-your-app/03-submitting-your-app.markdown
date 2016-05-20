@@ -92,9 +92,10 @@ do so here.
 
 **Security:** If your app does *not* use Liferay's PACL Security Manager, check
 the appropriate box. Otherwise, make sure to enable the security manager in your
-app by including the setting `security-manager-enabled=true` in your
+app by including the setting `security-manager-enabled=true` in the
 [`liferay-plugin-package.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
-file. 
+file in your WAR files and specify a `OSGI-INF/permissions.perm` file in your
+module JAR files. 
 
 **Tags:** A set of descriptive words that categorize your app. These tags are
 free-form and can help potential purchasers find your app through keyword
