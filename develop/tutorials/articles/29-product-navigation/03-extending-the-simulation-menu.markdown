@@ -44,7 +44,7 @@ a panel app for the already present hidden category.
         "panel.category.key=" + SimulationPanelCategory.SIMULATION
 
     In order to use this constant, you need to add a dependency on 
-    [com.liferay.product.navigation.simulation](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.product.navigation.simulation/).
+    [com.liferay.product.navigation.simulation](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.product.navigation.simulation/).
     Be sure to also specify the order you'd like to display your new panel app,
     which was explained in the 
     [Adding Custom Panel Apps](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)

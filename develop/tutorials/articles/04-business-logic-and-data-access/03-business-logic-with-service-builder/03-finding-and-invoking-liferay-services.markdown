@@ -45,7 +45,7 @@ section.
 Here's an example of how to find services for a bookmarks entry:
 
 1. Navigate to Liferay's
-[Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/)
+[Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/)
 and select `com.liferay.bookmarks.api`. Then select the appropriate version.
 
 2. Select the `com.liferay.bookmarks.api-[VERSION]-javadoc.jar` link, which

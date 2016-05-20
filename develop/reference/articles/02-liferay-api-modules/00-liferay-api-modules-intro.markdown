@@ -140,7 +140,7 @@ names.
 The last module dependency item to specify is the module version. The Liferay
 Portal CE artifact repository has a folder for each module version. To browse
 the version folders, visit the artifact repository at
-<https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/>
+<https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/>
 and click on the module's folder. 
 
 Liferay module names start with `com.liferay`, followed by a dot ".", and
@@ -186,7 +186,7 @@ Javadoc for the modules in the latest GA release of Liferay Portal 7.0 CE are
 available online at <https://docs.liferay.com/portal/7.0/javadocs/> and for
 download from [Liferay Downloads](https://www.liferay.com/downloads). All
 versions of modules for CE are available for download from the [Liferay CE
-artifact repository](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/).
+artifact repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/).
 
 Here is the common naming convention used for the module packages:
 
