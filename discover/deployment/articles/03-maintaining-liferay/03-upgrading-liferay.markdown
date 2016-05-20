@@ -4,6 +4,9 @@ In this article, you'll learn how to upgrade to @product@ 7. Please see the
 [Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
 article for information on upgrading to Liferay 6.2.
 
+The instructions covered in this article apply to both the commercial and open 
+source versions of Liferay.
+
 To upgrade your instance to Liferay 7, you should create a file called
 `com.liferay.portal.search.configuration.IndexWriterHelperConfiguration.cfg` in
 your `[Liferay Home]/osgi/configs` folder with this contents:

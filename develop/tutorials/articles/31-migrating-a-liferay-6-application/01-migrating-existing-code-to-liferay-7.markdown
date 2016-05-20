@@ -11,6 +11,9 @@ learn about in these tutorials. You, however, are not required to follow
 Liferay's standard application structure; you have the freedom to structure your
 application's modules however you wish.
 
+The instructions covered in this tutorial apply to both the commercial and open 
+source versions of Liferay.
+
 A module in Liferay is very similar to a standard Java application with some
 additional metadata and annotations. The annotations replace the need for XML
 file descriptors and are easier to manage since everything is in one place.

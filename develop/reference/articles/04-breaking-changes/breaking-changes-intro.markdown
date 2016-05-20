@@ -5,6 +5,9 @@ functionality, APIs, or contracts with third party Liferay developers or users.
 We try our best to minimize these disruptions, but sometimes they are
 unavoidable.
 
+The breaking changes covered in this article apply to both the commercial and 
+open source versions of Liferay.
+
 Here are some of the types of changes documented in this file:
 
 * Functionality that is removed or replaced
