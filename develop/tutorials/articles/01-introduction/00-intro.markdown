@@ -1,21 +1,28 @@
 # Introduction [](id=tutorials)
 
-Welcome to Liferay's tutorials and learning paths! Both show you how to build 
+Welcome to Liferay's tutorials and Learning Paths! Both show you how to build 
 powerful, robust apps using Liferay's tools, frameworks, and APIs. The first few 
-sections here are learning paths. Learning paths walk you through the 
-development of an example Liferay project from start to finish. Currently, 
-Liferay offers the following learning paths: 
+sections here are Learning Paths. Learning Paths walk you through the 
+development of a specific example application from start to finish, beginning 
+with setting up your development environment and ending with a fully functional 
+example application. They're called Learning Paths because they're designed to 
+be followed from beginning to end and cover multiple topics along the way. 
+Learning Paths are thus ideal for getting started with Liferay development. 
+Currently, the following learning paths are available: 
 
 - [Writing a Liferay MVC Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application)
 - [Writing a JSF Application Using Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
 - [Developing a Liferay Theme](/develop/tutorials/-/knowledge_base/6-2/developing-a-liferay-theme)
 - [Writing an Android App for Your Portal](/develop/tutorials/-/knowledge_base/6-2/writing-an-android-app-for-your-portal)
 
-The sections that follow the learning paths are tutorials. Tutorials give 
-instruction on a per-topic basis, without developing a single example across 
-articles. This lets you jump in at any point to get valuable instructions on 
-only the topics that you're interested in. The tutorials cover the following 
-three main areas: 
+The sections that follow the Learning Paths are tutorials. Rather than spanning 
+the multiple topics a Learning Path requires to produce a specific example 
+application, tutorials go more in depth on individual topics, and don't yield a 
+complete example application. Although tutorials also contain example code, this 
+code is general and is designed to give you the information you need on only the 
+topics of your choosing. You can then apply this to your own custom Liferay 
+applications. This makes tutorials better suited to those with some experience 
+in Liferay development. The tutorials cover the following three main areas: 
 
 - Using Liferay Development Tools
 - Developing Liferay Applications
