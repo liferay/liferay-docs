@@ -156,13 +156,14 @@ on it step by step.
 6.  The last thing to be added is the new Search Container that uses your service
     layer to retrieve guestbook entries: 
 
-        <liferay-ui:search-container>
+        <liferay-ui:search-container
+                total="<%=EntryLocalServiceUtil.getEntriesCount(scopeGroupId,
+                                guestbookId)%>"
+        >
             <liferay-ui:search-container-results
                 results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
                                 guestbookId, searchContainer.getStart(),
-                                searchContainer.getEnd())%>"
-                total="<%=EntryLocalServiceUtil.getEntriesCount(scopeGroupId,
-                                guestbookId)%>" />
+                                searchContainer.getEnd())%>" />
 
             <liferay-ui:search-container-row
                 className="com.liferay.docs.guestbook.model.Entry" modelVar="entry">
@@ -176,12 +177,15 @@ on it step by step.
             <liferay-ui:search-iterator />
         </liferay-ui:search-container>
 
-    Again, this Search Container is almost the same as the previous version, except
-    for the parameters in the `<liferay-ui:search-container-results />` tag. The
-    `results` parameter now calls your service layer to retrieve guestbook entries
-    and the total number of entries. The same rows are displayed even though your
-    entity also collects users' email addresses, because obviously you don't want to
-    publish email addresses on a web page: they'll get harvested by spammers. 
+    Again, this Search Container is almost the same as the previous version,
+    except for parameters in the `<liferay-ui:search-container />` tag and
+    `<liferay-ui:search-container-results />` tag. The `total` parameter in the
+    `<liferay-ui:search-container />` tag calls your service layer to retrieve
+    the total number of guestbook entries. The `results` parameter in the
+    `<liferay-ui:search-container-results />` tag retrieves the entries. The
+    same rows are displayed even though your entity also collects users' email
+    addresses, because obviously you don't want to publish email addresses on a
+    web page: they'll get harvested by spammers. 
 
 Excellent! You've now updated the default view of your application. Next, you'll
 update the form for adding entries. 
