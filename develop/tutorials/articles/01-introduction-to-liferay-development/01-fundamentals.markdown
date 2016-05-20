@@ -90,7 +90,7 @@ $$$
 ## Components
 
 Modules may contain one or more *components*. A component is a POJO whose
-lifecycle is managed by the container. In Liferay, a component is generally part
+life cycle is managed by the container. In Liferay, a component is generally part
 of the Declarative Services framework. Creating a component can be as easy as
 writing a Java class with the `@Component` annotation. In software engineering
 terms, a component is the smallest building block of a larger application, and
@@ -151,3 +151,19 @@ new services or to override existing services with your own implementation, and
 the container manages it all. Liferay is an exciting platform that empowers
 developers to be more productive. 
 
+## Extensibility [](id=extensibility)
+
+As you might imagine, the system described above contains all the tools
+necessary to make a well designed system that allows developers not only to
+create applications based on modules, but also to extend the existing
+functionality of the system. Liferay can benefit from this now because the
+platform on which it rests is designed for both application development and
+customization. 
+
+Components in the OSGi runtime have what's called a *service ranking*. This can
+be used by developers to extend or override modules that are already running in
+the system. Extending or overriding existing functionality then becomes as easy
+as providing your own implementation and then deploying your module with a
+ranking higher than the default ranking. This is a simple and natural way to
+extend the system, and it's incorporated into the design of the platform from
+the ground up. 
