@@ -10,10 +10,6 @@ related to using apps and developing apps. Links to *Apps* and *App Metrics* are
 listed in the *Development* section of the navigation panel. You'll use these 
 links heavily during development, so you may want to bookmark this page too. 
 Click *Apps* from the *Development* section to access your app development page. 
-<!-- 
-My account doesn't have a Development section... do I have to register as a 
-developer before it appears?
--->
 
 ![Figure 1: Your app development page lists the apps you've developed and enables you to add new apps for publishing to the Marketplace.](../../images/marketplace-my-app-manager.png) 
 
@@ -139,23 +135,14 @@ helps you determine which files to upload.
 To start uploading, click *Browse* and select the files that make up your app. 
 Each time you add a file, it automatically begins to upload and its 
 compatibility information is scanned. You must upload at least one file before 
-advancing beyond this screen. 
+advancing beyond this screen. Once the files are successfully uploaded, a check 
+mark appears next to each plugin, and the plugins are displayed based on their 
+compatibility information. 
 
-![Figure 3: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
+![Figure 3: Specify a set of files for each Liferay version you wish to support.](../../images/marketplace-app-version-and-upload-files.png) 
 
-<!-- Revise this example to include DXP -->
-As a more complicated example, consider an app that consists of a hook and a
-portlet. The portlet works across all Liferay releases, but the hook is built
-separately for CE and EE. In this case, you would upload 3 plugins that make up
-the app: one portlet plugin for all releases, one hook plugin for CE, and one
-hook plugin for EE. Once the files are uploaded, a check mark appears next to
-each plugin, and the plugins are displayed based on their compatibility
-information. This indicates that the files were successfully uploaded. The
-portlet plugin is automatically copied for use in both the EE and CE variations,
-even though you only uploaded the portlet plugin once. 
-
-If you selected *Free* for your app pricing, click *Next* to advance to the
-final screen. If you selected *Paid*, you'll be presented with additional
+If you selected *Free* for your app pricing, click *Next* to advance to the 
+final screen. If you selected *Paid*, you'll be presented with additional 
 options for licensing and pricing your app. 
 
 ## Creating Your Licensing and Pricing Model [](id=creating-your-licensing-and-pricing-model)
