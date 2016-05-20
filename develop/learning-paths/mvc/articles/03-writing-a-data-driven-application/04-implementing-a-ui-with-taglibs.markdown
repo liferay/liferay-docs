@@ -222,9 +222,9 @@ guestbook form.
 
 ## Adding Guestbooks [](id=adding-guestbooks)
 
-This JSP will look very much like the guestbook entry form, except since it
-contains only one field, it's much simpler. For that reason, the entire contents
-of the JSP are supplied here: 
+The `edit_guestbook.jsp` will look very much like the guestbook entry form,
+except since it contains only one field, it's much simpler. For that reason, the
+entire contents of the JSP are supplied here: 
 
     <%@include file = "/html/init.jsp" %>
 
