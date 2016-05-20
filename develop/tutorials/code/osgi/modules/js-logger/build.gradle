@@ -1,0 +1,25 @@
+buildscript {
+	repositories {
+		maven {
+			url "https://repository.liferay.com/nexus/content/groups/liferay-ce/"
+		}
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.module.config.generator", version: "1.0.16"
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "1.0.16"
+	}
+}
+
+apply plugin: "com.liferay.js.module.config.generator"
+apply plugin: "com.liferay.js.transpiler"
+
+configJSModules {
+	configVariable = ""
+	ignorePath = true
+	moduleExtension = ""
+	moduleFormat = "/_/g,-"
+}
+
+version = '1.0.0'
