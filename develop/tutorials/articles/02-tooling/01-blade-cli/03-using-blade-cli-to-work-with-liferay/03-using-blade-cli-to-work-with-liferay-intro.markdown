@@ -9,7 +9,7 @@ install, start, stop, inspect, and modify a Liferay server.
 To use the Blade `deploy` command, you must first have built a module to deploy.
 See the [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 tutorials for more information about creating module projects. Once you've built
-a module, use the following command to deploy it to Liferay:
+a module, use the following command to deploy it to @product@:
 
     blade deploy
 
@@ -35,7 +35,7 @@ use Blade CLI to further interact with your Liferay server.
 
 ## Interacting with the Liferay Server [](id=interacting-with-the-liferay-server)
 
-Deploying your projects to Liferay is one of the more popular Blade CLI commands
+Deploying your projects to @product@ is one of the more popular Blade CLI commands
 that works with your server, but there are other miscellaneous commands that can
 also be useful during development. Make sure you're in a Liferay Workspace and
 have a bundle installed and configured in the workspace before testing the Blade
@@ -88,4 +88,4 @@ This example runs the `compileJava` command using the workspace's include
 wrapper. Any Gradle command can be used with the `gw` Blade CLI command.
 
 Awesome! You successfully deployed a project from Blade CLI and learned how to
-conveniently interact with Liferay using Blade CLI.
+conveniently interact with @product@ using Blade CLI.

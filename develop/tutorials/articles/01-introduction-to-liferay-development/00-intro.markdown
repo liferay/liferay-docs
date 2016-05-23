@@ -12,9 +12,9 @@ Wouldn't it be great if there were a platform that provided a baseline set of
 features that gave you a head start on all that repetitive code? Something that
 lets you get right to the features of your app or site, rather than making you
 start over every time with the basic building blocks? There is such a thing, and
-it's called Liferay. 
+it's called @product@. 
 
-Liferay offers developers a complete platform for building web apps, mobile
+@product@ offers developers a complete platform for building web apps, mobile
 apps, and web services quickly, using features and frameworks designed for rapid
 development and ease of use. The base platform is already there, and it's built
 as a robust container for applications that you can put together in far less

@@ -4,7 +4,7 @@ The
 [Arquillian Extension Liferay Example](https://github.com/arquillian/arquillian-extension-liferay/blob/master/arquillian-extension-liferay-example)
 project demonstrates how to use the Arquillian Liferay Extension. In this
 tutorial, you'll use the example project to learn how the Arquillian Extension
-for Liferay works and how to use it in your own projects.
+for @product@ works and how to use it in your own projects.
 
 The Arquillian Extension Liferay Example project is executed in the following
 environment:

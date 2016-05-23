@@ -107,9 +107,9 @@ credentials. However, most Liferay remote methods don't accept unauthenticated
 remote calls. Making a call with an unauthenticated session generates an 
 `Authentication access required` exception in most cases.
 
-Unauthenticated service calls only work if the remote method in the portal or 
-your plugin has the `@AccessControlled` annotation. This is shown here for the 
-hypothetical class `FooServiceImpl` and its method `bar`:
+Unauthenticated service calls only work if the remote method in the Liferay 
+instance or your plugin has the `@AccessControlled` annotation. This is shown 
+here for the hypothetical class `FooServiceImpl` and its method `bar`:
 
     import com.liferay.portal.security.ac.AccessControlled;
     ...
@@ -130,7 +130,7 @@ services.
 ## Step 2: Import the Service [](id=step-2-import-the-service)
 
 First, you should determine the Liferay services you need to call. You can find 
-the available portal and plugin services at 
+the available services at 
 [`http://localhost:8080/api/jsonws`](http://localhost:8080/api/jsonws). 
 Be sure to replace `http://localhost:8080` in this URL with your server's 
 address. 
@@ -212,7 +212,7 @@ If the service you're calling accepts `null` for a comparator argument, pass
 You may want to set the ascending property for a comparator. Unfortunately, as 
 of Liferay 6.2, most Liferay `OrderByComparator` implementations don't have a 
 setter for this property and it isn't possible to set from the Mobile SDK. 
-Future portal versions may address this. However, you may have a custom 
+Future Liferay versions may address this. However, you may have a custom 
 `OrderByComparator` that has a setter for ascending. In this case, you can use 
 the following code: 
 
@@ -261,7 +261,7 @@ However, you need to be careful when using such methods. This is because you're
 allocating memory for the whole `NSData`, which may cause memory issues if the 
 content is large.
 
-Other portal service methods require `java.io.File` as an argument. In these 
+Other Liferay service methods require `java.io.File` as an argument. In these 
 cases the Mobile SDK requires `LRUploadData` instead. Here are two examples of 
 creating `LRUploadData` instances: 
 
@@ -274,8 +274,8 @@ creating `LRUploadData` instances:
 The first constructor accepts an `NSData` argument, while the second accepts
 `NSInputStream`. As you can see, you also need to pass the file's mime type and 
 name. The `length` is the size in bytes of the content being sent. The SDK sends 
-a multipart form request to the portal. On the server side, a `File` instance is 
-created and sent to the service method you're calling.
+a multipart form request to the Liferay instance. On the server side, a `File` 
+instance is created and sent to the service method you're calling.
 
 It's also possible to monitor service calls that upload data to Liferay. If want 
 to listen for upload progress to create a progress bar, you can create a 

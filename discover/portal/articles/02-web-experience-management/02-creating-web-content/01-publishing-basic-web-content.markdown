@@ -1,14 +1,14 @@
 # Publishing Basic Web Content [](id=publishing-basic-web-content)
 
-Liferay's Web Content Management is a powerful and robust tool for creating and
+@product@'s Web Content Management is a powerful and robust tool for creating and
 organizing content on your web site. You'll begin by examining some basic
 concepts involving sites and pages.
 
-As you'll see, Liferay's WCM is a full-featured solution for managing your web
+As you'll see, @product@'s WCM is a full-featured solution for managing your web
 site. You'll start with an overview of what it has to offer and then you'll dive
 down into its features. Note that web content is just one kind of asset on
 Liferay. Other types of content (blog posts, wiki articles, message board posts,
-etc.) are also considered assets. Liferay provides a general framework for
+etc.) are also considered assets. @product@ provides a general framework for
 handling assets that includes tags, categories, comments, ratings, and more.
 Please see the
 [Publishing Content Dynamically](/discover/portal/-/knowledge_base/7-0/publishing-content-dynamically)
@@ -16,8 +16,8 @@ section for more information on Liferay's asset framework.
 
 ## Creating Web Content [](id=creating-web-content)
 
-Content is the reason web sites exist. Liferay has made it easier than ever to
-get content published to your site. Because Liferay is so flexible, you can use
+Content is the reason web sites exist. @product@ has made it easier than ever to
+get content published to your site. Because @product@ is so flexible, you can use
 basic authoring tools right away or take advantage of the more advanced
 features. It's adaptable to your needs.
 
@@ -72,7 +72,7 @@ FAQ article by clicking *Add* &rarr; *FAQ*.
 +$$$
 
 **Note:** In previous versions of Liferay, you could specify web content types
-via `portal.properties`. In Liferay 7.0, web content types are no longer used
+via `portal.properties`. In @product@ 7.0, web content types are no longer used
 and have been replaced by vocabularies. Vocabularies allow users to filter their
 web content articles by category instead, which lets you filter your content
 using the Asset Publisher and faceted search. To learn more about vocabularies
@@ -168,7 +168,7 @@ Add a few short sentences announcing the grand opening of the Lunar Resort. The
 content can be localized in whatever language you want. You'll learn more about
 localizing your content later on.
 
-You can integrate Liferay with external services to enable additional
+You can integrate @product@ with external services to enable additional
 functionality. For example, if you navigate to the Control Panel, click on
 *Configuration* &rarr; *Server Administration* &rarr; *External Services*. From
 this menu, you can install and enable Xuggler. Enabling Xuggler allows you to
@@ -187,7 +187,7 @@ adding an audio/video button. You can learn about doing this in the
 tutorials section. Another option you have is changing the WYSIWYG editor to one
 that supports embedding audio/video files in web content. The CKEditor, for
 example, is an editor that provides this functionality. To use the CKEditor,
-create a `portal-ext.properties` file in your Liferay root folder and add the
+create a `portal-ext.properties` file in your @product@ root folder and add the
 following property:
 
     editor.wysiwyg.portal-impl.portlet.ddm.text_html.ftl=ckeditor
@@ -252,7 +252,7 @@ display page.
 Imagine you have a newspaper with a sports section and a technology section. You
 add a Sports page and a Tech page to your site, each one with a specific banner
 and look and feel. You want the articles to appear in the appropriate pages, but
-you know in Liferay, articles are not related to pages. You can add an article
+you know in @product@, articles are not related to pages. You can add an article
 as often as you like in different web content display apps or in configured
 Asset Publishers. But if you have a *View in context* link, where will you show
 your article? This is where you'd use a default display page. Articles that have
@@ -280,7 +280,7 @@ section.
 
 **Permissions:** customizes who has access to the content. By default, content
 is viewable by Anyone (Guest Role). You can limit viewable permissions by
-selecting any Role from the drop-down or in the list. Additionally, Liferay
+selecting any Role from the drop-down or in the list. Additionally, @product@
 provides the ability to customize permissions in more detail. Select the *More
 Options* link below the drop down button and you'll find the different
 activities you can grant or deny to your web content article.
@@ -293,7 +293,7 @@ different language speaking users.
 When you create a new piece of web content, you have the ability to choose a
 default language. At the top of the New Web Content screen, you'll see options
 to change the default language and add a translation. If you click *Change*, you
-can select your default language from a large number of languages Liferay
+can select your default language from a large number of languages @product@
 supports.
 
 ![Figure 8: You have many translation languages to choose from for your web content.](../../../images/web-content-default-language.png)
@@ -450,7 +450,7 @@ on comments.
 The Print button pops the content up in a separate browser window that contains
 just the content, without any of the web site navigation. This is handy for
 printing the content. Enabling ratings shows one of two ratings interfaces
-Liferay has: five stars or thumbs up and thumbs down. This can be set globally
+@product@ has: five stars or thumbs up and thumbs down. This can be set globally
 in the `portal-ext.properties` file. See the
 [Properties Document](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Ratings%20Tag%20Library)
 for more details about this.
@@ -477,7 +477,7 @@ the type of article you'd like to add (e.g., Basic Web Content). This launches
 the same full-featured editor you've already seen in the Menu, which lets you
 add and edit content in place as you are working on your page.
 
-This is another example of the flexibility that Liferay offers. At times, you
+This is another example of the flexibility that @product@ offers. At times, you
 may want to add content directly into the Web Content Display app of the page
 you're managing, especially if you are in the process of building the page. At
 other times, you may want to navigate to Site Administration to create content,
@@ -549,7 +549,7 @@ entities you'd like to monitor. Then click the *Information* icon
 icon (![Subscribe](../../../images/icon-star.png)). Now whenever a web content
 article or folder is modified, you'll receive an email to your account's
 configured email address notifiying you of a change. To learn more about
-configuring your email in Liferay, visit the
+configuring your email in @product@, visit the
 [Instance Settings](/discover/portal/-/knowledge_base/7-0/instance-settings)
 section. You can navigate to your Web Content menu's *Options* icon
 (![Options](../../../images/icon-options.png)) and select *Configuration* to
@@ -559,5 +559,5 @@ modify your Web Content email notification settings.
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
-Liferay's WCM, you'll want to use structures and templates. You'll cover these
+@product@'s WCM, you'll want to use structures and templates. You'll cover these
 topics next.
