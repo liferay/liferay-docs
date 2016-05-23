@@ -19,7 +19,7 @@ both local and remote data sources, as well as communication between the
 Screenlet layer and the 
 [Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
 
-![Figure 1: Here are the high-level components of Liferay Screens for Android. The dashed arrow connectors represent a "uses" relationship, in which a component uses the component its pointing to.](../../images/screens-android-architecture-01.png)
+![Figure 1: Here are the high-level components of Liferay Screens for Android. The dashed arrow connectors represent a "uses" relationship, in which a component uses the component its pointing to.](../../../images/screens-android-architecture-01.png)
 
 Each component is described below.
 
@@ -63,7 +63,7 @@ structured and isolated way. All Screenlets share a common structure based on
 the core classes, but each Screenlet can have a unique purpose and communication
 API. 
 
-![Figure 2: Here's the core layer of Liferay Screens for Android.](../../images/screens-android-architecture-02.png)
+![Figure 2: Here's the core layer of Liferay Screens for Android.](../../../images/screens-android-architecture-02.png)
 
 Here are the core's main components:
 
@@ -146,7 +146,7 @@ Android. The following diagram uses Screenlet classes prefixed with
 *MyScreenlet* to show the Screenlet layer's relationship with the core, View,
 and Interactor components. 
 
-![Figure 3: This diagram illustrates the Android Screenlet layer's relationship to other Screens components.](../../images/screens-android-architecture-03.png)
+![Figure 3: This diagram illustrates the Android Screenlet layer's relationship to other Screens components.](../../../images/screens-android-architecture-03.png)
 
 Screenlets are comprised of several Java classes and an XML descriptor file:
 

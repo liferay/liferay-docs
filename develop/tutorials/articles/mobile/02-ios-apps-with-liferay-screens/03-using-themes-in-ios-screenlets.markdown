@@ -25,7 +25,7 @@ on how the Theme has been published:
    Theme's folder into your project. Liferay Screens detects the new classes and 
    then applies the new design in the runtime and in Interface Builder. 
 
-![Figure 1: To install a Theme into an Xcode project, drag and drop the Theme's folder into it.](../../images/screens-ios-xcode-install-theme.png)
+![Figure 1: To install a Theme into an Xcode project, drag and drop the Theme's folder into it.](../../../images/screens-ios-xcode-install-theme.png)
 
 To use the installed Theme, specify its name in the *Theme Name* property field
 of the *Base Screenlet* in Interface Builder. The names of each Screenlet's
@@ -34,7 +34,7 @@ Themes are listed in the *Themes* section of the Screenlet's
 If you leave the Theme name property blank or enter a name for a Theme that
 can't be found, the Screenlet's Default Theme is used. 
 
-![Figure 2: In Interface Builder, you specify a Screenlet's Theme by entering its name in the *Theme Name* field; this sets the Screenlet's `themeName` property.](../../images/screens-ios-themes-property.png)
+![Figure 2: In Interface Builder, you specify a Screenlet's Theme by entering its name in the *Theme Name* field; this sets the Screenlet's `themeName` property.](../../../images/screens-ios-themes-property.png)
 
 The initial release of Liferay Screens for iOS includes the following Themes for
 its Screenlets: 

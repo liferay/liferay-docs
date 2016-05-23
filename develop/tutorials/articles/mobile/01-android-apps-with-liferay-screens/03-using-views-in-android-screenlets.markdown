@@ -56,7 +56,7 @@ To use a View in your Screenlet, specify its name as the `liferay:layoutId`
 property value in your app's layout XML. This is shown in the following 
 screenshot: 
 
-![Figure 1: You can set a Screenlet's layout via its `liferay:layoutId` attribute.](../../images/screens-android-layoutid-xml.png)
+![Figure 1: You can set a Screenlet's layout via its `liferay:layoutId` attribute.](../../../images/screens-android-layoutid-xml.png)
 
 You can also use a View Set by having your app's theme inherit the View Set. For 
 example, the following code in an app's `res/values/styles.xml` tells 

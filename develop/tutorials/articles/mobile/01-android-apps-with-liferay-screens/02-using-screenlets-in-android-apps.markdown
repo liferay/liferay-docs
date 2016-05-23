@@ -16,7 +16,7 @@ your app's layout XML file and insert the Screenlet in your activity or fragment
 layout. The following screenshot, for example, shows the Login Screenlet
 inserted in an activity's `FrameLayout`. 
 
-![Figure 1: Here's the Login Screenlet in an activity's layout in Android Studio.](../../images/screens-android-insert-screenlet.png)
+![Figure 1: Here's the Login Screenlet in an activity's layout in Android Studio.](../../../images/screens-android-insert-screenlet.png)
 
 Next, set the Screenlet's attributes. If it's a Liferay Screenlet, refer to the
 Screenlet
@@ -24,7 +24,7 @@ Screenlet
 to learn the Screenlet's required and supported attributes. This screenshot
 shows the attributes of the Login Screenlet being set:
 
-![Figure 2: You can set a Screenlet's attributes via the app's layout XML file.](../../images/screens-android-screenlet-attributes.png)
+![Figure 2: You can set a Screenlet's attributes via the app's layout XML file.](../../../images/screens-android-screenlet-attributes.png)
 
 To configure your app to listen for events the Screenlet triggers, implement the
 Screenlet's listener interface in your activity or fragment class. Refer to the
@@ -34,7 +34,7 @@ example, in the screenshot below, declares that it implements the
 Login Screenlet's `LoginListener` interface, and it registers itself to listen
 for the Screenlet's events.
 
-![Figure 3: Implement the Screenlet's listener in your activity or fragment class.](../../images/screens-android-screenlet-listener.png)
+![Figure 3: Implement the Screenlet's listener in your activity or fragment class.](../../../images/screens-android-screenlet-listener.png)
 
 Make sure to implement all methods required by the Screenlet's listener
 interface. For Liferay's Screenlets, the listener methods are listed in each

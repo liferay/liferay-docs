@@ -51,7 +51,7 @@ Follow these steps to create your Screenlet:
     `restorationIdentifier="get-title"`) to retrieve the bookmark's title, and a
     button (with `restorationIdentifier="add-bookmark"`) to save the bookmark. 
 
-    ![Figure 1: Here's the sample Add Bookmark Screenlet's XIB file rendered in Interface Builder.](../../images/screens-ios-xcode-add-bookmark.png)
+    ![Figure 1: Here's the sample Add Bookmark Screenlet's XIB file rendered in Interface Builder.](../../../images/screens-ios-xcode-add-bookmark.png)
 
 2.  Create a new interface protocol that specifies your Screenlet's attributes.
     The Add Bookmark Screenlet's interface protocol
@@ -117,9 +117,9 @@ Follow these steps to create your Screenlet:
     for the custom class--the grayed-out *Current* default value only suggests a
     module. 
 
-    ![Figure 2: This XIB file's custom class's module is NOT specified.](../../images/screens-ios-theme-custom-module-wrong.png)
+    ![Figure 2: This XIB file's custom class's module is NOT specified.](../../../images/screens-ios-theme-custom-module-wrong.png)
 
-    ![Figure 3: The XIB file is bound to the custom class name, with the specified module.](../../images/screens-ios-theme-custom-module-right.png)
+    ![Figure 3: The XIB file is bound to the custom class name, with the specified module.](../../../images/screens-ios-theme-custom-module-right.png)
 
 5.  Create an Interactor class for each Liferay service your Screenlet uses.
     Each Interactor class must extend the Liferay Screens

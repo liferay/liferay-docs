@@ -24,7 +24,7 @@ are worth describing separately. They facilitate interaction with local and
 remote data sources and communication between the Screenlet layer and the
 [Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
 
-![Figure 1: The high level components of Liferay Screens for iOS.](../../images/screens-ios-architecture-01.png)
+![Figure 1: The high level components of Liferay Screens for iOS.](../../../images/screens-ios-architecture-01.png)
 
 Each component is described below.
 
@@ -69,7 +69,7 @@ structured and isolated way. All Screenlets share a common structure based on
 the Core classes, but each Screenlet can have a unique purpose and communication
 API. 
 
-![Figure 2: Here's the core layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-02.png)
+![Figure 2: Here's the core layer of Liferay Screens for iOS.](../../../images/screens-ios-architecture-02.png)
 
 From right to left, these are the main components:
 
@@ -127,7 +127,7 @@ iOS. The following diagram shows the Screenlet layer in relation to the Core,
 Interactor, Theme, and Connector layers. The Screenlet classes in the diagram 
 are explained in this section. 
 
-![Figure 3: This diagram illustrates the iOS Screenlet Layer's relationship to other Screens components.](../../images/screens-ios-architecture-03.png)
+![Figure 3: This diagram illustrates the iOS Screenlet Layer's relationship to other Screens components.](../../../images/screens-ios-architecture-03.png)
 
 Screenlets are comprised of several Swift classes and an XIB file:
 
@@ -201,7 +201,7 @@ class for Screenlet behavior and an XIB file for the UI. By inheriting one or
 more of these components from another Theme, the different Theme *types* allow 
 varying levels of control over a Screenlet's  UI design and behavior. 
 
-![Figure 4: The Theme Layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-04.png)
+![Figure 4: The Theme Layer of Liferay Screens for iOS.](../../../images/screens-ios-architecture-04.png)
 
 There are several different Theme types:
 

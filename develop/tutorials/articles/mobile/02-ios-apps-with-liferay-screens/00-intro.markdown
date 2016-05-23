@@ -20,7 +20,7 @@ changing or extending their UI and behavior. You can even write your own
 Screenlets! What's more, Screens seamlessly integrates with your existing iOS 
 projects. 
 
-![Figure 1: Here's an app that uses a Liferay Screens Sign Up Screenlet.](../../images/screens-ios-intro.png)
+![Figure 1: Here's an app that uses a Liferay Screens Sign Up Screenlet.](../../../images/screens-ios-intro.png)
 
 Screenlets leverage the
 [Liferay Mobile SDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)

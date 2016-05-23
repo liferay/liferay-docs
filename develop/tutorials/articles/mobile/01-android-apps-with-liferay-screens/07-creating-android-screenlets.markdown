@@ -99,7 +99,7 @@ layout. The following steps explain how:
 As you layout your Screenlet, Android Studio's graphical layout viewer renders
 the Screenlet's UI. 
 
-![Figure 1: Android Studio's graphical layout viewer renders your Screenlet's layout as you create it.](../../images/screens-android-add-bookmark-view.png)
+![Figure 1: Android Studio's graphical layout viewer renders your Screenlet's layout as you create it.](../../../images/screens-android-add-bookmark-view.png)
 
 Next, you'll create a View class for the Screenlet. 
 

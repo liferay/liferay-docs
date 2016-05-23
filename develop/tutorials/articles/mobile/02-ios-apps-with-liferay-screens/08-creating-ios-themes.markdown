@@ -50,7 +50,7 @@ For example, the Child Theme in Figure 1 presents the same UI components as the
 [Login Screenlet's](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Auth/LoginScreenlet)
 Default Theme, but enlarges them for viewing on devices with larger screens.
 
-![Figure 1: The UI components are enlarged in the example Child Theme's XIB file.](../../images/screens-ios-xcode-child-theme.png)
+![Figure 1: The UI components are enlarged in the example Child Theme's XIB file.](../../../images/screens-ios-xcode-child-theme.png)
 
 You can follow these steps to create a Child Theme: 
 
@@ -98,7 +98,7 @@ These steps explain how to create an Extended Theme:
     Theme as a template. Build your UI changes in your new XIB file with
     Interface Builder.
 
-    ![Figure 2: This example Extended Theme's XIB file extends the Login Portlet's UI and behavior with a switch that lets the user show or hide the password field value.](../../images/screens-ios-xcode-ext-theme.png)
+    ![Figure 2: This example Extended Theme's XIB file extends the Login Portlet's UI and behavior with a switch that lets the user show or hide the password field value.](../../../images/screens-ios-xcode-ext-theme.png)
 
 2.  Create a new View class that extends the parent Theme's View class. You 
     should name this class after the XIB file you just created. You can add or
@@ -132,7 +132,7 @@ Follow these steps to create a Full Theme:
     `FooScreenletView_barTheme.xib`. You can use the XIB file from the
     Screenlet's default Theme as a template. 
 
-    ![Figure 3: This Full Theme for the Login Screenlet, includes a text field for entering the user name, uses the UDID for the password, and adds a *Sign In* button with the same `restorationIdentifier` as the Default Theme.](../../images/screens-ios-xcode-full-theme.png)
+    ![Figure 3: This Full Theme for the Login Screenlet, includes a text field for entering the user name, uses the UDID for the password, and adds a *Sign In* button with the same `restorationIdentifier` as the Default Theme.](../../../images/screens-ios-xcode-full-theme.png)
 
 2.  Create a new View class for your Theme named after the XIB file you just 
     created. As a template, you can use the View class of your Screenlet's

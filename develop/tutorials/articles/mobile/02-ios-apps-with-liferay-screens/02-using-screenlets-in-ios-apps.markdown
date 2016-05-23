@@ -18,12 +18,12 @@ The first step to using Screenlets in your iOS project is to add a new UIView to
 your project. In Interface Builder, insert a new UIView into your Storyboard or
 XIB file. Figure 1 shows this. 
 
-![Figure 1: Add a new UIView to your project.](../../images/screens-ios-add-uiwindow.png)
+![Figure 1: Add a new UIView to your project.](../../../images/screens-ios-add-uiwindow.png)
 
 Next, enter the Screenlet's name as the Custom Class. For example, if you're
 using the Login Screenlet, then enter Login Screenlet as the class. 
 
-![Figure 2: Change the Custom Class to match the Screenlet.](../../images/screens-ios-custom-class.png)
+![Figure 2: Change the Custom Class to match the Screenlet.](../../../images/screens-ios-custom-class.png)
 
 Now you need to conform the Screenlet's delegate protocol in your
 `ViewController` class. For example, the Login Screenlet's delegate class is
@@ -66,7 +66,7 @@ follow these steps:
 1. Declare an outlet to hold a reference to the Screenlet. You can connect it in 
    Interface Builder without any issues.
    
-    ![Figure 3: Connect the outlet with the Screenlet reference.](../../images/screens-ios-xcode-add-screenlet-delegate.png)
+    ![Figure 3: Connect the outlet with the Screenlet reference.](../../../images/screens-ios-xcode-add-screenlet-delegate.png)
  
 2. Assign the Screenlet's delegate the `viewDidLoad` method. This is 
    the connection typically done in Interface Builder.
@@ -85,7 +85,7 @@ Controller.
 
         ...
 
-![Figure 4: Connect the Screenlet's delegate in Interface Builder.](../../images/screens-ios-xcode-delegate.png)
+![Figure 4: Connect the Screenlet's delegate in Interface Builder.](../../../images/screens-ios-xcode-delegate.png)
 
 Awesome! Now you know how to use Screenlets in your apps. If you need to use
 Screenlets from Objective-C code, follow the instructions in the next section. 
@@ -119,7 +119,7 @@ steps:
     - Precompile Prefix Header: `Yes`
     - Prefix Header: `path/to/your/file/PrefixHeader.pch`
 
-    ![Figure 5: The `PrefixHeader.pch` configuration in Xcode settings.](../../images/screens-ios-xcode-prefix.png)
+    ![Figure 5: The `PrefixHeader.pch` configuration in Xcode settings.](../../../images/screens-ios-xcode-prefix.png)
 
 You can use the precompiler header file
 [`PrefixHeader.pch`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Showcase-objc/LiferayScreens-Showcase-Objc/PrefixHeader.pch) 
@@ -137,7 +137,7 @@ other words, a Screenlet's support for a language is only valid if your app
 supports that language. To support a language, make sure to add it as a
 localization in your project's settings. 
 
-![Figure 6: The Xcode localizations in the project's settings.](../../images/screens-ios-xcode-localizations.png)
+![Figure 6: The Xcode localizations in the project's settings.](../../../images/screens-ios-xcode-localizations.png)
 
 Way to go! You now know how to use Screenlets in your iOS apps. 
 

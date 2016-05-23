@@ -90,7 +90,7 @@ and include it in your project. Follow these steps:
    Make sure the *Create groups* radio button is selected in the dialog that
    appears. 
 
-![Figure 1: This Xcode project includes Liferay Screens.](../../images/screens-ios-project-setup.png)
+![Figure 1: This Xcode project includes Liferay Screens.](../../../images/screens-ios-project-setup.png)
 
 Add the following dependencies to your `Podfile` (create this file if it doesn't
 yet exist): 
@@ -120,7 +120,7 @@ The
 that you can install with the [Alcatraz package manager](http://alcatraz.io/) 
 can perform these tasks from Xcode. 
 
-![Figure 2: You can perform Xcode tasks with the CocoaPods for Xcode plugin helps.](../../images/screens-ios-xcode-cocoapods.png)
+![Figure 2: You can perform Xcode tasks with the CocoaPods for Xcode plugin helps.](../../../images/screens-ios-xcode-cocoapods.png)
 
 You can optionally add Liferay Screens to your test target (to be used under
 XCTest). Here's a `Podfile` with a placeholder for a test target:
@@ -153,7 +153,7 @@ In your project's build settings, you must edit its
 *Objective-C bridging header* to include 
 `${SRCROOT}/Liferay-Screens/Core/liferay-screens-bridge.h`. 
 
-![Figure 3: Here's the Objective-C bridging header.](../../images/screens-ios-project-header.png)
+![Figure 3: Here's the Objective-C bridging header.](../../../images/screens-ios-project-header.png)
 
 ### Troubleshooting Manual Installation [](id=troubleshooting-manual-installation)
 
@@ -167,7 +167,7 @@ failed `xib` file listed in the error trace (in Figure 4, this is
 Class. Note that the Module value changes from `LiferayScreens` to blank; the
 Module values shows as the grayed-out text `Current - your app name`. 
 
-![Figure 4: When using a Screenlet with Screens installed manually, you may get an exception due to an unknown class in Interface Builder.](../../images/screens-ios-xcode-unknown-class.png)
+![Figure 4: When using a Screenlet with Screens installed manually, you may get an exception due to an unknown class in Interface Builder.](../../../images/screens-ios-xcode-unknown-class.png)
 
 Alternatively, you can click the selection box next to the Module field and
 select an element from the list. For example, if your app's name is
@@ -175,11 +175,11 @@ select an element from the list. For example, if your app's name is
 Before and after screenshots of this assignment are shown in Figure 5 through
 Figure 7. 
 
-![Figure 5: By default, the Module is set to LiferayScreens.](../../images/screens-ios-xcode-custom-class-before.png)
+![Figure 5: By default, the Module is set to LiferayScreens.](../../../images/screens-ios-xcode-custom-class-before.png)
 
-![Figure 6: Here, the Module corresponds to `Current -` plus the app's name.](../../images/screens-ios-xcode-custom-class-after.png)
+![Figure 6: Here, the Module corresponds to `Current -` plus the app's name.](../../../images/screens-ios-xcode-custom-class-after.png)
 
-![Figure 7: In this case, only the app's name is set as the Module.](../../images/screens-ios-xcode-custom-class-after-2.png)
+![Figure 7: In this case, only the app's name is set as the Module.](../../../images/screens-ios-xcode-custom-class-after-2.png)
 
 Great! You've completed installing Liferay Screens and its dependencies in your
 project. It's time to configure its communication with your Liferay instance. 
@@ -195,7 +195,7 @@ ID. Create a `liferay-server-context.plist` file and specify values required for
 communicating with your Liferay instance. As an example, refer to
 [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist). 
 
-![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../images/screens-ios-liferay-context.png)
+![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../../images/screens-ios-liferay-context.png)
 
 The values you need to specify in your `liferay-server-context.plist` are: 
 
