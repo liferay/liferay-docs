@@ -58,7 +58,7 @@ adds them:
 
 Use the IDE's right click &rarr; *Source* &rarr; *Organize Imports* facility to
 add Liferay's `com.liferay.portal.kernel.exception.PortalException`,
-`com.liferay.portal.util.Validator`, and of course your
+`com.liferay.portal.kernel.util.Validator`, and of course your
 `com.liferay.docs.guestbook.GuestbookNameException` to the class's imports. 
 
 Now you're ready to create a method that adds `Guestbook`s to the database. 
