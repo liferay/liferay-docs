@@ -12,10 +12,11 @@ all rules in a user segment to be classified into it.
 
 These rules allow to classify users based on their navigation behavior.
 
-These rules will not work properly if content tracking or page tracking are not
-enabled. They can be enabled in *Control Panel* &rarr; *Portal Settings* &rarr;
-*Audience Targeting Analytics* (for portal level configuration) or in *Control
-Panel* &rarr; *Site Settings* &rarr; *Audience Targeting Analytics* (for site
+These rules will not work properly if content tracking or page tracking is not
+enabled. They can be enabled in *Control Panel* &rarr; *Configuration* &rarr;
+*Instance Settings* &rarr; *Audience Targeting Analytics* (for portal level
+configuration) or in Site Administration &rarr; *Configuration* &rarr; *Site
+Settings* &rarr; *Advanced* &rarr; *Audience Targeting Analytics* (for site
 level configuration).
 
 ### Content Visited
@@ -34,7 +35,7 @@ user segment a number of times equals or higher than the configured threshold.
 ## Social Rules
 
 These rules allow you to classify users based on their profiles in social
-networks (e.g. Facebook).
+networks (e.g., Facebook).
 
 These rules will not work properly if login through the specific social network
 (Single Sign On) is not enabled and properly configured. Follow these steps to
@@ -42,14 +43,14 @@ enable Facebook Single Sign On in Liferay:
 
 1. Sign in to the [Facebook Developers site](https://developers.facebook.com)
    and add a new App. For more information, read the
-   [Facebook app developer guide](https://developers.facebook.com/docs/guides/appcenter).
+   [Facebook app developer guide](https://developers.facebook.com/docs/apps).
    After going through all the steps, you'll finally have a new app with an
    Application ID and an Application Secret.
 
-2. Log in as a Portal administrator in your Liferay Portal and go to the Control
-   Panel &rarr; *Portal Settings* &rarr; *Authentication* &rarr; *Facebook*.
-   Check *Enable* and copy your Application ID and Application Secret to their
-   respective fields. Finally, click *Save*.
+2. Log in as a Portal administrator in your @product@ and go to *Control Panel*
+   *Configuration* &rarr; *Instance Settings* &rarr; *Authentication* &rarr;
+   *Facebook*. Check *Enabled* and copy your Application ID and Application
+   Secret to their respective fields. Finally, click *Save*.
 
 3. To verify that the Facebook Single Sign On works properly, sign out and then
    click the Facebook option in the Sign In box. Enter your Facebook username
@@ -57,7 +58,7 @@ enable Facebook Single Sign On in Liferay:
    automatically signed in to your Liferay Portal with your Facebook user.
 
 Read the
-[Integrating Existing Users Into Liferay](/discover/portal/-/knowledge_base/6-2/integrating-existing-users-into-liferay)
+[Integrating with Facebook](/discover/portal/-/knowledge_base/7-0/integrating-with-facebook)
 section for more information.
 
 ### Facebook Age
@@ -100,9 +101,23 @@ cases.
 
 Evaluates if the age in the user's profile is in the configured range.
 
+### Custom Field 
+
+Evaluates if the value set for the selected custom field matches the value from
+the user's profile.
+
 ### Gender
 
 Evaluates if the gender in the user's profile matches the selected value.
+
+### Organization Member
+
+Evaluates if the user is member of the selected organization.
+
+### Organization Role
+
+Evaluates if the user has the selected role assigned in the selected
+organization.
 
 ### Regular Role
 
@@ -115,15 +130,6 @@ Evaluates if the user is a member of the selected site.
 ### Site Role
 
 Evaluates if the user has the selected role assigned in the selected site.
-
-### Organization Member
-
-Evaluates if the user is member of the selected organization.
-
-### Organization Role
-
-Evaluates if the user has the selected role assigned in the selected
-organization.
 
 ### User Group Member
 
@@ -142,6 +148,11 @@ These rules will not work properly if the corresponding session attributes
 are retrieved through any tools that are not currently available or properly
 configured. Follow the given instructions for each rules in such cases.
 
+### Access Time
+
+Evaluates if the user is accessing at a time that is within the configured
+range. Notice that the reference time is that of the server.
+
 ### Browser
 
 Evaluates if the user is accessing with the selected browser.
@@ -154,6 +165,19 @@ This rule is based on the existing Device Families. To manage Device Families,
 go to *Site Administration* &rarr; *Configuration* &rarr; *Mobile Device
 Families*.
 
+### IP Range
+
+Evaluates if the user is accessing with an IP with the configured range.
+
+### Language
+
+Evaluates if the user is accessing with the selected language.
+
+### Last Login Date
+
+Evaluates if the last login date of the current user was after, before, or
+between the selected dates.
+
 ### Location
 
 Evaluates if the user is accessing from a country and region that match the
@@ -163,12 +187,10 @@ configured values.
 
 Evaluates if the user is accessing with the selected Operating System.
 
-### Time
+### Sign Up Date
 
-Evaluates if the user is accessing at a time that is within the configured
-range.
-
-Notice that the reference time is that of the server.
+Evaluates if the Sign Up date of the current user was after, before, or between
+the selected dates.
 
 In this chapter, you learned how to use Liferay's Audience Targeting app. This
 app allows you to define custom user segments, target specific content to

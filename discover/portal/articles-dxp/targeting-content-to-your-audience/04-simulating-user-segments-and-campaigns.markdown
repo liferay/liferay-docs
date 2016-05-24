@@ -3,11 +3,10 @@
 The Audience Targeting app includes a simulator feature. The Audience Targeting
 Simulator allows administrators to preview the way portal pages appear to
 different users. It does so by allowing site administrators to modify the
-matched user segments or campaigns. The Audience Targeting Simulator is
-accessible via the *Simulation* icon
-(![Simulation](../../images-dxp/icon-simulation.png)) in the top Control Menu.
-Clicking on the Simulator icon opens the right-side panel which displays two
-tabs related to Audience Targeting: *User Segments* and *Campaigns*. By default,
+matched user segments. The Audience Targeting Simulator is accessible via the
+*Simulation* icon (![Simulation](../../images-dxp/icon-simulation.png)) in the
+top Control Menu. Clicking on the Simulator icon opens the right-side panel
+which displays a tab related to Audience Targeting: *User Segments*. By default,
 the Audience Targeting Simulator is only visible to site administrators and
 users with the View permission for the Audience Targeting Simulator.
 
@@ -22,22 +21,14 @@ defining permissions for a role, go to *Site Administration* &rarr;
 $$$
 
 The User Segments tab of the Audience Targeting simulator displays a list of all
-the user segments matched by the current user as well as all the user segments
-not matched by the current user. Any matched user segment can be unselected and
-any unmatched user segment can be selected. This allows site administrators to
-simulate how the website would appear to different users. Clicking on the
-*Simulate* button makes your website appear to you the way it would appear to
-the selected user segments. The simulation continues until you click the *Stop
-Simulation* button. This allows site administrators to navigate around their
-site as if they were a user that matched the selected user segments.
+the user segments available for the site. You can select or deselect any user
+segment. This allows site administrators to simulate how the website would
+appear to different users. Clicking on a user segment makes your website appear
+to you the way it would appear to that selected user segment. This allows site
+administrators to navigate around their site as if they were a user that matched
+the selected user segments.
 
-<!-- Check about simulation and if Campaigns are still available to simulate.
--Cody -->
+![Figure 1: Audience Targeting provides a simulator in the Simulation menu.](../../images/07-audience-targeting-simulator.png)
 
-![Figure 7.11: Audience Targeting Simulator](../../images/07-audience-targeting-simulator.png)
-
-The Campaigns tab of the Content Targeting Simulator displays all matched
-campaigns and all unmatched campaigns. A *Simulate* option is not available for
-campaigns. However, since campaigns target specific user segments, it's easy to
-simulate how your site would look if certain campaigns were matched.
-
+Next, you'll examine all the Audience Targeting rules available for you to use
+by default.

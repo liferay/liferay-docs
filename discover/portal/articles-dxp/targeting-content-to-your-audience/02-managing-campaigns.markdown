@@ -58,7 +58,7 @@ applications. Similarly, if a campaign is deactivated or if a campaign's date
 range is exceeded, all of the Campaign Content Display applications on your
 website are affected.
 
-## Defining Tracking Actions
+## Defining Metrics
 
 One of the most interesting features of campaigns is that they allow you to
 measure the effectiveness of a campaign. This provides your marketing team with
@@ -83,17 +83,20 @@ something not working as your team expected:
  - Number of users who started to fill out the Register form
  - Number of users who completed the registration
 
-![Figure 7.6: Drag and drop tracking actions to the right to configure a campaign.](../../images/07-audience-targeting-tracking-actions.png)
+![Figure 7.6: Drag and drop metrics to the right to configure a campaign.](../../images/07-audience-targeting-tracking-actions.png)
 
-<!-- Figure out where campaign tracking actions are and update image above. -->
+You can assign metrics to a campaign report, which is elaborated on in the next
+section. To access the Metrics palette, select a pre-existing campaign, select
+the *Reports* tab, and then add a custom report. The Metrics palette is
+accessible at the bottom of the *New Report* wizard.
 
-You could drag and drop *tracking actions* from the palette to track all the
-actions mentioned above. More types of tracking actions can be created by
-developers and deployed as OSGI plugins. See the
+You could drag and drop *metrics* from the palette to track all the actions
+mentioned above. More types of metrics can be created by developers and deployed
+as OSGI plugins. See the
 [Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/tracking-user-actions-with-audience-targeting)
 tutorial for details.
 
-The tracking actions use an analytics engine called *Audience Targeting
+The metrics use an analytics engine called *Audience Targeting
 Analytics* that can be configured per site or per portal instance. To configure
 the analytics engine per site, go to Site Administration and click
 *Configuration* &rarr; *Site Settings* &rarr; *Advanced* &rarr; *Audience
@@ -118,17 +121,16 @@ Display applications around your website to display content for a campaign, the
 Content View report for the campaign would show how many times that content was
 displayed to different users.
 
-The Tracking Actions report shows the number of times that the actions tracked
-by the campaign have been triggered by users. Consider the example that we
-introduced earlier in the section on tracking actions: you've created a campaign
-for an event that your company will host soon. For this event, you have created
-a main page for the event which contains a Youtube video and a banner which says
-"Register Now". You also have created a blog post about the event which is
-displayed on several different pages of your website. Lastly, you have a
-Register page which contains the form to pay for the event. For this example,
-the Tracking Actions report would show you how many users visited the event
-page, how many watched the video, how many clicked on the banner, how many
-viewed the blog post about the event, how many started filling the
-registration form, etc. This information helps you measure the effectiveness of
-your campaign. You can use this information to evaluate whether or not the users
-are following the engagement path you had prepared.
+The Metrics report shows the number of times that the actions tracked by the
+campaign have been triggered by users. Consider the example that we introduced
+earlier in the section on metrics: you've created a campaign for an event that
+your company will host soon. For this event, you have created a main page for
+the event which contains a Youtube video and a banner which says "Register Now".
+You also have created a blog post about the event which is displayed on several
+different pages of your website. Lastly, you have a Register page which contains
+the form to pay for the event. For this example, the Metrics report would show
+you how many users visited the event page, how many watched the video, how many
+clicked on the banner, how many viewed the blog post about the event, how many
+started filling the registration form, etc. This information helps you measure
+the effectiveness of your campaign. You can use this information to evaluate
+whether or not the users are following the engagement path you had prepared.
