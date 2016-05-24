@@ -47,7 +47,7 @@ next to a *Download* button. Click this button to download the client. For
 example, the following screenshot shows the Welcome screen with Liferay Portal 
 6.2 EE selected. 
 
-![Figure 1: When you first log in to LCS, you can download the LCS client from the Welcome screen.](../../images/lcs-welcome-client-download.png)
+![Figure 1: When you first log in to LCS, you can download the LCS client from the Welcome screen.](../../images-dxp/lcs-welcome-client-download.png)
 
 Note that you'll only see the Welcome screen the first time you log in to LCS. 
 If you need to download the client again later, you can do so from the Liferay 
@@ -56,7 +56,7 @@ tab, the *Client Downloads* button is automatically selected. This presents the
 same screen as earlier, in which you can download the client. The following 
 screenshot shows this: 
 
-![Figure 2: You can also download the LCS client from the Connection tab inside of LCS.](../../images/lcs-client-download-connection.png)
+![Figure 2: You can also download the LCS client from the Connection tab inside of LCS.](../../images-dxp/lcs-client-download-connection.png)
 
 Super! Now you know where to get the LCS client. Before you deploy it though, 
 there are a few other things you should check. If you connect to the web through 
@@ -92,7 +92,8 @@ and set them to the appropriate values for your proxy.
         proxy.host.login=
         proxy.host.password= 
 
-Great! Now you're ready to deploy the client and register your portal with LCS.
+Great! Now you're ready to deploy the client and register your Liferay DXP 
+instance with LCS. 
 
 ## Manually Registering the Client with LCS
 
@@ -107,30 +108,29 @@ is the preferred way to register your server with LCS.
 
 $$
 
-Access the client by clicking on *Liferay Connected Services* under the *Apps* 
-section of the *Control Panel*. 
+Access the client by clicking on *Liferay Connected Services* under the 
+*Configuration* section of the *Control Panel*. 
 
-![Figure 3: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-control-panel-dxp.png)
+![Figure 3: LCS appears in the Control Panel's Configuration section.](../../images-dxp/lcs-control-panel-dxp.png)
 
 The LCS client first asks you to choose the LCS services you want to enable for 
-this portal instance. The *Enable All Services* checkbox is selected by default. 
-This enables portal analytics, fix pack management (for EE portals), and portal 
-property analysis. Unchecking this checkbox presents you with additional 
-checkboxes for enabling each of those services. Note that the *Fix Packs 
-Management* option is unavailable for Liferay CE. Also note that although 
-[LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers), 
+this DXP instance. The *Enable All Services* checkbox is selected by default. 
+This enables portal analytics, fix pack management, and portal property 
+analysis. Unchecking this checkbox presents you with additional checkboxes for 
+enabling each of those services. Note that although 
+[LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers), 
 you may have additional properties you want to prevent LCS from analyzing. If 
 you select *Portal Properties Analysis*, a text box appears for you to enter any 
 properties you don't want LCS to analyze. Click *Next* when you finish enabling 
 the LCS services you want to use. 
 
-![Figure 4: If you unselect *Enable All Services*, you can enable each LCS service that you want to use with your portal.](../../images/lcs-enable-services.png)
+![Figure 4: If you unselect *Enable All Services*, you can enable each LCS service that you want to use with your DXP instance.](../../images-dxp/lcs-enable-services.png)
 
 Next, LCS asks you to authorize access to your LCS account. After clicking 
 *Authorize Access*, LCS takes you to the LCS website. Log in with your 
 credentials and then click *Grant Access*. 
 
-![Figure 5: The LCS client requires access to your LCS account.](../../images/lcs-auth-access.png)
+![Figure 5: The LCS client requires access to your LCS account.](../../images-dxp/lcs-auth-access.png)
 
 Now you must register your server with LCS by filling out the following fields:
 
@@ -147,7 +147,7 @@ Now you must register your server with LCS by filling out the following fields:
    asks you to enter the new environment's *Name*, *Location*, and 
    *Description*. 
 
-    ![Figure 6: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
+    ![Figure 6: The Add New Environment pop-up.](../../images-dxp/lcs-new-environment.png)
 
 3. Server Name: Give your server a name that you can use to distinguish it LCS. 
    Note that server names in LCS aren't case sensitive. Also, you can't have 
@@ -161,7 +161,7 @@ Now you must register your server with LCS by filling out the following fields:
    server. You can use this field to help differentiate the servers you manage 
    with LCS.
 
-![Figure 7: The server registration screen.](../../images/lcs-register-server.png)
+![Figure 7: The server registration screen.](../../images-dxp/lcs-register-server.png)
 
 Upon clicking *Register*, your LCS client shows your connection status. Note 
 that it can take up to 10 or 20 seconds to perform the initial handshake and 
@@ -192,10 +192,11 @@ displayed. Here's a description of what's displayed:
 - **Environment:** This link takes you to this server's registered environment.
 - **Server Dashboard:** This link takes you to the server on LCS.
 - **Configure Services:** This link lets you change which LCS services are 
-  enabled for your portal. Doing so triggers reconnection with the new settings. 
-- **Disconnect:** Disconnects this Liferay instance from LCS. 
+  enabled for your DXP instance. Doing so triggers reconnection with the new 
+  settings. 
+- **Disconnect:** Disconnects this DXP instance from LCS. 
 
-![Figure 8: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure 8: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
 
 Awesome! Now that you've registered your server with your LCS account, you can 
 dig in to the features of LCS. 
