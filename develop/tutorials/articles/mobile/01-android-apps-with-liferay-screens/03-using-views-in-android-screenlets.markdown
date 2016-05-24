@@ -5,7 +5,7 @@ behavior, and style. They let you focus on a Screenlet's UI and UX, without
 having to worry about its core functionality. Liferay's Screenlets come with
 several Views, and more are being developed by Liferay and the community. A
 Liferay Screenlet's Views are specified in its
-[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android).
+[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android).
 This tutorial shows you how to use Views in Android Screenlets. It's
 straightforward; you'll master using Views in no time!
 
@@ -42,11 +42,11 @@ Here are some View Sets that Liferay created for Android Screenlets:
 - *Default*: Comes standard with a Screenlet. It's used by a Screenlet if no
   layout ID is specified or if no View is found with the layout ID. The Default 
   Views can be used as parent Views for your custom Views. Refer to the 
-  [architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
+  [architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android) 
   for more details. 
 - *Material*: Demonstrates Views built from scratch. It follows Google's
   [Material Design](https://developer.android.com/design/material/index.html) 
-  guidelines. Refer to the [View creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-views) 
+  guidelines. Refer to the [View creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-views) 
   for instructions on creating your own Views.
 - *Westeros*: Customizes the behavior and appearance of the
   [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
@@ -77,16 +77,16 @@ example, the following code in an app's `res/values/styles.xml` tells
 
 That's all there is to it! Great! Now you know how to use Views to spruce up 
 your Android Screenlets. This opens up a world of possibilities, like 
-[writing your own Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views). 
+[writing your own Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views). 
 
 **Related Topics**
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[Creating Android Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)

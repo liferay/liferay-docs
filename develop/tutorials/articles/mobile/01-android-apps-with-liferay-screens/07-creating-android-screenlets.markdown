@@ -1,7 +1,7 @@
 # Creating Android Screenlets [](id=creating-android-screenlets)
 
 The
-[Screenlets](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android)
+[Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android)
 that come with Liferay Screens cover common use cases for mobile apps that use
 Liferay. They authenticate users, interact with Dynamic Data Lists, view assets,
 and more. However, what if there's no Screenlet for *your* specific use case? No
@@ -15,9 +15,9 @@ that saves bookmarks to Liferay's Bookmarks portlet.
 
 To understand the components that comprise a Screenlet, you might want to 
 learn the
-[architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) first.
+[architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android) first.
 You might also want to review how to
-[create a View](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[create a View](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)
 to present your Screenlet. Without further ado, let the Screenlet creation
 begin! 
 
@@ -31,7 +31,7 @@ you've imported.
 
 If you want to reuse your Screenlet in another app, create it in a new Android
 application module; the tutorial
-[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-android-screenlets)
+[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-android-screenlets)
 explains how. When your Screenlet's project is in place, you can start creating
 its user interface. 
 
@@ -395,7 +395,7 @@ interface that the Interactor uses.
 
 Screenlet classes can use an *external* listener class to notify classes outside
 the Screenlet (i.e., classes in your app) about events. The 
-[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android),
+[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android),
 shows that every Liferay Screenlet specifies listener classes for registering
 with your classes. You can use an internal listener class as an external
 listener, or use a completely different listener class (for example, one that
@@ -640,18 +640,18 @@ the `bookmark_folder`, values are also specified for `liferay_server`,
     </resources>
 
 Congratulations! Your Screenlet is ready to
-[use](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[use](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
 in Android apps. You can even
-[package and distribute](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
+[package and distribute](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets)
 it via the Screens project, JCenter, or Maven Central. Now you know how to
 create Screenlets in Liferay Screens for Android. 
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[Creating Android Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-iOS-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-iOS-screenlets)

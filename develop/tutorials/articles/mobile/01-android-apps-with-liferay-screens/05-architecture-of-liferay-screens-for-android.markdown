@@ -17,7 +17,7 @@ layer, Interactors, and Server Connectors. Interactors are technically part of
 the core, but are worth covering separately. They facilitate interaction with 
 both local and remote data sources, as well as communication between the 
 Screenlet layer and the 
-[Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk). 
 
 ![Figure 1: Here are the high-level components of Liferay Screens for Android. The dashed arrow connectors represent a "uses" relationship, in which a component uses the component its pointing to.](../../../images/screens-android-architecture-01.png)
 
@@ -33,7 +33,7 @@ Studio's visual editor and react to UI events, sending any necessary server
 requests. You can set a screentlet's properties from its layout XML file and 
 Java classes. The Screenlets bundled with Liferay Screens are known collectively 
 as the 
-[Screenlet Library](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
+[Screenlet Library](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android). 
 
 **Server Connectors:** a collection of classes that interact with different 
 Liferay versions. These classes abstract away the complexity of communicating 
@@ -43,7 +43,7 @@ and the correct Interactor without worrying about the specific Liferay version
 
 **Interactors:** implement specific use cases for communicating with servers.
 They can use local and remote data sources. Most Interactors use the
-[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile) 
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk) 
 to exchange data with a Liferay instance. If a user action or use case needs to 
 execute more than one query on a local or remote store, the sequence is done 
 in the corresponding Interactor. If a Screenlet supports more than one user 
@@ -110,8 +110,8 @@ calls a Liferay instance's remote services in a type-safe and transparent way.
 a singleton class that holds the logged in user's session. Apps can use an
 implicit login, invisible to the user, or a login that relies on explicit user
 input to create the session. User logins can be implemented with the
-[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android). 
-This is explained in detail [here](/develop/tutorials/-/knowledge_base/6-2/accessing-the-liferay-session-in-android).
+[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android). 
+This is explained in detail [here](/develop/tutorials/-/knowledge_base/7-0/accessing-the-liferay-session-in-android).
 
 [**LiferayServerContext:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayServerContext.java)
 a singleton object that holds server configuration parameters. It's loaded from
@@ -214,7 +214,7 @@ Screenlet's View. Here's a skeleton of a Screenlet's layout XML file:
     </com.your.package.MyScreenletView>
 
 Refer to the tutorial
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
 for more Screenlet details. Next, the View layer's details are described. 
 
 ## View Layer [](id=view-layer)
@@ -291,7 +291,7 @@ several Screenlets. Liferay's available View sets are listed here:
   sample app.
 
 For information on creating or customizing Views, see the tutorial 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views). 
+[Creating Android Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views). 
 
 Great! Now you know how Liferay Screens for Android is composed. However,
 there's something you should know before moving on: how Screenlets interact with
@@ -317,10 +317,10 @@ Screens.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[Creating Android Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)

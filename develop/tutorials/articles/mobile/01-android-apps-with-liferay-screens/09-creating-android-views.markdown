@@ -29,9 +29,9 @@ from a Screenlet's current theme.
 
 This tutorial explains how to create all four types of Views. To understand
 View concepts and components, you might want to examine the
-[architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
 of Liferay Screens for Android. And the tutorial
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
 can help you create or extend any Screenlet classes your View requires. Now get
 ready to create some great Views! 
 
@@ -43,7 +43,7 @@ it, create it in your app project.
 
 If you want to reuse your View in another app, create it in a new Android
 application module; the tutorial
-[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-android-screenlets)
+[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-android-screenlets)
 explains how. When your View's project is in place, you can start creating it. 
 
 First, you'll learn how to create a Themed View. 
@@ -335,7 +335,7 @@ You can follow these steps to create a Full View:
 
 2.  Create a new custom View class named after the layout's root element. The
     tutorial on creating Android Screenlets explains how to
-    [create a View class](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-view-class).
+    [create a View class](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-view-class).
     Note that you don't have to extend a View class to implement a View Model
     interface, but you might want to for convenience. The custom View class
     [`LoginFullView`](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview/LoginFullView.java),
@@ -402,8 +402,8 @@ behavior and also lets you distribute and reuse your Views.
 
 ## Related Topics [](id=related-topics)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)

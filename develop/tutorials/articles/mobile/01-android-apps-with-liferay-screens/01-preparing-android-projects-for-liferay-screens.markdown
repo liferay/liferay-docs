@@ -197,8 +197,8 @@ how to do this.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
 
-[Preparing iOS Projects for Liferay Screens](develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
+[Preparing iOS Projects for Liferay Screens](develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens)

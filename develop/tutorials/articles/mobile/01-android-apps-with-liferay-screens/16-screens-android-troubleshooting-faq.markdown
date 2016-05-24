@@ -89,7 +89,7 @@ Liferay Screens.
     SDK can't connect to the Liferay Portal instance. If you get this error, 
     you should first check the IP address of the server to make sure it's 
     available. If you've 
-    [overridden the default IP address in `server_context.xml`](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens#configuring-communication-with-liferay), 
+    [overridden the default IP address in `server_context.xml`](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens#configuring-communication-with-liferay), 
     you should check to make sure that you've set it to the correct IP. Also, if 
     you're using the Genymotion emulator, you must use `192.168.56.1` instead of 
     localhost for your app to communicate with a local Liferay instance. 
@@ -145,12 +145,12 @@ Liferay Screens.
 4.  How do I create a new Screenlet?
 
     Screenlet creation is explained in detail 
-    [here](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets).
+    [here](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets).
 
 5.  How can I customize a screenlet?
 
     You can customize Screenlets by creating new Views. Fortunately, there's a 
-    [tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-views) 
+    [tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-views) 
     for this! 
 
 6.  Does Screens have offline support?
@@ -159,10 +159,10 @@ Liferay Screens.
 
 ## Related Topics [](id=related-topics)
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[Creating Android Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)
 
-[Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile)
+[Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk)

@@ -2,9 +2,9 @@
 
 It's very common for mobile apps to display lists of entities. Liferay Screens 
 lets you display asset lists and DDL lists in your Android app by using 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-android) 
+[Asset List Screenlet](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-android) 
 and 
-[DDL List Screenlet](/develop/reference/-/knowledge_base/6-2/ddllistscreenlet-for-android), 
+[DDL List Screenlet](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-android), 
 respectively. For your app to display a list of other entities from a Liferay 
 instance, however, you must create your own list Screenlet. You can create this 
 Screenlet to display standard Liferay entities such as `User`, or custom 
@@ -19,9 +19,9 @@ Screenlet's code
 Note that this tutorial doesn't explain the general Screenlet concepts and 
 components in detail. Focus is instead placed on creating a Screenlet that 
 displays lists of entities. Before beginning, you should therefore read the 
-[Screens architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android), 
+[Screens architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android), 
 and the general 
-[Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets). 
+[Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets). 
 
 You'll create the list Screenlet by following these steps: 
 
@@ -575,14 +575,14 @@ so it can call the listener's `interactorCalled` method:
 
 You're done! Your Screenlet is a ready-to-use component that you can use in your 
 app. You can even
-[package your Screenlet](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
+[package your Screenlet](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets)
 and contribute it to the Screens project, or distribute it in Maven Central or 
 jCenter. 
 
 ## Using the Screenlet [](id=using-the-screenlet)
 
 You can now use the new Screenlet 
-[the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps): 
+[the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps): 
 
 1. Insert the Screenlet’s XML in the activity or fragment layout you want the 
    Screenlet to appear in. For example, here's Bookmark List Screenlet's XML: 
@@ -604,12 +604,12 @@ You can now use the new Screenlet
 
 ## Related Topics [](id=related-topics)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
 
-[Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
+[Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
