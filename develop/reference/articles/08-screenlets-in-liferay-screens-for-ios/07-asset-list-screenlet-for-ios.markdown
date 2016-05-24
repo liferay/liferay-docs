@@ -16,9 +16,11 @@
 
 ## Features [](id=features)
 
-The `AssetListScreenlet` can be used to show lists of [assets](/tutorials/-/knowledge_base/6-2/asset-framework) 
+The `AssetListScreenlet` can be used to show lists of 
+[assets](/develop/tutorials/-/knowledge_base/7-0/asset-framework) 
 from a Liferay instance. For example, you can use the Screenlet to show a 
-scrollable collection of assets. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
+scrollable collection of assets. It also implements 
+[fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size. The `AssetListScreenlet` can show assets of the 
 following classes: 
 

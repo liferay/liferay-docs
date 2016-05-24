@@ -17,9 +17,9 @@
 ## Features [](id=features)
 
 Web Content List Screenlet can show lists of 
-[web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
+[web content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
 from a Liferay instance. It can show both basic and 
-[structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). 
+[structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). 
 The Screenlet also implements 
 [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size, and supports i18n in asset values. 

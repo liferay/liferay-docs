@@ -59,8 +59,8 @@ user requests it. If only the first option is checked, an email containing a new
 password is sent when a user requests it.
 
 For more details on authentication in Liferay Portal, please refer to the 
-[Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
-section of the User Guide.
+[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
+section of the User Guide. 
 
 ### Anonymous Request [](id=anonymous-request)
 

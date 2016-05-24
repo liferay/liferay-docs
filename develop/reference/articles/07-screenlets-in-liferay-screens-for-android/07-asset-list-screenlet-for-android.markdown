@@ -72,9 +72,10 @@ and
 [Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
 sections of the User Guide for more details.
 
-Also, 
-[Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
-must be installed to allow remote calls without the `userId`. 
+Also, to allow remote calls without the `userId`, the Liferay Screens 
+Compatibility app must be installed in your Liferay instance. You can find this 
+app on 
+[Liferay Marketplace](https://web.liferay.com/marketplace). 
 
 ## Offline [](id=offline)
 

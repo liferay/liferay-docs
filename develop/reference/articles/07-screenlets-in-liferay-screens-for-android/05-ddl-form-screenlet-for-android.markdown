@@ -118,7 +118,8 @@ and Data Types are configured properly in the portal. Refer to the
 and 
 [Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
 sections of the User Guide for more details. If Workflow is required, it must 
-also be configured. See the [Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) 
+also be configured. See the 
+[Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) 
 section of the User Guide for details. 
 
 ### Permissions [](id=permissions)

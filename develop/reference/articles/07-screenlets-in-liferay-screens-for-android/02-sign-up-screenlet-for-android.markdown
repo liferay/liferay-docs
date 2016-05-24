@@ -34,7 +34,8 @@ clicking *Portal Settings* and then *Authentication*.
 
 ![The portal's authentication settings.](../../images/screens-portal-signup.png)
 
-For more details, refer to the [Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
+For more details, refer to the 
+[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
 section of the User Guide.
 
 ## Anonymous Requests [](id=anonymous-requests)

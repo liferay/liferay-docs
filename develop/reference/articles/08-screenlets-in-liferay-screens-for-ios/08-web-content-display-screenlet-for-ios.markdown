@@ -37,7 +37,8 @@ may use a different component, such as iOS 8's.
 
 For the `WebContentDisplayScreenlet` to function properly, there should be web 
 content in the Liferay instance your app connects to. For more details on web 
-content, please refer to the [Web Content Management](/portal/-/knowledge_base/6-2/web-content-management) 
+content, please refer to the 
+[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
 section of the Liferay User Guide. 
 
 ## Offline [](id=offline)
@@ -58,7 +59,7 @@ connection.
 |-----------|-----------|-------------| 
 | `groupId` | `number` | The site (group) identifier where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
-| `templateId` | `number` | The identifier of the template used to render the web content. This is applicable only with [structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). |
+| `templateId` | `number` | The identifier of the template used to render the web content. This is applicable only with [structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). |
 | `autoLoad` | `boolean` | Whether the content should be retrieved from the portal as soon as the Screenlet appears. The default value is `true`. |
 
 ## Methods [](id=methods)

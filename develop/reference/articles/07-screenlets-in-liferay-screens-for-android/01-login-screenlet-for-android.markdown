@@ -59,7 +59,8 @@ screen name, or user ID. You can set this in the Control Panel by clicking
 
 ![Setting the authentication method in Liferay Portal.](../../images/screens-portal-auth.png)
 
-For more details, see the [Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
+For more details, see the 
+[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
 section of the User Guide. 
 
 ### OAuth Authentication [](id=oauth-authentication)
