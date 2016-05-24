@@ -33,7 +33,8 @@ The Default View uses a standard `WebView` to render the HTML.
 
 For the `WebContentDisplayScreenlet` to function properly, there should be web 
 content in the Liferay instance your app connects to. For more details on web 
-content, see the [Web Content Management](/portal/-/knowledge_base/6-2/web-content-management) 
+content, see the 
+[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
 section of the Liferay User Guide. 
 
 ## Offline [](id=offline)
@@ -60,7 +61,7 @@ connection.
 | `groupId` | `number` | The site (group) identifier where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
 | `classPK` | `number` | The corresponding asset's class primary key. If the web content is an asset (from Asset List Screenlet, for example), this is the asset's identifier. This attribute is used only if `articleId` is empty. |
-| `templateId` | `number` | The identifier of the template used to render the web content. This only applies to [structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). |
+| `templateId` | `number` | The identifier of the template used to render the web content. This only applies to [structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). |
 | `structureId` | `number` | The identifier of the `DDMStructure` used to model the web content. This parameter lets the Screenlet retrieve and parse the structure. |
 | `labelFields` | `string` | A comma-delimited list of `DDMStructure` fields to display in the Screenlet. |
 | `autoLoad` | `boolean` | Whether the content should be retrieved from the portal as soon as the screenlet appears. Default value is `true`. |

@@ -15,7 +15,7 @@
 
 ## Features [](id=features)
 
-The `AssetListScreenlet` can be used to show [asset](/tutorials/-/knowledge_base/6-2/asset-framework) 
+The `AssetListScreenlet` can be used to show [asset](/tutorials/-/knowledge_base/7-0/asset-framework) 
 lists from a Liferay instance. For example, you can use the Screenlet to show a 
 scrollable list of assets. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size. The `AssetListScreenlet` can show assets belonging 
@@ -66,12 +66,15 @@ show the items.
 ## Portal Configuration [](id=portal-configuration)
 
 Dynamic Data Lists (DDL) and Data Types should be configured properly in the 
-portal. Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
-and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
+portal. Refer to the 
+[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)  
+and 
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
 sections of the User Guide for more details.
 
-Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
-must be installed to allow remote calls without the `userId`.
+Also, 
+[Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
+must be installed to allow remote calls without the `userId`. 
 
 ## Offline [](id=offline)
 

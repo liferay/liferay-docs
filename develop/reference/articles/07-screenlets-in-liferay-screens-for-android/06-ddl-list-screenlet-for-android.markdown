@@ -41,8 +41,9 @@ The `DDLListScreenlet` has the following features:
 
 DDLs and Data Types should be configured in the portal before using
 `DDLListScreenlet`. For more details, see the Liferay User Guide sections 
-[Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
-and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists). 
+[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) 
+and 
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) . 
 
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed to allow remote calls without the `userId`. 
@@ -74,7 +75,7 @@ connection.
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `recordSetId` | `number` | The ID of the DDL being called. To find your DDLs' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each DDL's ID is in the ID column of the table. |
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
-| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on defining data types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-). Note that the appearance of these values in your app depends on the `layoutId` set. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions). Note that the appearance of these values in your app depends on the `layoutId` set. |
 
 ## Methods [](id=methods)
 

@@ -14,7 +14,7 @@
 Web Content List Screenlet has the following features:
 
 - Shows a scrollable collection of 
-  [web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
+  [web content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
   articles. 
 - Implements 
   [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
@@ -59,7 +59,7 @@ connection.
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `folderId` | `number` | The ID of the folder to render. |
-| `labelFields` | `string` | The comma-separated names of the DDM fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
+| `labelFields` | `string` | The comma-separated names of the DDM fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
 
 ## Methods [](id=methods)
 

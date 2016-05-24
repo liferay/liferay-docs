@@ -114,10 +114,11 @@ picture/video information. Here's an example implementation:
 
 Before using DDL Form Screenlet, you should make sure that Dynamic Data Lists 
 and Data Types are configured properly in the portal. Refer to the 
-[Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
-and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
+[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) 
+and 
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
 sections of the User Guide for more details. If Workflow is required, it must 
-also be configured. See the [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow) 
+also be configured. See the [Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) 
 section of the User Guide for details. 
 
 ### Permissions [](id=permissions)
@@ -137,9 +138,9 @@ grant permissions in the target repository and folder. For more details, see the
 ![Figure 3: The permission for adding a document to a Documents and Media folder.](../../images/screens-portal-permission-folder-add.png)
 
 For more details, see the User Guide sections 
-[Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-), 
-[Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), and 
-[Using Workflow](/portal/-/knowledge_base/6-2/using-workflow). 
+[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions), 
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists), and 
+[Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow). 
 
 ## Offline [](id=offline)
 
