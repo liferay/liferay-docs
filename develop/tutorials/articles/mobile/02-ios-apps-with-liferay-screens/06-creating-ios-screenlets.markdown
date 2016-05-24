@@ -1,7 +1,7 @@
 # Creating iOS Screenlets [](id=creating-ios-screenlets)
 
 The built-in
-[Screenlets](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios)
+[Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios)
 cover common use cases for mobile apps that use Liferay. They
 authenticate users, interact with Dynamic Data Lists, view assets, and more.
 What if, however, there's no Screenlet for *your* use case? No problem! You can
@@ -14,7 +14,7 @@ that saves bookmarks to Liferay's Bookmarks portlet.
 
 To understand the components that comprise a Screenlet, you might want to first
 analyze the
-[architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 of Liferay Screens for iOS. Without further ado, let the Screenlet creation
 begin! 
 
@@ -24,9 +24,9 @@ Where you should create your Screenlet depends on how you plan to use it. If you
 want to reuse or redistribute it, you should create it in an empty Cocoa Touch
 Framework project in Xcode. You can then use CocoaPods to publish it. The
 section
-[Publish Your Themes Using CocoaPods](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes#publish-your-themes-using-cocoapods)
+[Publish Your Themes Using CocoaPods](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#publish-your-themes-using-cocoapods)
 in the tutorial
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
 explains how to publish an iOS Screenlet. Even though that section refers to
 Themes, the steps for preparing Screenlets for publishing are the same. If you
 don't plan to reuse or redistribute your Screenlet, create it in your app's
@@ -271,7 +271,7 @@ Follow these steps to create your Screenlet:
     Interactor's closures. Classes conforming to the delegate protocol and
     registered as delegates can respond to the delegated events. Note: every
     Liferay Screenlet's
-    [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios),
+    [reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios),
     specifies its delegate protocols.
 
     As an example, the Add Bookmark Screenlet class is shown below. It extends
@@ -353,16 +353,16 @@ Follow these steps to create your Screenlet:
 
 You're done! Your Screenlet is a ready-to-use component that you can add to your
 storyboard. You can even
-[package](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes#publish-your-themes-using-cocoapods)
+[package](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#publish-your-themes-using-cocoapods)
 it to contribute to the Screens project or distribute with CocoaPods. Now you
 know how to create Screenlets for iOS.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)

@@ -2,9 +2,9 @@
 
 It's very common for mobile apps to display lists of entities. Liferay Screens 
 lets you display asset lists and DDL lists in your iOS app by using 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios) 
+[Asset List Screenlet](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios) 
 and 
-[DDL List Screenlet](/develop/reference/-/knowledge_base/6-2/ddllistscreenlet-for-ios), 
+[DDL List Screenlet](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-ios), 
 respectively. For your app to display a list of other entities from a Liferay 
 instance, however, you must create your own list Screenlet. You can create this 
 Screenlet to display standard Liferay entities such as `User`, or custom 
@@ -19,9 +19,9 @@ Screenlet's code
 Note that this tutorial doesn't explain the general Screenlet concepts and 
 components in detail. Focus is instead placed on creating a Screenlet that 
 displays lists of entities. Before beginning, you should therefore read the 
-[Screens architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios), 
+[Screens architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios), 
 and the general 
-[Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 
+[Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
 
 You'll create the list Screenlet by following these steps:
 
@@ -483,15 +483,15 @@ Override these methods now:
 
 Awesome! You're done! Your list Screenlet, like any other Screenlet, is a 
 ready-to-use component that you can add to your storyboard. You can even
-[package it](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes#publish-your-themes-using-cocoapods)
+[package it](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#publish-your-themes-using-cocoapods)
 to contribute to the Liferay Screens project, or distribute it with CocoaPods. 
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 
-[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes)
+[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)

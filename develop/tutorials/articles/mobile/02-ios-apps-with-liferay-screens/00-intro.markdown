@@ -3,13 +3,13 @@
 Liferay Screens speeds up and simplifies developing native mobile apps that use
 Liferay. Its power lies in its *Screenlets*. A Screenlet is a visual component
 that you insert into your native app to leverage Liferay Portal's content and
-[services](/develop/tutorials/-/knowledge_base/6-2/invoking-remote-services). On
+[services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services). On
 iOS, Screenlets are available to log in to your portal, create accounts, submit 
 forms, display content, and more. You can use any number of Screenlets in your 
 app; they're independent, so you can use them in modular fashion. Screenlets on 
 iOS also deliver UI flexibility with pluggable *Themes* that implement elegant 
 user interfaces. Liferay's reference documentation for
-[iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
+[iOS](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
 Screenlets describes each Screenlet's features and Themes. 
 
 You might be thinking, "These Screenlets sound like the greatest thing since
@@ -27,13 +27,13 @@ Screenlets leverage the
 to make server calls. The Mobile SDK is a low-level layer on top of the Liferay
 JSON API. To write your own Screenlets, you must familiarize yourself with
 Liferay's
-[remote services](/develop/tutorials/-/knowledge_base/6-2/invoking-remote-services).
+[remote services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services).
 If no existing Screenlet meets your needs, consider customizing an existing
 Screenlet, creating a Screenlet, or directly using the Mobile SDK. Creating a
 Screenlet involves writing Mobile SDK calls and constructing the Screenlet; if
 you don't plan to reuse or distribute the implementation then you may want to
 forgo writing a Screenlet and, instead, work with the
-[Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile). A benefit of
+[Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk). A benefit of
 integrating an existing Screenlet into your app, however, is that the Mobile
 SDK's details are abstracted from you. 
 
@@ -42,5 +42,5 @@ Screenlets for iOS. They show you how to create Themes too. There's even a
 tutorial that explains the nitty-gritty details of the Liferay Screens 
 architecture. No matter how deep you want to go, you'll use Screenlets in no 
 time. Start by preparing your
-[iOS project](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
+[iOS project](/develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens)
 to use Liferay Screens. 

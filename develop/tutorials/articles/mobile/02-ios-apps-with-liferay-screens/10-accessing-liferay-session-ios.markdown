@@ -88,7 +88,7 @@ a typical implementation of this:
 
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
 For more information on available `SessionContext` methods, see the 
-[Methods section](/develop/tutorials/-/knowledge_base/6-2/accessing-the-liferay-session-in-ios#methods) 
+[Methods section](/develop/tutorials/-/knowledge_base/7-0/accessing-the-liferay-session-in-ios#methods) 
 at the end of this tutorial. Next, you'll learn how to implement relogin for 
 cases where a user's credentials change on the server while they're logged in. 
 
@@ -162,6 +162,6 @@ For more information, see the
 
 ## Related Topics [](id=related-topics)
 
-[Login Screenlet for iOS](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios)
+[Login Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)

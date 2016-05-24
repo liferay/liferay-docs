@@ -1,9 +1,9 @@
 # Packaging iOS Themes [](id=packaging-ios-themes)
 
 Once you've 
-[created a Theme](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes),
+[created a Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes),
 you can package it up to
-[install and use](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[install and use](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
 with its Screenlet. Your Theme is a code library that you can package using
 CocoaPods. 
 
@@ -21,7 +21,7 @@ steps):
     the Theme's CocoaPods name. 
 
 3.  Configure Liferay Screens for CocoaPods, using the steps described in 
-    [Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens).
+    [Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens).
 
 4.  Prepare your Theme's classes and resources by making sure your classes
     compile successfully in Xcode and by explicitly specifying a valid module
@@ -85,13 +85,13 @@ CocoaPods.
 
 **Related Topics**
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
 

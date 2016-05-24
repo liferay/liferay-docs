@@ -19,9 +19,9 @@ different from a Screenlet's current Theme.
 
 This tutorial explains how to create all three types. To understand Theme
 concepts and components, you might want to examine the
-[architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 of Liferay Screens for iOS. The tutorial
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 can help you create any Screenlet classes your Theme requires. Now get ready to
 create some Themes! 
 
@@ -30,7 +30,7 @@ create some Themes!
 After determining the type of Theme to create, you need to decide where to
 create it. If you want to reuse or redistribute it, you should create it in an
 empty Cocoa Touch Framework project in Xcode. The 
-[packaging](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes)
+[packaging](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes)
 tutorial explains how to package and publish with CocoaPods. If you're
 not planning to reuse or redistribute your Theme, you can create it directly
 inside your app project. 
@@ -76,9 +76,9 @@ You can follow these steps to create a Child Theme:
 	$$$
 
 You can optionally
-[package](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes) your
+[package](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) your
 Theme and/or start
-[using](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[using](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
 it. Fantastic! Next, you'll learn how to create an Extended Theme.
 
 ## Extended Theme [](id=extended-theme)
@@ -108,9 +108,9 @@ These steps explain how to create an Extended Theme:
     If you added `@IBOutlet` or `@IBAction` actions, bind them to your class. 
 
 Well done! You can optionally
-[package](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes) your
+[package](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) your
 Theme and/or start
-[using](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[using](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
 it. Now you know how to create and use an Extended Theme. Next, you'll learn how
 to create a Full Theme.
 
@@ -121,7 +121,7 @@ using a parent Theme. Its View class must inherit Screens's
 [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift)
 and conform to the Screenlet's View Model protocol. It must also specify a new
 UI in an XIB file. As you create a Full Theme, you can refer to the tutorial
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 to learn how to create these classes. 
 
 Follow these steps to create a Full Theme:
@@ -147,9 +147,9 @@ Follow these steps to create a Full Theme:
     any `@IBOutlet` and `@IBAction` actions to your class. 
 
 Super! You can optionally
-[package](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes) your
+[package](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) your
 Theme and/or start
-[using](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[using](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
 it. Now you know how to create a Full Theme. Note that a Full Theme can serve as
 a parent to a Child and Extended Theme. 
 
@@ -157,10 +157,10 @@ You've mastered Themes!
 
 ## Related Topics [](id=related-topics)
 
-[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes)
+[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)

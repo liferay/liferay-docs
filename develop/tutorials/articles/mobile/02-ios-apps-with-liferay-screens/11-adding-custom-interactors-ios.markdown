@@ -4,7 +4,7 @@ Interactors are Screenlet components that implement server communication for a
 specific use case. For example, the Login Screenlet's interactor calls the 
 Liferay Mobile SDK service that authenticates a user to the portal. Similarly, 
 the interactor for 
-[the Add Bookmark Screenlet](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets) 
+[the Add Bookmark Screenlet](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets) 
 calls the Liferay Mobile SDK service that adds a bookmark to the Bookmarks 
 portlet. 
 
@@ -49,6 +49,6 @@ Great! Now you know how to implement custom interactors for iOS Screenlets.
 
 ## Related Topics [](id=related-topics)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)

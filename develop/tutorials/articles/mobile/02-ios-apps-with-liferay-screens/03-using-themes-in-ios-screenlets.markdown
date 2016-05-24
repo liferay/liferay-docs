@@ -5,7 +5,7 @@ style, and behavior. They let you focus on a Screenlet's UI and UX, without
 having to worry about its core functionality. Liferay's Screenlets come with
 several Themes, and more are being developed by Liferay and the community. A
 Liferay Screenlet's Themes are specified in its
-[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
+[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios).
 This tutorial shows you how to use Themes in your iOS Screenlets. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vgwDZJcs3-Y" frameborder="0" allowfullscreen></iframe>
@@ -30,7 +30,7 @@ on how the Theme has been published:
 To use the installed Theme, specify its name in the *Theme Name* property field
 of the *Base Screenlet* in Interface Builder. The names of each Screenlet's
 Themes are listed in the *Themes* section of the Screenlet's
-[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios). 
+[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
 If you leave the Theme name property blank or enter a name for a Theme that
 can't be found, the Screenlet's Default Theme is used. 
 
@@ -42,10 +42,10 @@ its Screenlets:
 - *Default*: Comes standard with a Screenlet. It's used by a Screenlet if no
   Theme name is specified or the named Theme can't be found. The Default Theme 
   can be used as the parent Theme for your custom Themes. Refer to the 
-  [architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+  [architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
   for more details.
 - *Flat7*: Demonstrates a Theme made from scratch. Refer to the 
-  [Theme creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
+  [Theme creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
   for instructions on creating your own Theme.
 - *Westeros*: Customizes the behavior and appearance of the
   [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/WesterosBank) 
@@ -53,16 +53,16 @@ its Screenlets:
 
 That's all there is to it! Great! Now you know how to use Themes to dress up 
 Screenlets in your iOS app. This opens up a world of possibilities--like 
-[writing your own Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes).
+[writing your own Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes).
 
 **Related Topics**
 
-[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
+[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-ios-apps)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)

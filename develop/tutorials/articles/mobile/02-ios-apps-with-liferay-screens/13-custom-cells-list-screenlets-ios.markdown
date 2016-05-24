@@ -7,14 +7,14 @@ simple lists of items, you may want to use custom cells to spruce things up a
 bit or show more complex content in the list. 
 
 To do this, you must 
-[create a custom theme](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
+[create a custom theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
 that extends the Default theme of the list Screenlet you want to use. For 
 example, if you're using 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios), 
+[Asset List Screenlet](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios), 
 create a child class in your theme that extends from the 
 [`AssetListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/AssetListScreenlet/AssetListView_default.swift). 
 You should call your class `AssetListView_mytheme`. If you're using 
-[Web Content List Screenlet](/develop/reference/-/knowledge_base/6-2/web-content-lists-creenlet-for-ios), 
+[Web Content List Screenlet](/develop/reference/-/knowledge_base/7-0/web-content-lists-creenlet-for-ios), 
 subclass the 
 [`WebContentListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/WebContent/ListScreenlet/WebContentListView_default.swift), 
 and name your class `WebContentListView_mytheme`. 
@@ -149,12 +149,12 @@ Screenlets.
 
 **Related Topics**
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
 
-[Asset List Screenlet for iOS](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios)
+[Asset List Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios)
 
-[Web Content List Screenlet for iOS](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-ios)
+[Web Content List Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-ios)
 
-[DDL List Screenlet for iOS](/develop/reference/-/knowledge_base/6-2/ddllistscreenlet-for-ios)
+[DDL List Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-ios)
