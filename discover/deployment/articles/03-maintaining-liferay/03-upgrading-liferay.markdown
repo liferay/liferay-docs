@@ -5,7 +5,7 @@ latest release in one step, you must be coming from Liferay 6.0.12 or higher.
 
 If you're coming from Liferay 6.0.11 or below you should upgrade your portal
 to Liferay 6.2 before approaching an upgrade to the Liferay 7 platform. Please,
-see please see the
+see the
 [Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
 article for information on upgrading to Liferay 6.2 first.
 
@@ -407,13 +407,13 @@ Portal). You can check the final expected status for a module by typing
 `upgrade:list [module_name]`
 
 If you need to know which modules failed to upgrade, you can use
-`upgrade:dryRun` to list those that have not reached their final version. This
+`upgrade:check` to list those that have not reached their final version. This
 command returns a list of modules that failed to upgrade the last time the
 process ran. 
 
 Here's an example of how this works. Say that that the upgrade for module
 `com.liferay.dynamic.data.mapping.service` failed in a step labeled
-`1.0.0-step-2`. If you execute the command `upgrade:dryRun`, you'll get the
+`1.0.0-step-2`. If you execute the command `upgrade:check`, you'll get the
 following output: 
 
     Would upgrade com.liferay.dynamic.data.mapping.service from 1.0.0-step-2 to
