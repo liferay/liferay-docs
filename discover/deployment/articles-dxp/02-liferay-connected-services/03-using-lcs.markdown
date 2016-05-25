@@ -37,7 +37,7 @@ available in LCS:
   Learn how to use environment tokens to automatically register your Liferay 
   servers with LCS. This is crucial in auto-scaling environments. 
 
-- [**Managing Liferay DXP Subscriptions:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#)
+- [**Managing Liferay DXP Subscriptions:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-dxp-subscriptions)
   Learn how to view and manage your Liferay DXP subscriptions for the servers in 
   your LCS project. 
 
@@ -541,7 +541,7 @@ instances with LCS.
 
 Next, you'll learn how to use LCS to manage your Liferay DXP subscriptions. 
 
-## Managing Liferay DXP Subscriptions
+## Managing Liferay DXP Subscriptions [](id=managing-liferay-dxp-subscriptions)
 
 LCS also lets you view and manage your Liferay DXP subscriptions. You can view 
 your project's subscriptions, see how they're being used, assign an environment 
@@ -602,5 +602,3 @@ JVM performance, Liferay page and portlet load times, and number of current
 threads give you an inside look at how your server is running. What's more is 
 that you can do all this collaboratively by inviting others to your project and 
 giving them specific roles in LCS. 
-
-Next, you'll learn about Liferay clustering.

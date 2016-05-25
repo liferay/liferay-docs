@@ -16,12 +16,12 @@ client up and running with LCS:
   such as updating the client, where you need to download and install the client 
   manually. This section shows you where you can download the LCS client app. 
 
-- [**Preconfiguring the LCS Client to Connect Through a Proxy:**](/discover/portal/-/knowledge_base/7-0/configuring-the-lcs-client#)
+- [**Preconfiguring the LCS Client to Connect Through a Proxy:**](/discover/portal/-/knowledge_base/7-0/configuring-the-lcs-client#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
   If your server connects to the Internet through a proxy, you must preconfigure 
   the LCS client app before you deploy it to your DXP instance. This section 
   shows you how to do this.
 
-- [**Manually Registering the Client with LCS:**](/discover/portal/-/knowledge_base/7-0/configuring-the-lcs-client#)
+- [**Manually Registering the Client with LCS:**](/discover/portal/-/knowledge_base/7-0/configuring-the-lcs-client#manually-registering-the-client-with-lcs)
   Once you've installed the LCS client app, you must register your DXP instance 
   with LCS. You can do this manually or automatically. Manual registration may 
   work, but is deprecated and not recommended. You should instead 
@@ -63,7 +63,7 @@ there are a few other things you should check. If you connect to the web through
 a proxy, proceed to the next section. Otherwise, you can skip this section and 
 move on to the section on registering the client with LCS. 
 
-## Preconfiguring the LCS Client to Connect Through a Proxy
+## Preconfiguring the LCS Client to Connect Through a Proxy [](id=preconfiguring-the-lcs-client-to-connect-through-a-proxy)
 
 In most cases, deploying and configuring the LCS client is simple. If, however,
 you connect to the web through a proxy, there are some properties you need to 
@@ -95,7 +95,7 @@ and set them to the appropriate values for your proxy.
 Great! Now you're ready to deploy the client and register your Liferay DXP 
 instance with LCS. 
 
-## Manually Registering the Client with LCS
+## Manually Registering the Client with LCS [](id=manually-registering-the-client-with-lcs)
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 
