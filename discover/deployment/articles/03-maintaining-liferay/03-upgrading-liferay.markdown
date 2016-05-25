@@ -271,7 +271,8 @@ processes, you can use the Gogo shell.
 
     **upgrade:execute _{module_name}_:** executes upgrade for that module
 
-    **upgrade:dryRun:** list upgrades pending to execute because they failed in the past
+    **upgrade:check:** list upgrades pending to execute because they failed in the past or
+    the module haven't reached its final version
 
     **upgrade:list:** lists all registered upgrades
 
