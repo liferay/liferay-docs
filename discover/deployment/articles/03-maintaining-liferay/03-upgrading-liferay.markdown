@@ -133,22 +133,24 @@ By default, the tool is executed with the following Java parameters:
     
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
-If you need to modify these parameters you can use the option `-jvmOpts`. For
+If you need to modify these parameters you can use the option `-j`. For
 example, to increase the Java memory in the upgrade process to 4GB:
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar -jvmOpts="-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx4096m"
+    java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx4096m"
 
 You can also set the location of the log file that prints the output: 
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar -logFile="output.log"
+    java -jar com.liferay.portal.tools.db.upgrade.client.jar -l "output.log"
 
-Here's the complete list of command line options: 
+Here's the complete list of command line options:
 
-**--jvmOpts** or **-j** : sets any JVM options for the upgrade process
+**--help** or **-h**: prints help message for using the tool
 
-**--logFile** or **-l**: uses a custom name for your log file
+**--jvm-opts** or **-j** + <arg>: sets any JVM options for the upgrade process
 
-**--noShell** or **-n**: disables connection to the Gogo shell during upgrades
+**--log-file** or **-l** + <arg>: uses a custom name for your log file
+
+**--shell** or **-s**: automatically connect to GoGo shell after finishing the upgrade
 
 The upgrade requires you to configure it before it can run. This configuration
 can be done at runtime, or you can pre-configure it in three files:
