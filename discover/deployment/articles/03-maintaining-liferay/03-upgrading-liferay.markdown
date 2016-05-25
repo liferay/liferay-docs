@@ -19,6 +19,15 @@ you'll need to look at your `portal-setup-wizard.properties` and your
 `portal-ext.properties` files and decide whether @product@'s new defaults are
 compatible with your settings.
 
++$$$
+
+**Important**: Before performing the upgrade, be sure that you have installed
+the latest version of the Liferay plugins you were using (kaleo, calendar,
+notifications, etc.) in your original Liferay version. This will allow you to
+run the upgrade without unnecessary issues.
+
+$$$
+
 Altough you can perfom the upgrade in one step if you're coming from Liferay
 6.0.12 or higher you should take into account previous upgrade configurations.
 
