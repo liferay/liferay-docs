@@ -55,6 +55,16 @@ The User Segment Content Display application allows site administrators to
 preview the various assets that have been configured to be displayed to
 different user segments.
 
++$$$
+
+**Note:** You can also provide similar functionality from the Asset Publisher
+application. You're able to configure a User Segments Filter that will only
+display content for particular user segments. To learn more about this, see the
+[Categorizing Pages and Content for User Segments](/develop/tutorials/-/knowledge_base/7-0/categorizing-pages-and-content-for-user-segments)
+tutorial.
+
+$$$
+
 ## User Segment Content List
 
 The User Segment Content List application displays content that has been
@@ -122,11 +132,13 @@ default image.
 
 **Note:** When Audience Targeting is enabled with a large number of rules,
 tracking actions, and reports, you may need to adjust some JVM parameters of
-your server for optimal performance. Visit the
+your server for optimal performance.
+
+<!-- Visit the
 [Performance Tuning](/discover/deployment/-/knowledge_base/6-2/performance-tuning)
 section for details.
 
-<!-- Update link above, when available. -Cody -->
+Update link above, when available. -Cody -->
 
 $$$
 

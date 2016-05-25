@@ -38,6 +38,11 @@ choose *Active*, and then click *Save*. To actually present content to the users
 belonging to the *Female Baseball Fans* user segment, you need to use the
 Campaign Content Display application.
 
+Once you've created a campaign, you can open its summary view, which displays
+relevant data and configurations.
+
+![Figure 2: Select a pre-existing campaign to view its Summary page.](../../images-dxp/campaign-summary.png)
+
 To configure permissions for creating, editing, and deleting user segments,
 visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
 *Define Permissions* button corresponding to the role you'd like to configure
