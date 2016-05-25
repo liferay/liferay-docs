@@ -124,8 +124,10 @@ supported. The following exception is thrown if you try to do that:
 
     [MainServlet:237] java.lang.RuntimeException: You must first upgrade to Liferay Portal 7000
 
-The upgrade tool can be found in the `tools` folder, in a folder called
-`portal-tools-db-upgrade-client`. Use the following command to start it: 
+In case of the Liferay bundle, the upgrade tool can be found inside in the
+`tools` folder inside `liferay.home` directory, in a folder called
+`portal-tools-db-upgrade-client` altough you can also download it as
+standalone application. Use the following command to start it: 
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar
 
