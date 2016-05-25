@@ -94,7 +94,7 @@ your `[Liferay Home]/osgi/configs` folder with the following content:
 Setting the property above disables indexing. By disabling indexing, you prevent
 performance issues arising from the indexer attempting to reindex your content
 during the upgrade process.  Once you have upgraded your @product@ instance,
-remove this property or set it to `false` so that you can index all objects from
+make sure to set this property to `false` so that you can index all objects from
 the Control Panel.
 
 ## Optional: Upgrading Modules Individually [](id=upgrading-modules-individually)
