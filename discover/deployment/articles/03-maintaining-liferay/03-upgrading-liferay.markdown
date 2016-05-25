@@ -1,12 +1,24 @@
 # Upgrading to Liferay 7 [](id=upgrading-to-liferay-7)
 
-Liferay can be upgraded using a straightforward process, but to upgrade to the
-latest release, you mus be coming from Liferay 6.2. If you're currently using an
-older release, please see the
+Liferay can be upgraded using a straightforward process. To upgrade to the
+latest release in one step, you must be coming from Liferay 6.0.12 or higher.
+
+Altough you can perfom the upgrade in one step you should take into account
+previous upgrade configurations:
+
+- If you come from 6.1.x version, please check the
+[6.2 upgrade properties](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)
+information to set your configuration properly prior to perform the upgrade.
+- If you come from 6.0.12, besides previous configuration you should also take
+into account the
+[migrate image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images)
+information.
+
+If you're comming from Liferay 6.0.11 or below you should upgrade your portal
+to Liferay 6.2 before approaching an upgrade to the Liferay 7 platform. Please,
+see please see the
 [Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
-article for information on upgrading to Liferay 6.2. If you're coming from a
-version prior to 6.2, you'll need to perform the 6.2 upgrade tasks first before
-approaching an upgrade to the Liferay 7 platform. 
+article for information on upgrading to Liferay 6.2 first.
 
 ## Preparing an upgrade to Liferay 7 [](id=upgrading-to-liferay-7)
 
