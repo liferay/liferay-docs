@@ -44,6 +44,8 @@ available to all of its child sites.
 Custom rules can be created by developers and deployed as OSGi plugins. See the
 [Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types)
 tutorial for details.
+
+<!-- Update tutorial above, when available. -Cody -->
  
 These are some of the rules that are included with the app by default:
 

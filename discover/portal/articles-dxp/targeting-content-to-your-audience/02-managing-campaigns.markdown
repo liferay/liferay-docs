@@ -88,7 +88,7 @@ something not working as your team expected:
  - Number of users who started to fill out the Register form
  - Number of users who completed the registration
 
-![Figure 7.6: Drag and drop metrics to the right to configure a campaign.](../../images/07-audience-targeting-tracking-actions.png)
+![Figure 3: Drag and drop metrics to the right to configure a campaign.](../../images-dxp/audience-targeting-metrics.png)
 
 You can assign metrics to a campaign report, which is elaborated on in the next
 section. To access the Metrics palette, select a pre-existing campaign, select
