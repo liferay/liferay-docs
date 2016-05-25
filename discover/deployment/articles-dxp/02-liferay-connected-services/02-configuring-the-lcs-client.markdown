@@ -106,7 +106,7 @@ may not work.
 [Using an environment token](/discover/portal/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
 is the preferred way to register your server with LCS. 
 
-$$
+$$$
 
 Access the client by clicking on *Liferay Connected Services* under the 
 *Configuration* section of the *Control Panel*. 
