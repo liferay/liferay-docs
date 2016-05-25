@@ -1,4 +1,4 @@
-# Using the Audience Targeting Applications
+# Using the Audience Targeting Applications [](id=using-the-audience-targeting-applications)
 
 The Audience Targeting app not only adds the Audience Targeting application to
 the Site Administration area of the Control Panel, it also includes the
@@ -13,7 +13,7 @@ site administrators can customize the look and feel of the application. Any of
 Liferay Portal's out-of-the-box Asset Publisher ADTs can actually be re-used for
 these Audience Targeting applications.
 
-## User Segment Content Display
+## User Segment Content Display [](id=user-segment-content-display)
 
 The User Segment Content Display application allows administrators to specify
 exactly which content to display to a user based on the user segments that the
@@ -65,7 +65,7 @@ tutorial.
 
 $$$
 
-## User Segment Content List
+## User Segment Content List [](id=user-segment-content-list)
 
 The User Segment Content List application displays content that has been
 categorized for the user segments that match the user segments to which the
@@ -86,7 +86,7 @@ application to display only assets of specific types. For example, you can
 configure the User Segment Content List application to only display web content
 articles and documents.
 
-## Campaign Content Display
+## Campaign Content Display [](id=campaign-content-display)
 
 The Campaign Content Display application is similar to the User Segment Content
 Display application except that instead of displaying an asset based on the user

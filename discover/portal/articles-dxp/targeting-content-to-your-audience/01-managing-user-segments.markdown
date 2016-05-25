@@ -1,4 +1,4 @@
-# Managing User Segments
+# Managing User Segments [](id=managing-user-segments)
 
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Menu allows you to manage user segments and
@@ -39,7 +39,7 @@ Therefore, user segments and campaigns defined in the Global scope will be
 available to any site. User segments and campaigns created in a site will be
 available to all of its child sites.
 
-## User Segment Rules
+## User Segment Rules [](id=user-segment-rules)
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
 [Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types)
@@ -87,7 +87,7 @@ Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
 Content Display application.
 
-## Categorizing Pages and Content for User Segments
+## Categorizing Pages and Content for User Segments [](id=categorizing-pages-and-content-for-user-segments)
 
 Each new user segment that's created can be used to categorize pages or content.
 The Audience Targeting app adds a new *User Segment* select button to the SEO
@@ -118,7 +118,7 @@ Filter*.
 
 Next, you'll learn about managing user segment reports.
 
-## Managing User Segment Reports
+## Managing User Segment Reports [](id=managing-user-segment-reports)
 
 When managing user segments, you can select the user segment name and then
 select the *Reports* tab to see the list of reports available for each user

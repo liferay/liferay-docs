@@ -1,4 +1,4 @@
-# Simulating User Segments and Campaigns
+# Simulating User Segments and Campaigns [](id=simulating-user-segments-and-campaigns)
 
 The Audience Targeting app includes a simulator feature. The Audience Targeting
 Simulator allows administrators to preview the way portal pages appear to
@@ -28,7 +28,7 @@ to you the way it would appear to that selected user segment. This allows site
 administrators to navigate around their site as if they were a user that matched
 the selected user segments.
 
-![Figure 1: Audience Targeting provides a simulator in the Simulation menu.](../../images/audience-targeting-simulator.png)
+![Figure 1: Audience Targeting provides a simulator in the Simulation menu.](../../images-dxp/audience-targeting-simulator.png)
 
 Next, you'll examine all the Audience Targeting rules available for you to use
 by default.

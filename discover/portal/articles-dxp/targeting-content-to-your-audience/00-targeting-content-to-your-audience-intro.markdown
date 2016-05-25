@@ -1,4 +1,4 @@
-# Targeting Content To Your Audience
+# Targeting Content To Your Audience [](id=targeting-content-to-your-audience)
 
 @product@'s Audience Targeting app allows you to divide your audience into user
 segments, target specific content to different user segments, and create
