@@ -3,18 +3,7 @@
 Liferay can be upgraded using a straightforward process. To upgrade to the
 latest release in one step, you must be coming from Liferay 6.0.12 or higher.
 
-Altough you can perfom the upgrade in one step you should take into account
-previous upgrade configurations:
-
-- If you come from 6.1.x version, please check the
-[6.2 upgrade properties](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)
-information to set your configuration properly prior to perform the upgrade.
-- If you come from 6.0.12, besides previous configuration you should also take
-into account the
-[migrate image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images)
-information.
-
-If you're comming from Liferay 6.0.11 or below you should upgrade your portal
+If you're coming from Liferay 6.0.11 or below you should upgrade your portal
 to Liferay 6.2 before approaching an upgrade to the Liferay 7 platform. Please,
 see please see the
 [Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
@@ -28,7 +17,10 @@ current installation. It is likely that you have customized your installation's
 properties to create a configuration that works with your requirements, so
 you'll need to look at your `portal-setup-wizard.properties` and your
 `portal-ext.properties` files and decide whether @product@'s new defaults are
-compatible with your settings. 
+compatible with your settings.
+
+Altough you can perfom the upgrade in one step if you're coming from Liferay
+6.0.12 or higher you should take into account previous upgrade configurations.
 
 After that, you'll need to look at your Documents and Media file store and make
 sure the upgrade takes your configuration into account. 
@@ -37,6 +29,20 @@ Finally, to make sure the upgrade process runs smoothly and quickly, you'll
 disable indexing temporarily during the upgrade. 
 
 These steps are described in detail below. 
+
+### Previous upgrade configurations
+
+If you're coming from Liferay 6.2, skip this section. In any other case, please
+follow these instructions to configure your portal-ext.properties properly:
+
+- If you come from any of 6.1 releases, check the
+[6.2 upgrade properties](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)
+information to know which properties you need to configure regarding the 6.2
+upgrade.
+- If you come from 6.0.12, besides previous configuration you should also take
+into account the
+[migrate image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images)
+information.
 
 ### Legacy Properties
 
@@ -58,7 +64,7 @@ Here's a list of the 6.2 properties that have changed in 7.0:
     dl.file.entry.thumbnail.max.width=128
 
 You can find a complete reference for what these properties mean by viewing the
-[properties documentation](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html). 
+[properties documentation](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html).
 
 ### Configuring your Documents and Media File Store
 
