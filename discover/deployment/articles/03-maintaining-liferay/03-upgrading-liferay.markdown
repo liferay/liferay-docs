@@ -110,8 +110,9 @@ in the `/osgi/configs` folder with the following content:
 
     autoUpgrade=false
 
-To run the upgrades for the modules, you'll use the [Gogo shell](develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). The upgrade tool
-opens a Gogo shell automatically after it finishes upgrading the core. 
+To run the upgrades for the modules, you'll use the [Gogo shell](develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+In this case, the upgrade tool opens a Gogo shell automatically after it finishes
+upgrading the core. 
 
 ## Running the Upgrade [](id=running-the-upgrade)
 
@@ -254,7 +255,8 @@ automatic mode. If the modules are not in automatic mode, they can be upgraded
 individually as explained below.
 
 After performing the upgrade, a Gogo shell is automatically opened in case you
-need to upgrade some modules manually. Read on to learn how to do that. 
+need to upgrade some modules manually or if there was an error during the
+process. Read on to learn how to do that. 
 
 ## Gogo shell commands for module upgrades [](id=gogo-shell-commands-for-module-upgrades)
 
