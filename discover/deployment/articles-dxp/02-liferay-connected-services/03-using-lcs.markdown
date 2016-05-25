@@ -306,7 +306,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 9: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics.png)
+![Figure 9: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
