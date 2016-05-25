@@ -284,8 +284,6 @@ processes, you can use the Gogo shell.
 
     **upgrade:list | grep Registered:** lists registered upgrades and their versions
 
-    **upgrade:list | grep Registered | grep steps:** lists registered upgrades in progress
-
     **verify:execute _{module_name}_:** executes a verifier
 
     **verify:list:** lists all registered verifiers
