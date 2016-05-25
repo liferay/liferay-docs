@@ -6,7 +6,9 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.regex.Pattern;
 
 public class CheckHeadersTask {
@@ -29,13 +31,28 @@ public class CheckHeadersTask {
 		}
 
 		List<File> docSetDirFolders = new ArrayList<File>();
+		Queue<File> q = new LinkedList<File>();
+		
 		File articlesDirContents[] = articlesDir.listFiles();
-		for (int i = 0; i < articlesDirContents.length; i++) {
-			if (articlesDirContents[i].isDirectory()) {
-				docSetDirFolders.add(articlesDirContents[i]);
+		for (File f : articlesDirContents) {
+			if (f.isDirectory()) {
+				q.add(f);
+			}
+		}
+	
+		while (!q.isEmpty()) {
+			File f = q.remove();
+			docSetDirFolders.add(f);
+			File[] files = f.listFiles();
+		
+			for (File file : files) {
+				if (file.isDirectory()) {
+					q.add(file);
+				}
 			}
 		}
 
+		docSetDirFolders.add(articlesDir);
 		docSetDirFolders.add(docSetDir);
 
 		File docSetDirFoldersArray[] = docSetDirFolders.toArray(
