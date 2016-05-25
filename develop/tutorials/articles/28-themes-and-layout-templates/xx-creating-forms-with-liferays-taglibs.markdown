@@ -104,9 +104,13 @@ configuration:
 
 The `action` attribute specifies where to send the form data when the form is
 submitted. The `method` attribute defines the method to use to send the form
-data(in most cases this will be post). Finally, the `name` attibute specifies
+data(in most cases this will be post). Finally, the `name` attribute specifies
 the name for the form, as well as the ID for the component instance for the
-form. You can find a full list of the available attributes for the `<aui:form>`
+form. It's important to note that, by default, `aui:form` places the portlet 
+namespace in front of the `name` and `id` attributes. This is also the default 
+behavior for the `aui:input` tag as well.
+
+You can find a full list of the available attributes for the `<aui:form>`
 tag in the [AUI Form Taglib Docs](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/form.html).
 
 Now that your form element is created, you can add your fieldsets next.
@@ -213,9 +217,21 @@ The `<aui:button-row>` tags acts as a wrapper for the form's buttons, and offers
 some additional styling through the `cssClass` attribute.
 
 The `<aui:button>` tag is a standard input button, with some additional
-attributes. It supports the `button`, `submit`, `cancel`, and `reset` types for
-the `type` attribute. For a full list of the attributes available for the
-`<aui:button>` tag, check out the [AUI Button Taglib Docs](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/button.html).
+attributes. It supports the `button`, `submit`(the default type), `cancel`, and 
+`reset` types for the `type` attribute. Note that you if you wish to emphasize
+the button as a primary action, you can add the `primary="true"` attribute to 
+your button:
+
+    <aui:button 
+        cssClass="btn-lg"
+        id="submit"
+        label="save"
+        primary="<%= true %>" 
+        type="submit"
+    />
+
+For a full list of the attributes available for the `<aui:button>` tag, check 
+out the [AUI Button Taglib Docs](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/button.html).
 
 Your form is complete!
 
