@@ -16,7 +16,7 @@ If you're having trouble using Liferay Screens, it may help to investigate the
 sample apps developed by Liferay. These are listed here:
 
 - [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
-- [Test App](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app). 
+- [Test App](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app) 
 
 Both serve as good examples of how to use Screenlets and Views.
 
