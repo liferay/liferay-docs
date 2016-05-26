@@ -15,6 +15,10 @@ you need to classify all the devices for which you'd like to define actions.
 Families can be prioritized to determine which one applies to a given page
 request.
 
+<!-- According to Mike Han, Liferay is planned to have a new contract with a
+Device Database within three months. Update the material in this section when
+this is available. -Cody 5-26-16 -->
+
 In order to configure mobile device rules, you need a way to find out the
 characteristics of the device. While some of the characteristics are provided by
 the device, most are not. For this reason, there are databases that contain
@@ -23,42 +27,13 @@ learn every detail about a device from the device type, which is included in
 each request sent to the portal. Liferay's Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
-Among the applications available on Liferay Marketplace, you can find the Device
-Recognition Provider EE application. This app provides out-of-the-box
-integration with WURFL, an open source database licensed with the AGPLv3
-license. Commercial licenses are also available. It's also possible to develop
-plugins that integrate with other device databases. Even if you don't have a
-device database, you can still set up mobile device rules. They won't, however,
-be effective until a database is deployed, because the portal won't have enough
-information about the devices being used to make page requests.
-
-To configure mobile device rules, you must install the Device Recognition
-Provider EE application on your instance of Liferay Portal EE. This app uses the
-WURFL database to enable Liferay to detect which mobile device or operating
-system is being used for any given request. To install the app, navigate to the
-Store section of the Control Panel, located under the Marketplace heading. Click
-on the *Utility* section and then on *See All*. Search for the Device
-Recognition Provider EE application and click on it. Finally, click on the price
-tag to begin purchasing the app. Once you've acquired the app, you need to
-download and install it. To do so, navigate to the Purchased section of the
-Control Panel, find your Device Recognition Provider EE app, and click on
-*Download* and then *Install*.
-
-+$$$
-
-**Installation Note:** If your server doesn't have access to the outside
-Internet, an error appears in your log: `SLF4J: Failed to load class
-"org.slf4j.impl.StaticLoggerBinder`. This occurs because WURFL by default
-downloads device information from the web. You can provide the same information
-to WURFL manually by downloading the SLF4J distribution from
-[http://www.slf4j.org/download.html](http://www.slf4j.org/download.html),
-unzipping the resulting file, copying `slf4j-log4j12-<version>.jar` to
-`[WEB_APP_HOME]/wurfl-web/WEB-INF/lib` folder, and restarting your Liferay
-instance. On some application servers, you'll need to add this .jar file to the
-`wurfl-web.war` file first (in the directory noted above) before deploying the
-file to your server. 
-
-$$$
+It's possible to develop plugins that integrate with other device databases.
+Even if you don't have a device database, you can still set up mobile device
+rules. They won't, however, be effective until a database is deployed, because
+the portal won't have enough information about the devices being used to make
+page requests. To learn how to tap into Liferay's Device API, see the
+[Using the Device Recognition API](/develop/tutorials/-/knowledge_base/6-2/using-the-device-recognition-api)
+tutorial.
 
 You can access the Mobile Device Families administrative page from the
 Configuration section of Site Administration. Make sure you're on the
@@ -82,7 +57,7 @@ that it's characterized as a *Simple Rule*. By default, only the Simple Rule
 type is available. The rules are designed to be extensible, and additional rule
 types can be added by your developers.
 
-![Figure 3.29: You need to install the Device Recognition Provider EE application to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.29: You need to use a device recognition application to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device families and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a family

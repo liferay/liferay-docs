@@ -1,7 +1,5 @@
 # Using the Device Recognition API [](id=using-the-device-recognition-api)
 
-![EE Only Feature](../../images/ee-feature-web.png)
-
 As you know, Internet traffic has risen exponentially over the past decade, and
 this trend shows no sign of stopping. In addition, the bulk of Internet traffic 
 now comes from mobile devices. The mobile boom presents new obstacles and 
@@ -12,13 +10,11 @@ cousin's awesome new smart phone request the same information from your portal?
 The Device API detects the capabilities of any device making a request to your
 portal. It can also determine what mobile device or operating system was used to
 make a request, and then follows rules to make Liferay render pages based on the
-device. To use this feature, you first need to install the *Device Recognition
-Provider EE* app from the [Liferay Marketplace](http://www.liferay.com/marketplace). 
+device.
 
-The Device Recognition plugin comes bundled inside the Device Recognition
-Provider app. It uses a device database called *WURFL* to determine the 
-capabilities of your device. Visit the WURFL website for more information at
-[http://wurfl.sourceforge.net](http://wurfl.sourceforge.net).
+<!-- According to Mike Han, Liferay is planned to have a new contract with a
+Device Database within three months. Update the material in this tutorial when
+this is available. -Cody 5-26-16 -->
 
 You can create your own plugin that makes use of your device's database. 
 This tutorial shows you some of the methods in the Device API that you 
@@ -55,11 +51,9 @@ device's operating system, browser, form factor, and much more. Capabilities
 can be retrieved with the `getCapability` and `getCapabilities` methods of the
 Device API. 
 
-Most of the capabilities of the requesting device can be detected, depending on 
-the device detection implementation you're using. The Device Recognition 
-plugin's device database (WURFL) has a list of capabilities, described at
-[http://www.scientiamobile.com/wurflCapability/tree](http://www.scientiamobile.com/wurflCapability/tree).
-For example, you can obtain the brand name of the device with this code:
+Most of the capabilities of the requesting device can be detected, depending on
+the device detection implementation you're using. For example, you can obtain
+the brand name of the device with this code:
 
     String brand = device.getCapability("brand_name");
 
