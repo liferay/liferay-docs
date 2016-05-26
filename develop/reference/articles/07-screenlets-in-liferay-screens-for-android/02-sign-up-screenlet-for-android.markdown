@@ -29,10 +29,11 @@ device's keyboard.
 
 ## Portal Configuration [](id=portal-configuration)
 
-`SignUpScreenlet`'s portal configuration can be set in the Control Panel by
-clicking *Portal Settings* and then *Authentication*. 
+`SignUpScreenlet`'s corresponding configuration in the Liferay instance can be 
+set in the Control Panel by selecting *Configuration* &rarr; *Instance 
+Settings*, and then selecting the *Authentication* section. 
 
-![The portal's authentication settings.](../../images/screens-portal-signup.png)
+![The Liferay instance's authentication settings.](../../images/screens-portal-signup.png)
 
 For more details, refer to the 
 [Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 

@@ -53,11 +53,13 @@ the method `SessionContext.loadStoredCredentials()`.
 ### Basic Authentication [](id=basic-authentication)
 
 Before using `LoginScreenlet`, you should make sure your portal is configured 
-with the authentication method you want to use. You can choose email address, 
-screen name, or user ID. You can set this in the Control Panel by clicking 
-*Portal Settings* &rarr; *Authentication*.
+with the authentication option you want to use. You can choose email address, 
+screen name, or user ID. You can set this in the Control Panel by selecting 
+*Configuration* &rarr; *Instance Settings*, and then selecting the 
+*Authentication* section. The authentication options are in the *How do users 
+authenticate?* selector menu. 
 
-![Setting the authentication method in Liferay Portal.](../../images/screens-portal-auth.png)
+![Setting the authentication method in your Liferay instance.](../../images/screens-portal-auth.png)
 
 For more details, see the 
 [Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
@@ -65,16 +67,21 @@ section of the User Guide.
 
 ### OAuth Authentication [](id=oauth-authentication)
 
++$$$
+
+**Note:** OAuth authentication is only available in Liferay DXP instances. 
+
+$$$
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5-_VVAyY-0" frameborder="0" allowfullscreen></iframe>
 
-If you want to use OAuth authentication, you first need to install the 
-[OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
-from Liferay's Marketplace. Once this plugin is installed, go to 
+If you want to use OAuth authentication, you first need to install the OAuth 
+Provider app from 
+[Liferay's Marketplace](https://web.liferay.com/marketplace). 
+Once this app is installed, go to 
 *Control Panel &rarr; Users &rarr; OAuth Admin*, and add a new application to be 
-used from Liferay Screens. When the app is created, copy the *Consumer Key* and 
-*Consumer Secret* values for later use in `LoginScreenlet`.
-
-![Copy the Consumer Key and Consumer Secret from OAuth Admin in your portal.](../../images/screens-portal-oauth.png)
+used from Liferay Screens. Once the application is created, copy the *Consumer 
+Key* and *Consumer Secret* values for later use in `LoginScreenlet`. 
 
 ## Offline [](id=offline)
 

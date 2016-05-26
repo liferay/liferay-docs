@@ -49,7 +49,10 @@ password using the `email` authentication method.
 
 ### Password Reset [](id=password-reset)
 
-Password recovery depends on the authentication settings in the portal:
+You can set the Liferay instance's corresponding password reset options in the 
+Control Panel by selecting *Configuration* &rarr; *Instance Settings*, and then 
+selecting the *Authentication* section. The Screenlet's password functionality 
+depends on the authentication settings in the portal: 
 
 ![Checkboxes for the password recovery features in Liferay Portal.](../../images/screens-password-reset.png)
 

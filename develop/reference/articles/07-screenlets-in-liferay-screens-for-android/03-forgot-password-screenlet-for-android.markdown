@@ -49,9 +49,12 @@ for sign in authentication, but allow users to recover their password using the
 
 ### Password Reset [](id=password-reset)
 
-Password recovery depends on the authentication settings in the portal:
+You can set the Liferay instance's corresponding password reset options in the 
+Control Panel by selecting *Configuration* &rarr; *Instance Settings*, and then 
+selecting the *Authentication* section. The Screenlet's password functionality 
+depends on the authentication settings in the portal: 
 
-![Checkboxes for the password recovery features in Liferay Portal.](../../images/screens-password-reset.png)
+![Checkboxes for the password recovery features in your Liferay instance.](../../images/screens-password-reset.png)
 
 If these options are both unchecked, password recovery is disabled. If both
 options are checked, an email containing a password reset link is sent when a
