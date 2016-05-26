@@ -4,7 +4,7 @@
 
 - Xcode 7.3
 - iOS 9 SDK
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 
 ## Compatibility [](id=compatibility)
 

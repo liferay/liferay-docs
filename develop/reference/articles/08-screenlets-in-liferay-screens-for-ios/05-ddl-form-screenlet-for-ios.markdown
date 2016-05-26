@@ -6,11 +6,12 @@
 
 - Xcode 7.3
 - iOS 9 SDK
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 - Liferay Screens Compatibility Plugin
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). 
+  depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
+  and Liferay DXP instances. 
 
 ## Compatibility [](id=compatibility)
 

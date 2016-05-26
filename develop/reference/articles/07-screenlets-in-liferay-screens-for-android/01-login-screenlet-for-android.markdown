@@ -3,9 +3,9 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
-- [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
-  (only when using OAuth for authentication)
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP
+- OAuth Provider app (OAuth authentication is optional. Note that OAuth only 
+  works with Liferay EE and DXP instances).
 
 ## Compatibility [](id=compatibility)
 
@@ -113,6 +113,7 @@ methods:
 
 - `onLoginSuccess(User user)`: Called when login successfully completes. The 
   `user` parameter contains a set of the logged in user's attributes. The 
-  supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
+  supported keys are the same as those in the 
+  [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
 
 - `onLoginFailure(Exception e)`: Called when an error occurs in the process.
