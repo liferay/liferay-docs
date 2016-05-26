@@ -43,7 +43,7 @@ because they are all made up of inter-operating modules that individually
 implement specific functionality, but when put together comprise an entire
 working system. 
 
-Modularity is a powerful paradigm for designing any complex system like Liferay.
+Modularity is a powerful paradigm for designing any complex system like @product@.
 And now Liferay has made a bold move and re-engineered its product to take
 advantage of modularity. 
 
@@ -62,7 +62,7 @@ benefits:
     the registry to manage dependencies automatically. <!-- Automatic management
     of dependencies. --> 
 - The container manages module lifecycles dynamically. Modules can be installed,
-    started, updated, stopped, and uninstalled while Liferay is running, making
+    started, updated, stopped, and uninstalled while @product@ is running, making
     deployment a snap. 
 - <!-- OSGi provides a way to hide internal classes so they cannot be seen. --> Modules hide their internals from other modules, giving developers free reign
     to change the internals whenever needed. 
@@ -446,7 +446,7 @@ back-ends. In the case of the Wiki, there are separate modules for different
 Wiki engines. 
 
 All of this is for extensibility. If you have a document storage back-end that
-Liferay doesn't yet support, you can implement Liferay's document storage API
+@product@ doesn't yet support, you can implement Liferay's document storage API
 for your solution by developing a module for it and thus extend Liferay's
 Documents and Media library. If there's a Wiki dialect that you like better than
 what Liferay's wiki provides, you can write a module for it and extend Liferay's
@@ -461,6 +461,6 @@ for you to learn more.
 
 [Creating A Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
 
-[Migrating A Legacy Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-legacy-application)
+[Migrating A Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
 
 

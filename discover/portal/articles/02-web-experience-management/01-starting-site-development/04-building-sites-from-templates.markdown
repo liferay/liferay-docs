@@ -203,14 +203,14 @@ merge fail error so I can take a screenshot for Figure 4. -Cody -->
 
 In some cases, merging site template and site changes fails. For example, if
 pages from a site template cannot be propagated because their friendly URLs are
-in conflict, Liferay could try to continuously merge the site changes. Instead
-of entering into an infinite loop of merge fails, Liferay stops the merge after
-several unsuccessful attempts. Liferay, however, doesn't stop there: your merge
-is temporarily paused, you're given an indication of the current merge fail, and
-then you have the opportunity to fix your merge conflicts. After you've squared
-away your conflict, navigate to your site's *Site Administration* &rarr;
-*Configuration* &rarr; *Site Settings* and click the *Reset and Propagate*
-button.
+in conflict, @product@ could try to continuously merge the site changes. Instead
+of entering into an infinite loop of merge fails, @product@ stops the merge
+after several unsuccessful attempts. @product@, however, doesn't stop there:
+your merge is temporarily paused, you're given an indication of the current
+merge fail, and then you have the opportunity to fix your merge conflicts. After
+you've squared away your conflict, navigate to your site's *Site Administration*
+&rarr; *Configuration* &rarr; *Site Settings* and click the *Reset and
+Propagate* button.
 
 ![Figure 4: This type of warning is given when there are friendly URL conflicts with site template pages.](../../../images/friendly-url-propagation-failure.png)
 

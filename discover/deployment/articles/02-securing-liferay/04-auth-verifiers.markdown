@@ -16,13 +16,13 @@ In contrast, legacy (prior to 6.2) versions of Liferay exposed two API
 endpoints for each API: the `/api/endpoint` URI was for non-authenticated
 access and the URI `/api/secure/endpoint` was for authenticated access.
 
-Liferay offers built-in `AuthVerifier` implementations for the most common
+@product@ offers built-in `AuthVerifier` implementations for the most common
 situations. These include situations where remote clients use HTTP Basic or
 HTTP Digest authentication, send credentials in request parameters, send
 authenticated `JSESSIONID`s, or use shared secrets to establish trust. Other
 `AuthVerifier` implementations can be deployed as modules containing
 implementations of the `AuthVerifier` interface that are registered as services
-in Liferay's OSGi runtime.
+in @product@'s OSGi runtime.
 
 Note: The authentication verification layer's focus is on verifying
 authentication, not on providing credentials. The authentication verification

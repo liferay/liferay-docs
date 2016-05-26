@@ -1,20 +1,18 @@
 # Mobile SDK [](id=mobile-sdk)
 
-Want to harness all the power that Liferay Portal offers from your mobile apps?
-Thanks to Liferay's Mobile SDK, you can do just that. The Liferay Mobile SDK
-provides a way to streamline consuming Liferay core web services, Liferay
-utilities, and custom portlet web services. It's a low-level layer that wraps 
-Liferay JSON web services, making them easy to call in native mobile apps. It 
-takes care of authentication, makes HTTP requests (synchronously or 
-asynchronously), parses JSON results, and handles server-side exceptions so you 
-can concentrate on *using* the services in your app. The Liferay Mobile SDK 
-bridges the gap between your native app and Liferay services. The official 
-project 
+Want to wield Liferay's power in your mobile apps? Thanks to Liferay's Mobile 
+SDK, you can do just that. The Liferay Mobile SDK provides a way to streamline 
+consuming Liferay core web services, Liferay utilities, and custom app web 
+services. It's a low-level layer that wraps Liferay JSON web services, making 
+them easy to call in native mobile apps. It takes care of authentication, makes 
+HTTP requests (synchronously or asynchronously), parses JSON results, and 
+handles server-side exceptions so you can concentrate on *using* the services in 
+your app. The Liferay Mobile SDK bridges the gap between your native app and 
+Liferay services. The official project 
 [page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview) 
 gives you access to the SDK releases, provides the latest SDK news, and has 
 forums for you to engage in mobile app development discussions. The Liferay 
-Mobile SDK is available as separate downloads for Android and iOS, and is 
-compatible with Liferay Portal 6.2 and later. 
+Mobile SDK is available as separate downloads for Android and iOS. 
 
 ![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../../images/mobile-sdk-diagram.png)
 

@@ -1,7 +1,7 @@
 # Creating Sites [](id=creating-sites)
 
 A site contains a set of pages that can be used to publish content or
-applications. By default, Liferay starts with a single site that has a
+applications. By default, @product@ starts with a single site that has a
 single page. You can build any website you wish out of this, complete with
 multi-nested page hierarchies. The site can stand independently or can be
 associated with an organization to serve as the website for that organization.
@@ -33,19 +33,19 @@ organization, all the users of that organization are automatically considered
 members of the site.
 
 Members of a site can be given additional privileges within the site by using
-Liferay's permission settings. It is also possible to assign different roles
+@product@'s permission settings. It is also possible to assign different roles
 within the site to different members. This can be done through *site roles*,
 which are defined equally for all sites or *teams* which are unique for each
 site. These concepts will be discussed later in the chapter.
 
-Liferay separates site-scoped information from the Control Panel by placing it
+@product@ separates site-scoped information from the Control Panel by placing it
 in the Sites menu. From this menu, you can select the specific site to work on.
 The Site Administration panel is available for your site, which includes Pages,
 Content, Members, Configuration, and Publishing.
 
 ![Figure 1: Your site's content resides in the Site Administration menu.](../../../images/web-content-site-content.png)
 
-For details about Liferay's social collaboration suite, see the
+For details about @product@'s social collaboration suite, see the
 [Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
 section.
 
@@ -97,7 +97,7 @@ scoped for all sites in the instance.
 entities in Liferay have changes to "instance". Check back with this name before
 release of Liferay 7. -Cody -->
 
-Liferay's sites have two categories of pages called page sets. There are two
+@product@'s sites have two categories of pages called page sets. There are two
 kinds of page sets: public pages and private pages. A site can have only public
 pages, only private pages, or both. Private pages can only be accessed by site
 members. Public pages can be accessed by anyone, including users who haven't
@@ -134,7 +134,7 @@ want to share. For example, those who enjoy taking pictures of landscapes could
 join a Landscapes site and those who enjoy taking pictures of sunsets could join
 a Sunsets site.
 
-Liferay always provides one default site, which is also known as the main site
+@product@ always provides one default site, which is also known as the main site
 of the instance. This site does not have its own name but rather takes the name
 of the instance. By default the instance name is *Liferay* but this value can be
 changed through the simple configuration of the setup wizard. The instance name
@@ -145,7 +145,7 @@ can also be changed at any time through the Control Panel within *Configuration
 
 Sites can be created through the Control Panel by a Liferay administrator.
 Liferay's Control Panel provides an administrative interface for managing your
-Liferay instance. There are four main sections of the Liferay's Control Panel:
+Liferay instance. There are four main sections of the Liferay Control Panel:
 Users, Sites, Apps, and Configuration. In this section, you'll learn how to use
 the Control Panel to manage sites. In a later section, you'll learn about using
 the Control Panel to manage site templates. Site templates allow Liferay
@@ -481,10 +481,10 @@ listed under the General tab.
 #### Analytics [](id=analytics)
 
 Analyzing site traffic is another huge advantage for site administrators that
-want to monitor what content is most popular. Liferay includes built-in support
-for Google Analytics, allowing administrators to make use of Google's tool set
-for analyzing site traffic data. When you sign up for Google Analytics, a
-snippet of code is provided which needs to be added to your web pages to allow
+want to monitor what content is most popular. @product@ includes built-in
+support for Google Analytics, allowing administrators to make use of Google's
+tool set for analyzing site traffic data. When you sign up for Google Analytics,
+a snippet of code is provided which needs to be added to your web pages to allow
 Google's system to register the page hit. It can be a tedious process to add
 this code to every page on a site, especially if it's a large site and there is
 a lot of user-generated content.
@@ -493,9 +493,9 @@ This problem can be solved in Liferay by putting Google's code into a custom
 theme written specifically for the web site on which Liferay is running. Doing
 this, however, requires a theme developer to make specific changes to the theme
 and it prevents users from using the many themes that are freely available for
-Liferay "out of the box."
+@product@ "out of the box."
 
-Because of this, support for Google Analytics has been built into Liferay, and
+Because of this, support for Google Analytics has been built into @product@, and
 can be turned on through a simple user interface. This allows Liferay
 administrators to make use of Google Analytics on a site by site basis and turn
 it on and off when needed. You can sign up for Google Analytics at the Google
@@ -540,7 +540,7 @@ personal sites.
 
 ## Customizing Personal Sites [](id=customizing-personal-sites)
 
-By default, newly created users in Liferay are each granted a personal site.
+By default, newly created users in @product@ are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.
 Personal sites are fully customizable but cannot have more than one member. The
 public pages of personal sites provide a space for users to add content and
@@ -596,7 +596,7 @@ sections of the `portal.properties` file for details.
 
 **Note:** By default, users are able to modify the pages and applications of
 their personal sites. Administrators, however, can customize the modifiable
-portions of personal sites through Liferay's permissions system by removing
+portions of personal sites through @product@'s permissions system by removing
 permissions from roles. To disallow all Liferay users from modifying something,
 remove the relevant permission from the User role.
 
@@ -610,8 +610,8 @@ to receive personal sites, add the following properties to your
     layout.user.public.layouts.power.user.required=true
     layout.user.private.layouts.power.user.required=true
 
-Personal sites are a dynamic feature of Liferay. They allow users to manage and
-customize their own pages and content on your Liferay instance.
+Personal sites are a dynamic feature of @product@. They allow users to manage
+and customize their own pages and content on your Liferay instance.
 
 You've officially been introduced to Liferay's concept of sites. Using a point
 and click interface, you can create multiple web sites and define how users can

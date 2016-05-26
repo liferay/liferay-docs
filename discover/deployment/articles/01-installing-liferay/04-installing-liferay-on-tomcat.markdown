@@ -7,7 +7,7 @@ Even if you want to manually install Liferay on an existing Tomcat 8
 application server, it can be helpful to download a Liferay Tomcat bundle. The
 bundle contains many required dependencies and configuration files. Before
 proceeding, you should also download the latest Liferay WAR file from
-[https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
+[https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
 as well as the dependencies ZIP file and OSGi JARs ZIP file.
 
 Installing Liferay manually requires these basic steps:
@@ -55,7 +55,7 @@ third-parties, as described below.
     - `mail.jar` - [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
     - `mysql.jar` - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
     - `persistence.jar`- [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
-    - `portal-service.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/portal-service](http://mvnrepository.com/artifact/com.liferay.portal/portal-service)
+    - `portal-kernel.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.portal.kernel](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.portal.kernel)
     - `portlet.jar` - [http://mvnrepository.com/artifact/javax.portlet/portlet-api](http://mvnrepository.com/artifact/javax.portlet/portlet-api)
     - `postgresql.jar` - [https://jdbc.postgresql.org/download.html](https://jdbc.postgresql.org/download.html)
     - `support-tomcat.jar` - [http://repo1.maven.org/maven2/com/liferay/portal/support-tomcat](http://repo1.maven.org/maven2/com/liferay/portal/support-tomcat)
@@ -65,11 +65,11 @@ third-parties, as described below.
    database whose JDBC driver is not included in the list above, download the
    driver and copy it to your `$TOMCAT_HOME/lib/ext` folder.
 
-4. Liferay includes an OSGi runtime. Extract the OSGi ZIP file that you
-   downloaded and copy the `osgi` folder to your Liferay Home folder. The
-   `osgi` folder contains many required JAR files and a few configuration
-   files. If you're working with a bundle, you can simply copy the `osgi`
-   folder from your bundle to your Liferay Home folder.
+4. Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
+   ZIP file that you downloaded into the `osgi` folder.
+
+    Liferay requires an OSGi runtime, and the `osgi` folder provides this with
+    many required JAR files and configuration files.
 
 ## Tomcat Configuration [](id=tomcat-configuration)
 

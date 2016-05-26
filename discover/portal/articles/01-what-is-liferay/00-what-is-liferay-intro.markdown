@@ -1,7 +1,7 @@
-# What is Liferay? [](id=what-is-liferay)
+# What is @product@? [](id=what-is-liferay)
 
 Let's attempt some mind reading: you're reading this because you need to build
-a website. You're thinking about using Liferay for your site, or you've already
+a website. You're thinking about using @product@ for your site, or you've already
 decided to use it and you want to learn all about it. Either way, you've come to
 the right place. What you'll find here is that @product@ is the right
 decision, and we'll be happy to tell you all the reasons why. But since you

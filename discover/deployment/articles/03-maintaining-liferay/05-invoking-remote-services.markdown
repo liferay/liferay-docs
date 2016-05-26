@@ -1,9 +1,9 @@
 # Invoking Liferay Services Remotely [](id=invoking-liferay-services-remotely)
 
-Liferay includes a script console which administrators can use to invoke
+@product@ includes a script console which administrators can use to invoke
 Liferay's API. See the (not yet written) [Using Liferay's Script Console]()
 article for more information. Liferay's API can also be invoked remotely. How
-is this possible? Liferay includes a utility called the *Service Builder* which
+is this possible? @product@ includes a utility called the *Service Builder* which
 is used to generate all of the low level code for performing CRUD operations
 for entities that are saved to Liferay's database. This utility is further
 explained in the (not yet written) tutorial [Service Builder](). Service
@@ -13,14 +13,14 @@ behavior for storing and retrieving Liferay objects are consistent.
 
 Because the actual method calls for retrieving data are the same regardless of
 how one gets access to those methods (i.e., locally or through web services),
-Liferay provides a consistent interface for accessing portal data that few
+@product@ provides a consistent interface for accessing portal data that few
 other products can match. The actual interfaces for the various services can be
 found by navigating to Liferay's JSON web services page:
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws). Before
 these services can be invoked, administrators need to enable users to access
 these services remotely.
 
-Liferay includes four layers of web service security:
+@product@ includes four layers of web service security:
 
 - IP permission layer
 - Service access policy layer
@@ -33,15 +33,15 @@ documentation for a description of these security layers.
 
 In the default `portal.properties` file, there is a section called **Main
 Servlet**. This section defines the security settings for all of the remote
-services provided by Liferay. Copy this section and paste it into your custom
+services provided by @product@. Copy this section and paste it into your custom
 `portal-ext.properties` file. Then you can edit the default values to configure
 the security settings for the Axis Servlet, the Liferay Tunnel Servlet, the
 Spring Remoting Servlet, the JSON Tunnel Servlet, and the WebDAV servlet.
 
-By default, a user connecting from the same machine Liferay is running on can
+By default, a user connecting from the same machine @product@ is running on can
 access remote services so long as that user has the permission to use those
 services in Liferay's permissions system. Of course, you are not really
-"remote" unless you are accessing services from a different machine. Liferay
+"remote" unless you are accessing services from a different machine. @product@
 has multiple layers of security when it comes to accessing its services
 remotely. Without explicit rights granted for each layer, attempting to invoke
 a Liferay API function remotely fails and a remote exception is thrown.
@@ -107,7 +107,7 @@ This Liferay web service invocation returns the user with the email address
 `test@liferay.com` in the company (portal instance) with the ID `20154`. Note
 that for the web service invocation to succeed, you must supply a correct value
 for the `p_auth` URL parameter. You can find such a value by signing in to
-Liferay, navigating to
+@product@, navigating to
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) and
 clicking on any function that appears in the list. Use the value for the
 `p_auth` token that appears under the Execute heading. For more examples of
@@ -128,7 +128,7 @@ enforce the password expiration and add your administrative user ID to it. Then
 your batch job can run as many times as you need it to and the administrative
 user account's password will never expire.
 
-In summary, accessing Liferay remotely requires the successful passing of four
+In summary, accessing @product@ remotely requires the successful passing of four
 security checks:
 
 1. The IP address must be pre-configured in the server's
@@ -164,7 +164,7 @@ This lists the JSON Web Service API for the plugin.
 
 After configuring the security settings properly, your first step in obtaining
 access to Liferay's remote SOAP web services is to access the WSDL. If you are
-on a browser on the same machine Liferay is running on, you can do this by
+on a browser on the same machine @product@ is running on, you can do this by
 accessing the following URL:
 
     http://localhost:[port number]/tunnel-web/axis
@@ -195,7 +195,7 @@ Once you click on one of the *WSDL* links, the Web Service Definition Language
 document will be displayed. This document can be used to generate client code
 in any language that supports it. You can either save the document to your
 local machine and then generate the client code that way, or use your tool to
-trigger Liferay to generate the document dynamically by using one of the URLs
+trigger @product@ to generate the document dynamically by using one of the URLs
 above. For information about developing applications that leverage Liferay's
 remote services, please see the
 [Invoking JSON Web Services](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)

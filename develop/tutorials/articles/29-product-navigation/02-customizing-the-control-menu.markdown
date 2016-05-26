@@ -110,8 +110,8 @@ Menu.
    following methods:
 
         @Override
-        public String getIconCssClass(HttpServletRequest request) {
-            return "icon-refresh";
+        public String getIcon(HttpServletRequest request) {
+            return "reload";
         }
 
     More icons can be found in the
@@ -125,6 +125,43 @@ Menu.
             return LanguageUtil.get(
                 resourceBundle, "the-portal-is-currently-reindexing");
         }
+
+    You also have the option to provide a Lexicon or CSS icon in your
+    `*ControlMenuEntry`. To use a Lexicon icon, you should override the methods
+    in `ProductMenuProductNavigationControlMenuEntry` like the following:
+
+        public String getIconCssClass(HttpServletRequest request) {
+            return "";
+        }
+
+        public String getIcon(HttpServletRequest request) {
+            return "lexicon-icon";
+        }
+
+        public String getMarkupView(HttpServletRequest request) {
+            return "lexicon";
+        }
+
+    Likewise, you can use a CSS icon by overriding the
+    `ProductMenuProductNavigationControlMenuEntry` methods like the following:
+
+        public String getIconCssClass(HttpServletRequest request) {
+            return "icon-css";
+        }
+
+        public String getIcon(HttpServletRequest request) {
+            return "";
+        }
+
+        public String getMarkupView(HttpServletRequest request) {
+            return "";
+        }
+
+    The icons used in the two examples for Lexicon and CSS icons can be found in
+    the [icons-lexicon](http://liferay.github.io/lexicon/content/icons-lexicon/)
+    and
+    [icons-font-awesome](http://liferay.github.io/lexicon/content/icons-font-awesome/)
+    components, respectively.
 
     For a more advanced example, you can inspect the
     [ProductMenuProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/java/com/liferay/product/navigation/product/menu/web/product/navigation/control/menu/ProductMenuProductNavigationControlMenuEntry.java).

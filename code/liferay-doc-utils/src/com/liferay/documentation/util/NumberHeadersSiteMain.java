@@ -29,6 +29,7 @@ public class NumberHeadersSiteMain extends Task {
 		String productType = args[1];
 		String token = args[2];
 
+		token = "@" + token + "@";
 		boolean foundDuplicateIds = false;
 		
 		List<String> dirTypes = new ArrayList<String>();
@@ -117,9 +118,6 @@ public class NumberHeadersSiteMain extends Task {
 
 					String line;
 					while ((line = in.readLine()) != null) {
-
-						token = "@" + token + "@";
-
 						if (line.startsWith("#") && !line.contains(token)) {
 						
 							line = line.trim();

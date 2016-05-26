@@ -1,9 +1,9 @@
 # Fundamentals [](id=fundamentals)
 
-Liferay is based on the Java platform and can be extended by adding new
+@product@ is based on the Java platform and can be extended by adding new
 applications, customizing existing applications, modifying its behavior, or
 creating new themes. You can do this with any programming language supported by
-the JVM, such as Java itself, Scala, jRuby, Jython, Groovy, and others. Liferay
+the JVM, such as Java itself, Scala, jRuby, Jython, Groovy, and others. @product@
 is lightweight, can be deployed to a variety of Java EE containers and app
 servers, and it supports a variety of databases. Because of its ability to be
 customized, you can add support for more app servers or databases without
@@ -11,14 +11,14 @@ modifying its source code: just develop and deploy a module with the features
 you need. 
 
 Speaking of code and deploying, here are some of the most common ways of
-expanding or customizing Liferay's features: 
+expanding or customizing @product@s features: 
 
 1. Developing a new full-blown web application. The most common way to develop
-   web applications for Liferay is with a portlet, because it integrates well
+   web applications for @product@ is with a portlet, because it integrates well
    with other existing applications, but you are not limited to portlets if you
    don't need to integrate your apps with others. 
 
-2. Customizing an existing web application or feature. Liferay is designed to be
+2. Customizing an existing web application or feature. @product@ is designed to be
    extended. Many extension points can be leveraged to modify existing behavior,
    and most of these can be developed through a single Java class with some
    annotations (more details later). 
@@ -107,7 +107,7 @@ management system that's handled automatically at runtime.
 because it's dynamic. -->
 
 As you can see, many components running inside the system form something of an
-ecosystem of complementary services. Liferay ships with many components that are
+ecosystem of complementary services. @product@ ships with many components that are
 ready to use out of the box, and of course you can develop your own. You can
 write components to provide new services or to override existing services with
 your own implementation, and the container manages it all. Liferay is an

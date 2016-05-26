@@ -73,6 +73,12 @@ public class CleanImagesSiteMain {
 			File[] imageFiles = imagesDir.listFiles();
 
 			for (File imageFile : imageFiles) {
+				
+				if (imageFile.getName().endsWith(".markdown") || 
+						imageFile.getName().endsWith(".txt")) {
+					continue;
+				}
+				
 				if (!imageNames.contains(imageFile.getName())) {
 					System.out.println("Deleting unused image: "
 							+ imageFile.getName());
@@ -92,8 +98,10 @@ public class CleanImagesSiteMain {
 			imageBegIndex = 17;
 		}
 
+		int imgClosingParen = line.indexOf(")", line.indexOf("../../images"));
+
 		String imageName = line.substring(
-				line.lastIndexOf("../../images") + imageBegIndex, line.lastIndexOf(")"));
+				line.lastIndexOf("../../images") + imageBegIndex, imgClosingParen);
 		return imageName;
 	}
 }

@@ -1,20 +1,17 @@
 # Liferay API Modules [](id=finding-liferay-api-modules)
 
-We want to make it easy for you to find Liferay API modules and specify them in
-your project's dependencies. The following tables provide module information you
-can specify in your project's Ivy file, Gradle build file, or Maven POM. We then
-go on to explain how to access module Javadocs and examine the package structure
-common to Liferay's API modules.
+This document explains how to find Liferay API modules, specify them as
+dependencies, and find their Javadoc. 
 
-Let's start by examining the Liferay module information to specify in project
-Ivy, Gradle, and Maven dependency frameworks. The dependency information
-includes the following dependency attributes:
+Let's start by considering Liferay module information for specifying to Ivy,
+Gradle, and Maven dependency frameworks. This information includes the following
+dependency attributes:
 
 - Group name
 - Module name
 - Module version
 
-The table below provides the Liferay module group values to specify.
+The next table shows the group value to specify to Ivy, Gradle, and Maven. 
 
 ## Module Group Table [](id=module-group-table)
 
@@ -25,13 +22,14 @@ The table below provides the Liferay module group values to specify.
 | Maven                                 | `groupId`     | `com.liferay` |
 
 
-Specify group value `com.liferay` in all your Liferay module dependencies.
+Specify group value `com.liferay` for all your dependencies on Liferay modules. 
 
-Next, let's look up the names of API module to specify them in dependencies.
+Next, look up the API module's name. 
 
 ## API Module Names Table [](id=api-module-names-table)
 
-This table maps Liferay components to their commonly used classes and module names.
+This table maps Liferay components to their commonly used classes and API module
+names. 
 
 | &nbsp;Component | &nbsp;Classes | &nbsp;Module<br>(Ivy `name` /<br>Gradle `name` /<br>Maven `artifactId`) |
 | :-------------------- | :---------------- | :----------------------------------------------------------------------------------- |
@@ -139,23 +137,24 @@ This table maps Liferay components to their commonly used classes and module nam
 
 ## Module Version [](id=module-version)
 
-The last item to specify in a module dependency is the module version. One way
-to find an module's available versions is to navigate to that module in
-Liferay's online Nexus repository for Portal CE, at
-<https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/>.
+The last module dependency item to specify is the module version. The Liferay
+Portal CE artifact repository has a folder for each module version. To browse
+the version folders, visit the artifact repository at
+<https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/>
+and click on the module's folder. 
 
-Liferay's module names start with `com.liferay`, then are followed by a dot "."
-and the name of the component. Here's the naming convention:
+Liferay module names start with `com.liferay`, followed by a dot ".", and
+the component's name. Here's the entire naming convention:
 
-`com.liferay.[component].api-[version].jar`
+    com.liferay.[component].api-[version].jar
 
-For example, version 1.0.1 of the Web Content (Journal) component's API module
-is in this JAR file: 
+For example, the JAR file for version 1.0.1 of the Web Content (Journal)
+component's API module looks like this:
 
-`com.liferay.journal.api-1.0.1.jar`
+    com.liferay.journal.api-1.0.1.jar
 
-Here are examples of specifying a dependency on
-`com.liferay.journal.api-1.0.1.jar` in all three dependency frameworks. 
+Ivy, Gradle, and Maven dependencies on this JAR file are demonstrated as
+follows. 
 
 ### Ivy [](id=ivy)
 
@@ -176,18 +175,20 @@ Here are examples of specifying a dependency on
 		<version>1.0.1</version>
 	</dependency>
 
-Now that you've specified Liferay API modules as a dependencies, you can
-investigate their Java API. 
+Now that you've specified dependencies on Liferay API modules, consider their
+Javadoc. 
 
 ## Java API [](id=java-api)
 
 A module's Javadoc describes its Java API. 
 
-You can download a newly migrated module's Javadoc JAR file from Liferay [Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/)
-and extract it to a local folder. The extracted `index.html` file is the gateway
-to exploring the module's Java API.
+Javadoc for the modules in the latest GA release of Liferay Portal 7.0 CE are
+available online at <https://docs.liferay.com/portal/7.0/javadocs/> and for
+download from [Liferay Downloads](https://www.liferay.com/downloads). All
+versions of modules for CE are available for download from the [Liferay CE
+artifact repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/).
 
-Here are the Java packages common to newly migrated API modules:
+Here is the common naming convention used for the module packages:
 
 - `com.liferay.[component].constants` - Classes that specify module specific
 constant values, such as web keys
@@ -201,21 +202,17 @@ entity finder interfaces, and static utilities
 
 +$$$
 
-**Important**: The *portal-service* API has been renamed *portal-kernel*. 
+**Important**: The API called *portal-service* in 6.2 and previous versions is
+called *portal-kernel* in Liferay 7. 
 
 $$$
 
-Not all components have been migrated from the
-[portal-kernel API](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/) (formerly named portal-service). 
-Their API modules have proxies to classes in portal-kernel. Their Javadoc is
-available at [https://docs.liferay.com/portal/](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/).
-
-Component APIs in portal-kernel have a kernel package after the component
-package name. Their common package structure looks like this:
+Portal kernel API modules have *kernel* packages. Here is the common naming
+convention used for portal-kernel module packages: 
 
 - `com.liferay.[component].kernel.constants` - Classes that specify module
 specific constant values, such as web keys 
-- `com.liferay.[component].kernel.exception` - Module specific exception classes
+- `com.liferay.[component].kernel.exception` - Module-specific exception classes
 - `com.liferay.[component].kernel.model` - Model entity interfaces, entity
 wrapper classes, and SOAP classes 
 - `com.liferay.[component].kernel.service` - Local and remote service interfaces
@@ -223,12 +220,11 @@ wrapper classes, and SOAP classes
 interfaces, entity finder interfaces, and static utilities 
 - `com.liferay.[component].kernel.util` - Utility classes
 
-You now know how to find Liferay component API modules and find common API
-classes. 
+You now know how to find Liferay component API modules and their Javadoc. 
 
 ## Related Articles [](id=related-articles)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
-[Adapting to Liferay 7's API](/develop/reference/-/knowledge_base/7-0/adapting-to-liferay-7s-api)
+<!--[Adapting to Liferay 7's API](/develop/reference/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
 

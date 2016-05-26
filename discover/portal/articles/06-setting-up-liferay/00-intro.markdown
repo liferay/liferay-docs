@@ -1,6 +1,6 @@
-# Configuring Liferay [](id=configuring-liferay)
+# Configuring @product@ [](id=configuring-liferay)
 
-If Liferay is anything, it's configurable. As the core of Liferay is shrinking
+If @product@ is anything, it's configurable. As the core of Liferay is shrinking
 due to its increased modularity<!--Link to modularity docs-->, it's important
 that all the applications in Liferay are also configurable. 
 

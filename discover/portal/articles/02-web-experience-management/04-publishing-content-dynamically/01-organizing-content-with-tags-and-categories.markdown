@@ -1,7 +1,7 @@
 # Organizing Content with Tags and Categories [](id=organizing-content-with-tags-and-categories)
 
 Tags and categories are two important tools you can use to help organize
-information in Liferay. These tools help users to easily find the content
+information in @product@. These tools help users to easily find the content
 they're looking for through search or navigation. Tagging and categorizing
 assets is easy. You can tag or categorize an asset at creation time or when
 editing an existing asset. If you click on the *Metadata* section of the
@@ -23,7 +23,7 @@ section.
 $$$
 
 The Menu (![Menu](../../../images/icon-menu.png)) contains interfaces for
-managing tags and categories for each site in Liferay. Navigate to the Site
+managing tags and categories for each site in @product@. Navigate to the Site
 Administration menu &rarr; *Content*, and you'll find the *Tags* and
 *Categories* options. These options can be used to manage all your site's tags
 and categories. It is important that you both tag and categorize your content
@@ -31,7 +31,7 @@ when you enter it. You'll take a closer look at tags and categories next.
 
 ## Tagging Content [](id=tagging-content)
 
-Tags are an important tool that can help organize information in Liferay and
+Tags are an important tool that can help organize information in @product@ and
 make it easier for users to find the content that they're interested in. Tags
 are words or phrases that you can attach to any content on the website. Tagging
 content makes your search results more accurate and enables you to use tools
@@ -58,7 +58,7 @@ example, to create tags for a new web content article, navigate to the
 *Metadata* dropdown in a New Web Content menu, and add tags *Lunar*, *Moon*, and
 *Spectacular*. Once you've created the web content with these tags, the web
 content will be associated with those tag words when they are searched or
-referenced anywhere in Liferay.
+referenced anywhere in @product@.
 
 Tags are not the only instance-wide mechanism for describing content: you can
 also use categories.
@@ -77,7 +77,7 @@ seek.
 +$$$
 
 **Note:** In previous versions of Liferay, you could specify web content types
-via `portal.properties`. In Liferay 7.0, web content types are no longer used
+via `portal.properties`. In @product@ 7.0, web content types are no longer used
 and have been replaced by vocabularies. Vocabularies allow users to filter their
 web content articles by category instead, which lets you filter your content
 using the Asset Publisher and faceted search.
