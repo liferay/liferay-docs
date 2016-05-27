@@ -139,20 +139,3 @@ Related to this, our recommendation for the scope of the configuration of a port
             	[PortletName]GroupServiceConfiguration groupConfiguration 
             			ConfigurationProviderUtil.getGroupConfiguration(
             				[PortletName]GroupServiceConfiguration.class, groupId);
-
-## Final steps [](id=final-steps)
-
-1. Check Liferay's
-   [`BREAKING_CHANGES.markdown`](https://github.com/liferay/liferay-portal/blob/7.0.x/readme/7.0/BREAKING_CHANGES.markdown)
-   document for a list of changes to Liferay's API. If you're using a Liferay
-   application or service whose API has changed, take note and update your
-   application accordingly. These API changes include migrations from using
-   portlet preferences to using the Configuration API, as we discussed in this
-   tutorial.
-
-2. You can also check Liferay's
-   [`VerifyProperties`](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/com/liferay/portal/verify/VerifyProperties.java)
-   class. This class includes lists of portal properties that have been renamed
-   or deprecated. In cases where configurations have been updated to use the
-   new Configuration API, the configuration class name and relevant method
-   names are also specified.
