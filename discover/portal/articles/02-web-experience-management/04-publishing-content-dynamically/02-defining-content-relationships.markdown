@@ -63,7 +63,7 @@ Publisher applications to the page. Wait a minute; there aren't any assets
 displayed in the related assets application. Why? You cannot see any related
 assets until you select an asset in the Asset Publisher.
 
-![Figure 1: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets apps on the left and updated their configurations.](../../../images/related-assets-app-1.png)
+![Figure 1: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application.](../../../images/related-assets-app-1.png)
 
 Once you select an asset, its related assets are displayed in the Related Assets
 app, as in the image above. If you want to get even more detailed with how your
@@ -73,6 +73,6 @@ the name of an application's title, click the application's *Options* icon and
 select *Look and Feel Configuration*. Select the *Use Custom Title* checkbox and
 provide the custom title.
 
-![Figure 2: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets apps on the left and updated their configurations.](../../../images/related-assets-app-2.png)
+![Figure 2: Related Assets applications can be configured to display specific content.](../../../images/related-assets-app-2.png)
 
 Next, you'll learn how to use @product@'s Geolocation feature in your assets.
