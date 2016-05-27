@@ -1,14 +1,12 @@
-# Updating Legacy Applications to Use the Configuration API [](id=updating-legacy-applications-to-use-the-configuration-api)
+# Transitioning from Portlet Preferences to the Configuration API [](id=transitioning-from-portlet-preferences-to-the-configuration-api)
 
-This tutorial describes how to take an existing (6.2 or prior) application or
-service and convert it to use the new Configuration API instead of previous mechanisms.
+This tutorial describes how to take an existing portlet developed for Liferay 6.2 or prior, which uses portlet preferences to allow
+administrators to configure the portlet, and convert it to use the new Configuration API.
 
 For more information on the Configuration API and the recommended ways to
 develop configurable applications for Liferay 7, please see the
 [Making your applications configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable)
 tutorial.
-
-## Transitioning from Portlet Preferences to the Configuration API [](id=transitioning-from-portlet-preferences-to-the-configuration-api)
 
 Before you start it's important to understand the benefits of making this change. That will allow you to decide whether to go ahead with the change or not, since previous configuration mechanisms of Liferay 6.2 and prior still work in 7.0.
 
