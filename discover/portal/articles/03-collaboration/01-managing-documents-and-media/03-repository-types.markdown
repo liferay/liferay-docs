@@ -53,22 +53,21 @@ portal property to a `portal-ext.properties` file in your [Liferay Home](/discov
 Remember to restart your @product@ server after updating your
 `portal-ext.properties` file in order for your customizations to take effect.
 
-You should take into account that some other properties related to document
-library stores have been moved from `portal-ext.properties` to OSGI
-configuration. The following diagram will help you to understand how to
-configure those properties if needed:
+There are properties related to document library stores that have been moved
+from `portal-ext.properties` to OSGI configuration files. The following mapping
+shows you how to configure those properties if needed:
 
 #### CMIS
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.cmis.CMISStore
     osgi/configs: com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg
-    
+ 
 Property | Default | Required
 ---------|---------|---------
 repositoryUrl | http://localhost:8080/alfresco/service/api/cmis | true
 credentialsUsername | none | true
 credentialsPassword | none | true
 systemRootDir | Liferay Home | true
-    
+ 
 #### File Store
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
     osgi/configs: com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg
@@ -80,11 +79,11 @@ rootDir | data/document_library | false
 #### Advanced File Store
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
     osgi/configs: com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
-    
+ 
 Property | Default | Required
 ---------|---------|---------
 rootDir | data/document_library | false
-        
+ 
 #### JCR
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.jcr.JCRStore
     osgi/configs: com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg

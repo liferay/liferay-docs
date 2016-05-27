@@ -1,15 +1,19 @@
 # Upgrading to Liferay 7 [](id=upgrading-to-liferay-7)
 
-Liferay can be upgraded using a straightforward process. To upgrade to the
-latest release in one step, you must be coming from Liferay 6.0.12 or higher.
+Upgrading to @product@ consists of two steps: upgrading your installation and
+then upgrading the database. @product@ can be upgraded using a straightforward
+process. To upgrade to the latest release directly, you must be coming from
+Liferay 6.0.12 or higher.
 
-If you're coming from Liferay 6.0.11 or below you should upgrade your portal
-to Liferay 6.2 before approaching an upgrade to the Liferay 7 platform. Please,
-see the
+If you're on Liferay 6.0.11 or below, you should upgrade to Liferay 6.2 before
+approaching an upgrade to the Liferay 7 platform. Please see the
 [Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
 article for information on upgrading to Liferay 6.2 first.
 
-## Preparing an upgrade to Liferay 7 [](id=upgrading-to-liferay-7)
+Before you do anything, however, it's important to prepare your system to be
+upgraded. 
+
+## Preparing an Upgrade to Liferay 7 
 
 Before upgrading, you should have a synchronized backup of your database and
 file system for your document library. Next, you'll need to consider your
@@ -21,37 +25,38 @@ compatible with your settings.
 
 +$$$
 
-**Important**: Before performing the upgrade, be sure that you have installed
-the latest version of the Liferay plugins you were using (kaleo, calendar,
-notifications, etc.) in your original Liferay version. This will allow you to
-run the upgrade without unnecessary issues.
+**Important**: Before performing the upgrade, for every Liferay plugin you've
+installed from Marketplace (Kaleo, Calendar, Notifications, etc.), make sure
+you've got the latest versions installed. This will allow you to run the upgrade
+without unnecessary issues.
 
 $$$
 
-Altough you can perfom the upgrade in one step if you're coming from Liferay
-6.0.12 or higher you should take into account previous upgrade configurations.
-
 After that, you'll need to look at your Documents and Media file store and make
 sure the upgrade takes your configuration into account. 
+
+Next, you'll actually install the new version of Liferay onto your server, or
+use a bundle to jump start your installation process. 
 
 Finally, to make sure the upgrade process runs smoothly and quickly, you'll
 disable indexing temporarily during the upgrade. 
 
 These steps are described in detail below. 
 
+Although you can perform the upgrade in one step (if you're coming from Liferay
+6.0.12 or higher), you should take into account previous upgrade configurations.
+
 ### Previous upgrade configurations
 
 If you're coming from Liferay 6.2, skip this section. In any other case, please
-follow these instructions to configure your portal-ext.properties properly:
+follow these instructions to configure your `portal-ext.properties` properly:
 
-- If you come from any of 6.1 releases, check the
+- If you're on Liferay 6.1, check the
 [6.2 upgrade properties](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)
-information to know which properties you need to configure regarding the 6.2
-upgrade.
-- If you come from 6.0.12, besides previous configuration you should also take
-into account the
-[migrate image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images)
-information.
+information to learn about the new defaults introduced in Liferay 6.2. 
+
+- If you're on Liferay 6.0.12, you'll also need to 
+[migrate the image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images). 
 
 ### Legacy Properties
 
@@ -75,15 +80,16 @@ Here's a list of the 6.2 properties that have changed in 7.0:
 You can find a complete reference for what these properties mean by viewing the
 [properties documentation](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html).
 
-### Configuring your Documents and Media File Store
+### Configuring Your Documents and Media File Store
 
-Your next task is to review your Documents and Media configuration. You will
-already have a configuration on your old version of Liferay. Look at
+Your next task is to review your Documents and Media configuration. Look at
 [`Document Library documentation`](/discover/portal/-/knowledge_base/7-0/repository-types#document-library-store-options)
-to see all the options in Liferay 7 before executing an upgrade process.
+to see all the options in Liferay 7 before executing an upgrade process. There
+is, however, one important piece of configuration that has changed. The way you
+specify the location for the file store is no longer in the
+`portal-ext.properties` file. 
 
-The way you specify the location for the file store has changed. For example, if
-you use the default store but don't want to store the files in the default
+If you use the default store but don't want to store the files in the default
 location (`[Liferay Home]/data/document_library`), you need to create a file
 called
 `com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
@@ -94,12 +100,31 @@ in your `[Liferay Home]/osgi/configs` folder with the following content:
 If you use Advanced File System Store method to persist document library files,
 you'd call that file
 `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`.
+
 The name of the configuration file matches the name of the class that implements
 the configuration. 
 
-### Disable indexation during the upgrade process
+### Install the New Version of @product@
 
-Before starting the upgrade process, you should disable indexing, so the indexer
+Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/installation-and-setup)
+to install Liferay on your application server or use @product@ bundled with your
+application server of choice. Once you have @product@ installed, DON'T START IT! 
+
+If you've upgraded Liferay in the past, once you've prepared your system for the
+upgrade, the upgrade process ran when you started the new version for the first
+time. @product@ instead ships with a tool for upgrading. You must use this tool
+to upgrade your database. Starting the server to run the upgrade is no longer
+supported. The following exception is thrown if you try to do that:
+
+    [MainServlet:237] java.lang.RuntimeException: You must first upgrade to Liferay Portal 7000
+
+Apply the settings you identified above for `portal-ext.properties` and
+your Documents and Media store. Once you've finished that, you're almost ready
+to run the upgrade process. 
+
+### Disable Indexing During the Upgrade Process
+
+Before starting the upgrade process, you must disable indexing so the indexer
 doesn't try to run during the upgrade. Create a file called
 `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg` in
 your `[Liferay Home]/osgi/configs` folder with the following content: 
@@ -108,20 +133,21 @@ your `[Liferay Home]/osgi/configs` folder with the following content:
 
 Setting the property above disables indexing. By disabling indexing, you prevent
 performance issues arising from the indexer attempting to reindex your content
-during the upgrade process.  Once you have upgraded your @product@ instance,
-make sure to set this property to `false` so that you can index all objects from
-the Control Panel.
+during the upgrade process. When the upgrade is complete, make sure you set this
+property to `false` so that you can index all objects from the Control Panel.
 
 ## Optional: Upgrading Modules Individually [](id=upgrading-modules-individually)
 
 You can choose to upgrade the core and all the modules in one shot or upgrade
 just the core and do the modules manually. You'll make this choice depending on
 what you have installed on your system. If you are upgrading from a previous
-version, you should skip this section and upgrade everything. 
+version, you should skip this section and upgrade everything. Going forward,
+however, @product@'s modular framework allows you to upgrade modules--even the
+core--individually. 
 
 If you want to upgrade only the core, add a file called
 `com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
-in the `/osgi/configs` folder with the following content:
+to the `/osgi/configs` folder with the following content:
 
     autoUpgrade=false
 
@@ -131,18 +157,11 @@ upgrading the core.
 
 ## Running the Upgrade [](id=running-the-upgrade)
 
-If you've upgraded Liferay in the past, once you've prepared your system for the
-upgrade, the upgrade process was done when you started the new version for the
-first time. @product@ instead ships with a tool for upgrading. You must use this
-tool to upgrade your system. Starting the server to run the upgrade is no longer
-supported. The following exception is thrown if you try to do that:
-
-    [MainServlet:237] java.lang.RuntimeException: You must first upgrade to Liferay Portal 7000
-
-In case of the Liferay bundle, the upgrade tool can be found inside in the
-`tools` folder inside `liferay.home` directory, in a folder called
-`portal-tools-db-upgrade-client` altough you can also download it as
-standalone application. Use the following command to start it: 
+In case of the Liferay bundle, the upgrade tool can be found in the `tools`
+folder inside `liferay.home` directory, in a folder called
+`portal-tools-db-upgrade-client`. If you've installed @product@ manually, you
+can download the tool as standalone application from the same location where you
+downloaded @product@. Use the following command to start it: 
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar
 
@@ -150,7 +169,7 @@ By default, the tool is executed with the following Java parameters:
     
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
-If you need to modify these parameters you can use the option `-j`. For
+If you need to modify these parameters, you can use the option `-j`. For
 example, to increase the Java memory in the upgrade process to 4GB:
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx4096m"
@@ -163,13 +182,14 @@ Here's the complete list of command line options:
 
 **--help** or **-h**: prints help message for using the tool
 
-**--jvm-opts** or **-j** + <arg>: sets any JVM options for the upgrade process
+**--jvm-opts** or **-j** + [arg]: sets any JVM options for the upgrade process
 
-**--log-file** or **-l** + <arg>: uses a custom name for your log file
+**--log-file** or **-l** + [arg]: uses a custom name for your log file
 
-**--shell** or **-s**: automatically connect to GoGo shell after finishing the upgrade
+**--shell** or **-s**: automatically connect to the GoGo shell after finishing
+the upgrade
 
-The upgrade requires you to configure it before it can run. This configuration
+The upgrade requires configuration before it can run. This configuration
 can be done at runtime, or you can pre-configure it in three files:
 
 - `app-server.properties`: Contains properties that define for the tool the
@@ -220,8 +240,8 @@ set to *250* by default *(optional)*
 ### Example Upgrade Configuration
 
 Examples of what you'd put in these files are below, but don't worry: the tool
-will ask you for the information if you don't have the files, so it may be
-easier simply to run it. If you do this, the tool will ask you to supply the
+asks you for the information if you don't have the files, so it may be
+easier simply to run it. If you do this, the tool asks you to supply the
 information at runtime like this: 
 
     Please enter your application server (tomcat): 
@@ -439,13 +459,13 @@ it. Restarting your server is not needed to execute these kinds of verifiers.
 
 ## Post-Upgrade Tasks
 
-After upgrading to Liferay 7, you should reindex @product@'s search indexes.
-Don't just do this blindly, however: by default, @product@ ships with an
-embedded configuration for Elasticsearch. This configuration works great for
-demo purposes, but is not supported in production. 
+After upgrading, you should reindex @product@'s search indexes. Don't just do
+this blindly, however: by default, @product@ ships with an embedded
+configuration for Elasticsearch. This configuration works great for demo
+purposes, but is not supported in production. 
 
 To configure search, follow the [instructions](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#configuring-elastic-search) 
 in the installation section to create a standalone instance of Elasticsearch to
 run in production. 
 
-Once you've configured search, your system is upgraded! Congratulations! 
+Once you've configured search and reindexed your search index, your system is upgraded! Congratulations! 
