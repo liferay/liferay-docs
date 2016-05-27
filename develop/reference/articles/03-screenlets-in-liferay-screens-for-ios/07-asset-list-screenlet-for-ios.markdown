@@ -2,11 +2,11 @@
 
 ## Requirements [](id=requirements)
 
-- XCode 7.2
+- Xcode 7.2
 - iOS 9 SDK
 - Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
-- Liferay Screens Compatibility Plugin (
-  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+- Liferay Screens Compatibility Plugin
+  ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
   depending on your portal edition). 
 
@@ -62,14 +62,7 @@ The Default Theme uses a standard `UITableView` to show the scrollable list.
 Other Themes may use a different component, such as `UICollectionView` or 
 others, to show the items.
 
-![`AssetListScreenlet` using the Default (`default`) Theme.](../../images/screens-ios-assetlist.png)
-
-## Portal Configuration [](id=portal-configuration)
-
-Dynamic Data Lists and Data Types should be configured in the portal. 
-Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
-and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
-sections of the User Guide for more details. 
+![Figure 1: Asset List Screenlet using the Default (`default`) Theme.](../../images/screens-ios-assetlist.png)
 
 ## Offline [](id=offline)
 
@@ -94,6 +87,7 @@ connection.
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
 | `classNameId` | `number` | The ID of the asset's class name. Use values from the `AssetClassNameId` class or the portal's `classname_` database table. |
 | `customEntryQuery` | `Dictionary` | The set of keys (string) and values (string or number) to be used in the [`AssetEntryQuery` object](/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the portal. |
+| `portletItemName` | `string` | The archive name you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher filter (Asset Selection on configuration page), and then use the *Archive Setup* option to save this configuration with a name. Use this name in this attribute. |
 
 ## Methods [](id=methods)
 
@@ -107,7 +101,7 @@ The `AssetListScreenlet` delegates some events to an object that conforms to the
 `AssetListScreenletDelegate` protocol. This protocol lets you implement the 
 following methods: 
 
-- `- screenlet:onAssetListResponseEntries:`: Called when a page of assets is 
+- `- screenlet:onAssetListResponse:`: Called when a page of assets is 
   received. Note that this method may be called more than once; one call for 
   each page received.
 

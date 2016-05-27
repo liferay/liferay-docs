@@ -579,6 +579,29 @@ app. You can even
 and contribute it to the Screens project, or distribute it in Maven Central or 
 jCenter. 
 
+## Using the Screenlet [](id=using-the-screenlet)
+
+You can now use the new Screenlet 
+[the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps): 
+
+1. Insert the Screenlet’s XML in the activity or fragment layout you want the 
+   Screenlet to appear in. For example, here's Bookmark List Screenlet's XML: 
+
+        <com.liferay.mobile.screens.listbookmark.BookmarkListScreenlet
+            android:id="@+id/bookmarklist_screenlet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:folderId="YOUR_FOLDER_ID"
+            app:groupId="YOUR_GROUP_ID"
+            app:layoutId="@layout/list_bookmarks"/>
+
+2. Implement the Screenlet’s listener in the activity or fragment class. Recall 
+   that the example Bookmark List Screenlet's listener is 
+   `BookmarkListListener`. To use this Screenlet, you must therefore implement 
+   this listener in the activity or fragment class you want to use the Screenlet 
+   in. You can see an example of this for the Bookmark List Screenlet 
+   [here in GitHub](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/ListBookmarksActivity.java). 
+
 ## Related Topics [](id=related-topics)
 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
@@ -588,3 +611,5 @@ jCenter.
 [Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)

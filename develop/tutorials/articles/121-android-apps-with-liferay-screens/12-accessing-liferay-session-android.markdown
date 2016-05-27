@@ -58,7 +58,7 @@ following code creates a session with `createBasicSession` and then uses
     Session session = SessionContext.createBasicSession(USERNAME, PASSWORD);
     SessionContext.setLoggedUser(USER);
 
-Note that you can acheive the same thing by calling the interactor directly: 
+Note that you can achieve the same thing by calling the interactor directly: 
 
     LoginBasicInteractor loginBasicInteractor = new LoginBasicInteractor(0);
     loginBasicInteractor.onScreenletAttached(this);
@@ -67,7 +67,7 @@ Note that you can acheive the same thing by calling the interactor directly:
     loginBasicInteractor.login();
 
 Super! Now you know how to create a session manually. The next section shows you 
-how to implement auto-login, and save or restore a session.
+how to implement auto-login, and save or restore a session. 
 
 ## Implementing Auto-login and Saving or Restoring a Session [](id=implementing-auto-login-and-saving-or-restoring-a-session)
 
@@ -86,21 +86,67 @@ typical implementation of this:
     SessionContext.loadStoredCredentials(SHARED_PREFERENCES);
 
     if (SessionContext.hasSession()) {
-	    // logged in
+        // logged in
+        // consider doing a relogin here (see next section)
     } else {
-	    // send user to login form
+        // send user to login form
     }
 
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
-You've also seen how handy `SessionContext` can be. It can do even more! The 
-next section lists some additional `SessionContext` methods. 
+For more information on available `SessionContext` methods, see the 
+[Methods section](/develop/tutorials/-/knowledge_base/6-2/accessing-the-liferay-session-in-android#methods) 
+at the end of this tutorial. Next, you'll learn how to implement relogin for 
+cases where a user's credentials change on the server while they're logged in. 
+
+## Implementing Relogin [](id=implementing-relogin)
+
+A session, whether created via Login Screenlet or auto-login, contains basic 
+user data that verifies the user in the Liferay instance. If that data changes 
+in the server, then your session is outdated, which may cause your app to behave 
+inconsistently. Also, if a user is deleted, deactivated, or otherwise changes 
+their credentials in the server, the auto-login feature won't deny access 
+because it doesn't perform server transactions: it only retrieves an existing 
+session from local storage. This isn't an optimal situation! 
+
+For such scenarios, you can use the relogin feature. This feature is implemented 
+in a simple method that determines if the current session is still valid. If the 
+session is still valid, the user's data is updated with the most recent data 
+from the server. If the session isn't valid, the user is logged out and must 
+then log in again to create a new session. 
+
+To use this feature, call the `SessionContext` method `relogin`, with an object 
+that implements the `LoginListener` interface as an argument: 
+
+    SessionContext.relogin(listener);
+
+This method handles success or failure via the listener's `onLoginSuccess` and 
+`onLoginFailure` methods, respectively. Note that this operation is done 
+asynchronously in a background thread, so the listener is called in that thread. 
+If you also want to perform any UI operations, you must do so in your UI thread. 
+For example: 
+
+    @Override
+    public void onLoginSuccess(final User user) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                // do any UI operation here
+            }
+        });
+    }
+
+Great! Now you know how to implement relogin in your app. You've also seen how 
+handy `SessionContext` can be. It can do even more! The next section lists some 
+additional `SessionContext` methods, and some more detail on the ones used in 
+this tutorial. 
 
 ## Methods [](id=methods)
 
 | Method | Return Type | Explanation |
 |--------|-------------|-------------| 
 | `logout()` | `void` | Clears the stored user attributes and session. |
-| `isLoggedIn()` | `boolean` | returns `true` if there is a stored Liferay Session in `SessionContext`. |
+| `relogin(LoginListener)` | `void` | Refreshes user data from the server. This recreates the `currentUser` object if successful, or calls `logout()` on failure. When the server data is received, the listener method `onLoginSuccess` is called with received user's attributes. If an error occurs, the listener method `onLoginFailure` is called. |
+| `isLoggedIn()` | `boolean` | Returns `true` if there is a stored Liferay Session in `SessionContext`. |
 | `createBasicSession(String username, String password)` | `Session` | Creates a Liferay Session using the default server and the supplied username and password. |
 | `createSessionFromCurrentSession()` | `Session` | Creates a Liferay Session based on the stored credentials and server. |
 | `getCurrentUser()` | `User` | Returns a `User` object containing the server attributes of the logged-in user. This includes the user's email, user ID, name, and portrait ID. |

@@ -6,8 +6,8 @@
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
-- Liferay Screens Compatibility Plugin (
-  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+- Liferay Screens Compatibility Plugin
+  ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
   depending on your portal edition). 
 
@@ -50,7 +50,6 @@ connection.
 
 ## Required Attributes [](id=required-attributes)
 
-- `layoutId`
 - `articleId`
 
 ## Attributes [](id=attributes)
@@ -62,6 +61,8 @@ connection.
 | `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
 | `classPK` | `number` | The corresponding asset's class primary key. If the web content is an asset (from Asset List Screenlet, for example), this is the asset's identifier. This attribute is used only if `articleId` is empty. |
 | `templateId` | `number` | The identifier of the template used to render the web content. This only applies to [structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). |
+| `structureId` | `number` | The identifier of the `DDMStructure` used to model the web content. This parameter lets the Screenlet retrieve and parse the structure. |
+| `labelFields` | `string` | A comma-delimited list of `DDMStructure` fields to display in the Screenlet. |
 | `autoLoad` | `boolean` | Whether the content should be retrieved from the portal as soon as the screenlet appears. Default value is `true`. |
 | `javascriptEnabled` | `boolean` | Enables support for JavaScript. This is disabled by default. |
 
@@ -70,6 +71,7 @@ connection.
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `load()` | `void` | Starts the request to load the web content. The HTML is rendered when the response is received. |
+| `getLocalized(String name)` | `String` | Returns the value, according to the device locale, of a field of the `DDMStructure` used to render the web content.
 
 ## Listener [](id=listener)
 
@@ -77,8 +79,9 @@ The `WebContentDisplayScreenlet` delegates some events to an object that
 implements the `WebContentDisplayListener` interface. This interface lets you 
 implement the following methods:
 
-- `onWebContentReceived(WebContentDisplayScreenlet source, String html)`: Called 
-  when the web content's HTML is received. To make some adaptations, the 
+- `onWebContentReceived(WebContentDisplayScreenlet source, WebContent webContent)`: 
+  Called when the web content's HTML or `DDMStructure` is received. The HTML is 
+  available by calling the `getHtml` method. To make some adaptations, the 
   listener may return a modified version of the HTML. The original HTML is 
   rendered if the listener returns `null`. 
 
