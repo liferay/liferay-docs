@@ -23,37 +23,12 @@ learn every detail about a device from the device type, which is included in
 each request sent to the portal. Liferay's Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
-Among the plugins available on Liferay Marketplace, you can find the Device
-Recognition Provider plugin. This plugin provides out of the box integration
-with WURFL, an open source database licensed with the AGPLv3 license. Commercial
-licenses are also available. It's also possible to develop plugins that
-integrate with other device databases. Even if you don't have a device database,
-you can still set up mobile device rules. They won't, however, be effective until
-a database is deployed, because the portal won't have enough information about
-the devices being used to make page requests. 
-
-To configure mobile device rules, you must install the Device Recognition Provider
-plugin. This plugin uses the WURFL database to enable Liferay to detect which
-mobile device or operating system is being used for any given request. To
-install the plugin, navigate to the Store section of the Control Panel, located
-under the Marketplace heading. Click on the *Utility* section and then on *See
-All*. Search for the appropriate Device Recognition Provider plugin (CE or EE)
-and click on it. Finally, click on *Free* to acquire the plugin. Once you've
-acquired the plugin, you need to download and install it. To do so, navigate to
-the Purchased section of the Control Panel, find your Device Recognition
-Provider plugin, and click on *Download* and then *Install*.
-
-**Installation Note:** If your server doesn't have access to the outside
-Internet, an error appears in your log: `SLF4J: Failed to load class
-"org.slf4j.impl.StaticLoggerBinder`. This occurs because WURFL by default
-downloads device information from the web. You can provide the same information
-to WURFL manually by downloading the SLF4J distribution from
-[http://www.slf4j.org/download.html](http://www.slf4j.org/download.html),
-unzipping the resulting file, copying `slf4j-log4j12.jar` to
-`[WEB_APP_HOME]/wurfl-web/WEB-INF/lib` folder, and restarting your Liferay
-instance. On some application servers, you'll need to add this .jar file to the
-`wurfl-web.war` file first (in the directory noted above) before deploying the
-file to your server. 
+It's possible to develop plugins that integrate with other device databases.
+Even if you don't have a device database, you can still set up mobile device
+rules. They won't, however, be effective until a database is deployed, because
+the portal won't have enough information about the devices being used to make
+page requests. To learn how to tap into Liferay's Device API, see the
+[Device Detection](/develop/tutorials/-/knowledge_base/6-1/device-detection).
 
 You can access the Mobile Device Rules administrative page from the Content
 section of the Control Panel. Select the appropriate scope using the context
@@ -76,8 +51,8 @@ available.  The rules are designed, however, to be extensible, and additional
 rule types can be added by your developers. Once added, you can edit the rule to
 specify a device type and operating system.
 
-![Figure 3.29: You need to install the Device Recognition Provider plugin to
-populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.29: You need to install a device recognition plugin to populate the
+OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a rule group

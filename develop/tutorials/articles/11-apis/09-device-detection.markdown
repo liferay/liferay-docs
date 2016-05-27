@@ -11,17 +11,7 @@ mobile phone request the same information from your portal?
 The Device Detection API detects the capabilities of any device making a
 request to your portal. It can also determine what mobile device or operating
 system was used to make a request, and then follows rules to make Liferay render
-pages based on the device. To use this feature, you first need to install the
-*Device Recognition Provider* app from Liferay Marketplace. Find more
-information on the app by following one of these links, depending on whether you
-use Liferay CE or EE: [Device Recognition
-CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
-Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132). 
-
-The Device Recognition plugin comes bundled inside the Device Recognition
-Provider app; it uses a device database called *WURFL* to determine the
-capabilities of your device. Visit the WURFL website for more information at
-[http://wurfl.sourceforge.net/](http://wurfl.sourceforge.net/).
+pages based on the device. 
 
 You can create your own plugin to use your device's database. Let's look at
 some simple uses of the Device Detection API and talk about its
@@ -34,8 +24,8 @@ object `Device` from the `themeDisplay` object like this:
 
     Device device = themeDisplay.getDevice();
 
-You can view the API in the [Device
-Javadocs](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
+You can view the API in the
+[Device Javadocs](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
 Using some of the methods from the Javadocs, here's an example that obtains a
 device's dimensions:
 
@@ -52,10 +42,8 @@ above for assistance.  Let's look at some device capabilities next.
 ## Device capabilities [](id=device-capabilities)
 
 Most of the capabilities of a device can be detected, depending on the device
-detection implementation you're using. The Device Recognition plugin's device
-database (WURFL) has a list of capabilities
-[here](http://www.scientiamobile.com/wurflCapability/tree). For example, you
-can obtain the capability of a brand name with this code:
+detection implementation you're using. For example, you can obtain the
+capability of a brand name with this code:
 
     String brand = device.getCapability("brand_name");
 
