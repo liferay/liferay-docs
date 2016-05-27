@@ -37,6 +37,10 @@ available in LCS:
   Learn how to use environment tokens to automatically register your Liferay 
   servers with LCS. This is crucial in auto-scaling environments. 
 
+- [**Managing Liferay EE Subscriptions:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-ee-subscriptions)
+  Learn how to view and manage your Liferay EE subscriptions for the servers in 
+  your LCS project. 
+
 First, you'll learn what information LCS stores about your Liferay servers.
 
 ## What LCS Stores About Your Liferay Servers [](id=what-lcs-stores-about-your-liferay-servers)
@@ -302,7 +306,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 4.17: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics.png)
+![Figure 4.17: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics-01.png)
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -531,6 +535,67 @@ steps:
 
 2. Restart your Liferay instance. The LCS client portlet uses the token file to 
    connect to LCS automatically. 
+
+Awesome! Now you know how to use environment tokens to register your Liferay 
+instances with LCS. 
+
+Next, you'll learn how to use LCS to manage your Liferay EE subscriptions. 
+
+## Managing Liferay EE Subscriptions [](id=managing-liferay-ee-subscriptions)
+
+LCS also lets you view and manage your Liferay EE subscriptions. You can view 
+your project's subscriptions, see how they're being used, assign an environment 
+to a subscription type, and more. You can access these features from the 
+*Subscriptions* tab on the upper-left of the LCS site. Note that to use these 
+features, your Liferay instances must be running Liferay 6.2 EE Service Pack 15 
+or higher. 
+<!-- Is this SP 15 note still accurate? -->
+
+![Figure x: The *Subscriptions* tab in LCS lets you view and manage your Liferay EE subscriptions.](../../images/lcs-subscriptions.png)
+
+The *Subscriptions* table shows you a list of Liferay EE subscriptions available 
+for your LCS project. For each subscription, the table shows the following 
+information: 
+
+- Subscription Type
+- Start Date
+- Expiration Date
+- Support End Date
+- Platform
+- Product
+- Processor Cores Allowed
+- Servers Allowed
+- Servers Used
+
+Below this table is the *Subscriptions Summary* table. The Subscriptions Summary 
+table shows you how you're currently utilizing your subscriptions. For each 
+subscription type, this table shows the number of servers allowed, used, and 
+available. If any of the information in these tables is missing or incorrect, 
+contact Liferay support. 
+
+Below the Subscriptions Summary table, the *Environment Subscriptions* table 
+shows the subscription type, if any, that you've assigned to each environment. 
+To assign a subscription type to an environment, click the environment's *No 
+Subscriptions* link in the table and then select the subscription type. You 
+should **use caution** when setting an environment's subscription type. All the 
+servers in an environment **must be shut down** to assign that environment's 
+subscription type. Also, **once set, you can't change an environment's 
+subscription type**. These assignments are also reflected in the *Project 
+Servers* table. This table shows the environment and environment subscription 
+type for each server in your LCS project. 
+
+To decommission a server, thus freeing its license for reuse, you must 
+unregister the server from LCS in server view's Server Settings tab. 
+
++$$$
+
+**Tip:** Once you have a subscription type assigned to an environment, using an 
+environment token is the fastest way to register Liferay servers and utilize 
+subscriptions in that environment. Any Liferay servers you register with an 
+environment token automatically consume a license from that environment's 
+subscription type. 
+
+$$$
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 

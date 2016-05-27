@@ -1,46 +1,70 @@
 # Configuring the LCS Client [](id=configuring-the-lcs-client)
 
-To take advantage of the features offered by LCS, you need to install the LCS 
-client in your Liferay instance. The LCS client connects your Liferay instance 
-to LCS and provides a simple UI for managing that connection. You can also use 
-the LCS client to directly access your LCS project, environment, and server from 
-within your Liferay instance. 
+To use LCS, the LCS client app must be installed in your Liferay instance and 
+registered with LCS. The LCS client connects your Liferay instance to LCS and 
+provides a simple UI for managing that connection. You can also use the LCS 
+client to directly access your LCS project, environment, and server from within 
+your Liferay instance. This article covers the following topics to help you get 
+your client up and running with LCS:
+
+- [**Downloading the LCS Client:**](/discover/portal/-/knowledge_base/6-2/configuring-the-lcs-client#downloading-the-lcs-client)
+  This section shows you where you can download the LCS client app. 
+
+- [**Preconfiguring the LCS Client:**](/discover/portal/-/knowledge_base/6-2/configuring-the-lcs-client#preconfiguring-the-lcs-client)
+  If your server connects to the Internet through a proxy, you must preconfigure 
+  the LCS client app before you deploy it to your Liferay instance. This section 
+  shows you how to do this.
+
+- [**Registering the Client with LCS:**](/discover/portal/-/knowledge_base/6-2/configuring-the-lcs-client#registering-the-client-with-lcs)
+  Once you've installed the LCS client app, you must register your Liferay 
+  instance with LCS. You can do this manually or automatically. Manual 
+  registration may work, but is deprecated and not recommended. You should 
+  instead 
+  [register with *environment tokens*](/discover/portal/-/knowledge_base/6-2/using-lcs#using-environment-tokens). 
+  If you still want to manually register your Liferay instance with LCS, 
+  however, this section shows you how to do so.
+
+Note that to use LCS, you must have an account at 
+[Liferay.com](http://www.liferay.com/). 
 
 ## Downloading the LCS Client [](id=downloading-the-lcs-client)
 
-To use LCS, you must have an account at
-[Liferay.com](http://www.liferay.com/). When you first log in to 
-[LCS](https://lcs.liferay.com), the Welcome screen prompts you to select your 
-portal's version and edition. After doing so, the LCS client's version is listed 
-next to a *Download* button. Click this button to download the client. The 
-following screenshot shows the Welcome screen with Liferay Portal 6.2 EE 
-selected. 
+You can download the LCS client app from several places. One is the 
+[Liferay Marketplace](https://web.liferay.com/marketplace). 
+For instructions on using Marketplace, see 
+[this user guide section](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace). 
+
+You can also download the LCS client app from 
+[lcs.liferay.com](https://lcs.liferay.com). 
+When you first log in, the Welcome screen prompts you to select your Liferay 
+version and edition. After doing so, the LCS client's version is listed 
+next to a *Download* button. Click this button to download the client. For 
+example, the following screenshot shows the Welcome screen with Liferay Portal 
+6.2 EE selected. 
 
 ![Figure 4.1: When you first log in to LCS, you can download the LCS client from the Welcome screen.](../../images/lcs-welcome-client-download.png)
 
 Note that you'll only see the Welcome screen the first time you log in to LCS. 
-If you need to download the client again later, you can do so from the 
-*Connection* tab inside LCS. When you click the *Connection* tab, the 
-*Client Downloads* button is automatically selected. This presents the same 
-screen as earlier, in which you can download the client. The following 
+If you need to download the client again later, you can do so from the Liferay 
+Marketplace or the *Connection* tab inside LCS. When you click the *Connection* 
+tab, the *Client Downloads* button is automatically selected. This presents the 
+same screen as earlier, in which you can download the client. The following 
 screenshot shows this: 
 
 ![Figure 4.2: You can also download the LCS client from the Connection tab inside of LCS.](../../images/lcs-client-download-connection.png)
 
 Super! Now you know where to get the LCS client. Before you deploy it though, 
 there are a few other things you should check. If you connect to the web through 
-a proxy or need to fine-tune how the client connects to LCS, proceed to the next 
-section. Otherwise, you can skip this section and move on to the section on 
-registering the client with LCS. 
+a proxy, proceed to the next section. Otherwise, you can skip this section and 
+move on to the section on registering the client with LCS. 
 
 ## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
 
 In most cases, deploying and configuring the LCS client is simple. If, however,
-you connect to the web through a proxy, or you want to change how the client 
-communicates with LCS, there are some properties you need to set in the 
-client's WAR file before deploying it. Specifically, you need to set these 
-properties in the client's `portlet-ext.properties` file. Regardless of the 
-properties you're setting, the procedure doing so is the same.
+you connect to the web through a proxy, there are some properties you need to 
+set in the client's WAR file before deploying it. Specifically, you need to set 
+these properties in the client's `portlet-ext.properties` file. Regardless of 
+the properties you're setting, the procedure doing so is the same. 
 
 1. In the LCS client's WAR file, open the 
    `WEB-INF/classes/portlet-ext.properties` file.
@@ -48,7 +72,7 @@ properties you're setting, the procedure doing so is the same.
 2. Make your changes in the file.
 
 3. Update the LCS client WAR with the modified `portlet-ext.properties` file.
- 
+
 4. Deploy the LCS client WAR or redeploy it if it's already deployed. 
 
 To connect to LCS through a proxy, add the following properties at the end of 
@@ -63,38 +87,22 @@ and set them to the appropriate values for your proxy.
         proxy.host.login=
         proxy.host.password= 
 
-While the default values are sufficient in most cases, you can also set other 
-properties in `portlet-ext.properties` to fine tune the client's communication 
-with LCS. As with the proxy properties, you should set these prior to deploying 
-the client. The communication properties are shown here with their default 
-settings. The values are specified in milliseconds. 
-
-- The Heartbeat Interval is the communication interval with LCS that keeps the 
-  client's connection alive, even when there's nothing else to report. It's set 
-  by the following property.
-  
-        communication.heartbeat.interval=60000
-
-- The handshake properties control how the client handles its initial handshake 
-  connection with LCS. The `communication.handshake.wait.time` property sets the 
-  maximum amount of time the client can wait to receive a response from LCS. The 
-  `communication.handshake.reply.reads` property sets the maximum number of 
-  times the client can check for a response from LCS during that time. 
-
-        communication.handshake.wait.time=60000
-        communication.handshake.reply.reads=6        
-
-- The LCS client depends on a gateway to connect with LCS. If it can't reach the 
-  gateway, the client waits a predetermined amount of time before attempting the 
-  connection again. This length of time is set by the following property.
-  
-        communication.lcs.gateway.unavailable.wait.time=60000
-
-Great! Now you're ready to deploy the client and register your portal with LCS.
+Great! Now you're ready to deploy the client and register your Liferay instance 
+with LCS. 
 
 ## Registering the Client with LCS [](id=registering-the-client-with-lcs)
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
+
++$$$
+
+**Warning:** The manual registration steps in this section are deprecated, and 
+may not work. 
+[Using an environment token](/discover/portal/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
+is the preferred way to register your server with LCS. 
+
+$$$
+
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
 section of the *Control Panel*. 
 
