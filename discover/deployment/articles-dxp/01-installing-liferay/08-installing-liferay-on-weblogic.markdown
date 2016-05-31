@@ -39,6 +39,23 @@ OSGi zip file from the same place you downloaded DXP's dependencies. Extract the
 OSGi dependencies to the `osgi` folder (create this folder if it doesn't exist) 
 in `Liferay_Home`. 
 
+<!-- Are the theme WARs required? -->
+
+## Configuring the Node Manager
+
+WebLogic requires a Node Manager to start and stop managed servers. Before 
+installing Liferay, you must configure the Node Manager included with your 
+WebLogic installation. You'll do this via the 
+`domains/your_domain_name/nodemanager/nodemanager.properties` file. Open this 
+file, and set the `SecureListener` property to `false`: 
+
+    SecureListener=false
+
+If you're running WebLogic on Mac or Linux, you must also set the 
+`NativeVersionEnabled` property to `false`:
+
+    NativeVersionEnabled=false
+
 ## Configuring WebLogic
 
 Next, you must set some properties in your WebLogic startup scripts. First, set 
@@ -54,7 +71,8 @@ To this:
 
 Next, you must set your Java memory arguments and other properties in your 
 managed server's startup script. To do so, set the following properties in your 
-domain's `bin/startManagedWebLogic.[cmd|sh]` file:
+domain's `bin/startManagedWebLogic.[cmd|sh]` file. Note that you must use `set` 
+instead of `export` if you're on Windows: 
 
     export USER_MEM_ARGS="-Xmx2048m -XX:MaxMetaspaceSize=512m"
 
