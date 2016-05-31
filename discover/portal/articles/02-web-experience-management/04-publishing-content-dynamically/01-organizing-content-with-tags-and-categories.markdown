@@ -9,7 +9,7 @@ form when creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
 if no categories have been created), the *Select* option won't appear.
 
-![Figure 1: Here, the Web Content application's form for categorizing a new web content article includes a Categories *Select* option since categories exist.](../../../images/web-content-categorization.png)
+![Figure 1: Here, the Web Content application's form for categorizing a new web content article includes the categories *Color* and *Type* with *Select* options, since categories exist.](../../../images/web-content-categorization.png)
 
 +$$$
 
@@ -169,8 +169,8 @@ separated widgets for every vocabulary.
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
 configure these settings, go to the Categories application in Site
-Administration and mouse over the vocabulary in the list until you see the edit
-icon to the right. Select the icon to reveal a dialog box like the one below.
+Administration and select a vocabulary's *Actions* icon. Select the *Associated
+Asset Types* tab to reveal a dialog box like the one below.
 
 ![Figure 4: You can target vocabularies by checking the *Allow Multiple Categories* selector and then selecting the Asset Types.](../../../images/targeted-vocabularies.png)
 
