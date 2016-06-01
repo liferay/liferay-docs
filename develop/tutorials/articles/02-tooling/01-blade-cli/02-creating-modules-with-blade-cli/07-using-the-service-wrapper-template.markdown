@@ -1,4 +1,4 @@
-# Using the Service Wrapper Template [](id=using-the-service-wrapper-template)
+# Service Wrapper Template [](id=using-the-service-wrapper-template)
 
 In this tutorial, you'll learn how to create a Liferay service wrapper as a
 Liferay module. To create a Liferay service wrapper as a module, use a command
