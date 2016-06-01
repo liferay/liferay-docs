@@ -79,6 +79,24 @@ overridden from each application instance.
 
 <!-- Need a Lunar Resort example? -->
 
++$$$
+
+**Setting SPA Cache Configuration Options**
+
+In prior versions of Liferay, all SPA render requests that didn't belong to a 
+portlet (no p_p_id in URL) were cached indefinitely. This can confuse users, as 
+the content they view will be cached, rather than the lastest fresh content. 
+Since Liferay CE 7.0 GA2 and DXP 7.0 GA1, system Administrators can manually
+configure an expiration time for the Senna cache, via System Settings.
+
+To set an expiration time for the SPA cache, open the Control Panel and goto 
+*Configuration* &rarr; *System Settings*. Click the *Foundation* heading and
+select the *Frontend SPA Infrastructure* setting. Set a positive value, 
+in minutes, in which you want the cache to clear during SPA navigation. Leaving
+the default value of -1 will cache the content indefinently.
+
+$$$
+
 ## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
 
 What if you change a lot of default configurations in System Settings, and then you
