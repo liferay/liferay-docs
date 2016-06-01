@@ -1,20 +1,20 @@
 buildscript {
-    repositories {
-        ivy {
-            url 'https://bndtools.ci.cloudbees.com/job/bnd.master/719/artifact/dist/bundles'
-            layout 'pattern', {
-                artifact '[module]/[artifact]-[revision].[ext]' /* OSGi repo pattern */
-            }
-        }
+	repositories {
+		ivy {
+			url 'https://bndtools.ci.cloudbees.com/job/bnd.master/719/artifact/dist/bundles'
+			layout 'pattern', {
+				artifact '[module]/[artifact]-[revision].[ext]' /* OSGi repo pattern */
+			}
+		}
 		mavenCentral()
 		maven {
 			url 'https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public'
 		}
-    }
-    dependencies {
-        classpath 'biz.aQute.bnd:biz.aQute.bnd.gradle:3.0.0'
+	}
+	dependencies {
+		classpath 'biz.aQute.bnd:biz.aQute.bnd.gradle:3.0.0'
 		classpath 'com.liferay:com.liferay.ant.bnd:2.0.24'
-    }
+	}
 }
 
 apply plugin: 'biz.aQute.bnd.builder'
@@ -22,22 +22,22 @@ apply plugin: 'biz.aQute.bnd.builder'
 version='1.0.0'
 
 repositories {
-    mavenCentral()
-    maven {
-        url 'https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public'
-    }
+	mavenCentral()
+	maven {
+		url 'https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public'
+	}
 }
 
 dependencies {
-    compile 'org.osgi:org.osgi.core:6.0.0'
-    compile 'org.osgi:org.osgi.compendium:5.0.0'
-    compile 'biz.aQute.bnd:biz.aQute.bnd.annotation:2.4.0'
-    compile 'javax.portlet:portlet-api:2.0'
-    compile 'javax.servlet:servlet-api:2.5'
-    compile 'com.liferay.portal:com.liferay.portal.kernel:2.0.0'
-    compile 'com.liferay.portal:com.liferay.util.bridges:2.0.0'
-    compile 'com.liferay.portal:com.liferay.util.taglib:2.0.0'
-    compile 'com.liferay.portal:com.liferay.util.java:2.0.0'
-    compile 'org.slf4j:slf4j-api:1.7.7'
-    compile 'org.slf4j:slf4j-simple:1.7.7'
+	compile 'org.osgi:org.osgi.core:6.0.0'
+	compile 'org.osgi:org.osgi.compendium:5.0.0'
+	compile 'biz.aQute.bnd:biz.aQute.bnd.annotation:2.4.0'
+	compile 'javax.portlet:portlet-api:2.0'
+	compile 'javax.servlet:servlet-api:2.5'
+	compile 'com.liferay.portal:com.liferay.portal.kernel:2.0.0'
+	compile 'com.liferay.portal:com.liferay.util.bridges:2.0.0'
+	compile 'com.liferay.portal:com.liferay.util.taglib:2.0.0'
+	compile 'com.liferay.portal:com.liferay.util.java:2.0.0'
+	compile 'org.slf4j:slf4j-api:1.7.7'
+	compile 'org.slf4j:slf4j-simple:1.7.7'
 }
