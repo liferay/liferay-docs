@@ -58,13 +58,9 @@ responsibilities to the list creators, if you want. The following directions
 apply to whoever has the permissions to access the DDL application. Create some
 data definitions and set your list creators to work.
 
-1.  Make sure you're logged in as an administrator, then open the product menu
-and click *Sites*. Select the site where you want to create data definitions
-(for example, the Lunar Resort site). You're now in the Site Administration
-section of the Product Menu, and your site is selected. Click *Content* &rarr;
+1.  Make sure you're logged in as an administrator, then open the site
+administration menu for the site you're working on. Click *Content* &rarr;
 *Dynamic Data Lists*.
-
-    ![Figure 1: You can manage dynamic data lists from the *Sites* &rarr; *Content* section of the Product Menu.](../../../images/ddl-product-menu.png)
 
 2.  To create a data definition, find the icon (![Configuration Menu](../../../images/icon-options.png)) for the Dynamic Data List
 configuration menu. Click on it and select *Manage Data Definitions*. The Data
