@@ -7,7 +7,6 @@ buildscript {
 
 	dependencies {
 		classpath group: "biz.aQute.bnd", name: "biz.aQute.bnd.gradle", version: "3.0.0"
-
 		classpath group: "com.liferay", name: "com.liferay.ant.bnd", version: "2.0.24"
 		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.module.config.generator", version: "1.0.22"
 		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "1.0.26"
