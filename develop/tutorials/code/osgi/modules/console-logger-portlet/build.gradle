@@ -8,23 +8,23 @@ buildscript {
         }
 		mavenCentral()
 		maven {
-			url 'https://repository.liferay.com/nexus/content/repositories/liferay-snapshots-ce/'
+			url 'https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public'
 		}
     }
     dependencies {
         classpath 'biz.aQute.bnd:biz.aQute.bnd.gradle:3.0.0'
-		classpath 'com.liferay:com.liferay.ant.bnd:1.0.9'
+		classpath 'com.liferay:com.liferay.ant.bnd:2.0.24'
     }
 }
 
 apply plugin: 'biz.aQute.bnd.builder'
-sourceCompatibility = 1.7
-version='1.0'
+
+version='1.0.0'
 
 repositories {
     mavenCentral()
     maven {
-        url 'https://repository.liferay.com/nexus/content/repositories/liferay-snapshots-ce/'
+        url 'https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public'
     }
 }
 
