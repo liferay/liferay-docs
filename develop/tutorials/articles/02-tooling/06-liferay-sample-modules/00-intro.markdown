@@ -10,8 +10,8 @@ modules can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples)
 repository on Github.
 
-If you'd like to browse the repo locally or copy and sample projects into your
-own project, [fork](https://help.github.com/articles/fork-a-repo/) and
+If you'd like to browse the repo locally or copy sample projects into your own
+project, [fork](https://help.github.com/articles/fork-a-repo/) and
 [clone](https://help.github.com/articles/cloning-a-repository/) the
 `liferay-blade-samples` repository.
 
@@ -23,18 +23,20 @@ primary folders:
 - `liferay-gradle`
 - `maven`
 
-The provided sample modules are organized into these four main build chains, to
-cater to a multitude of different developers. Each folder offers a set of
-Liferay projects that can be bootstrapped to that specific development
-environment. The `liferay-gradle` folder provides projects that are bootstrapped
-on to the Liferay Gradle plugin (e.g., `com.liferay.plugin`). The Liferay Gradle
-plugin is really a set of Gradle plugins that makes developing Liferay
-applications quick and easy.
+The provided sample modules are organized into several different build chains to
+cater to a variety of developers. Each folder offers a set of Liferay projects
+that can be bootstrapped to that specific development environment. For example,
+the sample project residing in the `gradle` folder can be bootstrapped to a
+Gradle based development environment. The same concept also applies to the
+`bndtools` and `maven` projects. The `liferay-gradle` folder provides projects
+that are bootstrapped on to the Liferay Gradle plugin (e.g.,
+`com.liferay.plugin`). The Liferay Gradle plugin is really a set of Gradle
+plugins that makes developing Liferay applications quick and easy.
 
 +$$$
 
 **Note:** There are two additional projects in the `/bndtools` folder that
-you'll need to build and publish the modules:
+you'll need to build and publish modules:
 
 - `/bndtools/cnf` - the Bndtools configuration project.
 - `/bndtools/blade.run` - A Bndtools project which can push modules into an OSGi
@@ -65,8 +67,8 @@ $$$
 
 For a list of sample template projects available, visit the
 [Liferay extension points](https://github.com/liferay/liferay-blade-samples#liferay-extension-points-and-template-projects)
-heading in the Liferay Blade Samples repository. This list is not comprehensive.
-A subset of missing extension point samples can be found in the
+sub-section in the Liferay Blade Samples repository. This list is not
+comprehensive. A subset of missing extension point samples can be found in the
 [Liferay extension points without template projects](https://github.com/liferay/liferay-blade-samples#liferay-extension-points-without-template-projects)
 sub-section. Visit the repo's
 [Contribution](https://github.com/liferay/liferay-blade-samples#contribution)
