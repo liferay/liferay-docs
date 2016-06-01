@@ -1,6 +1,6 @@
 # Spring MVC
 
-If you're developing applications for Liferay, it makes sense to use [Liferay's MCVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) and [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder). If you're already a wizard with
+If you're developing applications for Liferay, it makes sense to use [Liferay's MVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) and [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder). If you're already a wizard with
 Spring MVC, you can instead use that framework for your application's
 controller. You can still use Service Builder for your Model layer.
 
@@ -10,6 +10,12 @@ you have a decision to make, since Spring MVC projects need to be packaged as
 WAR archives: Do you want to pre-configure your Spring MVC portlet project as a
 WAB, or do you want to let the WAB generator in Liferay do the work for you? The
 benefits and drawbacks of each approach are covered here.
+
+<!-- Spring MVC can also be packaged as a JAR according to Miguel. We need to
+find best practices for this. Maybe this should be re-factored to show 1. How to
+make an existing Spring MVC portlet run in Liferay and consume OSGi services
+using best practices, and how to start from scratch adn create a "best
+practices" spring MVC portlet.-->
 
 +$$$
 
