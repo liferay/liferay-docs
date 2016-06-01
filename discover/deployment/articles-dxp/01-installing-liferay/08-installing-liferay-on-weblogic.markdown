@@ -1,45 +1,98 @@
 # Installing Liferay DXP on WebLogic 12c R2
 
-<!-- general intro goes here -->
+This article shows you how to install Liferay DXP in WebLogic 12c R2. Note that 
+although it's possible to install Liferay DXP in a WebLogic Admin Server, this 
+isn't recommended. It's best practice to install web apps, including Liferay 
+DXP, in a WebLogic Managed server. By deploying to a Managed Server, you’ll be 
+able to startup/shutdown Liferay DXP more quickly and you’ll more easily be able 
+to extend DXP into a cluster configuration. This article therefore focuses on 
+installing DXP in a Managed Server. 
 
-Before installing Liferay DXP in your WebLogic server, you should read the 
-following to familiarize yourself with Liferay's general installation steps: 
+Before getting started, you should take care of a few things. First, it's 
+assumed that your Admin and Managed Servers already exist. See 
+[WebLogic's documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html) 
+for instructions on setting up and configuring Admin and Managed Servers. 
+
+You should also read the following to familiarize yourself with Liferay's 
+general installation steps: 
 
 - [Liferay Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
 - [Installing Liferay Portal](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
 - [Installing Liferay Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
 
-Note that although it's possible to install Liferay DXP in a WebLogic admin 
-server, this isn't recommended. It's best practice to install web apps, 
-including Liferay DXP, in a WebLogic managed server. This guide shows you how to 
-do this, and assumes that your admin and managed servers already exist. See 
-[WebLogic's documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html) 
-for instructions on setting up and configuring admin and managed servers. 
-
-In WebLogic, 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
-is generally `$WL_HOME/user_projects/domains/your_domain_name`, where 
-`your_domain_name` is the name of your WebLogic domain. 
-
-Without any further ado, get ready to install Liferay DXP in WebLogic! 
-
-## Installing Liferay Dependencies
-
-First, you should download Liferay DXP's dependencies from 
+And lastly, download Liferay DXP's WAR file and dependencies from 
 [http://files.liferay.com/private/ee](http://files.liferay.com/private/ee) 
 or the customer portal on 
 [liferay.com](https://www.liferay.com/). 
+You'll need the following files:
+
+- `liferay-dxp-digital-enterprise-[version].war`: Liferay DXP WAR file
+
+- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: Liferay DXP 
+  dependencies
+
+- `liferay-dxp-digital-enterprise-osgi-[version].zip`: Liferay DXP OSGi 
+  dependencies
+
+Without any further ado, get ready to install Liferay DXP in WebLogic! 
+
+## Setting Liferay Properties
+
+Before installing Liferay, you must preconfigure some of its properties in a 
+`portal-ext.properties` file. This is required to set the 
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+folder, the autodeploy folders, and a security property required by Liferay's 
+Control Panel. 
+
+First, decide which directory you want to serve as Liferay Home. In WebLogic, 
+Liferay Home is generally `$WL_HOME/user_projects/domains/your_domain_name`, 
+where `your_domain_name` is the name of your WebLogic domain. Then create your 
+`portal-ext.properties` file and add the following properties to it:
+
+    liferay.home=/full/path/to/your/liferay/home/folder
+    auto.deploy.deploy.dir=${liferay.home}/deploy
+    auto.deploy.weblogic.dest.dir=${liferay.home}/deploywar
+    redirect.url.security.mode=domain
+
+The `liferay.home` property sets the location of Liferay Home. This property is 
+then used by the `auto.deploy.*` properties to set the location that WAR plugins 
+are deployed to. Note that you must create the `deploywar` folder manually. 
+Lastly, the `redirect.url.security.mode` property setting is required to fix an 
+issue where the buttons in Liferay's Control Panel don't work. 
+
+Now that these properties are set, there are two ways to utilize your 
+`portal-ext.properties` file:
+<!-- 
+If choosing option #1, where does portal-ext.properties get deployed to once 
+Liferay deploys? I can't find it anywhere. If I have other properties I want to 
+set after deployment, should I recreate it in Liferay Home?
+-->
+
+1. Expand the Liferay DXP WAR file and place `portal-ext.properties` in the 
+   `WEB-INF/classes` folder. Later, you can deploy the expanded archive to 
+   WebLogic. Alternatively, you can re-WAR the expanded archive for later 
+   deployment.
+
+2. Place `portal-ext.properties` in your Liferay Home folder.
+
+In either case, Liferay reads your property settings once it starts up. 
+
+Next, you'll install Liferay's dependencies.
+
+## Installing Liferay Dependencies
+
 Unzip the dependencies and place them in your WebLogic domain's `lib` folder. 
 Generally, this is `Liferay_Home/lib`. 
 
-<!-- List files. Also include tomcat-juli.jar, and database driver? -->
-
-Next, you must download and install Liferay's OSGi dependencies. Download the 
-OSGi zip file from the same place you downloaded DXP's dependencies. Extract the 
-OSGi dependencies to the `osgi` folder (create this folder if it doesn't exist) 
-in `Liferay_Home`. 
+Next, you must install Liferay's OSGi dependencies. Extract the OSGi 
+dependencies to the `osgi` folder (create this folder if it doesn't exist) in 
+your Liferay Home folder. 
 
 <!-- Are the theme WARs required? -->
+
+Liferay also needs the driver JAR file applicable for the database you plan to 
+use for Liferay. If WebLogic does not already have access to the JDBC driver for 
+your database, copy the driver JAR to your domain’s `lib` folder as well. 
 
 ## Configuring the Node Manager
 
@@ -50,6 +103,10 @@ WebLogic installation. You'll do this via the
 file, and set the `SecureListener` property to `false`: 
 
     SecureListener=false
+
+This disables the SSL requirement for the Node Manager, allowing it to accept 
+unencrypted connections. 
+<!-- Why is this required? What if a customer has to use SSL? -->
 
 If you're running WebLogic on Mac or Linux, you must also set the 
 `NativeVersionEnabled` property to `false`:
@@ -84,7 +141,19 @@ These settings support Liferay's memory requirements, Lucene usage, and Aspect
 Oriented Programming via AspectJ. Make sure to set `MW_HOME` to the directory 
 containing your WebLogic server on your machine. 
 
+You must now disable WebLogic's included Derby installation. Do this by adding 
+the following in your domain's `bin/startWebLogic.[cmd|sh]` file. Remember to 
+use `set` instead of `export` if you're on Windows: 
+
+    export DERBY_FLAG=false
+
+Next, you'll configure your database. 
+
 ## Database Configuration
+
+If you want WebLogic to manage your database for Liferay, use the following 
+procedure. If you want to use Liferay’s built-in data source, you can skip this 
+section. 
 
 1. Log in to your AdminServer console.
 
@@ -108,7 +177,7 @@ containing your WebLogic server on your machine.
 7. Select the target for the data source and click *Finish*. 
 
 8. You must now tell Liferay about the JDBC data source. Create a 
-   `portal-ext.propreties` file in the Liferay Home directory, and add the line 
+   `portal-ext.propreties` file in your Liferay Home directory, and add the line 
    `jdbc.default.jndi.name=jdbc/LiferayPool`. 
 
 Alternatively, you can make the above configuration strictly via properties in 
@@ -123,12 +192,60 @@ appropriate for your database's configuration:
 
 ## Mail Configuration
 
+If you want WebLogic to manage your mail session, use the following procedure. 
+If you want to use Liferay’s built-in mail session (recommended), you can skip 
+this section. 
+
+1. Start WebLogic and log in to your Admin Server's console.
+
+2. Select *Services* &rarr; *Mail Sessions* from the *Domain Structure* box on 
+   the left hand side of your Admin Server's console UI. 
+
+3. Click *New* to begin creating a new mail session. 
+
+4. Name the session *Liferay Mail*, give it the JNDI name `mail/MailSession`, 
+   and click *Next*. 
+
+5. Choose the managed server that you'll install Liferay on, and click *Finish*. 
+
+6. Shut down the managed server you'll install Liferay on. This is required so 
+   that you can set the portal property required to point Liferay to your mail 
+   session. 
+
+7. If it doesn't already exist, create a `portal-ext.properties` file in your 
+   Liferay Home folder and add the following:
+
+    mail.session.jndi.name=mail/MailSession
+
+Liferay DXP references your WebLogic mail session via this property setting. 
+
+## Security Configuration
+
 ## Deploying Liferay DXP
 
-- Download and unzip the WAR
+As mentioned earlier, although you can deploy Liferay DXP to a WebLogic Admin 
+Server, you should instead deploy DXP to a WebLogic Managed Server. As a best 
+practice, you should dedicate the Admin Server to managing other servers that 
+run your apps. 
 
-- In `WEB-INF/classes`, create a `portal-ext.properties` file and in it, set 
-  `liferay.home` to your Liferay Home folder. 
+Regardless of which server(s) you target to host DXP in your WebLogic domain, 
+here are steps for deploying DXP: 
 
-- In your admin server, select the expanded WAR folder and deploy it to your 
-  managed server. 
+1. Start your WebLogic server, if it's not already running. 
+
+2. In your Admin Server's console UI, select *Deployments* from the *Domain 
+   Structure* box on the left hand side. Then click *Install* to start a new 
+   deployment. 
+
+3. Select the Liferay DXP WAR file on your file system. Alternatively, you can 
+   upload it by clicking the *Upload your file(s)* link. Click *Next*.
+
+4. Select *Install this deployment as an application* and click *Next*.
+
+5. Select the server you want to deploy DXP to, and click *Next*. 
+
+6. If the default name is appropriate for your installation, keep it. Otherwise, 
+   give it a name of your choosing and click *Next*.
+
+7. Click *Finish*. After the deployment finishes, click *Save*. Liferay 
+   precompiles all the JSPs, and then launches. 
