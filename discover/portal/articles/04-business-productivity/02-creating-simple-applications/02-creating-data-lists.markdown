@@ -30,7 +30,7 @@ To create a new sign-up form and list for a lunar rover race:
 in (the Lunar Resort if you're following the example), then click on *Content*
 &rarr; *Dynamic Data Lists*.
 
-2. Click the *Add* button (![Add Icon](../../../images/add-button.png)) to create a new list based on a data definition.
+2. Click the *Add* button (![Add Icon](../../../images/icon-add.png)) to create a new list based on a data definition.
 
 3. Give the data list a name, like *Lunar Rover Race Sign-Up*, and a description to
    assist administrative users in the future.
