@@ -10,7 +10,7 @@ A theme mock up serves as a guide for what the finished theme will look like:
 ![Figure 1: By the end of this Learning Path, you'll have developed this theme.](../../../images/finished-theme.png)
 
 To get started, 
-[download the resources](/documents/10184/581742/themes-learning-path-6.2.zip) 
+[download the resources](/documents/10184/532726/themes-learning-path-6.2.zip) 
 you'll need to go through each exercise and unzip them to a folder of your 
 choice. 
 
