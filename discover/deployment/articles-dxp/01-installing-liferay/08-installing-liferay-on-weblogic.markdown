@@ -36,6 +36,74 @@ You'll need the following files:
 
 Without any further ado, get ready to install Liferay DXP in WebLogic! 
 
+## Configuring WebLogic's Node Manager
+
+WebLogic requires a Node Manager to start and stop managed servers. Before 
+installing Liferay, you must configure the Node Manager included with your 
+WebLogic installation. You'll do this via the 
+`domains/your_domain_name/nodemanager/nodemanager.properties` file. Open this 
+file, and set the `SecureListener` property to `false`: 
+<!-- Why is this required? What if a customer has to use SSL? -->
+
+    SecureListener=false
+
+If you're running WebLogic on Mac or Linux, you must also set the 
+`NativeVersionEnabled` property to `false`: 
+
+    NativeVersionEnabled=false
+
+The `SecureListener=false` setting disables the SSL requirement for the Node 
+Manager, allowing it to accept unencrypted connections. Note that you must also 
+configure your machine in WebLogic's Admin Server UI to accept unencrypted 
+connections from the Node Manager. To do this, first log in to your Admin Server 
+and select *Environment* &rarr; *Machines* from the *Domain Structure* box on 
+the left. Click your machine in the table and then select the *Configuration* 
+&rarr; *Node Manager* tab. In the *Type* field, select *Plain* from the selector 
+menu, and then click *Save*. You must restart your Admin Server for this change 
+to take effect. 
+
+## Configuring WebLogic
+
+Next, you must set some properties in your WebLogic startup scripts. First, set 
+UTF-8 file encoding in the clustering section of your domain’s 
+`bin/setDomainEnv.[cmd|sh]` file. To do this, open the 
+`bin/setDomainEnv.[cmd|sh]` file and change this: 
+
+    JAVA_PROPERTIES="${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+
+To this:
+
+    JAVA_PROPERTIES="-Dfile.encoding=utf8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+
+Next, you must set your Java memory arguments and other properties in your 
+managed server's startup script. To do so, set the following properties in your 
+domain's `bin/startManagedWebLogic.[cmd|sh]` file. Note that you must use `set` 
+instead of `export` if you're on Windows: 
+
+    export USER_MEM_ARGS="-Xmx2048m -XX:MaxMetaspaceSize=512m"
+
+    export MW_HOME="/your/weblogic/server/directory"
+
+    export JAVA_OPTIONS="${JAVA_OPTIONS}  -da:org.apache.lucene... -da:org.aspectj..."
+
+These settings support Liferay's memory requirements, Lucene usage, and Aspect 
+Oriented Programming via AspectJ. Make sure to set `MW_HOME` to the directory 
+containing your WebLogic server on your machine. For example:
+
+    export MW_HOME="/Users/ray/Oracle/wls12210"
+
+You must now disable WebLogic's included Derby installation. Do this by adding 
+the following in your domain's `bin/startWebLogic.[cmd|sh]` file. Remember to 
+use `set` instead of `export` if you're on Windows: 
+
+    export DERBY_FLAG=false
+
+<!-- 
+This doesn't work. The derby.log file indicates that Derby starts up regardless 
+of this setting. I also tried entering "false" instead of just false, but it had 
+no effect. 
+-->
+
 ## Setting Liferay Properties
 
 Before installing Liferay, you must preconfigure some of its properties in a 
@@ -45,7 +113,7 @@ folder, the autodeploy folders, and a security property required by Liferay's
 Control Panel. 
 
 First, decide which directory you want to serve as Liferay Home. In WebLogic, 
-Liferay Home is generally `$WL_HOME/user_projects/domains/your_domain_name`, 
+Liferay Home is generally `$MW_HOME/user_projects/domains/your_domain_name`, 
 where `your_domain_name` is the name of your WebLogic domain. Then create your 
 `portal-ext.properties` file and add the following properties to it:
 
@@ -61,7 +129,7 @@ Lastly, the `redirect.url.security.mode` property setting is required to fix an
 issue where the buttons in Liferay's Control Panel don't work. 
 
 Now that these properties are set, there are two ways to utilize your 
-`portal-ext.properties` file:
+`portal-ext.properties` file: 
 <!-- 
 If choosing option #1, where does portal-ext.properties get deployed to once 
 Liferay deploys? I can't find it anywhere. If I have other properties I want to 
@@ -93,61 +161,6 @@ your Liferay Home folder.
 Liferay also needs the driver JAR file applicable for the database you plan to 
 use for Liferay. If WebLogic does not already have access to the JDBC driver for 
 your database, copy the driver JAR to your domain’s `lib` folder as well. 
-
-## Configuring the Node Manager
-
-WebLogic requires a Node Manager to start and stop managed servers. Before 
-installing Liferay, you must configure the Node Manager included with your 
-WebLogic installation. You'll do this via the 
-`domains/your_domain_name/nodemanager/nodemanager.properties` file. Open this 
-file, and set the `SecureListener` property to `false`: 
-
-    SecureListener=false
-
-This disables the SSL requirement for the Node Manager, allowing it to accept 
-unencrypted connections. 
-<!-- Why is this required? What if a customer has to use SSL? -->
-
-If you're running WebLogic on Mac or Linux, you must also set the 
-`NativeVersionEnabled` property to `false`:
-
-    NativeVersionEnabled=false
-
-## Configuring WebLogic
-
-Next, you must set some properties in your WebLogic startup scripts. First, set 
-UTF-8 file encoding in the clustering section of your domain’s 
-`bin/setDomainEnv.[cmd|sh]` file. To do this, open the 
-`bin/setDomainEnv.[cmd|sh]` file and change this: 
-
-    JAVA_PROPERTIES="${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
-
-To this:
-
-    JAVA_PROPERTIES="-Dfile.encoding=utf8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
-
-Next, you must set your Java memory arguments and other properties in your 
-managed server's startup script. To do so, set the following properties in your 
-domain's `bin/startManagedWebLogic.[cmd|sh]` file. Note that you must use `set` 
-instead of `export` if you're on Windows: 
-
-    export USER_MEM_ARGS="-Xmx2048m -XX:MaxMetaspaceSize=512m"
-
-    export MW_HOME="/your/weblogic/server/parent/directory"
-
-    export JAVA_OPTIONS="${JAVA_OPTIONS}  -da:org.apache.lucene... -da:org.aspectj..."
-
-These settings support Liferay's memory requirements, Lucene usage, and Aspect 
-Oriented Programming via AspectJ. Make sure to set `MW_HOME` to the directory 
-containing your WebLogic server on your machine. 
-
-You must now disable WebLogic's included Derby installation. Do this by adding 
-the following in your domain's `bin/startWebLogic.[cmd|sh]` file. Remember to 
-use `set` instead of `export` if you're on Windows: 
-
-    export DERBY_FLAG=false
-
-Next, you'll configure your database. 
 
 ## Database Configuration
 
@@ -220,6 +233,48 @@ this section.
 Liferay DXP references your WebLogic mail session via this property setting. 
 
 ## Security Configuration
+
+When you are ready to start using apps from Marketplace, you'll want to protect
+your portal and your WebLogic server from security threats. To do so, you must
+enable Java Security on your WebLogic server and specify a security policy to
+grant Liferay Portal access to your server. 
+
+First, you'll grant Liferay access to your server. This configuration opens all
+permissions--you can fine-tune your policy's permissions later. Create a policy
+file named `weblogic.policy` in your `$WL_HOME/server/lib` folder
+and add the following contents:
+<!--
+Is this still correct? The weblogic.policy file exists by default, and already 
+has a ton of specific security settings in it. Does this one play nice with 
+them?
+-->
+
+    grant {
+        permission java.security.AllPermission;
+    };
+
+To enable security on your WebLogic server and direct the server to your policy
+file, open the `setDomainEnv.[cmd|sh]` file in your domain's folder. Then set
+the `-Djava.security.manager` Java option and set the property
+`-Djava.security.policy==` to the location of your `weblogic.policy` file. You
+can specify both settings on the same line like this: 
+<!-- 
+These settings don't work. On server startup, they appear as invalid commands in 
+the terminal.
+-->
+
+    -Djava.security.manager -Djava.security.policy==$WL_HOME/server/lib
+
+The double equals sign tells the app server to use this policy file on top of
+any existing security policies. 
+
+For extensive information on Java SE Security Architecture see its specification
+documents at
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
+Also, see the section 
+[Understanding Plugin Security Management](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
+in the Developer's Guide to learn how to configure Liferay plugin access to
+resources. 
 
 ## Deploying Liferay DXP
 
