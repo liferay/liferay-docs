@@ -155,7 +155,7 @@ structure and configuration files in a Liferay Workspace, visit the
 section.
 
 To create a Liferay Workspace in IDE, select *File* &rarr; *New* &rarr; *Liferay
-Workspace*.
+Workspace Project*.
 
 ![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../../images/selecting-liferay-workspace.png)
 
@@ -182,9 +182,29 @@ information on working sets, visit
 
 ![Figure 2: Liferay IDE provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/new-workspace-menu.png)
 
+A popup window appears prompting you to open the *Liferay Workspace*
+perspective. Click *Yes*, and your perspective will switch to *Liferay
+Workspace*.
+
+The *Liferay Workspace* perspective is intended for Gradle development for
+Liferay 7 modules. Since Liferay Workspaces are used for Gradle based
+development and the *Liferay* workspace is intended for the Plugins SDK and Ant
+based development, the two perspectives are independent of each other.
+
+![Figure 3: The Liferay Workspace perspective is preferred for Liferay 7 and OSGi module development.](../../../images/liferay-workspace-perspective.png)
+
 You'll find your new workspace in the Project Explorer and your Liferay server
 (if you created it) in the Servers menu. It's important to note that an Eclipse
 workspace can only have one Liferay Workspace project.
+
+![Figure 4: An IDE workspace only supports one Liferay Workspace project. If you create another, you'll be given an error message.](../../../images/liferay-workspace-duplicate.png)
+
+If you've already created a Liferay Workspace and you'd like to import into your
+existing IDE, you can do so by navigating to *File* &rarr; *Import* &rarr;
+*Liferay* &rarr; *Liferay Workspace Project*. Then click *Next* and browse for
+your worspace project. Once you've selected you workspace, click *Finish*.
+
+![Figure 5: You can import an existing Liferay Workspace into your current IDE session.](../../../images/liferay-workspace-import.png)
 
 Congratulations! You've learned how to create a Liferay Workspace using the
 command line and Liferay IDE. Now that your workspace is created, you can
