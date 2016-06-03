@@ -23,15 +23,24 @@ primary folders:
 - `liferay-gradle`
 - `maven`
 
-The provided sample modules are organized into several different build chains to
-cater to a variety of developers. Each folder offers a set of Liferay projects
-that can be bootstrapped to that specific development environment. For example,
-the sample project residing in the `gradle` folder can be bootstrapped to a
-Gradle based development environment. The same concept also applies to the
-`bndtools` and `maven` projects. The `liferay-gradle` folder provides projects
-that are bootstrapped on to the Liferay Gradle plugin (e.g.,
-`com.liferay.plugin`). The Liferay Gradle plugin is really a set of Gradle
-plugins that makes developing Liferay applications quick and easy.
+The provided sample modules are organized into several different toolchains to
+cater to a variety of developers. Each folder offers the same set of sample
+Liferay modules with only the build files specific to that toolchain differing.
+For example, the `gradle` folder contains projects using standard OSS Gradle
+plugins that can be easily added to any Gradle composite build. The same concept
+also applies to the `bndtools` and `maven` projects.
+
+The `liferay-gradle` folder also contains projects built with Gradle; however,
+it uses the Liferay Gradle plugin (e.g., `com.liferay.plugin`) which encompasses
+additional functionality for various types of Liferay modules. The Liferay
+Gradle plugin is recommended for Gradle users developing for Liferay. The
+`gradle` folder is available for those who are unable to adopt the
+`liferay-gradle` plugin. Because the `liferay-gradle` plugin takes over the
+standard Gradle JAR plugin, there may be cases where it is incompatible with an
+existing Gradle build configuration.
+
+The sample projects for each toolchain demonstrate how to use various frameworks
+like Declarative Services (DS) and the OSGi API.
 
 +$$$
 
@@ -42,26 +51,6 @@ you'll need to build and publish modules:
 - `/bndtools/blade.run` - A Bndtools project which can push modules into an OSGi
 container and run them. The `biz.aQute.remote.agent-X.X.X.jar` must be deployed
 before this project can work properly.
-
-$$$
-
-The sample projects also demonstrate how to use various frameworks like:
-
-- Blueprint
-- Declarative Services (DS)
-- OSGi API
-
-+$$$
-
-**Note:** Liferay does not provide a Blueprint implementation out-of-the-box. To
-use the Blueprint modules provided in this repository, you must deploy a
-Blueprint implementation (e.g.,
-[Apache Aries - Blueprint](http://aries.apache.org/modules/blueprint.html)).
-Three modules are required:
-
-- [Apache Aries Blueprint Bundle](http://mvnrepository.com/artifact/org.apache.aries.blueprint/org.apache.aries.blueprint/1.1.0)
-- [Apache Aries Blueprint Annotation API](http://mvnrepository.com/artifact/org.apache.aries.blueprint/org.apache.aries.blueprint.annotation.api/1.0.1)
-- [Apache Aries Proxy Bundle](http://mvnrepository.com/artifact/org.apache.aries.proxy/org.apache.aries.proxy/1.0.1)
 
 $$$
 
