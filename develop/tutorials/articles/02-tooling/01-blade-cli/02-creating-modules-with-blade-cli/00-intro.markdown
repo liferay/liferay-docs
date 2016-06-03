@@ -2,14 +2,14 @@
 
 When you use Blade CLI to create a project, your project's folder structure,
 build script (`build.gradle`), Java classes, and other resources (such as JSPs)
-are created based on the chosen template. Once you've created a project, you can
-import your project into your favorite IDE and proceed with development. All
-three of the major Java IDEs (Eclipse, IntelliJ, and Netbeans) provide Gradle
-support. Liferay's Eclipse-based IDEs (Liferay IDE and Liferay Developer Studio)
-provide wizards that allow you to create new Liferay module projects. These
-wizards use Blade CLI under the hood. Once you finish developing your project,
-you can use Gradle to build your project's JAR file and use Blade CLI to deploy
-your module to @product@'s module framework.
+are created based on the chosen template. Once you finish developing your
+project, you can use Gradle to build your project's JAR file and use Blade CLI
+to deploy your module to @product@'s module framework. In this tutorial, you'll
+learn how to use Blade CLI standalone. You can, however, use Blade CLI from a
+Liferay Workspace, which offers additional benefits. You can learn more about
+creating modules with a Liferay Workspace in the
+[Creating Modules in a Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-modules-in-a-workspace)
+tutorial.
 
 To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options
@@ -57,13 +57,38 @@ class `GuestbookPortlet`. The project name is `my-guestbook-project`. Since the
 directory was not specified, it is created in the folder you executed the
 command.
 
-Before creating your application, make sure you've created a Liferay Workspace
-and navigated to the workspace's `modules` directory. If you'd like to learn
-more about Liferay Workspaces and how to create/use them, see the
-[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
-tutorial.
-
 Now that you know the basics on creating Liferay module projects using `blade
 create`, you can visit some of the tutorials in this section on specific
 `create` templates. The templates will be discussed further so you know exactly
 what each one has to offer.
+
+Next, you'll learn how to deploy a module to @product@.
+
+## Deploying to Liferay [](id=deploying-to-liferay)
+
+Once you've created your Liferay module project, you'll need to deploy it to
+your Liferay instance. To use Blade CLI to deploy your module, use the following
+command:
+
+    blade deploy
+
+Blade CLI can detect a locally running Liferay instance and automatically
+deploys your module to that Liferay instance. You can also specify a custom port
+to deploy your module to using the `-p` parameter followed by the port number.
+For instance, you could run `blade deploy -p 8090` to deploy to port 8090. You
+can also watch the deployed module for changes by specifying the `-w` parameter.
+This parameter automatically redeploys the module when changes are detected.
+
++$$$
+
+**Note:** The `blade deploy` command requires Gradle to be installed on your
+machine, or the use of a Gradle wrapper. To ensure the availability of the
+Gradle wrapper, you can work in a Liferay Workspace. For more information on
+Liferay Workspaces, see the
+[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+tutorial.
+
+$$$
+
+Awesome! You've successfully created a module project using one of Blade CLI's
+existing templates and deployed it to a running Liferay server.
