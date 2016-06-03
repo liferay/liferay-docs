@@ -10,34 +10,34 @@ and more.
 This article's following sections each detail one or more of the features 
 available in LCS: 
 
-- [**What LCS Stores About Your Liferay Servers:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers)
+- [**What LCS Stores About Your Liferay Servers:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers)
   For LCS to work, the LCS servers must store certain information about your 
   Liferay servers. Sensitive data, however, isn't stored on the LCS servers. 
   Learn exactly what data LCS does and doesn't store. 
 
-- [**Managing Your LCS Projects:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-your-lcs-projects)
+- [**Managing Your LCS Projects:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-your-lcs-projects)
   Learn how to create and request access to LCS projects, how LCS roles work, 
   and how to manage LCS users. 
 
-- [**Using the Dashboard:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-the-dashboard)
+- [**Using the Dashboard:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-the-dashboard)
   Learn how to manage projects, environments, and servers in LCS. This includes 
   applying fix packs, monitoring server status, viewing server metrics, and 
   more. 
 
-- [**Using Web Notifications:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-web-notifications) 
+- [**Using Web Notifications:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-web-notifications) 
   LCS displays web notifications that you can view by clicking the bell icon 
   next to the user menu in the Dockbar. Learn how to manage these. 
 
-- [**Managing Your LCS Account:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-your-lcs-account)
+- [**Managing Your LCS Account:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-your-lcs-account)
   Learn how to manage your LCS account. This includes configuring LCS to send 
   you notification emails when specific events occur in your LCS projects, and 
   setting general account preferences. 
 
-- [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens)
+- [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens)
   Learn how to use environment tokens to automatically register your Liferay 
   servers with LCS. This is crucial in auto-scaling environments. 
 
-- [**Managing Liferay DXP Subscriptions:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-dxp-subscriptions)
+- [**Managing Liferay DXP Subscriptions:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
   Learn how to view and manage your Liferay DXP subscriptions for the servers in 
   your LCS project. 
 
@@ -360,7 +360,7 @@ properties in this table are organized into the following categories:
   file.
 
 - **Dynamic Properties:** Any property values set at runtime. For example, the 
-  [Liferay Home](/discover/deployment/-/knowledge_base/6-2/liferay-home) 
+  [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
   folder's location depends on your configuration. To always specify this folder 
   when setting any properties that require it, you can use `${liferay.home}` 
   instead of an absolute directory path. 
