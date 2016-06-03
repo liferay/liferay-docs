@@ -1,4 +1,4 @@
-# Using the Service Template [](id=using-the-service-template)
+# Service Template [](id=using-the-service-template)
 
 In this tutorial, you'll learn how to create a Liferay service as a Liferay
 module. To create a Liferay service as a module, use a command like the

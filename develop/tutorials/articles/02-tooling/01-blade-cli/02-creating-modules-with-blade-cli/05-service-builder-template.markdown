@@ -1,4 +1,4 @@
-# Using the Service Builder Template [](id=using-the-service-builder-template)
+# Service Builder Template [](id=using-the-service-builder-template)
 
 In this tutorial, you'll learn how to create a Liferay portlet application that
 uses Service Builder as Liferay modules. To create a Liferay Service Builder
