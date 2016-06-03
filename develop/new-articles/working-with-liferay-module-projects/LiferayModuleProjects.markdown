@@ -1,57 +1,61 @@
-# Liferay Module Projects Introduce
+# Working with Liferay Module Projects
 
-# 1 Working with Liferay Module Projects tutorial
+Modules are OSGi-based projects used to develop Liferay applications. In Liferay
+Workspaces, Gradle is the build tool used to create, compile, and publish
+Liferay modules. Before you can begin creating and managing your Liferay module
+projects, you'll need to create a Liferay Workspace, which is covered in the
+[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+tutorial. Once you've created your Liferay Workspace, you can begin using it to
+create Gradle-based OSGi modules for @product@.
 
-## 1.1 What makes a Liferay module project in Eclipse
+## Creating New Modules in Liferay IDE
 
-Module project is based on osgi technology to develop liferay portlet, using
-gradle mode to create, compile and publish. It is a new kind of project type.
-
-## 1.2 Creating new modules in Liferay IDE
-
-Our IDE-3.0 provide a “module project wizard” for users to create all kinds of
-module projects. It is very convenient. So how to use it? You could create new
-liferay module project by `“File -> New -> Liferay Module Project”`, then input
-project name,click finish. And you could also choose the project template which
-you want. It’s very simple.
+IDE provides a *Module Project Wizard* for users to create a variety of
+different module projects. You can create a new Liferay module project by
+navigating to *File* &rarr; *New* &rarr; *Liferay Module Project*, inputting the
+project name and project template, and clicking *Finish*.
 
 ![NewModuleProjects](images/NewModuleProject.png)
 
-## 1.3 Importing existing
-
-IDE-3.0 also provides a method to import existing module project for users. As a
-user, you could import existing module project by `“File -> Import -> Liferay ->
-Liferay Module Project(s)”`, then point to the project location.
+IDE also provides a method to import existing module projects. You can import a
+module project by navigating to *File* &rarr; *Import* &rarr; *Liferay* &rarr;
+*Liferay Module Project(s)*, then point to the project location. Once you've
+selected the project to import, click *Finish*.
 
 ![ImportModuleWizard](images/ImportWizard.png)
 
 ![ChooseProjectLocation](images/ChooseProject.png)
 
-## 1.4 Updating module dependencies through gradle menu
+## Updating Module Dependencies Via Gradle Menu
 
-For some users, they want to add some dependencies on their project for some
-other development, could add this through IDE.Users could double click
-`“build.gradle”` on a module project then add dependency on the dependencies
-part. Such as :
-`{compile group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-...
-}`
+There are times when your module project will require dependency updates. You
+can update your module dependencies manually via the command line, or you can do
+this via the IDE Gradle Menu. Using IDE, double-click the
+`build.gradle` file in a module project and add a dependency in the
+`dependencies` code block, such as:
 
-`Notice`:The most important thing is that when you finished add dependency, you have to run `“Refresh Gradle Project” by “right click project - > Gradle -> Refresh Gradle Project”`.
+    dependencies {
+        compile group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+        ...
+    }
+
+When adding a new dependency to a Gradle project, you must refresh the project
+by right-clicking the project and selecting *Gradle* &rarr; *Refresh Gradle
+Project*.
 
 ![RefreshGradleProject](images/RefreshGradleproject.png)
 
-## 1.5 Deploying modules to Liferay DXP in Servers View
+## Deploying Modules to Liferay in Servers View
 
-IDE-3.0 also supports deploy module project to the started portal in server view
-such as Liferay DXP.
+IDE also supports module project deployment to a running @product@ instance in
+the *Servers* view.
 
-## 1.6 Using integrated gogo shell
+## Using Integrated Gogo Shell
 
 For the deployed module project, if you want to check if it has been deployed
 successfully, one way you could check if it added on the website. And another
-way is you could use `“Gogo Shell”`. Right click started portal in server view
-choose `“Open Gogo Shell”`, then in the gogo shell view input `“lb”` , then it
+way is you could use `"Gogo Shell"`. Right click started portal in server view
+choose `"Open Gogo Shell"`, then in the gogo shell view input `"lb"` , then it
 will list all the deployed project.
 
 ![OpenGogoShell](images/OpenGogoShell.png)
@@ -91,9 +95,9 @@ files`.
 ### 2.2.3 Activator
 
 For this type, when `server / stop` will call the method of `start / stop`. And
-for the `bnd.bnd` file the `“Activator” will include some message`.
+for the `bnd.bnd` file the `"Activator" will include some message`.
 
-such as :  `“Bundle-Activator: com.example.aaactivatorActivator”`
+such as :  `"Bundle-Activator: com.example.aaactivatorActivator"`
 
 ![Activator](images/Activator.png)
 
@@ -105,8 +109,8 @@ including one parent project and two sub projects.
 ![ModuleServicebuilder](images/ModuleServicebuilder.png)
 
 User could set some properties in `service.xml file` then could run
-`build-service` to generate some java classes by `“right click project-service
--> Liferay -> Gradle -> build-service”`. Also could connect database and add
+`build-service` to generate some java classes by `"right click project-service
+-> Liferay -> Gradle -> build-service"`. Also could connect database and add
 some methods through these files that just generated for users. Notice when
 finished run build-service, you need to `refresh parent project`.
 
