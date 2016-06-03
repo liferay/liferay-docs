@@ -28,7 +28,7 @@ Follow the steps below to use your exposed modules in your portlets.
     the module `logger.es`:
 
         <aui:script require="js-logger/logger.es">
-            var Logger = jsLoggerLoggerEs;
+            var Logger = jsLoggerLoggerEs.default;
 
             var loggerOne = new Logger('*** -> ');
             loggerOne.log('Hello');
