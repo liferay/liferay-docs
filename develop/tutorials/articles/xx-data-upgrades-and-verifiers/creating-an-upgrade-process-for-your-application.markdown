@@ -250,27 +250,11 @@ migrate your code to the new framework.
     `UpgradeProcess` class, as they are indeed UpgradeSteps, require no change
     on your part. The new framework will process the steps as they are.
 
-5.  Remove the following Release service reference code:
-
-        @Reference(unbind = "_")
-        
-        potected void setReleaseLocalService(
-        
-            ReleaseLocalService releaseLocalService) {
-        
-            _releaseLocalService = releaseLocalService;
-            
-        }
-
-    And this logger code:
+5.  Remove the logger code:
 
         private static final Log _log = logFactoryUtil.getLog(
         
                 MicroblogsServiceUpgrade.class);
-
-    You don’t need to declare a reference to the Release service, via OSGi 
-    component or a direct call to the `ReleaseLocalServiceUtil`; the framework 
-    will perform these tasks for you.
 
 A summary of the steps for migration are outlined in the table below for 
 reference:
@@ -359,19 +343,6 @@ reference:
 					<li>
 					        It has no reference to Release 
 					        service.
-					</li>					
-					
-				</ul> 
-			</td>
-		</tr>
-		<tr>
-			<td class="table-header left-header">
-			ReleaseLocalService reference
-			</td>
-			<td class="">
-				<ul>
-					<li>
-						Remove it.
 					</li>					
 					
 				</ul> 
