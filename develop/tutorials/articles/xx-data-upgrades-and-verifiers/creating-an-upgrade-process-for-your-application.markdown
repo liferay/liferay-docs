@@ -118,7 +118,7 @@ $$$
 
 The upgrade process shown previously results in the creation of three rows in 
 the Release table, one per upgrade registration. In terms of data, each 
-registration is represented by a row in the `Release_table` on portal’s 
+registration is represented by a row in the `Release_ table` on portal’s 
 database. You can check the database to verify which upgrades have been executed 
 for each module.
 
