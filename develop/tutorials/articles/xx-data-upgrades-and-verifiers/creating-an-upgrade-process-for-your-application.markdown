@@ -43,9 +43,9 @@ is an abstraction for the changes you need to apply to the database from one
 version to the next one.
 
 To define a registration, you need to provide:
-- the name of the bundle representing the module
-- the version your module wants to upgrade from (as a String)
-- the version your module wants to upgrade to (as a String)
+- the bundle symbolic name of the module.
+- the schema version your module wants to upgrade from (as a String)
+- the schema version your module wants to upgrade to (as a String)
 - a list of UpgradeSteps
 
 For example, here is an upgrade process for the `com.liferay.microblogs.service`
