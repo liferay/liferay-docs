@@ -58,71 +58,71 @@ To define a registration, you need to provide:
 - the schema version your module wants to upgrade to (as a String)
 - a list of UpgradeSteps
 
-For example, here is an upgrade process for the `com.liferay.microblogs.service`
+For example, here is an upgrade process for the `com.liferay.calendar.service`
 module:
 
     @Override
 
     public void register(Registry registry) {
     
-            registry.register(
-            
-                    "com.liferay.microblogs.service", "0.0.1", "1.0.0",
-                    
-                    new
-            com.liferay.microblogs.upgrade.v1_0_0.UpgradeMicroblogsEntry());
-    
+    	registry.register(
+        		"com.liferay.calendar.service", "0.0.1", "1.0.0",
+        		new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking()));    
     }
 
-In this example, the `com.liferay.microblogs.service` module is being upgraded 
+In this example, the `com.liferay.calendar.service` module is being upgraded 
 from version 0.0.1 to version 1.0.0. The changes are produced by a list of 
 UpgradeSteps, which in this example contains only one step:
 
-    new com.liferay.microblogs.upgrade.v1_0_0.UpgradeMicroblogsEntry());
+    new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
     
 You can also register multiple upgrades in one class. For example, here is an
 extension of the previous upgrade process that runs two additional upgrades, 
 each with their own set of UpgradeSteps:
 
     @Override
-
     public void register(Registry registry) {
-    
-            registry.register(
-            
-                    "com.liferay.microblogs.service", "0.0.1", "1.0.0",
-                    
-                    new
-            com.liferay.microblogs.upgrade.v1_0_0.UpgradeMicroblogsEntry());
-            
-            registry.register(
-            
-                    "com.liferay.microblogs.service", "1.0.0", "1.0.1",
-                    
-                    new UpgradeUserNotificationEvent());
+        registry.register(
+            "com.liferay.calendar.service", "0.0.1", "1.0.0",
+            new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
 
-            registry.register(
-            
-                    "com.liferay.microblogs.service", "1.0.1", "1.0.2",
-                    
-                    new
-            com.liferay.microblogs.upgrade.v1_0_2.UpgradeMicroblogsEntry(),
-            
-                    new UpgradeSocial());
-    
+        registry.register(
+            "com.liferay.calendar.service", "1.0.0", "1.0.1",
+            new com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking());
+
+        registry.register(
+            "com.liferay.calendar.service", "1.0.1", "1.0.2",
+            new UpgradeCalendar());
+
+        registry.register(
+            "com.liferay.calendar.service", "1.0.2", "1.0.3",
+            new DummyUpgradeStep());
+
+        registry.register(
+            "com.liferay.calendar.service", "1.0.3", "1.0.4",
+            new UpgradeClassNames());
+
+        registry.register(
+            "com.liferay.calendar.service", "1.0.4", "1.0.5",
+            new UpgradeCalendarResource(
+                _classNameLocalService, _companyLocalService,
+                _userLocalService),
+            new UpgradeCompanyId(), new UpgradeLastPublishDate());
     }
 
-In this example the `com.liferay.microblogs.service` module is upgraded from 
-version 0.01 to 1.0.0 with one step. Next, it is upgraded from version 1.0.0
-to 1.0.1 using a list of UpgradeSteps with only one step in it. Finally, it is 
-upgraded from version 1.0.1 to version 1.0.2, using a list of
-UpgradeSteps with two steps in it, `UpgradeMicroblogsEntry` and `UpgradeSocial`, 
-both in the `v1_0_2` package!
+In this example the `com.liferay.calendar.service` module is upgraded from 
+version 0.01 to 1.0.0 with one step. Next, we can see that this is upgraded 
+from 1.0.1 to 1.0.2, and from 1.0.2 to 1.0.3, and from 1.0.3 to 1.0.4 using 
+only one UpgradeSetp every time. Finally, it is upgraded from version 1.0.4 
+to version 1.0.5, using a list of UpgradeSteps with three steps in it, 
+`UpgradeCalendarResource`, `UpgradeCompanyId`and `UpgradeLastPublishDate`.
 
 +$$$
 
 **Note:** Be careful with upgrade steps with the same name in different packages. 
-This could result in the wrong version being used for the upgrade.
+This could result in the wrong version being used for the upgrade 
+(see com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking 
+and com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking as example).
 
 $$$
 
@@ -156,61 +156,79 @@ review the older upgrade process next.
 
 ### Previous Upgrade Process Review [](id=previous-upgrade-process-review)
 
-Following the prior upgrade process, you started from a class that wrapped the 
-execution of several UpgradeProcesses representing the different upgrades for a 
-specific version of your module.
+Following the prior upgrade process, you have to define the property 
+upgrade.processes, a list of UpgradeProcesses representing the different 
+upgrades for a specific version of your module.
 
 For instance, the code below shows the prior upgrade process for 
-Microblogs-service module from v1.0.0 to 1.0.1, and then to 1.0.2. :
+Calendar-service module from v1.0.0 to 1.0.1, and then to 1.0.2. :
 
-    @Activate
-    
-    protected void upgrade() throws PortalException {
-    
-            List<UpgradeProcess> upgradeProcesses = new ArrayList<>(1);
-            
-            upgradeProcesses.add(new MicroblogsServiceUpgrade_1_0_0());
-            
-            upgradeProcesses.add(new MicroblogsServiceUpgrade_1_0_1());
-            
-            upgradeProcesses.add(new MicroblogsServiceUpgrade_1_0_2());
-            
-            for (UpgradeProcess upgradeProcess : upgradeProcesses) {
-            
-                    if (_log.isDebugEnabled()) {
-                    
-                            _log.debug("upgrade process " + upgradeProcess);
-                            
-                    }
-                    
-            }
-    
-    }
+upgrade.processes=\
+    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_0,\
+    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_1,\
+    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_2
 
 Each step between versions was represented by a single class extending
 UpgradeProcess, with a method `doUpgrade`. This method was responsible for
 executing the internal steps to update the database to that concrete
-version.
+version. A method `getThreadhold` is provided also to specify the schema 
+version where the upgrade starts.
 
 The following example represents the required operations to update the database 
 to v1.0.0. using the old framework:
 
-    public class MicroblogsServiceUpgrade_1_0_0 extends UpgradeProcess {
+    public class UpgradeProcess_1_0_0 extends UpgradeProcess {
     
-            @Override
-            
-            protected void doUpgrade() throws Exception {
-            
-                    upgrade(new UpgradeMicroblogsEntry());
-                    
-                    upgrade(new UpgradeFoo());
-                    
-            }
-            
+        @Override
+        public int getThreshold() {
+            return 100;
+        }
+    
+        @Override
+        protected void doUpgrade() throws Exception {
+            upgrade(UpgradeCalendarBooking.class);
+        }
+        
+    }
+
+The following example represents the required operations to update the database 
+to v1.0.1. using the old framework:
+
+    public class UpgradeProcess_1_0_1 extends UpgradeProcess {
+    
+        @Override
+        public int getThreshold() {
+            return 101;
+        }
+    
+        @Override
+        protected void doUpgrade() throws Exception {
+            upgrade(UpgradeCalendar.class);
+            upgrade(UpgradeCalendarBooking.class);
+        }
+        
+    }
+
+
+The following example represents the required operations to update the database 
+to v1.0.2. using the old framework:
+
+    public class UpgradeProcess_1_0_1 extends UpgradeProcess {
+    
+        @Override
+        public int getThreshold() {
+            return 102;
+        }
+    
+        @Override
+        protected void doUpgrade() throws Exception {
+             upgrade(UpgradePortletPreferences.class);
+        }
+        
     }
 
 Whenever you needed another internal step, you added another 
-`upgrade(new UpgradeBar());` etc. after the existing ones.
+`upgrade(new UpgradePortletPreferences());` etc. after the existing ones.
 
 Now that you are familiarized with the older framework, you can learn how to
 migrate your code to the new upgrade framework next.
@@ -240,7 +258,7 @@ migrate your code to the new framework.
 3.  Update the upgrade class to implement the `UpgradeStepRegistrator` interface.
 
 4.  Remove the intermediate classes that wrapped the internal steps, i.e the 
-    `MicroblogsServiceUpgrade_1_0_0.java`.
+    `UpgradeProcess_1_0_0.java`.
 
     With the new framework, previous type of classes will be represented by the 
     upgrade registration explained in the [Writing the Upgrade Package](#writing-the-upgrade-package) 
@@ -252,9 +270,34 @@ migrate your code to the new framework.
 
 5.  Remove the logger code:
 
-        private static final Log _log = logFactoryUtil.getLog(
-        
-                MicroblogsServiceUpgrade.class);
+    private static final Log _log = logFactoryUtil.getLog(
+        UpgradeProcess_1_0_0.class);
+
+6.  Use the `@Reference` annotation described in the [Initializing Your Module](#initializing-your-module)
+    section, to reference the services that you need for the upgrade. 
+
+    @Reference(unbind = "-")
+    protected void setClassNameLocalService(
+        ClassNameLocalService classNameLocalService) {
+    
+    @Reference(unbind = "-")
+            protected void setClassNameLocalService(
+                ClassNameLocalService classNameLocalService) {
+          
+                _	_classNameLocalService = classNameLocalService;
+    }
+    
+    @Reference(unbind = "-")
+    protected void setCompanyLocalService(
+        CompanyLocalService companyLocalService) {
+    
+        _companyLocalService = companyLocalService;
+    }
+    
+    @Reference(unbind = "-")
+    protected void setUserLocalService(UserLocalService userLocalService) {
+        _userLocalService = userLocalService;
+    }
 
 A summary of the steps for migration are outlined in the table below for 
 reference:
