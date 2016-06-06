@@ -274,8 +274,7 @@
 		<mkdir dir="${temp.dir}/images"/>
 		<copy todir="${temp.dir}">
 			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
-				<include name="images/**/*.png"/>
-				<include name="images/**/*.jpg"/>
+				<include name="images/**"/>
 			</fileset>
 		</copy>
 	
@@ -310,10 +309,8 @@
 		<!-- Cannot use filtering for images (due to corruption), so must copy separately -->
 		<copy todir="${temp.dir}">
 			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
-				<include name="images/**/*.png"/>
-				<include name="images-dxp/**/*.png"/>
-				<include name="images/**/*.jpg"/>
-				<include name="images-dxp/**/*.jpg"/>
+				<include name="images/**"/>
+				<include name="images-dxp/**"/>
 			</fileset>
 		</copy>
 

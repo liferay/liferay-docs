@@ -22,23 +22,27 @@ If your app has any dependencies, you'll have to declare a dependency on the
 
     compile project(":portal:portal-upgrade")
 
-If any of your upgrades extend `UpgradePortletIds`, add a dependency on 
-`portal-impl` as well in your app's `build.gradle` file:
-
-    compile group: "com.liferay.portal", name: "portal-impl", 
-    version: liferay.portalVersion
-
 Now that your dependencies are declared, you can write your upgrade package
 next.
 
 ## Writing the Upgrade Package [](id=writing-the-upgrade-package)
 
 The first thing you need to do is create a package called `upgrade` in your 
-project’s layout. Inside of the `upgrade` package, create a Java class that 
-implements the interface `UpgradeStepRegistrator`, which is located under the 
-[portal-upgrade module](https://www.google.com/url?q=https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade&sa=D&ust=1464278927768000&usg=AFQjCNGF0wzU7e50p5GOwiXbT7XQ1OJ1JQ)).
+project’s layout. Inside of the `upgrade` package, create a OSGi Component of 
+the service `UpgradeStepRegistrator` that implements the interface 
+`UpgradeStepRegistrator`, which is located under the [portal-upgrade module](https://www.google.com/url?q=https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade&sa=D&ust=1464278927768000&usg=AFQjCNGF0wzU7e50p5GOwiXbT7XQ1OJ1JQ)).
+
 This interface provides a `register` method that handles the upgrade 
 registration process.
+
+    @Component(immediate = true, service = UpgradeStepRegistrator.class)
+    public class CalendarServiceUpgrade implements UpgradeStepRegistrator {
+    
+    	@Override
+    	public void register(Registry registry) {
+    	
+    	}
+    }
 
 Once you've implemented your `UpgradeStepRegister` interface, you’ll have to use 
 its `register` method to specify your upgrades, defining from which versions you 
@@ -49,105 +53,84 @@ is an abstraction for the changes you need to apply to the database from one
 version to the next one.
 
 To define a registration, you need to provide:
-- the name of the bundle representing the module
-- the version your module wants to upgrade from (as a String)
-- the version your module wants to upgrade to (as a String)
+- the bundle symbolic name of the module.
+- the schema version your module wants to upgrade from (as a String)
+- the schema version your module wants to upgrade to (as a String)
 - a list of UpgradeSteps
 
-For example, here is an upgrade process for the `com.liferay.microblogs.service`
+For example, here is an upgrade process for the `com.liferay.calendar.service`
 module:
 
     @Override
 
     public void register(Registry registry) {
     
-            registry.register(
-            
-                    "com.liferay.microblogs.service", "0.0.1", "1.0.0",
-                    
-                    new
-            com.liferay.microblogs.upgrade.v1_0_0.UpgradeMicroblogsEntry());
-    
+    	registry.register(
+        		"com.liferay.calendar.service", "0.0.1", "1.0.0",
+        		new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking()));    
     }
 
-In this example, the `com.liferay.microblogs.service` module is being upgraded 
+In this example, the `com.liferay.calendar.service` module is being upgraded 
 from version 0.0.1 to version 1.0.0. The changes are produced by a list of 
 UpgradeSteps, which in this example contains only one step:
 
-    new com.liferay.microblogs.upgrade.v1_0_0.UpgradeMicroblogsEntry());
+    new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
     
 You can also register multiple upgrades in one class. For example, here is an
 extension of the previous upgrade process that runs two additional upgrades, 
 each with their own set of UpgradeSteps:
 
     @Override
-
     public void register(Registry registry) {
-    
-            registry.register(
-            
-                    "com.liferay.microblogs.service", "0.0.1", "1.0.0",
-                    
-                    new
-            com.liferay.microblogs.upgrade.v1_0_0.UpgradeMicroblogsEntry());
-            
-            registry.register(
-            
-                    "com.liferay.microblogs.service", "1.0.0", "1.0.1",
-                    
-                    new UpgradeUserNotificationEvent());
+        registry.register(
+            "com.liferay.calendar.service", "0.0.1", "1.0.0",
+            new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
 
-            registry.register(
-            
-                    "com.liferay.microblogs.service", "1.0.1", "1.0.2",
-                    
-                    new
-            com.liferay.microblogs.upgrade.v1_0_2.UpgradeMicroblogsEntry(),
-            
-                    new UpgradeSocial());
-    
+        registry.register(
+            "com.liferay.calendar.service", "1.0.0", "1.0.1",
+            new com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking());
+
+        registry.register(
+            "com.liferay.calendar.service", "1.0.1", "1.0.2",
+            new UpgradeCalendar());
+
+        registry.register(
+            "com.liferay.calendar.service", "1.0.2", "1.0.3",
+            new DummyUpgradeStep());
+
+        registry.register(
+            "com.liferay.calendar.service", "1.0.3", "1.0.4",
+            new UpgradeClassNames());
+
+        registry.register(
+            "com.liferay.calendar.service", "1.0.4", "1.0.5",
+            new UpgradeCalendarResource(
+                _classNameLocalService, _companyLocalService,
+                _userLocalService),
+            new UpgradeCompanyId(), new UpgradeLastPublishDate());
     }
 
-In this example the `com.liferay.microblogs.service` module is upgraded from 
-version 0.01 to 1.0.0 with one step. Next, it is upgraded from version 1.0.0
-to 1.0.1 using a list of UpgradeSteps with only one step in it. Finally, it is 
-upgraded from version 1.0.1 to version 1.0.2, using a list of
-UpgradeSteps with two steps in it, `UpgradeMicroblogsEntry` and `UpgradeSocial`, 
-both in the `v1_0_2` package!
+In this example the `com.liferay.calendar.service` module is upgraded from 
+version 0.01 to 1.0.0 with one step. Next, we can see that this is upgraded 
+from 1.0.1 to 1.0.2, and from 1.0.2 to 1.0.3, and from 1.0.3 to 1.0.4 using 
+only one UpgradeSetp every time. Finally, it is upgraded from version 1.0.4 
+to version 1.0.5, using a list of UpgradeSteps with three steps in it, 
+`UpgradeCalendarResource`, `UpgradeCompanyId`and `UpgradeLastPublishDate`.
 
 +$$$
 
 **Note:** Be careful with upgrade steps with the same name in different packages. 
-This could result in the wrong version being used for the upgrade.
+This could result in the wrong version being used for the upgrade 
+(see com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking 
+and com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking as example).
 
 $$$
 
 The upgrade process shown previously results in the creation of three rows in 
 the Release table, one per upgrade registration. In terms of data, each 
-registration is represented by a row in the `Release_table` on portal’s 
+registration is represented by a row in the `Release_ table` on portal’s 
 database. You can check the database to verify which upgrades have been executed 
 for each module.
-
-Next, you can learn how to initialize your module.
-
-## Initializing Your Module [](id=initializing-your-module)
-
-It's important to note that upgrades need to wait for portal initialization, to 
-perform their tasks.
-
-To achieve this, add a setter method to your Java class, with an OSGI reference
-to the portal life cycle:
-
-    @Reference(target = ModuleServiceLifecycle.PORTAL_INITIALIZED, unbind = "_")
-    
-    protected void setModuleServiceLifecycle(
-    
-        ModuleServiceLifecycle moduleServiceLifecycle) {
-        
-    }
-
-This prolongs the module's lifecycle from starting until the portal has started,
-ensuring that the module won't be available until portal is fully loaded.
 
 Next, you can learn how to specify differing module versions and schema versions
 in your bundle.
@@ -173,61 +156,79 @@ review the older upgrade process next.
 
 ### Previous Upgrade Process Review [](id=previous-upgrade-process-review)
 
-Following the prior upgrade process, you started from a class that wrapped the 
-execution of several UpgradeProcesses representing the different upgrades for a 
-specific version of your module.
+Following the prior upgrade process, you have to define the property 
+upgrade.processes, a list of UpgradeProcesses representing the different 
+upgrades for a specific version of your module.
 
 For instance, the code below shows the prior upgrade process for 
-Microblogs-service module from v1.0.0 to 1.0.1, and then to 1.0.2. :
+Calendar-service module from v1.0.0 to 1.0.1, and then to 1.0.2. :
 
-    @Activate
-    
-    protected void upgrade() throws PortalException {
-    
-            List<UpgradeProcess> upgradeProcesses = new ArrayList<>(1);
-            
-            upgradeProcesses.add(new MicroblogsServiceUpgrade_1_0_0());
-            
-            upgradeProcesses.add(new MicroblogsServiceUpgrade_1_0_1());
-            
-            upgradeProcesses.add(new MicroblogsServiceUpgrade_1_0_2());
-            
-            for (UpgradeProcess upgradeProcess : upgradeProcesses) {
-            
-                    if (_log.isDebugEnabled()) {
-                    
-                            _log.debug("upgrade process " + upgradeProcess);
-                            
-                    }
-                    
-            }
-    
-    }
+upgrade.processes=\
+    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_0,\
+    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_1,\
+    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_2
 
 Each step between versions was represented by a single class extending
 UpgradeProcess, with a method `doUpgrade`. This method was responsible for
 executing the internal steps to update the database to that concrete
-version.
+version. A method `getThreadhold` is provided also to specify the schema 
+version where the upgrade starts.
 
 The following example represents the required operations to update the database 
 to v1.0.0. using the old framework:
 
-    public class MicroblogsServiceUpgrade_1_0_0 extends UpgradeProcess {
+    public class UpgradeProcess_1_0_0 extends UpgradeProcess {
     
-            @Override
-            
-            protected void doUpgrade() throws Exception {
-            
-                    upgrade(new UpgradeMicroblogsEntry());
-                    
-                    upgrade(new UpgradeFoo());
-                    
-            }
-            
+        @Override
+        public int getThreshold() {
+            return 100;
+        }
+    
+        @Override
+        protected void doUpgrade() throws Exception {
+            upgrade(UpgradeCalendarBooking.class);
+        }
+        
+    }
+
+The following example represents the required operations to update the database 
+to v1.0.1. using the old framework:
+
+    public class UpgradeProcess_1_0_1 extends UpgradeProcess {
+    
+        @Override
+        public int getThreshold() {
+            return 101;
+        }
+    
+        @Override
+        protected void doUpgrade() throws Exception {
+            upgrade(UpgradeCalendar.class);
+            upgrade(UpgradeCalendarBooking.class);
+        }
+        
+    }
+
+
+The following example represents the required operations to update the database 
+to v1.0.2. using the old framework:
+
+    public class UpgradeProcess_1_0_1 extends UpgradeProcess {
+    
+        @Override
+        public int getThreshold() {
+            return 102;
+        }
+    
+        @Override
+        protected void doUpgrade() throws Exception {
+             upgrade(UpgradePortletPreferences.class);
+        }
+        
     }
 
 Whenever you needed another internal step, you added another 
-`upgrade(new UpgradeBar());` etc. after the existing ones.
+`upgrade(new UpgradePortletPreferences());` etc. after the existing ones.
 
 Now that you are familiarized with the older framework, you can learn how to
 migrate your code to the new upgrade framework next.
@@ -241,8 +242,6 @@ migrate your code to the new framework.
 1.  Update your build files.
 
     Add a dependency on the `portal-upgrade` module to your `build.gradle` file. 
-    If any of your upgrades extend UpgradePortletIds, add a dependency on 
-    `portal-impl` as well.
 
 2.  Check your database schema version against your bundle version.
 
@@ -259,7 +258,7 @@ migrate your code to the new framework.
 3.  Update the upgrade class to implement the `UpgradeStepRegistrator` interface.
 
 4.  Remove the intermediate classes that wrapped the internal steps, i.e the 
-    `MicroblogsServiceUpgrade_1_0_0.java`.
+    `UpgradeProcess_1_0_0.java`.
 
     With the new framework, previous type of classes will be represented by the 
     upgrade registration explained in the [Writing the Upgrade Package](#writing-the-upgrade-package) 
@@ -269,31 +268,36 @@ migrate your code to the new framework.
     `UpgradeProcess` class, as they are indeed UpgradeSteps, require no change
     on your part. The new framework will process the steps as they are.
 
-5.  Remove the following Release service reference code:
+5.  Remove the logger code:
 
-        @Reference(unbind = "_")
-        
-        potected void setReleaseLocalService(
-        
-            ReleaseLocalService releaseLocalService) {
-        
-            _releaseLocalService = releaseLocalService;
-            
-        }
-
-    And this logger code:
-
-        private static final Log _log = logFactoryUtil.getLog(
-        
-                MicroblogsServiceUpgrade.class);
-
-    You don’t need to declare a reference to the Release service, via OSGi 
-    component or a direct call to the `ReleaseLocalServiceUtil`; the framework 
-    will perform these tasks for you.
+    private static final Log _log = logFactoryUtil.getLog(
+        UpgradeProcess_1_0_0.class);
 
 6.  Use the `@Reference` annotation described in the [Initializing Your Module](#initializing-your-module)
-    section, to reference the portal life cycle. Remember, upgrades need to wait 
-    for portal initialization, to perform their tasks.
+    section, to reference the services that you need for the upgrade. 
+
+    @Reference(unbind = "-")
+    protected void setClassNameLocalService(
+        ClassNameLocalService classNameLocalService) {
+    
+    @Reference(unbind = "-")
+            protected void setClassNameLocalService(
+                ClassNameLocalService classNameLocalService) {
+          
+                _	_classNameLocalService = classNameLocalService;
+    }
+    
+    @Reference(unbind = "-")
+    protected void setCompanyLocalService(
+        CompanyLocalService companyLocalService) {
+    
+        _companyLocalService = companyLocalService;
+    }
+    
+    @Reference(unbind = "-")
+    protected void setUserLocalService(UserLocalService userLocalService) {
+        _userLocalService = userLocalService;
+    }
 
 A summary of the steps for migration are outlined in the table below for 
 reference:
@@ -350,11 +354,6 @@ reference:
 					<li>
 						Add the `portal-upgrade` dependency.
 					</li>
-					<li>
-					        If any of your upgrades extend 
-					        `UpgradePortletIds`, add a 
-					        dependency on `portal-impl`.
-					</li>
 				</ul>
 			</td>
 		</tr>
@@ -379,17 +378,7 @@ reference:
 			<td class="">
 				<ul>
 					<li>
-						Although it is still a
-						component, it's not needed to
-						define the service/interface
-						using declarative services.
-					</li>
-					<li>    
-					        Implements
-					        UpgradeStepRegistrator.
-					</li>
-					<li>
-					        Waits for portal initialization.
+						    Declare a UpgradeStepRegistrator component.
 					</li>
 					<li>
 					        It has no loggers.
@@ -397,19 +386,6 @@ reference:
 					<li>
 					        It has no reference to Release 
 					        service.
-					</li>					
-					
-				</ul> 
-			</td>
-		</tr>
-		<tr>
-			<td class="table-header left-header">
-			ReleaseLocalService reference
-			</td>
-			<td class="">
-				<ul>
-					<li>
-						Remove it.
 					</li>					
 					
 				</ul> 
