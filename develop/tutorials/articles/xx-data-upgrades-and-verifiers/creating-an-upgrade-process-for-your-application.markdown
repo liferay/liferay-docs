@@ -132,27 +132,6 @@ registration is represented by a row in the `Release_ table` on portal’s
 database. You can check the database to verify which upgrades have been executed 
 for each module.
 
-Next, you can learn how to initialize your module.
-
-## Initializing Your Module [](id=initializing-your-module)
-
-It's important to note that upgrades need to wait for portal initialization, to 
-perform their tasks.
-
-To achieve this, add a setter method to your Java class, with an OSGI reference
-to the portal life cycle:
-
-    @Reference(target = ModuleServiceLifecycle.PORTAL_INITIALIZED, unbind = "_")
-    
-    protected void setModuleServiceLifecycle(
-    
-        ModuleServiceLifecycle moduleServiceLifecycle) {
-        
-    }
-
-This prolongs the module's lifecycle from starting until the portal has started,
-ensuring that the module won't be available until portal is fully loaded.
-
 Next, you can learn how to specify differing module versions and schema versions
 in your bundle.
 
@@ -293,10 +272,6 @@ migrate your code to the new framework.
     component or a direct call to the `ReleaseLocalServiceUtil`; the framework 
     will perform these tasks for you.
 
-6.  Use the `@Reference` annotation described in the [Initializing Your Module](#initializing-your-module)
-    section, to reference the portal life cycle. Remember, upgrades need to wait 
-    for portal initialization, to perform their tasks.
-
 A summary of the steps for migration are outlined in the table below for 
 reference:
 
@@ -377,9 +352,6 @@ reference:
 				<ul>
 					<li>
 						    Declare a UpgradeStepRegistrator component.
-					</li>
-					<li>
-					        Waits for portal initialization.
 					</li>
 					<li>
 					        It has no loggers.
