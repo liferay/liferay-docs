@@ -111,16 +111,16 @@ each with their own set of UpgradeSteps:
     }
 
 In this example the `com.liferay.calendar.service` module is upgraded from 
-version 0.01 to 1.0.0 with one step. Next, we can see that this is upgraded 
-from 1.0.1 to 1.0.2, and from 1.0.2 to 1.0.3, and from 1.0.3 to 1.0.4 using 
-only one UpgradeSetp every time. Finally, it is upgraded from version 1.0.4 
-to version 1.0.5, using a list of UpgradeSteps with three steps in it, 
-`UpgradeCalendarResource`, `UpgradeCompanyId`and `UpgradeLastPublishDate`.
+version 0.01 to 1.0.0 with one step. Next it is upgraded incrementally from 
+version 1.0.1 to 1.0.4, using only one UpgradeStep for each schema version. 
+Finally, it is upgraded from version 1.0.4 to version 1.0.5, using a list of 
+UpgradeSteps with three steps in it: `UpgradeCalendarResource`, 
+`UpgradeCompanyId` and `UpgradeLastPublishDate`.
 
 +$$$
 
 **Note:** Be careful with upgrade steps with the same name in different packages. 
-This could result in the wrong version being used for the upgrade 
+This could result in the wrong version being used for the upgrade.
 (see com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking 
 and com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking as example).
 
@@ -465,4 +465,8 @@ There you have it. Now you know how to create an upgrade process for your app!
 
 ## Related Topics [](id=related-topics)
 
-<!--Links to go here-->
+[Migrating a Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
+
+[Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
+
+<!-- Verifiers tutorial link to go here -->
