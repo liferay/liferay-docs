@@ -28,11 +28,21 @@ next.
 ## Writing the Upgrade Package [](id=writing-the-upgrade-package)
 
 The first thing you need to do is create a package called `upgrade` in your 
-project’s layout. Inside of the `upgrade` package, create a Java class that 
-implements the interface `UpgradeStepRegistrator`, which is located under the 
-[portal-upgrade module](https://www.google.com/url?q=https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade&sa=D&ust=1464278927768000&usg=AFQjCNGF0wzU7e50p5GOwiXbT7XQ1OJ1JQ)).
+project’s layout. Inside of the `upgrade` package, create a OSGi Component of 
+the service `UpgradeStepRegistrator` that implements the interface 
+`UpgradeStepRegistrator`, which is located under the [portal-upgrade module](https://www.google.com/url?q=https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade&sa=D&ust=1464278927768000&usg=AFQjCNGF0wzU7e50p5GOwiXbT7XQ1OJ1JQ)).
+
 This interface provides a `register` method that handles the upgrade 
 registration process.
+
+    @Component(immediate = true, service = UpgradeStepRegistrator.class)
+    public class CalendarServiceUpgrade implements UpgradeStepRegistrator {
+    
+    	@Override
+    	public void register(Registry registry) {
+    	
+    	}
+    }
 
 Once you've implemented your `UpgradeStepRegister` interface, you’ll have to use 
 its `register` method to specify your upgrades, defining from which versions you 
@@ -366,14 +376,7 @@ reference:
 			<td class="">
 				<ul>
 					<li>
-						Although it is still a
-						component, it's not needed to
-						define the service/interface
-						using declarative services.
-					</li>
-					<li>    
-					        Implements
-					        UpgradeStepRegistrator.
+						    Declare a UpgradeStepRegistrator component.
 					</li>
 					<li>
 					        Waits for portal initialization.
