@@ -22,12 +22,6 @@ If your app has any dependencies, you'll have to declare a dependency on the
 
     compile project(":portal:portal-upgrade")
 
-If any of your upgrades extend `UpgradePortletIds`, add a dependency on 
-`portal-impl` as well in your app's `build.gradle` file:
-
-    compile group: "com.liferay.portal", name: "portal-impl", 
-    version: liferay.portalVersion
-
 Now that your dependencies are declared, you can write your upgrade package
 next.
 
@@ -241,8 +235,6 @@ migrate your code to the new framework.
 1.  Update your build files.
 
     Add a dependency on the `portal-upgrade` module to your `build.gradle` file. 
-    If any of your upgrades extend UpgradePortletIds, add a dependency on 
-    `portal-impl` as well.
 
 2.  Check your database schema version against your bundle version.
 
@@ -349,11 +341,6 @@ reference:
 				<ul>
 					<li>
 						Add the `portal-upgrade` dependency.
-					</li>
-					<li>
-					        If any of your upgrades extend 
-					        `UpgradePortletIds`, add a 
-					        dependency on `portal-impl`.
 					</li>
 				</ul>
 			</td>
