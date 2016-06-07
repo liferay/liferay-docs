@@ -14,8 +14,8 @@ tutorial.
 To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options
 you can specify to help mold your project just the way you want it. To learn how
-to use the Blade `create` command and the many options it provides, enter *blade
-create* into a terminal. By running this command, all options for this command
+to use the Blade `create` command and the many options it provides, enter `blade
+create -l` into a terminal. By running this command, all options for this command
 are displayed. A list of the `create` options are listed below:
 
 - `-c, --classname <string>`: If a class is generated in the project, provide
