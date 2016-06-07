@@ -34,6 +34,19 @@ You can download the LCS client app from several places. One is the
 For instructions on using Marketplace, see 
 [this user guide section](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace). 
 
++$$$
+
+**Note:** For LCS to work properly, your Liferay instances must be running 
+version 153 or higher of the LCS client app. To determine the client version in 
+a Liferay instance already connected to LCS, navigate to *Liferay Connected 
+Services* under the *Apps* section of the *Control Panel*. The client version is 
+displayed under the *Disconnect* button. Also, if you use 
+[environment tokens](/discover/portal/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
+to connect, you should generate and use new tokens when upgrading the client 
+from versions 152 or lower to versions 153 or higher. 
+
+$$$
+
 You can also download the LCS client app from 
 [lcs.liferay.com](https://lcs.liferay.com). 
 When you first log in, the Welcome screen prompts you to select your Liferay 
@@ -109,11 +122,12 @@ section of the *Control Panel*.
 ![Figure 4.3: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
 The LCS client first asks you to choose the LCS services you want to enable for 
-this portal instance. The *Enable All Services* checkbox is selected by default. 
-This enables portal analytics, fix pack management (for EE portals), and portal 
-property analysis. Unchecking this checkbox presents you with additional 
-checkboxes for enabling each of those services. Note that the *Fix Packs 
-Management* option is unavailable for Liferay CE. Also note that although 
+this portal instance. Note that you're not stuck with your choices here: you can 
+change any of these settings after registration. The *Enable All Services* 
+checkbox is selected by default. This enables portal analytics, fix pack 
+management, and portal property analysis. Unchecking this checkbox presents you 
+with additional checkboxes for enabling each of those services. Note that 
+although 
 [LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers), 
 you may have additional properties you want to prevent LCS from analyzing. If 
 you select *Portal Properties Analysis*, a text box appears for you to enter any 
@@ -167,7 +181,10 @@ indicating no data is being transmitted, please contact the Liferay team for
 support. 
 
 Once a successful connection is established, some statistics and links are
-displayed. Here's a description of what's displayed:
+displayed. Note that you can change which LCS services are enabled for your 
+portal by clicking the *Configure Services* link. 
+
+Here's a full description of what's displayed:
 
 - **Heartbeat Interval:** The interval of the communication that maintains the 
   connection with LCS. This regular communication keeps the client's LCS 

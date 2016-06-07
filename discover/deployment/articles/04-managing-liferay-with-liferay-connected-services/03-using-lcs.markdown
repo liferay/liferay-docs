@@ -36,10 +36,11 @@ available in LCS:
 - [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens)
   Learn how to use environment tokens to automatically register your Liferay 
   servers with LCS. This is crucial in auto-scaling environments. 
-
+<!--
 - [**Managing Liferay EE Subscriptions:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-ee-subscriptions)
   Learn how to view and manage your Liferay EE subscriptions for the servers in 
   your LCS project. 
+-->
 
 First, you'll learn what information LCS stores about your Liferay servers.
 
@@ -72,6 +73,18 @@ exception of the following non-sensitive properties:
     portal.jaas.plain.password
     portal.jaas.strict.password
     login.create.account.allow.custom.password
+
+Note that LCS also lets you prevent it from analyzing specific properties of 
+your choosing. With your portal connected to LCS, navigate to the LCS client app 
+in your portal by clicking *Liferay Connected Services* under the *Apps* section 
+of the *Control Panel*. Then click the *Configure Services* link and uncheck the 
+*Enable All Services* checkbox to reveal the list of LCS services you can 
+enable. Check the checkbox for *Portal Properties Analysis*. In the text box 
+that appears, enter any properties you don't want LCS to analyze. Enable any 
+other LCS services you want to use with this Liferay instance, and then click 
+*Save*. 
+
+![Figure 4.9: The red box in this screenshot highlights the Portal Properties Analysis selection and text box for entering any properties that you don't want LCS to analyze.](../../images/lcs-portal-properties-blacklist.png)
 
 Now that you know what information is stored on the LCS servers, you're ready to 
 learn how to manage your LCS projects. This includes renaming and creating 
@@ -449,27 +462,36 @@ LCS.
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
-Environment tokens allow clients to connect automatically to environments in LCS 
-without requiring any user interaction. For example, when users connect to 
-LCS, they must first manually configure the client portlet to connect to an 
-environment. To bypass the need for manual client configuration, LCS
-Administrators and Environment Managers can generate and distribute an
-environment token file. This token contains all the information the client
-needs to connect to that environment on LCS. It's important to note that each
-environment can have only one token file. You should also use caution when
-distributing it. Anyone with the token file can use it to connect to your
-environment. Also, be careful when regenerating or otherwise removing a token
-file from LCS. When this is done, clients using the old file can't connect
-until receiving the new file. The only alternative is to use the
-administrator's own credentials to connect the client manually. Once the client
-reconnects, it's once again linked to the client's existing archive data in
-LCS. 
+Environment tokens allow the LCS client app to connect automatically to 
+environments in LCS without requiring any user interaction. This bypasses the 
+need for manual client configuration. LCS Administrators and Environment 
+Managers can generate and distribute an environment token file that contains all 
+the information the client needs to connect to an environment on LCS. It's 
+important to note that each environment can have only one token file. You should 
+also use caution when distributing this file. Anyone with the token file can use 
+it to connect to your environment. Also, be careful when regenerating or 
+otherwise removing a token file from LCS. When this is done, clients using the 
+old file can't connect until receiving the new file. In this case, the only 
+alternative is to use the administrator's own credentials to connect the client 
+manually. Once the client reconnects, it's once again linked to the client's 
+existing archive data in LCS. 
+
++$$$
+
+**Note:** For LCS to work properly, your Liferay instances must be running 
+version 153 or higher of the LCS client app. To determine the client version in 
+a Liferay instance already connected to LCS, navigate to *Liferay Connected 
+Services* under the *Apps* section of the *Control Panel*. The client version is 
+displayed under the *Disconnect* button. Also, if you use environment tokens to 
+connect, you should generate and use new tokens when upgrading the client from 
+versions 152 or lower to versions 153 or higher. 
+
+$$$
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
-the setup process for your users, using environment tokens is valuable in 
-auto-scaling environments where algorithms create and destroy servers 
-automatically. In this situation, having clients that configure themselves is 
-crucial.
+the setup process, using environment tokens is valuable in auto-scaling 
+environments where algorithms create and destroy servers automatically. In this 
+situation, having clients that configure themselves is crucial. 
 
 +$$$
 
@@ -510,12 +532,56 @@ previously unregistered Liferay instance with LCS:
 
 1. Place the token file in your portal's `data` folder.
 
-2. Deploy the LCS client portlet to your portal. If the portlet is bundled with 
-   your portal installation, start up the portal.
+2. Deploy the LCS client app to your portal. If the app is bundled with your 
+   portal installation, start up the portal. 
    
-3. Once deployment completes, the LCS client portlet connects automatically 
-   to LCS. You should see this in your LCS project's environment view.
-   
+3. Once deployment completes, the LCS client app automatically connects to LCS. 
+   You should see this in your LCS project's environment view. 
+
+Once connected, the LCS client app in your portal also displays some statistics 
+and links. To view these, log in to your portal and click *Liferay Connected 
+Services* under the *Apps* section of the *Control Panel*. 
+
+Here's a full description of what a connected LCS client app displays: 
+
+- **Heartbeat Interval:** The interval of the communication that maintains the 
+  connection with LCS. This regular communication keeps the client's LCS 
+  connection alive, even when there's nothing else to report. The value is 
+  listed in hours, minutes, and then seconds. For example, if this value is 
+  `00:01:00`, the client communicates with LCS once every minute. This article's 
+  previous section contains instructions for changing the heartbeat interval.
+- **Message Task Interval:** The interval at which the client checks LCS for new 
+  messages. For example, LCS messages are used to instruct the client to 
+  download new fix packs. Currently, this interval is fixed and can't be 
+  changed. 
+- **Metrics Task Interval:** The interval at which server statistics and metrics 
+  are sent to LCS. Currently, this interval is fixed and can't be changed. 
+- **Last Message Received:** The time the latest message was received from LCS.
+- **Connection Uptime:** The duration of the client's connection with LCS.
+- **Project Home:** This link takes you to this server's registered LCS project. 
+  The project home in LCS is also called the *dashboard*.
+- **Environment:** This link takes you to this server's registered environment.
+- **Server Dashboard:** This link takes you to the server on LCS.
+- **Configure Services:** This link lets you change which LCS services are 
+  enabled for your portal. Doing so triggers reconnection with the new settings. 
+- **Disconnect:** Disconnects this Liferay instance from LCS.
+
+![Figure 4.x: The server is connected to LCS.](../../images/lcs-server-connected.png)
+
+By default, all LCS services are enabled for your portal. You can change this by 
+clicking the *Configure Services* link in the connected client app. When you 
+click this link, the *Enable All Services* checkbox is selected by default. This 
+enables portal analytics, fix pack management, and portal property analysis. 
+Unchecking this checkbox presents you with additional checkboxes for enabling 
+each of those services separately. Note that although 
+[LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers), 
+you may have additional properties you want to prevent LCS from analyzing. If 
+you select *Portal Properties Analysis*, a text box appears for you to enter any 
+properties you don't want LCS to analyze. Click *Save* when you finish enabling 
+the LCS services you want to use. 
+
+![Figure 4.x: In a connected LCS client app, you can enable or disable specific LCS services for your portal.](../../images/lcs-configure-services.png)
+
 When using an environment token, minimal information (server name, location, 
 etc...) is used to register a Liferay instance with LCS. You can change this 
 information from the server view in LCS at any time. Also, since environment 
@@ -538,7 +604,7 @@ steps:
 
 Awesome! Now you know how to use environment tokens to register your Liferay 
 instances with LCS. 
-
+<!--
 Next, you'll learn how to use LCS to manage your Liferay EE subscriptions. 
 
 ## Managing Liferay EE Subscriptions [](id=managing-liferay-ee-subscriptions)
@@ -549,7 +615,6 @@ to a subscription type, and more. You can access these features from the
 *Subscriptions* tab on the upper-left of the LCS site. Note that to use these 
 features, your Liferay instances must be running Liferay 6.2 EE Service Pack 15 
 or higher. 
-<!-- Is this SP 15 note still accurate? -->
 
 ![Figure x: The *Subscriptions* tab in LCS lets you view and manage your Liferay EE subscriptions.](../../images/lcs-subscriptions.png)
 
@@ -596,6 +661,7 @@ environment token automatically consume a license from that environment's
 subscription type. 
 
 $$$
+-->
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 
