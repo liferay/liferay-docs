@@ -43,10 +43,6 @@ for an explanation.
 
 First, consider how you want to package your Spring MVC portlet project.
 
-
-<!-- Moving to a pure WAR file/WAB Generator approach without @Component and
-@Reference. According to Miguel we don't yet know how to make a Spring portlet
-an @Component.-->
 ## Packaging a Spring MVC Portlet
 
 Developers creating portlets for Liferay 7.0 can usually deploy their portlet as
@@ -124,15 +120,6 @@ Liferay-ready WAB. This is what each tool gets you:
    `MANIFEST.MF` file. You can directly configure OSGi headers in your project's
 `plugin-package.properties` file.
 
-<!-- Liferay's WAB generator to use the
-pre-configured WAB, providing a `bnd.bnd` and deployment-ready `web.xml`. If
-you're going to be calling any services registered in the OSGi runtime (like
-Liferay services or your own Service Builder services), this will allow you to
-use the Declarative Services `@Reference` annotation to look up the services, so
-that your Spring MVC portlet can take advantage of the OSGi lifecycle when
-satisfying its service dependencies. That means your Spring MVC portlet will be
-taken out of service if any of its service dependencies cannot be met. -->
-
 Now get into the details of configuring a Spring MVC portlet for Liferay.
 
 ## Spring MVC Portlets in Liferay
@@ -142,19 +129,6 @@ MVC portlet that's not in Liferay. This won't be a comprehensive guide to
 configuring a Spring MVC portlet. It will cover the high points, assuming you
 already have familiarity with Spring MVC. Otherwise, consider using Liferay's
 MVC framework.
-
-<!--
-Here's what will happen if you deploy a Spring MVC portlet WAR to Liferay without
-any additional configuration:
-
-![Figure x: You need to specify some information in Liferay's descriptor files
-for your Spring MVC portlet to play nicely in
-Liferay.](../../images/spring-mvc-menu-entry.png)
-
-![Figure x: You need to specify some information in Liferay's descriptor files
-for your Spring MVC portlet to play nicely in
-Liferay.](../../images/spring-mvc-roles-error.png)
--->
 
 Start with the `<portlet-class>` element in `portlet.xml`. In it you must
 declare Spring's `DispatcherPortlet`:
@@ -352,7 +326,6 @@ parameters. The DTD is found
     author=Liferay, Inc.
     licenses=LGPL
     version=1
-<!-- Is there any OSGi header configuration I should show here, or discuss? -->
 
 In the `liferay-plugin-package.properties` file you can also add OSGi metadata,
 and it will be properly placed in the `MANIFEST.MF` file when you deploy your
@@ -387,28 +360,6 @@ tutorials on Service Builder
 that, add your service's API JAR as a dependency in your Spring MVC project. 
 
 $$$
-
-<!--
-    import org.osgi.service.component.annotations.Reference;
-
-First get a reference to the service you need, using the `@Reference` annotation
-and a setter method that takes the local service as a parameter. Then set the
-retrieved service to a private variable.
-
-	@Reference
-	protected void setFooLocalService(
-		FooLocalService fooService) {
-
-		_fooLocalService = fooService;
-	}
-
-	private FooLocalService _fooLocalService;
-
-Now you can call the service in your controller classes.
-
-    _fooLocalService.getFoosByGroupId(groupId);
-
--->
 
 Since you don't have the ability to look up a reference to the services
 published to the OSGi runtime using Declarative Services, how do you call
