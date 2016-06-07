@@ -78,7 +78,7 @@ steps to do so:
 Great! Now you're ready to deploy the client and register your Liferay DXP 
 instance with LCS. 
 
-## Registering the Client with LCS
+## Registering the Client with LCS [](id=registering-the-client-with-lcs)
 
 Once the LCS client app is deployed, you're ready to register your server with 
 LCS. Automatic registration via an environment token is the preferred way to do 
@@ -101,7 +101,7 @@ $$$
 First, access the client by clicking on *Liferay Connected Services* under the 
 *Configuration* section of the *Control Panel*. 
 
-![Figure 3: LCS appears in the Control Panel's Configuration section.](../../images-dxp/lcs-control-panel-dxp.png)
+![Figure 1: LCS appears in the Control Panel's Configuration section.](../../images-dxp/lcs-control-panel-dxp.png)
 
 The LCS client first asks you to choose the LCS services you want to enable for 
 this DXP instance. The *Enable All Services* checkbox is selected by default. 
@@ -114,13 +114,13 @@ you select *Portal Properties Analysis*, a text box appears for you to enter any
 properties you don't want LCS to analyze. Click *Next* when you finish enabling 
 the LCS services you want to use. 
 
-![Figure 4: If you unselect *Enable All Services*, you can enable each LCS service that you want to use with your DXP instance.](../../images-dxp/lcs-enable-services.png)
+![Figure 2: If you unselect *Enable All Services*, you can enable each LCS service that you want to use with your DXP instance.](../../images-dxp/lcs-enable-services.png)
 
 Next, LCS asks you to authorize access to your LCS account. After clicking 
 *Authorize Access*, LCS takes you to the LCS website. Log in with your 
 credentials and then click *Grant Access*. 
 
-![Figure 5: The LCS client requires access to your LCS account.](../../images-dxp/lcs-auth-access.png)
+![Figure 3: The LCS client requires access to your LCS account.](../../images-dxp/lcs-auth-access.png)
 
 Now you must register your server with LCS by filling out the following fields:
 
@@ -137,7 +137,7 @@ Now you must register your server with LCS by filling out the following fields:
    asks you to enter the new environment's *Name*, *Location*, and 
    *Description*. 
 
-    ![Figure 6: The Add New Environment pop-up.](../../images-dxp/lcs-new-environment.png)
+    ![Figure 4: The Add New Environment pop-up.](../../images-dxp/lcs-new-environment.png)
 
 3. Server Name: Give your server a name that you can use to distinguish it LCS. 
    Note that server names in LCS aren't case sensitive. Also, you can't have 
@@ -151,7 +151,7 @@ Now you must register your server with LCS by filling out the following fields:
    server. You can use this field to help differentiate the servers you manage 
    with LCS.
 
-![Figure 7: The server registration screen.](../../images-dxp/lcs-register-server.png)
+![Figure 5: The server registration screen.](../../images-dxp/lcs-register-server.png)
 
 Upon clicking *Register*, your LCS client shows your connection status. Note 
 that it can take up to 10 or 20 seconds to perform the initial handshake and 
@@ -189,7 +189,7 @@ Here's a full description of what's displayed:
   settings. 
 - **Disconnect:** Disconnects this DXP instance from LCS. 
 
-![Figure 8: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
+![Figure 6: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
 
 Awesome! Now that you've registered your server with your LCS account, you can 
 dig in to the features of LCS. 
