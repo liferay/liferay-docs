@@ -1,5 +1,5 @@
 # Working with Liferay Module Projects
-
+<!--
 Modules are OSGi-based projects used to develop Liferay applications. In Liferay
 Workspaces, Gradle is the build tool used to create, compile, and publish
 Liferay modules. Before you can begin creating and managing your Liferay module
@@ -25,7 +25,7 @@ selected the project to import, click *Finish*.
 ![ImportModuleWizard](images/ImportWizard.png)
 
 ![ChooseProjectLocation](images/ChooseProject.png)
-
+-->
 ## Updating Module Dependencies Via Gradle Menu
 
 There are times when your module project will require dependency updates. You

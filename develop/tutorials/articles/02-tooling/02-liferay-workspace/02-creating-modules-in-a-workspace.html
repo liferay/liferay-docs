@@ -1,0 +1,48 @@
+<h1>Creating Modules in a Workspace</h1><p>Modules are OSGi-based projects used to develop Liferay applications. In Liferay Workspaces, Gradle is the build tool used to create Liferay modules. Before you can begin creating your Liferay module projects from a Liferay Workspace, you&rsquo;ll need to create a Liferay Workspace, which is covered in the <a href="/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace">Creating a Liferay Workspace</a> tutorial. Once you&rsquo;ve created your Liferay Workspace, you can begin using it to create Gradle-based OSGi modules for @product@.</p><p>You can create modules in a Workspace via Blade CLI or by using Liferay IDE. Because Liferay IDE uses the Blade CLI infrastructure under the hood, both options offer the same flexibility and options. You can learn more about Blade CLI in the <a href="/develop/tutorials/-/knowledge_base/7-0/blade-cli">Blade CLI</a> section of tutorials. In this tutorial, you&rsquo;ll learn about using a Liferay Workspace to create modules via Blade CLI and Liferay IDE.</p><a id="using-blade-cli"></a><h2>Using Blade CLI</h2><p>Creating Liferay modules in a workspace using Blade CLI is very similar to creating them in a standalone environment. You can find the details of how to create a module project using Blade CLI in the <a href="/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli">Creating Modules with Blade CLI</a> tutorial.</p><p>In summary, you can view the available module templates you can create your project from by running <code>blade create -l</code>. Each available template can be examined in more detail from the link mentioned above. When creating modules in a workspace, you should navigate to the <code>/modules</code> directory to create your project. You can also provide further directory nesting into the <code>/modules</code> directory, if preferred. Your workspace, by default, sets the directory where your modules should be stored by setting the following property in the workspace&rsquo;s <code>gradle.properties</code> file:</p>
+<pre><code>liferay.workspace.modules.dir=modules
+</code></pre><p>Change this property if you&rsquo;d like to store your modules in a different directory.</p><p>It&rsquo;s as simple as that! You now know how to create modules in a Liferay Workspace using Blade CLI&rsquo;s module templates. The great thing about Blade CLI is that it can be used by any IDE that provides Gradle support (e.g., Eclipse, IntelliJ, and Netbeans), which offers great flexibility. Because of this, Liferay IDE takes advantage of Blade CLI by providing a GUI for you to work with. You&rsquo;ll learn how to use Liferay IDE to create modules next.</p><a id="using-liferay-ide"></a><h2>Using Liferay IDE</h2><p>IDE provides a <em>Module Project Wizard</em> for users to create a variety of different module projects. You can create a new Liferay module project by navigating to <em>File</em> &rarr; <em>New</em> &rarr; <em>Liferay Module Project</em>.</p><p><img src="../../../images/new-module-project.png" alt="Figure 1" /><p class="caption">Figure 1: When selecting <em>New</em> &rarr; <em>Liferay Module Project</em>, a Module Project Wizard appears.</p><p>You&rsquo;re presented options for project name, location, build type, and template type. Currently, you&rsquo;re only able to create a Gradle-based module. The project templates will look familiar to you if you&rsquo;ve already read through the Blade CLI tutorials. The same templates are provided through this wizard as what was available through Blade CLI. Click <em>Next</em> and you&rsquo;re given additional configuration options for a component class.</p><p><img src="../../../images/component-class-wizard.png" alt="Figure 2" /><p class="caption">Figure 2: Specify your component class&rsquo;s details in the Portlet Component Class Wizard.</p><p>You can specify your component class&rsquo;s name, package name, and its properties. The properties you assign are the ones found in the <code>@Component</code> annotation&rsquo;s <code>property = {...}</code> assignment.</p><p>Once you&rsquo;ve configured your module project&rsquo;s component class, click <em>Finish</em> to create your project.</p><p>You can also create a new component class for a pre-existing module project. Navigate to <em>File</em> &rarr; <em>New</em> &rarr; <em>Liferay Component Class</em>. This is a similar wizard to the previous component class wizard, except you can select a component class template. There are many templates in the <code>Component Class
+Template</code> list:</p>
+<ul>
+  <li><code>Auth Failure</code>: processes a verify login failure</li>
+  <li><code>Auth Max Failure</code>: processes maximum number of login failures</li>
+  <li><code>Authenticator</code>: authenticates processing</li>
+  <li><code>Friendly URL Mapper</code>: processes Friendly URLs</li>
+  <li><code>GOGO Command</code>: creates a custom Gogo command</li>
+  <li><code>Indexer Post Processor</code>: creates a new Indexer Post Processor</li>
+  <li><code>Login Pre Action</code>: creates a login pre action</li>
+  <li><code>Model Listener</code>: sets a model listener</li>
+  <li><code>Poller Processor</code>: creates a new poller processor</li>
+  <li><code>Portlet</code>: creates a new portlet class file</li>
+  <li><code>Portlet Action Command</code>: creates a new portlet action command</li>
+  <li><code>Portlet Filter</code>: creates a new portlet filter</li>
+  <li><code>Rest</code>: calls and wraps inner service in the way of Rest</li>
+  <li><code>Service Wrapper</code>: creates a new service wrapper</li>
+  <li><code>Struts in Action</code>: creates a new strutus action</li>
+  <li><code>Struts Portlet Action</code>: creates a new struts portlet action</li>
+</ul><div class="sidebar"><div class="sidebar-image"></div><div class="sidebar-text"><p><strong>Note:</strong> When selecting the <code>Authenticator</code>, <code>Portlet Action Command</code>, <code>Rest</code>, or <code>Service Wrapper</code> templates, you may run into some dependency issues that could cause errors in your project. There is a set of steps outlined below that you should follow, with sub-steps for each of the four templates that could cause problems.</p>
+<ol>
+  <li>Open the module project&rsquo;s <code>build.gradle</code> file.</li>
+  <li>Check whether the following dependencies exist:</li>
+</ol><p><strong>Authenticator</strong></p>
+<ul>
+  <li><code>compile com.liferay.portal:com.liferay.portal.kernel:2.0.0</code></li>
+  <li><code>compile org.osgi:org.osgi.service.component.annotations:1.3.0</code></li>
+</ul><p><strong>Portlet Action Command</strong></p>
+<ul>
+  <li><code>compile javax.portlet:portlet-api:2.0</code></li>
+  <li><code>compile javax.servlet:javax.servlet-api:3.0.1</code></li>
+  <li><code>compile org.osgi:org.osgi.service.component.annotations:1.3.0</code></li>
+  <li><code>compile com.liferay.portal:com.liferay.portal.kernel:2.0.0</code></li>
+  <li><code>compile com.liferay.portal:com.liferay.util.bridges:2.0.0</code></li>
+  <li><code>compile com.liferay.portal:com.liferay.util.taglib:2.0.0</code></li>
+</ul><p><strong>Rest</strong></p>
+<ul>
+  <li><code>compile javax.ws.rs:javax.ws.rs-api:2.0.1</code></li>
+</ul><p><strong>Service Wrapper</strong></p>
+<ul>
+  <li><p>The service wrapper class being used. For example, if you&rsquo;re using the  <code>BookmarksEntryLocalServiceWrapper</code>, the following dependency would be  required:</p><p>compile com.liferay:com.liferay.bookmarks.api:2.0.0</p></li>
+</ul>
+<ol>
+  <li><p>Right-click your project and select <em>Gradle</em> &rarr; <em>Refresh Gradle Project</em>.</p></li>
+  <li><p>If you&rsquo;re using the <em>Portlet Action Command</em> template, you&rsquo;ll also need to change the component class declaration from implementing the <code>FreeMarkerPortlet</code> class to extending it. For instance, your <code>*Portlet</code> component class should have the following declared:</p><p>YourPortletClass extends FreeMarkerPortlet</p></li>
+</ol></div></div><p>IDE also provides a method to import existing module projects. You can import a module project by navigating to <em>File</em> &rarr; <em>Import</em> &rarr; <em>Liferay</em> &rarr; <em>Liferay Module Project(s)</em>, then point to the project location. Once you&rsquo;ve selected the project to import, click <em>Finish</em>.</p><p><img src="../../../images/import-wizard.png" alt="Figure 3" /><p class="caption">Figure 3: Select the <em>Liferay Module Project(s)</em> to import a module project.</p>

@@ -199,6 +199,16 @@ workspace can only have one Liferay Workspace project.
 
 ![Figure 4: An IDE workspace only supports one Liferay Workspace project. If you create another, you'll be given an error message.](../../../images/liferay-workspace-duplicate.png)
 
+You can configure your workspace's module presentation by switching between the
+default *Hierarchical* or *Flat* views. To do this, navigate to the Project
+Explorer's *View Menu* (![View Menu](../../../images/icon-ide-view-menu.png))
+and select *Projects Presentation* and then the presentation mode you'd like to
+display. The Hierarchical view displays subfolders and subprojects under the
+workspace project, whereas the Flat view displays the workspace's modules
+separately from the workspace.
+
+![Figure 5: The Hierarchical project presentation mode is set, by default.](../../../images/workspace-presentation.png)
+
 If you've already created a Liferay Workspace and you'd like to import into your
 existing IDE, you can do so by navigating to *File* &rarr; *Import* &rarr;
 *Liferay* &rarr; *Liferay Workspace Project*. Then click *Next* and browse for
