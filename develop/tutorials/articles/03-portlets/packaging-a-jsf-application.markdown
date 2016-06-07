@@ -120,6 +120,10 @@ Next, you'll discover how to manually configure a WAB.
 
 ## Pre-Configured WAB [](id=pre-configured-wab)
 
+Pre-configuring a WAB is not supported; however, if you prefer bypassing the
+Liferay auto-deploy process and WAB Generator, you should be aware of the
+differences in the project's configuration.
+
 The source of a pre-configured JSF Portlet WAB follows the standard directory
 layout for WAR projects and includes a `bnd.bnd` file along with a Java class
 that extends
@@ -151,50 +155,7 @@ that extends
   `META-INF/MANIFEST.MF` will likely be more difficult to configure since the
   `Import-Package` header must be specified by the developer.
 
-Here's an example `web.xml` descriptor you could use that is ready for
-deployment:
-
-    <?xml version="1.0"?>
-
-    <web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
-        <display-name>/jsf.applicant-4.0.0-SNAPSHOT</display-name>
-        <context-param>
-            <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
-            <param-value>/WEB-INF/resources</param-value>
-        </context-param>
-        <context-param>
-            <param-name>com.sun.faces.namespaceParameters</param-name>
-            <param-value>true</param-value>
-        </context-param>
-        <listener>
-            <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
-        </listener>
-        <servlet>
-            <servlet-name>FacesServlet</servlet-name>
-            <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-            <load-on-startup>1</load-on-startup>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>Faces Servlet</servlet-name>
-            <url-pattern>*.xhtml</url-pattern>
-        </servlet-mapping>
-        <servlet>
-            <servlet-name>Portlet Servlet</servlet-name>
-            <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-            <load-on-startup>1</load-on-startup>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>Portlet Servlet</servlet-name>
-            <url-pattern>/portlet-servlet/*</url-pattern>
-        </servlet-mapping>
-        <security-constraint>
-            <web-resource-collection>
-                <web-resource-name>Facelet XHTML</web-resource-name>
-                <url-pattern>*.xhtml</url-pattern>
-            </web-resource-collection>
-            <auth-constraint/>
-        </security-constraint>
-    </web-app>
+Next, you'll learn how to utilize OSGi services from your WAB.
 
 ## Utilizing OSGi Services [](id=utilizing-osgi-services)
 
