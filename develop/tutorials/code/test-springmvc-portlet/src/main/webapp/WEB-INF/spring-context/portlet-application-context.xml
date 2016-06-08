@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<beans
+<beans 
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -16,4 +16,5 @@
 		<property name="suffix" value=".jsp" />
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 	</bean>
+    <bean id="exampleInitBean" class="com.liferay.docs.springmvc.PortletViewController"/>
 </beans>

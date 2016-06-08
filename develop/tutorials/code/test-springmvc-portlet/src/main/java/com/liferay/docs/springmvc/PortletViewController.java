@@ -30,15 +30,15 @@ import com.liferay.portal.kernel.util.ReleaseInfo;
 @RequestMapping("VIEW")
 public class PortletViewController {
 
+	public void destroy() {
+		serviceTracker.close();
+	}
+
 	@RenderMapping
 	public String question(Model model) {
 		model.addAttribute("releaseInfo", ReleaseInfo.getReleaseInfo());
-		
-		// Test a service tracker
-		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
-		BundleContext bundleContext = bundle.getBundleContext();
-		ServiceTracker<?, ?> serviceTracker = new ServiceTracker<>(bundleContext, UserLocalService.class, null);
 
+		// Test a service tracker
 		serviceTracker.open();
 		if (!serviceTracker.isEmpty()) {
 
@@ -46,8 +46,10 @@ public class PortletViewController {
 			int count = userLocalService.getUsersCount();
 			System.out.println(count);
 		}
-		serviceTracker.close();
 		return "test-springmvc-portlet/view";
 	}
-
+		//Set up a service tracker
+		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+		BundleContext bundleContext = bundle.getBundleContext();
+		ServiceTracker<?, ?> serviceTracker = new ServiceTracker<>(bundleContext, UserLocalService.class, null);
 }
