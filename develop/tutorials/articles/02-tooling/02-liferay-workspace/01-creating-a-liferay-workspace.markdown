@@ -173,6 +173,15 @@ options. Follow the instructions below to create your workspace.
    selected. This Liferay bundle is generated the same way as described in the
    previous section.
 
+    +$$$
+
+    **Note:** If you'd like to configure a pre-existing Liferay bundle to your
+    workspace, you can create a directory for the bundle in your workspace and
+    configure it in the workspace's `gradle.properties` file by setting the
+    `liferay.workspace.home.dir` property.
+
+    $$$
+
 4. Check the *Add project to working set* checkbox if you'd like the workspace
 to be a part of a larger working set you've already created in IDE. For more
 information on working sets, visit
