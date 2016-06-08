@@ -51,7 +51,7 @@ from the previous section, you could run:
 Your output lists a long list of modules that are active/installed in your
 server's OSGi container.
 
-![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../../images/blade-sh.png)
+![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../images/blade-sh.png)
 
 You can run any Gogo command using `blade sh`. See the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
@@ -101,14 +101,14 @@ successfully by using
 Right-click the started portal in server view and select
 *Open Gogo Shell*.
 
-![Figure 2: Select *Open Gogo Shell* to open a terminal window in IDE using Gogo Shell.](../../../images/open-gogo-shell.png)
+![Figure 2: Select *Open Gogo Shell* to open a terminal window in IDE using Gogo shell.](../../../images/open-gogo-shell.png)
 
-A Gogo Shell terminal displays, allowing you to enter Gogo
-command to inspect your Liferay instance and the modules deployed to it. Enter
-the `lb` command to view a list of deployed modules. If the project status is
-active, then it already deployed successfully.
+A Gogo shell terminal displays, allowing you to enter Gogo commands to inspect
+your Liferay instance and the modules deployed to it. Enter the `lb` command to
+view a list of deployed modules. If the project status is active, then it
+already deployed successfully.
 
-![Figure 3: You can check to see if your module deployed successfully to Liferay using the Gogo Shell.](../../../images/gogo-deploy-successful.png)
+![Figure 3: You can check to see if your module deployed successfully to Liferay using the Gogo shell.](../../../images/gogo-deploy-successful.png)
 
 Since the Liferay Workspace perspective in IDE is Gradle-based, you have some
 additional Gradle features you can take advantage of. The *Gradle Tasks* toolbar

@@ -23,14 +23,13 @@ create a module project using Blade CLI in the
 [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 tutorial.
 
-In summary, you can view the available module templates you can create your
-project from by running `blade create -l`. Each available template can be
-examined in more detail from the link mentioned above. When creating modules in
-a workspace, you should navigate to the `/modules` directory to create your
-project. You can also provide further directory nesting into the `/modules`
-directory, if preferred. Your workspace, by default, sets the directory where
-your modules should be stored by setting the following property in the
-workspace's `gradle.properties` file:
+In summary, you can view the available module templates by running `blade create
+-l`. Each available template can be examined in more detail from the link
+mentioned above. When creating modules in a workspace, you should navigate to
+the `/modules` directory to create your project. You can also provide further
+directory nesting into the `/modules` directory, if preferred. Your workspace,
+by default, sets the directory where your modules should be stored by setting
+the following property in the workspace's `gradle.properties` file:
 
     liferay.workspace.modules.dir=modules
 
@@ -119,21 +118,21 @@ The dependencies to check for when using each template are outlined below:
 
 **Authenticator**
 
-- `compile com.liferay.portal:com.liferay.portal.kernel:2.0.0`
-- `compile org.osgi:org.osgi.service.component.annotations:1.3.0`
+- `compile com.liferay.portal:com.liferay.portal.kernel:VERSION`
+- `compile org.osgi:org.osgi.service.component.annotations:VERSION`
 
 **Portlet Action Command**
 
-- `compile javax.portlet:portlet-api:2.0`
-- `compile javax.servlet:javax.servlet-api:3.0.1`
-- `compile org.osgi:org.osgi.service.component.annotations:1.3.0`
-- `compile com.liferay.portal:com.liferay.portal.kernel:2.0.0`
-- `compile com.liferay.portal:com.liferay.util.bridges:2.0.0`
-- `compile com.liferay.portal:com.liferay.util.taglib:2.0.0`
+- `compile javax.portlet:portlet-api:VERSION`
+- `compile javax.servlet:javax.servlet-api:VERSION`
+- `compile org.osgi:org.osgi.service.component.annotations:VERSION`
+- `compile com.liferay.portal:com.liferay.portal.kernel:VERSION`
+- `compile com.liferay.portal:com.liferay.util.bridges:VERSION`
+- `compile com.liferay.portal:com.liferay.util.taglib:VERSION`
 
 **Rest**
 
-- `compile javax.ws.rs:javax.ws.rs-api:2.0.1`
+- `compile javax.ws.rs:javax.ws.rs-api:VERSION`
 
 **Service Wrapper**
 
@@ -141,7 +140,10 @@ The dependencies to check for when using each template are outlined below:
   `BookmarksEntryLocalServiceWrapper`, the following dependency would be
   required:
 
-    compile com.liferay:com.liferay.bookmarks.api:2.0.0
+        compile com.liferay:com.liferay.bookmarks.api:VERSION
+
+Make sure the replace the `VERSION` text with the appropriate version for each
+specified dependency.
 
 $$$
 
@@ -151,13 +153,10 @@ presentation,
 
 IDE also provides a method to import existing module projects. You can import a
 module project by navigating to *File* &rarr; *Import* &rarr; *Liferay* &rarr;
-*Liferay Module Project(s)*, then point to the project location. Once you've
-selected the project to import, click *Finish*.
+*Liferay Module Project(s)*. Then point to the project location and click
+*Finish*.
 
 ![Figure 3: Select the *Liferay Module Project(s)* to import a module project.](../../../images/import-wizard.png)
 
-
-
-
-
-
+You now have the knowledge to create a Liferay module project from a Liferay
+Workspace. Now go out there and get stuff done!
