@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<beans 
+<beans default-init-method="init" default-destroy-method="destroy"
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"

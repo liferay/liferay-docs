@@ -14,6 +14,9 @@
 
 package com.liferay.docs.springmvc;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
@@ -30,16 +33,24 @@ import com.liferay.portal.kernel.util.ReleaseInfo;
 @RequestMapping("VIEW")
 public class PortletViewController {
 
-	public void destroy() {
-		serviceTracker.close();
+	@PostConstruct
+	public void init() {
+		
+		serviceTracker.open();
 	}
-
+	
+	@PreDestroy
+	public void destroy () {
+		
+		serviceTracker.close();
+		System.out.println("DESTROY");
+	}
+	
 	@RenderMapping
 	public String question(Model model) {
 		model.addAttribute("releaseInfo", ReleaseInfo.getReleaseInfo());
 
 		// Test a service tracker
-		serviceTracker.open();
 		if (!serviceTracker.isEmpty()) {
 
 			UserLocalService userLocalService = (UserLocalService) serviceTracker.getService();
@@ -48,7 +59,6 @@ public class PortletViewController {
 		}
 		return "test-springmvc-portlet/view";
 	}
-		//Set up a service tracker
 		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
 		BundleContext bundleContext = bundle.getBundleContext();
 		ServiceTracker<?, ?> serviceTracker = new ServiceTracker<>(bundleContext, UserLocalService.class, null);
