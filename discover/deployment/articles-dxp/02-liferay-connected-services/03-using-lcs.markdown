@@ -73,6 +73,18 @@ exception of the following non-sensitive properties:
     portal.jaas.strict.password
     login.create.account.allow.custom.password
 
+Note that LCS also lets you prevent it from analyzing specific properties of 
+your choosing. With your DXP instance connected to LCS, navigate to the LCS 
+client app in your DXP instance by clicking *Control Panel* &rarr; 
+*Configuration* &rarr; *Liferay Connected Services*. Then click the *Configure 
+Services* link and uncheck the *Enable All Services* checkbox to reveal the list 
+of LCS services you can enable. Check the checkbox for *Portal Properties 
+Analysis*. In the text box that appears, enter any properties you don't want LCS 
+to analyze. Enable any other LCS services you want to use with this DXP 
+instance, and then click *Save*. 
+
+![Figure 1: The red box in this screenshot highlights the Portal Properties Analysis selection and text box for entering any properties that you don't want LCS to analyze.](../../images/lcs-portal-properties-blacklist.png)
+
 Now that you know what information is stored on the LCS servers, you're ready to 
 learn how to manage your LCS projects. This includes renaming and creating 
 projects, as well as requesting membership to projects you don't administer. 
@@ -449,27 +461,24 @@ with LCS.
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
-Environment tokens allow clients to connect automatically to environments in LCS 
-without requiring any user interaction. For example, when users connect to 
-LCS, they must first manually configure the client portlet to connect to an 
-environment. To bypass the need for manual client configuration, LCS
-Administrators and Environment Managers can generate and distribute an
-environment token file. This token contains all the information the client
-needs to connect to that environment on LCS. It's important to note that each
-environment can have only one token file. You should also use caution when
-distributing it. Anyone with the token file can use it to connect to your
-environment. Also, be careful when regenerating or otherwise removing a token
-file from LCS. When this is done, clients using the old file can't connect
-until receiving the new file. The only alternative is to use the
-administrator's own credentials to connect the client manually. Once the client
-reconnects, it's once again linked to the client's existing archive data in
-LCS. 
+Environment tokens allow the LCS client app to connect automatically to 
+environments in LCS without requiring any user interaction. This bypasses the 
+need for manual client configuration. LCS Administrators and Environment 
+Managers can generate and distribute an environment token file that contains all 
+the information the client needs to connect to an environment on LCS. It's 
+important to note that each environment can have only one token file. You should 
+also use caution when distributing this file. Anyone with the token file can use 
+it to connect to your environment. Also, be careful when regenerating or 
+otherwise removing a token file from LCS. When this is done, clients using the 
+old file can't connect until receiving the new file. In this case, the only 
+alternative is to use the administrator's own credentials to connect the client 
+manually. Once the client reconnects, it's once again linked to the client's 
+existing archive data in LCS. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
-the setup process for your users, using environment tokens is valuable in 
-auto-scaling environments where algorithms create and destroy servers 
-automatically. In this situation, having clients that configure themselves is 
-crucial.
+the setup process, using environment tokens is valuable in auto-scaling 
+environments where algorithms create and destroy servers automatically. In this 
+situation, having clients that configure themselves is crucial. 
 
 +$$$
 
@@ -515,8 +524,51 @@ previously unregistered Liferay DXP instance with LCS:
    your DXP instance, start up the instance. 
 
 3. Once deployment completes, the LCS client app connects automatically 
-   to LCS. You should see this in your LCS project's environment view.
-   
+   to LCS. You should see this in your LCS project's environment view. 
+
+Once connected, the LCS client app in your DXP instance also displays some 
+statistics and links. To view these, log in to your instance and select *Control 
+Panel* &rarr; *Configuration* &rarr; *Liferay Connected Services*. 
+
+Here's a full description of what a connected LCS client app displays: 
+
+- **Heartbeat Interval:** The interval of the communication that maintains the 
+  connection with LCS. This regular communication keeps the client's LCS 
+  connection alive, even when there's nothing else to report. The value is 
+  listed in hours, minutes, and then seconds. For example, if this value is 
+  `00:01:00`, the client communicates with LCS once every minute. 
+- **Message Task Interval:** The interval at which the client checks LCS for new 
+  messages. For example, LCS messages are used to instruct the client to 
+  download new fix packs. 
+- **Metrics Task Interval:** The interval at which server statistics and metrics 
+  are sent to LCS. 
+- **Last Message Received:** The time the latest message was received from LCS.
+- **Connection Uptime:** The duration of the client's connection with LCS.
+- **Project Home:** This link takes you to this server's registered LCS project. 
+  The project home in LCS is also called the *dashboard*.
+- **Environment:** This link takes you to this server's registered environment.
+- **Server Dashboard:** This link takes you to the server on LCS.
+- **Configure Services:** This link lets you change which LCS services are 
+  enabled for your DXP instance. Doing so triggers reconnection with the new 
+  settings. 
+- **Disconnect:** Disconnects this DXP instance from LCS.
+
+![Figure x: The server is connected to LCS.](../../images/lcs-server-connected.png)
+
+By default, all LCS services are enabled for your DXP instance. You can change 
+this by clicking the *Configure Services* link in the connected client app. When 
+you click this link, the *Enable All Services* checkbox is selected by default. 
+This enables portal analytics, fix pack management, and portal property 
+analysis. Unchecking this checkbox presents you with additional checkboxes for 
+enabling each of those services separately. Note that although 
+[LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers), 
+you may have additional properties you want to prevent LCS from analyzing. If 
+you select *Portal Properties Analysis*, a text box appears for you to enter any 
+properties you don't want LCS to analyze. Click *Save* when you finish enabling 
+the LCS services you want to use. 
+
+![Figure x: In a connected LCS client app, you can enable or disable specific LCS services for your DXP instance.](../../images/lcs-configure-services.png)
+
 When using an environment token, minimal information (server name, location, 
 etc...) is used to register a DXP instance with LCS. You can change this 
 information from the server view in LCS at any time. Also, since environment 

@@ -4,17 +4,17 @@ To use LCS, the LCS client app must be installed in your Liferay DXP instance
 and registered with LCS. The LCS client connects your DXP instance to LCS and 
 provides a simple UI for managing that connection. You can also use the LCS 
 client to directly access your LCS project, environment, and server from within 
-your DXP instance. This article covers the following steps to help you get your 
-client up and running with LCS:
+your DXP instance. This article covers the following steps to help you get up 
+and running with LCS:
 
 1. **Downloading the LCS Client:** In many cases, you won't need to do this. The 
    LCS client app is part of Liferay DXP bundles. If you installed DXP manually 
    from a WAR file, however, then you must download and install the LCS client 
-   manually. There may also be other cases, such as updating the client, where 
-   you need to download and install the client manually. If you need to download 
-   the LCS client app, you can do so from the 
+   separately. There may also be other cases, such as updating the client, where 
+   you need to download and install the client separately. You can download the 
+   LCS client app from the 
    [Liferay Marketplace](https://web.liferay.com/marketplace). 
-   For instructions on using Marketplace, see 
+   For instructions on using Marketplace to download and install apps, see 
    [this user guide article](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
 2. [**Preconfiguring the LCS Client to Connect Through a Proxy:**](/discover/portal/-/knowledge_base/7-0/configuring-the-lcs-client#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
