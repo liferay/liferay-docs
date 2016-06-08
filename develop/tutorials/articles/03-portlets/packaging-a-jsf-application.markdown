@@ -196,19 +196,6 @@ class for an example. Using the `@Reference` annotation, however, allows the
 portlet to enjoy the full OSGi lifecycle, so that the portlet will not be
 available for use if the required service is not available.
 
-Alternatively, you could write an
-[ELResolver](http://docs.oracle.com/javaee/7/api/javax/el/ELResolver.html) that
-does the following:
-
-    BundleContext bundleContext = FrameworkUtil.getBundle(getClass()).getBundleContext();
-    ServiceReference<?>[] refs = ctx.getServiceReferences(UserService.class.getName(), null);
-    userService = (UserService) bundleContext.getService(refs[0]);
-
-The drawback of this technique is that you don't enjoy the full OSGi lifecycle.
-In other words, the WAB will be placed in-service whether or not its dependent
-services are available. Additionally, the portlet annotated with `@Component`
-will not be deactivated when any dependent services become unavailable.
-
 Lastly, you can still call the traditional Liferay static utility methods (e.g.,
 `UserServiceUtil.get*`) in order to call Liferay services in your WABs. Calling
 Liferay's static utility methods, however, also means that you won't enjoy the
