@@ -83,7 +83,7 @@ Analysis*. In the text box that appears, enter any properties you don't want LCS
 to analyze. Enable any other LCS services you want to use with this DXP 
 instance, and then click *Save*. 
 
-![Figure 1: The red box in this screenshot highlights the Portal Properties Analysis selection and text box for entering any properties that you don't want LCS to analyze.](../../images/lcs-portal-properties-blacklist.png)
+![Figure 1: The red box in this screenshot highlights the Portal Properties Analysis selection and text box for entering any properties that you don't want LCS to analyze.](../../images-dxp/lcs-portal-properties-blacklist.png)
 
 Now that you know what information is stored on the LCS servers, you're ready to 
 learn how to manage your LCS projects. This includes renaming and creating 
@@ -553,7 +553,7 @@ Here's a full description of what a connected LCS client app displays:
   settings. 
 - **Disconnect:** Disconnects this DXP instance from LCS.
 
-![Figure x: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure x: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
 
 By default, all LCS services are enabled for your DXP instance. You can change 
 this by clicking the *Configure Services* link in the connected client app. When 
@@ -567,7 +567,7 @@ you select *Portal Properties Analysis*, a text box appears for you to enter any
 properties you don't want LCS to analyze. Click *Save* when you finish enabling 
 the LCS services you want to use. 
 
-![Figure x: In a connected LCS client app, you can enable or disable specific LCS services for your DXP instance.](../../images/lcs-configure-services.png)
+![Figure x: In a connected LCS client app, you can enable or disable specific LCS services for your DXP instance.](../../images-dxp/lcs-configure-services.png)
 
 When using an environment token, minimal information (server name, location, 
 etc...) is used to register a DXP instance with LCS. You can change this 

@@ -170,14 +170,12 @@ Here's a full description of what's displayed:
   connection with LCS. This regular communication keeps the client's LCS 
   connection alive, even when there's nothing else to report. The value is 
   listed in hours, minutes, and then seconds. For example, if this value is 
-  `00:01:00`, the client communicates with LCS once every minute. This article's 
-  previous section contains instructions for changing the heartbeat interval.
+  `00:01:00`, the client communicates with LCS once every minute. 
 - **Message Task Interval:** The interval at which the client checks LCS for new 
   messages. For example, LCS messages are used to instruct the client to 
-  download new fix packs. Currently, this interval is fixed and can't be 
-  changed. 
+  download new fix packs. 
 - **Metrics Task Interval:** The interval at which server statistics and metrics 
-  are sent to LCS. Currently, this interval is fixed and can't be changed. 
+  are sent to LCS. 
 - **Last Message Received:** The time the latest message was received from LCS.
 - **Connection Uptime:** The duration of the client's connection with LCS.
 - **Project Home:** This link takes you to this server's registered LCS project. 
