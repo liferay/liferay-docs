@@ -77,6 +77,50 @@ the variable and set it to a custom value. For instance, if you want to store
 your modules in a folder other than `[ROOT]/modules`, uncomment the
 `liferay.workspace.modules.dir` variable and set it to a different value.
 
++$$$
+
+**Note:** The workspace plugin automatically adds a multitude of subprojects for
+you, which hides some complexities of Gradle. For example, a typical project's
+`settings.gradle` file could contain many included subprojects like this:
+
+    ...
+    include images:base:oracle-jdk:oracle-jdk-6
+    include images:base:oracle-jdk:oracle-jdk-7
+    include images:base:oracle-jdk:oracle-jdk-8
+    include images:base:liferay-portal:liferay-portal-ce-tomcat-7.0-ga1
+    include images:source-bundles:glassfish
+    include images:source-bundles:jboss-eap
+    include images:source-bundles:tomcat
+    include images:source-bundles:websphere
+    include images:source-bundles:wildfly
+    include compose:jboss-eap-mysql
+    include compose:tomcat-mariadb
+    include compose:tomcat-mysql
+    include compose:tomcat-mysql-elastic
+    include compose:tomcat-postgres
+    include file-server
+    ...
+
+The workspace plugin provides these behind the scenes. Likewise, if a folder in
+the `/themes` folder includes a `liferay-theme.json` file, the `gulp` plugin is
+applied to it. If a folder in the `/modules` folder included a `bnd.bnd` file,
+the `liferay-gradle` plugin is applied to it. Therefore, workspaces provides an
+easier way to create and manage Gradle plugins. For more information on the
+`liferay-gradle` plugin, see the
+[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+tutorial.
+
+$$$
+
+Once you've developed and managed projects in your workspace, it could also be
+usefuly to bundle your workspace into a ZIP or TAR file. This provides the
+flexibility to distribute your workspace to potential consumers. To do this,
+navigate to your workspace's root folder and run the following:
+
+    .\gradlew distBundle[Zip|Tar]
+
+Your distribution file is available from the workspace's `/build` directory.
+
 Next you'll learn about generating and using a @product@ instance from within your
 workspace.
 
