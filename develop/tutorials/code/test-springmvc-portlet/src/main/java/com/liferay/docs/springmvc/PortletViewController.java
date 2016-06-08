@@ -14,12 +14,17 @@
 
 package com.liferay.docs.springmvc;
 
-import com.liferay.portal.kernel.util.ReleaseInfo;
-
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
+import org.osgi.util.tracker.ServiceTracker;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
+
+import com.liferay.portal.kernel.service.UserLocalService;
+import com.liferay.portal.kernel.util.ReleaseInfo;
 
 @Controller
 @RequestMapping("VIEW")
@@ -28,7 +33,20 @@ public class PortletViewController {
 	@RenderMapping
 	public String question(Model model) {
 		model.addAttribute("releaseInfo", ReleaseInfo.getReleaseInfo());
+		
+		// Test a service tracker
+		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+		BundleContext bundleContext = bundle.getBundleContext();
+		ServiceTracker<?, ?> serviceTracker = new ServiceTracker<>(bundleContext, UserLocalService.class, null);
 
+		serviceTracker.open();
+		if (!serviceTracker.isEmpty()) {
+
+			UserLocalService userLocalService = (UserLocalService) serviceTracker.getService();
+			int count = userLocalService.getUsersCount();
+			System.out.println(count);
+		}
+		serviceTracker.close();
 		return "test-springmvc-portlet/view";
 	}
 
