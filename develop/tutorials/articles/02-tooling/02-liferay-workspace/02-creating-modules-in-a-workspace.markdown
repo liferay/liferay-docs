@@ -34,11 +34,14 @@ workspace's `gradle.properties` file:
 
     liferay.workspace.modules.dir=modules
 
-When using Blade CLI, you'll have to manually edit your project's component
-class.
-
 Change this property if you'd like to store your modules in a different
 directory.
+
+When using Blade CLI, you'll have to manually edit your project's component
+class. Blade CLI gives you the ability to specify the class's name, but all
+other contents of the class can only be edited after the class is created. See
+the next section on *Using Liferay IDE* for further details and important
+dependency information on component classes.
 
 It's as simple as that! You now know how to create modules in a Liferay
 Workspace using Blade CLI's module templates. The great thing about Blade CLI is
