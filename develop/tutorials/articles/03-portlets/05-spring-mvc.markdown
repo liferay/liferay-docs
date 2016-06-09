@@ -11,12 +11,6 @@ WAR archives: Do you want to pre-configure your Spring MVC portlet project as a
 WAB, or do you want to let the WAB generator in Liferay do the work for you? The
 benefits and drawbacks of each approach are covered here.
 
-<!-- Spring MVC can also be packaged as a JAR according to Miguel. We need to
-find best practices for this. Maybe this should be re-factored to show 1. How to
-make an existing Spring MVC portlet run in Liferay and consume OSGi services
-using best practices, and how to start from scratch and create a "best
-practices" spring MVC portlet.-->
-
 +$$$
 
 **Note:** If you're wondering what in the world a WAB is, it's a Web Application Bundle.
@@ -26,20 +20,6 @@ OSGi header specified. The WAB can run as an OSGi module because of the Liferay
 [WAB Extender](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-extender). 
 
 $$$
-
-<!--
-Here's the easiest way:
-
--  Create a project from the Liferay 6.2 Maven archetype:
-http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22liferay-portlet-spring-mvc-archetype%22
-
--  Update the descriptors `liferay-portlet.xml`,
-   `liferay-display.xml`, and `liferay-plugin-package.properties` to Liferay 7.
-
--  Deploy the WAR. How does WAR deployment work in Liferay 7? Check out the
-   tutorial on [packaging JSF applications](develop/tutorials/-/knowledge_base/7-0/packaging-a-jsf-application)
-for an explanation.
--->
 
 First, consider how you want to package your Spring MVC portlet project.
 
@@ -59,7 +39,7 @@ ways to make your source code into a WAB:
 -  Use Liferay's WAB Generator to convert your WAR into a WAB at
    deployment time.
 
-    The benefits:
+    The benefits of this approach:
 
     - Processed by the Liferay auto-deploy process, which adds
           `PortletServlet` and `PluginContextListener` to the `WEB-INF/web.xml`
@@ -81,12 +61,12 @@ for generating the manifest file.
 `bnd.bnd` file in the root of your project, which specifies OSGi headers that
 will go in the manifest.
 
-    This approach has some benefits:
+    This approach has a benefit over the WAB Generator approach:
 
     - The `bnd.bnd` file can be processed by a build-time plugin (e.g.,
       [bnd-maven-plugin](http://njbartlett.name/2015/03/27/announcing-bnd-maven-plugin.html)) to affect the content of an OSGi-ready `META-INF/MANIFEST.MF`.
 
-    The drawback:
+    There's also a drawback:
 
     - Bypasses the Liferay auto-deploy process, which means developers must
       have the `WEB-INF/web.xml` descriptor fully ready for deployment.
@@ -365,25 +345,28 @@ Since you don't have the ability to look up a reference to the services
 published to the OSGi runtime using Declarative Services, how do you call
 Service Builder services? One way is by calling the static utility methods.
 
-`FooServiceUtil.getFoosByGroupId()`
+    FooServiceUtil.getFoosByGroupId()
 
 Preferably, you can look up the OSGi service using the Service Tracker API.
 First you look up the bundle using a call to `frameworkUtil.getBundle()`, and
 then get its bundle context. `BundleContext` methods let your bundle interact
 with the OSGi runtime. In this case you're going to pass the bundle context to a
 service tracker with the name of the service's class, then open the service
-tracker:
+tracker. An `init` method is a good place to put this initialization code :
 
-    Bundle bundle = FrameworkUtil.getBundle(this.getClass());
-    BundleContext bundleContext = bundle.getBundleContext();
-    ServiceTracker<?, ?> serviceTracker = new ServiceTracker<>(bundleContext, SomeService.class, null);
+	@PostConstruct
+	public void init() {
 
-    serviceTracker.open();
+		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+		BundleContext bundleContext = bundle.getBundleContext();
+		serviceTracker = new ServiceTracker<>(bundleContext, SomeService.class, null);
+		serviceTracker.open();
+	}
 
-When you want to call the service, first make sure it's been fetched by the
-Service Tracker, then get the service using the Service Tracker API's
-`getService` method. After that, use the service to do something cool, and close
-the service tracker when you're done with it:
+When you want to call the service in your controller's method, first make sure
+it's been fetched by the Service Tracker, then get the service using the Service
+Tracker API's `getService` method. After that, use the service to do something
+cool, and close the service tracker when you're done with it:
 
     if (!serviceTracker.isEmpty()) {
         SomeService someService = (SomeService) serviceTracker.getService();
@@ -391,12 +374,20 @@ the service tracker when you're done with it:
         someService.doSomethingCool();
     }
 
-    serviceTracker.close();
+When it's time for the controller bean to be removed, you can close the service
+tracker. Using a `destroy` method is an appropriate place to do this:
 
-Note that these service calls are inferior to using the Declarative Services
-`@Reference` annotation because you won't enjoy the benefits of the full OSGi
-lifecycle. In other words, the WAB will be placed in service, and kept in
-service, even if the services it depends on are not available. If you are not
-required to use a Spring MVC portlet, consider using Liferay's MVC framework to
-design your portlets instead, since you can take advantage of the Declarative
-Services `@Component` and `@Reference` and the OSGi lifecycle.
+	@PreDestroy
+	public void destroy() {
+		
+		serviceTracker.close();
+	}
+
+Note that using a service tracker, as shown above, is inferior to using the
+Declarative Services `@Reference` annotation because you won't enjoy the
+benefits of the full OSGi lifecycle. In other words, the WAB will be placed in
+service, and kept in service, even if the services it depends on are not
+available. If you are not required to use a Spring MVC portlet, consider using
+Liferay's MVC framework to design your portlets instead, since you can take
+advantage of the Declarative Services `@Component` and `@Reference`, which let's
+you leverage the OSGi lifecycle.
