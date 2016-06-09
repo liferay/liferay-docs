@@ -10,20 +10,27 @@ A hot fix is provided to a customer when a customer contacts Liferay about an
 issue, and Liferay's support team--working with the customer--determines that
 the problem is indeed an issue with the product that needs to be fixed. Support
 fixes the bug and provides a hot fix to the customer immediately. This is a
-short-term fix that solves the issue for the customer as quickly as possible. On 
-a regular schedule, hot fixes that affect the core are bundled together into fix
-packs. Fix packs are provided to all of Liferay's customers. Hot fixes that
-patch application suites are provided to customers through Marketplace updates. 
+short-term fix that solves the issue for the customer as quickly as possible.
+Hot fixes can patch both the core and the application suites. 
+
+On a regular schedule, hot fixes that patch the core are bundled together into
+fix packs, which are provided to all of Liferay's customers. Hot fixes that
+patch application suites are made for specific customers. These are delivered to
+other customers through Marketplace updates. This is an important distinction
+to remember: if there's a fix you need, and it's for one of the application
+suites, the way to get the update is to retrieve and install it from
+Marketplace. If there's a fix you need that affects only the core, a fix pack
+will be provided. 
 
 Now that you know what patching is all about, let's check out the tool. 
 
-## Installing the patching tool [](id=installing-the-patching-tool)
+## Installing the Patching Tool [](id=installing-the-patching-tool)
 
 If you're using a Liferay bundle, congratulations! The patching tool is already
 installed. Your job isn't done yet, however, because Liferay *might* have
 updated the patching tool. Always check the Customer Portal to see if the
-patching tool has been updated first. But even if you forget to check, the
-patching tool will tell you if it needs to be updated when you run it. A lot of
+patching tool has been updated first. Even if you forget to check, the
+patching tool tells you if it needs to be updated when you run it. A lot of
 planning and forethought has gone into the patching system to make it run as
 smoothly as possible.
 
@@ -33,17 +40,30 @@ Liferay Home folder. This is the folder where you've placed your
 `portal-ext.properties` file and where by default the `data` folder resides.
 This is generally one folder up from where your application server is installed,
 but some application servers are different. If you don't know where Liferay Home
-is on your system, check chapter 14 to see where this folder is for your
-specific application server.
+is on your system, check [the installation documentation](/discover/deployment/-/knowledge_base/7-0/installation-and-setup) 
+to see where this folder is for your specific application server.
 
 If you're upgrading the patching tool, all you need to do is unzip the new
 version on top of the old version. Note that if you're doing this on LUM (Linux,
 Unix, Mac) machines, you'll need to make the `patching-tool.sh` script
 executable.
 
+## Auto Discovery
+
 After the patching tool is installed, you need to let it auto-discover your
 Liferay installation. Then it will determine what your release level is and what
-your application server environment is. This is a simple command to run on LUM:
+your application server environment is. To do this, you first have to define for
+the tool where [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+is by creating a hidden file there. If you're using a Liferay bundle, this step
+has been completed for you. If, however, you've installed @product@ manually,
+you'll have to create this file manually. 
+
+Go to your Liferay Home folder (the folder that by default contains the `data`,
+`osgi`, and `tools` folders) and create a file called `.liferay-home`. Because
+it starts with a dot, this file is a hidden file on Unix-style operating
+systems. This file serves as a marker for your Liferay Home folder. 
+
+Now you're ready to run auto-discovery:
 
     ./patching-tool.sh auto-discovery
  
@@ -51,24 +71,58 @@ or on Windows:
 
     patching-tool auto-discovery
  
-From here on, for brevity we'll use the LUM version of the command. Why? Because
-Liferay is open source; there's no open source variant of Windows (ReactOS is
-still in alpha, so it doesn't count); and therefore my (RS) unscientific
-impression is that more people will run Liferay on open source technology than
-not. If I'm wrong, I'm wrong, but there are still many other examples of
-documentation that defaults to Windows, so we still get to be different. 
-
 If you've installed the patching tool in a non-standard location, you'll have to
 give this command another parameter to point it to your Liferay installation.
 For example, if you've installed a Liferay/Tomcat bundle in `/opt/Liferay`,
 you'd issue this command: 
 
-    ./patching-tool.sh auto-discovery /opt/Liferay/tomcat-7.0.21
+    ./patching-tool.sh auto-discovery /opt/Liferay/tomcat-8.0.32
  
-In all, this is pretty simple. Now that you've installed the patching tool, 
-you're ready to download and install patches. You can install patches manually 
-or automatically. For automatic patch installation, you need to set up the 
-patching tool agent. This is presented next.
+
+This writes your server's configuration to a file called `default.properties`.
+The patching tool uses the properties in this file to find the files it needs to
+patch. When you're finished, your `default.properties` file looks similar to
+this: 
+
+    liferay.home=/opt/liferay-dxp-digital-enterprise-7.0-ga1/
+    patching.mode=binary
+    war.path=../tomcat-8.0.32/webapps/ROOT
+    global.lib.path=../tomcat-8.0.32/lib/ext
+
+The properties above (described fully [below](#using-profiles-with-the-patching-tool)) 
+define the location of Liferay Home, the patching mode
+(binary or source), the path to where WAR files are deployed in the app server,
+and the global library path. If auto-discovery found your Liferay Home folder,
+the location of Liferay's OSGi-based module framework can be calculated from
+this. If, however, you customized the folder structure, you'll have to specify
+manually the following properties: 
+
+    module.framework.core.path=path_to_modules_core_dir
+    module.framework.marketplace.path=path_to_modules_marketplace_dir
+    module.framework.modules.path=path_to_modules_modules_dir
+    module.framework.portal.path=path_to_modules_portal_dir
+    module.framework.static.path=path_to_modules_static_dir
+
+    module.framework.stop.wait.timeout=30000
+
+For most installations, you don't have to do this, as the `osgi` folder is in
+its default location. If you've customized the location of the module framework,
+however, you'll have to specify the above locations. Since you moved them, you
+should know where they are. 
+
+There's one more property you'll have to specify, again, only if you have
+installed @product@ manually: 
+
+    target.platform.indexer.path=/opt/liferay-dxp-digital-enterprise-7.0-ga1/tools/portal-tools-target-platform-indexer-client/
+
+If you don't have the indexer client, you'll have to download it from the same
+location where you downloaded @product@, install it, and then use this property
+to point to it. 
+
+Now that you've installed the patching tool and run auto-discovery, you're ready
+to download and install patches. You can install patches manually or
+automatically. For automatic patch installation, you need to set up the patching
+tool agent. This is presented next.
 
 ### Configuring the Patching Tool Agent [](id=configuring-the-patching-tool-agent)
 
@@ -85,7 +139,7 @@ patching tool is installed in a location other than the Liferay Home folder, you
 must specify the path of the `patching-tool` folder as a JVM argument for the 
 app server. This is done with the `patching.tool.home` property. For example:
 
-    -Dpatching.tool.home=/opt/liferay-portal-6.1.20-ee-ga2/patching-tool/
+    -Dpatching.tool.home=/opt/liferay-dxp-digital-enterprise-7.0-ga1/tools/patching-tool
     
 There are also a few other things to consider when using the agent. Due to class 
 loading issues, the agent starts in a separate JVM. You can specify options for 
@@ -97,7 +151,7 @@ You may also experience issues on Windows if the user starting the app server
 doesn't have administrator privileges. Here are some examples of the errors you 
 may see:
 
-    `java.nio.file.FileSystemException: ..\tomcat-7.0.42\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!`
+    `java.nio.file.FileSystemException: ..\tomcat-8.0.32\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!`
     `java.io.FileNotFoundException: java.io.IOException: Access refused`
 
 To solve this, set the `java.io.tmpdir` system property as follows in the 
@@ -116,11 +170,11 @@ You can specify these as follows:
 
 Now let's see how to use the patching tool to get your patches installed. 
 
-## Installing patches [](id=installing-patches)
+## Installing Patches [](id=installing-patches)
 
 The absolute first thing you must do when installing one or more patches is to
 shut down your server. On Windows operating systems, files that are in use are
-locked by the OS, and won't be patched. On LUM systems, you can generally
+locked by the OS, and won't be patched. On Unix-style systems, you can usually
 replace files that are running, but of course that still leaves the old ones
 loaded in memory. So your best bet is to shut down the application server that's
 running Liferay before you install a patch. 
@@ -128,7 +182,7 @@ running Liferay before you install a patch.
 +$$$
 
 **Note:** Liferay Connected Services (LCS) installs patches for you. See the 
-[LCS documentation](/discover/deployment/-/knowledge_base/6-2/managing-liferay-with-liferay-connected-services) 
+[LCS documentation](/discover/deployment/-/knowledge_base/7-0/managing-liferay-with-liferay-connected-services) 
 for more information.
 
 $$$
@@ -142,30 +196,38 @@ done that, it's a simple matter to install it. First, execute
     ./patching-tool.sh info
  
 This shows you a list of patches you've already installed, along with a list of
-patches that *can* be installed, from what's in the `patches` folder. To use the 
-patching tool agent to install the patches, restart the server. The agent takes 
-care of the rest. 
+patches that *can* be installed, from what's in the `patches` folder. 
+
+There are two ways to install patches: 
+
+- You can use the agent
+- You can install patches manually
+
+If you've set up the agent, it installs new patches that have been placed in the
+`patches` folder on server restarts. To use the agent to install the patches,
+therefore, restart the server. The agent takes care of the rest. 
 
 To install the available patches manually, use the following steps. First, 
 issue the following command: 
 
     ./patching-tool.sh install
 
-Liferay copies files into the plugins in deployment time. If these files are
-patched in the portal, they need to be updated in the plugins as well. In these
-cases, the patching tool notifies you about the change. You can run the
-following command to update these files automatically:
+If you have traditional WAR plugins installed that are still supported, Liferay
+copies files into the plugins at deployment time. If these files are patched in
+@product@, they need to be updated in the plugins as well. In these cases, the
+patching tool notifies you about the change. You can run the following command
+to update these files automatically:
 
     ./patching-tool.sh update-plugins
 
-If you do not wish to have the patching tool update the plugins, it's enough to
-re-deploy them. If there are new indexes created by the patch, the patching tool
-notifies you to update them. To get the list, run this command:
+If you do not wish to have the patching tool update the plugins, you can
+redeploy them instead. If there are new indexes created by the patch, the
+patching tool notifies you to update them. To get the list, run this command:
 
     ./patching-tool.sh index-info
 
 As there's no database connection at patching time, the indexes need to be
-created at portal startup. In order to get the indexes automatically created,
+created at portal startup. In order to have the indexes created automatically,
 add the following line to the `portal-ext.properties` file if the server has
 permissions to modify the indexes on the database:
 
@@ -176,34 +238,41 @@ Otherwise, you have to create the indexes manually. Check the output of the
 
 Once your patches have been installed, you can verify them by using the
 `./patching-tool.sh info` command, which now shows your patch in the list of
-installed patches. Next, let's look now at how to manage your patches. 
+installed patches. 
 
-### Handling hot fixes and patches [](id=handling-hot-fixes-and-patches)
+Next, you'll learn how to manage your patches. 
+
+### Handling Hot Fixes and Patches [](id=handling-hot-fixes-and-patches)
 
 As stated above, hot fixes are short term fixes provided as quickly as possible
 and fix packs are larger bundles of hot fixes provided to all customers at
-regular intervals. If you already have a hot fix installed, and the fix pack
-which contains that hot fix is released, you can rest assured the patching tool
-will manage this for you. Fix packs always supersede hot fixes, so when you
-install your fix pack, the hot fix that it already contains is uninstalled, and
-the fix pack version is installed in its place. 
+regular intervals. If you already have a hot fix installed and the fix pack
+which contains that hot fix is released, the patching tool will manage this for
+you. Fix packs always supersede hot fixes, so when you install your fix pack,
+the hot fix that it already contains is uninstalled, and the fix pack version is
+installed in its place. 
+
+Note that this is *not* the case for hot fixes applied to the application
+suites. If you have installed a hot fix that then becomes part of a new release
+on Marketplace, you will have to remove the hot fix first (see below) before you
+can upgrade to the new release. 
 
 Sometimes there can be a fix to a fix pack. This is also handled automatically.
 If a new version of a fix pack is released, you can use the patching tool to
 install it. The patching tool uninstalls the old fix pack and installs the new
 version in its place. 
 
-### Fix pack dependencies [](id=fix-pack-dependencies)
+### Fix Pack Dependencies [](id=fix-pack-dependencies)
 
 Some fix packs require other fix packs to be installed first. If you attempt to
-install a fix pack that depends on another fix pack, the patching tool will
-notify you of this so you can go to the customer portal and obtain the fix pack
+install a fix pack that depends on another fix pack, the patching tool notifies
+you of this so you can go to the customer portal and obtain the fix pack
 dependency. Once all the necessary fix packs are available in the `patches`
 folder, the patching tool will install them. 
 
 The patching tool can also remove patches. 
 
-## Removing or reverting patches [](id=removing-or-reverting-patches)
+## Removing or Reverting Patches [](id=removing-or-reverting-patches)
 
 Have you noticed that the patching tool only seems to have an `install` command?
 This is because patches are managed not by the command, but by what appears in
@@ -219,16 +288,15 @@ What we've described so far is the simplest way to use the patching tool, but
 you can also use the patching tool in the most complex, multi-VM, clustered
 environments. This is done by using profiles. 
 
-## Using profiles with the patching tool [](id=using-profiles-with-the-patching-tool)
+## Using Profiles with the Patching Tool [](id=using-profiles-with-the-patching-tool)
 
 When you ran the auto-discovery task after installing the patching tool, it
 created a default profile that points to the application server it discovered.
 This is the easiest way to use the patching tool, and is great for smaller,
-single server installations. But we realize many Liferay installations are sized
-accordingly to serve millions of pages per day, and the patching tool has been
-designed for this as well. So if you're running a small, medium, or large
-cluster of Liferay machines, you can use the patching tool to manage all of them
-using profiles. 
+single server installations. But many Liferay installations are sized to serve
+millions of pages per day, and the patching tool has been designed for this as
+well. So if you're running a small, medium, or large cluster of Liferay
+machines, you can use the patching tool to manage all of them using profiles. 
 
 The auto-discovery task creates a properties file called `default.properties`.
 This file contains the detected configuration for your application server. But
@@ -241,7 +309,7 @@ more command line parameters:
     ./patching-tool.sh [name of profile] auto-discovery [path/to/runtime]
  
 This will run the same discovery process, but on a path you choose, and the
-profile information will go into a `[your profile name].properties` file. 
+profile information goes into a `[your profile name].properties` file. 
 
 Alternatively, you can manually create your profiles. Using a text editor,
 create a `[profile name].properties` file in the same folder as the patching
@@ -272,5 +340,4 @@ is only valid if your `patching.mode` is `source`.
 You can have as many profiles as you want, and use the same patching tool to
 patch all of them. This helps to keep all your installations in sync. 
 
-Now that you know how to patch an existing installation of Liferay, let's turn
-to how you'd upgrade Liferay from an older release to the current release.
+Great! Now you know how to keep @product@ up to date with the latest patches. 
