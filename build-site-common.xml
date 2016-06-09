@@ -410,4 +410,16 @@
 		<mkdir dir="${dist.dir}"/>
 	</target>
 
+	<target name="report-moved-classes" description="Generates a Markdown file (-Darticle) to report classes moved from portal-service/src in (-DoldDir) to modules in (-DnewDir).">
+		<java
+			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${oldDir}"/>
+			<arg value="${newDir}"/>
+			<arg value="${article}"/>
+		</java>
+	</target>
 </project>
