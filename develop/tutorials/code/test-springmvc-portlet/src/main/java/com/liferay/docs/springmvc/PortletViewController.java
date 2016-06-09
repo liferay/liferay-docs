@@ -35,7 +35,10 @@ public class PortletViewController {
 
 	@PostConstruct
 	public void init() {
-		
+
+		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+		BundleContext bundleContext = bundle.getBundleContext();
+		serviceTracker = new ServiceTracker<>(bundleContext, UserLocalService.class, null);
 		serviceTracker.open();
 	}
 	
@@ -59,7 +62,6 @@ public class PortletViewController {
 		}
 		return "test-springmvc-portlet/view";
 	}
-		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
-		BundleContext bundleContext = bundle.getBundleContext();
-		ServiceTracker<?, ?> serviceTracker = new ServiceTracker<>(bundleContext, UserLocalService.class, null);
+
+		ServiceTracker<?, ?> serviceTracker;
 }

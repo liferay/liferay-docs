@@ -382,14 +382,16 @@ tracker:
 
 When you want to call the service, first make sure it's been fetched by the
 Service Tracker, then get the service using the Service Tracker API's
-`getService` method. After that, use the service to do something cool:
+`getService` method. After that, use the service to do something cool, and close
+the service tracker when you're done with it:
 
     if (!serviceTracker.isEmpty()) {
-        SomeService someService = serviceTracker.getService();
+        SomeService someService = (SomeService) serviceTracker.getService();
 
         someService.doSomethingCool();
     }
 
+    serviceTracker.close();
 
 Note that these service calls are inferior to using the Declarative Services
 `@Reference` annotation because you won't enjoy the benefits of the full OSGi
