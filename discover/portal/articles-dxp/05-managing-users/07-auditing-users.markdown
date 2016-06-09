@@ -15,20 +15,20 @@ you.
 access to a wiki I was updating just a few minutes ago. I was about to enter a
 support ticket for it." 
 
-"Forget the ticket. Let's go see the portal admin now," you say. 
+"Forget the ticket. Let's go see the admin now," you say. 
 
 And off you go, two floors down, to the far end of the building where, as you
-approach, you can already hear stress in the portal admin's voice as he tries to
+approach, you can already hear stress in the admin's voice as he tries to
 reassure someone on the phone. 
 
 "Yes, Mr. Jones. Yes, I'll fix it." (*Jones? The president of the company?* goes
 through your mind.) "I'll get on it right away, Mr. Jones. It was just a
 mistake; I'll fix it. Thank you, Mr. Jones," and he hangs up the phone. 
 
-"Problems?" you ask the portal admin, whose name is Harry. He does look rather
+"Problems?" you ask the admin, whose name is Harry. He does look rather
 harried. 
 
-"Yeah, Tom," he says. "Somebody changed a bunch of permissions in the portal--it
+"Yeah, Tom," he says. "Somebody changed a bunch of permissions in @product@--it
 wasn't me. I'm assuming you and Dick are here because of the same problem?" 
 
 "Yup," you say. "I lost access to a document repository folder." 
@@ -39,10 +39,10 @@ wasn't me. I'm assuming you and Dick are here because of the same problem?"
 audit portlet in the control panel and see what happened." 
 
 When in the course of human events it becomes necessary to see what users are
-doing on your portal, you'll find Liferay makes this easy. If you're a @product@
+doing on your @product@, you'll find Liferay makes this easy. If you're a @product@
 customer, you have access to the Audit application. In combination with some
 settings in `portal-ext.properties`, the Audit application enables you to see
-all the activity that occurs in your portal. Using this, you can quickly find
+all the activity that occurs in your @product@. Using this, you can quickly find
 out what changes were made and by whom. If you've delegated permission granting
 to any group of people, this is an essential feature you're likely to use. 
 
@@ -52,29 +52,25 @@ the same thing Harry's about to do.
 
 ## Using Audit Events [](id=using-audit-events)
 
-It's easy to use audit events to view activities in your portal. Navigate to the
+It's easy to use audit events to view activities in your @product@. Navigate to the
 Control Panel and you'll find an entry in the Configuration section called
 *Audit*. Clicking on *Audit* shows you a list of the events Liferay has already
 captured (see the figure below), along with an interface for searching for
 events. You can browse the list but you'll likely need to use the search to find
 what you're looking for.
 
-![Figure 1: @product@ captures and stores events as soon as the Audit app has been
-installed.](../../images-dxp/audit-list-events.png)
+![Figure 1: @product@ captures and stores events.](../../images-dxp/audit-list-events.png)
 
 The figure above shows that Joe Bloggs logged in and performed some actions on
 the site. To view details about any of these events, all you need to do is click
 on an entry. You'll then see something like the figure below. 
 
-![Figure 2: Clicking an event in the list shows the details of that event. This
-event shows that Test Test updated his user account. Specifically, it shows that
-he updated his `prefixId` from `0` to `101`. The `prefixId` value represents a
-prefix for a real name like "Dr.", "Mr.", "Mrs.", or "Ms."](../../images-dxp/audit-detail.png)
+![Figure 2: Clicking an event in the list shows the details of that event. This event shows that Test Test updated his user account. Specifically, it shows that he updated his `prefixId` from `0` to `101`. The `prefixId` value represents a prefix for a real name like "Dr.", "Mr.", "Mrs.", or "Ms."](../../images-dxp/audit-detail.png)
 
-As you can see, depending on how many users you have in your portal, this list
+As you can see, depending on how many users you have, this list
 can get populated very quickly. That's why page view events aren't displayed by
 default. They'll clutter up your audit report, since they'll definitely be the
-most often triggered event in your portal. 
+most often triggered event. 
 
 +$$$
 
@@ -110,7 +106,7 @@ Let's look at the options we have for search.
 *any* single field. 
 
 **User ID:** Specify the user ID you'd like to search for. This would be the
-user who performed some action in the portal you'd like to audit. 
+user who performed some action you'd like to audit. 
 
 **User Name:** Specify the user name you'd like to search for. This is often
 easier than searching for a user ID, especially if you don't have access to the
@@ -146,26 +142,21 @@ need this if you run a "vertical" cluster of multiple VMs on the same machine.
 
 **End Date:** Specify the high end of the date range you wish to search. 
 
-Using this form, if you wanted to check to see if someone in the portal
-unassigned a user from a particular role, you might search for a resource name
-of *user* and a resource action of *unassign*.
+Using this form, if you wanted to check to see if someone unassigned a user from
+a particular role, you might search for a resource name of *user* and a resource
+action of *unassign*.
 
-![Figure 3: Searching for audit events is easy with the advanced search form
-provided by the Audit application. You can specify various search criteria to
-find the types of events you're looking for.](../../images-dxp/audit-unassign-search.png)
+![Figure 3: Searching for audit events is easy with the advanced search form provided by the Audit application. You can specify various search criteria to find the types of events you're looking for.](../../images-dxp/audit-unassign-search.png)
 
 Once you have the results of your search, you can click on any of the records
 returned to see the detail page for that record. The figure below shows, in this
 case, that the default administrative user removed the Power User role from
 James Jeffries.
 
-![Figure 4: If you've delegated portal administration to multiple users, you
-can use the Audit application to determine who made what change. And, of course,
-you'll never leave the default administrative user enabled on a production
-system, right?](../../images-dxp/audit-unassign-detail.png)
+![Figure 4: If you've delegated administration to multiple users, you can use the Audit application to determine who made what change. And, of course, you'll never leave the default administrative user enabled on a production system, right?](../../images-dxp/audit-unassign-detail.png)
 
 As you can see, Liferay's Audit application give you a lot of power to see what's
-happening in your portal. You can use this information to troubleshoot problems,
+happening in your @product@. You can use this information to troubleshoot problems,
 determine ownership of particular actions, or, as Harry is about to do, find out
 who made permission changes they weren't supposed to make. 
 
