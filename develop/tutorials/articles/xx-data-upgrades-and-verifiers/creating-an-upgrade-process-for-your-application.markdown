@@ -1,12 +1,10 @@
 # Creating An Upgrade Process for Your App [](id=creating-an-upgrade-process-for-your-app)
 
-Your app goes through various stages of development. You add new features,
-remove features, improve features, reorganize the code, etc. During the cycle of
-development, you'll want to upgrade your app to a new version to indicate to
-your end users that improvements have been made. These upgrades will need to be
-registered in the database. The system records the current state of the schema 
-so, in case of failure, upgrade processes can revert the app back to its 
-previous version.
+As changes are made to your app, it is important that you upgrade your schema
+version. To move your app from one version to the next, you'll need to create an 
+upgrade process. These upgrades need to be registered in the database. The 
+system then records the current state of the schema so, in case of failure, 
+upgrade processes can revert the app back to its previous version.
 
 This tutorial demonstrates how to:
 
