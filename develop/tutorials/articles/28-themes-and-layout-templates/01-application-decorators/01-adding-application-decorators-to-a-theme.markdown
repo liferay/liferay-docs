@@ -34,7 +34,7 @@ includes three Application Decorators:
 decorator to those applications that had the *Show Borders* option set to false 
 in previous versions of Liferay.
 
-As mentioned, you should consider to update your Liferay Themes to provide at 
+As mentioned, you should consider updating your Liferay Themes to provide at 
 least one for the *decorate*, *borderless* and *barebone* use cases.
 
 $$$
@@ -45,7 +45,7 @@ This tutorial demonstrates how to:
 
 - Affect theme markup with Application Decorators
 
-Now that you know why you shoudld have Application Decorators in your theme, you 
+Now that you know why you should have Application Decorators in your theme, you 
 can learn how to add them to your theme next.
 
 ## Adding Application Decorators to a Theme [](id=adding-application-decorators-to-a-theme)
