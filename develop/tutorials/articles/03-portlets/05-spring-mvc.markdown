@@ -1,22 +1,32 @@
 # Spring MVC
 
-If you're developing applications for Liferay, it makes sense to use [Liferay's MVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) and [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder). If you're already a wizard with
-Spring MVC, you can instead use that framework for your application's
-controller. You can still use Service Builder for your service layer.
+Liferay is an open platform in an ecosystem of open platforms. Just because
+Liferay has its own [MVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet),
+therefore, doesn't mean you have to use it. It is perfectly valid to bring the
+tools and experience you have from other development projects over to Liferay.
+In fact, we expect you to. Liferay's development platform is standards-based,
+making it an ideal choice for applications of almost any type. 
 
-So, what does it take to implement a Spring MVC application in Liferay? Assuming
-you're familiar with Spring MVC, there are a few notable things to mention and
-you have a decision to make, since Spring MVC projects need to be packaged as
-WAR archives: Do you want to pre-configure your Spring MVC portlet project as a
-WAB, or do you want to let the WAB generator in Liferay do the work for you? The
-benefits and drawbacks of each approach are covered here.
+If you're already a wizard with Spring MVC, you can use it instead of Liferay's
+`MVCPortlet` with no limitations whatsoever. Since Spring MVC replaces only your
+app's web application layer, you can still use [Service
+Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder) 
+for your service layer. 
+
+So what does it take to implement a Spring MVC application in Liferay?  Assuming
+you're familiar with Spring MVC, there are a few things to mention and you have
+a decision to make, since Spring MVC projects must be packaged as WAR archives:
+Do you want to pre-configure your Spring MVC portlet project as a WAB, or do you
+want to let the WAB generator in Liferay do the work for you? The benefits and
+drawbacks of each approach are covered here.
 
 +$$$
 
-**Note:** If you're wondering what in the world a WAB is, it's a Web Application Bundle.
-If that doesn't clarify things, think of it as a traditional WAR-style
-plugin, containing a `META-INF/MANIFEST.MF` file with the `Bundle-SymbolicName`
-OSGi header specified. The WAB can run as an OSGi module because of the Liferay
+**Note:** If you're wondering what in the world a WAB is, it's a Web Application
+Bundle. If that doesn't clarify things, think of it as a traditional WAR-style
+plugin that also contains a `META-INF/MANIFEST.MF` file with the
+`Bundle-SymbolicName` OSGi header specified. The WAB can run as an OSGi module
+because of the Liferay 
 [WAB Extender](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-extender). 
 
 $$$
@@ -26,18 +36,18 @@ First, consider how you want to package your Spring MVC portlet project.
 ## Packaging a Spring MVC Portlet
 
 Developers creating portlets for Liferay 7.0 can usually deploy their portlet as
-Java EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
+Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
 OSGi bundle artifacts. Spring MVC portlet developers don't have that
 flexibility. Spring MVC portlets must be packaged as WAR artifacts because the
-Spring MVC framework expects a WAR layout and requires Java EE resources such as
-the `WEB-INF/web.xml` descriptor. 
+Spring MVC framework is designed for Java EE. Therefore, it expects a WAR layout
+and requires Java EE resources such as the `WEB-INF/web.xml` descriptor. 
 
 Because Liferay supports the OSGi WAB standard for deployment, you can deploy
 your WAR and it will run as expected in the OSGi runtime. There are a couple of
 ways to make your source code into a WAB:
 
--  Use Liferay's WAB Generator to convert your WAR into a WAB at
-   deployment time.
+1.  Use Liferay's WAB Generator to convert your WAR into a WAB at
+    deployment time.
 
     The benefits of this approach:
 
@@ -52,14 +62,14 @@ ways to make your source code into a WAB:
     The drawback:
 
     - Can't supply the `bnd.bnd` and can't
-      utilize a build-time plugin such as the
+      use a build-time plugin such as the
 [bnd-maven-plugin](http://njbartlett.name/2015/03/27/announcing-bnd-maven-plugin.html)
 for generating the manifest file.
 
--  Pre-configure a WAB by providing the `MANIFEST.MF` file with
-  `Bundle-SymbolicName` OSGi header. This is easily accomplished by using a
-`bnd.bnd` file in the root of your project, which specifies OSGi headers that
-will go in the manifest.
+2.  Pre-configure a WAB by providing the `MANIFEST.MF` file with the 
+    `Bundle-SymbolicName` OSGi header. This is accomplished by using a `bnd.bnd`
+    file in the root of your project, which specifies OSGi headers that will go in
+    the manifest.
 
     This approach has a benefit over the WAB Generator approach:
 
@@ -68,8 +78,9 @@ will go in the manifest.
 
     There's also a drawback:
 
-    - Bypasses the Liferay auto-deploy process, which means developers must
-      have the `WEB-INF/web.xml` descriptor fully ready for deployment.
+    - It bypasses the Liferay auto-deploy process, which means developers must
+      have the `WEB-INF/web.xml` descriptor fully ready for deployment. As a
+      Java EE developer, though, you should be comfortable with this. 
 
 In either case, you'll need to provide the Liferay descriptor files
 `liferay-display.xml` and `liferay-portlet.xml`, and you'll need a `portlet.xml`
