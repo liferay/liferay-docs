@@ -84,7 +84,9 @@ assets of any type that have been categorized for any user segment that matches
 the current user. However, you can configure the User Segment Content List
 application to display only assets of specific types. For example, you can
 configure the User Segment Content List application to only display web content
-articles and documents.
+articles and documents. The User Segment Content List application also provides
+filtering for categories, tags, scopes, etc., offering a wide variety of
+filtering options so you can display the specific content you want.
 
 ## Campaign Content Display [](id=campaign-content-display)
 
