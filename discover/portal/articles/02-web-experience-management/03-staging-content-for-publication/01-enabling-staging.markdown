@@ -97,9 +97,9 @@ transferred over the network connecting the two servers.
 +$$$
 
 **Important:** When applying patches to a remote staging environment, you must
-apply patches to all of your servers being used. Servers on different patch
-levels is generally not a good practice, but it is essential that all servers
-are updated with the same patch to ensure remote staging works correctly.
+apply patches to all of your servers being used. Having servers on different
+patch levels is not a good practice. It is essential that all servers are
+updated to the same patch level to ensure remote staging works correctly.
 
 $$$
 
