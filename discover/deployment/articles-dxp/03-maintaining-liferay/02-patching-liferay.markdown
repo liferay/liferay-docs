@@ -212,17 +212,8 @@ issue the following command:
 
     ./patching-tool.sh install
 
-If you have traditional WAR plugins installed that are still supported, Liferay
-copies files into the plugins at deployment time. If these files are patched in
-@product@, they need to be updated in the plugins as well. In these cases, the
-patching tool notifies you about the change. You can run the following command
-to update these files automatically:
-
-    ./patching-tool.sh update-plugins
-
-If you do not wish to have the patching tool update the plugins, you can
-redeploy them instead. If there are new indexes created by the patch, the
-patching tool notifies you to update them. To get the list, run this command:
+If there are new indexes created by the patch, the Patching Tool notifies you
+to update them. To get the list, run this command:
 
     ./patching-tool.sh index-info
 
