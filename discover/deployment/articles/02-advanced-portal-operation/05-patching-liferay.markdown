@@ -253,7 +253,7 @@ patch their source tree.
 **patches.folder:** Specify the location where you'll copy your patches. By
 default, this is `./patches`. 
 
-**war.path:** No, no one's angry. This is a property for which you specify the
+**war.path:** This is a property for which you specify the
 location of the Liferay installation inside your application server.
 Alternatively, you can specify a .war file here, and you'll be able to patch a
 Liferay .war for installation to your application server. 
