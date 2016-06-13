@@ -325,6 +325,9 @@ classpath are stored. If you're not sure, search for your `portal-service.jar`
 file; it's on the global classpath. This property is only valid if your
 `patching.mode` is `binary`. 
 
+**liferay.home** Specify the location where by default the `data`,
+`osgi`, and `tools` folders reside.
+
 **source.path:** Specify the location of your Liferay source tree. This property
 is only valid if your `patching.mode` is `source`. 
 
