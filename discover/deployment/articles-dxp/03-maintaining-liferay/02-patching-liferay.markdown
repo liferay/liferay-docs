@@ -103,8 +103,6 @@ manually the following properties:
     module.framework.portal.path=path_to_modules_portal_dir
     module.framework.static.path=path_to_modules_static_dir
 
-    module.framework.stop.wait.timeout=30000
-
 For most installations, you don't have to do this, as the `osgi` folder is in
 its default location. If you've customized the location of the module framework,
 however, you'll have to specify the above locations. Since you moved them, you
