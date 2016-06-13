@@ -324,7 +324,7 @@ patch their source tree.
 **patches.folder:** Specify the location where you'll copy your patches. By
 default, this is `./patches`. 
 
-**war.path:** No, no one's angry. This is a property for which you specify the
+**war.path:** This is a property for which you specify the
 location of the Liferay installation inside your application server.
 Alternatively, you can specify a .war file here, and you'll be able to patch a
 Liferay .war for installation to your application server. 
@@ -340,4 +340,4 @@ is only valid if your `patching.mode` is `source`.
 You can have as many profiles as you want, and use the same Patching Tool to
 patch all of them. This helps to keep all your installations in sync. 
 
-Great! Now you know how to keep @product@ up to date with the latest patches. 
+Great! Now you know how to keep @product@ up to date with the latest patches.
