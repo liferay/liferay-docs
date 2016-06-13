@@ -84,10 +84,10 @@ The Patching Tool uses the properties in this file to find the files it needs to
 patch. When you're finished, your `default.properties` file looks similar to
 this: 
 
-    liferay.home=/opt/liferay-dxp-digital-enterprise-7.0-ga1/
     patching.mode=binary
     war.path=../tomcat-8.0.32/webapps/ROOT
     global.lib.path=../tomcat-8.0.32/lib/ext
+    liferay.home=/opt/liferay-dxp-digital-enterprise-7.0-ga1/
 
 The properties above (described fully [below](#using-profiles-with-the-patching-tool)) 
 define the location of Liferay Home, the patching mode
@@ -179,13 +179,9 @@ replace files that are running, but of course that still leaves the old ones
 loaded in memory. So your best bet is to shut down the application server that's
 running Liferay before you install a patch. 
 
-+$$$
-
 **Note:** Liferay Connected Services (LCS) installs patches for you. See the 
 [LCS documentation](/discover/deployment/-/knowledge_base/7-0/managing-liferay-with-liferay-connected-services) 
 for more information.
-
-$$$
 
 Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
 packs. When you receive one, either via a LESA ticket (hotfix) or through
