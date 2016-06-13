@@ -126,13 +126,9 @@ replace files that are running, but of course that still leaves the old ones
 loaded in memory. So your best bet is to shut down the application server that's
 running Liferay before you install a patch. 
 
-+$$$
-
 **Note:** Liferay Connected Services (LCS) installs patches for you. See the 
 [LCS documentation](/discover/deployment/-/knowledge_base/6-2/managing-liferay-with-liferay-connected-services) 
 for more information.
-
-$$$
 
 Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
 packs. When you receive one, either via a LESA ticket (hotfix) or through
@@ -196,11 +192,11 @@ version in its place.
 
 ### Fix pack dependencies [](id=fix-pack-dependencies)
 
-Some fix packs require other fix packs to be installed first. If you attempt to
-install a fix pack that depends on another fix pack, the Patching Tool will
-notify you of this so you can go to the customer portal and obtain the fix pack
-dependency. Once all the necessary fix packs are available in the `patches`
-folder, the Patching Tool will install them. 
+Some hotfix require a fix pack to be installed first. If you attempt to
+ install a hotfix that depends on a fix pack, the Patching Tool notifies
+ you of this so you can go to the customer portal and obtain the hotfix
+ dependency. Once all the necessary patches are available in the `patches`
+ folder, the Patching Tool will install them. 
 
 The Patching Tool can also remove patches. 
 
