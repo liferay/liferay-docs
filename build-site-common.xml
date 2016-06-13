@@ -422,4 +422,18 @@
 			<arg value="${article}"/>
 		</java>
 	</target>
+
+	<target name="report-removed-classes" description="Generates Markdown files (via -Darticle and -DremovedClassesArticle) to report classes moved and removed from portal-service/src in (-DoldDir) to modules in (-DnewDir).">
+		<java
+			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${oldDir}"/>
+			<arg value="${newDir}"/>
+			<arg value="${article}"/>
+			<arg value="${removedClassesArticle}"/>
+		</java>
+	</target>
 </project>
