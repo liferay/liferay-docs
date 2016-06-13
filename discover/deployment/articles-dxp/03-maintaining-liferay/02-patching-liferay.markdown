@@ -3,8 +3,8 @@
 While we strive for perfection with every release of @product@, the reality
 of the human condition dictates that releases of the product may not be as
 perfect as originally intended. But we've planned for that. Included with every
-Liferay bundle is a patching tool that can handle the installation of two types
-of patches: hot fixes and fix packs. 
+Liferay bundle is a Patching Tool that can handle the installation of two types
+of patches: hotfixes and fix packs. 
 
 A hot fix is provided to a customer when a customer contacts Liferay about an
 issue, and Liferay's support team--working with the customer--determines that
@@ -26,16 +26,16 @@ Now that you know what patching is all about, let's check out the tool.
 
 ## Installing the Patching Tool [](id=installing-the-patching-tool)
 
-If you're using a Liferay bundle, congratulations! The patching tool is already
+If you're using a Liferay bundle, congratulations! The Patching Tool is already
 installed. Your job isn't done yet, however, because Liferay *might* have
-updated the patching tool. Always check the Customer Portal to see if the
-patching tool has been updated first. Even if you forget to check, the
-patching tool tells you if it needs to be updated when you run it. A lot of
+updated the Patching Tool. Always check the Customer Portal to see if the
+Patching Tool has been updated first. Even if you forget to check, the
+Patching Tool tells you if it needs to be updated when you run it. A lot of
 planning and forethought has gone into the patching system to make it run as
 smoothly as possible.
 
 You follow the same procedure whether you're installing or upgrading the
-patching tool. Once you've obtained it from the customer portal, unzip it to the
+Patching Tool. Once you've obtained it from the customer portal, unzip it to the
 Liferay Home folder. This is the folder where you've placed your
 `portal-ext.properties` file and where by default the `data` folder resides.
 This is generally one folder up from where your application server is installed,
@@ -43,14 +43,14 @@ but some application servers are different. If you don't know where Liferay Home
 is on your system, check [the installation documentation](/discover/deployment/-/knowledge_base/7-0/installation-and-setup) 
 to see where this folder is for your specific application server.
 
-If you're upgrading the patching tool, all you need to do is unzip the new
+If you're upgrading the Patching Tool, all you need to do is unzip the new
 version on top of the old version. Note that if you're doing this on LUM (Linux,
 Unix, Mac) machines, you'll need to make the `patching-tool.sh` script
 executable.
 
 ## Auto Discovery
 
-After the patching tool is installed, you need to let it auto-discover your
+After the Patching Tool is installed, you need to let it auto-discover your
 Liferay installation. Then it will determine what your release level is and what
 your application server environment is. To do this, you first have to define for
 the tool where [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
@@ -71,7 +71,7 @@ or on Windows:
 
     patching-tool auto-discovery
  
-If you've installed the patching tool in a non-standard location, you'll have to
+If you've installed the Patching Tool in a non-standard location, you'll have to
 give this command another parameter to point it to your Liferay installation.
 For example, if you've installed a Liferay/Tomcat bundle in `/opt/Liferay`,
 you'd issue this command: 
@@ -80,7 +80,7 @@ you'd issue this command:
  
 
 This writes your server's configuration to a file called `default.properties`.
-The patching tool uses the properties in this file to find the files it needs to
+The Patching Tool uses the properties in this file to find the files it needs to
 patch. When you're finished, your `default.properties` file looks similar to
 this: 
 
@@ -119,14 +119,14 @@ If you don't have the indexer client, you'll have to download it from the same
 location where you downloaded @product@, install it, and then use this property
 to point to it. 
 
-Now that you've installed the patching tool and run auto-discovery, you're ready
+Now that you've installed the Patching Tool and run auto-discovery, you're ready
 to download and install patches. You can install patches manually or
-automatically. For automatic patch installation, you need to set up the patching
-tool agent. This is presented next.
+automatically. For automatic patch installation, you need to set up the Patching
+Tool Agent. This is presented next.
 
 ### Configuring the Patching Tool Agent [](id=configuring-the-patching-tool-agent)
 
-The patching tool agent automatically installs downloaded patches on server 
+The Patching Tool Agent automatically installs downloaded patches on server 
 startup. For the agent to start with your server, you need to set the `javaagent` 
 property in the JVM options. Make sure that you specify the correct file path to 
 the `patching-tool-agent.jar`. Here's an example of setting the `javaagent` 
@@ -134,8 +134,8 @@ property:
 
     -javaagent:../../patching-tool/lib/patching-tool-agent.jar
     
-When the agent runs, it tries to find the patching tool's home folder. If your 
-patching tool is installed in a location other than the Liferay Home folder, you 
+When the agent runs, it tries to find the Patching Tool's home folder. If your 
+Patching Tool is installed in a location other than the Liferay Home folder, you 
 must specify the path of the `patching-tool` folder as a JVM argument for the 
 app server. This is done with the `patching.tool.home` property. For example:
 
@@ -168,7 +168,7 @@ You can specify these as follows:
 
     -Dpatching.tool.agent.properties=debug,nohalt
 
-Now let's see how to use the patching tool to get your patches installed. 
+Now let's see how to use the Patching Tool to get your patches installed. 
 
 ## Installing Patches [](id=installing-patches)
 
@@ -190,7 +190,7 @@ $$$
 Liferay distributes patches as `.zip` files, whether they are hot fixes or fix
 packs. When you receive one, either via a LESA ticket (hot fix) or through
 downloading a fix pack from the customer portal, you'll need to place it in the
-`patches` folder, which is inside the patching tool's home folder. Once you've
+`patches` folder, which is inside the Patching Tool's home folder. Once you've
 done that, it's a simple matter to install it. First, execute
 
     ./patching-tool.sh info
@@ -258,8 +258,8 @@ on Marketplace, you will have to remove the hot fix first (see below) before you
 can upgrade to the new release. 
 
 Sometimes there can be a fix to a fix pack. This is also handled automatically.
-If a new version of a fix pack is released, you can use the patching tool to
-install it. The patching tool uninstalls the old fix pack and installs the new
+If a new version of a fix pack is released, you can use the Patching Tool to
+install it. The Patching Tool uninstalls the old fix pack and installs the new
 version in its place. 
 
 ### Fix Pack Dependencies [](id=fix-pack-dependencies)
@@ -270,11 +270,11 @@ you of this so you can go to the customer portal and obtain the fix pack
 dependency. Once all the necessary fix packs are available in the `patches`
 folder, the patching tool will install them. 
 
-The patching tool can also remove patches. 
+The Patching Tool can also remove patches. 
 
 ## Removing or Reverting Patches [](id=removing-or-reverting-patches)
 
-Have you noticed that the patching tool only seems to have an `install` command?
+Have you noticed that the Patching Tool only seems to have an `install` command?
 This is because patches are managed not by the command, but by what appears in
 the `patches` folder. You manage the patches you have installed by adding or
 removing patches from this folder. If you currently have a patch installed and
@@ -284,26 +284,26 @@ you don't want it installed, remove it from the `patches` folder. Then run the
 If you want to remove all patches you've installed, use the `./patching-tool.sh
 revert` command. This removes all patches from your installation.
 
-What we've described so far is the simplest way to use the patching tool, but
-you can also use the patching tool in the most complex, multi-VM, clustered
+What we've described so far is the simplest way to use the Patching Tool, but
+you can also use the Patching Tool in the most complex, multi-VM, clustered
 environments. This is done by using profiles. 
 
 ## Using Profiles with the Patching Tool [](id=using-profiles-with-the-patching-tool)
 
-When you ran the auto-discovery task after installing the patching tool, it
+When you ran the auto-discovery task after installing the Patching Tool, it
 created a default profile that points to the application server it discovered.
-This is the easiest way to use the patching tool, and is great for smaller,
+This is the easiest way to use the Patching Tool, and is great for smaller,
 single server installations. But many Liferay installations are sized to serve
-millions of pages per day, and the patching tool has been designed for this as
+millions of pages per day, and the Patching Tool has been designed for this as
 well. So if you're running a small, medium, or large cluster of Liferay
-machines, you can use the patching tool to manage all of them using profiles. 
+machines, you can use the Patching Tool to manage all of them using profiles. 
 
 The auto-discovery task creates a properties file called `default.properties`.
 This file contains the detected configuration for your application server. But
 you're not limited to only one server which the tool can detect. You can have it
 auto-discover other runtimes, or you can manually create new profiles yourself. 
 
-To have the patching tool auto-discover other runtimes, you'll need to use a few
+To have the Patching Tool auto-discover other runtimes, you'll need to use a few
 more command line parameters: 
 
     ./patching-tool.sh [name of profile] auto-discovery [path/to/runtime]
@@ -312,8 +312,8 @@ This will run the same discovery process, but on a path you choose, and the
 profile information goes into a `[your profile name].properties` file. 
 
 Alternatively, you can manually create your profiles. Using a text editor,
-create a `[profile name].properties` file in the same folder as the patching
-tool script. You can place the following properties in the file: 
+create a `[profile name].properties` file in the same folder as the Patching
+Tool script. You can place the following properties in the file: 
 
 **patching.mode:** This can be `binary` (the default) or `source`, if you're
 patching the source tree you're working with. Liferay patches contain both
@@ -337,7 +337,7 @@ file; it's on the global classpath. This property is only valid if your
 **source.path:** Specify the location of your Liferay source tree. This property
 is only valid if your `patching.mode` is `source`. 
 
-You can have as many profiles as you want, and use the same patching tool to
+You can have as many profiles as you want, and use the same Patching Tool to
 patch all of them. This helps to keep all your installations in sync. 
 
 Great! Now you know how to keep @product@ up to date with the latest patches. 
