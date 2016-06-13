@@ -6,15 +6,15 @@ perfect as originally intended. But we've planned for that. Included with every
 Liferay bundle is a Patching Tool that can handle the installation of two types
 of patches: hotfixes and fix packs. 
 
-A hot fix is provided to a customer when a customer contacts Liferay about an
+A hotfix is provided to a customer when a customer contacts Liferay about an
 issue, and Liferay's support team--working with the customer--determines that
 the problem is indeed an issue with the product that needs to be fixed. Support
-fixes the bug and provides a hot fix to the customer immediately. This is a
+fixes the bug and provides a hotfix to the customer immediately. This is a
 short-term fix that solves the issue for the customer as quickly as possible.
-Hot fixes can patch both the core and the application suites. 
+Hotfixes can patch both the core and the application suites. 
 
-On a regular schedule, hot fixes that patch the core are bundled together into
-fix packs, which are provided to all of Liferay's customers. Hot fixes that
+On a regular schedule, hotfixes that patch the core are bundled together into
+fix packs, which are provided to all of Liferay's customers. Hotfixes that
 patch application suites are made for specific customers. These are delivered to
 other customers through Marketplace updates. This is an important distinction
 to remember: if there's a fix you need, and it's for one of the application
@@ -187,8 +187,8 @@ for more information.
 
 $$$
 
-Liferay distributes patches as `.zip` files, whether they are hot fixes or fix
-packs. When you receive one, either via a LESA ticket (hot fix) or through
+Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
+packs. When you receive one, either via a LESA ticket (hotfix) or through
 downloading a fix pack from the customer portal, you'll need to place it in the
 `patches` folder, which is inside the Patching Tool's home folder. Once you've
 done that, it's a simple matter to install it. First, execute
@@ -242,19 +242,19 @@ installed patches.
 
 Next, you'll learn how to manage your patches. 
 
-### Handling Hot Fixes and Patches [](id=handling-hot-fixes-and-patches)
+### Handling Hotfixes and Patches [](id=handling-hot-fixes-and-patches)
 
-As stated above, hot fixes are short term fixes provided as quickly as possible
-and fix packs are larger bundles of hot fixes provided to all customers at
-regular intervals. If you already have a hot fix installed and the fix pack
-which contains that hot fix is released, the patching tool will manage this for
-you. Fix packs always supersede hot fixes, so when you install your fix pack,
-the hot fix that it already contains is uninstalled, and the fix pack version is
+As stated above, hotfixes are short term fixes provided as quickly as possible
+and fix packs are larger bundles of hotfixes provided to all customers at
+regular intervals. If you already have a hotfix installed and the fix pack
+which contains that hotfix is released, the Patching Tool will manage this for
+you. Fix packs always supersede hotfixes, so when you install your fix pack,
+the hotfix that it already contains is uninstalled, and the fix pack version is
 installed in its place. 
 
-Note that this is *not* the case for hot fixes applied to the application
-suites. If you have installed a hot fix that then becomes part of a new release
-on Marketplace, you will have to remove the hot fix first (see below) before you
+Note that this is *not* the case for hotfixes applied to the application
+suites. If you have installed a hotfix that then becomes part of a new release
+on Marketplace, you will have to remove the hotfix first (see below) before you
 can upgrade to the new release. 
 
 Sometimes there can be a fix to a fix pack. This is also handled automatically.
