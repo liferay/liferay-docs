@@ -1,12 +1,5 @@
 # Customizing Liferay Services (Service Wrappers) [](id=customizing-liferay-services-service-wrappers)
 
-Blade CLI provides templates for creating modules for customizing Liferay
-services. Service wrappers make it easy to customize Liferay services. In
-this tutorial, you'll learn how to create service wrapper modules. If you
-haven't yet installed Blade CLI, please refer to the
-[Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
-tutorial.
-
 Why might you need to customize Liferay services? Perhaps you've added a custom
 field to Liferay's `User` object and you want its value to be saved whenever the
 `addUser` or `updateUser` methods of Liferay's API are called. Or maybe you
