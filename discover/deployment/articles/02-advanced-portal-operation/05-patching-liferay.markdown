@@ -269,5 +269,52 @@ is only valid if your `patching.mode` is `source`.
 You can have as many profiles as you want, and use the same Patching Tool to
 patch all of them. This helps to keep all your installations in sync. 
 
+## New features
+
+Starting with Version 18 of the Patching Tool, we have included some major
+improvements that provide assistance to developers for detecting the source
+changes introduced by the patches.
+
+### Diff command
+    ./patching-tool.sh diff
+This command prints the differences between two patch levels to the output.
+At least one stored patch level must be available for the tool.
+
+There are two modes of this command: `full` and `collisions`:
+
+- **full:** This compares all the patches in the two stored patch levels and
+prints the differences based on the options.
+- **collisions:** Limits the comparison to the files which are also modified
+by the plugins installed in the system.
+Additionally you can give further options to filter the output to `source`,
+`files` and `fixed-issues`:
+
+- *source:* You will receive an output of the source differences between the
+two patch levels.
+- *files:* The output will contain only the file names.
+- *fixed-issues:* You will receive a list of LPEs. Liferay Support uses these
+numbers to track certain fixes.
+
+For the detailed usage information, please run `./patching-tool help diff`
+command.
+
+### Store command
+    ./patching-tool.sh store
+Manages patching level information for `diff` command. The command needs
+patches with sources to be able to prepare usable information for the `diff`
+command and to be able to store the actual patch level.
+
+There are four options of the `store` command:
+
+- *info:* Prints the list of patches which build up the stored patch level.
+- *add:* This option stores the patch level which can be found in the patches
+directory.
+- *update:* Add or update patch level information.
+- *rm:* Removes a previously stored patch level information.
+
+Please find the usage details by running the `./patching-tool help store`
+command.
+
+--------------
 Now that you know how to patch an existing installation of Liferay, let's turn
 to how you'd upgrade Liferay from an older release to the current release.
