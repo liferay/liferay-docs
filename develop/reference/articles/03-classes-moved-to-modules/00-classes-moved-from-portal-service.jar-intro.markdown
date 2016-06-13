@@ -13,7 +13,7 @@ about these classes and the modules they've moved to.
 The table below lists classes moved to API modules. Each module's symbolic name
 and version are included to facilitate configuring dependencies on them. This
 information was generated based on comparing classes in <em>liferay-portal-src-6.2-ce-ga6.zip</em> to
-classes in <em>liferay-portal-src-7.0-ce-ga1.zip</em>.
+classes in <em>liferay-ce-portal-src-7.0-ga2.zip</em>.
 </p>
 
 <style>
@@ -43,4893 +43,4907 @@ caption {
     <td>ActionHandler</td>
     <td>com.liferay.mobile.device.rules.action</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.mobile.device.rulegroup.action</td>
   </tr>
   <tr>
     <td>ActionHandlerManager</td>
     <td>com.liferay.mobile.device.rules.action</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.mobile.device.rulegroup</td>
   </tr>
   <tr>
     <td>ActionHandlerManagerUtil</td>
     <td>com.liferay.mobile.device.rules.action</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.mobile.device.rulegroup</td>
   </tr>
   <tr>
     <td>ActionTypeException</td>
     <td>com.liferay.mobile.device.rules.exception</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules</td>
   </tr>
   <tr>
     <td>AlternateKeywordQueryHitsProcessor</td>
     <td>com.liferay.portal.search.internal.hits</td>
     <td>com.liferay.portal.search</td>
-    <td>3.0.1</td>
+    <td>3.1.2</td>
     <td>com.liferay.portal.kernel.search</td>
   </tr>
   <tr>
     <td>ArticleContentException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleContentSizeException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleCreateDateComparator</td>
     <td>com.liferay.journal.util.comparator</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.util.comparator</td>
   </tr>
   <tr>
     <td>ArticleDisplayDateComparator</td>
     <td>com.liferay.journal.util.comparator</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.util.comparator</td>
   </tr>
   <tr>
     <td>ArticleDisplayDateException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleExpirationDateException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleIDComparator</td>
     <td>com.liferay.journal.util.comparator</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.util.comparator</td>
   </tr>
   <tr>
     <td>ArticleIdException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleModifiedDateComparator</td>
     <td>com.liferay.journal.util.comparator</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.util.comparator</td>
   </tr>
   <tr>
     <td>ArticleReviewDateComparator</td>
     <td>com.liferay.journal.util.comparator</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.util.comparator</td>
   </tr>
   <tr>
     <td>ArticleReviewDateException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleSmallImageNameException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleSmallImageSizeException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleTitleComparator</td>
     <td>com.liferay.journal.util.comparator</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.util.comparator</td>
   </tr>
   <tr>
     <td>ArticleTitleException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>ArticleVersionComparator</td>
     <td>com.liferay.journal.util.comparator</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.util.comparator</td>
   </tr>
   <tr>
     <td>ArticleVersionException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
+  </tr>
+  <tr>
+    <td>AssertUtils</td>
+    <td>com.liferay.portal.search.test.util</td>
+    <td>com.liferay.portal.search.test</td>
+    <td>1.0.0</td>
+    <td>com.liferay.portal.kernel.test</td>
   </tr>
   <tr>
     <td>AssetPublisherUtil</td>
     <td>com.liferay.asset.publisher.web.util</td>
     <td>com.liferay.asset.publisher.web</td>
-    <td>1.0.6</td>
+    <td>1.1.5</td>
     <td>com.liferay.portlet.assetpublisher.util</td>
   </tr>
   <tr>
     <td>AuditMessageProcessor</td>
     <td>com.liferay.portal.security.audit</td>
     <td>com.liferay.portal.security.audit.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.audit</td>
   </tr>
   <tr>
     <td>AverageStatistics</td>
     <td>com.liferay.portal.monitoring.internal.statistics</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.1</td>
+    <td>3.0.4</td>
     <td>com.liferay.portal.kernel.monitoring.statistics</td>
   </tr>
   <tr>
     <td>BackgroundTaskLocalService</td>
     <td>com.liferay.portal.background.task.service</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>BackgroundTaskLocalServiceUtil</td>
     <td>com.liferay.portal.background.task.service</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>BackgroundTaskLocalServiceWrapper</td>
     <td>com.liferay.portal.background.task.service</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>BackgroundTaskModel</td>
     <td>com.liferay.portal.background.task.model</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.model</td>
   </tr>
   <tr>
     <td>BackgroundTaskPersistence</td>
     <td>com.liferay.portal.background.task.service.persistence</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.service.persistence</td>
   </tr>
   <tr>
     <td>BackgroundTaskService</td>
     <td>com.liferay.portal.background.task.service</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>BackgroundTaskServiceUtil</td>
     <td>com.liferay.portal.background.task.service</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>BackgroundTaskServiceWrapper</td>
     <td>com.liferay.portal.background.task.service</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>BackgroundTaskSoap</td>
     <td>com.liferay.portal.background.task.model</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.model</td>
   </tr>
   <tr>
     <td>BackgroundTaskUtil</td>
     <td>com.liferay.portal.background.task.service.persistence</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.service.persistence</td>
   </tr>
   <tr>
     <td>BackgroundTaskWrapper</td>
     <td>com.liferay.portal.background.task.model</td>
     <td>com.liferay.portal.background.task.api</td>
-    <td>2.0.0</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.model</td>
   </tr>
   <tr>
     <td>BaseCmisRepository</td>
     <td>com.liferay.document.library.repository.cmis</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis</td>
   </tr>
   <tr>
     <td>BaseCmisSearchQueryBuilder</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>BaseDDLExporter</td>
     <td>com.liferay.dynamic.data.lists.exporter.impl</td>
     <td>com.liferay.dynamic.data.lists.service</td>
-    <td>1.0.6</td>
+    <td>1.1.2</td>
     <td>com.liferay.portlet.dynamicdatalists.util</td>
   </tr>
   <tr>
     <td>BaseDDMDisplay</td>
     <td>com.liferay.dynamic.data.mapping.util</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util</td>
   </tr>
   <tr>
     <td>BaseFieldRenderer</td>
     <td>com.liferay.dynamic.data.mapping.storage</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage</td>
   </tr>
   <tr>
     <td>BaseScriptingExecutor</td>
     <td>com.liferay.portal.scripting</td>
-    <td>com.liferay.portal.scripting</td>
-    <td>2.0.0</td>
+    <td>com.liferay.portal.scripting.api</td>
+    <td>1.0.1</td>
     <td>com.liferay.portal.kernel.scripting</td>
   </tr>
   <tr>
     <td>BaseStatistics</td>
     <td>com.liferay.portal.monitoring.internal.statistics</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.1</td>
+    <td>3.0.4</td>
     <td>com.liferay.portal.kernel.monitoring.statistics</td>
   </tr>
   <tr>
     <td>BaseStorageAdapter</td>
     <td>com.liferay.dynamic.data.mapping.storage</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage</td>
   </tr>
   <tr>
     <td>BillingCityException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BillingCountryException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BillingEmailAddressException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BillingFirstNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BillingLastNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BillingPhoneException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BillingStateException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BillingStreetException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BillingZipException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>BlockingPortalCache</td>
     <td>com.liferay.portal.cache</td>
     <td>com.liferay.portal.cache</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portal.kernel.cache</td>
   </tr>
   <tr>
     <td>BookmarksEntry</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>BookmarksEntryFinder</td>
     <td>com.liferay.bookmarks.service.persistence</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service.persistence</td>
   </tr>
   <tr>
     <td>BookmarksEntryLocalService</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksEntryLocalServiceUtil</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksEntryLocalServiceWrapper</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksEntryModel</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>BookmarksEntryPersistence</td>
     <td>com.liferay.bookmarks.service.persistence</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service.persistence</td>
   </tr>
   <tr>
     <td>BookmarksEntryService</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksEntryServiceUtil</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksEntryServiceWrapper</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksEntrySoap</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>BookmarksEntryUtil</td>
     <td>com.liferay.bookmarks.service.persistence</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service.persistence</td>
   </tr>
   <tr>
     <td>BookmarksEntryWrapper</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>BookmarksFolder</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>BookmarksFolderConstants</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>BookmarksFolderFinder</td>
     <td>com.liferay.bookmarks.service.persistence</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service.persistence</td>
   </tr>
   <tr>
     <td>BookmarksFolderLocalService</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksFolderLocalServiceUtil</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksFolderLocalServiceWrapper</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksFolderModel</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>BookmarksFolderPersistence</td>
     <td>com.liferay.bookmarks.service.persistence</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service.persistence</td>
   </tr>
   <tr>
     <td>BookmarksFolderService</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksFolderServiceUtil</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksFolderServiceWrapper</td>
     <td>com.liferay.bookmarks.service</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service</td>
   </tr>
   <tr>
     <td>BookmarksFolderSoap</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>BookmarksFolderUtil</td>
     <td>com.liferay.bookmarks.service.persistence</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.service.persistence</td>
   </tr>
   <tr>
     <td>BookmarksFolderWrapper</td>
     <td>com.liferay.bookmarks.model</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.model</td>
   </tr>
   <tr>
     <td>ByteArrayReportResultContainer</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>CCExpirationException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CCNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CCNumberException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CCTypeException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CMISBetweenExpression</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISConjunction</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISContainsExpression</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISContainsNotExpression</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISContainsValueExpression</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISCriterion</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISDisjunction</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISFullTextConjunction</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISInFolderExpression</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISInTreeExpression</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISJunction</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISNotExpression</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISParameterValueUtil</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISRepositoryHandler</td>
     <td>com.liferay.document.library.repository.cmis</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISRepositoryUtil</td>
     <td>com.liferay.document.library.repository.cmis.internal</td>
     <td>com.liferay.document.library.repository.cmis.impl</td>
-    <td>2.0.1</td>
+    <td>2.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISSearchQueryBuilder</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISSimpleExpression</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CMISSimpleExpressionOperator</td>
     <td>com.liferay.document.library.repository.cmis.search</td>
-    <td>com.liferay.document.library.repository.cmis</td>
-    <td>2.0.1</td>
+    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>1.0.3</td>
     <td>com.liferay.portal.kernel.repository.cmis.search</td>
   </tr>
   <tr>
     <td>CartMinOrderException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CartMinQuantityException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CollatedSpellCheckHitsProcessor</td>
     <td>com.liferay.portal.search.internal.hits</td>
     <td>com.liferay.portal.search</td>
-    <td>3.0.1</td>
+    <td>3.1.2</td>
     <td>com.liferay.portal.kernel.search</td>
   </tr>
   <tr>
     <td>CompoundSessionIdServletRequest</td>
     <td>com.liferay.portal.compound.session.id</td>
     <td>com.liferay.portal.compound.session.id</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.servlet.filters.compoundsessionid</td>
   </tr>
   <tr>
     <td>Condition</td>
     <td>com.liferay.portal.workflow.kaleo.definition</td>
     <td>com.liferay.portal.workflow.kaleo.definition.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage.query</td>
   </tr>
   <tr>
     <td>ContactConverterKeys</td>
     <td>com.liferay.portal.security.ldap</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>ContentException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>ContentNameException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>ContextClassloaderReportDesignRetriever</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>CountStatistics</td>
     <td>com.liferay.portal.monitoring.internal.statistics</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.1</td>
+    <td>3.0.4</td>
     <td>com.liferay.portal.kernel.monitoring.statistics</td>
   </tr>
   <tr>
     <td>CouponActiveException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponCodeException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponDateException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponDescriptionException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponDiscountException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponEndDateException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponLimitCategoriesException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponLimitSKUsException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponMinimumOrderException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>CouponStartDateException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>DDL</td>
     <td>com.liferay.dynamic.data.lists.util</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.util</td>
   </tr>
   <tr>
     <td>DDLExporter</td>
     <td>com.liferay.dynamic.data.lists.exporter</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.util</td>
   </tr>
   <tr>
     <td>DDLExporterFactory</td>
     <td>com.liferay.dynamic.data.lists.exporter</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.util</td>
   </tr>
   <tr>
     <td>DDLRecord</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordConstants</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordFinder</td>
     <td>com.liferay.dynamic.data.lists.service.persistence</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service.persistence</td>
   </tr>
   <tr>
     <td>DDLRecordLocalService</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordLocalServiceUtil</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordLocalServiceWrapper</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordModel</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordPersistence</td>
     <td>com.liferay.dynamic.data.lists.service.persistence</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service.persistence</td>
   </tr>
   <tr>
     <td>DDLRecordService</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordServiceUtil</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordServiceWrapper</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordSet</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordSetConstants</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordSetFinder</td>
     <td>com.liferay.dynamic.data.lists.service.persistence</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service.persistence</td>
   </tr>
   <tr>
     <td>DDLRecordSetLocalService</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordSetLocalServiceUtil</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordSetLocalServiceWrapper</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordSetModel</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordSetPersistence</td>
     <td>com.liferay.dynamic.data.lists.service.persistence</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service.persistence</td>
   </tr>
   <tr>
     <td>DDLRecordSetService</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordSetServiceUtil</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordSetServiceWrapper</td>
     <td>com.liferay.dynamic.data.lists.service</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service</td>
   </tr>
   <tr>
     <td>DDLRecordSetSoap</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordSetUtil</td>
     <td>com.liferay.dynamic.data.lists.service.persistence</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service.persistence</td>
   </tr>
   <tr>
     <td>DDLRecordSetWrapper</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordSoap</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordUtil</td>
     <td>com.liferay.dynamic.data.lists.service.persistence</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service.persistence</td>
   </tr>
   <tr>
     <td>DDLRecordVersion</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordVersionModel</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordVersionPersistence</td>
     <td>com.liferay.dynamic.data.lists.service.persistence</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service.persistence</td>
   </tr>
   <tr>
     <td>DDLRecordVersionSoap</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordVersionUtil</td>
     <td>com.liferay.dynamic.data.lists.service.persistence</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.service.persistence</td>
   </tr>
   <tr>
     <td>DDLRecordVersionVersionComparator</td>
     <td>com.liferay.dynamic.data.lists.util.comparator</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.util.comparator</td>
   </tr>
   <tr>
     <td>DDLRecordVersionWrapper</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDLRecordWrapper</td>
     <td>com.liferay.dynamic.data.lists.model</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists.model</td>
   </tr>
   <tr>
     <td>DDM</td>
     <td>com.liferay.dynamic.data.mapping.util</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util</td>
   </tr>
   <tr>
     <td>DDMContent</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMContentLocalService</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMContentLocalServiceUtil</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMContentLocalServiceWrapper</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMContentModel</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMContentPersistence</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMContentSoap</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMContentUtil</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMContentWrapper</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMDisplay</td>
     <td>com.liferay.dynamic.data.mapping.util</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util</td>
   </tr>
   <tr>
     <td>DDMDisplayRegistry</td>
     <td>com.liferay.dynamic.data.mapping.util</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util</td>
   </tr>
   <tr>
     <td>DDMIndexer</td>
     <td>com.liferay.dynamic.data.mapping.util</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util</td>
   </tr>
   <tr>
     <td>DDMStorageLink</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStorageLinkLocalService</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStorageLinkLocalServiceUtil</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStorageLinkLocalServiceWrapper</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStorageLinkModel</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStorageLinkPersistence</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMStorageLinkSoap</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStorageLinkUtil</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMStorageLinkWrapper</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStructureConstants</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStructureFinder</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMStructureLinkLocalService</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureLinkLocalServiceUtil</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureLinkLocalServiceWrapper</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureLinkModel</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStructureLinkPersistence</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMStructureLinkSoap</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStructureLinkUtil</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMStructureLinkWrapper</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStructureLocalService</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureLocalServiceUtil</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureLocalServiceWrapper</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureModel</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStructurePersistence</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMStructureService</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureServiceUtil</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureServiceWrapper</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMStructureSoap</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMStructureUtil</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMStructureWrapper</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMTemplateConstants</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMTemplateFinder</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMTemplateHelper</td>
     <td>com.liferay.dynamic.data.mapping.util</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util</td>
   </tr>
   <tr>
     <td>DDMTemplateLocalService</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMTemplateLocalServiceUtil</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMTemplateLocalServiceWrapper</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMTemplateModel</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMTemplatePersistence</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMTemplateService</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMTemplateServiceUtil</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMTemplateServiceWrapper</td>
     <td>com.liferay.dynamic.data.mapping.service</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service</td>
   </tr>
   <tr>
     <td>DDMTemplateSoap</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMTemplateUtil</td>
     <td>com.liferay.dynamic.data.mapping.service.persistence</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.service.persistence</td>
   </tr>
   <tr>
     <td>DDMTemplateWrapper</td>
     <td>com.liferay.dynamic.data.mapping.model</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.model</td>
   </tr>
   <tr>
     <td>DDMUtil</td>
     <td>com.liferay.dynamic.data.mapping.util</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util</td>
   </tr>
   <tr>
     <td>DDMXML</td>
     <td>com.liferay.dynamic.data.mapping.util</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util</td>
+  </tr>
+  <tr>
+    <td>Database</td>
+    <td>com.liferay.portal.tools.db.upgrade.client</td>
+    <td>com.liferay.portal.tools.db.upgrade.client</td>
+    <td>1.0.0</td>
+    <td>com.liferay.portal.kernel.util</td>
   </tr>
   <tr>
     <td>DefaultAttributesTransformer</td>
     <td>com.liferay.portal.security.ldap.internal</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>DefaultMessageBus</td>
     <td>com.liferay.portal.messaging.internal</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging</td>
   </tr>
   <tr>
     <td>DefaultSingleDestinationMessageSender</td>
     <td>com.liferay.portal.messaging.internal.sender</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.sender</td>
   </tr>
   <tr>
     <td>DefaultSingleDestinationSynchronousMessageSender</td>
     <td>com.liferay.portal.messaging.internal.sender</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.sender</td>
   </tr>
   <tr>
     <td>DefaultSynchronousMessageSender</td>
     <td>com.liferay.portal.messaging.internal.sender</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.sender</td>
   </tr>
   <tr>
     <td>DestinationStatisticsManager</td>
     <td>com.liferay.portal.messaging.internal.jmx</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.jmx</td>
   </tr>
   <tr>
     <td>DestinationStatisticsManagerMBean</td>
     <td>com.liferay.portal.messaging.internal.jmx</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.jmx</td>
   </tr>
   <tr>
     <td>DirectSynchronousMessageSender</td>
     <td>com.liferay.portal.messaging.internal.sender</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.sender</td>
   </tr>
   <tr>
     <td>DummyContext</td>
     <td>com.liferay.portal.security.ldap.dummy</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.kernel.ldap</td>
   </tr>
   <tr>
     <td>DummyDirContext</td>
     <td>com.liferay.portal.security.ldap.dummy</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.kernel.ldap</td>
   </tr>
   <tr>
     <td>DuplicateArticleIdException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>DuplicateArticleImageIdException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>DuplicateCouponCodeException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>DuplicateFeedIdException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>DuplicateItemSKUException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>DuplicateLDAPServerNameException</td>
     <td>com.liferay.portal.security.ldap</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.kernel.ldap</td>
   </tr>
   <tr>
     <td>DuplicateNodeNameException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>DuplicatePageException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>DuplicateRuleGroupInstanceException</td>
     <td>com.liferay.mobile.device.rules.exception</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules</td>
   </tr>
   <tr>
     <td>DuplicateVoteException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>EntryNameComparator</td>
     <td>com.liferay.bookmarks.util.comparator</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.util.comparator</td>
   </tr>
   <tr>
     <td>EntryPriorityComparator</td>
     <td>com.liferay.bookmarks.util.comparator</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.util.comparator</td>
   </tr>
   <tr>
     <td>EntryURLComparator</td>
     <td>com.liferay.bookmarks.util.comparator</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.util.comparator</td>
   </tr>
   <tr>
     <td>EntryVisitsComparator</td>
     <td>com.liferay.bookmarks.util.comparator</td>
     <td>com.liferay.bookmarks.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.bookmarks.util.comparator</td>
   </tr>
   <tr>
     <td>Fact</td>
     <td>com.liferay.portal.rules.engine</td>
     <td>com.liferay.portal.rules.engine.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.bi.rules</td>
   </tr>
   <tr>
     <td>FeedContentFieldException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>FeedIdException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>FeedNameException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>FeedTargetLayoutFriendlyUrlException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>FeedTargetPortletIdException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>FieldConstants</td>
     <td>com.liferay.document.library.lar.xstream</td>
     <td>com.liferay.document.library.service</td>
-    <td>1.0.2</td>
+    <td>1.1.2</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage</td>
   </tr>
   <tr>
     <td>FieldRenderer</td>
     <td>com.liferay.dynamic.data.mapping.storage</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage</td>
   </tr>
   <tr>
     <td>FieldRendererFactory</td>
     <td>com.liferay.dynamic.data.mapping.storage</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage</td>
   </tr>
   <tr>
     <td>Fields</td>
     <td>com.liferay.dynamic.data.mapping.storage</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage</td>
   </tr>
   <tr>
     <td>FlagsEntryService</td>
     <td>com.liferay.flags.service</td>
     <td>com.liferay.flags.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.flags.service</td>
   </tr>
   <tr>
     <td>FlagsEntryServiceUtil</td>
     <td>com.liferay.flags.service</td>
     <td>com.liferay.flags.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.flags.service</td>
   </tr>
   <tr>
     <td>FlagsEntryServiceWrapper</td>
     <td>com.liferay.flags.service</td>
     <td>com.liferay.flags.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.flags.service</td>
   </tr>
   <tr>
     <td>FlagsRequest</td>
     <td>com.liferay.flags.messaging</td>
     <td>com.liferay.flags.service</td>
-    <td>2.0.1</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.flags.messaging</td>
   </tr>
   <tr>
     <td>GroupConverterKeys</td>
     <td>com.liferay.portal.security.ldap</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>ImportFilesException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>ItemLargeImageNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ItemLargeImageSizeException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ItemMediumImageNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ItemMediumImageSizeException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ItemMinQuantityComparator</td>
     <td>com.liferay.shopping.util.comparator</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.util.comparator</td>
   </tr>
   <tr>
     <td>ItemNameComparator</td>
     <td>com.liferay.shopping.util.comparator</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.util.comparator</td>
   </tr>
   <tr>
     <td>ItemNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ItemPriceComparator</td>
     <td>com.liferay.shopping.util.comparator</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.util.comparator</td>
   </tr>
   <tr>
     <td>ItemSKUComparator</td>
     <td>com.liferay.shopping.util.comparator</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.util.comparator</td>
   </tr>
   <tr>
     <td>ItemSKUException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ItemSmallImageNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ItemSmallImageSizeException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>JobStateSerializeUtil</td>
     <td>com.liferay.portal.scheduler</td>
     <td>com.liferay.portal.scheduler</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.scheduler</td>
   </tr>
   <tr>
     <td>JournalArticle</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleConstants</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleDisplay</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleFinder</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalArticleImage</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleImageLocalService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleImageLocalServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleImageLocalServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleImageModel</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleImagePersistence</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalArticleImageSoap</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleImageUtil</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalArticleImageWrapper</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleLocalService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleLocalServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleLocalServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleModel</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticlePersistence</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalArticleResource</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleResourceLocalService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleResourceLocalServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleResourceLocalServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleResourceModel</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleResourcePersistence</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalArticleResourceSoap</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleResourceUtil</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalArticleResourceWrapper</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalArticleSoap</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalArticleUtil</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalArticleWrapper</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalContent</td>
     <td>com.liferay.journal.util</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journalcontent.util</td>
   </tr>
   <tr>
     <td>JournalContentSearch</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalContentSearchLocalService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalContentSearchLocalServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalContentSearchLocalServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalContentSearchModel</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalContentSearchPersistence</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalContentSearchSoap</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalContentSearchUtil</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalContentSearchWrapper</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalConverter</td>
     <td>com.liferay.journal.util</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.util</td>
   </tr>
   <tr>
     <td>JournalFeed</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalFeedConstants</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalFeedFinder</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalFeedLocalService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFeedLocalServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFeedLocalServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFeedModel</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalFeedPersistence</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalFeedService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFeedServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFeedServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFeedSoap</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalFeedUtil</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalFeedWrapper</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalFolder</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalFolderFinder</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalFolderLocalService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFolderLocalServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFolderLocalServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFolderModel</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalFolderPersistence</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalFolderService</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFolderServiceUtil</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFolderServiceWrapper</td>
     <td>com.liferay.journal.service</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service</td>
   </tr>
   <tr>
     <td>JournalFolderSoap</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalFolderUtil</td>
     <td>com.liferay.journal.service.persistence</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.service.persistence</td>
   </tr>
   <tr>
     <td>JournalFolderWrapper</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalSearchConstants</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>JournalStructureConstants</td>
     <td>com.liferay.journal.model</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal.model</td>
   </tr>
   <tr>
     <td>LDAPFilterException</td>
     <td>com.liferay.portal.security.ldap.validator</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.kernel.ldap</td>
   </tr>
   <tr>
     <td>LDAPGroup</td>
     <td>com.liferay.portal.security.ldap.exportimport</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>LDAPServerNameException</td>
     <td>com.liferay.portal.security.ldap</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.kernel.ldap</td>
   </tr>
   <tr>
     <td>LDAPToPortalConverter</td>
     <td>com.liferay.portal.security.ldap.exportimport</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>LDAPUser</td>
     <td>com.liferay.portal.security.ldap.exportimport</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>LDAPUtil</td>
     <td>com.liferay.portal.security.ldap.util</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.kernel.ldap</td>
   </tr>
   <tr>
     <td>LockLocalService</td>
     <td>com.liferay.portal.lock.service</td>
     <td>com.liferay.portal.lock.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>LockLocalServiceUtil</td>
     <td>com.liferay.portal.lock.service</td>
     <td>com.liferay.portal.lock.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>LockLocalServiceWrapper</td>
     <td>com.liferay.portal.lock.service</td>
     <td>com.liferay.portal.lock.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.service</td>
   </tr>
   <tr>
     <td>LockModel</td>
     <td>com.liferay.portal.lock.model</td>
     <td>com.liferay.portal.lock.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.model</td>
   </tr>
   <tr>
     <td>LockPersistence</td>
     <td>com.liferay.portal.lock.service.persistence</td>
     <td>com.liferay.portal.lock.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.service.persistence</td>
   </tr>
   <tr>
     <td>LockSoap</td>
     <td>com.liferay.portal.lock.model</td>
     <td>com.liferay.portal.lock.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.model</td>
   </tr>
   <tr>
     <td>LockUtil</td>
     <td>com.liferay.portal.lock.service.persistence</td>
     <td>com.liferay.portal.lock.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.service.persistence</td>
   </tr>
   <tr>
     <td>LockWrapper</td>
     <td>com.liferay.portal.lock.model</td>
     <td>com.liferay.portal.lock.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.model</td>
   </tr>
   <tr>
     <td>MBeanRegistry</td>
     <td>com.liferay.portal.jmx</td>
     <td>com.liferay.portal.jmx</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.jmx</td>
   </tr>
   <tr>
     <td>MDRAction</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRActionLocalService</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRActionLocalServiceUtil</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRActionLocalServiceWrapper</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRActionModel</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRActionPersistence</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRActionService</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRActionServiceUtil</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRActionServiceWrapper</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRActionSoap</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRActionUtil</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRActionWrapper</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRPermission</td>
     <td>com.liferay.mobile.device.rules.service.permission</td>
     <td>com.liferay.mobile.device.rules.service</td>
-    <td>1.0.1</td>
+    <td>1.1.2</td>
     <td>com.liferay.portlet.mobiledevicerules.service.permission</td>
   </tr>
   <tr>
     <td>MDRRule</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleGroup</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleGroupFinder</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceLocalService</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceLocalServiceUtil</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceLocalServiceWrapper</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceModel</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstancePermission</td>
     <td>com.liferay.mobile.device.rules.service.permission</td>
     <td>com.liferay.mobile.device.rules.service</td>
-    <td>1.0.1</td>
+    <td>1.1.2</td>
     <td>com.liferay.portlet.mobiledevicerules.service.permission</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstancePersistence</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceService</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceServiceUtil</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceServiceWrapper</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceSoap</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceUtil</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceWrapper</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleGroupLocalService</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupLocalServiceUtil</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupLocalServiceWrapper</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupModel</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleGroupPermission</td>
     <td>com.liferay.mobile.device.rules.service.permission</td>
     <td>com.liferay.mobile.device.rules.service</td>
-    <td>1.0.1</td>
+    <td>1.1.2</td>
     <td>com.liferay.portlet.mobiledevicerules.service.permission</td>
   </tr>
   <tr>
     <td>MDRRuleGroupPersistence</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRRuleGroupService</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupServiceUtil</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupServiceWrapper</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleGroupSoap</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleGroupUtil</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRRuleGroupWrapper</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleLocalService</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleLocalServiceUtil</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleLocalServiceWrapper</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleModel</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRulePersistence</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRRuleService</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleServiceUtil</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleServiceWrapper</td>
     <td>com.liferay.mobile.device.rules.service</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service</td>
   </tr>
   <tr>
     <td>MDRRuleSoap</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MDRRuleUtil</td>
     <td>com.liferay.mobile.device.rules.service.persistence</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.service.persistence</td>
   </tr>
   <tr>
     <td>MDRRuleWrapper</td>
     <td>com.liferay.mobile.device.rules.model</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.model</td>
   </tr>
   <tr>
     <td>MemoryReportDesignRetriever</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>MessageBusManager</td>
     <td>com.liferay.portal.messaging.internal.jmx</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.jmx</td>
   </tr>
   <tr>
     <td>MessageBusManagerMBean</td>
     <td>com.liferay.portal.messaging.internal.jmx</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.jmx</td>
   </tr>
   <tr>
     <td>Modifications</td>
     <td>com.liferay.portal.security.ldap.exportimport</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>NoSuchActionException</td>
     <td>com.liferay.portal.workflow.kaleo.exception</td>
     <td>com.liferay.portal.workflow.kaleo.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules</td>
   </tr>
   <tr>
     <td>NoSuchArticleException</td>
-    <td>com.liferay.journal.exception</td>
-    <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>com.liferay.knowledge.base.exception</td>
+    <td>com.liferay.knowledge.base.api</td>
+    <td>3.2.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>NoSuchArticleImageException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>NoSuchArticleResourceException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>NoSuchCartException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>NoSuchChoiceException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>NoSuchContentSearchException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>NoSuchCouponException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>NoSuchFeedException</td>
     <td>com.liferay.journal.exception</td>
     <td>com.liferay.journal.api</td>
-    <td>2.0.1</td>
+    <td>2.1.1</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>NoSuchItemException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>NoSuchItemFieldException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>NoSuchItemPriceException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>NoSuchNodeException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>NoSuchOrderException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>NoSuchOrderItemException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>NoSuchPageException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>NoSuchPageResourceException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>NoSuchQuestionException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>NoSuchRecordException</td>
     <td>com.liferay.dynamic.data.lists.exception</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists</td>
   </tr>
   <tr>
     <td>NoSuchRecordSetException</td>
     <td>com.liferay.dynamic.data.lists.exception</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists</td>
   </tr>
   <tr>
     <td>NoSuchRecordVersionException</td>
     <td>com.liferay.dynamic.data.lists.exception</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists</td>
   </tr>
   <tr>
     <td>NoSuchRuleException</td>
     <td>com.liferay.mobile.device.rules.exception</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules</td>
   </tr>
   <tr>
     <td>NoSuchRuleGroupException</td>
     <td>com.liferay.mobile.device.rules.exception</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules</td>
   </tr>
   <tr>
     <td>NoSuchRuleGroupInstanceException</td>
     <td>com.liferay.mobile.device.rules.exception</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules</td>
   </tr>
   <tr>
     <td>NoSuchStorageLinkException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>NoSuchStructureLinkException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>NoSuchTemplateException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>NoSuchTemplateException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>NoSuchVoteException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>NodeNameException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>OrderDateComparator</td>
     <td>com.liferay.shopping.util.comparator</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.util.comparator</td>
   </tr>
   <tr>
     <td>PageContentException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>PageCreateDateComparator</td>
     <td>com.liferay.wiki.util.comparator</td>
     <td>com.liferay.wiki.service</td>
-    <td>1.0.3</td>
+    <td>1.1.3</td>
     <td>com.liferay.portlet.wiki.util.comparator</td>
   </tr>
   <tr>
     <td>PageTitleComparator</td>
     <td>com.liferay.wiki.util.comparator</td>
     <td>com.liferay.wiki.service</td>
-    <td>1.0.3</td>
+    <td>1.1.3</td>
     <td>com.liferay.portlet.wiki.util.comparator</td>
   </tr>
   <tr>
     <td>PageTitleException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>PageVersionComparator</td>
     <td>com.liferay.wiki.util.comparator</td>
     <td>com.liferay.wiki.service</td>
-    <td>1.0.3</td>
+    <td>1.1.3</td>
     <td>com.liferay.portlet.wiki.util.comparator</td>
   </tr>
   <tr>
     <td>PageVersionException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>PollsChoice</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsChoiceLocalService</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsChoiceLocalServiceUtil</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsChoiceLocalServiceWrapper</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsChoiceModel</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsChoicePersistence</td>
     <td>com.liferay.polls.service.persistence</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service.persistence</td>
   </tr>
   <tr>
     <td>PollsChoiceService</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsChoiceServiceUtil</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsChoiceServiceWrapper</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsChoiceSoap</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsChoiceUtil</td>
     <td>com.liferay.polls.service.persistence</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service.persistence</td>
   </tr>
   <tr>
     <td>PollsChoiceWrapper</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsQuestion</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsQuestionLocalService</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsQuestionLocalServiceUtil</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsQuestionLocalServiceWrapper</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsQuestionModel</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsQuestionPersistence</td>
     <td>com.liferay.polls.service.persistence</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service.persistence</td>
   </tr>
   <tr>
     <td>PollsQuestionService</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsQuestionServiceUtil</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsQuestionServiceWrapper</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsQuestionSoap</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsQuestionUtil</td>
     <td>com.liferay.polls.service.persistence</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service.persistence</td>
   </tr>
   <tr>
     <td>PollsQuestionWrapper</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsVote</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsVoteLocalService</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsVoteLocalServiceUtil</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsVoteLocalServiceWrapper</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsVoteModel</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsVotePersistence</td>
     <td>com.liferay.polls.service.persistence</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service.persistence</td>
   </tr>
   <tr>
     <td>PollsVoteService</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsVoteServiceUtil</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsVoteServiceWrapper</td>
     <td>com.liferay.polls.service</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service</td>
   </tr>
   <tr>
     <td>PollsVoteSoap</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PollsVoteUtil</td>
     <td>com.liferay.polls.service.persistence</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.service.persistence</td>
   </tr>
   <tr>
     <td>PollsVoteWrapper</td>
     <td>com.liferay.polls.model</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls.model</td>
   </tr>
   <tr>
     <td>PortalExecutorFactory</td>
     <td>com.liferay.portal.executor.internal</td>
     <td>com.liferay.portal.executor</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.executor</td>
   </tr>
   <tr>
     <td>PortalToLDAPConverter</td>
     <td>com.liferay.portal.security.ldap.exportimport</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>PortletDisplayTemplate</td>
     <td>com.liferay.portlet.display.template</td>
     <td>com.liferay.portlet.display.template</td>
-    <td>2.0.1</td>
+    <td>2.0.2</td>
     <td>com.liferay.portlet.portletdisplaytemplate.util</td>
   </tr>
   <tr>
     <td>PortletDisplayTemplateConstants</td>
     <td>com.liferay.portlet.display.template</td>
     <td>com.liferay.portlet.display.template</td>
-    <td>2.0.1</td>
+    <td>2.0.2</td>
     <td>com.liferay.portlet.portletdisplaytemplate.util</td>
   </tr>
   <tr>
     <td>PortletDisplayTemplateUtil</td>
     <td>com.liferay.portlet.display.template</td>
     <td>com.liferay.portlet.display.template</td>
-    <td>2.0.1</td>
+    <td>2.0.2</td>
     <td>com.liferay.portlet.portletdisplaytemplate.util</td>
   </tr>
   <tr>
     <td>QueryIndexingHitsProcessor</td>
     <td>com.liferay.portal.search.internal.hits</td>
     <td>com.liferay.portal.search</td>
-    <td>3.0.1</td>
+    <td>3.1.2</td>
     <td>com.liferay.portal.kernel.search</td>
   </tr>
   <tr>
     <td>QuerySuggestionHitsProcessor</td>
     <td>com.liferay.portal.search.internal.hits</td>
     <td>com.liferay.portal.search</td>
-    <td>3.0.1</td>
+    <td>3.1.2</td>
     <td>com.liferay.portal.kernel.search</td>
   </tr>
   <tr>
     <td>QueryType</td>
     <td>com.liferay.portal.rules.engine</td>
     <td>com.liferay.portal.rules.engine.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.bi.rules</td>
   </tr>
   <tr>
     <td>QuestionChoiceException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>QuestionDescriptionException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>QuestionExpirationDateException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>QuestionExpiredException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>QuestionTitleException</td>
     <td>com.liferay.polls.exception</td>
     <td>com.liferay.polls.api</td>
-    <td>2.0.0</td>
+    <td>4.0.0</td>
     <td>com.liferay.portlet.polls</td>
   </tr>
   <tr>
     <td>RecordSetDDMStructureIdException</td>
     <td>com.liferay.dynamic.data.lists.exception</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists</td>
   </tr>
   <tr>
     <td>RecordSetDuplicateRecordSetKeyException</td>
     <td>com.liferay.dynamic.data.lists.exception</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists</td>
   </tr>
   <tr>
     <td>RecordSetNameException</td>
     <td>com.liferay.dynamic.data.lists.exception</td>
     <td>com.liferay.dynamic.data.lists.api</td>
-    <td>2.0.2</td>
+    <td>2.0.3</td>
     <td>com.liferay.portlet.dynamicdatalists</td>
   </tr>
   <tr>
     <td>RegistryAwareMBeanServer</td>
     <td>com.liferay.portal.jmx.internal</td>
     <td>com.liferay.portal.jmx</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.jmx</td>
   </tr>
   <tr>
     <td>ReportCompilerRequestMessageListener</td>
     <td>com.liferay.portal.reports.engine.messaging</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting.messaging</td>
   </tr>
   <tr>
     <td>ReportDataSourceType</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportDesignRetriever</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportEngine</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportExportException</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportFormat</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportFormatExporter</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportFormatExporterRegistry</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportGenerationException</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportRequest</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportRequestContext</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>ReportRequestMessageListener</td>
     <td>com.liferay.portal.reports.engine.messaging</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting.messaging</td>
   </tr>
   <tr>
     <td>ReportResultContainer</td>
     <td>com.liferay.portal.reports.engine</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting</td>
   </tr>
   <tr>
     <td>RequestStatistics</td>
     <td>com.liferay.portal.monitoring.internal.statistics</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.1</td>
+    <td>3.0.4</td>
     <td>com.liferay.portal.kernel.monitoring.statistics</td>
   </tr>
   <tr>
     <td>RequiredCouponException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>RequiredNodeException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>RequiredTemplateException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>RequiredTemplateException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>RuleGroupInstancePriorityComparator</td>
     <td>com.liferay.mobile.device.rules.util.comparator</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portlet.mobiledevicerules.util</td>
   </tr>
   <tr>
     <td>RuleGroupProcessor</td>
     <td>com.liferay.mobile.device.rules.rule</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.mobile.device.rulegroup</td>
   </tr>
   <tr>
     <td>RuleGroupProcessorUtil</td>
     <td>com.liferay.mobile.device.rules.rule</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.mobile.device.rulegroup</td>
   </tr>
   <tr>
     <td>RuleHandler</td>
     <td>com.liferay.mobile.device.rules.rule</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.mobile.device.rulegroup.rule</td>
   </tr>
   <tr>
     <td>RulesEngine</td>
     <td>com.liferay.portal.rules.engine</td>
     <td>com.liferay.portal.rules.engine.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.bi.rules</td>
   </tr>
   <tr>
     <td>RulesEngineException</td>
     <td>com.liferay.portal.rules.engine</td>
     <td>com.liferay.portal.rules.engine.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.bi.rules</td>
   </tr>
   <tr>
     <td>RulesEngineUtil</td>
     <td>com.liferay.portal.rules.engine</td>
     <td>com.liferay.portal.rules.engine.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.bi.rules</td>
   </tr>
   <tr>
     <td>RulesLanguage</td>
     <td>com.liferay.portal.rules.engine</td>
     <td>com.liferay.portal.rules.engine.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.bi.rules</td>
   </tr>
   <tr>
     <td>RulesResourceRetriever</td>
     <td>com.liferay.portal.rules.engine</td>
     <td>com.liferay.portal.rules.engine.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.bi.rules</td>
   </tr>
   <tr>
     <td>ServletContextReportDesignRetriever</td>
     <td>com.liferay.portal.reports.engine.servlet</td>
     <td>com.liferay.portal.reports.engine.api</td>
-    <td>2.0.0</td>
+    <td>3.0.0</td>
     <td>com.liferay.portal.kernel.bi.reporting.servlet</td>
   </tr>
   <tr>
     <td>ShippingCityException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShippingCountryException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShippingEmailAddressException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShippingFirstNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShippingLastNameException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShippingPhoneException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShippingStateException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShippingStreetException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShippingZipException</td>
     <td>com.liferay.shopping.exception</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping</td>
   </tr>
   <tr>
     <td>ShoppingCart</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCartItem</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCartLocalService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCartLocalServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCartLocalServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCartModel</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCartPersistence</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingCartSoap</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCartUtil</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingCartWrapper</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCategory</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCategoryConstants</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCategoryLocalService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCategoryLocalServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCategoryLocalServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCategoryModel</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCategoryPersistence</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingCategoryService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCategoryServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCategoryServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCategorySoap</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCategoryUtil</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingCategoryWrapper</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCoupon</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCouponConstants</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCouponFinder</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingCouponLocalService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCouponLocalServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCouponLocalServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCouponModel</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCouponPersistence</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingCouponService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCouponServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCouponServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingCouponSoap</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingCouponUtil</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingCouponWrapper</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItem</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemField</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemFieldLocalService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemFieldLocalServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemFieldLocalServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemFieldModel</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemFieldPersistence</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingItemFieldSoap</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemFieldUtil</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingItemFieldWrapper</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemFinder</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingItemLocalService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemLocalServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemLocalServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemModel</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemPersistence</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingItemPrice</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemPriceConstants</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemPriceLocalService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemPriceLocalServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemPriceLocalServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemPriceModel</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemPricePersistence</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingItemPriceSoap</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemPriceUtil</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingItemPriceWrapper</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingItemSoap</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingItemUtil</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingItemWrapper</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrder</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrderConstants</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrderFinder</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingOrderItem</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrderItemLocalService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderItemLocalServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderItemLocalServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderItemModel</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrderItemPersistence</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingOrderItemSoap</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrderItemUtil</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingOrderItemWrapper</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrderLocalService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderLocalServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderLocalServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderModel</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrderPersistence</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingOrderService</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderServiceUtil</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderServiceWrapper</td>
     <td>com.liferay.shopping.service</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service</td>
   </tr>
   <tr>
     <td>ShoppingOrderSoap</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>ShoppingOrderUtil</td>
     <td>com.liferay.shopping.service.persistence</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.service.persistence</td>
   </tr>
   <tr>
     <td>ShoppingOrderWrapper</td>
     <td>com.liferay.shopping.model</td>
     <td>com.liferay.shopping.api</td>
-    <td>1.0.1</td>
+    <td>3.0.1</td>
     <td>com.liferay.portlet.shopping.model</td>
   </tr>
   <tr>
     <td>SortFactoryImpl</td>
     <td>com.liferay.portal.search.internal</td>
     <td>com.liferay.portal.search</td>
-    <td>3.0.1</td>
+    <td>3.1.2</td>
     <td>com.liferay.portal.kernel.search</td>
   </tr>
   <tr>
     <td>Statistics</td>
     <td>com.liferay.portal.monitoring.statistics</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.1</td>
+    <td>3.0.4</td>
     <td>com.liferay.portal.kernel.monitoring.statistics</td>
   </tr>
   <tr>
     <td>StorageAdapter</td>
     <td>com.liferay.dynamic.data.mapping.storage</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage</td>
   </tr>
   <tr>
     <td>StorageEngine</td>
     <td>com.liferay.dynamic.data.mapping.storage</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.storage</td>
   </tr>
   <tr>
     <td>StorageException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>StorageFieldNameException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>StructureDuplicateStructureKeyException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>StructureFieldException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>StructureIdComparator</td>
     <td>com.liferay.dynamic.data.mapping.util.comparator</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util.comparator</td>
   </tr>
   <tr>
     <td>StructureModifiedDateComparator</td>
     <td>com.liferay.dynamic.data.mapping.util.comparator</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util.comparator</td>
   </tr>
   <tr>
     <td>StructureStructureKeyComparator</td>
     <td>com.liferay.dynamic.data.mapping.util.comparator</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util.comparator</td>
   </tr>
   <tr>
     <td>SummaryStatistics</td>
     <td>com.liferay.portal.monitoring.statistics</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.1</td>
+    <td>3.0.4</td>
     <td>com.liferay.portal.kernel.monitoring.statistics</td>
   </tr>
   <tr>
     <td>SynchronousMessageListener</td>
     <td>com.liferay.portal.messaging.internal.sender</td>
     <td>com.liferay.portal.messaging</td>
-    <td>3.0.0</td>
+    <td>3.0.1</td>
     <td>com.liferay.portal.kernel.messaging.sender</td>
   </tr>
   <tr>
     <td>TemplateDuplicateTemplateKeyException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>TemplateIdComparator</td>
     <td>com.liferay.dynamic.data.mapping.util.comparator</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util.comparator</td>
   </tr>
   <tr>
     <td>TemplateModifiedDateComparator</td>
     <td>com.liferay.dynamic.data.mapping.util.comparator</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping.util.comparator</td>
   </tr>
   <tr>
     <td>TemplateNameException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>TemplateNameException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>TemplateScriptException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>TemplateSmallImageNameException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>TemplateSmallImageNameException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>TemplateSmallImageSizeException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.dynamicdatamapping</td>
   </tr>
   <tr>
     <td>TemplateSmallImageSizeException</td>
     <td>com.liferay.dynamic.data.mapping.exception</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
-    <td>3.0.0</td>
+    <td>3.3.0</td>
     <td>com.liferay.portlet.journal</td>
   </tr>
   <tr>
     <td>UnknownRuleHandlerException</td>
     <td>com.liferay.mobile.device.rules.rule</td>
     <td>com.liferay.mobile.device.rules.api</td>
-    <td>2.0.0</td>
+    <td>2.0.1</td>
     <td>com.liferay.portal.kernel.mobile.device.rulegroup.rule</td>
   </tr>
   <tr>
     <td>UserConverterKeys</td>
     <td>com.liferay.portal.security.ldap</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.1</td>
+    <td>2.0.4</td>
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
     <td>WikiFormatException</td>
     <td>com.liferay.wiki.exception</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki</td>
   </tr>
   <tr>
     <td>WikiNode</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiNodeLocalService</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiNodeLocalServiceUtil</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiNodeLocalServiceWrapper</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiNodeModel</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiNodePersistence</td>
     <td>com.liferay.wiki.service.persistence</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service.persistence</td>
   </tr>
   <tr>
     <td>WikiNodeService</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiNodeServiceUtil</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiNodeServiceWrapper</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiNodeSoap</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiNodeUtil</td>
     <td>com.liferay.wiki.service.persistence</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service.persistence</td>
   </tr>
   <tr>
     <td>WikiNodeWrapper</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPage</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPageConstants</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPageDisplay</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPageFinder</td>
     <td>com.liferay.wiki.service.persistence</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service.persistence</td>
   </tr>
   <tr>
     <td>WikiPageLocalService</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageLocalServiceUtil</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageLocalServiceWrapper</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageModel</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPagePersistence</td>
     <td>com.liferay.wiki.service.persistence</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service.persistence</td>
   </tr>
   <tr>
     <td>WikiPageResource</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalService</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalServiceUtil</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalServiceWrapper</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageResourceModel</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPageResourcePersistence</td>
     <td>com.liferay.wiki.service.persistence</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service.persistence</td>
   </tr>
   <tr>
     <td>WikiPageResourceSoap</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPageResourceUtil</td>
     <td>com.liferay.wiki.service.persistence</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service.persistence</td>
   </tr>
   <tr>
     <td>WikiPageResourceWrapper</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPageService</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageServiceUtil</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageServiceWrapper</td>
     <td>com.liferay.wiki.service</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service</td>
   </tr>
   <tr>
     <td>WikiPageSoap</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
   <tr>
     <td>WikiPageUtil</td>
     <td>com.liferay.wiki.service.persistence</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.service.persistence</td>
   </tr>
   <tr>
     <td>WikiPageWrapper</td>
     <td>com.liferay.wiki.model</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.0.1</td>
+    <td>2.1.0</td>
     <td>com.liferay.portlet.wiki.model</td>
   </tr>
 
