@@ -3,14 +3,8 @@
 <p>
 To leverage the benefits of modularization in Liferay 7, many classes from
 former Liferay 6 JAR file <em>portal-service.jar</em> have been moved into
-application and framework API modules. The following section provides details
-about these classes and the modules they've moved to.
-</p>
-
-## Classes Moved to API Modules
-
-<p>
-The table below lists classes moved to API modules. Package changes are noted
+application and framework API modules. The table below provides details
+about these classes and the modules they've moved to. Package changes are noted
 and each module's symbolic name and version are included to facilitate
 configuring dependencies on them. This information was generated based on
 comparing classes in <em>${oldSrcZip}</em> to classes in <em>${newSrcZip}</em>.
@@ -52,7 +46,7 @@ caption {
 
 </table>
 
-## Related Articles
+<strong>Related Articles:</strong>
 
 [Migrating a Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
 
