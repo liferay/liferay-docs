@@ -22,13 +22,18 @@ public class MovedClassReporterMain {
 
 	public static void main(String[] args) {
 		if (args == null || args.length < 3) {
-			System.out.println("Usage: MovedClassReporter oldDir newDir article");
+			System.out.println("Usage: MovedClassReporter oldDir newDir movedClassesArticle [removedClassesArticle]");
 			return;
 		}
 
 		File oldDir = new File(args[0]);
 		File newDir = new File(args[1]);
-		File article = new File(args[2]);
+		File movedClassesArticle = new File(args[2]);
+
+		File removedClassesArticle = null;
+		if (args.length > 3) {
+			removedClassesArticle = new File(args[3]);
+		}
 
 		if (!oldDir.isDirectory()) {
 			System.out.println("oldDir is not a directory: " + args[0]);
@@ -185,8 +190,13 @@ public class MovedClassReporterMain {
 		String oldZipName = oldDir.getName() + ".zip";
 		String newZipName = newDir.getName() + ".zip";
 		
-		TemplateProcessor processor = new TemplateProcessor();
-		processor.processTemplate(movedClasses, removedClasses, article, oldZipName, newZipName);
+		TemplateProcessor movedClassesTemplateProcessor = new TemplateProcessor();
+		movedClassesTemplateProcessor.processMovedClassesTemplate(movedClasses,  movedClassesArticle, oldZipName, newZipName);
+
+		if (removedClassesArticle != null) {
+			TemplateProcessor removedClassesTemplateProcessor = new TemplateProcessor();
+			removedClassesTemplateProcessor.processRemovedClassesTemplate(removedClasses, removedClassesArticle, oldZipName, newZipName);
+		}
 	}
 
 	private static void sortByClassName(

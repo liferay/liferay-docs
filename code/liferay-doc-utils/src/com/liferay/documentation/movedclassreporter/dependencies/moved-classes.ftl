@@ -1,37 +1,19 @@
 # Classes Moved from portal-service.jar
 
 <p>
-To leverage the benefits of modularization in Liferay 7, classes from former
-Liferay 6 JAR file <em>portal-service.jar</em> have been refactored in one of
-three ways:
-<ol>
-  <li>
-    <strong>Moved to <em>portal-kernel.jar</em></strong> - Classes that make up
-    the kernel have been moved here.
-  </li>
-  <li>
-    <strong>Moved to an app module</strong> - Classes that are a part of an
-    application's API have been moved to that app API module.
-  </li>
-  <li>
-    <strong>Removed from Liferay</strong> - Classes no longer needed have been
-    removed.
-  </li>
-</ol>
+To leverage the benefits of modularization in Liferay 7, many classes from
+former Liferay 6 JAR file <em>portal-service.jar</em> have been moved into
+application and framework API modules. The following section provides details
+about these classes and the modules they've moved to.
 </p>
 
-<p>
-The following sections provide details about classes moved to app modules and
-classes removed from Liferay. The information was generated based on comparing
-classes in <em>${oldSrcZip}</em> to classes in <em>${newSrcZip}</em>.
-</p>
-
-## Classes Moved to App Modules
+## Classes Moved to API Modules
 
 <p>
-The table below lists classes that were in the former portal-service.jar that
-are now in application API modules. Each module's symbolic name and version are
-included to facilitate configuring dependencies on them.
+The table below lists classes moved to API modules. Each module's symbolic name
+and version are included to facilitate configuring dependencies on them. This
+information was generated based on comparing classes in <em>${oldSrcZip}</em> to
+classes in <em>${newSrcZip}</em>.
 </p>
 
 <style>
@@ -47,8 +29,7 @@ caption {
     text-align: left;
 }
 </style>
-
-<table>
+<table style="width:100%">
 
   <tr>
     <th>Class</th>
@@ -70,36 +51,7 @@ caption {
 
 </table>
 
-<br>
-<br>
-## Classes Removed from Liferay
-
-<p>
-The table below lists classes that were in the former
-<em>portal-service.jar</em> that are no longer needed. They have been removed
-from Liferay.
-</p>
-
-<table>
-
-  <tr>
-    <th>Class</th>
-    <th>Package</th>
-  </tr>
-
-<#list removedClasses as removedClass>
-  <tr>
-    <td>${removedClass.name}</td>
-    <td>${removedClass.packageOld}</td>
-  </tr>
-</#list>
-
-</table>
-
-<br>
-<br>
-
-# Related Articles
+## Related Articles
 
 [Migrating a Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
 
