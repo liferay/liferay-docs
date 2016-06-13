@@ -255,11 +255,11 @@ version in its place.
 
 ### Fix Pack Dependencies [](id=fix-pack-dependencies)
 
-Some fix packs require other fix packs to be installed first. If you attempt to
-install a fix pack that depends on another fix pack, the patching tool notifies
-you of this so you can go to the customer portal and obtain the fix pack
-dependency. Once all the necessary fix packs are available in the `patches`
-folder, the patching tool will install them. 
+Some hotfix require a fix pack to be installed first. If you attempt to
+install a hotfix that depends on a fix pack, the Patching Tool notifies
+you of this so you can go to the customer portal and obtain the hotfix
+dependency. Once all the necessary patches are available in the `patches`
+folder, the Patching Tool will install them. 
 
 The Patching Tool can also remove patches. 
 
