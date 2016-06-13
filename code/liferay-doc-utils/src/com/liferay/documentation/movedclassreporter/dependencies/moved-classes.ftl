@@ -10,10 +10,10 @@ about these classes and the modules they've moved to.
 ## Classes Moved to API Modules
 
 <p>
-The table below lists classes moved to API modules. Each module's symbolic name
-and version are included to facilitate configuring dependencies on them. This
-information was generated based on comparing classes in <em>${oldSrcZip}</em> to
-classes in <em>${newSrcZip}</em>.
+The table below lists classes moved to API modules. Package changes are noted
+and each module's symbolic name and version are included to facilitate
+configuring dependencies on them. This information was generated based on
+comparing classes in <em>${oldSrcZip}</em> to classes in <em>${newSrcZip}</em>.
 </p>
 
 <style>
@@ -33,19 +33,20 @@ caption {
 
   <tr>
     <th>Class</th>
-    <th>New Package</th>
+    <th>Package</th>
     <th>Module Symbolic Name</th>
     <th>Module Version</th>
-    <th>Old Package</th>
   </tr>
 
 <#list movedClasses as movedClass>
   <tr>
     <td>${movedClass.name}</td>
-    <td>${movedClass.packageNew}</td>
+    <td>
+	  <em>Old:</em> ${movedClass.packageOld}<br>
+	  <em>New:</em> ${movedClass.packageNew}
+	</td>
     <td>${movedClass.module}</td>
     <td>${movedClass.version}</td>
-    <td>${movedClass.packageOld}</td>
   </tr>
 </#list>
 

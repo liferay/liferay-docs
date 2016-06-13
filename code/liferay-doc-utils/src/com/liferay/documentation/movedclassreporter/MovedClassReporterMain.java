@@ -184,7 +184,7 @@ public class MovedClassReporterMain {
 		removeJavaSuffix(movedClasses);
 
 		System.out.println("removedClasses: " + removedClasses.size());
-		sortByClassName(removedClasses);
+		sortByPackageName(removedClasses);
 		removeJavaSuffix(removedClasses);
 
 		String oldZipName = oldDir.getName() + ".zip";
@@ -208,6 +208,27 @@ public class MovedClassReporterMain {
 					FormerPortalServiceClass classB) {
 
 				return classA.getName().compareTo(classB.getName());
+			}
+
+		}
+		);
+	}
+
+	private static void sortByPackageName(
+			List<FormerPortalServiceClass> formerPortalServiceClasses) {
+		formerPortalServiceClasses.sort(new Comparator<FormerPortalServiceClass>() {
+
+			@Override
+			public int compare(FormerPortalServiceClass classA,
+					FormerPortalServiceClass classB) {
+
+				int rval = classA.getPackageOld().compareTo(classB.getPackageOld());
+
+				if (rval == 0) {
+					rval = classA.getName().compareTo(classB.getName());
+				}
+
+				return rval;
 			}
 
 		}
