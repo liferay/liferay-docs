@@ -21,7 +21,7 @@ general installation steps:
 - [Installing Liferay Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
 
 And lastly, download Liferay DXP's WAR file and dependencies from 
-[http://files.liferay.com/private/ee](http://files.liferay.com/private/ee) 
+[http://files.liferay.com/private/ee](http://files.liferay.com/private/ee), 
 or the customer portal on 
 [liferay.com](https://www.liferay.com/). 
 You'll need the following files:
@@ -43,66 +43,59 @@ installing Liferay, you must configure the Node Manager included with your
 WebLogic installation. You'll do this via the 
 `domains/your_domain_name/nodemanager/nodemanager.properties` file. Open this 
 file, and set the `SecureListener` property to `false`: 
-<!-- Why is this required? What if a customer has to use SSL? -->
 
     SecureListener=false
 
-If you're running WebLogic on Mac or Linux, you must also set the 
+This setting disables the encryption (SSL) requirement for the Node Manager, 
+allowing it to accept unencrypted connections. Although it's possible to run 
+Liferay with this property set to `true`, you may encounter difficulties doing 
+so. Also note that with `SecureListener` set to `true`, you must configure your 
+machine in the Admin Server's console to accept unencrypted connections from the 
+Node Manager. To do this, first log in to your Admin Server and select 
+*Environment* &rarr; *Machines* from the *Domain Structure* box on the left. 
+Click your machine in the table and then select the *Configuration* &rarr; *Node 
+Manager* tab. In the *Type* field, select *Plain* from the selector menu, and 
+then click *Save*. You must restart your Admin Server for this change to take 
+effect. 
+
+If you're running WebLogic on Mac or Linux, you may also need to set the 
 `NativeVersionEnabled` property to `false`: 
 
     NativeVersionEnabled=false
 
-The `SecureListener=false` setting disables the SSL requirement for the Node 
-Manager, allowing it to accept unencrypted connections. Note that you must also 
-configure your machine in WebLogic's Admin Server UI to accept unencrypted 
-connections from the Node Manager. To do this, first log in to your Admin Server 
-and select *Environment* &rarr; *Machines* from the *Domain Structure* box on 
-the left. Click your machine in the table and then select the *Configuration* 
-&rarr; *Node Manager* tab. In the *Type* field, select *Plain* from the selector 
-menu, and then click *Save*. You must restart your Admin Server for this change 
-to take effect. 
+This tells the Node Manager to start in non-native mode. This is required for 
+the platforms on which WebLogic doesn't provide native Node Manager libraries. 
+
+<!-- Do we need a section on setting MW_HOME, the classpath, and path, as set 
+in setWLSEnv.sh? -->
 
 ## Configuring WebLogic
 
-Next, you must set some properties in your WebLogic startup scripts. First, set 
-UTF-8 file encoding in the clustering section of your domain’s 
-`bin/setDomainEnv.[cmd|sh]` file. To do this, open the 
-`bin/setDomainEnv.[cmd|sh]` file and change this: 
+Next, you must set some variables in two WebLogic startup scripts. These 
+variables and scripts are as follows. Be sure to replace any file paths with the 
+matching file paths on your machine, and use `set` instead of `export` if you're 
+on Windows. 
 
-    JAVA_PROPERTIES="${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+- `your-domain/startWebLogic.[cmd|sh]`: This is the Admin Server's startup 
+  script. Add the following variables to this file: 
 
-To this:
+        export DERBY_FLAG="false"
+        export JAVA_OPTIONS="${JAVA_OPTIONS} -Djava.security.manager -da:org.apache.lucene... -da:org.aspectj..."
+        export MW_HOME="/your/weblogic/directory"
+        export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
 
-    JAVA_PROPERTIES="-Dfile.encoding=utf8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+- `your-domain/bin/startWebLogic.[cmd|sh]`: This is the startup script for 
+  Managed Servers. Add the following setting to this file: 
 
-Next, you must set your Java memory arguments and other properties in your 
-managed server's startup script. To do so, set the following properties in your 
-domain's `bin/startManagedWebLogic.[cmd|sh]` file. Note that you must use `set` 
-instead of `export` if you're on Windows: 
+        export DERBY_FLAG="false"
 
-    export USER_MEM_ARGS="-Xmx2048m -XX:MaxMetaspaceSize=512m"
-
-    export MW_HOME="/your/weblogic/server/directory"
-
-    export JAVA_OPTIONS="${JAVA_OPTIONS}  -da:org.apache.lucene... -da:org.aspectj..."
-
-These settings support Liferay's memory requirements, Lucene usage, and Aspect 
-Oriented Programming via AspectJ. Make sure to set `MW_HOME` to the directory 
-containing your WebLogic server on your machine. For example:
+The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
+Liferay doesn't require this server. The remaining settings support Liferay's 
+memory requirements, Lucene usage, and Aspect Oriented Programming via AspectJ. 
+Also make sure to set `MW_HOME` to the directory containing your WebLogic server 
+on your machine. For example: 
 
     export MW_HOME="/Users/ray/Oracle/wls12210"
-
-You must now disable WebLogic's included Derby installation. Do this by adding 
-the following in your domain's `bin/startWebLogic.[cmd|sh]` file. Remember to 
-use `set` instead of `export` if you're on Windows: 
-
-    export DERBY_FLAG=false
-
-<!-- 
-This doesn't work. The derby.log file indicates that Derby starts up regardless 
-of this setting. I also tried entering "false" instead of just false, but it had 
-no effect. 
--->
 
 ## Setting Liferay Properties
 
