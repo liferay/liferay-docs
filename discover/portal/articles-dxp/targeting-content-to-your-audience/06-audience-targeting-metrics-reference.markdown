@@ -1,4 +1,4 @@
-# Liferay Audience Targeting Metrics
+# Audience Targeting Metrics [](id=audience-targeting-metrics)
 
 Metrics enable Audience Targeting administrators to build custom reports and
 measure the effectiveness of a campaign by tracking certain user actions.
@@ -15,17 +15,17 @@ Metrics can be created by developers and deployed as extensions. Out of the box,
 Audience Targeting includes metrics to track the most common user actions. These
 metrics are described below.
 
-## Content
+## Content [](id=content)
 
 Tracks the number of times certain content has been viewed. Use the content
 selector to set the content to be tracked.
 
-## Page
+## Page [](id=page)
 
 Tracks the number of times a selected page has been viewed. You can track views
 on both both public or private pages.
 
-## Form
+## Form [](id=form)
 
 Tracks how many users view a form, interact with it (i.e., type or select values
 in the inputs) or submit it. If you select the *All* option from the *Event
@@ -39,7 +39,7 @@ extract this information.
 <!-- See WCM-593. Once that ticket is finished, inspecting HTML code of a form
 will no longer be necessary to acquire the form's ID. -Cody -->
 
-## Link
+## Link [](id=link)
 
 Tracks how often links are clicked. This helps Campaign administrators determine
 if they're sufficiently visible or helpful.
@@ -48,7 +48,7 @@ Similar to forms, you must provide the ID of the link you want to track. If you
 don't know it, you can inspect the HTML of the page where the link is and
 extract this information.
 
-## YouTube Videos
+## YouTube Videos [](id=youtube-videos)
 
 Tracks how users interact with embedded YouTube videos. You must enter the ID of
 the YouTube video. You can extract this ID from the video URL as the value for
