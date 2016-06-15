@@ -315,7 +315,7 @@ Alternatively, you can specify a .war file here, and you'll be able to patch a
 Liferay .war for installation to your application server. 
 
 **global.lib.path:** Specify the location where .jar files on the global
-classpath are stored. If you're not sure, search for your `portal-service.jar`
+classpath are stored. If you're not sure, search for your `portal-kernel.jar`
 file; it's on the global classpath. This property is only valid if your
 `patching.mode` is `binary`. 
 
