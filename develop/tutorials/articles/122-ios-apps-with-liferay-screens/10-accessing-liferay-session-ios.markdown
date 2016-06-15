@@ -80,20 +80,64 @@ a typical implementation of this:
 
     if SessionContext.loadStoredCredentials() {
         // user auto-logged in
+	    // consider doing a relogin here (see next section)
     }
     else {
         // send user to login screen with the login screenlet
     }
 
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
-You've also seen how handy `SessionContext` can be. It can do even more! The 
-next section lists some additional `SessionContext` methods. 
+For more information on available `SessionContext` methods, see the 
+[Methods section](/develop/tutorials/-/knowledge_base/6-2/accessing-the-liferay-session-in-ios#methods) 
+at the end of this tutorial. Next, you'll learn how to implement relogin for 
+cases where a user's credentials change on the server while they're logged in. 
+
+## Implementing Relogin [](id=implementing-relogin)
+
+A session, whether created via Login Screenlet or auto-login, contains basic 
+user data that verifies the user in the Liferay instance. If that data changes 
+in the server, then your session is outdated, which may cause your app to behave 
+inconsistently. Also, if a user is deleted, deactivated, or otherwise changes 
+their credentials in the server, the auto-login feature won't deny access 
+because it doesn't perform server transactions: it only retrieves an existing 
+session from local storage. This isn't an optimal situation! 
+
+For such scenarios, you can use the relogin feature. This feature is implemented 
+in a method that determines if the current session is still valid. If the 
+session is still valid, the user's data is updated with the most recent data 
+from the server. If the session isn't valid, the user is logged out and must 
+then log in again to create a new session. 
+
+To this feature, call the `SessionContext.currentContext` method `relogin`: 
+
+    SessionContext.currentContext?.relogin(closure)
+
+Note that this operation is done asynchronously in a background thread. The 
+`closure` argument is a function that eventually receives the new user 
+attributes. In case of error, the closure is called with `nil` attributes and 
+the user is logged out of the session. The typical Swift code for a full relogin 
+is as follows. Note a trailing closure is used: 
+
+    SessionContext.currentContext?.relogin { userAttributes in
+        if userAttributes == nil {
+            // couldn't retrieve the user attributes: user invalidated or password changed?
+        }
+        else {
+            // full re-login made. Everything is updated
+        }
+    }
+
+Great! Now you know how to implement relogin in your app. You've also seen how 
+handy `SessionContext` can be. It can do even more! The next section lists some 
+additional `SessionContext` methods, and some more detail on the ones used in 
+this tutorial. 
 
 ## Methods [](id=methods)
 
 | Method | Return Type | Explanation |
 |--------|-------------|-------------| 
 | `logout()` | `void` | Clears the stored user attributes and session. |
+| `relogin(closure)` | `void` | Refreshes user data from the server. This recreates `currentContext` if successful, or calls `logout()` on failure. When the server data is received, the closure is called with received user's attributes. If an error occurs, the closure is called with `nil`. |
 | `loginWithBasic(username, password, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server, and the supplied username, password, and user information. |
 | `loginWithOAuth(authentication, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server and the supplied OAuth tokens. This is intended to be used together with the [Liferay iOS OAuth library](https://github.com/brunofarache/liferay-ios-sdk-oauth). |
 | `createRequestSession()` | `LRSession` | Creates a Liferay Session based on the current session's server and user credentials. This Liferay Session is intended to be used for only a single request (don't reuse it). |

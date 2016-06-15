@@ -6,8 +6,8 @@
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
-- Liferay Screens Compatibility Plugin (
-  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+- Liferay Screens Compatibility Plugin
+  ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
   depending on your portal edition). 
 
@@ -61,7 +61,6 @@ connection.
 
 ## Required Attributes [](id=required-attributes)
 
-- `layoutId`
 - `recordSetId`
 - `labelFields`
 
@@ -75,7 +74,7 @@ connection.
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `recordSetId` | `number` | The ID of the DDL being called. To find your DDLs' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each DDL's ID is in the ID column of the table. |
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
-| `labelFields` | `string` | The comma separated names of the DDL fields to show. Refer to the list's data definition to find the field names. To do so, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left and click the *Manage Data Definitions* button. You can view the fields by clicking on any of the data definitions in the table. Note that the appearance of these values depends on the `layoutId` set. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on defining data types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-). Note that the appearance of these values in your app depends on the `layoutId` set. |
 
 ## Methods [](id=methods)
 

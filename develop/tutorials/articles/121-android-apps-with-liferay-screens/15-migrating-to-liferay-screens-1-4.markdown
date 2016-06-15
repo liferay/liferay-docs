@@ -34,5 +34,8 @@ AppCompat 23 to your app:
 - The classes `DefaultTheme` and `LiferayCrouton` have been deleted. Both have 
   been replaced by a better theming system, based on the default color names in 
   [Google's material design specification](https://www.google.com/design/spec/material-design/introduction.html#) 
-  (like `primaryColor`, `secondaryColor`, etc...). Liferay Screens detects these 
-  values and applies them to all the Screenlets. 
+  (like `primaryColor`, `secondaryColor`, and so on). Liferay Screens detects 
+  these values and applies them to all the Screenlets. 
+- Due to the new Web Content List Screenlet, Web Content Display Screenlet has 
+  been moved from the package `com.liferay.mobile.screens.webcontentdisplay` to 
+  `com.liferay.mobile.screens.webcontent.display`. 
