@@ -312,3 +312,5 @@ Follow these steps to deploy DXP to a Managed Server:
 
 8. Start the Managed Server you deployed DXP to. DXP precompiles all the JSPs, 
    and then launches. 
+
+Nice work! Now you're running Liferay DXP on WebLogic. 
