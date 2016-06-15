@@ -224,6 +224,22 @@
 			</java>
 	</target>
 
+	<target name="compare-portal-source" description="Generates reports comparing a Liferay 6 source directory (-DoldDir) to a Liferay 7+ source directory (-DnewDir).">
+		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
+		<property name="removedClassesFile" value="${build.dir}/removed-classes.html"/>
+		<java
+			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${oldDir}"/>
+			<arg value="${newDir}"/>
+			<arg value="${movedClassesFile}"/>
+			<arg value="${removedClassesFile}"/>
+		</java>
+	</target>
+
 	<target name="compare-with-older-branch" description="Compares your current branch with an older branch, specified by -Dolder.branch=someOlderBranch.">
 		<java
 			classname="com.liferay.documentation.util.GitCompare"
@@ -408,21 +424,5 @@
 	<target name="prepare-dist" depends="check-images-site-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-site-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
-	</target>
-
-	<target name="compare-portal-source" description="Generates reports comparing a Liferay 6 source directory (-DoldDir) to a Liferay 7+ source directory (-DnewDir).">
-		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
-		<property name="removedClassesFile" value="${build.dir}/removed-classes.html"/>
-		<java
-			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
-			classpathref="project.classpath"
-			failonerror="true"
-			fork="true"
-		>
-			<arg value="${oldDir}"/>
-			<arg value="${newDir}"/>
-			<arg value="${movedClassesFile}"/>
-			<arg value="${removedClassesFile}"/>
-		</java>
 	</target>
 </project>
