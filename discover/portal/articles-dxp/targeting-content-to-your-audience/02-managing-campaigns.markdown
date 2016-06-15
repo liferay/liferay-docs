@@ -1,17 +1,17 @@
 # Managing Campaigns [](id=managing-campaigns)
 
-A campaign represents an effort to expose a certain user segment to a certain
-set of assets within a specific period of time. To manage campaigns for a site,
+A campaign represents an effort to expose certain user segments to a set of
+assets within a specific period of time. To manage campaigns for a site,
 navigate to *Site Administration* &rarr; *Configuration* &rarr; *Audience
 Targeting* &rarr; *Campaigns*. To create a new campaign, select the
-(![Add Campaign](../../images-dxp/icon-add.png)) button. You need to select a
-user segment to target, a start date and an end date, and a priority, as well as
+(![Add Campaign](../../images-dxp/icon-add.png)) button. You need to select the
+user segments to target, a start date and an end date, and a priority, as well as
 a name and, optionally, a description. You also have to indicate whether or not
 the campaign you create should be active or inactive. When you've entered the
-required information, click *Save*. The user segment you select when creating a
+required information, click *Save*. The user segments you select when creating a
 campaign represents the portal users targeted by the campaign. The start and end
 dates together specify the duration of the campaign. There can be multiple
-campaigns active at the same time that target the same user segment. In these
+campaigns active at the same time that target the same user segments. In these
 situations, the priority attribute of the campaigns determines which campaign
 takes precedence. Finally, you can activate or deactivate a campaign via the
 *Active* attribute of a campaign. Deactivating a campaign disables the effect of
