@@ -118,10 +118,12 @@ Liferay Workspace. It provides an opinionated directory structure and build
 system based on Gradle and Bnd. Liferay Workspace can be used standalone through
 the command line or with Liferay IDE, which runs on Eclipse.
 
+<!-- TODO Uncomment this when the features are ready. - Jim
 If you have an investment in a specific build tool, such as Maven, developing on
 Liferay will be easier than ever before. We have built Maven plugins for typical
 Liferay-specific development tasks (such as using Service Builder) and provide a
 collection of new archetypes.
+-->
 
 And if you want to continue using the Plugins SDK, we've got you covered. The
 Plugins SDK is available to facilitate your transition to Liferay 7. In fact, a

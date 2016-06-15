@@ -37,11 +37,15 @@ Traditional plugins had some limitations that developments done in the core (or
 done as Ext Plugins) did not have. Modules don't have these limitations and are
 much more powerful than plugins ever were.
 
+<!-- TODO Uncomment this when these features are available. - Jim
 7. Complete integration of Liferay specific tools (such as Service
 Builder) within Maven and Gradle. Additionally we've adopted some new tools such
 as Bnd.
+-->
 
-What has not changed?
+What has not changed? Even though there are many improvements in Liferay 7,
+there are also many great familiar aspects from previous versions that have been
+preserved. Here are some of the most relevant ones:
 
 1. The Portal Core and each Liferay app continue to use the three layer
 architecture: presentation, services, and persistence. The presentation layer is
