@@ -94,7 +94,7 @@ Follow these steps to create a layout template:
 When your layout template was generated, a default thumbnail was created. You
 can learn how to create a custom thumbnail in the next section.
 
-## Creating a Custom Thumnail for Your Layout Template [](id=creating-a-custom-thumnail-for-your-layout-template)
+## Creating a Custom Thumbnail for Your Layout Template [](id=creating-a-custom-thumbnail-for-your-layout-template)
 
 To create your own thumbnail follow the steps below:
 
