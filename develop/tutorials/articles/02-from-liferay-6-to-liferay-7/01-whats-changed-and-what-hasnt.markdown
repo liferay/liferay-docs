@@ -52,14 +52,24 @@ architecture: presentation, services, and persistence. The presentation layer is
 now always provided as an independent module, facilitating replacing it with a
 different presentation, if desired.
 
-2. Traditional plugins for portlets and hooks still work (once they're
+2. Support remains for previously supported standards such as Portlets
+(JSR-168, JSR-286), CMIS, WebDAV, LDAP, JCP (JSR-170), etc.
+
+3. Most Liferay APIs have remained functionally similar to those of 6.2, even if
+many of their classes have moved to new packages, as part of the modularization
+effort.
+
+4. Liferay IDE and Developer Studio are still the preferred tools to develop for
+Liferay, even though you are still free to use tools that best fit your needs.
+
+5. Service Builder and other developer tools and libraries continue to work as
+they have in 6.2.
+
+6. Traditional plugins for portlets and hooks still work (once they're
 adapted to Liferay 7's API) through a compatibility layer.
 
-3. The legacy Plugins SDK can also still be used and transition to the
+7. The legacy Plugins SDK can also still be used and transition to the
 new Liferay Workspace, if desired, is easy.
-
-4. Support remains for previously supported standards such as Portlets
-(JSR-168, JSR-286), CMIS, WebDAV, LDAP, JCP (JSR-170), etc.
 
 Since the modularization of the Liferay web application is the change most
 relevant to you as a developer, let's dig deeper into that change and how it
