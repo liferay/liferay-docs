@@ -16,14 +16,14 @@ to help you get your DXP instance up and running with LCS:
    For instructions on using Marketplace to download and install apps, see 
    [this user guide article](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
-2. [**Preconfiguring the LCS Client to Connect Through a Proxy:**](/discover/portal/-/knowledge_base/7-0/licensing-your-dxp-server#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+2. [**Preconfiguring the LCS Client to Connect Through a Proxy:**](/discover/deployment/-/knowledge_base/7-0/licensing-your-dxp-server#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
    If your server connects to the Internet through a proxy, you must 
    preconfigure the LCS client app before it deploys to your DXP instance. This 
    section shows you how to do this. If your server doesn't connect through a 
    proxy, then you can skip this and proceed to licensing your DXP server in the 
    next step. 
 
-3. [**Registering Your DXP Server with LCS:**](/discover/portal/-/knowledge_base/7-0/licensing-your-dxp-server#registering-your-dxp-server-with-lcs)
+3. [**Registering Your DXP Server with LCS:**](/discover/deployment/-/knowledge_base/7-0/licensing-your-dxp-server#registering-your-dxp-server-with-lcs)
    Once you've preconfigured (if connecting through a proxy) and installed the 
    LCS client app, you must register your DXP instance with LCS. This section 
    shows you how to do this. 
