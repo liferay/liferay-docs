@@ -87,3 +87,14 @@ must wait until then.
 As you are wondering, we are not using the ServiceUtil classes anymore. We are
 delegating on the OSGi framework to wire the real implementations for the
 Liferay services, so we directly use the components.
+
+## Migrating an existing verify process
+
+To migrate an existing verify process, you must operate as in the previous
+section:
+
+  - Convert the class into a component, declaring same properties as above
+  - Wait for Liferay services you use, using the @Reference annotation, as many
+  as Liferay services you use
+
+Easy, easy, true?
