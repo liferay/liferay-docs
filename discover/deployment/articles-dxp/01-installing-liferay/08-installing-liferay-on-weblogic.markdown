@@ -79,26 +79,25 @@ variables and scripts are as follows. Be sure to use `set` instead of `export`
 if you're on Windows. 
 
 1. `your-domain/startWebLogic.[cmd|sh]`: This is the Admin Server's startup 
-   script. Add the following variables to this file: 
-
-        export DERBY_FLAG="false"
-        export JAVA_OPTIONS="${JAVA_OPTIONS} -Djava.security.manager -da:org.apache.lucene... -da:org.aspectj..."
-        export MW_HOME="/your/weblogic/directory"
-        export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
-
-    The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
-    Liferay doesn't require this server. The remaining settings support 
-    Liferay's memory requirements, Lucene usage, and Aspect Oriented Programming 
-    via AspectJ. Also make sure to set `MW_HOME` to the directory containing 
-    your WebLogic server on your machine. For example: 
-
-        export MW_HOME="/Users/ray/Oracle/wls12210"
+   script. 
 
 2. `your-domain/bin/startWebLogic.[cmd|sh]`: This is the startup script for 
-   Managed Servers. You only need to add the `DERBY_FLAG="false"` setting to 
-   this file: 
+   Managed Servers. 
 
-        export DERBY_FLAG="false"
+Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
+
+    export DERBY_FLAG="false"
+    export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Djava.security.manager -da:org.apache.lucene... -da:org.aspectj..."
+    export MW_HOME="/your/weblogic/directory"
+    export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
+
+The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
+Liferay doesn't require this server. The remaining settings support Liferay's 
+memory requirements, UTF-8 requirement, Lucene usage, and Aspect Oriented 
+Programming via AspectJ. Also make sure to set `MW_HOME` to the directory 
+containing your WebLogic server on your machine. For example: 
+
+    export MW_HOME="/Users/ray/Oracle/wls12210"
 
 You must also ensure that the Node Manager sets Liferay DXP's memory 
 requirements when starting the Managed Server. In the Admin Server's console UI, 
