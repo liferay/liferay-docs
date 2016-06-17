@@ -1,20 +1,19 @@
 # Installing Liferay DXP on WebLogic 12c R2 [](id=installing-liferay-dxp-on-weblogic-12c-r2)
 
-This article shows you how to install Liferay DXP in WebLogic 12c R2. Note that 
-although it's possible to install Liferay DXP in a WebLogic Admin Server, this 
-isn't recommended. It's best practice to install web apps, including Liferay 
-DXP, in a WebLogic Managed server. By deploying to a Managed Server, you’ll be 
-able to startup/shutdown Liferay DXP more quickly and you’ll more easily be able 
-to extend DXP into a cluster configuration. This article therefore focuses on 
-installing DXP in a Managed Server. 
+Although it's possible to install Liferay DXP in a WebLogic Admin
+Server, this isn't recommended. It's best practice to install web apps,
+including Liferay DXP, in a WebLogic Managed server. By deploying to a Managed
+Server, you’ll be able to start/shutdown Liferay DXP more quickly, and you’ll
+more easily be able to extend DXP into a cluster configuration. This article
+therefore focuses on installing DXP in a Managed Server. 
 
 Before getting started, you should take care of a few things. First, it's 
 assumed that your Admin and Managed Servers already exist. See 
 [WebLogic's documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html) 
 for instructions on setting up and configuring Admin and Managed Servers. 
 
-You should also read the following to familiarize yourself with Liferay's 
-general installation steps: 
+You should also read the following articles to familiarize yourself with
+Liferay's general installation steps: 
 
 - [Liferay Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
 - [Installing Liferay Portal](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
@@ -64,7 +63,7 @@ If you're running WebLogic on Mac or Linux, you may also need to set the
     NativeVersionEnabled=false
 
 This tells the Node Manager to start in non-native mode. This is required for 
-the platforms on which WebLogic doesn't provide native Node Manager libraries. 
+the platforms where WebLogic doesn't provide native Node Manager libraries. 
 
 <!-- 
 Do we need a section on setting MW_HOME, the classpath, and path, as set 
