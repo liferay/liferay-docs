@@ -94,18 +94,18 @@ Liferay-ready WAB. This is what each tool gets you:
 -  The auto-deploy feature in Liferay will automatically configure the required
    Portlet Servlet and `PluginContextListener` in your project's `web.xml`:
 
-    <listener>
-        <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
-    </listener>
-    <servlet>
-        <servlet-name>Portlet Servlet</servlet-name>
-        <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Portlet Servlet</servlet-name>
-        <url-pattern>/portlet-servlet/*</url-pattern>
-    </servlet-mapping>
+        <listener>
+            <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
+        </listener>
+        <servlet>
+            <servlet-name>Portlet Servlet</servlet-name>
+            <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+            <load-on-startup>1</load-on-startup>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>Portlet Servlet</servlet-name>
+            <url-pattern>/portlet-servlet/*</url-pattern>
+        </servlet-mapping>
 
 -  The WAB generator adds the necessary OSGi headers in the required
    `MANIFEST.MF` file. You can directly configure OSGi headers in your project's
@@ -115,14 +115,14 @@ Now get into the details of configuring a Spring MVC portlet for Liferay.
 
 ## Spring MVC Portlets in Liferay
 
-What does a Liferay Spring MVC portlet look like? Almost identical to a Spring
-MVC portlet that's not in Liferay. This won't be a comprehensive guide to
-configuring a Spring MVC portlet. It will cover the high points, assuming you
-already have familiarity with Spring MVC. Otherwise, consider using Liferay's
-MVC framework.
+This isn't a comprehensive guide to configuring a Spring MVC portlet. It covers
+the high points, assuming you already have familiarity with Spring MVC. If you
+don't, you should consider using Liferay's MVC framework. 
 
-Start with the `<portlet-class>` element in `portlet.xml`. In it you must
-declare Spring's `DispatcherPortlet`:
+What does a Liferay Spring MVC portlet look like? Almost identical to any other
+Spring MVC portlet. To configure a Spring MVC portlet, start with the
+`<portlet-class>` element in `portlet.xml`. In it you must declare Spring's
+`DispatcherPortlet`:
 
     <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 
@@ -136,7 +136,7 @@ as needed):
     </init-param>
 
 Provide an application context file (`portlet-context.xml` in the example
-above), specified as you normally would for your Spring MVC portlet.
+above), it's specified as you normally would for your Spring MVC portlet.
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />
@@ -163,10 +163,10 @@ configuration for Spring MVC, you need to include a listener for
     </servlet-mapping>
 
 If you're letting Liferay generate the WAB for you, the above is not necessary,
-as it will be added automatically during auto-deployment.
+as it is added automatically during auto-deployment.
 
-Your application needs the ability to convert `PortletRequest`s to
-`ServletRequest`s and back again. Add this to `web.xml`:
+Your application must be able to convert `PortletRequest`s to `ServletRequest`s
+and back again. Add this to `web.xml`:
 
     <servlet>
         <servlet-name>ViewRendererServlet</servlet-name>
@@ -190,13 +190,13 @@ Now the front controller, `DispatcherPortlet`, can get a request from the view
 layer, but there are no actual controller classes to delegate the request
 handling to.
 
-With Spring MVC your controller is conveniently separated into classes
-that will handle a particular portlet mode.
+With Spring MVC, your controller is conveniently separated into classes
+that handle the portlet modes (View, Edit, Help).
 
 You'll use Spring's annotations to configure the controller and tell
 `DispatcherPortlet` which mode the controller supports. 
 
-A simple controller class supporting view mode might look like this:
+A simple controller class supporting View mode might look like this:
 
     @Controller("myAppController")
     @RequestMapping("VIEW")
@@ -250,11 +250,11 @@ portlet. You'll also need to provide some necessary descriptors for Liferay.
 
 ### Liferay Descriptors
 
-Liferay portlet plugins that are packaged as a WAR file should include some
+Liferay portlet plugins that are packaged as WAR files should include some
 Liferay specific descriptors.
 
-The descriptor `liferay-display.xml` provides control over the display of your
-portlet in Liferay. Find the complete DTD
+The descriptor `liferay-display.xml` controls the category in which your portlet
+appears in @product@'s *Add* menu. Find the complete DTD
 [here](https://docs.liferay.com/portal/7.0/definitions/liferay-display_7_0_0.dtd.html).
 
 Here's a simple example that just specifies the category the app will go under
@@ -267,8 +267,8 @@ in Liferay's menu for adding apps:
     </display>
 
 The descriptor `liferay-portlet.xml` is used for specifying additional
-information about the portlet (like the location of CSS and JavaScript files, or
-the icon for the portlet. A complete list of the attributes you can set can be
+information about the portlet (like the location of CSS and JavaScript files or
+the portlet's icon. A complete list of the attributes you can set can be
 found [here](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html)
 
     <liferay-portlet-app>
@@ -319,7 +319,7 @@ parameters. The DTD is found
     version=1
 
 In the `liferay-plugin-package.properties` file you can also add OSGi metadata,
-and it will be properly placed in the `MANIFEST.MF` file when you deploy your
+which is properly placed in the `MANIFEST.MF` file when you deploy your
 WAR file. 
 
 Find all of Liferay's DTDs [here](https://docs.liferay.com/portal/7.0/definitions/)
@@ -327,9 +327,9 @@ Find all of Liferay's DTDs [here](https://docs.liferay.com/portal/7.0/definition
 ## Calling Services from Spring MVC
 
 You can call OSGi-based Service Builder services from your Spring MVC portlet.
-Unfortunately, without an OSGi Component, you can't leverage the OSGi lifecycle
-in your Spring MVC portlet. Your portlet will remain in service even if a
-service it depends on becomes unavailable.
+Unfortunately, without an OSGi Component, you can't leverage the OSGi life cycle
+in your Spring MVC portlet. Your portlet, therefore, will remain in service even
+if a service it depends on becomes unavailable.
 
 +$$$
 
@@ -352,20 +352,31 @@ that, add your service's API JAR as a dependency in your Spring MVC project.
 
 $$$
 
-Since you don't have the ability to look up a reference to the services
-published to the OSGi runtime using Declarative Services, how do you call
-Service Builder services? One way is by calling the static utility methods.
+Since you can't look up a reference to the services published to the OSGi
+runtime using Declarative Services, how do you call Service Builder services?
+One way is by calling the static utility methods.
 
     FooServiceUtil.getFoosByGroupId()
 
-Preferably, you can look up the OSGi service using the Service Tracker API.
-First you look up the bundle using a call to `frameworkUtil.getBundle()`, and
-then get its bundle context. `BundleContext` methods let your bundle interact
-with the OSGi runtime. In this case you're going to pass the bundle context to a
-service tracker with the name of the service's class, then open the service
-tracker. An `init` method is a good place to put this initialization code :
+Preferably, though, you can look up the OSGi service using the Service Tracker
+API. 
 
-	@PostConstruct
+<!-- Why is this preferred? I'm guessing that it's got to do with transactions,
+but we need to tell people why it's preferred, not just that it's preferred.
+-Rich -->
+
+<!-- You also need to explain this ServiceTracker API and what it's for. These
+instructions don't help anybody understand why they're doing what they're doing
+or what the benefits are. -Rich --> 
+
+First you look up the bundle using a call to `frameworkUtil.getBundle()`,
+and then get its bundle context. `BundleContext` methods let your bundle
+interact with the OSGi runtime. In this case you'll pass the bundle context to a
+service tracker with the name of the service's class as a parameter, then open
+the service tracker. An `init` method is a good place to put this initialization
+code:
+
+    @PostConstruct
 	public void init() {
 
 		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
@@ -396,9 +407,13 @@ tracker. Using a `destroy` method is an appropriate place to do this:
 
 Note that using a service tracker, as shown above, is inferior to using the
 Declarative Services `@Reference` annotation because you won't enjoy the
-benefits of the full OSGi lifecycle. In other words, the WAB will be placed in
-service, and kept in service, even if the services it depends on are not
-available. If you are not required to use a Spring MVC portlet, consider using
+benefits of the full OSGi life cycle. In other words, the WAB will be placed in
+service and kept in service, even if the services it depends on are not
+available. This could cause users to access your application in a state in which
+it could only show errors, so you would have to do the extra work of handling
+those errors yourself. 
+
+If you are not required to use a Spring MVC portlet, consider using
 Liferay's MVC framework to design your portlets instead, since you can take
-advantage of the Declarative Services `@Component` and `@Reference`, which let's
-you leverage the OSGi lifecycle.
+advantage of the Declarative Services `@Component` and `@Reference`, which lets
+you leverage the OSGi life cycle.
