@@ -1,14 +1,11 @@
 # Classes Moved from portal-service.jar [](id=classes-moved-from-portal-service-jar)
 
-<p>
 To leverage the benefits of modularization in Liferay 7, many classes from
-former Liferay 6 JAR file <em>portal-service.jar</em> have been moved into
+former Liferay 6 JAR file `portal-service.jar` have been moved into
 application and framework API modules. The table below provides details
 about these classes and the modules they've moved to. Package changes are noted
 and each module's symbolic name and version are included to facilitate
-configuring dependencies on them. This information was generated based on
-comparing classes in <em>liferay-portal-src-6.2-ce-ga6.zip</em> to classes in <em>liferay-ce-portal-src-7.0-ga2.zip</em>.
-</p>
+configuring dependencies on them.
 
 <style>
 table, th, td {
@@ -25,6 +22,13 @@ caption {
 </style>
 <table style="width:100%">
 
+  <caption>
+    <b>Classes Moved from portal-service (now renamed portal-kernel)</b>
+	<p>
+      This information was generated based on comparing classes in
+      <em>liferay-portal-src-6.2-ce-ga6.zip</em> to classes in <em>liferay-ce-portal-src-7.0-ga2.zip</em>.
+    </p>
+  </caption>
   <tr>
     <th>Class</th>
     <th>Package</th>
@@ -6344,7 +6348,7 @@ caption {
 
 </table>
 
-<strong>Related Articles:</strong>
+**Related Articles:**
 
 [Migrating a Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
 
