@@ -269,13 +269,13 @@ is only valid if your `patching.mode` is `source`.
 You can have as many profiles as you want, and use the same Patching Tool to
 patch all of them. This helps to keep all your installations in sync. 
 
-## New features
+## New features [](id=new-features)
 
 Starting with Version 18 of the Patching Tool, we have included some major
 improvements that provide assistance to developers for detecting the source
 changes introduced by the patches.
 
-### Diff command
+### Diff command [](id=diff-command)
     ./patching-tool.sh diff
 This command prints the differences between two patch levels to the output.
 At least one stored patch level must be available for the tool.
@@ -298,7 +298,7 @@ numbers to track certain fixes.
 For the detailed usage information, please run `./patching-tool help diff`
 command.
 
-### Store command
+### Store command [](id=store-command)
     ./patching-tool.sh store
 Manages patching level information for `diff` command. The command needs
 patches with sources to be able to prepare usable information for the `diff`
