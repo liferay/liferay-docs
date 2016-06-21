@@ -11,7 +11,7 @@ This tutorial demonstrates how to:
 
 Get started by writing your verify package next.
 
-## Writing the Verify Package
+## Writing the Verify Package [](id=writing-the-verify-package)
 
 In order to create a verify process you must first create a package called 
 `verify` in your project's layout. Inside of the `verify` package, create a OSGi 
@@ -55,7 +55,7 @@ rules app verify process above.
 Now that your verify process class is written, you can learn how to declare
 dependencies on Liferay services for your verify processes next.
 
-## Using Liferay Services in Your Verify Process
+## Using Liferay Services in Your Verify Process [](id=using-liferay-services-in-your-verify-process)
 
 Verify processes execute on the startup of a specific release. It's important
 to be aware of this while running upgrade processes because your database starts
@@ -99,7 +99,7 @@ directly use the components.
 Now that your verify process is written, you'll need to configure portal
 settings for it next.
 
-## Configuring Portal Settings for Your Verify Process
+## Configuring Portal Settings for Your Verify Process [](id=configuring-portal-settings-for-your-verify-process)
 
 Once you've written your data verifier process, you'll need to enable it to 
 startup with the portal. To enable your verify process on startup, you must add 
@@ -115,7 +115,7 @@ verify section for more information.
 Now that your verify processes are enabled, you can control the frequency at
 which they execute next.
 
-### Setting Verification frequency
+### Setting Verification frequency [](id=setting-verification-frequency)
 
 The verify processes can be configured to be executed with a custom frequency on 
 portal startup. This frequency only accepts three possible values:
@@ -135,7 +135,7 @@ Always, Never and Once, respectively:
     
 Next, you can configure the transactions for your verify process.
 
-### Setting Transactions during data verification
+### Setting Transactions during data verification [](id=setting-transactions-during-data-verification)
 
 You can disable database transactions management during verification. This
 forces autocommit, which will speed up the verify process.
@@ -149,7 +149,7 @@ enable data transactions.
     
 Finally, you can control the verification concurrency next. 
 
-### Setting Verification concurrency
+### Setting Verification concurrency [](id=setting-verification-concurrency)
 
 Configure this threshold to indicate when to execute certain 
 `com.liferay.portal.verify.VerifyProcess` tasks concurrently. Each 
@@ -174,7 +174,7 @@ $$$
 
 There ya go. Now you know how to create a verification process for your app!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating an Upgrade Process for Your App](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-application)
 
