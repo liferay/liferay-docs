@@ -1,10 +1,11 @@
 # Using a SharePoint Repository [](id=using-a-sharepoint-repository)
 
 With the help of Liferay's SharePoint Connector app, users can access SharePoint
-libraries from within a Liferay Documents and Media Library. The app installs a
-SharePoint repository type that you can select on adding a new *Repository* to
-Documents and Media. The SharePoint Connector integrates sites with existing
-SharePoint libraries, so you can access all of your organization's files.
+2013 and SharePoint 2010 libraries from within a Liferay Documents and Media
+Library. The app installs a SharePoint repository type that you can select on
+adding a new *Repository* to Documents and Media. The SharePoint Connector
+integrates sites with existing SharePoint libraries, so you can access all of
+your organization's files.
 
 The [Liferay SharePoint Connector](https://web.liferay.com/marketplace/-/mp/application/15188537)
 app is available to EE subscribers on Liferay's
