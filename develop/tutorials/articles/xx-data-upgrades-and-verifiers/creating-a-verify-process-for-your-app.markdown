@@ -1,13 +1,13 @@
 # Creating A Verify Process for Your App [](id=creating-a-verify-process-for-your-app)
 
-Your app goes through various stages of development. You add new features,
-remove features, improve features, reorganize the code, etc. During the cycle of
-development, you'll want to verify the data your app is producing is consistent.
+A verify process is a class that will run on portal startup to verify and fix
+any integrity problems found in the database. You should be aware that this may
+make modifications directly to the database. During the cycle of development, 
+you'll want to verify the data your app is producing is consistent.
 
 This tutorial demonstrates how to:
 
 - Create a verify process for your app using new development patterns
-- Migrate an existing verify process to the new development patterns
 
 Get started by writing your verify package next.
 
@@ -50,12 +50,12 @@ for more information.
 
 It is recommended that you use the name of the service package of the app as the
 value for the `verify.process.name` property, as shown in the mobile device
-rules app verify process shown above.
+rules app verify process above.
 
 Now that your verify process class is written, you can learn how to declare
 dependencies on Liferay services for your verify processes next.
 
-## Depending on services
+## Using Liferay Services in Your Verify Process
 
 Verify processes execute on the startup of a specific release. It's important
 to be aware of this while running upgrade processes because your database starts
@@ -96,16 +96,88 @@ As you may have noticed, the ServiceUtil classes are no longer being used.
 Instead, the OSGi framwork is providing the Liferay services, so you can
 directly use the components.
 
-Now that you know how to use Liferay services in your verifiers, you can learn
-how to migrate an existing verify process to the new framework.
+Now that your verify process is written, you'll need to configure portal
+settings for it next.
 
-## Migrating an existing verify process
+## Configuring Portal Settings for Your Verify Process
 
-To migrate an existing verify process, follow the steps covered in the previous
-section:
+Once you've written your data verifier process, you'll need to enable it to 
+startup with the portal. To enable your verify process on startup, you must add 
+it to your portal configuration, under the `verify.processes` property in your 
+`portal-ext.properties` file:
+
+    verify.processes=com.liferay.portal.verify.VerifyProcessSuite,
+    my.package.MyVerifyProcess
+    
+See the [portal.properties](https://github.com/liferay/liferay-portal/blob/d0dc23ac195b2ac0ce3b893b74538b5fe71fcfa2/portal-impl/src/portal.properties#L169-L179)
+verify section for more information.
+
+Now that your verify processes are enabled, you can control the frequency at
+which they execute next.
+
+### Setting Verification frequency
+
+The verify processes can be configured to be executed with a custom frequency on 
+portal startup. This frequency only accepts three possible values:
+
+ - **Always executed:** All verify processes will be executed on each portal
+   startup.
+ - **Never executed:** No verify processes will be executed on each portal
+   startup.
+ - **Executed once:** All verify processes will be executed only in next portal
+   startup, and no more.
+
+This frequency can be configured in `portal-ext.properties` file, using the
+`verify.frequency` property. Possible values are `-1`, `0` and `1`, meaning 
+Always, Never and Once, respectively:
+
+    verify.frequency=1
+    
+Next, you can configure the transactions for your verify process.
+
+### Setting Transactions during data verification
+
+You can disable database transactions management during verification. This
+forces autocommit, which will speed up the verify process.
+
+To disable database transactions, you must add it to your
+`portal-ext.properties`, under the `verify.database.transactions.disabled` 
+property. Set the property to `true` to disable data transactions and `false` to
+enable data transactions.
+
+    verify.database.transactions.disabled=true
+    
+Finally, you can control the verification concurrency next. 
+
+### Setting Verification concurrency
+
+Configure this threshold to indicate when to execute certain 
+`com.liferay.portal.verify.VerifyProcess` tasks concurrently. Each 
+`VerifyProcess` implementation governs what it may concurrently execute.
+
+To configure the concurrency threshold, you must add it to your
+`portal-ext.properties`, under the `verify.process.concurrency.threshold` 
+property. The threshold property accepts numerical values, including zero:
+
+    verify.process.concurrency.threshold=5
+
++$$$
+
+**Note:** To migrate an existing verify process, follow the same steps covered 
+in the previous sections:
 
   - Convert the class into a component, declaring the same properties as above
   - Reference any Liferay services the class uses, using the `@Reference`
   annotation.
 
-There ya go!
+$$$
+
+There ya go. Now you know how to create a verification process for your app!
+
+## Related Topics
+
+[Creating an Upgrade Process for Your App](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-application)
+
+[Migrating a Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
+
+[Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
