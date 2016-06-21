@@ -1,17 +1,19 @@
 buildscript {
 	repositories {
 		maven {
-			url "https://repository.liferay.com/nexus/content/groups/liferay-ce/"
+			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
 		}
-		mavenCentral()
 	}
 
 	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.module.config.generator", version: "1.0.16"
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "1.0.16"
+		classpath group: "biz.aQute.bnd", name: "biz.aQute.bnd.gradle", version: "3.2.0"
+		classpath group: "com.liferay", name: "com.liferay.ant.bnd", version: "2.0.24"
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.module.config.generator", version: "1.0.22"
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "1.0.26"
 	}
 }
 
+apply plugin: "biz.aQute.bnd.builder"
 apply plugin: "com.liferay.js.module.config.generator"
 apply plugin: "com.liferay.js.transpiler"
 

@@ -30,9 +30,7 @@ To create a new sign-up form and list for a lunar rover race:
 in (the Lunar Resort if you're following the example), then click on *Content*
 &rarr; *Dynamic Data Lists*.
 
-    ![Figure 1: Find the Dynamic Data Lists application by opening the *Content* section of the Product Menu. Make sure you're in the proper site context.](../../../images/ddl-product-menu.png)
-
-2. Click the *Add* button (![Add Icon](../../../images/add-button.png)) to create a new list based on a data definition.
+2. Click the *Add* button (![Add Icon](../../../images/icon-add.png)) to create a new list based on a data definition.
 
 3. Give the data list a name, like *Lunar Rover Race Sign-Up*, and a description to
    assist administrative users in the future.
@@ -43,7 +41,7 @@ in (the Lunar Resort if you're following the example), then click on *Content*
     Choose the *Activity Entry* data definition you created, then click
     *Save*.
 
-    ![Figure 2: Give your list a name, a description, and select a data definition for the list.](../../../images/ddl-add-list.png)
+    ![Figure 1: Give your list a name, a description, and select a data definition for the list.](../../../images/ddl-add-list.png)
 
 Now that you've created your brand new sign-up, get the word out for guests to
 sign up. But what would it look like for them to add an entry to this list? The
@@ -52,7 +50,7 @@ default layout of the form as well. You just need to add a Data List Display
 portlet to a page, and set the permissions on the list so guests can add
 records.
 
-![Figure 3: You can enter a new data record directly from the Dynamic Data Lists portlet by clicking on *Content* &rarr; *Dynamic data Lists* from the from the Product Menu, clicking the list you want to add a record for, then click the *Add* button.  Alternatively, you can add the Dynamic Data List Display portlet to a page and configure it to allow users to submit new data records.](../../../images/ddl-displayportlet-add.png)
+![Figure 2: You can enter a new data record directly from the Dynamic Data Lists portlet by clicking on *Content* &rarr; *Dynamic data Lists* from the from the Product Menu, clicking the list you want to add a record for, then click the *Add* button.  Alternatively, you can add the Dynamic Data List Display portlet to a page and configure it to allow users to submit new data records.](../../../images/ddl-displayportlet-add.png)
 
 +$$$
 
@@ -75,7 +73,7 @@ Lists are published in the portal through the Dynamic Data List Display portlet.
 If list creators don't customize the display, their lists use the default display
 template.
 
-![Figure 4: The default data list display in the Control Panel shows the list's records and allows record to added, edited, or removed (assuming the user has the correct permissions).](../../../images/ddl-default-display.png)
+![Figure 3: The default data list display in the Control Panel shows the list's records and allows record to added, edited, or removed (assuming the user has the correct permissions).](../../../images/ddl-default-display.png)
 
 The default display template isn't exciting, but it allows users to see the
 list's contents, and if they have permission, to add and/or edit list items.
@@ -108,7 +106,7 @@ Record` permission. Choosing to use the *Spreadsheet View* displays the list in
 a dynamic spreadsheet view.  This allows users with permission to interact with
 the list in the same way as in a standard spreadsheet program.
 
-![Figure 5: The Dynamic Data List Display portlet allows users to view the records belong to a list in either a standard or a spreadsheet view. This figure shows the spreadsheet view.](../../../images/ddl-spreadsheet-view.png)
+![Figure 4: The Dynamic Data List Display portlet allows users to view the records belong to a list in either a standard or a spreadsheet view. This figure shows the spreadsheet view.](../../../images/ddl-spreadsheet-view.png)
 
 As useful as the default display is, and it's certainly useful for data lists
 like to do lists and memo notes, it can be an awkward way to ask Lunar Resort
