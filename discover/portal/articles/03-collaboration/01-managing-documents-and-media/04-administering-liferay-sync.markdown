@@ -93,16 +93,16 @@ Next up is the Sites tab, which lets you control Sync on a per-site basis.
 
 ![Figure 2: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images/sync-admin-02.png)
 
-<!-- Replace drop-down arrow with Actions/Options text and icon -->
 For each site in the Liferay instance, the Sites tab lists each site's default 
 file permissions (more on this in a moment) and whether Sync is enabled for that
 site. Sync is enabled by default for all sites. To disable Sync for a site,
-click the drop-down arrow in the last column for the site and select *Disable
-Sync Site*. To disable multiple sites at once, select their checkboxes and click
-the *Disable Sync Sites* link that appears above the table. **Please use
-caution** when disabling Sync for a site, as doing so **deletes** files for that
-site from the Sync clients. Disabling Sync for a site, however, doesn't affect
-the site's files in the Liferay instance. 
+click the site's *Actions* button 
+(![Actions](../../../images/icon-actions.png)) 
+and select *Disable Sync Site*. To disable multiple sites at once, select their 
+checkboxes and click the *Disable Sync Sites* link that appears above the table. 
+**Please use caution** when disabling Sync for a site, as doing so **deletes** 
+files for that site from the Sync clients. Disabling Sync for a site, however, 
+doesn't affect the site's files in the Liferay instance. 
 
 +$$$
 
@@ -115,20 +115,20 @@ reconnection.
 
 $$$
 
-You can enable Sync for a site by selecting *Enable Sync Site* from its dropdown
-arrow. To enable Sync for multiple sites, select their checkboxes and click the
+You can enable Sync for a site by selecting *Enable Sync Site* from its Actions 
+button. To enable Sync for multiple sites, select their checkboxes and click the
 *Enable Sync Sites* link that appears above the table. 
 
-Make sure that each site for which Sync is enabled has a Documents and Media
-portlet on at least one of its pages. If a site doesn't have the portlet on any
-of its pages and users click the *Open Website* link from their Sync menus, the
-error message *The requested resource was not found* appears. 
+Make sure that each site for which Sync is enabled has a Documents and Media app 
+on at least one of its pages. If a site doesn't have the app on any of its pages 
+and users click the *Open Website* link from their Sync menus, the error message 
+*The requested resource was not found* appears. 
 
 The Sites tab also lets you set default file permissions for files uploaded from
 Sync clients. The process for setting permissions is nearly the same as for
 enabling or disabling Sync for sites. To set the default file permissions for a
-single site, click its drop-down arrow and select *Default File Permissions*.
-This opens a window that lets you select the default file permissions for that
+single site, click its Actions button and select *Default File Permissions*. 
+This opens a window that lets you select the default file permissions for that 
 site. Click *Choose* for the permissions you want to use. 
 
 ![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../../images/sync-admin-03.png)
