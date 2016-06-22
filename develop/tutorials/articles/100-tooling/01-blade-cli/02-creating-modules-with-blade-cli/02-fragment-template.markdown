@@ -6,7 +6,7 @@ following:
 
     blade create -t fragment -h com.liferay.login.web -H 1.0.0 my-fragment-project
 
-The command above creates an activator project named `my-fragment-project` in
+The command above creates a fragment project named `my-fragment-project` in
 the current directory. You specified the host bundle name as
 `com.liferay.login.web` and and the host bundle's version to `1.0.0`. The folder
 structure is created, but there are no files. The only files created are the
