@@ -29,7 +29,7 @@ This tutorial demonstrates the following:
 
 Go ahead and get started.
 
-## Coverting Your old wrapper to MVCCommands
+## Converting Your old wrapper to MVCCommands
 
 Converting StrutsActionWrappers to MVCCommands is easier than you may think.
 
@@ -44,15 +44,16 @@ need to use the matching MVCCommand shown below:
 -   render -> MVCRenderCommand
 -   serveResource -> MVCResourceCommand
 
-<!--
-
-Can you show the code for this, using the beginning example? What action would
-the login example use, and what are some other examples using the other actions?
-
--->
+Take a look at the [ExampleStrutsPortletAction class](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
+as a StrutsActionWrapper example. Depending on which actions were overridden, the 
+user will have to use different MVCCommands. In this example, the action and 
+render were overwritten, so in order to migrate to the new pattern, you would 
+need to create two classes: `MVCActionCommand` and `MVCRenderCommand`.
 
 Next you'll need to determine the associated mapping that is used by the 
 MVCCommand.
+
+## Mapping Your MVCCommand URLs
 
 For most cases, the MCVCCommand mapping is the same mapping defined in the 
 legacy struts-action.
@@ -65,40 +66,37 @@ source code to determine the correct mapping.
 
 Depending on the URL it will be a different param:
 
--   RenderURLs will contain a parameter named `mvcRenderCommandName`
+-   RenderURLs will contain a parameter named `mvcRenderCommandName`. For
+    example:
+    
+        <portlet:renderURL var="editEntryURL">
+            <portlet:param name="mvcRenderCommandName" value="/hello/edit_entry" 
+            />
+            <portlet:param name="entryId" value="<%= String.valueOf(
+            entry.getEntryId()) %>" />
+        </portlet:renderURL>    
+
 -   ActionURLs will be contained in the attribute `name` of the taglib
-    or with the parameter `ActionRequest.ACTION_NAME`
--   RenderURLs will be contained as the attribute `id`.<!-- Is this suppose to be the RenderURLs again, or something else? -->
+    or with the parameter `ActionRequest.ACTION_NAME`. For example:
+    
+        <portlet:actionURL name="/blogs/edit_entry" var="editEntryURL" />
+    
+-   ResourceURLs will be contained as the attribute `id`. For example:
 
-<!--
+        <portlet:resourceURL id="/login/captcha" var="captchaURL" />
 
-Can you show the code for this, using the beginning example? In which cases
-would you use each param?
-
--->
-
-Once you have this information you should be able to override the
-MVCCommand following these instructions:
-
-<!--
-
-What would code up to this point look like? What should I have at this point to
-move onto the tutorials shown below? Is this all done in a `liferay-hook.xml`?
-
-I'm guessing not. So what file are these code changes being made in?
-
-A legacy code example and a finished converted code(using the same example)
-would be good to have here.
-
-Thanks!
-
--->
+Once you have this information you can override the MVCCommand following the
+instructions found in these sections of the Overriding MVC Commands tutorial:
 
 -   Overriding MVCActionCommands:
-    [https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcactioncommand](https://www.google.com/url?q=https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands%23overriding-mvcactioncommand&sa=D&ust=1465574286572000&usg=AFQjCNFj76Baao2rzL9816gJ7xJqXPs0jg)
+    [https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcactioncommand](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcactioncommand)
 -   Overriding MVCResourceCommands:
-    [https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcresourcecommand](https://www.google.com/url?q=https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands%23overriding-mvcresourcecommand&sa=D&ust=1465574286572000&usg=AFQjCNHlMx3_IqcbbJNZc2exlFBDPdOHsw)
+    [https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcresourcecommand](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcresourcecommand)
 -   Overriding MVCRenderCommands:
-    [https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#adding-logic-to-an-existing-mvc-render-command](https://www.google.com/url?q=https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands%23adding-logic-to-an-existing-mvc-render-command&sa=D&ust=1465574286573000&usg=AFQjCNG-ZgG5BDZgqVkow8ThU-Iq0jTLqA)
+    [https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#adding-logic-to-an-existing-mvc-render-command](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#adding-logic-to-an-existing-mvc-render-command)
 
+Now you know how to convert your StrutsActionWrappers to MVCCommands!
 
+## Related Topics
+
+[Overriding MVC Commands](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
