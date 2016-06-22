@@ -1,9 +1,9 @@
 # Creating A Verify Process for Your App [](id=creating-a-verify-process-for-your-app)
 
-A verify process is a class that will run on portal startup to verify and fix
-any integrity problems found in the database. You should be aware that this may
-make modifications directly to the database. During the cycle of development, 
-you'll want to verify the data your app is producing is consistent.
+During the cycle of development, you'll want to verify the data your app is 
+producing is consistent. A verify process is a class that will run on portal 
+startup to verify and fix any integrity problems found in the database. You 
+should be aware that this may make modifications directly to the database.
 
 This tutorial demonstrates how to:
 
@@ -19,7 +19,7 @@ Component of the service `VerifyProcess`class that extends the interface
 `VerifyProcess`.
 
 This interface provides a `doVerify` method that handles the verifiers. For
-example take a look at the [MDRServiceVerifyProcess.java](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/foundation/mobile-device-rules/mobile-device-rules-service/src/main/java/com/liferay/mobile/device/rules/verify/MDRServiceVerifyProcess.java) 
+example, take a look at the [MDRServiceVerifyProcess.java](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/foundation/mobile-device-rules/mobile-device-rules-service/src/main/java/com/liferay/mobile/device/rules/verify/MDRServiceVerifyProcess.java) 
 class for the mobile device rules app:
 
     @Component(
@@ -50,7 +50,9 @@ for more information.
 
 It is recommended that you use the name of the service package of the app as the
 value for the `verify.process.name` property, as shown in the mobile device
-rules app verify process above.
+rules app verify process above:
+
+    com.liferay.mobile.device.rules.service
 
 Now that your verify process class is written, you can learn how to declare
 dependencies on Liferay services for your verify processes next.
@@ -59,24 +61,20 @@ dependencies on Liferay services for your verify processes next.
 
 Verify processes execute on the startup of a specific release. It's important
 to be aware of this while running upgrade processes because your database starts
-in a previous schema version, then gets upgraded to the new schema version, 
-which triggers the release verify processes.
-
-What this means for you as a developer is that your verify processes can use 
-release Liferay services.
+in a previous schema version, then gets upgraded to the new schema version.
 
 This is an important distinction between upgrade processes and verify processes.
 An upgrade process of the portal core cannot use Liferay services to access the 
 database, as those Liferay services are using the previous definition of the 
 database, but since verify processes are already in the upgraded schema version, 
-they can access and use Liferay services for the updated database.
+they can use release Liferay services.
 
-Since you can use Liferay services in your verify processes, you can delcare
-dependencies on them and make references to them. Because the services are not 
-available until the Portal is started, **your verify process must depend on 
-them** to load, before your processes can execute. You can delcare a dependency 
-for your verify process, using the `@Reference` annotation. For example, here is
-a reference to the `DLFileVersionLocalService` for the [document library app](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/collaboration/document-library/document-library-service/src/main/java/com/liferay/document/library/workflow/DLFileEntryWorkflowHandler.java):
+If you choose to use Liferay services in your verify process, you'll need to
+declare dependencies on those services. Because the services are not available 
+until the Portal is started, **your verify process must depend on them** to load, 
+before your processes can execute. You can declare a dependency for your verify 
+process, using the `@Reference` annotation. For example, here is a reference to 
+the `DLFileVersionLocalService` for the [document library app](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/collaboration/document-library/document-library-service/src/main/java/com/liferay/document/library/workflow/DLFileEntryWorkflowHandler.java):
 
     @Reference(unbind = "-")
     protected void setDLFileVersionLocalService(
@@ -93,7 +91,7 @@ implementation of the proper service (in this example, a
 implementation, the verify process can use it.
 
 As you may have noticed, the ServiceUtil classes are no longer being used.
-Instead, the OSGi framwork is providing the Liferay services, so you can
+Instead, the OSGi framework is providing the Liferay services, so you can
 directly use the components.
 
 Now that your verify process is written, you'll need to configure portal
@@ -109,7 +107,9 @@ it to your portal configuration, under the `verify.processes` property in your
     verify.processes=com.liferay.portal.verify.VerifyProcessSuite,
     my.package.MyVerifyProcess
     
-See the [portal.properties](https://github.com/liferay/liferay-portal/blob/d0dc23ac195b2ac0ce3b893b74538b5fe71fcfa2/portal-impl/src/portal.properties#L169-L179)
+Each verify process class is separated by a comma. The first one shown,
+`com.liferay.portal.verify.VerifyProcessSuite`, is the default verifyProcess
+pipeline. See the [portal.properties](https://github.com/liferay/liferay-portal/blob/d0dc23ac195b2ac0ce3b893b74538b5fe71fcfa2/portal-impl/src/portal.properties#L169-L179)
 verify section for more information.
 
 Now that your verify processes are enabled, you can control the frequency at
@@ -172,7 +172,7 @@ in the previous sections:
 
 $$$
 
-There ya go. Now you know how to create a verification process for your app!
+There you go. Now you know how to create a verification process for your app!
 
 ## Related Topics [](id=related-topics)
 
