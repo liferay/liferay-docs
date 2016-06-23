@@ -130,7 +130,7 @@ On this screen, you must specify your app's version and upload your app's files.
 Note that the article 
 [Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution) 
 helps you plan your app's versioning scheme. Likewise, the article 
-[Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app) 
+[Preparing Your App](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app) 
 helps you determine which files to upload. 
 
 To start uploading, click *Browse* and select the files that make up your app. 
