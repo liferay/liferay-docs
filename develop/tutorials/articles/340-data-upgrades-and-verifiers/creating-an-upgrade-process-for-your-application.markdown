@@ -1,12 +1,13 @@
 # Creating An Upgrade Process for Your App [](id=creating-an-upgrade-process-for-your-app)
 
-As changes are made to your app, it is important that you upgrade your schema
-version. To move your app from one version to the next, you'll need to create an 
-upgrade process. These upgrades need to be registered in the database. The 
-system then records the current state of the schema so, in case of failure, 
-upgrade processes can revert the app back to its previous version.
+As changes are made to your app, it's very likely that your database schema
+changes with it, and these changes bring with them the need for an upgrade
+process to move your app from one version to the next. These upgrades not only
+need to happen, but also they need to be registered in the database. The system
+then records the current state of the schema so that if the upgrade fails, the
+process can revert the app back to its previous version.
 
-This tutorial demonstrates how to:
+This tutorial demonstrates how to
 
 - Create an upgrade process for your app using Liferay's new upgrade framework
 - Migrate an existing upgrade process to the new upgrade framework
@@ -20,15 +21,14 @@ If your app has any dependencies, you'll have to declare a dependency on the
 
     compile project(":portal:portal-upgrade")
 
-Now that your dependencies are declared, you can write your upgrade package
-next.
+Once your dependencies are declared, you can write your upgrade package.
 
 ## Writing the Upgrade Package [](id=writing-the-upgrade-package)
 
 The first thing you need to do is create a package called `upgrade` in your 
-project’s layout. Inside of the `upgrade` package, create a OSGi Component of 
+package namespace. In the `upgrade` package, create an OSGi Component of 
 the service `UpgradeStepRegistrator` that implements the interface 
-`UpgradeStepRegistrator`, which is located under the [portal-upgrade module](https://www.google.com/url?q=https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade&sa=D&ust=1464278927768000&usg=AFQjCNGF0wzU7e50p5GOwiXbT7XQ1OJ1JQ)).
+`UpgradeStepRegistrator`, which you'll find under the [portal-upgrade module](https://www.google.com/url?q=https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade&sa=D&ust=1464278927768000&usg=AFQjCNGF0wzU7e50p5GOwiXbT7XQ1OJ1JQ)).
 
 This interface provides a `register` method that handles the upgrade 
 registration process.
@@ -42,19 +42,20 @@ registration process.
     	}
     }
 
-Once you've implemented your `UpgradeStepRegister` interface, you’ll have to use 
-its `register` method to specify your upgrades, defining from which versions you 
-want to upgrade, to the version it will be upgraded to.
+Once you've implemented the `UpgradeStepRegister` interface, you’ll have to use 
+its `register` method to specify your upgrades, defining the versions you want
+to upgrade to the version you're upgrading to.
 
-Each upgrade is represented by an upgrade registration. An Upgrade registration 
+Each upgrade is represented by an upgrade registration. An upgrade registration 
 is an abstraction for the changes you need to apply to the database from one 
 version to the next one.
 
-To define a registration, you need to provide:
+To define a registration, you need to provide
+
 - the bundle symbolic name of the module.
-- the schema version your module wants to upgrade from (as a String)
-- the schema version your module wants to upgrade to (as a String)
-- a list of UpgradeSteps
+- the schema version your module wants to upgrade from (as a `String`)
+- the schema version your module wants to upgrade to (as a `String`)
+- a list of `UpgradeSteps`
 
 For example, here is an upgrade process for the `com.liferay.calendar.service`
 module:
@@ -70,13 +71,13 @@ module:
 
 In this example, the `com.liferay.calendar.service` module is being upgraded 
 from version 0.0.1 to version 1.0.0. The changes are produced by a list of 
-UpgradeSteps, which in this example contains only one step:
+`UpgradeSteps`, which in this example contains only one step:
 
     new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
-    
+ 
 You can also register multiple upgrades in one class. For example, here is an
 extension of the previous upgrade process that runs two additional upgrades, 
-each with their own set of UpgradeSteps:
+each with their own set of `UpgradeSteps`:
 
     @Override
     public void register(Registry registry) {
@@ -109,26 +110,25 @@ each with their own set of UpgradeSteps:
     }
 
 In this example the `com.liferay.calendar.service` module is upgraded from 
-version 0.01 to 1.0.0 with one step. Next it is upgraded incrementally from 
-version 1.0.1 to 1.0.4, using only one UpgradeStep for each schema version. 
+version 0.01 to 1.0.0 in one step. Next it is upgraded incrementally from 
+version 1.0.1 to 1.0.4, using only one `UpgradeStep` for each schema version. 
 Finally, it is upgraded from version 1.0.4 to version 1.0.5, using a list of 
-UpgradeSteps with three steps in it: `UpgradeCalendarResource`, 
+`UpgradeSteps` with three steps in it: `UpgradeCalendarResource`, 
 `UpgradeCompanyId` and `UpgradeLastPublishDate`.
 
 +$$$
 
 **Note:** Be careful with upgrade steps with the same name in different packages. 
 This could result in the wrong version being used for the upgrade.
-(see com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking 
-and com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking as example).
+(see `com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking` 
+and `com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking` as example).
 
 $$$
 
-The upgrade process shown previously results in the creation of three rows in 
-the Release table, one per upgrade registration. In terms of data, each 
-registration is represented by a row in the `Release_ table` on portal’s 
-database. You can check the database to verify which upgrades have been executed 
-for each module.
+The upgrade process above results in the creation of three rows in the `Release`
+table, one per upgrade registration. In terms of data, each registration is
+represented by a row in the `Release_` table on portal’s database. You can check
+the database to verify the upgrades that were executed for each module.
 
 Next, you can learn how to specify differing module versions and schema versions
 in your bundle.
@@ -146,6 +146,13 @@ That's all you need to do to create an upgrade process for your app. Read the
 next section to learn how to migrate an existing upgrade process to the new
 framework.
 
+<!-- This seems like it's missing a huge step: How do you create an UpgradeStep?
+What goes into these classes? We don't want people to have to look at the
+examples and figure it out; we want to document it for them. -Rich -->
+
+<!-- I think the below sections on migrating from the old to the new should go
+somewhere in the From Liferay 6 to 7 Learning Path. -Rich --> 
+
 ## Migrating an existing upgrade process to the new framework [](id=migrating-an-existing-upgrade-process-to-the-new-framework)
 
 Migrating your older code to use the new framework is the same process covered 
@@ -155,25 +162,25 @@ review the older upgrade process next.
 ### Previous Upgrade Process Review [](id=previous-upgrade-process-review)
 
 Following the prior upgrade process, you have to define the property 
-upgrade.processes, a list of UpgradeProcesses representing the different 
+`upgrade.processes`, a list of `UpgradeProcesses` representing the different 
 upgrades for a specific version of your module.
 
-For instance, the code below shows the prior upgrade process for 
-Calendar-service module from v1.0.0 to 1.0.1, and then to 1.0.2. :
+For instance, the code below shows the previous process for upgrading 
+Calendar-service module from v1.0.0 to 1.0.1 and then to 1.0.2. 
 
-upgrade.processes=\
-    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_0,\
-    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_1,\
-    com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_2
+    upgrade.processes=\
+        com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_0,\
+        com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_1,\
+        com.liferay.calendar.hook.upgrade.UpgradeProcess_1_0_2
 
 Each step between versions was represented by a single class extending
-UpgradeProcess, with a method `doUpgrade`. This method was responsible for
-executing the internal steps to update the database to that concrete
-version. A method `getThreadhold` is provided also to specify the schema 
-version where the upgrade starts.
+`UpgradeProcess`, using a method called `doUpgrade`. This method was responsible
+for executing the internal steps to update the database to that concrete
+version. A method `getThreadhold` is provided also to specify the schema version
+where the upgrade starts.
 
 The following example represents the required operations to update the database 
-to v1.0.0. using the old framework:
+to v1.0.0 using the old framework:
 
     public class UpgradeProcess_1_0_0 extends UpgradeProcess {
     
@@ -190,7 +197,7 @@ to v1.0.0. using the old framework:
     }
 
 The following example represents the required operations to update the database 
-to v1.0.1. using the old framework:
+to v1.0.1 using the old framework:
 
     public class UpgradeProcess_1_0_1 extends UpgradeProcess {
     
@@ -209,7 +216,7 @@ to v1.0.1. using the old framework:
 
 
 The following example represents the required operations to update the database 
-to v1.0.2. using the old framework:
+to v1.0.2 using the old framework:
 
     public class UpgradeProcess_1_0_1 extends UpgradeProcess {
     
