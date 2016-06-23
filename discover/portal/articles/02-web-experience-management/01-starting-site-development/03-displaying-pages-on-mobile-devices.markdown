@@ -78,16 +78,17 @@ $$$
 <!-- Update the link above for 7.0, when available. -Cody -->
 
 You can add actions to a family from the Navigation menu of Site Administration.
-Select a page set's (e.g., Public Pages) *Options* button
-(![Options](../../../images/icon-options.png)) and then select the *Advanced*
-tab and the *Mobile Device Rules* option in the bottom menu. Use the *Select*
-button to select families to be applied either to a page group or to a single
-page. If you select the page group itself from the left-hand menu, the selected
-family applies to all the pages of the site by default. If, however, you select
-an individual page and then click the *Select* button, the families apply only
-to that page. You can select multiple families for a particular site or page and
-order them by priority. The families are checked in decreasing order of
-priority: the actions defined by the first family that applies are executed.
+Select a page set's (e.g., Public Pages) *Options*
+(![Options](../../../images/icon-options.png)) &rarr; *Configure* button and
+then select the *Advanced* tab and the *Mobile Device Rules* option in the
+bottom menu. Use the *Select* button to select families to be applied either to
+a page group or to a single page. If you select the page group itself from the
+left-hand menu, the selected family applies to all the pages of the site by
+default. If, however, you select an individual page and then click the *Select*
+button, the families apply only to that page. You can select multiple families
+for a particular site or page and order them by priority. The families are
+checked in decreasing order of priority: the actions defined by the first family
+that applies are executed.
 
 ![Figure 3: You can select a mobile device family to apply for a site or page from the Navigation section of Site Administration.](../../../images/mobile-device-selection.png)
 

@@ -17,9 +17,9 @@ select *Add Private Page* to add a private site page. You can manage a plethora
 of options from the Navigation menu including page name, page layout, and page
 template.
 
-You can also edit pages from the Navigation menu. To do this, select *Edit* from
-the Options icon next to a page or page set, which allows you to
-edit the page's basic information and configuration options.
+You can also edit pages from the Navigation menu. To do this, select *Configure*
+from the Options icon next to a page or page set, which allows you to edit the
+page's basic information and configuration options.
 
 ![Figure 2: The *Options* button next to a page or page set allows you to add a child page, edit the existing page(s), or delete the page(s).](../../../images/web-content-managing-single-page.png)
 
@@ -141,10 +141,10 @@ select *Expand* to see a full view of your page hierarchy.
 ![Figure 4: Expanding your page view gives you much more room to visualize your page hierarchy.](../../../images/expand-page-hierarchy.png)
 
 As stated previously, if you ever need to modify the page you've created for
-your site, select the *Edit* button from the Options button from the Navigation
-menu in the Menu. When configuring a specific page, you're given more options
-than when you were creating a new page. These extended options for configuring
-specific pages are covered in more detail later in this section.
+your site, select the *Configure Page* button from the Options button from the
+Navigation menu in the Menu. When configuring a specific page, you're given more
+options than when you were creating a new page. These extended options for
+configuring specific pages are covered in more detail later in this section.
 
 There are also configuration options that are only available for either
 indiviual pages or page groups only. You'll learn about options available for
@@ -156,10 +156,10 @@ private pages as a whole, and the individual pages residing within those groups.
 
 ### Customizing the Look and Feel of Site Pages [](id=customizing-the-look-and-feel-of-site-pages)
 
-When you select *Edit Public Pages*, it defaults to the Look and Feel tab. On
-this tab, you're presented with an interface that allows you to choose a theme
-for the current site. Themes can transform the entire look of the portal. They
-are created by developers and are easily installed using the Liferay
+When you select *Configure* for a page set, it defaults to the Look and Feel
+tab. On this tab, you're presented with an interface that allows you to choose a
+theme for the current site. Themes can transform the entire look of the portal.
+They are created by developers and are easily installed using the Liferay
 Marketplace. Since you don't have any themes beyond the default one installed
 yet, you'll use the default theme for your pages.
 
@@ -204,7 +204,7 @@ The next option configures the logo that appears for your site.
 
 By default, the Liferay logo is used for your site pages' logo. If you want to
 use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
-is easy: select the *Logo* tab from the *Edit Public Pages* interface and browse
+is easy: select the *Logo* tab from the *Configure* interface and browse
 to the location of your logo. Make sure your logo fits the space in the top left
 corner of the theme you're using for your web site. If you don't, you could wind
 up with a site that's difficult to navigate, as other page elements are pushed
@@ -231,8 +231,8 @@ Using the JavaScript window may be useful if your site's theme does *not* use
 JavaScript. In this case, the JavaScript window will contain *all* of your
 site's JavaScript and you can add some dynamic features to your site's pages.
 
-Next, you'll look at an advanced features of the *Edit Public Pages* interface:
-merging the current site's pages with the pages of the default site.
+Next, you'll look at an advanced features of the *Configure* interface: merging
+the current site's pages with the pages of the default site.
 
 ### Merging Pages From Other Sites [](id=merging-pages-from-other-sites)
 
@@ -322,9 +322,9 @@ When you decide to customize a single page, some different options that were not
 available when initially creating a page appear. Customizing a specific page can
 be done by navigating to the Navigation menu in the main Menu and selecting the
 *Options* icon next to the specific page you'd like to edit from the navigation
-tree. From the Options dropdown, select *Edit*. There are three groups that the
-options for customizing a specific page can be defined under. You'll learn what
-each group offers for your site pages.
+tree. From the Options dropdown, select *Configure Page*. There are three groups
+that the options for customizing a specific page can be defined under. You'll
+learn what each group offers for your site pages.
 
 ### Managing Page Content [](id=managing-page-content)
 
@@ -518,12 +518,12 @@ of a page layout. Page customizations are only visible to the user who made the
 customizations. By default, site members can make page customizations but
 non-site members and guests can't.
 
-To enable page customizations as an administrator, first click *Edit* from the
-*Options* button next to the Page you'd like to let site members modify. Then
-select the *Advanced* tab at the top of the page, expand the *Customization
-Settings* area, and click on the *Customizable* selector button. 
+To enable page customizations as an administrator, first click *Configure Page*
+from the *Options* button next to the Page you'd like to let site members
+modify. Then select the *Advanced* tab at the top of the page, expand the
+*Customization Settings* area, and click on the *Customizable* selector button. 
 
-![Figure 7: To enable page customizations, click on the *Edit* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../images/page-customizations.png)
+![Figure 7: To enable page customizations, click on the *Configure Page* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../images/page-customizations.png)
 
 Once you've enabled the *Customizable* selector, you can select the sections of
 the page you'd like to enable customization for, depending on the layout
@@ -531,12 +531,11 @@ template of your page. Enable one or more of the *Customizable* sections to
 allow site members to customize certain sections of the page. Regions that
 you've designated as customizable are colored blue.
 
-When site members visit your customizable page, they'll see the *Edit Pencil*
-icon (![Edit Pencil](../../../images/icon-edit-pencil.png)) with a notification
-saying *You can customize this page*. Site members can toggle whether to view or
-hide the customizable regions. If you toggle the selector to view customizable
-regions, the regions on the page are color-coded to help distinguish
-customizable vs. non-customizable sections of the page.
+When site members visit your customizable page, they'll see an extended Control
+Menu with a notification saying *You can customize this page*. Site members can
+toggle whether to view or hide the customizable regions. If you toggle the
+selector to view customizable regions, the regions on the page are color-coded
+to help distinguish customizable vs. non-customizable sections of the page.
 
 ![Figure 8: Customizable regions are colored green and non-customizable regions are colored red.](../../../images/color-coded-customizable-regions.png)
 
@@ -630,7 +629,8 @@ this with the following procedure:
    Page*. Remember, these pages by default are viewable only by members of the
    site.
 2. Create a page called *Admin Tips*.
-3. Click *Edit* from the Options button dropdown for the page in the left menu.
+3. Click *Configure Page* from the Options button dropdown for the page in the
+   left menu.
 4. Select *Permissions* from the *Options* icon
    (![Options](../../../images/icon-options.png)) in the top right corner of the
    screen.

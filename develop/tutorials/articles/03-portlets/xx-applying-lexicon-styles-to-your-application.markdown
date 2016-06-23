@@ -83,7 +83,7 @@ Here's an example of the add button pattern with a single item:
     <liferay-frontend:add-menu>
         <liferay-frontend:add-menu-item title='<%= LanguageUtil.get(request,
         "titleName") %>' url="<%= nameURL.toString() %>" />
-    <liferay-frontend:add-menu>
+    </liferay-frontend:add-menu>
 
 You can also find the add button pattern in Liferay's built-in apps. For
 example, the [Message Boards Admin application](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/message-boards/message-boards-web/src/main/resources/META-INF/resources/message_boards_admin/add_button.jsp)

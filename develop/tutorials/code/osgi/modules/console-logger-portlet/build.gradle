@@ -1,43 +1,36 @@
 buildscript {
-    repositories {
-        ivy {
-            url 'https://bndtools.ci.cloudbees.com/job/bnd.master/719/artifact/dist/bundles'
-            layout 'pattern', {
-                artifact '[module]/[artifact]-[revision].[ext]' /* OSGi repo pattern */
-            }
-        }
-		mavenCentral()
+	dependencies {
+		classpath group: "biz.aQute.bnd", name: "biz.aQute.bnd.gradle", version: "3.2.0"
+		classpath group: "com.liferay", name: "com.liferay.ant.bnd", version: "2.0.24"
+	}
+
+	repositories {
 		maven {
-			url 'https://repository.liferay.com/nexus/content/repositories/liferay-snapshots-ce/'
+			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
 		}
-    }
-    dependencies {
-        classpath 'biz.aQute.bnd:biz.aQute.bnd.gradle:3.0.0'
-		classpath 'com.liferay:com.liferay.ant.bnd:1.0.9'
-    }
+	}
 }
 
-apply plugin: 'biz.aQute.bnd.builder'
-sourceCompatibility = 1.7
-version='1.0'
-
-repositories {
-    mavenCentral()
-    maven {
-        url 'https://repository.liferay.com/nexus/content/repositories/liferay-snapshots-ce/'
-    }
-}
+apply plugin: "biz.aQute.bnd.builder"
 
 dependencies {
-    compile 'org.osgi:org.osgi.core:6.0.0'
-    compile 'org.osgi:org.osgi.compendium:5.0.0'
-    compile 'biz.aQute.bnd:biz.aQute.bnd.annotation:2.4.0'
-    compile 'javax.portlet:portlet-api:2.0'
-    compile 'javax.servlet:servlet-api:2.5'
-    compile 'com.liferay.portal:com.liferay.portal.kernel:2.0.0'
-    compile 'com.liferay.portal:com.liferay.util.bridges:2.0.0'
-    compile 'com.liferay.portal:com.liferay.util.taglib:2.0.0'
-    compile 'com.liferay.portal:com.liferay.util.java:2.0.0'
-    compile 'org.slf4j:slf4j-api:1.7.7'
-    compile 'org.slf4j:slf4j-simple:1.7.7'
+	compile group: "biz.aQute.bnd", name: "biz.aQute.bnd.annotation", version: "2.4.0"
+	compile group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+	compile group: "com.liferay.portal", name: "com.liferay.util.bridges", version: "2.0.0"
+	compile group: "com.liferay.portal", name: "com.liferay.util.java", version: "2.0.0"
+	compile group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
+	compile group: "javax.portlet", name: "portlet-api", version: "2.0"
+	compile group: "javax.servlet", name: "servlet-api", version: "2.5"
+	compile group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
+	compile group: "org.osgi", name: "org.osgi.core", version: "6.0.0"
+	compile group: "org.slf4j", name: "slf4j-api", version: "1.7.7"
+	compile group: "org.slf4j", name: "slf4j-simple", version: "1.7.7"
 }
+
+repositories {
+	maven {
+		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+	}
+}
+
+version = "1.0.0"

@@ -404,8 +404,8 @@ Page* page template included with @product@. If you're creating a Display Page
 manually, once you've added an Asset Publisher application to the page, open its
 configuration window. Then navigate to the Display Settings tab and check the
 *Set as the Default Asset Publisher for This Page* box. Also, for its display
-settings, set the Display Style to *Abstracts* and the Asset Link Behavior to
-*View in Context*.
+settings, set the Display Style to *Simple* and the Asset Link Behavior to *View
+in Context*.
 
 +$$$
 
