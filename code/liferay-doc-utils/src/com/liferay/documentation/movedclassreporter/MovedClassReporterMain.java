@@ -22,17 +22,17 @@ public class MovedClassReporterMain {
 
 	public static void main(String[] args) {
 		if (args == null || args.length < 3) {
-			System.out.println("Usage: MovedClassReporter oldDir newDir movedClassesArticle [removedClassesArticle]");
+			System.out.println("Usage: MovedClassReporter oldDir newDir movedClassesOutputFile [removedClassesOutputFile]");
 			return;
 		}
 
 		File oldDir = new File(args[0]);
 		File newDir = new File(args[1]);
-		File movedClassesArticle = new File(args[2]);
+		File movedClassesOutputFile = new File(args[2]);
 
-		File removedClassesArticle = null;
+		File removedClassesOutputFile = null;
 		if (args.length > 3) {
-			removedClassesArticle = new File(args[3]);
+			removedClassesOutputFile = new File(args[3]);
 		}
 
 		if (!oldDir.isDirectory()) {
@@ -191,11 +191,14 @@ public class MovedClassReporterMain {
 		String newZipName = newDir.getName() + ".zip";
 		
 		TemplateProcessor movedClassesTemplateProcessor = new TemplateProcessor();
-		movedClassesTemplateProcessor.processMovedClassesTemplate(movedClasses,  movedClassesArticle, oldZipName, newZipName);
+		movedClassesTemplateProcessor.processMovedClassesTemplate(movedClasses,  movedClassesOutputFile, oldZipName, newZipName);
+		System.out.println("Reported moved classes to file: " + movedClassesOutputFile.getPath());
 
-		if (removedClassesArticle != null) {
+		if (removedClassesOutputFile != null) {
 			TemplateProcessor removedClassesTemplateProcessor = new TemplateProcessor();
-			removedClassesTemplateProcessor.processRemovedClassesTemplate(removedClasses, removedClassesArticle, oldZipName, newZipName);
+			removedClassesTemplateProcessor.processRemovedClassesTemplate(removedClasses, removedClassesOutputFile, oldZipName, newZipName);
+			System.out.println("Reported removed classes to file: " + removedClassesOutputFile.getPath());
+
 		}
 	}
 
