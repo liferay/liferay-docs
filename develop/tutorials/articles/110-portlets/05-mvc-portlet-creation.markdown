@@ -17,9 +17,9 @@ controller logic (maybe just a couple of action methods), you can put all your
 controller code in the `-Portlet` class. If you have more complex
 needs (lots of actions, complex render logic to implement, or maybe even some
 resource serving code), consider breaking the
-controller up into [MVC Action Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-action-command), [MVC Render Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-render-command), and [MVC Resource Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
+controller into [MVC Action Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-action-command), [MVC Render Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-render-command), and [MVC Resource Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
 
-In this tutorial you'll learn to implement a Liferay MVC portlet with all of the
+In this tutorial you'll learn to implement a Liferay MVC portlet with all the
 controller code in the `-Portlet` class.
 
 ## Configuring a WEB Module
@@ -39,6 +39,11 @@ like this:
                 view.jsp
         build.gradle
         bnd.bnd
+
+
+<!-- I think the naming of this module isn't following our conventions. Correct
+me if I'm wrong, but I think BLADE modules are named something like
+com.liferay.docs.liferaymvc.web. -Rich -->
 
 Of course you're not tied to the use of Gradle or BndTools to build your
 project. However, you do need a JAR with the proper OSGi headers defined, which
@@ -73,8 +78,9 @@ the `javax.portlet.Portlet` service must be published. Declare this using an
     public class LiferayMVCPortlet extends MVCPortlet {
     }
 
-That's good in itself, but the component needs to be fleshed out with some
-properties:
+Since Liferay's `MVCPortlet` is itself an extension of `javax.portlet.Portlet`,
+you've provided the right implementation. That's good in itself, but the
+component needs to be fleshed out with some properties:
 
     @Component(
         immediate = true,
@@ -98,7 +104,9 @@ attributes you used to specify in `liferay-portlet.xml`, `liferay-display.xml`,
 and `portlet.xml`. To find a list of all the Liferay-specific
 attributes you can specify as properties in your portlet components, check out
 the
-[liferay-portlet-app_7_0_0.dtd](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html).
+[liferay-portlet-app_7_0_0.dtd](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html). 
+This is still maintained as a DTD to keep compatibility with the JSR-168 and
+JSR-286 portlet specs. 
 
 Consider the `<instanceable>` element from the above link as an example. To
 specify that property in your component, use this syntax in your property list:
@@ -111,18 +119,35 @@ The properties namespaced with `javax.portlet....` are elements of the
 Liferay's DTD files can be found
 [here](https://docs.liferay.com/portal/7.0/definitions/).
 
-You can publish this portlet component, but it doesn't do anything yet. Implement
-the Controller code next.
+You can publish this portlet component, but it doesn't do anything yet. You'll
+implement the Controller code next.
 
 ## Writing Controller Code
 
-As you're aware, your application will receive requests from the frontend, and
-you'll need a way to process the request and respond to it.
+In MVC, your controller receives requests from the front end, and it receives
+data from the back end. It's responsible for sending that data to the right
+front end view so it can be displayed to the user, and it's responsible for
+taking data the user entered in the front end and passing it to the right back
+end service. For this reason, it needs a way to process requests from the front
+end and respond to them appropriately, and it needs a way to determine the
+appropriate front end view to pass data back to the user. 
+
+For data coming from the user to the back end, Liferay's MVC portlet framework
+offers you two ways to do this. One of these is designed for smaller
+applications, and the other is designed for larger applications. First, you'll
+learn about processing requests in smaller applications. After that, you'll
+learn about how data is rendered from the back end to the user. For processing
+requests in larger applications, see the tutorials [MVC Action Command](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command), 
+[MVC Render Command](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command), 
+and [MVC Resource Command](/develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
+But read these after you finish this one, so you can understand how the whole
+framework works. 
 
 ### Action Methods
 
-If you have a very simple application, you can implement all of your controller
-code in the `-Portlet` class (the same one you annotated with `@Component`).
+If you have a small application, you can implement all your controller code in
+your portlet class (the same one you annotated with `@Component`), which acts as
+your controller by itself. For processing requests, you use action methods.
 Here's what an action method might look like:
 
     public void addGuestbook(ActionRequest request, ActionResponse response)
@@ -149,13 +174,15 @@ Here's what an action method might look like:
     }
 
 In this action method, the `ActionRequest` object is used to retrieve two pieces
-of information that are needed to call the `addGuestbook` action, which is the
+of information that are needed to call the `addGuestbook` service, which is the
 point of the method. If successful, the `SessionMessages` object is used to
 store a success message. If an exception is thrown, it's caught, and the
 appropriate `SessionErrors` object is used to store the exception message. Note
 the call to the `setRenderParameter` method on the `ActionResponse`. This is
 used to render the `edit_guestbook.jsp` if a guestbook could not be added, by
-setting the `mvcPath` parameter.
+setting the `mvcPath` parameter. This parameter is a convention in Liferay's
+`MVCPortlet` framework that denotes the next view that should be displayed to
+the user. 
 
 ### Render Logic
 
@@ -167,13 +194,15 @@ your Component:
     "javax.portlet.init-param.view-template=/view.jsp",
 
 With these, you're directing the default rendering to your `view.jsp`. The
-`template-path` property is used to tell the MVC framework where your JSP files
-live. In the above example, `/` was used to mean that the JSP files are located
-in the root `resources` directory of your project. That's why it's important to
-follow Liferay's standard directory structure, outlined above. Here's the path
-of a hypothetical Web module's resource directory:
+`template-path` property tells the MVC framework where your JSP files live. In
+the above example, `/` means that the JSP files are located in your project's
+root `resources` folder. That's why it's important to follow Liferay's standard
+folder structure, outlined above. Here's the path of a hypothetical Web
+module's resource folder:
 
     my-application-web/src/main/resources/META-INF/resources
+
+<!-- Again, I think the top level folder isn't named right. -Rich --> 
 
 In this case, the `view.jsp` file is found at
 
@@ -231,13 +260,14 @@ Here's an example:
 
 With render logic, you're providing the view layer with information to
 display the data properly to the user. In this case, there's some information
-needed at the outset, then some logic in the `if` statements that determine if
-there are any guestbooks that can be displayed. If not, one should be created by
-default. If there are guestbooks in the database, the ID of the first one in the
-list retrieved via the `getGuestbooks` method should be displayed. This is
-accomplished by passing the appropriate ID to the `RenderRequest` using the
-`setAttirbute` method. Since this logic should be executed before the default
-`render` method, the method concludes by calling `super.render`.
+needed at the outset, and then there's some logic in the `if` statements that
+determine if there are any Guestbooks that can be displayed. If not, a Guestbook
+should be created by default. If there are Guestbooks in the database, the ID
+that's first in the list retrieved via the `getGuestbooks` method should be
+displayed. This is accomplished by passing the appropriate ID to the
+`RenderRequest` using the `setAttirbute` method. Since this logic should be
+executed before the default `render` method, the method concludes by calling
+`super.render`.
 
 +$$$
 
@@ -245,7 +275,7 @@ accomplished by passing the appropriate ID to the `RenderRequest` using the
 Refer to [the tutorial on Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
 for a more detailed explanation. In short, obtain a reference to the service by
 annotating a setter method with the `@Reference` Declarative Services
-annotation, and set the service object as a private variable.
+annotation and set the service object as a private variable.
 
     private GuestbookService _guestbookService;
 
@@ -263,8 +293,8 @@ $$$
 
 ### Setting and Retrieving Request Parameters and Attributes
 
-In the render method and the action method of the portlet class, and even in
-your JSPs, you can use a handy utility class called
+In the portlet class's render method action methods, and even in your JSPs, you
+can use a handy utility class called
 [`ParamUtil`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html)
 to retrieve parameters from an `ActionRequest` or a `RenderRequest`.
 
@@ -285,6 +315,8 @@ in your portlet class. To read the attribute in a JSP, use the method
 
 Since the `<portlet:defineObjects>`
 
+<!-- Do you have a missing paragraph above? -Rich --> 
+
 To set parameters into the response in your controller code, you can use the
 `setRenderParameter` method.
 
@@ -298,7 +330,7 @@ but there's more to the view layer than that.
 You now know how to extend Liferay's `MVCPortlet` to write controller code and
 register a Component in the OSGi runtime. You also need a view layer, of course,
 and for that, you'll use JSPs. Liferay's Lexicon Experience Language can be used
-to guide your app's styling so it matches Liferay's. To learn about Lexicon, and
+to guide your app's styling so it matches Liferay's. To learn about Lexicon and
 about some of Liferay's taglibs, refer to the tutorial [Applying Lexicon Styles to Your App](develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app).
 This section will briefly cover how to get your view layer working, from
 organizing your imports in one JSP file, to configuring URLs that direct
@@ -306,8 +338,8 @@ processing to your code in the portlet class.
 
 It's a good practice to put all your Java imports, tag library declarations, and
 variable initializations into an `init.jsp` file. If you use Liferay IDE to
-create your Web module, these taglib declarations and initializations will
-automatically be added to your `init.jsp`:
+create your Web module, these taglib declarations and initializations are
+automatically added to your `init.jsp`:
 
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -361,6 +393,11 @@ Action URLs can be similarly created with the `liferay-portlet` taglib:
     <liferay-portlet:actionURL name="doSomething" var="doSomethingURL">
         <portlet:param name="redirect" value="<%= redirect %>" />
     </liferay-portlet:actionURL>
+
+<!-- As far as I know, it's not a best practice to use the liferay-portlet
+taglib where a portlet taglib will do. The portlet taglibs have similar
+functionality to this using the var attribute for both render and action, where
+the Liferay taglib is inconsistent with varImpl and var. -Rich --> 
 
 The `name` of the action URL should match the action method name in your portlet
 class; that's all Liferay's MVC framework needs in order to know that the action
