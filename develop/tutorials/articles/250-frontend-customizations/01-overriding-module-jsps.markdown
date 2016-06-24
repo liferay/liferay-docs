@@ -1,4 +1,4 @@
-# Overriding JSPs from a Module [](id=overriding-jsps-from-a-module)
+# Overriding a Module's JSPs [](id=overriding-a-modules-jsps)
 
 Liferay applications often contain JSPs. Sometimes you might need to override
 one of them. If you need to override the JSPs from a module deployed to the OSGi

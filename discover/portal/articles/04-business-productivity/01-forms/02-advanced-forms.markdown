@@ -406,7 +406,7 @@ the URL you entered into the data provider form is the same as the one generated
 for accessing the `get-countries` JSON web service. You can find the URL for any
 registered JSON web service using this same procedure. 
 
-The *Displayed JSON Atrribute* field is where you specify which field you want
+The *Displayed JSON Attribute* field is where you specify which field you want
 to use to populate your select list. In this case, `nameCurrentValue` provides
 the full, properly capitalized country name, and that's what you want users of
 the form to see.
@@ -506,7 +506,7 @@ forms in each form's Form Settings section.
 It's possible to have a notification email sent each time a form entry is
 successfully submitted. Open the form's Form Settings section (click the
 *Options* (![Options](../../../images/icon-options.png)) button &rarr;
-*Settings*). Click the *Email Notificaitons* tab, enable the option to *Send an
+*Settings*). Click the *Email Notifications* tab, enable the option to *Send an
 email notification for each entry*, and fill out the fields:
 
 -  From Name: The name of the sender. This could be the site name, the form,
