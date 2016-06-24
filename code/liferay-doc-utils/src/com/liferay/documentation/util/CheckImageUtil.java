@@ -11,7 +11,7 @@ import java.util.List;
 public class CheckImageUtil {
 	
 	public static List<String> checkImgSrc(
-			String content, String article, int line, int dirsUp) {
+			String content, String article, int line, int dirsUp, String imageFolder) {
 
 		List<String> warnings = new ArrayList<String>();
 
@@ -29,7 +29,7 @@ public class CheckImageUtil {
 				}
 
 				String targetImagePath = imagePathStart.toString() +
-					"images/";
+					imageFolder + "/";
 				if (!imgSrc.startsWith(targetImagePath)) {
 					StringBuffer sb = new StringBuffer(6);
 					sb.append("Invalid image path: ");
@@ -41,7 +41,7 @@ public class CheckImageUtil {
 					warnings.add(sb.toString());
 				}
 				else {
-					imgSrc = imgSrc.replace(targetImagePath, "./images/");
+					imgSrc = imgSrc.replace(targetImagePath, "./" + imageFolder + "/");
 
 					if (!imgSrc.contains("CDATA") &&
 						!(new File(imgSrc).exists())) {
