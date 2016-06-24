@@ -1,17 +1,17 @@
 # Managing Campaigns [](id=managing-campaigns)
 
-A campaign represents an effort to expose a certain user segment to a certain
-set of assets within a specific period of time. To manage campaigns for a site,
+A campaign represents an effort to expose certain user segments to a set of
+assets within a specific period of time. To manage campaigns for a site,
 navigate to *Site Administration* &rarr; *Configuration* &rarr; *Audience
 Targeting* &rarr; *Campaigns*. To create a new campaign, select the
-(![Add Campaign](../../images-dxp/icon-add.png)) button. You need to select a
-user segment to target, a start date and an end date, and a priority, as well as
+(![Add Campaign](../../images-dxp/icon-add.png)) button. You need to select the
+user segments to target, a start date and an end date, and a priority, as well as
 a name and, optionally, a description. You also have to indicate whether or not
 the campaign you create should be active or inactive. When you've entered the
-required information, click *Save*. The user segment you select when creating a
+required information, click *Save*. The user segments you select when creating a
 campaign represents the portal users targeted by the campaign. The start and end
 dates together specify the duration of the campaign. There can be multiple
-campaigns active at the same time that target the same user segment. In these
+campaigns active at the same time that target the same user segments. In these
 situations, the priority attribute of the campaigns determines which campaign
 takes precedence. Finally, you can activate or deactivate a campaign via the
 *Active* attribute of a campaign. Deactivating a campaign disables the effect of
@@ -68,16 +68,28 @@ website are affected.
 One of the most interesting features of campaigns is that they allow you to
 measure the effectiveness of a campaign. This provides your marketing team with
 real feedback from users. When creating a campaign, you can define the user
-actions that you want to track. The Audience Targeting app can display reports
-of how often those actions are triggered. For example, suppose you want to run a
-campaign for an event that your company is hosting next month. For this event,
-imagine that you have created a main page for the event which contains a Youtube
-video and a banner which says *Register Now*. Imagine also that you have a blog
-entry about the event displayed on several different pages of your website and a
-Register page which contains the form to pay for the event. In this campaign,
-your goal is to get as many people to register as possible. However, you will
-probably be interested in tracking the following information to see if there is
-something not working as your team expected:
+actions that you want to track. This can be done by defining *Metrics*.
+
++$$$
+
+**Note:** Metrics were previously known as Tracking Actions and were aggregated
+as part of the campaign editing options. Since Liferay 7, Tracking Actions have
+been renamed to Metrics and are aggregated in custom reports. As part of the
+upgrade process to Liferay 7, for each campaign containing Tracking Actions, a
+custom report with the equivalent Metrics is automatically added.
+
+$$$
+
+The Audience Targeting app can display reports of how often those actions are
+triggered. For example, suppose you want to run a campaign for an event that
+your company is hosting next month. For this event, imagine that you have
+created a main page for the event which contains a Youtube video and a banner
+which says *Register Now*. Imagine also that you have a blog entry about the
+event displayed on several different pages of your website and a Register page
+which contains the form to pay for the event. In this campaign, your goal is to
+get as many people to register as possible. However, you will probably be
+interested in tracking the following information to see if there is something
+not working as your team expected:
 
  - Visits to the main page of the event
  - Clicks to view the video

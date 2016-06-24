@@ -94,6 +94,15 @@ completely separate systems. They should not, for example, share the same the
 database. When Remote Live staging is enabled, all the necessary information is
 transferred over the network connecting the two servers.
 
++$$$
+
+**Important:** When applying patches to a remote staging environment, you must
+apply patches to all of your servers being used. Having servers on different
+patch levels is not a good practice. It is essential that all servers are
+updated to the same patch level to ensure remote staging works correctly.
+
+$$$
+
 Before a site administrator can enable Remote Live staging for a site, the
 remote Liferay server must be added to the current Liferay server's list of
 allowed servers. The current Liferay server must also be added to the remote
