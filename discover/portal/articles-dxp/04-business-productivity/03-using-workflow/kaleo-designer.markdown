@@ -23,9 +23,9 @@ The Kaleo Designer lets you develop workflow definitions using a convenient drag
 and drop user interface, so you don't need to be familiar with any scripting
 languages or with writing XML by hand. However, some of the features can be
 enhanced if you're familiar with one of the supported scripting languages. All
-that to say, don't be scared away when you come to a scary looking block of code
-in this article. Just decide if you need the feature, and find someone who knows
-one of the supported scripting languages to help you out.
+that to say, don't be scared off when you come to a block of code in this
+article. Just decide if you need the feature, and find someone familiar with one
+of the supported scripting languages to help you out.
 
 So what scripting languages are supported for use in your workflow definitions?
 Beanshell, DRL, Groovy, JavaScript, Python, and Ruby. 
@@ -71,8 +71,8 @@ workflow.
 
 ## Saving and Publishing Workflow Definitions
 
-You're eager to design a workflow definition, but first look below the canvas to see the
-buttons that let you *Save as Draft*, *Publish*, or *Cancel*. Saving the
+You're eager to design a workflow definition, but first look below the canvas to
+see the buttons that let you *Save as Draft*, *Publish*, or *Cancel*. Saving the
 definition as a draft lets you save your work, so it's not lost (due to a
 timeout, for example). It won't be published (and usable in @product@), and it
 won't be considered a version, until the Publish button is clicked. Each time
@@ -141,9 +141,9 @@ Groovy that sets the status of the asset as *denied*, then sets it to *pending*.
                             WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("denied"), workflowContext);
                             WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("pending"), workflowContext);
 
-Why would it first set the status to one thing and then to another like that?
-Because for some assets, the *denied* status is used to send the asset creator
-an email notification that the item has been denied.
+Why would the action script first set the status to one thing and then to
+another like that?  Because for some assets, the *denied* status is used to send
+the asset creator an email notification that the item has been denied.
 
 The end node in your workflow definition has an action configured on it by
 default, on entry to the end node:
@@ -175,8 +175,8 @@ You can configure multiple assignments for a task.
 
 +$$$
 
-**Note:** What does it mean to assign a workflow task by Resource Action? Think of an
-*UPDATE* resource action. If your workflow definition specifies the UPDATE
+**Note:** What does it mean to assign a workflow task by Resource Action? Think
+of an *UPDATE* resource action. If your workflow definition specifies the UPDATE
 action in an assignment, then anyone who has permission to update the type of
 asset being processed in the workflow is assigned to the task.
 
@@ -227,13 +227,16 @@ is. If it's not, it's assigning the task to the *Site Content Reviewer* role.
 
 $$$
 
+It's good to assign a task to a user, and it's even more useful if they can get
+a notification that something is required of them in the workflow.
+
 ### Notifications
 
 Notifications are often sent to tell task assignees that something is required
 of them in the workflow, or to update asset creators on the status of the
-process.  They can be sent for any type of node in the workflow, though.  To set
-up notifications, double click on Notifications in a node's Settings tab and
-create a notification.
+process. They can be sent for tasks or any other type of node in the workflow.
+To set up notifications, double click on Notifications in a node's Settings tab
+and create a notification.
 
 ![Figure x: You can send notification from a Task node.](../../../images-dxp/kaleo-designer-notification.png)
 
@@ -256,20 +259,7 @@ You can configure multiple notifications on a node.
 Commonly, the assignment and notification settings are teamed up so a user
 receives a notification when assigned a task in the workflow. To do this you
 just choose *Task Assignees* under *Recipient Type* when configuring the
-workflow.
-
-## Task Nodes
-
-Task nodes have several parts and are the most complex parts of a workflow
-definition. Notifications, Assignments, and Actions defined in scripts can all
-be part of a task node. 
-
-Drag and drop a task node on your workflow canvas if you have not already. Open
-its settings and give it a name as described above. Then double click *Actions*
-in the task's Settings pane.
-
-You can write a script defining an action that's triggered for your task in
-Beanshell, DRL, Groovy, JavaScript, Python, or Ruby.
+notification.
 
 ## Transitions
 
@@ -296,15 +286,64 @@ next step in the workflow.
 
 ![Figure x: In the Single Approver workflow, a user in the Review task can choose to Approve or Reject the asset, which sends the asset either to the EndNode or to the Update task.](../../../images-dxp/kaleo-designer-transition-link.png)
 
-To rename transitions, click on the arrow going from the Start node to the
-Review node and set the name to Submit and set Default to true–you’ll leave all
-the others as false. Set the name of the Review to Update transition to Reject
-and the Update to Review transition to Resubmit. Lastly, set the name of the
-Review to Endnode transition to Approve.
+To rename transitions, click on the arrow representing the transition
+and use the Setting tab to set the name just like you do for a node.
 
-## Start and End
+## Task Nodes
 
-<!-- Can you only have one startnode and endnode in a definition? -->
+Task nodes have several parts and are the most complex parts of a workflow
+definition. Notifications, Assignments, and Actions defined in scripts can all
+be part of a task node. 
+
+Drag and drop a task node on your workflow canvas if you have not already. Open
+its settings and give it a name as described above. Then double click *Actions*
+in the task's Settings pane.
+
+You can write a script defining an action that's triggered for your task in
+Beanshell, DRL, Groovy, JavaScript, Python, or Ruby.
+
+As described above, you can configure notifications and assignments on task
+nodes.
+
+## Start and End Nodes
+
+Start and end nodes are used to kick off the workflow processing, and to bring
+the asset in the workflow to its final, approved state. Often times, you can
+use the default start node and end node that are added to a new workflow
+definition by the Kaleo Designer without modification. If you want to do some
+more processing (in the case of a start node) add an action to the node using
+the Settings tab, as described in the section on Actions above.
+
+End nodes have an action by default, that simply sets the workflow status to
+Approved using the Groovy scripting language:
+
+    import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
+                            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+
+                            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
+
+Feel free to add more to the action script if you need to do additional
+processing.
+
+By default, there's a transition connecting the start node and end node, but
+you'll probably want to delete it, since most workflows won't proceed straight
+form the initial state to approved.
+
+## State Nodes
+
+State nodes can have Notifications and Actions. The default end node added by
+Kaleo Designer is simply a pre-configured state node that sets the workflow
+status to Approved. Perhaps you want to create a node that sets the status to
+*Expired*. You could create a state node for it by dragging one onto your Kaleo
+Designer canvas, then configuring an action in it that sets the status to
+Expired. Here's what it would look like in Groovy:
+
+    import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
+                            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+
+                            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("expired"), workflowContext);
+
+Next learn to do parallel processing using fork and join nodes.
 
 ## Forks and Joins
 
@@ -314,15 +353,25 @@ process. For this purpose, you'll transition to a fork node, make two
 transitions from the fork to your parallel tasks, and then come back together
 using a join  node.
 
+![Figure x: Forks and Joins are used to enable parallel processing in the
+workflow.](../../../images-dxp/kaleo-designer-fork-join.png)
+
 With a regular Join node, in order for the workflow to proceed beyond the join,
 the transition from both parallel executions must be invoked. However, if you
 use a Join XOR node instead, the workflow will proceed as long as the transition
 from one of the parallel executions is invoked.
 
+Keep in mind that you must balance your fork nd join nodes. In other words, for
+every fork, there must be a join that bring the parallel workflow threads back
+together.
+
 ## Conditions
 
-From the Category Specific Approval, this is the condition that starts the
-workflow (coming directly from the start node):
+Sometimes you need to check for something on the asset before continuing in the
+workflow. You basically need a node for scripting.
+
+From the Category Specific Approval, this is the script in the condition node
+that starts the workflow (coming directly from the start node):
 
     import com.liferay.asset.kernel.model.AssetCategory;
     import com.liferay.asset.kernel.model.AssetEntry;
@@ -362,21 +411,17 @@ workflow (coming directly from the start node):
         }
     }
 
-Any asset with a category<!--LINK TO CATEGORIES DOCS--> of *legal* will proceed
-through the workflow.
-			
-## States
+This script looks up the asset in question, retrieves its [asset category](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content), and
+sets an initial `returnValue`. Then checks to see if it has been marked with the
+*legal* category. If not it goes through *Content Review* (the content-review
+task in the workflow), and if it does it goes through *Legal Review* (the
+legal-review task in the workflow).
 
+Now you're equipped with the basic knowledge to design beautiful, effective
+workflows so taht your assets can be properly reviewed before they're published
+in your sites..
 
-
-
-
-
-
-### 
-
-
-The Single Approver workflow definition is included in @product@ by default. To
+<!-- The Single Approver workflow definition is included in @product@ by default. To
 get a look at how it’s defined, click Kebab menu and then Edit. The graphical
 interface for editing or defining a workflow appears below the Details section
 of the Single Approver edit screen.
@@ -444,4 +489,4 @@ Once you’re finished, click Publish. Your workflow is now ready to use!
 Back on the third step of the New Process wizard, click Actions → Choose next to
 the workflow you just created. Then click Next.
 
-
+-->
