@@ -12,12 +12,12 @@ By default, @product@ uses a document library store option called Simple File
 Store to store documents and media files on the file system (local or mounted)
 of the server @product@'s running on. The store's default root directory is
 `[Liferay Home]/data/document_library`. You can specify a different root
-directory from within [System Settings](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/system-settings).
+directory from within [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings).
 To access System Settings, open the *Menu*
 (![Menu](../../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
 Configuration &rarr; System Settings*. From System Settings, navigate to
 *Platform* and then search for and select the entry *Simple File System Store*.
-For the store's *Root dir* value, specify a path relative to the [Liferay Home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home)
+For the store's *Root dir* value, specify a path relative to the [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
 or an absolute path; then click the *Update* button. The document library store
 switches immediately to the new root dir. 
 
@@ -46,7 +46,7 @@ JCRStore to store files in a database.
 
 For example, you can store documents and media files in your Liferay instance's
 database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
-portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home):
+portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home):
 
     dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
 
@@ -57,7 +57,7 @@ There are properties related to document library stores that have been moved
 from `portal-ext.properties` to OSGI configuration files. The following mapping
 shows you how to configure those properties if needed:
 
-#### CMIS
+#### CMIS [](id=cmis)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.cmis.CMISStore
     osgi/configs: com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg
  
@@ -68,7 +68,7 @@ credentialsUsername | none | true
 credentialsPassword | none | true
 systemRootDir | Liferay Home | true
  
-#### File Store
+#### File Store [](id=file-store)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
     osgi/configs: com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg
 
@@ -76,7 +76,7 @@ Property | Default | Required
 ---------|---------|---------
 rootDir | data/document_library | false
 
-#### Advanced File Store
+#### Advanced File Store [](id=advanced-file-store)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
     osgi/configs: com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
  
@@ -84,7 +84,7 @@ Property | Default | Required
 ---------|---------|---------
 rootDir | data/document_library | false
  
-#### JCR
+#### JCR [](id=jcr)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.jcr.JCRStore
     osgi/configs: com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg
 
@@ -101,7 +101,7 @@ jackrabbitRepositoryHome | home | true
 jackrabbitCredentialsUsername | none | true
 jackrabbitCredentialsPassword | none | true
 
-#### S3
+#### S3 [](id=s3)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.s3.S3Store
     osgi/configs: com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg
 
@@ -184,7 +184,7 @@ you can use to synchronize them. If you don't have LDAP, you need to ensure
 manually that the credentials and authentication methods are the same.
 
 In order to authenticate with the third-party repository, you need to store
-passwords for the user sessions. In your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home),
+passwords for the user sessions. In your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
 set a [`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
 portal property to `true` in a `portal-ext.properties` file:
 
