@@ -136,10 +136,10 @@ The Single Approver workflow contains an Update task with an action written in
 Groovy that sets the status of the asset as *denied*, then sets it to *pending*. 
 
     import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
-                            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+    import com.liferay.portal.kernel.workflow.WorkflowConstants;
 
-                            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("denied"), workflowContext);
-                            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("pending"), workflowContext);
+    WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("denied"), workflowContext);
+    WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("pending"), workflowContext);
 
 Why would the action script first set the status to one thing and then to
 another like that?  Because for some assets, the *denied* status is used to send
@@ -149,9 +149,9 @@ The end node in your workflow definition has an action configured on it by
 default, on entry to the end node:
 
     import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
-                            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+    import com.liferay.portal.kernel.workflow.WorkflowConstants;
 
-                            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
+    WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
 
 This is a Groovy script that just updates the status to *approved*, since that's
 usually the goal of a workflow process.
@@ -252,9 +252,8 @@ the type of asset in the notification:
 
 You can also choose to link the sending of the notification to entry into the
 node (On Entry), when a task is assigned (On Assignment), or when the workflow
-processing is leaving a node (On Exit).
-
-You can configure multiple notifications on a node.
+processing is leaving a node (On Exit). You can configure multiple notifications
+on a node.
 
 Commonly, the assignment and notification settings are teamed up so a user
 receives a notification when assigned a task in the workflow. To do this you
@@ -318,9 +317,9 @@ End nodes have an action by default, that simply sets the workflow status to
 Approved using the Groovy scripting language:
 
     import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
-                            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+    import com.liferay.portal.kernel.workflow.WorkflowConstants;
 
-                            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
+    WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
 
 Feel free to add more to the action script if you need to do additional
 processing.
@@ -339,9 +338,9 @@ Designer canvas, then configuring an action in it that sets the status to
 Expired. Here's what it would look like in Groovy:
 
     import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
-                            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+    import com.liferay.portal.kernel.workflow.WorkflowConstants;
 
-                            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("expired"), workflowContext);
+    WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("expired"), workflowContext);
 
 Next learn to do parallel processing using fork and join nodes.
 
@@ -418,8 +417,8 @@ task in the workflow), and if it does it goes through *Legal Review* (the
 legal-review task in the workflow).
 
 Now you're equipped with the basic knowledge to design beautiful, effective
-workflows so taht your assets can be properly reviewed before they're published
-in your sites..
+workflows so that your assets can be properly reviewed before they're published
+in your sites.
 
 <!-- The Single Approver workflow definition is included in @product@ by default. To
 get a look at how it’s defined, click Kebab menu and then Edit. The graphical
