@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<project name="Migration Learning Path Conversion" basedir=".">
+
+	<property name="doc.dir" value="migration"/>
+
+	<import file="../build.xml" />
+
+	<property name="doc.type" value="learnpath"/>
+
+</project>
