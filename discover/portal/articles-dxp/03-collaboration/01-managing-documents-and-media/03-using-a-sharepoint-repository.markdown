@@ -54,7 +54,7 @@ administrators.
 Before you can use SharePoint as an external repository with @product@, you must
 set up a few things on the SharePoint host and in the SharePoint server application.
 
-### Step 1: Enable Basic Authentication on the SharePoint Host
+### Step 1: Enable Basic Authentication on the SharePoint Host [](id=step-1-enable-basic-authentication-on-the-sharepoint-host)
 
 So that Liferay's SharePoint Connector can authenticate against the SharePoint
 web services, you must enable Basic Authentication on the SharePoint host. As
@@ -88,7 +88,7 @@ You've configured Basic Authentication on the SharePoint host. Next, you must
 make sure to install SharePoint's CMIS Connector add-on, if it's not already
 installed on your SharePoint server.
 
-### Step 2: Install SharePoint's CMIS Connector on SharePoint
+### Step 2: Install SharePoint's CMIS Connector on SharePoint [](id=step-2-install-sharepoints-cmis-connector-on-sharepoint)
 
 SharePoint utilizes a CMIS Connector and a CMIS Producer to interface with
 @product@. If they're already installed on your SharePoint server, then you can
@@ -106,7 +106,7 @@ deploy that file. When deployment completes, Solution Properties shows the
 solution is successfully deployed to all target sites. Now it's time to
 activate the SharePoint site as a CMIS Producer.
 
-### Step 3: Activate the SharePoint Site as a CMIS Producer
+### Step 3: Activate the SharePoint Site as a CMIS Producer [](id=step-3-activate-the-sharepoint-site-as-a-cmis-producer)
 
 The Producer makes SharePoint repositories available through the CMIS Connector.
 Choose the SharePoint site containing the document libraries to be used as
@@ -123,7 +123,7 @@ Now any document library created under this SharePoint site is CMIS enabled.
 Lastly, so that users can leverage file versioning between @product@ and
 SharePoint, you must enable versioning support in your SharePoint library. 
 
-### Step 4: Enable Versioning Support in the SharePoint Library
+### Step 4: Enable Versioning Support in the SharePoint Library [](id=step-4-enable-versioning-support-in-the-sharepoint-library)
 
 You must enable versioning in SharePoint library for @product@'s check-in/out
 features to work with SharePoint. To enable it, follow these steps: 
@@ -142,7 +142,7 @@ You've set SharePoint to accept versioning requests from @product@.
 
 Next, you'll configure authentication for @product@
 
-### Step 5: Authentication on Liferay
+### Step 5: Authentication on Liferay [](id=step-5-authentication-on-liferay)
 
 In order to authenticate with the third-party repository, you need to store
 passwords for the user sessions. You must configure an authentication type that
@@ -171,7 +171,7 @@ under *Configuration &rarr; Instance Settings &rarr; Authentication*.
 
 Next, you must enable @product@ users to access the SharePoint server.
 
-### Step 6: Synchronize Credentials
+### Step 6: Synchronize Credentials [](id=step-6-synchronize-credentials)
 
 As a @product@ system administrator, you must ensure that the same credentials
 and authentication are used in @product@ and in SharePoint.

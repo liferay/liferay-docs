@@ -57,7 +57,7 @@ There are properties related to document library stores that have been moved
 from `portal-ext.properties` to OSGI configuration files. The following mapping
 shows you how to configure those properties if needed:
 
-#### CMIS
+#### CMIS [](id=cmis)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.cmis.CMISStore
     osgi/configs: com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg
  
@@ -68,7 +68,7 @@ credentialsUsername | none | true
 credentialsPassword | none | true
 systemRootDir | Liferay Home | true
  
-#### File Store
+#### File Store [](id=file-store)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
     osgi/configs: com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg
 
@@ -76,7 +76,7 @@ Property | Default | Required
 ---------|---------|---------
 rootDir | data/document_library | false
 
-#### Advanced File Store
+#### Advanced File Store [](id=advanced-file-store)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
     osgi/configs: com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
  
@@ -84,7 +84,7 @@ Property | Default | Required
 ---------|---------|---------
 rootDir | data/document_library | false
  
-#### JCR
+#### JCR [](id=jcr)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.jcr.JCRStore
     osgi/configs: com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg
 
@@ -101,7 +101,7 @@ jackrabbitRepositoryHome | home | true
 jackrabbitCredentialsUsername | none | true
 jackrabbitCredentialsPassword | none | true
 
-#### S3
+#### S3 [](id=s3)
     portal-ext.properties: dl.store.impl=com.liferay.portal.store.s3.S3Store
     osgi/configs: com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg
 
