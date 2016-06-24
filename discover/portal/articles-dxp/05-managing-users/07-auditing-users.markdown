@@ -1,4 +1,4 @@
-## Auditing Users [](id=auditing-users)
+# Auditing Users [](id=auditing-users)
 
 You've just finished lunch and are ready to get back to work. You have a site in
 Liferay you use to manage your project, and before you left, you were about to
