@@ -13,8 +13,8 @@ app is available to EE subscribers on Liferay's
 for details on installing and activating apps.
 
 As with other third-party repositories that support the CMIS standard, users can
-exercise the following capabilities with the SharePoint repository they access via
-the Liferay SharePoint Connector: 
+gain these benefits by accessing the SharePoint repository through the Liferay
+SharePoint Connector: 
 
 - Reading/writing documents and folders
 - Document check-in, check-out, and undo check-out
@@ -59,40 +59,40 @@ set up a few things on the SharePoint host and in the SharePoint server applicat
 So that Liferay's SharePoint Connector can authenticate against the SharePoint
 web services, you must enable Basic Authentication on the SharePoint host. As
 you do this, make sure to empty Basic Authentication's default domain and realm
-fields of all values. We'll show you how to do this. 
+fields of all values. 
 
 Authentication setup steps differ between Windows versions. But as an
 example, here are steps for enabling Basic Authentication on *Windows Server
 2008*: 
 
-1. Sign in to the Windows server as a member of the *Administrators* group. 
-2. Open *Administrative Tools*, and then click *Internet Information Services
-  (IIS) Manager* to launch the *IIS Manager* console. 
-3. In the *Connections* navigation panel, navigate to the SharePoint web site
-  options by clicking on the server's name, then *Sites*, and then the name of
-  the SharePoint's site. The site's Features View is available in the main
-  viewing area of the IIS Manager console.
-4. Select *Features View* tab and then double-click on the *Authentication* icon
-  in the *IIS* section of the Features View. The *Authentication* panel appears.
-  ![Figure 1: The *Features View* for the site shows the *Authentication* icon.](../../../images-dxp/sharepoint-site-iis-authentication.png)
-5. In the *Authentication* panel, select the row named *Basic Authentication*.
-  The *Actions* panel appears next to the main panel.
-6. In the *Actions* panel, click *Enable* to activate Basic Authentication. 
-7. Also in the *Actions* panel, click *Edit*. An *Edit Basic Authentication Settings*
-  dialog box appears.
-  ![Figure 2: Clicking the *Edit...* action brings up the a dialog for setting the *Default domain* and *Realm*.](../../../images-dxp/sharepoint-host-edit-basic-auth-settings.png)
-8. In the dialog box, empty the *Default domain* and *Realm* fields of any
-  values and click *OK*.
+1.  Sign in to the Windows server as a member of the Administrators group. 
+2.  Open *Administrative Tools*, and then click *Internet Information Services
+    (IIS) Manager* to launch the IIS Manager console. 
+3.  In the Connections navigation panel, navigate to the SharePoint web site
+    options by clicking on the server's name, then *Sites*, and then the name of
+    the SharePoint site. The site's Features View is available in the main
+    viewing area of the IIS Manager console.
+4.  Select the *Features View* tab and then double-click on the *Authentication* icon
+    in the IIS section of the Features View. The Authentication panel appears.
+    ![Figure 1: The Features View for the site shows the Authentication icon.](../../../images-dxp/sharepoint-site-iis-authentication.png)
+5.  In the Authentication panel, select the row named *Basic Authentication*.
+    The Actions panel appears next to the main panel.
+6.  In the Actions panel, click *Enable* to activate Basic Authentication. 
+7.  Also in the Actions panel, click *Edit*. An Edit Basic Authentication Settings
+    dialog box appears.
+   ![Figure 2: Clicking the *Edit...* action brings up the a dialog for setting the Default domain and Realm.](../../../images-dxp/sharepoint-host-edit-basic-auth-settings.png)
+8.  In the dialog box, empty the *Default domain* and *Realm* fields of any
+    values and click *OK*.
 
 You've configured Basic Authentication on the SharePoint host. Next, you must
-make sure to install SharePoint's CMIS Connector add-on, if it's not already
+make sure you install SharePoint's CMIS Connector add-on, if it's not already
 installed on your SharePoint server.
 
 ### Step 2: Install SharePoint's CMIS Connector on SharePoint [](id=step-2-install-sharepoints-cmis-connector-on-sharepoint)
 
-SharePoint utilizes a CMIS Connector and a CMIS Producer to interface with
-@product@. If they're already installed on your SharePoint server, then you can
-skip this section.
+SharePoint uses a CMIS Connector and a CMIS Producer to interface with
+@product@. If they're already installed on your SharePoint server, you can skip
+this section.
 
 The CMIS Connector is installed with the SharePoint Administrator
 Toolkit using a solution package called a Windows SharePoint file (.wsp). If you
@@ -111,8 +111,8 @@ activate the SharePoint site as a CMIS Producer.
 The Producer makes SharePoint repositories available through the CMIS Connector.
 Choose the SharePoint site containing the document libraries to be used as
 document repositories. Every document library in this site is made available as
-a repository through the CMIS connector; but the site must first be activated as
-a CMIS Producer. Let's activate it now.
+a repository through the CMIS connector, but the site must first be activated as
+a CMIS Producer. 
 
 Go to *Site Actions* &rarr; *Site Settings* &rarr; *Manage Site Features*.
 Enable the *Content Management Interoperability Services (CMIS) Producer* by
@@ -128,33 +128,33 @@ SharePoint, you must enable versioning support in your SharePoint library.
 You must enable versioning in SharePoint library for @product@'s check-in/out
 features to work with SharePoint. To enable it, follow these steps: 
 
-1. Open a browser to the SharePoint library's URL.
-2. Click on the SharePoint library's name.
-2. At the top of the toolbar, click on *Liferay Tools* and then on *Library*,
-underneath *Liferay Tools*. 
-3. In the toolbar, click on *Library Settings*.
-4. Under *General Settings*, click on *Versioning settings*.
-5. In *Document Version History*, select *Create major and minor (draft)
-versions*. 
-6. In *Require Check Out* select *Yes*.
+1.  Open a browser to the SharePoint library's URL.
+2.  Click on the SharePoint library's name.
+3.  At the top of the toolbar, click on *Liferay Tools* and then on *Library*,
+    underneath *Liferay Tools*. 
+4.  In the toolbar, click on *Library Settings*.
+5.  Under *General Settings*, click on *Versioning settings*.
+6.  In *Document Version History*, select *Create major and minor (draft)
+    versions*. 
+7.  In *Require Check Out* select *Yes*.
 
 You've set SharePoint to accept versioning requests from @product@.
 
-Next, you'll configure authentication for @product@
+Next, you'll configure authentication for @product@. 
 
 ### Step 5: Authentication on Liferay [](id=step-5-authentication-on-liferay)
 
-In order to authenticate with the third-party repository, you need to store
+In order to authenticate with the Sharepoint repository, you need to store
 passwords for the user sessions. You must configure an authentication type that
-supports storing passwords to the user sessions.
+supports storing passwords for the user sessions.
 
 **Important**: Since authentication with single sign-on (SSO) does not store
 encrypted passwords in the user sessions, SSO can't be used with the SharePoint
 Connector app.
 
-Let's configure @product@ for what's required in authentication.
-In your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
-create a `portal-ext.properties` file, if one doesn't already exist, and add a [`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
+Let's configure @product@ for authentication.  In your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
+create a `portal-ext.properties` file, if one doesn't already exist, and add a
+[`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
 portal property set to `true`:
 
     session.store.password=true
@@ -167,9 +167,9 @@ portal property to your `portal-ext.properties` file:
     company.security.auth.type=screenName
 
 Alternatively, you can configure this property in the Control Panel
-under *Configuration &rarr; Instance Settings &rarr; Authentication*.
+under *Configuration* &rarr; *Instance Settings* &rarr; *Authentication*.
 
-Next, you must enable @product@ users to access the SharePoint server.
+Next, you must give @product@ users access to the SharePoint server.
 
 ### Step 6: Synchronize Credentials [](id=step-6-synchronize-credentials)
 
@@ -178,61 +178,59 @@ and authentication are used in @product@ and in SharePoint.
 [LDAP](/discover/deployment/-/knowledge_base/7-0/ldap) is a typical mechanism
 for synchronizing them. If you don't have LDAP, however, you must manually
 synchronize the credentials and authentication. 
-                                         
-For @product@ users to access the external repository, their screen name and
-password must be the same in @product@ and in external repository application.
-For details on adding and managing @product@ users, refer to [User Mangement](/discover/portal/-/knowledge_base/7-0/user-management).
-
-You've synchronized user credentials and authentication between @product@ and
-SharePoint. 
+ 
+For @product@ users to access the external repository, their screen names and
+passwords must be the same in @product@ and in Sharepoint. For details on adding
+and managing @product@ users, refer to [User Mangement](/discover/portal/-/knowledge_base/7-0/user-management).
 
 From within Liferay's Documents and Media Library, you are now prepared to mount
 the SharePoint library as an external repository. 
 
 ## Add SharePoint as a Liferay Documents and Media repository [](id=add-sharepoint-as-a-liferay-documents-and-media-repository)
 
-It's time to add a Documents and Media Library *Repository* of type SharePoint,
+It's time to add a Documents and Media Library Repository of type SharePoint,
 so users can work with SharePoint in @product@. 
 
 Here are the steps for adding a SharePoint repository type:
 
-1. Add the Documents and Media application to a page, if you haven't done so
-already.
+1.  Add the Documents and Media application to a page, if you haven't done so
+    already.
 
-2. From the home location in the Documents and Media application, click the
-*Add* icon (![Add](../../../images-dxp/icon-portlet-add-control.png)) and select
-*Repository*. The  *New Repository* screen appears. 
+2.  From the home location in the Documents and Media application, click the
+    *Add* icon (![Add](../../../images-dxp/icon-portlet-add-control.png)) and select
+    *Repository*. The  New Repository screen appears. 
 
-3. In the New Repository screen enter an arbitrary repository *Name* and a
-*Description* (optional).
+3.  In the New Repository screen enter an arbitrary repository *Name* and a
+    *Description* (optional).
 
-4. Click on the *Repository Configuration* section to access its form. Then
-specify values for the following fields:
+4.  Click on the *Repository Configuration* section to access its form. Then
+    specify values for the following fields:
 
-    - **Repository Type**: Select the SharePoint option.
+    **Repository Type**: Select the SharePoint option.
 
-    - **Library Name**: Enter a name for the library. Typically you'd 
+    **Library Name**: Enter a name for the library. Typically you'd 
     enter the name of the SharePoint Library you're connecting to.
-    
-    - **Library Path**: This field defaults to the *Library Name*, if no path is
-	specified. If the *Library Name* you specified differs from the SharePoint
+  
+    **Library Path**: This field defaults to the *Library Name*, if no path is
+	specified. If the Library Name you specified differs from the SharePoint
 	Library's name, specify the URL of the SharePoint Library here.
 
-    - **Server Version**: Enter the SharePoint server version (e.g., `2013` or
+    **Server Version**: Enter the SharePoint server version (e.g., `2013` or
     `2010`). 
 
-    - **Site URL:** Enter the URL of the site where your SharePoint Library lives (e.g., `http://your-site`). 
+    **Site URL:** Enter the URL of the site where your SharePoint Library lives
+    (e.g., `http://your-site`). 
 
     ![Figure 3: The Repostiory Configuration form is where you specify access to the SharePoint Library you want to use.](../../../images-dxp/sharepoint-repo-configuration-form.png)
 
-5. After you've finished entering any additional options, click *Save*.
+5.  After you've finished entering any additional options, click *Save*.
 
 Your Documents and Media Library is now connected to the SharePoint repository.
 The new external repository is now listed in the Documents and Media home. 
 
 Now that you've added a SharePoint Repository to Documents and Media, you can
 access and modify SharePoint Library files from within @product@'s Documents and
-Media Library.  
+Media Library. 
 
 ## Related Articles [](id=related-articles)
 
