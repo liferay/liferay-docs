@@ -1,4 +1,4 @@
-# Planning an Upgrade to Liferay 7 [](id=migrating-existing-code-to-liferay-7)
+# Planning a Plugin Upgrade to Liferay 7 [](id=migrating-existing-code-to-liferay-7)
 
 You've probably heard the term *modularity* discussed frequently in relation to
 Liferay 7.0. With Liferay 7.0 being a modular platform, Liferay applications are
