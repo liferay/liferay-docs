@@ -18,6 +18,23 @@ Follow the steps outlined below to install Blade CLI to your local machine.
 
         (sudo) jpm install -fl [Downloads Directory]/com.liferay.blade.cli.jar
 
+3.  Configure with http(s) proxy
+	
+	This is an unnecessary step. But if you want to configure your http(s) proxy working with blade cli , you can follow the steps bellow:
+
+	- for linux and mac user:
+		
+			(sudo) jpm install -fl --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" [Downloads Directory]/com.liferay.blade.cli.jar
+	
+	- for windows user:
+	
+		There is a bug preventing jvmargs passing into jpm. So just install blade the same way in step 2. Then goto your jpm installation path (maybe `{user.home}/.jpm/windows/bin`) and open `blade.ini` file and add the the following lines to the end of the file.
+		
+			vmarg.1=-Dhttp(s).proxyHost=[your proxy host]
+			vmarg.2=-Dhttp(s).proxyPort=[your proxy port]
+
+	After configuring proxy, every time you run blade command, it will take your proxy. 
+
 Now that Blade CLI is installed on your machine, you'll learn how to verify and
 update your installation.
 
