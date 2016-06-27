@@ -49,8 +49,8 @@ for more information. And to execute them see [VerifyProcessTracker.java](https:
 for more information.
 
 It is recommended that you use the name of the service package of the app as the
-value for the `verify.process.name` property, as shown in the mobile device
-rules app verify process above:
+value for the `verify.process.name` property, as shown in the Mobile Device
+Rules app verify process above:
 
     com.liferay.mobile.device.rules.service
 
@@ -74,7 +74,7 @@ declare dependencies on those services. Because the services are not available
 until the Portal is started, **your verify process must depend on them** to load, 
 before your processes can execute. You can declare a dependency for your verify 
 process, using the `@Reference` annotation. For example, here is a reference to 
-the `DLFileVersionLocalService` for the [document library app](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/collaboration/document-library/document-library-service/src/main/java/com/liferay/document/library/workflow/DLFileEntryWorkflowHandler.java):
+the `DLFileVersionLocalService` for the [Document Library app](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/collaboration/document-library/document-library-service/src/main/java/com/liferay/document/library/workflow/DLFileEntryWorkflowHandler.java):
 
     @Reference(unbind = "-")
     protected void setDLFileVersionLocalService(
