@@ -75,7 +75,22 @@ from version 0.0.1 to version 1.0.0. The changes are produced by a list of
 UpgradeSteps, which in this example contains only one step:
 
     new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
+
+This upgrade step is in fact an instance of the `UpgradeProcess` class we
+previously had in the old system. So your upgrade steps must extend the
+`UpgradeProcess` class, which is located under the [portal-kernel module](https://github.com/liferay/liferay-portal/tree/master/portal-kernel)).
+
+This base class provides a `doUpgrade` method that handles the upgrade process
+itself.
+
+    public class UpgradeCalendarBooking implements UpgradeProcess {
     
+        @Override
+        public void doUpgrade() throws Exception {
+            // your upgrade code goes here
+        }
+    }
+
 You can also register multiple upgrades in one class. For example, here is an
 extension of the previous upgrade process that runs two additional upgrades, 
 each with their own set of UpgradeSteps:
