@@ -30,7 +30,7 @@ next.
 The first thing you need to do is create a package called `upgrade` in your 
 project’s layout. Inside of the `upgrade` package, create a OSGi Component of 
 the service `UpgradeStepRegistrator` that implements the interface 
-`UpgradeStepRegistrator`, which is located under the [portal-upgrade module](https://www.google.com/url?q=https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade&sa=D&ust=1464278927768000&usg=AFQjCNGF0wzU7e50p5GOwiXbT7XQ1OJ1JQ)).
+`UpgradeStepRegistrator`, which is located under the [portal-upgrade module](https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade)).
 
 This interface provides a `register` method that handles the upgrade 
 registration process.
