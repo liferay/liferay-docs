@@ -22,11 +22,11 @@ If your app has any dependencies, you'll have to declare a dependency on the
 
 Once your dependencies are declared, you can write your upgrade steps.
 
-## Creating Upgrade Steps
+## Writing UpgradeSteps [](id=writing-upgradesteps)
 
-Upgrade steps are executed during the upgrade process, and are responsible for
-the changes that take place between each schema version. Your upgrade steps must 
-extend the `UpgradeProcess` class, which is located under the 
+`UpgradeSteps` are executed during the upgrade process, and are responsible for
+the changes that take place between each schema version. Your `UpgradeSteps` 
+must extend the `UpgradeProcess` class, which is located under the 
 [portal-kernel module](https://github.com/liferay/liferay-portal/tree/master/portal-kernel)).
 
 This base class provides a `doUpgrade` method that handles the upgrade process
@@ -44,9 +44,9 @@ class below:
 
     }
     
-Follow this same pattern to create the upgrade steps for your upgrade process.
+Follow this same pattern to create the `UpgradeSteps` for your upgrade process.
 
-Once your upgrade steps are created, you can write your upgrade package.
+Once your `UpgradeSteps` are created, you can write your upgrade package.
 
 ## Writing the Upgrade Package [](id=writing-the-upgrade-package)
 
