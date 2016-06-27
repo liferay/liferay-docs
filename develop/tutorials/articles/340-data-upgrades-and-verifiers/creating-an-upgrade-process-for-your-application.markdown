@@ -167,13 +167,6 @@ different version than the bundle version:
 
     Require-SchemaVersion: 1.0.2
 
-<!-- This seems like it's missing a huge step: How do you create an UpgradeStep?
-What goes into these classes? We don't want people to have to look at the
-examples and figure it out; we want to document it for them. -Rich -->
-
-<!-- I think the below sections on migrating from the old to the new should go
-somewhere in the From Liferay 6 to 7 Learning Path. -Rich --> 
-
 There you have it. Now you know how to create an upgrade process for your app!
 
 ## Related Topics [](id=related-topics)
@@ -182,4 +175,4 @@ There you have it. Now you know how to create an upgrade process for your app!
 
 [Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
 
-<!-- Verifiers tutorial link to go here -->
+[Creating a Verify Process for Your App](/develop/tutorials/-/knowledge_base/7-0/creating-a-verify-process-for-your-app)
