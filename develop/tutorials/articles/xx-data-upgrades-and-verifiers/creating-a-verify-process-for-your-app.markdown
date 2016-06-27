@@ -65,7 +65,7 @@ in a previous schema version, then gets upgraded to the new schema version.
 
 This is an important distinction between upgrade processes and verify processes.
 An upgrade process of the portal core cannot use Liferay services to access the 
-database, as those Liferay services are using the previous definition of the 
+database, as those Liferay services are using the upgraded definition of the
 database, but since verify processes are already in the upgraded schema version, 
 they can use release Liferay services.
 
