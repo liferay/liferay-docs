@@ -171,7 +171,7 @@ upgrade.processes=\
 Each step between versions was represented by a single class extending
 UpgradeProcess, with a method `doUpgrade`. This method was responsible for
 executing the internal steps to update the database to that concrete
-version. A method `getThreadhold` is provided also to specify the schema 
+version. A method `getThreshold` is provided also to specify the schema 
 version where the upgrade starts.
 
 The following example represents the required operations to update the database 
