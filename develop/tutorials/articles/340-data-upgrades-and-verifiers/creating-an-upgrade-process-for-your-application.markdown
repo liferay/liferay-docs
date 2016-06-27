@@ -28,7 +28,7 @@ Once your dependencies are declared, you can write your upgrade package.
 The first thing you need to do is create a package called `upgrade` in your 
 package namespace. In the `upgrade` package, create an OSGi Component of 
 the service `UpgradeStepRegistrator` that implements the interface 
-`UpgradeStepRegistrator`, which you'll find under the [portal-upgrade module](https://www.google.com/url?q=https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade&sa=D&ust=1464278927768000&usg=AFQjCNGF0wzU7e50p5GOwiXbT7XQ1OJ1JQ)).
+`UpgradeStepRegistrator`, which you'll find under the [portal-upgrade module](https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade).
 
 This interface provides a `register` method that handles the upgrade 
 registration process.
@@ -74,7 +74,22 @@ from version 0.0.1 to version 1.0.0. The changes are produced by a list of
 `UpgradeSteps`, which in this example contains only one step:
 
     new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
- 
+    
+This upgrade step is in fact an instance of the `UpgradeProcess` class we
+previously had in the old system. So your upgrade steps must extend the
+`UpgradeProcess` class, which is located under the [portal-kernel module](https://github.com/liferay/liferay-portal/tree/master/portal-kernel)).
+
+This base class provides a `doUpgrade` method that handles the upgrade process
+itself.
+
+    public class UpgradeCalendarBooking implements UpgradeProcess {
+    
+        @Override
+        public void doUpgrade() throws Exception {
+            // your upgrade code goes here
+        }
+    }
+
 You can also register multiple upgrades in one class. For example, here is an
 extension of the previous upgrade process that runs two additional upgrades, 
 each with their own set of `UpgradeSteps`:
@@ -110,7 +125,7 @@ each with their own set of `UpgradeSteps`:
     }
 
 In this example the `com.liferay.calendar.service` module is upgraded from 
-version 0.01 to 1.0.0 in one step. Next it is upgraded incrementally from 
+version 0.0.1 to 1.0.0 in one step. Next it is upgraded incrementally from 
 version 1.0.1 to 1.0.4, using only one `UpgradeStep` for each schema version. 
 Finally, it is upgraded from version 1.0.4 to version 1.0.5, using a list of 
 `UpgradeSteps` with three steps in it: `UpgradeCalendarResource`, 
@@ -176,7 +191,7 @@ Calendar-service module from v1.0.0 to 1.0.1 and then to 1.0.2.
 Each step between versions was represented by a single class extending
 `UpgradeProcess`, using a method called `doUpgrade`. This method was responsible
 for executing the internal steps to update the database to that concrete
-version. A method `getThreadhold` is provided also to specify the schema version
+version. A method `getThreshold` is provided also to specify the schema version
 where the upgrade starts.
 
 The following example represents the required operations to update the database 
