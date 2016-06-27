@@ -15,7 +15,7 @@ Get started by writing your verify package next.
 
 In order to create a verify process you must first create a package called 
 `verify` in your project's layout. Inside of the `verify` package, create a OSGi 
-Component of the service `VerifyProcess`class that extends the interface 
+Component of the service `VerifyProcess` class that extends the interface
 `VerifyProcess`.
 
 This interface provides a `doVerify` method that handles the verifiers. For
