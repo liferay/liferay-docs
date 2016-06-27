@@ -111,7 +111,7 @@ each with their own set of UpgradeSteps:
     }
 
 In this example the `com.liferay.calendar.service` module is upgraded from 
-version 0.01 to 1.0.0 with one step. Next, we can see that this is upgraded 
+version 0.0.1 to 1.0.0 with one step. Next, we can see that this is upgraded 
 from 1.0.1 to 1.0.2, and from 1.0.2 to 1.0.3, and from 1.0.3 to 1.0.4 using 
 only one UpgradeSetp every time. Finally, it is upgraded from version 1.0.4 
 to version 1.0.5, using a list of UpgradeSteps with three steps in it, 
