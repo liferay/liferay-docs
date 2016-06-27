@@ -16,21 +16,22 @@ and JSON APIs that are available.
 
 Configuring your app to have access to the Content Targeting API requires only
 one line of code. This line of code is a dependency that should be added to your
-dependencies list via Ivy.  Follow the instructions below to add the Content
-Targeting API dependency:
+Gradle project. Follow the instructions below to add the Content Targeting API
+dependency:
 
-1.  Open the `ivy.xml` file in your app's `ROOT` folder.
+1.  Open the `build.gradle` file in your app's project folder.
 
-2.  Find the `<dependencies>` tag and place the following `dependency` within
-    that tag. 
+2.  Find the `dependencies` declaration and add the following line within that
+	declaration:
 
-        <dependency org="com.liferay.content-targeting" name="com.liferay.content.targeting.api" rev="2.0.0"/>
+        provided group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
 
-    The complete tag should look like this: 
+    The complete declaration should look like this:
 
-        <dependencies defaultconf="default">
-            <dependency org="com.liferay.content-targeting" name="com.liferay.content.targeting.api" rev="2.0.0"/>
-        </dependencies>
+        dependencies {
+        	...
+        	provided group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
+        }
 
 Your app now has access to the Content Targeting API and can now take advantage
 of everything Audience Targeting has to offer. In the next section, you'll learn
@@ -43,8 +44,33 @@ direct calls to the Java API and making direct calls to the JSON API. You'll
 dive into calling the Java API first.
 
 Suppose you'd like to display a list of existing user segments in your portlet.
-You could do this by opening your Portlet class (the class that extends the
-`MVCPortlet` class) and adding the following method:
+First you need to obtain an implementation of the `UserSegmentLocalService`
+provided by Audience Targeting. You can do this by adding the following code to
+your Portlet class (the class that extends the `MVCPortlet` class):
+
+	@Reference(unbind = "-")
+	protected void setUserSegmentLocalService(
+		UserSegmentLocalService userSegmentLocalService) {
+
+		_userSegmentLocalService = userSegmentLocalService;
+	}
+
+	private UserSegmentLocalService _userSegmentLocalService;
+
+
+When an implementation of the `UserSegmentLocalService` is available (i.e. the
+Audience Targeting app has been installed) the `_userSegmentLocalService` field
+will be set with it. Otherwise, the portlet will not be available till this
+dependency is resolved.
+
+It's a good practice to access Audience Targeting services this way instead of
+using util classes (e.g. `UserSegmentLocalServiceUtil.java`). Not only is the
+dependency management better (as explained previously) but this way you won't be
+tied to an specific implementation of the service.
+
+The next step is to use the service to obtain a list of existing user segments
+and make it available to your view as a request attribute. To do this add the
+following method of your portlet class:
 
     @Override
     public void doView(
@@ -57,7 +83,7 @@ You could do this by opening your Portlet class (the class that extends the
         List<UserSegment> userSegments = null;
 
         try {
-            userSegments = UserSegmentLocalServiceUtil.getUserSegments(
+            userSegments = _userSegmentLocalService.getUserSegments(
                 themeDisplay.getScopeGroupId());
         }
         catch (Exception e) {
@@ -70,7 +96,7 @@ You could do this by opening your Portlet class (the class that extends the
     }
 
 Notice that the `userSegments` list is populated by calling
-`UserSegmentLocalServiceUtil`'s `getUserSegments` method. This service is part
+`UserSegmentLocalService`'s `getUserSegments` method. This service is part
 of the Content Targeting API. 
 
 To finish off this example, some logic needs to be added to your portlet's
@@ -84,7 +110,6 @@ To finish off this example, some logic needs to be added to your portlet's
     List<UserSegment> userSegments = (List<UserSegment>)request.getAttribute("userSegments");
 
     for (UserSegment userSegment : userSegments) {
-
     %>
 
         <li><%= userSegment.getName(locale) %></li>
@@ -97,7 +122,7 @@ To finish off this example, some logic needs to be added to your portlet's
 
 This logic uses the `UserSegment` object to list the existing user segments in
 the Portal. That's it! By importing the `UserSegment` and
-`UserSegmentLocalServiceUtil` classes into your files, you have direct access to
+`UserSegmentLocalService` classes into your files, you have direct access to
 your portal's user segments via the Content Targeting Java API. 
 
 Lastly, you'll explore a small example of accessing the Content Targeting
@@ -116,7 +141,7 @@ and using the following code:
         var campaignsList = A.one('#<portlet:namespace/>campaigns');
 
         Liferay.Service(
-            'content-targeting-api.campaign/get-campaigns',
+            '/ct.campaign/get-campaigns',
             {
             groupId: '<%= scopeGroupId %>'
             },
@@ -135,7 +160,7 @@ campaigns:
 
     ...
     Liferay.Service(
-        'content-targeting-api.campaign/get-campaigns',
+        '/ct.campaign/get-campaigns',
         {
     ...
 
@@ -148,17 +173,12 @@ JSON API by Audience Targeting, you can visit your portal's `/api/jsonws` URL
 Targeting JSON API is just as easy as accessing the related Java API.
 
 You've learned how easy it is to expose the Content Targeting API and use it in
-a custom app to unleash its power! If you'd like to peruse the entire Content
-Targeting API, visit the API's
-[Github page](https://github.com/liferay/liferay-apps-content-targeting/tree/master/content-targeting-api).
-If you're interested in seeing the examples that were discussed in this tutorial
-working in a finished portlet, download and deploy the
-[Sample Client Portlet](/documents/10184/487286/sample-client-portlet-6.2.0.1.war).
+a custom app to unleash its power!
 
 ## Related Topics [](id=related-topics)
 
-[Creating New Audience Rule Types](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types)
+[Creating New Audience Rule Types](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types)
 
-[Targeting Content to Your Audience](/discover/portal/-/knowledge_base/6-2/targeting-content-to-your-audience)
+[Targeting Content to Your Audience](/discover/portal/-/knowledge_base/7-0/targeting-content-to-your-audience)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
