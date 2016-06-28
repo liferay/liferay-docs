@@ -3,13 +3,10 @@
 +$$$
 
 **Tip:** Throughout this installation and configuration process, WebSphere
-prompts you to Click Save to apply changes to Master Configuration. Do so
-intermittently to save your changes.
+prompts you to click *Save* to apply changes to the Master Configuration. Do so
+intermittently to save your changes. 
 
 $$$
-
-**Liferay Home** is in a folder called `liferay` in the home folder of the user
-ID that is running WebSphere. 
 
 For Liferay DXP to work correctly, WebSphere 8.5.5 Fix Pack 9 must be installed. 
 You can find more information about this fix pack 
@@ -19,11 +16,17 @@ Please also note that the WebSphere Application Liberty Profile isn't supported
 by Liferay. 
 
 You should also read the following articles to familiarize yourself with
-Liferay's general installation steps: 
+Liferay DXP's general installation steps: 
 
 - [Liferay Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
-- [Installing Liferay Portal](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
+- [Installing Liferay DXP](/discover/deployment/-/knowledge_base/7-0/installing-liferay-dxp)
 - [Installing Liferay Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
+
+Note that the 
+[*Liferay Home* folder](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+is important to the operation of DXP. In Liferay Home, DXP creates certain files 
+and folders that it needs to run. On WebSphere, Liferay Home is typically 
+`[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
 
 And lastly, download Liferay DXP's WAR file and dependencies from the customer 
 portal on 
@@ -40,7 +43,7 @@ You'll need the following files:
 
 Without any further ado, get ready to install Liferay DXP in WebSphere! 
 
-## Preparing WebSphere for Liferay [](id=preparing-websphere-for-liferay)
+## Preparing WebSphere for Liferay DXP
 
 When the application server binaries have been installed, start the *Profile
 Management Tool* to create a profile appropriate for Liferay. 
@@ -134,7 +137,7 @@ the following instructions:
 
 Great! Now you're ready to install Liferay DXP. 
 
-## Installing Liferay Dependencies
+## Installing Liferay DXP's Dependencies
 
 You must now install Liferay DXP's dependencies. Recall that earlier you 
 downloaded two ZIP files containing these dependencies. Install their contents 
@@ -146,7 +149,7 @@ now:
    database driver `JAR`, copy it to this location as well. 
 
 2. `liferay-dxp-digital-enterprise-osgi-[version].zip`: Unzip this file and 
-   place its contents in the `Liferay_Home/osgi` folder (create this folder if 
+   place its contents in the `[Liferay Home]/osgi` folder (create this folder if 
    it doesn't exist). This is typically 
    `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
 
