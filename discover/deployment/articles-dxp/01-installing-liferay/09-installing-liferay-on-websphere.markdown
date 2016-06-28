@@ -249,4 +249,59 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 5. Click *Security &rarr; Global Security* and de-select *Use Java 2 security to
    restrict application access to local resources* if it is selected. Click
-   *Apply*.
+   *Apply*. 
+
+Note that you may also need to retrieve a SSL certificate from your mail server 
+and add it to WebSphere's trust store. See WebSphere's documentation for 
+instructions on this. 
+
+## Deploy Liferay DXP
+
+Now you're ready to deploy Liferay DXP! Use these instructions to do so:
+
+1. In WebSphere's administrative console, click *Applications* &rarr; *New 
+   Application* &rarr; *New Enterprise Application*. 
+
+2. Browse to the DXP `.war` file and click *Next*. 
+
+3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
+   Application* has been checked, and click *Next* again. 
+
+4. Choose the WebSphere runtimes and/or clusters where you want DXP deployed. 
+   Click *Next*. 
+
+5. Select the virtual host to deploy DXP on, and click *Next*. 
+
+6. Map DXP to the root context (/) and click *Next*. 
+
+7. Select the *metadata-complete attribute* setting that you want to use, and 
+   click *Next*. 
+
+8. Ensure that you have made all the correct choices and click *Finish*. When
+   DXP has installed, click *Save to Master Configuration*. 
+
+    ![Figure 4: Review your deployment options before deploying.](../../images-dxp/websphere-deploy-dxp.png)
+
+You've now installed Liferay DXP!
+
+## Start Liferay DXP
+
+1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish
+   to use WebSphere's data source and mail session, create a file called
+   `portal-ext.properties` in your Liferay Home folder. Place the following text
+   in the file: 
+
+        jdbc.default.jndi.name=jdbc/LiferayPool
+        mail.session.jndi.name=mail/MailSession
+        setup.wizard.enabled=false
+
+2. In the WebSphere administrative console, navigate to *Enterprise 
+   Applications*, select the Liferay DXP application, and click *Start*. While 
+   DXP is starting, WebSphere displays a spinny little graphic. Don't watch it 
+   too closely, or you might get hypnotized. 
+
+3. In DXP's setup wizard, select and configure your database type. Click 
+   *Finish* when you're done. Liferay then creates the tables it needs in the 
+   database. 
+
+Congratulations! You've installed Liferay on WebSphere!
