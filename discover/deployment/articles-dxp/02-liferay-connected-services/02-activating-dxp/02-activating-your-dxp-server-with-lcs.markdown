@@ -10,13 +10,13 @@ to do this automatically:
    LCS project. If your company has multiple projects, select the one you want 
    to activate this server under from the user menu at the top right.
 
-    ![Figure 1: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images-dxp/lcs-user-menu-manage-projects.png)
+    ![Figure 1: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../../images-dxp/lcs-user-menu-manage-projects.png)
 
 2. Ensure that an environment exists to activate your server under. If you have 
    sufficient permissions in your company's project, you can create a new 
    environment by selecting the *Add Environment* tab. 
 
-    ![Figure 2: You must activate your DXP server in an LCS environment. The red box in this screenshot highlights an environment.](../../images-dxp/lcs-registration-select-environment.png)
+    ![Figure 2: You must activate your DXP server in an LCS environment. The red box in this screenshot highlights an environment.](../../../images-dxp/lcs-registration-select-environment.png)
 
 3. Select the *Subscriptions* tab, and check the *Environment Subscriptions* 
    table to ensure that the environment you want to activate your server in has 
@@ -27,7 +27,7 @@ to do this automatically:
    assign that environment's subscription type. Also, **once set, you can't 
    change an environment's subscription type**.
 
-    ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images-dxp/lcs-environment-subscriptions.png)
+    ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../../images-dxp/lcs-environment-subscriptions.png)
 
 4. Select the *Connection* tab and then select *Automatic Registration*. In the 
    table, download the token for the environment you want to activate your 
@@ -35,7 +35,7 @@ to do this automatically:
    token. If the environment doesn't have a token, you can generate one by 
    clicking *Generate* in the table. 
 
-    ![Figure 4: Click *Generate* to generate an environment token. Upon doing so, the *Generate* link is replaced by an *Actions* button that you can use to download the token. The token is required to activate your DXP server in LCS.](../../images-dxp/lcs-licensing-token-generate.png)
+    ![Figure 4: Click *Generate* to generate an environment token. Upon doing so, the *Generate* link is replaced by an *Actions* button that you can use to download the token. The token is required to activate your DXP server in LCS.](../../../images-dxp/lcs-licensing-token-generate.png)
 
 5. Shut down your DXP instance if it's running. Place the token file in your 
    instance's `[Liferay_Home]/data` folder, and then start the instance. On 
@@ -72,7 +72,7 @@ Here's a full description of what a connected LCS client app displays:
   settings. 
 - **Disconnect:** Disconnects this DXP instance from LCS. 
 
-![Figure 5: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
+![Figure 5: The server is connected to LCS.](../../../images-dxp/lcs-server-connected.png)
 
 By default, all LCS services are enabled for your DXP instance. You can change 
 this by clicking the *Configure Services* link in the connected client app. When 
@@ -86,7 +86,7 @@ you select *Portal Properties Analysis*, a text box appears for you to enter any
 properties you don't want LCS to analyze. Click *Save* when you finish enabling 
 the LCS services you want to use. 
 
-![Figure 6: In a connected LCS client app, you can enable or disable specific LCS services for your DXP instance.](../../images-dxp/lcs-configure-services.png)
+![Figure 6: In a connected LCS client app, you can enable or disable specific LCS services for your DXP instance.](../../../images-dxp/lcs-configure-services.png)
 
 Awesome! Now you know how to use environment tokens in LCS to activate your DXP 
 server. 
