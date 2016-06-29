@@ -91,5 +91,5 @@ the LCS services you want to use.
 Awesome! Now you know how to use environment tokens in LCS to activate your DXP 
 server. 
 
-For information on using LCS, see 
+For information on using the other features of LCS, see 
 [the next article](/discover/deployment/-/knowledge_base/7-0/using-lcs). 

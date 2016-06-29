@@ -40,4 +40,4 @@ steps to do so:
 
 4. Deploy the LCS client WAR or redeploy it if it's already deployed. 
 
-Great! Now you're ready to register your Liferay DXP instance with LCS. 
+Great! Now you're ready to connect your Liferay DXP instance to LCS. 

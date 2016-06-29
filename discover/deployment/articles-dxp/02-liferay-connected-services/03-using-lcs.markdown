@@ -465,7 +465,7 @@ your project's subscriptions, see how they're being used, assign an environment
 to a subscription type, and more. You can access these features from the 
 *Subscriptions* tab on the upper-left of the LCS site. 
 
-![Figure 24: The *Subscriptions* tab in LCS lets you view and manage your Liferay DXP subscriptions.](../../images-dxp/lcs-subscriptions.png)
+![Figure 20: The *Subscriptions* tab in LCS lets you view and manage your Liferay DXP subscriptions.](../../images-dxp/lcs-subscriptions.png)
 
 There are four tables in the Subscriptions tab:
 
@@ -545,9 +545,9 @@ There are a few things to keep in mind when using environment tokens:
 - Use caution when distributing the token file, as anyone can use it to connect 
   to your environment and consume an activation key in your subscription. 
 
-- Be careful when regenerating or deleting a token file from LCS. When this is 
-  done, DXP instances using the old file can't connect to LCS until receiving 
-  the new file. 
+- Be careful when regenerating a token file from LCS. When this is done, DXP 
+  instances using the old file can't connect to LCS until receiving the new 
+  file. 
 
 - Minimal information (server name, location, etc...) is used to activate a DXP 
   instance with LCS. You can change this information from 
@@ -585,12 +585,12 @@ tokens:
 1. An environment's *Automatic Registration* tab: applies only to the selected 
    environment's token. 
 
-    ![Figure 20: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images-dxp/lcs-environment-token.png)
+    ![Figure 21: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images-dxp/lcs-environment-token.png)
 
 2. The *Connection* &rarr; *Automatic Registration* tab: applies to all of your 
    project's environment tokens. 
 
-    ![Figure 21: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images-dxp/lcs-environment-token-02.png)
+    ![Figure 22: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images-dxp/lcs-environment-token-02.png)
 
 The process for generating, downloading, and regenerating tokens is the same in 
 both places: 
@@ -605,11 +605,8 @@ both places:
 3. To regenerate an environment's token: Click the environment's *Actions* 
    button in the table, and select *Regenerate*. 
 
-4. To delete an environment's token: Click the environment's *Actions* button in 
-   the table, and select *Delete*. 
-
-Remember that if you regenerate or delete a token, all DXP instances that use it 
-won't be able to connect until receiving the new token. 
+Remember that if you regenerate a token, all DXP instances that use it won't be 
+able to connect to LCS until receiving the new token. 
 
 Once you download environment token, use the following steps to connect a 
 Liferay DXP instance with LCS: 
