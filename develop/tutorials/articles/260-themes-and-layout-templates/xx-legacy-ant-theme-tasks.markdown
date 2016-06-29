@@ -14,6 +14,13 @@ your theme further, using [themelets](/develop/tutorials/-/knowledge_base/7-0/th
 You can also use Ant and the Plugins SDK to develop your theme, if you prefer, 
 just as you had in 6.2.
 
++$$$
+
+**Note:** The Plugins SDK is currently broken for Liferay 7.0 GA2. In the
+interim, you can use the Themes Generator to create and develop your themes.
+
+$$$
+
 This tutorial assumes that you're using a Plugins SDK to create your theme, and
 demonstrates how to:
 
