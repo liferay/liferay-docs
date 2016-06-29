@@ -122,7 +122,7 @@ and Liferay DXP. It is recommended that you use FreeMarker theme templates to
 develop your theme, as new theme components will not work with Velocity 
 templates. Other than those key changes, the development process is just as it 
 was in 6.2. You can read about all the theme development changes from Liferay 
-6.2 to Liferay 7.0 and Liferay DXP, in the [Migrating a 6.2 theme to 7.0](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7) 
+6.2 to Liferay 7.0 and Liferay DXP, in the [Optimizing an Existing Theme for Liferay 7.0](/develop/tutorials/-/knowledge_base/7-0/optimizing-an-existing-theme-for-liferay-7) 
 tutorial.
 
 ### Theme Development Workflow [](id=theme-development-workflow)
