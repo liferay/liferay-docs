@@ -2,7 +2,7 @@
 
 To activate your Liferay DXP server, you must register it with Liferay Connected 
 Services (LCS). LCS gives you a convenient central location to activate and 
-manage your DXP subscriptions, and more. This article covers the following steps 
+manage your DXP subscriptions, and more. This section covers the following steps 
 to help you get your DXP instance up and running with LCS: 
 
 1. **Downloading the LCS Client App:** In most cases, you won't need to do this. 
