@@ -101,6 +101,12 @@ the Screenlet's UI.
 
 ![Figure 1: Android Studio's graphical layout viewer renders your Screenlet's layout as you create it.](../../images/screens-android-add-bookmark-view.png)
 
+If you want this view to be the default view for the Screenlet, you have to specify it in a string resource. The name has to be the name of the Screenlet class followed by `_default`. For example in this case the name of the string would be `AddBookmarkScreenlet_default`and the value would be the name of the layout we just have created `bookmark_default.xml`. This view would be loaded automatically when layoutId attribute is not present.
+ 
+ ```
+ <string name="AddBookmarkScreenlet_default">bookmark_default</string>
+ ```
+
 Next, you'll create a View class for the Screenlet. 
 
 ## Creating the Screenlet's View Class [](id=creating-the-screenlets-view-class)
