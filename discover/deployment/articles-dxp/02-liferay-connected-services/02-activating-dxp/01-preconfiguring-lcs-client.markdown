@@ -6,7 +6,7 @@ Liferay DXP bundle, this means that you should set these properties prior to
 starting your bundle for the first time. Starting the bundle automatically 
 deploys the LCS client app. Not all is lost though if you've already started 
 your bundle: you can download the client app from 
-[Liferay Marketplace](https://web.liferay.com/marketplace), 
+[here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947), 
 make your changes in its WAR file, and redeploy it. 
 
 If you used Liferay Marketplace to download the client app, then you can find 

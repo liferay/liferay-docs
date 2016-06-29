@@ -3,7 +3,7 @@
 Once the LCS client app is deployed, you're ready to activate your DXP server 
 with LCS. You'll use an 
 [LCS environment token](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
-to do this automatically: 
+to do this: 
 
 1. Log in to 
    [lcs.liferay.com](https://lcs.liferay.com). This takes you to your company's 

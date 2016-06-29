@@ -33,13 +33,13 @@ available in LCS:
   you notification emails when specific events occur in your LCS projects, and 
   setting general account preferences. 
 
-- [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens)
-  Learn how to use environment tokens to automatically activate your Liferay 
-  servers with LCS.  
-
 - [**Managing Liferay DXP Subscriptions:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
   Learn how to view and manage your Liferay DXP subscriptions for the servers in 
   your LCS project. 
+
+- [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens)
+  Learn how to use environment tokens to automatically activate your Liferay 
+  servers with LCS. 
 
 First, you'll learn what information LCS stores about your Liferay servers.
 
@@ -469,9 +469,9 @@ to a subscription type, and more. You can access these features from the
 
 There are four tables in the Subscriptions tab:
 
-- **Subscriptions:** shows you a list of Liferay DXP subscriptions available for 
-  your LCS project. For each subscription, this table shows the following 
-  information: 
+1. **Subscriptions:** shows you a list of Liferay DXP subscriptions available 
+   for your LCS project. For each subscription, this table shows the following 
+   information: 
 
     - Subscription Type
     - Start Date
@@ -483,15 +483,15 @@ There are four tables in the Subscriptions tab:
     - Servers Allowed
     - Servers Used
 
-- **Subscriptions Summary:** shows you how you're currently utilizing your 
-  subscriptions. For each subscription type, this table shows the number of 
-  servers allowed, used, and available. 
+2. **Subscriptions Summary:** shows you how you're currently utilizing your 
+   subscriptions. For each subscription type, this table shows the number of 
+   servers allowed, used, and available. 
 
-- **Environment Subscriptions:** shows the subscription type assigned to each 
-  environment. You can also assign subscriptions to environments. 
+3. **Environment Subscriptions:** shows the subscription type assigned to each 
+   environment. You can also assign subscriptions to environments. 
 
-- **Project Servers:** shows the environment and environment subscription type 
-  for each server in your LCS project. 
+4. **Project Servers:** shows the environment and environment subscription type 
+   for each server in your LCS project. 
 
 If any of the information in these tables is missing or incorrect, contact 
 Liferay support. 
@@ -501,10 +501,9 @@ To assign a subscription type to an environment:
 - Click the environment's *No Subscriptions* link in the Environment 
   Subscriptions table and then select the subscription type. 
 
-To decommission a server: 
+To decommission a server and free its activation key for reuse: 
 
-- Unregister the server from LCS in the server view's *Server Settings* tab. 
-  Doing this frees the server's activation key for reuse.
+- Select a server and then select *Unregister* in the *Server Settings* tab. 
 
 +$$$
 
@@ -525,8 +524,8 @@ environment's subscription type.
 
 $$$
 
-The next section shows you how to generate and use environment tokens to 
-activate Liferay DXP instances with LCS. 
+The next section shows you how to use environment tokens to activate Liferay DXP 
+instances with LCS. 
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
@@ -546,16 +545,21 @@ There are a few things to keep in mind when using environment tokens:
 - Use caution when distributing the token file, as anyone can use it to connect 
   to your environment and consume an activation key in your subscription. 
 
-- Be careful when regenerating or otherwise removing a token file from LCS. When 
-  this is done, DXP instances using the old file can't connect to LCS until 
-  receiving the new file. In this case, the only alternative is to use the 
-  administrator's own credentials to connect the client manually. Once the 
-  client reconnects, it's once again linked to the client's existing archive 
-  data in LCS. 
-<!-- 
-Why can't they simply connect using the new file? Is this still the case, 
-since manual connections are going away?
--->
+- Be careful when regenerating or deleting a token file from LCS. When this is 
+  done, DXP instances using the old file can't connect to LCS until receiving 
+  the new file. 
+
+- Minimal information (server name, location, etc...) is used to activate a DXP 
+  instance with LCS. You can change this information from 
+  [the server view in LCS](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-the-server-view) 
+  at any time. 
+
+- Since environment tokens connect using OAuth, it's important to note that 
+  using an environment token overrides the OAuth authorization cycle. If an LCS 
+  Administrator or Environment Manager has never activated Liferay instances 
+  with LCS, the first time they do so an OAuth authorization entry is created in 
+  LCS. If they've previously activated Liferay instances with LCS, their 
+  existing credentials are used when they create a token file. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
 the setup process, using environment tokens is valuable in auto-scaling 
@@ -576,29 +580,39 @@ instance.
 $$$
 
 There are two places in LCS where you can generate and access environment 
-tokens. If you read the previous sections of this article, then you already know 
-one: the environment view. Navigate to an environment in LCS and click the 
-*Automatic Registration* button. From here you can manage the environment's 
-token. 
+tokens:
 
-![Figure 20: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images-dxp/lcs-environment-token.png)
+1. An environment's *Automatic Registration* tab: applies only to the selected 
+   environment's token. 
 
-By default, there's no existing token. A table appears that contains only a 
-*Generate* button. Click it to generate a token for the environment. The new 
-token then appears in the table with information on who generated it and when. 
-There's also an Actions button next to it for downloading or regenerating the
-token. 
+    ![Figure 20: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images-dxp/lcs-environment-token.png)
 
-You can also access environment tokens from the Connection tab on the left side 
-of LCS. Click the *Connection* tab here, and then click the *Automatic 
-Registration* tab. The table shows the tokens for all the environments in your 
-project. This provides a central location to manage all your environment tokens. 
-Otherwise, the UI for managing them is exactly the same. 
+2. The *Connection* &rarr; *Automatic Registration* tab: applies to all of your 
+   project's environment tokens. 
 
-![Figure 21: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images-dxp/lcs-environment-token-02.png)
+    ![Figure 21: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images-dxp/lcs-environment-token-02.png)
 
-Once you have an environment token, use the following steps to connect a 
-previously unconnected Liferay DXP instance with LCS:
+The process for generating, downloading, and regenerating tokens is the same in 
+both places: 
+
+1. To generate an environment's token: Click the environment's *Generate* button 
+   in the table. The new token appears in the table with information on who 
+   generated it and when. 
+
+2. To download an environment's token: Click the environment's *Actions* button 
+   in the table, and select *Download*. 
+
+3. To regenerate an environment's token: Click the environment's *Actions* 
+   button in the table, and select *Regenerate*. 
+
+4. To delete an environment's token: Click the environment's *Actions* button in 
+   the table, and select *Delete*. 
+
+Remember that if you regenerate or delete a token, all DXP instances that use it 
+won't be able to connect until receiving the new token. 
+
+Once you download environment token, use the following steps to connect a 
+Liferay DXP instance with LCS: 
 
 1. Place the token file in your instance's `data` folder.
 
@@ -610,67 +624,9 @@ previously unconnected Liferay DXP instance with LCS:
    subscription type is assigned to the environment, your DXP instance activates 
    and consumes an activation key from that environment. 
 
-Once connected, the LCS client app in your DXP instance also displays some 
-statistics and links. To view these, log in to your instance and select *Control 
-Panel* &rarr; *Configuration* &rarr; *Liferay Connected Services*. 
-
-Here's a full description of what a connected LCS client app displays: 
-
-- **Heartbeat Interval:** The interval of the communication that maintains the 
-  connection with LCS. This regular communication keeps the client's LCS 
-  connection alive, even when there's nothing else to report. The value is 
-  listed in hours, minutes, and then seconds. For example, if this value is 
-  `00:01:00`, the client communicates with LCS once every minute. 
-- **Message Task Interval:** The interval at which the client checks LCS for new 
-  messages. For example, LCS messages are used to instruct the client to 
-  download new fix packs. 
-- **Metrics Task Interval:** The interval at which server statistics and metrics 
-  are sent to LCS. 
-- **Last Message Received:** The time the latest message was received from LCS.
-- **Connection Uptime:** The duration of the client's connection with LCS.
-- **Project Home:** This link takes you to this server's LCS project. 
-  The project home in LCS is also called the *dashboard*.
-- **Environment:** This link takes you to this server's LCS environment.
-- **Server Dashboard:** This link takes you to the server on LCS.
-- **Configure Services:** This link lets you change which LCS services are 
-  enabled for your DXP instance. Doing so triggers reconnection with the new 
-  settings. 
-- **Disconnect:** Disconnects this DXP instance from LCS.
-
-![Figure 22: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
-
-By default, all LCS services are enabled for your DXP instance. You can change 
-this by clicking the *Configure Services* link in the connected client app. When 
-you click this link, the *Enable All Services* checkbox is selected by default. 
-This enables portal analytics, fix pack management, and portal property 
-analysis. Unchecking this checkbox presents you with additional checkboxes for 
-enabling each of those services separately. Note that although 
-[LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers), 
-you may have additional properties you want to prevent LCS from analyzing. If 
-you select *Portal Properties Analysis*, a text box appears for you to enter any 
-properties you don't want LCS to analyze. Click *Save* when you finish enabling 
-the LCS services you want to use. 
-
-![Figure 23: In a connected LCS client app, you can enable or disable specific LCS services for your DXP instance.](../../images-dxp/lcs-configure-services.png)
-
-When using an environment token, minimal information (server name, location, 
-etc...) is used to activate a DXP instance in LCS. You can change this 
-information from the server view in LCS at any time. Also, since environment 
-tokens connect using OAuth, it's important to note that using an environment 
-token overrides the OAuth authorization cycle. If an LCS Administrator or 
-Environment Manager has never activated Liferay instances with LCS, the first 
-time they do so an OAuth authorization entry is created in LCS. If they've 
-previously activated Liferay instances with LCS, their existing credentials are 
-used when they create a token file. 
-
-What if your DXP instance has already been manually connected to LCS, but you 
-want to switch to using an environment token? No problem! Follow these steps:  
-
-1. Shut down your DXP instance and place the token file in the instance's `data` 
-   folder. 
-
-2. Restart your DXP instance. The LCS client app uses the token file to 
-   connect to LCS automatically. 
+Once connected to LCS, you can view your DXP instance's connection status and 
+change which LCS services it uses. For information on this, see the end of 
+[the article on activating your DXP instance with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs). 
 
 Awesome! Now you know how to use environment tokens to activate your Liferay DXP 
 instances with LCS. 
