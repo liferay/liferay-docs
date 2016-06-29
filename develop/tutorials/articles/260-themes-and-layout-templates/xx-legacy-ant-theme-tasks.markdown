@@ -5,9 +5,9 @@ automate the theme development process, Liferay offers some build tools.
 
 Since Liferay 7.0 and Liferay DXP, you can create themes using the 
 [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator). 
-The Themes generator is a node based development tool that allows you to quickly 
-generate a theme. Once your theme is created, you can extend it further using 
-[theme gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks). 
+The Themes generator is a Node.js based development tool that allows you to 
+quickly generate a theme. Once your theme is created, you can extend it further 
+using [theme gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks). 
 The themes generator also consist of a sub-generator that allows you to extend 
 your theme further, using [themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
 
@@ -112,21 +112,17 @@ Once you've created your theme, you should end up with the structure below:
 If you're familiar with theme development in 6.2, you may have noticed a few
 changes in the directory structure and filenames.
 
-Starting in Liferay Portal 7.0 and Liferay DXP, all theme CSS files use SASS and
-therefore share the `.scss` file extension. This means that you can use imports
-and variables in all of your CSS files.
+Starting in Liferay Portal 7.0 and Liferay DXP, all theme CSS files have to 
+follow the SASS naming convention, using the `.scss` file extension. This means 
+that you can use imports and variables in all of your CSS files.
 
-<!-- What else could I point to that SASS will give devs access to in their CSS 
-files?-->
-
-The second change you may have noticed is that all theme template files are now
-FreeMarker. In Liferay 6.2, theme templates could be Velocity or FreeMarker.
-Velocity theme templates have been deprecated for Liferay 7.0 and Liferay DXP.
-It is recommended that you use FreeMarker theme templates to develop your theme,
-as new theme components will not work with Velocity templates. Other than those 
-key changes, the development process is just as it was in 6.2. You can read 
-about all the theme development changes from Liferay 6.2 to Liferay 7.0 and 
-Liferay DXP, in the [Migrating a 6.2 theme to 7.0](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7) 
+The second change to note is that FreeMarker is now the default and recommended 
+template language. Velocity theme templates have been deprecated for Liferay 7.0 
+and Liferay DXP. It is recommended that you use FreeMarker theme templates to 
+develop your theme, as new theme components will not work with Velocity 
+templates. Other than those key changes, the development process is just as it 
+was in 6.2. You can read about all the theme development changes from Liferay 
+6.2 to Liferay 7.0 and Liferay DXP, in the [Migrating a 6.2 theme to 7.0](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7) 
 tutorial.
 
 ### Theme Development Workflow [](id=theme-development-workflow)
