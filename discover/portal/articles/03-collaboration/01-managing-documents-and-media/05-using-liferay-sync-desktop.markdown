@@ -1,20 +1,20 @@
 # Using Liferay Sync on Your Desktop [](id=using-liferay-sync-on-your-desktop)
 
 Liferay Sync synchronizes files between your Liferay sites and desktop devices.
-It lets you work with your files without using a browser. The client also
-ensures that the files are updated with the latest changes made by other users.
+It lets you work with your files without using a browser. The Sync clients also
+ensure that the files are updated with the latest changes made by other users.
 To use Liferay Sync in your desktop environment, you must install the Sync
 desktop client. It's currently available for Windows and Mac OS. The Sync client
 stores files locally so that they're always available, even when you're offline.
-Files are automatically synchronized upon your client's reconnection with your 
+Files are automatically synchronized upon your client's reconnection to your 
 Liferay instance. 
 
-On your desktop devices, Liferay Sync creates a new folder structure in which to
-synchronize files. You can treat the files the same as you do any ordinary file.
-Credentials, Sync folder location, and other options are configured in the
-client. Also, native desktop notification events inform you of what Sync is
-doing. The native menu and task bar integration keep Sync controls within easy
-reach. 
+On your desktop devices, Liferay Sync creates a new folder structure that it 
+uses to synchronize files. You can treat the files the same as you do any 
+ordinary file. Credentials, Sync folder location, and other options are 
+configured in the client. Also, native desktop notification events inform you of 
+what Sync is doing. The native menu and task bar integration keep Sync controls 
+within easy reach. 
 
 This guide walks you through setting up and using the Liferay Sync client on
 your desktop. Before proceeding, check with your Liferay instance or site 
@@ -25,8 +25,10 @@ through installing the client.
 ## Installing the Desktop Liferay Sync Client [](id=installing-the-desktop-liferay-sync-client)
 
 You can download the desktop client from the
-[Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync).
-Installing Liferay Sync on Windows and Mac OS is straightforward. 
+[Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
+Note that you'll need a Liferay account for this. Once you've downloaded the 
+appropriate desktop client for your operating system, installing Liferay Sync on 
+Windows or Mac OS is straightforward. 
 
 To install the Liferay Sync client on Windows, you must have administrator
 privileges. Upon launching the Windows application installer, you're prompted
@@ -57,62 +59,92 @@ appears when installing or upgrading the tool.
 ![Figure 1: Drag the Liferay Sync icon to the Applications folder.](../../../images/sync-mac-install.png)
 
 Now that you've installed sync, you're ready to configure it! The configuration 
-steps for Sync on Windows and Mac are identical. First, enter your Liferay 
-instance's address along with your account credentials. Click *Sign In* when 
-you're finished. 
+steps for Sync on Windows and Mac are identical. 
 
-Sync offers you a warm greeting and lists the sites in your Liferay instance 
-that you can sync with. You can search for a site in the *Search* bar above the 
-site list. Check the checkbox for each site you want to sync with and then click 
-*Proceed*. 
+1. Open Sync and enter your Liferay instance's address along with your account 
+   credentials. Click *Sign In* when you're finished. 
 
-You must now specify a Sync folder with which your Liferay instance will sync. 
-Sync creates this folder and it must not conflict with any existing local 
-folder. The Sync folder's default name is the instance's host name and its 
-default location is the user's documents folder. For example, since the instance 
-in the screenshots below runs locally at the address `http://localhost:8080/`, 
-Sync creates a Sync folder named *localhost* in the user's documents folder. You 
-can, of course, specify any unique name and location you like for Sync to use 
-for the Sync folder it creates. Click *Start Syncing* to begin syncing files. 
+    ![Figure 2: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../../images/sync-setup-01.png)
 
-![Figure 2: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../../images/sync-setup-01.png)
+2. Select the sites you want to sync with. You can search for a site in the 
+   *Search* bar above the site list. If you want to sync all the subfolders of 
+   your selected sites, click *Proceed* and move on to the next step. 
 
-![Figure 3: Select the sites you want to sync with and then click *Proceed*.](../../../images/sync-setup-02.png)
+    ![Figure 3: Select the sites you want to sync with. Clicking a site's gear icon opens another window where you can choose to sync with only specific subfolders in that site.](../../../images/sync-setup-02.png) 
 
-![Figure 4: Specify your local Sync folder's name and location.](../../../images/sync-setup-03.png)
+    To sync only specific folders in a site, click the site's gear icon and 
+    select the folders in the window that appears. Unselecting a subfolder 
+    causes the parent folder's checkbox to show a minus sign, indicating that 
+    you haven't selected all of the parent folder's subfolders. To sync only the 
+    documents at the top of a folder's hierarchy, unselect all of that folder's 
+    subfolders. You can also do this by clicking the folder's checkbox until the 
+    minus sign appears. Click *Select* when you're finished with your 
+    selections, and then click *Proceed* to move on to the next step. 
 
-![Figure 5: Congratulations, you've successfully set up Liferay Sync!](../../../images/sync-setup-04.png)
+    ![Figure 4: Choose the site's subfolders that you want to sync with. The checkbox with the minus sign indicates that not all of the *registration* folder's subfolders are selected.](../../../images/sync-select-folders.png)
 
-Sync congratulates you on setting it up and begins to sync files from the sites
-you selected to your local Sync folder. Note, completing the initial
-synchronization may take a significant amount of time, depending on the amount
-of data being transferred. You can safely close the window as syncing continues
-in the background. To view the local Sync folder, click *Open Folder*. 
+3. Specify the local folder your Liferay instance will sync with. This folder 
+   will be used exclusively for Sync: Sync creates it and it must not conflict 
+   with any existing local folder. The Sync folder's default name is the 
+   instance's host name, and its default location is the user's documents 
+   folder. For example, since the instance in the following screenshots runs 
+   locally at the address `http://localhost:8080/`, Sync creates a Sync folder 
+   named *localhost* in the user's documents folder. You can, of course, specify 
+   any unique name and location for the Sync folder. Click *Start Syncing* to 
+   begin syncing files. 
 
-## Viewing Your Sync Status [](id=viewing-your-sync-status)
+    ![Figure 5: Specify your local Sync folder's name and location.](../../../images/sync-setup-03.png)
 
-When Sync is running its icon appears in your task bar (Windows) or menu bar
-(Mac). Clicking this icon opens a menu lists the Liferay instances you sync with 
-and displays options for preferences, help, and quitting Sync. Mousing over an
-instance's name extends the menu to show additional options for that instance. 
-The following screenshots show this menu in Windows. 
+4. Celebrate! You've successfully set up Liferay Sync! Sync congratulates you on 
+   setting it up and begins to sync files from the sites you selected to your 
+   local Sync folder. Note, completing the initial synchronization may take a 
+   significant amount of time, depending on the amount of data being 
+   transferred. You can safely close the window as syncing continues in the 
+   background. To view the local Sync folder, click *Open Folder*. To open 
+   Sync's preferences, click the small gray text *advanced setup* near the 
+   top-right. 
 
-![Figure 6: The Sync desktop menu options are always available from the task bar.](../../../images/sync-taskbar-01.png)
+    ![Figure 6: Congratulations, you've successfully set up Liferay Sync!](../../../images/sync-setup-04.png)
 
-![Figure 7: Each Liferay instance also has its own set of options in the task bar menu.](../../../images/sync-taskbar-02.png)
+Next, you'll learn how to use the Liferay Sync desktop client. 
 
-The menu for each instance first shows the sync status. The sync status shows
-*Synced* if you're completely synchronized with the instance. Mousing over *Open
-Sync Folder* shows a list of sites that you sync with. Clicking on a site opens
-your local Liferay Sync folder for that site in your native file manager.
-Similarly, mousing over *View Website* provides a list of links to the site
-pages containing the Documents and Media portlets that you have permission to
-access. Lastly, *Recent Files* lists recently created and modified files in all
-the repositories you can access. 
+## Using the Liferay Sync Desktop Client
 
-Next, you'll learn how to use Sync's preferences to control Sync's behavior.
+When Liferay Sync is running its icon appears in your task bar (Windows) or menu 
+bar (Mac). Clicking this icon opens a menu that lets you work with and manage 
+Liferay Sync. 
 
-## Using Sync Preferences [](id=using-sync-preferences)
+![Figure 6: The Liferay Sync menu in the Windows task bar and Mac menu bar gives you quick access to Sync.](../../../images/sync-toolbar-01.png)
+
+The top of this menu shows your Sync status. If everything you selected is 
+synced, then your status is *Synced*. 
+
+Below your Sync status, the menu lists three shortcuts for accessing your 
+Liferay instance's files: 
+
+- **Open Sync Folder:** Select a site to open its local Sync folder. 
+- **View Website:** Select a site to view the page that contains its Documents 
+  and Media app in Liferay. 
+- **Recent Files:** Lists recently created and modified files in the 
+  repositories you can access. 
+
+Note that if you sync with two or more Liferay instances, Sync shows each at the 
+top of the menu instead of your Sync status. Mousing over each instance reveals 
+a submenu with that instance's Sync status and file shortcuts. 
+
+![Figure 7: When you sync with more than one Liferay instance, Sync shows submenus for each.](../../../images/sync-toolbar-02.png)
+
+Lastly, regardless of how many Liferay instances you sync with, the menu lists 
+the following three options: 
+
+- **Preferences:** Open Sync's preferences. 
+- **Help:** Open Sync's documentation. 
+- **Quit:** Shut down Sync on your machine. 
+
+Next, you'll learn how to use Sync's preferences to control how Sync functions 
+on your machine. 
+
+### Using Sync Preferences [](id=using-sync-preferences)
 
 You can use Sync's preferences to add/remove Liferay instances to sync with, 
 edit instance connection settings, and control Sync's basic behavior. Open 
@@ -152,7 +184,7 @@ button.
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder.
 
-## Using Your Local Sync Folder [](id=using-your-local-sync-folder)
+### Using Your Local Sync Folder [](id=using-your-local-sync-folder)
 
 Once you configure and run Sync, Sync automatically uploads to your Liferay 
 instance any files you add or modify in your Sync folder. Sync also downloads to 
