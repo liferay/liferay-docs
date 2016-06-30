@@ -14,13 +14,14 @@ Liferay instance. Extenders specify where the services are deployed and whether
 they are augmented with handlers, providers, and so on. There are two types of 
 extenders: 
 
-1. SOAP Extenders: Required to publish JAX-WS web services. Each SOAP extender 
-   can deploy the services to one or more CXF endpoints, and can use a set of 
+1. **SOAP Extenders:** Required to publish JAX-WS web services. Each SOAP 
+   extender can deploy the services to one or more CXF endpoints, and can use a 
+   set of 
    [JAX-WS handlers](https://jax-ws.java.net/articles/handlers_introduction.html) 
    to augment the services. 
 
-2. REST Extenders: Required to publish JAX-RS web services. REST extenders for 
-   JAX-RS services are analogous to SOAP extenders for JAX-WS services. To 
+2. **REST Extenders:** Required to publish JAX-RS web services. REST extenders 
+   for JAX-RS services are analogous to SOAP extenders for JAX-WS services. To 
    create JAX-RS services that can work across different JAX-RS implementations, 
    you must provide an implementation of `javax.ws.rs.core.Application` to the 
    OSGi framework. You can do this by registering an instance of this 
@@ -96,8 +97,6 @@ fields:
   In most cases, you can leave this field blank: overriding extensions isn’t 
   common. 
 
-Select *Save* when you're finished filling out the form. 
-
 ![Figure 1: Fill out this form to create a CXF endpoint.](../../images/cxf-endpoint-form.png)
 
 Next, you'll learn how to use the Control Panel to create SOAP extenders for 
@@ -171,8 +170,8 @@ fields:
   returned by the `getSingletons()` method of `javax.ws.rs.core.Application`. 
   The following links list some of the supported JAX-RS providers: 
 
-        - [JAX-RS Entity Providers](https://jersey.java.net/documentation/latest/message-body-workers.html) 
-        - [Filters and Interceptors](https://jersey.java.net/documentation/latest/filters-and-interceptors.html) 
+    - [JAX-RS Entity Providers](https://jersey.java.net/documentation/latest/message-body-workers.html) 
+    - [Filters and Interceptors](https://jersey.java.net/documentation/latest/filters-and-interceptors.html) 
 
 - **jax.rs.service.filters:** Here you can specify a set of OSGi filters that 
   selects services registered in the OSGi framework that are valid JAX-RS 
