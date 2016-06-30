@@ -16,8 +16,14 @@ just as you had in 6.2.
 
 +$$$
 
-**Note:** The Plugins SDK is currently broken for Liferay 7.0 GA2. In the
-interim, you can use the Themes Generator to create and develop your themes.
+**Note:** If you are unable to build a theme, you may need to update your 
+`ivy-settings.xml`. Open `ivy-settings.xml` inside of your Plugins SDK and 
+remove the following property:
+
+    <resolver ref="liferay-private" />
+    
+This stops the Plugins SDK from downloading dependencies for empty repositories.
+Your SDK should be working now.
 
 $$$
 
