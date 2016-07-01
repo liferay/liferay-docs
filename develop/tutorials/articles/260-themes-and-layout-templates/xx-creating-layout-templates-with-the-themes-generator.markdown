@@ -69,13 +69,13 @@ Follow these steps to create a layout template:
     choose where to insert your row, highlighted in blue, then press Enter to 
     insert the row.
     
-        ![Figure 4: Rows can be inserted using the layout vi.](../../images/insert-row.png)
+    ![Figure 4: Rows can be inserted using the layout vi.](../../images/insert-row.png)
 
     - Remove row: Displays a vi to remove your row. Use your arrow keys to
     select the row you want to remove, highlighted in red, then press Enter to
     remove the row.
     
-        ![Figure 5: Rows are removed using the layout vi.](../../images/remove-row.png)
+    ![Figure 5: Rows are removed using the layout vi.](../../images/remove-row.png)
 
     Once you are done designing your layout you can move onto the next step.
     

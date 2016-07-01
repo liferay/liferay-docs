@@ -1,4 +1,4 @@
-# Migrating a 6.2 Theme to Liferay 7 [](id=migrating-a-6-2-theme-to-liferay-7)
+# Optimizing an Existing Theme for Liferay 7 [](id=migrating-a-6-2-theme-to-liferay-7)
 
 Migrating your theme from Liferay 6.2 to Liferay 7 is easier than you may think,
 thanks to the [themes generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator). 
