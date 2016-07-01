@@ -26,12 +26,12 @@ Once your dependencies are declared, you can write your upgrade steps.
 
 `UpgradeSteps` are executed during the upgrade process, and are responsible for
 the changes that take place between each schema version. Your `UpgradeSteps` 
-must extend the `UpgradeProcess` class, which is located under the 
+must extend the `UpgradeProcess` class, which is under the 
 [portal-kernel module](https://github.com/liferay/liferay-portal/tree/master/portal-kernel)).
 
 This base class provides a `doUpgrade` method that handles the upgrade process
-itself. For example, take a look at the [`UpgradeCalendarBooking`](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/forms-and-workflow/calendar/calendar-service/src/main/java/com/liferay/calendar/upgrade/v1_0_0/UpgradeCalendarBooking.java) 
-class below: 
+itself. For example, the [`UpgradeCalendarBooking`](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/forms-and-workflow/calendar/calendar-service/src/main/java/com/liferay/calendar/upgrade/v1_0_0/UpgradeCalendarBooking.java) 
+class modifies a column: 
 
     public class UpgradeCalendarBooking extends UpgradeProcess {
 
