@@ -7,7 +7,7 @@ via the
 [Apache CXF](http://cxf.apache.org/) 
 implementation. Apps can publish JAX web services to the CXF endpoints defined 
 in your Liferay instance. CXF endpoints are effectively context paths the JAX 
-web services are deployed to, and accessible from. To publish any kind of JAX 
+web services are deployed to and accessible from. To publish any kind of JAX 
 web service, one or more CXF endpoints must be defined in your Liferay instance. 
 To access JAX web services, an *extender* must also be configured in your 
 Liferay instance. Extenders specify where the services are deployed and whether 
@@ -15,7 +15,7 @@ they are augmented with handlers, providers, and so on. There are two types of
 extenders: 
 
 1. **SOAP Extenders:** Required to publish JAX-WS web services. Each SOAP 
-   extender can deploy the services to one or more CXF endpoints, and can use a 
+   extender can deploy the services to one or more CXF endpoints and can use a 
    set of 
    [JAX-WS handlers](https://jax-ws.java.net/articles/handlers_introduction.html) 
    to augment the services. 
@@ -62,21 +62,18 @@ are covered:
 ## Configuring Endpoints and Extenders with the Control Panel [](id=configuring-endpoints-and-extenders-with-the-control-panel)
 
 Liferay's Control Panel lets administrators configure endpoints and extenders 
-for JAX web services. You'll do this from *Control Panel* &rarr; 
-*Configuration* &rarr; *System Settings* &rarr; *Foundation*. Note that you must 
-be an administrator in your Liferay instance to access the settings here. First, 
-you'll learn how to create CXF endpoints. 
+for JAX web services. Note that you must be an administrator in your Liferay
+instance to access the settings here. First, you'll learn how to create CXF
+endpoints. 
 
 ### CXF Endpoints [](id=cxf-endpoints)
 
-To configure a CXF endpoint with the Control Panel, first go to 
-*Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
-*Foundation*. Then select *CXF Endpoints* from the table. If there are any 
-existing CXF endpoints, they’re shown here. To add a new one, select the *Add* 
-button 
+To configure a CXF endpoint with the Control Panel, first go to *Control Panel*
+&rarr; *Configuration* &rarr; *System Settings* &rarr; *Foundation*. Then select
+*CXF Endpoints* from the table. If there are any existing CXF endpoints, they’re
+shown here. To add a new one, select the *Add* button
 (![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
-that appears lets you configure a new CXF endpoint by filling out the following 
-fields: 
+that appears lets you configure a new CXF endpoint by filling out these fields: 
 
 - **Context path:** The path the JAX web services are deployed to on the Liferay 
   server. For example, if you define the context path `/web-services`, any 
@@ -89,13 +86,11 @@ fields:
   for more details. 
 
 - **Required extensions:** CXF normally loads its default extension classes, but 
-  in some cases you can override them to replace the default behavior. By 
-  specifying custom extensions here via 
-  [OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html), 
-  Liferay will wait until those extensions are registered in the OSGi framework 
+  in some cases you can override them to replace the default behavior. In most
+  cases, you can leave this field blank: overriding extensions isn’t common. By
+  specifying custom extensions here via [OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html), 
+  Liferay waits until those extensions are registered in the OSGi framework 
   before creating the CXF servlet and passing the extensions to the servlet. 
-  In most cases, you can leave this field blank: overriding extensions isn’t 
-  common. 
 
 ![Figure 1: Fill out this form to create a CXF endpoint.](../../images/cxf-endpoint-form.png)
 
@@ -111,8 +106,7 @@ configure a SOAP extender with the Control Panel, first go to
 existing SOAP extenders, they’re shown here. To add a new one, select the *Add* 
 button 
 (![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
-that appears lets you configure a new SOAP extender by filling out the following 
-fields: 
+that appears lets you configure a new SOAP extender by filling out these fields: 
 
 - **Context paths:** Specify at least one CXF endpoint here. This is where the 
   services affected by this extender are deployed. In the preceding CXF endpoint 
@@ -129,7 +123,7 @@ fields:
 - **jax.ws.service.filters:** Here you can specify a set of OSGi filters that 
   select the services registered in the OSGi framework that will be deployed 
   to the CXF endpoints. These OSGi services must be 
-  [proper JAX-WS services](https://docs.oracle.com/javaee/6/tutorial/doc/bnayn.html). 
+  [proper JAX-WS services](https://docs.oracle.com/javaee/7/tutorial/jaxws001.htm). 
 
 - **soap.descriptor.builder:** Leave this option empty to use JAX-WS annotations 
   to describe the SOAP service. To use a different way to describe the SOAP 
@@ -149,8 +143,7 @@ To configure a REST extender with the Control Panel, first go to
 existing REST extenders, they’re shown here. To add a new one, select the *Add* 
 button 
 (![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
-that appears lets you configure a new REST extender by filling out the following 
-fields: 
+that appears lets you configure a new REST extender by filling out these fields: 
 
 - **Context paths:** Specify at least one CXF endpoint here. This is where the 
   services affected by this extender are deployed. In the preceding CXF endpoint 
@@ -159,9 +152,9 @@ fields:
   in SOAP Extenders. 
 
 - **jax.rs.application.filters:** Here you can specify a set of OSGi filters 
-  that select services registered in the OSGi framework that implement 
-  `javax.ws.rs.core.Application`. These JAX-RS applications are deployed to the 
-  CXF endpoints specified in the *Context paths* property. 
+  that select services that implement `javax.ws.rs.core.Application`. These
+  JAX-RS applications are deployed to the CXF endpoints specified in the
+  *Context paths* property. 
 
 - **jsx.rs.provider.filters:** Here you can specify a set of OSGi filters that 
   select services registered in the OSGi framework. The selected services should 
@@ -189,8 +182,9 @@ To configure endpoints or extenders programmatically, you must use Liferay’s
 configurator extender. The configurator extender provides a way for OSGi modules 
 to deploy default configuration values. Modules that use the configurator 
 extender must provide a `ConfigurationPath` header that points to the 
-configuration files’ location inside the module. For example, the following code 
-sets the `ConfigurationPath` to `src/main/resources/configuration`:
+configuration files’ location inside the module. For example, the following
+configuration sets the `ConfigurationPath` to
+`src/main/resources/configuration`:
 
     Bundle-Name: Liferay Export Import Service JAX-WS
     Bundle-SymbolicName: com.liferay.exportimport.service.jaxws
@@ -226,7 +220,7 @@ and `jaxWsServiceFilterStrings`:
     jaxWsServiceFilterStrings=(staging.jax.ws.service=true)
 
 You must then use these configuration fields in the configuration class. For 
-example, the following `SoapExtenderConfiguration` interface contains the 
+example, the `SoapExtenderConfiguration` interface below contains the 
 configuration fields `contextPaths`, `jaxWsHandlerFilterStrings`, and 
 `jaxWsServiceFilterStrings`: 
 
@@ -265,7 +259,7 @@ Next, you'll learn how to publish JAX-WS web services.
 To publish JAX-WS web services via SOAP in a Liferay 7 module, annotate the 
 class and its methods with standard JAX-WS annotations, and then register it as 
 a service in the OSGi framework. For example, the following class uses the 
-`@WebService` annotation for the class, and `@WebMethod` annotations for its 
+`@WebService` annotation for the class and `@WebMethod` annotations for its 
 methods. You must also set the `jaxws` property to `true` in the OSGi 
 `@Component` annotation: 
 
