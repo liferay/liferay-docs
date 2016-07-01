@@ -1,30 +1,43 @@
 # Optimizing an Existing Theme for Liferay 7 [](id=migrating-a-6-2-theme-to-liferay-7)
 
-Are you applying the same modifications to each of your themes? Do you want to 
-make a temporary change to your theme's UI? [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets) 
-are the answer! Themelets are small, extendable, and, reusable, modular pieces 
+After you've upgraded your existing theme to Liferay 7, our enhanced development
+features and tools offer options for optimizing your theme and streamlining
+theme management. To introduce one of the most powerful features, we'll pose
+some questions. 
+
+**Questions**:
+
+-   Are you applying the same modifications to each of your themes?
+-   Do you want to make a temporary change to your theme's UI?
+-   Do you want to add the same UI modification to all of your themes, without
+    duplicating code? 
+-   Do you want to share your new theme designs with a colleague?
+-   Do you want to test a new design concept in your theme without altering its
+    code?
+
+**Answer**: [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets) 
+are the answer! Themelets are small extendable reusable modular pieces 
 of code, that allow you to quickly make changes to your theme. Because they are 
-modular, you can use the same themelet for multiple themes! Do you want to add 
-the same UI modification to all of your themes, without rewriting the code? Use 
-a themelet! Do you want to share your new theme designs with a colleague? Use a 
-themelet! Do you want to test a new design concept without altering your 
-theme's code? Use a themelet!
+modular, you can use the same themelet for multiple themes!
 
-Themelets are just one of the developer features you gain from migrating an
+Themelets are just one of the developer features you gain from migrating your
 existing Ant-based theme project to a theme project based on the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
---a Node.js-based tool that allows you to develop and manage your theme using
-Liferay's [Gulp tasks for themes](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks).
+The Themes Generator is a Node.js-based tool that gives you access to an array
+of  [theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks),
+that facilitate developing and managing themes. 
 
-They enable you to run typical processes, such as building and deploying themes,
-but they offer more as well. For instance, you can automatically deploy your 
-theme when changes are made, or set the app server for your theme. Do you need 
-to make changes to your theme's settings? No problem. You can quickly and easily 
-configure your theme's settings through the handy command-line-wizard that the
-Themes Generator provides. Just answer a few questions about the settings, and
-in no time at all your theme's files are automatically updated.
+The Gulp tasks not only enable you to build and deploy themes, but they also
+allow you to interact with your deployed themes. For instance, you can activate
+your environment to automatically redeploy your theme as you make changes to it.
 
-As you can see, the Node.js and Gulp development tools offer a lot to a Liferay theme 
-developer.
+Do you periodically need to make changes to your theme's settings? No problem.
+You can quickly and easily configure your theme's settings through the handy
+command-line wizard that the Themes Generator provides. Just answer a few
+questions about the settings and in no time at all, your theme's files are
+automatically updated.
+
+As you can see, the Themes Generator, Node.js, and Gulp development tools offer
+a lot to a Liferay theme developer.
 
 This tutorial assumes that you have already installed the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 and have an existing Liferay 6.2 theme that was developed with the Plugins SDK.
