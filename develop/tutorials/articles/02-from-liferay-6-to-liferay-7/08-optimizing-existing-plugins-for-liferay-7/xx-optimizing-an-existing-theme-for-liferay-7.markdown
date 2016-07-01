@@ -68,9 +68,7 @@ theme development tools. Follow the steps below to get your theme set up:
 4.  Enter the URL to your production or development site, or press `Enter` to
     accept the default `http://localhost:8080`.
     
-Your theme is now set up to use the node build tools and theme gulp tasks.
-However, the theme is still configured for Liferay 6.2. To upgrade your theme to
-Liferay 7, follow the steps in the next section.
+Your theme is now set up to use the Node.js build tools and theme gulp tasks!
 
 ## Related Articles [](id=related-articles)
 
