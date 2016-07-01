@@ -16,8 +16,8 @@ some questions.
     code?
 
 **Answer**: [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets) 
-are the answer! Themelets are small extendable reusable modular pieces 
-of code, that allow you to quickly make changes to your theme. Because they are 
+are the answer! Themelets are small, extendable, reusable modular pieces 
+of code that allow you to make changes to your theme quickly. Because they are 
 modular, you can use the same themelet for multiple themes!
 
 Themelets are just one of the developer features you gain from migrating your
@@ -26,12 +26,12 @@ The Themes Generator is a Node.js-based tool that gives you access to an array
 of  [theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks),
 that facilitate developing and managing themes. 
 
-The Gulp tasks not only enable you to build and deploy themes, but they also
-allow you to interact with your deployed themes. For instance, you can activate
-your environment to automatically redeploy your theme as you make changes to it.
+The Gulp tasks not only enable you to build and deploy themes, but also allow
+you to interact with your deployed themes. For instance, you can activate your
+environment to automatically redeploy your theme as you make changes to it.
 
 Do you periodically need to make changes to your theme's settings? No problem.
-You can quickly and easily configure your theme's settings through the handy
+You can quickly and easily configure your theme's settings through the
 command-line wizard that the Themes Generator provides. Just answer a few
 questions about the settings and in no time at all, your theme's files are
 automatically updated.
