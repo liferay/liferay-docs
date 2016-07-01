@@ -1,8 +1,8 @@
 # Adapting to Liferay 7's API with the Code Upgrade Tool [](id=adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
-The first step to upgrade an existing development to Liferay 7 is to adapt its
+The first step to upgrade an existing project to Liferay 7 is to adapt its
 code to Liferay's API changes. Since Liferay 7 is a major version, it contains
-some significant modifications to some APIs. Also, as part of the modularization
+significant modifications to its APIs. Also, as part of the modularization
 process many packages have been renamed to adopt a new standard. We have
 carefully documented the API changes to explain what changed, how to adapt to
 the change, and why the change was made).
