@@ -58,7 +58,11 @@ appears when installing or upgrading the tool.
 
 ![Figure 1: Drag the Liferay Sync icon to the Applications folder.](../../../images/sync-mac-install.png)
 
-Now that you've installed sync, you're ready to configure it! The configuration 
+Next, you'll configure the Sync client. 
+
+## Configuring the Liferay Sync Desktop Client [](id=configuring-the-liferay-sync-desktop-client)
+
+Now that you've installed Sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. 
 
 1. Open Sync and enter your Liferay instance's address along with your account 
@@ -72,13 +76,14 @@ steps for Sync on Windows and Mac are identical.
 
     ![Figure 3: Select the sites you want to sync with. Clicking a site's gear icon opens another window where you can choose to sync with only specific subfolders in that site.](../../../images/sync-setup-02.png) 
 
-    To sync only specific folders in a site, click the site's gear icon and 
-    select the folders in the window that appears. Unselecting a subfolder 
-    causes the parent folder's checkbox to show a minus sign, indicating that 
-    you haven't selected all of the parent folder's subfolders. To sync only the 
-    documents at the top of a folder's hierarchy, unselect all of that folder's 
-    subfolders. You can also do this by clicking the folder's checkbox until the 
-    minus sign appears. Click *Select* when you're finished with your 
+    To sync only specific folders in a site, first click the site's gear icon. 
+    In the window that appears, all folders are selected by default. Unselect 
+    the folders you don't want to sync with. Unselecting a subfolder causes the 
+    parent folder's checkbox to show a minus sign, indicating that you haven't 
+    selected all of the parent folder's subfolders. To sync only the documents 
+    at the top of a folder's hierarchy (no subfolders), unselect all of that 
+    folder's subfolders. You can also do this by clicking the folder's checkbox 
+    until the minus sign appears. Click *Select* when you're finished with your 
     selections, and then click *Proceed* to move on to the next step. 
 
     ![Figure 4: Choose the site's subfolders that you want to sync with. The checkbox with the minus sign indicates that not all of the *registration* folder's subfolders are selected.](../../../images/sync-select-folders.png)
@@ -108,31 +113,31 @@ steps for Sync on Windows and Mac are identical.
 
 Next, you'll learn how to use the Liferay Sync desktop client. 
 
-## Using the Liferay Sync Desktop Client
+## Using the Liferay Sync Desktop Client [](id=using-the-liferay-sync-desktop-client)
 
 When Liferay Sync is running its icon appears in your task bar (Windows) or menu 
 bar (Mac). Clicking this icon opens a menu that lets you work with and manage 
 Liferay Sync. 
 
-![Figure 6: The Liferay Sync menu in the Windows task bar and Mac menu bar gives you quick access to Sync.](../../../images/sync-toolbar-01.png)
+![Figure 7: The Liferay Sync menu in the Windows task bar and Mac menu bar gives you quick access to Sync.](../../../images/sync-toolbar-01.png)
 
-The top of this menu shows your Sync status. If everything you selected is 
+The top of this menu shows your Sync status. If all your selected sites are 
 synced, then your status is *Synced*. 
 
 Below your Sync status, the menu lists three shortcuts for accessing your 
 Liferay instance's files: 
 
 - **Open Sync Folder:** Select a site to open its local Sync folder. 
-- **View Website:** Select a site to view the page that contains its Documents 
-  and Media app in Liferay. 
+- **View Website:** Select a site to view the page in Liferay that contains its 
+  Documents and Media app. 
 - **Recent Files:** Lists recently created and modified files in the 
   repositories you can access. 
 
 Note that if you sync with two or more Liferay instances, Sync shows each at the 
-top of the menu instead of your Sync status. Mousing over each instance reveals 
+top of the menu instead of your Sync status. Mouse over each instance to reveal 
 a submenu with that instance's Sync status and file shortcuts. 
 
-![Figure 7: When you sync with more than one Liferay instance, Sync shows submenus for each.](../../../images/sync-toolbar-02.png)
+![Figure 8: When you sync with more than one Liferay instance, Sync shows submenus for each.](../../../images/sync-toolbar-02.png)
 
 Lastly, regardless of how many Liferay instances you sync with, the menu lists 
 the following three options: 
@@ -150,39 +155,51 @@ You can use Sync's preferences to add/remove Liferay instances to sync with,
 edit instance connection settings, and control Sync's basic behavior. Open 
 Sync's preferences by clicking the Sync icon in the task bar (Windows) or menu 
 bar (Mac OS) and selecting *Preferences*. A preference screen for your instance 
-accounts displays. 
+accounts displays. This is the *Accounts* tab in *Preferences*.
 
-![Figure 8: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../../images/sync-preferences-accounts-01.png)
+![Figure 9: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../../images/sync-preferences-accounts-01.png)
 
-The accounts and instances that you sync with are listed on the left. The plus,
-minus, and pencil icons at the bottom of the account list can be used to
-respectively add, delete, or edit an account. You should use caution when
-deleting an account from your Sync client, as doing so also deletes any local
-files and folders for that account. When you select an account in the
-Preferences screen, the sites you have permission to sync with are shown on the
-right. These sites are further broken down into *Selected Sites* and *Unselected
-Sites*. The sites you currently sync with are shown under *Selected Sites*.
-Other sites available for syncing are shown under *Unselected Sites*. To select
-a site to sync, click the *Select Sites* button under the site list. In the menu
-that appears, check the checkbox for the sites you want and then click
-*Confirm*. Use caution when de-selecting sites. De-selecting a site deletes its
-folder on your machine. Below the *Select Sites* button, the local Sync folder
-location for the selected account is shown. Click the *Change* button to change
-this folder's location. 
+The *Accounts* tab contains the following:
 
-The Preferences menu's *General* tab contains three settings for the Sync
-client's general behavior. To start Sync automatically each time your machine
-starts, check the checkbox next to *Launch Liferay Sync on startup*. To show a
-small notification in the corner of your screen when a synced file changes,
-check the checkbox next to *Show desktop notifications*. To automatically check
-for new client versions, check the checkbox next to *Automatically check for
-updates*. You can also check for updates manually by clicking the *Check Now*
-button. 
+- **Accounts:** the instance accounts you sync with. When you select an account, 
+  the sites you have permission to sync with are shown on the right under 
+  *Syncing Sites*. You can use the plus, minus, and pencil icons at the bottom 
+  of the account list to add, delete, or edit an account, respectively. You 
+  should use caution when deleting an account from your Sync client, as doing so 
+  also deletes any local files and folders for that account. Adding an account 
+  takes you through the same set of steps you used to set up the Sync client. 
+  [Click here](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop#configuring-the-liferay-sync-desktop-client) 
+  for instructions on this. 
 
-![Figure 9: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../../images/sync-preferences-general-01.png)
+- **Syncing Sites:** the sites you have permission to sync with for the selected 
+  account. The sites you currently sync with are shown under *Selected Sites*. 
+  Other sites available for syncing are shown under *Unselected Sites*. To 
+  change the sites you sync with, click the *Manage Sites* button. The window 
+  that appears lets you select and/or unselect sites to sync with. This window 
+  is identical to the one that appeared when you first configured the client. 
+  [Click here](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop#configuring-the-liferay-sync-desktop-client) 
+  and see step two for instructions on using it. Use caution when de-selecting
+  sites. De-selecting a site deletes its folder on your machine. 
+
+- **Location:** the selected account's local Sync folder location. Click the 
+  *Change* button to change this folder's location. 
+
+The Preferences menu's other tab, the *General* tab, contains settings for the 
+Sync client's general behavior. It lists the following options: 
+
+- **Launch Liferay Sync on startup:** starts Sync automatically each time your 
+  machine starts. 
+
+- **Show desktop notifications:** shows a small notification in the corner of 
+  your screen when a synced file changes. 
+
+- **Automatically check for updates:** automatically check for new client 
+  versions. You can click the *Check Now* button to check for updates manually. 
+
+![Figure 10: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../../images/sync-preferences-general-01.png)
 
 Now that you have a handle on configuring Sync, it's time to see how it works 
-with the files in your Sync folder.
+with the files in your Sync folder. 
 
 ### Using Your Local Sync Folder [](id=using-your-local-sync-folder)
 
@@ -211,17 +228,16 @@ create, edit, download, and upload files with Sync. First, open your Sync folder
 in your file manager and create a new file called `README.txt`. Enter the word 
 `test` in this file. Next, make sure you can access this file in your Liferay 
 site. Go to the site you want to sync with and navigate to its Documents 
-and Media portlet. It lists your `README.txt` file.
+and Media app. It lists your `README.txt` file.
 
 Download the `README.txt` file to a convenient location on your machine. Open 
 the file and check that it still says `test`. Now open the `README.txt` file in 
 your Sync folder and edit it so that it says `second test`. Once the changes are 
 synced, go back to your browser and refresh the page with your Documents and 
-Media portlet. Click on the *README.txt* file's name, look at the file 
-information displayed, and check that the file's version number has been 
-incremented. 
+Media app. Click on the *README.txt* file's name, look at the file information 
+displayed, and check that the file's version number has been incremented. 
 
-![Figure 10: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
+![Figure 11: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
 
 If you download and open the `README.txt` file again, it now says `second test`.
 Your edit was uploaded to the site! You can be confident that this edit was also
@@ -229,7 +245,7 @@ downloaded by all other Sync clients connected to your site.
 
 Now delete the `README.txt` file from your local Sync folder. When the changes
 finish syncing, go back to your browser and refresh the page containing your
-Documents and Media portlet. The file is gone! The file is also deleted from the
+Documents and Media app. The file is gone! The file is also deleted from the
 local Sync folders of all other Sync clients connected to the site. Remember
 this very important rule: deleting files in your local Sync folder deletes them
 *everywhere*! Next, you'll learn how to use the Sync client for your mobile
