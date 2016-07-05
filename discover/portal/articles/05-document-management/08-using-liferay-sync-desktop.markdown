@@ -201,7 +201,7 @@ Sync client's general behavior. It lists the following options:
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder. 
 
-## Using Your Local Sync Folder [](id=using-your-local-sync-folder)
+### Using Your Local Sync Folder [](id=using-your-local-sync-folder)
 
 Once you configure and run Sync, Sync automatically uploads to your Liferay 
 instance any files you add or modify in your Sync folder. Sync also downloads to 
