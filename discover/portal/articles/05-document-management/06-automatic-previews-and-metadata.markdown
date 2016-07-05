@@ -39,7 +39,7 @@ of chapter 17 for how to configure Liferay to use these tools.
 With the above tools installed and enabled, the Documents and Media library
 looks like this:
 
-![Figure 5.8: After configuring additional tools, previews in the Documents and Media portlet are more advanced.](../../images/05-doc-previews.png)
+![Figure 5.7: After configuring additional tools, previews in the Documents and Media portlet are more advanced.](../../images/05-doc-previews.png)
 
 You can view a document with a customized viewer that allows you to navigate
 through the different pages of the document and read its content. In addition,
@@ -47,7 +47,7 @@ you can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the native player of the browser. Otherwise it
 falls back to a Flash player.
 
-![Figure 5.9: You can watch a video clip or even view a slideshow inside Liferay's Documents and Media portlet.](../../images/05-document-preview.png)
+![Figure 5.8: You can watch a video clip or even view a slideshow inside Liferay's Documents and Media portlet.](../../images/05-document-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for. 
@@ -72,7 +72,7 @@ folder. Furthermore, you can specify different workflow definitions per document
 type and per folder. You can set this by editing the folder. Then the UI will
 look like this:
 
-![Figure 5.10: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
+![Figure 5.9: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
 
 Document types are a powerful way to enforce rules for documents uploaded by
 users. Next, we'll see a way to make it incredibly easy for users to access
@@ -100,7 +100,7 @@ Next, navigate to the Documents and Media portlet hosting the folder you'd like
 to access. Mouse over the folder (*Image Gallery* for our example) and select
 *Access from Desktop*.
 
-![Figure 5.11: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/webdav-access-from-desktop.png)
+![Figure 5.10: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/webdav-access-from-desktop.png)
 
 Copy the WebDAV URL. On Windows, right-click on *Computer* and select *Map
 Network Drive*. Select an unused drive, paste the WebDAV URL, and click

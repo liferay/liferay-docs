@@ -11,7 +11,7 @@ in the Documents and Media portlet's default Home folder. If you set the My
 Documents folder to be your portlet's new root folder, the original Home folder
 would no longer be accessible.
 
-![Figure 5.7: To make portlet-specific configurations for Documents and Media, click on the gear icon at the top of the portlet window and select *Configuration*.](../../images/docs-and-media-portlet-config.png)
+![Figure 5.6: To make portlet-specific configurations for Documents and Media, click on the gear icon at the top of the portlet window and select *Configuration*.](../../images/docs-and-media-portlet-config.png)
 
 By default, the Documents and Media portlet contains a search bar to help users
 quickly find relevant files. If you'd like the search bar not to appear, uncheck
