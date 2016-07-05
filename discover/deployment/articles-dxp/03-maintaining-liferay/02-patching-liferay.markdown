@@ -4,23 +4,21 @@ While we strive for perfection with every release of @product@, the reality
 of the human condition dictates that releases of the product may not be as
 perfect as originally intended. But we've planned for that. Included with every
 Liferay bundle is a Patching Tool that can handle the installation of two types
-of patches: hotfixes and fix packs. 
+of patches: fix packs and hotfixes.
+
+On a regular schedule, the latest fixes that patch the core are bundled together
+into fix packs, which are provided to all of Liferay's customers. If there's a
+fix you need, and it's for one of the application suites, the way to get the
+update is to retrieve and install it from Marketplace. If there's a fix you need
+that affects only the core, a fix pack will be provided.
 
 A hotfix is provided to a customer when a customer contacts Liferay about an
-issue, and Liferay's support team--working with the customer--determines that
-the problem is indeed an issue with the product that needs to be fixed. Support
-fixes the bug and provides a hotfix to the customer immediately. This is a
-short-term fix that solves the issue for the customer as quickly as possible.
-Hotfixes can patch both the core and the application suites. 
-
-On a regular schedule, hotfixes that patch the core are bundled together into
-fix packs, which are provided to all of Liferay's customers. Hotfixes that
-patch application suites are made for specific customers. These are delivered to
-other customers through Marketplace updates. This is an important distinction
-to remember: if there's a fix you need, and it's for one of the application
-suites, the way to get the update is to retrieve and install it from
-Marketplace. If there's a fix you need that affects only the core, a fix pack
-will be provided. 
+emergency situation, and Liferay's support team--working with the customer--
+determines that the problem is indeed an issue with the product that needs to be
+fixed very quickly. Support fixes the bug and provides a hotfix to the customer
+immediately. This is a short-term fix that solves the issue for the customer as
+quickly as possible. Hotfixes can patch both the core and the application
+suites.
 
 Now that you know what patching is all about, let's check out the tool. 
 

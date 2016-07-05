@@ -35,4 +35,4 @@ property. For example:
 
     -Dpatching.tool.home=/opt/liferay-dxp-digital-enterprise-7.0/patching-tool/
 
-Great! Now you're all set to configure the LCS client app.
+Great! Now you're all set to activate your DXP instance with LCS. 
