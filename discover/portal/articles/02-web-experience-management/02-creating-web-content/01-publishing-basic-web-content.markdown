@@ -127,13 +127,22 @@ Whenever you place your cursor in the content area, the *Add* icon
 (![WYSIWYG Add](../../../images/icon-wysiwyg-add.png)) appears. If you click on
 it, controls for inserting an image, table, or horizontal line
 (![Controls](../../../images/icon-content-insert-controls.png)) appear. To
-insert an image, select the icon the depicts a mountain silhouette. The image
-file selector screen appears, allowing you to choose an existing image to
-upload. After adding a photo to the web content article, clicking it brings up
-controls for justifying it to the left or right side of the article. Go ahead an
-add an image to the Lunar Resort article, to spice it up a bit. Note that when
-adding an image via the web content editor, you can either select the file from
-the Documents and Media app or provide it via URL.
+insert an image, select the icon that depicts a mountain silhouette. The image
+file selector screen appears, allowing you to choose an existing image or upload
+a new one. If you select an existing image in your Documents and Media 
+repository, you can access the [image editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images), 
+via the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) in 
+the bottom right corner of the preview window, to make changes to the photo.
+Once you've made edits, a copy of the image is automatically created for you to 
+use in your web content.
+
+![Figure 3: You can access the image editor through the item selector window.](../../../images/image-editor-preview-window.png)
+
+After adding a photo to the web content article, clicking it brings up controls 
+for justifying it to the left or right side of the article. Go ahead an add an 
+image to the Lunar Resort article, to spice it up a bit. Note that when adding 
+an image via the web content editor, you can either select the file from the 
+Documents and Media app or provide it via URL.
 
 You can also insert a table with as many rows and columns as you see fit. When
 clicking inside the table, table editing controls appear. They let you designate
@@ -157,7 +166,7 @@ a preview pane on the right. To open this view, click on the *Enlarge* icon
 preview panes horizonally or vertically. You can also hide the preview pane, if
 preferred.
 
-![Figure 3: You can view how your HTML would render by using the preview pane.](../../../images/web-content-editor-html.png)
+![Figure 4: You can view how your HTML would render by using the preview pane.](../../../images/web-content-editor-html.png)
 
 Every 25 seconds, the entry you're creating is automatically saved as a draft.
 Because of this, you never have to worry about losing your work if something
@@ -203,14 +212,14 @@ file and then check that the audio or video component appears in the web
 content. Excellent! When your web content is published, users can view or listen
 to the embedded multimedia!
 
-![Figure 4: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../images/web-content-audio-video.png)
+![Figure 5: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../images/web-content-audio-video.png)
 
 You can also download the web content article in XML format by clicking the
 *Options* icon (![Options](../../../images/icon-options.png)) from the top right
 corner of the screen and selecting *View Source*. This button is available on
 the Edit Web Content screen, after you've created your web content article.
 
-![Figure 5: The *View Source* button is available from the *Options* button.](../../../images/web-content-download.png)
+![Figure 6: The *View Source* button is available from the *Options* button.](../../../images/web-content-download.png)
 
 An XML version of an article is essential when creating content for themes using
 the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importer).
@@ -222,7 +231,7 @@ dedicated [tutorial](/develop/tutorials/-/knowledge_base/6-2/importing-resources
 The bottom menu of the New Web Content form provides options for customizing
 your web content.
 
-![Figure 6: New web content can be customized in various ways using the menu located below the WYSIWYG editor.](../../../images/wcm-menu.png)
+![Figure 7: New web content can be customized in various ways using the menu located below the WYSIWYG editor.](../../../images/wcm-menu.png)
 
 **Structure and Template:** lets you customize the web content article's
 structure and template. To learn more about web content structures and
@@ -276,7 +285,7 @@ visit the
 [Defining Content Relationships](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
 section.
 
-![Figure 7: This blog entry has links to three Related Assets: one web content and two message board entries.](../../../images/related-assets-link.png)
+![Figure 8: This blog entry has links to three Related Assets: one web content and two message board entries.](../../../images/related-assets-link.png)
 
 **Permissions:** customizes who has access to the content. By default, content
 is viewable by Anyone (Guest Role). You can limit viewable permissions by
@@ -296,7 +305,7 @@ to change the default language and add a translation. If you click *Change*, you
 can select your default language from a large number of languages @product@
 supports.
 
-![Figure 8: You have many translation languages to choose from for your web content.](../../../images/web-content-default-language.png)
+![Figure 9: You have many translation languages to choose from for your web content.](../../../images/web-content-default-language.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list. When you select a language, an *Available Translations* list
@@ -305,7 +314,7 @@ form enables you to translate the original web content into the selected
 language. Once you are done with the translation, click *Publish* and the
 translation is added to the list of *Available Translations*.
 
-![Figure 9: The Available Translations list lets you easily survey the current translations for the article.](../../../images/web-content-translation.png)
+![Figure 10: The Available Translations list lets you easily survey the current translations for the article.](../../../images/web-content-translation.png)
 
 You can modify the language translation list by inserting `locales.enabled=`
 followed by your preferred languages in your `portal-ext.properties` file. For
@@ -389,7 +398,7 @@ application to your Welcome page by selecting the *Add* button
 and selecting the *Applications* tab. In the search field, type *Web Content
 Display*.
 
-![Figure 10: Add the Web Content Display app to a page to begin displaying your new web content article.](../../../images/add-web-content-display.png)
+![Figure 11: Add the Web Content Display app to a page to begin displaying your new web content article.](../../../images/add-web-content-display.png)
 
 Once the application appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display apps on a page
@@ -425,7 +434,7 @@ about translating your content, visit the
 [Localizing Web Content](/discover/portal/-/knowledge_base/7-0/publishing-basic-web-content#localizing-web-content)
 sub-section.
 
-![Figure 11: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../images/web-content-choosing-web-content.png)
+![Figure 12: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../images/web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your Liferay instance, you
 can also enable document conversion for your content. This gives your users the
@@ -496,7 +505,7 @@ Content* button launches the WYSIWYG editor and from there you can make any
 necessary changes. You can also select the *Edit Template* button, which
 launches the template editor for the web content article's template.
 
-![Figure 12: You can select and edit an article, or edit its template directly from the Web Content Display app.](../../../images/web-content-display-icons.png)
+![Figure 13: You can select and edit an article, or edit its template directly from the Web Content Display app.](../../../images/web-content-display-icons.png)
 
 There are instances where you've edited your web content article many times, and
 you'd be interested in viewing the article's evolution. To view an article's
@@ -511,7 +520,7 @@ article you'd like to compare and select *Compare to...*. Then select the other
 article you want to compare. The tool provides color coded highlighting to
 emphasize additions and deletions between the two articles.
 
-![Figure 13: Comparing web content articles is a great feature to use during the Workflow process.](../../../images/web-content-diff-feature.png)
+![Figure 14: Comparing web content articles is a great feature to use during the Workflow process.](../../../images/web-content-diff-feature.png)
 
 When you publish updates to a web content article that's already being displayed
 somewhere in your Liferay instance (e.g., in a Web Content Display app or an
@@ -555,7 +564,7 @@ section. You can navigate to your Web Content menu's *Options* icon
 (![Options](../../../images/icon-options.png)) and select *Configuration* to
 modify your Web Content email notification settings.
 
-![Figure 14: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../../images/web-content-subscribe.png)
+![Figure 15: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../../images/web-content-subscribe.png)
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
