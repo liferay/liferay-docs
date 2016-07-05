@@ -60,6 +60,15 @@ horizontal line (![Controls](../../../images/icon-content-insert-controls.png)).
 To insert an image, click the icon that depicts the mountain silhouette. The
 image file selector screen appears. It lets you choose an existing image or
 upload a new one. You can also drag-and-drop image files into the content area.
+If you like an image, but want to modify it a bit, you can use the 
+[Image Editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images) 
+to edit the image. Select an existing image from the Documents and Media 
+repository and click the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) 
+in the bottom right corner of the preview window to open the Image Editor. Any 
+edits you make are automatically applied to a copy of the image.
+
+![Figure 2: You can use the Image Editor to customize your Blog's photos.](../../../images/image-editor-preview-window.png)
+
 After you add an image to the blog entry, clicking the image brings up controls
 for justifying it to the right or left side of the article. In Figure 1, notice
 the image justification controls above the moon image. 
@@ -84,7 +93,7 @@ so the HTML editor takes up the entire window space. No matter how you want to
 use the HTML editor, it can really help you stay "in the zone" as you create
 awesome blog entries. 
 
-![Figure 2: The enlarged source editor helps you minimize screen clutter and render changes in real time.](../../../images/blogs-full-screen-editor.png)
+![Figure 3: The enlarged source editor helps you minimize screen clutter and render changes in real time.](../../../images/blogs-full-screen-editor.png)
 
 Every 25 seconds, the entry you're editing is automatically saved as a draft, so
 a browser crash or network interruption won't cause you to lose your entry. You
@@ -105,8 +114,15 @@ abstract. You can drag and drop onto this field any image you like. As an
 alternative to dragging and dropping an image, you can click the *Select File*
 button to use the image selector to choose an existing image attached to the
 blog, an image file from Documents and Media, or an image outside the
-@product@ instance. You can browse to an image file and upload it. After
-you've uploaded the image, it displays in the image pane. To center image
+@product@ instance. You can browse to an image file and upload it. If you select 
+an image from Documents and Media, you have the option to use the [Image Editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images) 
+to customize and edit the image for your cover. Once you've selected the image 
+from Documents and Media, you can access the Image Editor by clicking the pencil 
+icon (![Pencil](../../../images/icon-edit-pencil.png)) in the bottom right 
+corner of the preview window. Any edits you make are automatically applied to a
+copy of the image, which you can then use as your cover photo.
+
+After you've uploaded the image, it displays in the image pane. To center image
 content, click on the image and drag it into place with your mouse. Then click
 on the checkmark icon to save the image placement. You can even add a caption.
 And if you want to select a different image, you can click the *Change* icon
@@ -165,7 +181,7 @@ The blog entry permissions enable a role to perform the following actions:
 Once you've finished your blog entry, click *Publish*. Your blog entry appears
 with the site's other blog entries.
 
-![Figure 3: Blogs in Site Administration is the perfect place to create and manage blog entries. It has several options for modifying, displaying, filtering, and finding entries.](../../../images/blogs-admin-entries.png)
+![Figure 4: Blogs in Site Administration is the perfect place to create and manage blog entries. It has several options for modifying, displaying, filtering, and finding entries.](../../../images/blogs-admin-entries.png)
 
 Congratulations on creating your blog entry! Before displaying it on your site's
 pages, you may want to learn how to manage blog entries. 
@@ -262,7 +278,7 @@ Add the Blogs application to one of your site's pages. It lists abstracts of the
 site's recently published blog entries. Notice that each entry's cover image
 shows prominently in the listing. The figure below shows a blog entry abstract. 
 
-![Figure 4: Here's a blog entry in abstract format.](../../../images/blogs-blog-entry-abstract-2.png)
+![Figure 5: Here's a blog entry in abstract format.](../../../images/blogs-blog-entry-abstract-2.png)
 
 You can see that in the summary view, you don't see the trackback/pingback link,
 and you only see the number of comments that have been added. If you click the
@@ -275,7 +291,7 @@ social networks, such as Twitter, Facebook, and Google+. This gives your readers
 an easy way to share blog entries with friends, potentially driving further
 traffic to your site. 
 
-![Figure 5: Users can view your blog entry in all its glory. They can rate it, comment on it, and share it with other people.](../../../images/blogs-blog-entry-full-content.png)
+![Figure 6: Users can view your blog entry in all its glory. They can rate it, comment on it, and share it with other people.](../../../images/blogs-blog-entry-full-content.png)
 
 By default, the Blogs application displays the abstract and image of the latest
 entries. There are several display options that let you configure the listing to
@@ -421,7 +437,7 @@ When you've finished setting the options, click *Save*. Then close the dialog
 box. You'll notice the Blogs Aggregator looks very much like the Blogs
 application, except that it shows entries from multiple blogs. 
 
-![Figure 6: The Blogs Aggregator lets you display blog entries authored by multiple authors from different sites.](../../../images/blogs-blog-aggregator.png)
+![Figure 7: The Blogs Aggregator lets you display blog entries authored by multiple authors from different sites.](../../../images/blogs-blog-aggregator.png)
 
 Last up is showing your @product@ instance's recent bloggers.
 
@@ -464,7 +480,7 @@ display it.
 When you're finished setting the options, click *Save*. Then close the dialog
 box. 
 
-![Figure 7: You can show off your site or organization's most recent bloggers from the Recent Bloggers app.](../../../images/blogs-recent-bloggers.png)
+![Figure 8: You can show off your site or organization's most recent bloggers from the Recent Bloggers app.](../../../images/blogs-recent-bloggers.png)
 
 Add the Recent Bloggers app to a page on your site to draw attention to the
 users who are contributing helpful blogs on your site. 
