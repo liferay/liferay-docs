@@ -68,13 +68,13 @@ steps for Sync on Windows and Mac are identical.
 1. Open Sync and enter your Liferay instance's address along with your account 
    credentials. Click *Sign In* when you're finished. 
 
-    ![Figure 2: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../images/sync-setup-01.png)
+    ![Figure 5.16: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../images/sync-setup-01.png)
 
 2. Select the sites you want to sync with. You can search for a site in the 
    *Search* bar above the site list. If you want to sync all the subfolders of 
    your selected sites, click *Proceed* and move on to the next step. 
 
-    ![Figure 3: Select the sites you want to sync with. Clicking a site's gear icon opens another window where you can choose to sync with only specific subfolders in that site.](../../images/sync-setup-02.png) 
+    ![Figure 5.17: Select the sites you want to sync with. Clicking a site's gear icon opens another window where you can choose to sync with only specific subfolders in that site.](../../images/sync-setup-02.png) 
 
     To sync only specific folders in a site, first click the site's gear icon. 
     In the window that appears, all folders are selected by default. Unselect 
@@ -86,7 +86,7 @@ steps for Sync on Windows and Mac are identical.
     until the minus sign appears. Click *Select* when you're finished with your 
     selections, and then click *Proceed* to move on to the next step. 
 
-    ![Figure 4: Choose the site's subfolders that you want to sync with. The checkbox with the minus sign indicates that not all of the *registration* folder's subfolders are selected.](../../images/sync-select-folders.png)
+    ![Figure 5.18: Choose the site's subfolders that you want to sync with. The checkbox with the minus sign indicates that not all of the *registration* folder's subfolders are selected.](../../images/sync-select-folders.png)
 
 3. Specify the local folder your Liferay instance will sync with. This folder 
    will be used exclusively for Sync: Sync creates it and it must not conflict 
@@ -98,7 +98,7 @@ steps for Sync on Windows and Mac are identical.
    any unique name and location for the Sync folder. Click *Start Syncing* to 
    begin syncing files. 
 
-    ![Figure 5: Specify your local Sync folder's name and location.](../../images/sync-setup-03.png)
+    ![Figure 5.19: Specify your local Sync folder's name and location.](../../images/sync-setup-03.png)
 
 4. Celebrate! You've successfully set up Liferay Sync! Sync congratulates you on 
    setting it up and begins to sync files from the sites you selected to your 
@@ -109,7 +109,7 @@ steps for Sync on Windows and Mac are identical.
    Sync's preferences, click the small gray text *advanced setup* near the 
    top-right. 
 
-    ![Figure 6: Congratulations, you've successfully set up Liferay Sync!](../../images/sync-setup-04.png)
+    ![Figure 5.20: Congratulations, you've successfully set up Liferay Sync!](../../images/sync-setup-04.png)
 
 Next, you'll learn how to use the Liferay Sync desktop client. 
 
@@ -119,7 +119,7 @@ When Liferay Sync is running its icon appears in your task bar (Windows) or menu
 bar (Mac). Clicking this icon opens a menu that lets you work with and manage 
 Liferay Sync. 
 
-![Figure 7: The Liferay Sync menu in the Windows task bar and Mac menu bar gives you quick access to Sync.](../../images/sync-toolbar-01.png)
+![Figure 5.21: The Liferay Sync menu in the Windows task bar and Mac menu bar gives you quick access to Sync.](../../images/sync-toolbar-01.png)
 
 The top of this menu shows your Sync status. If all your selected sites are 
 synced, then your status is *Synced*. 
@@ -137,7 +137,7 @@ Note that if you sync with two or more Liferay instances, Sync shows each at the
 top of the menu instead of your Sync status. Mouse over each instance to reveal 
 a submenu with that instance's Sync status and file shortcuts. 
 
-![Figure 8: When you sync with more than one Liferay instance, Sync shows submenus for each.](../../images/sync-toolbar-02.png)
+![Figure 5.22: When you sync with more than one Liferay instance, Sync shows submenus for each.](../../images/sync-toolbar-02.png)
 
 Lastly, regardless of how many Liferay instances you sync with, the menu lists 
 the following three options: 
@@ -157,7 +157,7 @@ Sync's preferences by clicking the Sync icon in the task bar (Windows) or menu
 bar (Mac OS) and selecting *Preferences*. A preference screen for your instance 
 accounts displays. This is the *Accounts* tab in *Preferences*.
 
-![Figure 9: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../images/sync-preferences-accounts-01.png)
+![Figure 5.23: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../images/sync-preferences-accounts-01.png)
 
 The *Accounts* tab contains the following:
 
@@ -196,7 +196,7 @@ Sync client's general behavior. It lists the following options:
 - **Automatically check for updates:** automatically check for new client 
   versions. You can click the *Check Now* button to check for updates manually. 
 
-![Figure 10: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../images/sync-preferences-general-01.png)
+![Figure 5.24: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../images/sync-preferences-general-01.png)
 
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder. 
@@ -240,7 +240,7 @@ your Documents and Media portlet. Click on the *README.txt* icon, look at the
 file information displayed, and check that the file's version number has been
 incremented. 
 
-![Figure 5.16: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/sync-file-edit-01.png)
+![Figure 5.25: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/sync-file-edit-01.png)
 
 If you download and open the `README.txt` file again, it now says `second test`.
 Your edit was uploaded to the site! You can be confident that this edit was also
