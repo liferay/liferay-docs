@@ -6,40 +6,42 @@ specific user segments.
 
 Developers are able to extend the set of available reports by creating and
 deploying their own OSGi plugins which contain a class implementing the
-[Report Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/Report.java).
+Report Interface.
 
 OSGi plugins can be hot deployed and undeployed, manage their own dependencies,
 and provide new services that other OSGi plugins can consume. In the case of a
 report OSGi plugin, it is consumed by the Audience Targeting application.
 
-To follow this tutorial, you must first have the Audience Targeting
-[project](https://github.com/liferay/liferay-apps-content-targeting) and
-Plugins SDK configured properly. Visit the
-[Installing the Audience Targeting Project](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types#installing-the-audience-targeting-project)
+To follow this tutorial, you must first have the Audience Targeting development
+tools installed. Visit the
+[Installing the Audience Targeting Development Tools](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types#installing-the-audience-targeting-development-tools)
 section for information on how to do this.
 
 Adding a new report to the Audience Targeting application is easy. In this
 tutorial, you'll learn how to create a report and deploy it to your Liferay
 server.
 
-1. In the root of the Audience Targeting project, run the `create_report`
-   command (depending on your OS). For example, the command below shows creating
-   a `hits-by-country` report named *Hits by Country*.
+1. Assuming that the `blade` executable is available on your system path, run
+   the `create -t contenttargetingreport` command from a command prompt.
+   For example, the command below creates a report project with
+   `hits-by-country` for its project name and `HitsByCountryReport` as its class
+   name within the `com.liferay.content.targeting.report` package:
 
-        create_report.bat hits-by-country "Hits by Country"
+        blade create -t contenttargetingreport -p com.liferay -c HitsByCountry hits-by-country
 
-    or
+2. Move to the newly generated project folder that has your reports's name. Open
+   the folder and study what's been generated. Notice that the
+   `create -t contenttargetingreport` command created all the necessary files
+   to make the plugin deployable.
 
-        ./create_report.sh hits-by-country "Hits by Country"
+3. Now is a convenient time to deploy the project to see how it currently looks
+   in Portal.
 
-2. Move to the newly generated folder that has your report's name prefixed with
-   `report-` (e.g., `report-hits-by-country`). Notice that all the necessary
-   files have been added by the `create_report` command. If you now run the `ant
-   deploy` command in the root of the newly generated folder, you'll find this
-   new report listed when you select the Reports action in the Action menu of a
-   specific campaign in the Audience Targeting application.
+    To deploy the plugin project, open a terminal to your plugin project's
+    directory and run the `blade deploy` command. You'll find this new report
+    listed under the *Reports* section when viewing a campaign.
 
-3. Of course, you still need to make some changes to define how your report
+4. Of course, you still need to make some changes to define how your report
    works. Open the Java class file that was created
    (e.g.,`HitsByCountryReport.java`). Here are some of the methods that you can
    implement to modify your report behavior:
@@ -48,37 +50,61 @@ server.
     default, the resource is a Campaign, but you can change it to User Segment
     to create a report for this type of resource.
 
+    * `getName`: returns a name for your report (it can be localized).
+
     * `updateReport`: called by the report UI to generate or update the report.
     Therefore, it should process the available information (e.g., from the
     Analytics service) and persist it so it can be displayed as a table/chart.
 
     * `getHtml`: returns the HTML displayed to administrators when accessing
-    this report from a campaign. The `BaseReport` class already implements this
-    method including a FreeMarker template placed in `templates/ct_report.ftl`.
-    For example, for a *Hits By Country* report, you could display the country
-    flag and the number of hits for each country.
+    this report from a campaign. The `BaseJSPReport` class already implements
+    this method including a JSP view placed in
+    `resources/META-INF/resources/view.jsp`. For example, for a
+    *Hits By Country* report, you could display the country flag and the number
+    of hits for each country.
 
-    * `getIcon`: configures the icon displayed in the Report GUI. You should use
-    the name of a FontAwesome icon. For example: *"icon-coffee"* or
-    *"icon-globe"*
-    (See [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/)).
+5. As a new feature in Audience Targeting 2.0, you can optionally make your
+   reports editable. Imagine that instead of reporting the hits for all the
+   countries, you want to generate different reports for different countries.
+   You need then a new view for the administrators to select the countries to
+   filter for each *Hits By Country* report instance and store this information.
 
-    * `getName`: the name of your report (it can be localized).
+   	* `isInstantiable`: by returning `true`, you declare your report as
+   	editable. The default value is `false`.
 
-4. Finally, deploy the report plugin to the Liferay server. The new report is
-   listed when you select the Reports action in the Actions menu of a specific
-   campaign in the Audience Targeting application. Click the *Update Report*
-   button to force your report to obtain and display the latest information.
+    * `getEditHtml`: returns the HTML displayed to administrators when creating
+    or editing this report from a campaign. The `BaseJSPReport` already
+    implements this method including a JSP view placed in
+    `resouces/META-INF/resources/edit.jsp`. For example, for a *Hits By Country*
+    report, you could display a selector with all the available countries.
 
-Congratulations! You're now equipped with the knowledge necessary to create a
-custom report for your Audience Targeting app. For working examples of the
-default reports included in the Audience Targeting app, visit the Audience
-Targeting [project](https://github.com/liferay/liferay-apps-content-targeting)
-page and study the folders with the `report-` prefix.
+	* `processEditReport`: this method is very similar to the `processRule`
+	method reviewed in the
+	[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types)
+	chapter. This method is called when you click *Save* in the edit report
+	form and the return type is stored by default in the `typeSettings` field
+	of the `reportInstance` entity, so that you can later retrieve this value to
+	filter the results by the selected country.
+
+6. Finally, deploy the report plugin to the Liferay server. The new report is
+   listed under the *Reports* section when editing a specific campaign in the
+   Audience Targeting application. If you made your report editable, then you
+   will find your report listed in the Add Report button of the same section.
+   Click the *Update Report* option to force your report to obtain and display
+   the latest information.
+
+Congratulations! You're now equipped with the knowledge necessary to create your
+own report types for your Audience Targeting app. Remember that if you want to
+generate reports based on the information that Audience Targeting is already
+tracking, you can use the Audience Targeting Custom Report type and create your
+own metrics as described in the
+[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
+chapter.
 
 **Related Topics**
 
-[User Management](discover/portal/-/knowledge_base/6-2/user-management)
+[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
 
-[Customizing Liferay Portal with Hooks](develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 
+[Localization](/develop/tutorials/-/knowledge_base/7-0/localization)
