@@ -27,5 +27,17 @@ to help you get your DXP instance up and running with LCS:
    LCS client app, you must activate your DXP instance with LCS. This section 
    shows you how to do this. 
 
-Note that to use LCS, you must have an account at 
++$$$
+
+**Note:** These steps show how to activate DXP instances for use in production 
+environments. To activate DXP on a local workstation for testing or development 
+purposes, you don't need to use LCS. Instead, create a ticket in 
+[LESA](https://web.liferay.com/group/customer/support/-/support/ticket) 
+to request an activation key. When creating this ticket, select *Activation Key* 
+in the *Select a component* field. When you receive your key, place it in your 
+local DXP instance's `deploy` folder, and start the instance. 
+
+$$$
+
+Also note that to use LCS, you must have an account at 
 [Liferay.com](http://www.liferay.com/). 
