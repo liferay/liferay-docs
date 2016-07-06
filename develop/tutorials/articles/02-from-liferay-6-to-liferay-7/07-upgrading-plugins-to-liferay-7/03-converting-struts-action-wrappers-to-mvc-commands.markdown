@@ -1,4 +1,4 @@
-# Converting StrutsActionWrappers to MVCCommands
+# Converting StrutsActionWrappers to MVCCommands [](id=converting-strutsactionwrappers-to-mvccommands)
 
 Since Liferay 6.1, developers could customize the Portal and Portlet Struts 
 Actions using a Hook and `StrutsActionWrappers`. For example, the
@@ -26,7 +26,7 @@ instead use `MVCCommands`.
 This tutorial demonstrates how to convert your existing `StrutsActionWrappers` to
 `MVCCommands`. 
 
-## Converting Your old wrapper to MVCCommands
+## Converting Your old wrapper to MVCCommands [](id=converting-your-old-wrapper-to-mvccommands)
 
 Converting `StrutsActionWrappers` to `MVCCommands` is easier than you may think.
 
@@ -50,7 +50,7 @@ need to create two classes: `MVCActionCommand` and `MVCRenderCommand`.
 Next you'll need to determine the associated mapping that is used by the 
 `MVCCommand`.
 
-## Mapping Your MVCCommand URLs
+## Mapping Your MVCCommand URLs [](id=mapping-your-mvccommand-urls)
 
 For most cases, the `MVCCommand` mapping is the same mapping defined in the 
 legacy struts action.
@@ -90,6 +90,6 @@ instructions found in these sections of the Overriding MVC Commands tutorial:
 
 Now you know how to convert your `StrutsActionWrapper`s to `MVCCommand`s!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Overriding MVC Commands](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)

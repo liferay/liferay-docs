@@ -1,0 +1,81 @@
+{
+    "availableLanguageIds": [
+        "en_US"
+    ],
+    "defaultLanguageId": "en_US",
+    "fields": [
+        {
+            "label": {
+                "en_US": "image"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "Image to use in the carousel."
+            },
+            "dataType": "image",
+            "fieldNamespace": "ddm",
+            "indexType": "keyword",
+            "localizable": true,
+            "name": "image",
+            "readOnly": false,
+            "repeatable": true,
+            "required": false,
+            "showLabel": true,
+            "type": "ddm-image",
+            "nestedFields": [
+                {
+                    "label": {
+                        "en_US": "content"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": "This is text made availability to users with accessibility issues. Screen readers will be able to read this text."
+                    },
+                    "dataType": "html",
+                    "fieldNamespace": "ddm",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "content",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "ddm-text-html"
+                },
+                {
+                    "label": {
+                        "en_US": "link"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": "A URL to use for this image. Be sure to include the \"http://\" at the beginning."
+                    },
+                    "dataType": "string",
+                    "indexType": "keyword",
+                    "localizable": true,
+                    "name": "link",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "text"
+                }
+            ]
+        }
+    ]
+}
