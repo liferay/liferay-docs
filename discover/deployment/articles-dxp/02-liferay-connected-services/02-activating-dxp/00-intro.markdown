@@ -35,7 +35,7 @@ purposes, you don't need to use LCS. Instead, create a ticket in
 [LESA](https://web.liferay.com/group/customer/support/-/support/ticket) 
 to request an activation key. When creating this ticket, select *Activation Key* 
 in the *Select a component* field. When you receive your key, place it in your 
-local DXP instance's `deploy` folder, and start the instance. 
+local DXP instance's `deploy` folder. 
 
 $$$
 
