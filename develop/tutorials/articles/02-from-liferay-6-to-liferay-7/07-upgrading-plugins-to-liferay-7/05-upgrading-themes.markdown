@@ -1,11 +1,41 @@
-# Example: Upgrading a Theme
+# Upgrading Themes
 
-This tutorial demonstrates upgrading the Lunar Resort theme 
-from the [Liferay 6.2 Themes Learning Path](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme) 
+Introduction goes here.
+
+## Upgrading a Theme
+
+Explain the steps for upgrading a Liferay 6 theme (developed in the Plugins SDK)
+to Liferay 7.
+
+## Example: Upgrading a Theme
+
+This tutorial demonstrates upgrading the Lunar Resort theme, that was developed
+in the [Liferay 6.2 Themes Learning Path](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme),
 to Liferay 7. It shows how to use the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
 to import and upgrade themes and how to resolve [breaking changes](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0) 
 for FreeMarker theme templates. Finally, it covers upgrading resources 
 importer files and directories to match the new pattern Liferay 7 uses.
+
+<!-- As a Liferay 6 developer I'd like to know how this particular theme is
+reprentative of 6.2 themes. Consider the reader who hasn't gone through that
+learning path. Jim -->
+
+<!-- In the previous section, the reader will have just read about upgrading an
+Ant-based theme to Liferay 7. As a Liferay 6 developer,  I'd like to know why
+we're first migrating to a Node.js based environment. Tell me why it's
+advantageous to do that. Jim -->
+
+<!-- TODO: This example covers a lot of upgrade topics. I think all of them
+should be mentioned, perhaps even as bullets. As I read the example, here is the
+breakdown I see ... 
+
+- Migrating the theme to a Node.js-based project
+- Upgrading with the Gulp theme upgrade task
+- Updating the CSS
+- Updating the Theme templates
+- Updating the Theme's Resources Importer
+
+Jim -->
 
 <!--for now I have left the guestbook portlet and make no mention of it since it 
 is not updated AFAIK. Once it has been updated, it can be added to this section 
@@ -16,20 +46,29 @@ unzip the [6.2 Lunar Resort theme and resources]<!--URL needs updated and theme 
 into it. Note that the example Lunar Resort theme has been slightly modfied for 
 this tutorial.
 
-<!-- What is the ZIP file's URL? Jim -->
+<!-- TODO: What is the ZIP file's URL? Jim -->
 
-<!-- What's the significance of the directory name "resources"? Jim -->
+<!-- TODO: What's the significance of the directory name "resources"? Or is it arbitrary? Jim -->
+
+<!-- TODO: It would be great to add some pictures that show the theme applied to
+the Lunar Resort. Jim -->
 
 In addition to installing the resources, follow the [Themes Generator tutorial](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
 to install the tools used in this tutorial.
 
 Now you can go ahead and jump right into importing the Lunar Resort theme!
 
-## Importing an Existing Theme
+### Importing an Existing Theme
 
 Now that you have the Lunar Resort theme resources downloaded and Themes 
 Generator installed, you can update the theme to use the new node build tools. 
 To help automate this process, the Themes Generator has an import sub-generator. 
+
+<!-- Aren't these Node.js build tools? If so, we should replace "node" with
+"Node.js" throughout this article. 
+
+Also, note that Gulp should be capitalized. I've tried to update all references
+to Gulp. Jim -->
 
 Follow the steps below to import the Lunar Resort theme.
 
@@ -142,6 +181,14 @@ theme at the moment. As part of the import process, a Gulp file was added that
 gives you access to several Gulp theme tasks, one of which is `upgrade.` You'll
 use the `gulp upgrade` task to start the upgrade process.
 
+<!-- This should be a new section, perhaps named "Upgrading with the Gulp Theme Upgrade Task".
+
+The start of each section, including this section, should explain not only what
+the section is about but also why the steps described are necessary or
+beneficial.
+
+Jim -->
+
 Follow these steps to upgrade the Lunar Resort theme to Liferay 7.
 
 1.  Navigate to the `lunar-resort-ce-theme` in your `theme` directory if you are
@@ -198,11 +245,14 @@ reflect the one below:
 
 Next, you'll upgrade the Lunar Resort theme's CSS.
 
-## Updating the CSS
+### Updating the CSS
 
 In this section you'll finish updating the Lunar Resort theme's CSS.
 
-### Updating the CSS Rules and Imports
+<!-- Explain not only what the section is about but also why the steps described
+are necessary or beneficial. Jim -->
+
+#### Updating the CSS Rules and Imports
 
 At the end of the `gulp upgrade` task a list of changes, removals, and 
 suggestions were printed in the command line, for the Bootstrap upgrade.
@@ -263,7 +313,7 @@ gulp `build` task.
 
 The social media links are now updated!
 
-### Updating Responsiveness
+#### Updating Responsiveness
 
 In Liferay 6.2, `respond-to` variables were used to respond to specific aspect
 ratios or devices. The syntax has slightly changed for Liferay 7. Explicit media
@@ -300,11 +350,15 @@ That wraps up the theme's CSS changes.
 In the next section, you'll address the breaking changes that apply to the
 theme templates.
 
-## Updating Theme Templates
+### Updating Theme Templates
 
 In the last section, you updated the Lunar Resort's CSS files per the
 suggestions in the Gulp upgrade log. In this section you'll review the log's
 breaking changes listed for the theme templates and make the required updates.
+
+<!-- The developer might not know what a breaking change is. Please explain what
+is a breaking change and point out that we've documented them and in some cases
+have created tools to identify and address them. Jim -->
 
 The upgrade output should look like this:
 
@@ -398,11 +452,13 @@ templates. Follow these steps to update the theme templates:
 That's all the updates you need to make to the theme templates for the Lunar
 Resort theme. In the next section, you'll update the theme's resources importer.
 
-## Updating the Resources Importer
+### Updating the Resources Importer
 
 In the last section, you continued the upgrade process for the Lunar Resort
-theme and updated the theme templates. Nex, you'll make the required changes for
+theme and updated the theme templates. Next, you'll make the required changes for
 the resources importer.
+
+<!-- Describe the resources that this theme imports. Jim -->
 
 +$$$
 
@@ -420,7 +476,7 @@ structure, and web content structures to change.
 
 Follow the steps below to update the resources importer for the Lunar Resort.
 
-### Updating liferay-plugin-package.properties
+#### Updating liferay-plugin-package.properties
 
 First off, you'll need to update the `liferay-plugin-package.properties` file
 with the proper settings:
@@ -440,13 +496,13 @@ with the proper settings:
 Now that the resources importer is configured properly, you can move on to
 updating the web content.
 
-### Updating the Web Content
+#### Updating the Web Content
 
 In Liferay 7, all web content articles require a structure and a template.
 You'll need to update each of the theme's current web content articles to use a
 structure and matching template. 
 
-#### Updating the Directory Structure
+##### Updating the Directory Structure
 
 In Liferay 7, basic web content articles have a Basic Web Content structure and
 template that provides the essentials for creating and rendering article
@@ -520,7 +576,7 @@ This accesses the article's content by the `name` defined in the structure,
 web content structure and template. All that's left is to update the article
 type.
 
-#### Updating the Web Content Articles to XML
+##### Updating the Web Content Articles to XML
 
 In Liferay 6.2, HTML articles were an acceptable type for the Resources Importer. In
 Liferay 7, all articles must be in XML. This migration is easier then it
@@ -566,7 +622,7 @@ you downloaded at the beginning.
 
 The last Web Content article update is described next.
 
-#### Updating the Reservation Form's Bootstrap
+##### Updating the Reservation Form's Bootstrap
 
 Liferay 7's UI is built using a design language, known as [Lexicon](http://liferay.github.io/lexicon/).
 When building a UI in Liferay 7, it is recommended that you use Lexicon to
@@ -635,7 +691,7 @@ Here's what's been changed:
 Now that the Basic Web Content is updated, all that is left to update is the
 carousel article's structure and template.
 
-#### Updating the Carousel's Structure and Template
+##### Updating the Carousel's Structure and Template
 
 The carousel article uses a more advanced structure and template than the Basic 
 Web Content. Luckily, the carousel article is already XML.
@@ -753,8 +809,10 @@ conversion, but for now this is the best approach-->
 The resources importer is fully upgraded! The Lunar Resort theme is ready for
 Liferay 7!
 
-<!-- This tutorial needs a closing summary and related articles. Jim -->
+<!-- TODO: This section needs a closing summary paragraph(s). Jim -->
 
 Run `gulp deploy` to build and deploy the theme to the app server you defined at
 the beginning.
 
+<!-- TODO: The Upgrading Themes overall article needs a Summary section
+and related articles. Jim -->
