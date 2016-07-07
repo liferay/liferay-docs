@@ -205,22 +205,30 @@ configure Maven to look for them there.
 First, specify the Liferay Repository's credentials in your project's parent
 `pom.xml` file as follows:
 
-    <repositories>
+	<repositories>
         <repository>
             <id>liferay-ce</id>
-		    <name>Liferay CE</name>
-		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
-		    <releases><enabled>true</enabled></releases>
-		    <snapshots><enabled>true</enabled></snapshots>
+			<name>Liferay CE</name>
+			<url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
         </repository>
     </repositories>
 	  
 	<pluginRepositories>
         <pluginRepository>
             <id>liferay-ce</id>
-            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
-            <releases><enabled>true</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
+            <releases>
+            	<enabled>true</enabled>
+            </releases>
+            <snapshots>
+            	<enabled>true</enabled>
+            </snapshots>
         </pluginRepository>
     </pluginRepositories>
 
@@ -236,7 +244,7 @@ Next, when interacting with the Liferay Repository, you'll need to use
 specialized commands to access it. Use the following command to access the CE
 repo:
 
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/
 
 <!-- You'll notice I provided the specialized command here and in the portlet
 archetype example. Once everything is synced correctly and we're not solely
