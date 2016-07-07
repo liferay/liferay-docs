@@ -438,30 +438,27 @@ Lucky for you, Liferay now comes with its own built-in image editor.
 A crop here and there, a little bit more contrast, and some adjustments in 
 saturation, and boom! The image is ready to go.   
 
-Since Liferay Portal 7.0 CE GA2 and Liferay DXP, Administrators can edit images 
-within Liferay. To access the image editor go to the Documents and Media
-repository and locate the image you want to edit. Click the Actions icon (![Actions](../../../images/icon-actions.png))
+Since Liferay Portal 7.0 CE GA2 and Liferay DXP, Users can edit images within 
+Liferay. To access the image editor go to the Documents and Media repository and 
+locate the image you want to edit. Click the Actions icon (![Actions](../../../images/icon-actions.png))
 and select *Edit With Image Editor*.
 
-+$$$
+![Figure 8: You can access the image editor through the Documents and Media repository.](../../../images/image-editor-docs-and-media.png)
 
-**Note:** the image editor can also be accessed through the item selector. 
-Essentially, anywhere you have an image, you can edit the image. For example, in 
-blog entries, web content articles, and wikis, opening the item selector for the 
-image will give you a preview.
+The image editor can also be accessed through the item selector. Essentially, 
+anywhere you have an image, you can edit images. For example, in blog entries, 
+web content articles, and wikis, you can view a preview of the image.
 
 Within the item selector preview window, you can access the image editor by 
 clicking the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) in 
 the bottom right corner of the preview window.
 
-![Figure 8: You can access the image editor through the item selector preview window.](../../../images/image-editor-preview-window.png)
-
-$$$
+![Figure 9: You can access the image editor through the item selector preview window.](../../../images/image-editor-preview-window.png)
 
 The image editor was designed with quick editing in mind, and offers a minimal, 
 user-friendly UI:
 
-![Figure 9: The image editor's UI is clear and to the point, offering only what you need.](../../../images/image-editor-tools.png)
+![Figure 10: The image editor's UI is clear and to the point, offering only what you need.](../../../images/image-editor-tools.png)
 
 The main toolbar consists of three buttons, each of which contain a subset of
 options. The menu options are described below:
@@ -497,14 +494,14 @@ value of 50 is the current level of contrast. The slider values range from
 The third and final toolset is a preset of filters, which you can access by 
 clicking the wand icon (![Wand](../../../images/icon-wand.png)):
 
-![Figure 10: The image editor offers several filter presets for you to choose from.](../../../images/image-editor-filters.png)
+![Figure 11: The image editor offers several filter presets for you to choose from.](../../../images/image-editor-filters.png)
 
 Once you have made changes to the image in the editor, you can click the 
 *Cancel* button to cancel the changes, or the *Apply* button to apply the 
 changes to the image. Once you have applied changes to your image, the history 
 bar appears:
 
-![Figure 11: The history bar allows you to undo, redo, and reset changes.](../../../images/image-editor-history-bar.png)
+![Figure 12: The history bar allows you to undo, redo, and reset changes.](../../../images/image-editor-history-bar.png)
 
 The history bar allows you to undo, redo, and reset changes that have been made
 to the image in the editor. Note that the reset button should be used with 
@@ -629,7 +626,7 @@ Docs brings up Google's file picker. It lets you select files from your Google
 Drive or your photos. Select the Google file you want to link to and click
 *Publish*. 
 
-![Figure 12: You can select files from Google Drive or your photos.](../../../images/dm-google-select-a-file.png)
+![Figure 13: You can select files from Google Drive or your photos.](../../../images/dm-google-select-a-file.png)
 
 A new file entry appears for the Google document you linked to. You can view the
 file entry as you would any file entry. Contents of the Google doc show in the
@@ -638,7 +635,7 @@ icon (![Options](../../../images/icon-options.png)) gives you access to the
 Download, Edit, Move, Permissions, Move to Recycle Bin, and
 Checkin/Checkout/Cancel Checkout options. 
 
-![Figure 13: The Google doc file entry view displays the file's information and provides a preview of it.](../../../images/dm-google-doc-file-entry.png)
+![Figure 14: The Google doc file entry view displays the file's information and provides a preview of it.](../../../images/dm-google-doc-file-entry.png)
 
 You now know how to access Google docs from your document libraries. Next, let's
 pick up with our Lunar Resort guest photos example as we consider how to display
@@ -700,7 +697,7 @@ Media's default Home folder. If you set the My Documents folder to be your app's
 new root folder, the app accesses the My Documents folder and no longer accesses
 the Home folder.
 
-![Figure 14: The Documents and Media app can be configured to use any folder as a root folder to display.](../../../images/dm-select-root-folder.png)
+![Figure 15: The Documents and Media app can be configured to use any folder as a root folder to display.](../../../images/dm-select-root-folder.png)
 
 Lastly, the Ratings section of the Display Settings lets you enable users to
 rate files and comment on them. 
@@ -734,7 +731,7 @@ Resort media team to act on individual files. If Mrs. Spacey likes particular
 files, the staff member can download them locally and add notes in each file
 entry's comments.
 
-![Figure 15: The Media Gallery renders large thumbnail images of media files. It gives users quick access to download files that interest them.](../../../images/dm-media-gallery.png)
+![Figure 16: The Media Gallery renders large thumbnail images of media files. It gives users quick access to download files that interest them.](../../../images/dm-media-gallery.png)
 
 The Spacey Party's large image thumbnails display in the Media Gallery. When you
 click on a file's thumbnail, a slideshow appears showing the selected image. The
@@ -743,7 +740,7 @@ currently shown. And the slideshow continues until you either click pause or
 view the folder's last image. The slideshow feature provides a nice way to show
 off images. Click the X to close the slideshow window and return to the page. 
 
-![Figure 16: The Media Gallery's slideshow provides a nice way to view images.](../../../images/dm-media-gallery-slideshow.png) 
+![Figure 17: The Media Gallery's slideshow provides a nice way to view images.](../../../images/dm-media-gallery-slideshow.png) 
 
 The Media Gallery and Documents and Media apps are at your service to show
 off your Document Library files. The Lunar Resort's Souvenir and Memorabilia
@@ -875,7 +872,7 @@ and select your local file, and click *Save and Check In*. This time, leave the
 major version selection unchecked and click *Save*. The file is checked in and
 it's minor version number is incremented. 
 
-![Figure 17: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../../images/dm-file-version-actions.png)
+![Figure 18: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../../images/dm-file-version-actions.png)
 
 In the file entry's screen, the *Version History* table lists the versions of
 the file. The department director created version 1.0, Tenzing created major
@@ -927,7 +924,7 @@ Navigate to the Documents and Media app hosting the folder you'd like to access.
 Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png) and
 select *Access from Desktop*.
 
-![Figure 18: Select *Access from Desktop* to get the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
+![Figure 19: Select *Access from Desktop* to get the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
 
 Copy the WebDAV URL. On Windows, map a network drive drive to the WebDAV URL.
 Enter your @product@ credentials when you're prompted for them. The document
