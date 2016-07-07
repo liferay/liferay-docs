@@ -17,7 +17,6 @@ learn how to set up and administer
 -   Message Boards
 -   Wikis
 -   Announcements
--   Chat
 -   Mail
 -   Knowledge Bases
 -   Bookmarks

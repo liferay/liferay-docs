@@ -24,12 +24,11 @@ Liferay's collaboration suite resonates with apps and features that foster
 excellent communication.  Its [Message
 Boards](/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards)
 app gives your team a platform for discussions, questions and answers, and
-comments. Chat lets you text teammates in real time.
-[Blogs](/discover/portal/-/knowledge_base/7-0/publishing-blogs)
-publish your ideas using rich content, so readers can understand them
-clearly and respond to them. Collaboration is enhanced in all these applications
-through [*mentioning*](/discover/portal/-/knowledge_base/7-0/mentioning-users)
-other users--tagging them by name to get their attention or give them kudos. 
+comments. [Blogs](/discover/portal/-/knowledge_base/7-0/publishing-blogs)
+publish your ideas using rich content, so readers can understand them clearly
+and respond to them. Collaboration is enhanced in all these applications through
+[*mentioning*](/discover/portal/-/knowledge_base/7-0/mentioning-users) other
+users--tagging them by name to get their attention or give them kudos. 
 
 As you produce digital assets--documents, videos, audio--you can store and share
 them using the suite's [Documents and Media
