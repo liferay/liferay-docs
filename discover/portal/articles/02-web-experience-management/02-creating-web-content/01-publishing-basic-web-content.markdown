@@ -132,17 +132,17 @@ file selector screen appears, allowing you to choose an existing image or upload
 a new one. If you select an existing image in your Documents and Media 
 repository, you can access the [image editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images), 
 via the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) in 
-the bottom right corner of the preview window, to make changes to the photo.
+the bottom right corner of the preview window, to make changes to the image.
 Once you've made edits, a copy of the image is automatically created for you to 
 use in your web content.
 
 ![Figure 3: You can access the image editor through the item selector window.](../../../images/image-editor-preview-window.png)
 
-After adding a photo to the web content article, clicking it brings up controls 
+After adding an image to the web content article, clicking it brings up controls 
 for justifying it to the left or right side of the article. Go ahead an add an 
 image to the Lunar Resort article, to spice it up a bit. Note that when adding 
 an image via the web content editor, you can either select the file from the 
-Documents and Media app or provide it via URL.
+Documents and Media app or provide it via a URL.
 
 You can also insert a table with as many rows and columns as you see fit. When
 clicking inside the table, table editing controls appear. They let you designate

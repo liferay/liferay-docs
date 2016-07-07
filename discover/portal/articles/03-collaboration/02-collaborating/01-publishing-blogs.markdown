@@ -60,11 +60,10 @@ horizontal line (![Controls](../../../images/icon-content-insert-controls.png)).
 To insert an image, click the icon that depicts the mountain silhouette. The
 image file selector screen appears. It lets you choose an existing image or
 upload a new one. You can also drag-and-drop image files into the content area.
-If you like an image, but want to modify it a bit, you can use the 
-[Image Editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images) 
-to edit the image. Select an existing image from the Documents and Media 
+If you like an image, but want to modify it a bit, use the [Image Editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images).
+Select an existing image from the Documents and Media 
 repository and click the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) 
-in the bottom right corner of the preview window to open the Image Editor. Any 
+in the bottom right corner of the preview window, to open the Image Editor. Any 
 edits you make are automatically applied to a copy of the image.
 
 ![Figure 2: You can use the Image Editor to customize your Blog's photos.](../../../images/image-editor-preview-window.png)

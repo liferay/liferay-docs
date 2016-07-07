@@ -438,10 +438,11 @@ Lucky for you, Liferay now comes with its own built-in image editor.
 A crop here and there, a little bit more contrast, and some adjustments in 
 saturation, and boom! The image is ready to go.   
 
-Since Liferay Portal 7.0 CE GA2 and Liferay DXP, Users can edit images within 
-Liferay. To access the image editor go to the Documents and Media repository and 
-locate the image you want to edit. Click the Actions icon (![Actions](../../../images/icon-actions.png))
-and select *Edit With Image Editor*.
+Since Liferay Portal CE 7.0 GA2 and Liferay DXP 7.0, users have been able to
+edit images within Liferay. To access the image editor, go to the Documents and
+Media repository and locate the image you want to edit. Click the Actions icon
+(![Actions](../../../images/icon-actions.png)) and select *Edit With Image
+Editor*.
 
 ![Figure 8: You can access the image editor through the Documents and Media repository.](../../../images/image-editor-docs-and-media.png)
 
