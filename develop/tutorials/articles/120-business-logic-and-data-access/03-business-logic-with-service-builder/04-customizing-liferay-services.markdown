@@ -16,8 +16,8 @@ generated in the Service Wrapper Template tutorial:
 
     package com.liferay.docs.serviceoverride;
 
-    import com.liferay.portal.service.UserLocalServiceWrapper;
-    import com.liferay.portal.service.ServiceWrapper;
+    import com.liferay.portal.kernel.service.UserLocalServiceWrapper;
+    import com.liferay.portal.kernel.service.ServiceWrapper;
     import org.osgi.service.component.annotations.Component;
 
     @Component(
