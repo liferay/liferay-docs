@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay service wrapper as a
 Liferay module. To create a Liferay service wrapper as a module, use a command
 like the following:
 
-    blade create -t servicewrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.service.UserLocalServiceWrapper service-override
+    blade create -t servicewrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.kernel.service.UserLocalServiceWrapper service-override
 
 The command above creates a service wrapper project named `service-override` in
 the current directory. You set the package name to
