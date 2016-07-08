@@ -22,23 +22,9 @@ this:
         - `bnd.bnd`
         - `build.gradle`
         - `service.xml`
-    - `tasks-web`
-        - `src`
-            - `main`
-                - `java`
-                    - `com/liferay/docs/tasks/portlet`
-                        - `TasksPortlet.java`
-                - `resources`
-                    - `content`
-                        - `Language.properties`
-                    - `META-INF`
-                        - `resources`
-                            - `init.jsp`
-                            - `view.jsp`
-        - `bnd.bnd`
-        - `build.gradle`
     - `build.gradle`
-    - `settings.gradle`
+    - `gradlew`
+    - `gradlew.bat`
 
 To generate your service and API classes for the `*-api` and `*-service`
 modules, replace the `service.xml` file in the `*-service` module. Then run
