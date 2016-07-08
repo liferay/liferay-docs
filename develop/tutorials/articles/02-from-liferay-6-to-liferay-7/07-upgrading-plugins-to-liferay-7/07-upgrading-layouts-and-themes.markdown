@@ -83,9 +83,9 @@ Follow the steps below to update your layout template for @product@.
     `[number]` specifies the width of the column. Each column is a division of 
     the total width(100%) of 12, which was denoted with the `span12` class. The 
     new Bootstrap grid system uses `col-[device-size]-[number]` instead of 
-    `span[number]`. `[device-size]` can be `xs`, `md`, or `lg`. In most cases, a 
-    `md` device size will work. You can read more about the Bootstrap grid 
-    system on their site at [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid).
+    `span[number]`. `[device-size]` can be `xs`, `sm`, `md`, or `lg`. In most 
+    cases, a `md` device size will work. You can read more about the Bootstrap 
+    grid system on their site at [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid).
     
 2.  Still inside your layout template's TPL file, replace each `span-[number]` 
     class with `col-md-[number]`, as shown in the example below:
