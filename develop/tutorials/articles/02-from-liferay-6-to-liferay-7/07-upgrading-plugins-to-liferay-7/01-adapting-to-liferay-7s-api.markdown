@@ -285,17 +285,16 @@ Code Upgrade Tool*.
 Manual dependency management involves downloading dependency JAR files and
 adding them to your project's `WEB-INF/lib` folder.
 
-Liferay JARs are available on the MVNRepository site:
-
-    [http://mvnrepository.com/artifact/com.liferay](http://mvnrepository.com/artifact/com.liferay.portal)
+Liferay JARs are available on the MVNRepository site: [http://mvnrepository.com/artifact/com.liferay](http://mvnrepository.com/artifact/com.liferay.portal)
 
 The repository organizes modules and their artifacts in folders named after
 module *symbolic names* and *versions*. For example, the Journal API module's
-artifact JAR file is posted at this location:
+artifacts are accessible at [http://mvnrepository.com/artifact/com.liferay/com.liferay.journal.api/2.0.1](http://mvnrepository.com/artifact/com.liferay/com.liferay.journal.api/2.0.1)
 
-    [http://mvnrepository.com/artifact/com.liferay/com.liferay.journal.api/2.0.1](http://mvnrepository.com/artifact/com.liferay/com.liferay.journal.api/2.0.1)
-
-The above module's JAR file is `com.liferay.journal.api-2.0.1.jar`
+Clicking a module's *Repository* link (e.g., link named `central`) takes you to
+the module's Maven Central repository page. To download a module's JAR file,
+click on the JAR file link from the Maven Central repository page. The Journal
+API module's JAR file, for example, is `com.liferay.journal.api-2.0.1.jar`. 
 
 As you manage module JARs, make sure to not *deploy* any OSGi framework JARs or
 Liferay module JARs (e.g., *com.liferay.journal.api.jar*). If you deploy them
