@@ -155,9 +155,9 @@ access CMIS repositories using AtomPub and Web Services protocols.
 
 Here are the CMIS repository integration steps:
 
-- Step 1:  Adjust portal properties
-- Step 2:  Synchronize user accounts between @product@ and the repository
-- Step 3:  Add the repository to Documents and Media
+1.   Adjust portal properties
+2.   Synchronize user accounts between @product@ and the repository
+3.   Add the repository to Documents and Media
 
 +$$$
 
