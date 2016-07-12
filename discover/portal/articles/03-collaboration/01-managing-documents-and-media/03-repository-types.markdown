@@ -172,13 +172,16 @@ Let's start with setting portal properties.
 
 ### Step 1: Adjust Portal Properties [](id=adjusting-portal-properties)
 
-As a Liferay system administrator, you must make sure the @product@ users can
-authenticate with the external repository. [LDAP](/discover/deployment/-/knowledge_base/7-0/ldap)
-is a mechanism that supports this. If you're not using LDAP, you need to ensure
-manually that the credentials and authentication methods are the same.
+In order to authenticate with the third-party repository, you need to store
+passwords for the user sessions. You must configure an authentication type that
+supports storing passwords to the user sessions.
 
-In order to authenticate with the repository, you need to store passwords for
-the user sessions. In  a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
+**Important**: Since authentication with single sign-on (SSO) does not store
+encrypted passwords in the user sessions, SSO can't be used with the external
+repository types. 
+
+Let's configure Liferay Portal for what's required in authentication.
+In  a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
 set a [`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
 portal property to `true`:
 
@@ -315,8 +318,9 @@ documentation. Example URLs are listed after these steps. Make sure to enter
 
     +$$$
 
-    Tip: In a browser, you can open the repository's WSDL  file and verify each
-    service in it. 
+    Tips: In a browser, you can open the repository's WSDL  file and verify each
+    service in it. Also make sure to specify the entire URLs--they all end with
+    `?wsdl`. 
 
     $$$
 
