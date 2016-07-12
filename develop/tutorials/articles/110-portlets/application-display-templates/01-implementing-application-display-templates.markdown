@@ -1,4 +1,4 @@
-# Implementing Application Display Templates
+# Implementing Application Display Templates [](id=implementing-application-display-templates)
 
 [Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
 (ADTs) provide--the ability to add custom display templates to your portlets
@@ -10,7 +10,7 @@ like in a portlet Configuration menu.
 In this tutorial, you'll learn how to use the Application Display Templates API
 to add an ADT to a portlet.
 
-## Using the Application Display Templates API
+## Using the Application Display Templates API [](id=using-the-application-display-templates-api)
 
 To leverage the ADT API, there are several steps you need to follow. These
 steps involve registering your portlet to use ADTs, defining permissions, and
@@ -196,7 +196,7 @@ of "Using Liferay Portal", once we have a section on ADTs that we can point to.
 
 Next, we'll provide some recommendations for using ADTs in Liferay Portal.
 
-## Recommendations for Using ADTs
+## Recommendations for Using ADTs [](id=recommendations-for-using-adts)
 
 You've harnessed a lot of power by learning to leverage the ADT API. Be
 careful, for with great power, comes great responsibility! To that end, you'll
@@ -246,7 +246,7 @@ your portal users. You stepped through how to configure ADTs for a custom
 portlet, tried out a sample template, and ran through important recommendations
 for using ADTs, which included security and performance.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
 

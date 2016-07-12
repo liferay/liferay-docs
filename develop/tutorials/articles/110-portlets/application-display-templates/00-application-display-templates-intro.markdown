@@ -1,4 +1,4 @@
-# Application Display Templates
+# Application Display Templates [](id=application-display-templates)
 
 The application display template (ADT) framework allows portal administrators to
 override the default display templates, removing limitations to the way your 
