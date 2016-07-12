@@ -24,7 +24,7 @@ apps to work with SharePoint and Documentum in Documents and Media.
 
 Let's start with the common configuration steps.
 
-## Common Configuration Steps
+## Common Configuration Steps [](id=common-configuration-steps)
 
 The configuration steps are the same for repositories that support CMIS, and are
 even similar between CMIS repositories and those that use proprietary APIs. So
@@ -100,7 +100,7 @@ Home folder. Repositories can only be mounted in the Home folder.
 The next sections explain how to add specific types of repositories including
 CMIS repositories and SharePoint repositories.
 
-## Adding a CMIS Repository
+## Adding a CMIS Repository [](id=adding-a-cmis-repository)
 
 Liferay Portal's Documents and Media can inter-operate with repositories that
 support the Content Management Interoperability Services (CMIS) standard. CMIS
@@ -111,7 +111,7 @@ protocols.
 
 Let's explore accessing a CMIS Repository using AtomPub. 
 
-### Adding a CMIS Repository that Uses AtomPub
+### Adding a CMIS Repository that Uses AtomPub [](id=adding-a-cmis-repository-that-uses-atompub)
 
 AtomPub is the easiest protocol to specify for communicating with a CMIS repository. 
 
@@ -145,7 +145,7 @@ the repository and manage files.
 
 Next, let's access a CMIS repository with Web Services.
 
-### Adding a CMIS Repository that Uses Web Services
+### Adding a CMIS Repository that Uses Web Services [](id=adding-a-cmis-repository-that-uses-web-services)
 
 After adjusting your portal properties and adding any user accounts required by
 the repository, you can add a Documents and Media Repository that inter-operates
