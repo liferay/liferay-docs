@@ -225,6 +225,11 @@ Don't let all that code intimidate you. It's just assigning the task to the
 Organization, and assigning it to the *Organization Content Reviewer* role if it
 is. If it's not, it's assigning the task to the *Site Content Reviewer* role.
 
+Note the `role = newArrayList<Role>();` line above. In a scripted assignment,
+the `roles` variable is where you specify any roles the task will be assigned
+to. For example, when `roles.add(adminRole);` is called, the Administrator role
+is added to the assignment.
+
 $$$
 
 It's good to assign a task to a user, and it's even more useful if they can get
@@ -366,10 +371,11 @@ together.
 
 ## Conditions
 
-Sometimes you need to check for something on the asset before continuing in the
-workflow. You basically need a node for scripting.
+Sometimes you need to inspect an asset or its execution context, and depending
+on the result, send it to the appropriate transition. You basically need a node
+for a script that concludes by setting a value to one of your transitions.
 
-From the Category Specific Approval, this is the script in the condition node
+From the *Category Specific Approval*, this is the script in the condition node
 that starts the workflow (coming directly from the start node):
 
     import com.liferay.asset.kernel.model.AssetCategory;
@@ -410,11 +416,18 @@ that starts the workflow (coming directly from the start node):
         }
     }
 
-This script looks up the asset in question, retrieves its [asset category](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content), and
-sets an initial `returnValue`. Then checks to see if it has been marked with the
-*legal* category. If not it goes through *Content Review* (the content-review
-task in the workflow), and if it does it goes through *Legal Review* (the
-legal-review task in the workflow).
+This condition example checks the asset category to choose the processing path,
+whether to transition to the *Legal Review* task or the *Content Review* task.
+
+If you're familiar with code, you'll be wondering what that `returnValue`
+variable is. It's simply the variable that points from the condition to a
+transition, and its value must match a valid transition in the workflow
+definition. This script looks up the asset in question, retrieves its [asset
+category](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content),
+and sets an initial `returnValue`. Then it checks to see if the asset has been
+marked with the *legal* category. If not it goes through *Content Review* (the
+content-review task in the workflow), and if it does it goes through *Legal
+Review* (the legal-review task in the workflow).
 
 Now you're equipped with the basic knowledge to design beautiful, effective
 workflows so that your assets can be properly reviewed before they're published
