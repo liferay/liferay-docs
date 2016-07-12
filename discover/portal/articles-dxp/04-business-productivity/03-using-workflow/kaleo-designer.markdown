@@ -1,4 +1,4 @@
-# Kaleo Designer
+# Kaleo Designer [](id=kaleo-designer)
 
 With the proper permissions, your @product@ users can publish assets as they
 please, by default. Even if your enterprise has the greatest employees in the
@@ -58,7 +58,7 @@ $$$
 
 It's time to start exploring the Kaleo Designer and its features.
 
-## Adding New Workflow Definitions with Kaleo Designer
+## Adding New Workflow Definitions with Kaleo Designer [](id=adding-new-workflow-definitions-with-kaleo-designer)
 
 Access the Kaleo Designer by going to the Control Panel, then clicking
 Configuration &rarr; Kaleo Designer. Click the Add icon
@@ -67,9 +67,9 @@ Configuration &rarr; Kaleo Designer. Click the Add icon
 Give the workflow definition a title and you're ready to start designing your
 workflow.
 
-![Figure x: The Kaleo Designer's graphical interface makes designing workflows intuitive.](../../../images-dxp/kaleo-designer-canvas.png)
+![Figure 1: The Kaleo Designer's graphical interface makes designing workflows intuitive.](../../../images-dxp/kaleo-designer-canvas.png)
 
-## Saving and Publishing Workflow Definitions
+## Saving and Publishing Workflow Definitions [](id=saving-and-publishing-workflow-definitions)
 
 You're eager to design a workflow definition, but first look below the canvas to
 see the buttons that let you *Save as Draft*, *Publish*, or *Cancel*. Saving the
@@ -79,9 +79,9 @@ won't be considered a version, until the Publish button is clicked. Each time
 you save the workflow as a draft, the *Draft Version* field is incremented, and
 each time you publish the workflow, a new *Version* is added.
 
-![Figure x: View a list of the current workflows that can be edited in the Kaleo Designer.](../../../images-dxp/kaleo-designer-definitions.png)
+![Figure 2: View a list of the current workflows that can be edited in the Kaleo Designer.](../../../images-dxp/kaleo-designer-definitions.png)
 
-## Adding Nodes
+## Adding Nodes [](id=adding-nodes)
 
 Since it's unlikely that you'll  be satisfied with a start node, an end node,
 and a transition between them, you need to add nodes to the workflow. You can
@@ -102,12 +102,12 @@ canvas, and release it. You'll be prompted to create a node at that spot,
 because you can't have a transition without a starting point and an
 ending point on a node.
 
-![Figure x: You can add a node by creating a transition that ends at a blank spot on your Designer canvas.](../../../images-dxp/kaleo-designer-add-node.png)
+![Figure 3: You can add a node by creating a transition that ends at a blank spot on your Designer canvas.](../../../images-dxp/kaleo-designer-add-node.png)
 
 That's it. Of course, if you drag, say, a *Task* node onto the canvas, you're
 going to want to configure it.
 
-## Node Settings
+## Node Settings [](id=node-settings)
 
 Now you know how to add nodes to the workflow definition. By default you have
 three things added to your canvas: a start node, a transition, and an end node.
@@ -118,19 +118,19 @@ what's going on in each one. To name a node, just double click it and its
 *Settings* will be displayed. Then double click the value of the *Name* property
 and you'll be able to edit the name. Click *Save* when you're done. 
 
-![Figure x: You can edit a node's settings.](../../../images-dxp/kaleo-designer-node-settings.png)
+![Figure 4: You can edit a node's settings.](../../../images-dxp/kaleo-designer-node-settings.png)
 
 Of course, there's more you can do besides changing node names. Actions,
 Notifications, and Assignments can be used to make your workflow definition
 really useful and interactive.
 
-### Actions
+### Actions [](id=actions)
 
 Actions are used to do some additional processing after exiting a node, before
 entering the node, or once a task node is assigned. They're configured by
 accessing a node's Settings tab, then double clicking *Actions*.
 
-![Figure x: You can add an Action to a Task node.](../../../images-dxp/kaleo-designer-action.png)
+![Figure 5: You can add an Action to a Task node.](../../../images-dxp/kaleo-designer-action.png)
 
 The Single Approver workflow contains an Update task with an action written in
 Groovy that sets the status of the asset as *denied*, then sets it to *pending*. 
@@ -159,12 +159,12 @@ usually the goal of a workflow process.
 You can do something simple like the actions above, or you can be as creative as
 you'd like.
 
-### Assignments
+### Assignments [](id=assignments)
 
 Workflow tasks need to be completed by a @product@ user. You can choose how you
 want to configure your assignments. 
 
-![Figure x: You can add a Notification to a Task node.](../../../images-dxp/kaleo-designer-assignment.png)
+![Figure 6: You can add a Notification to a Task node.](../../../images-dxp/kaleo-designer-assignment.png)
 
 You can choose to add assignments to specific Roles, multiple roles of a Role
 Type (organization, site, or regular role types), to the Asset Creator, to
@@ -235,7 +235,7 @@ $$$
 It's good to assign a task to a user, and it's even more useful if they can get
 a notification that something is required of them in the workflow.
 
-### Notifications
+### Notifications [](id=notifications)
 
 Notifications are often sent to tell task assignees that something is required
 of them in the workflow, or to update asset creators on the status of the
@@ -243,7 +243,7 @@ process. They can be sent for tasks or any other type of node in the workflow.
 To set up notifications, double click on Notifications in a node's Settings tab
 and create a notification.
 
-![Figure x: You can send notification from a Task node.](../../../images-dxp/kaleo-designer-notification.png)
+![Figure 7: You can send notification from a Task node.](../../../images-dxp/kaleo-designer-notification.png)
 
 You'll need to specify the Notification Type, and you can choose from a list of
 User Notification, Email, Instant Messenger, or Private Message. You can use
@@ -265,14 +265,14 @@ receives a notification when assigned a task in the workflow. To do this you
 just choose *Task Assignees* under *Recipient Type* when configuring the
 notification.
 
-## Transitions
+## Transitions [](id=transitions)
 
 What are transitions? Workflow transitions connect one node to another. On
 exiting the first node, processing continues to the node pointed to by the
 transition. Every time you create an arrow from one node to another, Kaleo
 Designer creates a transition. 
 
-![Figure x: You connect nodes and direct workflow processing with transitions. The Single Approver workflow has transitions named Submit, Resubmit, Reject, and Approve.](../../../images-dxp/kaleo-designer-single-approver.png)
+![Figure 8: You connect nodes and direct workflow processing with transitions. The Single Approver workflow has transitions named Submit, Resubmit, Reject, and Approve.](../../../images-dxp/kaleo-designer-single-approver.png)
 
 Each node you add has a pop-up menu letting you delete the node. As you
 hover your mouse over the edges of a node, notice your mouse pointer changes to
@@ -288,12 +288,12 @@ generated names, so rename them all to something more human-readable, as they're
 displayed to workflow users as links that will send the workflown item to the
 next step in the workflow.
 
-![Figure x: In the Single Approver workflow, a user in the Review task can choose to Approve or Reject the asset, which sends the asset either to the EndNode or to the Update task.](../../../images-dxp/kaleo-designer-transition-link.png)
+![Figure 9: In the Single Approver workflow, a user in the Review task can choose to Approve or Reject the asset, which sends the asset either to the EndNode or to the Update task.](../../../images-dxp/kaleo-designer-transition-link.png)
 
 To rename transitions, click on the arrow representing the transition
 and use the Setting tab to set the name just like you do for a node.
 
-## Task Nodes
+## Task Nodes [](id=task-nodes)
 
 Task nodes have several parts and are the most complex parts of a workflow
 definition. Notifications, Assignments, and Actions defined in scripts can all
@@ -309,7 +309,7 @@ Beanshell, DRL, Groovy, JavaScript, Python, or Ruby.
 As described above, you can configure notifications and assignments on task
 nodes.
 
-## Start and End Nodes
+## Start and End Nodes [](id=start-and-end-nodes)
 
 Start and end nodes are used to kick off the workflow processing, and to bring
 the asset in the workflow to its final, approved state. Often times, you can
@@ -333,7 +333,7 @@ By default, there's a transition connecting the start node and end node, but
 you'll probably want to delete it, since most workflows won't proceed straight
 form the initial state to approved.
 
-## State Nodes
+## State Nodes [](id=state-nodes)
 
 State nodes can have Notifications and Actions. The default end node added by
 Kaleo Designer is simply a pre-configured state node that sets the workflow
@@ -349,7 +349,7 @@ Expired. Here's what it would look like in Groovy:
 
 Next learn to do parallel processing using fork and join nodes.
 
-## Forks and Joins
+## Forks and Joins [](id=forks-and-joins)
 
 Sometimes you don't need to wait for one task to be completed before moving on
 to another one. Instead, you want to do some parallel processing in the workflow
@@ -357,7 +357,7 @@ process. For this purpose, you'll transition to a fork node, make two
 transitions from the fork to your parallel tasks, and then come back together
 using a join  node.
 
-![Figure x: Forks and Joins are used to enable parallel processing in the
+![Figure 10: Forks and Joins are used to enable parallel processing in the
 workflow.](../../../images-dxp/kaleo-designer-fork-join.png)
 
 With a regular Join node, in order for the workflow to proceed beyond the join,
@@ -369,7 +369,7 @@ Keep in mind that you must balance your fork nd join nodes. In other words, for
 every fork, there must be a join that bring the parallel workflow threads back
 together.
 
-## Conditions
+## Conditions [](id=conditions)
 
 Sometimes you need to inspect an asset or its execution context, and depending
 on the result, send it to the appropriate transition. You basically need a node
