@@ -155,7 +155,7 @@ Now that you have all the background information you need, it's time to show you
 what a project looks like and how all of these concepts work themselves out in
 reality. You'll see examples of all the above concepts in action. Only the code
 and the structure of the project will be shown: to create a real project, check
-out the [tooling](/develop/tutorials/7-0/tooling) tutorials. 
+out the [tooling](/develop/tutorials/-/knowledge_base/7-0/tooling) tutorials. 
 
 This project is very simple: all it does is print out a string to the console.
 This string is called a greeting. 
