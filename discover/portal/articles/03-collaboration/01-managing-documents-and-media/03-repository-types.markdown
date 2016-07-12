@@ -58,63 +58,73 @@ from `portal-ext.properties` to OSGI configuration files. The following mapping
 shows you how to configure those properties if needed:
 
 #### CMIS [](id=cmis)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.cmis.CMISStore
-    osgi/configs: com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
+
+To `osgi/configs`: `com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`
  
 Property | Default | Required
 ---------|---------|---------
-repositoryUrl | http://localhost:8080/alfresco/service/api/cmis | true
-credentialsUsername | none | true
-credentialsPassword | none | true
-systemRootDir | Liferay Home | true
+`repositoryUrl` | `http://localhost:8080/alfresco/service/api/cmis` | `true`
+`credentialsUsername` | none | `true`
+`credentialsPassword` | none | `true`
+`systemRootDir` | Liferay Home | `true`
  
 #### File Store [](id=file-store)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
-    osgi/configs: com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore`
+
+To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
 
 Property | Default | Required
 ---------|---------|---------
-rootDir | data/document_library | false
+`rootDir` | `data/document_library` | `false`
 
 #### Advanced File Store [](id=advanced-file-store)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
-    osgi/configs: com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore`
+
+To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
  
 Property | Default | Required
 ---------|---------|---------
-rootDir | data/document_library | false
+`rootDir` | `data/document_library` | `false`
  
 #### JCR [](id=jcr)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.jcr.JCRStore
-    osgi/configs: com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
+
+To `osgi/configs`: `com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg`
 
 Property | Default | Required
 ---------|---------|---------
-initializeOnStartup | false| true
-wrapSession | true | true
-moveVersionLabels | false | true
-workspaceName | liferay | true
-nodeDocumentlibrary | documentlibrary| true
-jackrabbitRepositoryRoot | data/jackrabbit| true
-jackrabbitConfigFilePath | repository.xml | true
-jackrabbitRepositoryHome | home | true
-jackrabbitCredentialsUsername | none | true
-jackrabbitCredentialsPassword | none | true
+`initializeOnStartup` | `false`| `true`
+`wrapSession` | `true` | `true`
+`moveVersionLabels` | `false` | `true`
+`workspaceName` | `liferay` | `true`
+`nodeDocumentlibrary` | `documentlibrary` | `true`
+`jackrabbitRepositoryRoot` | `data/jackrabbit` | `true`
+`jackrabbitConfigFilePath` | `repository.xml` | `true`
+`jackrabbitRepositoryHome` | `home` | `true`
+`jackrabbitCredentialsUsername` | none | `true`
+`jackrabbitCredentialsPassword` | none | `true`
 
 #### S3 [](id=s3)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.s3.S3Store
-    osgi/configs: com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.s3.S3Store`
+
+To `osgi/configs`: `com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg`
 
 Property | Default | Required
 ---------|---------|---------
-accessKey | | false
-secretKey | | false
-s3Region | us-east-1 | false
-bucketName | | true
-s3StorageClass | STANDARD | false
-httpClientMaxConnections | 50 | false
-cacheDirCleanUpExpunge | 7 | false
-cacheDirCleanUpFrequency | 100 | false
+`accessKey` | | `false`
+`secretKey` | | `false`
+`s3Region` | `us-east-1` | `false`
+`bucketName` | | `true`
+`s3StorageClass` | STANDARD | `false`
+`httpClientMaxConnections` | `50` | `false`
+`cacheDirCleanUpExpunge` | `7` | `false`
+`cacheDirCleanUpFrequency` | `100` | `false`
 
 +$$$
 
