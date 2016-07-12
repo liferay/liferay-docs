@@ -29,11 +29,15 @@ plugin.
 Prior to Liferay 6.2, Liferay Portal's Documents and Media services contained
 all the logic Liferay Sync used. As of Liferay 6.2, the Sync Connector plugin
 instead contains the logic Sync requires. On Liferay 6.2, you must therefore
-install the Sync Connector plugin. Even though Liferay Portal 6.2 includes the
-*Sync Connector Web* plugin (an older version of the Sync Connector plugin), you
-must use the new Sync Connector plugin for Sync to work properly. The new Sync
-clients also require the latest Sync Connector plugin. Note, older Sync 1.x
-clients can't connect to the new Sync Connector plugin. 
+install this plugin. Even though Liferay Portal 6.2 includes the *Sync Connector 
+Web* plugin (an older version of the Sync Connector plugin), you must use the 
+new Sync Connector plugin for Sync to work properly. The new Sync clients also 
+require the latest Sync Connector plugin. To get the new Sync Connector plugin, 
+search for *sync* on 
+[the Liferay Marketplace](https://web.liferay.com/marketplace), 
+and download the version of the plugin that matches your portal's version and 
+edition. Note, older Sync 1.x clients can't connect to the new Sync Connector 
+plugin. 
 
 Sync Connector contains two applications: *Sync Web* (sync-web) and *Sync Admin*
 (sync-admin-portlet). Sync Web transparently provides Sync's functional logic.
@@ -89,7 +93,7 @@ Sync Admin's UI lets you enable or disable Sync across the portal or for
 specific sites. You can also configure default file permissions on a per-site
 basis. Sync Admin is accessible in the Control Panel's Configuration section. 
 
-![Figure 5.12: The Control Panel's Configuration section contains the Sync Admin portlet.](../../images/sync-admin-01.png)
+![Figure 5.11: The Control Panel's Configuration section contains the Sync Admin portlet.](../../images/sync-admin-01.png)
 
 Sync Admin has two tabs: *Settings* and *Sites*. The Settings tab has *General*
 and *Advanced* settings that apply globally to Sync. In General settings, you
@@ -119,7 +123,7 @@ Poll Interval is five.
 
 Next up is the Sites tab, which lets you can control Sync on a per-site basis. 
 
-![Figure 5.13: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../images/sync-admin-02.png)
+![Figure 5.12: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../images/sync-admin-02.png)
 
 For each site in the portal, the Sites tab lists each site's default file
 permissions (more on this in a moment) and whether Sync is enabled for that
@@ -158,7 +162,7 @@ single site, click its drop-down arrow and select *Default File Permissions*.
 This opens a window that lets you select the default file permissions for that
 site. Click *Choose* for the permissions you want to use. 
 
-![Figure 5.14: Click *Choose* to select the default file permissions for a site in Sync.](../../images/sync-admin-03.png)
+![Figure 5.13: Click *Choose* to select the default file permissions for a site in Sync.](../../images/sync-admin-03.png)
 
 To set the default file permissions for several sites, select the checkboxes for
 the sites, click the *Default File Permissions* link that appears above the
@@ -255,7 +259,7 @@ permissions are View Only. After attempting the sync, a red *x* appears next to
 the file in the local Sync folder. Right click the file to see the error. It
 confirms the user doesn't have the required permissions. 
 
-![Figure 5.15: The upload error occurs because the user only has permission to view files.](../../images/sync-file-permissions-error.png)
+![Figure 5.14: The upload error occurs because the user only has permission to view files.](../../images/sync-file-permissions-error.png)
 
 To confirm that the error didn't propagate through Sync, open the file in the 
 secretagent user's local Sync folder. It still contains the original text. 
