@@ -1,4 +1,4 @@
-# Spring MVC
+# Spring MVC [](id=spring-mvc)
 
 Liferay is an open platform in an ecosystem of open platforms. Just because
 Liferay has its own [MVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet),
@@ -32,7 +32,7 @@ because of the Liferay
 $$$
 -->
 
-## Packaging a Spring MVC Portlet
+## Packaging a Spring MVC Portlet [](id=packaging-a-spring-mvc-portlet)
 
 Developers creating portlets for Liferay 7.0 can usually deploy their portlet as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
@@ -127,7 +127,7 @@ Liferay-ready WAB. <!--This is what each tool gets you:
 
 Now get into the details of configuring a Spring MVC portlet for Liferay.
 
-## Spring MVC Portlets in Liferay
+## Spring MVC Portlets in Liferay [](id=spring-mvc-portlets-in-liferay)
 
 This isn't a comprehensive guide to configuring a Spring MVC portlet. It covers
 the high points, assuming you already have familiarity with Spring MVC. If you
@@ -263,7 +263,7 @@ adding a `<bean>` tag for each one:
 Develop your controllers and your views as you normally would in a Spring MVC
 portlet. You'll also need to provide some necessary descriptors for Liferay.
 
-### Liferay Descriptors
+### Liferay Descriptors [](id=liferay-descriptors)
 
 Liferay portlet plugins that are packaged as WAR files should include some
 Liferay specific descriptors.
@@ -339,7 +339,7 @@ WAR file.
 
 Find all of Liferay's DTDs [here](https://docs.liferay.com/portal/7.0/definitions/)
 
-## Calling Services from Spring MVC
+## Calling Services from Spring MVC [](id=calling-services-from-spring-mvc)
 
 To call OSGi-based Service Builder services from your Spring MVC portlet, you
 need a mechanism that gives you access to the OSGi service registry.
@@ -379,7 +379,7 @@ gracefully to the possibility of the service implementation becoming unavailable
 entirely. That's why you should open a Service Tracker when you want to call a
 service that's in the OSGi service registry.
 
-### Service Trackers
+### Service Trackers [](id=service-trackers)
 
 Since you don't have the luxury of using Declarative Services to manage your
 service dependencies, you have a little bit of work to do if you want to gain
@@ -452,7 +452,7 @@ tracker. Using a `destroy` method is an appropriate place to do this:
 Now you know how to use a service tracker to look up services in the service
 registry, giving you a more robust way to call OSGi services. But there's more.
 
-### Implementing a Service Tracker Customizer
+### Implementing a Service Tracker Customizer [](id=implementing-a-service-tracker-customizer)
 
 If you want to employ a callback-like approach for reacting to service changes
 at the time they occur,  you can implement a
