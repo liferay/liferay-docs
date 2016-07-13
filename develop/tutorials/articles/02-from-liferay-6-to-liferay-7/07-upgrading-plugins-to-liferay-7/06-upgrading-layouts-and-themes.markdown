@@ -7,6 +7,8 @@ This tutorial demonstrates the following:
 
 - How to upgrade your layout template to @product@
 
+<!-- Comment out Code Upgrade Tool instructions until the tool is worth using with layout templates. Jim
+
 There are a couple ways you can upgrade your layout template to @product@. If
 your project is in Liferay IDE or Liferay Developer Studio, you can use the Code 
 Upgrade Tool to start the upgrade process. The second option is to manually 
@@ -64,6 +66,11 @@ layout template for @product@.
 
 The first thing you'll need to do is update the version for your layout
 template. If you followed the steps in the last section, you can skip to step 2.
+-->
+
+Upgrading a layout template involves updating it's Liferay version and updating
+the class syntax for its rows and columns.
+
 Follow the steps below to update your layout template for @product@.
 
 1.  Open your `liferay-plugin-package.properties` file and change the 
