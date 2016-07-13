@@ -1,8 +1,22 @@
 # Workflow Forms [](id=workflow-forms)
 
-With the Kaleo Forms application, you can create workflow definitions using an
-intuitive UI. Using the workflow designer saves you the time and trouble of
-having to deal directly with the XML. 
+Using the handy Kaleo Designer application, you can [create workflow definitions
+for any asset in @product@](/discover/portal/-/knowledge_base/7-0/kaleo-designer). As you'll see,
+you can also use the Kaleo Forms Admin application to create workflows using the
+same convenient drag-and-drop interface. However, while the Kaleo Designer is at
+the core of Kaleo Forms, there's more to it. With Kaleo Forms, you can design an
+entire process for sending forms through a workflow, including creating forms to be
+filled out during each of the workflow's tasks. The entire process includes:
+
+1. Creating a Kaleo Forms process
+2. Creating a form (or selecting an existing [Data Definition](/discover/portal/-/knowledge_base/7-0/creating-data-definitions))
+3. Creating a workflow definition (or selecting one that's already created)
+4. Creating forms for each workflow task. Each form is a subset of the form in
+   step two.
+
+With the Kaleo Forms Admin application, you can create workflow definitions
+using an intuitive UI. Using the workflow designer saves you the time and
+trouble of having to deal directly with the XML. 
 
 Developers who are used to working with XML can create workflow definitions with
 little struggle. Other users may not be so comfortable with it. In fact, even
@@ -11,13 +25,13 @@ troubleshoot. To help streamline the creation of workflow definitions and
 empower more users to create custom workflows, Liferay provides the Kaleo Forms
 application in @product@. 
 
-Kaleo Forms contains a wizard that guides you through each step in the
+Kaleo Forms Admin contains a wizard that guides you through each step in the
 creation of a workflow process. This includes a drag and drop interface for
 creating new workflow definitions without having to write XML. Also it allows
 you to work with a process in its associated workflow. 
 
-Kaleo Forms is for creating workflow processes and for using them. Let’s
-look at Kaleo Forms.
+Basically, the Kaleo Forms Admin application is for creating workflow processes
+and for using them.
 
 ## Using Kaleo Forms [](id=using-kaleo-forms)
 
@@ -27,7 +41,7 @@ processes that you’ve defined. If you’re coming here for the first time,
 however, there won’t be any, so create one. Click the *Add*
 (![Add](../../../images-dxp/icon-add.png)) button. You’ll see the screen below.
 This is the first step in the *New Process Wizard*. For this example, give your
-process the name *Lunar Resort News Content*<!--THIS IS CHANGING-->, add a
+process the name *Lunar Resort News Content*, add a
 description, and then click *Next*.
 
 ![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../../images-dxp/kaleo-forms-add.png)
@@ -197,8 +211,12 @@ if you submit a new process using the Single Approver process created in the
 section above, it is assigned automatically to the Portal Content Reviewer role.
 If you are a Portal Content Reviewer, the task then appears in the Assigned to
 My Roles section of the My Workflow Tasks portlet, and you receive a
-notification in your Dockbar. You can then assign it to yourself using the
-portlet and complete the task.
+notification in your Notifications application. You can then assign it to
+yourself using the portlet and complete the task. This point is where the
+workflow task forms you created come into play. If you assign the task to
+yourself and click the Edit icon, you'll get access to the form that was
+assigned to the task. Just fill it out, save the form, and then send the form along
+the workflow.
 
 As you can see, @product@ and the Kaleo Workflow engine combine to create a
 robust environment for web content management. You can create your portal’s
