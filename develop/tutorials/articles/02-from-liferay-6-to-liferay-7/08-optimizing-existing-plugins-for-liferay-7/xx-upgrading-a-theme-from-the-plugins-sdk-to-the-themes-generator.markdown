@@ -1,9 +1,9 @@
-# Optimizing an Existing Theme for Liferay 7 [](id=migrating-a-6-2-theme-to-liferay-7)
+# Migrating a Theme from the Plugins SDK to the Themes Generator [](id=migrating-a-6-2-theme-to-liferay-7)
 
-After you've upgraded your existing theme to Liferay 7, our enhanced development
-features and tools offer options for optimizing your theme and streamlining
-theme management. To introduce one of the most powerful features, we'll pose
-some questions. 
+After you've upgraded your existing theme to Liferay 7, the Themes Generator
+offers enhanced development features and tools for optimizing your theme and
+streamlining theme management. To introduce one of its most powerful features,
+we'll pose some questions. 
 
 **Questions**:
 
@@ -21,14 +21,19 @@ of code that allow you to make changes to your theme quickly. Because they are
 modular, you can use the same themelet for multiple themes!
 
 Themelets are just one of the developer features you gain from migrating your
-existing Ant-based theme project to a theme project based on the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
-The Themes Generator is a Node.js-based tool that gives you access to an array
-of  [theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks),
+existing Ant-based theme project to a [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
+project. The Themes Generator is a Node.js-based tool that gives you access to
+an array of  [theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks),
 that facilitate developing and managing themes. 
 
-The Gulp tasks not only enable you to build and deploy themes, but also allow
-you to interact with your deployed themes. For instance, you can activate your
-environment to automatically redeploy your theme as you make changes to it.
+The *upgrade* Gulp task upgrades Liferay 6 themes to Liferay 7. For details,
+refer to the [Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/themelets/upgrading-themes)
+tutorial. 
+
+In addition to the *upgrade* task, there are tasks for building and deploying
+themes, and tasks for interacting with deployed themes. For instance, you can
+activate your environment to automatically redeploy your theme as you make
+changes to it.
 
 Do you periodically need to make changes to your theme's settings? No problem.
 You can quickly and easily configure your theme's settings through the
@@ -88,3 +93,5 @@ Your theme is now set up to use the Node.js build tools and theme Gulp tasks!
 [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
+
+[Themelets](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes)
