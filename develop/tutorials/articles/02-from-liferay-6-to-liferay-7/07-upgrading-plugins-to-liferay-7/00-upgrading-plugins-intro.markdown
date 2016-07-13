@@ -1,0 +1,34 @@
+# Upgrading Plugins to Liferay 7 [](id=upgrading-plugins-to-liferay-7)
+
+The plugin upgrade tutorials guide you in making the minimal changes necessary
+for existing plugins to work in Liferay 7. This group of tutorials is a work in
+progress, meaning that new upgrade tutorials are regularly being added. We're in
+the process of providing tutorials for all plugin types, Liferay frameworks the
+plugin's use and common customizations to Liferay the plugins (hook plugins)
+implement.
+
+The tutorials will cover upgrading all existing plugin types and templates:
+
+- Traditional portlet plugins
+- Hook plugins
+- Ext plugins
+- Theme plugins
+- Layout Templates
+- FreeMarker and Velocity Templates
+
+The first upgrade process step for a plugin that has code, is to adapt that code
+to Liferay 7's APIs. And the great news is that Liferay's Code Upgrade Tool
+makes this easier ever. It identifies Liferay API changes affecting your code,
+explains the API changes, and offers resolution steps and, in some cases,
+auto-correction. 
+
+After adapting to API changes, it's on to updating your plugin to changes in
+Liferay frameworks it uses, such as Service Builder, Language Keys, and more.
+
+We realize that you might be tempted to optimize your existing plugins right
+away, to benefit from the new things Liferay 7 offers, but we strongly suggest
+first upgrading plugins per the tutorials here. In this way, you'll be able to
+work with your plugins in Liferay as soon as possible and you'll best prepare
+your plugins for leveraging optimizations you can implement later.
+
+Let's start with adapting plugin code to Liferay 7's API.
