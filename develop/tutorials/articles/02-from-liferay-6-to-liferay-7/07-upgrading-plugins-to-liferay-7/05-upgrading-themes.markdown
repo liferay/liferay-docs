@@ -867,12 +867,14 @@ Panel in Liferay 7. Follow these steps to retrieve your portlet ID:
     For the Web Content Display Portlet I would select the 
     *Liferay Journal Content Web* module.
     
-4.  Finally, find the class name that ends with `Portlet`. This is the portlet
-    ID.
+4.  Finally, find the class name that ends with `Portlet` and replace the `.`s 
+    with `_`s to get the portlet ID.
     
     For example, 
     `com.liferay.journal.content.web.internal.portlet.JournalContentPortlet`
-    is the portlet ID for the Web Content Display Portlet.
+    would translate to
+    `com_liferay_journal_content_web_internal_portlet_JournalContentPortlet`
+    for the portlet ID for the Web Content Display Portlet.
 
 You've updated your theme to Liferay 7! Now your users can continue enjoying the
 vision you've created.
