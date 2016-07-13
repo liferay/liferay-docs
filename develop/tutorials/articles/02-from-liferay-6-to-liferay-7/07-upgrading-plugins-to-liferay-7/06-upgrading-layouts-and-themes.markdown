@@ -1,4 +1,4 @@
-# Upgrading Layout Templates [](id=upgrading-layouts-and-themes)
+# Upgrading Layout Templates [](id=upgrading-layout-templates)
 
 Layout templates for Liferay 7 differ slightly from layout templates for
 Liferay 6. The layout template's rows and columns are affected by Bootstrap's
