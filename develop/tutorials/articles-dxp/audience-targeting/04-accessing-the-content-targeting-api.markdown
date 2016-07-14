@@ -1,4 +1,4 @@
-# Accessing the Content Targeting API [](id=accessing-the-content-targeting-api)
+# Accessing the Content Targeting API
 
 The [Audience Targeting](https://www.liferay.com/marketplace/-/mp/application/43707761)
 application available in Liferay's Marketplace can be used to target content to
@@ -12,7 +12,7 @@ In this tutorial, you'll learn how to give your application access to the
 Content Targeting API. Then you can view some examples of how to use the Java
 and JSON APIs that are available. 
 
-## Exposing the Content Targeting API [](id=exposing-the-content-targeting-api)
+## Exposing the Content Targeting API
 
 Configuring your app to have access to the Content Targeting API requires only
 one line of code. This line of code is a dependency that should be added to your
@@ -37,7 +37,7 @@ Your app now has access to the Content Targeting API and can now take advantage
 of everything Audience Targeting has to offer. In the next section, you'll learn
 how to use the Content Targeting API by studying a few examples.
 
-## Using the Content Targeting API [](id=using-the-content-targeting-api)
+## Using the Content Targeting API
 
 There are two ways you'll learn how to call the Content Targeting API: making
 direct calls to the Java API and making direct calls to the JSON API. You'll
@@ -175,7 +175,7 @@ Targeting JSON API is just as easy as accessing the related Java API.
 You've learned how easy it is to expose the Content Targeting API and use it in
 a custom app to unleash its power!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Creating New Audience Rule Types](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types)
 
