@@ -2,7 +2,7 @@
 
 The [Audience Targeting](https://www.liferay.com/marketplace/-/mp/application/43707761)
 application available in Liferay's Marketplace can be used to target content to
-specific audiences. You might want to take this to the next step and use the
+specific audiences. You might want to make the next step and use the
 Content Targeting API. For instance, you could list user segments in your own
 application or update a campaign when someone creates a calendar event. Using
 the Content Targeting API, you can unleash the power of Audience Targeting to
@@ -19,22 +19,22 @@ one line of code. This line of code is a dependency that should be added to your
 Gradle project. Follow the instructions below to add the Content Targeting API
 dependency:
 
-1.  Open the `build.gradle` file in your app's project folder.
+1. Open the `build.gradle` file in your app's project folder.
 
-2.  Find the `dependencies` declaration and add the following line within that
-	declaration:
+2. Find the `dependencies` declaration and add the following line within that
+   declaration:
 
         provided group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
 
     The complete declaration should look like this:
 
         dependencies {
-        	...
-        	provided group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
+            ...
+            provided group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
         }
 
-Your app now has access to the Content Targeting API and can now take advantage
-of everything Audience Targeting has to offer. In the next section, you'll learn
+Your app now has access to the Content Targeting API and can take advantage of
+everything Audience Targeting has to offer. In the next section, you'll learn
 how to use the Content Targeting API by studying a few examples.
 
 ## Using the Content Targeting API
@@ -48,29 +48,28 @@ First you need to obtain an implementation of the `UserSegmentLocalService`
 provided by Audience Targeting. You can do this by adding the following code to
 your Portlet class (the class that extends the `MVCPortlet` class):
 
-	@Reference(unbind = "-")
-	protected void setUserSegmentLocalService(
-		UserSegmentLocalService userSegmentLocalService) {
+    @Reference(unbind = "-")
+    protected void setUserSegmentLocalService(
+        UserSegmentLocalService userSegmentLocalService) {
 
-		_userSegmentLocalService = userSegmentLocalService;
-	}
+        _userSegmentLocalService = userSegmentLocalService;
+    }
 
-	private UserSegmentLocalService _userSegmentLocalService;
+    private UserSegmentLocalService _userSegmentLocalService;
 
-
-When an implementation of the `UserSegmentLocalService` is available (i.e. the
+When an implementation of the `UserSegmentLocalService` is available (i.e., the
 Audience Targeting app has been installed) the `_userSegmentLocalService` field
 will be set with it. Otherwise, the portlet will not be available till this
 dependency is resolved.
 
 It's a good practice to access Audience Targeting services this way instead of
-using util classes (e.g. `UserSegmentLocalServiceUtil.java`). Not only is the
-dependency management better (as explained previously) but this way you won't be
-tied to an specific implementation of the service.
+using util classes (e.g., `UserSegmentLocalServiceUtil.java`). Not only is the
+dependency management better (as explained previously), but you also won't be
+tied to a specific implementation of the service.
 
 The next step is to use the service to obtain a list of existing user segments
-and make it available to your view as a request attribute. To do this add the
-following method of your portlet class:
+and make it available to your view layer as a request attribute. To do this, add
+the following method to your portlet class:
 
     @Override
     public void doView(
@@ -121,7 +120,7 @@ To finish off this example, some logic needs to be added to your portlet's
     </ul>
 
 This logic uses the `UserSegment` object to list the existing user segments in
-the Portal. That's it! By importing the `UserSegment` and
+the portal. That's it! By importing the `UserSegment` and
 `UserSegmentLocalService` classes into your files, you have direct access to
 your portal's user segments via the Content Targeting Java API. 
 
