@@ -1,6 +1,6 @@
 # Blade CLI [](id=blade-cli)
 
-The [Blade CLI](https://github.com/gamerson/liferay-blade-tools) is the
+The [Blade CLI](https://github.com/liferay/liferay-blade-cli/) is the
 easiest way for Liferay developers to create new Liferay modules. Although the
 Plugins SDK is also supported, Blade CLI lets you create projects that can be
 used with any IDE or development environment. Blade CLI is a command line tool
