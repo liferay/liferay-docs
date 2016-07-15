@@ -373,11 +373,12 @@ pages, that your site template should use. Note that pages are called *layouts*
 in Liferay's code. You can specify a name, title, and friendly URL for a page,
 and you can set a page to be hidden. To declare that web content should be
 displayed on a page, simply specify an HTML file. You can declare portlets by
-specifying their portlet IDs which can be found in the App Manager of the 
+specifying their portlet IDs, which can be found in the App Manager of the 
 Control Panel. Select the suite that the App is located in, click the App, click
-the App web link, and open the *Portlets* tab that appears. the portlet ID is 
-displayed below the name of the App. You can also specify portlet preferences for each 
-portlet.
+the App web link, and open the *Portlets* tab that appears. The portlet ID is 
+displayed below the name of the App. You can find a full list of the default 
+portlet IDs for Liferay in the [Portlet ID Quick Reference Guide](/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide). 
+You can also specify portlet preferences for each portlet.
 
 +$$$
 
