@@ -190,6 +190,16 @@ If a new version of a fix pack is released, you can use the Patching Tool to
 install it. The Patching Tool uninstalls the old fix pack and installs the new
 version in its place. 
 
+### Additional Notes
+
+If you customized the application server's `web.xml`, back it up before
+patching. The patching tool overwrites this file during the patching process if
+it needs to be patched. After the patching completes, you can use a diff tool to
+determine what the changes are and to put your customizations back. 
+
+If you want to see if a patch contains a modification like this, please use
+the `diff` command described below in the new features section.
+
 ### Fix pack dependencies [](id=fix-pack-dependencies)
 
 Some hotfix require a fix pack to be installed first. If you attempt to
