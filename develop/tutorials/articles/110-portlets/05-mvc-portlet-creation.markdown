@@ -28,7 +28,7 @@ As a naming convention, the module with your controller code and view layer is
 referred to as the WEB module. A very basic WEB module might look
 like this:
 
-    docs-liferaymvc-web/
+    docs.liferaymvc.web/
         src/main/java/
             com/liferay/docs/liferaymvc/web/portlet/LiferayMVCPortlet.java
         src/main/resources/
@@ -39,11 +39,6 @@ like this:
                 view.jsp
         build.gradle
         bnd.bnd
-
-
-<!-- I think the naming of this module isn't following our conventions. Correct
-me if I'm wrong, but I think BLADE modules are named something like
-com.liferay.docs.liferaymvc.web. -Rich -->
 
 Of course you're not tied to the use of Gradle or BndTools to build your
 project. However, you do need a JAR with the proper OSGi headers defined, which
@@ -58,11 +53,13 @@ for the OSGi runtime. Providing a human readable bundle name is also
 recommended.
 
     Bundle-Name: Example Liferay MVC Web
-    Bundle-SymbolicName: com.liferay.mvcdocs.liferaymvc.web
+    Bundle-SymbolicName: com.liferay.docs.liferaymvc.web
     Bundle-Version: 1.0.0
 
-It's not required, but it's a nice convention to use the root package name as
-the bundle symbolic name.
+If you don't specify a `Bundle-SymbolicName`, one will be generated from the
+project's directory path, which is suitable for many cases. If you specify the
+bundle symbolic name yourself, it's a nice convention to use the root package
+name as the bundle symbolic name.
 
 ## Creating a Portlet Component
 
@@ -200,13 +197,11 @@ root `resources` folder. That's why it's important to follow Liferay's standard
 folder structure, outlined above. Here's the path of a hypothetical Web
 module's resource folder:
 
-    my-application-web/src/main/resources/META-INF/resources
-
-<!-- Again, I think the top level folder isn't named right. -Rich --> 
+    docs.liferaymvc.web/src/main/resources/META-INF/resources
 
 In this case, the `view.jsp` file is found at
 
-    my-application-web/src/main/resources/META-INF/resources/view.jsp
+    docs.liferaymvc.web/src/main/resources/META-INF/resources/view.jsp
 
 and that's the default view of the application. When the `init` method is
 called, the initialization parameters you specify are read and used to direct
@@ -313,10 +308,6 @@ in your portlet class. To read the attribute in a JSP, use the method
 
     request.getAttribute();
 
-Since the `<portlet:defineObjects>`
-
-<!-- Do you have a missing paragraph above? -Rich --> 
-
 To set parameters into the response in your controller code, you can use the
 `setRenderParameter` method.
 
@@ -372,37 +363,32 @@ method:
     %>
 
 To construct a URL that calls the `render` method of your controller, you can
-use the `liferay-portlet:renderURL` tag:
+use the `portlet:renderURL` tag:
 
-    <liferay-portlet:renderURL varImpl="searchURL">
-        <portlet:param name="mvcPath" value="/admin/view.jsp" />
-    </liferay-portlet:renderURL>
+    <portlet:renderURL var="searchURL">
+			<portlet:param name="mvcPath" value="/admin/view.jsp" />
+    </portlet:renderURL>
 
-You create a variable to hold the generated URL with the `varImpl` attribute.
+You create a variable to hold the generated URL with the `var` attribute.
 Then you can set any parameters you need using the `portlet:param` tag. The
 `mvcPath` parameter is used to direct to another JSP. The example above points
 to a JSP in
 
-    my-application-web/src/main/resources/META-INF/resources/admin/view.jsp
+    docs.liferaymvc.web/src/main/resources/META-INF/resources/admin/view.jsp
 
-You can then use the `varImpl` value to invoke the URL in your JSP code, perhaps
+You can then use the `var` value to invoke the URL in your JSP code, perhaps
 in a button or navigation bar item.
 
-Action URLs can be similarly created with the `liferay-portlet` taglib:
+Action URLs can be similarly created with the `portlet` taglib:
 
-    <liferay-portlet:actionURL name="doSomething" var="doSomethingURL">
+    <portlet:actionURL name="doSomething" var="doSomethingURL">
         <portlet:param name="redirect" value="<%= redirect %>" />
-    </liferay-portlet:actionURL>
-
-<!-- As far as I know, it's not a best practice to use the liferay-portlet
-taglib where a portlet taglib will do. The portlet taglibs have similar
-functionality to this using the var attribute for both render and action, where
-the Liferay taglib is inconsistent with varImpl and var. -Rich --> 
+    </portlet:actionURL>
 
 The `name` of the action URL should match the action method name in your portlet
 class; that's all Liferay's MVC framework needs in order to know that the action
 method of the same name should run when this action URL is invoked. Use the
-`var` attribute like you did the `varImpl` attribute in the render URL; to call
+`var` attribute like you did the `var` attribute in the render URL; to call
 the action URL in your JSP code, whether it's in an icon, a button, or somewhere
 else.
 

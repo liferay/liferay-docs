@@ -1,4 +1,4 @@
-# Spring MVC
+# Spring MVC [](id=spring-mvc)
 
 Liferay is an open platform in an ecosystem of open platforms. Just because
 Liferay has its own [MVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet),
@@ -9,14 +9,14 @@ making it an ideal choice for applications of almost any type.
 
 If you're already a wizard with Spring MVC, you can use it instead of Liferay's
 `MVCPortlet` with no limitations whatsoever. Since Spring MVC replaces only your
-app's web application layer, you can still use [Service
+application's web application layer, you can still use [Service
 Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder) 
 for your service layer. 
 
-So what does it take to implement a Spring MVC application in Liferay?  Assuming
-you're familiar with Spring MVC, there are a few things to mention and you have
-a decision to make, since Spring MVC projects must be packaged as WAR archives:
-Do you want to pre-configure your Spring MVC portlet project as a WAB, or do you
+So what does it take to implement a Spring MVC application in Liferay? Start by
+considering how to package a Spring MVC application for Liferay 7.
+
+<!--Do you want to pre-configure your Spring MVC portlet project as a WAB, or do you
 want to let the WAB generator in Liferay do the work for you? The benefits and
 drawbacks of each approach are covered here.
 
@@ -30,10 +30,9 @@ because of the Liferay
 [WAB Extender](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-extender). 
 
 $$$
+-->
 
-First, consider how you want to package your Spring MVC portlet project.
-
-## Packaging a Spring MVC Portlet
+## Packaging a Spring MVC Portlet [](id=packaging-a-spring-mvc-portlet)
 
 Developers creating portlets for Liferay 7.0 can usually deploy their portlet as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
@@ -43,7 +42,20 @@ Spring MVC framework is designed for Java EE. Therefore, it expects a WAR layout
 and requires Java EE resources such as the `WEB-INF/web.xml` descriptor. 
 
 Because Liferay supports the OSGi WAB standard for deployment, you can deploy
-your WAR and it will run as expected in the OSGi runtime. There are a couple of
+your WAR and it will run as expected in the OSGi runtime. Here are the high
+points on why that works in Liferay 7:
+
+-  The Liferay auto-deploy process runs, adding the `PortletServlet` and
+`PlugincontextListener` configurations to the `WEB-INF/web.xml` file.
+
+-  The [Liferay WAB Generator](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-generator) automatically creates an OSGi-ready
+`META-INF/MANIFEST.MF` file. If you want to affect the content of the manifest
+file, you can place BND directives and OSGi headers directly into the
+`WEB-INF/liferay-plugin-package.properties` file.
+
+<!-- Removing mention of pre-configured WAB as per comments by Ray.
+
+There are a couple of
 ways to make your source code into a WAB:
 
 1.  Use Liferay's WAB Generator to convert your WAR into a WAB at
@@ -82,14 +94,15 @@ for generating the manifest file.
       have the `WEB-INF/web.xml` descriptor fully ready for deployment. As a
       Java EE developer, though, you should be comfortable with this. 
 
-In either case, you'll need to provide the Liferay descriptor files
-`liferay-display.xml` and `liferay-portlet.xml`, and you'll need a `portlet.xml`
-descriptor.
+-->
 
-Of the two approaches above, it's recommended to develop a Spring MVC portlet
+You'll still need to provide the Liferay descriptor files `liferay-display.xml`
+and `liferay-portlet.xml`, and you'll need a `portlet.xml` descriptor.
+
+<!--Of the two approaches above, it's recommended to -->Develop a Spring MVC portlet
 WAR file with the appropriate descriptor files, and let the auto-deploy process
 and Liferay's WAB generator take care of converting your project to a
-Liferay-ready WAB. This is what each tool gets you:
+Liferay-ready WAB. <!--This is what each tool gets you:
 
 -  The auto-deploy feature in Liferay will automatically configure the required
    Portlet Servlet and `PluginContextListener` in your project's `web.xml`:
@@ -110,10 +123,11 @@ Liferay-ready WAB. This is what each tool gets you:
 -  The WAB generator adds the necessary OSGi headers in the required
    `MANIFEST.MF` file. You can directly configure OSGi headers in your project's
 `plugin-package.properties` file.
+-->
 
 Now get into the details of configuring a Spring MVC portlet for Liferay.
 
-## Spring MVC Portlets in Liferay
+## Spring MVC Portlets in Liferay [](id=spring-mvc-portlets-in-liferay)
 
 This isn't a comprehensive guide to configuring a Spring MVC portlet. It covers
 the high points, assuming you already have familiarity with Spring MVC. If you
@@ -136,7 +150,7 @@ as needed):
     </init-param>
 
 Provide an application context file (`portlet-context.xml` in the example
-above), it's specified as you normally would for your Spring MVC portlet.
+above), specified as you normally would for your Spring MVC portlet.
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />
@@ -162,8 +176,9 @@ configuration for Spring MVC, you need to include a listener for
         <url-pattern>/portlet-servlet/*</url-pattern>
     </servlet-mapping>
 
-If you're letting Liferay generate the WAB for you, the above is not necessary,
-as it is added automatically during auto-deployment.
+If you're letting Liferay generate the WAB for you (this is the recommended
+approach), the above is not necessary, as it is added automatically during
+auto-deployment.
 
 Your application must be able to convert `PortletRequest`s to `ServletRequest`s
 and back again. Add this to `web.xml`:
@@ -248,7 +263,7 @@ adding a `<bean>` tag for each one:
 Develop your controllers and your views as you normally would in a Spring MVC
 portlet. You'll also need to provide some necessary descriptors for Liferay.
 
-### Liferay Descriptors
+### Liferay Descriptors [](id=liferay-descriptors)
 
 Liferay portlet plugins that are packaged as WAR files should include some
 Liferay specific descriptors.
@@ -257,8 +272,8 @@ The descriptor `liferay-display.xml` controls the category in which your portlet
 appears in @product@'s *Add* menu. Find the complete DTD
 [here](https://docs.liferay.com/portal/7.0/definitions/liferay-display_7_0_0.dtd.html).
 
-Here's a simple example that just specifies the category the app will go under
-in Liferay's menu for adding apps:
+Here's a simple example that just specifies the category the application will go under
+in Liferay's menu for adding applications:
 
     <display>
         <category name="New Category">
@@ -324,12 +339,10 @@ WAR file.
 
 Find all of Liferay's DTDs [here](https://docs.liferay.com/portal/7.0/definitions/)
 
-## Calling Services from Spring MVC
+## Calling Services from Spring MVC [](id=calling-services-from-spring-mvc)
 
-You can call OSGi-based Service Builder services from your Spring MVC portlet.
-Unfortunately, without an OSGi Component, you can't leverage the OSGi life cycle
-in your Spring MVC portlet. Your portlet, therefore, will remain in service even
-if a service it depends on becomes unavailable.
+To call OSGi-based Service Builder services from your Spring MVC portlet, you
+need a mechanism that gives you access to the OSGi service registry.
 
 +$$$
 
@@ -347,7 +360,7 @@ if a service it depends on becomes unavailable.
 
 Design your model entity and write your service layer as normal (see the
 tutorials on Service Builder
-[here](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder). After
+[here](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)). After
 that, add your service's API JAR as a dependency in your Spring MVC project. 
 
 $$$
@@ -358,62 +371,175 @@ One way is by calling the static utility methods.
 
     FooServiceUtil.getFoosByGroupId()
 
-Preferably, though, you can look up the OSGi service using the Service Tracker
-API. 
+While very simple, that's not the best way to call OSGi services because of the
+dynamic nature of the OSGi runtime. Service implementations could be removed and
+added at any time, and your plugin needs to be able to account for that.
+Additionally, you need a mechanism that lets your portlet plugin react
+gracefully to the possibility of the service implementation becoming unavailable
+entirely. That's why you should open a Service Tracker when you want to call a
+service that's in the OSGi service registry.
 
-<!-- Why is this preferred? I'm guessing that it's got to do with transactions,
-but we need to tell people why it's preferred, not just that it's preferred.
--Rich -->
+### Service Trackers [](id=service-trackers)
 
-<!-- You also need to explain this ServiceTracker API and what it's for. These
-instructions don't help anybody understand why they're doing what they're doing
-or what the benefits are. -Rich --> 
+Since you don't have the luxury of using Declarative Services to manage your
+service dependencies, you have a little bit of work to do if you want to gain
+some of the benefits OSGi gives you:
 
-First you look up the bundle using a call to `frameworkUtil.getBundle()`,
-and then get its bundle context. `BundleContext` methods let your bundle
-interact with the OSGi runtime. In this case you'll pass the bundle context to a
-service tracker with the name of the service's class as a parameter, then open
-the service tracker. An `init` method is a good place to put this initialization
+-  Accounting for multiple service implementations, using the best service
+    implementation available (taking into account the service ranking property)
+
+-  Accounting for no service implementations
+
+The static utility classes don't let you do that, and that's sad. But be happy,
+because with a little code, you can regain those benefits.
+
+To implement a service tracker you can do this:
+
+    Bundle bundle = org.osgi.framework.FrameworkUtil.getBundle(this.getClass());
+    BundleContext bundleContext = bundle.getBundleContext();
+    org.osgi.util.tracker.ServiceTracker<SomeService, SomeService> serviceTracker = new 
+    org.osgi.util.tracker.ServiceTracker(bundleContext, SomeService.class, null);
+
+That's too wordy. To minimize the service tracker code you need to add to your
+controllers, use a type-safe wrapper class that extends
+`org.osgi.util.tracker.ServiceTracker`. Your `ServiceTracker` takes two generic
+type parameters: the type of service being tracked, and the type of object being
+produced. In the present use case, both types are the same.
+
+    public class SomeServiceTracker extends 
+        ServiceTracker<SomeService, SomeService> {     
+
+        public SomeServiceTracker(Object host) {
+            super(FrameworkUtil.getBundle(host.getClass()).getBundleContext(), 
+                SomeService.class, null);     
+        } 
+    }
+
+After extending the `ServiceTracker`, you just need to call the constructor, and
+the service tracker is ready to use in your controller layer.
+
+In your controllers, wherever you need to call the service of interest, open the
+service tracker. An `init` method is a good place to put this initialization
 code:
 
     @PostConstruct
-	public void init() {
+    public void init() {
+        someServiceTracker = new SomeServiceTracker(this);
+        someServiceTracker.open();
+    }
 
-		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
-		BundleContext bundleContext = bundle.getBundleContext();
-		serviceTracker = new ServiceTracker<>(bundleContext, SomeService.class, null);
-		serviceTracker.open();
-	}
+When you want to call the service in your controller’s method, you can make sure
+the service tracker has something in it, then get the service using the Service
+Tracker API’s `getService` method. After that, use the service to do something
+cool:
 
-When you want to call the service in your controller's method, first make sure
-it's been fetched by the Service Tracker, then get the service using the Service
-Tracker API's `getService` method. After that, use the service to do something
-cool, and close the service tracker when you're done with it:
-
-    if (!serviceTracker.isEmpty()) {
-        SomeService someService = (SomeService) serviceTracker.getService();
-
+    if (!someServiceTracker.isEmpty()) {
+        SomeService someService = someServiceTracker.getService();
         someService.doSomethingCool();
     }
 
-When it's time for the controller bean to be removed, you can close the service
+Of course, where there’s an `if`, there can also be an `else`, and you can do
+whatever you’d like in response to an empty service tracker.
+
+When it’s time for the controller bean to be removed, you can close the service
 tracker. Using a `destroy` method is an appropriate place to do this:
 
-	@PreDestroy
-	public void destroy() {
-		
-		serviceTracker.close();
+    @PreDestroy
+    public void destroy() {
+        someServiceTracker.close();
+    }
+
+Now you know how to use a service tracker to look up services in the service
+registry, giving you a more robust way to call OSGi services. But there's more.
+
+### Implementing a Service Tracker Customizer [](id=implementing-a-service-tracker-customizer)
+
+If you want to employ a callback-like approach for reacting to service changes
+at the time they occur,  you can implement a
+`org.osgi.util.tracker.ServiceTrackerCustomizer`. To illustrate how it works,
+first consider a service tracker that sends an email each time a
+service happens:
+
+	public class SomeServiceTracker extends ServiceTracker<SomeService, SomeService> {
+
+		public SomeServiceTracker(Object host) {
+			super(FrameworkUtil.getBundle(host.getClass()).getBundleContext(), SomeService.class, null);
+		}
+
+		public SomeService addingService(ServiceReference<SomeService> reference) {
+			sendAddingServiceEmail(reference);
+			return super.addingService(reference);
+		}
+
+		public void modifiedService(ServiceReference<SomeService> reference, SomeService service) {
+			super.modifiedService(reference, service);
+			sendModifiedServiceEmail(reference);
+		}
+
+		public void removedService(ServiceReference<SomeService> reference, SomeService service) {
+			super.removedService(reference, service);
+			sendRemovedServiceEmail(reference);
+		}
 	}
 
-Note that using a service tracker, as shown above, is inferior to using the
-Declarative Services `@Reference` annotation because you won't enjoy the
-benefits of the full OSGi life cycle. In other words, the WAB will be placed in
-service and kept in service, even if the services it depends on are not
-available. This could cause users to access your application in a state in which
-it could only show errors, so you would have to do the extra work of handling
-those errors yourself. 
+The code discussed earlier for creating the service tracker is the same, but now
+when service events happen, you're performing some logic (like sending an email)
+on top of `ServiceTracker`'s implementation of the `ServiceTrackerCustomizer`
+interface. To make things a bit more object oriented, create your own
+implementation of `ServiceTrackerCustomizer`. Here's what the example logic
+above looks like using this approach:
 
-If you are not required to use a Spring MVC portlet, consider using
-Liferay's MVC framework to design your portlets instead, since you can take
-advantage of the Declarative Services `@Component` and `@Reference`, which lets
-you leverage the OSGi life cycle.
+    public class EmailServiceTrackerCustomizer implements ServiceTrackerCustomizer<SomeService, MailState> {
+
+        public EmailServiceTrackerCustomizer(MailContext mc) {
+            _mc = mc;
+        }
+
+        public MailState addingService(ServiceReference<SomeService> reference) {
+            MailState ms = new MailState(_mc);
+            ms.sendAddingServiceEmail(reference);
+            return ms;
+        }
+
+        public void modifiedService(ServiceReference<SomeService> reference, MailState ms) {
+            ms.sendModifiedServiceEmail(reference);
+        }
+
+        public void removedService(ServiceReference<SomeService> reference, MailState ms) {
+            ms.sendRemovedServiceEmail(reference);
+        }
+
+        private MailContext _mc;
+    }
+
+A small change to your service tracker initialization code is necessary when you
+implement your own service tracker customizer: 
+
+    public class SomeServiceTracker extends ServiceTracker<SomeService, MailState> {
+
+        public SomeServiceTracker(Object host) {
+            super(FrameworkUtil.getBundle(host.getClass()).getBundleContext(), SomeService.class,
+                    new EmailServiceTrackerCustomizer());
+        }
+    }
+
+There's now a different second type parameter (`MailState` in this example,
+which is the object being produced) in the `extends` directive. You're also
+replacing the `null` parameter in the constructor with `new
+EmailServiceTrackerCustomizer()`. When this is null, you're declaring that the
+service tracker will call the `SerivceTrackerCustomizer` methods on itself. By
+instantiating your service tracker customizer instead, your service tracker is
+now relying on your service tracker customizer implementation. 
+
+Your service tracker customizer is called when a service is being added to a
+service tracker. For any service your controller layer depends on, a service
+tracker customizer lets you proactively participate in the events happening on
+the service. A good use case is taking your application’s own functionality out
+of service gracefully when a dependency can no longer be fulfilled.
+
+As you can see, there's some boilerplate code required in order to enjoy the
+benefits of the OSGi lifecycle. If you are not required to use a Spring MVC
+portlet, consider using Liferay's MVC framework to design your portlets instead.
+Then you can take advantage of the Declarative Services `@Component` and
+`@Reference` annotations, which let you avoid the boilerplate code associated
+with service trackers.
