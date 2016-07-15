@@ -18,9 +18,16 @@ has been applied, you can select *Male* or *Female*. Once the Age rule has been
 applied, you can select an *Older than* value and a *Younger than* value. For
 example, you could define a *Women over 30* user segment by applying the Gender
 rule and selecting *Female*, and applying the Age rule and setting the *Older
-than* attribute to *30*. Once you've customized the rules for the new user
-segment, entered a name and, optionally, a description, click *Save* to actually
-create the user segment.
+than* attribute to *30*.
+
+Some rules are also instantiable, meaning you can apply more than one of the
+same type of rule to a user segment. This allows you to create scenarios where
+you need to segment your audience based on actions that might occur multiple
+times (e.g., visiting multiple pages, viewing multiple banners, having several
+roles, etc.).
+
+Once you've customized the rules for the new user segment, entered a name and,
+optionally, a description, click *Save* to actually create the user segment.
 
 ![Figure 2: After applying the rule, click the rule to expland/collapse it.](../../images-dxp/audience-targeting-rules.png)
 

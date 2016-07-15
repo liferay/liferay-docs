@@ -41,36 +41,36 @@ enabled by default in Liferay. You can verify this by ensuring that the
 
 $$$
 
-Sync Connector contains two applications: *Sync Web* (sync-web) and *Sync Admin*
-(sync-admin-portlet). Sync Web transparently provides Sync's functional logic.
-Sync Admin provides a UI that lets you control how Sync clients function with
-your Liferay instance. For example, you can disable Sync across the instance or 
-on a site-by-site basis. Sync Connector installs the same as any other Liferay
-app. Once you've installed Sync, it's enabled by default for all the instance's
-sites, so you can start using it. 
+Sync Connector contains two applications: *Sync Web* (sync-web) and *Sync 
+Connector Admin* (sync-admin-portlet). Sync Web transparently provides Sync's 
+functional logic. Sync Connector Admin provides a UI that lets you control how 
+Sync clients function with your Liferay instance. For example, you can disable 
+Sync across the instance or on a site-by-site basis. Sync Connector installs the 
+same as any other Liferay app. Once you've installed Sync, it's enabled by 
+default for all the Liferay instance's sites, so you can start using it. 
 
-If you want to use Sync Admin's default settings and are fine with Sync being
-enabled for all your Liferay instance's sites, you can skip the next section. 
-Before directing your users to install and configure the Sync desktop and mobile
-clients, however, **Make sure to read** this guide's sections on preventing
-accidental file deletion and ensuring Sync security. You should also 
+If you want to use Sync Connector Admin's default settings and are fine with 
+Sync being enabled for all your Liferay instance's sites, you can skip the next 
+section. Before directing your users to install and configure the Sync desktop 
+and mobile clients, however, **Make sure to read** this guide's sections on 
+preventing accidental file deletion and ensuring Sync security. You should also 
 **warn your users** about the potential for accidental data loss. 
 
 ## Using Sync Admin to Configure Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
 
-Sync Admin's UI lets you enable or disable Sync across the Liferay instance or 
-for specific sites. You can also configure default file permissions on a 
-per-site basis. Sync Admin is accessible in the Control Panel's Configuration 
-section. 
+Sync Connector Admin's UI lets you enable or disable Sync across the Liferay 
+instance or for specific sites. You can also configure default file permissions 
+on a per-site basis. To access Sync Connector Admin, select *Control Panel* 
+&rarr; *Configuration* &rarr; *Sync Connector Admin*. 
 
-![Figure 1: The Control Panel's Configuration section contains the Sync Admin portlet.](../../../images/sync-admin-01.png)
+![Figure 1: The Control Panel's Configuration section contains the Sync Connector Admin portlet.](../../../images/sync-admin-01.png)
 
-Sync Admin has two tabs: *Settings* and *Sites*. The Settings tab has *General*
-and *Advanced* settings that apply globally to Sync. In General settings, you
-can disable Sync for all sites by unchecking the checkbox *Allow the use of
-Sync?*. You can also disable user personal sites from syncing by unchecking the
-checkbox *Allow users to sync their personal sites?*. Sync is enabled by default
-on all these sites. 
+Sync Connector Admin has two tabs: *Settings* and *Sites*. The Settings tab has 
+*General* and *Advanced* settings that apply globally to Sync. In General 
+settings, you can disable Sync for all sites by setting the toggle for *Allow 
+the use of Sync?* to *NO*. You can also disable user personal sites from syncing 
+by setting the toggle for *Allow users to sync their personal sites?* to *NO*. 
+Sync is enabled by default on all these sites. 
 
 The Advanced section in Settings lets you tune the Liferay instance's data 
 exchange with Sync clients. The *Max Connections* value specifies the maximum 
@@ -89,19 +89,20 @@ clients automatically check the Liferay instance for updates. For example, if
 set to ten, connected clients check the instance for updates every ten seconds. 
 The default Poll Interval is five. 
 
-Next up is the Sites tab, which lets you can control Sync on a per-site basis. 
+Next up is the Sites tab, which lets you control Sync on a per-site basis. 
 
 ![Figure 2: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images/sync-admin-02.png)
 
 For each site in the Liferay instance, the Sites tab lists each site's default 
 file permissions (more on this in a moment) and whether Sync is enabled for that
 site. Sync is enabled by default for all sites. To disable Sync for a site,
-click the drop-down arrow in the last column for the site and select *Disable
-Sync Site*. To disable multiple sites at once, select their checkboxes and click
-the *Disable Sync Sites* link that appears above the table. **Please use
-caution** when disabling Sync for a site, as doing so **deletes** files for that
-site from the Sync clients. Disabling Sync for a site, however, doesn't affect
-the site's files in the Liferay instance. 
+click the site's *Actions* button 
+(![Actions](../../../images/icon-actions.png)) 
+and select *Disable Sync Site*. To disable multiple sites at once, select their 
+checkboxes and click the *Disable Sync Sites* link that appears above the table. 
+**Please use caution** when disabling Sync for a site, as doing so **deletes** 
+files for that site from the Sync clients. Disabling Sync for a site, however, 
+doesn't affect the site's files in the Liferay instance. 
 
 +$$$
 
@@ -114,20 +115,20 @@ reconnection.
 
 $$$
 
-You can enable Sync for a site by selecting *Enable Sync Site* from its dropdown
-arrow. To enable Sync for multiple sites, select their checkboxes and click the
+You can enable Sync for a site by selecting *Enable Sync Site* from its Actions 
+button. To enable Sync for multiple sites, select their checkboxes and click the
 *Enable Sync Sites* link that appears above the table. 
 
-Make sure that each site for which Sync is enabled has a Documents and Media
-portlet on at least one of its pages. If a site doesn't have the portlet on any
-of its pages and users click the *Open Website* link from their Sync menus, the
-error message *The requested resource was not found* appears. 
+Make sure that each site for which Sync is enabled has a Documents and Media app 
+on at least one of its pages. If a site doesn't have the app on any of its pages 
+and users click the *Open Website* link from their Sync menus, the error message 
+*The requested resource was not found* appears. 
 
 The Sites tab also lets you set default file permissions for files uploaded from
 Sync clients. The process for setting permissions is nearly the same as for
 enabling or disabling Sync for sites. To set the default file permissions for a
-single site, click its drop-down arrow and select *Default File Permissions*.
-This opens a window that lets you select the default file permissions for that
+single site, click its Actions button and select *Default File Permissions*. 
+This opens a window that lets you select the default file permissions for that 
 site. Click *Choose* for the permissions you want to use. 
 
 ![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../../images/sync-admin-03.png)
