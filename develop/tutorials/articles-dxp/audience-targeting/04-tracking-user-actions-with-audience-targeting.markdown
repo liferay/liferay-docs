@@ -190,25 +190,25 @@ types available in the newsletter metric:
 
         String trackImageHTML = StringPool.BLANK;
 
-		if (trackingActionInstance != null) {
-			String trackImageURL = _analyticsProcessor.getTrackingURL(
-				trackingActionInstance.getCompanyId(), 0, 0, "", 0,
-				Campaign.class.getName(),
-				new long[] {trackingActionInstance.getCampaignId()},
-				trackingActionInstance.getElementId(), "view", "");
+        if (trackingActionInstance != null) {
+            String trackImageURL = _analyticsProcessor.getTrackingURL(
+                trackingActionInstance.getCompanyId(), 0, 0, "", 0,
+                Campaign.class.getName(),
+                new long[] {trackingActionInstance.getCampaignId()},
+                trackingActionInstance.getElementId(), "view", "");
 
-			trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
-		}
+            trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
+        }
 
-		context.put("trackImageHTML", trackImageHTML);
+        context.put("trackImageHTML", trackImageHTML);
     }
 
-	@Reference
-	protected void setAnalyticsProcessor(AnalyticsProcessor analyticsProcessor) {
-		_analyticsProcessor = analyticsProcessor;
-	}
+    @Reference
+    protected void setAnalyticsProcessor(AnalyticsProcessor analyticsProcessor) {
+        _analyticsProcessor = analyticsProcessor;
+    }
 
-	private AnalyticsProcessor _analyticsProcessor;
+    private AnalyticsProcessor _analyticsProcessor;
 
 In many cases, a metric has multiple tracking event options. The more tracking
 options your metric provides, the more opportunities you have to decipher your
@@ -236,11 +236,11 @@ you can add the generated code into the content you'd like to track
 To do this, you'll need to make a few modifications to your JSP file. Just
 include these lines below the event type selector:
 
-	<c:if test="<%= !Validator.isBlank(trackImageHTML) %>">
-		<label for='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' key="paste-this-code-at-the-beginning-of-your-newsletter" /></label>
+    <c:if test="<%= !Validator.isBlank(trackImageHTML) %>">
+        <label for='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' key="paste-this-code-at-the-beginning-of-your-newsletter" /></label>
 
-		<liferay-ui:input-resource id='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' url="<%= trackImageHTML %>" />
-	</c:if>
+        <liferay-ui:input-resource id='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' url="<%= trackImageHTML %>" />
+    </c:if>
 
 You can test if your metric is working by copying the generated tracking image
 HTML into an email HTML editor, send it, and open it as if it were an actual
