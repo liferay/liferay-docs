@@ -21,17 +21,18 @@ all of these things, plus it gives you helpful tips.
 
 ## Installing the Audience Targeting Development Tools
 
-Since Liferay 7.0, the Audience Targeting development tools to create extension
-points such as Rule Types are based on Blade CLI. The Blade CLI is the easiest
-way for Liferay developers to create new Liferay modules. Visit the
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/tooling)
-chapter for more information on Blade CLI and how to use it.
+The Audience Targeting development tools used to create extension points such as
+rule types are based on Blade CLI. The Blade CLI is the easiest way for Liferay
+developers to create new Liferay modules. Visit the
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) section for more
+information on Blade CLI and how to use it.
 
 In this tutorial, you’ll learn how to use Audience Targeting Blade CLI templates
 standalone. You can, however, use Blade CLI from a Liferay Workspace, which
 offers additional benefits. You can learn more about creating modules with a
 Liferay Workspace in the
-[Creating Modules in a Workspace tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-modules-in-a-workspace).
+[Creating Modules in a Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-modules-in-a-workspace)
+tutorial.
 
 Next, you'll learn how to create a custom rule type using the Audience Targeting
 Blade CLI templates.
@@ -40,36 +41,35 @@ Blade CLI templates.
 
 Adding a new type of rule to the Audience Targeting application is easy. In this
 part of the tutorial, you'll learn how to create a rule and deploy it to your
-Liferay server.
+Liferay server using Blade CLI.
 
-1. Assuming that the `blade` executable is available on your system path, run
-   the `create -t contenttargetingrule` command from a command prompt.
-   For example, the command below creates a rule project with 
-   `weather` for its project name and `WeatherRule` as its class name within the
+1. Run the `create -t contenttargetingrule` Blade command from a command prompt.
+   For example, the command below creates a rule project with `weather` for its
+   project name and `WeatherRule` as its class name within the
    `com.liferay.content.targeting.rule` package:
 
         blade create -t contenttargetingrule -p com.liferay -c Weather weather
 
 2. Navigate to the newly generated project folder that has your rule's name.
-	Open the folder and study what's been generated.
-   
+   Open the folder and study what's been generated.
+
     The `create -t contenttargetingrule` command created default files that make
     the plugin deployable.
 
 3. Now is a convenient time to deploy the project to see how it currently looks
-   in Portal.
+   in @product@.
 
-    To deploy the plugin project, open a terminal to your plugin project's
-    directory and run the `blade deploy` command. You'll find this new rule
-    listed when creating or editing a user segment in the Audience Targeting
-    application.
+    To deploy the plugin project, start a @product@ instance, open a terminal to
+    your plugin project's directory, and run the `blade deploy` command. You'll
+    find this new rule listed when creating or editing a user segment in the
+    Audience Targeting application.
 
-4. To view your new rule, navigate to your portal's *Admin* &rarr; *Site
-   Administration* &rarr; *Configuration* &rarr; *Audience Targeting* menu. To
-   see the rule you just deployed, click *Add User Segment*, scroll down to the
-   Rules form, and expand the *Sample* drop-down menu.
+4. To view your new rule, navigate to your portal's Site Administration &rarr;
+   *Configuration* &rarr; *Audience Targeting* menu. To see the rule you just
+   deployed, click *Add User Segment*, scroll down to the Rules form, and expand
+   the *Sample* drop-down menu.
 
-    ![Figure 1: Although your new rule is very bare bones, it is deployable to your portal straight out of the box.](../../images/default-sample-rule.png)
+    ![Figure 1: Although your new rule is very bare bones, it is deployable to your portal straight out of the box.](../../images-dxp/default-sample-rule.png)
 
     The default rule doesn't evaluate anything yet, but you can
     drag and drop the rule onto the form, as shown above.
@@ -105,7 +105,7 @@ $$$
 Now, you can begin creating your rule's functionality by specifying its behavior
 in the `-Rule` class (e.g., `WeatherRule.java`) that Blade CLI generated for
 you. This class implements the Rule interface (required), and extends the
-BaseJSPRule class. It's not mandatory to extend `BaseJSPRule`, but it provides
+`BaseJSPRule` class. It's not mandatory to extend `BaseJSPRule`, but it provides
 some helpful utilities, such as support for generating your rule's UI using JSP.
 Note that there are multiple methods in the generated `-Rule` class; you must
 modify them to create a working rule. 
@@ -123,7 +123,7 @@ modifying its generated default methods.
 2. Redeploy your rule plugin by running `blade deploy` from the command prompt.
    Now your rule uses its new icon and resides in the category you specified.
 
-    ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images/icon-category-rule.png)
+    ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
 
 Now that you've modified some basic features in your `-Rule` class, you'll need
 to develop the UI for your rule's configuration. As you read earlier, your rule
@@ -132,8 +132,8 @@ Since a generated rule Java class extends `BaseJSPRule` by default, your rule
 already supports using JSP pages.
 
 Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
-extension views. However, FreeMarker views are still supported through their
-respective base classes (e.g. `BaseFreemarkerRule`). If you're interested in
+extension views. FreeMarker views, however, are still supported through their
+respective base classes (e.g., `BaseFreemarkerRule`). If you're interested in
 using a technology besides JSP or FreeMarker to implement your UI, you can add a
 method `getFormHTML` to your `-Rule` class.
 
@@ -141,7 +141,7 @@ The `getFormHTML` is used to retrieve the HTML created by the technology you
 choose, and to return it as a string that is viewable from your rule's form.
 If you plan, therefore, on using an alternative to JSP or FreeMarker, you
 must override this method by creating and modifying it in your `-Rule` class.
-This tutorials demonstrates implementing the UI using JSP.
+This tutorial demonstrates implementing the UI using JSP.
 
 If you wanted, for example, to create user segment rules based on the type of
 weather a user is experiencing, you could create a drop-down menu that lets the
@@ -163,14 +163,15 @@ Then it specifies several options associated with different types of weather.
 You could borrow from this JSP code and change the name and labels for a
 *select* drop-down box and values appropriate for your rule plugin.
 
-![Figure 3: This example rule uses a *select* drop-down box.](../../images/select-box-rule.png)
+![Figure 3: This example rule uses a *select* drop-down box.](../../images-dxp/select-box-rule.png)
 
 +$$$
 
 **Note:** Recall the last component of Audience Targeting rules: Language Keys.
 To learn more about language keys and how to create, use, and generate them,
 visit the
-[Localization](/develop/tutorials/-/knowledge_base/7-0/localization) tutorials.
+[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+tutorials.
 
 $$$
 
@@ -188,9 +189,9 @@ Now you'll jump back into modifying your rule's behavior via the `-Rule` class.
 
 2. If you wanted to process one of the form's values, you could do that from the
    `processRule` method. You'll need to return the string value for the selected
-   entity you chose for your rule type. For example, recall the FreeMarker code
-   example you studied earlier. To retrieve the selected value from the select
-   box, you'd need to retrieve the weather value:
+   entity you chose for your rule type. For example, recall the JSP code example
+   you studied earlier. To retrieve the selected value from the select box,
+   you'd need to retrieve the weather value:
 
         @Override
         public String processRule(
@@ -245,8 +246,8 @@ evaluation process determines whether a user matches the rule.
         ...
         String userWeather = getUserWeather(anonymousUser);
 
-    You can look at this method's code in the downloadable ZIP file for the
-    sample weather rule. 
+<!--    You can look at this method's code in the downloadable ZIP file for the
+    sample weather rule. -->
 
 2. Insert logic that retrieves the value you stored in the type settings, using
    the `processRule` method. For the weather example, you could retrieve the
@@ -280,16 +281,16 @@ result in slowing down your portal.
 - As an alternative to storing complex information in the `typeSettings` field
 which is managed by the framework in the Rule Instance table, you may want to
 consider persisting to a database by using 
-[Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/service-builder),
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access),
 which is supported in the Rule plugins. 
 
-- You can override BaseJSPRule `deleteData` method in your `-Rule`, so that it
-deletes any data associated with the rule that is currently being deleted.
+- You can override the `BaseJSPRule.deleteData` method in your `-Rule`, so that
+it deletes any data associated with the rule that is currently being deleted.
 
 - If your rule handles data or references to data that can be staged (e.g., a
-reference to a page or web content article), you may need to override
-BaseJSPRule `exportData` and `importData` methods, to manage the content
-properly.
+reference to a page or web content article), you may need to override the
+`BaseJSPRule.exportData` and `BaseJSPRule.importData` methods, to manage the
+content properly.
 
 You now know how to create a custom rule type for your Audience Targeting
 application.
@@ -300,6 +301,6 @@ application.
 
 [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 
-[Localization](/develop/tutorials/-/knowledge_base/7-0/localization)
+[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
 
-[Using Service Builder to Generate a Persistence Framework](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-to-generate-a-persistence-fr)
+[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence)
