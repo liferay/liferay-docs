@@ -17,7 +17,7 @@ to Liferay 7; you can switch back to your favorite tool afterwards.
 This tutorial shows you how to adapt existing plugin code to Liferay 7's API. As
 a prerequisite, you set up your existing traditional plugin in a Liferay 7
 Plugins SDK, in Liferay IDE or Liferay Developer Studio. Then you find your
-plugin's dependencies and configure them. Lastly, you use the Code Upgrade Tool
+plugin's dependencies and configure them. Finally, you use the Code Upgrade Tool
 to address upgrade issues. It's all straightforward.
 
 +$$$
@@ -29,7 +29,7 @@ chain.
 
 $$$
 
-Let's start by setting up your plugin in a Liferay 7 Plugins SDK in Liferay IDE
+Let's start by setting up your plugin in a Liferay 7 Plugins SDK using Liferay IDE
 or Liferay Developer Studio.
 
 ## Setup [](id=setup)
@@ -47,9 +47,9 @@ version 3.0 or newer. Otherwise, download it from the product site:
 Next, you need a Liferay 7 Plugins SDK for your traditional plugin. The new SDK
 is available on the [downloads page](https://www.liferay.com/downloads).
 
-Then, either move your plugin into the Liferay 7 Plugins SDK or unzip the
-Liferay 7 Plugins SDK over the top of your existing Plugins SDK--that is,
-overwrite your plugin's existing Plugins SDK. 
+Then, either move your plugin into the Liferay 7 Plugins SDK or unzip the 
+Liferay 7 Plugins SDK on top of your existing Plugins SDK. This upgrades it 
+to the latest version. 
 
 In your `build.[username].properties` file, make sure to set the
 `app.server.type` and `app.server.parent.dir` properties to refer to your
@@ -71,7 +71,7 @@ You're ready to adapt the plugin to Liferay 7!
 ## Resolving Module Dependencies [](id=resolving-module-dependencies)
 
 Now that you've imported your plugin project to Liferay IDE or Developer Studio,
-compile errors are probably being reported for some of the Liferay classes it uses.
+you probably see compile errors for some of the Liferay classes it uses.
 They're listed as undefined classes or unresolved symbols because they've been
 moved, renamed, or removed. As a part of modularization in Liferay 7, many of
 these classes reside in new modules.
@@ -82,8 +82,8 @@ require more effort to resolve, but are straightforward.
 
 Liferay class changes and required adaptations are described below:
 
--   **Class moved to a package that's in the classpath**:  This change is very
-    common and easy to fix. Since the module is already in your classpath, you
+-   **Class moved to a package that's in the classpath**:  This change is 
+    common and easy to fix. Since the module is already on your classpath, you
     need only update the class import. Two ways of doing this are by using the
     Code Upgrade Tool or by using an Eclipse feature. The Code Upgrade Tool
     reports each moved class for you to address one by one. Ecplise's feature
@@ -119,12 +119,12 @@ starts with configuring your plugin project to declare the modules it needs.
 ### Identifying Module Dependencies [](id=identifying-module-dependencies)
 
 Before @product@ 7.0, all the platform APIs were in a single JAR file:
-`portal-service.jar`. Many of these APIs are now in independent modules. This
-modularization has resulted in many benefits, as described in the article [Benefits of Liferay 7 for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm)
+`portal-service.jar`. Many of these APIs are now in independent modules. 
+Modularization has resulted in many benefits, as described in the article [Benefits of Liferay 7 for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm)
 One such advantage is that these API modules can evolve separately from the
 platform kernel. They also simplify future upgrades. For example, instead of
 having to check all of Liferay's APIs, each module's [Semantic Versioning](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#semantic-versioning scheme)
-indicates whether the module contains any backwards incompatible changes. You
+indicates whether the module contains any backwards-incompatible changes. You
 need only adapt your code to such modules (if any). 
 
 As part of the modularization, `portal-service.jar` has been renamed
@@ -134,13 +134,13 @@ kernel's APIs.
 ![Figure 1: The portal-service JAR file has been refactored. Application APIs have been extracted from it and it's been renamed *portal-kernel*.](../../../images/from-liferay-6-portal-apis-before-after.png)
 
 Each app module consists of a set of classes that are highly cohesive and have
-specific purpose, such as providing the app's API, implementation, or web UI.
-The app modules are much easier to understand and fun to work with. So let's
+a specific purpose, such as providing the app's API, implementation, or web UI.
+The app modules are much easier to understand and fun to work with. So next you'll
 track down the modules that now hold the classes your plugin references.
 
-Reference article [Classes Moved from portal-service.jar](/web/guest/develop/reference/-/knowledge_base/7-0/classes-moved-from-portal-service-jar)
-comprises a table that maps each class moved from `portal-service.jar` to its
-new module. The table includes each class' new package and the module's version,
+Look at [Classes Moved from portal-service.jar](/web/guest/develop/reference/-/knowledge_base/7-0/classes-moved-from-portal-service-jar),
+which is a table that maps each class moved from `portal-service.jar` to its
+new module. The table includes each class's new package and the module's version
 at the time of @product@'s latest release. 
 
 Note the following class information:
@@ -149,7 +149,7 @@ Note the following class information:
 * *Module Version*: The module's version identifier
 * *Package*: The class' Java package
 
-You'll use this information in the dependency entries you specify for your plugin.
+You'll use this information to manage your plugin's dependencies on these modules.
 
 **IMPORTANT**: The module versions in the @product@ source code are currently
 one micro-version higher than what's actually in that @product@ release. For
@@ -159,12 +159,14 @@ release and is therefore the version you should specify. **Make sure to specify
 one module micro-version lower** than what's listed in the @product@ source code
 and in the reference table, that's based on the source code. 
 
+<!-- Why? You should tell people. -Rich -->
+
 Your plugin might reference classes that are in Liferay utility modules, such as
 `util-java`, `util-bridges`, `util-taglib`, or `util-slf4j`. Their module
 artifacts are listed on the [MVNRepository](http://mvnrepository.com/artifact/com.liferay.portal)
 site. All versions of each module are available. When you click on a
-module version, the site conveniently presents tabs for the Ivy, Maven, and
-Gradle dependency elements, to specify in your project. Note the Ivy dependency
+module version, the site shows options for the Ivy, Maven, or
+Gradle dependency elements to specify in your project. Note the Ivy dependency
 information, as the next section demonstrates using Ivy.
 
 ![Figure 2: The MVNRepository site conveniently presents module dependency elements for Ivy, Maven, Gradle, and more.](../../../images/from-liferay-6-mvnrepository-entry.png)
@@ -190,19 +192,19 @@ shortly.
 Note: Previous versions of the Plugins SDK made `portal-service.jar` available
 to projects; the Liferay 7 Plugins SDK similarly makes `portal-kernel.jar`
 available. If you're using a Liferay bundle (i.e., @product@ pre-installed on an
-app server), then the Liferay utility modules are already in your classpath.
+app server), the Liferay utility modules are already in your classpath.
 
 If you manually installed @product@ on your app server, the Liferay utility
-modules might not be on your classpath. If a utility module you need is not in
+modules might not be on your classpath. If a utility module you need is not on
 your classpath, note its dependency elements.
 
 $$$
 
 Now that you have the module symbolic names and versions, you can make the
-modules available to your plugin, as it needs the modules at compile time and
-runtime.
+modules available to your plugin project.
 
-Here are two options for resolving module dependencies in your traditional
+The modules your plugin uses must be available to it at compile time and run
+time. Here are two options for resolving module dependencies in your traditional
 plugin project:
 
 **Option 1: Use Ivy**
@@ -235,21 +237,21 @@ module:
 Each dependency includes the module's name (`name`), organization (`org`), and
 revision number (`rev`).
 
-Note, all Liferay modules use organization (`org`) value `"com.liferay"`.
+All Liferay modules use organization (`org`) value `"com.liferay"`.
 
 At compile time, Ivy downloads the dependency JAR files to a cache folder so you
 can compile against them. At deployment, the OSGi framework in @product@
-installs and registers the dependency modules, for accessing at runtime.
+installs and registers the dependency modules for runtime access. 
 
 **IMPORTANT**: Make sure to specify module version numbers *one micro-version
 lower* than what's specified in the @product@ source code. The source code lists
 one micro-version higher than what's associated with the @product@ release. 
 
 If your project doesn't already have an `ivy.xml` file, you can get one by
-creating a new plugin project in Liferay IDE or Developer Studio and copying
-into your project the `ivy.xml` file Liferay IDE/Developer Studio generates.
+creating a new plugin project in Liferay IDE or Developer Studio and copying the
+`ivy.xml` file it generates.
 
-As an example, here are the Liferay 6.2 Knowledge Base portlet application's
+For example, here are the Liferay 6.2 Knowledge Base portlet application's
 `ivy.xml` file contents:
 
     <?xml version="1.0"?>
@@ -270,10 +272,10 @@ As an example, here are the Liferay 6.2 Knowledge Base portlet application's
     </ivy-module>
 
 The Plugins SDK works with project Ivy files to store artifacts and make them
-accessible to your plugin.
+accessible to your plugin projects.
 
 If you don't want to use Ivy, you can store dependency JARs within your plugin
-project manually. Manual dependency management is next.
+project manually. Next, you'll learn about manual dependency management.
 
 ### Managing Dependencies Manually [](id=managing-dependencies-manually)
 
@@ -299,7 +301,7 @@ API module's JAR file, for example, is `com.liferay.journal.api-2.0.1.jar`.
 As you manage module JARs, make sure to not *deploy* any OSGi framework JARs or
 Liferay module JARs (e.g., *com.liferay.journal.api.jar*). If you deploy them
 along with your plugin, they'll conflict with the JARs already installed in the
-OSGi framework--identical JARs existing in two different classloaders can cause
+OSGi framework Identical JARs existing in two different classloaders can cause
 class cast exceptions.
 
 The easiest way to exclude such JARs from your plugin's deployment is to list
@@ -359,7 +361,7 @@ The following view appears.
 ![Figure 3: This view shows you where breaking changes affect your plugin. In addition, it provides background information on each change and explains how to adapt to it.](../../../images/from-liferay-6-upgrade-problems.png)
 
 Upgrade problems are reported by file and line number. On selecting a problem
-from the list, the following information is shown about the problem: 
+from the list, the following information about the problem appears: 
 
 -  **Date**: When the change was introduced to the product.
 
@@ -374,7 +376,7 @@ from the list, the following information is shown about the problem:
 
 Here's the Code Upgrade Tool workflow:
 
-1.  Double-click a problem in the list, to go to the problem in the affected
+1.  Double-click a problem in the list to go to the problem in the affected
     file.
 
 2.  Correct the problem manually or automatically, if the Code Upgrade Tool
@@ -386,9 +388,9 @@ Here's the Code Upgrade Tool workflow:
 
     ![Figure 4: The Code Upgrade Tool provides auto-correction for some issues.](../../../images/from-liferay-6-correct-automatically.png)
 
-    On applying an auto-correction, an information icon (i) appears next to the
-    line of code. The icon identifies the affected line of code and displays the
-    issue's title, when you hover over the icon.
+When an auto correction is applied to the code, an information icon (i) appears
+next to the line of code. The icon identifies the affected line of code and
+displays the issue's title when you hover over the icon. 
 
     ![Figure 5: On applying auto-correction, an information icon appears next to the affected line of code](../../../images/from-liferay-6-upgrade-tool-at-line.png)
 
@@ -398,8 +400,8 @@ Here's the Code Upgrade Tool workflow:
 
 For more details on an issue, inspect its JIRA ticket by visiting
 <https://issues.liferay.com>, entering the ticket number in the search box, and
-clicking the search icon. The issue's description and comments are a great
-information source.
+clicking the search icon. The issue's description and comments provide relevant
+information.
 
 Resolving all of a plugin's reported upgrade problems makes for a great start
 in adapting your plugin to Liferay 7.
