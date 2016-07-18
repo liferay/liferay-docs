@@ -6,19 +6,6 @@ world, they'll still need reviews, for a variety of reasons. The Kaleo Designer
 in @product@ lets you design workflow definitions so your assets go through a
 review process before publication.
 
-<!-- An asset can have a whole bunch of different workflow statuses:
-
--  Draft: Just created.
--  Pending: Waiting for review.
--  Approved: Successfully navigated the workflow.
--  Denied: Did not successfully navigate the workflow.
--  Expired: The asset had an expiration date which has now passed.
--  In Trash: Deleted.
--  Inactive: 
--  Incomplete
--  Scheduled
--->
-
 The Kaleo Designer lets you develop workflow definitions using a convenient drag
 and drop user interface, so you don't need to be familiar with any scripting
 languages or with writing XML by hand. However, some of the features can be
@@ -433,72 +420,10 @@ Now you're equipped with the basic knowledge to design beautiful, effective
 workflows so that your assets can be properly reviewed before they're published
 in your sites.
 
-<!-- The Single Approver workflow definition is included in @product@ by default. To
-get a look at how it’s defined, click Kebab menu and then Edit. The graphical
-interface for editing or defining a workflow appears below the Details section
-of the Single Approver edit screen.
+## Related Topics [](id=related-topics)
 
-This graphical view is where Kaleo Forms Admin can help you build a workflow
-without having to write any XML. There are eight types of nodes you can add to a
-definition. The node types are Condition, End, Fork, Join, Join XOR, Start,
-State and Task. Notice that Start and End aren’t node types we’ve previously
-discussed; that’s because they’re actually just State nodes, with certain fields
-pre-filled to help streamline the creation process. Since every workflow has a
-start and end state, you’d have to do this anyway.
+[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
 
-Each node you add has a pop-up menu letting you edit or delete the node. As you
-hover your mouse over the edges of a node, notice your mouse pointer changes to
-a cross. The cross indicates you can connect the current node to another node.
-Hold down your mouse button and drag the mouse to start drawing your transition
-to another node. If you stop before reaching the edge of the next node, a pop-up
-displays node types you can create and connect to on-the-fly. To connect with an
-existing node, continue dragging the connector to that node.
+[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
 
-To get a feel for how the designer works, go ahead and use the workflow designer
-to duplicate the default workflow definition. Go back to the previous step and
-click Add Workflow. When you choose this option, it creates a blank workflow
-definition with start and end nodes. To make this work, you’ll add two tasks,
-fill in the relevant information, assign the tasks properly, and create the
-transitions.
-
-First add two tasks, then use the edit icon to name them Review and Update.
-
-Next, connect the nodes so Review has four nodes, as follows: one receiving the
-transition from StartNode, one sending a transition to Update, one receiving a
-transition from Update, and one sending a transition to EndNode.
-
-Next, you want to add the correct assignments and notifications. Click on
-Review. The box on the left shows all the properties of the Review node. In the
-Assignments category, set the Assignment Type to Role Type, the Role Type to
-Regular, and the Role Name to Portal Content Reviewer.
-
-Now set the notifications. Double-click on Notifications and create a
-notification with the Notification Type set to User Notification and the
-Execution Type set to On Assignment.
-
-Together, the assignment and notification settings specify that a user receives
-a notification in their Dockbar when assigned a form in this workflow. Now move
-to the Update node and assign it to the Content Creator role with its own user
-notification.
-
-Next, go through all the transitions and make sure they’re named correctly. What
-are the transitions? Workflow transitions connect one node to another. On
-exiting the first node, processing continues to the node pointed to by the
-transition. Every time you created an arrow from one node to another, Kaleo
-Designer created a transition. By default, these transitions get system
-generated names, so we’ll rename them all to something more human-readable.
-First, click on the arrow going from the Start node to the Review node and set
-the name to Submit and set Default to true–you’ll leave all the others as false.
-Set the name of the Review to Update transition to Reject and the Update to
-Review transition to Resubmit. Lastly, set the name of the Review to Endnode
-transition to Approve.
-
-Now look at the generated XML. It should look a lot like the default workflow,
-only a tiny bit messier, as the nodes are written in the order they were
-created, not in the logical order that happens when a human writes the code.
-Once you’re finished, click Publish. Your workflow is now ready to use!
-
-Back on the third step of the New Process wizard, click Actions → Choose next to
-the workflow you just created. Then click Next.
-
--->
+[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)
