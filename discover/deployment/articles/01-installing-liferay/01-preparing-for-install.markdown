@@ -61,8 +61,8 @@ Portal.
 
 ## Liferay Installation Steps [](id=liferay-installation-steps)
 
-Before you begin installing @product@, You should review these basic installation
-steps:
+Before you begin installing @product@, You should review these basic
+installation steps:
 
 1. Choose a database server to use with Liferay and create a new database.
    Determine whether you want Liferay to manage your database connection or your
@@ -78,9 +78,9 @@ steps:
 3. Install either a Liferay bundle or install Liferay on an existing
    application server (further instructions below).
 
-4. Determine how you'll configure Elastic Search. Liferay's default embedded
+4. Determine how you'll configure Elasticsearch. Liferay's default embedded
    configuration is not supported for production use, so you'll have to install
-   Elastic separately, either on the same infrastructure or on its own. 
+   Elasticsearch separately, either on the same infrastructure or on its own. 
 
 5. Determine whether you'll use Liferay Marketplace or other third party
    applications. If you will, you should enable Liferay's Plugin Access Control
@@ -189,15 +189,15 @@ By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into
 full, production-ready instances of @product@. 
 
-## Step Four: Configure Elastic Search [](id=step-four-configure-elastic-search)
+## Step Four: Configure Elasticsearch [](id=step-four-configure-elastic-search)
 
-Liferay by default ships with an embedded version of Elastic Search. While this
+Liferay by default ships with an embedded version of Elasticsearch. While this
 configuration works well for demo purposes, it is not supported in a production
 installation. After you install Liferay, you'll need to configure it to connect
-to a standalone Elastic server or cluster. Depending on the size of your
-installation, this standalone instance of Elastic can reside either on the same
-machine you have Liferay on or a different machine. For performance purposes, it
-is better to install it on a separate machine. 
+to a standalone Elasticsearch server or cluster. Depending on the size of your
+installation, this standalone instance of Elasticsearch can reside either on the
+same machine you have Liferay on or a different machine. For performance
+purposes, it is better to install it on a separate machine.
 
 ## Step Five: Liferay Marketplace and Portal Security [](id=step-five-liferay-marketplace-and-portal-security)
 
