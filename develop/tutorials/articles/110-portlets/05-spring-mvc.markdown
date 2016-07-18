@@ -16,22 +16,6 @@ for your service layer.
 So what does it take to implement a Spring MVC application in Liferay? Start by
 considering how to package a Spring MVC application for Liferay 7.
 
-<!--Do you want to pre-configure your Spring MVC portlet project as a WAB, or do you
-want to let the WAB generator in Liferay do the work for you? The benefits and
-drawbacks of each approach are covered here.
-
-+$$$
-
-**Note:** If you're wondering what in the world a WAB is, it's a Web Application
-Bundle. If that doesn't clarify things, think of it as a traditional WAR-style
-plugin that also contains a `META-INF/MANIFEST.MF` file with the
-`Bundle-SymbolicName` OSGi header specified. The WAB can run as an OSGi module
-because of the Liferay 
-[WAB Extender](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-extender). 
-
-$$$
--->
-
 ## Packaging a Spring MVC Portlet [](id=packaging-a-spring-mvc-portlet)
 
 Developers creating portlets for Liferay 7.0 can usually deploy their portlet as
@@ -53,77 +37,12 @@ points on why that works in Liferay 7:
 file, you can place BND directives and OSGi headers directly into the
 `WEB-INF/liferay-plugin-package.properties` file.
 
-<!-- Removing mention of pre-configured WAB as per comments by Ray.
-
-There are a couple of
-ways to make your source code into a WAB:
-
-1.  Use Liferay's WAB Generator to convert your WAR into a WAB at
-    deployment time.
-
-    The benefits of this approach:
-
-    - Processed by the Liferay auto-deploy process, which adds
-          `PortletServlet` and `PluginContextListener` to the `WEB-INF/web.xml`
-          descriptor.
-    - Processed by the Liferay [WAB Generator](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-generator),
-          which automatically creates an OSGi-ready `META-INF/MANIFEST.MF`.
-    - Can affect the content of `META-INF/MANIFEST.MF` by putting BND directives and
-          OSGi headers into the `WEB-INF/liferay-plugin-package.properties` file.
-
-    The drawback:
-
-    - Can't supply the `bnd.bnd` and can't
-      use a build-time plugin such as the
-[bnd-maven-plugin](http://njbartlett.name/2015/03/27/announcing-bnd-maven-plugin.html)
-for generating the manifest file.
-
-2.  Pre-configure a WAB by providing the `MANIFEST.MF` file with the 
-    `Bundle-SymbolicName` OSGi header. This is accomplished by using a `bnd.bnd`
-    file in the root of your project, which specifies OSGi headers that will go in
-    the manifest.
-
-    This approach has a benefit over the WAB Generator approach:
-
-    - The `bnd.bnd` file can be processed by a build-time plugin (e.g.,
-      [bnd-maven-plugin](http://njbartlett.name/2015/03/27/announcing-bnd-maven-plugin.html)) to affect the content of an OSGi-ready `META-INF/MANIFEST.MF`.
-
-    There's also a drawback:
-
-    - It bypasses the Liferay auto-deploy process, which means developers must
-      have the `WEB-INF/web.xml` descriptor fully ready for deployment. As a
-      Java EE developer, though, you should be comfortable with this. 
-
--->
-
 You'll still need to provide the Liferay descriptor files `liferay-display.xml`
 and `liferay-portlet.xml`, and you'll need a `portlet.xml` descriptor.
 
-<!--Of the two approaches above, it's recommended to -->Develop a Spring MVC portlet
-WAR file with the appropriate descriptor files, and let the auto-deploy process
-and Liferay's WAB generator take care of converting your project to a
-Liferay-ready WAB. <!--This is what each tool gets you:
-
--  The auto-deploy feature in Liferay will automatically configure the required
-   Portlet Servlet and `PluginContextListener` in your project's `web.xml`:
-
-        <listener>
-            <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
-        </listener>
-        <servlet>
-            <servlet-name>Portlet Servlet</servlet-name>
-            <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-            <load-on-startup>1</load-on-startup>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>Portlet Servlet</servlet-name>
-            <url-pattern>/portlet-servlet/*</url-pattern>
-        </servlet-mapping>
-
--  The WAB generator adds the necessary OSGi headers in the required
-   `MANIFEST.MF` file. You can directly configure OSGi headers in your project's
-`plugin-package.properties` file.
--->
+Develop a Spring MVC portlet WAR file with the appropriate descriptor files, and
+let the auto-deploy process and Liferay's WAB generator take care of converting
+your project to a Liferay-ready WAB.
 
 Now get into the details of configuring a Spring MVC portlet for Liferay.
 
