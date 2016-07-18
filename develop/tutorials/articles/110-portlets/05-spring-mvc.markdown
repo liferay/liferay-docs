@@ -305,7 +305,7 @@ service dependencies, you have a little bit of work to do if you want to gain
 some of the benefits OSGi gives you:
 
 -  Accounting for multiple service implementations, using the best service
-    implementation available (taking into account the service ranking property)
+   implementation available (taking into account the service ranking property)
 
 -  Accounting for no service implementations
 
@@ -348,9 +348,9 @@ code:
     }
 
 When you want to call the service in your controller’s method, you can make sure
-the service tracker has something in it, then get the service using the Service
-Tracker API’s `getService` method. After that, use the service to do something
-cool:
+the service tracker has something in it, and then get the service using the
+Service Tracker API’s `getService` method. After that, use the service to do
+something cool:
 
     if (!someServiceTracker.isEmpty()) {
         SomeService someService = someServiceTracker.getService();
@@ -360,8 +360,8 @@ cool:
 Of course, where there’s an `if`, there can also be an `else`, and you can do
 whatever you’d like in response to an empty service tracker.
 
-When it’s time for the controller bean to be removed, you can close the service
-tracker. Using a `destroy` method is an appropriate place to do this:
+When it’s time for the controller bean to be removed, you must close the service
+tracker. A `destroy` method is an appropriate place to do this:
 
     @PreDestroy
     public void destroy() {
@@ -374,7 +374,7 @@ registry, giving you a more robust way to call OSGi services. But there's more.
 ### Implementing a Service Tracker Customizer [](id=implementing-a-service-tracker-customizer)
 
 If you want to employ a callback-like approach for reacting to service changes
-at the time they occur,  you can implement a
+at the time they occur, you can implement a
 `org.osgi.util.tracker.ServiceTrackerCustomizer`. To illustrate how it works,
 first consider a service tracker that sends an email each time a
 service happens:
