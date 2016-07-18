@@ -12,9 +12,8 @@ app is available to EE subscribers on Liferay's
 [Marketplace](http://marketplace.liferay.com/). Refer to [Managing Apps](/discover/portal/-/knowledge_base/7-0/managing-apps)
 for details on installing and activating apps.
 
-As with other third-party repositories that support the CMIS standard, users can
-gain these benefits by accessing the SharePoint repository through the Liferay
-SharePoint Connector: 
+Users can gain these benefits by accessing the SharePoint repository through the
+Liferay SharePoint Connector: 
 
 - Reading/writing documents and folders
 - Document check-in, check-out, and undo check-out
@@ -42,11 +41,9 @@ Here's an overview of what you must do to configure your host, @product@, and
 SharePoint to use SharePoint from Liferay's Documents and Media Library:
 
 1. Enable Basic Authentication on the SharePoint host
-2. Install SharePoint's CMIS Connector on SharePoint
-3. Activate the SharePoint site as a CMIS Producer
-4. Enable Versioning Support on the SharePoint library
-5. Configure Authentication on @product@
-6. Synchronize user credentials between @product@ and SharePoint
+2. Enable Versioning Support on the SharePoint library
+3. Configure Authentication on @product@
+4. Synchronize user credentials between @product@ and SharePoint
 
 Note, these instructions are geared to @product@ and SharePoint system
 administrators.
@@ -84,46 +81,12 @@ example, here are steps for enabling Basic Authentication on *Windows Server
 8.  In the dialog box, empty the *Default domain* and *Realm* fields of any
     values and click *OK*.
 
-You've configured Basic Authentication on the SharePoint host. Next, you must
-make sure you install SharePoint's CMIS Connector add-on, if it's not already
-installed on your SharePoint server.
+You've configured Basic Authentication on the SharePoint host.
 
-### Step 2: Install SharePoint's CMIS Connector on SharePoint [](id=step-2-install-sharepoints-cmis-connector-on-sharepoint)
+Next, you should enable versioning support in your SharePoint library so that
+users can leverage file versioning between @product@ and SharePoint. 
 
-SharePoint uses a CMIS Connector and a CMIS Producer to interface with
-@product@. If they're already installed on your SharePoint server, you can skip
-this section.
-
-The CMIS Connector is installed with the SharePoint Administrator
-Toolkit using a solution package called a Windows SharePoint file (.wsp). If you
-don't have it already, install the SharePoint Administrator Toolkit for its CMIS
-Connector. Install and deploy the CMIS Connector as a Farm Solution on
-SharePoint.
-
-The folder `Content Management Interoperability Services (CMIS) Connectors`
-contains the `spscmis.wsp` file. Choose the appropriate deployment settings and
-deploy that file. When deployment completes, Solution Properties shows the
-solution is successfully deployed to all target sites. Now it's time to
-activate the SharePoint site as a CMIS Producer.
-
-### Step 3: Activate the SharePoint Site as a CMIS Producer [](id=step-3-activate-the-sharepoint-site-as-a-cmis-producer)
-
-The Producer makes SharePoint repositories available through the CMIS Connector.
-Choose the SharePoint site containing the document libraries to be used as
-document repositories. Every document library in this site is made available as
-a repository through the CMIS connector, but the site must first be activated as
-a CMIS Producer. 
-
-Go to *Site Actions* &rarr; *Site Settings* &rarr; *Manage Site Features*.
-Enable the *Content Management Interoperability Services (CMIS) Producer* by
-clicking *Activate*.
-
-Now any document library created under this SharePoint site is CMIS enabled. 
-
-Lastly, so that users can leverage file versioning between @product@ and
-SharePoint, you must enable versioning support in your SharePoint library. 
-
-### Step 4: Enable Versioning Support in the SharePoint Library [](id=step-4-enable-versioning-support-in-the-sharepoint-library)
+### Step 2: Enable Versioning Support in the SharePoint Library [](id=step-2-enable-versioning-support-in-the-sharepoint-library)
 
 You must enable versioning in SharePoint library for @product@'s check-in/out
 features to work with SharePoint. To enable it, follow these steps: 
@@ -142,7 +105,7 @@ You've set SharePoint to accept versioning requests from @product@.
 
 Next, you'll configure authentication for @product@. 
 
-### Step 5: Authentication on Liferay [](id=step-5-authentication-on-liferay)
+### Step 3: Authentication on Liferay [](id=step-3-authentication-on-liferay)
 
 In order to authenticate with the Sharepoint repository, you need to store
 passwords for the user sessions. You must configure an authentication type that
@@ -171,7 +134,7 @@ under *Configuration* &rarr; *Instance Settings* &rarr; *Authentication*.
 
 Next, you must give @product@ users access to the SharePoint server.
 
-### Step 6: Synchronize Credentials [](id=step-6-synchronize-credentials)
+### Step 4: Synchronize Credentials [](id=step-4-synchronize-credentials)
 
 As a @product@ system administrator, you must ensure that the same credentials
 and authentication are used in @product@ and in SharePoint.
@@ -184,7 +147,7 @@ passwords must be the same in @product@ and in Sharepoint. For details on adding
 and managing @product@ users, refer to [User Mangement](/discover/portal/-/knowledge_base/7-0/user-management).
 
 From within Liferay's Documents and Media Library, you are now prepared to mount
-the SharePoint library as an external repository. 
+the SharePoint library as an additional external repository. 
 
 ## Add SharePoint as a Liferay Documents and Media repository [](id=add-sharepoint-as-a-liferay-documents-and-media-repository)
 

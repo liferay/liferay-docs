@@ -30,18 +30,19 @@ on both both public or private pages.
 Tracks how many users view a form, interact with it (i.e., type or select values
 in the inputs) or submit it. If you select the *All* option from the *Event
 type* field, the custom report will show the figures for the three events
-simultaneously.
+simultaneously. You must also provide the form you want to track, which is
+selectable from the *Form* metric.
 
-To use this metric you need to provide the ID of the form you want to track. If
-you don't know it, you can inspect the HTML of the page where the form is and
-extract this information.
-
-<!-- See WCM-593. Once that ticket is finished, inspecting HTML code of a form
-will no longer be necessary to acquire the form's ID. -Cody -->
+As a use case, suppose a company wants to organize a webinar to promote one of
+their products. The marketing team creates a landing page with a subscription
+form and promotes it on social media. They want to generate a report listing the
+number of visits to the landing page, form interactions, and form submissions to
+measure the success of their campaign. This Form metric would allow campaign
+administrators the ability to track forms in their site.
 
 ## Link [](id=link)
 
-Tracks how often links are clicked. This helps Campaign administrators determine
+Tracks how often links are clicked. This helps campaign administrators determine
 if they're sufficiently visible or helpful.
 
 Similar to forms, you must provide the ID of the link you want to track. If you
