@@ -69,7 +69,7 @@ The first thing you'll need to do is update the version for your layout
 template. If you followed the steps in the last section, you can skip to step 2.
 -->
 
-Upgrading a layout template involves updating it's Liferay version and updating
+Upgrading a layout template involves updating its Liferay version and updating
 the class syntax for its rows and columns.
 
 Follow these steps to upgrade your layout template for Liferay 7:
@@ -78,10 +78,10 @@ Follow these steps to upgrade your layout template for Liferay 7:
     `liferay-versions` property to `7.0.0+`:
 
         liferay-versions=7.0.0+
-    
+ 
 2.  Open your layout template's `.tpl` file and replace `row-fluid` with `row`,
     in each row's class value. 
-    
+ 
 3.  Previously, column size was denoted using a class value of format
     `span[number]`. The new Bootstrap grid system uses the format
     `col-[device-size]-[number]`. 
@@ -91,7 +91,7 @@ Follow these steps to upgrade your layout template for Liferay 7:
     grid system on their site at [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid).
 
     The `[number]` value must be an integer from `1` to `12`. A row's width is
-    divisible by twelve; so, the combined width of a row's columns must equal `12`.
+    divisible by twelve; so the combined width of a row's columns must equal `12`.
 
     Inside the `.tpl` file, replace each `span-[number]` class value with
     `col-[device-size]-[number]`, where `[device-size]` is `xs`, `sm`, `md`, or
@@ -101,7 +101,7 @@ Follow these steps to upgrade your layout template for Liferay 7:
     a third (`4/12`) of the row's total width: 
 
         <div class="portlet-column portlet-column-last col-md-4" id="column-3">
-        
+ 
 As an example, here's Liferay 6 layout template [1_2_1_columns.tpl](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-web/docroot/layouttpl/custom/1_2_1_columns.tpl)
 upgraded to Liferay 7:
 
