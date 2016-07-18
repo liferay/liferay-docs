@@ -19,7 +19,7 @@ installation contains a Sign In portlet. You can access this page at
 [http://localhost:8080/web/guest/home](http://localhost:8080/web/guest/home) if
 you're running Liferay locally.
 
-![Figure 1: By default, the Sign In portlet allows users to log in, create a new account, or request a password reset.](../../images/sign-in-portlet.png)
+![Figure 1: By default, the Sign In portlet allows users to log in, create a new account, or request a password reset.](../../../images/sign-in-portlet.png)
 
 Even if the Sign In portlet has not been added to any Liferay page that's
 accessible to a guest user, users can still access it by navigating to this
@@ -72,7 +72,7 @@ passwords or from requesting password reset links by unchecking the appropriate
 boxes. <!-- For further information about Liferay's authentication options,
 please see this [documentation]() (not yet written). -->
 
-![Figure 2: Here's a view of the Sign In portlet with the *Create Account* and *Forgot Password* options removed.](../../images/sign-in-portlet2.png)
+![Figure 2: Here's a view of the Sign In portlet with the *Create Account* and *Forgot Password* options removed.](../../../images/sign-in-portlet2.png)
 
 Remember that using the Sign In portlet provides the most basic way for users
 to log in to @product@ but it's not the only way. @product@ allows user accounts to

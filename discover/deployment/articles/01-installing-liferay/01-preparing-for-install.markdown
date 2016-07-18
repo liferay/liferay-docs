@@ -1,4 +1,4 @@
-# Liferay Installation Overview [](id=liferay-installation-overview)
+# Preparing for Install
 
 Installing @product@ is easy. But before you begin, you should answer a few
 questions.
@@ -182,7 +182,7 @@ Once you've gathered this information, you're ready to move on to the next step.
 ## Step Three: Install [](id=step-three-install)
 
 The next step is to install @product@. You can do this in one of two ways: by
-installing a @product@ bundled with an application server, or by installing
+installing @product@ bundled with an application server, or by installing
 @product@ manually on an existing application server. 
 
 By far the easiest way to get @product@ installed is to use a bundle. Though
@@ -223,4 +223,8 @@ the Marketplace plugin automatically. If you're installing @product@ in an
 environment that would prevent this from happening, you'll have to perform one
 of several workarounds. 
 
-Now that you know where you're headed, you can install @product@. 
+Now that you know where you're headed, you can install @product@. If you have 
+decided to install @product@ using a bundle, continue with the next section. 
+If you're installing @product@ manually, skip to the section for your 
+application server of choice. Once you have @product@ installed manually or 
+via a bundle, you can move on to [configuring search](/discover/deployment/-/knowledge_base/7-0/configuring-search). 

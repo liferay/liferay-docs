@@ -217,7 +217,7 @@ You can also add your own mappings if you wish.
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
   and match them with their mappings as a preview.
 
-![Figure 1: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 1: Testing LDAP Users](../../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay
 user groups.
@@ -260,7 +260,7 @@ user groups.
   classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
   view the Object Class attributes stored in LDAP for that group.
 
-![Figure 2: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 2: Mapping LDAP Groups](../../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply

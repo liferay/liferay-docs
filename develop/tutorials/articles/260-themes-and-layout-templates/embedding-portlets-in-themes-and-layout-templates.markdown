@@ -21,7 +21,7 @@ declare an embedded portlet. For example, the `portal_normal.ftl` template file
 is a popular place to declare embedded portlets. Insert the following
 declaration wherever you want to embed the portlet:
 
-    <@liferay-portlet["runtime"]
+    <@liferay_portlet["runtime"]
         portletProviderAction=ACTION
         portletProviderClassName="CLASS_NAME"
     />
@@ -30,7 +30,7 @@ This declaration expects two parameters: the type of action and the class name
 of the entity type the portlet should handle. Here's an example of an embedded
 portlet declaration: 
 
-    <@liferay-portlet["runtime"]
+    <@liferay_portlet["runtime"]
         portletProviderAction=portletProviderAction.VIEW
         portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
     />

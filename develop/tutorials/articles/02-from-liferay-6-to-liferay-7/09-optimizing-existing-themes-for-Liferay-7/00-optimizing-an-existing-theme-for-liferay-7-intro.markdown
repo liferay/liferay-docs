@@ -13,8 +13,9 @@ Go ahead and get started.
 
 ## Importing Your 6.2 Theme [](id=importing-your-6-2-theme)
 
-The first thing you will need to do is import your 6.2 theme to use the new node
-theme development tools. Follow the steps below to get your theme set up:
+The first thing you will need to do is import your 6.2 theme to use the new
+Node.js theme development tools. Follow the steps below to get your theme set 
+up:
 
 1.  Navigate to the directory you want to import your theme into and open the
     command line and run the following command:
@@ -42,13 +43,13 @@ theme development tools. Follow the steps below to get your theme set up:
 4.  Enter the URL to your production or development site, or press `Enter` to
     accept the default `http://localhost:8080`.
     
-Your theme is now set up to use the node build tools and theme gulp tasks.
+Your theme is now set up to use the Node.js build tools and theme gulp tasks.
 However, the theme is still configured for Liferay 6.2. To upgrade your theme to
 Liferay 7, follow the steps in the next section.
 
 ## Updating Your Theme with the Gulp Upgrade Task [](id=updating-your-theme-with-the-gulp-upgrade-task)
 
-Now that your theme is set up to use the node build tools, you can use the 
+Now that your theme is set up to use the Node.js build tools, you can use the 
 `gulp upgrade` task to start the upgrade process. Follow the steps below to
 upgrade your theme:
 
