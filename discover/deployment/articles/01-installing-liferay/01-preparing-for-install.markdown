@@ -13,13 +13,6 @@ questions.
 Next, you'll answer these questions and learn the basic steps for installing
 Liferay.
 
-## Understanding Liferay's Releases [](id=understanding-liferays-releases)
-
-Which version of @product@ should you install? That's an easy question to answer:
-if this is a new installation, we recommend you install the latest version
-available. If you want to understand how Liferay releases work, you can read
-[this article](/discover/deployment/-/knowledge_base/7-0/understanding-liferays-releases).
-
 ## Obtaining Liferay Portal [](id=obtaining-liferay-portal)
 
 Anyone can download Liferay Portal from [https://www.liferay.com](https://www.liferay.com).
