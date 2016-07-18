@@ -392,9 +392,9 @@ Here's the Code Upgrade Tool workflow:
 
     ![Figure 5: On applying auto-correction, an information icon appears next to the affected line of code](../../../images/from-liferay-6-upgrade-tool-at-line.png)
 
-3. Mark the problem resolved.
+3.  Mark the problem resolved.
 
-4. If more unresolved problems exist, go back to step 1.
+4.  If more unresolved problems exist, go back to step 1.
 
 For more details on an issue, inspect its JIRA ticket by visiting
 <https://issues.liferay.com>, entering the ticket number in the search box, and
