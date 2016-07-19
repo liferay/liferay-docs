@@ -59,10 +59,33 @@ command.
 
 Using Blade CLI gives you the flexibility to choose how you want to create your
 application. You can do so in your own standalone environment, or within a
-Liferay Workspace. If you'd like to learn more about Liferay Workspaces and how
-to create/use them, see the
-[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+Liferay Workspace. If you'd like to learn more about Liferay Workspaces see the
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 tutorial.
+
+Creating Liferay modules in a workspace using Blade CLI is very similar to
+creating them in a standalone environment. You can find the details of how to
+create a Liferay Workspace using Blade CLI in the
+[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
+tutorial.
+
+When creating modules in a workspace, you should navigate to
+the `/modules` directory to create your project. You can also provide further
+directory nesting into the `/modules` directory, if preferred. Your workspace,
+by default, sets the directory where your modules should be stored by setting
+the following property in the workspace's `gradle.properties` file:
+
+    liferay.workspace.modules.dir=modules
+
+Change this property if you'd like to store your modules in a different
+directory.
+
+When using Blade CLI, you'll have to manually edit your project's component
+class. Blade CLI gives you the ability to specify the class's name, but all
+other contents of the class can only be edited after the class is created. See
+the [Creating Modules with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide)
+tutorial for further details and important dependency information on component
+classes.
 
 Now that you know the basics on creating Liferay module projects using `blade
 create`, you can visit some of the tutorials in this section on specific
