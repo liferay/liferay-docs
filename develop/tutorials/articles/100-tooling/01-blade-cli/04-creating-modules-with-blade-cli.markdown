@@ -57,38 +57,14 @@ class `GuestbookPortlet`. The project name is `my-guestbook-project`. Since the
 directory was not specified, it is created in the folder you executed the
 command.
 
+Using Blade CLI gives you the flexibility to choose how you want to create your
+application. You can do so in your own standalone environment, or within a
+Liferay Workspace. If you'd like to learn more about Liferay Workspaces and how
+to create/use them, see the
+[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+tutorial.
+
 Now that you know the basics on creating Liferay module projects using `blade
 create`, you can visit some of the tutorials in this section on specific
 `create` templates. The templates will be discussed further so you know exactly
 what each one has to offer.
-
-Next, you'll learn how to deploy a module to @product@.
-
-## Deploying to Liferay [](id=deploying-to-liferay)
-
-Once you've created your Liferay module project, you'll need to deploy it to
-your Liferay instance. To use Blade CLI to deploy your module, use the following
-command:
-
-    blade deploy
-
-Blade CLI can detect a locally running Liferay instance and automatically
-deploys your module to that Liferay instance. You can also specify a custom port
-to deploy your module to using the `-p` parameter followed by the port number.
-For instance, you could run `blade deploy -p 8090` to deploy to port 8090. You
-can also watch the deployed module for changes by specifying the `-w` parameter.
-This parameter automatically redeploys the module when changes are detected.
-
-+$$$
-
-**Note:** The `blade deploy` command requires Gradle to be installed on your
-machine, or the use of a Gradle wrapper. To ensure the availability of the
-Gradle wrapper, you can work in a Liferay Workspace. For more information on
-Liferay Workspaces, see the
-[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
-tutorial.
-
-$$$
-
-Awesome! You've successfully created a module project using one of Blade CLI's
-existing templates and deployed it to a running Liferay server.
