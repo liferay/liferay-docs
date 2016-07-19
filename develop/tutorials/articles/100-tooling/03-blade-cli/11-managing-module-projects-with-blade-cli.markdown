@@ -1,4 +1,4 @@
-# Using Blade CLI to Work with Liferay
+# Managing Module Projects with Blade CLI
 
 In this tutorial, you'll learn how to deploy modules to a Liferay server using
 Blade CLI. Also, you'll explore several other Blade CLI commands that let
