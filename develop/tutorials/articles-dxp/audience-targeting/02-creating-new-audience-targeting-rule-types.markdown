@@ -149,14 +149,20 @@ administrator select a weather type to associate with that user segment rule.
 Here's a code snippet from a JSP template (`view.jsp`) that could be applied to
 this example:
 
-	<aui:fieldset>
-		<aui:select name="weather">
-			<aui:option label="sunny" selected="<%= weather == "sunny" %>" value="sunny" />
-			<aui:option label="clouds" selected="<%= weather == "clouds" %>" value="clouds" />
-			<aui:option label="mist" selected="<%= weather == "mist" %>" value="mist" />
-			<aui:option label="snow" selected="<%= weather == "snow" %>" value="snow" />
-		</aui:select>
-	</aui:fieldset>
+    <%
+    Map<String, Object> context = (Map<String, Object>)request.getAttribute("context");
+
+    String weather = (String)context.get("weather");
+    %>
+
+    <aui:fieldset>
+        <aui:select name="weather" value="<%= weather %>">
+            <aui:option label="sunny" value="sunny" />
+            <aui:option label="clouds" value="clouds" />
+            <aui:option label="mist" value="mist" />
+            <aui:option label="snow" value="snow" />
+        </aui:select>
+    </aui:fieldset>
 
 This JSP code creates a *select* drop-down box with the name *weather*.
 Then it specifies several options associated with different types of weather.
