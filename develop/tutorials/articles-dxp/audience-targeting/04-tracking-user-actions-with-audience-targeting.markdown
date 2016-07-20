@@ -121,7 +121,7 @@ user views a newsletter, you could create a menu with the following fields:
   triggered.
 - *Newsletter ID:* used to differentiate between newsletters.
 - *Event Type:* used to differentiate several actions on the same newsletter,
-such as opening the newsletter or clicking on a link.
+  such as opening the newsletter or clicking on a link.
 
 Here's a code snippet from a JSP template (e.g., `view.jsp`) that could be
 applied to this example:
@@ -162,10 +162,7 @@ tracked entity (e.g., view, click, submit, etc.). For this example JSP, you'd
 need to declare the possible `eventTypes` in your `-TrackingAction` class.
 You'll learn how to do this later.
 
-<!-- Fix JSP code above to update figure 2 below. -Cody 
-
-[Figure 2: This Newsletter metric requires the newsletter alias and ID.](../../images/tracking-action-template.png)
--->
+![Figure 2: This Newsletter metric requires the newsletter alias and ID.](../../images-dxp/metric-template.png)
 
 Notice that the input field names in the JSP are prefixed with
 `ContentTargetingUtil.GUID_REPLACEMENT`. This prefix is required for
@@ -205,7 +202,7 @@ types available in the newsletter metric:
                 trackingActionInstance.getCompanyId(), 0, 0, "", 0,
                 Campaign.class.getName(),
                 new long[] {trackingActionInstance.getCampaignId()},
-                trackingActionInstance.getElementId(), "click", "");
+                trackingActionInstance.getElementId(), "view", "");
 
             trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
         }
@@ -223,6 +220,7 @@ types available in the newsletter metric:
     }
 
     private AnalyticsProcessor _analyticsProcessor;
+    private static final String[] _EVENT_TYPES = {"view"};
 
 In many cases, a metric has multiple tracking event options. The more tracking
 options your metric provides, the more opportunities you have to decipher your
@@ -243,14 +241,15 @@ snippet by your metric once you've entered the ID into the form and saved. Then
 you can add the generated code into the content you'd like to track
 (e.g., newsletter).
 
-<!-- Update image once we have a built example to test with. -Cody
-[Figure 3: You can insert the transparent image into your content by copying and pasting the generated code from the form.](../../images/tracking-action-paste-image.png)
--->
+![Figure 3: You can insert the transparent image into your content by copying and pasting the generated code from the form.](../../images-dxp/tracking-action-paste-image.png)
 
 To do this, you'll need to make a few modifications to your JSP file. Just
 include these lines below the event type selector:
 
     <c:if test="<%= !Validator.isBlank(trackImageHTML) %>">
+        <span class="h5">
+            <liferay-ui:message key="paste-this-code-at-the-beginning-of-your-newsletter" />
+        </span>
         <label for='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' key="paste-this-code-at-the-beginning-of-your-newsletter" /></label>
 
         <liferay-ui:input-resource id='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' url="<%= trackImageHTML %>" />
@@ -261,6 +260,10 @@ HTML into an email HTML editor, send it, and open it as if it were an actual
 newsletter. Then go to the custom report containing your newsletter metric and
 select *Update Report* in the top-right menu. A chart and a table with the view
 count on your newsletter will be shown.
+
+For convenience, you can download the full source for the sample newsletter
+metric as a
+[ZIP file](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
 
 You now have all the knowledge necessary to create your own customized metric
 and deploy it to your Audience Targeting application. With this, you can
