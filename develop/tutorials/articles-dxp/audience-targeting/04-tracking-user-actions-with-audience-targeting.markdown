@@ -183,38 +183,38 @@ types available in the newsletter metric:
 
     @Override
     protected void populateContext(
-		TrackingActionInstance trackingActionInstance,
-		Map<String, Object> context, Map<String, String> values) {
+        TrackingActionInstance trackingActionInstance,
+        Map<String, Object> context, Map<String, String> values) {
 
         String alias = StringPool.BLANK;
-		String elementId = StringPool.BLANK;
-		String eventType = StringPool.BLANK;
-		String trackImageHTML = StringPool.BLANK;
+        String elementId = StringPool.BLANK;
+        String eventType = StringPool.BLANK;
+        String trackImageHTML = StringPool.BLANK;
 
-		if (!values.isEmpty()) {
-			alias = values.get("alias");
-			elementId = values.get("elementId");
-			eventType = values.get("eventType");
-		}
-		else if (trackingActionInstance != null) {
-			alias = trackingActionInstance.getAlias();
-			elementId = trackingActionInstance.getElementId();
-			eventType = trackingActionInstance.getEventType();
+        if (!values.isEmpty()) {
+            alias = values.get("alias");
+            elementId = values.get("elementId");
+            eventType = values.get("eventType");
+        }
+        else if (trackingActionInstance != null) {
+            alias = trackingActionInstance.getAlias();
+            elementId = trackingActionInstance.getElementId();
+            eventType = trackingActionInstance.getEventType();
 
-			String trackImageURL = _analyticsProcessor.getTrackingURL(
-            	trackingActionInstance.getCompanyId(), 0, 0, "", 0,
-            	Campaign.class.getName(),
-            	new long[] {trackingActionInstance.getCampaignId()},
-            	trackingActionInstance.getElementId(), "click", "");
+            String trackImageURL = _analyticsProcessor.getTrackingURL(
+                trackingActionInstance.getCompanyId(), 0, 0, "", 0,
+                Campaign.class.getName(),
+                new long[] {trackingActionInstance.getCampaignId()},
+                trackingActionInstance.getElementId(), "click", "");
 
-        	trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
-		}
+            trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
+        }
 
-		context.put("alias", alias);
-		context.put("elementId", elementId);
-		context.put("eventType", eventType);
-		context.put("eventTypes", getEventTypes());
-		context.put("trackImageHTML", trackImageHTML);
+        context.put("alias", alias);
+        context.put("elementId", elementId);
+        context.put("eventType", eventType);
+        context.put("eventTypes", getEventTypes());
+        context.put("trackImageHTML", trackImageHTML);
     }
 
     @Reference
