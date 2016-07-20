@@ -9,11 +9,6 @@ article for information on each rule type and their configuration options. To
 extend the set of available rule types, you can create a class that implements
 the `Rule` interface and deploy the class in your own OSGi plugin.
 
-OSGi plugins can be hot-deployed and undeployed, they manage their own
-dependencies, and they can provide new services that other OSGi plugins can
-consume. The Audience Targeting application can consume services from rule OSGi
-plugins. 
-
 This tutorial shows you how to create a custom rule type and deploy it in an
 OSGi plugin. But before you begin creating a rule type, you must learn how to
 install and use the Audience Targeting development tools. This tutorial covers
@@ -22,7 +17,7 @@ all of these things, plus it gives you helpful tips.
 ## Installing the Audience Targeting Development Tools
 
 The Audience Targeting development tools used to create extension points such as
-rule types are based on Blade CLI. The Blade CLI is the easiest way for Liferay
+rule types are based on Blade CLI. Blade CLI is the easiest way for Liferay
 developers to create new Liferay modules. Visit the
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) section for more
 information on Blade CLI and how to use it.
