@@ -252,8 +252,9 @@ evaluation process determines whether a user matches the rule.
         ...
         String userWeather = getUserWeather(anonymousUser);
 
-<!--    You can look at this method's code in the downloadable ZIP file for the
-    sample weather rule. -->
+    You can look at this method's code in the
+    [downloadable ZIP file](https://customer.liferay.com/documents/10738/200086/weather.zip/45a7d464-a3e9-49e9-bf92-1ba34e009c3c)
+    for the sample weather rule.
 
 2. Insert logic that retrieves the value you stored in the type settings, using
    the `processRule` method. For the weather example, you could retrieve the
@@ -299,7 +300,9 @@ reference to a page or web content article), you may need to override the
 content properly.
 
 You now know how to create a custom rule type for your Audience Targeting
-application.
+application. To view the final solution of a deployable sample weather rule, you
+can download its
+[ZIP file](https://customer.liferay.com/documents/10738/200086/weather.zip/45a7d464-a3e9-49e9-bf92-1ba34e009c3c)
 
 <!-- ## Customize the Rules Engine -->
 
