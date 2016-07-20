@@ -155,11 +155,11 @@ You'll use this information to manage your plugin's dependencies on these module
 one micro-version higher than what's actually in that @product@ release. For
 example, even though the source code for the Liferay Journal API module
 specifies version 2.0.2, version 2.0.1 is what's bundled with the @product@
-release and is therefore the version you should specify. **Make sure to specify
-one module micro-version lower** than what's listed in the @product@ source code
-and in the reference table, that's based on the source code. 
-
-<!-- Why? You should tell people. -Rich -->
+release and is therefore the version you should specify. The module versions are
+incremented for the module's next release version to make sure a new version is
+associated with all module changes. **Make sure to specify one module
+micro-version lower** than what's listed in the @product@ source code and in the
+reference table, that's based on the source code. 
 
 Your plugin might reference classes that are in Liferay utility modules, such as
 `util-java`, `util-bridges`, `util-taglib`, or `util-slf4j`. Their module
