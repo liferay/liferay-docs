@@ -301,7 +301,7 @@ API module's JAR file, for example, is `com.liferay.journal.api-2.0.1.jar`.
 As you manage module JARs, make sure to not *deploy* any OSGi framework JARs or
 Liferay module JARs (e.g., *com.liferay.journal.api.jar*). If you deploy them
 along with your plugin, they'll conflict with the JARs already installed in the
-OSGi framework Identical JARs existing in two different classloaders can cause
+OSGi framework. Identical JARs existing in two different classloaders can cause
 class cast exceptions.
 
 The easiest way to exclude such JARs from your plugin's deployment is to list
