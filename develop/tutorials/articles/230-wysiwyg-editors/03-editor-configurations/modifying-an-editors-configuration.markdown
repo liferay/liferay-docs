@@ -76,7 +76,7 @@ provided below.
         public void populateConfigJSONObject(
             JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
             ThemeDisplay themeDisplay,
-            LiferayPortletResponse liferayPortletResponse) {
+            RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
 
         }
 

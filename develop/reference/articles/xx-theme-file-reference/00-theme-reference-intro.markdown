@@ -10,7 +10,7 @@ which files to modify and which files to leave untouched.
 ## Theme Anatomy [](id=theme-anatomy)
 
 There are two main approaches to theme development for @product@ 7: themes built 
-using the Node build tools with the [themes generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
+using the Node.js build tools with the [themes generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
 and themes built using the Plugins SDK.
 
 For themes developed with the themes generator, your theme anatomy is organized
@@ -210,20 +210,20 @@ for more info.
 
 ### gulpfile.js [](id=gulpfile-js)
 
-Defines the required gulp tasks for node tool developed themes.
+Defines the required gulp tasks for Node.js tool developed themes.
 
 **It's recommended that you NOT overwrite this file.**
 
 ### liferay-theme.json [](id=liferay-theme-json)
 
-Contains the configuration settings for your app server, in node tool based 
+Contains the configuration settings for your app server, in Node.js tool based 
 themes. You can change this file manually at any time to update your server 
 settings. The file can also be updated via the `gulp init` task. 
 
 ### package.json [](id=package-json)
 
 contains theme setting information such as the theme template langauge, version, 
-and base theme, for node tool developed themes. This file can be updated 
+and base theme, for Node.js tool developed themes. This file can be updated 
 manually. The `gulp extend` task can also be used to change the base theme.
 
 ### main.js [](id=main-js)
