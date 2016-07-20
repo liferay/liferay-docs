@@ -38,7 +38,7 @@ Audience Targeting development environment.
 You can download the Audience Targeting SDK from
 [here](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Audience+Targeting).
 Once you've downloaded the Audience Targeting SDK installation's
-[ZIP file](/documents/10184/359829/rule-weather.zip), 
+[ZIP file](/documents/10184/598548/rule-weather.zip/cf9a8d5d-f4d8-419f-a5b4-a5b4e489e556), 
 unzip it. 
 
 <!-- There's not an official downloads page because the WCM team is working
@@ -364,7 +364,7 @@ Targeting app, visit the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting/tree/samples-v1.1) page and
 study the folders with the `rule-` prefix. To view the final solution of a
 deployable sample weather rule, you can download its
-[ZIP file](/documents/10184/359829/rule-weather.zip).
+[ZIP file](/documents/10184/598548/rule-weather.zip/cf9a8d5d-f4d8-419f-a5b4-a5b4e489e556).
 
 <!-- ## Customize the Rules Engine -->
 
