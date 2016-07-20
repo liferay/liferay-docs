@@ -2,7 +2,7 @@
 
 The [Audience Targeting](https://www.liferay.com/marketplace/-/mp/application/43707761)
 application available in Liferay's Marketplace can be used to target content to
-specific audiences. You might want to make the next step and use the
+specific audiences. You might want to take the next step and use the
 Content Targeting API. For instance, you could list user segments in your own
 application or update a campaign when someone creates a calendar event. Using
 the Content Targeting API, you can unleash the power of Audience Targeting to
@@ -40,8 +40,7 @@ how to use the Content Targeting API by studying a few examples.
 ## Using the Content Targeting API
 
 There are two ways you'll learn how to call the Content Targeting API: making
-direct calls to the Java API and making direct calls to the JSON API. You'll
-dive into calling the Java API first.
+direct calls to the Java API and making direct calls to the JSON API. 
 
 Suppose you'd like to display a list of existing user segments in your portlet.
 First you need to obtain an implementation of the `UserSegmentLocalService`
@@ -59,13 +58,13 @@ your Portlet class (the class that extends the `MVCPortlet` class):
 
 When an implementation of the `UserSegmentLocalService` is available (i.e., the
 Audience Targeting app has been installed) the `_userSegmentLocalService` field
-will be set with it. Otherwise, the portlet will not be available till this
-dependency is resolved.
+is set with it. Otherwise, the portlet won't be available till this dependency
+is resolved.
 
 It's a good practice to access Audience Targeting services this way instead of
 using util classes (e.g., `UserSegmentLocalServiceUtil.java`). Not only is the
-dependency management better (as explained previously), but you also won't be
-tied to a specific implementation of the service.
+dependency management better, but you also won't be tied to a specific
+implementation of the service.
 
 The next step is to use the service to obtain a list of existing user segments
 and make it available to your view layer as a request attribute. To do this, add
@@ -94,6 +93,11 @@ the following method to your portlet class:
         super.doView(renderRequest, renderResponse);
     }
 
+<!-- The above code is not quality code, for the following reasons: 1) Not all
+portlets have doView methods. We should show only the relevant code. 2) In
+catching an exception, you never keep the default implementation of printing the
+stack trace. Please fix. -Rich -->
+
 Notice that the `userSegments` list is populated by calling
 `UserSegmentLocalService`'s `getUserSegments` method. This service is part
 of the Content Targeting API. 
@@ -119,13 +123,12 @@ To finish off this example, some logic needs to be added to your portlet's
 
     </ul>
 
-This logic uses the `UserSegment` object to list the existing user segments in
-the portal. That's it! By importing the `UserSegment` and
-`UserSegmentLocalService` classes into your files, you have direct access to
-your portal's user segments via the Content Targeting Java API. 
+This logic uses the `UserSegment` object to list the existing user segments.
+That's it! By importing the `UserSegment` and `UserSegmentLocalService` classes
+into your files, you have direct access to your portal's user segments via the
+Content Targeting Java API. 
 
-Lastly, you'll explore a small example of accessing the Content Targeting
-JSON API.
+You can also do this using the JSON API.
 
 Suppose you'd like to display a list of existing campaigns in your portlet using
 the JSON API. You could do this in your portlet by opening its `view.jsp` file
@@ -167,12 +170,12 @@ Then, each campaign is listed in the `campaignsList` and displayed in your
 portlet for users to see.
 
 If you'd like to view all the available methods (with examples) exposed in the
-JSON API by Audience Targeting, you can visit your portal's `/api/jsonws` URL
-(e.g., `localhost:8080/api/jsonws`). As you can see, accessing the Content
-Targeting JSON API is just as easy as accessing the related Java API.
+JSON API by Audience Targeting, you can visit the `/api/jsonws` URL (e.g.,
+`localhost:8080/api/jsonws`). As you can see, accessing the Content Targeting
+JSON API is just as easy as accessing the related Java API.
 
 You've learned how easy it is to expose the Content Targeting API and use it in
-a custom app to unleash its power!
+your application to unleash its power!
 
 ## Related Topics
 

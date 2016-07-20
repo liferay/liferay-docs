@@ -3,9 +3,9 @@
 In the Audience Targeting application, a User Segment is defined as a group of
 users that match a set of rules. Out of the box, Liferay provides several types
 of rules that are based on characteristics such as age range, gender, location,
-etc. Visit the
+and so on. Visit the
 [Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/7-0/liferay-audience-targeting-rules)
-article for information on each rule type, and their configuration options. To
+article for information on each rule type and their configuration options. To
 extend the set of available rule types, you can create a class that implements
 the `Rule` interface and deploy the class in your own OSGi plugin.
 
