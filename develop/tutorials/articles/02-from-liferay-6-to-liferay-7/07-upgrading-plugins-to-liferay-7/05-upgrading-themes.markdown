@@ -4,36 +4,22 @@ You've developed your theme in Liferay 6.2, and now you've upgraded to Liferay 7
 Upgrading your theme to Liferay 7 is easier than you may think. With just a few
 adjustments, your theme will be running on Liferay 7 in no time!
 
-In this tutorial, using the Lunar Resort theme as an example, you will learn how 
-to upgrade your theme project from Liferay 6.2 to Liferay 7, both manually, and 
-using the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
-You can learn how to migrate your theme to use the Themes Generator in the 
-[Migrating a theme to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7) 
-tutorial.
+Upgrading a theme involves the following steps:
 
-The example Lunar Resort theme is a theme project, based off the [_styled](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled) 
-theme, that was developed in the [Liferay 6.2 Themes Learning Path](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme), 
-that incorporates a responsive design that leverages Bootstrap, and Font 
-Awesome's icons, along with configurable theme settings. Download the 
-[lunar-resort-theme-migration-6.2.zip](/develop/tutorials/code/upgrading-themes/lunar-resort-theme-migration-6.2.zip)
-file if you wish to follow along with the example.
+-  Updating the Liferay version
+-  Updating the CSS
+-  Updating the theme templates
+-  Updating resources importer configuration and content
+
+This tutorial demonstrates how to upgrade a Liferay 6.2 theme, called the Lunar
+Resort theme, to Liferay 7. The theme was developed in the Liferay 6.2 Learning
+Path [Developing a Liferay Theme](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme).
+It's similar to many Liferay 6 themes as it extends the [_styled](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled) 
+base theme, adding configurable theme settings and incorporating a responsive
+design that leverages Font Awesome icons and Bootstrap. Its source code is
+available in ZIP file [lunar-resort-theme-migration-6.2.zip](/develop/tutorials/code/upgrading-themes/lunar-resort-theme-migration-6.2.zip).
 
 ![Figure 1: The Lunar Resort theme offers a clean, minimal design.](../../../images/finished-theme.png)
-
-Note that the Lunar Resort theme has been slightly modified for this tutorial.
-
-In order to upgrade your theme, you will need to follow these general steps:
-
--  Run the Gulp upgrade task if you're using the Themes Generator
--  Upgrade your theme's version
--  Update your theme's CSS and Bootstrap classes
--  Update your theme templates per the breaking changes
--  Update your resources importer's configuration and web content directory
-   structure.
-
-<!--for now I have left the guestbook portlet and make no mention of it since it 
-is not updated AFAIK. Once it has been updated, it can be added to this section 
-as part of the Learning Path, if desired.-->
 
 Before upgrading your theme, consider whether to first [migrate your theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 to use the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
