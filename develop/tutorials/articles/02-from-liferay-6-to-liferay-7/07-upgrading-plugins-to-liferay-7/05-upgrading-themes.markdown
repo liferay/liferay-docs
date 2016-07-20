@@ -35,7 +35,62 @@ In order to upgrade your theme, you will need to follow these general steps:
 is not updated AFAIK. Once it has been updated, it can be added to this section 
 as part of the Learning Path, if desired.-->
 
-You can start by upgrading your theme's version next.
+Before upgrading your theme, consider whether to first [migrate your theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
+to use the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
+Migration is not required for upgrading a theme to to run on Liferay 7, but the
+Themes Generator provides a powerful theme upgrade Gulp task that performs many
+upgrade steps automatically. In addition, a Themes Generator theme can leverage
+new features, such as [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
+
+The theme upgrade task updates the theme's Liferay version, makes a best effort
+to update CSS, and logs upgrade suggestions. For this reason, the Gulp upgrade
+task is described first. Note, however, that you can manually do all that the
+upgrade task does, and this tutorial explains how to do all those things. 
+
+## Running the Gulp Upgrade Task for Themes Generator Themes
+
+A Liferay 6 theme can be upgraded to Liferay 7, regardless of its project
+environment (Plugins SDK, Maven, etc.). However, a theme that's been migrated to
+the Themes Generator can leverage the theme upgrade Gulp task.
+
+Here are the steps for using the theme upgrade Gulp task:
+
+1.  In your theme's root directory, run this command:
+
+        gulp upgrade
+
+    The existing theme is copied to a `backup` folder.  If you ever want to
+    restore the theme back to its original state, you can run `gulp
+    upgrade:revert`. 
+ 
+    The upgrade task then creates core code for generating Liferay 7 theme base
+    files.
+    
+    And lastly, it updates Liferay version references to `7.0`. 
+
+    As an added bonus, the `gulp upgrade` task starts the CSS file upgrade
+    process, prompting you to apply new names to CSS files. 
+
+2.  For Liferay 7, Sass files should use the `.scss` extension and filenames for Sass 
+    partials should start with an underscore (e.g., `_custom.scss`). The `gulp
+    upgrade` task prompts you to press `Enter` for each CSS file rename to
+    apply.
+
+3.  Lastly, the Gulp task makes a best effort to upgrade
+    the theme's Bootstrap code from version 2 to 3. It does some of the upgrades
+    automatically and logs suggestions for other updates. These logs are
+    discussed later in this tutorial.
+
+There's more to do to complete the theme upgrade, but the `gulp upgrade` task
+jumpstarted the process. 
+
+The remainder of this tutorial explains all the steps for upgrading a theme,
+regardless of whether the `gulp upgrade` task performs them automatically.
+Things that the `gulp upgrade` task accomplishes are noted in context. Even if
+you've already used `gulp upgrade`, it's best to read through all the steps to
+make sure all facets of a theme upgrade are applied.
+
+The first upgrade step is to update the theme's Liferay version. 
 
 ## Upgrading Your Theme's Version [](id=upgrading-your-themes-version)
 
@@ -68,40 +123,8 @@ You can start with your `liferay-plugin-package.properties` file first.
     If your theme is using the Themes Generator, you'll also need to update your 
     `package.json`.
 
-    As part of the import process covered in the [migrating a theme tutorial](), 
-    a Gulp file was added that gives you access to several Gulp theme tasks, one 
-    of which is `upgrade.` You'll use the `gulp upgrade` task to update your 
-    theme version, as well as start some of the other upgrade processes.
-
-    Follow these additional steps to upgrade your Themes Generator theme's 
-    version using the `gulp upgrade` task.
-
-3.  Navigate to your theme's root directory and run the following command:
-
-        gulp upgrade
-
-    The existing theme is placed in a `backup` folder. This can be used to 
-    restore your theme back to its original state. Running `gulp upgrade:revert` 
-    will restore the Lunar Resort theme back to its original (post-import) state. 
-    All the core code needed to generate the proper base files for Liferay 7 
-    themes has also been created.
-    
-    If you open `package.json` in the theme's root directory, you'll note that
-    the `version` is now `7.0`. As an added bonus, the `gulp upgrade` task also
-    starts the upgrade process for your CSS files.
-
-4.  Press `Enter` for each CSS file rename to update them to the `.scss` Sass 
-    file extension. All sass files now have the `.scss` extension and all sass 
-    partials have an underscore at the start of their name (e.g., 
-    `_custom.scss`).
-    
-    Once the renames are complete, the Gulp task makes a best effort to upgrade
-    the theme's Bootstrap from 2 to 3. It takes care of some of the upgrade for
-    you and prints suggestions for further updates to consider.
-
-Your theme can now run on Liferay 7! Not so fast though, your theme can run on
-Liferay 7, but it still needs some updates in order to render properly. Now that
-your theme version is updated you can update your theme's CSS next.
+Your theme's Liferay version references are updated for Liferay 7. Next, you'll
+update the CSS. 
 
 ## Updating the CSS [](id=updating-the-css)
 
