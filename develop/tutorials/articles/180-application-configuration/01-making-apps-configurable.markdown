@@ -123,7 +123,7 @@ configuration file. With this information, Liferay already knows a lot about
 your application's configuration options. In fact, it knows enough to generate
 a user interface automatically. Cool, isn't it?
 
-![Figure 1: Navigate to the Control Panel and then click on *System* &rarr; *System Settings*. Then click on *Other*, find the *Example configuration* link, and click on it.](../../images/example-configuration-system-settings.png)
+![Figure 1: Navigate to the Control Panel and then click on *Configuration* &rarr; *System Settings*. Then click on *Other*, find the *Example configuration* link, and click on it.](../../images/example-configuration-system-settings.png)
 
 At this point you might be wondering, "While this is pretty cool, how can I
 read the configuration from my application code?"" It's actually quite easy.
@@ -347,7 +347,7 @@ the following example:
     )
 
 The fully qualified class name of the `@ExtendedObjectClassDefinition` class is
-`com.liferay.portal.metatype.annotations.ExtendedObjectClassDefinition`.
+`com.liferay.portal.configuration.metatype.annotations.ExtendedObjectClassDefinition`.
 
 Note: Currently, the infrastructure used by System Settings relies on the
 `configurationPid` being the same as the class name of the interface. If they
