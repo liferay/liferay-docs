@@ -4,7 +4,9 @@ In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
 IDE, which runs on the Blade CLI behind the scenes. Liferay IDE gives you a
 graphical interface instead of the command prompt, which can streamline your
 workflow. The instructions covered in this tutorial apply to both the commercial
-and open source versions of Liferay.
+and open source versions of Liferay. To learn more about Liferay Workspaces,
+visit its dedicated
+[tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
 Before creating your Liferay Workspace, you should understand the available IDE
 perspectives specifically designed for Liferay development. You'll notice in the

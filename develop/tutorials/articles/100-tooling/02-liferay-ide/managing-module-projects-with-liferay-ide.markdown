@@ -5,17 +5,16 @@ Before you begin learning about managing your modules from Liferay IDE, you
 should make sure a Liferay server is configured in your Eclipse workspace.
 Although a server is not required to manage your module projects, it's helpful
 for testing once you've finished developing them. You can learn how to create a
-Liferay bundle and link it to your workspace in the
-[Using Liferay IDE to Create Your Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace#using-liferay-ide-to-create-your-workspace)
+Liferay bundle and link it to your Liferay workspace in the
+[Creating a Liferay Workspace with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
 section.
 
-Once you've created modules in your workspace and have linked the workspace to a
-Liferay bundle, you can deploy them using Liferay IDE. First, make sure your
+Once you've created modules, you can deploy them using Liferay IDE. First, make sure your
 Liferay server is started by clicking the *Start Server* button
 (![Start Server](../../../images/icon-start-server.png)). Then navigate to your
 module project from the Project Explorer and drag-and-drop the project onto the
 configured Liferay bundle in the *Servers* menu. If at any time you'd like to
-stop your workspace's Liferay server, click the *Stop Server* button
+stop your Liferay server, click the *Stop Server* button
 (![Stop Server](../../../images/icon-stop-server.png)). Awesome! You've deployed
 a module to your running Liferay instance!
 
@@ -45,12 +44,11 @@ You can also access various Gradle build operations intended for Liferay module
 projects. Right-click your module project and select *Liferay* &rarr; *Gradle*
 and then the build command you'd like to execute.
 
-![Figure 4: The Gradle Task toolbar offers Gradle tasks and their descriptions, which can be executed by double-clicking them.](../../../images/gradle-build-operations.png)
+![Figure 5: You can execute build operations by right-clicking the Gradle project in the Project Explorer.](../../../images/gradle-build-operations.png)
 
-When updating Gradle files in your workspace (e.g., `build.gradle`), it's
-important to keep your project up-to-date in the IDE. Therefore, when changing
-Gradle configurations or properties, always right-click your module project and
-select *Gradle* &rarr; *Refresh Gradle Project*.
+To learn more about Gradle development in Liferay IDE, see the
+[Using Gradle in Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
+tutorial.
 
 Excellent! You've learned how to manage your Gradle-based Liferay Workspace
 using Liferay IDE.
