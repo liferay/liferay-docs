@@ -27,6 +27,15 @@ Evaluates if the user has visited the selected content.
 
 Evaluates if the user has visited the selected page.
 
+### Previously Visited Site [](id=previously-visited-site)
+
+Evaluates if the user has visited a specific site before visiting the current
+site. The site's URL can be evaluated based on whether it contains or starts
+with defined text.
+
+For example, if you'd like to segment users based on whether they navigated to
+your site from Twitter, you could define a Twitter URL for this rule.
+
 ### Score Points [](id=score-points)
 
 Evaluates if the user has visited any page or content categorized under this

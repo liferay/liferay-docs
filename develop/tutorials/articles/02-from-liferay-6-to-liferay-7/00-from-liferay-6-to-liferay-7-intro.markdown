@@ -22,5 +22,5 @@ and when to modularize plugins.
 
 We not only want you to adapt to Liferay 7, we want you to thrive using it.
 
-Let's start with learning how developing on Liferay 7 benefits Liferay 6
-developers.
+Let’s first look at what’s changed the most since Liferay 6 and then call out
+the familiar, good things that remain the same. 

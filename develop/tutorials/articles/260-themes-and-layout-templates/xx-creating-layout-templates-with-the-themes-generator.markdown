@@ -5,9 +5,9 @@ For example, take a look at the *1-2-1 Columns Layout CE* layout shown below:
 
 ![Figure 1: The *1-2-1 Columns Layout CE* page layout creates a nice flow for your content.](../../images/layout-template-1-2-1-columns.png)
 
-@product@ provides several layout templates out-of-the-box for you to choose 
-from. You can change the layout for your page, and view the installed layout 
-templates, by opening the `Edit` menu for your page, under the `Navigation`
+Liferay 7 and DXP provide several layout templates out-of-the-box for you to 
+choose from. You can change the layout for your page, and view the installed 
+layout templates, by opening the `Edit` menu for your page, under the `Navigation`
 heading of the `Product Menu` and scrolling down to the *Layouts* heading.
 
 ![Figure 2: Liferay provides several layout templates out-of-the-box for you to use.](../../images/layout-templates.png)
@@ -69,13 +69,13 @@ Follow these steps to create a layout template:
     choose where to insert your row, highlighted in blue, then press Enter to 
     insert the row.
     
-        ![Figure 4: Rows can be inserted using the layout vi.](../../images/insert-row.png)
+    ![Figure 4: Rows can be inserted using the layout vi.](../../images/insert-row.png)
 
     - Remove row: Displays a vi to remove your row. Use your arrow keys to
     select the row you want to remove, highlighted in red, then press Enter to
     remove the row.
     
-        ![Figure 5: Rows are removed using the layout vi.](../../images/remove-row.png)
+    ![Figure 5: Rows are removed using the layout vi.](../../images/remove-row.png)
 
     Once you are done designing your layout you can move onto the next step.
     
