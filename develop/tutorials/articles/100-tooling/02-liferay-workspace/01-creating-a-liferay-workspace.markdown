@@ -117,7 +117,7 @@ usefuly to bundle your workspace into a ZIP or TAR file. This provides the
 flexibility to distribute your workspace to potential consumers. To do this,
 navigate to your workspace's root folder and run the following:
 
-    .\gradlew distBundle[Zip|Tar]
+    ./gradlew distBundle[Zip|Tar]
 
 Your distribution file is available from the workspace's `/build` directory.
 
