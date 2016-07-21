@@ -141,7 +141,12 @@ folder and run
 As you read earlier, the workspace uses a Gradle wrapper to download and use
 Gradle build tools. This command downloads the version of Liferay you specified
 in your Gradle properties and installs your Liferay instance in the `bundles`
-folder. To start your Liferay instance, run
+folder. If you want to skip the downloading process, you can download your
+Liferay instance manually and put the zip file into the `{user.home}/.liferay/bundles`
+folder. In order to make it work, open the `gradle.properties` file, find the
+`liferay.workspace.bundle.url` property, delete `#` and change the file name
+(e.g.,`liferay-ce-portal-tomcat-7.0-ga2.zip`) into the file
+name you downloaded. To start your Liferay instance, run
 
     blade server start -b
 
