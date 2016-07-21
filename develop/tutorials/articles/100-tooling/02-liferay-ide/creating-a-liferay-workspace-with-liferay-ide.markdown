@@ -1,10 +1,19 @@
 # Creating a Liferay Workspace with Liferay IDE
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
-IDE, which runs on Blade tools behind the scenes. Liferay IDE gives you a
+IDE, which runs on the Blade CLI behind the scenes. Liferay IDE gives you a
 graphical interface instead of the command prompt, which can streamline your
 workflow. The instructions covered in this tutorial apply to both the commercial
 and open source versions of Liferay.
+
+Before creating your Liferay Workspace, you should understand the available IDE
+perspectives specifically designed for Liferay development. You'll notice in the
+Perspectives view the *Liferay Workspace* and *Liferay* perspectives. If you
+plan on using a Liferay Workspace for your @product@ development, you should
+select the *Liferay Workspace* perspective. This offers Gradle related
+development tools that are helpful when using a Liferay workspace. The *Liferay*
+perspective is geared towards developers who are using Ant-based development
+tools such as the Plugins SDK.
 
 To create a Liferay Workspace in IDE, select *File* &rarr; *New* &rarr; *Liferay
 Workspace Project*.
@@ -77,6 +86,5 @@ your worspace project. Once you've selected you workspace, click *Finish*.
 
 ![Figure 5: You can import an existing Liferay Workspace into your current IDE session.](../../../images/liferay-workspace-import.png)
 
-Congratulations! You've learned how to create a Liferay Workspace using the
-command line and Liferay IDE. Now that your workspace is created, you can
-begin creating Liferay plugins.
+Congratulations! You've learned how to create a Liferay Workspace using Liferay
+IDE. Now that your workspace is created, you can begin creating Liferay plugins.
