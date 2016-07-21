@@ -1,69 +1,83 @@
 # Using Gradle in Liferay IDE
 
-[Gradle](http://gradle.org/) is an open source build automation system. [Buildship](https://projects.eclipse.org/releases/neon) is a collection of Eclipse plugin-ins that provide support for building software using Gradle and it is going to be a part of Neon. In the meantime, we’ve bundled it in Liferay IDE 3.0.0 and users can use gradle easily in any version of eclipse with Liferay IDE 3.0.0 intsalled.
+[Gradle](http://gradle.org/) is a popular open source build automation system.
+You can take full advantage of Gradle in Liferay IDE by utilizing
+[Buildship](https://projects.eclipse.org/releases/neon), which is a collection
+of Eclipse plugin-ins that provide support for building software using Gradle
+with Liferay IDE. Buildship is bundled with Liferay IDE versions 3.0 and higher.
 
-![buildship: Eclipse plug-ins for Gradle](img/1Buildship-in-liferayide.png)
+![Figure 1: Navigate to *Help* &rarr; *Installation Details* to view plugins included in Liferay IDE.](../../../images/buildship-in-liferayide.png)
 
-## Creating Gradle Project Wizard in Liferay IDE
+The first thing you'll learn about in this tutorial is creating Gradle projects
+in IDE.
 
-- Go to File > New > Project… > Select Gradle Project > Next.
+## Creating and Importing Gradle Projects
 
-- Click Next > Enter a valid project name > Next.
+You can create a Gradle project by using the Gradle Project wizard.
 
-     In this page, user can specify their gradle distribution and other advanced options.
+1. Navigate to *File* &rarr; *New* &rarr; *Project...* and select *Gradle*
+   &rarr; *Gradle Project*. Finally, click *Next* &rarr; *Next*.
 
-- Click Next  > Finish.
+2. Enter a valid project name. You can also specify your project location and
+   working sets.
 
-     User can review the configuration before clicking Finish button. 
+3. Optionally, you can navigate to the next menu page and specify your Gradle
+   distribution and other advanced options. Once you're finished, select
+   *Finish*.
 
-![specify optional options in new gradle project wizard](img/2New-Gradle-Project.png)
+![Figure 2: You can specify your Gradle distribution and advanced options such as home directories, JVM options, and program arguments.](../../../images/new-gradle-project.png)
 
-![review configuration in new gradle project wizard](img/3New-Gradle-Project.png)
+You can also import existing Gradle projects in Liferay IDE.
 
-## Import Gradle Project in Liferay IDE
+1. Go to *File* &rarr; *Import...* &rarr; *Gradle* &rarr; *Gradle Project*
+   &rarr; *Next* &rarr; *Next*.
 
-- Go to File > Import… > Gradle Project > Next > Next.
+    ![Figure 3: You can specify what Gradle project to import from the *Import Gradle Project* wizard.](../../../images/import-gradle-project.png)
 
-- Click “Browse..” button to choose a gradle project.
+2. Click the *Browse...* button to choose a Gradle project.
 
-- Click Next.
+3. Optionally, you can navigate to the next menu page and specify your Gradle
+   distribution and other advanced options. Once you're finished, click *Next*
+   again to review the import configuration. Select *Finish* once you've
+   confirmed your Gradle project import.
 
-      User can specify optional import options in this page.
+    ![Figure 4: You can preview your Gradle project's import information.](../../../images/import-configuration-overview.png)
 
-- Click Next > Finish.
-  
-    User can review the import configuration before finishing import the gradle project.
+Next you'll learn about Gradle tasks and executions, and learn how to run and
+display them in Liferay IDE.
 
-![Import Gradle Project](img/4New-Gradle-Project.png)
+## Gradle Tasks and Executions
 
-## Gradle Tasks and Gradle Executions Views
+Liferay IDE provides two views to enhance your developing experience using
+Gradle: Gradle Tasks and Gradle Executions. You can open these views by
+following the instructions below.
 
-### Open views
+1. Go to *Window* &rarr; *Show View* &rarr; *Other...*.
 
-- Open Gradle Tasks and Gradle Executions views manually.
-    
-    1. Go to Window > Show view > Other…
+2. Navigate to the *Gradle* folder and open *Gradle Tasks* and *Gradle
+   Executions*.
 
-    2. Open Gradle Tasks and Gradle Executions views separately
+Gradle tasks and executions views open automatically once you create or import a
+Gradle project.
 
-- Gradle Tasks and Gradle Executions views will be opened automatically once user create or import a gradle project.
+The Gradle Tasks view allows you to display the Gradle tasks available
+for you to use in your Gradle project. Users can execute a task listed under the
+Gradle project by double-clicking it.
 
-### Dealing with Gradle Tasks
+![Figure 5: Navigate into your preferred Gradle project to view its available Gradle tasks.](../../../images/gradle-tasks.png)
 
-Gradle tasks are listed under every project in Gradle Tasks view. User can execute every task by double clicking on it. 
+Once you've executed a Gradle task, you can open the Gradle Executions view to
+inspect its output.
 
-![Gradle Tasks](img/5Gradle-tasks.png)
+![Figure 6: The Gradle Executions view helps you visualize the Gradle build process.](../../../images/gradle-executions.png)
 
-### Dealing with Gradle Executions
+Keep in mind that if there is any change in the Gradle build scripts inside your
+Gradle projects (e.g., `build.gradle` or `settings.gradle`), you must refresh
+the project so Liferay IDE can account for the change and display it properly in
+your views. To refresh a Gradle project, right-click on the project and select
+*Gradle* &rarr; *Refresh Gradle Project*.
 
-User can see the outputs immediately in Gradle Executions view once execute a gradle task.
+![Figure 7: Make sure to always refresh your Gradle project in Liferay IDE after build script edits.](../../../images/refresh-gradle-project.png)
 
-![Gradle Executions](img/6Gradle-Executions.png)
-
-## Refresh Gradle Project
-
-If there is any change in build scripts inside gradle projects, such as build.gradle and settings.gradle files, user need to refresh the project using the following step:
-
-- Right click on the project > Gradle > Refresh Gradle Project
-
-![Refresh Gradle Project](img/7Update-Gradle-Project.png)
+Excellent! You're now equipped with the knowledge to add, import, and build your
+Gradle projects in Liferay IDE!
