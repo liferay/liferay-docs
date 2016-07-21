@@ -74,20 +74,6 @@ Here's a full description of what a connected LCS client app displays:
 
 ![Figure 5: The server is connected to LCS.](../../../../images-dxp/lcs-server-connected.png)
 
-By default, all LCS services are enabled for your DXP instance. You can change 
-this by clicking the *Configure Services* link in the connected client app. When 
-you click this link, the *Enable All Services* checkbox is selected by default. 
-This enables portal analytics, fix pack management, and portal property 
-analysis. Unchecking this checkbox presents you with additional checkboxes for 
-enabling each of those services separately. Note that although 
-[LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers), 
-you may have additional properties you want to prevent LCS from analyzing. If 
-you select *Portal Properties Analysis*, a text box appears for you to enter any 
-properties you don't want LCS to analyze. Click *Save* when you finish enabling 
-the LCS services you want to use. 
-
-![Figure 6: In a connected LCS client app, you can enable or disable specific LCS services for your DXP instance.](../../../../images-dxp/lcs-configure-services.png)
-
 Awesome! Now you know how to use environment tokens in LCS to activate your DXP 
 server. 
 
