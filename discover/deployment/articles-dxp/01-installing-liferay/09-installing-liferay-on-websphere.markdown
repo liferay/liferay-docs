@@ -287,6 +287,36 @@ Now you're ready to deploy Liferay DXP! Use these instructions to do so:
 
 You've now installed Liferay DXP!
 
+## Enable Security for Portal Access Control Lists
+
+When you are ready to start using apps from Liferay Marketplace, you'll want to 
+protect your portal and your WebSphere server from security threats. To do so, 
+you must enable Java Security on your WebSphere server and specify a security 
+policy to grant Liferay DXP access to your server. 
+
+In WebSphere's administrative console, go to *Security* &rarr; 
+*Global Security*. Check the box to enable Java 2 security, and click *Apply*. 
+Save to the master configuration. 
+
+![Figure 3: Enabling security can be done by checking one box, but it still needs to be configured.](../../images-dxp/websphere-security.png)
+
+Now you must configure the security policy for the IBM JRE that WebSphere runs 
+on. With your WebSphere server shut down, open the following security policy 
+file: 
+
+    [your-WebSphere-installation-directory]/java_1.8_64/jre/lib/security/java.policy
+
+Replace this file's contents with the following: 
+
+    grant {
+        permission java.security.AllPermission;
+    };
+
+This configuration opens all permissions--you can fine-tune your policy's 
+permissions later. 
+
+Great! Now you're ready to start Liferay. 
+
 ## Start Liferay DXP
 
 1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish
