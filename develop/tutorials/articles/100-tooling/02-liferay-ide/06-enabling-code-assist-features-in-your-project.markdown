@@ -1,4 +1,4 @@
-# Enabling Code Assist Features in Your Project
+# Enabling Code Assist Features in Your Project [](id=enabling-code-assist-features-in-your-project)
 
 Liferay IDE's integration of [Tern](http://ternjs.net/) provides many valuable
 front-end and back-end development tools for code inference and completion. This
@@ -24,7 +24,7 @@ installation process.
 Now that the necessary features are installed, follow the steps below to learn
 how to enable Tern's code assist features in your project. 
 
-## Setting Up Tern Features
+## Setting Up Tern Features [](id=setting-up-tern-features)
 
 Tern features are enabled on a project-by-project basis. By default, Tern 
 features are already enabled for Liferay portlet plugins. For all other project 
@@ -52,7 +52,7 @@ types, you'll need to follow the steps below:
 
 Your project is now set up to use IDE's Tern features. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Using Front-End Development Code Assist Features in IDE](/develop/tutorials/-/knowledge_base/7-0/using-front-end-development-code-assist-features-in-ide)
 

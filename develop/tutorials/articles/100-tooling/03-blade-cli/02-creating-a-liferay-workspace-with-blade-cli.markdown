@@ -1,4 +1,4 @@
-# Creating a Liferay Workspace with Blade CLI
+# Creating a Liferay Workspace with Blade CLI [](id=creating-a-liferay-workspace-with-blade-cli)
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using Blade
 CLI. The Blade CLI tool you installed in the
@@ -64,7 +64,7 @@ Awesome! You have a built-in Liferay server in your workspace and can start the
 server using Blade CLI. Next you'll learn how to use a legacy Plugins SDK from
 your workspace.
 
-## Configuring a Plugins SDK in Your Workspace
+## Configuring a Plugins SDK in Your Workspace [](id=configuring-a-plugins-sdk-in-your-workspace)
 
 Because @product@ 7.0 uses a module-based framework, the current structure of a
 Liferay Workspace is centered around module development. There are still,

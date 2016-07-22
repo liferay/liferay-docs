@@ -1,4 +1,4 @@
-# Creating Modules with Liferay IDE
+# Creating Modules with Liferay IDE [](id=creating-modules-with-liferay-ide)
 
 IDE provides a *Module Project Wizard* for users to create a variety of
 different module projects. You can create a new Liferay module project by

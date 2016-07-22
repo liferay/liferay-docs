@@ -1,4 +1,4 @@
-# Overriding MVC Commands
+# Overriding MVC Commands [](id=overriding-mvc-commands)
 
 MVC Commands are used to break up the controller layer of a Liferay MVC
 application into smaller, more digestible code chunks.
@@ -44,7 +44,7 @@ command. If there are no additional customizations on the same command, this
 reference will be the original MVC command.
 
     @Reference(
-        target = "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + ‚Äù))")
+        target = "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + ‚Ä?))")
     protected MVCRenderCommand mvcRenderCommand;
 
 If you use this approach, your extension will continue to work with new versions
@@ -67,7 +67,7 @@ $$$
 Start by learning to override `MVCRenderCommand`. The process will be similar for
 the other MVC commands.
 
-## Overriding MVCRenderCommand
+## Overriding MVCRenderCommand [](id=overriding-mvcrendercommand)
 
 You can override `MVCRenderCommand` for any portlet that uses Liferay's MVC
 framework and publishes an `MVCRenderCommand` component.
@@ -124,7 +124,7 @@ for this property is `0`.
 After that, it's up to you to do whatever you'd like. You can add logic to
 the existing `render` method or redirect to an entirely new JSP.
 
-### Adding Logic to an Existing MVC Render Command
+### Adding Logic to an Existing MVC Render Command [](id=adding-logic-to-an-existing-mvc-render-command)
 
 Don't copy the existing logic from the MVC render command into your override
 command class. This unnecessary duplication of code that makes
@@ -142,14 +142,14 @@ reference to the original command and call its `render` method like this:
 	}
 
     @Reference(target = 
-          "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + ‚Äù))")
+          "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + ‚Ä?))")
       protected MVCRenderCommand mvcRenderCommand;
     }
 
 Sometimes, you might need to redirect the request to an entirely new JSP that
 you'll place in your command override module.
 
-### Redirecting to a New JSP
+### Redirecting to a New JSP [](id=redirecting-to-a-new-jsp)
 
 If you want to render an entirely new JSP, the process is different.
 
@@ -207,7 +207,7 @@ for other modules by including the following line in your `bnd.bnd` file:
 Once we have the servlet context we just need to dispatch to the specific jsp in
 our own module. 
 
-## Overriding MVCActionCommand
+## Overriding MVCActionCommand [](id=overriding-mvcactioncommand)
 
 You can override MVC action commands using a similar process to the one presented
 above for MVC render commands. Again, you'll register a new OSGi component with
@@ -249,7 +249,7 @@ message to the log, before continuing with the original processing:
 
         @Reference(
             target = "(&(mvc.command.name=/blogs/edit_entry)
-                (javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + ‚Äù))")
+                (javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + ‚Ä?))")
 
         protected MVCActionCommand mvcActionCommand;
 
@@ -259,7 +259,7 @@ It's straightforward to override MVC action commands while keeping your code
 decoupled from the original action methods. You can also override MVC resource
 commands. 
 
-## Overriding MVCResourceCommand
+## Overriding MVCResourceCommand [](id=overriding-mvcresourcecommand)
 
 There are fewer uses for overriding MVC resource commands, but it can also be
 done. 
@@ -301,7 +301,7 @@ for the account creation screen.
         }
 
         @Reference(target = "(&(mvc.command.name=/login/captcha)
-            (javax.portlet.name= +LoginPortletKeys.LOGIN + ‚Äù))")
+            (javax.portlet.name= +LoginPortletKeys.LOGIN + ‚Ä?))")
         protected MVCResourceCommand mvcResourceCommand;
 
     }

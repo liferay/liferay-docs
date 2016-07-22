@@ -1,4 +1,4 @@
-# Managing Module Projects with Blade CLI
+# Managing Module Projects with Blade CLI [](id=managing-module-projects-with-blade-cli)
 
 In this tutorial, you'll learn how to deploy modules to a Liferay server using
 Blade CLI. Also, you'll explore several other Blade CLI commands that let
@@ -68,7 +68,7 @@ the previous section, you could run:
 Your output lists a long list of modules that are active/installed in your
 server's OSGi container.
 
-![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../../images/blade-sh.png)
+![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../images/blade-sh.png)
 
 You can run any Gogo command using `blade sh`. See the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)

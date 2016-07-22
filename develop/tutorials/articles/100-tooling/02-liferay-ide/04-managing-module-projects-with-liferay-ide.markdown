@@ -1,4 +1,4 @@
-# Managing Module Projects with Liferay IDE
+# Managing Module Projects with Liferay IDE [](id=managing-module-projects-with-liferay-ide)
 
 Liferay IDE provides the ability to manage Liferay module projects from a GUI.
 Before you begin learning about managing your modules from Liferay IDE, you
@@ -24,27 +24,27 @@ successfully by using
 Right-click the started portal in server view and select
 *Open Gogo Shell*.
 
-![Figure 2: Select *Open Gogo Shell* to open a terminal window in IDE using Gogo shell.](../../../images/open-gogo-shell.png)
+![Figure 1: Select *Open Gogo Shell* to open a terminal window in IDE using Gogo shell.](../../../images/open-gogo-shell.png)
 
 A Gogo shell terminal displays, allowing you to enter Gogo commands to inspect
 your Liferay instance and the modules deployed to it. Enter the `lb` command to
 view a list of deployed modules. If the project status is active, then it
 already deployed successfully.
 
-![Figure 3: You can check to see if your module deployed successfully to Liferay using the Gogo shell.](../../../images/gogo-deploy-successful.png)
+![Figure 2: You can check to see if your module deployed successfully to Liferay using the Gogo shell.](../../../images/gogo-deploy-successful.png)
 
 Since the Liferay Workspace perspective in IDE is Gradle-based, you have some
 additional Gradle features you can take advantage of. The *Gradle Tasks* toolbar
 presents Gradle commands for your workspace that you can execute with a click of
 the mouse.
 
-![Figure 4: The Gradle Task toolbar offers Gradle tasks and their descriptions, which can be executed by double-clicking them.](../../../images/gradle-task-toolbar.png)
+![Figure 3: The Gradle Task toolbar offers Gradle tasks and their descriptions, which can be executed by double-clicking them.](../../../images/gradle-task-toolbar.png)
 
 You can also access various Gradle build operations intended for Liferay module
 projects. Right-click your module project and select *Liferay* &rarr; *Gradle*
 and then the build command you'd like to execute.
 
-![Figure 5: You can execute build operations by right-clicking the Gradle project in the Project Explorer.](../../../images/gradle-build-operations.png)
+![Figure 4: You can execute build operations by right-clicking the Gradle project in the Project Explorer.](../../../images/gradle-build-operations.png)
 
 To learn more about Gradle development in Liferay IDE, see the
 [Using Gradle in Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)

@@ -1,11 +1,11 @@
-# Installing Liferay IDE
+# Installing Liferay IDE [](id=installing-liferay-ide)
 
 Liferay IDE is a plugin for Eclipse that brings many Liferay-specific features
 to the table. You can install it into your existing Eclipse environment, or
 Liferay provides a bundled version. In this tutorial, you'll learn the different
 methods available for installing Liferay IDE.
 
-## Install the Liferay IDE Bundle
+## Install the Liferay IDE Bundle [](id=install-the-liferay-ide-bundle)
 
 1. Download and install [Java](http://java.oracle.com). Liferay runs on Java, so
    you'll need it to run everything else. Because you'll be developing apps for
@@ -21,7 +21,7 @@ methods available for installing Liferay IDE.
 
 Congratulations! You've installed Liferay IDE! 
 
-## Install Liferay IDE into Eclipse
+## Install Liferay IDE into Eclipse [](id=install-liferay-ide-into-eclipse)
 
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Liferay IDE to your existing Eclipse installation. 
@@ -47,7 +47,7 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
    installed. Like other Eclipse plugins you'll have to restart Eclipse to
    enable it. 
 
-## Install Liferay IDE into Eclipse from a ZIP File
+## Install Liferay IDE into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
 
 To install Liferay IDE into Eclipse from a `.zip` file, follow these steps: 
 

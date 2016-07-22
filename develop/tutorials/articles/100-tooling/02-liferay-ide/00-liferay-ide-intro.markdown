@@ -1,4 +1,4 @@
-# Liferay IDE
+# Liferay IDE [](id=liferay-ide)
 
 Liferay IDE is an extension for the Eclipse platform that supports development
 of @product@ plugins. The Liferay IDE environment is fully integrated with

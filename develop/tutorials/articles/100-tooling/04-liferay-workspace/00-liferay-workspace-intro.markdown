@@ -32,7 +32,7 @@ modules.
 
 Next you'll learn how to configure your Liferay workspace.
 
-## Configuring Your Liferay Workspace
+## Configuring Your Liferay Workspace [](id=configuring-your-liferay-workspace)
 
 Before you begin using your workspace, it's a good practice to set your
 workspace Gradle properties in the `gradle.properties` file. There are several

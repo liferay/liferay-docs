@@ -1,4 +1,4 @@
-# Using Gradle in Liferay IDE
+# Using Gradle in Liferay IDE [](id=using-gradle-in-liferay-ide)
 
 [Gradle](http://gradle.org/) is a popular open source build automation system.
 You can take full advantage of Gradle in Liferay IDE by utilizing
@@ -11,7 +11,7 @@ with Liferay IDE. Buildship is bundled with Liferay IDE versions 3.0 and higher.
 The first thing you'll learn about in this tutorial is creating Gradle projects
 in IDE.
 
-## Creating and Importing Gradle Projects
+## Creating and Importing Gradle Projects [](id=creating-and-importing-gradle-projects)
 
 You can create a Gradle project by using the Gradle Project wizard.
 
@@ -46,7 +46,7 @@ You can also import existing Gradle projects in Liferay IDE.
 Next you'll learn about Gradle tasks and executions, and learn how to run and
 display them in Liferay IDE.
 
-## Gradle Tasks and Executions
+## Gradle Tasks and Executions [](id=gradle-tasks-and-executions)
 
 Liferay IDE provides two views to enhance your developing experience using
 Gradle: Gradle Tasks and Gradle Executions. You can open these views by

@@ -1,4 +1,4 @@
-# Creating a Liferay Workspace with Liferay IDE
+# Creating a Liferay Workspace with Liferay IDE [](id=creating-a-liferay-workspace-with-liferay-ide)
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
 IDE, which runs on the Blade CLI behind the scenes. Liferay IDE gives you a
@@ -86,7 +86,7 @@ existing IDE, you can do so by navigating to *File* &rarr; *Import* &rarr;
 *Liferay* &rarr; *Liferay Workspace Project*. Then click *Next* and browse for
 your worspace project. Once you've selected you workspace, click *Finish*.
 
-![Figure 5: You can import an existing Liferay Workspace into your current IDE session.](../../../images/liferay-workspace-import.png)
+![Figure 6: You can import an existing Liferay Workspace into your current IDE session.](../../../images/liferay-workspace-import.png)
 
 Congratulations! You've learned how to create a Liferay Workspace using Liferay
 IDE. Now that your workspace is created, you can begin creating Liferay plugins.
