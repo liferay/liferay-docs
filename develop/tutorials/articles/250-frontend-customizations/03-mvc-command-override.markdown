@@ -44,7 +44,7 @@ command. If there are no additional customizations on the same command, this
 reference will be the original MVC command.
 
     @Reference(
-        target = "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + â€?))")
+        target = "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + "))")
     protected MVCRenderCommand mvcRenderCommand;
 
 If you use this approach, your extension will continue to work with new versions
@@ -142,7 +142,7 @@ reference to the original command and call its `render` method like this:
 	}
 
     @Reference(target = 
-          "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + â€?))")
+          "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + "))")
       protected MVCRenderCommand mvcRenderCommand;
     }
 
@@ -249,7 +249,7 @@ message to the log, before continuing with the original processing:
 
         @Reference(
             target = "(&(mvc.command.name=/blogs/edit_entry)
-                (javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + â€?))")
+                (javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + "))")
 
         protected MVCActionCommand mvcActionCommand;
 
@@ -301,7 +301,7 @@ for the account creation screen.
         }
 
         @Reference(target = "(&(mvc.command.name=/login/captcha)
-            (javax.portlet.name= +LoginPortletKeys.LOGIN + â€?))")
+            (javax.portlet.name= +LoginPortletKeys.LOGIN + "))")
         protected MVCResourceCommand mvcResourceCommand;
 
     }
