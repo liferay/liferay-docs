@@ -1,6 +1,6 @@
 # Applying Lexicon Styles to your App [](id=applying-lexicon-styles-to-your-app)
 
-It’s important to have a consistent user experience across your apps. Liferay's
+It's important to have a consistent user experience across your apps. Liferay's
 built-in apps achieve this by using the
 [Lexicon Experience Language](/participate/liferaypedia/-/wiki/Main/Lexicon).
 Lexicon is optimized to provide you with a consistent, user-friendly UI for your
@@ -56,7 +56,7 @@ blog entry, you'll see this behaviour in action:
 Now that you know how to configure your app's title and back URL, you'll
 learn how to leverage Liferay's taglibs in your app next.
 
-## Leveraging Liferay’s Taglibs to Create a Pleasant UI [](id=leveraging-liferays-taglibs-to-create-a-pleasant-ui)
+## Leveraging Liferay's Taglibs to Create a Pleasant UI [](id=leveraging-liferays-taglibs-to-create-a-pleasant-ui)
 
 Liferay's `liferay-frontend` taglibs streamline the process of writing Lexicon
 markup, letting you focus your efforts on creating a pleasant user experience.
@@ -112,7 +112,7 @@ Applying Lexicon to your existing navigation bar takes only one additional
 attribute.
 
 If your app already has a navigation bar implemented with the `aui:nav-bar`
-tag, you can reuse it by adding the attribute `markupView=”lexicon”`.
+tag, you can reuse it by adding the attribute `markupView="lexicon"`.
 
 For example, the
 [Liferay's Trash app](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/trash/trash-web/src/main/resources/META-INF/resources/navigation.jsp)
@@ -126,7 +126,7 @@ uses `markupView="lexicon"` with its `nav-bar`:
 is used for the UI components, rather than the standard markup. This attribute
 tells the app to use the `lexicon` folder for the taglib to render the HTML,
 rather than the default pages. For example, using
-`<aui:fieldset markupView=“lexicon” />` tells your app to render the HTML with
+`<aui:fieldset markupView="lexicon" />` tells your app to render the HTML with
 `/portal/portal-web/docroot/html/taglib/aui/fieldset/lexicon/`, instead of the
 `end.jsp` and `start.jsp` files found in
 `/portal/portal-web/docroot/html/taglib/aui/fieldset/`.
@@ -384,9 +384,9 @@ attribute. Using the existing `liferay-ui:search-iterator` tag, you can add the
 
     <liferay-ui:search-iterator
 
-           displayStyle="<%= displayStyle %>"
-           markupView="lexicon"
-           searchContainer="<%= searchContainer %>"
+        displayStyle="<%= displayStyle %>"
+        markupView="lexicon"
+        searchContainer="<%= searchContainer %>"
     />
 
 If the results contain different set of entries (folders and documents,
@@ -396,11 +396,11 @@ provided to the liferay-ui:search-iterator taglib as shown below:
 
     <liferay-ui:search-iterator
 
-           displayStyle="<%= displayStyle %>"
-           markupView="lexicon"
+        displayStyle="<%= displayStyle %>"
+        markupView="lexicon"
 
-           markupView="<%= new DLResultRowSplitter() %>"
-           searchContainer="<%= searchContainer %>"
+        markupView="<%= new DLResultRowSplitter() %>"
+        searchContainer="<%= searchContainer %>"
     />
 
 You will need to create a java class that implements the ResultRowSplitter
