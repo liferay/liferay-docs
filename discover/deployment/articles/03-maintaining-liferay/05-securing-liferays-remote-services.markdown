@@ -1,4 +1,4 @@
-# Securing Liferay's Remote Services
+# Securing Liferay's Remote Services [](id=securing-liferays-remote-services)
 
 @product@ includes a script console which administrators can use to invoke
 Liferay's API. See the (not yet written) [Using Liferay's Script Console]()
