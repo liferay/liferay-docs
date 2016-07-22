@@ -40,7 +40,13 @@ commented out properties in this file. These are the default properties set in
 your workspace. If you'd like to change a variable, uncomment the variable and
 set it to a custom value. For instance, if you want to store your modules in a
 folder other than `[ROOT]/modules`, uncomment the
-`liferay.workspace.modules.dir` variable and set it to a different value.
+`liferay.workspace.modules.dir` variable and set it to a different value. You
+can create Liferay modules with any build tool you like. For instance, Liferay
+IDE provides an easy interface to configure a Liferay Workspace and create
+modules using the workspace. For more information on this, see the 
+[Creating a Liferay Workspace with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
+and
+[Creating Modules with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide).
 
 +$$$
 
