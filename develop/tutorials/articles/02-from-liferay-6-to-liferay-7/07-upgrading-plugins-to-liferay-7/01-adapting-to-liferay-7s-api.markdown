@@ -155,11 +155,11 @@ You'll use this information to manage your plugin's dependencies on these module
 one micro-version higher than what's actually in that @product@ release. For
 example, even though the source code for the Liferay Journal API module
 specifies version 2.0.2, version 2.0.1 is what's bundled with the @product@
-release and is therefore the version you should specify. **Make sure to specify
-one module micro-version lower** than what's listed in the @product@ source code
-and in the reference table, that's based on the source code. 
-
-<!-- Why? You should tell people. -Rich -->
+release and is therefore the version you should specify. The module versions are
+incremented for the module's next release version to make sure a new version is
+associated with all module changes. **Make sure to specify one module
+micro-version lower** than what's listed in the @product@ source code and in the
+reference table, that's based on the source code. 
 
 Your plugin might reference classes that are in Liferay utility modules, such as
 `util-java`, `util-bridges`, `util-taglib`, or `util-slf4j`. Their module
@@ -301,7 +301,7 @@ API module's JAR file, for example, is `com.liferay.journal.api-2.0.1.jar`.
 As you manage module JARs, make sure to not *deploy* any OSGi framework JARs or
 Liferay module JARs (e.g., *com.liferay.journal.api.jar*). If you deploy them
 along with your plugin, they'll conflict with the JARs already installed in the
-OSGi framework Identical JARs existing in two different classloaders can cause
+OSGi framework. Identical JARs existing in two different classloaders can cause
 class cast exceptions.
 
 The easiest way to exclude such JARs from your plugin's deployment is to list
@@ -394,9 +394,9 @@ displays the issue's title when you hover over the icon.
 
     ![Figure 5: On applying auto-correction, an information icon appears next to the affected line of code](../../../images/from-liferay-6-upgrade-tool-at-line.png)
 
-3. Mark the problem resolved.
+3.  Mark the problem resolved.
 
-4. If more unresolved problems exist, go back to step 1.
+4.  If more unresolved problems exist, go back to step 1.
 
 For more details on an issue, inspect its JIRA ticket by visiting
 <https://issues.liferay.com>, entering the ticket number in the search box, and
