@@ -1,32 +1,32 @@
 # Kaleo Designer [](id=kaleo-designer)
 
-With the proper permissions, your @product@ users can publish assets as they
-please, by default. Even if your enterprise has the greatest employees in the
-world, they'll still need reviews, for a variety of reasons. The Kaleo Designer
-in @product@ lets you design workflow definitions so your assets go through a
+With the proper permissions, users can publish assets. Even if your enterprise
+has the greatest employees in the world, many of the items they'll wish to
+publish must still be reviewed, for a variety of reasons. The Kaleo Designer in
+@product@ lets you design workflow definitions so your assets go through a
 review process before publication.
 
-The Kaleo Designer lets you develop workflow definitions using a convenient drag
+Kaleo Designer lets you develop workflow definitions using a convenient drag
 and drop user interface, so you don't need to be familiar with any scripting
 languages or with writing XML by hand. However, some of the features can be
 enhanced if you're familiar with one of the supported scripting languages. All
-that to say, don't be scared off when you come to a block of code in this
-article. Just decide if you need the feature, and find someone familiar with one
+that is to say, don't be scared off when you come to a block of code in this
+article. Just decide if you need the feature and find someone familiar with one
 of the supported scripting languages to help you out.
 
-So what scripting languages are supported for use in your workflow definitions?
-Beanshell, DRL, Groovy, JavaScript, Python, and Ruby. 
+Workflow definitions support scripting in Beanshell, DRL, Groovy, JavaScript,
+Python, or Ruby. 
 
 +$$$
 
 **Note:** By default, there's only one workflow definition that's installed in
-@product@; the Single Approver Workflow definition. What you might not know is
-that you have access to several others, as well, you just have to do a little
-digging. If you have a local @product@ installation, look in the
-`[Liferay_Home]/osgi/marketplace/Liferay Forms and Workflow.lpkg`, and find the
-`com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`. Open it up and
-then look in `META-INF/definitions`. You'll see the following workflow
-definitions:
+@product@: the Single Approver Workflow definition. What you might not know is
+that you have access to several others too. If you have a local @product@
+installation, look in `[Liferay_Home]/osgi/marketplace/Liferay Forms and
+Workflow.lpkg` 
+and find the `com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`.
+Open it up and then look in `META-INF/definitions`. You'll see the following
+workflow definitions:
 
     category-specific-definition.xml
     legal-marketing-definition.xml
@@ -47,7 +47,7 @@ It's time to start exploring the Kaleo Designer and its features.
 
 ## Adding New Workflow Definitions with Kaleo Designer [](id=adding-new-workflow-definitions-with-kaleo-designer)
 
-Access the Kaleo Designer by going to the Control Panel, then clicking
+Access Kaleo Designer by going to the Control Panel, then clicking
 Configuration &rarr; Kaleo Designer. Click the Add icon
 (![Add](../../../images-dxp/icon-add.png)).
 
@@ -58,30 +58,30 @@ workflow.
 
 ## Saving and Publishing Workflow Definitions [](id=saving-and-publishing-workflow-definitions)
 
-You're eager to design a workflow definition, but first look below the canvas to
-see the buttons that let you *Save as Draft*, *Publish*, or *Cancel*. Saving the
-definition as a draft lets you save your work, so it's not lost (due to a
-timeout, for example). It won't be published (and usable in @product@), and it
-won't be considered a version, until the Publish button is clicked. Each time
-you save the workflow as a draft, the *Draft Version* field is incremented, and
-each time you publish the workflow, a new *Version* is added.
+First, look below the canvas to see the buttons that let you *Save as Draft*,
+*Publish*, or *Cancel*. Saving the definition as a draft lets you save your
+work so it's not lost (due to a timeout, for example). It won't be published
+(and usable in @product@), and it won't be considered a version until the
+Publish button is clicked. Each time you save the workflow as a draft, the
+Draft Version field is incremented, and each time you publish the workflow, a
+new Version is added.
 
 ![Figure 2: View a list of the current workflows that can be edited in the Kaleo Designer.](../../../images-dxp/kaleo-designer-definitions.png)
 
 ## Adding Nodes [](id=adding-nodes)
 
-Since it's unlikely that you'll  be satisfied with a start node, an end node,
-and a transition between them, you need to add nodes to the workflow. You can
-add whatever nodes you'd like, but here's how you do it:
+A new workflow is already populated with a start node, an end node,
+and a transition between them. To make the workflow the way you want it, you
+need to add nodes to the workflow. 
 
-1. *Drag* a node from the *Nodes* palette on the right of the designer, and
-*drop* it on the canvas.
+1. *Drag* a node from the *Nodes* palette on the right of the designer and
+   *drop* it on the canvas.
 
-2. You'll see it's not connected to other nodes by a transition, so it will
-never be used in the workflow. Delete the existing transition and then you can
-make new transitions to direct the *flow* of your workflow (see more about
-transitions below if you're not sure what they're for or how to use them in
-Kaleo Designer).
+2. You'll see it's not connected to other nodes by a transition, so right now it
+   can't be used in the workflow. Delete the existing transition and then you
+   can make new transitions to direct the *flow* of your workflow (see more
+   about transitions below if you're not sure what they're for or how to use
+   them in Kaleo Designer).
 
 Alternatively, start by deleting the default transition, then click the edge of
 the start node, drag a new transition from the start node to a blank spot on the
@@ -91,8 +91,8 @@ ending point on a node.
 
 ![Figure 3: You can add a node by creating a transition that ends at a blank spot on your Designer canvas.](../../../images-dxp/kaleo-designer-add-node.png)
 
-That's it. Of course, if you drag, say, a *Task* node onto the canvas, you're
-going to want to configure it.
+That's it. Of course, if you drag, say, a *Task* node onto the canvas, you'll
+want to configure it.
 
 ## Node Settings [](id=node-settings)
 
@@ -101,9 +101,9 @@ three things added to your canvas: a start node, a transition, and an end node.
 Think of the *EndNode* as the point in the workflow where an asset reaches the
 *Approved* status. The *StartNode* is the point at which the asset goes from the
 *Draft* status to *Pending*. You might decide to name your nodes to reflect
-what's going on in each one. To name a node, just double click it and its
-*Settings* will be displayed. Then double click the value of the *Name* property
-and you'll be able to edit the name. Click *Save* when you're done. 
+what's going on in each one. To name a node, just double click it, and its
+*Settings* are displayed. Then double click the value of the *Name* property
+and you can edit the name. Click *Save* when you're done. 
 
 ![Figure 4: You can edit a node's settings.](../../../images-dxp/kaleo-designer-node-settings.png)
 
@@ -146,6 +146,8 @@ usually the goal of a workflow process.
 You can do something simple like the actions above, or you can be as creative as
 you'd like.
 
+<!-- Let's add an example of something creative. -Rich -->
+
 ### Assignments [](id=assignments)
 
 Workflow tasks need to be completed by a @product@ user. You can choose how you
@@ -158,22 +160,16 @@ Type (organization, site, or regular role types), to the Asset Creator, to
 Resource Actions, or to specific Users. Additionally, you can write a script to
 define the assignment.
 
-You can configure multiple assignments for a task.
+Assigning tasks to Roles, Organizations, or Asset Creators is a straightforward
+concept, but what does it mean to assign a workflow task to a Resource Action?
+Imagine an *UPDATE* resource action. If your workflow definition specifies the
+UPDATE action in an assignment, then anyone who has permission to update the
+type of asset being processed in the workflow is assigned to the task.  You can
+configure multiple assignments for a task.
 
-+$$$
-
-**Note:** What does it mean to assign a workflow task by Resource Action? Think
-of an *UPDATE* resource action. If your workflow definition specifies the UPDATE
-action in an assignment, then anyone who has permission to update the type of
-asset being processed in the workflow is assigned to the task.
-
-$$$
-
-+$$$
-
-**Note:** One of the options you have is to use a script to manage the assignment. Here's
-the script for the Review task assignment in the Scripted Single Approver
-workflow definition:
+You also have the option to use a script to manage the assignment. Here's the
+script for the Review task assignment in the Scripted Single Approver workflow
+definition:
 
     import com.liferay.portal.kernel.model.Group;
     import com.liferay.portal.kernel.model.Role;
@@ -209,31 +205,29 @@ workflow definition:
 						
 Don't let all that code intimidate you. It's just assigning the task to the
 *Administrator* role, then checking whether the *group* of the asset is an
-Organization, and assigning it to the *Organization Content Reviewer* role if it
+Organization and assigning it to the *Organization Content Reviewer* role if it
 is. If it's not, it's assigning the task to the *Site Content Reviewer* role.
 
 Note the `role = newArrayList<Role>();` line above. In a scripted assignment,
-the `roles` variable is where you specify any roles the task will be assigned
-to. For example, when `roles.add(adminRole);` is called, the Administrator role
-is added to the assignment.
+the `roles` variable is where you specify any roles the task is assigned to. For
+example, when `roles.add(adminRole);` is called, the Administrator role is added
+to the assignment.
 
-$$$
-
-It's good to assign a task to a user, and it's even more useful if they can get
-a notification that something is required of them in the workflow.
+It's good to assign a task to a user, and it's even more useful if the user can
+get a notification that something is required in the workflow.
 
 ### Notifications [](id=notifications)
 
 Notifications are often sent to tell task assignees that something is required
-of them in the workflow, or to update asset creators on the status of the
+of them in the workflow or to update asset creators on the status of the
 process. They can be sent for tasks or any other type of node in the workflow.
-To set up notifications, double click on Notifications in a node's Settings tab
+To set up notifications, double click on *Notifications* in a node's Settings tab
 and create a notification.
 
 ![Figure 7: You can send notification from a Task node.](../../../images-dxp/kaleo-designer-notification.png)
 
-You'll need to specify the Notification Type, and you can choose from a list of
-User Notification, Email, Instant Messenger, or Private Message. You can use
+You'll need to specify the Notification Type, and you can choose User
+Notification, Email, Instant Messenger, or Private Message. You can use
 Freemarker or Velocity if you need a template, or you can choose to write a
 plain text message.
 
@@ -249,7 +243,7 @@ on a node.
 
 Commonly, the assignment and notification settings are teamed up so a user
 receives a notification when assigned a task in the workflow. To do this you
-just choose *Task Assignees* under *Recipient Type* when configuring the
+just choose *Task Assignees* under Recipient Type when configuring the
 notification.
 
 ## Transitions [](id=transitions)
@@ -294,19 +288,22 @@ You can write a script defining an action that's triggered for your task in
 Beanshell, DRL, Groovy, JavaScript, Python, or Ruby.
 
 As described above, you can configure notifications and assignments on task
-nodes.
+nodes. 
+
+<!-- Task nodes are the most complex parts, and yet there's not much in this
+section. Please describe an example here so users can understand what a task
+node is for and how they are used. Include a script. -Rich --> 
 
 ## Start and End Nodes [](id=start-and-end-nodes)
 
-Start and end nodes are used to kick off the workflow processing, and to bring
-the asset in the workflow to its final, approved state. Often times, you can
-use the default start node and end node that are added to a new workflow
-definition by the Kaleo Designer without modification. If you want to do some
-more processing (in the case of a start node) add an action to the node using
-the Settings tab, as described in the section on Actions above.
+Start and end nodes kick off the workflow processing and bring the asset to its
+final, approved state. Often you can use the default start and end nodes without
+modification. If you want to do some more processing (in the case of a start
+node), add an action to the node using the Settings tab, as described in the
+section on Actions above.
 
-End nodes have an action by default, that simply sets the workflow status to
-Approved using the Groovy scripting language:
+End nodes have a default action that sets the workflow status to Approved using
+the Groovy scripting language:
 
     import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
     import com.liferay.portal.kernel.workflow.WorkflowConstants;
@@ -318,49 +315,48 @@ processing.
 
 By default, there's a transition connecting the start node and end node, but
 you'll probably want to delete it, since most workflows won't proceed straight
-form the initial state to approved.
+from the initial state to approved.
 
 ## State Nodes [](id=state-nodes)
 
 State nodes can have Notifications and Actions. The default end node added by
-Kaleo Designer is simply a pre-configured state node that sets the workflow
-status to Approved. Perhaps you want to create a node that sets the status to
-*Expired*. You could create a state node for it by dragging one onto your Kaleo
-Designer canvas, then configuring an action in it that sets the status to
-Expired. Here's what it would look like in Groovy:
+Kaleo Designer is a pre-configured state node that sets the workflow status to
+Approved. Perhaps you want to create a node that sets the status to *Expired*.
+You could create a state node for it by dragging one onto your Kaleo Designer
+canvas, then configuring an action in it that sets the status to Expired. Here's
+what it would look like in Groovy:
 
     import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
     import com.liferay.portal.kernel.workflow.WorkflowConstants;
 
     WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("expired"), workflowContext);
 
-Next learn to do parallel processing using fork and join nodes.
+Next, you'll learn to do parallel processing using fork and join nodes.
 
 ## Forks and Joins [](id=forks-and-joins)
 
 Sometimes you don't need to wait for one task to be completed before moving on
-to another one. Instead, you want to do some parallel processing in the workflow
-process. For this purpose, you'll transition to a fork node, make two
-transitions from the fork to your parallel tasks, and then come back together
-using a join  node.
+to another one. Instead, you want to do two or more things at the same time. To
+do this, transition to a fork node, make two transitions from the fork to
+your parallel tasks, and then come back together using a join node.
 
 ![Figure 10: Forks and Joins are used to enable parallel processing in the
 workflow.](../../../images-dxp/kaleo-designer-fork-join.png)
 
-With a regular Join node, in order for the workflow to proceed beyond the join,
-the transition from both parallel executions must be invoked. However, if you
-use a Join XOR node instead, the workflow will proceed as long as the transition
-from one of the parallel executions is invoked.
+With a regular Join node, for the workflow to proceed beyond the join, the
+transition from both parallel executions must be invoked. However, if you use a
+Join XOR node instead, the workflow proceeds as long as the transition from one
+of the parallel executions is invoked.
 
-Keep in mind that you must balance your fork nd join nodes. In other words, for
-every fork, there must be a join that bring the parallel workflow threads back
+Keep in mind that you must balance your fork and join nodes. In other words, for
+every fork, there must be a join that brings the parallel workflow threads back
 together.
 
 ## Conditions [](id=conditions)
 
 Sometimes you need to inspect an asset or its execution context, and depending
-on the result, send it to the appropriate transition. You basically need a node
-for a script that concludes by setting a value to one of your transitions.
+on the result, send it to the appropriate transition. You need a node for a
+script that concludes by setting a value to one of your transitions.
 
 From the *Category Specific Approval*, this is the script in the condition node
 that starts the workflow (coming directly from the start node):
@@ -403,14 +399,13 @@ that starts the workflow (coming directly from the start node):
         }
     }
 
-This condition example checks the asset category to choose the processing path,
-whether to transition to the *Legal Review* task or the *Content Review* task.
+This example checks the asset category to choose the processing path, whether to
+transition to the *Legal Review* task or the *Content Review* task.
 
-If you're familiar with code, you'll be wondering what that `returnValue`
-variable is. It's simply the variable that points from the condition to a
-transition, and its value must match a valid transition in the workflow
-definition. This script looks up the asset in question, retrieves its [asset
-category](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content),
+You may be wondering what that `returnValue` variable is. It's the variable that
+points from the condition to a transition, and its value must match a valid
+transition in the workflow definition. This script looks up the asset in
+question, retrieves its [asset category](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content),
 and sets an initial `returnValue`. Then it checks to see if the asset has been
 marked with the *legal* category. If not it goes through *Content Review* (the
 content-review task in the workflow), and if it does it goes through *Legal
