@@ -1,4 +1,4 @@
-# Preparing for Install
+# Preparing for Install [](id=preparing-for-install)
 
 Installing @product@ is easy. But before you begin, you should answer a few
 questions.
