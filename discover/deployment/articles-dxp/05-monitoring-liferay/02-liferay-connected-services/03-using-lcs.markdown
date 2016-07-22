@@ -590,6 +590,8 @@ contains the following sections:
   that appears. Click *Save* when you finish enabling the LCS services you want 
   to use. 
 
+![Figure 21: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../../images-dxp/lcs-environment-token.png)
+
 Once you've addressed each of these sections, you're ready to work with the 
 token file. You can take the following actions with the buttons that appear 
 under the Services section: 
