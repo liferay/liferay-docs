@@ -1,4 +1,4 @@
-# Maintaining Liferay [](id=maintaining-liferay)
+# Maintaining Liferay [](id=maintaining-liferay-0)
 
 In this section, you'll about how to maintain a @product@ installation. You'll
 learn how to back up a Liferay installation, how to patch a Liferay
