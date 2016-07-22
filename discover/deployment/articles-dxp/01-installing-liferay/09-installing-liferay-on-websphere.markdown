@@ -1,4 +1,4 @@
-# Installing Liferay DXP on WebSphere 8.5.5
+# Installing Liferay DXP on WebSphere 8.5.5 [](id=installing-liferay-dxp-on-websphere-8-5-5)
 
 +$$$
 
@@ -43,7 +43,7 @@ You'll need the following files:
 
 Without any further ado, get ready to install Liferay DXP in WebSphere! 
 
-## Preparing WebSphere for Liferay DXP
+## Preparing WebSphere for Liferay DXP [](id=preparing-websphere-for-liferay-dxp)
 
 When the application server binaries have been installed, start the *Profile
 Management Tool* to create a profile appropriate for Liferay. 
@@ -137,7 +137,7 @@ the following instructions:
 
 Great! Now you're ready to install Liferay DXP. 
 
-## Installing Liferay DXP's Dependencies
+## Installing Liferay DXP's Dependencies [](id=installing-liferay-dxps-dependencies)
 
 You must now install Liferay DXP's dependencies. Recall that earlier you 
 downloaded two ZIP files containing these dependencies. Install their contents 
@@ -156,7 +156,7 @@ now:
 Once you've installed these dependencies, start the server profile you created 
 for Liferay DXP. Once it starts, you're ready to configure your database. 
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 If you want WebSphere to manage the database connections, follow the 
 instructions below. Note this is not necessary if you're planning on using 
@@ -229,7 +229,7 @@ $$$
 
 Once you've set up your database, you can set up your mail session. 
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 If you want WebSphere to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section. 
@@ -258,7 +258,7 @@ Note that you may also need to retrieve a SSL certificate from your mail server
 and add it to WebSphere's trust store. See WebSphere's documentation for 
 instructions on this. 
 
-## Deploy Liferay DXP
+## Deploy Liferay DXP [](id=deploy-liferay-dxp)
 
 Now you're ready to deploy Liferay DXP! Use these instructions to do so:
 
@@ -287,7 +287,7 @@ Now you're ready to deploy Liferay DXP! Use these instructions to do so:
 
 You've now installed Liferay DXP!
 
-## Enable Security for Portal Access Control Lists
+## Enable Security for Portal Access Control Lists [](id=enable-security-for-portal-access-control-lists)
 
 When you are ready to start using apps from Liferay Marketplace, you'll want to 
 protect your portal and your WebSphere server from security threats. To do so, 
@@ -317,7 +317,7 @@ permissions later.
 
 Great! Now you're ready to start Liferay. 
 
-## Start Liferay DXP
+## Start Liferay DXP [](id=start-liferay-dxp)
 
 1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish
    to use WebSphere's data source and mail session, create a file called
