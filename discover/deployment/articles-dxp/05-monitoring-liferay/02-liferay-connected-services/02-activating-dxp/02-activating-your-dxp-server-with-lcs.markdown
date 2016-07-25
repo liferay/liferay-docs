@@ -25,7 +25,9 @@ to do this:
    a subscription type. You should **use caution** when setting an environment's 
    subscription type. All the servers in an environment **must be shut down** to 
    assign that environment's subscription type. Also, **once set, you can't 
-   change an environment's subscription type**.
+   change an environment's subscription type**. 
+   [Click here](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions) 
+   for more information on using subscriptions in LCS. 
 
     ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../../../images-dxp/lcs-environment-subscriptions.png)
 
@@ -44,15 +46,20 @@ to do this:
    file. Note that if the environment already has a token file, the Generate 
    Token button is replaced by the Download Token button: 
 
-    - No existing token file: Generate the token by clicking *Generate Token*. 
-    - Existing token file, and changed selections of LCS services: Regenerate 
-      the token by clicking *Regenerate Token*. Note that if you regenerate the 
-      token, all DXP servers that currently use it will be disconnected from LCS 
-      and won't be able to reconnect until receiving the new token. 
-    - Existing token file, and no changes to selections of LCS services: No 
+    - **No existing token file:** Generate the token by clicking *Generate 
+      Token*. 
+    - **Existing token file, and changed selections of LCS services:** 
+      Regenerate the token by clicking *Regenerate Token*. Note that if you 
+      regenerate the token, all DXP servers that currently use it will be 
+      disconnected from LCS and won't be able to reconnect until receiving the 
+      new token. 
+    - **Existing token file, and no changes to selections of LCS services:** No 
       token generation or regeneration is required.
 
-    Once you've taken the appropriate action, download the token file by clicking the *Download Token* button at the bottom of the screen. 
+    Once you've taken the appropriate action, download the token file by 
+    clicking the *Download Token* button at the bottom of the screen. 
+    [Click here](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
+    for more information on environment tokens.
 
 6. Shut down your DXP instance if it's running. Place the token file in your 
    instance's `[Liferay_Home]/data` folder, and then start the instance. On 
@@ -68,25 +75,16 @@ enabled for your DXP instance by clicking the *Configure Services* link.
 
 Here's a full description of what a connected LCS client app displays: 
 
-- **Heartbeat Interval:** The interval of the communication that maintains the 
-  connection with LCS. This regular communication keeps the client's LCS 
-  connection alive, even when there's nothing else to report. The value is 
-  listed in hours, minutes, and then seconds. For example, if this value is 
-  `00:01:00`, the client communicates with LCS once every minute. 
-- **Message Task Interval:** The interval at which the client checks LCS for new 
-  messages. For example, LCS messages are used to instruct the client to 
-  download new fix packs. 
-- **Metrics Task Interval:** The interval at which server statistics and metrics 
-  are sent to LCS. 
-- **Last Message Received:** The time the latest message was received from LCS.
 - **Connection Uptime:** The duration of the client's connection with LCS.
+- **Last Message Received:** The time the latest message was received from LCS.
+- **Services:** The LCS services enabled for this DXP instance. Note that all 
+  DXP instances that connect to the same LCS environment must use the same set 
+  of LCS services. LCS services can't be enabled on an instance-by-instance 
+  basis. 
 - **Project Home:** This link takes you to this server's LCS project. 
   The project home in LCS is also called the *dashboard*. 
 - **Environment:** This link takes you to this server's LCS environment.
 - **Server Dashboard:** This link takes you to the server on LCS.
-- **Configure Services:** This link lets you change which LCS services are 
-  enabled for your DXP instance. Doing so triggers reconnection with the new 
-  settings. 
 - **Disconnect:** Disconnects this DXP instance from LCS. 
 
 ![Figure 5: The server is connected to LCS.](../../../../images-dxp/lcs-server-connected.png)
