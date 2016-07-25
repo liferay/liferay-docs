@@ -45,10 +45,14 @@ to do this:
    Token button is replaced by the Download Token button: 
 
     - No existing token file: Generate the token by clicking *Generate Token*. 
-    - Existing token file, and changed selections of LCS services: Regenerate the token by clicking *Regenerate Token*. 
-    - Existing token file, and no changes to selections of LCS services: No token generation or regeneration is required.
+    - Existing token file, and changed selections of LCS services: Regenerate 
+      the token by clicking *Regenerate Token*. Note that if you regenerate the 
+      token, all DXP servers that currently use it will be disconnected from LCS 
+      and won't be able to reconnect until receiving the new token. 
+    - Existing token file, and no changes to selections of LCS services: No 
+      token generation or regeneration is required.
 
-     Once you've taken the appropriate action, download the token file by clicking the *Download Token* button at the bottom of the screen. 
+    Once you've taken the appropriate action, download the token file by clicking the *Download Token* button at the bottom of the screen. 
 
 6. Shut down your DXP instance if it's running. Place the token file in your 
    instance's `[Liferay_Home]/data` folder, and then start the instance. On 
