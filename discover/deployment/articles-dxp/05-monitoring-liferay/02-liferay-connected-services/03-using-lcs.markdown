@@ -78,10 +78,9 @@ your choosing. For more information on this, see
 [the section on using environment tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
 
 Now that you know what information is stored on the LCS servers, you're ready to 
-learn how to manage your LCS projects. This includes renaming and creating 
-projects, as well as requesting membership to projects you don't administer. 
-You'll also learn how to manage the users in your LCS project and assign them to 
-the correct LCS roles. 
+learn how to manage your LCS projects. This includes renaming projects and 
+requesting membership to projects you don't administer. You'll also learn how to 
+manage the users in your LCS project and assign them to the correct LCS roles. 
 
 ## Managing Your LCS Projects [](id=managing-your-lcs-projects)
 
@@ -589,26 +588,28 @@ contains the following sections:
   you select *Show Blacklisted Properties*, you can enter them into the text box 
   that appears. 
 
-To apply any changes you make in the Registration tab, you must generate or 
-regenerate the token and then use the new token to connect or reconnect your DXP 
-servers to this environment. 
-
 ![Figure 21: An environment's Registration tab lets you select the LCS services to use with your DXP servers that connect to that environment.](../../../images-dxp/lcs-environment-token.png)
 
-Once you've addressed each of the Registration tab's sections, you're ready to 
-work with the token file. You can take the following actions with the buttons 
-that appear under the Services section: 
+1. If the environment has no token file, generate one by clicking the *Generate 
+   Token* button. Note that this button only appears when the environment has no 
+   token. Upon generating a token, the Download Token button replaces the 
+   Generate Token button, and the Regenerate Token button appears. 
 
-1. To generate an environment's token, click the *Generate* button. This button 
-   only appears when the environment has no token. Upon generating a token, the 
-   *Regenerate Token* button appears instead. 
+2. If the environment has a token, and you made changes to your selections of 
+   LCS services, then you must regenerate the token. Click the *Regenerate 
+   Token* button to do so. Note that if you regenerate a token, all DXP 
+   instances in the environment are disconnected from LCS and won't be able to 
+   reconnect until receiving the new token. 
 
-2. To download an environment's token, click the *Download Token* button. 
+3. If the environment has a token, and you made no changes to your selections of 
+   LCS services, then you can simply download and use the existing token.
+   
+    Token?     | &nbsp;Service Changes | &nbsp;No Service Changes |
+:------------: | :-------------------: | :----------------------: |
+Yes            | Regenerate Token      | No action required       |
+No             | Generate Token        | Generate Token           |
 
-3. To regenerate an environment's token, click the *Regenerate Token* button. 
-   If you regenerate a token, all DXP instances in the environment are 
-   disconnected from LCS and won't be able to reconnect until receiving the new 
-   token. 
+To download an environment's token, click the *Download Token* button. 
 
 Once you download environment token, use the following steps to connect a 
 Liferay DXP instance with LCS: 
