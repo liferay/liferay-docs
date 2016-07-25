@@ -18,7 +18,7 @@ to do this:
 
     ![Figure 2: You must activate your DXP server in an LCS environment. The red box in this screenshot highlights an environment.](../../../../images-dxp/lcs-registration-select-environment.png)
 
-3. Select the *Subscriptions* tab, and check the *Environment Subscriptions* 
+3. Select the *Subscriptions* tab, and check the *Assign Subscription Type* 
    table to ensure that the environment you want to activate your server in has 
    a subscription type. If the environment doesn't have a subscription type, you 
    can assign it one by selecting the *No Subscriptions* link and then choosing 
@@ -29,20 +29,33 @@ to do this:
 
     ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../../../images-dxp/lcs-environment-subscriptions.png)
 
-4. Select the *Connection* tab and then select *Automatic Registration*. In the 
-   table, download the token for the environment you want to activate your 
-   server in. Do this by selecting *Actions* &rarr; *Download* next to the 
-   token. If the environment doesn't have a token, you can generate one by 
-   clicking *Generate* in the table. 
+4. Select the environment you want to activate the server under, and then select 
+   the *Registration* tab. This tab is where you can download and manage the 
+   environment's token. In the Registration tab's *Services* section, first 
+   select the LCS services that you want to use with all DXP servers that 
+   connect to this environment. All services are selected by default. Your 
+   selections of LCS services here are embedded in the token file. 
 
-    ![Figure 4: Click *Generate* to generate an environment token. Upon doing so, the *Generate* link is replaced by an *Actions* button that you can use to download the token. The token is required to activate your DXP server in LCS.](../../../../images-dxp/lcs-licensing-token-generate.png)
+    ![Figure 4: An environment's Registration tab lets you manage the token file used to connect DXP instances to the environment.](../../../../images-dxp/lcs-registration.png) 
 
-5. Shut down your DXP instance if it's running. Place the token file in your 
+5. Now you must use the Registration tab to generate, regenerate, and/or 
+   download the token file. Which of these actions you take here depend on what 
+   you did in the previous step, and whether the environment already has a token 
+   file. Note that if the environment already has a token file, the Generate 
+   Token button is replaced by the Download Token button: 
+
+    - No existing token file: Generate the token by clicking *Generate Token*. 
+    - Existing token file, and changed selections of LCS services: Regenerate the token by clicking *Regenerate Token*. 
+    - Existing token file, and no changes to selections of LCS services: No token generation or regeneration is required.
+
+     Once you've taken the appropriate action, download the token file by clicking the *Download Token* button at the bottom of the screen. 
+
+6. Shut down your DXP instance if it's running. Place the token file in your 
    instance's `[Liferay_Home]/data` folder, and then start the instance. On 
    startup, the LCS client app uses the environment token to activate your DXP 
    instance in the LCS environment that corresponds to the token. 
 
-6. Celebrate! Your DXP server is activated and connected to LCS. 
+7. Celebrate! Your DXP server is activated and connected to LCS. 
 
 In your DXP instance, you can view your LCS connection status in the LCS client 
 app. Access the client by clicking *Control Panel* &rarr; *Configuration* &rarr; 
