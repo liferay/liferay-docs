@@ -46,7 +46,7 @@ version on top of the old version. Note that if you're doing this on LUM (Linux,
 Unix, Mac) machines, you'll need to make the `patching-tool.sh` script
 executable.
 
-## Auto Discovery
+## Auto Discovery [](id=auto-discovery)
 
 After the Patching Tool is installed, you need to let it auto-discover your
 Liferay installation. Then it will determine what your release level is and what

@@ -13,7 +13,7 @@ article for information on upgrading to Liferay 6.2 first.
 Before you do anything, however, it's important to prepare your system to be
 upgraded. 
 
-## Preparing an Upgrade to Liferay 7 
+## Preparing an Upgrade to Liferay 7 [](id=preparing-an-upgrade-to-liferay-7)
 
 Before upgrading, you should have a synchronized backup of your database and
 file system for your document library. Next, you'll need to consider your
@@ -46,7 +46,7 @@ These steps are described in detail below.
 Although you can perform the upgrade in one step (if you're coming from Liferay
 6.0.12 or higher), you should take into account previous upgrade configurations.
 
-### Previous upgrade configurations
+### Previous upgrade configurations [](id=previous-upgrade-configurations)
 
 If you're coming from Liferay 6.2, skip this section. In any other case, please
 follow these instructions to configure your `portal-ext.properties` properly:
@@ -58,7 +58,7 @@ information to learn about the new defaults introduced in Liferay 6.2.
 - If you're on Liferay 6.0.12, you'll also need to 
 [migrate the image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images). 
 
-### Legacy Properties
+### Legacy Properties [](id=legacy-properties)
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
@@ -80,7 +80,7 @@ Here's a list of the 6.2 properties that have changed in 7.0:
 You can find a complete reference for what these properties mean by viewing the
 [properties documentation](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html).
 
-### Configuring Your Documents and Media File Store
+### Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
 
 Your next task is to review your Documents and Media configuration. Look at
 [`Document Library documentation`](/discover/portal/-/knowledge_base/7-0/repository-types#document-library-store-options)
@@ -122,7 +122,7 @@ Apply the settings you identified above for `portal-ext.properties` and
 your Documents and Media store. Once you've finished that, you're almost ready
 to run the upgrade process. 
 
-### Disable Indexing During the Upgrade Process
+### Disable Indexing During the Upgrade Process [](id=disable-indexing-during-the-upgrade-process)
 
 Before starting the upgrade process, you must disable indexing so the indexer
 doesn't try to run during the upgrade. Create a file called
@@ -201,7 +201,7 @@ properties you need to perform the upgrade.
 
 Below you'll learn about the properties that can go in these files. 
 
-### Configuring app-server.properties
+### Configuring app-server.properties [](id=configuring-app-server-properties)
 
 Specify the following information to configure the app server that contains the
 installed new release of @product@: 
@@ -214,7 +214,7 @@ installed new release of @product@:
 
 **portal.dir:**  the portal directory *(required)*
 
-### Configuring portal-upgrade-database.properties
+### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
 
 Specify the following information to configure the database that needs to be
 upgraded. Note that these properties correspond exactly to the properties you'd
@@ -228,7 +228,7 @@ use in `portal-ext.properties` to connect @product@ to its database.
 
 **jdbc.default.password ***(required)*
 
-### Configuring portal-upgrade-ext.properties
+### Configuring portal-upgrade-ext.properties [](id=configuring-portal-upgrade-ext-properties)
 
 Specify the following information to configure the upgrade itself: 
 
@@ -237,7 +237,7 @@ Specify the following information to configure the upgrade itself:
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)* 
 
-### Example Upgrade Configuration
+### Example Upgrade Configuration [](id=example-upgrade-configuration)
 
 Examples of what you'd put in these files are below, but don't worry: the tool
 asks you for the information if you don't have the files, so it may be
@@ -457,7 +457,7 @@ verify process from the Gogo shell by entering `verify:list` to check all
 available verify processes and `verify:execute [verify_qualified_name]` to run
 it. Restarting your server is not needed to execute these kinds of verifiers.
 
-## Post-Upgrade Tasks
+## Post-Upgrade Tasks [](id=post-upgrade-tasks)
 
 After upgrading, you should reindex @product@'s search indexes. Don't just do
 this blindly, however: by default, @product@ ships with an embedded
