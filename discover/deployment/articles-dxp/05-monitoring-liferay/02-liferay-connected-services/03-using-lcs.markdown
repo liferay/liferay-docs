@@ -569,9 +569,9 @@ instance.
 
 $$$
 
-To access the UI that lets you generate and download environment tokens, select 
-your environment on the left and then select the *Registration* tab. This tab 
-contains the following sections:
+To access the UI that lets you generate, regenerate, and download environment 
+tokens, select your environment on the left and then select the *Registration* 
+tab. This tab contains the following sections: 
 
 - **Requirements:** the basic requirements for using an environment token. 
 
@@ -581,33 +581,43 @@ contains the following sections:
   appears instead. 
 
 - **Services:** lets you select the LCS services to use with all DXP servers 
-  that connect to this environment. Portal analytics, fix pack management, and 
-  portal property analysis are selected by default. Note that although 
+  that connect to this environment. When you generate or regenerate the 
+  environment token file, your selections here are embedded in it. Portal 
+  analytics, fix pack management, and portal property analysis are selected by 
+  default. Note that although 
   [LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers), 
-  you may have additional properties you want to prevent LCS from analyzing. If 
-  you select *Show Blacklisted Properties*, you can enter them into the text box 
-  that appears. 
+  you may have additional properties you want to prevent LCS from analyzing. 
+  Enter them into the box that appears when you select *Show Blacklisted 
+  Properties*. 
 
 ![Figure 21: An environment's Registration tab lets you select the LCS services to use with your DXP servers that connect to that environment.](../../../images-dxp/lcs-environment-token.png)
 
-1. If the environment has no token file, generate one by clicking the *Generate 
-   Token* button. Note that this button only appears when the environment has no 
+Whether you must generate or regenerate a token depends on the actions you took 
+in the Services section, and whether there's an existing token in the 
+environment. This table summarizes the action you must take: 
+
+Existing Token? | &nbsp;Service Changes | &nbsp;No Service Changes |
+:-------------: | :-------------------: | :----------------------: |
+ No             | Generate Token (1)    | Generate Token (1)       |
+ Yes            | Regenerate Token (2)  | No action required (3)   |
+
+The actions corresponding with the numbers in this table are described here: 
+
+1. If the environment has no token file, then you must generate one regardless 
+   of your selections of LCS services. Do so by clicking the *Generate Token* 
+   button. Note that this button only appears when the environment has no 
    token. Upon generating a token, the Download Token button replaces the 
    Generate Token button, and the Regenerate Token button appears. 
 
-2. If the environment has a token, and you made changes to your selections of 
-   LCS services, then you must regenerate the token. Click the *Regenerate 
-   Token* button to do so. Note that if you regenerate a token, all DXP 
+2. If the environment already has a token, and you made changes to your 
+   selections of LCS services, then you must regenerate the token by clicking 
+   the *Regenerate Token* button. Note that if you regenerate a token, all DXP 
    instances in the environment are disconnected from LCS and won't be able to 
    reconnect until receiving the new token. 
 
-3. If the environment has a token, and you made no changes to your selections of 
-   LCS services, then you can simply download and use the existing token.
-   
-    Token?     | &nbsp;Service Changes | &nbsp;No Service Changes |
-:------------: | :-------------------: | :----------------------: |
-Yes            | Regenerate Token      | No action required       |
-No             | Generate Token        | Generate Token           |
+3. If the environment already has a token, and you made no changes to your 
+   selections of LCS services, then you can simply download and use the existing 
+   token. 
 
 To download an environment's token, click the *Download Token* button. 
 
