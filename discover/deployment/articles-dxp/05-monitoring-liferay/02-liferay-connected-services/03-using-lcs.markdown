@@ -619,23 +619,31 @@ The actions corresponding with the numbers in this table are described here:
    selections of LCS services, then you can simply download and use the existing 
    token. 
 
-To download an environment's token, click the *Download Token* button. 
-
-Once you download environment token, use the following steps to connect a 
+To download an environment's token, click the *Download Token* button. Once you 
+download the token, follow these steps to use it to connect and activate a 
 Liferay DXP instance with LCS: 
 
-1. Place the token file in your instance's `data` folder.
+1. Ensure that you've deployed the LCS client app, and have configured it 
+   properly if you connect from behind a proxy. For instuctions on configuring 
+   the client app to connect through a proxy, 
+   [click here](/discover/deployment/-/knowledge_base/7-0/preconfiguring-the-lcs-client-to-connect-through-a-proxy). 
+   You can download the LCS client app 
+   [here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947). 
+   For instructions on using Marketplace to download and deploy apps, 
+   [click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
-2. Deploy the LCS client app to your DXP instance. If the client is bundled with 
-   your DXP instance, start up the instance. 
+2. Shut down your DXP instance if it's running. 
 
-3. Once deployment completes, the LCS client app automatically connects your DXP 
-   instance to LCS. Upon connection, your DXP instance activates by consuming an 
-   activation key from the environment's subscription type. You should see this 
-   in your LCS project's Subscriptions tab. 
+3. Place the token file in your instance's `[Liferay_Home]/data` folder, and 
+   then start the instance. 
 
-Awesome! Now you know how to use environment tokens to activate your Liferay DXP 
-instances with LCS. 
+On startup, the LCS client app automatically connects your DXP instance to LCS. 
+Upon connection, your DXP instance activates by consuming an activation key from 
+the environment's subscription type. You should see this in your LCS project's 
+Subscriptions tab. 
+
+Awesome! Now you know how to use environment tokens to connect and activate your 
+Liferay DXP instances with LCS. 
 
 As you've now seen, LCS is a powerful tool that assists you in the management of 
 your Liferay DXP servers. In addition to activating your DXP servers, LCS lets 
