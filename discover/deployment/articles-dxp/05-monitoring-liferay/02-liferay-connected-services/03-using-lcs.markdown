@@ -624,7 +624,7 @@ download the token, follow these steps to use it to connect and activate a
 Liferay DXP instance with LCS: 
 
 1. Ensure that you've deployed the LCS client app, and have configured it 
-   properly if you connect from behind a proxy. For instuctions on configuring 
+   properly if you connect from behind a proxy. For instructions on configuring 
    the client app to connect through a proxy, 
    [click here](/discover/deployment/-/knowledge_base/7-0/preconfiguring-the-lcs-client-to-connect-through-a-proxy). 
    You can download the LCS client app 

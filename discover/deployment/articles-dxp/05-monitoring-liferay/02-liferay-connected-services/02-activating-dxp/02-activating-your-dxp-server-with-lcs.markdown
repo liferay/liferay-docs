@@ -41,9 +41,9 @@ to do this:
     ![Figure 4: An environment's Registration tab lets you manage the token file used to connect DXP instances to the environment.](../../../../images-dxp/lcs-registration.png) 
 
 5. Now you must use the Registration tab to generate, regenerate, and/or 
-   download the token file. Which of these actions you take here depend on what 
-   you did in the previous step, and whether the environment already has a token 
-   file. Note that if the environment already has a token file, the Generate 
+   download the token file. The actions you take here depend on two things: what 
+   you did in the previous step and whether the environment has a token file 
+   already. Note that if the environment already has a token file, the Generate 
    Token button is replaced by the Download Token button: 
 
     - **No existing token file:** Generate the token by clicking *Generate 
