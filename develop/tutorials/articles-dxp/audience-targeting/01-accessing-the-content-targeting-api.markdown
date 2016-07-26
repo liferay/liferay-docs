@@ -45,7 +45,7 @@ direct calls to the Java API and making direct calls to the JSON API.
 Suppose you'd like to display a list of existing user segments in your portlet.
 First you need to obtain an implementation of the `UserSegmentLocalService`
 provided by Audience Targeting. You can do this by adding the following code to
-your Portlet class (the class that extends the `MVCPortlet` class):
+your Portlet class (e.g., the class that extends the `MVCPortlet` class):
 
     @Reference(unbind = "-")
     protected void setUserSegmentLocalService(

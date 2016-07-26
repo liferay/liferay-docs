@@ -10,34 +10,111 @@ extend the set of available rule types, you can create a class that implements
 the `Rule` interface and deploy the class in your own OSGi plugin.
 
 This tutorial shows you how to create a custom rule type and deploy it in an
-OSGi plugin. But before you begin creating a rule type, you must learn how to
-install and use the Audience Targeting development tools. This tutorial covers
-all of these things, plus it gives you helpful tips.
-
-## Installing the Audience Targeting Development Tools
-
-The Audience Targeting development tools used to create extension points such as
-rule types are based on Blade CLI. Blade CLI is the easiest way for Liferay
-developers to create new Liferay modules. Visit the
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) section for more
-information on Blade CLI and how to use it.
-
-In this tutorial, you’ll learn how to use Audience Targeting Blade CLI templates
-standalone. You can, however, use Blade CLI from a Liferay Workspace, which
-offers additional benefits. You can learn more about creating modules with a
-Liferay Workspace in the
-[Creating Modules in a Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-modules-in-a-workspace)
-tutorial.
-
-Next, you'll learn how to create a custom rule type using the Audience Targeting
-Blade CLI templates.
+OSGi plugin.
 
 ## Creating a Custom Rule Type
 
-Adding a new type of rule to the Audience Targeting application is easy. In this
-part of the tutorial, you'll learn how to create a rule and deploy it to your
-Liferay server using Blade CLI.
+Adding a new type of rule to the Audience Targeting application is easy. There
+are three components you can specify for your rule:
 
+- *Rule Behavior*
+- *UI for Configuration (optional)*
+- *Language Keys (optional)*
+
+The first thing you'll define in your rule is its behavior. The behavior of your
+rule is controlled from a Java class file that you create.
+
+1. Create a module for deploying a rule using your favorite third party tool. A
+   Blade CLI
+   [contenttargetingrule]()
+   template is available to help you get started quickly by setting all the
+   default configuration for you, and it contains boilerplate code so you can
+   get started right away.
+
+2. Create a unique package name in the module's `src` directory, and create a
+   new Java class in that package. To follow naming conventions, your class name
+   should begin with the rule name you're creating, and end with *Rule* (e.g.,
+   `WeatherRule.java`). Your Java class should implement the `Rule` interface.
+
+3. Directly above the class's declaration, insert the following code:
+
+        @Component(immediate = true, service = Rule.class)
+
+    This annotation declares the implementation class of the Componenet, and
+    specifies to immediately start the module once deployed to @product@.
+
+Before diving deeper into your `-Rule` class, it's important to understand what
+is available for you to extend from this class. It is required to implement the
+`Rule` interface, but there are `Rule` extension classes you can extend from in
+your custom rule, which provide helpful utilities. For example, you can extend
+the `BaseJSPRule` class for support when generating your rule's UI using JSPs.
+
+Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
+extension views. FreeMarker views, however, are still supported through their
+respective base classes (e.g., `BaseFreemarkerRule`). If you're interested in
+using a technology besides JSP or FreeMarker to implement your UI, you can add a
+method `getFormHTML` to your `-Rule` class.
+
+The `getFormHTML` is used to retrieve the HTML created by the technology you
+choose, and to return it as a string that is viewable from your rule's form.
+If you plan, therefore, on using an alternative to JSP or FreeMarker, you
+must override this method by creating and modifying it in your `-Rule` class.
+This tutorial demonstrates implementing the UI using JSP, and assumes the `Rule`
+interface is implemented by extending the `BaseJSPRule` class.
+
+Of course, you still need to make some additional changes to define how your
+rule works. Here are some of the methods that you can implement to modify your
+rule behavior:
+
+<!-- The below method descriptions are the Javadoc copied from the `Rule`
+interface. Since the source code is not accessible and the Javadoc for Audience
+Targeting is not currently published, I've provided some methods and
+descriptions until the Javadoc is available publicly. -Cody -->
+
+- `evaluate(HttpServletRequest, RuleInstance, AnonymousUser)`: Returns *true* if
+  the user complies with the rule instance in real time. The evaluation is
+  completed correctly after the user makes a request.
+- `evaluate(Map, RuleInstance, AnonymousUser)`: Returns *true* if the user
+  complies with the rule instance in an offline mode. The evaluation is
+  completed without having a user request. This will only be called if the rule
+  supports offline evaluation. A context map can be optionally passed with some
+  context variables.
+- `exportData`: Exports any additional data added by this rule when the rule
+  instance is exported.
+- `getCacheTime`: Returns the time in milliseconds that the evaluation of this
+  rule can be cached. For example, an Age rule can be cached at least 1 day and
+  a Geolocation rule could be cached 5 minutes. This value can be configurable
+  by adding a custom configuration to your component. A value of *0* means that
+  the evaluation can not be cached.
+- `getIcon`: Returns the Font Awesome CSS class for the rule icon.
+- `getName`: Returns the rule localized name.
+- `getRuleCategoryKey`: Returns the key that identifies the category of the
+  rule.
+- `getRuleKey`: Returns the key that identifies the rule. The rule instances of
+  this rule are identified by their rule key.
+- `importData`: Imports any additional data added by this rule when the rule
+  instance is imported.
+- `isInstantiable`: Returns *true* if the rule can be used more than once with
+  different values for a user segment.
+- `isVisible`: Returns *true* if the rule is visible.
+- `processRule`: Returns the result of evaluating the rule form fields in the
+  context of the request and response.
+- `supportsOfflineEvaluation`: Returns *true* if the rule can be evaluated
+  offline (without the user request in real time). If this is set to *true*, the
+  method `evaluate(Map, RuleInstance, AnonymousUser)` should be implemented.
+
++$$$
+
+**Note:** If you're planning on developing a social rule type that classifies
+users based on their social network profile, it's important to remember that
+they will not work properly unless the specific social network's SSO (Single
+Sign On) is enabled and configured properly. Visit the
+[Social Rules](/discover/portal/-/knowledge_base/7-0/liferay-audience-targeting-rules#social-rules)
+section for more details.
+
+$$$
+
+<!--
 1. Run the `create -t contenttargetingrule` Blade command from a command prompt.
    For example, the command below creates a rule project with `weather` for its
    project name and `WeatherRule` as its class name within the
@@ -68,42 +145,9 @@ Liferay server using Blade CLI.
 
     The default rule doesn't evaluate anything yet, but you can
     drag and drop the rule onto the form, as shown above.
+-->
 
-Awesome! You've deployed your rule plugin. Next, you'll need to learn about the
-components that were generated for you and how to edit them to create a
-functional Audience Targeting rule.
-
-There are three components you can specify for your rule:
-
-- *Rule Behavior*
-- *UI for Configuration (optional)*
-- *Language Keys (optional)*
-
-The behavior of your rule is controlled from a Java class file located in your
-rule's `src/main/java/com/liferay/content/targeting/rule/[RULE_NAME]` folder.
-The rule's UI and language keys can be configured in the
-`src/main/resources/META-INF/resources/view.jsp` and
-`src/main/resources/content/Language.properties` files, respectively. You'll
-learn more about the latter two components later on.
-
-+$$$
-
-**Note:** If you're planning on developing a social rule type that classifies
-users based on their social network profile, it's important to remember that
-they will not work properly unless the specific social network's SSO (Single
-Sign On) is enabled and configured properly. Visit the
-[Social Rules](/discover/portal/-/knowledge_base/7-0/liferay-audience-targeting-rules#social-rules)
-section for more details.
-
-$$$
-
-Now, you can begin creating your rule's functionality by specifying its behavior
-in the `-Rule` class (e.g., `WeatherRule.java`) that Blade CLI generated for
-you. This class implements the Rule interface (required), and extends the
-`BaseJSPRule` class. It's not mandatory to extend `BaseJSPRule`, but it provides
-some helpful utilities, such as support for generating your rule's UI using JSP.
-Note that there are multiple methods in the generated `-Rule` class; you must
-modify them to create a working rule. 
+Next, you'll examine a working weather rule as an example.
 
 If you navigate back to your rule deployed in your portal, notice that it's
 listed under a category named *Sample*. You can change a rule's category by
@@ -125,18 +169,6 @@ to develop the UI for your rule's configuration. As you read earlier, your rule
 project already has a JSP file, which is used to show the rule's form.
 Since a generated rule Java class extends `BaseJSPRule` by default, your rule
 already supports using JSP pages.
-
-Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
-extension views. FreeMarker views, however, are still supported through their
-respective base classes (e.g., `BaseFreemarkerRule`). If you're interested in
-using a technology besides JSP or FreeMarker to implement your UI, you can add a
-method `getFormHTML` to your `-Rule` class.
-
-The `getFormHTML` is used to retrieve the HTML created by the technology you
-choose, and to return it as a string that is viewable from your rule's form.
-If you plan, therefore, on using an alternative to JSP or FreeMarker, you
-must override this method by creating and modifying it in your `-Rule` class.
-This tutorial demonstrates implementing the UI using JSP.
 
 If you wanted, for example, to create user segment rules based on the type of
 weather a user is experiencing, you could create a drop-down menu that lets the
