@@ -114,67 +114,38 @@ section for more details.
 
 $$$
 
-<!--
-1. Run the `create -t contenttargetingrule` Blade command from a command prompt.
-   For example, the command below creates a rule project with `weather` for its
-   project name and `WeatherRule` as its class name within the
-   `com.liferay.content.targeting.rule` package:
+To show how easy it is to modify a rule's behavior, you'll make a quick change
+in your rule's class. When extending the `BaseJSPRule` class, the category of
+the rule is not set, by default. To change your rule's category (i.e., the
+category your rule selectable from in the Audience Targeting app), add the
+following:
 
-        blade create -t contenttargetingrule -p com.liferay -c Weather weather
+    @Override
+    public String getRuleCategoryKey() {
 
-2. Navigate to the newly generated project folder that has your rule's name.
-   Open the folder and study what's been generated.
+        return SessionAttributesRuleCategory.KEY;
+    }
 
-    The `create -t contenttargetingrule` command created default files that make
-    the plugin deployable.
+Now your rule's category is set to *Session Attributes*. Available category
+classes include *BehaviourRuleCategory*, *SessionAttributesRuleCategory*,
+*SocialRuleCategory*, and *UserAttributesRoleCategory*.
 
-3. Now is a convenient time to deploy the project to see how it currently looks
-   in @product@.
-
-    To deploy the plugin project, start a @product@ instance, open a terminal to
-    your plugin project's directory, and run the `blade deploy` command. You'll
-    find this new rule listed when creating or editing a user segment in the
-    Audience Targeting application.
-
-4. To view your new rule, navigate to your portal's Site Administration &rarr;
-   *Configuration* &rarr; *Audience Targeting* menu. To see the rule you just
-   deployed, click *Add User Segment*, scroll down to the Rules form, and expand
-   the *Sample* drop-down menu.
-
-    ![Figure 1: Although your new rule is very bare bones, it is deployable to your portal straight out of the box.](../../images-dxp/default-sample-rule.png)
-
-    The default rule doesn't evaluate anything yet, but you can
-    drag and drop the rule onto the form, as shown above.
--->
-
-Next, you'll examine a working weather rule as an example.
-
-If you navigate back to your rule deployed in your portal, notice that it's
-listed under a category named *Sample*. You can change a rule's category by
-modifying its generated default methods.
-
-1. Locate the `getRuleCategoryKey` method and replace its return value with the
-   key name of the category in which you'd like your rule to reside. For
-   example, to categorize your rule in the *Session Attributes* category, 
-   replace the return value `SampleRuleCategory.KEY` with the value
-   `SessionAttributesRuleCategory.KEY`, and make sure to import that class.
-
-2. Redeploy your rule plugin by running `blade deploy` from the command prompt.
-   Now your rule uses its new icon and resides in the category you specified.
-
-    ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
+![Figure 1: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
 
 Now that you've modified some basic features in your `-Rule` class, you'll need
-to develop the UI for your rule's configuration. As you read earlier, your rule
-project already has a JSP file, which is used to show the rule's form.
-Since a generated rule Java class extends `BaseJSPRule` by default, your rule
+to develop the UI for your rule's configuration. As you read earlier, the second
+component of your rule is its UI configuration, which is used to show the rule's
+form. If your `-Rule` class is already extending `BaseJSPRule`, your rule
 already supports using JSP pages.
+
+To view a sample rule and its UI configuration, download the sample
+[weather rule](https://customer.liferay.com/documents/10738/200086/weather.zip/45a7d464-a3e9-49e9-bf92-1ba34e009c3c).
 
 If you wanted, for example, to create user segment rules based on the type of
 weather a user is experiencing, you could create a drop-down menu that lets the
 administrator select a weather type to associate with that user segment rule.
-Here's a code snippet from a JSP template (`view.jsp`) that could be applied to
-this example:
+Here's a code snippet from the weather rule's JSP template (`view.jsp`) that
+could be applied to this example:
 
     <%
     Map<String, Object> context = (Map<String, Object>)request.getAttribute("context");
@@ -209,9 +180,11 @@ tutorials.
 $$$
 
 Now you'll jump back into modifying your rule's behavior via the `-Rule` class.
+You'll dive further into the sample weather rule and find what is necessary to
+make the JSP code work with the Rule Java class.
 
-1. Find the `processRule` method in your `-Rule` class. This method is called
-   when you click *Save* after selecting your rule in the Rules form. The
+1. Find the `processRule` method in the `WeatherRule` class. This method is
+   called when you click *Save* after selecting your rule in the Rules form. The
    portlet's request and response, the rule instance's ID, and the values from
    the form can be used by this method.
 
@@ -273,8 +246,8 @@ Excellent! You've processed your rule and populated the rule's context. The last
 step you'll need to take is specifying what your rule should evaluate. The
 evaluation process determines whether a user matches the rule.
 
-1. Find the `evaluate` method in your `-Rule` class. Insert logic that
-   obtains the runtime user's value for what you plan to evaluate. For example:
+1. Find the `evaluate` method in the `WeatherRule` class. There is logic that
+   obtains the runtime user's value for what you plan to evaluate.
 
         ...
         String userWeather = getUserWeather(anonymousUser);
@@ -283,14 +256,14 @@ evaluation process determines whether a user matches the rule.
     [downloadable ZIP file](https://customer.liferay.com/documents/10738/200086/weather.zip/45a7d464-a3e9-49e9-bf92-1ba34e009c3c)
     for the sample weather rule.
 
-2. Insert logic that retrieves the value you stored in the type settings, using
-   the `processRule` method. For the weather example, you could retrieve the
-   value from the rule instance's type settings:
+2. The weather rule now must retrieve the value stored in the type settings by
+   using the `processRule` method.
 
         String weather = ruleInstance.getTypeSettings();
 
-3. Now that you have both the user's value and the rule's value, check whether
-   they match. If they match, return `true`; otherwise, return `false`. 
+3. Now that the rule has both the user's value and the rule's value, it should
+   check whether they match. If they match, return `true`; otherwise, return
+   `false`.
 
         if (Validator.equals(userWeather, weather)) {
             return true;
@@ -303,7 +276,7 @@ evaluation process determines whether a user matches the rule.
    Segment form so that administrators can set a value for that specific user
    segment.
 
-Excellent! You've created and deployed a fully functional rule.
+Excellent! You've inspected and deployed a fully functional rule.
 
 Here are some things to consider as you implement and deploy rules:
 
@@ -327,11 +300,42 @@ reference to a page or web content article), you may need to override the
 content properly.
 
 You now know how to create a custom rule type for your Audience Targeting
-application. To view the final solution of a deployable sample weather rule, you
-can download its
-[ZIP file](https://customer.liferay.com/documents/10738/200086/weather.zip/45a7d464-a3e9-49e9-bf92-1ba34e009c3c)
+application.
 
 <!-- ## Customize the Rules Engine -->
+
+<!--
+1. Run the `create -t contenttargetingrule` Blade command from a command prompt.
+   For example, the command below creates a rule project with `weather` for its
+   project name and `WeatherRule` as its class name within the
+   `com.liferay.content.targeting.rule` package:
+
+        blade create -t contenttargetingrule -p com.liferay -c Weather weather
+
+2. Navigate to the newly generated project folder that has your rule's name.
+   Open the folder and study what's been generated.
+
+    The `create -t contenttargetingrule` command created default files that make
+    the plugin deployable.
+
+3. Now is a convenient time to deploy the project to see how it currently looks
+   in @product@.
+
+    To deploy the plugin project, start a @product@ instance, open a terminal to
+    your plugin project's directory, and run the `blade deploy` command. You'll
+    find this new rule listed when creating or editing a user segment in the
+    Audience Targeting application.
+
+4. To view your new rule, navigate to your portal's Site Administration &rarr;
+   *Configuration* &rarr; *Audience Targeting* menu. To see the rule you just
+   deployed, click *Add User Segment*, scroll down to the Rules form, and expand
+   the *Sample* drop-down menu.
+
+    ![Figure 1: Although your new rule is very bare bones, it is deployable to your portal straight out of the box.](../../images-dxp/default-sample-rule.png)
+
+    The default rule doesn't evaluate anything yet, but you can
+    drag and drop the rule onto the form, as shown above.
+-->
 
 ## Related Topics
 
