@@ -21,26 +21,46 @@ are three components you can specify for your rule:
 - *UI for Configuration (optional)*
 - *Language Keys (optional)*
 
-The first thing you'll define in your rule is its behavior. The behavior of your
-rule is controlled from a Java class file that you create.
+Before you can define your rule's components, you must create a module and
+ensure it has the necessary Content Targeting dependencies.
 
 1. Create a module for deploying a rule using your favorite third party tool. A
    Blade CLI
-   [contenttargetingrule]()
+   [contenttargetingrule](/develop/tutorials/-/knowledge_base/7-0/using-the-content-template)
    template is available to help you get started quickly by setting all the
    default configuration for you, and it contains boilerplate code so you can
-   get started right away.
+   skip the file creation steps and get started right away.
 
-2. Create a unique package name in the module's `src` directory, and create a
+2. Make sure your module specifies the dependencies necessary for an Audience
+   Targeting rule. For example, you should specify the Content Targeting API and
+   necessary Liferay packages. For example, examine the example `build.gradle`
+   file used from a Gradle based rule:
+
+        dependencies {
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.analytics.api", version: "2.1.0"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.anonymous.users.api", version: "2.0.1"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0-SNAPSHOT"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.3.0"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
+            compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+            compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+            compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+        }
+
+Once you've created your module and specified its dependencies, you'll need to
+define your rule's behavior. The behavior of your rule is controlled from a Java
+class file that you create.
+
+1. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, your class name
    should begin with the rule name you're creating, and end with *Rule* (e.g.,
    `WeatherRule.java`). Your Java class should implement the `Rule` interface.
 
-3. Directly above the class's declaration, insert the following code:
+2. Directly above the class's declaration, insert the following code:
 
         @Component(immediate = true, service = Rule.class)
 
-    This annotation declares the implementation class of the Componenet, and
+    This annotation declares the implementation class of the Component, and
     specifies to immediately start the module once deployed to @product@.
 
 Before diving deeper into your `-Rule` class, it's important to understand what
@@ -71,6 +91,10 @@ interface. Since the source code is not accessible and the Javadoc for Audience
 Targeting is not currently published, I've provided some methods and
 descriptions until the Javadoc is available publicly. -Cody -->
 
+- `activate`: Does processing when the rule is installed.
+- `deActivate`: Does processing when the rule is uninstalled.
+- `deleteData`: Removes any additional data added by this rule when the rule
+  instance is removed.
 - `evaluate(HttpServletRequest, RuleInstance, AnonymousUser)`: Returns *true* if
   the user complies with the rule instance in real time. The evaluation is
   completed correctly after the user makes a request.
@@ -86,12 +110,17 @@ descriptions until the Javadoc is available publicly. -Cody -->
   a Geolocation rule could be cached 5 minutes. This value can be configurable
   by adding a custom configuration to your component. A value of *0* means that
   the evaluation can not be cached.
+- `getDescription`: Returns the rule localized description.
+- `getFormHTML`: Returns the HTML code containing the form fields required to
+  edit the rule instance configuration, based on the context.
 - `getIcon`: Returns the Font Awesome CSS class for the rule icon.
 - `getName`: Returns the rule localized name.
 - `getRuleCategoryKey`: Returns the key that identifies the category of the
   rule.
 - `getRuleKey`: Returns the key that identifies the rule. The rule instances of
   this rule are identified by their rule key.
+- `getShortDescription`: Returns the rule localized short description.
+- `getSummary`: Returns the rule instance localized summary.
 - `importData`: Imports any additional data added by this rule when the rule
   instance is imported.
 - `isInstantiable`: Returns *true* if the rule can be used more than once with
@@ -136,7 +165,9 @@ Now that you've modified some basic features in your `-Rule` class, you'll need
 to develop the UI for your rule's configuration. As you read earlier, the second
 component of your rule is its UI configuration, which is used to show the rule's
 form. If your `-Rule` class is already extending `BaseJSPRule`, your rule
-already supports using JSP pages.
+already supports using JSP pages. If you used the `contenttargetingrule` Blade
+CLI template, your project is already extending `BaseJSPRule` and has a default
+`view.jsp` file already configured.
 
 To view a sample rule and its UI configuration, download the sample
 [weather rule](https://customer.liferay.com/documents/10738/200086/weather.zip/45a7d464-a3e9-49e9-bf92-1ba34e009c3c).
@@ -167,7 +198,7 @@ Then it specifies several options associated with different types of weather.
 You could borrow from this JSP code and change the name and labels for a
 *select* drop-down box and values appropriate for your rule plugin.
 
-![Figure 3: This example rule uses a *select* drop-down box.](../../images-dxp/select-box-rule.png)
+![Figure 2: This example rule uses a *select* drop-down box.](../../images-dxp/select-box-rule.png)
 
 +$$$
 
@@ -210,11 +241,11 @@ make the JSP code work with the Rule Java class.
     The return value is stored in the `typeSettings` of the rule instance. The
     `typeSettings` field is managed by the framework in the Rule Instance table.
 
-3. The next method you'd modify is the `populateContext` method. This
-   method takes the value the user selected and injects it into the `context`
-   map parameter. For example, the following `populateContext` method populates
-   a `weather` context variable with the *weather* value of the `values` map
-   parameter. 
+3. The next method to inspect in the weather rule is the `populateContext`
+   method. This method takes the value the user selected and injects it into the
+   `context` map parameter. For example, the following `populateContext` method
+   populates a `weather` context variable with the *weather* value of the
+   `values` map parameter.
 
         @Override
         protected void populateContext(
@@ -276,7 +307,8 @@ evaluation process determines whether a user matches the rule.
    Segment form so that administrators can set a value for that specific user
    segment.
 
-Excellent! You've inspected and deployed a fully functional rule.
+Now you've inspected a fully functional rule and have the knowledge to
+create your own.
 
 Here are some things to consider as you implement and deploy rules:
 
@@ -303,39 +335,6 @@ You now know how to create a custom rule type for your Audience Targeting
 application.
 
 <!-- ## Customize the Rules Engine -->
-
-<!--
-1. Run the `create -t contenttargetingrule` Blade command from a command prompt.
-   For example, the command below creates a rule project with `weather` for its
-   project name and `WeatherRule` as its class name within the
-   `com.liferay.content.targeting.rule` package:
-
-        blade create -t contenttargetingrule -p com.liferay -c Weather weather
-
-2. Navigate to the newly generated project folder that has your rule's name.
-   Open the folder and study what's been generated.
-
-    The `create -t contenttargetingrule` command created default files that make
-    the plugin deployable.
-
-3. Now is a convenient time to deploy the project to see how it currently looks
-   in @product@.
-
-    To deploy the plugin project, start a @product@ instance, open a terminal to
-    your plugin project's directory, and run the `blade deploy` command. You'll
-    find this new rule listed when creating or editing a user segment in the
-    Audience Targeting application.
-
-4. To view your new rule, navigate to your portal's Site Administration &rarr;
-   *Configuration* &rarr; *Audience Targeting* menu. To see the rule you just
-   deployed, click *Add User Segment*, scroll down to the Rules form, and expand
-   the *Sample* drop-down menu.
-
-    ![Figure 1: Although your new rule is very bare bones, it is deployable to your portal straight out of the box.](../../images-dxp/default-sample-rule.png)
-
-    The default rule doesn't evaluate anything yet, but you can
-    drag and drop the rule onto the form, as shown above.
--->
 
 ## Related Topics
 

@@ -1,0 +1,143 @@
+<h1>Creating New Audience Targeting Rule Types</h1><p>In the Audience Targeting application, a User Segment is defined as a group of users that match a set of rules. Out of the box, Liferay provides several types of rules that are based on characteristics such as age range, gender, location, and so on. Visit the <a href="/discover/portal/-/knowledge_base/7-0/liferay-audience-targeting-rules">Liferay Audience Targeting Rules</a> article for information on each rule type and their configuration options. To extend the set of available rule types, you can create a class that implements the <code>Rule</code> interface and deploy the class in your own OSGi plugin.</p><p>This tutorial shows you how to create a custom rule type and deploy it in an OSGi plugin.</p><a id="creating-a-custom-rule-type"></a><h2>Creating a Custom Rule Type</h2><p>Adding a new type of rule to the Audience Targeting application is easy. There are three components you can specify for your rule:</p>
+<ul>
+  <li><em>Rule Behavior</em></li>
+  <li><em>UI for Configuration (optional)</em></li>
+  <li><em>Language Keys (optional)</em></li>
+</ul><p>The first thing you&rsquo;ll define in your rule is its behavior. The behavior of your rule is controlled from a Java class file that you create.</p>
+<ol>
+  <li><p>Create a module for deploying a rule using your favorite third party tool. A  Blade CLI  <a href="">contenttargetingrule</a>  template is available to help you get started quickly by setting all the  default configuration for you, and it contains boilerplate code so you can  skip the file creation steps and get started right away.</p></li>
+  <li><p>Create a unique package name in the module&rsquo;s <code>src</code> directory, and create a  new Java class in that package. To follow naming conventions, your class name  should begin with the rule name you&rsquo;re creating, and end with <em>Rule</em> (e.g.,  <code>WeatherRule.java</code>). Your Java class should implement the <code>Rule</code> interface.</p></li>
+  <li><p>Directly above the class&rsquo;s declaration, insert the following code:</p>
+  <pre><code>@Component(immediate = true, service = Rule.class)
+</code></pre><p>This annotation declares the implementation class of the Component, and specifies to immediately start the module once deployed to @product@.</p></li>
+</ol><p>Before diving deeper into your <code>-Rule</code> class, it&rsquo;s important to understand what is available for you to extend from this class. It is required to implement the <code>Rule</code> interface, but there are <code>Rule</code> extension classes you can extend from in your custom rule, which provide helpful utilities. For example, you can extend the <code>BaseJSPRule</code> class for support when generating your rule&rsquo;s UI using JSPs.</p><p>Since Liferay 7.0, JSP is the preferred technology for Audience Targeting extension views. FreeMarker views, however, are still supported through their respective base classes (e.g., <code>BaseFreemarkerRule</code>). If you&rsquo;re interested in using a technology besides JSP or FreeMarker to implement your UI, you can add a method <code>getFormHTML</code> to your <code>-Rule</code> class.</p><p>The <code>getFormHTML</code> is used to retrieve the HTML created by the technology you choose, and to return it as a string that is viewable from your rule&rsquo;s form. If you plan, therefore, on using an alternative to JSP or FreeMarker, you must override this method by creating and modifying it in your <code>-Rule</code> class. This tutorial demonstrates implementing the UI using JSP, and assumes the <code>Rule</code> interface is implemented by extending the <code>BaseJSPRule</code> class.</p><p>Of course, you still need to make some additional changes to define how your rule works. Here are some of the methods that you can implement to modify your rule behavior:</p>
+<!-- The below method descriptions are the Javadoc copied from the `Rule`
+interface. Since the source code is not accessible and the Javadoc for Audience
+Targeting is not currently published, I've provided some methods and
+descriptions until the Javadoc is available publicly. -Cody -->
+<ul>
+  <li><code>evaluate(HttpServletRequest, RuleInstance, AnonymousUser)</code>: Returns <em>true</em> if  the user complies with the rule instance in real time. The evaluation is  completed correctly after the user makes a request.</li>
+  <li><code>evaluate(Map, RuleInstance, AnonymousUser)</code>: Returns <em>true</em> if the user  complies with the rule instance in an offline mode. The evaluation is  completed without having a user request. This will only be called if the rule  supports offline evaluation. A context map can be optionally passed with some  context variables.</li>
+  <li><code>exportData</code>: Exports any additional data added by this rule when the rule  instance is exported.</li>
+  <li><code>getCacheTime</code>: Returns the time in milliseconds that the evaluation of this  rule can be cached. For example, an Age rule can be cached at least 1 day and  a Geolocation rule could be cached 5 minutes. This value can be configurable  by adding a custom configuration to your component. A value of <em>0</em> means that  the evaluation can not be cached.</li>
+  <li><code>getIcon</code>: Returns the Font Awesome CSS class for the rule icon.</li>
+  <li><code>getName</code>: Returns the rule localized name.</li>
+  <li><code>getRuleCategoryKey</code>: Returns the key that identifies the category of the  rule.</li>
+  <li><code>getRuleKey</code>: Returns the key that identifies the rule. The rule instances of  this rule are identified by their rule key.</li>
+  <li><code>importData</code>: Imports any additional data added by this rule when the rule  instance is imported.</li>
+  <li><code>isInstantiable</code>: Returns <em>true</em> if the rule can be used more than once with  different values for a user segment.</li>
+  <li><code>isVisible</code>: Returns <em>true</em> if the rule is visible.</li>
+  <li><code>processRule</code>: Returns the result of evaluating the rule form fields in the  context of the request and response.</li>
+  <li><code>supportsOfflineEvaluation</code>: Returns <em>true</em> if the rule can be evaluated  offline (without the user request in real time). If this is set to <em>true</em>, the  method <code>evaluate(Map, RuleInstance, AnonymousUser)</code> should be implemented.</li>
+</ul><div class="sidebar"><div class="sidebar-image"></div><div class="sidebar-text"><p><strong>Note:</strong> If you&rsquo;re planning on developing a social rule type that classifies users based on their social network profile, it&rsquo;s important to remember that they will not work properly unless the specific social network&rsquo;s SSO (Single Sign On) is enabled and configured properly. Visit the <a href="/discover/portal/-/knowledge_base/7-0/liferay-audience-targeting-rules#social-rules">Social Rules</a> section for more details.</p></div></div><p>To show how easy it is to modify a rule&rsquo;s behavior, you&rsquo;ll make a quick change in your rule&rsquo;s class. When extending the <code>BaseJSPRule</code> class, the category of the rule is not set, by default. To change your rule&rsquo;s category (i.e., the category your rule selectable from in the Audience Targeting app), add the following:</p>
+<pre><code>@Override
+public String getRuleCategoryKey() {
+
+    return SessionAttributesRuleCategory.KEY;
+}
+</code></pre><p>Now your rule&rsquo;s category is set to <em>Session Attributes</em>. Available category classes include <em>BehaviourRuleCategory</em>, <em>SessionAttributesRuleCategory</em>, <em>SocialRuleCategory</em>, and <em>UserAttributesRoleCategory</em>.</p><p><img src="../../images-dxp/new-category-rule.png" alt="Figure 1" /><p class="caption">Figure 1: This example Weather rule was modified to reside in the Session Attributes category.</p><p>Now that you&rsquo;ve modified some basic features in your <code>-Rule</code> class, you&rsquo;ll need to develop the UI for your rule&rsquo;s configuration. As you read earlier, the second component of your rule is its UI configuration, which is used to show the rule&rsquo;s form. If your <code>-Rule</code> class is already extending <code>BaseJSPRule</code>, your rule already supports using JSP pages.</p><p>To view a sample rule and its UI configuration, download the sample <a href="https://customer.liferay.com/documents/10738/200086/weather.zip/45a7d464-a3e9-49e9-bf92-1ba34e009c3c">weather rule</a>.</p><p>If you wanted, for example, to create user segment rules based on the type of weather a user is experiencing, you could create a drop-down menu that lets the administrator select a weather type to associate with that user segment rule. Here&rsquo;s a code snippet from the weather rule&rsquo;s JSP template (<code>view.jsp</code>) that could be applied to this example:</p>
+<pre><code>&lt;%
+Map&lt;String, Object&gt; context = (Map&lt;String, Object&gt;)request.getAttribute(&quot;context&quot;);
+
+String weather = (String)context.get(&quot;weather&quot;);
+%&gt;
+
+&lt;aui:fieldset&gt;
+    &lt;aui:select name=&quot;weather&quot; value=&quot;&lt;%= weather %&gt;&quot;&gt;
+        &lt;aui:option label=&quot;sunny&quot; value=&quot;sunny&quot; /&gt;
+        &lt;aui:option label=&quot;clouds&quot; value=&quot;clouds&quot; /&gt;
+        &lt;aui:option label=&quot;mist&quot; value=&quot;mist&quot; /&gt;
+        &lt;aui:option label=&quot;snow&quot; value=&quot;snow&quot; /&gt;
+    &lt;/aui:select&gt;
+&lt;/aui:fieldset&gt;
+</code></pre><p>This JSP code creates a <em>select</em> drop-down box with the name <em>weather</em>. Then it specifies several options associated with different types of weather. You could borrow from this JSP code and change the name and labels for a <em>select</em> drop-down box and values appropriate for your rule plugin.</p><p><img src="../../images-dxp/select-box-rule.png" alt="Figure 2" /><p class="caption">Figure 2: This example rule uses a <em>select</em> drop-down box.</p><div class="sidebar"><div class="sidebar-image"></div><div class="sidebar-text"><p><strong>Note:</strong> Recall the last component of Audience Targeting rules: Language Keys. To learn more about language keys and how to create, use, and generate them, visit the <a href="/develop/tutorials/-/knowledge_base/7-0/internationalization">Internationalization</a> tutorials.</p></div></div><p>Now you&rsquo;ll jump back into modifying your rule&rsquo;s behavior via the <code>-Rule</code> class. You&rsquo;ll dive further into the sample weather rule and find what is necessary to make the JSP code work with the Rule Java class.</p>
+<ol>
+  <li><p>Find the <code>processRule</code> method in the <code>WeatherRule</code> class. This method is  called when you click <em>Save</em> after selecting your rule in the Rules form. The  portlet&rsquo;s request and response, the rule instance&rsquo;s ID, and the values from  the form can be used by this method.</p><p>In some cases, you may need to retrieve info from the portlet&rsquo;s request and response or the rule&rsquo;s ID. This tutorial demonstrates using the <code>values</code> parameter. This parameter represents all the values on the form you&rsquo;re saving. </p></li>
+  <li><p>If you wanted to process one of the form&rsquo;s values, you could do that from the  <code>processRule</code> method. You&rsquo;ll need to return the string value for the selected  entity you chose for your rule type. For example, recall the JSP code example  you studied earlier. To retrieve the selected value from the select box,  you&rsquo;d need to retrieve the weather value:</p>
+  <pre><code>@Override
+public String processRule(
+    PortletRequest request, PortletResponse response, String id,
+    Map&lt;String, String&gt; values) {
+
+    return values.get(&quot;weather&quot;);
+}
+</code></pre><p>The return value is stored in the <code>typeSettings</code> of the rule instance. The <code>typeSettings</code> field is managed by the framework in the Rule Instance table.</p></li>
+  <li><p>The next method to inspect in the weather rule is the <code>populateContext</code>  method. This method takes the value the user selected and injects it into the  <code>context</code> map parameter. For example, the following <code>populateContext</code> method  populates a <code>weather</code> context variable with the <em>weather</em> value of the  <code>values</code> map parameter.</p>
+  <pre><code>@Override
+protected void populateContext(
+    RuleInstance ruleInstance, Map&lt;String, Object&gt; context,
+    Map&lt;String, String&gt; values) {
+
+    String weather = &quot;sunny&quot;;
+
+    if (!values.isEmpty()) {
+        // Values from Request
+
+        weather = values.get(&quot;weather&quot;);
+    }
+    else if (ruleInstance != null) {
+        // Values from Database
+
+        weather = ruleInstance.getTypeSettings();
+    }
+
+    context.put(&quot;weather&quot;, weather);
+}
+</code></pre><p>In this example implementation, this method checks if the values are available from the request. If they&rsquo;re not available, it checks for the values in the database. Then the context map is updated by assigning the string key to the object value. </p></li>
+</ol><p>Excellent! You&rsquo;ve processed your rule and populated the rule&rsquo;s context. The last step you&rsquo;ll need to take is specifying what your rule should evaluate. The evaluation process determines whether a user matches the rule.</p>
+<ol>
+  <li><p>Find the <code>evaluate</code> method in the <code>WeatherRule</code> class. There is logic that  obtains the runtime user&rsquo;s value for what you plan to evaluate.</p>
+  <pre><code>...
+String userWeather = getUserWeather(anonymousUser);
+</code></pre><p>You can look at this method&rsquo;s code in the <a href="https://customer.liferay.com/documents/10738/200086/weather.zip/45a7d464-a3e9-49e9-bf92-1ba34e009c3c">downloadable ZIP file</a> for the sample weather rule.</p></li>
+  <li><p>The weather rule now must retrieve the value stored in the type settings by  using the <code>processRule</code> method.</p>
+  <pre><code>String weather = ruleInstance.getTypeSettings();
+</code></pre></li>
+  <li><p>Now that the rule has both the user&rsquo;s value and the rule&rsquo;s value, it should  check whether they match. If they match, return <code>true</code>; otherwise, return  <code>false</code>.</p>
+  <pre><code>if (Validator.equals(userWeather, weather)) {
+    return true;
+}
+
+return false;
+</code></pre></li>
+  <li><p>Finally, deploy your rule plugin to the Liferay server. Your new rule is  fully functional, and the UI you&rsquo;ve defined is added to the Add/Edit User  Segment form so that administrators can set a value for that specific user  segment.</p></li>
+</ol><p>Excellent! You&rsquo;ve inspected and deployed a fully functional rule.</p><p>Here are some things to consider as you implement and deploy rules:</p>
+<ul>
+  <li><p>If you deploy your rule into a production environment, you may want to consider adding your values to the cache (e.g., weather in different locations), since obtaining the same value on every request is very inefficient and could result in slowing down your portal.</p></li>
+  <li><p>As an alternative to storing complex information in the <code>typeSettings</code> field which is managed by the framework in the Rule Instance table, you may want to consider persisting to a database by using <a href="/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access">Service Builder</a>, which is supported in the Rule plugins. </p></li>
+  <li><p>You can override the <code>BaseJSPRule.deleteData</code> method in your <code>-Rule</code>, so that it deletes any data associated with the rule that is currently being deleted.</p></li>
+  <li><p>If your rule handles data or references to data that can be staged (e.g., a reference to a page or web content article), you may need to override the <code>BaseJSPRule.exportData</code> and <code>BaseJSPRule.importData</code> methods, to manage the content properly.</p></li>
+</ul><p>You now know how to create a custom rule type for your Audience Targeting application.</p>
+<!-- ## Customize the Rules Engine -->
+<!--
+1. Run the `create -t contenttargetingrule` Blade command from a command prompt.
+   For example, the command below creates a rule project with `weather` for its
+   project name and `WeatherRule` as its class name within the
+   `com.liferay.content.targeting.rule` package:
+
+        blade create -t contenttargetingrule -p com.liferay -c Weather weather
+
+2. Navigate to the newly generated project folder that has your rule's name.
+   Open the folder and study what's been generated.
+
+    The `create -t contenttargetingrule` command created default files that make
+    the plugin deployable.
+
+3. Now is a convenient time to deploy the project to see how it currently looks
+   in @product@.
+
+    To deploy the plugin project, start a @product@ instance, open a terminal to
+    your plugin project's directory, and run the `blade deploy` command. You'll
+    find this new rule listed when creating or editing a user segment in the
+    Audience Targeting application.
+
+4. To view your new rule, navigate to your portal's Site Administration &rarr;
+   *Configuration* &rarr; *Audience Targeting* menu. To see the rule you just
+   deployed, click *Add User Segment*, scroll down to the Rules form, and expand
+   the *Sample* drop-down menu.
+
+    ![Figure 1: Although your new rule is very bare bones, it is deployable to your portal straight out of the box.](../../images-dxp/default-sample-rule.png)
+
+    The default rule doesn't evaluate anything yet, but you can
+    drag and drop the rule onto the form, as shown above.
+--><a id="related-topics"></a><h2>Related Topics</h2><p><a href="/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli">Creating Modules with Blade CLI</a></p><p><a href="/develop/tutorials/-/knowledge_base/7-0/internationalization">Internationalization</a></p><p><a href="/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence">Service Builder Persistence</a></p>
