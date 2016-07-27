@@ -1,15 +1,5 @@
 # Packaging a JSF Application [](id=packaging-a-jsf-application)
 
-Liferay supports developing and deploying JSF portlets on Liferay Portal by
-using
-[Liferay Faces](https://www.liferay.com/community/liferay-projects/liferay-faces/overview).
-Liferay Faces provides a bridge that supports deploying JSF web applications as
-portlets on Liferay 7.0. Liferay Faces Bridge makes developing JSF portlets as
-similar as possible to JSF web app development. In this section of tutorials,
-you'll learn the portlet development process and how to use JSF in Liferay 7.
-For a comprehensive demo for the JSF component suite, visit the
-[Liferay Faces Showcase](http://www.liferayfaces.org/web/guest/showcase).
-
 Developers creating portlets for Liferay 7.0 typically have the choice of
 packaging their portlets as Java EE style Web Application ARchive (WAR)
 artifacts or as Java ARchive (JAR) OSGi bundle artifacts. JSF portlet
@@ -36,6 +26,10 @@ the either the `.jar` or `.war` extension.
 To get an idea of how a JSF WAR artifact is packaged for use as a WAB, an
 example anatomy structure is outlined below:
 
+<!-- Should I include the `liferay-display.xml`,
+`liferay-plugin-package.properties`, `liferay-portlet.xml` and, `portlet.xml
+files into this anatomy structure? -->
+
 - `META-INF/`
     - `MANIFEST.MF` (OSGi-ready)
 - `OSGI-INF/`
@@ -54,7 +48,7 @@ example anatomy structure is outlined below:
 
 First, you'll learn about the auto-generated WAB.
 
-## Auto-Generated WAB [](id=auto-generated-wab)
+### Auto-Generated WAB [](id=auto-generated-wab)
 
 The source of an auto-generated JSF Portlet WAB follows the standard
 directory layout for WAR projects.
@@ -65,21 +59,26 @@ directory layout for WAR projects.
         - `webapp/`
             - `WEB-INF/`
                 - `faces-config.xml`
-                - `liferay-display.xml` (no longer needed if using `@Component`)
+                - `liferay-display.xml`
                 - `liferay-plugin-package.properties`
-                - `liferay-portlet.xml` (no longer needed if using `@Component`)
-                - `portlet.xml` (no longer needed if using `@Component`)
+                - `liferay-portlet.xml`
+                - `portlet.xml`
                 - `web.xml`
 
-BND directives for the manifest can be placed in the
-`liferay-plugin-package.properties` file. For use of Declarative Services in
+The Liferay WAB Generator automatically created an OSGi-ready
+`META-INF/MANIFEST.MF` file. If you want to modify the contents of the manifest
+file, add additional BND directives for the manifest in the
+`liferay-plugin-package.properties` file.
+
+
+<!--For use of Declarative Services in
 your JSF portlet, a Java class that extends
 [GenericFacesPortlet](http://myfaces.apache.org/portlet-bridge/2.0/api/apidocs/javax/portlet/faces/GenericFacesPortlet.html)
 must be included and annotated with `@Component` on the class and `@Reference`
 on a method to inject a service. You'll notice from the directory layout above
 that the `liferay-display.xml`, `liferay-portlet.xml`, `portlet.xml` are no
 longer needed, as they were in previous versions of Liferay, if annotating a
-class that extends `GenericFacesPortlet` with `@Component`.
+class that extends `GenericFacesPortlet` with `@Component`. -->
 
 **Benefits:**
 
@@ -91,10 +90,6 @@ class that extends `GenericFacesPortlet` with `@Component`.
   not been pre-configured.
 - Can affect the content of `META-INF/MANIFEST.MF` by putting BND directives and
   OSGi headers into the `WEB-INF/liferay-plugin-package.properties` file.
-- Can use the `@Component` annotation's property attribute and remove the need
-  for the `liferay-display.xml`, `liferay-portlet.xml`, and the `portlet.xml`
-  files.
-- Can use the `@Reference` annotation to use Declarative Services.
 
 **Drawbacks:**
 
@@ -118,7 +113,7 @@ $$$
 
 Next, you'll discover how to manually configure a WAB.
 
-## Pre-Configured WAB [](id=pre-configured-wab)
+### Pre-Configured WAB [](id=pre-configured-wab)
 
 Pre-configuring a WAB is not supported; however, if you prefer bypassing the
 Liferay auto-deploy process and WAB Generator, you should be aware of the
@@ -155,13 +150,14 @@ that extends
   `META-INF/MANIFEST.MF` will likely be more difficult to configure since the
   `Import-Package` header must be specified by the developer.
 
-Next, you'll learn how to utilize OSGi services from your WAB.
+Now you can make an informed packaging decision for your JSF application.
 
 ## Utilizing OSGi Services [](id=utilizing-osgi-services)
 
-Both approaches can use custom-built OSGi services, since both result in the
-deployment of a WAB (a true OSGi module). Also, both approaches can be used to
-take advantage of OSGi Declarative Services via the `@Reference` annotation:
+<!--Both packaging approaches can use custom-built OSGi services, since both result
+in the deployment of a WAB (a true OSGi module). Also, both approaches can be
+used to take advantage of OSGi Declarative Services via the `@Reference`
+annotation:
 
 	private UserLocalService userLocalService;
 
@@ -212,7 +208,7 @@ Liferay copies the WAR artifacts directly to the `/osgi/war`, so you can skip
 this system step by copying the `.war` directly to its final destination.
 
 $$$
-
+-->
 Excellent! You've learned how to let the Liferay WAB Generator configure your
 JSF application as a WAB.
 
