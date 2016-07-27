@@ -7,22 +7,18 @@ client to directly access your LCS project, environment, and server from within
 your Liferay instance. This article covers the following topics to help you get 
 your client up and running with LCS:
 
-- [**Downloading the LCS Client:**](/discover/portal/-/knowledge_base/6-2/configuring-the-lcs-client#downloading-the-lcs-client)
+- [**Downloading the LCS Client:**](/discover/deployment/-/knowledge_base/6-2/configuring-the-lcs-client#downloading-the-lcs-client)
   This section shows you where you can download the LCS client app. 
 
-- [**Preconfiguring the LCS Client:**](/discover/portal/-/knowledge_base/6-2/configuring-the-lcs-client#preconfiguring-the-lcs-client)
+- [**Preconfiguring the LCS Client:**](/discover/deployment/-/knowledge_base/6-2/configuring-the-lcs-client#preconfiguring-the-lcs-client)
   If your server connects to the Internet through a proxy, you must preconfigure 
   the LCS client app before you deploy it to your Liferay instance. This section 
   shows you how to do this.
 
-- [**Registering the Client with LCS:**](/discover/portal/-/knowledge_base/6-2/configuring-the-lcs-client#registering-the-client-with-lcs)
+- [**Registering the Client with LCS:**](/discover/deployment/-/knowledge_base/6-2/configuring-the-lcs-client#registering-the-client-with-lcs)
   Once you've installed the LCS client app, you must register your Liferay 
-  instance with LCS. You can do this manually or automatically. Manual 
-  registration may work, but is deprecated and not recommended. You should 
-  instead 
-  [register with *environment tokens*](/discover/portal/-/knowledge_base/6-2/using-lcs#using-environment-tokens). 
-  If you still want to manually register your Liferay instance with LCS, 
-  however, this section shows you how to do so.
+  instance with LCS. You can do this by 
+  [using *environment tokens*](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens). 
 
 Note that to use LCS, you must have an account at 
 [Liferay.com](http://www.liferay.com/). 
@@ -41,35 +37,21 @@ version 153 or higher of the LCS client app. To determine the client version in
 a Liferay instance already connected to LCS, navigate to *Liferay Connected 
 Services* under the *Apps* section of the *Control Panel*. The client version is 
 displayed under the *Disconnect* button. Also, if you use 
-[environment tokens](/discover/portal/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
+[environment tokens](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
 to connect, you should generate and use new tokens when upgrading the client 
 from versions 152 or lower to versions 153 or higher. 
 
 $$$
 
-You can also download the LCS client app from 
-[lcs.liferay.com](https://lcs.liferay.com). 
-When you first log in, the Welcome screen prompts you to select your Liferay 
-version and edition. After doing so, the LCS client's version is listed 
-next to a *Download* button. Click this button to download the client. For 
-example, the following screenshot shows the Welcome screen with Liferay Portal 
-6.2 EE selected. 
+You can also download the LCS client app from the *Downloads* tab on 
+[lcs.liferay.com](https://lcs.liferay.com). The following screenshot shows this: 
 
-![Figure 4.1: When you first log in to LCS, you can download the LCS client from the Welcome screen.](../../images/lcs-welcome-client-download.png)
-
-Note that you'll only see the Welcome screen the first time you log in to LCS. 
-If you need to download the client again later, you can do so from the Liferay 
-Marketplace or the *Connection* tab inside LCS. When you click the *Connection* 
-tab, the *Client Downloads* button is automatically selected. This presents the 
-same screen as earlier, in which you can download the client. The following 
-screenshot shows this: 
-
-![Figure 4.2: You can also download the LCS client from the Connection tab inside of LCS.](../../images/lcs-client-download-connection.png)
+![Figure 4.2: You can also download the LCS client from the Downloads tab inside of LCS.](../../images/lcs-client-download-connection.png)
 
 Super! Now you know where to get the LCS client. Before you deploy it though, 
 there are a few other things you should check. If you connect to the web through 
-a proxy, proceed to the next section. Otherwise, you can skip this section and 
-move on to the section on registering the client with LCS. 
+a proxy, proceed to the next section. Otherwise, you can skip ahead to the 
+section on registering the client with LCS. 
 
 ## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
 
@@ -106,109 +88,93 @@ with LCS.
 ## Registering the Client with LCS [](id=registering-the-client-with-lcs)
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
+You'll use an 
+[LCS environment token](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
+to do this: 
 
-+$$$
+1. Log in to 
+   [lcs.liferay.com](https://lcs.liferay.com). This takes you to your company's 
+   LCS project. If your company has multiple projects, select the one you want 
+   to register this server under from the user menu at the top right. 
 
-**Warning:** The manual registration steps in this section are deprecated, and 
-may not work. 
-[Using an environment token](/discover/portal/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
-is the preferred way to register your server with LCS. 
+    ![Figure 1: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images/lcs-user-menu-manage-projects.png)
 
-$$$
+2. Ensure that an environment exists to register your server under. If you have 
+   sufficient permissions in your company's project, you can create a new 
+   environment by selecting the *Add Environment* tab. 
 
-Access the client by clicking on *Liferay Connected Services* under the *Apps* 
-section of the *Control Panel*. 
+    ![Figure 2: To connect to LCS, you must register your Liferay server in an LCS environment. The red box in this screenshot highlights an environment.](../../images/lcs-registration-select-environment.png)
 
-![Figure 4.3: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-post-install-01.png)
+3. If you don't want to use LCS's subscriptions feature to activate your Liferay 
+   instance, you can skip this step. Otherwise, select the *Subscriptions* tab, 
+   and check the *Assign Subscription Type* table to ensure that the environment 
+   you want to activate your server in has a subscription type. If it doesn't, 
+   you can assign it one by selecting the *No Subscriptions* link and then 
+   choosing a subscription type. You should **use caution** when setting an 
+   environment's subscription type. All the servers in an environment **must be 
+   shut down** to assign that environment's subscription type. Also, **once set, 
+   you can't change an environment's subscription type**. 
+   [Click here](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-ee-subscriptions) 
+   for more information on using subscriptions in LCS. 
 
-The LCS client first asks you to choose the LCS services you want to enable for 
-this portal instance. Note that you're not stuck with your choices here: you can 
-change any of these settings after registration. The *Enable All Services* 
-checkbox is selected by default. This enables portal analytics, fix pack 
-management, and portal property analysis. Unchecking this checkbox presents you 
-with additional checkboxes for enabling each of those services. Note that 
-although 
-[LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers), 
-you may have additional properties you want to prevent LCS from analyzing. If 
-you select *Portal Properties Analysis*, a text box appears for you to enter any 
-properties you don't want LCS to analyze. Click *Next* when you finish enabling 
-the LCS services you want to use. 
+    ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images/lcs-environment-subscriptions.png)
 
-![Figure 4.4: If you unselect *Enable All Services*, you can enable each LCS service that you want to use with your portal.](../../images/lcs-enable-services.png)
+4. Select the environment you want to register your server under, and then 
+   select the *Registration* tab. This tab is where you can download and manage 
+   the environment's token. In the Registration tab's *Services* section, first 
+   select the LCS services that you want to use with all Liferay servers that 
+   connect to this environment. All services are selected by default. Your 
+   selections of LCS services here are embedded in the token file. 
 
-Next, LCS asks you to authorize access to your LCS account. After clicking 
-*Authorize Access*, LCS takes you to the LCS website. Log in with your 
-credentials and then click *Grant Access*. 
+    ![Figure 4: An environment's Registration tab lets you manage the token file used to connect Liferay instances to the environment.](../../images/lcs-registration.png) 
 
-![Figure 4.5: The LCS client requires access to your LCS account.](../../images/lcs-auth-access.png)
+5. Now you must use the Registration tab to generate, regenerate, and/or 
+   download the token file. The actions you take here depend on two things: what 
+   you did in the previous step and whether the environment has a token file 
+   already. Note that if the environment already has a token file, the Generate 
+   Token button is replaced by the Download Token button: 
 
-Now you must register your server with LCS by filling out the following fields:
+    - **No existing token file:** Generate the token by clicking *Generate 
+      Token*. 
+    - **Existing token file, and changed selections of LCS services:** 
+      Regenerate the token by clicking *Regenerate Token*. Note that if you 
+      regenerate the token, all Liferay servers that currently use it will be 
+      disconnected from LCS and won't be able to reconnect until receiving the 
+      new token. 
+    - **Existing token file, and no changes to selections of LCS services:** No 
+      token generation or regeneration is required.
 
-1. Connected Services Project: Choose an existing LCS project from the menu. If 
-   you don't yet have an LCS project, you can use the default *My LCS Project* 
-   that LCS creates for you (you can change this project's name later). 
+    Once you've taken the appropriate action, download the token file by 
+    clicking the *Download Token* button at the bottom of the screen. 
+    [Click here](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
+    for more information on environment tokens.
 
-2. Environment: An environment should be a logical group of servers. A group of 
-   development servers or a cluster are good examples of environments. Select an 
-   existing environment from the menu, or create a new one by clicking the *Add 
-   New Environment* button. If you don't yet have an environment, you can use 
-   the default *My Environment* that LCS creates for you (you can change this 
-   environment's name later). If you elect to create a new environment, a popup 
-   asks you to enter the new environment's *Name*, *Location*, and 
-   *Description*. 
+6. Shut down your Liferay instance if it's running. Place the token file in your 
+   instance's `[Liferay_Home]/data` folder, and then start the instance. On 
+   startup, the LCS client app uses the environment token to connect your 
+   Liferay instance to the LCS environment that corresponds to the token. 
 
-    ![Figure 4.6: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
+7. Celebrate! Your Liferay server is connected to LCS. 
 
-3. Server Name: Give your server a name that you can use to distinguish it LCS. 
-   Note that server names in LCS aren't case sensitive. Also, you can't have 
-   duplicate server names in an environment. For example, you can't have servers 
-   named *server01* and *SERVER01* in the same environment. 
+In your Liferay instance, you can view your LCS connection status in the LCS 
+client app. Access the client by clicking *Liferay Connected Services* under the 
+*Apps* section of the *Control Panel*. 
 
-4. Server Location: This can be a city, location in an office building, or 
-   anywhere else that lets you know where the server is physically located.
+Here's a full description of what a connected LCS client app displays: 
 
-5. Server Description: Type in any description that you want to give your 
-   server. You can use this field to help differentiate the servers you manage 
-   with LCS.
-
-![Figure 4.7: The server registration screen.](../../images/lcs-register-server.png)
-
-Upon clicking *Register*, your LCS client shows your connection status. Note 
-that it can take up to 10 or 20 seconds to perform the initial handshake and 
-send the first batch of information to LCS. If you don't see any change in 
-status after 20 seconds, try refreshing the page. If you see a red symbol 
-indicating no data is being transmitted, please contact the Liferay team for 
-support. 
-
-Once a successful connection is established, some statistics and links are
-displayed. Note that you can change which LCS services are enabled for your 
-portal by clicking the *Configure Services* link. 
-
-Here's a full description of what's displayed:
-
-- **Heartbeat Interval:** The interval of the communication that maintains the 
-  connection with LCS. This regular communication keeps the client's LCS 
-  connection alive, even when there's nothing else to report. The value is 
-  listed in hours, minutes, and then seconds. For example, if this value is 
-  `00:01:00`, the client communicates with LCS once every minute. This article's 
-  previous section contains instructions for changing the heartbeat interval.
-- **Message Task Interval:** The interval at which the client checks LCS for new 
-  messages. For example, LCS messages are used to instruct the client to 
-  download new fix packs. Currently, this interval is fixed and can't be 
-  changed. 
-- **Metrics Task Interval:** The interval at which server statistics and metrics 
-  are sent to LCS. Currently, this interval is fixed and can't be changed. 
-- **Last Message Received:** The time the latest message was received from LCS.
 - **Connection Uptime:** The duration of the client's connection with LCS.
-- **Project Home:** This link takes you to this server's registered LCS project. 
-  The project home in LCS is also called the *dashboard*.
-- **Environment:** This link takes you to this server's registered environment.
+- **Last Message Received:** The time the latest message was received from LCS.
+- **Services:** The LCS services enabled for this Liferay instance. Note that 
+  all Liferay instances that connect to the same LCS environment must use the 
+  same set of LCS services. LCS services can't be enabled on an 
+  instance-by-instance basis. 
+- **Project Home:** This link takes you to this server's LCS project. The 
+  project home in LCS is also called the *dashboard*. 
+- **Environment:** This link takes you to this server's LCS environment.
 - **Server Dashboard:** This link takes you to the server on LCS.
-- **Configure Services:** This link lets you change which LCS services are 
-  enabled for your portal. Doing so triggers reconnection with the new settings. 
-- **Disconnect:** Disconnects this Liferay instance from LCS.
+- **Disconnect:** Disconnects this Liferay instance from LCS. 
 
 ![Figure 4.8: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
-Awesome! Now that you've registered your server with your LCS account, you can 
-dig in to the features of LCS. 
+Awesome! Now that you've registered your server with LCS, you can dig in to the 
+features of LCS. 
