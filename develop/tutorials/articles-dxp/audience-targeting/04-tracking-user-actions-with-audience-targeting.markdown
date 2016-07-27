@@ -19,59 +19,126 @@ visit the
 [Defining Metrics](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
 section.
 
-To follow this tutorial, you must first have the Audience Targeting development
-tools installed. Visit the
-[Installing the Audience Targeting Development Tools](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types#installing-the-audience-targeting-development-tools)
-section for information on how to do this.
-
-Next, you'll begin learning how to create a custom report metric using the
-Audience Targeting tracking action Blade CLI template.
+Next, you'll begin learning how to create a custom report metric.
 
 ## Creating a Metric
 
 Adding a new custom report metric to the Audience Targeting application is easy.
-In this tutorial, you'll learn how to create a metric and deploy it to your
-Liferay server.
-
-1. Run the `blade create -t contenttargetingtrackingaction` command from a
-   command prompt. For example, the command below creates a tracking action
-   project with `newsletter` for its project name and `NewsletterTrackingAction`
-   as its class name within the `com.liferay.content.targeting.tracking.action`
-   package:
-
-        blade create -t contenttargetingtrackingaction -p com.liferay -c Newsletter newsletter
-
-2. Navigate to the newly generated project folder that has your tracking
-   action's name. Open the folder and study what's been generated.
-
-    The `blade create -t contenttargetingtrackingaction` command created default
-    files that make the plugin deployable.
-
-3. Now is a convenient time to deploy the project to see how it currently looks
-   in Portal.
-
-    To deploy the plugin project, start a @product@ instance, open a terminal to
-    your plugin project's directory, and run the `blade deploy` command. You'll
-    find this new metric listed when creating or editing a campaign custom
-    report in the Audience Targeting application.
-
-4. To view your new metric, navigate to your portal's Site Administration &rarr;
-   *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* &rarr; *Edit
-   Campaign*. Then click *Reports* &rarr; *Add Custom Report* and scroll down to
-   the Metrics form.
-
-    ![Figure 1: You can add your new metric to the form, but it doesn't do anything yet.](../../images-dxp/tracking-action-deploy.png)
-
-You've successfully deployed your metric plugin. Next, you'll learn about the
-components that were generated for you and how to edit them to create a
-functional Audience Targeting custom report metric.
-
 There are four components you can specify for your metric:
 
 - *Metric Behavior*
 - *Tracking Mechanism*
 - *UI for Configuration (optional)*
 - *Language Keys (optional)*
+
+Before you can define your rule's components, you must create a module and
+ensure it has the necessary Content Targeting dependencies.
+
+1. Create a module for deploying a metric using your favorite third party tool.
+   A Blade CLI
+   [contenttargetingtrackingaction](/develop/tutorials/-/knowledge_base/7-0/content-targeting-tracking-action-template)
+   template is available to help you get started quickly by setting all the
+   default configuration for you, and it contains boilerplate code so you can
+   skip the file creation steps and get started right away.
+
+2. Make sure your module specifies the dependencies necessary for an Audience
+   Targeting metric. For example, you should specify the Content Targeting API
+   and necessary Liferay packages. For example, examine the example
+   `build.gradle` file used from a Gradle based rule:
+
+        dependencies {
+			compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.analytics.api", version: "3.0.0"
+			compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.anonymous.users.api", version: "2.0.2"
+			compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.3.0"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
+            compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+            compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+            compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+        }
+
+Once you've created your module and specified its dependencies, you'll need to
+define your metric's behavior. The behavior of your metric is controlled from a
+Java class file that you create.
+
+1. Create a unique package name in the module's `src` directory, and create a
+   new Java class in that package. To follow naming conventions, your class name
+   should begin with the metric name you're creating, and end with
+   *TrackingAction* (e.g., `NewsletterTrackingAction.java`). Your Java class
+   should implement the `TrackingAction` interface.
+
+2. Directly above the class's declaration, insert the following code:
+
+        @Component(immediate = true, service = TrackingAction.class)
+
+    This annotation declares the implementation class of the Component, and
+    specifies to immediately start the module once deployed to @product@.
+
+Before diving deeper into your `-TrackingAction` class, it's important to
+understand what is available for you to extend from this class. It is required
+to implement the `TrackingAction` interface, but there are `TrackingAction`
+extension classes you can extend from in your custom metric, which provide
+helpful utilities. For example, you can extend the `BaseJSPTrackingAction` class
+for support when generating your rule's UI using JSPs.
+
+Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
+extension views. FreeMarker views, however, are still supported through their
+respective base classes (e.g., `BaseFreemarkerTrackingAction`). If you're
+interested in using a technology besides JSP or FreeMarker to implement your UI,
+you can add a method `getFormHTML` to your `-TrackingAction` class.
+
+The `getFormHTML` is used to retrieve the HTML created by the technology you
+choose, and to return it as a string that is viewable from your metric's form.
+If you plan, therefore, on using an alternative to JSP or FreeMarker, you must
+override this method by creating and modifying it in your `-TrackingAction`
+class. This tutorial demonstrates implementing the UI using JSP, and assumes the
+`TrackingAction` interface is implemented by extending the
+`BaseJSPTrackingAction` class.
+
+Of course, you still need to make some additional changes to define how your
+metric works. Here are some of the methods that you can implement to modify your
+metric behavior:
+
+<!-- The below method descriptions are the Javadoc copied from the
+`TrackingAction` interface. Since the source code is not accessible and the
+Javadoc for Audience Targeting is not currently published, I've provided some
+methods and descriptions until the Javadoc is available publicly. -Cody -->
+
+- `activate`: Does processing when the tracking action is installed.
+- `deActivate`: Does processing when the tracking action is uninstalled.
+- `deleteData`: Removes any additional data added by this tracking action when
+  the tracking action instance is removed.
+- `exportData`: Exports any additional data added by this tracking action when
+  the tracking action instance is exported.
+- `getDescription`: Returns the tracking action localized description.
+- `getEventTypes`: Returns the list with the event types that can be monitored
+  by this tracking action.
+- `getFormHTML`: Returns the HTML code containing the form fields required to
+  edit the tracking action instance configuration, based on the context.
+- `getIcon`: Returns the Font Awesome CSS class for the tracking action icon.
+- `getName`: Returns the tracking action localized name.
+- `getShortDescription`: Returns the tracking action localized short
+  description.
+- `getSummary`: Returns the tracking action instance localized summary.
+- `getTrackingActionKey`: Returns the key that identifies the tracking action.
+  The tracking action instances of this tracking action are identified by their
+  tracking action key.
+- `importData`: Imports any additional data added by this tracking action when
+  the tracking action instance is imported.
+- `isInstantiable`: Returns `true` if the tracking action can be used more than
+  once with different values for a campaign.
+- `isVisible()`: Returns `true` if the tracking action is visible.
+- `isVisible(String, long)`: Returns `true` if the tracking action is visible.
+- `processTrackingAction`: Returns the result of evaluating the tracking action
+  form fields in the context of the request and response.
+
+
+
+
+
+
+
+
 
 The behavior of your metric is controlled from a Java class located in your
 metric's `src/main/java/com/liferay/content/targeting/tracking/action` folder.
@@ -268,6 +335,40 @@ metric as a
 You now have all the knowledge necessary to create your own customized metric
 and deploy it to your Audience Targeting application. With this, you can
 generate custom reports to measure any user interaction.
+
+<!--
+1. Run the `blade create -t contenttargetingtrackingaction` command from a
+   command prompt. For example, the command below creates a tracking action
+   project with `newsletter` for its project name and `NewsletterTrackingAction`
+   as its class name within the `com.liferay.content.targeting.tracking.action`
+   package:
+
+        blade create -t contenttargetingtrackingaction -p com.liferay -c Newsletter newsletter
+
+2. Navigate to the newly generated project folder that has your tracking
+   action's name. Open the folder and study what's been generated.
+
+    The `blade create -t contenttargetingtrackingaction` command created default
+    files that make the plugin deployable.
+
+3. Now is a convenient time to deploy the project to see how it currently looks
+   in Portal.
+
+    To deploy the plugin project, start a @product@ instance, open a terminal to
+    your plugin project's directory, and run the `blade deploy` command. You'll
+    find this new metric listed when creating or editing a campaign custom
+    report in the Audience Targeting application.
+
+4. To view your new metric, navigate to your portal's Site Administration &rarr;
+   *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* &rarr; *Edit
+   Campaign*. Then click *Reports* &rarr; *Add Custom Report* and scroll down to
+   the Metrics form.
+
+    ![Figure 1: You can add your new metric to the form, but it doesn't do anything yet.](../../images-dxp/tracking-action-deploy.png)
+
+You've successfully deployed your metric plugin. Next, you'll learn about the
+components that were generated for you and how to edit them to create a
+functional Audience Targeting custom report metric.-->
 
 ## Related Topics
 

@@ -26,7 +26,7 @@ ensure it has the necessary Content Targeting dependencies.
 
 1. Create a module for deploying a rule using your favorite third party tool. A
    Blade CLI
-   [contenttargetingrule](/develop/tutorials/-/knowledge_base/7-0/using-the-content-template)
+   [contenttargetingrule](/develop/tutorials/-/knowledge_base/7-0/content-targeting-rule-template)
    template is available to help you get started quickly by setting all the
    default configuration for you, and it contains boilerplate code so you can
    skip the file creation steps and get started right away.
