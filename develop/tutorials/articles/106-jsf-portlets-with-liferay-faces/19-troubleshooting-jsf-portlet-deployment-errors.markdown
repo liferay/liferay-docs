@@ -37,26 +37,26 @@ server.
    [Building Liferay Faces from Source](/develop/tutorials/-/knowledge_base/6-2/building-liferay-faces-from-source)
    tutorial for more information.
 
-6. Build the `jsf2-portlet` from liferay-faces on Github and deploy it to your
+6. Build the `jsf-applicant-portlet` from liferay-faces on Github and deploy it to your
    portal bundle. The following commands do this using the JBoss profile:
 
-        cd liferay-faces/demos/bridge/jsf2-portlet
+        cd demo/jsf-applicant-portlet
         mvn -P jboss clean package
-        cp target/jsf2-portlet*.war $LIFERAY_HOME/deploy
+        cp target/jsf-applicant-portlet*.war $LIFERAY_HOME/deploy
 
-7. Build the `primefaces4-portlet` from liferay-faces on Github and deploy it to
-   your portal bundle. For example, the commands below do this using the JBoss
-   profile:
+7. Build the `primefaces-applicant-portlet` from liferay-faces on Github and
+   deploy it to your portal bundle. For example, the commands below do this
+   using the JBoss profile:
 
-        cd liferay-faces/demos/bridge/primefaces4-portlet
+        cd demo/primefaces-applicant-portlet
         mvn -P jboss clean package
-        cp target/primefaces4-portlet*.war $LIFERAY_HOME/deploy
+        cp target/primefaces-applicant-portlet*.war $LIFERAY_HOME/deploy
 
     +$$$
 
     **Note:** In some cases, you may need to clean and reinstall all projects in
-    liferay-faces before you can succesfully build the demo portlets. To do
-    this, run `mvn clean install` from the top-level `liferay-faces` directory.
+    the Git repo before you can succesfully build the demo portlets. To do
+    this, run `mvn clean install` from the top-level directory.
 
     $$$
 

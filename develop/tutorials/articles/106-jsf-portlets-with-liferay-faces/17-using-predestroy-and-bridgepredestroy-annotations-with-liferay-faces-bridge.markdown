@@ -5,7 +5,7 @@ annotations and how to use them.
 
 When JSF developers want to perform cleanup on managed-beans before theyre
 destroyed, they typically annotate a method inside the bean using the
-`@PreDestroy` annotation. Section 6.8.1 of the JSR 329 standard, however,
+`@PreDestroy` annotation. Section 6.8.1 of the JSR 329/378 standard, however,
 discusses the need for the `@BridgePreDestroy` and
 `@BridgeRequestScopeAttributeAdded` annotations in the bridge API. 
 
@@ -21,7 +21,7 @@ In order to understand this requirement, it's necessary to differentiate between
 deployed in the same (local) portlet container. Remote portals invoke portlets
 that are deployed elsewhere via WSRP (Web Services for Remote Portlets). The
 `@BridgePreDestroy` and `@BridgeRequestScopeAttributeAdded` annotations were
-introduced into the JSR 329 standard primarily to support WSRP in remote
+introduced into the JSR 329/378 standard primarily to support WSRP in remote
 portals. That being the case, the standard indicates that developers should
 always use `@BridgePreDestroy` instead of `@PreDestroy`. Liferay Faces Bridge,
 however, takes a different approach: rather than assuming the remote portal
@@ -61,7 +61,7 @@ specified on a portlet-by-portlet basis in the portlet project's
 
 Be learning these requirements, you're able to perform cleanup on managed-beans
 before they're destroyed. You can do all of this while still abiding by section
-6.8.1 of the JSR 329 standard. 
+6.8.1 of the JSR 329/378 standard. 
 
 ## Related Topics [](id=related-topics)
 
