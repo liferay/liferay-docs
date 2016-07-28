@@ -516,19 +516,21 @@ To decommission a server and free its activation key for reuse, select the
 server's environment on the left and then select the server. In the server's 
 *Server Settings* tab, select *Unregister*. 
 
-The next section shows you how to use environment tokens to activate Liferay EE 
+The next section shows you how to use environment tokens to connect Liferay EE 
 instances with LCS. 
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
-When a subscription type is assigned to an environment, that environment's token 
-file lets Liferay instances connect to LCS and consume an activation key from 
-that subscription. LCS Administrators and Environment Managers can generate and 
-distribute this environment token file. It contains all the information the LCS 
-client app needs to connect and activate the Liferay instance with the 
-environment. This means that you don't need to enter this information manually 
-whenever you want to set up a Liferay instance: simply use the environment token 
-file. 
+An environment's token file connects Liferay instances to that environment in 
+LCS. If the instance isn't activated and a subscription type is assigned to the 
+environment, the instance activates by consuming an activation key from that 
+subscription. 
+
+LCS Administrators and Environment Managers can generate and distribute an 
+environment's token file. It contains all the information the LCS client app 
+needs to connect and activate the Liferay instance with the environment. This 
+means that you don't need to enter this information manually whenever you want 
+to set up a Liferay instance: simply use the environment token file. 
 
 +$$$
 
@@ -547,22 +549,23 @@ There are a few things to keep in mind when using environment tokens:
 - Each environment can have only one token file. 
 
 - Use caution when distributing the token file, as anyone can use it to connect 
-  to your environment and consume an activation key in your subscription. 
+  to your environment. If your environment has a subscription type, an 
+  activation key will be consumed from your subscription. 
 
 - Be careful when regenerating a token file from LCS. When this is done, Liferay 
   instances using the old file are disconnected from LCS and can't reconnect 
   until restarting with the new file. 
 
-- Minimal information (server name, location, etc...) is used to activate a 
+- Minimal information (server name, location, etc...) is used to connect a 
   Liferay instance with LCS. You can change this information from 
   [the server view in LCS](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-the-server-view) 
   at any time. 
 
 - Since environment tokens connect using OAuth, it's important to note that 
   using an environment token overrides the OAuth authorization cycle. If an LCS 
-  Administrator or Environment Manager has never activated Liferay instances 
+  Administrator or Environment Manager has never connected Liferay instances 
   with LCS, the first time they do so an OAuth authorization entry is created in 
-  LCS. If they've previously activated Liferay instances with LCS, their 
+  LCS. If they've previously connected Liferay instances with LCS, their 
   existing credentials are used when they create a token file. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
@@ -633,8 +636,8 @@ The actions corresponding with the numbers in this table are described here:
    token. 
 
 To download an environment's token, click the *Download Token* button. Once you 
-download the token, follow these steps to use it to connect and activate a 
-Liferay instance with LCS: 
+download the token, follow these steps to use it to connect a Liferay instance 
+to LCS: 
 
 1. Ensure that you've deployed the LCS client app, and have configured it 
    properly if you connect from behind a proxy. For instructions on configuring 
@@ -651,12 +654,12 @@ Liferay instance with LCS:
    then start the instance. 
 
 On startup, the LCS client app automatically connects your Liferay instance to 
-LCS. Upon connection, your Liferay instance activates by consuming an activation 
-key from the environment's subscription type. You should see this in your LCS 
-project's Subscriptions tab. 
+LCS. If the instance isn't activated and a subscription type is assigned to the 
+environment, the instance activates by consuming an activation key from that 
+subscription. You should see this in your LCS project's Subscriptions tab. 
 
-Awesome! Now you know how to use environment tokens to register your Liferay 
-instances with LCS. 
+Awesome! Now you know how to use environment tokens to connect your Liferay 
+instances to LCS. 
 
 As you've now seen, LCS is a powerful tool that assists you in the management of 
 your Liferay servers. In addition to activating your Liferay servers, LCS lets 
