@@ -215,10 +215,12 @@ patching tool is unavailable, or other events occur that relate to LCS.
 ![Figure 4.13: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
-can also create new environments here by clicking the Add Environment tab. Note 
-that the icon to the left of each environment differs depending on the 
-environment's type and status. The icon's color and type tells you something 
-about that environment:
+can also create new environments here by clicking the Add Environment tab. To 
+view an environment's settings, click the environment's gear icon. You can also 
+get more information about a specific environment by clicking it. This takes you 
+to the environment view. Also note that the icon to the left of each environment 
+differs depending on the environment's type and status. The icon's color and 
+type tells you something about that environment: 
 
 - **Red icon:** Indicates a problem or issue with one or more servers in that 
   environment.
@@ -227,9 +229,16 @@ about that environment:
 - **Icon with a circle:** Indicates that the servers in that environment are in 
   a cluster.
 
-To view the environment's settings, click the environment's gear icon. You can 
-also get more information about a specific environment by clicking it. This 
-takes you to the environment view. 
+Note that only clustered environments can contain clustered servers. LCS 
+environments can only be designated as clustered when they are created. To 
+create a clustered environment, click *Add Environment* and select the *Cluster* 
+checkbox when filling out the environment's information. Note that you must set 
+the portal property `cluster.link.enabled` to `true` in any servers that connect 
+to a clustered environment. 
+
+![Figure 4.14: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../images/lcs-new-clustered-environment.png)
+
+Next, you'll learn how to use the environment view. 
 
 ### Using the Environment View [](id=using-the-environment-view)
 
@@ -269,7 +278,7 @@ The UI is segmented into three tabs:
    delete the environment by clicking *Delete Environment*, next to the Save 
    button. 
 
-![Figure 4.14: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
+![Figure 4.15: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
 Regardless of the tab you're in, the left side of the screen displays a list of 
 the environment's servers. To view a server's settings, click the server's gear 
@@ -315,7 +324,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 4.15: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics-01.png)
+![Figure 4.16: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics-01.png)
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -329,7 +338,7 @@ portlets in your server. The Cache category lists Liferay Single VM metrics and
 Hibernate metrics. The following screenshot shows the statistics in the Portlets 
 category.
 
-![Figure 4.16: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
+![Figure 4.17: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -338,7 +347,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the PS Survivor Space, PS Old Gen, PS Eden Space, Code Cache, and PS 
 Perm Gen.
 
-![Figure 4.17: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
+![Figure 4.18: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
 additional information about how your server is running. For example, a 
@@ -346,7 +355,7 @@ horizontal bar graph shows the number of current threads running on your server.
 Similarly, horizontal bar graphs are used to represent the JDBC connection 
 pools. 
 
-![Figure 4.18: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
+![Figure 4.19: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
 To view your server's fix packs, click the Fix Packs tab near the top of the 
 page. The fix packs here are shown in separate tables for those available for 
@@ -354,7 +363,7 @@ installation, and those already installed. The Available fix packs table
 functions exactly like the Fix Packs table in environment view for downloading 
 and installing fix packs. 
 
-![Figure 4.19: The Fix Packs tab displays your server's fix packs and alerts.](../../images/lcs-server-fix-packs.png)
+![Figure 4.20: The Fix Packs tab displays your server's fix packs and alerts.](../../images/lcs-server-fix-packs.png)
 
 LCS also lets you view your portal's property values. To do so, click the 
 *Portal Properties* tab near the top of the page. Your portal's properties and 
@@ -381,7 +390,7 @@ top-right of the table. For example, by checking the *Show Default Values* and
 custom property values. To show only the custom values, check only the checkbox 
 for *Show Custom Values*. 
 
-![Figure 4.20: Click the gear icon to select the type of portal properties to show in the table.](../../images/lcs-server-portal-properties.png)
+![Figure 4.21: Click the gear icon to select the type of portal properties to show in the table.](../../images/lcs-server-portal-properties.png)
 
 To view general information about your Liferay installation, click the *Details* 
 tab near the top of the screen. There are three tabs under Details: *Software*, 
@@ -389,7 +398,7 @@ tab near the top of the screen. There are three tabs under Details: *Software*,
 installation, Java installation, and hardware. This information is useful to the 
 Liferay support team in the event that you need their assistance. 
 
-![Figure 4.21: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
+![Figure 4.22: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
 
 Lastly, click the *Server Settings* tab near the top of the screen to view and 
 edit your server's name, location, and description. You can also use the Server 
@@ -414,7 +423,7 @@ After marking one or more notifications as read, an *Undo* button appears. Click
 select *My Account* from your user menu in the Dockbar, and then select the 
 *Notification History* tab. 
 
-![Figure 4.22: LCS sends you web notifications that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images/lcs-user-web-notifications.png)
+![Figure 4.23: LCS sends you web notifications that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images/lcs-user-web-notifications.png)
 
 Next, you'll learn how to manage your LCS account. 
 
@@ -429,7 +438,7 @@ notifications are configured by adding *rules*. The rules define what events
 trigger a notification. There are no notification rules by default. Click the 
 *Add Rule* button to define one. 
 
-![Figure 4.23: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
+![Figure 4.24: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
 First specify the project, environment, and server for the notification. Note 
 that you have the option of selecting all environments and servers in a
@@ -450,7 +459,7 @@ near the top of the UI. This tab lets you change your account's language, time
 zone, and default LCS project. Your default LCS project is the one shown each 
 time you log in to LCS. 
 
-![Figure 4.24: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
+![Figure 4.25: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. Next, you'll learn how to 
 use LCS to work with your Liferay EE subscriptions. 
@@ -606,7 +615,7 @@ tab. This tab contains the following sections:
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
 
-![Figure 4.25: An environment's Registration tab lets you select the LCS services to use with your Liferay servers that connect to that environment.](../../images/lcs-environment-token.png)
+![Figure 4.26: An environment's Registration tab lets you select the LCS services to use with your Liferay servers that connect to that environment.](../../images/lcs-environment-token.png)
 
 Whether you must generate or regenerate a token depends on the actions you took 
 in the Services section, and whether there's an existing token in the 
