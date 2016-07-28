@@ -14,7 +14,13 @@ to do this:
 
 2. Ensure that an environment exists to activate your server under. If you have 
    sufficient permissions in your company's project, you can create a new 
-   environment by selecting the *Add Environment* tab. 
+   environment by selecting the *Add Environment* tab. Note that you must 
+   activate a clustered server in a clustered environment. LCS environments can 
+   only be designated as clustered when they are created. To create a clustered 
+   environment, click *Add Environment* and select the *Cluster* checkbox when 
+   filling out the environment's information. Note that you must set the portal 
+   property `cluster.link.enabled` to `true` in any servers that connect to a 
+   clustered environment. 
 
     ![Figure 2: You must activate your DXP server in an LCS environment. The red box in this screenshot highlights an environment.](../../../../images-dxp/lcs-registration-select-environment.png)
 

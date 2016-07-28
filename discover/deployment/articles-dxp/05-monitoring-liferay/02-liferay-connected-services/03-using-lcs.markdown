@@ -227,7 +227,16 @@ about that environment:
 - **Icon with a circle:** Indicates that the servers in that environment are in 
   a cluster.
 
-To view the environment's settings, click the environment's gear icon. You can 
+Note that only clustered environments can contain clustered servers. LCS 
+environments can only be designated as clustered when they are created. To 
+create a clustered environment, click *Add Environment* and select the *Cluster* 
+checkbox when filling out the environment's information. Note that you must set 
+the portal property `cluster.link.enabled` to `true` in any servers that connect 
+to a clustered environment. 
+
+![Figure 9: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../../images-dxp/lcs-new-clustered-environment.png)
+
+To view an environment's settings, click the environment's gear icon. You can 
 also get more information about a specific environment by clicking it. This 
 takes you to the environment view. 
 
