@@ -298,7 +298,7 @@ In WebSphere's administrative console, go to *Security* &rarr;
 *Global Security*. Check the box to enable Java 2 security, and click *Apply*. 
 Save to the master configuration. 
 
-![Figure 3: Enabling security can be done by checking one box, but it still needs to be configured.](../../images-dxp/websphere-security.png)
+![Figure 5: Enabling security can be done by checking one box, but it still needs to be configured.](../../images-dxp/websphere-security.png)
 
 Now you must configure the security policy for the IBM JRE that WebSphere runs 
 on. With your WebSphere server shut down, open the following security policy 

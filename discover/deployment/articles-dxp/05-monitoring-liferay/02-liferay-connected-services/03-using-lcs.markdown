@@ -89,7 +89,7 @@ simple UI for managing these projects. To access this UI, log in to LCS and then
 select *Manage Projects* from your user menu in the Dockbar. The following 
 screenshot illustrates this.
 
-![Figure 2: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../../images-dxp/lcs-user-menu-manage-projects.png)
+![Figure 1: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../../images-dxp/lcs-user-menu-manage-projects.png)
 
 The *My Projects* tab is shown first, and shows a table that lists each of your 
 LCS projects. This table also lists the administrator's email address for each 
@@ -97,7 +97,7 @@ project. If you're the administrator of a project, you can edit its name by
 clicking the blue pencil icon next to it in the table. The following screenshot 
 shows the My Projects tab. 
 
-![Figure 3: The My Projects tab lists your LCS projects.](../../../images-dxp/lcs-my-projects.png)
+![Figure 2: The My Projects tab lists your LCS projects.](../../../images-dxp/lcs-my-projects.png)
 
 The *Unlinked* tab shows your Liferay projects that aren't connected with LCS. 
 For example, if you've submitted an app on Liferay Marketplace, then it's a 
@@ -117,7 +117,7 @@ lets you quickly and easily join the LCS projects that are associated with your
 company. The following screenshot shows the Company tab (the administrator email 
 addresses have been masked).
 
-![Figure 4: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../../images-dxp/lcs-company-projects.png)
+![Figure 3: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../../images-dxp/lcs-company-projects.png)
 
 So what can an LCS Administrator do? Why did you mask out their email addresses 
 in the previous screenshots? These are fantastic questions! The LCS 
@@ -169,7 +169,7 @@ just below the Dashboard tab on the upper-left of your screen. You're presented
 with a table of the users in your project. To the right of each is the Manage 
 button. Clicking *Manage* lets you assign or revoke LCS roles for that user. 
 
-![Figure 5: The Users tab lets you manage the LCS users in your project.](../../../images-dxp/lcs-users.png)
+![Figure 4: The Users tab lets you manage the LCS users in your project.](../../../images-dxp/lcs-users.png)
 
 To invite external users to your project, click the *Invite* button. Here you
 can invite anyone with a valid email address. You can also search for
@@ -178,7 +178,7 @@ box lets you preassign LCS roles for when they accept your invitation. You can
 also use the Environment selection box to preassign them to an environment in
 your project.
 
-![Figure 6: You can invite users to your LCS project and even preassign them roles.](../../../images-dxp/lcs-invite-users.png)
+![Figure 5: You can invite users to your LCS project and even preassign them roles.](../../../images-dxp/lcs-invite-users.png)
 
 To view sent invitations, click the *Invitations* tab. A table displays
 invitations, listing invited users' email addresses along with who invited them
@@ -186,7 +186,7 @@ and the date that the invitation was sent. The table also shoes the preassigned
 LCS role and environment. You can cancel an invitation by clicking *Cancel* in 
 the Action column of the invitation. 
 
-![Figure 7: The Invitations tab lets administrators view and cancel invitations.](../../../images-dxp/lcs-invitations.png)
+![Figure 6: The Invitations tab lets administrators view and cancel invitations.](../../../images-dxp/lcs-invitations.png)
 
 Great! Now you know how to manage your LCS projects and the users in them. Now 
 it's time to get to the heart of LCS: the Dashboard.
@@ -212,7 +212,7 @@ message appears for a server when the server is offline. Status messages also
 appear for servers when fix packs are available, monitoring is unavailable, the 
 patching tool is unavailable, or other events occur that relate to LCS. 
 
-![Figure 8: The LCS project view shows an overview of your LCS project.](../../../images-dxp/lcs-project-view.png)
+![Figure 7: The LCS project view shows an overview of your LCS project.](../../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
 can also create new environments here by clicking the Add Environment tab. To 
@@ -236,7 +236,7 @@ checkbox when filling out the environment's information. Note that you must set
 the portal property `cluster.link.enabled` to `true` in any servers that connect 
 to a clustered environment. 
 
-![Figure 9: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../../images-dxp/lcs-new-clustered-environment.png)
+![Figure 8: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../../images-dxp/lcs-new-clustered-environment.png)
 
 Next, you'll learn to use the environment view.
 
