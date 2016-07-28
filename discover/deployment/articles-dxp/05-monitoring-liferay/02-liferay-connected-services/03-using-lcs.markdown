@@ -215,10 +215,12 @@ patching tool is unavailable, or other events occur that relate to LCS.
 ![Figure 8: The LCS project view shows an overview of your LCS project.](../../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
-can also create new environments here by clicking the Add Environment tab. Note 
-that the icon to the left of each environment differs depending on the 
-environment's type and status. The icon's color and type tells you something 
-about that environment:
+can also create new environments here by clicking the Add Environment tab. To 
+view an environment's settings, click the environment's gear icon. You can also 
+get more information about a specific environment by clicking it. This takes you 
+to the environment view. Also note that the icon to the left of each environment 
+differs depending on the environment's type and status. The icon's color and 
+type tells you something about that environment: 
 
 - **Red icon:** Indicates a problem or issue with one or more servers in that 
   environment.
@@ -236,9 +238,7 @@ to a clustered environment.
 
 ![Figure 9: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../../images-dxp/lcs-new-clustered-environment.png)
 
-To view an environment's settings, click the environment's gear icon. You can 
-also get more information about a specific environment by clicking it. This 
-takes you to the environment view. 
+Next, you'll learn to use the environment view.
 
 ### Using the Environment View [](id=using-the-environment-view)
 
