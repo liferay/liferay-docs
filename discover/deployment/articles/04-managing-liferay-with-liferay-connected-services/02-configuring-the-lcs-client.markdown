@@ -1,4 +1,4 @@
-# Configuring the LCS Client [](id=configuring-the-lcs-client)
+# Configuring and Connecting the LCS Client [](id=configuring-the-lcs-client)
 
 To use LCS, the LCS client app must be installed in your Liferay instance and 
 registered with LCS. The LCS client connects your Liferay instance to LCS and 
@@ -46,7 +46,7 @@ $$$
 You can also download the LCS client app from the *Downloads* tab on 
 [lcs.liferay.com](https://lcs.liferay.com). The following screenshot shows this: 
 
-![Figure 4.2: You can also download the LCS client from the Downloads tab inside of LCS.](../../images/lcs-client-download-connection.png)
+![Figure 4.1: You can also download the LCS client from the Downloads tab inside of LCS.](../../images/lcs-client-download-connection.png)
 
 Super! Now you know where to get the LCS client. Before you deploy it though, 
 there are a few other things you should check. If you connect to the web through 
@@ -97,13 +97,13 @@ to do this:
    LCS project. If your company has multiple projects, select the one you want 
    to register this server under from the user menu at the top right. 
 
-    ![Figure 1: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images/lcs-user-menu-manage-projects.png)
+    ![Figure 4.2: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images/lcs-user-menu-manage-projects.png)
 
 2. Ensure that an environment exists to register your server under. If you have 
    sufficient permissions in your company's project, you can create a new 
    environment by selecting the *Add Environment* tab. 
 
-    ![Figure 2: To connect to LCS, you must register your Liferay server in an LCS environment. The red box in this screenshot highlights an environment.](../../images/lcs-registration-select-environment.png)
+    ![Figure 4.3: To connect to LCS, you must register your Liferay server in an LCS environment. The red box in this screenshot highlights an environment.](../../images/lcs-registration-select-environment.png)
 
 3. If you don't want to use LCS's subscriptions feature to activate your Liferay 
    instance, you can skip this step. Otherwise, select the *Subscriptions* tab, 
@@ -117,7 +117,7 @@ to do this:
    [Click here](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-ee-subscriptions) 
    for more information on using subscriptions in LCS. 
 
-    ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images/lcs-environment-subscriptions.png)
+    ![Figure 4.4: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images/lcs-environment-subscriptions.png)
 
 4. Select the environment you want to register your server under, and then 
    select the *Registration* tab. This tab is where you can download and manage 
@@ -126,7 +126,7 @@ to do this:
    connect to this environment. All services are selected by default. Your 
    selections of LCS services here are embedded in the token file. 
 
-    ![Figure 4: An environment's Registration tab lets you manage the token file used to connect Liferay instances to the environment.](../../images/lcs-registration.png) 
+    ![Figure 4.5: An environment's Registration tab lets you manage the token file used to connect Liferay instances to the environment.](../../images/lcs-registration.png) 
 
 5. Now you must use the Registration tab to generate, regenerate, and/or 
    download the token file. The actions you take here depend on two things: what 
@@ -174,7 +174,7 @@ Here's a full description of what a connected LCS client app displays:
 - **Server Dashboard:** This link takes you to the server on LCS.
 - **Disconnect:** Disconnects this Liferay instance from LCS. 
 
-![Figure 4.8: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure 4.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 Awesome! Now that you've registered your server with LCS, you can dig in to the 
 features of LCS. 

@@ -89,7 +89,7 @@ simple UI for managing these projects. To access this UI, log in to LCS and then
 select *Manage Projects* from your user menu in the Dockbar. The following 
 screenshot illustrates this.
 
-![Figure 4.10: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../images/lcs-user-menu-manage-projects.png)
+![Figure 4.7: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../images/lcs-user-menu-manage-projects.png)
 
 The *My Projects* tab is shown first, and shows a table that lists each of your 
 LCS projects. This table also lists the administrator's email address for each 
@@ -97,7 +97,7 @@ project. If you're the administrator of a project, you can edit its name by
 clicking the blue pencil icon next to it in the table. The following screenshot 
 shows the My Projects tab. 
 
-![Figure 4.11: The My Projects tab lists your LCS projects.](../../images/lcs-my-projects.png)
+![Figure 4.8: The My Projects tab lists your LCS projects.](../../images/lcs-my-projects.png)
 
 The *Unlinked* tab shows your Liferay projects that aren't connected with LCS. 
 For example, if you've submitted an app on Liferay Marketplace, then it's a 
@@ -117,7 +117,7 @@ lets you quickly and easily join the LCS projects that are associated with your
 company. The following screenshot shows the Company tab (the administrator email 
 addresses have been masked).
 
-![Figure 4.12: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../images/lcs-company-projects.png)
+![Figure 4.9: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../images/lcs-company-projects.png)
 
 So what can an LCS Administrator do? Why did you mask out their email addresses 
 in the previous screenshots? These are fantastic questions! The LCS 
@@ -169,7 +169,7 @@ just below the Dashboard tab on the upper-left of your screen. You're presented
 with a table of the users in your project. To the right of each is the Manage 
 button. Clicking *Manage* lets you assign or revoke LCS roles for that user. 
 
-![Figure 4.13: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
+![Figure 4.10: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 To invite external users to your project, click the *Invite* button. Here you
 can invite anyone with a valid email address. You can also search for
@@ -178,15 +178,15 @@ box lets you preassign LCS roles for when they accept your invitation. You can
 also use the Environment selection box to preassign them to an environment in
 your project.
 
-![Figure 4.14: You can invite users to your LCS project and even preassign them roles.](../../images/lcs-invite-users.png)
+![Figure 4.11: You can invite users to your LCS project and even preassign them roles.](../../images/lcs-invite-users.png)
 
 To view sent invitations, click the *Invitations* tab. A table displays
 invitations, listing invited users' email addresses along with who invited them
-and the date that the invitation was sent. The table also shoes the preassigned
+and the date that the invitation was sent. The table also shows the preassigned
 LCS role and environment. You can cancel an invitation by clicking *Cancel* in 
 the Action column of the invitation. 
 
-![Figure 4.15: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
+![Figure 4.12: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
 Great! Now you know how to manage your LCS projects and the users in them. Now 
 it's time to get to the heart of LCS: the Dashboard.
@@ -212,7 +212,7 @@ message appears for a server when the server is offline. Status messages also
 appear for servers when fix packs are available, monitoring is unavailable, the 
 patching tool is unavailable, or other events occur that relate to LCS. 
 
-![Figure 4.16: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
+![Figure 4.13: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
 can also create new environments here by clicking the Add Environment tab. Note 
@@ -269,7 +269,7 @@ The UI is segmented into three tabs:
    delete the environment by clicking *Delete Environment*, next to the Save 
    button. 
 
-![Figure 4.17: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
+![Figure 4.14: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
 Regardless of the tab you're in, the left side of the screen displays a list of 
 the environment's servers. To view a server's settings, click the server's gear 
@@ -315,7 +315,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 4.18: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics-01.png)
+![Figure 4.15: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics-01.png)
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -329,7 +329,7 @@ portlets in your server. The Cache category lists Liferay Single VM metrics and
 Hibernate metrics. The following screenshot shows the statistics in the Portlets 
 category.
 
-![Figure 4.19: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
+![Figure 4.16: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -338,7 +338,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the PS Survivor Space, PS Old Gen, PS Eden Space, Code Cache, and PS 
 Perm Gen.
 
-![Figure 4.20: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
+![Figure 4.17: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
 additional information about how your server is running. For example, a 
@@ -346,7 +346,7 @@ horizontal bar graph shows the number of current threads running on your server.
 Similarly, horizontal bar graphs are used to represent the JDBC connection 
 pools. 
 
-![Figure 4.21: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
+![Figure 4.18: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
 To view your server's fix packs, click the Fix Packs tab near the top of the 
 page. The fix packs here are shown in separate tables for those available for 
@@ -354,7 +354,7 @@ installation, and those already installed. The Available fix packs table
 functions exactly like the Fix Packs table in environment view for downloading 
 and installing fix packs. 
 
-![Figure 4.22: The Fix Packs tab displays your server's fix packs and alerts.](../../images/lcs-server-fix-packs.png)
+![Figure 4.19: The Fix Packs tab displays your server's fix packs and alerts.](../../images/lcs-server-fix-packs.png)
 
 LCS also lets you view your portal's property values. To do so, click the 
 *Portal Properties* tab near the top of the page. Your portal's properties and 
@@ -381,7 +381,7 @@ top-right of the table. For example, by checking the *Show Default Values* and
 custom property values. To show only the custom values, check only the checkbox 
 for *Show Custom Values*. 
 
-![Figure 4.23: Click the gear icon to select the type of portal properties to show in the table.](../../images/lcs-server-portal-properties.png)
+![Figure 4.20: Click the gear icon to select the type of portal properties to show in the table.](../../images/lcs-server-portal-properties.png)
 
 To view general information about your Liferay installation, click the *Details* 
 tab near the top of the screen. There are three tabs under Details: *Software*, 
@@ -389,7 +389,7 @@ tab near the top of the screen. There are three tabs under Details: *Software*,
 installation, Java installation, and hardware. This information is useful to the 
 Liferay support team in the event that you need their assistance. 
 
-![Figure 4.24: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
+![Figure 4.21: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
 
 Lastly, click the *Server Settings* tab near the top of the screen to view and 
 edit your server's name, location, and description. You can also use the Server 
@@ -414,7 +414,7 @@ After marking one or more notifications as read, an *Undo* button appears. Click
 select *My Account* from your user menu in the Dockbar, and then select the 
 *Notification History* tab. 
 
-![Figure 4.25: LCS sends you web notifications that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images/lcs-user-web-notifications.png)
+![Figure 4.22: LCS sends you web notifications that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images/lcs-user-web-notifications.png)
 
 Next, you'll learn how to manage your LCS account. 
 
@@ -429,7 +429,7 @@ notifications are configured by adding *rules*. The rules define what events
 trigger a notification. There are no notification rules by default. Click the 
 *Add Rule* button to define one. 
 
-![Figure 4.26: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
+![Figure 4.23: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
 First specify the project, environment, and server for the notification. Note 
 that you have the option of selecting all environments and servers in a
@@ -450,7 +450,7 @@ near the top of the UI. This tab lets you change your account's language, time
 zone, and default LCS project. Your default LCS project is the one shown each 
 time you log in to LCS. 
 
-![Figure 4.27: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
+![Figure 4.24: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. Next, you'll learn how to 
 use LCS to work with your Liferay EE subscriptions. 
@@ -606,7 +606,7 @@ tab. This tab contains the following sections:
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
 
-![Figure 4.28: An environment's Registration tab lets you select the LCS services to use with your Liferay servers that connect to that environment.](../../images/lcs-environment-token.png)
+![Figure 4.25: An environment's Registration tab lets you select the LCS services to use with your Liferay servers that connect to that environment.](../../images/lcs-environment-token.png)
 
 Whether you must generate or regenerate a token depends on the actions you took 
 in the Services section, and whether there's an existing token in the 
