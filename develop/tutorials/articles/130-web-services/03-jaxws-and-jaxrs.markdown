@@ -70,7 +70,7 @@ endpoints.
 
 To configure a CXF endpoint with the Control Panel, first go to *Control Panel*
 &rarr; *Configuration* &rarr; *System Settings* &rarr; *Foundation*. Then select
-*CXF Endpoints* from the table. If there are any existing CXF endpoints, they’re
+*CXF Endpoints* from the table. If there are any existing CXF endpoints, they're
 shown here. To add a new one, select the *Add* button
 (![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
 that appears lets you configure a new CXF endpoint by filling out these fields: 
@@ -87,7 +87,7 @@ that appears lets you configure a new CXF endpoint by filling out these fields:
 
 - **Required extensions:** CXF normally loads its default extension classes, but 
   in some cases you can override them to replace the default behavior. In most
-  cases, you can leave this field blank: overriding extensions isn’t common. By
+  cases, you can leave this field blank: overriding extensions isn't common. By
   specifying custom extensions here via [OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html), 
   Liferay waits until those extensions are registered in the OSGi framework 
   before creating the CXF servlet and passing the extensions to the servlet. 
@@ -103,7 +103,7 @@ For an app to deploy JAX-WS web services, you must configure a SOAP extender. To
 configure a SOAP extender with the Control Panel, first go to 
 *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
 *Foundation*. Then select *SOAP Extenders* from the table. If there are any 
-existing SOAP extenders, they’re shown here. To add a new one, select the *Add* 
+existing SOAP extenders, they're shown here. To add a new one, select the *Add* 
 button 
 (![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
 that appears lets you configure a new SOAP extender by filling out these fields: 
@@ -140,7 +140,7 @@ JAX-RS web services.
 To configure a REST extender with the Control Panel, first go to 
 *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
 *Foundation*. Then select *REST Extender* from the table. If there are any 
-existing REST extenders, they’re shown here. To add a new one, select the *Add* 
+existing REST extenders, they're shown here. To add a new one, select the *Add* 
 button 
 (![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
 that appears lets you configure a new REST extender by filling out these fields: 
@@ -178,11 +178,11 @@ Next, you'll learn how to configure endpoints and extenders programmatically.
 
 ## Configuring Endpoints and Extenders Programmatically [](id=configuring-endpoints-and-extenders-programmatically)
 
-To configure endpoints or extenders programmatically, you must use Liferay’s 
+To configure endpoints or extenders programmatically, you must use Liferay's 
 configurator extender. The configurator extender provides a way for OSGi modules 
 to deploy default configuration values. Modules that use the configurator 
 extender must provide a `ConfigurationPath` header that points to the 
-configuration files’ location inside the module. For example, the following
+configuration files' location inside the module. For example, the following
 configuration sets the `ConfigurationPath` to
 `src/main/resources/configuration`:
 
@@ -198,7 +198,7 @@ There are two different configuration types in
 [OSGi's `ConfigurationAdmin`](https://osgi.org/javadoc/r4v42/org/osgi/service/cm/ConfigurationAdmin.html): 
 single, and factory. Factory configurations can have several configuration 
 instances per factory name. The examples here use factory configurations. You 
-must provide a factory configuration’s default values in a `*.properties` file. 
+must provide a factory configuration's default values in a `*.properties` file. 
 In this properties file, use a suffix on the end of the PID (persistent 
 identifier) and then provide your settings. For example, the following code uses 
 the `-staging` suffix on the PID and creates a CXF endpoint at the context path 
@@ -307,13 +307,13 @@ You can publish JAX-RS web services in a Liferay module the same way you would
 outside of Liferay. You must also, however, register the class in the OSGi 
 framework. Note that the services must match the OSGi filters provided in the 
 respective extenders. This is how the instances that become services are 
-selected. There’s no classpath scanning or other automatic mechanism at work 
-here: it’s the developer’s responsibility to register the services in the OSGi 
+selected. There's no classpath scanning or other automatic mechanism at work 
+here: it's the developer's responsibility to register the services in the OSGi 
 framework. 
 
 The following example registers an OSGi component that publishes a JAX-RS web 
 service at `/application-path/hello`. Get requests to this web service return a 
-simple *“Hello!”*: 
+simple *"Hello!"*: 
 
     import org.osgi.service.component.annotations.Component;
 

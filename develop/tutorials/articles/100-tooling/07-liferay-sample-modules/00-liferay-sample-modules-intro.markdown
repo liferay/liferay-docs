@@ -1,4 +1,4 @@
-# Liferay Sample Modules
+# Liferay Sample Modules [](id=liferay-sample-modules)
 
 Liferay provides working examples of sample modules that target different
 integration points in @product@. These working examples can be copy/pasted into
