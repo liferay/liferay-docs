@@ -11,8 +11,8 @@ development tooling and Tern integration installed. To to this, go to *Help*
 Up Tern Features* section; if you do not, you'll need to install it by following
 the instructions below. 
 
-Navigate to the *Help* &rarr; *Install New Software...* menu and copy in the
-following link in the *Work with* field: 
+Navigate to *Help* &rarr; *Install New Software...* and paste the following
+link into the *Work with* field: 
 
     http://releases.liferay.com/tools/ide/latest/stable/
 
@@ -27,15 +27,14 @@ how to enable Tern's code assist features in your project.
 ## Setting Up Tern Features [](id=setting-up-tern-features)
 
 Tern features are enabled on a project-by-project basis. By default, Tern 
-features are already enabled for Liferay portlet plugins. For all other project 
+is already enabled for Liferay portlet plugins. For all other project 
 types, you'll need to follow the steps below: 
 
 1.  Right-click on your project and select *Configure* &rarr; *Convert to Tern 
     Project*. 
 
-    Your project is now configured to use Tern features. Now that you have your
-    project configured, you need to enable the modules you want to use for your
-    project. 
+    Your project is now configured to use Tern. Now that you have your project
+    configured, you need to enable the modules you want to use for your project. 
 
 2.  Right-click your project and select *Properties*. 
 

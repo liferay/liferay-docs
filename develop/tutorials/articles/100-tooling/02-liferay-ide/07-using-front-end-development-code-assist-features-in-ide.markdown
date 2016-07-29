@@ -24,14 +24,11 @@ tutorial to learn how to enable Tern features for non-Liferay specific projects.
 +$$$
 
 **Note:** For those developing with the Plugins SDK, the taglib descriptions
-that IDE makes available to users are dependent upon the Plugins SDK being used.
+that IDE makes available to users are dependent upon the Plugins SDK version.
 IDE uses taglib descriptions from the current SDK's `util-taglib.jar` file, so a
 more up-to-date Plugins SDK means more up-to-date taglib descriptions. 
 
 $$$
-
-<!-- Maybe we should have a tutorial on how to update your Plugins SDK from the
-Github source project. -Rich --> 
 
 You'll begin testing the AlloyUI code assist features next.
 
@@ -56,7 +53,7 @@ access the AlloyUI code assist features in the `main.js` of your project:
 
 **Note:** Code assist not only works for methods of an object, but also works
 for AUI-specific Tern completions for objects. For instance, you could type `AU`
-and press *Ctrl+Space* and you're given a list of objects to choose from.
+and press *Ctrl+Space* to see a list of objects to choose from.
 
 $$$
 
@@ -248,10 +245,9 @@ Lastly, you'll learn about the code assist features for jQuery.
 
 ### jQuery Code Assist Features [](id=jquery-code-assist-features)
 
-The last language's code assist features you'll learn about in this tutorial is
-jQuery. To use jQuery code assist in your project you'll need to enable the
-`jQuery` Tern module. Follow the instructions in the
-[Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-tern-code-assist-features-in-your-project)
+You can also use code assist with jQuery. To do this, you must enable the
+`jQuery` Tern module. Follow the instructions in the [Enabling Code Assist Features in Your
+Project](/develop/tutorials/-/knowledge_base/7-0/enabling-tern-code-assist-features-in-your-project)
 tutorial to learn how to enable Tern modules in your project. 
 
 The jQuery Tern plugin gives type information for the jQuery framework. In the
