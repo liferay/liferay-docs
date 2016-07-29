@@ -155,9 +155,9 @@ this is done in a demo JSF portlet as follows:
     }
 
 After extending the `ServiceTracker`, just call the constructor and the service
-tracker is ready to use in your controller layer.
+tracker is ready to use in your managed bean.
 
-In your controllers, whenever you need to call a service, open the service
+In a managed bean, whenever you need to call a service, open the service
 tracker. For example, this is done in the same demo JSF portlet to open the
 service tracker, using the
 [@PostContruct](http://docs.oracle.com/javaee/7/api/javax/annotation/PostConstruct.html)
@@ -178,8 +178,8 @@ Then the service can be called:
 
     userLocalService.updateUser(user);
 
-When it's time for the controller bean to be removed, you must close the service
-tracker using the
+When it's time for the managed bean to go out of scope, you must close the
+service tracker using the
 [@PreDestroy](http://docs.oracle.com/javaee/7/api/javax/annotation/PreDestroy.html)
 annotation:
 
