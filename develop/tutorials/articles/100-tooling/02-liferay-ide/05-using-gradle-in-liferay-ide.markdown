@@ -21,7 +21,7 @@ You can create a Gradle project by using the Gradle Project wizard.
 2. Enter a valid project name. You can also specify your project location and
    working sets.
 
-3. Optionally, you can navigate to the next menu page and specify your Gradle
+3. Optionally, you can navigate to the next page and specify your Gradle
    distribution and other advanced options. Once you're finished, select
    *Finish*.
 
@@ -36,7 +36,7 @@ You can also import existing Gradle projects in Liferay IDE.
 
 2. Click the *Browse...* button to choose a Gradle project.
 
-3. Optionally, you can navigate to the next menu page and specify your Gradle
+3. Optionally, you can navigate to the next page and specify your Gradle
    distribution and other advanced options. Once you're finished, click *Next*
    again to review the import configuration. Select *Finish* once you've
    confirmed your Gradle project import.
@@ -71,9 +71,9 @@ inspect its output.
 
 ![Figure 6: The Gradle Executions view helps you visualize the Gradle build process.](../../../images/gradle-executions.png)
 
-Keep in mind that if there is any change in the Gradle build scripts inside your
-Gradle projects (e.g., `build.gradle` or `settings.gradle`), you must refresh
-the project so Liferay IDE can account for the change and display it properly in
+Keep in mind that if you change the Gradle build scripts inside your Gradle
+projects (e.g., `build.gradle` or `settings.gradle`), you must refresh the
+project so Liferay IDE can account for the change and display it properly in
 your views. To refresh a Gradle project, right-click on the project and select
 *Gradle* &rarr; *Refresh Gradle Project*.
 
