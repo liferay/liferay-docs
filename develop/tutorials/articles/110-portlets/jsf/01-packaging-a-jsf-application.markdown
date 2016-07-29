@@ -6,9 +6,9 @@ artifacts or as Java ARchive (JAR) OSGi bundle artifacts. JSF portlet
 developers, however, must package their portlets as WAR artifacts because the
 JSF framework expects a WAR layout and often requires the
 `WEB-INF/faces-config.xml` descriptor and other Java EE resources such as the
-`WEB-INF/web.xml` descriptor. In this tutorial, you'll learn two ways to package
+`WEB-INF/web.xml` descriptor. In this tutorial, you'll learn how to package
 a JSF portlet so it can be treated as an OSGi module at runtime, and the pros
-and cons behind both.
+and cons behind JSF-specific OSGi packaging practices when deploying to Liferay.
 
 Liferay 7.0 supports the OSGi Web Application Bundle (WAB) standard for
 deployment of Java EE style WARs. Simply put, a WAB is an archive that has a WAR
@@ -17,9 +17,9 @@ OSGi directive.
 
 Enabling WABs to run as OSGi modules at runtime is made possible by the Liferay
 [WAB Extender](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-extender).
-The Liferay WAB Generator convert your WAR artifact to a WABat deployment time.
-Thesource of the project has a WAR layout and the artifact filename may end with
-the either the `.jar` or `.war` extension.
+The Liferay WAB Generator converts your WAR artifact to a WAB at deployment
+time. The source of the project has a WAR layout and the artifact filename may
+end with either the `.jar` or `.war` extension.
 
 To get an idea of how a JSF WAR artifact is packaged for use as a WAB, an
 example anatomy structure is outlined below:
@@ -40,6 +40,8 @@ example anatomy structure is outlined below:
     - `liferay-portlet.xml`
     - `portlet.xml`
     - `web.xml`
+
+Next, you'll learn how the WAB Generator auto-generates your JSF portlet.
 
 ## Auto-Generated WAB [](id=auto-generated-wab)
 
@@ -93,6 +95,9 @@ You can learn more about these properties in the
 properties section.
 
 $$$
+
+Using the WAB Generator is the only Liferay supported way to develop JSF
+portlets deployed to @product@.
 
 Excellent! Now you can make an informed packaging decision for your JSF
 application.
