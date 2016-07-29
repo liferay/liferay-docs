@@ -100,7 +100,7 @@ versioning scheme mastered, you can view several example configurations.
 
 |Branch|Example Artifact|AlloyUI|JSF API|Additional Info|
 |------|----------------|-------|-------|---------------|
-|[master (3.0.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|com.liferay.faces.alloy-3.0.0.jar|3.0.x|2.1+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0.*|
+|[master (3.0.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|com.liferay.faces.alloy-3.0.0.jar|3.0.x|2.2+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0.*|
 |[2.0.x](https://github.com/liferay/liferay-faces-alloy/tree/2.0.x)|com.liferay.faces.alloy-2.0.0.jar|2.0.x|2.1+|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 |[1.0.x](https://github.com/liferay/liferay-faces-alloy/tree/1.0.x)|com.liferay.faces.alloy-1.0.0.jar|2.0.x|1.2|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 
@@ -135,7 +135,7 @@ versioning scheme mastered, you can view several example configurations.
 
 |Branch|Example Artifact|&nbsp;&nbsp;MetalJS&nbsp;&nbsp;|&nbsp;&nbsp;JSF API&nbsp;&nbsp;|Additional Info|
 |------|----------------|:---------:|:-------:|---------------|
-|[master (1.0.x)](https://github.com/liferay/liferay-faces-metal/tree/master)|com.liferay.faces.metal-1.0.0.jar|1.0.x|2.1+|*CrystalUI 1.0.x is the version that comes bundled with Liferay Portal 7.0.*|
+|[master (1.0.x)](https://github.com/liferay/liferay-faces-metal/tree/master)|com.liferay.faces.metal-1.0.0.jar|1.0.x|2.2+|*CrystalUI 1.0.x is the version that comes bundled with Liferay Portal 7.0.*|
 
 ### Liferay Faces Portal [](id=liferay-faces-portal)
 
@@ -143,7 +143,7 @@ versioning scheme mastered, you can view several example configurations.
 
 |Branch|Example Artifact|Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;JSF API|
 |------|----------------|:------------------:|:-------:|
-|[master (3.0.x)](https://github.com/liferay/liferay-faces-portal/tree/master)|com.liferay.faces.portal-3.0.0.jar|7.0.x|2.1+|
+|[master (3.0.x)](https://github.com/liferay/liferay-faces-portal/tree/master)|com.liferay.faces.portal-3.0.0.jar|7.0.x|2.2+|
 |[2.0.x](https://github.com/liferay/liferay-faces-portal/tree/2.0.x)|com.liferay.faces.portal-2.0.0.jar|6.2.x|2.1+|
 |[1.0.x](https://github.com/liferay/liferay-faces-portal/tree/1.0.x)|com.liferay.faces.portal-1.0.0.jar|6.2.x|1.2|
 
