@@ -9,10 +9,10 @@ technology? Liferay supports JSF portlets with the use of
 [*Liferay Faces*](https://web.liferay.com/community/liferay-projects/liferay-faces/overview),
 which is an umbrella project that provides support for the JSF standard.
 
-JSF portlets use the
+JSF portlets use 
 [*Liferay Faces Bridge*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-bridge),
 which supports deploying JSF web applications as portlets on any JSR 286
-(Portlet 2.0) compliant portlet container, like Liferay Portal. The Liferay
+(Portlet 2.0) compliant portlet container, like Liferay Portal. Liferay
 Faces Bridge is applied to a portlet as a dependency in a build file, such as a
 `pom.xml`:
 
@@ -31,9 +31,9 @@ Faces Bridge is applied to a portlet as a dependency in a build file, such as a
         ...
     </dependencies>
 
-There are several UI components a JSF application can use, which include
-[*PrimeFaces*](http://primefaces.org/),
+There are several UI component suites that a JSF application can use, which include
 [*Liferay Faces Alloy*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy],
+[*PrimeFaces*](http://primefaces.org/),
 [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf), and
 [*RichFaces*](http://richfaces.jboss.org/). Furthermore, you can take advantage
 of
@@ -44,7 +44,7 @@ specifying them as dependencies in your build file, as well.
 
 Make sure to configure the `GenericFacesPortlet` class in the `portlet.xml`.
 This class handles invocations to your JSF portlet and makes the portlet relying
-on the Liferay Faces Bridge easier to develop by acting as a turnkey
+on Liferay Faces Bridge easier to develop by acting as a turnkey
 implementation.
 
     <portlet>
@@ -67,8 +67,8 @@ portlet: `faces-config.xml` and `web.xml`. You can visit the
 tutorial for more information on where these descriptors should reside in your
 JSF portlet structure.
 
-The `faces-config.xml` serves as a JSF portlet's application configuration
-resource file, which is used to register and configure objects and navigation
+The `faces-config.xml` descriptor serves as a JSF portlet's application
+configuration file, which is used to register and configure objects and navigation
 rules.
 
 +$$$
@@ -80,13 +80,13 @@ configuration:
         <phase-listener>com.liferay.faces.util.lifecycle.DebugPhaseListener</phase-listener>
     </lifecycle>
 
-This configures your JSF portlet to print everything in your console in debug
-mode. If you'd like to not run your JSF portlet in debug mode, remove this
-declaration.
+This configures your JSF portlet to log the before/after phases of the JSF
+lifecycle to your console in debug mode. You might want to remove this
+declaration before deploying to production.
 
 $$$
 
-The `web.xml` serves as a deployment descriptor that provides necessary
+The `web.xml` file serves as a deployment descriptor that provides necessary
 configurations for your JSF portlet to successfully deploy and function in
 @product@. A sample `web.xml` for a JSF portlet is given below, with
 explanations for each element documented in-line:
@@ -105,10 +105,6 @@ explanations for each element documented in-line:
             <param-name>com.sun.faces.namespaceParameters</param-name>
             <param-value>true</param-value>
         </context-param>
-        <!-- Listens for PluginContext portal lifecycle changes. -->
-        <listener>
-            <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
-        </listener>
         <!-- Although the FacesServlet will not be invoked by any portlet requests, it is required to initialize JSF. -->
         <servlet>
             <servlet-name>FacesServlet</servlet-name>
@@ -119,16 +115,6 @@ explanations for each element documented in-line:
         <servlet-mapping>
             <servlet-name>Faces Servlet</servlet-name>
             <url-pattern>*.xhtml</url-pattern>
-        </servlet-mapping>
-        <!-- This servlet is required to serve the portlet. -->
-        <servlet>
-            <servlet-name>Portlet Servlet</servlet-name>
-            <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-            <load-on-startup>1</load-on-startup>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>Portlet Servlet</servlet-name>
-            <url-pattern>/portlet-servlet/*</url-pattern>
         </servlet-mapping>
         <!-- Prevent direct access to Facelet XHTML -->
         <security-constraint>
