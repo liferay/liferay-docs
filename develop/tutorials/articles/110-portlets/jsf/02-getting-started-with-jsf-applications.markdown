@@ -38,14 +38,12 @@ There are several UI component suites that a JSF application can use, which incl
 [*RichFaces*](http://richfaces.jboss.org/). Furthermore, you can take advantage
 of
 [*Liferay Faces Portal*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-portal)
-in order to use
-Liferay-specific utilities and UI components. These components can be used by
-specifying them as dependencies in your build file, as well.
+in order to use Liferay-specific utilities and UI components. These components
+can be used by specifying them as dependencies in your build file, as well.
 
 Make sure to configure the `GenericFacesPortlet` class in the `portlet.xml`.
 This class handles invocations to your JSF portlet and makes the portlet relying
-on Liferay Faces Bridge easier to develop by acting as a turnkey
-implementation.
+on Liferay Faces Bridge easier to develop by acting as a turnkey implementation.
 
     <portlet>
         ...
@@ -68,8 +66,8 @@ tutorial for more information on where these descriptors should reside in your
 JSF portlet structure.
 
 The `faces-config.xml` descriptor serves as a JSF portlet's application
-configuration file, which is used to register and configure objects and navigation
-rules.
+configuration file, which is used to register and configure objects and
+navigation rules.
 
 +$$$
 
@@ -140,25 +138,55 @@ JSF project to build services.
 
 To call OSGi-based Service Builder services from your JSF portlet, you need a
 mechanism that gives you access to the OSGi service registry. You can't look up
-services published to the OSGi runtime using Declarative Services. You can call
-services by using static utility methods.
+services published to the OSGi runtime using Declarative Services. Instead, you
+should open a
+[ServiceTracker](https://osgi.org/javadoc/r6/core/org/osgi/util/tracker/ServiceTracker.html)
+when you want to call a service that's in the OSGi service registry.
 
-    SampleServiceUtil.getSampleId()
+To implement a service tracker in your JSF portlet, you can add a type-safe
+wrapper class that extends `org.osgi.util.tracker.ServiceTracker`. For example,
+this is done in a demo JSF portlet as follows:
 
-While very simple, that’s not the best way to call OSGi services because of the
-dynamic nature of the OSGi runtime. Service implementations could be removed and
-added at any time, and your JSF portlet needs to be able to account for that.
-Additionally, you need a mechanism that lets your portlet react
-gracefully to the possibility of the service implementation becoming unavailable
-entirely. That's why you should open a Service Tracker when you want to call a
-service that's in the OSGi service registry.
+    public class UserLocalServiceTracker extends ServiceTracker<UserLocalService, UserLocalService> {
 
-To implement a service tracker, you can do this:
+        public UserLocalServiceTracker(BundleContext bundleContext) {
+            super(bundleContext, UserLocalService.class, null);
+        }
+    }
 
-    Bundle bundle = org.osgi.framework.FrameworkUtil.getBundle(this.getClass());
-    BundleContext bundleContext = bundle.getBundleContext();
-    org.osgi.util.tracker.ServiceTracker<SomeService, SomeService> serviceTracker = new 
-    org.osgi.util.tracker.ServiceTracker(bundleContext, SomeService.class, null);
+After extending the `ServiceTracker`, just call the constructor and the service
+tracker is ready to use in your controller layer.
+
+In your controllers, whenever you need to call a service, open the service
+tracker. For example, this is done in the same demo JSF portlet to open the
+service tracker, using the
+[@PostContruct](http://docs.oracle.com/javaee/7/api/javax/annotation/PostConstruct.html)
+annotation:
+
+    @PostConstruct
+    public void postConstruct() {
+        Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+        BundleContext bundleContext = bundle.getBundleContext();
+        userLocalServiceTracker = new UserLocalServiceTracker(bundleContext);
+        userLocalServiceTracker.open();
+    }
+
+Then the service can be called:
+
+    UserLocalService userLocalService = userLocalServiceTracker.getService();
+    ...
+
+    userLocalService.updateUser(user);
+
+When it's time for the controller bean to be removed, you must close the service
+tracker using the
+[@PreDestroy](http://docs.oracle.com/javaee/7/api/javax/annotation/PreDestroy.html)
+annotation:
+
+    @PreDestroy
+    public void preDestroy() {
+        userLocalServiceTracker.close();
+    }
 
 For more information on service trackers and how to use them in WAR-style
 portlets, see the
