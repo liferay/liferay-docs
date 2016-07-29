@@ -22,7 +22,7 @@ Workspace Project*.
 
 ![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../../images/selecting-liferay-workspace.png)
 
-A *New Liferay Workspace* popup window appears, presenting several configuration
+A New Liferay Workspace dialog appears, presenting several configuration
 options. Follow the instructions below to create your workspace.
 
 1. Give your workspace a name. 
@@ -54,13 +54,12 @@ information on working sets, visit
 
 ![Figure 2: Liferay IDE provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/new-workspace-menu.png)
 
-A popup window appears prompting you to open the *Liferay Workspace*
-perspective. Click *Yes*, and your perspective will switch to *Liferay
-Workspace*.
+A dialog appears prompting you to open the Liferay Workspace perspective.
+Click *Yes*, and your perspective will switch to Liferay Workspace.
 
-The *Liferay Workspace* perspective is intended for Gradle development for
+The Liferay Workspace perspective is intended for Gradle development for
 Liferay 7 modules. Since Liferay Workspaces are used for Gradle based
-development and the *Liferay* workspace is intended for the Plugins SDK and Ant
+development and the Liferay workspace is intended for the Plugins SDK and Ant
 based development, the two perspectives are independent of each other.
 
 ![Figure 3: The Liferay Workspace perspective is preferred for Liferay 7 and OSGi module development.](../../../images/liferay-workspace-perspective.png)
@@ -73,16 +72,16 @@ workspace can only have one Liferay Workspace project.
 
 You can configure your workspace's module presentation by switching between the
 default *Hierarchical* or *Flat* views. To do this, navigate to the Project
-Explorer's *View Menu* (![View Menu](../../../images/icon-ide-view-menu.png))
-and select *Projects Presentation* and then the presentation mode you'd like to
-display. The Hierarchical view displays subfolders and subprojects under the
+Explorer's *View Menu* (![View Menu](../../../images/icon-ide-view-menu.png)),
+select *Projects Presentation* and then select the presentation mode you'd like
+to display. The Hierarchical view displays subfolders and subprojects under the
 workspace project, whereas the Flat view displays the workspace's modules
 separately from the workspace.
 
 ![Figure 5: The Hierarchical project presentation mode is set, by default.](../../../images/workspace-presentation.png)
 
-If you've already created a Liferay Workspace and you'd like to import into your
-existing IDE, you can do so by navigating to *File* &rarr; *Import* &rarr;
+If you've already created a Liferay Workspace and you'd like to import it into
+your existing IDE, you can do so by navigating to *File* &rarr; *Import* &rarr;
 *Liferay* &rarr; *Liferay Workspace Project*. Then click *Next* and browse for
 your worspace project. Once you've selected you workspace, click *Finish*.
 
