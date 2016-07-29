@@ -48,7 +48,7 @@ files into this anatomy structure? -->
 
 First, you'll learn about the auto-generated WAB.
 
-### Auto-Generated WAB [](id=auto-generated-wab)
+## Auto-Generated WAB [](id=auto-generated-wab)
 
 The source of an auto-generated JSF Portlet WAB follows the standard
 directory layout for WAR projects.
@@ -103,7 +103,7 @@ $$$
 
 Next, you'll discover how to manually configure a WAB.
 
-### Pre-Configured WAB [](id=pre-configured-wab)
+## Pre-Configured WAB [](id=pre-configured-wab)
 
 Pre-configuring a WAB is not supported; however, if you prefer bypassing the
 Liferay auto-deploy process and WAB Generator, you should be aware of the
