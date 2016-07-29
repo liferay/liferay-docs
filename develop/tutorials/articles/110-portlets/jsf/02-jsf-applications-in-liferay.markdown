@@ -1,1 +1,0 @@
-# JSF Applications in Liferay

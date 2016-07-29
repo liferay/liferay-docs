@@ -70,16 +70,6 @@ The Liferay WAB Generator automatically created an OSGi-ready
 file, add additional BND directives for the manifest in the
 `liferay-plugin-package.properties` file.
 
-
-<!--For use of Declarative Services in
-your JSF portlet, a Java class that extends
-[GenericFacesPortlet](http://myfaces.apache.org/portlet-bridge/2.0/api/apidocs/javax/portlet/faces/GenericFacesPortlet.html)
-must be included and annotated with `@Component` on the class and `@Reference`
-on a method to inject a service. You'll notice from the directory layout above
-that the `liferay-display.xml`, `liferay-portlet.xml`, `portlet.xml` are no
-longer needed, as they were in previous versions of Liferay, if annotating a
-class that extends `GenericFacesPortlet` with `@Component`. -->
-
 **Benefits:**
 
 - Processed by the Liferay
@@ -132,6 +122,10 @@ that extends
         - `webapp/`
             - `WEB-INF/`
                 - `faces-config.xml`
+                - `liferay-display.xml`
+                - `liferay-plugin-package.properties`
+                - `liferay-portlet.xml`
+                - `portlet.xml`
                 - `web.xml`
 
 **Benefits:**
@@ -150,67 +144,8 @@ that extends
   `META-INF/MANIFEST.MF` will likely be more difficult to configure since the
   `Import-Package` header must be specified by the developer.
 
-Now you can make an informed packaging decision for your JSF application.
-
-## Utilizing OSGi Services [](id=utilizing-osgi-services)
-
-<!--Both packaging approaches can use custom-built OSGi services, since both result
-in the deployment of a WAB (a true OSGi module). Also, both approaches can be
-used to take advantage of OSGi Declarative Services via the `@Reference`
-annotation:
-
-	private UserLocalService userLocalService;
-
-	@Reference(service = UserLocalService.class)
-	protected void setUserLocalService(UserLocalService userLocalService) {
-
-		logger.debug("setUserLocalService: " + userLocalService.getOSGiServiceIdentifier());
-		this.userLocalService = userLocalService;
-
-	}
-
-A JSF-friendly lookup of an OSGi service can be done by using the JSF Expression
-Language (EL):
-
-    @ManagedProperty(value = "#{userService}")
-    private UserService userService;
-
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
-Or you could more directly use the `facesContext` with the Liferay Faces Bridge
-as follows:
-
-    UserLocalService userLocalService = (UserLocalService) facesContext.getExternalContext().getApplicationMap().get("userLocalService");
-
-This approach will only work if the class that extends `GenericFacesPortlet`
-(annotated with `@Component`) saves the reference to the injected service as a
-`PortletContext` attribute. See the
-[PrimeFacesUsersPortlet](https://github.com/liferay/liferay-faces-portal/blob/master/demo/primefaces-users-portlet/src/main/java/com/liferay/faces/demos/portlet/PrimeFacesUsersPortlet.java)
-class for an example. Using the `@Reference` annotation, however, allows the
-portlet to enjoy the full OSGi lifecycle, so that the portlet will not be
-available for use if the required service is not available.
-
-Lastly, you can still call the traditional Liferay static utility methods (e.g.,
-`UserServiceUtil.get*`) in order to call Liferay services in your WABs. Calling
-Liferay's static utility methods, however, also means that you won't enjoy the
-full OSGi lifecycle.
-
-Once you've packaged your JSF WAB and are ready to deploy, simply copy and paste
-your `.war` file to your Liferay instance's `/deploy` folder.
-
-+$$$
-
-**Note:** You can alternatively copy your `.war` file to your Liferay instance's
-`/osgi/war` folder. When a `.war` file is copied to the `/deploy` folder,
-Liferay copies the WAR artifacts directly to the `/osgi/war`, so you can skip
-this system step by copying the `.war` directly to its final destination.
-
-$$$
--->
-Excellent! You've learned how to let the Liferay WAB Generator configure your
-JSF application as a WAB.
+Excellent! Now you can make an informed packaging decision for your JSF
+application.
 
 ## Related Topics [](id=related-topics)
 

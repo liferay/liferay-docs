@@ -1,4 +1,0 @@
-# Calling Services from JSF
-
-
-
