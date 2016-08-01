@@ -7,6 +7,17 @@ Liferay Faces Portal provides the `LiferayFacesContext.getThemeDisplay` method
 for accessing the `ThemeDisplay` Java object and the `liferay.themeDisplay`
 exception language (EL) variable for accessing the object in Facelets.
 
+For example, the `ThemeDisplay` object is accessed in the `jsf2-login-portlet`'s
+[LoginBackingBean](https://github.com/liferay/liferay-faces/blob/4.2.5-ga6/demos/portal/jsf2-login-portlet/src/main/java/com/liferay/faces/demos/bean/LoginBackingBean.java)
+to set the authentication type for the portal:
+
+    LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+    ...
+    ThemeDisplay themeDisplay = liferayFacesContext.getThemeDisplay();
+    Company company = themeDisplay.getCompany();
+
+    authType = company.getAuthType();
+
 Additionally, Liferay Faces Portal provides the `liferay.themeImagesURL` and
 `liferay.themeImageURL` Facelet EL variables for gaining access to theme image
 URLs. You can use these URLs as attribute values for Facelet composite component

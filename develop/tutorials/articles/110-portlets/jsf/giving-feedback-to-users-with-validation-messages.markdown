@@ -11,6 +11,31 @@ Liferay Faces Bridge automatically applies the JSR 286 standard CSS class names
 tags. This means you can use the `h:message` and `h:messages` tags and have
 access to the standard validation messages. 
 
+For example, the
+[jsf-login-portlet](https://github.com/liferay/liferay-faces-portal/blob/master/demo/jsf-login-portlet)
+demo shows using both `h:message` and `h:messages` tags for its
+[`login` view](https://github.com/liferay/liferay-faces-portal/blob/master/demo/jsf-login-portlet/src/main/webapp/WEB-INF/views/login.xhtml):
+
+    <alloy:form>
+        <h:messages globalOnly="true" />
+        <alloy:fieldset>
+            <alloy:field id="handleField" label="#{i18n[loginBackingBean.handleLabel]}">
+                <h:inputText id="handle" value="#{loginModelBean.handle}" required="true"
+                    ...
+                </h:inputText>
+                <h:message id="handleMessage" for="handle" style="display: inline;" />
+            </alloy:field>
+            <alloy:field id="passwordField" label="#{i18n['password']}">
+                <h:inputSecret id="password" value="#{loginModelBean.password}" required="true">
+                    <f:ajax render="passwordMessage" />
+                </h:inputSecret>
+                <h:message id="passwordMessage" for="password" style="display: inline;" />
+                    ...
+            </alloy:field>
+        </alloy:fieldset>
+        <h:commandButton action="#{loginBackingBean.authenticate}" value="#{i18n['sign-in']}" />
+    </alloy:form>
+
 +$$$
 
 **Note:** When running as a portlet, the ICEfaces

@@ -198,7 +198,7 @@ helpful for a big-picture look on the JSF technology developed for @product@. To
 learn more in-depth concepts and configurations for JSF portlets, visit the
 other tutorials contained in the
 [JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
-tutorials.
+tutorials set.
 
 ## Related Topics
 

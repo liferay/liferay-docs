@@ -78,7 +78,7 @@ Now that you know all about the Liferay Faces versioning scheme, you may be
 curious as to how these components interact with each other. Refer to the
 following figure to view the Liferay Faces dependency diagram.
 
-![Figure 1: The Liferay Faces dependency diagram helps visualize how components interact and depend on each other.](../../images/liferay-faces-dependency-diagram.png)
+![Figure 1: The Liferay Faces dependency diagram helps visualize how components interact and depend on each other.](../../../images/liferay-faces-dependency-diagram.png)
 
 Next, you can view some example configurations to see the new versioning scheme
 in action.

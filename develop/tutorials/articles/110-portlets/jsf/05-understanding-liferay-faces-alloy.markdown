@@ -12,7 +12,7 @@ the option of choosing the portlet's JSF Component Suite. The options include
 [*RichFaces*](http://richfaces.jboss.org/), and *Liferay Faces Alloy*.
 
 If you selected the Liferay Faces Alloy JSF Component Suite during your
-portlet's setup, the `.jar` file is included in your portlet project using Maven. 
+portlet's setup, the `.jar` file is included in your portlet project. 
 
 The Liferay Faces Alloy project provides a set of UI components that utilize
 AlloyUI. For example, a brief list of some of the supported `aui:` tags are
