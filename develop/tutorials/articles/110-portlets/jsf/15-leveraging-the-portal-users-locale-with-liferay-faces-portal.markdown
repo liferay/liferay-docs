@@ -6,6 +6,13 @@ is normally used to present internationalized JSF views is based on the
 web-browser's locale settings. In order to use the portal user's language
 preference, Liferay Faces Portal automatically registers the
 [`LiferayLocalePhaseListener`](https://github.com/liferay/liferay-faces/blob/4.2.5-ga6/portal/src/main/java/com/liferay/faces/portal/lifecycle/LiferayLocalePhaseListener.java).
+The `LiferayLocalePhaseListener` is registered by adding the following in the
+`faces-config.xml` descriptor:
+
+    <lifecycle>
+        <phase-listener>com.liferay.faces.portal.lifecycle.LiferayLocalePhaseListener</phase-listener>
+    </lifecycle>
+
 This phase listener modifies the locale inside the
 [`UIViewRoot`](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/component/UIViewRoot.html),
 based on the user's language preference, which is accessed via the
