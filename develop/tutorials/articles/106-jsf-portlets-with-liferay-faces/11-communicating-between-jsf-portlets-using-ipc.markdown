@@ -1,7 +1,7 @@
 # Communicating Between JSF Portlets Using IPC [](id=communicating-between-jsf-portlets-using-ipc)
 
 Liferay Faces Bridge supports Portlet 2.0 Inter Portlet Communication (IPC),
-using the JSR 329 approach for supporting Portlet 2.0 Events and Portlet 2.0
+using the JSR 329/378 approach for supporting Portlet 2.0 Events and Portlet 2.0
 Public Render Parameters. 
 
 You can visit the [Liferay Faces
@@ -40,8 +40,8 @@ portlet and a Bookings portlet:
         <qname xmlns:x="http://liferay.com/pub-render-params">x:selectedCustomerId</qname>
     </public-render-parameter>
 
-Fortunately, the JSR 329 standard defines a mechanism for you to use Portlet 2.0
-Public Render Parameters for IPC in a way that is more natural to JSF
+Fortunately, the JSR 329/378 standard defines a mechanism for you to use Portlet
+2.0 Public Render Parameters for IPC in a way that is more natural to JSF
 development. Section 5.3.2 of this standard requires the bridge to inject the
 public render parameters into the Model concern of the MVC design pattern (as in
 JSF model managed-beans) after the `RESTORE_VIEW` phase completes. This is
@@ -69,7 +69,7 @@ Customers and Bookings portlets:
         </application>
     </faces-config>
 
-Section 5.3.2 of the JSR 329 standard also requires that if a
+Section 5.3.2 of the JSR 329/378 standard also requires that if a
 `bridgePublicRenderParameterHandler` has been registered in the
 `WEB-INF/portlet.xml` descriptor, then the handler must be invoked so that it
 can perform any processing that might be necessary. Optionally, you can
@@ -182,8 +182,9 @@ is similar, except it is specified as a publisher:
 Optionally, you can implement a `BridgeEventHandler` for an event type and
 register the handler in the `WEB-INF/portlet.xml` descriptor. If a
 `BridgeEventHandler` has been registered in the `WEB-INF/portlet.xml`
-descriptor, Section 5.2.5 of the JSR 329 standard requires that the handler must
-be invoked so that it can perform any event processing that might be necessary. 
+descriptor, Section 5.2.5 of the JSR 329/378 standard requires that the handler
+must be invoked so that it can perform any event processing that might be
+necessary. 
 
 When the customer's details (such as first name/last name) are edited in the
 Bookings portlet, the event named `ipc.customerEdited` is sent back to the
