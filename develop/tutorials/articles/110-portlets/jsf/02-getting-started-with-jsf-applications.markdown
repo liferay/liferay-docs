@@ -1,4 +1,4 @@
-# Getting Started with JSF Applications
+# Getting Started with JSF Applications [](id=getting-started-with-jsf-applications)
 
 This tutorial is not a comprehensive guide for configuring JSF applications in
 Liferay. You'll examine the high points, assuming you already have a workable
@@ -200,7 +200,7 @@ other tutorials contained in the
 [JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
 tutorials set.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity)
 

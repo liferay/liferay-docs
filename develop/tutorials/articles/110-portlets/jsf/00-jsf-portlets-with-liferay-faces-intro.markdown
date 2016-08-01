@@ -1,4 +1,4 @@
-# JSF Portlets with Liferay Faces
+# JSF Portlets with Liferay Faces [](id=jsf-portlets-with-liferay-faces)
 
 ![ ](../../../images/liferay-faces-logo.png)
 

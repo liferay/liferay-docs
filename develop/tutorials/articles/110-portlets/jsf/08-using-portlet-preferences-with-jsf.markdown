@@ -1,4 +1,4 @@
-# Using Portlet Preferences with JSF
+# Using Portlet Preferences with JSF [](id=using-portlet-preferences-with-jsf)
 
 JSF portlet developers often must enable the end-user to personalize portlets
 in some way. To meet this requirement, the Portlet 2.0 specification lets you
@@ -45,7 +45,7 @@ facelet file `/preferences.xhtml` as the view, by mapping it to the
 Terrific! You're now familiar with specifying and using portlet preferences in
 your JSF portlet. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Localizing JSF Portlets](/develop/tutorials/-/knowledge_base/7-0/localizing-jsf-portlets)
 

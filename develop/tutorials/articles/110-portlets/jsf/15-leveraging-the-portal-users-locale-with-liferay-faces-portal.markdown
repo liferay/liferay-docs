@@ -1,4 +1,4 @@
-# Leveraging the Portal User's Locale with Liferay Faces Portal
+# Leveraging the Portal User's Locale with Liferay Faces Portal [](id=leveraging-the-portal-users-locale-with-liferay-faces-portal)
 
 By default, the
 [`Locale`](http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html) that
@@ -22,7 +22,7 @@ method.
 Now you're familiar with another key utility that you can access through Liferay
 Faces Portal. Awesome! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
 

@@ -1,4 +1,4 @@
-# Understanding Liferay Faces Portal
+# Understanding Liferay Faces Portal [](id=understanding-liferay-faces-portal)
 
 *Liferay Faces Portal* is distributed in a `.jar` file. You can add Liferay
 Faces Portal as a dependency for your portlet projects, in order to use its
@@ -28,7 +28,7 @@ internationalized messages.
 Great! You now have an understanding of what Liferay Faces Portal is, and what
 it accomplishes in your JSF application. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Packaging a JSF Application](/develop/tutorials/-/knowledge_base/7-0/packaging-a-jsf-application)
 

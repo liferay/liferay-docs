@@ -1,4 +1,4 @@
-# Understanding Liferay Faces Alloy
+# Understanding Liferay Faces Alloy [](id=understanding-liferay-faces-alloy)
 
 Liferay Faces Alloy is distributed in a `.jar` file. You can add Liferay Faces
 Alloy as a dependency to your portlet projects, in order to use AlloyUI in a

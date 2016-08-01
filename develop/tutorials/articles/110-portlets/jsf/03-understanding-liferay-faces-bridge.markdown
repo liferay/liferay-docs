@@ -1,4 +1,4 @@
-# Understanding Liferay Faces Bridge
+# Understanding Liferay Faces Bridge [](id=understanding-liferay-faces-bridge)
 
 The Liferay Faces Bridge enables you to deploy JSF web apps as portlets without
 writing portlet-specific code. It also contains innovative features that make it
@@ -82,7 +82,7 @@ learning path.-->
 Next, you'll learn how to configure Liferay Faces Bridge, starting with
 configuring its scope behavior. 
 
-## Configuring Bridge Request Scope Behavior
+## Configuring Bridge Request Scope Behavior [](id=configuring-bridge-request-scope-behavior)
 
 For this part of the tutorial, you'll step through requirements, drawbacks,
 assumptions, and behaviors for configuring the Bridge Request Scope. 
@@ -178,7 +178,7 @@ Now you know the two options for Bridge Request Scope behavior. By considering
 the outlined assumptions and drawbacks, you should be able to make an educated
 decision about how you'd like to implement the Bridge Request Scope behavior. 
 
-## Configuring the Portlet Container Abilities
+## Configuring the Portlet Container Abilities [](id=configuring-the-portlet-container-abilities)
 
 Liferay Faces Bridge can be run in a variety of portlet containers (Liferay,
 Pluto, etc.) and is aware of some of the abilities (or limitations) of these
@@ -204,7 +204,7 @@ handler attempts to set the status code of downloaded resources to values like
 By configuring portlet container capabilities, you can take advantage of your
 portlet container's specific strengths while using Liferay Faces Bridge. 
 
-## Configuring XML Entity Validation
+## Configuring XML Entity Validation [](id=configuring-xml-entity-validation)
 
 <!-- Explain why this is helpful. - Jim -->
 
@@ -223,7 +223,7 @@ portlet project's `WEB-INF/web.xml` descriptor:
 Excellent! You now know how to toggle XML entity validation using Liferay Faces
 Bridge. 
 
-## Configuring Resource Buffer Size
+## Configuring Resource Buffer Size [](id=configuring-resource-buffer-size)
 
 Liferay Faces Bridge lets you set the size of the buffer used to load resources
 into memory, as file contents are copied to the response. This part of the
@@ -243,7 +243,7 @@ Alternatively, you can specify the `com.liferay.faces.bridge.resourceBufferSize`
 value on a portlet-by-portlet basis in the portlet project's
 `WEB-INF/portlet.xml` descriptor. 
 
-## Configuring Distinct Request Scoped Managed Beans
+## Configuring Distinct Request Scoped Managed Beans [](id=configuring-distinct-request-scoped-managed-beans)
 
 Liferay Portal gives you the ability to specify whether or not request
 attributes are shared among portlets. You can specify this using the
@@ -289,7 +289,7 @@ value to `true`.
 Great! You can now configure distinct request scoped managed beans with Liferay
 Faces Bridge. 
 
-## Configuring View Parameters
+## Configuring View Parameters [](id=configuring-view-parameters)
 
 In the case of a portlet `RenderRequest`, Section 5.2.6 of the JSR 329/378 Spec
 requires that the bridge only executes the `RESTORE_VIEW` and `RENDER_RESPONSE`
@@ -315,7 +315,7 @@ the param value to `false`.
 Great! You've learned another JSF portlet bridge standard and how to configure
 several key options in Liferay Faces Bridge. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy)
 

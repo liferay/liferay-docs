@@ -1,4 +1,4 @@
-# Leveraging the Current Theme with Liferay Faces Portal
+# Leveraging the Current Theme with Liferay Faces Portal [](id=leveraging-the-current-theme-with-liferay-faces-portal)
 
 Liferay Faces Portal provides access to the Liferay [`ThemeDisplay`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html)
 object and the current theme's images. 
