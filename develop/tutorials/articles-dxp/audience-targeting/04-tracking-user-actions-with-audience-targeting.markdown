@@ -132,54 +132,16 @@ methods and descriptions until the Javadoc is available publicly. -Cody -->
 - `processTrackingAction`: Returns the result of evaluating the tracking action
   form fields in the context of the request and response.
 
+Once you've modified your metric's behavior, you'll need to develop the UI for
+your metric's configuration. As you read earlier, a component of your metric is
+its UI configuration, which is used to show the metric's form. If your
+`-TrackingAction` class is already extending `BaseJSPTrackingAction`, your rule
+already supports using JSP pages. If you used the
+`contenttargetingtrackingaction` Blade CLI template, your project is already
+extending `BaseJSPRule` and has a default `view.jsp` file already configured.
 
-
-
-
-
-
-
-
-The behavior of your metric is controlled from a Java class located in your
-metric's `src/main/java/com/liferay/content/targeting/tracking/action` folder.
-You can provide a custom tracking mechanism (e.g., a servlet) or you can use the
-ones provided by Audience Targeting. The metric's UI and language keys can be
-configured in the `src/main/resources/META-INF/resources/view.jsp` and
-`src/main/resources/content/Language.properties` files, respectively. You'll
-learn more about the latter two components later on.
-
-You can learn more about language keys and how to create, use, and generate them
-by visiting the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
-tutorials. You'll learn about configuring the metric UI and using Audience
-Targeting tracking mechanisms later in this tutorial. You'll begin with
-customizing your metric's behavior.
-
-You can begin creating your metric's functionality by specifying its behavior
-in the `-TrackingAction` class (e.g., `NewsletterTrackingAction`) that Blade CLI
-generated for you. This class implements the `TrackingAction` interface
-(required), and extends the `BaseJSPTrackingAction` class. It's not mandatory to
-extend `BaseJSPTrackingAction`, but it provides some helpful utilities, such as
-support for generating your metric's UI using JSP. Note that there are multiple
-methods in the generated `-TrackingAction` class; you must modify them to create
-a working metric.
-
-You'll begin defining the UI for your metric's configuration. As you read
-earlier, your metric already has a JSP view, which is used to show the Metrics
-form. Since the generated metric Java class extends `BaseJSPTrackingAction` by
-default, your metric already supports using JSP pages.
-
-JSP is the preferred technology for Audience Targeting extension views.
-FreeMarker views, however, are still supported through their respective base
-classes (e.g. `BaseFreemarkerTrackingAction`). If you're interested in using a
-technology besides JSP or FreeMarker to implement your UI, you can add a method
-`getFormHTML` to your `-TrackingAction` class and override the default.
-
-The `getFormHTML` is used to retrieve the HTML created by the technology you
-choose, and to return it as a string that is viewable from your metric's form.
-If you plan, therefore, on using an alternative to JSP or FreeMarker, you
-must override this method by creating and modifying it in your `-TrackingAction`
-class. This tutorial demonstrates implementing the UI using JSP.
+To view a sample metric and its UI configuration, download the sample
+[newsletter metric](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
 
 For example, if you wanted to create a metric that tracks the number of times a
 user views a newsletter, you could create a menu with the following fields:
@@ -190,11 +152,11 @@ user views a newsletter, you could create a menu with the following fields:
 - *Event Type:* used to differentiate several actions on the same newsletter,
   such as opening the newsletter or clicking on a link.
 
-Here's a code snippet from a JSP template (e.g., `view.jsp`) that could be
-applied to this example:
+Here's a code snippet from the newsletter metric's JSP template (`view.jsp`)
+that could be applied to this example:
 
     <aui:input helpMessage="name-help" label="name" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "alias" %>' type="text" value="<%= alias %>">
-	    <aui:validator name="required" />
+        <aui:validator name="required" />
     </aui:input>
 
     <aui:input helpMessage="enter-the-id-of-the-newsletter-to-be-tracked" label="newsletter-id" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "elementId" %>' type="text" value="<%= elementId %>">
@@ -229,7 +191,7 @@ tracked entity (e.g., view, click, submit, etc.). For this example JSP, you'd
 need to declare the possible `eventTypes` in your `-TrackingAction` class.
 You'll learn how to do this later.
 
-![Figure 2: This Newsletter metric requires the newsletter alias and ID.](../../images-dxp/metric-template.png)
+![Figure 1: This Newsletter metric requires the newsletter alias and ID.](../../images-dxp/metric-template.png)
 
 Notice that the input field names in the JSP are prefixed with
 `ContentTargetingUtil.GUID_REPLACEMENT`. This prefix is required for
@@ -237,13 +199,17 @@ multi-instantiable metrics, which are metrics that return `true` in the
 `isInstantiable` method of their `-TrackingAction` class and can be added more
 than once to the Metrics form.
 
-Now that the your metric's UI is developed, you can resume the configuration of
-your metric's behavior. The next method you'll edit in your `-TrackingAction`
-class is the `populateContext` method. This method takes the values that were
-entered by the user in the Metric form and injects them into the `context` map
-parameter. For example, the following `populateContext` method populates the
-`eventTypes` variable that was used in the newsletter JSP sample with the event
-types available in the newsletter metric:
+Now you'll jump back into modifying your metrics's behavior via the
+`-TrackingAction` class. You'll dive further into the sample newsletter metric
+and find what is necessary to make the JSP code work with the TrackingAction
+Java class.
+
+An important method in the newsletter's `NewsletterTrackingAction` class is the
+`populateContext` method. This method takes the values that were entered by the
+user in the Metric form and injects them into the `context` map parameter. For
+example, the following `populateContext` method populates the `eventTypes`
+variable that was used in the newsletter JSP sample with the event types
+available in the newsletter metric:
 
     @Override
     protected void populateContext(
@@ -289,9 +255,11 @@ types available in the newsletter metric:
     private AnalyticsProcessor _analyticsProcessor;
     private static final String[] _EVENT_TYPES = {"view"};
 
-In many cases, a metric has multiple tracking event options. The more tracking
-options your metric provides, the more opportunities you have to decipher your
-audience's likes and dislikes within your site.
+You can provide a custom tracking mechanism (e.g., a servlet) or you can use the
+ones provided by Audience Targeting. In many cases, a metric has multiple
+tracking event options. The more tracking options your metric provides, the more
+opportunities you have to decipher your audience's likes and dislikes within
+your site.
 
 This sample newsletter metric tracks who views the configured newsletter by
 placing a transparent image in the newsletter. Whenever the image is viewed,
@@ -304,14 +272,14 @@ Analytics System to track the views on the newsletter.
 
 You're probably curious as to how a transparent image can be added to a
 newsletter to track its views. The transparent image can be generated as a code
-snippet by your metric once you've entered the ID into the form and saved. Then
+snippet by the metric once you've entered the ID into the form and saved. Then
 you can add the generated code into the content you'd like to track
 (e.g., newsletter).
 
-![Figure 3: You can insert the transparent image into your content by copying and pasting the generated code from the form.](../../images-dxp/tracking-action-paste-image.png)
+![Figure 2: You can insert the transparent image into your content by copying and pasting the generated code from the form.](../../images-dxp/tracking-action-paste-image.png)
 
-To do this, you'll need to make a few modifications to your JSP file. Just
-include these lines below the event type selector:
+To do this, you could add the following lines to the `JSP` file below the event
+type selector:
 
     <c:if test="<%= !Validator.isBlank(trackImageHTML) %>">
         <span class="h5">
@@ -322,53 +290,26 @@ include these lines below the event type selector:
         <liferay-ui:input-resource id='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' url="<%= trackImageHTML %>" />
     </c:if>
 
-You can test if your metric is working by copying the generated tracking image
-HTML into an email HTML editor, send it, and open it as if it were an actual
-newsletter. Then go to the custom report containing your newsletter metric and
-select *Update Report* in the top-right menu. A chart and a table with the view
-count on your newsletter will be shown.
+You could test if the metric was working by copying the generated tracking image
+HTML into an email HTML editor, sending it, and opening it as if it were an actual
+newsletter. When opening the custom report containing the newsletter metric and
+selecting *Update Report*, a chart and table with the newsletter's view count is
+displayed.
 
 For convenience, you can download the full source for the sample newsletter
 metric as a
-[ZIP file](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
+[ZIPfile](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
+You can deploy it to your @product@ and try it out yourself!
+
+If you've been paying close attention, you'll notice that there is still one
+final component to cover for tracking actions: language keys. You can learn more
+about language keys and how to create, use, and generate them by visiting the
+[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+tutorials.
 
 You now have all the knowledge necessary to create your own customized metric
 and deploy it to your Audience Targeting application. With this, you can
 generate custom reports to measure any user interaction.
-
-<!--
-1. Run the `blade create -t contenttargetingtrackingaction` command from a
-   command prompt. For example, the command below creates a tracking action
-   project with `newsletter` for its project name and `NewsletterTrackingAction`
-   as its class name within the `com.liferay.content.targeting.tracking.action`
-   package:
-
-        blade create -t contenttargetingtrackingaction -p com.liferay -c Newsletter newsletter
-
-2. Navigate to the newly generated project folder that has your tracking
-   action's name. Open the folder and study what's been generated.
-
-    The `blade create -t contenttargetingtrackingaction` command created default
-    files that make the plugin deployable.
-
-3. Now is a convenient time to deploy the project to see how it currently looks
-   in Portal.
-
-    To deploy the plugin project, start a @product@ instance, open a terminal to
-    your plugin project's directory, and run the `blade deploy` command. You'll
-    find this new metric listed when creating or editing a campaign custom
-    report in the Audience Targeting application.
-
-4. To view your new metric, navigate to your portal's Site Administration &rarr;
-   *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* &rarr; *Edit
-   Campaign*. Then click *Reports* &rarr; *Add Custom Report* and scroll down to
-   the Metrics form.
-
-    ![Figure 1: You can add your new metric to the form, but it doesn't do anything yet.](../../images-dxp/tracking-action-deploy.png)
-
-You've successfully deployed your metric plugin. Next, you'll learn about the
-components that were generated for you and how to edit them to create a
-functional Audience Targeting custom report metric.-->
 
 ## Related Topics
 
