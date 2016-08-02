@@ -24,7 +24,7 @@ page layout looks like, populated with some of Liferay's portlets.
 As you can see the *1-2-1* refers to the number of columns in each row that can
 hold a portlet.
 
-the figure below shows the .tpl file for Liferay's *1-2-1 Columns Layout CE* 
+The figure below shows the `.tpl` file for Liferay's *1-2-1 Columns Layout CE* 
 [1_2_1_columns.tpl](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-web/docroot/layouttpl/custom/1_2_1_columns.tpl) 
 that you just saw:
 
