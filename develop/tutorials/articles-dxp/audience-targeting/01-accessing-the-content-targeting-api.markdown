@@ -68,35 +68,25 @@ implementation of the service.
 
 The next step is to use the service to obtain a list of existing user segments
 and make it available to your view layer as a request attribute. To do this, add
-the following method to your portlet class:
+logic to your portlet class that obtains user segments and exposes them as a
+request attribute, like the following:
 
-    @Override
-    public void doView(
-            RenderRequest renderRequest, RenderResponse renderResponse)
-        throws IOException, PortletException {
+    ThemeDisplay themeDisplay = (ThemeDisplay)renderRequest.getAttribute(
+        WebKeys.THEME_DISPLAY);
 
-        ThemeDisplay themeDisplay = (ThemeDisplay)renderRequest.getAttribute(
-            WebKeys.THEME_DISPLAY);
+    List<UserSegment> userSegments = null;
 
-        List<UserSegment> userSegments = null;
-
-        try {
-            userSegments = _userSegmentLocalService.getUserSegments(
-                themeDisplay.getScopeGroupId());
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        renderRequest.setAttribute("userSegments", userSegments);
-
-        super.doView(renderRequest, renderResponse);
+    try {
+        userSegments = _userSegmentLocalService.getUserSegments(
+            themeDisplay.getScopeGroupId());
+    }
+    catch (Exception e) {
+        _log.error(e, e);
     }
 
-<!-- The above code is not quality code, for the following reasons: 1) Not all
-portlets have doView methods. We should show only the relevant code. 2) In
-catching an exception, you never keep the default implementation of printing the
-stack trace. Please fix. -Rich -->
+    renderRequest.setAttribute("userSegments", userSegments);
+
+    private static final Log _log = LogFactoryUtil.getLog(MyPortlet.class)
 
 Notice that the `userSegments` list is populated by calling
 `UserSegmentLocalService`'s `getUserSegments` method. This service is part
