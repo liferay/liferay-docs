@@ -1,19 +1,19 @@
 # Creating Forms with Liferay's Taglibs [](id=creating-forms-with-liferays-taglibs)
 
 Forms are a must-have tool in any developers UI bag. Rather than
-write your HTML from scratch, @product@ provides you with taglibs that offer
+write your HTML from scratch, Liferay provides you with taglibs that offer
 everything standard HTML elements have, as well as some additional attributes
-that are Liferay specific. For a full list of all the available @product@
-taglibs and attributes, take a look at Liferay's API docs on
+that are Liferay specific. For a full list of all the available taglibs and 
+attributes, take a look at Liferay's API docs on
 [docs.liferay.com/portal/7.0/taglibs](https://docs.liferay.com/portal/7.0/taglibs/)
-Using a combination of @product@'s `AUI` taglibs and [Lexicon](http://liferay.github.io/lexicon/)
+Using a combination of Liferay's `AUI` taglibs and [Lexicon](http://liferay.github.io/lexicon/)
 classes, you can create a form in your app's JSPs. You can learn how to create a
 JSP portlet project in the [using-the-mvc-portlet-template](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/using-the-mvc-portlet-template)
 tutorial.
 
 This tutorial demonstrates how to:
 
-- Create a form using @product@'s taglibs in your application's JSPs
+- Create a form using Liferay 7's taglibs in your application's JSPs
 
 To begin, take a look at the Portlet Configuration application's
 [add_configuration_template.jsp](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/web-experience/portlet-configuration/portlet-configuration-web/src/main/resources/META-INF/resources/add_configuration_template.jsp)
