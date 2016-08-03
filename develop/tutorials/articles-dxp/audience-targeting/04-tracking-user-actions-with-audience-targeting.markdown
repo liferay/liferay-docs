@@ -1,4 +1,4 @@
-# Tracking User Actions with Audience Targeting
+# Tracking User Actions with Audience Targeting [](id=tracking-user-actions-with-audience-targeting)
 
 In the Audience Targeting application, a campaign defines a set of content
 targeted to specific user segments in a time period. Campaign custom reports
@@ -21,7 +21,7 @@ section.
 
 Next, you'll begin learning how to create a custom report metric.
 
-## Creating a Metric
+## Creating a Metric [](id=creating-a-metric)
 
 Adding a new custom report metric to the Audience Targeting application is easy.
 There are four components you can specify for your metric:
@@ -312,7 +312,7 @@ You now have all the knowledge necessary to create your own customized metric
 and deploy it to your Audience Targeting application. With this, you can
 generate custom reports to measure any user interaction.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/reporting-user-behavior-with-audience-targeting)
 

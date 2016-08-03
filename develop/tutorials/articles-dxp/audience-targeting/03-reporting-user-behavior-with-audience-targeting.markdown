@@ -1,4 +1,4 @@
-# Reporting User Behavior with Audience Targeting
+# Reporting User Behavior with Audience Targeting [](id=reporting-user-behavior-with-audience-targeting)
 
 In the Audience Targeting application, a report is a tool that allows
 administrators to analyze the behavior of users in a campaign or belonging to
@@ -144,7 +144,7 @@ own reports as described in the
 [Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
 tutorial.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
 

@@ -1,4 +1,4 @@
-# Audience Targeting
+# Audience Targeting [](id=audience-targeting)
 
 Liferay's Audience Targeting application allows you to monitor your portal's
 users. You can organize them into user segments, target specific content to

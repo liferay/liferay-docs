@@ -1,4 +1,4 @@
-# Content Targeting Report Template
+# Content Targeting Report Template [](id=content-targeting-report-template)
 
 In this tutorial, you'll learn how to create a Liferay Content Targeting Report
 application as a Liferay module. To create a Liferay Content Targeting Report

@@ -1,4 +1,4 @@
-# Content Targeting Rule Template
+# Content Targeting Rule Template [](id=content-targeting-rule-template)
 
 In this tutorial, you'll learn how to create a Liferay Content Targeting Rule
 application as a Liferay module. To create a Liferay Content Targeting Rule

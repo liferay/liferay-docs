@@ -1,4 +1,4 @@
-# Content Targeting Tracking Action Template
+# Content Targeting Tracking Action Template [](id=content-targeting-tracking-action-template)
 
 In this tutorial, you'll learn how to create a Liferay Content Targeting
 Tracking Action application as a Liferay module. To create a Liferay Content

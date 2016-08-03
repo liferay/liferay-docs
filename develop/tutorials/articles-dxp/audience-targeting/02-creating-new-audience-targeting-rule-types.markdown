@@ -1,4 +1,4 @@
-# Creating New Audience Targeting Rule Types
+# Creating New Audience Targeting Rule Types [](id=creating-new-audience-targeting-rule-types)
 
 In the Audience Targeting application, a User Segment is defined as a group of
 users that match a set of rules. Out of the box, Liferay provides several types
@@ -12,7 +12,7 @@ the `Rule` interface and deploy the class in your own OSGi plugin.
 This tutorial shows you how to create a custom rule type and deploy it in an
 OSGi plugin.
 
-## Creating a Custom Rule Type
+## Creating a Custom Rule Type [](id=creating-a-custom-rule-type)
 
 Adding a new type of rule to the Audience Targeting application is easy. There
 are three components you can specify for your rule:
@@ -336,7 +336,7 @@ application.
 
 <!-- ## Customize the Rules Engine -->
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 
