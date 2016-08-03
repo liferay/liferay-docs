@@ -31,7 +31,7 @@ There are four components you can specify for your metric:
 - *UI for Configuration (optional)*
 - *Language Keys (optional)*
 
-Before you can define your rule's components, you must create a module and
+Before you can define your metric's components, you must create a module and
 ensure it has the necessary Content Targeting dependencies.
 
 1. Create a module for deploying a metric using your favorite third party tool.
@@ -44,12 +44,12 @@ ensure it has the necessary Content Targeting dependencies.
 2. Make sure your module specifies the dependencies necessary for an Audience
    Targeting metric. For example, you should specify the Content Targeting API
    and necessary Liferay packages. For example, examine the example
-   `build.gradle` file used from a Gradle based rule:
+   `build.gradle` file used from a Gradle based metric:
 
         dependencies {
-			compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.analytics.api", version: "3.0.0"
-			compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.anonymous.users.api", version: "2.0.2"
-			compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.analytics.api", version: "3.0.0"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.anonymous.users.api", version: "2.0.2"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
             compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.3.0"
             compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
             compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
@@ -79,7 +79,7 @@ understand what is available for you to extend from this class. It is required
 to implement the `TrackingAction` interface, but there are `TrackingAction`
 extension classes you can extend from in your custom metric, which provide
 helpful utilities. For example, you can extend the `BaseJSPTrackingAction` class
-for support when generating your rule's UI using JSPs.
+for support when generating your metric's UI using JSPs.
 
 Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
 extension views. FreeMarker views, however, are still supported through their
@@ -97,7 +97,7 @@ class. This tutorial demonstrates implementing the UI using JSP, and assumes the
 
 Of course, you still need to make some additional changes to define how your
 metric works. Here are some of the methods that you can implement to modify your
-metric behavior:
+metric's behavior:
 
 <!-- The below method descriptions are the Javadoc copied from the
 `TrackingAction` interface. Since the source code is not accessible and the
@@ -135,10 +135,11 @@ methods and descriptions until the Javadoc is available publicly. -Cody -->
 Once you've modified your metric's behavior, you'll need to develop the UI for
 your metric's configuration. As you read earlier, a component of your metric is
 its UI configuration, which is used to show the metric's form. If your
-`-TrackingAction` class is already extending `BaseJSPTrackingAction`, your rule
-already supports using JSP pages. If you used the
+`-TrackingAction` class is already extending `BaseJSPTrackingAction`, your
+metric already supports using JSP pages. If you used the
 `contenttargetingtrackingaction` Blade CLI template, your project is already
-extending `BaseJSPRule` and has a default `view.jsp` file already configured.
+extending `BaseJSPTrackingAction` and has a default `view.jsp` file already
+configured.
 
 To view a sample metric and its UI configuration, download the sample
 [newsletter metric](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
@@ -276,7 +277,7 @@ snippet by the metric once you've entered the ID into the form and saved. Then
 you can add the generated code into the content you'd like to track
 (e.g., newsletter).
 
-![Figure 2: You can insert the transparent image into your content by copying and pasting the generated code from the form.](../../images-dxp/tracking-action-paste-image.png)
+![Figure 2: You can insert the transparent image into your content by copying and pasting the generated code from the form.](../../images-dxp/metric-paste-image.png)
 
 To do this, you could add the following lines to the `JSP` file below the event
 type selector:
@@ -291,15 +292,15 @@ type selector:
     </c:if>
 
 You could test if the metric was working by copying the generated tracking image
-HTML into an email HTML editor, sending it, and opening it as if it were an actual
-newsletter. When opening the custom report containing the newsletter metric and
-selecting *Update Report*, a chart and table with the newsletter's view count is
-displayed.
+HTML into an email HTML editor, sending it, and opening it as if it were an
+actual newsletter. Then open the custom report containing the newsletter metric
+and select *Update Report*, a chart and table with the newsletter's view count
+is displayed.
 
 For convenience, you can download the full source for the sample newsletter
 metric as a
-[ZIPfile](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
-You can deploy it to your @product@ and try it out yourself!
+[ZIP file](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
+You can deploy it to your @product@ instance and try it out yourself!
 
 If you've been paying close attention, you'll notice that there is still one
 final component to cover for tracking actions: language keys. You can learn more
