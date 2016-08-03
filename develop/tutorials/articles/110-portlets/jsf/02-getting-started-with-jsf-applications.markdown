@@ -190,8 +190,8 @@ annotation:
 
 For more information on service trackers and how to use them in WAR-style
 portlets, see the
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#service-trackers)
-sub-section.
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+tutorial.
 
 Hopefully this introductory tutorial for JSF portlets developed for Liferay 7 is
 helpful for a big-picture look on the JSF technology developed for @product@. To
