@@ -315,7 +315,7 @@ The static utility classes don't let you do that, and that's sad. But be happy,
 because with a little code, you can regain those benefits. For the details on
 implementing a service tracker, read the [Service Trackers tutorial](/develop/tutorials/-/knowledge_base/7-0/service-trackers).
 
-To summarize, you'll need to:
+To summarize, you'll need to do these things:
 
 -  Instantiate a new `org.osgi.util.tracker.ServiceTracker` to track the service
     of the type you need.
@@ -341,7 +341,7 @@ To summarize, you'll need to:
 That's probably not enough detail, so refer to the tutorial on [Service
 Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers) for the
 details. As you'll see in the tutorial, there's some boilerplate code involved,
-but leveraging service trackers will allow you to look up services in the OSGi
+but leveraging service trackers lets you look up services in the OSGi
 runtime.
 
 If you are not required to use a Spring MVC portlet, consider using Liferay's
