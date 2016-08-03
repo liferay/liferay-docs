@@ -1,47 +1,47 @@
 # Service Trackers
 
-Someone wise once said, "With increased modularity comes increased dynamism".
+Someone wise once said, "With increased modularity comes increased dynamism."
 Okay, nobody ever said that, but it's true. Now that Liferay is promoting more
-modular plugins, deployed into an OSGi runtime, you have to consider how your
+modular plugins deployed into an OSGi runtime, you have to consider how your
 own code, living in its own module, can rely on services in other modules for
 functionality. You need to account for the possibility of service
 implementations being swapped out or removed entirely if your module is to
-survive and thrive in the wild environment of OSGi. It's easy for Liferay 7
+survive and thrive in the environment of OSGi. It's easy for Liferay 7
 developers who need to [call services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
 from their `@Component` classes. They just use another Declarative Services
 annotation, `@Reference`, to get a service reference.
 
 If you're able to use the Declarative Services component framework and leverage
 the `@Component` and `@Reference` annotations, you should. If you're operating
-outside the context of an OSGi-friendly module (you can't use Declarative
+outside the context of an OSGi-friendly module (i.e., you can't use Declarative
 Services to create a Component), keep reading to learn about how to implement a
 Service Tracker to look up services in the service registry. 
 
-![Figure x: Service implementations are registered in the OSGi service registry can be accessed using Service Trackers.](../../images/service-registry.png)
+![Figure x: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../images/service-registry.png)
 
 What scenarios might require the use of a service tracker?
 
 -  Calling OSGi services from a [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc)
--  Calling OSGi services from a [JSF portlet](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces-intro)<!-- Confirm ink-->
--  Calling OSGi services from a [WAR-packaged
-  portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
-  that's been upgraded to run on Liferay 7, but not [fully modularized](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet) and made
-  into an OSGi-friendly plugin
+-  Calling OSGi services from a [JSF portlet](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces-intro)
+-  Calling OSGi services from a [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+  that's been upgraded to run on Liferay 7, but not
+  [fully modularized](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
+  and made into an OSGi-friendly plugin
 
 +$$$
 
 **Note:**  The static utility classes that were useful in previous versions of
-Liferay (for example, `UserLocalServiceUtil`) should not be called, if possible.
+Liferay (e.g., `UserLocalServiceUtil`) should not be called, if possible.
 There's no way to account for the dynamic environment of the OSGi runtime with
-the static utility classes, which is  sad. But be happy, because with a Service
+the static utility classes, which is sad. But be happy, because with a Service
 Tracker, you can make OSGi-friendly service calls.
 
 $$$
 
 Using a service tracker, you can access any service registered in the OSGi
-runtime, including your own [Service Builder
-services](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder) and
-the services published by Liferay's modules (like the popular
+runtime, including your own
+[Service Builder services](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+and the services published by Liferay's modules (like the popular
 `UserLocalService`).
 
 ## Implementing a Service Tracker
@@ -57,8 +57,8 @@ To implement a service tracker you can do this:
     org.osgi.util.tracker.ServiceTracker<SomeService, SomeService> serviceTracker = new 
     org.osgi.util.tracker.ServiceTracker(bundleContext, SomeService.class, null);
 
-That's too wordy. To minimize the service tracker code you need to add to your
-business logic, use a type-safe wrapper class that extends
+That's too wordy. To minimize the service tracker code, you need to add to your
+business logic; use a type-safe wrapper class that extends
 `org.osgi.util.tracker.ServiceTracker`. Your `ServiceTracker` takes two generic
 type parameters: the type of service being tracked, and the type of object being
 produced. In the present use case, both types are the same.
@@ -86,7 +86,7 @@ code:
     }
 
 When you want to call the service, make sure the service tracker has something
-in it, and then get the service using the Service Tracker API’s `getService`
+in it, and then get the service using the Service Tracker API's `getService`
 method. After that, use the service to do something cool:
 
     if (!someServiceTracker.isEmpty()) {
@@ -94,8 +94,8 @@ method. After that, use the service to do something cool:
         someService.doSomethingCool();
     }
 
-Of course, where there’s an `if`, there can also be an `else`, and you can do
-whatever you’d like in response to an empty service tracker.
+Of course, where there's an `if`, there can also be an `else`, and you can do
+whatever you'd like in response to an empty service tracker.
 
 To wrap things up, make sure you close the service tracker. A `destroy` method
 is an appropriate place to do this:
