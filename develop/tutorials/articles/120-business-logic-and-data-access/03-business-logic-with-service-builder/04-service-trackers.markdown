@@ -1,4 +1,4 @@
-# Service Trackers
+# Service Trackers [](id=service-trackers)
 
 Someone wise once said, "With increased modularity comes increased dynamism."
 Okay, nobody ever said that, but it's true. Now that Liferay is promoting more
@@ -17,7 +17,7 @@ outside the context of an OSGi-friendly module (i.e., you can't use Declarative
 Services to create a Component), keep reading to learn about how to implement a
 Service Tracker to look up services in the service registry. 
 
-![Figure x: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../images/service-registry.png)
+![Figure 1: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../../images/service-registry.png)
 
 What scenarios might require the use of a service tracker?
 
@@ -44,7 +44,7 @@ runtime, including your own
 and the services published by Liferay's modules (like the popular
 `UserLocalService`).
 
-## Implementing a Service Tracker
+## Implementing a Service Tracker [](id=implementing-a-service-tracker)
 
 Although you don't have the luxury of using Declarative Services to manage your
 service dependencies, you can call services from the service registry with a
