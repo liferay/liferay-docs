@@ -24,33 +24,27 @@ can be enabled to take readers to an article's online source repository location
 The Knowledge Base app is available on the 
 [Liferay Marketplace](https://www.liferay.com/marketplace). This app also 
 contains other apps that let you manage different aspects of your knowledge 
-base. Once you've installed the app, its Knowledge Base Admin app is available 
-in *Site Administration* &rarr; *Content* &rarr; *Knowledge Base*. The Knowledge 
-Base app also contains the following apps in the *Add* &rarr; *Applications* 
-&rarr; *Knowledge Base* menu: Knowledge Base Article, Knowledge Base Display, 
+base. Once you've installed the app, it's accessible by opening Site
+Administration and navigating to *Content* &rarr; *Knowledge Base*. The Knowledge 
+Base has several apps you can add to site pages. The *Add* &rarr; *Applications* 
+&rarr; *Content Management* menu lists its apps: Knowledge Base Article, Knowledge Base Display, 
 Knowledge Base Search, and Knowledge Base Section. You'll learn what each does 
-as you learn how to manage your knowledge base. First you'll learn about 
-Knowledge Base Admin.
+as you learn how to manage your knowledge base. First you'll learn how to create
+and manage articles. 
 
-## Knowledge Base Admin [](id=knowledge-base-admin)
+## Creating and Managing Articles
 
-Knowledge Base Admin has everything administrators and authors need to create, 
-update, and manage articles. To navigate to Knowledge Base Admin, go to *Site 
-Administration* &rarr; *Content* &rarr; *Knowledge Base*. The app has three 
-tabs: one for creating and managing articles (Articles), one for creating and 
-managing templates (Templates), and one for managing article suggestions 
+In Site Administration, the Knowledge Base has everything administrators and authors need to create, 
+update, and manage articles. To navigate to the Knowledge Base, go to Site 
+Administration &rarr; *Content* &rarr; *Knowledge Base*. It has two 
+tabs: one for creating and managing articles (Articles) and one for managing article suggestions 
 (Suggestions). The Articles tab is for managing all the articles and article 
-folders in the Knowledge Base. The Templates tab is for managing all the article 
-templates. The Suggestions tab is for managing user-submitted feedback. 
+folders in the Knowledge Base. The Suggestions tab is for managing user-submitted feedback. 
 
-![Figure 1: You can manage Knowledge Base articles, folders, templates, and suggestions from the Knowledge Base Admin app.](../../../images/kb-admin-articles.png)
+![Figure 1: You can manage Knowledge Base articles, folders, and suggestions from the Knowledge Base in Site Administration.](../../../images/kb-admin-articles.png)
 
-First, you'll learn how to use the Articles tab to create and manage articles.
-
-### Creating and Managing Articles [](id=creating-and-managing-articles)
-
-The Articles tab lets you create and manage articles and folders for your 
-Knowledge Base. It also displays any existing articles and folders. Folders 
+The Articles tab lets you create and manage Knowledge Base articles and folders.
+It also displays any existing articles and folders. Folders 
 appear in a table near the top of the Articles tab, while articles appear in a 
 separate table at the bottom. The Add selector shows you all the options for 
 adding articles. You can add a folder, a Basic Article, an article based on a 
@@ -66,10 +60,10 @@ tasks:
 
 +$$$
 
-**Note:** To access Knowledge Base Admin, a role must have the permission 
+**Note:** To access Knowledge Base in Site Administration, a role must have the permission 
 *Knowledge Base* &rarr; *Access in Site Administration*. To add or act on 
 articles, folders, or suggestions, the site administrator must grant the 
-appropriate permissions using the Permissions window in Knowledge Base Admin.
+appropriate permissions using the Permissions window in Knowledge Base.
 
 $$$
 
@@ -96,8 +90,8 @@ select *Folder* from the Add selector. This opens the New Folder window. The UI
 for adding folders is very straightforward. You can enter a name, description, 
 and permissions for the folder. 
 
-Articles and folders can exist in several places in Knowledge Base Admin. You 
-can create articles and folders in the root of Knowledge Base Admin, or within 
+Articles and folders can exist in several places in Knowledge Base. You 
+can create articles and folders in the root of Knowledge Base, or within 
 other folders. Navigate through folders by clicking them in the UI. The text 
 immediately below the Add selector shows your position in a folder hierarchy. 
 Click any of the preceding folders in this text to navigate back up the 
@@ -153,18 +147,20 @@ appears when one or more article checkboxes are checked. This Actions menu lets
 you save changes (i.e., priority values) to selected articles or delete selected 
 articles. 
 
-Next, you'll learn how to use Knowledge Base Admin to manage templates. 
+Next, you'll learn how to manage article templates. 
 
 ### Managing Templates [](id=managing-templates)
 
-Knowledge Base Admin's Templates tab lets you manage article templates. 
+<!-- Template management is now accessible from Options &rarr; Templates -->
+
+Knowledge Base's Templates tab lets you manage article templates. 
 Templates are starting points for articles. For example, you can create 
 templates that contain default headers or other content to give your users a 
 starting point to work from. Templates help foster consistent formatting and 
 content organization for articles. To create a new template, click the *Add 
 Template* button in the *Templates* tab. 
 
-![Figure 4: As an administrator, you can add a new template to your knowledge base from the Knowledge Base Admin app.](../../../images/kb-admin-new-template.png)
+![Figure 4: As an administrator, you can add a new template to your knowledge base from Knowledge Base in Site Administration.](../../../images/kb-admin-new-template.png)
 
 From the *Templates* tab, the following actions are available in each template's 
 Actions button:
@@ -179,15 +175,15 @@ Actions button:
 
 - **Delete:** remove the template from the Knowledge Base. 
 
-Knowledge Base Admin also lets you handle user feedback on articles. You'll 
+Knowledge Base in Site Administration also lets you handle user feedback on articles. You'll 
 learn about this next.
 
 ### Responding to User Feedback [](id=responding-to-user-feedback)
 
-Knowledge Base Admin's Suggestions tab shows user feedback on articles and lets 
+Knowledge Base's Suggestions tab shows user feedback on articles and lets 
 you mark progress on addressing the feedback. 
 
-![Figure 5: The Suggestions tab in the Knowledge Base Admin app helps you monitor article feedback and mark progress in addressing feedback.](../../../images/kb-admin-suggestions.png)
+![Figure 5: The Suggestions tab in Knowledge Base helps you monitor article feedback and mark progress in addressing feedback.](../../../images/kb-admin-suggestions.png)
 
 Each suggestion provides the link to the associated article, the user's 
 feedback, the user's name, the feedback's time stamp, and the status on 
@@ -227,6 +223,8 @@ Liferay application configuration options, including ones for look and feel,
 export/import, permissions, scope, and sharing. For more information on this, 
 see the section on configuring Liferay applications in 
 [Web Experience Management](/discover/portal/-/knowledge_base/7-0/web-experience-management). 
+
+<!-- Recommend the Knowledge Base Display as full page app (use in a single column row of a layout) -->
 
 If you display a folder of articles, the navigation on the left side of the app 
 displays links to all of the folder's articles. The viewing area on the right 
@@ -274,7 +272,7 @@ articles. The content folder feature lets you add a selector to the top of
 Knowledge Base Display's navigation that lets users switch between article sets. 
 Here's what you do to set up content folders:
 
-1. Add a folder in Knowledge Base Admin. Then create sub-folders in this folder. 
+1. Add a folder in Knowledge Base. Then create sub-folders in this folder. 
    These sub-folders are the *content folders*. 
 
 2. Add articles to each content folder.
@@ -357,7 +355,7 @@ importing them from Markdown source files.
 As mentioned earlier, the Knowledge Base app can import articles in bulk. This 
 lets you have an offline process where articles are prepared ahead of time 
 before they're published. The file format for the articles is Markdown. Use 
-Knowledge Base Admin to import articles.
+Knowledge Base to import articles.
 
 Markdown is a text-only file format that is designed to be easy to read, yet
 support all the things you'd need to do to format your articles. It's also
@@ -548,7 +546,7 @@ importer converts each source file's Markdown text to HTML, applying the HTML to
 the resulting article. Any image files that are included in the ZIP file and
 referenced in an article source file are imported as attachments to the article. 
 
-![Figure 11: Selecting *Add* &rarr; *Import* in Knowledge Base Admin brings up the interface for selecting a ZIP file of Markdown source files and images to produce and update articles in your Knowledge Base.](../../../images/kb-admin-importer.png)
+![Figure 11: Selecting *Add* &rarr; *Import* in Knowledge Base brings up the interface for selecting a ZIP file of Markdown source files and images to produce and update articles in your Knowledge Base.](../../../images/kb-admin-importer.png)
 
 ### Importer FAQs [](id=importer-faqs)
 
@@ -586,6 +584,8 @@ Next, Liferay administrators can learn how to override the Knowledge Base app's
 properties to enable and configure some advanced, but optional features. 
 
 ## Advanced Configuration [](id=advanced-configuration)
+
+<!-- Configuration is now completely different. -->
 
 The Knowledge Base app has several optional features that are disabled by 
 default. These include source URL, import file conventions, new article priority 
