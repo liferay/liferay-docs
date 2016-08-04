@@ -9,14 +9,9 @@ operating system, and will be covered in greater detail next.
 
 ## Installing Blade CLI Using JPM [](id=installing-blade-cli-using-jpm)
 
-Follow the steps outlined below to install Blade CLI to your local machine.
+After you have installed JPM, install the Blade CLI using the following command: 
 
-1.  After you have installed JPM, download the `com.liferay.blade.cli.jar` file:
-    [https://liferay-test-01.ci.cloudbees.com/job/liferay-blade-cli/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar](https://liferay-test-01.ci.cloudbees.com/job/liferay-blade-cli/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar).
-
-2.  Next, install the downloaded JAR:
-
-        (sudo) jpm install -fl [Downloads Directory]/com.liferay.blade.cli.jar
+        (sudo) jpm install com.liferay.blade.cli
 
 Now that Blade CLI is installed on your machine, you'll learn how to verify and
 update your installation.
@@ -39,7 +34,7 @@ features.
 because Windows cannot update a file that is currently in use. To bypass this
 issue, you can use JPM to update your version of Blade CLI:
 
-    jpm install -f https://liferay-test-01.ci.cloudbees.com/job/liferay-blade-cli/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar
+    jpm install -f com.liferay.blade.cli
 
 $$$
 
