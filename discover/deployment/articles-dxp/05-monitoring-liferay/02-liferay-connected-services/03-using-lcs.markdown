@@ -74,22 +74,13 @@ exception of the following non-sensitive properties:
     login.create.account.allow.custom.password
 
 Note that LCS also lets you prevent it from analyzing specific properties of 
-your choosing. With your DXP instance connected to LCS, navigate to the LCS 
-client app in your DXP instance by clicking *Control Panel* &rarr; 
-*Configuration* &rarr; *Liferay Connected Services*. Then click the *Configure 
-Services* link and uncheck the *Enable All Services* checkbox to reveal the list 
-of LCS services you can enable. Check the checkbox for *Portal Properties 
-Analysis*. In the text box that appears, enter any properties you don't want LCS 
-to analyze. Enable any other LCS services you want to use with this DXP 
-instance, and then click *Save*. 
-
-![Figure 1: The red box in this screenshot highlights the Portal Properties Analysis selection and text box for entering any properties that you don't want LCS to analyze.](../../../images-dxp/lcs-portal-properties-blacklist.png)
+your choosing. For more information on this, see 
+[the section on using environment tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
 
 Now that you know what information is stored on the LCS servers, you're ready to 
-learn how to manage your LCS projects. This includes renaming and creating 
-projects, as well as requesting membership to projects you don't administer. 
-You'll also learn how to manage the users in your LCS project and assign them to 
-the correct LCS roles. 
+learn how to manage your LCS projects. This includes renaming projects and 
+requesting membership to projects you don't administer. You'll also learn how to 
+manage the users in your LCS project and assign them to the correct LCS roles. 
 
 ## Managing Your LCS Projects [](id=managing-your-lcs-projects)
 
@@ -98,16 +89,15 @@ simple UI for managing these projects. To access this UI, log in to LCS and then
 select *Manage Projects* from your user menu in the Dockbar. The following 
 screenshot illustrates this.
 
-![Figure 2: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../../images-dxp/lcs-user-menu-manage-projects.png)
+![Figure 1: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../../images-dxp/lcs-user-menu-manage-projects.png)
 
 The *My Projects* tab is shown first, and shows a table that lists each of your 
 LCS projects. This table also lists the administrator's email address for each 
 project. If you're the administrator of a project, you can edit its name by 
-clicking the blue pencil icon next to it in the table. You can also create a new 
-project by clicking the *Create Project* button below the table. The following 
-screenshot shows the My Projects tab.
+clicking the blue pencil icon next to it in the table. The following screenshot 
+shows the My Projects tab. 
 
-![Figure 3: The My Projects tab lists your LCS projects and lets you create new ones.](../../../images-dxp/lcs-my-projects.png)
+![Figure 2: The My Projects tab lists your LCS projects.](../../../images-dxp/lcs-my-projects.png)
 
 The *Unlinked* tab shows your Liferay projects that aren't connected with LCS. 
 For example, if you've submitted an app on Liferay Marketplace, then it's a 
@@ -127,7 +117,7 @@ lets you quickly and easily join the LCS projects that are associated with your
 company. The following screenshot shows the Company tab (the administrator email 
 addresses have been masked).
 
-![Figure 4: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../../images-dxp/lcs-company-projects.png)
+![Figure 3: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../../images-dxp/lcs-company-projects.png)
 
 So what can an LCS Administrator do? Why did you mask out their email addresses 
 in the previous screenshots? These are fantastic questions! The LCS 
@@ -179,7 +169,7 @@ just below the Dashboard tab on the upper-left of your screen. You're presented
 with a table of the users in your project. To the right of each is the Manage 
 button. Clicking *Manage* lets you assign or revoke LCS roles for that user. 
 
-![Figure 5: The Users tab lets you manage the LCS users in your project.](../../../images-dxp/lcs-users.png)
+![Figure 4: The Users tab lets you manage the LCS users in your project.](../../../images-dxp/lcs-users.png)
 
 To invite external users to your project, click the *Invite* button. Here you
 can invite anyone with a valid email address. You can also search for
@@ -188,7 +178,7 @@ box lets you preassign LCS roles for when they accept your invitation. You can
 also use the Environment selection box to preassign them to an environment in
 your project.
 
-![Figure 6: You can invite users to your LCS project and even preassign them roles.](../../../images-dxp/lcs-invite-users.png)
+![Figure 5: You can invite users to your LCS project and even preassign them roles.](../../../images-dxp/lcs-invite-users.png)
 
 To view sent invitations, click the *Invitations* tab. A table displays
 invitations, listing invited users' email addresses along with who invited them
@@ -196,7 +186,7 @@ and the date that the invitation was sent. The table also shoes the preassigned
 LCS role and environment. You can cancel an invitation by clicking *Cancel* in 
 the Action column of the invitation. 
 
-![Figure 7: The Invitations tab lets administrators view and cancel invitations.](../../../images-dxp/lcs-invitations.png)
+![Figure 6: The Invitations tab lets administrators view and cancel invitations.](../../../images-dxp/lcs-invitations.png)
 
 Great! Now you know how to manage your LCS projects and the users in them. Now 
 it's time to get to the heart of LCS: the Dashboard.
@@ -222,13 +212,15 @@ message appears for a server when the server is offline. Status messages also
 appear for servers when fix packs are available, monitoring is unavailable, the 
 patching tool is unavailable, or other events occur that relate to LCS. 
 
-![Figure 8: The LCS project view shows an overview of your LCS project.](../../../images-dxp/lcs-project-view.png)
+![Figure 7: The LCS project view shows an overview of your LCS project.](../../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
-can also create new environments here by clicking the Add Environment tab. Note 
-that the icon to the left of each environment differs depending on the 
-environment's type and status. The icon's color and type tells you something 
-about that environment:
+can also create new environments here by clicking the Add Environment tab. To 
+view an environment's settings, click the environment's gear icon. You can also 
+get more information about a specific environment by clicking it. This takes you 
+to the environment view. Also note that the icon to the left of each environment 
+differs depending on the environment's type and status. The icon's color and 
+type tells you something about that environment: 
 
 - **Red icon:** Indicates a problem or issue with one or more servers in that 
   environment.
@@ -237,40 +229,54 @@ about that environment:
 - **Icon with a circle:** Indicates that the servers in that environment are in 
   a cluster.
 
-To view the environment's settings, click the environment's gear icon. You can 
-also get more information about a specific environment by clicking it. This 
-takes you to the environment view. 
+Note that only clustered environments can contain clustered servers. LCS 
+environments can only be designated as clustered when they are created. To 
+create a clustered environment, click *Add Environment* and select the *Cluster* 
+checkbox when filling out the environment's information. Note that you must set 
+the portal property `cluster.link.enabled` to `true` in any servers that connect 
+to a clustered environment. 
+
+![Figure 8: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../../images-dxp/lcs-new-clustered-environment.png)
+
+Next, you'll learn to use the environment view.
 
 ### Using the Environment View [](id=using-the-environment-view)
 
 Clicking an environment on the left-hand side of the project view takes you to 
 the environment view. The environment view lets you manage an environment in 
-your LCS project. The UI is segmented into three tabs: Fix Packs, and Automatic 
-Registration, and Environment Settings. When you enter environment view, the Fix 
-Packs tab is selected by default. This tab displays the environment's available 
-fix packs in the Fix Packs table. This table lists the status, server, server 
-location, and size for each fix pack. If a server with an available fix pack 
-is running, a *Download* column also appears in the table. You can download the 
-fix pack by clicking its *Download* icon in that column. You can download 
-several fix packs at once by checking the checkbox to the left of each and then 
-clicking the *Download* button above the Fix Packs table. Once a fix pack 
-download completes, LCS prompts you to restart your server. Restarting your 
-server installs any downloaded fix packs. Note that you must start your server 
-with the privileges required to write to the disk location where patches are 
-stored and processed (the `patching-tool` folder). 
+your LCS project. 
 
-But what about using LCS to install fix packs across a cluster? Just follow the 
-same procedure! LCS downloads and installs fix packs simultaneously across all 
-nodes--you don't have to handle each separately. 
+The UI is segmented into three tabs: 
 
-Next is the Automatic Registration tab. This tab lets you generate and view 
-*environment tokens* that allow automatic configuration of LCS clients. See the 
-section below for more information on environment tokens. The Environment 
-Settings tab is last. You can use this tab to change the environment's name, 
-location, and description. You can also see if your environment is part of a 
-cluster. Click the *Save* button to save any changes you make in the Environment 
-Settings tab. You can also delete the environment by clicking *Delete 
-Environment*, next to the Save button. 
+1. **Fix Packs:** lets you view and apply fix packs for the environment's 
+   servers. This tab only appears if a server is registered in the environment. 
+   A table displays each fix pack's status, server, and server location. If the 
+   server is running, the table also contains *Size* and *Download* columns. You 
+   can download a fix pack by clicking its *Download* icon in that column. You 
+   can download several fix packs at once by checking the checkbox to the left 
+   of each and clicking the *Download* button that appears above the table. Once 
+   a fix pack downloads, LCS prompts you to restart your server. Restarting your 
+   server installs any downloaded fix packs. Note that you must start your 
+   server with the privileges required to write to the disk location where 
+   patches are stored and processed (the `patching-tool` folder). To use LCS to 
+   install fix packs across a cluster, follow the same procedure. LCS downloads 
+   and installs fix packs simultaneously across all nodes--you don't have to 
+   handle each separately. 
+
+2. **Registration:** lets you generate and download *environment tokens* that 
+   connect your servers to LCS. You can also assign the environment to a 
+   subscription type if you haven't done so yet. For instructions on this, see 
+   the following sections:
+
+    - [Managing Liferay DXP Subscriptions](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
+    - [Using Environment Tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens)
+
+3. **Environment Settings:** lets you change the environment's name, location, 
+   and description. You can also see if the environment is part of a cluster, 
+   and view or set the environment's subscription type. Click the *Save* button 
+   to save any changes you make in the Environment Settings tab. You can also 
+   delete the environment by clicking *Delete Environment*, next to the Save 
+   button. 
 
 ![Figure 9: The LCS environment view shows an overview of an LCS environment.](../../../images-dxp/lcs-environment-view.png)
 
@@ -282,8 +288,8 @@ icon. Clicking on a server takes you to its server view.
 
 The server view provides detailed information about a server, including 
 statistics and performance metrics. You can get to the server view by clicking a
-server in the environment view or by clicking a server in the Fix Packs or 
-Alerts tables. Server view is segmented into five tabs: 
+server in the environment view or by clicking a server in the Fix Packs table. 
+Server view is segmented into five tabs: 
 
 - **Page Analytics:** Displays metrics on page views and load times.
 - **Snapshot Metrics:** Displays application, JVM, and server metrics.
@@ -456,21 +462,42 @@ time you log in to LCS.
 ![Figure 19: You can change your LCS account's language, time zone, and default LCS project.](../../../images-dxp/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. Next, you'll learn how to 
-use LCS to manage your Liferay DXP subscriptions. 
+use LCS to work with your Liferay DXP subscriptions. 
 
 ## Managing Liferay DXP Subscriptions [](id=managing-liferay-dxp-subscriptions)
 
-LCS also lets you view and manage your Liferay DXP subscriptions. You can view 
-your project's subscriptions, see how they're being used, assign an environment 
-to a subscription type, and more. You can access these features from the 
-*Subscriptions* tab on the upper-left of the LCS site. 
+LCS also lets you use and view your Liferay DXP subscriptions. By assigning an 
+environment to a subscription type and then registering a DXP server in that 
+environment, your server consumes one activation key from that subscription 
+type. You can also view your project's available subscriptions and see how 
+they're being used. You can access these features from the *Subscriptions* tab 
+on the upper-left of the LCS site. 
 
 ![Figure 20: The *Subscriptions* tab in LCS lets you view and manage your Liferay DXP subscriptions.](../../../images-dxp/lcs-subscriptions.png)
 
-There are four tables in the Subscriptions tab:
+There are four tables in the Subscriptions tab: 
 
-1. **Subscriptions:** shows you a list of Liferay DXP subscriptions available 
-   for your LCS project. For each subscription, this table shows the following 
+1. **Assign Subscription Type:** lets you assign a subscription type to an 
+   environment. To do so, click the environment's *No Subscriptions* link and 
+   then select the subscription type. This table also displays any existing 
+   subscription type assignments. 
+
+    +$$$
+
+    **Warning:** You should **use caution** when setting an environment's 
+    subscription type. All the servers in an environment **must be shut down** 
+    to assign that environment's subscription type. Also, **once set, you can't 
+    change an environment's subscription type**. 
+
+    $$$
+
+    Once you've assigned a subscription type to an environment, you must use an 
+    *environment token* to activate a DXP instance in the environment. For 
+    instructions on this, see the section 
+    [Using Environment Tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
+
+2. **Subscriptions:** shows a list of Liferay DXP subscriptions available for 
+   your LCS project. For each subscription, this table shows the following 
    information: 
 
     - Subscription Type
@@ -483,12 +510,9 @@ There are four tables in the Subscriptions tab:
     - Servers Allowed
     - Servers Used
 
-2. **Subscriptions Summary:** shows you how you're currently utilizing your 
-   subscriptions. For each subscription type, this table shows the number of 
+3. **Subscriptions Summary:** shows how your subscriptions are currently used in 
+   your environment. For each subscription type, this table shows the number of 
    servers allowed, used, and available. 
-
-3. **Environment Subscriptions:** shows the subscription type assigned to each 
-   environment. You can also assign subscriptions to environments. 
 
 4. **Project Servers:** shows the environment and environment subscription type 
    for each server in your LCS project. 
@@ -496,40 +520,15 @@ There are four tables in the Subscriptions tab:
 If any of the information in these tables is missing or incorrect, contact 
 Liferay support. 
 
-To assign a subscription type to an environment:
-
-- Click the environment's *No Subscriptions* link in the Environment 
-  Subscriptions table and then select the subscription type. 
-
-To decommission a server and free its activation key for reuse: 
-
-- Select a server and then select *Unregister* in the *Server Settings* tab. 
-
-+$$$
-
-**Warning:** You should **use caution** when setting an environment's 
-subscription type. All the servers in an environment **must be shut down** to 
-assign that environment's subscription type. Also, **once set, you can't change 
-an environment's subscription type**. 
-
-$$$
-
-+$$$
-
-**Tip:** Once you have a subscription type assigned to an environment, using an 
-environment token is the fastest way to activate Liferay servers and utilize 
-subscriptions in that environment. Any Liferay servers you activate with an 
-environment token automatically consume an activation key from that 
-environment's subscription type. 
-
-$$$
+To decommission a server and free its activation key for reuse, select the 
+server's environment on the left and then select the server. In the server's 
+*Server Settings* tab, select *Unregister*. 
 
 The next section shows you how to use environment tokens to activate Liferay DXP 
 instances with LCS. 
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
-Environment tokens let Liferay DXP instances connect to and activate with LCS. 
 When a subscription type is assigned to an environment, that environment's token 
 file lets DXP instances connect to LCS and consume an activation key from that 
 subscription. LCS Administrators and Environment Managers can generate and 
@@ -546,8 +545,8 @@ There are a few things to keep in mind when using environment tokens:
   to your environment and consume an activation key in your subscription. 
 
 - Be careful when regenerating a token file from LCS. When this is done, DXP 
-  instances using the old file can't connect to LCS until receiving the new 
-  file. 
+  instances using the old file are disconnected from LCS and can't reconnect 
+  until restarting with the new file. 
 
 - Minimal information (server name, location, etc...) is used to activate a DXP 
   instance with LCS. You can change this information from 
@@ -562,7 +561,7 @@ There are a few things to keep in mind when using environment tokens:
   existing credentials are used when they create a token file. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
-the setup process, using environment tokens is valuable in auto-scaling 
+the LCS connection process, using environment tokens is valuable in auto-scaling 
 environments where algorithms create and destroy servers automatically. In this 
 situation, having clients that configure themselves is crucial. 
 
@@ -579,60 +578,88 @@ instance.
 
 $$$
 
-There are two places in LCS where you can generate and access environment 
-tokens:
+To access the UI that lets you generate, regenerate, and download environment 
+tokens, select your environment on the left and then select the *Registration* 
+tab. This tab contains the following sections: 
 
-1. An environment's *Automatic Registration* tab: applies only to the selected 
-   environment's token. 
+- **Requirements:** the basic requirements for using an environment token. 
 
-    ![Figure 21: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../../images-dxp/lcs-environment-token.png)
+- **Activation:** tells you that registering a DXP instance in the environment 
+  will consume an activation key from the environment's subscription type. If 
+  the environment has no subscription type, an *Assign Subscription Type* link 
+  appears instead. 
 
-2. The *Connection* &rarr; *Automatic Registration* tab: applies to all of your 
-   project's environment tokens. 
+- **Services:** lets you select the LCS services to use with all DXP servers 
+  that connect to this environment. When you generate or regenerate the 
+  environment token file, your selections here are embedded in it. Portal 
+  analytics, fix pack management, and portal property analysis are selected by 
+  default. Note that although 
+  [LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers), 
+  you may have additional properties you want to prevent LCS from analyzing. 
+  Enter them into the box that appears when you select *Show Blacklisted 
+  Properties*. 
 
-    ![Figure 22: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../../images-dxp/lcs-environment-token-02.png)
+![Figure 21: An environment's Registration tab lets you select the LCS services to use with your DXP servers that connect to that environment.](../../../images-dxp/lcs-environment-token.png)
 
-The process for generating, downloading, and regenerating tokens is the same in 
-both places: 
+Whether you must generate or regenerate a token depends on the actions you took 
+in the Services section, and whether there's an existing token in the 
+environment. This table summarizes the action you must take: 
 
-1. To generate an environment's token: Click the environment's *Generate* button 
-   in the table. The new token appears in the table with information on who 
-   generated it and when. 
+Existing Token? | &nbsp;Service Changes | &nbsp;No Service Changes |
+:-------------: | :-------------------: | :----------------------: |
+ No             | Generate Token (1)    | Generate Token (1)       |
+ Yes            | Regenerate Token (2)  | No action required (3)   |
 
-2. To download an environment's token: Click the environment's *Actions* button 
-   in the table, and select *Download*. 
+The actions corresponding with the numbers in this table are described here: 
 
-3. To regenerate an environment's token: Click the environment's *Actions* 
-   button in the table, and select *Regenerate*. 
+1. If the environment has no token file, then you must generate one regardless 
+   of your selections of LCS services. Do so by clicking the *Generate Token* 
+   button. Note that this button only appears when the environment has no 
+   token. Upon generating a token, the Download Token button replaces the 
+   Generate Token button, and the Regenerate Token button appears. 
 
-Remember that if you regenerate a token, all DXP instances that use it won't be 
-able to connect to LCS until receiving the new token. 
+2. If the environment already has a token, and you made changes to your 
+   selections of LCS services, then you must regenerate the token by clicking 
+   the *Regenerate Token* button. Note that if you regenerate a token, all DXP 
+   instances in the environment are disconnected from LCS and won't be able to 
+   reconnect until receiving the new token. 
 
-Once you download environment token, use the following steps to connect a 
+3. If the environment already has a token, and you made no changes to your 
+   selections of LCS services, then you can simply download and use the existing 
+   token. 
+
+To download an environment's token, click the *Download Token* button. Once you 
+download the token, follow these steps to use it to connect and activate a 
 Liferay DXP instance with LCS: 
 
-1. Place the token file in your instance's `data` folder.
+1. Ensure that you've deployed the LCS client app, and have configured it 
+   properly if you connect from behind a proxy. For instructions on configuring 
+   the client app to connect through a proxy, 
+   [click here](/discover/deployment/-/knowledge_base/7-0/preconfiguring-the-lcs-client-to-connect-through-a-proxy). 
+   You can download the LCS client app 
+   [here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947). 
+   For instructions on using Marketplace to download and deploy apps, 
+   [click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
-2. Deploy the LCS client app to your DXP instance. If the client is bundled with 
-   your DXP instance, start up the instance. 
+2. Shut down your DXP instance if it's running. 
 
-3. Once deployment completes, the LCS client app connects automatically 
-   to LCS. You should see this in your LCS project's environment view. If a 
-   subscription type is assigned to the environment, your DXP instance activates 
-   and consumes an activation key from that environment. 
+3. Place the token file in your instance's `[Liferay_Home]/data` folder, and 
+   then start the instance. 
 
-Once connected to LCS, you can view your DXP instance's connection status and 
-change which LCS services it uses. For information on this, see the end of 
-[the article on activating your DXP instance with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs). 
+On startup, the LCS client app automatically connects your DXP instance to LCS. 
+Upon connection, your DXP instance activates by consuming an activation key from 
+the environment's subscription type. You should see this in your LCS project's 
+Subscriptions tab. 
 
-Awesome! Now you know how to use environment tokens to activate your Liferay DXP 
-instances with LCS. 
+Awesome! Now you know how to use environment tokens to connect and activate your 
+Liferay DXP instances with LCS. 
 
-As you've now seen, LCS is a powerful tool that simplifies the management of 
-your Liferay servers. You can apply fix packs with just a single click and a 
-server restart--a process that even works across a cluster. You also get a one 
-stop shop for monitoring the performance of your Liferay servers. Metrics like 
-JVM performance, Liferay page and portlet load times, and number of current 
-threads give you an inside look at how your server is running. What's more is 
-that you can do all this collaboratively by inviting others to your project and 
-giving them specific roles in LCS. 
+As you've now seen, LCS is a powerful tool that assists you in the management of 
+your Liferay DXP servers. In addition to activating your DXP servers, LCS lets 
+you apply fix packs with just a single click and a server restart--a process 
+that even works across a cluster. You also get a one stop shop for monitoring 
+the performance of your Liferay servers. Metrics like JVM performance, Liferay 
+page and portlet load times, and number of current threads give you an inside 
+look at how your server is running. What's more is that you can do all this 
+collaboratively by inviting others to your project and giving them specific 
+roles in LCS. 
