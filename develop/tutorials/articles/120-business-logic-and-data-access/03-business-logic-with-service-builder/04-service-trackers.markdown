@@ -13,7 +13,7 @@ annotation, `@Reference`, to get a service reference.
 
 If you're able to use the Declarative Services component framework and leverage
 the `@Component` and `@Reference` annotations, you should. If you're operating
-outside the context of an OSGi-friendly module (i.e., you can't use Declarative
+outside the context of an OSGi module (i.e., you can't use Declarative
 Services to create a Component), keep reading to learn about how to implement a
 Service Tracker to look up services in the service registry. 
 
@@ -26,15 +26,17 @@ What scenarios might require the use of a service tracker?
 -  Calling OSGi services from a [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
   that's been upgraded to run on Liferay 7, but not
   [fully modularized](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
-  and made into an OSGi-friendly plugin
+  and made into an OSGi module
 
 +$$$
 
 **Note:**  The static utility classes that were useful in previous versions of
-Liferay (e.g., `UserLocalServiceUtil`) should not be called, if possible.
-There's no way to account for the dynamic environment of the OSGi runtime with
-the static utility classes, which is sad. But be happy, because with a Service
-Tracker, you can make OSGi-friendly service calls.
+Liferay (e.g., `UserLocalServiceUtil`) are there for compatibility but should
+not be called, if possible.  There's no way to account for the dynamic
+environment of the OSGi runtime with the static utility classes. This means you
+could call a service that hasn't been deployed or started, which is sad. But be
+happy, because with a Service Tracker, you can make OSGi-friendly service
+calls.
 
 $$$
 
@@ -57,11 +59,11 @@ To implement a service tracker you can do this:
     org.osgi.util.tracker.ServiceTracker<SomeService, SomeService> serviceTracker = new 
     org.osgi.util.tracker.ServiceTracker(bundleContext, SomeService.class, null);
 
-That's too wordy. To minimize the service tracker code, you need to add to your
-business logic; use a type-safe wrapper class that extends
-`org.osgi.util.tracker.ServiceTracker`. Your `ServiceTracker` takes two generic
-type parameters: the type of service being tracked, and the type of object being
-produced. In the present use case, both types are the same.
+But in most cases, that's too wordy. To minimize the service tracker code, use a
+type-safe wrapper class that extends `org.osgi.util.tracker.ServiceTracker`.
+Your `ServiceTracker` takes two generic type parameters: the type of service
+being tracked, and the type of object being produced. In the present use case,
+both types are the same.
 
     public class SomeServiceTracker extends 
         ServiceTracker<SomeService, SomeService> {     
@@ -85,6 +87,11 @@ code:
         someServiceTracker.open();
     }
 
+<!-- Please fix this. A @PostConstruct annotation is a Spring-specific thing.
+This method also looks like it sets the ServiceTracker in a local variable
+(where it would get garbage collected as soon as the init method is done)
+instead of an instance variable. -Rich -->
+
 When you want to call the service, make sure the service tracker has something
 in it, and then get the service using the Service Tracker API's `getService`
 method. After that, use the service to do something cool:
@@ -104,6 +111,9 @@ is an appropriate place to do this:
     public void destroy() {
         someServiceTracker.close();
     }
+
+<!-- Again, this is Spring-specific. If you're going to be specific, this
+article should assume we're in an MVCPortlet. -Rich --> 
 
 There's a little boilerplate code you need to produce, but now you can look up
 services in the service registry, even if your plugins can't take advantage of
