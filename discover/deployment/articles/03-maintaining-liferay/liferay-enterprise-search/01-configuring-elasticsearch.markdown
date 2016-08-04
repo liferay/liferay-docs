@@ -21,6 +21,11 @@ the basics of search engines in general, or the low level search infrastructure
 of Liferay. For that information, refer to the developer tutorial [Introduction
 to Liferay Search](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
 
+These terms will be useful to understand as you read this guide:
+
+-  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch installation (for example, `elasticsearch-2.2.0`). 
+-  *Liferay Home* refers to the root folder of your Liferay installation. It will contain the `osgi`, `deploy`, `data`, and `license` folders, among others.
+
 ## Embedded vs. Remote Operation Mode
 
 When you install Liferay, there's an embedded Elasticsearch already installed.
@@ -36,12 +41,21 @@ Liferay installation to run alongside Elasticsearch. In other words, run
 Elasticsearch in *remote operation mode*, as a standalone server or cluster of
 server nodes. The first step is to install Elasticsearch.
 
-## Installing Elasticsearch
++$$$
 
-<!-- Confirm this crazy list actually renders properly when converted to html,
-and make sure we want to link to that specific version. We could provide
-instructions on figuring out which version is supported, if this is likely to
-change-->
+**Note:** During development or demonstration, you might find it convenient to
+run Elasticsearch in embedded mode, while clustering Liferay. In this scenario,
+each Liferay node starts its own embedded Elasticsearch node. The Elasticsearch
+nodes will automatically connect to each other and form an Elasticsearch cluster
+named `LiferayElasticsearchCluster`. The Liferay indexes will be given one shard
+each (`number_of_shards=1`), but the number of replicas (starting with
+`number_of_replicas=0`) will vary with the number of Liferay instances in the
+cluster.
+
+$$$
+
+
+## Installing Elasticsearch
 
 Install Elasticsearch, and then you can begin configuring it to use with
 Liferay. Even if you already have Elasticsearch downloaded and unzipped, read
@@ -145,7 +159,7 @@ and running (do that if you haven't already) you need to introduce Liferay and
 Elasticsearch to each other. Fortunately, Liferay provides an adapter that helps
 it find and integrate your Elasticsearch cluster.
 
-## Configure the Liferay Elasticsearch Adapter
+## Configuring the Liferay Elasticsearch Adapter
 
 Liferay has an Elasticsearch adapter that ships with @product@. It's a module
 from the Liferay Foundation Suite that's deployed to the OSGi runtime, titled
@@ -154,9 +168,14 @@ Elasticsearch and Liferay. Before you configure the adapter, make sure
 Elasticsearch is running. 
 
 There are two ways to configure the adapter: use the System Setting application
-in Liferay's Control Panel, or manually create an OSGi configuration file. It's
-better, and more convenient, to configure the Elasticsearch adapter from System
-Settings. If you're not familiar with System Settings, you can read about it
+in Liferay's Control Panel, or manually create an OSGi configuration file. When
+preparing a system for production deployment, you want to set up a repeatable
+deployment process. Therefore, it's best to use the OSGi configuration file,
+where your configuration is maintained in a controlled source.
+
+It's convenient to configure the Elasticsearch adapter from System Settings, but
+this is often only possible during development and testing. If you're not
+familiar with System Settings, you can read about it
 [here](/discover/portal/-/knowledge_base/7-0/system-settings). Even if you need
 a configuration file so you can use the same configuration on another Liferay
 system, you can still use System Settings. Just make the configuration edits you
@@ -180,6 +199,11 @@ To configure the Elasticsearch adapter from the System Settings application:
     ![Figure x: Set Operation Mode to *Remote* from System
     Settings.](../../../images/elasticsearch-configuration.png)
 
+5. After you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must
+   trigger a reindex. Navigate to *Control Panel* &rarr; *Server
+   Administration*, find the *Index Actions* section, and click *Execute* next
+   to *Reindex all search indexes.* 
+
 To configure the Elasticsearch adapter using an OSGi configuration file:
 
 1. Create the following file:
@@ -194,17 +218,16 @@ To configure the Elasticsearch adapter using an OSGi configuration file:
         # Highly recommended for all non-prodcution usage (e.g., practice, tests, diagnostics):
         #logExceptionsOnly=false
 
-3. Start Liferay.
+3. Deploy the configuration file by copying it into `[Liferay_Home]/deploy`.
 
-As you can see from the System Settings Elasticsearch configuration page, there
-are a lot more configuration options available. For a detailed accounting of
-these, refer to the end of this article in the section titled <!--?????-->.
+4. Start Liferay, or reindex if Liferay is already running.
+
+As you can see from the System Settings entry for Elasticsearch, there are a lot
+more configuration options available. For a detailed accounting of these, refer
+to the section of this article titled Available Elasticsearch Adapter
+Configurations.
 
 ## Clustering Elasticsearch in Remote Operation Mode
-
-<!-- Find a place to cover what happens when you cluster Liferay with
-Elasticsearch running in Embedded mode-Is it even necessary to document it
-here since it isn't recommended?-->
 
 Clustering Elasticsearch is easy. Each time you run the Elasticsearch start
 script, a new node is added to the cluster. If you want four nodes, for example,
@@ -231,16 +254,15 @@ in a Java class:
 <!-- Describe the beauty of this class with the OSGi stuff? -->
 
 While the Elasticsearch adapter has a lot of configuration options out of the
-box, you can also add configuration options. First learn abotu all the out of
-the box options, then descide if you need to add more.
+box, you can also add configuration options. First learn about all the out of
+the box options, then decide if you need to add more.
 
 ### Available Elasticsearch Adapter Configurations
 
 As mentioned above, there's a lot of configurability baked into Liferay's
-Elasticsearch adapter module. 
-The following is a list of all of the configuration settings for Liferay's
-Elasticsearch adapter, in the order that they appear in the System Settings
-application:
+Elasticsearch adapter module. The following is a list of all of the
+configuration settings for Liferay's Elasticsearch adapter, in the order that
+they appear in the System Settings application:
 
 -  `clusterName=LiferayElasticsearchCluster`:
 A String value that sets the name of the cluster to integrate with. This name
@@ -308,7 +330,6 @@ Accepts a single value or a range
 (see[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-transport.html#_tcp_transport)
 for more information).
 
-
 -  `transportAddresses=localhost:9300`
 Set the String values for the addresses of the remote Elasticsearch nodes to
 connect to. This value is required when Operation Mode is set to remote (see
@@ -359,25 +380,22 @@ for more information).
 
 -  `additionalConfigurations=`
 Set the String values for custom settings for embedded Elasticsearch, in YML
-format.  See: Contributing Additional Settings<!-- Change to final section
-title-->
+format. See: Adding Settings to the Liferay Elasticsearch Adapter
 
 -  `additionalIndexConfigurations=`
 Set the String values for custom settings for the Liferay index, in JSON or YML
-format (Elasticsearch Create Index API).  For a complete list of available
-settings, see the [Elasticsearch
-reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html)
-See: Contributing Additional Settings
+format (refer to the Elasticsearch Create Index API for more information).
+See: Adding Settings to the Liferay Elasticsearch Adapter
 
 -  `additionalTypeMappings=`
-Set the String values for custom mappings for the LiferayDocumentType, in JSON
-format (Elasticsearch Put Mapping API).  In addition to the available
-configurations is the possibility of adding more.
+Set the String values for custom mappings for the `LiferayDocumentType`, in JSON
+format (refer to the Elasticsearch Put Mapping API for more information)
+See: Adding Settings to the Liferay Elasticsearch Adapter
 
 You can easily configure these settings in the System Setting application, or,
 as mentioned above, you can specify them in a deployable OSGi `.cfg` file.
 
-### Adding Configuration Options to the Liferay Elasticsearch Adapter
+### Adding Settings to the Liferay Elasticsearch Adapter
 
 Even if the many available configuration options aren't enough, you can add
 extra settings by using one or more of the `additionalConfigurations`,
@@ -393,7 +411,7 @@ in System Settings.](../../../images/elasticsearch-additional-configs.png)
     Here's an example: when Elasticsearch calculates a node's disk usage, it
     takes into account shards that are being relocated to the target node (see
     [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/disk-allocator.html)
-    for more information).  If the node is low on disk space, it prints an
+    for more information). If the node is low on disk space, it prints an
     `INFO` log message like this:
 
         03:01:44,499 INFO
@@ -410,10 +428,11 @@ in System Settings.](../../../images/elasticsearch-additional-configs.png)
         cluster.routing.allocation.disk.threshold_enabled: false
 
 -  `additionalIndexConfigurations` is used to define extra settings (in JSON or
-    YAML) that are applied to the Liferay index when it's created.For example,
-    you can create customs and filters using this setting. 
+    YAML format) that are applied to the Liferay index when it's created.For
+    example, you can create custom analyzers and filters using this setting. For
+    a complete list of available settings, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html)
 
-    Here's an example: <!--EXPLAIN-->
+    Here's an example that adds a custom analyzer:
 
         {
             "analysis": {
@@ -436,9 +455,12 @@ in System Settings.](../../../images/elasticsearch-additional-configs.png)
         }
 
 -  `additionalTypeMappings` is used to define extra field mappings for the
-    `LiferayDocumentType` type definition <!--link to the JSON file-->, which
-    are applied when the index is created. Add these field mappings in using
-    YAML syntax.
+    `LiferayDocumentType` type definition, which are applied when the index is
+    created. Add these field mappings in using JSON syntax. For more information
+    see
+    [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/mapping.html)
+    and
+    [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/indices-put-mapping.html)
 
     +$$$
 
@@ -454,7 +476,8 @@ in System Settings.](../../../images/elasticsearch-additional-configs.png)
 
     $$$
 
-    Here's an example: <!-- EXPLAIN-->
+    Here's an example that adds a dynamic template for Japanese content,
+    configuring a new analyzer for String fields that end with `_ja*`: <!-- EXPLAIN-->
 
         {
             "dynamic_templates": [
@@ -481,8 +504,8 @@ in System Settings.](../../../images/elasticsearch-additional-configs.png)
 **Note:** There's actually a third way to add configuration options to the
 Elasticsearch adapter. You or your favorite developer can build a Contributor
 Module and deploy it to Liferay's OSGi runtime. See the developer tutorial on
-Settings Contributor Modules (note yet written) for more information. In
-summary, the contributor module needs the following:
+Settings Contributor Modules (not yet written) for more information. In summary,
+the contributor module needs the following:
 
 -  A class that implements either
 `com.liferay.portal.search.elasticsearch.settings.SettingsContributor` or
@@ -513,8 +536,6 @@ line with `\n\`, like this:
                         monitor.jvm.gc.old.warn: 600s\n\
                         monitor.jvm.gc.young.warn: 600s
 
-
-<!--Conclusion needed-->
 
 ## Related Topics
 
