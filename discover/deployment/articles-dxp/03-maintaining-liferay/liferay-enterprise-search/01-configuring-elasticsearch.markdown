@@ -1,4 +1,4 @@
-# Configuring Elasticsearch in Production Environments
+# Configuring Elasticsearch for Liferay
 
 Liferay is an open source project, so you won't be surprised to learn that the
 default search engine that ships with Liferay is also an open source project.
@@ -10,7 +10,7 @@ want to configure it locally or remotely, as a separate server or cluster. This
 guide walks you through that process.
 
 If you'd rather use Solr, it's also supported. See [here](LINK) for information
-on installing an configuring Solr.
+on installing and configuring Solr.
 
 If you just want to get up and running quickly with Elasticsearch, refer to the
 [Configuring Search article](discover/deployment/-/knowledge_base/7-0/configuring-search). This
@@ -19,7 +19,7 @@ in @product@ production environments. It also assumes you're here to learn about
 what's necessary for the installation and configuration of Elasticsearch, not
 the basics of search engines in general, or the low level search infrastructure
 of Liferay. For that information, refer to the developer tutorial [Introduction
-to Liferay Search](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
+to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
 
 These terms will be useful to understand as you read this guide:
 
@@ -536,6 +536,10 @@ line with `\n\`, like this:
                         monitor.jvm.gc.old.warn: 600s\n\
                         monitor.jvm.gc.young.warn: 600s
 
+
+Now that you have Elasticsearch configured for use with Liferay, read
+[here](discover/deployment/-/knowledge_base/7-0/shield) to learn about
+configuring Shield to secure your Elasticsearch data. 
 
 ## Related Topics
 
