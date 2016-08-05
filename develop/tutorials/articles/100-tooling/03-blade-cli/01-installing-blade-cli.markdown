@@ -13,9 +13,9 @@ After you've installed JPM, install the Blade CLI using the following command:
 
     (sudo) jpm install com.liferay.blade.cli
 
-If you have proxy server requirements and want to configure your
-http(s) proxy to work with the Blade CLI, follow the instructions below. If not,
-continue on to the next section.
+If you have proxy server requirements and want to configure your http(s) proxy
+to work with the Blade CLI, follow the instructions below. If not, continue on
+to the next section.
 
 For Mac and Linux users, run the following:
 		
