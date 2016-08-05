@@ -9,26 +9,26 @@ operating system, and will be covered in greater detail next.
 
 ## Installing Blade CLI Using JPM [](id=installing-blade-cli-using-jpm)
 
-After you have installed JPM, install the Blade CLI using the following command: 
+After you've installed JPM, install the Blade CLI using the following command: 
 
-        (sudo) jpm install com.liferay.blade.cli
+    (sudo) jpm install com.liferay.blade.cli
 
-3.  Configure with http(s) proxy
-	
-	This is an unnecessary step. But if you want to configure your http(s) proxy working with blade cli , you can follow the steps bellow:
+If you have proxy server requirements and want to configure your
+http(s) proxy to work with the Blade CLI, follow the instructions below. If not,
+continue on to the next section.
 
-	- for linux and mac user:
+For Mac and Linux users, run the following:
 		
-			(sudo) jpm install -fl --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" [Downloads Directory]/com.liferay.blade.cli.jar
+    (sudo) jpm install -fl --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" [Downloads Directory]/com.liferay.blade.cli.jar
 	
-	- for windows user:
-	
-		There is a bug preventing jvmargs passing into jpm. So just install blade the same way in step 2. Then goto your jpm installation path (maybe `{user.home}/.jpm/windows/bin`) and open `blade.ini` file and add the the following lines to the end of the file.
-		
-			vmarg.1=-Dhttp(s).proxyHost=[your proxy host]
-			vmarg.2=-Dhttp(s).proxyPort=[your proxy port]
+Alternatively, for Windows users, there is a bug preventing JVM arguments from
+passing into JPM. Therefore, install the Blade CLI the same way that was
+instructed for non-proxy users. Then go to your JPM installation path (e.g.,
+`USER_HOME/.jpm/windows/bin`) and open the `blade.ini`. Add the following
+lines to the end of the file.
 
-	After configuring proxy, every time you run blade command, it will take your proxy. 
+    vmarg.1=-Dhttp(s).proxyHost=[your proxy host]
+    vmarg.2=-Dhttp(s).proxyPort=[your proxy port]
 
 Now that Blade CLI is installed on your machine, you'll learn how to verify and
 update your installation.
