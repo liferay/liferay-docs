@@ -25,7 +25,7 @@ relationship with those definitions.
 **Note:** XPath notation derived from the **Portlet XSD** [4](#four) is used in
 this document for simplicity.
 
-|`portlet.xml` XPath | OSGi Service Property|
+|`portlet.xml` XPath | OSGi Portlet Service Property|
 |----|----|
 |`/portlet-app/portlet/description`|`javax.portlet.description=<String>`|
 |`/portlet-app/portlet/portlet-name`|`javax.portlet.name=<String>`|
@@ -65,7 +65,7 @@ this document for simplicity.
 **Note:** XPath notation derived from **Liferay Portlet** [5](#five) is used in
 this document for simplicity.
 
-|`liferay-portlet.xml` XPath | OSGi Service Property|
+|`liferay-portlet.xml` XPath | OSGi Liferay Portlet Service Property|
 |----|----|
 |`/liferay-portlet-app/portlet/portlet-name`|not supported|
 |`/liferay-portlet-app/portlet/icon`|`com.liferay.portlet.icon=<String>`|
