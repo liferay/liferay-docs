@@ -19,7 +19,7 @@ to the next section.
 
 For Mac and Linux users, run the following:
 		
-    (sudo) jpm install -fl --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" [Downloads Directory]/com.liferay.blade.cli.jar
+    (sudo) jpm install -f --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" com.liferay.blade.cli
 	
 Alternatively, for Windows users, there is a bug preventing JVM arguments from
 passing into JPM. Therefore, install the Blade CLI the same way that was
