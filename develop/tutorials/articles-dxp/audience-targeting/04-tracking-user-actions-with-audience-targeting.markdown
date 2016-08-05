@@ -180,13 +180,13 @@ that could be applied to this example:
         </aui:select>
     </c:if>
 
-This JSP code creates an AUI input field for an *Alias* and a *Newsletter ID*,
-which are both required, assuming that their values have been obtained from the
-context attribute in the request. The *Alias* and *Newsletter ID* fields are
+This JSP code creates an AUI input field for an Alias and a Newsletter ID, which
+are both required, assuming that their values have been obtained from the
+context attribute in the request. The Alias and Newsletter ID fields are
 necessary because a name and ID are required for the metric to know which
 newsletter to track.
 
-Another field that is created from the above sample code is the *Event Type*
+Another field that is created from the above sample code is the Event Type
 field. The event type specifies the type of event to monitor related to the
 tracked entity (e.g., view, click, submit, etc.). For this example JSP, you'd
 need to declare the possible `eventTypes` in your `-TrackingAction` class.

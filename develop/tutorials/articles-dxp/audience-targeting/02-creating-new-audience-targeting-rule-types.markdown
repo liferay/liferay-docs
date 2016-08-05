@@ -95,10 +95,10 @@ descriptions until the Javadoc is available publicly. -Cody -->
 - `deActivate`: Does processing when the rule is uninstalled.
 - `deleteData`: Removes any additional data added by this rule when the rule
   instance is removed.
-- `evaluate(HttpServletRequest, RuleInstance, AnonymousUser)`: Returns *true* if
+- `evaluate(HttpServletRequest, RuleInstance, AnonymousUser)`: Returns `true` if
   the user complies with the rule instance in real time. The evaluation is
   completed correctly after the user makes a request.
-- `evaluate(Map, RuleInstance, AnonymousUser)`: Returns *true* if the user
+- `evaluate(Map, RuleInstance, AnonymousUser)`: Returns `true` if the user
   complies with the rule instance in an offline mode. The evaluation is
   completed without having a user request. This will only be called if the rule
   supports offline evaluation. A context map can be optionally passed with some
@@ -108,7 +108,7 @@ descriptions until the Javadoc is available publicly. -Cody -->
 - `getCacheTime`: Returns the time in milliseconds that the evaluation of this
   rule can be cached. For example, an Age rule can be cached at least 1 day and
   a Geolocation rule could be cached 5 minutes. This value can be configurable
-  by adding a custom configuration to your component. A value of *0* means that
+  by adding a custom configuration to your component. A value of `0` means that
   the evaluation can not be cached.
 - `getDescription`: Returns the rule localized description.
 - `getFormHTML`: Returns the HTML code containing the form fields required to
@@ -123,13 +123,13 @@ descriptions until the Javadoc is available publicly. -Cody -->
 - `getSummary`: Returns the rule instance localized summary.
 - `importData`: Imports any additional data added by this rule when the rule
   instance is imported.
-- `isInstantiable`: Returns *true* if the rule can be used more than once with
+- `isInstantiable`: Returns `true` if the rule can be used more than once with
   different values for a user segment.
-- `isVisible`: Returns *true* if the rule is visible.
+- `isVisible`: Returns `true` if the rule is visible.
 - `processRule`: Returns the result of evaluating the rule form fields in the
   context of the request and response.
-- `supportsOfflineEvaluation`: Returns *true* if the rule can be evaluated
-  offline (without the user request in real time). If this is set to *true*, the
+- `supportsOfflineEvaluation`: Returns `true` if the rule can be evaluated
+  offline (without the user request in real time). If this is set to `true`, the
   method `evaluate(Map, RuleInstance, AnonymousUser)` should be implemented.
 
 +$$$
@@ -155,9 +155,9 @@ following:
         return SessionAttributesRuleCategory.KEY;
     }
 
-Now your rule's category is set to *Session Attributes*. Available category
-classes include *BehaviourRuleCategory*, *SessionAttributesRuleCategory*,
-*SocialRuleCategory*, and *UserAttributesRoleCategory*.
+Now your rule's category is set to Session Attributes. Available category
+classes include `BehaviourRuleCategory`, `SessionAttributesRuleCategory`,
+`SocialRuleCategory`, and `UserAttributesRoleCategory`.
 
 ![Figure 1: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
 
@@ -193,12 +193,12 @@ could be applied to this example:
         </aui:select>
     </aui:fieldset>
 
-This JSP code creates a *select* drop-down box with the name *weather*.
+This JSP code creates a `select` drop-down box with the name `weather`.
 Then it specifies several options associated with different types of weather.
 You could borrow from this JSP code and change the name and labels for a
-*select* drop-down box and values appropriate for your rule plugin.
+`select` drop-down box and values appropriate for your rule plugin.
 
-![Figure 2: This example rule uses a *select* drop-down box.](../../images-dxp/select-box-rule.png)
+![Figure 2: This example rule uses a `select` drop-down box.](../../images-dxp/select-box-rule.png)
 
 +$$$
 
@@ -244,7 +244,7 @@ make the JSP code work with the Rule Java class.
 3. The next method to inspect in the weather rule is the `populateContext`
    method. This method takes the value the user selected and injects it into the
    `context` map parameter. For example, the following `populateContext` method
-   populates a `weather` context variable with the *weather* value of the
+   populates a `weather` context variable with the `weather` value of the
    `values` map parameter.
 
         @Override

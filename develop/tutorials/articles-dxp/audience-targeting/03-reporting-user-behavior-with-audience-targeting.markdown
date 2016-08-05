@@ -89,7 +89,7 @@ descriptions until the Javadoc is available publicly. -Cody -->
 - `getDescription`: Returns the localized description.
 - `getHtml`: returns the HTML displayed to administrators when accessing this
    report from a campaign. The `BaseJSPReport` class already implements this
-   method. For example, for a *Hits By Country* report, you could display the
+   method. For example, for a Hits By Country report, you could display the
    country flag and the number of hits for each country.
 - `getIcon`: Returns the Font Awesome CSS class for the report icon.
 - `getName`: returns a name for your report. The name can be localized.
@@ -106,12 +106,12 @@ There are also a few methods available to make your reports editable. For
 example, suppose you're developing a report that tracks hits by country for a
 web content article. Instead of reporting the hits for all countries, you can
 generate different reports for different countries. To do this, you'd need a new
-view for the administrators to select the countries to filter for each *Hits By
-Country* report instance and store this information.
+view for the administrators to select the countries to filter for each Hits By
+Country report instance and store this information.
 
 - `getEditHtml`: returns the HTML displayed to administrators when creating
    or editing this report from a campaign. The `BaseJSPReport` already
-   implements this method. For example, for a *Hits By Country* report, you
+   implements this method. For example, for a Hits By Country report, you
    could display a selector with all the available countries.
 - `isInstantiable`: by returning `true`, you declare your report as
    editable. The default value is `false`.
@@ -130,7 +130,7 @@ and how to create, use, and generate them by visiting the
 tutorials.
 
 Finally, deploy the report plugin to the Liferay server. The new report is
-listed under the *Reports* section when editing a specific campaign in the
+listed under the Reports section when editing a specific campaign in the
 Audience Targeting application. If you made your report editable, then you will
 find your report listed in the Add Report button of the same section. Click the
 *Update Report* option to force your report to obtain and display the latest
