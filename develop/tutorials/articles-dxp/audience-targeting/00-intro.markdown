@@ -11,7 +11,7 @@ Although the Audience Targeting app can be configured to monitor your portal's
 audience out of the box, it is also designed as a framework to be extended by
 developers.
 
-There are a set of extension points that can be easily hooked by creating other
+There are a set of extensions that can be easily hooked by creating other
 hot-deployable plugins. 
 
 These extension points include
@@ -21,11 +21,10 @@ These extension points include
 * Report Types
 * Report Metrics
 
-Since Liferay 7.0, the Audience Targeting SDK to create extension points is
-based on Blade CLI. Blade CLI is the easiest way for Liferay developers to
-create new Liferay modules. Visit the
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-section for more information on Blade CLI and how to use it.
+Audience Targeting extensions are created using OSGi modules. Liferay has
+created convenient *Blade CLI* templates to create these projects, but you can
+create the modules any way you want. To use the templates, see the
+[Blade CLI tutorials](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
 In this section's tutorials, you'll learn how to create these extension points
 for your Audience Targeting application.
