@@ -33,7 +33,7 @@ to update CSS, and logs upgrade suggestions. For this reason, the Gulp upgrade
 task is described first. Note, however, that this tutorial covers how to apply
 the same updates run by the gulp task to your theme manually as well.
 
-## Running the Gulp Upgrade Task for Themes Generator Themes
+## Running the Gulp Upgrade Task for Themes Generator Themes [](id=running-the-gulp-upgrade-task-for-themes-generator-themes)
 
 A Liferay 6 theme can be upgraded to Liferay 7, regardless of its project
 environment (Plugins SDK, Maven, etc.). However, a theme that's been migrated to
@@ -85,7 +85,7 @@ sure all facets of a theme upgrade are applied.
 
 The first upgrade step is to update the theme's Liferay version.
 
-## Updating a Theme's Liferay Version
+## Updating a Theme's Liferay Version [](id=updating-a-themes-liferay-version)
 
 A theme's Liferay version must be updated to `7.0.0+`, for it to run on Liferay
 7. Several theme files specify Liferay version information. You'll update
@@ -129,7 +129,7 @@ changes is part of the upgrade process.
 In this section, you'll update your theme's CSS. You'll start with updating CSS
 file names.
 
-### Updating CSS File Names for Sass
+### Updating CSS File Names for Sass [](id=updating-css-file-names-for-sass)
 
 Liferay 7 themes should follow the Sass naming convention.
 
@@ -152,7 +152,7 @@ Here are the Lunar Resort theme's modified CSS files with updated names:
 
 Next, you'll update CSS rules to match the Bootstrap 3 syntax.
 
-### Updating CSS Rules
+### Updating CSS Rules [](id=updating-css-rules)
 
 If your theme does not use the Themes Generator, you can refer to the
 [Migrating from 2.x to 3.0](http://getbootstrap.com/migration/#migrating-from-2x-to-30)
@@ -844,42 +844,35 @@ changed. In Liferay 6.2, the portlet ID's were numbered, however in Liferay 7
 the portlet IDs are the explicit class names of the module. You must change
 these in your `sitemap.json` so the portlets render properly.
 
-A full list of the default portlet IDs can be found in the
-[Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide)
-
 Some of the common portlet IDs are specified in the `sitemap.json` example of
 the [Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
 tutorial.
 
-You can also find the updated portlet ID through the *App Manager* of the
-Control Panel in Liferay 7. Follow these steps to retrieve your portlet ID:
+You can also find the updated portlet ID through the 
+*Look and Feel Configuration* menu for the portlet.
+Follow these steps to retrieve your portlet ID:
 
-1.  Open the Control Panel and goto *Apps*&rarr;*App manager*.
+1.  Open the *Options* menu for the portlet and select the 
+    *Look and Feel Configuration* menu.
+    
+    ![Figure 4: You can find the portlet ID in the the *Look and Feel Configuration* menu.](../../../images/upgrading-themes-look-and-feel-menu.png)
 
-2.  Select the suite that contains your module.
+2.  Click the *Advanced Styling* tab.
 
-    For example, I would select the *Liferay CE Web Experience* suite for the
-    Web Content Portlet.
+    The portlet ID is listed within the blue box, next to the `Portlet ID` 
+    label, as shown in the figure below:
 
-3.  Select the module.
-
-    For the Web Content Display Portlet I would select the
-    *Liferay Journal Content Web* module.
-
-4.  Finally, find the class name that ends with `Portlet` and replace the `.`s
-    with `_`s to get the portlet ID.
-
-    For example,
-    `com.liferay.journal.content.web.internal.portlet.JournalContentPortlet`
-    would translate to
-    `com_liferay_journal_content_web_internal_portlet_JournalContentPortlet`
-    for the portlet ID for the Web Content Display Portlet.
+![Figure 5: The portlet ID is listed for you within the blue box of the *Advanced Styling* tab.](../../../images/upgrading-themes-portlet-id.png)
+    
+A full list of the default portlet IDs can also be found in the
+[Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide)
 
 You've updated your theme to Liferay 7! Now your users can continue enjoying the
 vision you've created.
 
 Run `gulp deploy` to build and deploy the theme to the app server you defined at
-the beginning.
+the beginning if you're using the themes generator, or run `ant deploy` if 
+you're using the standard Plugins SDK.
 
 ## Related Topics [](id=related-topics)
 
