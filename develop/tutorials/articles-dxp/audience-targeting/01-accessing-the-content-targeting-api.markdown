@@ -1,12 +1,12 @@
 # Accessing the Content Targeting API [](id=accessing-the-content-targeting-api)
 
 The [Audience Targeting](https://www.liferay.com/marketplace/-/mp/application/43707761)
-application available in Liferay's Marketplace can be used to target content to
-specific audiences. You might want to take the next step and use the
-Content Targeting API. For instance, you could list user segments in your own
-application or update a campaign when someone creates a calendar event. Using
-the Content Targeting API, you can unleash the power of Audience Targeting to
-the realms outside of Liferay's default applications.
+application can be used to show relevant content to users based on profiles. You
+might want to take the next step and use the Content Targeting API. For
+instance, you could list user segments in your own application or update a
+campaign when someone creates a calendar event. Using the Content Targeting API,
+you can unleash the power of Audience Targeting to the realms outside of
+Liferay's default applications.
 
 In this tutorial, you'll learn how to give your application access to the
 Content Targeting API. Then you can view some examples of how to use the Java
@@ -37,10 +37,10 @@ Your app now has access to the Content Targeting API and can take advantage of
 everything Audience Targeting has to offer. In the next section, you'll learn
 how to use the Content Targeting API by studying a few examples.
 
-## Using the Content Targeting API [](id=using-the-content-targeting-api)
+## Using the Content Targeting Java API
 
-There are two ways you'll learn how to call the Content Targeting API: making
-direct calls to the Java API and making direct calls to the JSON API. 
+There are two ways to call the Content Targeting API: through the Java API or
+through the JSON API. 
 
 Suppose you'd like to display a list of existing user segments in your portlet.
 First you need to obtain an implementation of the `UserSegmentLocalService`
@@ -58,18 +58,18 @@ your Portlet class (e.g., the class that extends the `MVCPortlet` class):
 
 When an implementation of the `UserSegmentLocalService` is available (i.e., the
 Audience Targeting app has been installed) the `_userSegmentLocalService` field
-is set with it. Otherwise, the portlet won't be available till this dependency
+is populated. Otherwise, the portlet won't be available till this dependency
 is resolved.
 
 It's a good practice to access Audience Targeting services this way instead of
-using util classes (e.g., `UserSegmentLocalServiceUtil.java`). Not only is the
-dependency management better, but you also won't be tied to a specific
+using util classes (e.g., `UserSegmentLocalServiceUtil.java`). You can take
+advantage of dependency management, and you also won't be tied to a specific
 implementation of the service.
 
 The next step is to use the service to obtain a list of existing user segments
 and make it available to your view layer as a request attribute. To do this, add
 logic to your portlet class that obtains user segments and exposes them as a
-request attribute, like the following:
+request attribute, like this:
 
     ThemeDisplay themeDisplay = (ThemeDisplay)renderRequest.getAttribute(
         WebKeys.THEME_DISPLAY);
@@ -115,14 +115,14 @@ To finish off this example, some logic needs to be added to your portlet's
 
 This logic uses the `UserSegment` object to list the existing user segments.
 That's it! By importing the `UserSegment` and `UserSegmentLocalService` classes
-into your files, you have direct access to your portal's user segments via the
-Content Targeting Java API. 
+into your files, you have direct access to your portal's user segments through
+the Content Targeting Java API. 
 
-You can also do this using the JSON API.
+## Using the Content Targeting JSON API
 
-Suppose you'd like to display a list of existing campaigns in your portlet using
-the JSON API. You could do this in your portlet by opening its `view.jsp` file
-and using the following code:
+Suppose you'd like to show a list of existing campaigns in your portlet using
+the JSON API. You could do this by opening your portlet's `view.jsp` file and
+using the following code:
 
     <h2>Campaigns</h2>
 
