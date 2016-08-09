@@ -6,18 +6,27 @@ easy. When it comes to securing that data, you can use
 Elasticsearch plugin that's used to secure your Elasticsearch cluster. With
 Shield you can prevent unauthorized users from accessing the Elasticsearch
 cluster, preserve data integrity, and create an audit trail to inspect
-suspicious activity. 
+suspicious activity.
 
 This guide shows you the basics of how to install and configure Shield, and then
 how to configure Liferay for Shield, using a convenient Shield adapter plugin.
 
 +$$$
 
-**Note:** The Shield Plugin can only be used when you're running Elasticsearch
+**Note:** The Shield plugin can only be used when you're running Elasticsearch
 in *remote mode*. If you're not sure what that means refer to the [Configuring
 Elasticsearch article](discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch).
 
 $$$
+
+The general process for configuring Shield is straightforward:
+
+-  Install the Shield plugin to Elasticsearch
+-  Create a user for Liferay, with username and password.
+-  Install your [Shield license](https://www.elastic.co/guide/en/shield/2.2/license-management.html).
+-  Install Liferay's Shield adapter plugin to Liferay and configure it.
+-  Enable Transport Layer Security (TLS) to encrypt your connection between
+    Liferay and Elasticsearch.
 
 These terms will be useful to understand as you read this guide:
 
@@ -28,8 +37,8 @@ These terms will be useful to understand as you read this guide:
 
 ## Installing Shield on Elasticsearch
 
-For more information on installing Shield, see the [Elasticsearch
-documentation](https://www.elastic.co/guide/en/shield/2.2/installing-shield.html).
+The first thing you need to do is get the Shield plugin installed to your
+Elasticsearch cluster.
 
 1. Navigate to Elasticsearch Home, and install the license plugin and the Shield
    plugin by executing
@@ -100,11 +109,16 @@ documentation](https://www.elastic.co/guide/en/shield/2.2/installing-shield.html
           },
           "tagline" : "You Know, for Search"
 
-Now Shield is installed. Configure Liferay's Shield adapter next.
+For more information on installing Shield, see the [Elasticsearch
+documentation](https://www.elastic.co/guide/en/shield/2.2/installing-shield.html).
+
+Once Shield is installed, you can configure Liferay's Shield adapter.
 
 ## Installing and Configuring Liferay's Shield Adapter
 
-Liferay's Shield adapter plugin integrates Shield with Liferay. 
+On the Liferay side of the equation, you need to configure the authentication
+token for the *liferay* Shield user configured in the previous section.
+Liferay has a Shield adapter plugin for this purpose. 
 
 First install the Shield adapter (called *Liferay Portal Search Elasticsearch
 Shield*) from [Liferay Marketplace](https://web.liferay.com/marketplace/),
@@ -121,9 +135,9 @@ into the Gogo shell. It should be listed as `Active`.
     517|Active     |   10|Liferay Portal Search Elasticsearch Shield (1.0.0)
 
 Once the plugin is installed, there's a new *Shield Configuration* entry in the
-System Setting application (*Control Panel* &rarr; *Configuration* &rarr;
+System Settings application (*Control Panel* &rarr; *Configuration* &rarr;
 *System Settings*), under the Foundation heading. Configure it so that its
-authentication token matches the *liferay* user you added to Shield.
+username and password match the *liferay* user you added to Shield.
 
 To configure the Shield adapter using an OSGi configuration file:
 
@@ -163,9 +177,9 @@ To configure the Shield adapter using System Settings:
 
 ## Encrypting Elasticsearch Connections
 
-It's great to ensure that Elasticsearch connections are authenticated, but right
-now they're the authentication token is being sent in plain text. Instead you
-can encrypt them with Transport Layer Security (TLS).
+It's great to ensure that your Elasticsearch connection is authenticated, but
+right now the authentication token is being sent in plain text. For additional
+security you can enable Transport Layer Security (TLS) encryption.
 
 Here we'll demonstrate using a self signed certificate. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/shield/2.2/ssl-tls.html) for
@@ -173,8 +187,8 @@ alternative configuration approaches.
 <!-- This might be the only way? Ask Tibor, who indicated setting up your own
 certificate authority might not work with our Shield adapter? -->
 
-Both Elasticsearch (the server) and Liferay (the client) will use the same
-keystore file.
+Both Elasticsearch and Liferay (the client) will use the same keystore file in
+this scenario.
 
 1. Stop Liferay and Elasticsearch.
 2. To generate a self signed certificate and key, navigate to
@@ -196,12 +210,19 @@ keystore file.
         shield.transport.ssl: true
         shield.http.ssl: true
 
-4. Update the Shield adapter configuration file (`com.liferay.portal.search.elasticsearch.shield.configuration.ShieldConfiguration.cfg in Liferay_Home/osgi/configs`) you created earlier by adding these lines:
+    Here you're configuring Shield's SSL properties, including pointing to the
+    keystore file you just generated. For more information on these settings,
+    read [here](https://www.elastic.co/guide/en/shield/2.2/ssl-tls.html).
 
-        requiresAuthentication=true
+4. Update the Shield adapter configuration file you created earlier in
+   `Liferay_Home/osgi/configs` by adding these lines:
+
         requiresSSL=true
         sslKeystorePath=/path/to/es-ssl.keystore.jks
 
+    Now, in addition to enabling authentication, you're enabling SSL encryption
+    and pointing Liferay at the keystore file you created for Shield.
+    
     Alternatively, you can configure these settings in System Settings. This
     will be mostly useful during development and testing.
 
@@ -232,23 +253,23 @@ Liferay's Shield adapter.
 
 -  `sslKeystoreKeyPassword=`
 
-    When `requiresSSL=true`, set this String to the value for your Elasticsearch's
+    When `requiresSSL=true`, set this String to the value of your Elasticsearch's
     `shield.ssl.keystore.key_password` property. See
-    [here](https://www.elastic.co/guide/en/shield/current/ssl-tls.html#enable-ssl)
+    [here](https://www.elastic.co/guide/en/shield/2.2/ssl-tls.html#enable-ssl)
     for more information.
 
 -  `sslKeystorePassword=liferay`
 
-    When `requiresSSL=true`, set this String to the value for your
+    When `requiresSSL=true`, set this String to the value of your
     Elasticsearch's `shield.ssl.keystore.password` property. See
-    [here](https://www.elastic.co/guide/en/shield/current/ssl-tls.html#enable-ssl)
+    [here](https://www.elastic.co/guide/en/shield/2.2/ssl-tls.html#enable-ssl)
     for more information.
 
 -  `sslKeystorePath=/path/to/keystore.jks`
 
     When `requiresSSL=true`, set this String to the value for your
     Elasticsearch's `shield.ssl.keystore.path` property. See
-    [here](https://www.elastic.co/guide/en/shield/current/ssl-tls.html#enable-ssl)
+    [here](https://www.elastic.co/guide/en/shield/2.2/ssl-tls.html#enable-ssl)
     for more information.
 
 -  `username=liferay`
