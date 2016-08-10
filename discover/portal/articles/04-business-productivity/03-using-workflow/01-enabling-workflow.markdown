@@ -16,9 +16,11 @@ In addition to the Single Approver definition, there are some workflow
 definitions that ship with Liferay but are not pre-installed, since they're
 primarily included for test cases. They can be found in the Liferay source code
 in
-`modules/portal-workflow/portal-workflow-kaleo-service/src/main/resources/META-INF/definitions`,
-or in the `com.liferay.workflow.kaleo.service.jar` in your Liferay installation
-(see the diagrams
+`modules/aps/fomrs-and-workflow/portal-workflow/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions`,
+or in your Liferay installation itself. Open your Liferay installation's
+`osgi/marketplace/Liferay CE Froms and Workflow.lpkg`, and then find and open
+the `com.liferay.workflow.kaleo.runtime.impl-[version].jar`. The definitions are
+in the `META-INF/definitions` folder (see the diagrams
 [here](/develop/tutorials/-/knowledge_base/6-2/designing-a-kaleo-workflow-definition)).
 Once you have the XML definition files locally, you can upload them into
 Liferay. Check out the article on uploading definitions to do that <!--LINK-->.
@@ -39,4 +41,3 @@ would be a simple task with the Kaleo Designer. -->
 
 <!--Picture of Workflow Designer-->
 
-Next learn to create a workflow process definition using the Kaleo Workflow Designer.
