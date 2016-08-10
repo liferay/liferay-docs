@@ -116,7 +116,7 @@ import the Item Selector OSGi Component into your class to use it.
     
         public void setItemSelector(ItemSelector itemSelector) {
     
-          _itemSelector = itemSelector;
+            _itemSelector = itemSelector;
     
         }
     
