@@ -5,12 +5,37 @@ users that match a set of rules. Out of the box, Liferay provides several types
 of rules that are based on characteristics such as age range, gender, location,
 and so on. Visit the
 [Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/7-0/liferay-audience-targeting-rules)
-article for information on each rule type and their configuration options. To
-extend the set of available rule types, you can create a class that implements
-the `Rule` interface and deploy the class in your own OSGi plugin.
+article for information on each rule type and their configuration options. 
 
-This tutorial shows you how to create a custom rule type and deploy it in an
-OSGi plugin.
+In some cases, the rules available to you by default may not be enough. If there
+is functionality not available in the Audience Targeting application that you
+want, you can create your own rule type.
+
+Creating a rule type involves targeting what you want to evaluate. Suppose you
+own an Outdoor Sporting Goods store. On your website, you'd like to promote
+goods that are appropriate for the current weather. For example, if the user is
+from Los Angeles and it's raining the day they visit your website, you could
+show content for new umbrellas. If it's sunny, however, umbrella related content
+wouldn't make sense. Therefore, you want to evaluate weather.
+
+Once you've decided what to evaluate, you'll need to decide how to obtain a
+value to evaluate. In the instance of weather, you need to retrieve the user's
+location so you can obtain that location's weather. 
+
+Lastly, you'll need to let administrators set the value that should be compared
+with the user's current weather. This could be a UI component consisting of a
+drop-down list of weather options. Therefore, if an adminstrator sets *rainy* as
+the value for the rule, the rule could be added to a user segment targeted for
+rain-related goods. When the user visits a site, their user segment assignment
+is decided by whether their pre-set weather value (rainy) matches their
+location's current weather. If it matches, rain-related content targeted for
+that user segment is displayed; otherwise, the user won't be grouped into that
+user segment, and will see differing content, like a promotion for sunglasses.
+
+<!-- Weather Rule Diagram -->
+
+Now that you have an idea of how to plan your custom rule's development, you'll
+begin creating one yourself!
 
 ## Creating a Custom Rule Type [](id=creating-a-custom-rule-type)
 
