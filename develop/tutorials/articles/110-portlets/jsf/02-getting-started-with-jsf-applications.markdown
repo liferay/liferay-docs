@@ -9,6 +9,11 @@ technology? Liferay supports JSF portlets with the use of
 [*Liferay Faces*](https://web.liferay.com/community/liferay-projects/liferay-faces/overview),
 which is an umbrella project that provides support for the JSF standard.
 
+You'll learn how to leverage Liferay Faces and other JSF-specific dependencies
+in the next section.
+
+## Configuring a JSF Portlet for Liferay [](id=configuring-a-jsf-portlet-for-liferay)
+
 JSF portlets use 
 [*Liferay Faces Bridge*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-bridge),
 which supports deploying JSF web applications as portlets on any JSR 286
@@ -129,6 +134,10 @@ the
 [Liferay Descriptors](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#liferay-descriptors)
 sub-section.
 
+Next, you'll learn how to generate and call services in a Liferay JSF portlet.
+
+## Services in JSF [](id=services-in-jsf)
+
 Service Builder works the same in a JSF portlet as it would in any other
 standard WAR-style MVC portlet. To learn more about how Service Builder works in
 Liferay, visit the
@@ -198,7 +207,7 @@ helpful for a big-picture look on the JSF technology developed for @product@. To
 learn more in-depth concepts and configurations for JSF portlets, visit the
 other tutorials contained in the
 [JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
-tutorials set.
+tutorial set.
 
 ## Related Topics [](id=related-topics)
 

@@ -27,7 +27,7 @@ For a comprehensive demo for the JSF component suite, visit the
 [Liferay Faces Showcase](http://www.liferayfaces.org/web/guest/showcase).
 
 If you're new to JSF, you probably want to know its strengths, its weaknesses,
-and how it stacks up to developing portlets with CSS/JavaScript. We'll give you
+and how it stacks up to developing portlets with CSS/JavaScript. You'll learn
 information on JSF and Liferay Faces to help you decide what framework is best
 for your needs. 
 
@@ -40,7 +40,7 @@ Here are some good reasons to use JSF and Liferay Faces:
   often choose standards like JSF because they are supported by Java EE
   application server vendors and have a guaranteed service-life according to
   Service Level Agreements (SLAs).
-- JSF was first introduced in 2003 and is therefore a mature technology for
+- JSF was first introduced in 2003 and is, therefore, a mature technology for
   developing web applications that are (arguably) simpler and easier to
   maintain.
 - JSF Portlet Bridges (like Liferay Faces Bridge) are also standardized by the

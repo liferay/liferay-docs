@@ -45,8 +45,8 @@ Next, you'll learn how the WAB Generator auto-generates your JSF portlet.
 
 ## Auto-Generated WAB [](id=auto-generated-wab)
 
-The source of an auto-generated JSF Portlet WAB follows the standard
-directory layout for WAR projects.
+The source of an auto-generated JSF Portlet WAB follows the standard folder
+layout for WAR projects.
 
 - `src/`
     - `main/`
@@ -60,7 +60,7 @@ directory layout for WAR projects.
                 - `portlet.xml`
                 - `web.xml`
 
-The Liferay WAB Generator automatically created an OSGi-ready
+The Liferay WAB Generator automatically creates an OSGi-ready
 `META-INF/MANIFEST.MF` file. If you want to modify the contents of the manifest
 file, add additional BND directives for the manifest in the
 `liferay-plugin-package.properties` file.
