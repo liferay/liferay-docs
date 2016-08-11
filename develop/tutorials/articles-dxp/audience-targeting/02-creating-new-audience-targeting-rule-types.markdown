@@ -9,14 +9,15 @@ article for information on each rule type and their configuration options.
 
 In some cases, the rules available to you by default may not be enough. If there
 is functionality not available in the Audience Targeting application that you
-want, you can create your own rule type.
+want, you can create your own rule type. You can do this by creating a module.
 
 Creating a rule type involves targeting what you want to evaluate. Suppose you
 own an Outdoor Sporting Goods store. On your website, you'd like to promote
 goods that are appropriate for the current weather. For example, if the user is
 from Los Angeles and it's raining the day they visit your website, you could
 show content for new umbrellas. If it's sunny, however, umbrella related content
-wouldn't make sense. Therefore, you want to evaluate weather.
+wouldn't make sense. Therefore, you could display content for sunglasses
+instead. For this example, your evaluation entity would be weather.
 
 Once you've decided what to evaluate, you'll need to decide how to obtain a
 value to evaluate. In the instance of weather, you need to retrieve the user's
@@ -32,22 +33,16 @@ location's current weather. If it matches, rain-related content targeted for
 that user segment is displayed; otherwise, the user won't be grouped into that
 user segment, and will see differing content, like a promotion for sunglasses.
 
-<!-- Weather Rule Diagram -->
+![Figure 1: This diagram breaks down the evaluation process for the weather rule.](../../images-dxp/weather-evaluation-diagram.png)
 
 Now that you have an idea of how to plan your custom rule's development, you'll
 begin creating one yourself!
 
 ## Creating a Custom Rule Type [](id=creating-a-custom-rule-type)
 
-Adding a new type of rule to the Audience Targeting application is easy. There
-are three components you can specify for your rule:
-
-- *Rule Behavior*
-- *UI for Configuration (optional)*
-- *Language Keys (optional)*
-
-Before you can define your rule's components, you must create a module and
-ensure it has the necessary Content Targeting dependencies.
+Adding a new type of rule to the Audience Targeting application is easy. First,
+you must create a module and ensure it has the necessary Content Targeting
+dependencies.
 
 1. Create a module project for deploying a rule. A Blade CLI
    [contenttargetingrule](/develop/tutorials/-/knowledge_base/7-0/content-targeting-rule-template)
@@ -71,49 +66,35 @@ ensure it has the necessary Content Targeting dependencies.
             compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
         }
 
-Once you've created your module and specified its dependencies, you'll need to
-define your rule's behavior. How your rule behaves is controlled by a Java
-class file that you create.
+    Once you've created your module and specified its dependencies, you'll need
+    to define your rule's behavior. How your rule behaves is controlled by a
+    Java class file that you create.
 
-1. Create a unique package name in the module's `src` directory, and create a
+3. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, your class name
    should begin with the rule name you're creating, and end with *Rule* (e.g.,
    `WeatherRule.java`). Your Java class should implement the `Rule` interface.
 
-2. Directly above the class's declaration, insert the following code:
+    It is required to implement the `Rule` interface, but there are `Rule`
+    extension classes that provide helpful utilities that you can extend. For
+    example, the weather rule extends the `BaseJSPRule` class to support
+    generating your rule's UI using JSPs. This tutorial demonstrates
+    implementing the UI using JSP, and assumes the `Rule` interface is
+    implemented by extending the `BaseJSPRule` class. For more information on
+    choosing a UI for your rule, see the
+    [Best Practices for Rules]()
+    tutorial.
+
+4. Directly above the class's declaration, insert the following code:
 
         @Component(immediate = true, service = Rule.class)
 
     This annotation declares the implementation class of the Component and
     specifies to immediately start the module once deployed to @product@.
 
-Before diving deeper into your `-Rule` class, it's important to understand what
-is available for you to extend from this class. It is required to implement the
-`Rule` interface, but there are `Rule` extension classes that provide helpful
-utilities that you can extend. For example, you can extend the `BaseJSPRule`
-class to support generating your rule's UI using JSPs.
-
-+$$$
-
-Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
-extension views. FreeMarker views, however, are still supported through their
-respective base classes (e.g., `BaseFreemarkerRule`). If you're interested in
-using a technology besides JSP or FreeMarker to implement your UI, you can add a
-method `getFormHTML` to your `-Rule` class.
-
-The `getFormHTML` is used to retrieve the HTML created by the technology you
-choose, and to return it as a string that is viewable from your rule's form.
-If you plan, therefore, on using an alternative to JSP or FreeMarker, you
-must override this method by creating and modifying it in your `-Rule` class.
-
-$$$
-
-This tutorial demonstrates implementing the UI using JSP, and assumes the `Rule`
-interface is implemented by extending the `BaseJSPRule` class.
-
-Of course, you still need to make some additional changes to define how your
-rule works. Here are some of the methods that you can implement to modify your
-rule behavior:
+Now that your Java class is set up, you'll need to begin defining how your rule
+works by implementing the `Rule` interface's methods. Here are some of the
+methods that you can implement to modify your rule behavior:
 
 <!-- The below method descriptions are the Javadoc copied from the `Rule`
 interface. Since the source code is not accessible and the Javadoc for Audience
@@ -139,17 +120,17 @@ descriptions until the Javadoc is available publicly. -Cody -->
   a Geolocation rule could be cached 5 minutes. This value can be configurable
   by adding a custom configuration to your component. A value of `0` means that
   the evaluation can not be cached.
-- `getDescription`: Returns the rule localized description.
+- `getDescription`: Returns the rule's localized description.
 - `getFormHTML`: Returns the HTML code containing the form fields required to
   edit the rule instance configuration, based on the context.
 - `getIcon`: Returns the Font Awesome CSS class for the rule icon.
-- `getName`: Returns the rule localized name.
+- `getName`: Returns the rule's localized name.
 - `getRuleCategoryKey`: Returns the key that identifies the category of the
   rule.
 - `getRuleKey`: Returns the key that identifies the rule. The rule instances of
   this rule are identified by their rule key.
-- `getShortDescription`: Returns the rule localized short description.
-- `getSummary`: Returns the rule instance localized summary.
+- `getShortDescription`: Returns the rule's localized short description.
+- `getSummary`: Returns the rule instance's localized summary.
 - `importData`: Imports any additional data added by this rule when the rule
   instance is imported.
 - `isInstantiable`: Returns `true` if the rule can be used more than once with
@@ -187,7 +168,7 @@ Now your rule's category is set to Session Attributes. Available category
 classes include `BehaviourRuleCategory`, `SessionAttributesRuleCategory`,
 `SocialRuleCategory`, and `UserAttributesRoleCategory`.
 
-![Figure 1: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
+![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
 
 Now that you've modified some basic features in your `-Rule` class, you'll need
 to develop the UI for your rule's configuration. As you read earlier, the second
@@ -226,7 +207,7 @@ Then it specifies several options associated with different types of weather.
 You could borrow from this JSP code and change the name and labels for a
 `select` drop-down box and values appropriate for your rule plugin.
 
-![Figure 2: This example rule uses a `select` drop-down box.](../../images-dxp/select-box-rule.png)
+![Figure 3: This example rule uses a `select` drop-down box.](../../images-dxp/select-box-rule.png)
 
 +$$$
 
