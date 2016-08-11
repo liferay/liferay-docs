@@ -40,7 +40,15 @@ Follow the steps below to create your custom Item Selector criterion:
         }
         
     This class acts as a flag of sorts, allowing the Item Selector to accept it 
-    as a valid criterion. That's all that is needed for this class.
+    as a valid criterion.
+
+    It could be used to pass information to the view if
+    needed. For example, if you need to show the images attached to a certain
+    entity you could add a field (adn setters and getters ) with the entity id
+    in order to use it in the view.
+
+    You should be aware that the criterion fields should be serializable and
+    should expose a public empty constructor due framework internals need it.
 
 2.  When you create a new Item Selector criterion, you need to register an OSGi 
     component to handle obtaining the selection views for the new item 
@@ -71,13 +79,17 @@ Follow the steps below to create your custom Item Selector criterion:
         
         <!-- Is the @Activate @Override code needed here? I added it in because 
         I've seen it in other criterion handlers. For example: https://github.com/liferay/liferay-portal/blob/a5a0a3e961c2d87d565ca55d4df03985de72a4f6/modules/apps/collaboration/wiki/wiki-api/src/main/java/com/liferay/wiki/internal/item/selector/handler/WikiAttachmentItemSelectorCriterionHandler.java
+
+        Yes this is needed here in order to activate the component, since the
+        "default logic" is in the superclass and this method is called by OSGi
+        in th component activation
         -->
   
 This ties this handler class to the new criterion class you just created, and 
 activates the OSGi bundle, so it's available for use.
-<!-- Is the information above correct? -->
+<!-- Is the information above correct? YES-->
 
-The selection view is determined by the criterion specified in the 
+The selection view list is determined by the criterion specified in the
 `*ItemSelectorCriterionHandler` class. You can learn more about how selection 
 views are created in the [Creating Custom Selection Views for the Item Selector](/develop/tutorials/-/knowledge_base/7-0/creating-custom-selection-views-for-the-item-selector)
 tutorial.

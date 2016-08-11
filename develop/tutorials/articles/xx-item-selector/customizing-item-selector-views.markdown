@@ -46,8 +46,8 @@ you choose determines the specific `ItemSelectorCriterion` you need to use.
 In this example, since images are being selected, you would need to use the
 `ImageItemSelectorCriterion`.
 
-Next, you need to know the type of information the the entity can return when
-it's selected.
+Next, you need to know the type of information the entity can return when it's
+selected.
 
 The example image provider only returns URLs, so you would need to use
 `URLItemSelectorReturnType` for the return type.
@@ -115,7 +115,8 @@ Follow these steps to implement your view:
     selected, using the `getSupportedItemSelectorReturnTypes` method.
 
     In the example `URLItemSelectorReturnType` is used, but you could use more
-    return types if you have the information:
+    return types if the view could return them. More return types means that the
+    view is more reusable:
 
         public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes(
         ) {
@@ -123,8 +124,8 @@ Follow these steps to implement your view:
         }
 
     This returns the supported Item Selector return types for the view. The
-    return types are added to the list further down in the code. Follow this
-    same pattern to add your return types to the list:
+    return types are added to the list further down in the code. We suggest to
+    follow this same pattern to add your return types to the list:
 
         private static final List<ItemSelectorReturnType>
             _supportedItemSelectorReturnTypes =
@@ -155,11 +156,12 @@ Follow these steps to implement your view:
     the Item Selector dialog. The `isShowSearch()` method returns whether the
     Item Selector view should show the the search field. Finally, the
     `isVisible()` method returns whether the Item Selector view is visible. In
-    most cases, you'll want to set this to `true`. There are special cases where
-    you may set this to `false`, such as if the view isn't ready or requires an
-    additional third-party configuration, etc.
+    most cases, you'll want to set this to `true`. This method was included in
+    order to allow developers add conditional logic to disable the view.
 
 6.  Next, set the render settings for your view, using the `renderHTML` method.
+    In this case we are using a jsp file contained in the same bundle (this is
+    why we need the servlet context).
 
     The sample Item Selector view has the following configuration:
 
@@ -365,7 +367,7 @@ the JSP may contain the following markup:
 
     </aui:script>
 
-<!-- Is the example markup above correct? -->
+<!-- Is the example markup above correct? YES, it seems right -->
 
 The data is returned according to the specified desired
 `ItemSelectorReturnTypes`. This is covered in more detail in the
