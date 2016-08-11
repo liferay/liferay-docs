@@ -33,7 +33,7 @@ location's current weather. If it matches, rain-related content targeted for
 that user segment is displayed; otherwise, the user won't be grouped into that
 user segment, and will see differing content, like a promotion for sunglasses.
 
-![Figure 1: This diagram breaks down the evaluation process for the weather rule.](../../images-dxp/weather-evaluation-diagram.png)
+![Figure 1: This diagram breaks down the evaluation process for the weather rule.](../../images-dxp/weather-rule-diagram.png)
 
 Now that you have an idea of how to plan your custom rule's development, you'll
 begin creating one yourself!
