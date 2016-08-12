@@ -153,22 +153,93 @@ section for more details.
 
 $$$
 
-To show how easy it is to modify a rule's behavior, you'll make a quick change
-in your rule's class. When extending the `BaseJSPRule` class, the category of
-the rule is not set by default. To change your rule's category (i.e., the
-category your rule selectable from in the Audience Targeting app), add this:
+To see how easy it is to modify a rule's behavior, you'll create the weather
+rule's class. This assumes that you followed the instructions above, creating
+the `WeatherRule` class and extending `BaseJSPRule`.
 
-    @Override
-    public String getRuleCategoryKey() {
+1. Add the activation and deactivation methods to your class.
 
-        return SessionAttributesRuleCategory.KEY;
-    }
+        @Activate
+        @Override
+        public void activate() {
+            super.activate();
+        }
 
-Now your rule's category is set to Session Attributes. Available category
-classes include `BehaviourRuleCategory`, `SessionAttributesRuleCategory`,
-`SocialRuleCategory`, and `UserAttributesRoleCategory`.
+        @Deactivate
+        @Override
+        public void deActivate() {
+            super.deActivate();
+        }
 
-![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
+    These methods call the super class `BaseRule` to implement necessary logging
+    and processing for when your rule starts and stops. Make sure to include the 
+    [@Activate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Activate.html)
+    and
+    [@Deacitvate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Deactivate.html)
+    annotations, which are required.
+
+2. Define the rule's icon and the category it should reside in when displayed in
+   the User Segments Editor.
+
+        @Override
+        public String getIcon() {
+            return "icon-sun";
+        }
+
+        @Override
+        public String getRuleCategoryKey() {
+            return SessionAttributesRuleCategory.KEY;
+        }
+
+    The `getIcon` method should return a
+    [Font Awesome](http://fortawesome.github.io/Font-Awesome/3.2.1/) CSS class,
+    which is used to render the rule's icon in the editor. The weather rule's
+    category is set to Session Attributes. Available category classes include
+    `BehaviourRuleCategory`, `SessionAttributesRuleCategory`,
+    `SocialRuleCategory`, and `UserAttributesRoleCategory`.
+
+    ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
+
+3. Add the following methods:
+
+        @Override
+        public String processRule(
+            PortletRequest portletRequest, PortletResponse portletResponse,
+            String id, Map<String, String> values) {
+
+            return values.get("weather");
+        }
+
+        @Override
+        protected void populateContext(
+            RuleInstance ruleInstance, Map<String, Object> context,
+            Map<String, String> values) {
+
+            String weather = "";
+
+            if (!values.isEmpty()) {
+                weather = GetterUtil.getString(values.get("weather"));
+            }
+            else if (ruleInstance != null) {
+                weather = ruleInstance.getTypeSettings();
+            }
+
+            context.put("weather", weather);
+        }
+
+    To understand what these methods accomplish, you'll need to examine the
+    rule's lifecycle.
+
+    ![Figure 3: This diagram shows the lifecycle for an Audience Targeting rule.](../../images-dxp/rule-lifecycle.png)
+
+
+
+
+
+
+
+
+
 
 Now that you've modified some basic features in your `-Rule` class, you'll need
 to develop the UI for your rule's configuration. As you read earlier, the second
@@ -209,16 +280,6 @@ You could borrow from this JSP code and change the name and labels for a
 
 ![Figure 3: This example rule uses a `select` drop-down box.](../../images-dxp/select-box-rule.png)
 
-+$$$
-
-**Note:** Recall the last component of Audience Targeting rules: Language Keys.
-To learn more about language keys and how to create, use, and generate them,
-visit the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
-tutorials.
-
-$$$
-
 Now you'll jump back into modifying your rule's behavior via the `-Rule` class.
 You'll dive further into the sample weather rule and find what is necessary to
 make the JSP code work with the Rule Java class.
@@ -251,7 +312,7 @@ make the JSP code work with the Rule Java class.
     `typeSettings` field is managed by the framework in the Rule Instance table.
 
 3.  The next method to inspect in the weather rule is the `populateContext`
-    method. This method takes the value the user selected and injects it into the
+    method. This method takes the value the user selected in the form and injects it into the
     `context` map parameter. For example, the following `populateContext` method
     populates a `weather` context variable with the `weather` value of the
     `values` map parameter.
@@ -320,34 +381,8 @@ evaluation process determines whether a user matches the rule.
    Segment form so that administrators can set a value for that specific user
    segment.
 
-Now you've inspected a fully functional rule and have the knowledge to
+Now you've created and examined a fully functional rule and have the knowledge to
 create your own.
-
-Here are some things to consider as you implement and deploy rules:
-
-- If you deploy your rule into a production environment, you may want to
-consider adding your values to the cache (e.g., weather in different locations),
-since obtaining the same value on every request is very inefficient and could
-result in slowing down your portal.
-
-<!-- How do you do this? Link? -Rich --> 
-
-- As an alternative to storing complex information in the `typeSettings` field
-which is managed by the framework in the Rule Instance table, you may want to
-consider persisting to a database by using 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access),
-which is supported in the Rule plugins. 
-
-- You can override the `BaseJSPRule.deleteData` method in your `-Rule`, so that
-it deletes any data associated with the rule that is currently being deleted.
-
-- If your rule handles data or references to data that can be staged (e.g., a
-reference to a page or web content article), you may need to override the
-`BaseJSPRule.exportData` and `BaseJSPRule.importData` methods, to manage the
-content properly.
-
-You now know how to create a custom rule type for your Audience Targeting
-application.
 
 <!-- ## Customize the Rules Engine -->
 
