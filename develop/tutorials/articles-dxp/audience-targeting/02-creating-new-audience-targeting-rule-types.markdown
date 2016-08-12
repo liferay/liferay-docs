@@ -153,9 +153,17 @@ section for more details.
 
 $$$
 
-To see how easy it is to modify a rule's behavior, you'll create the weather
-rule's class. This assumes that you followed the instructions above, creating
-the `WeatherRule` class and extending `BaseJSPRule`.
+The first thing you'll define in your weather rule is the User Segment Editor
+lifecycle.
+
+## Defining a Rule's View/Save Lifecycle
+
+To see how easy it is to modify a rule's behavior, you'll begin defining the
+weather rule's class. This assumes that you followed the instructions above,
+creating the `WeatherRule` class and extending `BaseJSPRule`. If you used the
+`contenttargetingrule` Blade CLI template, your project is already extending
+`BaseJSPRule` and has a default `view.jsp` file already created. This section
+covers how to define a rule's view/save lifecycle.
 
 1. Add the activation and deactivation methods to your class.
 
@@ -200,15 +208,7 @@ the `WeatherRule` class and extending `BaseJSPRule`.
 
     ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
 
-3. Add the following methods:
-
-        @Override
-        public String processRule(
-            PortletRequest portletRequest, PortletResponse portletResponse,
-            String id, Map<String, String> values) {
-
-            return values.get("weather");
-        }
+3. Add the following method:
 
         @Override
         protected void populateContext(
@@ -227,11 +227,116 @@ the `WeatherRule` class and extending `BaseJSPRule`.
             context.put("weather", weather);
         }
 
-    To understand what these methods accomplish, you'll need to examine the
+    To understand what this method accomplishes, you'll need to examine the
     rule's lifecycle.
 
     ![Figure 3: This diagram shows the lifecycle for an Audience Targeting rule.](../../images-dxp/rule-lifecycle.png)
 
+    When the user opens the User Segment Editor, the render phase begins for the
+    rule. The `getFormHtml(...)` method is invoked to retrieve the HTML to
+    display. You don't have to worry about implementing this method because it
+    is already taken care of in the `BaseJSPRule` class your extending. It calls
+    the `populateContext` method.
+
+    You'll notice the `populateContext(...)` method is not available in the
+    interface. This is because it's not needed in all cases. It's available by
+    extending the `BaseJSPRule` class, and you'll need to add more logic to it
+    for the weather rule. The goal of the `populateContext` method is to
+    generate a map with all the parameters your JSP view needs to render the
+    rule's HTML. This map is stored in the `context` variable, which is
+    pre-populated with basic values in the Portlet logic, and then each rule
+    contributes their specific parameters to it. The `populateContext` method
+    above populates a `weather` context variable with the `weather` value from
+    the `values` map parameter.
+
+    For the weather rule, the `populateContext` method accounts for three use
+    cases:
+
+    3a. The rule was added but has no set values yet. In this case, the default
+        values defined by the developer are injected (e.g., `weather="sunny"`).
+    
+    3b. The rule was added and a value is set, but the request failed to
+        complete (e.g., due to an error). In this case, the `values` parameter
+        of the `populateContext` method contains the values that were intended
+        to be saved, and they are injected so that they are displayed in the
+        rule's view together with the error message.
+
+    3c. The rule was added and a value was successfully set. In this case, the
+        `values` parameter is empty and you have to obtain the value to display
+        in the form from storage and inject it in the context so it's displayed
+        in the rule's HTML. The weather rule uses the `typeSettings` field of
+        the rule instance, but complex rules could use services to store values.
+
+    You can think of the `populateContext` method as the intermediary between
+    your JSP and your backend code. Once the HTML is successfully retrieved for
+    the user, and they've set the weather value, they'll click *Save*, which
+    begins the action phase.
+
+4. Add the following method:
+
+        @Override
+        public String processRule(
+            PortletRequest portletRequest, PortletResponse portletResponse,
+            String id, Map<String, String> values) {
+
+            return values.get("weather");
+        }
+
+    The `processRule(...)` method is invoked when the action phase is initiated.
+    The `values` parameter only contains the value(s) the user added in the
+    form. The logic you can add to a `processRule` method is outlined below.
+
+    4a. Obtain the value(s) from the `values` parameter.
+
+    4b. (Optional) Validate the data consistency and possible errors. If
+    anything is wrong, throw an `InvalidRuleException` and prohibit the values
+    from being stored. In the weather rule scenario, when the rule is reloaded
+    after an exception is thrown in the form, case 3b from the previous step
+    occurs.
+
+    4c. Return the value to be stored in the `typeSettings` field of the rule
+    instance. The `typeSettings` field is managed by the framework in the Rule
+    Instance table. If your rule has its own storage mechanism, then you should
+    call your services in the `processRule` method.
+
+    Once the rule processing ends, the form is reloaded and the lifecycle
+    restarts again. The value(s) selected in the rule are stored and are ready
+    to be accessed once user segment evaluation begins. There are a couple more
+    methods you'll need to add to the `WeatherRule` class before defining the
+    rule's evaluation.
+
+5. Define a way to retrieve the rule's localized summary. In many instances, you
+   can do this by retrieving the rule's resource bundle. For the weather rule,
+   you only need to return the rule's type settings.
+
+        @Override
+        public String getSummary(RuleInstance ruleInstance, Locale locale) {
+            return ruleInstance.getTypeSettings();
+        }
+
+6. Set the servlet context for your rule.
+
+        @Override
+        @Reference(
+            target = "(osgi.web.symbolicname=weather)",
+            unbind = "-"
+        )
+        public void setServletContext(ServletContext servletContext) {
+            super.setServletContext(servletContext);
+        }
+
+    This is only required in rules extending the `BaseJSPRule` class. The
+    servlet context must be set for the rule to render its own JSP files. The
+    `setServletContext` method is automatically invoked when the rule module is
+    installed and resolved in Liferay. Make sure the `osgi.web.symbolicname` in
+    the `target` property of the `@Reference` annotation is set to the same
+    value as the `Bundle-SymbolicName` defined in the `bnd.bnd file of the
+    module.
+
+Next, you'll learn how to evaluate a rule that is configured and saved to a user
+segment.
+
+## Evaluating a Rule
 
 
 
@@ -240,14 +345,6 @@ the `WeatherRule` class and extending `BaseJSPRule`.
 
 
 
-
-Now that you've modified some basic features in your `-Rule` class, you'll need
-to develop the UI for your rule's configuration. As you read earlier, the second
-component of your rule is its UI configuration, which is used to show the rule's
-form. If your `-Rule` class is already extending `BaseJSPRule`, your rule
-already supports using JSP pages. If you used the `contenttargetingrule` Blade
-CLI template, your project is already extending `BaseJSPRule` and has a default
-`view.jsp` file already created.
 
 To view a sample rule and its UI configuration, download the sample
 [weather rule](https://customer.liferay.com/documents/10738/200086/weather.zip).
@@ -280,72 +377,8 @@ You could borrow from this JSP code and change the name and labels for a
 
 ![Figure 3: This example rule uses a `select` drop-down box.](../../images-dxp/select-box-rule.png)
 
-Now you'll jump back into modifying your rule's behavior via the `-Rule` class.
-You'll dive further into the sample weather rule and find what is necessary to
-make the JSP code work with the Rule Java class.
-
-1.  Find the `processRule` method in the `WeatherRule` class. This method is
-    called when you click *Save* after selecting your rule in the Rules form. The
-    portlet's request and response, the rule instance's ID, and the values from
-    the form can be used by this method.
-
-    In some cases, you may need to retrieve info from the portlet's request
-    and response or the rule's ID. This tutorial demonstrates using the
-    `values` parameter. This parameter represents all the values on the form
-    you're saving. 
-
-2.  If you wanted to process one of the form's values, you could do that from the
-    `processRule` method. You'll need to return the string value for the selected
-    entity you chose for your rule type. For example, recall the JSP code example
-    you studied earlier. To retrieve the selected value from the select box,
-    you'd need to retrieve the weather value:
-
-        @Override
-        public String processRule(
-            PortletRequest request, PortletResponse response, String id,
-            Map<String, String> values) {
-
-            return values.get("weather");
-        }
-
-    The return value is stored in the rule instance's `typeSettings`. The
-    `typeSettings` field is managed by the framework in the Rule Instance table.
-
-3.  The next method to inspect in the weather rule is the `populateContext`
-    method. This method takes the value the user selected in the form and injects it into the
-    `context` map parameter. For example, the following `populateContext` method
-    populates a `weather` context variable with the `weather` value of the
-    `values` map parameter.
-
-        @Override
-        protected void populateContext(
-            RuleInstance ruleInstance, Map<String, Object> context,
-            Map<String, String> values) {
-
-            String weather = "sunny";
-
-            if (!values.isEmpty()) {
-                // Values from Request
-
-                weather = values.get("weather");
-            }
-            else if (ruleInstance != null) {
-                // Values from Database
-
-                weather = ruleInstance.getTypeSettings();
-            }
-
-            context.put("weather", weather);
-        }
-
-    In this example implementation, this method checks if the values are
-    available from the request. If they're not available, it checks for the
-    values in the database.  Then the context map is updated by assigning the
-    string key to the object value. 
-
-Excellent! You've processed your rule and populated the rule's context. The last
-step you'll need to take is specifying what your rule should evaluate. The
-evaluation process determines whether a user matches the rule.
+The last step you'll need to take is specifying what your rule should evaluate.
+The evaluation process determines whether a user matches the rule.
 
 1. Find the `evaluate` method in the `WeatherRule` class. There is logic that
    obtains the runtime user's value for what you plan to evaluate.
