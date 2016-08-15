@@ -235,10 +235,10 @@ view/save lifecycle.
     ![Figure 3: This diagram shows the lifecycle for an Audience Targeting rule.](../../images-dxp/rule-lifecycle.png)
 
     When the user opens the User Segment Editor, the render phase begins for the
-    rule. The `getFormHtml(...)` method is invoked to retrieve the HTML to
+    rule. The `getFormHTML(...)` method is invoked to retrieve the HTML to
     display. You don't have to worry about implementing this method because it
     is already taken care of in the `BaseJSPRule` class your extending. The
-    `getFormHtml` method calls the `populateContext(...)` method.
+    `getFormHTML` method calls the `populateContext(...)` method.
 
     You'll notice the `populateContext` method is not available in the `Rule`
     interface. This is because it's not needed in all cases. It's available by
