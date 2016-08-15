@@ -25,13 +25,14 @@ location so you can obtain that location's weather.
 
 Lastly, you'll need to let administrators set the value that should be compared
 with the user's current weather. This could be a UI component consisting of a
-drop-down list of weather options. Therefore, if an adminstrator sets *rainy* as
-the value for the rule, the rule could be added to a user segment targeted for
-rain-related goods. When the user visits a site, their user segment assignment
-is decided by whether their pre-set weather value (rainy) matches their
-location's current weather. If it matches, rain-related content targeted for
-that user segment is displayed; otherwise, the user won't be grouped into that
-user segment, and will see differing content, like a promotion for sunglasses.
+drop-down list of weather options. Therefore, if an administrator sets *rainy*
+as the value for the rule, the rule could be added to a user segment targeted
+for rain-related goods. When the user visits a site, their user segment
+assignment is decided by whether their preset weather value (rainy) matches
+their location's current weather. If it matches, rain-related content targeted
+for that user segment is displayed; otherwise, the user won't be grouped into
+that user segment, and will see differing content, like a promotion for
+sunglasses.
 
 ![Figure 1: This diagram breaks down the evaluation process for the weather rule.](../../images-dxp/weather-rule-diagram.png)
 
