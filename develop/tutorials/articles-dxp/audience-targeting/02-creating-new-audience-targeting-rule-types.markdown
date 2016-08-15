@@ -330,7 +330,7 @@ covers how to define a rule's view/save lifecycle.
     `setServletContext` method is automatically invoked when the rule module is
     installed and resolved in Liferay. Make sure the `osgi.web.symbolicname` in
     the `target` property of the `@Reference` annotation is set to the same
-    value as the `Bundle-SymbolicName` defined in the `bnd.bnd file of the
+    value as the `Bundle-SymbolicName` defined in the `bnd.bnd` file of the
     module.
 
 Next, you'll learn how to evaluate a rule that is configured and saved to a user
@@ -338,6 +338,135 @@ segment.
 
 ## Evaluating a Rule
 
+Imagine an administrator has successfully configured and saved your custom rule
+to their user segment. Now what? Your rule needs to fulfill its purpose!
+Evaluate the preset weather value compared to a user's weather value visiting
+the site. If the user's value matches the preset value, they're added to the
+user segment, assuming they match the other configured rules.
+
+You'll need to implement the `evaluate` rule to begin the evaluation process.
+This method is part of the user segmentation lifecycle. When a page is loaded,
+the `evaluate` method of the rule is invoked to calculate if the current user
+belongs to the user segment. For the weather rule, add the following `evaluate`
+method:
+
+    @Override
+    public boolean evaluate(
+            HttpServletRequest request, RuleInstance ruleInstance,
+            AnonymousUser anonymousUser)
+        throws Exception {
+
+        String userWeather = getUserWeather(anonymousUser);
+
+        String weather = ruleInstance.getTypeSettings();
+
+        if (Validator.equals(userWeather, weather)) {
+            return true;
+        }
+
+        return false;
+    }
+
+This logic acquires the user's weather by calling the `getUserWeather` method.
+Then the preset weather value is acquired by accessing the rule instance's
+`typeSettings` parameter. Lastly, the two values are compared. If the weather
+values match, `true` is returned to indicate that the user matches the rule;
+otherwise, `false` is returned, and the user is not admitted to the user
+segment.
+
+You have yet to apply logic to the `WeatherRule` class for retrieving a user's
+current weather. As you learned earlier, you'll need to access the user's
+location first.
+
+    protected String getCityFromUserProfile(long contactId, long companyId)
+        throws PortalException, SystemException {
+ 
+        List<Address> addresses = AddressLocalServiceUtil.getAddresses(companyId, Contact.class.getName(), contactId);
+ 
+        if (addresses.isEmpty()) {
+            return null;
+        }
+ 
+        Address address = addresses.get(0);
+
+        return address.getCity() + StringPool.COMMA + address.getCountry().getA2();
+    }
+
+This method retrieves the user's location by accessing their user profile
+information. Once you have the user's location, you'll need to find the current
+weather for that location.
+
+    protected String getUserWeather(AnonymousUser anonymousUser)
+        throws PortalException, SystemException {
+
+        User user = anonymousUser.getUser();
+
+        String city = getCityFromUserProfile(user.getContactId(), user.getCompanyId());
+
+        Http.Options options = new Http.Options();
+
+        String location = HttpUtil.addParameter(API_URL, "q", city);
+        location = HttpUtil.addParameter(location, "format", "json");
+
+        options.setLocation(location);
+
+        int weatherCode = 0;
+
+        try {
+            String text = HttpUtil.URLtoString(options);
+
+            JSONObject jsonObject = JSONFactoryUtil.createJSONObject(text);
+
+            weatherCode = jsonObject.getJSONArray("weather").getJSONObject(0).getInt("id");
+        }
+        catch (Exception e) {
+            _log.error(e);
+        }
+
+        return getWeatherFromCode(weatherCode);
+    }
+
+    private static Log _log = LogFactoryUtil.getLog(WeatherRule.class);
+
+This method calls the `getCityFromUserProfile` method to acquire the user's
+location. Then it accesses a weather site and retrieves the weather code for
+that location. The weather code is used determine the weather string that is
+used during the evaluation process (e.g., `sunny`). For the weather rule, you'll
+access Open Weather Map's APIs to retrieve the weather code. Set the `API_URL`
+field to the Open Weather Map's API URL:
+
+    private static final String API_URL = "http://api.openweathermap.org/data/2.5/weather";
+
+One last thing to add is the logic that converts weather codes into string
+values that your rule can understand and compare during the user segmentation
+lifecycle. Add the following method to convert Open Weather Map's weather codes:
+
+    protected String getWeatherFromCode(int code) {
+        if (code == 800 || code == 801) {
+            return "sunny";
+        }
+        else if (code > 801 && code < 805) {
+            return "clouds";
+        }
+        else if (code >= 600 && code < 622) {
+            return "snow";
+        }
+        else if (code >= 500 && code < 532) {
+            return "rain";
+        }
+ 
+        return null;
+    }
+
+You can refer to all possible weather codes
+[here](http://openweathermap.org/weather-conditions).
+
+Excellent! You've implemented the `evaluate` method and added the necessary
+logic in your `-Rule` class to acquire a user's local weather. The weather
+rule's behavior is defined and complete. The last thing you need to do is create
+a JSP template.
+
+## Defining the Rule's UI
 
 
 
@@ -365,8 +494,8 @@ to this example:
         <aui:select name="weather" value="<%= weather %>">
             <aui:option label="sunny" value="sunny" />
             <aui:option label="clouds" value="clouds" />
-            <aui:option label="mist" value="mist" />
             <aui:option label="snow" value="snow" />
+            <aui:option label="rain" value="rain" />
         </aui:select>
     </aui:fieldset>
 
@@ -377,37 +506,8 @@ You could borrow from this JSP code and change the name and labels for a
 
 ![Figure 3: This example rule uses a `select` drop-down box.](../../images-dxp/select-box-rule.png)
 
-The last step you'll need to take is specifying what your rule should evaluate.
-The evaluation process determines whether a user matches the rule.
 
-1. Find the `evaluate` method in the `WeatherRule` class. There is logic that
-   obtains the runtime user's value for what you plan to evaluate.
 
-        ...
-        String userWeather = getUserWeather(anonymousUser);
-
-    You can look at this method's code in the
-    [downloadable ZIP file](https://customer.liferay.com/documents/10738/200086/weather.zip)
-    for the sample weather rule. 
-
-    <!-- Why would I want to look at the method's code? Surely, we're not asking
-    people to read code to figure out how to do something, right? We're
-    documenting it here. -Rich --> 
-
-2. The weather rule now must retrieve the value stored in the type settings by
-   using the `processRule` method.
-
-        String weather = ruleInstance.getTypeSettings();
-
-3. Now that the rule has both the user's value and the rule's value, it should
-   check whether they match. If they match, return `true`; otherwise, return
-   `false`.
-
-        if (Validator.equals(userWeather, weather)) {
-            return true;
-        }
-
-        return false;
 
 4. Finally, deploy your rule plugin to the Liferay server. Your new rule is
    fully functional, and the UI you've defined is added to the Add/Edit User
