@@ -468,21 +468,11 @@ a JSP template.
 
 ## Defining the Rule's UI
 
-
-
-
-
-
-
-
-To view a sample rule and its UI configuration, download the sample
-[weather rule](https://customer.liferay.com/documents/10738/200086/weather.zip).
-
-If you wanted to create user segment rules based on the type of weather a user
-is experiencing, you could create a drop-down menu that lets the administrator
-select a weather type to associate with that user segment rule. Here's a code
-snippet from the weather rule's JSP template (`view.jsp`) that could be applied
-to this example:
+The Java code you've added to this point has assumed that a preset weather value
+will be available for comparing during the evaluation process. You'll need to
+define a UI for your rule during the view/save lifecycle to let administrators
+select that weather value. Create a `view.jsp` file in your rule's module (e.g.,
+`./src/main/resources/META-INF/resources/view.jsp`) and add the following logic:
 
     <%
     Map<String, Object> context = (Map<String, Object>)request.getAttribute("context");
@@ -499,20 +489,21 @@ to this example:
         </aui:select>
     </aui:fieldset>
 
-This JSP code creates a `select` drop-down box with the name `weather`.
-Then it specifies several options associated with different types of weather.
-You could borrow from this JSP code and change the name and labels for a
-`select` drop-down box and values appropriate for your rule plugin.
+The `weather` variable in the `context` map should be set for the weather rule.
+Once the variable is selected by the user, it's passed from the view template to
+the `populateContext` method.
 
-![Figure 3: This example rule uses a `select` drop-down box.](../../images-dxp/select-box-rule.png)
+![Figure 5: The weather rule uses a `select` drop-down box to set the weather value.](../../images-dxp/select-box-rule.png)
 
+The weather rule uses JSP templates to display the rule's view. Audience
+Targeting, however, is compatible with any UI technology. Visit the
+[](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-rules#selecting-a-ui-technology)
+tutorial for details on how to use other UI technologies like FreeMarker.
 
-
-
-4. Finally, deploy your rule plugin to the Liferay server. Your new rule is
-   fully functional, and the UI you've defined is added to the Add/Edit User
-   Segment form so that administrators can set a value for that specific user
-   segment.
+Congratulations! You've created the weather rule and can now target users based
+on their weather conditions. You can view the finished version of the weather
+rule by downloading its
+[ZIP file](https://customer.liferay.com/documents/10738/200086/weather.zip).
 
 Now you've created and examined a fully functional rule and have the knowledge to
 create your own.
