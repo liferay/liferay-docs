@@ -3,8 +3,7 @@
 Liferay's Knowledge Base app provides a way to create and organize articles in a 
 site. For example, it can be used to display professional product documentation 
 or form complete books or guides. It even lets you import article source files 
-written in Markdown. It's
-[workflow-enabled](/discover/portal/-/knowledge_base/7-0/using-worklfow), 
+written in Markdown. It's [workflow-enabled](/discover/portal/-/knowledge_base/7-0/using-worklfow), 
 so you can require articles to be approved before they are published. 
 Additionally, the Knowledge Base app lets administrators create article 
 templates that help users follow a common structure and include consistent kinds 
@@ -36,22 +35,29 @@ and manage articles.
 
 In Site Administration, the Knowledge Base has everything administrators and authors need to create, 
 update, and manage articles. To navigate to the Knowledge Base, go to Site 
-Administration &rarr; *Content* &rarr; *Knowledge Base*. It has two 
-tabs: one for creating and managing articles (Articles) and one for managing article suggestions 
-(Suggestions). The Articles tab is for managing all the articles and article 
-folders in the Knowledge Base. The Suggestions tab is for managing user-submitted feedback. 
+Administration &rarr; *Content* &rarr; *Knowledge Base*. It has two tabs: one 
+for creating and managing articles (Articles) and one for managing article 
+suggestions (Suggestions). The Articles tab is for managing all the articles and 
+article folders in the Knowledge Base. The Suggestions tab is for managing 
+user-submitted feedback. 
 
 ![Figure 1: You can manage Knowledge Base articles, folders, and suggestions from the Knowledge Base in Site Administration.](../../../images/kb-admin-articles.png)
 
 The Articles tab lets you create and manage Knowledge Base articles and folders.
-It also displays any existing articles and folders. Folders 
-appear in a table near the top of the Articles tab, while articles appear in a 
-separate table at the bottom. The Add selector shows you all the options for 
-adding articles. You can add a folder, a Basic Article, an article based on a 
-template, or you can import articles from a ZIP file. The Permissions button is 
-next to the Add selector. Clicking this button lets you define permissions for 
-the Knowledge Base app. You can choose the roles that can perform the following 
-tasks: 
+It also displays any existing articles and folders. Folders appear in a table 
+near the top of the Articles tab, while articles appear in a separate table at 
+the bottom. When you click the Add button (![Add](../../../images/icon-portlet-add-control.png))
+a menu pops up with all the different options for adding articles. You can add a 
+folder, a Basic Article, an article based on a template, or you can import 
+articles from a ZIP file. When you click the Options button
+(![Options](../../../images/icon-app-options.png)), a menu pops up allowing you
+to configure common features for the Knowledge Base app. You can manage
+templates, subscribe, edit permissions, import/export, and configure email
+options for the app. The *permissions* button allows you to define basic 
+permissions for the app, such as who can view the app and who can add the app to 
+a page. Clicking the *Home Folder Permissions* button lets you 
+define more detailed permissions for the Knowledge Base app. You can choose the 
+roles that can perform the following tasks: 
 
 - Add/delete articles, folders, and templates 
 - Change the Knowledge Base app's permissions 
@@ -60,21 +66,21 @@ tasks:
 
 +$$$
 
-**Note:** To access Knowledge Base in Site Administration, a role must have the permission 
-*Knowledge Base* &rarr; *Access in Site Administration*. To add or act on 
-articles, folders, or suggestions, the site administrator must grant the 
+**Note:** To access Knowledge Base in Site Administration, a role must have the 
+permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or 
+act on articles, folders, or suggestions, the site administrator must grant the 
 appropriate permissions using the Permissions window in Knowledge Base.
 
 $$$
 
 To create an article, select *Basic Article* or the name of an available 
-template in the Add selector. This brings up the New Article window. As you 
+template in the Add button menu. This brings up the New Article form. As you 
 enter your article's title in this window, a URL-safe version of the title is 
 added to the end of the article's friendly URL. The value is displayed and 
-editable in the *Friendly URL* field. You create the article's content using the 
-WYSIWYG editor. Knowledge Base articles are created in HTML. Click the *Source* 
-button in the editor to view the HTML source, or use this view to write HTML 
-yourself. 
+editable in the *Friendly URL* field, underneath the *Configuration* section 
+heading. You create the article's content using the WYSIWYG editor. Knowledge 
+Base articles are created in HTML. Click the *Source* button in the editor to 
+view the HTML source, or use this view to write HTML yourself. 
 
 ![Figure 2: You can create and modify a Knowledge Base article's content using the WYSIWYG editor.](../../../images/kb-admin-new-article.png)
 
@@ -86,17 +92,17 @@ enabled workflow for the Knowledge Base, your article must be approved before
 publication. 
 
 You can also create folders for organizing your articles. To create a folder, 
-select *Folder* from the Add selector. This opens the New Folder window. The UI 
-for adding folders is very straightforward. You can enter a name, description, 
+select *Folder* from the Add button menu. This opens the New Folder form. The 
+UI for adding folders is very straightforward. You can enter a name, description, 
 and permissions for the folder. 
 
-Articles and folders can exist in several places in Knowledge Base. You 
-can create articles and folders in the root of Knowledge Base, or within 
-other folders. Navigate through folders by clicking them in the UI. The text 
-immediately below the Add selector shows your position in a folder hierarchy. 
-Click any of the preceding folders in this text to navigate back up the 
-hierarchy. You can also move articles and folders into other folders, and create 
-child articles of other articles.
+Articles and folders can exist in several places in Knowledge Base. You can 
+create articles and folders in the root of Knowledge Base, or within other 
+folders. Navigate through folders by clicking them in the UI. The text 
+immediately below the All filter at the top of the app shows your position in a 
+folder hierarchy. Click any of the preceding folders in this text to navigate 
+back up the hierarchy. You can also move articles and folders into other folders, 
+and create child articles of other articles.
 
 ![Figure 3: This screenshot uses a red box to highlight the text that indicates the current position in the folder hierarchy.](../../../images/kb-admin-folder-hierarchy.png)
 
@@ -116,8 +122,6 @@ perform the following actions on folders:
 
 The following actions are available for articles:
 
-- **View:** display the article. 
-
 - **Edit:** change the article's title and content and manage its attachments,
   categorization, and its related assets. 
 
@@ -132,38 +136,38 @@ The following actions are available for articles:
 - **Move:** move the article to a different folder or change an article's 
   position in the hierarchy by choosing a new parent article for it. 
 
-- **Delete:** remove the article from the Knowledge Base. 
+- **Delete:** remove the article from the Knowledge Base.
 
 You can also assign new *priority* values to articles. The priority value of 
-each article is shown in the Priority column of the articles table. When many 
-articles are in the Knowledge Base Display app (more on this app in a moment), 
-navigation arranges them in ascending priority. Priority 1 is the highest 
-priority; think "Priority 1 distress call!" The higher an article's priority, 
-the higher it appears in the navigation. To assign new priorities, select the 
-checkbox for each article you want to re-prioritize, enter a new priority value, 
-and select *Actions* &rarr; *Save* from the Actions menu that appears next to 
-the Add selector near the top of the app. Note that this Actions menu only 
+each article is shown underneath the article's title. When many articles are in 
+the Knowledge Base Display app (more on this app in a moment), navigation 
+arranges them in ascending priority. Priority 1 is the highest priority; think 
+"Priority 1 distress call!" The higher an article's priority, the higher it 
+appears in the navigation. To assign new priorities, select *Move* from the 
+Actions menu that appears next to the article, enter a new priority value for 
+the article, and click *Move*. You can also delete multiple articles at once by 
+selecting the checkbox for each article that you want to delete and clicking the 
+*X* button that appears at the top of the app. Note that this Actions menu only 
 appears when one or more article checkboxes are checked. This Actions menu lets 
-you save changes (i.e., priority values) to selected articles or delete selected 
-articles. 
+you check the info for selected articles or delete selected articles. 
 
 Next, you'll learn how to manage article templates. 
 
 ### Managing Templates [](id=managing-templates)
 
-<!-- Template management is now accessible from Options &rarr; Templates -->
-
-Knowledge Base's Templates tab lets you manage article templates. 
 Templates are starting points for articles. For example, you can create 
 templates that contain default headers or other content to give your users a 
 starting point to work from. Templates help foster consistent formatting and 
-content organization for articles. To create a new template, click the *Add 
-Template* button in the *Templates* tab. 
+content organization for articles. To create a new template, click the 
+*Templates* button in the Options menu (![Options](../../../images/icon-app-options.png)). 
+This brings up the Templates page, where you can manage existing templates. 
+Click the Add button at the bottom of the screen to add a template. Fill in the 
+New Template form and click *Publish*.
 
 ![Figure 4: As an administrator, you can add a new template to your knowledge base from Knowledge Base in Site Administration.](../../../images/kb-admin-new-template.png)
 
-From the *Templates* tab, the following actions are available in each template's 
-Actions button:
+From the Templates page, the following actions are available in each 
+template's Actions button:
 
 - **View:** display the template. From here, you can print the template, use it 
   to create an article, edit it, modify its permissions, or delete it. 
@@ -175,8 +179,8 @@ Actions button:
 
 - **Delete:** remove the template from the Knowledge Base. 
 
-Knowledge Base in Site Administration also lets you handle user feedback on articles. You'll 
-learn about this next.
+Knowledge Base in Site Administration also lets you handle user feedback on 
+articles. You'll learn about this next.
 
 ### Responding to User Feedback [](id=responding-to-user-feedback)
 
@@ -188,14 +192,14 @@ you mark progress on addressing the feedback.
 Each suggestion provides the link to the associated article, the user's 
 feedback, the user's name, the feedback's time stamp, and the status on 
 addressing the suggestion. You can move the entry between *New*, *In Progress*, 
-and *Resolved* states. 
+and *Resolve* states. 
 
 +$$$
 
 **Note:** To view article suggestions, your role must be granted the *Knowledge
 Base* &rarr; *Knowledge Base: View Suggestions* permission. 
 
-To move suggestions between the *New*, *In Progress*, and *Resolved* states, 
+To move suggestions between the *New*, *In Progress*, and *Resolve* states, 
 your role must be granted the *Knowledge Base* &rarr; *Knowledge Base Article:
 Update* permission. Roles assigned this permission can also view and update the
 state of article suggestions from any of the other Knowledge Base apps. 
@@ -224,7 +228,9 @@ export/import, permissions, scope, and sharing. For more information on this,
 see the section on configuring Liferay applications in 
 [Web Experience Management](/discover/portal/-/knowledge_base/7-0/web-experience-management). 
 
-<!-- Recommend the Knowledge Base Display as full page app (use in a single column row of a layout) -->
+The Knowledge Base Display's navigation menu and display options make it the 
+perfect candidate for a full page app. Simply add the app to a single column row
+of a layout and your page is ready to go.
 
 If you display a folder of articles, the navigation on the left side of the app 
 displays links to all of the folder's articles. The viewing area on the right 
@@ -238,22 +244,46 @@ can also move between articles by clicking the links at the bottom of the app.
 Knowledge Base Display can also display article hierarchies. Viewing an article 
 that has child articles expands the navigation tree to show links to the child 
 articles. Any expanded nodes collapse when you view a different top level 
-article. 
+article.
+
++$$$
+
+**Note:** The Knowledge Base Display flattens the article hierarchy after three 
+levels. Anything three levels or higher in the article hierarchy is listed at 
+the same level. Look at the article structure below for example:
+
+- `articles-section-01/`
+    - `some-article`
+    - `another-article`
+        - `child-article`
+            - `grandchild-article`
+                - `great-grandchild-article`
+
+The article hierarchy above would display *grandchild-article* and 
+*great-grandchild-article* on the same level in the Knowledge Base Display:
+
+- `articles-section-01/`
+    - `some-article`
+    - `another-article`
+        - `child-article`
+            - `grandchild-article`
+            - `great-grandchild-article`
+
+$$$
 
 Users can also take additional actions on an article in Knowledge Base Display. 
 Links at the top of the app let users subscribe to an RSS feed of the Knowledge 
 Base, subscribe to the current article, view its history, or print it. Below the 
 article's content is the rating interface, showing thumbs up and thumbs down 
-icons. Users can also click the *Do you have any suggestions?* link and submit 
-suggestions or comments for the article. Administrators can view the suggestions 
-and mark progress. Administrators can also use the *Actions* menu to the top 
-right of an article's body text to edit, add a child article to, assign 
-permissions to, move, or delete the article. 
+icons. Users can also submit suggestions or comments for the article in the 
+textbox underneath *Do you have any suggestions?*, at the bottom of the app. 
+Administrators can view the suggestions and mark progress. Administrators can 
+also edit, add a child article to, assign permissions to, move, or delete the 
+article, using the corresponding buttons at the top of the app. 
 
 If your Liferay administrator enables the Knowledge Base app's source 
 URL feature (more on this in a moment) and an article has an assigned source 
-URL, an *Edit on GitHub* button 
-(![GitHub](../../../images/icon-edit-on-github.png)) 
+URL, an *Edit on GitHub* button (![GitHub](../../../images/icon-edit-on-github.png)) 
 appears to the right of the article's title. This button lets users access the 
 article's online source location. You can use this feature to encourage users to 
 contribute fixes or improvements to articles. If you're interested in this 
@@ -303,16 +333,16 @@ article's content. This app even shows abstracts of children articles. You can
 add any number of Knowledge Base Article apps to a page and each one can display 
 a different article. When you first place this app on a page, it shows the link 
 *Please configure this portlet to make it visible to all users*. Click this link 
-and click *Select* in the *Setup* &rarr; *General* tab to choose an article to 
-display. Pick an article and then click *Save*. When your page refreshes, the 
-app displays the article. 
+and pick an article and then click *Save*. When your page refreshes, the app 
+displays the article. You can also use the *Setup* &rarr; *General* tab of the 
+app's *Configuration* menu to choose an article to display. 
 
 ![Figure 8: The Knowledge Base Article app is great at displaying individual articles.](../../../images/kb-article.png)
 
 Knowledge Base Article displays its article using the same UI as Knowledge Base 
 Display's viewing area. This includes the links at the top and bottom of the app 
-that let the user interact with the article, and the Actions menu that lets 
-administrators manage it. 
+that let the user interact with the article, and the buttons at the top of the 
+app that lets administrators manage it.
 
 ## Knowledge Base Section [](id=knowledge-base-section)
 
@@ -323,17 +353,15 @@ boxes in the Add Article and Edit Article screens let you define the section(s)
 the articles belong to. You can add any number of Knowledge Base Section apps to 
 a page and each one can display articles from any number of sections. To use 
 sections, your Liferay administrator must configure the feature in the Knowledge 
-Base app's properties. Once the feature is enabled, he or she must specify in 
-the properties file any section names you want to use. The 
-[Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration)
-section explains how to configure the sections feature in the properties file. 
+Base app's properties within Portal's System Settings. Once the feature is 
+enabled, he or she must specify in the System Settings any section names you 
+want to use. The [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration)
+section explains how to configure the sections feature in System Settings. 
 
 ![Figure 9: Here's an image of Knowledge Base Section apps on a page.](../../../images/kb-section.png)
 
 Knowledge Base Section can be configured with different display styles (title or 
-abstract). You can also define an article window state (maximized or normal), 
-how to order the articles, how many articles to display per page, and whether to 
-show pagination. 
+abstract). You can also define whether to show pagination or section titles.
 
 ## Knowledge Base Search [](id=knowledge-base-search)
 
@@ -439,14 +467,15 @@ They can be nested in any number of folders. Image files are the only files
 supported for attachments. No other kinds of references are supported--not even
 anchors. 
 
-In addition to source files and images, you can pass the importer a base source 
-URL property that specifies your source file's online repository location. Each 
-article's *Edit on GitHub* button (if enabled) takes the user to the source 
-location. The importer prefixes each file's path with the base source URL. This 
-constructs a URL to the article's repository source location; it looks like 
-`[base URL]/[article file path]`. Here's an example base source URL property:
+In addition to source files and images, you can configure a base source 
+URL system setting for the importer that specifies your source file's online 
+repository location. Each article's *Edit on GitHub* button (if enabled) takes 
+the user to the source location. The importer prefixes each file's path with the 
+base source URL. This constructs a URL to the article's repository source 
+location; it looks like `[base URL]/[article file path]`. Here's an example base 
+source URL:
 
-    base.source.url=https://github.com/liferay/liferay-docs/blob/master/develop/tutorials
+    https://github.com/liferay/liferay-docs/blob/master/develop/tutorials
 
 The source URL constructed from this base URL and article source file 
 `folder-1/some-article.markdown` would be:
@@ -458,7 +487,7 @@ root folder. The importer treats the `.METADATA` file as a standard Java
 properties file and uses the base source URL to construct the source URL for
 all of the ZIP file's resulting articles. To use the source URL feature, your 
 Liferay administrator must enable it via the Knowledge Base app's 
-[properties](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration). 
+[system settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration). 
 
 The importer also supports a two level hierarchy of articles and can assign
 article priorities based on numerical file prefixes. Below is a more advanced
@@ -585,16 +614,13 @@ properties to enable and configure some advanced, but optional features.
 
 ## Advanced Configuration [](id=advanced-configuration)
 
-<!-- Configuration is now completely different. -->
-
 The Knowledge Base app has several optional features that are disabled by 
 default. These include source URL, import file conventions, new article priority 
 increment, and sections. Now you'll learn how to configure these features by 
-overriding the Knowledge Base app's properties. Advanced configuration should 
+editing the Knowledge Base app's system settings. Advanced configuration should 
 only be performed by a Liferay administrator, as the person modifying the 
-configuration must have access to the downloaded Knowledge Base app and be 
-comfortable with repackaging apps and installing the modified Knowledge Base app 
-using the Control Panel. 
+configuration must be comfortable with using the Control Panel to configure
+system settings. 
 
 +$$$
 
@@ -603,103 +629,82 @@ only be performed by a Liferay administrator.
 
 $$$
 
-Next, you'll learn about the Knowledge Base app's properties, how to override 
-the default values, and how to deploy the result to your Liferay instance. 
+Next, you'll learn about the Knowledge Base app's settings and how to configure 
+the default values. 
 
-### Overriding Default App Properties [](id=overriding-default-app-properties)
+### Configuring App Settings
 
-To start, create a file called `portlet-ext.properties` to hold the settings for 
-the property values you want to override. Keep this file open in an editor so 
-you can add values as you go along. 
+To start, open the Control Menu and navigate to *Control Panel* &rarr; 
+*Configuration* &rarr; *System Settings*. Click the *Collaboration* link at the
+top and scroll down. The Knowledge Base settings are organized into five areas:
+*Knowledge Base Article*, *Knowledge Base Display*, *Knowledge Base Service*,
+*Knowledge Base Search*, and *Knowledge Base Section*.
 
-**Source URL Properties:** Defines the source location of importable Markdown
+**Source URL Settings:** Defines the source location of importable Markdown
 files. This is intended to point to an online source repository where the files
 are stored. GitHub is assumed as the default. Once defined, the Knowledge Base
 displays a button (default label is *Edit on GitHub*) above each displayed
 article. Users can click the button to navigate to an article's source location.
-To enable this feature, add the following property setting:
+To enable this feature, click the *Knowledge Base Service* link in 
+*System Settings* &rarr; *Collaboration* and click the checkbox next to the 
+*Source URLEnabled* label.
 
-    knowledge.base.source.url.enabled=true
+To change the button's default label *Edit on GitHub*, specify a new label as
+the value for the *Source URLEdit message key* setting. Best practice is to 
+specify the value as a language key. For example, if you create a language key 
+`edit-on-bitbucket=Edit on Bitbucket`, you can specify that language key as the 
+button's new label:
 
-To override the button's default label *Edit on GitHub*, specify a new label as
-the value for the property `knowledge.base.source.url.edit.message.key`. Best 
-practice is to specify the value as a language key. For example, if you create a 
-language key `edit-on-bitbucket=Edit on Bitbucket`, you can specify that 
-language key as the button's new label:
-
-    knowledge.base.source.url.edit.message.key=edit-on-bitbucket
+    edit-on-bitbucket
 
 Alternatively, you can specify the label explicitly:
 
-    knowledge.base.source.url.edit.message.key=Edit on Bitbucket
+    Edit on Bitbucket
 
-**Importer File Convention Properties:** These properties define the supported
-file extensions, the suffix for parent files, and the image folder's path within
-the ZIP file.
+**Importer File Convention Settings:** These settings define the supported file 
+extensions, the suffix for parent files, and the image folder's path within the 
+ZIP file. To modify these settings, click the *Knowledge Base Service* link in 
+*System Settings* &rarr; *Collaboration*.
 
-You can modify the supported file extensions: 
+You can modify the supported file extensions by adding a new field(with the plus 
+button on the side of the setting) for the settings below and entering a new 
+value:
 
-    markdown.importer.article.extensions=.markdown,.md
-    markdown.importer.image.file.extensions=.bmp,.gif,.jpeg,.jpg,.png
+*Markdown importer article extensions*(.markdown or .md for example)
+*Markdown importer image file extensions*(.bmp, .gif, .jpeg, .jpg, or .png for
+example)
 
 You can change the article parent file suffix: 
 
-    markdown.importer.article.intro=intro.markdown
+*Markdown importer article intro*
 
 You can modify the image folder path the importer looks for in the ZIP file:
 
-    markdown.importer.image.folder=images/
+*Markdown importer image folder*
 
-**New Article Priority Increment Property:** By default the priority for new
+**New Article Priority Increment Setting:** By default the priority for new
 articles is incremented by `1.0`. To disable this increment so that articles get
-a flat value of `1.0`, specify the following setting:
+a flat value of `1.0`, click the *Knowledge Base Service* link in 
+*System Settings* &rarr; *Collaboration* and uncheck the checkbox for this 
+setting:
 
-    admin.kb.article.increment.priority.enabled=false
+*Article increment priority enabled*
 
-**Section Names Property:** The section names property lets you specify 
-names of arbitrary topics to attribute to articles. Using the Knowledge Base
-Section app, you can display one or more *sections* (groups) of articles. To 
-make section names available, you must specify them in a comma-separated list. 
-Specify them as a list of values for the property `admin.kb.article.sections`:
+**Section Names Setting:** The section names setting lets you specify names of 
+arbitrary topics to attribute to articles. Using the Knowledge Base Section app, 
+you can display one or more *sections* (groups) of articles. Navigate to the 
+*Knowledge Base Section* management window from *System Settings* &rarr; 
+*Collaboration*, click the plus button next to the *Admin KBArticle sections* 
+setting to add a new field for each section you want, and enter a name for each 
+section:
 
-    admin.kb.article.sections=Politics,Business,World
+*Admin KBArticle sections*(Business, Politics or World for example)
 
 This creates the sections *Business*, *Politics*, and *World*. 
 
-Next you'll learn how to deploy your customized properties. 
+Click the *Update* button to save your settings. 
 
-### Deploying Override Property Values [](id=deploying-override-property-values)
-
-Your custom properties must be deployed with the Knowledge Base application. To
-do this, you must extract the application, place your file in the proper 
-location, re-package the application, and then deploy it. Don't worry; this is 
-much easier than it sounds. 
-
-1. Download the Knowledge Base app from Liferay Marketplace. You'll get a file 
-   with an `.lpkg` extension. 
-
-2. Extract the `.lpkg` file (any utility that handles ZIP files works). The
-   extracted contents include the app's `.war` file 
-   `knowledge-base-portlet-[version].war`. 
-
-3. Extract the `.war` file to access the application's files. 
-
-5. Add your `portlet-ext.properties` file to the project folder 
-   `WEB-INF/classes`. 
-
-6. Repackage (e.g., using the `jar` executable or a ZIP tool) the app project's 
-   files and folders into a `.war` file. 
-
-7. In your Liferay instance, navigate to *Control Panel* &rarr; *Apps* &rarr; 
-   *App Manager*. 
-
-8. Select *Upload* from the Options menu 
-   (![Options](../../../images/icon-options.png)), 
-   select your `.war` file, and click *Install* to deploy the app. 
-
-Your deployed app now uses the settings you specified in your 
-`portlet-ext.properties` file. Congratulations on deploying your configuration 
-settings! 
+Your app now uses the settings you specified! 
 
 You've learned the benefits of publishing articles using the Knowledge Base
 app. You've seen how easy it is to create, organize, and manage articles, and 
