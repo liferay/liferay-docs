@@ -8,7 +8,17 @@ so you can require articles to be approved before they are published.
 Additionally, the Knowledge Base app lets administrators create article 
 templates that help users follow a common structure and include consistent kinds 
 of information. These features let you create and manage your own knowledge 
-base, full of information relevant to your users. 
+base, full of information relevant to your users.
+
++$$$
+
+**Note:** The initial release of the Knowledge Base app is only available for 
+Liferay CE. The DE version will be released in the near future. You can see the 
+current versions and updates for the app on its Marketplace page:
+
+[https://web.liferay.com/marketplace/-/mp/application/15197613](https://web.liferay.com/marketplace/-/mp/application/15197613)
+
+$$$
 
 Here's what the Knowledge Base can do:
 
