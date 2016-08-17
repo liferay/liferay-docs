@@ -79,7 +79,7 @@ dependencies.
 
     It is required to implement the `Rule` interface, but there are `Rule`
     extension classes that provide helpful utilities that you can extend. For
-    example, the weather rule extends the `BaseJSPRule` class to support
+    example, your rule can extend the `BaseJSPRule` class to support
     generating your rule's UI using JSPs. This tutorial demonstrates
     implementing the UI using a JSP, and assumes the `Rule` interface is
     implemented by extending the `BaseJSPRule` class. For more information on
@@ -94,9 +94,9 @@ dependencies.
     This annotation declares the implementation class of the Component and
     specifies to immediately start the module once deployed to @product@.
 
-Now that your Java class is set up, you'll need to begin defining how your rule
-works by implementing the `Rule` interface's methods. Here are some of the
-methods that you can implement to modify your rule behavior:
+Now that your Java class is set up, you'll need to define how your rule works by
+implementing the `Rule` interface's methods. Here are some of the methods that
+you can implement to modify your rule behavior:
 
 <!-- The below method descriptions are the Javadoc copied from the `Rule`
 interface. Since the source code is not accessible and the Javadoc for Audience
@@ -155,8 +155,7 @@ section for more details.
 
 $$$
 
-The first thing you'll define in your weather rule is the User Segment Editor
-lifecycle.
+The first thing you'll define in your weather rule is the view/save lifecycle.
 
 ## Defining a Rule's View/Save Lifecycle
 
@@ -165,7 +164,8 @@ assumes that you followed the instructions above, creating the `WeatherRule`
 class and extending `BaseJSPRule`. If you used the `contenttargetingrule` Blade
 CLI template, your project is already extending `BaseJSPRule` and has a default
 `view.jsp` file already created. This section covers how to define a rule's
-view/save lifecycle.
+view/save lifecycle. This lifecycle is used when applying a rule to a user
+segment using the User Segment Editor.
 
 1.  Add the activation and deactivation methods to your class.
 
@@ -188,23 +188,17 @@ view/save lifecycle.
     [@Deacitvate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Deactivate.html)
     annotations, which are required.
 
-2.  Define the rule's icon and the category it should reside in when displayed
-    in the User Segment Editor.
-
-        @Override
-        public String getIcon() {
-            return "icon-sun";
-        }
+2.  Define the rule's category it should reside in when displayed in the User
+    Segment Editor.
 
         @Override
         public String getRuleCategoryKey() {
             return SessionAttributesRuleCategory.KEY;
         }
 
-    The `getIcon` method should return a
-    [Font Awesome](http://fortawesome.github.io/Font-Awesome/3.2.1/) CSS class,
-    which is used to render the rule's icon in the editor. The weather rule's
-    category is set to Session Attributes. Available category classes include
+    The weather rule's category is set to Session Attributes. To categorize your
+    rule into the appropriate category, have the `getRuleCategoryKey` method
+    return the category class's key. Available category classes include
     `BehaviourRuleCategory`, `SessionAttributesRuleCategory`,
     `SocialRuleCategory`, and `UserAttributesRoleCategory`.
 
@@ -236,8 +230,8 @@ view/save lifecycle.
 
     When the user opens the User Segment Editor, the render phase begins for the
     rule. The `getFormHTML(...)` method is invoked to retrieve the HTML to
-    display. You don't have to worry about implementing this method because it
-    is already taken care of in the `BaseJSPRule` class your extending. The
+    display. You don't have to worry about implementing this method because it's
+    already implemented in the `BaseJSPRule` class your extending. The
     `getFormHTML` method calls the `populateContext(...)` method.
 
     You'll notice the `populateContext` method is not available in the `Rule`
@@ -248,15 +242,15 @@ view/save lifecycle.
     rule's HTML. This map is stored in the `context` variable, which is
     pre-populated with basic values in the Portlet logic, and then each rule
     contributes their specific parameters to it. The `populateContext` method
-    above populates a `weather` context variable with the `weather` value from
-    the `values` map parameter.
+    above populates a `weather` context variable with the `weather` values from
+    the `values` map parameter, which is then passed to the JSP.
 
     For the weather rule, the `populateContext` method accounts for three use
     cases:
 
     3a. The rule was added but has no set values yet. In this case, the default
-        values defined by the developer are injected (e.g., `weather="sunny"`).
-    
+        values defined by the developer are injected (e.g., `weather=""`).
+
     3b. The rule was added and a value is set, but the request failed to
         complete (e.g., due to an error). In this case, the `values` parameter
         of the `populateContext` method contains the values that were intended
@@ -346,7 +340,7 @@ Imagine an administrator has successfully configured and saved your custom rule
 to their user segment. Now what? Your rule needs to fulfill its purpose!
 Evaluate the preset weather value compared to a user's weather value visiting
 the site. If the user's value matches the preset value, they're added to the
-user segment, assuming they match the other configured rules.
+user segment, assuming they match the user segment's other configured rules.
 
 1.  You'll need to implement the `evaluate(...)` rule to begin the evaluation
     process. This method is part of the user segmentation lifecycle. When a page
@@ -372,11 +366,11 @@ user segment, assuming they match the other configured rules.
         }
 
     This logic acquires the user's weather by calling the `getUserWeather`
-    method. Then the preset weather value is acquired by accessing the rule
-    instance's `typeSettings` parameter. Lastly, the two values are compared. If
-    the weather values match, `true` is returned to indicate that the user
-    matches the rule; otherwise, `false` is returned, and the user is not
-    admitted to the user segment.
+    method, which you'll define later. Then the preset weather value is acquired
+    by accessing the rule instance's `typeSettings` parameter. Lastly, the two
+    values are compared. If the weather values match, `true` is returned to
+    indicate that the user matches the rule; otherwise, `false` is returned, and
+    the user is not admitted to the user segment.
 
 2.  You have yet to apply logic to the `WeatherRule` class for retrieving a
     user's current weather. As you learned earlier, you'll need to access the
@@ -480,7 +474,7 @@ The Java code you've added to this point has assumed that a preset weather value
 will be available for comparing during the evaluation process. You'll need to
 define a UI for your rule during the view/save lifecycle to let administrators
 select that weather value. Create a `view.jsp` file in your rule's module (e.g.,
-`./src/main/resources/META-INF/resources/view.jsp`) and add the following logic:
+`/src/main/resources/META-INF/resources/view.jsp`) and add the following logic:
 
     <%
     Map<String, Object> context = (Map<String, Object>)request.getAttribute("context");
@@ -501,7 +495,7 @@ The `weather` variable in the `context` map should be set for the weather rule.
 Once the variable is selected by the user, it's passed from the view template to
 the `populateContext` method.
 
-![Figure 5: The weather rule uses a `select` drop-down box to set the weather value.](../../images-dxp/select-box-rule.png)
+![Figure 4: The weather rule uses a `select` drop-down box to set the weather value.](../../images-dxp/select-box-rule.png)
 
 The weather rule uses JSP templates to display the rule's view. Audience
 Targeting, however, is compatible with any UI technology. Visit the
