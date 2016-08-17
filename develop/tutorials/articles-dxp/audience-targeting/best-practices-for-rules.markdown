@@ -1,4 +1,4 @@
-# Best Practices for Rules
+# Best Practices for Rules [](id=best-practices-for-rules)
 
 In this tutorial, you'll learn about best practices to keep in mind when
 creating Audience Targeting Rules. Before going through some best practices, you
@@ -19,7 +19,7 @@ Audience Targeting gives you the option to choose whatever frontend technology
 you like. In the next section, you'll learn how to use your preferred technology
 for displaying content in Audience Targeting rules.
 
-## Selecting a UI Technology
+## Selecting a UI Technology [](id=selecting-a-ui-technology)
 
 Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
 extension views. FreeMarker views, however, are still supported through their
@@ -54,7 +54,7 @@ choose, and to return it as a string that is viewable from your rule's form.
 If you plan, therefore, on using an alternative to JSP or FreeMarker, you
 must override this method by creating and modifying it in your `-Rule` class.
 
-## Other Best Practices
+## Other Best Practices [](id=other-best-practices)
 
 Here are some things to consider as you implement and deploy Audience Targeting
 rules:
@@ -85,3 +85,11 @@ it deletes any data associated with the rule that is currently being deleted.
 reference to a page or web content article), you may need to override the
 `BaseRule.exportData` and `BaseRule.importData` methods, to manage the content
 properly.
+
+## Related Topics [](id=related-topics)
+
+[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types)
+
+[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+
+[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence)

@@ -67,9 +67,11 @@ dependencies.
             compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
         }
 
-    Once you've created your module and specified its dependencies, you'll need
-    to define your rule's behavior. How your rule behaves is controlled by a
-    Java class file that you create.
+    You can learn more about exposing the Content Targeting API in the
+    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-0/accessing-the-content-targeting-api)
+    tutorial. Once you've created your module and specified its dependencies,
+    you'll need to define your rule's behavior. How your rule behaves is
+    controlled by a Java class file that you create.
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class
@@ -96,7 +98,7 @@ dependencies.
 
 Now that your Java class is set up, you'll need to define how your rule works by
 implementing the `Rule` interface's methods. Here are some of the methods that
-you can implement to modify your rule behavior:
+you can implement to modify your rule's behavior:
 
 <!-- The below method descriptions are the Javadoc copied from the `Rule`
 interface. Since the source code is not accessible and the Javadoc for Audience
@@ -157,7 +159,7 @@ $$$
 
 The first thing you'll define in your weather rule is the view/save lifecycle.
 
-## Defining a Rule's View/Save Lifecycle
+## Defining a Rule's View/Save Lifecycle [](id=defining-a-rules-view-save-lifecycle)
 
 In this section, you'll begin defining the weather rule's Java class. This
 assumes that you followed the instructions above, creating the `WeatherRule`
@@ -334,7 +336,7 @@ segment using the User Segment Editor.
 Next, you'll learn how to evaluate a rule that is configured and saved to a user
 segment.
 
-## Evaluating a Rule
+## Evaluating a Rule [](id=evaluating-a-rule)
 
 Imagine an administrator has successfully configured and saved your custom rule
 to their user segment. Now what? Your rule needs to fulfill its purpose!
@@ -468,7 +470,7 @@ logic in your `-Rule` class to acquire a user's local weather. The weather
 rule's behavior is defined and complete. The last thing you need to do is create
 a JSP template.
 
-## Defining the Rule's UI
+## Defining the Rule's UI [](id=defining-the-rules-ui)
 
 The Java code you've added to this point has assumed that a preset weather value
 will be available for comparing during the evaluation process. You'll need to
@@ -513,6 +515,8 @@ to create your own.
 <!-- ## Customize the Rules Engine -->
 
 ## Related Topics [](id=related-topics)
+
+[Best Practices for Rules](/develop/tutorials/-/knowledge_base/7-0/best-practices-for-rules)
 
 [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 

@@ -17,7 +17,7 @@ and JSON APIs that are available.
 Configuring your app to have access to the Content Targeting API requires only
 one line of code. This line of code is a dependency that should be added to your
 Gradle project. Follow the instructions below to add the Content Targeting API
-dependency:
+dependency.
 
 1. Open the `build.gradle` file in your app's project folder.
 
@@ -37,7 +37,7 @@ Your app now has access to the Content Targeting API and can take advantage of
 everything Audience Targeting has to offer. In the next section, you'll learn
 how to use the Content Targeting API by studying a few examples.
 
-## Using the Content Targeting Java API
+## Using the Content Targeting Java API [](id=using-the-content-targeting-java-api)
 
 There are two ways to call the Content Targeting API: through the Java API or
 through the JSON API. 
@@ -118,7 +118,7 @@ That's it! By importing the `UserSegment` and `UserSegmentLocalService` classes
 into your files, you have direct access to your portal's user segments through
 the Content Targeting Java API. 
 
-## Using the Content Targeting JSON API
+## Using the Content Targeting JSON API [](id=using-the-content-targeting-json-api)
 
 Suppose you'd like to show a list of existing campaigns in your portlet using
 the JSON API. You could do this by opening your portlet's `view.jsp` file and
