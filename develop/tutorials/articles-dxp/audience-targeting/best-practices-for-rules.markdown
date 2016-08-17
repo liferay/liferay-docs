@@ -63,17 +63,17 @@ rules:
 which is managed by the framework in the Rule Instance table, you may want to
 consider persisting to a database by using 
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access),
-which is supported in the Rule plugins. 
+which is supported for Rule plugins. 
 
 - If you deploy your rule into a production environment, you may want to
 consider adding your values to the cache (e.g., weather in different locations),
 since obtaining the same value on every request is very inefficient and could
 result in slowing down your portal. For example, when the `evaluate` method is
 called, you could obtain the current user ID, current user's weather forecast,
-and the time at which the user first visited the page. Then you could only
-evaluate the rule when the cached time is over three hours old. This would
-prevent the rule from evaluating every time the user visited the page. This is
-best done using services.
+and the time at which the user first visited the page. Then you could evaluate
+the rule only when the cached time is over three hours old. This would prevent
+the rule from evaluating every time the user visited the page. This is best done
+using services.
 
 <!-- No code examples for adding values to cache because this is not implemented
 in any custom rules yet. -Cody -->
