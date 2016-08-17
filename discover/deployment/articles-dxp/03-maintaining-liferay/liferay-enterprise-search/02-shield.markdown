@@ -1,15 +1,17 @@
 # Securing Elasticsearch with Shield
 
 Elasticsearch makes storing, searching, and analyzing your Liferay search data
-easy. When it comes to securing that data, you can use
-[Shield](https://www.elastic.co/guide/en/shield/2.2/index.html), an
-Elasticsearch plugin that's used to secure your Elasticsearch cluster. With
-Shield you can prevent unauthorized users from accessing the Elasticsearch
-cluster, preserve data integrity, and create an audit trail to inspect
-suspicious activity.
+easy. When it comes to securing that data, there's an Elasticsearch plugin
+called [Shield](https://www.elastic.co/guide/en/shield/2.2/index.html). To use
+Shield with @product@, you need the *Enterprise Search-Standard* subscription.
+This subscription gives you access to an adapter plugin for configuring Liferay
+for Shield. 
 
-This guide shows you the basics of how to install and configure Shield, and then
-how to configure Liferay for Shield, using a convenient Shield adapter plugin.
+With Shield you can prevent unauthorized users from accessing the Elasticsearch
+cluster, preserve data integrity, and create an audit trail to inspect
+suspicious activity. This guide shows you the basics of how to install and
+configure Shield, and then how to configure Liferay for Shield, using a
+convenient Shield adapter plugin.
 
 +$$$
 
@@ -120,26 +122,15 @@ On the Liferay side of the equation, you need to configure the authentication
 token for the *liferay* Shield user configured in the previous section.
 Liferay has a Shield adapter plugin for this purpose. 
 
-First install the Shield adapter (called *Liferay Portal Search Elasticsearch
-Shield*) from [Liferay Marketplace](https://web.liferay.com/marketplace/),
-either by visiting the website or by navigating to *Control Panel* &rarr; *Apps*
-&rarr; *Store*, where you can sign in to Liferay Marketplace and install
-applications directly into your Liferay instance. If you download the Shield
-adapter from Marketplace, just deploy the JAR file to Liferay by copying it into
-the `[Liferay_Home]/deploy` folder.
+First install the Shield adapter plugin (called *Liferay Portal Search
+Elasticsearch Shield*). Once the plugin is installed, there's a new *Shield
+Configuration* entry in the System Settings application (*Control Panel* &rarr;
+*Configuration* &rarr; *System Settings*), under the Foundation heading.
+Configure it so that its username and password match the *liferay* user you
+added to Shield.
 
-You can confirm the Shield adapter is installed properly by typing `lb "Shield"`
-into the Gogo shell. It should be listed as `Active`.
-
-    ID |State      |Level|Name
-    517|Active     |   10|Liferay Portal Search Elasticsearch Shield (1.0.0)
-
-Once the plugin is installed, there's a new *Shield Configuration* entry in the
-System Settings application (*Control Panel* &rarr; *Configuration* &rarr;
-*System Settings*), under the Foundation heading. Configure it so that its
-username and password match the *liferay* user you added to Shield.
-
-To configure the Shield adapter using an OSGi configuration file:
+To configure the Shield adapter using an OSGi configuration file, first make
+sure Liferay is shut down:
 
 1. Create a file named `com.liferay.portal.search.elasticsearch.shield.configuration.ShieldConfiguration.cfg` in `[Liferay_Home]/osgi/configs`.
 
