@@ -230,7 +230,7 @@ If you've followed the steps outlined above, and you have Elasticsearch, Marvel,
 Kibana, and Liferay configured correctly, you can just add the Marvel Portlet to
 a page in Liferay:
 
-1. Click the page's *Add* button (![Add](../../../image-dxp/icon-add.png) and
+1. Click the page's *Add* button (![Add](../../../images-dxp/icon-add.png) and
    select *Applications*.
 
 2. Enter *Marvel* in the search box, and click *Add* next to the Marvel entry in
