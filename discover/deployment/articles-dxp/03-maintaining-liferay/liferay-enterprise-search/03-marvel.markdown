@@ -9,7 +9,7 @@ subscription. With it you'll get an adapter plugin for configuring Liferay for
 Marvel, and a Marvel Portlet that can be added to a page in your @product@
 installation. This makes it easy to monitor your Elasticsearch cluster right
 from Liferay, since the Marvel portlet gives you access to all of Marvel's
-functionality. If you don't yet have Enterprise Search subscription, contact
+functionality. If you don't yet have an Enterprise Search subscription, contact
 your sales representative.
 
 In addition to your subscription with Liferay, you need a license from
@@ -96,16 +96,8 @@ proxy servlet to view the Kibana UI and Marvel, you'll start configuring that
 here.
 
 To configure Kibana, the exact steps will depend on whether you're using Shield
-or not. If you are, follow all the steps below. If not, ignore the steps that
+or not. If you are, follow all the steps below. If not, skip the steps that
 begin with *[Shield]*.
-
-<!-- 1. Create a new Elasticsearch user with the `kibana4_server` role. Navigate to
-   Elasticsearch home and enter
-    
-        bin/shield/esusers useradd kibana4-server -r kibana4_server -p liferay
-
-I DO NOT THINK THIS STEP IS NECESSARY. WAITING FOR CLARIFICATION FROM TIBOR.
--->
 
 2. *[Shield]* Set the username and password in `Kibana_Home/config/kibana.yml`,
    by entering these lines:
@@ -113,7 +105,6 @@ I DO NOT THINK THIS STEP IS NECESSARY. WAITING FOR CLARIFICATION FROM TIBOR.
         elasticsearch.username: liferay
         elasticsearch.password: liferay
         elasticsearch.url: "https://<your_elasticsearch_host>:9200"
-    <!-- NOTE: WHY ARE WE NOT USING THE KIBANA USER WE JUST CONFIGURED IN STEP 1?-->
 
 3. *[Shield]* Also in `kibana.yml`, you need to add Elasticsearch's Certificate
    Authority (CA) property. If you're using a self-signed certificate as
@@ -175,7 +166,6 @@ To run Kibana with SSL encryption you'll need to do these things:
 -  If using a self signed certificate in the proxy server, `ProxyServlet` won't
     be able to trust the connection, so add the certificate to the JVM
     truststore.
-<!-- Is this accurate? It's certainly sparse-->
 
 +$$$
 
@@ -187,7 +177,7 @@ $$$
 
 ## Configuring Liferay's Marvel Adapter
 
-Now that you have Marvel and Kibana configured, it's time to configure the Marvel
+Now that you have Marvel and Kibana configured, you can configure the Marvel
 adapter in Liferay.
 
 There's a *Marvel* entry in the System Settings application (*Control Panel*
@@ -260,6 +250,7 @@ a page in Liferay:
 For more information on what Marvel offers you, refer to [Elasticsearch's Marvel
 guide](https://www.elastic.co/guide/en/marvel/2.2/index.html).
 
-With Liferay's Elasticsearch integration, you not only have a powerful search
-engine, but you have security and monitoring tools at your disposal. You can now
-diagnose, troubleshoot, and fix problems more easily than ever.
+With Liferay's *Enterprise Search-Standard* subscription, you not only have a
+powerful search engine, but you have security and monitoring tools at your
+disposal. You can now diagnose, troubleshoot, and fix problems more easily than
+ever.
