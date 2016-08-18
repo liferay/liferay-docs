@@ -1,5 +1,27 @@
 # Preconfiguring the LCS Client to Connect Through a Proxy [](id=preconfiguring-the-lcs-client-to-connect-through-a-proxy)
 
+If you connect to the Internet through a proxy, there are some properties you 
+must set for the LCS client app to connect to LCS. You'll do this via your 
+server's JVM system properties. You can do this two different ways:
+
+1. As JVM app server arguments:
+
+        -Dhttp.proxyHost=your.proxy.host
+        -Dhttp.proxyPort=your.proxy.port
+
+2. In a Liferay `system-ext.properties` file: Create this file in your 
+   [Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home), 
+   and set the following properties in this file: 
+
+        http.proxyHost=your.proxy.host
+        http.proxyPort=your.proxy.port
+
+Be sure to replace the values `your.proxy.host` and `your.proxy.port` with the 
+appropriate values for your proxy. 
+
+Great! Now you're ready to connect your Liferay DXP instance to LCS. 
+
+<!-- 
 If you connect to the web through a proxy, there are some properties you need to 
 set inside the LCS client app's WAR file before it deploys. If you downloaded a 
 Liferay DXP bundle, this means that you should set these properties prior to 
@@ -41,3 +63,4 @@ steps to do so:
 4. Deploy the LCS client WAR or redeploy it if it's already deployed. 
 
 Great! Now you're ready to connect your Liferay DXP instance to LCS. 
+-->
