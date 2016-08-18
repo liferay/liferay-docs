@@ -1,37 +1,148 @@
-# Creating An Upgrade Process for Your App [](id=creating-an-upgrade-process-for-your-app)
+# Creating an Upgrade Process for Your App [](id=creating-an-upgrade-process-for-your-app)
 
 As changes are made to your app, it's very likely that your database schema
 changes with it, and these changes bring with them the need for an upgrade
 process to move your app from one version to the next. These upgrades not only
-need to happen, but also they need to be registered in the database. The system
+need to happen, but also they must be registered in the database. The system
 then records the current state of the schema so that if the upgrade fails, the
 process can revert the app back to its previous version.
 
-This tutorial demonstrates how to
+@product@'s upgrade framework executes your app's upgrades automatically. As an
+app developer, you implement concrete data schema changes in upgrade step
+classes and then register them using an upgrade step registrator (registrator).
+The following diagram illustrates the relationship between the registrator and
+the upgrade steps.
 
-- Create an upgrade process for your app using Liferay's new upgrade framework
+![Figure 1: In a registrator class, the developer specifies a registration for each schema version upgrade. The upgrade steps handle the database  updates.](../../images/data-upgrade-module-upgrade-architecture.png)
 
-Go ahead and jump right in to declaring your dependencies next.
+Now that you've learned each upgrade component's purpose, you're ready to create
+your module's upgrade process. 
 
-## Declaring Your Dependencies [](id=declaring-your-dependencies)
+Here's what's involved:
 
-If your app has any dependencies, you'll have to declare a dependency on the
-`portal-upgrade` module in your `build.gradle` file:
+- **Specifying the schema version**
 
-    compile project(":portal:portal-upgrade")
+- **Declaring dependencies**
 
-Once your dependencies are declared, you can write your upgrade steps.
+- **Writing upgrade steps**
 
-## Writing UpgradeSteps [](id=writing-upgradesteps)
+- **Writing the registrator**
 
-`UpgradeSteps` are executed during the upgrade process, and are responsible for
-the changes that take place between each schema version. Your `UpgradeSteps` 
-must extend the `UpgradeProcess` class, which is under the 
-[portal-kernel module](https://github.com/liferay/liferay-portal/tree/master/portal-kernel)).
+Let's start creating the upgrade process.
 
-This base class provides a `doUpgrade` method that handles the upgrade process
-itself. For example, the [`UpgradeCalendarBooking`](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/forms-and-workflow/calendar/calendar-service/src/main/java/com/liferay/calendar/upgrade/v1_0_0/UpgradeCalendarBooking.java) 
-class modifies a column: 
+## Creating an Upgrade Process [](id=creating-an-upgrade-process)
+
+Setting a data schema's version is easy, so you might as well do it first. Then
+you'll need to specify a dependency on the portal-upgrade module, and any other
+modules you plan to use in your schema upgrade. The remainder of the tutorial
+explains how to create the module's upgrade components: upgrade steps and the
+registrator.
+
+Frist, let's specify the schema version.
+
+### Specifying the Schema Version [](id=specifying-the-schema-version)
+
+In your module's `bnd.bnd` file, specify a `Liferay-Require-SchemaVersion`
+header with the new schema version value. Here's an example schema version
+header: 
+
+        Liferay-Require-SchemaVersion: 1.0.0
+
+**Important**: If no `Liferay-Require-SchemaVersion` header is specified,
+@product@ considers the `Bundle-Version` header value to be the database schema
+version.
+
+Next, you'll specify your upgrade's dependencies. 
+
+### Declaring Dependencies [](id=declaring-dependencies)
+
+In your application's dependency management file (e.g., Maven POM, Gradle build
+file, or Ivy `ivy.xml` file), add a dependency on the [com.liferay.portal.upgrade](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.upgrade/)
+module.
+
+In a `build.gradle` file, the dependency would look like this:
+
+    compile group: "com.liferay", name: "com.liferay.portal.upgrade", version: "2.0.0"
+
+If there are other modules your upgrade process requires, specify them as
+dependencies. 
+
+You've configured your module project for the upgrade. It's time to create
+upgrade steps to update the database from the current schema version to the new
+one. 
+
+### Writing Upgrade Steps [](id=writing-upgrade-steps)
+
+Upgrade steps are classes responsible for adapting the modules data to the
+target database schema. The upgrade class extends the [`UpgradeProcess` base class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html),
+which implements the [`UpgradeStep` interface](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeStep.html).
+Each upgrade step must override the `UpgradeProcess` class's method` doUpgrade`
+with instructions for modifying the database.
+
+Since `UpgradeProcess` extends the [`BaseDBProcess` class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/dao/db/BaseDBProcess.html),
+you can use its `runSQL` and `runSQLTemplate*`methods to execute your SQL
+commands and SQL DDL, respectively. 
+
+If you want to create, modify, or drop tables or indexes, by executing DDL
+sentences from a SQL file, make sure to use ANSI SQL only. The assures the
+commands will work on different databases.
+
+If you need to use non-ANSI SQL, it's best to write it in the [`UpgradeProcess` class's](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html)
+`runSQL` or `alter` methods, along with tokens that allow porting the sentences
+to different databases. 
+
+For example, consider the journal-service module's [`UpgradeSchema` upgrade step class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/internal/upgrade/v0_0_4/UpgradeSchema.java): 
+
+    package com.liferay.journal.internal.upgrade.v0_0_4;
+
+    import com.liferay.journal.internal.upgrade.v0_0_4.util.JournalArticleTable;
+    import com.liferay.journal.internal.upgrade.v0_0_4.util.JournalFeedTable;
+    import com.liferay.portal.kernel.upgrade.UpgradeMVCCVersion;
+    import com.liferay.portal.kernel.upgrade.UpgradeProcess;
+    import com.liferay.portal.kernel.util.StringUtil;
+
+    /**
+     * @author Eduardo Garcia
+     */
+    public class UpgradeSchema extends UpgradeProcess {
+
+        @Override
+        protected void doUpgrade() throws Exception {
+            String template = StringUtil.read(
+                UpgradeSchema.class.getResourceAsStream("dependencies/update.sql"));
+
+            runSQLTemplateString(template, false, false);
+
+            upgrade(UpgradeMVCCVersion.class);
+
+            alter(
+                JournalArticleTable.class,
+                new AlterColumnName(
+                    "structureId", "DDMStructureKey VARCHAR(75) null"),
+                new AlterColumnName(
+                    "templateId", "DDMTemplateKey VARCHAR(75) null"),
+                new AlterColumnType("description", "TEXT null"));
+
+            alter(
+                JournalFeedTable.class,
+                new AlterColumnName("structureId", "DDMStructureKey TEXT null"),
+                new AlterColumnName("templateId", "DDMTemplateKey TEXT null"),
+                new AlterColumnName(
+                    "rendererTemplateId", "DDMRendererTemplateKey TEXT null"),
+                new AlterColumnType("targetPortletId", "VARCHAR(200) null"));
+        }
+
+    }
+
+The above example class `UpgradeSchema`, uses the `runSQLTemplateString` method
+to execute ANSI SQL DDL from a SQL file. To modify column names and column
+types, it uses the `alter` method and [`UpgradeProcess`'s](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html)
+`UpgradeProcess.AlterColumnName` and `UpgradeProcess.AlterColumnType` inner
+classes as token classes.
+
+Here's a simpler example upgrade step from the [calendar-service module](https://github.com/liferay/liferay-portal/blob/7.0.1-ga2/modules/apps/forms-and-workflow/calendar/calendar-service/src/main/java/com/liferay/calendar/upgrade/v1_0_0/UpgradeCalendarBooking.java).
+It uses the `alter` method to modify a column type in the calendar booking
+table: 
 
     public class UpgradeCalendarBooking extends UpgradeProcess {
 
@@ -43,136 +154,180 @@ class modifies a column:
             }
 
     }
-    
-Follow this same pattern to create the `UpgradeSteps` for your upgrade process.
 
-Once your `UpgradeSteps` are created, you can write your upgrade package.
+You can implement upgrade steps just like these for your module schemas. 
 
-## Writing the Upgrade Package [](id=writing-the-upgrade-package)
+How you name and organize your app's upgrade steps is up to you. Liferay's
+upgrade classes are organized using a package structure similar to this one:
 
-The first thing you need to do is create a package called `upgrade` in your 
-package namespace. In the `upgrade` package, create an OSGi Component of 
-the service `UpgradeStepRegistrator` that implements the interface 
-`UpgradeStepRegistrator`, which you'll find under the [portal-upgrade module](https://github.com/liferay/liferay-portal/tree/master/modules/portal/portal-upgrade).
+- *some.package.structure*
+    - `upgrade`
+        - `v1_0_0`
+            - UpgradeFoo.java   // Upgrade Step
+        - `v2_0_0`
+            - UpgradeBar.java   // Upgrade Step
+            - UpgradeBaz.java   // Upgrade Step
+        - UpgradeMyModule.java   // Registrator
 
-This interface provides a `register` method that handles the upgrade 
-registration process.
+The example upgrade structure shown above is for a module that has two database
+schema versions: `1.0.0` and `2.0.0`. They're represented by packages `v1_0_0`
+and `v2_0_0`. Each version package contains upgrade step classes responsible for
+updating the database. The example upgrade steps focus on fictitious data
+elements Foo, Bar, and Baz. The registrator class (`UpgradeMyModule` in this
+example) is responsible for registering the applicable upgrade steps for each
+schema version. 
 
+Here are some organizational tips:
+
+-   Put all upgrade classes in a sub-package called `upgrade`.
+
+-   Group together similar database updates (ones that operate on a data element
+    or related data elements) in the same upgrade step class.
+
+-   Create upgrade steps in packages named after each data schema version. 
+
+After creating upgrade steps, you can create a registrator that associates them
+with their target schema versions. 
+
+### Writing the Upgrade Step Registrator [](id=writing-the-upgrade-step-registrator)
+
+The upgrade step registrator (registrator) is responsible for registering
+upgrade steps with each of the module's schema versions. It orchestrates the
+module's entire upgrade process. Let's examine an existing registrator to learn
+how registrators work. 
+
+For example, the [`DLWebUpgrade` class](https://github.com/liferay/liferay-portal/blob/7.0.1-ga2/modules/apps/collaboration/document-library/document-library-web/src/main/java/com/liferay/document/library/web/upgrade/DLWebUpgrade.java)
+is the com.liferay.document.library.web module's upgrade step registrator:
+
+    package com.liferay.document.library.web.upgrade;
+
+    import com.liferay.document.library.web.upgrade.v1_0_0.UpgradeAdminPortlets;
+    import com.liferay.document.library.web.upgrade.v1_0_0.UpgradePortletSettings;
+    import com.liferay.portal.kernel.settings.SettingsFactory;
+    import com.liferay.portal.kernel.upgrade.DummyUpgradeStep;
+    import com.liferay.portal.upgrade.registry.UpgradeStepRegistrator;
+
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
+
+    /**
+     * @author Sergio González
+     */
     @Component(immediate = true, service = UpgradeStepRegistrator.class)
-    public class CalendarServiceUpgrade implements UpgradeStepRegistrator {
-    
-    	@Override
-    	public void register(Registry registry) {
-    	
-    	}
+    public class DLWebUpgrade implements UpgradeStepRegistrator {
+
+        @Override
+        public void register(Registry registry) {
+            registry.register(
+                "com.liferay.document.library.web", "0.0.0", "1.0.0",
+                new DummyUpgradeStep());
+
+            registry.register(
+                "com.liferay.document.library.web", "0.0.1", "1.0.0",
+                new UpgradeAdminPortlets(),
+                new UpgradePortletSettings(_settingsFactory));
+        }
+
+        @Reference(unbind = "-")
+        protected void setSettingsFactory(SettingsFactory settingsFactory) {
+            _settingsFactory = settingsFactory;
+        }
+
+        private SettingsFactory _settingsFactory;
+
     }
 
-Once you've implemented the `UpgradeStepRegister` interface, you’ll have to use 
-its `register` method to specify your upgrades, defining the versions you want
-to upgrade to the version you're upgrading to.
+The registrator declares itself to be an OSGi Component of service type
+`UpgradeStepRegistrator.class`. The `@Component` annotation registers the the
+class as the module's upgrade step registrator. The attribute `immediate = true`
+tells the OSGi framework to activate this module immediately after it's
+installed. 
 
-Each upgrade is represented by an upgrade registration. An upgrade registration 
-is an abstraction for the changes you need to apply to the database from one 
-version to the next one.
+The registrator implements the [`UpgradeStepRegistrator` interface](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal/com.liferay.portal.upgrade/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html),
+which is in the [`com.liferay.portal.upgrade` module](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.upgrade/)
+The interface declares a [`register` method](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal/com.liferay.portal.upgrade/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html)
+that the registrator must override. In that method, the registrator must
+implement all the module's upgrade registrations.
 
-To define a registration, you need to provide
+Each schema upgrade is represented by an upgrade registration. An upgrade
+registration is an abstraction for all the changes you need to apply to the
+database from one schema version to the next one.
 
-- the bundle symbolic name of the module.
-- the schema version your module wants to upgrade from (as a `String`)
-- the schema version your module wants to upgrade to (as a `String`)
-- a list of `UpgradeSteps`
+Upgrade registrations are defined by the following values:
 
-For example, here is an upgrade process for the `com.liferay.calendar.service`
-module:
+- **Module's bundle symbolic name**
+- **Schema version to upgrade from** (as a `String`)
+- **Schema version to upgrade to** (as a `String`)
+- **List of upgrade steps**
 
-    @Override
+The registrator `DLWebUpgrade` registers two upgrades: one from version `0.0.0`
+to `0.0.1` and another from `0.0.1` to `1.0.0`.
 
-    public void register(Registry registry) {
-    
-    	registry.register(
-        		"com.liferay.calendar.service", "0.0.1", "1.0.0",
-        		new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking()));    
-    }
+The `DLWebUpgrade` registrator's first registration is for upgrading the
+database from schema version `0.0.0` to `0.0.1`. Its list of upgrade steps
+contains one: `new DummyUpgradeStep()`. 
 
-In this example, the `com.liferay.calendar.service` module is being upgraded 
-from version 0.0.1 to version 1.0.0. The changes are produced by a list of 
-`UpgradeSteps`, which in this example contains only one step:
+	registry.register(
+		"com.liferay.document.library.web", "0.0.0", "1.0.0",
+		new DummyUpgradeStep());
 
-    new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
+The [`DummyUpgradeStep` class](https://github.com/liferay/liferay-portal/blob/7.0.1-ga2/portal-kernel/src/com/liferay/portal/kernel/upgrade/DummyUpgradeStep.java)
+provides an empty upgrade step. The `DLWebUpgrade` registrator defines this
+registration  so that the upgrade framework records the module's `1.0.0` schema
+version in @product@'s `Release_` table. 
 
-You can also register multiple upgrades in one class. For example, here is an
-extension of the previous upgrade process that runs two additional upgrades, 
-each with their own set of `UpgradeSteps`:
+**Important**: Modules that use Service Builder *should not* define a
+registration for their initial database schema version, as Service Builder
+already records their schema versions to @product@'s `Release_` table. Modules
+that don't use Service Builder, however, *should* define a registration for
+their initial schema. 
 
-    @Override
-    public void register(Registry registry) {
-        registry.register(
-            "com.liferay.calendar.service", "0.0.1", "1.0.0",
-            new com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking());
+The `DLWebUpgrade` registrator's second registration (from schema version
+`0.0.1` to `1.0.0`) includes two upgrade steps. 
 
-        registry.register(
-            "com.liferay.calendar.service", "1.0.0", "1.0.1",
-            new com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking());
+	registry.register(
+		"com.liferay.document.library.web", "0.0.1", "1.0.0",
+		new UpgradeAdminPortlets(),
+		new UpgradePortletSettings(_settingsFactory));
 
-        registry.register(
-            "com.liferay.calendar.service", "1.0.1", "1.0.2",
-            new UpgradeCalendar());
+Both upgrade steps, `UpgradeAdminPortlets` and `UpgradePortletSettings`, reside
+in the module's `com.liferay.document.library.web.upgrade.v1_0_0` package. This
+is evident from the registrator's import declarations:
 
-        registry.register(
-            "com.liferay.calendar.service", "1.0.2", "1.0.3",
-            new DummyUpgradeStep());
+    import com.liferay.document.library.web.upgrade.v1_0_0.UpgradeAdminPortlets;
+    import com.liferay.document.library.web.upgrade.v1_0_0.UpgradePortletSettings;
 
-        registry.register(
-            "com.liferay.calendar.service", "1.0.3", "1.0.4",
-            new UpgradeClassNames());
-
-        registry.register(
-            "com.liferay.calendar.service", "1.0.4", "1.0.5",
-            new UpgradeCalendarResource(
-                _classNameLocalService, _companyLocalService,
-                _userLocalService),
-            new UpgradeCompanyId(), new UpgradeLastPublishDate());
-    }
-
-In this example the `com.liferay.calendar.service` module is upgraded from 
-version 0.0.1 to 1.0.0 in one step. Next it is upgraded incrementally from 
-version 1.0.1 to 1.0.4, using only one `UpgradeStep` for each schema version. 
-Finally, it is upgraded from version 1.0.4 to version 1.0.5, using a list of 
-`UpgradeSteps` with three steps in it: `UpgradeCalendarResource`, 
-`UpgradeCompanyId` and `UpgradeLastPublishDate`.
+A registration's upgrade step list can consist of as many upgrade steps as
+needed.
 
 +$$$
 
-**Note:** Be careful with upgrade steps with the same name in different packages. 
-This could result in the wrong version being used for the upgrade.
-(see `com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking` 
-and `com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking` as example).
+**Note:** Take care in using upgrade step classes that have the same name but
+are in different packages. To distinguish them, specify their fully qualified
+names. For example, consider the calendar-service module classes
+`com.liferay.calendar.upgrade.v1_0_0.UpgradeCalendarBooking` and
+`com.liferay.calendar.upgrade.v1_0_1.UpgradeCalendarBooking`.
 
 $$$
 
-The upgrade process above results in the creation of three rows in the `Release`
-table, one per upgrade registration. In terms of data, each registration is
-represented by a row in the `Release_` table on portal’s database. You can check
-the database to verify the upgrades that were executed for each module.
+<!-- TODO - Get more information on whether this is needed. Jim
+One important thing is that upgrades need to wait for portal initialization to perform their tasks.
 
-Next, you can learn how to specify differing module versions and schema versions
-in your bundle.
+You can achieve it by adding this setter method, with an OSGi reference to the portal life cycle.
 
-## Specifying Schema Versions [](id=specifying-schema-versions)
+@Reference(target = ModuleServiceLifecycle.PORTAL_INITIALIZED, unbind = "-")
+protected void setModuleServiceLifecycle(
+    ModuleServiceLifecycle moduleServiceLifecycle) {
+}
+-->
 
-If your database schema is a different version than your module version, you can 
-specify it in the BND file. Add the `Require-SchemaVersion` property to your 
-`bnd.bnd` file to describe that the schema version of the module uses a 
-different version than the bundle version:
-
-    Require-SchemaVersion: 1.0.2
-
-There you have it. Now you know how to create an upgrade process for your app!
+Now you know how to create data upgrades for all your app's modules. You're
+ready to provide upgrades!
 
 ## Related Topics [](id=related-topics)
 
-[Migrating a Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
+[Upgrading Plugins to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
 
 [Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
 
-[Creating a Verify Process for Your App](/develop/tutorials/-/knowledge_base/7-0/creating-a-verify-process-for-your-app)
+<!--[Upgrading Application Upgrade and Verifier Processes ](upgrading-application-upgrade-and-verifier-processes)-->
