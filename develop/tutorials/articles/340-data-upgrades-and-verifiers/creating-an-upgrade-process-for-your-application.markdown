@@ -261,11 +261,11 @@ Upgrade registrations are defined by the following values:
 - **List of upgrade steps**
 
 The registrator `DLWebUpgrade` registers two upgrades: one from version `0.0.0`
-to `0.0.1` and another from `0.0.1` to `1.0.0`.
+to `1.0.0` and another from `0.0.1` to `1.0.0`.
 
-The `DLWebUpgrade` registrator's first registration is for upgrading the
-database from schema version `0.0.0` to `0.0.1`. Its list of upgrade steps
-contains one: `new DummyUpgradeStep()`. 
+The `DLWebUpgrade` registrator's first registration is applied by the upgrade
+framework if the module has not been installed previously. Its list of upgrade
+steps contains only one: `new DummyUpgradeStep()`. 
 
 	registry.register(
 		"com.liferay.document.library.web", "0.0.0", "1.0.0",
@@ -282,7 +282,7 @@ already records their schema versions to @product@'s `Release_` table. Modules
 that don't use Service Builder, however, *should* define a registration for
 their initial schema. 
 
-The `DLWebUpgrade` registrator's second registration (from schema version
+The `DLWebUpgrade` registrator's next registration (from schema version
 `0.0.1` to `1.0.0`) includes two upgrade steps. 
 
 	registry.register(
