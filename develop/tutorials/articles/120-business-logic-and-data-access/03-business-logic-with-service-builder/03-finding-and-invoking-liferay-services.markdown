@@ -135,6 +135,10 @@ following services are available:
 - Services declared using Declarative Service
 - Services registered using the OSGi low level API
 
+Some types of portlets don't have access to the OSGi Registry using Declarative
+Services (e.g., Spring MVC and JSF). You can call OSGi services in these
+portlets by using [Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers).
+
 You'll learn more about referencing OSGi services next.
 
 ## Referencing OSGi Services [](id=referencing-osgi-services)
@@ -191,3 +195,4 @@ them from your application. You also learned about referencing OSGi services.
 
 [JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
 
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
