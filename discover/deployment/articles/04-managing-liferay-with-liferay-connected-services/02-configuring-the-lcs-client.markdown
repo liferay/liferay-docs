@@ -55,6 +55,25 @@ section on registering the client with LCS.
 
 ## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
 
+If you connect to the Internet through a proxy, there are some properties you 
+must set for the LCS client app to connect to LCS. You'll do this via your 
+server's JVM system properties. You can do this two different ways:
+
+1. As JVM app server arguments:
+
+        -Dhttps.proxyHost=your.proxy.host
+        -Dhttps.proxyPort=your.proxy.port
+
+2. In a Liferay `system-ext.properties` file: Create this file in your 
+   [Liferay Home folder](/discover/deployment/-/knowledge_base/6-2/liferay-home), 
+   and set the following properties in this file: 
+
+        https.proxyHost=your.proxy.host
+        https.proxyPort=your.proxy.port
+
+Be sure to replace the values `your.proxy.host` and `your.proxy.port` with the 
+appropriate values for your proxy. 
+<!--
 In most cases, deploying and configuring the LCS client is simple. If, however,
 you connect to the web through a proxy, there are some properties you need to 
 set in the client's WAR file before deploying it. Specifically, you need to set 
@@ -81,6 +100,7 @@ and set them to the appropriate values for your proxy.
    
         proxy.host.login=
         proxy.host.password= 
+-->
 
 Great! Now you're ready to deploy the client and register your Liferay instance 
 with LCS. 
