@@ -10,16 +10,6 @@ templates that help users follow a common structure and include consistent kinds
 of information. These features let you create and manage your own knowledge 
 base, full of information relevant to your users.
 
-+$$$
-
-**Note:** The initial release of the Knowledge Base app is only available for 
-Liferay CE. The DE version will be released in the near future. You can see the 
-current versions and updates for the app on its Marketplace page:
-
-[https://web.liferay.com/marketplace/-/mp/application/15197613](https://web.liferay.com/marketplace/-/mp/application/15197613)
-
-$$$
-
 Here's what the Knowledge Base can do:
 
 - Navigation is built into the Knowledge Base Display 
@@ -36,20 +26,20 @@ contains other apps that let you manage different aspects of your knowledge
 base. Once you've installed the app, it's accessible by opening Site
 Administration and navigating to *Content* &rarr; *Knowledge Base*. The Knowledge 
 Base has several apps you can add to site pages. The *Add* &rarr; *Applications* 
-&rarr; *Content Management* menu lists its apps: Knowledge Base Article, Knowledge Base Display, 
-Knowledge Base Search, and Knowledge Base Section. You'll learn what each does 
-as you learn how to manage your knowledge base. First you'll learn how to create
-and manage articles. 
+&rarr; *Content Management* menu lists its apps: Knowledge Base Article, 
+Knowledge Base Display, Knowledge Base Search, and Knowledge Base Section. 
+You'll learn what each does as you learn how to manage your knowledge base. 
+First you'll learn how to create and manage articles. 
 
 ## Creating and Managing Articles
 
-In Site Administration, the Knowledge Base has everything administrators and authors need to create, 
-update, and manage articles. To navigate to the Knowledge Base, go to Site 
-Administration &rarr; *Content* &rarr; *Knowledge Base*. It has two tabs: one 
-for creating and managing articles (Articles) and one for managing article 
-suggestions (Suggestions). The Articles tab is for managing all the articles and 
-article folders in the Knowledge Base. The Suggestions tab is for managing 
-user-submitted feedback. 
+In Site Administration, the Knowledge Base has everything administrators and 
+authors need to create, update, and manage articles. To navigate to the 
+Knowledge Base, go to Site Administration &rarr; *Content* &rarr; 
+*Knowledge Base*. It has two tabs: one for creating and managing articles 
+(Articles) and one for managing article suggestions (Suggestions). The Articles 
+tab is for managing all the articles and article folders in the Knowledge Base. 
+The Suggestions tab is for managing user-submitted feedback. 
 
 ![Figure 1: You can manage Knowledge Base articles, folders, and suggestions from the Knowledge Base in Site Administration.](../../../images/kb-admin-articles.png)
 
@@ -59,13 +49,12 @@ near the top of the Articles tab, while articles appear in a separate table at
 the bottom. When you click the Add button (![Add](../../../images/icon-portlet-add-control.png))
 a menu pops up with all the different options for adding articles. You can add a 
 folder, a Basic Article, an article based on a template, or you can import 
-articles from a ZIP file. When you click the Options button
-(![Options](../../../images/icon-app-options.png)), a menu pops up allowing you
-to configure common features for the Knowledge Base app. You can manage
-templates, subscribe, edit permissions, import/export, and configure email
-options for the app. The *permissions* button allows you to define basic 
-permissions for the app, such as who can view the app and who can add the app to 
-a page. Clicking the *Home Folder Permissions* button lets you 
+articles from a ZIP file. When you click the Options button (![Options](../../../images/icon-app-options.png)), 
+a menu pops up allowing you to configure common features for the Knowledge Base 
+app. You can manage templates, subscribe, edit permissions, import/export, and 
+configure email options for the app. The *permissions* button allows you to 
+define basic permissions for the app, such as who can view the app and who can 
+add the app to a page. Clicking the *Home Folder Permissions* button lets you 
 define more detailed permissions for the Knowledge Base app. You can choose the 
 roles that can perform the following tasks: 
 
@@ -109,10 +98,10 @@ and permissions for the folder.
 Articles and folders can exist in several places in Knowledge Base. You can 
 create articles and folders in the root of Knowledge Base, or within other 
 folders. Navigate through folders by clicking them in the UI. The text 
-immediately below the All filter at the top of the app shows your position in a 
-folder hierarchy. Click any of the preceding folders in this text to navigate 
-back up the hierarchy. You can also move articles and folders into other folders, 
-and create child articles of other articles.
+immediately below the filters and *Order by* selector at the top of the app 
+shows your position in a folder hierarchy. Click any of the preceding folders in 
+this text to navigate back up the hierarchy. You can also move articles and 
+folders into other folders, and create child articles of other articles.
 
 ![Figure 3: This screenshot uses a red box to highlight the text that indicates the current position in the folder hierarchy.](../../../images/kb-admin-folder-hierarchy.png)
 
@@ -169,10 +158,10 @@ Templates are starting points for articles. For example, you can create
 templates that contain default headers or other content to give your users a 
 starting point to work from. Templates help foster consistent formatting and 
 content organization for articles. To create a new template, click the 
-*Templates* button in the Options menu (![Options](../../../images/icon-app-options.png)). 
-This brings up the Templates page, where you can manage existing templates. 
-Click the Add button at the bottom of the screen to add a template. Fill in the 
-New Template form and click *Publish*.
+*Templates* button in the Options menu (![Options](../../../images/icon-app-options.png)) 
+at the top of the app. This brings up the Templates page, where you can manage 
+existing templates. Click the Add button at the bottom of the screen to add a 
+template. Fill in the New Template form and click *Publish*.
 
 ![Figure 4: As an administrator, you can add a new template to your knowledge base from Knowledge Base in Site Administration.](../../../images/kb-admin-new-template.png)
 
@@ -460,7 +449,7 @@ with their accompanying image files.
    file's root. 
 -  Image files must be in a supported format and must use the appropriate file
    extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and
-   `.png`. They're specified via an app property. For details, see 
+   `.png`. They're specified via an app system setting. For details, see 
    [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration).
 
 **Example Basic Zip File Structure:**
@@ -623,6 +612,21 @@ Next, Liferay administrators can learn how to override the Knowledge Base app's
 properties to enable and configure some advanced, but optional features. 
 
 ## Advanced Configuration [](id=advanced-configuration)
+<!-- Note KbArticlesSections and adminKBArticleSections is located in Knowledge 
+Base Section subsection of systems properties
+
+mention number of stars property was removed and and how to configure new 
+ratings system-->
+In previous versions of Liferay, the Knowledge Base's configuration was defined
+in its `portlet.properties` file and could be overridden with a 
+`portlet-ext.properties` file. Since Liferay 7, a new Configuration API is 
+implemented that allows you to configure the Knowledge Base via System Settings. 
+This allows an Administrator to make changes to the Knowledge Base's 
+configuration and see them immediately. The System Settings are organized into 
+five sub sections, one for the default Knowledge Base configuration for all 
+sites(*Knowledge Base Service*), and one for each of the Knowledge Base subapps(
+*Knowledge Base Article*, *Knowledge Base Display*, *Knowledge Base Search*, and 
+*Knowledge Base Section*).
 
 The Knowledge Base app has several optional features that are disabled by 
 default. These include source URL, import file conventions, new article priority 
@@ -642,22 +646,270 @@ $$$
 Next, you'll learn about the Knowledge Base app's settings and how to configure 
 the default values. 
 
-### Configuring App Settings
+### Configuring App Settings 
 
 To start, open the Control Menu and navigate to *Control Panel* &rarr; 
 *Configuration* &rarr; *System Settings*. Click the *Collaboration* link at the
-top and scroll down. The Knowledge Base settings are organized into five areas:
-*Knowledge Base Article*, *Knowledge Base Display*, *Knowledge Base Service*,
-*Knowledge Base Search*, and *Knowledge Base Section*.
+top and scroll down.
+
+Most of the `portal.properties` that were used in Liferay 6.2 are now in the 
+*Knowledge Base Service* system settings.
+
+Here is a list of the properties previously found in Knowledge Base's 
+`portlet.properties` and the new properties to use in the Knowledge Base Service
+configuration menu of System Settings:
+
+<style>
+.lego-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+.max-960 {
+	margin: 0 auto;
+	max-width: 960px;
+}
+.no-max
+.max-960 {
+	max-width: none;
+}
+.metadata-guidelines-table td {
+	border-bottom: 1px solid;
+	border-top: 1px solid;
+	padding: 10px;
+}
+.table-header {
+	font-weight: bold;
+}
+.table-header.second {
+	width: 70%;
+}
+.left-header {
+	border-right: 1px solid;
+}
+</style>
+
+**Knowledge Base Service**
+
+<div class="lego-article metadata-guidelines-table" id="article-33460946">
+<div class="lego-article-content max-960">
+<div class="aui-helper-clearfix lego-section section-1" >
+<div class="aui-w100 block-1 content-column lego-block" >
+<div class="content-column-content">
+<table>
+	<thead>
+		<td class="table-header left-header">
+			portlet.properties
+		</td>
+		<td class="table-header second">
+			System Setting
+		</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+		            admin.email.from.name
+			</td>
+			<td>
+	                    emailFromName
+			</td>			
+		</tr>
+		<tr>
+			<td>
+			    admin.email.from.address
+			</td>
+			<td>
+		            emailFromAddress
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        admin.email.kb.article.added.body<br>
+					admin.email.kb.article.added.enabled<br>
+					admin.email.kb.article.added.subject<br>
+			</td>
+			<td>
+					emailKBArticleAddedBody<br>
+					emailKBArticleAddedEnabled<br>
+					emailKBArticleAddedSubject<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        admin.email.kb.article.suggestion.in.progress.body<br>
+					admin.email.kb.article.suggestion.in.progress.enabled<br>
+					admin.email.kb.article.suggestion.in.progress.subject<br>
+			</td>
+			<td>
+					emailKBSuggestionInProgressBody<br>
+					emailKBSuggestionInProgressEnabled<br>
+					emailKBSuggestionInProgressSubject<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        admin.email.kb.article.suggestion.received.body<br>
+					admin.email.kb.article.suggestion.received.enabled<br>
+					admin.email.kb.article.suggestion.received.subject<br>
+			</td>
+			<td>
+					emailKBSuggestionReceivedBody<br>
+					emailKBSuggestionReceivedEnabled<br>
+					emailKBSuggestionReceivedSubject<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        admin.email.kb.article.suggestion.resolved.body<br>
+					admin.email.kb.article.suggestion.resolved.enabled<br>
+					admin.email.kb.article.suggestion.resolved.subject<br>
+			</td>
+			<td>
+					emailKBSuggestionResolvedBody<br>
+					emailKBSuggestionResolvedEnabled<br>
+					emailKBSuggestionResolvedSubject<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        admin.email.kb.article.updated.body<br>
+					admin.email.kb.article.updated.enabled<br>
+					admin.email.kb.article.updated.resolved.subject<br>
+			</td>
+			<td>
+					emailKBSuggestionUpdatedBody<br>
+					emailKBSuggestionUpdatedEnabled<br>
+					emailKBSuggestionUpdatedSubject<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        admin.kb.article.increment.priority.enabled
+			</td>
+			<td>
+					articleIncrementPriorityEnabled
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        markdown.importer.article.extensions
+			</td>
+			<td>
+					markdownImporterArticleExtensions
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        markdown.importer.article.intro
+			</td>
+			<td>
+					markdownImporterArticleIntro
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        markdown.importer.image.file.extensions
+			</td>
+			<td>
+					markdownImporterImageFileExtensions
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        markdown.importer.image.folder
+			</td>
+			<td>
+					markdownImporterImageFolder
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        knowledge.base.source.url.enabled
+			</td>
+			<td>
+					sourceURLEnabled
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        knowledge.base.source.url.edit.message.key
+			</td>
+			<td>
+					sourceURLEditMessageKey
+			</td>
+		</tr>		
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+**Knowledge Base Section**
+
+<div class="lego-article metadata-guidelines-table" id="article-33460946">
+<div class="lego-article-content max-960">
+<div class="aui-helper-clearfix lego-section section-1" >
+<div class="aui-w100 block-1 content-column lego-block" >
+<div class="content-column-content">
+<table>
+	<thead>
+		<td class="table-header left-header">
+			portlet property
+		</td>
+		<td class="table-header second">
+			System Setting
+		</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				        admin.kb.article.sections
+			</td>
+			<td>
+					adminKBArticleSections
+			</td>
+		</tr>
+		<tr>
+			<td>
+				        admin.kb.article.sections.default
+			</td>
+			<td>
+					kbArticlesSections
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
++$$$
+
+**Note:** The `knowledge.base.ratings.number.of.stars` property has been removed 
+since Knowledge Base now has a Ratings Configuration Framework. You can change 
+the ratings type in the Instance Settings configuration menu under the *Social* 
+tab. You can also configure the ratings type for an individual site under the 
+*Social* tab of the Site Settings configuration menu.
+
+The `knowledge.base.social.bookmarks.display.style` property can now be found
+under the Social bookmarks display style of each Knowledge Base sub app
+configuration menu in System Settings.
+
+$$$
+
+The optional features are covered below:
 
 **Source URL Settings:** Defines the source location of importable Markdown
 files. This is intended to point to an online source repository where the files
 are stored. GitHub is assumed as the default. Once defined, the Knowledge Base
 displays a button (default label is *Edit on GitHub*) above each displayed
 article. Users can click the button to navigate to an article's source location.
-To enable this feature, click the *Knowledge Base Service* link in 
-*System Settings* &rarr; *Collaboration* and click the checkbox next to the 
-*Source URLEnabled* label.
+To enable this feature, click the *Knowledge Base Service* configuration menu 
+link in *System Settings* &rarr; *Collaboration* and click the checkbox next to 
+the *Source URLEnabled* label.
 
 To change the button's default label *Edit on GitHub*, specify a new label as
 the value for the *Source URLEdit message key* setting. Best practice is to 
@@ -700,10 +952,13 @@ setting:
 
 *Article increment priority enabled*
 
+Alternatively, you can enable or disable this feature for each sub-app in the 
+corresponding Knowledge Base app configuration menu in System Settings.
+
 **Section Names Setting:** The section names setting lets you specify names of 
 arbitrary topics to attribute to articles. Using the Knowledge Base Section app, 
 you can display one or more *sections* (groups) of articles. Navigate to the 
-*Knowledge Base Section* management window from *System Settings* &rarr; 
+*Knowledge Base Section* configuration menu from *System Settings* &rarr; 
 *Collaboration*, click the plus button next to the *Admin KBArticle sections* 
 setting to add a new field for each section you want, and enter a name for each 
 section:
@@ -712,7 +967,7 @@ section:
 
 This creates the sections *Business*, *Politics*, and *World*. 
 
-Click the *Update* button to save your settings. 
+Click the *Update* button to save your settings.
 
 Your app now uses the settings you specified! 
 
