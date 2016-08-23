@@ -10,15 +10,15 @@ applications as portlets within JSR 286 (Portlet 2.0) compliant portlet
 containers, like Liferay Portal 5.2, 6.0, 6.1, 6.2, and 7.0. 
 
 The Liferay Faces Bridge project home page can be found
-[here](http://www.liferay.com/community/liferay-projects/liferay-faces/bridge). 
+[here](https://web.liferay.com/community/liferay-projects/liferay-faces/bridge). 
 
 To fully understand Liferay Faces Bridge, you must first understand the portlet
 bridge standard. Because the Portlet 1.0 and JSF 1.0 specs were being created at
 essentially the same time, the Expert Group (EG) for the JSF specification
 constructed the JSF framework to be compliant with portlets. For example, the
-[ExternalContext.getRequest()](http://docs.oracle.com/javaee/6/api/javax/faces/context/ExternalContext.html#getRequest%28%29)
+[ExternalContext.getRequest()](http://docs.oracle.com/javaee/7/api/javax/faces/context/ExternalContext.html#getRequest--)
 method returns an `Object` instead of an
-[javax.servlet.http.HttpServletRequest](http://download.oracle.com/javaee/6/api/javax/servlet/http/HttpServletRequest.html).
+[javax.servlet.http.HttpServletRequest](http://download.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html).
 When this method is used in a portal, the `Object` can be cast to a
 [javax.portlet.PortletRequest](http://portals.apache.org/pluto/portlet-2.0-apidocs/javax/portlet/PortletRequest.html).
 Despite the EG's consciousness of portlet compatibility within the design of
@@ -28,10 +28,11 @@ Portlet bridge standards and implementations evolved over time.
 
 Starting in 2004, several different JSF portlet bridge implementations were
 developed in order to provide JSF developers with the ability to deploy their
-JSF web apps as portlets. In 2006, the JCP formed the Portlet Bridge 1.0 ([JSR
-301](http://www.jcp.org/en/jsr/detail?id=301)) EG in order to define a standard
-bridge API, as well as detailed requirements for bridge implementations. JSR 301
-was released in 2010, targeting Portlet 1.0 and JSF 1.2. 
+JSF web apps as portlets. In 2006, the JCP formed the Portlet Bridge 1.0
+([JSR 301](http://www.jcp.org/en/jsr/detail?id=301)) EG in order to define a
+standard bridge API, as well as detailed requirements for bridge
+implementations. JSR 301 was released in 2010, targeting Portlet 1.0 and JSF
+1.2.
 
 When the Portlet 2.0 ([JSR 286](http://www.jcp.org/en/jsr/detail?id=286))
 standard was released in 2008, it became necessary for the JCP to form the
@@ -40,8 +41,8 @@ Portlet Bridge 2.0 ([JSR 329](http://www.jcp.org/en/jsr/detail?id=329)) EG. JSR
 
 After the [JSR 314](http://www.jcp.org/en/jsr/detail?id=314) EG released JSF 2.0
 in 2009 and JSF 2.1 in 2010, it became evident that a Portlet Bridge 3.0
-standard would be beneficial. In 2015 the JCP formed [JSR 378]
-(http://www.jcp.org/en/jsr/detail?id=378)) which is defining a
+standard would be beneficial. In 2015 the JCP formed
+[JSR 378](http://www.jcp.org/en/jsr/detail?id=378)) which is defining a
 bridge for Portlet 3.0 and JSF 2.2. There are also variants of *Liferay Faces
 Bridge* that support Portlet 2.0 and JSF 1.2/2.1/2.2.
 
