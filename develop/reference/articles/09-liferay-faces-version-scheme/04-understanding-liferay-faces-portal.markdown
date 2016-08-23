@@ -1,4 +1,4 @@
-# Understanding Liferay Faces Portal
+# Understanding Liferay Faces Portal [](id=understanding-liferay-faces-portal)
 
 *Liferay Faces Portal* is distributed in a `.jar` file. You can add Liferay
 Faces Portal as a dependency for your portlet projects, in order to use its

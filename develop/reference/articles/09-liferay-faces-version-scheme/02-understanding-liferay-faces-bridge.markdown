@@ -1,4 +1,4 @@
-# Understanding Liferay Faces Bridge
+# Understanding Liferay Faces Bridge [](id=understanding-liferay-faces-bridge)
 
 The Liferay Faces Bridge enables you to deploy JSF web apps as portlets without
 writing portlet-specific code. It also contains innovative features that make it
