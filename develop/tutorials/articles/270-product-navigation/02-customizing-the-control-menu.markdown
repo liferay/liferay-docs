@@ -117,12 +117,12 @@ Menu.
     By default, Lexicon icons are expected to be returned. This is because the 
     [`BaseProductNavigationControlMenuEntry.getMarkupView` method](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/web-experience/product-navigation/product-navigation-control-menu-api/src/main/java/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.java#L86)
     returns `lexicon`. To view all the Lexicon icons available, see
-	[http://liferay.github.io/lexicon/content/icons-lexicon/](http://liferay.github.io/lexicon/content/icons-lexicon/).
-	You can also return FontAwesome icons, but you must implement the
-	[ProductNavigationControlMenuEntry.getMarkupView(...)](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html#getMarkupView(javax.servlet.http.HttpServletRequest))
-	method in your class and have it return `null`. Then you can return
-	FontAwesome icons for the `getIcon(...)` method. To view all the
-	FontAwesome icons available, see the
+    [http://liferay.github.io/lexicon/content/icons-lexicon/](http://liferay.github.io/lexicon/content/icons-lexicon/).
+    You can also return FontAwesome icons, but you must implement the
+    [ProductNavigationControlMenuEntry.getMarkupView(...)](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html#getMarkupView(javax.servlet.http.HttpServletRequest))
+    method in your class and have it return `null`. Then you can return
+    FontAwesome icons for the `getIcon(...)` method. To view all the
+    FontAwesome icons available, see the
     [FontAwesome 4.6.1 docs](https://fortawesome.github.io/Font-Awesome/icons/).
 
     You can also provide a label for the Control Menu entry that displays when
