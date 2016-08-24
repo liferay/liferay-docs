@@ -160,15 +160,14 @@ The first thing you'll define in your weather rule is the view/save lifecycle.
 
 ## Defining a Rule's View/Save Lifecycle [](id=defining-a-rules-view-save-lifecycle)
 
-<!-- What is the view/save lifecycle? Please explain that first. -Rich -->
+This section covers how to define a rule's view/save lifecycle. This is when
+a user applies a rule to a user segment using the User Segment Editor.
 
 In this section, you'll begin defining the weather rule's Java class. This
 assumes that you followed the instructions above, creating the `WeatherRule`
 class and extending `BaseJSPRule`. If you used the `contenttargetingrule` Blade
 CLI template, your project is already extending `BaseJSPRule` and has a default
-`view.jsp` file already created. This section covers how to define a rule's
-view/save lifecycle. This lifecycle is used when applying a rule to a user
-segment using the User Segment Editor.
+`view.jsp` file already created. 
 
 1.  Add the activation and deactivation methods to your class.
 
@@ -188,21 +187,20 @@ segment using the User Segment Editor.
     and processing for when your rule starts and stops. Make sure to include the 
     [@Activate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Activate.html)
     and
-    [@Deacitvate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Deactivate.html)
+    [@Deactivate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Deactivate.html)
     annotations, which are required.
 
-2.  Define the rule's category it should reside in when displayed in the User
-    Segment Editor.
+2.  Define the category for the Rule when displayed in the User Segment Editor.
 
         @Override
         public String getRuleCategoryKey() {
             return SessionAttributesRuleCategory.KEY;
         }
 
-    The weather rule's category is set to Session Attributes. To categorize your
-    rule into the appropriate category, have the `getRuleCategoryKey` method
-    return the category class's key. Available category classes include
-    `BehaviourRuleCategory`, `SessionAttributesRuleCategory`,
+    This code puts the weather rule in the Session Attributes category. To
+    put your rule into the appropriate category, use the `getRuleCategoryKey`
+    method to return the category class's key. Available category classes
+    include `BehaviourRuleCategory`, `SessionAttributesRuleCategory`,
     `SocialRuleCategory`, and `UserAttributesRoleCategory`.
 
     ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
@@ -227,51 +225,53 @@ segment using the User Segment Editor.
         }
 
     To understand what this method accomplishes, you'll need to examine the
-    rule's lifecycle.
+    rule's configuration lifecycle.
 
-    ![Figure 3: This diagram shows the lifecycle for an Audience Targeting rule.](../../images-dxp/rule-lifecycle.png)
+    ![Figure 3: An Audience Targeting rule must be configured by the user and processed before it can become part of a User Segment.](../../images-dxp/rule-lifecycle.png)
 
     When the user opens the User Segment Editor, the render phase begins for the
-    rule. The `getFormHTML(...)` method is invoked to retrieve the HTML to
-    display. You don't have to worry about implementing this method because it's
-    already implemented in the `BaseJSPRule` class your extending. The
-    `getFormHTML` method calls the `populateContext(...)` method.
+    rule. The `getFormHTML(...)` method retrieves the HTML to display. You don't
+    have to worry about implementing this method because it's already
+    implemented in the `BaseJSPRule` class you're extending. The `getFormHTML`
+    method calls the `populateContext(...)` method.
 
     You'll notice the `populateContext` method is not available in the `Rule`
     interface. This is because it's not needed in all cases. It's available by
     extending the `BaseJSPRule` class, and you'll need to add more logic to it
-    for the weather rule. The goal of the `populateContext` method is to
-    generate a map with all the parameters your JSP view needs to render the
-    rule's HTML. This map is stored in the `context` variable, which is
-    pre-populated with basic values in the Portlet logic, and then each rule
-    contributes their specific parameters to it. The `populateContext` method
-    above populates a `weather` context variable with the `weather` values from
-    the `values` map parameter, which is then passed to the JSP.
+    for the weather rule. 
+    
+    The goal of the `populateContext` method is to generate a map with all the
+    parameters your JSP view needs to render the rule's HTML. This map is stored
+    in the `context` variable, which is pre-populated with basic values in the
+    Portlet logic, and then each rule contributes its specific parameters to
+    it. The `populateContext` method above populates a `weather` context
+    variable with the `weather` values from the `values` map parameter, which is
+    then passed to the JSP.
 
     For the weather rule, the `populateContext` method accounts for three use
     cases:
 
-    3a. The rule was added but has no set values yet. In this case, the default
+    a. The rule was added but has no set values yet. In this case, the default
         values defined by the developer are injected (e.g., `weather=""`).
 
-    3b. The rule was added and a value is set, but the request failed to
+    b. The rule was added and a value is set, but the request failed to
         complete (e.g., due to an error). In this case, the `values` parameter
         of the `populateContext` method contains the values that were intended
         to be saved, and they are injected so that they are displayed in the
         rule's view together with the error message.
 
-    3c. The rule was added and a value was successfully set. In this case, the
-        `values` parameter is empty and you have to obtain the values to display
-        in the form from storage and inject it in the context so it's displayed
-        in the rule's HTML. The weather rule uses the `typeSettings` field of
-        the rule instance, but complex rules could use services to store values.
+    c. The rule was added and a value was successfully set. In this case, the
+    `values` parameter is empty, and you have to obtain the values from storage
+    that the form should display and inject them in the context so they're
+    displayed in the rule's HTML. The weather rule uses the `typeSettings` field
+    of the rule instance, but complex rules could use services to store values.
 
     You can think of the `populateContext` method as the intermediary between
     your JSP and your backend code. You can see how to create the weather rule's
     UI using a JSP by seeing the
     [Defining the Rule's UI](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types#defining-the-rules-ui)
-    section. Once the HTML is successfully retrieved for the user, and they've
-    set the weather value, they'll click *Save*, which begins the action phase.
+    section. Once the HTML is successfully retrieved and the user has set the
+    weather value and clicked *Save*, the action phase begins. 
 
 4.  Add the following method:
 
@@ -287,16 +287,16 @@ segment using the User Segment Editor.
     The `values` parameter only contains the value(s) the user added in the
     form. The logic you could add to a `processRule` method is outlined below.
 
-    4a. Obtain the value(s) from the `values` parameter.
+    a. Obtain the value(s) from the `values` parameter.
 
-    4b. (Optional) Validate the data consistency and possible errors. If
+    b. (Optional) Validate the data consistency and possible errors. If
     anything is wrong, throw an `InvalidRuleException` and prohibit the values
     from being stored. In the weather rule scenario, when the rule is reloaded
     after an exception is thrown in the form, case 3b from the previous step
     occurs.
 
-    4c. Return the value to be stored in the `typeSettings` field of the rule
-    instance. The `typeSettings` field is managed by the framework in the Rule
+    c. Return the value to be stored in the rule instance's `typeSettings`
+    field. The `typeSettings` field is managed by the framework in the Rule
     Instance table. If your rule has its own storage mechanism, then you should
     call your services in the `processRule` method.
 
@@ -326,9 +326,9 @@ segment using the User Segment Editor.
             super.setServletContext(servletContext);
         }
 
-    This is only required in rules extending the `BaseJSPRule` class. The
+    This is only required for rules extending the `BaseJSPRule` class. The
     servlet context must be set for the rule to render its own JSP files. The
-    `setServletContext` method is automatically invoked when the rule module is
+    `setServletContext` method is invoked automatically when the rule module is
     installed and resolved in Liferay. Make sure the `osgi.web.symbolicname` in
     the `target` property of the `@Reference` annotation is set to the same
     value as the `Bundle-SymbolicName` defined in the `bnd.bnd` file of the
@@ -340,16 +340,16 @@ segment.
 ## Evaluating a Rule [](id=evaluating-a-rule)
 
 Imagine an administrator has successfully configured and saved your custom rule
-to their user segment. Now what? Your rule needs to fulfill its purpose!
-Evaluate the preset weather value compared to a user's weather value visiting
-the site. If the user's value matches the preset value, they're added to the
-user segment, assuming they match the user segment's other configured rules.
+to his or her user segment. Now what? Your rule needs to fulfill its purpose,
+which is to evaluate the preset weather value compared to a user's weather value
+visiting the site. If the user's value matches the preset value (along with the
+segment's other rules), that user is added to the user segment. 
 
-1.  You'll need to implement the `evaluate(...)` rule to begin the evaluation
+1.  You must implement the `evaluate(...)` rule to begin the evaluation
     process. This method is part of the user segmentation lifecycle. When a page
-    is loaded, the `evaluate` method of the rule is invoked to calculate if the
-    current user belongs to the user segment. For the weather rule, add the
-    following `evaluate` method:
+    is loaded, Liferay invokes the `evaluate` method of the rule to determine
+    if the current user belongs to the user segment. For the weather rule, add
+    this `evaluate` method:
 
         @Override
         public boolean evaluate(
@@ -368,16 +368,16 @@ user segment, assuming they match the user segment's other configured rules.
             return false;
         }
 
-    This logic acquires the user's weather by calling the `getUserWeather`
-    method, which you'll define later. Then the preset weather value is acquired
-    by accessing the rule instance's `typeSettings` parameter. Lastly, the two
-    values are compared. If the weather values match, `true` is returned to
-    indicate that the user matches the rule; otherwise, `false` is returned, and
-    the user is not admitted to the user segment.
+    You acquire the user's weather by calling the `getUserWeather` method, which
+    you'll define later. Then you get the preset weather value by accessing
+    the rule instance's `typeSettings` parameter. Finally, you compare the two
+    values. If they match, return `true`; otherwise return `false`. Remember
+    that users are only added to User Segments when all the Rules in the User
+    Segment return true.
 
-2.  You have yet to apply logic to the `WeatherRule` class for retrieving a
-    user's current weather. As you learned earlier, you'll need to access the
-    user's location first. Add the logic below to do this.
+2.  Next, you need to retrieve the user's weather. As you learned earlier,
+    you must access the user's location first. Add the logic below to do
+    this.
 
         protected String getCityFromUserProfile(long contactId, long companyId)
             throws PortalException, SystemException {
@@ -393,8 +393,9 @@ user segment, assuming they match the user segment's other configured rules.
             return address.getCity() + StringPool.COMMA + address.getCountry().getA2();
         }
 
-    This method retrieves the user's location by accessing their user profile
-    information. Once you have the user's location, you'll need to find the
+    This method retrieves the location by accessing the user's profile
+    information. You could also have used a geo-location service to find this by
+    the user's IP address. Once you have the user's location, you can find the
     current weather for that location.
 
 3.  Add the following method to retrieve a user's weather forecast.
@@ -432,19 +433,19 @@ user segment, assuming they match the user segment's other configured rules.
         private static Log _log = LogFactoryUtil.getLog(WeatherRule.class);
 
     This method calls the `getCityFromUserProfile` method to acquire the user's
-    location. Then it accesses a weather site and retrieves the weather code for
-    that location. The weather code is used determine the weather string that is
-    used during the evaluation process (e.g., `sunny`). For the weather rule,
-    you'll access Open Weather Map's APIs to retrieve the weather code.
+    location. Then it retrieves the weather code for that location from a
+    weather service. 
 
 4.  Set the `API_URL` field to the Open Weather Map's API URL:
 
         private static final String API_URL = "http://api.openweathermap.org/data/2.5/weather";
 
-5.  One last thing to add is the logic that converts weather codes into string
-    values that your rule can understand and compare during the evaluation
-    process. Add the following method to convert Open Weather Map's weather
-    codes:
+    For the weather rule, you can access Open Weather Map's APIs to retrieve the
+    weather code.
+    
+5.  The last thing is to convert the weather code to a string you can evaluate
+    (e.g., `sunny`). Add the following method to convert Open Weather Map's
+    weather codes:
 
         protected String getWeatherFromCode(int code) {
             if (code == 800 || code == 801) {
@@ -463,7 +464,7 @@ user segment, assuming they match the user segment's other configured rules.
             return null;
         }
 
-    You can refer to all possible weather codes
+    All possible weather codes are
     [here](http://openweathermap.org/weather-conditions).
 
 Excellent! You've implemented the `evaluate` method and added the necessary
@@ -474,9 +475,10 @@ a JSP template.
 ## Defining the Rule's UI [](id=defining-the-rules-ui)
 
 The Java code you've added to this point has assumed that a preset weather value
-will be available for comparing during the evaluation process. You'll need to
-define a UI for your rule during the view/save lifecycle to let administrators
-select that weather value. Create a `view.jsp` file in your rule's module (e.g.,
+is available for comparing during the evaluation process. To let administrators
+set that value, you must define a UI so your rule can be configured during the
+view/save lifecycle. Create a `view.jsp`
+file in your rule's module (e.g.,
 `/src/main/resources/META-INF/resources/view.jsp`) and add the following logic:
 
     <%
@@ -495,15 +497,19 @@ select that weather value. Create a `view.jsp` file in your rule's module (e.g.,
     </aui:fieldset>
 
 The `weather` variable in the `context` map should be set for the weather rule.
-Once the variable is selected by the user, it's passed from the view template to
-the `populateContext` method.
+When the user selects an option, it's passed from the view template to the
+`populateContext` method.
 
 ![Figure 4: The weather rule uses a `select` drop-down box to set the weather value.](../../images-dxp/select-box-rule.png)
+
++$$$
 
 The weather rule uses JSP templates to display the rule's view. Audience
 Targeting, however, is compatible with any UI technology. Visit the
 [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-rules#selecting-a-ui-technology)
 section for details on how to use other UI technologies like FreeMarker.
+
+$$$
 
 Congratulations! You've created the weather rule and can now target users based
 on their weather conditions. You can view the finished version of the weather
