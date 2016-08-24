@@ -100,19 +100,12 @@ a panel app for the already present hidden category.
         }
 
     Audience Targeting also provides a good example of how to extend the
-    Simulation Menu. When the
-    [content-targeting-simulation-web](https://github.com/liferay/liferay-apps-content-targeting/tree/develop/content-targeting-simulation-web)
-    module is deployed for the Audience Targeting app, the Simulation Menu is
-    extended to offer more functionality, in particular, for Audience Targeting
-    User Segments and Campaigns. You can simulate particular scenarios for
-    campaigns and users directly from the Simulation Menu. Its panel app class
-    ([ContentTargetingSimulatorPanelApp](https://github.com/liferay/liferay-apps-content-targeting/blob/develop/content-targeting-simulation-web/src/main/java/com/liferay/content/targeting/simulation/web/application/list/ContentTargetingSimulatorPanelApp.java))
-    is very similar to `DevicePreviewPanelApp`, except it points to a different
-    portlet and JSP
-    ([view.jsp](https://github.com/liferay/liferay-apps-content-targeting/blob/develop/content-targeting-simulation-web/src/main/resources/META-INF/resources/view.jsp)).
-    For more information on Audience Targeting, you can visit the
-    [Targeting Content to Your Audience](/discover/portal/-/knowledge_base/6-2/targeting-content-to-your-audience)
-    section.
+    Simulation Menu. When the Audience Targeting app is deployed, the Simulation
+    Menu is extended to offer more functionality, in particular, for Audience
+    Targeting User Segments and Campaigns. You can simulate particular scenarios
+    for campaigns and users directly from the Simulation Menu. Its panel app
+    class is very similar to `DevicePreviewPanelApp`, except it points to a
+    different portlet and JSP.
 
     ![Figure 2: The Audience Targeting app extends the Simulation Menu to help simulate different users and campaign views.](../../images/simulation-menu-at.png)
 
