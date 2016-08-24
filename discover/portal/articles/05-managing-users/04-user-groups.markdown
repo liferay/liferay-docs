@@ -62,8 +62,7 @@ write all about his favorite band, *ApeFLogger*<!--Insidious Marmot, Urban Slug,
 The SlimeDoggz, The LumberJilz, The WAR Boys, Metropolizm, Fanatical Mime -->?
 You don't want Wilbert to be a List Creator, right?
 
-![Figure 1: The List Creators group is needed to manage the sign-up lists on
-the Activities Sign-Up page of The Lunar Resort.](../../images/user-groups-activities-page.png)
+![Figure 1: The List Creators group is needed to manage the sign-up lists on the Activities Sign-Up page of The Lunar Resort.](../../images/user-groups-activities-page.png)
 
 ## Creating a User Group [](id=creating-a-user-group)
 
@@ -81,8 +80,7 @@ all its users to The Lunar Resort public site. First create the user group:
     *Name* is the only required field, but you should enter a
     description as well.
 
-    ![Figure 2: Provide a name and a description for your new User
-    Group.](../../images/user-groups-add.png)
+    ![Figure 2: Provide a name and a description for your new User Group.](../../images/user-groups-add.png)
 
 3.  Click *Save* and you will be redirected back to the *User Groups* page of
 the Control Panel.
@@ -99,15 +97,12 @@ To add existing users to a user group:
 (![Actions](../../images/icon-actions.png)) &rarr; *Assign Members* next to the
 List Creators group. 
 
-    ![Figure 3: To add users to the User Group, select *Assign Members* from its
-Action menu.](../../images/user-groups-actions.png)
+    ![Figure 3: To add users to the User Group, select *Assign Members* from its Action menu.](../../images/user-groups-actions.png)
 
 2.  Click the *Add Users* button to see a list of users that can
 be assigned to the group.
 
-    ![Figure 4: When assigning members to a user group, click on the *Available* tab
-to see a list of users able to be added to the user
-group.](../../images/user-groups-add-users.png)
+    ![Figure 4: When assigning members to a user group, click on the *Available* tab to see a list of users able to be added to the user group.](../../images/user-groups-add-users.png)
 
 3.  From this list, select one or more users and click *Add*.
 
@@ -126,8 +121,7 @@ the newly created List Creators user group can be added to The Lunar Resort
 site. This makes managing site membership easy. Just make sure you have the
 correct site selected in the Product Menu!
 
-![Figure 5: Select the site you want to manage using the site
-selector.](../../images/user-groups-site-selector.png)
+![Figure 5: Select the site you want to manage using the site selector.](../../images/user-groups-site-selector.png)
 
 Associate the user group with a site:
 
@@ -171,9 +165,7 @@ also add pages to the user group site manually, if you don't want to use a site
 template. But that's done later, from the Actions menu of an already-created
 user group.
 
-![Figure 8: You can create a user group site from a site template while adding
-the User Group initially, or you can revisit and edit this form if you decide to
-add a site later.](../../images/user-groups-add.png)
+![Figure 8: You can create a user group site from a site template while adding the User Group initially, or you can revisit and edit this form if you decide to add a site later.](../../images/user-groups-add.png)
 
 In The Lunar Resort, the List Creators must have access to the private *Event
 Coordination* page, with a Calendar application where events are scheduled that
@@ -202,8 +194,7 @@ Actions button (![Actions](../../images/icon-actions.png)), then *Edit*, for the
 drop-down menu under *My Dashboard* and select the new site template you
 created, Event Coordination.
 
-    ![Figure 9: Selecting a site template under My Dashboard creates a private
-site for a user group.](../../images/user-groups-add-site-template.png)
+    ![Figure 9: Selecting a site template under My Dashboard creates a private site for a user group.](../../images/user-groups-add-site-template.png)
 
 4.  Click *Save*.
 
@@ -314,8 +305,7 @@ so all that's left is to associate the user group with the role.
 configuration menu (![Actions](../../images/icon-actions.png)) for the List
 Creators user group and select *Assign Site Roles*.
 
-    ![Figure 11: From a user group's Actions menu, select *Manage Pages* to
-create a user group site manually.](../../images/user-groups-site-role.png)
+    ![Figure 11: From a user group's Actions menu, select *Manage Pages* to create a user group site manually.](../../images/user-groups-site-role.png)
 
 3.  Choose the *List Creator* role from the list and click *Add*.
 
@@ -380,8 +370,7 @@ these links opens the user group's site in a new browser window. Any changes you
 make to the site are saved automatically. You can safely close the browser
 window when you're done.
 
-![Figure 13: If your user group has public and private site pages, you'll see
-*Go to Profile Pages* and *Go to Dashboard Pages* in the Actions menu.](../../images/user-groups-actions-site-pages.png) 
+![Figure 13: If your user group has public and private site pages, you'll see *Go to Profile Pages* and *Go to Dashboard Pages* in the Actions menu.](../../images/user-groups-actions-site-pages.png) 
 
 User groups are useful for managing site membership and roles, and for assigning
 a specific task to a  specific group of users. Or, if you like tongue twisters,
