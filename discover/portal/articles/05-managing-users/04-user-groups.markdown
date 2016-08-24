@@ -17,13 +17,14 @@ hierarchical boundaries. For example, consider The Lunar Resort. It's
 hierarchically divided into the Physical Plant Department, the Recreation
 Department, and the Sales Department. The Lunar Resort's department-driven
 structure is modeled using
-[organizations](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel)<!--Link
-to 7-0 docs on organizations-->. If there are functions needed in The Lunar
-Resort public or private sites that can't be divided up according to the
-existing organizational hierarchy, you might need user groups. For example, it
-might make sense to create a user groups that includes the Human Resources
-representatives of each department. User Groups are most often used to achieve
-one of the following goals:
+[organizations](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel).
+If there are functions needed in The Lunar Resort public or private sites that
+can't be divided up according to the existing organizational hierarchy, you
+might need user groups. For example, it might make sense to create a user groups
+that includes the Human Resources representatives of each department. User
+Groups are most often used to achieve one of the following goals:
+
+<!-- Provide links above to 7-0 docs on organizations, when available-->
 
 - Collect permissions. With User Groups, you can assign roles and permissions to
   a group of users that don't share an Organization. For example, in a
@@ -58,9 +59,11 @@ preparing a Lunar Luau and needs a guest list). Also, you might not want all the
 users of the Recreation Department to be a List Creator. Remember that time
 Wilbert Donahue (he's a Lunar Rover Race Instructor, part of the Recreation
 Department) was granted blogging permissions, and he used the opportunity to
-write all about his favorite band, *ApeFLogger*<!--Insidious Marmot, Urban Slug,
-The SlimeDoggz, The LumberJilz, The WAR Boys, Metropolizm, Fanatical Mime -->?
-You don't want Wilbert to be a List Creator, right?
+write all about his favorite band, *ApeFLogger*? You don't want Wilbert to be a
+List Creator, right?
+
+<!-- Maybe add: Insidious Marmot, Urban Slug, The SlimeDoggz, The LumberJilz,
+The WAR Boys, Metropolizm, Fanatical Mime to band list -->
 
 ![Figure 1: The List Creators group is needed to manage the sign-up lists on the Activities Sign-Up page of The Lunar Resort.](../../images/user-groups-activities-page.png)
 
@@ -147,7 +150,7 @@ their own sites.
 
 Each Liferay user has a personal site, consisting of public (Profile) and
 private (Dashboard) pages. A user group site determines the base pages of the
-personal sites <!--Link when these docs are created--> of all the user group
+personal sites of all the user group
 members. If the user group site pages are added to a user's Profile pages, then
 the user group site is a public site, accessible to anyone with the URL
 (`http://www.[sitename].com/web/[username]`). If the site pages are added to the
@@ -155,6 +158,8 @@ user's Dashboard pages, then the site is a private site. A mixed approach can
 also be used, where both private and public pages are added for the user group
 site. If a user belongs to multiple user groups, all the pages from those user
 group sites are made part of hiss personal site. 
+
+<!--Link above when docs are created-->
 
 When you created the List Creators user group, did you notice the section of the
 New User Group form that allowed you to select a site template from two drop
@@ -179,9 +184,10 @@ To create a new site template, navigate to *Sites* &rarr; *Site Templates*. Add
 a site template called Event Coordination and save it. Rename the default Home
 page to Event Coordination. Now there's a site template, but the page is
 currently empty. Go to the Event Coordination page, and add a Message Boards and
-a Calendar application. Read the [documentation on site
-templates](discover/portal/-/knowledge_base/6-2/using-site-templates)<!--Get the
-7-0 link when ready--> if you need further explanation.
+a Calendar application. Read the [documentation on site templates](discover/portal/-/knowledge_base/6-2/using-site-templates)
+if you need further explanation.
+
+<!--Get the 7-0 link when ready-->
 
 Once you have a site template set up, use it to create the user group site.
 
@@ -279,9 +285,10 @@ The List Creators user group needs the ability to manage Dynamic Data List
 Display portlets on The Lunar Resort's Activities Sign-Up public page. This will
 require the creation of a new Site Role called List Creator, and assignment of
 any necessary permissions so the List Creators can do their job. You can refer
-to the [article on Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)<!--Link to
-7-0 docs when ready--> for a more detailed discussion. After creating
+to the [article on Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions) for a more detailed discussion. After creating
 the new role, all that's left to do is assign the role to the user group.
+
+<!--Link to 7-0 docs when ready-->
 
 To create a new role, go to the Roles section of the Control Panel and click
 *Add* &rarr; *Site Role*. Call it *List Creator*, give it a description, and
@@ -312,11 +319,11 @@ Creators user group and select *Assign Site Roles*.
 Now members of the List Creators user group are site members of The Lunar Resort
 site, and anyone in the user group has the List Creator role in the site. If you
 want to continue configuring the List Creators user group, read the articles on
-[Creating a Simple
-Application](/discover/portal/-/knowledge_base/7-0/using-dynamic-data-lists)<!--Not
-published yet-->. In those articles you'll learn to create a data definition
-that the List Creators can use to build new Activities Sign-Up lists and templates
-with.
+[Creating a Simple Application](/discover/portal/-/knowledge_base/7-0/using-dynamic-data-lists).
+In those articles you'll learn to create a data definition that the List
+Creators can use to build new Activities Sign-Up lists and templates with.
+
+<!-- Link above not published yet-->
 
 If you want to know more about User Groups, and how to edit them, keep reading
 here.
