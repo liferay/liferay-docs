@@ -1,13 +1,11 @@
 # Getting Started with JSF Applications [](id=getting-started-with-jsf-applications)
 
 This tutorial is not a comprehensive guide for configuring JSF applications in
-Liferay. You'll examine the high points, assuming you already have a workable
-knowledge with JSF.
+Liferay. You'll examine the high points, assuming you already understand JSF. 
 
-How and why is JSF so easy to deploy to Liferay? Isn't JSF a separate
-technology? Liferay supports JSF portlets with the use of
-[*Liferay Faces*](https://web.liferay.com/community/liferay-projects/liferay-faces/overview),
-which is an umbrella project that provides support for the JSF standard.
+How and why is JSF so easy to deploy to Liferay? Liferay supports JSF portlets
+with the use of [*Liferay Faces*](https://web.liferay.com/community/liferay-projects/liferay-faces/overview),
+which is Liferay project that provides support for the JSF standard.
 
 You'll learn how to leverage Liferay Faces and other JSF-specific dependencies
 in the next section.
@@ -17,7 +15,7 @@ in the next section.
 JSF portlets use 
 [*Liferay Faces Bridge*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-bridge),
 which supports deploying JSF web applications as portlets on any JSR 286
-(Portlet 2.0) compliant portlet container, like Liferay Portal. Liferay
+(Portlet 2.0) compliant portlet container, like @product@. Liferay
 Faces Bridge is applied to a portlet as a dependency in a build file, such as a
 `pom.xml`:
 
@@ -36,18 +34,20 @@ Faces Bridge is applied to a portlet as a dependency in a build file, such as a
         ...
     </dependencies>
 
-There are several UI component suites that a JSF application can use, which include
-[*Liferay Faces Alloy*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy],
-[*PrimeFaces*](http://primefaces.org/),
-[*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf), and
-[*RichFaces*](http://richfaces.jboss.org/). Furthermore, you can take advantage
-of
-[*Liferay Faces Portal*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-portal)
-in order to use Liferay-specific utilities and UI components. These components
-can be used by specifying them as dependencies in your build file, as well.
+There are several UI component suites that a JSF application can use. These include
+
+- [*Liferay Faces Alloy*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy)
+- [*PrimeFaces*](http://primefaces.org/)
+- [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf) 
+- [*RichFaces*](http://richfaces.jboss.org/). 
+- [*Liferay Faces Portal*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-portal)
+
+You'd use Liferay Faces Portal to use Liferay-specific utilities and UI
+components. These components can be used by specifying them as dependencies in
+your build file, as well.
 
 Make sure to configure the `GenericFacesPortlet` class in the `portlet.xml`.
-This class handles invocations to your JSF portlet and makes the portlet relying
+This class handles invocations to your JSF portlet and makes portlets relying
 on Liferay Faces Bridge easier to develop by acting as a turnkey implementation.
 
     <portlet>
@@ -64,11 +64,10 @@ configured as an `init-param` in the `portlet.xml` file.
         <value>/WEB-INF/views/view.xhtml</value>
     </init-param>
 
-There are other basic descriptors that you'll need to have reside in your JSF
-portlet: `faces-config.xml` and `web.xml`. You can visit the
+There are other descriptors that must reside in your JSF portlet:
+`faces-config.xml` and `web.xml`. You can visit the
 [Packaging a JSF Application](/develop/tutorials/-/knowledge_base/7-0/packaging-a-jsf-application)
-tutorial for more information on where these descriptors should reside in your
-JSF portlet structure.
+tutorial for more information on where these descriptors go. 
 
 The `faces-config.xml` descriptor serves as a JSF portlet's application
 configuration file, which is used to register and configure objects and

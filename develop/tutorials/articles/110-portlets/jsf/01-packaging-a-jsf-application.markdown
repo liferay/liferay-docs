@@ -1,14 +1,14 @@
 # Packaging a JSF Application [](id=packaging-a-jsf-application)
 
-Developers creating portlets for Liferay 7.0 typically have the choice of
-packaging their portlets as Java EE style Web Application ARchive (WAR)
-artifacts or as Java ARchive (JAR) OSGi bundle artifacts. JSF portlet
-developers, however, must package their portlets as WAR artifacts because the
-JSF framework expects a WAR layout and often requires the
-`WEB-INF/faces-config.xml` descriptor and other Java EE resources such as the
-`WEB-INF/web.xml` descriptor. In this tutorial, you'll learn how to package
-a JSF portlet so it can be treated as an OSGi module at runtime, and the pros
-and cons behind JSF-specific OSGi packaging practices when deploying to Liferay.
+Developers creating portlets for Liferay 7.0 can package their portlets as Java
+EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR) OSGi
+bundle artifacts. JSF portlet developers, however, must package their portlets
+as WAR artifacts because the JSF framework expects a WAR layout and often
+requires the `WEB-INF/faces-config.xml` descriptor and other Java EE resources
+such as the `WEB-INF/web.xml` descriptor. In this tutorial, you'll learn how to
+package a JSF portlet so it can be treated as an OSGi module at runtime. You'll
+also learn the pros and cons behind JSF-specific OSGi packaging practices when
+deploying to Liferay.
 
 Liferay 7.0 supports the OSGi Web Application Bundle (WAB) standard for
 deployment of Java EE style WARs. Simply put, a WAB is an archive that has a WAR
@@ -16,13 +16,11 @@ layout and contains a `META-INF/MANIFEST.MF` file with the `Bundle-SymbolicName`
 OSGi directive.
 
 Enabling WABs to run as OSGi modules at runtime is made possible by the Liferay
-[WAB Extender](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-extender).
-The Liferay WAB Generator converts your WAR artifact to a WAB at deployment
-time. The source of the project has a WAR layout and the artifact filename may
-end with either the `.jar` or `.war` extension.
+WAB Extender. The Liferay WAB Generator converts your WAR artifact to a WAB at
+deployment time. The source of the project has a WAR layout and the artifact
+filename may end with either the `.jar` or `.war` extension.
 
-To get an idea of how a JSF WAR artifact is packaged for use as a WAB, an
-example anatomy structure is outlined below:
+This is how a JSF WAR artifact is structured: 
 
 - `META-INF/`
     - `MANIFEST.MF` (Made OSGi-ready at deploy time via the WAB Generator)
@@ -67,9 +65,8 @@ file, add additional BND directives for the manifest in the
 
 **Benefits:**
 
-- Processed by the Liferay
-  [WAB Generator](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-generator),
-  which automatically creates an OSGi-ready `META-INF/MANIFEST.MF`.
+- Processed by the Liferay WAB Generator which automatically creates an
+  OSGi-ready `META-INF/MANIFEST.MF`.
 - Processed by the Liferay auto-deploy process, which adds the
   `PluginContextListener` to the `WEB-INF/web.xml` descriptor when the WAB has
   not been pre-configured.
@@ -99,8 +96,7 @@ $$$
 Using the WAB Generator is the only Liferay supported way to develop JSF
 portlets deployed to @product@.
 
-Excellent! Now you can make an informed packaging decision for your JSF
-application.
+Excellent! Now you understand how JSF applications are packaged. 
 
 ## Related Topics [](id=related-topics)
 

@@ -5,35 +5,33 @@
 Do you want to develop MVC-based portlets using the Java EE standard? Do you
 want to use a portlet development framework with a UI component model that
 makes it easy to develop sophisticated, rich UIs? Or have you been writing 
-web apps using JSF that you'd like to use in Liferay Portal? If you answered yes
-to any of these questions, you're in luck! *Liferay Faces* provides all of these
+web apps using JSF that you'd like to use in @product@? If you answered *yes*
+to any of these questions, you're in luck! Liferay Faces provides all these
 capabilities and more. 
 
 Liferay Faces is an umbrella project that provides support for the
-JavaServer&#8482; Faces (JSF) standard within Liferay Portal. It encompasses the
+JavaServer&#8482; Faces (JSF) standard in @product@. It encompasses the
 following projects:
 
-- **Liferay Faces Bridge** enables you to deploy JSF web apps as portlets
+- **Liferay Faces Bridge** lets you deploy JSF web apps as portlets
   without writing portlet-specific Java code. It also contains innovative
   features that make it possible to leverage the power of JSF 2.x inside a
   portlet application. Liferay Faces Bridge implements the JSR 329/378 Portlet
   Bridge Standard.
-- **Liferay Faces Alloy** enables you to use AlloyUI components in a way that
+- **Liferay Faces Alloy** lets you use AlloyUI components in a way that
   is consistent with JSF development. 
-- **Liferay Faces Portal** enables you to leverage Liferay-specific utilities
+- **Liferay Faces Portal** lets you leverage Liferay-specific utilities
   and UI components in JSF portlets. 
 
 For a comprehensive demo for the JSF component suite, visit the
 [Liferay Faces Showcase](http://www.liferayfaces.org/web/guest/showcase).
 
 If you're new to JSF, you probably want to know its strengths, its weaknesses,
-and how it stacks up to developing portlets with CSS/JavaScript. You'll learn
-information on JSF and Liferay Faces to help you decide what framework is best
-for your needs. 
+and how it stacks up to developing portlets with CSS/JavaScript. 
 
 Here are some good reasons to use JSF and Liferay Faces:
 
-- JSF is the Java EE standard for developing web applications that utilize the
+- JSF is the Java EE standard for developing web applications that use the
   Model/View/Controller (MVC) design pattern. As a standard, the specification
   is actively maintained by the Java Community Process (JCP), and the Oracle
   reference implementation (Mojarra) has frequent releases. Software Architects
@@ -41,8 +39,7 @@ Here are some good reasons to use JSF and Liferay Faces:
   application server vendors and have a guaranteed service-life according to
   Service Level Agreements (SLAs).
 - JSF was first introduced in 2003 and is, therefore, a mature technology for
-  developing web applications that are (arguably) simpler and easier to
-  maintain.
+  developing web applications that are (arguably) easier to maintain.
 - JSF Portlet Bridges (like Liferay Faces Bridge) are also standardized by the
   JCP and make it possible to deploy JSF web applications as portlets without
   writing portlet-specific Java code.
@@ -54,7 +51,7 @@ Here are some good reasons to use JSF and Liferay Faces:
 - JSF is designed with many extension points that make a variety of integrations
   possible.
 - There are several JSF component suites available including Liferay Faces
-  Alloy, ICEfaces, Primefaces, and RichFaces. Each of these component suites
+  Alloy, Primefaces, ICEfaces, and RichFaces. Each of these component suites
   fortify JSF with a variety of UI components and complimentary technologies
   such as Ajax Push.
 - JSF is a good choice for server-side developers that need to build web user
@@ -78,9 +75,10 @@ Here are some good reasons to use JSF and Liferay Faces:
 There are some reasons not to use JSF. For example, if you are a front-end
 developer who makes heavy use of HTML/CSS/JavaScript, you might find that JSF UI
 components render HTML in a manner that gives you less control over the overall
-HTML document. So, sticking with JavaScript and leveraging AlloyUI may be better
-for you. Or, perhaps standards aren't a major consideration for you or you may
-simply prefer developing portlets using your current framework.
+HTML document. So, sticking with JavaScript and leveraging AlloyUI or some other
+JavaScript framework may be better for you. Or, perhaps standards aren't a major
+consideration for you or you may simply prefer developing portlets using your
+current framework.
 
 Whether you develop your next portlet application with JSF and Liferay Faces or
 with HTML/CSS/JavaScript is entirely up to you. But you probably want to learn
