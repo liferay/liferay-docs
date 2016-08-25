@@ -42,9 +42,9 @@ Follow the steps below to create your custom Item Selector criterion:
     This class acts as a flag of sorts, allowing the Item Selector to accept it 
     as a valid criterion.
 
-    It could be used to pass information to the view if
+    Note that you can use this class to pass information to the view if
     needed. For example, if you need to show the images attached to a certain
-    entity you could add a field (adn setters and getters ) with the entity id
+    entity, you could add a field (and setters and getters ) with the entity ID
     in order to use it in the view.
 
     You should be aware that the criterion fields should be serializable and
@@ -86,8 +86,7 @@ Follow the steps below to create your custom Item Selector criterion:
         -->
   
 This ties this handler class to the new criterion class you just created, and 
-activates the OSGi bundle, so it's available for use.
-<!-- Is the information above correct? YES-->
+activates the OSGi component, so it's available for use.
 
 The selection view list is determined by the criterion specified in the
 `*ItemSelectorCriterionHandler` class. You can learn more about how selection 
