@@ -13,7 +13,7 @@ questions.
 Next, you'll answer these questions and learn the basic steps for installing
 Liferay.
 
-## Obtaining Liferay Portal [](id=obtaining-liferay-portal)
+## Obtaining @product@
 
 Anyone can download Liferay Portal from [https://www.liferay.com](https://www.liferay.com).
 Click Platform &rarr; *Downloads*, and you'll be able to download either the
@@ -35,8 +35,8 @@ to do is choose the one that best fits your needs. If you don't currently have
 an application server preference, consider starting with the Tomcat bundle.
 Tomcat is one of the most lightweight and straightforward bundles to configure.
 If you have an open source application server preference, choose the server you
-prefer from the available Liferay Portal bundles. You must have a JDK (Java
-Development Kit) installed prior to launching Liferay Portal.
+prefer from the available @product@ bundles. You must have a JDK (Java
+Development Kit) installed prior to launching @product@.
 
 Please note that Liferay is not able to provide application server bundles for
 proprietary application servers such as WebLogic or WebSphere, because the
@@ -46,8 +46,8 @@ the others. You'll need to follow our manual installation procedure using a
 `.war` file to install Liferay on proprietary application servers.
 
 Once you have Liferay, you can plan out your installation. First, determine if
-you need Liferay Portal Security turned on. Second, prepare your database.
-Third, install Liferay Portal. Fourth, configure search. You can install Liferay
+you need @product@ Security turned on. Second, prepare your database.
+Third, install @product@. Fourth, configure search. You can install Liferay
 either by using a bundle or by installing it manually on your existing
 application server. Next, we'll go over the steps it takes to install Liferay
 Portal.
