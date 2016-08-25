@@ -41,6 +41,23 @@ Liferay installation to run alongside Elasticsearch. In other words, run
 Elasticsearch in *remote operation mode*, as a standalone server or cluster of
 server nodes. The first step is to install Elasticsearch.
 
++$$$ 
+
+**Note:** During development or demonstration, you might find it convenient to
+run Elasticsearch in embedded mode, while clustering Liferay. In this scenario,
+each Liferay node starts its own embedded Elasticsearch node. The Elasticsearch
+nodes will automatically connect to each other and form an Elasticsearch cluster
+named LiferayElasticsearchCluster. The Liferay indexes will be given one shard
+each (number_of_shards=1), but the number of replicas (starting with
+number_of_replicas=0) will vary with the number of Liferay instances in the
+cluster.
+
+Because every individual Liferay instance holds a full copy of the
+entire index and runs all indexing commands for all documents, this would
+constrain scalability in a production environment.
+
+$$$
+
 ## Installing Elasticsearch
 
 Install Elasticsearch, and then you can begin configuring it to use with
@@ -509,8 +526,9 @@ line with `\n\`, like this:
 
 ## Troubleshooting Elasticsearch
 
-If you've set up Liferay with Elasticsearch in remote mode, but Liferay can't
-connect to Elasticsearch, check these things:
+Sometimes things don't go as planned. If you've set up Liferay with
+Elasticsearch in remote mode, but Liferay can't connect to Elasticsearch, check
+these things:
 
 -  Cluster name: The value of the `cluster.name` property in Elasticsearch must
 match the `clusterName` property you configured for Liferay's Elasticsearch adapter.
@@ -522,8 +540,9 @@ node or cluster, it will detect that port `9300` is taken, and will switch to po
 `9301`. If you then set Liferay's Elasticsearch adapter to remote mode, it will
 continue to look for Elasticsearch at the default port (`9300`).
 
-Now you have Elasticsearch configured for Liferay, and Liferay configured for
-Elasticsearch.
+Now that you have Elasticsearch configured for use with Liferay, read
+[here](discover/deployment/-/knowledge_base/7-0/shield) to learn about
+configuring Shield to secure your Elasticsearch data. 
 
 ## Related Topics
 
