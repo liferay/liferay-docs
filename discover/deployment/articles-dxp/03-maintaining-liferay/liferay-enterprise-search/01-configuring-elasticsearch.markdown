@@ -47,9 +47,9 @@ server nodes. The first step is to install Elasticsearch.
 run Elasticsearch in embedded mode, while clustering Liferay. In this scenario,
 each Liferay node starts its own embedded Elasticsearch node. The Elasticsearch
 nodes will automatically connect to each other and form an Elasticsearch cluster
-named LiferayElasticsearchCluster. The Liferay indexes will be given one shard
-each (number_of_shards=1), but the number of replicas (starting with
-number_of_replicas=0) will vary with the number of Liferay instances in the
+named `LiferayElasticsearchCluster`. The Liferay indexes will be given one shard
+each (`number_of_shards=1`), but the number of replicas (starting with
+`number_of_replicas=0`) will vary with the number of Liferay instances in the
 cluster.
 
 Because every individual Liferay instance holds a full copy of the
