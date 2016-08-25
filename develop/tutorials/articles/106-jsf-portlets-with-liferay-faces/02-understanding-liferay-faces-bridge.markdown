@@ -7,7 +7,7 @@ possible to leverage the power of JSF 2.x inside a portlet application.
 Liferay Faces Bridge is distributed in a `.jar` file. You can add Liferay Faces
 Bridge as a dependency to your portlet projects, in order to deploy your JSF web
 applications as portlets within JSR 286 (Portlet 2.0) compliant portlet
-containers, like Liferay Portal 5.2, 6.0, 6.1, and 6.2. 
+containers, like Liferay Portal 6.2. 
 
 The Liferay Faces Bridge project home page can be found
 [here](http://www.liferay.com/community/liferay-projects/liferay-faces/bridge). 
@@ -40,11 +40,12 @@ Portlet Bridge 2.0 ([JSR 329](http://www.jcp.org/en/jsr/detail?id=329)) EG. JSR
 
 After the [JSR 314](http://www.jcp.org/en/jsr/detail?id=314) EG released JSF 2.0
 in 2009 and JSF 2.1 in 2010, it became evident that a Portlet Bridge 3.0
-standard would be beneficial. Currently, the JCP has not formed such an EG. In
-the meantime, Liferay developed *Liferay Faces Bridge*, which targets Portlet
-2.0 and JSF 1.2/2.1/2.2. 
+standard would be beneficial. In 2015 the JCP formed [JSR 378]
+(http://www.jcp.org/en/jsr/detail?id=378)) which is defining a
+bridge for Portlet 3.0 and JSF 2.2. There are also variants of *Liferay Faces
+Bridge* that support Portlet 2.0 and JSF 1.2/2.1/2.2.
 
-Liferay Faces Bridge is an implementation of the JSR 329 Portlet Bridge
+Liferay Faces Bridge is the Reference Implementation (RI) of the Portlet Bridge
 Standard. It also contains innovative features that make it possible to leverage
 the power of JSF 2.x inside a portlet application. 
 
@@ -68,8 +69,8 @@ navigation rules. JSF portlet bridges ensure that URLs created by the portal
 comply with JSF navigation rules, so that a JSF portlet is able to switch to
 different views. 
 
-The JSR 329 standard defines several configuration options prefixed with the
-`javax.portlet.faces` namespace. Liferay Faces Bridge defines additional
+The JSR 329/378 standards defines several configuration options prefixed with
+the `javax.portlet.faces` namespace. Liferay Faces Bridge defines additional
 implementation-specific options prefixed with the `com.liferay.faces.bridge`
 namespace. 
 
@@ -86,7 +87,7 @@ assumptions, and behaviors for configuring the Bridge Request Scope.
 
 One of the key requirements in creating a JSF portlet bridge is managing JSF
 request-scoped data within the portlet lifecycle. This is normally referred to
-as the *Bridge Request Scope* by JSR 329. The lifespan of the Bridge Request
+as the *Bridge Request Scope* by JSR 329/378. The lifespan of the Bridge Request
 Scope works like this: 
 
 1. `ActionRequest`/`EventRequest`: `BridgeRequestScope` begins.
@@ -288,12 +289,12 @@ Faces Bridge.
 
 ## Configuring View Parameters [](id=configuring-view-parameters)
 
-In the case of a portlet `RenderRequest`, Section 5.2.6 of the JSR 329 Spec
+In the case of a portlet `RenderRequest`, Section 5.2.6 of the JSR 329/378 Spec
 requires that the bridge only executes the `RESTORE_VIEW` and `RENDER_RESPONSE`
 phases of the JSF lifecycle. In addition, Section 6.4 requires that a
 `PhaseListener` be used to skip the `APPLY_REQUEST_VALUES`,
 `PROCESS_VALIDATIONS`, `UPDATE_MODEL_VALUES`, and `INVOKE_APPLICATION` phases.
-These requirements are valid for JSF 1.x, but for JSF 2.x *View Parameters*, the
+These requirements are valid for JSF 1.2, but for JSF 2.x *View Parameters*, the
 presence of `f:metadata` and `f:viewParam` in a Facelet view, makes the entire
 JSF lifecycle run. 
 
@@ -306,8 +307,8 @@ provides a configuration option that you can specify in the portlet project's
         <param-value>false</param-value>
     </context-param>
 
-The param's default value is `true`. If you're using the JSF 1.x
-version of this feature, you should set the param value to `false`. 
+The param's default value is `true`. If you're using JSF 1.2, you should set
+the param value to `false`. 
 
 Great! You've learned another JSF portlet bridge standard and how to configure
 several key options in Liferay Faces Bridge. 
