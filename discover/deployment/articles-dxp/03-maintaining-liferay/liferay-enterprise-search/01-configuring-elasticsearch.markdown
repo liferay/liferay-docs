@@ -1,4 +1,4 @@
-# Configuring Elasticsearch for Liferay
+# Configuring Elasticsearch for Liferay [](id=configuring-elasticsearch-for-liferay-0)
 
 Liferay is an open source project, so you won't be surprised to learn that the
 default search engine that ships with Liferay is also an open source project.
@@ -26,7 +26,7 @@ These terms will be useful to understand as you read this guide:
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch installation (for example, `elasticsearch-2.2.0`). 
 -  *Liferay Home* refers to the root folder of your Liferay installation. It will contain the `osgi`, `deploy`, `data`, and `license` folders, among others.
 
-## Embedded vs. Remote Operation Mode
+## Embedded vs. Remote Operation Mode [](id=embedded-vs-remote-operation-mode)
 
 When you install Liferay, there's an embedded Elasticsearch already installed.
 In embedded mode, Elasticsearch search is run with Liferay as a library in
@@ -58,7 +58,7 @@ constrain scalability in a production environment.
 
 $$$
 
-## Installing Elasticsearch
+## Installing Elasticsearch [](id=installing-elasticsearch)
 
 Install Elasticsearch, and then you can begin configuring it to use with
 Liferay. Even if you already have Elasticsearch downloaded and unzipped, read
@@ -96,7 +96,7 @@ For more details refer to the [Elasticsearch installation guide](https://www.ela
 
 Once you have Elasticsearch installed, you need to configure it for @product@.
 
-## Configuring Elasticsearch
+## Configuring Elasticsearch [](id=configuring-elasticsearch)
 
 For detailed Elasticsearch configuration information, refer to the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/setup-configuration.html#settings).
@@ -132,7 +132,7 @@ navigate to Elasticsearch Home and enter
 Feel free to change the node name or the cluster name. Once you configure
 Elasticsearch to your liking, start it up.
 
-## Starting Elasticsearch
+## Starting Elasticsearch [](id=starting-elasticsearch)
 
 Start Elasticsearch by navigating to Elasticsearch Home and typing 
 
@@ -153,7 +153,7 @@ and running (do that if you haven't already) you need to introduce Liferay and
 Elasticsearch to each other. Fortunately, Liferay provides an adapter that helps
 it find and integrate your Elasticsearch cluster.
 
-## Configuring the Liferay Elasticsearch Adapter
+## Configuring the Liferay Elasticsearch Adapter [](id=configuring-the-liferay-elasticsearch-adapter)
 
 Liferay has an Elasticsearch adapter that ships with @product@. It's a module
 from the Liferay Foundation Suite that's deployed to the OSGi runtime, titled
@@ -184,13 +184,13 @@ To configure the Elasticsearch adapter from the System Settings application:
    search box) and click the Actions icon
    (![Actions](../../../images/icon-actions.png)), then *Edit*.
 
-    ![Figure x: Use the System Settings application in Liferay's Control Panel to
+    ![Figure 1: Use the System Settings application in Liferay's Control Panel to
     configure the Elasticsearch
     adapter.](../../../images/elasticsearch-system-settings.png)
 
 4. Change *Operation Mode* to *Remote*, and then click *Save*.
 
-    ![Figure x: Set Operation Mode to *Remote* from System
+    ![Figure 2: Set Operation Mode to *Remote* from System
     Settings.](../../../images/elasticsearch-configuration.png)
 
 5. After you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must
@@ -219,7 +219,7 @@ more configuration options available. For a detailed accounting of these, refer
 to the section of this article titled Available Elasticsearch Adapter
 Configurations.
 
-## Clustering Elasticsearch in Remote Operation Mode
+## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
 
 Clustering Elasticsearch is easy. Each time you run the Elasticsearch start
 script, a new node is added to the cluster. If you want four nodes, for example,
@@ -236,7 +236,7 @@ shards is `1`:
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
-## Advanced Configuration of the Liferay Elasticsearch Adapter
+## Advanced Configuration of the Liferay Elasticsearch Adapter [](id=advanced-configuration-of-the-liferay-elasticsearch-adapter)
 
 The default configurations for Liferay's Elasticsearch adapter module are set
 in a Java class:
@@ -247,7 +247,7 @@ While the Elasticsearch adapter has a lot of configuration options out of the
 box, you can also add configuration options. First learn about all the out of
 the box options, then decide if you need to add more.
 
-### Available Elasticsearch Adapter Configurations
+### Available Elasticsearch Adapter Configurations [](id=available-elasticsearch-adapter-configurations)
 
 As mentioned above, there's a lot of configurability baked into Liferay's
 Elasticsearch adapter module. The following is a list of all of the
@@ -316,24 +316,24 @@ for more information).
 -  `transportTcpPort=`
 Set the String value for the port to bind for communication between nodes.
 Accepts a single value or a range
-(see[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-transport.html#_tcp_transport)
+(see [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-transport.html#_tcp_transport)
 for more information).
 
 -  `transportAddresses=localhost:9300`
 Set the String values for the addresses of the remote Elasticsearch nodes to
 connect to. This value is required when Operation Mode is set to remote (see
 [here](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
-for more information).
+for more information). Specify as many or few nodes as you see fit.
 
 -  `clientTransportSniff=true`
 Set this booleant to true to enable cluster sniffing and dynamically discover
 available data nodes in the cluster
-(see[here](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
+(see [here](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
 for more information).
 
 -  `clientTransportIgnoreClusterName=false`
 Set this boolean to true to ignore cluster name validation of connected nodes
-(see[here](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
+(see [here](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
 for more information).
 
 -  `clientTransportNodesSamplerInterval=5s`
@@ -383,13 +383,13 @@ See: Adding Settings to the Liferay Elasticsearch Adapter
 You can easily configure these settings in the System Setting application, or,
 as mentioned above, you can specify them in a deployable OSGi `.cfg` file.
 
-### Adding Settings to the Liferay Elasticsearch Adapter
+### Adding Settings to the Liferay Elasticsearch Adapter [](id=adding-settings-to-the-liferay-elasticsearch-adapter)
 
 Even if the many available configuration options aren't enough, you can add
 extra settings by using one or more of the `additionalConfigurations`,
 `additionalIndexConfigurations`, or `additionalTypeMappings` settings. 
 
-![Figure x: You can add Elasticsearch configurations to the ones currently available
+![Figure 3: You can add Elasticsearch configurations to the ones currently available
 in System Settings.](../../../images/elasticsearch-additional-configs.png)
 
 -  `additionalConfigurations` is used to define extra settings (defined in YAML)
@@ -508,7 +508,7 @@ summary, the contributor module needs the following:
 
 $$$
 
-### Multi-line YAML Configurations
+### Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
 
 If you configure the settings from the last section using a `.cfg` configuration
 file, you might find yourself needing to write YML snippets that span multiple
@@ -524,7 +524,7 @@ line with `\n\`, like this:
                         monitor.jvm.gc.old.warn: 600s\n\
                         monitor.jvm.gc.young.warn: 600s
 
-## Troubleshooting Elasticsearch
+## Troubleshooting Elasticsearch [](id=troubleshooting-elasticsearch)
 
 Sometimes things don't go as planned. If you've set up Liferay with
 Elasticsearch in remote mode, but Liferay can't connect to Elasticsearch, check
@@ -544,7 +544,7 @@ Now that you have Elasticsearch configured for use with Liferay, read
 [here](discover/deployment/-/knowledge_base/7-0/shield) to learn about
 configuring Shield to secure your Elasticsearch data. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Introduction to Liferay Search](develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
 
