@@ -60,11 +60,10 @@ In this tutorial, you'll learn how to customize the User Personal Bar.
 
     The example annotation provided above is the one provided for Liferay's
     current User Personal Bar in the
-    [ProductNavigationUserPersonalBarViewPortletProvider](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/web-experience/product-navigation/product-navigation-user-personal-bar-web/src/main/java/com/liferay/product/navigation/user/personal/bar/web/internal/portlet/ProductNavigationUserPersonalBarViewPortletProvider.java)
-    class.
+    `ProductNavigationUserPersonalBarViewPortletProvider` class.
 
 4. Extend the
-   [BasePortletProvider](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/portal-kernel/src/com/liferay/portal/kernel/portlet/BasePortletProvider.java)
+   [BasePortletProvider](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
    abstract class and implement `ViewPortletProvider`.
 
 5. Specify the portlet you'd like to provide in the User Personal Bar by using
