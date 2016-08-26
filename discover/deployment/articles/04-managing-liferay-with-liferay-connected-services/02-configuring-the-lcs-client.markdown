@@ -61,6 +61,8 @@ server's JVM system properties. You can do this two different ways:
 
 1. As JVM app server arguments:
 
+        -Dhttp.proxyHost=your.proxy.host
+        -Dhttp.proxyPort=your.proxy.port
         -Dhttps.proxyHost=your.proxy.host
         -Dhttps.proxyPort=your.proxy.port
 
@@ -68,6 +70,8 @@ server's JVM system properties. You can do this two different ways:
    [Liferay Home folder](/discover/deployment/-/knowledge_base/6-2/liferay-home), 
    and set the following properties in this file: 
 
+        http.proxyHost=your.proxy.host
+        http.proxyPort=your.proxy.port
         https.proxyHost=your.proxy.host
         https.proxyPort=your.proxy.port
 
