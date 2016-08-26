@@ -5,7 +5,7 @@ require multiple components, a themelet only requires the files you wish to
 extend. This creates a more modular approach to theme design, that lends itself
 well to collaboration, and reduces the need for duplicated code in your theme.
 
-Themlets allow developers to easily share code snippets across their themes and
+Themelets allow developers to easily share code snippets across their themes and
 with other developers. A themelet can consist of CSS, JavaScript, and templates,
 just like a theme.
 
