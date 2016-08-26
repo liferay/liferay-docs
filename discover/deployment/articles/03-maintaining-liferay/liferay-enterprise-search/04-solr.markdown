@@ -1,4 +1,4 @@
-# Using Solr with Liferay
+# Using Solr with Liferay [](id=using-solr-with-liferay)
 
 Solr is a popular enterprise search platform build on Apache Lucene. It's
 popular for its reliability, scalability, and fault tolerance. Read more about
@@ -13,7 +13,8 @@ JVM) [isn't supported by Elasticsearch](https://www.elastic.co/support/matrix),
 you might choose to use Solr to search and index your Liferay data.
 
 Liferay's support for Solr is compatible with Solr versions 5.2.x through 5.5.x.
-There are two ways to install Solr support into Liferay:
+To make Liferay and Solr talk to each other, you'll need to install the Liferay
+Solr adapter. There are two ways:
 
 1. Navigate to the [Liferay Marketplace](https://web.liferay.com/marketplace/)
    website, and download the LPKG file for Liferay Enterprise Search-Solr Search
@@ -26,10 +27,16 @@ There are two ways to install Solr support into Liferay:
 
 This guide will lead you through the process of installing and configuring Solr 
 
-*Solr Home*: The root of the Solr system (pun intended). 
-*Liferay Home*
+*Solr Home*: The center of the Solr system (pun intended). This directory will
+be `sorl-[version]/server/solr`.
+*Liferay Home*: The root folder of your Liferay installation. It will contain
+the osgi, deploy, data, and license folders, among others.
 
-## Installing and Configuring Solr 5
+Before configuring Liferay for Solr, you need to install and set up Solr.
+
+## Installing and Configuring Solr 5 [](id=installing-and-configuring-solr-5)
+
+To install and properly configure Solr for Liferay:
 
 1. Download [Solr](http://archive.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.zip) and unzip it.
 
@@ -56,7 +63,9 @@ This guide will lead you through the process of installing and configuring Solr
 
         Solr_Home/liferay/conf
 
-        <!-- So this is replaceing the files that are already there? confirm-->
+    This replaces the current `solrconfig.xml` and `schema.xml` files.
+    <!-- Do we need to explain this a little bit? What's the difference in
+    configuration? between the defaults and those in the adapter JAR -->
 
 7. Create a `core.properties` file in `Solr_Home/liferay`, and add these
    contents:
@@ -85,10 +94,9 @@ This guide will lead you through the process of installing and configuring Solr
 
 8. Start the Solr server by entering
 
-        ./../../bin/solr start -f
+        ./bin/solr start -f
 
-    from Solr Home.
-<!-- Is this the best way to specify this? -->
+    from the top-level directory of your Solr installation (`solr-[version]`).
 
 9. The Solr server listens on port `8983` by default. Navigate to
    `http://localhost:8983/solr/#/~cores` (assuming you're testing locally with
@@ -96,7 +104,7 @@ This guide will lead you through the process of installing and configuring Solr
 
 Solr is now installed. Next install and configure Liferay's Solr adapter.
 
-## Installing and Configuring the Liferay Solr Adapter
+## Installing and Configuring the Liferay Solr Adapter [](id=installing-and-configuring-the-liferay-solr-adapter)
 
 Since Elasticsearch is the default search engine in Liferay, the Elasticsearch
 adapter is already installed and running. Stop it before configuring the Solr
@@ -132,7 +140,7 @@ Solr adapter:
    &rarr; *Server Administration*, and click *Execute* next to the *Reindex all
    search indexes* option.
 
-   ![Figure x: Once the Solr adapter is installed, you can reindex your Liferay
+   ![Figure 1: Once the Solr adapter is installed, you can reindex your Liferay
    data against your Solr server.](../../../images/solr-reindex.png)
 
 In production deployments, specify your edits to the Solr adapter's default
@@ -143,7 +151,7 @@ configurations.
 
 <!-- Figure might be unnecessary bc of the next section describing all the
 settings. -->
-![Figure x: You can configure Solr from Liferay's System Settings application.
+![Figure 2: You can configure Solr from Liferay's System Settings application.
 This is most useful during development and testing.](../../../images/solr-system-settings.png)
 
 Here are the available configurations with their default values. They're listed
@@ -156,7 +164,6 @@ in the correct format for specifying via `.cfg` file:
     A String with the value of *BASIC* or *CERT*. Use BASIC when connecting
     using the [Basic Authentication plugin](https://cwiki.apache.org/confluence/display/solr/Basic+Authentication+Plugin), otherwise select CERT to connect using [2-way SSL
     authentication](https://cwiki.apache.org/confluence/display/solr/Enabling+SSL).
-<!-- Auth vs. 2-way SSL; Jargon?-->
 
 -  `clientType=REPLICATED`
 
@@ -187,11 +194,10 @@ in the correct format for specifying via `.cfg` file:
     A String with the ZooKeeper host and port. This is required when using the
     adapter in CLOUD mode.
 
-## High Availability with SolrCloud
+## High Availability with SolrCloud [](id=high-availability-with-solrcloud)
 
 You can use SolrCloud if you need a cluster of Solr servers featuring fault
 tolerance and high availability. 
-<!-- More intro stuff?-->
 
 The steps included here should be considered the bare minimum of what must be
 done to configure SolrCloud with Liferay. For example, these instructions cover
@@ -202,29 +208,27 @@ assume you've followed the earlier section on *Installing and Configuring Solr
 information](https://cwiki.apache.org/confluence/display/solr/SolrCloud).
 
 1. Stop the Solr server if it's running.
-2. Navigate to the `solr-[version]/server/solr/configsets` folder and create a folder called 
+
+2. Navigate to the `Solr_Home/configsets` folder and create a folder called 
 
         liferay_configs
 
 3. Copy the `conf` folder from `Solr_Home/liferay` to the `liferay_configs`
    folder you just created.
-    <!--Right now Solr Home is solr-[version]/server/solr. Does that make the most
-sense?-->
 
     The `configset/liferay_configs` folder is used to configure the SolrCloud
-    liferay collection and uploaded to ZooKeeper. By copying the `conf` folder
-    from the `liferay` server configured earlier, you're using the
-    `schema.xml` and `solrconfig.xml` files provided with the Liferay Solr Adapter.
-    <!-- This might be confusing unless they remeber that they copeid the two
-    files from teh adapter JAR above. Consider rewording-->
+    liferay collection, and is uploaded to ZooKeeper. By copying the `conf`
+    folder from the `liferay` server configured earlier, you're using the
+    `schema.xml` and `solrconfig.xml` files provided with the Liferay Solr
+    Adapter.
 
 4. Next launch an interactive SolrCloud session to configure your SolrCloud
    cluster. Use this command:
 
         ./bin/solr -e cloud
 
-5. Complete the setup wizard. These steps demonstrate creating a two-node cluster
-   will be created:
+5. Complete the setup wizard. These steps demonstrate creating a two-node
+   cluster:
 
     -  Enter `2` for the number of nodes.
     -  Specify ports `8983` and `7574` (the defaults). Both nodes will be
@@ -233,6 +237,7 @@ sense?-->
                 Starting up SolrCloud node1 on port 18983 using command:
 
                 solr start -cloud -s example/cloud/node1/solr -p [port#]  -m 512m
+
     -  Name the collection *liferay*.
     -  Split the collection into two shards.
     -  Specify two replicas per shard.
@@ -280,14 +285,21 @@ To stop Solr while running in SolrCloud mode, use the *stop* command, like this:
 
     bin/solr stop -all
 
-## Configure the Solr Adapter for SolrCloud
+## Configure the Solr Adapter for SolrCloud [](id=configure-the-solr-adapter-for-solrcloud)
 
-There's only one thing left to do: specify the client type as *Cloud* in
+There's only one thing left to do: specify the client type as *CLOUD* in
 Liferay's Solr adapter.
 
 1. Either from System Settings or your OSGi `.cfg` file, set the *Client Type*
-   to *Cloud*.
+   to *CLOUD*.
 
         clientType=CLOUD
 
 2. Start Liferay if it's not running already.
+
+Now you're able to configure Liferay for Solr, and Solr for Liferay. Remember
+that Elasticsearch is the default search engine for Liferay, so if you're not
+constrained to use Solr or already a Solr expert, consider Elasticsearch for you
+search engine requirements. If you do use Solr, then you can tell all your
+colleagues that your Liferay installation's search capability is Solr powered
+(pun intended).
