@@ -31,7 +31,7 @@ Knowledge Base Display, Knowledge Base Search, and Knowledge Base Section.
 You'll learn what each does as you learn how to manage your knowledge base. 
 First you'll learn how to create and manage articles. 
 
-## Creating and Managing Articles
+## Creating and Managing Articles [](id=creating-and-managing-articles)
 
 In Site Administration, the Knowledge Base has everything administrators and 
 authors need to create, update, and manage articles. To navigate to the 
@@ -207,7 +207,7 @@ $$$
 
 So far, you've learned how to create, edit, and organize articles. You've also
 seen how the suggestions feature lets you and your users collaborate on your
-Knowledge Base content. Next, you'll learn how the other Knowledge Base apps let 
+knowledge base content. Next, you'll learn how the other Knowledge Base apps let 
 you display, navigate, aggregate, and view articles. 
 
 ## Knowledge Base Display [](id=knowledge-base-display)
@@ -287,7 +287,7 @@ appears to the right of the article's title. This button lets users access the
 article's online source location. You can use this feature to encourage users to 
 contribute fixes or improvements to articles. If you're interested in this 
 feature, you can direct your administrator to follow the instructions in 
-[Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration). 
+[Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features). 
 
 Great! Now you know the basics of how Knowledge Base Display works. Next, you'll 
 learn how to let users choose between different article sets in different 
@@ -352,9 +352,9 @@ boxes in the Add Article and Edit Article screens let you define the section(s)
 the articles belong to. You can add any number of Knowledge Base Section apps to 
 a page and each one can display articles from any number of sections. To use 
 sections, your Liferay administrator must configure the feature in the Knowledge 
-Base app's properties within Portal's System Settings. Once the feature is 
-enabled, he or she must specify in the System Settings any section names you 
-want to use. The [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration)
+Base app's properties within Portal's system settings. Once the feature is 
+enabled, he or she must specify in the system settings any section names you 
+want to use. The [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
 section explains how to configure the sections feature in System Settings. 
 
 ![Figure 9: Here's an image of Knowledge Base Section apps on a page.](../../../images/kb-section.png)
@@ -410,7 +410,7 @@ editors, and an IETF draft for making it an official Internet media type
 The Knowledge Base supports a Markdown dialect known as
 [Multi-Markdown](http://fletcher.github.io/MultiMarkdown-4/). This dialect
 extends the original Markdown with features like table formatting, image
-captions, and footnotes. 
+captions, and footnotes.
 
 For the Knowledge Base to import your Markdown articles, they must adhere to
 these requirements: 
@@ -450,7 +450,7 @@ with their accompanying image files.
 -  Image files must be in a supported format and must use the appropriate file
    extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and
    `.png`. They're specified via an app system setting. For details, see 
-   [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration).
+   [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features).
 
 **Example Basic Zip File Structure:**
 
@@ -609,32 +609,20 @@ Congratulations on mastering the art of creating and importing Markdown files to
 produce Knowledge Base articles! 
 
 Next, Liferay administrators can learn how to override the Knowledge Base app's 
-properties to enable and configure some advanced, but optional features. 
+properties to enable and configure features. 
 
 ## Advanced Configuration [](id=advanced-configuration)
-<!-- Note KbArticlesSections and adminKBArticleSections is located in Knowledge 
-Base Section subsection of systems properties
 
-mention number of stars property was removed and and how to configure new 
-ratings system-->
 In previous versions of Liferay, the Knowledge Base's configuration was defined
-in its `portlet.properties` file and could be overridden with a 
+in its `portlet.properties` file and could be overwritten with a 
 `portlet-ext.properties` file. Since Liferay 7, a new Configuration API is 
-implemented that allows you to configure the Knowledge Base via System Settings. 
+implemented that allows you to configure the Knowledge Base via system settings. 
 This allows an Administrator to make changes to the Knowledge Base's 
 configuration and see them immediately. The System Settings are organized into 
 five sub sections, one for the default Knowledge Base configuration for all 
-sites(*Knowledge Base Service*), and one for each of the Knowledge Base subapps(
-*Knowledge Base Article*, *Knowledge Base Display*, *Knowledge Base Search*, and 
-*Knowledge Base Section*).
-
-The Knowledge Base app has several optional features that are disabled by 
-default. These include source URL, import file conventions, new article priority 
-increment, and sections. Now you'll learn how to configure these features by 
-editing the Knowledge Base app's system settings. Advanced configuration should 
-only be performed by a Liferay administrator, as the person modifying the 
-configuration must be comfortable with using the Control Panel to configure
-system settings. 
+sites(*Knowledge Base Service*), and one for each of the other Knowledge Base 
+apps(*Knowledge Base Article*, *Knowledge Base Display*, *Knowledge Base Search*, 
+and *Knowledge Base Section*).
 
 +$$$
 
@@ -643,27 +631,29 @@ only be performed by a Liferay administrator.
 
 $$$
 
-Next, you'll learn about the Knowledge Base app's settings and how to configure 
-the default values. 
-
-### Configuring App Settings 
-
 To start, open the Control Menu and navigate to *Control Panel* &rarr; 
 *Configuration* &rarr; *System Settings*. Click the *Collaboration* link at the
-top and scroll down.
+top and scroll down to the *Knowledge Base* options.
 
-Most of the `portal.properties` that were used in Liferay 6.2 are now in the 
-*Knowledge Base Service* system settings.
+The next few sections show the old properties and the new corresponding system 
+settings to use, as well as a brief description of what the setting does along
+with possible values.
+
+The configuration settings that are shared across the Knowledge Base apps are 
+covered in the [Shared Configuration Menu Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#shared-configuration-menu-settings)
+section.
+
+The optional configuration settings are covered in the 
+[Optional Configuration Features](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
+section.
+
+### Knowledge Base Service Configuration Menu [](id=knowledge-base-service-configuration-menu)
 
 Here is a list of the properties previously found in Knowledge Base's 
 `portlet.properties` and the new properties to use in the Knowledge Base Service
-configuration menu of System Settings:
+System Settings configuration menu:
 
 <style>
-.lego-image {
-	max-height: 100%;
-	max-width: 100%;
-}
 .max-960 {
 	margin: 0 auto;
 	max-width: 960px;
@@ -672,7 +662,7 @@ configuration menu of System Settings:
 .max-960 {
 	max-width: none;
 }
-.metadata-guidelines-table td {
+.system-settings-table td {
 	border-bottom: 1px solid;
 	border-top: 1px solid;
 	padding: 10px;
@@ -688,12 +678,10 @@ configuration menu of System Settings:
 }
 </style>
 
-**Knowledge Base Service**
-
-<div class="lego-article metadata-guidelines-table" id="article-33460946">
-<div class="lego-article-content max-960">
-<div class="aui-helper-clearfix lego-section section-1" >
-<div class="aui-w100 block-1 content-column lego-block" >
+<div class="system-settings-table">
+<div class="max-960">
+<div class="aui-helper-clearfix section-1" >
+<div class="aui-w100 block-1 content-column" >
 <div class="content-column-content">
 <table>
 	<thead>
@@ -845,12 +833,122 @@ configuration menu of System Settings:
 </div>
 </div>
 
-**Knowledge Base Section**
++$$$
 
-<div class="lego-article metadata-guidelines-table" id="article-33460946">
-<div class="lego-article-content max-960">
-<div class="aui-helper-clearfix lego-section section-1" >
-<div class="aui-w100 block-1 content-column lego-block" >
+**Note:** The `knowledge.base.ratings.number.of.stars` property has been removed 
+since Knowledge Base now has a Ratings Configuration Framework. You can change 
+the ratings type in the Instance Settings configuration menu under the *Social* 
+tab. You can also configure the ratings type for an individual site under the 
+*Social* tab of the Site Settings configuration menu.
+
+The `knowledge.base.social.bookmarks.display.style` property can now be found
+under the *Social bookmarks display style* setting of each Knowledge Base 
+app's configuration menu in System Settings.
+
+$$$
+
+The list below describes what each configuration option does in the System
+Settings UI.
+
+-  **Get editor name:**  Sets the default editor. Possible values are: 
+   `alloyeditor`, `ckeditor`, `simple`, `tinymce`, and `tinymce_simple`.
+
+-  **Article increment piority enabled:** Covered in the 
+   [Optional Configuration Features](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
+   section.
+   
+-  **Markdown settings:** Covered in the [Optional Configuration Features](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
+   section.
+   
+-  **Source URL settings:** Covered in the [Optional Configuration Features](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
+   section.
+   
++$$$
+
+**Note:** If you view the settings in each of these configuration menus you'll 
+see that some settings have a value that is set to a variable. For example, the 
+Knowledge Base Article configuration menu has the value shown below for the 
+*Social bookmarks types* setting:
+
+    ${server-property://com.liferay.portal/social.bookmark.types}
+    
+the `server-property` prefix specifies that this value is set through a server
+property. You can view the default value by going to *Configuration* &rarr; 
+*Server Administration* and selecting the *Properties* tab and 
+*Portal Properties* sub-tab. From here you can Search for the property you 
+want(e.g., `social.bookmark.types`) to see the default value. To overwrite the 
+property's default value, add the updated property values to the 
+`portal-ext.properties` file in your app server's root directory.
+
+The second kind of variable prefix is `resource`. For example, the
+*Email KBArticle suggestion in progress body* setting in the Knowledge Base 
+Service configuration menu has the following value:
+
+    ${resource:com/liferay/knowledge/base/dependencies/email_kb_suggestion_in_progress_body.tmpl}
+
+This points to the resource that provides the value. To overwrite these 
+resources, you need to either change the configuration in the settings UI to 
+point to your new file, or using a configuration file in your app server's 
+`osgi/config` directory, you need to overwrite the property to point to the 
+absolute file path of the new file. You can view the current configuration
+files and settings by exporting the configuration file. This is covered more in
+the [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
+User Guide doc.
+
+$$$
+   
+-  **Email from name:** Sets the Sender's name for automated emails.
+   
+-  **Email from address:** Sets the Sender's email address for automated emails.
+   
+-  **Email KBArticle [name] enabled:** These properties set whether to enable
+   automated emails for the named actions 
+   (e.g., *Email KBArticle added enabled*, if enabled, sends an automated email 
+   when an article is added).
+   
+-  **Email KBArticle [action] [section]:** These properties set the email
+   templates for the named action and corresponding section
+   (e.g., *Email KBArticle added body* sets the body template for the kb article 
+   added email.)
+   
+-  **Rss delta:** Sets the pagination for RSS entries.
+
+-  **Rss display style:** Sets the display style of the RSS. Possible values are 
+   `abstract`, `full-content`, or `title`.
+   
+-  **Rss format:** Sets the web feed language to use for your RSS feed. Possible 
+   values are `Atom10` (Atom 1.0 the default), `RSS10`(RSS 1.0), or 
+   `RSS20`(RSS 2.0).
+   
+-  **Rss feed type:** Sets the default feed type from the feed types defined in 
+   the `rss.feed.types` portal property.
+
+### Knowledge Base Article Configuration Menu [](id=knowledge-base-article-configuration-menu)
+
+-  **Show/Enable KBArticle [element]:** Sets whether to enable or show the named
+   kb article element.
+
+### Knowledge Base Display Configuration Menu [](id=knowledge-base-display-configuration-menu)
+
+The list below describes what each configuration option does in the System
+Settings UI.
+
+-  **Show/Enable KBArticle [element]:** Sets whether to enable or show the named
+   kb article element.
+
+-  **Content root prefix:** Sets the default value for the content root prefix.
+
+### Knowledge Base Search Configuration Menu [](id=knowledge-base-search-configuration-menu)
+
+-  **Show/Enable KBArticle [element]:** Sets whether to enable or show the named
+   kb article element in the search results.
+   
+### Knowledge Base Section Configuration Menu [](id=knowledge-base-section-configuration-menu)
+
+<div class="system-settings-table">
+<div class="max-960">
+<div class="aui-helper-clearfix section-1" >
+<div class="aui-w100 block-1 content-column" >
 <div class="content-column-content">
 <table>
 	<thead>
@@ -875,7 +973,7 @@ configuration menu of System Settings:
 				        admin.kb.article.sections.default
 			</td>
 			<td>
-					kbArticlesSections
+					adminKBArticleSectionsDefault
 			</td>
 		</tr>
 	</tbody>
@@ -886,21 +984,69 @@ configuration menu of System Settings:
 </div>
 </div>
 
-+$$$
+The list below describes what each configuration option does in the System
+Settings UI.
 
-**Note:** The `knowledge.base.ratings.number.of.stars` property has been removed 
-since Knowledge Base now has a Ratings Configuration Framework. You can change 
-the ratings type in the Instance Settings configuration menu under the *Social* 
-tab. You can also configure the ratings type for an individual site under the 
-*Social* tab of the Site Settings configuration menu.
+-  **kb articles sections:** Sets the default available sections with a 
+   comma-separated list.
+-  **kb article display style:** Sets the default kb article display style. 
+   Possible values are `title` or `abstract`.
+   
+-  **show/enable KBArticle [element]:** Sets whether to enable or show the named
+   kb article element.
+   
+-  **Admin KBArticle sections:** Sets the kb article sections available in the
+   admin portlet.
+   
+-  **Admin KBArticle sections default:** Sets the default selected section in 
+   the admin portlet.
 
-The `knowledge.base.social.bookmarks.display.style` property can now be found
-under the Social bookmarks display style of each Knowledge Base sub app
-configuration menu in System Settings.
+### Shared Configuration Menu Settings [](id=shared-configuration-menu-settings)
 
-$$$
+Here is a listing of the shared configuration settings that you can set for
+each knowledge base app and the possible values:
 
-The optional features are covered below:
+-  **Resource Prim key:** Sets the primary key that identifies a particular 
+   kb(Knowledge Base) article or kb folder 
+   (depending on the resource class name ID).
+   
+-  **Resource class name id:** Sets the class name of either the kb article or 
+   kb folder. This value needs to match the value of the `Resource Prim key`. If 
+   the classname is a kb article, the resource prim key needs to be the prim key 
+   of a kb article. If the class name belongs to a kb folder the resource prim 
+   key needs to belong to a kb folder.
+   
+-  **Enable KBArticle description:** Sets whether to allow users to add a 
+   description to the kb articles.
+   
+-  **Enable KBArticle view count increment:** sets whether to add a view counter 
+   to the kb article.
+   
+-  **Enable social bookmarks:** Sets whether to display social bookmarks 
+   when viewing a kb article.
+   
+-  **Social bookmarks display style:** Sets the display style of the social
+   bookmarks. Possible values are `menu`, `simple`, `vertical`, or `horizontal`.
+   
+-  **Social bookmarks display position:** Sets the position to display social 
+   bookmarks. Possible values are `top` or `bottom`.
+   
+-  **Social bookmarks types:** A comma-separated list of the possible bookmarks 
+   types (twitter,facebook,plusone for example). Overwrite with a 
+   `portal-ext.properties` file.
+    
+Next, Liferay administrators can learn how to override the Knowledge Base app's 
+properties to enable and configure some advanced, but optional features.
+   
+### Optional Configuration Features [](id=optional-configuration-features)
+
+The Knowledge Base app has several optional features that are disabled by 
+default. These include source URL, import file conventions, new article priority 
+increment, and sections. Now you'll learn how to configure these features by 
+editing the Knowledge Base app's system settings. Advanced configuration should 
+only be performed by a Liferay administrator, as the person modifying the 
+configuration must be comfortable with using the Control Panel to configure
+system settings.
 
 **Source URL Settings:** Defines the source location of importable Markdown
 files. This is intended to point to an online source repository where the files
@@ -952,7 +1098,7 @@ setting:
 
 *Article increment priority enabled*
 
-Alternatively, you can enable or disable this feature for each sub-app in the 
+Alternatively, you can enable or disable this feature for each app in the 
 corresponding Knowledge Base app configuration menu in System Settings.
 
 **Section Names Setting:** The section names setting lets you specify names of 
@@ -969,7 +1115,7 @@ This creates the sections *Business*, *Politics*, and *World*.
 
 Click the *Update* button to save your settings.
 
-Your app now uses the settings you specified! 
+Your app now uses the settings you specified!
 
 You've learned the benefits of publishing articles using the Knowledge Base
 app. You've seen how easy it is to create, organize, and manage articles, and 
