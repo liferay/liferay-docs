@@ -25,10 +25,11 @@ Solr adapter. There are two ways:
    &rarr; *Store*. Sign in using your credentials, search for Solr Search
    Engine, and purchase the Liferay Enterprise Search-Solr Search Engine entry.
 
-This guide will lead you through the process of installing and configuring Solr 
+This guide will lead you through the process of installing and configuring Solr.
+As you proceed, these terms will be useful to keep in mind:
 
 *Solr Home*: The center of the Solr system (pun intended). This directory will
-be `sorl-[version]/server/solr`.
+be `solr-[version]/server/solr`.
 *Liferay Home*: The root folder of your Liferay installation. It will contain
 the osgi, deploy, data, and license folders, among others.
 
@@ -75,7 +76,7 @@ To install and properly configure Solr for Liferay:
         name=liferay
         schema=schema.xml
 
-    Checkpoint: your `Solr_Home/liferay` folder should now have this structure:
+8. Checkpoint: your `Solr_Home/liferay` folder should now have this structure:
 
         liferay
         ├── conf
@@ -144,7 +145,7 @@ Solr adapter:
    data against your Solr server.](../../../images/solr-reindex.png)
 
 In production deployments, specify your edits to the Solr adapter's default
-configurations using a `.cfg` deployed to the `Liferay_Home/osgi/configs`
+configurations using a `.cfg` file deployed to the `Liferay_Home/osgi/configs`
 folder. During testing and development, the System Settings app in Liferay's
 Control Panel &rarr; Configuration section is convenient for editing the default
 configurations.
@@ -252,7 +253,7 @@ Verify its status by running the *status* command:
 
     ./bin/solr status
 
-You'll see log out put like this:
+You'll see log output like this:
 
     Found 2 Solr nodes: 
 
