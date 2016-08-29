@@ -697,12 +697,9 @@ you can display one or more *sections* (groups) of articles. Navigate to the
 *Knowledge Base Section* configuration menu from *System Settings* &rarr; 
 *Collaboration*, click the plus button next to the *Admin KBArticle sections* 
 setting to add a new field for each section you want, and enter a name for each 
-section:
+section as shown in the figure below:
 
-*Admin KBArticle sections*
-Business
-Politics
-World
+![Figure 12: Adding a new field for the *Admin KBArticle sections* setting creates a new section for the Knowledge Base Section app.](../../../images/kb-section-setting.png)
 
 This creates the sections *Business*, *Politics*, and *World*. 
 
