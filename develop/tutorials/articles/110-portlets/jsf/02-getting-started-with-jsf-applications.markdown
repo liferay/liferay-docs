@@ -1,5 +1,212 @@
 # Getting Started with JSF Applications [](id=getting-started-with-jsf-applications)
 
+@product@'s modular architecture lends itself well to modular applications
+created by a multitude of different technologies. JSF applications are no
+different, and can be developed to seamlessly integrate into the Liferay
+platform. In this tutorial, you'll step through packaging and creating a JSF
+application that is deployable as an OSGi module at runtime. First, you'll learn
+how to package a JSF application as a module.
+
+## Packaging a JSF Application
+
+Developers creating portlets for Liferay 7.0 can package their portlets as Java
+EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR) OSGi
+bundle artifacts. JSF portlet developers, however, must package their portlets
+as WAR artifacts because the JSF framework expects a WAR layout and often
+requires the `WEB-INF/faces-config.xml` descriptor and other Java EE resources
+such as the `WEB-INF/web.xml` descriptor.
+
+Liferay 7.0 supports the OSGi Web Application Bundle (WAB) standard for
+deployment of Java EE style WARs. Simply put, a WAB is an archive that has a WAR
+layout and contains a `META-INF/MANIFEST.MF` file with the `Bundle-SymbolicName`
+OSGi directive. Although the source of the project has a WAR layout, the
+artifact filename may end with either the `.jar` or `.war` extension.
+
+Enabling WABs to run as OSGi modules at runtime is made possible by the Liferay
+WAB Extender. The Liferay WAB Generator converts your WAR artifact to a WAB at
+deployment time. You can learn more about the WAB Generator in the
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+tutorial.
+
+This is how a JSF WAR artifact is structured: 
+
+- `META-INF/`
+    - `MANIFEST.MF` (Made OSGi-ready at deploy time via the WAB Generator)
+- `WEB-INF/`
+    - `classes/`
+        - Class files and related properties
+    - `lib/`
+        - JAR dependencies
+    - `resources/`
+        - CSS, XHTML, PNG or other frontend files
+    - `views/`
+        - XHTML views
+    - `faces-config.xml`
+    - `liferay-plugin-package.properties`
+    - `liferay-portlet.xml`
+    - `portlet.xml`
+    - `web.xml`
+
+In the next section, you'll begin creating a simple JSF application that is
+deployable to @product@.
+
+## Creating a JSP Application
+
+Liferay supports developing and deploying JSF portlets on Liferay Portal by
+using
+[Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-bridge).
+The bridge supports deploying JSF web applications as portlets to @product@.
+Liferay Faces Bridge makes developing JSF portlets as similar as possible to JSF
+web app development. In this section, you'll learn the portlet development
+process and how to leverage Liferay Faces Bridge's full potential with your JSF
+portlets. This makes it easy for you to implement portlets using JSF.
+
+You'll create a simple application that asks for the user's name, and then
+greets him or her with the name. You'll begin by creating the WAR-style folder
+structure and configure dependencies like Liferay Faces Bridge.
+
+1.  Create a WAR-style folder structure for your module.
+    [Maven archetypes](https://web.liferay.com/web/neil.griffin/blog/-/blogs/new-maven-archetypes-for-jsf-portlets)
+    are available to help you get started quickly. They set the default
+    configuration for you, and contain boilerplate code so you can skip the file
+    creation steps and get started right away. In this tutorial, you'll set up
+    the folder structure manually. Follow the folder structure outline below:
+
+        - com.liferay.hello.user.jsf.portlet
+            - src
+                - main
+                    - java
+                    - resources
+                    - webapp
+                        - WEB-INF
+                            - resources
+                            - views
+
+2.  Make sure your module specifies the dependencies necessary for a Liferay JSF
+    application. For instance, you must specify the Liferay Faces Bridge as a
+    dependency. For example, this is the example `pom.xml` file used from a
+    Maven based JSF application:
+
+        <?xml version="1.0"?>
+
+        <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+            <modelVersion>4.0.0</modelVersion>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.hello.user.jsf.portlet</artifactId>
+            <packaging>war</packaging>
+            <name>com.liferay.hello.user.jsf.portlet</name>
+            <version>1.0-SNAPSHOT</version>
+            <properties>
+                <faces.api.version>2.2</faces.api.version>
+                <liferay.faces.bridge.ext.version>5.0.0-SNAPSHOT</liferay.faces.bridge.ext.version>
+                <liferay.faces.bridge.version>4.0.0-SNAPSHOT</liferay.faces.bridge.version>
+                <mojarra.version>2.2.13</mojarra.version>
+                <project.stage>Development</project.stage>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.3</version>
+                        <configuration>
+                            <encoding>UTF-8</encoding>
+                            <source>1.8</source>
+                            <target>1.8</target>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>commons-fileupload</groupId>
+                    <artifactId>commons-fileupload</artifactId>
+                    <version>1.3.1</version>
+                    <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                    <version>2.4</version>
+                    <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>javax.faces</groupId>
+                    <artifactId>javax.faces-api</artifactId>
+                    <version>${faces.api.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.glassfish</groupId>
+                    <artifactId>javax.faces</artifactId>
+                    <version>${mojarra.version}</version>
+                    <scope>runtime</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.liferay.faces</groupId>
+                    <artifactId>com.liferay.faces.bridge.ext</artifactId>
+                    <version>${liferay.faces.bridge.ext.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.liferay.faces</groupId>
+                    <artifactId>com.liferay.faces.bridge.impl</artifactId>
+                    <version>${liferay.faces.bridge.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                    <version>1.2.14</version>
+                </dependency>
+            </dependencies>
+        </project>
+
+3.  Create a unique package name in the module's `src/main/java` folder and
+    create a new public Java class named `ExampleBacking.java` in that package.
+    For example, the class's folder structure could be
+    `src/main/java/com/liferay/example/ExampleBacking.java`. Make sure the class
+    is annotated with
+    [@RequestScoped](http://docs.oracle.com/javaee/7/api/javax/faces/bean/RequestScoped.html)
+    and
+    [@ManagedBean](http://docs.oracle.com/javaee/7/api/javax/faces/bean/ManagedBean.html):
+
+        @RequestScoped
+        @ManagedBean
+        public class ExampleBacking {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This tutorial is not a comprehensive guide for configuring JSF applications in
 Liferay. You'll examine the high points, assuming you already understand JSF. 
 
