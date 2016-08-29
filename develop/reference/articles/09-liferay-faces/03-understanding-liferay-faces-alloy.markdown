@@ -33,8 +33,8 @@ Liferay's AlloyUI tags.
 
 ## Related Topics [](id=related-topics)
 
-[Getting Started with JSF Applications](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-jsf-applications)
+<!--[Getting Started with JSF Applications](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-jsf-applications)-->
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-bridge)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-portal)
