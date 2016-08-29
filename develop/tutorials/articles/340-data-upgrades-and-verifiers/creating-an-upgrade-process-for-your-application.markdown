@@ -42,15 +42,33 @@ First, let's specify the schema version.
 
 ### Specifying the Schema Version [](id=specifying-the-schema-version)
 
-In your module's `bnd.bnd` file, specify a `Liferay-Require-SchemaVersion`
-header with the new schema version value. Here's an example schema version
-header: 
+In your module's `bnd.bnd` file and use Service Builder, specify a 
+`Liferay-Require-SchemaVersion` header with the new schema version value. 
+Here's an example schema version header: 
 
         Liferay-Require-SchemaVersion: 1.1.0
 
 **Important**: If no `Liferay-Require-SchemaVersion` header is specified,
 @product@ considers the `Bundle-Version` header value to be the database schema
 version.
+
+Modules that don't use  Service Builder should wait for the upgrade steps to be executed, 
+so a @Reference should be created with the target:
+    * release.bundle.symbolic.name: bundle symbolic name of the module
+    * release.schema.version: current schema version of the module
+
+A example can be found in [`PageCommentsPortlet` class's](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/comment/com.liferay.comment.page.comments.web/com/liferay/comment/page/comments/web/internal/portlet/PageCommentsPortlet.html)
+
+public class PageCommentsPortlet extends MVCPortlet {
+
+	@Reference(
+		target = "(&(release.bundle.symbolic.name=com.liferay.comment.page.comments.web)(release.schema.version=1.0.0))",
+		unbind = "-"
+	)
+	protected void setRelease(Release release) {
+	}
+
+}
 
 Next, you'll specify your upgrade's dependencies. 
 
