@@ -287,7 +287,7 @@ appears to the right of the article's title. This button lets users access the
 article's online source location. You can use this feature to encourage users to 
 contribute fixes or improvements to articles. If you're interested in this 
 feature, you can direct your administrator to follow the instructions in 
-[Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features). 
+[Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration). 
 
 Great! Now you know the basics of how Knowledge Base Display works. Next, you'll 
 learn how to let users choose between different article sets in different 
@@ -354,7 +354,7 @@ a page and each one can display articles from any number of sections. To use
 sections, your Liferay administrator must configure the feature in the Knowledge 
 Base app's properties within Portal's system settings. Once the feature is 
 enabled, he or she must specify in the system settings any section names you 
-want to use. The [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
+want to use. The [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration)
 section explains how to configure the sections feature in System Settings. 
 
 ![Figure 9: Here's an image of Knowledge Base Section apps on a page.](../../../images/kb-section.png)
@@ -450,7 +450,7 @@ with their accompanying image files.
 -  Image files must be in a supported format and must use the appropriate file
    extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and
    `.png`. They're specified via an app system setting. For details, see 
-   [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features).
+   [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration).
 
 **Example Basic Zip File Structure:**
 
@@ -613,16 +613,13 @@ properties to enable and configure features.
 
 ## Advanced Configuration [](id=advanced-configuration)
 
-In previous versions of Liferay, the Knowledge Base's configuration was defined
-in its `portlet.properties` file and could be overwritten with a 
-`portlet-ext.properties` file. Since Liferay 7, a new Configuration API is 
-implemented that allows you to configure the Knowledge Base via system settings. 
-This allows an Administrator to make changes to the Knowledge Base's 
-configuration and see them immediately. The System Settings are organized into 
-five sub sections, one for the default Knowledge Base configuration for all 
-sites(*Knowledge Base Service*), and one for each of the other Knowledge Base 
-apps(*Knowledge Base Article*, *Knowledge Base Display*, *Knowledge Base Search*, 
-and *Knowledge Base Section*).
+A Configuration API is implemented that allows you to configure the Knowledge 
+Base via system settings. This allows an Administrator to make changes to the 
+Knowledge Base's configuration and see them immediately. The System Settings are 
+organized into five sub sections, one for the default Knowledge Base 
+configuration for all sites(*Knowledge Base Service*), and one for each of the 
+other Knowledge Base apps(*Knowledge Base Article*, *Knowledge Base Display*, 
+*Knowledge Base Search*, and *Knowledge Base Section*).
 
 +$$$
 
@@ -634,411 +631,6 @@ $$$
 To start, open the Control Menu and navigate to *Control Panel* &rarr; 
 *Configuration* &rarr; *System Settings*. Click the *Collaboration* link at the
 top and scroll down to the *Knowledge Base* options.
-
-The next few sections show the old properties and the new corresponding system 
-settings to use, as well as a brief description of what the setting does along
-with possible values.
-
-The configuration settings that are shared across the Knowledge Base apps are 
-covered in the [Shared Configuration Menu Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#shared-configuration-menu-settings)
-section.
-
-The optional configuration settings are covered in the 
-[Optional Configuration Features](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
-section.
-
-### Knowledge Base Service Configuration Menu [](id=knowledge-base-service-configuration-menu)
-
-Here is a list of the properties previously found in Knowledge Base's 
-`portlet.properties` and the new properties to use in the Knowledge Base Service
-System Settings configuration menu:
-
-<style>
-.max-960 {
-	margin: 0 auto;
-	max-width: 960px;
-}
-.no-max
-.max-960 {
-	max-width: none;
-}
-.system-settings-table td {
-	border-bottom: 1px solid;
-	border-top: 1px solid;
-	padding: 10px;
-}
-.table-header {
-	font-weight: bold;
-}
-.table-header.second {
-	width: 70%;
-}
-.left-header {
-	border-right: 1px solid;
-}
-</style>
-
-<div class="system-settings-table">
-<div class="max-960">
-<div class="aui-helper-clearfix section-1" >
-<div class="aui-w100 block-1 content-column" >
-<div class="content-column-content">
-<table>
-	<thead>
-		<td class="table-header left-header">
-			portlet.properties
-		</td>
-		<td class="table-header second">
-			System Setting
-		</td>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-		            admin.email.from.name
-			</td>
-			<td>
-	                    emailFromName
-			</td>			
-		</tr>
-		<tr>
-			<td>
-			    admin.email.from.address
-			</td>
-			<td>
-		            emailFromAddress
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        admin.email.kb.article.added.body<br>
-					admin.email.kb.article.added.enabled<br>
-					admin.email.kb.article.added.subject<br>
-			</td>
-			<td>
-					emailKBArticleAddedBody<br>
-					emailKBArticleAddedEnabled<br>
-					emailKBArticleAddedSubject<br>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        admin.email.kb.article.suggestion.in.progress.body<br>
-					admin.email.kb.article.suggestion.in.progress.enabled<br>
-					admin.email.kb.article.suggestion.in.progress.subject<br>
-			</td>
-			<td>
-					emailKBSuggestionInProgressBody<br>
-					emailKBSuggestionInProgressEnabled<br>
-					emailKBSuggestionInProgressSubject<br>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        admin.email.kb.article.suggestion.received.body<br>
-					admin.email.kb.article.suggestion.received.enabled<br>
-					admin.email.kb.article.suggestion.received.subject<br>
-			</td>
-			<td>
-					emailKBSuggestionReceivedBody<br>
-					emailKBSuggestionReceivedEnabled<br>
-					emailKBSuggestionReceivedSubject<br>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        admin.email.kb.article.suggestion.resolved.body<br>
-					admin.email.kb.article.suggestion.resolved.enabled<br>
-					admin.email.kb.article.suggestion.resolved.subject<br>
-			</td>
-			<td>
-					emailKBSuggestionResolvedBody<br>
-					emailKBSuggestionResolvedEnabled<br>
-					emailKBSuggestionResolvedSubject<br>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        admin.email.kb.article.updated.body<br>
-					admin.email.kb.article.updated.enabled<br>
-					admin.email.kb.article.updated.resolved.subject<br>
-			</td>
-			<td>
-					emailKBSuggestionUpdatedBody<br>
-					emailKBSuggestionUpdatedEnabled<br>
-					emailKBSuggestionUpdatedSubject<br>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        admin.kb.article.increment.priority.enabled
-			</td>
-			<td>
-					articleIncrementPriorityEnabled
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        markdown.importer.article.extensions
-			</td>
-			<td>
-					markdownImporterArticleExtensions
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        markdown.importer.article.intro
-			</td>
-			<td>
-					markdownImporterArticleIntro
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        markdown.importer.image.file.extensions
-			</td>
-			<td>
-					markdownImporterImageFileExtensions
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        markdown.importer.image.folder
-			</td>
-			<td>
-					markdownImporterImageFolder
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        knowledge.base.source.url.enabled
-			</td>
-			<td>
-					sourceURLEnabled
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        knowledge.base.source.url.edit.message.key
-			</td>
-			<td>
-					sourceURLEditMessageKey
-			</td>
-		</tr>		
-	</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-+$$$
-
-**Note:** The `knowledge.base.ratings.number.of.stars` property has been removed 
-since Knowledge Base now has a Ratings Configuration Framework. You can change 
-the ratings type in the Instance Settings configuration menu under the *Social* 
-tab. You can also configure the ratings type for an individual site under the 
-*Social* tab of the Site Settings configuration menu.
-
-The `knowledge.base.social.bookmarks.display.style` property can now be found
-under the *Social bookmarks display style* setting of each Knowledge Base 
-app's configuration menu in System Settings.
-
-$$$
-
-The list below describes what each configuration option does in the System
-Settings UI.
-
--  **Get editor name:**  Sets the default editor. Possible values are: 
-   `alloyeditor`, `ckeditor`, `simple`, `tinymce`, and `tinymce_simple`.
-
--  **Article increment piority enabled:** Covered in the 
-   [Optional Configuration Features](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
-   section.
-   
--  **Markdown settings:** Covered in the [Optional Configuration Features](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
-   section.
-   
--  **Source URL settings:** Covered in the [Optional Configuration Features](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#optional-configuration-features)
-   section.
-   
-+$$$
-
-**Note:** If you view the settings in each of these configuration menus you'll 
-see that some settings have a value that is set to a variable. For example, the 
-Knowledge Base Article configuration menu has the value shown below for the 
-*Social bookmarks types* setting:
-
-    ${server-property://com.liferay.portal/social.bookmark.types}
-    
-the `server-property` prefix specifies that this value is set through a server
-property. You can view the default value by going to *Configuration* &rarr; 
-*Server Administration* and selecting the *Properties* tab and 
-*Portal Properties* sub-tab. From here you can Search for the property you 
-want(e.g., `social.bookmark.types`) to see the default value. To overwrite the 
-property's default value, add the updated property values to the 
-`portal-ext.properties` file in your app server's root directory.
-
-The second kind of variable prefix is `resource`. For example, the
-*Email KBArticle suggestion in progress body* setting in the Knowledge Base 
-Service configuration menu has the following value:
-
-    ${resource:com/liferay/knowledge/base/dependencies/email_kb_suggestion_in_progress_body.tmpl}
-
-This points to the resource that provides the value. To overwrite these 
-resources, you need to either change the configuration in the settings UI to 
-point to your new file, or using a configuration file in your app server's 
-`osgi/config` directory, you need to overwrite the property to point to the 
-absolute file path of the new file. You can view the current configuration
-files and settings by exporting the configuration file. This is covered more in
-the [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
-User Guide doc.
-
-$$$
-   
--  **Email from name:** Sets the Sender's name for automated emails.
-   
--  **Email from address:** Sets the Sender's email address for automated emails.
-   
--  **Email KBArticle [name] enabled:** These properties set whether to enable
-   automated emails for the named actions 
-   (e.g., *Email KBArticle added enabled*, if enabled, sends an automated email 
-   when an article is added).
-   
--  **Email KBArticle [action] [section]:** These properties set the email
-   templates for the named action and corresponding section
-   (e.g., *Email KBArticle added body* sets the body template for the kb article 
-   added email.)
-   
--  **Rss delta:** Sets the pagination for RSS entries.
-
--  **Rss display style:** Sets the display style of the RSS. Possible values are 
-   `abstract`, `full-content`, or `title`.
-   
--  **Rss format:** Sets the web feed language to use for your RSS feed. Possible 
-   values are `Atom10` (Atom 1.0 the default), `RSS10`(RSS 1.0), or 
-   `RSS20`(RSS 2.0).
-   
--  **Rss feed type:** Sets the default feed type from the feed types defined in 
-   the `rss.feed.types` portal property.
-
-### Knowledge Base Article Configuration Menu [](id=knowledge-base-article-configuration-menu)
-
--  **Show/Enable KBArticle [element]:** Sets whether to enable or show the named
-   kb article element.
-
-### Knowledge Base Display Configuration Menu [](id=knowledge-base-display-configuration-menu)
-
-The list below describes what each configuration option does in the System
-Settings UI.
-
--  **Show/Enable KBArticle [element]:** Sets whether to enable or show the named
-   kb article element.
-
--  **Content root prefix:** Sets the default value for the content root prefix.
-
-### Knowledge Base Search Configuration Menu [](id=knowledge-base-search-configuration-menu)
-
--  **Show/Enable KBArticle [element]:** Sets whether to enable or show the named
-   kb article element in the search results.
-   
-### Knowledge Base Section Configuration Menu [](id=knowledge-base-section-configuration-menu)
-
-<div class="system-settings-table">
-<div class="max-960">
-<div class="aui-helper-clearfix section-1" >
-<div class="aui-w100 block-1 content-column" >
-<div class="content-column-content">
-<table>
-	<thead>
-		<td class="table-header left-header">
-			portlet property
-		</td>
-		<td class="table-header second">
-			System Setting
-		</td>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				        admin.kb.article.sections
-			</td>
-			<td>
-					adminKBArticleSections
-			</td>
-		</tr>
-		<tr>
-			<td>
-				        admin.kb.article.sections.default
-			</td>
-			<td>
-					adminKBArticleSectionsDefault
-			</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-The list below describes what each configuration option does in the System
-Settings UI.
-
--  **kb articles sections:** Sets the default available sections with a 
-   comma-separated list.
--  **kb article display style:** Sets the default kb article display style. 
-   Possible values are `title` or `abstract`.
-   
--  **show/enable KBArticle [element]:** Sets whether to enable or show the named
-   kb article element.
-   
--  **Admin KBArticle sections:** Sets the kb article sections available in the
-   admin portlet.
-   
--  **Admin KBArticle sections default:** Sets the default selected section in 
-   the admin portlet.
-
-### Shared Configuration Menu Settings [](id=shared-configuration-menu-settings)
-
-Here is a listing of the shared configuration settings that you can set for
-each knowledge base app and the possible values:
-
--  **Resource Prim key:** Sets the primary key that identifies a particular 
-   kb(Knowledge Base) article or kb folder 
-   (depending on the resource class name ID).
-   
--  **Resource class name id:** Sets the class name of either the kb article or 
-   kb folder. This value needs to match the value of the `Resource Prim key`. If 
-   the classname is a kb article, the resource prim key needs to be the prim key 
-   of a kb article. If the class name belongs to a kb folder the resource prim 
-   key needs to belong to a kb folder.
-   
--  **Enable KBArticle description:** Sets whether to allow users to add a 
-   description to the kb articles.
-   
--  **Enable KBArticle view count increment:** sets whether to add a view counter 
-   to the kb article.
-   
--  **Enable social bookmarks:** Sets whether to display social bookmarks 
-   when viewing a kb article.
-   
--  **Social bookmarks display style:** Sets the display style of the social
-   bookmarks. Possible values are `menu`, `simple`, `vertical`, or `horizontal`.
-   
--  **Social bookmarks display position:** Sets the position to display social 
-   bookmarks. Possible values are `top` or `bottom`.
-   
--  **Social bookmarks types:** A comma-separated list of the possible bookmarks 
-   types (twitter,facebook,plusone for example). Overwrite with a 
-   `portal-ext.properties` file.
-    
-Next, Liferay administrators can learn how to override the Knowledge Base app's 
-properties to enable and configure some advanced, but optional features.
-   
-### Optional Configuration Features [](id=optional-configuration-features)
 
 The Knowledge Base app has several optional features that are disabled by 
 default. These include source URL, import file conventions, new article priority 
@@ -1082,13 +674,11 @@ value:
 *Markdown importer image file extensions*(.bmp, .gif, .jpeg, .jpg, or .png for
 example)
 
-You can change the article parent file suffix: 
+You can change the article parent file suffix with the 
+*Markdown importer article intro* setting.
 
-*Markdown importer article intro*
-
-You can modify the image folder path the importer looks for in the ZIP file:
-
-*Markdown importer image folder*
+You can modify the image folder path the importer looks for in the ZIP file with
+the *Markdown importer image folder* setting.
 
 **New Article Priority Increment Setting:** By default the priority for new
 articles is incremented by `1.0`. To disable this increment so that articles get
@@ -1109,7 +699,10 @@ you can display one or more *sections* (groups) of articles. Navigate to the
 setting to add a new field for each section you want, and enter a name for each 
 section:
 
-*Admin KBArticle sections*(Business, Politics or World for example)
+*Admin KBArticle sections*
+Business
+Politics
+World
 
 This creates the sections *Business*, *Politics*, and *World*. 
 
