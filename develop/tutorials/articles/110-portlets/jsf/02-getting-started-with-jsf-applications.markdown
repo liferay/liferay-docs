@@ -3,7 +3,9 @@
 @product@'s modular architecture lends itself well to modular applications
 created by a multitude of different technologies. JSF applications are no
 different, and can be developed to seamlessly integrate into the Liferay
-platform. In this tutorial, you'll step through packaging and creating a JSF
+platform. 
+
+In this tutorial, you'll step through packaging and creating a JSF
 application that is deployable as an OSGi module at runtime. First, you'll learn
 how to package a JSF application as a module.
 
@@ -384,7 +386,7 @@ portlet, you'll create two properties files to reside in this folder.
 1.  Create the `i18n.properties` file in the `src/main/resources` folder. Add
     the following property to this file:
 
-        enter-your-name-in-the-field-below=Enter your name in the field below.
+        enter-your-name-=Enter your name:
 
     This is a language key your JSF portlet displays in its view XHTML. The
     messages in the `i18n.properties` file can be accessed via the
@@ -424,28 +426,16 @@ User application's behavior and UI.
 
 ### Developing a JSF Application's Behavior and UI
 
+Your current JSF application satisfies the requirements for portlet descriptors
+and WAR-style structure, but it doesn't do anything yet. In this section, you'll
+learn how to develop a JSF application's backend and give it a simple UI.
 
+The first thing to do is create a Java class for your module. Your JSF portlet's
+behavior is defined here. In the case of the Hello User portlet, you should
+provide Java methods that can get/set a name and facilitate the submission
+process.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-X.  Create a unique package name in the module's `src/main/java` folder and
+1.  Create a unique package name in the module's `src/main/java` folder and
     create a new public Java class named `ExampleBacking.java` in that package.
     For example, the class's folder structure could be
     `src/main/java/com/liferay/example/ExampleBacking.java`. Make sure the class
@@ -458,240 +448,97 @@ X.  Create a unique package name in the module's `src/main/java` folder and
         @ManagedBean
         public class ExampleBacking {
 
+    Managed beans are Java beans that are managed by the JSF framework. Managed
+    beans annotated with `@RequestScoped` are usually responsible for handling
+    actions and listeners. JSF *manages* these beans by creating and removing
+    the bean object from the server. Visit the linked annotations above for more
+    details.
 
+2.  Add the following methods and field to your `ExampleBacking.java` class:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-This tutorial is not a comprehensive guide for configuring JSF applications in
-Liferay. You'll examine the high points, assuming you already understand JSF. 
-
-How and why is JSF so easy to deploy to Liferay? Liferay supports JSF portlets
-with the use of [*Liferay Faces*](https://web.liferay.com/community/liferay-projects/liferay-faces/overview),
-which is Liferay project that provides support for the JSF standard.
-
-You'll learn how to leverage Liferay Faces and other JSF-specific dependencies
-in the next section.
-
-## Configuring a JSF Portlet for Liferay [](id=configuring-a-jsf-portlet-for-liferay)
-
-JSF portlets use 
-[*Liferay Faces Bridge*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-bridge),
-which supports deploying JSF web applications as portlets on any JSR 286
-(Portlet 2.0) compliant portlet container, like @product@. Liferay
-Faces Bridge is applied to a portlet as a dependency in a build file, such as a
-`pom.xml`:
-
-    <dependencies>
-        ...
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.bridge.ext</artifactId>
-            <version>${liferay.faces.bridge.ext.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.bridge.impl</artifactId>
-            <version>${liferay.faces.bridge.version}</version>
-        </dependency>
-        ...
-    </dependencies>
-
-There are several UI component suites that a JSF application can use. These include
-
-- [*Liferay Faces Alloy*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy)
-- [*PrimeFaces*](http://primefaces.org/)
-- [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf) 
-- [*RichFaces*](http://richfaces.jboss.org/). 
-- [*Liferay Faces Portal*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-portal)
-
-You'd use Liferay Faces Portal to use Liferay-specific utilities and UI
-components. These components can be used by specifying them as dependencies in
-your build file, as well.
-
-Make sure to configure the `GenericFacesPortlet` class in the `portlet.xml`.
-This class handles invocations to your JSF portlet and makes portlets relying
-on Liferay Faces Bridge easier to develop by acting as a turnkey implementation.
-
-    <portlet>
-        ...
-        <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
-        ...
-    </portlet>
-
-Also, make sure to define a default view file. Specifically, the view file is
-configured as an `init-param` in the `portlet.xml` file.
-
-    <init-param>
-        <name>javax.portlet.faces.defaultViewId.view</name>
-        <value>/WEB-INF/views/view.xhtml</value>
-    </init-param>
-
-There are other descriptors that must reside in your JSF portlet:
-`faces-config.xml` and `web.xml`. You can visit the
-[Packaging a JSF Application](/develop/tutorials/-/knowledge_base/7-0/packaging-a-jsf-application)
-tutorial for more information on where these descriptors go. 
-
-The `faces-config.xml` descriptor serves as a JSF portlet's application
-configuration file, which is used to register and configure objects and
-navigation rules.
-
-+$$$
-
-**Note:** Many auto-generated `faces-config.xml` files have the following
-configuration:
-
-    <lifecycle>
-        <phase-listener>com.liferay.faces.util.lifecycle.DebugPhaseListener</phase-listener>
-    </lifecycle>
-
-This configures your JSF portlet to log the before/after phases of the JSF
-lifecycle to your console in debug mode. You might want to remove this
-declaration before deploying to production.
-
-$$$
-
-The `web.xml` file serves as a deployment descriptor that provides necessary
-configurations for your JSF portlet to successfully deploy and function in
-@product@. A sample `web.xml` for a JSF portlet is given below, with
-explanations for each element documented in-line:
-
-    <?xml version="1.0"?>
-
-    <web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
-        <display-name>/jsf.test.portlet</display-name>
-        <!-- Sets the resources directory inside the WEB-INF folder, which means your resources are secure from non-JSF calls.  -->
-        <context-param>
-            <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
-            <param-value>/WEB-INF/resources</param-value>
-        </context-param>
-        <!-- Instruct Mojarra to namespace parameters according to NamingContainer rules. -->
-        <context-param>
-            <param-name>com.sun.faces.namespaceParameters</param-name>
-            <param-value>true</param-value>
-        </context-param>
-        <!-- Although the FacesServlet will not be invoked by any portlet requests, it is required to initialize JSF. -->
-        <servlet>
-            <servlet-name>FacesServlet</servlet-name>
-            <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-            <load-on-startup>1</load-on-startup>
-        </servlet>
-        <!-- MyFaces will not initialize unless a servlet-mapping to the Faces Servlet is present. -->
-        <servlet-mapping>
-            <servlet-name>Faces Servlet</servlet-name>
-            <url-pattern>*.xhtml</url-pattern>
-        </servlet-mapping>
-        <!-- Prevent direct access to Facelet XHTML -->
-        <security-constraint>
-            <web-resource-collection>
-                <web-resource-name>Facelet XHTML</web-resource-name>
-                <url-pattern>*.xhtml</url-pattern>
-            </web-resource-collection>
-            <auth-constraint/>
-        </security-constraint>
-    </web-app>
-
-JSF portlets also use Liferay descriptors, which you can further learn about in
-the
-[Liferay Descriptors](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#liferay-descriptors)
-sub-section.
-
-Next, you'll learn how to generate and call services in a Liferay JSF portlet.
-
-## Services in JSF [](id=services-in-jsf)
-
-Service Builder works the same in a JSF portlet as it would in any other
-standard WAR-style MVC portlet. To learn more about how Service Builder works in
-Liferay, visit the
-[Business Logic and Data Access](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
-tutorials. You can create a `service.xml` file and run Service Builder in your
-JSF project to build services.
-
-To call OSGi-based Service Builder services from your JSF portlet, you need a
-mechanism that gives you access to the OSGi service registry. You can't look up
-services published to the OSGi runtime using Declarative Services. Instead, you
-should open a
-[ServiceTracker](https://osgi.org/javadoc/r6/core/org/osgi/util/tracker/ServiceTracker.html)
-when you want to call a service that's in the OSGi service registry.
-
-To implement a service tracker in your JSF portlet, you can add a type-safe
-wrapper class that extends `org.osgi.util.tracker.ServiceTracker`. For example,
-this is done in a demo JSF portlet as follows:
-
-    public class UserLocalServiceTracker extends ServiceTracker<UserLocalService, UserLocalService> {
-
-        public UserLocalServiceTracker(BundleContext bundleContext) {
-            super(bundleContext, UserLocalService.class, null);
+        public String getName() {
+            return name;
         }
-    }
 
-After extending the `ServiceTracker`, just call the constructor and the service
-tracker is ready to use in your managed bean.
+        public void setName(String name) {
+            this.name = name;
+        }
 
-In a managed bean, whenever you need to call a service, open the service
-tracker. For example, this is done in the same demo JSF portlet to open the
-service tracker, using the
-[@PostContruct](http://docs.oracle.com/javaee/7/api/javax/annotation/PostConstruct.html)
-annotation:
+        public void submit(ActionEvent actionEvent) {
+            FacesContextHelperUtil.addGlobalSuccessInfoMessage();
+        }
 
-    @PostConstruct
-    public void postConstruct() {
-        Bundle bundle = FrameworkUtil.getBundle(this.getClass());
-        BundleContext bundleContext = bundle.getBundleContext();
-        userLocalServiceTracker = new UserLocalServiceTracker(bundleContext);
-        userLocalServiceTracker.open();
-    }
+        private String name;
 
-Then the service can be called:
+    You've provided a getter and setter method for the private `name` field.
+    You've also provided a `submit(...)` method, which is called when the
+    *Submit* button is selected. A success info message is displayed once the
+    method is invoked.
 
-    UserLocalService userLocalService = userLocalServiceTracker.getService();
-    ...
+    You've defined your Hello User portlet's Java behavior; now create its UI!
 
-    userLocalService.updateUser(user);
+3.  Create a `view.xhtml` file in the `webapp/WEB-INF/views` folder. Add the
+    following logic to that file:
 
-When it's time for the managed bean to go out of scope, you must close the
-service tracker using the
-[@PreDestroy](http://docs.oracle.com/javaee/7/api/javax/annotation/PreDestroy.html)
-annotation:
+        <?xml version="1.0"?>
 
-    @PreDestroy
-    public void preDestroy() {
-        userLocalServiceTracker.close();
-    }
+        <f:view
+            xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:f="http://java.sun.com/jsf/core"
+            xmlns:h="http://java.sun.com/jsf/html"
+        >
+            <h:head>
+                <h:outputStylesheet library="css" name="main.css" />
+            </h:head>
+            <h:form>
+                <h:messages globalOnly="true" />
+                <h:outputLabel value="#{i18n['enter-your-name']}" />
+                <h:inputText value="#{exampleBacking.name}" />
+                <h:commandButton actionListener="#{exampleBacking.submit}" value="#{i18n['submit']}">
+                    <f:ajax execute="@form" render="@form" />
+                </h:commandButton>
+                <br />
+                <h:outputText value="Hello #{exampleBacking.name}" />
+            </h:form>
+        </f:view>
 
-For more information on service trackers and how to use them in WAR-style
-portlets, see the
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
-tutorial.
+    The first thing to notice is the `main.css` file you created is specified
+    here, which makes your portlet's heading typeface bold. Next, your form is
+    defined within the `<h:form>` tags. The form outputs a message to the user
+    to enter his or her name, and then sets that value to the `name` field in
+    your Java class. The form uses the `<h:commandButton>` tag to execute the
+    Submit button and render the form after submission.
 
-Hopefully this introductory tutorial for JSF portlets developed for Liferay 7 is
-helpful for a big-picture look on the JSF technology developed for @product@. To
-learn more in-depth concepts and configurations for JSF portlets, visit the
-other tutorials contained in the
-[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
-tutorial set.
+    Notice the `i18n` object call for the `enter-your-name` and `submit`
+    properties. The `enter-your-name` property was set in the `i18n.properties`
+    file you specified, but what about the `submit` property? This was not
+    defined in your portlet's `i18n.properties` file, so how does your portlet
+    know to use the string *Submit* for your button? If you recall, the `i18n`
+    object can also access messages in @product@'s `Language.properties` file.
+    This is where the `submit` language key is being referenced.
+
+    Finally, the `<h:outputText>` tag is used to output the submitted name to
+    the user, prefixed with *Hello*.
+
+Awesome! your Hello User JSF application is complete! Deploy your WAR to
+@product@. Remember, when your WAR-style portlet is deployed, it's converted to
+a WAB via the WAB Generator. Visit the 
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+tutorial for more information on this process and your portlet's resulting
+folder structure.
+
+![Figure 1: After submitting the user's name, it's displayed with a greeting.](../../../images/hello-user-jsf-portlet.png)
+
+To recap, you created your JSF application in the following steps:
+
+- Construct the WAR-style folder structure
+- Specify the necessary dependencies in a build file of your choice
+- Create JSF portlet and Liferay descriptors
+- Add resource files in the two designated `resources` folders
+- Define the portlet's behavior using a Java class
+- Design a view XHTML form to let the user interact with the portlet
+
+Now you have the knowledge to create your own JSF applications!
 
 ## Related Topics [](id=related-topics)
 
