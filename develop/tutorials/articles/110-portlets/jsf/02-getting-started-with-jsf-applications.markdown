@@ -29,27 +29,28 @@ tutorial.
 This is how a JSF WAR artifact is structured: 
 
 - `jsf-portlet`
-        - `src`
-            - `main`
-                - `java`
-                    - Java Classes
-                - `resources`
-                    - Properties files
-                - `webapp`
-                    - `WEB-INF/`
-                        - `classes/`
-                            - Class files and related properties
-                        - `lib/`
-                            - JAR dependencies
-                        - `resources/`
-                            - CSS, XHTML, PNG or other frontend files
-                        - `views/`
-                            - XHTML views
-                        - `faces-config.xml`
-                        - `liferay-plugin-package.properties`
-                        - `liferay-portlet.xml`
-                        - `portlet.xml`
-                        - `web.xml`
+    - `src`
+        - `main`
+            - `java`
+                - Java Classes
+            - `resources`
+                - Properties files
+            - `webapp`
+                - `WEB-INF/`
+                    - `classes/`
+                        - Class files and related properties
+                    - `lib/`
+                        - JAR dependencies
+                    - `resources/`
+                        - CSS, XHTML, PNG or other frontend files
+                    - `views/`
+                        - XHTML views
+                    - `faces-config.xml`
+                    - `liferay-display.xml`
+                    - `liferay-plugin-package.properties`
+                    - `liferay-portlet.xml`
+                    - `portlet.xml`
+                    - `web.xml`
 
 In the next section, you'll begin creating a simple JSF application that is
 deployable to @product@.
