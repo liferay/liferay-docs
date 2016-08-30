@@ -93,7 +93,14 @@ whatever you want to name your cluster:
 
 Of course, this isn't a very imaginative name; you may choose to name your
 cluster `finders_keepers` or something else you can remember more easily. Save
-the file. 
+the file. If you don't set the cluster name in your Elasticsearch installation, 
+it will default to *elasticsearch*.
+
+Liferay uses several features of Elasticsearch, which are not part of the default 
+installation. You will need to install these features as Elasticsearch plugins:
+
+    [Elasticsearch Home]/bin/plugin install analysis-smartcn
+    [Elasticsearch Home]/bin/plugin install analysis-kuromoji
 
 Now you can start Elasticsearch. Run the executable for your operating system
 from the `[Elasticsearch Home]/bin` folder: 
