@@ -18,36 +18,38 @@ as WAR artifacts because the JSF framework expects a WAR layout and often
 requires the `WEB-INF/faces-config.xml` descriptor and other Java EE resources
 such as the `WEB-INF/web.xml` descriptor.
 
-Liferay 7.0 supports the OSGi Web Application Bundle (WAB) standard for
-deployment of Java EE style WARs. Simply put, a WAB is an archive that has a WAR
-layout and contains a `META-INF/MANIFEST.MF` file with the `Bundle-SymbolicName`
-OSGi directive. Although the source of the project has a WAR layout, the
-artifact filename may end with either the `.jar` or `.war` extension.
-
-Enabling WABs to run as OSGi modules at runtime is made possible by the Liferay
-WAB Extender. The Liferay WAB Generator converts your WAR artifact to a WAB at
-deployment time. You can learn more about the WAB Generator in the
+Liferay provides a way for these WAR-styled portlets to be deployed and treated
+like OSGi modules by Liferay's OSGi runtime. This is done automatically when
+deploying WAR-style portlets to Liferay with the WAB Generator. The Liferay WAB
+Generator converts your WAR artifact to a WAB at deployment time. You can learn
+more about WABs and the WAB Generator in the
 [Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
 tutorial.
 
 This is how a JSF WAR artifact is structured: 
 
-- `META-INF/`
-    - `MANIFEST.MF` (Made OSGi-ready at deploy time via the WAB Generator)
-- `WEB-INF/`
-    - `classes/`
-        - Class files and related properties
-    - `lib/`
-        - JAR dependencies
-    - `resources/`
-        - CSS, XHTML, PNG or other frontend files
-    - `views/`
-        - XHTML views
-    - `faces-config.xml`
-    - `liferay-plugin-package.properties`
-    - `liferay-portlet.xml`
-    - `portlet.xml`
-    - `web.xml`
+- `jsf-portlet`
+        - `src`
+            - `main`
+                - `java`
+                    - Java Classes
+                - `resources`
+                    - Properties files
+                - `webapp`
+                    - `WEB-INF/`
+                        - `classes/`
+                            - Class files and related properties
+                        - `lib/`
+                            - JAR dependencies
+                        - `resources/`
+                            - CSS, XHTML, PNG or other frontend files
+                        - `views/`
+                            - XHTML views
+                        - `faces-config.xml`
+                        - `liferay-plugin-package.properties`
+                        - `liferay-portlet.xml`
+                        - `portlet.xml`
+                        - `web.xml`
 
 In the next section, you'll begin creating a simple JSF application that is
 deployable to @product@.
@@ -74,7 +76,7 @@ folder structure and configure dependencies like Liferay Faces Bridge.
     creation steps and get started right away. In this tutorial, you'll set up
     the folder structure manually. Follow the folder structure outline below:
 
-        - com.liferay.hello.user.jsf.portlet
+        - hello-user-jsf-portlet
             - src
                 - main
                     - java
@@ -177,7 +179,7 @@ folder structure and configure dependencies like Liferay Faces Bridge.
 
     There are several UI component suites that a JSF application can use,
     which include
-    [*Liferay Faces Alloy*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy],
+    [*Liferay Faces Alloy*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy),
     [*PrimeFaces*](http://primefaces.org/),
     [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf),
     and
@@ -215,7 +217,7 @@ general WAR-style portlet descriptors.
     relies on Liferay Faces Bridge, easier to develop by acting as a turnkey
     implementation.
 
-4.  Define a default view file as an `init-param` in the `portlet.xml`. This
+2.  Define a default view file as an `init-param` in the `portlet.xml`. This
     ensures your portlet is visible when deployed to @product@.
 
         <init-param>
@@ -271,7 +273,7 @@ general WAR-style portlet descriptors.
     similar to https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-portal-roles-in-a-portlet.
     It would be getting a bit off track talking about it here, though. -Cody -->
 
-5.  Create a `web.xml` file in your JSF application's `webapp/WEB-INF` folder.
+3.  Create a `web.xml` file in your JSF application's `webapp/WEB-INF` folder.
     The `web.xml` file serves as a deployment descriptor that provides necessary
     configurations for your JSF portlet to successfully deploy and function in
     @product@. Copy the XML code below into your Hello User JSF application.
@@ -304,20 +306,20 @@ general WAR-style portlet descriptors.
             </security-constraint>
         </web-app>
 
-    When setting the `javax.faces.PROJECT_STAGE` parameter to `Development`, the
-    JSF implementation will do the following at runtime:
+    First, you set the `javax.faces.PROJECT_STAGE` parameter to the
+    `${project.stage}` variable, which is defined in your build file (e.g.,
+    `pom.xml`) as `Development`. When set to `Development`, the JSF
+    implementation will do the following at runtime:
 
     1. Log more verbose messages.
     2. Render tips and/or warnings in the view markup.
     3. Cause the default `ExceptionHandler` to display a developer-friendly
     error page.
 
-    Recall that you set the `${project.stage}` variable to `Development` in your
-    build file in the previous section (e.g., `pom.xml`).
-
     The `javax.faces.WEBAPP_RESOURCES_DIRECTORY` parameter sets the resources
-    directory inside the `WEB-INF` folder, which means your resources are secure
-    from non-JSF calls. You'll create some resources in this folder later.
+    directory inside the `WEB-INF` folder. This setting makes the resources in
+    that folder secure from non-JSF calls. You'll create some resources in this
+    folder later.
 
     The Faces Servlet configuration is required to initialize JSF, and should be
     defined in all JSF portlets deployed to @product@.
@@ -325,7 +327,7 @@ general WAR-style portlet descriptors.
     Finally, a security restraint is set on Facelet XHTML, which prevents direct
     access to XHTML files in your JSF application.
 
-6.  Create a `faces-config.xml` file in your JSF application's `webapp/WEB-INF`
+4.  Create a `faces-config.xml` file in your JSF application's `webapp/WEB-INF`
     folder. The `faces-config.xml` descriptor serves as a JSF portlet's
     application configuration file, which is used to register and configure
     objects and navigation rules. The Hello User portlet's `faces-config.xml`
@@ -343,9 +345,7 @@ general WAR-style portlet descriptors.
             </lifecycle>
         </faces-config>
 
-    +$$$
-
-    **Note:** Many auto-generated `faces-config.xml` files have the following
+    Many auto-generated `faces-config.xml` files have the following
     configuration:
 
         <lifecycle>
@@ -355,8 +355,6 @@ general WAR-style portlet descriptors.
     This configures your JSF portlet to log the before/after phases of the JSF
     lifecycle to your console in debug mode. You might want to remove this
     declaration before deploying to production.
-
-    $$$
 
 Great! You now have a better idea of how to specify and define general
 descriptor files for your JSF portlet. JSF portlets also use Liferay
@@ -374,9 +372,9 @@ JSF application's resources.
 ### Defining Resources for a JSF Application
 
 If you look back at the structure of the example Hello User portlet, you'll
-notice two `resources` folders defined. Why are there two of these folder for
+notice two `resources` folders defined. Why are there two of these folders for
 one portlet? These two folders have distinct differences in how they're used and
-what should be inserted in them.
+what should be placed in them.
 
 The `resources` folder residing in the application's `src/main` folder is
 intended for resources that need to be in the classpath. Generally, files in
@@ -386,7 +384,7 @@ portlet, you'll create two properties files to reside in this folder.
 1.  Create the `i18n.properties` file in the `src/main/resources` folder. Add
     the following property to this file:
 
-        enter-your-name-=Enter your name:
+        enter-your-name=Enter your name:
 
     This is a language key your JSF portlet displays in its view XHTML. The
     messages in the `i18n.properties` file can be accessed via the
@@ -531,12 +529,18 @@ folder structure.
 
 To recap, you created your JSF application in the following steps:
 
-- Construct the WAR-style folder structure
-- Specify the necessary dependencies in a build file of your choice
-- Create JSF portlet and Liferay descriptors
-- Add resource files in the two designated `resources` folders
-- Define the portlet's behavior using a Java class
-- Design a view XHTML form to let the user interact with the portlet
+- Construct the WAR-style folder structure.
+- Specify the necessary dependencies in a build file of your choice.
+- Create JSF portlet descriptors and Liferay descriptors.
+- Add resource files in the two designated `resources` folders.
+- Define the portlet's behavior using a Java class.
+- Design a view XHTML form to let the user interact with the portlet.
+
+You can view the finished version of the Hello User JSF application by
+downloading its
+[ZIP file]().
+
+<!-- Provide ZIP file above. -Cody -->
 
 Now you have the knowledge to create your own JSF applications!
 
