@@ -86,58 +86,60 @@ link highlighted in a red box:
  
 Great! Now you're ready to test your Screens and Mobile SDK installations. 
 
-## Verifying the Installations [](id=verifying-the-installations)
+## Verifying the Installations
 
+<!-- verify import paths are correct once Mobile SDK builder is released -->
 To check your Screens and Mobile SDK installations, first open your project's 
 `MainActivity` class in Android Studio. It's in the `java` folder's
 `com.liferay.docs.liferayguestbook` package, in the project view. Add the
-following imports at the top of the file:
+following imports at the top of the file: 
 
     import com.liferay.mobile.android.service.Session;
-    import com.liferay.mobile.android.v62.entry.EntryService;
-    import com.liferay.mobile.android.v62.guestbook.GuestbookService;
+    import com.liferay.mobile.android.v7.entry.EntryService;
+    import com.liferay.mobile.android.v7.guestbook.GuestbookService;
     import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 
 If Android Studio recognizes these imports, then you're good to go! Remove them 
-once you've verified that they're recognized. Next, there's one final small but 
-important detail to complete: pointing your app at the correct Liferay 
-installation. 
+once you've verified that they're valid. Next, there's one final small but 
+important detail to complete: pointing your app at the correct Liferay instance. 
 
-## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
+## Configuring Communication with Liferay
 
+<!-- update the 7.0 tutorial on this to include the liferay_portal_version setting to 70 -->
 For Screens to work properly with your app, you must point it to your Liferay 
-Portal installation. You do this by adding a `server_context.xml` file in your 
-project's `res/values` directory. Create this file and add the following code 
-to it:
+instance. You do this by adding a `server_context.xml` file in your project's 
+`res/values` directory. Create this file and add the following code to it: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
 
-        <!-- Change these values for your Liferay Portal installation -->
+        <!-- Change these values for your Liferay instance -->
 
         <string name="liferay_server">http://10.0.2.2:8080</string>
 
-        <integer name="liferay_company_id">10155</integer>
-        <integer name="liferay_group_id">10182</integer>
+        <integer name="liferay_company_id">20116</integer>
+        <integer name="liferay_group_id">20147</integer>
+
+        <integer name="liferay_portal_version">70</integer>
 
     </resources>
 
 As the comment indicates, change the values to match those of your Liferay 
-installation. The server address `http://10.0.2.2:8080` is suitable for testing 
+instance. The server address `http://10.0.2.2:8080` is suitable for testing 
 with Android Studio's emulator, because it corresponds to `localhost:8080` 
-through the emulator. The portal you set up earlier should be running on 
-`localhost:8080`.
+through the emulator. The Liferay instance you set up earlier should be running 
+on `localhost:8080`. 
 
 The `liferay_company_id` value is your Liferay instance's ID. You can find it in 
-the *Control Panel* &rarr; *Configuration* &rarr; *Portal Instances* menu. Your 
-Liferay instance's ID is in the *Instance ID* column. Copy and paste this value 
-from your portal to the `liferay_company_id` value in `server_context.xml`.
+your Liferay instance at *Control Panel* &rarr; *Configuration* &rarr; *Virtual 
+Instances*. The instance's ID is in the *Instance ID* column. Copy and paste 
+this value into the `liferay_company_id` value in `server_context.xml`. 
 
 The `liferay_group_id` value is the ID of the site your app needs to communicate 
 with. Since the app needs to communicate with the Guestbook portlet, navigate to 
-the site you put the Guestbook portlet on. Then select 
-*Admin* &rarr; *Site Administration* &rarr; *Configuration* from the Dockbar. 
-The site ID is listed on the *Site Settings* tab. Copy and paste this value 
-from your portal to the `liferay_group_id` value in `server_context.xml`.
+the site you put the Guestbook portlet on. In the *Site Administration* menu, 
+select *Configuration* &rarr; *Site Settings*. The site ID is listed at the top 
+of the *General* tab. Copy and paste this value into the `liferay_group_id` 
+value in `server_context.xml`. 
 
 Awesome! Next, you'll learn the app's basic design. 

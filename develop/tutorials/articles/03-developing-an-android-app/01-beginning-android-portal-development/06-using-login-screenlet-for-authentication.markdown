@@ -1,6 +1,6 @@
 # Using Login Screenlet for Authentication
 
-For the app to retrieve data from the guestbook portlet, the app's user must 
+For the app to retrieve data from the Guestbook portlet, the app's user must 
 first authenticate to the Liferay instance. The other features you'll develop in 
 your app depend on successful Liferay authentication. You can implement 
 authentication using the Liferay Mobile SDK, but it takes time to write. 
