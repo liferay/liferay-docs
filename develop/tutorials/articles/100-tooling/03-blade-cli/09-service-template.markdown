@@ -6,7 +6,7 @@ following:
 
     blade create -t service -p com.liferay.docs.service -c Service -s com.liferay.portal.kernel.events.LifecycleAction  my-service-project
 
-The command above creates an activator project named `my-service-project` in the
+The command above creates an service project named `my-service-project` in the
 current directory. You set the package name to `com.liferay.docs.service` and
 the class name to `Service`. Note that in that class, you're creating a service
 of type `com.liferay.portal.kernel.events.LifecycleAction` and implementing that
