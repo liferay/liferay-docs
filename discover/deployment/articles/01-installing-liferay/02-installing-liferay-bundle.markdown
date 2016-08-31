@@ -88,7 +88,7 @@ you'll create a configuration file called `portal-ext.properties`, and you'll
 place that file in your Liferay Home folder. 
 
 The configuration varies by database, of course, so templates for each one are
-provided in the [reference section](/develop/reference/-/knowledge_base/7-0/databse-templates). 
+provided in the [reference section](/discover/reference/-/knowledge_base/7-0/database-templates). 
 To connect your database, therefore, create a text file called
 `portal-ext.properties` in your Liferay Home folder. Copy the relevant template
 for your database and paste it into this file. 
