@@ -14,7 +14,7 @@ create a service wrapper project called `service-override` with a package name o
 `com.liferay.portal.service.UserLocalServiceWrapper` class. You could run the
 following command to accomplish this:
 
-    blade create -t servicewrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.service.UserLocalServiceWrapper service-override
+    blade create -t servicewrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.kernel.service.UserLocalServiceWrapper service-override
 
 Here, *service* means an OSGi service, not a Liferay API. Another way to say
 *service type* is to say *component type*.
