@@ -8,7 +8,7 @@ scripts takes it to the next level.
 Examine the default single approver workflow definition file included with Kaleo
 for an overview of how the feature works. You can find the default single
 approver workflow definition file in Liferay's source code here:
-[hhttps://github.com/liferay/com-liferay-portal-workflow/tree/7.0.x/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions/single-approver-definition.xml](https://github.com/liferay/com-liferay-portal-workflow/tree/7.0.x/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions/single-approver-definition.xml).
+[https://github.com/liferay/com-liferay-portal-workflow/blob/com.liferay.portal.workflow.kaleo.runtime.impl-2.0.3/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions/single-approver-definition.xml](https://github.com/liferay/com-liferay-portal-workflow/blob/com.liferay.portal.workflow.kaleo.runtime.impl-2.0.3/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions/single-approver-definition.xml).
 The final step in the workflow runs a script that makes content available for
 use. As you can see in the snippet below, it uses JavaScript to access the Java
 class associated with the workflow to set the status of the content to
