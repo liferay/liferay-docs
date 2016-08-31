@@ -1,4 +1,4 @@
-# Securing Elasticsearch with Shield
+# Securing Elasticsearch with Shield [](id=securing-elasticsearch-with-shield)
 
 Elasticsearch makes storing, searching, and analyzing your Liferay search data
 easy. When it comes to securing that data, use Elasticsearch's [Shield
@@ -39,7 +39,7 @@ These terms will be useful to understand as you read this guide:
 -  *Liferay Home* refers to the root folder of your Liferay installation. It will
   contain the `osgi`, `deploy`, `data`, and `license` folders.
 
-## Installing Shield on Elasticsearch
+## Installing Shield on Elasticsearch [](id=installing-shield-on-elasticsearch)
 
 First install the Shield plugin to your Elasticsearch cluster.
 
@@ -122,7 +122,7 @@ documentation](https://www.elastic.co/guide/en/shield/2.2/installing-shield.html
 
 Once Shield is installed, you can configure Liferay's Shield adapter.
 
-## Installing and Configuring Liferay's Shield Adapter
+## Installing and Configuring Liferay's Shield Adapter [](id=installing-and-configuring-liferays-shield-adapter)
 
 On the Liferay side of the equation, you need to configure the authentication
 token for the *liferay* Shield user configured in the previous section.
@@ -164,7 +164,7 @@ To configure the Shield adapter using System Settings:
     Note: If you set a different username and password while configuring Shield,
     make sure those match the username and password you configure here.
 
-    ![Figure x: You can configure the Liferay Portal Search Elasticsearch Shield plugin from System Settings.](../../../images-dxp/shield-adapter-settings.png)
+    ![Figure 1: You can configure the Liferay Portal Search Elasticsearch Shield plugin from System Settings.](../../../images-dxp/shield-adapter-settings.png)
 
 3. Now you can reindex against Elasticsearch, and your data is secured by
    Shield. To reindex, go to the Control Panel's Configuration section and click
@@ -174,7 +174,7 @@ To configure the Shield adapter using System Settings:
 For a complete list of the Shield adapter's available configuration options, see
 [here](discover/reference/-/knowledge_base/7-0/shield-settings)
 
-## Encrypting Elasticsearch Connections
+## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
 
 It's great to ensure that your Elasticsearch connection is authenticated, but
 right now the authentication token is being sent in plain text. For additional

@@ -1,4 +1,4 @@
-# Shield Adapter Settings
+# Shield Adapter Settings [](id=shield-adapter-settings)
 
 The following is a complete list of the settings you can configure with
 [Liferay's Shield adapter](discover/deployment/-/knowledge_base/7-0/shield).
