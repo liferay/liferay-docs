@@ -17,10 +17,10 @@ Here are the gulp tasks you can execute:
     along with the `deploy` task (e.g., `gulp deploy --live`).
 
     Note that the
-    [server-manager-web](https://github.com/liferay/liferay-plugins/tree/master/webs/server-manager-web)
-    plugin must deployed on the server you specify. The `--live` flag deploys
-    the theme to the remote server specified in the `init` task--the `init` task is
-    explained later in this section.
+    [server-manager app](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/server/server-manager)
+    must be deployed on the server you specify. The `--live` flag deploys
+    the theme to the remote server specified in the `init` task--the `init` task 
+    is explained later in this section.
 
     If you want to deploy to a different server without changing the default
     server specified in `init`, you may use the `--url` flag.
