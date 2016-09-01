@@ -48,7 +48,7 @@ class):
     
     ...
 
-    private static Log _log = LogFactory.getLog(S3Store.class);
+    private static Log _log = LogFactoryUtil.getLog(S3Store.class);
 
 You would then use this `_log` variable to create log messages in your code
 for the various logging levels:
