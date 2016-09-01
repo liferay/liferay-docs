@@ -93,9 +93,9 @@ $$$
 Once you've developed and managed projects in your workspace, it could also be
 usefuly to bundle your workspace into a ZIP or TAR file. This provides the
 flexibility to distribute your workspace to potential consumers. To do this,
-navigate to your workspace's root folder and run the following:
+navigate to your workspace's root folder and run the following command:
 
-    gradlew distBundle[Zip|Tar]
+    ./gradlew distBundle[Zip|Tar]
 
 Your distribution file is available from the workspace's `/build` directory.
 
@@ -109,7 +109,7 @@ generate and install (e.g., `7.0-ce-ga1`).
 Once you've finalized your Gradle properties, navigate to your workspace's root
 folder and run
 
-    gradlew initBundle
+    ./gradlew initBundle
 
 As you read earlier, the workspace uses a Gradle wrapper to download and use
 Gradle build tools. This command downloads the version of Liferay you specified
@@ -150,7 +150,7 @@ requirements include the build JARs the Plugins SDK relies on to function
 properly. To download the necessary requirements for your Plugins SDK, run the
 following command from your workspace's root folder:
 
-    gradlew tasks
+    ./gradlew tasks
 
 Once the downloading is complete, your Plugins SDK is ready to use in your
 workspace. It's as simple as that!
