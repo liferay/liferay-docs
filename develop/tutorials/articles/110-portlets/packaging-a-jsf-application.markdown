@@ -220,6 +220,6 @@ JSF application as a WAB.
 
 [OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity)
 
-[Creating A Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 
-[Migrating A Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
+[From Liferay 6 to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/from-liferay-6-to-liferay-7)
