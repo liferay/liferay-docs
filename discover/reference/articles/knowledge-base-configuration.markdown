@@ -9,6 +9,8 @@ This reference doc is organized into the following sections:
 - Knowledge Base System Settings
 - Overriding Settings
 
+The Knowledge Base System Settings are covered next. 
+
 ## Knowledge Base System Settings [](id=knowledge-base-system-settings)
 
 The next few sections show the available system settings for each Knowledge Base 
@@ -378,8 +380,12 @@ Settings UI.
    
 -  **Admin KBArticle sections default:** Sets the default selected section for
    Knowledge Base articles.
+   
+Now that you have an understanding of the system settings available for the
+Knowledge Base apps, you can learn how to overwrite the default values for those
+settings next.
 
-## Overriding Settings [](id=overriding-settings)
+## Overwriting Settings [](id=overriding-settings)
 
 So far, this document has covered the default system settings for the Knowledge
 Base apps. Some of these settings can be overwritten through the configuration 
@@ -421,8 +427,9 @@ example, the *Knowledge Base Service* configuration file is called
 `com.liferay.knowledge.base.configuration.KBGroupServiceConfiguration.cfg` and
 the *Knowledge Base Section* configuration file is called
 `com.liferay.knowledge.base.web.configuration.KBSectionPortletInstanceConfiguration.cfg`.
-To overwrite these files, you must use the same name for your configuration file, 
-and place it in the `osgi/config` directory.
+To overwrite a configuration file, you must create a new configuration file with 
+the same name, specify your property values, and place it in the `osgi/config` 
+directory.
 
 $$$
 
@@ -430,11 +437,14 @@ You can view the current configuration files and settings by exporting the
 configuration file, as explained in the [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
 User Guide documentation.
     
-### Equivalent Configuration Properties for 6.2 Portal Properties [](id=equivalent-configuration-properties-for-6-2-portal-properties)
+### Equivalent Configuration Properties for 6.2 Portlet Properties [](id=equivalent-configuration-properties-for-6-2-portlet-properties)
 
 Here is a list of the properties previously found in Knowledge Base's 
 `portlet.properties` and the new properties to use in the Knowledge Base 
-configuration files.
+configuration files, along with the equivalent system settings. Although you can 
+overwrite configuration settings with a configuration file, it is recommended 
+that you overwrite the Knowledge Base configuration settings through the System 
+Settings menus if possible.
 
 The properties below are for the Knowledge Base Service System Settings 
 configuration file:
@@ -442,7 +452,7 @@ configuration file:
 <style>
 .max-960 {
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: 1000px;
 }
 .no-max
 .max-960 {
@@ -451,19 +461,16 @@ configuration file:
 .system-settings-table td {
 	border-bottom: 1px solid;
 	border-top: 1px solid;
-	padding: 10px;
+	padding: 8px;
+	width: 100%;
 }
 .table-header {
 	font-weight: bold;
-}
-.table-header.second {
-	width: 70%;
 }
 .left-header {
 	border-right: 1px solid;
 }
 </style>
-
 <div class="system-settings-table">
 <div class="max-960">
 <div class="aui-helper-clearfix section-1" >
@@ -471,146 +478,302 @@ configuration file:
 <div class="content-column-content">
 <table>
         <caption>Knowledge Base Service</caption>
-	<thead>
-		<td class="table-header left-header">
-			portlet.properties
-		</td>
-		<td class="table-header second">
-			System Setting
-		</td>
-	</thead>
+	<tr>
+		<th class="table-header left-header">
+			File
+		</th>
+		<th class="table-header second">
+			Value
+		</th>
+	</tr>
 	<tbody>
 		<tr>
 			<td>
-		            admin.email.from.name
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-	                    emailFromName
+	                    admin.email.from.name<br>
+	                    emailFromName<br>
+	                    Email from name
 			</td>			
 		</tr>
 		<tr>
 			<td>
-			    admin.email.from.address
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-		            emailFromAddress
-			</td>
+	                    admin.email.from.address<br>
+	                    emailFromAddress<br>
+	                    Email from address
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        admin.email.kb.article.added.body<br>
-					admin.email.kb.article.added.enabled<br>
-					admin.email.kb.article.added.subject<br>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					emailKBArticleAddedBody<br>
-					emailKBArticleAddedEnabled<br>
-					emailKBArticleAddedSubject<br>
-			</td>
+	                    admin.email.kb.article.added.body<br>
+	                    emailKBArticleAddedBody<br>
+	                    Email KBArticle added body
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        admin.email.kb.article.suggestion.in.progress.body<br>
-					admin.email.kb.article.suggestion.in.progress.enabled<br>
-					admin.email.kb.article.suggestion.in.progress.subject<br>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					emailKBSuggestionInProgressBody<br>
-					emailKBSuggestionInProgressEnabled<br>
-					emailKBSuggestionInProgressSubject<br>
-			</td>
+	                    admin.email.kb.article.added.enabled<br>
+	                    emailKBArticleAddedEnabled<br>
+	                    Email KBArticle added enabled
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        admin.email.kb.article.suggestion.received.body<br>
-					admin.email.kb.article.suggestion.received.enabled<br>
-					admin.email.kb.article.suggestion.received.subject<br>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					emailKBSuggestionReceivedBody<br>
-					emailKBSuggestionReceivedEnabled<br>
-					emailKBSuggestionReceivedSubject<br>
-			</td>
+	                    admin.email.kb.article.added.subject<br>
+	                    emailKBArticleAddedSubject<br>
+	                    Email KBArticle added subject
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        admin.email.kb.article.suggestion.resolved.body<br>
-					admin.email.kb.article.suggestion.resolved.enabled<br>
-					admin.email.kb.article.suggestion.resolved.subject<br>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					emailKBSuggestionResolvedBody<br>
-					emailKBSuggestionResolvedEnabled<br>
-					emailKBSuggestionResolvedSubject<br>
-			</td>
+	                    admin.email.kb.article.suggestion.in.progress.body<br>
+	                    emailKBSuggestionInProgressBody<br>
+	                    Email KBArticle suggestion in progress body
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        admin.email.kb.article.updated.body<br>
-					admin.email.kb.article.updated.enabled<br>
-					admin.email.kb.article.updated.resolved.subject<br>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					emailKBSuggestionUpdatedBody<br>
-					emailKBSuggestionUpdatedEnabled<br>
-					emailKBSuggestionUpdatedSubject<br>
-			</td>
+	                    admin.email.kb.article.suggestion.in.progress.enabled<br>
+	                    emailKBSuggestionInProgressEnabled<br>
+	                    Email KBArticle suggestion in progress enabled
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        admin.kb.article.increment.priority.enabled
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					articleIncrementPriorityEnabled
-			</td>
+	                    admin.email.kb.article.suggestion.in.progress.subject<br>
+	                    emailKBSuggestionInProgressSubject<br>
+	                    Email KBArticle suggestion in progress subject
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        markdown.importer.article.extensions
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					markdownImporterArticleExtensions
-			</td>
+	                    admin.email.kb.article.suggestion.received.body<br>
+	                    emailKBSuggestionReceivedBody<br>
+	                    Email KBArticle suggestion received body
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        markdown.importer.article.intro
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					markdownImporterArticleIntro
-			</td>
+	                    admin.email.kb.article.suggestion.received.enabled<br>
+	                    emailKBSuggestionReceivedEnabled<br>
+	                    Email KBArticle suggestion received enabled
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        markdown.importer.image.file.extensions
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					markdownImporterImageFileExtensions
-			</td>
+	                    admin.email.kb.article.suggestion.received.subject<br>
+	                    emailKBSuggestionReceivedSubject<br>
+	                    Email KBArticle suggestion received subject
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        markdown.importer.image.folder
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					markdownImporterImageFolder
-			</td>
+	                    admin.email.kb.article.suggestion.resolved.body<br>
+	                    emailKBSuggestionResolvedBody<br>
+	                    Email KBArticle suggestion resolved body
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        knowledge.base.source.url.enabled
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					sourceURLEnabled
-			</td>
+	                    admin.email.kb.article.suggestion.resolved.enabled<br>
+	                    emailKBSuggestionResolvedEnabled<br>
+	                    Email KBArticle suggestion resolved enabled
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        knowledge.base.source.url.edit.message.key
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					sourceURLEditMessageKey
+	                    admin.email.kb.article.suggestion.resolved.subject<br>
+	                    emailKBSuggestionResolvedSubject<br>
+	                    Email KBArticle suggestion resolved subject
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
+			<td>
+	                    admin.email.kb.article.updated.body<br>
+	                    emailKBSuggestionUpdatedBody<br>
+	                    Email KBArticle suggestion updated body
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    admin.email.kb.article.updated.enabled<br>
+	                    emailKBSuggestionUpdatedEnabled<br>
+	                    Email KBArticle suggestion updated enabled
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    admin.email.kb.article.updated.resolved.subject<br>
+	                    emailKBSuggestionUpdatedSubject<br>
+	                    Email KBArticle suggestion updated subject
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    admin.kb.article.increment.priority.enabled<br>
+	                    articleIncrementPriorityEnabled<br>
+	                    Article increment priority enabled
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    markdown.importer.article.extensions<br>
+	                    markdownImporterArticleExtensions<br>
+	                    Markdown importer article extensions
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    markdown.importer.article.intro<br>
+	                    markdownImporterArticleIntro<br>
+	                    Markdown importer article intro
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    markdown.importer.image.file.extensions<br>
+	                    markdownImporterImageFileExtensions<br>
+	                    Markdown importer image file extensions
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    markdown.importer.image.folder<br>
+	                    markdownImporterImageFolder<br>
+	                    Markdown importer image folder
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    knowledge.base.source.url.enabled<br>
+	                    sourceURLEnabled<br>
+	                    Source URLEnabled
+			</td>			
+		</tr>
+		<tr>
+			<td>
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
+			</td>
+			<td>
+	                    knowledge.base.source.url.edit.message.key<br>
+	                    sourceURLEditMessageKey<br>
+	                    Source URLEdit message key
+			</td>			
 		</tr>		
 	</tbody>
 </table>
@@ -629,30 +792,38 @@ The properties below are for the Knowledge Base Section configuration file:
 <div class="content-column-content">
 <table>
         <caption>Knowledge Base Section</caption>
-	<thead>
-		<td class="table-header left-header">
-			portlet property
-		</td>
-		<td class="table-header second">
-			System Setting
-		</td>
-	</thead>
+	<tr>
+		<th class="table-header left-header">
+			File
+		</th>
+		<th class="table-header second">
+			Value
+		</th>
+	</tr>
 	<tbody>
 		<tr>
 			<td>
-				        admin.kb.article.sections
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					adminKBArticleSections
-			</td>
+	                    admin.kb.article.sections<br>
+	                    adminKBArticleSections<br>
+	                    Admin KBArticle sections
+			</td>			
 		</tr>
 		<tr>
 			<td>
-				        admin.kb.article.sections.default
+		            6.2 Portlet Property<br>
+		            Configuration Property<br>
+		            System Setting
 			</td>
 			<td>
-					adminKBArticleSectionsDefault
-			</td>
+	                    admin.kb.article.sections.default<br>
+	                    adminKBArticleSectionsDefault<br>
+	                    Admin KBArticle sections default
+			</td>			
 		</tr>
 	</tbody>
 </table>
@@ -662,22 +833,18 @@ The properties below are for the Knowledge Base Section configuration file:
 </div>
 </div>
 
-+$$$
+The properties below have been removed or relocated:
 
-**Note:** The `knowledge.base.ratings.number.of.stars` property has been removed 
-since Knowledge Base now has a Ratings Configuration Framework. You can change 
-the ratings type in the Instance Settings configuration menu under the *Social* 
-tab. You can also configure the ratings type for an individual site under the 
-*Social* tab of the Site Settings configuration menu.
+-  **knowledge.base.ratings.number.of.stars:** This property has been removed 
+   since Knowledge Base now has a Ratings Configuration Framework. You can 
+   change the ratings type in the Instance Settings configuration menu under the 
+   *Social* tab. You can also configure the ratings type for an individual site 
+   under the *Social* tab of the Site Settings configuration menu.
 
-The `knowledge.base.social.bookmarks.display.style` property can now be found
-under the *Social bookmarks display style* setting of each Knowledge Base 
-app's configuration menu in System Settings.
+-  **knowledge.base.social.bookmarks.display.style:** This property can now be 
+   found under the *Social bookmarks display style* setting of each Knowledge 
+   Base app's configuration menu in System Settings.
 
-$$$
-
-The configuration properties covered above are the properties that were 
-previously found in portlet properties. You can view the full list of available 
-configuration files and properties by exporting the configuration file, as 
-explained in the [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
+You can view the full list of available configuration files and properties by 
+exporting the configuration files, as explained in the [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
 User Guide documentation.
