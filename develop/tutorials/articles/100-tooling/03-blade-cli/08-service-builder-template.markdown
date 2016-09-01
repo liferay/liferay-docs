@@ -2,17 +2,21 @@
 
 In this tutorial, you'll learn how to create a Liferay portlet application that
 uses Service Builder as Liferay modules. To create a Liferay Service Builder
-project, use a command like the following:
+project, use a command with the following parameters: 
+
+    blade create -t servicebuilder -p [package name] [project name]
+
+The template for this kind of project is `servicebuilder`. Suppose you want to
+create a Service Builder project called `tasks` with a package name of
+`com.liferay.docs.tasks`. You could run the following command to accomplish
+this:
 
     blade create -t servicebuilder -p com.liferay.docs.tasks tasks
 
-The command above creates an Service Builder project named `tasks` in the
-current directory. You also set the package name to `com.liferay.docs.tasks`. By
-default, the template adds the `portlet` folder to the end of your generated
-package name to identify the package as portlet class package.
-
-After running the command above, your project's directory structure looks like
-this:
+This task creates the `tasks-api` and `tasks-service` folders. In many cases, a
+Service Builder project also requires a `-web` folder to hold, for example,
+portlet classes. This should be created manually. After running the command
+above, your project's directory structure looks like this:
 
 - `tasks`
     - `tasks-api`
@@ -22,21 +26,6 @@ this:
         - `bnd.bnd`
         - `build.gradle`
         - `service.xml`
-    - `tasks-web`
-        - `src`
-            - `main`
-                - `java`
-                    - `com/liferay/docs/tasks/portlet`
-                        - `TasksPortlet.java`
-                - `resources`
-                    - `content`
-                        - `Language.properties`
-                    - `META-INF`
-                        - `resources`
-                            - `init.jsp`
-                            - `view.jsp`
-        - `bnd.bnd`
-        - `build.gradle`
     - `build.gradle`
     - `settings.gradle`
 
