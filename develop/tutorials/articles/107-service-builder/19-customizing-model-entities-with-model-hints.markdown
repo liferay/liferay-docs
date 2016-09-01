@@ -119,7 +119,7 @@ Name                | Value Type | Description | Default
 `auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true
 `autoSize`          | boolean | displays the field in a for scrollable text area | false
 `day-nullable`      | boolean | allows the day to be null in a date field | false
-`default-value`     | String  | sets the default value for a field | (empty String)
+`default-value`     | String  | sets the default value of the form field rendered using the aui taglib | (empty String)
 `display-height`    | integer | sets the display height of the form field rendered using the aui taglib | 15
 `display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350
 `editor`            | boolean | sets whether to provide an editor for the input | false
