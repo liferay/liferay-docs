@@ -13,7 +13,7 @@ site easier:
 - **Template Editor:** Import template script files that inform the system how
   to display the content within the fields determined by the structure.
 
-- **Web Content Display:** A portlet that allows you place web content on a page
+- **Web Content Display:** A portlet that allows you to place web content on a page
   in your portal.
 
 - **Asset Publisher:** A portlet which can aggregate different types of content
@@ -26,7 +26,7 @@ site easier:
   process.
 
 - **Staging:** Use a separate staging server or stage your content locally so
-  you can keep your changes separate from the live site. 
+  you can keep your changes separate from the live site.
 
 Liferay's Web Content Management is a powerful and robust tool for creating and
 organizing content on your web site. Let's begin by examining some basic
@@ -81,7 +81,7 @@ folders to group certain kinds of web content articles together. Click *Add*
 Existing web content structures also appear in the *Add* menu. This provides
 users with shortcuts for creating specific kinds of web content articles. For
 example, if a web content structure called *FAQ* has been created for Frequently
-Asked Questions articles in your currently selected scope, you can create a new
+Asked Question articles in your currently selected scope, you can create a new
 FAQ article by clicking *Add* &rarr; *FAQ*.
 
 Click *Manage* &rarr; *Structures* to view a list of web content structures that
@@ -90,7 +90,7 @@ structures here. Web Content templates are always associated with a particular
 web content structure, so you can click *Actions* &rarr; *Manage Templates* to
 view the web content templates associated with a structure or add a new
 template to a structure. In the next chapter, we'll cover advanced features such
-as structures, templates, and content scheduling in detail. 
+as structures, templates, and content scheduling in detail.
 
 ### Rich, WYSIWYG Editing [](id=rich-wysiwyg-editing)
 
@@ -140,7 +140,7 @@ functionality. For example, if you navigate to the Control Panel, click on
 *Server Administration* and then on *External Services*, you can install and
 enable Xuggler. Enabling Xuggler allows you to embed audio and video files in
 web content. Installing and enabling Xuggler is easy; you can do it right from
-the Control Panel. Please refer to [Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
+the Control Panel. Please refer to the [Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
 article of this guide for more details.
 
 Once Xuggler has been installed and enabled, embedding audio or video files in a
@@ -153,7 +153,7 @@ appropriate file, click *Choose*. If you haven't already uploaded the audio or
 video file to the portal, you can do so by clicking on the *Upload* button.
 Select the file and then check that the audio or video component appears in the
 web content. Excellent! When your web content is published, users can view or
-listen the embedded multimedia!
+listen to the embedded multimedia!
 
 You can also download the web content article in XML format by clicking the
 *Download* button. This button is available on the Edit Web Content screen,
@@ -182,7 +182,7 @@ web content.
 
 ![Figure 2.19: New web content can be customized in various ways using the menu on the right.](../../images/wcm-menu.png)
 
-**Abstract:** lets you to create a brief summary of the web content. You can
+**Abstract:** lets you create a brief summary of the web content. You can
 also pair the text with a small image.
 
 **Categorization:** specifies the content type from a list of options. They are
@@ -191,13 +191,13 @@ can also create tags to make the content easier to find in a search. Note that
 these categories are defined by a property in the properties file; see the
 `journal.article.types` property in the
 [Properties Document](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Journal%20Portlet)
-for further information. 
+for further information.
 
 +$$$
 
 **Note:** The Web Content Type portlet, located within the Categorization menu,
 is deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The portlet
-will be migrated to a vocabulary with categories. 
+will be migrated to a vocabulary with categories.
 
 $$$
 
@@ -302,12 +302,12 @@ the Lunar Resort, it's time to display it. First, add the *Web Content Display*
 portlet to our Welcome page by selecting the *Add* button from the left palette
 and selecting the *Applications* tab.
 
-![Figure 2.21: Adding the Web Content Display Portlet](../../images/add-web-content-display.png)
+![Figure 2.21: Adding the Web Content Display Portlet.](../../images/add-web-content-display.png)
 
 Once the portlet appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display portlets on a
 page as you need, which gives you the power to lay out your content exactly the
-way you want it. 
+way you want it.
 
 To add existing web content, click the *Select Web Content* button on the lower
 left of the portlet. You will see the message *Please select a web content from
@@ -366,10 +366,10 @@ page you're managing, especially if you are in the process of building the page.
 At other times, you may want to navigate to Site Administration to create
 content, because at that moment you're more concerned with the creation of the
 content and not where the content will later be displayed. Liferay WCM supports
-both processes. 
+both processes.
 
 Editing content that's already been published is just as easy as creating new
-content is. You'll use the same exact tools. 
+content is. You'll use the same exact tools.
 
 ## Editing Content [](id=editing-content)
 
