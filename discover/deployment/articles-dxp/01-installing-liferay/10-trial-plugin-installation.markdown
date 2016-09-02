@@ -36,9 +36,11 @@ options to update or install certain plugins. To install a plugin, click the
 
 ![Click the *Install* button to install a plugin.](../../images-dxp/dxp-store-install.png)
 
-**5)** Once a Liferay DXP Trial customer becomes an official Liferay DXP
-subscriber, the user gains access to Liferay Customer Portal. This also
-includes access to the DXP-specific plugins from the Liferay [Marketplace website](https://www.liferay.com/marketplace) on Liferay.COM (LRDC).
+**5)** Trial users have access to the Customer Portal during their trial, with
+the exception of our customer Knowledge Base and LESA, our support ticketing
+system. This also includes access to the DXP-specific plugins from the Liferay
+[Marketplace website](https://www.liferay.com/marketplace) on Liferay.COM
+(LRDC).
 
 +$$$
 
