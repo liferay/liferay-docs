@@ -5,13 +5,9 @@ approving content in an enterprise environment. Even if you don't leverage
 custom scripts, it's a powerful and robust workflow solution. Adding custom
 scripts takes it to the next level.
 
-Examine the default single approver workflow definition file included with Kaleo
-for an overview of how the feature works. You can find the default single
-approver workflow definition file in Liferay's source code here:
-[https://github.com/liferay/com-liferay-portal-workflow/blob/com.liferay.portal.workflow.kaleo.runtime.impl-2.0.3/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions/single-approver-definition.xml](https://github.com/liferay/com-liferay-portal-workflow/blob/com.liferay.portal.workflow.kaleo.runtime.impl-2.0.3/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions/single-approver-definition.xml).
-The final step in the workflow runs a script that makes content available for
-use. As you can see in the snippet below, it uses JavaScript to access the Java
-class associated with the workflow to set the status of the content to
+The final step in a workflow should run a script that makes content available
+for use. As you can see in the snippet below, JavaScript can be used to access
+the Java class associated with the workflow to set the status of the content to
 *approved*.
 
     <script>
