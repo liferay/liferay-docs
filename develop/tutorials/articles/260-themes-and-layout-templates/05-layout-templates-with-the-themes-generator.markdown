@@ -38,7 +38,11 @@ Follow these steps to create a layout template:
 2.  Run `yo liferay-theme:layout` to start the layouts sub-generator.
 
     ![Figure 3: The Layout Template sub-generator automates the layout creation process.](../../images/layout-prompt.png)
-
+    
+    **Note:** If you run the layout sub-generator from the root directory of a 
+    theme created with the themes generator, it will add the layout template as 
+    a part of the theme in the `src/layouttpl` directory.
+    
 3.  Enter a name and ID for your layout template, or press Enter to accept the
     default values.
 
@@ -100,11 +104,17 @@ To create your own thumbnail follow the steps below:
 
 1.  Navigate to the `docroot` directory of the layout template you just created.
 
-2.  Replace the `layout-name.png` file in your layout templates `docroot`
-    folder with your own custom thumbnail PNG.
+    **Note:** if you created the layout template in your existing themes
+    generator theme, the thumbnail is located in your theme's 
+    `src/layouttpl/custom` directory.
+
+2.  Replace the `layout-name.png` file with your own custom thumbnail PNG.
     
 3.  navigate back to the layout's root directory and run `gulp deploy` to
     re-build and deploy the template to your app server.
+    
+    **Note:** If your layout template was added as part of your themes generator
+    theme, the layout template will deploy when the theme is deployed.
     
 Your layout template is complete! As you can see, the layouts sub-generator
 makes creating a layout template a piece of cake.
