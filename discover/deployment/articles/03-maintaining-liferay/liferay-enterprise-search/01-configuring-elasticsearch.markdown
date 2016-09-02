@@ -16,10 +16,12 @@ If you just want to get up and running quickly with Elasticsearch, refer to the
 [Configuring Search article](discover/deployment/-/knowledge_base/7-0/configuring-search). This
 article shows how to configure Elasticsearch for use in @product@ production
 environments. It also assumes you only want to know what's necessary for the
-installation and configuration of Elasticsearch, not the basics of search
-engines in general, or the low level search infrastructure of Liferay. For that
-information, refer to the developer tutorial [Introduction to Liferay
-Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
+installation and configuration of Elasticsearch in a single server environment,
+and it doesn't include all the clustering and tuning instructions found here. 
+
+If you've come here looking for information on search engines in general, or the
+low level search infrastructure of Liferay, refer to the developer tutorial
+[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
 
 These terms will be useful to understand as you read this guide:
 
@@ -42,9 +44,9 @@ drawbacks:
 
 You wouldn't run an embedded database like HSQL in production, and you shouldn't
 run Elasticsearch in embedded mode in production either. Instead, you want your
-Liferay installation to run alongside Elasticsearch. In other words, run
-Elasticsearch in *remote operation mode*, as a standalone server or cluster of
-server nodes. The first step is to install Elasticsearch.
+Liferay installation to run alongside Elasticsearch. This is called *remote
+operation mode*, as a standalone server or cluster of server nodes. The first
+step is to install Elasticsearch.
 
 +$$$ 
 
@@ -129,7 +131,7 @@ Home]/config/elasticsearch.yml` and specify
 Since `LiferayElasticsearchCluster` is the default name given to the cluster in
 Liferay, this would work just fine. Of course, you can name your cluster
 whatever you'd like (we humbly submit the recommendation
-`clustery_mcclusterface`). You can configure your node name using the same
+`clustery_mcclusterface`).<sup>[1](#footnote1)</sup> You can configure your node name using the same
 syntax (setting the `node.name` property).
 
 If you'd rather work from the command line than in the configuration file,
@@ -227,11 +229,19 @@ configuration file:
         # Highly recommended for all non-prodcution usage (e.g., practice, tests, diagnostics):
         #logExceptionsOnly=false
 
-3. Start Liferay, or re-index if Liferay is already running.
+3. Start Liferay or re-index if Liferay is already running.
 
 As you can see from the System Settings entry for Elasticsearch, there are a lot
-more configuration options available. For a detailed accounting of these, refer
-to the reference article on [Elasticsearch Settings](discover/reference/-/knowledge_base/7-0/elastic-search-setttings).
+more configuration options available that help you tune your system for optimal
+performance. For a detailed accounting of these, refer to the reference article
+on [Elasticsearch Settings](discover/reference/-/knowledge_base/7-0/elastic-search-setttings).
+
+What follows here are some known-good configurations for clustering
+Elasticsearch. These, however, can't replace the manual process of tuning,
+testing under load, and tuning again, so we encourage you to examine the
+[settings](/discover/reference/-/knowledge_base/7-0/elastic-search-settings) as
+well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/setup-configuration.html#settings) 
+and go through that process once you have a working configuration. 
 
 ## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
 
@@ -428,3 +438,5 @@ configuring Shield to secure your Elasticsearch data.
 [Introduction to Liferay Search](develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
 
 [Customizing Liferay Search](develop/tutorials/-/knowledge_base/7-0/customizing-liferay-search)
+
+<a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 
