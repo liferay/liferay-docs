@@ -1,19 +1,22 @@
 # Service Template [](id=using-the-service-template)
 
 In this tutorial, you'll learn how to create a Liferay service as a Liferay
-module. To create a Liferay service as a module, use a command like the
-following:
+module. To create a Liferay service as a module, use a command with the
+following parameters: 
+
+    blade create -t service -p [package name] -c [class name] -s [service name] [project name]
+
+The template for this kind of project is `service`. Suppose you want to create a
+service project called `my-service-project` with a package name of
+`com.liferay.docs.service` and a class name of `Service`. Also, you'd like to
+create a service of type `com.liferay.portal.kernel.events.LifecycleAction` that
+also implements that same service. You could run the following command to
+accomplish this:
 
     blade create -t service -p com.liferay.docs.service -c Service -s com.liferay.portal.kernel.events.LifecycleAction  my-service-project
 
-The command above creates an activator project named `my-service-project` in the
-current directory. You set the package name to `com.liferay.docs.service` and
-the class name to `Service`. Note that in that class, you're creating a service
-of type `com.liferay.portal.kernel.events.LifecycleAction` and implementing that
-same service.
-
-After running the command above, your project's directory structure looks like
-this:
+After running the command above, your project's directory structure would look
+like this
 
 - `my-service-project`
     - `src`

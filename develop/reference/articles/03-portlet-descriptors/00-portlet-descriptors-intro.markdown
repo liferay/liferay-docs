@@ -25,17 +25,18 @@ relationship with those definitions.
 **Note:** XPath notation derived from the **Portlet XSD** [4](#four) is used in
 this document for simplicity.
 
-|`portlet.xml` XPath | OSGi Service Property|
+|`portlet.xml` XPath | OSGi Portlet Service Property|
 |----|----|
 |`/portlet-app/portlet/description`|`javax.portlet.description=<String>`|
-|`/portlet-app/portlet/portlet-name`|`javax.portlet.portlet-name=<String>`|
+|`/portlet-app/portlet/portlet-name`|`javax.portlet.name=<String>`|
 |`/portlet-app/portlet/display-name`|`javax.portlet.display-name=<String>`|
 |`/portlet-app/portlet/portlet-class`|[1](#one)|
 |`/portlet-app/portlet/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
 |`/portlet-app/portlet/expiration-cache`|`javax.portlet.expiration-cache=<int>`|
 |`/portlet-app/portlet/cache-scope`|not supported|
-|`/portlet-app/portlet/supports/mime-type`<br/>`/portlet-app/portlet/supports/portlet-mode`|`javax.portlet.portlet-mode=<mime-type>;<portlet-mode>[,<portlet-mode>]*`|
-|`/portlet-app/portlet/supports/mime-type`<br/>`/portlet-app/portlet/supports/window-state`|`javax.portlet.window-state=<mime-type>;<window-state>[,<window-state>]*`|
+|`/portlet-app/portlet/supports/mime-type`|`javax.portlet.mime-type=<mime-type>`|
+|`/portlet-app/portlet/supports/portlet-mode`|`javax.portlet.portlet-mode=<mime-type>;<portlet-mode>[,<portlet-mode>]*`|
+|`/portlet-app/portlet/supports/window-state`|`javax.portlet.window-state=<mime-type>;<window-state>[,<window-state>]*`|
 |`/portlet-app/portlet/supported-locale`|not supported|
 |`/portlet-app/portlet/resource-bundle`|`javax.portlet.resource-bundle=<String>`|
 |`/portlet-app/portlet/portlet-info/title`|`javax.portlet.info.title=<String>`|
@@ -64,7 +65,7 @@ this document for simplicity.
 **Note:** XPath notation derived from **Liferay Portlet** [5](#five) is used in
 this document for simplicity.
 
-|`liferay-portlet.xml` XPath | OSGi Service Property|
+|`liferay-portlet.xml` XPath | OSGi Liferay Portlet Service Property|
 |----|----|
 |`/liferay-portlet-app/portlet/portlet-name`|not supported|
 |`/liferay-portlet-app/portlet/icon`|`com.liferay.portlet.icon=<String>`|
