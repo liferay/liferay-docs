@@ -162,15 +162,18 @@ This interface defines two methods:
   [This method's implementation in `BaseListScreenletView`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L140-L145) 
   sets the visibility of the View's `ProgressBar` and `RecyclerView` (you'll 
   create these shortly), and logs the `Exception`. 
-<!-- insert diagram -->
 
-Later, when you create your Screenlet class, you'll see how the list Screenlet 
-framework calls these methods. For now, just be aware that 
+The list Screenlet framework's default Screenlet 
+class--`BaseListScreenlet`--calls these methods to update the View with the 
+server call's results. Later, when you extend `BaseListScreenlet` to create your 
+Screenlet class, you'll see how this works. For now, just be aware that 
 `BaseListScreenletView`'s `BaseListViewModel` implementation updates the UI. You 
 should also note that every Screenlet's View requires a View Model interface to 
-define the methods that update the UI. The list Screenlet framework is unique in 
-that it provides this interface for you. If you were creating a non-list 
-Screenlet, you'd need to create this interface manually. 
+define the methods that update the UI. The list Screenlet framework provides 
+this interface for you. If you were creating a non-list Screenlet, you'd need to 
+create this interface manually. 
+
+![Figure 1: In the list Screenlet framework, `BaseListScreenlet` calls `BaseListScreenletView`'s `BaseListViewModel` implementation.](../../../images/screens-android-list-screenlet-view.png)
 
 Now you're ready to create your View class. You'll do this by extending 
 `BaseListScreenletView` with your model class, view holder, and adapter as type 

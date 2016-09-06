@@ -85,7 +85,6 @@ magical journey through the list Screenlet framework.
 
 ### BaseListScreenlet and the Server Call's Results
 
-<!-- Insert diagram in support of this section -->
 Note that `BaseListScreenlet` implements the 
 [`BaseListInteractorListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractorListener.java). 
 by implementing the 
@@ -123,10 +122,13 @@ implementations in `BaseListScreenlet` work:
   `onListPageReceived` sends the the same objects to the activity or fragment 
   class that contains the Screenlet. 
 
-The best part about all this is that you can rely on these default 
-implementations in `BaseListScreenlet` to handle the server call's results. All 
-you have to do is extend `BaseListScreenlet` when creating your Screenlet class. 
-You'll do this next. 
+![Figure 1: This diagram illustrates how the list Screenlet framework handles the server call's results.](../../../images/screens-android-list-screenlet-listeners.png)
+
+The best part about all this is that you can rely on the default 
+`onListRowsFailure` and `onListRowsReceived` implementations in 
+`BaseListScreenlet` to handle the server call's results. All you have to do is 
+extend `BaseListScreenlet` when creating your Screenlet class. You'll do this 
+next. 
 
 ### Extending BaseListScreenlet
 
