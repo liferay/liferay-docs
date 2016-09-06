@@ -21,12 +21,12 @@ First, download a Liferay Tomcat bundle from
 [liferay.com](https://www.liferay.com/). 
 Then follow 
 [these instructions](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal) 
-to install a Liferay bundle. To follow Liferay best practices, you should create 
-a `bundles` directory and unzip it there. The bundle's root directory is
-referred to as *Liferay Home* and is named according to the version, edition,
-and specific Liferay release. For example, if you downloaded Liferay Portal 7.0 
-CE GA2 and unzipped it to a `bundles` directory on your machine, the path of
-that bundle's Liferay Home directory is: 
+to install the bundle. To follow Liferay best practices, you should create a 
+`bundles` directory and unzip it there. The bundle's root directory is referred 
+to as *Liferay Home* and is named according to the version, edition, and 
+specific Liferay release. For example, if you downloaded Liferay Portal 7.0 CE 
+GA2 and unzipped it to a `bundles` directory on your machine, the path of that 
+bundle's Liferay Home directory is: 
 
     bundles/liferay-ce-portal-7.0-ga2
 
@@ -62,13 +62,13 @@ Now that your Liferay instance is set up, you can deploy the Guestbook portlet
 to it. Download the Guestbook portlet's `.war` package from 
 [here](https://dev.liferay.com/documents/10184/581742/guestbook-portlet.war) 
 and place it in the `[Liferay Home]/deploy` directory. You should see messages 
-in your console indicating that the Guestbook portlet has been successfully 
-deployed. On your Liferay instance's default site, click the + icon on the 
-upper-right corner of the screen. Then click the *Applications* &rarr; *Sample* 
-category and drag *Guestbook* onto the page. The Guestbook portlet should now 
-appear with the default guestbook (Main). In the portlet, add a new guestbook 
-and an entry or two to each. This ensures there's some content to display in the 
-Android app. The Guestbook portlet on your site should now look like this: 
+in your console indicating that the portlet has successfully deployed. On your 
+Liferay instance's default site, click the + icon on the upper-right corner of 
+the screen. Then click the *Applications* &rarr; *Sample* category and drag 
+*Guestbook* onto the page. The Guestbook portlet should now appear with the 
+default guestbook (Main). In the portlet, add a new guestbook and an entry or 
+two to each. This ensures there's some content to display in the Android app. 
+The Guestbook portlet on your site should now look like this: 
 
 ![Figure 1: The Guestbook portlet, with a new guestbook and some entries.](../../../images/guestbook-portlet-01.png)
 
