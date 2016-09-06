@@ -29,15 +29,15 @@ and read the newsletter. For this example, your entity to track is a newsletter.
 
 To track how many customers view the newsletter, you'll need to create a
 tracking mechanism. You can provide a custom tracking mechanism (e.g., a
-servlet) or you can use the ones provided by Audience Targeting. In many cases,
-a metric has multiple tracking event options. For example, the YouTube Videos
-metric provides tracking event options like Buffering, Playing, Paused, Ended,
-etc. This lets you track different kinds of actions on an entity, providing a
-more accurate report on user interactions.
+servlet) or you can use the ones provided by Audience Targeting. For a custom
+newsletter, you could use a transparent image as the tracking mechanism, which
+would have the *View* tracking event capability. Whenever the image is viewed,
+the Audience Targeting app computes and stores the information.
 
-For a custom newsletter, you could use a transparent image as the tracking
-mechanism, which would have the *View* tracking event capability. Whenever the
-image is viewed, the Audience Targeting app computes and stores the information.
+In many cases, a metric can have multiple tracking event options. For example,
+the YouTube Videos metric provides tracking event options like Buffering,
+Playing, Paused, Ended, etc. This lets you track different kinds of actions on
+an entity, providing a more accurate report on user interactions.
 
 Finally, you must assign the metric to an entity. For a newsletter, you could
 provide a Newsletter ID field that the user could fill in to differentiate
@@ -47,6 +47,14 @@ To learn more about how metrics are used in the Audience Targeting application,
 visit the
 [Defining Metrics](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
 section.
+
+For this tutorial, you'll create a custom newsletter that can track who views
+it. This process involves defining the view/save lifecycle, which is when
+a user applies a metric to a report using the Report Editor. Then you'll define
+its tracking mechanism, tracking event(s), and differentiation method, similar
+to what was described above.
+
+![Figure 1: The sample Newsletter metric requires the newsletter name, ID, and event type.](../../images-dxp/metric-template.png)
 
 Now that you have an idea of how to plan your custom metric, you'll begin
 creating one next!
@@ -184,44 +192,265 @@ already created.
     [@Deactivate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Deactivate.html)
     annotations, which are required.
 
+2. Add the following method:
 
+        @Override
+        protected void populateContext(
+            TrackingActionInstance trackingActionInstance,
+            Map<String, Object> context, Map<String, String> values) {
 
+            String alias = StringPool.BLANK;
+            String elementId = StringPool.BLANK;
+            String eventType = StringPool.BLANK;
 
+            if (!values.isEmpty()) {
+                alias = values.get("alias");
+                elementId = values.get("elementId");
+                eventType = values.get("eventType");
+            }
+            else if (trackingActionInstance != null) {
+                alias = trackingActionInstance.getAlias();
+                elementId = trackingActionInstance.getElementId();
+                eventType = trackingActionInstance.getEventType();
+            }
 
+            context.put("alias", alias);
+            context.put("elementId", elementId);
+            context.put("eventType", eventType);
+            context.put("eventTypes", getEventTypes());
+        }
 
-<!-- Below content is from first draft tutorial -->
+    To understand what this method accomplishes, you'll need to examine the
+    metric's configuration lifecycle.
 
+    ![Figure 2: An Audience Targeting metric must be configured by the user and processed before it can become part of a Report.](../../images-dxp/metric-lifecycle.png)
 
+    When the user opens the Report Editor, the render phase begins for the
+    metric. The `getFormHTML(...)` method retrieves the HTML to display. You
+    don't have to worry about implementing this method because it's already
+    implemented in the `BaseJSPTrackingAction` class you're extending. The
+    `getFormHTML` method calls the `populateContext(...)` method.
 
-  
-  
-  
-  
-  
+    You'll notice the `populateContext` method is not available in the
+    `TrackingAction` interface. This is because it's not needed in all cases.
+    It's available by extending the `BaseJSPTrackingAction` class, and you'll
+    need to add more logic to it for the newsletter metric.
+    
+    The goal of the `populateContext` method is to generate a map with all the
+    parameters your JSP view needs to render the metric's HTML. This map is
+    stored in the `context` variable, which is pre-populated with basic values
+    in the Portlet logic, and then each metric contributes its specific
+    parameters to it. The `populateContext` method above populates the `alias`,
+    `elementId`, `eventType`, `eventTypes`, and `trackImageHTML` context
+    variables with the adjacent values from the `values` map parameter, which is
+    then passed to the JSP.
 
-Once you've modified your metric's behavior, you'll need to develop the UI for
-your metric's configuration. As you read earlier, a component of your metric is
-its UI configuration, which is used to show the metric's form. If your
-`-TrackingAction` class is already extending `BaseJSPTrackingAction`, your
-metric already supports using JSP pages. If you used the
-`contenttargetingtrackingaction` Blade CLI template, your project is already
-extending `BaseJSPTrackingAction` and has a default `view.jsp` file already
-configured.
+    For the newsletter metric, the `populateContext` method accounts for three
+    use cases:
 
-To view a sample metric and its UI configuration, download the sample
-[newsletter metric](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
+    a. The metric was added but has no set values yet. In this case, the default
+       values defined by the developer are injected (e.g., `alias=""`).
 
-For example, if you wanted to create a metric that tracks the number of times a
-user views a newsletter, you could create a menu with the following fields:
+    b. The metric was added and a value is set, but the request failed to
+       complete (e.g., due to an error). In this case, the `values` parameter
+       of the `populateContext` method contains the values that were intended
+       to be saved, and they are injected so that they are displayed in the
+       metric's view together with the error message.
 
-- *Alias:* used in reports that count the number of times a metric has been
-  triggered.
+    c. The metric was added and a value was successfully set. In this case, the
+       `values` parameter is empty, and you have to obtain the values from
+       storage that the form should display and inject them in the context so
+       they're displayed in the metric's HTML. The newsletter metric stores
+       values in the metric's instance, but complex metrics could use services
+       to store values.
+
+    You can think of the `populateContext` method as the intermediary between
+    your JSP and your backend code. You can see how to create the newsletter
+    metric's UI using a JSP by seeing the
+    [Defining the Metric's UI](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    section. Once the HTML is successfully retrieved and the user has set the
+    newsletter's values and clicked *Save*, the action phase begins. 
+
+3.  Once the action phase begins, the tracking action (metric) is processed. The
+    `NewsletterTrackingAction` class does not need to implement the
+    `processTrackingAction(...)` method because it's already implemented in the
+    `BaseTrackingAction` extension class. The `BaseTrackingAction` class returns
+    `null`.
+
+    So why is the `processTrackingAction` method returning `null`? The
+    newsletter metric only stores basic information that is already stored in
+    the `trackingActionInstance` by default. The `processTrackingAction` method
+    is only used to add additional values that the tracking action instance does
+    not account for to a `typeSettings` field. Therefore, returning `null` means
+    that the newsletter needs no additional information stored separate from the
+    defaults.
+
+    +$$$
+    
+    **Note:** If you want to add services to store your metric's information,
+    they should reside within the `processTrackingAction` method.
+
+    $$$
+
+    Once the metric processing ends, the form is reloaded and the lifecycle
+    restarts again. The value(s) specified in the metric are stored and are
+    ready to be accessed once the report generation begins. Next, you must set
+    the event types that the newsletter metric should evaluate.
+
+4.  Add the following method and private field:
+
+        @Override
+        public List<String> getEventTypes() {
+            return ListUtil.fromArray(_EVENT_TYPES);
+        }
+
+        private static final String[] _EVENT_TYPES = {"view"};
+
+    This specifies that your newsletter metric only tracks who views the
+    newsletter.
+
+5.  Define a way to retrieve the metric's localized summary. In many instances,
+    you can do this by retrieving the metric's resource bundle. For the
+    newsletter metric, you only need to return the metric's type settings. The
+    `typeSettings` field is managed by the framework in the Metric Instance
+    table.
+
+        @Override
+        public String getSummary(
+            TrackingActionInstance trackingActionInstance, Locale locale) {
+
+            return LanguageUtil.get(
+                locale, trackingActionInstance.getTypeSettings());
+        }
+
+6.  Set the servlet context for your metric.
+
+        @Override
+        @Reference(
+            target = "(osgi.web.symbolicname=newsletter)",
+            unbind = "-"
+        )
+        public void setServletContext(ServletContext servletContext) {
+            super.setServletContext(servletContext);
+        }
+
+    This is only required for metrics extending the `BaseJSPTrackingAction`
+    class. The servlet context must be set for the metric to render its own JSP
+    files. The `setServletContext` method is invoked automatically when the
+    metric module is installed and resolved in Liferay. Make sure the
+    `osgi.web.symbolicname` in the `target` property of the `@Reference`
+    annotation is set to the same value as the `Bundle-SymbolicName` defined in
+    the `bnd.bnd` file of the module.
+
+Next, you'll define a tracking mechanism for your metric to use.
+
+## Using a Tracking Mechanism
+
+Imagine an administrator has successfully configured and saved your custom
+metric to his or her report. Now what? Your metric needs to fulfill its
+purpose, which is to track the `view` event type for the defined newsletter. To
+do this, you must define a tracking mechanism. For your custom newsletter,
+you'll use a transparent image as the tracking mechanism, which
+would have the *View* tracking event capability. Whenever the image is viewed,
+the newsletter computes and stores the information.
+
+1.  You must set the analytics processor that the Content Targeting API provides
+    for tracking events. Add the following method and private field to do so:
+
+        @Reference
+        protected void setAnalyticsProcessor(AnalyticsProcessor analyticsProcessor) {
+            _analyticsProcessor = analyticsProcessor;
+        }
+
+        private AnalyticsProcessor _analyticsProcessor;
+
+    The analytics processor is a module of the Audience Targeting Analytics
+    system. It contains a servlet to track analytics from Liferay pages (views,
+    clicks, etc.) and an API to leverage this tracking mechanism. In the
+    `setAnalyticsProcesoor(...)` method, you're obtaining a reference of the
+    current analytics processor to build the URL used to generate a transparent
+    image. All you have to do is insert the generated URL into your newsletter's
+    HTML, and the transparent image tracks who reads it. Everything is processed
+    by the default Audience Targeting Analytics system automatically.
+
+    Now that you've obtained a reference of the analytics processor, you need to
+    add logic for generating the appropriate tracking URL.
+
+2.  Replace the `populateContext` method with the updated method:
+
+        @Override
+        protected void populateContext(
+            TrackingActionInstance trackingActionInstance,
+            Map<String, Object> context, Map<String, String> values) {
+
+            String alias = StringPool.BLANK;
+            String elementId = StringPool.BLANK;
+            String eventType = StringPool.BLANK;
+            String trackImageHTML = StringPool.BLANK;
+
+            if (!values.isEmpty()) {
+                alias = values.get("alias");
+                elementId = values.get("elementId");
+                eventType = values.get("eventType");
+            }
+            else if (trackingActionInstance != null) {
+                alias = trackingActionInstance.getAlias();
+                elementId = trackingActionInstance.getElementId();
+                eventType = trackingActionInstance.getEventType();
+
+                String trackImageURL = _analyticsProcessor.getTrackingURL(
+                    trackingActionInstance.getCompanyId(), 0, 0, "", 0,
+                    Campaign.class.getName(),
+                    new long[] {trackingActionInstance.getCampaignId()},
+                    trackingActionInstance.getElementId(), "view", "");
+
+                trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
+            }
+
+            context.put("alias", alias);
+            context.put("elementId", elementId);
+            context.put("eventType", eventType);
+            context.put("eventTypes", getEventTypes());
+            context.put("trackImageHTML", trackImageHTML);
+        }
+
+    This updated method creates a new variable named `trackImageHTML`,
+    retrieves a tracking URL using the analytics processor, and then populates
+    the `trackImageHTML` context variable. When creating a new metric, the
+    transparent image's URL field is not present in the metric's form. When the
+    metric is initially saved, however, the URL is generated using the analytics
+    processor and is available for copying.
+
+Excellent! You've obtained the analytics processor and can create the
+transparent image tracking mechanism. The newsletter metric's behavior is
+defined and complete. The last thing you need to do is create a JSP template.
+
+## Defining the Metric's UI
+
+The Java code you've added to this point has assumed that there will be three
+configurable fields for your newsletter metric: 
+
+- *Name:* used in reports that count the number of times a metric has been
+  triggered. Also known as the newsletter's alias.
 - *Newsletter ID:* used to differentiate between newsletters.
 - *Event Type:* used to differentiate several actions on the same newsletter,
   such as opening the newsletter or clicking on a link.
 
-Here's a code snippet from the newsletter metric's JSP template (`view.jsp`)
-that could be applied to this example:
+To let administrators set these values, you must define a UI so your metric can
+be configured during the view/save lifecycle. Remember that you also must define
+a field to display the generated transparent image's URL. Create a `view.jsp`
+file in your metric's module (e.g.,
+`/src/main/resources/META-INF/resources/view.jsp`) and add the following logic:
+
+    <%
+    Map<String, Object> context = (Map<String, Object>)request.getAttribute("context");
+
+    String alias = (String)context.get("alias");
+    String elementId = (String)context.get("elementId");
+    String eventType = (String)context.get("eventType");
+    List<String> eventTypes = (List<String>)context.get("eventTypes");
+    String trackImageHTML = (String)context.get("trackImageHTML");
+    %>
 
     <aui:input helpMessage="name-help" label="name" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "alias" %>' type="text" value="<%= alias %>">
         <aui:validator name="required" />
@@ -247,108 +476,6 @@ that could be applied to this example:
         </aui:select>
     </c:if>
 
-This JSP code creates an AUI input field for an Alias and a Newsletter ID, which
-are both required, assuming that their values have been obtained from the
-context attribute in the request. The Alias and Newsletter ID fields are
-necessary because a name and ID are required for the metric to know which
-newsletter to track.
-
-Another field that is created from the above sample code is the Event Type
-field. The event type specifies the type of event to monitor related to the
-tracked entity (e.g., view, click, submit, etc.). For this example JSP, you'd
-need to declare the possible `eventTypes` in your `-TrackingAction` class.
-You'll learn how to do this later.
-
-![Figure 1: This Newsletter metric requires the newsletter alias and ID.](../../images-dxp/metric-template.png)
-
-Notice that the input field names in the JSP are prefixed with
-`ContentTargetingUtil.GUID_REPLACEMENT`. This prefix is required for
-multi-instantiable metrics, which are metrics that return `true` in the
-`isInstantiable` method of their `-TrackingAction` class and can be added more
-than once to the Metrics form.
-
-Now you'll jump back into modifying your metrics's behavior via the
-`-TrackingAction` class. You'll dive further into the sample newsletter metric
-and find what is necessary to make the JSP code work with the TrackingAction
-Java class.
-
-An important method in the newsletter's `NewsletterTrackingAction` class is the
-`populateContext` method. This method takes the values that were entered by the
-user in the Metric form and injects them into the `context` map parameter. For
-example, the following `populateContext` method populates the `eventTypes`
-variable that was used in the newsletter JSP sample with the event types
-available in the newsletter metric:
-
-    @Override
-    protected void populateContext(
-        TrackingActionInstance trackingActionInstance,
-        Map<String, Object> context, Map<String, String> values) {
-
-        String alias = StringPool.BLANK;
-        String elementId = StringPool.BLANK;
-        String eventType = StringPool.BLANK;
-        String trackImageHTML = StringPool.BLANK;
-
-        if (!values.isEmpty()) {
-            alias = values.get("alias");
-            elementId = values.get("elementId");
-            eventType = values.get("eventType");
-        }
-        else if (trackingActionInstance != null) {
-            alias = trackingActionInstance.getAlias();
-            elementId = trackingActionInstance.getElementId();
-            eventType = trackingActionInstance.getEventType();
-
-            String trackImageURL = _analyticsProcessor.getTrackingURL(
-                trackingActionInstance.getCompanyId(), 0, 0, "", 0,
-                Campaign.class.getName(),
-                new long[] {trackingActionInstance.getCampaignId()},
-                trackingActionInstance.getElementId(), "view", "");
-
-            trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
-        }
-
-        context.put("alias", alias);
-        context.put("elementId", elementId);
-        context.put("eventType", eventType);
-        context.put("eventTypes", getEventTypes());
-        context.put("trackImageHTML", trackImageHTML);
-    }
-
-    @Reference
-    protected void setAnalyticsProcessor(AnalyticsProcessor analyticsProcessor) {
-        _analyticsProcessor = analyticsProcessor;
-    }
-
-    private AnalyticsProcessor _analyticsProcessor;
-    private static final String[] _EVENT_TYPES = {"view"};
-
-You can provide a custom tracking mechanism (e.g., a servlet) or you can use the
-ones provided by Audience Targeting. In many cases, a metric has multiple
-tracking event options. The more tracking options your metric provides, the more
-opportunities you have to decipher your audience's likes and dislikes within
-your site.
-
-This sample newsletter metric tracks who views the configured newsletter by
-placing a transparent image in the newsletter. Whenever the image is viewed,
-the image makes a call to the Analytics System, which computes and stores the
-information.
-
-Notice that in the `populateContext` method above, a tracking image HTML is
-created and injected into the `context` request attribute. This allows the
-Analytics System to track the views on the newsletter.
-
-You're probably curious as to how a transparent image can be added to a
-newsletter to track its views. The transparent image can be generated as a code
-snippet by the metric once you've entered the ID into the form and saved. Then
-you can add the generated code into the content you'd like to track
-(e.g., newsletter).
-
-![Figure 2: You can insert the transparent image into your content by copying and pasting the generated code from the form.](../../images-dxp/metric-paste-image.png)
-
-To do this, you could add the following lines to the `JSP` file below the event
-type selector:
-
     <c:if test="<%= !Validator.isBlank(trackImageHTML) %>">
         <span class="h5">
             <liferay-ui:message key="paste-this-code-at-the-beginning-of-your-newsletter" />
@@ -358,32 +485,36 @@ type selector:
         <liferay-ui:input-resource id='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' url="<%= trackImageHTML %>" />
     </c:if>
 
-You could test if the metric was working by copying the generated tracking image
-HTML into an email HTML editor, sending it, and opening it as if it were an
-actual newsletter. Then open the custom report containing the newsletter metric
-and select *Update Report*, a chart and table with the newsletter's view count
-is displayed.
+First you instantiate the `context` variable and its attributes you configured
+in your Java class's `populateContext` method. Then you specify the appropriate
+fields Name, Newsletter ID, and Event Type. Lastly, present the generated
+transparent image URL.
 
-For convenience, you can download the full source for the sample newsletter
-metric as a
+Notice that the input field names in the JSP are prefixed with
+`ContentTargetingUtil.GUID_REPLACEMENT`. This prefix is required for
+multi-instantiable metrics, which are metrics that return `true` in the
+`isInstantiable` method of their `-TrackingAction` class and can be added more
+than once to the Metrics form.
+
+![Figure 3: Once you've saved the metric, you can copy the generated transparent image URL into your newsletter's HTML to track who views it.](../../images-dxp/metric-generated-url.png)
+
+Congratulations! You've created the newsletter metric and can now track whether
+users viewed a newsletter. You could test if the metric was working by copying
+the generated tracking image HTML into an email HTML editor, sending it, and
+opening it as if it were an actual newsletter. Then open the custom report
+containing the newsletter metric and select *Update Report*. A chart and table
+with the newsletter's view count is viewable.
+
+You can view the finished version of the newsletter metric by downloading its
 [ZIP file](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
-You can deploy it to your @product@ instance and try it out yourself!
 
-If you've been paying close attention, you'll notice that there is still one
-final component to cover for tracking actions: language keys. You can learn more
-about language keys and how to create, use, and generate them by visiting the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
-tutorials.
+Now you've created and examined a fully functional metric and have the knowledge
+to create your own.
 
-You now have all the knowledge necessary to create your own customized metric
-and deploy it to your Audience Targeting application. With this, you can
-generate custom reports to measure any user interaction.
-
-## Related Topics [](id=related-topics)
-
-[Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/reporting-user-behavior-with-audience-targeting)
+## Related Topics
 
 [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Defining Metrics](/develop/tutorials/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
 
+[Audience Targeting Metrics](/discover/portal/-/knowledge_base/7-0/audience-targeting-metrics)
