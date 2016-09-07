@@ -16,7 +16,7 @@ when you want to call a service that's in the OSGi service registry.
 
 To implement a service tracker in your JSF portlet, you can add a type-safe
 wrapper class that extends `org.osgi.util.tracker.ServiceTracker`. For example,
-this is done in a demo JSF portlet as follows:
+this is done in a demo JSF portlet as follows
 
     public class UserLocalServiceTracker extends ServiceTracker<UserLocalService, UserLocalService> {
 
