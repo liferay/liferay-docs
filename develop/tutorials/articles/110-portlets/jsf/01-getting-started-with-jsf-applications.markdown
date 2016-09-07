@@ -9,7 +9,7 @@ In this tutorial, you'll step through packaging and creating a JSF
 application that is deployable as an OSGi module at runtime. First, you'll learn
 how to package a JSF application as a module.
 
-## Packaging a JSF Application
+## Packaging a JSF Application [](id=packaging-a-jsf-application)
 
 Developers creating portlets for Liferay 7.0 can package their portlets as Java
 EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR) OSGi
@@ -55,7 +55,7 @@ This is how a JSF WAR artifact is structured:
 In the next section, you'll begin creating a simple JSF application that is
 deployable to @product@.
 
-## Creating a JSF Application
+## Creating a JSF Application [](id=creating-a-jsf-application)
 
 Liferay supports developing and deploying JSF portlets on Liferay Portal by
 using
@@ -197,7 +197,7 @@ folder structure and configure dependencies like Liferay Faces Bridge.
     Liferay descriptors. You'll start with creating the necessary general
     descriptors.
 
-### Defining JSF Portlet Descriptors
+### Defining JSF Portlet Descriptors [](id=defining-jsf-portlet-descriptors)
 
 Since JSF portlets must follow a WAR-style folder structure, they must also have
 general WAR-style portlet descriptors.
@@ -370,7 +370,7 @@ section is (possibly) relocated. -Cody -->
 Now that your portlet descriptors are defined, you should begin working on your
 JSF application's resources.
 
-### Defining Resources for a JSF Application
+### Defining Resources for a JSF Application [](id=defining-resources-for-a-jsf-application)
 
 If you look back at the structure of the example Hello User portlet, you'll
 notice two `resources` folders defined. Why are there two of these folders for
@@ -423,7 +423,7 @@ This file gives your JSF portlet bold font.
 Now that your resources are defined, it's time to begin developing the Hello
 User application's behavior and UI.
 
-### Developing a JSF Application's Behavior and UI
+### Developing a JSF Application's Behavior and UI [](id=developing-a-jsf-applications-behavior-and-ui)
 
 Your current JSF application satisfies the requirements for portlet descriptors
 and WAR-style structure, but it doesn't do anything yet. In this section, you'll

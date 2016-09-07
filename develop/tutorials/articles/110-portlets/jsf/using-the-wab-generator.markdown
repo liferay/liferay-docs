@@ -1,4 +1,4 @@
-# Using the WAB Generator
+# Using the WAB Generator [](id=using-the-wab-generator)
 
 Developers creating portlets for Liferay 7.0 can usually deploy their portlet as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
