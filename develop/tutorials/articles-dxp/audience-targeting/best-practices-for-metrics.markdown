@@ -58,12 +58,6 @@ If you plan, therefore, on using an alternative to JSP or FreeMarker, you
 must override this method by creating and modifying it in your `-TrackingAction`
 class.
 
-## Other Best Practices
-
-Here are some things to consider as you implement and deploy Audience Targeting
-metrics:
-
-
 ## Related Topics [](id=related-topics)
 
 [Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
