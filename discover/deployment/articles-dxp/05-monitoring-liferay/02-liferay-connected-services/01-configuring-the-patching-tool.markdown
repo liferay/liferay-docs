@@ -4,9 +4,9 @@ Liferay DXP's patching tool is leveraged by LCS to apply its updates. If you're
 running a Liferay DXP bundle, then you should already have the patching tool 
 installed. If you're not running a bundle, or your bundle doesn't have the 
 patching tool installed, 
-[click here to download it](https://web.liferay.com/group/customer/products/patching-tool). 
+[click here to download it](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool). 
 Then see the user guide section on 
-[how to install the patching tool](/discover/deployment/-/knowledge_base/6-2/patching-liferay). 
+[how to install the patching tool](/discover/deployment/-/knowledge_base/7-0/patching-liferay). 
 Once you have the patching tool installed, there are a few steps you need to 
 complete before LCS can use it. Note that the commands below apply to Linux, 
 Unix, and Mac systems. If you're running Windows, simply drop the `.sh` from 

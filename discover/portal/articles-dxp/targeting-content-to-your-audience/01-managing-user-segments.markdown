@@ -139,7 +139,7 @@ generate a new report. Reports display a summary of interesting information
 related to each user segment. For example, the Content Views report shows the
 asset that's been most viewed by users that belong to the user segment.
 
-![Figure 6: The Content Views report shows the asset that's been most viewed by users that belong to a user segment.](../../images-dxp/audience-targeting-user-segment-report.png)
+![Figure 6: This report displays what pages the user segment has visited.](../../images-dxp/audience-targeting-user-segment-report.png)
 
 Reports also display which users belonged to a user segment. This lets an
 administrator know which users of the site qualified to the particular user
