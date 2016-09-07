@@ -56,55 +56,50 @@ section on registering the client with LCS.
 ## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
 
 If you connect to the Internet through a proxy, there are some properties you 
-must set for the LCS client app to connect to LCS. You'll do this via your 
-server's JVM system properties. You can do this two different ways:
+must set for the LCS client app to connect to LCS. You can do this two different 
+ways:
 
-1. As JVM app server arguments:
+1. As JVM app server arguments. Set these properties to the appropriate values 
+   for your proxy: 
 
-        -Dhttp.proxyHost=your.proxy.host
-        -Dhttp.proxyPort=your.proxy.port
-        -Dhttps.proxyHost=your.proxy.host
-        -Dhttps.proxyPort=your.proxy.port
+        -Dhttp.proxyHost=
+        -Dhttp.proxyPort=
+        -Dhttp.proxyUser=
+        -Dhttp.proxyPassword=
+        -Dhttps.proxyHost=
+        -Dhttps.proxyPort=
 
-2. In a Liferay `system-ext.properties` file: Create this file in your 
-   [Liferay Home folder](/discover/deployment/-/knowledge_base/6-2/liferay-home), 
-   and set the following properties in this file: 
+    Note that the user, password, and https properties are only needed if your 
+    proxy requires authentication. 
 
-        http.proxyHost=your.proxy.host
-        http.proxyPort=your.proxy.port
-        https.proxyHost=your.proxy.host
-        https.proxyPort=your.proxy.port
+2. Inside the LCS client app, before deploying it. If you've already deployed 
+   it, download it again, make your changes in its WAR file, and redeploy it. If 
+   you downloaded the LCS client app from the Liferay Marketplace, you can find 
+   the WAR file inside the app's LPKG file that downloads to your machine. In 
+   either case, the client's WAR file is `lcs-portlet.war`. 
 
-Be sure to replace the values `your.proxy.host` and `your.proxy.port` with the 
-appropriate values for your proxy. 
-<!--
-In most cases, deploying and configuring the LCS client is simple. If, however,
-you connect to the web through a proxy, there are some properties you need to 
-set in the client's WAR file before deploying it. Specifically, you need to set 
-these properties in the client's `portlet-ext.properties` file. Regardless of 
-the properties you're setting, the procedure doing so is the same. 
+    You must set the properties in the WAR file's `portlet-ext.properties` file. 
+    Follow these steps to do so: 
 
-1. In the LCS client's WAR file, open the 
-   `WEB-INF/classes/portlet-ext.properties` file.
- 
-2. Make your changes in the file.
+    1. In the LCS client's WAR file, open the 
+       `WEB-INF/classes/portlet-ext.properties` file. 
 
-3. Update the LCS client WAR with the modified `portlet-ext.properties` file.
-
-4. Deploy the LCS client WAR or redeploy it if it's already deployed. 
-
-To connect to LCS through a proxy, add the following properties at the end of 
-`portlet-ext.properties` and set them to the appropriate values for your proxy.
+    2. Add the following properties at the end of `portlet-ext.properties` and 
+       set them to the appropriate values for your proxy: 
    
-        proxy.host.name=
-        proxy.host.port=
+            proxy.host.name=
+            proxy.host.port=
 
-If your proxy uses authentication, you should also add the following properties 
-and set them to the appropriate values for your proxy.
-   
-        proxy.host.login=
-        proxy.host.password= 
--->
+        If your proxy requires authentication, you should also add the following 
+        properties and set them to the appropriate values for your proxy. 
+
+            proxy.host.login=
+            proxy.host.password=
+
+    3. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
+       file. 
+
+    4. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
 
 Great! Now you're ready to deploy the client and register your Liferay instance 
 with LCS. 
