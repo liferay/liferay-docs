@@ -59,7 +59,7 @@ enable Facebook Single Sign On in Liferay:
 Your Facebook app, by default, only provides access to certain user attributes
 (e.g., gender, age, number of friends). For the Facebook City, Facebook
 Education, and Facebook Page Like rules to evaluate properly, you must declare
-this information accessible in your Facebook app. @product@ cannot read this
+this information accessible in your Facebook app. Liferay cannot read this
 information from Facebook users without these granted permissions.
 
 Read the
