@@ -28,9 +28,8 @@ ways:
    inside the app's LPKG file that downloads to your machine from Marketplace. 
    In either case, the client's WAR file is `lcs-portlet-[version].war`. 
 
-    To preconfigure the LCS client app to connect through your proxy, you must 
-    set some properties in the client's `portlet-ext.properties` file. Follow 
-    these steps to do so: 
+    You must set the properties in the WAR file's `portlet-ext.properties` file. 
+    Follow these steps to do so: 
 
     1. In the LCS client's WAR file, open the 
        `WEB-INF/classes/portlet-ext.properties` file. 
@@ -50,6 +49,6 @@ ways:
     3. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
        file. 
 
-    4. Deploy the LCS client WAR or redeploy it if it's already deployed. 
+    4. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
 
 Great! Now you're ready to connect your Liferay DXP instance to LCS. 
