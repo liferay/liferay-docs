@@ -1,4 +1,4 @@
-# Tracking User Actions with Audience Targeting
+# Tracking User Actions with Audience Targeting [](id=tracking-user-actions-with-audience-targeting)
 
 In the Audience Targeting application, a campaign defines a set of content
 targeted to specific user segments during a time period. Campaign custom reports
@@ -59,7 +59,7 @@ to what was described above.
 Now that you have an idea of how to plan your custom metric, you'll begin
 creating one next!
 
-## Creating a Metric
+## Creating a Metric [](id=creating-a-metric)
 
 Adding a new metric to the Audience Targeting application is easy. First,
 you must create a module and ensure it has the necessary Content Targeting API
@@ -158,7 +158,7 @@ methods and descriptions until the Javadoc is available publicly. -Cody -->
 The first thing you'll define in your newsletter metric is the view/save
 lifecycle.
 
-## Defining a Metric's View/Save Lifecycle
+## Defining a Metric's View/Save Lifecycle [](id=defining-a-metrics-view-save-lifecycle)
 
 This section covers how to define a metric's view/save lifecycle. This is when
 a user applies a metric to a report using the Report Editor.
@@ -348,7 +348,7 @@ already created.
 
 Next, you'll define a tracking mechanism for your metric to use.
 
-## Using a Tracking Mechanism
+## Using a Tracking Mechanism [](id=using-a-tracking-mechanism)
 
 Imagine an administrator has successfully configured and saved your custom
 metric to his or her report. Now what? Your metric needs to fulfill its
@@ -432,7 +432,7 @@ Excellent! You've obtained the analytics processor and can create the
 transparent image tracking mechanism. The newsletter metric's behavior is
 defined and complete. The last thing you need to do is create a JSP template.
 
-## Defining the Metric's UI
+## Defining the Metric's UI [](id=defining-the-metrics-ui)
 
 The Java code you've added to this point has assumed that there are three
 configurable fields for your newsletter metric: 
@@ -518,7 +518,7 @@ You can view the finished version of the newsletter metric by downloading its
 Now you've created and examined a fully functional metric and have the knowledge
 to create your own.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 

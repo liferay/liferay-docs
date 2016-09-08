@@ -1,4 +1,4 @@
-# Best Practices for Metrics
+# Best Practices for Metrics [](id=best-practices-for-metrics)
 
 In this tutorial, you'll learn about best practices to keep in mind when
 creating Audience Targeting Metrics. Before going through some best practices,
@@ -20,7 +20,7 @@ Audience Targeting gives you the option to choose whatever frontend technology
 you like. In the next section, you'll learn how to use your preferred technology
 for displaying content in Audience Targeting metrics.
 
-## Selecting a UI Technology
+## Selecting a UI Technology [](id=selecting-a-ui-technology)
 
 Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
 extension views. FreeMarker views, however, are still supported through their
