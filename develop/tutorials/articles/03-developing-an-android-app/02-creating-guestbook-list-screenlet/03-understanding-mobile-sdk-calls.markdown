@@ -33,7 +33,7 @@ This diagram is broken down into four basic steps:
    contains a callback instance. The callback is required to route the remote 
    service call asynchronously through a background thread, since Android 
    doesn't allow network requests on its main UI thread. Note that when creating 
-   a list Screenlet, you don't have to set the callback to the session manually: 
+   a list Screenlet, you don't have to set the callback to the session manually; 
    the list Screenlet framework does it for you. 
 
 2. In the same Interactor class, use the Guestbook Mobile SDK service instance 
@@ -53,12 +53,12 @@ This diagram is broken down into four basic steps:
    guestbook objects. 
 
 4. Receive the model objects in the Interactor class. You can then send these 
-   objects to the rest of the Screenlet for display in the app. Note that if 
-   you're creating a list Screenlet, the list Screenlet framework's 
+   objects to the rest of the Screenlet for display in the app. Note that in 
+   list Screenlets, the list Screenlet framework's 
    [`BaseListInteractor` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
    receives the model objects for you. 
 
-You've probably noticed that if you're creating list Screenlets, the list 
-Screenlet framework handles a great deal of the work for you. You'll see this in 
-greater detail as you progress through this Learning Path. Next, you'll create 
-the Guestbook List Screenlet's Interactor. 
+You've probably noticed that in list Screenlets, the list Screenlet framework 
+handles a great deal of the work for you. You'll see this in greater detail as 
+you progress through this Learning Path. Next, you'll create Guestbook List 
+Screenlet's Interactor. 
