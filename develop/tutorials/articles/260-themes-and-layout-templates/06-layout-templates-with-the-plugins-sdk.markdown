@@ -1,4 +1,4 @@
-# Layout Templates [](id=layout-templates)
+# Layout Templates with the Plugins SDK [](id=layout-templates)
 
 In this tutorial, you'll learn how a layout template is constructed so you can
 create your own custom templates.
@@ -209,9 +209,8 @@ fit your needs.
 Since you're now a master at designing layout templates, go out there and
 generate some positive Feng Shui with your eye-pleasing layout templates!
 
-<!--
-Related Topics
+## Related Topics
 
 [Embedding Portlets and Themes in Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
--->
 
+[Layout Templates with the Themes Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)

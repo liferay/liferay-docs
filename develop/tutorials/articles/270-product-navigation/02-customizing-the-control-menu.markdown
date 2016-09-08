@@ -55,8 +55,8 @@ Menu.
         @Component(
             immediate = true,
             property = {
-                "product.navigation.control.menu.category.key=" + CONTROL_MENU_CATEGORY,
-                "product.navigation.control.menu.category.order:Integer=INTEGER"
+                "product.navigation.control.menu.category.key=" + [Control Menu Category],
+                "product.navigation.control.menu.category.order:Integer=[int]"
             },
             service = ProductNavigationControlMenuEntry.class
         )
@@ -65,57 +65,66 @@ Menu.
     category your entry should reside in. As mentioned previously, the default
     Control Menu provides three categories: Sites (left portion), Tools (middle
     portion), and User (right portion).
-    
+
     ![Figure 3: This image shows where your entry will reside depending on the category you select.](../../images/control-menu-areas.png)
-    
+
     To specify the category, reference the appropriate key in the
-    [ProductNavigationControlMenuCategoryKeys](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-control-menu-api/src/main/java/com/liferay/product/navigation/control/menu/constants/ProductNavigationControlMenuCategoryKeys.java)
+    [ProductNavigationControlMenuCategoryKeys](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/constants/ProductNavigationControlMenuCategoryKeys.html)
     class. For example, the following property would place your entry in the
     middle portion of the Control Menu:
 
         "product.navigation.control.menu.category.key=" + ProductNavigationControlMenuCategoryKeys.TOOLS
 
     Similar to panel categories, you'll also need to specify an integer for the
-    order in which your entry will be displayed in the category.
-
-    Lastly, your `service` element should specify the
-    `ProductNavigationControlMenuEntry.class` service. You can view an example
-    of a similar `@Component` annotation in the
-    [IndexingProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java)
-    class.
+    order in which your entry will be displayed in the category. Lastly, your
+    `service` element should specify the
+    `ProductNavigationControlMenuEntry.class` service.
 
 4. Implement the
-   [ProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-control-menu-api/src/main/java/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuCategory.java)
+   [ProductNavigationControlMenuEntry](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html)
    interface. You can also extend the
-   [BaseProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-control-menu-api/src/main/java/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.java)
+   [BaseProductNavigationControlMenuEntry](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.html)
    or
-   [BaseJSPProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-control-menu-api/src/main/java/com/liferay/product/navigation/control/menu/BaseJSPProductNavigationControlMenuEntry.java)
+   [BaseJSPProductNavigationControlMenuEntry](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/BaseJSPProductNavigationControlMenuEntry.html)
    abstract classes. Typically, the `BaseProductNavigationControlMenuEntry` is
    extended for basic entries (e.g.,
-   [IndexingProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java))
-   that only display a link with text or a simple icon. If you'd like to provide
-   a more complex UI, like buttons or a sub-menu, you can do so by overriding
-   the `include()` and `includeBody()` methods. If you are going to use JSPs for
-   generating the UI, you can extend `BaseJSPProductNavigationControlMenuEntry`
-   to save time. This will be elaborated on more extensively in the next step.
+   `IndexingProductNavigationControlMenuEntry`) that only display a link with
+   text or a simple icon. If you'd like to provide a more complex UI, like
+   buttons or a sub-menu, you can do so by overriding the `include()` and
+   `includeBody()` methods. If you are going to use JSPs for generating the UI,
+   you can extend `BaseJSPProductNavigationControlMenuEntry` to save time. This
+   will be elaborated on more extensively in the next step.
 
 5. Define your Control Menu entry. You'll explore two examples to discover some
    options you have available for defining your entry. First, let's take a look
    at a simple example for providing text and an icon. The
-   [IndexingProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java)
-   extends the `BaseProductNavigationControlMenuEntry` class and is used when
-   Liferay is indexing. For this process, the indexing entry is displayed in the
-   *Tools* (middle) area of the Control menu with a *Refresh* icon and text
-   stating *The Portal is currently indexing*. This is done by calling the
-   following methods:
+   `IndexingProductNavigationControlMenuEntry` extends the
+   `BaseProductNavigationControlMenuEntry` class and is used when Liferay is
+   indexing. For this process, the indexing entry is displayed in the *Tools*
+   (middle) area of the Control Menu with a *Refresh* icon and text stating *The
+   Portal is currently indexing*. This is done by calling the following methods:
 
         @Override
         public String getIcon(HttpServletRequest request) {
             return "reload";
         }
 
-    More icons can be found in the
+    By default, Lexicon icons are expected to be returned. This is because the 
+    [`BaseProductNavigationControlMenuEntry.getMarkupView` method](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.html#getMarkupView(javax.servlet.http.HttpServletRequest))
+    returns `lexicon`. To view all the Lexicon icons available, see
+    [http://liferay.github.io/lexicon/content/icons-lexicon/](http://liferay.github.io/lexicon/content/icons-lexicon/).
+    You can also return FontAwesome icons, but you must implement the
+    [ProductNavigationControlMenuEntry.getMarkupView(...)](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html#getMarkupView(javax.servlet.http.HttpServletRequest))
+    method in your class and have it return `null`. Then you can return
+    FontAwesome icons for the `getIcon(...)` method. To view all the
+    FontAwesome icons available, see the
     [FontAwesome 4.6.1 docs](https://fortawesome.github.io/Font-Awesome/icons/).
+
+    You can also provide a label for the Control Menu entry that displays when
+    hovering over it with your pointer. This label is stored in the module's
+    resource bundle, which you can learn more about in the
+    [Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+    tutorials.
 
         @Override
         public String getLabel(Locale locale) {
@@ -163,13 +172,12 @@ Menu.
     [icons-font-awesome](http://liferay.github.io/lexicon/content/icons-font-awesome/)
     components, respectively.
 
-    For a more advanced example, you can inspect the
-    [ProductMenuProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/java/com/liferay/product/navigation/product/menu/web/product/navigation/control/menu/ProductMenuProductNavigationControlMenuEntry.java).
-    This entry displays in the *Sites* (left) area of the Control Menu, but
-    unlike the previous example, the `BaseJSPProductNavigationControlMenuEntry`
-    class is extended. This provides several more methods that allows you to use
-    JSPs to define your entry's UI. There are two methods to pay special
-    attention to:
+    The `ProductMenuProductNavigationControlMenuEntry` is a more advanced
+    example. This entry displays in the *Sites* (left) area of the Control Menu,
+    but unlike the previous example, it extends the
+    `BaseJSPProductNavigationControlMenuEntry` class. This provides several more
+    methods that lets you use JSPs to define your entry's UI. There are two
+    methods to pay special attention to:
  
         @Override
         public String getBodyJspPath() {
@@ -186,26 +194,24 @@ Menu.
     and the `getBodyJspPath()` method adds the UI body for the entry outside of
     the Control Menu. The latter method must be used when providing a UI outside
     the Control Menu. You can easily test this when you open and close the
-    Product Menu on the home page. For best practices on how to construct a body
-    and icon JSP for your entry, visit the
-    [product_menu_control_menu_entry_body.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/resources/META-INF/resources/portlet/control_menu/product_menu_control_menu_entry_body.jsp)
-    and
-    [product_menu_control_menu_entry_icon.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/resources/META-INF/resources/portlet/control_menu/product_menu_control_menu_entry_icon.jsp)
-    files, respectively.
+    Product Menu on the home page.
+
+    <!-- Explain two JSPs above further! -Cody -->
 
     Lastly, if you're planning on providing functionality that will stay
-    exclusively inside the Control Menu, you can inspect how the
-    [Staging](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/staging/staging-bar-web/src/main/java/com/liferay/staging/bar/web/product/navigation/control/menu/StagingProductNavigationControlMenuEntry.java)
-    class calls its JSP:
+    exclusively inside the Control Menu, the
+    `StagingProductNavigationControlMenuEntry` class class calls its JSP like
+    this:
 
         @Override
         public String getIconJspPath() {
             return "/control_menu/entry.jsp";
         }
 
-    In particular, the
-    [entry.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/staging/staging-bar-web/src/main/resources/META-INF/resources/control_menu/entry.jsp)
-    is returned, which embeds the Staging Bar portlet into the Control Menu.
+    <!-- Elaborate more on JSP! -Cody -->
+
+    In particular, the `entry.jsp` is returned, which embeds the Staging Bar
+    portlet into the Control Menu.
 
     You will also need to specify the servlet context from where you are loading
     the JSP files. If this is inside an OSGi module, make sure your `bnd.bnd`
