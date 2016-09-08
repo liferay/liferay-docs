@@ -309,17 +309,18 @@ already created.
     newsletter.
 
 5.  Define a way to retrieve the metric's localized summary. In many instances,
-    you can do this by retrieving the metric's resource bundle. For the
-    newsletter metric, you only need to return the metric's type settings. The
-    `typeSettings` field is managed by the framework in the Metric Instance
-    table.
+    you can do this by combining some keys in the metric's resource bundle with
+    the information stored for the rule. For the newsletter metric, you can
+    provide information about the id of the newsletter being tracked, which is
+    stored in the `alias` field of the `trackingActionInstance` object.
 
         @Override
         public String getSummary(
-            TrackingActionInstance trackingActionInstance, Locale locale) {
+			String summary = LanguageUtil.format(
+				locale, "tracking-newsletter-x",
+				new Object[] {trackingActionInstance.getAlias()});
 
-            return LanguageUtil.get(
-                locale, trackingActionInstance.getTypeSettings());
+			return summary;
         }
 
 6.  Set the servlet context for your metric.

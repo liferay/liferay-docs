@@ -307,8 +307,10 @@ CLI template, your project is already extending `BaseJSPRule` and has a default
     rule's evaluation.
 
 5.  Define a way to retrieve the rule's localized summary. In many instances,
-    you can do this by retrieving the rule's resource bundle. For the weather
-    rule, you only need to return the rule's type settings.
+    you can do this by combining some keys in the rule's resource bundle with
+    the information stored for the rule. For the weather rule, you can simply
+    return the rule's type settings which contains the selected weather
+    condition.
 
         @Override
         public String getSummary(RuleInstance ruleInstance, Locale locale) {
