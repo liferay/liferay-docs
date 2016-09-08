@@ -12,11 +12,10 @@ An Interactor consists of the following components:
 1. The event. Screens uses event objects via the 
    [EventBus](http://greenrobot.org/eventbus/) 
    library to communicate the server call's results within a Screenlet. A 
-   Screens event class creates these event objects. The list Screenlet framework 
-   provides 
+   Screens event class creates these event objects, which contain the server 
+   call's results. The list Screenlet framework provides 
    [the event class `BaseListEvent`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListEvent.java), 
-   so you don't need to create an event class manually when creating a list 
-   Screenlet's Interactor. 
+   so you don't need to create an event class manually. 
 
 2. The callback. Because Android doesn't allow network requests on its main UI 
    thread, a callback class is required to route the server call asynchronously 
@@ -24,21 +23,19 @@ An Interactor consists of the following components:
    a successful server call, and uses the event class to create event objects 
    that contain these results. The list Screenlet framework provides 
    [the callback class `BaseListCallback`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java), 
-   so you don't need to create one manually when creating a list Screenlet's 
-   Interactor. 
+   so you don't need to create one manually. 
 
 3. The listener(s). Listener interfaces define the methods the Screenlet needs 
    to communicate the event object's results within the Screenlet, and to the 
-   app using it. The latter lets the app developer respond to the Screenlet's 
-   actions. Any object that implements a listener interface receives the server 
-   call's results and thus serves as the listener. Non-list Screenlets usually 
-   only need a single listener. Due to the added complexity of the list 
-   Screenlet framework, however, it's a best practice that list Screenlets have 
-   two listeners: one that communicates results within the Screenlet, and one 
-   that communicates results to the app using the Screenlet. This decouples the 
-   Screenlet's implementation from the part of the Screenlet exposed to the app 
-   developer. To help you with this, the list Screenlet framework provides these 
-   listeners: 
+   app using the Screenlet. Any object that implements a listener interface 
+   receives the server call's results and thus serves as the listener. Non-list 
+   Screenlets usually only need a single listener. Due to the added complexity 
+   of the list Screenlet framework, however, it's a best practice that list 
+   Screenlets have two listeners: one that communicates results within the 
+   Screenlet, and one that communicates results to the app using the Screenlet. 
+   This decouples the Screenlet's implementation from the part of the Screenlet 
+   exposed to the app developer. To help you with this, the list Screenlet 
+   framework provides these listeners: 
 
     - [`BaseListInteractorListener`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractorListener.java): 
       Communicates results within the Screenlet. This listener is part of the 
@@ -48,7 +45,7 @@ An Interactor consists of the following components:
       Communicates results to the app activity or fragment that contains the 
       Screenlet. This lets the app developer respond to the Screenlet's actions. 
 
-    You'll use these listeners as-is in Guestbook List Screenlet: there's no 
+    You'll use these listeners as-is in Guestbook List Screenlet; there's no 
     need to extend them. This article describes some of 
     `BaseListInteractorListener`. You'll learn the rest, and learn how 
     `BaseListListener` works, when you create the Screenlet class later. 
@@ -61,7 +58,7 @@ An Interactor consists of the following components:
 
     If you were creating a non-list Screenlet, you'd create the Interactor class 
     by creating and implementing an Interactor interface. Since you're creating 
-    a list Screenlet, you can just extend 
+    a list Screenlet, however, you can just extend 
     [the `BaseListInteractor` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
     the list Screenlet framework provides. 
 
@@ -101,21 +98,20 @@ each method works:
   pagination in the Screenlet's list. The `BaseListInteractorListener` method 
   `onListRowsReceived` then sends this data to any classes that implement it. 
 
-- `notifyError`: Called in response to a failed server call. It uses the event's 
-  `getStartRow`, `getEndRow`, and `getException` methods to retrieve the 
-  starting row number, ending row number, and exception, respectively. The 
+- `notifyError`: Called in response to a failed server call. This method uses 
+  the event's `getStartRow`, `getEndRow`, and `getException` methods to retrieve 
+  the starting row number, ending row number, and exception, respectively. The 
   `BaseListInteractorListener` method `onListRowsFailure` then sends this data 
   to any classes that implement it. 
 
-There's one key point here that warrants emphasis: objects of any class that 
+There's a key point here that warrants emphasis: objects of any class that 
 implements `BaseListInteractorListener` receive the server call's results via 
 these methods and thus serve as this listener. 
 
 When you extend `BaseListInteractor` to create Guestbook List Screenlet's 
 Interactor class, you can rely on the default `onEventMainThread` and 
-`notifyError` implementations. You must, however, implement the following 
-`BaseListInteractor` abstract methods: 
-<!-- Add pagination info? The list Screenlet tutorial already covers it (barely though). -->
+`notifyError` implementations. You must, however, implement 
+`BaseListInteractor`'s following abstract methods: 
 
 - `getCallback`: Returns a new `BaseListCallback` instance to use when making 
   the service call. 
