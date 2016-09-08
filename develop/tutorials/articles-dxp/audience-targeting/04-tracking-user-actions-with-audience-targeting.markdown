@@ -272,8 +272,8 @@ already created.
     newsletter's values and clicked *Save*, the action phase begins. 
 
 3.  Once the action phase begins, the tracking action (metric) is processed. The
-    `processTrackingAction(...)` method takes the values from the metric's UI
-    form (see the [Defining the Metric's UI](#defining-the-metric-ui) section)
+    `processTrackingAction(...)` method takes the values from the
+    [metric's UI form](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
     Since the `BaseTrackingAction` class provides a default implementation of
     this method that returns `null`, the `NewsletterTrackingAction` class does
