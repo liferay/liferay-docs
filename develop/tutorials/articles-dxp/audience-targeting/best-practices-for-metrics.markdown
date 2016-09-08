@@ -4,7 +4,7 @@ In this tutorial, you'll learn about best practices to keep in mind when
 creating Audience Targeting Metrics. Before going through some best practices,
 you should understand the four components you can specify for a metric:
 
-- *Rule Behavior*
+- *Metric Behavior*
 - *Tracking Mechanism*
 - *UI for Configuration (optional)*
 - *Language Keys (optional)*
@@ -24,10 +24,10 @@ for displaying content in Audience Targeting metrics.
 
 Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
 extension views. FreeMarker views, however, are still supported through their
-respective base classes (e.g., `BaseFreemarkerRule`). If you're interested in
-using a technology besides JSP or FreeMarker to implement your UI, you can add a
-method `getFormHTML` to your `-Rule` class. Here's an example of implementing
-the `getFormHTML` method:
+respective base classes (e.g., `BaseFreemarkerTrackingAction`). If you're
+interested in using a technology besides JSP or FreeMarker to implement your UI,
+you can add a method `getFormHTML` to your `-TrackingAction` class. Here's an
+example of implementing the `getFormHTML` method:
 
     @Override
     public String getFormHTML(
