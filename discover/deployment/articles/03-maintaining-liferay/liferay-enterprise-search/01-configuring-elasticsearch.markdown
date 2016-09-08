@@ -261,14 +261,11 @@ Elasticsearch adapter in Liferay.
 
 The [available configuration options](discover/reference/-/knowledge_base/7-0/elastic-search-setttings)
 provided in the Elasticsearch adapter by default are those you'll most often
-need to change, especially during testing and development. You aren't limited to
-only the default configuration options though. If you need to configure the
-local Elasticsearch client when running in remote mode, but the necessary setting
-isn't available by default, you can still configure it with the Liferay
-Elasticsearch adapter. Just specify the settings you need by using one or more
-of the `additionalConfigurations`, `additionalIndexConfigurations`, or
-`additionalTypeMappings` settings. 
-
+need to change. If you need to configure the local Elasticsearch client when
+running in remote mode, but the necessary setting isn't available by default,
+you can still configure it with the Liferay Elasticsearch adapter. Just specify
+the settings you need by using one or more of the `additionalConfigurations`,
+`additionalIndexConfigurations`, or `additionalTypeMappings` settings. 
 <!-- What configurations of the Elasticsearch client should be made here? -->
 
 ![Figure 3: You can add Elasticsearch configurations to the ones currently available
@@ -346,7 +343,7 @@ scroll to *Additional Files*, and find and click the download link next to
 $$$
 
 Here's an example that adds a dynamic template for Japanese content,
-configuring a new analyzer for String fields that end with `_ja*`: <!-- EXPLAIN-->
+configuring a new analyzer for String fields that end with `_ja*`: 
 
         {
             "dynamic_templates": [
