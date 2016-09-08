@@ -38,8 +38,8 @@ Screenlet XML in `activity_main.xml` when you used Login Screenlet:
 
 The app developer can set the `liferay` attributes `basicAuthMethod` and 
 `layoutId` to set Login Screenlet's authentication method and View, 
-respectively. The Screenlet class reads these settings to enable the appropriate 
-functionality. 
+respectively. The Screenlet class reads these settings to enable the 
+corresponding functionality. 
 
 When creating a Screenlet, you can define the attributes you want to make 
 available to app developers. You'll do this now for Guestbook List Screenlet. 
@@ -57,10 +57,10 @@ Replace the file's contents with the following code:
 
 This defines the attributes `groupId`, `offlinePolicy`, and `layoutId`. You'll 
 add these attributes' functionality in the Screenlet class. Here's a brief 
-description of what each will do: 
+description of the functionality you'll add to each: 
 
 - `groupId`: Sets the portal site to communicate with, if the app developer 
-  doesn't want to use the `groupId` setting in `server_context.xml`. 
+  doesn't want to use the default `groupId` setting in `server_context.xml`. 
 
 - `offlinePolicy`: Sets the Screenlet's 
   [offline mode policy](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode). 
@@ -80,13 +80,13 @@ list Screenlet framework's
 provides much of your Screenlet class's code. This includes methods for 
 pagination and other default behavior. Before extending this class to meet 
 Guestbook List Screenlet's needs, you should understand how `BaseListScreenlet` 
-handles server call results for you. Buckle up: you're about to go on another 
+handles server call results for you. Buckle up; you're about to go on another 
 magical journey through the list Screenlet framework. 
 
 ### BaseListScreenlet and the Server Call's Results
 
 Note that `BaseListScreenlet` implements the 
-[`BaseListInteractorListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractorListener.java). 
+[`BaseListInteractorListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractorListener.java) 
 by implementing the 
 [`onListRowsFailure` and `onListRowsReceived` methods](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java#L57-L73). 
 Recall that the 
@@ -97,30 +97,25 @@ server call's results to any classes that implement
 `BaseListInteractorListener`, `BaseListScreenlet` receives the server call's 
 results and serves as this listener. This happens in 
 [its `onListRowsFailure` and `onListRowsReceived` implementations](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java#L57-L73). 
-
 These method implementations then send the server call's results to the View and 
-the activity or fragment class that contains the Screenlet. They do this via 
-`BaseListViewModel` and `BaseListListener`, respectively. Recall that a View 
-Model updates the View with the server call's results. By sending the results to 
-the View Model, the Screenlet's UI can display them. Also recall that 
-`BaseListListener` sends the server call's results to the activity or fragment 
-class that contains the Screenlet. This lets the app developer respond to the 
-results. Here's how the `onListRowsFailure` and `onListRowsReceived` 
-implementations in `BaseListScreenlet` work: 
+the activity or fragment class that contains the Screenlet. Here's how these 
+implementations work: 
 
 - `onListRowsFailure`: Sends the results of a failed server call (an 
   `Exception`). The `BaseListViewModel` method 
   `showFinishOperation(int startRow, int endRow, Exception e)` sends the 
-  `Exception` to the View. The `BaseListListener` method `onListPageFailed` 
-  sends the same `Exception` to the activity or fragment class that contains the 
-  Screenlet. 
+  `Exception` to the View (recall that `BaseListScreenletView` 
+  [implements this method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L140-L145)). 
+  The `BaseListListener` method `onListPageFailed` sends the same `Exception` to 
+  the activity or fragment class that contains the Screenlet. 
 
 - `onListRowsReceived`: Sends the results of a successful server call (the list 
   of objects retrieved from the server). The `BaseListViewModel` method 
   `showFinishOperation(int startRow, int endRow, List<E> entries, int rowCount)` 
-  sends the objects to the View. The `BaseListListener` method 
-  `onListPageReceived` sends the the same objects to the activity or fragment 
-  class that contains the Screenlet. 
+  sends the objects to the View (recall that `BaseListScreenletView` 
+  [implements this method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L81-L133)). 
+  The `BaseListListener` method `onListPageReceived` sends the same objects to 
+  the activity or fragment class that contains the Screenlet. 
 
 ![Figure 1: This diagram illustrates how the list Screenlet framework handles the server call's results.](../../../images/screens-android-list-screenlet-listeners.png)
 
@@ -152,7 +147,7 @@ these variables now:
     private OfflinePolicy _offlinePolicy;
 
 Now add your Screenlet class's constructors. You don't need anything special 
-here: just leverage the superclass constructors: 
+here; just leverage the superclass constructors: 
 
     public GuestbookListScreenlet(Context context) {
         super(context);
@@ -205,7 +200,7 @@ as arguments.
 Although 
 [`BaseListScreenlet` implements `createScreenletView`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java#L152-L174), 
 you must provide an implementation suitable for your Screenlet. For example, 
-your `createScreenletView` implementation must account for the Guestbook List 
+your `createScreenletView` implementation must account for Guestbook List 
 Screenlet's `groupId` and `offlinePolicy` attributes. Add this method to your 
 `GuestbookListScreenlet` class now: 
 
@@ -277,7 +272,7 @@ and return its View. You'll do this by calling
 [`BaseListScreenlet`'s `createScreenletView` method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java#L152-L174). 
 Note this method also uses a `TypedArray` to retrieve and set the Screenlet's 
 attributes, including the `layoutId`. This is why your `createScreenletView` 
-implementation doesn't need support for `layoutId`: calling 
+implementation doesn't need support for `layoutId`; calling 
 `BaseListScreenlet`'s implementation supports it for you. Calling the 
 `BaseListScreenlet` implementation also gets you other attributes for 
 controlling pagination (`firstPageSize` and `pageSize`), loading the Screenlet 
@@ -319,8 +314,8 @@ following `loadRows` method to your Screenlet class:
     }
 
 Note that the `interactor.loadRows` call includes the `_groupId`. This ensures 
-that the Interactor has the correct group ID (site ID) to retrieve guestbooks 
-from. 
+that the Interactor retrieves guestbooks from the correct site in your Liferay 
+instance. 
 
 Lastly, your Screenlet class needs a method to create an instance of your 
 Interactor class. Add this method now: 
@@ -336,4 +331,4 @@ Screenlet to show a list of each guestbook's entries. After all, viewing
 guestbooks without their entries doesn't make much sense. It isn't very exciting 
 either. What's really exciting is that you can create Entry List Screenlet with 
 the same set of steps you used to create Guestbook List Screenlet. The next 
-series of articles in this Learning Path shows you this. 
+series of articles in this Learning Path walks you through this. 
