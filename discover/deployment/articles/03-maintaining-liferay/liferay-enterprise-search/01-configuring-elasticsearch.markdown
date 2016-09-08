@@ -48,22 +48,6 @@ Liferay installation to run alongside Elasticsearch. This is called *remote
 operation mode*, as a standalone server or cluster of server nodes. The first
 step is to install Elasticsearch.
 
-+$$$ 
-
-**Note:** During development or demonstration, you might find it convenient to
-run Elasticsearch in embedded mode, while clustering Liferay. In this scenario,
-each Liferay node starts its own embedded Elasticsearch node. The Elasticsearch
-nodes automatically connect to each other and form an Elasticsearch cluster
-named `LiferayElasticsearchCluster`. The Liferay indexes are given one shard
-each (`number_of_shards=1`), but the number of replicas (starting with
-`number_of_replicas=0`) match the number of Liferay instances in the cluster.
-
-Because every individual Liferay instance holds a full copy of the entire index
-and runs all indexing commands for all documents, this constrains scalability in
-a production environment.
-
-$$$
-
 ## Installing Elasticsearch [](id=installing-elasticsearch)
 
 Install Elasticsearch, and then you can begin configuring it to use with
@@ -268,15 +252,24 @@ in a Java class:
     com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration
 
 While the Elasticsearch adapter has a lot of configuration options out of the
-box, you can also add configuration options. First learn about all the out of
-the box options, then decide if you need to add more.
+box, you might find an Elasticsearch configuration you need that isn't provided
+by default. In this case, you can add the configuration options you need. If you
+can configure something for Elasticsearch, you can configure it using the
+Elasticsearch adapter in Liferay.
 
-### Adding Settings to the Liferay Elasticsearch Adapter [](id=adding-settings-to-the-liferay-elasticsearch-adapter)
+### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-to-the-liferay-elasticsearch-adapter)
 
-Even if the many [available configuration options](discover/reference/-/knowledge_base/7-0/elastic-search-setttings)
-aren't enough, you can add extra settings by using one or more of the
-`additionalConfigurations`, `additionalIndexConfigurations`, or
+The [available configuration options](discover/reference/-/knowledge_base/7-0/elastic-search-setttings)
+provided in the Elasticsearch adapter by default are those you'll most often
+need to change, especially during testing and development. You aren't limited to
+only the default configuration options though. If you need to configure the
+local Elasticsearch client when running in remote mode, but the necessary setting
+isn't available by default, you can still configure it with the Liferay
+Elasticsearch adapter. Just specify the settings you need by using one or more
+of the `additionalConfigurations`, `additionalIndexConfigurations`, or
 `additionalTypeMappings` settings. 
+
+<!-- What configurations of the Elasticsearch client should be made here? -->
 
 ![Figure 3: You can add Elasticsearch configurations to the ones currently available
 in System Settings.](../../../images/elasticsearch-additional-configs.png)
