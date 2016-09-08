@@ -56,9 +56,15 @@ enable Facebook Single Sign On in Liferay:
    and password in the prompted pop-up and click *Login*. You should be
    automatically signed in to your Liferay Portal with your Facebook user.
 
+Your Facebook app, by default, only provides access to certain user attributes
+(e.g., gender, age, number of friends). For the Facebook City, Facebook
+Education, and Facebook Page Like rules to evaluate properly, you must declare
+this information accessible in your Facebook app. Liferay cannot read this
+information from Facebook users without these granted permissions.
+
 Read the
 [Integrating Existing Users Into Liferay](/discover/portal/-/knowledge_base/6-2/integrating-existing-users-into-liferay)
-section for more information.
+section for more information on using Facebook with Liferay.
 
 ### Facebook Age [](id=facebook-age)
 
