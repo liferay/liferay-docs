@@ -62,8 +62,8 @@ creating one next!
 ## Creating a Metric
 
 Adding a new metric to the Audience Targeting application is easy. First,
-you must create a module and ensure it has the necessary dependencies with the
-Content Targeting API.
+you must create a module and ensure it has the necessary Content Targeting API
+dependencies.
 
 1.  Create a module project for deploying a metric. A Blade CLI
     [contenttargetingtrackingaction](/develop/tutorials/-/knowledge_base/7-0/content-targeting-tracking-action-template)
@@ -272,22 +272,26 @@ already created.
     newsletter's values and clicked *Save*, the action phase begins. 
 
 3.  Once the action phase begins, the tracking action (metric) is processed. The
- 	`processTrackingAction(...)` method takes the values from the metric form
- 	(see the [Defining the Metric's UI](#defining-the-metric-ui) section) and
- 	stores them in the corresponding fields of the `trackingActionInstance`. As
- 	the `BaseTrackingAction` class provides a default implementation of this
- 	method, the `NewsletterTrackingAction` class does not need to implement it.
+    `processTrackingAction(...)` method takes the values from the metric's UI
+    form (see the [Defining the Metric's UI](#defining-the-metric-ui) section)
+    and stores them in the corresponding fields of the `trackingActionInstance`.
+    Since the `BaseTrackingAction` class provides a default implementation of
+    this method that returns `null`, the `NewsletterTrackingAction` class does
+    not need to implement it.
 
- 	If you need to process any custom fields in your metric, you should then
- 	override this method. If you also want your custom values to be stored in
- 	the `typeSettings` field of the `trackingActionInstance` just return their
- 	value instead of `null`.
+    If you need to process any custom fields in your metric, you should override
+    this method. If you want your custom values to be stored in the
+    `typeSettings` field of the `trackingActionInstance`, return their value
+    instead of `null`.
 
     +$$$
-    
-    **Note:** You can create your own services to store your metric's
-    information for more complex cases. In that case you should invoke their
-    update logic within the `processTrackingAction` method.
+
+    **Note:** For more complex cases, you can create your own services to store
+    your metric's information to a database. You should invoke your services'
+    update logic within the `processTrackingAction` method. For more information
+    on creating services, see the
+    [Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
+    tutorials.
 
     $$$
 
@@ -309,18 +313,18 @@ already created.
     newsletter.
 
 5.  Define a way to retrieve the metric's localized summary. In many instances,
-    you can do this by combining some keys in the metric's resource bundle with
-    the information stored for the rule. For the newsletter metric, you can
-    provide information about the id of the newsletter being tracked, which is
+    you can do this by combining keys in the metric's resource bundle with
+    the information stored for the metric. For the newsletter metric, you can
+    provide information about the ID of the newsletter being tracked, which is
     stored in the `alias` field of the `trackingActionInstance` object.
 
         @Override
         public String getSummary(
-			String summary = LanguageUtil.format(
-				locale, "tracking-newsletter-x",
-				new Object[] {trackingActionInstance.getAlias()});
+            String summary = LanguageUtil.format(
+                locale, "tracking-newsletter-x",
+                new Object[] {trackingActionInstance.getAlias()});
 
-			return summary;
+            return summary;
         }
 
 6.  Set the servlet context for your metric.
@@ -428,7 +432,7 @@ Excellent! You've obtained the analytics processor and can create the
 transparent image tracking mechanism. The newsletter metric's behavior is
 defined and complete. The last thing you need to do is create a JSP template.
 
-## Defining the Metric's UI [](id=defining-the-metric-ui)
+## Defining the Metric's UI
 
 The Java code you've added to this point has assumed that there are three
 configurable fields for your newsletter metric: 
