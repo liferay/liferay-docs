@@ -272,23 +272,22 @@ already created.
     newsletter's values and clicked *Save*, the action phase begins. 
 
 3.  Once the action phase begins, the tracking action (metric) is processed. The
-    `NewsletterTrackingAction` class does not need to implement the
-    `processTrackingAction(...)` method because it's already implemented in the
-    `BaseTrackingAction` extension class. The
-    `BaseTrackingAction.processTrackingAction` method returns `null`.
+ 	`processTrackingAction(...)` method takes the values from the metric form
+ 	(see the [Defining the Metric's UI](#defining-the-metric-ui) section) and
+ 	stores them in the corresponding fields of the `trackingActionInstance`. As
+ 	the `BaseTrackingAction` class provides a default implementation of this
+ 	method, the `NewsletterTrackingAction` class does not need to implement it.
 
-    So why is the `processTrackingAction` method returning `null`? The
-    newsletter metric only stores basic information that is already stored in
-    the `trackingActionInstance` by default. The `processTrackingAction` method
-    is only used to add additional values that the tracking action instance does
-    not account for to a `typeSettings` field. Therefore, returning `null` means
-    that the newsletter needs no additional information stored separate from the
-    defaults.
+ 	If you need to process any custom fields in your metric, you should then
+ 	override this method. If you also want your custom values to be stored in
+ 	the `typeSettings` field of the `trackingActionInstance` just return their
+ 	value instead of `null`.
 
     +$$$
     
-    **Note:** If you want to add services to store your metric's information,
-    they should reside within the `processTrackingAction` method.
+    **Note:** You can create your own services to store your metric's
+    information for more complex cases. In that case you should invoke their
+    update logic within the `processTrackingAction` method.
 
     $$$
 
@@ -428,7 +427,7 @@ Excellent! You've obtained the analytics processor and can create the
 transparent image tracking mechanism. The newsletter metric's behavior is
 defined and complete. The last thing you need to do is create a JSP template.
 
-## Defining the Metric's UI
+## Defining the Metric's UI [](id=defining-the-metric-ui)
 
 The Java code you've added to this point has assumed that there are three
 configurable fields for your newsletter metric: 
