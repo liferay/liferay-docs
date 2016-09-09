@@ -13,11 +13,13 @@ If you'd rather use Solr, it's also supported. See [here](LINK) for information
 on installing and configuring Solr.
 
 If you just want to get up and running quickly with Elasticsearch, refer to the
-[Configuring Search article](discover/deployment/-/knowledge_base/7-0/configuring-search). This
-article shows how to configure Elasticsearch for use in @product@ production
-environments. It also assumes you only want to know what's necessary for the
-installation and configuration of Elasticsearch in a single server environment,
-and it doesn't include all the clustering and tuning instructions found here. 
+[Configuring Search
+article](discover/deployment/-/knowledge_base/7-0/configuring-search). It
+assumes that you only want to know what's necessary for the installation and
+configuration of Elasticsearch in a single server environment, and it doesn't
+include all the clustering and tuning instructions found here.In this article
+you'll learn how to configure Elasticsearch for use in @product@ production
+environments. 
 
 If you've come here looking for information on search engines in general, or the
 low level search infrastructure of Liferay, refer to the developer tutorial
@@ -266,60 +268,25 @@ running in remote mode, but the necessary setting isn't available by default,
 you can still configure it with the Liferay Elasticsearch adapter. Just specify
 the settings you need by using one or more of the `additionalConfigurations`,
 `additionalIndexConfigurations`, or `additionalTypeMappings` settings. 
-<!-- What configurations of the Elasticsearch client should be made here? -->
 
 ![Figure 3: You can add Elasticsearch configurations to the ones currently available
 in System Settings.](../../../images/elasticsearch-additional-configs.png)
 
 `additionalConfigurations` is used to define extra settings (defined in YAML)
 for the embedded Elasticsearch or the local Elasticsearch client when running
-in remote mode.
+in remote mode. In production, only one additional configuration can be added here: 
 
-Here's an example: when Elasticsearch calculates a node's disk usage, it
-takes into account shards that are being relocated to the target node (see
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/disk-allocator.html)
-for more information). If the node is low on disk space, it prints an
-`INFO` log message like this:
+    client.transport.ping_timeout
 
-    03:01:44,499 INFO
-    [elasticsearch[Persuader][management][T#1]][decider:160] [Persuader] 
-    low disk watermark [85%] exceeded on 
-    [XecdPkdjQ5Cx5SS5JxlDzA][Persuader][/opt/liferay-portal-tomcat-master/
-    data/elasticsearch/indices/LiferayElasticsearchCluster/nodes/0] free: 
-    18.1gb[13%], replicas will not be assigned to this node
-
-There's currently no option to disable the disk allocation checking and its
-log message. However, you can add this to the `additionalConfigurations`
-field in System Settings:
-
-    cluster.routing.allocation.disk.threshold_enabled: false
+The rest of the settings for the client are available as default configuration
+options in the Elasticsearch adapter. See the [Elasticsearch Settings](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html)
+reference article for more information. See the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
+for a description of all the client settings and for an example.
 
 `additionalIndexConfigurations` is used to define extra settings (in JSON or
 YAML format) that are applied to the Liferay index when it's created. For
 example, you can create custom analyzers and filters using this setting. For
-a complete list of available settings, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html)
-
-    Here's an example that adds a custom analyzer:
-
-        {
-            "analysis": {
-                "analyzer": {
-                    "kuromoji_liferay_custom": {
-                        "filter": [
-                            "cjk_width",
-                            "kuromoji_baseform",
-                            "pos_filter"
-                        ],
-                        "tokenizer": "kuromoji_tokenizer"
-                    }
-                },
-                "filter": {
-                    "pos_filter": {
-                        "type": "kuromoji_part_of_speech"
-                    }
-                }
-            }
-        }
+a complete list of available settings, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html).
 
 `additionalTypeMappings` is used to define extra field mappings for the
 `LiferayDocumentType` type definition, which are applied when the index is
@@ -341,29 +308,6 @@ scroll to *Additional Files*, and find and click the download link next to
 *Liferay Source for [Your Version]*.
 
 $$$
-
-Here's an example that adds a dynamic template for Japanese content,
-configuring a new analyzer for String fields that end with `_ja*`: 
-
-        {
-            "dynamic_templates": [
-                {
-                    "template_ja": {
-                        "mapping": {
-                            "analyzer": "kuromoji_liferay_custom",
-                            "index": "analyzed",
-                            "store": "true",
-                            "term_vector": "with_positions_offsets",
-                            "type": "string"
-                        },
-                        "match": "\\w+_ja\\b|\\w+_ja_[A-Z]{2}\\b",
-                        "match_mapping_type": "string",
-                        "match_pattern": "regex"
-                    }
-                }
-            ]
-        }
-
 
 +$$$
 
