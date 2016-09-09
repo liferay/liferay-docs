@@ -1,8 +1,13 @@
 # Fragment Template [](id=using-the-fragment-template)
 
 In this tutorial, you'll learn how to create a Liferay fragment as a Liferay
-module. To create a Liferay fragment as a module, use a command with the
-following parameters:
+module. You can learn more about what a Liferay fragment module does in the
+[Declaring a Fragment Host](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps#declaring-a-fragment-host)
+article and in section 3.14 of the
+[OSGi Alliance's core specification document](https://www.osgi.org/developer/downloads/release-6/).
+
+To create a Liferay fragment as a module, use a command with the following
+parameters:
 
     blade create -t fragment -h [host bundle name] -H [host bundle version] [project name]
 
