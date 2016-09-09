@@ -26,7 +26,7 @@ following projects:
 For a comprehensive demo for the JSF component suite, visit the
 [Liferay Faces Showcase](http://www.liferayfaces.org/web/guest/showcase).
 
-If you're new to JSF, you probably want to know its strengths, its weaknesses,
+If you're new to JSF, you may want to know its strengths, its weaknesses,
 and how it stacks up to developing portlets with CSS/JavaScript. 
 
 Here are some good reasons to use JSF and Liferay Faces:
@@ -36,10 +36,10 @@ Here are some good reasons to use JSF and Liferay Faces:
   is actively maintained by the Java Community Process (JCP), and the Oracle
   reference implementation (Mojarra) has frequent releases. Software Architects
   often choose standards like JSF because they are supported by Java EE
-  application server vendors and have a guaranteed service-life according to
+  application server vendors and have a guaranteed service life according to
   Service Level Agreements (SLAs).
-- JSF was first introduced in 2003 and is, therefore, a mature technology for
-  developing web applications that are (arguably) easier to maintain.
+- JSF was first introduced in 2003 and is a mature technology for
+  developing web applications that are (arguably) easy to maintain.
 - JSF Portlet Bridges (like Liferay Faces Bridge) are also standardized by the
   JCP and make it possible to deploy JSF web applications as portlets without
   writing portlet-specific Java code.
@@ -67,7 +67,7 @@ Here are some good reasons to use JSF and Liferay Faces:
   a scope managed by a container: `@RequestScoped`, `@ViewScoped`,
   `@SessionScoped`, `@FlowScoped`
 - Since JSF is a stateful technology, the framework encapsulates the
-  complexities of managing application state so that the developer doesn't have
+  complexities of managing application state so the developer doesn't have
   to write state management code. It is also possible to use JSF in a stateless
   manner, but some of the features of application state management become
   effectively disabled.
@@ -75,7 +75,7 @@ Here are some good reasons to use JSF and Liferay Faces:
 There are some reasons not to use JSF. For example, if you are a front-end
 developer who makes heavy use of HTML/CSS/JavaScript, you might find that JSF UI
 components render HTML in a manner that gives you less control over the overall
-HTML document. So, sticking with JavaScript and leveraging AlloyUI or some other
+HTML document. Sticking with JavaScript and leveraging AlloyUI or some other
 JavaScript framework may be better for you. Or, perhaps standards aren't a major
 consideration for you or you may simply prefer developing portlets using your
 current framework.
