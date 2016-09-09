@@ -1,7 +1,7 @@
 # Understanding GuestbooksActivity's UI
 
-You used Android Studio's Navigation Drawer Activity template to create 
-`GuestbooksActivity`. Any activity created by this template contains a 
+Recall that you used Android Studio's Navigation Drawer Activity template to 
+create `GuestbooksActivity`. Any activity created by this template contains a 
 navigation drawer and all the components the activity needs. This includes 
 layout files that display content. Currently, these files contain simple 
 placeholder content. You'll replace this content shortly with content from your 
@@ -9,14 +9,25 @@ Liferay instance. Before doing so, however, you should know where the
 placeholder content exists in the project's structure and how the app displays 
 it. 
 
-The app's UI is defined by three layout files: `activity_guestbooks.xml`, 
-`app_bar_guestbooks.xml`, `content_guestbooks.xml`. These layouts combine to
-display the app's content. 
+The app's UI is defined by three layout files that combine to display the app's 
+content: 
 
-## Understanding the Activity's Layout File
+1. `activity_guestbooks.xml`: The activity's main layout file. This layout 
+   defines the navigation drawer and includes the `app_bar_guestbooks` layout. 
+   The latter appears when the navigation drawer is closed. 
 
-First, open `GuestbooksActivity`'s layout file, `activity_guestbooks.xml`. This 
-file should look similar to this one: 
+2. `app_bar_guestbooks.xml`: Defines the action bar (app bar) and includes the 
+   `content_guestbooks` layout. 
+
+3. `content_guestbooks.xml`: Defines the activity's main content. This is the 
+   content that appears below the action bar. 
+
+First, you'll learn how `activity_guestbooks.xml` works. 
+
+## Understanding the Activity's Main Layout File
+
+First, open `GuestbooksActivity`'s main layout file, `activity_guestbooks.xml`. 
+This file should look similar to this one: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <android.support.v4.widget.DrawerLayout 
@@ -44,29 +55,29 @@ file should look similar to this one:
 
     </android.support.v4.widget.DrawerLayout>
 
-This is a small amount of code considering everything that's in 
-`GuestbooksActivity`. The `NavigationView` and its parent `DrawerLayout` define 
-the navigation drawer. Two attributes in `NavigationView` define the drawer's 
-contents: `app:headerLayout` and `app:menu`. The `app:headerLayout` setting 
-`"@layout/nav_header_guestbooks"` specifies that the layout defined in 
-`res/layout/nav_header_guestbooks.xml` is used to render the drawer's header 
-section. The `app:menu` setting `"@menu/activity_guestbooks_drawer"` specifies 
-that the menu defined in `res/menu/activity_guestbooks_drawer.xml` is used to 
-create the drawer's items. Above the `NavigationView`, the `include` statement 
-adds the layout defined in `app_bar_guestbooks.xml` as the activity's main 
-content (the content shown when the navigation drawer is closed). The following 
-diagram illustrates how `activity_guestbooks.xml` maps to the UI. 
+This isn't much code considering everything that's in `GuestbooksActivity`. The 
+`NavigationView` and its parent `DrawerLayout` define the navigation drawer. Two 
+attributes in `NavigationView` define the drawer's contents: `app:headerLayout` 
+and `app:menu`. The `app:headerLayout` value `"@layout/nav_header_guestbooks"` 
+specifies that the layout defined in `res/layout/nav_header_guestbooks.xml` is 
+used to render the drawer's header section. The `app:menu` value 
+`"@menu/activity_guestbooks_drawer"` specifies that the menu defined in 
+`res/menu/activity_guestbooks_drawer.xml` is used to create the drawer's items. 
+Above the `NavigationView`, the `include` statement adds the layout defined in 
+`app_bar_guestbooks.xml` as the content shown when the navigation drawer is 
+closed. The following diagram illustrates how `activity_guestbooks.xml` maps to 
+the UI. 
 
-![Figure 1: The layout `activity_guestbooks.xml` defines the app's main UI components.](../../../images/android-activity-guestbooks.png)
+![Figure 1: The `activity_guestbooks.xml` layout defines the app's main UI components.](../../../images/android-activity-guestbooks.png)
 
-The activity's main content also contains a toolbar, some text, and a 
+The activity's main content also contains a toolbar (the action bar), some text, 
+and a 
 [floating action button](https://www.google.com/design/spec/components/buttons-floating-action-button.html). 
 Next, you'll see how these are defined. 
 
-## Understanding the Activity's Main Content Layout
+## Understanding the app_bar_guestbooks and content_guestbooks Layouts
 
-Open `app_bar_guestbooks.xml` so you can see how it defines the activity's main 
-content. This file should look similar to this: 
+Open `app_bar_guestbooks.xml`. It should look similar to this: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <android.support.design.widget.CoordinatorLayout
@@ -104,11 +115,11 @@ content. This file should look similar to this:
 
     </android.support.design.widget.CoordinatorLayout>
 
-The `AppBarLayout` and `Toolbar` elements define the Toolbar that appears at the 
-top of the activity. Following the Toolbar definition, the `include` statement 
-adds the layout `content_guestbooks.xml` to the `app_bar_guestbooks` layout. The 
+The `AppBarLayout` and `Toolbar` elements define the toolbar that appears at the 
+top of the activity. Following the toolbar definition, the `include` statement 
+adds the `content_guestbooks` layout to the `app_bar_guestbooks` layout. The 
 `content_guestbooks` layout defines the content displayed in the activity's body 
-(below the Toolbar). Right now, this layout only contains an empty 
+(below the toolbar). Right now, this layout only contains an empty 
 `RelativeLayout` element. Now open `content_guestbooks.xml`. Its contents should 
 look like this: 
 
@@ -149,6 +160,6 @@ each points to its rendering on the right.
 
 ![Figure 2: The layout `app_bar_guestbooks.xml` defines the activity's main content.](../../../images/android-app-bar-guestbooks.png)
 
-Awesome! Now you know which layout files in the project define 
-`GuestbookActivity`'s UI. You also know the exact UI components defined in these 
-files. Next, you'll prepare `GuestbookActivity` for Guestbook List Screenlet. 
+Awesome! Now you know which layout files in the project define the app's UI. You 
+also know the exact UI components defined in these files. Next, you'll prepare 
+`GuestbooksActivity` for Guestbook List Screenlet. 

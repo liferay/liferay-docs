@@ -35,8 +35,8 @@ activity or fragment class that contains the Screenlet. Also recall that because
 Guestbook List Screenlet didn't need extra listener methods, you used it in 
 `GuestbooksActivity` by implementing the 
 [`BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java) 
-with `GuestbookModel` as a type argument. Entry List Screenlet doesn't need 
-extra listener methods either. Like Guestbook List Screenlet, you can use it by 
+with `GuestbookModel` as a type argument. Entry List Screenlet also doesn't need 
+extra listener methods. Like Guestbook List Screenlet, you can use it by 
 implementing `BaseListListener` with its model class as a type argument. 
 
 Change `EntriesFragment`'s class declaration to implement 
@@ -128,7 +128,7 @@ screenshots show these Screenlets in action.
 ![Figure 2: Guestbook List Screenlet displays guestbooks in the navigation drawer.](../../../images/android-guestbook-screenlet-drawer-01.png)
 
 Although your Screenlets work, you may have noticed something odd about the 
-navigation drawer: its header displays the text *Android Studio* and 
+navigation drawer; its header displays the text *Android Studio* and 
 *android.studio@android.com*. You obviously don't want your users to see this. 
 The two `TextView` elements in `nav_header_guestbooks.xml` use the 
 `android:text` attribute to hardcode this text. To remove the text completely, 
@@ -147,9 +147,3 @@ can customize your Screenlet's appearance, package it for redistribution, and
 even configure it to receive push notifications. These topics, and more, are 
 covered in 
 [the tutorials on Android apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens). 
-
-Even though creating your own Screenlets is best practice for developing Android 
-apps that work with your custom portlets, it's not mandatory. You could instead 
-call the Mobile SDK directly in your app's activity or fragment code, and skip 
-writing all the Screenlet components. The appendix that follows shows you how to 
-do this. 

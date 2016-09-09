@@ -8,9 +8,9 @@ using any other Screenlet:
 
 2. Implement the Screenlet's listener in the activity or fragment class. 
 
-Recall that you used these steps when you inserted Login Screenlet in 
-`MainActivity`. You'll also follow these steps to insert Guestbook List 
-Screenlet in `GuestbooksActivity`. 
+Recall that you used these steps to insert Login Screenlet in `MainActivity`. 
+You'll also follow these steps to insert Guestbook List Screenlet in 
+`GuestbooksActivity`. 
 
 ## Inserting the Screenlet in the Layout
 
@@ -39,17 +39,17 @@ placeholder content from the `NavigationView`. To do these things, replace the
     </android.support.design.widget.NavigationView>
 
 Compared to the `NavigationView` it replaced, this `NavigationView` contains 
-Guestbook List Screenlet's XML, and lacks the `app:menu` attribute. This 
-attribute points to the menu resource file used to create the drawer's items. 
-Since you're using the Screenlet to display the drawer's items (the guestbooks), 
-you don't need to use `app:menu`. Delete the menu resource file 
+Guestbook List Screenlet's XML, and lacks the `app:menu` attribute. Recall that 
+this attribute pointed to the menu resource file used to create the drawer's 
+items. Since you're using the Screenlet to display the drawer's items (the 
+guestbooks), you don't need `app:menu`. Delete the menu resource file 
 `res/menu/activity_guestbooks_drawer.xml`. 
 
-Guestbook List Screenlet's XML strongly resembles Login Screenlet's XML. Both 
-contain an `android:id` value that you can use in the activity to get a 
-reference to the Screenlet. Both also use a `layoutId` attribute to specify the 
-Screenlet's View. Guestbook List Screenlet's XML, however, differs by using the 
-`android:paddingTop` attribute. This attribute's value, 
+Note that Guestbook List Screenlet's XML strongly resembles Login Screenlet's 
+XML. Both contain an `android:id` value that you can use in the activity to get 
+a reference to the Screenlet. Both also use a `layoutId` attribute to specify 
+the Screenlet's View. Guestbook List Screenlet's XML, however, differs by using 
+the `android:paddingTop` attribute. This attribute's value, 
 `@dimen/nav_header_height`, pads the top of the Screenlet by the height of the 
 navigation drawer's header section. This prevents the Screenlet and drawer 
 header from overlapping. 
@@ -62,30 +62,29 @@ Great! You must now implement the Screenlet's listener interface in
 To use a Screenlet, you must implement its listener methods in the class of the 
 activity or fragment you want the Screenlet to appear in. How you implement 
 these methods depends on how you want the Screenlet to function in your app. For 
-example, recall that when you used Login Screenlet you implemented 
-`LoginListener` in `MainActivity`. You implemented this listener's 
-`onLoginSuccess` and `onLoginFailure` methods to display a message to the user. 
-You then changed the `onLoginSuccess` implementation to navigate from 
-`MainActivity` to `GuestbooksActivity`. Since these methods are `void`, however, 
-you could have left them empty. Obviously this wouldn't have made for a very 
-useful app, but it highlights an important point: Screenlet listener methods let 
-the app developer choose how to respond to the Screenlet's events. By 
-implementing these methods, you can therefore control the how the Screenlet 
-functions with your app. 
+example, when you used Login Screenlet you implemented `LoginListener` in 
+`MainActivity`. You implemented this listener's `onLoginSuccess` and 
+`onLoginFailure` methods to display a message to the user. You then changed the 
+`onLoginSuccess` implementation to navigate from `MainActivity` to 
+`GuestbooksActivity`. Since these methods are `void`, however, you could have 
+left them empty. Obviously this wouldn't have made for a very useful app, but it 
+highlights an important point: Screenlet listener methods let the app developer 
+choose how to respond to the Screenlet's events. By implementing these methods, 
+app developers can therefore control the how the Screenlet functions with their 
+app. 
 
 Before implementing Guestbook List Screenlet's listener, however, you should add 
 a method that the listener methods can use to help display a guestbook and its 
-entries in the app. You might now be thinking, "Hey! I thought you said the 
-Screenlets contain their own UIs? Why does the activity need special methods for 
-displaying the Screenlets' entities? You're a phony!" Recall that a list 
-Screenlet's UI displays the list of entities. That's all it does, though. The 
-rest of your app's UI must still account for it. Consider the Action Bar, for 
-example. List Screenlets don't include an Action Bar, but you should still 
-change the Action Bar's contents to reflect what's on the screen. When a 
-guestbook is selected in Guestbook List Screenlet, the Action Bar's title should 
-display that guestbook's name. You can accomplish this by calling a method that 
-takes a `GuestbookModel` and sets the guestbook's name as the Action Bar's 
-title. Add this method now to `GuestbooksActivity`: 
+entries. You might now be thinking, "Hey! I thought you said the Screenlets 
+contain their own UIs? Why does the activity need special methods for displaying 
+the Screenlets' entities? You're a phony!" Although a list Screenlet's UI 
+displays the list of entities, the rest of the app's UI must still account for 
+it. For example, consider the action bar. List Screenlets don't include an 
+action bar, but you should still change the action bar's contents to reflect 
+what's on the screen. When a guestbook is selected in Guestbook List Screenlet, 
+the action bar's title should display that guestbook's name. You can accomplish 
+this by calling a method that takes a `GuestbookModel` and sets the guestbook's 
+name as the action bar's title. Add this method now to `GuestbooksActivity`: 
 
     public void showEntries(GuestbookModel guestbook) {
 
@@ -121,10 +120,11 @@ To implement `BaseListListener`, you must implement the following methods:
   this method's arguments include the list of objects retrieved from the server 
   (`entries`), and the page's start row (`startRow`) and end row (`endRow`). 
   Recall that by default, you want the activity to display the first guestbook's 
-  entries. You'll use this method to do so, because it receives the guestbooks 
-  from the server. Because `startRow` and `endRow` change for each page, a 
-  `startRow` of `0` corresponds to the first guestbook on the first page. You'll 
-  use an `if` statement to select this guestbook, and then call `showEntries`. 
+  entries. You'll use this method to do so because it receives the guestbooks 
+  from the server. Note that because `startRow` and `endRow` change for each 
+  page, a `startRow` of `0` corresponds to the first guestbook on the first 
+  page. You'll use an `if` statement to select this guestbook, and then call 
+  `showEntries`. 
 
 - `onListItemSelected(E element, View view)`: Called when the user selects an 
   item in the list. This method's arguments include the selected list item 
@@ -171,7 +171,7 @@ This requires you to implement the following methods:
 
 Note that offline mode still functions properly regardless of how you implement 
 these methods. They just give you an opportunity to respond to offline mode's 
-actions, should you need to. In this app you don't, so your implementations can 
+actions should you need to. In this app you don't, so your implementations can 
 be empty. Add these methods to your `GuestbooksActivity` class: 
 
     @Override

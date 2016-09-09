@@ -2,11 +2,11 @@
 
 Now that you have the Guestbook List and Entry List Screenlets, you're ready to 
 put them to work. As you'll see, using these Screenlets isn't much more 
-difficult than using Login Screenlet. This is an advantage of Screenlets: it 
+difficult than using Login Screenlet. This is an advantage of Screenlets; it 
 typically takes only a few minutes to get them up and running. They also 
 integrate with the rest of your app's UI. 
 
-You'll follow these steps when adding your Screenlets to the app: 
+To add your Screenlets to the app, you'll follow these steps: 
 
 1. Understand how `GuestbooksActivity`'s UI works. Since your Screenlets augment 
    this UI instead of replacing it, you should first understand how it works. 

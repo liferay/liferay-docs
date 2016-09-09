@@ -3,15 +3,15 @@
 Using a fragment for Entry List Screenlet lets you swap out part of 
 `GuestbookActivity`'s contents without recreating the entire activity from 
 scratch each time a guestbook is selected. Your app doesn't currently have any 
-fragments, though. In this article, you'll create this fragment and then add it 
-to `GuestbooksActivity`. When you finish, you'll be ready to use Entry List 
+fragments, though. In this article, you'll create a fragment and then add it to 
+`GuestbooksActivity`. When you finish, you'll be ready to use Entry List 
 Screenlet in this fragment. 
 
 ## Creating the Fragment
 
 To create the fragment, right click the `com.liferay.docs.liferayguestbook` 
 package and select *New* &rarr; *Fragment* &rarr; *Fragment (Blank)*. In the 
-wizard, check only the box for *Create layout XML?*, name the fragment 
+wizard, check only the box to create the layout XML, name the fragment 
 `EntriesFragment`, and then click *Finish*. The following screenshot illustrates 
 this: 
 
@@ -57,16 +57,17 @@ This creates the `EntriesFragment` class and its layout file
     }
 
 If you have experience with Android fragments, then you're likely familiar with 
-the empty constructor and `newInstance` method. When the screen orientation 
-changes or the user switches apps, Android must restore the fragment. Instead of 
-recreating the fragment from scratch, the `newInstance` method lets Android 
-restore it with the data it contained. Since this fragment will contain Entry 
-List Screenlet, its data must include the ID of the guestbook the Screenlet will 
-retrieve entries from (`guestbookId`). The `onCreateView` method uses the 
-bundle arguments set in `newInstance` to retrieve the `guestbookId`. For now, 
-you don't have to do anything with the `guestbookId` in `onCreateView`. You'll 
-use this variable when you add the Screenlet to the fragment. For more 
-information on using a `newInstance` method to manage fragments, see 
+`EntriesFragment`'s empty constructor and `newInstance` method. When the screen 
+orientation changes or the user switches apps, Android must restore the 
+fragment. Instead of recreating the fragment from scratch, the `newInstance` 
+method lets Android restore it with the data it contained. Since this fragment 
+will contain Entry List Screenlet, its data must include the ID of the guestbook 
+the Screenlet retrieves entries from (`guestbookId`). Next, look at the 
+`onCreateView` method. This method uses the bundle arguments set in 
+`newInstance` to retrieve the `guestbookId`. For now, you don't have to do 
+anything with the `guestbookId` in `onCreateView`. You'll use this variable when 
+you add the Screenlet to the fragment. For more information on managing 
+fragments with a `newInstance` method, see 
 [this blog post](http://www.androiddesignpatterns.com/2012/05/using-newinstance-to-instantiate.html). 
 
 Next, you'll add this fragment to `GuestbooksActivity`. 
@@ -97,9 +98,9 @@ when a guestbook is selected in Guestbook List Screenlet. You'll do this with a
 In short, a fragment transaction adds, removes, or replaces a fragment in an 
 activity. Recall that you created `GuestbooksActivity`'s `showEntries` method to 
 process a list item selection in Guestbook List Screenlet. All `showEntries` 
-does right now is set the Action Bar's title to the selected guestbook's name. 
+does right now is set the action bar's title to the selected guestbook's name. 
 You'll add the fragment transaction to `showEntries`, so a guestbook selection 
-will also show that guestbook's entries. Replace the `showEntries` method in 
+also shows that guestbook's entries. Replace the `showEntries` method in 
 `GuestbooksActivity` with the following:
 
     public void showEntries(GuestbookModel guestbook) {
