@@ -84,9 +84,16 @@ Bridge.
                             - views
 
 2.  Make sure your module specifies the dependencies necessary for a Liferay JSF
-    application. For instance, you must specify the Liferay Faces Bridge as a
-    dependency. For example, this is the `pom.xml` file used from the Maven
-    based Hello User JSF application:
+    application. For instance, you must always specify the Faces API, Faces
+    Reference Implementation (Mojarra), and Liferay Faces Bridge as dependencies
+    in a Liferay-compatible JSF application. Also, an important, but not
+    required, dependency is the Log4j logging utility. This is highly
+    recommended for development purposes because it logs DEBUG messages in the
+    console. You'll configure the logging utility later.
+
+    For an example build file, the `pom.xml` file used for the Maven based Hello
+    User JSF application is below. All the dependencies described above are
+    configured in the Hello User JSF application's `pom.xml` file.
 
         <?xml version="1.0"?>
 
@@ -127,18 +134,6 @@ Bridge.
             </build>
             <dependencies>
                 <dependency>
-                    <groupId>commons-fileupload</groupId>
-                    <artifactId>commons-fileupload</artifactId>
-                    <version>1.3.1</version>
-                    <optional>true</optional>
-                </dependency>
-                <dependency>
-                    <groupId>commons-io</groupId>
-                    <artifactId>commons-io</artifactId>
-                    <version>2.4</version>
-                    <optional>true</optional>
-                </dependency>
-                <dependency>
                     <groupId>javax.faces</groupId>
                     <artifactId>javax.faces-api</artifactId>
                     <version>${faces.api.version}</version>
@@ -168,11 +163,13 @@ Bridge.
             </dependencies>
         </project>
 
-    Note that in this example build configuration, there are several other
-    dependencies besides Liferay Faces Bridge, which include the JSF API,
-    Mojarra, and utility libraries like Commons IO. These dependenices are
-    required for this tutorial's example JSF application, but they can be
-    modified based on the application you're building.
+    There are also two plugins the Hello User JSF application defined in its
+    `pom.xml`:
+    [maven-compiler-plugin](https://maven.apache.org/plugins/maven-compiler-plugin/)
+    and
+    [maven-war-plugin](https://maven.apache.org/plugins/maven-war-plugin/).
+    These two plugins are responsible for building and compiling the JSF
+    application using Maven.
 
     There are several UI component suites that a JSF application can use,
     which include
@@ -314,8 +311,9 @@ WAR-style portlet descriptors.
 
     The `javax.faces.WEBAPP_RESOURCES_DIRECTORY` parameter sets the resources
     folder inside the `WEB-INF` folder. This setting makes the resources in
-    that folder secure from non-JSF calls. You'll create some resources in this
-    folder later.
+    that folder (e.g., CSS, JavaScript, XHTML) secure from non-JSF calls. You'll
+    [create resources](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-jsf-applications#defining-resources-for-a-jsf-application)
+    for your app later.
 
     The Faces Servlet configuration is required to initialize JSF and should be
     defined in all JSF portlets deployed to @product@.
