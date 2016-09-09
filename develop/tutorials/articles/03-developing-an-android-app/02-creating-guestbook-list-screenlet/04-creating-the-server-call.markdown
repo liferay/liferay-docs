@@ -106,7 +106,13 @@ each method works:
 
 There's a key point here that warrants emphasis: objects of any class that 
 implements `BaseListInteractorListener` receive the server call's results via 
-these methods and thus serve as this listener. 
+these methods and thus serve as this listener. In the list Screenlet framework, 
+this is 
+[the `BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java). 
+Later, you'll learn how `BaseListScreenlet` handles the server call's results. 
+For now, focus on the Interactor class. 
+
+![Figure 1: `BaseListInteractor` calls the `BaseListInteractorListener` implementation in `BaseListScreenlet`. This lets the Interactor propagate the server call's results throughout the Screenlet.](../../../images/screens-android-list-screenlet-interactor.png)
 
 When you extend `BaseListInteractor` to create Guestbook List Screenlet's 
 Interactor class, you can rely on the default `onEventMainThread` and 
