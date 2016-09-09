@@ -21,23 +21,31 @@ available in ZIP file [lunar-resort-theme-migration-6.2.zip](/develop/tutorials/
 
 ![Figure 1: The Lunar Resort theme offers a clean, minimal design.](../../../images/finished-theme.png)
 
-Before upgrading your theme, consider whether to first [migrate your theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
+Before upgrading your theme, consider whether to [migrate your theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 to use the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
-This migration is not required for upgrading a theme to run on Liferay 7, but the
-Themes Generator provides a powerful theme upgrade Gulp task that performs many
-upgrade steps automatically. In addition, a Themes Generator theme can leverage
-new features, such as [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
+Migration isn't required to upgrade a theme for Liferay 7, but the Themes
+Generator's upgrade Gulp task performs many upgrade steps automatically. In
+addition, a Themes Generator theme can leverage new features, such as [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
 
-The theme upgrade task updates the theme's Liferay version, makes a best effort
-to update CSS, and logs upgrade suggestions. For this reason, the Gulp upgrade
-task is described first. Note, however, that this tutorial covers how to apply
-the same updates run by the gulp task to your theme manually as well.
+Upgrading a migrated theme with the Gulp task is discussed first, because it's a
+powerful and popular option. After that, all of the upgrade steps (including
+those the Gulp task executes) are explained. You must understand all the upgrade
+steps to completely upgrade your theme for Liferay 7.
 
 ## Running the Gulp Upgrade Task for Themes Generator Themes [](id=running-the-gulp-upgrade-task-for-themes-generator-themes)
 
 A Liferay 6 theme can be upgraded to Liferay 7, regardless of its project
-environment (Plugins SDK, Maven, etc.). However, a theme that's been migrated to
-the Themes Generator can leverage the theme upgrade Gulp task.
+environment (Themes Generator, Plugins SDK, Maven, etc.). However, a theme
+that's been migrated to the Themes Generator can leverage the theme upgrade Gulp
+task. Here's what the Gulp Task does:
+
+- Updates the theme's Liferay version
+- Updates the CSS
+- Suggests specific updates to the code
+
+The Gulp task makes a best effort to upgrade CSS code that is easy to identify
+and straightforward to update. It suggests modifications to parts of the
+reamining CSS code. 
 
 Here are the steps for using the theme upgrade Gulp task:
 
@@ -45,54 +53,54 @@ Here are the steps for using the theme upgrade Gulp task:
 
         gulp upgrade
 
-    The existing theme is copied to a `backup` folder.  An upgraded theme
-    can be restored to its original state by executing `gulp
-    upgrade:revert`.
+    Here's what it does intially:
+    
+    - Copies the existing theme to a folder called `backup`
+    - Creates core code for generating theme base files
+    - Updates Liferay version references
 
-    Then, the upgrade task creates core code for generating Liferay 7 theme base
-    files.
+    +$$$
 
-    It also updates Liferay version references to `7.0`.
+    **Note**: An upgraded theme can be restored to its original state by
+    executing `gulp upgrade:revert`. 
 
-    As an added bonus, the `gulp upgrade` task starts the CSS file upgrade
-    process, prompting you to apply new names to CSS files.
+    $$$
+
+    The task proceeds with the CSS file upgrade process, prompting you to update
+    CSS file names. 
 
 2.  For Liferay 7, Sass files should use the `.scss` extension and filenames for
     Sass partials should start with an underscore (e.g., `_custom.scss`). The
-    `gulp upgrade` task prompts you to press `Enter` to rename each CSS file.
+    `gulp upgrade` task prompts you for each CSS file to rename.
 
 The Gulp task makes a best effort to upgrade the theme's Bootstrap code from
-version 2 to 3, and points out the breaking changes for the theme templates. It
-does some of the upgrades automatically and logs suggestions for other updates.
-The logs are discussed later in this tutorial.
+version 2 to 3. For other areas of the code it suspects might need updating, it
+logs suggestions (covered later). The task also points out breaking changes that
+may affect theme templates. 
 
-A breaking change refers to any changes that have been made between Liferay 6.2
-and Liferay 7 that can potentially break something in your Portal installation.
-These are kept to a minimum, but in some cases they are unavoidable. You can
-find a full list of the breaking changes for Liferay 7 in our [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
-reference doc. In some cases, you can use tools, such as the [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-in Liferay IDE or Liferay Developer Studio, to identify and address these
-changes.
+A *breaking change* is a code modification between between versions of @product@
+that might be incompatible with existing plugins, including themes. Liferay kept
+such changes to a minimum, but they were unavoidable in some cases. The [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
+reference document explains all of them. The theme upgrade Gulp task and the [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
+in Liferay IDE and Liferay Developer Studio, identify and address these changes.
 
-The `gulp upgrade` task jumpstarted the upgrade process, but there are more
-upgrades to do.
+The `gulp upgrade` task jumpstarts the upgrade process, but it doesn't complete
+it. Manual updates are required. 
 
-The remainder of this tutorial explains all the steps for upgrading a theme,
-regardless of whether the `gulp upgrade` task performs them automatically.
-Things that the upgrade task accomplishes are noted in context. Even if you've
-already executed the Gulp task, it's best to read through all the steps to make
-sure all facets of a theme upgrade are applied.
+The remainder of this tutorial explains all the theme upgrade steps, regardless
+of whether the `gulp upgrade` task performs them. Steps the upgrade task
+performs are noted in context. Even if you've already executed the Gulp task,
+it's best to learn all the steps and make sure they're applied to your theme.
 
-The first upgrade step is to update the theme's Liferay version.
+Updating the theme's Liferay version is a good first step. 
 
 ## Updating a Theme's Liferay Version [](id=updating-a-themes-liferay-version)
 
 A theme's Liferay version must be updated to `7.0.0+`, for it to run on Liferay
-7. Several theme files specify Liferay version information. You'll update
-them now.
+7. 
 
 1.  Open your `liferay-plugin-package.properties` file and change the
-    `liferay-versions` property from `6.2.[version]` to `7.0.0+`:
+    `liferay-versions` property value to `7.0.0+`:
 
         liferay-versions=7.0.0+
 
@@ -108,60 +116,70 @@ them now.
                 <compatibility>
                         <version>7.0.0+</version>
                 </compatibility>
+
                 ...
+
         </look-and-feel>
 
-3.  If your theme uses the Themes Generator and you haven't already run the
-    `gulp upgrade` task, open its `package.json` file and update the Liferay
-    version references to `7.0`.
+3.  If your theme uses the Themes Generator and has a `package.json` file,
+    update the file's Liferay version references to `7.0`.
 
 Your theme's Liferay version references are updated for Liferay 7. Next, you'll
 update the CSS.
 
 ## Updating the CSS [](id=updating-the-css)
 
-As a result of Liferay 7's UI improvements some CSS files have been removed and
+As a result of Liferay 7's UI improvements, some CSS files have been removed and
 others added. The directory structure has changed, as well. Liferay 7's update
-from Bootstrap 2 to Bootstrap 3 requires changes to CSS classes variables.
-Finally, the CSS responsiveness tokens have changed. Conforming to all these
-changes is part of the upgrade process.
+from Bootstrap 2 to Bootstrap 3 requires CSS classes variable changes. Lastly,
+the CSS responsiveness tokens have changed. Conforming to all these changes is
+part of the upgrade process.
 
-In this section, you'll update your theme's CSS. You'll start with updating CSS
-file names.
+In this section, you'll update your theme's CSS. You can start with updating CSS
+file names for Sass.
 
 ### Updating CSS File Names for Sass [](id=updating-css-file-names-for-sass)
 
-Liferay 7 themes should follow the Sass naming convention.
+Liferay 7 expects themes to use the Sass extension to CSS. Some of the CSS must
+be renamed to follow standard Sass file naming conventions. 
 
 +$$$
 
-**Note:** The `gulp upgrade` task updates the names automatically.
+**Note:** The `gulp upgrade` task renames the files automatically.
 
 $$$
 
-To follow the Sass naming convention, rename all the CSS files in your
-`_diffs/css` folder, except `main.scss` and `aui.scss`.
+For each CSS file you've modified from the base theme, except `main.scss` and
+`aui.scss`, change its suffix from `.css` to `.sccs`. 
+
+Then, prepend an underscore (`_`) to the name of all Sass partial files. 
 
 For example, rename `custom.css` to `_custom.scss`.
 
+Refer to the [Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide)
+for a complete list of expected names for theme CSS files. 
+
 Here are the Lunar Resort theme's modified CSS files with updated names:
 
-- `css/`
-    - `_aui_variables.scss`
-    - `_custom.scss`
+- `_diffs/`
+    - `css/`
+        - `_aui_variables.scss`
+        - `_custom.scss`
 
-Next, you'll update CSS rules to match the Bootstrap 3 syntax.
+Next, the CSS rules must be updated to use Bootstrap 3 syntax.
 
 ### Updating CSS Rules [](id=updating-css-rules)
 
+Liferay 7 uses Bootstrap 3's syntax for CSS rules. 
+
 If your theme does not use the Themes Generator, you can refer to the
-[Migrating from 2.x to 3.0](http://getbootstrap.com/migration/#migrating-from-2x-to-30)
-guide to learn the CSS updates to apply for Boostrap 3.
+[Migrating from 2.x to 3.0 guide](http://getbootstrap.com/migration/#migrating-from-2x-to-30)
+for updating CSS rules to Bootstrap 3. 
 
 If your theme uses the Themes Generator and you executed the `gulp upgrade`
-task, the task's log reports changes it's made and CSS changes to consider
-making. For example, here is part of the the `gulp upgrade` task log for the
-Lunar Resort theme:
+task, its log reported CSS changes it made and changes for you to consider
+making manually. For example, here is part of the the `gulp upgrade` task log
+for the Lunar Resort theme:
 
 	----------------------------------------------------------------
 	 Bootstrap Upgrade (2 to 3)
@@ -221,25 +239,25 @@ Lunar Resort theme:
 		Line 490: "btn" has changed to "btn btn-default"
 		Line 586: "nav-collapse" has changed to "navbar-collapse"
 
-The log lists filenames and line numbers of each upgrade change performed and
-suggested.
+For each update performed and suggested, the Gulp task reports a file name and
+line number range. 
 
-The `gulp upgrade` log points out CSS rules that use padding. Since Bootstrap 3
-adopts the `box-sizing: border-box` property for all elements and
-pseudo-elements (:before and :after), padding no longer affects their width or
-height. Bootstrap's [documentation](http://getbootstrap.com/css/#less-mixins-box-sizing)
-offers more information on this change.
+Since Bootstrap 3 adopts the `box-sizing: border-box` property for all elements
+and pseudo-elements (e.g., `:before` and `:after`), padding no longer affects
+dimensions. [Bootstrap's documentation](http://getbootstrap.com/css/#less-mixins-box-sizing)
+describes the details. The Gulp upgrade task points out CSS rules that use
+padding, to suggest updates. Consider the updates it suggests. 
 
 +$$$
 
-**Note:** You can still overwrite the `box-sizing: border-box` rule for
+**Note:** You can overwrite the `box-sizing: border-box` rule for
 individual elements, by setting the rule to `box-sizing: content-box`.
 
 $$$
 
 Make sure to update the width and height in all CSS rules that use padding.
 
-For example, examine the `height` value change in this CSS rule in the Lunar
+For example, examine the `height` value change in this CSS rule from the Lunar
 Resort theme's `_custom.scss` file.
 
 Old way:
@@ -269,14 +287,14 @@ New way:
 	}
 
 
-After you've updated the theme's CSS rules, you can update its CSS
-responsiveness next.
+After you've updated the theme's CSS rules, you should update its CSS
+responsiveness. 
 
 ### Updating the Responsiveness [](id=updating-the-responsiveness)
 
 The Bootstrap 2 `respond-to` mixins that were used in Liferay 6.2 have been
-replaced with explicit Bootstrap 3 media queries. Follow the steps below to
-update CSS responsiveness.
+replaced with explicit Bootstrap 3 media queries. Follow these steps to update
+CSS responsiveness:
 
 1.  Open your `_custom.scss` file.
 
@@ -316,46 +334,47 @@ New way:
 The old mixin `@include respond-to(phone, tablet)` is replaced with the new
 media query `@include media-query(null, $breakpoint_tablet - 1)`.
 
-The `gulp upgrade` task also generates a `_deprecated_mixins.scss` file. This
-file provides deprecated compass mixins that a Liferay 6.2 theme might be using.
-If you're using the mixins, consider replacing them. If you're not using the
-mixins, delete the `_deprecated_mixins.scss`file.
+If your theme uses the Themes Generator and you executed the Gulp upgrade task,
+the task generated a file `_deprecated_mixins.scss`. It provides deprecated
+compass mixins that your migrated theme might be using. Consider upgrading your
+use of these mixins. Keep the `_deprecated_mixins.scss` file if you're using any
+of its mixins and delete from it all mixins you're not using. If you're not
+using any of of its mixins, delete the `_deprecated_mixins.scss` file. 
 
-Your theme's responsiveness is up to date. Next, you'll update your variables
-and Font Awesome settings.
+Your theme's responsiveness is up to date. Next, you'll update your Font Awesome
+settings. 
 
 ### Updating Font Awesome Icons [](id=updating-font-awesome-icons)
 
-Font Awesome icons are widely used throughout Liferay and are easy to use in
-your own themes. In the Lunar Resort theme, for example, Font Awesome icons are
-used in the social media links shown in the figure below.
+Font Awesome icons are widely used throughout @product@ and are easy to use in
+themes. For example, the Lunar Resort theme uses Font Awesome icons in social
+media links. 
 
-![Figure 2: Font Awesome icons make it easy to create social media links for your site.](../../../images/lunar-resort-social-media-links.png)
+![Figure 2: Font Awesome icons facilitate creating social media links for your site.](../../../images/lunar-resort-social-media-links.png)
 
 In Liferay 6.2, the Font Awesome icon paths were defined in the `aui.css`
-file. In Liferay 7, they're defined in the `_aui_variables.scss` file instead.
+file. In Liferay 7, they're defined in the `_aui_variables.scss` Sass CSS file.
 
 +$$$
 
-**Note:** The `aui.css` file now holds the `lexicon-base` import for styling.
+**Note:** In Liferay 7, the `aui.css` file holds the `lexicon-base` import for styling.
 The [Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide)
 describes all the Liferay 7 theme files and their usage.
 
 $$$
 
-If you modified your `_aui_variables.scss` file in your 6.2 theme, you need to
-add the imports for the Font Awesome Icons to the top of this file, otherwise
-this file is generated when the theme is built, and you can skip this step.
+The top of the `_aui_variables.scss` file must start with the Font Awesome Icons
+imports. 
 
-1.  Add these Font Awesome imports to the top of your `_aui_variables.scss` file
-    to ensure that the icons are rendered properly:
+If you modified the `_aui_variables.scss` file in your 6.2 theme, add these Font
+Awesome imports to the top of it: 
 
-        // Icon paths
-        $FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
-        $font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
-        $icon-font-path: "aui/lexicon/fonts/";
+	// Icon paths
+	$FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
+	$font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
+	$icon-font-path: "aui/lexicon/fonts/";
 
-In the next section, you'll address the breaking changes for the theme templates.
+In the next section, you'll address breaking changes for theme templates.
 
 ## Updating Theme Templates [](id=updating-theme-templates)
 
