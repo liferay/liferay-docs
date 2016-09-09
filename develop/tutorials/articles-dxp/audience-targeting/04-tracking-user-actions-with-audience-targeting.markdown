@@ -1,18 +1,18 @@
 # Tracking User Actions with Audience Targeting [](id=tracking-user-actions-with-audience-targeting)
 
-In the Audience Targeting application, a campaign defines a set of content
+In the Audience Targeting (AT) application, a campaign defines a set of content
 targeted to specific user segments during a time period. Campaign custom reports
 allow campaign administrators to learn how users behave in the context of a
-campaign by monitoring their interaction over different elements of the portal.
+campaign by monitoring their interaction over different elements of the site.
 Out of the box, Liferay provides several metrics that are based on entity types
 that you can track, such as content, forms, links, pages, etc. You can use these
 metrics to create custom reports. For example, if you want track how many users
 watch a YouTube video that is published on your site, you might create a custom
 report with the YouTube Videos metric.
 
-The Audience Targeting app ships with many metrics you can apply to custom
-reports, but it's also extensible. This means that if the default metrics
-available do not fulfill your needs, you can create one yourself!
+The AT app ships with many metrics you can apply to custom reports, but it's
+also extensible. This means that if the default metrics available do not fulfill
+your needs, you can create one yourself!
 
 A metric's development strategy comes down to four choices:
 
@@ -21,15 +21,15 @@ A metric's development strategy comes down to four choices:
 - Tracking Events
 - Differentiation Method
 
-Creating a metric involves targeting what you want track in a custom report.
+Creating a metric involves targeting what you want to track in a custom report.
 Suppose you're the owner of a hardware store and you'd like to send emails to
-your clientele notifying them of the store's weekly newsletter. You send the
+your customers notifying them of the store's weekly newsletter. You send the
 email every week, but you're in the dark about how many customers actually open
 and read the newsletter. For this example, your entity to track is a newsletter.
 
 To track how many customers view the newsletter, you'll need to create a
 tracking mechanism. You can provide a custom tracking mechanism (e.g., a
-servlet) or you can use the ones provided by Audience Targeting. For a custom
+servlet) or you can use the ones provided by Audience Targeting. For a 
 newsletter, you could use a transparent image as the tracking mechanism, which
 would have the *View* tracking event capability. Whenever the image is viewed,
 the Audience Targeting app computes and stores the information.
@@ -48,15 +48,15 @@ visit the
 [Defining Metrics](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
 section.
 
-For this tutorial, you'll create a custom newsletter that can track who views
-it. This process involves defining the view/save lifecycle, which is when
-a user applies a metric to a report using the Report Editor. Then you'll define
-its tracking mechanism, tracking event(s), and differentiation method, similar
-to what was described above.
+For this tutorial, you'll create a newsletter that can track who views it. This
+process involves defining the view/save lifecycle, which is when a user applies
+a metric to a report using the Report Editor. Then you'll define its tracking
+mechanism, tracking event(s), and differentiation method, similar to what was
+described above.
 
 ![Figure 1: The sample Newsletter metric requires the newsletter name, ID, and event type.](../../images-dxp/metric-template.png)
 
-Now that you have an idea of how to plan your custom metric, you'll begin
+Now that you have an idea of how to plan your new metric, you'll begin
 creating one next!
 
 ## Creating a Metric [](id=creating-a-metric)
@@ -95,28 +95,28 @@ dependencies.
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class
-    name should begin with the metric's name you're creating, and end with
+    name should begin with the metric's name you're creating and end with
     *TrackingAction* (e.g., `NewsletterTrackingAction.java`). Your Java class
     should implement the
     `com.liferay.content.targeting.api.model.TrackingAction` interface.
 
-    It is required to implement the `TrackingAction` interface, but there are
+    You must implement the `TrackingAction` interface, but there are
     `TrackingAction` extension classes that provide helpful utilities that you
     can extend. For example, your metric can extend the `BaseJSPTrackingAction`
     class to support generating your metric's UI using JSPs. This tutorial
-    demonstrates implementing the UI using a JSP, and assumes the
+    demonstrates implementing the UI using a JSP and assumes the
     `TrackingAction` interface is implemented by extending the
     `BaseJSPTrackingAction` class. For more information on choosing a UI for
     your metric, see the
     [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-metrics#selecting-a-ui-technology)
     section.
 
-4.  Directly above the class's declaration, insert the following code:
+4.  Directly above the class's declaration, insert the following annotation:
 
         @Component(immediate = true, service = TrackingAction.class)
 
-    This annotation declares the implementation class of the Component and
-    specifies to immediately start the module once deployed to @product@.
+    This declares the Component's implementation class and configures it to
+    start immediately once deployed to @product@.
 
 Now that your Java class is set up, you'll need to define how your metric works
 by implementing the `TrackingAction` interface's methods. Here are some of the
@@ -167,7 +167,7 @@ In this section, you'll begin defining the newsletter metric's Java class. This
 assumes that you followed the instructions above, creating the
 `NewsletterTrackingAction` class and extending `BaseJSPTrackingAction`. If you
 used the `contenttargetingtrackingaction` Blade CLI template, your project is
-already extending `BaseJSPTrackingAction` and has a default `view.jsp` file
+already extending `BaseJSPTrackingAction` and a default `view.jsp` file is
 already created. 
 
 1.  Add the activation and deactivation methods to your class.
@@ -220,7 +220,7 @@ already created.
             context.put("eventTypes", getEventTypes());
         }
 
-    To understand what this method accomplishes, you'll need to examine the
+    To understand what this method accomplishes, you should understand the
     metric's configuration lifecycle.
 
     ![Figure 2: An Audience Targeting metric must be configured by the user and processed before it can become part of a Report.](../../images-dxp/metric-lifecycle.png)
@@ -266,12 +266,12 @@ already created.
 
     You can think of the `populateContext` method as the intermediary between
     your JSP and your backend code. You can see how to create the newsletter
-    metric's UI using a JSP by seeing the
+    metric's UI using a JSP by skipping to the
     [Defining the Metric's UI](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     section. Once the HTML is successfully retrieved and the user has set the
     newsletter's values and clicked *Save*, the action phase begins. 
 
-3.  Once the action phase begins, the tracking action (metric) is processed. The
+3.  Once the action phase begins, AT processes the tracking action (metric). The
     `processTrackingAction(...)` method takes the values from the
     [metric's UI form](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
@@ -353,16 +353,16 @@ Next, you'll define a tracking mechanism for your metric to use.
 Imagine an administrator has successfully configured and saved your custom
 metric to his or her report. Now what? Your metric needs to fulfill its
 purpose, which is to track the `view` event type for the defined newsletter. To
-do this, you must define a tracking mechanism. For your custom newsletter,
-you'll use a transparent image as the tracking mechanism, which
-would have the *View* tracking event capability. Whenever the image is viewed,
-the newsletter metric computes and stores the information.
+do this, you must define a tracking mechanism. For your newsletter, you'll use a
+transparent image as the tracking mechanism, which would have the *View*
+tracking event capability. Whenever the image is viewed, the newsletter metric
+computes and stores the information.
 
 For the newsletter metric, you'll use a tracking mechanism provided by the
 Audience Targeting app.
 
 1.  You must set the analytics processor that the Content Targeting API provides
-    for tracking events. Add the following method and private field to do so:
+    for tracking events. Add the following method and private field:
 
         @Reference
         protected void setAnalyticsProcessor(AnalyticsProcessor analyticsProcessor) {
@@ -510,7 +510,7 @@ users viewed a newsletter. You can test if the metric is working by copying the
 generated tracking image HTML into an email HTML editor, sending it, and opening
 it as if it were an actual newsletter. Then open the custom report containing
 the newsletter metric and select *Update Report*. A chart and table with the
-newsletter's view count is viewable.
+newsletter's view count is shown.
 
 You can view the finished version of the newsletter metric by downloading its
 [ZIP file](https://customer.liferay.com/documents/10738/200086/newsletter.zip/589ea9a1-9473-4409-acc6-c41c6d20728a).
