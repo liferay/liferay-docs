@@ -8,10 +8,9 @@ tutorials. You can create a `service.xml` file and run Service Builder in your
 JSF project to build services.
 
 To call OSGi-based Service Builder services from your JSF portlet, you need a
-mechanism that gives you access to the OSGi service registry. You can't look up
-services published to the OSGi runtime using Declarative Services. Instead, you
-should open a
-[ServiceTracker](https://osgi.org/javadoc/r6/core/org/osgi/util/tracker/ServiceTracker.html)
+mechanism that gives you access to the OSGi service registry, because you can't
+look up services published to the OSGi runtime using Declarative Services.
+Instead, you should open a [ServiceTracker](https://osgi.org/javadoc/r6/core/org/osgi/util/tracker/ServiceTracker.html)
 when you want to call a service that's in the OSGi service registry.
 
 To implement a service tracker in your JSF portlet, you can add a type-safe

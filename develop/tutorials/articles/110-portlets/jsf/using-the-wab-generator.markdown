@@ -1,6 +1,6 @@
 # Using the WAB Generator [](id=using-the-wab-generator)
 
-Developers creating portlets for Liferay 7.0 can usually deploy their portlet as
+Developers creating applications for Liferay 7.0 can choose to create them as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
 OSGi bundle artifacts. Some portlet developers, however, don't have that
 flexibility. Portlets like Spring MVC and JSF must be packaged as WAR artifacts
@@ -68,7 +68,7 @@ Generator in action.
 
 1.  Create a WAR-style plugin that follows a similar structure to the one
     outlined above. You can download an example WAR-style portlet
-    [here](),
+    [here](https://dev.liferay.com/documents/10184/656312/com.liferay.hello.user.jsf.portlet-1.0-SNAPSHOT.war/8cdc236f-2dff-4ba6-b06a-de130c9232b6?download=true),
     for demonstration.
 
     <!-- Attach WAR above for download. -Cody -->

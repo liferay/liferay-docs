@@ -533,9 +533,7 @@ To recap, you created your JSF application in the following steps:
 
 You can view the finished version of the Hello User JSF application by
 downloading its
-[ZIP file]().
-
-<!-- Provide ZIP file above. -Cody -->
+[ZIP file](https://dev.liferay.com/documents/10184/656312/hello-user-jsf-portlet.zip/8601978f-6072-4445-8e1d-86a2d5ae34ca?download=true).
 
 Now you have the knowledge to create your own JSF applications!
 
