@@ -308,7 +308,7 @@ CLI template, your project is already extending `BaseJSPRule` and has a default
 
 5.  Define a way to retrieve the rule's localized summary. In many instances,
     you can do this by combining keys in the rule's resource bundle with the
-    information stored for the rule. For the weather rule, you can simply return
+    information stored for the rule. For the weather rule, you can return
     the rule's type settings, which contains the selected weather condition.
 
         @Override
