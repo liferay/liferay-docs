@@ -8,12 +8,12 @@ Screenlet's Screenlet class.
 
 As with most of Entry List Screenlet, its Screenlet class is almost identical to 
 that of Guestbook List Screenlet. Besides working with entries instead of 
-guestbooks, the only difference is that the Screenlet class in Entry List 
-Screenlet must account for the guestbook ID of the guestbook the entries are 
-retrieved from. Even the Screenlets' attributes are the same. 
+guestbooks, the only difference is that it must account for the guestbook ID of 
+the guestbook the entries are retrieved from. Even the Screenlets' attributes 
+are the same. 
 
 Therefore, this article doesn't explain all the code in detail. Focus is instead 
-placed on the parts that differ from Guestbook List Screenlet. For a full 
+placed on the few parts that differ from Guestbook List Screenlet. For a full 
 explanation of the code, see 
 [the article on creating Guestbook List Screenlet's Screenlet class](https://www.liferay.com/). 
 

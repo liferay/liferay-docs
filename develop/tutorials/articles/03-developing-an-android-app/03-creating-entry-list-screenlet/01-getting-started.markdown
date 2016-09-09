@@ -7,17 +7,16 @@ to start writing the Screenlet.
 
 ## Creating the Model Class for Entries
 
-Entry List Screenlet must use the same Guestbook Mobile SDK you built earlier to 
-call the Guestbook portlet. As it does for guestbooks, this Mobile SDK returns 
+Entry List Screenlet must call the Guestbook portlet with the same Guestbook 
+Mobile SDK you built earlier. As it does for guestbooks, this Mobile SDK returns 
 entries from the portlet in a `JSONArray` that contains each entry in a 
 `JSONObject`. Recall that Screens's 
-[`BaseListCallback` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java) 
+[`BaseListCallback` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java) 
 automatically transforms these JSON entities into `Map` objects for you, and 
-that you must create a model class that converts these `Map` objects into proper 
-entry objects. This gives you an efficient way to work with entries throughout 
+that you must create a model class that converts these `Map` objects into entry 
+objects. This gives you an efficient way to work with entries throughout 
 the Screenlet and in any app that uses it. The model class you'll create 
-here--`EntryModel`--creates `EntryModel` objects that serve as proper entry 
-objects. 
+here--`EntryModel`--creates `EntryModel` objects that serve as entry objects. 
 
 Create the following `EntryModel` class alongside the `GuestbookModel` class in 
 the `com.liferay.docs.model` package: 
@@ -168,4 +167,4 @@ Besides working with entries instead of guestbooks, this class works the same as
 [the article on getting started with Guestbook List Screenlet](https://www.liferay.com/). 
 <!-- Replace link -->
 
-Next, you need to create the Screenlet's UI. 
+Next, you'll create the Screenlet's UI. 

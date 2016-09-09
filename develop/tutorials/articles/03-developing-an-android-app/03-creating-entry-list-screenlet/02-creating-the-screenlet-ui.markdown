@@ -6,21 +6,21 @@ implementing a View. In this article, you'll create Entry List Screenlet's View
 by using the same sequence of steps you used to create Guestbook List 
 Screenlet's View: 
 
-1. Create the row layout. This is the layout the Screenlet will use to display 
-   each row in the list. 
+1. Create the row layout. The Screenlet uses this layout for each row in the 
+   list. 
 
-2. Create the adapter class. The adapter fills the View's layout with each item 
-   in the list. 
+2. Create the adapter class. The adapter fills a row layout instance with the 
+   data for one list item. This repeats for each list item. 
 
 3. Create the View class. This class renders the UI, handles user interactions, 
    and communicates with the Screenlet class. 
 
-4. Create the View's layout. This layout defines the Screenlet's UI, which in 
-   this case is a scrollable list. 
+4. Create the View's layout. This layout defines the Screenlet's UI as a whole, 
+   which in this case is a scrollable list. 
 
-As you follow these steps, you'll notice that they share a great deal of code 
-with those in Guestbook List Screenlet's View. The biggest difference between 
-these Screenlets' Views is that one displays guestbooks and the other displays 
+As you follow these steps, you'll see that Entry List Screenlet's View shares a 
+great deal of code with Guestbook List Screenlet's View. The biggest difference 
+between these Views is that one displays guestbooks and the other displays 
 entries. The mechanisms they use to display data, however, are almost identical. 
 
 To get started, create a new package named `view` inside the 
@@ -28,13 +28,13 @@ To get started, create a new package named `view` inside the
 
 ## Creating the Row Layout
 
-First, you must create the layout the Screenlet will use to display each row in 
-the list. Recall that in Guestbook List Screenlet, the `guestbook_row.xml` 
-layout you created served this purpose with a single `TextView` used to display 
-a guestbook's name. You'll create a similar layout here for Entry List 
-Screenlet, but you'll use two `TextView` elements: one for the entry, and one 
-for the name of the person that left it. Create `entry_row.xml` in your app's 
-`res/layout` directory, and replace its contents with the following:
+First, you must create the layout the Screenlet uses to display each row in the 
+list. Recall that in Guestbook List Screenlet, `guestbook_row.xml` serves this 
+purpose with a single `TextView` used to display a guestbook's name. You'll 
+create a similar layout here for Entry List Screenlet, but you'll use two 
+`TextView` elements: one for the entry, and one for the name of the person that 
+left it. Create `entry_row.xml` in your app's `res/layout` directory, and 
+replace its contents with the following: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -82,7 +82,7 @@ Fortunately, Entry List Screenlet's adapter class is almost identical to that of
 Guestbook List Screenlet. The only difference, besides working with `EntryModel` 
 instead of `GuestbookModel`, is that it needs two variables: one for the entry, 
 and one for the name of the person who left it. Guestbook List Screenlet's 
-adapter class only needed a variable for the guestbook's name. 
+adapter class only needs a variable for the guestbook's name. 
 
 Inside the Entry List Screenlet's `view` package, create the following 
 `EntryAdapter` class: 
@@ -97,8 +97,6 @@ Inside the Entry List Screenlet's `view` package, create the following
     import com.liferay.docs.model.EntryModel;
     import com.liferay.mobile.screens.base.list.BaseListAdapter;
     import com.liferay.mobile.screens.base.list.BaseListAdapterListener;
-
-    import org.w3c.dom.Text;
 
 
     public class EntryAdapter extends BaseListAdapter<EntryModel, EntryAdapter.EntryViewHolder> {
@@ -199,14 +197,13 @@ Next, you'll create your View's main layout.
 
 ## Creating the View's Layout
 
-In the first step, you created a layout to use for each row in the list. 
-Recall from 
-[the article on on Creating Guestbook List Screenlet's UI](https://www.liferay.com/) 
-that you must also create a layout for the list as a whole. At this point, you 
-may be getting tired of hearing this, but it's saving you a great deal of work: 
-the Entry List Screenlet's layout is almost identical to that of Guestbook List 
-Screenlet. The only difference is that Entry List Screenlet's layout uses 
-`EntryListView` instead of `GuestbookListView`. 
+In the first step, you created a layout for each list row. Recall from 
+[the article on Creating Guestbook List Screenlet's UI](https://www.liferay.com/) 
+that you must also create a layout for the list as a whole. Although you may be 
+getting tired of hearing this, it's saving you a great deal of work: Entry List 
+Screenlet's layout is almost identical to that of Guestbook List Screenlet. The 
+only difference is that Entry List Screenlet's layout uses `EntryListView` 
+instead of `GuestbookListView`. 
 
 Create the file `list_entries.xml` in the `res/layout` directory, and replace 
 its contents with the following: 

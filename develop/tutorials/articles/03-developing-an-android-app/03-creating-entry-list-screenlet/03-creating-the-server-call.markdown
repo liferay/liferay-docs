@@ -1,6 +1,6 @@
 # Creating Entry List Screenlet's Server Call
 
-Recall that components called Interactors make a Screenlet's server calls. Also 
+Recall that Interactors are components that make a Screenlet's server call. Also 
 recall that Interactors are made up of an event, a callback, one or more 
 listeners, and an Interactor class. As with Guestbook List Screenlet's 
 Interactor, you only need to create the Interactor class because the list 
