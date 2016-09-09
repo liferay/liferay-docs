@@ -22,61 +22,61 @@ compiled.
 - `theme-name/`
     - `build/`(generated when the theme is compiled)
         - `css/`
-            - [`_application.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#application-scss)
-            - [`_aui_custom.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#auicustom-scss)
-            - [`_aui_variables.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#auivariables-scss)
-            - [`_base.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#base-scss)
-            - [`_custom.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#custom-scss)
-            - [`_extras.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#extras-scss)
-            - [`_imports.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#imports-scss)
-            - [`_layout.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#layout-scss)
-            - [`_liferay_custom.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferaycustom-scss)
-            - [`_liferay_variables_custom.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferayvariablescustom-scss)
-            - [`_liferay_variables.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferayvariables-scss)
-            - [`_navigation.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#navigation-scss)
-            - [`_portal.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portal-scss)
-            - [`_portlet.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portlet-scss)
-            - [`_taglib.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#taglib-scss)
+            - [`_application.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#application-scss)
+            - [`_aui_custom.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#auicustom-scss)
+            - [`_aui_variables.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#auivariables-scss)
+            - [`_base.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#base-scss)
+            - [`_custom.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#custom-scss)
+            - [`_extras.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#extras-scss)
+            - [`_imports.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#imports-scss)
+            - [`_layout.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#layout-scss)
+            - [`_liferay_custom.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#liferaycustom-scss)
+            - [`_liferay_variables_custom.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#liferayvariablescustom-scss)
+            - [`_liferay_variables.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#liferayvariables-scss)
+            - [`_navigation.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#navigation-scss)
+            - [`_portal.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#portal-scss)
+            - [`_portlet.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#portlet-scss)
+            - [`_taglib.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#taglib-scss)
             - `application/`
             - `aui/`
-            - [`aui.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#aui-scss)
+            - [`aui.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#aui-scss)
             - `base/`
             - `layout/`
-            - [`main.scss`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#main-scss)
+            - [`main.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#main-scss)
             - `navigation/`
             - `portal/`
             - `portlet/`
             - `taglib/`
         - `templates/`
-            - [`init_custom.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#initcustom-ftl)
-            - [`init.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#init-ftl)
-            - [`navigation.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#navigation-ftl)
-            - [`portal_normal.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portalnormal-ftl)
-            - [`portal_pop_up.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portalpopup-ftl)
-            - [`portlet.ftl`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#portlet-ftl)
+            - [`init_custom.ftl`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#initcustom-ftl)
+            - [`init.ftl`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#init-ftl)
+            - [`navigation.ftl`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#navigation-ftl)
+            - [`portal_normal.ftl`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#portalnormal-ftl)
+            - [`portal_pop_up.ftl`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#portalpopup-ftl)
+            - [`portlet.ftl`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#portlet-ftl)
             - (other directories that have been copied from src)
     - `dist/` (generated when the theme is compiled. This is where the theme's 
     war file is placed after a build/deploy.)
-    - [`gulpfile.js`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#gulpfile-js)
-    - [`liferay-theme.json`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-theme-json)
+    - [`gulpfile.js`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#gulpfile-js)
+    - [`liferay-theme.json`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-theme-json)
     - `node_modules/` (generated when an `npm install` command is run from the 
     root of the theme, and can be deleted at anytime and re-generated by running 
     `npm install`.)
         - (many directories)
-    - [`package.json`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#package-json)
+    - [`package.json`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#package-json)
     - `src/`
         - `css/`
             - (modified CSS files)
         - `images/`
             -   (many directories)
         - `js/`
-            - [`main.js`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#main-js)
+            - [`main.js`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#main-js)
         - `templates/`
             - (Modified theme templates)
         - `WEB-INF/`
                 - `lib/`
-            - [`liferay-look-and-feel.xml`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-look-and-feel-xml)
-            - [`liferay-plugin-package.properties`](/discover/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-plugin-package-properties)
+            - [`liferay-look-and-feel.xml`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-look-and-feel-xml)
+            - [`liferay-plugin-package.properties`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#liferay-plugin-package-properties)
             - `src/`
                 - `resources-importer/`
                     - (Many directories)
@@ -157,6 +157,10 @@ Contains imports for navigation styles.
 ### _portal.scss [](id=portal-scss)
 
 Contains imports for Portal components.
+
+### _portlet.scss [](id=portlet-scss)
+
+Contains imports for portlet components.
 
 ### _taglib.scss [](id=taglib-scss)
 
