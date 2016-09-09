@@ -261,7 +261,7 @@ Elasticsearch adapter in Liferay.
 
 ### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-to-the-liferay-elasticsearch-adapter)
 
-The [available configuration options](discover/reference/-/knowledge_base/7-0/elastic-search-setttings)
+The [available configuration options](discover/reference/-/knowledge_base/7-0/elasticsearch-setttings)
 provided in the Elasticsearch adapter by default are those you'll most often
 need to change. If you need to configure the local Elasticsearch client when
 running in remote mode, but the necessary setting isn't available by default,
@@ -279,8 +279,10 @@ in remote mode. In production, only one additional configuration can be added he
     client.transport.ping_timeout
 
 The rest of the settings for the client are available as default configuration
-options in the Elasticsearch adapter. See the [Elasticsearch Settings](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html)
-reference article for more information. See the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
+options in the Liferay Elasticsearch adapter. See the [Elasticsearch
+Settings](discover/reference/-/knowledge_base/7-0/elasticsearch-setttings)
+reference article for more information. See the [Elasticsearch
+documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
 for a description of all the client settings and for an example.
 
 `additionalIndexConfigurations` is used to define extra settings (in JSON or
