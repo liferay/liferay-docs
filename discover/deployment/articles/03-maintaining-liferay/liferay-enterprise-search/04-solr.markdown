@@ -25,12 +25,12 @@ Solr adapter. There are two ways:
    &rarr; *Store*. Sign in using your credentials, search for Solr Search
    Engine, and purchase the Liferay Enterprise Search-Solr Search Engine entry.
 
-This guide will lead you through the process of installing and configuring Solr.
+This guide leads you through the process of installing and configuring Solr.
 As you proceed, these terms will be useful to keep in mind:
 
-*Solr Home*: The center of the Solr system (pun intended). This directory will
+*Solr Home*: The center of the Solr system (pun intended). This directory is
 be `solr-[version]/server/solr`.
-*Liferay Home*: The root folder of your Liferay installation. It will contain
+*Liferay Home*: The root folder of your Liferay installation. It contains
 the osgi, deploy, data, and license folders, among others.
 
 Before configuring Liferay for Solr, you need to install and set up Solr.
@@ -150,50 +150,8 @@ folder. During testing and development, the System Settings app in Liferay's
 Control Panel &rarr; Configuration section is convenient for editing the default
 configurations.
 
-<!-- Figure might be unnecessary bc of the next section describing all the
-settings. -->
 ![Figure 2: You can configure Solr from Liferay's System Settings application.
 This is most useful during development and testing.](../../../images/solr-system-settings.png)
-
-Here are the available configurations with their default values. They're listed
-in the correct format for specifying via `.cfg` file:
-
-`com.liferay.portal.search.solr.configuration.SolrConfiguration.cfg`
-
-- `authenticationMode=BASIC`
-
-    A String with the value of *BASIC* or *CERT*. Use BASIC when connecting
-    using the [Basic Authentication plugin](https://cwiki.apache.org/confluence/display/solr/Basic+Authentication+Plugin), otherwise select CERT to connect using [2-way SSL
-    authentication](https://cwiki.apache.org/confluence/display/solr/Enabling+SSL).
-
--  `clientType=REPLICATED`
-
-    A String with the value of *REPLICATED* or *CLOUD*. Use the default
-    (REPLICATED) when connecting to a single-node Solr server. Specify CLOUD to
-    connect to SolrCloud (see the next section, titled *High Availability with
-    SolrCloud* for more information).
-
--  `logExceptionsOnly=true`
-
-    A boolean value that, when set to true, only logs exceptions from Solr,
-    without rethrowing them.
-
--  `readURL=http://localhost:8080/solr/liferay`
-
-    A String with the URL to which Liferay will send search requests. This will
-    be different from the `writeURL` if you use separate servers for indexing
-    (write) and searching (read).
-
--  `writeURL=http://localhost:8080/solr/liferay`
-
-    A String with the URL to which Liferay will send indexing requests. This
-    will be different from the `readURL` if you use separate servers for
-    indexing (write) and searching (read).
-
--  `zkHost=localhost:9983`
-
-    A String with the ZooKeeper host and port. This is required when using the
-    adapter in CLOUD mode.
 
 ## High Availability with SolrCloud [](id=high-availability-with-solrcloud)
 
@@ -232,7 +190,7 @@ information](https://cwiki.apache.org/confluence/display/solr/SolrCloud).
    cluster:
 
     -  Enter `2` for the number of nodes.
-    -  Specify ports `8983` and `7574` (the defaults). Both nodes will be
+    -  Specify ports `8983` and `7574` (the defaults). Both nodes are
         started with the start commands printed in the log:
 
                 Starting up SolrCloud node1 on port 18983 using command:
