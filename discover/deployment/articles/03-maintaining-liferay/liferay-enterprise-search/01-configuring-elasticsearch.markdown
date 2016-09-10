@@ -259,7 +259,7 @@ by default. In this case, you can add the configuration options you need. If you
 can configure something for Elasticsearch, you can configure it using the
 Elasticsearch adapter in Liferay.
 
-### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-to-the-liferay-elasticsearch-adapter)
+### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
 
 The [available configuration options](discover/reference/-/knowledge_base/7-0/elasticsearch-setttings)
 provided in the Elasticsearch adapter by default are those you'll most often
