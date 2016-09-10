@@ -10,14 +10,10 @@ version.
 
 @product@'s upgrade framework executes your app's upgrades automatically when
 the new version starts for the first time. As an app developer, you implement
-concrete data schema changes in upgrade step classes and then register them
-using an upgrade step registrator. The following diagram illustrates the
-relationship between the registrator and the upgrade steps.
-
-![Figure 1: In a registrator class, the developer specifies a registration for each schema version upgrade. The upgrade steps handle the database updates.](../../images/data-upgrade-module-upgrade-architecture.png)
-
-Now that you've learned each upgrade component's purpose, you're ready to create
-an upgrade process for your module. 
+concrete data schema changes in upgrade step classes and then register them with
+the upgrade framework using an upgrade step registrator. In this tutorial,
+you'll learn how to do all these things to create an upgrade process for your
+app. 
 
 Here's what's involved:
 
@@ -92,8 +88,12 @@ one.
 
 ## Writing Upgrade Steps [](id=writing-upgrade-steps)
 
-An upgrade step is class that adapts module data to the module's target database
-schema. The upgrade class extends the [`UpgradeProcess` base class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html),
+An upgrade step is a class that adapts module data to the module's target
+database schema. It can execute SQL commands and DDL files to upgrade the data.
+As a developer, you can encapsulate upgrade logic in multiple upgrade step
+classes per schema version. 
+
+The upgrade class extends the [`UpgradeProcess` base class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html),
 which implements the [`UpgradeStep` interface](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeStep.html).
 Each upgrade step must override the `UpgradeProcess` class's method `doUpgrade`
 with instructions for modifying the database.
@@ -214,8 +214,9 @@ The upgrade step registrator (registrator) registers upgrade steps with each
 of the module's schema versions. It orchestrates the module's entire upgrade
 process.
 
-For example, the upgrade step registrator class `MyCustomModuleUpgrade` below, is
-for a fictitious module called `com.liferay.mycustommodule`: 
+For example, the upgrade step registrator class `MyCustomModuleUpgrade` below,
+registers upgrade steps incrementally for each schema version (past and
+present): 
 
     package com.liferay.mycustommodule.upgrade;
 
@@ -248,9 +249,23 @@ for a fictitious module called `com.liferay.mycustommodule`:
 
     }
 
-In the above example, the registrator declares itself to be an OSGi Component of
-service type `UpgradeStepRegistrator.class`. The `@Component` annotation
-registers the class as the module's upgrade step registrator. The attribute
+The registrator's `register` method notifies the upgrade framework about each
+new schema and associated upgrade steps to adapt data to it. Each schema
+upgrade is represented by a registration. A registration is an abstraction for
+all the changes you need to apply to the database from one schema version to the
+next one. 
+
+The following diagram illustrates the relationship between the registrator and
+the upgrade steps. 
+
+![Figure 1: In a registrator class, the developer specifies a registration for each schema version upgrade. The upgrade steps handle the database updates.](../../images/data-upgrade-module-upgrade-architecture.png)
+
+Using the previous example `MyCustomModuleUpgrade` registrator class listing,
+let's consider registrator details. 
+
+The registrator class declares itself to be an OSGi Component of service type
+`UpgradeStepRegistrator.class`. The `@Component` annotation registers the class
+to the OSGi framework as the module's upgrade step registrator. The attribute
 `immediate = true` tells the OSGi framework to activate this module immediately
 after it's installed. 
 
@@ -259,10 +274,6 @@ which is in the [`com.liferay.portal.upgrade` module](https://repository.liferay
 The interface declares a [`register` method](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal/com.liferay.portal.upgrade/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html)
 that the registrator must override. In that method, the registrator implements
 all the module's upgrade registrations. 
-
-Each upgrade registration represents a schema upgrade. An upgrade
-registration is an abstraction for all the changes you need to apply to the
-database from one schema version to the next one.
 
 Upgrade registrations are defined by the following values:
 
