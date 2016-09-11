@@ -13,7 +13,7 @@ the new version starts for the first time. As an app developer, you implement
 concrete data schema changes in upgrade step classes and then register them with
 the upgrade framework using an upgrade step registrator. In this tutorial,
 you'll learn how to do all these things to create an upgrade process for your
-app. 
+app's modules. 
 
 Here's what's involved:
 
@@ -176,8 +176,9 @@ booking table:
 
 You can implement upgrade steps just like these for your module schemas. 
 
-How you name and organize your app's upgrade steps is up to you. Liferay's
-upgrade classes are organized using a package structure similar to this one:
+How you name and organize upgrade steps in your app's modules is up to you.
+Liferay's upgrade classes are organized using a package structure similar to
+this one:
 
 - *some.package.structure*
     - `upgrade`
@@ -210,9 +211,10 @@ with their target schema versions.
 
 ## Writing the Upgrade Step Registrator [](id=writing-the-upgrade-step-registrator)
 
-The upgrade step registrator (registrator) registers upgrade steps with each
-of the module's schema versions. It orchestrates the module's entire upgrade
-process.
+A module's upgrade step registrator notifies Liferay's upgrade framework of all
+the upgrade steps for update the module data for each schema version. It
+specifies the module's entire upgrade process. The upgrade framework executes
+the upgrade steps to update the current module data to the latest schema.  
 
 For example, the upgrade step registrator class `MyCustomModuleUpgrade` below,
 registers upgrade steps incrementally for each schema version (past and
@@ -249,7 +251,7 @@ present):
 
     }
 
-The registrator's `register` method notifies the upgrade framework about each
+The registrator's `register` method informs the upgrade framework about each
 new schema and associated upgrade steps to adapt data to it. Each schema
 upgrade is represented by a registration. A registration is an abstraction for
 all the changes you need to apply to the database from one schema version to the
