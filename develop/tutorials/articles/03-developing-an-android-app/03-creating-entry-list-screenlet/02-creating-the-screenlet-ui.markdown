@@ -137,7 +137,7 @@ Inside the Entry List Screenlet's `view` package, create the following
     }
 
 For an explanation of how this code works, see the section on the adapter class 
-[in the article on Creating Guestbook List Screenlet's UI](https://www.liferay.com/). 
+[in the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui). 
 
 Now you're ready to create the View class. 
 
@@ -148,7 +148,7 @@ Screenlet is so similar to Guestbook List Screenlet, their View classes are
 almost identical. The only difference is--you guessed it--one uses entries and 
 the other uses guestbooks. For a full explanation of what the View class does, 
 how it's structured, and why, see the section on the View class in 
-[the article on Creating Guestbook List Screenlet's UI](https://www.liferay.com/). 
+[the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui). 
 
 Create the `EntryListView` class inside Entry List Screenlet's `view` package, 
 and replace its contents with the following: 
@@ -191,14 +191,14 @@ and replace its contents with the following:
 
 Fabulous work! Remember, if you need an explanation of how this code works, see 
 the section on the View class in 
-[the article on Creating Guestbook List Screenlet's UI](https://www.liferay.com/). 
+[the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui). 
 
 Next, you'll create your View's main layout. 
 
 ## Creating the View's Layout [](id=creating-the-views-layout)
 
 In the first step, you created a layout for each list row. Recall from 
-[the article on Creating Guestbook List Screenlet's UI](https://www.liferay.com/) 
+[the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui) 
 that you must also create a layout for the list as a whole. Although you may be 
 getting tired of hearing this, it's saving you a great deal of work: Entry List 
 Screenlet's layout is almost identical to that of Guestbook List Screenlet. The 
@@ -229,7 +229,7 @@ its contents with the following:
     </com.liferay.docs.entrylistscreenlet.view.EntryListView>
 
 For a full explanation of this layout, see the section on creating the layout in 
-[the article on Creating Guestbook List Screenlet's UI](https://www.liferay.com/). 
+[the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui). 
 You should also be sure not to change the layout's `android:id` values. They're 
 hardcoded into the Liferay Screens framework. Changing them will cause your app 
 to crash. 

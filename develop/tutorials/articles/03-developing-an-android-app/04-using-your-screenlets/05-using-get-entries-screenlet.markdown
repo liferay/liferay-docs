@@ -48,7 +48,7 @@ Now you must implement the listener's methods. Recall that this includes the
 [`CacheListener` interface's methods](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java), 
 since `BaseListListener` extends `CacheListener`. For a full explanation of the 
 methods in both listeners, see 
-[the article on using Guestbook List Screenlet](https://www.liferay.com/). 
+[the article on using Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-guestbook-list-screenlet). 
 Note that in `EntriesFragment`, you don't need to take any specific actions in 
 these methods. There are no UI elements or other parts of the fragment that must 
 be updated or processed in response to the Screenlet's behavior. All this 

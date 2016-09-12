@@ -164,7 +164,6 @@ the `com.liferay.docs.model` package:
 
 Besides working with entries instead of guestbooks, this class works the same as 
 `GuestbookModel`. For an explanation of the code, see 
-[the article on getting started with Guestbook List Screenlet](https://www.liferay.com/). 
-<!-- Replace link -->
+[the article on getting started with Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-guestbook-list-screenlet). 
 
 Next, you'll create the Screenlet's UI. 

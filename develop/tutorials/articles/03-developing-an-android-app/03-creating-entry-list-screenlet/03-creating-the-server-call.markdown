@@ -12,7 +12,7 @@ Screenlet's Interactor class. Because this Screenlet's Interactor class is so
 similar to that of Guestbook List Screenlet, these steps aren't explained in 
 detail. Focus is instead placed on the few places in the code where the 
 Interactor classes diverge. For a full explanation of the code, see 
-[the article on creating Guestbook List Screenlet's server call](https://www.liferay.com/). 
+[the article on creating Guestbook List Screenlet's server call](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-server-call). 
 
 ## Creating the Interactor Class [](id=creating-the-interactor-class)
 

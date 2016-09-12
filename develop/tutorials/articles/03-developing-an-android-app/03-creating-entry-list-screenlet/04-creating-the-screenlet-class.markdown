@@ -15,7 +15,7 @@ are the same.
 Therefore, this article doesn't explain all the code in detail. Focus is instead 
 placed on the few parts that differ from Guestbook List Screenlet. For a full 
 explanation of the code, see 
-[the article on creating Guestbook List Screenlet's Screenlet class](https://www.liferay.com/). 
+[the article on creating Guestbook List Screenlet's Screenlet class](/develop/tutorials/-/knowledge_base/7-0/creating-the-screenlet-class). 
 
 You'll create Entry List Screenlet's Screenlet class with the same 
 steps you used to create Guestbook List Screenlet's Screenlet class:
@@ -159,7 +159,7 @@ and set this variable, respectively. The `loadRows` method calls the
 Interactor class's `loadRows` method with `_guestbookId` as an argument. This 
 results in the call that retrieves that guestbook's entries. For a full 
 explanation of how the Screenlet class works, see 
-[the article on creating Guestbook List Screenlet's Screenlet class](https://www.liferay.com/). 
+[the article on creating Guestbook List Screenlet's Screenlet class](/develop/tutorials/-/knowledge_base/7-0/creating-the-screenlet-class). 
 
 That's it! Now you're ready to use Entry List Screenlet alongside Guestbook List 
 Screenlet. The following section of this Learning Path concludes with both 
