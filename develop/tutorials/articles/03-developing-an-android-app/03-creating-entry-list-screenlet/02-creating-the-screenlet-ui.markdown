@@ -24,7 +24,7 @@ between these Views is that one displays guestbooks and the other displays
 entries. The mechanisms they use to display data, however, are almost identical. 
 
 To get started, create a new package named `view` inside the 
-`getentriesscreenlet` package. You'll create the the row layout first. 
+`getentriesscreenlet` package. You'll create the row layout first. 
 
 ## Creating the Row Layout [](id=creating-the-row-layout)
 

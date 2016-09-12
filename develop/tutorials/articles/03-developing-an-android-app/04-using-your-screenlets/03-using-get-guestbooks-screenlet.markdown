@@ -160,7 +160,7 @@ Because `BaseListListener` extends the
 [`CacheListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/cache/CacheListener.java), 
 the activity must also implement `CacheListener`. `CacheListener` defines the 
 methods your activity needs to work with 
-[offline mode in Screens](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
+[offline mode in Screens](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 This requires you to implement the following methods: 
 
 - `loadingFromCache`: Called when the Screenlet loads data from the cache. 

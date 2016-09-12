@@ -55,7 +55,7 @@ Entry List Screenlet's Screenlet class must contain an instance variable for the
 ID of the guestbook the Screenlet retrieves entries from. This is required to 
 call the Interactor method that results in the server calls. This is the only 
 significant difference between the Screenlet classes of Entry List Screenlet and 
-Guesbook List Screenlet. The remaining differences exist only because they 
+Guestbook List Screenlet. The remaining differences exist only because they 
 handle different entities. 
 
 In the `entrylistscreenlet` package, create a new class called 

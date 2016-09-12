@@ -242,7 +242,7 @@ Do this now by adding the following code to your `createScreenletView` method:
 is an enumeration that defines the four possible offline mode settings: 
 `REMOTE_ONLY`, `CACHE_ONLY`, `CACHE_FIRST`, and `REMOTE_FIRST`. The `Integer` 
 set in the local `offlinePolicy` variable is used to select the corresponding 
-value from the enumeration, which is then set to the the Screenlet class's 
+value from the enumeration, which is then set to the Screenlet class's 
 `_offlinePolicy` variable. 
 
 Now you must retrieve the app developer's setting for the `groupId` attribute. 
