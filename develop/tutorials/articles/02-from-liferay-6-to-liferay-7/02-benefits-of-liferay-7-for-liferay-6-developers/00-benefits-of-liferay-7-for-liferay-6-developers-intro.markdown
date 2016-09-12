@@ -35,7 +35,7 @@ learn developing for Liferay outside of it.
 Liferay 7 is also leaner. Its modularized core allows developers and system
 administrators to remove parts they don't need or don't want; this facilitates
 deployment, reduces startup times and memory footprints, and results in more
-efficiencies and and performance improvements.
+efficiencies and performance improvements.
 
 ## Modular Development Paradigm [](id=modular-development-paradigm)
 

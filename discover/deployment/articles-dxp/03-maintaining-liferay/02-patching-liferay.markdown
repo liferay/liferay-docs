@@ -271,6 +271,16 @@ What we've described so far is the simplest way to use the Patching Tool, but
 you can also use the Patching Tool in the most complex, multi-VM, clustered
 environments. This is done by using profiles. 
 
+## Cleaning Up
+
+After you've performed your patching procedure (whether you've installed or
+removed patches), it's important to clean up Liferay's cache of deployed code.
+This ensures that when you start the server, you're using the revision you've
+just installed the patches for. This is really easy to do. 
+
+In the Liferay Home folder is a folder called `work`. Remove the contents of
+this folder to clear out the cached code. Now you're ready to start your server. 
+
 ## Using Profiles with the Patching Tool [](id=using-profiles-with-the-patching-tool)
 
 When you ran the auto-discovery task after installing the Patching Tool, it
