@@ -28,7 +28,7 @@ are displayed. A list of the `create` options are listed below:
   created, provide the name of the host bundle version.
 - `-p, --packagename <string>`: The package name to use when creating the
   project.
-- `-s, --service <string>`: If a new DS component needs to be created, provide
+- `-s, --service <string>`: If a new Declarative Services (DS) component needs to be created, provide
   the name of the service to be implemented. Note that in this context, the term
   *service* refers to an OSGi service, not to a Liferay API.
 - `-t, --template <template>`: The project template to use when creating the
