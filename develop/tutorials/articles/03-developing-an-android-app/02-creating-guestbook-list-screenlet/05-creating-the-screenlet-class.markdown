@@ -1,4 +1,4 @@
-# Creating the Screenlet Class
+# Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 When using a Screenlet, app developers primarily interact with its Screenlet 
 class. The Screenlet class contains attributes for configuring the Screenlet's 
@@ -21,7 +21,7 @@ You'll use these steps to create the Screenlet class:
 
 First, you'll define Guestbook List Screenlet's attributes. 
 
-## Defining Screenlet Attributes
+## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
 Before creating the Screenlet class, you should define its attributes. These are 
 the `liferay` attributes the app developer can set when inserting the 
@@ -71,7 +71,7 @@ description of the functionality you'll add to each:
 Now that you've defined these attributes and know what they need to do, you're 
 ready to write the Screenlet class. 
 
-## Creating the Screenlet Class
+## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 As you've seen, the list Screenlet framework provides basic implementations of 
 many list Screenlet components. This is also true of the Screenlet class. The 
@@ -83,7 +83,7 @@ Guestbook List Screenlet's needs, you should understand how `BaseListScreenlet`
 handles server call results for you. Buckle up; you're about to go on another 
 magical journey through the list Screenlet framework. 
 
-### BaseListScreenlet and the Server Call's Results
+### BaseListScreenlet and the Server Call's Results [](id=baselistscreenlet-and-the-server-calls-results)
 
 Note that `BaseListScreenlet` implements the 
 [`BaseListInteractorListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractorListener.java) 
@@ -125,7 +125,7 @@ The best part about all this is that you can rely on the default
 extend `BaseListScreenlet` when creating your Screenlet class. You'll do this 
 next. 
 
-### Extending BaseListScreenlet
+### Extending BaseListScreenlet [](id=extending-baselistscreenlet)
 
 Your Screenlet class must extend `BaseListScreenlet` with your model and 
 Interactor classes as type arguments, and implement any functionality specific 

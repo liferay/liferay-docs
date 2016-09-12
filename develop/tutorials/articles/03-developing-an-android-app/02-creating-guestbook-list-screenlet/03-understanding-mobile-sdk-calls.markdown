@@ -1,4 +1,4 @@
-# Understanding Mobile SDK Calls
+# Understanding Mobile SDK Calls [](id=understanding-mobile-sdk-calls)
 
 Liferay Screens uses the Mobile SDK to make server calls. To write server calls 
 in Screenlets, you must therefore understand how Mobile SDK calls work. This 

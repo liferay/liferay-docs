@@ -1,4 +1,4 @@
-# Creating Guestbook List Screenlet's Server Call 
+# Creating Guestbook List Screenlet's Server Call [](id=creating-guestbook-list-screenlets-server-call)
 
 In the previous article, you learned that Screenlets use a Mobile SDK to make 
 server calls via Interactors. Now you'll create Guestbook List Screenlet's 
@@ -68,7 +68,7 @@ for the event, callback, and listeners.
 
 Now it's time to get classy! 
 
-## Creating the Interactor Class
+## Creating the Interactor Class [](id=creating-the-interactor-class)
 
 To create Guestbook List Screenlet's Interactor class, you must extend the list 
 Screenlet framework's 

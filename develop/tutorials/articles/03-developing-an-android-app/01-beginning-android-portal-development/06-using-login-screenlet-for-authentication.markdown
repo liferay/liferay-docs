@@ -1,4 +1,4 @@
-# Using Login Screenlet for Authentication
+# Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication)
 
 For the app to retrieve data from the Guestbook portlet, the app's user must 
 first authenticate to the Liferay instance. The other features you'll develop in 
@@ -7,7 +7,7 @@ authentication using the Liferay Mobile SDK, but it takes time to write.
 Authenticating using Liferay Screens takes about ten minutes. In this article, 
 you'll use Login Screenlet to implement authentication in your app. 
 
-## Adding Login Screenlet to the App
+## Adding Login Screenlet to the App [](id=adding-login-screenlet-to-the-app)
 
 To use any Screenlet, you must follow two basic steps:
 
@@ -117,7 +117,7 @@ The toast message goes away and you remain on the login screen. Nothing else
 happens. Don't worry, this is supposed to happen; you haven't added any other 
 functionality yet. You'll fix this next. 
 
-## Navigating from Login Screenlet
+## Navigating from Login Screenlet [](id=navigating-from-login-screenlet)
 
 Now you need for the app to open `GuestbooksActivity` when login succeeds. 
 You'll do this by using an intent in `MainActivity`'s `onLoginSuccess` method. 

@@ -1,4 +1,4 @@
-# Setting up the Guestbook Portlet
+# Setting up the Guestbook Portlet [](id=setting-up-the-guestbook-portlet)
 
 You need to set up a few things before you can begin developing the Guestbook 
 app for Android. You'll take the following steps:
@@ -7,7 +7,7 @@ app for Android. You'll take the following steps:
 2.  Install and Configure a Local Liferay bundle. 
 3.  Deploy the Guestbook Portlet to the Local Liferay Instance. 
 
-## Installing the JDK
+## Installing the JDK [](id=installing-the-jdk)
 
 To run Liferay 7 and develop Android apps, you must have JDK 8 installed. This 
 JDK is required on all operating systems. You can download and install the Java 
@@ -15,7 +15,7 @@ SE JDK from the
 [Java downloads page](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 This page also has links to the JDK installation instructions. 
 
-## Installing and Configuring a Local Liferay Bundle
+## Installing and Configuring a Local Liferay Bundle [](id=installing-and-configuring-a-local-liferay-bundle)
 
 First, download a Liferay Tomcat bundle from 
 [liferay.com](https://www.liferay.com/). 
@@ -55,7 +55,7 @@ administrative user. Your Liferay instance then takes you to its default site.
 Great! Now there's just one more thing left to do: deploy the Guestbook portlet
 to your Liferay instance. 
 
-## Deploying the Guestbook Portlet
+## Deploying the Guestbook Portlet [](id=deploying-the-guestbook-portlet)
 
 <!-- replace link with 7.0 compatible portlet -->
 Now that your Liferay instance is set up, you can deploy the Guestbook portlet 

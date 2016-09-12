@@ -1,4 +1,4 @@
-# Installing the Guestbook Mobile SDK and Liferay Screens for Android
+# Installing the Guestbook Mobile SDK and Liferay Screens for Android [](id=installing-the-guestbook-mobile-sdk-and-liferay-screens-for-android)
 
 For your Android app to interact with the Guestbook portlet, you must install 
 the following in your Android project:
@@ -25,7 +25,7 @@ install the Guestbook Mobile SDK manually.
 This article walks you through the installation of the Guestbook Mobile SDK and 
 Liferay Screens. When you finish, you'll be ready to start developing the app. 
 
-## Installing the Guestbook Mobile SDK
+## Installing the Guestbook Mobile SDK [](id=installing-the-guestbook-mobile-sdk)
 
 The Mobile SDK Builder generated two separate JAR files in your
 `liferay-mobile-sdk-builder-7.0.0` folder: 
@@ -43,7 +43,7 @@ folder (the default location for your Android app's directory is
 `AndroidStudioProjects/LiferayGuestbook`). That's it! Next, you'll install 
 Liferay Screens. 
 
-## Installing Liferay Screens
+## Installing Liferay Screens [](id=installing-liferay-screens)
 
 To install Liferay Screens, you must edit your app's `build.gradle` file. Note 
 that your project has two `build.gradle` files: one for the project, and another 
@@ -85,7 +85,7 @@ link highlighted by a red box:
  
 Great! Now you're ready to test your Screens and Mobile SDK installations. 
 
-## Verifying the Installations
+## Verifying the Installations [](id=verifying-the-installations)
 
 To check your Screens and Mobile SDK installations, first open your project's 
 `MainActivity` class in Android Studio. It's in the `java` folder's
@@ -101,7 +101,7 @@ If Android Studio recognizes these imports, then you're good to go! Remove them
 once you've verified that they're valid. Next, there's one final small but 
 important task to complete: point your app at the correct Liferay instance. 
 
-## Configuring Communication with Liferay
+## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
 
 For Screens to work properly with your app, you must point it to your Liferay 
 instance. You do this by adding a `server_context.xml` file in your project's 

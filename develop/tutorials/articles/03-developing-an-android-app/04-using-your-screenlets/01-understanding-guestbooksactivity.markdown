@@ -1,4 +1,4 @@
-# Understanding GuestbooksActivity's UI
+# Understanding GuestbooksActivity's UI [](id=understanding-guestbooksactivitys-ui)
 
 Recall that you used Android Studio's Navigation Drawer Activity template to 
 create `GuestbooksActivity`. Any activity created by this template contains a 
@@ -24,7 +24,7 @@ content:
 
 First, you'll learn how `activity_guestbooks.xml` works. 
 
-## Understanding the Activity's Main Layout File
+## Understanding the Activity's Main Layout File [](id=understanding-the-activitys-main-layout-file)
 
 First, open `GuestbooksActivity`'s main layout file, `activity_guestbooks.xml`. 
 This file should look similar to this one: 
@@ -75,7 +75,7 @@ and a
 [floating action button](https://www.google.com/design/spec/components/buttons-floating-action-button.html). 
 Next, you'll see how these are defined. 
 
-## Understanding the app_bar_guestbooks and content_guestbooks Layouts
+## Understanding the app_bar_guestbooks and content_guestbooks Layouts [](id=understanding-the-appbarguestbooks-and-contentguestbooks-layouts)
 
 Open `app_bar_guestbooks.xml`. It should look similar to this: 
 

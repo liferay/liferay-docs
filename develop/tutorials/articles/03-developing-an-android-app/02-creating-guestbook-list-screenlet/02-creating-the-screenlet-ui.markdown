@@ -1,4 +1,4 @@
-# Creating Guestbook List Screenlet's UI
+# Creating Guestbook List Screenlet's UI [](id=creating-guestbook-list-screenlets-ui)
 
 In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet 
 must have at least one View. In this article, you'll use the following steps to 
@@ -23,7 +23,7 @@ You'll create the Guestbook List Screenlet's View in its own package inside the
 `guestbooklistscreenlet` package. Create a new package named `view` inside the 
 `guestbooklistscreenlet` package. Now you're ready to create the row layout. 
 
-## Creating the Row Layout
+## Creating the Row Layout [](id=creating-the-row-layout)
 
 First, you must create the Screenlet's layout for each list row. Since each row 
 displays only a single guestbook's name, this layout is very simple. Create the 
@@ -48,7 +48,7 @@ You'll use the `TextView` to display a guestbook's name. Also note that you
 don't have to use a `textSize` of `25sp` or a `padding` of `10dp`. These values 
 serve only as an example because they result in clean, readable text. 
 
-## Creating the Adapter Class
+## Creating the Adapter Class [](id=creating-the-adapter-class)
 
 [Android adapters](https://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
 fill a layout with content. In this Screenlet, the layout is the row layout 
@@ -132,7 +132,7 @@ The other methods in `GuestbookAdapter` leverage the view holder. The
 
 Next, you'll create the View class. 
 
-## Creating the View Class
+## Creating the View Class [](id=creating-the-view-class)
 
 The View class is the central hub of any Screenlet's UI. It renders the UI, 
 handles user interactions, and communicates with the Screenlet class. In list 
@@ -228,7 +228,7 @@ row layout you defined earlier (`guestbook_row`).
 
 Now you're ready to create your View's main layout. 
 
-## Creating the View's Layout
+## Creating the View's Layout [](id=creating-the-views-layout)
 
 Although `guestbook_row.xml` defines each list row's layout, the list as a whole 
 still needs a layout. This layout should reference the View class and define the 

@@ -1,4 +1,4 @@
-# Creating Guestbook List Screenlet
+# Creating Guestbook List Screenlet [](id=creating-guestbook-list-screenlet)
 
 In this Learning Path's previous section, you created an Android app that 
 contains the Guestbook Mobile SDK and Liferay Screens. You also used Login 

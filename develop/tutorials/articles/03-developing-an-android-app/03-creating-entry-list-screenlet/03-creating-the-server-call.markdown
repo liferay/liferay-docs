@@ -1,4 +1,4 @@
-# Creating Entry List Screenlet's Server Call
+# Creating Entry List Screenlet's Server Call [](id=creating-entry-list-screenlets-server-call)
 
 Recall that Interactors are components that make a Screenlet's server call. Also 
 recall that Interactors are made up of an event, a callback, one or more 
@@ -14,7 +14,7 @@ detail. Focus is instead placed on the few places in the code where the
 Interactor classes diverge. For a full explanation of the code, see 
 [the article on creating Guestbook List Screenlet's server call](https://www.liferay.com/). 
 
-## Creating the Interactor Class
+## Creating the Interactor Class [](id=creating-the-interactor-class)
 
 First, create a new package called `interactor` in 
 `com.liferay.docs.entrylistscreenlet`. Create a new class called 

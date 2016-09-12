@@ -1,4 +1,4 @@
-# Creating Entry List Screenlet's UI
+# Creating Entry List Screenlet's UI [](id=creating-entry-list-screenlets-ui)
 
 Once you have the model class for entries, you can create the Screenlet's UI. 
 Recall that in Liferay Screens for Android, you create a Screenlet's UI by 
@@ -26,7 +26,7 @@ entries. The mechanisms they use to display data, however, are almost identical.
 To get started, create a new package named `view` inside the 
 `getentriesscreenlet` package. You'll create the the row layout first. 
 
-## Creating the Row Layout
+## Creating the Row Layout [](id=creating-the-row-layout)
 
 First, you must create the layout the Screenlet uses to display each row in the 
 list. Recall that in Guestbook List Screenlet, `guestbook_row.xml` serves this 
@@ -75,7 +75,7 @@ as you wish.
 
 Next, you'll create your Screenlet's adapter class.
 
-## Creating the Adapter Class
+## Creating the Adapter Class [](id=creating-the-adapter-class)
 
 Recall that an adapter class is required to fill each row with data. 
 Fortunately, Entry List Screenlet's adapter class is almost identical to that of 
@@ -141,7 +141,7 @@ For an explanation of how this code works, see the section on the adapter class
 
 Now you're ready to create the View class. 
 
-## Creating the View Class
+## Creating the View Class [](id=creating-the-view-class)
 
 Recall that the View class controls a Screenlet's UI. Because Entry List 
 Screenlet is so similar to Guestbook List Screenlet, their View classes are 
@@ -195,7 +195,7 @@ the section on the View class in
 
 Next, you'll create your View's main layout. 
 
-## Creating the View's Layout
+## Creating the View's Layout [](id=creating-the-views-layout)
 
 In the first step, you created a layout for each list row. Recall from 
 [the article on Creating Guestbook List Screenlet's UI](https://www.liferay.com/) 

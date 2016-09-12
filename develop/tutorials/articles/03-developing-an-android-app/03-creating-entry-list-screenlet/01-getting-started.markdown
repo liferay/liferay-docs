@@ -1,11 +1,11 @@
-# Getting Started with Entry List Screenlet
+# Getting Started with Entry List Screenlet [](id=getting-started-with-entry-list-screenlet)
 
 Like Guestbook List Screenlet, you'll create Entry List Screenlet in a new 
 package inside your app's project. Get started by creating the package 
 `com.liferay.docs.entrylistscreenlet`. Once you have this package, you're ready 
 to start writing the Screenlet. 
 
-## Creating the Model Class for Entries
+## Creating the Model Class for Entries [](id=creating-the-model-class-for-entries)
 
 Entry List Screenlet must call the Guestbook portlet with the same Guestbook 
 Mobile SDK you built earlier. As it does for guestbooks, this Mobile SDK returns 

@@ -1,4 +1,4 @@
-# Creating a Fragment for Entry List Screenlet
+# Creating a Fragment for Entry List Screenlet [](id=creating-a-fragment-for-entry-list-screenlet)
 
 Using a fragment for Entry List Screenlet lets you swap out part of 
 `GuestbookActivity`'s contents without recreating the entire activity from 
@@ -7,7 +7,7 @@ fragments, though. In this article, you'll create a fragment and then add it to
 `GuestbooksActivity`. When you finish, you'll be ready to use Entry List 
 Screenlet in this fragment. 
 
-## Creating the Fragment
+## Creating the Fragment [](id=creating-the-fragment)
 
 To create the fragment, right click the `com.liferay.docs.liferayguestbook` 
 package and select *New* &rarr; *Fragment* &rarr; *Fragment (Blank)*. In the 
@@ -72,7 +72,7 @@ fragments with a `newInstance` method, see
 
 Next, you'll add this fragment to `GuestbooksActivity`. 
 
-## Adding the Fragment to GuestbooksActivity
+## Adding the Fragment to GuestbooksActivity [](id=adding-the-fragment-to-guestbooksactivity)
 
 Now that `EntriesFragment` exists, you're ready to add it to 
 `GuestbooksActivity`. To do this, you must put a fragment container in the 

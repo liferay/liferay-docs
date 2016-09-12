@@ -1,4 +1,4 @@
-# Using Entry List Screenlet
+# Using Entry List Screenlet [](id=using-entry-list-screenlet)
 
 You'll use Entry List Screenlet by following the same basic steps to use any 
 Screenlet: insert the Screenlet's XML in an activity or fragment layout, and 
@@ -9,7 +9,7 @@ this article, you'll follow these steps to insert Entry List Screenlet in
 First, you'll insert Entry List Screenlet's XML in `EntriesFragment`'s layout, 
 `fragment_entries.xml`. 
 
-## Inserting the Screenlet in the Layout
+## Inserting the Screenlet in the Layout [](id=inserting-the-screenlet-in-the-layout)
 
 Inserting Entry List Screenlet's XML is very simple. Since all you want 
 `fragment_entries.xml` to do is display the Screenlet, all it needs to contain 
@@ -27,7 +27,7 @@ following:
 As with Guestbook List Screenlet, you'll use the `android:id` value to get a 
 Screenlet reference. Next, you must implement the Screenlet's listener. 
 
-## Implementing the Screenlet's Listener
+## Implementing the Screenlet's Listener [](id=implementing-the-screenlets-listener)
 
 Recall that to use a Screenlet, you must implement its listener. The listener 
 methods let the app developer respond to the Screenlet's behavior in the 

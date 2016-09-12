@@ -1,4 +1,4 @@
-# Beginning Android Development for Your Liferay Instance
+# Beginning Android Development for Your Liferay Instance [](id=beginning-android-development-for-your-liferay-instance)
 
 Getting started with Liferay Screens for Android is a straightforward process. 
 This series of Learning Path articles walks you through creating an Android app 

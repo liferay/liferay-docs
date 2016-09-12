@@ -1,4 +1,4 @@
-# Creating the Android Project
+# Creating the Android Project [](id=creating-the-android-project)
 
 Now that you've built the Guestbook Mobile SDK, you're ready to create the 
 Guestbook Android app. This article walks you through the steps required to 
@@ -6,7 +6,7 @@ create the app's project in Android Studio. After this, you'll be ready to
 install the Guestbook Mobile SDK and Liferay Screens. First though, you should 
 make sure you've installed Android's development tools. 
 
-## Installing Android Studio
+## Installing Android Studio [](id=installing-android-studio)
 
 This Learning Path uses Android Studio--Android's official IDE--to develop the 
 Guestbook app. As an Android developer, you're likely very familiar with Android 
@@ -19,7 +19,7 @@ using Android Studio:
 
 Once Android Studio is up and running, you're ready to create the Guestbook app! 
 
-## Creating the Guestbook App
+## Creating the Guestbook App [](id=creating-the-guestbook-app)
 
 When you start Android Studio, a welcome screen with a Quick Start menu appears.
 Click on *Start a new Android Studio project* in the Quick Start menu. Android

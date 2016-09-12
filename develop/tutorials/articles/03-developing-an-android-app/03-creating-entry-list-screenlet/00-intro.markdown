@@ -1,4 +1,4 @@
-# Creating Entry List Screenlet
+# Creating Entry List Screenlet [](id=creating-entry-list-screenlet)
 
 In this Learning Path's previous section, you created Guestbook List Screenlet. 
 You still need a way to retrieve and display each guestbook's entries, though. 

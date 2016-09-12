@@ -1,4 +1,4 @@
-# Getting Started with Guestbook List Screenlet
+# Getting Started with Guestbook List Screenlet [](id=getting-started-with-guestbook-list-screenlet)
 
 Before creating a Screenlet, you should know how you'll use it. If you plan to 
 use it in only one app, then you can create it in that app's project. If you 
@@ -21,7 +21,7 @@ and reopen the *java* folder in project view.
 
 Next, you'll create the model class the Screenlet needs. 
 
-## Creating the Model Class for Guestbooks
+## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
 The Guestbook Mobile SDK returns guestbooks from the portlet in a `JSONArray` 
 that contains each guestbook in a `JSONObject`. Although the list Screenlet 

@@ -1,4 +1,4 @@
-# Creating the Screenlet Class
+# Creating the Screenlet Class [](id=creating-the-screenlet-class-0)
 
 Recall that when using a Screenlet, the app developer primarily interacts with 
 the Screenlet class. The Screenlet class contains attributes for configuring the 
@@ -30,7 +30,7 @@ steps you used to create Guestbook List Screenlet's Screenlet class:
 
 First, you'll define Entry List Screenlet's attributes. 
 
-## Defining Screenlet Attributes
+## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
 Recall that before creating the Screenlet class, you must define the attributes 
 the app developer needs to control the Screenlet's behavior. Entry List 
@@ -49,7 +49,7 @@ with the following:
 
 Next, you'll create the Screenlet class.
 
-## Creating the Screenlet Class
+## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 Entry List Screenlet's Screenlet class must contain an instance variable for the 
 ID of the guestbook the Screenlet retrieves entries from. This is required to 
