@@ -57,10 +57,9 @@ to your Liferay instance.
 
 ## Deploying the Guestbook Portlet [](id=deploying-the-guestbook-portlet)
 
-<!-- replace link with 7.0 compatible portlet -->
 Now that your Liferay instance is set up, you can deploy the Guestbook portlet 
 to it. Download the Guestbook portlet's `.war` package from 
-[here](https://dev.liferay.com/documents/10184/581742/guestbook-portlet.war) 
+[here](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/mobile/android/guestbook-portlet-7.0.0.1.war) 
 and place it in the `[Liferay Home]/deploy` directory. You should see messages 
 in your console indicating that the portlet has successfully deployed. On your 
 Liferay instance's default site, click the + icon on the upper-right corner of 
