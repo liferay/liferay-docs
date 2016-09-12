@@ -1,11 +1,10 @@
-# Using Solr with Liferay [](id=using-solr-with-liferay)
+# Using Solr 
 
 Solr is a popular enterprise search platform build on Apache Lucene. It's
 popular for its reliability, scalability, and fault tolerance. Read more about
 it [here](http://lucene.apache.org/solr/).
 
-Although
-[Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch)
+Although [Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch)
 is the default search engine that ships with @product@, it's perfectly valid to
 use Solr instead. In particular, if you've already been using Solr with a
 previous version of Liferay, or your deployment system (for example, your OS or
@@ -14,24 +13,26 @@ you might choose to use Solr to search and index your Liferay data.
 
 Liferay's support for Solr is compatible with Solr versions 5.2.x through 5.5.x.
 To make Liferay and Solr talk to each other, you'll need to install the Liferay
-Solr adapter. There are two ways:
+Solr adapter. There are two ways to do this:
 
 1. Navigate to the [Liferay Marketplace](https://web.liferay.com/marketplace/)
-   website, and download the LPKG file for Liferay Enterprise Search-Solr Search
-   Engine. Once you do, copy the LPKG to you `Liferay_Home/osgi/marketplace`
+   website and download the LPKG file for Liferay Enterprise Search-Solr Search
+   Engine. Once you do, copy the LPKG to your `Liferay_Home/osgi/marketplace`
    folder.
 
 2. In your running Liferay instance, navigate to *Control Panel* &rarr; *Apps*
    &rarr; *Store*. Sign in using your credentials, search for Solr Search
-   Engine, and purchase the Liferay Enterprise Search-Solr Search Engine entry.
+   Engine, and purchase (it's free) the Liferay Enterprise Search-Solr Search
+   Engine entry.
 
 This guide leads you through the process of installing and configuring Solr.
 As you proceed, these terms will be useful to keep in mind:
 
 *Solr Home*: The center of the Solr system (pun intended). This directory is
-be `solr-[version]/server/solr`.
+`solr-[version]/server/solr`.
+
 *Liferay Home*: The root folder of your Liferay installation. It contains
-the osgi, deploy, data, and license folders, among others.
+the `osgi`, `deploy`, `data`, and `license` folders, among others.
 
 Before configuring Liferay for Solr, you need to install and set up Solr.
 
@@ -64,9 +65,8 @@ To install and properly configure Solr for Liferay:
 
         Solr_Home/liferay/conf
 
-    This replaces the current `solrconfig.xml` and `schema.xml` files.
-    <!-- Do we need to explain this a little bit? What's the difference in
-    configuration? between the defaults and those in the adapter JAR -->
+    This replaces the current `solrconfig.xml` and `schema.xml` files with ones
+    that tell Solr how to index data coming from Liferay.
 
 7. Create a `core.properties` file in `Solr_Home/liferay`, and add these
    contents:
@@ -97,7 +97,7 @@ To install and properly configure Solr for Liferay:
 
         ./bin/solr start -f
 
-    from the top-level directory of your Solr installation (`solr-[version]`).
+    from the top-level folder of your Solr installation (`solr-[version]`).
 
 9. The Solr server listens on port `8983` by default. Navigate to
    `http://localhost:8983/solr/#/~cores` (assuming you're testing locally with
@@ -125,8 +125,8 @@ Stop the Elasticsearch adapter by entering
 
     stop [bundle ID]
 
-In this case the `[bundle ID]` is `239`. Now you can install and configure the
-Solr adapter:
+In the case above, the `[bundle ID]` is `239`. Now you can install and configure
+the Solr adapter:
 
 1. Start Liferay, then deploy the Solr adapter by copying the LPKG you
    downloaded to `Liferay_Home/deploy`.
@@ -163,8 +163,7 @@ done to configure SolrCloud with Liferay. For example, these instructions cover
 configuring SolrCloud on a single machine, whereas a production environment
 would feature multiple physical or virtual machines. These instructions also
 assume you've followed the earlier section on *Installing and Configuring Solr
-5*. Refer to the [SolrCloud guide for more
-information](https://cwiki.apache.org/confluence/display/solr/SolrCloud).
+5*. Refer to the [SolrCloud guide for more information](https://cwiki.apache.org/confluence/display/solr/SolrCloud).
 
 1. Stop the Solr server if it's running.
 
