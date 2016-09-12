@@ -261,9 +261,9 @@ Elasticsearch adapter in Liferay.
 
 ### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
 
-The [available configuration options](discover/reference/-/knowledge_base/7-0/elasticsearch-setttings)
-provided in the Elasticsearch adapter by default are those you'll most often
-need to change. If you need to configure the local Elasticsearch client when
+Liferay has divided the [available configuration options](discover/reference/-/knowledge_base/7-0/elasticsearch-setttings) 
+into two groups: the ones you'll use most often by default, and a catch-all for
+everything else. If you need to configure the local Elasticsearch client when
 running in remote mode, but the necessary setting isn't available by default,
 you can still configure it with the Liferay Elasticsearch adapter. Just specify
 the settings you need by using one or more of the `additionalConfigurations`,
