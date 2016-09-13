@@ -56,7 +56,7 @@ information about the generated files appears below.
 Open a terminal window and navigate to your module project's root folder, which
 should be located in your Liferay Workspace's `modules` directory. To learn more
 about creating your module project in a Liferay Workspace, visit the
-[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
 tutorial. Liferay Workspaces use Gradle as their build tool, so this will be the
 assumed build language used in this tutorial. Liferay is tool agnostic, however,
 and you can use other tools, as well.

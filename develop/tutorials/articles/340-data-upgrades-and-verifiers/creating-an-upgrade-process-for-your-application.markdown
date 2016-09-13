@@ -171,7 +171,7 @@ There you have it. Now you know how to create an upgrade process for your app!
 
 ## Related Topics [](id=related-topics)
 
-[Migrating a Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
+[Planning a Plugin Upgrade to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)
 
 [Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
 
