@@ -156,7 +156,13 @@ This is most useful during development and testing.](../../../images/solr-system
 ## High Availability with SolrCloud [](id=high-availability-with-solrcloud)
 
 You can use SolrCloud if you need a cluster of Solr servers featuring fault
-tolerance and high availability. 
+tolerance and high availability. Note that to use SolrCloud in production, you
+should set up an [external ZooKeeper
+ensemble](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble).
+[ZooKeeper](http://zookeeper.apache.org/) is a centralized
+coordination service for managing distributed systems, such as your SolrCloud
+cluster. With SolrCloud, there's no master node to allocate nodes, shards, and
+replicas. Instead, the ZooKeeper ensemble manages the cluster.
 
 The steps included here should be considered the bare minimum of what must be
 done to configure SolrCloud with Liferay. For example, these instructions cover
