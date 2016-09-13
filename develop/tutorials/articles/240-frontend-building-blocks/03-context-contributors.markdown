@@ -8,12 +8,12 @@ Velocity), and Liferay caters to those developers by offering the Context
 Contributors framework.
 
 Context Contributors change the context of templates that get rendered by
-injecting variables related to your chosen template framework. This lets you use
-non-JSP templating languages to create themes, ADTs, and any other templates
-used in @product@. For example, suppose you want your theme to have access to
-the user to display something about them. You could create a context contributor
-to inject the User object to your theme's context. Anyone creating a theme could
-get the User object and use it.
+injecting variables usable by your chosen template framework. This lets you
+contribute to non-JSP templating languages to modify themes, ADTs, and any other
+templates used in @product@. For example, suppose you want your theme to have
+access to the current user to display something about him or her. You could
+create a context contributor to inject the User object to your theme's context.
+Anyone creating a theme could then get the User object and use it.
 
 You can also provide additional functionality out-of-the-box for a context using
 context contributors. For instance, you could pass in a variable to a menu's
@@ -21,7 +21,8 @@ theme that determines whether or not to display it.
 
 @product@ uses context contributors in several areas by default to inject
 context-specific variables into a theme. You'll learn how to create your own
-context contributor and look at one way @product@ uses them next.
+context contributor, and then you'll examine one example of how @product@ uses
+context contributors next.
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
     the [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
@@ -29,7 +30,7 @@ context contributor and look at one way @product@ uses them next.
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the
     class name with the entity you want to inject context-specific variables
-    into, followed by *TemplateContextContributor* (e.g.,
+    for, followed by *TemplateContextContributor* (e.g.,
     `ProductMenuTemplateContextContributor`).
 
 3.  Directly above the class's declaration, insert the following annotation:
@@ -146,8 +147,10 @@ also included in the `ProductNavigationTemplateContextContributor` class:
         return true;
     }
 
-Terrific! You've learned how to create your own context contributor and studied
-an example of how @product@ uses one to manage its Product Menu.
+The `ProductNavigationTemplateContextContributor` provides an easy way to inject
+variables into @product@'s theme directly related to the Product Menu. With the
+power to inject additional variables to any context in Liferay, you're free to
+fully harness the power of your chosen templating language.
 
 ## Related Topics
 
