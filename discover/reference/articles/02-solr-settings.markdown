@@ -6,9 +6,8 @@ configurable through System Settings or an OSGi configuration file named
 `com.liferay.portal.search.solr.configuration.SolrConfiguration.cfg` and
 deployed to `[Liferay_Home]/osgi/configs`.
 
-The following is a list of all of the configuration settings for Liferay's
-Solr adapter, in the order that they appear in the System Settings
-application:
+The list below is all the configuration settings for Liferay's Solr adapter, in
+the order they appear in the System Settings application:
 
 `authenticationMode=BASIC`
 : A String with the value of *BASIC* or *CERT*. Use BASIC when connecting using
