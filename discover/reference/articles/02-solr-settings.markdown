@@ -27,12 +27,12 @@ SolrCloud* for more information).
 : A boolean value that, when set to true, only logs exceptions from Solr,
 without rethrowing them.
 
-`readURL=http://localhost:8080/solr/liferay`
+`readURL=http://localhost:8983/solr/liferay`
 : A String array with the URLs to which Liferay will send search requests.  This
 will be different from the `writeURL` if you use separate servers for indexing
 (write) and searching (read).
 
-`writeURL=http://localhost:8080/solr/liferay`
+`writeURL=http://localhost:8983/solr/liferay`
 : A String array with the URLs to which Liferay will send indexing requests.
 This will be different from the `readURL` if you use separate servers for
 indexing (write) and searching (read).
