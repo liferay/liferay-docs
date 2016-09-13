@@ -253,7 +253,7 @@ To stop Solr while running in SolrCloud mode, use the *stop* command, like this:
 There's only one thing left to do: specify the client type as *CLOUD* in
 Liferay's Solr adapter.
 
-1. Either from System Settings or your OSGi `.cfg` file, set the *Client Type*
+1. From System Settings or your OSGi `.cfg` file, set the *Client Type*
    to *CLOUD*.
 
         clientType=CLOUD
