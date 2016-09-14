@@ -197,29 +197,24 @@ and place it in `Liferay_Home/osgi/configs`.
 
 Here are the settings you can configure:
 
--  `kibanaURL=http://localhost:5601`
+`kibanaURL=http://localhost:5601`
+: Set the String URL for the remote Kibana server where Marvel is deployed.  The
+URL should only contain the host and port. If you’re using a Proxy Server in
+front of Kibana, set the Proxy Server's URL here instead of Kibana's URL.
 
-    Set the String URL for the remote Kibana server where Marvel is deployed.
-    The URL should only contain the host and port. If you’re using a Proxy
-    Server in front of Kibana, set the Proxy Server's URL here instead of
-    Kibana's URL.
+`proxyServletLogEnable=false`
+: Set this boolean to `true` to show debug logging for the Marvel proxy.  This
+is useful for troubleshooting URL mappings passing through the proxy from
+Liferay to Kibana, and to display the error codes from requests that Kibana
+denies.
 
--  `proxyServletLogEnable=false`
+`shieldUserName=liferay`
+: If Shield is being used, set the String value for the username used for
+authenticating to Shield. This setting is ignored if Shield isn't installed.
 
-    Set this boolean to `true` to show debug logging for the Marvel proxy.  This
-    is useful for troubleshooting URL mappings passing through the proxy from
-    Liferay to Kibana, and to display the error codes from requests that Kibana
-    denies.
-
--  `shieldUserName=liferay`
-
-    If Shield is being used, set the String value for the username used for
-    authenticating to Shield. This setting is ignored if Shield isn't installed.
-
--  `shieldPassword=liferay`
-
-    Set the String password used for Shield authentication. This setting is
-    ignore if Shield isn't configured.
+`shieldPassword=liferay`
+: Set the String password used for Shield authentication. This setting is ignore
+if Shield isn't configured.
 
 ## Accessing Marvel's UI in Liferay [](id=accessing-marvels-ui-in-liferay)
 
