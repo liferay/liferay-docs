@@ -1,4 +1,4 @@
-# Monitoring Elasticsearch with Marvel
+# Monitoring Elasticsearch with Marvel [](id=monitoring-elasticsearch-with-marvel)
 
 Marvel is a monitoring tool for Elasticsearch. It lets you view the performance
 and health of your Elasticsearch cluster, so you can anticipate issues ahead of
@@ -44,7 +44,7 @@ These terms will be useful to understand as you read this guide:
 -  *Liferay Home* refers to the root folder of your Liferay installation. It will contain the `osgi`, `deploy`, `data`, and `license` folders.
 -  *Kibana Home* refers to the root folder of your Kibana installation.
 
-## Installing Kibana and Marvel
+## Installing Kibana and Marvel [](id=installing-kibana-and-marvel)
 
 Before you install Kibana or Marvel, make sure you've read and followed the
 instructions on [installing and configuring Elasticsearch for
@@ -92,7 +92,7 @@ The next step is to configure Kibana to connect with Elasticsearch. The
 instructions will vary depending on whether you are using
 [Shield](/discover/deployment/-/knowledge_base/7-0/shield) or not.
 
-## Configuring Kibana for Elasticsearch
+## Configuring Kibana for Elasticsearch [](id=configuring-kibana-for-elasticsearch)
 
 Now you need to configure Kibana. Since you'll use Liferay's Marvel Portlet as a
 proxy servlet to view the Kibana UI and Marvel, you'll start configuring that
@@ -160,7 +160,7 @@ begin with *[Shield]*.
 
 10. Start Liferay.
 
-## Configuring SSL on Kibana
+## Configuring SSL on Kibana [](id=configuring-ssl-on-kibana)
 
 To run Kibana with SSL encryption you'll need to do these things:
 
@@ -178,7 +178,7 @@ Liferay's portlet.
 
 $$$
 
-## Configuring Liferay's Marvel Adapter
+## Configuring Liferay's Marvel Adapter [](id=configuring-liferays-marvel-adapter)
 
 Now that you have Marvel and Kibana configured, you can configure the Marvel
 adapter in Liferay.
@@ -186,7 +186,7 @@ adapter in Liferay.
 There's a *Marvel* entry in the System Settings application (*Control Panel*
 &rarr; *Configuration* &rarr; *System Settings*) under the Foundation heading. 
 
-![Figure x: The Marvel adapter in Liferay can be configured directly from System
+![Figure 1: The Marvel adapter in Liferay can be configured directly from System
 Settings. This is most useful during testing and development.](../../../images-dxp/marvel-system-settings.png)
 
 There are several configuration options for the Marvel adapter plugin. While you
@@ -221,12 +221,12 @@ Here are the settings you can configure:
     Set the String password used for Shield authentication. This setting is
     ignore if Shield isn't configured.
 
-## Accessing Marvel's UI in Liferay
+## Accessing Marvel's UI in Liferay [](id=accessing-marvels-ui-in-liferay)
 
 As mentioned earlier, liferay provides a Marvel Portlet that displays an
 embedded, proxied version of the Marvel UI from Kibana.
 
-![Figure x: You can monitor your Elasticsearch cluster from Liferay using the
+![Figure 2: You can monitor your Elasticsearch cluster from Liferay using the
 Marvel Portlet.](../../../images-dxp/marvel-portlet.png)
 
 If you've followed the steps outlined above, and you have Elasticsearch, Marvel,
@@ -240,7 +240,7 @@ a page in Liferay:
    the Tools category. First you'll see a message about Kibana loading, then the
    Marvel UI will appear.
 
-    ![Figure x: When you first add the Marvel Portlet to the page, Kibana will
+    ![Figure 3: When you first add the Marvel Portlet to the page, Kibana will
     fetch the Marvel content in the Marvel Portlet, and then your Marvel UI will
     appear](../../../images-dxp/marvel-kibana-loading.png)
 
@@ -248,7 +248,7 @@ a page in Liferay:
    overview of your cluster, click on its name in the *Your Clusters* table (it
    will be LiferayElasticsearchcluster if you left it as the default).
 
-    ![Figure x: You can monitor the health of your cluster using the Marvel Portlet.](../../../images-dxp/marvel-portlet-overview.png)
+    ![Figure 4: You can monitor the health of your cluster using the Marvel Portlet.](../../../images-dxp/marvel-portlet-overview.png)
 
 For more information on what Marvel offers you, refer to [Elasticsearch's Marvel
 guide](https://www.elastic.co/guide/en/marvel/2.2/index.html).
