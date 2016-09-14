@@ -25,7 +25,7 @@ This parameter automatically redeploys the module when changes are detected.
 **Note:** The `blade deploy` command requires a gradle wrapper to successfully
 execute. To ensure the availability of the Gradle wrapper, be sure to work in a
 Liferay Workspace. For more information on Liferay Workspaces, see the
-[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
 tutorial.
 
 $$$
@@ -41,7 +41,7 @@ also be useful during development. Make sure you're in a Liferay Workspace and
 have a bundle installed and configured in the workspace before testing the Blade
 CLI commands on your own. To learn more about installing a Liferay server in a
 Liferay Workspace, see the
-[Running a Liferay Instance From Your Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace#running-a-liferay-instance-from-your-workspace)
+[Creating a Liferay Workspace with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
 section. The following Blade CLI commands are covered in this sub-section:
 
 - `server`

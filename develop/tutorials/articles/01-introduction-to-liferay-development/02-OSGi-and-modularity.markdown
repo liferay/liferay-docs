@@ -459,8 +459,8 @@ for you to learn more.
 
 [BLADE CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
 
-[Creating A Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+[Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
 
-[Migrating A Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
+[Planning a Plugin Upgrade to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)
 
 
