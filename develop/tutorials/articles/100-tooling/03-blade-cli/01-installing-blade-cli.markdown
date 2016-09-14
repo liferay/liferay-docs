@@ -9,14 +9,26 @@ operating system, and will be covered in greater detail next.
 
 ## Installing Blade CLI Using JPM [](id=installing-blade-cli-using-jpm)
 
-Follow the steps outlined below to install Blade CLI to your local machine.
+After you've installed JPM, install the Blade CLI using the following command: 
 
-1.  After you have installed JPM, download the `com.liferay.blade.cli.jar` file:
-    [https://liferay-test-01.ci.cloudbees.com/job/liferay-blade-cli/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar](https://liferay-test-01.ci.cloudbees.com/job/liferay-blade-cli/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar).
+    (sudo) jpm install com.liferay.blade.cli
 
-2.  Next, install the downloaded JAR:
+If you have proxy server requirements and want to configure your http(s) proxy
+to work with the Blade CLI, follow the instructions below. If not, continue on
+to the next section.
 
-        (sudo) jpm install -fl [Downloads Directory]/com.liferay.blade.cli.jar
+For Mac and Linux users, run the following command:
+		
+    (sudo) jpm install -f --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" com.liferay.blade.cli
+	
+Windows users may encounter a bug preventing JVM arguments from passing into
+JPM. To work around this, install the Blade CLI the same way that was instructed
+for non-proxy users. Then go to your JPM installation path (e.g.,
+`USER_HOME/.jpm/windows/bin`) and open the `blade.ini`. Add the following lines
+to the end of the file.
+
+    vmarg.1=-Dhttp(s).proxyHost=[your proxy host]
+    vmarg.2=-Dhttp(s).proxyPort=[your proxy port]
 
 Now that Blade CLI is installed on your machine, you'll learn how to verify and
 update your installation.
@@ -39,7 +51,7 @@ features.
 because Windows cannot update a file that is currently in use. To bypass this
 issue, you can use JPM to update your version of Blade CLI:
 
-    jpm install -f https://liferay-test-01.ci.cloudbees.com/job/liferay-blade-cli/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar
+    jpm install -f com.liferay.blade.cli
 
 $$$
 

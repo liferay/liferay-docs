@@ -274,6 +274,14 @@ follows:
             android:visibility="gone"/>
     </com.liferay.mobile.screens.listbookmark.BookmarkListView>
 
++$$$
+
+**Warning:** The `android:id` values in your View's layout XML must exactly 
+match the ones shown here. These values are hardcoded into the Screens framework 
+and changing them will cause your app to crash. 
+
+$$$
+
 Nice work! Now you can create your list Screenlet's Interactor. 
 
 ## Creating the Screenlet's Interactor [](id=creating-the-screenlets-interactor)
@@ -422,9 +430,11 @@ Screenlet. For example, an app developer using Login Screenlet in an activity
 must implement `LoginListener` in that activity to respond to login success or 
 failure. When creating a list Screenlet, however, you don't have to create a 
 separate listener. Developers can use your list Screenlet in an activity or 
-fragment by implementing `BaseListListener` parameterized with your model 
-entity. For example, to use Bookmark List Screenlet in an activity, an app 
-developer's activity declaration could look like this:
+fragment by implementing 
+[the `BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java) 
+parameterized with your model entity. For example, to use Bookmark List 
+Screenlet in an activity, an app developer's activity declaration could look 
+like this: 
 
     public class BookmarkListActivity extends AppCompatActivity 
         implements BaseListListener<Bookmark> {...
@@ -432,17 +442,17 @@ developer's activity declaration could look like this:
 The `BaseListListener` interface defines the following methods that the app 
 developer can implement in their activity or fragment:
 
-- `void onListPageFailed(BaseListScreenlet source, int page, Exception e)`: 
+- `void onListPageFailed(BaseListScreenlet source, int startRow, int endRow, Exception e);`: 
   Respond to the Screenlet's failure to retrieve entities from the server. 
 
-- `void onListPageReceived(BaseListScreenlet source, int page, List<E> entries, int rowCount)`: 
+- `void onListPageReceived(BaseListScreenlet source, int startRow, int endRow, List<E> entries, int rowCount);`: 
   Respond to the Screenlet's success to retrieve entities from the server. 
 
 - `void onListItemSelected(E element, View view)`: Respond to a user selection 
   in the list. 
 
-If this is all you need in your list Screenlet, then you can move on to the next 
-section in this tutorial. If you want to let app developers respond to more 
+If these methods meet your list Screenlet's needs, then you can move on to the 
+next section in this tutorial. If you want to let app developers respond to more 
 actions, however, you must create your own listener that extends 
 `BaseListListener` with your model entity as a type parameter. For example, you 
 could create a `BookmarkListListener` listener for Bookmark List Screenlet that 
@@ -584,8 +594,8 @@ jCenter.
 You can now use the new Screenlet 
 [the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps): 
 
-1. Insert the Screenlet’s XML in the activity or fragment layout you want the 
-   Screenlet to appear in. For example, here's Bookmark List Screenlet's XML: 
+1. Insert the Screenlet’s XML in the layout of the activity or fragment you want 
+   to use the Screenlet in. For example, here's Bookmark List Screenlet's XML: 
 
         <com.liferay.mobile.screens.listbookmark.BookmarkListScreenlet
             android:id="@+id/bookmarklist_screenlet"
@@ -595,12 +605,25 @@ You can now use the new Screenlet
             app:groupId="YOUR_GROUP_ID"
             app:layoutId="@layout/list_bookmarks"/>
 
-2. Implement the Screenlet’s listener in the activity or fragment class. Recall 
-   that the example Bookmark List Screenlet's listener is 
-   `BookmarkListListener`. To use this Screenlet, you must therefore implement 
-   this listener in the activity or fragment class you want to use the Screenlet 
-   in. You can see an example of this for the Bookmark List Screenlet 
-   [here in GitHub](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/ListBookmarksActivity.java). 
+2. Implement the Screenlet’s listener in the activity or fragment class. If your 
+   list Screenlet doesn't have a custom listener, then you can do this by 
+   implementing `BaseListListener` parameterized by your model class. For 
+   example:
+
+        public class YourListActivity extends AppCompatActivity 
+            implements BaseListListener<YourEntity> {...
+
+    If you created a custom listener for your list Screenlet, however, then your 
+    activity or fragment must implement it instead. For example, recall that the 
+    example Bookmark List Screenlet's listener is `BookmarkListListener`. To use 
+    this Screenlet, you must therefore implement this listener in the class of 
+    the activity or fragment that you want to use the Screenlet in. For example: 
+
+        public class ListBookmarksActivity extends AppCompatActivity 
+            implements BookmarkListListener {...
+
+    See the full example of this 
+    [here in GitHub](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/ListBookmarksActivity.java). 
 
 ## Related Topics [](id=related-topics)
 
