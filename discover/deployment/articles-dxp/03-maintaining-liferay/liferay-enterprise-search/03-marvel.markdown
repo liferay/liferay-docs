@@ -55,7 +55,7 @@ Liferay](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch).
 
         ./bin/plugin install marvel-agent
 
-2. Download [Kibana 4.4.2](https://www.elastic.co/downloads/past-releases/kibana-4-4-2) and
+2. Download a [compatible](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf) version of [Kibana](https://www.elastic.co/downloads/kibana) and
    extract it to your Liferay Home folder.
 
     Note: Your Liferay Home folder should now have the usual Liferay folders, as
@@ -81,7 +81,10 @@ Liferay](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch).
     +$$$
 
     **Note:** The latest version of Marvel does not work with Kibana 4.4.2, so
-    make sure you install Marvel 2.2.1.
+    make sure you install Marvel 2.2.1 if you're using Kibana 4.4.2. See the
+    [compatibility
+    matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
+    to find compatible versions of Marvel and Kibana.
 
     $$$
 
