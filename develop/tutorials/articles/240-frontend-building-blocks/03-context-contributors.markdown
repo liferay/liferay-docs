@@ -62,7 +62,8 @@ context contributors next.
 
 4.  Implement the
     [TemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
-    interface in your `-TemplateContextContributor` class.
+    interface in your `-TemplateContextContributor` class. This only requires
+    implementing the `prepare(Map<String,Object>, HttpServletRequest)` method.
 
 For a quick example of how you can implement the `TemplateContextContributor`
 interface to inject context-specific variables into a context, you'll examine
@@ -115,7 +116,7 @@ update their `init.ftl` files.
 
 $$$
 
-The `prepare` method above also determines whether to show the product menu or
+The `prepare` method above also determines whether to show the Product Menu or
 not with the following if statement:
 
     if (!isShowProductMenu(request)) {
@@ -148,9 +149,10 @@ also included in the `ProductNavigationTemplateContextContributor` class:
     }
 
 The `ProductNavigationTemplateContextContributor` provides an easy way to inject
-variables into @product@'s theme directly related to the Product Menu. With the
-power to inject additional variables to any context in Liferay, you're free to
-fully harness the power of your chosen templating language.
+variables into @product@'s theme directly related to the Product Menu. You can
+do the same with your custom context contributor. With the power to inject
+additional variables to any context in Liferay, you're free to fully harness the
+power of your chosen templating language.
 
 ## Related Topics [](id=related-topics)
 
