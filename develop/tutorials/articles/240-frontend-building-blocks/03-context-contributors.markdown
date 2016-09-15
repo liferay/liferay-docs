@@ -1,4 +1,4 @@
-# Context Contributors
+# Context Contributors [](id=context-contributors)
 
 JSP templates are the predominant templating framework used throughout
 @product@'s themes, application display templates (ADTs), DDM templates, etc.
@@ -152,7 +152,7 @@ variables into @product@'s theme directly related to the Product Menu. With the
 power to inject additional variables to any context in Liferay, you're free to
 fully harness the power of your chosen templating language.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
 
