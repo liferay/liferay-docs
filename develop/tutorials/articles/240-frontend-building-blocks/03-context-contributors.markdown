@@ -1,11 +1,11 @@
 # Context Contributors [](id=context-contributors)
 
-JSP templates are the predominant templating framework used throughout
-@product@'s themes, application display templates (ADTs), DDM templates, etc.
-JSPs, however, are not the only templating language supported by @product@.
-Many developers prefer other templating frameworks (e.g., FreeMarker and
-Velocity), and Liferay caters to those developers by offering the Context
-Contributors framework.
+JSP templates are the predominant templating framework in @product@. Themes,
+application display templates (ADTs), DDM templates, and more make use of JSPs
+as a templating engine. JSPs, however, are not the only templating language
+supported by @product@. Many developers prefer other templating frameworks
+(e.g., FreeMarker and Velocity), and you might be one of them. Liferay gives you
+this choice by offering the Context Contributors framework.
 
 Context Contributors change the context of templates that get rendered by
 injecting variables usable by your chosen template framework. This lets you
