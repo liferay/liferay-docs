@@ -39,6 +39,10 @@ public class NumberHeadersSiteMain extends Task {
 			dirTypes.add("-dxp");
 		}
 
+		List<String> trackFileList = new ArrayList<String>();
+		List<String> duplicateFiles = null;
+		List<String> ceHeaders = new ArrayList<String>();
+		
 		for (String dirType : dirTypes) {
 
 			File articlesDir = new File("../" + docDir + "/articles" + dirType);
@@ -97,6 +101,25 @@ public class NumberHeadersSiteMain extends Task {
 			
 			}
 
+			if (dirType != "-dxp") {
+				List<String> convertedArray = new ArrayList<String>();
+				convertedArray = fileList;
+
+				for (String f : convertedArray) {
+					f = f.replace("\\articles\\", "\\articles-dxp\\");
+					trackFileList.add(f);
+				}
+			}
+			else {
+				duplicateFiles = new ArrayList<String>(fileList);
+				duplicateFiles.retainAll(trackFileList);
+
+				for (String f : duplicateFiles) {
+					System.out.println("Duplicate file: " + f);
+				}
+				
+			}
+
 			if (fileList.isEmpty()) {
 				throw new Exception(
 						"FAILURE - no markdown files found in " + articlesDir);
@@ -126,6 +149,40 @@ public class NumberHeadersSiteMain extends Task {
 									filename, in.getLineNumber(), secondaryIds);
 							if (newHeadingLine != null) {
 								line = newHeadingLine;
+
+								if (!line.contains("##") && !dirType.equals("-dxp")) {
+									ceHeaders.add(line);
+								}
+								else if (!line.contains("##") && dirType.equals("-dxp")) {
+									int endIndex = line.indexOf("[](id=") + 6;
+									String title = line.substring(0, endIndex);
+									List<String> ceHeadersModified = new ArrayList<String>();
+
+									if (duplicateFiles.contains(filename)) {
+
+										for (String f : ceHeaders) {
+
+											int endIndex2 = f.indexOf("[](id=") + 6;
+											f = f.substring(0, endIndex2);
+											ceHeadersModified.add(f);
+										}
+									}
+
+									if (duplicateFiles.contains(filename) && ceHeadersModified.contains(title)) {
+
+										System.out.println("Matching Header: " + title);
+
+										for (String g : ceHeaders) {
+											if (g.startsWith(title)) {
+												line = g;
+
+												System.out.println("g: " + g);
+											}
+										}
+
+									}
+
+								}
 							}
 							else {
 								foundDuplicateIds = true;
