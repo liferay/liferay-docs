@@ -30,6 +30,7 @@ public class NumberHeadersSiteMain extends Task {
 		String token = args[2];
 
 		token = "@" + token + "@";
+		boolean dxpBuild = false;
 		boolean foundDuplicateIds = false;
 		
 		List<String> dirTypes = new ArrayList<String>();
@@ -37,92 +38,30 @@ public class NumberHeadersSiteMain extends Task {
 
 		if (productType.equals("dxp")) {
 			dirTypes.add("-dxp");
+			dxpBuild = true;
+		}
+		
+		//List<String> ceHeaders = new ArrayList<String>();
+		List<String> duplicateFilesDxp = new ArrayList<String>();
+
+		if (dxpBuild) {
+			duplicateFilesDxp = getDxpDuplicateFiles(docDir, dirTypes);
 		}
 
-		List<String> trackFileList = new ArrayList<String>();
-		List<String> duplicateFiles = null;
-		List<String> ceHeaders = new ArrayList<String>();
-		
 		for (String dirType : dirTypes) {
 
-			File articlesDir = new File("../" + docDir + "/articles" + dirType);
-			File docSetDir = new File("../" + docDir);
-			System.out.println(
-					"Numbering headers for files in " + articlesDir.getPath() + " ...");
-
-			if (!articlesDir.exists() || !articlesDir.isDirectory()) {
-				throw new Exception(
-						"FAILURE - bad articles directory " + articlesDir);
-			}
-
-			List<File> docSetDirFolders = new ArrayList<File>();
-			Queue<File> q = new LinkedList<File>();
-
-			File articlesDirContents[] = articlesDir.listFiles();
-			for (File f : articlesDirContents) {
-				if (f.isDirectory()) {
-					q.add(f);
-				}
-			}
-		
-			while (!q.isEmpty()) {
-				File f = q.remove();
-				docSetDirFolders.add(f);
-				File[] files = f.listFiles();
-			
-				for (File file : files) {
-					if (file.isDirectory()) {
-						q.add(file);
-					}
-				}
-			}
-
-			docSetDirFolders.add(articlesDir);
-			docSetDirFolders.add(docSetDir);
-		
-			File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
-		
-			List<String> fileList = new ArrayList<String>();
-
-			for (int i = 0; i < docSetDirFoldersArray.length; i++) {
-				File files[] = docSetDirFoldersArray[i].listFiles(new FilenameFilter() {
-					String filePatternArg =
-							"([^\\\\\\[\\]\\|:;%<>]+).markdown";
-					Pattern fileNamePattern = Pattern.compile(filePatternArg);
-
-					public boolean accept(File file, String name) {
-						return (fileNamePattern.matcher(name).matches());
-					}
-				});
-			
-				for (int j = 0; j < files.length; j++) {
-					fileList.add(files[j].getPath());
-				}
-			
-			}
-
-			if (dirType != "-dxp") {
-				List<String> convertedArray = new ArrayList<String>();
-				convertedArray = fileList;
-
-				for (String f : convertedArray) {
-					f = f.replace("\\articles\\", "\\articles-dxp\\");
-					trackFileList.add(f);
-				}
-			}
-			else {
-				duplicateFiles = new ArrayList<String>(fileList);
-				duplicateFiles.retainAll(trackFileList);
-
-				for (String f : duplicateFiles) {
-					System.out.println("Duplicate file: " + f);
-				}
-				
-			}
+			List<String> fileList = getFileList(docDir, dirType);
 
 			if (fileList.isEmpty()) {
 				throw new Exception(
-						"FAILURE - no markdown files found in " + articlesDir);
+						"FAILURE - no markdown files found in ../" + docDir +
+						"/articles" + dirType);
+			}
+			
+			if (!dirType.contains("dxp") && dxpBuild) {
+				for(String duplicateFile : duplicateFilesDxp) {
+					fileList.remove(duplicateFile);
+				}
 			}
 
 			for (int i = 0; i < fileList.size(); i++) {
@@ -140,7 +79,7 @@ public class NumberHeadersSiteMain extends Task {
 							new BufferedWriter(new FileWriter(outFileTmp));
 
 					String line;
-					boolean overrideFile = false;
+					//boolean overrideFile = false;
 					
 					while ((line = in.readLine()) != null) {
 						if (line.startsWith("#") && !line.contains(token)) {
@@ -152,13 +91,13 @@ public class NumberHeadersSiteMain extends Task {
 							if (newHeadingLine != null) {
 								line = newHeadingLine;
 
-								if (!line.contains("##") && !dirType.equals("-dxp")) {
+								/*if (!line.contains("##") && !dirType.equals("-dxp")) {
 									ceHeaders.add(line);
 								}
 								else if (!line.contains("##") && dirType.equals("-dxp")) {
 
-									overrideFile = isOverrideFile(line, dirType, ceHeaders,
-											duplicateFiles, filename);
+									//overrideFile = isOverrideFile(line, dirType, ceHeaders,
+											//duplicateFiles, filename);
 
 									if (overrideFile) {
 										int endIndex = line.indexOf("[](id=") + 6;
@@ -176,7 +115,7 @@ public class NumberHeadersSiteMain extends Task {
 
 									}
 
-								}
+								}*/
 							}
 							else {
 								foundDuplicateIds = true;
@@ -208,8 +147,38 @@ public class NumberHeadersSiteMain extends Task {
 			}
 		}
 	}
+	
+	private static List<String> getDxpDuplicateFiles(String docDir,
+			List<String> dirTypes)
+		throws Exception {
+		
+		List<String> cefileList = getFileList(docDir, dirTypes.get(0));
+		List<String> duplicateFiles = new ArrayList<String>();
+		List<String> convertedFileList = new ArrayList<String>();
+		
+		for (String f : cefileList) {
+			System.out.println("CE Article: " + f);
+			f = f.replace("\\articles\\", "\\articles-dxp\\");
+			convertedFileList.add(f);
+		}
+		
+		List<String> dxpfileList = getFileList(docDir, dirTypes.get(1));
+		
+		for (String f : dxpfileList) {
+			System.out.println("DXP Article: " + f);
+		}
+		
+		duplicateFiles = new ArrayList<String>(dxpfileList);
+		duplicateFiles.retainAll(convertedFileList);
+		
+		for (String f : duplicateFiles) {
+			System.out.println("Duplicate file: " + f);
+		}
+		
+		return duplicateFiles;
+	}
 
-	private static List<String> getCeModifiedHeaders(String line,
+	/*private static List<String> getCeModifiedHeaders(String line,
 			List<String> ceHeaders, List<String> duplicateFiles, String filename) {
 		
 		List<String> ceHeadersModified = new ArrayList<String>();
@@ -224,9 +193,75 @@ public class NumberHeadersSiteMain extends Task {
 			}
 		}
 		return ceHeadersModified;
+	}*/
+	
+	private static List<String> getFileList(String docDir, String dirType)
+			throws Exception {
+		
+		File articlesDir = new File("../" + docDir + "/articles" + dirType);
+		File docSetDir = new File("../" + docDir);
+		System.out.println(
+				"Numbering headers for files in " + articlesDir.getPath() + " ...");
+
+		if (!articlesDir.exists() || !articlesDir.isDirectory()) {
+			throw new Exception(
+					"FAILURE - bad articles directory " + articlesDir);
+		}
+		List<File> docSetDirFolders = new ArrayList<File>();
+		Queue<File> q = new LinkedList<File>();
+
+		File articlesDirContents[] = articlesDir.listFiles();
+		for (File f : articlesDirContents) {
+			if (f.isDirectory()) {
+				q.add(f);
+			}
+		}
+	
+		while (!q.isEmpty()) {
+			File f = q.remove();
+			docSetDirFolders.add(f);
+			File[] files = f.listFiles();
+		
+			for (File file : files) {
+				if (file.isDirectory()) {
+					q.add(file);
+				}
+			}
+		}
+
+		docSetDirFolders.add(articlesDir);
+		docSetDirFolders.add(docSetDir);
+	
+		File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
+	
+		List<String> fileList = new ArrayList<String>();
+
+		for (int i = 0; i < docSetDirFoldersArray.length; i++) {
+			File files[] = docSetDirFoldersArray[i].listFiles(new FilenameFilter() {
+				String filePatternArg =
+						"([^\\\\\\[\\]\\|:;%<>]+).markdown";
+				Pattern fileNamePattern = Pattern.compile(filePatternArg);
+
+				public boolean accept(File file, String name) {
+					return (fileNamePattern.matcher(name).matches());
+				}
+			});
+		
+			for (int j = 0; j < files.length; j++) {
+				fileList.add(files[j].getPath());
+			}
+		
+		}
+		
+		if (fileList.size() == 0) {
+			throw new Exception(
+					"FAILURE - fileList is empty");
+		}
+		
+		return fileList;
 	}
 	
-	private static boolean isOverrideFile(String line, String dirType,
+	/*private static boolean isOverrideFile(String line, String dirType,
 			List<String> headers, List<String> duplicateFiles, String filename) {
 		
 		List<String> ceModifiedHeaders = getCeModifiedHeaders(
@@ -252,7 +287,7 @@ public class NumberHeadersSiteMain extends Task {
 			else {
 				return false;
 			}
-	}
+	}*/
 
 	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
@@ -317,7 +352,7 @@ public class NumberHeadersSiteMain extends Task {
 				// Handle secondary ID, checking if already used in this file.
 
 				Integer lineNum2 = secondaryIds.get(id);
-				if (lineNum2 != null) {
+				if (lineNum2 != null ) {
 
 					//print error
 
