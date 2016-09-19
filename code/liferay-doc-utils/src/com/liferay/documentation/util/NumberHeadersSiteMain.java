@@ -45,7 +45,7 @@ public class NumberHeadersSiteMain extends Task {
 		List<String> duplicateFilesDxp = new ArrayList<String>();
 
 		if (dxpBuild) {
-			duplicateFilesDxp = getDxpDuplicateFiles(docDir, dirTypes);
+			duplicateFilesDxp = getDuplicateFiles(docDir, dirTypes);
 		}
 
 		for (String dirType : dirTypes) {
@@ -148,27 +148,23 @@ public class NumberHeadersSiteMain extends Task {
 		}
 	}
 	
-	private static List<String> getDxpDuplicateFiles(String docDir,
+	private static List<String> getDuplicateFiles(String docDir,
 			List<String> dirTypes)
 		throws Exception {
 		
 		List<String> cefileList = getFileList(docDir, dirTypes.get(0));
-		List<String> duplicateFiles = new ArrayList<String>();
 		List<String> convertedFileList = new ArrayList<String>();
-		
-		for (String f : cefileList) {
-			System.out.println("CE Article: " + f);
-			f = f.replace("\\articles\\", "\\articles-dxp\\");
-			convertedFileList.add(f);
-		}
+		List<String> duplicateFiles = new ArrayList<String>();
 		
 		List<String> dxpfileList = getFileList(docDir, dirTypes.get(1));
 		
 		for (String f : dxpfileList) {
-			System.out.println("DXP Article: " + f);
+			f = f.replace("\\articles-dxp\\", "\\articles\\");
+			f = f.replace("/articles-dxp/", "/articles/");
+			convertedFileList.add(f);
 		}
 		
-		duplicateFiles = new ArrayList<String>(dxpfileList);
+		duplicateFiles = new ArrayList<String>(cefileList);
 		duplicateFiles.retainAll(convertedFileList);
 		
 		for (String f : duplicateFiles) {
@@ -352,7 +348,7 @@ public class NumberHeadersSiteMain extends Task {
 				// Handle secondary ID, checking if already used in this file.
 
 				Integer lineNum2 = secondaryIds.get(id);
-				if (lineNum2 != null ) {
+				if (lineNum2 != null) {
 
 					//print error
 
