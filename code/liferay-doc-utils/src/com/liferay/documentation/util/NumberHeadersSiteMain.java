@@ -140,6 +140,8 @@ public class NumberHeadersSiteMain extends Task {
 							new BufferedWriter(new FileWriter(outFileTmp));
 
 					String line;
+					boolean overrideFile = false;
+					
 					while ((line = in.readLine()) != null) {
 						if (line.startsWith("#") && !line.contains(token)) {
 						
@@ -154,21 +156,13 @@ public class NumberHeadersSiteMain extends Task {
 									ceHeaders.add(line);
 								}
 								else if (!line.contains("##") && dirType.equals("-dxp")) {
-									int endIndex = line.indexOf("[](id=") + 6;
-									String title = line.substring(0, endIndex);
-									List<String> ceHeadersModified = new ArrayList<String>();
 
-									if (duplicateFiles.contains(filename)) {
+									overrideFile = isOverrideFile(line, dirType, ceHeaders,
+											duplicateFiles, filename);
 
-										for (String f : ceHeaders) {
-
-											int endIndex2 = f.indexOf("[](id=") + 6;
-											f = f.substring(0, endIndex2);
-											ceHeadersModified.add(f);
-										}
-									}
-
-									if (duplicateFiles.contains(filename) && ceHeadersModified.contains(title)) {
+									if (overrideFile) {
+										int endIndex = line.indexOf("[](id=") + 6;
+										String title = line.substring(0, endIndex);
 
 										System.out.println("Matching Header: " + title);
 
@@ -213,6 +207,51 @@ public class NumberHeadersSiteMain extends Task {
 				throw new Exception("FAILURE - Duplicate header IDs exist");
 			}
 		}
+	}
+
+	private static List<String> getCeModifiedHeaders(String line,
+			List<String> ceHeaders, List<String> duplicateFiles, String filename) {
+		
+		List<String> ceHeadersModified = new ArrayList<String>();
+
+		if (duplicateFiles.contains(filename)) {
+
+			for (String f : ceHeaders) {
+
+				int endIndex2 = f.indexOf("[](id=") + 6;
+				f = f.substring(0, endIndex2);
+				ceHeadersModified.add(f);
+			}
+		}
+		return ceHeadersModified;
+	}
+	
+	private static boolean isOverrideFile(String line, String dirType,
+			List<String> headers, List<String> duplicateFiles, String filename) {
+		
+		List<String> ceModifiedHeaders = getCeModifiedHeaders(
+				line, headers, duplicateFiles, filename);
+
+		int endIndex = line.indexOf("[](id=") + 6;
+		String title = line.substring(0, endIndex);
+
+			if (duplicateFiles.contains(filename) &&
+					ceModifiedHeaders.contains(title)) {
+
+				return true;
+				//System.out.println("Matching Header: " + title);
+
+				//for (String g : headers) {
+					//if (g.startsWith(title)) {
+						//line = g;
+
+						//System.out.println("g: " + g);
+					//}
+				//}
+			}
+			else {
+				return false;
+			}
 	}
 
 	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
@@ -300,6 +339,9 @@ public class NumberHeadersSiteMain extends Task {
 				// Handle primary ID, checking if already used in this file or other files.
 
 				String filename2 = IDS.get(id);
+				
+				// Check for override file
+				
 				if (filename2 != null) {
 
 					//print error
