@@ -3,9 +3,9 @@
 JSP templates are the predominant templating framework in @product@. Themes,
 application display templates (ADTs), DDM templates, and more make use of JSPs
 as a templating engine. JSPs, however, are not the only templating language
-supported by @product@. Many developers prefer other templating frameworks
-(e.g., FreeMarker and Velocity), and you might be one of them. Liferay gives you
-this choice by offering the Context Contributors framework.
+supported by @product@. Since many developers prefer other templating frameworks
+(e.g., FreeMarker and Velocity), Liferay gives you a choice by offering the
+Context Contributors framework.
 
 Context Contributors change the context of templates that get rendered by
 injecting variables usable by your chosen template framework. This lets you
@@ -15,9 +15,19 @@ access to the current user to display something about him or her. You could
 create a context contributor to inject the User object to your theme's context.
 Anyone creating a theme could then get the User object and use it.
 
+<!-- I don't understand the above paragraph at all; particularly the way the
+word 'context' is being used. I think you need to define how you're using the
+word first. If the purpose of a context contributor is to use Velocity or
+FreeMarker in themes, ADTs, or DDM templates (as you stated in the first
+paragraph), you seem to have skipped a conceptual step between that and whatever
+you're talking about here. -Rich -->
+
 You can also provide additional functionality out-of-the-box for a context using
 context contributors. For instance, you could pass in a variable to a menu's
 theme that determines whether or not to display it.
+
+<!--I still don't understand what this has to do with using a different
+templating language than JSP. -Rich --> 
 
 @product@ uses context contributors in several areas by default to inject
 context-specific variables into a theme. You'll learn how to create your own
@@ -25,7 +35,7 @@ context contributor, and then you'll examine one example of how @product@ uses
 context contributors next.
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
-    the [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the
@@ -41,7 +51,7 @@ context contributors next.
             service = TemplateContextContributor.class
         )
 
-    The `immediate` element instructs the module to immediately start once
+    The `immediate` element instructs the module to start immediately once
     deployed to @product@. The `type` property should be set to one of the two
     fields defined in the
     [TemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
