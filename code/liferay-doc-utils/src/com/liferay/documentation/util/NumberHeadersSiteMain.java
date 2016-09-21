@@ -40,8 +40,7 @@ public class NumberHeadersSiteMain extends Task {
 			dirTypes.add("-dxp");
 			dxpBuild = true;
 		}
-		
-		//List<String> ceHeaders = new ArrayList<String>();
+
 		List<String> duplicateFilesDxp = new ArrayList<String>();
 
 		if (dxpBuild) {
@@ -49,7 +48,11 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		for (String dirType : dirTypes) {
-
+			
+			System.out.println(
+					"Numbering headers for files in ../" + docDir + "/articles" +
+							dirType + " ...");
+			
 			List<String> fileList = getFileList(docDir, dirType);
 
 			if (fileList.isEmpty()) {
@@ -79,7 +82,6 @@ public class NumberHeadersSiteMain extends Task {
 							new BufferedWriter(new FileWriter(outFileTmp));
 
 					String line;
-					//boolean overrideFile = false;
 					
 					while ((line = in.readLine()) != null) {
 						if (line.startsWith("#") && !line.contains(token)) {
@@ -91,31 +93,6 @@ public class NumberHeadersSiteMain extends Task {
 							if (newHeadingLine != null) {
 								line = newHeadingLine;
 
-								/*if (!line.contains("##") && !dirType.equals("-dxp")) {
-									ceHeaders.add(line);
-								}
-								else if (!line.contains("##") && dirType.equals("-dxp")) {
-
-									//overrideFile = isOverrideFile(line, dirType, ceHeaders,
-											//duplicateFiles, filename);
-
-									if (overrideFile) {
-										int endIndex = line.indexOf("[](id=") + 6;
-										String title = line.substring(0, endIndex);
-
-										System.out.println("Matching Header: " + title);
-
-										for (String g : ceHeaders) {
-											if (g.startsWith(title)) {
-												line = g;
-
-												System.out.println("g: " + g);
-											}
-										}
-
-									}
-
-								}*/
 							}
 							else {
 								foundDuplicateIds = true;
@@ -147,7 +124,59 @@ public class NumberHeadersSiteMain extends Task {
 			}
 		}
 	}
+
+	private static String assembleId(String heading, int idCount) {
+
+		String count = "";
+		if (idCount > -1) {
+			count = "-" + idCount;
+		}
+
+		int idLength = heading.length() + count.length();
+		if (idLength >  MAX_ID_LEN) {
+			heading = heading.substring(
+				0,
+				(heading.length() - Math.abs(idLength -  MAX_ID_LEN)));
+		}
+
+		StringBuffer sb = new StringBuffer(heading);
+		sb.append(count);
 	
+		String finalHeaderId = sb.toString();
+		
+		if (finalHeaderId.contains("--")) {
+			finalHeaderId = finalHeaderId.replaceAll("--", "-");
+		}
+
+		return finalHeaderId;
+	}
+
+	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
+		String heading2 = line.substring(indexOfFirstHeaderChar);
+		heading2 = heading2.trim();
+
+		// Replace each spaced dash, space, dot, and slash with a dash
+
+		heading2 = heading2.replace(" - ", "-");
+		heading2 = heading2.replace(' ', '-');
+		heading2 = heading2.replace('.', '-');
+		heading2 = heading2.replace('/', '-');
+		heading2 = heading2.toLowerCase();
+
+		// Filter out characters other than dashes, letters, and digits
+
+		StringBuffer headingSb = new StringBuffer();
+		for (int i = 0; i < heading2.length(); i++) {
+			char ch = heading2.charAt(i);
+
+			if (ch == '-' || Character.isLetterOrDigit(ch)) {
+				headingSb.append(ch);
+			}
+		}
+		heading2 = headingSb.toString();
+		return heading2;
+	}
+
 	private static List<String> getDuplicateFiles(String docDir,
 			List<String> dirTypes)
 		throws Exception {
@@ -167,37 +196,14 @@ public class NumberHeadersSiteMain extends Task {
 		duplicateFiles = new ArrayList<String>(cefileList);
 		duplicateFiles.retainAll(convertedFileList);
 		
-		for (String f : duplicateFiles) {
-			System.out.println("Duplicate file: " + f);
-		}
-		
 		return duplicateFiles;
 	}
-
-	/*private static List<String> getCeModifiedHeaders(String line,
-			List<String> ceHeaders, List<String> duplicateFiles, String filename) {
-		
-		List<String> ceHeadersModified = new ArrayList<String>();
-
-		if (duplicateFiles.contains(filename)) {
-
-			for (String f : ceHeaders) {
-
-				int endIndex2 = f.indexOf("[](id=") + 6;
-				f = f.substring(0, endIndex2);
-				ceHeadersModified.add(f);
-			}
-		}
-		return ceHeadersModified;
-	}*/
 	
 	private static List<String> getFileList(String docDir, String dirType)
 			throws Exception {
 		
 		File articlesDir = new File("../" + docDir + "/articles" + dirType);
 		File docSetDir = new File("../" + docDir);
-		System.out.println(
-				"Numbering headers for files in " + articlesDir.getPath() + " ...");
 
 		if (!articlesDir.exists() || !articlesDir.isDirectory()) {
 			throw new Exception(
@@ -255,60 +261,6 @@ public class NumberHeadersSiteMain extends Task {
 		}
 		
 		return fileList;
-	}
-	
-	/*private static boolean isOverrideFile(String line, String dirType,
-			List<String> headers, List<String> duplicateFiles, String filename) {
-		
-		List<String> ceModifiedHeaders = getCeModifiedHeaders(
-				line, headers, duplicateFiles, filename);
-
-		int endIndex = line.indexOf("[](id=") + 6;
-		String title = line.substring(0, endIndex);
-
-			if (duplicateFiles.contains(filename) &&
-					ceModifiedHeaders.contains(title)) {
-
-				return true;
-				//System.out.println("Matching Header: " + title);
-
-				//for (String g : headers) {
-					//if (g.startsWith(title)) {
-						//line = g;
-
-						//System.out.println("g: " + g);
-					//}
-				//}
-			}
-			else {
-				return false;
-			}
-	}*/
-
-	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
-		String heading2 = line.substring(indexOfFirstHeaderChar);
-		heading2 = heading2.trim();
-
-		// Replace each spaced dash, space, dot, and slash with a dash
-
-		heading2 = heading2.replace(" - ", "-");
-		heading2 = heading2.replace(' ', '-');
-		heading2 = heading2.replace('.', '-');
-		heading2 = heading2.replace('/', '-');
-		heading2 = heading2.toLowerCase();
-
-		// Filter out characters other than dashes, letters, and digits
-
-		StringBuffer headingSb = new StringBuffer();
-		for (int i = 0; i < heading2.length(); i++) {
-			char ch = heading2.charAt(i);
-
-			if (ch == '-' || Character.isLetterOrDigit(ch)) {
-				headingSb.append(ch);
-			}
-		}
-		heading2 = headingSb.toString();
-		return heading2;
 	}
 
 	private static String handleHeaderLine(String line, String filename,
@@ -455,31 +407,7 @@ public class NumberHeadersSiteMain extends Task {
 		return newHeadingLine;
 	}
 
-	private static String assembleId(String heading, int idCount) {
-
-		String count = "";
-		if (idCount > -1) {
-			count = "-" + idCount;
-		}
-
-		int idLength = heading.length() + count.length();
-		if (idLength >  MAX_ID_LEN) {
-			heading = heading.substring(
-				0,
-				(heading.length() - Math.abs(idLength -  MAX_ID_LEN)));
-		}
-
-		StringBuffer sb = new StringBuffer(heading);
-		sb.append(count);
 	
-		String finalHeaderId = sb.toString();
-		
-		if (finalHeaderId.contains("--")) {
-			finalHeaderId = finalHeaderId.replaceAll("--", "-");
-		}
-
-		return finalHeaderId;
-	}
 
 	private static final int MAX_ID_LEN = 75;
 
