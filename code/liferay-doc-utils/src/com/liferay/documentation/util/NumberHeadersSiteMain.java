@@ -45,9 +45,6 @@ public class NumberHeadersSiteMain extends Task {
 
 		if (dxpBuild) {
 			duplicateFiles = getDuplicateFiles(docDir, dirTypes);
-			for(String f : duplicateFiles) {
-				System.out.println("f: " + f);
-			}
 		}
 
 		for (String dirType : dirTypes) {
@@ -63,39 +60,14 @@ public class NumberHeadersSiteMain extends Task {
 						"FAILURE - no markdown files found in ../" + docDir +
 						"/articles" + dirType);
 			}
-			
-			//if (!dirType.contains("dxp") && dxpBuild) {
-				//for(String duplicateFile : duplicateFiles) {
-					//fileList.remove(duplicateFile);
-				//}
-			//}
 
 			for (int i = 0; i < fileList.size(); i++) {
 				String filename = fileList.get(i);
 				File inFile = new File(filename);
 				File outFile = new File(filename);
 				String outFileTmp = outFile + ".tmp";
-				overrideFile = false;
 				
-				String filenameTest = filename;
-				
-				int index1 = filenameTest.indexOf("articles");
-				int index2;
-				if (filenameTest.contains("\\")) {
-					index2 = filenameTest.indexOf("\\", index1);
-				}
-				else {
-					index2 = filenameTest.indexOf("/", index1);
-				}
-				
-				filenameTest = filenameTest.substring(index2 + 1);
-				
-				for (String f : duplicateFiles) {
-					if (f.contains(filenameTest)) {
-						overrideFile = true;
-						System.out.println("overrideFile: " + overrideFile);
-					}
-				}
+				overrideFile = isOverrideFile(filename, duplicateFiles);
 
 				Map<String, Integer> secondaryIds = new HashMap<String, Integer>();
 
@@ -148,6 +120,8 @@ public class NumberHeadersSiteMain extends Task {
 			}
 		}
 		
+		// Make sure override files have same header IDs as original
+		
 		if(!duplicateFiles.isEmpty()) {
 			for(String duplicateFile : duplicateFiles) {
 				String duplicateFileDxp = duplicateFile;
@@ -156,112 +130,7 @@ public class NumberHeadersSiteMain extends Task {
 				duplicateFileDxp = duplicateFileDxp.replace(
 						"/articles/", "/articles-dxp/");
 				
-				//List<String> bothFiles = new ArrayList<String>();
-				//bothFiles.add(duplicateFile);
-				//bothFiles.add(duplicateFileDxp);
-				
-				// Read in/out
-				
-				File inFile = new File(duplicateFile);
-				File outFile = new File(duplicateFile);
-				File inFileDxp = new File(duplicateFileDxp);
-				File outFileDxp = new File(duplicateFileDxp);
-				String outFileTmp = outFile + ".tmp";
-				String outFileTmpDxp = outFileDxp + ".tmp";
-				
-				LineNumberReader in =
-						new LineNumberReader(new FileReader(inFile));
-				BufferedWriter out =
-						new BufferedWriter(new FileWriter(outFileTmp));
-				LineNumberReader inDxp =
-						new LineNumberReader(new FileReader(inFileDxp));
-				BufferedWriter outDxp =
-						new BufferedWriter(new FileWriter(outFileTmpDxp));
-				
-				String header = in.readLine();
-				String headerDxp = inDxp.readLine();
-				System.out.println("header: " + header);
-				System.out.println("headerDxp: " + headerDxp);
-				boolean equalHeaders = false;
-				
-				if (filenamesWithPresetHeader.contains(duplicateFile) && 
-						filenamesWithPresetHeader.contains(duplicateFileDxp)) {
-					
-					if (header.equals(headerDxp)) {
-						equalHeaders = true;
-					}
-					else {
-						headerDxp = header;
-					}
-					
-				}
-				else if (filenamesWithPresetHeader.contains(duplicateFile) && 
-						filenamesWithoutPresetHeader.contains(duplicateFileDxp)) {
-					
-					headerDxp = header;
-				}
-				else if (filenamesWithoutPresetHeader.contains(duplicateFile) && 
-						filenamesWithPresetHeader.contains(duplicateFileDxp)) {
-					
-					header = headerDxp;
-				}
-				else {
-					headerDxp = header;
-				}
-				
-				if (!equalHeaders) {
-					String line;
-					int i = 0;
-					
-					while ((line = in.readLine()) != null) {
-						
-						if (i == 0) {
-							out.append(header);
-							out.append("\n\n");
-						}
-						else {
-							out.append(line);
-							out.append("\n");
-						}
-						i = i+1;
-					}
-
-					in.close();	
-					out.flush();
-					out.close();
-
-					FileUtils.copyFile(
-							new File(outFileTmp),
-							new File(duplicateFile));
-
-					FileUtils.forceDelete(new File(outFileTmp));
-					
-					i = 0;
-					while ((line = inDxp.readLine()) != null) {
-						if (i == 0) {
-							outDxp.append(headerDxp);
-							outDxp.append("\n\n");
-						}
-						else {
-							outDxp.append(line);
-							outDxp.append("\n");
-						}
-						i = i+1;
-					}
-
-					inDxp.close();
-					outDxp.flush();
-					outDxp.close();
-					
-					FileUtils.copyFile(
-							new File(outFileTmpDxp),
-							new File(duplicateFileDxp));
-
-					FileUtils.forceDelete(new File(outFileTmpDxp));
-				}
-				
-				
-				
+				checkOverrideHeaders(duplicateFile, duplicateFileDxp);
 			}
 		}	
 	}
@@ -290,6 +159,106 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		return finalHeaderId;
+	}
+	
+	private static void checkOverrideHeaders(String duplicateFile, String duplicateFile2) 
+			throws IOException {
+		
+		File inFile = new File(duplicateFile);
+		File outFile = new File(duplicateFile);
+		File inFile2 = new File(duplicateFile2);
+		File outFile2 = new File(duplicateFile2);
+		String outFileTmp = outFile + ".tmp";
+		String outFileTmp2 = outFile2 + ".tmp";
+		
+		LineNumberReader in =
+				new LineNumberReader(new FileReader(inFile));
+		BufferedWriter out =
+				new BufferedWriter(new FileWriter(outFileTmp));
+		LineNumberReader in2 =
+				new LineNumberReader(new FileReader(inFile2));
+		BufferedWriter out2 =
+				new BufferedWriter(new FileWriter(outFileTmp2));
+		
+		String header = in.readLine();
+		String headerDxp = in2.readLine();
+		boolean equalHeaders = false;
+		
+		if (filenamesWithPresetHeader.contains(duplicateFile) && 
+				filenamesWithPresetHeader.contains(duplicateFile2)) {
+			
+			if (header.equals(headerDxp)) {
+				equalHeaders = true;
+			}
+			else {
+				headerDxp = header;
+			}
+			
+		}
+		else if (filenamesWithPresetHeader.contains(duplicateFile) && 
+				filenamesWithoutPresetHeader.contains(duplicateFile2)) {
+			
+			headerDxp = header;
+		}
+		else if (filenamesWithoutPresetHeader.contains(duplicateFile) && 
+				filenamesWithPresetHeader.contains(duplicateFile2)) {
+			
+			header = headerDxp;
+		}
+		else {
+			headerDxp = header;
+		}
+		
+		if (!equalHeaders) {
+			String line;
+			int i = 0;
+			
+			while ((line = in.readLine()) != null) {
+				
+				if (i == 0) {
+					out.append(header);
+					out.append("\n\n");
+				}
+				else {
+					out.append(line);
+					out.append("\n");
+				}
+				i = i+1;
+			}
+
+			in.close();	
+			out.flush();
+			out.close();
+
+			FileUtils.copyFile(
+					new File(outFileTmp),
+					new File(duplicateFile));
+
+			FileUtils.forceDelete(new File(outFileTmp));
+			
+			i = 0;
+			while ((line = in2.readLine()) != null) {
+				if (i == 0) {
+					out2.append(headerDxp);
+					out2.append("\n\n");
+				}
+				else {
+					out2.append(line);
+					out2.append("\n");
+				}
+				i = i+1;
+			}
+
+			in2.close();
+			out2.flush();
+			out2.close();
+			
+			FileUtils.copyFile(
+					new File(outFileTmp2),
+					new File(duplicateFile2));
+
+			FileUtils.forceDelete(new File(outFileTmp2));
+		}
 	}
 
 	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
@@ -550,7 +519,29 @@ public class NumberHeadersSiteMain extends Task {
 		return newHeadingLine;
 	}
 
-	
+	private static boolean isOverrideFile(String filename, List<String> duplicateFiles) {
+		
+		overrideFile = false;
+		
+		int index1 = filename.indexOf("articles");
+		int index2;
+		if (filename.contains("\\")) {
+			index2 = filename.indexOf("\\", index1);
+		}
+		else {
+			index2 = filename.indexOf("/", index1);
+		}
+		
+		filename = filename.substring(index2 + 1);
+		
+		for (String f : duplicateFiles) {
+			if (f.contains(filename)) {
+				overrideFile = true;
+			}
+		}
+		
+		return overrideFile;
+	}
 
 	private static final int MAX_ID_LEN = 75;
 
