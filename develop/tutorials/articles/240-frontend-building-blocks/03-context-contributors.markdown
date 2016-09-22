@@ -16,11 +16,13 @@ information by accessing container objects like `themeDisplay` or
 Template formats like FreeMarker aren't native to Java EE, so they don't have
 access to these objects. If your template needs contextual information such as
 the current user, the page, or anything else, Java EE won't make it available to
-the template like it does for JSPs. Luckily, Liferay gives you a head start by
-injecting a `contextObjects` map of variables (e.g., `themeDisplay`, `locale`,
+the template like it does for JSPs: you must inject it yourself into the
+template. Liferay, however, gives you a head start by injecting a
+`contextObjects` map of common variables (e.g., `themeDisplay`, `locale`,
 `user`, etc.) by default into FreeMarker templates (e.g., themes). This map is
-usually referred to as the *context* of a template. If you'd like to modify or
-add to a template's context, you must create a context contributor.
+usually referred to as the *context* of a template. If you need to access some
+other context object that Liferay doesn't provide by default, you must modify or
+add to a template's context. To do that, you create a context contributor.
 
 Context contributors modify a template's context by injecting variables and
 functionality usable by the template framework. This lets you use non-JSP
