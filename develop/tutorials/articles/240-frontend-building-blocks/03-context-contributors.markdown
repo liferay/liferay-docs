@@ -7,32 +7,30 @@ supported by @product@. Since many developers prefer other templating frameworks
 (e.g., FreeMarker and Velocity), Liferay gives you a choice by offering the
 Context Contributors framework.
 
-Context Contributors change the context of templates that get rendered by
-injecting variables usable by your chosen template framework. This lets you
-contribute to non-JSP templating languages to modify themes, ADTs, and any other
-templates used in @product@. For example, suppose you want your theme to have
-access to the current user to display something about him or her. You could
-create a context contributor to inject the User object to your theme's context.
-Anyone creating a theme could then get the User object and use it.
+Unfortantely, templating frameworks like FreeMarker are restricted to what they
+can access compared to JSPs. In JSPs, you can obtain anything yourself without
+relying on other frameworks. For non-JSP templating frameworks, you must inject
+information to them before they can use it. FreeMarker, for example, has very
+little access to Liferay-specific variables and information. To ease development
+for FreeMarker, Liferay injects a `contextObjects` map of variables, by default,
+into FreeMarker templates (e.g., themes). This map is usually referred to as the
+*context* of a template. To modify a template's provided context, context
+contributors should be implemented.
 
-<!-- I don't understand the above paragraph at all; particularly the way the
-word 'context' is being used. I think you need to define how you're using the
-word first. If the purpose of a context contributor is to use Velocity or
-FreeMarker in themes, ADTs, or DDM templates (as you stated in the first
-paragraph), you seem to have skipped a conceptual step between that and whatever
-you're talking about here. -Rich -->
+Context contributors change a template's context by injecting variables and
+functionality usable by the template framework. This lets you contribute to
+non-JSP templating languages to modify themes, ADTs, and any other templates
+used in @product@. For example, suppose you want your theme to change color
+based on the user's organization. You could create a context contributor to
+inject the user's organization to your theme's context, and then determine the
+theme's color based on that information.
 
-You can also provide additional functionality out-of-the-box for a context using
-context contributors. For instance, you could pass in a variable to a menu's
-theme that determines whether or not to display it.
+Context contributors are already used in @product@ by default. Liferay's Product
+Menu display is determined by a variable injected by a context contributor.
+You'll learn more about this later.
 
-<!--I still don't understand what this has to do with using a different
-templating language than JSP. -Rich --> 
-
-@product@ uses context contributors in several areas by default to inject
-context-specific variables into a theme. You'll learn how to create your own
-context contributor, and then you'll examine one example of how @product@ uses
-context contributors next.
+First, you'll learn how to create your own context contributor, and then you'll
+examine one example of how @product@ uses context contributors.
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
     [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
@@ -61,7 +59,7 @@ context contributors next.
     in @product@, like themes, ADTs, DDM templates, etc. Finally, your `service`
     element should be set to `TemplateContextContributor.class`.
 
-    The [ProductNavigationTemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.product.menu.theme.contributor/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
+    The [ProductMenuTemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.product.menu.theme.contributor/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
     class's `@Component` annotation follows a similar layout:
 
         @Component(
@@ -75,15 +73,21 @@ context contributors next.
     interface in your `-TemplateContextContributor` class. This only requires
     implementing the `prepare(Map<String,Object>, HttpServletRequest)` method.
 
+    Notice that the `prepare` method receives the `contextObjects` map as a
+    parameter. This is your template's context that was described earlier. This
+    method should be used to edit the context by injecting new or modified
+    variables into the `contextObjects` map.
+
 For a quick example of how you can implement the `TemplateContextContributor`
-interface to inject context-specific variables into a context, you'll examine
-the [ProductNavigationTemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.product.menu.theme.contributor/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
+interface to inject variables into a template's context, you'll examine
+the [ProductMenuTemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.product.menu.theme.contributor/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
 class used by @product@ by default. This class injects variables into Liferay's
 FreeMarker theme and determines whether the Product Menu is displayed in the
 current theme.
 
-The `ProductNavigationTemplateContextContributor` class implements the
-`prepare(...)` method, which injects new variables into the theme context:
+The `ProductMenuTemplateContextContributor` class implements the
+`prepare(...)` method, which injects a modified variable and a new variable into
+the theme context:
 
     @Override
     public void prepare(
@@ -135,7 +139,7 @@ not with the following if statement:
 
 The `isShowProductMenu(...)` method injects functionality into the theme's
 context by providing an option to show/hide the Product Menu. This method is
-also included in the `ProductNavigationTemplateContextContributor` class:
+also included in the `ProductMenuTemplateContextContributor` class:
 
     protected boolean isShowProductMenu(HttpServletRequest request) {
         ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
@@ -158,7 +162,7 @@ also included in the `ProductNavigationTemplateContextContributor` class:
         return true;
     }
 
-The `ProductNavigationTemplateContextContributor` provides an easy way to inject
+The `ProductMenuTemplateContextContributor` provides an easy way to inject
 variables into @product@'s theme directly related to the Product Menu. You can
 do the same with your custom context contributor. With the power to inject
 additional variables to any context in Liferay, you're free to fully harness the
