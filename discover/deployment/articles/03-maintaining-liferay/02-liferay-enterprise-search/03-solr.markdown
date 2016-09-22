@@ -16,13 +16,13 @@ To make Liferay and Solr talk to each other, you'll need to install the Liferay
 Solr adapter. There are two ways to do this:
 
 1. Navigate to the [Liferay Marketplace](https://web.liferay.com/marketplace/)
-   website and download the LPKG file for Liferay Enterprise Search-Solr Search
+   website and download the LPKG file for Liferay (CE) Solr 5 Search
    Engine. Once you do, copy the LPKG to your `Liferay_Home/osgi/marketplace`
    folder.
 
 2. In your running Liferay instance, navigate to *Control Panel* &rarr; *Apps*
    &rarr; *Store*. Sign in using your credentials, search for Solr Search
-   Engine, and purchase (it's free) the Liferay Enterprise Search-Solr Search
+   Engine, and purchase (it's free) the Liferay (CE) Solr 5 Search
    Engine entry.
 
 This guide leads you through the process of installing and configuring Solr.
