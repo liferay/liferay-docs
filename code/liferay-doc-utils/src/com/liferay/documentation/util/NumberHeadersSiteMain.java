@@ -78,7 +78,6 @@ public class NumberHeadersSiteMain extends Task {
 							new BufferedWriter(new FileWriter(outFileTmp));
 
 					String line;
-					
 					while ((line = in.readLine()) != null) {
 						if (line.startsWith("#") && !line.contains(token)) {
 						
@@ -88,7 +87,6 @@ public class NumberHeadersSiteMain extends Task {
 									filename, in.getLineNumber(), secondaryIds);
 							if (newHeadingLine != null) {
 								line = newHeadingLine;
-
 							}
 							else {
 								foundDuplicateIds = true;
@@ -132,7 +130,7 @@ public class NumberHeadersSiteMain extends Task {
 				
 				checkOverrideHeaders(duplicateFile, duplicateFileDxp);
 			}
-		}	
+		}
 	}
 
 	private static String assembleId(String heading, int idCount) {
@@ -170,6 +168,8 @@ public class NumberHeadersSiteMain extends Task {
 		File outFile2 = new File(duplicateFile2);
 		String outFileTmp = outFile + ".tmp";
 		String outFileTmp2 = outFile2 + ".tmp";
+		File outFileTmpFile = new File(outFileTmp);
+		File outFileTmpFile2 = new File(outFileTmp2);
 		
 		LineNumberReader in =
 				new LineNumberReader(new FileReader(inFile));
@@ -231,11 +231,11 @@ public class NumberHeadersSiteMain extends Task {
 			out.close();
 
 			FileUtils.copyFile(
-					new File(outFileTmp),
+					outFileTmpFile,
 					new File(duplicateFile));
 
-			FileUtils.forceDelete(new File(outFileTmp));
-			
+			FileUtils.forceDelete(outFileTmpFile);
+
 			i = 0;
 			while ((line = in2.readLine()) != null) {
 				if (i == 0) {
@@ -252,12 +252,25 @@ public class NumberHeadersSiteMain extends Task {
 			in2.close();
 			out2.flush();
 			out2.close();
-			
+
 			FileUtils.copyFile(
-					new File(outFileTmp2),
+					outFileTmpFile2,
 					new File(duplicateFile2));
 
-			FileUtils.forceDelete(new File(outFileTmp2));
+			FileUtils.forceDelete(outFileTmpFile2);
+		}
+		else {
+			in.close();	
+			out.flush();
+			out.close();
+			
+			FileUtils.forceDelete(outFileTmpFile);
+			
+			in2.close();	
+			out2.flush();
+			out2.close();
+			
+			FileUtils.forceDelete(outFileTmpFile2);
 		}
 	}
 
@@ -285,6 +298,21 @@ public class NumberHeadersSiteMain extends Task {
 		}
 		heading2 = headingSb.toString();
 		return heading2;
+	}
+	
+	private static String getArticlesDirName(String filename) {
+		int index1 = filename.indexOf("articles");
+		int index2;
+		if (filename.contains("\\")) {
+			index2 = filename.indexOf("\\", index1);
+		}
+		else {
+			index2 = filename.indexOf("/", index1);
+		}
+		
+		filename = filename.substring(index2 + 1);
+		
+		return filename;
 	}
 
 	private static List<String> getDuplicateFiles(String docDir,
@@ -456,7 +484,7 @@ public class NumberHeadersSiteMain extends Task {
 		else {
 			
 			// Generate an ID based on the header text and counter
-			
+
 			filenamesWithoutPresetHeader.add(filename);
 
 			// Find the start of the header text
@@ -523,23 +551,14 @@ public class NumberHeadersSiteMain extends Task {
 		
 		overrideFile = false;
 		
-		int index1 = filename.indexOf("articles");
-		int index2;
-		if (filename.contains("\\")) {
-			index2 = filename.indexOf("\\", index1);
-		}
-		else {
-			index2 = filename.indexOf("/", index1);
-		}
-		
-		filename = filename.substring(index2 + 1);
+		filename = getArticlesDirName(filename);
 		
 		for (String f : duplicateFiles) {
 			if (f.contains(filename)) {
 				overrideFile = true;
 			}
 		}
-		
+
 		return overrideFile;
 	}
 
