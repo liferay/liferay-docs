@@ -16,13 +16,13 @@ information by accessing container objects like `themeDisplay` or
 Template formats like FreeMarker aren't native to Java EE, so they don't have
 access to these objects. If your template needs contextual information such as
 the current user, the page, or anything else, Java EE won't make it available to
-the template like it does for JSPs: you must inject it yourself into the
-template. For example, Liferay injects a `contextObjects` map of variables by
-default into FreeMarker templates (e.g., themes). This map is usually referred
-to as the *context* of a template. To give a template context, you must create a
-context contributor.
+the template like it does for JSPs. Luckily, Liferay gives you a head start by
+injecting a `contextObjects` map of variables (e.g., `themeDisplay`, `locale`,
+`user`, etc.) by default into FreeMarker templates (e.g., themes). This map is
+usually referred to as the *context* of a template. If you'd like to modify or
+add to a template's context, you must create a context contributor.
 
-Context contributors give templates a context by injecting variables and
+Context contributors modify a template's context by injecting variables and
 functionality usable by the template framework. This lets you use non-JSP
 templating languages for themes, ADTs, and any other templates used in
 @product@. For example, suppose you want your theme to change color based on the
@@ -90,9 +90,9 @@ class used by @product@ by default. This class injects variables into Liferay's
 FreeMarker theme and determines whether the Product Menu is displayed in the
 current theme.
 
-The `ProductMenuTemplateContextContributor` class implements the
-`prepare(...)` method, which injects a modified variable and a new variable into
-the theme context:
+The `ProductMenuTemplateContextContributor` class implements the `prepare(...)`
+method, which injects a modified variable (`bodyCssClass`) and a new variable
+(`liferay_product_menu_state`) into the theme context:
 
     @Override
     public void prepare(
