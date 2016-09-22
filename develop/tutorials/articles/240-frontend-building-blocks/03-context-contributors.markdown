@@ -4,26 +4,31 @@ JSP templates are the predominant templating framework in @product@. Themes,
 application display templates (ADTs), DDM templates, and more make use of JSPs
 as a templating engine. JSPs, however, are not the only templating language
 supported by @product@. Since many developers prefer other templating frameworks
-(e.g., FreeMarker and Velocity), Liferay gives you a choice by offering the
-Context Contributors framework.
+(e.g., FreeMarker and Velocity), Liferay enables you to use other template
+formats by offering the Context Contributors framework.
 
-Unfortantely, templating frameworks like FreeMarker are restricted to what they
-can access compared to JSPs. In JSPs, you can obtain anything yourself without
-relying on other frameworks. For non-JSP templating frameworks, you must inject
-information to them before they can use it. FreeMarker, for example, has very
-little access to Liferay-specific variables and information. To ease development
-for FreeMarker, Liferay injects a `contextObjects` map of variables, by default,
-into FreeMarker templates (e.g., themes). This map is usually referred to as the
-*context* of a template. To modify a template's provided context, context
-contributors should be implemented.
+Because JSPs are "native" to Java EE, they have access to all the contextual
+objects inherent to the platform, like the request and the session. Through
+these objects, developers can normally obtain Liferay-specific context
+information by accessing container objects like `themeDisplay` or
+`serviceContext`. 
 
-Context contributors change a template's context by injecting variables and
-functionality usable by the template framework. This lets you contribute to
-non-JSP templating languages to modify themes, ADTs, and any other templates
-used in @product@. For example, suppose you want your theme to change color
-based on the user's organization. You could create a context contributor to
-inject the user's organization to your theme's context, and then determine the
-theme's color based on that information.
+Template formats like FreeMarker aren't native to Java EE, so they don't have
+access to these objects. If your template needs contextual information such as
+the current user, the page, or anything else, Java EE won't make it available to
+the template like it does for JSPs: you must inject it yourself into the
+template. For example, Liferay injects a `contextObjects` map of variables by
+default into FreeMarker templates (e.g., themes). This map is usually referred
+to as the *context* of a template. To give a template context, you must create a
+context contributor.
+
+Context contributors give templates a context by injecting variables and
+functionality usable by the template framework. This lets you use non-JSP
+templating languages for themes, ADTs, and any other templates used in
+@product@. For example, suppose you want your theme to change color based on the
+user's organization. You could create a context contributor to inject the user's
+organization to your theme's context, and then determine the theme's color based
+on that information.
 
 Context contributors are already used in @product@ by default. Liferay's Product
 Menu display is determined by a variable injected by a context contributor.
