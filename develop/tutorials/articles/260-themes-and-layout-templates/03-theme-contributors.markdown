@@ -100,7 +100,7 @@ steps:
         
 4.  Run `../../../../../gradlew build` to build the updated jar file.
 
-5.  Copy the updated jar file from the module's `build` directory into your
+5.  Copy the updated jar file under `/liferay-portal/tools/sdk/dist` directory into your
     Liferay bundle `osgi/modules` directory to deploy the UI changes to the
     server.
    
