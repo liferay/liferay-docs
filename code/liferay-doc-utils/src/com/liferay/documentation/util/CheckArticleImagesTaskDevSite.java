@@ -61,7 +61,7 @@ public class CheckArticleImagesTaskDevSite extends Task {
 			try {
 				while ((line = in.readLine()) != null) {
 					List<String> newErrors = CheckImageUtil.checkImgSrc(
-						line, _article, in.getLineNumber(), dirsUp);
+						line, _article, in.getLineNumber(), dirsUp, _imagedir);
 
 					if (!newErrors.isEmpty()) {
 						errors.addAll(newErrors);
@@ -99,6 +99,11 @@ public class CheckArticleImagesTaskDevSite extends Task {
 		_docdir = docdir;
 	}
 
+	public void setImagedir(String imagedir) {
+		_imagedir = imagedir;
+	}
+
 	private String _docdir;
 	private String _article;
+	private String _imagedir = "images";
 }

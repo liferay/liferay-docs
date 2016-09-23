@@ -20,8 +20,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.liferay.markdown.converter.factory.MarkdownConverterFactoryUtil;
-import com.liferay.markdown.converter.MarkdownConverter;
+import com.liferay.knowledge.base.markdown.converter.factory.MarkdownConverterFactoryUtil;
+import com.liferay.knowledge.base.markdown.converter.MarkdownConverter;
 
 public class MarkdownToHtmlMain {
 

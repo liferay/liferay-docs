@@ -108,6 +108,19 @@
 		</java>
 	</target>
 
+	<target name="article-to-html-dxp" depends="prepare, check-article-images-dxp" description="Converts a single Markdown DXP article to an HTML file.">
+		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
+		<java
+			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${article}"/>
+			<arg value="${build.dir}/${article}.html"/>
+		</java>
+	</target>
+
 	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
 		<java
 			classname="com.liferay.documentation.util.CheckHeadersTask"
@@ -162,7 +175,12 @@
 	</target>
 
 	<target name="check-article-images" description="Verifies all images referenced in a single Markdown article.">
-		<checkarticleimgssite docdir="${doc.dir}" article="${article}">
+		<checkarticleimgssite docdir="${doc.dir}" article="${article}" imagedir="images">
+		</checkarticleimgssite>
+	</target>
+
+	<target name="check-article-images-dxp" description="Verifies all images referenced in a single Markdown article.">
+		<checkarticleimgssite docdir="${doc.dir}" article="${article}" imagedir="images-dxp">
 		</checkarticleimgssite>
 	</target>
 
@@ -224,6 +242,22 @@
 			</java>
 	</target>
 
+	<target name="compare-portal-source" depends="prepare" description="Generates reports comparing a Liferay 6 source directory (-DoldDir) to a Liferay 7+ source directory (-DnewDir).">
+		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
+		<property name="removedClassesFile" value="${build.dir}/removed-classes.html"/>
+		<java
+			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${oldDir}"/>
+			<arg value="${newDir}"/>
+			<arg value="${movedClassesFile}"/>
+			<arg value="${removedClassesFile}"/>
+		</java>
+	</target>
+
 	<target name="compare-with-older-branch" description="Compares your current branch with an older branch, specified by -Dolder.branch=someOlderBranch.">
 		<java
 			classname="com.liferay.documentation.util.GitCompare"
@@ -274,8 +308,7 @@
 		<mkdir dir="${temp.dir}/images"/>
 		<copy todir="${temp.dir}">
 			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
-				<include name="images/**/*.png"/>
-				<include name="images/**/*.jpg"/>
+				<include name="images/**"/>
 			</fileset>
 		</copy>
 	
@@ -310,10 +343,8 @@
 		<!-- Cannot use filtering for images (due to corruption), so must copy separately -->
 		<copy todir="${temp.dir}">
 			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
-				<include name="images/**/*.png"/>
-				<include name="images-dxp/**/*.png"/>
-				<include name="images/**/*.jpg"/>
-				<include name="images-dxp/**/*.jpg"/>
+				<include name="images/**"/>
+				<include name="images-dxp/**"/>
 			</fileset>
 		</copy>
 
@@ -406,11 +437,14 @@
 		<copy todir="${build.dir}/images" overwrite="true">
 			<fileset dir="./images"/>
 		</copy>
+		<mkdir dir="${build.dir}/images-dxp"/>
+		<copy todir="${build.dir}/images-dxp" overwrite="true">
+			<fileset dir="./images-dxp"/>
+		</copy>
 	</target>
 
 	<target name="prepare-dist" depends="check-images-site-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-site-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
-
 </project>

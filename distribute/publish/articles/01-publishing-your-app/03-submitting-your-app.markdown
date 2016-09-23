@@ -3,12 +3,13 @@
 Now that you have everything in order for publishing your app, you can start the
 Marketplace app submission process. 
 
-Go to your *User Profile* on [liferay.com](http://www.liferay.com). In the left
-side navigation panel of your profile page, there are links to pages related to
-using apps and developing apps. Links to *Apps* and *App Metrics* are listed in
-the *Development* section of the navigation panel. You'll use these links
-heavily during development, so you may want to bookmark this page too. Click
-*Apps* from the *Development* section to access your app development page.
+Go to your *Account Home* on 
+[liferay.com](http://www.liferay.com). 
+In the left side navigation panel of your profile page, there are links to pages 
+related to using apps and developing apps. Links to *Apps* and *App Metrics* are 
+listed in the *Development* section of the navigation panel. You'll use these 
+links heavily during development, so you may want to bookmark this page too. 
+Click *Apps* from the *Development* section to access your app development page. 
 
 ![Figure 1: Your app development page lists the apps you've developed and enables you to add new apps for publishing to the Marketplace.](../../images/marketplace-my-app-manager.png) 
 
@@ -91,9 +92,10 @@ do so here.
 
 **Security:** If your app does *not* use Liferay's PACL Security Manager, check
 the appropriate box. Otherwise, make sure to enable the security manager in your
-app by including the setting `security-manager-enabled=true` in your
+app by including the setting `security-manager-enabled=true` in the
 [`liferay-plugin-package.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
-file. 
+file in your WAR files and specify a `OSGI-INF/permissions.perm` file in your
+module JAR files. 
 
 **Tags:** A set of descriptive words that categorize your app. These tags are
 free-form and can help potential purchasers find your app through keyword
@@ -106,13 +108,6 @@ for detailed requirements for tags.
 **EULA:** You can use the default end user license agreement (EULA) or provide
 your own. There's a link to the minimum terms which custom EULAs must satisfy.
 
-**Liferay Only:** If you're publishing a CE-only or EE-only app, select 
-*CE Only* or *EE Only* in the *Product Type* selector. If you're providing an
-app that runs on both CE and EE, just flag the *Liferay EE Plugin* check box. If
-you're uploading a bug fix or would like to replace a previous version of your
-app, specify the app entry IDs of the apps to be replaced by the new app in the
-*Supercedes App Entry IDs* field.
-
 Remember to visit the articles
 [Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)
 and
@@ -124,33 +119,24 @@ for uploading your app's files.
 
 ## Upload Your App's Plugin Files [](id=upload-your-apps-plugin-files)
 
-On this screen, you must specify the version of your app and upload its plugin
-files. The article
-[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)
-guided you in planning your app's versioning scheme. And article
-[Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app)
-helped you determine your app's plugin files to upload.  
+On this screen, you must specify your app's version and upload your app's files. 
+Note that the article 
+[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution) 
+helps you plan your app's versioning scheme. Likewise, the article 
+[Preparing Your App](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app) 
+helps you determine which files to upload. 
 
-Upload the different sets of plugin files (variations) to support the different
-Liferay versions you're targeting. You must upload at least one plugin file
-before advancing beyond this screen, so click the *Browse* button and select the
-plugins that comprise your app. Each time you add plugins to the list, they
-begin uploading automatically and their compatibility information is scanned. 
+To start uploading, click *Browse* and select the files that make up your app. 
+Each time you add a file, it automatically begins to upload and its 
+compatibility information is scanned. You must upload at least one file before 
+advancing beyond this screen. Once the files are successfully uploaded, a check 
+mark appears next to each plugin, and the plugins are displayed based on their 
+compatibility information. 
 
-![Figure 3: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
+![Figure 3: Specify a set of files for each Liferay version you wish to support.](../../images/marketplace-app-version-and-upload-files.png) 
 
-As a more complicated example, consider an app that consists of a hook and a
-portlet. The portlet works across all Liferay releases, but the hook is built
-separately for CE and EE. In this case, you would upload 3 plugins that make up
-the app: one portlet plugin for all releases, one hook plugin for CE, and one
-hook plugin for EE. Once the files are uploaded, a check mark appears next to
-each plugin, and the plugins are displayed based on their compatibility
-information. This indicates that the files were successfully uploaded. The
-portlet plugin is automatically copied for use in both the EE and CE variations,
-even though you only uploaded the portlet plugin once. 
-
-If you selected *Free* for your app pricing, click *Next* to advance to the
-final screen. If you selected *Paid*, you'll be presented with additional
+If you selected *Free* for your app pricing, click *Next* to advance to the 
+final screen. If you selected *Paid*, you'll be presented with additional 
 options for licensing and pricing your app. 
 
 ## Creating Your Licensing and Pricing Model [](id=creating-your-licensing-and-pricing-model)
@@ -234,4 +220,4 @@ Once you are satisfied, click *Submit for Review*.
 At this point, the Liferay Marketplace staff starts to review your app and test
 it. If you need to make changes to your app during its review or if you're
 curious about the rigors of the review process, make sure to read the next
-section of this guide. 
+section of this guide.

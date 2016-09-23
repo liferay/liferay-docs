@@ -61,7 +61,7 @@ If there are any templates for the definition, you'll see them listed. To edit,
 copy, delete, or configure permissions for the definition, open its Actions
 menu by clicking the vertical ellipsis icon.
 
-![Figure 2: Manage all the templates for a data definition from the Manage Data Definitions section of the Dynamic Data Lists Portlet.](../../../images/ddl-template-window.png)
+![Figure 2: Manage all the templates for a data definition from the Manage Data Definitions section of the Dynamic Data Lists Portlet.](../../../images/ddl-definition-manage-templates.png)
 
 If no templates have been created for a definition, you can create new ones. See
 the next sections on Creating Form Templates and Creating Display Templates for

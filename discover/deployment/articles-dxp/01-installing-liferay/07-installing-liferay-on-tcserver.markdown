@@ -1,4 +1,4 @@
-# Installing Liferay on tc Server
+# Installing Liferay on tc Server [](id=installing-liferay-on-tc-server)
 
 The easiest way to get Liferay running on tc Server is to [download a bundle](https://web.liferay.com/group/customer/downloads/portal/product). If
 that's not an option, you can install Liferay onto tc Server. In addition to a
@@ -29,7 +29,7 @@ Liferay-specific folders:. `data`, `deploy`, `licenses`, and `osgi` folders.
 
 $$$
 
-## Installing Liferay Dependencies
+## Installing Liferay Dependencies [](id=installing-liferay-dependencies)
 
 Liferay depends on some additional JARs that aren't included with tc Server by
 default. There are even more JARs that you'd find in a Liferay bundle
@@ -95,7 +95,7 @@ Liferay includes an OSGi runtime. Extract the OSGi ZIP file that you downloaded
 and copy the `osgi` folder to your Liferay Home folder. The `osgi` folder
 contains many required JAR files and a few configuration files.
 
-## Configuring tc Server
+## Configuring tc Server [](id=configuring-tc-server)
 
 There are a few configuration edits to make so Liferay runs well on tc Server.
 All of these configuration changes should be made in your tc Server runtime
@@ -152,7 +152,7 @@ Open `conf/server.xml` and make sure the `Connector` tag includes setting the
         wrapper.java.additional.11="-Dfile.encoding=UTF-8"
 
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 The easiest way to handle your database configuration is to let Liferay manage
 your data source. If you want to use Liferay's built-in data source, you can
@@ -188,7 +188,7 @@ credentials.
 
 Your data source is now configured. Next set up the mail session.
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 As with database configuration, the easiest way to handle mail configuration is
 to let Liferay handle your mail session. If you want to use Liferay's built-in
@@ -222,7 +222,7 @@ own.
 Your mail session is configured. Next, you'll make sure Liferay can 
 access your mail session and database.
 
-## Configuring a Database and Mail Session
+## Configuring a Database and Mail Session [](id=configuring-a-database-and-mail-session)
 
 In this section you'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
@@ -240,7 +240,7 @@ to the `portal-ext.properties` file in your *Liferay Home*.
 Before you deploy Liferay, you should configure a Portal Access Control List
 (PACL).
 
-## Enabling PACL
+## Enabling PACL [](id=enabling-pacl)
 
 To enable PACL, you need to enable Tomcat’s security manager. Make sure
 `$TCSERVER_INSTANCE_HOME/conf/catalina.policy` specifies the permissions
@@ -257,7 +257,7 @@ following code into the `CATALINA_OPTS` variable (inside quotation marks):
 
 Now you have PACL enabled and configured for your portal.
 
-## Deploying Liferay
+## Deploying Liferay [](id=deploying-liferay)
 
 Now you're ready to deploy Liferay using your Liferay WAR file.
 

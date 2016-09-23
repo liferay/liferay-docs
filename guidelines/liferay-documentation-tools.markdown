@@ -170,6 +170,14 @@ Liferay.com. Then, remove the newer header ID from the other header and run ...
 Below are some tips for some constructs that are unique to Liferay
 documentation. 
 
+### Spaces vs. Tabs
+
+Our standard is the opposite of Liferay's code: we use spaces instead of tabs.
+Why? Because lists and code blocks in Markdown are much easier to control using
+spaces instead of tabs. Please see the documentation for Markdown for further
+information on this, or we provide a good example of it when we talk about lists
+below. 
+
 ### Figures 
 
 Previously, Open/LibreOffice added the words: *Illustration #* to captions when

@@ -82,7 +82,7 @@ The app review process consists of **Two Major Phases**:
 					<a href="/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app#marketplace-app-metadata-guidelines">
 					review your app's metadata</a>
 					to confirm that titles, descriptions, images, etc. are
-					appropriate. 
+					appropriate.
 				</p>
 			</td>
 			<td class="second-column"> ~1 week </td>
@@ -122,9 +122,12 @@ be tested against these environments prior to submission. If technical reasons
 prevent your app from running on certain platforms (e.g., app server-specific
 issues), please specify your app's requirements in the app description and
 documentation so that our review team can test accordingly and exclude certain
-test conditions, if necessary. 
+test conditions, if necessary.
 
 <style>
+table td {
+	vertical-align: top;
+}
 .lego-image {
 	max-height: 100%;
 	max-width: 100%;
@@ -153,7 +156,7 @@ test conditions, if necessary.
 .test-environments-table .third-column {
 	border-right: none;
 }
-</style> 
+</style>
 <div class="lego-article test-environments-table" id="article-33460919">
 <div class="lego-article-content max-960">
 <div class="aui-helper-clearfix lego-section section-1" >
@@ -178,13 +181,13 @@ test conditions, if necessary.
 			<td class="">
 				<ul>
 					<li> QA'ed against Liferay Portal version specified in app
-						submission up to Liferay Portal 6.2. </li>
+						submission up to Liferay Portal 7. </li>
 				</ul>
 			</td>
 			<td class="third-column">
 				<ul>
 					<li> QA'ed against Liferay Portal version specified in app
-						submission up to Liferay Portal 6.2. </li>
+						submission up to Liferay Portal 7. </li>
 				</ul>
 			</td>
 		</tr>
@@ -204,42 +207,80 @@ test conditions, if necessary.
 		<tr>
 			<td class="first-column"> Database </td>
 			<td class="">
+				<span>For versions up to Liferay 6.2</span>
 				<ul>
 					<li> MySQL 5.5.x </li>
+				</ul>
+
+				<span>For Liferay 7.0 CE and DXP</span>
+				<ul>
+					<li> MySQL 5.6.x </li>
 				</ul>
 			</td>
 			<td class="third-column">
 				<ul>
-					<li> MySQL 5.5.x </li>
+					<span>For versions up to Liferay 6.2</span>
+					<ul>
+						<li> MySQL 5.5.x </li>
+					</ul>
+
+					<span>For Liferay 7.0 CE and DXP</span>
+					<ul>
+						<li> MySQL 5.6.x </li>
+					</ul>
 				</ul>
 			</td>
 		</tr>
 		<tr>
 			<td class="first-column"> Application Server* </td>
 			<td class="">
+				<span>For versions up to Liferay 6.2</span>
 				<ul>
 					<li> Tomcat 7 </li>
 					<li> Glassfish 3.1 </li>
 					<li> JBoss AS 7.1 </li>
 				</ul>
+
+				<span>For Liferay 7.0 CE and DXP</span>
+				<ul>
+					<li> Tomcat 8 </li>
+				</ul>
 			</td>
 			<td class="third-column">
 				<ul>
 					<li> Tomcat 7 </li>
+				</ul>
+
+				<span>For Liferay 7.0 CE and DXP</span>
+				<ul>
+					<li> Tomcat 8 </li>
 				</ul>
 			</td>
 		</tr>
 		<tr>
 			<td class="first-column"> JDK </td>
 			<td class="">
+				<span>For versions up to Liferay 6.2</span>
 				<ul>
 					<li> Oracle JDK 6 </li>
 					<li> Oracle JDK 7 </li>
 				</ul>
+
+				<span>For Liferay 7.0 CE and DXP</span>
+				<ul>
+					<li>Oracle JDK 8</li>
+				</ul>
 			</td>
 			<td class="third-column">
+				<span>For versions up to Liferay 6.2</span>
 				<ul>
 					<li> Oracle JDK 6 </li>
+					<li> Oracle JDK 7 </li>
+				</ul>
+
+				<span>For Liferay 7.0 CE and DXP</span>
+				<ul>
+					<li>Oracle JDK 8</li>
 				</ul>
 			</td>
 		</tr>
@@ -247,7 +288,7 @@ test conditions, if necessary.
 			<td class="first-column"> Browser </td>
 			<td class="">
 				<ul>
-					<li> N/A </li>
+					<li> Firefox </li>
 				</ul>
 			</td>
 			<td class="third-column">
@@ -266,7 +307,7 @@ test conditions, if necessary.
 
 **Important:** Unless specified otherwise in your app description or
 documentation, your app must run under all specified app servers in order to be
-approved. 
+approved.
 
 You'll receive an email confirmation, once your app is approved by Marketplace
 staff. And the moment your app is approved, it is made available on Marketplace.

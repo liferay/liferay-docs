@@ -37,7 +37,7 @@ download the required JARs from third-parties, as described below.
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
 3. Download the
-   [com.liferay.registry.api.jar](https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api)
+   [com.liferay.registry.api.jar](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
    JAR and insert it into the same folder. 
 
 4. Create the file `module.xml` in the
@@ -380,10 +380,6 @@ tutorial to learn how to configure Liferay plugin access to resources.
    `$JBOSS_HOME/standalone/deployments/ROOT.war`.
 
 2. Unzip the Liferay `.war` file into the `ROOT.war` folder.
-
-3. Download the
-   [tomcat-juli.jar](http://www.java2s.com/Code/JarDownload/tomcat/tomcat-juli.jar.zip)
-   file and insert it into your `ROOT.war/WEB-INF/lib` folder.
 
 3. To trigger deployment of `ROOT.war`, create an empty file named
    `ROOT.war.dodeploy` in  your `$JBOSS_HOME/standalone/deployments/` folder.
