@@ -155,7 +155,7 @@ Now that you have all the background information you need, it's time to show you
 what a project looks like and how all of these concepts work themselves out in
 reality. You'll see examples of all the above concepts in action. Only the code
 and the structure of the project will be shown: to create a real project, check
-out the [tooling](/develop/tutorials/7-0/tooling) tutorials. 
+out the [tooling](/develop/tutorials/-/knowledge_base/7-0/tooling) tutorials. 
 
 This project is very simple: all it does is print out a string to the console.
 This string is called a greeting. 
@@ -459,8 +459,8 @@ for you to learn more.
 
 [BLADE CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
 
-[Creating A Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+[Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
 
-[Migrating A Liferay 6 Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-liferay-6-application)
+[Planning a Plugin Upgrade to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)
 
 

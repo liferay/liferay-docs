@@ -19,7 +19,7 @@ command:
 
 This command builds a workspace and automatically adds and configures your
 current Plugins SDK environment for use inside the workspace. See the
-[Using a Plugins SDK From Your Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+[Using a Plugins SDK From Your Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace#using-a-plugins-sdk-from-your-workspace)
 section for more information on how to use a Plugins SDK from within a
 workspace.
 
