@@ -19,13 +19,13 @@ Here's what's involved:
 
 - **Specifying the schema version**
 
-- **Specifying to wait for upgrade completion**
-
 - **Declaring dependencies**
 
 - **Writing upgrade steps**
 
 - **Writing the registrator**
+
+- **Waiting for upgrade completion**
 
 It's time to get started. 
 
@@ -37,35 +37,13 @@ header for a module whose new schema is version `1.1.0`:
 
         Liferay-Require-SchemaVersion: 1.1.0
 
+**Important**: Modules that use [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+rely on a `Liferay-Require-SchemaVersion` header  to be present in order to
+trigger upgrade process execution. 
+
 **Important**: If no `Liferay-Require-SchemaVersion` header is specified,
 @product@ considers the `Bundle-Version` header value to be the database schema
 version.
-
-Next, you must make sure the module's upgrade is executed before it's used. 
-
-## Specifying to Wait for Upgrade Completion [](id=specifying-to-wait-for-upgrade-completion)
-
-Modules that don't use [Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
-should wait for the upgrade steps to be executed. By adding an `@Reference`
-annotation that targets the module and its latest schema version, you can ensure
-the upgrade is executed before the module is used. 
-
-The `@Reference` annotation must include a `target` attribute with the following
-settings:
-
-- `release.bundle.symbolic.name`: module's bundle symbolic name
-- `release.schema.version`: module's current schema version
-
-For example, the `com.liferay.comment.page.comments.web` module's  [`PageCommentsPortlet` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/comment/com.liferay.comment.page.comments.web/com/liferay/comment/page/comments/web/internal/portlet/PageCommentsPortlet.html)
-assures upgrading to schema version `1.0.0` by defining the following reference
-method:
-
-    @Reference(
-        target = "(&(release.bundle.symbolic.name=com.liferay.comment.page.comments.web)(release.schema.version=1.0.0))",
-        unbind = "-"
-    )
-    protected void setRelease(Release release) {
-    }
 
 Next, you'll specify your upgrade's dependencies. 
 
@@ -380,6 +358,43 @@ method's `@Reference` annotation declares that the registrator class depends on
 and must wait for the `SettingsFactory` service to be available in the run time
 environment. The annotation's attribute setting `unbind = "-"` indicates that
 the registrator class has no method for unbinding the service. 
+
+Next, you must make sure the module's upgrade is executed before making its
+services available.
+
+## Waiting for Upgrade Completion [](id=waiting-for-upgrade-completion)
+
+Before module services that access the database are used, the database should be
+upgraded to the latest database schema.
+
+As a convenience, configuring the Bnd header `Liferay-Require-SchemaVersion` to
+the latest schema version is all that's required to assure the database is
+upgraded for [Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+services.
+
+For all other services, the developer can assure database upgrade by specifying
+an `@Reference` annotation that targets the containing module and its latest
+schema version.
+
+Here are the target's required attributes:
+
+- `release.bundle.symbolic.name`: module's bundle symbolic name
+- `release.schema.version`: module's current schema version
+
+For example, the `com.liferay.comment.page.comments.web` module's [`PageCommentsPortlet` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/comment/com.liferay.comment.page.comments.web/com/liferay/comment/page/comments/web/internal/portlet/PageCommentsPortlet.html)
+assures upgrading to schema version `1.0.0` by defining the following reference:
+
+    @Reference(
+        target = "(&(release.bundle.symbolic.name=com.liferay.comment.page.comments.web)(release.schema.version=1.0.0))",
+        unbind = "-"
+    )
+    protected void setRelease(Release release) {
+    }
+
+Dependencies between OSGi services can reduce the number of service classes in
+which upgrade reference annotations are needed. For example, there's no need to
+add an upgrade reference in a dependant service, if the dependency already
+refers to the upgrade. 
  
 Now you know how to create data upgrades for all your app's modules. You specify
 the new data schema version in the `bnd.bnd` file, add a reference to your
