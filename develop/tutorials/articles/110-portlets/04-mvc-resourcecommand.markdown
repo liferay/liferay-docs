@@ -47,7 +47,7 @@ property to `MVCResourceCommand.class`:
     }
 
 As a real-world example, consider the Login Portlet's 
-[`CaptchaMVCResourceCommand` class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/portlet/action/CaptchaMVCResourceCommand.java): 
+[`CaptchaMVCResourceCommand` class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/internal/portlet/action/CaptchaMVCResourceCommand.java): 
 
     @Component(
         property = {
