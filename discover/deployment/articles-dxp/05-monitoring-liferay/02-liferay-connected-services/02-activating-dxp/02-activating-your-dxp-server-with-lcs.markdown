@@ -90,8 +90,7 @@ Here's a full description of what a connected LCS client app displays:
 - **Project Home:** This link takes you to this server's LCS project. 
   The project home in LCS is also called the *dashboard*. 
 - **Environment:** This link takes you to this server's LCS environment.
-- **Server Dashboard:** This link takes you to the server on LCS.
-- **Disconnect:** Disconnects this DXP instance from LCS. 
+- **Server Dashboard:** This link takes you to the server on LCS. 
 
 ![Figure 5: The server is connected to LCS.](../../../../images-dxp/lcs-server-connected.png)
 
