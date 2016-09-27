@@ -190,11 +190,11 @@ with their target schema versions.
 ## Writing the Upgrade Step Registrator [](id=writing-the-upgrade-step-registrator)
 
 A module's upgrade step registrator notifies Liferay's upgrade framework of all
-the upgrade steps for update the module data for each schema version. It
+the upgrade steps to update the module data for each schema version. It
 specifies the module's entire upgrade process. The upgrade framework executes
 the upgrade steps to update the current module data to the latest schema.  
 
-For example, the upgrade step registrator class `MyCustomModuleUpgrade` below,
+For example, the upgrade step registrator class `MyCustomModuleUpgrade` (below)
 registers upgrade steps incrementally for each schema version (past and
 present): 
 
@@ -240,8 +240,8 @@ the upgrade steps.
 
 ![Figure 1: In a registrator class, the developer specifies a registration for each schema version upgrade. The upgrade steps handle the database updates.](../../images/data-upgrade-module-upgrade-architecture.png)
 
-Using the previous example `MyCustomModuleUpgrade` registrator class listing,
-let's consider registrator details. 
+The previous example `MyCustomModuleUpgrade` registrator class listing shows
+how this works. . 
 
 The registrator class declares itself to be an OSGi Component of service type
 `UpgradeStepRegistrator.class`. The `@Component` annotation registers the class
