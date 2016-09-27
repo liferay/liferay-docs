@@ -19,7 +19,7 @@ boundaries and relationships could be clearly defined.
 to provide a great developer experience.
 
 It wasn't long before Liferay discovered that OSGi, and its supporting
-tools/technologies, fit the the bill!
+tools/technologies, fit the bill!
 
 In this tutorial, you'll learn how Liferay 7 uses OSGi to meet these objectives.
 And equally important, you'll find out how easy and fun modular development can
@@ -37,17 +37,20 @@ plugins and modules, and explains the benefits of using modules.
 dependencies among modules and combine modules to create applications. Since
 leveraging dependencies provides huge benefits, it warrants its own section.
 
-<!-- Uncomment when these sections are added. Jim
 3. **OSGi Services and Dependency Injection**: OSGi provides a very powerful
 concept called OSGi Services (also known as microservices). Together with the
 Declarative Services standard, it provides a clean way to inject dependencies
 (similar to Spring DI) in a dynamic environment. It also offers an elegant
 extensibility model that Liferay 7 leverages extensively.
 
+<!-- Uncomment when these sections are added. Jim
 4. **Dynamic Deployment**: Module deployment is managed by Liferay 7 (not the
 application server). This section demonstrates how to use dynamic deployment to
 allow for more dynamicity and speed.
 -->
+
+After investigating these topics, you'll get hands-on experience creating and
+deploying an OSGi module. 
 
 Let's start with learning how modules are better than traditional plugins.
 
@@ -170,11 +173,12 @@ however you like. You're free to use any directory structure conventions, such
 as those used in Maven or by your development team. And you can use any build
 tool, such as Gradle or Maven, to manage dependencies.
 
-Liferay Workspace is an environment for managing module projects (and theme
-projects). It provides Gradle build scripts for developing on Liferay. It can be
-used from the command line or from within Liferay IDE and Developer Studio. Note
-also, these IDE/Studio provide plugins for Gradle, Maven, and BndTools. Tooling
-details are covered later in this series.
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+is an environment for managing module projects (and theme projects). It provides
+Gradle build scripts for developing on Liferay. It can be used from the command
+line or from within [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+and Developer Studio. Note also, these IDE/Studio provide plugins for Gradle,
+Maven, and BndTools. Tooling details are covered later in this series.
 
 Now that you're familiar with the module structure and manifest, it's time to
 explore how to build modules.
@@ -359,14 +363,200 @@ to design, implement, and test the modules independently.
 As you develop app-centered modules, you can consider bundling them with your
 app (e.g., as part of a Liferay Marketplace app). Including them as part of the
 app is a convenience for the consumer. By bundling a module with an app,
-however, you're committing to the the app's release schedule. In other words,
-you can't directly deploy a new version of a module for the app--you must
-release it as part of the app's next release.
+however, you're committing to the app's release schedule. In other words, you
+can't directly deploy a new version of a module for the app--you must release it
+as part of the app's next release.
 
 In this section, you've learned how dependencies and Semantic Versioning work.
 You've considered guidelines for modularizing existing apps and creating
-modular-based apps.
-<!--Uncomment this transition when next section is ready. Jim
-Now, to add to the momentum around OSGi and modularity,
-you'll explore OSGi Services and dependency injection using OSGi Declarative Services.
--->
+modular-based apps. Uncomment this transition when next section is ready. Now,
+to add to the momentum around OSGi and modularity, you'll explore OSGi Services
+and dependency injection using OSGi Declarative Services.
+
+## OSGi Services and Dependency Injection with Declarative Services [](id=osgi-services-and-dependency-injection-with-declarative-services)
+
+In Liferay 7, the OSGi framework registers objects as *services*. Each service
+offers functionality and can leverage functionality other services provide. The
+OSGi Services model supports a collaborative environment for objects.
+
+Declarative Services (DS) provides a service component model on top of the OSGi
+Services model. A *Service Component* is a class that implements or extends a
+service class. Other OSGi Service classes can refer to the service class to use
+the Service Component. And the Service Component Runtime (SCR) handles
+registration, lookup, and binding of Service Components to classes that refer to
+them.
+
+Here's how the "magic" happens:
+
+1.  **Service component registration** - On installing a module that contains a
+    Service Component, the SCR creates a component configuration that associates
+    the Service Component with its specified service type and stores it in a
+    service registry.
+
+2.  **Service reference handling** - On installing a module that contains a class
+    that references a service type, the SCR searches the registry for a
+    component configuration that matches the service type. On finding a matching
+    component configuration, the SCR creates an instance of the Service
+    Component class and binds it to the referring service.
+
+It's publish, find, and bind at its best!
+
+How does a developer use DS to register and bind service components? Does it
+involve creating XML files? No, it's much easier than that. The developer uses
+two annotations: `@Component` and `@Reference`.
+
+-  `@Component` - defines the class as a Service Component--a provider of a
+    particular service class.
+
+-  `@Reference` - enables the referring class to be injected with a particular
+    service class.
+
+The `@Component` annotation makes the class an OSGi component. Defining a
+`service` property in the annotation allows other components to reference it by
+type.
+
+For example, the following class is a Service Component of type `SomeApi.class`.
+
+    @Component(
+        service = SomeApi.class
+    )
+    public class Service1 implements SomeApi {
+
+       ...
+    }
+
+On deploying this class's module, the SCR creates a Component Configuration that
+associates the class with the service type `SomeApi`.
+
+Specifying a service reference is easy too. The `@Reference` annotation can be
+applied to a field of the desired service class type. 
+
+    @Reference
+    SomeApi _someApi;
+
+On deploying this class's module, the SCR finds a Service Component of the class
+type `SomeApi` and binds the service component to the consumer.
+
+The SCR stands ready to pair Service Components with any service classes that
+reference them. For each referencing service class, the SCR creates an instance
+of the Service Component and binds it to the referencing service.
+
+As an improvement over dependency injection with Spring, OSGi Declarative
+Services supports dynamic dependency injection. Developers can create and
+publish service components for other classes to use. Developers can update the
+components and even publish alternative component implementations for a service.
+Dynamicity is a powerful part of Liferay 7.
+
+## Example: Building an OSGi Module [](id=example-building-an-osgi-module)
+
+The previous sections explained some of the most important concepts for Liferay
+6 developers to understand about OSGi and modularity. Now, it's time to put this
+knowledge to practice by creating and deploying a module.
+
+The module will include a Java class that implements an OSGi service using
+Declarative Services. The project will use Gradle and Bnd, and can be built and
+deployed from within a [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+
+Here's the module project's anatomy:
+
+- `bnd.bnd`
+
+- `build.gradle`
+
+- `src/main/java/com/liferay/docs/service/MyService.java`
+
+On building the module JAR, Bnd will generate the module manifest automatically. 
+
+Here's the Java class:
+
+    package com.liferay.docs.service;
+
+    import org.osgi.service.component.annotations.Activate;
+    import org.osgi.service.component.annotations.Component;
+
+    @Component(
+        immediate = true,
+        service = MyService.class
+    )
+    public class MyService {
+
+        @Activate
+        void activate() throws Exception {
+
+            System.out.println("Activating " + this.getDescription());
+        }
+
+        public String getDescription() {
+
+            return this.getClass().getSimpleName();
+        }
+
+    }
+
+It contains these methods:
+
+-  `getDescription` - returns the class's name
+
+-  `activate` - prints the console message *Activating MyService*. The
+    `@Activate` annotation signals the OSGi runtime environment to invoke this
+    method on component activation.
+
+The `@Component` annotation defines the class as an OSGi service component. The
+following properties accompany specify its details:
+
+-  `service=MyService.class` - designates the component to be a service
+    component for registering under the type `MyService`. In this example, the
+    class implements a service of itself. Note, service components typically
+    implement services for interface classes.
+
+-  `immediate=true` - signals the Service Component Runtime to activate the
+    component immediately after the component's dependencies are resolved.
+
+The `bnd.bnd` file is next:
+
+    Bundle-SymbolicName: my.service.project
+    Bundle-Version: 1.0.0
+
+The `Bundle-SymbolicName` is the arbitrary name for the module. The module's
+version value `1.0.0` is appropriate.
+
+Bnd will generate the module's OSGi manifest to the file `META-INF/MANIFEST.MF`
+in the module's JAR. In this project, the JAR will be generated to the
+`build/libs/` folder.
+
+The last file to examine is the Gradle build file `build.gradle`:
+
+    dependencies {
+        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+    }
+
+Since the `MyService` class uses the `@Component` annotation, the project
+depends on the OSGi service component annotations module--Liferay Workspace
+module projects leverage its Gradle build infrastructure.
+
+Although this module project was created in a Liferay Workspace, it can easily
+be modified to use in other build environments. For simplicity, however, we'll
+use it in Liferay Workspace.
+
+Place the project files in a folder under the `modules/` folder (e.g.,
+`[Liferay_Workspace]/modules/my.service.project/`).
+
+To build the module JAR and deploy it to @product@, execute the `deploy` Gradle
+task:
+
+    ../../gradlew deploy
+
++$$$
+
+**Note**: If Blade is installed (recommended), Gradle can be executed by
+entering `blade gw` followed by a task name (e.g., `blade gw deploy`). For
+details on Blade commands, see [Blade CLI](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+
+$$$
+
+On deploying the module, the following message is printed to the server console:
+
+`Activating MyService`
+
+Congratulations! You've successfully built and deployed an OSGi module to
+@product@. 
