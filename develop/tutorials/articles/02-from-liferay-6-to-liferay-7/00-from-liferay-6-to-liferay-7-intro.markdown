@@ -11,7 +11,7 @@ old friend that's ready to stand by you and help you succeed in your projects.
 
 And then there's a major upgrade and everything changes. 
 
-This can be disheartening, as what was once now familiar seems alien, and what 
+This can be disheartening, as what was once familiar now seems alien, and what 
 once made you proficient now works differently. But we have good news for you. 
 Liferay 7 contains lots of improvements for developers; and this tutorial 
 series--or Learning Path--shows you how to make the best of them. You'll also 

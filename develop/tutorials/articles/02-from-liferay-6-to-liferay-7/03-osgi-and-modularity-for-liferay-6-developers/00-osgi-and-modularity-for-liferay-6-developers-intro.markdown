@@ -1,7 +1,7 @@
 # OSGi and Modularity for Liferay 6 Developers [](id=osgi-and-modularity-for-liferay-6-developers)
 
-To create a powerful reliable platform for developing modular applications,
-Liferay sought out a best-of-breed standards-based frameworks and technologies.
+To create a powerful, reliable platform for developing modular applications,
+Liferay sought out best-of-breed standards-based frameworks and technologies.
 It was imperative to not only meet demands for enterprise digital experiences
 but to also offer developers, both experienced with Liferay and new to Liferay,
 a clear and elegant way to create apps.
