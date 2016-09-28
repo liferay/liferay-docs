@@ -36,7 +36,7 @@ For instructions on using Marketplace, see
 version 153 or higher of the LCS client app. To determine the client version in 
 a Liferay instance already connected to LCS, navigate to *Liferay Connected 
 Services* under the *Apps* section of the *Control Panel*. The client version is 
-displayed under the *Disconnect* button. Also, if you use 
+displayed at the bottom of the app. Also, if you use 
 [environment tokens](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
 to connect, you should generate and use new tokens when upgrading the client 
 from versions 152 or lower to versions 153 or higher. 
@@ -81,25 +81,25 @@ ways:
     You must set the properties in the WAR file's `portlet-ext.properties` file. 
     Follow these steps to do so: 
 
-    1. In the LCS client's WAR file, open the 
-       `WEB-INF/classes/portlet-ext.properties` file. 
+    a. In the LCS client's WAR file, open the 
+        `WEB-INF/classes/portlet-ext.properties` file. 
 
-    2. Add the following properties at the end of `portlet-ext.properties` and 
-       set them to the appropriate values for your proxy: 
+    b. Add the following properties at the end of `portlet-ext.properties` and 
+        set them to the appropriate values for your proxy: 
    
             proxy.host.name=
             proxy.host.port=
 
-        If your proxy requires authentication, you should also add the following 
-        properties and set them to the appropriate values for your proxy. 
+       If your proxy requires authentication, you should also add the following 
+       properties and set them to the appropriate values for your proxy. 
 
             proxy.host.login=
             proxy.host.password=
 
-    3. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-       file. 
+    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
+        file. 
 
-    4. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
+    d. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
 
 Great! Now you're ready to deploy the client and register your Liferay instance 
 with LCS. 
@@ -196,8 +196,7 @@ Here's a full description of what a connected LCS client app displays:
 - **Project Home:** This link takes you to this server's LCS project. The 
   project home in LCS is also called the *dashboard*. 
 - **Environment:** This link takes you to this server's LCS environment.
-- **Server Dashboard:** This link takes you to the server on LCS.
-- **Disconnect:** Disconnects this Liferay instance from LCS. 
+- **Server Dashboard:** This link takes you to the server on LCS. 
 
 ![Figure 4.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
