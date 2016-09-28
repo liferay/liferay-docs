@@ -37,13 +37,21 @@ header for a module whose new schema is version `1.1.0`:
 
         Liferay-Require-SchemaVersion: 1.1.0
 
++$$$
+
 **Important**: Modules that use [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 rely on a `Liferay-Require-SchemaVersion` header  to be present in order to
 trigger upgrade process execution. 
 
+$$$
+
++$$$
+
 **Important**: If no `Liferay-Require-SchemaVersion` header is specified,
 @product@ considers the `Bundle-Version` header value to be the database schema
 version.
+
+$$$
 
 Next, you'll specify your upgrade's dependencies. 
 
@@ -81,7 +89,7 @@ you can use its `runSQL` and `runSQLTemplate*` methods to execute your SQL
 commands and SQL DDL, respectively. 
 
 If you want to create, modify, or drop tables or indexes by executing DDL
-sentences from a SQL file, make sure to use ANSI SQL only. Doing this assures
+sentences from an SQL file, make sure to use ANSI SQL only. Doing this assures
 the commands work on different databases.
 
 If you need to use non-ANSI SQL, it's best to write it in the [`UpgradeProcess` class's](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html)
@@ -131,8 +139,8 @@ For example, consider the journal-service module's [`UpgradeSchema` upgrade step
 
     }
 
-The above example class `UpgradeSchema`, uses the `runSQLTemplateString` method
-to execute ANSI SQL DDL from a SQL file. To modify column names and column
+The above example class `UpgradeSchema` uses the `runSQLTemplateString` method
+to execute ANSI SQL DDL from an SQL file. To modify column names and column
 types, it uses the `alter` method and [`UpgradeProcess`'s](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html)
 `UpgradeProcess.AlterColumnName` and `UpgradeProcess.AlterColumnType` inner
 classes as token classes.
@@ -241,7 +249,7 @@ the upgrade steps.
 ![Figure 1: In a registrator class, the developer specifies a registration for each schema version upgrade. The upgrade steps handle the database updates.](../../images/data-upgrade-module-upgrade-architecture.png)
 
 The previous example `MyCustomModuleUpgrade` registrator class listing shows
-how this works. . 
+how this works. 
 
 The registrator class declares itself to be an OSGi Component of service type
 `UpgradeStepRegistrator.class`. The `@Component` annotation registers the class
@@ -320,7 +328,8 @@ for that service's availability. To specify that your upgrade is to be executed
 only after that service is available, add an OSGi reference to that service. 
 
 For example, the [`WikiServiceUpgrade` registrator class](https://github.com/liferay/liferay-portal/blob/7.0.1-ga2/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/upgrade/WikiServiceUpgrade.java)
-references the `SettingsFactory` class; upgrade step class [`UpgradePortletSettings` upgrade step](https://github.com/liferay/liferay-portal/blob/7.0.1-ga2/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/upgrade/v1_0_0/UpgradePortletSettings.java)
+references the `SettingsFactory` class. The upgrade step class 
+[`UpgradePortletSettings` upgrade step](https://github.com/liferay/liferay-portal/blob/7.0.1-ga2/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/upgrade/v1_0_0/UpgradePortletSettings.java)
 uses it. Here's the `WikiServiceUpgrade` class:
 
 	@Component(immediate = true, service = UpgradeStepRegistrator.class)
@@ -393,7 +402,7 @@ assures upgrading to schema version `1.0.0` by defining the following reference:
 
 Dependencies between OSGi services can reduce the number of service classes in
 which upgrade reference annotations are needed. For example, there's no need to
-add an upgrade reference in a dependant service, if the dependency already
+add an upgrade reference in a dependent service, if the dependency already
 refers to the upgrade. 
  
 Now you know how to create data upgrades for all your app's modules. You specify
