@@ -84,13 +84,9 @@ dependencies.
     extension classes that provide helpful utilities that you can extend. For
     example, your rule can extend the
     [BaseJSPRule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
-    class to support generating your rule's UI using JSPs. This tutorial
-    demonstrates implementing the UI using a JSP, and assumes the
-    [Rule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
-    interface is implemented by extending the
-    [BaseJSPRule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
-    class. For more
-    information on choosing a UI for your rule, see the
+    class to support generating your rule's UI using JSPs. This tutorial demonstrates implementing the UI using a JSP,
+    and assumes the `Rule` interface is implemented by extending the `BaseJSPRule` class. For more information on
+    choosing a UI for your rule, see the
     [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-rules#selecting-a-ui-technology)
     section.
 
