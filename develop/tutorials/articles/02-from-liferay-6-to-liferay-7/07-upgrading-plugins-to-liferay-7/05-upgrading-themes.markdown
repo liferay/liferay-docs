@@ -45,7 +45,7 @@ task. Here's what the Gulp Task does:
 
 The Gulp task makes a best effort to upgrade CSS code that is easy to identify
 and straightforward to update. It suggests modifications to parts of the
-reamining CSS code. 
+remaining CSS code. 
 
 Here are the steps for using the theme upgrade Gulp task:
 
@@ -53,7 +53,7 @@ Here are the steps for using the theme upgrade Gulp task:
 
         gulp upgrade
 
-    Here's what it does intially:
+    Here's what it does initially:
     
     - Copies the existing theme to a folder called `backup`
     - Creates core code for generating theme base files
@@ -78,10 +78,12 @@ version 2 to 3. For other areas of the code it suspects might need updating, it
 logs suggestions (covered later). The task also points out breaking changes that
 may affect theme templates. 
 
-A *breaking change* is a code modification between between versions of @product@
-that might be incompatible with existing plugins, including themes. Liferay kept
-such changes to a minimum, but they were unavoidable in some cases. The [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
-reference document explains all of them. The theme upgrade Gulp task and the [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
+A *breaking change* is a code modification between versions of @product@ that 
+might be incompatible with existing plugins, including themes. Liferay kept such 
+changes to a minimum, but they were unavoidable in some cases. The 
+[Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
+reference document explains all of them. The theme upgrade Gulp task and the 
+[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
 in Liferay IDE and Liferay Developer Studio, identify and address these changes.
 
 The `gulp upgrade` task jumpstarts the upgrade process, but it doesn't complete
@@ -97,7 +99,7 @@ Updating the theme's Liferay version is a good first step.
 ## Updating a Theme's Liferay Version [](id=updating-a-themes-liferay-version)
 
 A theme's Liferay version must be updated to `7.0.0+`, for it to run on Liferay
-7. 
+7.
 
 1.  Open your `liferay-plugin-package.properties` file and change the
     `liferay-versions` property value to `7.0.0+`:
@@ -135,13 +137,14 @@ from Bootstrap 2 to Bootstrap 3 requires CSS classes variable changes. Lastly,
 the CSS responsiveness tokens have changed. Conforming to all these changes is
 part of the upgrade process.
 
-In this section, you'll update your theme's CSS. You can start with updating CSS
-file names for Sass.
+In this section, you'll update your theme's CSS so you can enjoy the UI 
+benefits. You can start with updating CSS file names for Sass.
 
 ### Updating CSS File Names for Sass [](id=updating-css-file-names-for-sass)
 
-Liferay 7 expects themes to use the Sass extension to CSS. Some of the CSS must
-be renamed to follow standard Sass file naming conventions. 
+Although Sass was available in Liferay 6.2, only Sass partial files followed the 
+Sass naming convention of `.scss`. Liferay 7 expects themes to use this naming 
+convention for all Sass files. Therefore, some of the CSS files must be renamed.
 
 +$$$
 
@@ -150,7 +153,7 @@ be renamed to follow standard Sass file naming conventions.
 $$$
 
 For each CSS file you've modified from the base theme, except `main.scss` and
-`aui.scss`, change its suffix from `.css` to `.sccs`. 
+`aui.scss`, change its suffix from `.css` to `.scss`. 
 
 Then, prepend an underscore (`_`) to the name of all Sass partial files. 
 
@@ -161,7 +164,6 @@ for a complete list of expected names for theme CSS files.
 
 Here are the Lunar Resort theme's modified CSS files with updated names:
 
-- `_diffs/`
     - `css/`
         - `_aui_variables.scss`
         - `_custom.scss`
@@ -170,7 +172,8 @@ Next, the CSS rules must be updated to use Bootstrap 3 syntax.
 
 ### Updating CSS Rules [](id=updating-css-rules)
 
-Liferay 7 uses Bootstrap 3's syntax for CSS rules. 
+Liferay 7 uses Bootstrap 3's syntax for CSS rules. This gives you access to all
+of Bootstrap 3's great features and improvements.
 
 If your theme does not use the Themes Generator, you can refer to the
 [Migrating from 2.x to 3.0 guide](http://getbootstrap.com/migration/#migrating-from-2x-to-30)
@@ -178,7 +181,7 @@ for updating CSS rules to Bootstrap 3.
 
 If your theme uses the Themes Generator and you executed the `gulp upgrade`
 task, its log reported CSS changes it made and changes for you to consider
-making manually. For example, here is part of the the `gulp upgrade` task log
+making manually. For example, here is part of the `gulp upgrade` task log
 for the Lunar Resort theme:
 
 	----------------------------------------------------------------
@@ -346,9 +349,9 @@ settings.
 
 ### Updating Font Awesome Icons [](id=updating-font-awesome-icons)
 
-Font Awesome icons are widely used throughout @product@ and are easy to use in
-themes. For example, the Lunar Resort theme uses Font Awesome icons in social
-media links. 
+Font Awesome icons are widely used throughout @product@ and are easy to include 
+in themes. For example, the Lunar Resort theme's design incorporates Font 
+Awesome icons in its social media links. 
 
 ![Figure 2: Font Awesome icons facilitate creating social media links for your site.](../../../images/lunar-resort-social-media-links.png)
 
@@ -378,11 +381,26 @@ In the next section, you'll address breaking changes for theme templates.
 
 ## Updating Theme Templates [](id=updating-theme-templates)
 
-Since Liferay 6.2, there have been a few breaking changes that you should be
-aware of in Liferay 7 that affect your theme templates. In Liferay 7 it is
-recommended that you use FreeMarker theme templates, as Velocity theme templates
-have been deprecated and are not compatible with Liferay 7. Due to this change,
-**you need to convert your Velocity theme templates into FreeMarker**.
+Theme templates are essentially the same as they were in Liferay 6.2. The most
+notable change is the deprecation of Velocity templates in favor of FreeMarker
+templates. This was done for a few key reasons:
+
+-  Velocity is no longer actively being developed, while FreeMarker is 
+   maintained and kept up-to-date for users.
+   
+-  FreeMarker is faster and allows for the use of more sophisticated macros.
+
+-  FreeMarker supports using taglibs directly rather than requiring a method 
+   to represent them, meaning you can pass body content to them, pass parameters, 
+   etc.
+
+The Dockbar has been replaced and reorganized into a set of three distinct
+menus, allowing for a more flexible and responsive design. This has resulted in 
+some breaking changes that affect your theme templates. Although these changes 
+have been made, the result is a well-designed user experience.
+
+Since Velocity templates have been deprecated and are not compatible with 
+Liferay 7, **you need to convert your Velocity theme templates into FreeMarker**.
 
 If you're using the Themes Generator, the theme template breaking changes are
 listed for you in the `gulp upgrade` log.
@@ -399,7 +417,7 @@ Lunar Resort theme:
         <@liferay.control_menu /> for new admin controls.
         Warning: not all admin controls will be visible without
         <@liferay.control_menu />
-        Warning: ${theme} variable is no longer available in Freemarker
+        Warning: ${theme} variable is no longer available in FreeMarker
         templates, see https://goo.gl/9fXzYt for more information.
 
 This output points out some of the breaking changes in Liferay 7 that effect
@@ -417,10 +435,15 @@ Follow these steps to update your `portal_normal.ftl` theme template. If you did
 not modify `portal_normal.ftl` in your Liferay 6.2 theme, you can skip these
 steps.
 
-Starting in Liferay 7, taglibs are no longer accessible via the `${theme}`
-variable in FreeMarker templates. This was indicated in the example log output
-shown in the intro to this section. You can read more about this breaking change
-in the [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
+The syntax to include taglibs in theme templates has been updated. This does
+mean however that taglibs are no longer accessible via the `${theme}` variable 
+in FreeMarker templates, so these directives must be updated. Not to worry 
+though, you can still use all the same taglibs in your theme templates. What's 
+more, the new syntax is more intuitive, allowing you to use the taglib directly, 
+rather than using a method to include content in your themes.
+
+This was indicated in the example log output shown in the intro to this section. 
+You can read more about this breaking change in the [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
 reference doc. You must update these directives with the new syntax.
 
 1.  Open your modified `portal_normal.ftl` file and replace these directives
@@ -440,9 +463,12 @@ reference doc. You must update these directives with the new syntax.
 2.  Find the link `<a href="#main-content" id="skip-to-content">
     <@liferay.language key="skip-to-content" /></a>` and replace it with
     `<@liferay_ui["quick-access"] contentId="#main-content" />`.
+    
+    The updated syntax uses the taglib directly, rather than using the theme 
+    object. This makes the directive more straight forward and easier to read.
 
-3.  The Dockbar has been removed in Liferay 7 and replaced with the Control
-    Menu. You must update all references to the dockbar in your template.
+3.  You must update all references to the Dockbar in your template.
+
     Replace the `<@liferay.dockbar />` directive and wrapping `<#if>` statements
     with the `<@liferay.control_menu />` directive:
 
@@ -455,23 +481,44 @@ reference doc. You must update these directives with the new syntax.
         After:
 
         <@liferay.control_menu />
+       
+    The Dockbar was an all-in-one component that contained the page 
+    administration menus and the user/portal administration menus. This UI has
+    since been split and reorganized into three menus:
 
-4.  If you used the split dockbar in your 6.2 theme, you must update your `body`
+    -  *The Product Menu* - Manage site and page navigation, content, settings 
+       and pages for the current site, and navigate to user account settings, 
+       etc..
+
+    -  *The Control Menu* - Add content to the page, configure the page, and 
+       view the page in the simulation window.
+    
+    -  *The User Personal Bar* - Displays the user's avatar, name, and 
+       notifications.
+    
+    This new design provides clear and purposeful menus that create a good
+    user-experience.
+
+4.  If you used the split Dockbar in your 6.2 theme, you must update your `body`
     class as well, otherwise you can skip to step 5.
 
-    As a reminder, here is what the split dockbar looks like:
+    As a reminder, here is what the split Dockbar looks like:
 
-    ![Figure 3: The dockbar was removed in Liferay 7 and needs removed from your code](../../../images/upgrading-themes-dockbar.png)
+    ![Figure 3: The Dockbar was removed in Liferay 7 and needs removed from your code](../../../images/upgrading-themes-dockbar.png)
 
     Find the `<body class="... dockbar-split">` element and remove
     `dockbar-split` from its `class` value.
 
-5.  The page title has been moved to the `<title>` element in the `<head>` of
-    the page. Remove the page title code shown below:
+5.  Remove the page title code shown below:
 
         <h2 class="page-title">
                 <span>${the_title}</span>
         </h2>
+        
+    Rather than include the page title on every page, it was decided that this
+    decision should be left up to developers. With the introduction of
+    modularization in themes, this feature can easily be implemented however you
+    like.
 
 6.  Wrap the `<#include "${full_templates_path}/navigation.ftl" />` include with
     these if statements:
@@ -483,10 +530,13 @@ reference doc. You must update these directives with the new syntax.
     This ensures that the navigation is not rendered unless there are pages.
 
 7.  Finally, update the content `<div>` to use the HTML5 `<section>` syntax.
+
     Note that the `<div>` element would still work, however the `<section>`
-    element uses the new syntax and is more accurate. Find the
-    `<div id="content">` element and update it to use the `<section>` element
-    shown below:
+    element is more accurate and will better assist accessibility for screen 
+    readers.
+    
+    Find the `<div id="content">` element and update it to use the 
+    `<section>` element shown below:
 
         <section id="content">
             <h1 class="hide-accessible">${the_title}</h1>
@@ -496,7 +546,7 @@ reference doc. You must update these directives with the new syntax.
     A `<h1>` element was added as well for accessibility, to match the updated
     portal normal template.
 
-If you modifed your navigation template for your theme, follow the steps in the
+If you modified your navigation template for your theme, follow the steps in the
 next section. As a reminder, if you're using the Themes Generator, any breaking
 changes for your navigation template are printed in the `gulp upgrade` log.
 
@@ -530,7 +580,7 @@ Follow these steps to make the required changes to your `navigation.ftl` file:
 Your navigation template is up to date.
 
 That should cover most, if not all, of the changes needed for your theme
-templates. If you modifed any other theme templates that were not covered, you
+templates. If you modified any other theme templates that were not covered, you
 can compare your template to the FreeMarker templates for the [_unstyled](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates)
 theme, or refer to the suggested changes listed in your Gulp upgrade log output
 if you're using the Themes Generator.
@@ -540,9 +590,18 @@ importer next.
 
 ## Updating the Resources Importer [](id=updating-the-resources-importer)
 
-The resources importer is now modularized and integrated into Liferay. You need
-to update the class names, directory structure, and web content files in the
-resources importer. In this section, you'll make these required changes.
+The resources importer is now OSGi compatible and has been integrated into 
+Liferay. This means that you will not need to install a separate application to
+use the resources importer!
+
+The APIs have changed some, so you must update the following components in the 
+resources importer:
+
+-  Class names
+-  Directory structure
+-  Web content files
+
+In this section, you'll make these required changes.
 
 +$$$
 
@@ -688,7 +747,7 @@ article content. Follow the steps below to update your web content for Liferay 7
             <div class="span8" id="columnRight">Come to the Lunar Resort and
             live out your childhood dream of being an astronaut on the Moon. If
             that's not enough incentive, you'll enjoy a luxurious 3 day 2 night
-            stay in our fabulous Lunar accomodations. Enjoy a round of Lunar
+            stay in our fabulous Lunar accommodations. Enjoy a round of Lunar
             Golf on our one of a kind course. Have a blast on our Rover Racing
             track. Make your reservation now. The rest of your life starts
             today!</div>
@@ -725,7 +784,7 @@ article content. Follow the steps below to update your web content for Liferay 7
             <div class="col-md-8" id="columnRight">Come to the Lunar Resort and
             live out your childhood dream of being an astronaut on the Moon. If
             that's not enough incentive, you'll enjoy a luxurious 3 day 2 night
-            stay in our fabulous Lunar accomodations. Enjoy a round of Lunar
+            stay in our fabulous Lunar accommodations. Enjoy a round of Lunar
             Golf on our one of a kind course. Have a blast on our Rover Racing
             track. Make your reservation now. The rest of your life starts
             today!</div>
@@ -737,7 +796,9 @@ article content. Follow the steps below to update your web content for Liferay 7
 
 8.  Liferay 7 uses a design language known as [Lexicon](http://liferay.github.io/lexicon/).
     When building a UI in Liferay 7, it is recommended that you use Lexicon and
-    follow the design patterns that Liferay has created.
+    follow the design patterns that Liferay has created. Lexicon is fully 
+    extensible, providing styling guidelines and best practices to ensure that 
+    your applications are well-designed.
 
     For example, look at the reservation form's HTML for the Lunar Resort:
 
@@ -783,7 +844,7 @@ The Lunar Resort theme's reservation form uses Bootstrap 2's design
 language. Since Lexicon extends Bootstrap 3, it uses updated patterns and
 classes. As a best practice for Liferay 7, you should update your theme's
 HTML to follow Lexicon's design language. You can find the Lexicon guidelines on
-thier site at [http://liferay.github.io/lexicon/](http://liferay.github.io/lexicon/).
+their site at [http://liferay.github.io/lexicon/](http://liferay.github.io/lexicon/).
 
 For example, the updated Lunar Resort reservation form would be the HTML shown
 below:
