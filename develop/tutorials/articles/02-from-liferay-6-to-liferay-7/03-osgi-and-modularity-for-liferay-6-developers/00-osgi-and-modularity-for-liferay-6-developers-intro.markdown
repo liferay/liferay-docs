@@ -1,7 +1,7 @@
 # OSGi and Modularity for Liferay 6 Developers [](id=osgi-and-modularity-for-liferay-6-developers)
 
 To create a powerful, reliable platform for developing modular applications,
-Liferay sought out best-of-breed standards-based frameworks and technologies.
+Liferay sought best-of-breed standards-based frameworks and technologies.
 It was imperative to not only meet demands for enterprise digital experiences
 but to also offer developers, both experienced with Liferay and new to Liferay,
 a clear and elegant way to create apps.
@@ -560,3 +560,20 @@ On deploying the module, the following message is printed to the server console:
 
 Congratulations! You've successfully built and deployed an OSGi module to
 @product@. 
+
+## Learning More about OSGi
+
+[Introduction to Liferay Development](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction)
+
+[OSGi enRoute](http://enroute.osgi.org/)
+
+Liferay 7 leverages the following services extensively. They're specified in
+[*The OSGi Alliance OSGi Compendium: Release 6*](https://www.osgi.org/developer/specifications/).
+
+- *Declarative Services Specification* 
+
+- *Configuration Admin Service Specification* - For modifying deployed bundles.
+Since Configuration Admin services are already integrated with Declarative
+Services, developers need not use the low-level API.
+
+- *Metatype Service Specification* - For describing attribute types as metadata. 

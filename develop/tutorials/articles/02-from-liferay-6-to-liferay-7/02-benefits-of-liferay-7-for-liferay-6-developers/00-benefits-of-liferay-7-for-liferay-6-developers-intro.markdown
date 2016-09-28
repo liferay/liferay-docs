@@ -145,7 +145,5 @@ on the fly, through an auto-generated user interface called System Settings.
 Now you understand how Liferay 7 enriches your experience as a developer and
 makes developing apps and customizations fun.
 
-<!-- TODO Uncomment this to transition to the next article.
-Next, we'll take a look at OSGi modules to learn their capabilities and why
-they're fun to develop.
--->
+Next, we'll take a look at OSGi and modularity to discuss key concepts and
+demonstrate how easy and gratifying it is to build modules. 
