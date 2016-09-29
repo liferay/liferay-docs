@@ -151,7 +151,7 @@ You can download the Liferay artifacts from SourceForge.
     messages in your command prompt. The artifacts are downloaded from Liferay's
     Nexus repository.
 
-    By default, all of Liferay's Maven artifacts are installed to your
+    By default, all of Liferay's Maven artifacts are installed in your
     `[USER_HOME]/.m2` repository. You can change where the artifacts are
     installed by creating a `build.[USER_NAME}.properties` file in the Liferay
     Portal Maven folder and setting the `local.repository.path` property to the
