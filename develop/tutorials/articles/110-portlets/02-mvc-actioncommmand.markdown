@@ -75,8 +75,8 @@ class.
 
 ## Related Topics [](id=related-topics)
 
-[MVC Render Command](develop/tutorials/-/knowledge_base/7-0/mvc-rendercommand)
+[MVC Render Command](develop/tutorials/-/knowledge_base/7-0/mvc-render-command)
 
-[MVC Resource Command](develop/tutorials/-/knowledge_base/7-0/mvc-resourcecommand)
+[MVC Resource Command](develop/tutorials/-/knowledge_base/7-0/mvc-resource-command)
 
-[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/mvc-command-override)
+[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)

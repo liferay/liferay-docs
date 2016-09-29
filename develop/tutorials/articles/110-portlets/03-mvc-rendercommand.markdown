@@ -128,8 +128,8 @@ As you can see, MVC render commands are flexible and very easy to implement.
 
 ## Related Topics [](id=related-topics)
 
-[MVC Resource Command](develop/tutorials/-/knowledge_base/7-0/mvc-resourcecommand)
+[MVC Resource Command](develop/tutorials/-/knowledge_base/7-0/mvc-resource-command)
 
-[MVC Action Command](develop/tutorials/-/knowledge_base/7-0/mvc-actioncommand)
+[MVC Action Command](develop/tutorials/-/knowledge_base/7-0/mvc-action-command)
 
-[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/mvc-command-override)
+[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
