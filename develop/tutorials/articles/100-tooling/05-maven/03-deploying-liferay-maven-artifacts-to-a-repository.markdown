@@ -12,7 +12,7 @@ username, and password.
 To deploy to a remote repository, your Liferay plugin should be packaged using
 Maven. Maven provides a packaging command that creates an artifact (JAR) that
 can be easily deployed to your remote repository. You'll learn how to do this
-with a Liferay module.
+with a Liferay portlet module.
 
 Once you've created a deployable artifact, you'll configure your module project
 to communicate with your remote repository and use Maven's deploy command to
@@ -24,11 +24,13 @@ To follow this tutorial, you'll need a Liferay Maven module to work with. For
 demonstration purposes, this tutorial will use the `portlet.ds` sample module
 project. To follow along with this module, download the
 [portlet.ds]()
-sample module project ZIP. 
+Zip. 
+
+<!-- Replace portlet link above with one from LDN's document library. -Cody -->
 
 1.  Create a folder anywhere on your machine that will serve as the parent
     folder for your Liferay modules. Unzip the `portlet.ds` module project into
-    the parent folder.
+    that parent folder.
 
 2.  Create a `pom.xml` file inside the parent folder. Liferay modules must have 
     a parent POM to be packaged and deployed. Copy the following logic into the
@@ -68,7 +70,7 @@ sample module project ZIP.
     The `<distributionManagement>` tag specifies the deployment repository for
     all module projects residing in the parent folder. You should include the
     repository's ID and URL. The above `distributionManagement` declaration is
-    configured for the Nexus repository created in the
+    configured for the Liferay Nexus repository created in the
     [Getting Started with Maven](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-maven)
     tutorial. That tutorial also created the `[USER_HOME]/.m2/settings.xml`,
     which specified the remote repository's ID, username, and password. Both the
@@ -80,7 +82,7 @@ sample module project ZIP.
     specified within that tag.
 
 3.  Open the `portlet.ds` module's `pom.xml` file. If you did not download the
-    `portlet.ds` module project ZIP, you can reference its POM below
+    `portlet.ds` module project Zip, you can reference its POM below
 
         <project
             xmlns="http://maven.apache.org/POM/4.0.0"
@@ -132,20 +134,20 @@ sample module project ZIP.
 
     This downloads and installs all your module's dependencies and packages the
     project into a JAR file. Navigate to your module project's generated
-    `/target` folder. You'll notice the there is a JAR file that was generated.
-    This is the artifact you'll deploy to your Nexus repository.
+    `/target` folder. You'll notice there is a JAR file that was generated. This
+    is the artifact you'll deploy to your Nexus repository.
 
 5.  Run Maven's deploy command to deploy your module project's artifact to your
     configured remote repository.
 
         mvn deploy
 
-    Your console shows output from the artifacts being deployed into your
+    Your console shows output from the artifact being deployed into your
     repository server.
 
-To verify your artifacts are deployed, navigate to the Repositories page of
+To verify that your artifact is deployed, navigate to the Repositories page of
 your Nexus server and select your repository. A window appears below displaying
-the Liferay artifacts now deployed to your repository.
+the Liferay artifact now deployed to your repository.
 
 ![Figure 1: Your repository server now provides access to your Liferay Maven artifacts.](../../../images/maven-verify-deployment.png)
 
