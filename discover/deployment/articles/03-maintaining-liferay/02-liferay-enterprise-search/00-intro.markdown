@@ -1,7 +1,7 @@
 # Liferay Enterprise Search
 
 Search engines are a critical component of your Liferay installation. They allow
-you to provide documents in an index that can quickly be searched, rather tahn
+you to provide documents in an index that can quickly be searched, rather than
 relying on expensive database queries. For more fundamental material on search
 and indexing in Liferay, read
 [here](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
