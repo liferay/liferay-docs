@@ -2,9 +2,9 @@
 
 What are the fundamentals that every Liferay developer should know?
 
-1.  It’s Open Source and puts a strong emphasis on following standards, instead
+1.  It's Open Source and puts a strong emphasis on following standards, instead
     of reinventing the wheel.
-2.  It’s based on JavaEE and heavily leverages OSGi and several other popular
+2.  It's based on JavaEE and heavily leverages OSGi and several other popular
     technologies for the Java Platform.
 3.  It is based on a modular architecture and facilitates following a modular
     development paradigm for your own projects.
@@ -12,7 +12,7 @@ What are the fundamentals that every Liferay developer should know?
     it.
 5.  It provides mature development tools, while staying agnostic so each
     developer can use his or her preferred tools.
-6.  It’s all about reusing, providing reusable frameworks and libraries and
+6.  It's all about reusing, providing reusable frameworks and libraries and
     allowing you to create your own.
 
 Interested? More details below. 
@@ -20,7 +20,7 @@ Interested? More details below.
 ## Open Source and based on Standards
 
 @product@ is both open source and built in the open, following a collaborative
-development model. That means that you can follow new development as it’s
+development model. That means that you can follow new development as it's
 happening, make comments on it, and contribute! Here are some tools that you can
 use to do all this:
 
@@ -36,7 +36,7 @@ use to do all this:
     for improvements.  There are also many repos, but the main one is 
     [liferay-portal](http://github.com/liferay/liferay-portal)
 
-3.  [Forums](http://forums.liferay.com): It’s where our community gets together
+3.  [Forums](http://forums.liferay.com): It's where our community gets together
     to share ideas, discuss, and collaborate. Go ahead and ask your questions
     and help others ask theirs.
 
@@ -53,8 +53,8 @@ on Liferay. That also encourages us to improve constantly.
 
 Here are some key standards supported by @product@:
 
--   [Portlets 1.0](https://jcp.org/en/jsr/detail?id%3D168) (JSR-168)
-    and [Portlets 2.0](https://jcp.org/en/jsr/detail?id%3D286) (JSR-286):
+-   [Portlets 1.0](https://jcp.org/en/jsr/detail?id%3D168) (JSR-168) 
+    and [Portlets 2.0](https://jcp.org/en/jsr/detail?id%3D286) (JSR-286):
     @product@ can run any portlets that follow these two versions of the
     specification. Liferay is also heavily involved in the upcoming Portlets 3.0
     specification.
@@ -63,14 +63,14 @@ Here are some key standards supported by @product@:
     applications. Liferay is an active contributor to the standard and lead of
     the JSF-Portlet Bridge specification.
 -   [EcmaScript 2015](http://www.ecma-international.org/ecma-262/6.0/):
-    The latest incarnation of the JavaScript standard. Liferay’s tooling
+    The latest incarnation of the JavaScript standard. Liferay's tooling
     provides the ability to use it in all modern browsers thanks to the
     integration of Babel JS.
 -   [Content Management Interoperability Services](https://www.oasis-open.org/committees/cmis) (CMIS):
-    Liferay’s Documents and Media can behave as an interface for any external
+    Liferay's Documents and Media can behave as an interface for any external
     Documents Repository that supports this widely adopted standard.
 -   [Java Content Repository](https://jcp.org/en/jsr/detail?id%3D170) (JSR-170):
-    Files stored in the internal repository of Liferay’s Documents and Media can
+    Files stored in the internal repository of Liferay's Documents and Media can
     be configured to be stored in a JSR-170 compatible repository if desired.
 -   [WebDAV](http://www.webdav.org):
     Any Documents &amp; Media folder can be mounted anywhere WebDAV is
@@ -79,7 +79,7 @@ Here are some key standards supported by @product@:
     [OAuth 1.1](http://oauth.net/core/1.1):
     These are the most widely adopted security protocols for SSO and application
     sign in, supported through specific Apps that can be installed from
-    [Liferay’s Marketplace](http://marketplace.liferay.com).
+    [Liferay's Marketplace](http://marketplace.liferay.com).
 -   JAX-RS and JAX-WS: Incorporated since Liferay 7 as the preferred tooling to
     create web services.
 -   [WSRP](https://www.oasis-open.org/committees/wsrp) 1
@@ -111,17 +111,19 @@ following characteristics:
 -   It should be as easy as possible to contribute back, since we
     love to contribute to the open source projects we use. 
 -   It should be possible to use only the piece of the project we
-    need if we don’t need the whole thing. That way, it’s easier to
+    need if we don't need the whole thing. That way, it's easier to
     replace that piece in the future if we find something that
     works better. 
 
 The goal, of course, is to give our developers and users the most up to date,
 easy-to-use, and stable platform to build your services on.
 
+![Liferay is based on popular, well known, and well supported technologies.](../../images/liferay-technologies.png)
+
 At its base, Liferay is a JavaEE application that also includes an OSGi
-container. This offers the best of both worlds: access to the world’s most
+container. This offers the best of both worlds: access to the world's most
 robust and fully featured enterprise platform, along with the benefits of the
-world’s most fully featured and stable modular container. Now developers can
+world's most fully featured and stable modular container. Now developers can
 develop and deploy enterprise-ready, scalable web and mobile-based applications
 in a dynamic, component-based environment. 
 
@@ -136,7 +138,7 @@ on well known or widely used products:
 -   Ehcache for caching. 
 
 In the application layer, developers have access to many of the libraries
-they’re familiar with and have been using for years: 
+they're familiar with and have been using for years: 
 
 -   Xalan 
 -   Xerces 
@@ -144,16 +146,16 @@ they’re familiar with and have been using for years:
 -   Tika 
 -   dom4j
 
-If you’re approaching @product@ with the intention of customizing it, you can
-know that most if not all of the tools you’re familiar with are there. If you’re
-writing applications on Liferay’s platform, the sky’s the limit: you can use any
+If you're approaching @product@ with the intention of customizing it, you can
+know that most if not all of the tools you're familiar with are there. If you're
+writing applications on Liferay's platform, the sky's the limit: you can use any
 web framework you like, and you can write both servlet and portlet-based
-applications. If you’re looking for a recommendation, though, we’re happy to
+applications. If you're looking for a recommendation, though, we're happy to
 point you to either our MVCPortlet or our JSF-based LiferayFaces frameworks. 
 
 On the front-end, Liferay has kept pace with the most recent progressions in
-that space. If you’ve used Liferay in the past, you can of course continue to
-use Liferay’s venerable Alloy UI, but you are also free to use the front-end
+that space. If you've used Liferay in the past, you can of course continue to
+use Liferay's venerable Alloy UI, but you are also free to use the front-end
 technologies you love the most:
 
 -   Bootstrap 
@@ -171,14 +173,14 @@ You can also use any JavaScript library, including
 
 @product@ follows a design language created by our designers at Liferay called
 Lexicon. It is automatically available to application developers through a set
-of CSS classes, although it’s even easier to use our tag library. 
+of CSS classes, although it's even easier to use our tag library. 
 
-For templating, JavaEE’s JSP is there as expected as well as FreeMarker, but the
-modularity of the platform allows you to use Google’s Soy (aka Closure
+For templating, JavaEE's JSP is there as expected as well as FreeMarker, but the
+modularity of the platform allows you to use Google's Soy (aka Closure
 Templates) or whatever else you like. 
 
 Liferay has also chosen build tools that give you freedom to use any development
-environment. Gradle along with bnd powers the product’s build, but project
+environment. Gradle along with bnd powers the product's build, but project
 layouts are dynamic, which means you can use anything from Maven to Ant/Ivy to
 build applications for Liferay. 
 
@@ -191,7 +193,7 @@ it--things we never could have expected or imagined.
 
 ## Architecture
 
-Liferay’s design goals have from the beginning been to give you all the tools to
+Liferay's design goals have from the beginning been to give you all the tools to
 create exactly the web presence you have in mind. To achieve this, the product
 must do these things: 
 
@@ -204,8 +206,9 @@ must do these things:
 -   Provide a robust development platform upon which new
     best-of-breed apps can be built and shared
 
-These goals are now achieved to the furthest extent ever in Liferay’s history,
-and it’s all because of our new modular architecture.
+![Liferay provides services for many different kinds of clients.](../../images/liferay-architecture.png)
+These goals are now achieved to the furthest extent ever in Liferay's history,
+and it's all because of our new modular architecture.
 
 Imagine an environment where every piece of functionality is an independent
 module. The modules declare three important things: 
@@ -217,11 +220,11 @@ module. The modules declare three important things:
 Using this information, the container can start all the modules that fulfill
 their definitions, implementations, dependencies, and priorities. 
 
-Anything a developer wants to do is implemented as one or more modules. If it’s
+Anything a developer wants to do is implemented as one or more modules. If it's
 a new application, that application can depend on existing modules and define a
-dependency on them. This enables you to use functionality that’s already there
-without rewriting it yourself for your app. If it’s a customization, in many
-cases it’s just a simple matter of defining your customization with a higher
+dependency on them. This enables you to use functionality that's already there
+without rewriting it yourself for your app. If it's a customization, in many
+cases it's just a simple matter of defining your customization with a higher
 priority than the existing functionality. 
 
 This is the power of a modular architecture. 
@@ -248,10 +251,10 @@ might call a service to come mow your lawn. You know how to call the service and
 to give it what it needs (money) in order to receive the service (a mown lawn).
 Software-based services work the same way.
 
-Liferay’s services are standard services as defined by the OSGi Alliance.
+Liferay's services are standard services as defined by the OSGi Alliance.
 Writing anything, whether it be an application, an interface to a database, or
 even a "service" as you define it, is easy to implement as an OSGi service,
-because they’re both incredibly powerful and easy to develop. If you understand
+because they're both incredibly powerful and easy to develop. If you understand
 Java interfaces and how they are implemented--which is introductory Java
 material--you already understand more than 90% of what you need to know. First,
 you define the interface, or contract for the service: what it returns, and what
@@ -260,10 +263,10 @@ that implements the contract.
 
 In the services model, a class requests the service that provides the
 functionality it needs. This functionality is provided (often injected) with the
-right implementation automatically. It’s similar to Spring or EJBs with one
+right implementation automatically. It's similar to Spring or EJBs with one
 important addition: implementations can be changed at runtime, without
 restarting the system. This is achieved because when a service is deployed, it
-becomes part of a service registry maintained by Liferay’s OSGi container. The
+becomes part of a service registry maintained by Liferay's OSGi container. The
 container dynamically manages the lifecycle of the service and can start and
 stop services when appropriate. 
 
@@ -281,13 +284,13 @@ to Liferay 7.
 ### Components
 
 In OSGi, possibly the best and certainly the easiest way to create services is
-through Declarative Services. In Declarative Services (aka DS), you create
+through Declarative Services. In Declarative Services (aka DS), you create
 Components. A Component is a Java class (marked with an `@Component` annotation)
 that provides an implementation of a Service (as described above) and whose
 instantiation is handled automatically by DS. This is similar to what you might
-be used to if you have used Spring Beans or EJBs. DS also provides dependency
-injection using annotations (`@Reference`). This is  convenient because the
-"wiring" of components is done by the container but can be changed while the
+be used to if you have used Spring Beans or EJBs. DS also provides dependency
+injection using annotations (`@Reference`). This is convenient because the
+"wiring" of components is done by the container but can be changed while the
 server is running (unlike Spring). 
 
 Modules may contain as many service declarations and as many components as
@@ -317,10 +320,10 @@ report and then you'd have to redeploy the complete application. If this was a
 temporary change, to restore the application to its original state you'd again
 have to modify the application and redeploy it.
 
-With a modular and component-based application, you'd fix a simple, small
+With a modular and component-based application, you'd fix a simple, small
 component--probably one Java class--that provides the functionality you need.
-You'd then deploy its module to the server. If you need to roll back that change
-in the future, you'd just do the same thing in reverse. In each case, you’re
+You'd then deploy its module to the server. If you need to roll back that change
+in the future, you'd just do the same thing in reverse. In each case, you're
 only changing and redeploying the small piece of functionality that needs to
 change, not the whole application. At no time would you ever have to redeploy
 the whole application or take the server down.
@@ -335,7 +338,7 @@ development helps developers be more efficient in three important ways:
 -   Components can be enabled and disabled, allowing
     administrators to choose which features to enable in production.
 
-For example, Liferay’s Documents and Media library is a file repository that
+For example, Liferay's Documents and Media library is a file repository that
 supports many back-ends. Each back-end is a component that can be maintained by
 different developers. They can be added and removed on the fly while the server
 is running. 
@@ -347,7 +350,7 @@ might develop for either the web or mobile.
 
 As you can see, many components running inside Liferay's OSGi container form
 something of an ecosystem of complementary services. Much of Liferay's
-functionality is in components, and when you deploy your code, it sits in the
+functionality is in components, and when you deploy your code, it sits in the
 same ecosystem as Liferay's, with the same extension points. You can write
 components to provide new services or to override existing services with your
 own implementation, and the container manages it all. Liferay is an exciting
