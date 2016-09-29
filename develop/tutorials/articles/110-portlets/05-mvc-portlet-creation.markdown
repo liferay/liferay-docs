@@ -17,7 +17,7 @@ controller logic (maybe just a couple of action methods), you can put all your
 controller code in the `-Portlet` class. If you have more complex
 needs (lots of actions, complex render logic to implement, or maybe even some
 resource serving code), consider breaking the
-controller into [MVC Action Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-action-command), [MVC Render Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-render-command), and [MVC Resource Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
+controller into [MVC Action Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command), [MVC Render Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command), and [MVC Resource Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
 
 In this tutorial you'll learn to implement a Liferay MVC portlet with all the
 controller code in the `-Portlet` class.
