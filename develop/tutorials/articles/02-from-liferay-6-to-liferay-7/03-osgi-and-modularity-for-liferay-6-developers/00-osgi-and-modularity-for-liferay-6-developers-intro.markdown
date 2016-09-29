@@ -2,8 +2,8 @@
 
 To create a powerful, reliable platform for developing modular applications,
 Liferay sought best-of-breed standards-based frameworks and technologies.
-It was imperative to not only meet demands for enterprise digital experiences
-but to also offer developers, both experienced with Liferay and new to Liferay,
+It was imperative not only to meet demands for enterprise digital experiences
+but also to offer developers, both experienced with Liferay and new to Liferay,
 a clear and elegant way to create apps.
 
 Here were some of the key goals:
@@ -18,8 +18,8 @@ boundaries and relationships could be clearly defined.
 - Modernize the development environment, leveraging more state-of-the-art tools
 to provide a great developer experience.
 
-It wasn't long before Liferay discovered that OSGi, and its supporting
-tools/technologies, fit the bill!
+It wasn't long before Liferay discovered that OSGi and its supporting
+tools/technologies fit the bill!
 
 In this tutorial, you'll learn how Liferay 7 uses OSGi to meet these objectives.
 And equally important, you'll find out how easy and fun modular development can
@@ -28,20 +28,22 @@ be.
 Here are the topics you'll dig into:
 
 1. **Modules as an Improvement over Traditional Plugins**: Development and
-customization of applications for Liferay has traditionally been done in plugins
-(Portlet, Hook, Ext and Web). In Liferay 7, plugins are replaced with (and can
-be automatically converted to) modules. This section compares and contrasts
-plugins and modules, and explains the benefits of using modules.
+   customization of applications for Liferay has been done traditionally in
+   plugins (Portlet, Hook, Ext and Web). In Liferay 7, plugins are replaced with
+   (and can be automatically converted to) modules. You'll see the similarities
+   and differences of plugins and modules, and you'll learn the benefits of
+   using modules.
 
-2. **Leveraging Dependencies**: In Liferay 7, developers can declare
-dependencies among modules and combine modules to create applications. Since
-leveraging dependencies provides huge benefits, it warrants its own section.
+2. **Leveraging Dependencies**: In Liferay 7, developers can both declare
+   dependencies among modules and can combine modules to create applications.
+   Since leveraging dependencies provides huge benefits, it's important to spend
+   a lot of time showing how to do it. 
 
-3. **OSGi Services and Dependency Injection**: OSGi provides a very powerful
-concept called OSGi Services (also known as microservices). Together with the
-Declarative Services standard, it provides a clean way to inject dependencies
-(similar to Spring DI) in a dynamic environment. It also offers an elegant
-extensibility model that Liferay 7 leverages extensively.
+3. **OSGi Services and Dependency Injection**: OSGi provides a powerful concept
+   called OSGi Services (also known as microservices). Together with the
+   Declarative Services standard, it provides a clean way to inject dependencies
+   (similar to Spring Dependency Injection) in a dynamic environment. It also
+   offers an elegant extensibility model that Liferay 7 leverages extensively.
 
 <!-- Uncomment when these sections are added. Jim
 4. **Dynamic Deployment**: Module deployment is managed by Liferay 7 (not the
@@ -59,10 +61,10 @@ Let's start with learning how modules are better than traditional plugins.
 In Liferay 7, you can develop applications using OSGi modules or using
 traditional Liferay plugins (WAR-style portlets, hooks, EXT, and web
 applications). Liferay's Plugin Compatibility Layer (explained later) makes it
-possible to deploy traditional plugins to the OSGi runtime framework. To gain
+possible to deploy traditional plugins to the OSGi runtime framework. To benefit
 from all Liferay 7 and OSGi offer, however, you should use OSGi modules.
 
-Here are some important things you gain from using modules:
+Here are some important benefits of using modules:
 
 - **Better Encapsulation** - The only classes a module exposes publicly are
 those it exports explicitly. This lets the developer define internal public
@@ -90,18 +92,18 @@ specify precisely the modules they want to use.
 - **In-Context Descriptors** - Where plugins use descriptor files (e.g.,
 `web.xml`, `portlet.xml`, etc.) to describe classes, module classes uses OSGi
 annotations to describe themselves. For example, a module portlet class can use
-[OSGi Service annotation
-properties](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map)
+[OSGi Service annotation properties](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map)
 to specify its name, display name, resource bundle, public render parameters,
 and much more. Instead of specifying that information in descriptor files
 separate from the code, they're specified in context in the code.
 
 These are just a few ways modules outshine traditional plugins. Note, however,
-developers experienced with Liferay plugins have the best of both worlds.
+that developers experienced with Liferay plugins have the best of both worlds.
 Liferay 7 supports traditional plugins *and* modules. Existing Liferay
 developers can find comfort in the simplicity of modules and their similarities
 with plugins.
-Here are some fundamental characterics modules share with plugins:
+
+Here are some fundamental characteristics modules share with plugins:
 
 - Developers use them to create applications (portlets for Liferay)
 
@@ -109,7 +111,7 @@ Here are some fundamental characterics modules share with plugins:
 
 - They're packaged as a standard Java JARs
 
-Now that we've compared and contrasted modules with plugins, it's time to take a
+Now that you've compared and contrasted modules with plugins, it's time to take a
 tour of the module structure. 
 
 ### Module Structure: A JAR File with a Manifest [](id=module-structure-a-jar-file-with-a-manifest)
@@ -145,7 +147,7 @@ modules.
 Additional headers can be used to specify more characteristics, such as how the
 module was built, development tools used, etc. 
 
-As an example, here are some headers from the Liferay Journal Web module manifest:
+For example, here are some headers from the Liferay Journal Web module manifest:
 
     Manifest-Version: 1.0
     Bundle-ManifestVersion: 2
@@ -166,18 +168,18 @@ As an example, here are some headers from the Liferay Journal Web module manifes
         com.liferay.asset.kernel.exception, [..]
 
 Note: to remove unnecessary "noise" from this example, some headers have been
-abbreviated (`[...]`) and some have been removed.
+abbreviated (`[..]`) and some have been removed.
 
-As for a module's Java code and resources, you can organize them and build them
-however you like. You're free to use any directory structure conventions, such
-as those used in Maven or by your development team. And you can use any build
-tool, such as Gradle or Maven, to manage dependencies.
+You can organize and build a module's Java code and resources however you like.
+You're free to use any directory structure conventions, such as those used in
+Maven or by your development team. And you can use any build tool, such as
+Gradle or Maven, to manage dependencies.
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 is an environment for managing module projects (and theme projects). It provides
 Gradle build scripts for developing on Liferay. It can be used from the command
 line or from within [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
-and Developer Studio. Note also, these IDE/Studio provide plugins for Gradle,
+and Developer Studio. Note also that these IDE/Studio provide plugins for Gradle,
 Maven, and BndTools. Tooling details are covered later in this series.
 
 Now that you're familiar with the module structure and manifest, it's time to
@@ -191,7 +193,7 @@ metadata. Instead of manually creating a `MANIFEST.MF` file, developers use Bnd
 to generate it. Bnd can be used on its own or along with other build tools, such
 as Gradle or Maven. Liferay Workspace uses Gradle and Bnd together.
 
-One of Bnd's best features is that it automatically transverses a module's code,
+One of Bnd's best features is that it automatically transverses a module's code
 to identify external classes the module uses and add them to the manifest's list
 of packages to import. Bnd also provides several OSGi-specific operations that
 simplify module development.
@@ -220,7 +222,7 @@ Workspace includes Bnd, developers can use Bnd from the command line and from
 Liferay IDE / Developer Studio.
 
 Now that you're familiar with Bnd and the `Export-Package` and `Import-Package`
-manifest headers, let's explore how leverage dependencies using them.
+manifest headers, let's explore how to use them to leverage dependencies.
 
 ## Leveraging Dependencies [](id=leveraging-dependencies)
 
@@ -253,28 +255,27 @@ you're developing new OSGi modules or continuing to develop traditional apps,
 you need only set dependencies on modules whose packages you need.
 
 Each module's manifest lists the packages the module depends on. Using a build
-environment, such as Gradle, Maven, or Ant/Ivy, the developer can set
+environment such as Gradle, Maven, or Ant/Ivy, the developer can set
 dependencies on each package's module. At build time, the dependency framework
 verifies the entire dependency chain, downloading all newly specified modules.
-The same thing happens at runtime (and this is the key difference), where the
-OSGi runtime knows exactly which modules depend on which other modules (failing
-fast if any dependency is unmet). Dependency management is explicit and enforced
-automatically upfront.
+The same thing happens at runtime: the OSGi runtime knows exactly which modules
+depend on which other modules (failing fast if any dependency is unmet).
+Dependency management is explicit and enforced automatically upfront.
 
 Versioning is independent for each Liferay module and its exported packages. You
 can use a specific package version by depending on the version of the module
 that exports it. And you're free to use a mix of Liferay modules in the versions
-you want (but remember, "With great power comes great responsibility"; so unless
+you want (but remember, "With great power comes great responsibility," so unless
 you really know what you are doing, use the same version of each module you
 depend on).
 
 For all its modules, @product@ uses [Semantic Versioning](http://semver.org).
-It's a standard that enables API authors to automatically communicate
-programmatic compatibility of a package or module as it relates to dependent
+It's a standard that enables API authors to communicate programmatic
+compatibility of a package or module automatically as it relates to dependent
 consumers and API implementations. If a package is programmatically (i.e.,
 semantically) incompatible with a project, Bnd (used in Liferay Workspace) fails
-that project's build immediately. Developers not using Bnd, can manually check
-package versions in each dependency module's manifest.
+that project's build immediately. Developers not using Bnd can check package
+versions manually in each dependency module's manifest.
 
 Semantic Versioning also gives module developers flexibility to specify a
 version range of packages and modules to depend on. In other words, if several
@@ -288,8 +289,7 @@ has bugs or behaves differently than you'd like. No problem. You can adjust the
 package version range to include versions up to, but not including, the one you
 don't want.
 
-You're now familiar with the power of semantic versioning and how dependencies
-work. Next let's consider when to modularize existing apps and when to combine
+Next you want to consider when to modularize existing apps and when to combine
 modules to create apps.
 
 ### Dependencies Facilitate Modular Development [](id=dependencies-facilitate-modular-development)
@@ -306,7 +306,7 @@ Here are some general steps to consider when modularizing an existing app:
 1. **Start by putting the entire app in a single module**: This is a minimal
 first step that acquaints you with Liferay 7's module framework. You'll gain
 confidence as you build, deploy, and test your app in an environment of your
-choice, such as a Liferay Workspace or Maven project.
+choice, such as a Liferay Workspace, Gradle, or Maven project.
 
 2. **Split the front-end from the back-end**: Modularizing front-end portlets
 and servlets and back-end implementations (e.g., Service Builder or OSGi
@@ -367,11 +367,10 @@ however, you're committing to the app's release schedule. In other words, you
 can't directly deploy a new version of a module for the app--you must release it
 as part of the app's next release.
 
-In this section, you've learned how dependencies and Semantic Versioning work.
-You've considered guidelines for modularizing existing apps and creating
-modular-based apps. Uncomment this transition when next section is ready. Now,
-to add to the momentum around OSGi and modularity, you'll explore OSGi Services
-and dependency injection using OSGi Declarative Services.
+So far, you've learned how dependencies and Semantic Versioning work. You've
+considered guidelines for modularizing existing apps and creating modular-based
+apps. Now, to add to the momentum around OSGi and modularity, you'll explore
+OSGi Services and dependency injection using OSGi Declarative Services.
 
 ## OSGi Services and Dependency Injection with Declarative Services [](id=osgi-services-and-dependency-injection-with-declarative-services)
 
@@ -388,12 +387,12 @@ them.
 
 Here's how the "magic" happens:
 
-1.  **Service component registration** - On installing a module that contains a
+1.  **Service component registration:** On installing a module that contains a
     Service Component, the SCR creates a component configuration that associates
     the Service Component with its specified service type and stores it in a
     service registry.
 
-2.  **Service reference handling** - On installing a module that contains a class
+2.  **Service reference handling:** On installing a module that contains a class
     that references a service type, the SCR searches the registry for a
     component configuration that matches the service type. On finding a matching
     component configuration, the SCR creates an instance of the Service
@@ -405,11 +404,10 @@ How does a developer use DS to register and bind service components? Does it
 involve creating XML files? No, it's much easier than that. The developer uses
 two annotations: `@Component` and `@Reference`.
 
--  `@Component` - defines the class as a Service Component--a provider of a
+-  `@Component` defines the class as a Service Component--a provider of a
     particular service class.
 
--  `@Reference` - enables the referring class to be injected with a particular
-    service class.
+-  `@Reference` injects the referring class into a particular service class.
 
 The `@Component` annotation makes the class an OSGi component. Defining a
 `service` property in the annotation allows other components to reference it by
@@ -445,16 +443,16 @@ As an improvement over dependency injection with Spring, OSGi Declarative
 Services supports dynamic dependency injection. Developers can create and
 publish service components for other classes to use. Developers can update the
 components and even publish alternative component implementations for a service.
-Dynamicity is a powerful part of Liferay 7.
+This kind of dynamism is a powerful part of Liferay 7.
 
 ## Example: Building an OSGi Module [](id=example-building-an-osgi-module)
 
 The previous sections explained some of the most important concepts for Liferay
-6 developers to understand about OSGi and modularity. Now, it's time to put this
+6 developers to understand about OSGi and modularity. Now it's time to put this
 knowledge to practice by creating and deploying a module.
 
-The module will include a Java class that implements an OSGi service using
-Declarative Services. The project will use Gradle and Bnd, and can be built and
+The module includes a Java class that implements an OSGi service using
+Declarative Services. The project uses Gradle and Bnd, and can be built and
 deployed from within a [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
 Here's the module project's anatomy:
@@ -465,7 +463,7 @@ Here's the module project's anatomy:
 
 - `src/main/java/com/liferay/docs/service/MyService.java`
 
-On building the module JAR, Bnd will generate the module manifest automatically. 
+On building the module JAR, Bnd generates the module manifest automatically. 
 
 Here's the Java class:
 
@@ -520,9 +518,9 @@ The `bnd.bnd` file is next:
 The `Bundle-SymbolicName` is the arbitrary name for the module. The module's
 version value `1.0.0` is appropriate.
 
-Bnd will generate the module's OSGi manifest to the file `META-INF/MANIFEST.MF`
-in the module's JAR. In this project, the JAR will be generated to the
-`build/libs/` folder.
+Bnd generates the module's OSGi manifest to the file `META-INF/MANIFEST.MF`
+in the module's JAR. In this project, the JAR is created in the `build/libs/`
+folder.
 
 The last file to examine is the Gradle build file `build.gradle`:
 
@@ -531,12 +529,13 @@ The last file to examine is the Gradle build file `build.gradle`:
     }
 
 Since the `MyService` class uses the `@Component` annotation, the project
-depends on the OSGi service component annotations module--Liferay Workspace
-module projects leverage its Gradle build infrastructure.
+depends on the OSGi service component annotations module. The build script is so
+simple because Liferay Workspace module projects leverage its Gradle build
+infrastructure.
 
 Although this module project was created in a Liferay Workspace, it can easily
-be modified to use in other build environments. For simplicity, however, we'll
-use it in Liferay Workspace.
+be modified to use in other build environments. To keep the focus on what's
+most important, it was created in a Liferay Workspace.
 
 Place the project files in a folder under the `modules/` folder (e.g.,
 `[Liferay_Workspace]/modules/my.service.project/`).
