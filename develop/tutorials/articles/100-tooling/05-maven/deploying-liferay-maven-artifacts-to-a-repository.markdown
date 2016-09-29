@@ -1,4 +1,4 @@
-# Deploying Artifacts to a Repository
+# Deploying Liferay Maven Artifacts to a Repository
 
 Deploying artifacts to a remote repository is important if you intend to share
 your Maven projects with others. First, you must have a remote repository that

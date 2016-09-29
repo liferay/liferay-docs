@@ -152,9 +152,9 @@ creating a release repository. The only difference is that you specify
 
 Voila! You not only have a repository for your Liferay releases (i.e.,
 `liferay-releases`), you also have a repository for your Liferay plugin
-snapshots (i.e., `liferay-snapshots`). To learn how to deploy your Maven
+snapshots (i.e., `liferay-snapshots`). To learn how to deploy your Liferay Maven
 artifacts to a Nexus repository, see the
-[Deploying Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts#deploying-artifacts-to-a-repository)
+[Deploying Liferay Maven Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-0/deploying-liferay-maven-artifacts-to-a-repository)
 section of the *Installing Liferay Maven Artifacts* tutorial.
 
 Next, you can configure your new repository servers in your Maven environment to
