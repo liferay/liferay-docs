@@ -5,10 +5,10 @@ Before diving into Maven-based development in Liferay, you'll need to install
 manage your Maven-based plugins. You'll focus on these topics in this tutorial.
 
 When you first begin using Maven (e.g., packaging a project), it will create a
-local repository on your machine. The default local repository typically resides
-in your `[USER_HOME]/.m2` folder. When you build your Maven projects, Maven
-downloads *artifacts* from the Central Repository and posts them to your local
-repository automatically. Then your Maven project references the local
+local `.m2` repository on your machine. The default local repository typically
+resides in your `[USER_HOME]/.m2` folder. When you build your Maven projects,
+Maven downloads *artifacts* from the Central Repository and posts them to your
+local repository automatically. Then your Maven project references the local
 repository for dependencies (artifacts), which are necessary to successfully
 complete its build process. Every time a Maven project cannot retrieve an
 artifact from the local repository, the configured remote repository is accessed
@@ -16,7 +16,7 @@ to download and save the missing artifact to the local repository. The Maven
 lifecycle for referencing dependencies in a Liferay project is illustrated in
 the figure below.
 
-![Figure 1: Artifacts must be available from your local repository before your Maven project can be built.](../../../images/maven-artifact-lifecycle.png)
+![Figure 1: Artifacts must be available from your local `.m2` repository before your Maven project can be built.](../../../images/maven-artifact-lifecycle.png)
 
 Maven artifacts are typically JAR or WAR files, which are used to identify
 dependencies needed to build your project. Maven artifacts contain an artifact

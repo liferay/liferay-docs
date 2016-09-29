@@ -121,7 +121,8 @@ sample module project ZIP.
     links the `portlet.ds` module to its parent POM, which is necessary to
     deploy to the remote repository. Then the module's dependencies are listed.
     These dependencies will be downloaded from the Central Repository and
-    installed to your local repository when you package the `portlet.ds` module.
+    installed to your local `.m2` repository when you package the `portlet.ds`
+    module.
 
 4.  Now that you've properly configured your parent POM and module POM, you can
     package your Maven project. Navigate to your module project (e.g.,
