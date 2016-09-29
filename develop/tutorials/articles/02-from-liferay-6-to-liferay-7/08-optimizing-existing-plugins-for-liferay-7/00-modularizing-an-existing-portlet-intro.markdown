@@ -67,9 +67,7 @@ $$$
     Blade CLI by visiting the
     [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
     tutorial section and you can view examples of
-    [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
-    and
-    [Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+    [Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
     by visiting the respective tutorials.
 
     Navigate to your parent directory (e.g., `tasks`) and run the following
@@ -429,8 +427,7 @@ and deployed them to your Liferay instance. Great job!
 
 ## Related Topics [](id=related-topics)
 
-[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
+[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
 
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+[Business Logic and Data Access](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
 
-[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
