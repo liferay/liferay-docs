@@ -14,6 +14,8 @@ lets you get right to the features of your app or site, rather than making you
 start over every time with the basic building blocks? There is such a thing, and
 it's called @product@.
 
+[With @product@, you never have to start from scratch.](../../images/dont-start-from-scratch.png)
+
 ## Leveraging a Suite of Products, Frameworks and Libraries
 
 @product@ offers developers a complete platform for building web apps, mobile
@@ -29,7 +31,7 @@ designed to be customized, as is the system itself. You can also extend them to
 include your own functionality, and this is no hack: because of Liferay's
 extensible design, customization is by design.
 
-<!-- Diagram -->
+[@product@ ships with suites of applications to get you started building your site quickly.](../../images/liferay-suites.png)
 
 In short, Liferay was written by developers for developers, to help you get your
 work done faster and more easily, to take the drudgery out of web and mobile app
@@ -79,7 +81,7 @@ expanding or customizing @product@'s features:
 5.  Developing a custom theme that adapts the look and feel of the platform to
     the visual needs of your project.
 
-<!-- Diagram --> 
+[@product@ can be used by developers in many ways.](../../images/liferay-developer-roles-diagram.png)
 
 The Liferay platform can be used as a headless platform to develop web or mobile
 apps with any technology of your choice (Angular, React, Backbone, Cocoa,
