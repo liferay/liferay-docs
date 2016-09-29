@@ -3,7 +3,7 @@
 If you're here, that means you know that `MVCRenderCommand`s are used to respond
 to portlet render URLs, and you want to know how to create and use MVC render
 commands. If you just want to learn about Liferay's MVC Portlet framework in
-general, that information is in a [separate article](develop/tutorials/-/knowledge_base/7-0/mvc-portlet).
+general, that information is in a [separate article](/develop/tutorials/-/knowledge_base/7-0/mvc-portlet).
 
 To use MVC render commands, you need these things:
 
@@ -128,8 +128,8 @@ As you can see, MVC render commands are flexible and very easy to implement.
 
 ## Related Topics [](id=related-topics)
 
-[MVC Resource Command](develop/tutorials/-/knowledge_base/7-0/mvc-resource-command)
+[MVC Resource Command](/develop/tutorials/-/knowledge_base/7-0/mvc-resource-command)
 
-[MVC Action Command](develop/tutorials/-/knowledge_base/7-0/mvc-action-command)
+[MVC Action Command](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command)
 
-[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
+[MVC Command Overrides](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)

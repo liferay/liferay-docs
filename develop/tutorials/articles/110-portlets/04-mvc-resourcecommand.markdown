@@ -98,8 +98,8 @@ Liferay MVC portlets.
 
 ## Related Topics [](id=related-topics)
 
-[MVC Render Command](develop/tutorials/-/knowledge_base/7-0/mvc-render-command)
+[MVC Render Command](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command)
 
-[MVC Action Command](develop/tutorials/-/knowledge_base/7-0/mvc-action-command)
+[MVC Action Command](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command)
 
-[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
+[MVC Command Overrides](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
