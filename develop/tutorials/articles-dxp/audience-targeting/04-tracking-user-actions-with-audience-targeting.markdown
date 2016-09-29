@@ -98,16 +98,19 @@ dependencies.
     name should begin with the metric's name you're creating and end with
     *TrackingAction* (e.g., `NewsletterTrackingAction.java`). Your Java class
     should implement the
-    `com.liferay.content.targeting.api.model.TrackingAction` interface.
+    [com.liferay.content.targeting.api.model.TrackingAction` interface](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html).
 
-    You must implement the `TrackingAction` interface, but there are
+    You must implement the
+    [TrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html}
+    interface, but there are
     `TrackingAction` extension classes that provide helpful utilities that you
-    can extend. For example, your metric can extend the `BaseJSPTrackingAction`
+    can extend. For example, your metric can extend the
+    [BaseJSPTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
     class to support generating your metric's UI using JSPs. This tutorial
     demonstrates implementing the UI using a JSP and assumes the
-    `TrackingAction` interface is implemented by extending the
-    `BaseJSPTrackingAction` class. For more information on choosing a UI for
-    your metric, see the
+    [TrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+    interface is implemented by extending the `BaseJSPTrackingAction` class. For
+    more information on choosing a UI for your metric, see the
     [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-metrics#selecting-a-ui-technology)
     section.
 
@@ -119,41 +122,9 @@ dependencies.
     start immediately once deployed to @product@.
 
 Now that your Java class is set up, you'll need to define how your metric works
-by implementing the `TrackingAction` interface's methods. Here are some of the
-methods that you can implement to modify your metric's behavior:
-
-<!-- The below method descriptions are the Javadoc copied from the
-`TrackingAction` interface. Since the source code is not accessible and the
-Javadoc for Audience Targeting is not currently published, I've provided some
-methods and descriptions until the Javadoc is available publicly. -Cody -->
-
-- `activate`: Does processing when the tracking action is installed.
-- `deActivate`: Does processing when the tracking action is uninstalled.
-- `deleteData`: Removes any additional data added by this tracking action when
-  the tracking action instance is removed.
-- `exportData`: Exports any additional data added by this tracking action when
-  the tracking action instance is exported.
-- `getDescription`: Returns the tracking action localized description.
-- `getEventTypes`: Returns the list with the event types that can be monitored
-  by this tracking action.
-- `getFormHTML`: Returns the HTML code containing the form fields required to
-  edit the tracking action instance configuration, based on the context.
-- `getIcon`: Returns the Font Awesome CSS class for the tracking action icon.
-- `getName`: Returns the tracking action localized name.
-- `getShortDescription`: Returns the tracking action localized short
-  description.
-- `getSummary`: Returns the tracking action instance localized summary.
-- `getTrackingActionKey`: Returns the key that identifies the tracking action.
-  The tracking action instances of this tracking action are identified by their
-  tracking action key.
-- `importData`: Imports any additional data added by this tracking action when
-  the tracking action instance is imported.
-- `isInstantiable`: Returns `true` if the tracking action can be used more than
-  once with different values for a campaign.
-- `isVisible()`: Returns `true` if the tracking action is visible.
-- `isVisible(String, long)`: Returns `true` if the tracking action is visible.
-- `processTrackingAction`: Returns the result of evaluating the tracking action
-  form fields in the context of the request and response.
+by implementing the
+[TrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+interface's methods. You'll begin implementing these methods next.
 
 The first thing you'll define in your newsletter metric is the view/save
 lifecycle.
@@ -165,10 +136,11 @@ a user applies a metric to a report using the Report Editor.
 
 In this section, you'll begin defining the newsletter metric's Java class. This
 assumes that you followed the instructions above, creating the
-`NewsletterTrackingAction` class and extending `BaseJSPTrackingAction`. If you
-used the `contenttargetingtrackingaction` Blade CLI template, your project is
-already extending `BaseJSPTrackingAction` and a default `view.jsp` file is
-already created. 
+`NewsletterTrackingAction` class and extending
+[BaseJSPTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html).
+If you used the `contenttargetingtrackingaction` Blade CLI template, your
+project is already extending `BaseJSPTrackingAction` and a default `view.jsp`
+file is already created.
 
 1.  Add the activation and deactivation methods to your class.
 
@@ -184,9 +156,10 @@ already created.
             super.deActivate();
         }
 
-    These methods call the super class `BaseTrackingAction` to implement
-    necessary logging and processing for when your metric starts and stops. Make
-    sure to include the
+    These methods call the super class
+    [BaseTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
+    to implement necessary logging and processing for when your metric starts
+    and stops. Make sure to include the
     [@Activate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Activate.html)
     and
     [@Deactivate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Deactivate.html)
@@ -228,11 +201,14 @@ already created.
     When the user opens the Report Editor, the render phase begins for the
     metric. The `getFormHTML(...)` method retrieves the HTML to display. You
     don't have to worry about implementing this method because it's already
-    implemented in the `BaseJSPTrackingAction` class you're extending. The
-    `getFormHTML` method calls the `populateContext(...)` method.
+    implemented in the
+    [BaseJSPTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
+    class you're extending. The `getFormHTML` method calls the
+    `populateContext(...)` method.
 
     You'll notice the `populateContext` method is not available in the
-    `TrackingAction` interface. This is because it's not needed in all cases.
+    [TrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+    interface. This is because it's not needed in all cases.
     It's available by extending the `BaseJSPTrackingAction` class, and you'll
     need to add more logic to it for the newsletter metric.
     
@@ -275,9 +251,10 @@ already created.
     `processTrackingAction(...)` method takes the values from the
     [metric's UI form](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
-    Since the `BaseTrackingAction` class provides a default implementation of
-    this method that returns `null`, the `NewsletterTrackingAction` class does
-    not need to implement it.
+    Since the
+    [BaseTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
+    class provides a default implementation of this method that returns `null`,
+    the `NewsletterTrackingAction` class does not need to implement it.
 
     If you need to process any custom fields in your metric, you should override
     this method. If you want your custom values to be stored in the

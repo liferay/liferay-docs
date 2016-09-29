@@ -31,24 +31,24 @@ ways:
     You must set the properties in the WAR file's `portlet-ext.properties` file. 
     Follow these steps to do so: 
 
-    1. In the LCS client's WAR file, open the 
-       `WEB-INF/classes/portlet-ext.properties` file. 
+    a. In the LCS client's WAR file, open the 
+        `WEB-INF/classes/portlet-ext.properties` file. 
 
-    2. Add the following properties at the end of `portlet-ext.properties` and 
-       set them to the appropriate values for your proxy: 
+    b. Add the following properties at the end of `portlet-ext.properties` and 
+        set them to the appropriate values for your proxy: 
    
             proxy.host.name=
             proxy.host.port=
 
-        If your proxy requires authentication, you should also add the following 
-        properties and set them to the appropriate values for your proxy. 
+       If your proxy requires authentication, you should also add the following 
+       properties and set them to the appropriate values for your proxy. 
 
             proxy.host.login=
             proxy.host.password=
 
-    3. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-       file. 
+    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
+        file. 
 
-    4. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
+    d. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
 
 Great! Now you're ready to connect your Liferay DXP instance to LCS. 

@@ -102,14 +102,21 @@ specified dependency.
 
 Once you've created your module project, you can configure your project's
 presentation in the IDE's Project Explorer. To change the project's
-presentation, 
+presentation, select the default *Hierarchical* or *Flat* views. To do this,
+navigate to the Project Explorer's *View Menu*
+(![View Menu](../../../images/icon-ide-view-menu.png)), select *Projects
+Presentation* and then select the presentation mode you'd like to display. The
+Hierarchical view displays subfolders and subprojects under the project, whereas
+the Flat view displays the modules separately from their project.
+
+![Figure 3: The Hierarchical project presentation mode is set, by default.](../../../images/workspace-presentation.png)
 
 IDE also provides a method to import existing module projects. You can import a
 module project by navigating to *File* &rarr; *Import* &rarr; *Liferay* &rarr;
 *Liferay Module Project(s)*. Then point to the project location and click
 *Finish*.
 
-![Figure 3: Select the *Liferay Module Project(s)* to import a module project.](../../../images/import-wizard.png)
+![Figure 4: Select the *Liferay Module Project(s)* to import a module project.](../../../images/import-wizard.png)
 
 You now have the knowledge to create a Liferay module project from Liferay
 IDE. Now go out there and get stuff done!

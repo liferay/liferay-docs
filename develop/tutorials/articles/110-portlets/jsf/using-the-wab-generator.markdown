@@ -74,7 +74,7 @@ Generator in action.
     <!-- Attach WAR above for download. -Cody -->
 
 2.  Open your @product@ instance in a file explorer and add a
-    `portal-ext.properties file with the following properties:
+    `portal-ext.properties` file with the following properties:
 
         module.framework.web.generator.generated.wabs.store=true
         module.framework.web.generator.generated.wabs.store.dir=${module.framework.base.dir}/wabs
