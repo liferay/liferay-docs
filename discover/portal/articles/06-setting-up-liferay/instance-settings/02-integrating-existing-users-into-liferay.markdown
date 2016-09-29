@@ -6,50 +6,164 @@ log in to your Liferay server. You can also configure Liferay to allow users to
 log in via Facebook or OpenId accounts. Liferay's Control Panel provides
 interfaces for setting up user authentication using the following services:
 
-- LDAP
-- SSO
-- CAS
-- Facebook
-- NTLM
-- OpenId
-- Crowd
 - Open SSO
-- SiteMinder
-- Shibboleth
-- SAML
+- CAS
+- NTLM
+- LDAP
+- OpenId
+- Facebook
+- Google
+<!-- - Crowd -->
+<!-- - SSO -->
+<!-- - SiteMinder -->
+<!-- - Shibboleth -->
+<!-- - SAML -->
 
-Let's start by learning how to connect Liferay to an LDAP server.
+You probably already know which service you'll be using, but before skipping to the
+relevant section consider what scope you want to affect when configuring
+authentication.
+
+## Authentication Configuration Scope
+
+Many of the authentication configurations covered here can be made in two
+places: [Instance
+Settings](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance)
+and [System
+Settings](/discover/portal/-/knowledge_base/7-0/system-wide-settings). So which
+one should you use? It depends on what scope you'd like to affect. If you'd like
+to affect the entire system (all Liferay instances configured for your Liferay
+installation), use System Settings. With System Settings you'll be setting the
+final value for the entire system (if the entry in System Settings lists the
+scope as *System*) or a default value that can be overridden at a more granular
+scope (if the entry has *Default Settings for All Instances* as its scope). If
+you'd like to affect only one Liferay instance specifically, make your
+configuration in Instance Settings.
+
+Another consideration is whether you'd like to be able to maintain your settings
+in a portable `.cfg` file that can be deployed to another Liferay installation.
+If you use System Settings, you can simply make your configurations, save them,
+and [export a configuration
+file](discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations).
+
+## Authentication: OpenSSO [](id=authentication-opensso)
+
+OpenSSO is an open source single sign-on solution that comes from the code base
+of Sun's System Access Manager product. Liferay integrates with OpenSSO,
+allowing you to use OpenSSO to integrate Liferay into an infrastructure that
+contains a multitude of different authentication schemes against different
+repositories of identities.
+
+You can set up OpenSSO on the same server as Liferay or a different box. Follow
+the instructions at the [OpenSSO site](http://opensso.dev.java.net/) to install
+OpenSSO. Once you have it installed, create the Liferay administrative user in
+it. Users are mapped back and forth by screen names. By default, the Liferay
+administrative user has a screen name of *test*, so in OpenSSO, you would
+register the user with the ID of *test* and an email address of
+*test\@liferay.com*. Once you have the user set up, log in to Open SSO using this
+user.
+
+In the same browser window, go to the URL for your server running Liferay and
+log in as the same user, using the email address *test\@liferay.com*. Go to the
+Control Panel and click *Configuration &rarr; Instance Settings &rarr;
+Authentication &rarr; OpenSSO*. Modify the three URL fields (Login URL, Logout
+URL, and Service URL) so they point to your OpenSSO server (i.e., only modify
+the host name portion of the URLs), click the *Enabled* check box, and then
+click *Save*. Liferay then redirects users to OpenSSO when they click the *Sign
+In* link.
+
+## Authentication: Central Authentication Service (CAS) [](id=authentication-central-authentication-service-cas)
+
+CAS is an authentication system originally created at Yale University. It is a
+widely-used open source single sign-on solution and was the first SSO product to
+be supported by Liferay.
+
+Please follow the documentation for CAS to install it on your application server
+of choice.
+
+Your first step will be to copy the CAS client JAR file to Liferay's library
+folder. On Tomcat, this is in `[Tomcat Home]/webapps/ROOT/WEB-INF/lib`. Once
+you've done this, the CAS client will be available to Liferay the next time you
+start it.
+
+The CAS Server application requires a properly configured Secure Socket Layer
+certificate on your server to work. If you wish to generate one yourself, you
+will need to use the `keytool` utility that comes with the JDK. Your first step
+is to generate the key. Next, you export the key into a file. Finally, you
+import the key into your local Java key store. For public, Internet-based
+production environments, you will need to either purchase a signed key from a
+recognized certificate authority or have your key signed by a recognized
+certificate authority. For Intranets, you should have your IT department
+pre-configure users' browsers to accept the certificate so they don't get
+warning messages about the certificate.
+
+To generate a key, use the following command:
+
+    keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
+
+Instead of the password in the example (`changeit`), use a password you will
+remember. If you are not using Tomcat, you may want to use a different alias as
+well. For First and Last names, enter `localhost` or the host name of your
+server. It cannot be an IP address.
+
+To export the key to a file, use the following command:
+
+    keytool -export -alias tomcat -keypass changeit -file server.cert
+
+Finally, to import the key into your Java key store, use the following command:
+
+    keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit -keystore $JAVA_HOME/jre/lib/security/cacerts
+
+If you are on a Windows system, replace `$JAVA_HOME` above with `%JAVA_HOME%`.
+Of course, all of this needs to be done on the system on which CAS will be
+running.
+
+Once your CAS server is up and running, you can configure Liferay to use it.
+This is a simple matter of navigating to the CAS tab in *Control Panel &rarr;
+Configuration &rarr; Instance Settings &rarr; Authentication*. Enable CAS
+authentication and then modify the URL properties to point to your CAS server.
+
+**Enabled:** Check this box to enable CAS single sign-on.
+
+**Import from LDAP:** A user may be authenticated from CAS and not yet exist in
+Liferay. Select this to automatically import users from LDAP if they do not
+exist in Liferay.
+
+The rest of the settings are various URLs, with defaults included. Change
+*localhost* in the default values to point to your CAS server. When you are
+finished, click *Save*. After this, when users click the *Sign In* link, they
+will be directed to the CAS server to sign in to Liferay.
+
+## Authentication: NTLM [](id=authentication-ntlm)
+
+NTLM is a Microsoft protocol that can be used for authentication through
+Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern
+versions of Windows server, NTLM is still used when authenticating to a
+workgroup. Liferay Portal now supports NTLM v2 authentication. NTLM v2 is more
+secure and has a stronger authentication process than NTLMv1.
+
+**Enabled:** Check this box to enable NTLM authentication.
+
+**Domain Controller:** Enter the IP address of your domain controller. This is
+the server that contains the user accounts you want to use with Liferay.
+
+**Domain:** Enter the domain / workgroup name.
+
+**Service Account:** You need to create a service account for NTLM. This account
+will be a computer account, not a user account.
+
+**Service Password:** Enter the password for the service account.
 
 ## LDAP [](id=ldap)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an
-LDAP directory. There are two places for you to configure the LDAP settings:
-here in the Control Panel or in your Liferay server's `portal-ext.properties`
-file. You can browse an HTML version of Liferay's `portal.properties` file
-online at
-[http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
-We recommend you use the Control Panel to configure LDAP server connection
-settings since your settings will be stored in the database. Note that if you
-use both, the settings in the database will be merged with the settings in
-`portal-ext.properties`. If there's a conflict or overlapping data, the LDAP
-server settings in the database take precedence over the servers set in
-the `portal-ext.properties` file. Configuring the LDAP settings from the Control
-Panel is easier and does not require a restart of Liferay. The only compelling
-reason to use the `portal-ext.properties` file is if you have many Liferay nodes
-which need be configured to run against the same LDAP directory. In that case,
-for your initial deployment, it may be easier to copy the
-`portal-ext.properties` file to all of the nodes so the first time they start
-up, the settings are correct. Regardless of which method you use, the available
-settings are the same.
-
-You configure the global values from the LDAP tab of the Authentication page.
+LDAP directory. 
 
 **Enabled:** Check this box to enable LDAP Authentication.
 
 **Required:** Check this box if LDAP authentication is required. Liferay will
 then not allow a user to log in unless he or she can successfully bind to the
 LDAP directory first. Uncheck this box if you want to allow users with Liferay
-accounts but no LDAP accounts to log in to the portal.
+accounts but no LDAP accounts to log in to Liferay.
 
 **LDAP Servers:** Liferay supports connections to multiple LDAP servers. You can
 use the Add button beneath this heading to add LDAP servers. We explain how to
@@ -58,17 +172,13 @@ configure new LDAP servers below.
 **Import/Export:** You can import and export user data from LDAP directories
 using the following options:
 
-- *Import Enabled:* Check this box to cause Liferay to do a mass import from
+- *Enable Import:* Check this box to cause Liferay to do a mass import from
   your LDAP directories. If you want Liferay to only synchronize users when they
   log in, leave this box unchecked. Definitely leave this unchecked if you are
   working in a clustered environment. Otherwise, all of your nodes would try to
   do a mass import when each of them starts up.
 
-- *Import on Startup Enabled:* Check this box to have Liferay run the import
-  when it starts up. Note: This box only appears if you check the *Import
-  Enabled* box above.
-
-- *Export Enabled:* Check this box to enable Liferay to export user accounts
+- *Enable Export:* Check this box to enable Liferay to export user accounts
   from the database to LDAP. Liferay uses a listener to track any changes made
   to the `User` object and will push these changes out to the LDAP server
   whenever the `User` object is updated. Note that by default on every login,
@@ -78,6 +188,10 @@ using the following options:
   file:
 
         users.update.last.login=false
+
+- *Enable Import on Startup:* Check this box to have Liferay run the import
+  when it starts up. Note: This box only appears if you check the *Enable Import* 
+  box described above.
 
 **Use LDAP Password Policy:** Liferay uses its own password policy by default.
 This can be configured on the Password Policies page of the Control Panel. Check
@@ -89,8 +203,8 @@ policies. Liferay does this by parsing the messages in the LDAP controls
 returned by your LDAP server. By default, the messages in the LDAP controls that
 Liferay is looking for are the messages returned by the Fedora Directory Server.
 If you are using a different LDAP server, you will need to customize the
-messages in Liferay's `portal-ext.properties` file, as there is not yet a GUI
-for setting this. See below for instructions describing how to do this.
+messages in *System Settings &rarr; Foundation &rarr; System LDAP
+Configuration*.
 
 Once you've finished configuring LDAP, click the *Save* button. Next, let's look
 at how to add LDAP servers.
@@ -98,6 +212,7 @@ at how to add LDAP servers.
 ### Adding LDAP Servers [](id=adding-ldap-servers)
 
 The Add button beneath the LDAP servers heading allows you to add LDAP servers.
+You can add an LDAP server from the LDAP Servers entry in Systyem Settings, too.
 If you have more than one, you can arrange the servers by order of preference
 using the up/down arrows. When you add an LDAP Server, you will need to provide
 several pieces of data so Liferay can bind to that LDAP server and search it for
@@ -112,7 +227,7 @@ of the form will be populated with the proper default values for that directory.
 
 **Connection:** These settings cover the basic connection to LDAP.
 
-- *Base Provider URL:* This tells the portal where the LDAP server is located.
+- *Base Provider URL:* This tells Liferay where the LDAP server is located.
   Make sure the machine on which Liferay is installed can communicate with the
   LDAP server. If there is a firewall between the two systems, check to make
   sure the appropriate ports are opened.
@@ -267,32 +382,34 @@ Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-### LDAP Options Not Available in the GUI [](id=ldap-options-not-available-in-the-gui)
+### LDAP Options Available in System Settings
 
-Although most of the LDAP configuration can be done from the Control Panel,
-there are several configuration parameters that are only available by adding to
-your Liferay server's `portal-ext.properties` file. These options may be
-available in the GUI in future versions of Liferay Portal but for now they can
-only be configured by editing the properties file.
+Although most of the LDAP configuration can be done from Instance Settings,
+there are several configuration parameters that are only available to be set at
+the system scope, in System Settings. 
 
-If you need to change any of these options, copy the LDAP section from Liferay's
-`portal.properties` file into your `portal-ext.properties` file. Note that since
-you have already configured LDAP from the GUI, any settings from the properties
-file that match settings already configured in the GUI will be ignored. The GUI,
-which stores the settings in the database, always takes precedence over the
-properties file.
+If you need to change any of these options, navigate to *Control Panel* &rarr;
+*Configuration* &rarr; *System Settings*, go to the Foundation section, and
+find the entries with LDAP in the title.
 
-    ldap.auth.method=bind
-    #ldap.auth.method=password-compare
+In the LDAP Auth entry, you can set the authentication method and the password
+encryption algorithm. Using Bind as the authentication method is preferred by
+most vendors so you don't have to worry about encryption strategies. Password
+compare does exactly what it sounds like: it reads the user's password out of
+LDAP, decrypts it and compares it with the user's password in Liferay, syncing
+the two. If you use Password-compare, you can also choose which encryption
+algorithm to use for the comparison.
 
-Set either bind or password-compare for the LDAP authentication method. Bind is
-preferred by most vendors so you don't have to worry about encryption
-strategies. Password compare does exactly what it sounds like: it reads the
-user's password out of LDAP, decrypts it and compares it with the user's
-password in Liferay, syncing the two.
+Use the LDAP Export and LDAP Import entries to enable and configure imports form
+an LDAP directory. entry to set the 
 
-    ldap.auth.password.encryption.algorithm=
-    ldap.auth.password.encryption.algorithm.types=MD5,SHA
+
+
+- LDAP Export: 
+- LDAP Import
+- LDAP Servers
+- System LDAP Configuration
+
 
 Set the password encryption to used to compare passwords if the property
 `ldap.auth.method` is set to `password-compare`.
@@ -323,114 +440,7 @@ using that server, the word snippets may not work with your LDAP server. If they
 don't, you can replace the values of these properties with phrases from your
 server's error messages. This will enable Liferay to recognize them. Next, let's
 look at the Single Sign-On solutions Liferay supports.
-
-## SSO [](id=sso)
-
-Single Sign-On solutions allow you to provide a single login credential for
-multiple systems. This allows you to have people authenticate to the Single
-Sign-On product and they will be automatically logged in to Liferay and to other
-products as well.
-
-Liferay supports several single sign-on solutions. Of course, if your product is
-not yet supported, you may choose to implement support for it yourself by use of
-the extension environment. Alternatively, your organization can choose to
-sponsor support for it. Please contact `sales@liferay.com` for more information
-about this.
-
-## Authentication: Central Authentication Service (CAS) [](id=authentication-central-authentication-service-cas)
-
-CAS is an authentication system originally created at Yale University. It is a
-widely-used open source single sign-on solution and was the first SSO product to
-be supported by Liferay.
-
-Please follow the documentation for CAS to install it on your application server
-of choice.
-
-Your first step will be to copy the CAS client .jar file to Liferay's library
-folder. On Tomcat, this is in `[Tomcat Home]/webapps/ROOT/WEB-INF/lib`. Once
-you've done this, the CAS client will be available to Liferay the next time you
-start it.
-
-The CAS Server application requires a properly configured Secure Socket Layer
-certificate on your server to work. If you wish to generate one yourself, you
-will need to use the `keytool` utility that comes with the JDK. Your first step
-is to generate the key. Next, you export the key into a file. Finally, you
-import the key into your local Java key store. For public, Internet-based
-production environments, you will need to either purchase a signed key from a
-recognized certificate authority (such as Thawte or Verisign) or have your key
-signed by a recognized certificate authority. For Intranets, you should have
-your IT department pre-configure users' browsers to accept the certificate so
-they don't get warning messages about the certificate.
-
-To generate a key, use the following command:
-
-    keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
-
-Instead of the password in the example (`changeit`), use a password you will
-remember. If you are not using Tomcat, you may want to use a different alias as
-well. For First and Last names, enter `localhost` or the host name of your
-server. It cannot be an IP address.
-
-To export the key to a file, use the following command:
-
-    keytool -export -alias tomcat -keypass changeit -file server.cert
-
-Finally, to import the key into your Java key store, use the following command:
-
-    keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit -keystore $JAVA_HOME/jre/lib/security/cacerts
-
-If you are on a Windows system, replace `$JAVA_HOME` above with `%JAVA_HOME%`.
-Of course, all of this needs to be done on the system on which CAS will be
-running.
-
-Once your CAS server is up and running, you can configure Liferay to use it.
-This is a simple matter of navigating to the *Settings &rarr;  Authentication
-&rarr; CAS* tab in the Control Panel. Enable CAS authentication and then modify
-the URL properties to point to your CAS server.
-
-**Enabled:** Check this box to enable CAS single sign-on.
-
-**Import from LDAP:** A user may be authenticated from CAS and not yet exist in
-the portal. Select this to automatically import users from LDAP if they do not
-exist in the portal.
-
-The rest of the settings are various URLs, with defaults included. Change
-*localhost* in the default values to point to your CAS server. When you are
-finished, click *Save*. After this, when users click the *Sign In* link, they
-will be directed to the CAS server to sign in to Liferay.
-
-## Authentication: Facebook [](id=authentication-facebook)
-
-Liferay Portal also enables users to log in using their Facebook accounts. To
-enable this feature, you simply need to select the *Enable* box and enter the
-Application ID and Application Secret which should have been provided to you by
-Facebook. Facebook SSO works by taking the primary Facebook email address and
-searching for the same email address in Liferay's `User_` table. If a match is
-found, the user is automatically signed on (provided the user clicked *allow*
-from the Facebook dialog). If there isn't a match, the user is prompted in
-Liferay to add a user from Facebook. Once selected, a new user is created by
-retrieving four fields from Facebook (first name, last name, email address and
-gender).
-
-## Authentication: NTLM [](id=authentication-ntlm)
-
-NTLM is a Microsoft protocol that can be used for authentication through
-Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern
-versions of Windows server, NTLM is still used when authenticating to a
-workgroup. Liferay Portal now supports NTLM v2 authentication. NTLM v2 is more
-secure and has a stronger authentication process than NTLMv1.
-
-**Enabled:** Check this box to enable NTLM authentication.
-
-**Domain Controller:** Enter the IP address of your domain controller. This is
-the server that contains the user accounts you want to use with Liferay.
-
-**Domain:** Enter the domain / workgroup name.
-
-**Service Account:** You need to create a service account for NTLM. This account
-will be a computer account, not a user account.
-
-**Service Password:** Enter the password for the service account.
+-->
 
 ## Authentication: OpenID [](id=authentication-openid)
 
@@ -460,6 +470,19 @@ register and sign in with their OpenID accounts. Internally, the product uses
 
 OpenID is enabled by default in Liferay but can be disabled here.
 
+## Authentication: Facebook [](id=authentication-facebook)
+
+Liferay Portal also enables users to log in using their Facebook accounts. To
+enable this feature, you simply need to select the *Enable* box and enter the
+Application ID and Application Secret which should have been provided to you by
+Facebook. Facebook SSO works by taking the primary Facebook email address and
+searching for the same email address in Liferay's `User_` table. If a match is
+found, the user is automatically signed on (provided the user clicked *allow*
+from the Facebook dialog). If there isn't a match, the user is prompted in
+Liferay to add a user from Facebook. Once selected, a new user is created by
+retrieving four fields from Facebook (first name, last name, email address and
+gender).
+
 ## Atlassian Crowd [](id=atlassian-crowd)
 
 Atlassian Crowd is a web-based Single Sign-On product similar to CAS. Crowd can
@@ -470,31 +493,6 @@ Because Atlassian Crowd implements an OpenID producer, Liferay works and has
 been tested with it. Simply use the OpenID authentication feature in Liferay to
 log in using Crowd.
 
-## Authentication: OpenSSO [](id=authentication-opensso)
-
-OpenSSO is an open source single sign-on solution that comes from the code base
-of Sun's System Access Manager product. Liferay integrates with OpenSSO,
-allowing you to use OpenSSO to integrate Liferay into an infrastructure that
-contains a multitude of different authentication schemes against different
-repositories of identities.
-
-You can set up OpenSSO on the same server as Liferay or a different box. Follow
-the instructions at the [OpenSSO site](http://opensso.dev.java.net/) to install
-OpenSSO. Once you have it installed, create the Liferay administrative user in
-it. Users are mapped back and forth by screen names. By default, the Liferay
-administrative user has a screen name of *test*, so in OpenSSO, you would
-register the user with the ID of *test* and an email address of
-*test\@liferay.com*. Once you have the user set up, log in to Open SSO using this
-user.
-
-In the same browser window, go to the URL for your server running Liferay and
-log in as the same user, using the email address *test\@liferay.com*. Go to the
-Control Panel and click *Settings &rarr; Authentication &rarr; OpenSSO*. Modify
-the three URL fields (Login URL, Logout URL, and Service URL) so they point to
-your OpenSSO server (i.e., only modify the host name portion of the URLs), click
-the *Enabled* check box, and then click *Save*. Liferay then redirects users
-to OpenSSO when they click the *Sign In* link.
-
 ## Authentication: SiteMinder [](id=authentication-siteminder)
 
 SiteMinder is a single sign-on implementation from Computer Associates. Liferay
@@ -504,7 +502,7 @@ HTTP header to implement its single sign-on solution.
 To enable SiteMinder authentication in Liferay, check the *Enabled* box on the
 *SiteMinder* tab. If you are also using LDAP with Liferay, you can check the
 *Import from LDAP* box. If this box is checked, users authenticated from
-SiteMinder who do not exist in the portal will be imported from LDAP.
+SiteMinder who do not exist in Liferay will be imported from LDAP.
 
 The last field defines the header SiteMinder is using to keep track of the user.
 The default value is already populated. If you have customized the field for
@@ -545,12 +543,12 @@ header is in the HTTP request. If you check the *Import from LDAP* box, then any
 users authenticated from Shibboleth that do not exist in Liferay will be
 imported into Liferay from LDAP. LDAP must already be enabled for this to work.
 The path you enter into the *Logout URL* field sets the logout URL for
-Shibboleth. The link is triggered when the user logs out of the portal.  If the
+Shibboleth. The link is triggered when the user logs out of Liferay.  If the
 logout URL is incorrect or is not set, the user will not be logged out of
 Shibboleth. The *User Header* is the attribute name of the user header that is
 passed in from the Shibboleth service provider. It should contain either the
 screen name or the email address of the user, which will be used to authenticate
-the user into the portal.
+the user into Liferay.
 
 It's possible to configure the above four Shibboleth options via portal
 properties instead of via the Control Panel. To configure the Shibboleth plugin
@@ -698,7 +696,7 @@ should be enabled.
 in seconds. If this property is not set or is set to `0`, the SSO session has an
 unlimited duration. The SSO session maximum duration can be longer than the
 portal session maximum duration. If the portal session expires before the SSO
-session expires, the user is automatically logged back in to the portal.  SSO
+session expires, the user is automatically logged back in to Liferay.  SSO
 session expiration does not trigger a single logout from all service providers.
 You can use the session maximum age, for example, to force users to sign in
 again after a certain period of time.
@@ -843,7 +841,7 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
     to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata XML
     file. The value entered in the *Metadata URL* field will only be persisted
     to the database when there is one entered metadata URL and there is no
-    specified metadata XML file. Otherwise, the portal keeps the original
+    specified metadata XML file. Otherwise, Liferay keeps the original
     metadata URL in the database. This behavior ensures that once a metadata URL
     has been specified, there will always be a metadata URL saved in the
     database. This way, if a portal administrator forgets the previously entered
@@ -1054,3 +1052,17 @@ If your situation fits the scenario described above, follow these steps:
 Great! Now you know how to configure Liferay either as a SAML identity provider
 or a service provider. You also know how to configure the Liferay SAML in a
 clustered environment.
+
+## SSO [](id=sso)
+
+Single Sign-On solutions allow you to provide a single login credential for
+multiple systems. This allows you to have people authenticate to the Single
+Sign-On product and they will be automatically logged in to Liferay and to other
+products as well.
+
+Liferay supports several single sign-on solutions. Of course, if your product is
+not yet supported, you may choose to implement support for it yourself by use of
+the extension environment. Alternatively, your organization can choose to
+sponsor support for it. Please contact `sales@liferay.com` for more information
+about this.
+
