@@ -4,17 +4,17 @@ Before diving into Maven-based development in Liferay, you'll need to install
 [Maven](https://maven.apache.org/) on your machine and plan how you want to
 manage your Maven-based plugins. You'll focus on these topics in this tutorial.
 
-When you first begin using Maven (e.g., packaging a project), it will create a
-local `.m2` repository on your machine. The default local repository typically
-resides in your `[USER_HOME]/.m2` folder. When you build your Maven projects,
+When you begin using Maven to build Liferay projects, it creates a local
+repository on your machine. The default local repository typically resides in
+your `[USER_HOME]/.m2` folder. When you build Liferay projects using Maven,
 Maven downloads *artifacts* from the Central Repository and posts them to your
-local repository automatically. Then your Maven project references the local
-repository for dependencies (artifacts), which are necessary to successfully
-complete its build process. Every time a Maven project cannot retrieve an
-artifact from the local repository, the configured remote repository is accessed
-to download and save the missing artifact to the local repository. The Maven
-lifecycle for referencing dependencies in a Liferay project is illustrated in
-the figure below.
+local `.m2` repository automatically. Then your Maven project references the
+local repository for dependencies (artifacts), which are necessary to
+successfully complete its build process. Every time a Maven project cannot
+retrieve an artifact from the local repository, the configured remote repository
+is accessed to download and save the missing artifact to the `.m2` repository.
+The Maven lifecycle for referencing dependencies in a Liferay project is
+illustrated in the figure below.
 
 ![Figure 1: Artifacts must be available from your local `.m2` repository before your Maven project can be built.](../../../images/maven-artifact-lifecycle.png)
 
@@ -27,7 +27,7 @@ throughout the Liferay Maven tutorials.
 
 When developing Liferay modules using Maven, you'll need to install and
 reference the Liferay Maven artifacts provided by Liferay. You can learn how to
-do this in the
+do this a few different ways, which are discussed in the
 [Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
 tutorial.
 
@@ -43,11 +43,11 @@ tutorial for more information.
 $$$
 
 Once you install Maven and have automatically retrieved your Maven project's
-dependencies, you'll need to decide if you want to share your Liferay project as
-artifacts in a remote repository. You can do this by creating your own Nexus
-repository. Nexus is a Maven repository management server. Using Nexus for Maven
-repository management is convenient but not required. You'll step through a
-simple example of setting up a Nexus repository later.
+dependencies, you'll need to decide if you want to share your Liferay project in
+a remote repository. You can do this by creating your own Nexus repository.
+Nexus is a Maven repository management server; using Nexus for Maven repository
+management is convenient but not required. You'll step through a simple example
+of setting up a Nexus repository later.
 
 First, you'll go over installing Maven to your machine.
 
@@ -57,7 +57,7 @@ You can download Maven from
 [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi).
 Putting your Maven installation's `bin` directory in your system's `$PATH`
 facilitates running the Maven executable (`mvn`) from your command prompt. You
-can check if Maven is installed by running `mvn -v` from your commnad prompt. If
+can check if Maven is installed by running `mvn -v` from your command prompt. If
 your Maven version is returned, you've successfully installed Maven!
 
 You'll learn some basics about Maven repositories next.
@@ -70,7 +70,9 @@ remote repositories. This means that you can share Maven repositories privately
 with your team or with the public. Your *local* repository holds your downloaded
 artifacts and the artifacts you install to it. *Remote* repositories are for
 sharing artifacts either privately (e.g., within your development team) or
-publicly. To learn more about using artifact repositories see Maven's
+publicly. You can also share artifacts on a local intrantet, if accessing a
+public network is not an option. To learn more about using artifact repositories
+see Maven's
 [Introduction to Repositories](http://maven.apache.org/guides/introduction/introduction-to-repositories.html)
 guide.
 
@@ -155,7 +157,7 @@ Voila! You not only have a repository for your Liferay releases (i.e.,
 snapshots (i.e., `liferay-snapshots`). To learn how to deploy your Liferay Maven
 artifacts to a Nexus repository, see the
 [Deploying Liferay Maven Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-0/deploying-liferay-maven-artifacts-to-a-repository)
-section of the *Installing Liferay Maven Artifacts* tutorial.
+tutorial.
 
 Next, you can configure your new repository servers in your Maven environment to
 enable you to install artifacts to them. 
@@ -177,8 +179,8 @@ artifacts from the Central Repository or Liferay's own Nexus repository in the
 [Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
 tutorial.
 
-Configuring a mirror in your Maven settings, however, is recommended as a best
-practice. Get more information on mirrors and their purpose in Maven's
+Configuring a mirror in your Maven settings is recommended as a best practice.
+Get more information on mirrors and their purpose in Maven's
 [Mirror Settings](http://maven.apache.org/guides/mini/guide-mirror-settings.html)
 guide. 
 
@@ -212,7 +214,7 @@ To configure your Maven environment to access your `liferay-releases` and
 
 The username `admin` and password `admin123` are the credentials of the default
 Nexus OSS administrator account. If you changed these credentials for your Nexus
-server, make sure to update `settings.xml` with these changes.
+server, make sure to update `settings.xml` with these changes. 
 
 Now that your repositories are configured, they're ready to receive all the
 Liferay Maven artifacts you'll download and the Liferay plugin artifacts you'll

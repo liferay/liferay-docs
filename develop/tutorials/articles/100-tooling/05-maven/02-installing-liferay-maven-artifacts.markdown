@@ -4,15 +4,15 @@ To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be a problem--Liferay
 provides them as Maven artifacts. 
 
-So how do you get the Liferay artifacts? There are several different ways you
-can obtain them. The most popular way to retrieve Liferay Maven artifacts is to
+So how do you get Liferay artifacts? There are several different ways you can
+obtain them. The most popular way to retrieve Liferay Maven artifacts is to
 install them from the Central Repository. Alternatively, if you absolutely must
 have the latest Liferay pre-release, you can intall the Liferay Maven artifacts
-from the Liferay Nexus source repository. These installation methods automatically
-install artifacts to your local `.m2` repository when packaging your Maven
-project. Finally, you can download a Liferay-provided ZIP file that lets you
-install artifacts to local intranets and repositories without relying on public
-network accessibility.
+from the Liferay Nexus source repository. These installation methods
+automatically install artifacts to your local `.m2` repository when packaging
+your Maven project. Finally, you can download a Liferay-provided ZIP file that
+lets you install artifacts to local intranets and repositories without relying
+on public network accessibility.
 
 This tutorial explains how to install the Maven artifacts required for Liferay
 plugin development. For more information on the Maven artifact retrieval
@@ -26,7 +26,7 @@ First, consider the installation process using the Central Repository.
 
 Using the Central Repository to install Liferay Maven artifacts is very
 straightforward and only requires that you specify your plugin's dependencies
-via its `pom.xml` file. In fact, the first time you use Maven to compile a
+via its `pom.xml` file. In fact, the first time you use Maven to build a
 Liferay Maven plugin project, Maven automatically downloads the required
 artifacts from the Central Repository into your local `.m2` repository if
 they're not found in your `.m2` repository or any of your configured repository
@@ -137,8 +137,9 @@ You can download the Liferay artifacts from SourceForge.
 
 1.  Navigate to the [Liferay Portal](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/)
     project page in SourceForge and select the version of Liferay for which you
-    want artifacts. Then select the `liferay-ce-portal-maven-[version]` link to
-    download the Liferay Portal Maven Zip.
+    want Maven artifacts. Then select the
+    `liferay-ce-portal-maven-[version].zip` link to download the Liferay Portal
+    Maven Zip.
 
     ![Figure 1: After selecting the Liferay version, select the Liferay Portal Maven Zip file to download.](../../../images/maven-select-download.png)
 
