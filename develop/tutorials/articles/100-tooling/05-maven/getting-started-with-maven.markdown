@@ -113,7 +113,7 @@ To create a repository using Nexus, follow these steps:
 
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*. 
 
-    ![Figure 1: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
+    ![Figure 2: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../../images/maven-nexus-create-repo.png)
 
     To learn more about each type of Nexus repository, read Sonatype's
     [Managing Repositories](http://books.sonatype.com/nexus-book/reference/confignx-sect-manage-repo.html)
@@ -134,8 +134,8 @@ You just created a Maven repository accessible from your Nexus OSS repository
 server! Congratulations! 
 
 It's also useful to create a Maven repository to hold snapshots of each Liferay
-plugin you create. Creating a *snapshot* repository is almost identical to
-creating a *release* repository. The only difference is that you specify
+plugin you create. Creating a snapshot repository is almost identical to
+creating a release repository. The only difference is that you specify
 *Snapshot* as its repository policy:
 
 1.  Go to your Nexus repository server in your web browser.
@@ -152,7 +152,10 @@ creating a *release* repository. The only difference is that you specify
 
 Voila! You not only have a repository for your Liferay releases (i.e.,
 `liferay-releases`), you also have a repository for your Liferay plugin
-snapshots (i.e., `liferay-snapshots`). 
+snapshots (i.e., `liferay-snapshots`). To learn how to deploy your Maven
+artifacts to a Nexus repository, see the
+[Deploying Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts#deploying-artifacts-to-a-repository)
+section of the *Installing Liferay Maven Artifacts* tutorial.
 
 Next, you can configure your new repository servers in your Maven environment to
 enable you to install artifacts to them. 
@@ -160,8 +163,8 @@ enable you to install artifacts to them.
 ## Configuring Local Maven Settings
 
 Before using your repository servers and/or any repository mirrors, you must
-specify them in your Maven environment settings. Your repository settings enable
-Maven to find the repository and get access to it for retrieving and installing
+specify them in your Maven environment settings. Your repository settings let
+Maven find the repository and get access to it for retrieving and installing
 artifacts. You can configure your local Maven settings in the
 `[USER_HOME]/.m2/settings.xml` file.
 
@@ -174,16 +177,13 @@ artifacts from the Central Repository or Liferay's own Nexus repository in the
 [Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
 tutorial.
 
-<!-- You only need to configure a repository server if you're installing
-downloaded Liferay CE/EE artifacts from a zip file or if you want to share...-->
-
 Configuring a mirror in your Maven settings, however, is recommended as a best
 practice. Get more information on mirrors and their purpose in Maven's
 [Mirror Settings](http://maven.apache.org/guides/mini/guide-mirror-settings.html)
 guide. 
 
-To configure your Maven environment to access your `liferay-releases` repository
-server, do the following:
+To configure your Maven environment to access your `liferay-releases` and
+`liferay-snapshots` repository servers, do the following:
 
 1.  Navigate to your `[USER_HOME]/.m2/` directory. Create that directory if it
     doesn't yet exist. 
