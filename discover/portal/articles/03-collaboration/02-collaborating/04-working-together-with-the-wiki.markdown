@@ -216,9 +216,20 @@ are hierarchical lists of headings under which you can create wiki pages. This
 allows you to organize your content in a more formal fashion.
 
 In the edit screen's *Configuration* section, you can set the page to use
-Creole wiki format, MediaWiki format, HTML, or plain text. We recommend
-that you stick with the Creole format, as it allows for a much cleaner
-separation of content and code. 
+Creole wiki format, HTML, or plain text. We recommend that you stick with the 
+Creole format, as it allows for a much cleaner separation of content and code.
+
++$$$
+
+**Note:** The MediaWiki and JSPWiki engines and formats are also available in
+respective deprecated apps on the Marketplace.
+
+To install the JSPWiki engine, you must first remove the Creole engine by 
+uninstalling the `com.liferay.wiki.engine.creole` bundle from your Liferay 
+instance. The JSPWiki format will display in the format selector as *Creole*
+since it is an extension of the Creole engine. 
+
+$$$
 
 Similar to other @product@ applications, in the *Related Assets* section of
 the editor, you can select other assets to associate with the wiki page. And
