@@ -50,4 +50,4 @@ in your portlet is a piece of cake!
 
 [Using JSPs in a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/using-jsps-in-a-portlet-application)
 
-[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
+[Web Services](/develop/tutorials/-/knowledge_base/7-0/web-services)
