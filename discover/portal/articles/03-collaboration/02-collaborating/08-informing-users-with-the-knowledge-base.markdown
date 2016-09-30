@@ -3,33 +3,32 @@
 Liferay's Knowledge Base app provides a way to create and organize articles in a 
 site. For example, it can be used to display professional product documentation 
 or form complete books or guides. It even lets you import article source files 
-written in Markdown. It's [workflow-enabled](/discover/portal/-/knowledge_base/7-0/using-worklfow), 
+written in Markdown. It's [workflow-enabled](/discover/portal/-/knowledge_base/7-0/using-workflow), 
 so you can require articles to be approved before they are published. 
 Additionally, the Knowledge Base app lets administrators create article 
-templates that help users follow a common structure and include consistent kinds 
-of information. These features let you create and manage your own knowledge 
-base, full of information relevant to your users.
+templates that help users follow a common outline. With this application, you
+can create and manage your own knowledge base, full of information relevant to
+your users.
 
 Here's what the Knowledge Base can do:
 
-- Navigation is built into the Knowledge Base Display 
-- Has a suggestions interface for article feedback
-- Stores articles in folders
-- Contains metadata fields for friendly URL, source URL, categorization, and related assets
-- Button (![*Edit on GitHub*](../../../images/icon-edit-on-github.png))
-can be enabled to take readers to an article's online source repository location
-- Imports article Markdown source files to create and update articles
+- Its navigation is built into the Knowledge Base Display. 
+- It has a suggestions interface for article feedback.
+- It stores articles in folders.
+- It contains metadata fields for friendly URL, source URL, categorization, and related assets.
+- The button (![*Edit on GitHub*](../../../images/icon-edit-on-github.png))
+  can be enabled to take readers to an article's source repository location.
+- It imports article Markdown source files to create and update articles.
 
-The Knowledge Base app is available on the 
-[Liferay Marketplace](https://www.liferay.com/marketplace). This app also 
-contains other apps that let you manage different aspects of your knowledge 
-base. Once you've installed the app, it's accessible by opening Site
-Administration and navigating to *Content* &rarr; *Knowledge Base*. The Knowledge 
-Base has several apps you can add to site pages. The *Add* &rarr; *Applications* 
-&rarr; *Content Management* menu lists its apps: Knowledge Base Article, 
-Knowledge Base Display, Knowledge Base Search, and Knowledge Base Section. 
-You'll learn what each does as you learn how to manage your knowledge base. 
-First you'll learn how to create and manage articles. 
+The Knowledge Base app is available on the [Liferay Marketplace](https://www.liferay.com/marketplace). 
+The Knowledge Base has several portlets you can add to site pages:
+
+- Knowledge Base Article 
+- Knowledge Base Display 
+- Knowledge Base Search 
+- Knowledge Base Section 
+
+Each of these is covered below. First you'll learn how to create and manage articles. 
 
 ## Creating and Managing Articles [](id=creating-and-managing-articles)
 
