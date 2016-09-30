@@ -5,11 +5,11 @@ retrieve images, XML, or any other kind of resource from a Liferay instance. The
 resource URL then invokes the corresponding MVC resource command class 
 (`*MVCResourceCommand`) that processes the resource request and response. 
 
-First, use the `<portlet:resourceURL>` tag to create the resource URL in a JSP. 
-For example, the Login Portlet's 
-[`create_account.jsp` file](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/login/login-web/src/main/resources/META-INF/resources/create_account.jsp) 
-defines the following resource URL for retrieving a CAPTCHA image during account 
-creation: 
+First, use the `<portlet:resourceURL>` tag to create the resource URL in a JSP.
+For example, the Login Portlet's
+`/login-web/src/main/resources/META-INF/resources/navigation/create_account.jsp`
+file defines the following resource URL for retrieving a CAPTCHA image during
+account creation: 
 
     <portlet:resourceURL id="/login/captcha" var="captchaURL" />
 
@@ -46,8 +46,10 @@ property to `MVCResourceCommand.class`:
         // your resource handling code
     }
 
-As a real-world example, consider the Login Portlet's 
-[`CaptchaMVCResourceCommand` class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/portlet/action/CaptchaMVCResourceCommand.java): 
+As a real-world example, consider the Login Portlet's
+`CaptchaMVCResourceCommand` class (find this class in the Liferay source code
+at
+`modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/internal/portlet/action/CaptchaMVCResourceCommand.java`): 
 
     @Component(
         property = {
@@ -98,8 +100,8 @@ Liferay MVC portlets.
 
 ## Related Topics [](id=related-topics)
 
-[MVC Render Command](develop/tutorials/-/knowledge_base/7-0/mvc-rendercommand)
+[MVC Render Command](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command)
 
-[MVC Action Command](develop/tutorials/-/knowledge_base/7-0/mvc-actioncommand)
+[MVC Action Command](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command)
 
-[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/mvc-command-override)
+[MVC Command Overrides](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
