@@ -14,7 +14,10 @@ to help you get your DXP instance up and running with LCS:
    [this user guide article](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
    Also note that as improvements are made to LCS, older versions of the LCS 
    client app may not work. You should therefore ensure that your DXP instance 
-   is always running the latest version of the client. 
+   is always running the latest version of the client. When upgrading the 
+   client, you may also need to regenerate the 
+   [environment token](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
+   that you use to connect. 
 
 2. [**Preconfiguring the LCS Client to Connect Through a Proxy:**](/discover/deployment/-/knowledge_base/7-0/preconfiguring-the-lcs-client-to-connect-through-a-proxy)
    If your server connects to the Internet through a proxy, you must 
