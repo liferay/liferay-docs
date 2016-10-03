@@ -32,14 +32,14 @@ For instructions on using Marketplace, see
 
 +$$$
 
-**Note:** For LCS to work properly, your Liferay instances must be running 
-version 153 or higher of the LCS client app. To determine the client version in 
+**Note:** For LCS to work properly, your Liferay instances must be running the 
+latest version of the LCS client app. To determine the client version in 
 a Liferay instance already connected to LCS, navigate to *Liferay Connected 
 Services* under the *Apps* section of the *Control Panel*. The client version is 
-displayed at the bottom of the app. Also, if you use 
-[environment tokens](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
-to connect, you should generate and use new tokens when upgrading the client 
-from versions 152 or lower to versions 153 or higher. 
+displayed at the bottom of the app. Also note that when upgrading the client, 
+you may also need to regenerate the 
+[environment token](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
+that you use to connect. 
 
 $$$
 
