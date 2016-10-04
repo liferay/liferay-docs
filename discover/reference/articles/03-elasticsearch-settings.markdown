@@ -1,4 +1,4 @@
-# Elasticsearch Settings
+# Elasticsearch Settings [](id=elasticsearch-settings)
 
 Elasticsearch is the default search engine for Liferay 7. The *Liferay
 Foundation* suite includes an adapter for Elasticsearch called *Liferay Portal
