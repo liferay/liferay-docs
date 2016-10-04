@@ -29,7 +29,7 @@ like this
                     - `SampleProductNavigationControlMenuEntry.java`
             - `resources`
                 - `content`
-                    `Language.properties`
+                    - `Language.properties`
     - `bnd.bnd`
     - `build.gradle`
     - `gradlew`

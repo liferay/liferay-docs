@@ -35,7 +35,7 @@ like this
                         - `SamplePortlet.java`
             - `resources`
                 - `content`
-                    `Language.properties`
+                    - `Language.properties`
                 - `META-INF`
                     - `resources`
                         - `init.jsp`
@@ -49,8 +49,5 @@ generated module, by default, creates a panel category with a panel app in
 @product@'s Product Menu. To build upon the generated app, modify the project by
 adding logic and additional files to the folders outlined above. You can visit
 the
-[blade.simulation.panel.app](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.controlmenuentry)
-sample project for a more expanded sample of a panel app in the @product@'s
-Simulation Menu. Likewise, see the
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
 tutorial for instructions on customizing a panel app project.
