@@ -13,11 +13,7 @@ interfaces for setting up user authentication using the following services:
 - OpenId
 - Facebook
 - Google
-<!-- - Crowd -->
-<!-- - SSO -->
-<!-- - SiteMinder -->
-<!-- - Shibboleth -->
-<!-- - SAML -->
+- Atlassian Crowd
 
 You probably already know which service you'll be using, but before skipping to the
 relevant section consider what scope you want to affect when configuring
@@ -400,7 +396,7 @@ the two. If you use Password-compare, you can also choose which encryption
 algorithm to use for the comparison.
 
 You can use the LDAP Import entry in System Settings to configure import
-settings from LDAP. One example is the import methos. If you set this to User,
+settings from LDAP. One example is the import methods. If you set this to User,
 Liferay will import all users from the specified portion of the LDAP tree. If
 you set this to Group Liferay will search all the groups and import the users
 in each group. If you have users who do not belong to any groups, they will not
