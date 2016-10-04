@@ -1,8 +1,8 @@
 # Portlet Configuration Icon
 
-In this tutorial, you'll learn how to create a Liferay portlet configuration icon as a
-Liferay module. To create a portlet configuration icon as a module, use a
-command with the following parameters: 
+In this tutorial, you'll learn how to create a Liferay portlet configuration
+icon as a Liferay module. To create a portlet configuration icon as a module,
+use a command with the following parameters: 
 
     blade create -t portletconfigurationicon -p [package name] -c [class name] [project name]
 
