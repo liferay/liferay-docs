@@ -1,8 +1,8 @@
 # Simulation Panel Entry Template
 
-In this tutorial, you'll learn how to create a Liferay control menu entry as a
-Liferay module. To create a Liferay control menu entry as a module, use a
-command with the following parameters: 
+In this tutorial, you'll learn how to create a Liferay simulation panel entry as
+a Liferay module. To create a simulation panel entry as a module, use a command
+with the following parameters: 
 
     blade create -t simulationpanelentry -p [package name] -c [class name] [project name]
 
