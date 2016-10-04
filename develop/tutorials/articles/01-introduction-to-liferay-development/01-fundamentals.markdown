@@ -87,8 +87,8 @@ Here are some key standards supported by @product@:
 -   [OSGi r6](https://www.osgi.org):
     Liferay supports a wide range of the OSGi family of standards through its
     own implementations and also integrates the high quality implementations of
-    the Apache Felix and Eclipse Equinox projects (which which we also
-    collaborate). Here are some of the most relevant supported standards:
+    the Apache Felix and Eclipse Equinox projects (which we also collaborate).
+    Here are some of the most relevant supported standards:
 
     -   OSGi runtime: Allowing any OSGi module to run in
         @product@
