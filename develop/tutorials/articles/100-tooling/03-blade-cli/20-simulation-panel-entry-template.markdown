@@ -1,4 +1,4 @@
-# Simulation Panel Entry Template
+# Simulation Panel Entry Template [](id=simulation-panel-entry-template)
 
 In this tutorial, you'll learn how to create a Liferay simulation panel entry as
 a Liferay module. To create a simulation panel entry as a module, use a command

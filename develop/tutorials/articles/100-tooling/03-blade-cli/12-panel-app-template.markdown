@@ -1,4 +1,4 @@
-# Panel App Template
+# Panel App Template [](id=panel-app-template)
 
 In this tutorial, you'll learn how to create a Liferay panel app and category as
 a Liferay module. To create a Liferay panel app and category as a module, use a

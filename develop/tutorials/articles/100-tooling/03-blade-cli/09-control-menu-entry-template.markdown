@@ -1,4 +1,4 @@
-# Control Menu Entry Template
+# Control Menu Entry Template [](id=control-menu-entry-template)
 
 In this tutorial, you'll learn how to create a Liferay control menu entry as a
 Liferay module. To create a Liferay control menu entry as a module, use a

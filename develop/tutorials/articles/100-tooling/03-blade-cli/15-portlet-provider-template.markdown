@@ -1,4 +1,4 @@
-# Portlet Provider Template
+# Portlet Provider Template [](id=portlet-provider-template)
 
 In this tutorial, you'll learn how to create a Liferay portlet provider as a
 Liferay module. To create a Liferay portlet provider as a module, use a

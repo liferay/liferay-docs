@@ -1,4 +1,4 @@
-# API Template
+# API Template [](id=api-template)
 
 In this tutorial, you'll learn how to create a Liferay API as a Liferay module.
 To create a Liferay API as a module, use a command with the following

@@ -1,4 +1,4 @@
-# Portlet Toolbar Contributor Template
+# Portlet Toolbar Contributor Template [](id=portlet-toolbar-contributor-template)
 
 In this tutorial, you'll learn how to create a Liferay portlet toolbar
 contributor as a Liferay module. To create a portlet toolbar contributor entry

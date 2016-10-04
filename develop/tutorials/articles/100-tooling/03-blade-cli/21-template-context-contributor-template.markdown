@@ -1,4 +1,4 @@
-# Template Context Contributor Template
+# Template Context Contributor Template [](id=template-context-contributor-template)
 
 In this tutorial, you'll learn how to create a Liferay template context
 contributor as a Liferay module. To create a template context contributor as a

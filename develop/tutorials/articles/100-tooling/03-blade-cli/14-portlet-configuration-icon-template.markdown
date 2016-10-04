@@ -1,4 +1,4 @@
-# Portlet Configuration Icon
+# Portlet Configuration Icon [](id=portlet-configuration-icon)
 
 In this tutorial, you'll learn how to create a Liferay portlet configuration
 icon as a Liferay module. To create a portlet configuration icon as a module,
