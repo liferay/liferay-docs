@@ -7,7 +7,7 @@ command with the following parameters:
     blade create -t panelapp -p [package name] -c [class name] [project name]
 
 The template for this kind of project is `panelapp`. Suppose you want to create
-a service project called `my-panel-app-project` with a package name prefix of
+a panel app project called `my-panel-app-project` with a package name prefix of
 `com.liferay.docs` and a class name prefix of `Sample`. You could run the
 following command to accomplish this:
 

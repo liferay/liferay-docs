@@ -6,8 +6,9 @@ use a command with the following parameters:
 
     blade create -t portletconfigurationicon -p [package name] -c [class name] [project name]
 
-The template for this kind of project is `portletconfigurationicon`. Suppose you want to create a
-service project called `my-portlet-config-icon` with a package name of
+The template for this kind of project is `portletconfigurationicon`. Suppose you
+want to create a portlet configuration icon project called
+`my-portlet-config-icon` with a package name of
 `com.liferay.docs.portlet.configuration.icon` and a class name of
 `SamplePortletConfigurationIcon`. You could run the following command to
 accomplish this:

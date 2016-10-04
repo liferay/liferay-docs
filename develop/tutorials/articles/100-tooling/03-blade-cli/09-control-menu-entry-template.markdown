@@ -7,8 +7,8 @@ command with the following parameters:
     blade create -t controlmenuentry -p [package name] -c [class name] [project name]
 
 The template for this kind of project is `controlmenuentry`. Suppose you want to
-create a service project called `my-control-menu-entry-project` with a package
-name of `com.liferay.docs.entry.control.menu` and a class name of
+create a control menu entry project called `my-control-menu-entry-project` with
+a package name of `com.liferay.docs.entry.control.menu` and a class name of
 `SampleProductNavigationControlMenuEntry`. You could run the following command
 to accomplish this:
 
