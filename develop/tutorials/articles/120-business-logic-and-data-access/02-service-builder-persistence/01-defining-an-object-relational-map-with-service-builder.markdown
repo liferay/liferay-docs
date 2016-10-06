@@ -27,7 +27,7 @@ includes the `*api`, `*service`, and `*web` modules by default in the
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
 tutorial. This tutorial assumes you've assembled your application's modules
 similarly to the linked tutorial above. Be sure to also visit the
-[OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity)
+[Fundamentals](/develop/tutorials/-/knowledge_base/7-0/fundamentals)
 tutorial for additional info on the `*api`, `*service`, and `*web` modules.
 
 The first step in using Service Builder is to define your model classes and
