@@ -10,6 +10,7 @@ Upgrading a theme involves these steps:
 -  Updating the CSS
 -  Updating the theme templates
 -  Updating resources importer configuration and content
+-  Updating the UIs to follow Lexicon guidelines
 
 This tutorial demonstrates how to upgrade a Liferay 6.2 theme to Liferay 7,
 using the Lunar Resort theme as an example. The Lunar Resort theme was developed
@@ -464,8 +465,9 @@ reference doc. You must update these directives with the new syntax.
     <@liferay.language key="skip-to-content" /></a>` and replace it with
     `<@liferay_ui["quick-access"] contentId="#main-content" />`.
     
-    The updated syntax uses the taglib directly, rather than using the theme 
-    object. This makes the directive more straight forward and easier to read.
+    This uses the new syntax, harnessing the `liferay-ui:quick-access` taglib to 
+    provide a shortcut to allow keyboard users to jump straight to the main
+    content of the page.
 
 3.  You must update all references to the Dockbar in your template.
 
@@ -529,14 +531,14 @@ reference doc. You must update these directives with the new syntax.
 
     This ensures that the navigation is not rendered unless there are pages.
 
-7.  Finally, update the content `<div>` to use the HTML5 `<section>` syntax.
+7.  Finally, replace the content `<div>` with the HTML5 `<section>` syntax.
 
     Note that the `<div>` element would still work, however the `<section>`
     element is more accurate and will better assist accessibility for screen 
     readers.
     
-    Find the `<div id="content">` element and update it to use the 
-    `<section>` element shown below:
+    Find the `<div id="content">` element and replace it with the `<section>` 
+    element shown below:
 
         <section id="content">
             <h1 class="hide-accessible">${the_title}</h1>
@@ -643,14 +645,14 @@ All articles must now have a structure and a template, and be written in XML.
 The structure and template provides the essentials for creating and rendering
 article content. Follow the steps below to update your web content for Liferay 7:
 
-1.  Open the `src/resources-importer/journal/articles/` directory and create a
+1.  Open the `/resources-importer/journal/articles/` directory and create a
     folder, for example `BASIC_WEB_CONTENT`, to hold your articles.
 
 2.  Move all of the basic HTML articles into the folder you just created in step
     1.
 
 3.  Create a folder that matches the folder name you created in step 1 and add
-    it to the `resources-importer/journal/templates/` directory.
+    it to the `/resources-importer/journal/templates/` directory.
 
     It's important that the folder names match the template and structure names
     to work properly.
@@ -659,12 +661,12 @@ article content. Follow the steps below to update your web content for Liferay 7
     Article structures must now be written in JSON.
 
     Create a `[structure-name].json` file in the
-    `resources-importer/journal/structures/` directory that matches the name of
+    `/resources-importer/journal/structures/` directory that matches the name of 
     the folder you created in step 1, for example `BASIC_WEB_CONTENT.json`.
 
-    For more complicated web content articles that have a more complicated
-    existing structure and template, you'll have to recreate the structure
-    manually in @product@.
+    For more complicated web content that goes beyond the scope of a basic 
+    structure and template, as covered in this example, you need to recreate the 
+    structure and template in @product@.
 
 5.  Add the JSON for your structure to the file that you just created in step 4.
     For basic web content articles you can use the JSON structure below:
@@ -707,8 +709,8 @@ article content. Follow the steps below to update your web content for Liferay 7
     create the matching template.
 
 5.  Create a `[template-folder-name].ftl` template file in the
-    `resources-importer/journal/templates/[template-folder-name]/`
-    folder you created in step 3 and add this method:
+    `/resources-importer/journal/templates/[template-folder-name]/` folder you 
+    created in step 3 and add this method:
 
         ${content.getData()}
 
@@ -794,51 +796,104 @@ article content. Follow the steps below to update your web content for Liferay 7
             </dynamic-element>
         </root>
 
-8.  Liferay 7 uses a design language known as [Lexicon](http://liferay.github.io/lexicon/).
-    When building a UI in Liferay 7, it is recommended that you use Lexicon and
-    follow the design patterns that Liferay has created. Lexicon is fully 
-    extensible, providing styling guidelines and best practices to ensure that 
-    your applications are well-designed.
+That's all that is needed for most of the basic web content articles. If you are
+following along with the Lunar Resort example, the updated XML articles are in
+the `/resources-importer/journal/articles/Basic Web Content/` directory of the 
+`lunar-resort-theme-migration-6.2.zip` file you downloaded at the beginning.
 
-    For example, look at the reservation form's HTML for the Lunar Resort:
++$$$
 
-            <p>
-            Thanks for choosing to stay at the Liferay Lunar Resort! Please fill out the
-            form below to book your stay. We know you have a choice in where to stay on
-            the
-            Moon... oh wait no you don't. Thanks for picking us anyways. We'll see you
-            soon on the Moon!
-            </p>
+**Note:** Liferay 6.2 used AlloyUI 2.0.x, and has since upgraded to Alloy UI
+3.0.x for Liferay 7. Due to this upgrade, you may need to update your syntax in
+order for your code to work. Please refer to Alloy UI's [examples](http://alloyui.com/examples/)
+and [API docs](http://alloyui.com/api/) as a guide.
 
-            <form class="form-horizontal">
-                    <fieldset>
-                      <legend>Reservation Form</legend>
-                      <div class="control-group">
-                          <label class="control-label" for="inputName">Name</label>
-                          <div class="controls">
-                                  <input type="text" id="inputName"
-                                  placeholder="Enter your Name here" required="required">
-                              </div>
+$$$
+
+Your next step is to update your sitemap for the resources importer.
+
+### Updating the Sitemap [](id=updating-the-sitemap)
+
+Due to the modularization of the portlets in Liferay 7, the portlet IDs have
+changed. In Liferay 6.2, the portlet ID's were numbered, however in Liferay 7
+the portlet IDs are the explicit class names of the module. You must change
+these in your `sitemap.json` so the portlets render properly.
+
+Some of the common portlet IDs are specified in the `sitemap.json` example of
+the [Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+tutorial.
+
+You can also find the updated portlet ID through the 
+*Look and Feel Configuration* menu for the portlet.
+Follow these steps to retrieve your portlet ID:
+
+1.  Open the *Options* menu for the portlet and select the 
+    *Look and Feel Configuration* menu.
+    
+    ![Figure 4: You can find the portlet ID in the the *Look and Feel Configuration* menu.](../../../images/upgrading-themes-look-and-feel-menu.png)
+
+2.  Click the *Advanced Styling* tab.
+
+    The portlet ID is listed within the blue box, next to the `Portlet ID` 
+    label, as shown in the figure below:
+
+![Figure 5: The portlet ID is listed for you within the blue box of the *Advanced Styling* tab.](../../../images/upgrading-themes-portlet-id.png)
+    
+A full list of the default portlet IDs can also be found in the
+[Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide)
+
+Next, you can learn how to update your theme's UIs to follow the Lexicon design
+guidelines.
+
+## Updating the UIs to Follow Lexicon Guidelines
+
+Liferay 7 uses a design language known as [Lexicon](http://liferay.github.io/lexicon/).
+When building a UI in Liferay 7, it is recommended that you follow the Lexicon 
+design patterns. Lexicon is fully extensible, providing styling guidelines and 
+best practices to ensure that your applications are well-designed.
+
+Lexicon provides both HTML and JavaScript components for you to quickly and
+effectively build fully realized UIs for your applications and web content.
+
+For example, look at the reservation form's HTML for the Lunar Resort:
+
+    <p>
+    Thanks for choosing to stay at the Liferay Lunar Resort! Please fill out the
+    form below to book your stay. We know you have a choice in where to stay on
+    the
+    Moon... oh wait no you don't. Thanks for picking us anyways. We'll see you
+    soon on the Moon!
+    </p>
+
+    <form class="form-horizontal">
+            <fieldset>
+              <legend>Reservation Form</legend>
+              <div class="control-group">
+                  <label class="control-label" for="inputName">Name</label>
+                  <div class="controls">
+                          <input type="text" id="inputName"
+                          placeholder="Enter your Name here" required="required">
                       </div>
-                      <div class="control-group">
-                          <label class="control-label" for="inputEmail">Email</label>
-                          <div class="controls">
-                              <input type="email" id="inputEmail"
-                              placeholder="Enter your E-Mail here" required="required">
-                          </div>
-                      </div>
-                      <div class="control-group">
-                          <div class="controls">
-                              <button type="submit" class="btn">Submit</button>
-                          </div>
-                      </div>
-                    </fieldset>
-            </form>
+              </div>
+              <div class="control-group">
+                  <label class="control-label" for="inputEmail">Email</label>
+                  <div class="controls">
+                      <input type="email" id="inputEmail"
+                      placeholder="Enter your E-Mail here" required="required">
+                  </div>
+              </div>
+              <div class="control-group">
+                  <div class="controls">
+                      <button type="submit" class="btn">Submit</button>
+                  </div>
+              </div>
+            </fieldset>
+    </form>
 
-            <p style="padding-bottom:25px;">
-            Thanks again for booking with Liferay. When you book with Liferay, you
-            remember your stay. Please take a moment to fill out our guestbook below.
-            </p>
+    <p style="padding-bottom:25px;">
+    Thanks again for booking with Liferay. When you book with Liferay, you
+    remember your stay. Please take a moment to fill out our guestbook below.
+    </p>
 
 The Lunar Resort theme's reservation form uses Bootstrap 2's design
 language. Since Lexicon extends Bootstrap 3, it uses updated patterns and
@@ -900,52 +955,6 @@ Here is a summary of the Lexicon updates to the example Lunar Resort form:
     give it more emphasis and contrast.
 
 You can apply these same Lexicon design patterns to your theme's forms.
-
-That's all that is needed for most of the basic web content articles. If you are
-following along with the Lunar Resort example, the updated XML articles are in
-the `resources-importer/journal/articles/Basic Web Content/` directory of the
-`lunar-resort-theme-migration-6.2.zip` file you downloaded at the beginning.
-
-+$$$
-
-**Note:** Liferay 6.2 used AlloyUI 2.0.x, and has since upgraded to Alloy UI
-3.0.x for Liferay 7. Due to this upgrade, you may need to update your syntax in
-order for your code to work. Please refer to Alloy UI's [examples](http://alloyui.com/examples/)
-and [API docs](http://alloyui.com/api/) as a guide.
-
-$$$
-
-Your next step is to update your sitemap for the resources importer.
-
-### Updating the Sitemap [](id=updating-the-sitemap)
-
-Due to the modularization of the portlets in Liferay 7, the portlet IDs have
-changed. In Liferay 6.2, the portlet ID's were numbered, however in Liferay 7
-the portlet IDs are the explicit class names of the module. You must change
-these in your `sitemap.json` so the portlets render properly.
-
-Some of the common portlet IDs are specified in the `sitemap.json` example of
-the [Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
-tutorial.
-
-You can also find the updated portlet ID through the 
-*Look and Feel Configuration* menu for the portlet.
-Follow these steps to retrieve your portlet ID:
-
-1.  Open the *Options* menu for the portlet and select the 
-    *Look and Feel Configuration* menu.
-    
-    ![Figure 4: You can find the portlet ID in the the *Look and Feel Configuration* menu.](../../../images/upgrading-themes-look-and-feel-menu.png)
-
-2.  Click the *Advanced Styling* tab.
-
-    The portlet ID is listed within the blue box, next to the `Portlet ID` 
-    label, as shown in the figure below:
-
-![Figure 5: The portlet ID is listed for you within the blue box of the *Advanced Styling* tab.](../../../images/upgrading-themes-portlet-id.png)
-    
-A full list of the default portlet IDs can also be found in the
-[Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide)
 
 You've updated your theme to Liferay 7! Now your users can continue enjoying the
 vision you've created.
