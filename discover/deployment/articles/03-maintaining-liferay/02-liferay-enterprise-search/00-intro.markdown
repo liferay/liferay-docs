@@ -1,4 +1,4 @@
-# Liferay Enterprise Search
+# Liferay Enterprise Search [](id=liferay-enterprise-search)
 
 Search engines are a critical component of your Liferay installation. They allow
 you to provide documents in an index that can quickly be searched, rather than

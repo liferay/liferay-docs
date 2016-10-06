@@ -23,7 +23,7 @@ The properties you assign are the ones found in the `@Component` annotation's
 Once you've configured your module project's component class, click *Finish* to
 create your project.
 
-## Creating Component Classes
+## Creating Component Classes [](id=creating-component-classes)
 
 You can also create a new component class for a pre-existing module project.
 Navigate to *File* &rarr; *New* &rarr; *Liferay Component Class*. This is a
@@ -48,7 +48,7 @@ Template` list:
 - *Struts in Action*: creates a new strutus action
 - *Struts Portlet Action*: creates a new struts portlet action
 
-## Possible Dependency Issues
+## Possible Dependency Issues [](id=possible-dependency-issues)
 
 When selecting the `Authenticator`, `Portlet Action Command`, `Rest`,
 or `Service Wrapper` templates, you may run into some dependency issues that

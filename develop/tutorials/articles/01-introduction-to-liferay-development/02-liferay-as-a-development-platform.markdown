@@ -1,4 +1,4 @@
-# Liferay as a Development Platform
+# Liferay as a Development Platform [](id=liferay-as-a-development-platform)
 
 If you've been reading everything up to this point, you've heard all about
 @product@'s architecture, modularity, and technologies. What's left is to tell
@@ -10,7 +10,7 @@ every day.
 But you're likely not interested in a bunch of prolegomena about it. Read on to
 learn the details. 
 
-## Web Applications and Portlets 
+## Web Applications and Portlets [](id=web-applications-and-portlets)
 
 Liferay as a development platform has always provided flexibility for both
 administrators and developers by making it easy to have more than one
@@ -32,7 +32,7 @@ to create web services based on Service Builder, JAX-RS, and JAX-WS. Then you
 can build standalone web applications using any front-end technology or mobile
 technology you like. 
 
-## Extensibility 
+## Extensibility [](id=extensibility)
 
 As you might imagine, the system described above contains all the tools
 necessary to make a well designed system that allows developers not only to
@@ -58,7 +58,7 @@ recompile the software.
 With Liferay, your custom code is kept in your own modules, which the container
 takes care of applying based on metadata you supply.
 
-## Developer Tools 
+## Developer Tools [](id=developer-tools)
 
 As you learned above, Liferay's OSGi container gives you these benefits: 
 
@@ -128,7 +128,7 @@ Persistence (JPA) and generating JAX-WS web services.
 
 In addition to the tooling, Liferay also provides many reusable frameworks. 
 
-## Frameworks and APIs 
+## Frameworks and APIs [](id=frameworks-and-apis)
 
 Liferay's development platform provides a great framework for application
 development and also offers APIs. Lots of them. Applications can be created by
@@ -151,7 +151,7 @@ there; you just need to take advantage of them: a Social Networking API,
 user-generated forms with data lists, a message bus, an audit system, and much
 more.
 
-## Example Liferay Projects 
+## Example Liferay Projects [](id=example-liferay-projects)
 
 Enough theory. It's time for practice. A good way to get the flavor of
 developing on Liferay's platform across is to show you some projects. First,
@@ -398,7 +398,7 @@ dynamically, while it's running, to avoid downtime.  It is a different way of
 doing things, but we believe it's a better way.  When you start working with
 modules and see the benefits you can gain, we think you'll agree. 
 
-## How to Navigate Liferay's Documentation 
+## How to Navigate Liferay's Documentation [](id=how-to-navigate-liferays-documentation)
 
 We've designed the Liferay Developer Network's documentation pages to be easy to
 navigate, based on your role or the kind of information you're looking for. If

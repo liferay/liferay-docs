@@ -17,7 +17,7 @@ What are the fundamentals that every Liferay developer should know?
 
 Interested? More details below. 
 
-## Open Source and based on Standards
+## Open Source and based on Standards [](id=open-source-and-based-on-standards)
 
 @product@ is both open source and built in the open, following a collaborative
 development model. That means that you can follow new development as it's
@@ -87,8 +87,8 @@ Here are some key standards supported by @product@:
 -   [OSGi r6](https://www.osgi.org):
     Liferay supports a wide range of the OSGi family of standards through its
     own implementations and also integrates the high quality implementations of
-    the Apache Felix and Eclipse Equinox projects (which which we also
-    collaborate). Here are some of the most relevant supported standards:
+    the Apache Felix and Eclipse Equinox projects (which we also collaborate).
+    Here are some of the most relevant supported standards:
 
     -   OSGi runtime: Allowing any OSGi module to run in
         @product@
@@ -99,7 +99,7 @@ Here are some key standards supported by @product@:
         an auto-generated UI to change the configuration of any component
         that leverages this standard.
 
-## Technologies
+## Technologies [](id=technologies)
 
 Like any open source application, Liferay is built on the shoulders of giants.
 When we choose the technology on which to build our platform, it must have the
@@ -191,7 +191,7 @@ everything we can to provide you with the most flexible technology platform
 possible, so that you have the freedom to go and build great things on
 it--things we never could have expected or imagined. 
 
-## Architecture
+## Architecture [](id=architecture)
 
 Liferay's design goals have from the beginning been to give you all the tools to
 create exactly the web presence you have in mind. To achieve this, the product
@@ -229,7 +229,7 @@ priority than the existing functionality.
 
 This is the power of a modular architecture. 
 
-### Modules
+### Modules [](id=modules)
 
 All new applications, extensions, and customizations built on Liferay are built 
 in a modular way. A module is the single unit of distribution and deployment in 
@@ -242,7 +242,7 @@ format for modules: OSGi bundles. An OSGi module is just a typical JAR file,
 familiar to Java developers as a ZIP file containing compiled code, templates, 
 resources, and some meta information.
 
-### Services
+### Services [](id=services)
 
 One aspect of modern software architecture is the notion of services. These are
 independently running pieces of code that provide specific functionality when
@@ -281,7 +281,7 @@ The container then instantiates your implementation when the service is called
 by existing code. This simple, clean method is how most customizations are made
 to Liferay 7. 
 
-### Components
+### Components [](id=components)
 
 In OSGi, possibly the best and certainly the easiest way to create services is
 through Declarative Services. In Declarative Services (aka DS), you create
@@ -301,7 +301,7 @@ larger application, and that application is itself made up of many small
 components. This makes it easier to develop an application because you only have
 to deal with small, well-defined, bite-sized chunks of code at a time.
 
-### Real Life Benefits of Modular Development 
+### Real Life Benefits of Modular Development [](id=real-life-benefits-of-modular-development)
 
 The next question then becomes, so what? Why is this a big deal?  Why should I
 have components, and what do I need them for?
