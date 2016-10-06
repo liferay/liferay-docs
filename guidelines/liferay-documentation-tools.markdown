@@ -598,5 +598,4 @@ missing IDs or have conflicting IDs.
 
 ## Contact Information 
 
-* Jim Hinkey (jhinkey) - Dev Guide
-* Rich Sezov (sez11a) - All other guides
+Rich Sezov (sez11a), Jim Hinkey (jhinkey)
