@@ -1,19 +1,20 @@
 #Autocompleting Text Fields
 
-It's been scientifically proven that internet users are lazy (not you or me, for
-sure--other internet users). So citizens of *Bosnia and Herzegovina* probably
-won't apply to The Lunar Resort if you make them type the entire title of their
+It's been scientifically proven that internet users are lazy (not you or
+me--other internet users). So citizens of *Bosnia and Herzegovina* might not
+apply to The Lunar Resort if you make them type the entire title of their
 country in the employment application. This is doubly true if they're filling
-out the form on their mobile device. 
+out the form on their mobile device. In this article you'll learn to make users'
+lives easier by configuring *autocomplete* on a form's text fields.
 
-To guide user input you can use a select field with a data provider, but
-sometimes the possible field entries are not able to be encompassed by a data
-provider. If your data provider doesn't include Bosnia and Herzevogina, for
-example, users from that country won't be able to enter anything into the field.
-An alternative to this is using a text field with the *autocomplete* feature so
-they can begin typing their country's name, and select it from a list if it
-appears. Using a text field with autocomplete gives you the flexibility of a
-text field (accepting any response that meets your [validation
+Why not just use a select field with a data provider to guide user input?
+Sometimes a data provider can't encompass all possible field entries. If your
+data provider doesn't include Bosnia and Herzegovina, for example, users from
+that country wouldn't be able to enter anything into the select field. An
+alternative to this is using a text field with the autocomplete feature so they
+can begin typing their country's name, and select it from a list if it appears.
+Using a text field with autocomplete gives you the flexibility of a text field
+(accepting any response that meets your [validation
 criteria](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#validating-text-fields))
 while giving users common choices to select from.
 
