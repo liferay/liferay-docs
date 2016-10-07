@@ -1,4 +1,4 @@
-# Installing Liferay Maven Artifacts
+# Installing Liferay Maven Artifacts [](id=installing-liferay-maven-artifacts)
 
 To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be a problem--Liferay
@@ -22,7 +22,7 @@ tutorial.
 
 First, consider the installation process using the Central Repository.
 
-## Installing Artifacts from the Central Repository
+## Installing Artifacts from the Central Repository [](id=installing-artifacts-from-the-central-repository)
 
 Using the Central Repository to install Liferay Maven artifacts is very
 straightforward and only requires that you specify your plugin's dependencies
@@ -54,7 +54,7 @@ might still be synced to a previous release of Liferay. If this occurs, download
 the Liferay Maven artifacts from Liferay's repository. You'll learn how to do
 this next.
 
-## Installing Artifacts from the Liferay Repository
+## Installing Artifacts from the Liferay Repository [](id=installing-artifacts-from-the-liferay-repository)
 
 If you'd like to access Liferay's latest Maven artifacts, you can configure
 Maven to automatically download and install them from
@@ -127,7 +127,7 @@ artifacts.
 
 Finally, you'll learn how to install Liferay Maven artifacts using a ZIP file.
 
-## Installing Artifacts from a Zip File
+## Installing Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file)
 
 For those who don't have access to a public network or just prefer to install
 Liferay's Maven artifacts locally without relying on a remote repository, you
