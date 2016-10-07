@@ -523,7 +523,10 @@ Liferay support.
 
 To decommission a server and free its activation key for reuse, select the 
 server's environment on the left and then select the server. In the server's 
-*Server Settings* tab, select *Unregister*. 
+*Server Settings* tab, select *Unregister*. Also note that when you shut down a 
+server normally, its activation key is immediately freed for reuse. If the 
+server crashes or its shutdown is forced (e.g., kill), its activation key is 
+freed for reuse within five minutes. 
 
 The next section shows you how to use environment tokens to connect Liferay EE 
 instances with LCS. 
@@ -543,13 +546,12 @@ to set up a Liferay instance: simply use the environment token file.
 
 +$$$
 
-**Note:** For LCS to work properly, your Liferay instances must be running 
-version 153 or higher of the LCS client app. To determine the client version in 
+**Note:** For LCS to work properly, your Liferay instances must be running the 
+latest version of the LCS client app. To determine the client version in 
 a Liferay instance already connected to LCS, navigate to *Liferay Connected 
 Services* under the *Apps* section of the *Control Panel*. The client version is 
-displayed under the *Disconnect* button. You should also generate and use new 
-tokens when upgrading the client from versions 152 or lower to versions 153 or 
-higher. 
+displayed at the bottom of the app. Also note that when upgrading the client, 
+you may also need to regenerate the environment token that you use to connect. 
 
 $$$
 
