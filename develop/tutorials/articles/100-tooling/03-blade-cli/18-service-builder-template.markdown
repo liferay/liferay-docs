@@ -19,6 +19,10 @@ portlet classes. This should be created manually. After running the command
 above, your project's directory structure looks like this:
 
 - `tasks`
+    - `gradle`
+        - `wrapper`
+            - `gradle-wrapper.jar`
+            - `gradle-wrapper.properties`
     - `tasks-api`
         - `bnd.bnd`
         - `build.gradle`
@@ -27,6 +31,7 @@ above, your project's directory structure looks like this:
         - `build.gradle`
         - `service.xml`
     - `build.gradle`
+    - `gradlew`
     - `settings.gradle`
 
 To generate your service and API classes for the `*-api` and `*-service`
