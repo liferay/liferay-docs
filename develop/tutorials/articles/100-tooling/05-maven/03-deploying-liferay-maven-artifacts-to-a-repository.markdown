@@ -132,7 +132,7 @@ Zip.
 
         mvn package
 
-    This downloads and installs all your module's dependencies and packages the
+    This downloads and installs all your module's dependencies, and packages the
     project into a JAR file. Navigate to your module project's generated
     `/target` folder. You'll notice there is a JAR file that was generated. This
     is the artifact you'll deploy to your Nexus repository.

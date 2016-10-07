@@ -28,7 +28,7 @@ Using the Central Repository to install Liferay Maven artifacts is very
 straightforward and only requires that you specify your plugin's dependencies
 via its `pom.xml` file. In fact, the first time you use Maven to build a
 Liferay Maven plugin project, Maven automatically downloads the required
-artifacts from the Central Repository into your local `.m2` repository if
+artifacts from the Central Repository into your local `.m2` repository, if
 they're not found in your `.m2` repository or any of your configured repository
 servers. You'll see it happen when you package your Liferay plugins. This
 automation puts more emphasis on the development of your Liferay project and
@@ -116,6 +116,9 @@ hosted in Liferay's Maven repository, however, you need to specify it in the
 command:
 
     mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots
+
+<!-- Link to *Generating New Projects Using Archetypes* tutorial here when it's
+available. -Cody -->
 
 The Liferay Maven repository offers a good alternative for those who want the
 most up-to-date Maven artifacts produced by Liferay. With a few simple

@@ -67,12 +67,21 @@ You'll learn some basics about Maven repositories next.
 Wouldn't it be nice to install and deploy your Liferay artifacts to a
 repository? Great news! Maven lets you install your artifacts both to local and
 remote repositories. This means that you can share Maven repositories privately
-with your team or with the public. Your *local* repository holds your downloaded
-artifacts and the artifacts you install to it. *Remote* repositories are for
-sharing artifacts either privately (e.g., within your development team) or
-publicly. You can also share artifacts on a local intrantet, if accessing a
-public network is not an option. To learn more about using artifact repositories
-see Maven's
+with your team or with the public. A local repository can actually refer to
+two types of Maven repositories, so both will be discussed here to avoid
+confusion.
+
+- A *local .m2* repository holds your own downloaded artifacts and the artifacts
+you install to it. This is your personal repository that is automatically
+referred to when packaging your Liferay Maven projects locally.
+- A *local* repository is used by companies that restrict access to a public
+network. Therefore, local repostories are provided on local intranets to allow
+employees to use and share Maven artifacts.
+
+*Remote* repositories are for sharing artifacts either privately (e.g., within
+your development team) or publicly. These repositories require that you have 
+public network access. To learn more about using artifact repositories, see
+Maven's
 [Introduction to Repositories](http://maven.apache.org/guides/introduction/introduction-to-repositories.html)
 guide.
 
