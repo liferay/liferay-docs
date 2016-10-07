@@ -63,15 +63,25 @@ items shown in the Activities feed in its Configuration.
 ## Using Social Bookmarks [](id=using-social-bookmarks)
 
 So far, you've learned how to integrate your site with Facebook and Twitter, but
-what about the rest of social media? Liferay provides Social Bookmarks. When 
-this feature is enabled, icons are displayed in a menu, or below the content, 
-that allows users to share their content to Facebook, Twitter, and Google+. This 
-feature is enabled by default in the Blogs portlet, and can be enabled for other 
-portlets, that are asset enabled, through the *configuration* menu of the 
-portlet or in System Settings.
+what about the other social networks? There's an app for that: Social Bookmarks.
+When this feature is enabled, icons are displayed in a menu, or below the 
+content, that allows users to share their content to Facebook, Twitter, and 
+Google+. This feature is enabled by default in the Blogs portlet, and can be 
+enabled for other portlets, that are asset enabled, through the *configuration* 
+menu of the portlet or in System Settings.
 
 ![Figure 2: Social Bookmarks are enabled by default in the Blogs portlet.](../../../images/social-bookmarks.png)
 
 If you want more social bookmarks than come out of the box, be sure to install 
 the [Social Bookmarks app](https://web.liferay.com/marketplace/-/mp/application/15188453) 
 from the Marketplace.
+
++$$$
+
+**Note:** The Blinklist and Technorati bookmark links are no longer active, and 
+have therefore been removed from the Social Bookmarks app.
+
+$$$
+
+The Social Bookmarks app adds several additional bookmarks to the default set of
+social bookmarks, such as LinkedIn and Digg.
