@@ -46,6 +46,17 @@ values there.
 
 +$$$
 
+Note: Liferay Portal relies on the application server for sanitizing CRLF in
+HTTP headers. You should, therefore, make sure this is properly configured in
+your application server, or you may experience false positives in reports from
+automatic security verification software such as Veracode. There is one
+exception to this for Resin, which does not have support for this feature. In
+this case, Liferay sanitizes HTTP headers. 
+
+$$$
+
++$$$
+
 **Note:** This chapter documents a
  Liferay-specific cluster configuration, without getting into specific
  implementations of third party software, such as Java EE application servers,
