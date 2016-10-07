@@ -231,20 +231,15 @@ portlet class:
             "javax.portlet.resource-bundle=content.Language",
             "javax.portlet.security-role-ref=power-user,user"
         },
-
         service = Portlet.class
-
     )
-
     public class HelloYouPortlet extends MVCPortlet {
 
         @Override
-
         public void render(RenderRequest renderRequest, 
                         RenderResponse renderResponse)
                 throws IOException, PortletException
-    {
-
+        {
             ThemeDisplay themeDisplay = (ThemeDisplay)
                         renderRequest.getAttribute(WebKeys.THEME\_DISPLAY);
 
@@ -256,7 +251,6 @@ portlet class:
 
 
             super.render(renderRequest, renderResponse);
-
         }
 
     }
@@ -318,42 +312,34 @@ file.
 The Java class defines only four methods: 
 
     @Component(
-
         immediate = true,
         property = {
             "product.navigation.control.menu.category.key=" +
                      ProductNavigationControlMenuCategoryKeys.USER,
             "product.navigation.control.menu.entry.order:Integer=1"
         },
-
         service = ProductNavigationControlMenuEntry.class
     )
-
     public class DevProductNavigationControlMenuEntry
         extends BaseProductNavigationControlMenuEntry
         implements ProductNavigationControlMenuEntry {
 
         @Override
-
         public String getIcon(HttpServletRequest request) {
 
             return "link";
-
         }
 
         @Override
-
         public String getLabel(Locale locale) {
 
             ResourceBundle resourceBundle = ResourceBundleUtil.getBundle(
                 "content.Language", locale, getClass());
 
             return LanguageUtil.get(resourceBundle, "custom-message");
-
         }
 
         @Override
-
         public String getURL(HttpServletRequest request) {
 
             return "https://dev.liferay.com";
@@ -361,12 +347,10 @@ The Java class defines only four methods:
         }
 
         @Override
-
         public boolean isShow(HttpServletRequest request) throws 
-PortalException {
+            PortalException {
 
             return true;
-
         }
 
     }
