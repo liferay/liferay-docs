@@ -562,7 +562,7 @@ Congratulations! You've successfully built and deployed an OSGi module to
 
 ## Learning More about OSGi [](id=learning-more-about-osgi)
 
-[Introduction to Liferay Development](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction)
+[Introduction to Liferay Development](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development)
 
 [OSGi enRoute](http://enroute.osgi.org/)
 
