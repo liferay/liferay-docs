@@ -8,7 +8,7 @@ hosts applications and grants access only to identified users with proper
 credentials. SAML is maintained by the OASIS Security Services Technical
 Committee. See
 [https://www.oasis-open.org/committees/security/](https://www.oasis-open.org/committees/security/)
-for more information. @product@ supports SAML 2.0
+for more information. Liferay 6.1 EE and later versions support SAML 2.0
 integration via the [Liferay Saml 2.0
 Provider](https://web.liferay.com/marketplace/-/mp/application/15188711) plugin.
 This plugin is provided as an app from Liferay Marketplace that allows Liferay
@@ -57,6 +57,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
     If you're configuring an example setup, use the password *liferay*. When
     you enter all the required information, click *Save*.
 
+    <!-- Does this need to change? Searching the repo just left me confused -->
     Note that the SAML keystore is created by the SAML plugin's keystore
     manager. By default, the following property is set in the SAML plugin:
 
@@ -75,8 +76,8 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
 
         dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
 
-    See the [portal
-    properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
+    See the
+    [http://docs.liferay.com](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
     section on Liferay's `dl.store.impl` portal property for details.
 
 4. After you click *Save*, information about the keystore you created is
@@ -202,7 +203,7 @@ Provider*.
 
 Many of these steps are similar to the ones for setting Liferay up to act
 as a SAML Identity Provider. A single Liferay instance can be configured as a
-SAML Identity Provider *or* as a SAML Service Provider but not as both. If
+SAML Identify Provider *or* as a SAML Service Provider but not as both. If
 you already set up one Liferay instance as a SAML Identity Provider, use a
 *different* Liferay instance as a SAML Service Provider
 
@@ -236,7 +237,7 @@ you already set up one Liferay instance as a SAML Identity Provider, use a
     If you're configuring an example setup, use the password *liferay*. When
     you enter all the required information, click *Save*.
 
-4. After you click *Save*, check that you can view information about your
+4. After you clicked *Save*, check that you can view information about your
    certificate or download your certificate. If you can, you successfully
    created a keystore. After you create a keystore, additional options
    appear in the SAML Admin Control Panel portlet. There are three tabs:
@@ -259,6 +260,7 @@ you already set up one Liferay instance as a SAML Identity Provider, use a
     - Metadata URL: http://localhost:8080/c/portal/saml/metadata (test this URL
       first)
 
+<!-- Check the veracity of this-->
     **Important**: The Liferay SAML 2.0 Provider plugin supports using *either* a URL
     to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata XML
     file. The value entered in the *Metadata URL* field will only be persisted
@@ -361,6 +363,7 @@ of the Liferay SAML 2.0 Provider plugin are not available as properties.
 
 $$$
 
+<!-- Are these URLs still valid? -->
 Suppose that you have two Liferay instances running on ports 8080 and 9080 of
 your host. Suppose further that you configured the Liferay running on port
 8080 as a SAML Identity Provider and the Liferay running on port 9080 as a SAML
