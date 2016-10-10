@@ -14,7 +14,7 @@ lets you get right to the features of your app or site, rather than making you
 start over every time with the basic building blocks? There is such a thing, and
 it's called @product@.
 
-![With @product@, you never have to start from scratch.](../../images/dont-start-from-scratch.png)
+![With @product@, you never have to start from scratch.](../../images/dont-start-from-scratch.jpg)
 
 ## Leveraging a Suite of Products, Frameworks and Libraries [](id=leveraging-a-suite-of-products-frameworks-and-libraries)
 
