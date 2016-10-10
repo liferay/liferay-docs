@@ -1,4 +1,4 @@
-# Selecting Entities Using the Item Selector API
+# Selecting Entities Using the Item Selector [](id=selecting-entities-using-the-item-selector)
 
 The Item Selector allows users to quickly and easily select entities. Images,
 videos, documents, and sites are just some of the things Item Selectors operate
@@ -17,7 +17,7 @@ Here's what's required to set up an Item Selector:
 
 Let's get started. 
 
-## Determining Item Selector Criteria
+## Determining Item Selector Criteria [](id=determining-item-selector-criteria)
 
 The first step is determining entity types to select from the Item Selector and
 the data you expect from them. What kind of entity do you want to select? Do you
@@ -104,7 +104,7 @@ Selector's *criteria*. The Item Selector uses it to decide which selection views
 
 Once you've defined your criteria, you can get an Item Selector to use with it.
 
-## Getting an Item Selector for the Criteria
+## Getting an Item Selector for the Criteria [](id=getting-an-item-selector-for-the-criteria)
 
 In order to use an Item Selector with your criteria, you must get an Item
 Selector URL based on the criteria. The URL is needed to open the Item Selector
@@ -185,7 +185,7 @@ supports from each criterion's list of return types.
 Now that you've provided a means to get a URL to the Item Selector you've
 configured, you can start using the Item Selector in your UI. 
 
-## Using the Item Selector Dialog
+## Using the Item Selector Dialog [](id=using-the-item-selector-dialog)
 
 To open the Item Selector in your UI, you must use the
 `LiferayItemSelectorDialog` JavaScript component from [AlloyUI's](http://alloyui.com/)
@@ -242,7 +242,8 @@ Here are the steps for using the Item Selector dialog in a JSP:
         in the last section. 
     -   Open the dialog by calling its `open` method.
 
-Here is an example Item Selector dialog configuration:
+The example code below and steps that follow show how to configure an Item
+Selector dialog to work with selected items.
 
     <aui:button name="chooseImage" value="Choose" />
 
@@ -316,7 +317,7 @@ involves specifying criteria for the selectable items, applying it to an Item
 Selector, and configuring an Item Selector dialog to operate on the selected
 item. Using Item Selector API, you can give app users the power of choice!
 
-## Related Articles
+## Related Articles [](id=related-articles)
 
 [Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
 
