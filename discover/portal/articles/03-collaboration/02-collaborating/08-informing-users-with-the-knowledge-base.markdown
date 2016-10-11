@@ -3,33 +3,32 @@
 Liferay's Knowledge Base app provides a way to create and organize articles in a 
 site. For example, it can be used to display professional product documentation 
 or form complete books or guides. It even lets you import article source files 
-written in Markdown. It's [workflow-enabled](/discover/portal/-/knowledge_base/7-0/using-worklfow), 
+written in Markdown. It's [workflow-enabled](/discover/portal/-/knowledge_base/7-0/using-workflow), 
 so you can require articles to be approved before they are published. 
 Additionally, the Knowledge Base app lets administrators create article 
-templates that help users follow a common structure and include consistent kinds 
-of information. These features let you create and manage your own knowledge 
-base, full of information relevant to your users.
+templates that help users follow a common outline. With this application, you
+can create and manage your own knowledge base, full of information relevant to
+your users.
 
 Here's what the Knowledge Base can do:
 
-- Navigation is built into the Knowledge Base Display 
-- Has a suggestions interface for article feedback
-- Stores articles in folders
-- Contains metadata fields for friendly URL, source URL, categorization, and related assets
-- Button (![*Edit on GitHub*](../../../images/icon-edit-on-github.png))
-can be enabled to take readers to an article's online source repository location
-- Imports article Markdown source files to create and update articles
+- Its navigation is built into the Knowledge Base Display. 
+- It has a suggestions interface for article feedback.
+- It stores articles in folders.
+- It contains metadata fields for friendly URL, source URL, categorization, and related assets.
+- The button (![*Edit on GitHub*](../../../images/icon-edit-on-github.png))
+  can be enabled to take readers to an article's source repository location.
+- It imports article Markdown source files to create and update articles.
 
-The Knowledge Base app is available on the 
-[Liferay Marketplace](https://www.liferay.com/marketplace). This app also 
-contains other apps that let you manage different aspects of your knowledge 
-base. Once you've installed the app, it's accessible by opening Site
-Administration and navigating to *Content* &rarr; *Knowledge Base*. The Knowledge 
-Base has several apps you can add to site pages. The *Add* &rarr; *Applications* 
-&rarr; *Content Management* menu lists its apps: Knowledge Base Article, 
-Knowledge Base Display, Knowledge Base Search, and Knowledge Base Section. 
-You'll learn what each does as you learn how to manage your knowledge base. 
-First you'll learn how to create and manage articles. 
+The Knowledge Base app is available on the [Liferay Marketplace](https://www.liferay.com/marketplace). 
+The Knowledge Base has several portlets you can add to site pages:
+
+- Knowledge Base Article 
+- Knowledge Base Display 
+- Knowledge Base Search 
+- Knowledge Base Section 
+
+Each of these is covered below. First you'll learn how to create and manage articles. 
 
 ## Creating and Managing Articles [](id=creating-and-managing-articles)
 
@@ -287,7 +286,7 @@ appears to the right of the article's title. This button lets users access the
 article's online source location. You can use this feature to encourage users to 
 contribute fixes or improvements to articles. If you're interested in this 
 feature, you can direct your administrator to follow the instructions in 
-[Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration). 
+[System Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#system-settings). 
 
 Great! Now you know the basics of how Knowledge Base Display works. Next, you'll 
 learn how to let users choose between different article sets in different 
@@ -354,7 +353,7 @@ a page and each one can display articles from any number of sections. To use
 sections, your Liferay administrator must configure the feature in the Knowledge 
 Base app's properties within Portal's system settings. Once the feature is 
 enabled, he or she must specify in the system settings any section names you 
-want to use. The [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration)
+want to use. The [System Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#system-settings)
 section explains how to configure the sections feature in System Settings. 
 
 ![Figure 9: Here's an image of Knowledge Base Section apps on a page.](../../../images/kb-section.png)
@@ -450,7 +449,7 @@ with their accompanying image files.
 -  Image files must be in a supported format and must use the appropriate file
    extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and
    `.png`. They're specified via an app system setting. For details, see 
-   [Advanced Configuration](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration).
+   [System Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#system-settings).
 
 **Example Basic Zip File Structure:**
 
@@ -486,7 +485,7 @@ root folder. The importer treats the `.METADATA` file as a standard Java
 properties file and uses the base source URL to construct the source URL for
 all of the ZIP file's resulting articles. To use the source URL feature, your 
 Liferay administrator must enable it via the Knowledge Base app's 
-[system settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#advanced-configuration). 
+[system settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#system-settings). 
 
 The importer also supports a two level hierarchy of articles and can assign
 article priorities based on numerical file prefixes. Below is a more advanced
@@ -609,51 +608,56 @@ Congratulations on mastering the art of creating and importing Markdown files to
 produce Knowledge Base articles! 
 
 Next, Liferay administrators can learn how to override the Knowledge Base app's 
-properties to enable and configure features. 
+system settings to enable and configure features. 
 
-## Advanced Configuration [](id=advanced-configuration)
+## System Settings [](id=system-settings)
 
-A Configuration API is implemented that allows you to configure the Knowledge 
-Base via system settings. This allows an Administrator to make changes to the 
-Knowledge Base's configuration and see them immediately. The System Settings are 
-organized into five sub sections, one for the default Knowledge Base 
-configuration for all sites(*Knowledge Base Service*), and one for each of the 
-other Knowledge Base apps(*Knowledge Base Article*, *Knowledge Base Display*, 
-*Knowledge Base Search*, and *Knowledge Base Section*).
+Liferay administrators can configure the Knowledge Base across sites using
+System Settings. To access its settings, open the Control Panel, navigate to
+*Configuration* &rarr; *System Settings*, and click on the *Collaboration* link.
+There are five sections of Knowledge Base configuration settings: 
+ 
+- *Knowledge Base Article*
+- *Knowledge Base Display*
+- *Knowledge Base Search*
+- *Knowledge Base Section*
+- *Knowledge Base Service*
+
+The *Knowledge Base Service* section's settings apply defaults to all the
+Knowledge Base apps and to the Knowledge Base in Site Administration. The other
+sections apply to specific Knowledge Base apps and override the *Knowledge Base
+Service* defaults. 
 
 +$$$
 
-**Important:** Advanced configuration of the Knowledge Base application should
-only be performed by a Liferay administrator. 
+**Important:** Advanced configuration of the Knowledge Base application's system
+settings should only be performed by a Liferay administrator. 
 
 $$$
 
-To start, open the Control Menu and navigate to *Control Panel* &rarr; 
-*Configuration* &rarr; *System Settings*. Click the *Collaboration* link at the
-top and scroll down to the *Knowledge Base* options.
+The Knowledge Base has several optional features that are disabled by default,
+but can be enabled and configured from System Settings. These include source
+URL, import file conventions, new article priority increment, and sections. Now
+you'll learn how to configure these features by editing the Knowledge Base
+system settings. 
 
-The Knowledge Base app has several optional features that are disabled by 
-default. These include source URL, import file conventions, new article priority 
-increment, and sections. Now you'll learn how to configure these features by 
-editing the Knowledge Base app's system settings. Advanced configuration should 
-only be performed by a Liferay administrator, as the person modifying the 
-configuration must be comfortable with using the Control Panel to configure
-system settings.
+### Source URL Settings [](id=source-url-settings)
 
-**Source URL Settings:** Defines the source location of importable Markdown
+The source URL settings define the source location of importable Markdown
 files. This is intended to point to an online source repository where the files
 are stored. GitHub is assumed as the default. Once defined, the Knowledge Base
 displays a button (default label is *Edit on GitHub*) above each displayed
 article. Users can click the button to navigate to an article's source location.
-To enable this feature, click the *Knowledge Base Service* configuration menu 
-link in *System Settings* &rarr; *Collaboration* and click the checkbox next to 
-the *Source URLEnabled* label.
+The source URL settings are accessible in the *Knowledge Base Service*
+System Settings section. 
 
-To change the button's default label *Edit on GitHub*, specify a new label as
-the value for the *Source URLEdit message key* setting. Best practice is to 
-specify the value as a language key. For example, if you create a language key 
-`edit-on-bitbucket=Edit on Bitbucket`, you can specify that language key as the 
-button's new label:
+To enable using the source URL, check on the *Source URLEnabled* checkbox. 
+
+To change the label of the of the button that takes the user to each article's
+source location, specify a new label value for the setting *Source URLEdit
+message key*. Best practice is to specify the value as a language key. For
+example, if you create a language key `edit-on-bitbucket=Edit on Bitbucket`, you
+can specify that language key as the button's new label:
 
     edit-on-bitbucket
 
@@ -661,54 +665,62 @@ Alternatively, you can specify the label explicitly:
 
     Edit on Bitbucket
 
-**Importer File Convention Settings:** These settings define the supported file 
-extensions, the suffix for parent files, and the image folder's path within the 
-ZIP file. To modify these settings, click the *Knowledge Base Service* link in 
-*System Settings* &rarr; *Collaboration*.
+Next, we'll cover settings for importing article source files. 
 
-You can modify the supported file extensions by adding a new field(with the plus 
-button on the side of the setting) for the settings below and entering a new 
-value:
+### Importer File Convention Settings [](id=importer-file-convention-settings)
 
-*Markdown importer article extensions*(.markdown or .md for example)
-*Markdown importer image file extensions*(.bmp, .gif, .jpeg, .jpg, or .png for
-example)
+These settings define the supported file extensions, the suffix for parent
+files, and the image folder's path within the import ZIP files. These
+settings are accessible in the *Knowledge Base Service* System Settings section. 
 
-You can change the article parent file suffix with the 
-*Markdown importer article intro* setting.
+You can modify the supported file extensions for article and image files, by
+adding or removing extension values in the UI. The plus and minus icons, next to
+the field labels *Markdown importer article extensions* and *Markdown importer
+image file extensions*, allow you to add and remove extension values, respectively.
 
-You can modify the image folder path the importer looks for in the ZIP file with
-the *Markdown importer image folder* setting.
+- *Markdown importer article extensions* has default values `.markdown` and
+`.md`. 
 
-**New Article Priority Increment Setting:** By default the priority for new
-articles is incremented by `1.0`. To disable this increment so that articles get
-a flat value of `1.0`, click the *Knowledge Base Service* link in 
-*System Settings* &rarr; *Collaboration* and uncheck the checkbox for this 
-setting:
+- *Markdown importer image file extensions* has default values `.bmp`, `.gif`,
+`.jpeg`, `.jpg`, and `.png`.
 
-*Article increment priority enabled*
+- *Markdown importer article intro* sets the article parent file suffix.
 
-Alternatively, you can enable or disable this feature for each app in the 
-corresponding Knowledge Base app configuration menu in System Settings.
+- *Markdown importer image folder* sets the image folder path the importer looks
+for in the ZIP file. 
 
-**Section Names Setting:** The section names setting lets you specify names of 
-arbitrary topics to attribute to articles. Using the Knowledge Base Section app, 
-you can display one or more *sections* (groups) of articles. Navigate to the 
-*Knowledge Base Section* configuration menu from *System Settings* &rarr; 
-*Collaboration*, click the plus button next to the *Admin KBArticle sections* 
-setting to add a new field for each section you want, and enter a name for each 
-section as shown in the figure below:
+- *New Article Priority Increment Setting* sets the floating point value by
+which priorities of new articles are incremented. By default they're incremented
+by `1.0`. To disable this increment so that articles get a flat value of `1.0`,
+deselect the checkbox for the setting *Article increment priority enabled*.
 
-![Figure 12: Adding a new field for the *Admin KBArticle sections* setting creates a new section for the Knowledge Base Section app.](../../../images/kb-section-setting.png)
+Alternatively, you can enable or disable the article increment priority feature
+for each app in the corresponding Knowledge Base app configuration menu in
+System Settings. 
 
-This creates the sections *Business*, *Politics*, and *World*. 
+If you're using the Knowledge Base Section app, you'll want to set some section
+names. Let's explore that next.  
 
-Click the *Update* button to save your settings.
+### Section Names Setting [](id=section-names-setting)
 
-Your app now uses the settings you specified!
+The section names setting lets you specify names of arbitrary topics to
+attribute to articles. Using the Knowledge Base Section app, you can display one
+or more *sections* (groups) of articles. Navigate to the *Knowledge Base
+Section* configuration menu from *System Settings* &rarr; *Collaboration*, click
+the plus button next to the *Admin KBArticle sections* setting to add a new
+field for each section you want, and enter a name for each new section. 
 
-You've learned the benefits of publishing articles using the Knowledge Base
-app. You've seen how easy it is to create, organize, and manage articles, and 
-you've learned various ways to present articles in the Knowledge Base Display, 
-Knowledge Base Article, and Knowledge Base Section apps. You can now consider 
-yourself truly *knowledgeable* of Liferay's Knowledge Base app. 
+![Figure 12: Adding a new field for the *Admin KBArticle sections* setting creates a new section for the Knowledge Base Section app. These fields create sections *Business*, *Politics*, and *World*.](../../../images/kb-section-setting.png)
+
+When you're done changing settings, make sure to click the *Update* button
+to save them. 
+
+This concludes the short tour of a sampling of Knowledge Base configuration
+settings. 
+
+You've learned the benefits of publishing articles using the Knowledge Base app.
+You've seen how easy it is to create, organize, and manage articles, and you've
+learned various ways to present articles in the Knowledge Base Display,
+Knowledge Base Article, and Knowledge Base Section apps. Knowledge Base system
+settings are also at your service. You can now consider yourself truly
+*knowledgeable* of Liferay's Knowledge Base app. 

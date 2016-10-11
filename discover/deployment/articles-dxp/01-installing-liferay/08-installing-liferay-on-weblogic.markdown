@@ -86,7 +86,7 @@ if you're on Windows.
 Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
 
     export DERBY_FLAG="false"
-    export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Djava.security.manager -da:org.apache.lucene... -da:org.aspectj..."
+    export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -da:org.apache.lucene... -da:org.aspectj..."
     export MW_HOME="/your/weblogic/directory"
     export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
 
