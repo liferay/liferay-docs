@@ -189,7 +189,11 @@ tutorial.
             }
         }
 
-    <!-- Where is edit_entry_discussion coming from? -Cody -->
+    A comments section is an available option if it returns a non-null value. A
+    JSP template defining a comments section is not required. For the comments
+    section to display for your asset, you must enable it in the Asset
+    Publisher's *Options* (![Options](../../../images/icon-app-options.png))
+    &rarr; *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
 8.  Retrieving the title and summary is both simple and important for any asset
     in Liferay. You can add this functionality in your asset renderer by adding
@@ -247,7 +251,22 @@ tutorial.
             return _entry.getUrlTitle();
         }
 
-10.  If your asset is only intended for certain users to access, you may want to
+10. Insert the `isPrintable()` method, which enables the Asset Publisher's
+    printing capability for your asset.
+
+        @Override
+        public boolean isPrintable() {
+            return true;
+        }
+
+    This displays a Print icon for your asset when displayed in the Asset
+    Publisher. For the icon to display for your asset, you must enable it in the
+    Asset Publisher's *Options* (![Options](../../../images/icon-app-options.png))
+    &rarr; *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
+
+    ![Figure 1: Enable printing in the Asset Publisher to display the Print icon for your asset.](../../../images/asset-publisher-printing.png)
+
+11. If your asset is only intended for certain users to access, you'll want to
     set permissions for the asset. You can do this via the asset renderer, as
     well. See the logic below for an example used by the blogs asset renderer:
 
@@ -278,15 +297,178 @@ tutorial.
                 permissionChecker, _entry, ActionKeys.VIEW);
         }
 
-    
+    Before you can check if a user has permission to view your asset, you must
+    distinguish the user. The `getUserId()` and `getUserName()` retrieves the
+    entry's user ID and username, respectively. Then there are three boolean
+    permission methods, which check if the user can view, edit, or delete your
+    blogs entry.
+
+Awesome! You've learned how to set up the blogs asset renderer to
+
+- connect with an asset
+- connect with the asset's portlet
+- use workflow management
+- use a comments section
+- retrieve the asset's title and summary
+- generate the asset's unique URL
+- display a print icon
+- set up permissioning for the asset
+
+You may recall that a major cog in asset renderer development is the ability to
+generate HTML using a templating technology. The `BlogsEntryAssetRenderer` is
+configured to use JSP templates to generate HTML for the Asset Publisher. You'll
+learn more about how to do this next.
 
 ### Configuring JSP Templates for an Asset Renderer
 
+An asset can be displayed in several different ways in the Asset Publisher, by
+default. There are three possible templates you can implement from the
+`AssetEntry` interface that the Asset Publisher can display:
 
+- `abstract`
+- `full_content`
+- `preview`
 
+Besides these supported templates, you can also create JSPs for buttons you'd
+like to provide for direct access and manipulation of the asset:
 
+- Edit
+- View
+- View in Context
 
+Since the `BlogsEntryAssetRenderer` uses JSP templates for several different
+views, you'll inspect how the blogs asset renderer is put together to satisfy
+JSP template development requirements.
 
+1.  Add the `getJspPath(...)` method to your asset renderer. This method should
+    return the path to your JSP, which is rendered as HTML inside the Asset
+    Publisher. Take a look at how the `BlogsEntryAssetRenderer` uses this
+    method:
+
+        @Override
+        public String getJspPath(HttpServletRequest request, String template) {
+            if (template.equals(TEMPLATE_ABSTRACT) ||
+                template.equals(TEMPLATE_FULL_CONTENT)) {
+
+                return "/blogs/asset/" + template + ".jsp";
+            }
+            else {
+                return null;
+            }
+        }
+
+    Blogs assets implement the `abstract.jsp` and `full_content.jsp` templates.
+    This means that a blogs asset can render a blog's abstract description or
+    the blog's full content in the Asset Publisher. Those templates are located
+    in the `com.liferay.blogs.web` module's
+    `src/main/resources/META-INF/resources/blogs/asset` folder. You could create
+    a similar folder for your JSP templates used for this method.
+
+    You must configure a link to display the full content of the asset. You'll
+    do this later.
+
+2.  Now that you've added the path for your JSP, you'll need a way to include
+    that JSP. If you're familiar with MVCPortlet development, you may be aware
+    of this common practice. To display a JSP other than the default
+    `view.jsp` template, you must specify an `include(...)` method to render
+    the JSP. In the case for blogs, you want to render either the `abstract` or
+    `full_content` template, so the `include` method is specified to do so:
+
+        @Override
+        public boolean include(
+                HttpServletRequest request, HttpServletResponse response,
+                String template)
+            throws Exception {
+
+            request.setAttribute(WebKeys.BLOGS_ENTRY, _entry);
+
+            return super.include(request, response, template);
+	    }
+
+    This method sets the blogs entry asset as an attribute in the request and
+    then calls the `BaseJspAssetRenderer` class's `include` method. By doing
+    this, the appropriate JSP to display in the Asset Publisher is rendered.
+
+    ![Figure 1: The abstract and full content views are rendererd differently for blogs.](../../../images/blogs-asset-views.png)
+
+Terrific! You've learned how to apply JSPs supported by the Asset Publisher for
+your asset. That's not all you can do with JSPs templates, however! The asset
+renderer framework provides several other methods that let you render convenient
+buttons for your asset.
+
+1.  Blogs assets provide an Edit [Blog Name]
+    (![Edit Blog](../../../images/icon-edit.png)) button that you can select to
+    edit the asset. This is provided for blog assets by adding the following
+    method to the `BlogsEntryAssetRenderer` class:
+
+        @Override
+        public PortletURL getURLEdit(
+                LiferayPortletRequest liferayPortletRequest,
+                LiferayPortletResponse liferayPortletResponse)
+            throws Exception {
+
+            Group group = GroupLocalServiceUtil.fetchGroup(_entry.getGroupId());
+
+            PortletURL portletURL = PortalUtil.getControlPanelPortletURL(
+                liferayPortletRequest, group, BlogsPortletKeys.BLOGS, 0, 0,
+                PortletRequest.RENDER_PHASE);
+
+            portletURL.setParameter("mvcRenderCommandName", "/blogs/edit_entry");
+            portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
+
+            return portletURL;
+        }
+
+    The Asset Publisher loads the blogs asset using the Blogs application. Then
+    the `edit_entry.jsp` template generates the HTML for an editing UI. Once the
+    necessary edits are made to the asset, it can be saved from the Asset
+    Publisher. Pretty cool, right?
+
+2.  You can specify how to view your asset by providing methods similar to the
+    methods outlined below in the `BlogsEntryAssetRenderer class:
+
+        @Override
+        public String getURLView(
+                LiferayPortletResponse liferayPortletResponse,
+                WindowState windowState)
+            throws Exception {
+
+            AssetRendererFactory<BlogsEntry> assetRendererFactory =
+                getAssetRendererFactory();
+
+            PortletURL portletURL = assetRendererFactory.getURLView(
+                liferayPortletResponse, windowState);
+
+            portletURL.setParameter("mvcRenderCommandName", "/blogs/view_entry");
+            portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
+            portletURL.setWindowState(windowState);
+
+            return portletURL.toString();
+        }
+
+        @Override
+        public String getURLViewInContext(
+            LiferayPortletRequest liferayPortletRequest,
+            LiferayPortletResponse liferayPortletResponse,
+            String noSuchEntryRedirect) {
+
+            return getURLViewInContext(
+                liferayPortletRequest, noSuchEntryRedirect, "/blogs/find_entry",
+                "entryId", _entry.getEntryId());
+        }
+
+    The `getURLView(...)` method generates a URL which displays the full content
+    of the asset in the Asset Publisher. This is assigned to the clickable asset
+    name. The `getURLViewInContext(...)` method provides a similar URL assigned
+    to the asset name, but the URL redirects to the original context of the
+    asset. Deciding which view to render in @product@ is configurable by
+    navigating to the Asset Publisher's *Options*
+    (![Options](../../../images/icon-app-options.png)) &rarr; *Configuration*
+    &rarr; *Setup* &rarr; *Display Settings* section and choosing between *Show
+    Full Content* and *View in Context* for the Asset Link Behavior drop-down
+    menu.
+
+<!-- Maybe talk more about preview and conclude JSP section. -Cody -->
 
 
 ## Creating a Factory for Asset Renderers
