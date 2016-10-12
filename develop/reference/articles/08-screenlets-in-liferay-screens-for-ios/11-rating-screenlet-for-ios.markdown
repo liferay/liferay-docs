@@ -67,7 +67,6 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` attribute is required when using it with `classPK` to instantiate the Screenlet.. |
 | `classPK` | `number` | The asset’s unique identifier. Only use this attribute when also using `className` to instantiate the Screenlet. |
 | `groupId` | `number` | The ID of the site (group) containing the asset. |
-| `ratingsGroupCount` | `number` | Number of ratings that the user can select. |
 | `offlinePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/rating-screenlet-for-ios#offline) for details. |
 
 ## Methods [](id=methods)
