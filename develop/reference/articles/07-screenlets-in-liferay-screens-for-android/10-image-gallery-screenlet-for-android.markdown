@@ -1,4 +1,4 @@
-# Image Gallery Screenlet for Android
+# Image Gallery Screenlet for Android [](id=image-gallery-screenlet-for-android)
 
 ## Requirements [](id=requirements)
 

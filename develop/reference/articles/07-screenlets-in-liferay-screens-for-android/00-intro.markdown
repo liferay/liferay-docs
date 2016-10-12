@@ -45,7 +45,7 @@ reference documents:
   Shows a list of web contents from a folder, usually based on a pre-existing 
   `DDMStructure`.
 
-- [**Gallery Screenlet:**](/develop/reference/-/knowledge_base/7-0/gallery-screenlet-for-android) 
+- [**Image Gallery Screenlet:**](/develop/reference/-/knowledge_base/7-0/image-gallery-screenlet-for-android) 
   Shows a list of images from a folder. This Screenlet also lets users upload 
   and delete images.
 
