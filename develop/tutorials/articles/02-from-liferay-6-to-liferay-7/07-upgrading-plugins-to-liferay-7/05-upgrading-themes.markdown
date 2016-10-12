@@ -361,7 +361,7 @@ settings.
 
 ### Updating Font Awesome Icons [](id=updating-font-awesome-icons)
 
-The Font Awesome icons @product@ uses extensively. For example, the Lunar Resort
+@product@ uses Font Awesome icons extensively. For example, the Lunar Resort
 theme's design incorporates Font Awesome icons in its social media links. 
 
 ![Figure 2: Font Awesome icons facilitate creating social media links.](../../../images/lunar-resort-social-media-links.png)
@@ -610,7 +610,7 @@ components:
 
 - Plugin properties
 - Web content article files and directory structure
-- Site map
+- Sitemap
 
 This section shows you how to update these components.
 
@@ -821,9 +821,9 @@ for details.
 
 $$$
 
-Next, you must update your resources importer's site map.
+Next, you must update your resources importer's sitemap file.
 
-### Updating the Site map [](id=updating-the-site-map)
+### Updating the Sitemap [](id=updating-the-sitemap)
 
 In Liferay 6.2, portlet IDs were incremental numbers. In Liferay 7, they're
 explicit class names. The new IDs are intuitive and unique. But you must update
