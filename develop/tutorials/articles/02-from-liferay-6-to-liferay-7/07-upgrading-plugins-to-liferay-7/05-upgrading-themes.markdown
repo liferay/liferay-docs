@@ -17,8 +17,8 @@ As an example, this tutorial applies the steps to a Liferay 6.2 theme called the
 Lunar Resort theme--developed in the Liferay 6.2 Learning Path [Developing a Liferay Theme](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme).
 It's similar to many Liferay 6.2 themes as it extends the [`_styled` theme](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled),
 adding configurable settings and incorporating a responsive design that
-leverages Font Awesome icons and Bootstrap. The theme's [ZIP file](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/upgrading-themes/lunar-resort-theme-migration-6.2.zip)
-contains the original theme source code.
+leverages Font Awesome icons and Bootstrap. The theme [ZIP file](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/upgrading-themes/lunar-resort-theme-migration-6.2.zip)
+contains its original source code.
 
 ![Figure 1: The Lunar Resort example theme upgraded in this tutorial uses a clean, minimal design.](../../../images/finished-theme.png)
 
