@@ -74,11 +74,13 @@ connection.
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout to use to show the View. |
 | `autoLoad` | `boolean` | Defines whether the list should be loaded when it's presented on the screen. The default value is `true`. |
-| `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
-| `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `recordSetId` | `number` | The ID of the DDL being called. To find your DDLs' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each DDL's ID is in the ID column of the table. |
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-android#offline) for details. |
+| `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
+| `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions). Note that the appearance of these values in your app depends on the `layoutId` set. |
+| `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. [Click here](https://github.com/liferay/liferay-portal/tree/master/modules/apps/forms-and-workflow/dynamic-data-lists/dynamic-data-lists-api/src/main/java/com/liferay/dynamic/data/lists/util/comparator) to see some comparator classes. Note, however, that not all of these classes can be used with `obcClassName`. You can only use comparator classes that extend `OrderByComparator<DDLRecord>`. You can also create your own comparator classes that extend `OrderByComparator<DDLRecord>`. |
 
 ## Methods [](id=methods)
 
@@ -88,17 +90,20 @@ connection.
 
 ## Listener [](id=listener)
 
-The `DDLListScreenlet` delegates some events to an object that implements the 
-`DDLListListener` interface. This interface extends from `BaseListListener` and 
-lets you implement the following methods: 
+DDL List Screenlet delegates some events to an object or a class that implements 
+[the `BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java). 
+This interface lets you implement the following methods: 
 
-- `onListPageReceived(BaseListScreenlet source, int page, 
-  List<DDLEntry> entries, int rowCount)`: Called when a page of records is 
-  received. Note that this method may be called more than once; once for each 
-  page received.
+- `onListPageFailed(int startRow, Exception e)`: Called when the server call to 
+  retrieve a page of items fails. This method's arguments include the 
+  `Exception` generated when the server call fails. 
 
-- `onListPageFailed(BaseListScreenlet source, int page, Exception e)`: Called 
-  when an error occurs in the process.
+- `onListPageReceived(int startRow, int endRow, List<Record> records, int rowCount)`: 
+  Called when the server call to retrieve a page of items succeeds. Note that 
+  this method may be called more than once; once for each page received. Because 
+  `startRow` and `endRow` change for each page, a `startRow` of `0` corresponds 
+  to the first item on the first page. 
 
-- `onListItemSelected(BaseListScreenlet source, DDLEntry entry)`: Called when an 
-  item in the list is selected.
+- `onListItemSelected(Record records, View view)`: Called when an item is 
+  selected in the list. This method's arguments include the selected list item 
+  (`Record`). 
