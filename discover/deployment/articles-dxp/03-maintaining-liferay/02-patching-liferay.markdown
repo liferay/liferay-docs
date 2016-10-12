@@ -7,10 +7,9 @@ Liferay bundle is a Patching Tool that can handle the installation of two types
 of patches: fix packs and hotfixes.
 
 On a regular schedule, the latest fixes that patch the core are bundled together
-into fix packs, which are provided to all of Liferay's customers. If there's a
-fix you need, and it's for one of the application suites, the way to get the
-update is to retrieve and install it from Marketplace. If there's a fix you need
-that affects only the core, a fix pack will be provided.
+into fix packs, which are provided to all of Liferay's customers. Fix packs
+include fixes for both the core and the application suites that ship with the
+product. 
 
 A hotfix is provided to a customer when a customer contacts Liferay about an
 emergency situation, and Liferay's support team--working with the customer--
@@ -234,11 +233,6 @@ which contains that hotfix is released, the Patching Tool will manage this for
 you. Fix packs always supersede hotfixes, so when you install your fix pack,
 the hotfix that it already contains is uninstalled, and the fix pack version is
 installed in its place. 
-
-Note that this is *not* the case for hotfixes applied to the application
-suites. If you have installed a hotfix that then becomes part of a new release
-on Marketplace, you will have to remove the hotfix first (see below) before you
-can upgrade to the new release. 
 
 Sometimes there can be a fix to a fix pack. This is also handled automatically.
 If a new version of a fix pack is released, you can use the Patching Tool to

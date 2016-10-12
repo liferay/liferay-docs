@@ -19,6 +19,10 @@ After running the command above, your project's directory structure would look
 like this
 
 - `my-service-project`
+    - `gradle`
+        - `wrapper`
+            - `gradle-wrapper.jar`
+            - `gradle-wrapper.properties`
     - `src`
         - `main`
             - `java`
@@ -26,6 +30,7 @@ like this
                     - `Service.java`
     - `bnd.bnd`
     - `build.gradle`
+    - `gradlew`
 
 The generated module is functional and is deployable to a Liferay instance. To
 build upon the generated app, modify the project by adding logic and additional

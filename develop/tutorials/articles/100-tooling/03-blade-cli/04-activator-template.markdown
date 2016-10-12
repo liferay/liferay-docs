@@ -20,6 +20,10 @@ After running the command above, your project's directory structure looks like
 this:
 
 - `my-activator-project`
+    - `gradle`
+        - `wrapper`
+            - `gradle-wrapper.jar`
+            - `gradle-wrapper.properties`
     - `src`
         - `main`
             - `java`
@@ -27,6 +31,7 @@ this:
                     - `Activator.java`
     - `bnd.bnd`
     - `build.gradle`
+    - `gradlew`
 
 The generated module is functional and is deployable to a Liferay instance. To
 build upon the generated app, modify the project by adding logic and additional
