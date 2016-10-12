@@ -31,7 +31,7 @@ The default View uses an
 to show an asset's rating. Other custom Views may show the rating with a 
 different Android component such as `Button`, `ImageButton`, or others. 
 
-This screenlet has five different Views: 
+This Screenlet has five different Views: 
 
 1. Like
 2. Thumbs (default)
@@ -44,7 +44,9 @@ This screenlet has five different Views:
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

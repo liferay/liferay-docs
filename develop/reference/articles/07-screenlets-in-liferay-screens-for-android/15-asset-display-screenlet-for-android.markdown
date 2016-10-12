@@ -37,24 +37,24 @@ for details.
 
 The Default View uses different UI elements to show each asset type. For 
 example, it displays images with `ImageView`, and blogs with `TextView`. Note 
-that other custom Views may use different UI elements. 
+that other Views may use different UI elements. 
 
 This Screenlet can also render other Screenlets: 
 
 - Images: Image Display Screenlet
 - Videos: Video Display Screenlet
 - Audios: Audio Display Screenlet
-- PDFs: Pdf Display Screenlet
+- PDFs: PDF Display Screenlet
 - Blogs entries: Blogs Entry Display Screenlet
 - Web content: Web Content Display Screenlet
 
-These Screenlets can also be used alone without Asset Display Screenlet.
+These Screenlets can also be used alone without Asset Display Screenlet. 
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |

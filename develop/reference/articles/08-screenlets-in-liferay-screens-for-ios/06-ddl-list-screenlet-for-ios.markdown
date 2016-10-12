@@ -19,10 +19,11 @@
 
 ## Features [](id=features)
 
-The `DDLListScreenlet` enables the following features:
+The DDL List Screenlet enables the following features:
 
 - Shows a scrollable collection of DDL records.
-- Implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
+- Implements 
+  [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
   with configurable page size.
 - Allows filtering of records by creator.
 - Supports i18n in record values.
@@ -37,7 +38,7 @@ The `DDLListScreenlet` enables the following features:
   Other Themes may use a different component, such as `UICollectionView` or 
   others, to show the items.
 
-![The `DDLListScreenlet` using the Default (`default`) Theme.](../../images/screens-ios-ddllist.png)
+![The DDL List Screenlet using the Default (`default`) Theme.](../../images/screens-ios-ddllist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -50,7 +51,9 @@ and
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -81,7 +84,7 @@ connection.
 
 ## Delegate [](id=delegate)
 
-The `DDLListScreenlet` delegates some events in an object that conforms to the 
+The DDL List Screenlet delegates some events in an object that conforms to the 
 `DDLListScreenletDelegate` protocol. This protocol lets you implement the 
 following methods:
 

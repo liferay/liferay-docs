@@ -17,12 +17,12 @@
 
 ## Features [](id=features)
 
-The `AssetListScreenlet` can be used to show lists of 
+The Asset List Screenlet can be used to show lists of 
 [assets](/develop/tutorials/-/knowledge_base/7-0/asset-framework) 
 from a Liferay instance. For example, you can use the Screenlet to show a 
 scrollable collection of assets. It also implements 
 [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
-with configurable page size. The `AssetListScreenlet` can show assets of the 
+with configurable page size. The Asset List Screenlet can show assets of the 
 following classes: 
 
 - `Group`
@@ -53,13 +53,15 @@ following classes:
 - `WikiPageResource`
 - `WikiNode`
 
-The `AssetListScreenlet` also supports i18n in asset values.
+The Asset List Screenlet also supports i18n in asset values.
 
 ## Module [](id=module)
 
 - None
 
 ## Themes [](id=themes)
+
+- Default
 
 The Default Theme uses a standard `UITableView` to show the scrollable list. 
 Other Themes may use a different component, such as `UICollectionView` or 
@@ -70,7 +72,9 @@ others, to show the items.
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -101,7 +105,7 @@ connection.
 
 ## Delegate [](id=delegate)
 
-The `AssetListScreenlet` delegates some events to an object that conforms to the 
+The Asset List Screenlet delegates some events to an object that conforms to the 
 `AssetListScreenletDelegate` protocol. This protocol lets you implement the 
 following methods: 
 

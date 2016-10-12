@@ -26,9 +26,11 @@ instance. It also lets the user update or delete the comment.
 
 ## Themes [](id=themes)
 
+- Default
+
 The Default Theme uses 
 [User Portrait Screenlet](/develop/reference/-/knowledge_base/7-0/userportraitscreenlet-for-ios) 
-and iOS `UILabel` elements to show an asset's comment. Other Views may use 
+and iOS `UILabel` elements to show an asset's comment. Other Themes may use 
 different components to show the comment. 
 
 ![Figure 1: Comment Display Screenlet using the Default Theme.](../../images/screens-ios-commentdisplay.png)
@@ -37,7 +39,7 @@ different components to show the comment.
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 This Screenlet supports the `remote-only`, `cache-only`, `remote-first`, and 
 `cache-first` offline mode policies. 
 

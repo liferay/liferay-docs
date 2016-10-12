@@ -45,7 +45,7 @@ reference documents:
   Shows a list of web contents from a folder, usually based on a pre-existing 
   `DDMStructure`. 
 
-- [**Gallery Screenlet:**](/develop/reference/-/knowledge_base/7-0/gallery-screenlet-for-ios) 
+- [**Image Gallery Screenlet:**](/develop/reference/-/knowledge_base/7-0/image-gallery-screenlet-for-ios) 
   Shows a list of images from a folder. This Screenlet also lets users upload 
   and delete images. 
 
@@ -59,7 +59,7 @@ reference documents:
 - [**Comment Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-display-screenlet-for-ios) 
   Shows a single comment for an asset. 
 
-- [**Add Comment Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-add-screenlet-for-ios) 
+- [**Comment Add Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-add-screenlet-for-ios) 
   Lets the user comment on an asset. 
 
 - [**Asset Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/asset-display-screenlet-for-ios) 

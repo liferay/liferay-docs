@@ -18,7 +18,7 @@
 
 ## Features [](id=features)
 
-The `DDLListScreenlet` has the following features:
+The DDL List Screenlet has the following features:
 
 - Shows a scrollable collection of Dynamic Data List (DDL) records.
 - Implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
@@ -32,16 +32,19 @@ The `DDLListScreenlet` has the following features:
 
 ## Views [](id=views)
 
-- The Default View uses a standard `RecyclerView` to show the scrollable list. 
-  Other Views may use a different component, such as `ViewPager` or others, to 
-  show the items.
+- Default
+- Material
 
-![The `DDLListScreenlet` using the Default and Material Viewsets.](../../images/screens-android-ddllist.png)
+The Default View uses a standard `RecyclerView` to show the scrollable list. 
+Other Views may use a different component, such as `ViewPager` or others, to 
+show the items. 
+
+![The DDL List Screenlet using the Default and Material Views.](../../images/screens-android-ddllist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 DDLs and Data Types should be configured in the portal before using
-`DDLListScreenlet`. For more details, see the Liferay User Guide sections 
+DDL List Screenlet. For more details, see the Liferay User Guide sections 
 [Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) 
 and 
 [Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) . 
@@ -54,7 +57,8 @@ app on
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

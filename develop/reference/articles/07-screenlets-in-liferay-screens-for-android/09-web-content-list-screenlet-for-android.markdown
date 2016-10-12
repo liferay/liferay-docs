@@ -27,16 +27,20 @@ Web Content List Screenlet has the following features:
 
 ## Views [](id=views)
 
-- The Default View uses a standard `RecyclerView` to show the scrollable list. 
-  Other Views may use a different component, such as `ViewPager` or others, to 
-  show the items. 
+- Default
 
-![Figure 1: The Web Content List Screenlet using the Default View Set.](../../images/screens-android-webcontentlist.png)
+The Default View uses a standard `RecyclerView` to show the scrollable list. 
+Other Views may use a different component, such as `ViewPager` or others, to 
+show the items. 
+
+![Figure 1: The Web Content List Screenlet using the Default View.](../../images/screens-android-webcontentlist.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

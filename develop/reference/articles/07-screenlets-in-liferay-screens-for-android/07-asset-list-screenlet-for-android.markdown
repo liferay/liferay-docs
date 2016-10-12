@@ -7,7 +7,7 @@
 - Liferay Screens Compatibility Plugin
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
+  depending on your Liferay edition). This app is preinstalled in Liferay 7.0 CE 
   and Liferay DXP instances. 
 
 ## Compatibility [](id=compatibility)
@@ -16,10 +16,10 @@
 
 ## Features [](id=features)
 
-The `AssetListScreenlet` can be used to show [asset](/tutorials/-/knowledge_base/7-0/asset-framework) 
+The Asset List Screenlet can be used to show [asset](/tutorials/-/knowledge_base/7-0/asset-framework) 
 lists from a Liferay instance. For example, you can use the Screenlet to show a 
 scrollable list of assets. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
-with configurable page size. The `AssetListScreenlet` can show assets belonging 
+with configurable page size. The Asset List Screenlet can show assets belonging 
 to the following classes:
 
 - `Group`
@@ -50,7 +50,7 @@ to the following classes:
 - `WikiPageResource`
 - `WikiNode`
 
-The `AssetListScreenlet` also supports i18n in asset values.
+The Asset List Screenlet also supports i18n in asset values.
 
 ## Module [](id=module)
 
@@ -58,11 +58,14 @@ The `AssetListScreenlet` also supports i18n in asset values.
 
 ## Views [](id=views)
 
+- Default
+- Material
+
 The Default Views use a standard `RecyclerView` to show the scrollable list. 
 Other Views may use a different component, such as `ViewPager` or others, to 
-show the items.
+show the items. 
 
-![`AssetListScreenlet` using the Default and Material Viewsets.](../../images/screens-android-assetlist.png)
+![Asset List Screenlet using the Default (left) and Material (right) Views.](../../images/screens-android-assetlist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -81,7 +84,8 @@ app on
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

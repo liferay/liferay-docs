@@ -28,17 +28,17 @@ Documents and Media Library.
 
 - Default
 
-The Default View uses an iOS `AVAudioPlayer` to display the audio player. For 
-the player components, this View uses `UIButton`, `UISlider`, and several 
+The Default Theme uses an iOS `AVAudioPlayer` to display the audio player. For 
+the player components, this Theme uses `UIButton`, `UISlider`, and several 
 `UILabel` instances. 
 
-![Figure 1: Audio Display Screenlet using the Default View.](../../images/screens-ios-audiodisplay.png)
+![Figure 1: Audio Display Screenlet using the Default Theme.](../../images/screens-ios-audiodisplay.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |

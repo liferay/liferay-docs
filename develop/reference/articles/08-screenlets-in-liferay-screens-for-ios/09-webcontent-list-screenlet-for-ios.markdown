@@ -31,6 +31,8 @@ with configurable page size, and supports i18n in asset values.
 
 ## Themes [](id=themes)
 
+- Default
+
 The Default Theme uses a standard `UITableView` to show the scrollable list. 
 Other Themes may use a different component, such as `UICollectionView` or 
 others, to show the contents. 
@@ -40,7 +42,9 @@ others, to show the contents.
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

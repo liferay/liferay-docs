@@ -25,8 +25,10 @@ Comment Add Screenlet can add a comment to an asset in a Liferay instance.
 
 ## Themes [](id=themes)
 
+- Default
+
 The Default Theme uses the iOS elements `UITextField` and `UIButton` to add a 
-comment to an asset. Other Views may use other components to show the comment.
+comment to an asset. Other Themes may use other components to show the comment.
 
 ![Figure 1: Comment Add Screenlet using the Default Theme.](../../images/screens-ios-commentadd.png)
 
@@ -34,8 +36,8 @@ comment to an asset. Other Views may use other components to show the comment.
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
-Here are the offline mode policies that you can use with Comment Add Screenlet: 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

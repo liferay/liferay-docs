@@ -26,6 +26,8 @@ instance. It also lets the user update or delete comments.
 
 ## Themes [](id=themes)
 
+- Default
+
 The Default Theme uses an 
 [iOS `UITableView`](https://developer.apple.com/reference/uikit/uitableview) 
 to show an asset's comments. Other Themes may use a different component, such as 
@@ -37,7 +39,9 @@ or others, to show the items.
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -69,7 +73,7 @@ connection.
 ## Delegate [](id=delegate)
 
 Comment List Screenlet delegates some events to an object that conforms to the 
-Coment List Screenlet Delegate protocol. This protocol lets you implement the 
+`ComentListScreenletDelegate` protocol. This protocol lets you implement the 
 following methods: 
 
 - `- screenlet:onListResponseComments:`: Called when the Screenlet receives the 

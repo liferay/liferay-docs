@@ -24,17 +24,19 @@ Comment Add Screenlet can add a comment to an asset in a Liferay instance.
 
 ## Views [](id=views)
 
+- Default
+
 The Default View uses Android's `EditText` and `Button` elements to show an add 
 comment dialog. Other Views may use different components to show this dialog. 
 
-![Figure 1: Comment Add Screenlet using the Default (left) and Material (right) Views.](../../images/screens-android-commentadd.png)
+![Figure 1: Comment Add Screenlet using the Default View.](../../images/screens-android-commentadd.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
-Here are the offline mode policies that you can use with Comment Add Screenlet: 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

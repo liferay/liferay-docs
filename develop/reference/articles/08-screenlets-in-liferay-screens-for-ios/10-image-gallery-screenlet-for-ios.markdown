@@ -30,10 +30,10 @@ with configurable page size, and supports i18n in asset values.
 ## Themes [](id=themes)
 
 The default Theme uses a standard iOS `UICollectionView` to show the scrollable 
-list as a grid. Other custom Themes may use a different component, such as 
+list as a grid. Other Themes may use a different component, such as 
 `UITableView` or others, to show the contents. 
 
-This screenlet has three different Views: 
+This screenlet has three different Themes: 
 
 1. Grid (default)
 2. Slideshow
@@ -46,7 +46,7 @@ This screenlet has three different Views:
 This Screenlet supports offline mode so it can function without a network 
 connection when loading or uploading images (deleting images while offline is 
 unsupported). For more information on how offline mode works, see the 
-[tutorial its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 This Screenlet supports the `remote-only`, `cache-only`, `remote-first`, and 
 `cache-first` offline mode policies. 
 

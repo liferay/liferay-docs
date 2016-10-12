@@ -59,7 +59,7 @@ reference documents:
 - [**Comment Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-display-screenlet-for-android) 
   Shows a single comment for an asset. 
 
-- [**Add Comment Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-add-screenlet-for-android) 
+- [**Comment Add Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-add-screenlet-for-android) 
   Lets the user comment on an asset. 
 
 - [**Asset Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/asset-display-screenlet-for-android) 

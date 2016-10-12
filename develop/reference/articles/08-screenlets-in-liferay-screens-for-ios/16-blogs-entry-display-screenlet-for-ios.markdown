@@ -26,6 +26,8 @@ Screenlet renders any header image the blogs entry may have.
 
 ## Themes [](id=themes)
 
+- Default
+
 The Default Theme can use different components to show a blogs entry 
 (`BlogsEntry`). For example, it uses `UILabel` to show a blog's text, and 
 [User Portrait Screenlet](/develop/reference/-/knowledge_base/7-0/userportraitscreenlet-for-ios) 
@@ -38,7 +40,7 @@ Themes may use different components.
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |

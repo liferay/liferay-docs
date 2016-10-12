@@ -25,17 +25,21 @@ instance. It also lets the user update or delete the comment.
 
 ## Views [](id=views)
 
+- Default
+
 The Default View uses 
 [User Portrait Screenlet](/develop/reference/-/knowledge_base/7-0/userportraitscreenlet-for-android), 
 and `TextView` and `ImageButton` elements to show an asset's comment. Other 
 Views may different components to show the comment. 
 
-![Figure 1: Comment Display Screenlet using the Default (`default`) View.](../../images/screens-android-commentdisplay.png)
+![Figure 1: Comment Display Screenlet using the Default View.](../../images/screens-android-commentdisplay.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

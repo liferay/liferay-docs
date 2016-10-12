@@ -31,7 +31,7 @@ The included Views use a standard Android `RecyclerView` to show the scrollable
 list. Other custom Views may use a different component, such as `ViewPager` or 
 others, to show the items. 
 
-This screenlet has three different Views:
+This Screenlet has three different Views:
 
 1. Grid (default)
 2. Slideshow
@@ -44,7 +44,7 @@ This screenlet has three different Views:
 This Screenlet supports offline mode so it can function without a network 
 connection when loading or uploading images (deleting images while offline is 
 unsupported). For more information on how offline mode works, see the 
-[tutorial its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 This Screenlet supports the `REMOTE_ONLY`, `CACHE_ONLY`, `REMOTE_FIRST`, and 
 `CACHE_FIRST` offline mode policies. 
 
