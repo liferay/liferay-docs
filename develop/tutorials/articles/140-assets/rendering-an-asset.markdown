@@ -322,8 +322,8 @@ learn more about how to do this next.
 ### Configuring JSP Templates for an Asset Renderer
 
 An asset can be displayed in several different ways in the Asset Publisher, by
-default. There are three possible templates you can implement from the
-`AssetEntry` interface that the Asset Publisher can display:
+default. There are three templates to implement provided by the `AssetRenderer`
+interface:
 
 - `abstract`
 - `full_content`
@@ -336,9 +336,9 @@ like to provide for direct access and manipulation of the asset:
 - View
 - View in Context
 
-Since the `BlogsEntryAssetRenderer` uses JSP templates for several different
-views, you'll inspect how the blogs asset renderer is put together to satisfy
-JSP template development requirements.
+The `BlogsEntryAssetRenderer` customizes the `AssetRenderer`'s provided JSP
+templates and adds a few other features using JSPs. You'll inspect how the blogs
+asset renderer is put together to satisfy JSP template development requirements.
 
 1.  Add the `getJspPath(...)` method to your asset renderer. This method should
     return the path to your JSP, which is rendered as HTML inside the Asset
@@ -389,7 +389,7 @@ JSP template development requirements.
     then calls the `BaseJspAssetRenderer` class's `include` method. By doing
     this, the appropriate JSP to display in the Asset Publisher is rendered.
 
-    ![Figure 1: The abstract and full content views are rendererd differently for blogs.](../../../images/blogs-asset-views.png)
+    ![Figure 2: The abstract and full content views are rendererd differently for blogs.](../../../images/blogs-asset-views.png)
 
 Terrific! You've learned how to apply JSPs supported by the Asset Publisher for
 your asset. That's not all you can do with JSPs templates, however! The asset
@@ -461,14 +461,27 @@ buttons for your asset.
     of the asset in the Asset Publisher. This is assigned to the clickable asset
     name. The `getURLViewInContext(...)` method provides a similar URL assigned
     to the asset name, but the URL redirects to the original context of the
-    asset. Deciding which view to render in @product@ is configurable by
-    navigating to the Asset Publisher's *Options*
+    asset (e.g., viewing a blogs asset in the Blogs application). Deciding which
+    view to render in @product@ is configurable by navigating to the Asset
+    Publisher's *Options*
     (![Options](../../../images/icon-app-options.png)) &rarr; *Configuration*
     &rarr; *Setup* &rarr; *Display Settings* section and choosing between *Show
     Full Content* and *View in Context* for the Asset Link Behavior drop-down
     menu.
 
-<!-- Maybe talk more about preview and conclude JSP section. -Cody -->
+The Blogs application provides customized `abstract` and `full_content` JSP
+templates that override the ones provided by the `AssetRenderer` interface. The
+third template, `preview`, could also be customized. You can view the default
+`preview.jsp` template rendered in the *Add*
+(![Add](../../../images/icon-control-menu-add.png)) &rarr; *Content*
+menu.
 
+![Figure 3: The `preview` template displays a preview of the asset in the Content section of the Add menu.](../../../images/preview-template-asset-renderer.png)
+
+You've learned all about implementing the `AssetRenderer`'s provided templates
+and customizing them to fit your needs. Next, you'll put your asset renderer
+into action by creating a factory.
 
 ## Creating a Factory for Asset Renderers
+
+
