@@ -6,7 +6,7 @@ your project supports. If your app only needs to support iOS versions
 8.0 or above, you can prepare it for Screens by adding a single line to 
 your project's `Podfile` and using CocoaPods to complete configuration. This is
 possible because Liferay Screens is released as a standard
-[CocoaPods](https://cocoapods.org) dependency. If you need to support iOS 7,
+[CocoaPods](https://cocoapods.org) dependency. If you need to support iOS 8,
 however, then you must manually add Screens to your project. This CocoaPods
 [article](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks)
 explains why. As you've probably guessed, manually adding Screens to your
@@ -14,21 +14,21 @@ project is more challenging; don't worry, though! It's still not horribly
 complicated. 
 
 Note: since Screens for iOS is written in Swift, you need to use CocoaPods
-version 0.36 or higher. Refer to [this
-article](http://blog.cocoapods.org/CocoaPods-0.36/) for more details about how
-CocoaPods works with Swift dependencies. 
+version 0.36 or higher. Refer to 
+[this article](http://blog.cocoapods.org/CocoaPods-0.36/) 
+for more details about how CocoaPods works with Swift dependencies. 
 
 This tutorial specifies Screens's requirements, shows you both configuration
 methods, and shows how to set up communication with Liferay. Onward! 
 
 ## Requirements [](id=requirements)
 
-Liferay Screens for iOS includes the Component Library (the Screenlets) and 
-three sample projects: one uses Objective-C and the other two use Swift. Screens 
-was developed using Swift and development techniques that leverage functional 
-Swift code and the [Model View Presenter](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)
-architecture. You can use Swift or Objective-C with Screens, and you can run
-Screens apps on iOS 7 and above--Screens doesn't use iOS 8 APIs. 
+Liferay Screens for iOS includes the Component Library (the Screenlets) and
+four sample projects written in Swift. Screens is developed using Swift and 
+development techniques that leverage functional Swift code and the 
+[Model View Presenter](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) 
+architecture. You can use Swift or Objective-C with Screens, and you can run 
+Screens apps on iOS 8 and above--Screens doesn't use iOS 9 APIs. 
 
 Liferay Screens for iOS requires the following software: 
 
@@ -64,7 +64,8 @@ Your final `Podfile` should look like this:
     
     # the rest of your Podfile
 
-You can also use [this `Podfile`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Showcase-swift/Podfile) 
+You can also use 
+[this `Podfile`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Showcase-swift/Podfile) 
 as a template.
 
 Next, in your terminal, install Liferay Screens by executing `pod install` from
@@ -76,10 +77,10 @@ next section and follow the instructions in the final section.
 
 ## Manual Configuration [](id=manual-configuration)
 
-There are a few things you need to setup manually in your iOS 7 app to prepare 
-it for Liferay Screens. First, you must download 
-Liferay Screens [source code](https://github.com/liferay/liferay-screens/releases) 
-and include it in your project. Follow these steps: 
+There are a few things you need to setup manually in your iOS 8 app to prepare 
+it for Liferay Screens. First, you must download the Liferay Screens 
+[source code](https://github.com/liferay/liferay-screens/releases) 
+and include it in your project. Follow these steps to do this: 
 
 1. Create a folder, (e.g., called `Liferay-Screens`) at the root of your
    project. 
@@ -98,10 +99,10 @@ yet exist):
 
     source 'https://github.com/CocoaPods/Specs.git'
 
-    platform :ios, '7.0'
+    platform :ios, '8.0'
 
-    pod 'Liferay-iOS-SDK', '6.2.0.22'
-    pod 'Liferay-OAuth', '0.1.1'
+    pod 'Liferay-iOS-SDK', '7.0.4'
+    pod 'Liferay-OAuth', '1.2.0'
     pod 'MBProgressHUD', '0.9.1'
     pod 'SMXMLDocument', '1.1'
     pod 'ODRefreshControl', '1.2'
@@ -111,6 +112,8 @@ yet exist):
     pod 'DTPickerPresenter', '0.2.0'
     pod 'TNRadioButtonGroup', '0.4'
     pod 'MDRadialProgress', '1.3.2'
+    pod 'Kingfisher', '2.4'
+    pod 'Cosmos', '1.2'
 
 Quit Xcode if you have it open. In a terminal, navigate to your project's 
 directory and execute `pod install`. To open your project, use the 
@@ -118,7 +121,8 @@ directory and execute `pod install`. To open your project, use the
 
 The
 [CocoaPods for Xcode plugin](https://github.com/kattrali/cocoapods-xcode-plugin) 
-that you can install with the [Alcatraz package manager](http://alcatraz.io/) 
+that you can install with the 
+[Alcatraz package manager](http://alcatraz.io/) 
 can perform these tasks from Xcode. 
 
 ![Figure 2: You can perform Xcode tasks with the CocoaPods for Xcode plugin helps.](../../../images/screens-ios-xcode-cocoapods.png)
@@ -131,8 +135,8 @@ XCTest). Here's a `Podfile` with a placeholder for a test target:
     platform :ios, '7.0'
 
     def import_pods
-        pod 'Liferay-iOS-SDK', '6.2.0.22'
-        pod 'Liferay-OAuth', '0.1.1'
+        pod 'Liferay-iOS-SDK', '7.0.4'
+        pod 'Liferay-OAuth', '1.2.0'
         pod 'MBProgressHUD', '0.9.1'
         pod 'SMXMLDocument', '1.1'
         pod 'ODRefreshControl', '1.2'
@@ -142,6 +146,8 @@ XCTest). Here's a `Podfile` with a placeholder for a test target:
         pod 'DTPickerPresenter', '0.2.0'
         pod 'TNRadioButtonGroup', '0.4'
         pod 'MDRadialProgress', '1.3.2'
+        pod 'Kingfisher', '2.4'
+        pod 'Cosmos', '1.2'
     end
 
     import_pods
@@ -159,14 +165,14 @@ In your project's build settings, you must edit its
 ### Troubleshooting Manual Installation [](id=troubleshooting-manual-installation)
 
 There are some problems associated with the manual installation procedure. For
-example, when using a Screenlet in your project, the Interface Builder may
-complain about an unknown class. This error occurs because the Screenlet is bound
-to the `LiferayScreens` Module. This module exists only if you installed Screens
-with CocoaPods (for iOS 8 and above). To solve this problem, you must open the
-failed `xib` file listed in the error trace (in Figure 4, this is
-`LoginView_default.xib`), select the root View, and then re-set the Custom
-Class. Note that the Module value changes from `LiferayScreens` to blank; the
-Module values shows as the grayed-out text `Current - your app name`. 
+example, when using a Screenlet in your project, Interface Builder may complain 
+about an unknown class. This error occurs because the Screenlet is bound to the 
+`LiferayScreens` Module. This module exists only if you installed Screens with 
+CocoaPods. To solve this problem, you must open the failed XIB file listed in 
+the error trace (in Figure 4, this is `LoginView_default.xib`), select the root 
+View, and then reset the Custom Class. Note that the Module value changes from 
+`LiferayScreens` to blank; the Module value shows as the grayed-out text 
+`Current - your app name`. 
 
 ![Figure 4: When using a Screenlet with Screens installed manually, you may get an exception due to an unknown class in Interface Builder.](../../../images/screens-ios-xcode-unknown-class.png)
 
@@ -198,21 +204,21 @@ communicating with your Liferay instance. As an example, refer to
 
 ![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../../images/screens-ios-liferay-context.png)
 
-The values you need to specify in your `liferay-server-context.plist` are: 
+The values you need to specify in your `liferay-server-context.plist` are:
 
-- `server`: Your Liferay instance's URL. 
-- `version`: Your Liferay instance's version. Supported values are `62` for 
-  Liferay 6.2, and `70` for Liferay 7.0. 
-- `companyId`: Your Liferay instance's identifier. You can find this value in 
-  the *Instance ID* column of *Control Panel* &rarr; *Portal Instances*. 
-- `groupId`: The site identifier of the default site you want Screens to 
-  communicate with. You can find this value in the Site ID field of the site's 
-  *Site Administration* &rarr; *Configuration* &rarr; *Site Settings* menu. 
-- `connectorFactoryClassName`: The class name of your Connector's factory class. 
-  This is optional. If you don't include it, the `version` value is used to 
-  determine which factory is the most suitable for that version of Liferay. 
+- `server`: Your Liferay instance's URL.
+- `version`: Your Liferay instance's version. Supported values are `70` for
+  Liferay 7.0, and `62` for Liferay 6.2.
+- `companyId`: Your Liferay instance's identifier. You can find this value in
+  the *Instance ID* column of *Control Panel* &rarr; *Portal Instances*.
+- `groupId`: The site identifier of the default site you want Screens to
+  communicate with. You can find this value in the Site ID field of the site's
+  *Site Administration* &rarr; *Configuration* &rarr; *Site Settings* menu.
+- `connectorFactoryClassName`: The class name of your Connector's factory class.
+  This is optional. If you don't include it, the `version` value is used to
+  determine which factory is the most suitable for that version of Liferay.
 
-Great! Your iOS project is ready for Liferay Screens. 
+Great! Your iOS project is ready for Liferay Screens.
 
 ## Related Topics [](id=related-topics)
 
@@ -220,4 +226,4 @@ Great! Your iOS project is ready for Liferay Screens.
 
 [Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
