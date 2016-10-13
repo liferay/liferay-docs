@@ -17,7 +17,7 @@ on public network accessibility.
 This tutorial explains how to install the Maven artifacts required for Liferay
 plugin development. For more information on the Maven artifact retrieval
 process, see the
-[Getting Started with Maven](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-maven)
+[Managing Liferay Maven Projects](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects)
 tutorial.
 
 First, consider the installation process using the Central Repository.
