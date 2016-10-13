@@ -8,12 +8,14 @@ obtain and are required for Liferay plugin development. In the Maven tutorials,
 you'll learn how to
 
 - Install Liferay Maven artifacts.
-<!-- - Generate Liferay Maven projects using archetypes. -->
+<!--
+- Generate Liferay Maven projects using archetypes.
+- Create a Module JAR.
+- Deploy a Maven project to @product@.
+-->
 - Manage Liferay Maven projects.
 - Deploy a Liferay Maven project to a remote repository.
 <!--
-- Create a Module JAR.
-- Deploy a Maven project to @product@.
 - Use Service Builder in a Liferay Maven project.
 - Compile Sass files with Maven.
 -->
