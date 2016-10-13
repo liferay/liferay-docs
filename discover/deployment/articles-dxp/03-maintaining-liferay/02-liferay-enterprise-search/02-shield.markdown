@@ -182,11 +182,11 @@ For a complete list of the Shield adapter's available configuration options, see
 ## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
 
 Your Elasticsearch connection now uses Shield to require authentication, but the
-authentication token is currently being sent in plain text. For additional
+authentication token is being sent in plain text. For additional
 security, enable Transport Layer Security (TLS) encryption.
 
-This configuration demonstrates setting up a *wildcard* certificate that can be
-used across the entire cluster. See the [Elasticsearch
+These instructions set up a *wildcard* certificate to be used across the entire
+cluster. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/shield/2.2/ssl-tls.html) for
 alternative configuration approaches.
 
@@ -196,16 +196,16 @@ alternative configuration approaches.
    Setting Up a Certificate
    Authority](https://www.elastic.co/guide/en/shield/2.3/certificate-authority.html#certificate-authority) for the details.
 
-+$$$
+    +$$$
 
-**Note for Windows:** In step 2 of the [linked documentation on setting up a
-certificate](https://www.elastic.co/guide/en/shield/2.3/certificate-authority.html#certificate-authority)
-ensure that the `serial` file contains *01* with no quote marks. Otherwise
-you'll encounter errors when you follow the step below on signing the CSR.
+    **Note for Windows:** In step 2 of the [linked documentation on setting up a
+    certificate](https://www.elastic.co/guide/en/shield/2.3/certificate-authority.html#certificate-authority)
+    ensure that the `serial` file contains *01* with no quotation marks. Otherwise
+    you'll encounter errors when you follow the step below on signing the CSR.
 
-$$$ 
+    $$$
 
-3. Use the Java `keytool` command to create a new Java Keystore by importing the
+3. Use the Java `keytool` command to create a new Java Keystore, importing the
    CA that will issue the wildcard certificate:
 
         keytool -importcert -keystore es-ssl.keystore.jks -file certs/cacert.pem
@@ -224,30 +224,13 @@ $$$
         es-ssl.keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -dname
         "cn=localhost" > es-ssl.keystore.csr
 
-6. [Sign the CSR](https://www.elastic.co/guide/en/shield/2.3/certificate-authority.html#sign-csr) using `openssl`:
-
-        openssl ca -in es-ssl.keystore.csr -notext -out es-ssl.keystore.crt -config
-        conf/caconfig.cnf -extensions v3_req
-<!-- Is that right?-->
+6. Sign the CSR using [Elastic's guide](https://www.elastic.co/guide/en/shield/2.3/certificate-authority.html#sign-csr).
 
 7. Once the CA has signed the CSR and returned the certificate in PEM format,
    import it into the Java Keystore:
 
         keytool -storepass liferay -importcert -keystore es-ssl.keystore.jks
         -alias es-shield -file certs/es-ssl.keystore.pem
-
-<!--
-   To generate a self signed certificate and key, navigate to
-   `[Elasticsearch_Home]/config/shield` and enter
-
-        keytool -genkeypair -alias es-ssl -keyalg RSA -keysize 2048 -keypass 
-        liferay -storepass liferay -validity 9999 -keystore es-ssl.keystore.jks 
-        -ext SAN=DNS:localhost,IP:x.x.x.x,IP:127.0.0.1 -dname "CN=localhost, 
-        OU=Organizational Unit, O=Organization, L=Location, ST=State, C=Country"
-
-    Note: Replace the host and IP address with the correct values for your
-    system.
--->
 
 8. Add the following lines to `[Elasticsearch_Home]/config/elasticsearch.yml`:
 
