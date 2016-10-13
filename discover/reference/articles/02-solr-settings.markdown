@@ -1,4 +1,4 @@
-# Solr Settings
+# Solr Settings [](id=solr-settings)
 
 Solr can be configured for use with Liferay 7. Liferay Marketplace includes a
 Solr adapter called Liferay Enterprise Search-Solr Search Engine. The adapter is

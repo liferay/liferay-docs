@@ -233,7 +233,7 @@ $$$
 
 Adding a *Repository* mapped to the external repository is the final step.
 
-### Step 3: Add the Repository to Documents and Media
+### Step 3: Add the Repository to Documents and Media [](id=step-3-add-the-repository-to-documents-and-media)
 
 The last step is adding a to Documents and Media a *Repository* to inter-operate
 with the external repository. Documents and Media can connect with a CMIS

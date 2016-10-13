@@ -1,4 +1,4 @@
-# Introduction to Liferay Development
+# Introduction to Liferay Development [](id=introduction-to-liferay-development)
 
 How many times have you had to start over from scratch? Probably almost as many
 times as you've started a new project, because each time you have to write not
@@ -14,9 +14,9 @@ lets you get right to the features of your app or site, rather than making you
 start over every time with the basic building blocks? There is such a thing, and
 it's called @product@.
 
-![With @product@, you never have to start from scratch.](../../images/dont-start-from-scratch.png)
+![With @product@, you never have to start from scratch.](../../images/dont-start-from-scratch.jpg)
 
-## Leveraging a Suite of Products, Frameworks and Libraries
+## Leveraging a Suite of Products, Frameworks and Libraries [](id=leveraging-a-suite-of-products-frameworks-and-libraries)
 
 @product@ offers developers a complete platform for building web apps, mobile
 apps, and web services quickly, using features and frameworks designed for rapid
@@ -37,7 +37,7 @@ In short, Liferay was written by developers for developers, to help you get your
 work done faster and more easily, to take the drudgery out of web and mobile app
 development, so that writing code becomes enjoyable again.
 
-## Build Websites, Intranets, Collaborative Environments, Mobile Apps, and More
+## Build Websites, Intranets, Collaborative Environments, Mobile Apps, and More [](id=build-websites-intranets-collaborative-environments-mobile-apps-and-more)
 
 One of the most often cited best characteristics of Liferay is how versatile it
 is. It can be used to build websites of all sorts, from very large websites with
@@ -50,7 +50,7 @@ environments like collaboration platforms.
 Developers often choose Liferay for one of these cases and quickly find that
 Liferay is a great fit for completely different projects.
 
-## Creating Your Own Applications and Extending the Existing Ones
+## Creating Your Own Applications and Extending the Existing Ones [](id=creating-your-own-applications-and-extending-the-existing-ones)
 
 @product@ is based on the Java platform and can be extended by adding new
 applications, customizing existing applications, modifying its behavior, or

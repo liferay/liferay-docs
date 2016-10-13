@@ -1,4 +1,4 @@
-# Upgrading to Liferay 7 [](id=upgrading-to-liferay-7)
+# Upgrading to @product@ [](id=upgrading-to-liferay-7)
 
 Upgrading to @product@ consists of two steps: upgrading your installation and
 then upgrading the database. @product@ can be upgraded using a straightforward

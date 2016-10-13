@@ -21,6 +21,10 @@ After running the command above, your project's directory structure looks like
 this:
 
 - `my-mvc-portlet-project`
+    - `gradle`
+        - `wrapper`
+            - `gradle-wrapper.jar`
+            - `gradle-wrapper.properties`
     - `src`
         - `main`
             - `java`
@@ -35,6 +39,7 @@ this:
                         - `view.jsp`
     - `bnd.bnd`
     - `build.gradle`
+    - `gradlew`
 
 The generated module is a working application and is deployable to a Liferay
 instance. To build upon the generated app, modify the project by adding logic

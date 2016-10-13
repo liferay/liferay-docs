@@ -74,10 +74,20 @@ are scoped to apply only with a specific context like a site, an organization,
 or globally. See Liferay's [Roles and Permissions (not yet written)]()
 documentation for more information.
 
-There are additional security plugins available from
-[Liferay Marketplace](https://www.liferay.com/marketplace). For example, you
-can find an Audit plugin for tracking user actions or an AntiSamy plugin for
-clearing HTML from XSS vectors.
++$$$
+
+Note: @product@ relies on the application server for sanitizing CRLF in
+HTTP headers. You should, therefore, make sure this is properly configured in
+your application server, or you may experience false positives in reports from
+automatic security verification software such as Veracode. There is one
+exception to this for Resin, which does not have support for this feature. In
+this case, Liferay sanitizes HTTP headers. 
+
+$$$
+
+There are additional security plugins available from [Liferay Marketplace](https://www.liferay.com/marketplace). For example, you can find an
+Audit plugin for tracking user actions or an AntiSamy plugin for clearing HTML
+from XSS vectors.
 
 Liferay provides plenty of configuration options that allow its various
 security features to be fine-tuned or disabled. Here are a few examples of
