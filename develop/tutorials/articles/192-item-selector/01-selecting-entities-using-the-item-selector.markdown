@@ -132,7 +132,7 @@ reverse the order, it shows the video selection views first and the image
 selection views second.
 
 Return type order is also significant. A view uses the first return type it
-supports, from each criterion's return type list. 
+supports from each criterion's return type list. 
 
 Now that you've got a URL to the Item Selector you've configured, you can start
 using the Item Selector in your UI. 
