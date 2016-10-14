@@ -33,6 +33,8 @@ to do to get your asset renderer functioning properly for your asset:
 - Create an asset renderer factory to create an instance of the asset renderer
   for each asset entity.
 
+![Figure 1: The asset renderer factory creates an asset renderer for each asset instance.](../../images/asset-renderer-diagram.png)
+
 Methods implemented in the asset renderer and asset renderer factory are used in
 slightly different ways. Methods implemented in an asset renderer are applied
 on the entity level, whereas the asset renderer factory applies them globally.
@@ -66,22 +68,18 @@ quickly. Implementing `AssetRenderer` requires that you choose a templating
 technology (JSP, FreeMarker, Soy, etc.) to display an asset's HTML. For this
 tutorial, you'll use JSP templates to render an asset's HTML. You'll learn how
 to associate your JSP templates with an asset renderer, along with configuring
-several other options next. 
+several other options. 
 
 To learn how an asset renderer is created, you'll create the pre-existing
 [BlogsEntryAssetRenderer](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/blogs/com.liferay.blogs.web/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
 class, which configures the asset renderer framework for the Blogs application.
-To create a `-AssetRenderer` class for your custom asset, first make sure you've
-properly added your asset to the asset framework by following the
-[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
-tutorial.
 
 1.  Create a new package in your existing project for your asset-related
     classes. For instance, the `BlogsEntryAssetRenderer` class resides in the
     `com.liferay.blogs.web` module's `com.liferay.blogs.web.asset` package.
 
-2.  Create your `-AssetEntry` class for your application and have it implement
-    the
+2.  Create your `-AssetEntry` class for your application in the new `-.asset`
+    package and have it implement the
     [AssetEntry](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
     interface. Consider the `BlogsEntryAssetRenderer` class as an example:
 
@@ -115,7 +113,7 @@ tutorial.
     tutorial.
 
     Also, make sure to define the `_entry` and `_resourceBundleLoader` fields in
-    the `BlogsEntryAssetRenderer` class:
+    the class:
 
         private final BlogsEntry _entry;
         private final ResourceBundleLoader _resourceBundleLoader;
@@ -162,7 +160,7 @@ tutorial.
     be `blog`, which you'll set in the factory later. This type is important
     because it's called in CSS files (among others) to style a blog asset's UI.
 
-5.  Your asset renderer must linked to the portlet that owns the entity. In the
+5.  Your asset renderer must link to the portlet that owns the entity. In the
     case of a blogs asset, its portlet ID should be linked to the Blogs
     application.
 
@@ -206,13 +204,13 @@ tutorial.
     A comments section is an available option if it returns a non-null value. A
     JSP template defining a comments section is not required. For the comments
     section to display for your asset, you must enable it in the Asset
-    Publisher's *Options* (![Options](../../../images/icon-app-options.png))
-    &rarr; *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
+    Publisher's *Options* (![Options](../../images/icon-app-options.png)) &rarr;
+    *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
 8.  Retrieving the title and summary is both simple and important for any asset
     in Liferay. You can add this functionality in your asset renderer by adding
-    methods similar to the ones outlined below, which are used for the blogs
-    asset renderer:
+    methods similar to the ones outlined below, which are used in the
+    `BlogsEntryAssetRenderer` class:
 
         @Override
         public String getSummary(
@@ -275,14 +273,15 @@ tutorial.
 
     This displays a Print icon for your asset when displayed in the Asset
     Publisher. For the icon to display for your asset, you must enable it in the
-    Asset Publisher's *Options* (![Options](../../../images/icon-app-options.png))
+    Asset Publisher's *Options* (![Options](../../images/icon-app-options.png))
     &rarr; *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
-    ![Figure 1: Enable printing in the Asset Publisher to display the Print icon for your asset.](../../../images/asset-publisher-printing.png)
+    ![Figure 2: Enable printing in the Asset Publisher to display the Print icon for your asset.](../../images/asset-publisher-printing.png)
 
 11. If your asset is only intended for certain users to access, you'll want to
     set permissions for the asset. You can do this via the asset renderer, as
-    well. See the logic below for an example used by the blogs asset renderer:
+    well. See the logic below for an example used in the
+    BlogsEntryAssetRenderer` class:
 
         @Override
         public long getUserId() {
@@ -344,7 +343,7 @@ interface:
 - `preview`
 
 Besides these supported templates, you can also create JSPs for buttons you'd
-like to provide for direct access and manipulation of the asset:
+like to provide for direct access and manipulation of the asset. For example,
 
 - Edit
 - View
@@ -371,15 +370,18 @@ asset renderer is put together to satisfy JSP template development requirements.
             }
         }
 
-    Blogs assets implement the `abstract.jsp` and `full_content.jsp` templates.
+    Blogs assets provide custom `abstract.jsp` and `full_content.jsp` templates.
     This means that a blogs asset can render a blog's abstract description or
     the blog's full content in the Asset Publisher. Those templates are located
     in the `com.liferay.blogs.web` module's
     `src/main/resources/META-INF/resources/blogs/asset` folder. You could create
-    a similar folder for your JSP templates used for this method.
+    a similar folder for your JSP templates used for this method. The other
+    template provided by the `AssetRenderer` interface, `preview.jsp`, is not
+    customized by the blogs asset renderer, so its default template is
+    implemented.
 
     You must configure a link to display the full content of the asset. You'll
-    do this later.
+    do this later. <!--Check -->
 
 2.  Now that you've added the path for your JSP, you'll need a way to include
     that JSP. If you're familiar with MVCPortlet development, you may be aware
@@ -403,17 +405,16 @@ asset renderer is put together to satisfy JSP template development requirements.
     then calls the `BaseJspAssetRenderer` class's `include` method. By doing
     this, the appropriate JSP to display in the Asset Publisher is rendered.
 
-    ![Figure 2: The abstract and full content views are rendererd differently for blogs.](../../../images/blogs-asset-views.png)
+    ![Figure 3: The abstract and full content views are rendererd differently for blogs.](../../images/blogs-asset-views.png)
 
 Terrific! You've learned how to apply JSPs supported by the Asset Publisher for
-your asset. That's not all you can do with JSPs templates, however! The asset
+your asset. That's not all you can do with JSP templates, however! The asset
 renderer framework provides several other methods that let you render convenient
 buttons for your asset.
 
-1.  Blogs assets provide an Edit [Blog Name]
-    (![Edit Blog](../../../images/icon-edit.png)) button that you can select to
-    edit the asset. This is provided for blog assets by adding the following
-    method to the `BlogsEntryAssetRenderer` class:
+1.  Blogs assets provide an Edit button (![Edit Blog](../../images/icon-edit.png))
+    that you can select to edit the asset. This is provided for blog assets by
+    adding the following method to the `BlogsEntryAssetRenderer` class:
 
         @Override
         public PortletURL getURLEdit(
@@ -478,7 +479,7 @@ buttons for your asset.
     asset (e.g., viewing a blogs asset in the Blogs application). Deciding which
     view to render in @product@ is configurable by navigating to the Asset
     Publisher's *Options*
-    (![Options](../../../images/icon-app-options.png)) &rarr; *Configuration*
+    (![Options](../../images/icon-app-options.png)) &rarr; *Configuration*
     &rarr; *Setup* &rarr; *Display Settings* section and choosing between *Show
     Full Content* and *View in Context* for the Asset Link Behavior drop-down
     menu.
@@ -487,10 +488,9 @@ The Blogs application provides customized `abstract` and `full_content` JSP
 templates that override the ones provided by the `AssetRenderer` interface. The
 third template, `preview`, could also be customized. You can view the default
 `preview.jsp` template rendered in the *Add*
-(![Add](../../../images/icon-control-menu-add.png)) &rarr; *Content*
-menu.
+(![Add](../../images/icon-control-menu-add.png)) &rarr; *Content* menu.
 
-![Figure 3: The `preview` template displays a preview of the asset in the Content section of the Add menu.](../../../images/preview-template-asset-renderer.png)
+![Figure 4: The `preview` template displays a preview of the asset in the Content section of the Add menu.](../../images/preview-template-asset-renderer.png)
 
 You've learned all about implementing the `AssetRenderer`'s provided templates
 and customizing them to fit your needs. Next, you'll put your asset renderer
@@ -512,15 +512,15 @@ renderer factory.
     class resides in the `com.liferay.blogs.web` module's
     `com.liferay.blogs.web.asset` package. The factory class should extend the
     `BaseAssetRendererFactory` class and the asset type should be specified as
-    its parameter. You can see how this was done for the blogs asset renderer
-    factory below
+    its parameter. You can see how this was done in the
+    `BlogsEntryAssetRendererFactory` class below
 
         public class BlogsEntryAssetRendererFactory
             extends BaseAssetRendererFactory<BlogsEntry> {
 
 2.  Create an `@Component` annotation section above the class declaration. This
     annotation is responsible for registering the factory instance for the
-    asset. There are a few annotation elements you should set:
+    asset.
 
         @Component(
             immediate = true,
@@ -530,11 +530,15 @@ renderer factory.
         public class BlogsEntryAssetRendererFactory
             extends BaseAssetRendererFactory<BlogsEntry> {
 
-    The `property` element sets the portlet that is associated with the asset.
-    For example, since the Blogs factory is created for each Blogs asset
-    instance, the Blogs portlet is specified. The `service` element should point
-    to the `AssetRendererFactory.class` interface. Finally, the `immediate`
-    element directs the factory to start in @product@ when it's first created.
+    There are a few annotation elements you should set:
+
+    - The `immediate` element directs the factory to start in @product@ when
+      it's first created.
+    - The `property` element sets the portlet that is associated with the asset.
+      For example, since the blogs factory is created for each blogs asset
+      instance, the Blogs portlet is specified.
+    - The `service` element should point to the `AssetRendererFactory.class`
+      interface.
 
     +$$$
 
@@ -574,13 +578,13 @@ renderer factory.
         }
 
     For blogs, the asset is retrieved by calling the Blogs application's local
-    service. Then the asset renderer is instantiated using the Blogs asset and
+    service. Then the asset renderer is instantiated using the blogs asset and
     resource bundle loader. Next, the type and servlet context is
     set for the asset renderer. Finally, the configured asset renderer is
     returned.
 
     There are a few variables in the `getAssetRenderer(...)` method you need to
-    specify. You'll set those variables and learn what they're doing next.
+    create. You'll set those variables and learn what they're doing next.
 
     a. You must get the entry by calling the Blogs application's local service.
        You can instantiate this service by creating a private field and setting
@@ -619,8 +623,8 @@ renderer factory.
     `Bundle-SymbolicName` defined in the `bnd.bnd` file of the module the
     factory resides in.
 
-    c. The asset renderer type integer is set for the asset renderer, but why an
-       integer? @product@ needs to differentiate when it should display the
+    c. The asset renderer `type` integer is set for the asset renderer, but why
+       an integer? @product@ needs to differentiate when it should display the
        latest *approved* version of the asset, or the latest version, even if
        it's unapproved (e.g., unapproved versions would be displayed for
        reviewers of the asset in a workflow). For these situations, the asset
@@ -709,7 +713,7 @@ renderer factory.
     that only points to the application managing the assets (e.g., Blogs
     application).
 
-11. Set the global permissions for all Blogs assets:
+11. Set the global permissions for all blogs assets:
 
         @Override
         public boolean hasAddPermission(
