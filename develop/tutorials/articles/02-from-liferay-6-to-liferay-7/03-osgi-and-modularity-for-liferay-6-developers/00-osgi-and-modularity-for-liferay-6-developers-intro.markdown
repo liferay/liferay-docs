@@ -21,7 +21,7 @@ to provide a great developer experience.
 It wasn't long before Liferay discovered that OSGi and its supporting
 tools/technologies fit the bill!
 
-In this tutorial, you'll learn how Liferay 7 uses OSGi to meet these objectives.
+In this tutorial, you'll learn how @product@ 7 uses OSGi to meet these objectives.
 And equally important, you'll find out how easy and fun modular development can
 be.
 
@@ -29,12 +29,12 @@ Here are the topics you'll dig into:
 
 1. **Modules as an Improvement over Traditional Plugins**: Development and
    customization of applications for Liferay has been done traditionally in
-   plugins (Portlet, Hook, Ext and Web). In Liferay 7, plugins are replaced with
+   plugins (Portlet, Hook, Ext and Web). In @product@ 7, plugins are replaced with
    (and can be automatically converted to) modules. You'll see the similarities
    and differences of plugins and modules, and you'll learn the benefits of
    using modules.
 
-2. **Leveraging Dependencies**: In Liferay 7, developers can both declare
+2. **Leveraging Dependencies**: In @product@ 7, developers can both declare
    dependencies among modules and can combine modules to create applications.
    Since leveraging dependencies provides huge benefits, it's important to spend
    a lot of time showing how to do it. 
@@ -43,10 +43,10 @@ Here are the topics you'll dig into:
    called OSGi Services (also known as microservices). Together with the
    Declarative Services standard, it provides a clean way to inject dependencies
    (similar to Spring Dependency Injection) in a dynamic environment. It also
-   offers an elegant extensibility model that Liferay 7 leverages extensively.
+   offers an elegant extensibility model that @product@ 7 leverages extensively.
 
 <!-- Uncomment when these sections are added. Jim
-4. **Dynamic Deployment**: Module deployment is managed by Liferay 7 (not the
+4. **Dynamic Deployment**: Module deployment is managed by @product@ 7 (not the
 application server). This section demonstrates how to use dynamic deployment to
 allow for more dynamicity and speed.
 -->
@@ -58,11 +58,11 @@ Let's start with learning how modules are better than traditional plugins.
 
 ## Modules as an Improvement over Traditional Plugins [](id=modules-as-an-improvement-over-traditional-plugins)
 
-In Liferay 7, you can develop applications using OSGi modules or using
+In @product@ 7, you can develop applications using OSGi modules or using
 traditional Liferay plugins (WAR-style portlets, hooks, EXT, and web
 applications). Liferay's Plugin Compatibility Layer (explained later) makes it
 possible to deploy traditional plugins to the OSGi runtime framework. To benefit
-from all Liferay 7 and OSGi offer, however, you should use OSGi modules.
+from all @product@ 7 and OSGi offer, however, you should use OSGi modules.
 
 Here are some important benefits of using modules:
 
@@ -99,7 +99,7 @@ separate from the code, they're specified in context in the code.
 
 These are just a few ways modules outshine traditional plugins. Note, however,
 that developers experienced with Liferay plugins have the best of both worlds.
-Liferay 7 supports traditional plugins *and* modules. Existing Liferay
+@product@ 7 supports traditional plugins *and* modules. Existing Liferay
 developers can find comfort in the simplicity of modules and their similarities
 with plugins.
 
@@ -238,11 +238,11 @@ This part of the tutorial explains:
 
 - **How to develop modular apps using dependencies**
 
-Let's start by learning how dependencies operate in Liferay 7.
+Let's start by learning how dependencies operate in @product@ 7.
 
 ### How Dependencies Work [](id=how-dependencies-work)
 
-Since all of Liferay 7 leverages dependencies, it also demonstrates how to use
+Since all of @product@ 7 leverages dependencies, it also demonstrates how to use
 them. As mentioned previously, all of what was in Liferay 6 and its apps has
 been refactored into OSGi modules. The `portal-service` API (the main API in
 Liferay 6) has been replaced by the `portal-kernel` module (@product@'s kernel
@@ -294,17 +294,17 @@ modules to create apps.
 
 ### Dependencies Facilitate Modular Development [](id=dependencies-facilitate-modular-development)
 
-Liferay 7's support of dependencies and semantic versioning facilitates modular
+@product@ 7's support of dependencies and semantic versioning facilitates modular
 development. The dependency frameworks enable you to use modules and link them
 together. You can use these modules throughout your organization and distribute
-them to others. Liferay 7's integration with dependency management frees you to
+them to others. @product@ 7's integration with dependency management frees you to
 modularize existing apps and develop apps that combine modules. It's a powerful
 and fun way to develop apps on @product@.
 
 Here are some general steps to consider when modularizing an existing app:
 
 1. **Start by putting the entire app in a single module**: This is a minimal
-first step that acquaints you with Liferay 7's module framework. You'll gain
+first step that acquaints you with @product@ 7's module framework. You'll gain
 confidence as you build, deploy, and test your app in an environment of your
 choice, such as a Liferay Workspace, Gradle, or Maven project.
 
@@ -374,7 +374,7 @@ OSGi Services and dependency injection using OSGi Declarative Services.
 
 ## OSGi Services and Dependency Injection with Declarative Services [](id=osgi-services-and-dependency-injection-with-declarative-services)
 
-In Liferay 7, the OSGi framework registers objects as *services*. Each service
+In @product@ 7, the OSGi framework registers objects as *services*. Each service
 offers functionality and can leverage functionality other services provide. The
 OSGi Services model supports a collaborative environment for objects.
 
@@ -441,7 +441,7 @@ As an improvement over dependency injection with Spring, OSGi Declarative
 Services supports dynamic dependency injection. Developers can create and
 publish service components for other classes to use. Developers can update the
 components and even publish alternative component implementations for a service.
-This kind of dynamism is a powerful part of Liferay 7.
+This kind of dynamism is a powerful part of @product@ 7.
 
 ## Example: Building an OSGi Module [](id=example-building-an-osgi-module)
 
@@ -564,7 +564,7 @@ Congratulations! You've successfully built and deployed an OSGi module to
 
 [OSGi enRoute](http://enroute.osgi.org/)
 
-Liferay 7 leverages the following services extensively. They're specified in
+@product@ 7 leverages the following services extensively. They're specified in
 [*The OSGi Alliance OSGi Compendium: Release 6*](https://www.osgi.org/developer/specifications/).
 
 - *Declarative Services Specification* 

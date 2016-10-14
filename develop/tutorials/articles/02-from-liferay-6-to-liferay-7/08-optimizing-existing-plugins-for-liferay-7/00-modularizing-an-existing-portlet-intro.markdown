@@ -250,7 +250,7 @@ learn how to create these modules next.
 ## Converting Your Application's Service Builder API and Implementation [](id=converting-your-applications-service-builder-api-and-implementation)
 
 In this section, you'll learn about converting a Liferay 6 Service Builder
-application to a Liferay 7 style application. In the previous section, you
+application to a @product@ 7 style application. In the previous section, you
 learned how to generate your implementation and API modules. If you haven't yet
 run the `servicebuilder` blade command outlined in step 2 of the previous
 section, run it now. The API module holds your application's Service Builder
@@ -353,7 +353,7 @@ dependencies to these:
     }
 
 Excellent! You've successfully generated your application's services using
-Service Builder. They now reside in modules, and can be deployed to Liferay 7.0.
+Service Builder. They now reside in modules, and can be deployed to @product@ 7.0.
 If you'd like to learn more information about creating implementation and API
 modules from scratch, visit the
 [Creating an Implementation Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-implementation-module)
@@ -365,7 +365,7 @@ respectively.
 
 ## Building Your Module JARs for Deployment [](id=building-your-module-jars-for-deployment)
 
-Now it's time to build your modules and deploy them to your Liferay 7.0
+Now it's time to build your modules and deploy them to your @product@ 7.0
 instance. To build your project, run `gradle build` from your project's root
 directory.
 
@@ -395,7 +395,7 @@ $$$
 
 Once your project successfully builds, check all of your modules' `/build/libs`
 directories. There should be a newly generated JAR file in each, which is the
-file you'll need to deploy to Liferay. You can deploy each JAR by running `blade
+file you'll need to deploy to @product@. You can deploy each JAR by running `blade
 deploy` from each module's root directory.
 
 +$$$
@@ -417,7 +417,7 @@ shell as shown below.
 ![Figure 1: Once you've connected to your Liferay instance in your Gogo shell prompt, run *lb* to list your new converted modules.](../../../images/deploy-converted-modules.png)
 
 This tutorial explained how to convert your traditional application into the modular
-format of a Liferay 7 style applicaton. You first created a web client
+format of a @product@ 7 style applicaton. You first created a web client
 (`*-web`) module that holds your application's portlet classes and UI. Then you
 learned how to create a service implementation module and a service API module.
 Your learned how to run Service Builder to generate code for your application's
