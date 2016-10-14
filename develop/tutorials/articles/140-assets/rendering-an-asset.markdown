@@ -29,9 +29,21 @@ is easy because Liferay offers applicable interfaces and factories to help get
 your custom asset rendering implemented fast. There are two things you'll need
 to do to get your asset renderer functioning properly for your asset:
 
-- Create an asset renderer for your custom entity.
-- Create an asset renderer factory to track each entity instance's asset
-  renderer.
+- Create an asset renderer for your custom asset.
+- Create an asset renderer factory to create an instance of the asset renderer
+  for each asset entity.
+
+Methods implemented in the asset renderer and asset renderer factory are used in
+slightly different ways. Methods implemented in an asset renderer are applied
+on the entity level, whereas the asset renderer factory applies them globally.
+For example, the asset renderer and the factory classes have differing
+methods that produce buttons. Why is this? Consider a user wants to edit the
+*Lunar Resort* blog. The user will only have access to that blog's Edit button
+if they have permissions to edit it. Therefore, the edit button is displayed
+based on the asset entity, and is implemented in the asset renderer class. The
+Add button doesn't depend on an entity instance, but is provided globally for
+all blogs assets. Because of this, the method to add a blog is implemented in
+the factory class.
 
 You'll learn how to create an asset renderer and an asset renderer factory by
 studying a Liferay asset that already uses both by default: Blogs. The Blogs
@@ -489,8 +501,10 @@ into action by creating a factory.
 You've successfully created an asset renderer, but you'll need to create a
 factory class to create an asset renderer for each asset instance. For example,
 the blogs asset renderer factory instantiates `BlogsEntryAssetRenderer` for each
-blogs asset in @product@. You'll continue the blogs asset renderer example by
-creating the blogs asset renderer factory.
+blogs asset in @product@.
+
+You'll continue the blogs asset renderer example by creating the blogs asset
+renderer factory.
 
 1.  Create a `-AssetRenderFactory` class in the same folder as its asset
     renderer class. For blogs, the
@@ -531,10 +545,8 @@ creating the blogs asset renderer factory.
 
     $$$
 
-3.  Create a constructor for the factory class that presets important
-    behaviors when the factory is initialized. The Blogs asset renderer factory
-    sets two entities and two booleans, which are necessary when it's
-    initialized.
+3.  Create a constructor for the factory class that presets private attributes
+    of the factory.
 
         public BlogsEntryAssetRendererFactory() {
             setClassName(BlogsEntry.class.getName());
@@ -561,12 +573,18 @@ creating the blogs asset renderer factory.
             return blogsEntryAssetRenderer;
         }
 
-    Notice that there are two `getAssetRenderer(...)` methods. <!-- Explain -->
+    For blogs, the asset is retrieved by calling the Blogs application's local
+    service. Then the asset renderer is instantiated using the Blogs asset and
+    resource bundle loader. Next, the type and servlet context is
+    set for the asset renderer. Finally, the configured asset renderer is
+    returned.
 
-5.  There are a few variables in the `getAssetRenderer(...)` methods you need to
-    specify. First, you must get the entry by calling the Blogs application's
-    local/remote service. You can instantiate these services by creating private
-    fields and setting them using setter methods:
+    There are a few variables in the `getAssetRenderer(...)` method you need to
+    specify. You'll set those variables and learn what they're doing next.
+
+    a. You must get the entry by calling the Blogs application's local service.
+       You can instantiate this service by creating a private field and setting
+       it using a setter method:
 
         @Reference(unbind = "-")
         protected void setBlogsEntryLocalService(
@@ -575,39 +593,15 @@ creating the blogs asset renderer factory.
             _blogsEntryLocalService = blogsEntryLocalService;
         }
 
-        @Reference(unbind = "-")
-        protected void setBlogsEntryService(BlogsEntryService blogsEntryService) {
-            _blogsEntryService = blogsEntryService;
-        }
-
         private BlogsEntryLocalService _blogsEntryLocalService;
-        private BlogsEntryService _blogsEntryService;
 
-    The setter methods are annotated with the `@Reference` tag. Visit the
+    The setter method is annotated with the `@Reference` tag. Visit the
     [Invoking Liferay Service Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
     section of the *Finding and Invoking Liferay Services* tutorial for more
     information.
 
-6.  Since the Blogs application is providing its own JSPs, it must pass a
-    reference of the servlet context to the asset renderer. This is always
-    required when using custom JSPs in an asset renderer:
-
-        @Reference(
-            target = "(osgi.web.symbolicname=com.liferay.blogs.web)", unbind = "-"
-        )
-        public void setServletContext(ServletContext servletContext) {
-            _servletContext = servletContext;
-        }
- 
-        private ServletContext _servletContext;
-
-    Make sure the `osgi.web.symbolicname` in the `target` property of the
-    `@Reference` annotation is set to the same value as the
-    `Bundle-SymbolicName` defined in the `bnd.bnd` file of the module the
-    factory resides in.
-
-7.  You must also specify the resource bundle loader since it was specified in
-    the `BlogsEntryAssetRenderer`'s constructor:
+    b. You must specify the resource bundle loader since it was specified in
+       the `BlogsEntryAssetRenderer`'s constructor:
 
         @Reference(
             target = "(bundle.symbolic.name=com.liferay.blogs.web)", unbind = "-"
@@ -620,7 +614,35 @@ creating the blogs asset renderer factory.
 
         private ResourceBundleLoader _resourceBundleLoader;
 
-8.  Set the type of asset that the asset factory will associate with and provide
+    Make sure the `osgi.web.symbolicname` in the `target` property of the
+    `@Reference` annotation is set to the same value as the
+    `Bundle-SymbolicName` defined in the `bnd.bnd` file of the module the
+    factory resides in.
+
+    c. The asset renderer type integer is set for the asset renderer, but why an
+       integer? @product@ needs to differentiate when it should display the
+       latest *approved* version of the asset, or the latest version, even if
+       it's unapproved (e.g., unapproved versions would be displayed for
+       reviewers of the asset in a workflow). For these situations, the asset
+       renderer factory should receive either
+       
+       - `0` for the latest version of the asset
+       - `1` for the latest approved version of the asset
+
+    d. Since the Blogs application is providing its own JSPs, it must pass a
+    reference of the servlet context to the asset renderer. This is always
+    required when using custom JSPs in an asset renderer:
+
+        @Reference(
+            target = "(osgi.web.symbolicname=com.liferay.blogs.web)", unbind = "-"
+        )
+        public void setServletContext(ServletContext servletContext) {
+            _servletContext = servletContext;
+        }
+ 
+        private ServletContext _servletContext;
+
+5.  Set the type of asset that the asset factory will associate with and provide
     a getter method to retrieve that type. Also, provide another getter to
     retrieve the blogs entry class name, which is required:
 
@@ -636,14 +658,17 @@ creating the blogs asset renderer factory.
             return BlogsEntry.class.getName();
         }
 
-9. <!-- Explain iconCssClass method -->
+6.  Set the Lexicon icon for the asset:
 
         @Override
         public String getIconCssClass() {
             return "blogs";
         }
 
-10.  Add methods that generate URLs to add and view the asset instance.
+    You can find a list of all available Lexicon icons at
+    [http://liferay.github.io/lexicon/content/icons-lexicon/](http://liferay.github.io/lexicon/content/icons-lexicon/).
+
+7.  Add methods that generate URLs to add and view the asset.
 
         @Override
         public PortletURL getURLAdd(
@@ -677,11 +702,14 @@ creating the blogs asset renderer factory.
             return liferayPortletURL;
         }
 
-    These methods are very similar to those specified in the
-    `BlogsEntryAssetRenderer` class. These URLs are generated for each instance
-    of an asset, whereas those residing in the asset renderer... <!-- Explain -->
+    If you're paying close attention, you may have noticed the `getURLView(...)`
+    method was also implemented in the `BlogsEntryAssetRenderer` class. The
+    asset renderer's `getURLView(...)` method creates a URL for the specific
+    asset instance, whereas the factory uses the method to create a generic URL
+    that only points to the application managing the assets (e.g., Blogs
+    application).
 
-11. <!-- Explain boolean methods -->
+11. Set the global permissions for all Blogs assets:
 
         @Override
         public boolean hasAddPermission(
@@ -701,11 +729,6 @@ creating the blogs asset renderer factory.
                 permissionChecker, classPK, actionId);
         }
 
-Great! You've created an asset renderer and then created a factory to create
-asset renderers for every asset instance.
-
-The Blogs asset renderer provides many things, but there is still more features
-you can extend in the `AssetRenderer` interface. For instance, 
-
-
-
+Great! You've finished creating the Blogs application's asset renderer factory!
+Now you have the knowledge to implement an asset render for your asset, and
+produce an asset renderer for each asset instance using a factory!
