@@ -123,7 +123,7 @@ Before @product@ 7.0, all the platform APIs were in a single JAR file:
 Modularization has resulted in many benefits, as described in the article [Benefits of Liferay 7 for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm)
 One such advantage is that these API modules can evolve separately from the
 platform kernel. They also simplify future upgrades. For example, instead of
-having to check all of Liferay's APIs, each module's [Semantic Versioning](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#semantic-versioning scheme)
+having to check all of Liferay's APIs, each module's [Semantic Versioning](http://semver.org/)
 indicates whether the module contains any backwards-incompatible changes. You
 need only adapt your code to such modules (if any). 
 

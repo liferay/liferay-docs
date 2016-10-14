@@ -378,42 +378,41 @@ In Liferay 7, the OSGi framework registers objects as *services*. Each service
 offers functionality and can leverage functionality other services provide. The
 OSGi Services model supports a collaborative environment for objects.
 
-Declarative Services (DS) provides a service component model on top of the OSGi
-Services model. A *Service Component* is a class that implements or extends a
-service class. Other OSGi Service classes can refer to the service class to use
-the Service Component. And the Service Component Runtime (SCR) handles
-registration, lookup, and binding of Service Components to classes that refer to
-them.
+Declarative Services (DS) provides a service component model on top of OSGi
+Services. DS service components are marked with the `@Component` annotation and
+implement or extend a service class. Service component can refer to and use each
+other's services. The Service Component Runtime (SCR) registers component
+services and handles binding them to other components that reference them.
 
 Here's how the "magic" happens:
 
-1.  **Service component registration:** On installing a module that contains a
-    Service Component, the SCR creates a component configuration that associates
-    the Service Component with its specified service type and stores it in a
-    service registry.
+1.  **Service registration:** On installing a module that contains a
+    service component, the SCR creates a component configuration that associates
+    the component with its specified service type and stores it in a service
+    registry.
 
-2.  **Service reference handling:** On installing a module that contains a class
-    that references a service type, the SCR searches the registry for a
-    component configuration that matches the service type. On finding a matching
-    component configuration, the SCR creates an instance of the Service
-    Component class and binds it to the referring service.
+2.  **Service reference handling:** On installing a module whose service
+    component references another service type, the SCR searches the registry for
+    a component configuration that matches the service type and on finding a
+    match binds an instance of that service to the referring component.
 
 It's publish, find, and bind at its best!
 
-How does a developer use DS to register and bind service components? Does it
-involve creating XML files? No, it's much easier than that. The developer uses
-two annotations: `@Component` and `@Reference`.
+How does a developer use DS to register and bind services? Does it involve
+creating XML files? No, it's much easier than that. The developer uses two
+annotations: `@Component` and `@Reference`.
 
--  `@Component` defines the class as a Service Component--a provider of a
-    particular service class.
+-  `@Component`: Add this annotation to a class definition to make the class a
+    component--a service provider. 
 
--  `@Reference` injects the referring class into a particular service class.
+-  `@Reference`: Add this annotation to a field to inject it with a service that
+    matches the field's type. 
 
-The `@Component` annotation makes the class an OSGi component. Defining a
-`service` property in the annotation allows other components to reference it by
-type.
+The `@Component` annotation makes the class an OSGi component. Setting a
+`service` property to a particular service type in the annotation, allows other
+components to reference the service component by the specified service type.
 
-For example, the following class is a Service Component of type `SomeApi.class`.
+For example, the following class is a service component of type `SomeApi.class`.
 
     @Component(
         service = SomeApi.class
@@ -423,21 +422,20 @@ For example, the following class is a Service Component of type `SomeApi.class`.
        ...
     }
 
-On deploying this class's module, the SCR creates a Component Configuration that
+On deploying this class's module, the SCR creates a component configuration that
 associates the class with the service type `SomeApi`.
 
-Specifying a service reference is easy too. The `@Reference` annotation can be
-applied to a field of the desired service class type. 
+Specifying a service reference is easy too. Applying the `@Reference` annotation
+to a field marks it to be injected with a service matching the field's type.
 
     @Reference
     SomeApi _someApi;
 
-On deploying this class's module, the SCR finds a Service Component of the class
-type `SomeApi` and binds the service component to the consumer.
+On deploying this class's module, the SCR finds a component configuration of the
+class type `SomeApi` and binds the service to this referencing component class.
 
-The SCR stands ready to pair Service Components with any service classes that
-reference them. For each referencing service class, the SCR creates an instance
-of the Service Component and binds it to the referencing service.
+The SCR stands ready to pair service components with each other. For each
+referencing component, the SCR binds an instance of the targeted service to it.
 
 As an improvement over dependency injection with Spring, OSGi Declarative
 Services supports dynamic dependency injection. Developers can create and
