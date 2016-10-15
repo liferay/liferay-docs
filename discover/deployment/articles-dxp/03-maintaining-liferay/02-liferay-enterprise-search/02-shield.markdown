@@ -194,12 +194,12 @@ alternative configuration approaches.
 
 2. Set up a Certificate Authority (CA) for Shield. Refer to [Elastic's article on
    Setting Up a Certificate
-   Authority](https://www.elastic.co/guide/en/shield/2.3/certificate-authority.html#certificate-authority) for the details.
+   Authority](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#certificate-authority) for the details.
 
     +$$$
 
     **Note for Windows:** In step 2 of the [linked documentation on setting up a
-    certificate](https://www.elastic.co/guide/en/shield/2.3/certificate-authority.html#certificate-authority)
+    certificate](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#certificate-authority)
     ensure that the `serial` file contains *01* with no quotation marks. Otherwise
     you'll encounter errors when you follow the step below on signing the CSR.
 
@@ -224,7 +224,7 @@ alternative configuration approaches.
         es-ssl.keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -dname
         "cn=localhost" > es-ssl.keystore.csr
 
-6. Sign the CSR using [Elastic's guide](https://www.elastic.co/guide/en/shield/2.3/certificate-authority.html#sign-csr).
+6. Sign the CSR using [Elastic's guide](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#sign-csr).
 
 7. Once the CA has signed the CSR and returned the certificate in PEM format,
    import it into the Java Keystore:
