@@ -70,35 +70,34 @@ credentials in your project's parent `pom.xml` file as follows:
 
     <repositories>
         <repository>
-            <id>liferay-public-snapshots</id>
-            <name>Liferay Public Snapshots</name>
-            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>liferay-public-releases</id>
+            <name>Liferay Public Releases</name>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases</url>
         </repository>
     </repositories>
 	  
 	<pluginRepositories>
         <pluginRepository>
-            <id>liferay-public-snapshots</id>
-            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>liferay-public-releases</id>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
         </pluginRepository>
     </pluginRepositories>
 
-The above configuration retrieves artifacts from Liferay's snapshot repository.
-Liferay also provides a
-[release repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/),
-which you can also access by modifying the `<id>`, `<name>`, and `<url>` tags to
-point to that repo. You'll also need to replace the `<snapshots>` tag with the
-`<releases>` tag:
+The above configuration retrieves artifacts from Liferay's release repository.
 
-    <releases>
++$$$
+
+**Note:** Liferay also provides a
+[snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/),
+which you can access by modifying the `<id>`, `<name>`, and `<url>` tags to
+point to that repo. This repository should only be used in special cases. You'll
+need to enable accessing the snapshot artifacts:
+
+    <snapshots>
         <enabled>true</enabled>
-    </releasess>
+    </snapshots>
+
+$$$
 
 If you've configured the Liferay Nexus repository to access pre-release Liferay
 Maven artifacts, and you've already been syncing from the Central Repository,
@@ -106,19 +105,6 @@ you may need to clear out parts of your local repository to force Maven to
 redownload the newer artifacts. Also, do not leave the Liferay repository
 configured when publishing artifacts to Maven Central. You must comment out the
 Liferay Repository credentials when publishing your artifacts.
-
-Next, when interacting with the Liferay Repository from the command line, you'll
-need to use specialized commands to access it. For instance, consider the
-Central Repository's offered Liferay archetypes. You can access them by running
-`mvn archetype:generate`. There is no need to specify the Central Repository in
-the command because it is configured by default. To access the Maven archetypes
-hosted in Liferay's Maven repository, however, you need to specify it in the
-command:
-
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots
-
-<!-- Link to *Generating New Projects Using Archetypes* tutorial here when it's
-available. -Cody -->
 
 The Liferay Maven repository offers a good alternative for those who want the
 most up-to-date Maven artifacts produced by Liferay. With a few simple
