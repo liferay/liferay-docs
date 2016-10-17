@@ -15,14 +15,14 @@ section of the *Managing Liferay Maven Projects* tutorial.
 
 First, you'll consider the installation process using remote repositories.
 
-## Installing Artifacts from a Remote Repository
+## Installing Artifacts from a Remote Repository [](id=installing-artifacts-from-a-remote-repository)
 
 There are two main ways of installing Liferay's Maven artifacts from a remote
 repository: Central Repository and Liferay Repository. To use these
 repositories, you must have access to a public network. You'll learn more about
 each option and how to configure it for your project next.
 
-### Central Repository
+### Central Repository [](id=central-repository)
 
 Using the Central Repository to install Liferay Maven artifacts is very
 straightforward and only requires that you specify your module's dependencies
@@ -54,7 +54,7 @@ might still be synced to a previous release of Liferay. If this occurs, download
 the Liferay Maven artifacts from Liferay's repository. You'll learn how to do
 this next.
 
-### Liferay Repository
+### Liferay Repository [](id=liferay-repository)
 
 If you'd like to access Liferay's latest Maven artifacts, you can configure
 Maven to automatically download and install them from
@@ -123,7 +123,7 @@ Liferay's remote repository.
 Finally, you'll learn how to install Liferay Maven artifacts from a local
 repository.
 
-## Installing Artifacts from a Local Repository
+## Installing Artifacts from a Local Repository [](id=installing-artifacts-from-a-local-repository)
 
 For those who don't have access to a public network or just prefer to install
 Liferay's Maven artifacts locally without relying on a remote repository, you
