@@ -6,23 +6,23 @@ provides them as Maven artifacts.
 
 So how do you get Liferay artifacts? There are several different ways you can
 obtain them. The most popular way to retrieve Liferay Maven artifacts is to
-install them from the Central Repository. Alternatively, if you absolutely must
-have the latest Liferay pre-release, you can intall the Liferay Maven artifacts
-from the Liferay Nexus source repository. These installation methods
-automatically install artifacts to your local `.m2` repository when packaging
-your Maven project. Finally, you can download a Liferay-provided ZIP file that
-lets you install artifacts to local intranets and repositories without relying
-on public network accessibility.
+install them from a remote repository. Alternatively, you can download a
+Liferay-provided Zip file that lets you install artifacts to local intranets and
+repositories without relying on public network accessibility. If you're unsure
+about which repository is best for you, visit the
+[Understanding Maven Repositories](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects#understanding-maven-repositories)
+section of the *Managing Liferay Maven Projects* tutorial.
 
-This tutorial explains how to install the Maven artifacts required for Liferay
-module development. For more information on the Maven artifact retrieval
-process, see the
-[Managing Liferay Maven Projects](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects)
-tutorial.
+First, you'll consider the installation process using remote repositories.
 
-First, consider the installation process using the Central Repository.
+## Installing Artifacts from a Remote Repository
 
-## Installing Artifacts from the Central Repository [](id=installing-artifacts-from-the-central-repository)
+There are two main ways of installing Liferay's Maven artifacts from a remote
+repository: Central Repository and Liferay Repository. To use these
+repositories, you must have access to a public network. You'll learn more about
+each option and how to configure it for your project next.
+
+### Central Repository
 
 Using the Central Repository to install Liferay Maven artifacts is very
 straightforward and only requires that you specify your module's dependencies
@@ -54,7 +54,7 @@ might still be synced to a previous release of Liferay. If this occurs, download
 the Liferay Maven artifacts from Liferay's repository. You'll learn how to do
 this next.
 
-## Installing Artifacts from the Liferay Repository [](id=installing-artifacts-from-the-liferay-repository)
+### Liferay Repository
 
 If you'd like to access Liferay's latest Maven artifacts, you can configure
 Maven to automatically download and install them from
@@ -91,13 +91,22 @@ The above configuration retrieves artifacts from Liferay's release repository.
 [snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/),
 which you can access by modifying the `<id>`, `<name>`, and `<url>` tags to
 point to that repo. This repository should only be used in special cases. You'll
-need to enable accessing the snapshot artifacts:
+also need to enable accessing the snapshot artifacts:
 
     <snapshots>
         <enabled>true</enabled>
     </snapshots>
 
 $$$
+
+<!-- When the Liferay repository is configured in your `settings.xml` file,
+archetypes are generated based on that repository's contents. See the
+[Generating New Projects Using Archetypes]() tutorial for details on using Maven
+archetypes for Liferay development.
+-->
+<!--
+The above should be added once the archetype tutorial is written. -Cody
+-->
 
 If you've configured the Liferay Nexus repository to access pre-release Liferay
 Maven artifacts, and you've already been syncing from the Central Repository,
@@ -111,9 +120,10 @@ most up-to-date Maven artifacts produced by Liferay. With a few simple
 configurations, you can download and install pre-release Liferay Maven
 artifacts.
 
-Finally, you'll learn how to install Liferay Maven artifacts using a ZIP file.
+Finally, you'll learn how to install Liferay Maven artifacts from a local
+repository.
 
-## Installing Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file)
+## Installing Artifacts from a Local Repository
 
 For those who don't have access to a public network or just prefer to install
 Liferay's Maven artifacts locally without relying on a remote repository, you
@@ -127,7 +137,7 @@ You can download the Liferay artifacts from SourceForge.
 1.  Navigate to the [Liferay Portal](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/)
     project page in SourceForge and select the version of Liferay for which you
     want Maven artifacts. Then select the
-    `liferay-ce-portal-maven-[version].zip` link to download the Liferay Portal
+    `liferay-ce-portal-maven-[version].zip` link to download the @product@
     Maven Zip.
 
     ![Figure 1: After selecting the Liferay version, select the Liferay Portal Maven Zip file to download.](../../../images/maven-select-download.png)

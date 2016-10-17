@@ -5,8 +5,8 @@ your Maven projects with others. First, you must have a remote repository that
 can hold deployed Maven artifacts. If you do not currently have a remote
 repository, see the
 [Managing Liferay Maven Projects](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects)
-tutorial to learn how you can set up a Nexus repository. Also make sure that
-your `[USER_HOME]/.m2/settings.xml` file specifies your remote repository's ID,
+tutorial to learn how you can set up a Nexus repository. Also make sure your
+`[USER_HOME]/.m2/settings.xml` file specifies your remote repository's ID,
 username, and password.
 
 To deploy to a remote repository, your Liferay module should be packaged using

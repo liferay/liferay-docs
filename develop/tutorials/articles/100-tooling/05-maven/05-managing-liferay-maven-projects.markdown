@@ -41,11 +41,14 @@ $$$
 
 Once you've created your Maven project, you'll need to decide if you want to
 share your Liferay project in a remote repository. You can do this by creating
-your own Nexus repository. Nexus is a Maven repository management server; using
-Nexus for Maven repository management is convenient but not required. You'll
-step through a simple example of setting up a Nexus repository later.
+your own remote repository. There are several repositories out there for Maven
+development, but you'll focus on the Nexus repository here.
 
-First, you'll learn some basics about Maven repositories.
+[Nexus](http://books.sonatype.com/nexus-book/3.0/reference/index.html) is a
+Maven repository management server; using Nexus for Maven repository management
+is convenient but not required. You'll step through a simple example of setting
+up a Nexus repository later. First, you'll learn some basics about Maven
+repositories.
 
 ## Understanding Maven Repositories [](id=understanding-maven-repositories)
 
@@ -70,19 +73,9 @@ Maven's
 [Introduction to Repositories](http://maven.apache.org/guides/introduction/introduction-to-repositories.html)
 guide.
 
-Maven also lets you configure a proxy server; it mediates your requests to
-public Maven repositories and caches artifacts locally. Using a local
-proxy/repository helps you build projects faster and more reliably. You want
-this for two reasons: accessing remote repositories is slower, and remote
-repositories are sometimes unavailable. Most Maven proxy servers can also host
-private repositories that hold only your private artifacts. If you're interested
-in running your repository behind a proxy, see Sonatype's
-[Running Behind a Reverse Proxy](http://books.sonatype.com/nexus-book/reference/install-sect-proxy.html)
-guide. 
-
-Now that you've been introduced to Maven repositories and proxy servers, you may
-want to consider using a repository management server to create and manage your
-Liferay Maven repositories. 
+Now that you've been introduced to Maven repositories, you may want to consider
+using a repository management server to create and manage your Liferay Maven
+repositories.
 
 ## Managing Maven Repositories [](id=managing-maven-repositories)
 
@@ -109,7 +102,7 @@ To create a repository using Nexus, follow these steps:
 
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*. 
 
-    ![Figure 2: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../../images/maven-nexus-create-repo.png)
+    ![Figure 2: Adding a repository to hold your Liferay artifacts is easy with Nexus.](../../../images/maven-nexus-create-repo.png)
 
     To learn more about each type of Nexus repository, read Sonatype's
     [Managing Repositories](http://books.sonatype.com/nexus-book/reference/confignx-sect-manage-repo.html)
@@ -126,7 +119,7 @@ To create a repository using Nexus, follow these steps:
 
 4.  Click *Save*.
 
-You just created a Liferay Maven repository accessible from your Nexus OSS
+You just created a Liferay Maven repository accessible from your Nexus
 repository server! Congratulations! 
 
 It's also useful to create a Maven repository to hold snapshots of each Liferay
@@ -207,7 +200,7 @@ To configure your Maven environment to access your `liferay-releases` and
         </settings>
 
 The username `admin` and password `admin123` are the credentials of the default
-Nexus OSS administrator account. If you changed these credentials for your Nexus
+Nexus administrator account. If you changed these credentials for your Nexus
 server, make sure to update `settings.xml` with these changes. 
 
 Now that your repositories are configured, they're ready to receive all the
