@@ -1,41 +1,41 @@
 # Installing Liferay Maven Artifacts [](id=installing-liferay-maven-artifacts)
 
-To create Liferay plugins using Maven, you'll need the archives required by
+To create Liferay modules using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be a problem--Liferay
 provides them as Maven artifacts. 
 
 So how do you get Liferay artifacts? There are several different ways you can
 obtain them. The most popular way to retrieve Liferay Maven artifacts is to
-install them from the Central Repository. Alternatively, if you absolutely must
-have the latest Liferay pre-release, you can intall the Liferay Maven artifacts
-from the Liferay Nexus source repository. These installation methods
-automatically install artifacts to your local `.m2` repository when packaging
-your Maven project. Finally, you can download a Liferay-provided ZIP file that
-lets you install artifacts to local intranets and repositories without relying
-on public network accessibility.
+install them from a remote repository. Alternatively, you can download a
+Liferay-provided Zip file that lets you install artifacts to local intranets and
+repositories without relying on public network accessibility. If you're unsure
+about which repository is best for you, visit the
+[Understanding Maven Repositories](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects#understanding-maven-repositories)
+section of the *Managing Liferay Maven Projects* tutorial.
 
-This tutorial explains how to install the Maven artifacts required for Liferay
-plugin development. For more information on the Maven artifact retrieval
-process, see the
-[Getting Started with Maven](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-maven)
-tutorial.
+First, you'll consider the installation process using remote repositories.
 
-First, consider the installation process using the Central Repository.
+## Installing Artifacts from a Remote Repository
 
-## Installing Artifacts from the Central Repository [](id=installing-artifacts-from-the-central-repository)
+There are two main ways of installing Liferay's Maven artifacts from a remote
+repository: Central Repository and Liferay Repository. To use these
+repositories, you must have access to a public network. You'll learn more about
+each option and how to configure it for your project next.
+
+### Central Repository
 
 Using the Central Repository to install Liferay Maven artifacts is very
-straightforward and only requires that you specify your plugin's dependencies
+straightforward and only requires that you specify your module's dependencies
 via its `pom.xml` file. In fact, the first time you use Maven to build a
-Liferay Maven plugin project, Maven automatically downloads the required
+Liferay Maven module project, Maven automatically downloads the required
 artifacts from the Central Repository into your local `.m2` repository, if
 they're not found in your `.m2` repository or any of your configured repository
-servers. You'll see it happen when you package your Liferay plugins. This
+servers. You'll see it happen when you package your Liferay modules. This
 automation puts more emphasis on the development of your Liferay project and
 less on managing artifacts.
 
-When packaging your plugin, the automatic Maven artifact installation process
-only downloads the artifacts necessary for that particular plugin. That plugin's
+When packaging your module, the automatic Maven artifact installation process
+only downloads the artifacts necessary for that particular module. That module's
 dependencies determines the artifacts that are installed into your local `.m2`
 repository. The `pom.xml` file of your project is where you specify your
 project's dependencies. You'll learn more about the POM throughout the Maven
@@ -54,7 +54,7 @@ might still be synced to a previous release of Liferay. If this occurs, download
 the Liferay Maven artifacts from Liferay's repository. You'll learn how to do
 this next.
 
-## Installing Artifacts from the Liferay Repository [](id=installing-artifacts-from-the-liferay-repository)
+### Liferay Repository
 
 If you'd like to access Liferay's latest Maven artifacts, you can configure
 Maven to automatically download and install them from
@@ -62,7 +62,7 @@ Maven to automatically download and install them from
 Maven automatically downloads the required artifacts from the Liferay Maven
 repository into your local `.m2` repository, if they're not found in your `.m2`
 repository or any of your configured repository servers. You'll see it happen
-when you package your Liferay plugins. 
+when you package your Liferay modules. 
 
 In order to access artifacts from the Liferay Maven repository, you'll need to
 configure Maven to look for them there. First, specify the Liferay repository's
@@ -70,35 +70,43 @@ credentials in your project's parent `pom.xml` file as follows:
 
     <repositories>
         <repository>
-            <id>liferay-public-snapshots</id>
-            <name>Liferay Public Snapshots</name>
-            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>liferay-public-releases</id>
+            <name>Liferay Public Releases</name>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases</url>
         </repository>
     </repositories>
 	  
 	<pluginRepositories>
         <pluginRepository>
-            <id>liferay-public-snapshots</id>
-            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>liferay-public-releases</id>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
         </pluginRepository>
     </pluginRepositories>
 
-The above configuration retrieves artifacts from Liferay's snapshot repository.
-Liferay also provides a
-[release repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/),
-which you can also access by modifying the `<id>`, `<name>`, and `<url>` tags to
-point to that repo. You'll also need to replace the `<snapshots>` tag with the
-`<releases>` tag:
+The above configuration retrieves artifacts from Liferay's release repository.
 
-    <releases>
++$$$
+
+**Note:** Liferay also provides a
+[snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/),
+which you can access by modifying the `<id>`, `<name>`, and `<url>` tags to
+point to that repo. This repository should only be used in special cases. You'll
+also need to enable accessing the snapshot artifacts:
+
+    <snapshots>
         <enabled>true</enabled>
-    </releasess>
+    </snapshots>
+
+$$$
+
+<!-- When the Liferay repository is configured in your `settings.xml` file,
+archetypes are generated based on that repository's contents. See the
+[Generating New Projects Using Archetypes]() tutorial for details on using Maven
+archetypes for Liferay development.
+-->
+<!--
+The above should be added once the archetype tutorial is written. -Cody
+-->
 
 If you've configured the Liferay Nexus repository to access pre-release Liferay
 Maven artifacts, and you've already been syncing from the Central Repository,
@@ -107,27 +115,15 @@ redownload the newer artifacts. Also, do not leave the Liferay repository
 configured when publishing artifacts to Maven Central. You must comment out the
 Liferay Repository credentials when publishing your artifacts.
 
-Next, when interacting with the Liferay Repository from the command line, you'll
-need to use specialized commands to access it. For instance, consider the
-Central Repository's offered Liferay archetypes. You can access them by running
-`mvn archetype:generate`. There is no need to specify the Central Repository in
-the command because it is configured by default. To access the Maven archetypes
-hosted in Liferay's Maven repository, however, you need to specify it in the
-command:
-
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots
-
-<!-- Link to *Generating New Projects Using Archetypes* tutorial here when it's
-available. -Cody -->
-
 The Liferay Maven repository offers a good alternative for those who want the
 most up-to-date Maven artifacts produced by Liferay. With a few simple
 configurations, you can download and install pre-release Liferay Maven
 artifacts.
 
-Finally, you'll learn how to install Liferay Maven artifacts using a ZIP file.
+Finally, you'll learn how to install Liferay Maven artifacts from a local
+repository.
 
-## Installing Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file)
+## Installing Artifacts from a Local Repository
 
 For those who don't have access to a public network or just prefer to install
 Liferay's Maven artifacts locally without relying on a remote repository, you
