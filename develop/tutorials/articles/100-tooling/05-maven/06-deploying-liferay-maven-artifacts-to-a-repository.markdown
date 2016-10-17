@@ -126,9 +126,9 @@ Zip.
     installed to your local `.m2` repository when you package the `portlet.ds`
     module.
 
-4.  Now that you've properly configured your parent POM and module POM, you can
-    package your Maven project. Navigate to your module project (e.g.,
-    `project.ds`) in your command prompt and run the Maven package command.
+4.  Now that you've properly configured your parent POM and module POM, package
+    your Maven project. Navigate to your module project (e.g., `project.ds`) in
+    your command prompt and run the Maven package command:
 
         mvn package
 

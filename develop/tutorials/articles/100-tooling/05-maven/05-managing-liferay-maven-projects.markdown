@@ -1,7 +1,7 @@
 # Managing Liferay Maven Projects [](id=managing-liferay-maven-projects)
 
-Before diving into Maven-based development in Liferay, you may want to plan how
-you'll manage your Liferay Maven modules. You'll learn best practices for
+Understanding ways to manage your Liferay Maven projects could greatly enhance
+your productivity as a Liferay Maven developer. You'll learn best practices for
 setting up a Liferay snapshot/release repository, and configure that repository
 in your Maven settings so you can deploy to it later. First, take a quick tour
 of how Maven artifacts are referenced from your Liferay Maven projects.
@@ -27,17 +27,6 @@ by Liferay. You can learn how to do this a few different ways, which are
 discussed in the
 [Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
 tutorial.
-
-+$$$
-
-**Note:** Although the Central Repository is the primary place to acquire
-Liferay Maven artifacts, you can also configure your project to obtain them from
-Liferay's Nexus repository. The Liferay hosted repository holds pre-release
-artifacts that may not be available from the Central Repository. Visit the
-[Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
-tutorial for more information.
-
-$$$
 
 Once you've created your Maven project, you'll need to decide if you want to
 share your Liferay project in a remote repository. You can do this by creating
@@ -131,7 +120,7 @@ creating a release repository. The only difference is that you specify
 
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*.
 
-3.  Specify repository properties like the following:
+3.  Specify repository properties like the following
     - **Repository ID:** *liferay-snapshots*
     - **Repository Name:** *Liferay Snapshot Repository*
     - **Provider:** *Maven2*
@@ -146,8 +135,8 @@ to a Nexus repository, see the
 [Deploying Liferay Maven Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-0/deploying-liferay-maven-artifacts-to-a-repository)
 tutorial.
 
-Next, you can configure your new repository servers in your Maven environment to
-enable you to install artifacts to them. 
+Next, you'll configure your new repository servers in your Maven settings to
+install artifacts to them. 
 
 ## Configuring Local Maven Settings [](id=configuring-local-maven-settings)
 
