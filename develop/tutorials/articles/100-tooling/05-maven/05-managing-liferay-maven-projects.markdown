@@ -1,7 +1,7 @@
 # Managing Liferay Maven Projects [](id=managing-liferay-maven-projects)
 
 Before diving into Maven-based development in Liferay, you may want to plan how
-you'll manage your Liferay Maven plugins. You'll learn best practices for
+you'll manage your Liferay Maven modules. You'll learn best practices for
 setting up a Liferay snapshot/release repository, and configure that repository
 in your Maven settings so you can deploy to it later. First, take a quick tour
 of how Maven artifacts are referenced from your Liferay Maven projects.
@@ -86,7 +86,7 @@ Liferay Maven repositories.
 
 ## Managing Maven Repositories [](id=managing-maven-repositories)
 
-You'll frequently want to share Liferay artifacts and plugins with teammates, or
+You'll frequently want to share Liferay artifacts and modules with teammates, or
 manage your repositories using a GUI. You might find Sonatype Nexus to be a
 valuable tool for managing your repositories. It's a Maven repository management
 server that facilitates creating and managing release servers, snapshot servers,
@@ -130,7 +130,7 @@ You just created a Liferay Maven repository accessible from your Nexus OSS
 repository server! Congratulations! 
 
 It's also useful to create a Maven repository to hold snapshots of each Liferay
-plugin you create. Creating a snapshot repository is almost identical to
+module you create. Creating a snapshot repository is almost identical to
 creating a release repository. The only difference is that you specify
 *Snapshot* as its repository policy:
 
@@ -147,9 +147,9 @@ creating a release repository. The only difference is that you specify
 4.  Click *Save*.
 
 Voila! You not only have a repository for your Liferay releases (i.e.,
-`liferay-releases`), you also have a repository for your Liferay plugin
-snapshots (i.e., `liferay-snapshots`). To learn how to deploy your Liferay Maven
-artifacts to a Nexus repository, see the
+`liferay-releases`), you also have a repository for your Liferay snapshots
+(i.e., `liferay-snapshots`). To learn how to deploy your Liferay Maven artifacts
+to a Nexus repository, see the
 [Deploying Liferay Maven Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-0/deploying-liferay-maven-artifacts-to-a-repository)
 tutorial.
 
@@ -165,7 +165,7 @@ artifacts. You can configure your local Maven settings in the
 `[USER_HOME]/.m2/settings.xml` file.
 
 You only need to configure a repository server if you're sharing artifacts
-(e.g., Liferay artifacts and/or your plugins) with others. If you're
+(e.g., Liferay artifacts and/or your modules) with others. If you're
 automatically installing Liferay artifacts from the Central/Liferay Repository
 and aren't interested in sharing artifacts, you don't need a repository server
 specified in your Maven settings. You can find out more about installing
@@ -211,5 +211,5 @@ Nexus OSS administrator account. If you changed these credentials for your Nexus
 server, make sure to update `settings.xml` with these changes. 
 
 Now that your repositories are configured, they're ready to receive all the
-Liferay Maven artifacts you'll download and the Liferay plugin artifacts you'll
+Liferay Maven artifacts you'll download and the Liferay module artifacts you'll
 create!

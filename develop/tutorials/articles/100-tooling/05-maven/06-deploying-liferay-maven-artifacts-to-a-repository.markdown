@@ -9,7 +9,7 @@ tutorial to learn how you can set up a Nexus repository. Also make sure that
 your `[USER_HOME]/.m2/settings.xml` file specifies your remote repository's ID,
 username, and password.
 
-To deploy to a remote repository, your Liferay plugin should be packaged using
+To deploy to a remote repository, your Liferay module should be packaged using
 Maven. Maven provides a packaging command that creates an artifact (JAR) that
 can be easily deployed to your remote repository. You'll learn how to do this
 with a Liferay portlet module.

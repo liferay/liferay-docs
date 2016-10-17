@@ -1,6 +1,6 @@
 # Installing Liferay Maven Artifacts [](id=installing-liferay-maven-artifacts)
 
-To create Liferay plugins using Maven, you'll need the archives required by
+To create Liferay modules using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be a problem--Liferay
 provides them as Maven artifacts. 
 
@@ -15,7 +15,7 @@ lets you install artifacts to local intranets and repositories without relying
 on public network accessibility.
 
 This tutorial explains how to install the Maven artifacts required for Liferay
-plugin development. For more information on the Maven artifact retrieval
+module development. For more information on the Maven artifact retrieval
 process, see the
 [Managing Liferay Maven Projects](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects)
 tutorial.
@@ -25,17 +25,17 @@ First, consider the installation process using the Central Repository.
 ## Installing Artifacts from the Central Repository [](id=installing-artifacts-from-the-central-repository)
 
 Using the Central Repository to install Liferay Maven artifacts is very
-straightforward and only requires that you specify your plugin's dependencies
+straightforward and only requires that you specify your module's dependencies
 via its `pom.xml` file. In fact, the first time you use Maven to build a
-Liferay Maven plugin project, Maven automatically downloads the required
+Liferay Maven module project, Maven automatically downloads the required
 artifacts from the Central Repository into your local `.m2` repository, if
 they're not found in your `.m2` repository or any of your configured repository
-servers. You'll see it happen when you package your Liferay plugins. This
+servers. You'll see it happen when you package your Liferay modules. This
 automation puts more emphasis on the development of your Liferay project and
 less on managing artifacts.
 
-When packaging your plugin, the automatic Maven artifact installation process
-only downloads the artifacts necessary for that particular plugin. That plugin's
+When packaging your module, the automatic Maven artifact installation process
+only downloads the artifacts necessary for that particular module. That module's
 dependencies determines the artifacts that are installed into your local `.m2`
 repository. The `pom.xml` file of your project is where you specify your
 project's dependencies. You'll learn more about the POM throughout the Maven
@@ -62,7 +62,7 @@ Maven to automatically download and install them from
 Maven automatically downloads the required artifacts from the Liferay Maven
 repository into your local `.m2` repository, if they're not found in your `.m2`
 repository or any of your configured repository servers. You'll see it happen
-when you package your Liferay plugins. 
+when you package your Liferay modules. 
 
 In order to access artifacts from the Liferay Maven repository, you'll need to
 configure Maven to look for them there. First, specify the Liferay repository's

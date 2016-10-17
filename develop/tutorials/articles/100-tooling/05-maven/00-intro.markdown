@@ -4,7 +4,7 @@
 projects if you don't want to use Liferay's default Gradle management system.
 Liferay provides several Maven plugins to let you generate your project and
 manage it with ease. Liferay also provides Maven artifacts, which are easy to
-obtain and are required for Liferay plugin development. In the Maven tutorials,
+obtain and are required for Liferay module development. In the Maven tutorials,
 you'll learn how to
 
 - Install Liferay Maven artifacts.
@@ -23,5 +23,5 @@ you'll learn how to
 - Compile Sass files with Maven.
 -->
 
-Because Lifeay is tool agnostic, Maven is fully supported for Liferay plugin
+Because Lifeay is tool agnostic, Maven is fully supported for Liferay module
 development. Read on to learn more!
