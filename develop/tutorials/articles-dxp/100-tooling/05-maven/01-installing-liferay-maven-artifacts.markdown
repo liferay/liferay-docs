@@ -1,8 +1,8 @@
 # Installing Liferay Maven Artifacts [](id=installing-liferay-maven-artifacts)
 
 To create Liferay modules using Maven, you'll need the archives required by
-Liferay (e.g., required JAR and WAR files). This won't be a problem--Liferay
-provides them as Maven artifacts. 
+Liferay (e.g., JAR and WAR files). This won't be a problem--Liferay provides
+them as Maven artifacts. 
 
 So how do you get Liferay artifacts? There are several different ways you can
 obtain them. The most popular way to retrieve Liferay Maven artifacts is to
@@ -66,7 +66,7 @@ when you package your Liferay modules.
 
 In order to access artifacts from the Liferay Maven repository, you'll need to
 configure Maven to look for them there. First, specify the Liferay repository's
-credentials in your project's parent `pom.xml` file as follows:
+credentials in your project's parent `pom.xml` file:
 
     <repositories>
         <repository>
@@ -108,7 +108,7 @@ archetypes for Liferay development.
 The above should be added once the archetype tutorial is written. -Cody
 -->
 
-If you've configured the Liferay Nexus repository to access pre-release Liferay
+If you've configured the Liferay Nexus repository to access Liferay
 Maven artifacts, and you've already been syncing from the Central Repository,
 you may need to clear out parts of your local repository to force Maven to
 redownload the newer artifacts. Also, do not leave the Liferay repository
@@ -117,8 +117,8 @@ Liferay Repository credentials when publishing your artifacts.
 
 The Liferay Maven repository offers a good alternative for those who want the
 most up-to-date Maven artifacts produced by Liferay. With a few simple
-configurations, you can download and install pre-release Liferay Maven
-artifacts.
+configurations, you can download and install Liferay Maven artifacts from
+Liferay's remote repository.
 
 Finally, you'll learn how to install Liferay Maven artifacts from a local
 repository.
