@@ -1,4 +1,4 @@
-# Creating an MVC Portlet
+# Creating an MVC Portlet [](id=creating-an-mvc-portlet)
 
 You're convinced that Liferay's MVC Framework is right for you, and you want to learn how to configure it.
 
@@ -17,12 +17,12 @@ controller logic (maybe just a couple of action methods), you can put all your
 controller code in the `-Portlet` class. If you have more complex
 needs (lots of actions, complex render logic to implement, or maybe even some
 resource serving code), consider breaking the
-controller into [MVC Action Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-action-command), [MVC Render Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-render-command), and [MVC Resource Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
+controller into [MVC Action Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command), [MVC Render Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command), and [MVC Resource Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
 
 In this tutorial you'll learn to implement a Liferay MVC portlet with all the
 controller code in the `-Portlet` class.
 
-## Configuring a WEB Module
+## Configuring a WEB Module [](id=configuring-a-web-module)
 
 As a naming convention, the module with your controller code and view layer is
 referred to as the WEB module. A very basic WEB module might look
@@ -44,9 +44,9 @@ Of course you're not tied to the use of Gradle or BndTools to build your
 project. However, you do need a JAR with the proper OSGi headers defined, which
 is easily done if you provide a `bnd.bnd` file. To see Liferay MVC portlets
 built with Maven, BndTools, and Gradle, you can check out the tutorial on
-[Liferay Sample Modules](develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules).
+[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules).
 
-## Specifying OSGi Metadata
+## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
 
 At a minimum, you should specify the bundle symbolic name and the bundle version
 for the OSGi runtime. Providing a human readable bundle name is also
@@ -61,7 +61,7 @@ project's directory path, which is suitable for many cases. If you specify the
 bundle symbolic name yourself, it's a nice convention to use the root package
 name as the bundle symbolic name.
 
-## Creating a Portlet Component
+## Creating a Portlet Component [](id=creating-a-portlet-component)
 
 Using the OSGi Declarative Services component model makes it easy to publish
 service implementations to the OSGi runtime. In this case an implementation of
@@ -119,7 +119,7 @@ Liferay's DTD files can be found
 You can publish this portlet component, but it doesn't do anything yet. You'll
 implement the Controller code next.
 
-## Writing Controller Code
+## Writing Controller Code [](id=writing-controller-code)
 
 In MVC, your controller receives requests from the front end, and it receives
 data from the back end. It's responsible for sending that data to the right
@@ -140,7 +140,7 @@ and [MVC Resource Command](/develop/tutorials/-/knowledge_base/7-0/mvc-resource-
 But read these after you finish this one, so you can understand how the whole
 framework works. 
 
-### Action Methods
+### Action Methods [](id=action-methods)
 
 If you have a small application, you can implement all your controller code in
 your portlet class (the same one you annotated with `@Component`), which acts as
@@ -181,7 +181,7 @@ setting the `mvcPath` parameter. This parameter is a convention in Liferay's
 `MVCPortlet` framework that denotes the next view that should be displayed to
 the user. 
 
-### Render Logic
+### Render Logic [](id=render-logic)
 
 So what might a render method look like? First, note that implementing render
 logic might not be necessary at all. Note the `init-param` properties you set in
@@ -286,7 +286,7 @@ Once done, you can call the service's methods.
 
 $$$
 
-### Setting and Retrieving Request Parameters and Attributes
+### Setting and Retrieving Request Parameters and Attributes [](id=setting-and-retrieving-request-parameters-and-attributes)
 
 In the portlet class's render method action methods, and even in your JSPs, you
 can use a handy utility class called
@@ -316,13 +316,13 @@ To set parameters into the response in your controller code, you can use the
 Passing information back and forth from your view and controller is important,
 but there's more to the view layer than that.
 
-## Configuring the View Layer
+## Configuring the View Layer [](id=configuring-the-view-layer)
 
 You now know how to extend Liferay's `MVCPortlet` to write controller code and
 register a Component in the OSGi runtime. You also need a view layer, of course,
 and for that, you'll use JSPs. Liferay's Lexicon Experience Language can be used
 to guide your app's styling so it matches Liferay's. To learn about Lexicon and
-about some of Liferay's taglibs, refer to the tutorial [Applying Lexicon Styles to Your App](develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app).
+about some of Liferay's taglibs, refer to the tutorial [Applying Lexicon Styles to Your App](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app).
 This section will briefly cover how to get your view layer working, from
 organizing your imports in one JSP file, to configuring URLs that direct
 processing to your code in the portlet class. 
@@ -395,7 +395,7 @@ else.
 As you can see, with Liferay MVC it's pretty easy to make your controller talk
 to your view layer.
 
-## Beyond the Basics
+## Beyond the Basics [](id=beyond-the-basics)
 
 This tutorial should get you up and running with a Liferay MVC Web module, but there's more
 to know about creating an app in Liferay. Here are a few useful jumping off

@@ -21,7 +21,7 @@ declare an embedded portlet. For example, the `portal_normal.ftl` template file
 is a popular place to declare embedded portlets. Insert the following
 declaration wherever you want to embed the portlet:
 
-    <@liferay-portlet["runtime"]
+    <@liferay_portlet["runtime"]
         portletProviderAction=ACTION
         portletProviderClassName="CLASS_NAME"
     />
@@ -30,7 +30,7 @@ This declaration expects two parameters: the type of action and the class name
 of the entity type the portlet should handle. Here's an example of an embedded
 portlet declaration: 
 
-    <@liferay-portlet["runtime"]
+    <@liferay_portlet["runtime"]
         portletProviderAction=portletProviderAction.VIEW
         portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
     />
@@ -73,7 +73,7 @@ find the portlet that fits the theme's request.
     `service` element should match the interface you're implementing (e.g.,
     `ViewPortletProvider.class`). You can view an example of a similar
     `@Component` annotation in the
-    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/portlet/RolesSelectorEditPortletProvider.java)
+    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/internal/portlet/RolesSelectorEditPortletProvider.java)
     class.
 
 4. Specify the methods you want to implement. Make sure to retrieve the
@@ -82,7 +82,7 @@ find the portlet that fits the theme's request.
 
     A common use case is to implement the `getPortletId()` and
     `getPlid(ThemeDisplay)` methods. You can view the
-    [SiteNavigationLanguageViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/site-navigation/site-navigation-language-web/src/main/java/com/liferay/site/navigation/language/web/portlet/SiteNavigationLanguageViewPortletProvider.java)
+    [SiteNavigationLanguageViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/site-navigation/site-navigation-language-web/src/main/java/com/liferay/site/navigation/language/web/internal/portlet/SiteNavigationLanguageViewPortletProvider.java)
     for an example of how these methods can be implemented to provide a portlet
     for embedding in a theme. This example module returns the portlet ID of the
     Language portlet specified in
@@ -150,6 +150,6 @@ is embedded on the page.
 
 [Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
 
-[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
+[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
 
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+[Business Logic and Data Access](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)

@@ -78,7 +78,7 @@ most often triggered event.
 that doing so will add LOTS of events. Add this property to your
 `portal-ext.properties` file:
 
-    audit.message.com.liferay.portal.model.Layout.VIEW=true
+    audit.message.com.liferay.portal.kernel.model.Layout.VIEW=true
 
 In Liferay's code, pages are referred to as *layouts*. Setting this to `true`,
 therefore, records audit events for page views. It's turned off by default

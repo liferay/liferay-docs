@@ -55,8 +55,9 @@ them:
     Set the `prefix` value based on your user's home directory. The location you
     specify is where global npm packages are to be installed.
 
-    Next, set node `NPM_PACKAGES` and `NODE_PATH` system environment variables
-    with values like these based on the `prefix` value you just specified.
+    Next, set Node.js `NPM_PACKAGES` and `NODE_PATH` system environment 
+    variables with values like these based on the `prefix` value you just 
+    specified.
 
         NPM_PACKAGES=/Users/[username]/.npm-packages (same as prefix value)
         NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
@@ -95,10 +96,11 @@ explains both Sass installations.
 #### Installing Sass from node-sass [](id=installing-sass-from-node-sass)
 
 By default, the generator uses Sass from node-sass. node-sass requires node-gyp,
-which in turn requires Python and Visual Studio. The [node-gyp installation instructions](https://github.com/nodejs/node-gyp#installation)
-explain how to set up node-gyp, Python, and Visual Studio. Since
-Visual Studio is a particularly large dependency, if you aren't already using
-Visual Studio you might want to consider using Ruby Sass instead of node-sass. 
+which in turn requires Python and Visual Studio. The 
+[node-gyp installation instructions](https://github.com/nodejs/node-gyp#installation)
+explain how to set up node-gyp, Python, and Visual Studio. Since Visual Studio 
+is a particularly large dependency, if you aren't already using Visual Studio 
+you might want to consider using Ruby Sass instead of node-sass. 
 
 #### Installing Ruby Sass and Compass [](id=installing-ruby-sass-and-compass)
 
@@ -168,7 +170,7 @@ using the Ruby version of Sass, you must configure the theme to support Compass.
 To do so, follow these steps:
 
 1.  Open the `package.json` file found in the root folder of your theme, and
-    locate the `supportCompass` property and change it from `false` to `true`.
+    locate the `rubySass` property and change it from `false` to `true`.
 
     Now that your theme is set to support Compass, you must install the Ruby
     Sass middleware and save it as a dependency for your theme.

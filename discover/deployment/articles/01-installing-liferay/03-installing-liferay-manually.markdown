@@ -76,7 +76,7 @@ Liferay Installation documentation for each specific application server also
 includes instructions for configuring your application server to manage
 Liferay's database connection and mail server.
 
-# Manual Configuration [](id=manual-configuration)
+## Manual Configuration [](id=manual-configuration)
 
 If you want your application server to manage either your database connection
 or mail server (or both), you'll need to manually create this configuration.
@@ -138,7 +138,7 @@ All the instructions above assumed that you wanted to install @product@ at
 the root context of your server. But what if that isn't the case? Next, you'll
 see how to use a different context for @product@.
 
-# Making Liferay Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java-ee-applications)
+## Making Liferay Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java-ee-applications)
 
 By default, @product@ is configured to sit at the root (i.e., `/`) of your
 application server. Dedicating your application server to running only @product@

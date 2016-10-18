@@ -126,7 +126,7 @@ The only thing you're missing now is the language keys you want to override.
 
 ## Providing Language Keys [](id=providing-language-keys)
 
-Create properly named [language properties files](develop/tutorials/-/knowledge_base/7-0/localizing-your-application#what-are-language-keys) for each locale whose keys
+Create properly named [language properties files](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application#what-are-language-keys) for each locale whose keys
 you want to override. These should go in `src/content`, and are the resource
 bundles that are loaded by the resource bundle loader you are implementing.
 

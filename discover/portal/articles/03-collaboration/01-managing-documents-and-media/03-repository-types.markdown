@@ -58,63 +58,73 @@ from `portal-ext.properties` to OSGI configuration files. The following mapping
 shows you how to configure those properties if needed:
 
 #### CMIS [](id=cmis)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.cmis.CMISStore
-    osgi/configs: com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
+
+To `osgi/configs`: `com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`
  
 Property | Default | Required
 ---------|---------|---------
-repositoryUrl | http://localhost:8080/alfresco/service/api/cmis | true
-credentialsUsername | none | true
-credentialsPassword | none | true
-systemRootDir | Liferay Home | true
+`repositoryUrl` | `http://localhost:8080/alfresco/service/api/cmis` | `true`
+`credentialsUsername` | none | `true`
+`credentialsPassword` | none | `true`
+`systemRootDir` | Liferay Home | `true`
  
 #### File Store [](id=file-store)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
-    osgi/configs: com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore`
+
+To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
 
 Property | Default | Required
 ---------|---------|---------
-rootDir | data/document_library | false
+`rootDir` | `data/document_library` | `false`
 
 #### Advanced File Store [](id=advanced-file-store)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
-    osgi/configs: com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore`
+
+To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
  
 Property | Default | Required
 ---------|---------|---------
-rootDir | data/document_library | false
+`rootDir` | `data/document_library` | `false`
  
 #### JCR [](id=jcr)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.jcr.JCRStore
-    osgi/configs: com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
+
+To `osgi/configs`: `com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg`
 
 Property | Default | Required
 ---------|---------|---------
-initializeOnStartup | false| true
-wrapSession | true | true
-moveVersionLabels | false | true
-workspaceName | liferay | true
-nodeDocumentlibrary | documentlibrary| true
-jackrabbitRepositoryRoot | data/jackrabbit| true
-jackrabbitConfigFilePath | repository.xml | true
-jackrabbitRepositoryHome | home | true
-jackrabbitCredentialsUsername | none | true
-jackrabbitCredentialsPassword | none | true
+`initializeOnStartup` | `false`| `true`
+`wrapSession` | `true` | `true`
+`moveVersionLabels` | `false` | `true`
+`workspaceName` | `liferay` | `true`
+`nodeDocumentlibrary` | `documentlibrary` | `true`
+`jackrabbitRepositoryRoot` | `data/jackrabbit` | `true`
+`jackrabbitConfigFilePath` | `repository.xml` | `true`
+`jackrabbitRepositoryHome` | `home` | `true`
+`jackrabbitCredentialsUsername` | none | `true`
+`jackrabbitCredentialsPassword` | none | `true`
 
 #### S3 [](id=s3)
-    portal-ext.properties: dl.store.impl=com.liferay.portal.store.s3.S3Store
-    osgi/configs: com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.s3.S3Store`
+
+To `osgi/configs`: `com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg`
 
 Property | Default | Required
 ---------|---------|---------
-accessKey | | false
-secretKey | | false
-s3Region | us-east-1 | false
-bucketName | | true
-s3StorageClass | STANDARD | false
-httpClientMaxConnections | 50 | false
-cacheDirCleanUpExpunge | 7 | false
-cacheDirCleanUpFrequency | 100 | false
+`accessKey` | | `false`
+`secretKey` | | `false`
+`s3Region` | `us-east-1` | `false`
+`bucketName` | | `true`
+`s3StorageClass` | STANDARD | `false`
+`httpClientMaxConnections` | `50` | `false`
+`cacheDirCleanUpExpunge` | `7` | `false`
+`cacheDirCleanUpFrequency` | `100` | `false`
 
 +$$$
 
@@ -145,81 +155,96 @@ include:
 - Getting revision history
 - Reverting to a revision
 
-@product@'s Documents and Media includes a generic integration for CMIS 1.0
-repositories. CMIS stands for Content Management Interoperability Services,
-which defines a model for interacting with a repository's files. It's been
-tested with Alfresco and Nuxeo but supports the CMIS 1.0 standard with respect
-to all repositories, where they implement CMIS 1.0. @product@ can access
-CMIS repositories using AtomPub and Web Services protocols.
+@product@'s Documents and Media can inter-operate with repositories that support
+the Content Management Interoperability Services (CMIS) standard. CMIS defines a
+model for interacting with repository files. @product@ supports interoperability
+through CMIS version 1.1 (the current CMIS version) and earlier. @product@ can
+access CMIS repositories using AtomPub and Web Services protocols.
 
-![Figure 1: In Documents and Media, external repositories look similar to folders. You can perform supported operations on their files. This figure shows a CMIS 1.0 repository named *My Alfresco*.](../../../images/dm-repo-types-actions.png)
+![Figure 1: In Documents and Media, external repositories look similar to folders. You can perform supported operations on their files. This figure shows an Alfresco CMIS repository named *My Alfresco*.](../../../images/dm-repo-types-actions.png)
 
-There are some subtle differences in setting up the different kinds of
-third-party repositories Documents and Media supports, but there are plenty of
-similarities too. We'll walk through them, next.
+Here are the CMIS repository integration steps:
 
-### Repository Integration Steps [](id=repository-integration-steps)
+1.   Adjust portal properties
+2.   Synchronize user accounts between @product@ and the repository
+3.   Add the repository to Documents and Media
 
-Common integration steps include:
++$$$
 
-- Adjusting portal properties.
-- Adding any user accounts required by the repository.
-- Adding the repository.
+Interoperability with SharePoint and Documtum repositories is available to EE
+subscribers with the [Liferay SharePoint Connector](https://web.liferay.com/marketplace/-/mp/application/15188537)
+and [Liferay Documentum Connector](https://web.liferay.com/marketplace/-/mp/application/15098914)
+apps, available on the Marketplace.
 
-<!-- 
-Keep in mind your third-party repository may require installation and deployment
-of an appropriate Liferay plugin. Plugins for SharePoint and Documentum are
-available through Liferay's Marketplace (please note that they don't use CMIS,
-but proprietary APIs).
--->
+$$$
 
-Let's start with the required portal property settings.
+Let's start with setting portal properties.
 
-#### Adjusting Portal Properties [](id=adjusting-portal-properties)
-
-As a Liferay system administrator, you must ensure that the same credentials and
-authentication are being used in @product@ and in the external repository.
-[LDAP](/discover/deployment/-/knowledge_base/7-0/ldap) is a typical mechanism
-you can use to synchronize them. If you don't have LDAP, you need to ensure
-manually that the credentials and authentication methods are the same.
+### Step 1: Adjust Portal Properties [](id=adjusting-portal-properties)
 
 In order to authenticate with the third-party repository, you need to store
-passwords for the user sessions. In your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
+passwords for the user sessions. You must configure an authentication type that
+supports storing passwords to the user sessions.
+
+**Important**: Since authentication with single sign-on (SSO) does not store
+encrypted passwords in the user sessions, SSO can't be used with the external
+repository types. 
+
+Let's configure Liferay Portal for what's required in authentication.
+In  a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
 set a [`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
-portal property to `true` in a `portal-ext.properties` file:
+portal property to `true`:
 
     session.store.password=true
 
 Next, make sure to authenticate the same way on both @product@ and
-the external repository. You can do so by authenticating based on screen
-name. So, add the following [`company.security.auth.type`]( https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Company)
-portal property to your `portal-ext.properties` file: 
+the repository. You can do so by authenticating based on screen name. Set the
+following [`company.security.auth.type`]( https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Company)
+portal property: 
 
     company.security.auth.type=screenName
 
 Alternatively, you can configure both of these properties in the Control Panel
 under *Instance Settings &rarr; Authentication*.
                                           
-#### Synchronizing Repository Users [](id=synchronizing-repository-users)
+### Step 2: Synchronize the User Accounts [](id=synchronizing-repository-users)
 
-External repository integration requires you to have a @product@ user that
-uses the same screen name and password an external repository user. For details
-on adding and managing users, refer to [User Mangement](/discover/portal/-/knowledge_base/7-0/user-management).
-Make sure to sign in to @product@ as this user whenever you're accessing
-the external repository from it.
+External repository integration requires @product@ users use the same screen
+name and password as their external repository user. For details on adding and
+managing users, refer to [User Mangement](/discover/portal/-/knowledge_base/7-0/user-management).
+Make sure to sign in to @product@ as such a user whenever you're accessing the
+repository from it.
 
-Next, we'll explain how to access a CMIS Repository using the AtomPub protocol. 
++$$$
 
-### Using a CMIS Repository with AtomPub [](id=using-a-cmis-repository-with-atompub)
+**Important**: Use lowercase for user names in the external repository, as
+Liferay screen names are lowercase.
 
-@product@ can access external repositories that support the CMIS 1.0
-standard using the Atom Publishing Protocol (AtomPub). It's the easiest protocol
-to specify for communicating with CMIS repositories. 
+$$$
 
-These instructions were written based on accessing Alfresco Community 5.1 and
-Nuxeo Platform 7.10 repositories.
++$$$
 
-Follow these steps to add access to such as repository:
+**Note**: In the external repository, make sure to associate users with
+necessary roles for accessing repository files. In Nuxeo, for example, a user
+must belong to the Nuxeo *Administrators* group to access Nuxeo repository files
+via CMIS.
+
+$$$
+
+Adding a *Repository* mapped to the external repository is the final step.
+
+### Step 3: Add the Repository to Documents and Media [](id=step-3-add-the-repository-to-documents-and-media)
+
+The last step is adding a to Documents and Media a *Repository* to inter-operate
+with the external repository. Documents and Media can connect with a CMIS
+repository using the Atom Publishing (AtomPub) protocol or Web Services
+protocol. Let's explore accessing a CMIS Repository using AtomPub. 
+
+#### Adding a CMIS Repository that Uses AtomPub [](id=using-a-cmis-repository-with-atompub)
+
+AtomPub is the easiest protocol to specify for communicating with a CMIS repository. 
+
+Follow these steps to access a repository with CMIS AtomPub:
 
 1.  Sign in to @product@ as a user that also exists in the external
 repository and can access files you want to use in that repository. 
@@ -234,26 +259,23 @@ Repository* screen appears.
 *Description*.
 
 4.  Click on the *Repository Configuration* section to access its form. Specify
-the following values.
+values for the following fields:
     - **Repository Type**: *CMIS Repository (AtomPub)*
     - **Repository ID**: Leave this blank, as @product@ generates the ID
     automatically
-    - **AtomPub URL**: Enter the AtomPub URL for CMIS 1.0 per the
+    - **AtomPub URL**: Enter the AtomPub URL for CMIS per the
     repository's documentation. Example URLs are listed below. If you copy them,
-    make sure to replace the `IP_ADDRESS` and `PORT` values with those of your
-    external repository server. 
-        -   Alfresco 5.1: `http://IP_ADDRESS:PORT/alfresco/cmisatom`
-        -   Nuxeo Platform 7.10: `http://IP_ADDRESS:PORT/nuxeo/atom/cmis`
+    make sure to replace the `[host]` and `[port]` values with your own. 
+        -   Alfresco 5.1 CMIS 1.0: `http://[host]:[port]/alfresco/cmisatom`
+        -   Alfresco 5.1 CMIS 1.1: `http://[host]:[port]/alfresco/api/-default-/public/cmis/versions/1.1/atom`
+        -   Nuxeo 7.10: `http://[host]:[port]/nuxeo/atom/cmis`
 
 5.  Click *Save*
 
-The external repository appears in Documents and Media. You can navigate into
-the repository and manage files in it. 
+The external repository appears in Documents and Media. You can navigate
+the repository and manage files. 
 
-![Figure 3: Documents and Media lets you perform CMIS 1.0 supported actions on external repository files that support those actions](../../../images/dm-repo-types-alfresco-site-doclib-file.png)
-
-@product@'s CMIS repository integration gives you flexibility to access external
-repository files in addition to your existing Documents and Media files. 
+![Figure 3: Documents and Media lets you perform CMIS supported actions on external repository files.](../../../images/dm-repo-types-alfresco-site-doclib-file.png)
 
 <!--
 Note - As of writing this article, only a Liferay user matching the Nuxeo
@@ -270,15 +292,15 @@ org.apache.chemistry.opencmis.commons.exceptions.CmisObjectNotFoundException: 1b
 
 -->
 
-<!--
-### Using a CMIS Repository with Web Services [](id=using-a-cmis-repository-with-web-services)
+Next, let's access a CMIS repository with Web Services.
 
+### Adding a CMIS Repository that Uses Web Services [](id=using-a-cmis-repository-with-web-services)
 
-After completing the [Common Configuration](/discover/portal/-/knowledge_base/7-0/repository-types#common-configuration)
-steps, you can add Documents and Media Repository that communicates with your
-CMIS repository via web services. 
+After adjusting your portal properties and adding any user accounts required by
+the repository, you can add a Documents and Media Repository that inter-operates
+with an external repository that supports CMIS with Web Services. 
 
-Follow these steps to add your repository:
+Follow these steps to add such a repository:
 
 1.  In Documents and Media *Home*, click the *Add* button and select
 *Repository*. The *New Repository* screen appears.
@@ -292,11 +314,11 @@ Follow these steps to add your repository:
 
 5.  Enter the web service URLs (WSDL URLs) per your CMIS repository's
 documentation. Example URLs are listed after these steps. Make sure to enter
-URLs for the following services: 
+**URLs** for the following services: 
 
     - Web Services ACL Service
     - Web Services Discovery Service
-    - Web Services Multifiling Service
+    - Web Services Multi-Filing Service
     - Web Services Navigation Service
     - Web Services Object Service
     - Web Services Policy Service
@@ -304,6 +326,17 @@ URLs for the following services:
     - Web Services Repository Service
     - Web Services Versioning Service
 
+    +$$$
+
+    Tips: In a browser, you can open the repository's WSDL  file and verify each
+    service in it. Also make sure to specify the entire URLs--they all end with
+    `?wsdl`. 
+
+    $$$
+
+    ![Figure 4: Here's an example of the web service URLs for an Alfresco repository.](../../../images/dm-repo-types-alfresco-ws.png)
+
+    
 6.  Leave *Repository ID* blank, as @product@ generates the ID
      automatically. 
 
@@ -311,141 +344,6 @@ URLs for the following services:
 
 Your repository appears in Documents and Media. You can navigate into the
 repository and work with files as you do other files in Documents and Media.
--->
-
-<!--
-Possible formats ...
-
-http://IP_ADDRESS:PORT/alfresco/cmis/RepositoryService?wsdl
-
-http://IP_ADDRESS:PORT/nuxeo/webservices/cmis/RepositoryService?wsdl
--->
-
-
-<!--
-### Using a SharePoint Repository [](id=using-a-sharepoint-repository)
-
-The following versions of Sharepoint are currently supported:
-
-- **Sharepoint 2010**: officially supported. 
-
-- **Sharepoint 2013**: experimental support.
-
-> Note that there are some limitations for the Sharepoint connector when
-    compared to the built-in Documents and Media repository (these limitations
-    are use caused by Sharepoint's API):
-
-> 1. File extensions cannot be changed.
-> 2. File names are not versioned.
-> 3. When files are moved their whole version history is lost. A rename is not
-considered a file move. 
-> 4. The *Working Copy* version is identified by a number but it's only visible
-to the user who checked it out. 
-> 5. Queries for suffixes are converted to queries for containment. For example:
-a query criterion like *ends with 'txt'* is converted to *contains 'txt'*. 
-> 6. Queries with intermediate wildcards are converted to multiple *contains*
-queries. For example: a query criterion like *contains 'image' followed by 'jpg'
-(with any separation in between)* is converted to *contains 'image' or 'jpg' (in
-any order, with any separation in between)*.  
-
-Now, let's see how to use SharePoint as a Liferay Documents and Media
-repository. For that, we'll do the following: 
-
-1. Enable Basic Authentication on the SharePoint host.
-2. Enable Versioning Support on the SharePoint library.
-3. Add SharePoint as a Liferay Documents and Media repository.
-
-Note that this section is geared towards @product@ system administrators and
-SharePoint system administrators.
-
-Before you can use SharePoint as an external repository with @product@, you
-must verify that SharePoint is properly configured. Several services must be set
-up on the SharePoint server before synchronizing with @product@.
-
-**Enable Basic Authentication on the SharePoint host**
-
-For the connector to work, Basic Authentication on IIS must be enabled. This
-lets Liferay's SharePoint connector authenticate against the SharePoint web
-services. Enable Basic Authentication on your SharePoint host.
-
-The steps needed to do it depend on your version of Windows. For example in
-*Windows Server 2008* you need to:
-
-1. Be a member of the *Administrators* group on the server on which you are
-configuring IIS. 
-2. Open *Administrative Tools*, and then click *Internet Information Services
-(IIS) Manager* to start the *IIS Management Console*. 
-3. Expand *Sites* on the console tree and click on Sharepoint's web site.
-4. In *Features View*, double-click *Authentication*.
-5. On the *Authentication* page, select *Basic Authentication*.
-6. In the *Actions* pane, click *Enable* to use Basic Authentication with the
-default settings. 
-7. In the *Actions* pane, click *Edit* to enter a realm name.
-8. In the *Edit Basic Authentication Settings* dialog box, make sure the
-*Default domain* and *Realm* are empty and click *OK*. 
-
-Now you have to enable versioning support in your Sharepoint library.
-
-**Enable Versioning Support on the SharePoint library**
-
-You must enable versioning in Sharepoint library for @product@'s
-check-in/out features to work. To do it follow the next steps: 
-
-1. Open the URL of your Sharepoint's library in a browser.
-2. On the ribbons, click on *Library* actions.
-3. On the toolbar click on *Library Settings*.
-4. Open *General Settings &rarr; Versioning Settings*.
-5. In *Document Version History*, select *Create major and minor (draft)
-versions*. 
-6. In *Require Check Out* select *Yes*.
-
-You are now prepared to mount SharePoint as an external repository.
-
-**Add SharePoint as a Liferay Documents and Media repository**
-
-With the SharePoint server configured, we now turn our attention to
-@product@. As
-mentioned in the common steps for adding an external repository, be sure to
-adjust the portal properties and add any user accounts required by the
-repository.
-
-Here are the steps specific to configuring @product@ to use SharePoint:
-
-1. Download and install the [SharePoint Connector
-EE](https://www.liferay.com/marketplace/-/mp/application/15188537) from
-Marketplace. See the [Downloading and Installing
-Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
-section of the *Leveraging the Liferay Marketplace* chapter of this document for
-more information.
-
-2. Add the Documents and Media application to a page, if you haven't done so
-already.
-
-3. In the Documents and Media application click *Add Repository* and enter the
-following information:
-
-	- **Name:** Enter an arbitrary name for the repository.
-
-	- **Description:** Describe the repository.
-
-	- **Repository Type:** Select *SharePoint*.
-
-	- **Server Version:** Enter the version number of your *Sharepoint* server
-	(for example: *2010*). 
-
-	- **Site URL:** Enter the URL where your Sharepoint Library lives (for
-	example: <http://liferay-20jf4ic>). 
-
-	- **Library Name:** Enter the name of your Sharepoint Library (for example:
-	*Documents*) 
-    
-	- **Library Path:** This field defaults to the *Library Name* if not
-	specified. It can be used when the URL of your Sharepoint Library does not
-	match the *Library Name* (for example: *Shared Documents*). 
-
-Click *Save* and the left navigation panel of your Documents and Media
-application will list your new repository. 
--->
 
 <!--
 ### Using a Documentum Repository [](id=using-a-documentum-repository)
@@ -532,3 +430,7 @@ you haven't done so already. Then, in the Documents and Media application click
 Click *Save* and the left navigation panel of your Documents and Media
 application will list your new repository.
 -->
+
+@product@'s CMIS repository integration gives you flexibility to access external
+repository files in addition to your existing Documents and Media files. 
+

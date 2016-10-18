@@ -50,7 +50,7 @@ it.
 **Controller:** The middle man in the MVC pattern, the Controller contains logic
 for passing the data back and forth between the view and the model layers.
 
-The *Middle Verse Completer* pattern fits well with [Liferay's application modularity effort](develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity).
+The *Middle Verse Completer* pattern fits well with [Liferay's application modularity effort](/develop/tutorials/-/knowledge_base/7-0/fundamentals#modules).
 
 Liferay's applications are divided into multiple discrete modules. With Service
 Builder, the model layer is generated into a `service` and an `api` module. That
@@ -58,7 +58,7 @@ accounts for the model in the MVC pattern. The view and the controller share a
 module, the `web` module.
 
 Generating the skeleton for a multi-module Service Builder driven MVC
-application using [Liferay Blade CLI](develop/tutorials/-/knowledge_base/7-0/blade-cli) saves you lots of time and gets you
+application using [Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) saves you lots of time and gets you
 started on the more important (and interesting, if we're being honest)
 development work.
 

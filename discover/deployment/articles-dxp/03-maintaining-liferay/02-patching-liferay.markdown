@@ -7,10 +7,9 @@ Liferay bundle is a Patching Tool that can handle the installation of two types
 of patches: fix packs and hotfixes.
 
 On a regular schedule, the latest fixes that patch the core are bundled together
-into fix packs, which are provided to all of Liferay's customers. If there's a
-fix you need, and it's for one of the application suites, the way to get the
-update is to retrieve and install it from Marketplace. If there's a fix you need
-that affects only the core, a fix pack will be provided.
+into fix packs, which are provided to all of Liferay's customers. Fix packs
+include fixes for both the core and the application suites that ship with the
+product. 
 
 A hotfix is provided to a customer when a customer contacts Liferay about an
 emergency situation, and Liferay's support team--working with the customer--
@@ -46,7 +45,7 @@ version on top of the old version. Note that if you're doing this on LUM (Linux,
 Unix, Mac) machines, you'll need to make the `patching-tool.sh` script
 executable.
 
-## Auto Discovery
+## Auto Discovery [](id=auto-discovery)
 
 After the Patching Tool is installed, you need to let it auto-discover your
 Liferay installation. Then it will determine what your release level is and what
@@ -235,11 +234,6 @@ you. Fix packs always supersede hotfixes, so when you install your fix pack,
 the hotfix that it already contains is uninstalled, and the fix pack version is
 installed in its place. 
 
-Note that this is *not* the case for hotfixes applied to the application
-suites. If you have installed a hotfix that then becomes part of a new release
-on Marketplace, you will have to remove the hotfix first (see below) before you
-can upgrade to the new release. 
-
 Sometimes there can be a fix to a fix pack. This is also handled automatically.
 If a new version of a fix pack is released, you can use the Patching Tool to
 install it. The Patching Tool uninstalls the old fix pack and installs the new
@@ -270,6 +264,16 @@ revert` command. This removes all patches from your installation.
 What we've described so far is the simplest way to use the Patching Tool, but
 you can also use the Patching Tool in the most complex, multi-VM, clustered
 environments. This is done by using profiles. 
+
+## Cleaning Up
+
+After you've performed your patching procedure (whether you've installed or
+removed patches), it's important to clean up Liferay's cache of deployed code.
+This ensures that when you start the server, you're using the revision you've
+just installed the patches for. This is really easy to do. 
+
+In the Liferay Home folder is a folder called `work`. Remove the contents of
+this folder to clear out the cached code. Now you're ready to start your server. 
 
 ## Using Profiles with the Patching Tool [](id=using-profiles-with-the-patching-tool)
 
