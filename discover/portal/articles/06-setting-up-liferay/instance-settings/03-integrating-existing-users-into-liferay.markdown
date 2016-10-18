@@ -19,7 +19,7 @@ You probably already know which service you'll be using, but before skipping to 
 relevant section consider what scope you want to affect when configuring
 authentication.
 
-## Authentication Configuration Scope
+## Authentication Configuration Scope [](id=authentication-configuration-scope)
 
 Many of the authentication configurations covered here can be made in two
 places: [Instance
@@ -373,7 +373,7 @@ Once you set all your options and test your connection, click *Save*. From here,
 you can add another LDAP server or set just a few more options that apply to all
 of your LDAP server connections.
 
-### LDAP Options Available in System Settings
+### LDAP Options Available in System Settings [](id=ldap-options-available-in-system-settings)
 
 Although most LDAP configuration can be done from Instance Settings, there are
 several configuration parameters that are only available to be set System
