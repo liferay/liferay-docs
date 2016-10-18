@@ -85,9 +85,10 @@ You can find a complete reference for what these properties mean by viewing the
 Your next task is to review your Documents and Media configuration. Look at
 [`Document Library documentation`](/discover/portal/-/knowledge_base/7-0/repository-types#document-library-store-options)
 to see all the options in Liferay 7 before executing an upgrade process. There
-is, however, one important piece of configuration that has changed. The way you
-specify the location for the file store is no longer in the
+are, however, two important pieces of configuration that have changed: 
+* The way you specify the location for the file store is no longer in the
 `portal-ext.properties` file. 
+* package names for the store implementations have changed from `com.liferay.portlet.documentlibrary.store` to `com.liferay.portal.store.*` and you'll need to configure the appropriate updated implementation name rather than copying over the name from your 6.2 portal-ext.properties.
 
 If you use the default store but don't want to store the files in the default
 location (`[Liferay Home]/data/document_library`), you need to create a file
