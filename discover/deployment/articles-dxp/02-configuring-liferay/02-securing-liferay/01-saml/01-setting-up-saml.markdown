@@ -31,7 +31,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
 2. To begin configuring Liferay to use SAML, select a SAML role for Liferay and
    choose an entity ID.
 
-    ![Figure x: Select a SAML role for Liferay and enter an entity ID.](../../../images-dxp/saml-initial-config.png)
+    ![Figure 1: Select a SAML role for Liferay and enter an entity ID.](../../../../images-dxp/saml-initial-config.png)
 
     The SAML role can be set to Identity Provider or Service Provider.
     Select the *Identity Provider* SAML role. A single Liferay instance can
@@ -88,7 +88,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
    you'd like to change any of the information saved in your keystore, including
    the password.
 
-    ![Figure x: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../../images-dxp/saml-keystore-info.png)
+    ![Figure 2: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../../../images-dxp/saml-keystore-info.png)
 
     Also, notice that additional options appear in the SAML Admin Control Panel
     portlet. There are three tabs:
