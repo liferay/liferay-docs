@@ -44,7 +44,7 @@ To create a Theme Contributor module, follow these steps:
     [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
 2.  To identify your module as a Theme Contributor, you must add the
-    `Liferay-Theme-Contributor-Type` and `Web-ContextPath` properties to your
+    `Liferay-Theme-Contributor-Type` and `Web-ContextPath` headers to your
     module's `bnd.bnd` file. For example, see the
     [Control Menu module's](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.theme.contributor/)
     `bnd.bnd`:
@@ -61,7 +61,8 @@ To create a Theme Contributor module, follow these steps:
     The Theme Contributor type helps @product@ better identify your module. For
     example, if you're creating a Theme Contributor to override an existing
     Theme Contributor, you should try to use the same type to maximize
-    compatibility with future developments.
+    compatibility with future developments. The `Web-ContextPath` header sets
+    the context from which the Theme Contributor's resources are hosted.
 
     <!-- leaving this section out for now, until it is developed further--
 
