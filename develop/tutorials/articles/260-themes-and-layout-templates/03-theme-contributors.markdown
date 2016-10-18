@@ -1,113 +1,97 @@
 # Theme Contributors [](id=theme-contributors)
 
-If you would like to package UI resources, independent of a specific theme, and 
-include them on the page, Theme Contributors are the tool for you.
+If you want to package UI resources independent of a specific theme and
+include them on a @product@ page, Theme Contributors are your best option. If,
+instead, you'd like to include separate UI resources on a @product@ page that
+are attached to a theme, you should look into
+[themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
 
-If instead you would like to include separate UI resources on the page that are 
-attached to a theme, you should look into [themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
+A Theme Contributor is a
+[module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
+that contains UI resources to use in @product@. Once a Theme Contributor is
+deployed to @product@, it's scanned for all valid CSS and JS files, and then its
+resources are included on the page. You can, therefore, style these UI
+components as you like, and the styles are applied for the current theme.
 
-A theme contributor is a [module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
-that contains UI resources to use in Liferay 7 and DXP. The module is scanned 
-for all valid CSS and JS files, and then includes the resources on the page.
+This tutorial demonstrates how to
 
-You can therefore style these UI components as you like, and the styles will be
-applied, regardless of the current theme.
+- Identify a Theme Contributor module.
+- Create a Theme Contributor module.
 
-This tutorial assumes that you have already created your module project. You can
-learn how to create a module with [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli).
+Next, you'll learn how to create a Theme Contributor. 
 
-This tutorial demonstrates how to:
+## Creating Theme Contributors [](id=creating-theme-contributors)
 
-- Identify a Theme Contributor Module
-- Edit a Theme Contributor UI Component
+In Liferay versions prior to 7.0, the standard UI for User menus and navigation
+(the Dockbar) was included in the theme template. Starting in @product@
+7.0, these standard UI components are packaged as Theme Contributors.
 
-Now that you know what theme contributors are, you can learn how to configure 
-your module to be identified as one.
+For example, the Control Menu, Product Menu, and Simulation Panel are packaged
+as Theme Contributor modules in Liferay, separating them from the theme. This
+means that these UI components must be handled outside the theme.
 
-## Identifying Theme Contributor Modules [](id=identifying-theme-contributor-modules)
+![Figure 1: The Control Menu, Product Menu, and Simulation Panel are packaged as Theme Contributor modules.](../../images/theme-contributor-menus-diagram.png)
 
-In Liferay versions prior to 7.0, the standard UI for User menus and navigation,
-such as the Dockbar, was included in the theme template. Starting in Liferay 7.0, 
-these standard UI components are packaged as theme contributors.
+If you want to edit or style these standard UI components, you'll need to create
+your own Theme Contributor and add your modifications on top. You can also add
+new UI components to @product@ by creating a Theme Contributor.
 
-Specifically, the Control Menu, Product Menu, and Simulation Panel, are packaged 
-in theme contributor modules in Liferay, removing them from a theme. Instead, 
-styles for these specific UI components can be handled outside of the theme.
+To create a Theme Contributor module, follow these steps:
 
-![Figure 1: The Control Menu, Product Menu, and Simulation Panel are packaged as theme contributor modules.](../../images/theme-contributor-menus-diagram.png)
+1.  Create a generic OSGi module using your favorite third party tool, or use
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
-If you want to edit or style these standard UI components, you'll need to modify
-the module directly and rebuild it. More on this in a bit.
+2.  To identify your module as a Theme Contributor, add the
+    `Liferay-Theme-Contributor-Type` and `Web-ContextPath` headers to your
+    module's `bnd.bnd` file. For example, see the
+    [Control Menu module's](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.theme.contributor/)
+    `bnd.bnd`:
 
-To identify your module as a theme contributor add the 
-`Liferay-Theme-Contributor-Type` property to the `bnd.bnd` file: 
+        Bundle-Name: Liferay Product Navigation Control Menu Theme Contributor
+        Bundle-SymbolicName: com.liferay.product.navigation.control.menu.theme.contributor
+        Bundle-Version: 1.0.0
+        Liferay-Releng-Module-Group-Description:
+        Liferay-Releng-Module-Group-Title: Product Navigation
+        Liferay-Theme-Contributor-Type: product-navigation-control-menu
+        Web-ContextPath: /product-navigation-control-menu-theme-contributor
+        -include: ../../../../../marketplace/web-content-management/bnd.bnd
 
-For example the [Control Menu](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-control-menu-theme-contributor/bnd.bnd) 
-has the configuration below:
+    The Theme Contributor type helps @product@ better identify your module. For
+    example, if you're creating a Theme Contributor to override an existing
+    Theme Contributor, you should try to use the same type to maximize
+    compatibility with future developments. The `Web-ContextPath` header sets
+    the context from which the Theme Contributor's resources are hosted.
 
-    Bundle-Name: Liferay Product Navigation Control Menu Theme Contributor
-    Bundle-SymbolicName: com.liferay.product.navigation.control.menu.theme.contributor
-    Bundle-Version: 1.0.0
-    Liferay-Releng-Module-Group-Description:
-    Liferay-Releng-Module-Group-Title: Product Navigation
-    Liferay-Theme-Contributor-Type: product-navigation-control-menu
-    Web-ContextPath: /product-navigation-control-menu-theme-contributor
-    -include: ../../../../../marketplace/web-content-management/bnd.bnd
+    <!-- leaving this section out for now, until it is developed further:
 
-+$$$
+    Alternatively, Theme Contributors can be identifed in the `package.json`
+    file:
 
-**Note:**  All theme contributor modules will also require a Web-ContextPath to 
-be set in the manifest.
-
-$$$
-
-<!-- leaving this section out for now, until it is developed further--
-
-Alternatively, theme contributors can be identifed in the `package.json` file:
-
-    {
-        "name": "lfr-product-menu-animation-themelet",
-        "liferayTheme": {
-            themeContributorType?: product-navigation-control-menu
-            "themelet": true,
-            "version": "7.0"
+        {
+            "name": "lfr-product-menu-animation-themelet",
+            "liferayTheme": {
+                themeContributorType?: product-navigation-control-menu
+                "themelet": true,
+                "version": "7.0"
+            }
         }
-    }
 
-If this property is set in either one of these ways, the module will then be 
-treated as a Theme Contributor.-->
+    If this property is set in either one of these ways, the module will then be
+    treated as a Theme Contributor.-->
 
-Now that you can identify theme contributors, you can learn how to style them 
-next.
+3.  Create a `src/main/resources/META-INF/resources` folder in your module
+    and place your resources (CSS and JS) in that folder.
 
-## Editing Theme Contributors [](id=editing-theme-contributors)
+4.  Build and deploy your module to see your modifications applied to @product@
+    pages and themes.
 
-Theme contributors are, simply, packaged UI components, as mentioned earlier. To
-edit a theme contributor UI component, for instance to style one, follow these 
-steps:
+Theme Contributors do not guarantee the resource's insertion order. For example, 
+if you're creating a Theme Contributor to override another module's CSS styles, 
+your CSS styles must be more specific in order to take priority.
 
-1.  Open the Command Line and navigate to the theme contributor module. For
-    instance, the Product Menu Theme Contributor module resides in the following
-    directory:
-
-        liferay-portal/modules/apps/web-experience/product-navigation/
-        product-navigation-product-menu-theme-contributor
-
-2.  Navigate to the `src/main/resources/META-INF/resources` directory for the
-    module and edit the file you want to update.
-
-3.  Save the file and navigate back to the module's root directory.
-        
-4.  Run `../../../../../gradlew build` to build the updated jar file.
-
-5.  Copy the updated jar file from the module's `build` directory into your
-    Liferay bundle `osgi/modules` directory to deploy the UI changes to the
-    server.
-   
-That's all you need to do to create a theme contributor for your site. Remember,
-with great power there must also come–great responsibility, so use theme 
-contributors wisely. The UI contributions will affect every page, and will 
-remain, regardless of the theme.
+That's all you need to do to create a Theme Contributor for your site. Remember,
+with great power comes great responsibility, so use Theme Contributors wisely.
+The UI contributions affect every page, and override the theme.
 
 ## Related Topics [](id=related-topics)
 
