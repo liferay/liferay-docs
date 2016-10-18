@@ -40,7 +40,7 @@ For example, you can store documents and media files in your Liferay instance's
 database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
 portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home):
 
-    dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
+    dl.store.impl=com.liferay.portal.store.db.DBStore
 
 Remember to restart your @product@ server after updating your
 `portal-ext.properties` file in order for your customizations to take effect.
