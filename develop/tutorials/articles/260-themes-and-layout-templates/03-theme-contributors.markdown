@@ -1,18 +1,18 @@
 # Theme Contributors [](id=theme-contributors)
 
 If you'd like to package UI resources, independent of a specific theme, and
-include them on a @product@ page, Theme Contributors are the tool for you.
-
-If, instead, you'd like to include separate UI resources on the page that are
-attached to a theme, you should look into
+include them on a @product@ page, Theme Contributors are your best option. If,
+instead, you'd like to include separate UI resources on a @product@ page that
+are attached to a theme, you should look into
 [themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
 
 A Theme Contributor is a
 [module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
-that contains UI resources to use in @product@. The module is scanned for all
-valid CSS and JS files, and then includes the resources on the page. You can,
-therefore, style these UI components as you like, and the styles are applied,
-regardless of the current theme.
+that contains UI resources to use in @product@. Once a Theme Contributor is
+deployed to @product@, it's scanned for all valid CSS and JS files, and then its
+resources are included on the page. You can, therefore, style these UI
+components as you like, and the styles are applied, regardless of the current
+theme.
 
 This tutorial demonstrates how to
 
@@ -43,10 +43,7 @@ To create a Theme Contributor module, follow these steps:
 1.  Create a generic OSGi module using your favorite third party tool, or use
     [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
-2.  Set the `Web-ContextPath` and `Liferay-Theme-Contributor-Type` headers in
-    your `bnd.bnd` file.
-    
-    To identify your module as a Theme Contributor, you must add the
+2.  To identify your module as a Theme Contributor, you must add the
     `Liferay-Theme-Contributor-Type` and `Web-ContextPath` properties to your
     module's `bnd.bnd` file. For example, see the
     [Control Menu module's](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.theme.contributor/)
@@ -61,8 +58,8 @@ To create a Theme Contributor module, follow these steps:
         Web-ContextPath: /product-navigation-control-menu-theme-contributor
         -include: ../../../../../marketplace/web-content-management/bnd.bnd
 
-    The Theme Contributor type helps the @product@ better identify your module.
-    For example, if you're creating a Theme Contributor to override an existing
+    The Theme Contributor type helps @product@ better identify your module. For
+    example, if you're creating a Theme Contributor to override an existing
     Theme Contributor, you should try to use the same type to maximize
     compatibility with future developments.
 
@@ -83,7 +80,7 @@ To create a Theme Contributor module, follow these steps:
     If this property is set in either one of these ways, the module will then be
     treated as a Theme Contributor.-->
 
-3.  Create a `src/main/resources/META-INF/resources` folder for the module
+3.  Create a `src/main/resources/META-INF/resources` folder in your module
     and place your resources (CSS and JS) in that folder.
 
 4.  Build and deploy your module to see your modifications applied to @product@
