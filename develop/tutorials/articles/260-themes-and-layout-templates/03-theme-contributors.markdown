@@ -91,7 +91,7 @@ your CSS styles must be more specific in order to take priority.
 
 That's all you need to do to create a Theme Contributor for your site. Remember,
 with great power comes great responsibility, so use Theme Contributors wisely.
-The UI contributions affect every page, and override the theme.
+The UI contributions affect every page and aren't affected by theme deployments.
 
 ## Related Topics [](id=related-topics)
 
