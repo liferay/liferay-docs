@@ -87,10 +87,9 @@ To create a Theme Contributor module, follow these steps:
 4.  Build and deploy your module to see your modifications applied to @product@
     pages and themes.
 
-Theme Contributors do not guarantee the resource's insertion order. For
-example, if you're creating a Theme Contributor to override a specific CSS
-styling in a different module, you should make sure your CSS selectors are more
-specific than the ones being overridden.
+Theme Contributors do not guarantee the resource's insertion order. For example, 
+if you're creating a Theme Contributor to override another module's CSS styles, 
+your CSS styles must be more specific in order to take priority.
 
 That's all you need to do to create a Theme Contributor for your site. Remember,
 with great power comes great responsibility, so use Theme Contributors wisely.
