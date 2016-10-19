@@ -36,7 +36,7 @@ for details.
 ![Figure 1: Asset Display Screenlet using the Default View.](../../images/screens-android-assetdisplay.png)
 
 The Default View uses different UI elements to show each asset type. For 
-example, it displays images with `ImageView`, and blogs with `TextView`. Note 
+example, it displays images with `ImageView` and blogs with `TextView`. Note 
 that other Views may use different UI elements. 
 
 This Screenlet can also render other Screenlets: 
@@ -95,7 +95,7 @@ attributes:
 ## Listener [](id=listener)
 
 Asset Display Screenlet delegates some events to a class that implements 
-`AssetDisplayListener`. This interface lets you implement the following methods: 
+`AssetDisplayListener`. This interface contains the following methods: 
 
 - `onRetrieveAssetSuccess(AssetEntry assetEntry)`: Called when the Screenlet 
   successfully loads the asset. 
