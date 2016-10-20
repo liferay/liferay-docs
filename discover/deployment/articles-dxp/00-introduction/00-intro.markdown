@@ -39,17 +39,7 @@ The architecture contains the following tiers:
  Also hosts search engines like Solr and Elasticsearch.
 * **Database Tier:** Hosts Liferay supported database servers like MySQL, Oracle, MS SQL, IBM DB2, Postgres (please see Liferay Digital Enterprise Compatibility Matrix for additional platforms)
 
-The hardware deployed within each tier varies depending on the type of transactions. We will use Liferay Engineering's benchmarking environment as a hardware specification guide:
-
-* **Load Balancer Tier:** Cisco Load Director or Cisco Content Services Switch (CSS) or F5 Big-IP
-* **Web Tier:** Provides caching, compression, and other capabilities using Apache, Nginx, Varnish, etc. 1 - Intel Core 2 Duo E6405 2.13GHz CPU, 4GB memory, 1-146GB 10k RPM SCSI
-* **Application Tier:** Represents the workhorse of the architecture.
-2 - Intel Core 2 Quad X5677 3.46GHz CPU, 64GB memory,
-2-300GB 15K RPM SATA 6Gbps -  used for Liferay Portal
-2 - Intel Core 2 Quad X5677 3.46GHz CPU, 64GB memory, 2-300GB 15K RPM SATA 6Gbps -  used for Elasticsearch
-* **Database Tier 2** - Intel Core 2 Quad X5677 3.46GHz CPU, 64GB memory, 2-300GB 15K RPM SATA 6Gbp
-
-Although the application servers have 64GB of physical memory, you may choose to deploy with less if your Java Virtual Machine (JVM) does not utilize large heap sizes. Modern operating systems will also use any available physical memory for file system caches.
+The hardware deployed within each tier varies depending on the type of transactions. 
 
 ### Virtualized and Cloud Deployments
 
