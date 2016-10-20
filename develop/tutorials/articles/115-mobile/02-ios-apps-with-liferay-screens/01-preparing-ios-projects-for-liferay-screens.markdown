@@ -77,7 +77,7 @@ next section and follow the instructions in the final section.
 
 ## Manual Configuration [](id=manual-configuration)
 
-There are a few things you need to setup manually in your iOS 8 app to prepare 
+There are a few things you need to set up manually in your iOS 8 app to prepare 
 it for Liferay Screens. First, you must download the Liferay Screens 
 [source code](https://github.com/liferay/liferay-screens/releases) 
 and include it in your project. Follow these steps to do this: 
@@ -121,8 +121,7 @@ directory and execute `pod install`. To open your project, use the
 
 The
 [CocoaPods for Xcode plugin](https://github.com/kattrali/cocoapods-xcode-plugin) 
-that you can install with the 
-[Alcatraz package manager](http://alcatraz.io/) 
+that you can install with the [Alcatraz package manager](http://alcatraz.io/) 
 can perform these tasks from Xcode. 
 
 ![Figure 2: You can perform Xcode tasks with the CocoaPods for Xcode plugin helps.](../../../images/screens-ios-xcode-cocoapods.png)
@@ -211,10 +210,10 @@ The values you need to specify in your `liferay-server-context.plist` are:
   Liferay 7.0, and `62` for Liferay 6.2.
 - `companyId`: Your Liferay instance's identifier. You can find this value in
   the *Instance ID* column of *Control Panel* &rarr; *Portal Instances*.
-- `groupId`: The site identifier of the default site you want Screens to
+- `groupId`: The ID of the default site you want Screens to
   communicate with. You can find this value in the Site ID field of the site's
   *Site Administration* &rarr; *Configuration* &rarr; *Site Settings* menu.
-- `connectorFactoryClassName`: The class name of your Connector's factory class.
+- `connectorFactoryClassName`: Your Connector's factory class name.
   This is optional. If you don't include it, the `version` value is used to
   determine which factory is the most suitable for that version of Liferay.
 
