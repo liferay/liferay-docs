@@ -56,7 +56,7 @@ You'll learn how to apply Liferay's CSS builder to your Maven project next.
             file.
           - `docrootDirName`: The base `resources` folder containing the Sass
             files to compile.
-      
+
 2.  Initiate the appropriate Maven command to compile your Maven project's Sass
     files:
 
