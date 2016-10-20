@@ -15,7 +15,7 @@ There are three different ways to install Screens:
 
 3. Manually
 
-This tutorial shows you each installation method, and concludes by showing you 
+This tutorial shows you each installation method and concludes by demonstrating 
 how to configure Screens to communicate with your Liferay instance. Let the 
 preparations begin! 
 
@@ -46,7 +46,7 @@ Liferay Screens for Android uses
 
 To use Gradle to install Liferay Screens in your Android Studio project, you 
 must edit your app's `build.gradle` file. Note that your project has two 
-`build.gradle` files: one for the project, and another for the app module. You 
+`build.gradle` files: one for the project and another for the app module. You 
 can find them under Gradle Scripts in your Android Studio project. This 
 screenshot highlights the app module's `build.gradle` file: 
 
@@ -57,18 +57,18 @@ the `dependencies` element:
 
     compile 'com.liferay.mobile:liferay-screens:+'
 
-Note that the `+` symbol tells Gradle to always install the newest version of 
-Screens. If your app relies on a specific version of Screens, however, you can 
-replace the `+` symbol with that version. 
+Note that the `+` symbol tells Gradle to install the newest version of Screens.
+If your app relies on a specific version of Screens, you can replace the `+`
+symbol with that version. 
 
-If you're unsure of where to add the above lines, see the below screenshot. 
+If you're not sure where to add the above lines, see the below screenshot. 
 
 Once you edit `build.gradle`, a message appears at the top of the file that asks 
-you to *sync* your app with its Gradle files. Syncing with the Gradle files is 
-required to incorporate any changes you make to them. Syncing also downloads and 
-installs any new dependencies, like the Liferay Screens dependency that you just
-added. Sync the Gradle files now by clicking the *Sync Now* link in the message.
-The following screenshot shows the top of an edited `build.gradle` file with the 
+you to *sync* your app with its Gradle files. Syncing the Gradle files
+incorporates the changes you make to them. Syncing also downloads and installs
+any new dependencies, like the Liferay Screens dependency that you just added.
+Sync the Gradle files now by clicking the *Sync Now* link in the message. The
+following screenshot shows the top of an edited `build.gradle` file with the
 Sync Now link highlighted by a red box: 
 
 ![Figure 2: After editing the app module's `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../../images/screens-android-gradle-sync.png)
@@ -78,9 +78,9 @@ following section shows you how to install Screens with Maven.
 
 ## Using Maven to Install Liferay Screens [](id=configuring-your-project-with-maven)
 
-Note that we strongly recommend that you use Gradle to install Screens, as shown 
-in the previous section. It's possible though to use Maven to install Screens. 
-Follow these steps to configure Liferay Screens in a Maven project: 
+Note that we strongly recommend that you use Gradle to install Screens. It's
+possible though to use Maven to install Screens. Follow these steps to
+configure Liferay Screens in a Maven project: 
 
 1. Add the following dependency to your `pom.xml`:
 
@@ -92,8 +92,8 @@ Follow these steps to configure Liferay Screens in a Maven project:
 
 2. Force a Maven update to download all the dependencies.
 
-If Maven doesn't automatically locate the artifact, you must add the jCenter as
-a new repository in your maven settings (e.g., `.m2/settings.xml` file):
+If Maven doesn't automatically locate the artifact, you must add jCenter as a
+new repository in your maven settings (e.g., `.m2/settings.xml` file):
 
     <profiles>
         <profile>
@@ -118,14 +118,13 @@ a new repository in your maven settings (e.g., `.m2/settings.xml` file):
         <activeProfile>bintray</activeProfile>
     </activeProfiles>
 
-Nice work! The next section shows you how to use Gradle to manually install 
-Screens, although this isn't recommended. 
+Nice work! 
 
 ## Manual Configuration in Gradle [](id=manual-configuration-in-gradle)
 
 Although we strongly recommend that you use Gradle to install Screens 
 automatically, it's possible to use Gradle to install Screens manually. Follow 
-these steps to use Gradle to manually install Screens and its dependencies in 
+these steps to use Gradle to install Screens and its dependencies manually in 
 your Android project: 
 
 1. [Download](https://github.com/liferay/liferay-screens/releases) the latest 
@@ -158,7 +157,7 @@ Next, you'll set up communication with Liferay.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QEJPEicgle8" frameborder="0" allowfullscreen></iframe>
 
 Before using Liferay Screens, you must configure it to communicate with your 
-Liferay instance. To do this, you must provide Screens with the following 
+Liferay instance. To do this, you must provide Screens the following
 information:
 
 - Your Liferay instance's ID
@@ -169,9 +168,9 @@ information:
 
 - Any other information required by specific Screenlets
 
-Fortunately, this is relatively straightforward. In your Android project's 
-`res/values` folder, create a new file called `server_context.xml`. Add the 
-following code to the new file: 
+Fortunately, this is straightforward. In your Android project's `res/values`
+folder, create a new file called `server_context.xml`. Add the following code to
+the new file: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
@@ -206,8 +205,8 @@ want your app to communicate with. In the *Site Administration* menu, select
 `server_context.xml`. 
 
 The `liferay_portal_version` value `70` tells Screens that it's communicating 
-with a Liferay 7 instance. Supported values for are `62` for Liferay 6.2, and 
-`70` for Liferay 7.0. Note that if you leave `liferay_portal_version` out of 
+with a @product@ 7 instance. Supported values for are `62` for Liferay 6.2, and 
+`70` for @product@ 7.0. Note that if you leave `liferay_portal_version` out of 
 your `server_context.xml`, it defaults to `62`. 
 
 You can also configure Screenlet properties in your `server_context.xml` file. 
