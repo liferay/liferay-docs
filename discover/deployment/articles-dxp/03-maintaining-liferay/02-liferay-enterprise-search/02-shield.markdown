@@ -182,8 +182,8 @@ For a complete list of the Shield adapter's available configuration options, see
 ## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
 
 Your Elasticsearch connection now uses Shield to require authentication, but the
-authentication token is being sent in plain text. For additional
-security, enable Transport Layer Security (TLS) encryption.
+authentication token is sent in plain text. For additional security, enable
+Transport Layer Security (TLS) encryption.
 
 These instructions set up a *wildcard* certificate to be used across the entire
 cluster. See the [Elasticsearch
@@ -192,14 +192,13 @@ alternative configuration approaches.
 
 1. Stop Liferay and Elasticsearch.
 
-2. Set up a Certificate Authority (CA) for Shield. Refer to [Elastic's article on
-   Setting Up a Certificate
-   Authority](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#certificate-authority) for the details.
+2. Set up a Certificate Authority (CA) for Shield. Refer to [Elastic's article on Setting Up a Certificate Authority](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#certificate-authority) 
+for the details.
 
     +$$$
 
     **Note for Windows:** In step 2 of the [linked documentation on setting up a
-    certificate](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#certificate-authority)
+    certificate](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#certificate-authority),
     ensure that the `serial` file contains *01* with no quotation marks. Otherwise
     you'll encounter errors when you follow the step below on signing the CSR.
 
