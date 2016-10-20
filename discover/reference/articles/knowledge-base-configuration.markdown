@@ -1,24 +1,22 @@
 # Knowledge Base Configuration [](id=knowledge-base-configuration)
 
-Here you'll find a list of the available system settings for each Knowledge Base
-application's configuration, what the corresponding portlet properties were if
-you're migrating from Liferay 6.2., and how to override configuration settings. 
+These are the settings to configure the Knowledge Base, including the migration 
+of properties from Liferay 6.2.
 
 This reference doc is organized into the following sections:
 
 - Knowledge Base System Settings
 - Overriding Settings
 
-The Knowledge Base System Settings are covered next. 
+The Knowledge Base System Settings are covered first. 
 
 ## Knowledge Base System Settings [](id=knowledge-base-system-settings)
 
-The next few sections show the available system settings for each Knowledge Base 
-application along with possible values. Note that any configuration changes
-you make in System Settings will set the default configuration for the 
-corresponding application across all sites. The default values can be
-overwritten by the individual application instance in your site through the 
-*Configuration* menu of the portlet.
+The next few sections cover the system settings for each Knowledge Base 
+application. Note that configuration changes made in System Settings set the 
+default configuration for the corresponding app across all sites. Knowledge Base 
+apps in your site can overwrite these default values through their 
+*Configuration* menu.
 
 ### Knowledge Base Article Configuration [](id=knowledge-base-article-configuration)
 
@@ -26,8 +24,8 @@ overwritten by the individual application instance in your site through the
    Knowledge Base article or Knowledge Base folder (depending on the resource 
    class name ID). The default value is `0`.
    
--  **Resource class name id:** Sets the class name of either the kb article or 
-   Knowledge Base folder. This value needs to match the value of the 
+-  **Resource class name id:** Sets the class name of either the Knowledge Base 
+   article or Knowledge Base folder. This value needs to match the value of the 
    `Resource Prim key`. If the classname is a Knowledge Base article, the 
    resource prim key needs to be the prim key of a Knowledge Base article. If 
    the class name belongs to a Knowledge Base folder the resource prim key needs 
@@ -82,8 +80,8 @@ overwritten by the individual application instance in your site through the
    Knowledge Base article or Knowledge Base folder (depending on the resource 
    class name ID). The default value is `0`.
    
--  **Resource class name id:** Sets the class name of either the kb article or 
-   Knowledge Base folder. This value needs to match the value of the 
+-  **Resource class name id:** Sets the class name of either the Knowledge Base 
+   article or Knowledge Base folder. This value needs to match the value of the 
    `Resource Prim key`. If the classname is a Knowledge Base article, the 
    resource prim key needs to be the prim key of a Knowledge Base article. If 
    the class name belongs to a Knowledge Base folder the resource prim key needs 
@@ -326,8 +324,9 @@ Settings UI.
 -  **kb articles sections:** Sets the section portlet's title with a comma 
    comma-separated list. The default value is `general`.
 
--  **kb article display style:** Sets the default kb article display style. 
-   Possible values are `title` or `abstract`. The default value is `title`.
+-  **kb article display style:** Sets the default Knowledge Base article display 
+   style. Possible values are `title` or `abstract`. The default value is 
+   `title`.
    
 -  **Show KBArticles pagination:** Sets whether to show pagination in the
    application. This is enabled by default.
@@ -381,18 +380,15 @@ Settings UI.
 -  **Admin KBArticle sections default:** Sets the default selected section for
    Knowledge Base articles.
    
-Now that you have an understanding of the system settings available for the
-Knowledge Base apps, you can learn how to overwrite the default values for those
-settings next.
+Although some of these settings can be modified through the configuration menu, 
+others require more effort to change. These settings are specified next.
 
 ## Overwriting Settings [](id=overriding-settings)
 
-So far, this document has covered the default system settings for the Knowledge
-Base apps. Some of these settings can be overwritten through the configuration 
-menu. However, some of the configuration settings are set to variables and must 
-be overwritten through either a portal properties file or a configuration file. 
-For example, the Knowledge Base Article configuration has the value shown below 
-for the *Social bookmarks types* setting:
+Some of the configuration settings are set to variables and must be overwritten 
+through either a portal properties file or a configuration file. For example, 
+the Knowledge Base Article configuration has the value shown below for the 
+*Social bookmarks types* setting:
 
     ${server-property://com.liferay.portal/social.bookmark.types}
     
@@ -400,8 +396,9 @@ the `server-property` prefix specifies that this value is set through a server
 property. You can view the default value by going to *Configuration* &rarr; 
 *Server Administration* and selecting the *Properties* tab and 
 *Portal Properties* sub-tab. From here you can Search for the property you 
-want(e.g., `social.bookmark.types`) to see the default value. To overwrite the 
-property's default value, add the updated property values to the 
+want(e.g., `social.bookmark.types`) to see the default value.
+
+To overwrite server properties, add the updated property values to the 
 `portal-ext.properties` file in your app server's root directory.
 
 The second kind of variable prefix is `resource`. For example, the
@@ -414,7 +411,10 @@ This points to the resource that provides the template. To overwrite these
 resources, you need to either change the configuration in the System Settings UI 
 to point to your new file, or using a configuration file in your app server's 
 `osgi/config` directory, you need to overwrite the property to point to the 
-absolute file path of the new file. 
+absolute file path of the new file.
+
+Note that email templates can also be modified through the Knowledge Base app's 
+*Configuration* button in the Options menu.
 
 +$$$
 
@@ -422,11 +422,13 @@ absolute file path of the new file.
 [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
 User Guide documentation, the configuration files are located in a folder called
 `liferay-system-settings`. Within this folder you'll find the 
-configuration(.cfg) files, named after the full class name for that file. For
-example, the *Knowledge Base Service* configuration file is called
+configuration(.cfg) files, named after the full class name for that file.
+
+For example, the *Knowledge Base Service* configuration file is called
 `com.liferay.knowledge.base.configuration.KBGroupServiceConfiguration.cfg` and
 the *Knowledge Base Section* configuration file is called
 `com.liferay.knowledge.base.web.configuration.KBSectionPortletInstanceConfiguration.cfg`.
+
 To overwrite a configuration file, you must create a new configuration file with 
 the same name, specify your property values, and place it in the `osgi/config` 
 directory.
@@ -439,12 +441,11 @@ User Guide documentation.
     
 ### Equivalent Configuration Properties for 6.2 Portlet Properties [](id=equivalent-configuration-properties-for-6-2-portlet-properties)
 
-Here is a list of the properties previously found in Knowledge Base's 
-`portlet.properties` and the new properties to use in the Knowledge Base 
-configuration files, along with the equivalent system settings. Although you can 
-overwrite configuration settings with a configuration file, it is recommended 
-that you overwrite the Knowledge Base configuration settings through the System 
-Settings menus if possible.
+The table below compares the 6.2 `portlet.properties` to the configuration
+properties and equivalent System Settings for the current version of the
+Knowledge Base. Although you can modify System Settings with a configuration 
+file, it is recommended that you update them through the System Settings menus 
+if possible.
 
 The properties below are for the Knowledge Base Service System Settings 
 configuration file:
