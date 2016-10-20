@@ -5,7 +5,7 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 - Liferay Screens Compatibility Plugin
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
@@ -17,7 +17,7 @@
 
 ## Features [](id=features)
 
-The `DDLListScreenlet` has the following features:
+The DDL List Screenlet has the following features:
 
 - Shows a scrollable collection of Dynamic Data List (DDL) records.
 - Implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
@@ -31,18 +31,21 @@ The `DDLListScreenlet` has the following features:
 
 ## Views [](id=views)
 
-- The Default View uses a standard `RecyclerView` to show the scrollable list. 
-  Other Views may use a different component, such as `ViewPager` or others, to 
-  show the items.
+- Default
+- Material
 
-![The `DDLListScreenlet` using the Default and Material Viewsets.](../../images/screens-android-ddllist.png)
+The Default View uses a standard `RecyclerView` to show the scrollable list. 
+Other Views may use a different component, such as `ViewPager` or others, to 
+show the items. 
+
+![The DDL List Screenlet using the Default and Material Views.](../../images/screens-android-ddllist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 DDLs and Data Types should be configured in the portal before using
-`DDLListScreenlet`. For more details, see the Liferay User Guide sections 
-[Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
-and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists). 
+DDL List Screenlet. For more details, see the Liferay User Guide sections 
+[Defining Data Types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
+and [Creating Data Lists](/discover/portal/-/knowledge_base/6-2/creating-data-lists). 
 
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed to allow remote calls without the `userId`. 
@@ -50,7 +53,8 @@ must be installed to allow remote calls without the `userId`.
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -70,11 +74,13 @@ connection.
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout to use to show the View. |
 | `autoLoad` | `boolean` | Defines whether the list should be loaded when it's presented on the screen. The default value is `true`. |
-| `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
-| `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `recordSetId` | `number` | The ID of the DDL being called. To find your DDLs' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each DDL's ID is in the ID column of the table. |
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
-| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on defining data types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-). Note that the appearance of these values in your app depends on the `layoutId` set. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/6-2/ddllistscreenlet-for-android#offline) for details. |
+| `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
+| `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Defining Data Types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-). Note that the appearance of these values in your app depends on the `layoutId` set. |
+| `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. [Click here](https://github.com/liferay/liferay-portal/tree/master/modules/apps/forms-and-workflow/dynamic-data-lists/dynamic-data-lists-api/src/main/java/com/liferay/dynamic/data/lists/util/comparator) to see some comparator classes. Note, however, that not all of these classes can be used with `obcClassName`. You can only use comparator classes that extend `OrderByComparator<DDLRecord>`. You can also create your own comparator classes that extend `OrderByComparator<DDLRecord>`. |
 
 ## Methods [](id=methods)
 
@@ -84,17 +90,20 @@ connection.
 
 ## Listener [](id=listener)
 
-The `DDLListScreenlet` delegates some events to an object that implements the 
-`DDLListListener` interface. This interface extends from `BaseListListener` and 
-lets you implement the following methods: 
+DDL List Screenlet delegates some events to an object or a class that implements 
+[the `BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java). 
+This interface lets you implement the following methods: 
 
-- `onListPageReceived(BaseListScreenlet source, int page, 
-  List<DDLEntry> entries, int rowCount)`: Called when a page of records is 
-  received. Note that this method may be called more than once; once for each 
-  page received.
+- `onListPageFailed(int startRow, Exception e)`: Called when the server call to 
+  retrieve a page of items fails. This method's arguments include the 
+  `Exception` generated when the server call fails. 
 
-- `onListPageFailed(BaseListScreenlet source, int page, Exception e)`: Called 
-  when an error occurs in the process.
+- `onListPageReceived(int startRow, int endRow, List<Record> records, int rowCount)`: 
+  Called when the server call to retrieve a page of items succeeds. Note that 
+  this method may be called more than once; once for each page received. Because 
+  `startRow` and `endRow` change for each page, a `startRow` of `0` corresponds 
+  to the first item on the first page. 
 
-- `onListItemSelected(BaseListScreenlet source, DDLEntry entry)`: Called when an 
-  item in the list is selected.
+- `onListItemSelected(Record records, View view)`: Called when an item is 
+  selected in the list. This method's arguments include the selected list item 
+  (`Record`). 

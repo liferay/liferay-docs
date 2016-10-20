@@ -3,11 +3,11 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
-- Liferay Screens Compatibility Plugin
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
+- Liferay Screens Compatibility app
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). This is only needed in Liferay 6.2. 
+  depending on your portal edition). 
 
 ## Compatibility [](id=compatibility)
 
@@ -15,7 +15,7 @@
 
 ## Features [](id=features)
 
-The `ForgotPasswordScreenlet` sends an email to registered users with their 
+The Forgot Password Screenlet sends an email to registered users with their 
 new passwords or password reset links, depending on the server configuration. 
 The available authentication methods are
 
@@ -30,12 +30,13 @@ The available authentication methods are
 ## Views [](id=views)
 
 - Default
+- Material
 
-![The `ForgotPasswordScreenlet` with the Default and Material Viewsets.](../../images/screens-android-forgotpwd.png)
+![The Forgot Password Screenlet with the Default (left) and Material (right) Viewsets.](../../images/screens-android-forgotpwd.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
-To use `ForgotPasswordScreenlet`, the portal must be configured to allow users 
+To use Forgot Password Screenlet, the portal must be configured to allow users 
 to request new passwords. The below sections show you how to do this. 
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed. 
@@ -89,7 +90,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 
 ## Listener [](id=listener)
 
-The `ForgotPasswordScreenlet` delegates some events to an object that implements 
+The Forgot Password Screenlet delegates some events to an object that implements 
 the `ForgotPasswordListener` interface. This interface lets you implement the 
 following methods:
 

@@ -3,7 +3,7 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 - [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
   (only when using OAuth for authentication)
 
@@ -13,11 +13,11 @@
 
 ## Features [](id=features)
 
-The `LoginScreenlet` lets you authenticate portal users in your Android app. The 
+The Login Screenlet lets you authenticate portal users in your Android app. The 
 following types of authentication are supported:
 
 - Basic: uses user login and password according to 
-  [HTTP Basic Access Authenication specification](http://tools.ietf.org/html/rfc2617). 
+  [HTTP Basic Access Authentication specification](http://tools.ietf.org/html/rfc2617). 
   Depending on the authentication method used by your Liferay instance, you need 
   to provide the user's email address, screen name, or user ID. You also need to 
   provide the user's password. 
@@ -45,19 +45,20 @@ the method `SessionContext.loadStoredCredentials()`.
 ## Views [](id=views)
 
 - Default
+- Material
 
-![The `LoginScreenlet` using the Default and Material Viewsets.](../../images/screens-android-login.png)
+![The Login Screenlet using the Default (left) and Material (right) Viewsets.](../../images/screens-android-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 ### Basic Authentication [](id=basic-authentication)
 
-Before using `LoginScreenlet`, you should make sure your portal is configured 
-with the authentication method you want to use. You can choose email address, 
+Before using Login Screenlet, you should make sure your portal is configured 
+with the authentication option you want to use. You can choose email address, 
 screen name, or user ID. You can set this in the Control Panel by clicking 
 *Portal Settings* &rarr; *Authentication*.
 
-![Setting the authentication method in Liferay Portal.](../../images/screens-portal-auth.png)
+![Setting the authentication method in your Liferay instance.](../../images/screens-portal-auth.png)
 
 For more details, see the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide. 
@@ -67,11 +68,11 @@ section of the User Guide.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5-_VVAyY-0" frameborder="0" allowfullscreen></iframe>
 
 If you want to use OAuth authentication, you first need to install the 
-[OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
-from Liferay's Marketplace. Once this plugin is installed, go to 
+[OAuth Provider EE app](https://www.liferay.com/marketplace/-/mp/application/45261909) 
+from Liferay's Marketplace. Once this app is installed, go to 
 *Control Panel &rarr; Users &rarr; OAuth Admin*, and add a new application to be 
-used from Liferay Screens. When the app is created, copy the *Consumer Key* and 
-*Consumer Secret* values for later use in `LoginScreenlet`.
+used from Liferay Screens. Once the application is created, copy the 
+*Consumer Key* and *Consumer Secret* values for later use in Login Screenlet.
 
 ![Copy the Consumer Key and Consumer Secret from OAuth Admin in your portal.](../../images/screens-portal-oauth.png)
 
@@ -99,7 +100,7 @@ connection, you can use the `credentialsStorage` attribute together with the
 
 ## Listener [](id=listener)
 
-The `LoginScreenlet` delegates some events to an object that implements the 
+The Login Screenlet delegates some events to an object that implements the 
 `LoginListener` interface. This interface let you implement the following 
 methods:
 
