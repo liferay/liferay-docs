@@ -10,7 +10,7 @@ templates that help users follow a common outline. With this application, you
 can create and manage your own knowledge base, full of information relevant to
 your users.
 
-Here's what the Knowledge Base can do: <!-- reword: Here's the Knowledge Base features -->
+Here are the key features of the Knowledge Base:
 
 - Its navigation is built into the Knowledge Base Display. 
 - It has a suggestions interface for article feedback.
@@ -35,6 +35,13 @@ articles.
 Site Administration contains everything that administrators and authors need to
 create, update, and manage articles in the Knowledge Base.
 
+To navigate to the Knowledge Base, go to Site Administration &rarr; *Content* 
+&rarr; *Knowledge Base*. It has two tabs: one for creating and managing articles 
+and article folders (Articles) and one for managing user-submitted feedback for 
+articles (Suggestions).
+
+![Figure 1: You can manage Knowledge Base articles, folders, and suggestions from the Knowledge Base in Site Administration.](../../../images/kb-admin-articles.png)
+
 +$$$
 
 **Note:** To access Knowledge Base in Site Administration, a role must have the 
@@ -44,105 +51,106 @@ appropriate permissions using the Permissions window in Knowledge Base.
 
 $$$
 
-To navigate to the Knowledge Base, go to Site Administration &rarr; *Content* 
-&rarr; *Knowledge Base*. It has two tabs: one for creating and managing articles 
-and article folders (Articles) and one for managing user-submitted feedback for 
-articles (Suggestions).
+To create an article follow these steps:
 
-![Figure 1: You can manage Knowledge Base articles, folders, and suggestions from the Knowledge Base in Site Administration.](../../../images/kb-admin-articles.png)
-
-To create an article, select the *Articles* tab and choose *Basic Article* or 
-the name of an available template in the Add button (![Add](../../../images/icon-portlet-add-control.png)) 
-menu. This brings up the New Article form. A URL-safe version of the title you 
-provide is added to the end of the article's friendly URL. You can manage the 
-friendly URL in the *Friendly URL* field, underneath the *Configuration* section 
-heading. Use the WYSIWYG editor to create the article's content. The content is 
-automatically converted to HTML for the Knowledge Base. You can click the 
-*Source* button in the editor to view the HTML source, or write in HTML yourself.
+1.  Select the *Articles* tab and choose *Basic Article* or the name of an 
+    available template in the Add button (![Add](../../../images/icon-portlet-add-control.png)) 
+    menu.
+    
+    This brings up the New Article form.
+    
+2.  Enter a title for the article.
+    
+    A URL-safe version of the title you provide is added to the end of the 
+    article's friendly URL. You can manage the friendly URL in the 
+    *Friendly URL* field, underneath the *Configuration* section heading.
+    
+3.  Use the WYSIWYG editor to create the article's content.
 
 ![Figure 2: You can create and modify a Knowledge Base article's content using the WYSIWYG editor.](../../../images/kb-admin-new-article.png)
 
-You can submit the article for publication or save it as a draft to continue 
-working on it later. If you've enabled workflow for the Knowledge Base, your 
-article must be approved before publication. By default, View permission is 
-granted to the Guest role, meaning anyone can view your article.
+    Click the *Source* button in the editor to view the article's HTML source, 
+    or write in HTML yourself. You can also add attachments and tags, specify 
+    related assets, and set permissions for the article, in the sections below
+    the editor. By default, View permission is granted to the Guest role, 
+    meaning anyone can view your article.
 
-You can also add attachments and tags, specify related assets, and set 
-permissions for articles.
+4.  Click *Publish* to submit the article for publication or click 
+    *Save as Draft* to continue working on it later.
+    
+    **Note: If you've enabled workflow for the Knowledge Base, your article 
+    must be approved before publication.**
+    
+Once the article is saved, it is automatically converted to HTML for the 
+Knowledge Base. Articles are listed in a table at the bottom of the Articles tab.
 
-You can also create folders to organize your articles. To create a folder, select 
-*Folder* from the Add button menu. This opens the New Folder form. You can enter 
-a name, description, and permissions for the folder.
+Each article also has a *priority* value that determines its position in the 
+Knowledge Base Display app's (more on this app in a moment) navigation. The 
+priority value of each article is listed underneath the article's title. The 
+Knowledge Base Display app's navigation arranges articles in ascending priority. 
+Priority 1 is the highest priority; think "Priority 1 distress call!" The higher 
+an article's priority, the higher it appears in the navigation. Articles are 
+assigned the next lowest priority by default. This behavior can be changed via
+[System Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#importer-file-convention-settings).
 
-Articles and folders can exist in several places in Knowledge Base. You can 
-create articles and folders in the root of Knowledge Base, or within other 
-folders. Navigate through folders by clicking them in the UI. The text 
-immediately below the filters and *Order by* selector at the top of the app 
-shows your position in a folder hierarchy. Click any of the preceding folders in 
-this text to navigate back up the hierarchy. You can also move articles and 
-folders into other folders, and create child articles of other articles.
+To assign articles a new priority value follow these steps:
+
+1.  Select *Move* from the Actions menu next to the article.
+
+2.  Enter a new priority value for the article.
+
+3.  Click *Move* to apply the new priority.
+
+You can also organize articles with folders. Follow these steps to create a 
+folder:
+
+1.  Open the Add button menu and select *Folder*.
+    
+2.  Enter a name and an optional description.
+
+    By default, anyone can view the folder. You can manage this setting along 
+    with the other permissions through the *Permissions* heading.
+    
+3.  Click *Save*.
+
+    Folders are listed in a table near the top of the Articles tab.
+
+The text immediately below the filters and *Order by* selector at 
+the top of the app shows your position in the folder hierarchy. Click on a 
+folder's name in the hierarchy to navigate to it. You can also move articles 
+into folders, and create child articles. Knowledge Base also supports nested
+folders.
 
 ![Figure 3: This screenshot uses a red box to highlight the text that indicates the current position in the folder hierarchy.](../../../images/kb-admin-folder-hierarchy.png)
-
-Many of these functions are available in each item's *Actions* button. You can 
-perform the following actions on folders: 
+    
+You can perform the following actions on folders: 
 
 - **Edit:** change the folder's name and description.
 
-- **Move:** relocate the folder under a new parent folder. 
+- **Move:** relocate the folder under a new parent folder or update its
+  priority. 
 
 - **Delete:** remove the folder and its articles from the knowledge base. 
 
 - **Permissions:** grant or revoke the following permissions: add an article to 
   the folder, add a sub-folder to the folder, delete the folder, move the 
   folder, set permissions on the folder, edit (update) the folder, and view the 
-  folder. 
+  folder.
 
-The following actions are available for articles:
+You can also delete multiple articles or folders at once:
 
-- **Edit:** change the article's title and content and manage its attachments,
-  categorization, and its related assets. 
+Select the checkbox for each item that you want to delete and click the *X* 
+button that appears at the top of the app to delete it.
 
-- **Add Child Article:** add a new child article to the article. 
-
-- **Permissions:** configure the permissions on the article. 
-
-- **Subscribe:** choose to be notified of any updates to the article. Once 
-  you've subscribed to an article, the *Unsubscribe* action appears, letting you
-  unsubscribe from the article's notifications. 
-
-- **Move:** move the article to a different folder or change an article's 
-  position in the hierarchy by choosing a new parent article for it. 
-
-- **Delete:** remove the article from the Knowledge Base.
-
-You can also assign articles a new *priority* value. The priority value of 
-each article is shown underneath the article's title. When many articles are in 
-the Knowledge Base Display app (more on this app in a moment), navigation 
-arranges them in ascending priority. Priority 1 is the highest priority; think 
-"Priority 1 distress call!" The higher an article's priority, the higher it 
-appears in the navigation. To assign new priorities, select *Move* from the 
-Actions menu that appears next to the article, enter a new priority value for 
-the article, and click *Move*.
-
-You can also delete multiple articles at once. Select the checkbox for each 
-article that you want to delete and click the *X* button that appears at the top 
-of the app to delete it. Note that this Actions menu only appears when one or 
-more article checkboxes are checked. This Actions menu lets you check the info 
-for selected articles or delete selected articles. This menu also allows you to 
-check the info for selected articles.
-
-<!-- These features should be listed out like the others -->
-The Articles tab displays any existing articles and folders. Folders appear in a 
-table near the top of the Articles tab, while articles appear in a separate 
-table at the bottom.
+This Actions menu also lets you check the info for selected items. Note that 
+this menu only appears when one or more article or folder checkboxes are checked.
 
 The (![Add](../../../images/icon-portlet-add-control.png)) menu provides the 
-following options for adding articles:
+following options for articles:
 
-- Add a folder 
 - Add a Basic Article
 - Add an article based on a template
+- Add a folder
 - Import articles from a ZIP file
 
 The Options menu (![Options](../../../images/icon-app-options.png)) allows you 
@@ -151,16 +159,12 @@ to configure the following features for the Knowledge Base app:
 - Manage templates
 - subscribe
 - edit permissions
-- import/export <!-- import/export what? -->
+- import/export configuration settings
 - configure email options
 
-<!-- This button has dissappeared from the UI. Is it gone or just moved? -->
-The *permissions* button allows you to define basic permissions for the app, 
-such as who can view the app and who can add the app to a page.
-
-The *Home Folder Permissions* option lets you define more detailed permissions 
-for the Knowledge Base app. You can choose the roles that can perform the 
-following tasks: 
+The *Home Folder Permissions* option lets you define detailed permissions for 
+the Knowledge Base app. You can choose the roles that can perform the following 
+tasks: 
 
 - Add/delete articles, folders, and templates 
 - Change the Knowledge Base app's permissions 
@@ -169,18 +173,22 @@ following tasks:
 
 Next, you'll learn how to manage article templates. 
 
-### Managing Templates [](id=managing-templates)
+### Creating and Managing Templates [](id=managing-templates)
 
-Templates are starting points for articles. For example, you can create 
-templates that contain default headers or other content to give your users a 
-starting point to work from. Templates help foster consistent formatting and 
-content organization for articles.
+Templates give users a starting point to work from. For example, you can create 
+templates that contain default headers or other content for articles. Templates 
+help foster consistent formatting and content organization for articles.
 
-To create a new template, click the *Templates* button in the Options menu 
-(![Options](../../../images/icon-app-options.png)) at the top of the app. This 
-brings up the Templates page, where you can manage existing templates. Click the 
-Add button at the bottom of the screen to add a template. Fill in the New 
-Template form and click *Publish*.
+To create a new template follow these steps:
+
+1.  Click the *Templates* button in the Options menu (![Options](../../../images/icon-app-options.png)) 
+    at the top of the app.
+    
+    This brings up the Templates page, where you can manage existing templates.
+    
+2.  Click the Add button at the bottom of the screen to add a template.
+
+3.  Fill in the New Template form and click *Publish*.
 
 ![Figure 4: As an administrator, you can add a new template to your knowledge base from Knowledge Base in Site Administration.](../../../images/kb-admin-new-template.png)
 
@@ -212,9 +220,6 @@ feedback, the user's name, the feedback's time stamp, and the status on
 addressing the suggestion. You can move the entry between *New*, *In Progress*, 
 and *Resolve* states.
 
-<!-- add note about automated emails sent to user who leaves the feedback when 
-you change the status of the suggestion -->
-
 +$$$
 
 **Note:** To view article suggestions, your role must be granted the *Knowledge
@@ -227,6 +232,11 @@ state of article suggestions from any of the other Knowledge Base apps.
 
 $$$
 
+When you move the suggestion to a different state, an automated email is sent
+notifying the user of the change. To view and configure the templates for the 
+automated emails, click the *Configuration* button in the Options menu 
+(![Options](../../../images/icon-app-options.png)).
+
 So far, you've learned how to create, edit, and organize articles. You've also
 seen how the suggestions feature lets you and your users collaborate on your
 knowledge base content. Next, you'll learn how the other Knowledge Base apps let 
@@ -234,30 +244,43 @@ you display, navigate, aggregate, and view articles.
 
 ## Knowledge Base Display [](id=knowledge-base-display)
 
-Once you have articles, you can use the Knowledge Base Display app to 
-display them. Add the Knowledge Base Display to the page you want your 
-articles to appear on. 
-
+You can use the Knowledge Base Display app to display your published articles.
 Knowledge Base Display is very flexible. You can customize how it displays 
-articles, as well as which ones it displays. To access 
-the app's Configuration menu, mouse over the app, click the *Options* icon 
-(![Options](../../../images/icon-app-options.png)) 
-in the top right corner, and select *Configuration*. In the Configuration 
-dialog's *Setup* tab, the *General* sub-tab has an *Article or Folder* field 
-with a *Select* button. Click *Select* to choose an existing article or folder 
-of articles to display in the app. Knowledge Base Display also provides common 
-Liferay application configuration options, including ones for look and feel, 
-export/import, permissions, scope, and sharing. For more information on this, 
-see the section on configuring Liferay applications in 
-[Web Experience Management](/discover/portal/-/knowledge_base/7-0/web-experience-management).
+articles, as well as which ones it displays. Add the Knowledge Base Display to 
+the page you want your articles to appear on.
+
+To display an article or folder of articles follow these steps:
+
+1.  Mouse over the app, click the *Options* icon (![Options](../../../images/icon-app-options.png)) 
+    in the top right corner, and select *Configuration*.
+
+2.  Click *Select* in the *Article or Folder* field to bring up the available
+    folders and articles.
+
+3.  Click *Choose* next to the article or folder of articles you want to
+    display, and *Save*.
+    
+    You can also click the *Choose This Folder* button at the top of the Select 
+    Entry dialog to select the current folder.
+    
+Knowledge Base Display also provides these common configuration options:
+
+- look and feel
+- export/import
+- permissions
+- scope
+- sharing
+
+For more information on this, see the section on configuring Liferay 
+applications in [Web Experience Management](/discover/portal/-/knowledge_base/7-0/web-experience-management).
 
 The Knowledge Base Display's navigation menu and display options make it the 
 perfect candidate for a full page app. If you display a folder of articles, the 
 navigation on the left side of the app displays links to all of the folder's 
 articles. The viewing area on the right side of the app displays the folder's 
-leading article (the "priority one" article). Click any article in the 
-navigation to display it in the viewing area. The currently displayed article's 
-link appears in bold in the navigation. You can also move between articles by 
+leading article (the "priority one" article). Click an article in the navigation 
+to display it in the viewing area. The currently displayed article's link 
+appears in bold in the navigation. You can also move between articles by 
 clicking the links at the bottom of the app.
 
 ![Figure 6: Knowledge Base Display's navigation and viewing area facilitates viewing article hierarchies.](../../../images/kb-display.png)
@@ -275,7 +298,7 @@ an article:
 - view the current article's history
 - Print the current article 
 
-Aministrator's have access to an additional set of buttons at the top of the app
+Administrator's have access to an additional set of links at the top of the app
 that allows them to perform the following actions on the current article:
 
 - Edit the article
@@ -285,9 +308,9 @@ that allows them to perform the following actions on the current article:
 - Delete the article
 
 Below the article's content is the rating interface, showing thumbs up and 
-thumbs down icons. Users can also submit suggestions or comments for the article 
-in the textbox underneath *Do you have any suggestions?*, at the bottom of the 
-app. Administrators can view the suggestions and mark progress.
+thumbs down icons. Users can also submit suggestions or comments below the 
+article in the *Do you have any suggestions?* text box. Administrators can view 
+the suggestions and mark progress.
 
 If your Liferay administrator enables the Knowledge Base app's source 
 URL feature (more on this in a moment) and an article has an assigned source 
@@ -304,14 +327,12 @@ folders, without giving them access to the app's Configuration menu.
 
 ### Displaying Different Article Sets [](id=displaying-different-article-sets)
 
-<!-- Add a clear transition that clearly states that this section applies to the
-knowledge base display app-->
 As an administrator, say that you've used folders to aggregate similar articles,
 and you want to provide an easy way for users to switch between these sets of
 articles. The Knowledge Base Display's content folder feature adds a selector to 
 the top of the portlet's navigation that lets users switch between article sets.
  
-Here's what you do to set up content folders:
+To set up content folders follow these steps:
 
 1. Add a folder in Knowledge Base. Then create sub-folders in this folder. These 
    sub-folders are the *content folders*. 
@@ -341,25 +362,25 @@ Base Article app to display only individual articles.
 ## Knowledge Base Article [](id=knowledge-base-article)
 
 The Knowledge Base Article app lets you show a single article's content. It even 
-shows abstracts of child articles. You can add any number of Knowledge Base 
-Article apps to a page and each one can display a different article.
+shows abstracts of child articles. You can add multiple instances of the 
+Knowledge Base Article app to a page, and each one can display a different 
+article.
 
-When you first place this app on a page, it shows the link 
-*Please configure this portlet to make it visible to all users*. Click this link 
-and pick an article and then click *Save*. When your page refreshes, the app 
-displays the article. You can also use the *Setup* &rarr; *General* tab of the 
-app's *Configuration* menu to choose an article to display. 
+To display an article follow these steps:
+
+1.  Click the *Please configure this portlet to make it visible to all users* 
+    link, choose an article, and click *Save*.
+    
+2.  Refresh the page to display the article.
+
+    You can also use the *Setup* &rarr; *General* tab of the app's 
+    *Configuration* menu to choose an article to display. 
 
 ![Figure 8: The Knowledge Base Article app is great at displaying individual articles.](../../../images/kb-article.png)
 
-<!-- Knowledge Base Article shares the same UI as the Knowledge Base Display to 
-display and manage its article. Please refer to that section for a detailed 
-description of the portlet UI. -->
-
-Knowledge Base Article displays its article using the same UI as Knowledge Base 
-Display's viewing area. This includes the links at the top and bottom of the app 
-that let the user interact with the article, and the buttons at the top of the 
-app that lets administrators manage it.
+Knowledge Base Article shares the same UI as the Knowledge Base Display to 
+display and manage its articles. Please refer to the [Knowledge Base Display](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#knowledge-base-display) 
+section for a detailed description of the app's UI.
 
 Now that you know how to display individual articles with the Knowledge Base
 Article app, you can learn how to selectively display articles with the 
@@ -374,17 +395,29 @@ specific topic (section). For example, a news site might have the sections
 ![Figure 9: Here's an image of Knowledge Base Section apps on a page.](../../../images/kb-section.png)
 
 To use sections, your Liferay administrator must configure the feature in the 
-Knowledge Base app's properties within Portal's system settings. Once the 
-feature is enabled, he or she must specify in the system settings any section 
+Knowledge Base app's properties within Portal's System Settings. Once the 
+feature is enabled, he or she must specify in the System Settings any section 
 names you want to use. This process is covered in more detail in the 
-[System Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#system-settings)
+[System Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#section-names-setting)
 section.
 
-Multi-select boxes in the Add Article and Edit Article screens of the app let 
-you define the section(s) the articles belong to. You can add any number of 
-Knowledge Base Section apps to a page and each one can display articles from any 
-number of sections. You can choose to display each article's title or abstract.
-You can also define whether to show pagination or section titles.
+Multi-select boxes in the Add Article and Edit Article screens of the Knowledge 
+Base app let you define the section(s) the articles belong to. You can add 
+multiple instances of the Knowledge Base Section app to a page and each one can 
+display articles from any number of sections. You can choose to display each 
+article's title or abstract. You can also define whether to show pagination or 
+section titles.
+
+Follow these steps to configure an instance of the Knowledge Base Section app:
+
+1.  Select *Configuration* from the Knowledge Base Section's *Options* menu.
+
+2.  Select the section, or sections holding down the shift key, that you want to
+    use and click *Save*.
+    
+3.  Close the Configuration window to see the updates.
+
+The matching articles are displayed in the app beneath their section heading.
 
 +$$$
 
@@ -462,15 +495,9 @@ Below is Markdown source text for a simple example article:
 
 In the first line above, notice the header's ID assignment 
 `id=the-moons-of-mars`. On import, the ID value becomes the URL title of the
-resulting Knowledge Base article. 
+resulting Knowledge Base article.
 
-Once your markdown files are ready to import, you must zip them up with their
-accompanying image files. This is covered next.
-
-<!-- Possibly add back somewhere else
-It's also
-something of a standard: there's 
-[Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown), 
+Markdown is something of a standard: there's [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown), 
 forums that support Markdown (reddit, StackExchange, and others), Markdown
 editors, and an IETF draft for making it an official Internet media type
 (text/markdown). Why is there so much interest in Markdown? 
@@ -489,9 +516,11 @@ editors, and an IETF draft for making it an official Internet media type
 4.  Since it's only text, you can use existing tools to collaborate on that
     text. Using services like GitHub, people can contribute to your articles, 
     and you can see all the changes that have been made to them.
--->
 
-### Zipping your Markdown Files [](id=zip-file-requirements)
+Once your markdown files are ready to import, you must zip them up with their
+accompanying image files. This is covered next.
+
+### Zip File Requirements [](id=zip-file-requirements)
 
 The importer supports article hierarchies, so Markdown files can be specified 
 anywhere in the ZIP file's directory structure. They can be nested in any number 
@@ -509,9 +538,11 @@ parent-child hierarchy. You can use the prefix `00` for parent articles to place
 them at the top of the folder's file order. The importer uses the numeric prefix 
 of an intro file's folder as its article priority.
 
-Here's the underlying logic for article priority:
+Here's the underlying logic for the `00` prefix:
 
-- A file prefix of `00` assigns the resulting article's priority to `1.0`.
+- A file prefix of `00` for a non intro file assigns the resulting article's 
+  priority to `1.0`.
+
 - A file prefix of `00` for a top-level intro file sets the article's priority 
   to the first folder numeric prefix found that is `1.0` or greater.
 
@@ -521,10 +552,12 @@ in your hierarchy.
 When importing, keep the checkbox labeled 
 *Apply numerical prefixes of article files as priorities* selected. If a file 
 doesn't have a prefix, its article gets the next available priority
-(the highest current priority, plus one). Below is an example Zip file structure 
-that demonstrates the features mentioned so far:
+(the highest current priority, plus one).
 
-**Zip File Structure Example:**
+Below is an example ZIP file structure that demonstrates the features mentioned 
+so far:
+
+**ZIP File Structure Example:**
 
 - `01-winter-events/`
     - `00-winter-excursions-intro.markdown`
@@ -551,7 +584,7 @@ is also the peer of `01-lunar-rock-scrambling.markdown` and
 `02-extra-terrestrial-mountain-biking.markdown`, and the child of 
 `00-summer-excursions-intro.markdown`.
 
-**Zip Example's Resulting Relationships and Priorities**
+**ZIP Example's Resulting Relationships and Priorities**
 
 - `01-winter-events/00-winter-excursions-intro.markdown`
     - **Article:** Winter Excursions
@@ -587,19 +620,21 @@ is also the peer of `01-lunar-rock-scrambling.markdown` and
     - **Relationship:** Child of *Opening Ceremonies*
     - **Priority:** 1.0
 
-Zip files must meet the following requirements:
+ZIP files must meet the following requirements:
 
--  Each Zip file must end in the suffix `.zip`.
+-  Each ZIP file must end in the suffix `.zip`.
 -  Each Zip file must contain at least one Markdown source file, optionally
    organized in folders.
--  All referenced image files must be in a folder named `images` in the Zip
+-  All referenced image files must be in a folder named `images` in the ZIP
    file's root. 
 -  Image files must be in a supported format and must use the appropriate file
    extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and
    `.png`. They're specified via an app system setting. For details, see 
    [System Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#system-settings).
 
-Once you have your article ZIP file, it's time to import it. 
+Once you have your article ZIP file, it's time to import it.
+
+Follow these steps to import your ZIP file:
 
 1.  Navigate to *Site Administration* &rarr; *Content* &rarr; *Knowledge Base* 
     &rarr; *Articles*.
@@ -611,8 +646,8 @@ Once you have your article ZIP file, it's time to import it.
     
 Your file is uploaded, and the importer converts each source file's Markdown 
 text to HTML, applying the HTML to the resulting article. Any image files that 
-are included in the ZIP file and referenced in an article source file are 
-imported as attachments to the article. 
+are referenced in an article and included in the ZIP file are imported as 
+attachments to the article.
 
 ![Figure 11: Selecting *Add* &rarr; *Import* in Knowledge Base brings up the interface for selecting a ZIP file of Markdown source files and images to produce and update articles in your Knowledge Base.](../../../images/kb-admin-importer.png)
 
@@ -634,30 +669,14 @@ The source URL constructed from this base URL and article source file
 You specify the base source URL in a file called `.METADATA` in the ZIP file's
 root folder. The importer treats the `.METADATA` file as a standard Java
 properties file and uses the base source URL to construct the source URL for
-all of the ZIP file's resulting articles. To use the source URL feature, your 
-Liferay administrator must enable it via the Knowledge Base app's 
-[system settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#system-settings).
+all of the ZIP file's resulting articles.
 
-**Advanced Zip File Structure Example:**
+To use the source URL feature, your Liferay administrator must enable it via the 
+Knowledge Base app's [System Settings](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#system-settings).
 
-- `01-winter-events/`
-    - `00-winter-excursions-intro.markdown`
-    - `01-star-dust-snow-shoeing.markdown`
-    - `02-lunar-alpine.markdown`
-
-- `02-summer-events/`
-    - `00-summer-excursions-intro.markdown`
-    - `01-lunar-rock-scrambling.markdown`
-    - `02-extra-terrestrial-mountain-biking.markdown`
-    - `03-summer-olympics/`
-        - `00-lunar-olympics-intro.markdown`
-        - `01-zero-gravity-diving.markdown`
-
-- `images/`
-    - `some-image.png`
-    - `another-image.jpeg`
-
-- `.METADATA`
+Now that you know how to import articles into the Knowledge Base, you may have
+some questions about the importer. Some of the common questions and answers are 
+covered in the next section.
 
 ### Importer FAQs [](id=importer-faqs)
 
@@ -692,7 +711,7 @@ Congratulations on mastering the art of creating and importing Markdown files to
 produce Knowledge Base articles! 
 
 Next, Liferay administrators can learn how to override the Knowledge Base app's 
-system settings to enable and configure features. 
+System Settings to enable and configure features. 
 
 ## System Settings [](id=system-settings)
 
@@ -723,7 +742,7 @@ The Knowledge Base has several optional features that are disabled by default,
 but can be enabled and configured from System Settings. These include source
 URL, import file conventions, new article priority increment, and sections. Now
 you'll learn how to configure these features by editing the Knowledge Base
-system settings. 
+System Settings. 
 
 ### Source URL Settings [](id=source-url-settings)
 
@@ -732,16 +751,16 @@ files. This is intended to point to an online source repository where the files
 are stored. GitHub is assumed as the default. Once defined, the Knowledge Base
 displays a button (default label is *Edit on GitHub*) above each displayed
 article. Users can click the button to navigate to an article's source location.
+
 The source URL settings are accessible in the *Knowledge Base Service*
-System Settings section. 
+System Settings section. To enable using the source URL, check the 
+*Source URLEnabled* checkbox.
 
-To enable using the source URL, check on the *Source URLEnabled* checkbox. 
-
-To change the label of the of the button that takes the user to each article's
-source location, specify a new label value for the setting *Source URLEdit
-message key*. Best practice is to specify the value as a language key. For
-example, if you create a language key `edit-on-bitbucket=Edit on Bitbucket`, you
-can specify that language key as the button's new label:
+To change the source URL button's label, specify a new value for the 
+*Source URLEditmessage key* setting. Best practice is to specify the value as a 
+language key. For example, if you create a language key 
+`edit-on-bitbucket=Edit on Bitbucket`, you can specify that language key as the 
+button's new label:
 
     edit-on-bitbucket
 
@@ -749,7 +768,7 @@ Alternatively, you can specify the label explicitly:
 
     Edit on Bitbucket
 
-Next, we'll cover settings for importing article source files. 
+Next, you'll learn how to modify the file conventions for the importer.
 
 ### Importer File Convention Settings [](id=importer-file-convention-settings)
 
@@ -757,54 +776,80 @@ These settings define the supported file extensions, the suffix for parent
 files, and the image folder's path within the import ZIP files. These
 settings are accessible in the *Knowledge Base Service* System Settings section. 
 
-You can modify the supported file extensions for article and image files, by
-adding or removing extension values in the UI. The plus and minus icons, next to
-the field labels *Markdown importer article extensions* and *Markdown importer
-image file extensions*, allow you to add and remove extension values, respectively.
+The following settings specify the supported file extensions for the importer:
 
-- *Markdown importer article extensions* has default values `.markdown` and
-`.md`. 
+- *Markdown importer article extensions* sets the supported article extensions. 
+  The default values are `.markdown` and `.md`. 
 
-- *Markdown importer image file extensions* has default values `.bmp`, `.gif`,
-`.jpeg`, `.jpg`, and `.png`.
+- *Markdown importer image file extensions* sets the supported image file 
+  extensions. The default values are `.bmp`, `.gif`, `.jpeg`, `.jpg`, and `.png`.
 
-- *Markdown importer article intro* sets the article parent file suffix.
+To modify the supported file extensions follow these steps:
+
+1.  Click the *+* or *-* button next to the setting to add or remove a supported 
+    file extension respectively.
+    
+2.  Enter a new value, if adding an extension.
+
+3.  Click *Save*.
+
+These settings define additional article configuration options for the importer:
+  
+- *Markdown importer article intro* sets the article parent file suffix. The
+  default value is `intro.markdown`.
 
 - *Markdown importer image folder* sets the image folder path the importer looks
-for in the ZIP file. 
+  for in the article ZIP file. The default path is `/images`.
 
 - *New Article Priority Increment Setting* sets the floating point value by
-which priorities of new articles are incremented. By default they're incremented
-by `1.0`. To disable this increment so that articles get a flat value of `1.0`,
-deselect the checkbox for the setting *Article increment priority enabled*.
+  which priorities of new articles are incremented. By default they're 
+  incremented by `1.0`. To disable this increment so that articles get a flat 
+  value of `1.0`, deselect the checkbox for the setting 
+  *Article increment priority enabled*.
 
-Alternatively, you can enable or disable the article increment priority feature
-for each app in the corresponding Knowledge Base app configuration menu in
-System Settings. 
+  Alternatively, you can enable or disable the article increment priority 
+  feature for each app in the corresponding Knowledge Base app configuration 
+  menu in System Settings. 
 
 If you're using the Knowledge Base Section app, you'll want to set some section
-names. Let's explore that next.  
+names. Let's explore that next.
 
 ### Section Names Setting [](id=section-names-setting)
 
 The section names setting lets you specify names of arbitrary topics to
 attribute to articles. Using the Knowledge Base Section app, you can display one
-or more *sections* (groups) of articles. Navigate to the *Knowledge Base
-Section* configuration menu from *System Settings* &rarr; *Collaboration*, click
-the plus button next to the *Admin KBArticle sections* setting to add a new
-field for each section you want, and enter a name for each new section. 
+or more *sections* (groups) of articles. To use sections, you must first define
+them in the System Settings for the *Knowledge Base Section* app.
+
+Follow these steps to make new sections available:
+
+1.  Navigate to the *Knowledge Base Section* configuration menu from 
+    *System Settings* &rarr; *Collaboration*.
+    
+2.  Click the plus button next to the *Admin KBArticle sections* setting to add 
+    a new field for each section you want.
+    
+3.  Enter a name for each new section and click *Save*. 
 
 ![Figure 12: Adding a new field for the *Admin KBArticle sections* setting creates a new section for the Knowledge Base Section app. These fields create sections *Business*, *Politics*, and *World*.](../../../images/kb-section-setting.png)
 
-When you're done changing settings, make sure to click the *Update* button
-to save them. 
+Once your sections are added, you can follow the steps in the 
+[Knowledge Base Section](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#knowledge-base-section)
+app section to learn how to use them.
 
 This concludes the short tour of a sampling of Knowledge Base configuration
-settings. 
+settings.
+
+<!--  Add back in after the KB Configuration doc is reviewed and published
+
+For a full list of the available System Settings for Knowledge Base see 
+[Knowledge Base Configuration](/discover/reference/-/knowledge_base/7-0/knowledge-base-configuration).
+
+-->
 
 You've learned the benefits of publishing articles using the Knowledge Base app.
 You've seen how easy it is to create, organize, and manage articles, and you've
 learned various ways to present articles in the Knowledge Base Display,
 Knowledge Base Article, and Knowledge Base Section apps. Knowledge Base system
 settings are also at your service. You can now consider yourself truly
-*knowledgeable* of Liferay's Knowledge Base app. 
+*knowledgeable* of Liferay's Knowledge Base app.
