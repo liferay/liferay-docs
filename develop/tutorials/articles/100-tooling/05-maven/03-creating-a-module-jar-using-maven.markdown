@@ -78,7 +78,7 @@ Continue on to see how this is done.
     You can copy and paste this JAR into @product@'s `/deploy` folder, or you
     can configure your project to deploy automatically to @product@ by following
     the
-    [Deploying Maven Projects to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-maven-projects-to-liferay)
+    [Deploying a Maven Module to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-a-maven-module-to-liferay)
     tutorial.
 
 Fantastic! You've configured your Liferay Maven project to package itself into a
