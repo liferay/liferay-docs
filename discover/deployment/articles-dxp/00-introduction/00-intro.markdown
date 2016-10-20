@@ -76,16 +76,36 @@ Liferay Engineering's testing has shown Liferay Digital Enterprise to scale line
 
 The firewall preceding the Load Balancer Tier will provide sufficient intrusion detection and prevention. However, depending on your organization's information security requirements, you may introduce additional firewall layers between each tier to further secure the infrastructure.
 
-//TODO - All below
-* Development
-* System Integration
-* UAT
-* Production Staging
-* Production
+### Environment types
 
-## Preparation
-Operating System
+#### Development
 
-Storage
+The environment where the software are being written. Most simply it is an
+individual workstation for the developers, however, we can talk about
+integrated development environments with version and dependency handling or
+having version control in place with a working copies on the individual
+developer workstations.
 
-Networking
+#### SIT (System Integration Testing)
+
+SIT is where the systems delivered are validated. The is an environment for
+testing the automation of aggregated components, the dependencies between them.
+
+#### UAT (User Acceptance Testing)
+
+In other words, QA or Test environment. This is the environment where the
+developers push the software when they think that it is ready to verify if it
+is working as it is expected before pushing that to production.
+
+#### Production Staging
+
+A pre-production environment whose state is as close as it is possible to the
+production environment to do the very final testing. These can be any of the
+final installation, configuration, deployment and load, performance testing also.
+
+#### Production
+
+Live, in other words, is the environment which is accessed by end users directly.
+Updating the production environment must be done the most carefully. It is pretty
+important to have a secure process, particularly if it is a complex clustered
+environment.
