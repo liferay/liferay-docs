@@ -13,10 +13,10 @@ configurations in your Maven POMs, you can deploy a module to @product@ with one
 command execution.
 
 In this tutorial, you'll learn how to deploy your Liferay Maven module
-automatically. Before you can deploy a your Maven project, you must have it
+automatically. Before you can deploy your Maven project, you must have it
 configured to generate an OSGi module JAR; visit the
 [Creating a Module JAR Using Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-module-jar-using-maven)
-tutorial to for more information.
+tutorial for more information.
 
 You'll learn how to deploy your Liferay Maven module automatically next.
 

@@ -13,7 +13,7 @@ At the time of this writing, Liferay provides just under 40 Maven archetypes for
 you to use; expect this number to continue growing! These archetypes are
 generated from the Central Repository, unless you've configured for them to be
 generated from another remote repository (e.g., 
-[Liferay Repository](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts#liferay-repository).
+[Liferay Repository](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts#liferay-repository)).
 You can view the Liferay-provided Maven archetypes by running the following
 command:
 
@@ -25,12 +25,12 @@ See the brief list of some popular Maven archetypes provided by Liferay:
 - [Context Contributor](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
 - [Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
   portlets
-    - Alloy
-    - ICEfaces
-    - JSF
-    - PrimeFaces
-    - RichFaces
-- MVC Portlet
+    - [Alloy](https://web.liferay.com/community/liferay-projects/liferay-faces/alloy)
+    - [ICEfaces](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf)
+    - [JSF](https://web.liferay.com/community/liferay-projects/liferay-faces/overview)
+    - [PrimeFaces](http://primefaces.org/)
+    - [RichFaces](http://richfaces.jboss.org/)
+- [MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet)
 - [Panel App](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
 - [Portlet Provider](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
 - [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
@@ -52,15 +52,15 @@ archetype.
         mvn archetype:generate -Dfilter=liferay
 
 2.  Select the `com.liferay.project.templates.mvc.portlet` archetype by
-    selecting its corresponding number.
+    choosing its corresponding number (e.g., `8`).
 
     In some cases, an archetype provides multiple versions of itself for you to
     select. Make sure to select the archetype version that corresponds with the
-    @product@ instance you're using.
+    @product@ instance you're using (e.g., `1.0.0`, `1.0.1`, etc.).
 
-3.  Depending on the Maven archetype you selected, you'll be given a specific
-    set of archetype options to fill out for your Maven project. For the example
-    MVC portlet archetype, you could configure the properties as follows
+3.  Depending on the Maven archetype you selected, you're given a set of
+    archetype options to fill out for your Maven project. For the example MVC
+    portlet archetype, you could configure the properties as follows
 
     - `groupId`: `com.liferay`
     - `artifactId`: `com.liferay.project.templates.mvc.portlet`
@@ -85,4 +85,4 @@ The Liferay Maven archetypes generate deployable Liferay module projects, but
 they're bare bones, and will likely require further customizations.
 
 If you're looking to generate a quick foundation for a Liferay Maven module,
-using Maven archetypes is your best option.
+using Liferay Maven archetypes is your best option.

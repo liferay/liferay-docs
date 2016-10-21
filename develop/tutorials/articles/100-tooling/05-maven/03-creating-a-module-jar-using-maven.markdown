@@ -8,9 +8,9 @@ OSGi JAR by making a few minor configurations in your module's POMs.
 
 +$$$
 
-**Note:** If you use Liferay's Maven archetypes to generate your module project,
-the project is already configured with the Maven plugins required to generate an
-OSGi JAR.
+**Note:** If you used Liferay's Maven archetypes to generate your module
+project, the project is already configured with the Maven plugins required to
+generate an OSGi JAR.
 
 $$$
 
