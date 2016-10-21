@@ -46,7 +46,7 @@ This screenlet has four different Themes:
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -64,10 +64,10 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `autoLoad` | `boolean` | Whether the rating loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `editable` | `boolean` | Whether the user can change the rating. |
 | `entryId` | `number` | The primary key of the asset with the rating to display. |
-| `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` attribute is required when using it with `classPK` to instantiate the Screenlet.. |
+| `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.portlet.blogs.model.BlogsEntry`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/model/BlogsEntry.html). The `className` attribute is required when using it with `classPK` to instantiate the Screenlet. |
 | `classPK` | `number` | The asset’s unique identifier. Only use this attribute when also using `className` to instantiate the Screenlet. |
 | `groupId` | `number` | The ID of the site (group) containing the asset. |
-| `offlinePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/rating-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/6-2/rating-screenlet-for-ios#offline) for details. |
 
 ## Methods [](id=methods)
 

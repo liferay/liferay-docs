@@ -4,7 +4,7 @@
 
 - Xcode 7.3
 - iOS 9 SDK
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 
 ## Compatibility [](id=compatibility)
 
@@ -12,7 +12,7 @@
 
 ## Features [](id=features)
 
-The `UserPortraitScreenlet` shows the user's portrait from Liferay Portal. If 
+The User Portrait Screenlet shows the user's portrait from Liferay Portal. If 
 the user doesn't have a portrait configured, a placeholder image is shown.
 
 ## Module [](id=module)
@@ -24,7 +24,7 @@ the user doesn't have a portrait configured, a placeholder image is shown.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The `UserPortraitScreenlet` using the Default and Flat7 Themes.](../../images/screens-ios-portrait.png)
+![The User Portrait Screenlet using the Default (left) and Flat7 (right) Themes.](../../images/screens-ios-portrait.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -33,7 +33,8 @@ None
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the portrait, the Screenlet supports the following offline mode 
 policies:
@@ -76,7 +77,7 @@ policies:
 
 ## Delegate [](id=delegate)
 
-The `UserPortraitScreenlet` delegates some events to an object that conforms to 
+The User Portrait Screenlet delegates some events to an object that conforms to 
 the `UserPortraitScreenletDelegate ` protocol. This protocol lets you implement 
 the following methods: 
 

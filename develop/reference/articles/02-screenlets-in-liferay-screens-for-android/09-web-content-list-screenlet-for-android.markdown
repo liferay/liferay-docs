@@ -66,7 +66,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `labelFields` | `string` | The comma-separated names of the DDM fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
-| `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. You can only use comparator classes that extend `OrderByComparator<JournalArticle>`. You can also create your own comparator classes that extend `OrderByComparator<JournalArticle>`. |
+| `obcClassName` | `string` | The name of the [`OrderByComparator` class](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/OrderByComparator.html) to use to sort the results. Omit this property if you don't want to sort the results. You can only use comparator classes that extend `OrderByComparator<JournalArticle>`. You can also create your own comparator classes that extend `OrderByComparator<JournalArticle>`. |
 
 ## Methods [](id=methods)
 

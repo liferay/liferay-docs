@@ -30,7 +30,7 @@ Screenlet renders any header image the blogs entry may have.
 
 The Default Theme can use different components to show a blogs entry 
 (`BlogsEntry`). For example, it uses `UILabel` to show a blog's text, and 
-[User Portrait Screenlet](/develop/reference/-/knowledge_base/7-0/userportraitscreenlet-for-ios) 
+[User Portrait Screenlet](/develop/reference/-/knowledge_base/6-2/userportraitscreenlet-for-ios) 
 to show the profile picture of the Liferay user who posted it. Note that other 
 Themes may use different components. 
 
@@ -40,7 +40,7 @@ Themes may use different components.
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -62,10 +62,10 @@ If you don't use `assetEntryId`, you must use both of the following attributes:
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `assetEntryId` | `number` | The primary key of the blog entry (`BlogsEntry`). |
-| `className` | `string` | The `BlogsEntry` object's fully qualified class name. This is [`com.liferay.blogs.kernel.model.BlogsEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). If you don't use `assetEntryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `className` | `string` | The `BlogsEntry` object's fully qualified class name. This is [`com.liferay.portlet.blogs.model.BlogsEntry`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/model/BlogsEntry.html). If you don't use `assetEntryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The `BlogsEntry` object's unique identifier. If you don't use `assetEntryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `autoLoad` | `boolean` | Whether the blog entry automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-0/blogs-entry-display-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/6-2/blogs-entry-display-screenlet-for-ios#offline) for details. |
 
 ## Delegate [](id=delegate)
 

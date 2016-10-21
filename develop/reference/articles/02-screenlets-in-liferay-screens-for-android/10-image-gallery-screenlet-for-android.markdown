@@ -85,7 +85,7 @@ instance:
 | `mimeTypes` | `string` | The comma-separated list of MIME types for the Screenlet to support. |
 | `autoLoad` | `boolean` | Whether the list automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `layoutId` | `@layout` | The layout to use to show the View. |
-| `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. Note that you can only use comparator classes that extend `OrderByComparator<DLFileEntry>`. Liferay contains no such comparator classes. You must therefore create your own by extending `OrderByComparator<DLFileEntry>`. |
+| `obcClassName` | `string` | The name of the [`OrderByComparator` class](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/OrderByComparator.html) to use to sort the results. Omit this property if you don't want to sort the results. Note that you can only use comparator classes that extend `OrderByComparator<DLFileEntry>`. Liferay contains no such comparator classes. You must therefore create your own by extending `OrderByComparator<DLFileEntry>`. |
 
 ## Methods [](id=methods)
 

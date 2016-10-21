@@ -4,7 +4,7 @@
 
 - Xcode 7.3
 - iOS 9 SDK
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 - [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
   (only for OAuth based authentication)
 
@@ -14,7 +14,7 @@
 
 ## Features [](id=features)
 
-The `LoginScreenlet` authenticates portal users in your iOS app. The following
+The Login Screenlet authenticates portal users in your iOS app. The following
 authentication methods are supported:
 
 - Basic: uses user login and password according to 
@@ -48,15 +48,15 @@ the method `SessionContext.loadStoredCredentials()` method.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The `LoginScreenlet` using the Default and Flat7 Themes.](../../images/screens-ios-login.png)
+![The Login Screenlet using the Default (left) and Flat7 (right) Themes.](../../images/screens-ios-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 ### Basic Authentication [](id=basic-authentication)
 
-Before using `LoginScreenlet`, you should make sure your portal is configured 
-with the authentication method you want to use. You can choose email address, 
-screen name, or user ID. You can set this in the Control Panel by clicking 
+Before using Login Screenlet, you should make sure your portal is configured 
+with the authentication option you want to use. You can choose email address, 
+screen name, or user ID. You can set this in the Control Panel by selecting 
 *Portal Settings* &rarr; *Authentication*.
 
 ![Setting the authentication method in Liferay Portal.](../../images/screens-portal-auth.png)
@@ -76,7 +76,7 @@ If you want to use OAuth authentication, you first need to install the
 from Liferay's Marketplace. Once this plugin is installed, go to 
 *Control Panel &rarr; Users &rarr; OAuth Admin*, and add a new application to be 
 used from Liferay Screens. When the app is created, copy the *Consumer Key* and 
-*Consumer Secret* values for later use in `LoginScreenlet`.
+*Consumer Secret* values for later use in Login Screenlet.
 
 ![Copy the Consumer Key and Consumer Secret from OAuth Admin in your portal.](../../images/screens-portal-oauth.png)
 
@@ -99,7 +99,7 @@ connection, you can use the `saveCredentials` attribute together with the
 
 ## Delegate [](id=delegate)
 
-The `LoginScreenlet` delegates some events to an object that conforms to the 
+The Login Screenlet delegates some events to an object that conforms to the 
 `LoginScreenletDelegate` protocol. This protocol lets you implement the 
 following methods:
 

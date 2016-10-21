@@ -46,7 +46,7 @@ This screenlet has three different Themes:
 This Screenlet supports offline mode so it can function without a network 
 connection when loading or uploading images (deleting images while offline is 
 unsupported). For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
 This Screenlet supports the `remote-only`, `cache-only`, `remote-first`, and 
 `cache-first` offline mode policies. 
 
@@ -78,12 +78,12 @@ instance:
 | `folderId` | `number` | The ID of the Documents and Media repository folder that contains the image gallery. When accessing the folder in your browser, the `folderId` is at the end of the URL. |
 | `mimeTypes` | `string` | The comma-separated list of MIME types for the Screenlet to support. |
 | `filePrefix` | `string` | The prefix to use on uploaded image file names. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-0/gallery-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/6-2/image-gallery-screenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Whether a standard [iOS `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) appears when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items to display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to display on the second and subsequent pages. The default value is `25`. |
-| `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. Note that you can only use comparator classes that extend `OrderByComparator<DLFileEntry>`. Liferay contains no such comparator classes. You must therefore create your own by extending `OrderByComparator<DLFileEntry>`. To see examples of some comparator classes that extend other Document Library classes, [click here](https://github.com/liferay/liferay-portal/tree/master/portal-impl/src/com/liferay/portlet/documentlibrary/util/comparator). |
+| `obcClassName` | `string` | The name of the [`OrderByComparator` class](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/OrderByComparator.html) to use to sort the results. Omit this property if you don't want to sort the results. Note that you can only use comparator classes that extend `OrderByComparator<DLFileEntry>`. Liferay contains no such comparator classes. You must therefore create your own by extending `OrderByComparator<DLFileEntry>`. |
 
 ## Methods [](id=methods)
 
