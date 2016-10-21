@@ -1,11 +1,5 @@
 # Managing Liferay Maven Projects [](id=managing-liferay-maven-projects)
 
-Understanding ways to manage your Liferay Maven projects could greatly enhance
-your productivity as a Liferay Maven developer. You'll learn best practices for
-setting up a Liferay snapshot/release repository, and configure that repository
-in your Maven settings so you can deploy to it later. First, take a quick tour
-of how Maven artifacts are referenced from your Liferay Maven projects.
-
 When you begin using Maven to build Liferay projects, it creates a local
 repository on your machine. The default local repository typically resides in
 your `[USER_HOME]/.m2` folder. When you build Liferay projects using Maven,
