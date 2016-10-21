@@ -80,7 +80,7 @@ must be installed to allow remote calls without the `userId`.
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|

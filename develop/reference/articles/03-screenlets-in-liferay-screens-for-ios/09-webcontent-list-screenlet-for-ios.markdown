@@ -58,7 +58,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 |-----------|-----------|-------------| 
 | `groupId` | `number` | The ID of the site (group) where the web content exists. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
 | `folderId` | `number` | The ID of the web content folder. If set to `0`, the root folder is used. The default value is `0`. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Whether a standard [`UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) is shown when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items to display on the first page. The default value is `50`. |
