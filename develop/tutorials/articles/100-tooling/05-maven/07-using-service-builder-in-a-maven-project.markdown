@@ -91,7 +91,7 @@ Maven modular project. Time to get started!
       generated.
 
     <!-- The above listing may be better for a Developer Reference section of
-    configuring the Service Builder plugin.
+    configuring the Service Builder plugin. -Cody -->
 
     Visit the
     [Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-0/defining-an-object-relational-map-with-service-builder)
