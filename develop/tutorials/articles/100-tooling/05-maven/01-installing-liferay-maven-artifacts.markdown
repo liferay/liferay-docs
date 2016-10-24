@@ -17,8 +17,8 @@ First, you'll consider the installation process using remote repositories.
 There are two repositories that contain Liferay artifacts: Central Repository
 and Liferay Repository. The Central Repository is the default repository used to
 download artifacts if you don't have a remote repository configured. The Central
-Repository usually offers the latest Maven artifacts for @product@, but using
-the Liferay Repository guarantees the latest artifacts released by Liferay.
+Repository *usually* offers the latest Liferay Maven artifacts, but using the
+the Liferay Repository *guarantees* the latest artifacts released by Liferay.
 Other than a slight delay between artifact releases between the two
 repositories, they're identical. You'll learn how to reference both of them
 next.
@@ -74,7 +74,7 @@ The above configuration retrieves artifacts from Liferay's release repository.
 +$$$
 
 **Note:** Liferay also provides a
-[snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/),
+[snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/)
 that you can access by modifying the `<id>`, `<name>`, and `<url>` tags to
 point to that repo. This repository should only be used in special cases. You'll
 also need to enable accessing the snapshot artifacts:
@@ -109,8 +109,9 @@ artifacts from a local repository.
 
 ## Installing Artifacts from a Local Repository [](id=installing-artifacts-from-a-local-repository)
 
-Liferay offers a utility that lets you download all of Liferay's artifacts from
-SourceForge and install them to a Maven repository of your choice.
+Liferay offers a utility available from SourceForge that lets you download
+all of Liferay's artifacts and install them to a Maven repository of your
+choice.
 
 1.  Navigate to the [Liferay Portal](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/)
     project page in SourceForge and select the version of Liferay for which you

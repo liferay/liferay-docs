@@ -1,12 +1,12 @@
 # Creating a Maven Repository
 
 You'll frequently want to share Liferay artifacts and modules with teammates, or
-manage your repositories using a GUI. You might find Sonatype Nexus to be a
-valuable tool for managing your repositories. It's a Maven repository management
-server that facilitates creating and managing release servers, snapshot servers,
-and proxy servers. There are several other Maven repository management servers
-you can use (e.g., [Artifactory](https://www.jfrog.com/artifactory/), but this
-tutorial focuses on Nexus.
+manage your repositories using a GUI. Sonatype Nexus is a valuable tool for
+managing your repositories. It's a Maven repository management server that
+facilitates creating and managing release servers, snapshot servers, and proxy
+servers. There are several other Maven repository management servers you can use
+(e.g., [Artifactory](https://www.jfrog.com/artifactory/)), but this tutorial
+focuses on Nexus.
 
 To create a Maven repository using Nexus, first download
 [Nexus](http://www.sonatype.org/nexus/) and follow the instructions at
