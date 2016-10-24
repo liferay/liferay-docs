@@ -71,6 +71,7 @@ query that joins the Event and Location tables:
     <custom-sql>
         <sql id="com.liferay.docs.eventlisting.service.persistence.EventFinder.\
     findByEventNameEventDescriptionLocationName">
+    <![CDATA[
             SELECT Event_Event.*
             FROM Event_Event
             INNER JOIN 
@@ -79,6 +80,7 @@ query that joins the Event and Location tables:
                 (Event_Event.name LIKE ?) AND
                 (Event_Event.description LIKE ?) AND
                 (Event_Location.name LIKE ?)
+	]]>
         </sql>
     </custom-sql>
 
