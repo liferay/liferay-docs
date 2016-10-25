@@ -1,7 +1,6 @@
 package com.liferay.documentation.util;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
@@ -75,37 +74,46 @@ public class ScanLinks {
 								line.contains("](/distribute/")) {
 							//ldnUrls.add(extractLdnUrl(line, in.getLineNumber()));
 							String ldnUrl = extractLdnUrl(line, in.getLineNumber());
-							checkLdnUrl(ldnUrl, mkdFile.getName());
+							checkLdnUrl(ldnUrl, mkdFile.getName(), in.getLineNumber());
 						}
 						else if (line.contains("](www.") || line.contains("](http")) {
 							String url = extractRegularUrl(line, in.getLineNumber());
-							checkUrl(url, mkdFile.getName());
+							checkUrl(url, mkdFile.getName(), in.getLineNumber());
 						}
 					}
 				}
 				in.close();
 			}
 		}
-
+		System.out.println("Total Broken Links: " + resultsNumber);
 	}
 	
-	private static void checkLdnUrl(String url, String fileName)
-			throws ParserException {
+	private static void checkLdnUrl(String url, String fileName, int lineNumber) {
 		
-		Parser htmlParser = new Parser(url);
+		NodeList list = new NodeList();
+		
+		try {
+			Parser htmlParser = new Parser(url);
+			list = htmlParser.extractAllNodesThatMatch(new NodeClassFilter(LinkTag.class));
+		} catch (ParserException e) {
+			System.out.println(url + " in FILENAME --- " + fileName + ":" + lineNumber + " DOES NOT EXIST");
+			resultsNumber = resultsNumber + 1;
+		}
+		
 		List<String> results = new LinkedList<String>();
-		NodeList list = htmlParser.extractAllNodesThatMatch(new NodeClassFilter(LinkTag.class));
 		
 		for (int i = 0; i < list.size(); i++) {
-			
-			final LinkTag link = (LinkTag) list.elementAt(i);
-            final String linkString = link.getLink();
+
+			LinkTag link = (LinkTag) list.elementAt(i);
+			String linkString = link.getLink();
             results.add(linkString);
         }
 		
 		for (String x : results) {
 			if (x.contains("2Fsearch&#x25;2Fsearch&#x26;_3_redirect&#x3d;")) {
-				System.out.println(fileName + " --- ARTICLE " + ldnArticle + " DNE");
+				//System.out.println(fileName + " --- ARTICLE " + ldnArticle + " DNE");
+				System.out.println(ldnArticle + " in FILENAME --- " + fileName + ":" + lineNumber + " DOES NOT EXIST");
+				resultsNumber = resultsNumber + 1;
 				break;
 			}
 			else {
@@ -114,7 +122,7 @@ public class ScanLinks {
 		}
 	}
 	
-	private static void checkUrl(String url, String fileName) {
+	private static void checkUrl(String url, String fileName, int lineNumber) {
 		
 		try {
 			URL u = new URL(url);
@@ -122,7 +130,8 @@ public class ScanLinks {
 			huc.setRequestMethod("GET");
 			huc.connect();
 		} catch (IOException e) {
-			System.out.println(fileName + " --- URL " + url + " DNE");
+			System.out.println(url + " in FILENAME --- " + fileName + ":" + lineNumber + " DOES NOT EXIST");
+			resultsNumber = resultsNumber + 1;
 		}
 	}
 	
@@ -137,6 +146,7 @@ public class ScanLinks {
 			} catch (StringIndexOutOfBoundsException e) {
 				endLdnUrl = line.substring(begIndex, line.length());
 				System.out.println("Relative path on line " + lineNumber + " has incorrect link ending");
+				resultsNumber = resultsNumber + 1;
 			}
 			
 			ldnArticle = endLdnUrl;
@@ -160,11 +170,13 @@ public class ScanLinks {
 		} catch (StringIndexOutOfBoundsException e) {
 			url = line.substring(begIndex, line.length());
 			System.out.println("URL on line " + lineNumber + " has incorrect link ending");
+			resultsNumber = resultsNumber + 1;
 		}
 		
 		return url;
 	}
 
 	private static String ldnArticle;
+	private static int resultsNumber;
 
 }
