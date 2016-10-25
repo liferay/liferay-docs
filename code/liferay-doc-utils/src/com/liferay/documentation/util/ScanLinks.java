@@ -22,11 +22,13 @@ public class ScanLinks {
 	public static void main(String[] args) throws IOException, ParserException {
 
 		System.out.println("Checking for broken links ...");
-		System.out.println("This will take several minutes ...");
+		System.out.println("This may take several minutes ...");
 		
 		String docDir = args[0];
 		
-		String[] dirTypes = {"", "-dxp"};
+		//Should account for DXP article links below
+		
+		String[] dirTypes = {""};
 
 		for (String dirType : dirTypes) {
 			        
@@ -73,11 +75,11 @@ public class ScanLinks {
 						if (line.contains("](/develop/") || line.contains("](/discover/") ||
 								line.contains("](/distribute/")) {
 							//ldnUrls.add(extractLdnUrl(line, in.getLineNumber()));
-							String ldnUrl = extractLdnUrl(line, in.getLineNumber());
+							String ldnUrl = extractLdnUrl(line, in.getLineNumber(), mkdFile.getName());
 							checkLdnUrl(ldnUrl, mkdFile.getName(), in.getLineNumber());
 						}
 						else if (line.contains("](www.") || line.contains("](http")) {
-							String url = extractRegularUrl(line, in.getLineNumber());
+							String url = extractRegularUrl(line, in.getLineNumber(), mkdFile.getName());
 							checkUrl(url, mkdFile.getName(), in.getLineNumber());
 						}
 					}
@@ -135,7 +137,7 @@ public class ScanLinks {
 		}
 	}
 	
-	private static String extractLdnUrl(String line, int lineNumber) {
+	private static String extractLdnUrl(String line, int lineNumber, String fileName) {
 		
 			int begIndex = line.indexOf("](/") + 2;
 			int endIndex = line.indexOf(")", begIndex);
@@ -145,7 +147,7 @@ public class ScanLinks {
 				endLdnUrl = line.substring(begIndex, endIndex);
 			} catch (StringIndexOutOfBoundsException e) {
 				endLdnUrl = line.substring(begIndex, line.length());
-				System.out.println("Relative path on line " + lineNumber + " has incorrect link ending");
+				System.out.println("Relative path in " + fileName + ":" + lineNumber + " has incorrect link ending");
 				resultsNumber = resultsNumber + 1;
 			}
 			
@@ -158,7 +160,7 @@ public class ScanLinks {
 			return ldnUrl;
 	}
 
-	private static String extractRegularUrl(String line, int lineNumber) {
+	private static String extractRegularUrl(String line, int lineNumber, String fileName) {
 
 		
 		int begIndex = line.indexOf("](") + 2;
@@ -169,7 +171,7 @@ public class ScanLinks {
 			url = line.substring(begIndex, endIndex);
 		} catch (StringIndexOutOfBoundsException e) {
 			url = line.substring(begIndex, line.length());
-			System.out.println("URL on line " + lineNumber + " has incorrect link ending");
+			System.out.println("URL in " + fileName + ":" + lineNumber + " has incorrect link ending");
 			resultsNumber = resultsNumber + 1;
 		}
 		
