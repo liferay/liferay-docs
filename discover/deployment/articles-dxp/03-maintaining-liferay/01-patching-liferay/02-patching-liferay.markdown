@@ -5,7 +5,7 @@
 ## Installing the Patching Tool [](id=installing-the-patching-tool)
 
 If you're using a Liferay bundle, the Patching Tool is already
-installed. When an update is necessary to install a patch, the patching tool will automatically ask for an update.
+installed. When an update is necessary to install a patch, the Patching Tool will automatically ask for an update.
 
 You follow the same procedure whether you're installing or upgrading the
 Patching Tool. Once you've obtained it from the Customer Portal, unzip it anywhere in the filesystem. Generally it's a good idea to keep it together with the @product@ installation.
@@ -35,7 +35,7 @@ running Liferay before you install a patch.
 
 Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
 packs. When you receive one, either via a LESA ticket (hotfix) or through
-downloading a fix pack from the customer portal, you'll need to place it in the
+downloading a fix pack from the [Customer Portal](http://www.liferay.com/group/customer/home), you'll need to place it in the
 `patches` folder, which is inside the Patching Tool's home folder. Once you've
 done that, it's a simple matter to install it. First, execute
 
@@ -44,24 +44,20 @@ done that, it's a simple matter to install it. First, execute
 This shows you a list of patches you've already installed, along with a list of
 patches that *can* be installed, from what's in the `patches` folder. 
 
-There are two ways to install patches: 
-
-- You can install patches manually
-
-To install the available patches manually, use the following steps. First, 
+To install the available patches, use the following steps. First, 
 issue the following command: 
 
     patching-tool install
 
 +$$$
 
-**Checkpoint:**
+**Note:**
 After a successful patch installation you have to delete the *osgi/state* folder
 if it exists in your Liferay Home directory.  
 
 $$$
 
-If there are new indexes created by the patch, the Patching Tool notifies you
+If there are new database indexes created by the patch, the Patching Tool notifies you
 to update them. To get the list, run this command:
 
     patching-tool index-info
@@ -86,39 +82,9 @@ Note: If there are any issues with the installed fixes, verify that there aren't
 
 $$$
 
-During the installation, patching-backup-deps.zip and patching-backup.zip files will be created and stored in the ROOT/WEB-INF folder. Do NOT delete the patching-backup-deps.zip and patching-backup.zip files.
+During the installation, patching-backup-deps.zip and patching-backup.zip files will be created and stored in the ROOT/WEB-INF folder. These files are necessary to restore the @product@'s original state, removing them would disable further patching.
 
 The patching-backup.zip file is necessary for installing future patches. This is because the patching-tool reverts the installed fix pack before installing a new one. In order to revert the installed fix pack, it examines the contents of the patching-backup.zip in order to determine what changes have been made that it needs to revert. 
-
-While removing the patching-backup.zip file does not affect the patching-tool's report of what's installed in the bundle, we do not recommend removing the file from the ROOT/WEB-INF because doing so will cause future installations to fail.
-
-### Comparing patch levels
-1) The diff command: 
- `patching-tool diff`:
-This command prints the differences between two patch levels to the output. At least one stored patch level must be available for the tool.
-
-You can pass options to filter the output to "source", "files" and "fixed-issues":
-
-- source: You will receive an output of the source differences between the two patch levels.
-- files: The output will contain only the file names.
-- fixed-issues: You will receive a list of LPS/LPEs.
-
-Liferay Support uses these numbers to track certain fixes.
-
-For the detailed usage information, please run `patching-tool help diff` command.
-
-2) Storing a patch level:
-`patching-tool store:` Manages patching level information for diff command. The command needs patches with sources to be able to prepare usable information for the "diff" command and to be able to store the actual patch level.
-
-There are four options of this command:
-
-- info: Prints the list of patches which build up the stored patch level.
-- add: This option stores the patch level which can be found in the patches directory.
-- update: Add or update patch level information.
-- rm: Removes a previously stored patch level information.
-
-Please find the usage details by running the `patching-tool help store` command.
-
 
 ### Handling Hotfixes and Patches [](id=handling-hot-fixes-and-patches)
 
@@ -183,3 +149,33 @@ just installed the patches for. This is really easy to do.
 
 In the Liferay Home folder is a folder called `work`. Remove the contents of
 this folder to clear out the cached code. Now you're ready to start your server. 
+
+
+### Comparing patch levels
+Patching Tool provides support for developers to check what have been changed between different versions. These commands can help to gather information about the different levels:
+
+1) The diff command: 
+ `patching-tool diff`:
+This command prints the differences between two patch levels to the output. At least one stored patch level must be available for the tool.
+
+You can pass options to filter the output to "source", "files" and "fixed-issues":
+
+- source: You will receive an output of the source differences between the two patch levels.
+- files: The output will contain only the file names.
+- fixed-issues: You will receive a list of LPS/LPEs.
+
+Liferay Support uses these numbers to track certain fixes.
+
+For the detailed usage information, please run `patching-tool help diff` command.
+
+2) Storing a patch level:
+`patching-tool store`: Manages patching level information for diff command. The command needs patches with sources to be able to prepare usable information for the "diff" command and to be able to store the actual patch level.
+
+There are four options of this command:
+
+- info: Prints the list of patches which build up the stored patch level.
+- add: This option stores the patch level which can be found in the patches directory.
+- update: Add or update patch level information.
+- rm: Removes a previously stored patch level information.
+
+Please find the usage details by running the `patching-tool help store` command.

@@ -1,6 +1,4 @@
-# Patching Tool 
-
-## Advanced configuration [](id=advanced-configuration)
+## Patching Tool Advanced Configuration [](id=advanced-configuration)
 
 The Patching Tool configuration file is by default placed in a its installation 
 folder and named as "*default.properties*" file.
@@ -87,7 +85,7 @@ is only valid if your `patching.mode` is `source`.
 
 +$$$
 
-**Note:** In order to patch the Liferay Digital Enterprise Source Code, please upgrade to Patching Tool 2.0.4+.
+**Note:** In order to patch the Liferay Digital Enterprise source code, please upgrade to Patching Tool 2.0.4+.
 
 $$$ 
 

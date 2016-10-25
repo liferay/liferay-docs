@@ -1,17 +1,15 @@
-# Patching Liferay [](id=patching-liferay)
+# Patch types [](id=patch-types)
 
-# Patches
+Liferay ships Digital Enterprise fixes through three different channels. Fix packs and hotfixes. You can read about the differences in this document.
 
-The fixes can be shipped in two forms and distributed as a `.zip` files.
-
-## 1. Fix-pack
+## 1. Fix pack
 On a regular schedule, the latest fixes that patch the core are bundled together
 into fix packs, which are provided to all of Liferay's customers. Fix packs
 include fixes for both the core and the application suites that ship with the
 product. 
 
 ## 2. Hotfix
-A hotfix is provided to a customer when a customer contacts Liferay about an
+A hotfix is provided to a customer when they contact Liferay about an
 emergency situation, and Liferay's support team--working with the customer--
 determines that the problem is indeed an issue with the product that needs to be
 fixed very quickly. Support fixes the bug and provides a hotfix to the customer
@@ -20,6 +18,7 @@ quickly as possible. Hotfixes can patch both the core and the application
 suites.
 
 ## Testing methods of patches
+We have extensive testing on both of our hotfixes and fix packs.
 
 **Unit tests**
 
@@ -42,6 +41,6 @@ Manual Exploratory Functional Tests are not defined in a test script, but rely o
 
 +$$$
 
-**Note:** Regression bugs have higher fix priority alongside with the security fixes, therefore, go earlier in official fix packs. Because of that, it is always recommended to stay up to date with the latest fix packs.
+**Note:** Regression bugs have higher fix priority alongside with the security fixes, therefore they are scheduled earlier into official fix packs. Because of that, it is always recommended to stay up to date with the latest fix packs.
 
 $$$
