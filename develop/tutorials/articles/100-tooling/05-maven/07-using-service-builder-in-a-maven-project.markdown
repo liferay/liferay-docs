@@ -58,42 +58,10 @@ Maven modular project. Time to get started!
     API classes are generated in the `blade.servicebuilder.api` module's
     `src/main/java` folder. You can also specify your hibernate module mappings,
     implementation directory name, model hints file, Spring configurations, SQL
-    configurations, etc. You can reference the configuration properties used in
-    the POM example below.
-
-    - `apiDirName`: The folder to generate the service API Java source files.
-    - `autoImportDefaultReferences`: Whether to automatically add default
-      references like `com.liferay.portal.ClassName`,
-      `com.liferay.portal.Resource`, and `com.liferay.portal.User`, to the
-      services.
-    - `autoNamespaceTables`: Whether to prefix table names by the namespace
-      specified in the `service.xml` file.
-    - `buildNumberIncrement`: Whether to automatically increment the
-      `build.number` property in the `service.properties` file by one at every
-      service generation.
-    - `hbmFileName`: The Hibernate Mapping file to generate.
-    - `implDirName`: The directory where the service Java source files are
-      generated.
-    - `inputFileName`: The project's `service.xml` file.
-    - `modelHintsFileName`: The model hints file for the project.
-    - `osgiModule`: Whether to generate the service layer for OSGi modules.
-    - `propsUtil`: The fully qualified class name of the service properties util
-      class to generate.
-    - `resourcesDirName`: The directory where the service non-Java files are
-      generated.
-    - `springFileName`: The service Spring file to generate.
-    - `springNamespaces`: Namespaces of Spring XML Schemas to add to the service
-      Spring file.
-    - `sqlDirName`: The directory where the SQL files are generated.
-    - `sqlFileName`: The name (relative to `sqlDir`) for the file in which the
-      SQL table creation instructions are generated.
-    - `testDirName`: The directory where integration test Java source files are
-      generated.
-
-    <!-- The above listing may be better for a Developer Reference section of
-    configuring the Service Builder plugin. -Cody -->
-
-    Visit the
+    configurations, etc. You can reference all the configurable Service Builder
+    properties in the
+    [Service Builder with Maven](/develop/reference/-/knowledge_base/7-0/service-builder-with-maven)
+    reference article. Also, visit the
     [Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-0/defining-an-object-relational-map-with-service-builder)
     tutorial for more information on defining a `service.xml` file to configure
     Service Builder.
