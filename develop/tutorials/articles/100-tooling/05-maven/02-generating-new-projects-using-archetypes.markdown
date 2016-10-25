@@ -5,9 +5,9 @@ does my Liferay portlet project need? What does a Liferay Maven Service Builder
 project look like? How do I create a Liferay Maven-based context contributor?
 These questions can be answered with three words: Liferay Maven Archetypes.
 
-Liferay provides a slew of Maven archetypes for easy Liferay module project
-generation. In this tutorial, you'll learn how to use Liferay's Maven archetypes
-to generate the module project you desire.
+Liferay provides a slew of Maven archetypes for easy Liferay module project. In
+this tutorial, you'll learn how to use Liferay's Maven archetypes to generate
+the module project you desire.
 
 At the time of this writing, Liferay provides just under 40 Maven archetypes for
 you to use; expect this number to continue growing! These archetypes are
@@ -45,7 +45,7 @@ generation process.
 +$$$
 
 **Note:** If you're creating a JSF portlet using Liferay Faces, you can find
-archetype generation examples at
+example archetype declarations for JSF component suites at
 [http://www.liferayfaces.org/](http://www.liferayfaces.org/). 
 
 $$$

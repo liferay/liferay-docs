@@ -64,7 +64,7 @@ You'll learn how to deploy your Liferay module automatically next.
       [`configuration` tag](https://maven.apache.org/pom.html#Plugins), which
       configures and runs an Ant target from the POM. The logic above creates a
       `build-maven-deploy.xml` file in your project's build folder (e.g.,
-      `/target`), containing the Ant target specified. That file is then
+      `/target`) containing the Ant target specified. That file is then
       executed, which copies any JAR or WAR file from your Maven project's build
       folder to your @product@ instance's deployment folder. You'll configure
       the deployment folder next.

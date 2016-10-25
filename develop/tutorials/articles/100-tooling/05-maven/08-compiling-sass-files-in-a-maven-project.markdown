@@ -51,11 +51,11 @@ You'll learn how to apply Liferay's CSS builder to your Maven project next.
     - The
       [`configuration` tag](https://maven.apache.org/pom.html#Plugins) defines
       two important properties:
-          - `portalCommonPath`: The file path for the
-            [Liferay Frontend Common CSS JAR](https://mvnrepository.com/artifact/com.liferay/com.liferay.frontend.css.common)
-            file.
-          - `docrootDirName`: The base `resources` folder containing the Sass
-            files to compile.
+        - `portalCommonPath`: The file path for the
+          [Liferay Frontend Common CSS JAR](https://mvnrepository.com/artifact/com.liferay/com.liferay.frontend.css.common)
+          file.
+        - `docrootDirName`: The base `resources` folder containing the Sass
+          files to compile.
 
 2.  Initiate the appropriate Maven command to compile your Maven project's Sass
     files:
@@ -63,8 +63,7 @@ You'll learn how to apply Liferay's CSS builder to your Maven project next.
         mvn liferay:build-css
 
     Since the `build-css` goal is configured as a part of the `generate-sources`
-    phase, this is called automatically by running `mvn generate-sources` or a
-    parent phase of `generate-sources` (e.g., `mvn verify`, `mvn compile`,
-    etc.).
+    phase, this is also invoked by running `mvn generate-sources` or a parent
+    phase of `generate-sources` (e.g., `mvn verify`, `mvn compile`, etc.).
 
 Awesome! You can now compile Sass files in your Liferay Maven project.

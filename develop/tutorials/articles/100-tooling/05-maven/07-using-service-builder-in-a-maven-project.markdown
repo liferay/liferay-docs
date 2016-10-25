@@ -93,7 +93,7 @@ Maven modular project. Time to get started!
 
 Terrific! You've successfully configured your Maven project to use Service
 Builder by applying the `com.liferay.portal.tools.service.builder` and
-`com.liferay.portal.tools.wsdd.builder` modules in your project's POM. To run
+`com.liferay.portal.tools.wsdd.builder` plugins in your project's POM. To run
 Service Builder, see the
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 tutorial for instructions.
