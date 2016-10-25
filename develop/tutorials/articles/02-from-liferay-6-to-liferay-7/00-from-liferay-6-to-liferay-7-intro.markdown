@@ -1,4 +1,4 @@
-# From Liferay 6 to @product@ 7 [](id=from-liferay-6-to-liferay-7)
+# From Liferay 6 to @product-full@ 7 [](id=from-liferay-6-to-liferay-7)
 
 Becoming familiar with a platform as large and fully featured as Liferay is 
 a big task. You learn the ins and outs of what it can do, the tips and best 
@@ -13,7 +13,7 @@ And then there's a major upgrade and everything changes.
 
 This can be disheartening, as what was once familiar now seems alien, and what 
 once made you proficient now works differently. But we have good news for you. 
-@product@ 7 contains lots of improvements for developers; and this tutorial 
+@product-full@ 7 contains lots of improvements for developers; and this tutorial 
 series--or Learning Path--shows you how to make the best of them. You'll also 
 learn that yes, while a lot of things have changed, they've changed for the 
 better, and yet Liferay still works in ways that you'll find are familiar. In 
@@ -21,18 +21,18 @@ other words, since you already know previous versions of Liferay, you're
 several steps ahead of everybody else. 
 
 This Learning Path shows Liferay developers all the architectural improvements 
-that @product@ 7 offers. It describes the benefits of @product@ 7 for developers 
+that @product-full@ 7 offers. It describes the benefits of @product-full@ 7 for developers 
 compared to previous versions, the changes that modularity brings, how to 
 develop modules and how they differ from plugins, and includes comprehensive 
 tutorials on how to upgrade existing projects.
 
 You'll be able to apply your existing knowledge of portlet and theme development
-and portal customization to @product@ 7 too. To help you upgrade your existing 
+and portal customization to @product-full@ 7 too. To help you upgrade your existing 
 plugins, you'll see all the options, learn the pros and cons of each, and 
-examine common steps for adapting your plugins to @product@ 7. Finally, you'll 
+examine common steps for adapting your plugins to @product-full@ 7. Finally, you'll 
 learn how and when to modularize plugins.
 
-In the end, we believe you'll both want to adopt @product@ 7, and you'll see 
+In the end, we believe you'll both want to adopt @product-full@ 7, and you'll see 
 how you can thrive using it.
 
 The first thing to examine is what’s changed the most since Liferay 6 and then 

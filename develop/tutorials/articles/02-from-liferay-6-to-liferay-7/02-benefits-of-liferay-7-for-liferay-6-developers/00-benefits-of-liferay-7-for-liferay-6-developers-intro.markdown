@@ -1,6 +1,6 @@
 # Benefits of @product-full@ 7 for Liferay 6 Developers [](id=benefits-of-liferay-7-for-liferay-6-developers)
 
-More than in any other @product@ release, @product-full@ 7 centers on you, the
+More than in any other Liferay release, @product-full@ 7 centers on you, the
 developer. Liferay's platform has been rebuilt, making it easier to build on and
 maintain, and providing more new developer features than any previous Liferay
 release.
