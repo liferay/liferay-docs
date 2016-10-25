@@ -1,4 +1,4 @@
-# Service Builder with Maven
+# Service Builder with Maven [](id=service-builder-with-maven)
 
 You can add the Liferay
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)

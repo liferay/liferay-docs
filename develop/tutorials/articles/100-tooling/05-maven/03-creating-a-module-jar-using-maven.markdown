@@ -1,4 +1,4 @@
-# Creating a Module JAR Using Maven
+# Creating a Module JAR Using Maven [](id=creating-a-module-jar-using-maven)
 
 If you have an existing Liferay module built with Maven that you created from
 scratch, or you're upgrading your Maven project from a previous version of

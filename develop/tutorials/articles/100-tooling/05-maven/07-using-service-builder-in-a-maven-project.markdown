@@ -1,4 +1,4 @@
-# Using Service Builder in a Maven Project
+# Using Service Builder in a Maven Project [](id=using-service-builder-in-a-maven-project)
 
 Liferay's
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)

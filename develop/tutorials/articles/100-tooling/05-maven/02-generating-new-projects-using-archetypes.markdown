@@ -1,4 +1,4 @@
-# Generating New Projects Using Archetypes
+# Generating New Projects Using Archetypes [](id=generating-new-projects-using-archetypes)
 
 Creating Maven projects from scratch can be a lot of work. What dependencies
 does my Liferay portlet project need? What does a Liferay Maven Service Builder

@@ -1,4 +1,4 @@
-# Maven
+# Maven [](id=maven)
 
 Liferay provides plugins that you can apply to your Maven project. This section
 contains reference documentation describing configuration properties you can

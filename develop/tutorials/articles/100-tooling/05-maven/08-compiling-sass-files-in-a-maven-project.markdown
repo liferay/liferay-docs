@@ -1,4 +1,4 @@
-# Compiling Sass Files in a Maven Project
+# Compiling Sass Files in a Maven Project [](id=compiling-sass-files-in-a-maven-project)
 
 If your Liferay Maven project uses Sass files to style its provided UI, you'll
 need to configure the project to compile those files. The Maven build system
