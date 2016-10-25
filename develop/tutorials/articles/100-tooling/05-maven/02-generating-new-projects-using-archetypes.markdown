@@ -42,6 +42,14 @@ Visit Maven's
 documentation for further details on how to modify the Maven archetype
 generation process.
 
++$$$
+
+**Note:** If you're creating a JSF portlet using Liferay Faces, you can find
+archetype generation examples at
+[http://www.liferayfaces.org/](http://www.liferayfaces.org/). 
+
+$$$
+
 As an example, you'll create a Liferay MVC portlet using its Liferay Maven
 archetype.
 
@@ -84,5 +92,5 @@ in that folder, your module project is automatically accounted for there:
 The Liferay Maven archetypes generate deployable Liferay module projects, but
 they're bare bones, and will likely require further customizations.
 
-If you're looking to generate a quick foundation for a Liferay Maven module,
-using Liferay Maven archetypes is your best option.
+If you're looking to generate a quick foundation for a Liferay module built with
+Maven, using Liferay Maven archetypes is your best option.

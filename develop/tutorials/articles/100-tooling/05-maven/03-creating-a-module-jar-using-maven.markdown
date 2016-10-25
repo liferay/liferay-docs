@@ -1,8 +1,8 @@
 # Creating a Module JAR Using Maven
 
-If you have an existing Liferay Maven module project that you created from
-scratch, or you're upgrading your project from a previous version of
-Liferay, your Maven project may not be configured to generate an executable OSGi
+If you have an existing Liferay module built with Maven that you created from
+scratch, or you're upgrading your Maven project from a previous version of
+Liferay, your project may not be configured to generate an executable OSGi
 JAR. Don't fret! You can configure your project to generate a deployable Liferay
 OSGi JAR by making a few minor configurations in your module's POMs.
 
@@ -23,7 +23,7 @@ Continue on to see how this is done.
         <plugin>
             <groupId>biz.aQute.bnd</groupId>
             <artifactId>bnd-maven-plugin</artifactId>
-            <version>3.2.0</version>
+            <version>3.3.0</version>
             <executions>
                 <execution>
                     <goals>
@@ -37,6 +37,16 @@ Continue on to see how this is done.
     `MANIFEST.MF`) and inserts them into the generated
     `[Maven Project]/target/classes` folder. This plugin prepares your module to
     be packaged as an OSGi JAR deployable to @product@.
+
+    +$$$
+
+    **Note:** Although WABs can be generated using the `bnd-maven-plugin`, this
+    is not supported by Liferay. WABs should be created as a standard WAR
+    project and deployed to the
+    [Liferay WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator),
+    which generates a WAB for you.
+
+    $$$
 
 2.  In your project's `pom.xml` file, add the
     [Maven JAR Plugin](http://maven.apache.org/plugins/maven-jar-plugin/)
