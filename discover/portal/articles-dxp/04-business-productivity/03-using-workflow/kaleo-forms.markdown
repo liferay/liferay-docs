@@ -36,7 +36,7 @@ $$$
 The Kaleo Forms Admin application tool accessible in the Site Administration
 section of each site. Make sure intended users of your Kaleo Processes have
 access to the application. See the article on [roles and
-permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) f
+permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) if
 you're unsure how that works.
 
 The simple example shown below demonstrates using a field set and workflow
