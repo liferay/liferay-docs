@@ -1,6 +1,6 @@
 # Migrating a Theme from the Plugins SDK to the Themes Generator [](id=migrating-a-6-2-theme-to-liferay-7)
 
-After you've upgraded your existing theme to @product@ 7, the Themes Generator
+After you've upgraded your existing theme to @product-full@ 7, the Themes Generator
 offers enhanced development features and tools for optimizing your theme and
 streamlining theme management. To introduce one of its most powerful features,
 we'll pose some questions. 
@@ -25,7 +25,7 @@ project. The Themes Generator is a Node.js-based tool that gives you access to
 an array of  [theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks),
 that facilitate developing and managing themes. 
 
-The *upgrade* Gulp task upgrades Liferay 6 themes to @product@ 7. For details,
+The *upgrade* Gulp task upgrades Liferay 6 themes to @product-full@ 7. For details,
 refer to the [Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/themelets/upgrading-themes)
 tutorial. 
 
