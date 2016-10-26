@@ -365,9 +365,8 @@ respectively.
 
 ## Building Your Module JARs for Deployment [](id=building-your-module-jars-for-deployment)
 
-Now it's time to build your modules and deploy them to your @product-ver@
-instance. To build your project, run `gradle build` from your project's root
-directory.
+Now it's time to build your modules and deploy them to your @product@ instance.
+To build your project, run `gradle build` from your project's root directory.
 
 +$$$
 

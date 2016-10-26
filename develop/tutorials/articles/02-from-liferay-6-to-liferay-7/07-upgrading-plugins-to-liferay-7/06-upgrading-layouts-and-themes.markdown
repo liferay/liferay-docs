@@ -24,16 +24,16 @@ section.
 
 Since Liferay IDE and Liferay Developer Studio version 3.0, the Code Upgrade
 Tool has been available to use. The Code Upgrade Tool runs through your code,
-points out the @product-ver@ breaking changes, and suggest how to update it. Follow
+points out the breaking changes, and suggest how to update it. Follow
 these steps to upgrade your layout template to @product-ver@.
 
 1.  Right-click on your layout template project in the *Package Explorer*, and 
-    select *Liferay* &rarr; *Find @product-ver@ breaking API changes*.
+    select *Liferay* &rarr; *Find Liferay 7 breaking API changes*.
     
     Figure 1: The Code Upgrade Tool finds the breaking changes in your code and suggests how to fix them. ../../../images/upgrading-layouts-find-api-breaking-changes.png
     
     The breaking changes and suggested fixes are listed in the 
-    *@product-ver@ Migration Problems* tab of the workspace. At the moment, only a 
+    *Liferay 7 Migration Problems* tab of the workspace. At the moment, only a 
     `Code Problems` folder is shown. You'll have to select a file first, in 
     order to see the related breaking changes.
     
@@ -42,7 +42,7 @@ these steps to upgrade your layout template to @product-ver@.
     
     Now you can see the problems listed, with suggested fixes listed below.
     
-    Figure 2: Breaking changes are listed in the *@product-ver@ Migration Problems* tab. ../../../images/upgrading-layouts-list-of-breaking-changes.png
+    Figure 2: Breaking changes are listed in the Liferay 7 Migration Problems* tab. ../../../images/upgrading-layouts-list-of-breaking-changes.png
     
     In this case, there is only one problem listed.
     
@@ -52,7 +52,7 @@ these steps to upgrade your layout template to @product-ver@.
     Currently the `liferay-versions` property is set to 6.2. The Code Upgrade
     Tool can fix this.
     
-3.  Right-click on the problem in the *@product-ver@ Migration Problems* tab and
+3.  Right-click on the problem in the *Liferay 7 Migration Problems* tab and
     select *Correct automatically*.
     
     Figure 3: The Code Upgrade Tool can automatically update some breaking changes for you. ../../../images/upgrading-layouts-correct-automatically.png
@@ -72,7 +72,7 @@ template. If you followed the steps in the last section, you can skip to step 2.
 Upgrading a layout template involves updating its Liferay version and updating
 the class syntax for its rows and columns.
 
-Follow these steps to upgrade your layout template for @product-ver@:
+Follow these steps to upgrade your layout template:
 
 1.  Open your `liferay-plugin-package.properties` file and update the 
     `liferay-versions` property to `7.0.0+`:

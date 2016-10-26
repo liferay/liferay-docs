@@ -73,7 +73,7 @@ You're ready to adapt the plugin to @product-ver@!
 Now that you've imported your plugin project to Liferay IDE or Developer Studio,
 you probably see compile errors for some of the Liferay classes it uses.
 They're listed as undefined classes or unresolved symbols because they've been
-moved, renamed, or removed. As a part of modularization in @product-ver@, many of
+moved, renamed, or removed. As a part of modularization in @product@, many of
 these classes reside in new modules.
 
 You need to resolve all of these Liferay classes for your plugin. Some of the
@@ -354,7 +354,7 @@ To start the Code Upgrade Tool, follow these steps:
 
 1. In the *Project Explorer*, right-select your plugin project.
 
-2. Select *Liferay &rarr; Find @product-ver@ breaking API changes*
+2. Select *Liferay &rarr; Find Liferay 7 breaking API changes*
 
 The following view appears.
 

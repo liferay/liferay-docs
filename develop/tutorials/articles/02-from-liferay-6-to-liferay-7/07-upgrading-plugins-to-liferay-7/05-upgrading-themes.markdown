@@ -373,7 +373,7 @@ In Liferay 6.2, the CSS file `aui.css`  defined the Font Awesome icon paths. In
 
 **Note:** In @product-ver@, the `aui.css` file holds the `lexicon-base` style
 import. The [Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide)
-describes all the @product-ver@ theme files.
+describes all the @product@ theme files.
 
 $$$
 

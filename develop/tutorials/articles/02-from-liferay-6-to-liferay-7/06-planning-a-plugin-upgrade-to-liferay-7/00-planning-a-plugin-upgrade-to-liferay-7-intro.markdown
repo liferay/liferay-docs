@@ -1,8 +1,8 @@
 # Planning a Plugin Upgrade to @product-ver@ [](id=migrating-existing-code-to-liferay-7)
 
 You've probably heard the term *modularity* discussed frequently in relation to
-@product-ver@. With @product-ver@ being a modular platform, Liferay applications are
-now composed of one or more
+@product-ver@. With it being a modular platform, Liferay applications are now
+composed of one or more
 [modules](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module).
 
 A module doesn't use the traditional Liferay application structure from previous
@@ -93,6 +93,6 @@ adapting plugins to @product-ver@'s API.
 
 **Related Topics**
 
-<!--[Adapting to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
+[Adapting to @product-ver@'s API](/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
