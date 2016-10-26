@@ -19,6 +19,19 @@ You probably already know which service you'll be using, but before skipping to 
 relevant section consider what scope you want to affect when configuring
 authentication.
 
+## SSO [](id=sso)
+
+Single Sign-On solutions allow you to provide a single login credential for
+multiple systems. This allows you to have people authenticate to the Single
+Sign-On product and they will be automatically logged in to Liferay and to other
+products as well.
+
+Liferay supports several single sign-on solutions. Of course, if your product is
+not yet supported, you may choose to implement support for it yourself by use of
+the extension environment. Alternatively, your organization can choose to
+sponsor support for it. Please contact `sales@liferay.com` for more information
+about this.
+
 ## Authentication Configuration Scope [](id=authentication-configuration-scope)
 
 Many of the authentication configurations covered here can be made in two
@@ -71,14 +84,8 @@ In* link.
 
 CAS is an authentication system originally created at Yale University. It is a
 widely-used open source single sign-on solution and was the first SSO product to
-be supported by Liferay.
-
-Please follow the documentation for CAS to install it on your application server
-of choice.
-
-Your first step will be to copy the CAS client JAR file to Liferay's library
-folder. On Tomcat, this is in `[Tomcat Home]/webapps/ROOT/WEB-INF/lib`. Once you
-do this, the CAS client will be available to Liferay the next time you start it.
+be supported by Liferay. Liferay's CAS module includes the CAS client, so
+there's no need to install it separately.
 
 The CAS Server application requires a properly configured Secure Socket Layer
 certificate on your server to work. If you wish to generate one yourself, you
@@ -468,36 +475,4 @@ directory servers.
 Because Atlassian Crowd implements an OpenID producer, Liferay works and has
 been tested with it. Simply use the OpenID authentication feature in Liferay to
 log in using Crowd.
-
-## Authentication: SiteMinder [](id=authentication-siteminder)
-
-SiteMinder is a single sign-on implementation from Computer Associates. Liferay
-5.2 introduced built-in integration with SiteMinder. SiteMinder uses a custom
-HTTP header to implement its single sign-on solution.
-
-To enable SiteMinder authentication in Liferay, check the *Enabled* box on the
-*SiteMinder* tab. If you are also using LDAP with Liferay, you can check the
-*Import from LDAP* box. If this box is checked, users authenticated from
-SiteMinder who do not exist in Liferay will be imported from LDAP.
-
-The last field defines the header SiteMinder is using to keep track of the user.
-The default value is already populated. If you have customized the field for
-your installation, enter the custom value here.
-
-When you are finished, click *Save*. Now that we've looked at various options
-for integrating existing users into Liferay, let's look at other Liferay portal
-settings.
-
-## SSO [](id=sso)
-
-Single Sign-On solutions allow you to provide a single login credential for
-multiple systems. This allows you to have people authenticate to the Single
-Sign-On product and they will be automatically logged in to Liferay and to other
-products as well.
-
-Liferay supports several single sign-on solutions. Of course, if your product is
-not yet supported, you may choose to implement support for it yourself by use of
-the extension environment. Alternatively, your organization can choose to
-sponsor support for it. Please contact `sales@liferay.com` for more information
-about this.
 
