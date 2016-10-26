@@ -5,12 +5,13 @@ adapter, using a Liferay instance as either the Service Provider (SP) or the
 Identity Provider (IdP). This article provides the conceptual framework for
 Liferay's SSO solution.
 
--  Single Sign On
-        -  Identity Provider initiated SSO
-        -  Service Provider initiated SSO
--  Single Log Off
-        -  Identity Provider initiated SLO
-        -  Service Provider initiated SLO
+- Single Sign On
+    - Identity Provider initiated SSO
+    - Service Provider initiated SSO
+
+- Single Log Off
+    - Identity Provider initiated SLO
+    - Service Provider initiated SLO
 
 +$$$
 
@@ -21,8 +22,8 @@ purposes (for example, one instance is the SP and another is the IdP).
 $$$
 
 After reading here, see the next article on [Setting Up
-SAML](/discover/portal/-/knowledge_base/7-0/setting-up-saml) for instructions on
-using the [SAML
+SAML](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/setting-up-saml)
+for instructions on using the [SAML
 adapter](https://web.liferay.com/marketplace/-/mp/application/15188711). Use the
 instructions to make the conceptual magic from this article come to life!  Yeah,
 that was a lame attempt to get you excited about configuring SSO--just keep
@@ -162,7 +163,7 @@ initiating SSO).
 ## Single Log Off [](id=single-log-off)
 
 The Single Log Off request is sent from the user's browser to either the IdP or
-to a SP, and the SLO flow differs in each case. First consider Idp initiated
+to a SP, and the SLO flow differs in each case. First consider IdP initiated
 SLO.
 
 ### Identity Provider Initiated SLO [](id=identity-provider-initiated-slo)
@@ -259,4 +260,5 @@ initiating SP terminates its SAML session and logs the user out.
 
 ## Related Topics [](id=related-topics)
 
-- [Configuring Liferay as an IdP or SP (not yet written)]()
+- [Setting Up SAML](/discover/deployment/-/knowledge_base/7-0/setting-up-saml)
+- [Token-Based SSO Authentication](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/token-based-single-sign-on-authentication)

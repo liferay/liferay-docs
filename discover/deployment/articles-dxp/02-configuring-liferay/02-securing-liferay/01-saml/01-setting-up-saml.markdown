@@ -2,12 +2,13 @@
 
 SAML is an XML-based open standard data format for exchanging authentication and
 authorization data between parties known as an identity provider and a service
-provider. For more fundamental information on SAML and Lifera, refer to the
-[introductory SAML](/discover/deployment/-/knowledge_base/7-0/saml). An identity
-provider is a trusted provider that enables users to use single sign-on to
-access other websites. A service provider is a website that hosts applications
-and grants access only to identified users with proper credentials. SAML is
-maintained by the OASIS Security Services Technical Committee. See
+provider. For more fundamental information on SAML and Liferay, refer to the
+[introductory SAML](/discover/deployment/-/knowledge_base/7-0/saml). 
+
+An identity provider is a trusted provider that enables users to use single
+sign-on to access other websites. A service provider is a website that hosts
+applications and grants access only to identified users with proper credentials.
+SAML is maintained by the OASIS Security Services Technical Committee. See
 [https://www.oasis-open.org/committees/security/](https://www.oasis-open.org/committees/security/)
 for more information. Liferay 6.1 EE and later versions support SAML 2.0
 integration via the [Liferay Saml 2.0
@@ -275,15 +276,12 @@ you already set up one Liferay instance as a SAML Identity Provider, use a
     overwrite the previously saved metadata URL by specifying a metadata XML
     file.
 
-    Currently, the SAML Providerplugin does not provide a way to "clear"
+    Currently, the SAML Provider plugin does not provide a way to "clear"
     the SAML IdP metadata URL or metadata XML file fields using the Control
     Panel UI. If you really need to clear these fields, it's possible (but not
     recommended) to delete the contents of the SAML IdP metadata URL and
     metadata XML file columns of the `SamlSpIdpConnection` table of Liferay's
-    database. (A way to "clear" the SAML IdP metadata URL or metadata XML file
-    fields using the Control Panel UI has been requested as a feature. You can
-    track the issue progress here:
-    [https://issues.liferay.com/browse/LPS-59199](https://issues.liferay.com/browse/LPS-59199)).
+    database.
 
 6. Finally, after you save your certificate and private key information and
    configure an Identity Provider connection, check the *Enabled* box at the top
@@ -436,6 +434,9 @@ If your situation fits the scenario described above, follow these steps:
 1. Configure one node of your Liferay cluster as a SAML service provider using
    the instructions of the previous section.
 
+<!-- This step is maybe unnecessary. Pending feedback form Mika, delete it and
+refactor the remaining steps. -->
+
 2. Ensure that this Liferay node is using the fully qualified name of the load
    balancer (e.g., `FQN.LB.HOST`) as the value of the `web.server.host` property
    in the node's `portal-ext.properties` file.
@@ -475,6 +476,6 @@ If your situation fits the scenario described above, follow these steps:
    a few pages of a few different sites, and then log out.
 
 Now you know how to configure Liferay either as a SAML identity provider
-or a service provider. You also know how to configure the Liferay SAML in a
+or a service provider. You also know how to configure SAML in a
 clustered environment.
 
