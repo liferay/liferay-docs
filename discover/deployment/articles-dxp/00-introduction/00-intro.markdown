@@ -8,8 +8,6 @@ shared hosting account, on a multi-node cluster running a commercial application
 server, or on anything in between. In fact, Liferay is used successfully in all
 of these scenarios every day.
 
-## Platform components
-
 ## Supported Platforms and Limitations
 @product@ supports several different environments. The detailed and updated list is always available on the Customer Portal at
 [https://www.liferay.com/group/customer](https://www.liferay.com/group/customer) under the Support Matrix links.
@@ -20,7 +18,7 @@ Applications developed by Liferay, such as Audience Targeting, might be availabl
 
 The selection of an appropriate architecture is one of the first decisions in your deployment path. To select an appropriate architecture, you must consider:
 
-* Information Security: Securing sensitive hardware and information from malicious attack  and intrusion
+* Information Security: Securing sensitive hardware and information from malicious attack and intrusion
 * Performance: Supporting the desired number of total users, concurrent transactions, etc.
 * Fault Tolerance: Maintaining uptime during unexpected failure or scheduled maintenance
 * Flexibility and Scalability: Designing an expandable architecture to support additional features and users without significant redesign
@@ -43,9 +41,9 @@ The hardware deployed within each tier varies depending on the type of transacti
 
 ### Virtualized and Cloud Deployments
 
-While the reference architecture describes a physical deployment, the same concepts may be applied to a cloud based or virtualized deployment.Many Liferay customers choose to deploy on either public clouds (e.g. Amazon EC2) or their own private clouds (e.g. VMWare VSX based private cloud).Each physical machine may be replaced by appropriate quantities of virtual machines.
+While the reference architecture describes a physical deployment, the same concepts may be applied to a cloud based or virtualized deployment. Many Liferay customers choose to deploy on either public clouds (e.g. Amazon EC2) or their own private clouds (e.g. VMWare VSX based private cloud).Each physical machine may be replaced by appropriate quantities of virtual machines.
 
-In the virtualized deployments, it is critical to allocate sufficient CPU resources. For instance,  for systems deployed to Amazon AWS, allocated CPUs are calculated using Amazon EC2 Compute Units. However, 1 Compute Unit does not equal to 1 physical CPU or even 1 core on a CPU. In Amazon's terms, each application server used in the reference architecture equates to roughly a "Cluster Compute Quadruple Extra Large Instance," or 33.5 EC2 Compute Units. Thus, to properly plan the virtualized/ cloud deployment, customers must account for not only virtualization overhead, but also ensure allocation of sufficient CPU resources.
+In the virtualized deployments, it is critical to allocate sufficient CPU resources. For instance, for systems deployed to Amazon AWS, allocated CPUs are calculated using Amazon EC2 Compute Units. However, 1 Compute Unit does not equal to 1 physical CPU or even 1 core on a CPU. In Amazon's terms, each application server used in the reference architecture equates to roughly a "Cluster Compute Quadruple Extra Large Instance," or 33.5 EC2 Compute Units. Thus, to properly plan the virtualized / cloud deployment, customers must account for not only virtualization overhead, but also ensure allocation of sufficient CPU resources.
 
 ### Fault Tolerance
 
@@ -56,17 +54,19 @@ The depicted reference architecture represents the minimum deployment units to e
 Multi-data-center fault tolerant architectures are not provided as part of the reference architecture.
 
 ### Performance
+
 Each deployment's performance characteristics will vary depending on the type of activity and the performance of custom application elements. Liferay Engineering has created a series of scenarios to benchmark Liferay Digital Enterprise's out of the box performance characteristics for content management, collaboration and social enterprise scenarios. Results from these reference architectures have indicated Liferay Digital Enterprise can support over 22,000 virtual collaboration users and over 150,000 logins per minute with an average login time of 300 milliseconds. Liferay Digital Enterprise accomplished this load within the reference architecture while utilizing no more than 40% of CPU resources in the Web Tier, 86% of CPU resources in the Application Tier, and 50% of CPU resources in the Database Tier.
 
 ### Scalability
 
-Liferay Engineering's testing has shown Liferay Digital Enterprise to scale linearly. Thus, if you  know a single application server supports X virtual users and assuming sufficient database and web server resources, you may calculate the total number of application servers required.
+Liferay Engineering's testing has shown Liferay Digital Enterprise to scale linearly. Thus, if you know a single application server supports X virtual users and assuming sufficient database and web server resources, you may calculate the total number of application servers required.
 
 ### Security
 
 The firewall preceding the Load Balancer Tier will provide sufficient intrusion detection and prevention. However, depending on your organization's information security requirements, you may introduce additional firewall layers between each tier to further secure the infrastructure.
 
 ### Environment types
+Before starting to plan your @product@ deployment, it's important to include different environments to be able to maintain the projects. Liferay uses the following terminology for systems:
 
 #### Development
 
