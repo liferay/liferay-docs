@@ -1,4 +1,4 @@
-# Document Repository Configuration
+# Document Repository Configuration [](id=document-repository-configuration)
 
 By default, @product@ uses a document library store option called Simple File
 Store to store documents and media files on the file system (local or mounted)
@@ -6,7 +6,7 @@ of the server @product@'s running on. The store's default root directory is
 `[Liferay Home]/data/document_library`. You can specify a different root
 directory from within [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings).
 To access System Settings, open the *Menu*
-(![Menu](../../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
+(![Menu](../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
 Configuration &rarr; System Settings*. From System Settings, navigate to
 *Platform* and then search for and select the entry *Simple File System Store*.
 For the store's *Root dir* value, specify a path relative to the [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
