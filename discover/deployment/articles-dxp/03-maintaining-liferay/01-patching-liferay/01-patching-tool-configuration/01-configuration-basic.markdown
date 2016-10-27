@@ -1,4 +1,4 @@
-# Basic configuration [](id=patching-tool-basic-configuration)
+# Patching Tool Basic configuration [](id=patching-tool-basic-configuration)
 
 There are two ways to configure the Patching Tool:
 
