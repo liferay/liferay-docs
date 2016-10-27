@@ -6,7 +6,7 @@
 
 - Xcode 7.3
 - iOS 9 SDK
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 - Liferay Screens Compatibility Plugin
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
@@ -18,7 +18,7 @@
 
 ## Features [](id=features)
 
-The `WebContentDisplayScreenlet` shows web content elements in your app, 
+The Web Content Display Screenlet shows web content elements in your app, 
 rendering the inner HTML of the web content. The Screenlet also supports i18n, 
 rendering contents differently depending on the device's current locale. 
 
@@ -28,14 +28,16 @@ rendering contents differently depending on the device's current locale.
 
 ## Themes [](id=themes)
 
+- Default
+
 The Default Theme uses a standard `UIWebView` to render the HTML. Other Themes 
 may use a different component, such as iOS 8's. 
 
-![The `WebContentDisplayScreenlet` using the Default (`default`) Theme](../../images/screens-ios-webcontent.png)
+![The Web Content Display Screenlet using the Default (`default`) Theme](../../images/screens-ios-webcontent.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
-For the `WebContentDisplayScreenlet` to function properly, there should be web 
+For the Web Content Display Screenlet to function properly, there should be web 
 content in the Liferay instance your app connects to. For more details on web 
 content, please refer to the [Web Content Management](/portal/-/knowledge_base/6-2/web-content-management) 
 section of the Liferay User Guide. 
@@ -43,7 +45,9 @@ section of the Liferay User Guide.
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
+Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -69,7 +73,7 @@ connection.
 
 ## Delegate [](id=delegate)
 
-The `WebContentDisplayScreenlet` delegates some events to an object that 
+The Web Content Display Screenlet delegates some events to an object that 
 conforms to the `WebContentDisplayScreenletDelegate` protocol. This protocol 
 lets you implement the following methods:
 

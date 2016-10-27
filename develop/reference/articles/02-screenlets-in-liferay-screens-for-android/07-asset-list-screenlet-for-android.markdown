@@ -3,7 +3,7 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP
 - Liferay Screens Compatibility Plugin
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
@@ -15,10 +15,10 @@
 
 ## Features [](id=features)
 
-The `AssetListScreenlet` can be used to show [asset](/tutorials/-/knowledge_base/6-2/asset-framework) 
+The Asset List Screenlet can be used to show [asset](/tutorials/-/knowledge_base/6-2/asset-framework) 
 lists from a Liferay instance. For example, you can use the Screenlet to show a 
 scrollable list of assets. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
-with configurable page size. The `AssetListScreenlet` can show assets belonging 
+with configurable page size. The Asset List Screenlet can show assets belonging 
 to the following classes:
 
 - `Group`
@@ -49,7 +49,7 @@ to the following classes:
 - `WikiPageResource`
 - `WikiNode`
 
-The `AssetListScreenlet` also supports i18n in asset values.
+The Asset List Screenlet also supports i18n in asset values.
 
 ## Module [](id=module)
 
@@ -57,17 +57,20 @@ The `AssetListScreenlet` also supports i18n in asset values.
 
 ## Views [](id=views)
 
+- Default
+- Material
+
 The Default Views use a standard `RecyclerView` to show the scrollable list. 
 Other Views may use a different component, such as `ViewPager` or others, to 
-show the items.
+show the items. 
 
-![`AssetListScreenlet` using the Default and Material Viewsets.](../../images/screens-android-assetlist.png)
+![Asset List Screenlet using the Default (left) and Material (right) Views.](../../images/screens-android-assetlist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 Dynamic Data Lists (DDL) and Data Types should be configured properly in the 
-portal. Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
-and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
+portal. Refer to the [Defining Data Types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
+and [Creating Data Lists](/discover/portal/-/knowledge_base/6-2/creating-data-lists) 
 sections of the User Guide for more details.
 
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
@@ -76,7 +79,8 @@ must be installed to allow remote calls without the `userId`.
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -95,12 +99,14 @@ connection.
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout to use to show the View.|
 | `autoLoad` | `boolean` | Whether the list should be loaded when it's presented on the screen. The default value is `true`. |
+| `groupId` | `number` | The asset's group (site) ID. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0 `. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-android#offline) for details. |
+| `portletItemName` | `string` | The archive name you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher filter (Asset Selection on configuration page), and then use the *Archive Setup* option to save this configuration with a name. Use this name in this attribute. |
+| `classNameId` | `number` | The asset class name's ID. Use values from the portal's `classname_` database table. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the list's first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
-| `groupId` | `number` | The asset's group (site) ID. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0 `. |
-| `classNameId` | `number` | The asset class name's ID. Use values from the portal's `classname_` database table. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Defining Data Types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-). Note that the appearance of these values in your app depends on the `layoutId` set. |
 | `customEntryQuery` | `HashMap` | The set of keys (string) and values (string or number) to be used in the [AssetEntryQuery object](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the portal. |
-| `portletItemName` | `string` | The archive name you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher filter (Asset Selection on configuration page), and then use the *Archive Setup* option to save this configuration with a name. Use this name in this attribute. |
 
 ## Methods [](id=methods)
 
@@ -110,16 +116,21 @@ connection.
 
 ## Listener [](id=listener)
 
-The `AssetListScreenlet` delegates some events to an object that implements the 
-`AssetListListener` interface. This interface extends from `BaseListListener` 
-and lets you implement the following methods:
+Asset List Screenlet delegates some events to an object or a class that 
+implements 
+[the `BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java). 
+This interface lets you implement the following methods: 
 
-- `onListPageReceived(BaseListScreenlet source, int page, List<AssetEntry> entries, int rowCount)`: 
-  Called when a page of assets is received. Note that this method may be called 
-  more than once; once for each page received. 
+- `onListPageFailed(int startRow, Exception e)`: Called when the server call to 
+  retrieve a page of items fails. This method's arguments include the 
+  `Exception` generated when the server call fails. 
 
-- `onListPageFailed(BaseListScreenlet source, int page, Exception e)`: Called 
-  when an error occurs in the process. 
+- `onListPageReceived(int startRow, int endRow, List<Record> records, int rowCount)`: 
+  Called when the server call to retrieve a page of items succeeds. Note that 
+  this method may be called more than once; once for each page received. Because 
+  `startRow` and `endRow` change for each page, a `startRow` of `0` corresponds 
+  to the first item on the first page. 
 
-- `onListItemSelected(BaseListScreenlet source, AssetEntry entry)`: Called when 
-  an item in the list is selected. 
+- `onListItemSelected(Record records, View view)`: Called when an item is 
+  selected in the list. This method's arguments include the selected list item 
+  (`Record`). 

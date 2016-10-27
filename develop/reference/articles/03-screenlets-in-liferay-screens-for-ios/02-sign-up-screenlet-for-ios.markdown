@@ -4,7 +4,7 @@
 
 - Xcode 7.3
 - iOS 9 SDK
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 
 ## Compatibility [](id=compatibility)
 
@@ -12,7 +12,7 @@
 
 ## Features [](id=features)
 
-The `SignUpScreenlet` creates a new user in your Liferay instance: a new user of
+The Sign Up Screenlet creates a new user in your Liferay instance: a new user of
 your app can become a new user in your portal. You can also use this Screenlet
 to save the credentials of the new user in their keychain. This enables auto
 login for future sessions. The Screenlet also supports navigation of form fields
@@ -27,14 +27,14 @@ from the keyboard of the user's device.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The `SignUpScreenlet` with the Default and Flat7 Themes.](../../images/screens-ios-signup.png)
+![The Sign Up Screenlet with the Default (left) and Flat7 (right) Themes.](../../images/screens-ios-signup.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
-The configuration related to the `SignUpScreenlet` can be set in the Control 
+The configuration related to the Sign Up Screenlet can be set in the Control 
 Panel by clicking *Portal Settings* and then *Authentication*. 
 
-![The portal settings related to the `SignUpScreenlet`.](../../images/screens-portal-signup.png)
+![The portal settings related to the Sign Up Screenlet.](../../images/screens-portal-signup.png)
 
 For more details, please refer to the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide.
@@ -61,7 +61,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 
 ## Delegate [](id=delegate)
 
-The `SignUpScreenlet` delegates some events to an object that conforms to the 
+The Sign Up Screenlet delegates some events to an object that conforms to the 
 `SignUpScreenletDelegate` protocol. If the `autologin` attribute is enabled, 
 login events are delegated to an object conforming to the 
 `LoginScreenletDelegate` protocol. Refer to the [`LoginScreenlet` documentation](LoginScreenlet.md) 

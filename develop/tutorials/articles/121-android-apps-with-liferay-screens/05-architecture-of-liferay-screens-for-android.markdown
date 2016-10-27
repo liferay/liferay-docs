@@ -7,7 +7,7 @@ Liferay Screens applies architectural ideas from
 canonical implementation of these architectures, because it isn't an app, but it
 borrows from them to separate presentation layers from business-logic. This
 tutorial explains Screen's high-level architecture, its components' low-level
-architecture, and the Android Screenlet lifecyle. Now go ahead and get started
+architecture, and the Android Screenlet lifecycle. Now go ahead and get started
 examining Screens's building blocks! 
 
 ## High-Level Architecture [](id=high-level-architecture)
@@ -30,10 +30,10 @@ and Interactors.
 **Screenlets:** Java view classes for inserting into any activity or fragment 
 view hierarchy. They render a selected layout in the runtime and in Android 
 Studio's visual editor and react to UI events, sending any necessary server 
-requests. You can set a screentlet's properties from its layout XML file and 
+requests. You can set a Screenlet's properties from its layout XML file and 
 Java classes. The Screenlets bundled with Liferay Screens are known collectively 
 as the 
-[Screenlet Library](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
+[Screenlet Library](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
 
 **Server Connectors:** a collection of classes that interact with different 
 Liferay versions. These classes abstract away the complexity of communicating 
@@ -49,7 +49,8 @@ execute more than one query on a local or remote store, the sequence is done
 in the corresponding Interactor. If a Screenlet supports more than one user 
 action or use case, an Interactor must be created for each. Interactors are 
 typically bound to one specific Liferay version, and instantiated by a Server 
-Connector. 
+Connector. Interactors run in a background thread and can therefore perform 
+intensive operations without blocking the UI thread. 
 
 **Views:** a set of layouts and accompanying custom view classes that present 
 Screenlets to the user.
@@ -94,9 +95,6 @@ Screenlet's `createScreenletView` method. It renders a specific UI using
 standard layout files and updates the UI with data changes. When developing your 
 own Views that extend a parent View, you can read the parent Screenlet's 
 properties or call its methods from this class. 
-
-[**InteractorAsyncTaskCallback:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/InteractorAsyncTaskCallback.java)
-receives asynchronous responses from the Liferay Mobile SDK's `AsyncTask` class.
 
 [**EventBus:**](https://github.com/greenrobot/EventBus) notifies the Interactor
 when asynchronous operations complete. It decouples the `AsyncTask` class

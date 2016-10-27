@@ -5,7 +5,7 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP
 - Liferay Screens Compatibility Plugin
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
@@ -54,12 +54,15 @@ Screenlet. They are listed here:
 
 ## Views [](id=views)
 
+- Default
+- Material
+
 The Default View uses a standard vertical `ScrollView` to show a scrollable list 
 of fields. Other Views may use different components, such as `ViewPager` or 
 others, to show the fields. You can find a sample of this implementation in the 
 `DDLFormScreenletPagerView` class.
 
-![Figure 1: DDL Form Screenlet's Default and Material Viewsets.](../../images/screens-android-ddlform.png)
+![Figure 1: DDL Form Screenlet's Default (left) and Material (right) Views.](../../images/screens-android-ddlform.png)
 
 ### Editor Types [](id=editor-types)
 
@@ -144,7 +147,8 @@ For more details, see the User Guide sections
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the form or record, the Screenlet supports the following offline 
 mode policies:
