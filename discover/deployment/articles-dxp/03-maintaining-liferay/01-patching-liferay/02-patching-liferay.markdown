@@ -1,6 +1,4 @@
-# Patching Liferay [](id=patching-liferay)
-
-# The Patching Tool
+# The Patching Tool [](id=patching-tool)
 
 ## Installing the Patching Tool [](id=installing-the-patching-tool)
 
