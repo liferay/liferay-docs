@@ -195,7 +195,7 @@ attributes.
 
 If you'd like to examine the finished example project, it's a part of our *Dev
 Guide SDK* which you can browse at
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk). 
+[https://github.com/liferay/liferay-docs/tree/6.2.x/devGuide/code/devGuide-sdk](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk). 
 The project is in the SDK's
 [portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
 folder.

@@ -623,7 +623,7 @@ Here is an example of a customized carousel using the configuration above:
 ![Figure 13.4: Image carousels can be customized. Here is an example of a customized carousel, using the scripting above.](../../images/alloyui-customized-carousel-in-portlet.png)
 
 You can access a finished version of the customized portlet at 
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet)
+[https://github.com/liferay/liferay-docs/tree/6.2.x/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet)
 
 Now that you've gotten your feet wet using some of AlloyUI's components, next
 you'll see how to work with the AlloyUI source so you can create your own

@@ -7,7 +7,7 @@ and show him or her the end state of what you'll accomplish in this tutorial.
 
 You can use multiple paragraphs if you want, of course, but get to the point as
 soon as possible. Note that for the entirety of the tutorial, all the
-[Documentation Guidelines](https://github.com/liferay/liferay-docs/tree/master/guidelines) 
+[Documentation Guidelines](https://github.com/liferay/liferay-docs/tree/6.2.x/guidelines) 
 apply. 
 
 ## Major Task One
