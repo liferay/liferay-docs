@@ -1,6 +1,6 @@
 # Patch types [](id=patch-types)
 
-Liferay ships Digital Enterprise fixes through three different channels. Fix packs and hotfixes. You can read about the differences in this document.
+Liferay ships Digital Enterprise fixes through three different channels. Fix packs, hotfixes and service packs. You can read about the differences in this document.
 
 ## 1. Fix pack
 On a regular schedule, the latest fixes that patch the core are bundled together
@@ -16,6 +16,17 @@ fixed very quickly. Support fixes the bug and provides a hotfix to the customer
 immediately. This is a short-term fix that solves the issue for the customer as
 quickly as possible. Hotfixes can patch both the core and the application
 suites.
+
+## 3. Service Packs
+Service packs for the @product@ are released about bi-monthly. The schedule depends on the need and security fix releases. They are designed to include the latest patches and updates for our customers who are just about to start their new projects. The service packs are built on the top of the original @product@ release and repackaged with the latest fix pack, Patching Tool and modules.
+
+Instead of using the service packs to keep existing systems updated, we recommend existing customers to
+
+1. keep their system up-to-date with fix packs (according to their own deployment schedule),
+2. install the latest Marketplace updates frequently,
+3. update the Patching Tool when it requires.
+
+This method will get the installation to the service pack levels, however it would allow deployers to schedule according their timing and won't require full environment rebuilds. 
 
 ## Testing methods of patches
 We have extensive testing on both of our hotfixes and fix packs.
