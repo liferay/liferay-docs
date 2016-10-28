@@ -68,8 +68,8 @@ Connector Admin*.
 
 Sync Connector Admin has three tabs: 
 
-- **Settings:** Control Sync's general behavior. These settings apply globally 
-  to Sync. 
+1. **Settings:** Control Sync's general behavior. These settings apply globally 
+   to Sync. 
 
     - **Allow the use of Sync?:** Whether Sync is enabled.
 
@@ -113,7 +113,7 @@ Sync Connector Admin has three tabs:
       Security mode encrypts Sync files on the device and requires a passcode 
       when accessing the Sync mobile app. 
 
-- **Sites:** Control Sync on a per-site basis. 
+2. **Sites:** Control Sync on a per-site basis. 
 
     ![Figure 2: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images/sync-admin-02.png)
     
@@ -168,7 +168,7 @@ Sync Connector Admin has three tabs:
     upload new documents to the site. The file's owner has edit permission; the 
     rest of the site's users have the View Only permission. 
 
-- **Devices:** View and manage the devices registered with Sync. 
+3. **Devices:** View and manage the devices registered with Sync. 
 
     ![Figure 4: Sync Admin's Devices tab lists all the devices Sync has registered for the Liferay instance.](../../../images/sync-admin-devices.png)
 
