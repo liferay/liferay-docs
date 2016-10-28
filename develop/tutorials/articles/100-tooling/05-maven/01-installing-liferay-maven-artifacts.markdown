@@ -6,31 +6,41 @@ them as Maven artifacts.
 
 You can get the Liferay artifacts in two ways: 
 
-- Install them from a remote repository 
-- Download a Liferay-provided utility for putting artifacts in local repositories 
-
-If you're don't know which repository is best for you, visit the 
-[Understanding Maven Repositories](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects#understanding-maven-repositories)
-section of the *Managing Liferay Maven Projects* tutorial.
+- Install them from a remote repository. 
+- Download a Liferay-provided utility for putting artifacts in local
+  repositories. 
 
 First, you'll consider the installation process using remote repositories.
 
 ## Installing Artifacts from a Remote Repository [](id=installing-artifacts-from-a-remote-repository)
 
 There are two repositories that contain Liferay artifacts: Central Repository
-and Liferay Repository. 
-
-<!-- Please explain the difference between these and pros/cons for using them.
--Rich -->
+and Liferay Repository. The Central Repository is the default repository used to
+download artifacts if you don't have a remote repository configured. The Central
+Repository *usually* offers the latest Liferay Maven artifacts, but using the
+the Liferay Repository *guarantees* the latest artifacts released by Liferay.
+Other than a slight delay between artifact releases between the two
+repositories, they're identical. You'll learn how to reference both of them
+next.
 
 Using the Central Repository to install Liferay Maven artifacts only requires
-that you specify your module's dependencies in its `pom.xml` file. 
+that you specify your module's dependencies in its `pom.xml` file. For example,
+the snippet below sets a dependency on Liferay's `com.liferay.portal.kernel`
+artifact:
 
-<!-- Please give an example of a specified Liferay artifact in a pom.xml file
-snippet -Rich --> 
+    <dependencies>
+        <dependency>
+            <groupId>com.liferay.portal</groupId>
+            <artifactId>com.liferay.portal.kernel</artifactId>
+            <version>2.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        ...
+    </dependencies>
 
 When packaging your module, the automatic Maven artifact installation process
-only downloads the artifacts necessary for that module. 
+only downloads the artifacts necessary for that module from the Central
+Repository. 
 
 You can view the published Liferay Maven artifacts on the Central Repository by
 searching for *liferay maven* in the repo's Search bar. For convenience, you can
@@ -41,7 +51,8 @@ the intended version of @product@ for which you're developing.
 
 If you'd like to access Liferay's latest Maven artifacts, you can configure
 Maven to use 
-[Liferay's Nexus repository](https://repository.liferay.com) instead:
+[Liferay's Nexus repository](https://repository.liferay.com) instead by
+inserting the following snippet in your project's parent `pom.xml`:
 
     <repositories>
         <repository>
@@ -63,7 +74,7 @@ The above configuration retrieves artifacts from Liferay's release repository.
 +$$$
 
 **Note:** Liferay also provides a
-[snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/),
+[snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/)
 that you can access by modifying the `<id>`, `<name>`, and `<url>` tags to
 point to that repo. This repository should only be used in special cases. You'll
 also need to enable accessing the snapshot artifacts:
@@ -98,8 +109,9 @@ artifacts from a local repository.
 
 ## Installing Artifacts from a Local Repository [](id=installing-artifacts-from-a-local-repository)
 
-Liferay offers a utility that lets you download all of Liferay's artifacts from
-SourceForge and install them to a Maven repository of your choice.
+Liferay offers a utility available from SourceForge that lets you download
+all of Liferay's artifacts and install them to a Maven repository of your
+choice.
 
 1.  Navigate to the [Liferay Portal](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/)
     project page in SourceForge and select the version of Liferay for which you

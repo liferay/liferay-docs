@@ -15,7 +15,7 @@ learn how to
 - Deploy a Maven project to @product@.
 -->
 
-- Manage Liferay Maven projects.
+- Create a remote repository.
 - Deploy a Liferay Maven project to a remote repository.
 
 <!--

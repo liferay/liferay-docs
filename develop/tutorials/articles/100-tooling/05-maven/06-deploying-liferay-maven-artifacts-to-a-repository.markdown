@@ -4,7 +4,7 @@ Deploying artifacts to a remote repository is important if you intend to share
 your Maven projects with others. First, you must have a remote repository that
 can hold deployed Maven artifacts. If you do not currently have a remote
 repository, see the
-[Managing Liferay Maven Projects](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects)
+[Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
 tutorial to learn how you can set up a Nexus repository. Also make sure your
 `[USER_HOME]/.m2/settings.xml` file specifies your remote repository's ID,
 username, and password.
@@ -20,21 +20,21 @@ send it on its way. Once your module project resides on the remote repository,
 other developers can configure your remote repository in their projects and set
 dependencies in their project POMs to reference it.
 
-To follow this tutorial, you'll need a Liferay Maven module to work with. For
+To follow this tutorial, you'll need a Liferay module built with Maven. For
 demonstration purposes, this tutorial will use the `portlet.ds` sample module
 project. To follow along with this module, download the
 [portlet.ds]()
 Zip. 
 
-<!-- Replace portlet link above with one from LDN's document library. -Cody -->
+<!-- Rich: Please replace portlet link above with one pointing to uploaded
+version in LDN's document library. Thanks! -Cody -->
 
-1.  Create a folder anywhere on your machine that will serve as the parent
-    folder for your Liferay modules. Unzip the `portlet.ds` module project into
-    that parent folder.
+1.  Create a folder anywhere on your machine that serves as the parent folder
+    for your Liferay modules. Unzip the `portlet.ds` module project into that
+    parent folder.
 
-2.  Create a `pom.xml` file inside the parent folder. Liferay modules must have 
-    a parent POM to be packaged and deployed. Copy the following logic into the
-    parent POM:
+2.  Create a `pom.xml` file inside the parent folder. Copy the following logic
+    into the parent POM:
 
         <?xml version="1.0" encoding="UTF-8"?>
         <project
@@ -71,7 +71,7 @@ Zip.
     all module projects residing in the parent folder. You should include the
     repository's ID and URL. The above `distributionManagement` declaration is
     configured for the Liferay Nexus repository created in the
-    [Managing Liferay Maven Projects](/develop/tutorials/-/knowledge_base/7-0/managing-liferay-maven-projects)
+    [Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
     tutorial. That tutorial also created the `[USER_HOME]/.m2/settings.xml`,
     which specified the remote repository's ID, username, and password. Both the
     parent POM and `settings.xml` file's repository declarations are required to
@@ -133,9 +133,9 @@ Zip.
         mvn package
 
     This downloads and installs all your module's dependencies, and packages the
-    project into a JAR file. Navigate to your module project's generated
-    `/target` folder. You'll notice there is a JAR file that was generated. This
-    is the artifact you'll deploy to your Nexus repository.
+    project into a JAR file. Navigate to your module project's generated build
+    folder (e.g., `/target`). You'll notice there is a JAR file that was
+    generated. This is the artifact you'll deploy to your Nexus repository.
 
 5.  Run Maven's deploy command to deploy your module project's artifact to your
     configured remote repository.
