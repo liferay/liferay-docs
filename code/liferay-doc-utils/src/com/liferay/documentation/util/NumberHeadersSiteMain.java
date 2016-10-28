@@ -182,6 +182,9 @@ public class NumberHeadersSiteMain extends Task {
 		
 		String header = in.readLine();
 		String headerDxp = in2.readLine();
+		String[] headerCombo = separateTextAndId(header);
+		String[] headerComboDxp = separateTextAndId(headerDxp);
+
 		boolean equalHeaders = false;
 		
 		if (filenamesWithPresetHeader.contains(duplicateFile) && 
@@ -191,22 +194,22 @@ public class NumberHeadersSiteMain extends Task {
 				equalHeaders = true;
 			}
 			else {
-				headerDxp = header;
+				headerDxp = headerComboDxp[0] + headerCombo[1];
 			}
 			
 		}
 		else if (filenamesWithPresetHeader.contains(duplicateFile) && 
 				filenamesWithoutPresetHeader.contains(duplicateFile2)) {
 			
-			headerDxp = header;
+			headerDxp = headerComboDxp[0] + headerCombo[1];
 		}
 		else if (filenamesWithoutPresetHeader.contains(duplicateFile) && 
 				filenamesWithPresetHeader.contains(duplicateFile2)) {
 			
-			header = headerDxp;
+			header = headerCombo[0] + headerComboDxp[1];
 		}
 		else {
-			headerDxp = header;
+			headerDxp = headerComboDxp[0] + headerCombo[1];
 		}
 		
 		if (!equalHeaders) {
@@ -560,6 +563,32 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		return overrideFile;
+	}
+	
+	private static String[] separateTextAndId(String header) {
+		
+		String[] headers = new String[2];
+		
+		int beginTitleIndex = header.indexOf("#");
+		int endTitleIndex;
+		int endIndexDxp = 0;
+		String headerId = "";
+		
+		if (header.contains("[](")) {
+			endTitleIndex = header.indexOf("[](");
+			endIndexDxp = header.lastIndexOf(")") + 1;
+			headerId = header.substring(endTitleIndex, endIndexDxp);
+		}
+		else {
+			endTitleIndex = header.length();
+		}
+		
+		String headerTitle = header.substring(beginTitleIndex, endTitleIndex);
+		
+		headers[0] = headerTitle;
+		headers[1] = headerId;
+		
+		return headers;
 	}
 
 	private static final int MAX_ID_LEN = 75;
