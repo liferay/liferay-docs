@@ -184,8 +184,8 @@ The *Accounts* tab contains the following:
 - **Location:** the selected account's local Sync folder location. Click the 
   *Change* button to change this folder's location. 
 
-The Preferences menu's other tab, the *General* tab, contains settings for the 
-Sync client's general behavior. It lists the following options: 
+The Preferences menu's *General* tab contains settings for the Sync client's 
+general behavior. It lists the following options: 
 
 - **Launch Liferay Sync on startup:** starts Sync automatically each time your 
   machine starts. 
@@ -197,6 +197,24 @@ Sync client's general behavior. It lists the following options:
   versions. You can click the *Check Now* button to check for updates manually. 
 
 ![Figure 10: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../../images/sync-preferences-general-01.png)
+
+Lastly, the Preferences menu's *Network* tab lets you control how Sync transfers 
+data with your Liferay instances. It contains the following options: 
+
+- **Download Rate:** To limit the rate at which Sync downloads data, select 
+  *Limit to* and then specify the rate. 
+
+- **Upload Rate:** To limit the rate at which Sync uploads data, select 
+  *Limit to* and then specify the rate. 
+
+- **Enable LAN Syncing:** Whether to download updates from other desktop clients 
+  on the same local network before downloading from the server. This can help 
+  reduce server load and increase data transfer speeds. Note that LAN syncing 
+  only works when enabled in the Liferay instance by the administrator, and in 
+  other clients. 
+<!-- Insert detail on download and upload rate prioritization vs. portal settings -->
+
+![Figure 11: The Preferences menu's *Network* tab contains settings for Sync's data transfer behavior.](../../../images/sync-desktop-prefs-network.png)
 
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder. 
