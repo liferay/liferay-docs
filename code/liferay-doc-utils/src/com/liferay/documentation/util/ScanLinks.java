@@ -28,9 +28,9 @@ public class ScanLinks {
 		
 		//Should account for DXP article links below
 		
-		String[] dirTypes = {""};
+		String dirType = "";
 
-		for (String dirType : dirTypes) {
+		//for (String dirType : dirTypes) {
 			        
 			File articleDir = new File("../" + docDir + "/articles" + dirType);
 			
@@ -74,19 +74,22 @@ public class ScanLinks {
 					if (!line.contains("localhost")) {
 						if (line.contains("](/develop/") || line.contains("](/discover/") ||
 								line.contains("](/distribute/")) {
-							//ldnUrls.add(extractLdnUrl(line, in.getLineNumber()));
+							
 							String ldnUrl = extractLdnUrl(line, in.getLineNumber(), mkdFile.getName());
 							checkLdnUrl(ldnUrl, mkdFile.getName(), in.getLineNumber());
 						}
-						else if (line.contains("](www.") || line.contains("](http")) {
+						
+						// Regular URL checks are unreliable. Need to investigate
+						
+						/*else if (line.contains("](www.") || line.contains("](http")) {
 							String url = extractRegularUrl(line, in.getLineNumber(), mkdFile.getName());
 							checkUrl(url, mkdFile.getName(), in.getLineNumber());
-						}
+						}*/
 					}
 				}
 				in.close();
 			}
-		}
+		//}
 		System.out.println("Total Broken Links: " + resultsNumber);
 	}
 	
@@ -113,7 +116,6 @@ public class ScanLinks {
 		
 		for (String x : results) {
 			if (x.contains("2Fsearch&#x25;2Fsearch&#x26;_3_redirect&#x3d;")) {
-				//System.out.println(fileName + " --- ARTICLE " + ldnArticle + " DNE");
 				System.out.println(ldnArticle + " in FILENAME --- " + fileName + ":" + lineNumber + " DOES NOT EXIST");
 				resultsNumber = resultsNumber + 1;
 				break;
