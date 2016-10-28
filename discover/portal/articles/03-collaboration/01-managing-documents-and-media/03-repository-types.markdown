@@ -1,4 +1,4 @@
-## Using External Repositories [](id=using-external-repositories)
+# Using External Repositories [](id=using-external-repositories)
 
 @product@'s Documents and Media lets you store files in a number of
 different ways and lets you access external repositories in addition to the
