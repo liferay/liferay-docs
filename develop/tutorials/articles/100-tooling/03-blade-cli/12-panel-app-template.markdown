@@ -4,14 +4,14 @@ In this tutorial, you'll learn how to create a Liferay panel app and category as
 a Liferay module. To create a Liferay panel app and category as a module, use a
 command with the following parameters: 
 
-    blade create -t panelapp -p [package name] -c [class name] [project name]
+    blade create -t panel-app -p [package name] -c [class name] [project name]
 
-The template for this kind of project is `panelapp`. Suppose you want to create
+The template for this kind of project is `panel-app`. Suppose you want to create
 a panel app project called `my-panel-app-project` with a package name prefix of
 `com.liferay.docs` and a class name prefix of `Sample`. You could run the
 following command to accomplish this:
 
-    blade create -t panelapp -p com.liferay.docs -c Sample my-panel-app-project
+    blade create -t panel-app -p com.liferay.docs -c Sample my-panel-app-project
 
 After running the command above, your project's directory structure would look
 like this
