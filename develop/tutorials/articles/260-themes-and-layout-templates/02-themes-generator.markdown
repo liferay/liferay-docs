@@ -170,7 +170,7 @@ using the Ruby version of Sass, you must configure the theme to support Compass.
 To do so, follow these steps:
 
 1.  Open the `package.json` file found in the root folder of your theme, and
-    locate the `supportCompass` property and change it from `false` to `true`.
+    locate the `rubySass` property and change it from `false` to `true`.
 
     Now that your theme is set to support Compass, you must install the Ruby
     Sass middleware and save it as a dependency for your theme.

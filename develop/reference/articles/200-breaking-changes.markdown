@@ -4115,3 +4115,30 @@ This change removes outdated code no longer being used in the platform. In
 addition, this change avoids future security issues from outdated flash movies.
 
 ---------------------------------------
+
+### Moved Journal Portlet Properties to OSGi Configuration [](id=moved-journal-portlet-properties-to-osgi-configuration)
+- **Date:** 2016-Jul-29
+- **JIRA Ticket:** LPS-58672
+
+#### What changed? [](id=what-changed-103)
+
+All Journal portlet properties have been moved to an OSGI configuration.
+
+#### Who is affected? [](id=who-is-affected-103)
+
+This affects anyone who is overriding the Journal portlet's `portlet.properties`
+file.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-103)
+
+Instead of overriding the Journal portlet's `portlet.properties` file, you can
+manage the properties from Portal's configuration administrator. This can be
+accessed by navigating to Liferay's Control Panel &rarr; *System Settings*
+&rarr; *Web Experience* and selecting the appropriate Web Content category.
+
+#### Why was this change made? [](id=why-was-this-change-made-103)
+
+This change was made as part of modularization efforts to ease portlet
+configuration changes.
+
+---------------------------------------

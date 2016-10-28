@@ -49,7 +49,7 @@ The bottom line is that when using `blade create` to create a service wrapper
 project, you must specify a fully qualified class name as the `service`
 argument. (This is also true when using `blade create` to create a service
 project.) For information about creating service projects, please see the
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+[Business Logic and Data Access](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
 tutorial.
 
 The generated `UserLocalServiceOverride` class does not actually customize any

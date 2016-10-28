@@ -17,9 +17,9 @@
 
 ## Features [](id=features)
 
-The `ForgotPasswordScreenlet` sends emails to registered users with their 
-new passwords or password reset links, depending on the server configuration. 
-The available authentication methods are:
+The Forgot Password Screenlet sends emails to registered users with their new 
+passwords or password reset links, depending on the server configuration. The 
+available authentication methods are:
 
 - Email address
 - Screen name
@@ -34,11 +34,11 @@ The available authentication methods are:
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The `ForgotPasswordScreenlet` with the Default and Flat7 Themes.](../../images/screens-ios-forgotpwd.png)
+![The Forgot Password Screenlet with the Default and Flat7 Themes.](../../images/screens-ios-forgotpwd.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
-To use the `ForgotPasswordScreenlet`, you must allow users to request new 
+To use the Forgot Password Screenlet, you must allow users to request new 
 passwords in the portal. The next sections show you how to do this.
 
 ### Authentication Method [](id=authentication-method)
@@ -87,7 +87,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 
 ## Delegate [](id=delegate)
 
-The `ForgotPasswordScreenlet` delegates some events to an object that conforms 
+The Forgot Password Screenlet delegates some events to an object that conforms 
 to the `ForgotPasswordScreenletDelegate` protocol. This protocol lets you 
 implement the following methods: 
 

@@ -573,6 +573,6 @@ You did it all! You now know what it takes to extend Liferay Form Navigators.
 <!-- TODO Add a link to the tutorial on implementing form navigation in a
 custom portlet -->
 
-[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
+[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
 
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+[Business Logic and Data Access](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)

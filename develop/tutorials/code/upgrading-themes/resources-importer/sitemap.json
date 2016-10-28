@@ -1,0 +1,124 @@
+{
+	"layoutTemplateId": "1_column",
+	"layouts": [
+		{
+			"name": "Welcome",
+			"title": "Welcome",
+			"friendlyURL": "/home",
+			"columns": [
+				[
+					"carousel.xml",
+					"Welcome to the Lunar Resort.xml",
+					"Amenities.xml",
+					"2 column description.xml"
+				]
+			]
+			
+		},
+		{
+			"name": "About Us",
+			"title": "About Us",
+			"friendlyURL": "/about-us",
+			"columns": [
+				[
+					"About Us Info.xml"
+				]
+			]
+		},
+		
+		{
+			"name": "Facilities",
+			"title": "Facilities",
+			"friendlyURL": "/facilities",
+			"columns":[
+				[
+					"Lunar Accomodations.xml"
+				]
+			]
+		},
+		{
+			"name": "Activities",
+			"title": "Activities",
+			"friendlyURL": "/activities",
+			"columns":[
+				[
+					"Activities Info.xml",
+					"Activities Links.xml"
+				]
+			],
+			"layouts":[
+					{
+					"name": "Rover Racing",
+					"title": "Rover Racing",
+					"friendlyURL": "/rover-racing",
+					"columns": [
+						[
+							"Rover Racing Banner.xml"
+						]
+					]
+					},
+					{
+					"name": "Lunar Golf",
+					"title": "Lunar Golf",
+					"friendlyURL": "/lunar-golf",
+					"columns": [
+						[
+							"Lunar Golf Article.xml"
+						]
+					]
+					},
+					{
+					"name": "Lunar Spelunking",
+					"title": "Lunar Spelunking",
+					"friendlyURL": "/lunar-spelunking",
+					"columns": [
+						[
+							"Lunar Spelunking Banner.xml"
+						]
+					]
+					}
+				]
+			},
+		{
+			"name": "Dining",
+			"title": "Dining",
+			"friendlyURL": "/dining",
+			"columns":[
+				[
+					"Dining.xml",
+				]
+			]
+		},
+		{
+			"name": "Collaboration",
+			"title": "Collaboration",
+			"friendlyURL": "/collaboration",
+			"layoutTemplateId": "2_columns",
+			"columns": [
+				[
+					{
+					"portletId": "com_liferay_wiki_web_portlet_WikiPortlet"
+					}
+				],
+				[
+					{
+					"portletId": "com_liferay_blogs_web_portlet_BlogsAgreggatorPortlet"
+					}
+				]
+			
+			]
+		},
+		{
+			"name": "Reservation",
+			"title": "Reservation",
+			"friendlyURL": "/reservation",
+			"hidden": "true",
+			"columns":[	
+				[
+					"Reservation Form.xml"
+				]
+			]
+		
+		}
+	]
+}

@@ -522,7 +522,10 @@ Liferay support.
 
 To decommission a server and free its activation key for reuse, select the 
 server's environment on the left and then select the server. In the server's 
-*Server Settings* tab, select *Unregister*. 
+*Server Settings* tab, select *Unregister*. Also note that when you shut down a 
+server normally, its activation key is immediately freed for reuse. If the 
+server crashes or its shutdown is forced (e.g., kill), its activation key is 
+freed for reuse within five minutes. 
 
 The next section shows you how to use environment tokens to activate Liferay DXP 
 instances with LCS. 

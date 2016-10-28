@@ -11,7 +11,7 @@
 
 ## Features [](id=features)
 
-The `SignUpScreenlet` creates a new user in your Liferay instance: a new user of
+The Sign Up Screenlet creates a new user in your Liferay instance: a new user of
 your app can become a new user in your portal. You can also use this Screenlet
 to save new users' credentials on their devices. This enables auto login for
 future sessions. The Screenlet also supports navigation of form fields from the
@@ -24,12 +24,13 @@ device's keyboard.
 ## Views [](id=views)
 
 - Default
+- Material
 
-![The `SignUpScreenlet` with the Default and Material Viewsets.](../../images/screens-android-signup.png)
+![The Sign Up Screenlet with the Default (left) and Material (right) Viewsets.](../../images/screens-android-signup.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
-`SignUpScreenlet`'s corresponding configuration in the Liferay instance can be 
+Sign Up Screenlet's corresponding configuration in the Liferay instance can be 
 set in the Control Panel by selecting *Configuration* &rarr; *Instance 
 Settings*, and then selecting the *Authentication* section. 
 
@@ -44,7 +45,7 @@ section of the User Guide.
 Anonymous requests are unauthenticated requests. Authentication is
 still required, however, to call the API. To allow this operation, the portal
 administrator should create a user with minimal permissions. To use
-`SignUpScreenlet`, you need to use that user in your layout. You should add that
+Sign Up Screenlet, you need to use that user in your layout. You should add that
 user's credentials to `server_context.xml`. 
 
 ## Offline [](id=offline)

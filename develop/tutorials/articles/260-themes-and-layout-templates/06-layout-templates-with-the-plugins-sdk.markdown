@@ -209,7 +209,7 @@ fit your needs.
 Since you're now a master at designing layout templates, go out there and
 generate some positive Feng Shui with your eye-pleasing layout templates!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Embedding Portlets and Themes in Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
 

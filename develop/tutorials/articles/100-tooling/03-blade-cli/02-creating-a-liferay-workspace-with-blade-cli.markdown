@@ -52,7 +52,7 @@ As discussed in the
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 tutorial, Liferay Workspaces can generate and hold a Liferay Server. This lets you
 build/test your plugins against a running Liferay instance. Once you've properly
-generataed and installed a Liferay server in your workspace, you can begin using
+generated and installed a Liferay server in your workspace, you can begin using
 it with the Blade CLI. To start your Liferay instance, run
 
     blade server start -b

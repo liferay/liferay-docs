@@ -131,4 +131,4 @@ Liferay supported WYSIWYG editor!
 
 [Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
 
-[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
+[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)

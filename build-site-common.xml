@@ -302,6 +302,7 @@
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name}"/>
+					<param type="token" name="${product.token.version}" value="${product.name.version}"/>
 				</filterreader>
 			</filterchain>
 		</copy>
@@ -336,6 +337,7 @@
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name.enterprise}"/>
+					<param type="token" name="${product.token.version}" value="${product.name.enterprise.version}"/>
 				</filterreader>
 			</filterchain>
 		</copy>

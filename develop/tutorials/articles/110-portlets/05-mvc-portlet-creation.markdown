@@ -17,7 +17,7 @@ controller logic (maybe just a couple of action methods), you can put all your
 controller code in the `-Portlet` class. If you have more complex
 needs (lots of actions, complex render logic to implement, or maybe even some
 resource serving code), consider breaking the
-controller into [MVC Action Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-action-command), [MVC Render Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-render-command), and [MVC Resource Command classes](develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
+controller into [MVC Action Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command), [MVC Render Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command), and [MVC Resource Command classes](/develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
 
 In this tutorial you'll learn to implement a Liferay MVC portlet with all the
 controller code in the `-Portlet` class.
@@ -44,7 +44,7 @@ Of course you're not tied to the use of Gradle or BndTools to build your
 project. However, you do need a JAR with the proper OSGi headers defined, which
 is easily done if you provide a `bnd.bnd` file. To see Liferay MVC portlets
 built with Maven, BndTools, and Gradle, you can check out the tutorial on
-[Liferay Sample Modules](develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules).
+[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules).
 
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
 
@@ -322,7 +322,7 @@ You now know how to extend Liferay's `MVCPortlet` to write controller code and
 register a Component in the OSGi runtime. You also need a view layer, of course,
 and for that, you'll use JSPs. Liferay's Lexicon Experience Language can be used
 to guide your app's styling so it matches Liferay's. To learn about Lexicon and
-about some of Liferay's taglibs, refer to the tutorial [Applying Lexicon Styles to Your App](develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app).
+about some of Liferay's taglibs, refer to the tutorial [Applying Lexicon Styles to Your App](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app).
 This section will briefly cover how to get your view layer working, from
 organizing your imports in one JSP file, to configuring URLs that direct
 processing to your code in the portlet class. 

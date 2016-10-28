@@ -14,7 +14,7 @@
 
 ## Features [](id=features)
 
-The `LoginScreenlet` authenticates portal users in your iOS app. The following
+The Login Screenlet authenticates portal users in your iOS app. The following
 authentication methods are supported:
 
 - Basic: uses user login and password according to 
@@ -48,13 +48,13 @@ the method `SessionContext.loadStoredCredentials()` method.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The `LoginScreenlet` using the Default and Flat7 Themes.](../../images/screens-ios-login.png)
+![The Login Screenlet using the Default and Flat7 Themes.](../../images/screens-ios-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 ### Basic Authentication [](id=basic-authentication)
 
-Before using `LoginScreenlet`, you should make sure your portal is configured 
+Before using Login Screenlet, you should make sure your portal is configured 
 with the authentication option you want to use. You can choose email address, 
 screen name, or user ID. You can set this in the Control Panel by selecting 
 *Configuration* &rarr; *Instance Settings*, and then selecting the 
@@ -85,7 +85,7 @@ Provider app from
 Once this app is installed, go to 
 *Control Panel &rarr; Users &rarr; OAuth Admin*, and add a new application to be 
 used from Liferay Screens. Once the application is created, copy the *Consumer 
-Key* and *Consumer Secret* values for later use in `LoginScreenlet`. 
+Key* and *Consumer Secret* values for later use in Login Screenlet. 
 
 ## Offline [](id=offline)
 
@@ -106,7 +106,7 @@ connection, you can use the `saveCredentials` attribute together with the
 
 ## Delegate [](id=delegate)
 
-The `LoginScreenlet` delegates some events to an object that conforms to the 
+The Login Screenlet delegates some events to an object that conforms to the 
 `LoginScreenletDelegate` protocol. This protocol lets you implement the 
 following methods:
 

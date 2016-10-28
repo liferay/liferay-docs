@@ -539,7 +539,7 @@ Now you have the knowledge to create your own JSF applications!
 
 ## Related Topics [](id=related-topics)
 
-[OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity)
+[Fundamentals](/develop/tutorials/-/knowledge_base/7-0/fundamentals)
 
 [Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
 
