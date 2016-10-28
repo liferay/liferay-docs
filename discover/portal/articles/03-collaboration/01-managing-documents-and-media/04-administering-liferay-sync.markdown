@@ -64,12 +64,12 @@ basis, and manage the devices that connect to your Liferay instance. To access
 Sync Connector Admin, select *Control Panel* &rarr; *Configuration* &rarr; *Sync 
 Connector Admin*. 
 
-![Figure 1: The Control Panel's Configuration section contains the Sync Connector Admin portlet.](../../../images/sync-admin-01.png)
-
 Sync Connector Admin has three tabs: 
 
 1. **Settings:** Control Sync's general behavior. These settings apply globally 
    to Sync. 
+
+    ![Figure 1: The Control Panel's Configuration section contains the Sync Connector Admin portlet.](../../../images/sync-admin-01.png)
 
     - **Allow the use of Sync?:** Whether Sync is enabled.
 
