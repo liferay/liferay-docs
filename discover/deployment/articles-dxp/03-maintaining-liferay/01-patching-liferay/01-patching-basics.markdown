@@ -1,4 +1,4 @@
-# Patching basics [](id=patching-basics)
+# Patching Basics [](id=patching-basics)
 
 Liferay ships Digital Enterprise fixes through three different channels: 
 
@@ -6,7 +6,7 @@ Liferay ships Digital Enterprise fixes through three different channels:
 - Hotfixes 
 - Service Packs 
 
-## Fix packs
+## Fix Packs
 
 On a regular schedule, the latest fixes that patch the core are bundled together
 into fix packs that are provided to all of Liferay's customers. Fix packs
@@ -43,7 +43,7 @@ customers should
 This method updates the installation to the service pack levels, while allowing
 scheduled deployments and preventing full environment rebuilds. 
 
-## Testing methods of patches
+## How Patches are Tested
 
 Liferay extensively tests all three types of fix packs to ensure high quality.
 For each issue fixed, fix packs go through both automated regression

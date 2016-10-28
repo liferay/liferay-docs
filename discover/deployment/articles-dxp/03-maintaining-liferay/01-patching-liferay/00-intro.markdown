@@ -1,4 +1,4 @@
-# Patching Liferay [](id=patching-liferay)
+# Patching @product@ [](id=patching-liferay)
 
 While we strive for perfection with every release of @product@, the reality
 of the human condition dictates that releases of the product may not be as
