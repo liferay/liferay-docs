@@ -122,16 +122,15 @@ applications? Liferay Workspace can handle that request too!
 
 ## Using a Plugins SDK from Your Workspace [](id=using-a-plugins-sdk-from-your-workspace)
 
-Because @product@ 7.0 uses a module-based framework, the current structure of a
+Because @product-ver@ uses a module-based framework, the current structure of a
 Liferay Workspace is centered around module development. There are still,
 however, many situations where you must create WAR-style plugins using the
 Plugins SDK. Because of this, your workspace can also work with the Plugins SDK.
 When configuring your SDK in a workspace, you can take advantage of all the new
 functionality workspaces provide and also use the SDK environment that you're
-used to. To learn more about how to convert legacy applications to 7.0 modules
-and what you should consider before making the jump, visit the
-[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
-tutorial.
+used to. To learn more about upgrading legacy applications to @product-ver@ and
+what you should consider before converting them to modules, visit the tutorial
+[Planning a Plugin Upgrade to Liferay @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7).
 
 The Blade CLI offers a command that allows a Plugins SDK environment be
 automatically generated with Liferay workspace. If you created your workspace
