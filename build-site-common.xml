@@ -449,13 +449,13 @@
 	</target>
 
 	<target name="check-links" description="Checks URL links to see if they're broken.">
-				<java
-					classname="com.liferay.documentation.util.ScanLinks"
-					classpathref="project.classpath"
-					failonerror="false"
-					fork="true"
-				>
-					<arg value="${doc.dir}"/>
-				</java>
-		</target>
+		<java
+			classname="com.liferay.documentation.util.ScanLinks"
+			classpathref="project.classpath"
+			failonerror="false"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+		</java>
+	</target>
 </project>
