@@ -7,7 +7,7 @@ repository, see the
 [Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
 tutorial to learn how you can set up a Nexus repository. Also make sure your
 `[USER_HOME]/.m2/settings.xml` file specifies your remote repository's ID,
-username, and password.
+user name, and password.
 
 To deploy to a remote repository, your Liferay module should be packaged using
 Maven. Maven provides a packaging command that creates an artifact (JAR) that
@@ -21,19 +21,16 @@ other developers can configure your remote repository in their projects and set
 dependencies in their project POMs to reference it.
 
 To follow this tutorial, you'll need a Liferay module built with Maven. For
-demonstration purposes, this tutorial will use the `portlet.ds` sample module
+demonstration purposes, this tutorial uses the `portlet.ds` sample module
 project. To follow along with this module, download the
-[portlet.ds]()
+[portlet.ds](https://dev.liferay.com/documents/10184/656312/portlet.ds.zip)
 Zip. 
 
-<!-- Rich: Please replace portlet link above with one pointing to uploaded
-version in LDN's document library. Thanks! -Cody -->
-
-1.  Create a folder anywhere on your machine that serves as the parent folder
+1.  Create a folder anywhere on your machine to serve as the parent folder
     for your Liferay modules. Unzip the `portlet.ds` module project into that
-    parent folder.
+    folder.
 
-2.  Create a `pom.xml` file inside the parent folder. Copy the following logic
+2.  Create a `pom.xml` file inside this folder. Copy the following logic
     into the parent POM:
 
         <?xml version="1.0" encoding="UTF-8"?>
@@ -62,7 +59,7 @@ version in LDN's document library. Thanks! -Cody -->
             </modules>
         </project>
 
-    The tags `<modelVersion>` through `<packaging>` are basic POM tags that are
+    The tags `<modelVersion>` through `<packaging>` are POM tags that are
     used frequently in parent POMs. Visit Maven's
     [POM Reference](https://maven.apache.org/pom.html) documentation for more
     information.
@@ -73,7 +70,7 @@ version in LDN's document library. Thanks! -Cody -->
     configured for the Liferay Nexus repository created in the
     [Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
     tutorial. That tutorial also created the `[USER_HOME]/.m2/settings.xml`,
-    which specified the remote repository's ID, username, and password. Both the
+    which specified the remote repository's ID, user name, and password. Both the
     parent POM and `settings.xml` file's repository declarations are required to
     deploy your modules to that remote repository.
 
@@ -82,7 +79,7 @@ version in LDN's document library. Thanks! -Cody -->
     specified within that tag.
 
 3.  Open the `portlet.ds` module's `pom.xml` file. If you did not download the
-    `portlet.ds` module project Zip, you can reference its POM below
+    `portlet.ds` module project Zip, you can reference its POM below. 
 
         <project
             xmlns="http://maven.apache.org/POM/4.0.0"
@@ -122,20 +119,20 @@ version in LDN's document library. Thanks! -Cody -->
     by the parent POM's attributes. Declaring the `<parent>` tag like above
     links the `portlet.ds` module to its parent POM, which is necessary to
     deploy to the remote repository. Then the module's dependencies are listed.
-    These dependencies will be downloaded from the Central Repository and
+    These dependencies are downloaded from the Central Repository and
     installed to your local `.m2` repository when you package the `portlet.ds`
     module.
 
-4.  Now that you've properly configured your parent POM and module POM, package
-    your Maven project. Navigate to your module project (e.g., `project.ds`) in
-    your command prompt and run the Maven package command:
+4.  Now that you've configured your parent POM and module POM, package your
+    Maven project. Navigate to your module project (e.g., `project.ds`) in your
+    command prompt and run the Maven package command:
 
         mvn package
 
-    This downloads and installs all your module's dependencies, and packages the
+    This downloads and installs all your module's dependencies and packages the
     project into a JAR file. Navigate to your module project's generated build
-    folder (e.g., `/target`). You'll notice there is a JAR file that was
-    generated. This is the artifact you'll deploy to your Nexus repository.
+    folder (e.g., `/target`). You'll notice there is a newly generated JAR file.
+    This is the artifact you'll deploy to your Nexus repository.
 
 5.  Run Maven's deploy command to deploy your module project's artifact to your
     configured remote repository.
@@ -146,7 +143,7 @@ version in LDN's document library. Thanks! -Cody -->
     repository server.
 
 To verify that your artifact is deployed, navigate to the Repositories page of
-your Nexus server and select your repository. A window appears below displaying
+your Nexus server and select your repository. A window appears below showing
 the Liferay artifact now deployed to your repository.
 
 ![Figure 1: Your repository server now provides access to your Liferay Maven artifacts.](../../../images/maven-verify-deployment.png)

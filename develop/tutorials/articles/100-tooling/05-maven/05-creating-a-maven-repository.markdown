@@ -1,14 +1,14 @@
 # Creating a Maven Repository
 
-You'll frequently want to share Liferay artifacts and modules with teammates, or
+You'll frequently want to share Liferay artifacts and modules with teammates or
 manage your repositories using a GUI. Sonatype Nexus is a valuable tool for
 managing your repositories. It's a Maven repository management server that
 facilitates creating and managing release servers, snapshot servers, and proxy
 servers. There are several other Maven repository management servers you can use
-(e.g., [Artifactory](https://www.jfrog.com/artifactory/)), but this tutorial
-focuses on Nexus.
+(for example, [Artifactory](https://www.jfrog.com/artifactory/)), but this
+tutorial focuses on Nexus.
 
-To create a Maven repository using Nexus, first download
+To create a Maven repository using Nexus, download
 [Nexus](http://www.sonatype.org/nexus/) and follow the instructions at
 [http://books.sonatype.com/nexus-book/reference/install.html](http://books.sonatype.com/nexus-book/reference/install.html)
 to install and start it. 
@@ -17,7 +17,7 @@ To create your own repository using Nexus, follow these steps:
 
 1.  Open your web browser; navigate to your Nexus repository server (e.g.,
     [http://localhost:8081/nexus](http://localhost:8081/nexus)) and log in. The
-    default username is `admin` with password `admin123`. 
+    default user name is `admin` with password `admin123`. 
 
 2.  Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*. 
 
@@ -65,8 +65,8 @@ install artifacts to them.
 
 Before using your repository servers, you must specify them in your Maven
 environment settings. Your repository settings let Maven find the repository and
-get access to it for retrieving and installing artifacts. You can configure your
-local Maven settings in the `[USER_HOME]/.m2/settings.xml` file.
+retrieve and install artifacts. You can configure your local Maven settings in
+the `[USER_HOME]/.m2/settings.xml` file.
 
 You only need to configure a repository server if you're sharing artifacts
 (e.g., Liferay artifacts and/or your modules) with others. If you're
@@ -103,7 +103,7 @@ To configure your Maven environment to access your `liferay-releases` and
             </servers>
         </settings>
 
-The username `admin` and password `admin123` are the credentials of the default
+The user name `admin` and password `admin123` are the credentials of the default
 Nexus administrator account. If you changed these credentials for your Nexus
 server, make sure to update `settings.xml` with these changes. 
 
