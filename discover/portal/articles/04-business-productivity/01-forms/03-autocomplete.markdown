@@ -1,4 +1,4 @@
-# Autocompleting Text Fields
+# Autocompleting Text Fields [](id=autocompleting-text-fields)
 
 It's been scientifically proved that Internet users are lazy (not you or
 I--other Internet users). But we know that citizens of some countries might not
@@ -18,7 +18,7 @@ of a text field (accepting any response that meets your
 [validation criteria](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#validating-text-fields))
 while giving users common choices to select.
 
-## Configuring Autocomplete
+## Configuring Autocomplete [](id=configuring-autocomplete)
 
 Before configuring autocomplete for your text fields, [create a form and add a text field](/discover/portal/-/knowledge_base/7-0/basic-forms). 
 If you want the autocomplete options to be populated by a REST data provider,
@@ -34,7 +34,7 @@ field:
         start typing in the text field.
 4. Once your form is saved and published, you're done.
 
-![Figure x: You can configure a manual data provider to specify the options
+![Figure 1: You can configure a manual data provider to specify the options
 users can select from.](../../../images/forms-manual-data-provider.png)
 
 Once users begin entering text into the field, a selection list of options
@@ -49,7 +49,7 @@ options that have *se* in their name (for example *Se*rbia and
 option, Sealand. Selecting it from the list after typing the first three letters
 is much easier than typing the remaining letters.
 
-![Figure x: When typing in a field with autocomplete, users are presented a list of selections form the configured data provider. The displayed results are filtered to include only selections containing the text entered by the user.](../../../images/forms-autocomplete-filtering.png)
+![Figure 2: When typing in a field with autocomplete, users are presented a list of selections form the configured data provider. The displayed results are filtered to include only selections containing the text entered by the user.](../../../images/forms-autocomplete-filtering.png)
 
 What will the Forms team think of next? Configuring telepathic connections to
 the Forms application would be nice. Then users could just think their form
