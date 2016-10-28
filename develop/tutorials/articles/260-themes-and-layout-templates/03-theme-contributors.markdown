@@ -62,23 +62,6 @@ To create a Theme Contributor module, follow these steps:
     compatibility with future developments. The `Web-ContextPath` header sets
     the context from which the Theme Contributor's resources are hosted.
 
-    <!-- leaving this section out for now, until it is developed further:
-
-    Alternatively, Theme Contributors can be identifed in the `package.json`
-    file:
-
-        {
-            "name": "lfr-product-menu-animation-themelet",
-            "liferayTheme": {
-                themeContributorType?: product-navigation-control-menu
-                "themelet": true,
-                "version": "7.0"
-            }
-        }
-
-    If this property is set in either one of these ways, the module will then be
-    treated as a Theme Contributor.-->
-
 3.  Create a `src/main/resources/META-INF/resources` folder in your module
     and place your resources (CSS and JS) in that folder.
 

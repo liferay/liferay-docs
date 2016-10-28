@@ -190,9 +190,20 @@ to be imported with your theme.
 The `sitemap.json` in the `[theme-name]/src/WEB-INF/src/resources-importer`
 folder specifies the site pages, layout templates, web content, assets, and
 portlet configurations provided with the theme. This file describes the contents
-and hierarchy of the site for Liferay to import as a site or site template. Even
-if you're not familiar with JSON, the `sitemap.json` file is easy to understand.
-Let's examine a sample `sitemap.json` file:
+and hierarchy of the site for Liferay to import as a site or site template.
+
++$$$
+
+**Note:** Site templates only support the importing of either public page sets 
+or private page sets.
+
+If you want to import both public and private page sets, as shown in the example 
+`sitemap.json` below, you must import your resources into a site.
+
+$$$
+
+Even if you're not familiar with JSON, the `sitemap.json` file is easy to 
+understand. Let's examine a sample `sitemap.json` file:
 
     {
 	"layoutTemplateId": "2_columns_ii",
@@ -486,16 +497,47 @@ resources:
     file, specify details of your resource assets.
 
 5.  In your `liferay-plugin-package.properties` file, set 
-    `resources-importer-developer-mode-enabled=true`. For the
-    `resources-importer-target-value` property, specify the name of the site or
-    site template into which you are importing or comment it out to use the
-    theme's name. For the `resources-importer-target-class-name` property,
-    comment it out to import to a site template or set it to
-    `com.liferay.portal.kernel.model.Group` to import directly into a site.
+    `resources-importer-developer-mode-enabled=true`:
 
-6.  Deploy your theme into your Liferay instance.
+        resources-importer-developer-mode-enabled=true
 
-7.  View your theme, and its resources, from within Liferay. Log in to your
+6.  Set the `resources-importer-target-value` property to the name of the site 
+    or site template into which you are importing, or comment it out to use the 
+    theme's name.
+    
+    For example, the following configuration sets the target value to the name
+    of an existing site or site template:
+    
+        resources-importer-target-value = site/site template name
+    
+    Alternatively, this configuration uses the theme's name as the target value:
+    
+        #resources-importer-target-value
+        
+    +$$$
+    
+    **Note:** By default resources are imported into a new site template named 
+    after the theme. If you want your resources to be imported into an existing 
+    site or site template, you must specify a value for the 
+    `resources-importer-target-value` property.
+
+    $$$
+    
+7.  Comment out the `resources-importer-target-class-name` property to import 
+    into a site template or set it to `com.liferay.portal.kernel.model.Group` to 
+    import directly into a site.
+    
+    As mentioned above the example `sitemap.json`, **you must import your 
+    resources into a site, if you define both public and private page sets in 
+    your `sitemap.json`.** 
+    
+   **If you don't specify a value for the 
+   `resources-importer-target-class-name` property, your resources will be 
+   imported into a site template.**
+
+8.  Deploy your theme into your Liferay instance.
+
+9.  View your theme, and its resources, from within Liferay. Log in to your
     portal as an administrator and check the Sites or Site Templates section of
     the Control Panel to make sure that your resources were deployed correctly.
     From the Control Panel you can easily view your theme and its resources:
