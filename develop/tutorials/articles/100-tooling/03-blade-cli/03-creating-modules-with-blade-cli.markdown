@@ -15,8 +15,8 @@ To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options
 you can specify to help mold your project just the way you want it. To learn how
 to use the Blade `create` command and the many options it provides, enter `blade
-create -l` into a terminal. By running this command, all options for this command
-are displayed. A list of the `create` options are listed below:
+create -l` into a terminal. By running this command, all options for this
+command are displayed. A list of the `create` options are listed below:
 
 - `-c, --classname <string>`: If a class is generated in the project, provide
   the name of the class to be generated. If not provided, the class name
@@ -55,7 +55,8 @@ This command creates an MVC portlet project based on the template `mvcportlet`.
 It uses the package name `com.liferay.docs.guestbook` and creates the portlet
 class `GuestbookPortlet`. The project name is `my-guestbook-project`. Since the
 directory was not specified, it is created in the folder you executed the
-command.
+command. When generating a project using Blade CLI, there is no downloading,
+which means internet access is not required.
 
 Using Blade CLI gives you the flexibility to choose how you want to create your
 application. You can do so in your own standalone environment, or within a
