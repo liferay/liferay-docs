@@ -38,7 +38,7 @@ to read the Screens architecture tutorial.
 
 Without further ado, let the Screenlet creation begin! 
 
-## Planning Your Screenlet
+## Planning Your Screenlet [](id=planning-your-screenlet)
 
 Before creating your Screenlet, you must determine what it needs to do and how 
 you want developers to use it. This determines where you'll create your 
@@ -92,7 +92,7 @@ Also, the Screenlet's code automatically populates the `description` and
 
 Great! Now you're ready to create your Screenlet's Theme! 
 
-## Creating the Screenlet's UI
+## Creating the Screenlet's UI [](id=creating-the-screenlets-ui)
 
 In Liferay Screens for iOS, a Screenlet's UI is called a Theme. Every Screenlet 
 must have at least one Theme. A Theme has the following components: 
@@ -172,7 +172,7 @@ custom class--the grayed-out *Current* default value only suggests a module.
 
 Next, you'll create your Screenlet's Interactor. 
 
-## Creating the Interactor
+## Creating the Interactor [](id=creating-the-interactor)
 
 Create an Interactor class for each of your Screenlet's use cases. In the 
 [`Interactor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift), 
@@ -297,7 +297,7 @@ if you want to use Connectors instead of Callbacks.
 
 Next, you'll create the Screenlet class. 
 
-## Creating the Screenlet Class
+## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 The Screenlet class is the central hub of a Screenlet. It contains the 
 Screenlet's properties, a reference to the Screenlet's View class, methods for 
