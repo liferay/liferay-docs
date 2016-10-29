@@ -1,4 +1,4 @@
-# Creating a Maven Repository
+# Creating a Maven Repository [](id=creating-a-maven-repository)
 
 You'll frequently want to share Liferay artifacts and modules with teammates or
 manage your repositories using a GUI. Sonatype Nexus is a valuable tool for

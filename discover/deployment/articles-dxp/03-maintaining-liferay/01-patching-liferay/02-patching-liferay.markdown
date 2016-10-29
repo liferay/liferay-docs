@@ -111,7 +111,7 @@ If a new version of a fix pack is released, you can use the Patching Tool to
 install it. The Patching Tool uninstalls the old fix pack and installs the new
 version in its place. 
 
-### Including '*support-info*' in LESA Tickets
+### Including '*support-info*' in LESA Tickets [](id=including-support-info-in-lesa-tickets)
 
 To enable Liferay to reproduce subscriber issues, it is critical that the patch
 level in a given environment be made available to Liferay. 
@@ -149,7 +149,7 @@ revert` command. This removes all patches from your installation.
 The OSGi state folder may contain obsolete bundles in its cache that must be
 removed. If it exists, delete the *osgi/state* folder in Liferay Home.
 
-## Cleaning Up
+## Cleaning Up [](id=cleaning-up)
 
 After you've performed your patching procedure (whether you've installed or
 removed patches), it's important to clean up Liferay's cache of deployed code.
@@ -159,7 +159,7 @@ just installed the patches for. This is really easy to do.
 In the Liferay Home folder is a folder called `work`. Remove the contents of
 this folder to clear out the cached code. Now you're ready to start your server. 
 
-## Comparing Patch Levels
+## Comparing Patch Levels [](id=comparing-patch-levels)
 
 If you're a developer, the Patching Tool can show you what changed between
 different versions. These commands show you information about the different
