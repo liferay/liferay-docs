@@ -1,4 +1,4 @@
-# Installing a Search Engine [](id=installing-a-search-engine)
+# Liferay Enterprise Search [](id=installing-a-search-engine)
 
 Search engines are a critical component of your Liferay installation. They allow
 you to provide documents in an index that can quickly be searched, rather than
