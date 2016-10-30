@@ -281,7 +281,7 @@
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
 	</target>
 
-	<target name="dist-ce" depends="dist-ce-temp, prepare-dist" description="Zips up the folder's CE articles and images for importing.">
+	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers" description="Zips up the folder's CE articles and images for importing.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -302,6 +302,7 @@
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name}"/>
+					<param type="token" name="${product.token.version}" value="${product.name.version}"/>
 				</filterreader>
 			</filterchain>
 		</copy>
@@ -314,7 +315,7 @@
 	
 	</target>
 
-	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist" description="Zips up the folder's CE and DXP articles and images for importing.">
+	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp" description="Zips up the folder's CE and DXP articles and images for importing.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -336,6 +337,7 @@
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name.enterprise}"/>
+					<param type="token" name="${product.token.version}" value="${product.name.enterprise.version}"/>
 				</filterreader>
 			</filterchain>
 		</copy>
@@ -446,5 +448,16 @@
 	<target name="prepare-dist" depends="check-images-site-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-site-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
+	</target>
+
+	<target name="check-links" description="Checks URL links to see if they're broken.">
+		<java
+			classname="com.liferay.documentation.util.ScanLinks"
+			classpathref="project.classpath"
+			failonerror="false"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+		</java>
 	</target>
 </project>

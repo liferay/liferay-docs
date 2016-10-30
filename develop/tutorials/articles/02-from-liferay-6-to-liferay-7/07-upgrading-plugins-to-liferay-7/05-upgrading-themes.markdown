@@ -1,10 +1,10 @@
 # Upgrading Themes [](id=upgrading-themes)
 
 If you've developed themes in Liferay 6.2, as part of your upgrade you'll want
-to use them in @product@ 7. While you're at it, you should leverage theme
+to use them in @product-ver@. While you're at it, you should leverage theme
 improvements, including support for Sass, Bootstrap 3, and Lexicon (Liferay's UI
 design language). This tutorial demonstrates upgrading a Liferay 6.2 theme to
-@product@ 7. 
+@product-ver@. 
 
 Theme upgrades involve these steps:
 
@@ -25,7 +25,7 @@ contains its original source code.
 
 Before upgrading a theme, consider [migrating the theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 to use the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
-@product@ 7 doesn't require this migration, but the Themes Generator's `upgrade`
+@product-ver@ doesn't require this migration, but the Themes Generator's `upgrade`
 Gulp task automates many upgrade steps. Themes Generator themes can also
 leverage exclusive new features, such as
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
@@ -38,7 +38,7 @@ see *all* upgrade steps, in case you want to run them manually.
 
 ## Running the Upgrade Task for Themes Generator Themes [](id=running-the-upgrade-task-for-themes-generator-themes)
 
-A Liferay 6.2 theme can be upgraded to @product@ 7, regardless of its project
+A Liferay 6.2 theme can be upgraded to @product-ver@, regardless of its project
 environment (Themes Generator, Plugins SDK, Maven, etc.). But a theme that's
 been migrated to the Themes Generator can leverage the theme `upgrade` Gulp task.
 If you're developing your theme in an environment other than the Themes
@@ -75,7 +75,7 @@ Here are the steps for using the theme `upgrade` Gulp task:
     The task continues upgrading CSS files, prompting you to update CSS file
     names.
 
-2.  For @product@ 7, Sass files should use the `.scss` extension and file names for
+2.  For @product-ver@, Sass files should use the `.scss` extension and file names for
     Sass partials should start with an underscore (e.g., `_custom.scss`). The
     `upgrade` task prompts you for each CSS file to rename.
 
@@ -107,7 +107,7 @@ If you're developing your theme in an environment other than the Plugins SDK,
 skip this section. 
 
 A theme's Liferay version must be updated to `7.0.0+` for the theme to run on
-@product@ 7. 
+@product-ver@. 
 
 If you're using the Plugins SDK, open the `liferay-plugin-package.properties`
 file and change the `liferay-versions` property value to `7.0.0+`: 
@@ -134,12 +134,12 @@ compatibility version:
 3.  If your theme uses the Themes Generator and has a `package.json` file,
     update the file's Liferay version references to `7.0`.
 
-Your theme's Liferay version references are updated for @product@ 7. Next, you'll
+Your theme's Liferay version references are updated for @product-ver@. Next, you'll
 update the CSS.
 
 ## Updating CSS Code [](id=updating-css-code)
 
-@product@ 7's UI improvements required these CSS-related changes:
+@product-ver@'s UI improvements required these CSS-related changes:
 
 - Adding new CSS files
 - Removing unneeded CSS files
@@ -154,7 +154,7 @@ improvements. Start with updating CSS file names for Sass.
 ### Updating CSS File Names for Sass [](id=updating-css-file-names-for-sass)
 
 Although Sass was available in Liferay 6.2, only Sass partial files followed the
-Sass naming convention (using file suffix `.scss`). In @product@ 7 themes, all
+Sass naming convention (using file suffix `.scss`). In @product-ver@ themes, all
 Sass files must end in `scss`. 
 
 +$$$
@@ -183,7 +183,7 @@ Next, the CSS rules must be updated to use Bootstrap 3 syntax.
 
 ### Updating CSS Rules [](id=updating-css-rules)
 
-@product@ 7 uses Bootstrap 3's CSS rule syntax. The new syntax lets developers
+@product-ver@ uses Bootstrap 3's CSS rule syntax. The new syntax lets developers
 leverage Bootstrap 3 features and improvements.
 
 If your theme does not use the Themes Generator, you can refer to the
@@ -304,7 +304,7 @@ After updating your theme's CSS rules, you should update its CSS responsiveness.
 
 ### Updating the Responsiveness [](id=updating-the-responsiveness)
 
-In @product@ 7, Bootstrap 3 explicit media queries replace Bootstrap 2
+In @product-ver@, Bootstrap 3 explicit media queries replace Bootstrap 2
 `respond-to` mixins for CSS responsiveness. Follow these steps to update CSS
 responsiveness:
 
@@ -367,13 +367,13 @@ theme's design incorporates Font Awesome icons in its social media links.
 The icons are easy to use in themes too.
 
 In Liferay 6.2, the CSS file `aui.css`  defined the Font Awesome icon paths. In
-@product@ 7, the Sass file `_aui_variables.scss` defines them.
+@product-ver@, the Sass file `_aui_variables.scss` defines them.
 
 +$$$
 
-**Note:** In @product@ 7, the `aui.css` file holds the `lexicon-base` style
+**Note:** In @product-ver@, the `aui.css` file holds the `lexicon-base` style
 import. The [Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide)
-describes all the @product@ 7 theme files.
+describes all the @product@ theme files.
 
 $$$
 
@@ -390,7 +390,7 @@ Next, you'll update the theme templates.
 
 ## Updating Theme Templates [](id=updating-theme-templates)
 
-@product@ 7 theme templates are essentially the same as Liferay 6.2 theme
+@product-ver@ theme templates are essentially the same as Liferay 6.2 theme
 templates. Here are the main changes:
 
 -   Velocity templates are now deprecated in favor of FreeMarker templates
@@ -413,7 +413,7 @@ The menus that replace the Dockbar supports a more flexible and responsive
 design for creating better user experiences. 
 
 You should start by addressing the Velocity templates. Since Velocity
-templates have been deprecated and aren't compatible with @product@ 7, **you
+templates have been deprecated and aren't compatible with @product-ver@, **you
 must convert your Velocity theme templates to FreeMarker**.
 
 If you're using the Themes Generator, the `gulp upgrade` command reports the
@@ -435,7 +435,7 @@ For example, here is the command's output for the Lunar Resort theme:
 
 For all the theme's templates, it suggests replacement code for deprecated code. 
 
-Next, you'll learn how to update various theme templates to @product@ 7. If you
+Next, you'll learn how to update various theme templates to @product-ver@. If you
 didn't modify any theme templates, you can skip these sections.
 
 ### Updating Portal Normal FTL [](id=updating-portal-normal-ftl)
@@ -502,7 +502,7 @@ updated to use the new syntax.
     -  *The User Personal Bar*: Display notifications and the user's avatar and
         name. 
 
-    ![Figure 3: The Dockbar was removed in @product@ 7 and must be replaced with the new Control Menu.](../../../images/upgrading-themes-dockbar.png)
+    ![Figure 3: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../images/upgrading-themes-dockbar.png)
 
     The new design enhances the user experience by providing clear and
     purposeful menus. 
@@ -635,7 +635,7 @@ file:
 
     The plugin no longer needs this property as the resources importer is now an
     [OSGI module](https://github.com/liferay/liferay-portal/tree/master/modules/apps/web-experience/export-import/export-import-resources-importer)
-    built-in and deployed with @product@ 7.
+    built-in and deployed with @product-ver@.
 
 2.  Since the group model class's fully-qualified class name has changed, replace the
     `resources-importer-target-class-name` property's value with the
@@ -648,7 +648,7 @@ update your theme's web content.
 
 ### Updating Web Content [](id=updating-web-content)
 
-All @product@ 7 web content articles must be written in XML and have a structure
+All @product-ver@ web content articles must be written in XML and have a structure
 and template. Article creation requires a structure and article content
 rendering requires a template. Follow these steps to update your web content:
 
@@ -768,7 +768,7 @@ rendering requires a template. Follow these steps to update your web content:
             </dynamic-element>
         </root>
 
-7.  @product@ 7's migration from Bootstrap 2 to Bootstrap 3 requires that you
+7.  @product-ver@'s migration from Bootstrap 2 to Bootstrap 3 requires that you
     replace all `div` element `class` attribute values of Bootstrap 2 format 
     `span[number]` with values that use the Bootstrap 3 format:
 
@@ -810,7 +810,7 @@ the ZIP file's `/resources-importer/journal/articles/Basic Web Content/` folder.
 
 +$$$
 
-**Note:** Although Liferay 6.2 used AlloyUI 2.0.x, @product@ 7 uses AlloyUI 3.0.x.
+**Note:** Although Liferay 6.2 used AlloyUI 2.0.x, @product-ver@ uses AlloyUI 3.0.x.
 As a result, you may need to update your code that uses AlloyUI. Refer to
 AlloyUI's [examples](http://alloyui.com/examples/) and [API docs](http://alloyui.com/api/)
 for details. 
@@ -821,7 +821,7 @@ Next, you must update your resources importer's sitemap file.
 
 ### Updating the Sitemap [](id=updating-the-sitemap)
 
-In Liferay 6.2, portlet IDs were incremental numbers. In @product@ 7, they're
+In Liferay 6.2, portlet IDs were incremental numbers. In @product-ver@, they're
 explicit class names. The new IDs are intuitive and unique. But you must update
 your `sitemap.json` file with the new portlet IDs.
 
@@ -848,7 +848,7 @@ patterns.
 
 ## Applying Lexicon UI Design Patterns [](id=applying-lexicon-ui-design-patterns)
 
-@product@ 7 uses a design language called [Lexicon](http://liferay.github.io/lexicon/).
+@product-ver@ uses a design language called [Lexicon](http://liferay.github.io/lexicon/).
 It provides styling guidelines and best practices for application UIs. Lexicon's
 HTML and JavaScript components enable developers to build fully-realized UIs
 quickly and effectively. This section demonstrates how to apply Lexicon to a
@@ -950,7 +950,7 @@ The Lexicon updates applied to the form are as follows:
 
 You can apply similar Lexicon design patterns to your theme's HTML files.
 
-You've updated your theme to @product@ 7! You can deploy it from your theme
+You've updated your theme to @product-ver@! You can deploy it from your theme
 project.
 
 Themes Generator-based project:
@@ -968,6 +968,6 @@ upgraded themes.
 
 [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
-[Migrating a theme to @product@ 7](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
+[Migrating a theme to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 
-[Upgrading to @product@ 7] (/discover/deployment/-/knowledge_base/7-0/upgrading-to-liferay-7)
+[Upgrading to @product-ver@] (/discover/deployment/-/knowledge_base/7-0/upgrading-to-liferay-7)
