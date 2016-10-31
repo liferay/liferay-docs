@@ -18,7 +18,7 @@ This tutorial demonstrates how to
 - Identify a Theme Contributor module.
 - Create a Theme Contributor module.
 
-Next, you'll learn how to create a Theme Contributor. 
+Next, you'll learn how to create a Theme Contributor.
 
 ## Creating Theme Contributors [](id=creating-theme-contributors)
 
@@ -68,8 +68,8 @@ To create a Theme Contributor module, follow these steps:
 4.  Build and deploy your module to see your modifications applied to @product@
     pages and themes.
 
-Theme Contributors do not guarantee the resource's insertion order. For example, 
-if you're creating a Theme Contributor to override another module's CSS styles, 
+Theme Contributors do not guarantee the resource's insertion order. For example,
+if you're creating a Theme Contributor to override another module's CSS styles,
 your CSS styles must be more specific in order to take priority.
 
 That's all you need to do to create a Theme Contributor for your site. Remember,
