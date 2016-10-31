@@ -152,10 +152,10 @@ on your machine.
 ### Using Sync Preferences [](id=using-sync-preferences)
 
 You can use Sync's preferences to add/remove Liferay instances to sync with, 
-edit instance connection settings, and control Sync's basic behavior. Open 
-Sync's preferences by clicking the Sync icon in the task bar (Windows) or menu 
-bar (Mac OS) and selecting *Preferences*. A preference screen for your instance 
-accounts displays. This is the *Accounts* tab in *Preferences*.
+edit connection settings, and control Sync's basic behavior. Open Sync's 
+preferences by clicking the Sync icon in the task bar (Windows) or menu bar 
+(Mac OS) and selecting *Preferences*. A preference screen for your instance 
+accounts displays. This is the *Accounts* tab in *Preferences*. 
 
 ![Figure 9: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../../images/sync-preferences-accounts-01.png)
 
@@ -212,9 +212,17 @@ data with your Liferay instances. It contains the following options:
   reduce server load and increase data transfer speeds. Note that LAN syncing 
   only works when enabled in the Liferay instance by the administrator, and in 
   other clients. 
-<!-- Insert detail on download and upload rate prioritization vs. portal settings -->
 
 ![Figure 11: The Preferences menu's *Network* tab contains settings for Sync's data transfer behavior.](../../../images/sync-desktop-prefs-network.png)
+
+Note that your Liferay instance's administrator can also limit the 
+download/upload rate from the Liferay instance. In this case, the Liferay 
+instance's settings take precedent. For example, if you set a 5.0 MB/s dowload 
+rate in the client but the Liferay instance's download limit is 2.0 MB/s, the 
+latter takes precedence. Also, the client's rate applies across all its 
+accounts. For example, if the client connects to three accounts and its download 
+rate is 5.0 MB/s, then the sum of the download rate for all three accounts never 
+exceeds 5.0 MB/s. 
 
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder. 
