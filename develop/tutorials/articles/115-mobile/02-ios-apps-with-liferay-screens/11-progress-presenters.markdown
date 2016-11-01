@@ -1,4 +1,4 @@
-# Using and Creating Progress Presenters
+# Using and Creating Progress Presenters [](id=using-and-creating-progress-presenters)
 
 Many apps display a progress indicator while performing an operation. For 
 example, you've likely seen the spinners in iOS apps that let you know the app 
@@ -22,7 +22,7 @@ from the
 [advanced version of the sample Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced) 
 as an example. First, you’ll learn how to use progress presenters. 
 
-## Using Progress Presenters
+## Using Progress Presenters [](id=using-progress-presenters)
 
 [The `BaseScreenletView` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift) 
 contains the default progress presenter functionality. To show a presenter other 
@@ -90,7 +90,7 @@ this:
 Great! Now you know how to use progress presenters. Next, you’ll learn how to 
 create your own. 
 
-## Creating Progress Presenters
+## Creating Progress Presenters [](id=creating-progress-presenters)
 
 Creating your own progress presenter isn’t as complicated as you might think. 
 Recall that a presenter in Liferay Screens is a class that conforms the 
@@ -112,7 +112,7 @@ button:
    example, the XIB file in Add Bookmark Screenlet contains an iOS 
    `UIActivityIndicatorView` over the get title button: 
 
-    ![Figure 2: The updated Add Bookmark Screenlet's XIB file contains a new activity indicator over the get title button.](../../../images/screens-ios-xcode-add-bookmark-advanced-progress.png)
+    ![Figure 1: The updated Add Bookmark Screenlet's XIB file contains a new activity indicator over the get title button.](../../../images/screens-ios-xcode-add-bookmark-advanced-progress.png)
 
 2. In your View class, create an outlet for the XIB’s new activity indicator. 
    For example, Add Bookmark Screenlet’s View class (`AddBookmarkView_default`) 
@@ -178,7 +178,7 @@ existing presenter class. Use the following steps to do this:
 Great, that’s it! Now you can use your presenter the same way you would any 
 other. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 

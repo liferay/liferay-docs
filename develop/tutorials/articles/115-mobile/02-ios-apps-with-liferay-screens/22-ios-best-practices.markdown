@@ -1,4 +1,4 @@
-# iOS Best Practices
+# iOS Best Practices [](id=ios-best-practices)
 
 When developing iOS projects with Liferay Screens, there are a few best 
 practices that you should follow to ensure your code is as clean and bug-free as 
@@ -7,13 +7,13 @@ coding conventions for contributing to the Liferay Screens project on GitHub.
 [Click here](https://github.com/liferay/liferay-screens/blob/master/ios/swift-style-guide.md) 
 to see these.
 
-## Naming Conventions
+## Naming Conventions [](id=naming-conventions)
 
 Using the naming conventions described here leads to consistency and a better 
 understanding of the Screens library. This makes working with your Screenlets 
 much simpler. 
 
-### Screenlet Folder
+### Screenlet Folder [](id=screenlet-folder)
 
 Your Screenlet folder’s name should indicate your Screenlet’s functionality. For 
 example, 
@@ -27,7 +27,7 @@ and
 both work with Liferay assets. They’re therefore in the Screens library’s 
 [`Asset` folder](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Asset). 
 
-### Screenlets
+### Screenlets [](id=screenlets)
 
 Naming Screenlets properly is very important; they’re the main focus of Liferay 
 Screens. Your Screenlet should be named with its principal action first, 
@@ -37,7 +37,7 @@ For example,
 principal action is to log users into a Liferay instance. Its Screenlet class is 
 `LoginScreenlet`. 
 
-### View Models
+### View Models [](id=view-models)
 
 You should place View Models in your Screenlet’s root folder, and name them 
 after your Screenlet. For example, 
@@ -46,7 +46,7 @@ View Model is in the
 [`ForgotPasswordScreenlet` folder](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Auth/ForgotPasswordScreenlet) 
 and is named `ForgotPasswordViewModel`. 
 
-### Interactors
+### Interactors [](id=interactors)
 
 You should place your Screenlet’s Interactors in a folder named `Interactors` in 
 your Screenlet’s root folder. You should name each Interactor with its action 
@@ -59,7 +59,7 @@ has three Interactors in
 - `LoadRatingsInteractor`: Loads an asset’s ratings
 - `UpdateRatingInteractor`: Updates an asset’s ratings
 
-### Connectors
+### Connectors [](id=connectors)
 
 Name your Connectors with the same naming conventions as Interactors, replacing 
 *Interactor* with *Connector*. If your Connector calls a Liferay service, 
@@ -68,7 +68,7 @@ precede *Connector* with *Liferay*. For example,
 adds comments to an asset in a Liferay instance. A Connector that retrieves a 
 webpage’s title from any URL would be called `GetWebsiteTitleConnector`. 
 
-### Themes
+### Themes [](id=themes)
 
 Place your Screenlet’s Themes in a folder named *Themes* in your Screenlet’s 
 root folder. If you’re creating a group of similarly styled Themes for multiple 
@@ -92,7 +92,7 @@ for Forgot Password Screenlet’s Default theme are
 `ForgotPasswordView_default.xib` and `ForgotPasswordView_default.swift`, 
 respectively. 
 
-## Avoid Hardcoded Elements
+## Avoid Hardcoded Elements [](id=avoid-hardcoded-elements)
 
 Using constants instead of hardcoded elements is a simple way to avoid bugs. 
 Constants reduce the likelihood that you’ll make a typo when referring to common 
@@ -138,7 +138,7 @@ it to Image Gallery Screenlet’s `folderId` attribute:
         }
     }
 
-## Stay in Your Layer
+## Stay in Your Layer [](id=stay-in-your-layer)
 
 When accessing variables that belong to other Screenlet components, you should 
 avoid those outside your current Screenlet layer. This achieves better 
@@ -204,7 +204,7 @@ wouldn't be possible for layers to interact):
 - The Screenlet class’s View Model references. This is required for the 
   Screenlet to communicate with the View. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 

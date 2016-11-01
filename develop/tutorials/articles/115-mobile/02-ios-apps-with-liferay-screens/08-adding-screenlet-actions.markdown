@@ -1,4 +1,4 @@
-# Adding Screenlet Actions
+# Adding Screenlet Actions [](id=adding-screenlet-actions)
 
 With multiple Interactors, it's possible for a Screenlet to have multiple 
 actions. You must create an Interactor class for each action. For example, if 
@@ -28,7 +28,7 @@ proceeding, make sure you've read
 [the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
 And without any further ado, it's time to implement your Screenlet's action! 
 
-## Implementing Your Action
+## Implementing Your Action [](id=implementing-your-action)
 
 Use the following steps to add an action to your your Screenlet: 
 
@@ -215,7 +215,7 @@ Use the following steps to add an action to your your Screenlet:
 Great! Now you know how to support multiple actions in your Screenlets. The next 
 section shows you how to trigger your actions programmatically. 
 
-## Triggering Actions Programmatically
+## Triggering Actions Programmatically [](id=triggering-actions-programmatically)
 
 The user triggers Add Bookmark Screenlet’s actions when they press buttons in 
 the UI. What if you need to trigger the action programmatically? No problem! The 
@@ -237,7 +237,7 @@ to call the `userAction` method with the action name:
 
 That’s it! Now you know how to trigger your Screenlet actions programmatically. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 

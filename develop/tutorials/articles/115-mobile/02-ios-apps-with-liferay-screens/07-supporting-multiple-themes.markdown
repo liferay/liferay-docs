@@ -1,4 +1,4 @@
-# Supporting Multiple Themes in Your Screenlet
+# Supporting Multiple Themes in Your Screenlet [](id=supporting-multiple-themes-in-your-screenlet)
 
 Themes let you present the same Screenlet with a different look and feel. For 
 example, if you have multiple apps that use the same Screenlet, you can use 
@@ -26,7 +26,7 @@ Bookmark Screenlet created in
 is used as an example. Note that you can also follow these steps to add a View 
 Model while creating your Screenlet. 
 
-## Creating and Using a View Model
+## Creating and Using a View Model [](id=creating-and-using-a-view-model)
 
 Follow these steps to add and use a View Model in your Screenlet:
 
@@ -112,7 +112,7 @@ it. See the tutorial
 [Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
 for instructions on creating a Theme. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
 

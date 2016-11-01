@@ -1,4 +1,4 @@
-# Add a Screenlet Delegate
+# Add a Screenlet Delegate [](id=add-a-screenlet-delegate)
 
 Screenlet delegates let other classes respond to your Screenlet's actions. For 
 example, 
@@ -87,7 +87,7 @@ Follow these steps to add a delegate to your Screenlet:
 
 Great! Now you know how to add a delegate to your Screenlets. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 

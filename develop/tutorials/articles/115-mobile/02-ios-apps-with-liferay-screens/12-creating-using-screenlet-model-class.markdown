@@ -1,4 +1,4 @@
-# Creating and Using Your Screenlet's Model Class
+# Creating and Using Your Screenlet's Model Class [](id=creating-and-using-your-screenlets-model-class)
 
 Liferay Screens typically receives entities from a Liferay instance as 
 `[String:AnyObject]`, where `String` is the entity's attribute and `AnyObject` 
@@ -21,7 +21,7 @@ Using the
 as an example, this tutorial shows you how to create and use a model class in 
 your Screenlet. First, you'll create your model class. 
 
-## Creating Your Model Class
+## Creating Your Model Class [](id=creating-your-model-class)
 
 Your model class must contain all the code necessary to transform each 
 `[String:AnyObject]` that comes back from the server into a model object that 
@@ -62,7 +62,7 @@ properties that return the attribute values for each bookmark's name and URL:
 
 Next, you'll put your model class to work. 
 
-## Using Your Model Class
+## Using Your Model Class [](id=using-your-model-class)
 
 Now that your model class exists, you can use model objects anywhere your 
 Screenlet handles results. Exactly where depends on what Screenlet components 
@@ -195,7 +195,7 @@ where applicable.
 
 Awesome! Now you know how to create and use a model class in your Screenlet. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 

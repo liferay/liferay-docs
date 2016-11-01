@@ -1,4 +1,4 @@
-# Create and Use a Connector with Your Screenlet
+# Create and Use a Connector with Your Screenlet [](id=create-and-use-a-connector-with-your-screenlet)
 
 In Liferay Screens, a Connector is a class that interacts asynchronously with 
 local and remote data sources and Liferay instances. Recall that callbacks also 
@@ -29,7 +29,7 @@ proceeding, make sure you’ve read
 [the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
 First, you’ll learn how to create your Connector. 
 
-## Creating Connectors
+## Creating Connectors [](id=creating-connectors)
 
 When you create your Connector class, be sure to follow the 
 [naming convention](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#ios-naming-convention) 
@@ -138,7 +138,7 @@ Well done! Now you know how to create a Connector class. To see the finished
 example `AddBookmarkLiferayConnector` class, 
 [click here](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced/Connector/AddBookmarkLiferayConnector.swift). 
 
-## Using Connectors
+## Using Connectors [](id=using-connectors)
 
 To use a Connector, your Interactor class must extend the 
 [`ServerConnectorInteractor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseConnectors/ServerConnectorInteractor.swift) 
@@ -272,7 +272,7 @@ class (`GetWebTitleInteractor`) retrieves data, it extends
 
 Awesome! Now you know how to create and use Connectors in your Screenlets. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 
