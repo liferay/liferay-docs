@@ -98,7 +98,7 @@ Using constants instead of hardcoded elements is a simple way to avoid bugs.
 Constants reduce the likelihood that you’ll make a typo when referring to common 
 elements. They also gather these elements in a single location. For example, 
 when you 
-[add an action to your Screenlet](https://www.liferay.com/), 
+[add an action to your Screenlet](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions), 
 each Screenlet action used as a `restorationIdentifier` in the View class is 
 defined as a constant in the Screenlet class. The Screenlet class’s 
 `createInteractor` method then uses the constants to distinguish between the 
@@ -176,7 +176,7 @@ Interactor now contains its own `title` variable, set in its initializer:
 The Screenlet class’s `createInteractor` method calls this initializer when 
 creating an instance of the Interactor. Also note that the Screenlet’s View 
 Model is used to retrieve the View’s `title`. As explained in the tutorial 
-[Supporting Multiple Themes in Your Screenlet](https://www.liferay.com/), 
+[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet), 
 a View Model serves as an abstraction layer for your View, which lets you use 
 different Themes with a Screenlet: 
 
@@ -212,10 +212,10 @@ wouldn't be possible for layers to interact):
 
 [Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
 
-[Supporting Multiple Themes in Your Screenlet](https://www.liferay.com/)
+[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet)
 
-[Adding Screenlet Actions](https://www.liferay.com/)
+[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions)
 
-[Create and Use a Connector with Your Screenlet](https://www.liferay.com/)
+[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet)
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
