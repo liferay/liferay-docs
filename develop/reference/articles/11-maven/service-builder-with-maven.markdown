@@ -4,22 +4,21 @@ You can add the Liferay
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 plugin to your Maven project by applying it to the project's `pom.xml`. Visit
 the [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
-tutorial for instructions on how to apply Service Builder to your Maven project.
-The properties you can specify for the Service Builder plugin in your POM are
-described below
+tutorial to apply Service Builder to your Maven project. The following
+properties can be used with Service Builder: 
 
-- `apiDirName`: The folder to generate the service API Java source files.
-- `autoImportDefaultReferences`: Whether to automatically add default
+- `apiDirName`: Where to generate the service API Java source files.
+- `autoImportDefaultReferences`: Set `true` to automatically add default
    references like `com.liferay.portal.ClassName`,
    `com.liferay.portal.Resource`, and `com.liferay.portal.User` to the
    services.
-- `autoNamespaceTables`: Whether to prefix table names by the namespace
+- `autoNamespaceTables`: Set `true` to prefix table names by the namespace
    specified in the `service.xml` file.
 - `beanLocatorUtil`: The fully qualified class name of a bean locator class to
    use in the generated service classes.
 - `buildNumber`: The specific value to assign the `build.number` property in the
    `service.properties` file.
-- `buildNumberIncrement`: Whether to automatically increment the
+- `buildNumberIncrement`: Set `true` to automatically increment the
    `build.number` property in the `service.properties` file by one at every
    service generation.
 - `hbmFileName`: The Hibernate Mapping file to generate.
@@ -30,7 +29,7 @@ described below
    [model hints](/develop/tutorials/-/knowledge_base/7-0/customizing-model-entities-with-model-hints)
    files for Liferay Service Builder to use in generating the service layer.
 - `modelHintsFileName`: The model hints file for the project.
-- `osgiModule`: Whether to generate the service layer for OSGi modules.
+- `osgiModule`: Set `true` to generate the service layer for OSGi modules.
 - `pluginName`: If specified, a plugin can enable additional generation
    features, such as `Clp` class generation, for non-OSGi modules.
 - `propsUtil`: The fully qualified class name of the service properties util

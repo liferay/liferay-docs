@@ -5,9 +5,9 @@ does my Liferay portlet project need? What does a Liferay Maven Service Builder
 project look like? How do I create a Liferay Maven-based context contributor?
 These questions can be answered with three words: Liferay Maven Archetypes.
 
-Liferay provides a slew of Maven archetypes for easy Liferay module project. In
+Liferay provides a slew of Maven archetypes for easy Liferay module projects. In
 this tutorial, you'll learn how to use Liferay's Maven archetypes to generate
-the module project you desire.
+your module project.
 
 At the time of this writing, Liferay provides just under 40 Maven archetypes for
 you to use; expect this number to continue growing! These archetypes are
@@ -19,7 +19,7 @@ command:
 
     mvn archetype:generate -Dfilter=liferay
 
-See the brief list of some popular Maven archetypes provided by Liferay:
+Here's a brief list of some popular Maven archetypes provided by Liferay:
 
 - Activator
 - [Context Contributor](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
@@ -46,16 +46,15 @@ generation process.
 
 **Note:** If you're creating a JSF portlet using Liferay Faces, you can find
 example archetype declarations for JSF component suites at
-[http://www.liferayfaces.org/](http://www.liferayfaces.org/). 
+[http://www.liferayfaces.org](http://www.liferayfaces.org/). 
 
 $$$
 
-As an example, you'll create a Liferay MVC portlet using its Liferay Maven
+Here's an example that creates a Liferay MVC portlet using its Liferay Maven
 archetype.
 
-1.  Open a command prompt and navigate into a folder dedicated for Maven
-    projects. Run the Maven archetype generation command filtered for Liferay
-    archetypes only:
+1.  On the command line, navigate to where you want your Maven project. Run
+    the Maven archetype generation command filtered for Liferay archetypes only:
 
         mvn archetype:generate -Dfilter=liferay
 
@@ -67,8 +66,8 @@ archetype.
     @product@ instance you're using (e.g., `1.0.0`, `1.0.1`, etc.).
 
 3.  Depending on the Maven archetype you selected, you're given a set of
-    archetype options to fill out for your Maven project. For the example MVC
-    portlet archetype, you could configure the properties as follows
+    archetype options to fill out for your Maven project. For the MVC portlet
+    archetype, you could use these properties: 
 
     - `groupId`: `com.liferay`
     - `artifactId`: `com.liferay.project.templates.mvc.portlet`
@@ -90,7 +89,7 @@ in that folder, your module project is automatically accounted for there:
     </modules>
 
 The Liferay Maven archetypes generate deployable Liferay module projects, but
-they're bare bones, and will likely require further customizations.
+they're bare bones and likely require further customizations.
 
-If you're looking to generate a quick foundation for a Liferay module built with
+If you want to generate a quick foundation for a Liferay module built with
 Maven, using Liferay Maven archetypes is your best option.
