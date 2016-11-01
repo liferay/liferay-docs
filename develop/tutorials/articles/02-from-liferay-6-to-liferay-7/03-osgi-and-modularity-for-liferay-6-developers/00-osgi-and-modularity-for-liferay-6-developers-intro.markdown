@@ -36,16 +36,15 @@ Here are the topics you'll dig into:
 
 2.  [Leveraging Dependencies](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#leveraging-dependencies):
     In @product-ver@, developers can both declare dependencies among modules and
-    can combine modules to create applications. Since leveraging dependencies
-    provides huge benefits, it's important to spend a lot of time showing how to
-    do it.
+    combine modules to create applications. Since leveraging dependencies
+    provides huge benefits, it's important to devote a lot of space to it.
 
 3.  [OSGi Services and Dependency Injection](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#osgi-services-and-dependency-injection-with-declarative-services):
     OSGi provides a powerful concept called OSGi Services (also known as
     microservices). OSGi's Declarative Services standard provides a clean way to
-    inject dependencies (similar to Spring Dependency Injection) in a dynamic
-    environment. It also offers an elegant extensibility model that
-    @product-ver@ leverages extensively.
+    inject dependencies in a dynamic environment. This is similar to Spring DI,
+    except the changes happen while the system is running. It also offers an
+    elegant extensibility model that @product-ver@ leverages extensively.
 
 4.  [Dynamic Deployment](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#dynamic-deployment):
     Module deployment is managed by @product-ver@ (not the application server).
@@ -74,7 +73,7 @@ classes transparent to external clients.
 - **Dependencies by Package** - Dependencies are specified by Java package, not
 by JAR file. In traditional plugins, developers had to add *all* of a JAR file's
 classes to the classpath to use *any* of its classes. With OSGi, developers need
-only import packages of the classes they need. Only the classes in those
+only import packages containing the classes they need. Only the classes in those
 packages are added to the module's classpath.
 
 - **Lightweight** - A module can be as small as the developer wants it to be. In
@@ -436,7 +435,7 @@ to a field marks it to be injected with a service matching the field's type.
 On deploying this class's module, the SCR finds a component configuration of the
 class type `SomeApi` and binds the service to this referencing component class.
 
-At build time, Bnd creates a *component description* file for each of a module's
+At build time, Bnd creates a *component description* file for each module's
 components automatically. The file specifies the component's services,
 dependencies, and activation characteristics. On module deployment, the OSGi
 framework reads the component description to create the component and manage its
@@ -458,7 +457,7 @@ via modules. The `MANIFEST.MF` file describes the module's physical
 characteristics, such as the packages it exports and imports. The module's
 component description files specify its functional characteristics (i.e., the
 services its components offer and consume). Also modules and their components
-have their own lifecycle and administrative APIs. Declarative Services and shell
+have their own lifecycles and administrative APIs. Declarative Services and shell
 tools give developers fine-grained control over module and component deployment.
 
 Since a module's contents depend on its activation, consider the activation
@@ -487,15 +486,15 @@ The [Apache Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-
 lets developers manage the module lifecycle. They can install/uninstall modules
 and start/stop them. Developers can update a module and notify dependent modules
 to use the update. Liferay's tools, including Liferay IDE/Developer Studio,
-Liferay Workspace, and Blade CLI offer similar shell commands that exercise the
+Liferay Workspace, and Blade CLI offer similar shell commands that use the
 OSGi Admin API. 
 
 On activating a module, its components are enabled. But only *activated*
-components can be used. A component's activation requires all its referenced
+components can be used. Component activation requires all its referenced
 services be satisfied. That is, all services it references must be registered.
 The highest ranked service that matches a reference is bound to the component.
-Once all the services the component references are found and bound to it, the
-component is registered and ready for activation. 
+When the container find and binds all the services the component references, it
+registers the component. It's now ready for activation. 
 
 Components can use *delayed* (default) or *immediate* activation policies. To
 specify immediate activation, the developer adds the attribute `immediate=true`
@@ -523,15 +522,14 @@ let developers manage components:
 -  `src:disable [componentID]`: Disables the component.
 
 Service references are static by default. That is, an injected service remains
-bound to the referencing component until the service is disabled. As an
-alternatively, developers can specify *greedy* service policies for references.
+bound to the referencing component until the service is disabled.
+Alternatively, developers can specify *greedy* service policies for references.
 Every time a higher ranked matching service is registered, the framework unbinds
-the lower ranked service from the component and binds the new service in place
-of it automatically. Here's a `@Reference` annotation that uses a greedy policy:
+the lower ranked service from the component and binds the new service in its
+place automatically. Here's a `@Reference` annotation that uses a greedy policy:
 
     @Reference(policyOption = ReferencePolicyOption.GREEDY)
 
-Now you're familiar with annotations and tools for managing deployment.
 Declarative Services annotations let you specify component activation and
 service policies. Gogo Shell commands let you control modules and components.
 Next, you'll create and deploy a module and component to @product@. 
@@ -660,16 +658,16 @@ complicated than Declarative Services.
 
 Developers new to OSGi should check out these resources:
 
--   [Introduction to Liferay Development](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development) - 
+-   [Introduction to Liferay Development](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development): 
     For using OSGi to develop on @product@.
 
 -   [OSGi enRoute](http://enroute.osgi.org/) is a site the OSGi Alliance
     provides to the OSGi community. These sections are recommended.
 
-    -   [Documentation](http://enroute.osgi.org/book/210-doc.html) - For details
+    -   [Documentation](http://enroute.osgi.org/book/210-doc.html): For details
         on modularity and the OSGi architecture.
 
-    -   [Tutorials](http://enroute.osgi.org/book/150-tutorials.html) - For
+    -   [Tutorials](http://enroute.osgi.org/book/150-tutorials.html): For
         hands-on experience with OSGi modules and Declarative Services.
 
 Developers ready to dive deep into OSGi should read the OSGi specifications.
@@ -679,9 +677,9 @@ specifies the following services that @product-ver@ leverages extensively.
 
 -   *Declarative Services Specification*
 
--   *Configuration Admin Service Specification* - For modifying deployed
+-   *Configuration Admin Service Specification*: For modifying deployed
     bundles. Since Configuration Admin services are already integrated with
     Declarative Services, however, Liferay developers need not use the low-level
     API.
 
--   *Metatype Service Specification* - For describing attribute types as metadata.
+-   *Metatype Service Specification*: For describing attribute types as metadata.
