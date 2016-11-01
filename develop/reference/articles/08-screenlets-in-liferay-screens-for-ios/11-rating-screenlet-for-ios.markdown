@@ -17,10 +17,9 @@
 
 ## Features [](id=features)
 
-Gallery Screenlet shows a list of images from a Documents and Media folder in a 
-Liferay instance. You can also use Gallery Screenlet to upload images to and 
-delete images from the same folder. The Screenlet implements fluent pagination 
-with configurable page size, and supports i18n in asset values. 
+Rating Screenlet shows an asset's rating. It also lets users update or delete 
+the rating. This Screenlet comes with different Views that display ratings as 
+thumbs, stars, and emojis. 
 
 ## Module [](id=module)
 
