@@ -22,7 +22,7 @@ Service Tracker to look up services in the service registry.
 What scenarios might require the use of a service tracker?
 
 -  Calling OSGi services from a [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc)
--  Calling OSGi services from a [JSF portlet](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces-intro)
+-  Calling OSGi services from a [JSF portlet](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
 -  Calling OSGi services from a [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
   that's been upgraded to run on Liferay 7, but not
   [fully modularized](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)

@@ -53,7 +53,7 @@ Your project is now set up to use IDE's Tern features.
 
 ## Related Topics [](id=related-topics)
 
-[Using Front-End Development Code Assist Features in IDE](/develop/tutorials/-/knowledge_base/7-0/using-front-end-development-code-assist-features-in-ide)
+[Using Front-End Code Assist Features in IDE](/develop/tutorials/-/knowledge_base/7-0/using-front-end-code-assist-features-in-ide)
 
 [Creating Modules with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide)
 
