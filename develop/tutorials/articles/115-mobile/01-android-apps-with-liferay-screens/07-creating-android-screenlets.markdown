@@ -53,7 +53,7 @@ you may have imported.
 
 If you want to reuse your Screenlet in another app, create it in a new Android 
 application module. The tutorial 
-[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-android-screenlets) 
+[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets) 
 explains how to do this. When your Screenlet's project is in place, you can 
 start by creating the Screenlet's UI. 
 
