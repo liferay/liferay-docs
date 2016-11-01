@@ -1,24 +1,21 @@
 # Deploying a Module Built with Maven to @product@
 
-Deploying a Liferay module built with Maven can be completed two ways:
+There are two ways to deploy a Maven-built Liferay module:
 
-- Manually copy your generated Maven module JAR to your @product@ instance's
-  `/deploy` folder.
-- Configure your Maven project to deploy to the @product@ instance automatically
-  by running a Maven command via the command prompt.
+1.  Copy your generated Maven module JAR to your @product@ instance's
+    `/deploy` folder.
+2.  Configure your Maven project to deploy to the @product@ instance
+    automatically by running a Maven command via the command prompt.
 
 Although manually copying your module JAR for deployment is a viable option,
-this is an inefficient way to deploy your projects. With just a few simple
-configurations in your Maven POMs, you can deploy a module to @product@ with one
-command execution.
+this is an inefficient way to deploy your projects. With a small configuration
+in your Maven POMs, you can deploy a module to @product@ with one command
+execution.
 
-In this tutorial, you'll learn how to deploy your Liferay module built with
-Maven automatically. Before you can deploy it, you must have it configured to
-generate an OSGi module JAR; visit the
+A prerequisite for this tutorial is to have your project configured to generate
+an OSGi module JAR; if you haven't done this, visit the
 [Creating a Module JAR Using Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-module-jar-using-maven)
 tutorial for more information.
-
-You'll learn how to deploy your Liferay module automatically next.
 
 1.  Add the following `maven-antrun-plugin` configuration to your Liferay Maven
     project's parent `pom.xml` file.
@@ -69,18 +66,18 @@ You'll learn how to deploy your Liferay module automatically next.
       folder to your @product@ instance's deployment folder. You'll configure
       the deployment folder next.
 
-2.  Add the following `properties` tag outside the `build` tag in your project's
-    parent `pom.xml` file:
+2.  Add this `properties` tag outside the `build` tag in your project's parent
+    `pom.xml` file:
 
         <properties>
             <deploy.dir>${liferay-bundle}/deploy</deploy.dir>
         </properties>
 
-    This logic configures your deployment directory. Make sure to replace the
+    This configures your deployment directory. Make sure to replace the
     `${liferay-bundle}` variable with your @product@ instance's file path.
 
-3.  To invoke the Maven AntRun plugin from your project, configure it in your
-    project's `pom.xml`:
+3.  To invoke the Maven AntRun plugin from your project, add its configuration
+    to your `pom.xml`:
 
         <build>
             <plugins>
@@ -91,10 +88,9 @@ You'll learn how to deploy your Liferay module automatically next.
             </plugins>
         </build>
 
-4.  Navigate to your Maven project in a command prompt and deploy your project
-    to the configured deployment folder:
+4.  Run this command to deploy your project:
 
         mvn verify
 
-That's it! Your Liferay Maven project is automatically copied to your @product@
+That's it! Your Liferay Maven project is copied automatically to your @product@
 instance's deployment folder and ready for use.
