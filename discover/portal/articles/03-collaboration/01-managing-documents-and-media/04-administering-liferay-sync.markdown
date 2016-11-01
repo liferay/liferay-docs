@@ -19,18 +19,21 @@ sites. In addition to basic configuration, important topics such as security and
 accidental data loss are covered. Note, you must be an administrator to set up 
 your Liferay instance for Sync. If you're not an instance or site administrator, 
 you can skip this guide and move on to 
-[installing and using the Sync desktop client](/discover/portal/-/knowledge_base/6-2/using-liferay-sync-on-your-desktop). 
+[installing and using the Sync desktop client](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop). 
 
-To prepare your Liferay instance for Sync, you must first install the *Sync 
-Connector* app. 
+To prepare your Liferay instance for Sync, you must first install the *Liferay 
+Sync Connector* app. 
 
 ## Installing the Sync Connector App [](id=installing-the-sync-connector-plugin)
 
 To use Liferay Sync, you must first install the latest Sync Connector app in 
-your Liferay instance. You can find this app in the 
-[Liferay Marketplace](https://web.liferay.com/marketplace). 
-Note that older Sync 1.x clients can't connect to the latest Sync Connector 
-plugin. 
+your Liferay instance. You can find this app in the Liferay Marketplace for your 
+Liferay edition: 
+
+- [Liferay CE Sync Connector](https://web.liferay.com/marketplace/-/mp/application/31071510)
+- [Liferay Sync Connector (DXP/DE)](https://web.liferay.com/marketplace/-/mp/application/31709100)
+
+Note that older Sync 1.x clients can't connect to the latest Sync Connector app. 
 
 +$$$
 
@@ -41,35 +44,33 @@ enabled by default in Liferay. You can verify this by ensuring that the
 
 $$$
 
-Sync Connector contains two applications: *Sync Web* (sync-web) and *Sync 
-Connector Admin* (sync-admin-portlet). Sync Web transparently provides Sync's 
-functional logic. Sync Connector Admin provides a UI that lets you control how 
-Sync clients function with your Liferay instance. For example, you can disable 
-Sync across the instance or on a site-by-site basis. Sync Connector installs the 
-same as any other Liferay app. Once you've installed Sync, it's enabled by 
-default for all the Liferay instance's sites, so you can start using it. 
+The Sync Connector app lets you enable and configure Sync in your Liferay 
+instance. For example, you can disable Sync across the instance or on a 
+site-by-site basis. Sync Connector installs the same as any other Liferay app. 
+Once you've installed Sync, it's enabled by default for all the Liferay 
+instance's sites, so you can start using it. 
 
-If you want to use Sync Connector Admin's default settings and are fine with 
-Sync being enabled for all your Liferay instance's sites, you can skip the next 
+If you want to use Sync Connector's default settings and are fine with Sync 
+being enabled for all your Liferay instance's sites, you can skip the next 
 section. Before directing your users to install and configure the Sync desktop 
 and mobile clients, however, **Make sure to read** this guide's sections on 
 preventing accidental file deletion and ensuring Sync security. You should also 
 **warn your users** about the potential for accidental data loss. 
 
-## Using Sync Admin to Configure Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
+## Configuring Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
 
-Sync Connector Admin's UI lets you manage how, or if, clients connect to your 
-Liferay instance. You can also configure default file permissions on a per-site 
-basis, and manage the devices that connect to your Liferay instance. To access 
-Sync Connector Admin, select *Control Panel* &rarr; *Configuration* &rarr; *Sync 
-Connector Admin*. 
+Sync Connector lets you manage how, or if, clients connect to your Liferay 
+instance. You can also configure default file permissions on a per-site basis, 
+and manage the devices that connect to your Liferay instance. To access Sync 
+Connector, select *Control Panel* &rarr; *Configuration* &rarr; *Sync Connector 
+Admin*. 
 
 Sync Connector Admin has three tabs: 
 
 1. **Settings:** Control Sync's general behavior. These settings apply globally 
    to Sync. 
 
-    ![Figure 1: The Control Panel's Configuration section contains the Sync Connector Admin portlet.](../../../images/sync-admin-01.png)
+    ![Figure 1: The Control Panel's Configuration section contains Sync Connector Admin.](../../../images/sync-admin-01.png)
 
     - **Allow the use of Sync?:** Whether Sync is enabled.
 
@@ -115,7 +116,7 @@ Sync Connector Admin has three tabs:
 
 2. **Sites:** Control Sync on a per-site basis. 
 
-    ![Figure 2: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images/sync-admin-02.png)
+    ![Figure 2: Sync Connector Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images/sync-admin-02.png)
     
     For each site in the Liferay instance, the Sites tab lists each site's 
     default file permissions (more on this in a moment) and whether Sync is 
@@ -129,9 +130,9 @@ Sync Connector Admin has three tabs:
 
     +$$$
 
-    **Warning:** Disabling Sync for specific sites from Sync Admin can result in
-    data loss across clients. If Sync is disabled for a site users are currently
-    syncing, any files in the clients' sync folders for that site are 
+    **Warning:** Disabling Sync for specific sites from Sync Connector Admin can 
+    result in data loss across clients. If Sync is disabled for a site users are 
+    currently syncing, any files in the clients' sync folders for that site are 
     automatically deleted from their clients. If a user is offline when Sync is 
     disabled for a site, any offline changes or additions they make are deleted 
     upon client reconnection. 
@@ -170,7 +171,7 @@ Sync Connector Admin has three tabs:
 
 3. **Devices:** View and manage the devices registered with Sync. 
 
-    ![Figure 4: Sync Admin's Devices tab lists all the devices Sync has registered for the Liferay instance.](../../../images/sync-admin-devices.png)
+    ![Figure 4: Sync Connector Admin's Devices tab lists all the devices Sync has registered for the Liferay instance.](../../../images/sync-admin-devices.png)
 
     Each row in the Devices tab's table represents a device. The *Name* column 
     lists the user that registered the device. The remaining columns list each 
@@ -255,15 +256,15 @@ check that it contains the text `classified information`. Next, use Sync to
 connect to your Liferay instance with the user that doesn't belong to the Secret 
 Site. The file doesn't sync because this user isn't a site member. 
 
-Now go to Sync Admin and set the Secret Site's default file permissions to View
-Only. Create a new user, add them to the Secret Site, and add their account in
-your Liferay Sync client. As with the secretagent user, Sync downloads the
-`secret.txt` file to this user's local Sync folder because the user is a member
-of the Secret Site. Now edit and save this file. Even though you can edit and
-save it locally, the edits aren't synced because the site's default file
-permissions are View Only. After attempting the sync, a red *x* appears next to
-the file in the local Sync folder. Right click the file to see the error. It
-confirms the user doesn't have the required permissions. 
+Now go to Sync Connector Admin and set the Secret Site's default file 
+permissions to View Only. Create a new user, add them to the Secret Site, and 
+add their account in your Liferay Sync client. As with the secretagent user, 
+Sync downloads the `secret.txt` file to this user's local Sync folder because 
+the user is a member of the Secret Site. Now edit and save this file. Even 
+though you can edit and save it locally, the edits aren't synced because the 
+site's default file permissions are View Only. After attempting the sync, a red 
+*x* appears next to the file in the local Sync folder. Right click the file to 
+see the error. It confirms the user doesn't have the required permissions. 
 
 ![Figure 4: The upload error occurs because the user only has permission to view files.](../../../images/sync-file-permissions-error.png)
 
