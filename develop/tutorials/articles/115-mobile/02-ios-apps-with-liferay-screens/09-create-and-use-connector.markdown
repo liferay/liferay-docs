@@ -32,9 +32,8 @@ First, you’ll learn how to create your Connector.
 ## Creating Connectors [](id=creating-connectors)
 
 When you create your Connector class, be sure to follow the 
-[naming convention](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#ios-naming-convention) 
-specified in the 
-[best practices tutorial](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices). 
+[naming convention](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#naming-conventions) 
+specified in the best practices tutorial. 
 
 Use the following steps to implement your Connector class: 
 
@@ -276,7 +275,7 @@ Awesome! Now you know how to create and use Connectors in your Screenlets.
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 
-[Adding Screenlet Actions](https://www.liferay.com/)
+[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions)
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
 

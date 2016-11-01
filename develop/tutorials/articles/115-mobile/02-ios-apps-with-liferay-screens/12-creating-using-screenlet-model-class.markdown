@@ -199,7 +199,7 @@ Awesome! Now you know how to create and use a model class in your Screenlet.
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 
-[Adding Screenlet Actions](https://www.liferay.com/)
+[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions)
 
 [Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
 

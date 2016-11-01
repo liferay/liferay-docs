@@ -123,6 +123,16 @@ defines this UI. Because the button triggers the Screenlet's action, it contains
 
 ![Figure 1: Here's the sample Add Bookmark Screenlet's XIB file rendered in Interface Builder.](../../../images/screens-ios-xcode-add-bookmark.png)
 
++$$$
+
+**Note:** The Screenlet in this tutorial doesn't support multiple Themes. If you 
+want your Screenlet to support multiple Themes, your View class must also 
+conform a *View Model* protocol that you create. For instructions on this, see 
+the tutorial 
+[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet). 
+
+$$$
+
 Now you must create your Screenlet's View class. This class controls the UI you 
 just defined. In the 
 [`BaseScreenletView` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift), 
@@ -174,11 +184,21 @@ Next, you'll create your Screenlet's Interactor.
 
 ## Creating the Interactor [](id=creating-the-interactor)
 
-Create an Interactor class for each of your Screenlet's use cases. In the 
+Create an Interactor class for each of your Screenlet's actions. In the 
 [`Interactor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift), 
 Screens provides the default functionality required by all Interactor classes. 
 Your Interactor class must therefore extend `Interactor` to provide the 
 functionality unique to your Screenlet. 
+
++$$$
+
+**Note:** You may wish to make your server call in a Connector instead of an 
+Interactor. Doing so provides an additional abstraction layer for your server 
+call, leaving your Interactor to instantiate your Connector and receive its 
+results. For instructions on this, see the tutorial 
+[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet). 
+
+$$$
 
 Interactors work synchronously, but you can use callbacks (delegates) or 
 Connectors to run their operations in the background. For example, the Liferay 
@@ -188,7 +208,7 @@ for this purpose. This is described in
 [the Mobile SDK tutorial on invoking Liferay services asynchronously](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-ios-app). 
 Screens bridges this protocol to make it available in Swift. Your Interactor 
 class can conform this protocol to make its server calls asynchronously. To 
-implement an Interactor class 
+implement an Interactor class:
 
 - Your initializer must receive all required properties and a reference to the 
   Screenlet. 
@@ -214,7 +234,7 @@ To save the server call's results, `AddBookmarkInteractor` defines the public
 variable `resultBookmarkInfo`. This class also defines public constants for the 
 bookmark's folder ID, title, and URL. The initializer sets these variables and 
 calls `Interactor`'s constructor with a reference to the base Screenlet class 
-(`BaseScreenlet`):
+(`BaseScreenlet`): 
 
     public var resultBookmarkInfo: [String:AnyObject]?
     public let folderId: Int64
@@ -264,36 +284,26 @@ Mobile SDK handles the `ServiceContext` object for you:
         }
     }
 
-Finally, the `AddBookmarkInteractor` class must conform the `LRCallback` protocol 
-by implementing the `onFailure` and `onSuccess` methods. The `onFailure` method 
-communicates the `NSError` object that results from a failed server call. It 
-does this by calling the base `Interactor` class's `callOnFailure` method with 
-the error. When the server call succeeds, the `onSuccess` method sets the server 
-call's results (the `result` argument) to the `resultBookmarkInfo` variable. The 
-`onSuccess` method finishes by calling the base `Interactor` class's 
-`callOnSuccess` method to communicate the success status throughout the 
-Screenlet: 
+Finally, the `AddBookmarkInteractor` class must conform the `LRCallback` 
+protocol by implementing the `onFailure` and `onSuccess` methods. The 
+`onFailure` method communicates the `NSError` object that results from a failed 
+server call. It does this by calling the base `Interactor` class's 
+`callOnFailure` method with the error. When the server call succeeds, the 
+`onSuccess` method sets the server call's results (the `result` argument) to the 
+`resultBookmarkInfo` variable. The `onSuccess` method finishes by calling the 
+base `Interactor` class's `callOnSuccess` method to communicate the success 
+status throughout the Screenlet: 
 
-    	public func onFailure(error: NSError!) {
-    		self.callOnFailure(error)
-    	}
-    
-    	public func onSuccess(result: AnyObject!) {
-    		//Save result bookmark info
-    		resultBookmarkInfo = (result as! [String:AnyObject])
-    
-    		self.callOnSuccess()
-    	}
-    
+    public func onFailure(error: NSError!) {
+        self.callOnFailure(error)
     }
-<!--
-Commenting out until advanced tutorial is published:
 
-Refer to 
-[this](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets-advanced#using-connector-instead-callback) 
-chapter of the [advanced tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets-advanced) 
-if you want to use Connectors instead of Callbacks. 
--->
+    public func onSuccess(result: AnyObject!) {
+        //Save result bookmark info
+        resultBookmarkInfo = (result as! [String:AnyObject])
+
+        self.callOnSuccess()
+    }
 
 Next, you'll create the Screenlet class. 
 
@@ -375,23 +385,24 @@ For reference, the sample Add Bookmark Screenlet's final code is
 [here on GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Basic/AddBookmarkScreenlet.swift). 
 
 You're done! Your Screenlet is a ready-to-use component that you can add to your 
-storyboard. You can even [package](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#publish-your-themes-using-cocoapods) 
-it to contribute to the Screens project or distribute it with CocoaPods. Now you 
+storyboard. You can even 
+[package it](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#publish-your-themes-using-cocoapods) 
+to contribute to the Screens project or distribute it with CocoaPods. Now you 
 know how to create iOS Screenlets! 
-<!--
-Commenting out until advanced tutorial is published:
-
-If you want to go deeper into the development of a Screenlet, please refer to 
-our 
-[advanced tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets-advanced), 
-where we teach cool things like: multiview support, event notification from your 
-Screenlet, and much more! 
--->
 
 ## Related Topics [](id=related-topics)
-<!--
-[Creating iOS Screenlets (Advanced)](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets-advanced)
--->
+
+[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet)
+
+[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions)
+
+[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet)
+
+[Add a Screenlet Delegate](/develop/tutorials/-/knowledge_base/7-0/add-a-screenlet-delegate)
+
+[Using and Creating Progress Presenters](/develop/tutorials/-/knowledge_base/7-0/using-and-creating-progress-presenters)
+
+[Creating and Using Your Screenlet's Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-and-using-your-screenlets-model-class)
 
 [Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
 

@@ -241,7 +241,7 @@ That’s it! Now you know how to trigger your Screenlet actions programmatically
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 
-[Create and Use a Connector with Your Screenlet](https://www.liferay.com/)
+[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet)
 
 [Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
 
