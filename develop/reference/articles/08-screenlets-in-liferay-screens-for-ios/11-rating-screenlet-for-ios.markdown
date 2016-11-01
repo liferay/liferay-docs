@@ -18,7 +18,7 @@
 ## Features [](id=features)
 
 Rating Screenlet shows an asset's rating. It also lets users update or delete 
-the rating. This Screenlet comes with different Views that display ratings as 
+the rating. This Screenlet comes with different Themes that display ratings as 
 thumbs, stars, and emojis. 
 
 ## Module [](id=module)
