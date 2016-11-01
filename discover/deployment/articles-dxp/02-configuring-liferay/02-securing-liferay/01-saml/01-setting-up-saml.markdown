@@ -59,7 +59,6 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
     If you're configuring an example setup, use the password *liferay*. When
     you enter all the required information, click *Save*.
 
-    <!-- Does this need to change? Searching the repo just left me confused -->
     Note that the SAML keystore is created by the SAML plugin's keystore
     manager. By default, the following property is set in the SAML plugin:
 
@@ -262,7 +261,6 @@ you already set up one Liferay instance as a SAML Identity Provider, use a
     - Metadata URL: http://localhost:8080/c/portal/saml/metadata (test this URL
       first)
 
-<!-- Check the veracity of this-->
     **Important**: The Liferay SAML 2.0 Provider plugin supports using *either* a URL
     to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata XML
     file. The value entered in the *Metadata URL* field will only be persisted
@@ -362,7 +360,6 @@ of the Liferay SAML 2.0 Provider plugin are not available as properties.
 
 $$$
 
-<!-- Are these URLs still valid? -->
 Suppose that you have two Liferay instances running on ports 8080 and 9080 of
 your host. Suppose further that you configured the Liferay running on port
 8080 as a SAML Identity Provider and the Liferay running on port 9080 as a SAML
@@ -434,21 +431,6 @@ If your situation fits the scenario described above, follow these steps:
 1. Configure each node of your [Liferay
    cluster](/discover/deployment/-/knowledge_base/7-0/article-title) as a SAML
    service provider using the instructions of the previous section.
-
-<!--
-
-2. Ensure that this Liferay node is using the fully qualified name of the load
-   balancer (e.g., `FQN.LB.HOST`) as the value of the `web.server.host` property
-   in the node's `portal-ext.properties` file.
-
-        #
-        # Set the hostname that will be used when the portlet generates URLs.
-        # Leaving this blank will mean the host is derived from the servlet
-        # container.
-        #
-        web.server.host=FQN.LB.HOST
-
--->
 
 2. Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
    the first Liferay node to the remaining Liferay nodes. This file is the Java
