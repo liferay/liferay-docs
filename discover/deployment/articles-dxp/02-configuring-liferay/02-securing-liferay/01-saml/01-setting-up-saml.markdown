@@ -431,11 +431,11 @@ SAML IdP.)
 
 If your situation fits the scenario described above, follow these steps:
 
-1. Configure one node of your Liferay cluster as a SAML service provider using
-   the instructions of the previous section.
+1. Configure each node of your [Liferay
+   cluster](/discover/deployment/-/knowledge_base/7-0/article-title) as a SAML
+   service provider using the instructions of the previous section.
 
-<!-- This step is maybe unnecessary. Pending feedback form Mika, delete it and
-refactor the remaining steps. -->
+<!--
 
 2. Ensure that this Liferay node is using the fully qualified name of the load
    balancer (e.g., `FQN.LB.HOST`) as the value of the `web.server.host` property
@@ -448,10 +448,9 @@ refactor the remaining steps. -->
         #
         web.server.host=FQN.LB.HOST
 
+-->
 
-3. Repeat steps 1 and 2 for the remaining Liferay nodes.
-
-4. Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
+2. Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
    the first Liferay node to the remaining Liferay nodes. This file is the Java
    keystore that's created by the SAML Provider plugin. The keystore
    contains the valid or self-signed certificate managed by the SAML
@@ -470,7 +469,7 @@ refactor the remaining steps. -->
         #saml.keystore.manager.impl=com.liferay.saml.credential.DLKeyStoreManagerImpl
         saml.keystore.manager.impl=com.liferay.saml.credential.FileSystemKeyStoreManagerImpl
 
-5. At this point, all of the Liferay nodes have the same SAML SP configuration
+3. At this point, all of the Liferay nodes have the same SAML SP configuration
    and each of them can respond to web requests and handle the SAML protocol. To
    test your SSO solution, sign into Liferay via your load balancer, navigate to
    a few pages of a few different sites, and then log out.
