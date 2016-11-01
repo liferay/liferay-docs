@@ -144,10 +144,10 @@ where applicable.
         }
 
 3. If your Screenlet uses a delegate, your delegate protocol must account for 
-   your model objects. Skip this step if you don't have a delegate (although you 
-   should have one). For example, Add Bookmark Screenlet's delegate 
-   (`AddBookmarkScreenletDelegate`) must communicate `Bookmark` objects. The 
-   delegate's first method does this via its second argument: 
+   your model objects. Skip this step if you don't have a delegate. For example, 
+   Add Bookmark Screenlet's delegate (`AddBookmarkScreenletDelegate`) must 
+   communicate `Bookmark` objects. The delegate's first method does this via its 
+   second argument: 
 
         @objc public protocol AddBookmarkScreenletDelegate: BaseScreenletDelegate {
 

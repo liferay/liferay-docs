@@ -5,8 +5,8 @@ actions. You must create an Interactor class for each action. For example, if
 your Screenlet needs to make two server calls, then you need two Interactors: 
 one for each call. Your Screenlet class's `createInteractor` method must return 
 an instance of each Interactor. Also, recall that each action name is given by 
-the `restorationId` of the UI components that trigger them. You should set this 
-`restorationId` to a constant in your Screenlet. 
+the `restorationIdentifier` of the UI components that trigger them. You should 
+set this `restorationIdentifier` to a constant in your Screenlet. 
 
 This tutorial walks you through the steps necessary to add an action to your 
 Screenlet, and trigger an action programmatically. As an example, this tutorial 
