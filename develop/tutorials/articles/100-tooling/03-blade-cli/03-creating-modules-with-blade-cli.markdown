@@ -7,9 +7,8 @@ project, you can use Gradle to build your project's JAR file and use Blade CLI
 to deploy your module to @product@'s module framework. In this tutorial, you'll
 learn how to use Blade CLI standalone. You can, however, use Blade CLI from a
 Liferay Workspace, which offers additional benefits. You can learn more about
-creating modules with a Liferay Workspace in the
-[Creating Modules in a Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-modules-in-a-workspace)
-tutorial.
+Liferay Workspaces in its dedicated
+[tutorial](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
 To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options

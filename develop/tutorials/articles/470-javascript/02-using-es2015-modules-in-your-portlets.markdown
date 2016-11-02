@@ -48,6 +48,6 @@ in your portlet is a piece of cake!
 
 **Related Topics**
 
-[Using JSPs in a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/using-jsps-in-a-portlet-application)
+[Overriding a Module's JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
 
 [Web Services](/develop/tutorials/-/knowledge_base/7-0/web-services)

@@ -129,7 +129,7 @@ $$$
 6.  Open the `build.gradle` file. This is used to specify all your module's
     dependencies. The `build.gradle` file that was generated for you is
     pre-populated with content and default dependencies related to OSGi and
-    Liferay Portal. In the `dependencies {...}` block, you need to add the web
+    @product@. In the `dependencies {...}` block, you need to add the web
     client module's dependencies. To learn how to find and specify dependencies
     on Liferay API modules, refer to the reference document 
     [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
@@ -220,12 +220,7 @@ $$$
     application will use the default language keys in Liferay when it is
     deployed.
 
-Awesome! You've successfully created your application's web client module! If
-you'd like to learn more about client modules, and how to create one from
-scratch, visit the
-[Creating a Client Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-a-client-module)
-section.
-<!-- The Creating a Client Module link above refers to instructions on creating generic OSGi client modules. Once the Creating a Service Builder application tutorial has been written, the link above should be replaced to the section in the Creating a Service Builder application tutorial on creating a web client module. -Jesse -->
+Awesome! You've successfully created your application's web client module! 
 
 The table below serves as a quick reference guide. It summarizes the migration
 process for many of your application's directories, packages, and files.
@@ -250,7 +245,7 @@ learn how to create these modules next.
 ## Converting Your Application's Service Builder API and Implementation [](id=converting-your-applications-service-builder-api-and-implementation)
 
 In this section, you'll learn about converting a Liferay 6 Service Builder
-application to a @product@ 7 style application. In the previous section, you
+application to a @product-ver@ style application. In the previous section, you
 learned how to generate your implementation and API modules. If you haven't yet
 run the `servicebuilder` blade command outlined in step 2 of the previous
 section, run it now. The API module holds your application's Service Builder
@@ -353,21 +348,12 @@ dependencies to these:
     }
 
 Excellent! You've successfully generated your application's services using
-Service Builder. They now reside in modules, and can be deployed to @product@ 7.0.
-If you'd like to learn more information about creating implementation and API
-modules from scratch, visit the
-[Creating an Implementation Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-implementation-module)
-and
-[Creating an API Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-api-module),
-respectively.
-
-<!-- The links above refer to instructions on creating generic OSGi implementation and API modules. Once the Creating a Service Builder application tutorial has been written, the links above should be replaced to the sections in the Creating a Service Builder application tutorial on creating service implementation and service API modules. -Jesse -->
+Service Builder. They now reside in modules, and can be deployed to @product-ver@.
 
 ## Building Your Module JARs for Deployment [](id=building-your-module-jars-for-deployment)
 
-Now it's time to build your modules and deploy them to your @product@ 7.0
-instance. To build your project, run `gradle build` from your project's root
-directory.
+Now it's time to build your modules and deploy them to your @product@ instance.
+To build your project, run `gradle build` from your project's root directory.
 
 +$$$
 
@@ -417,7 +403,7 @@ shell as shown below.
 ![Figure 1: Once you've connected to your Liferay instance in your Gogo shell prompt, run *lb* to list your new converted modules.](../../../images/deploy-converted-modules.png)
 
 This tutorial explained how to convert your traditional application into the modular
-format of a @product@ 7 style applicaton. You first created a web client
+format of a @product-ver@ style applicaton. You first created a web client
 (`*-web`) module that holds your application's portlet classes and UI. Then you
 learned how to create a service implementation module and a service API module.
 Your learned how to run Service Builder to generate code for your application's

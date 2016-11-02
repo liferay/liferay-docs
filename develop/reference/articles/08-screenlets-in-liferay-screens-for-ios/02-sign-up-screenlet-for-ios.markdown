@@ -12,7 +12,7 @@
 
 ## Features [](id=features)
 
-The `SignUpScreenlet` creates a new user in your Liferay instance: a new user of
+The Sign Up Screenlet creates a new user in your Liferay instance: a new user of
 your app can become a new user in your portal. You can also use this Screenlet
 to save the credentials of the new user in their keychain. This enables auto
 login for future sessions. The Screenlet also supports navigation of form fields
@@ -27,11 +27,11 @@ from the keyboard of the user's device.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The `SignUpScreenlet` with the Default and Flat7 Themes.](../../images/screens-ios-signup.png)
+![The Sign Up Screenlet with the Default and Flat7 Themes.](../../images/screens-ios-signup.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
-`SignUpScreenlet`'s corresponding configuration in the Liferay instance can be 
+Sign Up Screenlet's corresponding configuration in the Liferay instance can be 
 set in the Control Panel by selecting *Configuration* &rarr; *Instance 
 Settings*, and then selecting the *Authentication* section. 
 
@@ -63,7 +63,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 
 ## Delegate [](id=delegate)
 
-The `SignUpScreenlet` delegates some events to an object that conforms to the 
+The Sign Up Screenlet delegates some events to an object that conforms to the 
 `SignUpScreenletDelegate` protocol. If the `autologin` attribute is enabled, 
 login events are delegated to an object conforming to the 
 `LoginScreenletDelegate` protocol. Refer to the [`LoginScreenlet` documentation](LoginScreenlet.md) 
