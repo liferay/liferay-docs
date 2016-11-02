@@ -151,6 +151,6 @@ workspace's root folder:
 
 The Workspace and Plugins SDK's artifacts are downloaded, and the available
 tasks are listed in the terminal. Since the download process takes time,
-invoking it at a convenient time, such as before a work break, can be
+invoking it at a convenient time such as before a work break can be
 worthwhile. Once the downloading is complete, your Plugins SDK is ready to use
 in your workspace. It's as simple as that!
