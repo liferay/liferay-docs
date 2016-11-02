@@ -41,4 +41,4 @@ latest JavaScript standard features and publish it.
 
 [Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
 
-[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+[OSGi and Modularity for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers)

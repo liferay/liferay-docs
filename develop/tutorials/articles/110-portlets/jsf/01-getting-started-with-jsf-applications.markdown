@@ -174,13 +174,13 @@ Bridge.
 
     There are several UI component suites that a JSF application can use,
     which include
-    [*Liferay Faces Alloy*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy),
+    [*Liferay Faces Alloy*](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-alloy),
     [*PrimeFaces*](http://primefaces.org/),
     [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf),
     and
     [*RichFaces*](http://richfaces.jboss.org/). Furthermore, you can take
     advantage of
-    [*Liferay Faces Portal*](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-portal)
+    [*Liferay Faces Portal*](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-portal)
     in order to use Liferay-specific utilities and UI components. These
     components can be used by specifying them as dependencies in your build
     file, as well.

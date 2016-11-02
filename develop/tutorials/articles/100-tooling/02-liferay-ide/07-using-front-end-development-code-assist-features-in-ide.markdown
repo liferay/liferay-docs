@@ -18,7 +18,7 @@ working in a JavaScript, JSP, HTML, or CSS file.
 You must have Tern features enabled in your project in order to use 
 them. By default, Liferay portlet plugins already have Tern features enabled. 
 Visit the
-[Enabling Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-tern-code-assist-features-in-your-project)
+[Enabling Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-code-assist-features-in-your-project)
 tutorial to learn how to enable Tern features for non-Liferay specific projects.
 
 +$$$
@@ -133,7 +133,7 @@ available in your project because the Tern module `Liferay` is enabled. This
 plugin provides code completions for the static JavaScript object APIs available
 to portlets when running in Liferay Portal. To learn more about enabling Tern
 modules in Eclipse, refer to the
-[Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-tern-code-assist-features-in-your-project)
+[Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-code-assist-features-in-your-project)
 tutorial. 
 
 The example below shows how you can use code assist features to easily access
@@ -246,8 +246,8 @@ Lastly, you'll learn about the code assist features for jQuery.
 ### jQuery Code Assist Features [](id=jquery-code-assist-features)
 
 You can also use code assist with jQuery. To do this, you must enable the
-`jQuery` Tern module. Follow the instructions in the [Enabling Code Assist Features in Your
-Project](/develop/tutorials/-/knowledge_base/7-0/enabling-tern-code-assist-features-in-your-project)
+`jQuery` Tern module. Follow the instructions in the
+[Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-code-assist-features-in-your-project)
 tutorial to learn how to enable Tern modules in your project. 
 
 The jQuery Tern plugin gives type information for the jQuery framework. In the
