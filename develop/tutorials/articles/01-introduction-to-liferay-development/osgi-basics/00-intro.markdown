@@ -5,3 +5,6 @@ modular applications. There are many OSGi best practices that @product@ follows
 to provide a platform for which it's easy to develop. In this section of
 tutorials, you're introduced to some OSGi basics and common Liferay best
 practices for your module's development.
+
+<!-- Talk more about what is in this tutorial section once we have more
+documented topics. -Cody -->
