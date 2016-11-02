@@ -127,7 +127,6 @@ you can still add to the existing form to make it form easier to understand:
 
    ![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../../images-dxp/kaleo-forms-field-types.png)
 
-
 Each workflow task appears in a row with its associated form and a button that
 lets you assign a form. If you use the Single Approver workflow, there are
 three tasks: create, update, and review.
