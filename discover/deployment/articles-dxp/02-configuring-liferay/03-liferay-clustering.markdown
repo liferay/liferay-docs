@@ -156,6 +156,8 @@ The main thing to keep in mind is you need to make sure that every node of the
 cluster has the same access to the file store as every other node. For this
 reason, you must look at your store configuration. 
 
+<!-- Move the below stuff over to the Docs and Media documentation -Rich --> 
+
 There are several options available for configuring how Liferay's Documents and
 Media library stores files. Each option is a *store* which can be configured
 through the `portal-ext.properties` file by setting the `dl.store.impl=`
@@ -334,6 +336,10 @@ to connect your S3 account to @product@.
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service. 
 
+<!-- This should have its own article in the search section, but maybe we should
+point to it here. Either that, or we should move the one from the search section
+here. -Rich -->
+
 ## Clustering Search [](id=clustering-search)
 
 You can configure search for clustering in one of two ways: you can use
@@ -503,6 +509,8 @@ be set on all your nodes. That's all you need to do to sync your indexes. Pretty
 easy, right? Of course, if you have existing indexes, you'll want to reindex as
 described in the previous section once you have Cluster Link enabled on all your
 nodes. 
+
+<!-- Have a Google doc for this: https://docs.google.com/document/d/19oaISXylCyKueuMkIjCKtnrNuyhbvrkMJZvyGQLPIpk/edit#heading=h.ayvbwz8pwsz0 -->
 
 ## Distributed Caching [](id=distributed-caching)
 
