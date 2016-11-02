@@ -125,11 +125,14 @@ you can still add to the existing form to make it form easier to understand:
    use a Paragraph and Separator to instruct the assignee to focus on a certain
    section of the form.
 
+   ![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../../images-dxp/kaleo-forms-field-types.png)
+
+
 Each workflow task appears in a row with its associated form and a button that
 lets you assign a form. If you use the Single Approver workflow, there are
 three tasks: create, update, and review.
 
-![Figure 4: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-task-forms.png)
+![Figure 5: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-task-forms.png)
 
 Click on the kebab menu (![Action](../../../images-dxp/icon-actions.png)) next
 to the create task and then click *Assign Form*. The screen that appears lets
@@ -142,7 +145,7 @@ task so you won’t need all the fields that are in the form by default. To dele
 a field, mouse over it and click the *Trash* icon that appears. Delete all but
 the *Assigned To*, *Severity*, *Start Date*, *Status*, and *Title* fields.
 
-![Figure 5: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-form-builder.png)
+![Figure 6: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-form-builder.png)
 
 +$$$
 
@@ -154,7 +157,7 @@ over it and clicking the wrench icon.
 
 $$$
 
-![Figure 6: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-field-settings.png)
+![Figure 7: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-field-settings.png)
 
 If you don’t need to change any field settings in the form, click *Save*. On the
 next screen choose your new form from the *Actions* button next to it. Now that
@@ -178,19 +181,19 @@ For the Lunar Resort News Content process, choose the new form for the update
 and review tasks, then click *Save*. Your new process is complete, and is listed
 in the Kaleo Forms Admin portlet. Celebrate!
 
-![Figure 7: Once created, your process is listed in Kaleo Forms Admin.](../../../images-dxp/kaleo-forms-processes.png)
+![Figure 8: Once created, your process is listed in Kaleo Forms Admin.](../../../images-dxp/kaleo-forms-processes.png)
 
 ### Test the Process [](id=test-the-process)
 
 Once your new process is developed, add records to it by clicking on the process
 name, and then the Plus button (![Add](../../../images-dxp/icon-add.png)).
 
-![Figure 8: Add a record to your new process.](../../../images-dxp/kaleo-forms-admin.png)
+![Figure 9: Add a record to your new process.](../../../images-dxp/kaleo-forms-admin.png)
 
 The application displays the form you assigned to the workflow's initial state.
 Fill out the form and click Save.
 
-![Figure 9: Add a record to your new process.](../../../images-dxp/kaleo-forms-new-process-form.png)
+![Figure 10: Add a record to your new process.](../../../images-dxp/kaleo-forms-new-process-form.png)
 
 Once submitted in the Kaleo Forms Admin application, the process moves under the
 workflow engine's management. Submitting a process backed by the Single Approver
