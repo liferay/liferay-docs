@@ -220,12 +220,7 @@ $$$
     application will use the default language keys in Liferay when it is
     deployed.
 
-Awesome! You've successfully created your application's web client module! If
-you'd like to learn more about client modules, and how to create one from
-scratch, visit the
-[Creating a Client Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-a-client-module)
-section.
-<!-- The Creating a Client Module link above refers to instructions on creating generic OSGi client modules. Once the Creating a Service Builder application tutorial has been written, the link above should be replaced to the section in the Creating a Service Builder application tutorial on creating a web client module. -Jesse -->
+Awesome! You've successfully created your application's web client module! 
 
 The table below serves as a quick reference guide. It summarizes the migration
 process for many of your application's directories, packages, and files.
@@ -354,14 +349,6 @@ dependencies to these:
 
 Excellent! You've successfully generated your application's services using
 Service Builder. They now reside in modules, and can be deployed to @product-ver@.
-If you'd like to learn more information about creating implementation and API
-modules from scratch, visit the
-[Creating an Implementation Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-implementation-module)
-and
-[Creating an API Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-api-module),
-respectively.
-
-<!-- The links above refer to instructions on creating generic OSGi implementation and API modules. Once the Creating a Service Builder application tutorial has been written, the links above should be replaced to the sections in the Creating a Service Builder application tutorial on creating service implementation and service API modules. -Jesse -->
 
 ## Building Your Module JARs for Deployment [](id=building-your-module-jars-for-deployment)
 
