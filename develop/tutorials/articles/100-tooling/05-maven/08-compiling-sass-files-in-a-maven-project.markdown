@@ -12,28 +12,47 @@ Here's how to apply Liferay's CSS builder to your Maven project.
 
 1.  Open your project's `pom.xml` file and apply Liferay's CSS Builder:
 
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>com.liferay</groupId>
-                    <artifactId>com.liferay.css.builder</artifactId>
-                    <version>1.0.20</version>
-                    <executions>
-                        <execution>
-                            <id>default-build-css</id>
-                            <phase>generate-sources</phase>
-                            <goals>
-                                <goal>build-css</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+        <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>copy</goal>
+                    </goals>
                     <configuration>
-                        <portalCommonPath>/</portalCommonPath>
-                        <docrootDirName>src/main/resources</docrootDirName>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>com.liferay</groupId>
+                                <artifactId>com.liferay.frontend.css.common</artifactId>
+                                <version>${com.liferay.frontend.css.common.version}</version>
+                            </artifactItem>
+                        </artifactItems>
+                        <outputDirectory>${project.build.directory}/deps</outputDirectory>
+                        <stripVersion>true</stripVersion>
                     </configuration>
-                </plugin>
-            </plugins>
-        </build>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.css.builder</artifactId>
+            <version>${com.liferay.css.builder.version}</version>
+            <executions>
+                <execution>
+                    <id>default-build-css</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>build-css</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <docrootDirName>${com.liferay.portal.tools.theme.builder.outputDir}</docrootDirName>
+                <outputDirName>/</outputDirName>
+                <portalCommonPath>target/deps/com.liferay.frontend.css.common.jar</portalCommonPath>
+            </configuration>
+        </plugin>
 
     The above configuration applies the CSS Builder by specifying its `groupId`,
     `artifactId`, and `version`. It then defines the CSS Builder's execution and
