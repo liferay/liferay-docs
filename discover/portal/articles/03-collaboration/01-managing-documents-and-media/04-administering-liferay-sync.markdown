@@ -21,17 +21,31 @@ your Liferay instance for Sync. If you're not an instance or site administrator,
 you can skip this guide and move on to 
 [installing and using the Sync desktop client](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop). 
 
-To prepare your Liferay instance for Sync, you must first install the *Liferay 
-Sync Connector* app. 
+To prepare your Liferay instance for Sync, you must first install Sync's 
+prerequisite apps. 
 
-## Installing the Sync Connector App [](id=installing-the-sync-connector-plugin)
+## Installing Sync's Prerequisites [](id=installing-the-sync-connector-plugin)
 
-To use Liferay Sync, you must first install the latest Sync Connector app in 
-your Liferay instance. You can find this app in the Liferay Marketplace for your 
-Liferay edition: 
+Liferay Sync requires that your Liferay instance contains the most recent 
+versions of the following Liferay Marketplace apps: 
 
-- [Liferay CE Sync Connector](https://web.liferay.com/marketplace/-/mp/application/31071510)
-- [Liferay Sync Connector (DXP/DE)](https://web.liferay.com/marketplace/-/mp/application/31709100)
+- [Liferay CE IP Geocoder](https://web.liferay.com/marketplace/-/mp/application/15197657): 
+  Uses geographic IP lookup to get the approximate location of devices that 
+  register with Sync. This is a security measure that lets you see where the 
+  devices are that connect to your Liferay instance via Sync. 
+
+- [Liferay CE Sync Connector](https://web.liferay.com/marketplace/-/mp/application/31071510): 
+  Lets you enable and configure Sync in your Liferay instance. For example, you 
+  can disable Sync across the instance or on a site-by-site basis. Note that 
+  Sync is enabled by default for all your Liferay instance's sites. 
+
+These apps are preinstalled in the latest @product@ releases. To verify that 
+these apps are installed in your Liferay instance, navigate to 
+*Control Panel* &rarr; *Apps* &rarr; *App Manager*. The App Manager lists the 
+installed apps. You can also search for them in the *Search* field at the upper 
+right. If your Liferay instance doesn't contain these apps, install them from 
+Liferay Marketplace. 
+[Click here for instructions on installing apps from Liferay Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
 Note that older Sync 1.x clients can't connect to the latest Sync Connector app. 
 
@@ -43,12 +57,6 @@ enabled by default in Liferay. You can verify this by ensuring that the
 *Configuration* &rarr; *Service Access Policy*. 
 
 $$$
-
-The Sync Connector app lets you enable and configure Sync in your Liferay 
-instance. For example, you can disable Sync across the instance or on a 
-site-by-site basis. Sync Connector installs the same as any other Liferay app. 
-Once you've installed Sync, it's enabled by default for all the Liferay 
-instance's sites, so you can start using it. 
 
 If you want to use Sync Connector's default settings and are fine with Sync 
 being enabled for all your Liferay instance's sites, you can skip the next 
