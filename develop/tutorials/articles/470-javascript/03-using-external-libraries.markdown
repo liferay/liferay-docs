@@ -50,6 +50,22 @@ If you want to use a library that does not export itself as a named module (as i
 
 While this is not the "cleanest" solution, it will let you load your modules as browser globals.
 
+If you're hosting the library (and not loading it from a CDN), you can also:
+
+    - Name the library in the define function 
+        
+        define('mylibrary', [], factory);
+
+    - Remove the UMD wrapper or do something like this
+
+        if (typeof define === 'function' && define.amd) {
+
+        }
+
+    - Configure you bundle's build task so that the `configJSModules` task goes over the library. 
+    This task will name it and generate the appropriate loader configuration for you.
+
+
 As of version 7.x.x it's also possible to hide Liferay's AMD Loader from the configuration page or your Liferay Portal instance, by going to the JavaScript Loader's settings and unchecking the `expose global` option.
 
 **Related Topics**
