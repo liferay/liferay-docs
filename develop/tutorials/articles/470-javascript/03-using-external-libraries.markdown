@@ -1,11 +1,10 @@
 # Using external libraries [](id=using-external-libraries)
 
-
 It's possible and easy to use external JavaScript libraries in your portlets.
 
 There are several ways of using this feature depending on the external libraries you plan to use and how you plan to use them (as modules or as browser globals).
 
-If you are the owner of the library, you should make sure that it supports [UMD](https://github.com/umdjs/umd) 
+If you are the owner of the library, you should make sure that it supports [UMD](https://github.com/umdjs/umd)
 (universal module definition), this is quite easy to add to existing code by using the following "template"
 
         // Assuming our "module" will be exported as "mylibrary"
@@ -28,7 +27,6 @@ If you are the owner of the library, you should make sure that it supports [UMD]
             return {};
         }));
 
-
 If you want to use a library that does not export itself as a named module (as it is the case for many jQuery plugins) or load the library as a browser global, you can use the following workaround:
 
     - Add a script tag before loading your module with the following content
@@ -38,7 +36,7 @@ If you want to use a library that does not export itself as a named module (as i
             define.amd = false;
         </script>
 
-    - Then add a script tag to load the module        
+    - Then add a script tag to load the module
 
         <script type="text/javascript" src="${javascript_folder}/library.js"></script>
 
@@ -52,19 +50,18 @@ While this is not the "cleanest" solution, it will let you load your modules as 
 
 If you're hosting the library (and not loading it from a CDN), you can also:
 
-    - Name the library in the define function 
-        
+    - Name the library in the define function
+
         define('mylibrary', [], factory);
 
     - Remove the UMD wrapper or do something like this
 
-        if (typeof define === 'function' && define.amd) {
+        if (false && typeof define === 'function' && define.amd) {
 
         }
 
-    - Configure you bundle's build task so that the `configJSModules` task goes over the library. 
+    - Configure you bundle's build task so that the `configJSModules` task goes over the library.
     This task will name it and generate the appropriate loader configuration for you.
-
 
 As of version 7.x.x it's also possible to hide Liferay's AMD Loader from the configuration page or your Liferay Portal instance, by going to the JavaScript Loader's settings and unchecking the `expose global` option.
 
