@@ -73,7 +73,7 @@ preventing accidental file deletion and ensuring Sync security. You should also
 Next, you'll learn how to configure Sync for SSO. You can skip this section if 
 your Liferay instance doesn't use an SSO server. 
 
-## Configuring Sync to Use SSO
+## Configuring Sync to Use SSO [](id=configuring-sync-to-use-sso)
 
 If your Liferay instance uses an SSO (single sign-on) server, you must ensure 
 that Sync can access the following URLs without being redirected to your SSO 
@@ -307,7 +307,7 @@ site's default file permissions are View Only. After attempting the sync, a red
 *x* appears next to the file in the local Sync folder. Right click the file to 
 see the error. It confirms the user doesn't have the required permissions. 
 
-![Figure 4: The upload error occurs because the user only has permission to view files.](../../../images-dxp/sync-file-permissions-error.png)
+![Figure 5: The upload error occurs because the user only has permission to view files.](../../../images-dxp/sync-file-permissions-error.png)
 
 To confirm that the error didn't propagate through Sync, open the file in the 
 secretagent user's local Sync folder. It still contains the original text. 

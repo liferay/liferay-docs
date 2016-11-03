@@ -263,7 +263,7 @@ synced, go back to your browser and refresh the page with your Documents and
 Media app. Click on the *README.txt* file's name, look at the file information 
 displayed, and check that the file's version number has been incremented. 
 
-![Figure 11: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
+![Figure 12: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
 
 If you download and open the `README.txt` file again, it now says `second test`.
 Your edit was uploaded to the site! You can be confident that this edit was also

@@ -271,7 +271,7 @@ site's default file permissions are View Only. After attempting the sync, a red
 *x* appears next to the file in the local Sync folder. Right click the file to 
 see the error. It confirms the user doesn't have the required permissions. 
 
-![Figure 4: The upload error occurs because the user only has permission to view files.](../../../images/sync-file-permissions-error.png)
+![Figure 5: The upload error occurs because the user only has permission to view files.](../../../images/sync-file-permissions-error.png)
 
 To confirm that the error didn't propagate through Sync, open the file in the 
 secretagent user's local Sync folder. It still contains the original text. 
