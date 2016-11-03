@@ -1,24 +1,23 @@
 # Loading Custom Modules and Global Libraries [](id=loading-custom-modules-and-global-libraries)
- 
-JavaScript modules each have their own configuration code that provides the 
-metadata necessary for the module loaders (YUI Loader and AMD Loader) in the 
-system to locate and use the bundle. This metadata, known as the 
-*module definition*, provides details such as dependencies, the module's name 
-and location, when the module should be loaded, and more. Without the module 
-definition, the module is invisible to Portal and **will not be loaded**.
-<!-- Is that last sentence above correct Chema? -->
+
+To load your modules in @product@, you need to know when they need loaded, where 
+they are located at build time, if you want to bundle them together or load them 
+independently, and you must assemble them at runtime. Keeping track of all these 
+aspects can be a hassle. Product@'s module loaders (YUI Loader and AMD Loader) 
+provide a streamlined process that handles loading for you, giving you piece of 
+mind and saving you time.
 
 ES2015 `*.es.js` files are automatically transpiled to AMD modules and 
-configured via the `configJSModules` task, so no additional work is needed on 
-your part in order for the loader to recognize them. See the 
-[Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
+configured, so no additional work is needed for the loader to recognize them. 
+See the [Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
 tutorial to learn how to use ES2015 in your JavaScript modules.
 
 Manual configuration is required for the following use cases:
 
--  Bundles containing legacy YUI and AlloyUI modules
--  Third party global libraries (such as those installed by NPM or Bower)
--  Custom AUI modules for the YUI loader
+-  Custom AUI and YUI modules
+-  External libraries with named AMD modules
+-  External libraries with global exports that you want to load asynchronously
+   or from other modules
 -  Initialization code
 
 This tutorial covers how to load your custom and third party JavaScript modules 
@@ -26,13 +25,18 @@ in @product@.
 
 ## Configuring your Module [](id=configuring-your-module)
 
-Module definitions are written within a configuration file called `config.js`. 
-This file is loaded on every page along with the module.
+To use the loaders you must first define your modules. This metadata, known as 
+the *module definition*, provides details such as dependencies, the module's 
+name and location, when the module should be loaded, and more.
 
-![Figure 1: Custom JavaScript module configuration consist of the `Liferay-JS-Config` BND header and a `config.js` file.](../../images/loading-custom-modules-configuration.png)
+The module definition is written within a configuration file. Liferay uses 
+`config.js` as a naming convention, but you can use whatever name you prefer.
 
-You must specify the `config.js` file's location in your bundle's BND file, so 
-Portal knows where to access it.
+![Figure 1: Custom JavaScript module configuration consist of the `Liferay-JS-Config` BND header and a configuration file.](../../images/loading-custom-modules-configuration.png)
+
+Regardless of your configuration file's name, You must specify its location in 
+your bundle's BND file, so Portal knows where to access it. You'll learn how to
+do this next.
 
 ### Configuring your Bundle's BND File [](id=configuring-your-bundles-bnd-file)
 
@@ -48,20 +52,20 @@ Follow these steps to configure your BND file:
 
         Web-ContextPath: /my-bundle-name
 
-Now that Portal knows where the module's `config.js` file is located, you can
+Now that Portal knows where the module's configuration file is located, you can
 write it next.
 
-### Writing the Config JS File [](id=writing-the-config-js-file)
+### Writing the Configuration File [](id=writing-the-configuration-file)
 
-Follow these steps to write your module's `config.js` file:
+Follow these steps to define your module:
 
-1.  Create a `config.js` file in your bundle's 
+1.  Create a configuration file, for example `config.js`, in your bundle's 
     `src/main/resources/META-INF/resources` directory.
 
 2.  Identify the loader your module requires.
 
     The type of module you are configuring determines the loader you must use in 
-    your `config.js` file.
+    your configuration file.
     
     **YUI and AlloyUI modules:**  Use the `YUI.applyConfig` mechanism to provide 
     the module information. Note that AUI modules use the AUI mechanism built on
@@ -71,10 +75,11 @@ Follow these steps to write your module's `config.js` file:
     provide the module information.
 
     **Initialization code:** requires no loader mechanism. Simply add your code 
-    to the module's configuration file (`config.js`).
+    to the module's configuration file.
 
-3.  Define your module in the `config.js` file, using the corresponding loader 
-    mechanism.
+3.  Add the module's definition to the configuration file you specified with the 
+    `Liferay-JS-Config` BND header in the last section, using the loader 
+    mechanism you identified in step 2.
 
     Below are some example configurations for each use case.
 
@@ -118,20 +123,12 @@ Follow these steps to write your module's `config.js` file:
             **base:** The base directory to fetch the module from.
     
             **combine:** Whether to use a combo service to reduce the number of 
-            HTTP connections required to load your dependencies.
-    
-<!-- Can you explain what `Liferay.AUI.getCombine()` does?
-
-From what I can tell, it returns `true` if JS fastload is enabled in your theme,
-otherwise it returns `false`. So, if JS fastload is enabled then combo service 
-is enabled, if not then it isn't.
-
-I imagine, you can also simply put a value of `true` or `false` as well. Is this
-considered best practice though?
-
-thx!
-
--->
+            HTTP connections required to load your dependencies. Best practice
+            is to use `Liferay.AUI.getCombine()` as the value, as @product@'s
+            own modules do. If `js_fast_load` in enabled in your theme, 
+            `Liferay.AUI.getCombine()` returns `true`, otherwise it returns 
+            `false`. Hardcoding a value can result in odd or unexpected behavior, 
+            and is not recommended.
 
             **modules:** A list of module definitions.
             
@@ -151,7 +148,7 @@ thx!
 
     **Custom AMD module `config.js` example** [`com.liferay.frontend.js.polyfill.babel.web` module](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-js/frontend-js-polyfill-babel-web/bnd.bnd):
 
-        Loader.addModule(
+        Liferay.Loader.addModule(
                 {
                         dependencies: [],
                         exports: '_babelPolyfill',
@@ -159,61 +156,29 @@ thx!
                         path: MODULE_PATH + 'browser-polyfill.min.js'
                 }
         );
-
-    **AMD module configuration example for React**:
-
-        Loader.addModule(
-          {
-            dependencies: [],
-            name: 'react',
-            anonymous: true,
-            // Either this:
-            path: MODULE_PATH + 'path/to/something.js'
-            // or
-            fullPath: 'https://unpkg.com/react@15.3.2/dist/react.js'
-          }
-        );
     
     AMD Loader module options are defined in 
     https://github.com/liferay/liferay-amd-loader/blob/master/src/js/script-loader.js#L35-L59
 
-    The parameters used in the custom AMD module examples are defined below:
+    The parameters used in the custom AMD module example are defined below:
     
     **dependencies:** An array of module dependencies.
     
     **exports:** The value, as a `string`, that the module exports to the global
-    namespace. This parameter is only used if the module does not expose a 
-    `define` function. The `define` function can be found here [define](https://github.com/liferay/liferay-amd-loader/blob/v1.5.6/src/js/script-loader.js#L60-L118)
-
-<!-- Would you ever expose a `define` function if you are configuring your 
-module in a `config.js`? 
-
-If not, I think we can remove the `define` function information from the
-definition.
-
--->
+    namespace. This is used for non-AMD modules. For example if your module
+    exposes the global attribute `window.MyLibrary`, then you can set 
+    `exports = 'MyLibrary'` to let the loader know when this module is done
+    loading.
 
     **name:** The name of the module.
-    
-    **anonymous:** Whether the module should be anonymous.
-
-<!-- Can you clarify what is meant by anonymous? 
-
-Does it just mean that it is not located in Portal, and therefore does not have
-a fullpath?
-
--->
 
     **path:** Sets the path of the module. If omitted, the module `name` value 
     will be used as the path.
     
     **fullpath:** Sets the full path to the module. This property should be used
-    instead of the `path` property when the module isn't located in Portal. For
-    example, the `fullpath` property is used to specify the location of 
-    `react.js` in the example above.
-    
-<!-- Are there any properties that I missed? I would like to define them all 
-here, since we don't have an API docs for these. -->
+    instead of the `path` property when the module isn't located in Portal. For 
+    example, you can use the `fullpath` property to load a library from an 
+    external CDN: `fullPath: 'https://web/address/external-library.js'`.
 
     **Library initialization code module `config.js` example** 
     [`com.liferay.frontend.js.metal.web` module](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-js/frontend-js-metal-web/src/main/resources/META-INF/resources/config.js):
@@ -233,65 +198,34 @@ Now that your module is configured, you can learn how to use it next.
 
 ### Using your Module [](id=using-your-module)
 
-Once you module is loaded, you have a few methods in which you can use it in 
+Once your module is configured, you have a few ways in which you can use it in 
 @product@.
 
-For example, this `aui:script` is configured to use React in a portlet, via the 
-`aui:script`'s `require` attribute.
+This example is configured to use a module in the JSP of a portlet, via the 
+`aui:script`'s `require` attribute:
 
-    <aui:script require="react">
-      // variable `react` is available here (lower case "r")
+    <aui:script require="relative/path/to/module/module-name">
+      // variable `relativePathToModuleModuleName` is available here
     </aui:script>
+    
+References to the module within the script tag are named after the require value, 
+in camel-case and with all invalid characters removed. The module-name example 
+module’s reference `relativePathToModuleModuleName` is derived from the module’s 
+relative path value relative/path/to/module/module-name. The value is stripped 
+of its dash and slash characters and converted to camel case.
 
-This is a generic JavaScript that can be used anywhere:
+You can also use the module in a generic JavaScript:
 
     <script>
-    require('react', function (React) {
-      // variable `React` is available here (upper case "R")
+    require('module-name', function (Module-Name) {
+      // variable `Module-Name` is available here (upper case)
     });
     </script>
-
-Finally, this method imports the module for babel compilation, which is 
-configured by default with the typical Gradle tasks.
-
-<!-- Can you specify what typical Gradle tasks?
-
-By babel compilation you mean that this module is intended to be translated by
-babel so ES2015 can be used?
-
--->
-
-    import React from 'react';
-
-<!-- What type of file would this import go into? `build.gradle`? -->
-
-Now that you know how to use your loaded modules in @product@, you can learn the
-best practices to follow next.
-
-### Module Best Practices [](id=module-best-practices)
-
-Follow these module configuration guidelines for the best results:
-
--  Work with dependency-free dependencies (i.e. your dependencies don’t have 
-   dependencies themselves).
-
--  Only have bundles installed that use your defined dependencies or define the 
-   same version again.<!-- bundle version? -->
-
--  You can't combine anonymous modules through Combo Loading or request them in 
-   batch. There is no way to identify individual modules when they are combined.
-
--  Give your module a unique name. Modules go into a global registry managed by 
-   the loader. If two modules share the same name in the registry, it could 
-   result in odd behavior because there is no telling which module will arrive 
-   first. **If both define the same version, everything should work**
-<!-- By same version, I'm assuming same Bundle version? -->
+    
+<!-- Is this camelcase as well and stripped of all invalid characters? -->
 
 Now you know how to load your custom JavaScript modules and global libraries in 
 @product@!
-
-<!-- What is the next step to export my module? Can I just build the module and 
-deploy it, or do I need to export it some how first? -->
 
 ## Related Topics [](id=related-topics)
 
