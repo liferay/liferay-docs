@@ -34,7 +34,7 @@ Make sure to click the *Build Services* button and not the *Build WSDD* button
 that appears next to it. Building the WSDDs won't hurt anything, but you'll
 generate files for the remote service instead of the local one. For information
 about WSDDs (web service deployment descriptors), please refer to the
-[Working with SOAP Web Services](/develop/tutorials/-/knowledge_base/6-2/working-with-soap-web-services)
+[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
 tutorial. 
 
 [Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
@@ -220,6 +220,6 @@ interfaces and the service JAR.
 
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 
-[Understanding Service Context](/develop/tutorials/-/knowledge_base/7-0/service-context)
+[Understanding Service Context](/develop/tutorials/-/knowledge_base/7-0/understanding-servicecontext)
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/writing-local-service-classes)
+[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)

@@ -6,14 +6,14 @@ Liferay ships Digital Enterprise fixes through three different channels:
 - Hotfixes 
 - Service Packs 
 
-## Fix Packs
+## Fix Packs [](id=fix-packs)
 
 On a regular schedule, the latest fixes that patch the core are bundled together
 into fix packs that are provided to all of Liferay's customers. Fix packs
 include fixes for both the core and the application suites that ship with the
 product. 
 
-## Hotfixes
+## Hotfixes [](id=hotfixes)
 
 A hotfix is provided to customers when they contact Liferay about an emergency
 situation, and Liferay's support team--working with the customer-- determines
@@ -22,7 +22,7 @@ quickly. Support fixes the bug and provides a hotfix to the customer
 immediately. This is a short-term fix Hotfixes can patch both the core and the
 application suites.
 
-## Service Packs
+## Service Packs [](id=service-packs)
 
 Service packs for the @product@ are released about bi-monthly. The schedule
 depends on the need and security fix releases. They include the latest patches
@@ -43,7 +43,7 @@ customers should
 This method updates the installation to the service pack levels, while allowing
 scheduled deployments and preventing full environment rebuilds. 
 
-## How Patches are Tested
+## How Patches are Tested [](id=how-patches-are-tested)
 
 Liferay extensively tests all three types of fix packs to ensure high quality.
 For each issue fixed, fix packs go through both automated regression

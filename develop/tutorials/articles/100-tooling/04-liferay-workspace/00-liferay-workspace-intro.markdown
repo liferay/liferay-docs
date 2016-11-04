@@ -122,16 +122,15 @@ applications? Liferay Workspace can handle that request too!
 
 ## Using a Plugins SDK from Your Workspace [](id=using-a-plugins-sdk-from-your-workspace)
 
-Because @product@ 7.0 uses a module-based framework, the current structure of a
+Because @product-ver@ uses a module-based framework, the current structure of a
 Liferay Workspace is centered around module development. There are still,
 however, many situations where you must create WAR-style plugins using the
 Plugins SDK. Because of this, your workspace can also work with the Plugins SDK.
 When configuring your SDK in a workspace, you can take advantage of all the new
 functionality workspaces provide and also use the SDK environment that you're
-used to. To learn more about how to convert legacy applications to 7.0 modules
-and what you should consider before making the jump, visit the
-[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
-tutorial.
+used to. To learn more about upgrading legacy applications to @product-ver@ and
+what you should consider before converting them to modules, visit the tutorial
+[Planning a Plugin Upgrade to Liferay @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7).
 
 The Blade CLI offers a command that allows a Plugins SDK environment be
 automatically generated with Liferay workspace. If you created your workspace
@@ -144,13 +143,14 @@ default, so you must create it yourself. In your workspace's root
 folder, create the `plugins-sdk` folder. Then copy your legacy Plugins SDK
 files into the `plugins-sdk` folder.
 
-One last thing you must do to ensure the Plugins SDK works properly in the
-context of your workspace is to generate all its requirements. These
-requirements include the build JARs the Plugins SDK relies on to function
-properly. To download the necessary requirements for your Plugins SDK, run the
-following command from your workspace's root folder:
+Liferay Workspace and the Plugins SDK require many build related artifacts. To
+start the artifact download process, execute the following command in your
+workspace's root folder:
 
     ./gradlew tasks
 
-Once the downloading is complete, your Plugins SDK is ready to use in your
-workspace. It's as simple as that!
+The Workspace and Plugins SDK's artifacts are downloaded, and the available
+tasks are listed in the terminal. Since the download process takes time,
+invoking it at a convenient time such as before a work break can be
+worthwhile. Once the downloading is complete, your Plugins SDK is ready to use
+in your workspace. It's as simple as that!

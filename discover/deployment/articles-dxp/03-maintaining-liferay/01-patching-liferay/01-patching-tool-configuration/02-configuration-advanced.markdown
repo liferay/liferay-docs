@@ -58,7 +58,7 @@ Tool script.
 
 Below is a description of all the supported properties. 
 
-## Configuration Properties
+## Configuration Properties [](id=configuration-properties)
 
 **patching.mode:** This can be `binary` (the default) or `source`, if you're
 patching a source tree. Liferay patches contain both binary and source patches.

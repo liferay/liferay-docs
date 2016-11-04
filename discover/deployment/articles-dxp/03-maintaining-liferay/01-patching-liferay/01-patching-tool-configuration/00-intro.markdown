@@ -1,4 +1,4 @@
-# Configuring the Patching Tool
+# Configuring the Patching Tool [](id=configuring-the-patching-tool-0)
 
 @product@ patches can be installed by using the Patching Tool. In the
 prepackaged @product@ installation (bundles), the Patching Tool is already
