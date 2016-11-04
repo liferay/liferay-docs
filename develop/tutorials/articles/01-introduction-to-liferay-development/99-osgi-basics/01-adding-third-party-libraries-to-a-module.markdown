@@ -1,4 +1,4 @@
-# Adding Third Party Libraries in a Module
+# Adding Third Party Libraries to a Module
 
 The OSGi framework is intended for modular development where you can create
 modules containing explicit information about their requirements and
