@@ -1,4 +1,4 @@
-# Adding Third Party Libraries to a Module
+# Adding Third Party Libraries to a Module [](id=adding-third-party-libraries-to-a-module)
 
 The OSGi framework is intended for modular development where you can create
 modules containing explicit information about their requirements and
@@ -32,7 +32,7 @@ them.
 
 You'll learn how to add libraries using both ways next.
 
-## Expanding Libraries in a Module
+## Expanding Libraries in a Module [](id=expanding-libraries-in-a-module)
 
 To expand a library into your module so its contents are positioned next to your
 module's existing resources, follow these steps:
@@ -64,7 +64,7 @@ module's existing resources, follow these steps:
 That's it! Your third party library is configured and its contents are available
 within your module once it's built.
 
-## Embedding Libraries in a Module
+## Embedding Libraries in a Module [](id=embedding-libraries-in-a-module)
 
 To embed a library in your module, follow these steps:
 
