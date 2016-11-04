@@ -1,42 +1,42 @@
-# Embedding Third Party Libraries in a Bundle
+# Embedding Third Party Libraries in a Module
 
 The OSGi framework is intended for modular development where you can create
 modules containing explicit information about their requirements and
 capabilities which can then be used to assemble a working system. In a perfect
 world, every library you would ever use would contain this information.
-Unfortunately, not all libraries are packaged this way, as OSGi bundles. So how
+Unfortunately, not all libraries are packaged this way, as OSGi modules. So how
 do you make use of those in OSGi?
 
-One way to make use of these libraries is to embed them within your bundle.
+One way to make use of these libraries is to embed them within your module.
 Thought this isn't the only way, it's the method which most resembles that of
 building WAR files and so it's the one we'll recommend for beginners.
 
-There are a couple different ways to add library JARs to your bundles:
+There are a couple different ways to add library JARs to your modules:
 
-- **Expand** the third party JAR directly with the bundle's classpath.
-- **Embed** the third party JAR iwithin a directory in the bundle referencing
-  this path in the bundle's `Bundle-ClassPath` header (explained a little
+- **Expand** the third party JAR directly with the module's classpath.
+- **Embed** the third party JAR iwithin a directory in the module referencing
+  this path in the module's `Bundle-ClassPath` header (explained a little
   later).
 
-The recommended approach is to expand the JAR in your bundle. When doing this
-the third party classes are positioned next to yours in with your bundle.
+The recommended approach is to expand the JAR in your module. When doing this
+the third party classes are positioned next to yours in with your module.
 
 This approach may however suffer from a limitation resulting from having
-duplicate paths within the JARs being expanded into your bundle. This could lead
+duplicate paths within the JARs being expanded into your module. This could lead
 to files being mistakenly overwritten, resulting in lost information.
 
 Therefore, if the JARs you're embedding have no chance of overwriting each
-other's resources in your module, chose to expand then into your bundle;
+other's resources in your module, chose to expand then into your module;
 otherwise, chose to embed.
 
 You'll learn how to embed library JARs using both ways next.
 
-## Expanding Library JARs in a Bundle
+## Expanding Library JARs in a Module
 
-To add a library JAR in your bundle so its contents are positioned next to your
-bundle's existing resources, follow these steps:
+To add a library JAR in your module so its contents are positioned next to your
+module's existing resources, follow these steps:
 
-1.  Open your bundle's `bnd.bnd` file and add the library JAR by inserting
+1.  Open your module's `bnd.bnd` file and add the library JAR by inserting
     the `-includeresource` instruction:
 
         -includeresource: @shiro-core-[0-9]*.jar
@@ -47,7 +47,7 @@ bundle's existing resources, follow these steps:
     instruction accepts a comma delimited list of resource arguments. Include
     more libraries simply by appending them after a comma.
 
-2.  Open your bundle's `build.gradle` file and set add the library JAR as a
+2.  Open your module's `build.gradle` file and set add the library JAR as a
     dependency so it's properly loaded:
 
         dependencies {
@@ -58,7 +58,7 @@ bundle's existing resources, follow these steps:
 That's it! Your third party library JAR is configured and its contents are
 available within your module once it's been built.
 
-## Embedding Library JARs in a Bundle
+## Embedding Library JARs in a Module
 
 To embed a library JAR in your module, follow the steps below:
 
