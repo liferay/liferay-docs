@@ -1,10 +1,10 @@
 # Loading Custom Modules and Global Libraries [](id=loading-custom-modules-and-global-libraries)
 
-To load your modules in @product@, you need to know when they need loaded, where 
+To load your modules in @product@, you need to know when they are needed, where 
 they are located at build time, if you want to bundle them together or load them 
 independently, and you must assemble them at runtime. Keeping track of all these 
 aspects can be a hassle. Product@'s module loaders (YUI Loader and AMD Loader) 
-provide a streamlined process that handles loading for you, giving you piece of 
+provide a streamlined process that handles loading for you, giving you peace of 
 mind and saving you time.
 
 ES2015 `*.es.js` files are automatically transpiled to AMD modules and 
@@ -217,12 +217,10 @@ of its dash and slash characters and converted to camel case.
 You can also use the module in a generic JavaScript:
 
     <script>
-    require('module-name', function (Module-Name) {
-      // variable `Module-Name` is available here (upper case)
+    require('module-name', function (moduleName) {
+      // variable `moduleName` is available here
     });
     </script>
-    
-<!-- Is this camelcase as well and stripped of all invalid characters? -->
 
 Now you know how to load your custom JavaScript modules and global libraries in 
 @product@!
