@@ -217,7 +217,7 @@ data with your Liferay instances. It contains the following options:
 
 Note that your Liferay instance's administrator can also limit the 
 download/upload rate from the Liferay instance. In this case, the Liferay 
-instance's settings take precedent. For example, if you set a 5.0 MB/s dowload 
+instance's settings take precedent. For example, if you set a 5.0 MB/s download 
 rate in the client but the Liferay instance's download limit is 2.0 MB/s, the 
 latter takes precedence. Also, the client's rate applies across all its 
 accounts. For example, if the client connects to three accounts and its download 
