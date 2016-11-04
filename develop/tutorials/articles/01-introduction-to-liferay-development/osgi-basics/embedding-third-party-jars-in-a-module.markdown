@@ -1,52 +1,53 @@
-# Embedding Third Party Dependencies in a Module
+# Embedding Third Party Libraries in a Bundle
 
-The OSGi framework is intended for modular development where you can deploy
-modules to export information that can then be imported by other modules. In a
-perfect world, every module you create could reference its required dependencies
-from other modules. Unfortunately, not all dependencies are packaged in an OSGi
-module and registered in the OSGi registry, so how do you make use of those?
-Liferay modules can still reference dependencies not registered in the OSGi
-registry, but you'll have to declare their JARs within your module.
+The OSGi framework is intended for modular development where you can create
+modules containing explicit information about their requirements and
+capabilities which can then be used to assemble a working system. In a perfect
+world, every library you would ever use would contain this information.
+Unfortunately, not all libraries are packaged this way, as OSGi bundles. So how
+do you make use of those in OSGi?
 
-There are a couple different ways to add the JAR dependency to your module:
+One way to make use of these libraries is to embed them within your bundle.
+Thought this isn't the only way, it's the method which most resembles that of
+building WAR files and so it's the one we'll recommend for beginners.
 
-- Expand the third party JAR within the module JAR.
-- Embed the third party JAR in the module JAR and add it to the module's
-  classpath.
+There are a couple different ways to add library JARs to your bundles:
 
-The best approach is to declare your dependency JAR so it's expanded in your
-module JAR. When doing this, the third party code is mixed in with your module's
-existing code.
+- **Expand** the third party JAR directly with the bundle's classpath.
+- **Embed** the third party JAR iwithin a directory in the bundle referencing
+  this path in the bundle's `Bundle-ClassPath` header (explained a little
+  later).
 
-This approach, however, causes problems in some cases. In Java EE, there is a
-[service loader mechanism](http://blog.osgi.org/2013/02/javautilserviceloader-in-osgi.html)
-that uses files in both the module's `META-INF/services` folder **and** its
-embedded JAR files. Since these two areas could have the same files pointing to
-various implementations, an expanded JAR could lead to files being mistakenly
-overwritten, resulting in lost information.
+The recommended approach is to expand the JAR in your bundle. When doing this
+the third party classes are positioned next to yours in with your bundle.
 
-Therefore, if the dependencies you're embedding have **no** chance of
-overwriting other resources in your module, configure its dependency JARs to
-expand within your module; otherwise, the dependency JARs should be embedded and
-declared in the module's classpath.
+This approach may however suffer from a limitation resulting from having
+duplicate paths within the JARs being expanded into your bundle. This could lead
+to files being mistakenly overwritten, resulting in lost information.
 
-You'll learn how to declare your third party dependencies using both ways next.
+Therefore, if the JARs you're embedding have no chance of overwriting each
+other's resources in your module, chose to expand then into your bundle;
+otherwise, chose to embed.
 
-## Expanding Dependency JARs in a Module
+You'll learn how to embed library JARs using both ways next.
 
-To add a dependency JAR in your module so its contents are integrated with your
-module's existing resources, follow the steps below:
+## Expanding Library JARs in a Bundle
 
-1.  Open your module's `bnd.bnd` file and add the dependency JAR by inserting
-    the `-includeresource` declaration:
+To add a library JAR in your bundle so its contents are positioned next to your
+bundle's existing resources, follow these steps:
 
-        -includeresource: @shiro-core-1.1.0.jar
+1.  Open your bundle's `bnd.bnd` file and add the library JAR by inserting
+    the `-includeresource` instruction:
 
-    This declaration sets the `shiro-core-1.1.0.jar` as an included resource in
-    the module. The `@` symbol is required, which specifies that the JAR should
-    be expanded when the module is built.
+        -includeresource: @shiro-core-[0-9]*.jar
 
-2.  Open your module's `build.gradle` file and set the added JAR as a
+    This declaration sets the `shiro-core-${version}.jar` as an included
+    resource in the module. The `@` symbol is required, which specifies that the
+    JAR should be expanded when the module is built. The `-includeresource`
+    instruction accepts a comma delimited list of resource arguments. Include
+    more libraries simply by appending them after a comma.
+
+2.  Open your bundle's `build.gradle` file and set add the library JAR as a
     dependency so it's properly loaded:
 
         dependencies {
@@ -54,12 +55,12 @@ module's existing resources, follow the steps below:
             compile group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0', transitive: false
         }
 
-That's it! Your third party dependency JAR is configured and its contents are
-available within your module.
+That's it! Your third party library JAR is configured and its contents are
+available within your module once it's been built.
 
-## Embedding Dependency JARs in a Module
+## Embedding Library JARs in a Bundle
 
-To embed a dependency JAR in your module, follow the steps below:
+To embed a library JAR in your module, follow the steps below:
 
 1.  Open your module's `build.gradle` file and set the JAR you plan to embed as
     a dependency so it's properly loaded:
