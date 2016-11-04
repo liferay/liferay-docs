@@ -75,10 +75,6 @@ To embed a library in your module, follow these steps:
             provided group: "org.apache.shiro", name: "shiro-core", version: '1.1.0', transitive: false
         }
 
-    When you build your module, the JAR is first generated in your module
-    project's folder structure since it's set as a dependency. Next, you must
-    embed the third party JAR in your module's JAR.
-
 2.  Open your module's `bnd.bnd` file and add the library by inserting the
     `-includeresource` instruction:
 
@@ -95,8 +91,8 @@ To embed a library in your module, follow these steps:
         Bundle-ClassPath: ., META-INF/lib/shiro-core.jar
 
     There is a period (`.`) followed by a comma (`,`) before any library paths
-    in the `Bundle-ClassPath`. This ensures that the root path of your module is
-    considered as the first element of the module's classloader.
+    in the `Bundle-ClassPath` header. This ensures that the root path of your
+    module is considered the first element of the module's classloader.
 
     +$$$
 
@@ -105,7 +101,7 @@ To embed a library in your module, follow these steps:
 
     $$$
 
-Your library is now embedded, and its resources are available to use in your
+Your library is now embedded and its resources are available to use in your
 module.
 
 +$$$
@@ -117,5 +113,5 @@ the list of dependencies.
 
 $$$
 
-Excellent! You've learned two easy ways to use non-OSGi dependencies from your
-OSGi module.
+Excellent! You've learned two easy ways to use non-OSGi libraries from your OSGi
+module.
