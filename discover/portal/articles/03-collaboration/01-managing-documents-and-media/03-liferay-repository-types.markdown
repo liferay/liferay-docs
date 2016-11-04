@@ -1,49 +1,11 @@
-# Document Repository Configuration [](id=document-repository-configuration)
+# Liferay Repository Types
 
 There are several options available for configuring how Liferay's Documents and
 Media library stores files. Each option is a *store* which can be configured
 through the `portal-ext.properties` file by setting the `dl.store.impl=`
-property. 
+property. Let's consider the ramifications of the various store options. 
 
-By default, @product@ uses a document library store option called Simple File
-Store to store documents and media files on a file system (local or mounted).
-The store's default root folder is `[Liferay Home]/data/document_library`.
-You can specify a different root directory from within 
-[System Settings](/discover/portal/-/knowledge_base/7-0/system-settings). To access
-System Settings, open the *Menu*
-(![Menu](../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
-Configuration &rarr; System Settings*. From System Settings, navigate to
-*Platform* and then search for and select the entry *Simple File System Store*.
-For the store's *Root dir* value, specify a path relative to 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
-or an absolute path; then click the *Update* button. The document library store
-switches immediately to the new folder. 
-
-You can also use an entirely different method for storing documents and media
-files:
-
-**Simple File System Store**: uses the file system (local or a mounted share) to
-store files.
-
-**Advanced File System Store**: in addition to using the file system (local or a
-mounted share) to store files, Advanced File System Store nests the files into
-more directories by version, for faster performance and to store more files.
-
-**CMIS Store (Content Management Interoperability Services)**: uses a system
-separate from Liferay to store files. 
-
-**DBStore (Database Storage)**: stores files in the @product@ database.
-
-**JCRStore (Java Content Repository)**: stores files to a JSR-170 compliant
-document repository. You can use any JCR client to access the files. The files
-are stored to the server's file system by default. You can optionally configure
-JCRStore to store files in a database. 
-
-**S3Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage solution.
-
-Here are the details for each one. 
-
-## Using the File System Store [](id=using-the-file-system-store)
+### Using the File System Store [](id=using-the-file-system-store)
 
 This is the default store. It's a simple file storage implementation that uses a
 local folder to store files. You can use the file system for your clustered
@@ -54,12 +16,15 @@ reason, you need to use a Storage Area Network or a clustered file system.
 The file system store was the first store created for Liferay and is heavily
 bound to the Liferay database. By default, documents are stored in a
 `document_library` subfolder of the `data` folder in a Liferay bundle. Of
-course, you can change this path to anything you want in System Settings. 
+course, you can change this path to anything you want by using the
+`dl.store.file.system.root.dir=` property. 
 
 This store creates a folder structure based on primary keys in the Liferay
 database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
 folder structure that looks like the figure below. 
+
+![Figure 5.2: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
 
 The folder path used by Liferay for storing documents is this:
 
@@ -89,14 +54,17 @@ provides a migration utility in the Control Panel in *Server Administration*
 &rarr; *Data Migration*. Using this utility, you can move your documents very
 easily from one store implementation to another. 
 
-## Using the Advanced File System Store [](id=using-the-advanced-file-system-store)
+Speaking of other store implementations, let's look at some others Liferay
+provides. 
+
+### Using the Advanced File System Store [](id=using-the-advanced-file-system-store)
 
 Liferay's advanced file system store is similar to the default file system
 store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 2: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
+![Figure 5.3: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
 systems have limitations on the number of files which can be stored in a
@@ -119,7 +87,7 @@ the documents and media library. In addition to this, you can also redefine the
 Liferay store to use one of three other supported protocols. We'll look at these
 next. 
 
-## Using the CMIS Store [](id=using-the-cmis-store)
+### Using the CMIS Store [](id=using-the-cmis-store)
 
 Though you can mount as many different CMIS (Content Management Interoperability
 Services) repositories as you like in the Documents and Media library, you may
@@ -135,9 +103,9 @@ long as all nodes are pointing to your CMIS repository, everything in your
 Liferay cluster should be fine, as the CMIS protocol prevents multiple
 simultaneous file access from causing data corruption. 
 
-## Using the JCR Store [](id=using-the-jcr-store)
+### Using the JCR Store [](id=using-the-jcr-store)
 
-@product@ supports as a store the Java Content Repository standard. Under
+Liferay Portal supports as a store the Java Content Repository standard. Under
 the hood, Liferay uses Jackrabbit, a project from Apache, as its JSR-170
 compliant document repository. By default, Jackrabbit is configured to store the
 documents on the local file system where Liferay is installed, in the
@@ -195,17 +163,8 @@ tables.
 Note that this configuration doesn't perform as well as the advanced file system
 store, because you're storing documents in a database instead of on the file
 system. But it does have the benefit of clustering well. 
-For example, you can store documents and media files in your Liferay instance's
-database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
-portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home):
 
-    dl.store.impl=com.liferay.portal.store.db.DBStore
-
-Remember to restart your @product@ server after updating your
-`portal-ext.properties` file in order for your customizations to take effect.
-
-
-## Using Amazon Simple Storage Service [](id=using-amazon-simple-storage-service)
+#### Using Amazon Simple Storage Service [](id=using-amazon-simple-storage-service)
 
 Amazon's simple storage service (S3) is a cloud-based storage solution that you
 can use with Liferay. All you need is an account, and you can store your
@@ -218,92 +177,3 @@ to connect your S3 account to @product@.
 
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service. 
-
-There are properties related to document library stores that have been moved
-from `portal-ext.properties` to OSGI configuration files. The following mapping
-shows you how to configure those properties if needed:
-
-#### CMIS [](id=cmis)
-
-From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
-
-To `osgi/configs`: `com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`
- 
-Property | Default | Required
----------|---------|---------
-`repositoryUrl` | `http://localhost:8080/alfresco/service/api/cmis` | `true`
-`credentialsUsername` | none | `true`
-`credentialsPassword` | none | `true`
-`systemRootDir` | Liferay Home | `true`
- 
-#### File Store [](id=file-store)
-
-From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore`
-
-To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
-
-Property | Default | Required
----------|---------|---------
-`rootDir` | `data/document_library` | `false`
-
-#### Advanced File Store [](id=advanced-file-store)
-
-From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore`
-
-To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
- 
-Property | Default | Required
----------|---------|---------
-`rootDir` | `data/document_library` | `false`
- 
-#### JCR [](id=jcr)
-
-From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
-
-To `osgi/configs`: `com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg`
-
-Property | Default | Required
----------|---------|---------
-`initializeOnStartup` | `false`| `true`
-`wrapSession` | `true` | `true`
-`moveVersionLabels` | `false` | `true`
-`workspaceName` | `liferay` | `true`
-`nodeDocumentlibrary` | `documentlibrary` | `true`
-`jackrabbitRepositoryRoot` | `data/jackrabbit` | `true`
-`jackrabbitConfigFilePath` | `repository.xml` | `true`
-`jackrabbitRepositoryHome` | `home` | `true`
-`jackrabbitCredentialsUsername` | none | `true`
-`jackrabbitCredentialsPassword` | none | `true`
-
-#### S3 [](id=s3)
-
-From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.s3.S3Store`
-
-To `osgi/configs`: `com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg`
-
-Property | Default | Required
----------|---------|---------
-`accessKey` | | `false`
-`secretKey` | | `false`
-`s3Region` | `us-east-1` | `false`
-`bucketName` | | `true`
-`s3StorageClass` | STANDARD | `false`
-`httpClientMaxConnections` | `50` | `false`
-`cacheDirCleanUpExpunge` | `7` | `false`
-`cacheDirCleanUpFrequency` | `100` | `false`
-
-+$$$
-
-**Warning:** If a database transaction rollback occurs in a Document Library
-that uses a file system based store, file system changes that have occurred
-since the start of the transaction won't be reversed. Inconsistencies between
-Document Library files and those in the file system store can occur and may
-require manual synchronization. All stores except DBStore are vulnerable to this
-limitation.
-
-$$$
-
-Please refer to the [Document Library property reference](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Portlet)
-for a complete list of supported customizations. You can customize features such
-as the maximum allowed size of documents and media files, the list of allowed
-file extensions, which types of files should be indexed, and more.
