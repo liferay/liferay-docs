@@ -1,7 +1,7 @@
-# Adapting to Liferay 7's API with the Code Upgrade Tool [](id=adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+# Adapting to @product-ver@'s API with the Code Upgrade Tool [](id=adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
 The first upgrade process step is to adapt your existing plugin's code to
-Liferay 7's API. Liferay 7 is a major release that contains significant API
+@product-ver@'s API. @product-ver@ is a major release that contains significant API
 changes. As part of the modularization process, many packages have been renamed
 to adopt a new standard. But each API change has been carefully documented to
 explain what changed, how to adapt to the change, and why the change was made.
@@ -12,10 +12,10 @@ how to adapt the code to the new APIs.
 
 The Liferay Code Upgrade Tool (initially called the Migration Tool) is in
 Liferay IDE and Liferay Developer Studio. You should use the tool to adapt code
-to Liferay 7; you can switch back to your favorite tool afterwards.
+to @product-ver@; you can switch back to your favorite tool afterwards.
 
-This tutorial shows you how to adapt existing plugin code to Liferay 7's API. As
-a prerequisite, you set up your existing traditional plugin in a Liferay 7
+This tutorial shows you how to adapt existing plugin code to @product-ver@'s API. As
+a prerequisite, you set up your existing traditional plugin in a @product-ver@
 Plugins SDK, in Liferay IDE or Liferay Developer Studio. Then you find your
 plugin's dependencies and configure them. Finally, you use the Code Upgrade Tool
 to address upgrade issues. It's all straightforward.
@@ -29,7 +29,7 @@ chain.
 
 $$$
 
-Let's start by setting up your plugin in a Liferay 7 Plugins SDK using Liferay IDE
+Let's start by setting up your plugin in a @product-ver@ Plugins SDK using Liferay IDE
 or Liferay Developer Studio.
 
 ## Setup [](id=setup)
@@ -44,11 +44,11 @@ version 3.0 or newer. Otherwise, download it from the product site:
 
 * [Liferay Developer Studio](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
 
-Next, you need a Liferay 7 Plugins SDK for your traditional plugin. The new SDK
+Next, you need a @product-ver@ Plugins SDK for your traditional plugin. The new SDK
 is available on the [downloads page](https://www.liferay.com/downloads).
 
-Then, either move your plugin into the Liferay 7 Plugins SDK or unzip the 
-Liferay 7 Plugins SDK on top of your existing Plugins SDK. This upgrades it 
+Then, either move your plugin into the @product-ver@ Plugins SDK or unzip the 
+@product-ver@ Plugins SDK on top of your existing Plugins SDK. This upgrades it 
 to the latest version. 
 
 In your `build.[username].properties` file, make sure to set the
@@ -66,14 +66,14 @@ project as follows:
     configuring your project.
 
 Your existing plugin project, along with its Plugins SDK, appears in the IDE.
-You're ready to adapt the plugin to Liferay 7!
+You're ready to adapt the plugin to @product-ver@!
 
 ## Resolving Module Dependencies [](id=resolving-module-dependencies)
 
 Now that you've imported your plugin project to Liferay IDE or Developer Studio,
 you probably see compile errors for some of the Liferay classes it uses.
 They're listed as undefined classes or unresolved symbols because they've been
-moved, renamed, or removed. As a part of modularization in Liferay 7, many of
+moved, renamed, or removed. As a part of modularization in @product@, many of
 these classes reside in new modules.
 
 You need to resolve all of these Liferay classes for your plugin. Some of the
@@ -118,12 +118,12 @@ starts with configuring your plugin project to declare the modules it needs.
 
 ### Identifying Module Dependencies [](id=identifying-module-dependencies)
 
-Before @product@ 7.0, all the platform APIs were in a single JAR file:
+Before @product-ver@, all the platform APIs were in a single JAR file:
 `portal-service.jar`. Many of these APIs are now in independent modules. 
-Modularization has resulted in many benefits, as described in the article [Benefits of Liferay 7 for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm)
+Modularization has resulted in many benefits, as described in the article [Benefits of @product-ver@ for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm)
 One such advantage is that these API modules can evolve separately from the
 platform kernel. They also simplify future upgrades. For example, instead of
-having to check all of Liferay's APIs, each module's [Semantic Versioning](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#semantic-versioning scheme)
+having to check all of Liferay's APIs, each module's [Semantic Versioning](http://semver.org/)
 indicates whether the module contains any backwards-incompatible changes. You
 need only adapt your code to such modules (if any). 
 
@@ -190,7 +190,7 @@ shortly.
 +$$$
 
 Note: Previous versions of the Plugins SDK made `portal-service.jar` available
-to projects; the Liferay 7 Plugins SDK similarly makes `portal-kernel.jar`
+to projects; the @product-ver@ Plugins SDK similarly makes `portal-kernel.jar`
 available. If you're using a Liferay bundle (i.e., @product@ pre-installed on an
 app server), the Liferay utility modules are already in your classpath.
 
@@ -340,7 +340,7 @@ Liferay's Code Upgrade Tool to adapt the rest of your plugin's code.
 ## Adapting to the API with the Code Upgrade Tool [](id=adapting-to-the-api-with-the-code-upgrade-tool)
 
 The Code Upgrade Tool identifies areas in your code that need to be adapted to
-Liferay's APIs changes. As Liferay 7 was being developed, some of the changes
+Liferay's APIs changes. As @product-ver@ was being developed, some of the changes
 were unavoidable and resulted in problems that affect plugin upgrades. They're
 commonly known as *breaking changes* and are captured in @product@'s [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
 document.
@@ -404,20 +404,20 @@ clicking the search icon. The issue's description and comments provide relevant
 information.
 
 Resolving all of a plugin's reported upgrade problems makes for a great start
-in adapting your plugin to Liferay 7.
+in adapting your plugin to @product-ver@.
 
 ## Summary [](id=summary)
 
-Congratulations on completing the first step in upgrading your plugin to Liferay
+Congratulations on completing the first step in upgrading your plugin to @product@
 7! Let's consider all that you've done.
 
-You set up your plugin in a Liferay 7 Plugins SDK, imported it into Liferay IDE
-or Liferay Developer Studio, and set up a Liferay 7 server in that IDE. Then,
+You set up your plugin in a @product-ver@ Plugins SDK, imported it into Liferay IDE
+or Liferay Developer Studio, and set up a @product-ver@ server in that IDE. Then,
 you fixed class imports and resolved dependencies on all the modules your plugin
 uses. Finally, you leveraged Liferay's Code Upgrade Tool to hunt down and adapt
 to breaking API changes. Way to go!
 
-It's onward and upward with upgrading your traditional plugins on Liferay 7!
+It's onward and upward with upgrading your traditional plugins on @product-ver@!
 
 ## Related Articles [](id=related-articles)
 

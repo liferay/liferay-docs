@@ -55,12 +55,15 @@ Screenlet. They are listed here:
 
 ## Views [](id=views)
 
+- Default
+- Material
+
 The Default View uses a standard vertical `ScrollView` to show a scrollable list 
 of fields. Other Views may use different components, such as `ViewPager` or 
 others, to show the fields. You can find a sample of this implementation in the 
 `DDLFormScreenletPagerView` class.
 
-![Figure 1: DDL Form Screenlet's Default and Material Viewsets.](../../images/screens-android-ddlform.png)
+![Figure 1: DDL Form Screenlet's Default (left) and Material (right) Views.](../../images/screens-android-ddlform.png)
 
 ### Editor Types [](id=editor-types)
 
@@ -147,7 +150,8 @@ For more details, see the User Guide sections
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the form or record, the Screenlet supports the following offline 
 mode policies:

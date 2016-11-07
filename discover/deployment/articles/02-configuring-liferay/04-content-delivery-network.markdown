@@ -77,9 +77,9 @@ appropriate CDN properties. You can view the CDN properties and their
 descriptions by visiting the [Content Delivery Network](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Content%20Delivery%20Network)
 section of the `portal.properties` HTML document.
 
-Once you configure your CDN host, static assets are automatically uploaded to
-the CDN, and @product@ generates URLs to them that replace the old host with your
-new CDN host.
+Once you configure your CDN host, @product@ generates URLs to the static assets
+that replace the old host with your new CDN host and so they are automatically
+cached and served afterwards by the CDN.
 
 To configure your CDN in the Control Panel, navigate to *Control Panel* &rarr;
 *Configuration* &rarr; *Portal Settings*. In the main configuration, you'll

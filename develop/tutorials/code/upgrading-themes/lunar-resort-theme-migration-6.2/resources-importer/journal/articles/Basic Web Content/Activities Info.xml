@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+		<dynamic-content language-id="en_US">
+			<![CDATA[
+				<p>The Lunar Resort has some fun-filled activities to keep you entertained during your stay. If you're a golfer, look no further then outside your window. The Lunar Resort is surounded by a one of a kind zero-g golf course. If golf isn't your game, perhaps you would enjoy an evening of tearing it up on the Rover Race Track, where you'll be supplied with your very own lunar rover. If Rover Racing is not your idea of a fun evening, perhaps Lunar Spelunking might be more up your alley. You can spend the day exploring lunar caverns and landscape. Who knows, you might even find a new life form. Click one of the links below to learn more about the activities that the Lunar Resort has to offer.</p>
+			]]>
+		</dynamic-content>
+	</dynamic-element>
+</root>

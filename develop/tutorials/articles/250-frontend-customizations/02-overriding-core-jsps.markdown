@@ -24,7 +24,7 @@ log errors greet you.
 
 2. Liferay is still being modularized. If you modify a core JSP, it might be
 moved out of the core and into a module, and then you'll have to re-implement
-your override, since overriding a module's JSPs is [done differently](develop/tutorials/-/knowledge_base/7-0/overriding-module-jsps).
+your override, since overriding a module's JSPs is [done differently](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps).
 
 If it's *really* necessary to modify a core JSP, you need a module that satisfies these criteria: 
 
@@ -143,7 +143,7 @@ If you need to add something to `bottom.jsp`, override `bottom-ext.jsp`.
 Remember, this type of customization should be seen as a last resort. There's a
 risk that your override will break due to the nature of this implementation, and
 core functionality in Liferay can go down with it. If the JSP you want to
-override is in another module, refer to the article on [overriding JSPs from a module](develop/tutorials/-/knowledge_base/7-0/overriding-module-jsps).
+override is in another module, refer to the article on [overriding JSPs from a module](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps).
 
 ## Site Scoped JSP Customization [](id=site-scoped-jsp-customization)
 

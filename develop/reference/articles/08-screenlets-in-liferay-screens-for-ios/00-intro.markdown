@@ -43,4 +43,45 @@ reference documents:
 
 - [**Web Content List Screenlet:**](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-ios)
   Shows a list of web contents from a folder, usually based on a pre-existing 
-  `DDMStructure`.
+  `DDMStructure`. 
+
+- [**Image Gallery Screenlet:**](/develop/reference/-/knowledge_base/7-0/image-gallery-screenlet-for-ios) 
+  Shows a list of images from a folder. This Screenlet also lets users upload 
+  and delete images. 
+
+- [**Rating Screenlet:**](/develop/reference/-/knowledge_base/7-0/rating-screenlet-for-ios) 
+  Shows the rating for an asset. This Screenlet also lets the user update or 
+  delete the rating. 
+
+- [**Comment List Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-list-screenlet-for-ios) 
+  Shows a list of comments for an asset. 
+
+- [**Comment Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-display-screenlet-for-ios) 
+  Shows a single comment for an asset. 
+
+- [**Comment Add Screenlet:**](/develop/reference/-/knowledge_base/7-0/comment-add-screenlet-for-ios) 
+  Lets the user comment on an asset. 
+
+- [**Asset Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/asset-display-screenlet-for-ios) 
+  Displays an asset. Currently, this Screenlet can display Documents and Media 
+  Library files (`DLFileEntry` entities), blogs articles (`BlogsEntry` 
+  entities), and web content articles (`WebContent` entities). You can also use 
+  it to display custom assets. 
+
+- [**Blogs Entry Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/blogs-entry-display-screenlet-for-ios) 
+  Shows a single blogs entry. 
+
+- [**Image Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/image-display-screenlet-for-ios) 
+  Shows a single image file from a Liferay instance's Documents and Media 
+  Library. 
+
+- [**Video Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/video-display-screenlet-for-ios) 
+  Shows a single video file from a Liferay instance's Documents and Media 
+  Library. 
+
+- [**Audio Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/audio-display-screenlet-for-ios) 
+  Shows a single audio file from a Liferay instance's Documents and Media 
+  Library. 
+
+- [**PDF Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/pdf-display-screenlet-for-ios) 
+  Shows a single PDF file from a Liferay instance's Documents and Media Library. 
