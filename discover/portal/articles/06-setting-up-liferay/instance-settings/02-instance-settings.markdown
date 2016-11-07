@@ -171,6 +171,11 @@ email address is an important default for the following reasons:
     user. So it is important to keep the email address at the forefront of a
     user's mind when he or she logs in to help the user keep it up to date. 
 
+If you need to use a third party authentication service or set up Single Sign On
+(SSO), see the documentation on [@product@
+Security](/discover/portal/-/knowledge_base/7-0/liferay-portal-security) to
+learn about the supported services and how to configure them.
+
 ### Users [](id=users)
 
 If you click on *Users* from the Instance Settings screen, you'll find three tabs:
