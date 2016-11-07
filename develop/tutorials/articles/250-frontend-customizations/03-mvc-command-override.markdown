@@ -52,7 +52,7 @@ of the original portlet, because no coupling exists between the original portlet
 logic and your customization.
 
 $$$
-
+**Bug:** The above recommendation has a flaw. Please refer to description in https://issues.liferay.com/browse/LPS-69134.
 +$$$
 
 **Note:** In Liferay 7.0 GA1, there’s a bug that occurs when modules with
