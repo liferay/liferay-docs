@@ -1,9 +1,9 @@
 # Liferay Clustering [](id=liferay-clustering)
 
-@product@ is designed to serve everything from the smallest to the largest
-web sites. Out of the box, it's configured optimally for a single server
-environment. If one server isn't sufficient to serve the high traffic needs of
-your site, Liferay scales to the size you need. 
+@product@ can serve everything from the smallest to the largest web sites. Out
+of the box, it's configured optimally for a single server environment. If one
+server isn't sufficient to serve the high traffic needs of your site, Liferay
+scales to the size you need. 
 
 ![Figure 5.1: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
 
