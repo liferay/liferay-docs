@@ -1,25 +1,19 @@
 # CAS (Central Authentication Service) Single Sign On Authentication [](id=cas-central-authentication-service-single-sign-on-authentication)
 
 CAS is an authentication system originally created at Yale University. It is a
-widely used open source single sign-on solution and was the first SSO product
-to be supported by @product@. Please follow the documentation for CAS to install
-it on your application server of choice.
-
-Your first step is to copy the CAS client `.jar` file to Liferay's library
-folder. On Tomcat, this is in `[Tomcat Home]/webapps/ROOT/WEB-INF/lib`. Once
-you've done this, the CAS client will be available to Liferay the next time you
-start it.
+widely used open source single sign-on solution and was the first SSO product to
+be supported by @product@. Liferay's CAS module includes the CAS client, so
+there's no need to install it separately.
 
 The CAS Server application requires your server to have a properly configured
-Secure Socket Layer (SSL) certificate. If you wish to generate one yourself,
-you will need to use the `keytool` utility that comes with the JDK. Your first
-step is to generate the key. Next, you export the key into a file. Finally, you
-import the key into your local Java key store. For public, internet-based
-production environments, you will need to either purchase a signed key from a
-recognized certificate authority (such as Thawte or Verisign) or have your key
-signed by a recognized certificate authority. For intranets, you should have
-your IT department pre-configure users' browsers to accept the certificate so
-they don't get warning messages about the certificate.
+Secure Socket Layer (SSL) certificate. To generate one yourself, use the
+`keytool` utility that comes with the JDK. First generate the key, then export
+the key into a file. Finally, import the key into your local Java key store. For
+public, internet-based production environments, you will need to either purchase
+a signed key from a recognized certificate authority or have your key signed by
+a recognized certificate authority. For intranets, you should have your IT
+department pre-configure users' browsers to accept the certificate so they don't
+get warning messages about the certificate.
 
 To generate a key, use the following command:
 
@@ -36,25 +30,26 @@ To export the key to a file, use the following command:
 
 Finally, to import the key into your Java key store, use the following command:
 
-    keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit -keystore $JAVA_HOME/jre/lib/security/cacerts
+    keytool -import -alias tomcat -file server.cert -keypass changeit -keystore $JAVA_HOME/jre/lib/security/cacerts
 
 If you are on a Windows system, replace `$JAVA_HOME` above with `%JAVA_HOME%`.
-Of course, all of this needs to be done on the system on which CAS will be
-running.
+Of course, all of this needs to be done on the system where CAS is running.
 
-Once your CAS server is up and running, you can configure @product@ to use it.
+## Configuring CAS at the System Scope
+
+Once your CAS server is up and running, configure @product@ to use it.
 CAS configuration can be applied either at the system scope or at the scope of
 a portal instance. To configure the CAS SSO module at the system scope,
-navigate to the Control Panel, click on *System* &rarr; *System Settings, click
-on the *Platform* category, and find the CAS module. The values configured
+navigate to the Control Panel, click on *Configuration* &rarr; *System Settings, click
+on the *Foundation* category, and find the CAS Module entry. The values configured
 there provide the default values for all portal instances. Enable CAS
 authentication and then modify the URL properties to point to your CAS server.
 
 **Enabled:** Check this box to enable CAS single sign-on.
 
 **Import from LDAP:** A user may be authenticated from CAS and not yet exist in
-the portal. Select this to automatically import users from LDAP if they do not
-exist in the portal. (For this to work, LDAP must be enabled.)
+@product@. Select this to automatically import users from LDAP if they do not
+exist in @product@. For this to work, LDAP must be enabled.
 
 The rest of the settings are various URLs, with defaults included. Change
 *localhost* in the default values to point to your CAS server. When you are
@@ -73,7 +68,7 @@ format as you would when initializing a Java primitive type with a literal
 value.
 
 Property Label | Property Key | Description | Type
-:----: | :----: | :----: | :----:
+----- | ----- | ----- | -----
 **Enabled** | `enabled` | Check this box to enable CAS SSO authentication. | `boolean`
 **Import from LDAP** | `importFromLDAP` | Users authenticated from CAS that do not exist in Liferay are imported from LDAP. LDAP must be enabled separately. | `boolean`
 **Login URL** | `loginURL` | Set the CAS server login URL. | `String`
