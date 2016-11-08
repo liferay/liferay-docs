@@ -33,12 +33,21 @@ public class NumberHeadersSiteMain extends Task {
 		boolean dxpBuild = false;
 		boolean foundDuplicateIds = false;
 		
+		ceFileList = getFileList(docDir, "");
+		
 		List<String> dirTypes = new ArrayList<String>();
 		dirTypes.add("");
 
 		if (productType.equals("dxp")) {
 			dirTypes.add("-dxp");
 			dxpBuild = true;
+			
+			dxpFileList = getFileList(docDir, "-dxp");
+		}
+		
+		if (ceFileList.size() == 0 && dxpFileList.size() == 0) {
+			throw new Exception(
+					"FAILURE - No files in this directory");
 		}
 
 		List<String> duplicateFiles = new ArrayList<String>();
@@ -53,12 +62,13 @@ public class NumberHeadersSiteMain extends Task {
 					"Numbering headers for files in ../" + docDir + "/articles" +
 							dirType + " ...");
 			
-			List<String> fileList = getFileList(docDir, dirType);
-
-			if (fileList.isEmpty()) {
-				throw new Exception(
-						"FAILURE - no markdown files found in ../" + docDir +
-						"/articles" + dirType);
+			List<String> fileList = new ArrayList<String>();
+			
+			if (dirType.contains("dxp")) {
+				fileList = dxpFileList;
+			}
+			else {
+				fileList = ceFileList;
 			}
 
 			for (int i = 0; i < fileList.size(); i++) {
@@ -182,6 +192,9 @@ public class NumberHeadersSiteMain extends Task {
 		
 		String header = in.readLine();
 		String headerDxp = in2.readLine();
+		String[] headerCombo = separateTextAndId(header);
+		String[] headerComboDxp = separateTextAndId(headerDxp);
+
 		boolean equalHeaders = false;
 		
 		if (filenamesWithPresetHeader.contains(duplicateFile) && 
@@ -191,22 +204,22 @@ public class NumberHeadersSiteMain extends Task {
 				equalHeaders = true;
 			}
 			else {
-				headerDxp = header;
+				headerDxp = headerComboDxp[0] + headerCombo[1];
 			}
 			
 		}
 		else if (filenamesWithPresetHeader.contains(duplicateFile) && 
 				filenamesWithoutPresetHeader.contains(duplicateFile2)) {
 			
-			headerDxp = header;
+			headerDxp = headerComboDxp[0] + headerCombo[1];
 		}
 		else if (filenamesWithoutPresetHeader.contains(duplicateFile) && 
 				filenamesWithPresetHeader.contains(duplicateFile2)) {
 			
-			header = headerDxp;
+			header = headerCombo[0] + headerComboDxp[1];
 		}
 		else {
-			headerDxp = header;
+			headerDxp = headerComboDxp[0] + headerCombo[1];
 		}
 		
 		if (!equalHeaders) {
@@ -319,19 +332,16 @@ public class NumberHeadersSiteMain extends Task {
 			List<String> dirTypes)
 		throws Exception {
 		
-		List<String> cefileList = getFileList(docDir, dirTypes.get(0));
 		List<String> convertedFileList = new ArrayList<String>();
 		List<String> duplicateFiles = new ArrayList<String>();
 		
-		List<String> dxpfileList = getFileList(docDir, dirTypes.get(1));
-		
-		for (String f : dxpfileList) {
+		for (String f : dxpFileList) {
 			f = f.replace("\\articles-dxp\\", "\\articles\\");
 			f = f.replace("/articles-dxp/", "/articles/");
 			convertedFileList.add(f);
 		}
 		
-		duplicateFiles = new ArrayList<String>(cefileList);
+		duplicateFiles = new ArrayList<String>(ceFileList);
 		duplicateFiles.retainAll(convertedFileList);
 		
 		return duplicateFiles;
@@ -391,11 +401,6 @@ public class NumberHeadersSiteMain extends Task {
 				fileList.add(files[j].getPath());
 			}
 		
-		}
-		
-		if (fileList.size() == 0) {
-			throw new Exception(
-					"FAILURE - fileList is empty");
 		}
 		
 		return fileList;
@@ -561,12 +566,42 @@ public class NumberHeadersSiteMain extends Task {
 
 		return overrideFile;
 	}
+	
+	private static String[] separateTextAndId(String header) {
+		
+		String[] headers = new String[2];
+		
+		int beginTitleIndex = header.indexOf("#");
+		int endTitleIndex;
+		int endIndexDxp = 0;
+		String headerId = "";
+		
+		if (header.contains("[](")) {
+			endTitleIndex = header.indexOf("[](");
+			endIndexDxp = header.lastIndexOf(")") + 1;
+			headerId = header.substring(endTitleIndex, endIndexDxp);
+		}
+		else {
+			endTitleIndex = header.length();
+		}
+		
+		String headerTitle = header.substring(beginTitleIndex, endTitleIndex);
+		
+		headers[0] = headerTitle;
+		headers[1] = headerId;
+		
+		return headers;
+	}
 
 	private static final int MAX_ID_LEN = 75;
 
 	private static HashMap<String, String> IDS = new HashMap<String, String>();
 
 	private static Pattern headerIdPattern;
+	
+	private static List<String> ceFileList = new ArrayList<String>();
+	
+	private static List<String> dxpFileList = new ArrayList<String>();
 
 	private static List<String> filenamesWithPresetHeader = new ArrayList<String>();
 	

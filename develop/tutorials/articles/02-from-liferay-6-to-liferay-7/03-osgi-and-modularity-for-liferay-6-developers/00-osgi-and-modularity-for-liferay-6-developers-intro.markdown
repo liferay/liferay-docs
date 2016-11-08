@@ -21,35 +21,35 @@ to provide a great developer experience.
 It wasn't long before Liferay discovered that OSGi and its supporting
 tools/technologies fit the bill!
 
-In this tutorial, you'll learn how Liferay 7 uses OSGi to meet these objectives.
+In this tutorial, you'll learn how @product-ver@ uses OSGi to meet these objectives.
 And equally important, you'll find out how easy and fun modular development can
 be.
 
 Here are the topics you'll dig into:
 
-1. **Modules as an Improvement over Traditional Plugins**: Development and
-   customization of applications for Liferay has been done traditionally in
-   plugins (Portlet, Hook, Ext and Web). In Liferay 7, plugins are replaced with
-   (and can be automatically converted to) modules. You'll see the similarities
-   and differences of plugins and modules, and you'll learn the benefits of
-   using modules.
+1.  [Modules as an Improvement over Traditional Plugins](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins):
+    Development and customization of applications for Liferay has been done
+    traditionally in plugins (Portlet, Hook, Ext and Web). In @product-ver@,
+    plugins are replaced with (and can be automatically converted to) modules.
+    You'll see the similarities and differences of plugins and modules, and
+    you'll learn the benefits of using modules.
 
-2. **Leveraging Dependencies**: In Liferay 7, developers can both declare
-   dependencies among modules and can combine modules to create applications.
-   Since leveraging dependencies provides huge benefits, it's important to spend
-   a lot of time showing how to do it. 
+2.  [Leveraging Dependencies](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#leveraging-dependencies):
+    In @product-ver@, developers can both declare dependencies among modules and
+    combine modules to create applications. Since leveraging dependencies
+    provides huge benefits, it's important to devote a lot of space to it.
 
-3. **OSGi Services and Dependency Injection**: OSGi provides a powerful concept
-   called OSGi Services (also known as microservices). Together with the
-   Declarative Services standard, it provides a clean way to inject dependencies
-   (similar to Spring Dependency Injection) in a dynamic environment. It also
-   offers an elegant extensibility model that Liferay 7 leverages extensively.
+3.  [OSGi Services and Dependency Injection](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#osgi-services-and-dependency-injection-with-declarative-services):
+    OSGi provides a powerful concept called OSGi Services (also known as
+    microservices). OSGi's Declarative Services standard provides a clean way to
+    inject dependencies in a dynamic environment. This is similar to Spring DI,
+    except the changes happen while the system is running. It also offers an
+    elegant extensibility model that @product-ver@ leverages extensively.
 
-<!-- Uncomment when these sections are added. Jim
-4. **Dynamic Deployment**: Module deployment is managed by Liferay 7 (not the
-application server). This section demonstrates how to use dynamic deployment to
-allow for more dynamicity and speed.
--->
+4.  [Dynamic Deployment](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#dynamic-deployment):
+    Module deployment is managed by @product-ver@ (not the application server).
+    This section demonstrates how to use dynamic deployment for better control
+    and efficiency.
 
 After investigating these topics, you'll get hands-on experience creating and
 deploying an OSGi module. 
@@ -58,13 +58,13 @@ Let's start with learning how modules are better than traditional plugins.
 
 ## Modules as an Improvement over Traditional Plugins [](id=modules-as-an-improvement-over-traditional-plugins)
 
-In Liferay 7, you can develop applications using OSGi modules or using
+In @product-ver@, you can develop applications using OSGi modules or using
 traditional Liferay plugins (WAR-style portlets, hooks, EXT, and web
 applications). Liferay's Plugin Compatibility Layer (explained later) makes it
 possible to deploy traditional plugins to the OSGi runtime framework. To benefit
-from all Liferay 7 and OSGi offer, however, you should use OSGi modules.
+from all @product-ver@ and OSGi offer, however, you should use OSGi modules.
 
-Here are some important benefits of using modules:
+Modules offer these benefits:
 
 - **Better Encapsulation** - The only classes a module exposes publicly are
 those it exports explicitly. This lets the developer define internal public
@@ -72,34 +72,34 @@ classes transparent to external clients.
 
 - **Dependencies by Package** - Dependencies are specified by Java package, not
 by JAR file. In traditional plugins, developers had to add *all* of a JAR file's
-classes to the classpath in order to use *any* of its classes. With OSGi,
-developers need only import packages of the classes they need. Only the classes
-in those packages are added to the module's class path.
+classes to the classpath to use *any* of its classes. With OSGi, developers need
+only import packages containing the classes they need. Only the classes in those
+packages are added to the module's classpath.
 
 - **Lightweight** - A module can be as small as the developer wants it to be. In
 contrast to a traditional plugin, which may require several descriptor files, a
 module requires only a single descriptor file--a standard JAR manifest. Also,
-traditional plugins are typically larger than modules and are deployed on app
-server startup, which can slow down that process considerably. Modules deploy
-more quickly and require minimal overhead cost.
+traditional plugins are typically larger than modules and deployed on app server
+startup, which can slow down that process considerably. Modules deploy more
+quickly and require minimal overhead cost.
 
-- **Easier to Reuse** - OSGi modules lend themselves well to developing small,
-highly cohesive chunks of code. They can be combined to create applications that
-are easier to test and maintain. Modules can be distributed publicly (e.g., on
-Maven Central) or privately. And since modules are versioned, developers can
-specify precisely the modules they want to use.
+- **Easy Reuse** - Modules lend themselves well to developing small, highly
+cohesive chunks of code. They can be combined to create applications that are
+easier to test and maintain. Modules can be distributed publicly (e.g., on Maven
+Central) or privately. And since modules are versioned, developers can specify
+precisely the modules they want to use.
 
 - **In-Context Descriptors** - Where plugins use descriptor files (e.g.,
-`web.xml`, `portlet.xml`, etc.) to describe classes, module classes uses OSGi
+`web.xml`, `portlet.xml`, etc.) to describe classes, module classes use OSGi
 annotations to describe themselves. For example, a module portlet class can use
-[OSGi Service annotation properties](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map)
+[OSGi Service annotation properties](/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map)
 to specify its name, display name, resource bundle, public render parameters,
 and much more. Instead of specifying that information in descriptor files
 separate from the code, they're specified in context in the code.
 
 These are just a few ways modules outshine traditional plugins. Note, however,
 that developers experienced with Liferay plugins have the best of both worlds.
-Liferay 7 supports traditional plugins *and* modules. Existing Liferay
+@product-ver@ supports traditional plugins *and* modules. Existing Liferay
 developers can find comfort in the simplicity of modules and their similarities
 with plugins.
 
@@ -144,7 +144,7 @@ modules.
 
 - `Import-Package`: Packages this module requires that other modules provide.
 
-Additional headers can be used to specify more characteristics, such as how the
+Other headers can be used to specify more characteristics, such as how the
 module was built, development tools used, etc. 
 
 For example, here are some headers from the Liferay Journal Web module manifest:
@@ -179,8 +179,9 @@ Gradle or Maven, to manage dependencies.
 is an environment for managing module projects (and theme projects). It provides
 Gradle build scripts for developing on Liferay. It can be used from the command
 line or from within [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
-and Developer Studio. Note also that these IDE/Studio provide plugins for Gradle,
-Maven, and BndTools. Tooling details are covered later in this series.
+and Developer Studio. Note also that Liferay IDE/Developer Studio provide
+plugins for Gradle, Maven, and BndTools. Tooling details are covered later in
+this series.
 
 Now that you're familiar with the module structure and manifest, it's time to
 explore how to build modules.
@@ -194,9 +195,9 @@ to generate it. Bnd can be used on its own or along with other build tools, such
 as Gradle or Maven. Liferay Workspace uses Gradle and Bnd together.
 
 One of Bnd's best features is that it automatically transverses a module's code
-to identify external classes the module uses and add them to the manifest's list
-of packages to import. Bnd also provides several OSGi-specific operations that
-simplify module development.
+to identify external classes the module uses and adds them to the manifest's
+list of packages to import. Bnd also provides several OSGi-specific operations
+that simplify module development.
 
 Bnd generates the manifest based on a file called `bnd.bnd` in the project root.
 This file's header list is similar to (but shorter than) that of the
@@ -230,7 +231,7 @@ Using an OSGi manifest, a module declares the Java packages it consumes and
 shares. The manifest's `Import-Package` and `Export-Package` settings expose
 this information. As developers determine whether to use a particular module,
 they know up-front what it offers and what it depends on. As an improvement over
-JavaEE, OSGi takes away dependency guesswork.
+Java EE, OSGi takes away dependency guesswork.
 
 This part of the tutorial explains:
 
@@ -238,16 +239,16 @@ This part of the tutorial explains:
 
 - **How to develop modular apps using dependencies**
 
-Let's start by learning how dependencies operate in Liferay 7.
+Let's start by learning how dependencies operate in @product-ver@.
 
 ### How Dependencies Work [](id=how-dependencies-work)
 
-Since all of Liferay 7 leverages dependencies, it also demonstrates how to use
+Since all of @product-ver@ leverages dependencies, it also demonstrates how to use
 them. As mentioned previously, all of what was in Liferay 6 and its apps has
 been refactored into OSGi modules. The `portal-service` API (the main API in
-Liferay 6) has been replaced by the `portal-kernel` module (@product@'s kernel
-API) and many small, highly-cohesive modules that provide frameworks, utilities,
-apps, and more.
+Liferay 6) has been replaced by the `portal-kernel` module (@product-ver@'s
+kernel API) and many small, highly-cohesive modules that provide frameworks,
+utilities, apps, and more.
 
 Not only do @product@ modules depend on third-party modules but they also depend
 on each other. You can likewise leverage dependencies in your projects. Whether
@@ -266,7 +267,7 @@ Versioning is independent for each Liferay module and its exported packages. You
 can use a specific package version by depending on the version of the module
 that exports it. And you're free to use a mix of Liferay modules in the versions
 you want (but remember, "With great power comes great responsibility," so unless
-you really know what you are doing, use the same version of each module you
+you really know what you're doing, use the same version of each module you
 depend on).
 
 For all its modules, @product@ uses [Semantic Versioning](http://semver.org).
@@ -294,17 +295,17 @@ modules to create apps.
 
 ### Dependencies Facilitate Modular Development [](id=dependencies-facilitate-modular-development)
 
-Liferay 7's support of dependencies and semantic versioning facilitates modular
+@product-ver@'s support of dependencies and semantic versioning facilitates modular
 development. The dependency frameworks enable you to use modules and link them
 together. You can use these modules throughout your organization and distribute
-them to others. Liferay 7's integration with dependency management frees you to
+them to others. @product-ver@'s integration with dependency management frees you to
 modularize existing apps and develop apps that combine modules. It's a powerful
 and fun way to develop apps on @product@.
 
 Here are some general steps to consider when modularizing an existing app:
 
 1. **Start by putting the entire app in a single module**: This is a minimal
-first step that acquaints you with Liferay 7's module framework. You'll gain
+first step that acquaints you with @product-ver@'s module framework. You'll gain
 confidence as you build, deploy, and test your app in an environment of your
 choice, such as a Liferay Workspace, Gradle, or Maven project.
 
@@ -330,34 +331,34 @@ described:
 
 **API**:
 
-- `blogs-api` - Encapsulates the core implementation
+-   `blogs-api` - Encapsulates the core implementation
 
-- `blogs-item-selector-api` - Encapsulates the item-selector implementation
+-   `blogs-item-selector-api` - Encapsulates the item-selector implementation
 
 **Back-end**:
 
-- `blogs-service` - Implements `blogs-api`
+-   `blogs-service` - Implements `blogs-api`
 
 **Front-end**:
 
-- `blogs-web` - Provides the app's UI
+-   `blogs-web` - Provides the app's UI
 
 **Non-essential features and extensions**:
 
-- `blogs-editor-configuration` - Extends the `portal-kernel` module for
-extending editors.
+-   `blogs-editor-configuration` - Extends the `portal-kernel` module for
+    extending editors
 
-- `blogs-recent-bloggers-web` - Provides the Recent Bloggers app
+-   `blogs-recent-bloggers-web` - Provides the Recent Bloggers app
 
-- `blogs-item-selector-api` - Encapsulates the item-selector implementation
+-   `blogs-item-selector-api` - Encapsulates the item-selector implementation
 
-- `blogs-item-selector-web` - Renders the Blogs app's item-selector
+-   `blogs-item-selector-web` - Renders the Blogs app's item-selector
 
-- `blogs-layout-prototype` - Creates a Page Template showcasing blog entries
+-   `blogs-layout-prototype` - Creates a Page Template showcasing blog entries
 
 The Blogs app, like many modular apps, separates concerns into modules. In this
 way, front-end developers concentrate on front-end code, back-end developers
-concentrates on that code, and so on. These logical boundaries free developers
+concentrate on that code, and so on. These logical boundaries free developers
 to design, implement, and test the modules independently.
 
 As you develop app-centered modules, you can consider bundling them with your
@@ -374,46 +375,45 @@ OSGi Services and dependency injection using OSGi Declarative Services.
 
 ## OSGi Services and Dependency Injection with Declarative Services [](id=osgi-services-and-dependency-injection-with-declarative-services)
 
-In Liferay 7, the OSGi framework registers objects as *services*. Each service
+In @product-ver@, the OSGi framework registers objects as *services*. Each service
 offers functionality and can leverage functionality other services provide. The
 OSGi Services model supports a collaborative environment for objects.
 
-Declarative Services (DS) provides a service component model on top of the OSGi
-Services model. A *Service Component* is a class that implements or extends a
-service class. Other OSGi Service classes can refer to the service class to use
-the Service Component. And the Service Component Runtime (SCR) handles
-registration, lookup, and binding of Service Components to classes that refer to
-them.
+Declarative Services (DS) provides a service component model on top of OSGi
+Services. DS service components are marked with the `@Component` annotation and
+implement or extend a service class. Service component can refer to and use each
+other's services. The Service Component Runtime (SCR) registers component
+services and handles binding them to other components that reference them.
 
 Here's how the "magic" happens:
 
-1.  **Service component registration:** On installing a module that contains a
-    Service Component, the SCR creates a component configuration that associates
-    the Service Component with its specified service type and stores it in a
-    service registry.
+1.  **Service registration:** On installing a module that contains a
+    service component, the SCR creates a component configuration that associates
+    the component with its specified service type and stores it in a service
+    registry.
 
-2.  **Service reference handling:** On installing a module that contains a class
-    that references a service type, the SCR searches the registry for a
-    component configuration that matches the service type. On finding a matching
-    component configuration, the SCR creates an instance of the Service
-    Component class and binds it to the referring service.
+2.  **Service reference handling:** On installing a module whose service
+    component references another service type, the SCR searches the registry for
+    a component configuration that matches the service type and on finding a
+    match binds an instance of that service to the referring component.
 
 It's publish, find, and bind at its best!
 
-How does a developer use DS to register and bind service components? Does it
-involve creating XML files? No, it's much easier than that. The developer uses
-two annotations: `@Component` and `@Reference`.
+How does a developer use DS to register and bind services? Does it involve
+creating XML files? No, it's much easier than that. The developer uses two
+annotations: `@Component` and `@Reference`.
 
--  `@Component` defines the class as a Service Component--a provider of a
-    particular service class.
+-  `@Component`: Add this annotation to a class definition to make the class a
+    component--a service provider. 
 
--  `@Reference` injects the referring class into a particular service class.
+-  `@Reference`: Add this annotation to a field to inject it with a service that
+    matches the field's type. 
 
-The `@Component` annotation makes the class an OSGi component. Defining a
-`service` property in the annotation allows other components to reference it by
-type.
+The `@Component` annotation makes the class an OSGi component. Setting a
+`service` property to a particular service type in the annotation, allows other
+components to reference the service component by the specified service type.
 
-For example, the following class is a Service Component of type `SomeApi.class`.
+For example, the following class is a service component of type `SomeApi.class`.
 
     @Component(
         service = SomeApi.class
@@ -423,27 +423,116 @@ For example, the following class is a Service Component of type `SomeApi.class`.
        ...
     }
 
-On deploying this class's module, the SCR creates a Component Configuration that
+On deploying this class's module, the SCR creates a component configuration that
 associates the class with the service type `SomeApi`.
 
-Specifying a service reference is easy too. The `@Reference` annotation can be
-applied to a field of the desired service class type. 
+Specifying a service reference is easy too. Applying the `@Reference` annotation
+to a field marks it to be injected with a service matching the field's type.
 
     @Reference
     SomeApi _someApi;
 
-On deploying this class's module, the SCR finds a Service Component of the class
-type `SomeApi` and binds the service component to the consumer.
+On deploying this class's module, the SCR finds a component configuration of the
+class type `SomeApi` and binds the service to this referencing component class.
 
-The SCR stands ready to pair Service Components with any service classes that
-reference them. For each referencing service class, the SCR creates an instance
-of the Service Component and binds it to the referencing service.
+At build time, Bnd creates a *component description* file for each module's
+components automatically. The file specifies the component's services,
+dependencies, and activation characteristics. On module deployment, the OSGi
+framework reads the component description to create the component and manage its
+dependency on other components.
+
+The SCR stands ready to pair service components with each other. For each
+referencing component, the SCR binds an instance of the targeted service to it.
 
 As an improvement over dependency injection with Spring, OSGi Declarative
 Services supports dynamic dependency injection. Developers can create and
 publish service components for other classes to use. Developers can update the
 components and even publish alternative component implementations for a service.
-This kind of dynamism is a powerful part of Liferay 7.
+This kind of dynamism is a powerful part of @product-ver@.
+
+## Dynamic Deployment [](id=dynamic-deployment)
+
+In OSGi, all components, Java classes, resources, and descriptors are deployed
+via modules. The `MANIFEST.MF` file describes the module's physical
+characteristics, such as the packages it exports and imports. The module's
+component description files specify its functional characteristics (i.e., the
+services its components offer and consume). Also modules and their components
+have their own lifecycles and administrative APIs. Declarative Services and shell
+tools give developers fine-grained control over module and component deployment.
+
+Since a module's contents depend on its activation, consider the activation
+steps: 
+
+1.  *Installation*: Copying the module JAR into @product@'s `deploy` folder
+    installs the module to the OSGi framework, marking the module `INSTALLED`.
+
+2.  *Resolution*: Once all the module's requirements are met (e.g., all packages
+    it imports are available), the framework publishes the module's exported
+    packages and marks it `RESOLVED`.
+
+3.  *Activation*: Modules are activated *eagerly* by default. That is, they're
+    started in the framework and marked `ACTIVE` on resolution. An active
+    module's components are enabled. If a module specifies a `lazy` activation
+    policy, as shown in the manifest header below, it's activated only after
+    another module requests one of its classes.
+
+        Bundle-ActivationPolicy: lazy
+
+The figure below illustrates the module lifecycle.
+
+![Figure 1: This state diagram illustrates the module lifecycle.](../../../images/module-state-diagram.png) 
+
+The [Apache Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+lets developers manage the module lifecycle. They can install/uninstall modules
+and start/stop them. Developers can update a module and notify dependent modules
+to use the update. Liferay's tools, including Liferay IDE/Developer Studio,
+Liferay Workspace, and Blade CLI offer similar shell commands that use the
+OSGi Admin API. 
+
+On activating a module, its components are enabled. But only *activated*
+components can be used. Component activation requires all its referenced
+services be satisfied. That is, all services it references must be registered.
+The highest ranked service that matches a reference is bound to the component.
+When the container find and binds all the services the component references, it
+registers the component. It's now ready for activation. 
+
+Components can use *delayed* (default) or *immediate* activation policies. To
+specify immediate activation, the developer adds the attribute `immediate=true`
+to the `@Component` annotation. 
+
+    @Component(
+        immediate = true,
+        ...)
+
+Unless immediate activation is specified, the component's activation is delayed.
+That is, the component's object is created and its classes are loaded once the
+component is requested. In this way delayed activation can improve startup times
+and conserve resources. 
+
+Gogo Shell's [Service Component Runtime commands](http://felix.apache.org/documentation/subprojects/apache-felix-service-component-runtime.html#shell-command)
+let developers manage components:
+
+-  `src:list [bundleID]`: Lists the module's (bundle's) components.
+
+-  `src:info [componentID]`: Describes the component, including its status and
+    the services it provides.
+
+-  `src:enable [componentID]`: Enables the component.
+
+-  `src:disable [componentID]`: Disables the component.
+
+Service references are static by default. That is, an injected service remains
+bound to the referencing component until the service is disabled.
+Alternatively, developers can specify *greedy* service policies for references.
+Every time a higher ranked matching service is registered, the framework unbinds
+the lower ranked service from the component and binds the new service in its
+place automatically. Here's a `@Reference` annotation that uses a greedy policy:
+
+    @Reference(policyOption = ReferencePolicyOption.GREEDY)
+
+Declarative Services annotations let you specify component activation and
+service policies. Gogo Shell commands let you control modules and components.
+Next, you'll create and deploy a module and component to @product@. 
 
 ## Example: Building an OSGi Module [](id=example-building-an-osgi-module)
 
@@ -500,7 +589,7 @@ It contains these methods:
     method on component activation.
 
 The `@Component` annotation defines the class as an OSGi service component. The
-following properties accompany specify its details:
+following properties specify its details:
 
 -  `service=MyService.class` - designates the component to be a service
     component for registering under the type `MyService`. In this example, the
@@ -549,7 +638,7 @@ task:
 
 **Note**: If Blade is installed (recommended), Gradle can be executed by
 entering `blade gw` followed by a task name (e.g., `blade gw deploy`). For
-details on Blade commands, see [Blade CLI](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+details on Blade commands, see [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
 $$$
 
@@ -560,19 +649,37 @@ On deploying the module, the following message is printed to the server console:
 Congratulations! You've successfully built and deployed an OSGi module to
 @product@. 
 
-## Learning More about OSGi
+## Learning More about OSGi [](id=learning-more-about-osgi)
 
-[Introduction to Liferay Development](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction)
+There is much more to learn about developing apps using OSGi. Several resources
+are listed below and many more abound. To make the best of your time, however,
+avoid OSGi service articles that explain techniques that are older and more
+complicated than Declarative Services.
 
-[OSGi enRoute](http://enroute.osgi.org/)
+Developers new to OSGi should check out these resources:
 
-Liferay 7 leverages the following services extensively. They're specified in
-[*The OSGi Alliance OSGi Compendium: Release 6*](https://www.osgi.org/developer/specifications/).
+-   [Introduction to Liferay Development](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development): 
+    For using OSGi to develop on @product@.
 
-- *Declarative Services Specification* 
+-   [OSGi enRoute](http://enroute.osgi.org/) is a site the OSGi Alliance
+    provides to the OSGi community. These sections are recommended.
 
-- *Configuration Admin Service Specification* - For modifying deployed bundles.
-Since Configuration Admin services are already integrated with Declarative
-Services, developers need not use the low-level API.
+    -   [Documentation](http://enroute.osgi.org/book/210-doc.html): For details
+        on modularity and the OSGi architecture.
 
-- *Metatype Service Specification* - For describing attribute types as metadata. 
+    -   [Tutorials](http://enroute.osgi.org/book/150-tutorials.html): For
+        hands-on experience with OSGi modules and Declarative Services.
+
+Developers ready to dive deep into OSGi should read the OSGi specifications.
+They're well-written and provide comprehensive details on all that OSGi offers.
+[*The OSGi Alliance OSGi Compendium: Release 6*](https://osgi.org/download/r6/osgi.cmpn-6.0.0.pdf)
+specifies the following services that @product-ver@ leverages extensively.
+
+-   *Declarative Services Specification*
+
+-   *Configuration Admin Service Specification*: For modifying deployed
+    bundles. Since Configuration Admin services are already integrated with
+    Declarative Services, however, Liferay developers need not use the low-level
+    API.
+
+-   *Metatype Service Specification*: For describing attribute types as metadata.

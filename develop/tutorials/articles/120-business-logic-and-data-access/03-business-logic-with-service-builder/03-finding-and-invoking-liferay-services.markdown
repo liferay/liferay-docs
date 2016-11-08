@@ -90,7 +90,7 @@ Here's how you find services for a user's blogs statistics:
 Now you're ready to invoke Liferay services. To invoke Liferay services
 remotely, your Liferay instance must be configured to allow remote web service
 access. Please see the
-[Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model) 
+[Service Security Layers](/develop/tutorials/-/knowledge_base/7-0/service-security-layers) 
 tutorial for details.
 -->
 <!-- The above text does not yet apply, since module Javadoc is only hosted in a

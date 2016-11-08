@@ -384,11 +384,12 @@ asset renderer is put together to satisfy JSP template development requirements.
     do this later. <!--Check -->
 
 2.  Now that you've added the path for your JSP, you'll need a way to include
-    that JSP. If you're familiar with MVCPortlet development, you may be aware
-    of this common practice. To display a JSP other than the default
-    `view.jsp` template, you must specify an `include(...)` method to render
-    the JSP. In the case for blogs, you want to render either the `abstract` or
-    `full_content` template, so the `include` method is specified to do so:
+    that JSP. In this tutorial, since we are extending the BaseJSPAssetRenderer,
+    this class already provides an `include(...)` method to render an specific
+    JSP. We are going to override this method so that we can set an attribute in
+    the request that we will use in our views (the blog object itself). This is
+    not mandatory, you could obtain the blog itself directly from the view, but
+    we like to follow an MVC approach.
 
         @Override
         public boolean include(
@@ -400,10 +401,6 @@ asset renderer is put together to satisfy JSP template development requirements.
 
             return super.include(request, response, template);
 	    }
-
-    This method sets the blogs entry asset as an attribute in the request and
-    then calls the `BaseJspAssetRenderer` class's `include` method. By doing
-    this, the appropriate JSP to display in the Asset Publisher is rendered.
 
     ![Figure 3: The abstract and full content views are rendererd differently for blogs.](../../images/blogs-asset-views.png)
 
@@ -440,7 +437,7 @@ buttons for your asset.
     Publisher. Pretty cool, right?
 
 2.  You can specify how to view your asset by providing methods similar to the
-    methods outlined below in the `BlogsEntryAssetRenderer class:
+    methods outlined below in the `BlogsEntryAssetRenderer` class:
 
         @Override
         public String getURLView(
@@ -554,10 +551,24 @@ renderer factory.
 
         public BlogsEntryAssetRendererFactory() {
             setClassName(BlogsEntry.class.getName());
+            setCategorizable(true);
             setLinkable(true);
             setPortletId(BlogsPortletKeys.BLOGS);
             setSearchable(true);
+            setSelectable(true);
         }
+
+        If your asset renderer factory  is linkable, then other assets can
+        select your assets as their related assets.
+
+        If your asset renderer factory is categorizable, then it can be used to
+        delimit the scope of a vocabulary from the Categories Administration.
+
+        If your asset renderer factory is searchable, then it can be found when
+        searching for assets.
+
+        If your asset renderer factory is selectable, then it can be selected
+        when choosing assets manually to be displayed in asset publisher.
 
 4.  Retrieve the asset renderer that you created for your asset. This is done by
     creating an instance of the asset renderer by calling its constructor.

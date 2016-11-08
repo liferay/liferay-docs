@@ -36,7 +36,7 @@ portlet declaration:
     />
 
 This declares that the theme is requesting to view language entries. There are
-four different kinds of actions supported by the Portlet Providers framework:
+five different kinds of actions supported by the Portlet Providers framework:
 `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Specify the entity type and
 action in your theme's runtime declaration.
 
