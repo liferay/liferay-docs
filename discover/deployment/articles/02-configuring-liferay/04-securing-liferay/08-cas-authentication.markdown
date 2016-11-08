@@ -35,8 +35,6 @@ Finally, to import the key into your Java key store, use the following command:
 If you are on a Windows system, replace `$JAVA_HOME` above with `%JAVA_HOME%`.
 Of course, all of this needs to be done on the system where CAS is running.
 
-## Configuring CAS at the System Scope
-
 Once your CAS server is up and running, configure @product@ to use it.
 CAS configuration can be applied either at the system scope or at the scope of
 a portal instance. To configure the CAS SSO module at the system scope,
