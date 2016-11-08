@@ -19,7 +19,7 @@ manage this information and keep it up to date.
 register and sign in with their OpenID accounts. Internally, the product uses
 [OpenID4Java](https://github.com/jbufu/openid4java) to implement the feature.
 
-## OpenID at the System Scope
+## OpenID at the System Scope [](id=openid-at-the-system-scope)
 
 OpenID is enabled by default in Liferay but can be disabled or enabled at
 either the system scope or portal instance scope. To configure the OpenID SSO
@@ -29,7 +29,7 @@ module at the system level, navigate to the Control Panel and click on *System*
 setting. Check the *Enabled* box to enable OpenID at the system scope (for all
 portal instances), uncheck it to disable it at the system scope.
 
-## OpenID at the Instance Scope
+## OpenID at the Instance Scope [](id=openid-at-the-instance-scope)
 
 To configure the OpenID SSO module at the portal instance scope, navigate to the
 Control Panel and click on *Configuration* &rarr; *Instance Settings*, then on
