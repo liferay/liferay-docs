@@ -38,8 +38,8 @@ Here's how to apply Liferay's CSS builder to your Maven project.
 
     - The
       [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
-      configures the CSS Builder to run during the `generate-sources` phase of
-      your Maven project's build lifecycle. The `build-css`
+      configures the CSS Builder to run during the `compile` phase of your Maven
+      project's build lifecycle. The `build-css`
       [goal](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#A_Build_Phase_is_Made_Up_of_Plugin_Goals)
       is defined for that lifecycle phase.
     - The
@@ -89,8 +89,7 @@ Here's how to apply Liferay's CSS builder to your Maven project.
 
         mvn liferay:build-css
 
-    Since the `build-css` goal is configured as a part of the `generate-sources`
-    phase, this is also invoked by running `mvn generate-sources` or a parent
-    phase of `generate-sources` (e.g., `mvn verify`, `mvn compile`, etc.).
+    Since the `build-css` goal is configured as a part of the `compile`
+    phase, this is also invoked by running `mvn compile`.
 
 Awesome! You can now compile Sass files in your Liferay Maven project.
