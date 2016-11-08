@@ -1,13 +1,19 @@
 # Workflow Forms [](id=workflow-forms)
 
-Using the handy Kaleo Designer application, you can [create workflow definitions
-for any asset in
-@product@](/discover/portal/-/knowledge_base/7-0/kaleo-designer). Meanwhile, the
-Dynamic Data Lists application lets you [create field
-sets](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) to back
-your forms. The Kaleo Forms Admin application combines the features of these
-applications, letting you design an integrated process for sending forms through
-a workflow. The entire process includes:
+Business processes are often form-based and workflow-driven. They start with
+some data that needs to be entered and shared with another person or group, for
+further data entry, approval, editing, legal review, or some other purpose.  To
+write an app for each of these processes is laborious, and often not cost
+effective. Businesses need a way to quickly define a process to suit their
+needs. They need to define the data that gets collected, and define the process
+the data will move through to reach its final state. @product@ already includes
+the [Dynamic Data Lists
+application](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)
+for defining forms, and the [Kaleo Designer
+application](/discover/portal/-/knowledge_base/7-0/kaleo-designer) for designing
+workflows. The Kaleo Forms solution combines the features of these applications,
+letting you design an integrated process for sending forms through a workflow.
+The entire process includes:
 
 1. Creating a Kaleo Process
 2. Creating the process's field set (or selecting an existing [Data
