@@ -68,7 +68,7 @@ and your developers can write a module to support it. Alternatively, your
 organization can choose to sponsor support for it. Please contact
 `sales@liferay.com` for more information about this.
 
-## Authentication: OpenSSO [](id=authentication-opensso)
+## Authentication: OpenAM
 
 <!-- This needs thorough review. OpenSSO doesn't exist anymore; it's OpenAM.
 -Rich --> 
@@ -155,11 +155,14 @@ will be directed to the CAS server to sign in to Liferay.
 <!-- This needs thorough review. Microsoft's new browser is Edge; this whole
 section might need a complete rewrite. -Rich --> 
 
-NTLM is a Microsoft protocol that can be used for authentication through
-Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern
-versions of Windows server, NTLM is still used when authenticating to a
-workgroup. Liferay Portal now supports NTLM v2 authentication. NTLM v2 is more
-secure and has a stronger authentication process than NTLMv1.
+NTLM (NT LAN Manager) is a suite of Microsoft protocols that provide
+authentication, integrity, and confidentiality for users. Though Microsoft has
+adopted Kerberos in modern versions of Windows server, NTLM is still used when
+authenticating to a workgroup. Liferay Portal now supports NTLM v2
+authentication. NTLM v2 is more secure and has a stronger authentication process
+than NTLMv1.
+
+
 
 **Enabled:** Check this box to enable NTLM authentication.
 
@@ -172,6 +175,13 @@ the server that contains the user accounts you want to use with Liferay.
 will be a computer account, not a user account.
 
 **Service Password:** Enter the password for the service account.
+
++$$$
+
+**Note:** To USE NTLM with @product@, you need to configure your browser.
+Consult your browser vendor's documentation for the details.
+
+$$$
 
 ## LDAP [](id=ldap)
 
