@@ -59,16 +59,16 @@ using the following options:
   the *Enable Import* box described above.
 
 **Use LDAP Password Policy:** Liferay uses its own password policy by default.
-This can be configured on the Control Panel's Password Policies page. Check the *Use LDAP Password Policy* box if you want to use the
-password policies defined by your LDAP directory. Once this is enabled, the
-Password Policies tab states that you are not using a local
-password policy. You must now use your LDAP directory's mechanism for
-setting password policies. Liferay does this by parsing the messages in the
-LDAP controls returned by your LDAP server. By default, the messages in the
-LDAP controls that Liferay is looking for are the messages returned by the
-Fedora Directory Server. If you are using a different LDAP server, you will
-need to customize the messages in *System Settings &rarr; Foundation &rarr;
-System LDAP Configuration*. 
+This can be configured on the Control Panel's Password Policies page. Check the
+*Use LDAP Password Policy* box if you want to use the password policies defined
+by your LDAP directory. Once this is enabled, the Password Policies tab states
+that you are not using a local password policy. You must now use your LDAP
+directory's mechanism for setting password policies. Liferay does this by
+parsing the messages in the LDAP controls returned by your LDAP server. By
+default, the messages in the LDAP controls that Liferay is looking for are the
+messages returned by the Fedora Directory Server. If you are using a different
+LDAP server, you will need to customize the messages in *System Settings &rarr;
+Foundation &rarr; System LDAP Configuration*. 
 
 Once you've finished configuring LDAP, click the *Save* button. 
 

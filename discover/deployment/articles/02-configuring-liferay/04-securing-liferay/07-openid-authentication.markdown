@@ -21,13 +21,13 @@ register and sign in with their OpenID accounts. Internally, the product uses
 
 ## OpenID at the System Scope [](id=openid-at-the-system-scope)
 
-OpenID is enabled by default in Liferay but can be disabled or enabled at
-either the system scope or portal instance scope. To configure the OpenID SSO
-module at the system level, navigate to the Control Panel and click on *System*
+OpenID is enabled by default in Liferay but can be disabled or enabled at either
+the system scope or portal instance scope. To configure the OpenID SSO module at
+the system level, navigate to the Control Panel and click on *Configuration*
 &rarr; *System Settings*. Then click on the *Foundation* category and find
-*OpenID* in the list. There's only a single configuration
-setting. Check the *Enabled* box to enable OpenID at the system scope (for all
-portal instances), uncheck it to disable it at the system scope.
+*OpenID* in the list. There's only a single configuration setting. Check the
+*Enabled* box to enable OpenID at the system scope (for all portal instances),
+uncheck it to disable it at the system scope.
 
 ## OpenID at the Instance Scope [](id=openid-at-the-instance-scope)
 
