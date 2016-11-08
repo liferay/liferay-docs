@@ -216,6 +216,14 @@ you to your account. In Amazon's interface, you can create "buckets" of data
 optimized by region. Once you've created these to your specifications, use [these instructions](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration) 
 to connect your S3 account to @product@. 
 
+If you are using Tomcat as your app server, it doesn't contain a `SAXParser`.
+You must include this property in `system-ext.properties`: 
+
+    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
+
+Other app servers also need this configuration if they don't contain a
+`SAXParser`. 
+
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service. 
 
