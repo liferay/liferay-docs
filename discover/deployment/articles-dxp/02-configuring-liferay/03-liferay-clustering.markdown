@@ -13,16 +13,12 @@ of the two. Once you have Liferay installed in more than one application server
 node, there are several optimizations that need to be made. At a minimum,
 Liferay should be configured in the following way for a clustered environment:
 
-- All nodes should be pointing to the same Liferay database or database cluster. 
-
-- Documents and Media repositories should be accessible to all nodes of the
+1. All nodes should be pointing to the same Liferay database or database cluster. 
+2. Documents and Media repositories should be accessible to all nodes of the
   cluster. 
-
-- Search should be on a separate search server that is optionally clustered. 
-
-- The cache should be replicating across all nodes of the cluster. 
-
-- Hot deploy folders should be configured for each node if you're not using
+3. Search should be on a separate search server that is optionally clustered. 
+4. The cache should be replicating across all nodes of the cluster. 
+5. Hot deploy folders should be configured for each node if you're not using
   server farms. 
 
 If you haven't configured your application server to use farms for deployment,
@@ -34,26 +30,13 @@ deployment to all nodes.
 
 Many of these configuration changes can be made by adding or modifying
 properties in your `portal-ext.properties` file. Remember that this file
-overrides the defaults in the `portal.properties` file. The original version of
-this file can be found in the Liferay source code or can be extracted from the
-`portal-impl.jar` file in your Liferay installation. You can also browse its
-contents [here](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html). 
+overrides the defaults in the `portal.properties` file. You can also browse its
+contents [here](https://docs.liferay.com/digital-enterprise/7.0-latest/propertiesdoc/portal.properties.html). 
 It's a best practice to copy the relevant section you want to modify from
 `portal.properties` into your `portal-ext.properties` file, and then modify the
 values there.
 
 <!-- Is the above still true? Possibly not; may be OSGi config files now. -->
-
-+$$$
-
-Note: @product@ relies on the application server for sanitizing CRLF in
-HTTP headers. You should, therefore, make sure this is properly configured in
-your application server, or you may experience false positives in reports from
-automatic security verification software such as Veracode. There is one
-exception to this for Resin, which does not have support for this feature. In
-this case, Liferay sanitizes HTTP headers. 
-
-$$$
 
 +$$$
 
@@ -70,7 +53,7 @@ $$$
 We'll discuss each of the points above one by one to present a clear picture of
 how to cluster Liferay. 
 
-## All Nodes Should Point to the Same Liferay Database [](id=all-nodes-should-point-to-the-same-liferay-database)
+## 1. All Nodes Should Point to the Same Liferay Database [](id=all-nodes-should-point-to-the-same-liferay-database)
 
 Each node should have a data source that points to one Liferay database (or a
 database cluster) that all the nodes will share. This means, of course, Liferay
@@ -78,8 +61,20 @@ cannot (and should not) use the embedded HSQL database that is shipped with the
 bundles (but you already knew that, right?). And, of course, the database server
 should be on a separate system from the server which is running Liferay. 
 
+
++$$$
+
+**Checkpoint**: To test if the separation is working well, execute the following steps:
+
+1. Start both Tomcats (Nodes 1 and 2) sequentially.
+2. Log in and add a portlet (e.g. Hello Velocity) to Node 1.
+3. On Node 2, refresh the page. Portlet appears!
+4. Repeat test with reversed roles!
+
+$$$
+
 You can also use a read-writer database configuration to optimize your database
-configuration. 
+configuration.
 
 ### Read-Writer Database Configuration [](id=read-writer-database-configuration)
 
@@ -97,6 +92,7 @@ one for writing:
     jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.read.username=**your user name**
     jdbc.read.password=**your password**
+    
     jdbc.write.driverClassName=com.mysql.jdbc.Driver
     jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.write.username=**your user name**
@@ -106,39 +102,20 @@ Of course, specify the user name and password to your database in the above
 configuration.
 
 After this, enable the read-writer database configuration by uncommenting the
-Spring configuration file which enables it in your `spring.configs` property
-(line to uncomment is in bold):
+Spring configuration file which enables it in your `spring.configs` property:
 
     spring.configs=\
-    META-INF/base-spring.xml,\
-    META-INF/hibernate-spring.xml,\
-    META-INF/infrastructure-spring.xml,\
-    META-INF/management-spring.xml,\
-    META-INF/util-spring.xml,\
-    META-INF/editor-spring.xml,\
-    META-INF/jcr-spring.xml,\
-    META-INF/messaging-spring.xml,\
-    META-INF/scheduler-spring.xml,\
-    META-INF/search-spring.xml,\
-    META-INF/counter-spring.xml,\
-    META-INF/document-library-spring.xml,\
-    META-INF/lock-spring.xml,\
-    META-INF/mail-spring.xml,\
-    META-INF/portal-spring.xml,\
-    META-INF/portlet-container-spring.xml,\
-    META-INF/wsrp-spring.xml,\
-    META-INF/mirage-spring.xml,\
-    **META-INF/dynamic-data-source-spring.xml,\**
-    #META-INF/shard-data-source-spring.xml,\
-    META-INF/ext-spring.xml
+    [..]
+    META-INF/dynamic-data-source-spring.xml,\
+    [..]
 
-    <!-- Is the above configuration still valid? -Rich --> 
+You can find the fill `spring.config` list in the `portal.properties` [documentation](https://docs.liferay.com/digital-enterprise/7.0-latest/propertiesdoc/portal.properties.html#Spring).
 
 The next time you restart Liferay, it uses the two data sources you have
 defined. Be sure you have correctly set up your two databases for replication
 before starting Liferay.
 
-## Documents and Media Library Clustering [](id=documents-and-media-library-clustering)
+## 2. Documents and Media Library Clustering [](id=documents-and-media-library-clustering)
 
 @product@'s Documents and Media Library can mount several repositories at a time
 while presenting a unified interface to the user. By default, users can use the
@@ -156,9 +133,19 @@ The main thing to keep in mind is you need to make sure that every node of the
 cluster has the same access to the file store as every other node. For this
 reason, you must look at your store configuration. 
 
-<!-- This should have its own article in the search section, but maybe we should
-point to it here. Either that, or we should move the one from the search section
-here. -Rich -->
+The store configuration is available on [this page](/discover/deployment/-/knowledge_base/7-0/document-repository).
+
+It's important to note that the file systems used by the `File System` or `Advanced File System` stores must support concurrent requests and file locking.
+
++$$$
+
+**Checkpoint**: To test if the sharing works well, execute the following steps:
+
+1. On Node 1 upload a document to the Documents and Media.
+2. On Node 2 download the document - download should be successful.
+3. Repeat test with reversed roles.
+
+$$$
 
 ## Clustering Search [](id=clustering-search)
 
@@ -297,10 +284,10 @@ In your project, create a text file called `portlet.properties` in the
 just like `portal-ext.properties`. Into this file, add the following three
 properties: 
 
-	net.sf.ehcache.configurationResourceName=
-	ehcache.single.vm.config.location=
-	ehcache.multi.vm.config.location=
-	
+    net.sf.ehcache.configurationResourceName=
+    ehcache.single.vm.config.location=
+    ehcache.multi.vm.config.location=
+    
 Liferay's configuration files are, of course, used by default. If you're
 overriding these properties, it's because you want to customize the
 configuration for your own site. A good way to start with this is to extract
@@ -323,10 +310,10 @@ For example, if you created a folder called `custom_cache` in your project's
 `portlet.properties` and specify your configuration files in the three
 properties above: 
 
-	net.sf.ehcache.configurationResourceName=/custom_cache/hibernate-clustered.xml
-	ehcache.single.vm.config.location=/custom_cache/liferay-single-vm.xml
-	ehcache.multi.vm.config.location=/custom_cache/liferay-multi-vm-clustered.xml
-	
+    net.sf.ehcache.configurationResourceName=/custom_cache/hibernate-clustered.xml
+    ehcache.single.vm.config.location=/custom_cache/liferay-single-vm.xml
+    ehcache.multi.vm.config.location=/custom_cache/liferay-multi-vm-clustered.xml
+    
 Save the file and deploy the plugin (deploying plugins is covered in the
 [Liferay Development Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development)),
 and the settings you've placed in those files will override the default Liferay
@@ -404,39 +391,39 @@ portlet. In this case, you may want to cache media objects, such as
 `DLFileEntryImpl` to improve performance as users access documents. To do that,
 add another block to the configuration file with the class you want to cache:
 
-	<cache
-		eternal="false"
-		maxElementsInMemory="10000"
-		name="com.liferay.portlet.documentlibrary.model.impl.DLFileEntryImpl"
-		overflowToDisk="false"
-		timeToIdleSeconds="600"
-	>
-		<cacheEventListenerFactory
-			class="com.liferay.portal.cache.ehcache.LiferayCacheEventListenerFactory"
-			properties="replicatePuts=false,replicateUpdatesViaCopy=false"
-			propertySeparator=","
-		/>
-		<bootstrapCacheLoaderFactory class="com.liferay.portal.cache.ehcache.LiferayBootstrapCacheLoaderFactory" />
-	</cache>
+    <cache
+        eternal="false"
+        maxElementsInMemory="10000"
+        name="com.liferay.portlet.documentlibrary.model.impl.DLFileEntryImpl"
+        overflowToDisk="false"
+        timeToIdleSeconds="600"
+    >
+        <cacheEventListenerFactory
+            class="com.liferay.portal.cache.ehcache.LiferayCacheEventListenerFactory"
+            properties="replicatePuts=false,replicateUpdatesViaCopy=false"
+            propertySeparator=","
+        />
+        <bootstrapCacheLoaderFactory class="com.liferay.portal.cache.ehcache.LiferayBootstrapCacheLoaderFactory" />
+    </cache>
 
 Your site may use the message boards portlet, and those message boards may get a
 lot of traffic. To cache the threads on the message boards, configure a block
 with the `MBMessageImpl` class:
 
     <cache
-		eternal="false"
-		maxElementsInMemory="10000"
-		name="com.liferay.portlet.messageboards.model.impl.MBMessageImpl"
-		overflowToDisk="false"
-		timeToIdleSeconds="600"
-	>
-		<cacheEventListenerFactory
-			class="com.liferay.portal.cache.ehcache.LiferayCacheEventListenerFactory"
-			properties="replicatePuts=false,replicateUpdatesViaCopy=false"
-			propertySeparator=","
-		/>
-		<bootstrapCacheLoaderFactory class="com.liferay.portal.cache.ehcache.LiferayBootstrapCacheLoaderFactory" />
-	</cache>
+        eternal="false"
+        maxElementsInMemory="10000"
+        name="com.liferay.portlet.messageboards.model.impl.MBMessageImpl"
+        overflowToDisk="false"
+        timeToIdleSeconds="600"
+    >
+        <cacheEventListenerFactory
+            class="com.liferay.portal.cache.ehcache.LiferayCacheEventListenerFactory"
+            properties="replicatePuts=false,replicateUpdatesViaCopy=false"
+            propertySeparator=","
+        />
+        <bootstrapCacheLoaderFactory class="com.liferay.portal.cache.ehcache.LiferayBootstrapCacheLoaderFactory" />
+    </cache>
 
 Note that if your developers have overridden any of these classes in an Ext
 plugin, you'll have to specify the overridden versions rather than the stock
