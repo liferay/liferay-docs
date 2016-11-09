@@ -146,8 +146,7 @@ Action | &nbsp;LCS Administrator | &nbsp;LCS Environment Manager | &nbsp;LCS Env
 Access LCS | true | true | true |
 Access Any Environment | true | false | false |
 Access a Particular Environment | true | true | true |
-Manage Users in Any Environment | true | false | false |
-Manage Users in a Particular Environment | true | true | false |
+Manage Users | true | false | false |
 Invite Users to LCS | true | false | false |
 Create and Delete Environments | true | false | false |
 Edit Any Environment | true | false | false |
