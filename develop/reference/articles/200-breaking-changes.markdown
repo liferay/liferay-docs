@@ -3486,7 +3486,7 @@ else.
 
 - `com.liferay.portal.webserver` &rarr; `com.liferay.portal.kernel.webserver`
 
-- `com.liferay.portlet` &rarr; `com.liferay.kernel.portlet`
+- `com.liferay.portlet` &rarr; `com.liferay.portal.kernel.portlet`
 
 - `com.liferay.portlet.admin.util` &rarr; `com.liferay.admin.kernel.util`
 
