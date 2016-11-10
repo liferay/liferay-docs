@@ -1,4 +1,4 @@
-# Theme Template
+# Theme Template [](id=theme-template)
 
 In this tutorial, you'll learn how to create a Liferay theme as a WAR project.
 To create a Liferay theme, use a command with the following parameters: 
