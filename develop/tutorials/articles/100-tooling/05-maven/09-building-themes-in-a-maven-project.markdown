@@ -1,4 +1,4 @@
-# Building Themes in a Maven Project
+# Building Themes in a Maven Project [](id=building-themes-in-a-maven-project)
 
 Liferay's Theme Builder is a tool used to build Liferay theme files in your
 project. You can easily incorporate the Theme Builder into your Maven project to
