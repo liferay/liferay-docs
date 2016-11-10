@@ -153,6 +153,13 @@ following options for articles:
 - Add a folder
 - Import articles from a ZIP file
 
++$$$
+
+**Note:** To import articles, your role must be granted the *Knowledge Base* 
+&rarr; *Resource Permissions: Import Articles* permission.
+
+$$$
+
 The Options menu (![Options](../../../images/icon-app-options.png)) allows you 
 to configure the following features for the Knowledge Base app:
 
@@ -468,6 +475,13 @@ before they're published. Articles are imported into the Knowledge Base as
 Markdown files. Markdown is a text-only file format that is designed to be easy 
 to read, yet support all the things you'd need to do to format your articles. 
 
++$$$
+
+**Note:** To import articles, your role must be granted the *Knowledge Base* 
+&rarr; *Resource Permissions: Import Articles* permission.
+
+$$$
+
 The Knowledge Base supports a Markdown dialect known as [Multi-Markdown](http://fletcher.github.io/MultiMarkdown-4/). 
 This dialect extends the original Markdown with features like table formatting, 
 image captions, and footnotes.
@@ -526,6 +540,23 @@ The importer supports article hierarchies, so Markdown files can be specified
 anywhere in the ZIP file's directory structure. They can be nested in any number 
 of folders. Image files are the only files supported for attachments. No other 
 kinds of references are supported--not even anchors.
+
++$$$
+
+**Note:** Imported articles are now independent of the workflow settings. This 
+means that **imported articles will be automatically approved.**
+
+**Existing roles that can add articles will no longer be able to import them.**
+Only users with the *Import Articles* permission assigned to their role will be
+able to import articles. This permission can be assigned manually through 
+*Control Panel* &rarr; *Users* &rarr; *Roles*. You can also assign this role to
+**every role that was already able to add articles** with a command from the 
+Gogo shell.
+
+Open the Gogo shell: `telnet localhost 11311`. Type 
+`knowledgeBase:addImportArticlePermissions` and hit enter.
+
+$$$
 
 The ZIP file's articles are imported in file order(alphanumerically). To 
 designate an article's *priority*, add a numeric prefix to its file name. For 
