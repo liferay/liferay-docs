@@ -70,8 +70,7 @@ build a theme. You'll learn how to do this next.
           or `vm`).
         - `unstyledDir`: The unstyled theme's folder.
 
-2.  Apply the CSS Builder plugin, which is a required dependency for the Theme
-    Builder:
+2.  Apply the CSS Builder plugin, which is required to the Theme Builder:
 
         <plugin>
             <groupId>com.liferay</groupId>
@@ -93,8 +92,8 @@ build a theme. You'll learn how to do this next.
             </configuration>
         </plugin>
 
-    You can learn more about the CSS Builder's configuration in Maven projects
-    by visiting the
+    You can learn more about the CSS Builder's Maven configuration by visiting
+    the
     [Compiling Sass Files in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/compiling-sass-files-in-a-maven-project)
     tutorial.
 
@@ -121,8 +120,8 @@ build a theme. You'll learn how to do this next.
             </configuration>
         </plugin>
 
-4.  Insert the `<packaging>` tag in your project's POM, so your project is aware
-    that it'll be packaged as a WAR. This tag can be placed with your project's
+4.  Insert the `<packaging>` tag in your project's POM so your project is
+    correctly packaged as a WAR file. This tag can be placed with your project's
     `groupId`, `artifactId`, and `version` specifications like this:
 
         <groupId>com.liferay</groupId>
@@ -130,10 +129,10 @@ build a theme. You'll learn how to do this next.
         <version>1.0.0</version>
         <packaging>war</packaging>
 
-5.  You must configure the necessary dependencies in your Maven project so the
-    Theme Builder can successfully function. You can do this by applying the
+5.  You must configure the Theme Builder's dependencies in your project's POM.
+    You can do this by applying the
     [maven-dependency-plugin](http://maven.apache.org/plugins/maven-dependency-plugin/)
-    and have it copy required dependencies into your project from Maven Central:
+    and have it copy dependencies into your project from Maven Central:
 
         <plugin>
             <artifactId>maven-dependency-plugin</artifactId>
@@ -177,7 +176,7 @@ build a theme. You'll learn how to do this next.
 
 6.  Configure the properties for your project in its `pom.xml` file:
 
-       <properties>
+        <properties>
             <com.liferay.css.builder.version>1.0.20</com.liferay.css.builder.version>
             <com.liferay.frontend.css.common.version>2.0.1</com.liferay.frontend.css.common.version>
             <com.liferay.frontend.theme.styled.version>2.0.13</com.liferay.frontend.theme.styled.version>
