@@ -4,8 +4,8 @@ The OSGi framework is intended for modular development where you can create
 modules containing explicit information about their requirements and
 capabilities that can be used to assemble a working system. In a perfect world,
 every library would contain this information (i.e., as OSGi modules).
-Unfortunately, not all libraries are packaged this way. So how do you make use
-of those in OSGi?
+Unfortunately, not all libraries are packaged this way. So how do you use
+them in OSGi?
 
 You can add them within your module. This isn't the only way, but it's the
 method that most resembles building WAR files, so it's the one we recommend for
@@ -20,15 +20,14 @@ There are a couple different ways to add libraries to your modules:
 The recommended approach is to expand the library in your module. This positions
 the third party classes with your module's classes.
 
-This approach, however, may suffer from a limitation resulting in duplicate
-paths within the libraries being expanded into your module. This could lead
-to files being mistakenly overwritten, resulting in lost information. For
+When using this approach, you may suffer a limitation resulting in duplicate
+paths in the libraries being expanded into your module. This could lead
+to mistakenly overwritten files, resulting in lost information. For
 example, Service Loader descriptors (`META-INF/services/*`), which many
-libraries include, could have similar names, but different contents.
+libraries include, could have similar names, but different content.
 
-Therefore, if the libraries you're adding have **no** chance of overwriting each
-other's resources in your module, expand them into your module; otherwise, embed
-them.
+If the libraries you're adding have **no** chance of overwriting each other's
+resources in your module, expand them into your module; otherwise, embed them.
 
 You'll learn how to add libraries using both ways next.
 

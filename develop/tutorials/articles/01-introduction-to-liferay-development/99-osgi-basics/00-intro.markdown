@@ -2,9 +2,8 @@
 
 Liferay leverages the OSGi framework to provide a development environment for
 modular applications. There are many OSGi best practices that @product@ follows
-to provide a platform for which it's easy to develop. In this section of
-tutorials, you're introduced to some OSGi basics and common Liferay best
-practices for your bundle's (module) development.
+to provide an easy-to-develop-for platform. Here, you're introduced to some OSGi
+basics and common Liferay best practices for your bundle's (module) development.
 
 <!-- By Ray's request, I introduced the term *module* by first referencing
 *bundle*. Ray suggested that since this section will focus on OSGi basics, that
