@@ -5,7 +5,7 @@ Local Live and Remote Live. With Local Live staging, both your staging
 environment and your live environment are hosted on the same server. When Local
 Live staging is enabled for a site, a clone of the site is created containing
 copies of all of the site's existing pages. Typically, this means the staging
-and live enviornments share the same JVM, database, portlet data (depending on
+and live environments share the same JVM, database, portlet data (depending on
 which portlets are selected when staging is enabled), and setup configurations,
 such as the properties set in the `portal-ext.properties` file. The cloned site
 becomes the staging environment and the original site becomes the live
@@ -19,26 +19,25 @@ creators can use the staging server to make their changes while the live server
 handles the incoming user traffic. When changes to the site are ready to be
 published, they are pushed over the network to the remote live server. Whether
 you enable Local Live or Remote Live staging, the interface for managing and
-publishing staged pages is the same. 
+publishing staged pages is the same.
 
 So when should you use Local Live staging and when should you use Remote Live
-Staging? Local Live staging allows you to publish site changes very quickly,
+staging? Local Live staging allows you to publish site changes very quickly,
 since the staged and live environments are on the same server. It's also easier
 to switch between the staged and live environments using Local Live staging.
-Since the staged content, however, is stored in the same database as the
-production content, the content isn't as well protected or backed up as with
-Remote Live staging. Also, you can't install new versions of apps for testing
-purposes in a Local Live staging environment, since only one version of an app
-can be installed at any given time on a single Liferay server.
+However, since the staged content is stored in the same database as the production
+content, your server needs to have more resources, and the content isn't as well
+protected or backed up as with Remote Live staging. Also, you can't install new
+versions of apps for testing purposes in a Local Live staging environment, since
+only one version of an app can be installed at any given time on a single Liferay
+server.
 
 With Remote Live staging, your staging and live environments are hosted on
-separate servers. This lets you deploy new versions of apps and content to your
-staging environment without worrying about interfering with your live
-environment. With Remote Live staging, you can also use one Liferay instance as
-the staging server for multiple production servers. However, publishing is
-slower with Remote Live than with Local Live since data needs to be transferred
-over a network. And, of course, you need more hardware to run a separate staging
-server.
+separate servers, so your data is more separated. This lets you deploy new versions
+of apps and content to your staging environment without worrying about interfering
+with your live environment. However, publishing is slower with Remote Live than with
+Local Live since data needs to be transferred over a network. Of course, you also
+ need more hardware to run a separate staging server.
 
 ## Enabling Local Live Staging [](id=enabling-local-live-staging)
 
@@ -49,7 +48,7 @@ Live*, after which additional options appear. Staging allows changes to be made
 in a staging environment so that work can be reviewed, possibly using a
 workflow, before it's published to a live site. Enabling Local Live staging is
 easy. Just select *Local Live* and decide whether you'd like to enable page
-versioning and what app data will be included on the staging site. 
+versioning and what app data will be included on the staging site.
 
 You can enable page versioning on a site's public pages, private pages, both, or
 neither. Page versioning allows you to work in parallel on different versions of
@@ -65,23 +64,25 @@ the page. Then add the Alerts and Announcements apps to the News and Events
 page. Navigate to the Staging menu under Publishing, select *Local Live*, and
 click *Save*. You've officially begun the staging process.
 
-When you activate staging Local Live staging, @product@ creates a clone of your
-site. This clone became the staging environment. Because of this, it is
-recommended to only activate staging on new, clean sites. Having a few pages and
-some apps (like those of the example site you created) is no big deal. However,
-if you have already created a large amount of content, you might not be able to
-enable staging on that site. Also, if you intend to use page versioning to track
-the history of updates to your site, it's recommended that you enable it as
-early as possible, *before* your site has many pages and lots of content. Your
-site's update history won't be saved until you enable page versioning. Page
-versioning requires staging (either Local Live or Remote Live) to be enabled.
+When you activate Local Live staging, @product@ creates a clone of your site.
+This clone becomes the staging environment. Because of this, it is recommended
+to only activate staging on new, clean sites. Having a few pages and some apps
+(like those of the example site you created) is no big deal. However, if you have
+already created a large amount of content, enabling staging can take a lot of time,
+and it can be a resource intensive operation. Also, if you intend to use page
+versioning to track the history of updates to your site, it's recommended that you
+enable it as early as possible, *before* your site has many pages and lots of
+content. Your site's update history won't be saved until you enable page versioning.
+Page versioning requires staging (either Local Live or Remote Live) to be enabled.
 
 If you ever need to turn off the staging environment, return back to *Staging*
 from the Publishing dropdown. The processes you've created are displayed by
 default. Navigate to the *Options* icon
 (![Options](../../../images/icon-options.png)) from the upper right corner of
 the page and select *Staging Configuration*. Select the *None* radio button to
-turn Local Live staging off.
+turn Local Live staging off. Please note that this operation will remove the staging
+environment altogether, so all content that was not published to your live site
+will be lost!
 
 Next you'll learn about enabling Remote Live staging.
 
@@ -90,16 +91,17 @@ Next you'll learn about enabling Remote Live staging.
 When you enable Remote Live staging, the remote site becomes the live
 environment and the current site becomes the staging environment. The remote
 (live) Liferay server and the local (staging) Liferay server should be
-completely separate systems. They should not, for example, share the same the
-database. When Remote Live staging is enabled, all the necessary information is
-transferred over the network connecting the two servers.
+completely separate systems. They should not, for example, share the same database.
+When Remote Live staging is enabled, all the necessary information is transferred
+over the network connecting the two servers.
 
 +$$$
 
 **Important:** When applying patches to a remote staging environment, you must
 apply patches to all of your servers being used. Having servers on different
-patch levels is not a good practice. It is essential that all servers are
-updated to the same patch level to ensure remote staging works correctly.
+patch levels is not a good practice and can lead to import failures and data
+corruption. It is essential that all servers are updated to the same patch level
+to ensure remote staging works correctly.
 
 $$$
 
@@ -160,7 +162,7 @@ two strategies:
 
 2. Use printable ASCII characters (less secure). This degrades the password
    entropy.
-   
+  
     If you don't use hexadecimal encoding, i.e. if you use the default setting
     `tunneling.servlet.shared.secret.hex=false`, the value of the
     `tunneling.servlet.shared.secret` property *must* be ASCII compliant.
@@ -201,13 +203,12 @@ server.
 
 Similar to Local Live staging, it is generally a good idea to turn remote
 staging on at the beginning of your site's development for good performance.
-When you're using Remote Live staging, there is an initial publication which
-transfers data. If you've created a large amount of content, your initial
-publication could be slow and cause a large amount of network traffic. @product@'s
-system is very fast for the amount of data being transferred. This is because
-the data transfer is completed piecemeal, instead of one large data dump. You
-can control the size of data transactions by setting the following portal
-property in your `portal-ext.properties` file:
+When you're using Remote Live staging, and you are publishing a large amount of
+content, your publication could be slow and cause a large amount of network
+traffic. @product@'s system is very fast for the amount of data being transferred
+over the network. This is because the data transfer is completed piecemeal, instead
+of one large data dump. You can control the size of data transactions by setting the
+following portal property in your `portal-ext.properties` file:
 
     staging.remote.transfer.buffer.size
 
@@ -231,8 +232,8 @@ you are to make a mistake. And you not only have to create identical user
 accounts, you also have to ensure that these users have identical permissions.
 For this reason, it's recommended that you use LDAP to copy selected user
 accounts from your local (staging) Liferay server to your remote (live) Liferay
-server. Liferay's Virtual LDAP Server application, available on
-Liferay Marketplace, makes this easy.
+server. Liferay's Virtual LDAP Server application, available on Liferay Marketplace,
+makes this easy.
 
 +$$$
 
@@ -293,7 +294,7 @@ about the other supported apps, as well. -Cody
     - *Referenced content:* see web content for details
 - Web Content
     - *Referenced content:* web content can reference different other entities
-    in the Liferay. Structures and templates for the most obvious examples, but
+    in Liferay. Structures and templates for the most obvious examples, but
     it can reference images too from the portal's document library. Staging can
     exclude some of this content during publication or export to speed up the
     process. These references will be validated during the publish process or an
@@ -362,6 +363,16 @@ maintain these references when publishing. Site administrators and content
 creators have control over the process on different levels: staging can be
 enabled for a content group and a content group can be selected for publication.
 
++$$$
+
+**Important:** Turning Staging on and off for individual portlet data could cause
+data inconsistencies between the staging and the live site. Because of this, it is
+not possible to modify the individual portlet configuration once you enable staging.
+In case you need adjustments later on, you will need to turn off staging altogether
+and re-enable it with your new configuration.
+
+$$$
+
 Besides managing the app-specific content, @product@ also operates with several
 special content types such as pages or users. For instance, pages are a part of
 the site and can reference other content types, but in a special way. The page
@@ -384,7 +395,7 @@ decisions about how you want to publish your site's content.
 ### Understanding the Publication Process [](id=understanding-the-publication-process)
 
 In simple terms, publication is the process where all content, referenced
-content, apps and their preferences, pages, users, etc. are transferred from
+content, apps and their preferences, pages, etc. are transferred from
 the staging scope to the live site. If you've enabled remote staging, this
 process involves network communication with another remote site. From a low
 level perspective, staging is an equivalence relation where entities are being
@@ -402,18 +413,29 @@ remote live Liferay instance.
 Next, the validation phase determines if it's possible to start the import
 process. This phase verifies the file's version and its integrity, checks for
 additional system information like language settings, and validates there is no
-missing content.
+missing content referenced.
 
 Lastly, the import phase makes any necessary updates or additions to the site's
 content, layouts, and apps according to the publishing parameters. If everything
 is verified and correct, the staged content is published to your live site.
 
 A crucial factor for successfully publishing staged content is data integrity.
-If anything is not successfully verified during the publication process, all
-staged data is saved, and the orginal state of the site is restored, discarding
-the current publication. This is a necessary action to safeguard against
+If anything is not successfully verified during the publication process, the
+transactional database will be able to revert back the site to its original state,
+discarding the current publication. This is a necessary action to safeguard against
 publishing incomplete information, which could break an otherwise well-designed
 live site.
+
++$$$
+
+**Important:** Since the file system (if it is not "database-stored" like DBStore)
+is not transactional, it won't be reverted automatically in case of a staging
+failure. This could potentially cause a discrepancy between a file and where it is
+being referenced from. Because of this, administrators should take great care if
+they decide to stage the document library, making sure that regular backups of both
+their database and their file system are being maintained.
+
+$$$
 
 Next, you'll learn about staging best practices and prerequisites to follow for
 a seamless staging experience.
@@ -421,7 +443,7 @@ a seamless staging experience.
 ### Planning Ahead for Staging [](id=planning-ahead-for-staging)
 
 Staging is a complex subsystem of @product@ that is designed to be flexible and
-scalable. Before advanced users and administators begin using it for their site,
+scalable. Before advanced users and administrators begin using it for their site,
 it's important to plan ahead and remember a few tips for a seamless process.
 There are several factors to evaluate.
 
