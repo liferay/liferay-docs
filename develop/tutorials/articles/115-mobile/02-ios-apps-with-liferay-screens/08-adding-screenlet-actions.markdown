@@ -16,8 +16,8 @@ This Screenlet is similar to the sample Add Bookmark Screenlet created in
 [the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
 The advanced Add Bookmark Screenlet, however, contains two actions: 
 
-1. Add Bookmark: Adds a bookmark to the Bookmarks portlet in a Liferay instance. 
-   This is the Screenlet's main action, created in 
+1. Add Bookmark: Adds a bookmark to the Bookmarks portlet in a @product@
+   installation. This is the Screenlet's main action, created in 
    [the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
 
 2. Get Title: Retrieves the title from a bookmark URL entered by the user. This 
@@ -217,12 +217,12 @@ section shows you how to trigger your actions programmatically.
 
 ## Triggering Actions Programmatically [](id=triggering-actions-programmatically)
 
-The user triggers Add Bookmark Screenlet’s actions when they press buttons in 
+The user triggers Add Bookmark Screenlet's actions when they press buttons in 
 the UI. What if you need to trigger the action programmatically? No problem! The 
 [`BaseScreenletView` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift) 
 contains a set of `userAction` methods that you can call in your View class to 
-perform actions programmatically. For example, it’s possible to automatically 
-trigger Add Bookmark Screenlet’s Get Title action whenever the user leaves the 
+perform actions programmatically. For example, it's possible to trigger Add
+Bookmark Screenlet's Get Title action automatically whenever the user leaves the
 `URLTextField`. Since `BaseScreenletView` is the delegate for all `UITextField` 
 objects by default, This is done in the View class (`AddBookmarkView_default`) 
 by implementing the 
@@ -235,7 +235,7 @@ to call the `userAction` method with the action name:
         }
     }
 
-That’s it! Now you know how to trigger your Screenlet actions programmatically. 
+That's it! Now you know how to trigger your Screenlet actions programmatically. 
 
 ## Related Topics [](id=related-topics)
 

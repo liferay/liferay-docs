@@ -20,7 +20,7 @@ Liferay Screens includes two such classes:
 This tutorial shows you how to use and create progress presenters, using code 
 from the 
 [advanced version of the sample Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced) 
-as an example. First, you’ll learn how to use progress presenters. 
+as an example. First, you'll learn how to use progress presenters. 
 
 ## Using Progress Presenters [](id=using-progress-presenters)
 
@@ -41,22 +41,22 @@ this:
             return NetworkActivityIndicatorPresenter()
         }
 
-2. In your View class, override the `BaseScreenletView` property 
+2. In your View class, override the `BaseScreenletView` property
    `progressMessages` to return the messages you want to use in the presenter. 
-   If the presenter doesn’t display messages, then return an empty string. The 
+   If the presenter doesn't display messages, then return an empty string. The 
    `progressMessages` property should return the messages as 
-   `[String : ProgressMessages]`, where `String` is the Screenlet’s action name. 
+   `[String : ProgressMessages]`, where `String` is the Screenlet's action name. 
    [`ProgressMessages` is a type alias](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/ProgressPresenter.swift) 
    representing a dictionary where the progress type is the key, and the actual 
    message is the value. The three possible progress types correspond to the 
-   Screenlet action’s status: `Working`, `Failure`, or `Success`. The 
+   Screenlet action's status: `Working`, `Failure`, or `Success`. The 
    `progressMessages` property therefore lets the presenter display the 
-   appropriate message for the Screenlet action’s current status. 
+   appropriate message for the Screenlet action's current status. 
 
     For example, the following code overrides the `progressMessages` property in 
-    Add Bookmark Screenlet’s View class (`AddBookmarkView_default`). For each 
+    Add Bookmark Screenlet's View class (`AddBookmarkView_default`). For each 
     Screenlet action (`AddBookmarkAction` and `GetTitleAction`), a message 
-    (`NoProgressMessage`) is assigned to the Screenlet operation’s `Working` 
+    (`NoProgressMessage`) is assigned to the Screenlet operation's `Working` 
     status. Since `NoProgressMessage` is an alias for an empty string, this 
     tells the presenter to display no message when the Screenlet attempts to add 
     a bookmark or get a title. Note, however, that the presenter still displays 
@@ -87,44 +87,44 @@ this:
             ]
         }
 
-Great! Now you know how to use progress presenters. Next, you’ll learn how to 
+Great! Now you know how to use progress presenters. Next, you'll learn how to 
 create your own. 
 
 ## Creating Progress Presenters [](id=creating-progress-presenters)
 
-Creating your own progress presenter isn’t as complicated as you might think. 
+Creating your own progress presenter isn't as complicated as you might think. 
 Recall that a presenter in Liferay Screens is a class that conforms the 
 [`ProgressPresenter` protocol](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/ProgressPresenter.swift). 
 You can create your presenter by conforming this protocol from scratch, or by 
-extending one of Screens’s existing presenters that already conform this 
+extending one of Screens's existing presenters that already conform this 
 protocol (`MBProgressHUDPresenter` or `NetworkActivityIndicatorPresenter`). In 
 most cases, extending `MBProgressHUDPresenter` is sufficient. 
 
 For example, 
-[Add Bookmark Screenlet’s `AddBookmarkProgressPresenter`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced/ProgressPresenter/AddBookmarkProgressPresenter.swift) 
+[Add Bookmark Screenlet's `AddBookmarkProgressPresenter`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced/ProgressPresenter/AddBookmarkProgressPresenter.swift) 
 extends `MBProgressHUDPresenter` to display a different progress indicator for 
-the Screenlet’s get title action. Use the following steps to create a progress 
+the Screenlet's get title action. Use the following steps to create a progress 
 presenter that extends from an existing presenter. As an example, these steps 
 extend `MBProgressHUDPresenter` to add a progress indicator for the get title 
 button: 
 
-1. In your View’s XIB file, add the activity indicator you want to use. For 
+1. In your View's XIB file, add the activity indicator you want to use. For 
    example, the XIB file in Add Bookmark Screenlet contains an iOS 
    `UIActivityIndicatorView` over the get title button: 
 
     ![Figure 1: The updated Add Bookmark Screenlet's XIB file contains a new activity indicator over the get title button.](../../../images/screens-ios-xcode-add-bookmark-advanced-progress.png)
 
-2. In your View class, create an outlet for the XIB’s new activity indicator. 
-   For example, Add Bookmark Screenlet’s View class (`AddBookmarkView_default`) 
+2. In your View class, create an outlet for the XIB's new activity indicator. 
+   For example, Add Bookmark Screenlet's View class (`AddBookmarkView_default`) 
    contains an `@IBOutlet` for the `UIActivityIndicatorView` from the XIB:
 
         @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView?
 
-Now you must create your presenter class. You’ll do this here by extending an 
+Now you must create your presenter class. You'll do this here by extending an 
 existing presenter class. Use the following steps to do this: 
 
 1. Extend the existing presenter class you want to base your presenter on. Your 
-   presenter class must contain properties for your presenter’s activity 
+   presenter class must contain properties for your presenter's activity 
    indicator and any other UI components. It must also contain an initializer 
    that sets these properties. For example, `AddBookmarkProgressPresenter` 
    extends `MBProgressHUDPresenter` and contains properties for the get title 
@@ -143,9 +143,9 @@ existing presenter class. Use the following steps to do this:
             }
             ...
 
-2. Implement your presenter’s behavior by overriding the appropriate methods 
-   from the presenter class that you’re extending. For example, 
-   `AddBookmarkProgressPresenter` overrides `MBProgressHUDPresenter`’s 
+2. Implement your presenter's behavior by overriding the appropriate methods 
+   from the presenter class that you're extending. For example, 
+   `AddBookmarkProgressPresenter` overrides `MBProgressHUDPresenter`'s 
    `showHUDInView` and `hideHUDFromView` methods. The overridden `showHUDInView` 
    method hides the button and starts animating the activity indicator. The 
    overridden `hideHUDFromView` method stops this animation and restores the 
@@ -175,7 +175,7 @@ existing presenter class. Use the following steps to do this:
 
         }
 
-Great, that’s it! Now you can use your presenter the same way you would any 
+Great, that's it! Now you can use your presenter the same way you would any 
 other. 
 
 ## Related Topics [](id=related-topics)

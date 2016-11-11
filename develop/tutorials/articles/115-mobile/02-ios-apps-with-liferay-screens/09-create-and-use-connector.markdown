@@ -9,7 +9,7 @@ Interactor. For example,
 makes the server call and and processes its results via `LRCallback`. This 
 Screenlet could instead make its server call in a separate Connector class, 
 leaving the Interactor to instantiate the Connector and receive its results. 
-Connectors also let you validate your Screenlet’s data. For more information on 
+Connectors also let you validate your Screenlet's data. For more information on 
 Connectors, see the 
 [tutorial on the architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios). 
 
@@ -18,16 +18,16 @@ with your Screenlets, using the
 [advanced version of the sample Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced)
 as an example. This Screenlet contains two actions: 
 
-1. Add Bookmark: Adds a bookmark to the Bookmarks portlet in a Liferay instance. 
-   This tutorial shows you how to create and use a Connector for this action. 
+1. Add Bookmark: Adds a bookmark to the Bookmarks portlet in a @product@
+   installation. This tutorial shows you how to create and use a Connector for
+   this action. 
 
 2. Get Title: Retrieves the title from a bookmark URL entered by the user. This 
    tutorial shows you how to use a pre-existing Connector with this action. 
 
-Note that this tutorial doesn’t explain Screenlet creation in general. Before 
-proceeding, make sure you’ve read 
+Before proceeding, make sure you've read 
 [the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
-First, you’ll learn how to create your Connector. 
+First, you'll learn how to create your Connector. 
 
 ## Creating Connectors [](id=creating-connectors)
 
@@ -37,19 +37,19 @@ specified in the best practices tutorial.
 
 Use the following steps to implement your Connector class: 
 
-1. Create your Connector class by extending the 
-   [`ServerConnector` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseConnectors/ServerConnector.swift). 
-   For example, here's the class declaration for Add Bookmark Screenlet's 
-   Connector class, `AddBookmarkLiferayConnector`:
+1.  Create your Connector class by extending the 
+    [`ServerConnector` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseConnectors/ServerConnector.swift). 
+    For example, here's the class declaration for Add Bookmark Screenlet's 
+    Connector class, `AddBookmarkLiferayConnector`:
 
         public class AddBookmarkLiferayConnector: ServerConnector {
             ...
         }
 
-2. Add the properties needed to call the Mobile SDK service, then create an 
-   initializer that sets those properties. For example, 
-   `AddBookmarkLiferayConnector` needs properties for the bookmark's folder ID, 
-   title, and URL. It also needs an initializer to set those properties: 
+2.  Add the properties needed to call the Mobile SDK service, then create an 
+    initializer that sets those properties. For example, 
+    `AddBookmarkLiferayConnector` needs properties for the bookmark's folder ID, 
+    title, and URL. It also needs an initializer to set those properties: 
 
         public let folderId: Int64
         public let title: String
@@ -62,13 +62,13 @@ Use the following steps to implement your Connector class:
             super.init()
         }
 
-3. Override the `validateData` method to implement validation for each property 
-   that needs it. You can use the 
-   [`ValidationError` class](https://github.com/liferay/liferay-screens/blob/develop/ios/Framework/Core/Extensions/NSError%2BScreens.swift) 
-   to encapsulate the errors. For example, the following `validateData` 
-   implementation in `AddBookmarkLiferayConnector` ensures that `folderId` is 
-   greater than `0`, and `title` and `url` contain values. This method also uses 
-   `ValidationError` to represent the error: 
+3.  Override the `validateData` method to implement validation for each property 
+    that needs it. You can use the 
+    [`ValidationError` class](https://github.com/liferay/liferay-screens/blob/develop/ios/Framework/Core/Extensions/NSError%2BScreens.swift) 
+    to encapsulate the errors. For example, the following `validateData` 
+    implementation in `AddBookmarkLiferayConnector` ensures that `folderId` is 
+    greater than `0`, and `title` and `url` contain values. This method also uses 
+    `ValidationError` to represent the error: 
 
         override public func validateData() -> ValidationError? {
             let error = super.validateData()
@@ -91,17 +91,17 @@ Use the following steps to implement your Connector class:
             return error
         }
 
-4. Override the `doRun` method to call the Mobile SDK service that you need to 
-   call. This method should retrieve the result from the service and store it in 
-   a public property. Also be sure to handle errors and empty results. For 
-   example, the following code defines the `resultBookmarkInfo` property for 
-   storing the service's results retrieved in the `doRun` method. Note that this 
-   method's service call is identical to the one in the `AddBookmarkInteractor` 
-   class's `start` method in the 
-   [Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
-   The `doRun` method, however, takes the additional step of saving the result 
-   to the `resultBookmarkInfo` property. Also note that this `doRun` method 
-   handles errors as `NSError` objects: 
+4.  Override the `doRun` method to call the Mobile SDK service you need to 
+    call. This method should retrieve the result from the service and store it in 
+    a public property. Also be sure to handle errors and empty results. For 
+    example, the following code defines the `resultBookmarkInfo` property for 
+    storing the service's results retrieved in the `doRun` method. Note that this 
+    method's service call is identical to the one in the `AddBookmarkInteractor` 
+    class's `start` method in the 
+    [Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
+    The `doRun` method, however, takes the additional step of saving the result 
+    to the `resultBookmarkInfo` property. Also note that this `doRun` method 
+    handles errors as `NSError` objects: 
 
         public var resultBookmarkInfo: [String:AnyObject]?
 
@@ -160,10 +160,11 @@ Follow these steps to use a Connector in your Interactor:
 
 1. Set your Interactor class's superclass to `ServerConnectorInteractor` or one 
    of its subclasses. You should also remove any code that conforms a callback 
-   protocol, if it exists. For example, Add Bookmark Screenlet’s Interactor 
+   protocol, if it exists. For example, Add Bookmark Screenlet's Interactor 
    class (`AddBookmarkInteractor`) extends `ServerWriteConnectorInteractor` 
-   because it writes data to a Liferay instance. At this point, your Interactor 
-   should contain only the properties and initializer that it requires:
+   because it writes data to a @product@ installation. At this point, your
+   Interactor should contain only the properties and initializer that it
+   requires:
 
         public class AddBookmarkInteractor: ServerWriteConnectorInteractor {
 
@@ -196,7 +197,7 @@ Follow these steps to use a Connector in your Interactor:
    and store it in the appropriate property. For example, the 
    `completedConnector` method in `AddBookmarkInteractor` first casts its 
    `ServerConnector` argument to `AddBookmarkLiferayConnector`. It then gets the 
-   Connector's `resultBookmarkInfo` property and sets it to the Interactor’s 
+   Connector's `resultBookmarkInfo` property and sets it to the Interactor's 
    `resultBookmark` property: 
 
         override public func completedConnector(c: ServerConnector) {
@@ -209,14 +210,14 @@ Follow these steps to use a Connector in your Interactor:
 That's it! To see the complete example `AddBookmarkInteractor`, 
 [click here](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced/Interactor/AddBookmarkInteractor.swift). 
 
-If your Screenlet uses multiple Interactors, you can use the same steps to set 
-them to use Connectors. Also, Screens provides 
+If your Screenlet uses multiple Interactors, follow the same steps to use
+Connectors. Also, Screens provides 
 [the ready-to-use `HttpConnector`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseConnectors/HttpConnector.swift) 
 for interacting with non-Liferay URL's. To use this Connector, set your 
 Interactor to use `HttpConnector`. For example, the Add Bookmark Screenlet 
-action that retrieves a URL's title doesn't interact with a Liferay instance; it 
-retrieves the title directly from the URL. Because this action's Interactor 
-class (`GetWebTitleInteractor`) retrieves data, it extends 
+action that retrieves a URL's title doesn't interact with a @product@
+installation; it retrieves the title directly from the URL. Because this
+action's Interactor class (`GetWebTitleInteractor`) retrieves data, it extends
 `ServerReadConnectorInteractor`. It also overrides the `createConnector` and 
 `completedConnector` methods to use `HttpConnector`. Here's the complete 
 `GetWebTitleInteractor`:

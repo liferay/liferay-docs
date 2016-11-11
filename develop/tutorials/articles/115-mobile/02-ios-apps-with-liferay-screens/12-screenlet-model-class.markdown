@@ -165,7 +165,7 @@ where applicable.
    Screenlet's Screenlet class (`AddBookmarkScreenlet`) retrieves the `Bookmark` 
    from the Interactor's `resultBookmark` property. It then handles the 
    `Bookmark` via the delegate. Note that in this example, the closure is in the 
-   Screenlet class’s Interactor method that adds a bookmark 
+   Screenlet class's Interactor method that adds a bookmark 
    (`createAddBookmarkInteractor`). Be sure to get your model object wherever 
    the `interactor.onSuccess` closure is in your Screenlet class. 
    [Click here to see the complete `AddBookmarkScreenlet`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced/AddBookmarkScreenlet.swift): 

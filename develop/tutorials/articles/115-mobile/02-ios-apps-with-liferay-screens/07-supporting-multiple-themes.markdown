@@ -2,7 +2,7 @@
 
 Themes let you present the same Screenlet with a different look and feel. For 
 example, if you have multiple apps that use the same Screenlet, you can use 
-different Themes to match the Screenlet’s appearance to each app’s style. Each 
+different Themes to match the Screenlet's appearance to each app's style. Each 
 Screenlet that comes with Liferay Screens supports the use of multiple Themes. 
 For your custom Screenlet to support different Themes, however, it must contain 
 a *View Model* protocol. A View Model abstracts the Theme used to display the 
@@ -14,7 +14,7 @@ reference to the View class:
 
     let view = self.screenletView as! AddBookmarkView_default
 
-This is all fine and well, except it hardcodes the Theme defined by 
+This is all fine and well, except it hard codes the Theme defined by 
 `AddBookmarkView_default`! To use a different Theme, you'd have to rewrite this 
 line of code to use that Theme's View class. This isn't very flexible! Instead 
 of making your Screenlet take expensive yoga classes, you can abstract the 
@@ -30,7 +30,7 @@ Model while creating your Screenlet.
 
 Follow these steps to add and use a View Model in your Screenlet:
 
-1. Create a View Model protocol that defines your Screenlet’s attributes. These 
+1. Create a View Model protocol that defines your Screenlet's attributes. These 
    attributes are the View class properties your Screenlet class uses. For 
    example, the 
    [Screenlet class in Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/blob/develop/ios/Samples/Bookmark/AddBookmarkScreenlet/Basic/AddBookmarkScreenlet.swift) 
@@ -49,7 +49,7 @@ Follow these steps to add and use a View Model in your Screenlet:
         }
 
 2. Conform your View class to your Screenlet's View Model protocol. Make sure to 
-   get/set all the protocol's properties. For example, here’s Add Bookmark 
+   get/set all the protocol's properties. For example, here's Add Bookmark 
    Screenlet's View Class  (`AddBookmarkView_default`) conformed to 
    `AddBookmarkViewModel`: 
 
@@ -73,7 +73,7 @@ Follow these steps to add and use a View Model in your Screenlet:
 
 3. Create and use a View Model reference in your Screenlet class. By retrieving 
    data from this reference instead of a direct View class reference, you can 
-   use your Screenlet with other Themes. For example, here’s the 
+   use your Screenlet with other Themes. For example, here's the 
    `AddBookmarkScreenlet` class with a `viewModel` property instead of a direct 
    reference to `AddBookmarkView_default`. This class's `createInteractor` 
    method then uses this property to get the `title` and `URL` properties in the 
