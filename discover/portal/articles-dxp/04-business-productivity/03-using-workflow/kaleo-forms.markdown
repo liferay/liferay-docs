@@ -13,33 +13,47 @@ for defining forms, and the [Kaleo Designer
 application](/discover/portal/-/knowledge_base/7-0/kaleo-designer) for designing
 workflows. The Kaleo Forms solution combines the features of these applications,
 letting you design an integrated process for sending forms through a workflow.
+
 The entire process includes:
 
 1. Creating a Kaleo Process
 2. Creating the process's field set (or selecting an existing [Data
    Definition](/discover/portal/-/knowledge_base/7-0/creating-data-definitions))
-3. Creating the process's workflow definition (or selecting one that's already created)
+3. Creating the process's workflow definition (or selecting one that's already
+   created)
 4. Creating and assigning forms for each workflow task
 
 +$$$
 
-**Example Use Case:** While space is unlimited at The Lunar Resort (because it's
-in space--get the joke?), physical meeting spaces for the different departments
-are very limited. In fact, there are only two rooms with the size and seating
-appropriate for employee meetings. There used to be a paper reservation list
-hanging on the door of each room, but it kept getting lost, destroyed, and
-defaced. The resort is moving room reservation requests to an online sign-up
-form. The form needs fields like Requested Room Number, Event Name, Event
-Contact, Event Importance, a boolean Approved field, and others. Then the form
-go through a workflow, where the request form is approved as is,
-updated with a new date, or rejected (for example, if the Mechanical department
-wants to use the meeting room for a Rover Oil Change event). Any form-based
-process that must move through multiple people or roles benefits from the
-Kaleo Forms Admin application.
+**Example Use Case:** 
+
+
+
+
+I guess we should explore Marcellus idea on the "SPA registration app" and combine with your idea. You highlighted an excellent pain point: manual control for room management. We should consider this as a pain point for the "SPA registration".
+
+As an operational manager of a hotel SPA you would like to know the number of customers that would like to attend to your SPA and their needs/interests, so that you could organize: material, facilities, schedule professionals (massagists, cleaning services) and so on. Imagine performing all those activities using spreadsheets, printed lists and physical notes? Add to this, the need of sharing these information with your assistants and operational people to get things done. A mess, right?
+
+How could you do it better? Integrating from the point of view of your customer, since the booking of a SPA session to the execution of the high value service?
+
+How could Kaleo Forms help us accomplish that?
+
+I can see the following journey (just examples, you can simplify): booking a SPA session, revising booking session, email confirmation to the customer with the booking details. Internally, for the operation: check list of material to operational team, book massagist, book the room in the SPA calendar. After the session: survey sent to customer email.
+
+While space is unlimited at The Lunar Resort (because it's in space--get the
+joke?), physical meeting spaces for the different departments are very limited.
+In fact, there are only two rooms with the size and seating appropriate for
+employee meetings. There used to be a paper reservation list hanging on the door
+of each room, but it kept getting lost, destroyed, and defaced. The resort is
+moving room reservation requests to an online sign-up form. The form needs
+fields like Requested Room Number, Event Name, Event Contact, Event Importance,
+a boolean Approved field, and others. Then the form go through a workflow, where
+the request form is approved as is, updated with a new date, or rejected (for
+example, if the Mechanical department wants to use the meeting room for a Rover
+Oil Change event). Any form-based process that must move through multiple people
+or roles benefits from the Kaleo Forms Admin application.
 
 $$$
-<!-- This is not the example we show below, though it will probably be implemented in
-the future because of some changes that will happen with the app (no more ability to use default field sets like the To Do list). If it's too confusing to explain this use case while we illustrate a different example in the article, we can remove it for now. -->
 
 Access Kaleo Forms Admin in the Site Administration section of a site. Make
 sure intended users of your Kaleo Processes have access to the application. See
@@ -60,7 +74,7 @@ for the first time, there won’t be any, so create one.
 ### Creating a Kaleo Process [](id=creating-a-kaleo-process)
 
 Click the *Add* (![Add](../../../images-dxp/icon-add.png)) button to open the
-*New Process Wizard*. In this first step, name the process *Room Request*, add a
+*New Process Wizard*. In this first step, name the process *Spa rder Process*, add a
 description, and then click *Next*.
 
 ![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../../images-dxp/kaleo-forms-add.png)
@@ -80,20 +94,17 @@ in your forms. There are two methods:
     definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)
     first.
     - For this example, Add a new field set: 
-        - A Text field called *Event Name* 
-        - A Text Box called *Event Description*
-        - A Date field called *Request Date*
-        - A Date field called *Backup Date*
-        - A Text field called *Requested Time*
-        - A Text field called *Backup Time*
-        - A Radio field called *Preferred Room* with two options: *1* and *2*
-        - A Text field called *Contact Name*
+        - A Text field called *Customer Name* 
+        - A Text Box called *Requested Spa Technician*
+        - A Select field called *Services Requested*
+        - A Boolean field called *Returning Customer?*
+        - A Date field called *Preferred Date*
+        - A Text field called *Preferred Time*
+        - A Date field called *Available Date*
+        - A Text field called *Available Time*
         - A Boolean field called *Approved*
-        - A Date field called *Approved Date*
-        - A Text field called *Approved Time*
-        - A Radio field called *Room Assignment* with two options: *1* and *2*
-        - A Boolean field called *Availability Confirmed*
-        - A Text Box called *Managerial Comments*
+        - A Text field called *Contact Name*
+        - A Text Box field called *Managerial Comments*
 
 Click *Next* to move on to the next step in the wizard: adding a workflow for
 the process.
@@ -115,8 +126,8 @@ any definition already available in your system), add a new workflow from
 scratch using the Kaleo Designer. Click the *Add Workflow* button to get
 started.
 
-- For the Room Request process, make a new workflow definition called *Room
-    Request Definition*:
+- For the Spar Order Process, make a new workflow definition called *Spa Order
+    Workflow*:
      ![Figure x: The Room Request process has two review processes that happen
      in parallel.](../../../images/kaleo-forms-room-request-definition.png)
 
@@ -127,6 +138,31 @@ Designer [here](/discover/portal/-/knowledge_base/7-0/kaleo-designer) if you're
 not already familiar with it. 
 
 ![Figure 3: You can create new workflow definitions directly in the Kaleo Forms user interface.](../../../images-dxp/kaleo-forms-designer.png)
+
+This workflow exhibits simple linear processing, so that the initial form is
+filled out (in the StartNode) and then the workflow moves to the first task
+(Technician Claim), then to the final task (Managerial Approval).
+
+The task assignments of this workflow are as follows:
+
+Technician Claim: Assigned to the Spa Technician Role.
+Managerial Approval: Assigned to the Spa Manager Role.
+
++$$$
+
+**Note:** Create the Spa Technician Role and the Spa Manager Role as [Site
+Roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions), and give
+them
+[permission](/discover/portal/-/knowledge_base/7-0/roles-and-permissions#defining-role-permissions)
+to access the Kaleo Forms Admin application. In the role's page for defining
+permissions, they're found under Site Administration &rarr; Content &rarr; Kaleo
+Forms Admin. Both roles need all of the permissions available for Kaleo Forms
+Admin.
+<!-- Is that true? -->
+
+$$$
+
+Create the above roles, giving them the permissions for accessing the 
 
 Once the workflow is done, select it: back on the third step of the New Process
 wizard, click *Actions* &rarr; *Choose* on the workflow you just created.  Then
