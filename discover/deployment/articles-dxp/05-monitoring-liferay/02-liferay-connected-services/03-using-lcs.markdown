@@ -46,13 +46,20 @@ First, you'll learn what information LCS stores about your Liferay servers.
 ## What LCS Stores About Your Liferay Servers [](id=what-lcs-stores-about-your-liferay-servers)
 
 At this point, you might be wondering what information about your servers is 
-stored on the LCS servers. Great question! In order to offer the best service 
-possible, we store the following information about your servers: patches
-installed on each server, `portal.properties` (except sensitive data), JVM
-metrics, portal and portlet metrics, and cache and server metrics. Sensitive 
-data is defined as any key-value pair that contains usernames or passwords. For 
-example, the following properties are considered sensitive and are not stored on 
-the LCS servers:
+stored on LCS's servers. Great question! To protect your users' privacy, LCS 
+only stores system-specific data. LCS doesn't gather or store data on your 
+users. To offer the best service possible, LCS stores the following information 
+about your servers: 
+
+- Patches installed on each server 
+- `portal.properties` (except sensitive data) 
+- JVM metrics 
+- Portal and portlet metrics 
+- Cache and server metrics 
+
+Sensitive data is any key-value pair that contains usernames or passwords. For 
+example, LCS doesn't store the following properties because they contain 
+sensitive data: 
 
     omniadmin.users
     ldap.security.credentials.0, ldap.security.credentials.1, ldap.security.credentials.2 ...
@@ -66,15 +73,15 @@ the LCS servers:
     dl.store.s3.secret.key
     auto.deploy.glassfish.jee.dm.passwd
 
-Also, any properties that end in `.password` and are not stored, with the 
-exception of the following non-sensitive properties:
+LCS also doesn't store properties that end in `.password`, besides the following 
+non-sensitive properties: 
 
     portal.jaas.plain.password
     portal.jaas.strict.password
     login.create.account.allow.custom.password
 
-Note that LCS also lets you prevent it from analyzing specific properties of 
-your choosing. For more information on this, see 
+LCS also lets you prevent it from analyzing specific properties of your 
+choosing. For more information on this, see 
 [the section on using environment tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
 
 Now that you know what information is stored on the LCS servers, you're ready to 
@@ -146,8 +153,7 @@ Action | &nbsp;LCS Administrator | &nbsp;LCS Environment Manager | &nbsp;LCS Env
 Access LCS | true | true | true |
 Access Any Environment | true | false | false |
 Access a Particular Environment | true | true | true |
-Manage Users in Any Environment | true | false | false |
-Manage Users in a Particular Environment | true | true | false |
+Manage Users | true | false | false |
 Invite Users to LCS | true | false | false |
 Create and Delete Environments | true | false | false |
 Edit Any Environment | true | false | false |
@@ -287,8 +293,9 @@ icon. Clicking on a server takes you to its server view.
 ### Using the Server View [](id=using-the-server-view)
 
 The server view provides detailed information about a server, including 
-statistics and performance metrics. You can get to the server view by clicking a
-server in the environment view or by clicking a server in the Fix Packs table. 
+statistics and performance metrics. To protect your users' privacy, LCS doesn't 
+gather, store, or analyze user data. You can get to the server view by clicking 
+a server in the environment view or by clicking a server in the Fix Packs table. 
 Server view is segmented into five tabs: 
 
 - **Page Analytics:** Displays metrics on page views and load times.
@@ -298,7 +305,7 @@ Server view is segmented into five tabs:
 - **Details:** Displays general information about your Liferay installation, 
   Java version, and hardware.
 - **Server Settings:** View or change your server's name, location, and 
-  description. You can also unregister the server from LCS.
+  description. You can also unregister the server from LCS. 
 
 Page Analytics is displayed by default when you enter server view. Page 
 Analytics shows page views and load times for the selected site and time period. 
@@ -519,6 +526,8 @@ There are four tables in the Subscriptions tab:
 
 If any of the information in these tables is missing or incorrect, contact 
 Liferay support. 
+
+### Decommissioning Servers
 
 To decommission a server and free its activation key for reuse, select the 
 server's environment on the left and then select the server. In the server's 
