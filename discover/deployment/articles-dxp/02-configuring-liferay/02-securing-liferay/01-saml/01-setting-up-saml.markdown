@@ -97,7 +97,7 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
     You successfully set Liferay up as a SAML Identity Provider!
 
 
-### Changing the Identity Provider Settings
+### Changing the Identity Provider Settings [](id=changing-the-identity-provider-settings)
 
 To configure Liferay's SAML Identity Provider Settings, navigate to the Identity
 Provider tab of the SAML Admin Control Panel entry.
@@ -130,7 +130,7 @@ the user's idle time reaches the limit set by the session timeout property.
 **Service Provider Defaults:** The options in this section set defaults that
 are used when adding new service provider connections.
 
-### Adding a SAML Service Provider
+### Adding a SAML Service Provider [](id=adding-a-saml-service-provider)
 
 Of course, setting up Liferay as a SAML Identity Provider is only useful if you
 can connect to one or more SAML Service Providers. Navigate to the Service
@@ -287,7 +287,7 @@ Note that the SAML Service Provider session is tied to the normal session on
 the application server. Session expiration on the application server terminates
 the session on the Service Provider but does not initiate single logout. 
 
-### Changing the SAML Service Provider Settings
+### Changing the SAML Service Provider Settings [](id=changing-the-saml-service-provider-settings)
 
 If you'd like to configure @product@'s SAML Service Provider Settings, navigate to
 the Service Provider tab of the SAML Admin portlet.
