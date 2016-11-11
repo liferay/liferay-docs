@@ -1,17 +1,11 @@
 # Felix Gogo Shell [](id=using-the-felix-gogo-shell)
 
-To interact with @product@'s module framework, you can use the Felix Gogo shell.
-To access it, use a telnet client to connect to port `11311` of your Liferay
-server's machine. Since the shell is accessible through telnet, it is only
-available on the local network interface. Use the following command if you're
-running Liferay locally:
+To interact with @product@'s module framework, you can use the Felix Gogo shell
+within [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
-    telnet localhost 11311
+Here's the command syntax:
 
-Once you connect, you should see a message that says *Welcome to Apache Felix
-Gogo*. The prompt looks like this:
-
-    g!
+    blade sh <command>
 
 Here are some useful Gogo shell commands:
 
