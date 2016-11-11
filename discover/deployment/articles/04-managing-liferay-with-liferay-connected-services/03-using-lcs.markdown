@@ -528,7 +528,7 @@ There are four tables in the Subscriptions tab:
 If any of the information in these tables is missing or incorrect, contact 
 Liferay support. 
 
-### Decommissioning Servers
+### Decommissioning Servers [](id=decommissioning-servers)
 
 To decommission a server and free its activation key for reuse, select the 
 server's environment on the left and then select the server. In the server's 
