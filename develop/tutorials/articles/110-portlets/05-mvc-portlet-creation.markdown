@@ -134,9 +134,9 @@ offers you two ways to do this. One of these is designed for smaller
 applications, and the other is designed for larger applications. First, you'll
 learn about processing requests in smaller applications. After that, you'll
 learn about how data is rendered from the back end to the user. For processing
-requests in larger applications, see the tutorials [MVC Action Command](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command), 
-[MVC Render Command](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command), 
-and [MVC Resource Command](/develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
+requests in larger applications, see the tutorials [MVC Action Command](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/mvc-action-command), 
+[MVC Render Command](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/mvc-render-command), 
+and [MVC Resource Command](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/mvc-resource-command). 
 But read these after you finish this one, so you can understand how the whole
 framework works. 
 
