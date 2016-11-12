@@ -1,7 +1,7 @@
 # Development Reference [](id=development-reference)
 
-Here you'll find reference documentation for Liferay Portal CE, Liferay Screens,
-Liferay Faces, and technologies related to you as a third-party developer.
+Here you'll find reference documentation for Liferay Portal, Liferay Screens, Liferay
+Faces, and technologies related to you as a third-party developer.
 
 The different types of reference docs you'll find in this section of the Liferay
 Developer Network are as follows:
@@ -16,14 +16,13 @@ XML DTDs
     - Tools
     - Adapting to new APIs
 
-Liferay's reference docs are your fingertips.
+Liferay's reference docs are at your fingertips.
 
 ## Java APIs [](id=java-apis)
 
-Here you'll find Javadoc for Liferay Portal 7.0 CE modules at the time of the
-latest GA release.
+Here you'll find Javadoc for Liferay Portal core and Liferay Portal apps.
 
-### CE Java APIs [](id=ce-java-apis)
+### Liferay Portal Core Java APIs
 
 <style>
 table, th, td {
@@ -40,33 +39,19 @@ caption {
 </style>
 <table style="width:100%">
   <caption>
-    This table links you to some commonly used Liferay API modules. Although the
-    <a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/" target="_blank">
-    Liferay artifact repository<span class="opens-new-window-accessible"> (Opens New Window) </span>
-    </a>
-    contains <em>all</em> of the modules, the convenient listing below gives you
-    quicker access to some of the most popular module APIs.
-    <ul>
-       <li>
-          <em>(HTML)</em>: for online Javadoc. As an alternative, you can
-          <a href="https://www.liferay.com/downloads" target="_blank">
-          download<span class="opens-new-window-accessible"> (Opens New Window) </span>
-          </a>
-          the reference doc ZIP file and browse locally.
-       </li>
-       <li>
-		<em>(JARs)</em>: for accessing all the Javadoc JAR files for
-		<em>all</em> the module's versions.
-       </li>
-    </ul>
+    This table links you to the Liferay Portal core API modules. Their
+    root location is  
+    <a href="https://docs.liferay.com/ce/portal/7.0/javadocs/" target="_blank">
+    here<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    </a>.
     <br>
   </caption>
 
   <tr>
     <th rowspan="5">Core:</th>
     <td>
-       portal-kernel&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/index.html" target="_blank">
+       com.liferay.portal.kernel (portal-kernel)&nbsp;
+	<a href="https://docs.liferay.com/ce/portal/7.0/javadocs/portal-kernel/index.html" target="_blank">
 	(HTML):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a> for developing applications on the Liferay platform
     </td>
@@ -74,8 +59,8 @@ caption {
 
   <tr>
     <td>
-       util-bridges&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/javadocs/util-bridges/index.html" target="_blank">
+       com.liferay.util.bridges (util-bridges)&nbsp;
+	<a href="https://docs.liferay.com/ce/portal/7.0/javadocs/util-bridges/index.html" target="_blank">
 	(HTML):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a> for using various non-proprietary computing languages, frameworks, and utilities
        on the Liferay platform
@@ -84,8 +69,8 @@ caption {
 
   <tr>
     <td>
-       util-java&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/javadocs/util-java/index.html" target="_blank">
+       com.liferay.util.java (util-java)&nbsp;
+	<a href="https://docs.liferay.com/ce/portal/7.0/javadocs/util-java/index.html" target="_blank">
 	(HTML):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a> for using various Java-related frameworks and utilities on the Liferay platform
     </td>
@@ -93,8 +78,8 @@ caption {
 
   <tr>
     <td>
-       util-slf4j&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/javadocs/util-slf4j/index.html" target="_blank">
+       com.liferay.util.slf4j (util-slf4j)&nbsp;
+	<a href="https://docs.liferay.com/ce/portal/7.0/javadocs/util-slf4j/index.html" target="_blank">
 	(HTML):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a> for using the Simple Logging Facade for Java (SLF4J)
     </td>
@@ -102,541 +87,352 @@ caption {
 
   <tr>
     <td>
-       portal-impl&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/javadocs/portal-impl/index.html" target="_blank">
+       com.liferay.portal.impl (portal-impl)&nbsp;
+	<a href="https://docs.liferay.com/ce/portal/7.0/javadocs/portal-impl/index.html" target="_blank">
 	(HTML):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a> refer to this only if you are an advanced Liferay developer that needs a deeper
        understanding of Liferay Portal's implementation in order to contribute to it
     </td>
   </tr>
 
-  <tr>
-    <th rowspan="1">Application List:</th>
-    <td>
-       com.liferay.application.list.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.application.list.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="3">Backend Frameworks:</th>
-    <td>
-       com.liferay.portal.background.task.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal-background-task/com.liferay.portal.background.task.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.background.task.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.lock.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal-lock/com.liferay.portal.lock.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.lock.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.settings.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal-settings/com.liferay.portal.settings.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.settings.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="1">Calendar:</th>
-    <td>
-       com.liferay.calendar.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/forms-and-workflow/calendar/com.liferay.calendar.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.calendar.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="7">Collaboration:</th>
-    <td>
-       com.liferay.blogs.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/blogs/com.liferay.blogs.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.blogs.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.bookmarks.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/bookmarks/com.liferay.bookmarks.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.bookmarks.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.document.library.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/document-library/com.liferay.document.library.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.document.library.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.mentions.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/mentions/com.liferay.mentions.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.mentions.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.microblogs.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/microblogs/com.liferay.microblogs.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.microblogs.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.message.boards.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/message-boards/com.liferay.message.boards.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.message.boards.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.wiki.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/wiki/com.liferay.wiki.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.wiki.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="4">Export, Import, &amp; Staging:</th>
-    <td>
-       com.liferay.exportimport.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/export-import/com.liferay.exportimport.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.exportimport.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.dynamic.data.mapping.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.dynamic.data.mapping.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.staging.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/staging/com.liferay.staging.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.staging.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.xstream.configurator.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/xstream/com.liferay.xstream.configurator.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.xstream.configurator.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="4">Forms &amp; Workflow:</th>
-    <td>
-       com.liferay.dynamic.data.lists.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/forms-and-workflow/dynamic-data-lists/com.liferay.dynamic.data.lists.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.dynamic.data.lists.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.dynamic.data.mapping.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.dynamic.data.mapping.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.polls.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/forms-and-workflow/polls/com.liferay.polls.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.polls.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       reports.engine.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/forms-and-workflow/portal-reports-engine/com.liferay.portal.reports.engine.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/reports.engine.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="2">Item Selector:</th>
-    <td>
-       com.liferay.item.selector.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.item.selector.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-        com.liferay.item.selector.criteria.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.criteria.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.item.selector.criteria.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="1">Map:</th>
-    <td>
-       com.liferay.map.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/map/com.liferay.map.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.map.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="1">Marketplace:</th>
-    <td>
-       com.liferay.marketplace.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/marketplace/com.liferay.marketplace.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.marketplace.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="2">Mobile &amp; Screens:</th>
-    <td>
-       com.liferay.mobile.device.rules.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/mobile-device-rules/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.mobile.device.rules.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.screens.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/screens/com.liferay.screens.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.screens.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="1">Product Navigation:</th>
-    <td>
-       com.liferay.product.navigation.control.menu.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.product.navigation.control.menu.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="3">Security:</th>
-    <td>
-       com.liferay.portal.security.service.access.policy.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal-security/com.liferay.portal.security.service.access.policy.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.security.service.access.policy.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.security.audit.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal-security-audit/com.liferay.portal.security.audit.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.security.audit.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.security.exportimport.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal-security/com.liferay.portal.security.exportimport.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.security.exportimport.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="1">Shopping Cart (deprecated):</th>
-    <td>
-       com.liferay.shopping.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/shopping/com.liferay.shopping.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.shopping.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="1">Sites:</th>
-    <td>
-       com.liferay.site.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/site/com.liferay.site.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.site.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="7">Social:</th>
-    <td>
-       com.liferay.comment.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/comment/com.liferay.comment.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.comment.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.contacts.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/contacts/com.liferay.contacts.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.contacts.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.flags.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/flags/com.liferay.flags.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.flags.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.invitation.invite.members.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/invitation/com.liferay.invitation.invite.members.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.invitation.invite.members.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.social.privatemessaging.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/social/com.liferay.social.privatemessaging.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.privatemessaging.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.ratings.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/ratings/com.liferay.ratings.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.ratings.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.social.networking.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/social-networking/com.liferay.social.networking.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.networking.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="1">Web Experience:</th>
-    <td>
-       com.liferay.journal.api&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/journal/com.liferay.journal.api/" target="_blank">
-       (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.journal.api/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
-      </td>
-  </tr>
-
 </table>
 
-For help finding specific Liferay API modules, see [Liferay API
-Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
+### Liferay Portal App Java APIs
 
-Module APIs (Javadoc JARs): Javadoc for *all* versions of CE modules are
-available in JARs
-<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/" target="_blank"> here<span class="opens-new-window-accessible"> (Opens New Window) </span></a>.
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+caption {
+    text-align: left;
+}
+</style>
+<table style="width:100%">
+  <caption>
+    This table links you to the Liferay Portal application APIs. Their root location is 
+    <a href="https://docs.liferay.com/ce/apps/" target="_blank">
+    here<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    </a>.
+    <br>
+  </caption>
+
+  <tr>
+    <th rowspan="17">
+      <a href="https://docs.liferay.com/ce/apps/collaboration/" target="_blank">
+      Collaboration<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+       com.liferay.blogs.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.blogs.item.selector.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.bookmarks.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.comment.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.document.library.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.document.library.repository.cmis.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.flags.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.invitation.invite.members.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.item.selector.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.item.selector.criteria.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.mentions.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.message.boards.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.microblogs.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.ratings.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.social.activity.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.social.privatemessaging.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.wiki.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="9">
+      <a href="https://docs.liferay.com/ce/apps/forms-and-workflow/" target="_blank">
+      Forms &amp; Workflow<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+       com.liferay.calendar.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.dynamic.data.lists.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.dynamic.data.mapping.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.polls.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.reports.engine.api
+      </td>
+  </tr>
+    <td>
+       com.liferay.portal.rules.engine.api
+      </td>
+  </tr>
+    <td>
+       com.liferay.portal.workflow.kaleo.api
+      </td>
+  </tr>
+    <td>
+       com.liferay.portal.workflow.kaleo.definition.api
+      </td>
+  </tr>
+    <td>
+       com.liferay.portal.workflow.kaleo.runtime.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="17">
+      <a href="https://docs.liferay.com/ce/apps/foundation/" target="_blank">
+      Foundation<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+       com.liferay.contacts.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.frontend.image.editor.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.map.api
+    </td>
+    </tr>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.mobile.device.rules.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.password.policies.admin.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.portal.background.task.api    
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.portal.lock.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.portal.scripting.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.portal.security.audit.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.portal.security.exportimport.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.portal.security.service.access.policy.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.portal.settings.api
+    </td>
+    </tr>
+  <tr>   
+    <td>
+    com.liferay.roles.admin.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.user.groups.admin.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.users.admin.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.users.admin.demo.data.creator.api
+    </td>
+    </tr>
+  <tr>
+    <td>
+    com.liferay.xstream.configurator.api
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="13">
+      <a href="https://docs.liferay.com/ce/apps/web-experience/" target="_blank">
+      Web Experience<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+    com.liferay.application.list.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.exportimport.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.journal.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.journal.item.selector.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.layout.item.selector.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.layout.prototype.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.layout.set.prototype.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.portlet.configuration.icon.locator.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.portlet.configuration.toolbar.contributor.locator.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.product.navigation.control.menu.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.site.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.site.item.selector.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.staging.api
+    </td>
+  </tr>
+       
+</table>
+
+For help finding API modules for specific common classes, see [Liferay Portal API
+Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
 
 ## Taglibs [](id=taglibs)
 
-Here you'll find tag library documentation for Liferay Portal 7.0 Community Edition
-(CE) and Liferay Faces.
+Here you'll find tag library documentation for the Liferay Portal core, Liferay Portal
+apps, and Liferay Faces. 
 
-### CE Taglibs [](id=ce-taglibs)
+### Liferay Portal Core Taglibs
 
 <style>
 table, th, td {
@@ -654,21 +450,69 @@ caption {
 
 <table style="width:100%">
   <caption>
-    <ul>
-       <li>
-		<em>(HTML)</em>: for an online description the tag library used in the
-		latest GA release of Liferay Portal 7.0 CE. As an alternative to online
-		taglib docs, you can
-		<a href="https://www.liferay.com/downloads" target="_blank">
-		download<span class="opens-new-window-accessible"> (Opens New Window) </span>
-		</a>
-		the reference doc ZIP file and browse locally.
-       </li>
-       <li>
-		<em>(JARs)</em>: for accessing all the taglib doc JAR files for
-		<em>all</em> the module's versions.
-       </li>
-    </ul>
+    <br>
+  </caption>
+
+  <tr>
+    <th rowspan="7">
+    <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/util-taglib/">
+    Util Taglibs<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    </a>
+    </th>
+    <td>
+    aui
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-portlet
+    </td>
+  </tr>
+  <tr>
+    <td>
+    portlet
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-security
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-theme
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-ui
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-util
+    </td>
+  </tr>
+</table>
+
+### Liferay Portal App Taglibs
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+caption {
+    text-align: left;
+}
+</style>
+
+<table style="width:100%">
+  <caption>
     <br>
   </caption>
 
@@ -676,47 +520,27 @@ caption {
     <th rowspan="1">Application List:</th>
     <td>
        liferay-application-list&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/web-experience/application-list/com.liferay.application.list.taglib/liferay-application-list/tld-summary.html" target="_blank">
+       <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/application-list/com.liferay.application.list.taglib/liferay-application-list/tld-summary.html" target="_blank">
        (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
-       <a
-       href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.application.list.taglib/" target="_blank">
-       (JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-       </a>
       </td>
-  </tr>
-
-  <tr>
-    <th rowspan="1">Application Security:</th>
-    <td>
-       liferay-security&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/taglibs/util-taglib/liferay-security/tld-summary.html" target="_blank">
-	(HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
-    </td>
   </tr>
 
   <tr>
     <th rowspan="2">Assets:</th>
     <td>
 	liferay-asset&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/web-experience/asset/com.liferay.asset.taglib/liferay-asset/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/asset/com.liferay.asset.taglib/liferay-asset/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.asset.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
     </td>
   </tr>
   <tr>
     <td>
 	liferay-trash&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/web-experience/trash/com.liferay.trash.taglib/liferay-trash/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/trash/com.liferay.trash.taglib/liferay-trash/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.trash.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
     </td>
   </tr>
 
@@ -724,88 +548,27 @@ caption {
     <th rowspan="1">Forms:</th>
     <td>
        liferay-ddm&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.taglib/liferay-ddm/tld-summary.html" target="_blank">
+	<a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.taglib/liferay-ddm/tld-summary.html" target="_blank">
 	(HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.dynamic.data.mapping.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
     </td>
   </tr>
 
   <tr>
-    <th rowspan="8">Frontend Building Blocks:</th>
-    <td>
-	aui&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/tld-summary.html" target="_blank">
-	(HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
-	<a
-	href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.alloy.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
-    </td>
-  </tr>
-  <tr>
+    <th rowspan="2">Foundation:</th>
     <td>
 	liferay-map&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/foundation/map/com.liferay.map.taglib/liferay-map/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/foundation/map/com.liferay.map.taglib/liferay-map/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.map.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
     </td>
   </tr>
   <tr>
     <td>
 	liferay-frontend&nbsp;
-       <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/" target="_blank">
+       <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/" target="_blank">
        (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.frontend.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-       liferay-portlet&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/taglibs/util-taglib/liferay-portlet/tld-summary.html" target="_blank">
-	(HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-       liferay-theme&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/taglibs/util-taglib/liferay-theme/tld-summary.html" target="_blank">
-	(HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-       liferay-ui&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/taglibs/util-taglib/liferay-ui/tld-summary.html" target="_blank">
-	(HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-       liferay-util&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/taglibs/util-taglib/liferay-util/tld-summary.html" target="_blank">
-	(HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-       portlet&nbsp;
-	<a href="https://docs.liferay.com/portal/7.0/taglibs/util-taglib/portlet/tld-summary.html" target="_blank">
-	(HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>
     </td>
   </tr>
 
@@ -813,12 +576,9 @@ caption {
     <th rowspan="1">Import, Export, &amp; Staging:</th>
     <td>
 	liferay-staging&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/web-experience/staging/com.liferay.staging.taglib/liferay-staging/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/staging/com.liferay.staging.taglib/liferay-staging/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.staging.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
     </td>
   </tr>
 
@@ -826,12 +586,9 @@ caption {
     <th rowspan="1">Item Selector:</th>
     <td>
 	liferay-item-selector&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/collaboration/item-selector/com.liferay.item.selector.taglib/liferay-item-selector/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/collaboration/item-selector/com.liferay.item.selector.taglib/liferay-item-selector/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.item.selector.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
     </td>
   </tr>
 
@@ -839,12 +596,9 @@ caption {
     <th rowspan="1">Product Navigation:</th>
     <td>
 	liferay-product-navigation&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.taglib/liferay-product-navigation/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.taglib/liferay-product-navigation/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.product.navigation.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
     </td>
   </tr>
 
@@ -852,23 +606,17 @@ caption {
     <th rowspan="2">Sites:</th>
     <td>
 	liferay-layout&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.layout.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
     </td>
   </tr>
   <tr>
     <td>
 	liferay-site-navigation&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/web-experience/site-navigation/com.liferay.site.navigation.taglib/liferay-site-navigation/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/site-navigation/com.liferay.site.navigation.taglib/liferay-site-navigation/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.site.navigation.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
     </td>
   </tr>
 
@@ -876,12 +624,9 @@ caption {
     <th rowspan="1">Social:</th>
     <td>
 	liferay-flags&nbsp;
-        <a href="https://docs.liferay.com/portal/7.0/taglibs/modules/apps/collaboration/flags/com.liferay.flags.taglib/liferay-flags/tld-summary.html" target="_blank">
+        <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/collaboration/flags/com.liferay.flags.taglib/liferay-flags/tld-summary.html" target="_blank">
         (HTML)<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
-	<a href="https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.flags.taglib/" target="_blank">
-	(JARs)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
     </td>
   </tr>
 
@@ -910,5 +655,5 @@ JavaScript APIs are available within portlets, templates and themes.
 
 ## Descriptor Definitions [](id=descriptor-definitions)
 
-[**DTDs**](http://docs.liferay.com/portal/7.0/definitions/): Describes the XML
-files used in configuring Liferay apps, Liferay plugins, and Liferay Portal CE.
+[**DTDs**](http://docs.liferay.com/ce/portal/7.0/definitions/): Describes the XML
+files used in configuring Liferay Portal apps, Liferay Portal plugins, and the Liferay Portal core.
