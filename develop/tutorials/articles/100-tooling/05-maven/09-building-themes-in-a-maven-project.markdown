@@ -33,9 +33,9 @@ build a theme. You'll learn how to do this next.
                                 <goal>build-theme</goal>
                             </goals>
                             <configuration>
-                                <diffsDir>src/main/webapp/</diffsDir>
+                                <diffsDir>${maven.war.src}</diffsDir>
                                 <name>${project.artifactId}</name>
-                                <outputDir>${com.liferay.portal.tools.theme.builder.outputDir}</outputDir>
+                                <outputDir>${project.build.directory}/${project.build.finalName}</outputDir>
                                 <parentDir>${project.build.directory}/deps/com.liferay.frontend.theme.styled.jar</parentDir>
                                 <parentName>_styled</parentName>
                                 <templateExtension>ftl</templateExtension>
@@ -86,7 +86,7 @@ build a theme. You'll learn how to do this next.
                 </execution>
             </executions>
             <configuration>
-                <docrootDirName>${com.liferay.portal.tools.theme.builder.outputDir}</docrootDirName>
+                <docrootDirName>target/${project.build.finalName}</docrootDirName>
                 <outputDirName>/</outputDirName>
                 <portalCommonPath>target/deps/com.liferay.frontend.css.common.jar</portalCommonPath>
             </configuration>
@@ -109,14 +109,6 @@ build a theme. You'll learn how to do this next.
             <version>3.0.0</version>
             <configuration>
                 <packagingExcludes>**/*.scss</packagingExcludes>
-                <webResources>
-                    <resource>
-                        <directory>${com.liferay.portal.tools.theme.builder.outputDir}</directory>
-                        <excludes>
-                            <exclude>**/*.scss</exclude>
-                        </excludes>
-                    </resource>
-                </webResources>
             </configuration>
         </plugin>
 
@@ -129,8 +121,9 @@ build a theme. You'll learn how to do this next.
         <version>1.0.0</version>
         <packaging>war</packaging>
 
-5.  You must configure the Theme Builder's dependencies in your project's POM.
-    You can do this by applying the
+5.  Building themes requires certain dependencies. You can configure these
+    dependenices in your project's `pom.xml` as directories or JAR files. If you
+    choose to use JARs, you must apply the
     [maven-dependency-plugin](http://maven.apache.org/plugins/maven-dependency-plugin/)
     and have it copy dependencies into your project from Maven Central:
 
@@ -182,12 +175,10 @@ build a theme. You'll learn how to do this next.
             <com.liferay.frontend.theme.styled.version>2.0.13</com.liferay.frontend.theme.styled.version>
             <com.liferay.frontend.theme.unstyled.version>2.0.13</com.liferay.frontend.theme.unstyled.version>
             <com.liferay.portal.tools.theme.builder.version>1.0.0</com.liferay.portal.tools.theme.builder.version>
-            <com.liferay.portal.tools.theme.builder.outputDir>target/build-theme</com.liferay.portal.tools.theme.builder.outputDir>
         </properties>
 
     The properties above set the versions for the CSS and Theme Builder plugins
-    and their dependencies. The output folder for the generated theme is also
-    set.
+    and their dependencies.
 
 You've successfully configured your Maven project to build a theme! You can
 generate your theme by calling the following Maven command:
