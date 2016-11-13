@@ -3,7 +3,7 @@
 Liferay's Theme Builder is a tool used to build Liferay theme files in your
 project. You can easily incorporate the Theme Builder into your Maven project to
 generate WAR-style themes deployable to @product@. To learn more about theming
-in Liferay, see the
+in @product@, see the
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
 tutorial section.
 
@@ -11,8 +11,8 @@ The easiest way to create a Liferay theme with Maven is to create a new Maven
 project using Liferay's provided Theme archetype. You can learn how to generate
 a Maven Theme project by visiting the
 [Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
-tutorial. In some cases, however, this may not be possible. For instance, if you
-have a legacy theme project and don't want to start over, generating a new
+tutorial. In some cases, however, this may not be convenient. For instance, if
+you have a legacy theme project and don't want to start over, generating a new
 project is not ideal.
 
 For cases like this, you'll want to manually configure your Maven project to
@@ -70,7 +70,7 @@ build a theme. You'll learn how to do this next.
           or `vm`).
         - `unstyledDir`: The unstyled theme's folder.
 
-2.  Apply the CSS Builder plugin, which is required to the Theme Builder:
+2.  Apply the CSS Builder plugin, which is required to use the Theme Builder:
 
         <plugin>
             <groupId>com.liferay</groupId>
@@ -100,7 +100,7 @@ build a theme. You'll learn how to do this next.
 3.  You can configure your project to exclude Sass files from being packaged in
     your theme. This is optional, but is a nice convenience to keep any
     unnecessary source code out of your WAR. Since the Theme Builder is creating
-    a WAR-style theme, you need to apply the
+    a WAR-style theme, you should apply the
     [maven-war-plugin](https://maven.apache.org/plugins/maven-war-plugin/) so it
     instructs the WAR file packaging process to exclude Sass files:
 
@@ -125,7 +125,7 @@ build a theme. You'll learn how to do this next.
     dependenices in your project's `pom.xml` as directories or JAR files. If you
     choose to use JARs, you must apply the
     [maven-dependency-plugin](http://maven.apache.org/plugins/maven-dependency-plugin/)
-    and have it copy dependencies into your project from Maven Central:
+    and have it copy JAR dependencies into your project from Maven Central:
 
         <plugin>
             <artifactId>maven-dependency-plugin</artifactId>
