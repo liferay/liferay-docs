@@ -96,14 +96,18 @@ in your forms. There are two methods:
     - For this example, Add a new field set: 
         - A Text field called *Customer Name* 
         - A Text Box called *Requested Spa Technician*
-        - A Select field called *Services Requested*
+        - A Select field called *Services Requested* with these options: 
+            - Massage
+            - Fish Pedicure
+            - Sauna
+            - Acupuncture
+            - Moon Mud Facial Mask
         - A Boolean field called *Returning Customer?*
         - A Date field called *Preferred Date*
         - A Text field called *Preferred Time*
         - A Date field called *Available Date*
         - A Text field called *Available Time*
         - A Boolean field called *Approved*
-        - A Text field called *Contact Name*
         - A Text Box field called *Managerial Comments*
 
 Click *Next* to move on to the next step in the wizard: adding a workflow for
@@ -126,27 +130,28 @@ any definition already available in your system), add a new workflow from
 scratch using the Kaleo Designer. Click the *Add Workflow* button to get
 started.
 
-- For the Spar Order Process, make a new workflow definition called *Spa Order
+- For the Spa Order Process, make a new workflow definition called *Spa Order
     Workflow*:
      ![Figure x: The Room Request process has two review processes that happen
      in parallel.](../../../images/kaleo-forms-room-request-definition.png)
 
-The Room Request definition has a StartNode, a Fork node, two parallel review
-Task nodes, a Join node, and an EndNode. Develop it in the graphical designer
-built into Kaleo Forms Admin. There's a more detailed write-up of the Kaleo
-Designer [here](/discover/portal/-/knowledge_base/7-0/kaleo-designer) if you're
-not already familiar with it. 
+The definition has a StartNode and three task nodes. Develop it in the graphical
+designer built into Kaleo Forms Admin. There's a more detailed write-up of the
+Kaleo Designer [here](/discover/portal/-/knowledge_base/7-0/kaleo-designer) if
+you're not already familiar with it. 
 
 ![Figure 3: You can create new workflow definitions directly in the Kaleo Forms user interface.](../../../images-dxp/kaleo-forms-designer.png)
 
 This workflow exhibits simple linear processing, so that the initial form is
 filled out (in the StartNode) and then the workflow moves to the first task
-(Technician Claim), then to the final task (Managerial Approval).
+(Technician Claim), then to the second task (Managerial Approval), and finally,
+to the final order task.
 
 The task assignments of this workflow are as follows:
 
 Technician Claim: Assigned to the Spa Technician Role.
 Managerial Approval: Assigned to the Spa Manager Role.
+Final Order: Assigned to the Asset Creator.
 
 +$$$
 
@@ -161,8 +166,6 @@ Admin.
 <!-- Is that true? -->
 
 $$$
-
-Create the above roles, giving them the permissions for accessing the 
 
 Once the workflow is done, select it: back on the third step of the New Process
 wizard, click *Actions* &rarr; *Choose* on the workflow you just created.  Then
@@ -188,47 +191,41 @@ existing form to enhance it's usability:
 
 ![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../../images-dxp/kaleo-forms-field-types.png)
 
-For review, the Room Request process has these fields:
+For review, the Spa Order Process has these fields:
 
-- Event Name
-- Event Description
-- Request Date
-- Backup Date
-- Requested Time
-- Backup Time
-- Preferred Room
-- Contact Name
+- Customer Name
+- Requested Spa Technician
+- Services Requested 
+- Returning Customer?
+- Preferred Date
+- Preferred Time
+- Available Date
+- Available Time
 - Approved
-- Approved Date
-- Approved Time
-- Room Assignment
-- Availability Confirmed
 - Managerial Comments
 
 Not all of the available fields should appear on each form in this example. Some
 of the fields, like Approved, should only appear on the reviewer's form.
 
 Each applicable workflow node (the initial state and each task) appears in a row
-with its associated form and a button that lets you assign a form. In the Room
-Request Definition there are three nodes that need forms: Request Entered,
-Managerial Review, and Availability Review.
+with its associated form and a button that lets you assign a form. In the Spa
+Order Workflow definition there are four nodes that need forms: StartNode,
+Technician Claim, Managerial Approval, and Final Order.
 
 ![Figure 5: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-task-forms.png)
 
 Click on the kebab menu (![Action](../../../images-dxp/icon-actions.png)) next
-to the Request Entered task and then click *Assign Form*. The screen that appears lets
-you create a new form if you click the *Add* button
+to the Request Entered task and then click *Assign Form*. The screen that
+appears lets you create a new form if you click the *Add* button
 (![Add](../../../images-dxp/icon-add.png)). 
 
--  First, name the initial form (call it *Room Request Form* if you like). 
+-  First, name the initial form (call it *Spa Order Process--Order Form* if you like). 
 -  Next look at the available fields. In this stage of the workflow, you don't 
-    need all the approval fields. Delete these fields from the form ( mouse over
+    need all the approval fields. Delete these fields from the form (mouse over
     the field and click the delete
     icon--![Delete](../../../images/icon-trash.png):
-    - Availability Confirmed
-    - Approved Date
-    - Approved Time
-    - Room Assignment
+    - Available Date
+    - Available Time
     - Approved
     - Managerial Comments
 
@@ -249,40 +246,50 @@ $$$
 If you don’t need to change any field settings in the form, click *Save*. On the
 next screen choose your new form from the *Actions* button next to it. 
 
-Next create a form named *Approval Form* for the Managerial Review task. Follow
-the same procedure used above, this time deleting these fields form the full
-field set:
-
-- Availability Confirmed
-- Approved Date
-- Approved Time
-- Room Assignment
-
-+$$$
-
-**Example Use Case Note:** In the Room request Process, the Managerial Review
-workflow task and it's associated form are filled out by a manager who wishes to
-review what kinds of meetings resort staff are engaging in. They can reject
-inappropriate uses of the meeting room as they see fit and make comments in the
-form. For example, if the Mechanical Department wants to use a meeting room for
-their Annual Rover tune-up event, they'll be rejected.
-
-$$$
-
-Next create a form to be used in the Availability Review task. Delete these
-fields:
+Next create a form named *Spa Order Process--Technician Claim Form* for the
+Technician Claim task. Follow the same procedure used above, this time deleting
+these fields from the full field set:
 
 - Approved
 - Managerial Comments
 
 +$$$
 
-**Example Use Case note:** The employee tasked with managing the meeting rooms
-keeps track of the meeting bookings at the resort, and makes the finald decision
-on the date, time, and room number where a meeting will take place.
-
+**Example Use Case Note:** In the Spa Order Process, the Managerial Approval
+workflow task and it's associated form are filled out by the spa manager. The
+manager can oversee the order, making sure that customers requests are being met
+and that all technicians are fulfilling their share of the spa's duties.
 
 $$$
+
+Create a form to be used in the Managerial Approval task, called *Spa Order
+Process--Managerial Approval Form*. The manager can change anything they want
+about the order, so include the entire field set in the form.
+
+<!-- Available Fields: Should we use the full set of fields?
+- Customer Name
+- Requested Spa Technician
+- Services Requested 
+- Returning Customer?
+- Preferred Date
+- Preferred Time
+- Available Date
+- Available Time
+- Approved
+- Managerial Comments
+-->
+
++$$$
+
+**Example Use Case note:** The customer service representative finalizes the
+order and gets back to the customer on the final details (available time, name
+of technician, and confirms the services they want).
+
+$$$
+
+There's one more form to create: the *Spa Order Process--Final Order Form*. Like
+the last form, it should have all the fields of the form.
+
 
 ![Figure 8: Once created, your process is listed in Kaleo Forms Admin.](../../../images-dxp/kaleo-forms-processes.png)
 
@@ -301,15 +308,16 @@ Fill out the form and click Save.
 ![Figure 10: Fill out the form and send it through the process.](../../../images-dxp/kaleo-forms-new-process-form.png)
 
 Once submitted in the Kaleo Forms Admin application, the process moves under the
-workflow engine's management. Submitting a process backed by the Room Request
-Definition, the workflow moves simultaneously to the Managerial Review and
-Availability Review tasks. Whatever users or roles you assigned to the tasks
-receive a notification and the task appears in the Assigned to My Roles section
-of the My Workflow Tasks portlet. A notification is also triggered in the
-Notifications application. Once in the task, the user views and approve the
-form, or clicks the edit (![Edit](../../../images-dxp/icon-edit.png)) button. At
-this point the workflow task forms you created come into play. Each assigned
-user fills out the form, saves it, and sends it along in the workflow.
+workflow engine's management. Submitting a process backed by the Spa Order
+Workflow definition, the workflow moves first to the Technician Claim task, then
+to the Managerial Approval task, and last, to the Final Order task. Whatever
+users or roles you assigned to the tasks receive a notification and the task
+appears in the Assigned to My Roles section of the My Workflow Tasks portlet. A
+notification is also triggered in the Notifications application. Once in the
+task, the user views and approve the form, or clicks the edit
+(![Edit](../../../images-dxp/icon-edit.png)) button. At this point the workflow
+task forms you created come into play. Each assigned user fills out the form,
+saves it, and sends it along in the workflow.
 
 The Kaleo Forms Admin application unites two powerful features of Liferay by
 integrating a workflow and a form into a new entity, the Kaleo Process.
