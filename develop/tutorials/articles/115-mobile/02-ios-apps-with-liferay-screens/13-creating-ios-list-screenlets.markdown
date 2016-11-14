@@ -51,7 +51,7 @@ you construct your list Screenlet.
 
 Now you're ready to begin! 
 
-## Creating the Model Class
+## Creating the Model Class [](id=creating-the-model-class)
 
 Recall that a model class transforms each `[String:AnyObject]` entity Screens 
 receives into a model object that represents the corresponding Liferay entity. 
@@ -299,7 +299,7 @@ includes the Screenlet's `groupId` and `folderId` settings:
 
 Great! Next, you'll create your Screenlet's delegate. 
 
-## Creating the Delegate
+## Creating the Delegate [](id=creating-the-delegate)
 
 Recall that a delegate is required if you want other classes to respond to your 
 Screenlet's actions. Create your delegate by following the first step in 
@@ -441,5 +441,11 @@ CocoaPods.
 [Add a Screenlet Delegate](/develop/tutorials/-/knowledge_base/7-0/add-a-screenlet-delegate)
 
 [Creating and Using Your Screenlet's Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-and-using-your-screenlets-model-class)
+
+[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-custom-cells-with-list-screenlets)
+
+[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/sorting-your-list-screenlet)
+
+[Creating Complex Lists in Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/creating-complex-lists-in-your-list-screenlet)
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)

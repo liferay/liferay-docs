@@ -26,7 +26,7 @@ and create your Theme’s XIB and View class.
 
 First, you’ll create your Theme’s custom cell. 
 
-## Creating Your Custom Cell
+## Creating Your Custom Cell [](id=creating-your-custom-cell)
 
 Once you 
 [decide where to create your Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#determining-your-themes-location), 
@@ -68,7 +68,7 @@ the bookmark's name and URL to the respective label:
 Great! Now you have your custom cell. Next, you’ll create the rest of your 
 Theme. 
 
-## Creating Your Theme’s XIB and View Class
+## Creating Your Theme’s XIB and View Class [](id=creating-your-themes-xib-and-view-class)
 
 Now you're ready to create your Theme’s XIB file and View class. Create your XIB 
 by copying the parent Theme’s XIB and making any changes you need. You may not 
@@ -146,4 +146,14 @@ When you finish, set your View class as your XIB file’s custom class.
 Awesome! You’re done! Now you know how to implement your own custom cells for 
 use in list Screenlets. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
+
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+
+[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/sorting-your-list-screenlet)
+
+[Creating Complex Lists in Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/creating-complex-lists-in-your-list-screenlet)
+
+[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices)

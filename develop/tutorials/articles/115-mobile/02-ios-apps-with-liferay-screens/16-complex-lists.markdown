@@ -1,4 +1,4 @@
-# Creating Complex Lists in Your List Screenlet
+# Creating Complex Lists in Your List Screenlet [](id=creating-complex-lists-in-your-list-screenlet)
 
 Most list Screenlets' Themes use 
 [iOS's `UITableView`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/) 
@@ -12,7 +12,7 @@ This tutorial shows you how to create such a Theme, using
 [the sample Bookmark List Screenlet’s Collection Theme](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet/Themes/CollectionView) 
 as an example. First, you'll create the list's cell. 
 
-## Creating the Cell
+## Creating the Cell [](id=creating-the-cell)
 
 You'll create your list's cell with 
 [the same sequence of steps](link-to-custom-cells-tutorial) 
@@ -25,7 +25,7 @@ these steps is a bit different:
    Bookmark List Screenlet's Collection Theme. It's a simple square that 
    displays the bookmark's URL and the URL's first letter. 
 
-    ![Figure 3: The XIB file for the cell in Bookmark List Screenlet's custom View.](../../../images/screens-ios-collectionview-cell.png)
+    ![Figure 1: The XIB file for the cell in Bookmark List Screenlet's custom View.](../../../images/screens-ios-collectionview-cell.png)
 
 2. Create your XIB file's class by extending `UICollectionViewCell`. Create as 
    many outlets and actions as you need for your UI components, and write the 
@@ -72,7 +72,7 @@ these steps is a bit different:
 
 Now that your cell exists, you can create the rest of your Theme. 
 
-## Creating the Theme’s XIB and View Class
+## Creating the Theme’s XIB and View Class [](id=creating-the-themes-xib-and-view-class)
 
 You'll create the rest of your Theme with 
 [the same sequence of steps](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets#creating-the-view) 
@@ -145,7 +145,7 @@ casts the `object` argument to `Bookmark` and then sets it to the cell's
 
 Next, you'll create the layout. 
 
-## Creating the Layout
+## Creating the Layout [](id=creating-the-layout)
 
 The layout object is a key part of `UICollectionView`. This object controls the 
 position of the UI elements, their size, and more. To customize the layout 
@@ -171,3 +171,15 @@ Great! You're done! You can now use your new Theme
 If you want to package your Theme to contribute it to the Liferay Screens 
 project or distribute it with CocoaPods, see 
 [the tutorial on packaging Themes](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes). 
+
+## Related Topics [](id=related-topics)
+
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+
+[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/sorting-your-list-screenlet)
+
+[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-custom-cells-with-list-screenlets)
+
+[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices)
