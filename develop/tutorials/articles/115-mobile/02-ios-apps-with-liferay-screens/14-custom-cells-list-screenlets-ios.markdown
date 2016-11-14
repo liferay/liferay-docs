@@ -14,7 +14,7 @@ example, if you're using
 create a child class in your theme that extends from the 
 [`AssetListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/AssetListScreenlet/AssetListView_default.swift). 
 You should call your class `AssetListView_mytheme`. If you're using 
-[Web Content List Screenlet](/develop/reference/-/knowledge_base/7-0/web-content-lists-creenlet-for-ios), 
+[Web Content List Screenlet](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-ios), 
 subclass the 
 [`WebContentListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/WebContent/ListScreenlet/WebContentListView_default.swift), 
 and name your class `WebContentListView_mytheme`. 
