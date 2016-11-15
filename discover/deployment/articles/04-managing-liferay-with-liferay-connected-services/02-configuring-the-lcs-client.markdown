@@ -25,28 +25,30 @@ Note that to use LCS, you must have an account at
 
 ## Downloading the LCS Client [](id=downloading-the-lcs-client)
 
-You can download the LCS client app from several places. One is the 
+You can download and install the LCS client app from the 
 [Liferay Marketplace](https://web.liferay.com/marketplace). 
-For instructions on using Marketplace, see 
+On Marketplace, search for *Liferay Connected Services* and select the LCS 
+client for Liferay Portal 6.2 EE. You can also access the LCS client app in 
+Marketplace by clicking the *Downloads* tab on 
+[lcs.liferay.com](https://lcs.liferay.com). The following screenshot shows this: 
+
+![Figure 4.1: You can also download the LCS client from the Downloads tab inside of LCS.](../../images/lcs-client-download-connection.png)
+
+For instructions on using Marketplace to download and install apps, see 
 [this user guide section](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace). 
 
 +$$$
 
-**Note:** For LCS to work properly, your Liferay instances must be running the 
-latest version of the LCS client app. To determine the client version in 
-a Liferay instance already connected to LCS, navigate to *Liferay Connected 
-Services* under the *Apps* section of the *Control Panel*. The client version is 
-displayed at the bottom of the app. Also note that when upgrading the client, 
-you may also need to regenerate the 
+**Note:** For LCS to work properly, your portal must be running the latest 
+version of the LCS client app. To determine the client version in a portal 
+already connected to LCS, navigate to *Liferay Connected Services* under the 
+*Apps* section of the *Control Panel*. The client version is displayed at the 
+bottom of the app. Also note that when upgrading the client, you may also need 
+to regenerate the 
 [environment token](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
 that you use to connect. 
 
 $$$
-
-You can also download the LCS client app from the *Downloads* tab on 
-[lcs.liferay.com](https://lcs.liferay.com). The following screenshot shows this: 
-
-![Figure 4.1: You can also download the LCS client from the Downloads tab inside of LCS.](../../images/lcs-client-download-connection.png)
 
 Super! Now you know where to get the LCS client. Before you deploy it though, 
 there are a few other things you should check. If you connect to the web through 
