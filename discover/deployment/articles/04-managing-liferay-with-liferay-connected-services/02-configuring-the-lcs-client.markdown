@@ -25,11 +25,10 @@ Note that to use LCS, you must have an account at
 
 ## Downloading the LCS Client [](id=downloading-the-lcs-client)
 
-You can download and install the LCS client app from the 
-[Liferay Marketplace](https://web.liferay.com/marketplace). 
-On Marketplace, search for *Liferay Connected Services* and select the LCS 
-client for Liferay Portal 6.2 EE. You can also access the LCS client app in 
-Marketplace by clicking the *Downloads* tab on 
+You can download the LCS client app 
+[here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947). 
+You can also access the LCS client app in Marketplace by clicking the 
+*Downloads* tab on 
 [lcs.liferay.com](https://lcs.liferay.com). The following screenshot shows this: 
 
 ![Figure 4.1: You can also download the LCS client from the Downloads tab inside of LCS.](../../images/lcs-client-download-connection.png)
