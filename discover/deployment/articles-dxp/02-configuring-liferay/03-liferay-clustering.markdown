@@ -211,10 +211,10 @@ called a Bind Address. By default, these are set to `localhost`:
     cluster.link.bind.addr["cluster-link-control"]=localhost
     cluster.link.bind.addr["cluster-link-udp"]=localhost
 
-In some configurations, however, `localhost` is bound to the internal network
-(`127.0.0.1` or `::1`), rather than the host's real address. If for some reason
-you need this configuration, you can make @product@ auto detect its real address
-with this property: 
+In some configurations, however, `localhost` is bound to the internal loopback
+network (`127.0.0.1` or `::1`), rather than the host's real address. If for some
+reason you need this configuration, you can make @product@ auto detect its real
+address with this property: 
 
     cluster.link.autodetect.address=www.google.com:80
 
@@ -235,18 +235,105 @@ use a plugin to do it. Either way, the settings you change are the same. Next,
 we'll discuss a special EE-only optimization that can be made to the cache.
 After that, we'll explain how to configure Liferay's caching settings.
 
-+$$$
+### Unicast over TCP
 
-**Checkpoint**: To test if the separation is working well, execute the following steps:
+If your network configuration or the sheer distance between nodes prevents you
+from using UDP Multicast clustering, you can configure @product@ to use TCP
+Unicast. You'll definitely need this if you have a firewall separating any of
+your nodes or if your nodes are in different geographical locations.
 
-1. Start at least two nodes (Nodes 1 and 2) sequentially.
-2. Log in and add a portlet (e.g. Hello Velocity) to Node 1.
-3. On Node 2, refresh the page. Portlet appears!
-4. Repeat test with reversed roles!
+1.  Add a parameter to your app server's JVM:
 
-$$$
+        -Djgroups.bind_addr=[node_address]
+ 
+    Use the node's IP address. 
 
-### Modifying the Ehcache Settings With a Plugin [](id=modifying-the-ehcache-settings-with-a-plugin)
+2.  Now you have to determine the discovery protocol the nodes should use to
+    find each other. You have four choices: 
+
+        - TCPPing
+        - JDBCPing
+        - S3_Ping
+        - Rackspace_Ping
+
+    If you aren't sure which one to choose, use TCPPing. This is used in the
+    rest of these steps; the others are covered below. 
+
+3.  Download the OSGi Dependencies from the Customer Portal or access them from
+    your existing Liferay installation. In the dependencies' `marketplace`
+    folder is a Liferay package called `Liferay Foundation.lpkg` Inside this
+    .lpkg (which is just a compressed zip file) is a .jar file called
+    `com.liferay.portal.cluster.multiple-[version].jar`. Inside this .jar is a
+    file called `tcp.xml`. Extract this file to a location accessible to
+    @product@. You'll use this file on all your nodes. 
+
+4.  If you're vertically clustering (i.e., you have multiple @product@ servers
+    running on the same physical or virtual system), you must change the port on
+    which discovery communicates for all nodes other than the first one, to
+    avoid TCP port collision. To do this, modify the TCP tag's `bind_port`
+    parameter: 
+
+        <TCP bind_port="[some unused port]"
+            ... 
+        />
+
+    Since the default port is `7800`, provide some other unused port. 
+
+5.  Add to the same tag the parameter `singleton_name="liferay_cluster"`. This
+    merges the transport and control channels to reduce the number of thread
+    pools. See [JGroups documentation](http://www.jgroups.org/manual-3.x/html/user-advanced.html) 
+    for further information. 
+
+6.  Save the file. Modify that node's `portal-ext.properties` file to point to
+    it: 
+
+        cluster.link.channel.properties.control=[CONFIG_FILE_PATH]/tcp.xml
+        cluster.link.channel.properties.transport.0=[CONFIG_FILE_PATH]/tcp.xml
+
+You're now set up for Unicast over TCP clustering! Repeat this process for each
+node you want to add to the cluster. 
+
+#### JDBC Ping
+
+Rather than use TCP Ping to discover cluster members, you can use a central
+database accessible by all the nodes to help them find each other. Cluster
+members write their own and read the other members' addresses from this
+database. To enable this configuration, replace the `TCPPING` tag with the
+corresponding `JDBCPING` tag: 
+
+    <JDBC_PING
+        connection_url="jdbc:mysql://[DATABASE_IP]/[DATABASE_NAME]?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false"
+        connection_username="[DATABASE_USER]"
+        connection_password="[DATABASE_PASSWORD]"
+        connection_driver="com.mysql.jdbc.Driver"/>
+
+The above example uses MySQL as the database. For further information about
+JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
+
+#### S3 Ping
+
+Amazon S3 Ping can be used for servers running on Amazon's EC2 cloud service.
+Each node uploads a small file to an S3 bucket, and all the other nodes read the
+files from this bucket to discover the other nodes. When a node leaves, its file
+is deleted. 
+
+To configure S3 Ping, replace the `TCPPING` tag with the corresponding `S3_PING`
+tag: 
+
+    <S3_PING 
+        secret_access_key="[SECRETKEY]" 
+        access_key="[ACCESSKEY]"
+        location="ControlBucket"/>
+
+Supply your Amazon keys as values for the parameters above. For further
+information about S3 Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
+
+#### Other Pings
+
+JGroups supplies other means for cluster members to discover each other,
+including Rackspace Ping, BPing, File Ping, and others. Please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols) for information about these discovery methods. 
+
+### Modifying the Cache Configuration with a Module
 
 A benefit of working with plugins is that you can quickly install a plugin on
 each node of your cluster without taking down the cluster. Modifying the Ehcache
