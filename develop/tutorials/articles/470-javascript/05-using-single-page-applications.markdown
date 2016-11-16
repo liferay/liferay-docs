@@ -28,7 +28,7 @@ This tutorial covers these key topics:
 -  How to configure SPA settings
 -  How to listen to SPA lifecycle events
 
-## The Benefits of SennaJS
+## The Benefits of SennaJS [](id=the-benefits-of-sennajs)
 
 Let's say you're surfing the web and you find a really rad site that happens to 
 be SPA enabled. Alright! Page load times are blazin' fast. You're deep into the 
@@ -37,13 +37,13 @@ You copy the URL from the address bar and email it to all of your friends with
 the subject: 'Your Life Will Change Forever'. They must experience this 
 awe-inspiring work! You get a response back almost immediately. "This is a rad 
 site, but what post are you talking about?," it reads. "What!? Do my eyes
-decieve me," you'll exclaim. You were in too much of a hurry to share this 
+deceive me," you'll exclaim. You were in too much of a hurry to share this 
 life-changing content that you neglected to notice that the URL never updated 
 when you clicked the post. You click the back button in hopes to get back to the 
 post, but it takes you to the site you were on before you ever visited this one. 
 What a bummer! "Why? Why have you failed me site!," you will cry. If only there 
 was a way to have a Single Page Application, but also be able to link to the 
-content you want. Well don't despare my friend. You can have your cake and eat 
+content you want. Well don't despair my friend. You can have your cake and eat 
 it too, thanks to SennaJS.
 
 SennaJS is @product@'s SPA engine. SennaJS handles the client-side data, while 
@@ -94,7 +94,7 @@ You can read more about SennaJS as well as see examples at [http://sennajs.com/]
 Now that you have a better understanding of how SennaJS benefits SPA, you can 
 learn how to configure options for SPA within your @product@ installation next.
 
-## Customizing SPA Settings
+## Customizing SPA Settings [](id=customizing-spa-settings)
 
 As stated earlier, SPA is enabled by default in your @product@ installation and
 applications. The default SPA configuration may suit your needs, however, there 
@@ -106,7 +106,7 @@ System Settings. If you wish to disable SPA for a certain link, page, or portlet
 in your site, you can do so within the corresponding element itself. All SPA 
 configuration options are covered in this section.
 
-### Configuring SPA System Settings
+### Configuring SPA System Settings [](id=configuring-spa-system-settings)
 
 To configure system settings for SPA, follow these steps:
 
@@ -144,7 +144,7 @@ zero value means no notification should be shown.
 Now that you know how to configure system settings for SPA, you can learn how to
 disable SPA for elements in your site next.
 
-### Disabling SPA
+### Disabling SPA [](id=disabling-spa)
 
 Certain elements of your page may require a page refresh to work properly. For 
 example, you may have downloadable content that you want to share with the user. 
@@ -182,7 +182,7 @@ That's all you need to do to disable SPA in your app.
 Now that you know how to disable SPA, you can learn about the available SPA
 lifecycle events next.
 
-## Listening to SPA Lifecycle Events
+## Listening to SPA Lifecycle Events [](id=listening-to-spa-lifecycle-events)
 
 During development, you may need to know when navigation has started or stopped 
 in your SPA. Luckily SennaJS makes this easy by exposing lifecycle events that 
@@ -238,7 +238,7 @@ during development. Due to the nature of SPA navigation, global listeners that
 you create can become problematic over time if not handled properly. You'll
 learn how to handle these listeners next.
 
-### Detatching Global Listeners
+### Detaching Global Listeners [](id=detaching-global-listeners)
 
 SPA provides several improvements that highly benefit your site and users, but 
 there is potentially some additional maintenance as a consequence. In a 
@@ -262,7 +262,7 @@ detach your listeners. For example, for the function below:
         );
     }
 
-You would use the following code to detatch the event listeners:
+You would use the following code to detach the event listeners:
 <!-- Is this the same function(event) shown above?-->
     var onCategory = function(event) {...};
     
@@ -279,7 +279,7 @@ You would use the following code to detatch the event listeners:
 
 Now you know how to configure and use SPA in @product@!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
 
