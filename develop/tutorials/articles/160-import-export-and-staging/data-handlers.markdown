@@ -32,13 +32,15 @@ they don't contain actual user data. -->
 
 To work around database limitations and give your application the ability to
 import/export a LAR file, you can implement data handling in your application.
-There are two types of data handlers you'll learn about: *Staged Model Data
-Handlers* and *Portlet Data Handlers*.
+There are two types of data handlers you'll learn about: *Portlet Data Handlers*
+and *Staged Model Data Handlers*.
 
-A portlet data handler imports/exports portlet specific data to a LAR file. For
-example, the Bookmarks application's portlet data handler tracks portlet
-preferences and system events dealing with Bookmarks entities. It also
-configures the Export/Import UI options for the Bookmarks application.
+A portlet data handler imports/exports portlet specific data to a LAR file.
+These classes only have the role of querying and coordinating between staged
+model data handlers. For example, the Bookmarks application's portlet data
+handler tracks portlet preferences and system events dealing with Bookmarks
+entities. It also configures the Export/Import UI options for the Bookmarks
+application.
 
 <!-- Creating Staged Models will be its own tutorial. For now, I'm going to give
 a brief intro to them here so readers have a general understanding of them,
@@ -60,7 +62,8 @@ In this tutorial, you'll learn how to create a portlet data handler for your
 custom application. Then you'll create a staged model data handler for each
 entity your custom application manages. You're not required to implement a
 staged model data handler for every entity in your application, but they're
-necessary for any entity you want to track in the LAR file.
+necessary for any entity you want to export/import or have the staging framework
+track.
 
 <!-- Bare bones instructions for enabling a project for Staging using Service
 Builder is outlined below. This info will go into a separate tutorial at a later
@@ -390,9 +393,196 @@ application.
 Awesome! You've set up your portlet data handler and your application can now
 support the export/import framework and display a UI for it. The next step for
 supporting data handlers in your app is to implement staged model data handlers
-for you staged models. You'll do this next.
+for your staged models. You'll do this next.
 
 ## Staged Model Data Handlers
 
+Now that your application provides an Export/Import UI and has registered staged
+models, you'll create the staged model data handlers. The Bookmarks application
+has two staged models: entries and folders. Creating data handlers for these two
+entities is similar, so you'll examine how this is done for Bookmark entries.
 
+1.  Create a `-StagedModelDataHandler` class in the same folder as its portlet
+    data handler class. For Bookmarks, the `BookmarksEntryStagedDataHandler`
+    class resides in the `com.liferay.bookmarks.service` module's
+    `com.liferay.bookmarks.internal.exportimport.data.handler` package. The
+    staged model data handler class should extend the
+    [BaseStagedModelDataHandler](https://docs.liferay.com/ce/portal/7.0/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
+    class and the entity type should be specified as its parameter. You can see
+    how this was done for the `BookmarksEntryStagedModelDataHandler` class below
 
+        public class BookmarksEntryStagedModelDataHandler
+            extends BaseStagedModelDataHandler<BookmarksEntry> {
+
+2.  Create an `@Component` annotation section above the class declaration. This
+    annotation is responsible for registering the class as a staged model data
+    handler.
+
+        @Component(immediate = true, service = StagedModelDataHandler.class)
+
+    The `immediate` element directs the data handler to activate in @product@
+    immediately after deployment. The `service` element should point to the
+    `StagedModelDataHandler.class` interface.
+
+3.  Create a getter and setter method for the staged model for which you want to
+    provide a data handler:
+
+        @Override
+        protected StagedModelRepository<BookmarksEntry> getStagedModelRepository() {
+            return _stagedModelRepository;
+        }
+
+        @Reference(
+            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksEntry)",
+            unbind = "-"
+        )
+        protected void setStagedModelRepository(
+            StagedModelRepository<BookmarksEntry> stagedModelRepository) {
+
+            _stagedModelRepository = stagedModelRepository;
+        }
+
+        private StagedModelRepository<BookmarksEntry> _stagedModelRepository;
+
+    These methods link this data handler with the staged model for bookmark
+    entries by using the
+    [StagedModelRepository](https://docs.liferay.com/ce/portal/7.0/javadocs/modules/apps/web-experience/export-import/com.liferay.exportimport.api/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
+    interface. This interface is implemented by the bookmarks entry staged
+    model.
+
+4.  You must provide the class names of the models the data handler handles. You
+    can do this by overriding the
+    [StagedModelDataHandler](https://docs.liferay.com/ce/portal/7.0/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)'s
+    `getClassnames()` method:
+
+        public static final String[] CLASS_NAMES = {BookmarksEntry.class.getName()};
+
+        @Override
+        public String[] getClassNames() {
+            return CLASS_NAMES;
+        }
+
+5.  Add a method that retrieves the staged model's display name:
+
+        @Override
+        public String getDisplayName(BookmarksEntry entry) {
+            return entry.getName();
+        }
+
+    The display name is presented in the UI so users can follow the
+    export/import process.
+
+    ![Figure 2: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
+
+6.  Add methods that import and export your staged model and its references:
+
+        @Override
+        protected void doExportStagedModel(
+                PortletDataContext portletDataContext, BookmarksEntry entry)
+            throws Exception {
+
+            if (entry.getFolderId() !=
+                    BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID) {
+
+                StagedModelDataHandlerUtil.exportReferenceStagedModel(
+                    portletDataContext, entry, entry.getFolder(),
+                    PortletDataContext.REFERENCE_TYPE_PARENT);
+            }
+
+            Element entryElement = portletDataContext.getExportDataElement(entry);
+
+            portletDataContext.addClassedModel(
+                entryElement, ExportImportPathUtil.getModelPath(entry), entry);
+        }
+
+        @Override
+        protected void doImportStagedModel(
+                PortletDataContext portletDataContext, BookmarksEntry entry)
+            throws Exception {
+
+            Map<Long, Long> folderIds =
+                (Map<Long, Long>)portletDataContext.getNewPrimaryKeysMap(
+                    BookmarksFolder.class);
+
+            long folderId = MapUtil.getLong(
+                folderIds, entry.getFolderId(), entry.getFolderId());
+
+            BookmarksEntry importedEntry = (BookmarksEntry)entry.clone();
+
+            importedEntry.setGroupId(portletDataContext.getScopeGroupId());
+            importedEntry.setFolderId(folderId);
+
+            BookmarksEntry existingEntry =
+                _stagedModelRepository.fetchStagedModelByUuidAndGroupId(
+                    entry.getUuid(), portletDataContext.getScopeGroupId());
+
+            if ((existingEntry == null) ||
+                !portletDataContext.isDataStrategyMirror()) {
+
+                importedEntry = _stagedModelRepository.addStagedModel(
+                    portletDataContext, importedEntry);
+            }
+            else {
+                importedEntry.setEntryId(existingEntry.getEntryId());
+
+                importedEntry = _stagedModelRepository.updateStagedModel(
+                    portletDataContext, importedEntry);
+            }
+
+            portletDataContext.importClassedModel(entry, importedEntry);
+        }
+
+    The `doExportStagedModel` method retrieves the Bookmark entry's data element
+    from the
+    [PortletDataContext](https://docs.liferay.com/ce/portal/7.0/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
+    and then adds the classed model characterized by that data element to the
+    `PortletDataContext`. The `PortletDataContext` is used to populate the LAR
+    file with your application's data during the export process.
+
+    The `doImportStagedModel` method clones the Bookmark entries from the
+    incoming LAR file and updates existing entries in the
+    [PortletDataContext](https://docs.liferay.com/ce/portal/7.0/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html);
+    if there are no entries to update, the imported entries are added to the
+    `PortletDataContext`, which is eventually added to the database.
+
+7.  When importing a LAR that specifies a missing reference, the import process
+    expects the reference to be available and must validate that it's there. You
+    must add a method that maps the missing reference ID from the export to the
+    existing ID during import.
+
+    For example, suppose you export a `FileEntry` as a missing reference with an
+    ID of `1`. When importing that information, the LAR only provides the ID but
+    not the entry itself. Therefore, during the import process, the Data Handler
+    framework searches for the entry to replace, but the entry to replace has a
+    different ID of `2`. You must provide a method that maps these two IDs so
+    the import process can recognize the missing reference.
+
+        @Override
+        protected void doImportMissingReference(
+                PortletDataContext portletDataContext, String uuid, long groupId,
+                long entryId)
+            throws Exception {
+
+            BookmarksEntry existingEntry = fetchMissingReference(uuid, groupId);
+
+            if (existingEntry == null) {
+                return;
+            }
+
+            Map<Long, Long> entryIds =
+                (Map<Long, Long>)portletDataContext.getNewPrimaryKeysMap(
+                    BookmarksEntry.class);
+
+            entryIds.put(entryId, existingEntry.getEntryId());
+        }
+
+    This method maps the existing staged model to the old ID in the reference
+    element. When a reference is exported as missing, the Data Handler framework
+    calls this method during the import process and updates the new primary key
+    map in the portlet data context.
+
+Fantastic! You've created a data handler for your staged model. The
+Export/Import framework can now track your entity's behavior and data.
+
+With the ability to track entity data, your application is available during the 
+Export/Import and Staging processes.
