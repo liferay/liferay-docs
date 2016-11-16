@@ -7,19 +7,24 @@ scales to the size you need.
 
 ![Figure 5.1: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
 
-Liferay works well in clusters of multiple machines (horizontal cluster) or in
+@product@ works well in clusters of multiple machines (horizontal cluster) or in
 clusters of multiple VMs on a single machine (vertical cluster), or any mixture
-of the two. Once you have Liferay installed in more than one application server
-node, there are several optimizations that need to be made. At a minimum,
-Liferay should be configured in the following way for a clustered environment:
+of the two. Once you have @product@ installed in more than one application
+server node, there are several optimizations that need to be made. At a minimum,
+@product@ should be configured in the following way for a clustered environment:
 
-1. All nodes should be pointing to the same Liferay database or database cluster. 
-2. Documents and Media repositories should be accessible to all nodes of the
-  cluster. 
-3. Search should be on a separate search server that is optionally clustered. 
-4. The cache should be replicating across all nodes of the cluster. 
-5. Hot deploy folders should be configured for each node if you're not using
-  server farms. 
+1.  All nodes should be pointing to the same Liferay database or database cluster. 
+
+2.  Documents and Media repositories should be accessible to all nodes of the
+    cluster. 
+
+3.  Search should be on a separate search server that is optionally clustered. 
+
+4.  Cluster Link must be enabled so the cache replicates across all nodes of the
+    cluster. 
+
+5.  Hot deploy folders should be configured for each node if you're not using
+    server farms. 
 
 If you haven't configured your application server to use farms for deployment,
 the hot deploy folder should be a separate folder for all the nodes, and plugins
@@ -40,38 +45,26 @@ values there.
 
 +$$$
 
-**Note:** This chapter documents a Liferay-specific cluster configuration,
+**Note:** This article documents a Liferay-specific cluster configuration
 without getting into specific implementations of third party software, such as
 Java EE application servers, HTTP servers, and load balancers. Please consult
-your documentation for those components of your cluster for specific details of
-those components. Before configuring Liferay in a cluster configuration, make
-sure your OS is not defining the hostname of your box to the local network at
-127.0.0.1.
+your documentation for those components of your cluster to configure those
+components. Before creating a @product@ cluster, make sure your OS is not
+defining the hostname of your box to the local network at 127.0.0.1.
 
 $$$
 
-We'll discuss each of the points above one by one to present a clear picture of
-how to cluster Liferay. 
+Each step defined above is covered below to give you a step by step process for
+creating your cluster.
 
 ## 1. All Nodes Should Point to the Same Liferay Database [](id=all-nodes-should-point-to-the-same-liferay-database)
 
-Each node should have a data source that points to one Liferay database (or a
-database cluster) that all the nodes will share. This means, of course, Liferay
-cannot (and should not) use the embedded HSQL database that is shipped with the
-bundles (but you already knew that, right?). And, of course, the database server
-should be on a separate system from the server which is running Liferay. 
-
-
-+$$$
-
-**Checkpoint**: To test if the separation is working well, execute the following steps:
-
-1. Start both Tomcats (Nodes 1 and 2) sequentially.
-2. Log in and add a portlet (e.g. Hello Velocity) to Node 1.
-3. On Node 2, refresh the page. Portlet appears!
-4. Repeat test with reversed roles!
-
-$$$
+Each node should have a data source that points to one @product@ database (or a
+database cluster) that all the nodes will share. This means, of course,
+@product@ cannot (and should not) use the embedded HSQL database that is shipped
+with the bundles (but you already knew that, right?). And, of course, the
+database server should be on a separate system from the server which is running
+@product@. 
 
 You can also use a read-writer database configuration to optimize your database
 configuration.
@@ -109,9 +102,10 @@ Spring configuration file which enables it in your `spring.configs` property:
     META-INF/dynamic-data-source-spring.xml,\
     [..]
 
-You can find the fill `spring.config` list in the `portal.properties` [documentation](https://docs.liferay.com/digital-enterprise/7.0-latest/propertiesdoc/portal.properties.html#Spring).
+You can find the full `spring.config` list in the `portal.properties`
+[documentation](https://docs.liferay.com/digital-enterprise/7.0-latest/propertiesdoc/portal.properties.html#Spring).
 
-The next time you restart Liferay, it uses the two data sources you have
+The next time you start Liferay, it uses the two data sources you have
 defined. Be sure you have correctly set up your two databases for replication
 before starting Liferay.
 
@@ -133,21 +127,20 @@ The main thing to keep in mind is you need to make sure that every node of the
 cluster has the same access to the file store as every other node. For this
 reason, you must look at your store configuration. 
 
-The store configuration is available on [this page](/discover/deployment/-/knowledge_base/7-0/document-repository).
-
-It's important to note that the file systems used by the `File System` or `Advanced File System` stores must support concurrent requests and file locking.
+Note that the file systems used by the `File System` or `Advanced File System`
+stores must support concurrent requests and file locking.
 
 +$$$
 
 **Checkpoint**: To test if the sharing works well, execute the following steps:
 
 1. On Node 1 upload a document to the Documents and Media.
-2. On Node 2 download the document - download should be successful.
-3. Repeat test with reversed roles.
+2. On Node 2 download the document. The download should be successful.
+3. Repeat the test with reversed roles.
 
 $$$
 
-## Clustering Search [](id=clustering-search)
+## 3. Clustering Search [](id=clustering-search)
 
 Search should always run on a separate environment from your Liferay server.
 @product@ supports [Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0) 
@@ -156,7 +149,7 @@ and either of those environments can also be clustered.
 
 <!-- Have a Google doc for this: https://docs.google.com/document/d/19oaISXylCyKueuMkIjCKtnrNuyhbvrkMJZvyGQLPIpk/edit#heading=h.ayvbwz8pwsz0 -->
 
-## Distributed Caching [](id=distributed-caching)
+## 4. Enable Cluster Link
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
@@ -165,23 +158,69 @@ designed to replicate the cache across a cluster.
 Liferay uses [Ehcache](www.ehcache.org), which has robust distributed caching
 support. This means that the cache can be distributed across multiple Liferay
 nodes running concurrently. Enabling this cache can increase performance
-dramatically. For example, suppose that two users are browsing the message
-boards. The first user clicks a thread to read it. Liferay must look up that
-thread from the database and format it for display in the browser. With a
-distributed Ehcache running, this thread is stored in a cache for quick
-retrieval, and that cache is then replicated to the other nodes in the cluster.
-Suppose then that the second user who is being served by another node in the
-cluster wants to read the same forum thread and clicks on it. This time, the
-data is retrieved more quickly. Because the thread is in the cache, no trip to
-the database is necessary. 
+dramatically. For example, if two users are browsing the message
+boards, and the first user clicks a thread, @product@ must grab that
+thread from the database, cache it, and format it for display in the browser.
+When Cluster Link is enabled, the cache is replicated to the other nodes in the
+cluster. If another user wants to read that thread, it's retrieved from the
+cache, no matter what node serves that user, because the cache is replicated.
+Because the thread is in the cache, no trip to the database is necessary. 
 
 This is much more powerful than having a cache running separately on each node.
-The power of *distributed* caching allows for common portal destinations to be
-cached for multiple users. The first user can post a message to the thread he or
-she was reading, and the cache is updated across all the nodes, making the new
-post available immediately from the local cache. Without that, the second user
-would need to wait until the cache was invalidated on the node he or she
-connected to before he or she could see the updated forum post. 
+The power of *distributed* caching lets common destinations be cached for
+multiple users. The first user can post a message to the thread he or she was
+reading, and the cache is updated across all the nodes, making the new post
+available immediately from the local cache. Without that, the second user would
+need to wait until the cache was invalidated on the node he or she connected to
+before he or she could see the updated forum post. 
+
+To enable Cluster Link, add this property to `portal-ext.properties`: 
+
+    cluster.link.enabled=true
+
+Cluster Link depends on [JGroups](http://www.jgroups.org), and provides an API
+for nodes to communicate. It can
+
+- Send messages to all nodes in a cluster
+- Send messages to a specific node
+- Invoke methods and retrieve values from all, some, or specific nodes
+- Detect membership and notify when nodes join or leave
+
+Cluster Link contains an enhanced algorithm that provides one-to-many type
+communication between the nodes. This is implemented by default with JGroups's
+UDP multicast, but unicast and TCP are also available. 
+
+### Multicast over UDP 
+
+When you enable Cluster Link, @product@'s default clustering configuration is
+enabled. This configuration defines IP multicast over UDP. @product@ uses two
+groups of [channels from JGroups](http://www.jgroups.org/manual/index.html#_channel) 
+to implement this: a control group and a transport group. If you want to
+customize the channel properties, you can do so in `portal-ext.properties`: 
+
+    cluster.link.channel.name.control=[your control channel name]
+    cluster.link.channel.properties.control=[your control channel properties]
+
+Please see [JGroups's documentation](http://www.jgroups.org/manual/index.html#protlist) 
+for channel properties. The default configuration sets many properties whose
+settings are discussed there. 
+
+Next, you need to set an IP address for the JGroups channel to use. This is
+called a Bind Address. By default, these are set to `localhost`: 
+
+    cluster.link.bind.addr["cluster-link-control"]=localhost
+    cluster.link.bind.addr["cluster-link-udp"]=localhost
+
+In some configurations, however, `localhost` is bound to the internal network
+(`127.0.0.1` or `::1`), rather than the host's real address. If for some reason
+you need this configuration, you can make @product@ auto detect its real address
+with this property: 
+
+    cluster.link.autodetect.address=www.google.com:80
+
+Set it to connect to some other host that's contactable by your server. By
+default, it points to Google, but this may not work if your server is
+firewalled. 
 
 Once you enable distributed caching, of course, you should do some due diligence
 and test your system under a load that best simulates the kind of traffic your
@@ -196,63 +235,16 @@ use a plugin to do it. Either way, the settings you change are the same. Next,
 we'll discuss a special EE-only optimization that can be made to the cache.
 After that, we'll explain how to configure Liferay's caching settings.
 
-### Enhanced Distributed Cache Algorithm [](id=enhanced-distributed-cache-algorithm)
++$$$
 
-By default, Liferay's distributed cache uses the RMI replication mechanism,
-which uses a point to point communication topology. As you can guess, this kind
-of structure doesn't scale well for a large cluster with many nodes. Because
-each node has to send the same event to other nodes `N - 1` times, network
-traffic becomes a bottleneck when `N` is too large. Ehcache also has a
-performance issue of its own, in that it creates a replication thread for each
-cache entity. In a large system like Liferay Portal, it's very common to have
-more than 100 cached entities. This translates to 100+ cache replication
-threads. Threads are expensive, because they take resources (memory and CPU
-power). Most of the time, these threads are sleeping, because they only need to
-work when a cached entity has to talk to remote peers. 
+**Checkpoint**: To test if the separation is working well, execute the following steps:
 
-![Figure 5.4: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+1. Start at least two nodes (Nodes 1 and 2) sequentially.
+2. Log in and add a portlet (e.g. Hello Velocity) to Node 1.
+3. On Node 2, refresh the page. Portlet appears!
+4. Repeat test with reversed roles!
 
-Putting heap memory aside (because the amount of memory on the heap depends on
-the application(s) running), consider the stack memory footprint of those 100+
-threads. By default on most platforms, the thread stack size is 2 MB; for 100
-threads, that's more than 200 MB. If you include the heap memory size, this
-number can become as high as 500 MB for just one node. And that massive amount
-of threads can also cause frequent context switch overhead, which translates to
-increased CPU cycles.
-
-For large installations containing many nodes, Liferay has developed an enhanced
-algorithm for handling cache replication that can can fix both the `1` to `N -
-1` network communication bottleneck, as well as the massive threads bottleneck.
-The default implementation uses JGroups' UDP multicast to communicate. 
-
-![Figure 5.5: Liferay's algorithm uses a single UDP multicast channel, so that nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
-
-To reduce the number of replication threads, we provide a small pool of
-dispatching threads. These deliver cache cluster events to remote peers. Since
-all cache entities' cluster events must go through our pool of dispatching
-threads to communicate, this gives us a chance to coalesce events: if two
-modifications to the same cache object happen at almost the same time, we can
-combine the changes into one, and then we only need to notify remote peers once.
-This reduces traffic on the network. We should also note that newer versions of
-Ehcache support the JGroups replicator and can also fix the `1` to `N - 1`
-network communication; however, they cannot fix the massive threads issue and
-they cannot coalesce cache events.
-
-For EE customers who are interested in this feature, all you have to do to
-enable the enhanced algorithm is to install a plugin from the Liferay
-Marketplace and set the following property in the `portal-ext.properties` files
-of each of your nodes:
-
-    ehcache.cluster.link.replication.enabled=true
-
-Search Liferay Marketplace for the *Ehcache Cluster EE* plugin, which is free to
-all EE customers, and install it on each of your nodes. The new algorithm is
-immediately activated and you can reap the benefits right away.
-
-Next, let's discuss how to modify your Ehache settings. As we've seen, it's easy
-to use the default Ehcache settings just by enabling Cluster Link. If you need
-to tweak the cache for your site, you have two options: you can modify Ehcache
-settings with a plugin or you can modify them directly.
+$$$
 
 ### Modifying the Ehcache Settings With a Plugin [](id=modifying-the-ehcache-settings-with-a-plugin)
 
