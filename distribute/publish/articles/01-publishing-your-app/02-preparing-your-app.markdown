@@ -279,8 +279,8 @@ keep in mind:
 - **Target the Appropriate Java JRE**: Regardless of the tools you use to 
   develop your app, your app's bytecode must be compatible with the target Java 
   JRE for your version of Liferay. Your app will be rejected if its bytecode is 
-  not compatible with the Java JRE for the intended version of Liferay. Liferay 
-  6.2 targets Java 1.7, and @product-ver@ targets Java 1.8. If you use the Liferay 
+  not compatible with the Java JRE for the intended version of Liferay Digital Enterprise or Liferay Portal. Liferay Portal
+  6.2 targets Java 1.7, and Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0 target Java 1.8. If you use the Liferay 
   Plugins SDK to develop your app, you can set the Java version by overriding 
   the `ant.build.javac.target` property in the Plugins SDK's `build.properties` 
   file. 
@@ -325,7 +325,7 @@ keep in mind:
     - Liferay reserves the right to replace app plugin WAR files that have
       the same deployment context as plugins built by Liferay.
 
-There are some additional requirements for uploading @product-ver@ apps:
+There are some additional requirements for uploading Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0 apps:
 
 - **OSGi modules in JAR (`.jar`) files**:
     - For more information, see 
@@ -336,15 +336,15 @@ There are some additional requirements for uploading @product-ver@ apps:
         - `Web-ContextPath`: the servlet context path
 
 - **WAR (`.war`) files**:
-    - WAR-based plugins must be adapted to run on @product-ver@. See 
+    - WAR-based plugins must be adapted to run on Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. See 
       [this tutorial](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api) 
       for information on adapting WAR plugins that run on Liferay Portal 6.2 and 
-      earlier to run on @product-ver@. 
+      earlier to run on Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. 
 
 - **Apps containing multiple file types:**
-    - @product-ver@ apps can contain a mix of WAR-based plugins and OSGi JAR-based 
+    - Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0 apps can contain a mix of WAR-based plugins and OSGi JAR-based 
       plugins. Regardless of file type, each plugin must be able to run on 
-      @product-ver@. 
+      Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. 
 
 +$$$
 

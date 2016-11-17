@@ -212,7 +212,7 @@ table td {
 					<li> MySQL 5.5.x </li>
 				</ul>
 
-				<span>For @product-ver@</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> MySQL 5.6.x </li>
 				</ul>
@@ -224,7 +224,7 @@ table td {
 						<li> MySQL 5.5.x </li>
 					</ul>
 
-					<span>For @product-ver@</span>
+					<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 					<ul>
 						<li> MySQL 5.6.x </li>
 					</ul>
@@ -241,7 +241,7 @@ table td {
 					<li> JBoss AS 7.1 </li>
 				</ul>
 
-				<span>For @product-ver@</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> Tomcat 8 </li>
 				</ul>
@@ -251,7 +251,7 @@ table td {
 					<li> Tomcat 7 </li>
 				</ul>
 
-				<span>For @product-ver@</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> Tomcat 8 </li>
 				</ul>
@@ -266,7 +266,7 @@ table td {
 					<li> Oracle JDK 7 </li>
 				</ul>
 
-				<span>For @product-ver@</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li>Oracle JDK 8</li>
 				</ul>
@@ -278,7 +278,7 @@ table td {
 					<li> Oracle JDK 7 </li>
 				</ul>
 
-				<span>For @product-ver@</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li>Oracle JDK 8</li>
 				</ul>
