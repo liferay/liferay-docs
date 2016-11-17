@@ -96,7 +96,7 @@ component needs to be fleshed out with some properties:
     }
 
 Some of those properties might look familiar to you if you've developed Liferay
-MVC portlets before Liferay 7. That's because they correspond with the XML
+MVC portlets before @product-ver@. That's because they correspond with the XML
 attributes you used to specify in `liferay-portlet.xml`, `liferay-display.xml`,
 and `portlet.xml`. To find a list of all the Liferay-specific
 attributes you can specify as properties in your portlet components, check out
@@ -266,7 +266,7 @@ executed before the default `render` method, the method concludes by calling
 
 +$$$
 
-**Note:** Are you wondering how to call Service Builder services in Liferay 7.0?
+**Note:** Are you wondering how to call Service Builder services in @product-ver@?
 Refer to [the tutorial on Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
 for a more detailed explanation. In short, obtain a reference to the service by
 annotating a setter method with the `@Reference` Declarative Services

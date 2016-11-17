@@ -505,7 +505,7 @@ You'll learn how to configure the actions for your app next.
 ## Configuring Your Apps Actions Menu [](id=configuring-your-apps-actions-menu)
 
 In previous versions of Liferay it was common to have a series of buttons or
-menus with actions in the different views of the app. In Liferay 7 the proposed
+menus with actions in the different views of the app. In @product-ver@ the proposed
 pattern is to move all of these actions to the upper right menu, leaving the
 primary action(often an "Add" operation) visible in the add menu. For example,
 the web content application has the actions menu shown below:
