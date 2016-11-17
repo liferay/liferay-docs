@@ -2,19 +2,19 @@
 
 A common requirement for many data driven applications is the ability to import
 and export data. This *could* be accomplished by accessing your database
-directly and running SQL queries to import/export data; however, this has
+directly and running SQL queries to export/import data; however, this has
 several drawbacks:
 
 - Working with different database vendors might require customized SQL scripts.
 - Access to the database may be tightly controlled, restricting the ability to
-  import/export on demand.
+  export/import on demand.
 - Database administrators may not give you access to the Liferay database.
 
-An easier way to import/export your application's data is to use a Liferay
+An easier way to export/import your application's data is to use a Liferay
 ARchive (LAR) file. Liferay provides the LAR feature to address the need to
-import/export data in a database agnostic manner. So what exactly is a LAR file?
+export/import data in a database agnostic manner. So what exactly is a LAR file?
 
-A LAR file is a compressed file (ZIP archive) that can be used to import/export
+A LAR file is a compressed file (ZIP archive) that can be used to export/import
 data from @product@. They can be created for single portlets, pages, or sets of
 pages. Portlets that are LAR capable provide an interface to let you control how
 its data is imported/exported. There are several @product@ use cases that
@@ -26,16 +26,12 @@ require the use of LAR files:
 - Specifying a template to be used for users' public or private pages.
 - Using Local Live or Remote Live staging.
 
-<!-- 1) LAR files are version specific (this includes service pack levels) and
-2) LARs may contain user IDs to identify the creator or modifier of data, but
-they don't contain actual user data. -->
-
 To work around database limitations and give your application the ability to
-import/export a LAR file, you can implement data handling in your application.
+export/import a LAR file, you can implement Data Handlers in your application.
 There are two types of data handlers you'll learn about: *Portlet Data Handlers*
 and *Staged Model Data Handlers*.
 
-A portlet data handler imports/exports portlet specific data to a LAR file.
+A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes only have the role of querying and coordinating between staged
 model data handlers. For example, the Bookmarks application's portlet data
 handler tracks portlet preferences and system events dealing with Bookmarks
@@ -55,8 +51,10 @@ entities (folders and entries), it has a staged model for both (e.g.,
 `BookmarksEntryStagedModelRepository` and
 `BookmarksFolderStagedModelRepository`).
 
-Staged model data handlers are responsible for importing/exporting data related
+A Staged Model Data Handler is responsible for importing/exporting data related
 to the staged model entity.
+
+![Figure 1: The Data Handler framework uses portlet data handlers and staged model data handlers to track portlet and entity behavior, respectively.](../../images/data-handler-diagram.png)
 
 In this tutorial, you'll learn how to create a portlet data handler for your
 custom application. Then you'll create a staged model data handler for each
@@ -110,7 +108,7 @@ application.
 
         public class BookmarksPortletDataHandler extends BasePortletDataHandler {
 
-3.  Create an @Component annotation section above the class declaration. This
+3.  Create an `@Component` annotation section above the class declaration. This
     annotation is responsible for registering the data handler for the portlet.
 
         @Component(
@@ -141,8 +139,8 @@ application.
 
     $$$
 
-4.  Set what the portlet controls and the portlet's Import/Export UI by adding
-    an `activate` method:
+4.  Set what the portlet data handler controls and the portlet's Export/Import
+    UI by adding an `activate` method:
 
         @Activate
         protected void activate() {
@@ -157,14 +155,13 @@ application.
             setImportControls(getExportControls());
         }
 
-    This method specifies four `set` methods that are called during
-    initialization of the component by using the
+    This method is called during initialization of the component by using the
     [@Activate](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Activate.html)
     annotation. This method is invoked after dependencies are set and before
     services are registered.
 
-    The four `set` methods called in the `BookmarksPortletDataHandler` are
-    described below:
+    The four `set` methods called in the `BookmarksPortletDataHandler`'s
+    `activate` method are described below:
 
     - `setDataPortletPreferences`: sets portlet preferences the Bookmarks
       application should handle.
@@ -172,18 +169,67 @@ application.
       that the portlet data handler should track. For the Bookmarks application,
       Bookmark entries and folders are tracked.
     - `setExportControls`: adds fine grained controls over export behavior that
-      are rendered in the export UI. For the Bookmarks application, a checkbox
+      are rendered in the Export UI. For the Bookmarks application, a checkbox
       is added to select Bookmarks content (entry or folder) to export.
     - `setImportControls`: adds fine grained controls over import behavior that
-      are rendered in the import UI. For the Bookmarks application, a checkbox
+      are rendered in the Import UI. For the Bookmarks application, a checkbox
       is added to select Bookmarks content (entry or folder) to import.
 
     For more information on these methods, visit the
     [BasePortletDataHandler](https://docs.liferay.com/ce/portal/7.0/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BasePortletDataHandler.html)
     API.
 
-5.  Your application should retrieve the data related to its staged model
-    entities so it can properly import/export it. Add this functionality by
+5.  For the Bookmarks portlet data handler to successfully reference its entry
+    and folder staged models, you'll need to set them in your class:
+
+        @Reference(
+            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksEntry)",
+            unbind = "-"
+        )
+        protected void setBookmarksEntryStagedModelRepository(
+            StagedModelRepository<BookmarksEntry>
+                bookmarksEntryStagedModelRepository) {
+
+            _bookmarksEntryStagedModelRepository =
+                bookmarksEntryStagedModelRepository;
+        }
+
+        @Reference(
+            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksFolder)",
+            unbind = "-"
+        )
+        protected void setBookmarksFolderStagedModelRepository(
+            StagedModelRepository<BookmarksFolder>
+                bookmarksFolderStagedModelRepository) {
+
+            _bookmarksFolderStagedModelRepository =
+                bookmarksFolderStagedModelRepository;
+        }
+
+        private StagedModelRepository<BookmarksEntry>
+            _bookmarksEntryStagedModelRepository;
+        private StagedModelRepository<BookmarksFolder>
+            _bookmarksFolderStagedModelRepository;
+
+    The `set` methods must be annotated with the
+    [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
+    annotation and the `model.class.name` property should specify the staged
+    model entity's full package path. Visit the
+    [Invoking Liferay Service Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
+    section of the *Finding and Invoking Liferay Services* tutorial for more
+    information on using the `@Reference` annotation in @product@.
+
+6.  It's a best practice to create a namespace for your entities so the
+    Export/Import framework can identify your application's entities from other
+    entities in @product@. The Bookmarks application's namespace declaration
+    looks like this:
+
+        public static final String NAMESPACE = "bookmarks";
+
+    You'll see how this namespace is used later.
+
+7.  Your application should retrieve the data related to its staged model
+    entities so it can properly export/import it. Add this functionality by
     inserting the following methods:
 
         @Override
@@ -280,7 +326,7 @@ application.
     class. The extracted elements tell @product@ what data to import from the
     LAR file.
 
-6.  Add a method that deletes the portlet's data, which is necessary when
+8.  Add a method that deletes the portlet's data, which is necessary when
     importing new portlet data.
 
         @Override
@@ -306,8 +352,8 @@ application.
     This method can also return a modified version of the portlet preferences if
     it contains references to data that no longer exists.
 
-7.  Add a method that counts the number entities affected based on the current
-    export or staging process:
+9.  Add a method that counts the number of affected entities based on the
+    current export or staging process:
 
         @Override
         protected void doPrepareManifestSummary(
@@ -330,9 +376,9 @@ application.
 
     This number is displayed in the Export and Staging UI.
 
-    ![Figure 1: The number of modified Bookmarks entities are displayed in the Export UI.](../../images/manifest-summary-count.png)
+    ![Figure 2: The number of modified Bookmarks entities are displayed in the Export UI.](../../images/manifest-summary-count.png)
 
-8.  Set the XML schema version for the XML files included in your exported LAR
+10. Set the XML schema version for the XML files included in your exported LAR
     file:
 
         public static final String SCHEMA_VERSION = "1.0.0";
@@ -342,62 +388,14 @@ application.
             return SCHEMA_VERSION;
         }
 
-9.  Throughout the code you've already added, you may have noticed the use of
-    the `NAMESPACE` field. It's a best practice to create a namespace for your
-    entities so the export/import framework can identify your application's
-    entities from other entities in @product@. The Bookmarks application's
-    namespace declaration looks like this:
-
-        public static final String NAMESPACE = "bookmarks";
-
-10. For the Bookmarks portlet data handler to successfully reference its entry
-    and folder staged models, you'll need to set them in your class:
-
-        @Reference(
-            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksEntry)",
-            unbind = "-"
-        )
-        protected void setBookmarksEntryStagedModelRepository(
-            StagedModelRepository<BookmarksEntry>
-                bookmarksEntryStagedModelRepository) {
-
-            _bookmarksEntryStagedModelRepository =
-                bookmarksEntryStagedModelRepository;
-        }
-
-        @Reference(
-            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksFolder)",
-            unbind = "-"
-        )
-        protected void setBookmarksFolderStagedModelRepository(
-            StagedModelRepository<BookmarksFolder>
-                bookmarksFolderStagedModelRepository) {
-
-            _bookmarksFolderStagedModelRepository =
-                bookmarksFolderStagedModelRepository;
-        }
-
-        private StagedModelRepository<BookmarksEntry>
-            _bookmarksEntryStagedModelRepository;
-        private StagedModelRepository<BookmarksFolder>
-            _bookmarksFolderStagedModelRepository;
-
-    The `set` methods must be annotated with the
-    [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
-    annotation and the `model.class.name` should specify the staged model
-    entity's full package path. Visit the
-    [Invoking Liferay Service Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
-    section of the *Finding and Invoking Liferay Services* tutorial for more
-    information on using the `@Reference` annotation in @product@.
-
 Awesome! You've set up your portlet data handler and your application can now
-support the export/import framework and display a UI for it. The next step for
+support the Export/Import framework and display a UI for it. The next step for
 supporting data handlers in your app is to implement staged model data handlers
 for your staged models. You'll do this next.
 
 ## Staged Model Data Handlers
 
-Now that your application provides an Export/Import UI and has registered staged
+Now that your application has a portlet data handler and has registered staged
 models, you'll create the staged model data handlers. The Bookmarks application
 has two staged models: entries and folders. Creating data handlers for these two
 entities is similar, so you'll examine how this is done for Bookmark entries.
@@ -409,7 +407,8 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
     staged model data handler class should extend the
     [BaseStagedModelDataHandler](https://docs.liferay.com/ce/portal/7.0/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
     class and the entity type should be specified as its parameter. You can see
-    how this was done for the `BookmarksEntryStagedModelDataHandler` class below
+    how this was done for the `BookmarksEntryStagedModelDataHandler` class
+    below:
 
         public class BookmarksEntryStagedModelDataHandler
             extends BaseStagedModelDataHandler<BookmarksEntry> {
@@ -423,6 +422,15 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
     The `immediate` element directs the data handler to activate in @product@
     immediately after deployment. The `service` element should point to the
     `StagedModelDataHandler.class` interface.
+
+    +$$$
+
+    **Note:** In previous versions of @product@, you had to register the staged
+    model data handler in a portlet's `liferay-portlet.xml` file. The
+    registration process is now completed automatically by OSGi using the
+    `@Component` annotation.
+
+    $$$
 
 3.  Create a getter and setter method for the staged model for which you want to
     provide a data handler:
@@ -472,7 +480,7 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
     The display name is presented in the UI so users can follow the
     export/import process.
 
-    ![Figure 2: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
+    ![Figure 3: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
 
 6.  Add methods that import and export your staged model and its references:
 
