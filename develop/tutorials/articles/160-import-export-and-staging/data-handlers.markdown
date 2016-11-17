@@ -215,7 +215,7 @@ application.
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
     annotation and the `model.class.name` property should specify the staged
     model entity's full package path. Visit the
-    [Invoking Liferay Service Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
+    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
     section of the *Finding and Invoking Liferay Services* tutorial for more
     information on using the `@Reference` annotation in @product@.
 
