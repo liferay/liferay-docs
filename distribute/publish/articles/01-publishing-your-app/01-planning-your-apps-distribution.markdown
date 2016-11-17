@@ -291,9 +291,9 @@ files that are designed for those different versions. The next article in this
 guide explains how to go about
 [specifying packaging directives](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app#specifying-packaging-directives). 
 
-Note that apps on the Liferay Marketplace must be designed for Liferay 6.1 or
+Note that apps on the Liferay Marketplace must be designed for Liferay Portal 6.1 or
 later. That's not to say that they can't work with prior versions. However, only
-Liferay 6.1 and later versions support installing apps directly from the
+Liferay Portal 6.1 and later versions support installing apps directly from the
 Marketplace and provide safeguards against malicious apps. If you want to use an
 app with an earlier version of Liferay, make sure that version of Liferay
 provides what your app needs from Liferay. 
