@@ -1,18 +1,18 @@
 # Transitioning from Portlet Preferences to the Configuration API [](id=transitioning-from-portlet-preferences-to-the-configuration-api)
 
 This tutorial describes how to take an existing portlet developed for Liferay
-6.2 or prior, which uses portlet preferences to allow administrators to
+Portal 6.2 or prior, which uses portlet preferences to allow administrators to
 configure the portlet, and convert it to use the new Configuration API.
 
 For more information on the Configuration API and the recommended ways to
-develop configurable applications for Liferay 7, please see the
+develop configurable applications for @product-ver@, please see the
 [Making your applications configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable)
 tutorial.
 
 Before you start, it's important to understand the benefits of making this
 change. That will allow you to decide whether to go ahead with the change or
-not, since previous configuration mechanisms of Liferay 6.2 and prior still work
-in 7.0.
+not, since previous configuration mechanisms of Liferay Portal 6.2 and prior still work
+in @product-ver@.
 
 The main benefits are:
 
@@ -41,7 +41,7 @@ storage (the PortletPreferences table). That means that you can deploy a new
 version of the portlet to a running system and the existing portlets that may
 have been added to its pages and configured will not need to be reconfigured. 
 
-If your existing (6.2 or prior) application uses portlet preferences and you
+If your existing (Liferay Portal 6.2 or prior) application uses portlet preferences and you
 have decided to convert it to use the new Configuration API, follow these steps
 to update your application:
 

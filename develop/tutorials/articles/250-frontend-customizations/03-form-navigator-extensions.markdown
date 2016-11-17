@@ -5,7 +5,7 @@ Examples abound in healthcare, transportation, pharmaceutical, or any other
 heavily regulated industry. For these applications, you need an easy way to
 section off your forms into easily navigable groups. 
 
-Since Liferay 7.0, the
+Since @product-ver@, the
 [Form Navigator](/participate/liferaypedia/-/wiki/Main/Form+Navigator) framework
 enables you to add new sections and section categories dynamically to existing
 form navigation. The framework includes a well-described API and a powerful
@@ -53,7 +53,7 @@ implemented similarly and their IDs are published in the Javadoc for the class
 +$$$
 
 **Note**: Form Navigator extensions implemented using portal properties and form
-navigation entry JSPs are deprecated but still supported in Liferay 7.0. All
+navigation entry JSPs are deprecated but still supported in @product-ver@. All
 new Form Navigator extensions should be implemented as this tutorial describes. 
 
 $$$
@@ -77,7 +77,7 @@ Let's set up a component portlet project to support form navigation.
 
 First, your component portlet must be implemented as an OSGi bundle. You
 can develop it in any environment that supports creating a bundle. Please refer
-to the Liferay 7 tutorial section
+to the @product-ver@ tutorial section
 [Understanding Liferay's Module Framework](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
 to learn about development environments. The Form Nav Extension portlet
 was created with BLADE based on the `blade.portlet.jsp` template. This is also

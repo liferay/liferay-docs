@@ -22,10 +22,10 @@ resources with your theme.
 
 **Note:** The resources importer has undergone some changes that affect the
 properties, class names, and structures that were referred to in versions prior 
-to Liferay 7.0.0. Please read through the steps below to see the updates. In 
+to @product-ver@. Please read through the steps below to see the updates. In 
 previous versions of Liferay, you had to deploy the resources importer if you 
 declared it as a dependency in your theme's `liferay-plugin-package.properties` 
-file. In Liferay 7.0.0 and up, this is no longer a requirement. The resources 
+file. In @product-ver@ and up, this is no longer a requirement. The resources 
 importer is now an OSGI module, and is deployed to your instance by default.
 
 $$$
@@ -454,7 +454,7 @@ Liferay:
 +$$$
 
 **Note:** In previous versions of Liferay, basic web content could be added
-without the need of a structure or template. In Liferay 7.0 and above, all web
+without the need of a structure or template. In @product-ver@ and above, all web
 content articles require a structure and template.
 
 $$$
