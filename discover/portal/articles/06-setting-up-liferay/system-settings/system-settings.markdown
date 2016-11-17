@@ -14,7 +14,7 @@ most commonly the `portal-ext.properties` file". They then expect to get a
 sticker of [Ray](https://www.liferay.com/ray) on their mobile device for their
 attentiveness. However, that's an incomplete answer, so they need to just sit
 back down and listen like the rest of the class. There's a brand new way to make
-configuration changes at the system scope in Liferay 7, and you don't need to go
+configuration changes at the system scope in @product-ver@, and you don't need to go
 messing around in a properties file to do it. These settings can now be made in
 the Control Panel, in *Configuration* &rarr; *System Settings*. 
 

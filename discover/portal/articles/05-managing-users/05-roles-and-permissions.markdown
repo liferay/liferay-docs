@@ -285,8 +285,8 @@ your ability to configure @product@ to suit your organizational needs.
 <!--
 ## Note About the Power Users Role [](id=note-about-the-power-users-role)
 
-Prior to Liferay 6.0, the default configurations of many Liferay portlets
-allowed power users, but not regular users, to access them. Liferay 6.0 and
+Prior to Liferay Portal 6.0, the default configurations of many Liferay portlets
+allowed power users, but not regular users, to access them. Liferay Portal 6.0 and
 subsequent versions grant the same default permissions to both power users and
 regular users. This way, portal administrators are not forced to use the power
 users role. However, Liferay encourages those who do to create their own custom

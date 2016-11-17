@@ -103,8 +103,8 @@ All of these are accomplished through the Control Panel. Start by learning to
 configure modules system-wide in the System Settings Control Panel app.
 
 <!--The purpose of this document is to explain the mechanism available to configure
-Liferay 7. It is oriented towards new administrators but will also mention the
-differences with Liferay 6.2 when appropriate for those who are used to it.
+@product-ver@. It is oriented towards new administrators but will also mention the
+differences with Liferay Portal 6.2 when appropriate for those who are used to it.
 Concepts Liferay is a very configurable platform and it promotes its
 applications to be very configurable. Both the platform and the applications are
 build in a modular way, which means that they are formed by several
