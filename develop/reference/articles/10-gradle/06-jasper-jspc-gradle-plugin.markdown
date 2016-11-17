@@ -13,15 +13,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.jasper.jspc", version: "1.0.9"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.jasper.jspc", version: "1.0.9"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.jasper.jspc"
@@ -36,9 +36,9 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -117,7 +117,7 @@ manually adding a dependency to the `jspCTool` configuration:
 
 ```gradle
 dependencies {
-	jspCTool group: "com.liferay", name: "com.liferay.jasper.jspc", version: "1.0.9"
-	jspCTool group: "org.apache.ant", name: "ant", version: "1.9.4"
+    jspCTool group: "com.liferay", name: "com.liferay.jasper.jspc", version: "1.0.9"
+    jspCTool group: "org.apache.ant", name: "ant", version: "1.9.4"
 }
 ```

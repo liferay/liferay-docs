@@ -10,15 +10,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.xml.formatter", version: "1.0.6"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.xml.formatter", version: "1.0.6"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.xml.formatter"
@@ -30,9 +30,9 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -77,6 +77,6 @@ manually adding a dependency to the `xmlFormatter` configuration:
 
 ```gradle
 dependencies {
-	xmlFormatter group: "com.liferay", name: "com.liferay.xml.formatter", version: "1.0.1"
+    xmlFormatter group: "com.liferay", name: "com.liferay.xml.formatter", version: "1.0.1"
 }
 ```

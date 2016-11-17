@@ -9,15 +9,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.deployment.helper", version: "1.0.3"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.deployment.helper", version: "1.0.3"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.deployment.helper"
@@ -29,9 +29,9 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -90,6 +90,6 @@ configuration:
 
 ```gradle
 dependencies {
-	deploymentHelper group: "com.liferay", name: "com.liferay.deployment.helper", version: "1.0.3"
+    deploymentHelper group: "com.liferay", name: "com.liferay.deployment.helper", version: "1.0.3"
 }
 ```

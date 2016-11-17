@@ -9,15 +9,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "1.0.15"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "1.0.15"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.css.builder"
@@ -29,8 +29,8 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
 	}
 }
 ```
@@ -116,7 +116,7 @@ manually adding a dependency to the `cssBuilder` configuration:
 
 ```gradle
 dependencies {
-	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.0.20"
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.0.20"
 }
 ```
 
@@ -130,6 +130,6 @@ configuration:
 
 ```gradle
 dependencies {
-	cssBuilder group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
+    cssBuilder group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
 }
 ```

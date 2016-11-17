@@ -9,15 +9,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.xsd.builder", version: "1.0.5"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.xsd.builder", version: "1.0.5"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.xsd.builder"
@@ -32,9 +32,9 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -94,6 +94,6 @@ by manually adding a dependency to the `xsdBuilder` configuration:
 
 ```gradle
 dependencies {
-	xsdBuilder group: "org.apache.xmlbeans", name: "xmlbeans", version: "2.6.0"
+    xsdBuilder group: "org.apache.xmlbeans", name: "xmlbeans", version: "2.6.0"
 }
 ```

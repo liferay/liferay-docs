@@ -11,15 +11,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "2.0.0"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "2.0.0"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 ```
 
@@ -28,16 +28,16 @@ There are two Soy Gradle plugins you can apply to your project:
 - Apply the [*Soy Plugin*](#soy-plugin) to compile Closure Templates into
 JavaScript functions:
 
-	```gradle
-	apply plugin: "com.liferay.soy"
-	```
+    ```gradle
+    apply plugin: "com.liferay.soy"
+    ```
 
 - Apply the [*Soy Translation Plugin*](#soy-translation-plugin) to use a custom
 localization mechanism in the generated `.soy.js` files:
 
-	```gradle
-	apply plugin: "com.liferay.soy.translation"
-	```
+    ```gradle
+    apply plugin: "com.liferay.soy.translation"
+    ```
 
 Since the Soy Gradle plugin automatically resolves the Soy library as a
 dependency, you have to configure a repository that hosts the library and its
@@ -45,9 +45,9 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -81,7 +81,7 @@ a dependency to the `soy` configuration:
 
 ```gradle
 dependencies {
-	soy group: "com.google.template", name: "soy", version: "2015-04-10"
+    soy group: "com.google.template", name: "soy", version: "2015-04-10"
 }
 ```
 

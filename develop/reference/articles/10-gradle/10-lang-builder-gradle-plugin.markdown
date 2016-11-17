@@ -9,15 +9,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.lang.builder", version: "1.0.5"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.lang.builder", version: "1.0.5"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.lang.builder"
@@ -29,8 +29,8 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
 	}
 }
 ```
@@ -98,6 +98,6 @@ manually adding a dependency to the `langBuilder` configuration:
 
 ```gradle
 dependencies {
-	langBuilder group: "com.liferay", name: "com.liferay.lang.builder", version: "1.0.10"
+    langBuilder group: "com.liferay", name: "com.liferay.lang.builder", version: "1.0.10"
 }
 ```

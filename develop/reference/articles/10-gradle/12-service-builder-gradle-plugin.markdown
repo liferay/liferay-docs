@@ -10,15 +10,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "1.0.19"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "1.0.19"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.portal.tools.service.builder"
@@ -34,9 +34,9 @@ all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -74,8 +74,8 @@ and then add the following snippet to enable the use of Liferay Service Builder:
 
 ```gradle
 buildService {
-	apiDir = "../myapp-api/src/main/java"
-	testDir = "../myapp-test/src/testIntegration/java"
+    apiDir = "../myapp-api/src/main/java"
+    testDir = "../myapp-test/src/testIntegration/java"
 }
 ```
 
@@ -144,6 +144,6 @@ manually adding a dependency to the `serviceBuilder` configuration:
 
 ```gradle
 dependencies {
-	serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.134"
+    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.134"
 }
 ```

@@ -9,15 +9,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.theme.builder", version: "2.0.0"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.theme.builder", version: "2.0.0"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.portal.tools.theme.builder"
@@ -33,9 +33,9 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -121,7 +121,7 @@ manually adding a dependency to the `themeBuilder` configuration:
 
 ```gradle
 dependencies {
-	themeBuilder group: "com.liferay", name: "com.liferay.portal.tools.theme.builder", version: "1.0.1"
+    themeBuilder group: "com.liferay", name: "com.liferay.portal.tools.theme.builder", version: "1.0.1"
 }
 ```
 
@@ -137,7 +137,7 @@ configuration:
 
 ```gradle
 dependencies {
-	parentThemes group: "com.liferay", name: "com.liferay.frontend.theme.styled", version: "2.0.13"
-	parentThemes group: "com.liferay", name: "com.liferay.frontend.theme.unstyled", version: "2.0.13"
+    parentThemes group: "com.liferay", name: "com.liferay.frontend.theme.styled", version: "2.0.13"
+    parentThemes group: "com.liferay", name: "com.liferay.frontend.theme.unstyled", version: "2.0.13"
 }
 ```

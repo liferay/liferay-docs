@@ -10,15 +10,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "1.0.47"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "1.0.47"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.source.formatter"
@@ -30,9 +30,9 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -51,7 +51,7 @@ task by adding the following dependency:
 
 ```gradle
 check {
-	dependsOn checkSourceFormatting
+    dependsOn checkSourceFormatting
 }
 ```
 
@@ -60,11 +60,11 @@ file in the root directory of a [*Liferay Workspace*](https://dev.liferay.com/de
 
 ```gradle
 subprojects {
-	afterEvaluate {
-		if (plugins.hasPlugin("base") && plugins.hasPlugin("com.liferay.source.formatter")) {
-			check.dependsOn checkSourceFormatting
-		}
-	}
+    afterEvaluate {
+        if (plugins.hasPlugin("base") && plugins.hasPlugin("com.liferay.source.formatter")) {
+            check.dependsOn checkSourceFormatting
+        }
+    }
 }
 ```
 
@@ -116,7 +116,7 @@ manually adding a dependency to the `sourceFormatter` configuration:
 
 ```gradle
 dependencies {
-	sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.313"
+    sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.313"
 }
 ```
 
