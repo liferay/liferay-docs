@@ -1,8 +1,8 @@
 # Gradle
 
 Liferay provides plugins that you can apply to your Gradle project. This
-reference documentation describes configuration properties for Liferay's Gradle
-plugins. The following Gradle plugins are documented in this section:
+reference documentation describes how to apply and use Liferay's Gradle plugins.
+The following Gradle plugins are documented in this section:
 
 - App Javadoc Builder
 - Change Log Builder
