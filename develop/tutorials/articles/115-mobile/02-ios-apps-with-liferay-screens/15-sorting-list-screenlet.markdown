@@ -2,10 +2,10 @@
 
 To sort your list Screenlet, you must point it to a *comparator class* in your 
 portal. A comparator class implements the logic that sorts your entities. You 
-can create your own comparator class, or use those that already exist in your 
+can create your own comparator class or use those that already exist in your 
 portal. Once your list is sorted, you can split it into sections. This tutorial 
-shows you how to sort your list Screenlet with a comparator, and how to create 
-sections for your sorted list. 
+shows you how to sort your list Screenlet with a comparator and create sections
+for your sorted list. 
 
 +$$$
 
@@ -49,7 +49,7 @@ To do this in list Screenlets, first use a comparator to sort the list by the
 criteria you'll use to create the sections. Then override the 
 [`BookmarkListPageLoadInteractor` class’s](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/BookmarkListScreenlet/Interactor/BookmarkListPageLoadInteractor.swift) 
 `sectionForRowObject` method in your list Screenlet’s Interactor. This method is 
-called for each item in the list, and should return the information necessary to 
+called for each item in the list and should return the information necessary to 
 place the item in a section. For example, 
 [the sample Bookmark List Screenlet’s Interactor](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/BookmarkListScreenlet/Interactor/BookmarkListPageLoadInteractor.swift) 
 overrides the `sectionForRowObject` method to group results by hostname: 

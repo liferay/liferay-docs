@@ -19,23 +19,23 @@ You'll create your list's cell with
 used to create any list Screenlet’s cell. Note, however, that how you perform 
 these steps is a bit different: 
 
-1. Define your cell’s UI in a new XIB file. Because this cell is part of a Theme 
-   that uses `UICollectionView`, you can shape it however you want. For example, 
-   here's the `BookmarkCell_default-collection.xib` file for the cell in 
-   Bookmark List Screenlet's Collection Theme. It's a simple square that 
-   displays the bookmark's URL and the URL's first letter. 
+1.  Define your cell’s UI in a new XIB file. Because this cell is part of a Theme 
+    that uses `UICollectionView`, you can shape it however you want. For example, 
+    here's the `BookmarkCell_default-collection.xib` file for the cell in 
+    Bookmark List Screenlet's Collection Theme. It's a simple square that 
+    displays the bookmark's URL and the URL's first letter. 
 
     ![Figure 1: The XIB file for the cell in Bookmark List Screenlet's custom View.](../../../images/screens-ios-collectionview-cell.png)
 
-2. Create your XIB file's class by extending `UICollectionViewCell`. Create as 
-   many outlets and actions as you need for your UI components, and write the 
-   logic required for your cell's UI to function. For example, 
-   `BookmarkCell_default_collection` is the XIB file’s class in Bookmark List 
-   Screenlet’s Custom Theme. This class extends `UICollectionViewCell` and 
-   contains outlets for the URL (`urlLabel`) and the URL's first letter 
-   (`centerLabel`). The `bookmark` variable’s `didSet` observer sets the 
-   bookmark's name and URL to the respective label. Also note that the 
-   overridden `prepareForReuse` method resets the labels for reuse: 
+2.  Create your XIB file's class by extending `UICollectionViewCell`. Create as 
+    many outlets and actions as you need for your UI components and write the 
+    logic required for your cell's UI to function. For example, 
+    `BookmarkCell_default_collection` is the XIB file’s class in Bookmark List 
+    Screenlet’s Custom Theme. This class extends `UICollectionViewCell` and 
+    contains outlets for the URL (`urlLabel`) and the URL's first letter 
+    (`centerLabel`). The `bookmark` variable’s `didSet` observer sets the 
+    bookmark's name and URL to the respective label. Also note that the 
+    overridden `prepareForReuse` method resets the labels for reuse: 
 
         import UIKit
         import LiferayScreens
