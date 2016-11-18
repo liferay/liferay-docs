@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay theme contributor as
 a Liferay module. To create a theme contributor as a module, use a command
 with the following parameters:
 
-    blade create -t theme-contributor --contributorType [contributorType] -p [package name] [project name]
+    blade create -t theme-contributor [--contributorType contributorType] [-p packageName] projectName
 
 The template for this kind of project is `theme-contributor`. Suppose you want
 to create a theme contributor project called `my-theme-contributor` with a

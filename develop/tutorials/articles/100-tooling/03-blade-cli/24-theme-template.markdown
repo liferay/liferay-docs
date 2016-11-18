@@ -3,7 +3,7 @@
 In this tutorial, you'll learn how to create a Liferay theme as a WAR project.
 To create a Liferay theme, use a command with the following parameters: 
 
-    blade create -t theme [project name]
+    blade create -t theme projectName
 
 The template for this kind of project is `theme`. Suppose you want to create a
 theme project called `my-theme-project` as a WAR file. You could run the

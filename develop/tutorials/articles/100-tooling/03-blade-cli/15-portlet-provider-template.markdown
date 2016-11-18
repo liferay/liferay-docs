@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay portlet provider as a
 Liferay module. To create a Liferay portlet provider as a module, use a
 command with the following parameters: 
 
-    blade create -t portlet-provider -p [package name] -c [class name] [project name]
+    blade create -t portlet-provider [-p packageName] [-c className] projectName
 
 The template for this kind of project is `portlet-provider`. Suppose you want to
 create a portlet provider project called `my-portlet-provider-project` with a

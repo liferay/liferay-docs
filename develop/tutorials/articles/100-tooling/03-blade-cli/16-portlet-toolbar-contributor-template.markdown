@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay portlet toolbar
 contributor as a Liferay module. To create a portlet toolbar contributor entry
 as a module, use a command with the following parameters: 
 
-    blade create -t portlet-toolbar-contributor -p [package name] -c [class name] [project name]
+    blade create -t portlet-toolbar-contributor [-p packageName] [-c className] projectName
 
 The template for this kind of project is `portlet-toolbar-contributor`. Suppose
 you want to create a portlet toolbar contributor project called

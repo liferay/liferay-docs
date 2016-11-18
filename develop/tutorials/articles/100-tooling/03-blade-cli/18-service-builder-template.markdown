@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay portlet application that
 uses Service Builder as Liferay modules. To create a Liferay Service Builder
 project, use a command with the following parameters: 
 
-    blade create -t service-builder -p [package name] [project name]
+    blade create -t service-builder [-p packageName] projectName
 
 The template for this kind of project is `service-builder`. Suppose you want to
 create a Service Builder project called `tasks` with a package name of

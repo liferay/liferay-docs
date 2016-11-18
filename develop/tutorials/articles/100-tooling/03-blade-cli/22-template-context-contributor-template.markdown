@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay template context
 contributor as a Liferay module. To create a template context contributor as a
 module, use a command with the following parameters: 
 
-    blade create -t template-context-contributor -p [package name] -c [class name] [project name]
+    blade create -t template-context-contributor [-p packageName] [-c className] projectName
 
 The template for this kind of project is `template-context-contributor`. Suppose
 you want to create a template context contributor project called
