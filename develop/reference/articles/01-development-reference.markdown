@@ -41,7 +41,11 @@ caption {
   <caption>
     This table links you to the Liferay Portal core API modules. Their
     root location is  
-    <a href="https://docs.liferay.com/ce/portal/7.0/javadocs/" target="_blank">
+    <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/" target="_blank">
+    here<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    </a>. The 
+    reference doc JAR is available  
+    <a href="https://docs.liferay.com/ce/portal/7.0-latest/" target="_blank">
     here<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>.
     <br>
@@ -50,7 +54,7 @@ caption {
   <tr>
     <th rowspan="5">Core:</th>
     <td>
-	<a href="https://docs.liferay.com/ce/portal/7.0/javadocs/portal-kernel/index.html" target="_blank">
+	<a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/index.html" target="_blank">
 	com.liferay.portal.kernel (portal-kernel):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for developing applications on the Liferay platform
     </td>
@@ -58,7 +62,7 @@ caption {
 
   <tr>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0/javadocs/util-bridges/index.html" target="_blank">
+       <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/util-bridges/index.html" target="_blank">
 	com.liferay.util.bridges (util-bridges):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using various non-proprietary computing languages, frameworks, and utilities
        on the Liferay platform
@@ -67,7 +71,7 @@ caption {
 
   <tr>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0/javadocs/util-java/index.html" target="_blank">
+       <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/util-java/index.html" target="_blank">
 	com.liferay.util.java (util-java):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using various Java-related frameworks and utilities on the Liferay platform
     </td>
@@ -75,7 +79,7 @@ caption {
 
   <tr>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0/javadocs/util-slf4j/index.html" target="_blank">
+       <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/util-slf4j/index.html" target="_blank">
 	com.liferay.util.slf4j (util-slf4j):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using the Simple Logging Facade for Java (SLF4J)
     </td>
@@ -83,7 +87,7 @@ caption {
 
   <tr>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0/javadocs/portal-impl/index.html" target="_blank">
+       <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-impl/index.html" target="_blank">
 	com.liferay.portal.impl (portal-impl):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;refer to this only if you are an advanced Liferay developer that needs a deeper
        understanding of Liferay Portal's implementation in order to contribute to it
@@ -118,8 +122,12 @@ caption {
 
   <tr>
     <th rowspan="17">
-      <a href="https://docs.liferay.com/ce/apps/collaboration/" target="_blank">
+      <a href="https://docs.liferay.com/ce/apps/collaboration/latest/javadocs/" target="_blank">
       Collaboration<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="https://docs.liferay.com/ce/apps/collaboration/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
     <td>
@@ -209,8 +217,12 @@ caption {
 
   <tr>
     <th rowspan="9">
-      <a href="https://docs.liferay.com/ce/apps/forms-and-workflow/" target="_blank">
+      <a href="https://docs.liferay.com/ce/apps/forms-and-workflow/latest/javadocs/" target="_blank">
       Forms &amp; Workflow<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="https://docs.liferay.com/ce/apps/forms-and-workflow/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
     <td>
@@ -256,8 +268,12 @@ caption {
 
   <tr>
     <th rowspan="17">
-      <a href="https://docs.liferay.com/ce/apps/foundation/" target="_blank">
+      <a href="https://docs.liferay.com/ce/apps/foundation/latest/javadocs/" target="_blank">
       Foundation<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="https://docs.liferay.com/ce/apps/foundation/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
     <td>
@@ -348,8 +364,12 @@ caption {
 
   <tr>
     <th rowspan="13">
-      <a href="https://docs.liferay.com/ce/apps/web-experience/" target="_blank">
+      <a href="https://docs.liferay.com/ce/apps/web-experience/latest/javadocs/" target="_blank">
       Web Experience<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="https://docs.liferay.com/ce/apps/web-experience/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
     <td>
@@ -450,7 +470,7 @@ caption {
 
   <tr>
     <th rowspan="7">
-    <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/util-taglib/">
+    <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/util-taglib/">
     Util Taglibs<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>
     </th>
@@ -514,7 +534,7 @@ caption {
   <tr>
     <th rowspan="1">Application List:</th>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/application-list/com.liferay.application.list.taglib/liferay-application-list/tld-summary.html" target="_blank">
+       <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/application-list/com.liferay.application.list.taglib/liferay-application-list/tld-summary.html" target="_blank">
        liferay-application-list<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
       </td>
@@ -523,14 +543,14 @@ caption {
   <tr>
     <th rowspan="2">Assets:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/asset/com.liferay.asset.taglib/liferay-asset/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/asset/com.liferay.asset.taglib/liferay-asset/tld-summary.html" target="_blank">
         liferay-asset<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/trash/com.liferay.trash.taglib/liferay-trash/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/trash/com.liferay.trash.taglib/liferay-trash/tld-summary.html" target="_blank">
         liferay-trash<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -539,7 +559,7 @@ caption {
   <tr>
     <th rowspan="1">Forms:</th>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.taglib/liferay-ddm/tld-summary.html" target="_blank">
+       <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.taglib/liferay-ddm/tld-summary.html" target="_blank">
 	liferay-ddm<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>
     </td>
@@ -548,14 +568,14 @@ caption {
   <tr>
     <th rowspan="2">Foundation:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/foundation/map/com.liferay.map.taglib/liferay-map/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/foundation/map/com.liferay.map.taglib/liferay-map/tld-summary.html" target="_blank">
         liferay-map<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	<a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/" target="_blank">
+	<a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/" target="_blank">
        liferay-frontend<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
     </td>
@@ -564,7 +584,7 @@ caption {
   <tr>
     <th rowspan="1">Import, Export, &amp; Staging:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/staging/com.liferay.staging.taglib/liferay-staging/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/staging/com.liferay.staging.taglib/liferay-staging/tld-summary.html" target="_blank">
         liferay-staging<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -573,7 +593,7 @@ caption {
   <tr>
     <th rowspan="1">Item Selector:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/collaboration/item-selector/com.liferay.item.selector.taglib/liferay-item-selector/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/collaboration/item-selector/com.liferay.item.selector.taglib/liferay-item-selector/tld-summary.html" target="_blank">
         liferay-item-selector<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -582,7 +602,7 @@ caption {
   <tr>
     <th rowspan="1">Product Navigation:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.taglib/liferay-product-navigation/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.taglib/liferay-product-navigation/tld-summary.html" target="_blank">
         liferay-product-navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -591,14 +611,14 @@ caption {
   <tr>
     <th rowspan="2">Sites:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/tld-summary.html" target="_blank">
         liferay-layout<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/web-experience/site-navigation/com.liferay.site.navigation.taglib/liferay-site-navigation/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/site-navigation/com.liferay.site.navigation.taglib/liferay-site-navigation/tld-summary.html" target="_blank">
         liferay-site-navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -607,7 +627,7 @@ caption {
   <tr>
     <th rowspan="1">Social:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0/taglibs/modules/apps/collaboration/flags/com.liferay.flags.taglib/liferay-flags/tld-summary.html" target="_blank">
+	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/collaboration/flags/com.liferay.flags.taglib/liferay-flags/tld-summary.html" target="_blank">
         liferay-flags<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -638,5 +658,5 @@ JavaScript APIs are available within portlets, templates and themes.
 
 ## Descriptor Definitions [](id=descriptor-definitions)
 
-[**DTDs**](http://docs.liferay.com/ce/portal/7.0/definitions/): Describes the XML
+[**DTDs**](http://docs.liferay.com/ce/portal/7.0-latest/definitions/): Describes the XML
 files used in configuring Liferay Portal apps, Liferay Portal plugins, and the Liferay Portal core.
