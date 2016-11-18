@@ -1,13 +1,13 @@
 # Workflow Forms [](id=workflow-forms)
 
 Business processes are often form-based and workflow-driven. They start with
-some data that needs to be entered and shared with another person or group, for
-further data entry, approval, editing, legal review, or some other purpose.  To
-write an app for each of these processes is laborious, and often not cost
-effective. Businesses need a way to quickly define a process to suit their
-needs. They need to define the data that gets collected, and define the process
-the data will move through to reach its final state. @product@ already includes
-the [Dynamic Data Lists
+some data that needs to be entered and shared with additional people or groups,
+for further data entry, approval, editing, legal review, or some other purpose.
+To write an app for each of these processes is laborious, and often not cost
+effective.Instead, a tool for quickly defining a process to suit each use cases
+is needed. The process architect must define the data that gets collected, and
+define the process the data will move through to reach its final state.
+@product@ already includes the [Dynamic Data Lists
 application](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)
 for defining forms, and the [Kaleo Designer
 application](/discover/portal/-/knowledge_base/7-0/kaleo-designer) for designing
@@ -27,31 +27,27 @@ The entire process includes:
 
 **Example Use Case:** 
 
+At The Lunar Resort, the spa is a popular place. With all the adventure-driven
+activities (lunar hiking, rover races, etc.) it’s important to offer some
+relaxing and rejuvenating experiences. As the spa expands, and new Spa
+Technicians are hired, the spa manager decides to implement a new process to
+handle orders. It involves several steps and several people:
 
+- The customer service representative for the spa interacts with customers, and
+   fills out an order form.
 
+- The customer service representative gives the order details to the spa
+   technicians so they can claim each order and divide up the requests. 
 
-I guess we should explore Marcellus idea on the "SPA registration app" and combine with your idea. You highlighted an excellent pain point: manual control for room management. We should consider this as a pain point for the "SPA registration".
+- The spa technician sends the order to the spa manager for final approval and
+   comment. 
 
-As an operational manager of a hotel SPA you would like to know the number of customers that would like to attend to your SPA and their needs/interests, so that you could organize: material, facilities, schedule professionals (massagists, cleaning services) and so on. Imagine performing all those activities using spreadsheets, printed lists and physical notes? Add to this, the need of sharing these information with your assistants and operational people to get things done. A mess, right?
+- The spa manager sends the final order back to the customer service
+   representative, who contacts the customer with the final details of their spa
+   service order.
 
-How could you do it better? Integrating from the point of view of your customer, since the booking of a SPA session to the execution of the high value service?
-
-How could Kaleo Forms help us accomplish that?
-
-I can see the following journey (just examples, you can simplify): booking a SPA session, revising booking session, email confirmation to the customer with the booking details. Internally, for the operation: check list of material to operational team, book massagist, book the room in the SPA calendar. After the session: survey sent to customer email.
-
-While space is unlimited at The Lunar Resort (because it's in space--get the
-joke?), physical meeting spaces for the different departments are very limited.
-In fact, there are only two rooms with the size and seating appropriate for
-employee meetings. There used to be a paper reservation list hanging on the door
-of each room, but it kept getting lost, destroyed, and defaced. The resort is
-moving room reservation requests to an online sign-up form. The form needs
-fields like Requested Room Number, Event Name, Event Contact, Event Importance,
-a boolean Approved field, and others. Then the form go through a workflow, where
-the request form is approved as is, updated with a new date, or rejected (for
-example, if the Mechanical department wants to use the meeting room for a Rover
-Oil Change event). Any form-based process that must move through multiple people
-or roles benefits from the Kaleo Forms Admin application.
+A process like this is a nightmare to manage manually, but perfectly suited for
+Kaleo Forms.
 
 $$$
 
@@ -61,28 +57,25 @@ the article on [roles and
 permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) if
 you're unsure how that works.
 
-<!--The simple example shown below demonstrates using a field set and workflow
-already installed in Liferay to create a new Kaleo Process.-->
-
 ## Using Kaleo Forms [](id=using-kaleo-forms)
 
-Access Kaleo Forms Admin from the *Content* section of your site's administration
-menu (click *[Site Name]* &rarr; *Content* &rarr; *Kaleo Forms Admin*). The
-portlet appears with a listing of the defined processes. If you’re coming here
-for the first time, there won’t be any, so create one. 
+Access Kaleo Forms Admin from the *Content* section of your site's
+administration menu (click *[Site Name]* &rarr; *Content* &rarr; *Kaleo Forms
+Admin*). Kaleo Forms appears with a listing of the defined processes. If you’re
+coming here for the first time, there won’t be any, so create one. 
 
 ### Creating a Kaleo Process [](id=creating-a-kaleo-process)
 
 Click the *Add* (![Add](../../../images-dxp/icon-add.png)) button to open the
-*New Process Wizard*. In this first step, name the process *Spa rder Process*, add a
-description, and then click *Next*.
+*New Process Wizard* and begin the first step in creating a Kaleo Process. Name
+the process *Spa Order Process*, add a description, and then click *Next*.
 
 ![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../../images-dxp/kaleo-forms-add.png)
 
 ### Creating the Form [](id=creating-the-form)
 
 In the second step of the New Process Wizard, define the fields that can appear
-in your forms. There are two methods:
+in your process's forms. There are two methods:
 
 1.  Choose a predefined field set. To use a field set that already exists, pick
     one from the list of field sets by clicking the Kebab menu
@@ -113,7 +106,7 @@ in your forms. There are two methods:
 Click *Next* to move on to the next step in the wizard: adding a workflow for
 the process.
 
-![Figure 2: In the second step of the New Process Wizard, you define and choose the fields for your form.](../../../images-dxp/kaleo-forms-fields.png)
+![Figure 2: In the second step of the New Process Wizard, define and choose the fields for your form.](../../../images-dxp/kaleo-forms-fields.png)
 
 ### Choosing a Workflow [](id=choosing-a-workflow)
 
@@ -132,15 +125,12 @@ started.
 
 - For the Spa Order Process, make a new workflow definition called *Spa Order
     Workflow*:
-     ![Figure x: The Room Request process has two review processes that happen
-     in parallel.](../../../images/kaleo-forms-room-request-definition.png)
+     ![Figure x: The Spa Order Process has three tasks that happen sequentially.](../../../images-dxp/kaleo-forms-spa-order-definition.png)
 
 The definition has a StartNode and three task nodes. Develop it in the graphical
 designer built into Kaleo Forms Admin. There's a more detailed write-up of the
 Kaleo Designer [here](/discover/portal/-/knowledge_base/7-0/kaleo-designer) if
 you're not already familiar with it. 
-
-![Figure 3: You can create new workflow definitions directly in the Kaleo Forms user interface.](../../../images-dxp/kaleo-forms-designer.png)
 
 This workflow exhibits simple linear processing, so that the initial form is
 filled out (in the StartNode) and then the workflow moves to the first task
@@ -149,9 +139,9 @@ to the final order task.
 
 The task assignments of this workflow are as follows:
 
-Technician Claim: Assigned to the Spa Technician Role.
-Managerial Approval: Assigned to the Spa Manager Role.
-Final Order: Assigned to the Asset Creator.
+- Technician Claim: Assigned to the Spa Technician Role.
+- Managerial Approval: Assigned to the Spa Manager Role.
+- Final Order: Assigned to the Asset Creator.
 
 +$$$
 
@@ -175,12 +165,21 @@ click *Next*.
 
 In the fourth (and final) step of the New Process wizard, assign a form to each
 task in the workflow definition (and to the StartNode to get the process kicked
-off)). All forms you work with here will be either the entire field set you
-defined in step two, or a subset of it. You can't add any fields that accept
-user input in this step, but there are three elements you can still add to the
-existing form to enhance it's usability:
+off). All forms you work with here will be either the entire field set you
+defined in step two, or a subset of it. 
 
-1. Add a a *Fieldset* to provide headings in a form. For example, name it
++$$$
+
+**Note:** In this step, you can't add any proper form field (fields that accept
+user input) in this step. If you forgot to add a Select field to the field set
+in step two, for example, you cannot add one here. Instead, go back and add it
+to the field set.
+
+While you can't add form fields, you can configure the existing fields
+differently for each form, and you can add elements to the form that enhance
+it's usability:
+
+1. Add a *Fieldset* to provide headings in a form. For example, name it
    after the workflow task to provide clarity to the task assignee.
 2. Add a *Paragraph* field to add a block of text to the form. For example,
    provide instructions to the assignee about what's expected of them to complete
@@ -190,6 +189,8 @@ existing form to enhance it's usability:
    certain section of the form.
 
 ![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../../images-dxp/kaleo-forms-field-types.png)
+
+$$$
 
 For review, the Spa Order Process has these fields:
 
@@ -241,8 +242,6 @@ over it and clicking the wrench icon.
 
 $$$
 
-![Figure 7: You can configure the form fields added to your task forms.](../../../images-dxp/kaleo-forms-field-settings.png)
-
 If you don’t need to change any field settings in the form, click *Save*. On the
 next screen choose your new form from the *Actions* button next to it. 
 
@@ -266,19 +265,6 @@ Create a form to be used in the Managerial Approval task, called *Spa Order
 Process--Managerial Approval Form*. The manager can change anything they want
 about the order, so include the entire field set in the form.
 
-<!-- Available Fields: Should we use the full set of fields?
-- Customer Name
-- Requested Spa Technician
-- Services Requested 
-- Returning Customer?
-- Preferred Date
-- Preferred Time
-- Available Date
-- Available Time
-- Approved
-- Managerial Comments
--->
-
 +$$$
 
 **Example Use Case note:** The customer service representative finalizes the
@@ -288,8 +274,8 @@ of technician, and confirms the services they want).
 $$$
 
 There's one more form to create: the *Spa Order Process--Final Order Form*. Like
-the last form, it should have all the fields of the form.
-
+the last form, it should have all the fields of the form so that the customer
+service representative can review the order with the customer.
 
 ![Figure 8: Once created, your process is listed in Kaleo Forms Admin.](../../../images-dxp/kaleo-forms-processes.png)
 
@@ -300,7 +286,7 @@ Click Save when finished. The process is ready to test.
 Once your new process is developed, add records to it by clicking on the process
 name, and then the Plus button (![Add](../../../images-dxp/icon-add.png)).
 
-![Figure 9: Add a record to your new process.](../../../images-dxp/kaleo-forms-admin.png)
+<!--![Figure 9: Add a record to your new process.](../../../images-dxp/kaleo-forms-admin.png) -->
 
 The application displays the form you assigned to the workflow's initial state.
 Fill out the form and click Save.
