@@ -8,7 +8,7 @@ tutorial. Once you have your asset added to the framework, @product@ can
 render the asset by default using the Asset Publisher application. The default
 rendering process @product@ provides, however, only displays the asset's title
 and description text. Any further rendering of your asset requires additional
-setup. For instance, you might want these additional things:
+coding. For instance, you might want these additional things:
 
 - An edit feature for modifying an asset.
 - Viewing an asset in its original context (e.g., a blog
@@ -20,9 +20,9 @@ setup. For instance, you might want these additional things:
 
 Liferay lets you dictate your asset's rendering capabilities by providing the
 *Asset Renderer* framework. Implementing an asset renderer for an existing asset
-is easy because Liferay offers applicable interfaces and factories to help get
-your custom asset rendering implemented fast. There are two things you'll need
-to do to get your asset renderer functioning properly for your asset:
+is easy because Liferay offers interfaces and factories to help get your custom
+asset rendering implemented fast. There are two things you must do to get your
+asset renderer functioning properly for your asset:
 
 - Create an asset renderer for your custom asset.
 - Create an asset renderer factory to create an instance of the asset renderer
