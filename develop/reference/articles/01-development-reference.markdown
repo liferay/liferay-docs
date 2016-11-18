@@ -22,7 +22,7 @@ Liferay's reference docs are at your fingertips.
 
 Here you'll find Javadoc for Liferay Portal core and Liferay Portal apps.
 
-### Liferay Portal Core Java APIs
+### Liferay Portal Core Java APIs [](id=liferay-portal-core-java-apis)
 
 <style>
 table, th, td {
@@ -41,20 +41,20 @@ caption {
   <caption>
     This table links you to the Liferay Portal core API modules. Their
     root location is  
-    <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/" target="_blank">
-    here<span class="opens-new-window-accessible"> (Opens New Window) </span>
-    </a>. The 
+    <a href="@platform-ref@/7.0-latest/javadocs/" target="_blank">
+    here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    </a> The 
     reference doc JAR is available  
-    <a href="https://docs.liferay.com/ce/portal/7.0-latest/" target="_blank">
-    here<span class="opens-new-window-accessible"> (Opens New Window) </span>
-    </a>.
+    <a href="@platform-ref@/7.0-latest/" target="_blank">
+    here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    </a>
     <br>
   </caption>
 
   <tr>
     <th rowspan="5">Core:</th>
     <td>
-	<a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/index.html" target="_blank">
+	<a href="@platform-ref@/7.0-latest/javadocs/portal-kernel/index.html" target="_blank">
 	com.liferay.portal.kernel (portal-kernel):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for developing applications on the Liferay platform
     </td>
@@ -62,7 +62,7 @@ caption {
 
   <tr>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/util-bridges/index.html" target="_blank">
+       <a href="@platform-ref@/7.0-latest/javadocs/util-bridges/index.html" target="_blank">
 	com.liferay.util.bridges (util-bridges):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using various non-proprietary computing languages, frameworks, and utilities
        on the Liferay platform
@@ -71,7 +71,7 @@ caption {
 
   <tr>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/util-java/index.html" target="_blank">
+       <a href="@platform-ref@/7.0-latest/javadocs/util-java/index.html" target="_blank">
 	com.liferay.util.java (util-java):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using various Java-related frameworks and utilities on the Liferay platform
     </td>
@@ -79,7 +79,7 @@ caption {
 
   <tr>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/util-slf4j/index.html" target="_blank">
+       <a href="@platform-ref@/7.0-latest/javadocs/util-slf4j/index.html" target="_blank">
 	com.liferay.util.slf4j (util-slf4j):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using the Simple Logging Facade for Java (SLF4J)
     </td>
@@ -87,7 +87,7 @@ caption {
 
   <tr>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-impl/index.html" target="_blank">
+       <a href="@platform-ref@/7.0-latest/javadocs/portal-impl/index.html" target="_blank">
 	com.liferay.portal.impl (portal-impl):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;refer to this only if you are an advanced Liferay developer that needs a deeper
        understanding of Liferay Portal's implementation in order to contribute to it
@@ -96,7 +96,7 @@ caption {
 
 </table>
 
-### Liferay Portal App Java APIs
+### Liferay Portal App Java APIs [](id=liferay-portal-app-java-apis)
 
 <style>
 table, th, td {
@@ -114,19 +114,19 @@ caption {
 <table style="width:100%">
   <caption>
     This table links you to the Liferay Portal application APIs. Their root location is 
-    <a href="https://docs.liferay.com/ce/apps/" target="_blank">
-    here<span class="opens-new-window-accessible"> (Opens New Window) </span>
-    </a>.
+    <a href="@app-ref@" target="_blank">
+    here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    </a>
     <br>
   </caption>
 
   <tr>
     <th rowspan="17">
-      <a href="https://docs.liferay.com/ce/apps/collaboration/latest/javadocs/" target="_blank">
+      <a href="@app-ref@/collaboration/latest/javadocs/" target="_blank">
       Collaboration<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
       <br>
-      <a href="https://docs.liferay.com/ce/apps/collaboration/latest/" target="_blank">
+      <a href="@app-ref@/collaboration/latest/" target="_blank">
        (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
@@ -217,11 +217,11 @@ caption {
 
   <tr>
     <th rowspan="9">
-      <a href="https://docs.liferay.com/ce/apps/forms-and-workflow/latest/javadocs/" target="_blank">
+      <a href="@app-ref@/forms-and-workflow/latest/javadocs/" target="_blank">
       Forms &amp; Workflow<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
       <br>
-      <a href="https://docs.liferay.com/ce/apps/forms-and-workflow/latest/" target="_blank">
+      <a href="@app-ref@/forms-and-workflow/latest/" target="_blank">
        (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
@@ -268,11 +268,11 @@ caption {
 
   <tr>
     <th rowspan="17">
-      <a href="https://docs.liferay.com/ce/apps/foundation/latest/javadocs/" target="_blank">
+      <a href="@app-ref@/foundation/latest/javadocs/" target="_blank">
       Foundation<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
       <br>
-      <a href="https://docs.liferay.com/ce/apps/foundation/latest/" target="_blank">
+      <a href="@app-ref@/foundation/latest/" target="_blank">
        (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
@@ -364,11 +364,11 @@ caption {
 
   <tr>
     <th rowspan="13">
-      <a href="https://docs.liferay.com/ce/apps/web-experience/latest/javadocs/" target="_blank">
+      <a href="@app-ref@/web-experience/latest/javadocs/" target="_blank">
       Web Experience<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
       <br>
-      <a href="https://docs.liferay.com/ce/apps/web-experience/latest/" target="_blank">
+      <a href="@app-ref@/web-experience/latest/" target="_blank">
        (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
@@ -447,7 +447,7 @@ Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
 Here you'll find tag library documentation for the Liferay Portal core, Liferay Portal
 apps, and Liferay Faces. 
 
-### Liferay Portal Core Taglibs
+### Liferay Portal Core Taglibs [](id=liferay-portal-core-taglibs)
 
 <style>
 table, th, td {
@@ -470,7 +470,7 @@ caption {
 
   <tr>
     <th rowspan="7">
-    <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/util-taglib/">
+    <a href="@platform-ref@/7.0-latest/taglibs/util-taglib/">
     Util Taglibs<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>
     </th>
@@ -510,7 +510,7 @@ caption {
   </tr>
 </table>
 
-### Liferay Portal App Taglibs
+### Liferay Portal App Taglibs [](id=liferay-portal-app-taglibs)
 
 <style>
 table, th, td {
