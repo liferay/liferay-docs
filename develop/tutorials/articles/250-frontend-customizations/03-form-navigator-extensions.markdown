@@ -77,8 +77,7 @@ Let's set up a component portlet project to support form navigation.
 
 First, your component portlet must be implemented as an OSGi bundle. You
 can develop it in any environment that supports creating a bundle. Please refer
-to the @product-ver@ tutorial section
-[Understanding Liferay's Module Framework](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+to the @product-ver@ tutorial section [Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
 to learn about development environments. The Form Nav Extension portlet
 was created with BLADE based on the `blade.portlet.jsp` template. This is also
 covered in the tutorial section linked above.
