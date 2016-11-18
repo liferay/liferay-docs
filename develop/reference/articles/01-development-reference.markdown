@@ -1,6 +1,6 @@
 # Development Reference [](id=development-reference)
 
-Here you'll find reference documentation for Liferay Portal, Liferay Screens, Liferay
+Here you'll find reference documentation for @product@, Liferay Screens, Liferay
 Faces, and technologies related to you as a third-party developer.
 
 The different types of reference docs you'll find in this section of the Liferay
@@ -20,9 +20,9 @@ Liferay's reference docs are at your fingertips.
 
 ## Java APIs [](id=java-apis)
 
-Here you'll find Javadoc for Liferay Portal core and Liferay Portal apps.
+Here you'll find Javadoc for @product-ver@ and @product@ apps.
 
-### Liferay Portal Core Java APIs [](id=liferay-portal-core-java-apis)
+### @product-ver@ Java APIs [](id=liferay-portal-core-java-apis)
 
 <style>
 table, th, td {
@@ -39,7 +39,7 @@ caption {
 </style>
 <table style="width:100%">
   <caption>
-    This table links you to the Liferay Portal core API modules. Their
+    This table links you to the @product-ver@ API modules. Their
     root location is  
     <a href="@platform-ref@/7.0-latest/javadocs/" target="_blank">
     here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
@@ -56,7 +56,7 @@ caption {
     <td>
 	<a href="@platform-ref@/7.0-latest/javadocs/portal-kernel/index.html" target="_blank">
 	com.liferay.portal.kernel (portal-kernel):<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>&nbsp;for developing applications on the Liferay platform
+	</a>&nbsp;for developing applications on @product@
     </td>
   </tr>
 
@@ -65,7 +65,7 @@ caption {
        <a href="@platform-ref@/7.0-latest/javadocs/util-bridges/index.html" target="_blank">
 	com.liferay.util.bridges (util-bridges):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using various non-proprietary computing languages, frameworks, and utilities
-       on the Liferay platform
+       on @product@
     </td>
   </tr>
 
@@ -73,7 +73,7 @@ caption {
     <td>
        <a href="@platform-ref@/7.0-latest/javadocs/util-java/index.html" target="_blank">
 	com.liferay.util.java (util-java):<span class="opens-new-window-accessible"> (Opens New Window) </span>
-	</a>&nbsp;for using various Java-related frameworks and utilities on the Liferay platform
+	</a>&nbsp;for using various Java-related frameworks and utilities on @product@
     </td>
   </tr>
 
@@ -90,13 +90,13 @@ caption {
        <a href="@platform-ref@/7.0-latest/javadocs/portal-impl/index.html" target="_blank">
 	com.liferay.portal.impl (portal-impl):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;refer to this only if you are an advanced Liferay developer that needs a deeper
-       understanding of Liferay Portal's implementation in order to contribute to it
+       understanding of @product-ver@'s implementation in order to contribute to it
     </td>
   </tr>
 
 </table>
 
-### Liferay Portal App Java APIs [](id=liferay-portal-app-java-apis)
+### @product@ App Java APIs [](id=liferay-portal-app-java-apis)
 
 <style>
 table, th, td {
@@ -113,7 +113,7 @@ caption {
 </style>
 <table style="width:100%">
   <caption>
-    This table links you to the Liferay Portal application APIs. Their root location is 
+    This table links you to @product@ application APIs. Their root location is 
     <a href="@app-ref@" target="_blank">
     here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>
@@ -439,15 +439,15 @@ caption {
        
 </table>
 
-For help finding API modules for specific common classes, see [Liferay Portal API
+For help finding API modules for specific common classes, see [@product-ver@ API
 Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
 
 ## Taglibs [](id=taglibs)
 
-Here you'll find tag library documentation for the Liferay Portal core, Liferay Portal
+Here you'll find tag library documentation for the @product-ver@, @product@
 apps, and Liferay Faces. 
 
-### Liferay Portal Core Taglibs [](id=liferay-portal-core-taglibs)
+### @product-ver@ Taglibs [](id=liferay-portal-core-taglibs)
 
 <style>
 table, th, td {
@@ -510,7 +510,7 @@ caption {
   </tr>
 </table>
 
-### Liferay Portal App Taglibs [](id=liferay-portal-app-taglibs)
+### @product@ App Taglibs [](id=liferay-portal-app-taglibs)
 
 <style>
 table, th, td {
@@ -659,4 +659,4 @@ JavaScript APIs are available within portlets, templates and themes.
 ## Descriptor Definitions [](id=descriptor-definitions)
 
 [**DTDs**](http://docs.liferay.com/ce/portal/7.0-latest/definitions/): Describes the XML
-files used in configuring Liferay Portal apps, Liferay Portal plugins, and the Liferay Portal core.
+files used in configuring @product@ apps, @product@ plugins, and @product-ver@.
