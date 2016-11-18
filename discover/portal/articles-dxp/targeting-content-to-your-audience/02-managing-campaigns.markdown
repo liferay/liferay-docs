@@ -113,15 +113,26 @@ as OSGI plugins. See the
 [Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/tracking-user-actions-with-audience-targeting)
 tutorial for details.
 
-The metrics use an analytics engine called *Audience Targeting
-Analytics* that can be configured per site or per portal instance. To configure
-the analytics engine per site, go to Site Administration and click
-*Configuration* &rarr; *Site Settings* &rarr; *Advanced* &rarr; *Audience
-Targeting Analytics*. To configure it per portal instance, go to *Control Panel*
-&rarr; *Configuration* &rarr; *Instance Settings* &rarr; *Audience Targeting
-Analytics*. Tracking all the actions of all your users (even guest users) can be
-a very heavy load for your server. Therefore, it's best to disable the tracking
-of any actions about which you don't need information.
+The metrics use an analytics engine called *Audience Targeting Analytics* that
+can be configured per site or per portal instance. To configure the analytics
+engine per site, go to Site Administration and click *Configuration* &rarr;
+*Site Settings* &rarr; *Advanced* &rarr; *Audience Targeting Analytics*. To
+configure it per portal instance, go to *Control Panel* &rarr; *Configuration*
+&rarr; *Instance Settings* &rarr; *Audience Targeting Analytics*.
+
+Tracking all the actions of all your users (even guest users) can be a very
+heavy load for your server. Therefore, it's best to disable the tracking of any
+actions about which you don't need information. For example, Audience Targeting,
+by default, stores anonymous users' behavior analytics. This stores a large
+amount of data to the database. If you're not interested in tracking anonymous
+users, you can turn that functionality off for your @product@ installation by
+disabling the *Anonymous Users* selector.
+
+![Figure 4: There's no need to track anonymous users if you're not interested in their behavior.](../../images-dxp/anonymous-users-analytics.png)
+
+Disabling analytics for certain entities means you'll have no way to track them
+using Audience Targeting. Carefully manage analytics to optimize your Audience
+Targeting experience.
 
 ## Campaign Reports [](id=campaign-reports)
 
@@ -140,7 +151,7 @@ Display applications around your website to display content for a campaign, the
 Content View report for the campaign would show how many times that content was
 interacted with by different users.
 
-![Figure 4: You can build your own custom campaign report to fit your needs.](../../images-dxp/audience-targeting-report-builder.png)
+![Figure 5: You can build your own custom campaign report to fit your needs.](../../images-dxp/audience-targeting-report-builder.png)
 
 You can track many other user actions by creating a custom report. You can drag
 and drop different kinds of metrics to track for your campaign, which shows the
@@ -162,7 +173,7 @@ registration form, etc. This information helps you measure the effectiveness of
 your campaign. You can use this information to evaluate whether or not the users
 are following the engagement path you had prepared.
 
-![Figure 5: This campaign report displays several event types for content in the campaign.](../../images-dxp/audience-targeting-campaign-report.png)
+![Figure 6: This campaign report displays several event types for content in the campaign.](../../images-dxp/audience-targeting-campaign-report.png)
 
 The metrics you apply to a report can be tracked in several different ways. For
 instance, if you added the *YouTube Videos* metric to your report, you have
