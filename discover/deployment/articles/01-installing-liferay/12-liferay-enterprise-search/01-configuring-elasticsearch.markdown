@@ -9,12 +9,12 @@ By default, Liferay runs Elasticsearch as an embedded search engine, but it's
 only supported in production locally or remotely, as a separate server or
 cluster. This guide walks you through that process.
 
-If you'd rather use Solr, it's also supported. See [here](LINK) for information
+If you'd rather use Solr, it's also supported. See [here](/discover/deployment/-/knowledge_base/7-0/using-solr) for information
 on installing and configuring Solr.
 
 If you just want to get up and running quickly with Elasticsearch, refer to the
 [Configuring Search
-article](discover/deployment/-/knowledge_base/7-0/configuring-search). It
+article](/discover/deployment/-/knowledge_base/7-0/configuring-search). It
 assumes that you only want to know what's necessary for the installation and
 configuration of Elasticsearch in a single server environment, and it doesn't
 include all the clustering and tuning instructions found here.In this article
@@ -220,12 +220,12 @@ configuration file:
 As you can see from the System Settings entry for Elasticsearch, there are a lot
 more configuration options available that help you tune your system for optimal
 performance. For a detailed accounting of these, refer to the reference article
-on [Elasticsearch Settings](discover/reference/-/knowledge_base/7-0/elastic-search-setttings).
+on [Elasticsearch Settings](/discover/reference/-/knowledge_base/7-0/elastic-search-setttings).
 
 What follows here are some known-good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
-[settings](/discover/reference/-/knowledge_base/7-0/elastic-search-settings) as
+[settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) as
 well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/setup-configuration.html#settings) 
 and go through that process once you have a working configuration. 
 
@@ -261,7 +261,7 @@ Elasticsearch adapter in Liferay.
 
 ### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
 
-Liferay has divided the [available configuration options](discover/reference/-/knowledge_base/7-0/elasticsearch-setttings) 
+Liferay has divided the [available configuration options](/discover/reference/-/knowledge_base/7-0/elasticsearch-setttings) 
 into two groups: the ones you'll use most often by default, and a catch-all for
 everything else. If you need to configure the local Elasticsearch client when
 running in remote mode, but the necessary setting isn't available by default,
@@ -280,7 +280,7 @@ in remote mode. In production, only one additional configuration can be added he
 
 The rest of the settings for the client are available as default configuration
 options in the Liferay Elasticsearch adapter. See the [Elasticsearch
-Settings](discover/reference/-/knowledge_base/7-0/elasticsearch-setttings)
+Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-setttings)
 reference article for more information. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
 for a description of all the client settings and for an example.
@@ -366,7 +366,7 @@ continues to look for Elasticsearch at the default port (`9300`).
 
 Now that you have Elasticsearch configured for use with Liferay, if you're a DXP
 customer, you can read
-[here](discover/deployment/-/knowledge_base/7-0/shield) to learn about
+[here](/discover/deployment/-/knowledge_base/7-0/shield) to learn about
 configuring Shield to secure your Elasticsearch data. 
 
 ## Related Topics [](id=related-topics)

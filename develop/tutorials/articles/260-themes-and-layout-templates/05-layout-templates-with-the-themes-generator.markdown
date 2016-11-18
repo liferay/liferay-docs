@@ -126,5 +126,3 @@ Edit a page on your site and select your new layout template to use it.
 [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
 
 [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-
-[Modifying Layout Templates](/develop/tutorials/-/knowledge_base/7-0/layout-templates)

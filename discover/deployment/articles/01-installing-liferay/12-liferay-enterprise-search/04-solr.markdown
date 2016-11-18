@@ -260,6 +260,15 @@ Liferay's Solr adapter.
 
 2. Start Liferay if it's not running already.
 
++$$$
+
+**Note:** For a complete list of settings available in the Solr adapter, see the
+[Solr Settings reference
+article](/discover/reference/-/knowledge_base/7-0/solr-settings).
+
+$$$
+
+
 Now you're able to configure Liferay for Solr, and Solr for Liferay. Remember
 that Elasticsearch is the default search engine for Liferay, so if you're not
 constrained to use Solr or already a Solr expert, consider Elasticsearch for you
