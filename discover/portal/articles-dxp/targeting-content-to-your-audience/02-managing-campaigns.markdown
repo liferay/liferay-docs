@@ -135,7 +135,7 @@ Analytics*. The following analytics options are available:
 - Links
 - YouTube Videos
 
-Tracking all the actions of all your users (even guest users) can be a very
+Tracking all the actions of all your users (even guest users) can be a
 heavy load for your server. Therefore, it's best to disable the tracking of any
 actions about which you don't need information. For example, Audience Targeting,
 by default, stores anonymous users' behavior analytics. This stores a large
@@ -145,12 +145,12 @@ disabling the *Anonymous Users* selector.
 
 ![Figure 4: There's no need to track anonymous users if you're not interested in their behavior.](../../images-dxp/anonymous-users-analytics.png)
 
-Disabling analytics for certain entities means you'll have no way to track them
-using Audience Targeting. Carefully manage analytics to optimize your Audience
+Disabling analytics for certain entities means you won't track them using
+Audience Targeting. Carefully manage analytics to optimize your Audience
 Targeting experience.
 
 You can also store your analytics data in a separate database schema, which can
-help sluggish performance. To separate the storage of analytics data from
+improve sluggish performance. To separate the storage of analytics data from
 Liferay's database schema, navigate to the Control Panel &rarr; *Configuration*
 &rarr; *System Settings* &rarr; *Web Experience* and select *Audience Targeting
 Analytics Storage*. Fill out the external storage fields to point to your
