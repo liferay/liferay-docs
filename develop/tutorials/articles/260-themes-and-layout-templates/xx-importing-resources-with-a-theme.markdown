@@ -388,7 +388,7 @@ specifying their portlet IDs, which can be found in the App Manager of the
 Control Panel. Select the suite that the App is located in, click the App, click
 the App web link, and open the *Portlets* tab that appears. The portlet ID is 
 displayed below the name of the App. You can find a full list of the default 
-portlet IDs for Liferay in the [Portlet ID Quick Reference Guide](/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide). 
+portlet IDs for Liferay in the [Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide). 
 You can also specify portlet preferences for each portlet.
 
 +$$$

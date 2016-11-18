@@ -6,7 +6,7 @@ heavily regulated industry. For these applications, you need an easy way to
 section off your forms into easily navigable groups. 
 
 Since @product-ver@, the
-[Form Navigator](/participate/liferaypedia/-/wiki/Main/Form+Navigator) framework
+[Form Navigator](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Form+Navigator) framework
 enables you to add new sections and section categories dynamically to existing
 form navigation. The framework includes a well-described API and a powerful
 [`liferay-ui`](http://docs.liferay.com/portal/7.0/taglibs/liferay-ui)

@@ -2,7 +2,7 @@
 
 Have you ever wanted to include another user in a discussion on the Message
 Boards? Have you ever wanted to give kudos to a colleague in content you're
-writing? With the Mentions feature, you can [*mention*](/participate/liferaypedia/-/wiki/Main/Mentions)
+writing? With the Mentions feature, you can [*mention*](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Mentions)
 (notify and/or draw attention to) other users, by entering the "@" character in
 front of each user's user name. 
 

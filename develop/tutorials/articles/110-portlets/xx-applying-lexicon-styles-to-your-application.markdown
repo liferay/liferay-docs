@@ -2,7 +2,7 @@
 
 It's important to have a consistent user experience across your apps. Liferay's
 built-in apps achieve this by using the
-[Lexicon Experience Language](/participate/liferaypedia/-/wiki/Main/Lexicon).
+[Lexicon Experience Language](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Lexicon).
 Lexicon is optimized to provide you with a consistent, user-friendly UI for your
 Liferay apps.
 

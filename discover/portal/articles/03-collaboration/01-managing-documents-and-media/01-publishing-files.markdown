@@ -110,8 +110,8 @@ learn how to add access to them.
 default document type, "Basic Document," to apply to. By default, basic
 documents are not described by any metadata sets.
 
-The remaining items in the Add menu are default [document types](/participate/liferaypedia/-/wiki/Main/document+types)
-that are each described by a unique [metadata set](/participate/liferaypedia/-/wiki/Main/Metadata+Set).
+The remaining items in the Add menu are default [document types](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/document+types)
+that are each described by a unique [metadata set](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Metadata+Set).
 When you add a document belonging to a specific document type, you're presented
 with a form to not only specify the file to upload but also to fill out the
 fields defined by the document type's metadata set. We describe the "Contract"
@@ -567,7 +567,7 @@ The Setup tab's Display Settings section provides checkboxes to enable showing e
 actions, gallery navigation links (for paging through media files), and a search
 field. File search is enabled by default. The Media Type selector lets you
 filter on media file types; all supported types are filtered on by default. And
-the Media Gallery uses a [Display Template](/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
+the Media Gallery uses a [Display Template](/https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
 You can create your own Display Templates for the Media Gallery or select an
 existing display template, like the *Carousel* display template. **Important**:
 To access the Carousel display template in Media Gallery, your role must have
