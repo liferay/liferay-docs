@@ -31,7 +31,7 @@ to their *edit* forms. Here's the complete list:
 
 **Developer Use Case:** Adding custom fields to @product@ resources affords
 flexibility to developers. Suppose you must limit the number of users
-that can be assigned to a particular role. An administrator creates a custom
+that can be assigned to a particular role. First an administrator creates a custom
 field called *max-users* for the role. A developer then creates a module that
 inserts logic before a user is added to that role. If their logic detects that
 the maximum number of role users would be exceeded by completing the action, an
@@ -42,13 +42,14 @@ Developers can access your custom fields programmatically using the
 
 For more information on developing modules for @product@, see the [developer
 documentation](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development).
+<!-- Add link to expando tutorial when written -->
 
 $$$
 
 ## Adding Custom Fields [](id=adding-custom-fields)
 
-To add custom fields, find the Custom Fields entry beneath the Configuration
-heading of the Control Panel.
+To add custom fields, find the Custom Fields entry beneath the Control Panel's
+Configuration heading.
 
 To add a custom field to one of the listed entities, 
 
@@ -61,7 +62,7 @@ To add a custom field to one of the listed entities,
     +$$$
 
     **Note:** The Key you enter here is the name of the new field. It's stored
-    in the database and used to access the custom field with the
+    in the database and used by developers to access the custom field with the
     `<liferay-ui:custom-attribute />` tag.
 
     $$$
@@ -111,9 +112,8 @@ To add a custom field to one of the listed entities,
 That's it.
 
 Once you have a custom field for a resource, go find it in the UI of the
-resource. Find the UI location for the resource, and the custom field is in a
-Custom Fields panel that you can open to see your custom field(s). For example,
-consider the Users UI:
+resource. First find the UI location for the resource, and all its custom fields
+are dsipalyed in a Custom Fields panel. For example, consider the Users UI:
 
 - For Users, navigate to *Control Panel &rarr; Users and Organizations*. Once
     there click on a User to open the Edit User form. Open the form's
