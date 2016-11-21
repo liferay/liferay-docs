@@ -30,27 +30,18 @@ asset renderer functioning properly for your asset:
 
 ![Figure 1: The asset renderer factory creates an asset renderer for each asset instance.](../../images/asset-renderer-diagram.png)
 
-Methods implemented in the asset renderer and asset renderer factory are used in
-slightly different ways. Methods implemented in an asset renderer are applied
-on the entity level, whereas the asset renderer factory applies them globally.
-For example, the asset renderer and the factory classes have differing
-methods that produce buttons. Why is this? Consider a user wants to edit the
-*Lunar Resort* blog. The user will only have access to that blog's Edit button
-if they have permissions to edit it. Therefore, the edit button is displayed
-based on the asset entity, and is implemented in the asset renderer class. The
-Add button doesn't depend on an entity instance, but is provided globally for
-all blogs assets. Because of this, the method to add a blog is implemented in
-the factory class.
-
 You'll learn how to create an asset renderer and an asset renderer factory by
 studying a Liferay asset that already uses both by default: Blogs. The Blogs
 application offers many different ways to access and render a blogs asset.
-You'll learn how a blogs asset provides an edit feature, comment
-section, original context viewing (i.e., viewing an asset from the Blogs
-application), workflow, etc. You'll also learn how it uses JSP templates to
-display various blog views. The Blogs application is an extensive example of how
-an asset renderer can be customized to fit your needs. You can create a much
-simpler asset renderer for your asset, or you can customize it even further!
+You'll learn how a blogs asset provides an edit feature, comment section,
+original context viewing (i.e., viewing an asset from the Blogs application),
+workflow, etc. The Blogs application shows how to divide up logic between the
+asset renderer and asset renderer factory too. Global behavior is implemented in
+the factory whereas entity specific logic is delegated to the asset renderer.
+You'll also learn how it uses JSP templates to display various blog views. The
+Blogs application is an extensive example of how an asset renderer can be
+customized to fit your needs. You can create a much simpler asset renderer for
+your asset, or you can customize it even further!
 
 If you want to create an asset and give it the ability to do more than display
 its title and description, read on to learn more!
@@ -151,8 +142,8 @@ class, which configures the asset renderer framework for the Blogs application.
     point out. The `getAssetObject()` method is setting the `BlogsEntry` that
     was set in the constructor as your asset to track. Likewise, the `getType()`
     method references the blogs asset renderer factory for the type of asset
-    your asset renderer will work with. Of course, the asset renderer type will
-    be `blog`, which you'll set in the factory later. This type is important
+    your asset renderer will work with. Of course, the asset renderer type is
+    `blog`, which you'll set in the factory later. This type is important
     because it's called in CSS files (among others) to style a blog asset's UI.
 
 5.  Your asset renderer must link to the portlet that owns the entity. In the
@@ -169,8 +160,7 @@ class, which configures the asset renderer framework for the Blogs application.
 
     The `getPortletId()` method instantiates an asset renderer factory for a
     `BlogsEntry` and retrieves the portlet ID for the portlet used to display
-    blogs entries. A factory object is created for each entity instance, and
-    this method links the asset renderer with that specific entity instance.
+    blogs entries.
 
 6.  If you're interested in enabling workflow for your asset, add the following
     method similar to what was done for the Blogs application:
@@ -309,7 +299,9 @@ class, which configures the asset renderer framework for the Blogs application.
     distinguish the user. The `getUserId()` and `getUserName()` retrieves the
     entry's user ID and username, respectively. Then there are three boolean
     permission methods, which check if the user can view, edit, or delete your
-    blogs entry.
+    blogs entry. These permissions are for specific entity instances. Global
+    permissions for blog entries are implemented in the factory, which you'll do
+    later.
 
 Awesome! You've learned how to set up the blogs asset renderer to
 
@@ -566,8 +558,8 @@ renderer factory.
         - *selectable*: blogs can be selected when choosing assets to display in
           the Asset Publisher.
 
-    Setting the class name and portlet ID helps link the asset renderer factory
-    with the specific entity instance.
+    Setting the class name and portlet ID links the asset renderer factory to
+    the entity.
 
 4.  Retrieve the asset renderer that you created for your asset. This is done by
     creating an instance of the asset renderer by calling its constructor.
@@ -656,7 +648,7 @@ renderer factory.
  
         private ServletContext _servletContext;
 
-5.  Set the type of asset that the asset factory will associate with and provide
+5.  Set the type of asset that the asset factory associates with and provide
     a getter method to retrieve that type. Also, provide another getter to
     retrieve the blogs entry class name, which is required:
 
@@ -744,5 +736,5 @@ renderer factory.
         }
 
 Great! You've finished creating the Blogs application's asset renderer factory!
-Now you have the knowledge to implement an asset render for your asset, and
+Now you have the knowledge to implement an asset render for your asset and
 produce an asset renderer for each asset instance using a factory!
