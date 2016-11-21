@@ -7,20 +7,8 @@ the solution. Single Page Applications drastically cut down on load times,
 loading only a single HTML page that is dynamically updated as the user 
 interacts and navigates through the site. This provides a native-app experience 
 that users have grown accustomed to. Since Liferay Portal CE GA2 and Liferay DXP, 
-SPA is enabled by default, so you get all these features and more out-of-the-box 
-for your sites and apps!
-
-<!-- You say your app is SPA enabled by default. Does this include custom apps 
-that I create for Liferay? Or are there extra settings, code, etc. that I must 
-add for the app to take advantage of SPA and Senna features?
-
-If so, we should write a separate tutorial on Enabling SPA in your custom apps,
-and just leave this one about SPA configuration. Then I can move some of the
-info in this tutorial to a main intro article for a SPA section.
-
-thoughts?
-
--->
+SPA is enabled by default in your apps and sites, and requires no changes to
+your workflow or code!
 
 This tutorial covers these key topics:
 
