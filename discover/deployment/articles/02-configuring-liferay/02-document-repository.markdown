@@ -228,7 +228,7 @@ Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service. 
 
 There are properties related to document library stores that have been moved
-from `portal-ext.properties` to OSGI configuration files. The following mapping
+from `portal-ext.properties` to OSGi configuration files. The following mapping
 shows you how to configure those properties if needed:
 
 #### CMIS [](id=cmis)

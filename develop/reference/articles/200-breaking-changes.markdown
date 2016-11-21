@@ -2761,7 +2761,7 @@ should follow these steps:
 #### Why was this change made? [](id=why-was-this-change-made-70)
 
 The deleted methods provided facilities that aren't compatible with using
-declarative services in an OSGI container. The new approach allows for proper
+declarative services in an OSGi container. The new approach allows for proper
 injection of dependencies into scheduled event message listeners.
 
 ---------------------------------------
@@ -4122,7 +4122,7 @@ addition, this change avoids future security issues from outdated flash movies.
 
 #### What changed? [](id=what-changed-103)
 
-All Journal portlet properties have been moved to an OSGI configuration.
+All Journal portlet properties have been moved to an OSGi configuration.
 
 #### Who is affected? [](id=who-is-affected-103)
 

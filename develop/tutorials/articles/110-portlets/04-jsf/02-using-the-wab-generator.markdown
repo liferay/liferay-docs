@@ -1,6 +1,6 @@
 # Using the WAB Generator [](id=using-the-wab-generator)
 
-Developers creating applications for Liferay 7.0 can choose to create them as
+Developers creating applications for @product-ver@ can choose to create them as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
 OSGi bundle artifacts. Some portlet developers, however, don't have that
 flexibility. Portlets like Spring MVC and JSF must be packaged as WAR artifacts
@@ -10,7 +10,7 @@ layout and require Java EE resources such as the `WEB-INF/web.xml` descriptor.
 Liferay provides a way for these WAR-styled portlets to be deployed and treated
 like OSGi modules by Liferay's OSGi runtime. They can be converted to *WAB*s.
 
-Liferay 7.0 supports the OSGi Web Application Bundle (WAB) standard for
+@product-ver@ supports the OSGi Web Application Bundle (WAB) standard for
 deployment of Java EE style WARs. Simply put, a WAB is an archive that has a WAR
 layout and contains a `META-INF/MANIFEST.MF` file with the `Bundle-SymbolicName`
 OSGi directive. Although the source of the project has a WAR layout, the
