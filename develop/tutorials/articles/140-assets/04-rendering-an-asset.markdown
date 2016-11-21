@@ -1,4 +1,4 @@
-# Rendering an Asset
+# Rendering an Asset [](id=rendering-an-asset)
 
 There are several options you have for rendering an asset in @product@. Before
 setting up the rendering process for your asset, make sure it's added to the
@@ -46,7 +46,7 @@ your asset, or you can customize it even further!
 If you want to create an asset and give it the ability to do more than display
 its title and description, read on to learn more!
 
-## Creating an Asset Renderer
+## Creating an Asset Renderer [](id=creating-an-asset-renderer)
 
 An asset renderer, in simple terms, lets you provide your own HTML for your
 asset. Liferay provides the `AssetRenderer` interface that lets you get started
@@ -319,7 +319,7 @@ generate HTML using a templating technology. The `BlogsEntryAssetRenderer` is
 configured to use JSP templates to generate HTML for the Asset Publisher. You'll
 learn more about how to do this next.
 
-### Configuring JSP Templates for an Asset Renderer
+### Configuring JSP Templates for an Asset Renderer [](id=configuring-jsp-templates-for-an-asset-renderer)
 
 An asset can be displayed in several different ways in the Asset Publisher, by
 default. There are three templates to implement provided by the `AssetRenderer`
@@ -483,7 +483,7 @@ You've learned all about implementing the `AssetRenderer`'s provided templates
 and customizing them to fit your needs. Next, you'll put your asset renderer
 into action by creating a factory.
 
-## Creating a Factory for the Asset Renderer
+## Creating a Factory for the Asset Renderer [](id=creating-a-factory-for-the-asset-renderer)
 
 You've successfully created an asset renderer, but you'll need to create a
 factory class to create an asset renderer for each asset instance. For example,
