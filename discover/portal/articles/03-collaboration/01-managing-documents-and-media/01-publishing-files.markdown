@@ -516,7 +516,7 @@ image and saved to the document library.
 
 <!-- Add back in after developer tutorial has been written 
 
-Note that these tools are modularized, and are each their own OSGI module. This 
+Note that these tools are modularized, and are each their own OSGi module. This 
 modular design allows for developers to create their own custom tools and 
 filters.
 

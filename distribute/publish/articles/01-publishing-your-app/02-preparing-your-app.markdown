@@ -329,7 +329,7 @@ There are some additional requirements for uploading Liferay Digital Enterprise 
 
 - **OSGi modules in JAR (`.jar`) files**:
     - For more information, see 
-      [OSGI and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules). 
+      [OSGi and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules). 
     - The manifest file must at minimum contain the following manifest headers:
         - `Bundle-SymbolicName`: a unique name for the module
         - `Bundle-Version`: the module's version

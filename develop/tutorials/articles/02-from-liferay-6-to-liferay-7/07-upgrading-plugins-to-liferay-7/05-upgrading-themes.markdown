@@ -634,7 +634,7 @@ file:
 1.  Remove the `required-deployment-contexts` property.
 
     The plugin no longer needs this property as the resources importer is now an
-    [OSGI module](https://github.com/liferay/liferay-portal/tree/master/modules/apps/web-experience/export-import/export-import-resources-importer)
+    [OSGi module](https://github.com/liferay/liferay-portal/tree/master/modules/apps/web-experience/export-import/export-import-resources-importer)
     built-in and deployed with @product-ver@.
 
 2.  Since the group model class's fully-qualified class name has changed, replace the

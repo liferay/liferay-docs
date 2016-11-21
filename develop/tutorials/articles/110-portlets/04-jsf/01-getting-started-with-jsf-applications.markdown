@@ -11,7 +11,7 @@ how to package a JSF application as a module.
 
 ## Packaging a JSF Application [](id=packaging-a-jsf-application)
 
-Developers creating portlets for Liferay 7.0 can package their portlets as Java
+Developers creating portlets for @product-ver@ can package their portlets as Java
 EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR) OSGi
 bundle artifacts. JSF portlet developers, however, must package their portlets
 as WAR artifacts because the JSF framework expects a WAR layout and often

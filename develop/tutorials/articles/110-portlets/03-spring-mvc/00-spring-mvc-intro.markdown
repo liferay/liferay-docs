@@ -14,11 +14,11 @@ Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 for your service layer. 
 
 So what does it take to implement a Spring MVC application in Liferay? Start by
-considering how to package a Spring MVC application for Liferay 7.
+considering how to package a Spring MVC application for @product-ver@.
 
 ## Packaging a Spring MVC Portlet [](id=packaging-a-spring-mvc-portlet)
 
-Developers creating portlets for Liferay 7.0 can usually deploy their portlet as
+Developers creating portlets for @product-ver@ can usually deploy their portlet as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
 OSGi bundle artifacts. Spring MVC portlet developers don't have that
 flexibility. Spring MVC portlets must be packaged as WAR artifacts because the
@@ -27,7 +27,7 @@ and requires Java EE resources such as the `WEB-INF/web.xml` descriptor.
 
 Because Liferay supports the OSGi WAB standard for deployment, you can deploy
 your WAR and it will run as expected in the OSGi runtime. Here are the high
-points on why that works in Liferay 7:
+points on why that works in @product-ver@:
 
 -  The Liferay auto-deploy process runs, adding the `PortletServlet` and
 `PlugincontextListener` configurations to the `WEB-INF/web.xml` file.

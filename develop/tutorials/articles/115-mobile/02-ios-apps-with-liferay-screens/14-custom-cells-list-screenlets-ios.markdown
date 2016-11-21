@@ -1,160 +1,159 @@
 # Using Custom Cells with List Screenlets [](id=using-custom-cells-with-list-screenlets)
 
-Liferay Screens's Default theme uses the 
-[`UITableView` class](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/) 
-as a UI component for list Screenlets. Although this works fine for showing 
-simple lists of items, you may want to use custom cells to spruce things up a 
-bit or show more complex content in the list. 
+In most list Screenlets, including those that come with Liferay Screens, the 
+Default Theme uses the default cells in 
+[iOS’s `UITableView`](https://developer.apple.com/reference/uikit/uitableview) 
+to show the list. 
+[The Theme creation steps](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#creating-the-view) 
+in the list Screenlet creation tutorial also instruct you to use these cells. 
+You can, however, use custom cells to tailor the list to your needs. To do this, 
+you must 
+[create an extended Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+from a Theme that uses `UITableView`’s default cells. This usually means 
+extending a list Screenlet’s Default theme. This tutorial shows you how to 
+create such an extended Theme that contains a custom cell for your list 
+Screenlet. As an example, this tutorial uses code from the sample Bookmark List 
+Screenlet’s Custom Theme. You can refer to this Theme’s finished code 
+[here in GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet/Themes/TableView) 
+at any time. 
 
-To do this, you must 
-[create a custom theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
-that extends the Default theme of the list Screenlet you want to use. For 
-example, if you're using 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios), 
-create a child class in your theme that extends from the 
-[`AssetListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/AssetListScreenlet/AssetListView_default.swift). 
-You should call your class `AssetListView_mytheme`. If you're using 
-[Web Content List Screenlet](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-ios), 
-subclass the 
-[`WebContentListView_default` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Themes/Default/WebContent/ListScreenlet/WebContentListView_default.swift), 
-and name your class `WebContentListView_mytheme`. 
+Note that besides creating your custom cell, this tutorial follows the same 
+basic steps as the 
+[Theme creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
+for creating an extended Theme. For example, you must still 
+[determine where to create your Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#determining-your-themes-location), 
+and create your Theme’s XIB and View class. 
 
-Then create the XIB file for your custom cell. As usual, create this file and 
-its companion class, and create as many outlets and actions as you need. If you 
-want to use different layouts for different rows, create several XIB files and 
-companion classes. 
+First, you’ll create your Theme’s custom cell. 
 
-Now you're ready to implement your theme's functionality. In your 
-`*ListView_mytheme` class, override the following method to register your custom 
-cell:
+## Creating Your Custom Cell [](id=creating-your-custom-cell)
 
-    override public func doRegisterCellNibs() {
-        let customNib = UINib(nibName: "MyCellName", bundle: nil)
+Once you 
+[decide where to create your Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#determining-your-themes-location), 
+you can get started. First, create your custom cell's XIB file and its companion 
+class. Name them according to 
+[the naming conventions in the best practices tutorial](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#naming-conventions). 
+After defining your cell’s UI in the XIB, create as many outlets and actions as 
+you need in its companion class. Also be sure to assign this class as the XIB’s 
+custom class in Interface Builder. Note that if you want to use different 
+layouts for different rows, you must create an XIB file and companion class for 
+each. 
 
-        tableView?.registerNib(customNib, forCellReuseIdentifier: "myCellId")
+For example, the following screenshot shows the XIB file 
+`BookmarkCell_default-custom.xib` for Bookmark List Screenlet's custom cell. 
+This cell must show a bookmark's name and URL, so it contains two labels. 
 
-        // register other cells...
+![Figure 1: The XIB file for Bookmark List Screenlet’s custom cell.](../../../images/screens-ios-xcode-custom-cell.png)
+
+This XIB's custom class, `BookmarkCell_default_custom`, contains an outlet for 
+each label. The `bookmark` variable also contains a `didSet` observer that sets 
+the bookmark's name and URL to the respective label: 
+
+    import UIKit
+
+    class BookmarkCell_default_custom: UITableViewCell {
+
+        @IBOutlet weak var nameLabel: UILabel?
+        @IBOutlet weak var urlLabel: UILabel?
+
+        var bookmark: Bookmark? {
+            didSet {
+                nameLabel?.text = bookmark?.name
+                urlLabel?.text = bookmark?.url
+            }
+        }
+
     }
 
-To get the cell ID for each row, override the `doGetCellId` method. This 
-method's contents depend on your use case. For example, if you intend to use 
-your theme with Asset List Screenlet, the method could look like this: 
+Great! Now you have your custom cell. Next, you’ll create the rest of your 
+Theme. 
+
+## Creating Your Theme’s XIB and View Class [](id=creating-your-themes-xib-and-view-class)
+
+Now you're ready to create your Theme’s XIB file and View class. Create your XIB 
+by copying the parent Theme’s XIB and making any changes you need. You may not 
+need to make any changes besides the file name and custom class name. For 
+example, the custom cell is the only difference between Bookmark List 
+Screenlet’s Custom and Default Themes. These Themes’ XIB files 
+(`BookmarkListView_default-custom.xib` and `BookmarkListView_default.xib`) are 
+therefore identical besides their name and custom class; the size and position 
+of their UI components are the same. 
+
+Now create your View class by extending the parent Theme’s View class. You 
+should also add a string constant to serve as the cell ID. In a moment, you’ll 
+use this constant to register your custom cell. For example, the View class in 
+Bookmark List Screenlet’s Custom Theme (`BookmarkListView_default_custom`) 
+extends the Default Theme’s View class (`BookmarkListView_default`) and defines 
+the string constant `BookmarkCellId`: 
+
+    public class BookmarkListView_default_custom: BookmarkListView_default {
+
+        let BookmarkCellId = "bookmarkCell"
+        …
+
+Next, override the `doRegisterCellNibs` method to register your custom cell. In 
+this method, create a `UINib` instance for your cell and then register it with 
+the `UITableView` instance (`tableView`) inherited from 
+[the `BaseListTableView` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseListScreenlet/TableView/BaseListTableView.swift). 
+When registering the nib file, you must use the string constant you created 
+earlier as the `forCellReuseIdentifier`. For example, here’s the 
+`doRegisterCellNibs` method in `BookmarkListView_default-custom`: 
+
+      public override func doRegisterCellNibs() {
+          let nib = UINib(nibName: "BookmarkCell_default-custom", bundle: NSBundle.mainBundle())
+
+          tableView?.registerNib(nib, forCellReuseIdentifier: BookmarkCellId)
+    }
+
+Also in your View class, override the `doGetCellId` method to return the cell ID 
+for each row. All you need to do in this method is return the string constant 
+you created earlier. For example, the `doGetCellId` method in 
+`BookmarkListView_default-custom` returns the `BookmarkCellId` constant: 
 
     override public func doGetCellId(row row: Int, object: AnyObject?) -> String {
-        // Return the identifier for this row and object.
-        // "object" may be an instance of Asset or WebContent, depending the actual object retrieved
-        // If "object" is nil, the row is "in progress".
-
-        // sample implementation:
-        return (object == nil) ? "wipCellId" : "myCellId"
+        return BookmarkCellId
     }
 
-Next, you must override the `doCreateCell` method to create the cell when 
-needed, depending on the cell type. Again, this method's contents depend on your 
-use case. For example, you may want to create a different layout for in-progress 
-cells: 
+Now override the `doFillLoadedCell` method to fill the cell with data. Note that 
+this method isn't called for in-progress cells; it's only called for cells that 
+display data. Also note that this method's `object` argument contains the data 
+as `AnyObject`. You must cast this to your desired type and then set it to the 
+appropriate cell variable. For example, the `doFillLoadedCell` method in 
+`BookmarkListView_default-custom` casts the `object` argument to `Bookmark` and 
+then sets it to the cell's `bookmark` variable: 
 
-    override public func doCreateCell(cellId: String) -> UITableViewCell {
-        // Create a new cell when needed.
-
-        // sample implementation:
-        switch cellId {
-        case "myCellId":
-            return MyCell(style: .Default, reuseIdentifier: cellId)
-        case "wipCellId":
-            return MyInProgressCell(style: .Default, reuseIdentifier: cellId)
+    override public func doFillLoadedCell(row row: Int, cell: UITableViewCell, object:AnyObject) {
+        if let bookmarkCell = cell as? BookmarkCell_default_custom, bookmark = object as? Bookmark {
+            bookmarkCell.bookmark = bookmark
         }
-
-        // calling super will create a regular UITableViewCell
-        return super.doCreateCell(cellId)
     }
 
-To fill the cell with the row's data, override the `doFillLoadedCell` method. 
-Note that this method isn't called for in-progress cells; it's only called for 
-cells with data. Also note that the source data is stored in the method's 
-`object` argument. This is a generic object that you must cast to the specific 
-element type. In the case of Web Content List Screenlet, this is `WebContent`. 
-In Asset List Screenlet, it may be either `WebContent` or `Asset`. Here's an 
-example of such a method: 
-
-    override public func doFillLoadedCell(row row: Int, cell: UITableViewCell, object: AnyObject) {
-        // Fill the cell from the object supplied.
-
-        // sample implementation:
-
-        // precondition: make sure the cell is the expected type
-        guard let cell as? MyCell else {
-            return
-        }
-
-        if let webContent = object as? WebContent {
-            // treat as WebContent
-            cell.outlet = webContent.property
-            cell.outlet = webContent.property
-            ...
-        }
-        else if let asset = object as? Asset {
-            // treat as Asset
-            cell.outlet = asset.property
-            cell.outlet = asset.property
-            ...
-        }
-
-        cell.accessoryType = .None
-        cell.accessoryView = nil      
-    }
-
-To show something different for in-progress cells, you must override a different 
-method: `doFillInProgressCell`. Remember this step is optional and if you don't 
-do it, the Default theme's style is used for in-progress cells: 
-
-    override public func doFillInProgressCell(row row: Int, cell: UITableViewCell) {
-        // precondition: make sure the cell is the expected type
-        guard let wipCell as? MyInProgressCell else {
-            return
-        }
-
-        wipCell.textLabel?.text = "Loading..."
-        wipCell.accessoryType = .None
-        let myImage = ...
-        wipCell.accessoryView = UIImageView(image: myImage)
-        wipCell.accessoryView?.frame = CGRectMake(0, 0, myImage.size.width, myImage.size.height)
-    }
-
-Remember that you also have the typical 
+The typical iOS 
 [`UITableViewDelegate` protocol](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/) 
 and 
 [`UITableViewDataSource` protocol](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/) 
-methods available to you, so you can override any of them if you need to (check 
-first to make sure they're not already overridden). For example, implement the 
-following method to use a different cell height for one row: 
+methods are also available in your View class. You can override any of them if 
+you need to (check first to make sure they're not already overridden). For 
+example, `BookmarkListView_default-custom` implements the following method to 
+use a different cell height for each row: 
 
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-
-        // sample implementation:
-        let cellId = doGetCellId(row: indexPath.row, object: rows[indexPath.row])
-
-        switch cellId {
-        case "webcontentCell":
-            return 50.0
-        case "wipCell":
-            return 40.0
-        }
-
-        return 75.0
+        return 80
     }
 
-Great! Now you know how to implement your own custom cells for use in list 
-Screenlets. 
+When you finish, set your View class as your XIB file’s custom class. 
 
-**Related Topics**
+Awesome! You’re done! Now you know how to implement your own custom cells for 
+use in list Screenlets. 
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+## Related Topics [](id=related-topics)
 
 [Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
 
-[Asset List Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
 
-[Web Content List Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-ios)
+[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/sorting-your-list-screenlet)
 
-[DDL List Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-ios)
+[Creating Complex Lists in Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/creating-complex-lists-in-your-list-screenlet)
+
+[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices)

@@ -46,7 +46,7 @@ Remember to restart your @product@ server after updating your
 `portal-ext.properties` file in order for your customizations to take effect.
 
 There are properties related to document library stores that have been moved
-from `portal-ext.properties` to OSGI configuration files. The following mapping
+from `portal-ext.properties` to OSGi configuration files. The following mapping
 shows you how to configure those properties if needed:
 
 #### CMIS [](id=cmis)
