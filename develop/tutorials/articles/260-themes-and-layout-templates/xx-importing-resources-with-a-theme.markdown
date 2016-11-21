@@ -26,7 +26,7 @@ to @product-ver@. Please read through the steps below to see the updates. In
 previous versions of Liferay, you had to deploy the resources importer if you 
 declared it as a dependency in your theme's `liferay-plugin-package.properties` 
 file. In @product-ver@ and up, this is no longer a requirement. The resources 
-importer is now an OSGI module, and is deployed to your instance by default.
+importer is now an OSGi module, and is deployed to your instance by default.
 
 $$$
 
