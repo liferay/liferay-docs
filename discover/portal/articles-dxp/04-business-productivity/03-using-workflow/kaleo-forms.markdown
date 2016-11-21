@@ -1,18 +1,21 @@
 # Workflow Forms [](id=workflow-forms)
 
 Business processes are often form-based and workflow-driven. They start with
-some data that needs to be entered and shared with additional people or groups,
-for further data entry, approval, editing, legal review, or some other purpose.
-To write an app for each of these processes is laborious, and often not cost
-effective.Instead, a tool for quickly defining a process to suit each use cases
+some data that needs to be entered, and progress by sending the data to other
+people or groups. The initial data is processed in some way (for example,
+further data is entered or approval is granted), and the process moves on until
+completion, when each interested party has seen and manipulated the data. To
+write an app for each of these fluid processes is laborious and not cost
+effective. Instead, a tool for quickly defining a process to suit each use cases
 is needed. The process architect must define the data that gets collected, and
-define the process the data will move through to reach its final state.
-@product@ already includes the [Dynamic Data Lists
+define the process the data will move through to reach its final state. To
+accomplish this, @product@ already includes the [Dynamic Data Lists
 application](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)
 for defining forms, and the [Kaleo Designer
 application](/discover/portal/-/knowledge_base/7-0/kaleo-designer) for designing
 workflows. The Kaleo Forms solution combines the features of these applications,
-letting you design an integrated process for sending forms through a workflow.
+letting you design an integrated process for sending forms through a workflow in
+one intuitive UI.
 
 The entire process includes:
 
@@ -27,17 +30,18 @@ The entire process includes:
 
 **Example Use Case:** 
 
-At The Lunar Resort, the spa is a popular place. With all the adventure-driven
-activities (lunar hiking, rover races, etc.) it’s important to offer some
-relaxing and rejuvenating experiences. As the spa expands, and new Spa
-Technicians are hired, the spa manager decides to implement a new process to
+The Lunar Resort spa is a popular place. With all the adventure-driven
+activities (lunar hiking, rover races, etc.) available to guests, it’s important
+to offer some relaxing and rejuvenating experiences. As the spa expands, and new
+Spa Technicians are hired, the Spa Manager decides to implement a new process to
 handle orders. It involves several steps and several people:
 
-- The customer service representative for the spa interacts with customers, and
+- The customer service representative for the spa interacts with a customer, and
    fills out an order form.
 
 - The customer service representative gives the order details to the spa
-   technicians so they can claim each order and divide up the requests. 
+   technicians so they can divide up the requests, with a single technician
+   assigned to each order. 
 
 - The spa technician sends the order to the spa manager for final approval and
    comment. 
@@ -51,15 +55,15 @@ Kaleo Forms.
 
 $$$
 
-Access Kaleo Forms Admin in the Site Administration section of a site. Make
-sure intended users of your Kaleo Processes have access to the application. See
-the article on [roles and
+Since Kaleo Forms is accessed via a site's administration menu, make sure
+the intended users of your Kaleo Processes have access to the application. See the
+article on [roles and
 permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) if
 you're unsure how that works.
 
 ## Using Kaleo Forms [](id=using-kaleo-forms)
 
-Access Kaleo Forms Admin from the *Content* section of your site's
+Access Kaleo Forms from the *Content* section of your site's
 administration menu (click *[Site Name]* &rarr; *Content* &rarr; *Kaleo Forms
 Admin*). Kaleo Forms appears with a listing of the defined processes. If you’re
 coming here for the first time, there won’t be any, so create one. 
@@ -128,7 +132,7 @@ started.
      ![Figure x: The Spa Order Process has three tasks that happen sequentially.](../../../images-dxp/kaleo-forms-spa-order-definition.png)
 
 The definition has a StartNode and three task nodes. Develop it in the graphical
-designer built into Kaleo Forms Admin. There's a more detailed write-up of the
+designer built into Kaleo Forms. There's a more detailed write-up of the
 Kaleo Designer [here](/discover/portal/-/knowledge_base/7-0/kaleo-designer) if
 you're not already familiar with it. 
 
@@ -149,11 +153,10 @@ The task assignments of this workflow are as follows:
 Roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions), and give
 them
 [permission](/discover/portal/-/knowledge_base/7-0/roles-and-permissions#defining-role-permissions)
-to access the Kaleo Forms Admin application. In the role's page for defining
+to access the Kaleo Forms application. In the role's page for defining
 permissions, they're found under Site Administration &rarr; Content &rarr; Kaleo
-Forms Admin. Both roles need all of the permissions available for Kaleo Forms
+Forms Admin. Give both roles all of the permissions available for Kaleo Forms
 Admin.
-<!-- Is that true? -->
 
 $$$
 
@@ -170,14 +173,14 @@ defined in step two, or a subset of it.
 
 +$$$
 
-**Note:** In this step, you can't add any proper form field (fields that accept
-user input) in this step. If you forgot to add a Select field to the field set
-in step two, for example, you cannot add one here. Instead, go back and add it
-to the field set.
+**Note:** In this step, you can't add any proper form fields (fields that accept
+user input). If you forgot to add a Select field to the field set in step two,
+for example, you cannot add one here. Instead go back and add it to the field
+set.
 
 While you can't add form fields, you can configure the existing fields
-differently for each form, and you can add elements to the form that enhance
-it's usability:
+differently for each form, and you can add these elements to the form that
+enhance it's usability:
 
 1. Add a *Fieldset* to provide headings in a form. For example, name it
    after the workflow task to provide clarity to the task assignee.
@@ -205,8 +208,9 @@ For review, the Spa Order Process has these fields:
 - Approved
 - Managerial Comments
 
-Not all of the available fields should appear on each form in this example. Some
-of the fields, like Approved, should only appear on the reviewer's form.
+Not all of the available fields should appear on each form. For example, some
+the Approved field should only appear on the form for the managerial review
+task.
 
 Each applicable workflow node (the initial state and each task) appears in a row
 with its associated form and a button that lets you assign a form. In the Spa
@@ -222,9 +226,9 @@ appears lets you create a new form if you click the *Add* button
 
 -  First, name the initial form (call it *Spa Order Process--Order Form* if you like). 
 -  Next look at the available fields. In this stage of the workflow, you don't 
-    need all the approval fields. Delete these fields from the form (mouse over
+    need all the fields. Delete these fields from the form (mouse over
     the field and click the delete
-    icon--![Delete](../../../images/icon-trash.png):
+    icon--![Delete](../../../images/icon-trash.png)):
     - Available Date
     - Available Time
     - Approved
@@ -243,11 +247,12 @@ over it and clicking the wrench icon.
 $$$
 
 If you don’t need to change any field settings in the form, click *Save*. On the
-next screen choose your new form from the *Actions* button next to it. 
+next screen choose your new form by clicking on it. Now the workflow
+definition's StartNode has a form associated with it.
 
 Next create a form named *Spa Order Process--Technician Claim Form* for the
-Technician Claim task. Follow the same procedure used above, this time deleting
-these fields from the full field set:
+Technician Claim worklfow task. Follow the same procedure used above, this time
+deleting these fields from the full field set:
 
 - Approved
 - Managerial Comments
@@ -277,7 +282,7 @@ There's one more form to create: the *Spa Order Process--Final Order Form*. Like
 the last form, it should have all the fields of the form so that the customer
 service representative can review the order with the customer.
 
-![Figure 8: Once created, your process is listed in Kaleo Forms Admin.](../../../images-dxp/kaleo-forms-processes.png)
+![Figure 8: Once created, your process is listed in Kaleo Forms.](../../../images-dxp/kaleo-forms-processes.png)
 
 Click Save when finished. The process is ready to test.
 
@@ -286,24 +291,22 @@ Click Save when finished. The process is ready to test.
 Once your new process is developed, add records to it by clicking on the process
 name, and then the Plus button (![Add](../../../images-dxp/icon-add.png)).
 
-<!--![Figure 9: Add a record to your new process.](../../../images-dxp/kaleo-forms-admin.png) -->
-
 The application displays the form you assigned to the workflow's initial state.
 Fill out the form and click Save.
 
 ![Figure 10: Fill out the form and send it through the process.](../../../images-dxp/kaleo-forms-new-process-form.png)
 
-Once submitted in the Kaleo Forms Admin application, the process moves under the
-workflow engine's management. Submitting a process backed by the Spa Order
-Workflow definition, the workflow moves first to the Technician Claim task, then
-to the Managerial Approval task, and last, to the Final Order task. Whatever
-users or roles you assigned to the tasks receive a notification and the task
-appears in the Assigned to My Roles section of the My Workflow Tasks portlet. A
-notification is also triggered in the Notifications application. Once in the
-task, the user views and approve the form, or clicks the edit
+Once the initial form is submitted in the Kaleo Forms application, the process
+moves under the workflow engine's management. Submitting a process backed by the
+Spa Order Workflow definition, the workflow moves first to the Technician Claim
+task, then to the Managerial Approval task, and last, to the Final Order task.
+Whatever users or roles you assigned to the tasks receive a notification and the
+task appears in the Assigned to My Roles section of the My Workflow Tasks
+portlet. A notification is also triggered in the Notifications application. Once
+in the task, the user views and approve the form, or clicks the edit
 (![Edit](../../../images-dxp/icon-edit.png)) button. At this point the workflow
 task forms you created come into play. Each assigned user fills out the form,
 saves it, and sends it along in the workflow.
 
-The Kaleo Forms Admin application unites two powerful features of Liferay by
+The Kaleo Forms application unites two powerful features of Liferay by
 integrating a workflow and a form into a new entity, the Kaleo Process.
