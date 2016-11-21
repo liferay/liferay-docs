@@ -208,9 +208,8 @@ For review, the Spa Order Process has these fields:
 - Approved
 - Managerial Comments
 
-Not all of the available fields should appear on each form. For example, some
-the Approved field should only appear on the form for the managerial review
-task.
+Not all of the available fields should appear on each form. For example, the
+Approved field should only appear on the form for the managerial review task.
 
 Each applicable workflow node (the initial state and each task) appears in a row
 with its associated form and a button that lets you assign a form. In the Spa
