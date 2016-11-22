@@ -179,7 +179,7 @@ the *Reports* tab to see the list of reports available. More reports can be
 created by developers and deployed as OSGI plugins. See the
 [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
 tutorial for details. You can create a custom report by selecting the a campaign
-and clicking the *Reports* tab &rarr *Add Custom Report*
+and clicking the *Reports* tab &rarr; *Add Custom Report*
 (![Add Custom Report](../../images-dxp/icon-add.png)).
 
 The Content Views report shows the number of times that different assets have
