@@ -149,12 +149,12 @@ Disabling analytics for certain entities means you won't track them using
 Audience Targeting. Carefully manage analytics to optimize your Audience
 Targeting experience.
 
-You can also store your analytics data in a separate database schema, which can
-improve sluggish performance. To separate the storage of analytics data from
-Liferay's database schema, navigate to the Control Panel &rarr; *Configuration*
-&rarr; *System Settings* &rarr; *Web Experience* and select *Audience Targeting
-Analytics Storage*. Fill out the external storage fields to point to your
-alternative database schema.
+You can also store your analytics data in a separate database schema, which
+allows for independent scalability. To separate the storage of analytics data
+from Liferay's database schema, navigate to the Control Panel &rarr;
+*Configuration* &rarr; *System Settings* &rarr; *Web Experience* and select
+*Audience Targeting Analytics Storage*. Fill out the external storage fields to
+point to your alternative database schema.
 
 ![Figure 5: By filling out the external storage requirements, you configure your Audience Targeting analytics data to be stored in an alternative database schema.](../../images-dxp/alternative-analytics-db.png)
 
