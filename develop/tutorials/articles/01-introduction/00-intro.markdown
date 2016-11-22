@@ -40,12 +40,6 @@ you powerful development features, and 3) Maven, a widely adopted project
 management system. The Liferay Developer Network provides learning paths and
 tutorials that teach you how to use these three environments. 
 
-<video height="360" width="640" controls>
-    <source src="https://dev.liferay.com/documents/10184/554464/develop-quickstart.webm" type="video/webm" /> 
-    <source src="https://dev.liferay.com/documents/10184/554464/develop-quickstart.mp4" type="video/mp4" /> 
-    Your browser does not support the video tag.
-</video>
-
 If you don't like Eclipse (which Liferay IDE is based on) and prefer to use
 NetBeans, IntelliJ IDEA, or something else, you certainly can. Liferay code can
 be written in any way Java code is written. 
