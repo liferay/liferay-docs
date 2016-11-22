@@ -117,7 +117,7 @@ The metrics use an analytics engine called *Audience Targeting Analytics* that
 can be configured per site or per @product@ installation. You'll learn about
 this next.
 
-### Audience Targeting Analytics
+### Audience Targeting Analytics [](id=audience-targeting-analytics)
 
 To configure the analytics engine per site, go to Site Administration and click
 *Configuration* &rarr; *Site Settings* &rarr; *Advanced* &rarr; *Audience
@@ -135,8 +135,8 @@ Analytics*. The following analytics options are available:
 - Links
 - YouTube Videos
 
-Tracking all the actions of all your users (even guest users) can be a
-heavy load for your server. Therefore, it's best to disable the tracking of any
+Tracking all the actions of all your users (even guest users) can be a heavy
+load for your server. Therefore, it's best to disable the tracking of any
 actions about which you don't need information. For example, Audience Targeting,
 by default, stores anonymous users' behavior analytics. This stores a large
 amount of data to the database. If you're not interested in tracking anonymous
