@@ -129,7 +129,7 @@ started.
 
 - For the Spa Order Process, make a new workflow definition called *Spa Order
     Workflow*:
-     ![Figure x: The Spa Order Process has three tasks that happen sequentially.](../../../images-dxp/kaleo-forms-spa-order-definition.png)
+     ![Figure 3: The Spa Order Process has three tasks that happen sequentially.](../../../images-dxp/kaleo-forms-spa-order-definition.png)
 
 The definition has a StartNode and three task nodes. Develop it in the graphical
 designer built into Kaleo Forms. There's a more detailed write-up of the
@@ -281,7 +281,7 @@ There's one more form to create: the *Spa Order Process--Final Order Form*. Like
 the last form, it should have all the fields of the form so that the customer
 service representative can review the order with the customer.
 
-![Figure 8: Once created, your process is listed in Kaleo Forms.](../../../images-dxp/kaleo-forms-processes.png)
+![Figure 7: Once created, your process is listed in Kaleo Forms.](../../../images-dxp/kaleo-forms-processes.png)
 
 Click Save when finished. The process is ready to test.
 
@@ -293,7 +293,7 @@ name, and then the Plus button (![Add](../../../images-dxp/icon-add.png)).
 The application displays the form you assigned to the workflow's initial state.
 Fill out the form and click Save.
 
-![Figure 10: Fill out the form and send it through the process.](../../../images-dxp/kaleo-forms-new-process-form.png)
+![Figure 8: Fill out the form and send it through the process.](../../../images-dxp/kaleo-forms-new-process-form.png)
 
 Once the initial form is submitted in the Kaleo Forms application, the process
 moves under the workflow engine's management. Submitting a process backed by the
