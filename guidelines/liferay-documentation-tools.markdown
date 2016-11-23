@@ -132,7 +132,7 @@ documenting. -Cody -->
   information.
 
 - `number-images`: Numbers all Markdown articles' images in the folder. Image
-  numbers (e.g., *\![Figure x:* ) are replaced with the correct image numbering if
+  numbers (e.g., *\!\[Figure x:* ) are replaced with the correct image numbering if
   they are incorrect. See the
   [Markdown Image Numbers Tool](#markdown-image-numbers-tool) section for more
   information.
