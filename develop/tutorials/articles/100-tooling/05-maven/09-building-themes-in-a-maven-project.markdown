@@ -1,7 +1,7 @@
 # Building Themes in a Maven Project [](id=building-themes-in-a-maven-project)
 
-Liferay's Theme Builder is a tool used to build Liferay theme files in your
-project. You can easily incorporate the Theme Builder into your Maven project to
+Liferay's Theme Builder is a tool used to build @product@ theme files in your
+project. You can incorporate the Theme Builder into your Maven project to
 generate WAR-style themes deployable to @product@. To learn more about theming
 in @product@, see the
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
@@ -15,7 +15,7 @@ tutorial. In some cases, however, this may not be convenient. For instance, if
 you have a legacy theme project and don't want to start over, generating a new
 project is not ideal.
 
-For cases like this, you'll want to manually configure your Maven project to
+For cases like this, you should manually configure your Maven project to
 build a theme. You'll learn how to do this next.
 
 1.  Configure Liferay's Theme Builder plugin in your project's `pom.xml` file:
@@ -99,7 +99,7 @@ build a theme. You'll learn how to do this next.
 
 3.  You can configure your project to exclude Sass files from being packaged in
     your theme. This is optional, but is a nice convenience to keep any
-    unnecessary source code out of your WAR. Since the Theme Builder is creating
+    unnecessary source code out of your WAR. Since the Theme Builder creates
     a WAR-style theme, you should apply the
     [maven-war-plugin](https://maven.apache.org/plugins/maven-war-plugin/) so it
     instructs the WAR file packaging process to exclude Sass files:
