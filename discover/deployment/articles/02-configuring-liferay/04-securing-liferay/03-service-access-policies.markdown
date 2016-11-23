@@ -144,7 +144,7 @@ implementation for `ServiceAccessPolicy`.
 
 To configure the Service Access Policy module, navigate to Liferay's Control
 Panel, click on *System Settings*, and find the *Service Access Policies*
-module in the Platform section. Click on its name to edit it. Here, you can
+module in the Foundation section. Click on its name to edit it. Here, you can
 edit the default service access policy configuration. You can also force a
 default policy to be applied even when no policies are applied by the
 `AuthVerifier`.
