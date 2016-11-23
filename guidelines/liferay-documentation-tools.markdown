@@ -70,6 +70,73 @@ is set to *Soft*.
 
 Now you've got a great environment for editing Markdown files. 
 
+## Ant Target Quick Reference
+
+Each Ant target described in this section is for Liferay's CE docs only (unless
+otherwise noted). Most targets have a DXP version that runs on all CE and DXP
+docs. Append `-dxp` to the targets listed below when checking/editing DXP-only
+documentation.
+
+Each target should be executed from a document directory in the `liferay-docs`
+repo. For example, `/develop/tutorials`, `/discover/portal`, etc.
+
+<!-- compare-with-older-branch/dist-diffs process is broken. Need to fix before
+documenting. -Cody -->
+
+- `article-to-html`: Converts a Markdown article to HTML. This target requires a
+  `-Darticle` argument, which should point to your Markdown article (e.g.,
+  `ant article-to-html -Darticle=articles/100-tooling/05-maven/01-installing-liferay-maven-artifacts.markdown`).
+  The generated HTML is located in the document directory's `/build` folder.
+
+- `check-headers`: Checks all Markdown headers to ensure they properly begin
+  with `#` characters.
+
+- `check`: Runs several targets at once to make sure Markdown articles follow
+  LDN standards to ensure a successful build and publishing process. This target
+  should be executed before every pull request. This target includes the
+  `check-headers`, `check-images`, `check-intros`, `number-headers`, and
+  `number-images` tasks.
+
+- `check-article-images`: Checks a specific Markdown article's image paths.
+  If an image path (e.g., `../../images/test-pic.png`) does not point to an
+  existing image in the `/images` folder, an error is thrown. This target
+  requires a `-Darticle` argument, which should point to your Markdown article
+  (e.g., `ant check-article-images -Darticle=articles/100-tooling/05-maven/01-installing-liferay-maven-artifacts.markdown`).
+
+- `check-images`: Checks all Markdown articles' image paths in the folder. If an
+  image path (e.g., `../../images/test-pic.png`) does not point to an existing
+  image in the `/images` folder, an error is thrown.
+
+- `check-intros`: Checks all directories for an intro file (e.g.,
+  `00-intro.markdown`). If a folder does not have an intro article, an error is
+  thrown.
+
+- `clean-images`: (no DXP target) Deletes images from the `images` and
+  `images-dxp` folders that are not used in their corresponding Markdown
+  articles.
+
+- `check-links`: (no DXP target) Checks LDN links (CE articles only) to ensure
+  they're pointing at an existing LDN article. A list of invalid links are
+  listed if any are found.
+
+- `dist-ce`: Packages all necessary CE resources into a ZIP file deployable to
+  LDN.
+  
+- `dist-dxp`: Packages all necessary DXP resources into a ZIP file deployable to
+  Liferay's Customer Portal.
+
+- `number-headers`: Numbers all Markdown article headers with a unique header
+  ID. If there are any duplicate IDs, an error is thrown. See the
+  [Assigning Header IDs](#assigning-header-ids) and
+  [Markdown Header ID FAQ](#markdown-header-id-faq) sections for more
+  information.
+
+- `number-images`: Numbers all Markdown articles' images in the folder. Image
+  numbers (e.g., *![Figure x:*) are replaced with the correct image numbering if
+  they are incorrect. See the
+  [Markdown Image Numbers Tool](#markdown-image-numbers-tool) section for more
+  information.
+
 ## Markdown Image Numbers Tool 
 
 We have a tool that you can call with Ant that numbers the images in a Markdown
