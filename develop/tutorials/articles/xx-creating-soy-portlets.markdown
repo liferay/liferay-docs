@@ -1,27 +1,32 @@
 # Creating a Soy Portlet
 
-This template language allows me to use Metal components.
+Soy portlets are an extension of Liferay's MVC portlet. This gives you access to 
+all of the MVC Portlet functionality you are familar with, and you get the added 
+bonus of using Soy templates for writing your frontend, rather than JSPs. Soy
+templates are an easy-to-use templating language that also allows you to use
+MetalJS components. With all these benefits and more, Soy portlets can be a good
+frontend tool to have in your utility belt.
 
-<!-- Is this the only templating language that allows me to use Metal components?
+You can learn about Liferay MVC portlets in the [Creating an MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/creating-an-mvc-portlet)
+tutorial.
 
-Can I use metal components in JSPs for instance?
+To create a Soy portlet, you'll need these key components:
 
-(This is more of a broad question) Looking into the future, seeing as AUI is
-going to be removed completely and replaced with Metal components, are soy
-portlets going to be what we move to as our primary focus in the future? 
+-  A module that publishes a portlet component with the necessary properties.
+-  Controller code to handle the request and response
+-  Soy templates to implement your view layer
 
--->
+This tutorial covers how to implement a Soy portlet.
 
-<!--
+Go ahead and get starting by configuring the module next.
 
-List benefits of soy portlets here
+## Configuring the module
 
--->
+The first thing you will need to do is configure the WEB module for your Soy
+portlet.
 
-## Configuring a Web Module
-
-The file strucutre of a Soy Portlet is very similar to the structure of an MVC 
-portlet:
+The file structure of a Soy Portlet is very similar to the structure of an MVC 
+portlet. The basic structure of a Soy portlet module is shown below:
 
 - `my-soy-portlet`
     - `.lfrbuild-portal`
@@ -36,13 +41,9 @@ portlet:
         - `resources/META-INF/resources/`
             - `content/`
                 - `Language.properties`
-            - `MyComponent.es.js`
-            - `MyComponent.soy`
-            - `MyComponent.scss`
-
-<!-- Is the `action folder may simply be for organization.`
-
--->
+            - `MyComponent.es.js` (MetalJS component)
+            - `MyComponent.soy` (Soy template)
+            - `MyComponent.scss` (Sass file)
 
 <!--
 
@@ -62,10 +63,10 @@ You can also use the blade template to build your initial project.
 Remove this info and add to separate text file. 
 -->
 
-## Specifying OSGi Metadata
+Follow these steps to specify the OSGi metadata and dependencies for your module:
 
-1.  Specify OSGi metadata, specifying the bundle symbolic name, bundle version,
-and require capability at minimum:
+1.  Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND
+    configuration is shown below:
 
     Bundle-Name: Liferay Hello Soy Web
     Bundle-SymbolicName: com.liferay.hello.soy.web
@@ -74,51 +75,59 @@ and require capability at minimum:
     Include-Resource:\
         META-INF/resources=src/main/resources/META-INF/resources
     
-In addition to the standard metadata, take notice of the `Require-Capability`.
-
-<!-- What does that property `Require-Capability` do, and is it required?
-
-Should Include resource point to that META-INF location since it is outside of
-portal?
-
--->
-
-2. Specify dependencies in your `package.json`:
-
-    {
-            "dependencies": {
-                    "metal-component": "^2.4.5",
-                    "metal-soy": "^2.4.5"
-            },
-            "devDependencies": {
-                    "liferay-module-config-generator": "^1.1.10",
-                    "metal-cli": "^1.3.1"
-            },
-            "name": "hello-soy-web",
-            "version": "1.0.3"
-    }
-    
-<!-- Is this required? Is everything in here standard and required or commonly used?
-What is each attribute doing here? Do you need this if your Soy portlet doesn't
-contain any Metal components? Would you ever create a Soy portlet that didn't
-contain metal components? why?
-
--->
-
-3. Specify `build.gradle` dependencies:
-
-<!-- Code sample goes here. Need to update file with proper class names used 
-outside of portal and test build.-->
+In addition to the standard metadata, take notice of the `Require-Capability`
+property. This specifies that this bundle requires modules that provide the 
+capability `soy` with a `type` of `metal` to work. The `Include-Resource`
+property defines the full filepath where the module's resources are located.
 
 <!--
 
-What is the `npm-shrinkwrap.json`? Is this a file used for caching, so NPM
-doesn't have to download all this information everytime? Is it required? Why
-would I want to include it?
+Should Include resource point to that META-INF location since it is outside of
+portal? I had to configure this for another external module I worked on. I'm
+guessing that this is required?
 
 -->
 
-## Creating a Portlet Component
+2. Specify dependencies in your `package.json`. Below is an example
+configuration:
+
+        {
+                "dependencies": {
+                        "metal-component": "^2.4.5",
+                        "metal-soy": "^2.4.5"
+                },
+                "devDependencies": {
+                        "liferay-module-config-generator": "^1.1.10",
+                        "metal-cli": "^1.3.1"
+                },
+                "name": "hello-soy-web",
+                "version": "1.0.3"
+        }
+
+    This provides everything you need to create a Metal component based on soy.
+    Your `package.json` should contain the same `dependencies` and 
+    `devDependencies`.
+
+3. Add the dependencies shown below to your `build.gradle`:
+
+    dependencies {
+            compileOnly group: 'com.liferay.portal', 
+            name: 'com.liferay.portal.kernel', version: '2.0.0'
+            compileOnly group: 'com.liferay.portal', 
+            name: 'com.liferay.util.java', version: '2.0.0'
+            compileOnly group: 'javax.portlet', 
+            name: 'portlet-api', version: '2.0'
+            compileOnly group: 'javax.servlet', 
+            name: 'javax.servlet-api', version: '3.0.1'
+            compileOnly group: 'org.osgi', 
+            name: 'org.osgi.service.component.annotations', version: '1.3.0'
+            compileOnly project(':com.liferay.portal.portlet.bridge.soy')
+    }
+    
+Now that your module is configured, you can learn how to create the Soy portlet
+component next.
+
+## Creating the Soy Portlet Component
 
 Create a Soy Portlet component that extends the `SoyPortlet` class.
 
@@ -137,12 +146,10 @@ Declare this using an `@Component` annotation in the portlet class:
     }
     
 Liferay's `SoyPortlet` extends `MVCPortlet`, which is an extension itself of 
-`javax.portlet.portlet`, so you've provided the right implementation. What this 
-means is that you have access to all of the MVC Portlet functionality you are 
-familar with, and you get the added bonus of using Soy templates for writing 
-your frontend, rather than JSPs.
+`javax.portlet.portlet`, so you've provided the right implementation.
 
-The component requires further fleshing out with more properties:
+The component requires some properties as well. A sample configuration is shown
+below:
 
     @Component(
             immediate = true,
@@ -180,28 +187,12 @@ The `javax.portlet...` properties are elements of the [portlet.xml descriptor](h
 
 Liferay's DTD files can be found [here](https://docs.liferay.com/portal/7.0/definitions/)
 
-<!-- Why do you need to implement the `MVCRenderCommand`? 
-As seen here: https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/hello-soy/hello-soy-web/src/main/java/com/liferay/hello/soy/web/internal/portlet/action/HelloSoyNavigationExampleMVCRenderCommand.java
-
-Is that required to render the portlet?
-
-From what I can tell, it is required if you wish to navigate to other views.
-
-MVCRenderCommand implementation is required for creating URLs to navigate
-betweem views.
-
--->
-
-    public class MySoyPortlet extends SoyPortlet {
-        @Override
-        public void render(RenderRequest renderRequest, RenderResponse renderResponse) {
-            //do things here
-        }
-    }
-
+The foundation for your Soy portlet component is set. You can write the
+controller for the Soy portlet next.
+    
 ## Writing Controller Code
 
-Soy portlets extend MVC portlets, so they essentially use the same model view
+Soy portlets extend MVC portlets, so they use the same model view
 controller framework to operate.
 
 your controller receives requests from the front end, and it receives data from 
@@ -214,6 +205,9 @@ view to pass data back to the user.
 
 ### Render Logic
 
+The render logic is where all the magic happens. After all, what's the use of a
+portlet if you can't see it?
+
 Note the `init-param` properties you set in your Component:
 
     "javax.portlet.init-param.template-path=/",
@@ -223,8 +217,7 @@ This directs the default rendering to View(View.soy). The `template-path`
 property tells the framework where your Soy templates are located. The `/` 
 above means that the Soy files are located in your project's root `resources` 
 folder. That's why it's important to follow Liferay's standard folder structure, 
-outlined above. Here's the path of a hypothetical Web module's
-resource folder:
+outlined above. Here's the path of a hypothetical Web module's resource folder:
 
     docs.liferaysoy.web/src/main/resources/META-INF/resources
     
@@ -234,123 +227,107 @@ In this case, the `View.soy` file is found at:
     
 and that's the default view of the application. When the `init` method is
 called, the initialization parameters you specify are read and used to direct
-rendering to the default template. Throughout this framework, you can render a
-different view(Soy template) by setting the `mvcRenderCommandName` parameter 
-like this:
+rendering to the default template.Throughout this framework, you can render a 
+different view(Soy template) by setting the `mvcRenderCommandName` parameter of 
+the `PortletURL` to the soy template like this:
 
     navigationURL.setParameter("mvcRenderCommandName", "View");
 
-
-    
-In `*MVCRenderCommand.java` class that renders URL:
-
-    @Override
-    public String render(
-            RenderRequest renderRequest, RenderResponse renderResponse) {
-    
-            Template template = (Template)renderRequest.getAttribute(
-                    WebKeys.TEMPLATE);
-    
-            PortletURL navigationURL = renderResponse.createRenderURL();
-    
-            navigationURL.setParameter("mvcRenderCommandName", "View");
-    
-            template.put("navigationURL", navigationURL.toString());
-    
-            return "Navigation";
-    }
-
-n some cases, the uses of initialization parameters and render parameters 
-obviates the need for additional render logic. However, it’s often necessary to 
-provide additional render logic. To do this, override the render method. Here’s 
-an example:
-
-<!-- Is this true with Soy portlets? -->
-    
-In `HelloSoyPortlet.java`:
-
-    @Override
-    public void render(
-            RenderRequest renderRequest, RenderResponse renderResponse)
-            throws IOException, PortletException {
-    
-            PortletURL navigationURL = renderResponse.createRenderURL();
-    
-            navigationURL.setParameter("mvcRenderCommandName", "Navigation");
-    
-            template.put("navigationURL", navigationURL.toString());
-    
-            template.put("releaseInfo", ReleaseInfo.getReleaseInfo());
-    
-            super.render(renderRequest, renderResponse);
-    }
-    
-With render logic, you’re providing the view layer with information to display 
-the data properly to the user. In this case, the `navigationURL` is set to link
-to the *Navigation* soy template when rendered. The `navigationURL` and 
-`releaseInfo` are then passed as variables to the soy templates with the 
-`template.put()` method. Since this logic should be executed before the default
-`render` method, the method concludes by calling `super.render`.
-
-<!-- Do you need an implementation of MVCRenderCommand for every new URL that 
-you want to use? 
-
-Answer: Yes, it appears so. If you have a new renderURL you need a new
-implementation. 
-
-So what are these classes doing? Flipping the NavigationURL?
-
-They appear to be using the same MVCRenderCommand, but just changing the Soy 
-template to use via an update to the NavigationURL.
-
-Is this right?
-
-This allows you to only have to implement MVCRenderCommand once, then you can
-just update the NavigationURL to the soy template you need.
-
--->
-    
-In your Soy template you can set the page by using `$navigationURL` as the value
-of the `href` attribute:
-
-    <a href="{$navigationURL}">{msg desc=""}
-    click-here-to-navigate-to-another-view{/msg}
-    </a>
+Each view, excluding the default template view, **must have an implementation of 
+`MVCRenderCommand`.** The `*MVCRenderCommand` implementation must declare itself 
+as a component with the `MVCRenderCommand` service, and it must specify the 
+portlet's name and MVC command name using the `javax.portlet.name` and 
+`mvc.command.name` properties respectively.
 
 More info on the MVCRenderCommand can be found [here](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/mvc-render-command)
 
-### Setting and Retrieving Request Parameters and Attributes
+Below is an example `MVCRenderCommand` implementation for the 
+[`com.liferay.hello.soy.web` portlet](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/hello-soy/hello-soy-web/src/main/java/com/liferay/hello/soy/web/internal/portlet/action/HelloSoyNavigationExampleMVCRenderCommand.java):
 
-In the soy portlet class's render method and even in your soy templates you can
-pass and set parameters. This was shown in the last section by setting the 
-`mvcRenderCommandName` for the `navigationURL`:
-
-    navigationURL.setParameter("mvcRenderCommandName", "Navigation");
-
-
-The parameter is then passed as a variable with the `template.put()` method:
-
-    template.put("navigationURL", navigationURL.toString());
-
-Once this is configured you can access these parameters by declaring the
-variable at the top of your soy template. Here is an example:
-
-    {namespace View}
+    @Component(
+            immediate = true,
+            property = {
+                    "javax.portlet.name=hello_soy_portlet", 
+                    "mvc.command.name=Navigation"
+            },
+            service = MVCRenderCommand.class
+    )
+    public class HelloSoyNavigationExampleMVCRenderCommand
+            implements MVCRenderCommand {
     
-    /**
-     * Prints the Hello Soy portlet main view.
-     *
-     * @param id
-     * @param navigationURL
-     * @param themeDisplay
-     */
-    {template .render}
+            @Override
+            public String render(
+                    RenderRequest renderRequest, RenderResponse renderResponse) {
     
-Then the variable can be used in the template like this:
+                    Template template = (Template)renderRequest.getAttribute(
+                            WebKeys.TEMPLATE);
+    
+                    PortletURL navigationURL = renderResponse.createRenderURL();
+    
+                    navigationURL.setParameter("mvcRenderCommandName", "View");
+    
+                    template.put("navigationURL", navigationURL.toString());
+    
+                    return "Navigation";
+            }
+    
+    }
 
-    <a href="{$navigationURL}">{msg desc=""}
-    click-here-to-navigate-to-another-view{/msg}
-    </a>
+With render logic, you’re providing the view layer with information to display 
+the data properly to the user. In this case the MVC command name is set to
+`Navigation`. The MVC render command name for the `PortletURL` `navigationURL` 
+is set to `View`, using the `mvcRenderCommandName` attribute. the `navigationURL` 
+is then passed to the `Navigation.soy` template as the variable `navigationURL` 
+using the `template.put` method. Finally, the `*MVCRenderCommand` class returns 
+the MVC render command name as a `String`.
+
++$$$
+
+**Note:** Variables declared in the main `*SoyPortlet` class can be used in 
+any of the Soy templates. **This can be overwritten with a variable with the 
+same name in the `*MVCRenderCommand` implementation class.**
+
+For example `navigationURL` is delcared as a variable for the `hello-soy-web` 
+module in both its `HelloSoyNavigationExampleMVCRenderCommand` class and 
+`HelloSoyPortlet` class, each pointing to a different MVC render command.
+
+$$$
+
+Below is an example `*SoyPortlet` class for the 
+[`com.liferay.hello.soy.web` portlet](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/hello-soy/hello-soy-web/src/main/java/com/liferay/hello/soy/web/internal/portlet/HelloSoyPortlet.java):
+
+
+    public class HelloSoyPortlet extends SoyPortlet {
+    
+            @Override
+            public void render(
+                            RenderRequest renderRequest, RenderResponse renderResponse)
+                    throws IOException, PortletException {
+    
+                    PortletURL navigationURL = renderResponse.createRenderURL();
+    
+                    navigationURL.setParameter("mvcRenderCommandName", "Navigation");
+    
+                    template.put("navigationURL", navigationURL.toString());
+    
+                    template.put("releaseInfo", ReleaseInfo.getReleaseInfo());
+    
+                    super.render(renderRequest, renderResponse);
+            }
+    
+            @Reference
+            protected LayoutService layoutService;
+    
+    }
+
+The `navigationURL` is set to link to the *Navigation* soy template when 
+rendered. The `navigationURL` and `releaseInfo` are then passed as variables to 
+the soy templates with the `template.put()` method. Since this logic should be 
+executed before the default `render` method, the method concludes by calling 
+`super.render`.
+
+Now that you understand the render logic, you can learn how to configure the
+view layer next.
 
 ## Configuring the View Layer
 
@@ -361,35 +338,32 @@ and for that, you’ll use Soy templates.
 This section will briefly cover how to get your view layer working, from 
 including other soy templates, to creating a Metal JS component for rendering 
 your views.
-
-To include a soy template within another soy template, call it by its name,
-using the `render` method. For example, this call includes all of the content
-from a soy template with the name `Header.soy`:
-
-    {call Header.render data="all"}{/call}
     
-Note that the soy template's name is declared at the top of the template with
-the `namespace`. For example, this template has the namespace `View`:
+Soy templates are defined in a file with extension `.soy`. The filename is 
+arbitary. The soy template's name is specified at the top of the template using 
+the `namespace`declaration. For example, this template has the namespace `View`:
 
     {namespace View}
     
-It can be accessed in another soy template with the following call:
+It can be accessed in another soy template by calling the `render` method on the 
+namespace as shown below:
 
     {call View.render data="all"}{/call}
-    
-<!-- Do these templates have to be located in the same folder as the current 
-template? Or can you use relative paths when calling the soy template? -->
 
-If needed, you can access Java theme object variables from within the Soy 
-template. For example, to access the `themeDisplay` object in a Soy template,
+If needed, you can access some java theme object variables from within the Soy 
+template. For example, to access the `ThemeDisplay` object in a Soy template,
 use the following syntax:
 
     $themeDisplay
     
-<!-- What file are these theme object variables defined in?-->
+You can also access the `Locale` object by using `locale`.
+    
+<!-- Should we mention how to extend this to add more objects, using a context
+template?
+-->
 
 Here is the full [`View.soy` template]() for the 
-[`com.liferay.hello.soy.web` portlet](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/hello-soy/hello-soy-web) 
+[`com.liferay.hello.soy.web` portlet](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/hello-soy/hello-soy-web) 
 which demonstrates the features covered in this section:
 
     {namespace View}
@@ -433,21 +407,12 @@ which demonstrates the features covered in this section:
                     {call Footer.render data="all"}{/call}
             </div>
     {/template}
-
-<!--
-
-Is there a way to include java code in a soy template? Or should all of that be
-handled in the java classes?
-
-Is there an equivalent of an init.jsp for Soy? Or is that not really used?
-
--->
     
-Once the Soy template is configured with the content you need, you need to 
-create a corresponding `*es.js` file (usually with the same name), that imports 
+If your view has JavaScript logic associated with it, you'll need to create a 
+corresponding `*es.js` file (usually with the same name), that imports 
 the Soy templates the view requires and registers the view as a Metal JS 
 component. For example, here is the [`View.es.js` component](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/hello-soy/hello-soy-web/src/main/resources/META-INF/resources/View.es.js)
-for the `View.soy` template:
+for `com.liferay.hello.soy.web` portlet's `View.soy` template:
 
     import Component from 'metal-component/src/Component';
     import Footer from './Footer.es';
@@ -466,22 +431,16 @@ for the `View.soy` template:
     
     export default View;
 
-All rendering is done from within the java classes themeselves. To construct a 
-URL that calls the render method of your controller
+Note that the `constuctor()` method is only needed for Metal components that are
+associated with a view. For example, because the Header and Footer templates
+shown above only add additional content to the views, they do not require a
+constructor.
 
-<!-- So does the view extend the Metal Component? Does it depend on it to render? -->
+<!-- Is that true? -->
 
-`View.es.js` <!-- Do I have access to these imports in this file outside of 
-portal? Would they have the same relative path?
+As you can see, with Liferay Soy it’s pretty easy to make your controller talk 
+to your view layer.
 
-What does this file do exactly?
+## Related Topics
 
-Does this handle client side rendering? So could we say that it is the
-equivalent of an index.html file, in that it renders all the other html pages,
-this renders all the templates that match that name or are imported into this
-file?
-
-What does the contructor do? I see that it is only called in the Soy templates
-that are views (i.e. View.es.js and Navigation.es.js)
-
--->
+<!-- Links to go here -->
