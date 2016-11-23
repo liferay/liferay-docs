@@ -29,8 +29,8 @@ our documentation for the web, for ebooks, and for print.
 ## Markdown Environment
 
 For liferay.com, we use Pegdown with our own, customized parser, which is
-included in this project. You can use this with our `convert.sh` script in the
-`bin` folder to preview your articles. 
+included in this project. You can use this with our `convert.[sh|bat]` script in
+the `bin` folder to preview your articles. 
 
 ### Editing Markdown Files
 
@@ -52,13 +52,11 @@ install. The Markdown plugin is available in jEdit's plugin manager, and the
 mode file can be downloaded from
 [https://github.com/peterlynch/jEdit-modes|Github](https://github.com/peterlynch/jEdit-modes) or [http://hasseg.org/blog/post/302/markdown-and-pod-syntax-highlighting-modes-for-jedit](http://hasseg.org/blog/post/302/markdown-and-pod-syntax-highlighting-modes-for-jedit).  
 
-
 To install the mode file, copy it into your `.jedit/modes` folder, and edit the
 `catalog` file which is in the same folder. Add this line to the file, between
 the <MODES> tags: 
 
-	<MODE NAME="markdown" FILE="markdown.xml" FILE_NAME_GLOB="*.{markdown,md}" />
-
+    <MODE NAME="markdown" FILE="markdown.xml" FILE_NAME_GLOB="*.{markdown,md}" />
 
 Save the file and restart jEdit. While editing, you now have syntax highlighting
 and can preview Markdown files in HTML using the plugin.
@@ -75,26 +73,24 @@ Now you've got a great environment for editing Markdown files.
 ## Markdown Image Numbers Tool 
 
 We have a tool that you can call with Ant that numbers the images in a Markdown
-chapter file. While you're writing or editing a Markdown chapter file, you can
-just number all the images in that chapter with a lowercase x. For example, if
-you were editing chapter 2 of Using Liferay Portal, your image tags could take
-the following form:
+chapter file. While you're writing or editing a Markdown file, you can
+just number all the images in that chapter with a lowercase x. For example, your
+image tags could take the following form:
 
-	![Figure 2.x: <image-description>](../../images/<image-name>)
+    ![Figure x: <image-description>](../../images/<image-name>)
 
-When you are finished working on a chapter file, you can call the
-`number-images` Ant task from the directory of the document you are working on
-and supply the chapter as an argument:
+When you are finished working on a file, you can call the `number-images` Ant
+task from the parent directory (e.g., `/develop/tutorials`) of the document you
+are working on:
 
-	ant number-images -Dchapter=<chapter-name>
+    ant number-images
 
-For example, to number the images of chapter 2 of Using Liferay Portal, you
-would use the following command from liferay-docs/userGuide:
+If you're working in a DXP article located in `/articles-dxp`, run the
+corresponding DXP Ant task:
 
-	ant number-images -Dchapter=02-liferay-marketplace
+    ant number-images-dxp
 
-Our numbering tool will also renumber the images of incorrectly numbered
-chapters.
+The DXP task numbers images for articles in `/articles` and `/articles-dxp`.
 
 ## Assigning Header IDs 
 
@@ -103,41 +99,32 @@ unique URL. These IDs not only prevent documents from using the same URLs but
 they also help to preserve web content URLs despite changes to header text in
 revisions of the document.
 
-1.  Edit your document's `liferay-docs/<document>/doc.properties` to specify the
-    product abbreviation, product version, and an abbreviation for your
-    document. These property values help namespace the header IDs.
+Once you've finished creating headers for your article, number your headers
+using the Ant task:
 
-    Example - `devGuide/doc.properties`: 
+    ant number-headers
 
+If you're working in a DXP article located in `/articles-dxp`, run the
+corresponding DXP Ant task:
 
-        product.abbrev=lp
-        product.name=Liferay Portal
-        product.version=6.2
-        doc.name=Dev Guide
-
-2.  Number the section headers of your document.
-
-        ant number-headers
+    ant number-headers-dxp
 
 It will fail if header IDs conflict.
 
 Example - Output from header ID conflict
 
+    number-headers:
+        [java] Numbering headers for files in ../tutorials/articles ...
+        [java] Dup id:liferay-ide file:..\tutorials\articles\100-tooling\02-liferay-ide\01-installing-liferay-ide.markdown line:1 (already used by file:..\tutorials\articles\100-tooling\02-liferay-ide\00-liferay-ide-intro.markdown)
+        [java] Exception in thread "main" java.lang.Exception: FAILURE - Duplicate header IDs exist
+        [java]     at com.liferay.documentation.util.NumberHeadersSiteMain.main(Unknown Source)
 
-	...  number-headers:
-	[numberheaders] Numbering headers for files in ..\devGuide\en\chapters ...
-	[numberheaders] Dup id:summary-liferay-portal-6-2-dev-guide-06-en file:06-hooks.markdown line:305 (already used by file:06-hooks.markdown)
-	...
+    BUILD FAILED
 
 To resolve a conflict, you *must* be sure to preserve the header ID that existed
 first, if that header is a part of the *live* version of the document on
-Liferay.com. Then, remove the newer header ID from the other header and run ...
-
-
-	ant number-headers
-
-
-... again to produce a new unique ID for that header.
+dev.liferay.com. Then, remove the newer header ID from the other header and run
+the Ant task again to produce a new unique ID for that header.
 
 ## Markdown Tips
 
@@ -154,15 +141,17 @@ below.
 
 ### Figures 
 
-Previously, Open/LibreOffice added the words: *Illustration #* to captions when
-they were entered. This was nice, but is unfortunately something we'll need to
-abandon. To do figures, you should do it this way: 
+To do figures, you should do it this way: 
 
+    ![Figure 1: Logging into Liferay Portal is easy.](../../images/logging-into-liferay-portal.png)
 
-	![Figure 1.1: Logging into Liferay Portal](../../images/01-logging-into-liferay-portal.png)
+If you're working in a DXP Markdown article, your image should be saved in the
+`/images-dxp` folder and the figure path should reflect that folder:
 
-This causes Pandoc to create the following, easily styled markup: 
+    ![Figure 1: This diagram breaks down the evaluation process for the weather rule.](../../images-dxp/weather-rule-diagram.png)
 
+Using this syntax for figure images causes Pandoc to create the following,
+easily styled markup:
 
 	<div class="figure">
 	<img src="../../images/01-logging-into-liferay-portal.png" alt="Figure 1.1: Logging into Liferay Portal" />
@@ -174,19 +163,19 @@ We've duplicated this behavior in the Pegdown parser that we've implemented.
 ### Inline Images / Icon Images
 
 An icon's image helps the reader identify the icon in the UI. To use an existing
-icon snapshot, check a document's `images/` folder for files ending in *-icon.png*.
-Follow these steps
-to include an icon image inline in your article's Markdown text:
+icon snapshot, check a document's `images/` folder for files ending in
+*-icon.png*. Follow these steps to include an icon image inline in your
+article's Markdown text:
 
-1. Take a snapshot of the icon, if one doesn't already exist in the document's
-`images/` folder. Please save the snapshot to the `images/` folder and end its name with
-`-icon.png`. 
-2. Crop the image to remove unrelated content from around the icon.
-3. Resize the image's height to no greater than 20 pixels. **Important:** Make sure to keep the
-aspect ratio. 
+1.  Take a snapshot of the icon, if one doesn't already exist in the document's
+    `images/` folder. Please save the snapshot to the `images/` folder and end
+    its name with `-icon.png`.
+2.  Crop the image to remove unrelated content from around the icon.
+3.  Resize the image's height to no greater than 20 pixels. **Important:** Make
+    sure to keep the aspect ratio. 
 4. In the Markdown text, include the icon image in parentheses.
 
-Inline icon image example Markdown:
+Inline icon image example in Markdown:
 
     Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/add-icon.png))
     to bring up the blog entry editor.
@@ -207,10 +196,10 @@ We can do the same in Markdown using the HTML code for this character, which is
 
 ### Tables
 
-Because Pegdown does not support the [Pandoc extension table
-syntax](http://johnmacfarlane.net/pandoc/README.html#tables), we use a table
-syntax similar to
-[MultiMarkdown](http://fletcher.github.com/peg-multimarkdown/mmd-manual.pdf),
+Because Pegdown does not support the
+[Pandoc extension table syntax](http://johnmacfarlane.net/pandoc/README.html#tables),
+we use a table syntax similar to
+[MultiMarkdown](http://fletcher.github.com/peg-multimarkdown/mmd-manual.pdf)
 that supports the following features:
 
 * Cell content alignment (left, right, or center)
@@ -270,14 +259,14 @@ Table Options
 
 ---
 
- ![important](./images/tip.png) **Important:** - Pandoc does not 
-support MultiMarkdown table syntax. If you use Pandoc to build a document for
-test purposes, you'll notice that the table does not get converted as you would
-expect. If you are using Pandoc to convert a document for a final product
-(e.g. ePub), you'll need to temporarily change the table syntax to follow the
-Pandoc extension.
+![important](./images/tip.png) **Important:** - Pandoc does not support
+MultiMarkdown table syntax. If you use Pandoc to build a document for test
+purposes, you'll notice that the table does not get converted as you would
+expect. If you are using Pandoc to convert a document for a final product (e.g.
+ePub), you'll need to temporarily change the table syntax to follow the Pandoc
+extension.
 
- ![The example table converted using Pandoc](images/mmdTablePandocHTML.png)
+![The example table converted using Pandoc](images/mmdTablePandocHTML.png)
 
 ---
 
@@ -446,7 +435,7 @@ formats using Pandoc. The Liferay Docs README describes the repository contents,
 directory structure, and conversion process. We concatenate the individual
 chapter files of a document and insert a markdown title block which pandoc
 parses as bibliographic information. See
-[http://johnmacfarlane.net/pandoc/README.html|http://johnmacfarlane.net/pandoc/README.html](http://johnmacfarlane.net/pandoc/README.html|http://johnmacfarlane.net/pandoc/README.html)
+[http://johnmacfarlane.net/pandoc/README.html](http://johnmacfarlane.net/pandoc/README.html)
 for details. The default title block in build.properties is empty:
 
 	%
@@ -480,12 +469,12 @@ documentation on Liferay.com. Previously, the URLs for our web content were
 determined by the heading text of our documents (e.g. the text from "#
 Introduction to Liferay Portal" markdown was used to generate the URL final
 string in the web content's URL
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay).
+[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay)).
 If the titles of the web content were changed, either by re-import of the
 markdown or manual edits via the GUI, the URLs changed too--breaking any links
 to the web content.
 
-In response to this issue, Liferay portal and the AssetImporter have been
+In response to this issue, Liferay Portal and the AssetImporter have been
 improved so that web content can be referenced by static IDs. Regardless of
 whether the titles of a web content change, its ID remains the same, preserving
 the URL of that web content.
@@ -499,38 +488,22 @@ Example 1 - ID to an existing web content:
 
 Example 2 - ID for a new section header:
 
-    ### Using the Dockbar [](id=lp-6-1-ugen01-using-the-dockbar-0)
+    ## Adding and Updating Assets [](id=adding-and-updating-assets)
 
 Each header, regardless of level, is to have a corresponding ID. This gives us
 the flexibility to create web content for even the lowliest of subsections if we
 so choose. But no need to worry, those IDs get stripped out of the web content
 on import to Liferay.com.
 
-
-The naming convention for new headers is as follows:
-
-*product.abbrev-product.version-(doc.abbrev)(lang)(chapterNum)-(headerText)-increment*
-
-
-Example, `id=lp-6-1-ugen01-using-the-dockbar-0` can be broken down into:
-
-* **product.abbrev:** lp	(for Liferay Portal)
-* **product.version:** 6-1	(for version 6.1)
-* **doc.abbrev:** ug	(for User Guide)
-* **lang:** en	(for English)
-* **chapterNum:** 01	(derived from the file's prefix - e.g.,
-  `01-introduction-to-liferay-ui.markdown`)
-* **headerText:** using-the-dockbar	(derived from "### Using the Dockbar")
-* **increment:** 0	(indicating this is the first such header having the
-  attributes mentioned above. This increment becomes necessary to distinguish
-between web content with header text, like "Summary", found within the same
-chapter.)
+The naming convention for new headers very closely follows the existing header
+title. Uppercase letters are converted to lowercase and spaces are converted to
+dashes.
 
 ### How should I specify an ID for a new header? 
 
-Execute ant target `number-headers` from your document directory. Note, unless
-you specify otherwise, your default language (e.g., `en`) is used in the
-document ID.
+Execute ant target `number-headers` or `number-headers-dxp` from your document
+directory (e.g., `/develop/tutorials`). You can also run `ant check` or `ant
+check-dxp` to generate header IDs and to various other checks and tasks.
 
 ### What should I do with the ID for an existing header I've modified? 
 
@@ -540,9 +513,9 @@ document.
 
 ### If I re-order sections or chapters, what do I do with their header IDs? 
 
-**IMPORTANT:** Do not change the ID of an existing header.
-You can however, move the header (along with its ID) around within a chapter
-document or into a different chapter document.
+**IMPORTANT:** Do not change the ID of an existing header. You can however, move
+the header (along with its ID) around within an article or into a different
+article.
 
 ### If I want to update existing web content and find that its source is missing header IDs, what do I do? 
 
@@ -561,29 +534,19 @@ between headers. It will fail if any issues are encountered.
 
 Example - Header ID conflict output
 
-	...
 	number-headers:
-	[numberheaders] Numbering headers for files in ..\devGuide\en\chapters ...
-	[numberheaders] Dup id:lp-6-1-dgen10-summary-0 file:11-marketplace.markdown line:305 (already used by file:10-plugin-security.markdown)
-	...
+        [java] Numbering headers for files in ../tutorials/articles ...
+        [java] Dup id:liferay-ide file:..\tutorials\articles\100-tooling\02-liferay-ide\01-installing-liferay-ide.markdown line:1 (already used by file:..\tutorials\articles\100-tooling\02-liferay-ide\00-liferay-ide-intro.markdown)
+        [java] Exception in thread "main" java.lang.Exception: FAILURE - Duplicate header IDs exist
+        [java]     at com.liferay.documentation.util.NumberHeadersSiteMain.main(Unknown Source)
+
+    BUILD FAILED
 
 To resolve the above conflict, the author *must* be sure to preserve the header
 ID that existed first, if that header is a part of the *live* version of the
 document on Liferay.com. Then, the author should remove the newer header ID from
 the other header and run `ant number-headers` to produce a new unique ID for
 that header.
-
-**Important**, each document directory (e.g., `liferay-docs/userGuide/`) has a
-file `doc.properties` that specifies the product abbreviation, product version,
-and documentation abbreviation to assure that IDs are name-spaced properly.
-
-
-Example - devGuide/doc.properties:
-
-
-    product.abbrev=lp
-    product.version=6.1
-    doc.abbrev=dg
 
 ### Will the header IDs show in the web content? 
 
@@ -593,7 +556,7 @@ used in your markdown source.
 ### Are there safe-guards to prevent upload of documents that have missing or conflicting IDs? 
 
 Yes, the dependency targets (e.g. `number-headers`) executed by our distribution
-targets, `dist` and `dist-win`, fail and report errors if the documents are
+targets, `dist-ce` and `dist-dxp`, fail and report errors if the documents are
 missing IDs or have conflicting IDs.
 
 ## Contact Information 
