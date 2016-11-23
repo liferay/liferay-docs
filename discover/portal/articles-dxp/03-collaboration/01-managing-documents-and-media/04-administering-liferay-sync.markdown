@@ -29,12 +29,17 @@ prerequisite apps.
 Liferay Sync requires that your Liferay instance contains the most recent 
 versions of the following Liferay Marketplace apps: 
 
-- [Liferay CE IP Geocoder](https://web.liferay.com/marketplace/-/mp/application/15197657): 
+- [Liferay IP Geocoder](https://web.liferay.com/marketplace/-/mp/application/15100579): 
   Uses geographic IP lookup to get the approximate location of devices that 
   register with Sync. This is a security measure that lets you see where the 
   devices are that connect to your Liferay instance via Sync. 
 
-- [Liferay CE Sync Connector](https://web.liferay.com/marketplace/-/mp/application/31071510): 
+- [Liferay OAuth Provider](https://web.liferay.com/marketplace/-/mp/application/45261909): 
+  Enables OAuth in your Liferay instance. OAuth is required to use Sync with SSO 
+  (single sign-on). The next section details additional steps that are required 
+  to use Sync with SSO. 
+
+- [Liferay Sync Connector](https://web.liferay.com/marketplace/-/mp/application/31709100): 
   Lets you enable and configure Sync in your Liferay instance. For example, you 
   can disable Sync across the instance or on a site-by-site basis. Note that 
   Sync is enabled by default for all your Liferay instance's sites. 
@@ -65,6 +70,34 @@ and mobile clients, however, **Make sure to read** this guide's sections on
 preventing accidental file deletion and ensuring Sync security. You should also 
 **warn your users** about the potential for accidental data loss. 
 
+Next, you'll learn how to configure Sync for SSO. You can skip this section if 
+your Liferay instance doesn't use an SSO server. 
+
+## Configuring Sync to Use SSO [](id=configuring-sync-to-use-sso)
+
+If your Liferay instance uses an SSO (single sign-on) server, you must ensure 
+that Sync can access the following URLs without being redirected to your SSO 
+server. Sync can't work without direct access to these URLs. You must therefore 
+whitelist these URLs in your web server: 
+
+    http(s)://<portal-address>/c/portal/oauth/*
+    http(s)://<portal-address>/api/jsonws/sync-web.*
+    http(s)://<portal-address>/sync-web/*
+
+For example, if your Liferay instance's address is `https://www.joesblog.com`, 
+then you must whitelist the following URLs in your web server: 
+
+    https://www.joesblog.com/c/portal/oauth/*
+    https://www.joesblog.com/api/jsonws/sync-web.*
+    https://www.joesblog.com/sync-web/*
+
+Sync uses the paths specified in the first URL for communication via OAuth, and 
+the paths specified in the remaining URLs for normal communication with your 
+Liferay instance. 
+
+You must also enable OAuth in the Sync Connector app. The next section covers 
+this, as well as other information on how to configure Sync. 
+
 ## Configuring Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
 
 Sync Connector lets you manage how, or if, clients connect to your Liferay 
@@ -78,12 +111,15 @@ Sync Connector Admin has three tabs:
 1. **Settings:** Control Sync's general behavior. These settings apply globally 
    to Sync. 
 
-    ![Figure 1: The Control Panel's Configuration section contains Sync Connector Admin.](../../../images/sync-admin-01.png)
+    ![Figure 1: The Control Panel's Configuration section contains Sync Connector Admin.](../../../images-dxp/sync-admin-01.png)
 
     - **Allow the use of Sync?:** Whether Sync is enabled.
 
     - **Allow users to sync their personal sites?:** Whether users can sync data 
       with their personal sites. 
+
+    - **OAuth Enabled:** Whether clients use OAuth and any configured SSO 
+      autologin filters for authentication. 
 
     - **Allow LAN Syncing?:** Whether desktop clients attempt to download 
       updates from other desktop clients on the same local network before 
@@ -121,12 +157,12 @@ Sync Connector Admin has three tabs:
 
 2. **Sites:** Control Sync on a per-site basis. 
 
-    ![Figure 2: Sync Connector Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images/sync-admin-02.png)
+    ![Figure 2: Sync Connector Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images-dxp/sync-admin-02.png)
     
     For each site in the Liferay instance, the Sites tab lists each site's 
     default file permissions (more on this in a moment) and whether Sync is 
     enabled for that site. Sync is enabled by default for all sites. To disable 
-    Sync for a site, click the site's *Actions* button (![Actions](../../../images/icon-actions.png)) 
+    Sync for a site, click the site's *Actions* button (![Actions](../../../images-dxp/icon-actions.png)) 
     and select *Disable Sync Site*. To disable multiple sites at once, select 
     their checkboxes and click the *Disable Sync Sites* link that appears above 
     the table. **Please use caution** when disabling Sync for a site, as doing 
@@ -161,7 +197,7 @@ Sync Connector Admin has three tabs:
     permissions for that site. Click *Choose* for the permissions you want to 
     use. 
 
-    ![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../../images/sync-admin-03.png)
+    ![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../../images-dxp/sync-admin-03.png)
 
     To set the default file permissions for several sites, select the checkboxes 
     for the sites, click the *Default File Permissions* link that appears above 
@@ -176,12 +212,12 @@ Sync Connector Admin has three tabs:
 
 3. **Devices:** View and manage the devices registered with Sync. 
 
-    ![Figure 4: Sync Connector Admin's Devices tab lists all the devices Sync has registered for the Liferay instance.](../../../images/sync-admin-devices.png)
+    ![Figure 4: Sync Connector Admin's Devices tab lists all the devices Sync has registered for the Liferay instance.](../../../images-dxp/sync-admin-devices.png)
 
     Each row in the Devices tab's table represents a device. The *Name* column 
     lists the user that registered the device. The remaining columns list each 
     device's location, client type, client build number, last connection date, 
-    and status. Each device's Actions button (![Actions](../../../images/icon-actions.png)) 
+    and status. Each device's Actions button (![Actions](../../../images-dxp/icon-actions.png)) 
     lets you manage that device. You can change a device's status from Active to 
     Inactive by selecting *Actions* &rarr; *Disable Sync Device*. Inactive 
     devices can't sync with the Liferay instance. Inactive mobile devices also 
@@ -271,7 +307,7 @@ site's default file permissions are View Only. After attempting the sync, a red
 *x* appears next to the file in the local Sync folder. Right click the file to 
 see the error. It confirms the user doesn't have the required permissions. 
 
-![Figure 5: The upload error occurs because the user only has permission to view files.](../../../images/sync-file-permissions-error.png)
+![Figure 5: The upload error occurs because the user only has permission to view files.](../../../images-dxp/sync-file-permissions-error.png)
 
 To confirm that the error didn't propagate through Sync, open the file in the 
 secretagent user's local Sync folder. It still contains the original text. 
