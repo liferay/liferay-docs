@@ -1,7 +1,7 @@
 # Liferay Documentation Tools
 
 Liferay's documentation is currently implemented in Markdown. We chose Markdown
-for several reasons: 
+for several reasons:
 
 1. It's readable. Even if you don't know Markdown, you can read it without
    having to filter out the syntax.  
@@ -9,42 +9,42 @@ for several reasons:
 2. It gets out of a writer's way. You don't have to worry about mousing to
    various icons to change text into a heading or create bulleted lists. Just
    start typing. The syntax is so intuitive, you probably have used it all your
-   life anyway. 
+   life anyway.
 
 3. It's easily convertable to other formats. Using Markdown lets us publish to
-   the web, mobile, and print from the same source files. 
+   the web, mobile, and print from the same source files.
 
 4. It's great for collaborating. Using Github, we can easily see what various
    people have contributed, through the same diffs we'd use in programming. We
    can merge those changes pretty easily, too, because the format is simple enough
    that the changes in the diffs happen to be the actual changes made to the text,
-   rather than a bunch of formatting tags. 
+   rather than a bunch of formatting tags.
 
 In summary, Markdown is, by definition, a text based format that's designed to
 be as readable as possible. It lets you write in a very natural format which can
 then be converted to other formats for publication. We have switched to using
 Markdown for the Liferay 6.1 documentation. It's allowing us to single-source
-our documentation for the web, for ebooks, and for print. 
+our documentation for the web, for ebooks, and for print.
 
 ## Markdown Environment
 
 For liferay.com, we use Pegdown with our own, customized parser, which is
 included in this project. You can use this with our `convert.[sh|bat]` script in
-the `bin` folder to preview your articles. 
+the `bin` folder to preview your articles.
 
 ### Editing Markdown Files
 
 Most programmers have a close relationship with their text editor of choice.
 This is not an attempt to break that relationship in any way: Markdown is plain
 text, and you should use whatever tool makes you most effective. One of the
-reasons we chose it is to allow writers to use whatever tools they want. 
+reasons we chose it is to allow writers to use whatever tools they want.
 
 For those who are looking for some guidance on a good tool to use, you can use
 jEdit. It's a great cross-platform text editor which is highly extensible.
 Though it's written in Java, it can be configured to start in the background
 when your machine starts, which makes it pop up as fast as any native editor.
 This makes it ideal regardless of which platform (Linux, Windows, or Mac) you
-use. 
+use.
 
 For Markdown, jEdit has a Markdown plugin that can render a Markdown document
 into HTML, and there's also a syntax highlighting mode file that you can
@@ -54,7 +54,7 @@ mode file can be downloaded from
 
 To install the mode file, copy it into your `.jedit/modes` folder, and edit the
 `catalog` file which is in the same folder. Add this line to the file, between
-the <MODES> tags: 
+the <MODES> tags:
 
     <MODE NAME="markdown" FILE="markdown.xml" FILE_NAME_GLOB="*.{markdown,md}" />
 
@@ -66,9 +66,9 @@ you'll also need to set the width to be narrower than the 120 character default
 provided by the Markdown mode file. To do this, go to *Utilities* -> *Global
 Options* -> *Editing*. Under *Change Settings for Mode*, select *Markdown*, and
 then change the *Wrap Margin* to 80. Of course, make sure also that *Word Wrap*
-is set to *Soft*. 
+is set to *Soft*.
 
-Now you've got a great environment for editing Markdown files. 
+Now you've got a great environment for editing Markdown files.
 
 ## Ant Target Quick Reference
 
@@ -121,7 +121,7 @@ documenting. -Cody -->
 
 - `dist-ce`: Packages all necessary CE resources into a ZIP file deployable to
   LDN.
-  
+
 - `dist-dxp`: Packages all necessary DXP resources into a ZIP file deployable to
   Liferay's Customer Portal.
 
@@ -132,12 +132,37 @@ documenting. -Cody -->
   information.
 
 - `number-images`: Numbers all Markdown articles' images in the folder. Image
-  numbers (e.g., *![Figure x:*) are replaced with the correct image numbering if
+  numbers (e.g., *![Figure x:* ) are replaced with the correct image numbering if
   they are incorrect. See the
   [Markdown Image Numbers Tool](#markdown-image-numbers-tool) section for more
   information.
 
-## Markdown Image Numbers Tool 
+## Tokens
+
+Our documentation is deployed to two separate sites to display CE and DXP
+documentation. Instead of having a completely separate folder structure for both
+docs, we have all articles that are targeted for both CE and DXP residing in the
+`/articles` folder and DXP-only documentation residing in the `/articles-dxp`
+folder. Because so many single articles are deployed to two separate sites,
+we've created tokens that use one type of string when publishing to one site and
+another different string for the second site. The available tokens are listed
+below:
+
+**CE Docs**
+
+- `@product` = Liferay Portal
+- `@product-ver` = Liferay Portal CE 7.0
+- `@app-ref@` = https://docs.liferay.com/ce/apps
+- `@platform-ref@` = https://docs.liferay.com/ce/portal
+
+**DXP Docs**
+
+- `@product` = Liferay DXP
+- `@product-ver` = Liferay Digital Enterprise 7.0
+- `@app-ref@` = https://docs.liferay.com/dxp/apps
+- `@platform-ref@` = https://docs.liferay.com/dxp/digital-enterprise
+
+## Markdown Image Numbers Tool
 
 We have a tool that you can call with Ant that numbers the images in a Markdown
 chapter file. While you're writing or editing a Markdown file, you can
@@ -159,7 +184,7 @@ corresponding DXP Ant task:
 
 The DXP task numbers images for articles in `/articles` and `/articles-dxp`.
 
-## Assigning Header IDs 
+## Assigning Header IDs
 
 Header IDs help to assure that each uploaded document's web contents have a
 unique URL. These IDs not only prevent documents from using the same URLs but
@@ -196,7 +221,7 @@ the Ant task again to produce a new unique ID for that header.
 ## Markdown Tips
 
 Below are some tips for some constructs that are unique to Liferay
-documentation. 
+documentation.
 
 ### Spaces vs. Tabs
 
@@ -204,11 +229,11 @@ Our standard is the opposite of Liferay's code: we use spaces instead of tabs.
 Why? Because lists and code blocks in Markdown are much easier to control using
 spaces instead of tabs. Please see the documentation for Markdown for further
 information on this, or we provide a good example of it when we talk about lists
-below. 
+below.
 
-### Figures 
+### Figures
 
-To do figures, you should do it this way: 
+To do figures, you should do it this way:
 
     ![Figure 1: Logging into Liferay Portal is easy.](../../images/logging-into-liferay-portal.png)
 
@@ -224,8 +249,8 @@ easily styled markup:
 	<img src="../../images/01-logging-into-liferay-portal.png" alt="Figure 1.1: Logging into Liferay Portal" />
 	<p class="caption">Figure 1.1: Logging into Liferay Portal</p>
 	</div>
-	
-We've duplicated this behavior in the Pegdown parser that we've implemented. 
+
+We've duplicated this behavior in the Pegdown parser that we've implemented.
 
 ### Inline Images / Icon Images
 
@@ -239,7 +264,7 @@ article's Markdown text:
     its name with `-icon.png`.
 2.  Crop the image to remove unrelated content from around the icon.
 3.  Resize the image's height to no greater than 20 pixels. **Important:** Make
-    sure to keep the aspect ratio. 
+    sure to keep the aspect ratio.
 4. In the Markdown text, include the icon image in parentheses.
 
 Inline icon image example in Markdown:
@@ -251,11 +276,11 @@ Result shown in a Knowledge Base article:
 
 ![Inline icon image](images/render-icon-image-inline.png)
 
-### Right Arrows 
+### Right Arrows
 
 We are in the habit of using right arrows to denote a series of things a user
 can click on, such as Go To -> Control Panel -> Web Content. Open/LibreOffice
-would automatically replace the dash and greater-than sign with a right arrow. 
+would automatically replace the dash and greater-than sign with a right arrow.
 
 We can do the same in Markdown using the HTML code for this character, which is
 `&rarr;`. I created a SuperAbbrev in jEdit which transforms `rightarrow` into
@@ -347,11 +372,11 @@ want to draw special attention to it or if the text contains ancillary
 information that doesn't quite belong in the main text. For example, notes,
 tips, and warnings are often placed in sidebars. To create a sidebar, set off
 your sidebar text with a begin sidebar token (`+$$$`) and an end sidebar token
-(`$$$`), like so: 
+(`$$$`), like so:
 
     +$$$
 
-    Your sidebar text goes here. 
+    Your sidebar text goes here.
 
     $$$
 
@@ -402,7 +427,7 @@ is disrupted and the step that follows restarts at `1`.
         **Note:** A sidebar note. Text is placed in sidebars if it deserves
         special attention or if it contains ancillary information that doesn't
         quite belong in the main text. For example, notes, tips, and warnings
-        are often placed in sidebars. 
+        are often placed in sidebars.
 
         $$$
 
@@ -473,7 +498,7 @@ This paragraph is not indented 4 spaces from the step number.
 
 ![liferay-cube image](./images/liferay-cube.png)
 
-3. Third step. 
+3. Third step.
 
 +$$$
 **Note:** This sidebar note disrupts continuous numbering because it is not
@@ -493,9 +518,9 @@ Well, there you have it--the do's and don'ts of ordered lists.
 **Important:** Before you send a pull request, view your Markdown file converted
 to HTML, using your editor's Pegdown converter or by viewing your document
 blob on Github. That way you can be sure any ordered lists you have, preserve
-their consinutous numbering. 
+their consinutous numbering.
 
-### Markdown Metadata 
+### Markdown Metadata
 
 Our build process supports conversion from Markdown to html, odt, and epub
 formats using Pandoc. The Liferay Docs README describes the repository contents,
@@ -529,7 +554,7 @@ This FAQ is provided to help answer questions and provide information on how and
 why we use IDs for the headers in the Markdown files of our official product
 documentation.
 
-### What are the header IDs and why are they important? 
+### What are the header IDs and why are they important?
 
 Header IDs were created for the purpose of preserving the URLs of our official
 documentation on Liferay.com. Previously, the URLs for our web content were
@@ -566,25 +591,25 @@ The naming convention for new headers very closely follows the existing header
 title. Uppercase letters are converted to lowercase and spaces are converted to
 dashes.
 
-### How should I specify an ID for a new header? 
+### How should I specify an ID for a new header?
 
 Execute ant target `number-headers` or `number-headers-dxp` from your document
 directory (e.g., `/develop/tutorials`). You can also run `ant check` or `ant
 check-dxp` to generate header IDs and to various other checks and tasks.
 
-### What should I do with the ID for an existing header I've modified? 
+### What should I do with the ID for an existing header I've modified?
 
 **IMPORTANT:** Do not change the ID of an existing header.  If the header does
 not have an existing header, then run the `number-headers` target on the
 document.
 
-### If I re-order sections or chapters, what do I do with their header IDs? 
+### If I re-order sections or chapters, what do I do with their header IDs?
 
 **IMPORTANT:** Do not change the ID of an existing header. You can however, move
 the header (along with its ID) around within an article or into a different
 article.
 
-### If I want to update existing web content and find that its source is missing header IDs, what do I do? 
+### If I want to update existing web content and find that its source is missing header IDs, what do I do?
 
 First, inform the document owner (e.g. Rich for the User Guide and Jim for the
 Dev Guide).
@@ -594,7 +619,7 @@ header in the respective markdown source. After updating the IDs in the
 markdown, be sure to run ant target `number-headers` to detect any issues with
 the headers.
 
-### How can I be sure that my header IDs will not be in conflict with other header IDs (e.g., IDs in other documents)? 
+### How can I be sure that my header IDs will not be in conflict with other header IDs (e.g., IDs in other documents)?
 
 Ant target `number-headers` detects and reports any issues and/or conflicts
 between headers. It will fail if any issues are encountered.
@@ -615,17 +640,17 @@ document on Liferay.com. Then, the author should remove the newer header ID from
 the other header and run `ant number-headers` to produce a new unique ID for
 that header.
 
-### Will the header IDs show in the web content? 
+### Will the header IDs show in the web content?
 
 No, they will not show unless possibly there is a syntax error in the header ID
 used in your markdown source.
 
-### Are there safe-guards to prevent upload of documents that have missing or conflicting IDs? 
+### Are there safe-guards to prevent upload of documents that have missing or conflicting IDs?
 
 Yes, the dependency targets (e.g. `number-headers`) executed by our distribution
 targets, `dist-ce` and `dist-dxp`, fail and report errors if the documents are
 missing IDs or have conflicting IDs.
 
-## Contact Information 
+## Contact Information
 
 Rich Sezov (sez11a), Jim Hinkey (jhinkey)
