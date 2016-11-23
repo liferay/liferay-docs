@@ -2,7 +2,7 @@
 
 What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? The process
-for overriding a module's language keys is different from [the process of overriding Liferay's core language properties](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys), which are located in Liferay's `portal-impl.jar`.
+for overriding a module's language keys is different from [the process of overriding Liferay's core language properties](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys), which are located in Liferay's `portal-impl.jar`.
 
     add-blog-entry=Add Blog Entry
 
