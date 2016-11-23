@@ -109,16 +109,16 @@ the System Settings interface. Then you can just deploy them in the target
 Liferay installation.
 
 In the case of a single entry, just click the actions button
-(![Actions](../../../images/icon-actions.png)), then click *Export*. A `.cfg` file
+(![Actions](../../../images/icon-actions.png)), then click *Export*. A `.config` file
 will be downloaded, containing any configuration changes you've saved. 
 
 To export all of the configuration changes you've made in System Settings, click
 the System Settings options button (![Options](../../../images/icon-options.png)),
-then click *Export All Settings*. You'll get a zip file with `.cfg` files
+then click *Export All Settings*. You'll get a zip file with `.config` files
 corresponding to all of the entries that you edited.
 
 To make these configurations active in the destination Liferay system, simply
-unzip and place the `.cfg` files in the `[Liferay_Home]/osgi/modules` folder.
+unzip and place the `.config` files in the `[Liferay_Home]/osgi/modules` folder.
 
 Now you know what System Settings is and how to use it. All that's left is
 exploring the entries to see what configuration options you can make. If you
