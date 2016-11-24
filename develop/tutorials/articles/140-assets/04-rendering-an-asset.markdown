@@ -35,26 +35,20 @@ studying a Liferay asset that already uses both by default: Blogs. The Blogs
 application offers many different ways to access and render a blogs asset.
 You'll learn how a blogs asset provides an edit feature, comment section,
 original context viewing (i.e., viewing an asset from the Blogs application),
-workflow, etc. The Blogs application shows how to divide up logic between the
-asset renderer and asset renderer factory too. Global behavior is implemented in
-the factory whereas entity specific logic is delegated to the asset renderer.
-You'll also learn how it uses JSP templates to display various blog views. The
-Blogs application is an extensive example of how an asset renderer can be
-customized to fit your needs. You can create a much simpler asset renderer for
-your asset, or you can customize it even further!
+workflow, etc. You'll also learn how it uses JSP templates to display various
+blog views. The Blogs application is an extensive example of how an asset
+renderer can be customized to fit your needs. 
 
-If you want to create an asset and give it the ability to do more than display
-its title and description, read on to learn more!
+If you want to create an asset and make it do more than display its title and
+description, read on to learn more!
 
 ## Creating an Asset Renderer [](id=creating-an-asset-renderer)
 
-An asset renderer, in simple terms, lets you provide your own HTML for your
-asset. Liferay provides the `AssetRenderer` interface that lets you get started
-quickly. Implementing `AssetRenderer` requires that you choose a templating
-technology (JSP, FreeMarker, Soy, etc.) to display an asset's HTML. For this
-tutorial, you'll use JSP templates to render an asset's HTML. You'll learn how
-to associate your JSP templates with an asset renderer, along with configuring
-several other options. 
+An asset renderer lets you provide your own HTML for your asset. The
+`AssetRenderer` interface requires that you choose a templating technology (JSP,
+FreeMarker, Soy, etc.) to display an asset's HTML. For this tutorial, you'll use
+JSP templates to render an asset's HTML. You'll learn how to associate your JSP
+templates with an asset renderer, along with configuring several other options. 
 
 To learn how an asset renderer is created, you'll create the pre-existing
 [BlogsEntryAssetRenderer](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/blogs/com.liferay.blogs.web/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
@@ -79,8 +73,8 @@ class, which configures the asset renderer framework for the Blogs application.
     implements the `AssetRenderer` interface. You'll notice the asset renderer
     is also implementing the
     [TrashRenderer](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
-    interface. This is a common practice for many Liferay applications, which
-    enables its assets to use Liferay's Recycle Bin.
+    interface. This is a common practice for many @product@ applications, which
+    enables its assets to use @product@'s Recycle Bin.
 
 3.  Define the asset renderer class's constructor, which typically sets the
     asset object to use in the asset renderer class.
@@ -105,8 +99,8 @@ class, which configures the asset renderer framework for the Blogs application.
         private final ResourceBundleLoader _resourceBundleLoader;
 
 4.  Now that your class declaration and constructor are defined for the blogs
-    asset renderer, you'll need to begin connecting your asset renderer with
-    your asset. The following getter methods accomplish this:
+    asset renderer, you must begin connecting your asset renderer to your
+    asset. The following getter methods accomplish this:
 
         @Override
         public BlogsEntry getAssetObject() {
@@ -139,12 +133,11 @@ class, which configures the asset renderer framework for the Blogs application.
         }
 
     These methods are pretty self-explanatory, but there are a couple things to
-    point out. The `getAssetObject()` method is setting the `BlogsEntry` that
+    point out. The `getAssetObject()` method sets the `BlogsEntry` that
     was set in the constructor as your asset to track. Likewise, the `getType()`
     method references the blogs asset renderer factory for the type of asset
-    your asset renderer will work with. Of course, the asset renderer type is
-    `blog`, which you'll set in the factory later. This type is important
-    because it's called in CSS files (among others) to style a blog asset's UI.
+    your asset renderer renders. Of course, the asset renderer type is
+    `blog`, which you'll set in the factory later. 
 
 5.  Your asset renderer must link to the portlet that owns the entity. In the
     case of a blogs asset, its portlet ID should be linked to the Blogs
@@ -172,9 +165,8 @@ class, which configures the asset renderer framework for the Blogs application.
 
     This method retrieves the workflow status for the asset.
 
-7.  Another popular feature many developers want for their asset is the ability
-    to comment on it. This is enabled for the Blogs application with the
-    following method:
+7.  Another popular feature many developers want for their asset is to comment
+    on it. This is enabled for the Blogs application with the following method:
 
         @Override
         public String getDiscussionPath() {
@@ -192,10 +184,8 @@ class, which configures the asset renderer framework for the Blogs application.
     Publisher's *Options* (![Options](../../images/icon-app-options.png)) &rarr;
     *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
-8.  Retrieving the title and summary is both simple and important for any asset
-    in Liferay. You can add this functionality in your asset renderer by adding
-    methods similar to the ones outlined below, which are used in the
-    `BlogsEntryAssetRenderer` class:
+8.  At a minimum, you should create a title and summary for your asset. Here's
+    how the `BlogsEntryAssetRenderer` does it:
 
         @Override
         public String getSummary(
@@ -229,14 +219,18 @@ class, which configures the asset renderer framework for the Blogs application.
             return BlogsEntryUtil.getDisplayTitle(resourceBundle, _entry);
         }
 
-    The `getSummary(...)` method returns the abstract description for a blog
-    asset. If the abstract description does not exist, the content of the blog
-    is used as an abstract. You'll learn more about abstracts and other content
-    specifications later.
+    These two methods return information about your asset in a generic way, so
+    the asset publisher can display it. Anything appropriate for your asset can
+    be the title or the summary. 
 
-    The `getTitle(...)` method uses the resource bundle loader you configured in
-    the constructor to load your module's resource bundle and return the display
-    title for your asset.
+    The `getSummary(...)` method for Blogs returns the abstract description for
+    a blog asset. If the abstract description does not exist, the content of the
+    blog is used as an abstract. You'll learn more about abstracts and other
+    content specifications later. 
+
+    The `getTitle(...)` method for Blogs uses the resource bundle loader you
+    configured in the constructor to load your module's resource bundle and
+    return the display title for your asset.
 
 9.  If you want to provide a unique URL for your asset, you can specify a URL
     title. A URL title is the URL used to access your asset directly (e.g.,
@@ -256,17 +250,16 @@ class, which configures the asset renderer framework for the Blogs application.
             return true;
         }
 
-    This displays a Print icon for your asset when displayed in the Asset
-    Publisher. For the icon to display for your asset, you must enable it in the
-    Asset Publisher's *Options* (![Options](../../images/icon-app-options.png))
-    &rarr; *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
+    This displays a Print icon when your asset is displayed in the Asset
+    Publisher. For the icon to appear, you must enable it in the Asset
+    Publisher's *Options* (![Options](../../images/icon-app-options.png)) &rarr;
+    *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
     ![Figure 2: Enable printing in the Asset Publisher to display the Print icon for your asset.](../../images/asset-publisher-printing.png)
 
-11. If your asset is only intended for certain users to access, you'll want to
-    set permissions for the asset. You can do this via the asset renderer, as
-    well. See the logic below for an example used in the
-    BlogsEntryAssetRenderer` class:
+11. If your asset is protected by permissions, you should set permissions for
+    the asset. You can do this via the asset renderer as well. See the logic
+    below for an example used in the `BlogsEntryAssetRenderer` class:
 
         @Override
         public long getUserId() {
@@ -305,8 +298,8 @@ class, which configures the asset renderer framework for the Blogs application.
 
 Awesome! You've learned how to set up the blogs asset renderer to
 
-- connect with an asset
-- connect with the asset's portlet
+- connect to an asset
+- connect to the asset's portlet
 - use workflow management
 - use a comments section
 - retrieve the asset's title and summary
@@ -314,10 +307,10 @@ Awesome! You've learned how to set up the blogs asset renderer to
 - display a print icon
 - set up permissioning for the asset
 
-You may recall that a major cog in asset renderer development is the ability to
-generate HTML using a templating technology. The `BlogsEntryAssetRenderer` is
-configured to use JSP templates to generate HTML for the Asset Publisher. You'll
-learn more about how to do this next.
+You may recall that a major cog in asset renderer development generating HTML
+using a templating technology. The `BlogsEntryAssetRenderer` is configured to
+use JSP templates to generate HTML for the Asset Publisher. You'll learn more
+about how to do this next.
 
 ### Configuring JSP Templates for an Asset Renderer [](id=configuring-jsp-templates-for-an-asset-renderer)
 
@@ -341,9 +334,8 @@ templates and adds a few other features using JSPs. You'll inspect how the blogs
 asset renderer is put together to satisfy JSP template development requirements.
 
 1.  Add the `getJspPath(...)` method to your asset renderer. This method should
-    return the path to your JSP, which is rendered as HTML inside the Asset
-    Publisher. Take a look at how the `BlogsEntryAssetRenderer` uses this
-    method:
+    return the path to your JSP, which is rendered inside the Asset Publisher.
+    This is how the `BlogsEntryAssetRenderer` uses this method:
 
         @Override
         public String getJspPath(HttpServletRequest request, String template) {
@@ -357,24 +349,24 @@ asset renderer is put together to satisfy JSP template development requirements.
             }
         }
 
-    Blogs assets provide custom `abstract.jsp` and `full_content.jsp` templates.
-    This means that a blogs asset can render a blog's abstract description or
-    the blog's full content in the Asset Publisher. Those templates are located
-    in the `com.liferay.blogs.web` module's
+    Blogs assets provide `abstract.jsp` and `full_content.jsp` templates. This
+    means that a blogs asset can render a blog's abstract description or the
+    blog's full content in the Asset Publisher. Those templates are located in
+    the `com.liferay.blogs.web` module's
     `src/main/resources/META-INF/resources/blogs/asset` folder. You could create
     a similar folder for your JSP templates used for this method. The other
     template provided by the `AssetRenderer` interface, `preview.jsp`, is not
     customized by the blogs asset renderer, so its default template is
     implemented.
 
-    You must configure a link to display the full content of the asset. You'll
+    You must create a link to display the full content of the asset. You'll
     do this later.
 
-2.  Now that you've added the path for your JSP, you'll need a way to include
-    that JSP. Since the `BlogsEntryAssetRenderer` class is extending the
-    `BaseJSPAssetRenderer`, it already provides an `include(...)` method to
-    render a specific JSP. You need to override this method to set an attribute
-    in the request to use in the blog's views:
+2.  Now that you've added the path to your JSP, you must include that JSP. Since
+    the `BlogsEntryAssetRenderer` class extends the `BaseJSPAssetRenderer`,
+    it already has an `include(...)` method to render a specific JSP. You
+    must override this method to set an attribute in the request to use in
+    the blog's views:
 
         @Override
         public boolean include(
@@ -400,8 +392,8 @@ renderer framework provides several other methods that let you render convenient
 buttons for your asset.
 
 1.  Blogs assets provide an Edit button (![Edit Blog](../../images/icon-edit.png))
-    that you can select to edit the asset. This is provided for blog assets by
-    adding the following method to the `BlogsEntryAssetRenderer` class:
+    that lets you edit the asset. This is provided by adding the following
+    method to the `BlogsEntryAssetRenderer` class:
 
         @Override
         public PortletURL getURLEdit(
@@ -459,7 +451,7 @@ buttons for your asset.
                 "entryId", _entry.getEntryId());
         }
 
-    The `getURLView(...)` method generates a URL which displays the full content
+    The `getURLView(...)` method generates a URL that displays the full content
     of the asset in the Asset Publisher. This is assigned to the clickable asset
     name. The `getURLViewInContext(...)` method provides a similar URL assigned
     to the asset name, but the URL redirects to the original context of the
@@ -471,11 +463,11 @@ buttons for your asset.
     Full Content* and *View in Context* for the Asset Link Behavior drop-down
     menu.
 
-The Blogs application provides customized `abstract` and `full_content` JSP
-templates that override the ones provided by the `AssetRenderer` interface. The
-third template, `preview`, could also be customized. You can view the default
-`preview.jsp` template rendered in the *Add*
-(![Add](../../images/icon-control-menu-add.png)) &rarr; *Content* menu.
+The Blogs application provides `abstract` and `full_content` JSP templates that
+override the ones provided by the `AssetRenderer` interface. The third template,
+`preview`, could also be customized. You can view the default `preview.jsp`
+template rendered in the *Add* (![Add](../../images/icon-control-menu-add.png))
+&rarr; *Content* menu.
 
 ![Figure 4: The `preview` template displays a preview of the asset in the Content section of the Add menu.](../../images/preview-template-asset-renderer.png)
 
@@ -485,15 +477,15 @@ into action by creating a factory.
 
 ## Creating a Factory for the Asset Renderer [](id=creating-a-factory-for-the-asset-renderer)
 
-You've successfully created an asset renderer, but you'll need to create a
-factory class to create an asset renderer for each asset instance. For example,
-the blogs asset renderer factory instantiates `BlogsEntryAssetRenderer` for each
-blogs asset in @product@.
+You've successfully created an asset renderer, but you must create a factory
+class to generate asset renderers for each asset instance. For example, the
+blogs asset renderer factory instantiates `BlogsEntryAssetRenderer` for each
+blogs asset displayed in an Asset Publisher. 
 
 You'll continue the blogs asset renderer example by creating the blogs asset
 renderer factory.
 
-1.  Create a `-AssetRenderFactory` class in the same folder as its asset
+1.  Create an `-AssetRenderFactory` class in the same folder as its asset
     renderer class. For blogs, the
     [BlogsEntryAssetRendererFactory](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/blogs/com.liferay.blogs.web/com/liferay/blogs/web/asset/BlogsEntryAssetRendererFactory.html)
     class resides in the `com.liferay.blogs.web` module's
@@ -520,16 +512,16 @@ renderer factory.
     There are a few annotation elements you should set:
 
     - The `immediate` element directs the factory to start in @product@ when
-      it's first created.
+      its module starts.
     - The `property` element sets the portlet that is associated with the asset.
-      For example, since the blogs factory is created for each blogs asset
-      instance, the Blogs portlet is specified.
+      The Blogs portlet is specified, since this is the Blogs asset renderer
+      factory. 
     - The `service` element should point to the `AssetRendererFactory.class`
       interface.
 
     +$$$
 
-    **Note:** In previous versions of Liferay, you had to register the asset
+    **Note:** In previous versions of @product@, you had to register the asset
     renderer factory in a portlet's `liferay-portlet.xml` file. The registration
     process is now completed automatically by OSGi using the `@Component`
     annotation.
@@ -548,21 +540,19 @@ renderer factory.
             setSelectable(true);
         }
 
-    These private attributes are explained for an asset renderer factory below:
-
-        - *linkable*: other assets can select blogs assets as their related
-          assets.
-        - *categorizable*: blogs can be used to delimit the scope of a
-          vocabulary from the Categories Administration.
-        - *searchable*: blogs can be found when searching for assets.
-        - *selectable*: blogs can be selected when choosing assets to display in
-          the Asset Publisher.
+    - *linkable*: other assets can select blogs assets as their related
+      assets.
+    - *categorizable*: blogs can be used to delimit the scope of a
+      vocabulary from the Categories Administration.
+    - *searchable*: blogs can be found when searching for assets.
+    - *selectable*: blogs can be selected when choosing assets to display in
+      the Asset Publisher.
 
     Setting the class name and portlet ID links the asset renderer factory to
     the entity.
 
-4.  Retrieve the asset renderer that you created for your asset. This is done by
-    creating an instance of the asset renderer by calling its constructor.
+4.  Create the asset renderer for your asset. This is done by calling its
+    constructor.
 
         @Override
         public AssetRenderer<BlogsEntry> getAssetRenderer(long classPK, int type)
@@ -585,7 +575,7 @@ renderer factory.
     set for the asset renderer. Finally, the configured asset renderer is
     returned.
 
-    There are a few variables in the `getAssetRenderer(...)` method you need to
+    There are a few variables in the `getAssetRenderer(...)` method you must
     create. You'll set those variables and learn what they're doing next.
 
     a. You must get the entry by calling the Blogs application's local service.
@@ -602,7 +592,7 @@ renderer factory.
         private BlogsEntryLocalService _blogsEntryLocalService;
 
     The setter method is annotated with the `@Reference` tag. Visit the
-    [Invoking Liferay Service Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
+    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
     section of the *Finding and Invoking Liferay Services* tutorial for more
     information.
 
@@ -635,7 +625,7 @@ renderer factory.
        - `0` for the latest version of the asset
        - `1` for the latest approved version of the asset
 
-    d. Since the Blogs application is providing its own JSPs, it must pass a
+    d. Since the Blogs application provides its own JSPs, it must pass a
     reference of the servlet context to the asset renderer. This is always
     required when using custom JSPs in an asset renderer:
 
@@ -736,5 +726,5 @@ renderer factory.
         }
 
 Great! You've finished creating the Blogs application's asset renderer factory!
-Now you have the knowledge to implement an asset render for your asset and
-produce an asset renderer for each asset instance using a factory!
+Now you have the knowledge to implement an asset renderer and produce an asset
+renderer for each asset instance using a factory!
