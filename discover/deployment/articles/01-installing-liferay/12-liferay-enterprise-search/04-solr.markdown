@@ -145,8 +145,12 @@ the Solr adapter:
    data against your Solr server.](../../../images/solr-reindex.png)
 
 In production deployments, specify your edits to the Solr adapter's default
-configurations using a `.cfg` file deployed to the `Liferay_Home/osgi/configs`
-folder. During testing and development, the System Settings app in Liferay's
+configurations using a configuration file deployed to the `Liferay_Home/osgi/configs`
+folder. Name the file 
+
+    com.liferay.portal.search.solr.configuration.SolrConfiguration.config
+
+During testing and development, the System Settings app in Liferay's
 Control Panel &rarr; Configuration section is convenient for editing the default
 configurations.
 
@@ -253,7 +257,7 @@ To stop Solr while running in SolrCloud mode, use the *stop* command, like this:
 There's only one thing left to do: specify the client type as *CLOUD* in
 Liferay's Solr adapter.
 
-1. From System Settings or your OSGi `.cfg` file, set the *Client Type*
+1. From System Settings or your OSGi configuration file, set the *Client Type*
    to *CLOUD*.
 
         clientType=CLOUD
