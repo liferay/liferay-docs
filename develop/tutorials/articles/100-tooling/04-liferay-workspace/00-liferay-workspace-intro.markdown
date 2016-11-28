@@ -124,7 +124,7 @@ If you want to skip the downloading process, follow the steps below:
 
 3.  Uncomment the `liferay.workspace.bundle.url` property and change the file
     name (e.g.,`liferay-ce-portal-tomcat-7.0-ga2.zip`) to the file name you
-    downloaded.
+    downloaded. The remaining parts of the URL should stay the same.
 
 The Liferay Workspace is a great development environment for Liferay module
 development; however, what if you'd like to also stick with developing WAR-style
