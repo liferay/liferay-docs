@@ -116,15 +116,9 @@ Gradle build tools. This command downloads the version of Liferay you specified
 in your Gradle properties and installs your Liferay instance in the `bundles`
 folder.
 
-If you want to skip the downloading process, follow the steps below:
-
-1.  Insert a @product@ ZIP file into your `[userHome]/.liferay/bundles` folder.
-
-2.  Open your workspace's `gradle.properties` file.
-
-3.  Uncomment the `liferay.workspace.bundle.url` property and change the file
-    name (e.g.,`liferay-ce-portal-tomcat-7.0-ga2.zip`) to the file name you
-    downloaded. The remaining parts of the URL should stay the same.
+If you want to skip the downloading process, you can create the `bundles` folder
+manually in your workspace's ROOT folder and unzip your @product@ bundle to that
+folder.
 
 The Liferay Workspace is a great development environment for Liferay module
 development; however, what if you'd like to also stick with developing WAR-style
