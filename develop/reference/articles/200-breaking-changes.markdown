@@ -2096,44 +2096,6 @@ This change was made to extend the MVC framework to have better support for
 
 ---------------------------------------
 
-### Removed the liferay-ui:journal-article Tag [](id=removed-the-liferay-uijournal-article-tag)
-- **Date:** 2015-Jun-29
-- **JIRA Ticket:** LPS-56383
-
-#### What changed? [](id=what-changed-54)
-
-The `liferay-ui:journal-article` tag has been removed.
-
-#### Who is affected? [](id=who-is-affected-54)
-
-This affects developers using the `liferay-ui:journal-article` tag.
-
-#### How should I update my code? [](id=how-should-i-update-my-code-54)
-
-You should use the `liferay-ui:asset-display` tag instead.
-
-**Example**
-
-Old code:
-
-    <liferay-ui:journal-article
-        articleId="<%= article.getArticleId() %>"
-    />
-
-New code:
-
-    <liferay-ui:asset-display
-        className="<%= JournalArticleResource.class.getName() %>"
-        template="<%= article.getResourcePrimKey() %>"
-    />
-
-#### Why was this change made? [](id=why-was-this-change-made-54)
-
-The `liferay-ui:asset-display` is a generic way to display any type of asset.
-Therefore, the `liferay-ui:journal-article` tag is no longer necessary.
-
----------------------------------------
-
 ### Changed Java Package Names for Portlets Extracted as Modules [](id=changed-java-package-names-for-portlets-extracted-as-modules)
 - **Date:** 2015-Jun-29
 - **JIRA Ticket:** LPS-56383 and others
@@ -4162,5 +4124,47 @@ accessed by navigating to Liferay's Control Panel &rarr; *System Settings*
 
 This change was made as part of modularization efforts to ease portlet
 configuration changes.
+
+---------------------------------------
+
+### Moved the liferay-ui:journal-article Tag to Journal
+- **Date:** 2016-Nov-24
+- **JIRA Ticket:** LPS-69321
+
+#### What changed?
+
+The `liferay-ui:journal-article` tag has been moved to the Journal (Web Content)
+application.
+
+#### Who is affected?
+
+This affects developers using the `liferay-ui:journal-article` tag.
+
+#### How should I update my code?
+
+You should use the `liferay-journal:journal-article` tag instead.
+
+**Example**
+
+Old code:
+
+    <liferay-ui:journal-article
+        articleId="<%= article.getArticleId() %>"
+    />
+
+New code:
+
+    <liferay-journal:journal-article
+        articleId="<%= article.getArticleId() %>"
+        groupId="<%= article.getGroupId() %>"
+    />
+
+If you still want to use the `liferay-ui:journal-article` tag, you must deploy
+the `journal-taglib` module to your Liferay installation.
+
+#### Why was this change made?
+
+This change was made as part of the modularization efforts for the Web
+Content application.
 
 ---------------------------------------
