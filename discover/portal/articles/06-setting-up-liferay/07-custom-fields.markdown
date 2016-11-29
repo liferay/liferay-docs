@@ -134,6 +134,18 @@ of the Head Circumference field:
 ![Figure 3: Custom Fields can be configured after you create them. The exact
 options depend on the field type you choose.](../../images/custom-fields-configuration.png)
 
+Edit an individual custom field's permissions by clicking the field's kebab menu
+(![Actions](../../images-dxp/icon-actions.png)), then *Permissions*.  Permission
+can be granted or removed for these actions:
+
+- Delete
+- Permissions
+- Update
+- View
+
+![Figure x: You can delete a custom field, edit it, or configure its
+permissions.](../../images/custom-fields-edit.png)
+
 Custom fields make many of @product@'s entities extensible directly from the
 administrative user interface. Use them as is, or combine them with some backend
 code, and you have yet another powerful, flexible feature at your disposal. As
