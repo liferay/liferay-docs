@@ -75,7 +75,7 @@ deleted. The next tutorial covers that. From that point onward, each tutorial
 shows you how to leverage a particular asset framework feature in your UI.
 It's time to start your asset framework training!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [What is Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 
