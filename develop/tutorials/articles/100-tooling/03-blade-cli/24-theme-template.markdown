@@ -11,8 +11,8 @@ following command to accomplish this:
 
     blade create -t theme my-theme-project
 
-After running the command above, your project's directory structure looks like
-this
+After running the command above, your project's folder structure looks like
+this: 
 
 - `my-theme-project`
     - `gradle`
@@ -35,9 +35,9 @@ this
 
 The generated theme is functional and is deployable to a Liferay instance. To
 build upon the generated theme, modify the project by adding logic and
-additional files to the folders outlined above.To
-build upon the generated app, modify the project by adding logic and additional
-files to the folders outlined above. You can visit the
+additional files to the folders outlined above. To build upon the generated app,
+modify the project by adding logic and additional files to the folders outlined
+above. You can visit the
 [blade.theme](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.theme)
 sample project for a more expanded sample of a theme. Likewise, see the
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)

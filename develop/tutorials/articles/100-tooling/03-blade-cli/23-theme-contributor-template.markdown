@@ -13,8 +13,8 @@ package name of `com.liferay.docs.theme.contributor` and a contributor type of
 
     blade create -t theme-contributor --contributorType my-contributor -p com.liferay.docs.theme.contributor my-theme-contributor
 
-After running the command above, your project's directory structure would look
-like this
+After running the command above, your project's folder structure would look
+like this: 
 
 - `my-theme-contributor`
     - `gradle`
