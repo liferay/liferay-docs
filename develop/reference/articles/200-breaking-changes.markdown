@@ -4127,20 +4127,20 @@ configuration changes.
 
 ---------------------------------------
 
-### Moved the liferay-ui:journal-article Tag to Journal
+### Moved the liferay-ui:journal-article Tag to Journal [](id=removed-the-liferay-uijournal-article-tag)
 - **Date:** 2016-Nov-24
 - **JIRA Ticket:** LPS-69321
 
-#### What changed?
+#### What changed? [](id=what-changed-54)
 
 The `liferay-ui:journal-article` tag has been moved to the Journal (Web Content)
 application.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-54)
 
 This affects developers using the `liferay-ui:journal-article` tag.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-54)
 
 You should use the `liferay-journal:journal-article` tag instead.
 
@@ -4162,7 +4162,7 @@ New code:
 If you still want to use the `liferay-ui:journal-article` tag, you must deploy
 the `journal-taglib` module to your Liferay installation.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-54)
 
 This change was made as part of the modularization efforts for the Web
 Content application.
