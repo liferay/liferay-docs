@@ -64,17 +64,19 @@ items shown in the Activities feed in its Configuration.
 
 So far, you've learned how to integrate your site with Facebook and Twitter, but
 what about the other social networks? There's an app for that: Social Bookmarks.
-When this feature is enabled, icons are displayed in a menu, or below the 
-content, that allows users to share their content to Facebook, Twitter, and 
+When this feature is enabled, icons are displayed in a menu or below the 
+content that allows users to share their content to Facebook, Twitter, and 
 Google+. This feature is enabled by default in the Blogs portlet, and can be 
-enabled for other portlets, that are asset enabled, through the *configuration* 
-menu of the portlet or in System Settings.
+enabled for other asset-enabled portlets through the *configuration* menu of the
+portlet or in System Settings.
 
 ![Figure 2: Social Bookmarks are enabled by default in the Blogs portlet.](../../../images/social-bookmarks.png)
 
 If you want more social bookmarks than come out of the box, be sure to install 
 the [Social Bookmarks app](https://web.liferay.com/marketplace/-/mp/application/15188453) 
 from the Marketplace.
+
+<!-- The above paragraph should list the ones that come with this app. -Rich --> 
 
 +$$$
 
