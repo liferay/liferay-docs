@@ -74,9 +74,20 @@ portlet or in System Settings.
 
 If you want more social bookmarks than come out of the box, be sure to install 
 the [Social Bookmarks app](https://web.liferay.com/marketplace/-/mp/application/15188453) 
-from the Marketplace.
+from the Marketplace. The Social Bookmarks app adds the following additional 
+bookmarks to the default set of social bookmarks:
 
-<!-- The above paragraph should list the ones that come with this app. -Rich --> 
+- AddThis (containing 199+ social media sites)
+- Compartir
+- Delicious
+- Digg
+- Evernote
+- LinkedIn
+- Newsvine
+- Reddit
+- Slashdot
+- StumbleUpon
+- Tuenti
 
 +$$$
 
@@ -84,6 +95,3 @@ from the Marketplace.
 have therefore been removed from the Social Bookmarks app.
 
 $$$
-
-The Social Bookmarks app adds several additional bookmarks to the default set of
-social bookmarks, such as LinkedIn and Digg.
