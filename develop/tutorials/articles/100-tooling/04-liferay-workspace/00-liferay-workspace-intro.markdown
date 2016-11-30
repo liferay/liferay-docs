@@ -143,13 +143,14 @@ default, so you must create it yourself. In your workspace's root
 folder, create the `plugins-sdk` folder. Then copy your legacy Plugins SDK
 files into the `plugins-sdk` folder.
 
-One last thing you must do to ensure the Plugins SDK works properly in the
-context of your workspace is to generate all its requirements. These
-requirements include the build JARs the Plugins SDK relies on to function
-properly. To download the necessary requirements for your Plugins SDK, run the
-following command from your workspace's root folder:
+Liferay Workspace and the Plugins SDK require many build related artifacts. To
+start the artifact download process, execute the following command in your
+workspace's root folder:
 
     ./gradlew tasks
 
-Once the downloading is complete, your Plugins SDK is ready to use in your
-workspace. It's as simple as that!
+The Workspace and Plugins SDK's artifacts are downloaded, and the available
+tasks are listed in the terminal. Since the download process takes time,
+invoking it at a convenient time such as before a work break can be
+worthwhile. Once the downloading is complete, your Plugins SDK is ready to use
+in your workspace. It's as simple as that!

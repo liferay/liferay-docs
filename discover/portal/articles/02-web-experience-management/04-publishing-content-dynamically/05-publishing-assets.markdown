@@ -116,7 +116,15 @@ rules for selecting content:
 
 **Scope:** Choose the sites from which the content should be selected. This
 works the same way as with manual asset selection: assets can only be displayed
-if they belong to a configured scope.
+if they belong to a configured scope. The following scope options are available
+for an Asset Publisher:
+
+- *Current Site*
+- *Global*
+- *Other Site*
+
+The Other Site scope option is unavailable for Asset Publisher applications
+configured on a page template (e.g., Content Display Page).
 
 **Asset Type:** Choose whether you'll display any assets or only assets of a
 specific type, such as only web content, only wiki entries, or any combination
@@ -399,7 +407,7 @@ editing web content, you can select a display page, but only pages with
 a configured asset publisher are available for selection.
 
 To create a display page, you can create a page yourself, add an Asset Publisher
-app and configure it yourself. Alternatively, you can use the *Content Display
+app, and configure it yourself. Alternatively, you can use the *Content Display
 Page* page template included with @product@. If you're creating a Display Page
 manually, once you've added an Asset Publisher application to the page, open its
 configuration window. Then navigate to the Display Settings tab and check the

@@ -93,6 +93,6 @@ adapting plugins to @product-ver@'s API.
 
 **Related Topics**
 
-[Adapting to @product-ver@'s API](/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Adapting to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)

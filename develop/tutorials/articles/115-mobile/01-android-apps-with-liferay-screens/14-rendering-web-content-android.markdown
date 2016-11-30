@@ -1,7 +1,7 @@
 # Rendering Web Content in Your Android App [](id=rendering-web-content-in-your-android-app)
 
 Liferay represents 
-[web content](/discover/portal/-/knowledge_base/7-0/web-content-management) 
+[web content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
 articles as `JournalArticle` entities. Liferay Screens provides several ways to 
 render these entities in your apps. 
 
@@ -66,7 +66,7 @@ method in the activity or fragment code that uses the Screenlet.
 ## Using Templates [](id=using-templates)
 
 Web Content Display Screenlet can also use 
-[templates](/discover/portal/-/knowledge_base/7-0/advanced-content-with-structures-and-templates) 
+[templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#designing-web-content-with-templates) 
 to render `JournalArticle` entities. For example, your Liferay instance may have 
 a custom template specifically designed to display content on mobile devices. 
 
@@ -82,7 +82,7 @@ To use a template, specify its ID in the Screenlet XML's `templateId` property:
 
 Since mobile devices have limited screen space, you must often display only the 
 most important parts of a web content article. If your web content is 
-[structured](/discover/portal/-/knowledge_base/7-0/advanced-content-with-structures-and-templates#using-structures), 
+[structured](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#creating-structured-web-content), 
 you can do this by using Web Content Display Screenlet to display only specific 
 fields from a `JournalArticle`'s structure. The simplest way to do this is to 
 specify the structure's ID and a comma-delimited list of fields in the Screenlet 
@@ -175,7 +175,7 @@ want to display a list of articles instead? No problem! You can use Web Content
 List Screenlet for this. Web Content List Screenlet can retrieve the contents of 
 a web content folder and display only the labels you want. The Screenlet is also 
 aware of 
-[structured](/discover/portal/-/knowledge_base/7-0/advanced-content-with-structures-and-templates#using-structures) 
+[structured](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#creating-structured-web-content) 
 content, so you can render each row with certain structure fields. You can also 
 do this via a custom layout. 
 
