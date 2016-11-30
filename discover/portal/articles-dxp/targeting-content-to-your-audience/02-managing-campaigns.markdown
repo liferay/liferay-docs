@@ -109,7 +109,7 @@ accessible at the bottom of the *New Report* wizard.
 
 You could drag and drop *metrics* from the palette to track all the actions
 mentioned above. More types of metrics can be created by developers and deployed
-as OSGI plugins. See the
+as OSGi plugins. See the
 [Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/tracking-user-actions-with-audience-targeting)
 tutorial for details.
 
@@ -127,7 +127,7 @@ of any actions about which you don't need information.
 
 Reports are available for campaigns. You can select the campaign name and click
 the *Reports* tab to see the list of reports available. More reports can be
-created by developers and deployed as OSGI plugins. See the
+created by developers and deployed as OSGi plugins. See the
 [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
 tutorial for details. You can create a custom report by selecting the a campaign
 and clicking the *Reports* tab &rarr *Add Custom Report*

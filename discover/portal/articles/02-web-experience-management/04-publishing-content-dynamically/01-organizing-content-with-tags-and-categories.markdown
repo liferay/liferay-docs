@@ -33,13 +33,14 @@ when you enter it. You'll take a closer look at tags and categories next.
 
 Tags are an important tool that can help organize information in @product@ and
 make it easier for users to find the content that they're interested in. Tags
-are words or phrases that you can attach to any content on the website. Tagging
-content makes your search results more accurate and enables you to use tools
-like the Asset Publisher to display content in an organized fashion on a web
-page. There are two ways to create tags: you can do it through the
-administrative console in the Site Administration section of the Menu or on the
-fly as content is created. By default, tags can be created by regular users and
-users can apply them to any assets which they have permission to create or edit.
+are lowercase words or phrases that you can attach to any content on the
+website. Uppercase characters in tags aren't recognized. Tagging content makes
+your search results more accurate and enables you to use tools like the Asset
+Publisher to display content in an organized fashion on a web page. There are
+two ways to create tags: you can do it through the administrative console in the
+Site Administration section of the Menu or on the fly as content is created. By
+default, tags can be created by regular users and users can apply them to any
+assets which they have permission to create or edit.
 
 While regular users can, by default, create new tags by applying them to any
 assets that they have permission to create or edit, only site administrators can

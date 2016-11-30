@@ -2761,7 +2761,7 @@ should follow these steps:
 #### Why was this change made? [](id=why-was-this-change-made-70)
 
 The deleted methods provided facilities that aren't compatible with using
-declarative services in an OSGI container. The new approach allows for proper
+declarative services in an OSGi container. The new approach allows for proper
 injection of dependencies into scheduled event message listeners.
 
 ---------------------------------------
@@ -3067,28 +3067,50 @@ blank values are checked should be updated.
 
 Old Code:
 
-    return !val || val != A.one('#<portlet:namespace />publicVirtualHost').val();
+    <aui:input name="privateVirtualHost">
+        <aui:validator errorMessage="please-enter-a-unique-virtual-host" name="custom">
+            function(val, fieldNode, ruleValue) {
+                return !val || val != A.one('#<portlet:namespace />publicVirtualHost').val();
+            }
+        </aui:validator>
+    </aui:input>
 
 New Code:
 
-    return val != A.one('#<portlet:namespace />publicVirtualHost').val();
+    <aui:input name="privateVirtualHost">
+        <aui:validator errorMessage="please-enter-a-unique-virtual-host" name="custom">
+            function(val, fieldNode, ruleValue) {
+                return val != A.one('#<portlet:namespace />publicVirtualHost').val();
+            }
+        </aui:validator>
+    </aui:input>
 
 Also, instead of using custom validators to determine if a field is required,
 you should now use a conditional `required` validator.
 
 Old Code:
 
-    <aui:validator errorMessage="you-must-specify-a-file-or-a-title" name="custom">
-        function(val, fieldNode, ruleValue) {
-            return !!val || !!A.one('#<portlet:namespace />file').val();
-    }
+    <aui:input name="file" type="file" />
+
+    <aui:input name="title">
+        <aui:validator errorMessage="you-must-specify-a-file-or-a-title" name="custom">
+            function(val, fieldNode, ruleValue) {
+                return !!val || !!A.one('#<portlet:namespace />file').val();
+            }
+        </aui:validator>
+    </aui:input>
 
 New Code:
 
-    <aui:validator errorMessage="you-must-specify-a-file-or-a-title" name="required">
-        function(fieldNode) {
-            return !A.one('#<portlet:namespace />file').val();
-    }
+    <aui:input name="file" type="file" />
+
+    <aui:input name="title">
+        <aui:validator errorMessage="you-must-specify-a-file-or-a-title" name="required">
+            function(fieldNode) {
+                return !A.one('#<portlet:namespace />file').val();
+            }
+        </aui:validator>
+    </aui:input>
 
 Lastly, custom validators that assumed validation would always run must now
 explicitly pass the `required` validator. This is done by passing in the
@@ -3486,7 +3508,7 @@ else.
 
 - `com.liferay.portal.webserver` &rarr; `com.liferay.portal.kernel.webserver`
 
-- `com.liferay.portlet` &rarr; `com.liferay.kernel.portlet`
+- `com.liferay.portlet` &rarr; `com.liferay.portal.kernel.portlet`
 
 - `com.liferay.portlet.admin.util` &rarr; `com.liferay.admin.kernel.util`
 
@@ -4122,7 +4144,7 @@ addition, this change avoids future security issues from outdated flash movies.
 
 #### What changed? [](id=what-changed-103)
 
-All Journal portlet properties have been moved to an OSGI configuration.
+All Journal portlet properties have been moved to an OSGi configuration.
 
 #### Who is affected? [](id=who-is-affected-103)
 

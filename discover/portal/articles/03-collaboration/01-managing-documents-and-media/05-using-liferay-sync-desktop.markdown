@@ -152,10 +152,10 @@ on your machine.
 ### Using Sync Preferences [](id=using-sync-preferences)
 
 You can use Sync's preferences to add/remove Liferay instances to sync with, 
-edit instance connection settings, and control Sync's basic behavior. Open 
-Sync's preferences by clicking the Sync icon in the task bar (Windows) or menu 
-bar (Mac OS) and selecting *Preferences*. A preference screen for your instance 
-accounts displays. This is the *Accounts* tab in *Preferences*.
+edit connection settings, and control Sync's basic behavior. Open Sync's 
+preferences by clicking the Sync icon in the task bar (Windows) or menu bar 
+(Mac OS) and selecting *Preferences*. A preference screen for your instance 
+accounts displays. This is the *Accounts* tab in *Preferences*. 
 
 ![Figure 9: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../../images/sync-preferences-accounts-01.png)
 
@@ -184,8 +184,8 @@ The *Accounts* tab contains the following:
 - **Location:** the selected account's local Sync folder location. Click the 
   *Change* button to change this folder's location. 
 
-The Preferences menu's other tab, the *General* tab, contains settings for the 
-Sync client's general behavior. It lists the following options: 
+The Preferences menu's *General* tab contains settings for the Sync client's 
+general behavior. It lists the following options: 
 
 - **Launch Liferay Sync on startup:** starts Sync automatically each time your 
   machine starts. 
@@ -197,6 +197,32 @@ Sync client's general behavior. It lists the following options:
   versions. You can click the *Check Now* button to check for updates manually. 
 
 ![Figure 10: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../../images/sync-preferences-general-01.png)
+
+Lastly, the Preferences menu's *Network* tab lets you control how Sync transfers 
+data with your Liferay instances. It contains the following options: 
+
+- **Download Rate:** To limit the rate at which Sync downloads data, select 
+  *Limit to* and then specify the rate. 
+
+- **Upload Rate:** To limit the rate at which Sync uploads data, select 
+  *Limit to* and then specify the rate. 
+
+- **Enable LAN Syncing:** Whether to download updates from other desktop clients 
+  on the same local network before downloading from the server. This can help 
+  reduce server load and increase data transfer speeds. Note that LAN syncing 
+  only works when enabled in the Liferay instance by the administrator, and in 
+  other clients. 
+
+![Figure 11: The Preferences menu's *Network* tab contains settings for Sync's data transfer behavior.](../../../images/sync-desktop-prefs-network.png)
+
+Note that your Liferay instance's administrator can also limit the 
+download/upload rate from the Liferay instance. In this case, the Liferay 
+instance's settings take precedent. For example, if you set a 5.0 MB/s download 
+rate in the client but the Liferay instance's download limit is 2.0 MB/s, the 
+latter takes precedence. Also, the client's rate applies across all its 
+accounts. For example, if the client connects to three accounts and its download 
+rate is 5.0 MB/s, then the sum of the download rate for all three accounts never 
+exceeds 5.0 MB/s. 
 
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder. 
@@ -237,7 +263,7 @@ synced, go back to your browser and refresh the page with your Documents and
 Media app. Click on the *README.txt* file's name, look at the file information 
 displayed, and check that the file's version number has been incremented. 
 
-![Figure 11: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
+![Figure 12: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
 
 If you download and open the `README.txt` file again, it now says `second test`.
 Your edit was uploaded to the site! You can be confident that this edit was also

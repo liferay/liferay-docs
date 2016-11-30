@@ -100,23 +100,18 @@ the following methods:
         }
 
 - `- screenlet:onAsset:`: Called to render a custom asset. The following example 
-  implementation renders a user from a Liferay instance (`User`). If the asset 
-  is a user, this method instantiates a custom `UserDisplayViewController` to 
-  render that user: 
+  implementation renders a portal user (`User`). If the asset is a user, this 
+  method instantiates a custom `UserProfileView` to render that user: 
 
-        func screenlet(screenlet: AssetDisplayScreenlet, onAsset asset: Asset) -> UIView? {
+        public func screenlet(screenlet: AssetDisplayScreenlet, onAsset asset: Asset) -> UIView? {
             if let type = asset.attributes["object"]?.allKeys.first as? String {
                 if type == "user" {
-                    let vc = self.storyboard?
-                    .instantiateViewControllerWithIdentifier("UserDisplay")
-                    as? UserDisplayViewController
+                    let view = NSBundle.mainBundle().loadNibNamed("UserProfileView", owner: self, 
+                        options: nil)![0] as? UserProfileView
 
-                    if let userVc = vc {
-                        self.addChildViewController(userVc)
-                        screenlet.addSubview(userVc.view)
-                        userVc.view.frame = screenlet.bounds
-                        userVc.user = User(attributes: asset.attributes)
-                    }
+                    view?.user = User(attributes: asset.attributes)
+
+                    return view
                 }
             }
             return nil

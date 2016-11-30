@@ -46,6 +46,17 @@ ways:
             proxy.host.login=
             proxy.host.password=
 
+       If your proxy requires NTLM authentication, you must also add the 
+       following properties: 
+
+            proxy.auth.type=ntlm
+            proxy.domain=
+            proxy.workstation=
+
+       Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
+       values for your proxy. Note that you can leave `proxy.workstation` blank 
+       if you don't need it. 
+
     c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
         file. 
 

@@ -76,14 +76,14 @@ dependencies.
     new Java class in that package. To follow naming conventions, your class
     name should begin with the rule name you're creating, and end with *Rule*
     (e.g., `WeatherRule.java`). Your Java class should implement the
-    [`com.liferay.content.targeting.api.model.Rule` interface](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html).
+    [`com.liferay.content.targeting.api.model.Rule` interface](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html).
 
     It is required to implement the
-    [Rule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
+    [Rule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
     interface, but there are `Rule`
     extension classes that provide helpful utilities that you can extend. For
     example, your rule can extend the
-    [BaseJSPRule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
+    [BaseJSPRule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
     class to support generating your rule's UI using JSPs. This tutorial demonstrates implementing the UI using a JSP,
     and assumes the `Rule` interface is implemented by extending the `BaseJSPRule` class. For more information on
     choosing a UI for your rule, see the
@@ -99,7 +99,7 @@ dependencies.
 
 Now that your Java class is set up, you'll need to define how your rule works by
 implementing the
-[Rule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
+[Rule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
 interface's methods. You'll begin implementing these methods next.
 
 +$$$
@@ -123,7 +123,7 @@ a user applies a rule to a user segment using the User Segment Editor.
 In this section, you'll begin defining the weather rule's Java class. This
 assumes that you followed the instructions above, creating the `WeatherRule`
 class and extending
-[BaseJSPRule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html).
+[BaseJSPRule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html).
 If you used the `contenttargetingrule` Blade CLI template, your project is
 already extending `BaseJSPRule` and has a default `view.jsp` file already
 created. 
@@ -143,7 +143,7 @@ created.
         }
 
     These methods call the super class
-    [BaseRule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseRule.html)
+    [BaseRule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseRule.html)
     to implement necessary logging and processing for when your rule starts and
     stops. Make sure to include the
     [@Activate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Activate.html)
@@ -161,11 +161,11 @@ created.
     This code puts the weather rule in the Session Attributes category. To
     put your rule into the appropriate category, use the `getRuleCategoryKey`
     method to return the category class's key. Available category classes
-    include [BehaviourRuleCategory](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/rule/categories/BehaviorRuleCategory.html),
-    [SessionAttributesRuleCategory](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/rule/categories/SessionAttributesRuleCategory.html),
-    [SocialRuleCategory](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/rule/categories/SocialRuleCategory.html),
+    include [BehaviourRuleCategory](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/rule/categories/BehaviorRuleCategory.html),
+    [SessionAttributesRuleCategory](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/rule/categories/SessionAttributesRuleCategory.html),
+    [SocialRuleCategory](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/rule/categories/SocialRuleCategory.html),
     and
-    [UserAttributesRoleCategory](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/rule/categories/UserAttributesRuleCategory.html).
+    [UserAttributesRoleCategory](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/rule/categories/UserAttributesRuleCategory.html).
 
     ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
 
@@ -197,15 +197,15 @@ created.
     rule. The `getFormHTML(...)` method retrieves the HTML to display. You don't
     have to worry about implementing this method because it's already
     implemented in the
-    [BaseJSPRule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
+    [BaseJSPRule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
     class you're extending. The `getFormHTML`
     method calls the `populateContext(...)` method.
 
     You'll notice the `populateContext` method is not available in the
-    [Rule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
+    [Rule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
     interface. This is because it's not needed in all cases. It's available by
     extending the
-    [BaseJSPRule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
+    [BaseJSPRule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
     class, and you'll need to add more logic to it for the weather rule. 
     
     The goal of the `populateContext` method is to generate a map with all the
@@ -259,7 +259,7 @@ created.
 
     b. (Optional) Validate the data consistency and possible errors. If
     anything is wrong, throw an
-    [InvalidRuleException](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/exception/InvalidRuleException.html)
+    [InvalidRuleException](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/exception/InvalidRuleException.html)
     and prohibit the values from being stored. In the weather rule scenario,
     when the rule is reloaded after an exception is thrown in the form, case 3b
     from the previous step occurs.
@@ -297,7 +297,7 @@ created.
         }
 
     This is only required for rules extending the
-    [BaseJSPRule](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
+    [BaseJSPRule](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
     class. The servlet context must be set for the rule to render its own JSP
     files. The `setServletContext` method is invoked automatically when the rule
     module is installed and resolved in Liferay. Make sure the
