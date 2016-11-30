@@ -5,19 +5,20 @@ is a JavaScript  module loader.
 
 ## What is a JavaScript module? [](id=what-is-a-javascript-module)
 
-JavaScript modules are a way to encapsulate a piece of code into a useful unit 
-that exports its' capability/value. This makes it easy for other modules to 
-explicitly require this piece of code. Structuring an application this way makes 
-it easier to see the broader scope, easier to find what you're looking for, and 
-keeps related pieces close together.
+A JavaScript module encapsulates a piece of code into a useful unit that exports
+its capability/value. This makes it easy for other modules to explicitly require
+this piece of code. Structuring an application this way makes it easier to see
+the broader scope, easier to find what you're looking for, and keeps related
+pieces close together. This way of coding is a specification for the JavaScript
+language called Asynchronous Module Definition, or AMD. 
 
 ## Purpose of Liferay AMD Module Loader [](id=purpose-of-liferay-amd-module-loader)
 
 A normal web page usually loads JavaScript files via HTML `script` tags. That's 
 fine for small websites, but when developing large scale web applications, a 
 more robust organization and loader is needed. A module loader allows an 
-application to load dependencies easily by just specifying a string that 
-identifies the module name.
+application to load dependencies easily by specifying a string that identifies
+the module name.
 
 Now that you know the purpose of the Liferay AMD Module Loader, you can learn
 how to define modules next.
@@ -76,7 +77,7 @@ The example below loads a module called `my-dialog`:
     });
 
 Next you can learn how to map module names.
-    
+ 
 ## Mapping Module Names [](id=mapping-module-names)
 
 You can map module names to specific versions or other naming conventions. The
@@ -92,25 +93,24 @@ require value for example:
 
     require('liferay/html/js/autocomplete'...)
 
-Under the hood, this will be the same as the value shown below:
+Under the hood, this is the same as the value shown below:
 
     require('liferay@1.0.0/html/js/autocomplete'...)
-
 
 ## Using Liferay AMD Module Loader in @product@ [](id=using-liferay-amd-module-loader-in-liferay)
 
 Tools, like the [Liferay AMD Module Config Generator](https://github.com/liferay/liferay-module-config-generator), 
 have been integrated into @product@ to make it easy for developers to create 
-and load modules. An outline of the process is as follows:
+and load modules. Here's how it works:
 
 1. The Module Config Generator scans your code and looks for AMD module 
    `define(...)` statements.
 
-2. It then names the module, if it is not named already.
+2. It then names the module if it is not named already.
 
-3. It takes note of that information, along with the listed dependencies, as
-   well as any other configurations specified, to create a `config.json` file. 
-   Below is an example of a generated `config.json` file:
+3. It uses that information, along with the listed dependencies, as well as any
+   other configurations specified, to create a `config.json` file. Below is an
+   example of a generated `config.json` file:
 
     {
         "frontend-js-web@1.0.0/html/js/parser": {
@@ -125,7 +125,7 @@ and load modules. An outline of the process is as follows:
     }
 
 This configuration object tells the loader which modules are available, where 
-they are, and what dependencies they will require.
+they are, and what dependencies they require.
 
 Now you know all about the Liferay AMD Module Loader!
 
