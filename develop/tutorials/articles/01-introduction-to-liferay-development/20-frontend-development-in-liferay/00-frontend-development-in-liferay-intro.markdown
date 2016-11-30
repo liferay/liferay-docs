@@ -1,11 +1,13 @@
 # Introduction to Front-End Development in @product@ [](id=introduction-to-frontend-development-in-liferay)
 
-When approaching the development of your application's Front-End, @product@ offers a wide range of approaches, frameworks, utilities and mechanisms to make your life easier.
+When approaching the development of your application's Front-End, @product@ 
+offers a wide range of approaches, frameworks, utilities, and mechanisms to make 
+your life easier.
 
 ## JavaScript [](id=javascript)
 
 If you've used Liferay in the past, you can of course continue to
-use Liferay's venerable Alloy UI, but you are also free to use the front-end
+use Liferay's venerable Alloy UI, but you are also free to use the Front-End
 technologies you love the most:
 
 -   EcmaScript 2015
@@ -33,17 +35,22 @@ combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the
 default themes are nice, you may wish to create your own custom look and feel
 for your site.
 
-In @product@, Liferay provides an easy-to-use tool called the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) that helps automate the theme development process.
+In @product@, Liferay provides an easy-to-use tool called the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+that helps automate the theme development process.
 
-Themes created with the Themes Generator give you access to [theme gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks) that offer basic functions, such as `build` and `deploy`, as well as
+Themes created with the Themes Generator give you access to [theme gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
+that offer basic functions, such as `build` and `deploy`, as well as
 more complex interactions, such as auto deploying when a change is made and
 setting the base theme.
 
 ## Front-End Extensions [](id=frontend-extensions)
 
-All the new modularity efforts in @product@ have also their reflection in the Front-End world, allowing a wide variety of customizations and extensions that conform to the overall modular architecture. By using these extensions, application developers are assured of the stability, conformance and future evolution of their work.
+@product@'s modularization efforts have yielded in a wide variety of Front-End 
+development customizations and extensions points for you to use. These 
+extensions assure the stability, conformance, and future evolution of your 
+applications.
 
-Some of these examples are:
+Below are some of the available Front-End extensions:
 
 - [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
 - [Context Contributors](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
