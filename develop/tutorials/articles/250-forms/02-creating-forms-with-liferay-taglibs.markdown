@@ -1,16 +1,5 @@
 # Creating Forms with Liferay's Taglibs [](id=creating-forms-with-liferays-taglibs)
 
-Forms are a must-have tool in any developers UI bag. Rather than
-write your HTML from scratch, Liferay provides you with taglibs that offer
-everything standard HTML elements have, as well as some additional attributes
-that are Liferay specific. For a full list of all the available taglibs and 
-attributes, take a look at Liferay's API docs on
-[docs.liferay.com/portal/7.0/taglibs](https://docs.liferay.com/portal/7.0/taglibs/)
-Using a combination of Liferay's `AUI` taglibs and [Lexicon](http://liferay.github.io/lexicon/)
-classes, you can create a form in your app's JSPs. You can learn how to create a
-JSP portlet project in the [using-the-mvc-portlet-template](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/using-the-mvc-portlet-template)
-tutorial.
-
 This tutorial demonstrates how to:
 
 - Create a form using Liferay 7's taglibs in your application's JSPs
@@ -106,8 +95,8 @@ The `action` attribute specifies where to send the form data when the form is
 submitted. The `method` attribute defines the method to use to send the form
 data(in most cases this will be post). Finally, the `name` attribute specifies
 the name for the form, as well as the ID for the component instance for the
-form. It's important to note that, by default, `aui:form` places the portlet 
-namespace in front of the `name` and `id` attributes. This is also the default 
+form. It's important to note that, by default, `aui:form` places the portlet
+namespace in front of the `name` and `id` attributes. This is also the default
 behavior for the `aui:input` tag as well.
 
 You can find a full list of the available attributes for the `<aui:form>`
@@ -217,20 +206,20 @@ The `<aui:button-row>` tags acts as a wrapper for the form's buttons, and offers
 some additional styling through the `cssClass` attribute.
 
 The `<aui:button>` tag is a standard input button, with some additional
-attributes. It supports the `button`, `submit`(the default type), `cancel`, and 
+attributes. It supports the `button`, `submit`(the default type), `cancel`, and
 `reset` types for the `type` attribute. Note that you if you wish to emphasize
-the button as a primary action, you can add the `primary="true"` attribute to 
+the button as a primary action, you can add the `primary="true"` attribute to
 your button:
 
-    <aui:button 
+    <aui:button
         cssClass="btn-lg"
         id="submit"
         label="save"
-        primary="<%= true %>" 
+        primary="<%= true %>"
         type="submit"
     />
 
-For a full list of the attributes available for the `<aui:button>` tag, check 
+For a full list of the attributes available for the `<aui:button>` tag, check
 out the [AUI Button Taglib Docs](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/button.html).
 
 Your form is complete!
