@@ -4,13 +4,13 @@ In this tutorial, you'll learn how to create a Liferay Content Targeting
 Tracking Action application as a Liferay module. Use this command to create a
 Liferay Content Targeting Tracking Action: 
 
-    blade create -t contenttargetingtrackingaction -p [package name] -c [class name] [project name]
+    blade create -t content-targeting-tracking-action -p [package name] -c [class name] [project name]
 
-The template for this kind of project is `contenttargetingtrackingaction`. To
+The template for this kind of project is `content-targeting-tracking-action`. To
 create a tracking action project called `newsletter` with a package prefix of
 `com.liferay` and a class name of `Newsletter`, use this command: 
 
-    blade create -t contenttargetingtrackingaction -p com.liferay -c Newsletter newsletter
+    blade create -t content-targeting-tracking-action -p com.liferay -c Newsletter newsletter
 
 The command above creates a Content Targeting Tracking Action project named
 `newsletter` in the current folder. In the class, you're creating a service of

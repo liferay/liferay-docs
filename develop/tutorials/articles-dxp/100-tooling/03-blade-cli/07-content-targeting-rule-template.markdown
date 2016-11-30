@@ -4,13 +4,13 @@ In this tutorial, you'll learn how to create a Liferay Content Targeting Rule
 application as a Liferay module. Use this command to create a Liferay Content
 Targeting Rule module: 
 
-    blade create -t contenttargetingrule -p [package name] -c [class name] [project name]
+    blade create -t content-targeting-rule -p [package name] -c [class name] [project name]
 
-The template for this kind of project is `contenttargetingrule`. To create a
+The template for this kind of project is `content-targeting-rule`. To create a
 rule project called `weather` with a package prefix of `com.liferay` and a class
 name of `Weather`, use this command: 
 
-    blade create -t contenttargetingrule -p com.liferay -c Weather weather
+    blade create -t content-targeting-rule -p com.liferay -c Weather weather
 
 The command above creates a Content Targeting Rule project named `weather` in
 the current folder.  In the class, you're creating a service of
