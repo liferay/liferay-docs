@@ -1,112 +1,134 @@
 # Liferay AMD Module Loader [](id=liferay-amd-module-loader)
 
-## What is the Liferay AMD Module Loader?
-
-The [Liferay AMD Module Loader](https://github.com/liferay/liferay-amd-loader#amd-module-loader) is a JavaScript  module loader.
+The [Liferay AMD Module Loader](https://github.com/liferay/liferay-amd-loader#amd-module-loader) 
+is a JavaScript  module loader.
 
 ## What is a JavaScript module? [](id=what-is-a-javascript-module)
 
-JavaScript modules are a way to encapsulate a piece of code into a useful unit that exports its' capability/value. This makes it easy for other modules to explicitly require this piece of code. Structuring an application this way makes it easier to see the broader scope, easier to find what you're looking for, and keeps things related close together.
+JavaScript modules are a way to encapsulate a piece of code into a useful unit 
+that exports its' capability/value. This makes it easy for other modules to 
+explicitly require this piece of code. Structuring an application this way makes 
+it easier to see the broader scope, easier to find what you're looking for, and 
+keeps related pieces close together.
 
 ## Purpose of Liferay AMD Module Loader [](id=purpose-of-liferay-amd-module-loader)
 
-A normal web page usually loads JavaScript files via HTML `script` tags. That's fine for small websites, but when developing large scale web applications, a better way to organize and load files is needed. A module loader allows an application to load dependencies easily by just specifying a string that identifies the module name.
+A normal web page usually loads JavaScript files via HTML `script` tags. That's 
+fine for small websites, but when developing large scale web applications, a 
+more robust organization and loader is needed. A module loader allows an 
+application to load dependencies easily by just specifying a string that 
+identifies the module name.
+
+Now that you know the purpose of the Liferay AMD Module Loader, you can learn
+how to define modules next.
 
 ## Defining a Module [](id=defining-a-module)
 
-The Liferay AMD Module loader works with JavaScript modules that are in the AMD format. Here is a basic example of the definition an AMD module:
+The Liferay AMD Module loader works with JavaScript modules that are in the AMD 
+format. Here is a basic example of the definition of an AMD module:
 
-```javascript
-define('my-dialog', ['my-node', 'my-plugin-base'], function(myNode, myPluginBase) {
-    return {
-        log: function(text) {
-            console.log('module my-dialog: ' + text);
-        }
-    };
-});
-```
 
-You may specify that the module should be loaded on triggering some other module and only of some condition is being met:
+    define('my-dialog', ['my-node', 'my-plugin-base'], function(myNode, myPluginBase) {
+        return {
+            log: function(text) {
+                console.log('module my-dialog: ' + text);
+            }
+        };
+    });
 
-```javascript
-define('my-dialog', ['my-node', 'my-plugin-base'], function(myNode, myPluginBase) {
-    return {
-        log: function(text) {
-            console.log('module my-dialog: ' + text);
-        }
-    };
-}, {
-    condition: {
-        trigger: 'my-test',
-        test: function() {
-            var el = document.createElement('input');
+You can specify to load the module when another module is triggered or when a
+given condition is met:
 
-            return ('placeholder' in el);
-        }
-    },
-    path: 'my-dialog.js'
-});
-```
+    define('my-dialog', ['my-node', 'my-plugin-base'], function(myNode, myPluginBase) {
+        return {
+            log: function(text) {
+                console.log('module my-dialog: ' + text);
+            }
+        };
+    }, {
+        condition: {
+            trigger: 'my-test',
+            test: function() {
+                var el = document.createElement('input');
+    
+                return ('placeholder' in el);
+            }
+        },
+        path: 'my-dialog.js'
+    });
 
-Here it is specified, that this module should be loaded automatically if developer requests 'aui-test' module, but only if some condition is being met.
+The configuration above specifies that this module should be loaded
+automatically, if the developer requests the `aui-test` module under the given
+condition.
+
+Next you can learn how to load a module.
 
 ## Loading a Module [](id=loading-a-module)
 
-It's as easy as passing the module name to the `require` method.
+Loading a module is as easy as passing the module name to the `require` method.
+The example below loads a module called `my-dialog`:
 
-```javascript
-require('my-dialog', function(myDialog) {
-    // your code here
-}, function(error) {
-    console.error(error);
-});
-```
 
+    require('my-dialog', function(myDialog) {
+        // your code here
+    }, function(error) {
+        console.error(error);
+    });
+
+Next you can learn how to map module names.
+    
 ## Mapping Module Names [](id=mapping-module-names)
 
-You can map module names to specifc versions or other naming conventions.
+You can map module names to specific versions or other naming conventions. The
+example below maps the `liferay` and `liferay2` modules to `liferay@1.0.0`:
 
-```javascript
-__CONFIG__.maps = {
-    'liferay': 'liferay@1.0.0',
-    'liferay2': 'liferay@1.0.0'
-};
-```
+    __CONFIG__.maps = {
+        'liferay': 'liferay@1.0.0',
+        'liferay2': 'liferay@1.0.0'
+    };
 
-Mapping a module will change its name in order to match the value, specified in the map.
+Mapping a module changes its name to the value specified in the map. Take this
+require value for example:
 
-```javascript
-require('liferay/html/js/autocomplete'...)
-```
+    require('liferay/html/js/autocomplete'...)
 
-Under the hood, this will be the same as:
+Under the hood, this will be the same as the value shown below:
 
-```javascript
-require('liferay@1.0.0/html/js/autocomplete'...)
-```
+    require('liferay@1.0.0/html/js/autocomplete'...)
+
 
 ## Using Liferay AMD Module Loader in @product@ [](id=using-liferay-amd-module-loader-in-liferay)
 
-Tools, like the [Liferay AMD Module Config Generator](https://github.com/liferay/liferay-module-config-generator), have been integrated into the portal to make it easy for developers to create and load modules. An outline of the process is as follows:
+Tools, like the [Liferay AMD Module Config Generator](https://github.com/liferay/liferay-module-config-generator), 
+have been integrated into @product@ to make it easy for developers to create 
+and load modules. An outline of the process is as follows:
 
-1. This tool scans your code and looks for amd modules `define(...)` statements.
+1. The Module Config Generator scans your code and looks for AMD module 
+   `define(...)` statements.
 
-2. It will then name the module, if it is not named already.
+2. It then names the module, if it is not named already.
 
-3. It takes note of that information, as well as the listed dependencies, and also any other configurations specified to creates a `config.json` file that may look something like this
+3. It takes note of that information, along with the listed dependencies, as
+   well as any other configurations specified, to create a `config.json` file. 
+   Below is an example of a generated `config.json` file:
 
-```json
-{
-    "frontend-js-web@1.0.0/html/js/parser": {
-        "dependencies": []
-    },
-    "frontend-js-web@1.0.0/html/js/list-display": {
-        "dependencies": ["exports"]
-    },
-    "frontend-js-web@1.0.0/html/js/autocomplete": {
-        "dependencies": ["exports", "./parser", "./list-display"]
+    {
+        "frontend-js-web@1.0.0/html/js/parser": {
+            "dependencies": []
+        },
+        "frontend-js-web@1.0.0/html/js/list-display": {
+            "dependencies": ["exports"]
+        },
+        "frontend-js-web@1.0.0/html/js/autocomplete": {
+            "dependencies": ["exports", "./parser", "./list-display"]
+        }
     }
-}
-```
 
-This configuration object tells the loader which modules are available, where they are, and what dependencies they will require.
+This configuration object tells the loader which modules are available, where 
+they are, and what dependencies they will require.
+
+Now you know all about the Liferay AMD Module Loader!
+
+## Related Topics
+
+[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
