@@ -6,17 +6,18 @@ your site because of constant page reloads. A Single Page Application (SPA) is
 the solution. Single Page Applications drastically cut down on load times,
 loading only a single HTML page that is dynamically updated as the user
 interacts and navigates through the site. This provides a native-app experience
-that users have grown accustomed to. Since Liferay Portal CE GA2 and Liferay DXP,
-SPA is enabled by default in your apps and sites, and requires no changes to
-your workflow or code!
+that users have grown accustomed to. In @product@, **SPA is enabled by default
+in your apps and sites, and requires no changes to your workflow or code!**
 
 This tutorial covers these key topics:
 
--  The benefits of SennaJS
--  How to configure SPA settings
--  How to listen to SPA lifecycle events
+- The benefits of SPA's
+- What is SennaJS
+- How to enable SPA in @product@
+- How to configure SPA settings
+- How to listen to SPA lifecycle events
 
-## The Benefits of SennaJS [](id=the-benefits-of-sennajs)
+## The Benefits of SPA's [](id=the-benefits-of-spas)
 
 Let's say you're surfing the web and you find a really rad site that happens to
 be SPA enabled. Alright! Page load times are blazin' fast. You're deep into the
@@ -33,6 +34,8 @@ What a bummer! "Why? Why have you failed me site!," you will cry. If only there
 was a way to have a Single Page Application, but also be able to link to the
 content you want. Well don't despair my friend. You can have your cake and eat
 it too, thanks to SennaJS.
+
+## What is SennaJS [](id=what-is-sennajs)
 
 SennaJS is @product@'s SPA engine. SennaJS handles the client-side data, while
 AJAX is used to load the page's content dynamically. While there are other
@@ -80,7 +83,15 @@ requirements.
 You can read more about SennaJS as well as see examples at [http://sennajs.com/](http://sennajs.com/).
 
 Now that you have a better understanding of how SennaJS benefits SPA, you can
-learn how to configure options for SPA within your @product@ installation next.
+learn how to enable and configure options for SPA within your @product@ next.
+
+## Enabling SPA [](id=enabling-spa)
+
+Easy. All that is needed is to have the `frontend-js-spa-web` module deployed and
+enabled.
+
+**SPA is enabled by default in your apps and sites, and requires no changes to your
+workflow or existing code!**
 
 ## Customizing SPA Settings [](id=customizing-spa-settings)
 
@@ -134,17 +145,15 @@ disable SPA for elements in your site next.
 
 ### Disabling SPA [](id=disabling-spa)
 
-Certain elements of your page may require a page refresh to work properly. For
+Certain elements of your page may require a regular navigation to work properly. For
 example, you may have downloadable content that you want to share with the user.
 In these cases, SPA must be disabled for those specific elements.
 
-If there is a certain portlet or page that you don't want to be part of the SPA,
+If there is a certain portlet or element that you don't want to be part of the SPA,
 and instead require a full page navigation, you have some options:
 
 -  Blacklist the portlet to disable SPA for the entire portlet
 -  Use the `data-senna-off` annotation to disable SPA for a specific link
-
-<!-- How do you disable SPA for a page? Since it's mentioned as an option, we need to demonstrate it. -->
 
 To blacklist a portlet from SPA follow these steps:
 
@@ -193,17 +202,6 @@ the page. This event passes the following JSON object:
 
     { form: '<form name="form"></form>', path: '/pages/page1.html' }
 
-<!--
-
-Can you explain the `startNavigate` and `endNavigate` payloads? I'm not sure how
-to parse the form, for example `event.form` returns undefined in the alert. I
-figure this is just because it is a object.(I'm sure that is why) Can you give
-an example of using these last two events?
-
-looking here: https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/frontend-js/frontend-js-spa-web/src/main/resources/META-INF/resources/liferay/app/App.es.js#L79-L92
-It seems form is possible if there is form data being sent, but not always...
--->
-
 These events can be leveraged easily by listening for them on the Liferay global
 object.
 
@@ -239,19 +237,9 @@ invocations of those listeners. This can obviously cause problems if not
 handled.
 
 To prevent this, you simply need to listen to the navigation event in order to
-detach your listeners. For example, for the function below:
+detach your listeners. For example, you would use the following code to detach
+the event listeners of a global `category` event:
 
-    function fire(key,value){
-        Liferay.fire(
-            'category',{
-                id: key,
-                name: value
-             }
-        );
-    }
-
-You would use the following code to detach the event listeners:
-<!-- Is this the same function(event) shown above?-->
     var onCategory = function(event) {...};
 
     var clearPortletHandlers = function(event) {
