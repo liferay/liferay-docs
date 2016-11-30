@@ -40,7 +40,7 @@ these steps:
 
 2.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
-3.  In the *Add Repository* dialog, click the *Archive* button and browse to the
+3.  In the *Add Site* dialog, click the *Archive* button and browse to the
     location of the downloaded Liferay Developer Studio `.zip` file. Then press
     *OK*.
 

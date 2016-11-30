@@ -19,6 +19,8 @@ methods available for installing Liferay IDE.
    [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
    Installing it is easy: unzip it to a convenient location on your system. 
 
+3. To run IDE, execute the `eclipse` executable.
+
 Congratulations! You've installed Liferay IDE! 
 
 ## Install Liferay IDE into Eclipse [](id=install-liferay-ide-into-eclipse)
@@ -54,7 +56,7 @@ To install Liferay IDE into Eclipse from a `.zip` file, follow these steps:
 1. Go to the
    [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
    downloads page. Under *Other Downloads*, select the *Liferay IDE [version]
-   Archive Update=site* option and click *Download*.
+   Archive Update-site* option and click *Download*.
 
 2. In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
