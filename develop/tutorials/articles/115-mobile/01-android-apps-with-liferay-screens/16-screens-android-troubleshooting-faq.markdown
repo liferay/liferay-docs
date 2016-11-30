@@ -4,7 +4,7 @@ Even though Liferay developed Screens for Android with great care, you may still
 run into some common issues. Here are solutions and tips for solving these
 issues. You'll also find answers to common questions about Screens for Android. 
 
-## General Troubleshooting
+## General Troubleshooting [](id=general-troubleshooting)
 
 Before delving into specific issues, you should first make sure that you have 
 the latest tools installed and know where to get additional help if you need it. 
