@@ -35,7 +35,7 @@ was a way to have a Single Page Application, but also be able to link to the
 content you want. Well don't despair my friend. You can have your cake and eat
 it too, thanks to SennaJS.
 
-## What is SennaJS [](id=what-is-sennajs)
+### What is SennaJS [](id=what-is-sennajs)
 
 SennaJS is @product@'s SPA engine. SennaJS handles the client-side data, while
 AJAX is used to load the page's content dynamically. While there are other
@@ -87,11 +87,13 @@ learn how to enable and configure options for SPA within your @product@ next.
 
 ## Enabling SPA [](id=enabling-spa)
 
-Easy. All that is needed is to have the `frontend-js-spa-web` module deployed and
-enabled.
+Enabling SPA is easy. Simply have the `frontend-js-spa-web` module deployed and
+enabled, and you're all set to use SPA.
 
-**SPA is enabled by default in your apps and sites, and requires no changes to your
-workflow or existing code!**
+**SPA is enabled by default in your apps and sites, and requires no changes to 
+your workflow or existing code!**
+
+Next you can learn how to customize SPA settings to meet your own needs.
 
 ## Customizing SPA Settings [](id=customizing-spa-settings)
 
@@ -145,12 +147,12 @@ disable SPA for elements in your site next.
 
 ### Disabling SPA [](id=disabling-spa)
 
-Certain elements of your page may require a regular navigation to work properly. For
-example, you may have downloadable content that you want to share with the user.
-In these cases, SPA must be disabled for those specific elements.
+Certain elements of your page may require a regular navigation to work properly. 
+For example, you may have downloadable content that you want to share with the 
+user. In these cases, SPA must be disabled for those specific elements.
 
-If there is a certain portlet or element that you don't want to be part of the SPA,
-and instead require a full page navigation, you have some options:
+If there is a certain portlet or element that you don't want to be part of the 
+SPA, and instead require a full page navigation, you have some options:
 
 -  Blacklist the portlet to disable SPA for the entire portlet
 -  Use the `data-senna-off` annotation to disable SPA for a specific link
@@ -215,16 +217,15 @@ the URL that has been clicked, just before SPA navigation begins.
 The alert takes advantage of the payload for the `beforeNavigate` event,
 retrieving the URL from the `path` attribute of the JSON payload object.
 
-The above code should result in behavior like this:
+The above code results in the behavior shown below:
 
 ![Figure 1: You can leverage SPA lifecycle events in your apps.](../../images/private-messaging-before-navigate.png)
 
-You've learned how to listen to SPA lifecycle events, which can be very useful
-during development. Due to the nature of SPA navigation, global listeners that
-you create can become problematic over time if not handled properly. You'll
-learn how to handle these listeners next.
+Due to the nature of SPA navigation, global listeners that you create can become 
+problematic over time if not handled properly. You'll learn how to handle these 
+listeners next.
 
-### Detaching Global Listeners [](id=detaching-global-listeners)
+## Detaching Global Listeners [](id=detaching-global-listeners)
 
 SPA provides several improvements that highly benefit your site and users, but
 there is potentially some additional maintenance as a consequence. In a
