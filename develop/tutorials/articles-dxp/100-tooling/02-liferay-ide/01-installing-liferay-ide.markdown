@@ -1,72 +1,77 @@
-# Installing Liferay IDE [](id=installing-liferay-ide)
+# Installing Liferay Developer Studio
 
-Liferay IDE is a plugin for Eclipse that brings many Liferay-specific features
-to the table. You can install it into your existing Eclipse environment, or
-Liferay provides a bundled version. In this tutorial, you'll learn the different
-methods available for installing Liferay IDE.
+Liferay Developer Studio is a plugin for Eclipse that provides many
+Liferay-specific features and additional enterprise only features. You can
+install it into your existing Eclipse environment, or Liferay provides a bundled
+version. In this tutorial, you'll learn the different methods available for
+installing Liferay Developer Studio.
 
-## Install the Liferay IDE Bundle [](id=install-the-liferay-ide-bundle)
+## Install the Liferay Developer Studio Bundle
 
-1. Download and install [Java](http://java.oracle.com). Liferay runs on Java, so
-   you'll need it to run everything else. Because you'll be developing apps for
-   Liferay Portal in Liferay IDE, the Java Development Kit (JDK) is required. It
-   is an enhanced version of the Java Environment, used for developing new Java
-   technology. You can download the Java SE JDK from the Java
-   [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-   page. 
+1.  Download and install [Java](http://java.oracle.com). @product@ runs on Java,
+    so you'll need it to run everything else. Because you'll be developing apps
+    for @product@ in Liferay Developer Studio, the Java Development Kit (JDK) is
+    required. It is an enhanced version of the Java Environment, used for
+    developing new Java technology. You can download the Java SE JDK from the
+    Java
+    [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+    page. 
 
-2. Download
-   [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
-   Installing it is easy: unzip it to a convenient location on your system. 
+2.  Download
+    [Liferay Developer Studio](https://web.liferay.com/group/customer/dxp/downloads/developer-tools).
+    Installing it is easy: unzip it to a convenient location on your system. 
 
-Congratulations! You've installed Liferay IDE! 
+3.  To run Developer Studio, execute the `DeveloperStudioShortcut` executable.
 
-## Install Liferay IDE into Eclipse [](id=install-liferay-ide-into-eclipse)
+Congratulations! You've installed Liferay Developer Studio! 
 
-If you already have an Eclipse environment that you're using for other
-things, it's easy to add Liferay IDE to your existing Eclipse installation. 
+## Install Liferay Developer Studio into Eclipse Environment
 
-1. Select *Help* &rarr; *Install New Software*. 
+To install Liferay Developer Studio into an existing Eclipse environment, follow
+these steps:
 
-2. In your browser, go to the
-   [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
-   page. Copy the URL to the update site you're interested in (stable or
-   milestone). 
+1.  Go to the
+    [Liferay Developer Studio](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
+    downloads page. From the drop-down menu, select *Archived Feature Update
+    Site* and click *Download*.
 
-    ![Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../../images/liferay-ide-download.png)
+    The Archived Product Update Site is used to update an existing Developer
+    Studio environment to the most recent release. You'll cover this later.
 
-3. Go back to Eclipse and click the *Add* button to add a repository. 
+2.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
-4. Type *Liferay IDE* into the Name field and paste the URL into the Location 
-   field. 
+3.  In the *Add Repository* dialog, click the *Archive* button and browse to the
+    location of the downloaded Liferay Developer Studio `.zip` file. Then press
+    *OK*.
 
-5. You'll see the Liferay IDE components in the list below. Check them off and
-   click *Next*. 
+4.  You'll see the Developer Studio components in the list below. Check them off
+    and click *Next*. 
 
-6. Accept the terms of the agreements and click *Next*, and Liferay IDE is
-   installed. Like other Eclipse plugins you'll have to restart Eclipse to
-   enable it. 
+    ![Figure 1: Make sure to check all the Developer Studio components you wish to install.](../../../images-dxp/dev-studio-zip-install.png)
 
-## Install Liferay IDE into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
+5.  Accept the terms of the agreements and click *Next*, and Developer Studio is
+    installed. Like other Eclipse plugins, you'll have to restart Eclipse to use
+    them.
 
-To install Liferay IDE into Eclipse from a `.zip` file, follow these steps: 
+Awesome! You've installed Liferay Developer Studio in your existing Eclipse
+environment.
 
-1. Go to the
-   [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
-   downloads page. Under *Other Downloads*, select the *Liferay IDE [version]
-   Archive Update=site* option and click *Download*.
+## Update Liferay Developer Studio
 
-2. In Eclipse, go to *Help* &rarr; *Install New Software...*. 
+If you're already using Liferay Developer Studio, but need to update your
+environment, follow the steps below:
 
-3. In the *Add Site* dialog, click the *Archive* button and browse to the
-   location of the downloaded Liferay IDE `.zip` file.
+1.  Go to the
+    [Liferay Developer Studio](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
+    downloads page. From the drop-down menu, select *Archived Product Update
+    Site* and click *Download*.
 
-4. You'll see the Liferay IDE components in the list below. Check them off and
-   click *Next*. 
+2.  Navigate to *Help* &rarr; *Update Liferay Developer Studio...*.
 
-5. Accept the terms of the agreements and click *Next*, and Liferay IDE is
-   installed. Like other Eclipse plugins you'll have to restart Eclipse to
-   enable it.
+3.  Select *Browse* and select the `.zip` file you downloaded in step 1. Then
+    select *Update*.
 
-Awesome! You've installed Liferay IDE. Now you can begin Liferay development
-using a popular and supported IDE.
+Your now on the latest version of Liferay Developer Studio!
+
+Now that you've learned how to install and update your Liferay Developer Studio
+environment, you can begin developing Liferay products.
