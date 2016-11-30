@@ -323,7 +323,7 @@ from a Liferay instance. An Interactor is made up of several components:
    with your listener and event as type arguments. The listener lets the 
    Interactor class send the server call's results to any classes that implement 
    the listener. In the implementation of the method that makes the server call, 
-   you must 
+   the `execute` method, you must 
    [use the Mobile SDK to make an asynchronous service call](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-android-app). 
    This means you must get a session and then make the server call. You make the 
    server call by creating an instance of the Mobile SDK service (e.g., 
@@ -611,7 +611,9 @@ Next, you must implement `BaseScreenlet`'s abstract methods:
   method. The `onUserAction` method starts the server operation by calling the 
   Interactor's `start` method with the user input. Note that the Interactor 
   inherits the `start` method from the 
-  [`BaseInteractor` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/BaseInteractor.java): 
+  [`BaseInteractor` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/BaseInteractor.java). 
+  Invoking the `start` method causes the Interactor's `execute` method to run in 
+  a background thread: 
 
         @Override
         protected void onUserAction(String userActionName, AddBookmarkInteractor interactor, Object... args) {
