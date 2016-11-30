@@ -1,5 +1,14 @@
 # JavaScript Module Loaders [](id=javascript-module-loaders)
 
-JavaScript modules are a way to encapsulate a piece of code into a useful unit that exports its' capability/value. This makes it easy for other modules to explicitly require this piece of code.  Structuring an application this way makes it easier to see the broader scope, easier to find what you're looking for, and keeps things related close together.
+JavaScript modules encapsulate code into useful units that export their
+functions. Structuring an application this way makes it easier to work with in
+these ways: 
 
-This section contains tutorials relating to the different JavaScript Module Loaders included present on the Liferay platform.
+- Other modules can explicitly require this piece of code. 
+- Structuring an application this way makes it easier to see the broader
+  scope. 
+- Modular applications keep related functionality close together. 
+- Modularized code makes it easier to find what you're looking for.
+
+This section contains tutorials relating to the different JavaScript Module
+Loaders included present on the Liferay platform.
