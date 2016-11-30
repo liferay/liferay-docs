@@ -1,20 +1,18 @@
 # JavaScript in @product@ [](id=javascript-in-liferay)
 
-The Front-End of @product@ is designed to be extendible, flexible, and future 
-ready.
+@product@'s front-end is extendable, flexible, and future ready.
 
-Like previous versions, many components are written using [AlloyUI](http://alloyui.com/).
+Like previous versions, many components are written using [AlloyUI](http://alloyui.com).
 AlloyUI is based on [YUI](http://yuilibrary.com/), and is no longer under active 
-development. Because of this, we have included [jQuery](https://jquery.com/), 
-and also have developed a new framework called [MetalJS](http://metaljs.com/).
+development. Because of this, we have included [jQuery](https://jquery.com) 
+and also have developed a new framework called [MetalJS](http://metaljs.com).
 
 ## MetalJS [](id=metaljs)
 
 Metal.js is a JavaScript library for building UI components in a solid and 
-flexible way. Metal is built from the ground up with performance in mind. Metal 
-is flexible enough to be built as global objects, AMD modules, or jQuery plugins.
-Metal is on the cutting edge of JavaScript, using 
-[ECMAScript 6 (ES6)/ ECMAScript 2015 (ES2015)](http://www.ecma-international.org/ecma-262/6.0/), 
+flexible way. Metal is built from the ground up with performance in mind and is
+flexible enough to be built as global objects, AMD modules, or jQuery plugins.
+Metal is cutting edge JavaScript, using [ECMAScript 6 (ES6)/ ECMAScript 2015 (ES2015)](http://www.ecma-international.org/ecma-262/6.0/), 
 which provides you with clean code that's easy-to-read.
 
 ![Figure 1: Metal.js is a new framework for building UI components.](../../../images/metaljs-website.png)
@@ -34,16 +32,16 @@ tutorials.
 
 ## AlloyUI [](id=alloyui)
 
-AlloyUI is an open source Front-End framework built on top of 
+AlloyUI is an open source front-end framework built on top of 
 [Yahoo! User Interface Library (YUI)](http://yuilibrary.com). It leverages all 
 of YUI's modules and adds even more cutting edge components and features to help 
 you build terrific UIs. AlloyUI provides the following key benefits:
 
 - Create modern UI components that provide a consistent look & feel across 
   @product@.
-- It is also server-agnostic, so you can use it with any technology.
+- Server-agnostic, so you can use it with any technology.
 
-As of @product@, AlloyUI has been officially sunsetted. This means that we are 
+As of @product-ver@, AlloyUI has been officially sunsetted. This means that we are 
 no longer developing new features for it, but it is still included in the 
 product and actively maintained.
 
@@ -56,8 +54,8 @@ client-side scripting of HTML. It is the most popular JavaScript library in use
 today. The syntax is designed to make it easier to navigate a document, select 
 DOM elements, create animations, handle events, and develop Ajax applications.
 
-While jQuery is great for small websites, once you start creating high 
-scalable applications, like Java portals, you'll need a more robust solution.  
+While jQuery is great for small websites, once you start creating highly 
+scalable applications like Java portals, you'll need a more robust solution. 
 That being the case, we strongly recommend you to use one of our other provided 
 solutions mentioned above.
 
