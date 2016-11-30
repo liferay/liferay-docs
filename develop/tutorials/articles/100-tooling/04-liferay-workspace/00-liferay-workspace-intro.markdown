@@ -91,7 +91,7 @@ tutorial.
 $$$
 
 Once you've developed and managed projects in your workspace, it could also be
-usefuly to bundle your workspace into a ZIP or TAR file. This provides the
+useful to bundle your workspace into a ZIP or TAR file. This provides the
 flexibility to distribute your workspace to potential consumers. To do this,
 navigate to your workspace's root folder and run the following command:
 
