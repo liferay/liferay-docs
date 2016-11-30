@@ -35,13 +35,10 @@ that can be assigned to a particular role. First an administrator creates a cust
 field called *max-users* for the role. A developer then creates a module that
 inserts logic before a user is added to that role. If their logic detects that
 the maximum number of role users would be exceeded by completing the action, an
-exception is thrown and the action does not complete.
+exception is thrown and the action does not complete. A tutorial is being
+planned to illustrate how this is accomplished using Custom Fields and a [module
+deployed to @product](/develop/tutorials/-/knowledge_base/7-0/fundamentals#modules).
 
-Developers can access your custom fields programmatically using the
-`<liferay-ui:custom-attribute />` tag.
-
-For more information on developing modules for @product@, see the [developer
-documentation](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development).
 <!-- Add link to expando tutorial when written -->
 
 $$$
@@ -113,9 +110,9 @@ That's it.
 
 Once you have a custom field for a resource, go find it in the UI of the
 resource. First find the UI location for the resource, and all its custom fields
-are dsipalyed in a Custom Fields panel. For example, consider the Users UI:
+are displayed in a Custom Fields panel. For example, consider the Users UI:
 
-- For Users, navigate to *Control Panel &rarr; Users and Organizations*. Once
+- Navigate to *Control Panel &rarr; Users and Organizations*. Once
     there click on a User to open the Edit User form. Open the form's
     Miscellaneous tab and expand the Custom Fields panel. Your custom field is
     there (its title is whatever you specified in the Key field), ready to be
@@ -143,7 +140,7 @@ can be granted or removed for these actions:
 - Update
 - View
 
-![Figure x: You can delete a custom field, edit it, or configure its
+![Figure 4: You can delete a custom field, edit it, or configure its
 permissions.](../../images/custom-fields-edit.png)
 
 Custom fields make many of @product@'s entities extensible directly from the
