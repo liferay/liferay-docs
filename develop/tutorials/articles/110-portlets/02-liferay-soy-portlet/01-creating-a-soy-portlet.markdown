@@ -37,9 +37,13 @@ You can also use the blade template to build your initial project.
 Remove this info and add to separate text file.
 -->
 
+Now that you know the basic structure of a Soy portlet module, you can specify
+the OSGi metadata next.
+
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
 
-Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND configuration is shown below:
+Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND 
+configuration is shown below:
 
     Bundle-Name: Liferay Hello Soy Web
     Bundle-SymbolicName: com.liferay.hello.soy.web
@@ -50,10 +54,12 @@ In addition to the standard metadata, take notice of the `Require-Capability`
 property. This specifies that this bundle requires modules that provide the
 capability `soy` with a `type` of `metal` to work.
 
+Next you can specify your module's JavaScript dependencies.
+
 ## Specifying JavaScript Dependencies [](id=specifying-javascript-dependencies)
 
-Specify the javascript module dependencies in your `package.json`. At a minimum, you should
-specify the following dependencies and configuration parameters:
+Specify the javascript module dependencies in your `package.json`. At a minimum, 
+you should specify the following dependencies and configuration parameters:
 
         {
                 "dependencies": {
@@ -68,8 +74,11 @@ specify the following dependencies and configuration parameters:
                 "version": "1.0.3"
         }
 
-    This provides everything you need to create a Metal component based on soy. Note that the
-    values of `name` and `version` should match those in your `bnd.bnd` file.
+This provides everything you need to create a Metal component based on soy. Note 
+that the values of `name` and `version` should match those in your `bnd.bnd` 
+file.
+
+Next you can specify your module's build dependencies.
 
 ## Specifying Build Dependencies [](id=specifying-build-dependencies)
 
@@ -84,8 +93,8 @@ Add the dependencies shown below to your `build.gradle`:
         provided group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.0.0"
     }
 
-Now that your module build is configured, you can learn how to create the Soy portlet
-component next.
+Now that your module build is configured, you can learn how to create the Soy 
+portlet component next.
 
 ## Creating a Soy Portlet Component [](id=creating-a-soy-portlet-component)
 
@@ -152,8 +161,8 @@ controller for the Soy portlet next.
 
 ## Writing Controller Code [](id=writing-controller-code)
 
-Soy portlets extend MVC portlets, so they use the same model view
-controller framework to operate.
+Soy portlets extend MVC portlets, so they use the same model view controller 
+framework to operate.
 
 Your controller receives requests from the front end, and it receives data from
 the back end. It’s responsible for sending that data to the right front end view
@@ -187,7 +196,7 @@ In this case, the `View.soy` file is found at:
 
 and that's the default view of the application. When the `init` method is
 called, the initialization parameters you specify are read and used to direct
-rendering to the default template.Throughout this framework, you can render a
+rendering to the default template. Throughout this framework, you can render a
 different view(Soy template) by setting the `mvcRenderCommandName` parameter of
 the `PortletURL` to the soy template like this:
 
@@ -291,8 +300,8 @@ view layer next.
 ## Configuring the View Layer [](id=configuring-the-view-layer)
 
 You now know how to extend Liferay’s SoyPortlet to write controller code and
-register a Component in the OSGi runtime. You also need a view layer, of course,
-and for that, you’ll use Soy templates.
+register a Component in the OSGi runtime. Your portlet also requires a view 
+layer, and for that you’ll use Soy templates.
 
 This section will briefly cover how to get your view layer working, from
 including other soy templates, to creating a Metal JS component for rendering
@@ -386,4 +395,10 @@ for `com.liferay.hello.soy.web` portlet's `View.soy` template:
 
     export default View;
 
-As you can see, it’s pretty easy to make your controller talk to your view layer.
+As you can see, it’s pretty easy to use Soy templates for your view layer.
+
+## Related Topics
+
+[Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet)
+
+[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
