@@ -58,10 +58,10 @@ information on working sets, visit
 A dialog appears prompting you to open the Liferay Workspace perspective.
 Click *Yes*, and your perspective will switch to Liferay Workspace.
 
-The Liferay Workspace perspective is intended for Gradle development for
-Liferay 7 modules. Since Liferay Workspaces are used for Gradle based
-development and the Liferay workspace is intended for the Plugins SDK and Ant
-based development, the two perspectives are independent of each other.
+The Liferay Workspace perspective is intended for Gradle development for Liferay
+7 modules. Since Liferay Workspaces are used for Gradle based development and
+the Liferay Plugins perspective is intended for the Plugins SDK and Ant based
+development, the two perspectives are independent of each other.
 
 ![Figure 3: The Liferay Workspace perspective is preferred for Liferay 7 and OSGi module development.](../../../images/liferay-workspace-perspective.png)
 
