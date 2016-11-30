@@ -1,12 +1,13 @@
 # Creating a Liferay Workspace with Liferay IDE [](id=creating-a-liferay-workspace-with-liferay-ide)
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
-IDE, which runs on the Blade CLI behind the scenes. Liferay IDE gives you a
-graphical interface instead of the command prompt, which can streamline your
-workflow. The instructions covered in this tutorial apply to both the commercial
-and open source versions of Liferay. To learn more about Liferay Workspaces,
-visit its dedicated
-[tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+IDE, which runs on the [Blade
+CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) Blade CLI behind the
+scenes. Liferay IDE gives you a graphical interface instead of the command
+prompt, which can streamline your workflow. The instructions covered in this
+tutorial apply to both the commercial and open source versions of Liferay. To
+learn more about Liferay Workspaces, visit its dedicated [tutorial
+section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
 Before creating your Liferay Workspace, you should understand the available IDE
 perspectives specifically designed for Liferay development. You'll notice in the
@@ -57,10 +58,10 @@ information on working sets, visit
 A dialog appears prompting you to open the Liferay Workspace perspective.
 Click *Yes*, and your perspective will switch to Liferay Workspace.
 
-The Liferay Workspace perspective is intended for Gradle development for
-Liferay 7 modules. Since Liferay Workspaces are used for Gradle based
-development and the Liferay workspace is intended for the Plugins SDK and Ant
-based development, the two perspectives are independent of each other.
+The Liferay Workspace perspective is intended for Gradle development for Liferay
+7 modules. Since Liferay Workspaces are used for Gradle based development and
+the Liferay Plugins perspective is intended for the Plugins SDK and Ant based
+development, the two perspectives are independent of each other.
 
 ![Figure 3: The Liferay Workspace perspective is preferred for Liferay 7 and OSGi module development.](../../../images/liferay-workspace-perspective.png)
 
