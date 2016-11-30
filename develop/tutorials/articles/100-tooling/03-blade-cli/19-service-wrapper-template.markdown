@@ -4,9 +4,9 @@ In this tutorial, you'll learn how to create a Liferay service wrapper as a
 Liferay module. To create a Liferay service wrapper as a module, use a command
 with the following parameters:
 
-    blade create -t servicewrapper -p [package name] -c [class name] -s [service wrapper to extend] [project name]
+    blade create -t service-wrapper [-p packageName] [-c className] [-s serviceWrapperToExtend] projectName
 
-The template for this kind of project is `servicewrapper`. Suppose you want to
+The template for this kind of project is `service-wrapper`. Suppose you want to
 create a service wrapper project called `service-override` with a package name of
 `com.liferay.docs.serviceoverride` and a class name of
 `UserLocalServiceOverride`. Also, you'd like to create a service of type
@@ -14,7 +14,7 @@ create a service wrapper project called `service-override` with a package name o
 `com.liferay.portal.service.UserLocalServiceWrapper` class. You could run the
 following command to accomplish this:
 
-    blade create -t servicewrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.kernel.service.UserLocalServiceWrapper service-override
+    blade create -t service-wrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.kernel.service.UserLocalServiceWrapper service-override
 
 Here, *service* means an OSGi service, not a Liferay API. Another way to say
 *service type* is to say *component type*.

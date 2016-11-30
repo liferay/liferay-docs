@@ -4,9 +4,9 @@ In this tutorial, you'll learn how to create a Liferay MVC portlet application
 as a Liferay module. To create a Liferay MVC portlet application as a module,
 use a command with the following parameters:
 
-    blade create -t mvcportlet -p [package name] -c [class name] [project name]
+    blade create -t mvc-portlet [-p packageName] [-c className] projectName
 
-The template for this kind of project is `mvcportlet`. Suppose you want to
+The template for this kind of project is `mvc-portlet`. Suppose you want to
 create an MVC portlet project called `my-mvc-portlet-project` with a package
 name of `com.liferay.docs.mvcportlet` and a class name of `MyMvcPortlet`. Also,
 you'd like to create a service of type `javax.portlet.Portlet` that extends the
@@ -15,7 +15,7 @@ you'd like to create a service of type `javax.portlet.Portlet` that extends the
 type* is to say *component type*. You could run the following command to
 accomplish this:
 
-    blade create -t mvcportlet -p com.liferay.docs.mvcportlet -c MyMvcPortlet my-mvc-portlet-project
+    blade create -t mvc-portlet -p com.liferay.docs.mvcportlet -c MyMvcPortlet my-mvc-portlet-project
 
 After running the command above, your project's directory structure looks like
 this:

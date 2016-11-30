@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay service as a Liferay
 module. To create a Liferay service as a module, use a command with the
 following parameters: 
 
-    blade create -t service -p [package name] -c [class name] -s [service name] [project name]
+    blade create -t service [-p packageName] [-c className] [-s serviceName] projectName
 
 The template for this kind of project is `service`. Suppose you want to create a
 service project called `my-service-project` with a package name of
