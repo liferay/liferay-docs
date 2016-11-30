@@ -220,8 +220,6 @@ There you have it! You're ready to design a terrific theme!
 
 [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 
-<!-- [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors) -->
-
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 
-<!-- [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-your-themes) -->
+[Importing Resources with a Theme](develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)

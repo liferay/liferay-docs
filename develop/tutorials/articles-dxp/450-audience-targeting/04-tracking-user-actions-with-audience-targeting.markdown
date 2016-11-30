@@ -98,17 +98,17 @@ dependencies.
     name should begin with the metric's name you're creating and end with
     *TrackingAction* (e.g., `NewsletterTrackingAction.java`). Your Java class
     should implement the
-    [com.liferay.content.targeting.api.model.TrackingAction` interface](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html).
+    [com.liferay.content.targeting.api.model.TrackingAction` interface](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html).
 
     You must implement the
-    [TrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html}
+    [TrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html}
     interface, but there are
     `TrackingAction` extension classes that provide helpful utilities that you
     can extend. For example, your metric can extend the
-    [BaseJSPTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
+    [BaseJSPTrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
     class to support generating your metric's UI using JSPs. This tutorial
     demonstrates implementing the UI using a JSP and assumes the
-    [TrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+    [TrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
     interface is implemented by extending the `BaseJSPTrackingAction` class. For
     more information on choosing a UI for your metric, see the
     [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-metrics#selecting-a-ui-technology)
@@ -123,7 +123,7 @@ dependencies.
 
 Now that your Java class is set up, you'll need to define how your metric works
 by implementing the
-[TrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+[TrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
 interface's methods. You'll begin implementing these methods next.
 
 The first thing you'll define in your newsletter metric is the view/save
@@ -137,7 +137,7 @@ a user applies a metric to a report using the Report Editor.
 In this section, you'll begin defining the newsletter metric's Java class. This
 assumes that you followed the instructions above, creating the
 `NewsletterTrackingAction` class and extending
-[BaseJSPTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html).
+[BaseJSPTrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html).
 If you used the `contenttargetingtrackingaction` Blade CLI template, your
 project is already extending `BaseJSPTrackingAction` and a default `view.jsp`
 file is already created.
@@ -157,7 +157,7 @@ file is already created.
         }
 
     These methods call the super class
-    [BaseTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
+    [BaseTrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
     to implement necessary logging and processing for when your metric starts
     and stops. Make sure to include the
     [@Activate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Activate.html)
@@ -202,12 +202,12 @@ file is already created.
     metric. The `getFormHTML(...)` method retrieves the HTML to display. You
     don't have to worry about implementing this method because it's already
     implemented in the
-    [BaseJSPTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
+    [BaseJSPTrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
     class you're extending. The `getFormHTML` method calls the
     `populateContext(...)` method.
 
     You'll notice the `populateContext` method is not available in the
-    [TrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+    [TrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
     interface. This is because it's not needed in all cases.
     It's available by extending the `BaseJSPTrackingAction` class, and you'll
     need to add more logic to it for the newsletter metric.
@@ -252,7 +252,7 @@ file is already created.
     [metric's UI form](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
     Since the
-    [BaseTrackingAction](https://docs.liferay.com/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
+    [BaseTrackingAction](https://docs.liferay.com/dxp/apps/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
     class provides a default implementation of this method that returns `null`,
     the `NewsletterTrackingAction` class does not need to implement it.
 
