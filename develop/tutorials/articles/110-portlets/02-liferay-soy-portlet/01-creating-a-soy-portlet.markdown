@@ -6,6 +6,9 @@ To create a Soy portlet, you'll need these key components:
 -  Controller code to handle the request and response
 -  Soy templates to implement your view layer
 
+
+## Configuring a WEB Module [](id=configuring-a-web-module)
+
 The first thing you will need to do is configure the WEB module for your Soy
 portlet.
 
@@ -27,19 +30,6 @@ portlet. The basic structure of a Soy portlet module is shown below:
                 - `Language.properties`
             - `MyComponent.es.js` (MetalJS component)
             - `MyComponent.soy` (Soy template)
-            - `MyComponent.scss` (Sass file)
-
-<!--
-
-The sample module structure shows an `*.scss` file in the resources folder. Is
-this needed? Is this the only way to handle styling for the views?
-
-It is not used in the Hello-Soy-Portlet.
-
-Does the Sass file name have to match the template and JS filename to be used
-for that specific file?
-
--->
 
 <!--
 You can also use the blade template to build your initial project.
@@ -47,33 +37,23 @@ You can also use the blade template to build your initial project.
 Remove this info and add to separate text file.
 -->
 
-Follow these steps to specify the OSGi metadata and dependencies for your module:
+## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
 
-1.  Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND
-    configuration is shown below:
+Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND configuration is shown below:
 
     Bundle-Name: Liferay Hello Soy Web
     Bundle-SymbolicName: com.liferay.hello.soy.web
     Bundle-Version: 1.0.3
     Require-Capability: soy;filter:="(type=metal)"
-    Include-Resource:\
-        META-INF/resources=src/main/resources/META-INF/resources
 
 In addition to the standard metadata, take notice of the `Require-Capability`
 property. This specifies that this bundle requires modules that provide the
-capability `soy` with a `type` of `metal` to work. The `Include-Resource`
-property defines the full filepath where the module's resources are located.
+capability `soy` with a `type` of `metal` to work.
 
-<!--
+## Specifying JavaScript Dependencies [](id=specifying-javascript-dependencies)
 
-Should Include resource point to that META-INF location since it is outside of
-portal? I had to configure this for another external module I worked on. I'm
-guessing that this is required?
-
--->
-
-2. Specify dependencies in your `package.json`. Below is an example
-configuration:
+Specify the javascript module dependencies in your `package.json`. At a minimum, you should
+specify the following dependencies and configuration parameters:
 
         {
                 "dependencies": {
@@ -88,30 +68,26 @@ configuration:
                 "version": "1.0.3"
         }
 
-    This provides everything you need to create a Metal component based on soy.
-    Your `package.json` should contain the same `dependencies` and
-    `devDependencies`.
+    This provides everything you need to create a Metal component based on soy. Note that the
+    values of `name` and `version` should match those in your `bnd.bnd` file.
 
-3. Add the dependencies shown below to your `build.gradle`:
+## Specifying Build Dependencies [](id=specifying-build-dependencies)
+
+Add the dependencies shown below to your `build.gradle`:
 
     dependencies {
-            compileOnly group: 'com.liferay.portal',
-            name: 'com.liferay.portal.kernel', version: '2.0.0'
-            compileOnly group: 'com.liferay.portal',
-            name: 'com.liferay.util.java', version: '2.0.0'
-            compileOnly group: 'javax.portlet',
-            name: 'portlet-api', version: '2.0'
-            compileOnly group: 'javax.servlet',
-            name: 'javax.servlet-api', version: '3.0.1'
-            compileOnly group: 'org.osgi',
-            name: 'org.osgi.service.component.annotations', version: '1.3.0'
-            compileOnly project(':com.liferay.portal.portlet.bridge.soy')
+        provided group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+        provided group: "com.liferay.portal", name: "com.liferay.util.java", version: "2.0.0"
+        provided group: "javax.portlet", name: "portlet-api", version: "2.0"
+        provided group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+        provided group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+        provided group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.0.0"
     }
 
-Now that your module is configured, you can learn how to create the Soy portlet
+Now that your module build is configured, you can learn how to create the Soy portlet
 component next.
 
-## Creating the Soy Portlet Component
+## Creating a Soy Portlet Component [](id=creating-a-soy-portlet-component)
 
 Create a Soy Portlet component that extends the `SoyPortlet` class.
 
@@ -174,12 +150,12 @@ Liferay's DTD files can be found [here](https://docs.liferay.com/portal/7.0/defi
 The foundation for your Soy portlet component is set. You can write the
 controller for the Soy portlet next.
 
-## Writing Controller Code
+## Writing Controller Code [](id=writing-controller-code)
 
 Soy portlets extend MVC portlets, so they use the same model view
 controller framework to operate.
 
-your controller receives requests from the front end, and it receives data from
+Your controller receives requests from the front end, and it receives data from
 the back end. It’s responsible for sending that data to the right front end view
 so it can be displayed to the user, and it’s responsible for taking data the
 user entered in the front end and passing it to the right back end service. For
@@ -187,7 +163,7 @@ this reason, it needs a way to process requests from the front end and respond
 to them appropriately, and it needs a way to determine the appropriate front end
 view to pass data back to the user.
 
-### Render Logic
+### Render Logic [](id=render-logic)
 
 The render logic is where all the magic happens. After all, what's the use of a
 portlet if you can't see it?
@@ -271,7 +247,7 @@ the MVC render command name as a `String`.
 any of the Soy templates. **This can be overwritten with a variable with the
 same name in the `*MVCRenderCommand` implementation class.**
 
-For example `navigationURL` is delcared as a variable for the `hello-soy-web`
+For example `navigationURL` is declared as a variable for the `hello-soy-web`
 module in both its `HelloSoyNavigationExampleMVCRenderCommand` class and
 `HelloSoyPortlet` class, each pointing to a different MVC render command.
 
@@ -279,7 +255,6 @@ $$$
 
 Below is an example `*SoyPortlet` class for the
 [`com.liferay.hello.soy.web` portlet](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/hello-soy/hello-soy-web/src/main/java/com/liferay/hello/soy/web/internal/portlet/HelloSoyPortlet.java):
-
 
     public class HelloSoyPortlet extends SoyPortlet {
 
@@ -313,7 +288,7 @@ executed before the default `render` method, the method concludes by calling
 Now that you understand the render logic, you can learn how to configure the
 view layer next.
 
-## Configuring the View Layer
+## Configuring the View Layer [](id=configuring-the-view-layer)
 
 You now know how to extend Liferay’s SoyPortlet to write controller code and
 register a Component in the OSGi runtime. You also need a view layer, of course,
@@ -341,10 +316,6 @@ use the following syntax:
     $themeDisplay
 
 You can also access the `Locale` object by using `locale`.
-
-<!-- Should we mention how to extend this to add more objects, using a context
-template?
--->
 
 Here is the full [`View.soy` template]() for the
 [`com.liferay.hello.soy.web` portlet](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/hello-soy/hello-soy-web)
@@ -415,16 +386,4 @@ for `com.liferay.hello.soy.web` portlet's `View.soy` template:
 
     export default View;
 
-Note that the `constuctor()` method is only needed for Metal components that are
-associated with a view. For example, because the Header and Footer templates
-shown above only add additional content to the views, they do not require a
-constructor.
-
-<!-- Is that true? -->
-
-As you can see, with Liferay Soy it’s pretty easy to make your controller talk
-to your view layer.
-
-## Related Topics
-
-<!-- Links to go here -->
+As you can see, it’s pretty easy to make your controller talk to your view layer.
