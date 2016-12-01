@@ -22,7 +22,7 @@ Follow the steps below to use your exposed modules in your portlets.
 2.  Add an `aui:script` tag to the JSP and set the `require` attribute to the
     relative path for your module.
 
-    Since Liferay 7, the `require` attribute allows you to include your exposed
+    Since @product-ver@, the `require` attribute allows you to include your exposed
     modules in your JSP. The AMD Loader fetches the specified module and its
     dependencies. For example, the Console Logger Portlet's `view.jsp` includes
     the module `logger.es`:

@@ -2,9 +2,9 @@
 
 As explained in the
 [Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
-tutorial, you need to understand two concepts in order to succeed as a Liferay 7
+tutorial, you need to understand two concepts in order to succeed as a @product-ver@
 developer: *modules* and *components*. A module is the one and only type of
-Liferay 7 plugin. A component is a Java class that's decorated with the
+@product-ver@ plugin. A component is a Java class that's decorated with the
 `@Component` annotation that implements a specified interface. Components are
 registered in Liferay's module framework. For example, the
 [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)

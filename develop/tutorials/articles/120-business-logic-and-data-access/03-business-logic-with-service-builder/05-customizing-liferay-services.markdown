@@ -102,7 +102,7 @@ at the prompt. If your module was installed, you'll see an entry like this:
 Finally, log into your portal as an administrator. Navigate to the Users section
 of the Control Panel. Confirm that your customizations of Liferay's user service
 methods have taken effect by checking Liferay's log for the print statements
-that you added. Congratulations! You've created and deployed a Liferay 7 service
+that you added. Congratulations! You've created and deployed a @product-ver@ service
 wrapper module!
 
 ## Related Topics [](id=related-topics)

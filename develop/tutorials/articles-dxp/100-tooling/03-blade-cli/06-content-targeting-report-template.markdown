@@ -4,13 +4,13 @@ In this tutorial, you'll learn how to create a Liferay Content Targeting Report
 application as a Liferay module. Use this command to create a Liferay Content
 Targeting Report Module: 
 
-    blade create -t contenttargetingreport -p [package name] -c [class name] [project name]
+    blade create -t content-targeting-report -p [package name] -c [class name] [project name]
 
-The template for this kind of project is `contenttargetingreport`. To create a
+The template for this kind of project is `content-targeting-report`. To create a
 report project called `hits-by-country` with a package prefix of `com.liferay`
 and a class name of `HitsByCountryReport`, use this command: 
 
-    blade create -t contenttargetingreport -p com.liferay -c HitsByCountry hits-by-country
+    blade create -t content-targeting-report -p com.liferay -c HitsByCountry hits-by-country
 
 The command above creates a Content Targeting Rule project named
 `hits-by-country` in the current folder. In the class, you're creating a service

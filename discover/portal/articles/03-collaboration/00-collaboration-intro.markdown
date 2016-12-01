@@ -32,7 +32,7 @@ users--tagging them by name to get their attention or give them kudos.
 
 As you produce digital assets--documents, videos, audio--you can store and share
 them using the suite's [Documents and Media
-Library](/participate/liferaypedia/-/wiki/Main/Documents+and+Media).
+Library](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Documents+and+Media).
 It both provides its own repository and connects to external CMIS repositories. 
 
 Finally, you can collaborate on and publish content in a number of different

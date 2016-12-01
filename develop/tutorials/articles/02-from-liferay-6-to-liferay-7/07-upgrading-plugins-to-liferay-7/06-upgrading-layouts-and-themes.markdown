@@ -1,7 +1,7 @@
 # Upgrading Layout Templates [](id=upgrading-layout-templates)
 
 Layout templates for @product-ver@ differ slightly from layout templates for
-Liferay 6. The layout template's rows and columns are affected by Bootstrap's
+Liferay Portal 6. The layout template's rows and columns are affected by Bootstrap's
 new grid system syntax.
 
 This tutorial demonstrates the following:
@@ -49,7 +49,7 @@ these steps to upgrade your layout template to @product-ver@.
 2.  Double-click the problem to open the `liferay-plugin-package.properties`
     file.
     
-    Currently the `liferay-versions` property is set to 6.2. The Code Upgrade
+    Currently the `liferay-versions` property is set to Liferay Portal 6.2. The Code Upgrade
     Tool can fix this.
     
 3.  Right-click on the problem in the *Liferay 7 Migration Problems* tab and
@@ -102,7 +102,7 @@ Follow these steps to upgrade your layout template:
 
         <div class="portlet-column portlet-column-last col-md-4" id="column-3">
  
-As an example, here's Liferay 6 layout template [1_2_1_columns.tpl](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-web/docroot/layouttpl/custom/1_2_1_columns.tpl)
+As an example, here's Liferay Portal 6 layout template [1_2_1_columns.tpl](https://github.com/liferay/liferay-portal/blob/Portal 6.2.x/portal-web/docroot/layouttpl/custom/1_2_1_columns.tpl)
 upgraded to @product-ver@:
 
     <div class="columns-1-2-1" id="main-content" role="main">
@@ -143,7 +143,7 @@ Your layout template is ready to use in @product-ver@!
 
 [Planning a Plugin Upgrade to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)
 
-[Benefits of @product-ver@ for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers)
+[Benefits of @product-ver@ for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers)
 
 <!-- Uncomment this link when the referenced tutorial is published. Jim
 [Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)

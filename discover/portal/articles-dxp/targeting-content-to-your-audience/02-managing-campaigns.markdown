@@ -73,9 +73,9 @@ actions that you want to track. This can be done by defining *Metrics*.
 +$$$
 
 **Note:** Metrics were previously known as Tracking Actions and were aggregated
-as part of the campaign editing options. Since Liferay 7, Tracking Actions have
+as part of the campaign editing options. Since @product-ver@, Tracking Actions have
 been renamed to Metrics and are aggregated in custom reports. As part of the
-upgrade process to Liferay 7, for each campaign containing Tracking Actions, a
+upgrade process to @product-ver@, for each campaign containing Tracking Actions, a
 custom report with the equivalent Metrics is automatically added.
 
 $$$
