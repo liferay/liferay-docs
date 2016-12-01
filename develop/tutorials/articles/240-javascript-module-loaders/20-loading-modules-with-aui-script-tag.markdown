@@ -77,6 +77,6 @@ In the browser, the `aui:script` translates to the full HTML shown below:
  
 Now you know how to load modules with the `aui:script` tag!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Configuring Modules for Liferay Portal Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
