@@ -5,7 +5,7 @@ however, users must be able to assign a priority to the asset when creating or
 editing it. For example, when creating or editing web content, users can assign 
 a priority in the *Metadata* section's *Priority* field. 
 
-![Figure 1: The *Priority* field lets users assign a priority to an asset.](../../images/web-content-categorization.png)
+![Figure 1: The *Priority* field lets users assign a priority to an asset.](../../../images/web-content-categorization.png)
 
 This priority field isn't enabled by default for your custom assets. You must 
 manually add support for it. Fortunately, doing this is very straightforward. 
