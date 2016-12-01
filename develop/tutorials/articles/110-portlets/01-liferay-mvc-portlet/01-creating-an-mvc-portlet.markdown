@@ -113,13 +113,14 @@ specify that property in your component, use this syntax in your property list:
 The properties namespaced with `javax.portlet....` are elements of the
 [portlet.xml descriptor](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd).
 
-Also note that it is possible to create nested categories using the com.liferay.portlet.display-category
-property.  The format for creating these categories is to write out the category
-path starting with the root and separating each category in descending order by
-the use of "//".  An example of how to do this is as follows:
+Also note that it is possible to create nested categories using the
+`com.liferay.portlet.display-category` property.  The format for creating these
+categories is to write out the category path starting with the root and
+separating each category in descending order by the use of `//`. Here's an
+example:
 
     com.liferay.portlet.display-category=root//category.category1//category.category2     
-    
+ 
 Liferay's DTD files can be found
 [here](https://docs.liferay.com/portal/7.0/definitions/).
 
