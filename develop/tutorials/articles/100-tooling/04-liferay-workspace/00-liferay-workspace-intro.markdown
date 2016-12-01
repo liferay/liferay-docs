@@ -21,17 +21,21 @@ customize your workspace's folder structure any way you'd like.
 
 The top-level files/folder of a Liferay workspace are outlined below:
 
+- `bundles` (generated): the default folder for @product@ bundles.
 - `configs`: holds the configuration files for different environments. These
   files serve as your global configuration files for all Liferay servers and
   projects residing in your workspace.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
+- `plugins-sdk` (generated): holds plugins to migrate from previous releases.
 - `themes`: holds your custom themes which are built using the Theme Generator.
-- `build.gradle`
-- `gradle.properties`
-- `gradlew`
-- `gradlew.bat`
-- `settings.gradle`
+- `wars` (generated): holds traditional WAR-style web application projects.
+- `build.gradle`: the common Gradle build file.
+- `gradle.properties`: specifies the workspace's project location's and
+  @product@ server configuration.
+- `gradlew`: executes the Gradle command wrapper
+- `settings.gradle`: applies plugins to the workspace and configures its
+  dependencies.
 
 The build/properties files included in your workspace's root directory sets your
 workspace's Gradle properties and facilitates the build processes of your
