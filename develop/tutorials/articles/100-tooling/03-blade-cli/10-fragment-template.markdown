@@ -9,7 +9,7 @@ article and in section 3.14 of the
 To create a Liferay fragment as a module, use a command with the following
 parameters:
 
-    blade create -t fragment -h [host bundle name] -H [host bundle version] [project name]
+    blade create -t fragment [-h hostBundleName] [-H hostBundleVersion] projectName
 
 The template for this kind of project is `fragment`. Suppose you want to create
 a fragment project called `my-fragment-project` with a host bundle name of

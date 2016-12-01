@@ -9,7 +9,7 @@ selectable? Easy! Use portlet model hints! Liferay Service Builder's model hints
 provide a single place in your application where you can specify entity data 
 restrictions. Model hints are specified in a single file called 
 `portlet-model-hints.xml` in your project. If your project is comprised of an
-API module, a service module, and a web module, as is common for Liferay 7
+API module, a service module, and a web module, as is common for @product-ver@
 applications, `portlet-model-hints.xml` should go in the service module. For
 example, in Liferay's Bookmarks application, the `portlet-model-hints.xml` file
 goes in the `bookmarks-service/src/main/resources/META-INF/` folder. Model

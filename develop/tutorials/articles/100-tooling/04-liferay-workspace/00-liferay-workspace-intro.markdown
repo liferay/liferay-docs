@@ -3,7 +3,7 @@
 A *Liferay Workspace* is a generated environment that is built to hold and
 manage your Liferay projects. This workspace is intended to aid in the
 management of Liferay projects by providing various Gradle build scripts and
-configured properties. This is the official way to create Liferay 7.0 modules
+configured properties. This is the official way to create @product-ver@ modules
 using Gradle. For those developers that still want to develop WAR-style plugins
 using the Plugins SDK, this way is also supported using a Liferay Workspace.
 
@@ -21,17 +21,21 @@ customize your workspace's folder structure any way you'd like.
 
 The top-level files/folder of a Liferay workspace are outlined below:
 
+- `bundles` (generated): the default folder for @product@ bundles.
 - `configs`: holds the configuration files for different environments. These
   files serve as your global configuration files for all Liferay servers and
   projects residing in your workspace.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
+- `plugins-sdk` (generated): holds plugins to migrate from previous releases.
 - `themes`: holds your custom themes which are built using the Theme Generator.
-- `build.gradle`
-- `gradle.properties`
-- `gradlew`
-- `gradlew.bat`
-- `settings.gradle`
+- `wars` (generated): holds traditional WAR-style web application projects.
+- `build.gradle`: the common Gradle build file.
+- `gradle.properties`: specifies the workspace's project locations and @product@
+  server configuration.
+- `gradlew`: executes the Gradle command wrapper
+- `settings.gradle`: applies plugins to the workspace and configures its
+  dependencies.
 
 The build/properties files included in your workspace's root directory sets your
 workspace's Gradle properties and facilitates the build processes of your
@@ -91,7 +95,7 @@ tutorial.
 $$$
 
 Once you've developed and managed projects in your workspace, it could also be
-usefuly to bundle your workspace into a ZIP or TAR file. This provides the
+useful to bundle your workspace into a ZIP or TAR file. This provides the
 flexibility to distribute your workspace to potential consumers. To do this,
 navigate to your workspace's root folder and run the following command:
 
@@ -114,6 +118,10 @@ folder and run
 As you read earlier, the workspace uses a Gradle wrapper to download and use
 Gradle build tools. This command downloads the version of Liferay you specified
 in your Gradle properties and installs your Liferay instance in the `bundles`
+folder.
+
+If you want to skip the downloading process, you can create the `bundles` folder
+manually in your workspace's ROOT folder and unzip your @product@ bundle to that
 folder.
 
 The Liferay Workspace is a great development environment for Liferay module

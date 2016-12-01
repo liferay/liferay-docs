@@ -43,8 +43,8 @@ Check that below note is valid for 7.0. This functionality is still available.
 
 +$$$
 
-**Note:** The *Link Portlet URLs to Page* menu is deprecated for Liferay 6.2 and
-will be removed in Liferay 7.0. The functionality of this menu can also be found
+**Note:** The *Link Portlet URLs to Page* menu is deprecated for Liferay Portal 6.2 and
+will be removed in @product-ver@. The functionality of this menu can also be found
 in the Asset Publisher. 
 
 $$$

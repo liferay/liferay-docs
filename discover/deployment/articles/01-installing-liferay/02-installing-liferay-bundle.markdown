@@ -37,7 +37,7 @@ to use the embedded HSQL database but the HSQL database is primarily intended
 for demonstration and trial purposes. 
 
 `deploy`: To deploy Liferay plugins, copy them to this folder. Legacy style
-`.war` files, Liferay 7 style `.jar` files, and `.lpkg` files from Liferay
+`.war` files, @product-ver@ style `.jar` files, and `.lpkg` files from Liferay
 Marketplace are supported.
 
 `logs`: This folder contains Liferay's log files. The information in Liferay's

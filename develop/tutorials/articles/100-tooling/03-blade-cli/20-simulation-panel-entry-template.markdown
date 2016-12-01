@@ -4,16 +4,16 @@ In this tutorial, you'll learn how to create a Liferay simulation panel entry as
 a Liferay module. To create a simulation panel entry as a module, use a command
 with the following parameters: 
 
-    blade create -t simulationpanelentry -p [package name] -c [class name] [project name]
+    blade create -t simulation-panel-entry [-p packageName] [-c className] projectName
 
-The template for this kind of project is `simulationpanelentry`. Suppose you
+The template for this kind of project is `simulation-panel-entry`. Suppose you
 want to create a simulation panel entry project called
 `my-simulation-panel-entry` with a package name of
 `com.liferay.docs.application.list` and a class name of
 `SampleSimulationPanelApp`. You could run the following command to accomplish
 this:
 
-    blade create -t simulationpanelentry -p com.liferay.docs -c Sample my-simulation-panel-entry
+    blade create -t simulation-panel-entry -p com.liferay.docs -c Sample my-simulation-panel-entry
 
 After running the command above, your project's directory structure would look
 like this

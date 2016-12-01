@@ -120,7 +120,7 @@ starts with configuring your plugin project to declare the modules it needs.
 
 Before @product-ver@, all the platform APIs were in a single JAR file:
 `portal-service.jar`. Many of these APIs are now in independent modules. 
-Modularization has resulted in many benefits, as described in the article [Benefits of @product-ver@ for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm)
+Modularization has resulted in many benefits, as described in the article [Benefits of @product-ver@ for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm)
 One such advantage is that these API modules can evolve separately from the
 platform kernel. They also simplify future upgrades. For example, instead of
 having to check all of Liferay's APIs, each module's [Semantic Versioning](http://semver.org/)
@@ -251,8 +251,8 @@ If your project doesn't already have an `ivy.xml` file, you can get one by
 creating a new plugin project in Liferay IDE or Developer Studio and copying the
 `ivy.xml` file it generates.
 
-For example, here are the Liferay 6.2 Knowledge Base portlet application's
-`ivy.xml` file contents:
+For example, here are the Liferay Portal 6.2 Knowledge Base portlet
+application's `ivy.xml` file contents:
 
     <?xml version="1.0"?>
 
@@ -378,7 +378,7 @@ Here's the Code Upgrade Tool workflow:
 
 1.  Double-click a problem in the list to go to the problem in the affected
     file.
-
+                    
 2.  Correct the problem manually or automatically, if the Code Upgrade Tool
     offers an automatic fix. 
 

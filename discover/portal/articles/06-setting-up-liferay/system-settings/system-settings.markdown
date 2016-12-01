@@ -14,7 +14,7 @@ most commonly the `portal-ext.properties` file". They then expect to get a
 sticker of [Ray](https://www.liferay.com/ray) on their mobile device for their
 attentiveness. However, that's an incomplete answer, so they need to just sit
 back down and listen like the rest of the class. There's a brand new way to make
-configuration changes at the system scope in Liferay 7, and you don't need to go
+configuration changes at the system scope in @product-ver@, and you don't need to go
 messing around in a properties file to do it. These settings can now be made in
 the Control Panel, in *Configuration* &rarr; *System Settings*. 
 
@@ -78,24 +78,6 @@ overridden from each application instance.
 <!-- Perhaps show a proof-of-concept example here? -->
 
 <!-- Need a Lunar Resort example? -->
-
-+$$$
-
-**Setting SPA Cache Configuration Options**
-
-In prior versions of Liferay, all SPA render requests that didn't belong to a 
-portlet (no `p_p_id` in the URL) were cached indefinitely. This can confuse
-users, as the content they view will be cached, rather than the latest fresh
-content. Since Liferay CE 7.0 GA2 and DXP 7.0 GA1, administrators can configure
-an expiration time for the Senna cache in System Settings.
-
-To set an expiration time for the SPA cache, open the Control Panel and go to 
-*Configuration* &rarr; *System Settings*. Click the *Foundation* heading and
-select the *Frontend SPA Infrastructure* setting. Set a positive value 
-in minutes for the duration of the cache during SPA navigation. Leaving
-the default value of -1 caches the content indefinitely.
-
-$$$
 
 ## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
 

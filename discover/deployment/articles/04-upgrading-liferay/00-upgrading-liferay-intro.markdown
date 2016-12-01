@@ -3,17 +3,17 @@
 Upgrading to @product@ consists of two steps: upgrading your installation and
 then upgrading the database. @product@ can be upgraded using a straightforward
 process. To upgrade to the latest release directly, you must be coming from
-Liferay 6.0.12 or higher.
+Liferay Portal 6.0.12 or higher.
 
-If you're on Liferay 6.0.11 or below, you should upgrade to Liferay 6.2 before
-approaching an upgrade to the Liferay 7 platform. Please see the
-[Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
-article for information on upgrading to Liferay 6.2 first.
+If you're on Liferay Portal 6.0.11 or below, you should upgrade to Liferay Portal 6.2 before
+approaching an upgrade to the @product-ver@ platform. Please see the
+[Upgrading to Liferay Portal 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
+article for information on upgrading to Liferay Portal 6.2 first.
 
 Before you do anything, however, it's important to prepare your system to be
 upgraded. 
 
-## Preparing an Upgrade to Liferay 7 [](id=preparing-an-upgrade-to-liferay-7)
+## Preparing an Upgrade to @product-ver@ [](id=preparing-an-upgrade-to-liferay-7)
 
 Before upgrading, you should have a synchronized backup of your database and
 file system for your document library. Next, you'll need to consider your
@@ -48,14 +48,14 @@ Although you can perform the upgrade in one step (if you're coming from Liferay
 
 ### Previous upgrade configurations [](id=previous-upgrade-configurations)
 
-If you're coming from Liferay 6.2, skip this section. In any other case, please
+If you're coming from Liferay Portal 6.2, skip this section. In any other case, please
 follow these instructions to configure your `portal-ext.properties` properly:
 
-- If you're on Liferay 6.1, check the
+- If you're on Liferay Portal 6.1, check the
 [6.2 upgrade properties](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)
-information to learn about the new defaults introduced in Liferay 6.2. 
+information to learn about the new defaults introduced in Liferay Portal 6.2. 
 
-- If you're on Liferay 6.0.12, you'll also need to 
+- If you're on Liferay Portal 6.0.12, you'll also need to 
 [migrate the image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images). 
 
 ### Legacy Properties [](id=legacy-properties)
@@ -84,7 +84,7 @@ You can find a complete reference for what these properties mean by viewing the
 
 Your next task is to review your Documents and Media configuration. Look at
 [`Document Library documentation`](/discover/portal/-/knowledge_base/7-0/repository-types#document-library-store-options)
-to see all the options in Liferay 7 before executing an upgrade process. There
+to see all the options in @product-ver@ before executing an upgrade process. There
 are, however, two important pieces of configuration that have changed: 
 * The way you specify the location for the file store is no longer in the
 `portal-ext.properties` file. 
@@ -417,12 +417,12 @@ The `release_` table in the database contains upgrade status information.
 
 There is one row for the core recognizable by the value `portal` in the 
 `servletContextName` field. If the `schemaVersion` field matches your new
-Liferay version (`7.0.1` in case of Liferay 7 CE GA2) and `verified` field
+Liferay version (`7.0.1` in case of @product-ver@ CE GA2) and `verified` field
 contains `1` (true), this means that the upgrade for the core has been completed
 successfully. 
 
 There is one row per OSGi module, and the value for `schemaVersion` must be
-equal or greater than 1.0.0 (1.0.0 is the initial version in Liferay 7 for most
+equal or greater than 1.0.0 (1.0.0 is the initial version in @product-ver@ for most
 of the modules except for those that were plugins in earlier versions of Liferay
 Portal). You can check the final expected status for a module by typing
 `upgrade:list [module_name]`
