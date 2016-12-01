@@ -129,6 +129,6 @@ they are, and what dependencies they require.
 
 Now you know all about the Liferay AMD Module Loader!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
