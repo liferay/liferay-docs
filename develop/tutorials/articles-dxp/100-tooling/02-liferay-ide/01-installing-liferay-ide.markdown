@@ -11,7 +11,7 @@ installing Liferay Developer Studio.
 1.  Download and install [Java](http://java.oracle.com). @product@ runs on Java,
     so you'll need it to run everything else. Because you'll be developing apps
     for @product@ in Liferay Developer Studio, the Java Development Kit (JDK) is
-    required. It is an enhanced version of the Java Environment, used for
+    required. It is an enhanced version of the Java Environment used for
     developing new Java technology. You can download the Java SE JDK from the
     Java
     [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -71,7 +71,7 @@ environment, follow the steps below:
 3.  Select *Browse* and select the `.zip` file you downloaded in step 1. Then
     select *Update*.
 
-Your now on the latest version of Liferay Developer Studio!
+You're now on the latest version of Liferay Developer Studio!
 
 Now that you've learned how to install and update your Liferay Developer Studio
 environment, you can begin developing Liferay products.
