@@ -1,28 +1,28 @@
 # @product@'s liferay-util Taglib
 
- The `<liferay-util>` taglib is used to pull in other resources into a portlet 
- or theme, it can be used to dictate which resources need to be inserted at the 
- bottom or top of the HTML source.
+The `<liferay-util>` taglib is used to pull in other resources into a portlet 
+or theme, it can be used to dictate which resources need to be inserted at the 
+bottom or top of the HTML source.
 
 ## Using `<liferay-util: />` Tags [](id=using-liferay-util-tags)
 
 A list of the available `<liferay-util>` tags can be found [here](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/). 
-To use the Liferay-Util taglib library you'll need to add the following 
-declaration to your JSP:
+To use the Liferay-Util taglib library you must add the following declaration to
+your JSP:
 
     <%@ taglib prefix="liferay-util" uri="http://liferay.com/tld/util" %>
 
 Each taglib has a list of attributes that can be passed to the tag. Some of 
-these are required, and some are optional. See the [taglibdocs](https://docs.liferay.com/portal/7.0-latest/taglibs/util-taglib/liferay-util/tld-summary.html) 
+these are required and some are optional. See the [taglibdocs](https://docs.liferay.com/portal/7.0-latest/taglibs/util-taglib/liferay-util/tld-summary.html) 
 to view the requirements for each tag.
 
-Since each of the `<liferay-util>` taglibs are so unique, each tag is covered
+Since each of the `<liferay-util>` taglibs is unique, each tag is covered
 briefly in the sections that follow.
 
 ### Using `<liferay-util:body-bottom>` [](id=using-liferay-util-body-bottom)
 
 The `<liferay-util:body-bottom>` tag is not a self-closing tag. The content 
-placed between the opening and closing of this tag will be moved to the bottom 
+placed between the opening and closing of this tag is moved to the bottom 
 of the `body` tag. When something is passed using this taglib, the 
 [body_bottom.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/body_bottom.jsp#L25-L31) 
 is passed markup and outputs in this JSP. The attribute `outputKey` is the 
@@ -55,7 +55,7 @@ Below is an example configuration for the `<liferay-util:body-bottom>` tag:
 ### Using `<liferay-util:body-top>` [](id=using-liferay-util-body-top)
 
 The `<liferay-util:body-top>` tag is not a self-closing tag. The content placed 
-between the opening and closing of this tag will be moved to the top of the 
+between the opening and closing of this tag is moved to the top of the 
 `body` tag. When something is passed using this taglib the [body_top.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/body_top.jsp#L25-L31) 
 is passed markup and outputs in this JSP. The attribute `outputKey` is the 
 reference key for this content.
@@ -74,7 +74,7 @@ Below is an example configuration for the `<liferay-util:body-top>` tag:
 
 `<liferay-util:buffer>` is not a self-closing tag. The content placed between 
 the opening and closing of this tag is saved to the value of the `var` attribute. 
-This allows a developer to build a piece of markup that can be reused in a jsp.
+This allows a developer to build a piece of markup that can be reused in a JSP.
 
 Below is an example configuration for the `<liferay-util:buffer>` tag:
 
@@ -91,7 +91,7 @@ Below is an example configuration for the `<liferay-util:buffer>` tag:
     
             <%= myBuffer %>
     </div>
-    
+ 
     <div class="container">
             <h1>A Wonderful Title!</h1>
     
@@ -103,7 +103,7 @@ Below is an example configuration for the `<liferay-util:buffer>` tag:
 The `<liferay-util:dynamic-inlude>` tag allows you to register some content with 
 the `DynamicIncludeRegistry`. You can read more about the OSGi Service Registry 
 [here](http://docs.spring.io/osgi/docs/current/reference/html/service-registry.html). 
-It's easier for modules using the OSGi register to use the content that you
+It's easier for modules using the OSGi registry to use the content that you
 include with this tag.
 
 Below is an example configuration for the `<liferay-util:dynamic-inlude>` tag:
@@ -122,7 +122,7 @@ Below is an example configuration for the `<liferay-util:dynamic-inlude>` tag:
 
 The `<liferay-util:get-url>` tag scrapes the URL provided by the `url` attribute. 
 If a value is provided for the `var` attribute, the content from the screen 
-scrape is scoped to that variable. Otherwise, the scraped content will be 
+scrape is scoped to that variable. Otherwise, the scraped content is 
 displayed where the taglib is used.
 
 Below is a basic example configuration for the `<liferay-util:get-url>` tag:
@@ -130,7 +130,7 @@ Below is a basic example configuration for the `<liferay-util:get-url>` tag:
     <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
     
     <liferay-util:get-url url="https://www.google.com/" />
-    
+ 
 Here is an example that uses the `var` attribute:
 
     <liferay-util:get-url url="https://www.google.com/" var="google" />
@@ -151,8 +151,8 @@ of the `html` tag. When something is passed using this taglib the [bottom.jsp](h
 is passed markup and outputs in this JSP. The attribute `outputKey` is the 
 reference key for this content.
 
-Below is an example of using `<liferay-util:html-bottom>`. Many times the 
-content passed to this tag will be JavaScript:
+Below is an example of using `<liferay-util:html-bottom>`. Commonly, JavaScript
+is passed to this tag:
 
     <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
     
@@ -172,7 +172,7 @@ content passed to this tag will be JavaScript:
 ### Using `<liferay-util:html-top>` [](id=using-liferay-util-html-top)
 
 The `<liferay-util:html-top>` tag is not a self-closing tag. The content placed 
-between the opening and closing of this tag will be moved to the `head` tag. 
+between the opening and closing of this tag is moved to the `head` tag. 
 When something is passed using this taglib the [top_head.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/top_head.jsp#L147-L153) 
 is passed markup and outputs in this JSP. The attribute `outputKey` is the 
 reference key for this content.
@@ -188,14 +188,14 @@ Below is an example configuration for the `<liferay-util:html-top>` tag:
 ### Using `<liferay-util:include>` [](id=using-liferay-util-include)
 
 The `<liferay-util:include>` tag can be used to include other JSP files in a 
-portlet. This can help for readability, as well as provide a separation of 
+portlet. This can increase readability as well as provide separation of 
 concerns for JSP files.
 
 Below is an explanation of some of the available attributes:
 
 - `page`: This attribute is required. The value of this attribute is the path 
   to the JSP or JSPF to be included.
-  
+
 - `servletContext`: Refers to the request context that the included JSP should 
   use. Passing `<%= application %>` to this attribute allows the included JSP to 
   use the same `request` object and other objects that might be set in the prior 
@@ -210,7 +210,7 @@ Below is an example configuration for the `<liferay-util:include>` tag:
 ### Using `<liferay-util:param>` [](id=using-liferay-util-param)
 
 The `<liferay-util:param>` tag can be used to add a parameter value to a URL. 
-This tag is best used when combined with the `<liferay-util:include>` tag, for 
+This tag is best used when combined with the `<liferay-util:include>` tag for 
 accessing new parameter values in another JSP.
 
 Below is an example configuration for the `<liferay-util:param>` tag:
