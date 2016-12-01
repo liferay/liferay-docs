@@ -1,13 +1,13 @@
-# Liferay.ThemeDisplay [](id=liferay-themedisplay)
+# Liferay ThemeDisplay [](id=liferay-themedisplay)
 
 In Java, developers are used to being able to find lots of context information
 at runtime. You can learn about what user is browsing your application, what
 page it's on, what site it's in, and lots more. Wouldn't it be great if you
-could access that same information in JavaScript? You can! You can use Liferay's
-`ThemeDisplay` JavaScript object!
+could access that same information in JavaScript? You can! You can use 
+@products@'s `ThemeDisplay` JavaScript object!
 
 It's a part of the `Liferay` global object that's automatically available to you
-in Liferay at runtime. You can refer to the object as `Liferay.ThemeDisplay`.
+in @product@ at runtime. You can refer to the object as `Liferay.ThemeDisplay`.
 The `ThemeDisplay` object provides information on many aspects of a portal.
 It can identify the portal instance, the current user, the user's language, and
 the user's navigational context. It can tell you the paths to a portlet's
@@ -87,7 +87,8 @@ object.
 
 ## Liferay.ThemeDisplay API [](liferay-themedisplay-api)
 
-For completeness, you can find every available method inside the `Liferay.ThemeDisplay` object in the table below:
+For completeness, you can find every available method inside the 
+`Liferay.ThemeDisplay` object in the table below:
 
 | Method | Type | Description |
 | --- | --- | --- |
@@ -133,3 +134,7 @@ directory |
 | isStateExclusive | boolean | |
 | isStateMaximized | boolean | |
 | isStatePopUp | boolean | |
+
+## Related Topics
+
+[@product@ JavaScript Utilities](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/javascript-utilities)
