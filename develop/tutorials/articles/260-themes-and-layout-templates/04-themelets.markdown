@@ -10,7 +10,7 @@ with other developers. A themelet can consist of CSS, JavaScript, and templates,
 just like a theme.
 
 Themelets are very flexible, and therefore they have a number of possible uses.
-You can make a themelet to modify the appearance of Liferay 7 admin tools, or a
+You can make a themelet to modify the appearance of @product-ver@ admin tools, or a
 themelet that uses a custom JavaScript component for responsive embedded videos.
 For example, take a look at the [Liferay Product Menu Animation Themelet](https://www.npmjs.com/package/lfr-product-menu-animation-themelet).
 This themelet simply alters the animation for Liferay's Product Menu.

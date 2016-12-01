@@ -222,7 +222,7 @@ instance.
 
 ### Copying Data Definitions [](id=copying-data-definitions)
 
-Liferay 6.2 introduced the ability to *Copy* the DDM structures and templates
+Liferay Portal 6.2 introduced the ability to *Copy* the DDM structures and templates
 associated with an existing data definition. You can access the Copy button by
 navigating to *Manage Data Definitions* and clicking the *Actions* button (the
 icon is a vertical ellipsis). Select *Copy* from the actions menu. The Copy menu

@@ -1,6 +1,6 @@
 # Token-based Single Sign On Authentication [](id=token-based-single-sign-on-authentication)
 
-Token-based SSO authentication was introduced in Liferay 7 to standardize
+Token-based SSO authentication was introduced in @product-ver@ to standardize
 support for Shibboleth, SiteMinder, and any other SSO product which works on
 the basis of propagating a token via one of the following mechanisms:
 

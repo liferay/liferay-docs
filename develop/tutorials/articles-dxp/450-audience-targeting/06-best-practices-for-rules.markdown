@@ -21,7 +21,7 @@ for displaying content in Audience Targeting rules.
 
 ## Selecting a UI Technology [](id=selecting-a-ui-technology)
 
-Since Liferay 7.0, JSP is the preferred technology for Audience Targeting
+Since @product-ver@, JSP is the preferred technology for Audience Targeting
 extension views. FreeMarker views, however, are still supported through their
 respective base classes (e.g., `BaseFreemarkerRule`). If you're interested in
 using a technology besides JSP or FreeMarker to implement your UI, you can add a

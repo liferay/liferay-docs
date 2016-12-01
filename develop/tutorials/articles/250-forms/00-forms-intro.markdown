@@ -1,4 +1,4 @@
-# Forms
+# Forms [](id=forms)
 
 Forms are a must-have tool in any developer's UI bag. Rather than write
 your HTML from scratch, Liferay provides you with taglibs that offer

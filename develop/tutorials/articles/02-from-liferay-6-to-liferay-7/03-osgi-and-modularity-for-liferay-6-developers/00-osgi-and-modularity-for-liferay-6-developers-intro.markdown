@@ -1,4 +1,4 @@
-# OSGi and Modularity for Liferay 6 Developers [](id=osgi-and-modularity-for-liferay-6-developers)
+# OSGi and Modularity for Liferay Portal 6 Developers [](id=osgi-and-modularity-for-liferay-6-developers)
 
 To create a powerful, reliable platform for developing modular applications,
 Liferay sought best-of-breed standards-based frameworks and technologies.
@@ -243,12 +243,12 @@ Let's start by learning how dependencies operate in @product-ver@.
 
 ### How Dependencies Work [](id=how-dependencies-work)
 
-Since all of @product-ver@ leverages dependencies, it also demonstrates how to use
-them. As mentioned previously, all of what was in Liferay 6 and its apps has
-been refactored into OSGi modules. The `portal-service` API (the main API in
-Liferay 6) has been replaced by the `portal-kernel` module (@product-ver@'s
-kernel API) and many small, highly-cohesive modules that provide frameworks,
-utilities, apps, and more.
+Since all of @product-ver@ leverages dependencies, it also demonstrates how to
+use them. As mentioned previously, all of what was in Liferay Portal 6 and its
+apps has been refactored into OSGi modules. The `portal-service` API (the main
+API in Liferay Portal 6) has been replaced by the `portal-kernel` module
+(@product-ver@'s kernel API) and many small, highly-cohesive modules that
+provide frameworks, utilities, apps, and more.
 
 Not only do @product@ modules depend on third-party modules but they also depend
 on each other. You can likewise leverage dependencies in your projects. Whether
@@ -537,8 +537,8 @@ Next, you'll create and deploy a module and component to @product@.
 ## Example: Building an OSGi Module [](id=example-building-an-osgi-module)
 
 The previous sections explained some of the most important concepts for Liferay
-6 developers to understand about OSGi and modularity. Now it's time to put this
-knowledge to practice by creating and deploying a module.
+Portal 6 developers to understand about OSGi and modularity. Now it's time to
+put this knowledge to practice by creating and deploying a module.
 
 The module includes a Java class that implements an OSGi service using
 Declarative Services. The project uses Gradle and Bnd, and can be built and

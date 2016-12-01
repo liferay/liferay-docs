@@ -116,6 +116,10 @@ Gradle build tools. This command downloads the version of Liferay you specified
 in your Gradle properties and installs your Liferay instance in the `bundles`
 folder.
 
+If you want to skip the downloading process, you can create the `bundles` folder
+manually in your workspace's ROOT folder and unzip your @product@ bundle to that
+folder.
+
 The Liferay Workspace is a great development environment for Liferay module
 development; however, what if you'd like to also stick with developing WAR-style
 applications? Liferay Workspace can handle that request too!
