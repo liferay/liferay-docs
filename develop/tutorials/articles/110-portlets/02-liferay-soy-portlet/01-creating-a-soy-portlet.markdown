@@ -395,7 +395,7 @@ for `com.liferay.hello.soy.web` portlet's `View.soy` template:
 
 As you can see, it's pretty easy to use Soy templates for your view layer.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet)
 
