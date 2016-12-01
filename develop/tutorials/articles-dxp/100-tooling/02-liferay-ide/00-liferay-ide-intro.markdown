@@ -1,4 +1,4 @@
-# Liferay Developer Studio
+# Liferay Developer Studio [](id=liferay-ide)
 
 Liferay Developer Studio provides an all-in-one, integrated development
 environment based on Eclipse that supports development for @product@. Developer

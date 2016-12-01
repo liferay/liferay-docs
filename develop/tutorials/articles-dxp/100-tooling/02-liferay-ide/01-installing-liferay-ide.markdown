@@ -1,4 +1,4 @@
-# Installing Liferay Developer Studio
+# Installing Liferay Developer Studio [](id=installing-liferay-ide)
 
 Liferay Developer Studio is a plugin for Eclipse that provides many
 Liferay-specific features and additional enterprise only features. You can
@@ -6,7 +6,7 @@ install it into your existing Eclipse environment, or Liferay provides a bundled
 version. In this tutorial, you'll learn the different methods available for
 installing Liferay Developer Studio.
 
-## Install the Liferay Developer Studio Bundle
+## Install the Liferay Developer Studio Bundle [](id=install-the-liferay-developer-studio-bundle)
 
 1.  Download and install [Java](http://java.oracle.com). @product@ runs on Java,
     so you'll need it to run everything else. Because you'll be developing apps
@@ -25,7 +25,7 @@ installing Liferay Developer Studio.
 
 Congratulations! You've installed Liferay Developer Studio! 
 
-## Install Liferay Developer Studio into Eclipse Environment
+## Install Liferay Developer Studio into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
 
 To install Liferay Developer Studio into an existing Eclipse environment, follow
 these steps:
@@ -56,7 +56,7 @@ these steps:
 Awesome! You've installed Liferay Developer Studio in your existing Eclipse
 environment.
 
-## Update Liferay Developer Studio
+## Update Liferay Developer Studio [](id=update-liferay-developer-studio)
 
 If you're already using Liferay Developer Studio, but need to update your
 environment, follow the steps below:
