@@ -31,8 +31,8 @@ The top-level files/folder of a Liferay workspace are outlined below:
 - `themes`: holds your custom themes which are built using the Theme Generator.
 - `wars` (generated): holds traditional WAR-style web application projects.
 - `build.gradle`: the common Gradle build file.
-- `gradle.properties`: specifies the workspace's project location's and
-  @product@ server configuration.
+- `gradle.properties`: specifies the workspace's project locations and @product@
+  server configuration.
 - `gradlew`: executes the Gradle command wrapper
 - `settings.gradle`: applies plugins to the workspace and configures its
   dependencies.
