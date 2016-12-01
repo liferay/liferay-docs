@@ -252,7 +252,7 @@ properties in the `@Component` annotation.
 
 ![Figure 6: Here's a bare-bones portlet based on one of Liferay's module templates.](../../../images/starting-module-dev-portlet.png)
 
-## Watching Deployed Modules [](id=watching-deployed-modules)
+## Automatically Redeploying Changed Modules [](id=automatically-redeploying-changed-modules)
 
 Blade lets developers set a *watch* on changes to a module project's output
 files. If they're modified, Blade redeploys the module automatically. To set a
