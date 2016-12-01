@@ -369,7 +369,7 @@ Also, see the
 [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
 tutorial to learn how to configure Liferay plugin access to resources.
 
-<!-- JSF configuration sections go here, when they've been tested for Liferay 7
+<!-- JSF configuration sections go here, when they've been tested for @product-ver@
 + JBoss bundles. -Cody -->
 
 ## Deploy Liferay [](id=deploy-liferay)

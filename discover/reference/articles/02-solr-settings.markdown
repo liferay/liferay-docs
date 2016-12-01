@@ -1,6 +1,6 @@
 # Solr Settings [](id=solr-settings)
 
-Solr can be configured for use with Liferay 7. Liferay Marketplace includes a
+Solr can be configured for use with @product-ver@. Liferay Marketplace includes a
 Solr adapter called Liferay Enterprise Search-Solr Search Engine. The adapter is
 configurable through System Settings or an OSGi configuration file named
 `com.liferay.portal.search.solr.configuration.SolrConfiguration.cfg` and

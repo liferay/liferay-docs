@@ -5,7 +5,7 @@ For example, take a look at the *1-2-1 Columns Layout CE* layout shown below:
 
 ![Figure 1: The *1-2-1 Columns Layout CE* page layout creates a nice flow for your content.](../../images/layout-template-1-2-1-columns.png)
 
-Liferay 7 and DXP provide several layout templates out-of-the-box for you to 
+@product-ver@ and DXP provide several layout templates out-of-the-box for you to 
 choose from. You can change the layout for your page, and view the installed 
 layout templates, by opening the `Edit` menu for your page, under the `Navigation`
 heading of the `Product Menu` and scrolling down to the *Layouts* heading.

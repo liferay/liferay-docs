@@ -10,7 +10,7 @@ users to access other websites. A service provider is a website that hosts
 applications and grants access only to identified users with proper credentials.
 SAML is maintained by the OASIS Security Services Technical Committee. See
 [https://www.oasis-open.org/committees/security/](https://www.oasis-open.org/committees/security/)
-for more information. Liferay 6.1 EE and later versions support SAML 2.0
+for more information. Liferay Portal 6.1 EE and later versions support SAML 2.0
 integration via the [Liferay Saml 2.0 Provider](https://web.liferay.com/marketplace/-/mp/application/15188711) 
 application. It is provided from Liferay Marketplace and allows @product@ to act
 as a SAML 2.0 identity provider or as a service provider. You can set @product@ up

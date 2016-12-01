@@ -43,7 +43,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
    the portlet).
    - **getResourceName():** Specifies which resource is using the ADT (e.g., a
    portlet) for permission checking. This method must return the portlet's
-   [Fully Qualified Portlet ID](/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
+   [Fully Qualified Portlet ID](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
    \(FQPI\).
    - **getTemplateVariableGroups():** Defines the variables exposed in the
    template editor.

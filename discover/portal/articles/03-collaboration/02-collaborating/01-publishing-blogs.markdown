@@ -310,7 +310,7 @@ hundred characters of text. Users can click on the entry's title to see its full
 content. You can click *Manage Display Templates for Liferay* to select an
 existing Blogs application display template (ADT) or to create your own. To
 learn how to customize your own display templates with
-[Application Display Templates](/participate/liferaypedia/-/wiki/Main/Application+Display+Templates)
+[Application Display Templates](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Application+Display+Templates)
 visit the *Using Application Display Templates* section of this guide.
 
 **Enable Flags:** flag content as inappropriate and send an email to the
