@@ -14,7 +14,7 @@ folder in the [Liferay Github Repo](https://github.com/liferay/liferay-portal/tr
 Now that you know the benefits of @product@'s tags, you can learn how to use
 them next.
 
-## Using `<liferay-ui: />` Tags [](id=using-liferay-ui-tags)
+## Using `<liferay-ui: />` Tags [](id=using-liferay-ui-tags) [](id=using-liferay-ui--tags-idusing-liferay-ui-tags)
 
 A list of the available `<liferay-ui>` taglibs can be found [here](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/). 
 To use the Liferay-UI taglib library you must add the following declaration to
@@ -51,7 +51,7 @@ Here is an example implementation of a `<liferay-ui:user-display>` taglib:
  
 Now you know how to use Liferay-UI taglibs in your JSPs!
  
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [JavaScript Module Loaders](/develop/tutorials/-/knowledge_base/7-0/javascript-module-loaders)
 
