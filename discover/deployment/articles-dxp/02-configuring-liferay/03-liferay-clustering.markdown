@@ -23,8 +23,7 @@ server node, there are several optimizations that need to be made. At a minimum,
 4.  Cluster Link must be enabled so the cache replicates across all nodes of the
     cluster. 
 
-5.  Hot deploy folders should be configured for each node if you're not using
-    server farms. 
+5.  Hot deploy applications to each node individually. 
 
 If you haven't configured your application server to use farms for deployment,
 the hot deploy folder should be a separate folder for all the nodes, and plugins
@@ -423,6 +422,27 @@ while the server is running flushes the cache.
 
 ## 5. Hot Deploy to All Nodes [](id=hot-deploy)
 
-Modules must be deployed to all the nodes. 
+Any module or WAR file that is to run on the cluster must be deployed to all
+nodes of the cluster. Because @product@ now [installs applications as OSGi bundles](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator), this means you cannot rely on your application server's means of
+installing WAR files (even if you only intend to install WAR files) to deploy an
+application to the entire cluster. Instead, the application must be placed in
+@product@'s `deploy` folder on each node. 
 
-[Need more information]
+This, as you might imagine, can be done with a script. Write a shell script that
+uploads applications to each node using sftp or some other service. This way,
+when you deploy an application, it is uploaded to each node's `deploy` folder
+and installed by each running @product@ installation. 
+
+## Summary 
+
+Setting up @product@ on a cluster takes five steps: 
+
+1. Point all nodes at the same database or database cluster. 
+
+2. Make sure the Documents and Media repository is accessible to all nodes. 
+
+3. Install Elasticsearch or Solr on a separate system or cluster. 
+
+4. Enable Cluster Link for cache replication. 
+
+5. Hot deploy applications to each node individually. 
