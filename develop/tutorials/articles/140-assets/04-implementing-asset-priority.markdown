@@ -1,14 +1,21 @@
 # Implementing Asset Priority
 
 The Asset Publisher lets you order assets by priority. For this to work, 
-however, you must enable your assets to accept priority values. Doing this is 
-very straightforward. 
+however, users must be able to assign a priority to the asset when creating or 
+editing it. For example, when creating or editing web content, users can assign 
+a priority in the *Metadata* section's *Priority* field. 
 
-![Figure 1: The red box in this image highlights the priority selection for assets in the Asset Publisher.](../../images/asset-priority.png)
+![Figure 1: The *Priority* field lets users assign a priority to an asset.](../../images/web-content-categorization.png)
 
-In the JSP for editing your asset, add the following input field that lets users 
-set the asset's priority. This example also validates the input to make sure the 
-priority the user chooses is a number higher than zero: 
+This priority field isn't enabled by default for your custom assets. You must 
+manually add support for it. Fortunately, doing this is very straightforward. 
+This tutorial shows you how. Onwards! 
+
+## Add the Priority Field to Your JSP
+
+In the JSP for adding and editing your asset, add the following input field that 
+lets users set the asset's priority. This example also validates the input to 
+make sure the priority the user chooses is a number higher than zero: 
 
     <aui:input label="priority" name="assetPriority" type="text" value="<%= priority %>">
         <aui:validator name="number" />
@@ -16,14 +23,20 @@ priority the user chooses is a number higher than zero:
         <aui:validator name="min">[0]</aui:validator>
     </aui:input>
 
-This parameter is then available in your service layer via the `ServiceContext` 
-variable `serviceContext`. You can retrieve it with 
-`serviceContext.getAssetPriority()`, and then pass it as the last argument to 
-the `assetEntryLocalService.updateEntry` call in your `-LocalServiceImpl`. You 
-can see an example of this in 
+That's it! Now when users create or edit your custom asset, they can assign it a 
+priorty value. Next, you'll learn how to use that value in your service layer. 
+
+## Using the Priority Value in Your Service Layer
+
+To make the priority value functional, you must retrieve it and add it to the 
+asset in your database. The priority value is automatically available in your 
+service layer via the `ServiceContext` variable `serviceContext`. Retrieve it 
+with `serviceContext.getAssetPriority()`, and then pass it as the last argument 
+to the `assetEntryLocalService.updateEntry` call in your `-LocalServiceImpl`. 
+You can see an example of this in 
 [the `BlogsEntryLocalServiceImpl` class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-service/src/main/java/com/liferay/blogs/service/impl/BlogsEntryLocalServiceImpl.java) 
 of @product@'s Blogs app. The `updateAsset` method takes a `priority` argument, 
-which it passes to its `assetEntryLocalService.updateEntry` call: 
+which it passes to a `assetEntryLocalService.updateEntry` call: 
 
     @Override
     public void updateAsset(
@@ -44,8 +57,8 @@ which it passes to its `assetEntryLocalService.updateEntry` call:
         ...
 	}
 
-This `updateAsset` method is called in `BlogsEntryLocalServiceImpl` when adding 
-or updating a blog entry. Note that `serviceContext.getAssetPriority()` 
+The `BlogsEntryLocalServiceImpl` class calls this `updateAsset` method when 
+adding or updating a blog entry. Note that `serviceContext.getAssetPriority()` 
 retrieves the priority: 
 
     updateAsset(
@@ -54,7 +67,7 @@ retrieves the priority:
             serviceContext.getAssetLinkEntryIds(),
             serviceContext.getAssetPriority());
 
-That's it! Now you know how to enable priorities for your assets. 
+Sweet! Now you know how to enable priorities for your app's custom assets. 
 
 **Related Topics**
 
