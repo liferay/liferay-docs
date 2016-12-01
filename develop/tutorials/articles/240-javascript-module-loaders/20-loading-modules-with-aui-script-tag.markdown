@@ -23,9 +23,6 @@ Next you can learn how to load ES2015 and Metal.js modules.
 
 You can use `aui:script` to load your ES2015 and Metal.js modules like this:
 
-You can also load AMD modules by using the `require` attribute in your 
-`aui:script`, like this:
-
     <aui:script require="metal-clipboard/src/Clipboard">
         new metalClipboardSrcClipboard.default();
     </aui:script>
