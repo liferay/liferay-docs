@@ -280,4 +280,4 @@ features to improve your workflow.
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 
-[From Liferay 6 to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/from-liferay-6-to-liferay-7)
+[From Liferay 6 to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/from-liferay-6-to-liferay-7)
