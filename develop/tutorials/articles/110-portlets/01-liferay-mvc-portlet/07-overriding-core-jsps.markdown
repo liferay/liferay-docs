@@ -147,12 +147,12 @@ override is in another module, refer to the article on [overriding JSPs from a m
 
 ## Site Scoped JSP Customization [](id=site-scoped-jsp-customization)
 
-In Liferay 6.2, you could use [Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters) to scope your core JSP
+In Liferay Portal 6.2, you could use [Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters) to scope your core JSP
 customizations to a specific site. Since the majority of JSPs were moved into
-modules for Liferay 7.0, the use case for this has shrunk considerably. If you
+modules for @product-ver@, the use case for this has shrunk considerably. If you
 need to scope a core JSP customization to a site, prepare an application adapter
-[as you would have for Liferay 6.2](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters), and deploy it to Liferay 7.0. It will still
-work. However, note that this approach is deprecated in Liferay 7.0 and won't be
+[as you would have for Liferay Portal 6.2](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters), and deploy it to @product-ver@. It will still
+work. However, note that this approach is deprecated in @product-ver@ and won't be
 supported at all in Liferay 8.0.
 
 If you're interested in scoping a module's JSP customization to a site, that's

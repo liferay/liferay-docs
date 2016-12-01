@@ -4,15 +4,15 @@ In this tutorial, you'll learn how to create a Liferay control menu entry as a
 Liferay module. To create a Liferay control menu entry as a module, use a
 command with the following parameters: 
 
-    blade create -t controlmenuentry -p [package name] -c [class name] [project name]
+    blade create -t control-menu-entry [-p packageName] [-c className] projectName
 
-The template for this kind of project is `controlmenuentry`. Suppose you want to
+The template for this kind of project is `control-menu-entry`. Suppose you want to
 create a control menu entry project called `my-control-menu-entry-project` with
 a package name of `com.liferay.docs.entry.control.menu` and a class name of
 `SampleProductNavigationControlMenuEntry`. You could run the following command
 to accomplish this:
 
-    blade create -t controlmenuentry -p com.liferay.docs.entry -c Sample my-control-menu-entry-project
+    blade create -t control-menu-entry -p com.liferay.docs.entry -c Sample my-control-menu-entry-project
 
 After running the command above, your project's directory structure would look
 like this

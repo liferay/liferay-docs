@@ -256,7 +256,7 @@ Next, you'll learn how to publish JAX-WS web services.
 
 ## Publishing JAX-WS Web Services [](id=publishing-jax-ws-web-services)
 
-To publish JAX-WS web services via SOAP in a Liferay 7 module, annotate the 
+To publish JAX-WS web services via SOAP in a @product-ver@ module, annotate the 
 class and its methods with standard JAX-WS annotations, and then register it as 
 a service in the OSGi framework. For example, the following class uses the 
 `@WebService` annotation for the class and `@WebMethod` annotations for its 

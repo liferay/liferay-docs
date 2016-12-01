@@ -13,7 +13,7 @@ extension indicates it uses ES2015 syntax and must therefore be transpiled by
 ES2015 advanced features, such as
 [generators](https://babeljs.io/docs/learn-es2015/#generators), are available to
 you if you import the `polyfillBabel` class from the `polyfill-babel` module
-found in Liferay 7:
+found in @product-ver@:
 
     import polyfillBabel from 'polyfill-babel'
 
@@ -41,4 +41,4 @@ latest JavaScript standard features and publish it.
 
 [Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
 
-[OSGi and Modularity for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers)
+[OSGi and Modularity for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers)

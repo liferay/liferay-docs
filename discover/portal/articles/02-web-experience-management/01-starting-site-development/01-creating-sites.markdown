@@ -95,7 +95,7 @@ scoped for all sites in the instance.
 
 <!-- TODO: Portal Directoy app still has "portal" name, although most other
 entities in Liferay have changes to "instance". Check back with this name before
-release of Liferay 7. -Cody -->
+release of @product-ver@. -Cody -->
 
 @product@'s sites have two categories of pages called page sets. There are two
 kinds of page sets: public pages and private pages. A site can have only public
@@ -117,7 +117,7 @@ member of the instance can access it.
 
 +$$$
 
-**Tip:** Prior to Liferay 6.1, there were two ways of creating sites:
+**Tip:** Prior to Liferay Portal 6.1, there were two ways of creating sites:
 organizations and communities. This has been simplified to provide more ease of
 use and allow for more flexibility. The main role of organizations is still to
 organize the users of the instance in a hierarchy but they can also have

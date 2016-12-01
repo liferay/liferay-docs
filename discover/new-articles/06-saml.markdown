@@ -14,7 +14,7 @@ hosts applications and grants access only to identified users with proper
 credentials. SAML is maintained by the OASIS Security Services Technical
 Committee. See
 [https://www.oasis-open.org/committees/security/](https://www.oasis-open.org/committees/security/)
-for more information. Liferay 6.1 EE and later versions support SAML 2.0
+for more information. Liferay Portal 6.1 EE and later versions support SAML 2.0
 integration via the SAML 2.0 Provider EE plugin. This plugin is provided as an
 app from Liferay Marketplace that allows Liferay to act as a SAML 2.0 Identity
 provider or as a service provider. First, we'll look at how to set Liferay up as

@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay activator as a Liferay
 module. To create a Liferay activator as a module, use a command with the
 following parameters:
 
-    blade create -t activator -p [package name] -c [class name] [project name]
+    blade create -t activator [-p packageName] [-c className] projectName
 
 The template for this kind of project is `activator`. Suppose you want to create
 an activator project called `my-activator-project` with a package name of
