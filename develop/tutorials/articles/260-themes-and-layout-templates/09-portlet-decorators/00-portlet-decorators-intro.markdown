@@ -1,6 +1,6 @@
 # Portlet Decorators [](id=portlet-decorators)
 
-In previous versions of Liferay, administrators could display or hide the
+In previous versions of @product@, administrators could display or hide the
 application borders through the *Show Borders* option of the look and feel
 configuration menu. In @product-ver@ this option has been replaced with
 Portlet Decorators, a more powerful mechanism to customize the style of the
@@ -9,7 +9,7 @@ application wrapper.
 If you inspect the markup of your Liferay application when it's on a page you'll
 observe that it is wrapped by two layers. Among other things, these layers
 provide some common basic features like the drag and drop and the application
-border style. In order to protect these features, you cannot modify the markup
+border style. In order to protect these features, you can't modify the markup
 of these layers directly with a theme.
 
 Portlet Decorators provide a mechanism to add a custom CSS class to one of

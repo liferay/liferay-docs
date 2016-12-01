@@ -5,7 +5,7 @@ does not define any portlet decorators, none will be available. It is
 recommended that you provide a few decorators for your portlets, to cover
 the basic use cases.
 
-For example, the Liferay 7 [Classic theme](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-classic-web)
+For example, the Liferay Portal CE 7.0 [Classic theme](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-classic-web)
 includes three Portlet Decorators:
 
 -   Decorate: this is the default Application Decorator when using the
@@ -30,11 +30,11 @@ includes three Portlet Decorators:
 
 +$$$
 
-**Note:** Upgrading to Liferay 7 will automatically assign the *borderless*
+**Note:** Upgrading to @product@ will automatically assign the *borderless*
 decorator to those portlets that had the *Show Borders* option set to false
 in previous versions of Liferay.
 
-As mentioned, you should consider updating your Liferay Themes to provide at
+As mentioned, you should consider updating your @product@ Themes to provide at
 least one for the *decorate*, *borderless* and *barebone* use cases.
 
 $$$
