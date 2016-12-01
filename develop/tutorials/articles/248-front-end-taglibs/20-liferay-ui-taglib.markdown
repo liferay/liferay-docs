@@ -57,4 +57,4 @@ Now you know how to use Liferay-UI taglibs in your JSPs!
 
 [Loading Modules with the AUI Script in Liferay](/develop/tutorials/-/knowledge_base/7-0/loading-modules-with-aui-script-in-liferay)
 
-[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-util-taglib)
+[Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-util-taglib)
