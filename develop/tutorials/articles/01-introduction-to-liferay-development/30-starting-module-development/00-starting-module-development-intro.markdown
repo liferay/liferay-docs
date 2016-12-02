@@ -2,9 +2,9 @@
 
 Developing modules for @product@ requires:
 
--   **Creating a directory structure**: A good directory structure facilitates
+-   **Creating a folder structure**: A good folder structure facilitates
     evolving and maintaining code, especially in collaboration. Popular tools
-    use pre-defined directory structures familiar to developers. 
+    use pre-defined folder structures familiar to developers. 
 
 -   **Writing code and configuration files**: A manifest, Java classes, and
     resources. Modules stubbed out with them let developers focus on
@@ -18,7 +18,7 @@ Developing modules for @product@ requires:
 
 There are several good build tools for developing modules on @product@. This
 tutorial demonstrates starting a new module using Liferay Workspace. It's
-Liferay's opinionated build environment based on Gradle and BndTools, that
+Liferay's opinionated build environment based on Gradle and BndTools that
 simplifies module development and automates much of it.
 
 +$$$
@@ -27,7 +27,7 @@ simplifies module development and automates much of it.
 addition to providing Liferay Workspace for those who don't already have a
 preferred build environment, Liferay provides good support for Maven, Gradle,
 and BndTools. The following tutorials and samples demonstrate developing in
-these popular environments.
+these environments.
 
 -   [Maven tutorials](/develop/tutorials/-/knowledge_base/7-0/maven)
     and [samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
@@ -86,7 +86,8 @@ the figure below.
 Workspace can be configured to use a @product@ installation bundle anywhere on
 the local file system. The `liferay.workspace.home.dir` property in
 `gradle.properties` sets the default bundle location to a folder
-`<workspace>/bundles` (not yet created). For convenience it's suggested to [install a @product@ bundle](/discover/deployment/-/knowledge_base/7-0/preparing-for-install)
+`<workspace>/bundles` (not yet created). For convenience it's suggested to 
+[install a @product@ bundle](/discover/deployment/-/knowledge_base/7-0/preparing-for-install)
 there. If you install it to a different location, uncomment the
 `liferay.workspace.home.dir` property and set it to that location.
 
@@ -119,15 +120,16 @@ The Blade command `blade create -l` lists the module templates.
 +$$$
 
 **Note**: Liferay @ide@'s module wizard lets developers select a template for
-their module project. For details, see the tutorial [Creating a Module with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide). 
+their module project. For details, see the tutorial 
+[Creating a Module with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide). 
 
 $$$
 
 Here's the command syntax for creating a module:
 
-    blade create [options]  <moduleName>
+    blade create [options] [moduleName]
 
-The `blade help <commandName>` command describes the specified command. To
+The `blade help [commandName]` command describes the specified command. To
 describe the `create` command, for example, execute this: 
 
     blade help create
@@ -136,7 +138,7 @@ Here's an example of creating a Liferay MVC Portlet module:
 
     blade create -t mvc-portlet -p com.liferay.docs.mymodule -c MyMvcPortlet my-module
 
-Module projects are created to the `modules` folder by default.
+Module projects are created in the `modules` folder by default.
 
 Here's the module project anatomy:
 
@@ -230,14 +232,15 @@ To deploy the module, execute this command:
 
 	blade deploy
 
-Also Blade lets developers deploy all modules in the current directory tree. To
-deploy all modules in a Workspace's modules directory, for example, execute
-`blade deploy` in the `<workspace>/modules` directory. 
+Also Blade lets developers deploy all modules in the current folder tree. To
+deploy all modules in a Workspace's modules folder, for example, execute
+`blade deploy` in the `<workspace>/modules` folder. 
 
 +$$$
 
 **Note**: Liferay @ide@ lets developers deploy modules by dragging them from the
-Package Explorer onto the @product@ server. @ide@ provides access to [Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-0/managing-module-projects-with-liferay-ide)
+Package Explorer onto the @product@ server. @ide@ provides access to 
+[Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-0/managing-module-projects-with-liferay-ide)
 too. 
 
 ![Figure 5: Liferay @ide@ lets developers deploy modules using drag-and-drop.](../../../images/starting-module-dev-drag-module.png)
