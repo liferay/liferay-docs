@@ -1,129 +1,190 @@
-# Importing Lexicon CSS in a Theme [](id=importing-lexicon-css-in-a-theme)
+# Importing Lexicon CSS into a Theme [](id=importing-lexicon-css-into-a-theme)
 
-Lexicon is an extension of Bootstrap's CSS Framework. It fills the frontend gaps between Bootstrap and the specific needs of Liferay Portal. It's built with Sass.
+Lexicon is an extension of Bootstrap's CSS Framework. Bootstrap is by far the 
+most popular CSS framework on the web. Also, it's open source, so anyone can use 
+it. Built with Sass, Lexicon fills the front-end gaps between Bootstrap and the 
+specific needs of @product@.
 
-Bootstrap is by far the most popular CSS framework on the web. It is open source and released under the  MIT license, which means you are free to download and use for personal, private, company internal, or commercial purposes. This has created a large developer community around this project.
-
-Builtwith.com estimates 10,057,498 live websites using Bootstrap as of August 2016. We can take advantage of Bootstrap's popularity by having access to all the crowdsourced documentation and third party resources on the web. As a manager, team lead, or someone trying to put together a team to build something, it's easier to find experienced developers versus another framework.
+This tutorial takes a brief look at Lexicon and shows you how to use it in your
+@product@ themes.
 
 ## Lexicon Features [](id=lexicon-features)
 
-As mentioned before, Lexicon is fills the gaps between Bootstrap and the specific needs of Liferay Portal. We have added components and features to Bootstrap to cover more use cases. Some of the new components added by Lexicon are:
+As mentioned before, Lexicon fills the gaps between Bootstrap and the specific 
+needs of @product@. Bootstrap features have been extended to cover more 
+use cases. Here are some of the new components added by Lexicon:
 
-* Aspect Ratio
-* Cards
-* Dropdown Wide and Dropdown Full
-* Figures
-* Nameplates
-* Sidebar / Sidenav
-* Stickers
-* SVG Icons
-* Timelines
-* Toggles
+- Aspect Ratio
+- Cards
+- Dropdown Wide and Dropdown Full
+- Figures
+- Nameplates
+- Sidebar / Sidenav
+- Stickers
+- SVG Icons
+- Timelines
+- Toggles
 
-We have also added a lot of reusable css patterns to help accomplish time consuming tasks such as:
+Several reusable CSS patterns have also been added to help accomplish time 
+consuming tasks such as these:
 
-* truncating text
-* content filling the remaining container width
-* truncating text inside table cells
-* table cells filling remaining container width and table cells only being as wide as its content
-* open and close icons inside collapsible panels
-* nested vertical navigations
-* slideout panels
-* notification icons/messages
-* vertical alignment of content
+- truncating text
+- content filling the remaining container width
+- truncating text inside table cells
+- table cells filling remaining container width and table cells only being as 
+- wide as its content
+- open and close icons inside collapsible panels
+- nested vertical navigations
+- slideout panels
+- notification icons/messages
+- vertical alignment of content
+
+Next you can learn more about Lexicon's structure.
 
 ## Lexicon Structure [](id=lexicon-structure)
 
-Lexicon is bundled with two sub-themes, Lexicon Base and Atlas. Lexicon Base is our Bootstrap API extension. It is also the theme that is used in Liferay's Styled Theme. It adds all the features and components we need and inherits Bootstrap's styles. As a result, Lexicon Base is fully compatible with third party themes that leverage Bootstrap's Sass variable API. Lexicon Base should be the base theme you use to integrate third party themes into Liferay Portal.
+Lexicon is bundled with two sub-themes: Lexicon Base and Atlas. Lexicon Base is 
+@product@'s Bootstrap API extension. It is also the theme that is used in 
+@product@'s Styled Theme. It adds all the features and components you need and 
+inherits Bootstrap's styles. As a result, Lexicon Base is fully compatible with 
+third party themes that leverage Bootstrap's Sass variable API. As a best 
+practice, you should use the Lexicon Base as your base theme to integrate third 
+party themes into @product@.
 
-Atlas is Liferay's custom Bootstrap theme that is used in the Classic Theme. Its purpose is to overwrite and manipulate Bootstrap and Lexicon Base to create our classic look and feel. Atlas is equivalent to installing a Bootstrap third party theme. It is not recommended to try and integrate third party themes with Atlas as it adds variables and styles that are outside the scope of Bootstrap's API.
+Atlas is @product@'s custom Bootstrap theme that is used in the Classic Theme. 
+Its purpose is to overwrite and manipulate Bootstrap and Lexicon Base to create
+@product@'s classic look and feel. Atlas is equivalent to installing a Bootstrap 
+third party theme.
 
-## Customizing Atlas in Liferay [](id=customizing-atlas-in-liferay)
++$$$
 
-In your custom theme's `/src/css` directory (For Legacy Ant Theme Tasks place in `/_diff/css`):
+**Note:** It is not recommended to try and integrate third party themes 
+with Atlas, as it adds variables and styles that are outside the scope of 
+Bootstrap's API.
 
-Add a file named `aui.scss` with the code below and save:
-```
-@import "aui/lexicon/atlas";
-```
+$$$
 
-Add a file named `_imports.scss` with the code below and save:
-```
-@import "bourbon";
-@import "mixins";
-@import "aui/lexicon/atlas-variables";
-@import "aui/lexicon/bootstrap/mixins";
-@import "aui/lexicon/lexicon-base/mixins";
-@import "aui/lexicon/atlas-theme/mixins";
-```
+You can learn how to customize the Atlas theme next.
 
-Add a file named `_aui_variables.scss` with the code below and save:
-```
-// Icon paths
+## Customizing Atlas in @product@ [](id=customizing-atlas-in-liferay)
 
-$FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
-$font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
-$icon-font-path: "aui/lexicon/fonts/";
-```
-> At the bottom of this file is where all your Atlas, Bootstrap, and Lexicon Base variable overwrites will live.
+If you would like to include all of the Classic Theme's files, you can skip
+these steps and move on to the next section.
 
-Add a file named `_custom.scss` with the code below and save:
-```
-/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+Follow these steps to customize the Atlas theme:
 
-/* inject:imports */
-/* endinject */
+1.  In your custom theme's `/src/css` directory (For Legacy Ant Theme Tasks 
+    place in `/_diff/css`) add a file named `aui.scss` with the code below and 
+    save:
 
-/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
-```
-> Any custom css should be placed in this file.
+        @import "aui/lexicon/atlas";
 
-#### Extending Atlas with Classic Theme
+2.  Add a file named `_imports.scss` with the code below and save:
 
-If you would like to include all of Classic Theme you can skip the steps above and copy over all the files located in:
-```
-frontend-theme-classic/src/css
-frontend-theme-classic/src/images
-frontend-theme-classic/src/js
-frontend-theme-classic/src/templates
-```
+        @import "bourbon";
+        @import "mixins";
+        @import "aui/lexicon/atlas-variables";
+        @import "aui/lexicon/bootstrap/mixins";
+        @import "aui/lexicon/lexicon-base/mixins";
+        @import "aui/lexicon/atlas-theme/mixins";
 
-This can also be accomplished using the [Liferay Theme Tasks](https://github.com/liferay/liferay-theme-tasks) module [gulp kickstart](https://github.com/liferay/liferay-theme-tasks#kickstart) command and following the prompts.
 
-## Customizing Lexicon Base in Liferay [](id=customizing-lexicon-base-in-liferay)
+3.  Add a file named `_aui_variables.scss` with the code below and save:
 
-In your custom theme's `/src/css` directory (For Legacy Ant Theme Tasks place in `/_diff/css`):
+        // Icon paths
+        
+        $FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
+        $font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
+        $icon-font-path: "aui/lexicon/fonts/";
+    
+    All your Atlas, Bootstrap, and Lexicon Base variable modifications must be 
+    placed in this file.
 
-Add a file named `_aui_variables.scss` with the code below and save:
-```
-// Icon paths
+4.  Add a file named `_custom.scss` with the code below and save:
 
-$FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
-$font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
-$icon-font-path: "aui/lexicon/fonts/";
-```
-> At the bottom of this file is where all your Atlas, Bootstrap, and Lexicon Base variable overwrites will live.
+        /* Use these inject tags to dynamically create imports for 
+        themelet styles. You can place them where ever you like in this file. */
+        
+        /* inject:imports */
+        /* endinject */
+        
+        /* This file allows you to override default styles in one central 
+        location for easier upgrade and maintenance. */
 
-Any custom css should be placed in `_custom.scss`.
-```
-/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+Place your custom CSS in this file. Next you can learn how to extend Atlas with
+the Classic theme.
 
-/* inject:imports */
-/* endinject */
+### Extending Atlas with the Classic Theme
 
-/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
-```
-> Any custom css should be placed in this file.
+To extend the Atlas theme with the Classic theme, copy all the files located in
+these directories into your theme:
+
+    frontend-theme-classic/src/css
+    frontend-theme-classic/src/images
+    frontend-theme-classic/src/js
+    frontend-theme-classic/src/templates
+
+You can also automatically copy these files into your theme, using the 
+[Liferay Theme Tasks](https://github.com/liferay/liferay-theme-tasks) module 
+[gulp kickstart](https://github.com/liferay/liferay-theme-tasks#kickstart) 
+command and following the prompts.
+
+Next you can learn how to customize the Lexicon Base.
+
+## Customizing Lexicon Base in @product@ [](id=customizing-lexicon-base-in-liferay)
+
+You can customize Lexicon Base with just a few imports.
+
+In your custom theme's `/src/css` directory (For Legacy Ant Theme Tasks place in 
+`/_diff/css`) add a file named `_aui_variables.scss` with the code below and 
+save:
+
+    // Icon paths
+    
+        $FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
+        $font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
+        $icon-font-path: "aui/lexicon/fonts/";
+    
+All your Atlas, Bootstrap, and Lexicon Base variable modifications must be 
+placed in this file.
+
+As mentioned earlier, any custom CSS should be placed in `_custom.scss`.
+
+You can learn how to add third party themes in @product@ next.
 
 ## Adding a Third Party Theme [](id=adding-a-third-party-theme)
 
-> Third party themes must be built with Sass to be compatible with Liferay. Please make sure the Sass files are included before making any theme purchase.
+Third party themes must be built with Sass to be compatible with @product@. 
+**Make sure the Sass files are included before making any theme purchase.**
 
-1. Follow the steps in [Customizing Lexicon Base in Liferay](#customizing-lexicon-base-in-liferay) in Liferay.
-2. Create a directory inside `/src/css` (For Legacy Ant Theme Tasks `/_diff/css`) that contains your third party theme e.g. `/src/css/awesome-theme` or `/_diff/css/awesome-theme`
-3. Copy the contents of the theme to that directory
-4. In `_aui_variables.scss`, add `@import "awesome-theme/variables.scss";` or the name of the file containing the variables. Note: You may omit the leading underscore when importing Sass files.
-5. In `_custom.scss`, add `@import "awesome-theme/main.scss";` or the name of the file containing the css.
-6. Deploy your theme with `gulp deploy` (For Legacy Ant Theme Tasks use `ant deploy`)
-click on Go To Site
+Follow these steps to add a third party theme:
+
+1.  Follow the steps in the [Customizing Lexicon Base in @product@](/develop/tutorials/-/knowledge_base/7-0/importing-lexicon-css-in-a-theme#customizing-lexicon-base-in-liferay) section.
+
+2.  Create a directory inside `/src/css` (For Legacy Ant Theme Tasks `/_diff/css`) 
+    that contains your third party theme( e.g. `/src/css/awesome-theme` or
+    `/_diff/css/awesome-theme`)
+
+3.  Copy the contents of the theme to the directory you just created.
+
+4.  In `_aui_variables.scss`, import the file containing the theme variables.
+
+    For example, `@import "awesome-theme/variables.scss";`
+    
+    +$$$ 
+    
+    Note: You may omit the leading underscore when importing Sass files.
+    
+    $$$
+
+5.  In `_custom.scss`, import the file containing the CSS.
+
+    For example, `@import "awesome-theme/main.scss";`
+
+6.  Deploy your theme with `gulp deploy` (For Legacy Ant Theme Tasks use `ant deploy`)
+
+Now you know how to use Lexicon CSS in your theme!
+
+## Related Topics
+
+[Applying Lexicon Styles to Your App](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app)
