@@ -178,10 +178,9 @@ Gradle or Maven, to manage dependencies.
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 is an environment for managing module projects (and theme projects). It provides
 Gradle build scripts for developing on Liferay. It can be used from the command
-line or from within [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
-and Developer Studio. Note also that Liferay IDE/Developer Studio provide
-plugins for Gradle, Maven, and BndTools. Tooling details are covered later in
-this series.
+line or from within [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide).
+Note also that Liferay @ide@ provides plugins for Gradle, Maven, and BndTools.
+Tooling details are covered later in this series.
 
 Now that you're familiar with the module structure and manifest, it's time to
 explore how to build modules.
@@ -220,7 +219,7 @@ The main difference is that the `bnd.bnd` file doesn't specify an
 
 Bnd plugins are available to use with Gradle and Maven. And since Liferay
 Workspace includes Bnd, developers can use Bnd from the command line and from
-Liferay IDE / Developer Studio.
+Liferay @ide@.
 
 Now that you're familiar with Bnd and the `Export-Package` and `Import-Package`
 manifest headers, let's explore how to use them to leverage dependencies.
