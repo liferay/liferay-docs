@@ -3,7 +3,7 @@
 This tutorial explains some of the utility methods and objects inside the 
 `Liferay` global JavaScript object.
 
-## Liferay.Browser [](id=liferay-browser)
+## Liferay Browser [](id=liferay-browser)
 
 The `Liferay.Browser` object contains methods that expose the current user agent 
 characteristics without the need of accessing and parsing the global 
