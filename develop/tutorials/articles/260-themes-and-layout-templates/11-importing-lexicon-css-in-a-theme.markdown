@@ -112,7 +112,7 @@ Follow these steps to customize the Atlas theme:
 Place your custom CSS in this file. Next you can learn how to extend Atlas with
 the Classic theme.
 
-### Extending Atlas with the Classic Theme
+### Extending Atlas with the Classic Theme [](id=extending-atlas-with-the-classic-theme)
 
 To extend the Atlas theme with the Classic theme, copy all the files located in
 these directories into your theme:
@@ -183,6 +183,6 @@ Follow these steps to add a third party theme:
 
 Now you know how to use Lexicon CSS in your theme!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Applying Lexicon Styles to Your App](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app)
