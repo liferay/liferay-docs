@@ -5,7 +5,7 @@ most popular CSS framework on the web. Also, it's open source, so anyone can use
 it. Built with Sass, Lexicon fills the front-end gaps between Bootstrap and the 
 specific needs of @product@.
 
-This tutorial takes a brief look at Lexicon and shows you how to use it in your
+This tutorial looks briefly at Lexicon and shows you how to use it in your
 @product@ themes.
 
 ## Lexicon Features [](id=lexicon-features)
@@ -32,10 +32,10 @@ consuming tasks such as these:
 - content filling the remaining container width
 - truncating text inside table cells
 - table cells filling remaining container width and table cells only being as 
-- wide as its content
+  wide as their content
 - open and close icons inside collapsible panels
 - nested vertical navigations
-- slideout panels
+- slide out panels
 - notification icons/messages
 - vertical alignment of content
 
@@ -58,9 +58,8 @@ third party theme.
 
 +$$$
 
-**Note:** It is not recommended to try and integrate third party themes 
-with Atlas, as it adds variables and styles that are outside the scope of 
-Bootstrap's API.
+**Note:** It is not recommended to integrate third party themes with Atlas, as
+it adds variables and styles that are outside the scope of Bootstrap's API.
 
 $$$
 
@@ -68,14 +67,13 @@ You can learn how to customize the Atlas theme next.
 
 ## Customizing Atlas in @product@ [](id=customizing-atlas-in-liferay)
 
-If you would like to include all of the Classic Theme's files, you can skip
-these steps and move on to the next section.
+If you want to include all the Classic Theme's files, you can skip these steps
+and move on to the next section.
 
 Follow these steps to customize the Atlas theme:
 
-1.  In your custom theme's `/src/css` directory (For Legacy Ant Theme Tasks 
-    place in `/_diff/css`) add a file named `aui.scss` with the code below and 
-    save:
+1.  In your theme's `/src/css` directory (for legacy ant themes, place in
+    `/_diff/css`) add a file named `aui.scss` with the code below and save:
 
         @import "aui/lexicon/atlas";
 
@@ -96,7 +94,7 @@ Follow these steps to customize the Atlas theme:
         $FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
         $font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
         $icon-font-path: "aui/lexicon/fonts/";
-    
+ 
     All your Atlas, Bootstrap, and Lexicon Base variable modifications must be 
     placed in this file.
 
@@ -124,7 +122,7 @@ these directories into your theme:
     frontend-theme-classic/src/js
     frontend-theme-classic/src/templates
 
-You can also automatically copy these files into your theme, using the 
+You can also automatically copy these files into your theme using the 
 [Liferay Theme Tasks](https://github.com/liferay/liferay-theme-tasks) module 
 [gulp kickstart](https://github.com/liferay/liferay-theme-tasks#kickstart) 
 command and following the prompts.
@@ -135,7 +133,7 @@ Next you can learn how to customize the Lexicon Base.
 
 You can customize Lexicon Base with just a few imports.
 
-In your custom theme's `/src/css` directory (For Legacy Ant Theme Tasks place in 
+In your custom theme's `/src/css` directory (for legacy ant themes, place in 
 `/_diff/css`) add a file named `_aui_variables.scss` with the code below and 
 save:
 
@@ -144,7 +142,7 @@ save:
         $FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
         $font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
         $icon-font-path: "aui/lexicon/fonts/";
-    
+ 
 All your Atlas, Bootstrap, and Lexicon Base variable modifications must be 
 placed in this file.
 
@@ -161,16 +159,16 @@ Follow these steps to add a third party theme:
 
 1.  Follow the steps in the [Customizing Lexicon Base in @product@](/develop/tutorials/-/knowledge_base/7-0/importing-lexicon-css-in-a-theme#customizing-lexicon-base-in-liferay) section.
 
-2.  Create a directory inside `/src/css` (For Legacy Ant Theme Tasks `/_diff/css`) 
-    that contains your third party theme( e.g. `/src/css/awesome-theme` or
+2.  Create a folder inside `/src/css` (for legacy ant themes, `/_diff/css`) 
+    that contains your third party theme (e.g. `/src/css/awesome-theme` or
     `/_diff/css/awesome-theme`)
 
-3.  Copy the contents of the theme to the directory you just created.
+3.  Copy the contents of the theme to the folder you just created.
 
 4.  In `_aui_variables.scss`, import the file containing the theme variables.
 
     For example, `@import "awesome-theme/variables.scss";`
-    
+ 
     +$$$ 
     
     Note: You may omit the leading underscore when importing Sass files.
@@ -181,7 +179,7 @@ Follow these steps to add a third party theme:
 
     For example, `@import "awesome-theme/main.scss";`
 
-6.  Deploy your theme with `gulp deploy` (For Legacy Ant Theme Tasks use `ant deploy`)
+6.  Deploy your theme with `gulp deploy` (for legacy ant themes, use `ant deploy`)
 
 Now you know how to use Lexicon CSS in your theme!
 
