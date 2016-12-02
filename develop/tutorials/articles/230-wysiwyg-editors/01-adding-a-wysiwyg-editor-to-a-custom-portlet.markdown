@@ -1,4 +1,4 @@
-# Adding a WYSIWYG Editor to a Custom Portlet [](id=adding-a-wysiwyg-editor-to-a-custom-portlet)
+# Adding a WYSIWYG Editor to a Portlet [](id=adding-a-wysiwyg-editor-to-a-portlet)
 
 It's easy to include WYSIWYG editors in your portlet, thanks to the 
 `<liferay-ui:input-editor />` tag. Below is an example configuration:
@@ -33,7 +33,7 @@ a JavaScript function called `OnDescriptionEditorInit`:
             placeholder="description"
             showSource="true" />
     </div>
-    
+ 
     <aui:script>
         function <portlet:namespace />OnDescriptionEditorInit() {
             <c:if test="<%= !customAbstract %>">
@@ -64,8 +64,7 @@ tag:
 See the [taglibdocs](https://docs.liferay.com/portal/7.0-latest/taglibs/util-taglib/liferay-ui/input-editor.html) 
 for the complete list of supported attributes.
 
-As you can see, it's easy to include WYSIWYG editors in your portlets in 
-@product@! 
+As you can see, it's easy to include WYSIWYG editors in your portlets! 
 
 ## Related Topics [](id=related-topics)
 

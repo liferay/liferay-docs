@@ -1,9 +1,9 @@
 # Creating and Contributing new Buttons to AlloyEditor [](id=creating-and-contributing-new-buttons-to-alloyeditor)
 
 It is possible to add additional AlloyEditor functionality through OSGi bundles. 
-This tutorial will demonstrate how to add a button to the editor.
+This tutorial demonstrates how to add a button to the editor.
 
-In this tutorial, you will learn how to:
+In this tutorial, you will learn how to
 
 - Create an OSGi bundle for your own button
 - Create a custom button for `AlloyEditor`
@@ -15,7 +15,7 @@ Go ahead and get started by creating the OSGi bundle next.
 ## Creating the OSGi Bundle [](id=creating-the-osgi-bundle)
 
 AlloyEditor is built on `React.js` and uses `jsx` to render each button in the 
-editor. Below is the basic folder structure for a module that adds a new button:
+editor. Below is the folder structure for a module that adds a new button:
 
 - `frontend-editor-my-button-web`
 	- `src`
@@ -143,20 +143,20 @@ Below is an example configuration for a JSX file that creates a new button:
             = ButtonMyButton;
     }());
 
-The configuration above creates a new button called `ButtonMyButton`. The 
-comments in the code above explains the purpose of each method. The key aspects 
-to note here are the lines that reference the global `AlloyEditor`. You can 
-create your own JavaScript functions to interact with your button.
+The configuration above creates a new button called `ButtonMyButton`. The key
+aspects to note here are the lines that reference the global `AlloyEditor`. You
+can create your own JavaScript functions to interact with your button.
 
 Now that you've seen how you can use a JSX file to create a new button, you can
 learn how to use your button in the editor next.
 
 ## Contributing the Button [](id=contributing-the-button)
 
-The next step is to add your button to the list of already available ones. This 
-can be achieved thanks to some smartly placed `<liferay-util:dynamic-include />` 
-tags in the editor's infrastructure. To make your button available in the 
-AlloyEditor, you must extend the [`BaseDynamicInclude` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/BaseDynamicInclude.html). 
+The next step is to add your button to the list of already available buttons.
+This can be achieved thanks to some smartly placed
+`<liferay-util:dynamic-include />` tags in the editor's infrastructure. To make
+your button available in the AlloyEditor, you must extend the
+[`BaseDynamicInclude` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/BaseDynamicInclude.html).
 Below is an example configuration that extends this class:
 
     package com.liferay.frontend.editor.alloyeditor.my.button.web.servlet.taglib;
@@ -220,14 +220,14 @@ Below is an example configuration that extends this class:
 
 Now that your button is included, you can learn how to make the button available
 in the editor's toolbar next.
-    
+ 
 ## Using the Button in a Toolbar [](id=using-the-button-in-a-toolbar)
 
 As explained in the [Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration) 
 tutorial, you can configure which buttons show in the AlloyEditor toolbars by
 adding your own `EditorConfigContributor`. This file allows you to specify where 
 in the toolbar your button should appear. The example configuration below
-doesn't specify a portlet name, so the button will be added to the global 
+doesn't specify a portlet name, so the button is added to the global 
 AlloyEditor.
 
     package com.liferay.frontend.editor.alloyeditor.my.button.web.editor.configuration;
