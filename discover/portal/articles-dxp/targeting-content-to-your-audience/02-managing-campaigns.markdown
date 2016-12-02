@@ -136,12 +136,12 @@ Analytics*. The following analytics options are available:
 - YouTube Videos
 
 Tracking all the actions of all your users (even guest users) can be a heavy
-load for your server. Therefore, it's best to disable the tracking of any
-actions about which you don't need information. For example, Audience Targeting,
-by default, stores anonymous users' behavior analytics. This stores a large
-amount of data to the database. If you're not interested in tracking anonymous
-users, you can turn that functionality off for your @product@ installation by
-disabling the *Anonymous Users* selector.
+load for your server. Therefore, it's best to disable tracking any actions about
+which you don't need information. For example, Audience Targeting, by default,
+stores anonymous users' behavior analytics. This stores a large amount of data
+to the database. If you're not interested in tracking anonymous users, you can
+turn that functionality off for your @product@ installation by disabling the
+*Anonymous Users* selector.
 
 ![Figure 4: There's no need to track anonymous users if you're not interested in their behavior.](../../images-dxp/anonymous-users-analytics.png)
 
