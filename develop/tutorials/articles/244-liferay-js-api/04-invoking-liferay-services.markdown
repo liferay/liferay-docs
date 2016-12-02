@@ -20,27 +20,25 @@ Go ahead and get started.
 many useful utilities. One method is `Liferay.Service`, which is used for 
 invoking JSON web services.
 
-The `Liferay.Service` method takes four possible arguments, which are shown
-below:
+The `Liferay.Service` method takes four possible arguments:
 
-**Required**
-
-1. service {string|object}: Either the service name, or an object with the keys 
+**service {string|object}:** Either the service name, or an object with the keys 
 as the service to call, and the value as the service configuration object.
+(Required)
 
-**Optional**
-
-2. data {object|node|string}: The data to send to the service. If the object 
+**data {object|node|string}:** The data to send to the service. If the object 
 passed is the ID of a form or a form element, the form fields will be serialized 
 and used as the data.
-3. successCallback {function}: A function to execute when the server returns a 
+
+**successCallback {function}:** A function to execute when the server returns a 
 response. It receives a JSON object as it's first parameter.
-4. exceptionCallback {function}: A function to execute when the response from 
+
+**exceptionCallback {function}:** A function to execute when the response from 
 the server contains a service exception. It receives an exception message as 
 it's first parameter.
 
-One of the major benefits of using the `Liferay.Service` method vs. a standard 
-ajax request is that it handles the authentication for you.
+One of the major benefits of using the `Liferay.Service` method versus using a
+standard AJAX request is that it handles the authentication for you.
 
 Below is an example configuration of the `Liferay.Service` method:
 
@@ -98,14 +96,14 @@ resembles the following JSON object:
             "userId": "20156",
             "uuid": "c641a7c9-5acb-aa68-b3ea-5575e1845d2f"
     }
-    
-Now that you know how to send an individual request, you can learn how run batch
-requests next.
+ 
+Now that you know how to send an individual request, you're ready to run batch
+requests.
 
 ## Batching Requests [](id=batching-requests)
 
 Another format for invoking the `Liferay.Service` method is by passing an object 
-with the keys as the service to call, and the value as the service configuration 
+with the keys as the service to call and the value as the service configuration 
 object.
 
 Below is an example configuration for a batch request:
@@ -122,9 +120,8 @@ Below is an example configuration for a batch request:
             }
     );
 
-You can use this format to invoke multiple services with the same request, by 
-passing in an array of service objects. An example of this approach is shown
-below:
+You can use this format to invoke multiple services with the same request by 
+passing in an array of service objects. Here's an example:
 
     Liferay.Service(
             [
@@ -148,17 +145,17 @@ below:
                     console.log(obj);
             }
     );
-    
+ 
 Next you can learn how to nest your requests.
 
 ## Nesting Requests [](id=nesting-requests)
 
-Nested service calls allow you to bind information from related objects 
-together in a JSON object. You can call other services within the same HTTP 
-request and conveniently nest returned objects.
+Nested service calls allow you to bind information from related objects together
+in a JSON object. You can call other services in the same HTTP request and
+conveniently nest returned objects.
 
 You can use variables to reference objects returned from service calls. Variable 
-names must start with a dollar sign($).
+names must start with a dollar sign (`$`).
 
 The example in this section retrieves user data with `/user/get-user-by-id`, and 
 uses the `contactId` returned from that service to then invoke 
@@ -234,15 +231,15 @@ Here is what the response data would look like for the request above:
                     "userName": ""
             }
     }
-    
+ 
 Now that you know how to process requests, you can learn how to filter the
 results next.
 
 ## Filtering Results [](id=filtering-results)
 
 If you don't want all the properties returned by a service, you can define a 
-whitelist of properties. This will return only the specific properties you 
-request in the object.
+whitelist of properties. This returns only the specific properties you request
+in the object.
 
 Below is an example of whitelisting properties:
 
@@ -258,8 +255,8 @@ Below is an example of whitelisting properties:
     );
 
 To specify whitelist properties, place the properties in square brackets 
-(e.g., [whiteList]) immediately following the name of your variable. The example
-above request only the `emailAddress` and `firstName` of the user.
+(e.g., `[whiteList]`) immediately following the name of your variable. The example
+above requests only the `emailAddress` and `firstName` of the user.
 
 Below is the filtered response:
 
@@ -269,10 +266,10 @@ Below is the filtered response:
     }
 
 Next you can learn how to populate the inner parameters of the request.
-    
+ 
 ## Inner Parameters [](id=inner-parameters)
 
-When you pass in an object parameter, you’ll often need to populate its inner 
+When you pass in an object parameter, you'll often need to populate its inner 
 parameters (i.e., fields).
 
 Consider a default parameter `serviceContext` of type `ServiceContext`. To make 
@@ -290,7 +287,7 @@ fields such as`scopeGroupId`, as shown below:
                     console.log(obj);
             }
     );
-    
+ 
 Now you know how to invoke Liferay services!
 
 ## Related Topics [](id=related-topics)
