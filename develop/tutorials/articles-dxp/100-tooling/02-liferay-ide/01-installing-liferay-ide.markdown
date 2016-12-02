@@ -50,20 +50,19 @@ steps:
     ![Figure 1: Make sure to check all the @ide@ components you wish to install.](../../../images-dxp/dev-studio-zip-install.png)
 
 5.  Accept the terms of the agreements and click *Next*, and Developer Studio is
-    installed. Like other Eclipse plugins, you'll have to restart Eclipse to use
-    them.
+    installed. Like other Eclipse plugins, you must restart Eclipse to use them.
 
 Awesome! You've installed Liferay @ide@ in your existing Eclipse environment.
 
 ## Update Liferay @ide@ [](id=update-liferay-developer-studio)
 
-If you're already using Liferay @ide@, but need to update your environment,
+If you're already using Liferay @ide@ but need to update your environment,
 follow the steps below:
 
 1.  Go to the
     [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
-    downloads page. From the drop-down menu, select *Archived Product Update
-    Site* and click *Download*.
+    downloads page. From the selector, choose *Archived Product Update Site* and
+    click *Download*.
 
 2.  Navigate to *Help* &rarr; *Update Liferay Developer Studio...*.
 
