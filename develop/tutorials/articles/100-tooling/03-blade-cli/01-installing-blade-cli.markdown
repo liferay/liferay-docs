@@ -18,7 +18,7 @@ available on your system path. Test its usage by executing `blade` in your
 terminal window. If Blade CLI is installed correctly, you'll see the Blade CLI
 options printed in your terminal.
 
-## Setting Blade CLI Proxy Requirments
+## Setting Blade CLI Proxy Requirments [](id=setting-blade-cli-proxy-requirments)
 
 If you have proxy server requirements and want to configure your http(s) proxy
 to work with the Blade CLI, follow the instructions below.

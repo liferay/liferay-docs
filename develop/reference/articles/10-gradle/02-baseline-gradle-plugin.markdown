@@ -1,4 +1,4 @@
-# Baseline Gradle Plugin
+# Baseline Gradle Plugin [](id=baseline-gradle-plugin)
 
 The Baseline Gradle plugin lets you verify that the OSGi [semantic versioning](http://semver.org/)
 rules are obeyed by your OSGi bundle.
@@ -12,7 +12,7 @@ version, errors are thrown.
 
 The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -45,7 +45,7 @@ repositories {
 }
 ```
 
-## Project Extension
+## Project Extension [](id=project-extension)
 
 The Baseline plugin exposes the following properties through the
 `baselineConfiguration` extension:
@@ -55,7 +55,7 @@ Property Name | Type | Default Value | Description
 `allowMavenLocal` | `boolean` | `false` | Whether to let the *baseline* come from the local Maven cache (by default: `${user.home}/.m2`). If the local Maven cache is not [configured](https://docs.gradle.org/current/userguide/dependency_management.html#sub:maven_local) as a project repository, this property has no effect.
 `lowestBaselineVersion` | `String` | `"1.0.0"` | The greatest project version to ignore for the baseline check. If the [project version](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:version) is less than or equal to the value of this property, the [`baseline`](#baseline) task is skipped.
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds one task to your project:
 
@@ -72,9 +72,9 @@ Property Name | Default Value
 [`oldJarFile`](#oldjarfile) | [`configurations.baseline.singleFile`](#baseline-dependency)
 [`sourceDir`](#sourcedir) | The first `resources` directory of the `main` source set (by default: `src/main/resources`).
 
-### BaselineTask
+### BaselineTask [](id=baselinetask)
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -94,18 +94,18 @@ The properties of type `File` support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you baseline your OSGi bundle.
 
-### Baseline Dependency
+### Baseline Dependency [](id=baseline-dependency)
 
 By default, the plugin creates a configuration called `baseline` and adds a
 dependency to the latest released non-snapshot version of the bundle. It is
 possible to override this setting and use a different version of the bundle as
 baseline.
 
-### System Properties
+### System Properties [](id=system-properties)
 
 It is possible to set the default values of the [`ignoreFailures`](#ignorefailures)
 property for a `BaselineTask` task via system properties:

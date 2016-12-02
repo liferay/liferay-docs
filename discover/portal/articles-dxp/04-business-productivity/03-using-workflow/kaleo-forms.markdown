@@ -310,7 +310,7 @@ saves it, and sends it along in the workflow.
 The Kaleo Forms application unites two powerful features of Liferay by
 integrating a workflow and a form into a new entity, the Kaleo Process.
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Kaleo Designer](/discover/portal/-/knowledge_base/7-0/kaleo-designer)
 
