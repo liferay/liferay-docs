@@ -35,6 +35,6 @@ below:
 | isWebKit | boolean | |
 | isWindows | boolean | |
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Liferay Theme Display](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-themedisplay)

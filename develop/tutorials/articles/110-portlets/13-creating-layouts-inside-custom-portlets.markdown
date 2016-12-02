@@ -94,6 +94,6 @@ Below is an example layout created in a portlet:
  
 Now you know how to create layouts inside your portlets!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Layout Templates with the Themes Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)

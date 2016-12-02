@@ -85,7 +85,7 @@ Otherwise, it defaults to a guest greeting. Although this is a basic example, it
 shows how you can easily define unique user experiences with the `ThemeDisplay`
 object.
 
-## Liferay.ThemeDisplay API [](liferay-themedisplay-api)
+## Liferay.ThemeDisplay API [](liferay-themedisplay-api) [](id=liferay-themedisplay-api-liferay-themedisplay-api)
 
 For completeness, you can find every available method inside the 
 `Liferay.ThemeDisplay` object in the table below:
@@ -135,6 +135,6 @@ directory |
 | isStateMaximized | boolean | |
 | isStatePopUp | boolean | |
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [@product@ JavaScript Utilities](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/javascript-utilities)

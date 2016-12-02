@@ -71,7 +71,7 @@ application wrapper.
 
 The default portlet decorators are covered next.
 
-### Default Portlet Decorators
+### Default Portlet Decorators [](id=default-portlet-decorators)
 
 Themes come bundled with three default portlet decorators in their 
 `liferay-look-and-feel.xml`. These are listed below:
@@ -92,7 +92,7 @@ dedicated to [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portle
 
 Now you know how to make your portlets stylish!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators)
 

@@ -53,7 +53,7 @@ For example, if checked from `my.domain.com/es/web/guest/home`, the value is
 Now you know how to manipulate URLs using methods within the `Liferay` global 
 JavaScript object.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [@product@ JavaScript Utilities](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/javascript-utilities)
 

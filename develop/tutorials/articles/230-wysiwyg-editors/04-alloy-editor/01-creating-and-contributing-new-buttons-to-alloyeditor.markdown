@@ -295,7 +295,7 @@ AlloyEditor.
 There you have it. Now you know how to create and use custom buttons in the
 AlloyEditor!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Adding a WYSIWYG Editor to a Custom Portlet](/develop/tutorials/-/knowledge_base/7-0/adding-a-wysiwyg-editor-to-a-custom-portlet)
 
