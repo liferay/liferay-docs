@@ -12,10 +12,10 @@ provide some common basic features like the drag and drop and the application
 border style. In order to protect these features, you can't modify the markup
 of these layers directly with a theme.
 
-Portlet Decorators provide a mechanism to add a custom CSS class to one of
-these wrapping layers via a user’s setting. By defining styles for this class in
-your theme, you can change the look and feel of the application instances where
-the Portlet Decorator is applied, including its wrapper.
+Portlet Decorators provide a mechanism to add a CSS class to one of these
+wrapping layers via a user's setting. By defining styles for this class in your
+theme, you can change the look and feel of the application instances where the
+Portlet Decorator is applied, including its wrapper.
 
 The figure below shows the markup of the layers wrapping a Liferay application
 when the *Decorate* Portlet Decorator is applied:

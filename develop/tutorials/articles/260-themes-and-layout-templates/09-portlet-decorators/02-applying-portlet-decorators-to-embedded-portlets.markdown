@@ -1,23 +1,19 @@
 # Applying Portlet Decorators to Embedded Portlets [](id=applying-portlet-decorators-to-embedded-portlets)
 
 Once you have installed a theme that contains Portlet Decorators, site
-administrators can apply them to an portlet instance by selecting the
+administrators can apply them to a portlet instance by selecting the
 Application Decorator in the Look and Feel Configuration dialog.
 
-If your theme contains embedded portlets, it’s also possible to apply an
+If your theme contains embedded portlets, it's also possible to apply an
 Application Decorator other than the default one by setting its preferences.
 
-This tutorial demonstrates how to:
-
-- Apply Portlet Decorators to Embedded Portlets in your theme.
-
-Read on to find out how you can apply default decorators to your embedded
-portlets.
+This tutorial demonstrates how to apply Portlet Decorators to Embedded Portlets
+in your theme.
 
 ## Setting Application Decorator Preferences [](id=setting-portlet-decorator-preferences)
 
-To define a default Application Decorator for the embedded portlets of your
-theme, you have to set a default decorator in the portlet preferences.
+To define a default Application Decorator for your theme's embedded portlets,
+you must set a default decorator in the portlet preferences.
 
 For example, the [Classic theme](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/frontend-theme/frontend-theme-classic-web/src/main/resources/META-INF/resources/classic/_diffs/templates/navigation.ftl)
 declares an Application Decorator with Id `barebone` and applies it to the
