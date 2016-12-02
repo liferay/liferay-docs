@@ -1,29 +1,29 @@
 # Forms and Validation [](id=forms-and-validation)
 
-Creating forms is easy and flexible, thanks to @product@'s Form, input, and 
+Creating forms is easy and flexible, thanks to @product@'s form, input, and 
 validation tags.
 
-The `<aui:form>` tag sets up the necessary code (HTML, JS), utilizes Liferay 
+The `<aui:form>` tag sets up the necessary code (HTML, JS), uses Liferay 
 JavaScript APIs, calls the validation framework, and submits the form data to 
 the back-end.
 
-The *input* tags (`<aui:input>`, `<liferay-ui:input-*>`, etc.) generate the 
-necessary code (HTML, CSS, JS) to provide you with a consistent UI throughout 
-your form. These tags also initialize the input's state( e.g. `value`, `disabled`, `readonly`, etc.).
+The *input* tags (`<aui:input>`, `<liferay-ui:input-*>`, etc.) generate the
+necessary code (HTML, CSS, JS) to provide you with a consistent UI throughout
+your form. These tags also initialize the field's state (e.g. `value`,
+`disabled`, `readonly`, etc.).
 
-The `<aui:validator>` tag allows you to create validation rules for your form's 
-input tags. This ensures that your users are entering the proper data in the 
-format you expect, before it gets sent to the back-end for final validation and 
-processing.
+The `<aui:validator>` tag lets you create validation rules for your form's 
+input tags. This ensures that your users enter the proper data in the format you
+expect before it gets sent to the back-end for final validation and processing.
 
-The following inputs support validators natively:
+The following tags support validators natively:
 
 - `<aui:input>`
 - `<aui:select>`
 - `<liferay-ui:input-date>`
 - `<liferay-ui:input-search>`
 
-All other inputs can be validated using the method described in the
+All other fields can be validated using the method described in the
 [Adding Custom Validators in JavaScript](/develop/tutorials/-/knowledge_base/7-0/forms-and-validation#adding-custom-validators-in-javascript)
 section below.
 
@@ -67,8 +67,7 @@ can learn how to add validation to your forms.
 
 ## Adding Validation [](id=adding-validation)
 
-What if you want to ensure the user enters the required data? Simply add 
-validators.
+What if you want to ensure the user enters the required data? Add validators.
 
 An example configuration is shown below:
 
@@ -76,15 +75,14 @@ An example configuration is shown below:
     value='<%= "My Text Value" %>'>
             <aui:validator name="required" />
     </aui:input>
-    
-This will force the user to enter something into the input, before the form is 
-submitted.
+ 
+This forces the user to enter something before the form is submitted.
 
-![Figure 1: An input with a failed required validator.](../../images/forms-input-required.png)
+![Figure 1: A field with a failed required validator.](../../images/forms-input-required.png)
 
 What if you wanted to restrict the value to a number between `0` and `10`? 
-There's a validator for that. Each of the validators shown below will need to 
-pass to submit the form:
+There's a validator for that. Each of the validators shown below must pass to
+submit the form:
 
     <aui:validator name="required" />
     <aui:validator name="number" />
@@ -97,60 +95,60 @@ You can even customize the error message, as shown below:
 
 ![Figure 2: A required validator with a custom error message.](../../images/forms-input-required-message.png)
 
-Below is a list of all of the available validation rules:
+Below is a list of all the available validation rules:
 
-*acceptFiles*: Specifies that the field can contain only the file types given. 
+**acceptFiles:** Specifies that the field can contain only the file types given. 
 Each file extension must be separated by a comma. For example `<aui:validator
 name="acceptFiles">'jpg,png,tif,gif'</aui:validator>`
 
-**alpha**: Allows only alphabetic characters. 
+**alpha:** Allows only alphabetic characters. 
 
-**alphanum**: Allows only alphanumeric characters.
+**alphanum:** Allows only alphanumeric characters.
 
-**date**: Allows only a date.
+**date:** Allows only a date.
 
-**digits**: Allows only digits.
+**digits:** Allows only digits.
 
-**email**: Allows only an email address.
+**email:** Allows only an email address.
 
-**equalTo**: Allows only contents equal some other field that has the specified
-field ID. The ID is declared in the opening and closing validator tags. For
-example `<aui:validator name="equalTo">'#<portlet:namespace
+**equalTo:** Allows only contents equal to some other field that has the
+specified field ID. The ID is declared in the opening and closing validator
+tags. For example `<aui:validator name="equalTo">'#<portlet:namespace
 />password'</aui:validator>`
 
-**max**: Allows only an integer value less than the specified value. For
+**max:** Allows only an integer value less than the specified value. For
 example, a `max` value of `20` is specified here `<aui:validator
 name="max">20</aui:validator>` 
 
-**maxLength**: Allows a maximum field length of the specified size. The syntax
+**maxLength:** Allows a maximum field length of the specified size. The syntax
 is the same as `max`.
 
-**min**: Allows only an integer value greater than the specified value. The
+**min:** Allows only an integer value greater than the specified value. The
 syntax is the same as `max`.
 
-**minLength**: Allows a field length longer than the specified size. The syntax
+**minLength:** Allows a field length longer than the specified size. The syntax
 is the same as `max`.
 
-**number**: Allows only numerical values.
+**number:** Allows only numerical values.
 
-**range**: Allows only a number between the specified range. For example,
+**range:** Allows only a number between the specified range. For example,
 a range between 1.23 and 10 is specified here `<aui:validator
 name="range">[1.23,10]</aui:validator>`
 
-**rangeLength**: Allows a field length between the specified range. For example,
+**rangeLength:** Allows a field length between the specified range. For example,
 a range between 3 and 8 characters long is specified here 
 `<aui:validator name="rangeLength">[3,8]</aui:validator>`
 
-**required**: Prevents a blank field.
+**required:** Prevents a blank field.
 
-**url**: Allows only a URL value.
+**url:** Allows only a URL value.
 
 Now that you know how to validate your forms, you can learn how to conditionally
 require user input next.
 
-## Conditionally Requiring an Input [](id=conditionally-requiring-an-input)
+## Conditionally Requiring A Field [](id=conditionally-requiring-a-field)
 
-Sometimes you'll want to validate an input based on the value of another input.
+Sometimes you'll want to validate a field based on the value of another field.
 You can do this by checking for that condition in a JavaScript function within 
 the `required` validator's body.
 
@@ -166,16 +164,16 @@ Below is an example configuration:
             </aui:validator>
     </aui:input>
 
-![Figure 3: Inputs can required based on other conditions.](../../images/forms-input-required-condition.png)
+![Figure 3: Fields can required based on other conditions.](../../images/forms-input-required-condition.png)
 
 Next you can learn how to add custom validators.
 
 ## Adding Custom Validators [](id=adding-custom-validators)
 
-So far, you'ce only seen the default set of AUI validator rules. What if you
+So far, you've only seen the default set of AUI validator rules. What if you
 need something that the default rules don't provide?
 
-You can write your own validator, and optionally supplement it with built-in 
+You can write your own validator and optionally supplement it with built-in
 validators, as shown below:
 
     <aui:input label="Email" name="email" type="text">
@@ -200,12 +198,11 @@ Next you can learn how to add custom validators in JavaScript.
 
 ## Adding Custom Validators in JavaScript [](id=adding-custom-validators-in-javascript)
 
-Sometimes you need to dynamically add additional validation after the page has 
-rendered. Perhaps some additional inputs were added to the DOM via an AJAX 
+Sometimes you need to add additional validation dynamically after the page has 
+rendered. Perhaps some additional fields were added to the DOM via an AJAX 
 request.
 
-To do this, you'll need to access the `Liferay.Form` object, as demonstrated
-below:
+To do this, you must access the `Liferay.Form` object, as demonstrated below:
 
     <aui:script use="liferay-form">
             var form = Liferay.Form.get('<portlet:namespace />myForm');
@@ -246,19 +243,19 @@ This example below uses a `custom` validator and the built-in `number` validator
     </aui:script>
 
 Notice that `newFieldRules` are combined with `oldFieldRules`, using `concat()`. 
-You could leave this part out, and you'd have a whole new set of validators, for 
+You could leave this part out, and you'd have a whole new set of validators for 
 the whole form.
 
-Next you can learn how to manually validate your forms.
+Next you can learn how to validate your forms manually. 
 
 ## Manual Validation
 
-You may need to execute validation on an input, based off some event, not 
-typical of user input. For instance, you may need to validate a related input at 
-the same time.
+You may need to execute validation on a field, based on some event not typical
+of user input. For instance, you may need to validate a related field at the
+same time.
 
 To do this, you must access the `formValidator` object and call the 
-`validateField()` method, passing the input's `name`. Below is an example
+`validateField()` method, passing the field's `name`. Below is an example
 configuration:
 
     <aui:input label="Old Title" name="oldTitle" type="text">
@@ -286,7 +283,7 @@ configuration:
                     formValidator.validateField(fieldName);
             }
     </aui:script>
-    
+ 
 Now you know how to create and validate forms!
 
 ## Related Topics
