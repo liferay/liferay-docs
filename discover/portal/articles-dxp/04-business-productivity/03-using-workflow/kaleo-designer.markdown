@@ -417,6 +417,8 @@ in your sites.
 
 ## Related Topics [](id=related-topics)
 
+[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+
 [Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
 
 [Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
