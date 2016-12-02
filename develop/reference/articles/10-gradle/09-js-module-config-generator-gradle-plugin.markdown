@@ -5,6 +5,8 @@ The JS Module Config Generator Gradle plugin lets you run the
 to generate the configuration file needed to load AMD files via combo loader in
 Liferay.
 
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
 ## Usage
 
 To use the plugin, include it in your build script:

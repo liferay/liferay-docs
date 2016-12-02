@@ -4,6 +4,8 @@ The XML Formatter Gradle plugin lets you format a project's XML files using the
 [Liferay XML Formatter](https://github.com/liferay/liferay-portal/tree/master/modules/util/xml-formatter)
 tool.
 
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
 ## Usage
 
 To use the plugin, include it in your build script:

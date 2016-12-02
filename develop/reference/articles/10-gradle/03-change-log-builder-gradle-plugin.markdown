@@ -28,6 +28,8 @@ the range start.
 - If a change log already exists for your project, the start range begins at the
 range end of the last line in the change log.
 
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
 ## Usage
 
 To use the plugin, include it in your build script:
