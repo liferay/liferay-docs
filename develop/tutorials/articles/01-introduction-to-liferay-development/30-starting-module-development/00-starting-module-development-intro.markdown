@@ -32,7 +32,7 @@ these popular environments.
 -   [Maven tutorials](/develop/tutorials/-/knowledge_base/7-0/maven)
     and [samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 
--   [Gradle in Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
+-   [Gradle in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
     and [samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 
 -   [BndTools samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
@@ -92,10 +92,10 @@ there. If you install it to a different location, uncomment the
 
 +$$$
 
-**Note**: User interfaces in Liferay IDE and Developer Studio let developers
-create and import Liferay Workspace projects. 
+**Note**: User interfaces in Liferay @ide@ lets developers create and import
+Liferay Workspace projects. 
 
-To create a project, follow the tutorial [Creating a Liferay Workspace Project with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide).
+To create a project, follow the tutorial [Creating a Liferay Workspace Project with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide).
 
 To import a project, use the wizard from *File &rarr; Import &rarr; Liferay &rarr; Liferay Workspace Project*.
 
@@ -118,8 +118,8 @@ The Blade command `blade create -l` lists the module templates.
 
 +$$$
 
-**Note**: Liferay IDE's module wizard lets developers select a template for
-their module project. For details, see the tutorial [Creating a Module with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide). 
+**Note**: Liferay @ide@'s module wizard lets developers select a template for
+their module project. For details, see the tutorial [Creating a Module with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide). 
 
 $$$
 
@@ -236,12 +236,11 @@ deploy all modules in a Workspace's modules directory, for example, execute
 
 +$$$
 
-**Note**: Liferay IDE and Developer Studio let developers deploy modules by
-dragging them from the Package Explorer onto the @product@ server. Liferay IDE
-provides access to [Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-0/managing-module-projects-with-liferay-ide)
+**Note**: Liferay @ide@ lets developers deploy modules by dragging them from the
+Package Explorer onto the @product@ server. @ide@ provides access to [Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-0/managing-module-projects-with-liferay-ide)
 too. 
 
-![Figure 5: IDE/Studio let developers deploy modules using drag-and-drop.](../../../images/starting-module-dev-drag-module.png)
+![Figure 5: Liferay @ide@ lets developers deploy modules using drag-and-drop.](../../../images/starting-module-dev-drag-module.png)
 
 $$$
 
@@ -252,7 +251,7 @@ properties in the `@Component` annotation.
 
 ![Figure 6: Here's a bare-bones portlet based on one of Liferay's module templates.](../../../images/starting-module-dev-portlet.png)
 
-## Automatically Redeploying Changed Modules [](id=automatically-redeploying-changed-modules)
+## Redeploying Changed Modules Automatically [](id=redeploying-changed-modules-automatically)
 
 Blade lets developers set a *watch* on changes to a module project's output
 files. If they're modified, Blade redeploys the module automatically. To set a
