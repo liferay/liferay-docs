@@ -11,38 +11,32 @@ Tool: a tool that knows about these changes, analyzes your code, and suggests
 how to adapt the code to the new APIs.
 
 The Liferay Code Upgrade Tool (initially called the Migration Tool) is in
-Liferay IDE and Liferay Developer Studio. You should use the tool to adapt code
-to @product-ver@; you can switch back to your favorite tool afterwards.
+Liferay @ide@. You should use the tool to adapt code to @product-ver@; you can
+switch back to your favorite tool afterwards.
 
-This tutorial shows you how to adapt existing plugin code to @product-ver@'s API. As
-a prerequisite, you set up your existing traditional plugin in a @product-ver@
-Plugins SDK, in Liferay IDE or Liferay Developer Studio. Then you find your
-plugin's dependencies and configure them. Finally, you use the Code Upgrade Tool
-to address upgrade issues. It's all straightforward.
+This tutorial shows you how to adapt existing plugin code to @product-ver@'s
+API. As a prerequisite, you set up your existing traditional plugin in a
+@product-ver@ Plugins SDK, in Liferay @ide@. Then you find your plugin's
+dependencies and configure them. Finally, you use the Code Upgrade Tool to
+address upgrade issues. It's all straightforward.
 
 +$$$
 
-Note: Even if Liferay IDE or Liferay Developer Studio (both use Eclipse) aren't your
-favorite, you should use one of them to leverage the Code Upgrade Tool. When
-you're done adapting your code, you can go back to your preferred IDE and tool
-chain. 
+Note: Even if Liferay @ide@ (which is based on Eclipse) isn't your favorite,
+you should use it to leverage the Code Upgrade Tool. When you're done adapting
+your code, you can go back to your preferred IDE and tool chain. 
 
 $$$
 
-Let's start by setting up your plugin in a @product-ver@ Plugins SDK using Liferay IDE
-or Liferay Developer Studio.
+Let's start by setting up your plugin in a @product-ver@ Plugins SDK using
+Liferay @ide@.
 
 ## Setup [](id=setup)
 
-The Code Upgrade Tool is available in Liferay IDE and Liferay Developer Studio
-(versions 3.0 and newer). 
+The Code Upgrade Tool is available in Liferay @ide@ (versions 3.0 and newer). 
 
-If you already have Liferay IDE or Liferay Developer Studio, upgrade it to
-version 3.0 or newer. Otherwise, download it from the product site:
-
-* [Liferay IDE](https://web.liferay.com/downloads/liferay-projects/liferay-ide)
-
-* [Liferay Developer Studio](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
+If you already have Liferay @ide@ (@ide@), upgrade it to version 3.0 or newer.
+Otherwise, download it from the [downloads page](https://www.liferay.com/downloads).
 
 Next, you need a @product-ver@ Plugins SDK for your traditional plugin. The new SDK
 is available on the [downloads page](https://www.liferay.com/downloads).
@@ -55,8 +49,7 @@ In your `build.[username].properties` file, make sure to set the
 `app.server.type` and `app.server.parent.dir` properties to refer to your
 @product@ installation.
 
-In Liferay IDE or Liferay Developer Studio, set up your Liferay server and plugin
-project as follows:
+In @ide@, set up your Liferay server and plugin project as follows:
 
 1.  Add a Liferay server and underlying runtime environment that targets your
     @product@ installation.
@@ -65,16 +58,16 @@ project as follows:
     Liferay Plugins SDK Project* to bring up the wizard for importing and
     configuring your project.
 
-Your existing plugin project, along with its Plugins SDK, appears in the IDE.
+Your existing plugin project, along with its Plugins SDK, appears in @ide@.
 You're ready to adapt the plugin to @product-ver@!
 
 ## Resolving Module Dependencies [](id=resolving-module-dependencies)
 
-Now that you've imported your plugin project to Liferay IDE or Developer Studio,
-you probably see compile errors for some of the Liferay classes it uses.
-They're listed as undefined classes or unresolved symbols because they've been
-moved, renamed, or removed. As a part of modularization in @product@, many of
-these classes reside in new modules.
+Now that you've imported your plugin project to @ide@, you probably see compile
+errors for some of the Liferay classes it uses. They're listed as undefined
+classes or unresolved symbols because they've been moved, renamed, or removed.
+As a part of modularization in @product@, many of these classes reside in new
+modules.
 
 You need to resolve all of these Liferay classes for your plugin. Some of the
 class changes are quick and easy to fix. Changes involving the new modules
@@ -90,9 +83,9 @@ Liferay class changes and required adaptations are described below:
     automatically resolves multiple classes at once.
 
     It's typically faster to resolve moved classes using the mentioned Eclipse
-    feature. Since Liferay IDE and Developer Studio are based on Eclipse, you
-    can generate imports to classes in your classpath by using the *Organize
-    Imports* keyboard sequence: *ctrl-shift-o*.
+    feature. Since Liferay @ide@ is based on Eclipse, you can generate imports
+    to classes in your classpath by using the *Organize Imports* keyboard
+    sequence: *ctrl-shift-o*.
 
     If you have an import line
     that's in error, comment out the line or remove it. Then press
@@ -248,8 +241,8 @@ lower* than what's specified in the @product@ source code. The source code lists
 one micro-version higher than what's associated with the @product@ release. 
 
 If your project doesn't already have an `ivy.xml` file, you can get one by
-creating a new plugin project in Liferay IDE or Developer Studio and copying the
-`ivy.xml` file it generates.
+creating a new plugin project in @ide@ and copying the `ivy.xml` file it
+generates. 
 
 For example, here are the Liferay Portal 6.2 Knowledge Base portlet
 application's `ivy.xml` file contents:
@@ -411,11 +404,11 @@ in adapting your plugin to @product-ver@.
 Congratulations on completing the first step in upgrading your plugin to @product@
 7! Let's consider all that you've done.
 
-You set up your plugin in a @product-ver@ Plugins SDK, imported it into Liferay IDE
-or Liferay Developer Studio, and set up a @product-ver@ server in that IDE. Then,
-you fixed class imports and resolved dependencies on all the modules your plugin
-uses. Finally, you leveraged Liferay's Code Upgrade Tool to hunt down and adapt
-to breaking API changes. Way to go!
+You set up your plugin in a @product-ver@ Plugins SDK, imported it into @ide@,
+and set up a @product-ver@ server in it. Then, you fixed class imports and
+resolved dependencies on all the modules your plugin uses. Finally, you
+leveraged Liferay's Code Upgrade Tool to hunt down and adapt to breaking API
+changes. Way to go!
 
 It's onward and upward with upgrading your traditional plugins on @product-ver@!
 
