@@ -22,13 +22,13 @@ Below is an example configuration:
     portletURL.setParameter('p_auth', Liferay.authToken);
     portletURL.setPortletId(Liferay.PortletKeys.DOCUMENT_LIBRARY);
 
-## Liferay authToken [](id=liferay-auth-token)
+## Liferay AuthToken [](id=liferay-auth-token)
 
 Below is an example configuration for the `Liferay.authToken`:
 
     Liferay.authToken = '<%= AuthTokenUtil.getToken(request) %>';
 
-## Liferay.currentURL [](id=liferay-current-url)
+## Liferay CurrentURL [](id=liferay-current-url)
 
 The `Liferay.currentURL` variable holds the path of the current URL from the 
 server root.
@@ -39,7 +39,7 @@ For example, if checked from `my.domain.com/es/web/guest/home`, the value is
     // Inside my.domain.com/es/web/guest/home
     console.log(Liferay.currentURL); // "/es/web/guest/home"
 
-## Liferay.currentURLEncoded [](id=liferay-current-url-encoded)
+## Liferay CurrentURLEncoded [](id=liferay-current-url-encoded)
 
 The `Liferay.currentURLEncoded` variable holds the path of the current URL from 
 the server root encoded in ASCII for safe transmission over the Internet.
