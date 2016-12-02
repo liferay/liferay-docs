@@ -33,8 +33,8 @@ Below is an example configuration for the `Liferay.authToken`:
 The `Liferay.currentURL` variable holds the path of the current URL from the 
 server root.
 
-For example, if checked from `my.domain.com/es/web/guest/home`, the value will 
-be `/es/web/guest/home`, as shown below:
+For example, if checked from `my.domain.com/es/web/guest/home`, the value is
+`/es/web/guest/home`, as shown below:
 
     // Inside my.domain.com/es/web/guest/home
     console.log(Liferay.currentURL); // "/es/web/guest/home"
@@ -42,14 +42,14 @@ be `/es/web/guest/home`, as shown below:
 ## Liferay.currentURLEncoded [](id=liferay-current-url-encoded)
 
 The `Liferay.currentURLEncoded` variable holds the path of the current URL from 
-the server root encoded in ACII for safe transmission over the Internet.
+the server root encoded in ASCII for safe transmission over the Internet.
 
-For example, if checked from `my.domain.com/es/web/guest/home`, the value will 
-be `%2Fes%2Fweb%2Fguest%2Fhome`, as shown below:
+For example, if checked from `my.domain.com/es/web/guest/home`, the value is
+`%2Fes%2Fweb%2Fguest%2Fhome`, as shown below:
 
     // Inside my.domain.com/es/web/guest/home
     console.log(Liferay.currentURLEncoded); // "%2Fes%2Fweb%2Fguest%2Fhome"
-    
+ 
 Now you know how to manipulate URLs using methods within the `Liferay` global 
 JavaScript object.
 
