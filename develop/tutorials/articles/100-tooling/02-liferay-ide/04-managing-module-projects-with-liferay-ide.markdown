@@ -1,13 +1,13 @@
-# Managing Module Projects with Liferay IDE [](id=managing-module-projects-with-liferay-ide)
+# Managing Module Projects with Liferay @ide@ [](id=managing-module-projects-with-liferay-ide)
 
-Liferay IDE provides the ability to manage Liferay module projects from a GUI.
-Before you begin learning about managing your modules from Liferay IDE, you
+Liferay @ide@ provides the ability to manage Liferay module projects from a GUI.
+Before you begin learning about managing your modules from Liferay @ide@, you
 should make sure a Liferay server is configured in your Eclipse workspace so you
 can deploy and run your projects. You can learn how to create a Liferay bundle
-and link it to your Liferay workspace in the [Creating a Liferay Workspace with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
+and link it to your Liferay workspace in the [Creating a Liferay Workspace with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
 tutorial.
 
-Once you've created modules, you can deploy them using Liferay IDE. First, make
+Once you've created modules, you can deploy them using Liferay @ide@. First, make
 sure your Liferay server is started by clicking the *Start Server* button
 (![Start Server](../../../images/icon-start-server.png)). Then navigate to your
 module project from the Project Explorer and drag-and-drop the project onto the
@@ -22,7 +22,7 @@ successfully by using
 Right-click the started portal in server view and select
 *Open Gogo Shell*.
 
-![Figure 1: Select *Open Gogo Shell* to open a terminal window in IDE using Gogo shell.](../../../images/open-gogo-shell.png)
+![Figure 1: Select *Open Gogo Shell* to open a terminal window in @ide@ using Gogo shell.](../../../images/open-gogo-shell.png)
 
 A Gogo shell terminal appears, allowing you to enter Gogo commands to inspect
 your Liferay instance and the modules deployed to it. Enter the `lb` command to
@@ -31,7 +31,7 @@ deployed successfully.
 
 ![Figure 2: You can check to see if your module deployed successfully to Liferay using the Gogo shell.](../../../images/gogo-deploy-successful.png)
 
-Since the Liferay Workspace perspective in IDE is Gradle-based, you have some
+Since the Liferay Workspace perspective in @ide@ is Gradle-based, you have some
 additional Gradle features you can take advantage of. The Gradle Tasks toolbar
 presents Gradle commands for your workspace that you can execute with a click of
 the mouse.
@@ -44,9 +44,9 @@ and then the build command you want to execute.
 
 ![Figure 4: You can execute build operations by right-clicking the Gradle project in the Project Explorer.](../../../images/gradle-build-operations.png)
 
-To learn more about Gradle development in Liferay IDE, see the
-[Using Gradle in Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
+To learn more about Gradle development in Liferay @ide@, see the
+[Using Gradle in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
 tutorial.
 
 Excellent! You've learned how to manage your Gradle-based Liferay Workspace
-using Liferay IDE.
+using Liferay @ide@.
