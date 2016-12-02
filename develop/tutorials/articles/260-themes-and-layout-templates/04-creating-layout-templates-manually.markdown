@@ -3,10 +3,9 @@
 You can use the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 to generate Layout Templates automatically. This is covered in the 
 [Layout Templates with the Themes Generator](develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0) 
-tutorial. However you may want to create your layout templates manually, or to 
-modify the template directly.
+tutorial. You may, however, want to create or modify your layout templates manually.
 
-In this tutorial you'll learn how to manually create or modify a Layout Template.
+In this tutorial you'll learn how to create or modify a Layout Template manually.
 
 You can see the HTML markup for a basic layout template next.
 
@@ -51,9 +50,9 @@ The column elements and classes are described in more detail next.
 
 ## Column Elements and Classes [](id=column-elements-and-classes)
 
-To understand how the layout template works, you must take a closer look at how
-the HTML is structured. This section uses the first column of the previous 
-example to demonstrate the key elements and classes of a layout template:
+To understand how the layout template works, you must look closely at how the
+HTML is structured. This section uses the first column of the example above 
+to demonstrate the key elements and classes of a layout template:
 
     <div class="col-md-4 portlet-column portlet-column-first" id="column-1">
             $processor.processColumn("column-1", "portlet-column-content 
@@ -64,33 +63,33 @@ You can learn more about the column container next.
 
 ### Column Container [](id=column-container)
 
-Below is an explanation of each of the column container classes:
+Below is a description of each of the column container classes:
 
-- `column-1`: A unique identifier for the column that matches the ID passed to 
-  `$processor.processColumn`.
+`column-1`: A unique identifier for the column that matches the ID passed to 
+`$processor.processColumn`.
 
-- `col-md-4`: This class comes from Bootstrap's grid system and determines two 
-  things: the percentage based width of the element, and the media query 
-  breakpoint for when this element expands to 100% width. 12 is the maximum 
-  amount, so `col-md-4` indicates `4/12` width, or `33.33%`.
+`col-md-4`: This class comes from Bootstrap's grid system and determines two 
+things: the percentage based width of the element, and the media query 
+breakpoint for when this element expands to 100% width. 12 is the maximum 
+amount, so `col-md-4` indicates `4/12` width, or `33.33%`.
 
-- `portlet-column portlet-column-first`: All column containers must use the 
-  `portlet-column` class. For rows with more than one column, the first column 
-  must have `portlet-column-first` and the last must have `portlet-column-last`. 
-  For rows with only one column, use the `portlet-column-only` class.
-  
+`portlet-column portlet-column-first`: All column containers must use the 
+`portlet-column` class. For rows with more than one column, the first column 
+must have `portlet-column-first` and the last must have `portlet-column-last`. 
+For rows with only one column, use the `portlet-column-only` class.
+ 
 Next you can learn more about the `$processor.processColumn`.
 
 ### Processor ProcessColumn [](id=processor-processcolumn)
 
-The arguments for `$processor.processColumn` are explained below:
+`$processor.processColumn` takes these arguments: 
 
-- `column-1`: A unique identifier. This should match the ID of the parent `div`.
+`column-1`: A unique identifier. This should match the ID of the parent `div`.
 
-- `portlet-column-content portlet-column-content-first`: Additional classes 
-  added to the content element. These classes must match the parent `div`'s 
-  classes with `-content` appended.
-  
+`portlet-column-content portlet-column-content-first`: Additional classes 
+added to the content element. These classes must match the parent `div`'s 
+classes with `-content` appended.
+
 Next you can learn how to modify template breakpoints.
 
 ## Modifying Template Breakpoints [](id=modifying-template-breakpoints)
@@ -122,16 +121,16 @@ below:
             </div>
     </div>
 
-In the example row above, on medium sized view ports `column-1` will be 33.33% 
-width and `column-2` will be 66.66% width, but on small sized view ports both 
-`column-1` and `column-2` will be 50% width.
+In the example row above, on medium sized view, ports `column-1` are 33.33% 
+width and `column-2` are 66.66% width, but on small sized view ports both 
+`column-1` and `column-2` are 50% width.
 
 Place the completed layout in your theme's `src/layouttpl` folder if you created
 your theme with Theme's Generator, or place it in your theme's 
 `docroot/layouttpl/custom` folder if using the Plugins SDK.
 
-There you have it. Now you know how to manually create and modify layout
-templates!
+There you have it. Now you know how to create and modify layout
+templates manually!
 
 ## Related Topics [](id=related-topics)
 
