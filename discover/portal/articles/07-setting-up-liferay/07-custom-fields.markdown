@@ -1,13 +1,13 @@
 # Custom Fields [](id=custom-fields)
 
 Have you ever wondered why there's no *Head Circumference* field in the form for
-adding users to @product@? Probably because most sites based on @product@ won't
-need it. However, as an administrator at The Lunar Resort, you certainly need to
+adding users to @product@? Probably because most sites based on @product@ don't
+need it. However, as an administrator at the Lunar Resort, you certainly need to
 know the head circumference of your users so they can be provided with a
 properly fitting helmet. 
 
 Many of @product@'s assets and resources are designed to let you add new fields
-to their *edit* forms. Here's the complete list:
+to their edit forms. Here's the complete list:
 
 - Blogs Entry
 - Bookmarks Entry
@@ -54,7 +54,7 @@ To add a custom field to one of the listed entities,
 
 2.  Click the add (![Add](../../images-dxp/icon-add.png)) button.
 
-3. Add a Key.
+3.  Add a Key.
 
     +$$$
 
@@ -112,21 +112,21 @@ Once you have a custom field for a resource, go find it in the UI of the
 resource. First find the UI location for the resource, and all its custom fields
 are displayed in a Custom Fields panel. For example, consider the Users UI:
 
-- Navigate to *Control Panel &rarr; Users and Organizations*. Once
-    there click on a User to open the Edit User form. Open the form's
-    Miscellaneous tab and expand the Custom Fields panel. Your custom field is
-    there (its title is whatever you specified in the Key field), ready to be
-    filled out.
+Navigate to *Control Panel &rarr; Users and Organizations*. Once
+there click on a User to open the Edit User form. Open the form's
+Miscellaneous tab and expand the Custom Fields panel. Your custom field is
+there (its title is whatever you specified in the Key field), ready to be
+filled out.
 
-    ![Figure 2: The Edit User form's Custom Fields panel is found in the
-    Miscellaneous tab.](../../images/custom-fields-panel.png)
+![Figure 2: The Edit User form's Custom Fields panel is found in the
+Miscellaneous tab.](../../images/custom-fields-panel.png)
 
 ## Editing a Custom Field [](id=editing-a-custom-field)
 
 You can't change the key or field type of a custom field, but you can delete it
 and create a new one if necessary. Additionally, once you create the custom
-field, there are properties you can configure. For example, here's the edit page
-of the Head Circumference field:
+field, there are properties you can configure. For example, here's the Head
+Circumference field's edit page: 
 
 ![Figure 3: Custom Fields can be configured after you create them. The exact
 options depend on the field type you choose.](../../images/custom-fields-configuration.png)
@@ -144,7 +144,7 @@ can be granted or removed for these actions:
 permissions.](../../images/custom-fields-edit.png)
 
 Custom fields make many of @product@'s entities extensible directly from the
-administrative user interface. Use them as is, or combine them with some backend
-code, and you have yet another powerful, flexible feature at your disposal. As
-they're fond of saying at The Lunar Resort, "The sky is certainly not the
-limit".
+administrative user interface. Use them as is, or combine them with some
+back-end code, and you have yet another powerful, flexible feature at your
+disposal. As they're fond of saying at The Lunar Resort, "The sky is certainly
+not the limit."
