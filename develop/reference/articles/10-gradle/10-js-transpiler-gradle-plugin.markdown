@@ -4,6 +4,8 @@ The JS Transpiler Gradle plugin lets you run [`metal-cli`](https://github.com/me
 in order to build [Metal.js](http://metaljs.com/) code, compile Soy files, and
 transpile ES6 to ES5.
 
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
 ## Usage
 
 To use the plugin, include it in your build script:

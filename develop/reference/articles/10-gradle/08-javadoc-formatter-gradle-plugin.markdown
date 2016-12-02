@@ -12,6 +12,8 @@ The tool lets you generate:
 - An XML representation of the Javadoc comments, which can be used by tools in
   order to index the Javadocs of the project.
 
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
 ## Usage
 
 To use the plugin, include it in your build script:

@@ -5,6 +5,8 @@ into JavaScript functions. It also lets you use a custom localization mechanism
 in the generated `.soy.js` files by replacing [`goog.getMsg`](https://developers.google.com/closure/templates/docs/translation#closurecompiler)
 definitions with a different function call (e.g., `Liferay.Language.get`).
 
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
 ## Usage
 
 To use the plugin, include it in your build script:

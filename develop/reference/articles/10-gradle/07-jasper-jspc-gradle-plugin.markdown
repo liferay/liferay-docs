@@ -7,6 +7,8 @@ can be useful to
 - check for errors in the JSP files.
 - pre-compile the JSP files for better performance.
 
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
 ## Usage
 
 To use the plugin, include it in your build script:
