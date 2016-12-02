@@ -1,4 +1,4 @@
-# Automatic Single Page Applications in @product@
+# Automatic Single Page Applications [](id=automatic-single-page-applications)
 
 A good user experience is the measure of a well-designed site. A user's time is
 highly valuable. The last thing you want is for someone to grow frustrated with

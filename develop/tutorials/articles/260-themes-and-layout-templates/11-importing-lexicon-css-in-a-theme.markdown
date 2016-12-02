@@ -170,9 +170,9 @@ Follow these steps to add a third party theme:
     For example, `@import "awesome-theme/variables.scss";`
  
     +$$$ 
-    
-    Note: You may omit the leading underscore when importing Sass files.
-    
+
+    **Note:** You may omit the leading underscore when importing Sass files.
+
     $$$
 
 5.  In `_custom.scss`, import the file containing the CSS.
