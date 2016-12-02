@@ -22,9 +22,9 @@ address upgrade issues. It's all straightforward.
 
 +$$$
 
-Note: Even if Liferay @ide@ (uses Eclipse) isn't your favorite, you should use
-one of them to leverage the Code Upgrade Tool. When you're done adapting your
-code, you can go back to your preferred IDE and tool chain. 
+Note: Even if Liferay @ide@ (which is based on Eclipse) isn't your favorite,
+you should use it to leverage the Code Upgrade Tool. When you're done adapting
+your code, you can go back to your preferred IDE and tool chain. 
 
 $$$
 
