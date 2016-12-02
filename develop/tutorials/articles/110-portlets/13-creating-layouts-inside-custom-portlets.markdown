@@ -1,12 +1,9 @@
 # Creating Layouts inside Custom Portlets [](id=creating-layouts-inside-custom-portlets)
 
-Page layout tags allow you to create layouts, using Bootstrap 3, within 
-your portlets.
+Page layout tags let you create layouts using Bootstrap 3 within your portlets.
 
 This tutorial explains the `<aui:*>` tags that developers can use to create 
 layouts.
-
-Go ahead and get started.
 
 ## AUI Container [](id=aui-container)
 
@@ -94,7 +91,7 @@ Below is an example layout created in a portlet:
                     </aui:col>
             </aui:row>
     </aui:container>
-    
+ 
 Now you know how to create layouts inside your portlets!
 
 ## Related Topics
