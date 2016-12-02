@@ -1,12 +1,9 @@
 # Theming Portlets [](id=theming-portlets)
 
-@product@ themes have the ability to provide additional styles to a portlet. You
-can change the markup for the portlet containers by modifying the `portlet.ftl`
-file.
+@product@ themes can provide additional styles to a portlet. You can change the
+markup for the portlet containers by modifying the `portlet.ftl` file.
 
 This tutorial demonstrates how to style portlets with your themes.
-
-Go ahead and get started.
 
 ## Portlet FTL [](id=portlet-ftl)
 
@@ -23,17 +20,18 @@ that's included in the default theme of @product-ver@:
             portlet_id = htmlUtil.escapeAttribute(portlet_display.getId())
             portlet_title = htmlUtil.escape(portlet_display.getTitle())
     />
-    
+ 
 An explanation of each variable used in `portlet.ftl` is shown below:
 
 - `portletDisplay`: is fetched from the `themeDisplay` object and contains 
   information about the portlet.
 - `portlet_back_url`: URL to return to the previous page with portlet 
   `WindowState` is maximized.
-- `portlet_display_name`:
+- `portlet_display_name`: The "friendly" name of the portlet as displayed in the
+    GUI. 
 - `portlet_display_root_portlet_id`: Sets the 
 - `portlet_id`: The ID of the portlet (not the same as the portlet namespace)
-- `portlet_title`: The portlet name set in the portlet java class 
+- `portlet_title`: The portlet name set in the portlet Java class 
   (usually from a `Keys.java` class).
 
 The following condition checks if the portlet header should be displayed. If 
@@ -50,7 +48,7 @@ a menu of items for adding resources:
 
     portlet_title_menus = portlet_toolbar.getPortletTitleMenus(portlet_display_root_portlet_id, renderRequest, renderResponse)
 
-The line below contains the information for the configuration menu 
+The configuration below contains the information for the configuration menu 
 (Configuration, Permissions, Look and Feel):
 
     portlet_configuration_icons = portlet_configuration_icon_menu.getPortletConfigurationIcons(portlet_display_root_portlet_id, renderRequest, renderResponse)
