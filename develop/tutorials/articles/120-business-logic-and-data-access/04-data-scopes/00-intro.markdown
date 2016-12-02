@@ -5,17 +5,20 @@ Apps in @product@ can restrict their data to specific
 For example, a site-scoped app can only display its data across a single site. 
 For a detailed explanation of scopes, see the user guide article 
 [Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope). 
-
 Scoping, however, isn't available for custom apps by default. You have to 
-manually add support for it. This tutorial shows you how.
+manually add support for it. This tutorial shows you how. 
 
 ## Scoping Your Entities
 
-In your service layer, your entities must have a `groupId` attribute to enable 
-scoping by site. Using 
+In your service layer, your entities must have a `companyId` attribute of type 
+`long` to enable scoping by portal instance, and a `groupId` attribute of type 
+`long` to enable scoping by site. Using 
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder) 
 is the simplest way to do this. For instructions on this, see the tutorial 
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-0/defining-an-object-relational-map-with-service-builder). 
+series 
+[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence) 
+and 
+[Business Logic with Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-with-service-builder). 
 
 ## Enabling Scoping
 
@@ -41,15 +44,19 @@ shows you how.
 
 ## Accessing Your App's Scope
 
-Your app's current scope matches the `groupId` of the site the user places your 
-app on. You can access this several ways. 
+Your app's current `groupId` is the `groupId` of the site the user places your 
+app on. This is the value you'll most commonly need when working with your app's 
+scope. Therefore, the following techniques focus on this. You can use similar 
+techniques to access the `companyId`. These are noted where applicable. 
 
-1. Via the `scopeGroupId` variable in your JSPs. This variable is injected in 
-   your JSPs whenever you use the `<liferay-theme:defineObjects />` tag. For 
-   example, the Bookmarks app in @product@ uses `scopeGroupId` in 
+Your app's scope is available: 
+
+1. Via the `scopeGroupId` variable that is injected in your JSPs whenever you 
+   use the `<liferay-theme:defineObjects />` tag. For example, Liferay's 
+   Bookmarks app uses `scopeGroupId` in 
    [its `view.jsp`](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/bookmarks/bookmarks-web/src/main/resources/META-INF/resources/bookmarks/view.jsp) 
-   to retrieve the current site's bookmarks and total number of bookmarks:
-   
+   to retrieve the current site's bookmarks and total number of bookmarks: 
+
         ...
         total = BookmarksEntryServiceUtil.getGroupEntriesCount(scopeGroupId, groupEntriesUserId);
         
@@ -57,9 +64,9 @@ app on. You can access this several ways.
         bookmarksSearchContainer.setResults(BookmarksEntryServiceUtil.getGroupEntries(scopeGroupId, groupEntriesUserId, bookmarksSearchContainer.getStart(), bookmarksSearchContainer.getEnd()));
         ...
 
-2. By calling the `getScopeGroupId()` method on the 
-   [`ThemeDisplay` instance](https://docs.liferay.com/portal/7.0-ga3/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html) 
-   in the request. For example, the 
+2. By calling the `getScopeGroupId()` method on the request's 
+   [`ThemeDisplay` instance](https://docs.liferay.com/portal/7.0-ga3/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
+   For example, the 
    [`EditEntryMVCActionCommand` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/portlet/action/EditEntryMVCActionCommand.java) 
    in Liferay's Blogs app does this in its `subscribe` and `unsubscribe` 
    methods: 
@@ -78,12 +85,15 @@ app on. You can access this several ways.
             _blogsEntryService.unsubscribe(themeDisplay.getScopeGroupId());
         }
 
-    Note that if your app is scoped to a page, you can use 
-    `themeDisplay.getSiteGroupId()` to get the parent site's `groupId`. 
+    If you need the portal instance ID, use `themeDisplay.getCompanyId()`. If 
+    your app is scoped to a page, use `themeDisplay.getSiteGroupId()` to get the 
+    parent site's `groupId`. 
 
 3. By calling the `getScopeGroupId()` method on a `ServiceContext` object. You 
    can find more information on this, and an example, in the tutorial 
    [Understanding `ServiceContext`](/develop/tutorials/-/knowledge_base/7-0/understanding-servicecontext). 
+   If you need the portal instance ID, use the `getCompanyId()` method on a 
+   `ServiceContext` object. 
 
 Great! Now you know how to scope your apps. 
 
