@@ -35,9 +35,10 @@ to prompt the list of options, I'll update the docs. -Cody -->
 - `l, --listtemplates`: Prints a list of available project templates.
 - `-p, --packagename <string>`: The package name to use when creating the
   project.
-- `-s, --service <string>`: If a new Declarative Services (DS) component needs to be created, provide
-  the name of the service to be implemented. Note that in this context, the term
-  *service* refers to an OSGi service, not to a Liferay API.
+- `-s, --service <string>`: If a new Declarative Services (DS) component needs
+  to be created, provide the name of the service to be implemented. Note that in
+  this context, the term *service* refers to an OSGi service, not to a Liferay
+  API.
 - `-t, --template <template>`: The project template to use when creating the
   project. Run `blade create -l` for a listing of available Blade CLI templates.
 
