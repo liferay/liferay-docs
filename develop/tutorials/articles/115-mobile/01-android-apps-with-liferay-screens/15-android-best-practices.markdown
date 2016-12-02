@@ -7,7 +7,7 @@ possible. This tutorial lists these.
 ## Update Your Tools [](id=update-your-tools)
 
 You should first make sure that you have the latest tools installed. 
-You should use the latest Android API level, with the latest version of Android 
+You should use the latest Android API level with the latest version of Android 
 Studio. Although Screens *may* work with Eclipse ADT or manual Gradle builds, 
 Android Studio is the preferred IDE. 
 
@@ -43,7 +43,7 @@ Screens. You should name your Screenlet with its principal action first,
 followed by *Screenlet*. Its Screenlet class should also follow this pattern. 
 For example, 
 [Login Screenlet's](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
-principal action is to log users into a @product@ installation. This Screenlet’s 
+principal action is to log users into a @product@ installation. This Screenlet's 
 Screenlet class is therefore `LoginScreenlet`. 
 
 ### View Models [](id=view-models)
@@ -71,9 +71,9 @@ has three Interactors. Each is in its own folder inside
 ### Views [](id=views)
 
 Place Views in a `view` folder in the Screenlet's root folder. If you're 
-creating a View Set, however, then you can place its Views in a separate 
-`viewsets` folder outside of your Screenlets' root folders. This is what the 
-Screens Library does for 
+creating a View Set, however, you can place its Views in a separate `viewsets`
+folder outside your Screenlets' root folders. This is what the Screens Library
+does for 
 [its Material and Westeros View Sets](https://github.com/liferay/liferay-screens/tree/master/android/viewsets). 
 The `material` and `westeros` folders contain those View Sets, respectively. 
 Also note that in each View, each Screenlet's View class is in its own folder. 
@@ -97,7 +97,7 @@ Forgot Password Screenlet's Material View are `forgotpassword_material.xml` and
 Using constants instead of hard-coded elements is a simple way to avoid bugs. 
 Constants reduce the likelihood that you'll make a typo when referring to common 
 elements. They also gather these elements in a single location. For example, 
-[DDL Form Screenlet’s Screenlet class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/ddl/form/DDLFormScreenlet.java) 
+[DDL Form Screenlet's Screenlet class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/ddl/form/DDLFormScreenlet.java) 
 defines the following constants for the user action names: 
 
     public static final String LOAD_FORM_ACTION = "loadForm";
@@ -119,8 +119,8 @@ Interactor via the `start` call and then attach it to the event. You can see an
 example of this in the sample Add Bookmark Screenlet from 
 [the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets). 
 The `onUserAction` method in the Screenlet class (`AddBookmarkScreenlet`) passes 
-a Bookmark’s URL and title from the View Model to the Interactor via the 
-Interactor’s `start` method: 
+a Bookmark's URL and title from the View Model to the Interactor via the 
+Interactor's `start` method: 
 
     @Override
     protected void onUserAction(String userActionName, AddBookmarkInteractor interactor, 
@@ -132,8 +132,8 @@ Interactor’s `start` method:
             interactor.start(url, title, folderId);
     }
 
-The `start` method calls the Interactor’s `execute` method in a background 
-thread. The `execute` method in Add Bookmark Screenlet’s Interactor 
+The `start` method calls the Interactor's `execute` method in a background 
+thread. The `execute` method in Add Bookmark Screenlet's Interactor 
 (`AddBookmarkInteractor`) creates a `BasicEvent` object that contains the 
 `start` method’s arguments: 
 
