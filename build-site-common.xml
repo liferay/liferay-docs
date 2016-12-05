@@ -303,6 +303,7 @@
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name}"/>
 					<param type="token" name="${product.token.app.reference}" value="${product.app.reference}"/>
+					<param type="token" name="${product.token.ide}" value="${product.ide.name}"/>
 					<param type="token" name="${product.token.platform.reference}" value="${product.platform.reference}"/>
 					<param type="token" name="${product.token.version}" value="${product.name.version}"/>
 				</filterreader>
@@ -340,6 +341,7 @@
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name.enterprise}"/>
 					<param type="token" name="${product.token.app.reference}" value="${product.app.enterprise.reference}"/>
+					<param type="token" name="${product.token.ide}" value="${product.ide.name.enterprise}"/>
 					<param type="token" name="${product.token.platform.reference}" value="${product.platform.enterprise.reference}"/>
 					<param type="token" name="${product.token.version}" value="${product.name.enterprise.version}"/>
 				</filterreader>

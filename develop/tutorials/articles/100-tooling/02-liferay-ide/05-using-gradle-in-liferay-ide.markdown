@@ -1,15 +1,16 @@
-# Using Gradle in Liferay IDE [](id=using-gradle-in-liferay-ide)
+# Using Gradle in Liferay @ide@ [](id=using-gradle-in-liferay-ide)
 
 [Gradle](http://gradle.org/) is a popular open source build automation system.
-You can take full advantage of Gradle in Liferay IDE by utilizing
+You can take full advantage of Gradle in Liferay @ide@ by utilizing
 [Buildship](https://projects.eclipse.org/releases/neon), which is a collection
 of Eclipse plugin-ins that provide support for building software using Gradle
-with Liferay IDE. Buildship is bundled with Liferay IDE versions 3.0 and higher.
+with Liferay @ide@. Buildship is bundled with Liferay @ide@ versions 3.0 and
+higher.
 
-![Figure 1: Navigate to *Help* &rarr; *Installation Details* to view plugins included in Liferay IDE.](../../../images/buildship-in-liferayide.png)
+![Figure 1: Navigate to *Help* &rarr; *Installation Details* to view plugins included in Liferay @ide@.](../../../images/buildship-in-liferayide.png)
 
 The first thing you'll learn about in this tutorial is creating Gradle projects
-in IDE.
+in @ide@.
 
 ## Creating and Importing Gradle Projects [](id=creating-and-importing-gradle-projects)
 
@@ -27,7 +28,7 @@ You can create a Gradle project by using the Gradle Project wizard.
 
 ![Figure 2: You can specify your Gradle distribution and advanced options such as home directories, JVM options, and program arguments.](../../../images/new-gradle-project.png)
 
-You can also import existing Gradle projects in Liferay IDE.
+You can also import existing Gradle projects in Liferay @ide@.
 
 1. Go to *File* &rarr; *Import...* &rarr; *Gradle* &rarr; *Gradle Project*
    &rarr; *Next* &rarr; *Next*.
@@ -44,11 +45,11 @@ You can also import existing Gradle projects in Liferay IDE.
     ![Figure 4: You can preview your Gradle project's import information.](../../../images/import-configuration-overview.png)
 
 Next you'll learn about Gradle tasks and executions, and learn how to run and
-display them in Liferay IDE.
+display them in Liferay @ide@.
 
 ## Gradle Tasks and Executions [](id=gradle-tasks-and-executions)
 
-Liferay IDE provides two views to enhance your developing experience using
+Liferay @ide@ provides two views to enhance your developing experience using
 Gradle: Gradle Tasks and Gradle Executions. You can open these views by
 following the instructions below.
 
@@ -73,11 +74,11 @@ inspect its output.
 
 Keep in mind that if you change the Gradle build scripts inside your Gradle
 projects (e.g., `build.gradle` or `settings.gradle`), you must refresh the
-project so Liferay IDE can account for the change and display it properly in
+project so Liferay @ide@ can account for the change and display it properly in
 your views. To refresh a Gradle project, right-click on the project and select
 *Gradle* &rarr; *Refresh Gradle Project*.
 
-![Figure 7: Make sure to always refresh your Gradle project in Liferay IDE after build script edits.](../../../images/refresh-gradle-project.png)
+![Figure 7: Make sure to always refresh your Gradle project in Liferay @ide@ after build script edits.](../../../images/refresh-gradle-project.png)
 
 Excellent! You're now equipped with the knowledge to add, import, and build your
-Gradle projects in Liferay IDE!
+Gradle projects in Liferay @ide@!

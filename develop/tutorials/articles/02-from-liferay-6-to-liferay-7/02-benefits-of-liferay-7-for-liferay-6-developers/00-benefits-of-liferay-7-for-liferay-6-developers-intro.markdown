@@ -116,7 +116,7 @@ Implementing extensibility has never been easier.
 If you don't have strong preferences and are open to our suggestions, we offer
 Liferay Workspace. It provides an opinionated directory structure and build
 system based on Gradle and Bnd. Liferay Workspace can be used standalone through
-the command line or with Liferay IDE, which runs on Eclipse.
+the command line or with Liferay @ide@, which runs on Eclipse.
 
 <!-- TODO Uncomment this when the features are ready. - Jim
 If you have an investment in a specific build tool, such as Maven, developing on

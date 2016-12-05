@@ -214,6 +214,25 @@ method signature of a `*LocalServiceImpl` class, `*ServiceImpl` class, or
 `*Impl` class, you should run Service Builder again to regenerate the affected
 interfaces and the service JAR.
 
++$$$
+
+**Note:** If you need to make changes to your objects/tables during development,
+Service Builder does not make these changes automatically. You will need to
+write [an upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+or perform the following steps: 
+
+- Drop the tables for your service
+- Delete the row for your service in the `service_` table
+- Delete the row for your service in the `servicecomponent` table
+
+Here's an example in SQL: 
+
+    DROP TABLE LRBO_HORSE_HORSE;
+    DELETE FROM SERVICECOMPONENT WHERE BUILDNAMESPACE = 'LRBO_HORSE';
+    DELETE FROM RELEASE_ WHERE SERVLETCONTEXTNAME = 'horse-service';
+
+$$$
+
 ## Related Topics [](id=related-topics)
 
 [What is Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)

@@ -1,4 +1,4 @@
-# Introduction to Front-End Development in @product@ [](id=introduction-to-frontend-development-in-liferay)
+# Introduction to Front-End Development [](id=introduction-to-frontend-development)
 
 When approaching the development of your application's front-end, @product@ 
 offers a wide range of approaches, frameworks, utilities, and mechanisms to make 
