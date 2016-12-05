@@ -216,14 +216,16 @@ interfaces and the service JAR.
 
 +$$$
 
-**Note:** If you need to make changes to your objects/tables during development,
-Service Builder does not make these changes automatically. You will need to
-write [an upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
-or perform the following steps: 
+**Note:** If you need to make changes to your objects/tables between two
+different releases of your service, you will need to write [an upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+since Service Builder does not make these changes automatically.
 
-- Drop the tables for your service
-- Delete the row for your service in the `service_` table
-- Delete the row for your service in the `servicecomponent` table
+Just during development phase, you can regenerate service tables to avoid the
+execution of an upgrade process for any modification following these steps:
+
+- Drop the tables for your service.
+- Delete the row for your service in the `service_` table.
+- Delete the row for your service in the `servicecomponent` table.
 
 Here's an example in SQL: 
 
