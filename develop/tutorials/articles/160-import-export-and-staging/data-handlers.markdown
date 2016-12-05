@@ -34,9 +34,8 @@ Handlers*.
 A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes only have the role of querying and coordinating between staged
 model data handlers. For example, the Bookmarks application's portlet data
-handler tracks portlet preferences and system events dealing with Bookmarks
-entities. It also configures the Export/Import UI options for the Bookmarks
-application.
+handler tracks system events dealing with Bookmarks entities. It also configures
+the Export/Import UI options for the Bookmarks application.
 
 <!-- Creating Staged Models will be its own tutorial. For now, I'm going to give
 a brief intro to them here so readers have a general understanding of them,
@@ -178,12 +177,12 @@ Bookmarks application.
       Bookmark entries and folders are tracked.
     - `setExportControls`: adds fine grained controls over export behavior that
       are rendered in the Export UI. For the Bookmarks application, a checkbox
-      is added to select Bookmarks content (entry or folder) to export.
+      is added to select Bookmarks content (entries) to export.
     - `setImportControls`: adds fine grained controls over import behavior that
       are rendered in the Import UI. For the Bookmarks application, a checkbox
-      is added to select Bookmarks content (entry or folder) to import.
+      is added to select Bookmarks content (entries) to import.
 
-    ![Figure x: .](../../images/data-handler-diagram.png)
+    ![Figure 2: You can select the content types you'd like to export/import in the UI.](../../images/export-import-controls.png)
 
     For more information on these methods, visit the
     [PortletDataHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
@@ -192,55 +191,41 @@ Bookmarks application.
 5.  For the Bookmarks portlet data handler to successfully reference its entry
     and folder staged models, you'll need to set them in your class:
 
-        @Reference(
-            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksEntry)",
-            unbind = "-"
-        )
-        protected void setBookmarksEntryStagedModelRepository(
-            StagedModelRepository<BookmarksEntry>
-                bookmarksEntryStagedModelRepository) {
+        @Reference(unbind = "-")
+        protected void setBookmarksEntryLocalService(
+            BookmarksEntryLocalService bookmarksEntryLocalService) {
 
-            _bookmarksEntryStagedModelRepository =
-                bookmarksEntryStagedModelRepository;
+            _bookmarksEntryLocalService = bookmarksEntryLocalService;
         }
 
-        @Reference(
-            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksFolder)",
-            unbind = "-"
-        )
-        protected void setBookmarksFolderStagedModelRepository(
-            StagedModelRepository<BookmarksFolder>
-                bookmarksFolderStagedModelRepository) {
+        @Reference(unbind = "-")
+        protected void setBookmarksFolderLocalService(
+            BookmarksFolderLocalService bookmarksFolderLocalService) {
 
-            _bookmarksFolderStagedModelRepository =
-                bookmarksFolderStagedModelRepository;
+            _bookmarksFolderLocalService = bookmarksFolderLocalService;
         }
 
-        private StagedModelRepository<BookmarksEntry>
-            _bookmarksEntryStagedModelRepository;
-        private StagedModelRepository<BookmarksFolder>
-            _bookmarksFolderStagedModelRepository;
+        private BookmarksEntryLocalService _bookmarksEntryLocalService;
+        private BookmarksFolderLocalService _bookmarksFolderLocalService;
 
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
-    annotation and the `model.class.name` property should specify the staged
-    model entity's full package path. Visit the
+    annotation. Visit the
     [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
     section of the *Finding and Invoking Liferay Services* tutorial for more
     information on using the `@Reference` annotation in @product@.
 
-6.  It's a best practice to create a namespace for your entities so the
-    Export/Import framework can identify your application's entities from other
-    entities in @product@. The Bookmarks application's namespace declaration
-    looks like this:
+6.  You must create a namespace for your entities so the Export/Import framework
+    can identify your application's entities from other entities in @product@.
+    The Bookmarks application's namespace declaration looks like this:
 
         public static final String NAMESPACE = "bookmarks";
 
     You'll see how this namespace is used later.
 
-7.  Your application should retrieve the data related to its staged model
-    entities so it can properly export/import it. Add this functionality by
-    inserting the following methods:
+7.  Your portlet data handler should retrieve the data related to its staged
+    model entities so it can properly export/import it. Add this functionality
+    by inserting the following methods:
 
         @Override
         protected String doExportData(
@@ -261,13 +246,13 @@ Bookmarks application.
                 "group-id", String.valueOf(portletDataContext.getScopeGroupId()));
 
             ExportActionableDynamicQuery folderActionableDynamicQuery =
-                _bookmarksFolderStagedModelRepository.
+                _bookmarksFolderLocalService.
                     getExportActionableDynamicQuery(portletDataContext);
 
             folderActionableDynamicQuery.performActions();
 
             ActionableDynamicQuery entryActionableDynamicQuery =
-                _bookmarksEntryStagedModelRepository.
+                _bookmarksEntryLocalService.
                     getExportActionableDynamicQuery(portletDataContext);
 
             entryActionableDynamicQuery.performActions();
@@ -311,13 +296,11 @@ Bookmarks application.
             return null;
         }
 
-    The `doExportData` method runy a query against the database and finds what
-    Bookmark entities should be exported to the LAR file. The method first
-    retrieves the Bookmarks application's data context, and then it uses the
-    [ExportActionableDynamicQuery](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/ExportActionableDynamicQuery.html)
-    to get Bookmark folder data and the
-    [ActionableDynamicQuery](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/ActionableDynamicQuery.html)
-    to get Bookmark entry data.
+    The `doExportData` method first checks if anything should be exported. The
+    `portletDataContext.getBooleanParameter(...)` method checks if the user
+    selected Bookmarks entries for export. Later, the
+    ExportImportActionableDynamicQuery framework runs a query against bookmarks
+    folders and entries to find ones which should be exported to the LAR file.
 
     These `-ActionableDynamicQuery` classes are automatically generated by
     Service Builder and are available in your application's local service. It
@@ -336,8 +319,10 @@ Bookmarks application.
     class. The extracted elements tell @product@ what data to import from the
     LAR file.
 
-8.  Add a method that deletes the portlet's data, which is necessary when
-    importing new portlet data.
+8.  Add a method that deletes the portlet's data. The Staging framework has an
+    option called *Delete Portlet Data Before Importing* that lets the user
+    delete portlet data before importing any new data. The `doDeleteData(...)
+    method is called to execute this deletion operation.
 
         @Override
         protected PortletPreferences doDeleteData(
@@ -351,10 +336,12 @@ Bookmarks application.
                 return portletPreferences;
             }
 
-            _bookmarksEntryStagedModelRepository.deleteStagedModels(
-                portletDataContext);
-            _bookmarksFolderStagedModelRepository.deleteStagedModels(
-                portletDataContext);
+            _bookmarksEntryLocalService.deleteEntries(
+                portletDataContext.getScopeGroupId(),
+                BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID);
+
+            _bookmarksFolderLocalService.deleteFolders(
+                portletDataContext.getScopeGroupId());
 
             return portletPreferences;
         }
@@ -372,21 +359,23 @@ Bookmarks application.
             throws Exception {
 
             ActionableDynamicQuery entryExportActionableDynamicQuery =
-                _bookmarksEntryStagedModelRepository.
+                _bookmarksEntryLocalService.
                     getExportActionableDynamicQuery(portletDataContext);
 
             entryExportActionableDynamicQuery.performCount();
 
             ActionableDynamicQuery folderExportActionableDynamicQuery =
-                _bookmarksFolderStagedModelRepository.
+                _bookmarksFolderLocalService.
                     getExportActionableDynamicQuery(portletDataContext);
 
             folderExportActionableDynamicQuery.performCount();
         }
 
-    This number is displayed in the Export and Staging UI.
+    This number is displayed in the Export and Staging UI. Note that since the
+    Staging framework is traversing the entity graph during export, the built-in
+    components provide an approximate value in some cases.
 
-    ![Figure 2: The number of modified Bookmarks entities are displayed in the Export UI.](../../images/manifest-summary-count.png)
+    ![Figure 3: The number of modified Bookmarks entities are displayed in the Export UI.](../../images/manifest-summary-count.png)
 
 10. Set the XML schema version for the XML files included in your exported LAR
     file:
