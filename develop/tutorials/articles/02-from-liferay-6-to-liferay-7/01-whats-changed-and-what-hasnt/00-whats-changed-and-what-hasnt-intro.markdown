@@ -59,8 +59,8 @@ different presentation, if desired.
 many of their classes have moved to new packages, as part of the modularization
 effort.
 
-4. Liferay IDE and Developer Studio are still the preferred tools to develop for
-Liferay, even though you are still free to use tools that best fit your needs.
+4. Liferay @ide@ is still the preferred tool to develop for Liferay, even though
+you are still free to use tools that best fit your needs.
 
 5. Service Builder and other developer tools and libraries continue to work as
 they have in 6.2.

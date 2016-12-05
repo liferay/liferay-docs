@@ -302,6 +302,10 @@ Property | Default | Required
 
 +$$$
 
+**Note:** Amazon S3 requires a SAXParser from the application server to operate. For some application servers (e.g. Tomcat), it will be necessary to define a SAXParser in order to prevent errors while utilizing this store. This may be set in `portal-ext.properties`. For example:
+    
+    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser 
+
 **Warning:** If a database transaction rollback occurs in a Document Library
 that uses a file system based store, file system changes that have occurred
 since the start of the transaction won't be reversed. Inconsistencies between

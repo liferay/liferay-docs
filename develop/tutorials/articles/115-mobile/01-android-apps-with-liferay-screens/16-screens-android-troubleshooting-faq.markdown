@@ -4,7 +4,7 @@ Even though Liferay developed Screens for Android with great care, you may still
 run into some common issues. Here are solutions and tips for solving these
 issues. You'll also find answers to common questions about Screens for Android. 
 
-## Best Practices [](id=best-practices)
+## General Troubleshooting [](id=general-troubleshooting)
 
 Before delving into specific issues, you should first make sure that you have 
 the latest tools installed and know where to get additional help if you need it. 
@@ -13,12 +13,11 @@ Studio. Although Screens *can* work with Eclipse ADT or manual Gradle builds,
 Android Studio is the preferred IDE. 
 
 If you're having trouble using Liferay Screens, it may help to investigate the 
-sample apps developed by Liferay. These are listed here:
+sample apps developed by Liferay. Both serve as good examples of how to use 
+Screenlets and Views:
 
 - [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
 - [Test App](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app) 
-
-Both serve as good examples of how to use Screenlets and Views.
 
 If you get stuck, you can post your question on our 
 [forum](https://www.liferay.com/community/forums/-/message_boards/category/42706063).
@@ -29,7 +28,7 @@ Note that you must
 [log in](https://issues.liferay.com/login.jsp?os_destination=%2Fbrowse%2F) 
 first to be able to see the project.
 
-## Troubleshooting [](id=troubleshooting)
+## Common Issues [](id=troubleshooting)
 
 This section contains information on common issues that can occur when using 
 Liferay Screens. 
@@ -99,7 +98,7 @@ Liferay Screens.
     Some Screenlets use temporary files to store information, such as when the
     User Portrait Screenlet uploads a new portrait, or the DDL Form Screenlet
     uploads new files to the portal. Your app needs to have the necessary
-    permissions to use a specific screenlet's functionality. In this case, add
+    permissions to use a specific Screenlet's functionality. In this case, add
     the following line to your `AndroidManifest.xml`: 
 
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -123,10 +122,10 @@ Liferay Screens.
     project manually with Gradle or another build system. Just make sure you use 
     the compiled `aar` in your project's `lib` folder.
 
-    However, it's *strongly* recommended that you use Android Studio. Android 
-    Studio is the official IDE for developing Android apps. Using Eclipse ADT or 
-    compiling manually may cause unexpected issues that are difficult to 
-    overcome. 
+    We *strongly* recommend, however, that you use Android Studio. Android 
+    Studio is the official IDE for developing Android apps, and Eclipse ADT is 
+    no longer supported. Using Eclipse ADT or compiling manually may cause 
+    unexpected issues that are difficult to overcome. 
 
 2.  How does Screens handle orientation changes?
 
@@ -147,7 +146,7 @@ Liferay Screens.
     Screenlet creation is explained in detail 
     [here](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets).
 
-5.  How can I customize a screenlet?
+5.  How can I customize a Screenlet?
 
     You can customize Screenlets by creating new Views. Fortunately, there's a 
     [tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-views) 
@@ -155,7 +154,7 @@ Liferay Screens.
 
 6.  Does Screens have offline support?
 
-    This feature is coming soon to a Screenlet near you!
+    Yes, since Liferay Screens 1.3!
 
 ## Related Topics [](id=related-topics)
 

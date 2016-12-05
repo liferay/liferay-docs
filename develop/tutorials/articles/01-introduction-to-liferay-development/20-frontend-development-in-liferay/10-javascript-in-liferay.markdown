@@ -45,7 +45,7 @@ As of @product-ver@, AlloyUI has been officially sunsetted. This means that we a
 no longer developing new features for it, but it is still included in the 
 product and actively maintained.
 
-![Figure 2: AlloyUI is sunsetted as of @product@.](../../../images/alloyui-website.png)
+![Figure 2: AlloyUI is sunsetted as of @product-ver@.](../../../images/alloyui-website.png)
 
 ## jQuery [](id=jquery)
 
