@@ -1,14 +1,14 @@
-# Data Scopes
+# Data Scopes [](id=data-scopes)
 
 Apps in @product@ can restrict their data to specific 
-[scopes](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/scope).
-For example, a site-scoped app can only display its data across a single site. 
-For a detailed explanation of scopes, see the user guide article 
+[scopes](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/scope). 
+For example, a site-scoped app can display its data across a single site. For a 
+detailed explanation of scopes, see the user guide article 
 [Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope). 
-Scoping, however, isn't available for custom apps by default. You have to 
+Scoping, however, isn't available by default for custom apps. You have to 
 manually add support for it. This tutorial shows you how. 
 
-## Scoping Your Entities
+## Scoping Your Entities [](id=scoping-your-entities)
 
 In your service layer, your entities must have a `companyId` attribute of type 
 `long` to enable scoping by portal instance, and a `groupId` attribute of type 
@@ -20,7 +20,7 @@ series
 and 
 [Business Logic with Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-with-service-builder). 
 
-## Enabling Scoping
+## Enabling Scoping [](id=enabling-scoping)
 
 To enable scoping in your app, set the property 
 `"com.liferay.portlet.scopeable=true"` in your portlet class's `@Component` 
@@ -42,7 +42,7 @@ annotation of
 That's it! You can now access your app's scope in your code. The next section 
 shows you how. 
 
-## Accessing Your App's Scope
+## Accessing Your App's Scope [](id=accessing-your-apps-scope)
 
 Your app's current `groupId` is the `groupId` of the site the user places your 
 app on. This is the value you'll most commonly need when working with your app's 
@@ -97,7 +97,7 @@ Your app's scope is available:
 
 Great! Now you know how to scope your apps. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope)
 
