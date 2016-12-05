@@ -128,7 +128,7 @@ Bookmarks application.
     There are a few annotation attributes you should set:
 
     - The `immediate` element directs the container to immediately activate the
-      component once its provided module is started.
+      component once its provided module has started.
     - The `property` element sets various properties for the component service.
       You must associate the portlets you wish to handle with this service so
       they function properly in the export/import environment. For example,
@@ -394,10 +394,10 @@ for your staged models. You'll do this next.
 
 ## Staged Model Data Handlers
 
-Now that your application has a portlet data handler and has registered staged
-models, you'll create the staged model data handlers. The Bookmarks application
-has two staged models: entries and folders. Creating data handlers for these two
-entities is similar, so you'll examine how this is done for Bookmark entries.
+Now that your application has a portlet data handler and staged models, you'll
+create the staged model data handlers. The Bookmarks application has two staged
+models: entries and folders. Creating data handlers for these two entities is
+similar, so you'll examine how this is done for Bookmark entries.
 
 1.  Create a `-StagedModelDataHandler` class in the same folder as its portlet
     data handler class. For Bookmarks, the `BookmarksEntryStagedDataHandler`
@@ -414,13 +414,13 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
 
 2.  Create an `@Component` annotation section above the class declaration. This
     annotation is responsible for registering the class as a staged model data
-    handler.
+    handler similar to the portlet data handler.
 
         @Component(immediate = true, service = StagedModelDataHandler.class)
 
-    The `immediate` element directs the data handler to activate in @product@
-    immediately after deployment. The `service` element should point to the
-    `StagedModelDataHandler.class` interface.
+    The `immediate` element directs the container to immediately activate the
+    component once its provided module has started. The `service` element should
+    point to the `StagedModelDataHandler.class` interface.
 
     +$$$
 
@@ -435,27 +435,21 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
     provide a data handler:
 
         @Override
-        protected StagedModelRepository<BookmarksEntry> getStagedModelRepository() {
-            return _stagedModelRepository;
+        protected BookmarksEntryLocalService getBookmarksEntryLocalService() {
+            return _bookmarksEntryLocalService;
         }
 
-        @Reference(
-            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksEntry)",
-            unbind = "-"
-        )
-        protected void setStagedModelRepository(
-            StagedModelRepository<BookmarksEntry> stagedModelRepository) {
+        @Reference(unbind = "-")
+        protected void setBookmarksEntryLocalService(
+            BookmarksEntryLocalService bookmarksEntryLocalService) {
 
-            _stagedModelRepository = stagedModelRepository;
+            _bookmarksEntryLocalService = bookmarksEntryLocalService;
         }
 
-        private StagedModelRepository<BookmarksEntry> _stagedModelRepository;
+        private BookmarksEntryLocalService _bookmarksEntryLocalService;
 
     These methods link this data handler with the staged model for bookmark
-    entries by using the
-    [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
-    interface. This interface is implemented by the bookmarks entry staged
-    model.
+    entries.
 
 4.  You must provide the class names of the models the data handler handles. You
     can do this by overriding the
@@ -469,6 +463,10 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
             return CLASS_NAMES;
         }
 
+    As a best practice, you should have one staged model data handler per staged
+    model. It's possible to use multiple class types, but this is not
+    recommended.
+
 5.  Add a method that retrieves the staged model's display name:
 
         @Override
@@ -476,12 +474,17 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
             return entry.getName();
         }
 
-    The display name is presented in the UI so users can follow the
-    export/import process.
+    The display name is presented with the progress bar during the export/import
+    process.
 
     ![Figure 3: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
 
-6.  Add methods that import and export your staged model and its references:
+6.  A staged model data handler should ensure everything required for its
+    operation is also exported. For example, in the Bookmarks application, an
+    entry requires its folder to keep the folder structure intact. Therefore,
+    the folder should be exported first followed by the entry.
+
+    Add methods that import and export your staged model and its references.
 
         @Override
         protected void doExportStagedModel(
@@ -514,26 +517,28 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
             long folderId = MapUtil.getLong(
                 folderIds, entry.getFolderId(), entry.getFolderId());
 
-            BookmarksEntry importedEntry = (BookmarksEntry)entry.clone();
+            ServiceContext serviceContext =
+                portletDataContext.createServiceContext(entry);
 
-            importedEntry.setGroupId(portletDataContext.getScopeGroupId());
-            importedEntry.setFolderId(folderId);
+            BookmarksEntry importedEntry = null;
 
-            BookmarksEntry existingEntry =
-                _stagedModelRepository.fetchStagedModelByUuidAndGroupId(
-                    entry.getUuid(), portletDataContext.getScopeGroupId());
+            if (portletDataContext.isDataStrategyMirror()) {
 
-            if ((existingEntry == null) ||
-                !portletDataContext.isDataStrategyMirror()) {
+                BookmarksEntry existingEntry =
+                    _bookmarksEntryLocalService. fetchBookmarksEntryByUuidAndGroupId(
+                        entry.getUuid(), portletDataContext.getScopeGroupId());
 
-                importedEntry = _stagedModelRepository.addStagedModel(
-                    portletDataContext, importedEntry);
+                if (existingEntry == null) {
+
+                    serviceContext.setUuid(entry.getUuid());
+                    importedEntry = _bookmarksEntryLocalService.addEntry(					userId, portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(), serviceContext);
+                }
+                else {
+                    importedEntry = _bookmarksEntryLocalService.updateEntry(					userId, existingEntry.getEntryId(), portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(),	serviceContext);
+                }
             }
             else {
-                importedEntry.setEntryId(existingEntry.getEntryId());
-
-                importedEntry = _stagedModelRepository.updateStagedModel(
-                    portletDataContext, importedEntry);
+                importedEntry = _bookmarksEntryLocalService.addEntry(userId, portletDataContext.getScopeGroupId(), folderId,entry.getName(), entry.getUrl(), entry.getDescription(),	serviceContext);
             }
 
             portletDataContext.importClassedModel(entry, importedEntry);
@@ -544,13 +549,23 @@ entities is similar, so you'll examine how this is done for Bookmark entries.
     [PortletDataContext](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
     and then adds the classed model characterized by that data element to the
     `PortletDataContext`. The `PortletDataContext` is used to populate the LAR
-    file with your application's data during the export process.
+    file with your application's data during the export process. Note that once
+    an entity has been exported, consequent calls to the export method won't
+    actually repeat the export process multiple times, ensuring that the
+    process's performance is optimized.
 
-    The `doImportStagedModel` method clones the Bookmark entries from the
-    incoming LAR file and updates existing entries in the
-    [PortletDataContext](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html);
-    if there are no entries to update, the imported entries are added to the
-    `PortletDataContext`, which is eventually added to the database.
+    An important feature of the import process is that all exported reference
+    elements in the Bookmarks example are being automatically imported when
+    needed. The `doImportStagedModel` method does not need to import the
+    reference elements manually, it must only find the new assigned ID for the
+    folder before importing the entry.
+
+    The `PortletDataContext` keeps this information and a slew of other data
+    up-to-date during the import process. The old ID and new ID mapping can be
+    reached by using the `portletDataContext.getNewPrimaryKeysMap()` method as
+    shown in the example. The method proceeds with checking the import mode
+    (e.g., *Copy As New* or *Mirror*) and depending on the process configuration
+    and existing environment, the entry is either added or updated.
 
 7.  When importing a LAR that specifies a missing reference, the import process
     expects the reference to be available and must validate that it's there. You
