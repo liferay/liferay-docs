@@ -217,11 +217,12 @@ interfaces and the service JAR.
 +$$$
 
 **Note:** If you need to make changes to your objects/tables between two
-different releases of your service, you will need to write [an upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+different releases of your service, you must write 
+[an upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
 since Service Builder does not make these changes automatically.
 
-Just during development phase, you can regenerate service tables to avoid the
-execution of an upgrade process for any modification following these steps:
+While you're developing your application, you can force your service tables to
+regenerate when you modify them by following these steps:
 
 - Drop the tables for your service.
 - Delete the row for your service in the `service_` table.
