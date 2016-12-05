@@ -39,10 +39,16 @@ public class NumberHeadersSiteMain extends Task {
 		dirTypes.add("");
 
 		if (productType.equals("dxp")) {
-			dirTypes.add("-dxp");
-			dxpBuild = true;
+			File articlesDxpDir = new File("../" + docDir + "/articles-dxp");
 			
-			dxpFileList = getFileList(docDir, "-dxp");
+			if (articlesDxpDir.exists()) {
+				dirTypes.add("-dxp");
+				dxpBuild = true;
+			
+				dxpFileList = getFileList(docDir, "-dxp");
+			}
+			
+			
 		}
 		
 		if (ceFileList.size() == 0 && dxpFileList.size() == 0) {

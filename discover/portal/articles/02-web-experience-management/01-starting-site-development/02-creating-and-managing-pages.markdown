@@ -438,7 +438,7 @@ from the Sitemaps and Robots tabs of the Manage Site Settings dialog box (see
 below).
 
 In previous versions of Liferay, it was possible that a single page
-could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
+could be indexed multiple times. In Liferay Portal 6.1, all URLs that direct to the
 same page will only create one entry in the index. Previously, the simple URL
 *http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
 versions of the URL which provided additional information about the referring

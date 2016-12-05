@@ -1,4 +1,4 @@
-# Benefits of @product-ver@ for Liferay 6 Developers [](id=benefits-of-liferay-7-for-liferay-6-developers)
+# Benefits of @product-ver@ for Liferay Portal 6 Developers [](id=benefits-of-liferay-7-for-liferay-6-developers)
 
 More than in any other Liferay release, @product-ver@ centers on you, the
 developer. Liferay's platform has been rebuilt, making it easier to build on and
@@ -116,7 +116,7 @@ Implementing extensibility has never been easier.
 If you don't have strong preferences and are open to our suggestions, we offer
 Liferay Workspace. It provides an opinionated directory structure and build
 system based on Gradle and Bnd. Liferay Workspace can be used standalone through
-the command line or with Liferay IDE, which runs on Eclipse.
+the command line or with Liferay @ide@, which runs on Eclipse.
 
 <!-- TODO Uncomment this when the features are ready. - Jim
 If you have an investment in a specific build tool, such as Maven, developing on

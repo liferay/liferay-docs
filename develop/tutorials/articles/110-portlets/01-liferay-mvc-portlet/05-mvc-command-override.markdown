@@ -34,7 +34,7 @@ commands.
 +$$$
 
 **Note:** While it's possible to copy the logic from an existing MVC command
-into your override class, then customize it to your liking, it’s strongly
+into your override class, then customize it to your liking, it's strongly
 recommended to decouple the original logic from your override logic. Keeping the
 override logic separate form the original logic will keep the code clean,
 maintainable, and easy to understand.
@@ -55,7 +55,7 @@ $$$
 
 +$$$
 
-**Note:** In Liferay 7.0 GA1, there’s a bug that occurs when modules with
+**Note:** In @product-ver@ GA1, there's a bug that occurs when modules with
 override MVC commands are removed from the OSGi runtime. Instead of looking for
 an MVC command with a lower service ranking (the original MVC command in most
 cases) to replace the removed one, the reference to the command is removed

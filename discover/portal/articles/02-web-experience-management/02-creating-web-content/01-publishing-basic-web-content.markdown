@@ -222,7 +222,7 @@ the Edit Web Content screen, after you've created your web content article.
 ![Figure 6: The *View Source* button is available from the *Options* button.](../../../images/web-content-download.png)
 
 An XML version of an article is essential when creating content for themes using
-the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importer).
+the [Resources Importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer).
 If you'd like to learn more about importing web content with a theme, visit its
 dedicated [tutorial](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
 

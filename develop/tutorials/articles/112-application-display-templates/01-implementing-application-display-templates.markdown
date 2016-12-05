@@ -5,7 +5,7 @@
 from the portal. The figure below shows what the Display Template option looks
 like in a portlet Configuration menu.
 
-![Figure 1: By using a custom display template, your portlet's display can be customized.](../../../images/adt-dropdown.png)
+![Figure 1: By using a custom display template, your portlet's display can be customized.](../../images/adt-dropdown.png)
 
 In this tutorial, you'll learn how to use the Application Display Templates API
 to add an ADT to a portlet.
@@ -43,7 +43,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
    the portlet).
    - **getResourceName():** Specifies which resource is using the ADT (e.g., a
    portlet) for permission checking. This method must return the portlet's
-   [Fully Qualified Portlet ID](/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
+   [Fully Qualified Portlet ID](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
    \(FQPI\).
    - **getTemplateVariableGroups():** Defines the variables exposed in the
    template editor.
@@ -164,7 +164,7 @@ Now that your portlet supports ADTs, you can create your own scripts to change
 the display of your portlet. You can experiment by adding your own custom ADT.
 
 1. Navigate to Site Admin* &rarr; *Configuration* &rarr; *Application Display
-   Templates*. Then select *Add* (![Add](../../../images/icon-add.png)) &rarr;
+   Templates*. Then select *Add* (![Add](../../images/icon-add.png)) &rarr;
    *Your Template*. Give your ADT a name and insert FreeMarker (like the
    following code) or Velocity code into the template editor, and click *Save*:
    
@@ -178,11 +178,11 @@ the display of your portlet. You can experiment by adding your own custom ADT.
         </#if>
 
 2. Go back to your portlet and select *Options*
-   (![Options](../../../images/icon-app-options.png)) &rarr; *Configuration* and
+   (![Options](../../images/icon-app-options.png)) &rarr; *Configuration* and
    click the *Display Template* drop-down. Select the ADT you created, and click
    *Save*.
 
-![Figure 2: The example Social template for the Wiki application provides extended social functionalities.](../../../images/wiki-social-adt.png)
+![Figure 2: The example Social template for the Wiki application provides extended social functionalities.](../../images/wiki-social-adt.png)
     
 Once your script is uploaded into the portal and saved, users with the specified
 roles can select the template when they're configuring the display settings of

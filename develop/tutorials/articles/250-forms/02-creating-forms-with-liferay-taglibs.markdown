@@ -2,7 +2,7 @@
 
 This tutorial demonstrates how to:
 
-- Create a form using Liferay 7's taglibs in your application's JSPs
+- Create a form using @product-ver@'s taglibs in your application's JSPs
 
 To begin, take a look at the Portlet Configuration application's
 [add_configuration_template.jsp](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/web-experience/portlet-configuration/portlet-configuration-web/src/main/resources/META-INF/resources/add_configuration_template.jsp)

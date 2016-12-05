@@ -269,8 +269,8 @@ the user group's site template after users have already been added to the group,
 those changes only take effect if the *Enable propagation of changes from the
 site template* box for the user group was checked.
 
-Note that Prior to Liferay 6.1, pages from different user groups could be
-combined on users' personal sites by using a naming convention. Liferay 6.1
+Note that Prior to Liferay Portal 6.1, pages from different user groups could be
+combined on users' personal sites by using a naming convention. Liferay Portal 6.1
 simplifies the way user groups' sites work by disallowing page combination. Set
 the property *user.groups.copy.layouts.to.user.personal.site=true* to preserve
 the page combination functionality.

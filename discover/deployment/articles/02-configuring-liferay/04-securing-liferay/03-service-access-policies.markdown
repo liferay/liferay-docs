@@ -1,6 +1,6 @@
 # Service Access Policies [](id=service-access-policies)
 
-*Service access policies* are a new feature in Liferay 7. They are an
+*Service access policies* are a new feature in @product-ver@. They are an
 additional layer of web service security defining services or service methods
 that can be invoked remotely. Many of them can be applied at once to produce a
 combined effect. Service access policies apply only to remote services, not to
