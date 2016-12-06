@@ -11,7 +11,7 @@ The top-level files/folder of a Liferay workspace are outlined below:
   files serve as your global configuration files for all Liferay servers and
   projects residing in your workspace. To learn more about using the `configs`
   folder, see the
-  [Testing in a Liferay Workspace]()
+  [Testing Modules]()
   section.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
