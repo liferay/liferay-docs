@@ -40,8 +40,6 @@ It's a best practice to copy the relevant section you want to modify from
 `portal.properties` into your `portal-ext.properties` file, and then modify the
 values there.
 
-<!-- Is the above still true? Possibly not; may be OSGi config files now. -->
-
 +$$$
 
 **Note:** This article documents a Liferay-specific cluster configuration
@@ -154,16 +152,15 @@ Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
 designed to replicate the cache across a cluster. 
 
-Liferay uses [Ehcache](www.ehcache.org), which has robust distributed caching
-support. This means that the cache can be distributed across multiple Liferay
-nodes running concurrently. Enabling this cache can increase performance
-dramatically. For example, if two users are browsing the message
-boards, and the first user clicks a thread, @product@ must grab that
-thread from the database, cache it, and format it for display in the browser.
-When Cluster Link is enabled, the cache is replicated to the other nodes in the
-cluster. If another user wants to read that thread, it's retrieved from the
-cache, no matter what node serves that user, because the cache is replicated.
-Because the thread is in the cache, no trip to the database is necessary. 
+The cache is distributed across multiple Liferay nodes running concurrently.
+Enabling Cluster Link can increase performance dramatically. For example, if two
+users are browsing the message boards, and the first user clicks a thread,
+@product@ must grab that thread from the database, cache it, and format it for
+display in the browser.  When Cluster Link is enabled, the cache is replicated
+to the other nodes in the cluster. If another user wants to read that thread,
+it's retrieved from the cache, no matter what node serves that user, because the
+cache is replicated.  Because the thread is in the cache, no trip to the
+database is necessary. 
 
 This is much more powerful than having a cache running separately on each node.
 The power of *distributed* caching lets common destinations be cached for
@@ -204,8 +201,8 @@ Please see [JGroups's documentation](http://www.jgroups.org/manual/index.html#pr
 for channel properties. The default configuration sets many properties whose
 settings are discussed there. 
 
-Next, you need to set an IP address for the JGroups channel to use. This is
-called a Bind Address. By default, these are set to `localhost`: 
+JGroups sets a bind address automatically. If you want to set a manual address,
+you can do this. By default, these are set to `localhost`: 
 
     cluster.link.bind.addr["cluster-link-control"]=localhost
     cluster.link.bind.addr["cluster-link-udp"]=localhost
@@ -219,7 +216,8 @@ address with this property:
 
 Set it to connect to some other host that's contactable by your server. By
 default, it points to Google, but this may not work if your server is
-firewalled. 
+firewalled. If you set the address manually using the properties above, you
+don't need to set the autodetect address. 
 
 Once you enable distributed caching, of course, you should do some due diligence
 and test your system under a load that best simulates the kind of traffic your
@@ -230,9 +228,11 @@ script should reflect that too.
 As a result of a load test, you may find that the default distributed cache
 settings aren't optimized for your site. In this case, you'll need to tweak the
 settings yourself. You can modify the Liferay installation directly or you can
-use a plugin to do it. Either way, the settings you change are the same. Next,
-we'll discuss a special EE-only optimization that can be made to the cache.
-After that, we'll explain how to configure Liferay's caching settings.
+use a plugin to do it. Either way, the settings you change are the same. 
+
+Your network configuration may preclude the use of multicast over TCP, so below
+are some other ways you can get your cluster communicating. Note that these
+methods are all provided by JGroups. 
 
 ### Unicast over TCP
 
