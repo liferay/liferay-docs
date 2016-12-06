@@ -5,7 +5,7 @@ of the box, it's configured optimally for a single server environment. If one
 server isn't sufficient to serve the high traffic needs of your site, Liferay
 scales to the size you need. 
 
-![Figure 5.1: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
+![Figure x: Liferay is designed to scale to as large an installation as you need.](../../images-dxp/clustering-enterprise-configuration.png) 
 
 @product@ works well in clusters of multiple machines (horizontal cluster) or in
 clusters of multiple VMs on a single machine (vertical cluster), or any mixture
@@ -161,6 +161,8 @@ to the other nodes in the cluster. If another user wants to read that thread,
 it's retrieved from the cache, no matter what node serves that user, because the
 cache is replicated.  Because the thread is in the cache, no trip to the
 database is necessary. 
+
+![Figure x: Liferay's cache algorithm is extremely efficient. ](../../images-dxp/clustering-cache-efficient-algorithm.png)
 
 This is much more powerful than having a cache running separately on each node.
 The power of *distributed* caching lets common destinations be cached for
