@@ -5,7 +5,7 @@ of the box, it's configured optimally for a single server environment. If one
 server isn't sufficient to serve the high traffic needs of your site, Liferay
 scales to the size you need. 
 
-![Figure x: Liferay is designed to scale to as large an installation as you need.](../../images-dxp/clustering-enterprise-configuration.png) 
+![Figure 1: Liferay is designed to scale to as large an installation as you need.](../../images-dxp/clustering-enterprise-configuration.png) 
 
 @product@ works well in clusters of multiple machines (horizontal cluster) or in
 clusters of multiple VMs on a single machine (vertical cluster), or any mixture
@@ -146,7 +146,7 @@ and either of those environments can also be clustered.
 
 <!-- Have a Google doc for this: https://docs.google.com/document/d/19oaISXylCyKueuMkIjCKtnrNuyhbvrkMJZvyGQLPIpk/edit#heading=h.ayvbwz8pwsz0 -->
 
-## 4. Enable Cluster Link
+## 4. Enable Cluster Link [](id=4-enable-cluster-link)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
@@ -162,7 +162,7 @@ it's retrieved from the cache, no matter what node serves that user, because the
 cache is replicated.  Because the thread is in the cache, no trip to the
 database is necessary. 
 
-![Figure x: Liferay's cache algorithm is extremely efficient. ](../../images-dxp/clustering-cache-efficient-algorithm.png)
+![Figure 2: Liferay's cache algorithm is extremely efficient. ](../../images-dxp/clustering-cache-efficient-algorithm.png)
 
 This is much more powerful than having a cache running separately on each node.
 The power of *distributed* caching lets common destinations be cached for
@@ -188,7 +188,7 @@ Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
 UDP multicast, but unicast and TCP are also available. 
 
-### Multicast over UDP 
+### Multicast over UDP [](id=multicast-over-udp)
 
 When you enable Cluster Link, @product@'s default clustering configuration is
 enabled. This configuration defines IP multicast over UDP. @product@ uses two
@@ -236,7 +236,7 @@ Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
 
-### Unicast over TCP
+### Unicast over TCP [](id=unicast-over-tcp)
 
 If your network configuration or the sheer distance between nodes prevents you
 from using UDP Multicast clustering, you can configure @product@ to use TCP
@@ -294,7 +294,7 @@ your nodes or if your nodes are in different geographical locations.
 You're now set up for Unicast over TCP clustering! Repeat this process for each
 node you want to add to the cluster. 
 
-#### JDBC Ping
+#### JDBC Ping [](id=jdbc-ping)
 
 Rather than use TCP Ping to discover cluster members, you can use a central
 database accessible by all the nodes to help them find each other. Cluster
@@ -311,7 +311,7 @@ corresponding `JDBCPING` tag:
 The above example uses MySQL as the database. For further information about
 JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
 
-#### S3 Ping
+#### S3 Ping [](id=s3-ping)
 
 Amazon S3 Ping can be used for servers running on Amazon's EC2 cloud service.
 Each node uploads a small file to an S3 bucket, and all the other nodes read the
@@ -329,12 +329,12 @@ tag:
 Supply your Amazon keys as values for the parameters above. For further
 information about S3 Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
 
-#### Other Pings
+#### Other Pings [](id=other-pings)
 
 JGroups supplies other means for cluster members to discover each other,
 including Rackspace Ping, BPing, File Ping, and others. Please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols) for information about these discovery methods. 
 
-### Modifying the Cache Configuration with a Module
+### Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
@@ -435,7 +435,7 @@ uploads applications to each node using sftp or some other service. This way,
 when you deploy an application, it is uploaded to each node's `deploy` folder
 and installed by each running @product@ installation. 
 
-## Summary 
+## Summary [](id=summary)
 
 Setting up @product@ on a cluster takes five steps: 
 
