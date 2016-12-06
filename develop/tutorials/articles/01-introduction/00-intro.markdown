@@ -41,8 +41,8 @@ management system. The Liferay Developer Network provides learning paths and
 tutorials that teach you how to use these three environments. 
 
 <video height="360" width="640" controls>
-    <source src="https://dev.liferay.com/documents/10184/554464/develop-quickstart.webm" type="video/webm" /> 
-    <source src="https://dev.liferay.com/documents/10184/554464/develop-quickstart.mp4" type="video/mp4" /> 
+    <source src="https://dev.liferay.com/documents/10184/367132/develop-quickstart.webm" type="video/webm" /> 
+    <source src="https://dev.liferay.com/documents/10184/367132/develop-quickstart.mp4" type="video/mp4" /> 
     Your browser does not support the video tag.
 </video>
 
