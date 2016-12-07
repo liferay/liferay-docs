@@ -44,10 +44,22 @@ developing modules instead of worrying about how to build them. Liferay
 Workspace is built using Gradle, so your modules leverage the Gradle build
 lifecycle.
 
-Workspace includes a Gradle wrapper in its ROOT folder (e.g., `gradlew`) which
+Workspace includes a Gradle wrapper in its ROOT folder (e.g., `gradlew`), which
 you can leverage to execute Gradle commands. This means that you can run
 familiar Gradle build commands (e.g., `build`, `clean`, `compile`, etc.) from a
 Liferay Workspace without having Gradle installed on your machine.
+
++$$$
+
+**Note:** You can use the workspace's Gradle wrapper by executing `blade gw`
+followed by the Gradle command. This is an easier way to run the workspace's
+Gradle wrapper without specifying its path. Since the workspace's Gradle wrapper
+resides in its root folder, it can sometimes be a hassle running it for a deeply
+nested module (e.g., `../../../../gradlew compileJava`). Running the Gradle
+wrapper from Blade CLI automatically detects the Gradle wrapper and can run it
+anywhere.
+
+$$$
 
 When using Liferay Workspace, the workspace plugin is automatically applied
 which adds a multitude of subprojects for you, hiding some complexities of
@@ -72,10 +84,9 @@ many included subprojects like this:
     include file-server
     ...
 
-The workspace plugin provides these behind the scenes. Likewise, if a folder in
-the `/themes` folder includes a `liferay-theme.json` file, the `gulp` plugin is
-applied to it. If a folder in the `/modules` folder includes a `bnd.bnd` file,
-the 
+Likewise, if a folder in the `/themes` folder includes a `liferay-theme.json`
+file, the `gulp` plugin is applied to it. If a folder in the `/modules` folder
+includes a `bnd.bnd` file, the
 [liferay-gradle](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 plugin is applied to it. Therefore, Liferay Workspace provides many plugins and
 build configurations behind the scenes.
@@ -86,6 +97,15 @@ modules from workspace without ever running a Gradle command. You'll learn how
 to do this next.
 
 ## Deploying Modules
+
+Liferay Workspace provides easy-to-use deployment mechanisms that let you deploy
+your module to a Liferay server without any custom configuration. To learn more
+about deploying modules from a workspace using Blade CLI or Liferay @ide@, visit
+the
+[Deploying Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/deploying-modules-with-blade-cli)
+and
+[Deploying Modules with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/deploying-modules-with-liferay-ide)
+tutorials, respectively.
 
 ## Testing Modules
 
