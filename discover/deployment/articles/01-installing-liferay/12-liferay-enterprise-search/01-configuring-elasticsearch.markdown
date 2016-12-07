@@ -209,11 +209,11 @@ configuration file:
 
 2. Add this to the configuration file you just created:
 
-        operationMode=REMOTE
+        operationMode="REMOTE"
         # If running Elasticsearch from a different computer:
-        #transportAddresses=ip.of.elasticsearch.node:9300
+        #transportAddresses="ip.of.elasticsearch.node:9300"
         # Highly recommended for all non-prodcution usage (e.g., practice, tests, diagnostics):
-        #logExceptionsOnly=false
+        #logExceptionsOnly="false"
 
 3. Start Liferay or re-index if Liferay is already running.
 
