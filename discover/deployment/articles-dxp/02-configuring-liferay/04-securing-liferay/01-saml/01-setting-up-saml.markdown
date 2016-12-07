@@ -205,7 +205,15 @@ Many of these steps are similar to configuring @product@ as a SAML Identity
 Provider. A single @product@ installation can be configured as a SAML Identify
 Provider *or* as a SAML Service Provider but not as both. If you already set up
 one @product@ installation as a SAML Identity Provider, use a *different* @product@
-installation as a SAML Service Provider
+installation as a SAML Service Provider.
+
++$$$
+
+**Note:** If you're using a third party IdP with @product@ as the SP, all
+messages coming from the IdP must be encrypted. If they're not, an error message
+appears and communication between the IdP and @product@ fails.
+
+$$$
 
 1.  Install the Liferay SAML 2.0 Provider app. To confirm that the app was
     successfully deployed, look for the *SAML Admin* entry in the Configuration
