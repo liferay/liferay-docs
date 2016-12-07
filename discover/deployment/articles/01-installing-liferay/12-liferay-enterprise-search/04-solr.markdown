@@ -260,7 +260,7 @@ Liferay's Solr adapter.
 1. From System Settings or your OSGi configuration file, set the *Client Type*
    to *CLOUD*.
 
-        clientType=CLOUD
+        clientType="CLOUD"
 
 2. Start Liferay if it's not running already.
 
