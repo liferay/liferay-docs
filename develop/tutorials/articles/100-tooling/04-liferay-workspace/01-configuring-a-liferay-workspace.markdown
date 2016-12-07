@@ -11,7 +11,7 @@ The top-level files/folder of a Liferay workspace are outlined below:
   files serve as your global configuration files for all Liferay servers and
   projects residing in your workspace. To learn more about using the `configs`
   folder, see the
-  [Testing Modules]()
+  [Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#testing-modules)
   section.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
@@ -37,48 +37,12 @@ custom value. For instance, if you want to store your modules in a folder other
 than `[ROOT]/modules`, uncomment the `liferay.workspace.modules.dir` variable
 and set it to a different value.
 
-<!--
-You
-can create Liferay modules with any build tool you like. For instance, Liferay
-IDE provides an easy interface to configure a Liferay Workspace and create
-modules using the workspace. For more information on this, see the 
-[Creating a Liferay Workspace with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
-and
-[Creating Modules with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide).
--->
-
 +$$$
 
-**Note:** The workspace plugin automatically adds a multitude of subprojects for
-you, which hides some complexities of Gradle. For example, a typical project's
-`settings.gradle` file could contain many included subprojects like this:
-
-    ...
-    include images:base:oracle-jdk:oracle-jdk-6
-    include images:base:oracle-jdk:oracle-jdk-7
-    include images:base:oracle-jdk:oracle-jdk-8
-    include images:base:liferay-portal:liferay-portal-ce-tomcat-7.0-ga1
-    include images:source-bundles:glassfish
-    include images:source-bundles:jboss-eap
-    include images:source-bundles:tomcat
-    include images:source-bundles:websphere
-    include images:source-bundles:wildfly
-    include compose:jboss-eap-mysql
-    include compose:tomcat-mariadb
-    include compose:tomcat-mysql
-    include compose:tomcat-mysql-elastic
-    include compose:tomcat-postgres
-    include file-server
-    ...
-
-The workspace plugin provides these behind the scenes. Likewise, if a folder in
-the `/themes` folder includes a `liferay-theme.json` file, the `gulp` plugin is
-applied to it. If a folder in the `/modules` folder included a `bnd.bnd` file,
-the `liferay-gradle` plugin is applied to it. Therefore, workspaces provides an
-easier way to create and manage Gradle plugins. For more information on the
-`liferay-gradle` plugin, see the
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
-tutorial.
+**Note:** Liferay Workspace provides many subprojects for you behind the scenes,
+which hides some complexities of Gradle. You can learn more about this in the
+[Building Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#building-modules)
+section.
 
 $$$
 
