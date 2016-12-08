@@ -1,151 +1,131 @@
-# Selecting Custom Entities Using the Item Selector
+# Creating Custom Entities for the Item Selector [](id=creating-custom-entities-for-the-item-selector)
 
-We have seen in previous tutorials how to use item selector to select entities 
-using existing item selector criteria (ItemSelectorCriterion) and item selector 
-return types (ItemSelectorReturnType)
+So, your app requires users to select an item that the Item Selector isn't 
+configured for? No problem. You can create a new entity.
 
-This tutorial will explain how to create new item selector criteria and return 
-types so you can use item selector to select your own custom entities and allow 
-other applications to be able to select your custom entities as well. 
+This tutorial explains how to create a new entity for the Item Selector.
 
-In order to select a new type of entity we need to create a new item selector 
-criterion. This should be part of your application API so other modules can use 
-it to invoke item selector.
+Go ahead and get started.
 
-Let’s imagine that we have an application that creates Tasks and we want users 
-to select a task to assign it to themselves. Then, we might create a new 
-criterion as follows:
+## Creating Item Selector Criterion [](id=creating-item-selector-criterion)
 
-public class TasksItemSelectorCriterion extends BaseItemSelectorCriterion {
+First, you must create a new criterion for your entity. Follow these steps to 
+create an Item Selector criterion:
 
-}
+1.  Create a class that extends `BaseItemSelectorCriterion`.
 
-Anytime we add a new item selector criterion, we need to register a OSGi 
-component that will be responsible of obtaining the selection views for that 
-particular item selector criterion. This is done by a OSGi component that 
-implements ItemSelectorCriterionHandler. The code for our example tasks item 
-selector criterion handler is as follows:
+    The example below creates a class called `TaskItemSelectorCriterion`:
 
-@Component(service = ItemSelectorCriterionHandler.class)
+        public class TasksItemSelectorCriterion extends 
+        BaseItemSelectorCriterion {
+        
+        }
+        
+    This class acts as an identifier for Item Selector.
 
-public class TasksItemSelectorCriterionHandler extends
-	BaseItemSelectorCriterionHandler {
+    Note that you can use this class to pass information to the view if
+    needed. For example, the [JournalItemSelectorCriterion](https://github.com/liferay/liferay-portal/blob/586f66c629b559e79c744559751ecb960218fe0b/modules/apps/web-experience/journal/journal-item-selector-api/src/main/java/com/liferay/journal/item/selector/criterion/JournalItemSelectorCriterion.java)
+    passes information about the primary key so the view can use it:
 
-	public Class getItemSelectorCriterionClass() {
-		return TasksItemSelectorCriterionHandler.class;
-	}
-}
+        public class JournalItemSelectorCriterion extends 
+        BaseItemSelectorCriterion {
+        
+                public JournalItemSelectorCriterion() {
+                }
+        
+                public JournalItemSelectorCriterion(long resourcePrimKey) {
+                        _resourcePrimKey = resourcePrimKey;
+                }
+        
+                public long getResourcePrimKey() {
+                        return _resourcePrimKey;
+                }
+        
+                public void setResourcePrimKey(long resourcePrimKey) {
+                        _resourcePrimKey = resourcePrimKey;
+                }
+        
+                private long _resourcePrimKey;
+        
+        }
 
-In order to process the new assignee, our tasks application requires the 
-following information when a user selects a task:
+    +$$$
 
-* the task identifier
+    **Note:** Criterion fields should be serializable and should expose a 
+    public empty constructor(as shown above).
+    
+    $$$
 
-* the task creator user
+2.  Create an OSGi component class that implements 
+    `BaseItemSelectorCriterionHandler`. Each criterion requires a criterion 
+    handler, which is responsible for obtaining the proper selection view.
 
-This information that needs to be returned by the selection view doesn’t match 
-any of the item selector return types provided by the item selector api 
-(Base64ItemSelectorReturnType, FileEntryItemSelectorReturnType, 
-UploadableFileReturnType, URLItemSelectorReturnType, UUIDItemSelectorReturnType) 
-so we will need to create a new item selector return type that will return this 
-information. We will name it TasksItemSelectorReturnType and any view that uses 
-it will need to return both the task identifier and the task creator user.
+    The example below creates a criterion handler for the 
+    `TaskItemSelectorCriterion`:
 
-This step is optional, and often it won’t be needed because we will be able to 
-reuse any of the item selector return types provided by the item selector api 
-module.  This is the example code of our new TasksItemSelectorReturnType:
+        @Component(service = ItemSelectorCriterionHandler.class)
+        public class TaskItemSelectorCriterionHandler extends 
+        BaseItemSelectorCriterionHandler<TaskItemSelectorCriterion> {
 
-public class TasksItemSelectorReturnType implements ItemSelectorReturnType {
+            public Class <TaskItemSelectorCriterion> 
+            getItemSelectorCriterionClass() {
+                return TasksItemSelectorCriterionHandler.class;
+            }
+            
+            @Activate
+            @Override
+            protected void activate(BundleContext bundleContext) {
+                    super.activate(bundleContext);
+            }
+    
+        }
+        
+    The @Activate and @Override tokens are required to activate this OSGi 
+    component.
+    
+Depending on the needs of your app, you may not need to create a return type. If
+your entity returns information that is already defined by an existing return
+type, you can use that return type.
 
-}
+You can view the default available criteria in the 
+[Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types) 
+reference.
 
-Until this point we have created a new API to allow the creation of selection 
-views to select tasks that can be used by our application. Both classes  
-TasksItemSelectorCriterion and TasksItemSelectorReturnType needs to be 
-accessible so they can be used by the application when generating the item 
-selector url.
+If, however, your entity returns information that is not covered by an existing 
+return type, you'll need to create a new return type next.
 
-Now, the only thing that is left is to create the view to select tasks. This is 
-explained in detail in this tutorial 
-[https://docs.google.com/document/d/1mjuYMtXfSn311AnHjNOxcOHNUc1fTcteCOBnXFFjB54/edit](https://docs.google.com/document/d/1mjuYMtXfSn311AnHjNOxcOHNUc1fTcteCOBnXFFjB54/edit). 
+## Creating Item Selector Return Types [](id=creating-item-selector-return-types)
 
-The main steps are documented next, but we encourage to visit the link to see 
-the detail steps.
+To create a return type, you must create a class that implements 
+`ItemSelectorReturnType`.
 
-Create the ItemSelectorView OSGI component:
+The example below creates a new return type called `TaskItemSelectorReturnType`:
 
-@Component
-public class TasksItemSelectorView
-	implements ItemSelectorView<TasksItemSelectorCriterion> {
+    public class TasksItemSelectorReturnType implements ItemSelectorReturnType{
+    
+    }
+    
+Note that you can create a new return type for each piece of information that 
+your entity should return, but you can also create one return type to identify
+all the information if you wish. Like the `*ItemSelectorCriterion` class, **the 
+`*ItemSelectorReturnType` class is simply used as an identifier by the Item 
+Selector, and does not actually return any information itself.**
 
-	public Class<TasksItemSelectorCriterion> getItemSelectorCriterionClass() {
-		return TasksItemSelectorCriterion.class;
-	}
+So far, you've created an API that you can use to create a selection view for 
+your new entity. The entity's criterion and return type classes will be 
+used by your application to create the Item Selector URL. You can follow the 
+[Selecting Entities using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector) 
+tutorial to learn how to obtain the Item Selector URL.
 
-	public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes() {
-		return _supportedItemSelectorReturnTypes;
-	}
+**The selection view is responsible for returning the proper entity information 
+specified by the return type.** Currently there isn't a selection view to select 
+your entity. Follow the [Creating Selection Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-selection-views) 
+tutorial to learn how to create your new view.
 
-	public String getTitle(Locale locale) {
-		return "Tasks";
-	}
+Now you know how to create an entity for the Item Selector!
 
-	public boolean isShowSearch() {
-		return false;
-	}
+## Related Topics [](id=related-topics)
 
-	public boolean isVisible(ThemeDisplay themeDisplay) {
-		return true;
-	}
+[Selecting Entities using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector)
 
-	public ServletContext getServletContext() {
-		return _servletContext;
-	}
-
-	public void renderHTML(
-			ServletRequest request, ServletResponse response,
-			MyTasksItemSelectorCriterion itemSelectorCriterion,
-			PortletURL portletURL, String itemSelectedEventName, boolean search)
-		throws IOException, ServletException {
-
-		// Pass the information that the view needs
-
-		ServletContext servletContext = getServletContext();
-
-		RequestDispatcher requestDispatcher =
-			servletContext.getRequestDispatcher("/tasks.jsp");
-
-		requestDispatcher.include(request, response);
-	}
-
-	@Reference(
-		target = "(osgi.web.symbolicname=com.liferay.tasks.web)", unbind = "-"
-	)
-	public void setServletContext(ServletContext servletContext) {
-		_servletContext = servletContext;
-	}
-
-	private ServletContext _servletContext;
-	private static final List<ItemSelectorReturnType>
-		_supportedItemSelectorReturnTypes = Collections.unmodifiableList(
-			ListUtil.fromArray(
-				new ItemSelectorReturnType[] {
-					new TasksItemSelectorReturnType(),
-				}));
-
-}
-
-In the tasks.jsp we need to include the markup for the different tasks and when 
-the user selects any task, we need to fire a javascript event with the name 
-itemSelectedEventName specified in the renderHTML containing a json object with 
-the information of the task id and the task creator user as follows
-
-Liferay.fire(
-	'<%= {eventName} %>',
-
-	{
-		data: {the-data-your-client-needs}
-	}
-
-);
-
+[Creating Custom Selection Views for the Item Selector](/develop/tutorials/-/knowledge_base/7-0/creating-custom-selection-views-for-the-item-selector)
