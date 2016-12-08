@@ -1,17 +1,18 @@
 # Data Scopes [](id=data-scopes)
 
 Apps in @product@ can restrict their data to specific 
-[scopes](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/scope). 
-For example, a site-scoped app can display its data across a single site. For a 
-detailed explanation of scopes, see the user guide article 
+[scopes](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/scope).
+Scopes provide a context for the application's data. For example, a site-scoped
+app can display its data across a single site. For a detailed explanation of
+scopes, see the user guide article 
 [Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope). 
-Scoping, however, isn't available by default for custom apps. You have to 
-manually add support for it. This tutorial shows you how. 
+To give your applications scope, you must manually add support for it. This
+tutorial shows you how. 
 
 ## Scoping Your Entities [](id=scoping-your-entities)
 
 In your service layer, your entities must have a `companyId` attribute of type 
-`long` to enable scoping by portal instance, and a `groupId` attribute of type 
+`long` to enable scoping by portal instance and a `groupId` attribute of type 
 `long` to enable scoping by site. Using 
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder) 
 is the simplest way to do this. For instructions on this, see the tutorial 
