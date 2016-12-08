@@ -109,4 +109,98 @@ tutorials, respectively.
 
 ## Testing Modules
 
+Liferay provides many different configuration settings for @product-ver@. These
+settings let you use @product@ in many different ways. Configuring several
+different @product@ installations to simulate certain behaviors can become
+cumbersome and time consuming.
+
+Liferay Workspace provides you with the `configs` folder, which lets you run
+several different environments in the same workspace and @product@ installation.
+For example, you could have separate @product@ environments for development,
+testing, and production in a single Liferay Workspace. So how does it work?
+
+The `configs` folder offers five subfolders:
+
+- `common`: holds a common configuration that you want applied to all
+  environments.
+- `dev`: holds the development configuration.
+- `local`: holds the configuration intended for testing locally.
+- `prod`: holds the configuration for a production site.
+- `uat`: holds the configuration for a UAT site.
+
+The files in each folder overlay your @product@ installation found in the
+`bundles` folder. When @product@ is started in the workspace's `bundles` folder,
+the following occurs:
+
+1.  Configuration files found in the `configs/common` folder are applied to the
+    `bundles` @product@ installation.
+
+2.  One of the four configured workspace environments (`dev`, `local`, `prod`,
+    or `uat`) are applied on top of any existing configurations from the
+    `common` folder.
+
+You can configure your workspace environment by opening your workspace's
+`gradle.properties` file in the root folder and updating the
+`liferay.workspace.environment` property to specify the environment to apply to
+your @product@ installation. It's set to `local` by default.
+
+Each environment folder can supply its own database, `portal-ext.properties`,
+Elasticsearch, etc.
+
+To get a feel for what you could simulate with the `configs` folder, let's
+explore a typical scenario. Suppose you want a local @product@ instance for
+testing and a UAT site for simulating a production site. Assume you want the
+following configuration for the two environments:
+
+**Local Environment**
+
+- Use MySQL database
+- Skip setup wizard
+
+**UAT Environment**
+
+- Use JBoss database
+- Skip setup wizard
+
+To configure these two environments in your workspace, follow the steps below:
+
+1.  Open the `configs/common` folder and add the
+    `portal-setup-wizard.properties` file with the `setup.wizard.enabled=false`
+    property.
+2.  Open the `configs/local` folder and configure the MySQL database settings in
+    a `portal-ext.properties` file.
+3.  Open the `configs/uat` folder and configure the JBoss database settings in
+    a `portal-ext.properties` file.
+
+Now your two environments are set. To switch between the two environments,
+change the `gradle.properties` file's `liferay.workspace.environment` property
+to either `local` or `uat`.
+
+You can also generate a distributable Zip/Tar of an environment. Execute the
+Gradle `distBundle[Zip|Tar]` command and specify the environment as a parameter:
+
+    ./gradlew distBundle[Zip|Tar] -Pliferay.workspace.environment=<ENVIRONMENT>
+
+Awesome! You can now test your workspace's @product@ installation in a variety
+of different environments!
+
 ## Releasing Modules
+
+Liferay Workspace does not provide a built in release mechanism, but there are
+easy ways to use external release tools with workspace. The most popular choice
+is uploading your modules into a Maven Nexus repository. You could also use
+other release tools like [Artifactory](https://www.jfrog.com/artifactory/).
+
+You may ask "Why would I want to upload my modules built with Gradle into a
+Maven repository?" Gradle artifacts are not easily distributed between multiple
+user environments. This is because Gradle artifacts stored in your local `.m2`
+directory contain user specific data that can't be transferred to other
+developers. Maven, however, stores no user-specific metadata in its artifacts,
+meaning it's easily transferrable.
+
+For more instructions on how to set up a Maven Nexus repository for your
+workspace's modules, see the
+[Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
+and
+[Deploying Liferay Maven Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-0/deploying-liferay-maven-artifacts-to-a-repository)
+tutorials.
