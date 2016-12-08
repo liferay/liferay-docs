@@ -10,10 +10,11 @@ module's development lifecycle:
 - [Releasing modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#releasing-modules)
 
 Your workspace provides a flexible environment that can be used in many
-different build tools and IDEs, such as Liferay @ide@. In this tutorial, you'll
-explore the development lifecycle phases Liferay Workspace provides for you. In
-addition, you'll be directed to other tutorials that go into further detail for
-leveraging the workspace's particular lifecycle phase. Let's get started!
+different build tools and IDEs. In this tutorial, you'll explore the development
+lifecycle phases Liferay Workspace provides for you. Then you'll be directed to
+other tutorials that go into further detail for leveraging the workspace's
+particular lifecycle phase for a specific tool (e.g., Blade CLI or Liferay
+@ide@). Let's get started!
 
 ## Creating Modules
 
@@ -39,7 +40,7 @@ tutorials, respectively.
 
 ## Building Modules
 
-Liferay Workspace abstracts many build requirements so you can focus on
+Liferay Workspace abstracts many build requirements away so you can focus on
 developing modules instead of worrying about how to build them. Liferay
 Workspace is built using Gradle, so your modules leverage the Gradle build
 lifecycle.
@@ -51,8 +52,8 @@ Liferay Workspace without having Gradle installed on your machine.
 
 +$$$
 
-**Note:** You can use the workspace's Gradle wrapper by executing `blade gw`
-followed by the Gradle command. This is an easier way to run the workspace's
+**Note:** You can also use the workspace's Gradle wrapper by executing `blade
+gw` followed by the Gradle command. This is an easier way to run the workspace's
 Gradle wrapper without specifying its path. Since the workspace's Gradle wrapper
 resides in its root folder, it can sometimes be a hassle running it for a deeply
 nested module (e.g., `../../../../gradlew compileJava`). Running the Gradle
@@ -84,17 +85,18 @@ many included subprojects like this:
     include file-server
     ...
 
-Likewise, if a folder in the `/themes` folder includes a `liferay-theme.json`
-file, the `gulp` plugin is applied to it. If a folder in the `/modules` folder
-includes a `bnd.bnd` file, the
+You don't have to worry about applying these subprojects becasue the workpslace
+plugin does it for you. Likewise, if a folder in the `/themes` folder includes a
+`liferay-theme.json` file, the `gulp` plugin is applied to it; if a folder in
+the `/modules` folder includes a `bnd.bnd` file, the
 [liferay-gradle](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 plugin is applied to it. Therefore, Liferay Workspace provides many plugins and
 build configurations behind the scenes.
 
-Most of the Gradle build lifecycle in workspace is abstracted away from you to
-provide a simple development experience. For instance, you can build/deploy your
-modules from workspace without ever running a Gradle command. You'll learn how
-to do this next.
+A good example of the Gradle build lifecycle abstraction is the module
+deployment process in a workspace. You can build/deploy your modules from
+workspace without ever running a Gradle command. You'll learn how to do this
+next.
 
 ## Deploying Modules
 
@@ -109,15 +111,16 @@ tutorials, respectively.
 
 ## Testing Modules
 
-Liferay provides many different configuration settings for @product-ver@. These
-settings let you use @product@ in many different ways. Configuring several
-different @product@ installations to simulate certain behaviors can become
-cumbersome and time consuming.
+Liferay provides many different configuration settings for @product-ver@.
+Configuring several different @product@ installations to simulate/test certain
+behaviors can become cumbersome and time consuming. With Liferay Workspace, you
+can easily organize environment settings and generate an environment
+installation with those settings.
 
-Liferay Workspace provides you with the `configs` folder, which lets you run
-several different environments in the same workspace and @product@ installation.
-For example, you could have separate @product@ environments for development,
-testing, and production in a single Liferay Workspace. So how does it work?
+Liferay Workspace provides the `configs` folder, which lets you configure
+different environments in the same workspace. For example, you could configure
+separate @product@ environment settings for development, testing, and production
+in a single Liferay Workspace. So how does it work?
 
 The `configs` folder offers five subfolders:
 
@@ -128,38 +131,58 @@ The `configs` folder offers five subfolders:
 - `prod`: holds the configuration for a production site.
 - `uat`: holds the configuration for a UAT site.
 
-The files in each folder overlay your @product@ installation found in the
-`bundles` folder. When @product@ is started in the workspace's `bundles` folder,
-the following occurs:
+You're not limited to just these environments. You can create any subfolder in
+the `configs` folder (e.g., `aws`, `docker`, etc.) to simulate any environment.
+Each environment folder can supply its own database, `portal-ext.properties`,
+Elasticsearch, etc. The files in each folder overlay your @product@
+installation, which you generate from within workspace. When workspace generates
+an @product@ bundle, the following occurs:
 
 1.  Configuration files found in the `configs/common` folder are applied to the
-    `bundles` @product@ installation.
+    @product@ bundle.
 
-2.  One of the four configured workspace environments (`dev`, `local`, `prod`,
-    or `uat`) are applied on top of any existing configurations from the
-    `common` folder.
+2.  The configured workspace environment (`dev`, `local`, `prod`, `uat`, etc.)
+    is applied on top of any existing configurations from the `common` folder.
 
-You can configure your workspace environment by opening your workspace's
-`gradle.properties` file in the root folder and updating the
-`liferay.workspace.environment` property to specify the environment to apply to
-your @product@ installation. It's set to `local` by default.
+To generate a @product@ bundle with a specific environment configuration to the
+workspace's `/bundles` folder, run
 
-Each environment folder can supply its own database, `portal-ext.properties`,
-Elasticsearch, etc.
+    ./gradlew initBundle -Pliferay.workspace.environment=<ENVIRONMENT>
 
-To get a feel for what you could simulate with the `configs` folder, let's
-explore a typical scenario. Suppose you want a local @product@ instance for
-testing and a UAT site for simulating a production site. Assume you want the
-following configuration for the two environments:
+To generate a distributable @product@ installation to the workspace's `/build`
+folder, run
+
+    ./gradlew distBundle[Zip|Tar] -Pliferay.workspace.environment=<ENVIRONMENT>
+
+The `ENVIRONMENT` variable should match the configuration folder (`dev`,       
+`local`, `prod`, `uat`, etc.) you intend to apply.
+
++$$$
+
+**Note:** You may prefer to set your workspace environment in the
+`gradle.properties` file instead of passing it via Gradle command. If so, it's
+recommended to set the workspace envrionment variable inside the
+`[USER_HOME]/.gradle/gradle.properties` file.
+
+    liferay.workspace.environment=local
+
+The variable is set to `local` by default.
+
+$$$
+
+To simulate using the `configs` folder, let's explore a typical scenario.
+Suppose you want a local @product@ installation for testing and a UAT
+installation for simulating a production site. Assume you want the following
+configuration for the two environments:
 
 **Local Environment**
 
-- Use MySQL database
+- Use MySQL database pointing to localhost
 - Skip setup wizard
 
 **UAT Environment**
 
-- Use JBoss database
+- Use MySQL database pointing to a live server
 - Skip setup wizard
 
 To configure these two environments in your workspace, follow the steps below:
@@ -167,26 +190,23 @@ To configure these two environments in your workspace, follow the steps below:
 1.  Open the `configs/common` folder and add the
     `portal-setup-wizard.properties` file with the `setup.wizard.enabled=false`
     property.
-2.  Open the `configs/local` folder and configure the MySQL database settings in
-    a `portal-ext.properties` file.
-3.  Open the `configs/uat` folder and configure the JBoss database settings in
-    a `portal-ext.properties` file.
+2.  Open the `configs/local` folder and configure the MySQL database settings
+    for localhost in a `portal-ext.properties` file.
+3.  Open the `configs/uat` folder and configure the MySQL database settings for
+    the live server in a `portal-ext.properties` file.
 
-Now your two environments are set. To switch between the two environments,
-change the `gradle.properties` file's `liferay.workspace.environment` property
-to either `local` or `uat`.
+4.  Now that your two environments are configured, generate one of them:
 
-You can also generate a distributable Zip/Tar of an environment. Execute the
-Gradle `distBundle[Zip|Tar]` command and specify the environment as a parameter:
+        ./gradlew distBundle[Zip|Tar] -Pliferay.workspace.environment=uat
 
-    ./gradlew distBundle[Zip|Tar] -Pliferay.workspace.environment=<ENVIRONMENT>
+    You've successfully configured two environments and generated one of them.
 
-Awesome! You can now test your workspace's @product@ installation in a variety
-of different environments!
+Awesome! You can now test various @product@ bundle environments using Liferay
+Workspace.
 
 ## Releasing Modules
 
-Liferay Workspace does not provide a built in release mechanism, but there are
+Liferay Workspace does not provide a built-in release mechanism, but there are
 easy ways to use external release tools with workspace. The most popular choice
 is uploading your modules into a Maven Nexus repository. You could also use
 other release tools like [Artifactory](https://www.jfrog.com/artifactory/).
