@@ -1,26 +1,25 @@
 # Data Handlers
 
-A common requirement for many data driven applications is the ability to import
-and export data. This *could* be accomplished by accessing your database
-directly and running SQL queries to export/import data; however, this has
-several drawbacks:
+A common requirement for many data driven applications is to import and export
+data. This *could* be accomplished by accessing your database directly and
+running SQL queries to export/import data; however, this has several drawbacks:
 
 - Working with different database vendors might require customized SQL scripts.
 - Access to the database may be tightly controlled, restricting the ability to
   export/import on demand.
-- Database administrators may not give you access to the Liferay database.
+- You'd have to come up with your own means of storing and parsing the data. 
 
 An easier way to export/import your application's data is to use a Liferay
 ARchive (LAR) file. Liferay provides the LAR feature to address the need to
 export/import data in a database agnostic manner. So what exactly is a LAR file?
 
 A LAR file is a compressed file (ZIP archive) @product@ uses to export/import
-data. They can be created for single portlets, pages, or sets of pages. Portlets
-that are LAR capable provide an interface to let you control how its data is
-imported/exported. There are several @product@ use cases that require the use of
-LAR files:
+data. LAR files can be created for single portlets, pages, or sets of pages.
+Portlets that are LAR-capable provide an interface to let you control how its
+data is imported/exported. There are several @product@ use cases that require
+the use of LAR files:
 
-- Backing up and restoring portlet specific data without requiring a full
+- Backing up and restoring portlet-specific data without requiring a full
   database backup.
 - Cloning sites.
 - Specifying a template to be used for users' public or private pages.
@@ -28,8 +27,7 @@ LAR files:
 
 To leverage the Export/Import framework's ability to export/import a LAR file,
 you can implement Data Handlers in your application. There are two types of data
-handlers you'll learn about: *Portlet Data Handlers* and *Staged Model Data
-Handlers*.
+handlers: *Portlet Data Handlers* and *Staged Model Data Handlers*.
 
 A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes only have the role of querying and coordinating between staged
@@ -44,28 +42,27 @@ which is required to understand Staged Model Data Handlers. -Cody -->
 To track each entity of an application for staging, you should create staged
 models by implementing the
 [StagedModel](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
-interface. Staged models are the parent interface of an entity being handled in
-the Staging framework. For example, the Bookmarks application manages
+interface. Staged models are the parent interface of an entity in the Staging
+framework. For example, the Bookmarks application manages
 [BookmarksEntry](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksEntry.html)s
 and
 [BookmarksFolder](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksFolder.html)s,
 and both implement the `StagedModel`interface.
 
-A Staged Model Data Handler is responsible for supplying information about a
-staged model (entity) to the Export/Import framework, defining a display name
-for the UI, deleting an entity, etc. It's also responsible for exporting
-referenced content. For example, if a Bookmarks entry resides in a Bookmarks
-folder, the `BookmarksEntry` staged model data handler invokes the export of the
+A Staged Model Data Handler supplies information about a staged model (entity)
+to the Export/Import framework, defining a display name for the UI, deleting an
+entity, etc. It's also responsible for exporting referenced content. For
+example, if a Bookmarks entry resides in a Bookmarks folder, the
+`BookmarksEntry` staged model data handler invokes the export of the
 `BookmarksFolder`.
 
 ![Figure 1: The Data Handler framework uses portlet data handlers and staged model data handlers to track and export/import portlet and staged model information, respectively.](../../images/data-handler-diagram.png)
 
 In this tutorial, you'll learn how to create a portlet data handler for your
-custom application. Then you'll create a staged model data handler for each
-entity your custom application manages. You're not required to implement a
-staged model data handler for every entity in your application, but they're
-necessary for any entity you want to export/import or have the staging framework
-track.
+application. Then you'll create a staged model data handler for each entity your
+application manages. You're not required to implement a staged model data
+handler for every entity in your application, but they're necessary for any
+entity you want to export/import or have the staging framework track.
 
 <!-- Bare bones instructions for enabling a project for Staging using Service
 Builder is outlined below. This info will go into a separate tutorial at a later
@@ -113,8 +110,8 @@ Bookmarks application.
         public class BookmarksPortletDataHandler extends BasePortletDataHandler {
 
 3.  Create an `@Component` annotation section above the class declaration. This
-    annotation is responsible for registering this class as a portlet data
-    handler in the OSGi service registry.
+    annotation registers this class as a portlet data handler in the OSGi
+    service registry.
 
         @Component(
             immediate = true,
@@ -127,8 +124,8 @@ Bookmarks application.
 
     There are a few annotation attributes you should set:
 
-    - The `immediate` element directs the container to immediately activate the
-      component once its provided module has started.
+    - The `immediate` element directs the container to activate the
+      component immediately once its provided module has started.
     - The `property` element sets various properties for the component service.
       You must associate the portlets you wish to handle with this service so
       they function properly in the export/import environment. For example,
@@ -188,8 +185,8 @@ Bookmarks application.
     [PortletDataHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
     API.
 
-5.  For the Bookmarks portlet data handler to successfully reference its entry
-    and folder staged models, you'll need to set them in your class:
+5.  For the Bookmarks portlet data handler to reference its entry and folder
+    staged models successfully, you must set them in your class:
 
         @Reference(unbind = "-")
         protected void setBookmarksEntryLocalService(
@@ -299,7 +296,7 @@ Bookmarks application.
     The `doExportData` method first checks if anything should be exported. The
     `portletDataContext.getBooleanParameter(...)` method checks if the user
     selected Bookmarks entries for export. Later, the
-    ExportImportActionableDynamicQuery framework runs a query against bookmarks
+    `ExportImportActionableDynamicQuery` framework runs a query against bookmarks
     folders and entries to find ones which should be exported to the LAR file.
 
     The `-ActionableDynamicQuery` classes are automatically generated by Service
@@ -372,7 +369,7 @@ Bookmarks application.
         }
 
     This number is displayed in the Export and Staging UI. Note that since the
-    Staging framework is traversing the entity graph during export, the built-in
+    Staging framework traverses the entity graph during export, the built-in
     components provide an approximate value in some cases.
 
     ![Figure 3: The number of modified Bookmarks entities are displayed in the Export UI.](../../images/manifest-summary-count.png)
@@ -418,9 +415,9 @@ similar, so you'll examine how this is done for Bookmark entries.
 
         @Component(immediate = true, service = StagedModelDataHandler.class)
 
-    The `immediate` element directs the container to immediately activate the
-    component once its provided module has started. The `service` element should
-    point to the `StagedModelDataHandler.class` interface.
+    The `immediate` element directs the container to activate the component
+    immediately once its provided module has started. The `service` element
+    should point to the `StagedModelDataHandler.class` interface.
 
     +$$$
 
@@ -531,10 +528,12 @@ similar, so you'll examine how this is done for Bookmark entries.
                 if (existingEntry == null) {
 
                     serviceContext.setUuid(entry.getUuid());
-                    importedEntry = _bookmarksEntryLocalService.addEntry(					userId, portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(), serviceContext);
+                    importedEntry = _bookmarksEntryLocalService.addEntry(					
+                      userId, portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(), serviceContext);
                 }
                 else {
-                    importedEntry = _bookmarksEntryLocalService.updateEntry(					userId, existingEntry.getEntryId(), portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(),	serviceContext);
+                    importedEntry = _bookmarksEntryLocalService.updateEntry(
+                        userId, existingEntry.getEntryId(), portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(),	serviceContext);
                 }
             }
             else {
@@ -550,15 +549,15 @@ similar, so you'll examine how this is done for Bookmark entries.
     and then adds the class model characterized by that data element to the
     `PortletDataContext`. The `PortletDataContext` is used to populate the LAR
     file with your application's data during the export process. Note that once
-    an entity has been exported, consequent calls to the export method won't
+    an entity has been exported, subsequent calls to the export method won't
     actually repeat the export process multiple times, ensuring optimal
     performance.
 
     An important feature of the import process is that all exported reference
-    elements in the Bookmarks example are being automatically imported when
-    needed. The `doImportStagedModel` method does not need to import the
-    reference elements manually, it must only find the new assigned ID for the
-    folder before importing the entry.
+    elements in the Bookmarks example are automatically imported when needed.
+    The `doImportStagedModel` method does not need to import the reference
+    elements manually; it must only find the new assigned ID for the folder
+    before importing the entry.
 
     The `PortletDataContext` keeps this information and a slew of other data
     up-to-date during the import process. The old ID and new ID mapping can be
