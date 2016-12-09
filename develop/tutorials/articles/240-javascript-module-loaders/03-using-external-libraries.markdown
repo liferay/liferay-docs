@@ -1,6 +1,7 @@
 # Using External Libraries [](id=using-external-libraries)
 
-You can use external JavaScript libraries in your portlets. There are a few
+You can use external (i.e., anything but Metal.js, jQuery, or Lodash, which are
+included in @product@) JavaScript libraries in your portlets. There are a few
 methods you can use to make external libraries available. The method you should 
 choose depends on the external libraries you plan to use and how you plan to use 
 them (as modules or as browser globals).
@@ -44,7 +45,7 @@ If you want to use a library that doesn't export itself as a named module
 (as is the case for many plugins) or load the library as a browser global, you 
 can use the following steps:
 
-1.  Add a `<script>` tag with the following content, before loading your module:
+1.  Add a `<script>` tag with the following content before loading your module:
 
         <script>
             define._amd = define.amd;
