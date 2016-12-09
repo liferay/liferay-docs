@@ -191,7 +191,7 @@ LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these
 tools, you can generate automatic previews for many types of files including text
 files, office suite files, PDFs, images, audio files and videos. Users will also
 be able to use the conversion functionality to download documents in a variety
-of formats. Please see the [Automatic Previews and Metadata](discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata)
+of formats. Please see the [Automatic Previews and Metadata](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata)
 section for more information.
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org),
