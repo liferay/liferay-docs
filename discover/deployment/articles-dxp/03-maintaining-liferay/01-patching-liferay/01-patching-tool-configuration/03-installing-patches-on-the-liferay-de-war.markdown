@@ -1,11 +1,11 @@
-# Installing patches on the Liferay DE WAR
+# Installing patches on the Liferay DE WAR [](id=installing-patches-on-the-liferay-de-war)
 
 Because of your app server choice, you may not be able to patch the Liferay
 instance that's installed, because the files aren't available on the file
 system. Instead, you must patch the Liferay DE WAR file and then re-deploy it.
 This tutorial shows you how to do that. 
 
-## Prerequisites
+## Prerequisites [](id=prerequisites)
 
 Download the necessary artifacts from the 
 [Customer Portal:](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
@@ -15,7 +15,7 @@ Download the necessary artifacts from the
 - Additional dependencies (liferay-dxp-digital-enterprise-osgi-[version].zip)
 - Latest Patching Tool
 
-## How to Install a Fix Pack on the Liferay WAR
+## How to Install a Fix Pack on the Liferay WAR [](id=how-to-install-a-fix-pack-on-the-liferay-war)
 
 1.  Create a folder and unzip the dependency artifacts and the Patching Tool
     into it. Content of this folder should look like this:	
@@ -77,7 +77,7 @@ Download the necessary artifacts from the
 Great! You have successfully patched the artifacts, and they are ready to be
 deployed on any supported Application Server.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Patching Tool Advanced Configuration](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-tool-advanced-configuration)
 

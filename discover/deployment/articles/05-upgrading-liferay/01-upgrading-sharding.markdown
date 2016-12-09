@@ -5,7 +5,7 @@ If you come from a sharded installation of Liferay 6.2, you can upgrade to
 installation will no longer be sharded. The example below upgrades an
 installation with three shards. 
 
-## Upgrading default shard
+## Upgrading default shard [](id=upgrading-default-shard)
 
 Configure the upgrade client tool properties with all shards, because the
 Upgrade process needs to copy the control tables from the default shard to the
@@ -26,7 +26,7 @@ other shards.
       jdbc.two.username=
       jdbc.two.password=
 
-## Upgrading second Shard
+## Upgrading second Shard [](id=upgrading-second-shard)
 
 Once the default shard is upgraded, you must upgrade the second shard. In this
 example, its database name is `lportal_one`. The `default` JDBC properties
@@ -37,7 +37,7 @@ map to the second shard's properties.
       jdbc.default.username=
       jdbc.default.password=
 
-## Upgrading third shard
+## Upgrading third shard [](id=upgrading-third-shard)
 
 Once the second shard is upgraded, upgrade the third shard, which has the
 database name `lportal_two`. Again, the `default` JDBC properties map to the
