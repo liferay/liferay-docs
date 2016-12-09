@@ -1,4 +1,4 @@
-# Data Handlers
+# Data Handlers [](id=data-handlers)
 
 A common requirement for many data driven applications is to import and export
 data. This *could* be accomplished by accessing your database directly and
@@ -90,7 +90,7 @@ tutorial.
 You'll examine how the Bookmarks application implements data handlers. First
 you'll start with its portlet data handler implementation.
 
-## Portlet Data Handlers
+## Portlet Data Handlers [](id=portlet-data-handlers)
 
 The following steps create the `BookmarksPortletDataHandler` class used for the
 Bookmarks application.
@@ -389,7 +389,7 @@ support the Export/Import framework and display a UI for it. The next step for
 supporting data handlers in your app is to implement staged model data handlers
 for your staged models. You'll do this next.
 
-## Staged Model Data Handlers
+## Staged Model Data Handlers [](id=staged-model-data-handlers)
 
 Now that your application has a portlet data handler and staged models, you'll
 create the staged model data handlers. The Bookmarks application has two staged
