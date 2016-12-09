@@ -127,9 +127,9 @@ $$$
 
 Here's the command syntax for creating a module:
 
-    blade create [options] [moduleName]
+    blade create [options] moduleName
 
-The `blade help [commandName]` command describes the specified command. To
+The `blade help commandName` command describes the specified command. To
 describe the `create` command, for example, execute this: 
 
     blade help create
