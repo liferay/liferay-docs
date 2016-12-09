@@ -1,4 +1,4 @@
-# Liferay Repository Types
+# Liferay Repository Types [](id=liferay-repository-types)
 
 There are several options available for configuring how Liferay's Documents and
 Media library stores files. Each option is a *store* which can be configured
@@ -24,7 +24,7 @@ database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
 folder structure that looks like the figure below. 
 
-![Figure 5.2: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
+![Figure 5.2: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../../images/enterprise-file-system-store.png)
 
 The folder path used by Liferay for storing documents is this:
 
@@ -64,7 +64,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 5.3: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
+![Figure 5.3: The advanced file system store creates a more nested folder structure than the file system store.](../../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
 systems have limitations on the number of files which can be stored in a
