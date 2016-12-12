@@ -1,11 +1,13 @@
-# TLDDoc Builder Gradle Plugin
+# TLDDoc Builder Gradle Plugin [](id=tlddoc-builder-gradle-plugin)
 
 The TLDDoc Builder Gradle plugin lets you run the
 [Tag Library Documentation Generator](http://web.archive.org/web/20070624180825/https://taglibrarydoc.dev.java.net/)
 tool in order to generate documentation for the JSP Tag Library Descriptor (TLD)
 files in your project.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -54,7 +56,7 @@ repositories {
 }
 ```
 
-## TLDDoc Builder Plugin
+## TLDDoc Builder Plugin [](id=tlddoc-builder-plugin)
 
 The plugin adds three tasks to your project:
 
@@ -96,7 +98,7 @@ reference it in a TLD file contained in the `src/main/resources` directory:
 <description>Hello World <![CDATA[<img src="../images/breadcrumb.png"]]></description>
 ```
 
-## App TLDDoc Builder Plugin
+## App TLDDoc Builder Plugin [](id=app-tlddoc-builder-plugin)
 
 In order to use the App TLDDoc Builder plugin, it is required to apply the
 `com.liferay.app.tlddoc.builder` plugin in a parent project (that is, a project
@@ -121,7 +123,7 @@ Property Name | Default Value
 [`destinationDir`](#destinationdir) | `${project.buildDir}/docs/tlddoc`
 [`source`](#source) | The sum of all the `tlddoc.source` values of the subprojects
 
-## Project Extension
+## Project Extension [](id=project-extension)
 
 The App TLDDoc Builder plugin exposes the following properties through the
 extension named `appTLDDocBuilder`:
@@ -137,9 +139,9 @@ Method | Description
 `AppTLDDocBuilderExtension subprojects(Iterable<Project> subprojects)` | Include additional projects in the tag library documentation of the app.
 `AppTLDDocBuilderExtension subprojects(Project... subprojects)` | Include additional projects in the tag library documentation of the app.
 
-## Tasks
+## Tasks [](id=tasks)
 
-### TLDDocTask
+### TLDDocTask [](id=tlddoctask)
 
 Tasks of type `TLDDocTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args(java.tlddoc.Iterable))
@@ -157,7 +159,7 @@ The `TLDDocTask` class is also very similar to [`SourceTask`](https://docs.gradl
 which means it provides a `source` property and lets you specify include and
 exclude patterns.
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -170,13 +172,13 @@ Property Name | Type | Default Value | Description
 The properties of type `File` support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.tlddoc.Object)).
 
-#### Task Methods
+#### Task Methods [](id=task-methods)
 
 The methods available for `TLDDocTask` are exactly the same as the one defined
 in the [`SourceTask`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html)
 class.
 
-### ValidateSchemaTask
+### ValidateSchemaTask [](id=validateschematask)
 
 Tasks of type `ValidateSchemaTask` extend [`SourceTask`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html),
 so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include(java.lang.Iterable))
@@ -186,7 +188,7 @@ are available.
 Tasks of this type invoke the [`schemavalidate`](http://ant.apache.org/manual/Tasks/schemavalidate.html)
 Ant task in order to validate XML files described by an XML schema.
 
-#### Task Properties
+#### Task Properties [](id=task-properties-0)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -194,11 +196,11 @@ Property Name | Type | Default Value | Description
 `fullChecking` | `boolean` | `true` | Whether to enable full schema checking.
 `lenient` | `boolean` | `false` | Whether to only check if the XML document is well-formed.
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use the TLDDoc Builder.
 
-### Tag Library Documentation Generator Dependency
+### Tag Library Documentation Generator Dependency [](id=tag-library-documentation-generator-dependency)
 
 By default, the plugin creates a configuration called `tlddoc` and adds a
 dependency to the 1.3 version of the Tag Library Documentation Generator. It is

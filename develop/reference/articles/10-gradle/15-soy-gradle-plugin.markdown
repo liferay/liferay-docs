@@ -1,11 +1,13 @@
-# Soy Gradle Plugin
+# Soy Gradle Plugin [](id=soy-gradle-plugin)
 
 The Soy Gradle plugin lets you compile [Closure Templates](https://developers.google.com/closure/templates/)
 into JavaScript functions. It also lets you use a custom localization mechanism
 in the generated `.soy.js` files by replacing [`goog.getMsg`](https://developers.google.com/closure/templates/docs/translation#closurecompiler)
 definitions with a different function call (e.g., `Liferay.Language.get`).
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -51,7 +53,7 @@ repositories {
 }
 ```
 
-## Soy Plugin
+## Soy Plugin [](id=soy-plugin)
 
 The Soy plugin adds one task to your project:
 
@@ -68,11 +70,11 @@ Property Name | Default Value
 [`includes`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:includes) | `["**/*.soy"]`
 [`source`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:source) | <p>**If the `java` plugin is applied:** The first `resources` directory of the `main` source set (by default, `src/main/resources`).</p><p>**Otherwise:** `[]`</p>
 
-### Additional Configuration
+### Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use the Soy library.
 
-#### Soy Dependency
+#### Soy Dependency [](id=soy-dependency)
 
 By default, the plugin creates a configuration called `soy` and adds a
 dependency to the `2015-04-10` version of the Soy library. It is possible to
@@ -85,7 +87,7 @@ dependencies {
 }
 ```
 
-## Soy Translation Plugin
+## Soy Translation Plugin [](id=soy-translation-plugin)
 
 The Soy Translation plugin adds one task to your project:
 
@@ -109,22 +111,22 @@ Property Name | Default Value
 [`replacementClosure`](#replacementclosure) | Replaces `goog.getMsg` definitions with `Liferay.Language.get` calls.
 [`source`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:source) | <p>**If the `java` plugin is applied:** `project.sourceSets.main.output.resourcesDir`</p><p>**Otherwise:** `[]`</p>
 
-## Tasks
+## Tasks [](id=tasks)
 
-### BuildSoyTask
+### BuildSoyTask [](id=buildsoytask)
 
 Tasks of type `BuildSoyTask` extend [`SourceTask`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html),
 so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include(java.lang.Iterable))
 and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude(java.lang.Iterable)),
 are available.
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `classpath` | [`FileCollection`](https://docs.gradle.org/current/javadoc/org/gradle/api/file/FileCollection.html) | [`project.configurations.soy`](#soy-dependency) | The classpath for executing the main class `com.google.template.soy.SoyToJsSrcCompiler`.
 
-### ReplaceSoyTranslationTask
+### ReplaceSoyTranslationTask [](id=replacesoytranslationtask)
 
 The `ReplaceSoyTranslationTask` task type finds all the `goog.getMsg`
 definitions in the project's files and replaces them with a custom function
@@ -146,7 +148,7 @@ so all its properties and methods, such as [`include`](https://docs.gradle.org/c
 and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude(java.lang.Iterable)),
 are available.
 
-#### Task Properties
+#### Task Properties [](id=task-properties-0)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------

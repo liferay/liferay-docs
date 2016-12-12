@@ -1,9 +1,11 @@
-# XSD Builder Gradle Plugin
+# XSD Builder Gradle Plugin [](id=xsd-builder-gradle-plugin)
 
 The XSD Builder Gradle plugin allows you to generate [Apache XMLBeans](https://xmlbeans.apache.org/)
 bindings from XML Schema (XSD) files.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -38,7 +40,7 @@ repositories {
 }
 ```
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds three tasks to your project:
 
@@ -57,7 +59,7 @@ plugin is applied, the task looks for XSD files in the
 `${project.webAppDir}/WEB-INF/xsd` directory, and saves the generated JAR file
 as `${project.webAppDir}/WEB-INF/lib/${project.archivesBaseName}-xbean.jar`.
 
-### BuildXSDTask
+### BuildXSDTask [](id=buildxsdtask)
 
 Tasks of type `BuildXSDTask` extend [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html).
 They also have the following properties set by default:
@@ -73,7 +75,7 @@ For each task of type `BuildXSDTask`, the following helper tasks are created:
 - `${buildXSDTask.name}Compile`
 - `${buildXSDTask.name}Generate`
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -81,11 +83,11 @@ Property Name | Type | Default Value | Description
 
 The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)).
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use the XSD Builder.
 
-### Apache XMLBeans Dependency
+### Apache XMLBeans Dependency [](id=apache-xmlbeans-dependency)
 
 By default, the XSD Builder Gradle plugin creates a configuration called
 `xsdBuilder` and adds a dependency to the 2.5.0 version of Apache XMLBeans. It

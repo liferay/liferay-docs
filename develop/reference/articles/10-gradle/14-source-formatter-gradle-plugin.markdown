@@ -1,10 +1,12 @@
-# Source Formatter Gradle Plugin
+# Source Formatter Gradle Plugin [](id=source-formatter-gradle-plugin)
 
 The Source Formatter Gradle plugin lets you format project files using the
 [Liferay Source Formatter](https://github.com/liferay/liferay-portal/tree/master/modules/util/source-formatter)
 tool.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -36,7 +38,7 @@ repositories {
 }
 ```
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds two tasks to your project:
 
@@ -68,7 +70,7 @@ subprojects {
 }
 ```
 
-### FormatSourceTask
+### FormatSourceTask [](id=formatsourcetask)
 
 Tasks of type `FormatSourceTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, like [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args(java.lang.Iterable))
@@ -81,7 +83,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.sourceFormatter`](#liferay-source-formatter-dependency)
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.source.formatter.SourceFormatter"`
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -103,11 +105,11 @@ Property Name | Type | Default Value | Description
 `throwException` | `boolean` | `false` | Whether to fail the build if formatting errors are found. It sets the `source.throw.exception` argument.
 `useProperties` | `boolean` | `false` | Whether to use a properties file and only format files that have been modified since the last time Source Formatter was executed. It sets the `source.use.properties` argument.
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use the Source Formatter.
 
-### Liferay Source Formatter Dependency
+### Liferay Source Formatter Dependency [](id=liferay-source-formatter-dependency)
 
 By default, the plugin creates a configuration called `sourceFormatter` and adds
 a dependency to the latest released version of Liferay Source Formatter. It is
@@ -120,7 +122,7 @@ dependencies {
 }
 ```
 
-### System Properties
+### System Properties [](id=system-properties)
 
 It is possible to set the default values of the `formatCurrentBranch`,
 `formatLatestAuthor`, and `formatLocalChanges` properties for a

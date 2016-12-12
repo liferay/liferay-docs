@@ -1,9 +1,11 @@
-# Deployment Helper Gradle Plugin
+# Deployment Helper Gradle Plugin [](id=deployment-helper-gradle-plugin)
 
 The Deployment Helper Gradle plugin lets you run the [Liferay Deployment Helper](https://github.com/liferay/liferay-portal/tree/master/modules/util/deployment-helper)
 tool to create a cluster deployable WAR from your OSGi artifacts.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -35,7 +37,7 @@ repositories {
 }
 ```
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds one task to your project:
 
@@ -43,7 +45,7 @@ Name | Depends On | Type | Description
 ---- | ---------- | ---- | -----------
 `buildDeploymentHelper` | \- | [`BuildDeploymentHelperTask`](#builddeploymenthelpertask) | Builds a WAR which contains one or more files that are copied once the WAR is deployed.
 
-### BuildDeploymentHelperTask
+### BuildDeploymentHelperTask [](id=builddeploymenthelpertask)
 
 Tasks of type `BuildDeploymentHelperTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args(java.lang.Iterable))
@@ -58,7 +60,7 @@ Property Name | Default Value
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.deployment.helper.DeploymentHelper"`
 [`outputFile`](#outputfile) | `"${project.buildDir}/${project.name}.war"`
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -69,18 +71,18 @@ Property Name | Type | Default Value | Description
 The properties of type `File` support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
 
-#### Task Methods
+#### Task Methods [](id=task-methods)
 
 Method | Description
 ------ | -----------
 `BuildDeploymentHelperTask deploymentFiles(Iterable<?> deploymentFiles)` | Adds files or directories to include in the WAR and copy once the WAR is deployed. The values are evaluated as per [`project.files`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:files(java.lang.Object[])).
 `BuildDeploymentHelperTask deploymentFiles(Object... deploymentFiles)` | Adds files or directories to include in the WAR and copy once the WAR is deployed. The values are evaluated as per [`project.files`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:files(java.lang.Object[])).
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use the Deployment Helper.
 
-### Liferay Deployment Helper Dependency
+### Liferay Deployment Helper Dependency [](id=liferay-deployment-helper-dependency)
 
 By default, the plugin creates a configuration called `deploymentHelper` and
 adds a dependency to the latest released version of the Liferay Deployment

@@ -14,31 +14,33 @@ To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options
 you can specify to help mold your project just the way you want it. To learn how
 to use the Blade `create` command and the many options it provides, enter `blade
-create -l` into a terminal. By running this command, all options for this
-command are displayed. A list of the `create` options are listed below:
+create -x` into a terminal. A list of the `create` options are listed below:
+
+<!-- The option `-x` is an arbitrary value; the only way to print create options
+in the terminal currently is to specify an option that does not exist. The
+option can be anything that doesn't already exist. When there's a specific value
+to prompt the list of options, I'll update the docs. -Cody -->
 
 - `-c, --classname <string>`: If a class is generated in the project, provide
   the name of the class to be generated. If not provided, the class name
   defaults to the project name.
+- `C, --contributorType <string>`: Identifies your module as a theme
+  contributor. This is also used to add the `Liferay-Theme-Contributor-Type` and
+  `Web-ContextPath` bundle headers to the BND file.
 - `-d, --dir <file>`: The directory to create the new project.
 - `-h, --hostbundlebsn <string>`: If a new JSP hook fragment needs to be
   created, provide the name of the host bundle symbolic name.
 - `-H, --hostbundleversion <string>`: If a new JSP hook fragment needs to be
   created, provide the name of the host bundle version.
+- `l, --listtemplates`: Prints a list of available project templates.
 - `-p, --packagename <string>`: The package name to use when creating the
   project.
-- `-s, --service <string>`: If a new DS component needs to be created, provide
-  the name of the service to be implemented. Note that in this context, the term
-  *service* refers to an OSGi service, not to a Liferay API.
+- `-s, --service <string>`: If a new Declarative Services (DS) component needs
+  to be created, provide the name of the service to be implemented. Note that in
+  this context, the term *service* refers to an OSGi service, not to a Liferay
+  API.
 - `-t, --template <template>`: The project template to use when creating the
-  project. The following templates are available:
-    - `activator`
-    - `fragment`
-    - `mvcportlet`
-    - `portlet`
-    - `service`
-    - `servicebuilder`
-    - `servicewrapper`
+  project. Run `blade create -l` for a listing of available Blade CLI templates.
 
 To create a module project, follow the following syntax:
 

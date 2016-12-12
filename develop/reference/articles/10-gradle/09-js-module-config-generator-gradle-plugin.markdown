@@ -1,11 +1,13 @@
-# JS Module Config Generator Gradle Plugin
+# JS Module Config Generator Gradle Plugin [](id=js-module-config-generator-gradle-plugin)
 
 The JS Module Config Generator Gradle plugin lets you run the
 [Liferay AMD Module Config Generator](https://github.com/liferay/liferay-module-config-generator)
 to generate the configuration file needed to load AMD files via combo loader in
 Liferay.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -29,7 +31,7 @@ The JS Module Config Generator plugin automatically applies the
 [`com.liferay.node`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-node)
 plugin.
 
-## Project Extension
+## Project Extension [](id=project-extension)
 
 The JS Module Config Generator plugin exposes the following properties through
 the extension named `jsModuleConfigGenerator`:
@@ -38,7 +40,7 @@ Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 <a name="version"></a>`version` | `String` | `"1.1.10"` | The version of the Liferay AMD Module Config Generator to use.
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds two tasks to your project:
 
@@ -76,7 +78,7 @@ If the [`com.liferay.js.transpiler`](https://github.com/liferay/liferay-portal/t
 plugin is applied, the `configJSModules` task is configured to always run after
 the `transpileJS` task.
 
-### ConfigJSModulesTask
+### ConfigJSModulesTask [](id=configjsmodulestask)
 
 Tasks of type `ConfigJSModulesTask` extend `ExecuteNodeScriptTask`, so all its
 properties and methods, such as `args`, `inheritProxy`, and `workingDir`, are
@@ -97,7 +99,7 @@ the included files in [`sourceDir`](#sourceDir). The generator processes these
 files and creates a configuration file in the location specified by the
 [`outputFile`](#outputfile) property.
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------

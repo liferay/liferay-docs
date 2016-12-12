@@ -1,9 +1,11 @@
-# Lang Builder Gradle Plugin
+# Lang Builder Gradle Plugin [](id=lang-builder-gradle-plugin)
 
 The Lang Builder Gradle plugin lets you run the [Liferay Lang Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/lang-builder)
 tool in order to sort and translate the language keys in your project.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -39,7 +41,7 @@ See [this page](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/a
 on the *Liferay Developer Network* for more information about usage of the Lang
 Builder Gradle plugin.
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds one task to your project:
 
@@ -55,7 +57,7 @@ Property Name | Default Value
 ------------- | -------------
 [`langDir`](#langdir) | <p>**If the `java` plugin is applied:** The directory `content` in the first `resources` directory of the `main` source set (by default: `src/main/resources/content`).</p><p>**Otherwise:** `null`</p>
 
-### BuildLangTask
+### BuildLangTask [](id=buildlangtask)
 
 Tasks of type `BuildLangTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args(java.lang.Iterable))
@@ -68,7 +70,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.langBuilder`](#liferay-lang-builder-dependency)
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.lang.builder.LangBuilder"`
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -85,11 +87,11 @@ The properties of type `File` support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use the Lang Builder.
 
-### Liferay Lang Builder Dependency
+### Liferay Lang Builder Dependency [](id=liferay-lang-builder-dependency)
 
 By default, the plugin creates a configuration called `langBuilder` and adds a
 dependency to the latest released version of the Liferay Lang Builder. It is

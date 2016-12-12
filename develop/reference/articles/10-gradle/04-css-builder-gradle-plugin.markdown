@@ -1,9 +1,11 @@
-# CSS Builder Gradle Plugin
+# CSS Builder Gradle Plugin [](id=css-builder-gradle-plugin)
 
 The CSS Builder Gradle plugin lets you run the [Liferay CSS Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/css-builder)
 tool in order to compile [Sass](http://sass-lang.com/) files in your project.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -35,7 +37,7 @@ repositories {
 }
 ```
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds one task to your project:
 
@@ -59,7 +61,7 @@ Property Name | Default Value
 ------------- | -------------
 [`docrootDir`](#docrootdir) | <p>**If the `java` plugin is applied:** The first `resources` directory of the `main` source set (by default: `src/main/resources`).</p><p>**If the `war` plugin is applied:** `project.webAppDir`.</p><p>**Otherwise:** `null`</p>
 
-### BuildCSSTask
+### BuildCSSTask [](id=buildcsstask)
 
 Tasks of type `BuildCSSTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args(java.css.Iterable))
@@ -73,7 +75,7 @@ Property Name | Default Value
 [`defaultCharacterEncoding`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/JavaExec.html#setDefaultCharacterEncoding(java.lang.String)) | `"UTF-8"`
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.css.builder.CSSBuilder"`
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -94,7 +96,7 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the `int`
 and `String` properties, to defer evaluation until task execution.
 
-#### Task Methods
+#### Task Methods [](id=task-methods)
 
 Method | Description
 ------ | -----------
@@ -103,11 +105,11 @@ Method | Description
 `BuildCSSTask rtlExcludedPathRegexps(Iterable<Object> rtlExcludedPathRegexps)` | Adds SCSS file patterns to exclude when converting for right-to-left (RTL) support.
 `BuildCSSTask rtlExcludedPathRegexps(Object... rtlExcludedPathRegexps)` | Adds SCSS file patterns to exclude when converting for right-to-left (RTL) support.
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use the CSS Builder.
 
-### Liferay CSS Builder Dependency
+### Liferay CSS Builder Dependency [](id=liferay-css-builder-dependency)
 
 By default, the plugin creates a configuration called `cssBuilder` and adds a
 dependency to the latest released version of the Liferay CSS Builder. It is
@@ -120,7 +122,7 @@ dependencies {
 }
 ```
 
-### Liferay Frontend Common CSS Dependency
+### Liferay Frontend Common CSS Dependency [](id=liferay-frontend-common-css-dependency)
 
 By default, the plugin creates a configuration called `portalCommonCSS` and adds
 a dependency to the latest released version of the Liferay Frontend Common CSS

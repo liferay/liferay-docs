@@ -133,8 +133,7 @@ $$$
 The following configuration options are available:
 
 **Cache Expiration Time**:  The time, in minutes, in which the SPA cache is
-cleared. A zero value means the cache should never expire during SPA navigation.
-A negative value means the cache should be disabled.
+cleared. A negative value means the cache should be disabled.
 
 **Request Timeout Time**: The time, in milliseconds, in which a SPA request
 times out. A zero value means the request should never timeout.

@@ -1,4 +1,4 @@
-# Jasper JSPC Gradle Plugin
+# Jasper JSPC Gradle Plugin [](id=jasper-jspc-gradle-plugin)
 
 The Jasper JSPC Gradle plugin lets you run the [Liferay Jasper JSPC](https://github.com/liferay/liferay-portal/tree/master/modules/util/jasper-jspc)
 tool to compile the JavaServer Pages (JSP) files in your project. This
@@ -7,7 +7,9 @@ can be useful to
 - check for errors in the JSP files.
 - pre-compile the JSP files for better performance.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -42,7 +44,7 @@ repositories {
 }
 ```
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds two tasks to your project:
 
@@ -70,7 +72,7 @@ Property Name | Default Value
 [`destinationDir`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html#org.gradle.api.tasks.compile.JavaCompile:destinationDir) | `compileJSP.temporaryDir`
 [`source`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html#org.gradle.api.tasks.compile.JavaCompile:source) | `generateJSPJava.outputs`
 
-### CompileJSPTask
+### CompileJSPTask [](id=compilejsptask)
 
 Tasks of type `CompileJSPTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args(java.css.Iterable))
@@ -81,7 +83,7 @@ Property Name | Default Value
 ------------- | -------------
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.jasper.jspc.JspC"`
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -92,11 +94,11 @@ Property Name | Type | Default Value | Description
 The properties of type `File` support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use Jasper JSPC.
 
-### JSP Compilation Classpath
+### JSP Compilation Classpath [](id=jsp-compilation-classpath)
 
 The plugin creates a configuration called `jspC` and adds several dependencies
 at the end of the configuration phase of the project:
@@ -108,7 +110,7 @@ at the end of the configuration phase of the project:
 If necessary, it is possible to add more dependencies to the `jspC`
 configuration.
 
-### Liferay Jasper JSPC Dependency
+### Liferay Jasper JSPC Dependency [](id=liferay-jasper-jspc-dependency)
 
 By default, the plugin creates a configuration called `jspCTool` and adds a
 dependency to the latest released version of the Liferay Jasper JSPC. It is

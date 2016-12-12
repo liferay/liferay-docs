@@ -1,9 +1,11 @@
-# Node Gradle Plugin
+# Node Gradle Plugin [](id=node-gradle-plugin)
 
 The Node Gradle plugin lets you run [Node.js](https://nodejs.org/) and
 [NPM](https://www.npmjs.com/) as part of your build.
 
-## Usage
+The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -23,7 +25,7 @@ buildscript {
 apply plugin: "com.liferay.node"
 ```
 
-## Project Extension
+## Project Extension [](id=project-extension)
 
 The Node Gradle plugin exposes the following properties through the extension
 named `node`:
@@ -57,7 +59,7 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for `String`,
 to defer evaluation until execution.
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds two tasks to your project:
 
@@ -66,11 +68,11 @@ Name | Depends On | Type | Description
 <a name="downloadnode"></a>`downloadNode` | \- | [`DownloadNodeTask`](#downloadnodetask) | Downloads and unpacks the local Node.js distribution for the project. If `node.download` is `false`, this task is disabled.
 `npmInstall` | `downloadNode` | [`NpmInstallTask`](#npminstalltask) | Runs `npm install` to install the dependencies declared in the project's `package.json` file, if present.
 
-### DownloadNodeTask
+### DownloadNodeTask [](id=downloadnodetask)
 
 The purpose of this task is to download and unpack a Node.js distribution.
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -82,12 +84,12 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-### ExecuteNodeTask
+### ExecuteNodeTask [](id=executenodetask)
 
 This is the base task to run Node.js in a Gradle build. All tasks of type
 `ExecuteNodeTask` automatically depend on [`downloadNode`](#downloadnode).
 
-#### Task Properties
+#### Task Properties [](id=task-properties-0)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -103,19 +105,19 @@ The properties of type `File` support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
 
-#### Task Methods
+#### Task Methods [](id=task-methods)
 
 Method | Description
 ------ | -----------
 `ExecuteNodeTask args(Iterable<?> args)` | Adds arguments for the Node.js invocation.
 `ExecuteNodeTask args(Object... args)` | Adds arguments for the Node.js invocation.
 
-### ExecuteNodeScriptTask
+### ExecuteNodeScriptTask [](id=executenodescripttask)
 
 The purpose of this task is to execute a Node.js script. Tasks of type
 `ExecuteNodeScriptTask` extend [`ExecuteNodeTask`](#executenodetask).
 
-#### Task Properties
+#### Task Properties [](id=task-properties-1)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -124,7 +126,7 @@ Property Name | Type | Default Value | Description
 The properties of type `File` support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
 
-### ExecuteNpmTask
+### ExecuteNpmTask [](id=executenpmtask)
 
 The purpose of this task is to execute an NPM command. Tasks of type
 `ExecuteNpmTask` extend [`ExecuteNodeScriptTask`](#executenodescripttask) with
@@ -135,7 +137,7 @@ Property Name | Default Value
 `command` | <p>**If `nodeDir` is `null`:** `"npm"`</p><p>**Otherwise:** `"node"`
 `scriptFile` | <p>**If `nodeDir` is `null`:** `null`</p><p>**Otherwise:** `"${nodeDir}/lib/node_modules/npm/bin/npm-cli.js"`
 
-#### Task Properties
+#### Task Properties [](id=task-properties-2)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -147,7 +149,7 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-### DownloadNodeModuleTask
+### DownloadNodeModuleTask [](id=downloadnodemoduletask)
 
 The purpose of this task is to download a Node.js package. The packages are
 downloaded in the `${workingDir}/node_modules` directory, which is equal, by
@@ -159,7 +161,7 @@ execute the command `npm install ${moduleName}@${moduleVersion}`.
 `package.json` file already lists a module with the same name in its
 `dependencies` or `devDependencies` object.
 
-#### Task Properties
+#### Task Properties [](id=task-properties-3)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -169,7 +171,7 @@ Property Name | Type | Default Value | Description
 It is possible to use Closures and Callables as values for the `String`
 properties, to defer evaluation until task execution.
 
-### NpmInstallTask
+### NpmInstallTask [](id=npminstalltask)
 
 Purpose of these tasks is to install the dependencies declared in a
 `package.json` file. Tasks of type `NpmInstallTask` extend
@@ -178,7 +180,7 @@ Purpose of these tasks is to install the dependencies declared in a
 `NpmInstallTask` instances are automatically disabled if the `package.json` file
 does not declare any dependency in the `dependency` or `devDependencies` object.
 
-#### Task Properties
+#### Task Properties [](id=task-properties-4)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -189,7 +191,7 @@ Property Name | Type | Default Value | Description
 
 The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
 
-### PublishNodeModuleTask
+### PublishNodeModuleTask [](id=publishnodemoduletask)
 
 The purpose of this task is to publish a package to the
 [NPM registry](#https://www.npmjs.com/). Tasks of type `PublishNodeModuleTask`
@@ -201,7 +203,7 @@ project directory, based on the values provided for the task properties. If the
 project already includes a custom `package.json` file, it is easier to use
 `npm publish` directly.
 
-#### Task Properties
+#### Task Properties [](id=task-properties-5)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
