@@ -257,9 +257,9 @@ to the OSGi framework as the module's upgrade step registrator. The attribute
 `immediate = true` tells the OSGi framework to activate this module immediately
 after it's installed. 
 
-The registrator implements the [`UpgradeStepRegistrator` interface](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal/com.liferay.portal.upgrade/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html),
-which is in the [`com.liferay.portal.upgrade` module](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.upgrade/).
-The interface declares a [`register` method](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal/com.liferay.portal.upgrade/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html)
+The registrator implements the [`UpgradeStepRegistrator` interface](@app-ref@/foundation/latest/javadocs/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html),
+which is in the `com.liferay.portal.upgrade` module. The interface declares a
+[`register` method](@app-ref@/foundation/latest/javadocs/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html#register-com.liferay.portal.upgrade.registry.UpgradeStepRegistrator.Registry-)
 that the registrator must override. In that method, the registrator implements
 all the module's upgrade registrations. 
 
