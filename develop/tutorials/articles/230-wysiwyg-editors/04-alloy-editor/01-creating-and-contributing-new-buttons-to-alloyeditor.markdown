@@ -297,6 +297,6 @@ AlloyEditor!
 
 ## Related Topics [](id=related-topics)
 
-[Adding a WYSIWYG Editor to a Custom Portlet](/develop/tutorials/-/knowledge_base/7-0/adding-a-wysiwyg-editor-to-a-custom-portlet)
+[Adding a WYSIWYG Editor to a Portlet](/develop/tutorials/-/knowledge_base/7-0/adding-a-wysiwyg-editor-to-a-portlet)
 
 [Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration)

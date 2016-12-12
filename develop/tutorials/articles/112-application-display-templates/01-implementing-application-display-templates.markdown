@@ -250,6 +250,6 @@ for using ADTs, which included security and performance.
 
 [Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
 
-[Frontend Customizations](/develop/tutorials/-/knowledge_base/7-0/frontend-customizations)
+[Liferay JavaScript APIs](/develop/tutorials/-/knowledge_base/7-0/liferay-javascript-apis)
 
 [Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)

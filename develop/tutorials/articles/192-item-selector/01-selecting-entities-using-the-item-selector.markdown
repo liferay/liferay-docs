@@ -270,4 +270,4 @@ item. Using Item Selector API, you can give app users the power of choice!
 
 [Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework)
 
-[Frontend Building Blocks](/develop/tutorials/-/knowledge_base/7-0/frontend-building-blocks)
+[Front-End Taglibs](/develop/tutorials/-/knowledge_base/7-0/front-end-taglibs)

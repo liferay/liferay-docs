@@ -37,7 +37,7 @@ $$$
 
 In this tutorial, you'll learn how to create your own entries to customize the
 Control Menu. Make sure to read the
-[Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-categories
+[Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-categories)
 before beginning this tutorial. This tutorial assumes you have knowledge on
 creating a panel category. You'll begin by creating an entry for the Control
 Menu.
