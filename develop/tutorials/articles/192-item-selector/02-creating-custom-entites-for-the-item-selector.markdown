@@ -12,7 +12,7 @@ Go ahead and get started.
 First, you must create a new criterion for your entity. Follow these steps to 
 create an Item Selector criterion:
 
-1.  Create a class that extends `BaseItemSelectorCriterion`.
+1.  Create a class that extends the [`BaseItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterion.html).
 
     The example below creates a class called `TaskItemSelectorCriterion`:
 
@@ -21,10 +21,32 @@ create an Item Selector criterion:
         
         }
         
-    This class acts as an identifier for Item Selector.
+    This class specifies what kind of entity the user is selecting and what
+    information the Item Selector should return. The methods inherited from the 
+    `BaseItemSelectorCriterion` class provide the logic for obtaining this 
+    information:
+    
+        public abstract class BaseItemSelectorCriterion
+                implements ItemSelectorCriterion {
+        
+                @Override
+                public List<ItemSelectorReturnType> getDesiredItemSelectorReturnTypes() {
+                        return _desiredItemSelectorReturnTypes;
+                }
+        
+                @Override
+                public void setDesiredItemSelectorReturnTypes(
+                        List<ItemSelectorReturnType> desiredItemSelectorReturnTypes) {
+        
+                        _desiredItemSelectorReturnTypes = desiredItemSelectorReturnTypes;
+                }
+        
+                private List<ItemSelectorReturnType> _desiredItemSelectorReturnTypes;
+        
+        }
 
     Note that you can use this class to pass information to the view if
-    needed. For example, the [JournalItemSelectorCriterion](https://github.com/liferay/liferay-portal/blob/586f66c629b559e79c744559751ecb960218fe0b/modules/apps/web-experience/journal/journal-item-selector-api/src/main/java/com/liferay/journal/item/selector/criterion/JournalItemSelectorCriterion.java)
+    needed. For example, the [`JournalItemSelectorCriterion` class](@app-ref@/web-experience/latest/javadocs/com/liferay/journal/item/selector/criterion/JournalItemSelectorCriterion.html)
     passes information about the primary key so the view can use it:
 
         public class JournalItemSelectorCriterion extends 
@@ -56,12 +78,13 @@ create an Item Selector criterion:
     
     $$$
 
-2.  Create an OSGi component class that implements 
-    `BaseItemSelectorCriterionHandler`. Each criterion requires a criterion 
-    handler, which is responsible for obtaining the proper selection view.
+2.  Create an OSGi component class that implements the 
+    [`BaseItemSelectorCriterionHandler` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterionHandler.html). 
+    Each criterion requires a criterion handler, which is responsible for 
+    obtaining the proper selection view.
 
     The example below creates a criterion handler for the 
-    `TaskItemSelectorCriterion`:
+    `TaskItemSelectorCriterion` class:
 
         @Component(service = ItemSelectorCriterionHandler.class)
         public class TaskItemSelectorCriterionHandler extends 
@@ -71,7 +94,7 @@ create an Item Selector criterion:
             getItemSelectorCriterionClass() {
                 return TasksItemSelectorCriterionHandler.class;
             }
-            
+
             @Activate
             @Override
             protected void activate(BundleContext bundleContext) {
@@ -82,10 +105,10 @@ create an Item Selector criterion:
         
     The @Activate and @Override tokens are required to activate this OSGi 
     component.
-    
+
 Depending on the needs of your app, you may not need to create a return type. If
 your entity returns information that is already defined by an existing return
-type, you can use that return type.
+type, you can use that return type instead.
 
 You can view the default available criteria in the 
 [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types) 
@@ -96,20 +119,31 @@ return type, you'll need to create a new return type next.
 
 ## Creating Item Selector Return Types [](id=creating-item-selector-return-types)
 
-To create a return type, you must create a class that implements 
-`ItemSelectorReturnType`.
+To create a return type, you must create a class that implements the 
+[`ItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html).
 
 The example below creates a new return type called `TaskItemSelectorReturnType`:
 
-    public class TasksItemSelectorReturnType implements ItemSelectorReturnType{
+    /**
+    * This return type should return the task ID and the user who
+    * created the task as a string.
+    *
+    * @author Joe Bloggs
+    */
+    public class TaskItemSelectorReturnType implements ItemSelectorReturnType{
     
     }
     
-Note that you can create a new return type for each piece of information that 
-your entity should return, but you can also create one return type to identify
-all the information if you wish. Like the `*ItemSelectorCriterion` class, **the 
-`*ItemSelectorReturnType` class is simply used as an identifier by the Item 
-Selector, and does not actually return any information itself.**
+The `*ItemSelectorReturnType` class is simply used as an identifier by the Item 
+Selector, and does not actually return any information itself. You should 
+determine the information you expect 
+returned(an ID, a URL, a more complex object, etc.), and create a return type to 
+handle that information.  The return type is an API that connects the return 
+type to the Item Selector views. **Whenever the return type is 
+used(no matter the use case), the view must ensure that the proper information 
+is returned.** It's recommended that you specify the information that the return 
+type will return, as well as the format, as 
+javadoc(as shown in the example above).
 
 So far, you've created an API that you can use to create a selection view for 
 your new entity. The entity's criterion and return type classes will be 
