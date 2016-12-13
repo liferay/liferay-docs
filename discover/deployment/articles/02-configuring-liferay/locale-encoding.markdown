@@ -8,9 +8,9 @@ There are certain levels where the time zones can be set: in the JVM and in the 
 #### Setting Time Zones in the Control Panel
 
 To customize the @product@'s default languages and time zones, administrators can make changes at the Instance level. 
-1. Navigate to the Control Panel > Configuration
-1. Click Instance Settings
-1. Click on the Miscellaneous tab
+1. Navigate to the Control Panel > Configuration    
+1. Click Instance Settings    
+1. Click on the Miscellaneous tab    
 
 ![instance-locales](../../../deployment/images/instance-locales.png)
 
@@ -29,7 +29,7 @@ Another possible way is to do so at the JVM level. However, users will encounter
   
 ### Friendly URLs and Locales
 
-In additional to configuring @Product@'s instance settings, users can also provide unique URLs for specific languages using the `I18nServlet`. Go to `/WEB-INF/web.xml`.
+In additional to configuring @Product@'s instance settings, users can also provide unique URLs for specific languages using the `I18nServlet`. Go to `../ROOT/WEB-INF/web.xml`.
 
 	<servlet-mapping>
 		<servlet-name>I18n Servlet</servlet-name>
@@ -70,4 +70,4 @@ Beginning in @product@, users have the ability to change the prefix and suffix v
 	lang.user.name.prefix.values=Sr,Sra,Sta,Dr,Dra
 	lang.user.name.required.field.names=last-name
 
-For more information, see [Using Liferay Language Settings Tutorial](https://customer.liferay.com/documentation/7.0/develop/tutorials/-/official_documentation/tutorials/using-liferays-language-settings)
+For more information, see [Using Liferay Language Settings Tutorial](https://customer.liferay.com/documentation/7.0/develop/tutorials/-/official_documentation/tutorials/using-liferays-language-settings).
