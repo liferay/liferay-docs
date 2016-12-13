@@ -286,7 +286,7 @@ including the theme.
 <!-- Add following sentence when this section is available (App not available
 for CE) -Cody:
 The set up for this option is explained in the
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-site-pages-to-mobile-devices)
+[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-pages-on-mobile-devices)
 section.
 -->
 
