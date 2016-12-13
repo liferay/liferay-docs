@@ -57,11 +57,11 @@ initiate your custom export/import or staging process.
                     exportLayoutSettingsMap);
 
     This example uses the
-    [ExportImportConfigurationSettingsMapFactory](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationSettingsMapFactory.java)
+    [ExportImportConfigurationSettingsMapFactory](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationSettingsMapFactory.html)
     to create a layout export settings map. Then this map is used as a parameter
     to create an `ExportImportConfiguration` by calling an *add* method in the
     entity's local service interface. The
-    [ExportImportConfigurationLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/service/ExportImportConfigurationLocalService.java)
+    [ExportImportConfigurationLocalService](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportConfigurationLocalService.html)
     provides several useful methods to create and modify your custom
     `ExportImportConfiguration`.
 
@@ -69,25 +69,25 @@ initiate your custom export/import or staging process.
     methods to create settings maps for various scenarios, like importing,
     exporting, and publishing layouts and portlets. For examples of this
     particular scenario, you can reference
-    [UserGroupLocalServiceImpl.exportLayouts(...)](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/service/impl/UserGroupLocalServiceImpl.java)
-    and [GroupLocalServiceImpl.addDefaultGuestPublicLayoutsByLAR(...)](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/service/impl/GroupLocalServiceImpl.java).
+    [UserGroupLocalServiceImpl.exportLayouts(...)](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portal/service/impl/UserGroupLocalServiceImpl.html#exportLayouts-long-java.util.Map-)
+    and [GroupLocalServiceImpl.addDefaultGuestPublicLayoutsByLAR(...)](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portal/service/impl/GroupLocalServiceImpl.html#addDefaultGuestPublicLayoutsByLAR-com.liferay.portal.kernel.model.Group-java.io.File-).
 
     There are two other important factories provided by this framework that are
     useful during the creation of `ExportImportConfiguration` objects:
 
-    - [ExportImportConfigurationFactory](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationFactory.java):
+    - [ExportImportConfigurationFactory](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationFactory.html):
       This factory is used to build `ExportImportConfiguration` objects used
       for default local/remote publishing.
-    - [ExportImportConfigurationParameterMapFactory](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationParameterMapFactory.java):
+    - [ExportImportConfigurationParameterMapFactory](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationParameterMapFactory.html):
       This factory is used to build parameter maps, which are required during
       export/import and publishing.
 
 2.  Call the appropriate service to initiate the export/import or staging
     process. There are two important service interfaces that you can use in the
     cases of exporting, importing, and staging:
-    [ExportImportLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/service/ExportImportLocalService.java)
+    [ExportImportLocalService](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportLocalService.html)
     and
-    [StagingLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/service/StagingLocalService.java).
+    [StagingLocalService](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/StagingLocalService.html).
     In the previous step's example code snippet, you created an
     `ExportImportConfiguration` object intended for exporting layouts. Here's
     how to initiate that process: 
