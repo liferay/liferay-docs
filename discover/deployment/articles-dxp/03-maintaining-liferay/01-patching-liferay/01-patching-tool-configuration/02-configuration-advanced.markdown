@@ -14,7 +14,7 @@ The properties above (described fully [below](#using-profiles-with-the-patching-
 define the location of Liferay Home, the patching mode
 (binary or source), the path to where WAR files are deployed in the app server,
 and the global library path. If auto-discovery found your Liferay Home folder,
-the location of Liferay's OSGi-based module framework can be calculated from
+the location of @product@'s OSGi-based module framework can be calculated from
 this. If, however, you customized the folder structure, you'll have to specify
 manually the following properties: 
 
@@ -34,9 +34,9 @@ should know where they are.
 When you ran the auto-discovery task after installing the Patching Tool, it
 created a default profile that points to the application server it discovered.
 This is the easiest way to use the Patching Tool, and is great for smaller,
-single server installations. But many Liferay installations are sized to serve
+single server installations. But many @product@ installations are sized to serve
 millions of pages per day, and the Patching Tool has been designed for this as
-well. So if you're running a small, medium, or large cluster of Liferay
+well. So if you're running a small, medium, or large cluster of @product@
 machines, you can use the Patching Tool to manage all of them using profiles. 
 
 The auto-discovery task creates a properties file called `default.properties`.
@@ -61,17 +61,17 @@ Below is a description of all the supported properties.
 ## Configuration Properties [](id=configuration-properties)
 
 **patching.mode:** This can be `binary` (the default) or `source`, if you're
-patching a source tree. Liferay patches contain both binary and source patches.
-If your development team is extending Liferay, you'll want to provide the
+patching a source tree. @product@ patches contain both binary and source patches.
+If your development team is extending @product@, you'll want to provide the
 patches you install to your development team so they can patch their source
 tree. 
 
 **patches.folder:** Specify the location where you'll copy your patches. By
 default, this is `./patches`. 
 
-**war.path:** Specify the location of the Liferay installation inside your
+**war.path:** Specify the location of the @product@ installation inside your
 application server.  Alternatively, you can specify a .war file here, and you
-can patch a Liferay .war for installation to your application server. 
+can patch a @product@ .war for installation to your application server. 
 
 **global.lib.path:** Specify the location where `.jar` files on the global
 classpath are stored. If you're not sure, search for your `portal-kernel.jar`
@@ -81,12 +81,12 @@ file; it's on the global classpath. This property is only valid if your
 **liferay.home:** Specify the location where by default the `data`,
 `osgi`, and `tools` folders reside.
 
-**source.path:** Specify the location of your Liferay source tree. This property
+**source.path:** Specify the location of your @product@ source tree. This property
 is only valid if your `patching.mode` is `source`. 
 
 +$$$
 
-**Note:** To patch the Liferay Digital Enterprise source code, please upgrade to
+**Note:** To patch the @product-ver@ source code, please upgrade to
 Patching Tool 2.0.4+.
 
 $$$ 

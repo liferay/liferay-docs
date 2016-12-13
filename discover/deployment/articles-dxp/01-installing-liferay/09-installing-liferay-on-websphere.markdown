@@ -1,4 +1,4 @@
-# Installing Liferay DXP on WebSphere 8.5.5 [](id=installing-liferay-dxp-on-websphere-8-5-5)
+# Installing @product@ on WebSphere 8.5.5 [](id=installing-liferay-dxp-on-websphere-8-5-5)
 
 +$$$
 
@@ -8,45 +8,45 @@ intermittently to save your changes.
 
 $$$
 
-For Liferay DXP to work correctly, WebSphere 8.5.5 Fix Pack 9 must be installed. 
+For @product@ to work correctly, WebSphere 8.5.5 Fix Pack 9 must be installed. 
 You can find more information about this fix pack 
 [here](http://www-01.ibm.com/support/docview.wss?uid=swg24041819). 
 
 Please also note that the WebSphere Application Liberty Profile isn't supported
-by Liferay. 
+by @product@. 
 
 You should also read the following articles to familiarize yourself with
-Liferay DXP's general installation steps: 
+@product@'s general installation steps: 
 
-- [Liferay Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
-- [Installing Liferay DXP](/discover/deployment/-/knowledge_base/7-0/installing-liferay-dxp)
-- [Installing Liferay Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
+- [@product@ Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
+- [Installing @product@](/discover/deployment/-/knowledge_base/7-0/installing-liferay-dxp)
+- [Installing @product@ Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
 
 Note that the 
 [*Liferay Home* folder](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
-is important to the operation of DXP. In Liferay Home, DXP creates certain files 
+is important to the operation of @product@. In Liferay Home, @product@ creates certain files 
 and folders that it needs to run. On WebSphere, Liferay Home is typically 
 `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
 
-And lastly, download Liferay DXP's WAR file and dependencies from the customer 
+And lastly, download @product@'s WAR file and dependencies from the customer 
 portal on 
 [liferay.com](https://www.liferay.com/). 
 You'll need the following files:
 
-- `liferay-dxp-digital-enterprise-[version].war`: Liferay DXP WAR file
+- `liferay-dxp-digital-enterprise-[version].war`: @product@ WAR file
 
-- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: Liferay DXP 
+- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: @product@ 
   dependencies
 
-- `liferay-dxp-digital-enterprise-osgi-[version].zip`: Liferay DXP OSGi 
+- `liferay-dxp-digital-enterprise-osgi-[version].zip`: @product@ OSGi 
   dependencies
 
-Without any further ado, get ready to install Liferay DXP in WebSphere! 
+Without any further ado, get ready to install @product@ in WebSphere! 
 
-## Preparing WebSphere for Liferay DXP [](id=preparing-websphere-for-liferay-dxp)
+## Preparing WebSphere for @product@ [](id=preparing-websphere-for-liferay-dxp)
 
 When the application server binaries have been installed, start the *Profile
-Management Tool* to create a profile appropriate for Liferay. 
+Management Tool* to create a profile appropriate for @product@. 
 
 1. Click *Create...*, choose *Application Server*, and then click *Next*. 
 
@@ -107,7 +107,7 @@ a few things you need to configure in your application server.
 
 In this version of WebSphere, servlet filters are not initialized on web
 application startup, but rather, on first access. This can cause problems when
-deploying certain apps to Liferay DXP. To configure servlet filters to 
+deploying certain apps to @product@. To configure servlet filters to 
 initialize on application startup (i.e., deployment), you need to set the 
 following `webcontainer` custom properties in your WebSphere application server: 
 
@@ -118,8 +118,8 @@ To set `webcontainer` custom properties in the WebSphere application server,
 follow the instructions 
 [here in WebSphere's documentation](http://www-01.ibm.com/support/docview.wss?rss=180&uid=swg21284395). 
 
-Next, in the WebSphere profile you created for Liferay, you must set an argument 
-that supports Liferay DXP's Java memory requirements. Do this now using the 
+Next, in the WebSphere profile you created for @product@, you must set an argument 
+that supports @product@'s Java memory requirements. Do this now using the 
 following instructions: 
 
 - `[Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/nodes/your-node/servers/your-server/server.xml`: 
@@ -128,18 +128,18 @@ following instructions:
         <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ... maximumHeapSize="1024">
 
 Lastly, in the same profile, you should delete a problematic 
-`secureSessionCookie` tag that can cause DXP startup errors. Do this now using 
+`secureSessionCookie` tag that can cause @product@ startup errors. Do this now using 
 the following instructions: 
 
 - `[Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/cell.xml`: 
   Delete the `secureSessionCookie` tag containing 
   `xmi:id="SecureSessionCookie_1"`. 
 
-Great! Now you're ready to install Liferay DXP. 
+Great! Now you're ready to install @product@. 
 
-## Installing Liferay DXP's Dependencies [](id=installing-liferay-dxps-dependencies)
+## Installing @product@'s Dependencies [](id=installing-liferay-dxps-dependencies)
 
-You must now install Liferay DXP's dependencies. Recall that earlier you 
+You must now install @product@'s dependencies. Recall that earlier you 
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
@@ -154,20 +154,20 @@ now:
    `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
 
 Once you've installed these dependencies, start the server profile you created 
-for Liferay DXP. Once it starts, you're ready to configure your database. 
+for @product@. Once it starts, you're ready to configure your database. 
 
 ## Database Configuration [](id=database-configuration)
 
 If you want WebSphere to manage the database connections, follow the 
 instructions below. Note this is not necessary if you're planning on using 
-Liferay's standard database configuration; in that case, skip this section. 
-You'll set your database information in Liferay DXP's setup wizard after the 
+@product@'s standard database configuration; in that case, skip this section. 
+You'll set your database information in @product@'s setup wizard after the 
 install. 
 
 +$$$
 
-**Note:** Although Liferay DXP's default database is fine for testing purposes, 
-you **should not** use it for production Liferay DXP instances. 
+**Note:** Although @product@'s default database is fine for testing purposes, 
+you **should not** use it for production @product@ instances. 
 
 $$$
 
@@ -232,7 +232,7 @@ Once you've set up your database, you can set up your mail session.
 ## Mail Configuration [](id=mail-configuration)
 
 If you want WebSphere to manage your mail sessions, use the following procedure.
-If you want to use Liferay's built-in mail sessions, you can skip this section. 
+If you want to use @product@'s built-in mail sessions, you can skip this section. 
 
 1. Click *Resources &rarr; Mail &rarr; Mail Providers*.
 
@@ -258,41 +258,41 @@ Note that you may also need to retrieve a SSL certificate from your mail server
 and add it to WebSphere's trust store. See WebSphere's documentation for 
 instructions on this. 
 
-## Deploy Liferay DXP [](id=deploy-liferay-dxp)
+## Deploy @product@ [](id=deploy-liferay-dxp)
 
-Now you're ready to deploy Liferay DXP! Use these instructions to do so:
+Now you're ready to deploy @product@! Use these instructions to do so:
 
 1. In WebSphere's administrative console, click *Applications* &rarr; *New 
    Application* &rarr; *New Enterprise Application*. 
 
-2. Browse to the DXP `.war` file and click *Next*. 
+2. Browse to the @product@ `.war` file and click *Next*. 
 
 3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
    Application* has been checked, and click *Next* again. 
 
-4. Choose the WebSphere runtimes and/or clusters where you want DXP deployed. 
+4. Choose the WebSphere runtimes and/or clusters where you want @product@ deployed. 
    Click *Next*. 
 
-5. Select the virtual host to deploy DXP on, and click *Next*. 
+5. Select the virtual host to deploy @product@ on, and click *Next*. 
 
-6. Map DXP to the root context (/) and click *Next*. 
+6. Map @product@ to the root context (/) and click *Next*. 
 
 7. Select the *metadata-complete attribute* setting that you want to use, and 
    click *Next*. 
 
 8. Ensure that you have made all the correct choices and click *Finish*. When
-   DXP has installed, click *Save to Master Configuration*. 
+   @product@ has installed, click *Save to Master Configuration*. 
 
     ![Figure 4: Review your deployment options before deploying.](../../images-dxp/websphere-deploy-dxp.png)
 
-You've now installed Liferay DXP!
+You've now installed @product@!
 
 ## Enable Security for Portal Access Control Lists [](id=enable-security-for-portal-access-control-lists)
 
 When you are ready to start using apps from Liferay Marketplace, you'll want to 
 protect your portal and your WebSphere server from security threats. To do so, 
 you must enable Java Security on your WebSphere server and specify a security 
-policy to grant Liferay DXP access to your server. 
+policy to grant @product@ access to your server. 
 
 In WebSphere's administrative console, go to *Security* &rarr; 
 *Global Security*. Check the box to enable Java 2 security, and click *Apply*. 
@@ -315,11 +315,11 @@ Replace this file's contents with the following:
 This configuration opens all permissions--you can fine-tune your policy's 
 permissions later. 
 
-Great! Now you're ready to start Liferay. 
+Great! Now you're ready to start @product@. 
 
-## Start Liferay DXP [](id=start-liferay-dxp)
+## Start @product@ [](id=start-liferay-dxp)
 
-1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish
+1. If you plan to use @product@'s setup wizard, skip to the next step. If you wish
    to use WebSphere's data source and mail session, create a file called
    `portal-ext.properties` in your Liferay Home folder. Place the following text
    in the file: 
@@ -329,12 +329,12 @@ Great! Now you're ready to start Liferay.
         setup.wizard.enabled=false
 
 2. In the WebSphere administrative console, navigate to *Enterprise 
-   Applications*, select the Liferay DXP application, and click *Start*. While 
-   DXP is starting, WebSphere displays a spinny little graphic. Don't watch it 
+   Applications*, select the @product@ application, and click *Start*. While 
+   @product@ is starting, WebSphere displays a spinny little graphic. Don't watch it 
    too closely, or you might get hypnotized. 
 
-3. In DXP's setup wizard, select and configure your database type. Click 
-   *Finish* when you're done. Liferay then creates the tables it needs in the 
+3. In @product@'s setup wizard, select and configure your database type. Click 
+   *Finish* when you're done. @product@ then creates the tables it needs in the 
    database. 
 
-Congratulations! You've installed Liferay on WebSphere!
+Congratulations! You've installed @product@ on WebSphere!
