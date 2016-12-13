@@ -7,7 +7,7 @@ There are certain levels where the time zones can be set: in the JVM and in the 
 
 #### Setting Time Zones in the Control Panel
 
-To customize the @product@'s default languages and time zones, administrators can make changes at the Instance level. 
+To customize the @product@'s default languages and time zones, administrators can make changes at the Instance level.    
 1. Navigate to the Control Panel > Configuration    
 1. Click Instance Settings    
 1. Click on the Miscellaneous tab    
