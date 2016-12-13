@@ -6,7 +6,7 @@ There are two ways to configure the Patching Tool:
 
 2. Manually by editing the configuration file (see the Advanced Configuration section)
 
-Automatic configuration generates the configuration files by looking for Liferay
+Automatic configuration generates the configuration files by looking for @product@
 files in the file system. By default the Patching Tool looks for the @product@
 files in the parent folder. To start the process run
 

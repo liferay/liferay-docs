@@ -1,8 +1,8 @@
-# Installing patches on the Liferay DE WAR [](id=installing-patches-on-the-liferay-de-war)
+# Installing patches on the @product-ver@ WAR [](id=installing-patches-on-the-liferay-de-war)
 
-Because of your app server choice, you may not be able to patch the Liferay
+Because of your app server choice, you may not be able to patch the @product@
 instance that's installed, because the files aren't available on the file
-system. Instead, you must patch the Liferay DE WAR file and then re-deploy it.
+system. Instead, you must patch the @product@ WAR file and then re-deploy it.
 This tutorial shows you how to do that. 
 
 ## Prerequisites [](id=prerequisites)
@@ -10,12 +10,12 @@ This tutorial shows you how to do that.
 Download the necessary artifacts from the 
 [Customer Portal:](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
 
-- Digital Enterprise WAR (liferay-dxp-digital-enterprise-[version].war)
+- @product@ WAR (liferay-dxp-digital-enterprise-[version].war)
 - OSGi dependencies (liferay-dxp-digital-enterprise-dependencies-[version].zip)
 - Additional dependencies (liferay-dxp-digital-enterprise-osgi-[version].zip)
 - Latest Patching Tool
 
-## How to Install a Fix Pack on the Liferay WAR [](id=how-to-install-a-fix-pack-on-the-liferay-war)
+## How to Install a Fix Pack on the @product@ WAR [](id=how-to-install-a-fix-pack-on-the-liferay-war)
 
 1.  Create a folder and unzip the dependency artifacts and the Patching Tool
     into it. Content of this folder should look like this:	
@@ -81,9 +81,9 @@ deployed on any supported Application Server.
 
 [Patching Tool Advanced Configuration](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-tool-advanced-configuration)
 
-[Deploying Liferay DXP](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/deploying-liferay-dxp)
+[Deploying @product@](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/deploying-liferay-dxp)
 
-[Installing Liferay DXP on WebLogic 12c R2](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp-on-weblogic-12c-r2)
+[Installing @product@ on WebLogic 12c R2](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp-on-weblogic-12c-r2)
 
-[Installing Liferay DXP on WebSphere 8.5.5](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp-on-websphere-8-5-5)
+[Installing @product@ on WebSphere 8.5.5](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp-on-websphere-8-5-5)
 
