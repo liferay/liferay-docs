@@ -1,4 +1,4 @@
-# Creating Custom Entities for the Item Selector [](id=creating-custom-entities-for-the-item-selector)
+# Creating Custom Item Selector Entities [](id=creating-custom-item-selector-entities)
 
 So, your app requires users to select an item that the Item Selector isn't 
 configured for? No problem. You can create a new entity.
@@ -134,16 +134,16 @@ The example below creates a new return type called `TaskItemSelectorReturnType`:
     
     }
     
-The `*ItemSelectorReturnType` class is simply used as an identifier by the Item 
-Selector, and does not actually return any information itself. You should 
+The `*ItemSelectorReturnType` class is used as an identifier by the Item 
+Selector, and does not return any information itself. You should 
 determine the information you expect 
 returned(an ID, a URL, a more complex object, etc.), and create a return type to 
-handle that information.  The return type is an API that connects the return 
-type to the Item Selector views. **Whenever the return type is 
-used(no matter the use case), the view must ensure that the proper information 
-is returned.** It's recommended that you specify the information that the return 
-type will return, as well as the format, as 
-javadoc(as shown in the example above).
+handle that information.  The return type class is an API that connects the 
+return type to the Item Selector views. **Whenever the return type is 
+used, the view must ensure that the proper information is returned.** It's 
+recommended that you specify the information that the return type will return, 
+as well as the format, as 
+javadoc(as shown in the `TaskItemSelectorReturnType` example above).
 
 So far, you've created an API that you can use to create a selection view for 
 your new entity. The entity's criterion and return type classes will be 
@@ -153,7 +153,7 @@ tutorial to learn how to obtain the Item Selector URL.
 
 **The selection view is responsible for returning the proper entity information 
 specified by the return type.** Currently there isn't a selection view to select 
-your entity. Follow the [Creating Selection Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-selection-views) 
+your entity. Follow the [Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-views) 
 tutorial to learn how to create your new view.
 
 Now you know how to create an entity for the Item Selector!
@@ -162,4 +162,4 @@ Now you know how to create an entity for the Item Selector!
 
 [Selecting Entities using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector)
 
-[Creating Custom Selection Views for the Item Selector](/develop/tutorials/-/knowledge_base/7-0/creating-custom-selection-views-for-the-item-selector)
+[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-views)
