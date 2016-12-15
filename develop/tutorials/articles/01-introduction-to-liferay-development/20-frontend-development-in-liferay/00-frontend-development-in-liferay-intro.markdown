@@ -53,5 +53,5 @@ Below are some of the available front-end extensions:
 
 - [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
 - [Context Contributors](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
-- [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/application-decorators)
+- [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators)
 - [Editor Config Contributors](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration)

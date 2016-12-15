@@ -59,14 +59,14 @@ examine one example of how @product@ uses context contributors.
     The `immediate` element instructs the module to start immediately once
     deployed to @product@. The `type` property should be set to one of the two
     fields defined in the
-    [TemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
+    [TemplateContextContributor](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
     interface: `TYPE_GLOBAL` or `TYPE_THEME`. The `TYPE_THEME` field should be
     set if you only wish to inject context-specific variables for your theme;
     otherwise, setting the `TYPE_GLOBAL` field affects every context execution
     in @product@, like themes, ADTs, DDM templates, etc. Finally, your `service`
     element should be set to `TemplateContextContributor.class`.
 
-    The [ProductMenuTemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.product.menu.theme.contributor/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
+    The [ProductMenuTemplateContextContributor](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
     class's `@Component` annotation follows a similar layout:
 
         @Component(
@@ -76,7 +76,7 @@ examine one example of how @product@ uses context contributors.
         )
 
 4.  Implement the
-    [TemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
+    [TemplateContextContributor](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
     interface in your `-TemplateContextContributor` class. This only requires
     implementing the `prepare(Map<String,Object>, HttpServletRequest)` method.
 
@@ -87,7 +87,7 @@ examine one example of how @product@ uses context contributors.
 
 For a quick example of how you can implement the `TemplateContextContributor`
 interface to inject variables into a template's context, you'll examine
-the [ProductMenuTemplateContextContributor](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.product.menu.theme.contributor/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
+the [ProductMenuTemplateContextContributor](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
 class used by @product@ by default. This class injects variables into Liferay's
 FreeMarker theme and determines whether the Product Menu is displayed in the
 current theme.
@@ -179,6 +179,6 @@ power of your chosen templating language.
 
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
 
-[Frontend Customizations](/develop/tutorials/-/knowledge_base/7-0/frontend-customizations)
+[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
 [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
