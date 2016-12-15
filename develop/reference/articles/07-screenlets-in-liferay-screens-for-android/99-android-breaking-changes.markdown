@@ -1,14 +1,14 @@
-# Android Breaking Changes
+# Android Breaking Changes [](id=android-breaking-changes)
 
 This document presents a list of changes in Liferay Screens for Android 2.0 that 
 break preceding functionality. We try our best to minimize these disruptions, 
 but sometimes they are unavoidable. 
 
-## Breaking Changes List
+## Breaking Changes List [](id=breaking-changes-list)
 
-### Interactors Now Run in a Background Process
+### Interactors Now Run in a Background Process [](id=interactors-now-run-in-a-background-process)
 
-#### What changed?
+#### What changed? [](id=what-changed)
 
 Interactors now run in a background process, so you don't need to create or set 
 callback classes manually. This means you can write what appear to be 
@@ -23,17 +23,17 @@ listeners. Also note that the `screenletId` is no longer required. The Screenlet
 framework automatically decorates the event with a `screenletId` that it 
 generates. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected)
 
 This affects all Screenlet Interactors. 
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code)
 
 You must rewrite your Interactors. See the tutorial 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-Interactor-class) 
 for the most recent instructions on creating an Interactor. 
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made)
 
 Asynchronous calls can be difficult to develop and work with. By handling them 
 for you, Liferay Screens removes this potential source of error and frees you to 
@@ -41,15 +41,15 @@ focus on other parts of your Screenlet.
 
 ---------------------------------------
 
-### Changes to View Set Inheritance
+### Changes to View Set Inheritance [](id=changes-to-view-set-inheritance)
 
-#### What changed?
+#### What changed? [](id=what-changed-0)
 
 To use a View Set, your app or activity’s theme must also inherit that View 
 Set’s styles. For example, to use the Default View Set, your app or activity’s 
 theme must inherit `default_theme`. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-0)
 
 This affects any apps or activities that use a View Set without inheriting that 
 View Set’s styles. For example, if you use the Default View for a Screenlet by 
@@ -58,7 +58,7 @@ must now inherit `default_theme` as well. Likewise, your app or activity’s the
 must inherit `westeros_theme` or `material_theme` to use the Westeros or 
 Material View Set, respectively. 
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-0)
 
 Change your app or activity’s theme to inherit the styles of the View Set you 
 want to use. 
@@ -81,25 +81,25 @@ This code snippet from an app’s `res/values/styles.xml` tells
         ...
     </resources>
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-0)
 
 This lets you change an Android theme’s colors and styles according to Android 
 conventions. Before, the Android themes were hardcoded inside the Screenlets. 
 
 ---------------------------------------
 
-### The Screenlet Attribute offlinePolicy is now cachePolicy
+### The Screenlet Attribute offlinePolicy is now cachePolicy [](id=the-screenlet-attribute-offlinepolicy-is-now-cachepolicy)
 
-#### What changed?
+#### What changed? [](id=what-changed-1)
 
 The Screenlet attribute `offlinePolicy` is now `cachePolicy`.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-1)
 
 This affects any Screenlets that used the `offlinePolicy` attribute to set that 
 Screenlet’s offline mode policy.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-1)
 
 In the app layouts that contain the Screenlet, change the `offlinePolicy` 
 attribute to `cachePolicy`.
@@ -125,7 +125,7 @@ New way:
 		liferay:cachePolicy="REMOTE_FIRST"
 		/>
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-1)
 
 This change was made for consistency throughout Liferay Screens. The method and 
 class names in the offline mode APIs contain *cache*, as do the offline policies 
@@ -133,9 +133,9 @@ class names in the offline mode APIs contain *cache*, as do the offline policies
 
 ---------------------------------------
 
-### Some Listener Methods in DDL Form Screenlet Have Changed
+### Some Listener Methods in DDL Form Screenlet Have Changed [](id=some-listener-methods-in-ddl-form-screenlet-have-changed)
 
-#### What changed?
+#### What changed? [](id=what-changed-2)
 
 The following error listener methods in DDL Form Screenlet’s `DDLFormListener` 
 have been removed: 
@@ -152,11 +152,11 @@ have been removed:
 Also in `DDLFormListener`, the method `onDDLFormRecordLoaded` now takes an 
 additional parameter for the attribute map received from the server. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-2)
 
 This affects any classes that implement `DDLFormListener`. 
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-2)
 
 In place of the removed error listeners, use `BaseCacheListener`’s generic error 
 listener: 
@@ -168,7 +168,7 @@ the method’s new signature:
 
     public void onDDLFormRecordLoaded(Record record, Map<String, Object> valuesAndAttributes)
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-2)
 
 The old error listener methods were usually implemented the same way: by logging 
 the exception. Multiple error listener methods aren’t needed for this. You can 
@@ -177,19 +177,19 @@ that depends on the user action.
 
 ---------------------------------------
 
-### Cache Listener Methods Moved into Their Own Listener
+### Cache Listener Methods Moved into Their Own Listener [](id=cache-listener-methods-moved-into-their-own-listener)
 
-#### What changed?
+#### What changed? [](id=what-changed-3)
 
 The cache listener methods `loadingFromCache`, `retrievingOnline`, and 
 `storingToCache` have been moved to their own listener, `CacheListener`. Note, 
 this change was introduced in Liferay Screens 1.4.0. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-3)
 
 All activity classes that implement a listener. 
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-3)
 
 If you don’t have special behavior in your old cache listener method 
 implementations, you can remove them. Otherwise, you must implement the new 
@@ -245,7 +245,7 @@ implements `CacheListener`:
 
     }
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-3)
 
 Reacting to cache errors via the cache listener methods is a niche use case. 
 Because the old cache listener methods were part of the normal listener, 
@@ -254,20 +254,20 @@ Putting them in their own listener makes their implementation optional.
 
 ---------------------------------------
 
-### Changed BaseListListener Methods
+### Changed BaseListListener Methods [](id=changed-baselistlistener-methods)
 
-#### What changed?
+#### What changed? [](id=what-changed-4)
 
 The `BaseListListener` methods `onListPageFailed` and `onListPageReceived` no 
 longer have the `BaseListScreenlet` argument `source`. These methods also now 
 account for a page’s start and end row instead of the page number. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-4)
 
 This affects any classes or interfaces that extend or implement 
 `BaseListListener`. 
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-4)
 
 Remove the `BaseListScreenlet` argument from your `onListPageFailed` and 
 `onListPageReceived` implementations. You must also replace the `int page` 
@@ -288,7 +288,7 @@ New signatures:
     void onListPageFailed(int startRow, Exception e)
     void onListPageReceived(int startRow, int endRow, List<E> entries, int rowCount)
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-4)
 
 The `BaseListScreenlet` argument served to disambiguate two instances of the 
 same Screenlet in a single activity. This is a very rare use case. Therefore, 
@@ -300,23 +300,23 @@ other listeners that also use start row and end row arguments.
 
 ---------------------------------------
 
-### Changed Asset List Screenlet Package
+### Changed Asset List Screenlet Package [](id=changed-asset-list-screenlet-package)
 
-#### What changed?
+#### What changed? [](id=what-changed-5)
 
 Asset List Screenlet’s package is now `com.liferay.mobile.screens.asset.list` 
 instead of `com.liferay.mobile.screens.assetlist`. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-5)
 
 This affects any activities or fragments that use Asset List Screenlet.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-5)
 
 Change your `com.liferay.mobile.screens.assetlist` imports to 
 `com.liferay.mobile.screens.asset.list`. 
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-5)
 
 This allows for other Screenlets that work with assets, like Asset Display 
 Screenlet. For example, the package `com.liferay.mobile.screens.asset` now 
@@ -325,69 +325,69 @@ both.
 
 ---------------------------------------
 
-### Changed Return Type for a DDL Record Method
+### Changed Return Type for a DDL Record Method [](id=changed-return-type-for-a-ddl-record-method)
 
-#### What changed?
+#### What changed? [](id=what-changed-6)
 
 The `getModelValues()` method for 
 [DDL records](https://github.com/liferay/liferay-screens/blob/2.0.1/android/library/src/main/java/com/liferay/mobile/screens/ddl/model/Record.java) 
 now returns a `Map` instead of a `HashMap`. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-6)
 
 This affects any code that expects `getModelValues()` to return a `HashMap`. 
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-6)
 
 Change any code that uses `getModelValues()` to expect a `Map` instead of a 
 `HashMap`. 
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-6)
 
 This follows general Java conventions. 
 
 ---------------------------------------
 
-### Changed Code Conventions for Private and Protected Fields
+### Changed Code Conventions for Private and Protected Fields [](id=changed-code-conventions-for-private-and-protected-fields)
 
-#### What changed?
+#### What changed? [](id=what-changed-7)
 
 Private and protected fields in Screenlets are no longer prefixed by `_`. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-7)
 
 This affects any code that directly accesses protected fields. 
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-7)
 
 Change your code to use the new variable name. For example, if your code 
 directly accesses a protected Screenlet variable named `_fields`, change it to 
 use `fields` instead. 
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-7)
 
 This follows general Java naming conventions. 
 
 ---------------------------------------
 
-### Changes to Using a Screenlet without a View
+### Changes to Using a Screenlet without a View [](id=changes-to-using-a-screenlet-without-a-view)
 
-#### What changed?
+#### What changed? [](id=what-changed-8)
 
 If you’re using a Screenlet without View (like you might be if you need to log a 
 user in programmatically), you no longer have to call 
 `LiferayScreensContext.init(this)` to initialise the library. This is now called 
 automatically. 
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-8)
 
 This affects any apps that use a Screenlet without a View.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-8)
 
 Remove your manual call to `LiferayScreensContext.init(this)`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-8)
 
 This removes the possibility of an error if you forget to call 
 `LiferayScreensContext.init(this)` when using a Screenlet without a View. 
