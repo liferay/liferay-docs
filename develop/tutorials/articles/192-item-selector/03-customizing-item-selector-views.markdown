@@ -182,7 +182,7 @@ steps to create your selection view:
     dialog.
 
     - [`isShowSearch()` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isShowSearch--): 
-    returns whether the Item Selector view should show the the search field.
+    returns whether the Item Selector view should show the search field.
 
     - [`isVisible()` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isVisible-com.liferay.portal.kernel.theme.ThemeDisplay-):
     returns whether the Item Selector view is visible. In most cases, you'll 
@@ -365,7 +365,7 @@ has been passed as a request attribute in the `renderHTML` method of the
 Below is the complete [`Layouts.jsp` view markup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
 for the [`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web):
 
-Some java imports are defined intially:
+Some java imports are defined initially:
     
     <%
     LayoutItemSelectorViewDisplayContext layoutItemSelectorViewDisplayContext = 
