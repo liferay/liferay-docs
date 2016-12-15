@@ -205,17 +205,17 @@ configure Maven to look for them there.
 First, specify the Liferay Repository's credentials in your project's parent
 `pom.xml` file as follows:
 
-	<repositories>
+    <repositories>
         <repository>
             <id>liferay-ce</id>
-			<name>Liferay CE</name>
+            <name>Liferay CE</name>
 			<url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 	  
@@ -224,19 +224,19 @@ First, specify the Liferay Repository's credentials in your project's parent
             <id>liferay-ce</id>
             <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
             <releases>
-            	<enabled>true</enabled>
+                <enabled>true</enabled>
             </releases>
             <snapshots>
-            	<enabled>true</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
 
 +$$$
 
-**Important:** Do not leave the Liferay
-repository configured when publishing artifacts to Maven Central. You must
-comment out the Liferay Repository credentials when publishing your artifacts.
+**Important:** Do not leave the Liferay repository configured when publishing
+artifacts to Maven Central. You must comment out the Liferay Repository
+credentials when publishing your artifacts.
 
 $$$
 
@@ -260,11 +260,11 @@ how.
 
 +$$$
 
-**Note:** Sometimes, the Liferay Maven
-artifacts for a release are not immediately available on Maven's Central
-Repository. The Central Repository might still be synced to a previous release
-of Liferay. If this occurs, just download the Liferay Maven artifacts from
-Liferay's repository. (See the previous section for details.)
+**Note:** Sometimes, the Liferay Maven artifacts for a release are not
+immediately available on Maven's Central Repository. The Central Repository
+might still be synced to a previous release of Liferay. If this occurs, just
+download the Liferay Maven artifacts from Liferay's repository. (See the
+previous section for details.)
 
 $$$
 
