@@ -56,7 +56,7 @@ working (e.g., unresolved dependencies, etc.)
 `services`: lists all of the services that have been registered in Liferay's
 module framework
 
-`inspect capability service <bundle ID>`: list of services exposed by a bundle
+`inspect capability service <bundle ID>`: lists services exposed by a bundle
 
 `install <path to JAR file>`: installs the specified bundle into Liferay's
 module framework
