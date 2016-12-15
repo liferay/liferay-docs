@@ -1,32 +1,32 @@
-# Installing Liferay on JBoss EAP 6.4 [](id=installing-liferay-on-jboss-eap-6-4)
+# Installing @product@ on JBoss EAP 6.4 [](id=installing-liferay-on-jboss-eap-6-4)
 
-Installing Liferay manually requires these basic steps:
+Installing @product@ manually requires these basic steps:
 
-- Installing Liferay dependencies to your application server
-- Configuring your application server for Liferay
-- Installing the Liferay WAR file to your application server
+- Installing @product@ dependencies to your application server
+- Configuring your application server for @product@
+- Installing the @product@ WAR file to your application server
 
-In this article, you'll step through these basic steps and install Liferay on
+In this article, you'll step through these basic steps and install @product@ on
 your existing JBoss EAP 6.4 application server. Before proceeding, you should
 also download the latest dependencies ZIP file and OSGi JARs ZIP file from
 [https://web.liferay.com/downloads/liferay-portal/available-releases](https://web.liferay.com/downloads/liferay-portal/available-releases)
-as well as the Liferay WAR file.
+as well as the @product@ WAR file.
 
 **Liferay Home** is one folder above JBoss's install location. *Liferay Home*
-refers to the folder containing your JBoss server folder. When Liferay is
+refers to the folder containing your JBoss server folder. When @product@ is
 installed on JBoss, the Liferay Home folder contains the JBoss server folder as
 well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also see the term
 `$JBOSS_HOME` used in this guide. `$JBOSS_HOME` refers to your JBoss server
 folder. This folder is usually named `jboss-eap-[version]`.
 
-## Installing Liferay Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
 
-Liferay depends on many JARs that are included in the Liferay JBoss bundle. Some
+@product@ depends on many JARs that are included in the @product@ JBoss bundle. Some
 JARs in the bundle are not strictly required but can still be useful. You can
 download the required JARs from third-parties, as described below.
 
 1. Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main`. Unzip the
-   the Liferay Portal Dependencies zip file and copy the `.jar` files to this
+   the @product@ Dependencies zip file and copy the `.jar` files to this
    folder. 
 
 2. Download your database driver `.jar` file and copy it into the
@@ -69,12 +69,12 @@ download the required JARs from third-parties, as described below.
 5. Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
    ZIP file that you downloaded into the `osgi` folder.
 
-    Liferay requires an OSGi runtime, and the `osgi` folder provides this with
+    @product@ requires an OSGi runtime, and the `osgi` folder provides this with
     many required JAR files and configuration files.
 
 Great! You have your `.jar` files ready. 
 
-## Running Liferay on JBoss EAP 6.4 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-eap-6-4-in-standalone-mode-vs-domain-mode)
+## Running @product@ on JBoss EAP 6.4 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-eap-6-4-in-standalone-mode-vs-domain-mode)
 
 JBoss EAP 6.4 can be launched in either *standalone* mode or *domain* mode.
 Domain mode allows multiple application server instances to be managed from a
@@ -82,16 +82,16 @@ single control point. A collection of such application servers is known as a
 *domain*. For more information on standalone mode vs. domain mode, please refer
 to the section on this topic in the
 [JBoss EAP 6.4 Administration and Configuration Guide](https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html/Administration_and_Configuration_Guide/About_JBoss_Enterprise_Application_Platform_6_Operating_Modes.html).
-Liferay fully supports JBoss EAP 6.4 when it runs in standalone mode but not
+@product@ fully supports JBoss EAP 6.4 when it runs in standalone mode but not
 when it runs in domain mode.
 
-You can run Liferay on JBoss EAP 6.4 in domain mode, but this method is not
-fully supported. In particular, Liferay's hot-deploy does not work, since JBoss
+You can run @product@ on JBoss EAP 6.4 in domain mode, but this method is not
+fully supported. In particular, @product@'s hot-deploy does not work, since JBoss
 EAP 6.4 cannot deploy non-exploded `.war` files in domain mode. Instead, `.war`
 files are in the `domain/data/content` directory. Deployments are only possible
-using the command line interface. This prevents many Liferay plugins from
+using the command line interface. This prevents many @product@ plugins from
 working as intended. For example, JSP hooks don't work on JBoss EAP 6.4 running
-in domain mode, since Liferay's JSP override mechanism relies on the application
+in domain mode, since @product@'s JSP override mechanism relies on the application
 server reloading customized JSP files from the exploded plugin `.war` file
 location. Other plugins, such as service or action hooks, should still work
 properly since they don't require JBoss to access anything (such as JSP files)
@@ -99,12 +99,12 @@ from an exploded `.war` file on the file system.
 
 +$$$
 
-**Note:** This does not prevent Liferay from running in a clustered environment
-on multiple JBoss servers. You can set up a cluster of Liferay instances
+**Note:** This does not prevent @product@ from running in a clustered environment
+on multiple JBoss servers. You can set up a cluster of @product@ instances
 running on JBoss EAP 6.4 servers running in standalone mode. Please refer to the
 chapter of this guide on
-[Configuring Liferay for High Availability](/discover/deployment/-/knowledge_base/6-2/configuring-liferay-for-high-availability)
-for information on setting up a Liferay cluster.
+[Configuring @product@ for High Availability](/discover/deployment/-/knowledge_base/6-2/configuring-liferay-for-high-availability)
+for information on setting up a @product@ cluster.
 
 $$$
 
@@ -112,7 +112,7 @@ $$$
 
 ## Configuring JBoss [](id=configuring-jboss)
 
-Now you'll make some adjustments in your configuration to support using Liferay.
+Now you'll make some adjustments in your configuration to support using @product@.
 
 You can specify the JBoss server instance's configuration in the XML file
 `$JBOSS_HOME/standalone/configuration/standalone.xml`. You must also make some
@@ -217,17 +217,17 @@ insert the following path names inside the `<paths>...</paths>` element:
     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
 The added paths resolve issues with portal deployment exceptions and image
-uploading problems on a Liferay instance running on JBoss EAP 6.4. 
+uploading problems on a @product@ instance running on JBoss EAP 6.4. 
 
 $$$
 
-The prescribed script modifications are now complete for your Liferay
+The prescribed script modifications are now complete for your @product@
 installation on JBoss. Next you'll configure mail and the database. 
 
 ## Database Configuration [](id=database-configuration)
 
 If you want JBoss to manage your data source, follow the instructions in this
-section. If you want to use the built-in Liferay data source, you can skip this
+section. If you want to use the built-in @product@ data source, you can skip this
 section.
 
 Modify `standalone.xml` and add your data source and driver in the
@@ -285,7 +285,7 @@ Now that you've configured your data source, the mail session is next.
 ## Mail Configuration [](id=mail-configuration)
 
 If you want JBoss to manage your mail session, use the following instructions.
-If you want to use the built-in Liferay mail session, you can skip this section.
+If you want to use the built-in @product@ mail session, you can skip this section.
 
 Specify your mail subsystem in `standalone.xml` as in the following example:
 
@@ -304,13 +304,13 @@ Specify your mail subsystem in `standalone.xml` as in the following example:
         </outbound-socket-binding>
     </socket-binding-group>
  
-You've got mail! Next, you'll make sure Liferay can connect using your new mail
+You've got mail! Next, you'll make sure @product@ can connect using your new mail
 session and database.
 
 ## Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessions)
 
 Now that your data source and mail session are set up, you need to ensure
-Liferay Portal can access them.
+@product-ver@ can access them.
 
 1. First, navigate to the Liferay Home folder, which is one folder above
    JBoss's install location (i.e. `$JBOSS_HOME/..`).
@@ -321,12 +321,12 @@ Liferay Portal can access them.
 
         jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
 
-   If you're using *Liferay Portal* to manage your data source, follow the
+   If you're using *@product-ver@* to manage your data source, follow the
    instructions for using the setup wizard.
 
-3. If you're using *Liferay Portal* to manage your mail session, this
-   configuration is done in Liferay Portal. That is, after starting your
-   portal as described in the *Deploy Liferay* section, go to *Control Panel*
+3. If you're using *@product-ver@* to manage your mail session, this
+   configuration is done in @product-ver@. That is, after starting your
+   portal as described in the *Deploy @product@* section, go to *Control Panel*
    &rarr; *Server Administration* &rarr; *Mail* and enter the settings for your
    mail session.
 
@@ -336,16 +336,16 @@ Liferay Portal can access them.
 
         mail.session.jndi.name=java:jboss/mail/MailSession
 
-Before you deploy Liferay Portal on your JBoss app server, you should enable
-and configure Java security so you can use Liferay's plugin security manager
-with your downloaded Liferay applications.
+Before you deploy @product-ver@ on your JBoss app server, you should enable
+and configure Java security so you can use @product@'s plugin security manager
+with your downloaded @product@ applications.
 
 ## Security Configuration [](id=security-configuration)
 
 When you're ready to begin using other people's apps from Marketplace, you'll
-want to protect your Liferay instance and your JBoss server from security
+want to protect your @product@ instance and your JBoss server from security
 threats. To do so, you can enable Java Security on your JBoss server and
-specify a security policy to grant your Liferay instance access to your server.
+specify a security policy to grant your @product@ instance access to your server.
 
 Remember, you set the `-Dsecmgr` and `-Djava.security.policy` Java options in
 the `standalone.conf.bat` file earlier in the *Configuring JBoss* section. The
@@ -367,19 +367,19 @@ specification documents at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
 Also, see the
 [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
-tutorial to learn how to configure Liferay plugin access to resources.
+tutorial to learn how to configure @product@ plugin access to resources.
 
 <!-- JSF configuration sections go here, when they've been tested for @product-ver@
 + JBoss bundles. -Cody -->
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy @product@ [](id=deploy-liferay)
 
 1. If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists
    in your JBoss installation, delete all of its subfolders and files.
    Otherwise, create a new folder
    `$JBOSS_HOME/standalone/deployments/ROOT.war`.
 
-2. Unzip the Liferay `.war` file into the `ROOT.war` folder.
+2. Unzip the @product@ `.war` file into the `ROOT.war` folder.
 
 3. To trigger deployment of `ROOT.war`, create an empty file named
    `ROOT.war.dodeploy` in  your `$JBOSS_HOME/standalone/deployments/` folder.
@@ -389,4 +389,4 @@ tutorial to learn how to configure Liferay plugin access to resources.
 4. Start the JBoss application server by navigating to `$JBOSS_HOME/bin`
    and running `standalone.bat` or `standalone.sh`.
 
-You're now an expert when it comes to deploying Liferay on JBoss!
+You're now an expert when it comes to deploying @product@ on JBoss!

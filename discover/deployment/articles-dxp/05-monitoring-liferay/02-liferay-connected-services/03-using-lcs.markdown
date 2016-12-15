@@ -1,7 +1,7 @@
 # Using LCS [](id=using-lcs)
 
 Once your LCS client is connected to LCS, you can get down to the business that 
-LCS was designed for--managing and monitoring your Liferay DXP instances. If 
+LCS was designed for--managing and monitoring your @product@ instances. If 
 you're not already there, log in with your account on 
 [lcs.liferay.com](https://lcs.liferay.com). This is where you'll apply updates, 
 view server metrics, manage environments, invite external users to your project, 
@@ -10,9 +10,9 @@ and more.
 This article's following sections each detail one or more of the features 
 available in LCS: 
 
-- [**What LCS Stores About Your Liferay Servers:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers)
+- [**What LCS Stores About Your @product@ Servers:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers)
   For LCS to work, the LCS servers must store certain information about your 
-  Liferay servers. Sensitive data, however, isn't stored on the LCS servers. 
+  @product@ servers. Sensitive data, however, isn't stored on the LCS servers. 
   Learn exactly what data LCS does and doesn't store. 
 
 - [**Managing Your LCS Projects:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-your-lcs-projects)
@@ -33,17 +33,17 @@ available in LCS:
   you notification emails when specific events occur in your LCS projects, and 
   setting general account preferences. 
 
-- [**Managing Liferay DXP Subscriptions:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
-  Learn how to view and manage your Liferay DXP subscriptions for the servers in 
+- [**Managing @product@ Subscriptions:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
+  Learn how to view and manage your @product@ subscriptions for the servers in 
   your LCS project. 
 
 - [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens)
-  Learn how to use environment tokens to automatically activate your Liferay 
+  Learn how to use environment tokens to automatically activate your @product@ 
   servers with LCS. 
 
-First, you'll learn what information LCS stores about your Liferay servers.
+First, you'll learn what information LCS stores about your @product@ servers.
 
-## What LCS Stores About Your Liferay Servers [](id=what-lcs-stores-about-your-liferay-servers)
+## What LCS Stores About Your @product@ Servers [](id=what-lcs-stores-about-your-liferay-servers)
 
 At this point, you might be wondering what information about your servers is 
 stored on LCS's servers. Great question! To protect your users' privacy, LCS 
@@ -106,9 +106,9 @@ shows the My Projects tab.
 
 ![Figure 2: The My Projects tab lists your LCS projects.](../../../images-dxp/lcs-my-projects.png)
 
-The *Unlinked* tab shows your Liferay projects that aren't connected with LCS. 
+The *Unlinked* tab shows your @product@ projects that aren't connected with LCS. 
 For example, if you've submitted an app on Liferay Marketplace, then it's a 
-Liferay project associated with your Liferay account. A Liferay project is an 
+@product@ project associated with your Liferay account. A @product@ project is an 
 umbrella Liferay concept and can span over many different Liferay products. The 
 Unlinked tab gives you the opportunity to connect those projects to LCS. The 
 *Pending* tab shows the existing LCS projects you've requested access to. If you 
@@ -274,7 +274,7 @@ The UI is segmented into three tabs:
    subscription type if you haven't done so yet. For instructions on this, see 
    the following sections:
 
-    - [Managing Liferay DXP Subscriptions](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
+    - [Managing @product@ Subscriptions](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
     - [Using Environment Tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens)
 
 3. **Environment Settings:** lets you change the environment's name, location, 
@@ -302,7 +302,7 @@ Server view is segmented into five tabs:
 - **Snapshot Metrics:** Displays application, JVM, and server metrics.
 - **Fix Packs:** Displays the server's fix packs.
 - **Portal Properties:** Displays your portal's properties and their settings.
-- **Details:** Displays general information about your Liferay installation, 
+- **Details:** Displays general information about your @product@ installation, 
   Java version, and hardware.
 - **Server Settings:** View or change your server's name, location, and 
   description. You can also unregister the server from LCS. 
@@ -399,18 +399,18 @@ for *Show Custom Values*.
 
 ![Figure 15: Click the gear icon to select the type of portal properties to show in the table.](../../../images-dxp/lcs-server-portal-properties.png)
 
-To view general information about your Liferay installation, click the *Details* 
+To view general information about your @product@ installation, click the *Details* 
 tab near the top of the screen. There are three tabs under Details: *Software*, 
-*Java*, and *Hardware*. Each shows information, respectively, about your Liferay 
+*Java*, and *Hardware*. Each shows information, respectively, about your @product@ 
 installation, Java installation, and hardware. This information is useful to the 
 Liferay support team in the event that you need their assistance. 
 
-![Figure 16: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../../images-dxp/lcs-server-details.png)
+![Figure 16: Clicking the Details button shows information about your @product@ installation's software and hardware.](../../../images-dxp/lcs-server-details.png)
 
 Lastly, click the *Server Settings* tab near the top of the screen to view and 
 edit your server's name, location, and description. You can also use the Server 
 Settings UI unregister your server from LCS. Note that unregistering your server 
-doesn't change your actual Liferay server; it just removes it from LCS. 
+doesn't change your actual @product@ server; it just removes it from LCS. 
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
@@ -469,18 +469,18 @@ time you log in to LCS.
 ![Figure 19: You can change your LCS account's language, time zone, and default LCS project.](../../../images-dxp/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. Next, you'll learn how to 
-use LCS to work with your Liferay DXP subscriptions. 
+use LCS to work with your @product@ subscriptions. 
 
-## Managing Liferay DXP Subscriptions [](id=managing-liferay-dxp-subscriptions)
+## Managing @product@ Subscriptions [](id=managing-liferay-dxp-subscriptions)
 
-LCS also lets you use and view your Liferay DXP subscriptions. By assigning an 
-environment to a subscription type and then registering a DXP server in that 
+LCS also lets you use and view your @product@ subscriptions. By assigning an 
+environment to a subscription type and then registering a @product@ server in that 
 environment, your server consumes one activation key from that subscription 
 type. You can also view your project's available subscriptions and see how 
 they're being used. You can access these features from the *Subscriptions* tab 
 on the upper-left of the LCS site. 
 
-![Figure 20: The *Subscriptions* tab in LCS lets you view and manage your Liferay DXP subscriptions.](../../../images-dxp/lcs-subscriptions.png)
+![Figure 20: The *Subscriptions* tab in LCS lets you view and manage your @product@ subscriptions.](../../../images-dxp/lcs-subscriptions.png)
 
 There are four tables in the Subscriptions tab: 
 
@@ -499,11 +499,11 @@ There are four tables in the Subscriptions tab:
     $$$
 
     Once you've assigned a subscription type to an environment, you must use an 
-    *environment token* to activate a DXP instance in the environment. For 
+    *environment token* to activate a @product@ instance in the environment. For 
     instructions on this, see the section 
     [Using Environment Tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
 
-2. **Subscriptions:** shows a list of Liferay DXP subscriptions available for 
+2. **Subscriptions:** shows a list of @product@ subscriptions available for 
    your LCS project. For each subscription, this table shows the following 
    information: 
 
@@ -536,18 +536,18 @@ server normally, its activation key is immediately freed for reuse. If the
 server crashes or its shutdown is forced (e.g., kill), its activation key is 
 freed for reuse within five minutes. 
 
-The next section shows you how to use environment tokens to activate Liferay DXP 
+The next section shows you how to use environment tokens to activate @product@ 
 instances with LCS. 
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
 When a subscription type is assigned to an environment, that environment's token 
-file lets DXP instances connect to LCS and consume an activation key from that 
+file lets @product@ instances connect to LCS and consume an activation key from that 
 subscription. LCS Administrators and Environment Managers can generate and 
 distribute this environment token file. It contains all the information the LCS 
-client app needs to connect and activate the DXP instance with the environment. 
+client app needs to connect and activate the @product@ instance with the environment. 
 This means that you don't need to enter this information manually whenever you 
-want to set up a DXP instance: simply use the environment token file. 
+want to set up a @product@ instance: simply use the environment token file. 
 
 There are a few things to keep in mind when using environment tokens:
 
@@ -556,20 +556,20 @@ There are a few things to keep in mind when using environment tokens:
 - Use caution when distributing the token file, as anyone can use it to connect 
   to your environment and consume an activation key in your subscription. 
 
-- Be careful when regenerating a token file from LCS. When this is done, DXP 
+- Be careful when regenerating a token file from LCS. When this is done, @product@ 
   instances using the old file are disconnected from LCS and can't reconnect 
   until restarting with the new file. 
 
-- Minimal information (server name, location, etc...) is used to activate a DXP 
+- Minimal information (server name, location, etc...) is used to activate a @product@ 
   instance with LCS. You can change this information from 
   [the server view in LCS](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-the-server-view) 
   at any time. 
 
 - Since environment tokens connect using OAuth, it's important to note that 
   using an environment token overrides the OAuth authorization cycle. If an LCS 
-  Administrator or Environment Manager has never activated Liferay instances 
+  Administrator or Environment Manager has never activated @product@ instances 
   with LCS, the first time they do so an OAuth authorization entry is created in 
-  LCS. If they've previously activated Liferay instances with LCS, their 
+  LCS. If they've previously activated @product@ instances with LCS, their 
   existing credentials are used when they create a token file. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
@@ -580,12 +580,12 @@ situation, having clients that configure themselves is crucial.
 +$$$
 
 **Note**: If your auto-scaling environment creates new server nodes from a 
-Liferay DXP instance in a system image, that instance can't require human 
+@product@ instance in a system image, that instance can't require human 
 interaction during setup. When creating such an image, you must change any 
 portal property settings that can prevent automatic setup. For example, 
-Liferay DXP's setup wizard requires human interaction to set up a DXP instance. 
+@product@'s setup wizard requires human interaction to set up a @product@ instance. 
 You must therefore set the `setup.wizard.enabled` property to `false` if you 
-want your auto-scaling environment to create new server nodes from this DXP 
+want your auto-scaling environment to create new server nodes from this @product@ 
 instance. 
 
 $$$
@@ -596,12 +596,12 @@ tab. This tab contains the following sections:
 
 - **Requirements:** the basic requirements for using an environment token. 
 
-- **Activation:** tells you that registering a DXP instance in the environment 
+- **Activation:** tells you that registering a @product@ instance in the environment 
   will consume an activation key from the environment's subscription type. If 
   the environment has no subscription type, an *Assign Subscription Type* link 
   appears instead. 
 
-- **Services:** lets you select the LCS services to use with all DXP servers 
+- **Services:** lets you select the LCS services to use with all @product@ servers 
   that connect to this environment. When you generate or regenerate the 
   environment token file, your selections here are embedded in it. Portal 
   analytics, fix pack management, and portal property analysis are selected by 
@@ -611,7 +611,7 @@ tab. This tab contains the following sections:
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
 
-![Figure 21: An environment's Registration tab lets you select the LCS services to use with your DXP servers that connect to that environment.](../../../images-dxp/lcs-environment-token.png)
+![Figure 21: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../../images-dxp/lcs-environment-token.png)
 
 Whether you must generate or regenerate a token depends on the actions you took 
 in the Services section, and whether there's an existing token in the 
@@ -632,7 +632,7 @@ The actions corresponding with the numbers in this table are described here:
 
 2. If the environment already has a token, and you made changes to your 
    selections of LCS services, then you must regenerate the token by clicking 
-   the *Regenerate Token* button. Note that if you regenerate a token, all DXP 
+   the *Regenerate Token* button. Note that if you regenerate a token, all @product@ 
    instances in the environment are disconnected from LCS and won't be able to 
    reconnect until receiving the new token. 
 
@@ -642,7 +642,7 @@ The actions corresponding with the numbers in this table are described here:
 
 To download an environment's token, click the *Download Token* button. Once you 
 download the token, follow these steps to use it to connect and activate a 
-Liferay DXP instance with LCS: 
+@product@ instance with LCS: 
 
 1. Ensure that you've deployed the LCS client app, and have configured it 
    properly if you connect from behind a proxy. For instructions on configuring 
@@ -653,24 +653,24 @@ Liferay DXP instance with LCS:
    For instructions on using Marketplace to download and deploy apps, 
    [click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
-2. Shut down your DXP instance if it's running. 
+2. Shut down your @product@ instance if it's running. 
 
 3. Place the token file in your instance's `[Liferay_Home]/data` folder, and 
    then start the instance. 
 
-On startup, the LCS client app automatically connects your DXP instance to LCS. 
-Upon connection, your DXP instance activates by consuming an activation key from 
+On startup, the LCS client app automatically connects your @product@ instance to LCS. 
+Upon connection, your @product@ instance activates by consuming an activation key from 
 the environment's subscription type. You should see this in your LCS project's 
 Subscriptions tab. 
 
 Awesome! Now you know how to use environment tokens to connect and activate your 
-Liferay DXP instances with LCS. 
+@product@ instances with LCS. 
 
 As you've now seen, LCS is a powerful tool that assists you in the management of 
-your Liferay DXP servers. In addition to activating your DXP servers, LCS lets 
+your @product@ servers. In addition to activating your @product@ servers, LCS lets 
 you apply fix packs with just a single click and a server restart--a process 
 that even works across a cluster. You also get a one stop shop for monitoring 
-the performance of your Liferay servers. Metrics like JVM performance, Liferay 
+the performance of your @product@ servers. Metrics like JVM performance, @product@ 
 page and portlet load times, and number of current threads give you an inside 
 look at how your server is running. What's more is that you can do all this 
 collaboratively by inviting others to your project and giving them specific 

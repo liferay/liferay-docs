@@ -17,9 +17,9 @@ steps involve registering your portlet to use ADTs, defining permissions, and
 exposing the ADT functionality to users. You'll walk through these steps now:
 
 1. Create and register a custom `*PortletDisplayTemplateHandler` component.
-   Liferay provides the [BasePortletDisplayTemplateHandler](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portletdisplaytemplate/BasePortletDisplayTemplateHandler.html)
+   Liferay provides the [BasePortletDisplayTemplateHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portletdisplaytemplate/BasePortletDisplayTemplateHandler.html)
    as a base implementation for you to extend. You can check the
-   [TemplateHandler](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateHandler.html)
+   [TemplateHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateHandler.html)
    interface Javadoc to learn about each template handler method.
    
     The Component annotation ties your handler to a specific portlet setting
@@ -43,7 +43,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
    the portlet).
    - **getResourceName():** Specifies which resource is using the ADT (e.g., a
    portlet) for permission checking. This method must return the portlet's
-   [Fully Qualified Portlet ID](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
+   [Fully Qualified Portlet ID](/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
    \(FQPI\).
    - **getTemplateVariableGroups():** Defines the variables exposed in the
    template editor.
@@ -107,9 +107,9 @@ exposing the ADT functionality to users. You'll walk through these steps now:
     Template drop-down menu to be used in the portlet's Configuration menu. The
     variables `displayStyle` and `displayStyleGroupId` are preferences that your
     portlet stores when you use this taglib and your portlet uses the
-    [BaseJSPSettingsConfigurationAction](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/BaseJSPSettingsConfigurationAction.java)
+    [BaseJSPSettingsConfigurationAction](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BaseJSPSettingsConfigurationAction.html)
     or
-    [DefaultConfigurationAction](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/DefaultConfigurationAction.java).
+    [DefaultConfigurationAction](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/DefaultConfigurationAction.html).
     Otherwise, you would need to obtain the value of those parameters and store
     them manually in your configuration class.
 
@@ -250,6 +250,6 @@ for using ADTs, which included security and performance.
 
 [Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
 
-[Frontend Customizations](/develop/tutorials/-/knowledge_base/7-0/frontend-customizations)
+[Liferay JavaScript APIs](/develop/tutorials/-/knowledge_base/7-0/liferay-javascript-apis)
 
 [Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)

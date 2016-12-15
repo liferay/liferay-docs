@@ -55,8 +55,10 @@ follow these instructions to configure your `portal-ext.properties` properly:
 [6.2 upgrade properties](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)
 information to learn about the new defaults introduced in Liferay Portal 6.2. 
 
-- If you're on Liferay Portal 6.0.12, you'll also need to 
-[migrate the image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images). 
+- If you're on Liferay 6.0.12, you'll also need to
+[migrate the image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images).
+
+- If you have a sharded environment, please refer to [how to configure the upgrade for sharding](./01-upgrading-sharding.markdown).
 
 ### Legacy Properties [](id=legacy-properties)
 
@@ -107,7 +109,7 @@ the configuration.
 
 ### Install the New Version of @product@
 
-Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/installation-and-setup)
+Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
 to install Liferay on your application server or use @product@ bundled with your
 application server of choice. Once you have @product@ installed, DON'T START IT! 
 

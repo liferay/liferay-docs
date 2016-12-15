@@ -44,7 +44,7 @@ To create a Theme Contributor module, follow these steps:
 2.  To identify your module as a Theme Contributor, add the
     `Liferay-Theme-Contributor-Type` and `Web-ContextPath` headers to your
     module's `bnd.bnd` file. For example, see the
-    [Control Menu module's](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.theme.contributor/)
+    [Control Menu module's](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/theme/contributor/internal/package-frame.html)
     `bnd.bnd`:
 
         Bundle-Name: Liferay Product Navigation Control Menu Theme Contributor

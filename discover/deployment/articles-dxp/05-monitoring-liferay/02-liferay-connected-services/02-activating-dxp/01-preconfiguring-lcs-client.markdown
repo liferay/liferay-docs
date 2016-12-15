@@ -18,7 +18,7 @@ ways:
     proxy requires authentication. 
 
 2. Inside the LCS client app's WAR file, before it deploys. If you downloaded a 
-   Liferay DXP bundle, this means that you should set these properties prior to 
+   @product@ bundle, this means that you should set these properties prior to 
    starting your bundle for the first time. You can find the LCS client's WAR 
    file in the bundle's `[Liferay_Home]/deploy` folder. Starting the bundle 
    automatically deploys the LCS client app. If you've already started your 
@@ -62,4 +62,4 @@ ways:
 
     d. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
 
-Great! Now you're ready to connect your Liferay DXP instance to LCS. 
+Great! Now you're ready to connect your @product@ instance to LCS. 

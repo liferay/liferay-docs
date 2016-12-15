@@ -226,9 +226,8 @@ Your form is complete!
 
 ## Related Topics [](id=related-topics)
 
-[Application Decorators](/develop/tutorials/-/knowledge_base/7-0/application-decorators)
+[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators)
 
 [Basic Forms](/discover/portal/-/knowledge_base/7-0/basic-forms)
 
 [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-

@@ -209,7 +209,7 @@ The theme template for pop up dialogs for the theme's portlets.
 
 The theme template for the theme's portlets. If your theme uses Application 
 Decorators, you can modify this file to create application decorator specific 
-theme settings. See the [Application Decorators tutorial](/develop/tutorials/-/knowledge_base/7-0/application-decorators) 
+theme settings. See the [Portlet Decorators tutorial](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators) 
 for more info.
 
 ### gulpfile.js [](id=gulpfile-js)

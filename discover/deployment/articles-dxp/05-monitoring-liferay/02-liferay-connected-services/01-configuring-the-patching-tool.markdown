@@ -1,7 +1,7 @@
 # Configuring the Patching Tool [](id=configuring-the-patching-tool)
 
-Liferay DXP's patching tool is leveraged by LCS to apply its updates. If you're 
-running a Liferay DXP bundle, then you should already have the patching tool 
+@product@'s patching tool is leveraged by LCS to apply its updates. If you're 
+running a @product@ bundle, then you should already have the patching tool 
 installed. If you're not running a bundle, or your bundle doesn't have the 
 patching tool installed, 
 [click here to download it](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool). 
@@ -15,7 +15,7 @@ each command that has it.
 1. Navigate to the `patching-tool` directory on the command line. It's typically 
    located in the Liferay Home folder.
 
-2. Let the patching tool discover your Liferay DXP installation by running 
+2. Let the patching tool discover your @product@ installation by running 
    `patching-tool.sh auto-discovery`. 
 
 3. Configure the patching tool by running `patching-tool.sh setup`. 
@@ -35,4 +35,4 @@ property. For example:
 
     -Dpatching.tool.home=/opt/liferay-dxp-digital-enterprise-7.0/patching-tool/
 
-Great! Now you're all set to activate your DXP instance with LCS. 
+Great! Now you're all set to activate your @product@ instance with LCS. 

@@ -1,7 +1,8 @@
 # Automatically Generating Language Files [](id=automatically-generating-language-files)
 
-If you already have a default `Language.properties` file that holds [language keys for your user interface messages](/develop/tutorials/-/knowledge_base/7-0/localization-tutorial), or
-even a language module that holds these keys, you're in the right place.
+If you already have a default `Language.properties` file that holds
+[language keys for your user interface messages](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application),
+or even a language module that holds these keys, you're in the right place.
 
 -  Instead of manually creating a language properties file for each locale
    that's supported by Liferay, you can get them all automatically generated for

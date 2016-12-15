@@ -29,7 +29,7 @@ could implement this sort of functionality yourself for any Portal event. You
 can listen for a specific event and then complete an action based on when that
 event occurs. For a list of events you can listen for during Export/Import and
 Staging processes, see
-[ExportImportLifecycleConstants](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/lifecycle/ExportImportLifecycleConstants.java).
+[ExportImportLifecycleConstants](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/ExportImportLifecycleConstants.html).
 
 Some definitions are in order: 
 
@@ -56,9 +56,9 @@ Follow the steps below:
 
 3.  You must extend one of the two Base classes provided with the
     Export/Import Lifecycle Listener framework:
-    [BaseExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/lifecycle/BaseExportImportLifecycleListener.java)
+    [BaseExportImportLifecycleListener](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseExportImportLifecycleListener.html)
     or
-    [BaseProcessExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/lifecycle/BaseProcessExportImportLifecycleListener.java).
+    [BaseProcessExportImportLifecycleListener](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseProcessExportImportLifecycleListener.html).
     To choose, you'll need to consider what parts of a lifecycle you want to
     listen for.
 
@@ -89,7 +89,7 @@ registry, your lifecycle listener is ready for use in your Portal instance.
 
 If you're still thirsting for more information on this framework, you're in
 luck! Here's an example, using the
-[LoggerExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/LoggerExportImportLifecycleListener.java).
+[LoggerExportImportLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/LoggerExportImportLifecycleListener.html).
 This listener extends the `BaseExportImportLifecycleListener`, so you should
 immediately know that it deals with lifecycle events.
 
@@ -106,12 +106,12 @@ directly related to that event is printed. In summary, the
 `LoggerExportImportLifecycleListener` uses the lifecycle listener framework to
 print messages to the log when an export/import event occurs. Other good
 examples of event lifecycle listeners are
-[CacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.java)
-and [JournalCacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/exportimport/lifecycle/JournalCacheExportImportLifecycleListener.java).
+[CacheExportImportLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.html)
+and [JournalCacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/internal/exportimport/lifecycle/JournalCacheExportImportLifecycleListener.java).
 
 For an example of a lifecycle listener extending the
 `BaseProcessExportImportLifecycleListener` class, inspect the
-[ExportImportProcessCallbackLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.java)
+[ExportImportProcessCallbackLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.html)
 class. Instead of listening for lifecycle events, this class only listens for
 process actions.
 

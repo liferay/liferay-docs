@@ -1,6 +1,6 @@
 # Using Liferay's Language Settings [](id=using-liferays-language-settings)
 
-For a given locale, you can [override Liferay's core UI messages](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys).
+For a given locale, you can [override Liferay's core UI messages](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys).
 Modifying Language key values in Liferay provides a lot of localization
 flexibility in itself, but we're always looking for new ways to give you more
 control. There are language settings in Liferay's `Language_xx.properties` files
@@ -45,7 +45,9 @@ settings*:
 
 **Note:** To use the language settings mentioned here, you need a module, which is
 like a magic carpet on which your code and resources ride triumphantly into
-Liferay's OSGi runtime. Refer to the tutorial on [modifying Liferay's core language keys](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys) to set up a module with the following characteristics:
+Liferay's OSGi runtime. Refer to the tutorial on
+[modifying Liferay's core language keys](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys)
+to set up a module with the following characteristics:
 
 -  Contains an implementation of `ResourceBundle` that is registered in the
    OSGi runtime.

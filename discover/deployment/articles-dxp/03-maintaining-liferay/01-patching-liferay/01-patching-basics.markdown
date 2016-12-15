@@ -1,6 +1,6 @@
 # Patching Basics [](id=patching-basics)
 
-Liferay ships Digital Enterprise fixes through three different channels: 
+Liferay ships @product-ver@ fixes through three different channels: 
 
 - Fix packs 
 - Hotfixes 
