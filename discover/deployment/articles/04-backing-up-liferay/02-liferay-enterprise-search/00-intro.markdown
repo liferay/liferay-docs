@@ -1,4 +1,4 @@
-# Backing Up Liferay Enterprise Search [](id=backing-up-liferay-enterprise-search)
+# Backing Up Your Search Engine [](id=backing-up-your-search-engine)
 
 @product@'s search solution is pluggable. Once you [install a search engine and
 configure the appropriate
