@@ -1,390 +1,186 @@
-# Creating Custom Selection Views for the Item Selector [](id=creating-custom-selection-views-for-the-item-selector)
-
-Item Selector views are determined by the type of entity selected. For example,
-when using the Item Selector to select images, the Item Selector renders the
-selection views shown below:
-
-![Figure 1: The entity type determines the Item Selector view.](../../images/item-selector-tabs.png)
+# Customizing Item Selector by adding new selection views
 
-Each tab: *Blog Images*, *Documents and Media*, *URL*, and *Upload Image*,
-corresponds to a selection view for the Item Selector. Each selection view is
-represented by an `*ItemSelectorCriterion`:
+As we already explained in the introduction, Item Selector can render multiple 
+views when selecting a particular element type. Below you can see an image of 
+the Item Selector used to select images. You can see that there are multiple 
+tabs (Blog Images, Documents and Media, URL, Upload Image), each of one 
+represents a selection view. 
 
--  `BlogsItemSelectorCriterion` -> Blog Image View
--  `DLImageItemSelectorCriterion` -> Docs and media
--  `URLItemSelectorCriterion` -> URL
--  `UploadItemSelectorCriterion` -> Upload an Image
+![image alt text](image_0.png)
 
-These default views cover several use cases, but you may want more for your
-application. Perhaps you have an external provider that you wish to include as a
-view for the Item Selector, or maybe you have created a new entity type that
-requires its own view. You can extend the Item Selector's default views to
-include the new view.
+The entity type that should be selected is represented by an item selector 
+criterion. In this example, multiple criterions are used to specify what kind of 
+entity we would like to select. Next you can see the criterions used in this 
+example and which selection view matches that criterion:
 
-Each selection view must have a criterion and return type specified. You can
-read more about the default criterion and return types in the
-[Selecting Entities with the Item Selector's APIs](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector-api)
-tutorial. If your new view does not use one of the default criterion or return
-types, you must create those first before creating your view. You can learn how
-to create custom criterion and custom return types in the
-[Creating Custom Entities for the Item Selector](/develop/tutorials/-/knowledge_base/7-0/creating-custom-elements-and-return-types)
-tutorial.
+1. BlogsItemSelectorCriterion -> Blog Images view
 
-This tutorial covers how to create new selection views for the Item Selector.
-
-Get started by implementing the selection view next.
-
-## Implementing the View [](id=implementing-the-view)
-
-Imagine that you want to create a new image selection view to allow users to
-select images from an external provider.
+2. DLImageItemSelectorCriterion -> Documents and Media
 
-In order to create a new view you must first know what kind of entities you
-want to select in the new view: images, videos, users, etc. The kind of entities
-you choose determines the specific `ItemSelectorCriterion` you need to use.
+3. URLItemSelectorCriterion -> URL
 
-In this example, since images are being selected, you would need to use the
-`ImageItemSelectorCriterion`.
+4. UploadItemSelectorCriterion-> Upload Image
 
-Next, you need to know the type of information the entity can return when it's
-selected.
+This tutorial will show how to customize Item Selector by adding new selection 
+views for some specific entity types. Let’s imagine that we want to create a new 
+image selection view to select images from an external provider so when the user 
+needs to select an image, our new image selection view will be rendered.
 
-The example image provider only returns URLs, so you would need to use
-`URLItemSelectorReturnType` for the return type.
-
-Once you know the entity and return type, you can get started. The steps below
-use the [SampleItemSelectorView](https://github.com/robertoDiaz/liferay-portal/blob/item-selector-sample/modules/apps/collaboration/item-selector/item-selector-sample-web/src/main/java/com/liferay/item/selector/sample/web/SampleItemSelectorView.java)
-class as an example.
-
-Follow these steps to implement your view:
-
-1.  Selection views are OSGi components that implement the `ItemSelectorView`
-    interface, so in order to create a new view you'll need to create a new
-    class that implements this interface and register it in OSGi.
-
-    For example, the image provider example might have this implementation:
-
-        @Component(
-                property = {"item.selector.view.order:Integer=200"},
-                service = ItemSelectorView.class
-        )
-        public class SampleItemSelectorView
-                implements ItemSelectorView<ImageItemSelectorCriterion> {
-            ....
-        }
-
-    If you want your new selection view to be available only when selecting the
-    entity for a specific web content, such as a blog entry, simply replace the
-    `itemSelectorCriterion` in your `*ItemSelectorView` class with the
-    `*ItemSelectorCriterion` class you wish to use, such as
-    `BlogsItemSelectorCriterion`.
-
-    Note that the OSGi component is registered with the property
-    `item.selector.view.order`. The Item Selector view order (the order of the
-    rendered tab views) is prioritized according to a couple settings.
-
-    First, it considers the order of the criteria decided by the client of the
-    Item Selector. When the application invokes the Item Selector it will
-    specify the criteria ordered by importance. Second, if there are multiple
-    views for the same criteria, it will use the property
-    `item.selector.view.order` to determine which will appear first. The lower
-    the value is, the more priority it has, and the sooner it will appear in the
-    order.
-
-2.  Next, you'll need to specify which `*ItemSelectorCriterion`, i.e what type
-    of entity, is required to display the selection view, using the
-    `getItemSelectorCriterionClass` method.
-
-    In the image provider example, the `ImageItemSelectorCriterion.class` is
-    returned, so the criterion is declared this way:
-
-        public Class<ImageItemSelectorCriterion> getItemSelectorCriterionClass() 
-        {
-            return ImageItemSelectorCriterion.class;
-        }
-
-3.  Declare a method to retrieve the servlet context:
-
-        public ServletContext getServletContext() {
-            return _servletContext;
-        }
-
-    You'll use this later on to help render the markup for your view.
-
-4.  Next, Indicate what information you are returning when the entity is
-    selected, using the `getSupportedItemSelectorReturnTypes` method.
-
-    In the example `URLItemSelectorReturnType` is used, but you could use more
-    return types if the view could return them. More return types means that the
-    view is more reusable:
-
-        public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes(
-        ) {
-            return _supportedItemSelectorReturnTypes;
-        }
-
-    This returns the supported Item Selector return types for the view. The
-    return types are added to the list further down in the code. We suggest to
-    follow this same pattern to add your return types to the list:
-
-        private static final List<ItemSelectorReturnType>
-            _supportedItemSelectorReturnTypes =
-            Collections.unmodifiableList(
-                ListUtil.fromArray(
-                    new ItemSelectorReturnType[] {
-                        new URLItemSelectorReturnType()
-                    }));
-
-5.  Next, configure the title, search options, and visibility settings for the
-    selection view:
-
-    For example, the sample selector view has the following settings:
-
-        public String getTitle(Locale locale) {
-            return "Sample Selector";
-        }
-
-        public boolean isShowSearch() {
-            return false;
-        }
-
-        public boolean isVisible(ThemeDisplay themeDisplay) {
-            return true;
-        }
-
-    The `getTitle` method returns the localized title of the tab to display in
-    the Item Selector dialog. The `isShowSearch()` method returns whether the
-    Item Selector view should show the the search field. Finally, the
-    `isVisible()` method returns whether the Item Selector view is visible. In
-    most cases, you'll want to set this to `true`. This method was included in
-    order to allow developers add conditional logic to disable the view.
-
-6.  Next, set the render settings for your view, using the `renderHTML` method.
-    In this case we are using a jsp file contained in the same bundle (this is
-    why we need the servlet context).
-
-    The sample Item Selector view has the following configuration:
-
-        public void renderHTML(
-            ServletRequest request, ServletResponse response,
-            ImageItemSelectorCriterion itemSelectorCriterion,
-            PortletURL portletURL, String itemSelectedEventName,
-            boolean search
-        )
-        throws IOException, ServletException {
-            request.setAttribute(_ITEM_SELECTED_EVENT_NAME,
-            itemSelectedEventName);
-
-            ServletContext servletContext = getServletContext();
-
-            RequestDispatcher requestDispatcher =
-            servletContext.getRequestDispatcher("/sample.jsp");
-
-            requestDispatcher.include(request, response);
-        }
-
-    The servlet and request objects are set. `itemSelectorCriterion` sets the
-    Item Selector criterion that is used to render this selection view. Next,
-    the `portletURL` is set, which is used to create URLs in the selection view.
-    Next the `itemSelectedEventName` is set. This is the event name that the
-    caller listens for. When an element is selected, the view should fire a
-    JavaScript event with this name. Finally a search boolean is set, specifying
-    when the view should render search results. When the user performs a search,
-    this boolean should be set to `true`.
-
-    In the same Item Selector view the markup is rendered using a JSP with the
-    code shown below:
-
-        RequestDispatcher requestDispatcher =
-                servletContext.getRequestDispatcher("/sample.jsp");
-
-    Although the example uses JSPs, you could use another language such as
-    FreeMarker to render the markup.
-
-7.  Finally, use the `@Reference` annotation to reference the class for the
-    `setServletContext()` method.
-
-    For example, the sample selector view class has the configuration below:
-
-        @Reference(
-            target =
-            "(osgi.web.symbolicname=com.liferay.item.selector.sample.web)",
-            unbind = "-"
-        )
-
-    The `target` parameter is used to specify the available services for the
-    servlet context. In this case, it specifies the
-    `com.liferay.selector.sample.web` class as the default value, using the
-    `osgi.web.symbolicname` property. Finally, the `unbind = _` parameter
-    specifies that there is no unbind method for this bundle.
-
-Below is the full example [source code](https://github.com/robertoDiaz/liferay-portal/blob/item-selector-sample/modules/apps/collaboration/item-selector/item-selector-sample-web/src/main/java/com/liferay/item/selector/sample/web/SampleItemSelectorView.java)
-for the `SampleItemSelectorView` Java class:
-
-    @Component(
-            property = {"item.selector.view.order:Integer=200"},
-            service = ItemSelectorView.class
-    )
-    public class SampleItemSelectorView
-            implements ItemSelectorView<ImageItemSelectorCriterion> {
-
-            public Class<ImageItemSelectorCriterion>
-    getItemSelectorCriterionClass() {
-                    return ImageItemSelectorCriterion.class;
-            }
-
-            public ServletContext getServletContext() {
-                    return _servletContext;
-            }
-
-            public List<ItemSelectorReturnType>
-    getSupportedItemSelectorReturnTypes() {
-                    return _supportedItemSelectorReturnTypes;
-            }
+First of all we need to know what kind of entities can be selected by our new 
+selection view. Images? Videos? Users? Depending on this we will need to use one 
+ItemSelectorCriterion or another. In our particular example, as we want to 
+select images, we will use ImageItemSelectorCriterion.
 
-            public String getTitle(Locale locale) {
-                    return "Sample Selector";
-            }
+Once we know the entity type, we need to specify what kind of information we can 
+return from the image. Our imaginary image provider only returns URLs so we will 
+use URLItemSelectorReturnType for our example.
 
-            public boolean isShowSearch() {
-                    return false;
-            }
+With this information we are ready to start. 
 
-            public boolean isVisible(ThemeDisplay themeDisplay) {
-                    return true;
-            }
+The item selector views are represented by the interface ItemSelectorView. All 
+the selection views are OSGi component that implements this interface, so in 
+order to create a new view we will need to create this new class and register it 
+in OSGi using the inteface ItemSelectorView.
 
-            public void renderHTML(
-                            ServletRequest request, ServletResponse
-    response,
-                            ImageItemSelectorCriterion
-    itemSelectorCriterion,
-                            PortletURL portletURL, String
-    itemSelectedEventName, boolean search)
-                    throws IOException, ServletException {
+When implementing the ItemSelectorView we need to indicate which 
+ItemSelectorCriterion is required to display this view using the method 
+getItemSelectorCriterionClass. In our example we will return 
+ImageItemSelectorCriterion.class.
 
-                    request.setAttribute(_ITEM_SELECTED_EVENT_NAME,
-    itemSelectedEventName);
+We also need to provide what information we are returning when the entity is 
+selected using the method getSupportedItemSelectorReturnTypes. In our case we 
+will use URLItemSelectorReturnType but we could use more return types if we have 
+the information.
 
-                    ServletContext servletContext = getServletContext();
+One other relevant method is renderHTML whose responsibility is to render the 
+view. In the example we will render the markup using JSPs, but you could use any 
+other technology (like freemarker for example).
 
-                    RequestDispatcher requestDispatcher =
-                            servletContext.getRequestDispatcher("/sample.jsp");
+Below is the example source code: 
 
-                    requestDispatcher.include(request, response);
-            }
+This is the SampleItemSelectorView code:
 
-            @Reference(
-                    target =
-    "(osgi.web.symbolicname=com.liferay.item.selector.sample.web)",
-                    unbind = "-"
-            )
-            public void setServletContext(ServletContext servletContext) {
-                    _servletContext = servletContext;
-            }
+@Component(
+	property = {"item.selector.view.order:Integer=200"},
+	service = ItemSelectorView.class
+)
+public class SampleItemSelectorView
+	implements ItemSelectorView<ImageItemSelectorCriterion> {
 
-            private static final String _ITEM_SELECTED_EVENT_NAME =
-                    "ITEM_SELECTED_EVENT_NAME";
+	public Class<ImageItemSelectorCriterion> getItemSelectorCriterionClass() {
+		return ImageItemSelectorCriterion.class;
+	}
 
-            private static final List<ItemSelectorReturnType>
-                    _supportedItemSelectorReturnTypes =
-    Collections.unmodifiableList(
-                            ListUtil.fromArray(
-                                    new ItemSelectorReturnType[] {
-                                            new URLItemSelectorReturnType()
-                                    }));
+	public ServletContext getServletContext() {
+		return _servletContext;
+	}
 
-            private ServletContext _servletContext;
+	public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes() {
+		return _supportedItemSelectorReturnTypes;
+	}
 
-    }
+	public String getTitle(Locale locale) {
+		return "Sample Selector";
+	}
 
-Once you've written your Java class, you'll need to create the view markup next.
+	public boolean isShowSearch() {
+		return false;
+	}
 
-## Writing your View Markup [](id=writing-your-view-markup)
+	public boolean isVisible(ThemeDisplay themeDisplay) {
+		return true;
+	}
 
-You've implemented your view, specifying the criteria and return types, along
-with important configuration information, such as how to render the view. All
-that is left is to write the markup for your selection view now.
+	public void renderHTML(
+			ServletRequest request, ServletResponse response,
+			ImageItemSelectorCriterion itemSelectorCriterion,
+			PortletURL portletURL, String itemSelectedEventName, boolean search)
+		throws IOException, ServletException {
 
-Naturally, the markup for your selection view will vary greatly depending on the
-requirements of your app.
+		request.setAttribute(_ITEM_SELECTED_EVENT_NAME, itemSelectedEventName);
 
-The [sample Item Selector JSP](https://github.com/robertoDiaz/liferay-portal/blob/item-selector-sample/modules/apps/collaboration/item-selector/item-selector-sample-web/src/main/Resources/META-INF/resources/sample.jsp)
-has the placeholder markup shown below:
+		ServletContext servletContext = getServletContext();
 
-    <div class="container-fluid-1280">
-            <h1>Hi, I'm a sample ITEM SELECTOR VIEW</h1>
+		RequestDispatcher requestDispatcher =
+			servletContext.getRequestDispatcher("/sample.jsp");
 
-            <p>Here you could add your own logic!!</p>
-    </div>
+		requestDispatcher.include(request, response);
+	}
 
-This view will render just fine, but of course it doesn't actually contain any
-logic to display the entity.
+	@Reference(
+		target = "(osgi.web.symbolicname=com.liferay.item.selector.sample.web)",
+		unbind = "-"
+	)
+	public void setServletContext(ServletContext servletContext) {
+		_servletContext = servletContext;
+	}
 
-The view markup render for the sample item selector module has been passed as a
-request attribute in the `renderHTML` method in the `SampleItemSelectorView`
-class, so it can be used in the jsp as follows:
+	private static final String _ITEM_SELECTED_EVENT_NAME =
+		"ITEM_SELECTED_EVENT_NAME";
 
-    Liferay.fire(
-            '<%= {ITEM_SELECTED_EVENT_NAME} %>',
+	private static final List<ItemSelectorReturnType>
+		_supportedItemSelectorReturnTypes = Collections.unmodifiableList(
+			ListUtil.fromArray(
+				new ItemSelectorReturnType[] {
+					new URLItemSelectorReturnType()
+				}));
 
-            {
-                    data:
-    {the-data-your-client-needs-according-to-return-type}
-            }
+	private ServletContext _servletContext;
 
-    );
+}
 
-This event may be triggered by a UI component such as a button, in which case
-the JSP may contain the following markup:
+Note that the OSGi component is registered with the property 
+item.selector.view.order. This property is used by the Item Selector to choose 
+the order of the views when rendering the tabs. The lower the value is, the more 
+priority it has, and the first it will appear.
 
-    <aui:button cssClass="selector-button" disabled="<%= true %>" value="choose"
-    />
+Keep in mind that the Item Selector orders the views attending to different 
+things:
 
-    <aui:script use="aui-base">
+* First, it considers the order of the criteria decided by the client of the 
+item selector. When the application invokes the item selector it will specify 
+the criteria ordered by importance.
 
-    var getImage = A.one('#<portlet:namespace />getImage');
+* Second, if there are multiple views for the same criteria, it will use the 
+property item.selector.view.order to determine which will appear first.
 
-            var button = getImage.one('.selector-button');
+Now, it`s up to you create the view markup, and do not forget fire an event 
+using the event name. As you could see we have passed it as a request attribute 
+in the renderHTML method in the SampleItemSelectorView class, so we can use it 
+in the jsp as follows:
 
-            button.on(
-                    'click',
-                    function(event) {
+Liferay.fire(
+	'<%= {eventName} %>',
 
-                            Util.getOpener().Liferay.fire(
-                                    '<%= ITEM_SELECTED_EVENT_NAME) %>',
-                                    {
-                                        data:
-                                        {
-                                            the-data-your-client-needs
-                                        }
-                                    }
-                            );
+	{
+		data: {the-data-your-client-needs-according-return-type}
+	}
 
-                            Util.getWindow().destroy();
-                    }
-    );
+);
 
-    </aui:script>
+In this event we should return the right data according with the specified 
+desired ItemSelectorReturnTypes. 
 
-<!-- Is the example markup above correct? YES, it seems right -->
+This new selection view will be automatically rendered by the Item Selector in 
+every portlet that uses Item Selector to select images and can can handle urls 
+as a return type without modifying anything in those portlets.
 
-The data is returned according to the specified desired
-`ItemSelectorReturnTypes`. This is covered in more detail in the
-[Selecting Entities with the Item Selector's APIs](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector-api#obtaining-the-url-for-the-item-selector-views)
-tutorial.
+If for any reason, we want this new selection view to be available only when 
+selecting images for a blog entry, we should replace ImageItemSelectorCriterion 
+by BlogsItemSelectorCriterion.
 
-Your new selection view will automatically be rendered by the Item Selector in
-every portlet that uses the element and return types you defined, without
-modifying anything in those portlets.
+In the last tutorial we will explain how to use Item Selector to select your 
+custom entities and allow other applications to select your custom entities as 
+well.
 
-Once your view is complete, you can follow the
-[Selecting Entities with the Item Selector's APIs](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector-api)
-to learn how to generate the URL to open the Item Selector dialog to display
-your new view.
+If you want more information you could check here:
 
-## Related Topics [](id=related-topics)
+[https://docs.google.com/document/d/16nbb6BKi2b7u56dIJSlUGzKioz_HcLsaBPSH3S20A4o/edit](https://docs.google.com/document/d/16nbb6BKi2b7u56dIJSlUGzKioz_HcLsaBPSH3S20A4o/edit)
 
-[Selecting Entities with the Item Selector's APIs](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector-api)
+[https://docs.google.com/document/d/1lAUfVYdpprw2lEh1dyekHlhdGl0x7CqUaV6t3QaMxaA/edit](https://docs.google.com/document/d/1lAUfVYdpprw2lEh1dyekHlhdGl0x7CqUaV6t3QaMxaA/edit)
 
-[Creating Custom Entities for the Item Selector](/develop/tutorials/-/knowledge_base/7-0/creating-custom-elements-and-return-types)
+You could get the sample example code from here:
+
+[https://github.com/robertoDiaz/liferay-portal/tree/item-selector-sample](https://github.com/robertoDiaz/liferay-portal/tree/item-selector-sample)
+
+
