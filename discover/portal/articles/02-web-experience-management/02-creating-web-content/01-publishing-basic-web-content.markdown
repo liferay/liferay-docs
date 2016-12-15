@@ -31,7 +31,7 @@ of content.
 When you manage web content from the Site Administration menu, you can select
 the location where the content resides. When selecting the Site Administration
 dropdown from the Menu, you are presented with two scopes: site scope and page
-scope. The site scope can be managed by clicking the Compass icon
+scope. The site scope can be managed by clicking the *Site Selector* button
 (![Compass](../../../images/icon-compass.png)) located on the Site
 Administration dropdown menu, which is characterized by the name of the site.
 From there you can select the site for which you want your content scoped. For
@@ -183,16 +183,14 @@ functionality. For example, if you navigate to the Control Panel, click on
 this menu, you can install and enable Xuggler. Enabling Xuggler allows you to
 embed audio and video files in web content. Installing and enabling Xuggler is
 easy; you can do it right from the Control Panel. Please refer to the
-[Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
+[Publishing Files](/discover/portal/-/knowledge_base/7-0/publishing-files)
 article of this guide for more details.
-
-<!-- TODO: Replace link above with 7.0 link, when available. -Cody -->
 
 Once Xuggler has been installed and enabled, embedding audio or video files in a
 web content article is easy. By default the current WYSIWYG editor (AlloyEditor)
 does not provide audio/video files. You can extend the default AlloyEditor by
 adding an audio/video button. You can learn about doing this in the
-[Editor Configurations](/develop/tutorials/-/knowledge_base/7-0/editor-configurations)
+[WYSIWYG Editors](/develop/tutorials/-/knowledge_base/7-0/wysiwyg-editors)
 tutorials section. Another option you have is changing the WYSIWYG editor to one
 that supports embedding audio/video files in web content. The CKEditor, for
 example, is an editor that provides this functionality. To use the CKEditor,

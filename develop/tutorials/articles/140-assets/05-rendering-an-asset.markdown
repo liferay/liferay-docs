@@ -51,7 +51,7 @@ JSP templates to render an asset's HTML. You'll learn how to associate your JSP
 templates with an asset renderer, along with configuring several other options. 
 
 To learn how an asset renderer is created, you'll create the pre-existing
-[BlogsEntryAssetRenderer](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/blogs/com.liferay.blogs.web/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
+[BlogsEntryAssetRenderer](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
 class, which configures the asset renderer framework for the Blogs application.
 
 1.  Create a new package in your existing project for your asset-related
@@ -60,19 +60,19 @@ class, which configures the asset renderer framework for the Blogs application.
 
 2.  Create your `-AssetEntry` class for your application in the new `-.asset`
     package and have it implement the
-    [AssetEntry](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
+    [AssetEntry](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
     interface. Consider the `BlogsEntryAssetRenderer` class as an example:
 
         public class BlogsEntryAssetRenderer
             extends BaseJSPAssetRenderer<BlogsEntry> implements TrashRenderer {
 
     The `BlogsEntryAssetRenderer` class extends the
-    [BaseJSPAssetRenderer](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
+    [BaseJSPAssetRenderer](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
     which is an extension class intended for those who plan on using JSP
     templates to generate their asset's HTML. The `BaseJSPAssetRenderer` class
     implements the `AssetRenderer` interface. You'll notice the asset renderer
     is also implementing the
-    [TrashRenderer](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
+    [TrashRenderer](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
     interface. This is a common practice for many @product@ applications, which
     enables its assets to use @product@'s Recycle Bin.
 
@@ -487,7 +487,7 @@ renderer factory.
 
 1.  Create an `-AssetRenderFactory` class in the same folder as its asset
     renderer class. For blogs, the
-    [BlogsEntryAssetRendererFactory](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/blogs/com.liferay.blogs.web/com/liferay/blogs/web/asset/BlogsEntryAssetRendererFactory.html)
+    [BlogsEntryAssetRendererFactory](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRendererFactory.html)
     class resides in the `com.liferay.blogs.web` module's
     `com.liferay.blogs.web.asset` package. The factory class should extend the
     `BaseAssetRendererFactory` class and the asset type should be specified as

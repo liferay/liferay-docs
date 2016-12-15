@@ -1,11 +1,11 @@
 # @product@ Deployment
 
 @product@ is one of the most flexible applications on the market today with
-respect to database and application server support. Liferay supports a wide
+respect to database and application server support. @product@ supports a wide
 variety of databases and application servers, freeing you to use the ones you
 think are best. @product@ also scales very well. You can install @product@ on a
 shared hosting account, on a multi-node cluster running a commercial application
-server, or on anything in between. In fact, Liferay is used successfully in all
+server, or on anything in between. In fact, @product@ is used successfully in all
 of these scenarios every day.
 
 ## Supported Platforms and Limitations [](id=supported-platforms-and-limitations)
@@ -39,7 +39,7 @@ the first decisions you need to make. You need to consider these factors:
 The reference architecture depicted in Figure 1 provides high levels of fault
 tolerance and flexibility.
 
-![Figure 1: The Liferay DE reference architecture is scalable.](../../images-dxp/de-reference-architecture.png)
+![Figure 1: The @product-ver@ reference architecture is scalable.](../../images-dxp/de-reference-architecture.png)
 
 The architecture contains the following tiers:
 
@@ -49,12 +49,11 @@ The architecture contains the following tiers:
 - **Web Server Tier**: Delivers static content like images, rich media, CSS 
   files, etc. Also provides integration modules to single sign-on solutions like 
   CA SiteMinder, Oracle Identity, Ping, etc.
-- **Application Tier:** Hosts Liferay supported application servers like Tomcat,
-  JBoss, Oracle Weblogic, and IBM WebSphere (please see Liferay Digital
-  Enterprise Compatibility Matrix for additional platforms). Also hosts search
+- **Application Tier:** Hosts @product@ supported application servers like Tomcat,
+  JBoss, Oracle Weblogic, and IBM WebSphere (please see @product-ver@ Compatibility Matrix for additional platforms). Also hosts search
   engines like Solr and Elasticsearch.
-- **Database Tier:** Hosts Liferay supported database servers like MySQL,
-  Oracle, MS SQL Server, IBM DB2, PostgreSQL (please see Liferay Digital Enterprise
+- **Database Tier:** Hosts @product@ supported database servers like MySQL,
+  Oracle, MS SQL Server, IBM DB2, PostgreSQL (please see @product-ver@
   Compatibility Matrix for additional platforms)
 
 The hardware deployed within each tier varies depending on the type of transactions. 
@@ -62,7 +61,7 @@ The hardware deployed within each tier varies depending on the type of transacti
 ### Virtualized and Cloud Deployments [](id=virtualized-and-cloud-deployments)
 
 While the reference architecture describes a physical deployment, the same
-concepts may be applied to a cloud based or virtualized deployment. Many Liferay
+concepts may be applied to a cloud based or virtualized deployment. Many @product@
 customers choose to deploy on public clouds (e.g. Amazon EC2) or their own
 private clouds (e.g. VMWare VSX based private cloud). Physical machines can
 be replaced by appropriate quantities of virtual machines.
@@ -96,19 +95,19 @@ reference architecture.
 
 Each deployment's performance characteristics vary depending on the type of
 activity and the performance of custom application elements. Liferay Engineering
-has created a series of scenarios to benchmark Liferay Digital Enterprise's out
+has created a series of scenarios to benchmark @product-ver@'s out
 of the box performance characteristics for content management, collaboration and
 social enterprise scenarios. Results from these reference architectures have
-indicated Liferay Digital Enterprise can support over 22,000 virtual
+indicated @product-ver@ can support over 22,000 virtual
 collaboration users and over 150,000 logins per minute with an average login
-time of 300 milliseconds. Liferay Digital Enterprise accomplished this load
+time of 300 milliseconds. @product-ver@ accomplished this load
 within the reference architecture while using no more than 40% of CPU
 resources in the Web Tier, 86% of CPU resources in the Application Tier, and 50%
 of CPU resources in the Database Tier.
 
 ### Scalability [](id=scalability)
 
-Liferay Engineering's testing has shown Liferay Digital Enterprise to scale
+Liferay Engineering's testing has shown @product-ver@ to scale
 linearly. Thus, if you know a single application server supports X virtual users
 and assuming sufficient database and web server resources, you may calculate the
 total number of application servers required.

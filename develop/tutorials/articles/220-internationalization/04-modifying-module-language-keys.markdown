@@ -139,4 +139,5 @@ language keys.
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
-core. Find out how to override those language keys in a [separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys).
+core. Find out how to override those language keys in a
+[separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys).

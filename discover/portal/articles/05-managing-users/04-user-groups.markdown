@@ -46,21 +46,21 @@ same layout and applications. In The Lunar Resort, you'll add a site template
 that adds an Event Coordination page to each List Creator.
 
 At the Lunar Resort, certain employees need the ability to create simple form
-applications using Liferay's [Dynamic Data
-Lists](/discover/portal/-/knowledge_base/7-0/using-dynamic-data-lists). On the
-harsh lunar landscape, it's important to have a proper idea how many guests are
-coming to the next Lunar Hike event. Many of the list creators will be users from the
-Recreation Department, since many of the activities that guests should know
-about are managed by that department. So why not just give all the users of the
-Recreation Department the proper permissions for managing the Dynamic Data
-Display portlets on the Activities Sign-Up page, and be done with it? Sometimes
-other departments will need to add an event (for example, the kitchen staff is
-preparing a Lunar Luau and needs a guest list). Also, you might not want all the
-users of the Recreation Department to be a List Creator. Remember that time
-Wilbert Donahue (he's a Lunar Rover Race Instructor, part of the Recreation
-Department) was granted blogging permissions, and he used the opportunity to
-write all about his favorite band, *ApeFLogger*? You don't want Wilbert to be a
-List Creator, right?
+applications using Liferay's
+[Dynamic Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists).
+On the harsh lunar landscape, it's important to have a proper idea how many
+guests are coming to the next Lunar Hike event. Many of the list creators will
+be users from the Recreation Department, since many of the activities that
+guests should know about are managed by that department. So why not just give
+all the users of the Recreation Department the proper permissions for managing
+the Dynamic Data Display portlets on the Activities Sign-Up page, and be done
+with it? Sometimes other departments will need to add an event (for example, the
+kitchen staff is preparing a Lunar Luau and needs a guest list). Also, you might
+not want all the users of the Recreation Department to be a List Creator.
+Remember that time Wilbert Donahue (he's a Lunar Rover Race Instructor, part of
+the Recreation Department) was granted blogging permissions, and he used the
+opportunity to write all about his favorite band, *ApeFLogger*? You don't want
+Wilbert to be a List Creator, right?
 
 <!-- Maybe add: Insidious Marmot, Urban Slug, The SlimeDoggz, The LumberJilz,
 The WAR Boys, Metropolizm, Fanatical Mime to band list -->
@@ -319,7 +319,7 @@ Creators user group and select *Assign Site Roles*.
 Now members of the List Creators user group are site members of The Lunar Resort
 site, and anyone in the user group has the List Creator role in the site. If you
 want to continue configuring the List Creators user group, read the articles on
-[Creating a Simple Application](/discover/portal/-/knowledge_base/7-0/using-dynamic-data-lists).
+[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications).
 In those articles you'll learn to create a data definition that the List
 Creators can use to build new Activities Sign-Up lists and templates with.
 
