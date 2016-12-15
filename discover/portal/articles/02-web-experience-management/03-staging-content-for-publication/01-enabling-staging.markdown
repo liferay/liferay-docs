@@ -170,7 +170,7 @@ the value of your remote server.
 **Important:** Do not share the key with any user. It is used exclusively for 
 communication between staging and production environments. Any user with 
 possesion of the key can manage the production server, execute server-side
-java code etc.
+Java code, or worse.
 
 One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
 of your Liferay instance. To do this, navigate to the Control Panel &rarr;
