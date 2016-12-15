@@ -164,7 +164,11 @@ you can take the following steps:
 
 ![Figure 4: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
 
-Once you have created this role, you will need to assign it. To assign roles to Users, Sites, Organizations, and User Groups, click on the role, then click on the blue + button. You can choose which users and/or groups you would like to be assigned to the role. If you are assigning a group, then all users assigned to that group will inherit the role as well. 
+Once you create the role, assign it to its intended users. To assign roles to
+Users, Sites, Organizations, and User Groups, click on the role, then click on
+the Add button (![Add](../../images/icon-add.png)). Choose the users and/or
+groups you want to assigned to the role. If assigning a group, note that all
+users assigned to that group will inherit the role as well. 
 
 You might expect that the role has all the permissions necessary for adding
 users to user groups. After all, user group managers can view user groups,
