@@ -1,11 +1,12 @@
-# Creating Custom Selection Views for the Item Selector [](id=creating-custom-selection-views-for-the-item-selector)
+# Creating Custom Item Selector Views [](id=creating-custom-item-selector-views)
 
-Item Selector views are determined by the type of entity the user is selecting. 
+So, you need to create a new selection view for your app? No problem. Item 
+Selector views are determined by the type of entity the user is selecting. 
 The Item Selector can render multiple views for the same entity type. For 
 example, when a user requires an image from the Item Selector, the selection 
 views shown below are rendered:
 
-![Figure 1: The entity type determines the Item Selector view.](../../images/item-selector-tabs.png)
+![Figure 1: An entity type can have multiple selection views.](../../images/item-selector-tabs.png)
 
 Each tab: *Blog Images*, *Documents and Media*, *URL*, and *Upload Image*, is a 
 selection view for the Item Selector, each one represented by an 
@@ -21,7 +22,7 @@ following `*ItemSelectorCriterion`:
 -  [`UploadItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/upload/criterion/UploadItemSelectorCriterion.html): 
    Upload Image View
 
-The default selection views may provide everything you need for your application.  
+The default selection views may provide everything you need for your application. 
 If, however, your application requires a custom selection view, for instance to 
 link to an external image provider, you can follow the steps outlined in this 
 tutorial.
@@ -182,7 +183,18 @@ steps to create your selection view:
     dialog.
 
     - [`isShowSearch()` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isShowSearch--): 
-    returns whether the Item Selector view should show the search field.
+    returns whether the Item Selector view should show the search field. 
+    
+    +$$$
+    
+    **Note:** To implement search, return `true` for this method. The 
+    `renderHTML` method, covered in the next section, indicates whether a user 
+    performed a search based on the value of the `search` parameter. Then, the 
+    keywords the user searched can be obtained as follows:
+
+        String keywords = ParamUtil.getString(request, "keywords");
+
+    $$$
 
     - [`isVisible()` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isVisible-com.liferay.portal.kernel.theme.ThemeDisplay-):
     returns whether the Item Selector view is visible. In most cases, you'll 
@@ -329,6 +341,10 @@ As a complete example, below is the full code for the
                                     }));
     
     }
+    
+The diagram below illustrates how the Item Selector's API works (right-click to view larger image):
+
+![Figure 2: Item Selector views are determined by the desired return types of the criterion, the supported return types of the view, and the criterion supported by the view.](../../images/item-selector-architecture.png)
 
 Once you've implemented your Item Selector view, you'll need to create the view 
 markup next.
@@ -424,7 +440,7 @@ create [cards](http://liferay.github.io/lexicon/content/cards/):
     
 The configuration above renders the UI shown in the figure below:
 
-![Figure 2: The Layouts Item Selector view uses the Lexicon design language and Liferay Layout taglibs to create the UI.](../../images/layouts-item-selector-view.png)
+![Figure 3: The Layouts Item Selector view uses the Lexicon design language and Liferay Layout taglibs to create the UI.](../../images/layouts-item-selector-view.png)
 
 This portion of the `aui:script` returns the path for the page:
 
@@ -501,7 +517,7 @@ The `data-url` and `data-uuid` attributes can be seen in the HTML markup for the
 Layouts Item Selector. The HTML markup for an instance of the Layouts Item 
 Selector is shown in the figure below:
 
-![Figure 3: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML markup.](../../images/layouts-item-selector-html.png)
+![Figure 4: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML markup.](../../images/layouts-item-selector-html.png)
 
 The last line adds the `CKEditorFuncNum` for the editor to the JSON object's 
 `data` attribute.
@@ -540,4 +556,4 @@ Now you know how to create custom views for the Item Selector!
 
 [Selecting Entities Using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector)
 
-[Creating Custom Entities for the Item Selector](/develop/tutorials/-/knowledge_base/7-0/creating-custom-entities-for-the-item-selector)
+[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-entities)
