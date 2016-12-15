@@ -1,186 +1,543 @@
-# Customizing Item Selector by adding new selection views
+# Creating Custom Selection Views for the Item Selector [](id=creating-custom-selection-views-for-the-item-selector)
 
-As we already explained in the introduction, Item Selector can render multiple 
-views when selecting a particular element type. Below you can see an image of 
-the Item Selector used to select images. You can see that there are multiple 
-tabs (Blog Images, Documents and Media, URL, Upload Image), each of one 
-represents a selection view. 
+Item Selector views are determined by the type of entity the user is selecting. 
+The Item Selector can render multiple views for the same entity type. For 
+example, when a user requires an image from the Item Selector, the selection 
+views shown below are rendered:
 
-![image alt text](image_0.png)
+![Figure 1: The entity type determines the Item Selector view.](../../images/item-selector-tabs.png)
 
-The entity type that should be selected is represented by an item selector 
-criterion. In this example, multiple criterions are used to specify what kind of 
-entity we would like to select. Next you can see the criterions used in this 
-example and which selection view matches that criterion:
+Each tab: *Blog Images*, *Documents and Media*, *URL*, and *Upload Image*, is a 
+selection view for the Item Selector, each one represented by an 
+`*ItemSelectorCriterion` class. The tabs in figure 1 are represented by the 
+following `*ItemSelectorCriterion`:
 
-1. BlogsItemSelectorCriterion -> Blog Images view
+-  [`BlogsItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/item/selector/criterion/BlogsItemSelectorCriterion.html): 
+   Blog Images View
+-  [`ImageItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/image/criterion/ImageItemSelectorCriterion.html): 
+   Documents and Media View
+-  [`URLItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/url/criterion/URLItemSelectorCriterion.html): 
+   URL View
+-  [`UploadItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/upload/criterion/UploadItemSelectorCriterion.html): 
+   Upload Image View
 
-2. DLImageItemSelectorCriterion -> Documents and Media
+The default selection views may provide everything you need for your application.  
+If, however, your application requires a custom selection view, for instance to 
+link to an external image provider, you can follow the steps outlined in this 
+tutorial.
 
-3. URLItemSelectorCriterion -> URL
+This tutorial covers how to create new selection views for the Item Selector.
 
-4. UploadItemSelectorCriterion-> Upload Image
+Get started by configuring the module for your view next.
 
-This tutorial will show how to customize Item Selector by adding new selection 
-views for some specific entity types. Let’s imagine that we want to create a new 
-image selection view to select images from an external provider so when the user 
-needs to select an image, our new image selection view will be rendered.
+## Configuring the Module [](id=configuring-the-module)
 
-First of all we need to know what kind of entities can be selected by our new 
-selection view. Images? Videos? Users? Depending on this we will need to use one 
-ItemSelectorCriterion or another. In our particular example, as we want to 
-select images, we will use ImageItemSelectorCriterion.
+Follow these steps to prepare your module:
 
-Once we know the entity type, we need to specify what kind of information we can 
-return from the image. Our imaginary image provider only returns URLs so we will 
-use URLItemSelectorReturnType for our example.
+1.  Add these dependencies to your module's `build.gradle`:
 
-With this information we are ready to start. 
+        dependencies {
+                compileOnly group: "com.liferay", 
+                name: "com.liferay.item.selector.api", version: "2.0.0"
+                compileOnly group: "com.liferay", 
+                name: "com.liferay.item.selector.criteria.api", version: "2.0.0"
+                compileOnly group: "com.liferay.portal", 
+                name: "com.liferay.portal.impl", version: "2.0.0"
+                compileOnly group: "com.liferay.portal", 
+                name: "com.liferay.portal.kernel", version: "2.0.0"
+                compileOnly group: "com.liferay.portal", 
+                name: "com.liferay.util.taglib", version: "2.0.0"
+                compileOnly group: "javax.portlet", 
+                name: "portlet-api", version: "2.0"
+                compileOnly group: "javax.servlet", 
+                name: "javax.servlet-api", version: "3.0.1"
+                compileOnly group: "org.osgi", 
+                name: "org.osgi.service.component.annotations", version: "1.3.0"
+        }
 
-The item selector views are represented by the interface ItemSelectorView. All 
-the selection views are OSGi component that implements this interface, so in 
-order to create a new view we will need to create this new class and register it 
-in OSGi using the inteface ItemSelectorView.
+2.  Add your module's information to the `bnd.bnd` file. For example, the 
+    configuration below adds the information for a module called `My Custom 
+    View`. 
 
-When implementing the ItemSelectorView we need to indicate which 
-ItemSelectorCriterion is required to display this view using the method 
-getItemSelectorCriterionClass. In our example we will return 
-ImageItemSelectorCriterion.class.
+        Bundle-Name: My Custom View
+        Bundle-SymbolicName: com.liferay.docs.my.custom.view
+        Bundle-Version: 1.0.0
+        
+3.  Add a `Web-ContextPath` to your BND to point to the resources for your
+    module. For example:
+    
+        Include-Resource:\
+                META-INF/resources=src/main/resources/META-INF/resources
+        Web-ContextPath: /my-custom-view
+        
+    If you don't have a `Web-ContextPath` your module won't know where your
+    resources are located. The `Include-Resource` header points to the relative
+    path for the module's resources.
 
-We also need to provide what information we are returning when the entity is 
-selected using the method getSupportedItemSelectorReturnTypes. In our case we 
-will use URLItemSelectorReturnType but we could use more return types if we have 
-the information.
+Now that your module is configured, you can create the view next.
 
-One other relevant method is renderHTML whose responsibility is to render the 
-view. In the example we will render the markup using JSPs, but you could use any 
-other technology (like freemarker for example).
+## Implementing the View [](id=implementing-the-view)
 
-Below is the example source code: 
+To create a new view you must first know what kind of entities you want to 
+select in the new view: images, videos, users, etc. The kind of entities you 
+choose determines the specific `ItemSelectorCriterion` you need to use. For 
+example if you were selecting images, you would need to use the 
+`ImageItemSelectorCriterion`.
 
-This is the SampleItemSelectorView code:
+Next, you need to know the type of information the entity can return when it's
+selected. For example, if the entity returns its URL, you would use 
+`URLItemSelectorReturnType` for the return type.
 
-@Component(
-	property = {"item.selector.view.order:Integer=200"},
-	service = ItemSelectorView.class
-)
-public class SampleItemSelectorView
-	implements ItemSelectorView<ImageItemSelectorCriterion> {
+For a full list of the available criterion and returns types that Liferay's apps
+and app suite's provide see the [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types)
+reference.
 
-	public Class<ImageItemSelectorCriterion> getItemSelectorCriterionClass() {
-		return ImageItemSelectorCriterion.class;
-	}
+Once you've determined the kinds of entities you wish to select, follow these 
+steps to create your selection view:
 
-	public ServletContext getServletContext() {
-		return _servletContext;
-	}
+1.  Create an Item Selector View Component class:
 
-	public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes() {
-		return _supportedItemSelectorReturnTypes;
-	}
+        @Component(
+            property = {"item.selector.view.order:Integer=200"},
+            service = ItemSelectorView.class
+        )
 
-	public String getTitle(Locale locale) {
-		return "Sample Selector";
-	}
+    Note that the OSGi component is registered with the property
+    `item.selector.view.order`. The Item Selector view order (the order of the
+    rendered tab views) is prioritized according to these settings:
 
-	public boolean isShowSearch() {
-		return false;
-	}
+    - The criteria order specified in the [`getItemSelectorURL` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelector.html#getItemSelectorURL-com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory-java.lang.String-com.liferay.item.selector.ItemSelectorCriterion...-) 
+    of the application.
 
-	public boolean isVisible(ThemeDisplay themeDisplay) {
-		return true;
-	}
+    - The `item.selector.view.order` property's value for multiple views with 
+    the same criteria. The lower the value is, the more priority it has, and the 
+    sooner it will appear in the order.
+        
+2.  Implement the [`ItemSelectorView` interface](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html) 
+    using the *criterion* the view requires. For example, the configuration 
+    below uses the [`ImageItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/image/criterion/ImageItemSelectorCriterion.html) 
+    to implement the view:
+        
+        public class SampleItemSelectorView
+            implements ItemSelectorView<ImageItemSelectorCriterion> {
 
-	public void renderHTML(
-			ServletRequest request, ServletResponse response,
-			ImageItemSelectorCriterion itemSelectorCriterion,
-			PortletURL portletURL, String itemSelectedEventName, boolean search)
-		throws IOException, ServletException {
+            @Override
+            public Class<ImageItemSelectorCriterion> getItemSelectorCriterionClass() 
+            {
+                return ImageItemSelectorCriterion.class;
+            }
 
-		request.setAttribute(_ITEM_SELECTED_EVENT_NAME, itemSelectedEventName);
+            @Override            
+            public ServletContext getServletContext() {
+                return _servletContext;
+            }
 
-		ServletContext servletContext = getServletContext();
+            @Override            
+            public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes() {
+                return _supportedItemSelectorReturnTypes;
+            }
 
-		RequestDispatcher requestDispatcher =
-			servletContext.getRequestDispatcher("/sample.jsp");
+        }
+        
+    The implementation above also sets up some methods you'll use in the steps
+    that follow. The [`getSupportedItemSelectorReturnTypes` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#getSupportedItemSelectorReturnTypes--) 
+    returns a list of *ItemSelectorReturnType*s. You'll populate this list in a 
+    later step to specify the return types the selection view supports.
 
-		requestDispatcher.include(request, response);
-	}
+    +$$$
+    
+    **Note:** If you want your new selection view to be available only when 
+    selecting the entity for a specific web content, such as a blog entry, 
+    simply replace the `*ItemSelectorCriterion` in your `*ItemSelectorView` 
+    class with the `*ItemSelectorCriterion` class you wish to use, such as the 
+    [`BlogsItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/item/selector/criterion/BlogsItemSelectorCriterion.html).
+    
+    $$$
 
-	@Reference(
-		target = "(osgi.web.symbolicname=com.liferay.item.selector.sample.web)",
-		unbind = "-"
-	)
+3.  Configure the title, search options, and visibility settings for the
+    selection view:
+
+    An example configuration is shown below for a selection view called 
+    `Sample Selector`:
+
+        @Override
+        public String getTitle(Locale locale) {
+            return "Sample Selector";
+        }
+
+        @Override
+        public boolean isShowSearch() {
+            return false;
+        }
+
+        @Override
+        public boolean isVisible(ThemeDisplay themeDisplay) {
+            return true;
+        }
+
+    The following methods are demonstrated above:
+    
+    - [`getTitle` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#getTitle-java.util.Locale-): 
+    returns the localized title of the tab to display in the Item Selector 
+    dialog.
+
+    - [`isShowSearch()` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isShowSearch--): 
+    returns whether the Item Selector view should show the the search field.
+
+    - [`isVisible()` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isVisible-com.liferay.portal.kernel.theme.ThemeDisplay-):
+    returns whether the Item Selector view is visible. In most cases, you'll 
+    want to set this to `true`. You can use this method to add conditional logic 
+    to disable the view.
+
+4.  Next, set the render settings for your view, using the [`renderHTML` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#renderHTML-javax.servlet.ServletRequest-javax.servlet.ServletResponse-T-javax.portlet.PortletURL-java.lang.String-boolean-).
+    The example below points to a JSP file to render the view:
+
+        @Override
+        public void renderHTML(
+            ServletRequest request, ServletResponse response,
+            ImageItemSelectorCriterion itemSelectorCriterion,
+            PortletURL portletURL, String itemSelectedEventName,
+            boolean search
+        )
+        throws IOException, ServletException {
+
+            request.setAttribute(_ITEM_SELECTED_EVENT_NAME,
+            itemSelectedEventName);
+
+            ServletContext servletContext = getServletContext();
+
+            RequestDispatcher requestDispatcher =
+            servletContext.getRequestDispatcher("/sample.jsp");
+
+            requestDispatcher.include(request, response);
+        }
+
+    The `renderHTML` methods passes the `*ItemSelectorCriterion` required to 
+    display the selection view. Next, the `portletURL`, used to invoke the Item 
+    Selector, is passed. Then the `itemSelectedEventName` is passed. This is the 
+    event name that the caller listens for. When an element is selected, the 
+    view should fire a JavaScript event with this name. Finally, a search 
+    boolean is passed, specifying when the view should render search results. 
+    When the user performs a search, this boolean should be set to `true`.
+    
+    Note that the `itemSelectedEventName` is passed as a request attribute, so
+    it can be used in the view markup.
+
+    The view markup is specified with the line below:
+
+        RequestDispatcher requestDispatcher =
+                servletContext.getRequestDispatcher("/sample.jsp");
+
+    Although the example uses JSPs, you could use another language such as
+    FreeMarker to render the markup.
+
+5.  Use the `@Reference` annotation to reference your module's class 
+    for the `setServletContext` method.
+
+    Below is an example configuration:
+
+        @Reference(
+            target =
+            "(osgi.web.symbolicname=com.liferay.item.selector.sample.web)",
+            unbind = "-"
+        )
 	public void setServletContext(ServletContext servletContext) {
 		_servletContext = servletContext;
 	}
 
-	private static final String _ITEM_SELECTED_EVENT_NAME =
-		"ITEM_SELECTED_EVENT_NAME";
+    The `target` parameter is used to specify the available services for the
+    servlet context. In this case, it specifies the
+    `com.liferay.selector.sample.web` class as the default value, using the
+    `osgi.web.symbolicname` property. Finally, the `unbind = _` parameter
+    specifies that there is no unbind method for this module. A method is 
+    defined to set the servlet context as well.
 
-	private static final List<ItemSelectorReturnType>
-		_supportedItemSelectorReturnTypes = Collections.unmodifiableList(
-			ListUtil.fromArray(
-				new ItemSelectorReturnType[] {
-					new URLItemSelectorReturnType()
-				}));
+6.  Finally, populate the `_supportedItemSelectorReturnTypes` list specified in 
+    step 2 with the return types that this view supports.
+    
+    The example below adds the [`URLItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/URLItemSelectorReturnType.html) 
+    and [`FileEntryItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/FileEntryItemSelectorReturnType.html) 
+    to the list of supported return types, but you could use more return types 
+    if the view could return them. More return types means that the view is more 
+    reusable:
 
-	private ServletContext _servletContext;
+        private static final List<ItemSelectorReturnType>
+            _supportedItemSelectorReturnTypes =
+            Collections.unmodifiableList(
+                ListUtil.fromArray(
+                    new ItemSelectorReturnType[] {
+                        new FileEntryItemSelectorReturnType(),
+                        new URLItemSelectorReturnType()
+                    }));
 
-}
+         private ServletContext _servletContext;
+         
+    The servlet context variable is declared at the bottom of the file.
+    
+As a complete example, below is the full code for the 
+[`FlickrItemSelectorView` class](https://github.com/liferay/liferay-portal/blob/586f66c629b559e79c744559751ecb960218fe0b/modules/apps/collaboration/item-selector/item-selector-web/src/test/java/com/liferay/item/selector/web/internal/FlickrItemSelectorView.java):
 
-Note that the OSGi component is registered with the property 
-item.selector.view.order. This property is used by the Item Selector to choose 
-the order of the views when rendering the tabs. The lower the value is, the more 
-priority it has, and the first it will appear.
+    public class FlickrItemSelectorView
+            implements ItemSelectorView<FlickrItemSelectorCriterion> {
+    
+            @Override
+            public Class<FlickrItemSelectorCriterion> getItemSelectorCriterionClass() {
+                    return FlickrItemSelectorCriterion.class;
+            }
+    
+            @Override
+            public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes() {
+                    return _supportedItemSelectorReturnTypes;
+            }
+    
+            @Override
+            public String getTitle(Locale locale) {
+                    return FlickrItemSelectorView.class.getName();
+            }
+    
+            @Override
+            public boolean isShowSearch() {
+                    return false;
+            }
+    
+            @Override
+            public boolean isVisible(ThemeDisplay themeDisplay) {
+                    return true;
+            }
+    
+            @Override
+            public void renderHTML(
+                            ServletRequest request, ServletResponse response,
+                            FlickrItemSelectorCriterion flickrItemSelectorCriterion,
+                            PortletURL portletURL, String itemSelectedEventName, 
+                            boolean search)
+                    throws IOException {
+    
+                    PrintWriter printWriter = response.getWriter();
+    
+                    printWriter.print(
+                            "<html>" + FlickrItemSelectorView.class.getName() + 
+                            "</html>");
+            }
+    
+            private static final List<ItemSelectorReturnType>
+                    _supportedItemSelectorReturnTypes = 
+                    Collections.unmodifiableList(
+                            ListUtil.fromArray(
+                                    new ItemSelectorReturnType[] {
+                                            new TestURLItemSelectorReturnType()
+                                    }));
+    
+    }
 
-Keep in mind that the Item Selector orders the views attending to different 
-things:
+Once you've implemented your Item Selector view, you'll need to create the view 
+markup next.
 
-* First, it considers the order of the criteria decided by the client of the 
-item selector. When the application invokes the item selector it will specify 
-the criteria ordered by importance.
+## Writing your View Markup [](id=writing-your-view-markup)
 
-* Second, if there are multiple views for the same criteria, it will use the 
-property item.selector.view.order to determine which will appear first.
+You've implemented your view, specifying the criteria and return types, along
+with important configuration information, such as how to render the view. All
+that is left is to write the markup for your selection view now.
 
-Now, it`s up to you create the view markup, and do not forget fire an event 
-using the event name. As you could see we have passed it as a request attribute 
-in the renderHTML method in the SampleItemSelectorView class, so we can use it 
-in the jsp as follows:
+Naturally, the markup for your selection view will vary greatly depending on the
+requirements of your app. You can use taglibs, AUI components, or even pure HTML 
+and JavaScript if you prefer, to write your view. Regardless of the approach you 
+choose to create your view, the view must do two key things:
 
-Liferay.fire(
-	'<%= {eventName} %>',
+- Render the entities for the user to select
+- Contain JavaScript logic that will pass the information specified by the Item 
+  Selector return type, via a JavaScript event, when an entity is selected.
 
-	{
-		data: {the-data-your-client-needs-according-return-type}
-	}
+If you're following the example in the last section, the JavaScript event name 
+has been passed as a request attribute in the `renderHTML` method of the 
+`*ItemSelectorView` class, so it can be used in the view markup as follows:
 
-);
+    Liferay.fire(
+            `<%= {ITEM_SELECTED_EVENT_NAME} %>',
+            
+            {
+                data:{
+                    the-data-your-client-needs-according-to-the-return-type
+                }
+            }
+    );
 
-In this event we should return the right data according with the specified 
-desired ItemSelectorReturnTypes. 
+Below is the complete [`Layouts.jsp` view markup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
+for the [`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web):
 
-This new selection view will be automatically rendered by the Item Selector in 
-every portlet that uses Item Selector to select images and can can handle urls 
-as a return type without modifying anything in those portlets.
+Some java imports are defined intially:
+    
+    <%
+    LayoutItemSelectorViewDisplayContext layoutItemSelectorViewDisplayContext = 
+    (LayoutItemSelectorViewDisplayContext)request.getAttribute(
+    BaseLayoutsItemSelectorView.LAYOUT_ITEM_SELECTOR_VIEW_DISPLAY_CONTEXT);
+    
+    LayoutItemSelectorCriterion layoutItemSelectorCriterion = 
+    layoutItemSelectorViewDisplayContext.getLayoutItemSelectorCriterion();
+    
+    Portlet portlet = PortletLocalServiceUtil.getPortletById(
+    company.getCompanyId(), portletDisplay.getId());
+    %>
+    
+Note that the `LayoutItemSelectorViewDisplayContext` is an optional class that
+contains additional information about the criteria and view, but it isn't
+required.
 
-If for any reason, we want this new selection view to be available only when 
-selecting images for a blog entry, we should replace ImageItemSelectorCriterion 
-by BlogsItemSelectorCriterion.
+The snippet below imports a CSS file for styling, and places it in the `<head>` 
+of the page:
+    
+    <liferay-util:html-top>
+            <link href="<%= PortalUtil.getStaticResourceURL(
+            request, application.getContextPath() + "/css/main.css", 
+            portlet.getTimestamp()) 
+            %>" rel="stylesheet" type="text/css" />
+    </liferay-util:html-top>
+    
+You can learn more about using the `liferay-util` taglibs in the 
+[Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-util-taglib)
+tutorial.
 
-In the last tutorial we will explain how to use Item Selector to select your 
-custom entities and allow other applications to select your custom entities as 
-well.
+This snippet creates the UI to display the layout entities. It uses the 
+[`liferay-layout:layouts-tree` taglib](@platform-ref@/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/layouts-tree.html) 
+along with the [Lexicon](http://liferay.github.io/lexicon/) design language to 
+create [cards](http://liferay.github.io/lexicon/content/cards/):
 
-If you want more information you could check here:
+    <div class="container-fluid-1280 layouts-selector">
+            <div class="card-horizontal main-content-card">
+                    <div class="card-row card-row-padded">
+                            <liferay-layout:layouts-tree
+                                    checkContentDisplayPage="<%= layoutItemSelectorCriterion.isCheckDisplayPage() %>"
+                                    draggableTree="<%= false %>"
+                                    expandFirstNode="<%= true %>"
+                                    groupId="<%= scopeGroupId %>"
+                                    portletURL="<%= layoutItemSelectorViewDisplayContext.getEditLayoutURL() %>"
+                                    privateLayout="<%= layoutItemSelectorViewDisplayContext.isPrivateLayout() %>"
+                                    rootNodeName="<%= layoutItemSelectorViewDisplayContext.getRootNodeName() %>"
+                                    saveState="<%= false %>"
+                                    selectedLayoutIds="<%= layoutItemSelectorViewDisplayContext.getSelectedLayoutIds() %>"
+                                    selPlid="<%= layoutItemSelectorViewDisplayContext.getSelPlid() %>"
+                                    treeId="treeContainer"
+                            />
+                    </div>
+            </div>
+    </div>
+    
+The configuration above renders the UI shown in the figure below:
 
-[https://docs.google.com/document/d/16nbb6BKi2b7u56dIJSlUGzKioz_HcLsaBPSH3S20A4o/edit](https://docs.google.com/document/d/16nbb6BKi2b7u56dIJSlUGzKioz_HcLsaBPSH3S20A4o/edit)
+![Figure 2: The Layouts Item Selector view uses the Lexicon design language and Liferay Layout taglibs to create the UI.](../../images/layouts-item-selector-view.png)
 
-[https://docs.google.com/document/d/1lAUfVYdpprw2lEh1dyekHlhdGl0x7CqUaV6t3QaMxaA/edit](https://docs.google.com/document/d/1lAUfVYdpprw2lEh1dyekHlhdGl0x7CqUaV6t3QaMxaA/edit)
+This portion of the `aui:script` returns the path for the page:
 
-You could get the sample example code from here:
+    <aui:script use="aui-base">
+            var LString = A.Lang.String;
+    
+            var getChosenPagePath = function(node) {
+                    var buffer = [];
+    
+                    if (A.instanceOf(node, A.TreeNode)) {
+                            var labelText = LString.escapeHTML(node.get('labelEl').text());
+    
+                            buffer.push(labelText);
+    
+                            node.eachParent(
+                                    function(treeNode) {
+                                            var labelEl = treeNode.get('labelEl');
+    
+                                            if (labelEl) {
+                                                    labelText = LString.escapeHTML(labelEl.text());
+    
+                                                    buffer.unshift(labelText);
+                                            }
+                                    }
+                            );
+                    }
+    
+                    return buffer.join(' > ');
+            };
 
-[https://github.com/robertoDiaz/liferay-portal/tree/item-selector-sample](https://github.com/robertoDiaz/liferay-portal/tree/item-selector-sample)
+The snippet below passes the return type data when the layout(entity) is 
+selected. In particular, take note of the `url` and `uuid` variables, which
+retrieve the URL or UUID for the layout:
+            
+            var setSelectedPage = function(event) {
+                    var disabled = true;
+    
+                    var messageText = '<%= UnicodeLanguageUtil.get(request, "there-is-no-selected-page") %>';
+    
+                    var lastSelectedNode = event.newVal;
+    
+                    var labelEl = lastSelectedNode.get('labelEl');
+    
+                    var link = labelEl.one('a');
+    
+                    var url = link.attr('data-url');
+                    var uuid = link.attr('data-uuid');
+    
+                    var data = {};
+    
+                    if (link && url) {
+                            disabled = false;
+    
+                            data.layoutpath = getChosenPagePath(lastSelectedNode);
 
+This checks if the return type information is a URL or a UUID, then it sets the 
+value for the JSON object's `data` attribute accordingly:
+                            
+                            <c:choose>
+                                    <c:when test="<%= Objects.equals(layoutItemSelectorViewDisplayContext.getItemSelectorReturnTypeName(), URLItemSelectorReturnType.class.getName()) %>">
+                                            data.value = url;
+                                    </c:when>
+                                    <c:when test="<%= Objects.equals(layoutItemSelectorViewDisplayContext.getItemSelectorReturnTypeName(), UUIDItemSelectorReturnType.class.getName()) %>">
+                                            data.value = uuid;
+                                    </c:when>
+                            </c:choose>
+                    }
+    
+                    <c:if test="<%= Validator.isNotNull(layoutItemSelectorViewDisplayContext.getCkEditorFuncNum()) %>">
+                            data.ckeditorfuncnum: <%= layoutItemSelectorViewDisplayContext.getCkEditorFuncNum() %>;
+                    </c:if>
 
+The `data-url` and `data-uuid` attributes can be seen in the HTML markup for the
+Layouts Item Selector. The HTML markup for an instance of the Layouts Item 
+Selector is shown in the figure below:
+
+![Figure 3: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML markup.](../../images/layouts-item-selector-html.png)
+
+The last line adds the `CKEditorFuncNum` for the editor to the JSON object's 
+`data` attribute.
+
+The JavaScript trigger event, specified in the Item Selector return type, is 
+fired, passing the data JSON object with the required return type information:
+
+                    Liferay.Util.getOpener().Liferay.fire(
+                            '<%= layoutItemSelectorViewDisplayContext.getItemSelectedEventName() %>',
+                            {
+                                    data: data
+                            }
+                    );
+            };
+
+Finally, the layout is set to the selected page:
+            
+            var container = A.one('#<portlet:namespace />treeContainerOutput');
+    
+            if (container) {
+                    container.swallowEvent('click', true);
+    
+                    var tree = container.getData('tree-view');
+    
+                    tree.after('lastSelectedChange', setSelectedPage);
+            }
+    </aui:script>
+
+Your new selection view will automatically be rendered by the Item Selector in
+every portlet that uses the criterion and return types you defined, without
+modifying anything in those portlets.
+
+Now you know how to create custom views for the Item Selector!
+
+## Related Topics [](id=related-topics)
+
+[Selecting Entities Using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector)
+
+[Creating Custom Entities for the Item Selector](/develop/tutorials/-/knowledge_base/7-0/creating-custom-entities-for-the-item-selector)
