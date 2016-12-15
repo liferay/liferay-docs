@@ -244,7 +244,7 @@ learn how to create these modules next.
 
 ## Converting Your Application's Service Builder API and Implementation [](id=converting-your-applications-service-builder-api-and-implementation)
 
-In this section, you'll learn about converting a Liferay 6 Service Builder
+In this section, you'll learn about converting a Liferay Portal 6 Service Builder
 application to a @product-ver@ style application. In the previous section, you
 learned how to generate your implementation and API modules. If you haven't yet
 run the `servicebuilder` blade command outlined in step 2 of the previous
@@ -314,7 +314,7 @@ implementation code.
     block's configuration.
 
 7.  Now that you've run Service Builder, continue copying custom classes into
-    your implementation module. The table below highlights popular Liferay 6
+    your implementation module. The table below highlights popular Liferay Portal 6
     classes and packages and where they should be placed in your application.
     This table is intended to aid in the organization of your classes and
     configuration files; however, remember to follow the organizational

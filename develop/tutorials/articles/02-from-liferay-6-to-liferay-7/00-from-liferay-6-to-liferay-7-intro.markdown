@@ -1,4 +1,4 @@
-# From Liferay 6 to @product-ver@ [](id=from-liferay-6-to-liferay-7)
+# From Liferay Portal 6 to @product-ver@ [](id=from-liferay-6-to-liferay-7)
 
 Becoming familiar with a platform as large and fully featured as Liferay is 
 a big task. You learn the ins and outs of what it can do, the tips and best 
@@ -35,5 +35,5 @@ learn how and when to modularize plugins.
 In the end, we believe you'll both want to adopt @product-ver@, and you'll see 
 how you can thrive using it.
 
-The first thing to examine is what’s changed the most since Liferay 6 and then 
-call out the familiar, good things that remain the same. 
+The first thing to examine is what’s changed the most since Liferay Portal 6 and
+then call out the familiar, good things that remain the same. 

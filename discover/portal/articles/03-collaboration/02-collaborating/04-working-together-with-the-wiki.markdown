@@ -1,6 +1,6 @@
 # Working Together with the Wiki [](id=working-together-with-the-wiki)
 
-@product@'s Wiki is a full-featured [wiki](/participate/liferaypedia/-/wiki/Main/Wiki)
+@product@'s Wiki is a full-featured [wiki](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Wiki)
 application which has all the features you would expect in a state of the art
 wiki. Again, though, it has the benefit of being able to take advantage of all
 the features of @product@. As such, it is completely integrated

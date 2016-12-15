@@ -13,9 +13,15 @@ After you've installed JPM, install the Blade CLI using the following command:
 
     (sudo) jpm install com.liferay.blade.cli
 
+To check that Blade CLI is installed, make sure that the `blade` executable is
+available on your system path. Test its usage by executing `blade` in your
+terminal window. If Blade CLI is installed correctly, you'll see the Blade CLI
+options printed in your terminal.
+
+## Setting Blade CLI Proxy Requirments [](id=setting-blade-cli-proxy-requirments)
+
 If you have proxy server requirements and want to configure your http(s) proxy
-to work with the Blade CLI, follow the instructions below. If not, continue on
-to the next section.
+to work with the Blade CLI, follow the instructions below.
 
 For Mac and Linux users, run the following command:
 		
@@ -30,33 +36,27 @@ to the end of the file.
     vmarg.1=-Dhttp(s).proxyHost=[your proxy host]
     vmarg.2=-Dhttp(s).proxyPort=[your proxy port]
 
-Now that Blade CLI is installed on your machine, you'll learn how to verify and
-update your installation.
+Now that Blade CLI is installed on your machine, you'll learn how to update your
+installation.
 
-## Verifying Your Blade CLI Installation [](id=verifying-your-blade-cli-installation)
+## Updating Your Blade CLI Installation [](id=verifying-your-blade-cli-installation)
 
-To check that Blade CLI is installed, make sure that the `blade` executable is
-available on your system path. Test its usage by entering `blade version` into a
-terminal. If Blade CLI is installed correctly, you'll see the current version
-for the installed tools:
+If your Blade CLI version is outdated, you can run the following command to
+automatically download and install the latest version of Blade CLI:
 
-If your version is outdated, you can run `blade update` to automatically
-download and install the latest version of Blade CLI. Blade CLI is updated
-frequently, so it's recommended to update your Blade CLI environment for new
-features.
+    blade update
 
-+$$$
-
-**Note:** For Windows users, the `blade update` command does not work. This is
-because Windows cannot update a file that is currently in use. To bypass this
-issue, you can use JPM to update your version of Blade CLI:
+For Windows users, the `blade update` command does not work because Windows
+cannot update a file that is currently in use. To bypass this issue, you can use
+JPM to update your version of Blade CLI:
 
     jpm install -f com.liferay.blade.cli
 
-$$$
+Blade CLI is updated frequently, so it's recommended to update your Blade CLI
+environment for new features. You can check your current installed version by
+running `blade version`.
 
-You've successfully downloaded and installed Blade CLI using JPM and verified
-your installation using a basic `blade` command. Blade CLI offers many `create`
-templates to help build @product@ 7.0 applications, and also offers various ways
-to deploy those apps and interact with your Liferay server. Be sure to explore
-more Blade CLI tutorials to learn how.
+You've successfully learned how to install and update Blade CLI. Blade CLI
+offers many `create` templates to help build @product-ver@ applications, and
+also offers various ways to deploy those apps and interact with your Liferay
+server. Be sure to explore more Blade CLI tutorials to learn how.

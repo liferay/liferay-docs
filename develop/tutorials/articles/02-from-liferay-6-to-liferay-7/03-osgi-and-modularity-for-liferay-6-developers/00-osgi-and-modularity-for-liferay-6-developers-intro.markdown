@@ -1,4 +1,4 @@
-# OSGi and Modularity for Liferay 6 Developers [](id=osgi-and-modularity-for-liferay-6-developers)
+# OSGi and Modularity for Liferay Portal 6 Developers [](id=osgi-and-modularity-for-liferay-6-developers)
 
 To create a powerful, reliable platform for developing modular applications,
 Liferay sought best-of-breed standards-based frameworks and technologies.
@@ -178,10 +178,9 @@ Gradle or Maven, to manage dependencies.
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 is an environment for managing module projects (and theme projects). It provides
 Gradle build scripts for developing on Liferay. It can be used from the command
-line or from within [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
-and Developer Studio. Note also that Liferay IDE/Developer Studio provide
-plugins for Gradle, Maven, and BndTools. Tooling details are covered later in
-this series.
+line or from within [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide).
+Note also that Liferay @ide@ provides plugins for Gradle, Maven, and BndTools.
+Tooling details are covered later in this series.
 
 Now that you're familiar with the module structure and manifest, it's time to
 explore how to build modules.
@@ -220,7 +219,7 @@ The main difference is that the `bnd.bnd` file doesn't specify an
 
 Bnd plugins are available to use with Gradle and Maven. And since Liferay
 Workspace includes Bnd, developers can use Bnd from the command line and from
-Liferay IDE / Developer Studio.
+Liferay @ide@.
 
 Now that you're familiar with Bnd and the `Export-Package` and `Import-Package`
 manifest headers, let's explore how to use them to leverage dependencies.
@@ -243,12 +242,12 @@ Let's start by learning how dependencies operate in @product-ver@.
 
 ### How Dependencies Work [](id=how-dependencies-work)
 
-Since all of @product-ver@ leverages dependencies, it also demonstrates how to use
-them. As mentioned previously, all of what was in Liferay 6 and its apps has
-been refactored into OSGi modules. The `portal-service` API (the main API in
-Liferay 6) has been replaced by the `portal-kernel` module (@product-ver@'s
-kernel API) and many small, highly-cohesive modules that provide frameworks,
-utilities, apps, and more.
+Since all of @product-ver@ leverages dependencies, it also demonstrates how to
+use them. As mentioned previously, all of what was in Liferay Portal 6 and its
+apps has been refactored into OSGi modules. The `portal-service` API (the main
+API in Liferay Portal 6) has been replaced by the `portal-kernel` module
+(@product-ver@'s kernel API) and many small, highly-cohesive modules that
+provide frameworks, utilities, apps, and more.
 
 Not only do @product@ modules depend on third-party modules but they also depend
 on each other. You can likewise leverage dependencies in your projects. Whether
@@ -537,8 +536,8 @@ Next, you'll create and deploy a module and component to @product@.
 ## Example: Building an OSGi Module [](id=example-building-an-osgi-module)
 
 The previous sections explained some of the most important concepts for Liferay
-6 developers to understand about OSGi and modularity. Now it's time to put this
-knowledge to practice by creating and deploying a module.
+Portal 6 developers to understand about OSGi and modularity. Now it's time to
+put this knowledge to practice by creating and deploying a module.
 
 The module includes a Java class that implements an OSGi service using
 Declarative Services. The project uses Gradle and Bnd, and can be built and

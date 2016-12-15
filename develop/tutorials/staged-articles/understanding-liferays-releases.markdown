@@ -71,7 +71,7 @@ installation.
 
 - Always update to the latest maintenance release available for the functional
   version (major or minor) that you are using. For example, if you started your
-  project with Liferay 6.2.0 GA1, it is recommended that you switch to GA2
+  project with Liferay Portal 6.2.0 GA1, it is recommended that you switch to GA2
   if/when it becomes available to take advantage of bug fixes and improvements. If
   you have a subscription, you can benefit from the fixes faster by requesting
   fix packs and hot fixes from the support team.
@@ -84,8 +84,8 @@ installation.
   tight deadlines, since you may hit some unexpected bugs.
 
 - Plugins that work in any GA or fix pack version will work in any later
-  maintenance release. That is, a plugin developed for Liferay 6.2 GA1 will
-  also work in Liferay 6.2 GA2 or a GA2 fix pack.
+  maintenance release. That is, a plugin developed for Liferay Portal 6.2 GA1 will
+  also work in Liferay Portal 6.2 GA2 or a GA2 fix pack.
 
 For more details on updating Liferay Portal, see the
 [Upgrading Liferay](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)

@@ -202,8 +202,8 @@ entity finder interfaces, and static utilities
 
 +$$$
 
-**Important**: The API called *portal-service* in 6.2 and previous versions is
-called *portal-kernel* in Liferay 7. 
+**Important**: The API called *portal-service* in Liferay Portal 6.2 and previous versions is
+called *portal-kernel* in @product-ver@. 
 
 $$$
 
@@ -226,5 +226,5 @@ You now know how to find Liferay component API modules and their Javadoc.
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
-<!--[Adapting to Liferay 7's API](/develop/reference/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
+[Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 

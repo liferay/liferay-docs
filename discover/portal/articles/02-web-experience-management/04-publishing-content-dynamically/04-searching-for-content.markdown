@@ -39,8 +39,8 @@ to search for web content.
 
 +$$$
 
-**Note:** The Web Content Search application is deprecated in @product@ 7.0 and
-will be removed in Liferay 7.1. The Web Content Search app's functionality has
+**Note:** The Web Content Search application is deprecated in @product-ver@ and
+will be removed in 7.1. The Web Content Search app's functionality has
 been replaced by the Search app, which is configured to search for web content. 
 
 $$$

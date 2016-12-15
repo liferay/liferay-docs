@@ -1,7 +1,7 @@
 # Knowledge Base Configuration [](id=knowledge-base-configuration)
 
 These are the settings to configure the Knowledge Base, including the migration 
-of properties from Liferay 6.2.
+of properties from Liferay Portal 6.2.
 
 This reference doc has two sections:
 
