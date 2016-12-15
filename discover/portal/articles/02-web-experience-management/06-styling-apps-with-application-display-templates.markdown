@@ -20,8 +20,8 @@ Before attempting to change the ADT for your application, you'll need to select
 a site for your custom template to reside in. Choosing the *Global* context
 makes your template available across all sites. To choose a site to house your
 ADT, navigate to the Site Administration dropdown list by selecting the
-*Compass* icon (![Compass](../../images/icon-compass.png)). If you select the
-Global context, the *Application Display Templates* page of Site
+*Site Selector* button (![Compass](../../images/icon-compass.png)). If you
+select the Global context, the *Application Display Templates* page of Site
 Administration's Configuration Menu shows you a list of sample templates
 available for your apps. These sample templates differ from the default
 templates already configured in the apps. If you choose a site to host your

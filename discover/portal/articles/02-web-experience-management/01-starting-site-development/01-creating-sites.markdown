@@ -15,22 +15,24 @@ facilitate collaboration among team members, supporting different kinds of
 collaboration and social scenarios is a must. Liferay's sites provide three
 membership types:
 
-**Open:** Users can become members of the site at any time. Users can join
-sites from the Site Administration navigation menu
-(![Compass](../../../images/icon-compass.png)).
+**Open:** Users can become members of the site at any time.
 
 **Restricted:** Users can request site membership but site administrators must
-approve requests in order for users to become members. Requests can be made from
-the Site Administration navigation menu.
+approve requests in order for users to become members.
 
-**Private:** Users are not allowed to join the site or request site
-membership. Private sites don't appear in the Site Administration navigation
-menu. Site administrators can still manually select users and assign them as
-site members.
+**Private:** Users are not allowed to join the site or request site membership.
+Site administrators can still manually select users and assign them as site
+members.
 
 In addition to these memberships, when a site is associated with an
 organization, all the users of that organization are automatically considered
 members of the site.
+
+You can view all the available open and restricted sites by adding the My Sites
+application to a page and accessing the *Available Sites* tab. You can request
+access to any of the sites you're not already a member of by
+selecting the site's *Options* button
+(![Options](../../../images/icon-actions.png)) and clicking *Join*.
 
 Members of a site can be given additional privileges within the site by using
 @product@'s permission settings. It is also possible to assign different roles
@@ -163,11 +165,11 @@ sections, respectively.
 
 **Tip:** If you're signed in as an administrator, you can access all sites by
 navigating to the Site Administration menu from the Control Panel. To manage a
-single site, navigate to the site by going to the Menu and clicking the Compass
-icon (![Compass](../../../images/icon-compass.png)) from the sites dropdown menu
-and selecting the appropriate site name you'd like to manage. Once finished, the
-site administration options (i.e., Navigation, Content, Members, etc.) for that
-site are available.
+single site, navigate to the site by going to the Menu and clicking the *Site
+Selector* button (![Compass](../../../images/icon-compass.png)) from the sites
+dropdown menu and selecting the appropriate site name you'd like to manage. Once
+finished, the site administration options (i.e., Navigation, Content, Members,
+etc.) for that site are available.
 
 $$$
 
