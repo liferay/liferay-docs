@@ -84,7 +84,7 @@ editor. Because of this, your next task is to get both of these installed.
    creating a `bundles` folder and unzipping it there. 
 
 2. Install the
-   [Plugins SDK](https://www.liferay.com/downloads/liferay-portal/additional-files).
+   [Plugins SDK](https://www.liferay.com/downloads#additional-files).
    Liferay's Plugins SDK is a basic, command-line driven development environment
    that the IDE uses behind the scenes to manage your Liferay projects. This is
    just as easy as installing everything else: unzip it to your system. We
