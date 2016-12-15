@@ -16,9 +16,9 @@ account creation:
 When the resource URL is triggered, the matching `*MVCResourceCommand` class 
 processes the resource request and response. You can create this class by 
 implementing the 
-[`MVCResourceCommand` interface](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html), 
+[`MVCResourceCommand` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html), 
 or extending the 
-[`BaseMVCResourceCommand` class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCResourceCommand.html). 
+[`BaseMVCResourceCommand` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCResourceCommand.html). 
 The latter may save you time, since it already implements `MVCResourceCommand`. 
 
 Also, it's a good idea to name your `*MVCResourceCommand` class after the

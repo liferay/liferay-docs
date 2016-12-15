@@ -54,7 +54,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
-| `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The asset’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `offlinePolicy` | `string` | The offline mode setting. The default is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-0/comment-list-screenlet-for-ios#offline) for details. |
 | `editable` | `boolean` | Whether the user can edit the comment. |
@@ -62,7 +62,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `refreshControl` | `boolean` | Defines whether a standard [iOS `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) is shown when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items retrieved from the server for display on the second and subsequent pages. The default value is `25`. |
-| `obcClassName` | `string` | The name of the [`OrderByComparator` class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/OrderByComparator.html) to use to sort the results. You can only use classes that extend `OrderByComparator<MBMessage>`. If you don't want to sort the results, you can omit this property. |
+| `obcClassName` | `string` | The name of the [`OrderByComparator` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/OrderByComparator.html) to use to sort the results. You can only use classes that extend `OrderByComparator<MBMessage>`. If you don't want to sort the results, you can omit this property. |
 
 ## Methods [](id=methods)
 
