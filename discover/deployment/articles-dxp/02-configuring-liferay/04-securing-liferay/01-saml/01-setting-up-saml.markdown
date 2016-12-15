@@ -210,7 +210,7 @@ installation as a SAML Service Provider.
 +$$$
 
 **Note:** If you're using a third party IdP with @product@ as the SP, all
-messages coming from the IdP must be encrypted. If they're not, an error message
+messages coming from the IdP must be signed. If they're not, an error message
 appears and communication between the IdP and @product@ fails.
 
 $$$
