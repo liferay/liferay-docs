@@ -26,7 +26,8 @@ reference lists criterion classes Liferay's apps and app suites provide.
 
 If there's no criterion class for your entity, you can create your
 own [`ItemSelectorCriterion` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/com/liferay/item/selector/ItemSelectorCriterion.html)
-(tutorial coming soon). 
+by following the [Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-entities#creating-item-selector-criterion) 
+tutorial.
 
 Then determine the type of information (return type) you expect from the
 entities when users select them. Do you expect a URL? A Universally Unique
@@ -36,8 +37,9 @@ The [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_ba
 reference also lists return type classes Liferay's apps and app suites provide. 
 
 If there's no return type class that meets your needs, you can implement your
-own [`ItemSelectorReturnType` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/com/liferay/item/selector/ItemSelectorReturnType.html)
-(tutorial coming soon). 
+own [`ItemSelectorReturnType` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/com/liferay/item/selector/ItemSelectorReturnType.html) 
+by following the [Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-entities#creating-item-selector-return-types) 
+tutorial.
 
 +$$$
 
@@ -266,8 +268,8 @@ item. Using Item Selector API, you can give app users the power of choice!
 
 ## Related Articles [](id=related-articles)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-views)
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework)
+[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-entities)
 
 [Frontend Building Blocks](/develop/tutorials/-/knowledge_base/7-0/frontend-building-blocks)
