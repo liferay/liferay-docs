@@ -1,11 +1,11 @@
-# Configuring Elasticsearch for Liferay [](id=configuring-elasticsearch-for-liferay-0)
+# Configuring Elasticsearch for @product@ [](id=configuring-elasticsearch-for-liferay-0)
 
-Liferay is an open source project, so you won't be surprised to learn that the
-default search engine that ships with Liferay is also an open source project.
+@product@ is an open source project, so you won't be surprised to learn that the
+default search engine that ships with @product@ is also an open source project.
 Elasticsearch is a highly scalable, full-text search and analytics engine that
 ships with @product@. 
 
-By default, Liferay runs Elasticsearch as an embedded search engine, but it's
+By default, @product@ runs Elasticsearch as an embedded search engine, but it's
 only supported in production locally or remotely, as a separate server or
 cluster. This guide walks you through that process.
 
@@ -22,7 +22,7 @@ you'll learn how to configure Elasticsearch for use in @product@ production
 environments. 
 
 If you've come here looking for information on search engines in general, or the
-low level search infrastructure of Liferay, refer to the developer tutorial
+low level search infrastructure of @product@, refer to the developer tutorial
 [Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
 
 These terms will be useful to understand as you read this guide:
@@ -30,30 +30,30 @@ These terms will be useful to understand as you read this guide:
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
    installation (for example, `elasticsearch-2.2.0`). 
 
--  *Liferay Home* refers to the root folder of your Liferay installation. It
+-  *Liferay Home* refers to the root folder of your @product@ installation. It
    contains the `osgi`, `deploy`, `data`, and `license` folders, among others.
 
 ## Embedded vs. Remote Operation Mode [](id=embedded-vs-remote-operation-mode)
 
-When you install Liferay, there's an embedded Elasticsearch already installed.
-In embedded mode, Elasticsearch search runs with Liferay as a library in the
+When you install @product@, there's an embedded Elasticsearch already installed.
+In embedded mode, Elasticsearch search runs with @product@ as a library in the
 same JVM. This is done by default to make it easy to test-drive @product@ with
-minimal configuration. Running Elasticsearch and Liferay in the same process has
+minimal configuration. Running Elasticsearch and @product@ in the same process has
 drawbacks:
 
--  Your Elasticsearch configuration uses the same JVM options as Liferay.
--  Liferay and Elasticsearch compete for resources. 
+-  Your Elasticsearch configuration uses the same JVM options as @product@.
+-  @product@ and Elasticsearch compete for resources. 
 
 You wouldn't run an embedded database like HSQL in production, and you shouldn't
 run Elasticsearch in embedded mode in production either. Instead, you want your
-Liferay installation to run alongside Elasticsearch. This is called *remote
+@product@ installation to run alongside Elasticsearch. This is called *remote
 operation mode*, as a standalone server or cluster of server nodes. The first
 step is to install Elasticsearch.
 
 ## Installing Elasticsearch [](id=installing-elasticsearch)
 
 Install Elasticsearch, and then you can begin configuring it to use with
-Liferay. 
+@product@. 
 
 1.  Follow the instructions
     [here](/discover/deployment/-/knowledge_base/7-0/configuring-search#step-one-find-the-right-version-of-elasticsearch)
@@ -66,7 +66,7 @@ Liferay.
 3.  Before continuing, make sure you have set the [`JAVA_HOME` environment
     variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
 
-4.  If you have multiple JDKs installed, make sure Elasticsearch and Liferay are
+4.  If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
     using the same version. You can specify this in `[Elasticsearch
     Home]/bin/elasticsearch.in.sh`:
 
@@ -98,9 +98,9 @@ For detailed Elasticsearch configuration information, refer to the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/setup-configuration.html#settings).
 
 The name of your Elasticsearch cluster is important. When you're running
-Elasticsearch in remote mode, the cluster name is used by Liferay to recognize
+Elasticsearch in remote mode, the cluster name is used by @product@ to recognize
 the Elasticsearch cluster. To learn about setting the Elasticsearch cluster name
-on the Liferay side, refer below to the section called Configuring the Liferay
+on the @product@ side, refer below to the section called Configuring the Liferay
 Elasticsearch adapter. 
 
 Elasticsearch's configuration files are written in [YAML](http://www.yaml.org)
@@ -115,7 +115,7 @@ Home]/config/elasticsearch.yml` and specify
     cluster.name: LiferayElasticsearchCluster
 
 Since `LiferayElasticsearchCluster` is the default name given to the cluster in
-Liferay, this would work just fine. Of course, you can name your cluster
+@product@, this would work just fine. Of course, you can name your cluster
 whatever you'd like (we humbly submit the recommendation
 `clustery_mcclusterface`).<sup>[1](#footnote1)</sup> You can configure your node name using the same
 syntax (setting the `node.name` property).
@@ -144,17 +144,17 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-Now that you have Elasticsearch itself installed and running, and [Liferay installed](/discover/deployment/-/knowledge_base/6-2/liferay-installation-overview)
-and running (do that if you haven't already) you need to introduce Liferay and
+Now that you have Elasticsearch itself installed and running, and [@product@ installed](/discover/deployment/-/knowledge_base/6-2/liferay-installation-overview)
+and running (do that if you haven't already) you need to introduce @product@ and
 Elasticsearch to each other. Fortunately, Liferay provides an adapter that helps
 it find and integrate your Elasticsearch cluster.
 
 ## Configuring the Liferay Elasticsearch Adapter [](id=configuring-the-liferay-elasticsearch-adapter)
 
-Liferay has an Elasticsearch adapter that ships with @product@. It's a module
+@product@ has an Elasticsearch adapter that ships with @product@. It's a module
 from the Liferay Foundation Suite that's deployed to the OSGi runtime, titled
 *Liferay Portal Search Elasticsearch*. This adapter provides integration between
-Elasticsearch and Liferay. Before you configure the adapter, make sure
+Elasticsearch and @product@. Before you configure the adapter, make sure
 Elasticsearch is running. 
 
 There are two ways to configure the adapter: 
@@ -167,21 +167,21 @@ It's convenient to configure the Elasticsearch adapter from System Settings, but
 this is often only possible during development and testing. If you're not
 familiar with System Settings, you can read about it
 [here](/discover/portal/-/knowledge_base/7-0/system-settings). Even if you need
-a configuration file so you can use the same configuration on another Liferay
+a configuration file so you can use the same configuration on another @product@
 system, you can still use System Settings. Just make the configuration edits you
 need, then export the `.cfg` file with your configuration.
 
 Here are the steps to configure the Elasticsearch adapter from the System
 Settings application:
 
-1. Start Liferay.
+1. Start @product@.
 2. Navigate to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
    &rarr; *Foundation*. 
 3. Find the *Elasticsearch* entry (scroll down and browse to it or use the
    search box) and click the Actions icon
    (![Actions](../../../images/icon-actions.png)), then *Edit*.
 
-    ![Figure 1: Use the System Settings application in Liferay's Control Panel to
+    ![Figure 1: Use the System Settings application in @product@'s Control Panel to
     configure the Elasticsearch
     adapter.](../../../images/elasticsearch-system-settings.png)
 
@@ -215,7 +215,7 @@ configuration file:
         # Highly recommended for all non-prodcution usage (e.g., practice, tests, diagnostics):
         #logExceptionsOnly=false
 
-3. Start Liferay or re-index if Liferay is already running.
+3. Start @product@ or re-index if @product@ is already running.
 
 As you can see from the System Settings entry for Elasticsearch, there are a lot
 more configuration options available that help you tune your system for optimal
@@ -257,11 +257,11 @@ While the Elasticsearch adapter has a lot of configuration options out of the
 box, you might find an Elasticsearch configuration you need that isn't provided
 by default. In this case, you can add the configuration options you need. If you
 can configure something for Elasticsearch, you can configure it using the
-Elasticsearch adapter in Liferay.
+Elasticsearch adapter in @product@.
 
 ### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
 
-Liferay has divided the [available configuration options](/discover/reference/-/knowledge_base/7-0/elasticsearch-setttings) 
+@product@ has divided the [available configuration options](/discover/reference/-/knowledge_base/7-0/elasticsearch-setttings) 
 into two groups: the ones you'll use most often by default, and a catch-all for
 everything else. If you need to configure the local Elasticsearch client when
 running in remote mode, but the necessary setting isn't available by default,
@@ -286,7 +286,7 @@ documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2
 for a description of all the client settings and for an example.
 
 `additionalIndexConfigurations` is used to define extra settings (in JSON or
-YAML format) that are applied to the Liferay index when it's created. For
+YAML format) that are applied to the @product@ index when it's created. For
 example, you can create custom analyzers and filters using this setting. For
 a complete list of available settings, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html).
 
@@ -301,11 +301,11 @@ and
 +$$$
 
 **Note:** To look at the `LiferayDocumentType` definition, navigate to this
-file in Liferay's source:
+file in @product@'s source:
 
     modules/apps/foundation/portal-search/portal-search-elasticsearch/src/main/resources/META-INF/mappings/liferay-type-mappings.json
 
-If you don't already have the Liferay source code, navigate to [Liferay's Downloads page](https://www.liferay.com/downloads), 
+If you don't already have the @product@ source code, navigate to [Liferay's Downloads page](https://www.liferay.com/downloads), 
 scroll to *Additional Files*, and find and click the download link next to
 *Liferay Source for [Your Version]*.
 
@@ -350,8 +350,8 @@ line with `\n\`, like this:
 
 ## Troubleshooting Elasticsearch [](id=troubleshooting-elasticsearch)
 
-Sometimes things don't go as planned. If you've set up Liferay with
-Elasticsearch in remote mode, but Liferay can't connect to Elasticsearch, check
+Sometimes things don't go as planned. If you've set up @product@ with
+Elasticsearch in remote mode, but @product@ can't connect to Elasticsearch, check
 these things:
 
 -  Cluster name: The value of the `cluster.name` property in Elasticsearch must
@@ -359,12 +359,12 @@ match the `clusterName` property you configured for Liferay's Elasticsearch adap
 
 -  Transport address: The value of the `transportAddress` property in the
 Elasticsearch adapter must match the port where Elasticsearch is running. If
-Liferay is running in embedded mode, and you start a standalone Elasticsearch
+@product@ is running in embedded mode, and you start a standalone Elasticsearch
 node or cluster, it detects that port `9300` is taken and switches to port
 `9301`. If you then set Liferay's Elasticsearch adapter to remote mode, it 
 continues to look for Elasticsearch at the default port (`9300`).
 
-Now that you have Elasticsearch configured for use with Liferay, if you're a DXP
+Now that you have Elasticsearch configured for use with @product@, if you're a @product@
 customer, you can read
 [here](/discover/deployment/-/knowledge_base/7-0/shield) to learn about
 configuring Shield to secure your Elasticsearch data. 

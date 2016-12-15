@@ -9,7 +9,7 @@ general use cases and technical details, see
 Here, you'll first discover the perks of using a CDN in @product@ and learn about
 general guidelines for using a CDN in your @product@ instance. Then,
 you'll learn the steps to configure a CDN for your @product@ instance. It's time to
-distribute your Liferay content around the world!
+distribute your @product@ content around the world!
 
 ## Using CDN for Performance Enhancements [](id=using-cdn-for-performance-enhancements)
 
@@ -31,20 +31,20 @@ geographical proximity to improve latency.
 
 Because of the reduced wait time for requests and reduced load on your
 application server, a CDN is a great option to improve your portal's
-performance. Using a CDN with Liferay, however, has some restrictions.
+performance. Using a CDN with @product@, however, has some restrictions.
 
 ## Liferay CDN Requirements [](id=liferay-cdn-requirements)
 
 @product@ only works with CDNs that can dynamically retrieve requested resources
-from Liferay. Dynamic resources are resources which change over time or via
+from @product@. Dynamic resources are resources which change over time or via
 interaction with end users and thus cannot be cached. For this reason, you
 should check with your CDN provider to make sure you don't have to manually
 upload anything in order for the CDN to work. The CDN must automatically fetch
 the content from @product@.
 
-A Liferay-compatible CDN must work like a transparent proxy: A request first
+A @product@-compatible CDN must work like a transparent proxy: A request first
 goes to the CDN. If the CDN doesn't have the requested resource, the CDN makes
-an identical request back to the origin (Liferay), caches the resource, then
+an identical request back to the origin (@product@), caches the resource, then
 serves the resource.
 
 Once you've configured @product@ to use a CDN (see below), the CDN not only serves
@@ -62,7 +62,7 @@ requires permission checking or complex policy access.
 There are several properties in @product@ that enable you to configure your CDN
 and tweak it to suite your portal's needs. You'll learn how to do this next.
 
-## Configuring Liferay to Use a CDN [](id=configuring-liferay-to-use-a-cdn)
+## Configuring @product@ to Use a CDN [](id=configuring-liferay-to-use-a-cdn)
 
 Now that you have a general understanding of what a CDN accomplishes and how
 it's used in @product@, it's time to set one up for yourself. You can set your CDN

@@ -3,11 +3,11 @@
 NTLM (NT LAN Manager) is a suite of Microsoft protocols that provide
 authentication, integrity, and confidentiality for users. Though Microsoft has
 adopted Kerberos in modern versions of Windows server, NTLM is still used when
-authenticating to a workgroup. Liferay Portal now supports NTLM v2
+authenticating to a workgroup. @product@ now supports NTLM v2
 authentication. NTLM v2 is more secure and has a stronger authentication process
 than NTLMv1.
 
-Note that in order to use NTLM SSO, Liferay's portal instance authentication
+Note that in order to use NTLM SSO, @product@'s portal instance authentication
 type must be set to screen name.
 
 +$$$
@@ -27,8 +27,8 @@ value.
 
 Property Label | Property Key | Description | Type
 ---- | ---- | ---- | ----
-**Enabled** | `enabled` | Check this box to enable NTLN SSO authentication. Note that NTLM will only work if Liferay's authentication type is set to screen name. | `boolean`
-**Domain Controller** | `domainController` | Enter the IP address of your domain controller. This is the server that contains the user accounts you want to use with Liferay. | `String`
+**Enabled** | `enabled` | Check this box to enable NTLN SSO authentication. Note that NTLM will only work if @product@'s authentication type is set to screen name. | `boolean`
+**Domain Controller** | `domainController` | Enter the IP address of your domain controller. This is the server that contains the user accounts you want to use with @product@. | `String`
 **Domain Controller Name** | `domainControllerName` | Specify the domain controller NetBIOS name. | `String`
 **Domain** | `domain` | Enter the domain / workgroup name | `String`
 **Service Account** | `serviceAccount` | You need to create a service account for NTLM. This account will be a computer account, not a user account. | `String`
