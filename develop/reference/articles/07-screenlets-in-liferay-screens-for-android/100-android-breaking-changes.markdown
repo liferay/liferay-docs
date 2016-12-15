@@ -161,12 +161,12 @@ This affects any classes that implement `DDLFormListener`.
 In place of the removed error listeners, use `BaseCacheListener`’s generic error 
 listener: 
 
-    `void error(Exception e, String userAction)`
+    void error(Exception e, String userAction)
 
 You must also change any `onDDLFormRecordLoaded` implementations to account for 
 the method’s new signature:
 
-    `public void onDDLFormRecordLoaded(Record record, Map<String, Object> valuesAndAttributes)`
+    public void onDDLFormRecordLoaded(Record record, Map<String, Object> valuesAndAttributes)
 
 #### Why was this change made?
 
