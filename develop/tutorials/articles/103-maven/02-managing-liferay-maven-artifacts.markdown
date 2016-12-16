@@ -207,28 +207,36 @@ First, specify the Liferay Repository's credentials in your project's parent
 
     <repositories>
         <repository>
-            <id>liferay-ce</id>
-		    <name>Liferay CE</name>
-		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
-		    <releases><enabled>true</enabled></releases>
-		    <snapshots><enabled>true</enabled></snapshots>
+            <id>liferay-public-releases</id>
+            <name>Liferay Public Releases</name>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 	  
 	<pluginRepositories>
         <pluginRepository>
-            <id>liferay-ce</id>
-            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
-            <releases><enabled>true</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
+            <id>liferay-public-releases</id>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </pluginRepository>
     </pluginRepositories>
 
 +$$$
 
-**Important:** Do not leave the Liferay
-repository configured when publishing artifacts to Maven Central. You must
-comment out the Liferay Repository credentials when publishing your artifacts.
+**Important:** Do not leave the Liferay repository configured when publishing
+artifacts to Maven Central. You must comment out the Liferay Repository
+credentials when publishing your artifacts.
 
 $$$
 
@@ -236,7 +244,7 @@ Next, when interacting with the Liferay Repository, you'll need to use
 specialized commands to access it. Use the following command to access the CE
 repo:
 
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases
 
 <!-- You'll notice I provided the specialized command here and in the portlet
 archetype example. Once everything is synced correctly and we're not solely
@@ -252,11 +260,11 @@ how.
 
 +$$$
 
-**Note:** Sometimes, the Liferay Maven
-artifacts for a release are not immediately available on Maven's Central
-Repository. The Central Repository might still be synced to a previous release
-of Liferay. If this occurs, just download the Liferay Maven artifacts from
-Liferay's repository. (See the previous section for details.)
+**Note:** Sometimes, the Liferay Maven artifacts for a release are not
+immediately available on Maven's Central Repository. The Central Repository
+might still be synced to a previous release of Liferay. If this occurs, just
+download the Liferay Maven artifacts from Liferay's repository. (See the
+previous section for details.)
 
 $$$
 
