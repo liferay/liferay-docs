@@ -1,15 +1,19 @@
 # Using Views in Android Screenlets [](id=using-views-in-android-screenlets)
 
 Using a Liferay Screens *View*, you can set your Screenlet's UI components,
-behavior, and style. They let you focus on a Screenlet's UI and UX, without
-having to worry about its core functionality. Liferay's Screenlets come with
-several Views, and more are being developed by Liferay and the community. A
-Liferay Screenlet's Views are specified in its
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android).
-This tutorial shows you how to use Views in Android Screenlets. It's
-straightforward; you'll master using Views in no time!
+behavior, and style. Views let you focus on a Screenlet's UI and UX, without
+having to worry about the Screenlet's core functionality. Liferay's Screenlets 
+come with several Views, and more are being developed by Liferay and the 
+community. The 
+[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+lists the Views available for each Screenlet included with Screens. This 
+tutorial shows you how to use Views in Android Screenlets. It's straightforward; 
+you'll master using Views in no time!
+<!-- 
+Video is outdated:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ImAcH3JHYug" frameborder="0" allowfullscreen></iframe>
+-->
 
 Here are some View layer components you should understand: 
 
@@ -37,7 +41,7 @@ Westeros View Sets as dependencies:
         ...
     }
 
-Here are some View Sets that Liferay created for Android Screenlets:
+Here are the View Sets included with Screens:
 
 - *Default*: Comes standard with a Screenlet. It's used by a Screenlet if no
   layout ID is specified or if no View is found with the layout ID. The Default 
@@ -46,21 +50,29 @@ Here are some View Sets that Liferay created for Android Screenlets:
   for more details. 
 - *Material*: Demonstrates Views built from scratch. It follows Google's
   [Material Design](https://developer.android.com/design/material/index.html) 
-  guidelines. Refer to the [View creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-views) 
+  guidelines. Refer to the 
+  [View creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-views) 
   for instructions on creating your own Views.
 - *Westeros*: Customizes the behavior and appearance of the
   [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
   demo app. 
 
 To use a View in your Screenlet, specify its name as the `liferay:layoutId` 
-property value in your app's layout XML. This is shown in the following 
-screenshot: 
+attribute's value when inserting the Screenlet XML in an activity or fragment 
+layout. For example, to use Login Screenlet with its Material View, insert the 
+Screenlet's XML with `liferay:layoutId` set to  `@layout/login_material`: 
 
-![Figure 1: You can set a Screenlet's layout via its `liferay:layoutId` attribute.](../../../images/screens-android-layoutid-xml.png)
+    <com.liferay.mobile.screens.auth.login.LoginScreenlet
+        android:id="@+id/login_screenlet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        liferay:layoutId="@layout/login_material"
+		/>
 
-You can also use a View Set by having your app's theme inherit the View Set. For 
-example, the following code in an app's `res/values/styles.xml` tells 
-`AppTheme.NoActionBar` to use the Material View Set as its parent theme: 
+If the View you want to use is part of a View Set, your app or activity's theme 
+must also inherit the theme that defines the View Set's styles. For example, the 
+following code in an app's `res/values/styles.xml` tells `AppTheme.NoActionBar` 
+to use the Material View Set as its parent theme: 
 
     <resources>
 
@@ -74,6 +86,9 @@ example, the following code in an app's `res/values/styles.xml` tells
         </style>
         ...
     </resources>
+
+To use the Default or Westeros View Set, inherit `default_theme` or 
+`westeros_theme`, respectively. 
 
 That's all there is to it! Great! Now you know how to use Views to spruce up 
 your Android Screenlets. This opens up a world of possibilities, like 
