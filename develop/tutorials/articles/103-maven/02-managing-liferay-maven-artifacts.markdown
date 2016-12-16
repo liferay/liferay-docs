@@ -207,9 +207,9 @@ First, specify the Liferay Repository's credentials in your project's parent
 
     <repositories>
         <repository>
-            <id>liferay-ce</id>
-		    <name>Liferay CE</name>
-		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
+            <id>liferay-public-releases</id>
+		    <name>Liferay Public Releases</name>
+		    <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases</url>
 		    <releases><enabled>true</enabled></releases>
 		    <snapshots><enabled>true</enabled></snapshots>
         </repository>
@@ -217,8 +217,8 @@ First, specify the Liferay Repository's credentials in your project's parent
 	  
 	<pluginRepositories>
         <pluginRepository>
-            <id>liferay-ce</id>
-            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
+            <id>liferay-public-releases</id>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases</url>
             <releases><enabled>true</enabled></releases>
             <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
