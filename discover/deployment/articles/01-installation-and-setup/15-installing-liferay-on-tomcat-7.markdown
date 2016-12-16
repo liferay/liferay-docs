@@ -314,8 +314,8 @@ There are two ways to approach using Mojarra with Tomcat: upgrading Tomcat's
 context classpath or upgrading Tomcat's global classpath. Both methods require
 adding/editing two JARs, which can be downloaded below: 
 
-- [`jsf-api`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-api/2.1.21/)
-- [`jsf-impl`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-impl/2.1.21/)
+- [`jsf-api`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-api/2.1.29-08/)
+- [`jsf-impl`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-impl/2.1.29-08/)
 
 The typical approach for using Mojarra with Tomcat is to include `jsf-api.jar`
 and `jsf-impl.jar` in the `WEB-INF/lib` folder in each JSF project. You can do
@@ -325,28 +325,28 @@ with the scope set as `compile` (the default) in each JSF project:
     <dependency>
         <groupId>com.sun.faces</groupId>
         <artifactId>jsf-api</artifactId>
-        <version>2.1.21</version>
+        <version>2.1.29-08</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>com.sun.faces</groupId>
         <artifactId>jsf-impl</artifactId>
-        <version>2.1.21</version>
+        <version>2.1.29-08</version>
         <scope>compile</scope>
     </dependency>
 
 Although it is possible to install Mojarra in the Tomcat global classpath, it
 will not work properly without some small modifications to the `jsf-impl.jar`
 dependency. The problem stems from the fact that the Mojarra
-[`ConfigureListener`](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/src/main/java/com/sun/faces/config/ConfigureListener.java)
+[`ConfigureListener`](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/src/main/java/com/sun/faces/config/ConfigureListener.java)
 class is automatically registered for all contexts under `tomcat/webapps`
 because it is specified as a `<listener>` in the
-[META-INF/jsf-jsf_core.tld](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/conf/share/jsf_core.tld)
+[META-INF/jsf-jsf_core.tld](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/conf/share/jsf_core.tld)
 descriptor inside the `jsf-impl.jar` dependency.
 Additionally, the
-[META-INF/services/javax.faces.ServletContainerInitializer](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/conf/share/javax.servlet.ServletContainerInitializer)
+[META-INF/services/javax.faces.ServletContainerInitializer](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/conf/share/javax.servlet.ServletContainerInitializer)
 will cause the
-[FacesInitializer](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/src/main/java/com/sun/faces/config/FacesInitializer.java)
+[FacesInitializer](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/src/main/java/com/sun/faces/config/FacesInitializer.java)
 class to auto-register the `ConfigureListener` as well. Consequently, every
 request issued in all contexts invokes the Mojarra `ConfigureListener`. This
 can be a potential performance problem in a webapp environment and causes
@@ -369,7 +369,7 @@ To upgrade Tomcat's global classpath, follow the steps below:
 
 4. Extract the Mojarra `jsf-impl.jar` dependency into the temporary folder: 
 
-        jar xf ../jsf-impl-2.1.21.jar
+        jar xf ../jsf-impl-2.1.29-08.jar
 
 5. Open the `META-INF/jsf_core.tld` file and remove the following lines: 
 
@@ -383,7 +383,7 @@ To upgrade Tomcat's global classpath, follow the steps below:
 
 7. Overwrite the Mojarra `jsf-impl.jar` dependency by creating a new archive: 
 
-        jar cf ../jsf-impl-2.1.21.jar META-INF/ com/
+        jar cf ../jsf-impl-2.1.29-08.jar META-INF/ com/
 
 8. Remove the temporary folder: 
 
@@ -399,7 +399,7 @@ To upgrade Tomcat's global classpath, follow the steps below:
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-init</artifactId>
-            <version>3.1.3-ga4</version>
+            <version>3.2.4-ga5</version>
         </dependency>
 
     9.2 Specify the Mojarra `ConfigureListener` as a listener in the
@@ -415,13 +415,13 @@ To upgrade Tomcat's global classpath, follow the steps below:
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-api</artifactId>
-            <version>2.1.21</version>
+            <version>2.1.29-08</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-impl</artifactId>
-            <version>2.1.21</version>
+            <version>2.1.29-08</version>
             <scope>provided</scope>
         </dependency>
 
