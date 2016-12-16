@@ -449,15 +449,15 @@ Faces.
 
 Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
-2.1.7 in the global classpath. Since Liferay Faces uses Mojarra 2.1.21, you'll
-need to download a newer version of the `jsf-api.jar` and `jsf-impl.jar`
-artifacts. 
+2.1.7 in the global classpath. Since Liferay Faces uses Mojarra 2.1.29-08,
+you'll need to download a newer version of the `jsf-api.jar` and `jsf-impl.jar`
+artifacts.
 
 1. Download
-[`jsf-api-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-api%7C2.1.21%7Cjar)
+[`jsf-api-2.1.29-08.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-api%7C2.1.29-08%7Cjar)
 and copy it to the following location: 
 
-        $JBOSS_HOME/modules/javax/faces/api/main/jsf-api-2.1.21.jar
+        $JBOSS_HOME/modules/javax/faces/api/main/jsf-api-2.1.29-08.jar
 
 2. Open the `$JBOSS_HOME/modules/javax/faces/api/main/module.xml` file and
    comment out the reference to the version of the JAR that comes with the
@@ -467,7 +467,7 @@ and copy it to the following location:
 
 3. Add a reference to the new JAR in the same `module.xml` file: 
 
-        <resource-root path="jsf-api-2.1.21.jar"/>
+        <resource-root path="jsf-api-2.1.29-08.jar"/>
 
 4. Add the following module to the `<dependencies>` section: 
 
@@ -477,10 +477,10 @@ and copy it to the following location:
         </dependencies>
 
 5. Download
-[`jsf-impl-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-impl%7C2.1.21%7Cjar)
+[`jsf-impl-2.1.29-08.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-impl%7C2.1.29-08%7Cjar)
 and copy it to the following location: 
 
-        $JBOSS_HOME/modules/com/sun/jsf-impl/main/jsf-impl-2.1.21.jar
+        $JBOSS_HOME/modules/com/sun/jsf-impl/main/jsf-impl-2.1.29-08.jar
 
 6. Open the `$JBOSS_HOME/modules/com/sun/jsf-impl/main/module.xml` file and
    comment out the reference to the version of the JAR that comes with the
@@ -490,7 +490,7 @@ and copy it to the following location:
 
 7. Add a reference to the new JAR in the same `module.xml` file: 
 
-        <resource-root path="jsf-impl-2.1.21.jar"/>
+        <resource-root path="jsf-impl-2.1.29-08.jar"/>
 
 Congratulations! You've officially upgraded Mojarra! If you'd like to verify
 that you're using the correct version of Mojarra at runtime, download the
