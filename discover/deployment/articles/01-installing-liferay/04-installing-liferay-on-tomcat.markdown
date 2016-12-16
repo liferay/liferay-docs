@@ -377,15 +377,15 @@ with the scope set as `compile` (the default) in each JSF project:
 Although it is possible to install Mojarra in the Tomcat global classpath, it
 will not work properly without some small modifications to the `jsf-impl.jar`
 dependency. The problem stems from the fact that the Mojarra
-[`ConfigureListener`](https://svn.java.net/svn/mojarra~svn/tags/2.1.29/jsf-ri/src/main/java/com/sun/faces/config/ConfigureListener.java)
+[`ConfigureListener`](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/src/main/java/com/sun/faces/config/ConfigureListener.java)
 class is automatically registered for all contexts under `tomcat/webapps`
 because it is specified as a `<listener>` in the
-[META-INF/jsf-jsf_core.tld](https://svn.java.net/svn/mojarra~svn/tags/2.1.29/jsf-ri/conf/share/jsf_core.tld)
+[META-INF/jsf-jsf_core.tld](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/conf/share/jsf_core.tld)
 descriptor inside the `jsf-impl.jar` dependency.
 Additionally, the
-[META-INF/services/javax.faces.ServletContainerInitializer](https://svn.java.net/svn/mojarra~svn/tags/2.1.29/jsf-ri/conf/share/javax.servlet.ServletContainerInitializer)
+[META-INF/services/javax.faces.ServletContainerInitializer](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/conf/share/javax.servlet.ServletContainerInitializer)
 will cause the
-[FacesInitializer](https://svn.java.net/svn/mojarra~svn/tags/2.1.29/jsf-ri/src/main/java/com/sun/faces/config/FacesInitializer.java)
+[FacesInitializer](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/src/main/java/com/sun/faces/config/FacesInitializer.java)
 class to auto-register the `ConfigureListener` as well. Consequently, every
 request issued in all contexts invokes the Mojarra `ConfigureListener`. This
 can be a potential performance problem in a webapp environment and causes
