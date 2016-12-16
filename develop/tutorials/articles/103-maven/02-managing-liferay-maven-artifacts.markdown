@@ -244,7 +244,7 @@ Next, when interacting with the Liferay Repository, you'll need to use
 specialized commands to access it. Use the following command to access the CE
 repo:
 
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases
 
 <!-- You'll notice I provided the specialized command here and in the portlet
 archetype example. Once everything is synced correctly and we're not solely
