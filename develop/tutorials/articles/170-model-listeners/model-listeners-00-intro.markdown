@@ -1,7 +1,7 @@
 # Model Listeners [](id=model-listeners)
 
 Model Listeners implement the
-[`ModelListener`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
+[`ModelListener`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
 interface. They are used to listen for persistence events on models and do
 something in response (either before or after the event).
 

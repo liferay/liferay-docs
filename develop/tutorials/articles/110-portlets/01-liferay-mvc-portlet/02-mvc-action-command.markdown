@@ -15,10 +15,10 @@ as follows:
 When the action URL is triggered, the matching action class processes the
 action. Implement the action by creating a class that implements the
 [`MVCActionCommand`
-interface](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html).
+interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html).
 To avoid writing oodles of boilerplate code, your `*MVCActionCommand` class
 should extend the [`BaseMVCActionCommand`
-class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html)
+class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html)
 instead of implementing `MVCActionCommand` directly. The `BaseMVCActionCommand`
 class already implements `MVCActionCommand` and provides many useful method
 implementations. Naming your `*MVCActionCommand` class after the action it
@@ -66,7 +66,7 @@ component works with multiple portlets.
 
 In your `*MVCActionCommand` class, process the action by overriding the 
 `BaseMVCActionCommand` class's 
-[`doProcessAction` method](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html#doProcessAction(javax.portlet.ActionRequest,%20javax.portlet.ActionResponse)). 
+[`doProcessAction` method](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html#doProcessAction(javax.portlet.ActionRequest,%20javax.portlet.ActionResponse)). 
 This method takes `ActionRequest` and `ActionResponse` parameters that you can 
 use to process your action. Your `*MVCActionCommand` class should also contain 
 any other code required to implement your action. For a real-world example of a 
