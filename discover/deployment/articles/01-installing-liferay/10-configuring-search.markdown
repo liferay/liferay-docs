@@ -1,19 +1,19 @@
 # Configuring Search [](id=configuring-search)
 
-Liferay uses Elasticsearch to index its content. By default, Liferay uses
+@product@ uses Elasticsearch to index its content. By default, @product@ uses
 Elastic as an embedded service. It works, but this is not a supported
 configuration for a production server. Feel free to use it while you're testing
 or developing, but when you're ready to put your site in production, you'll need
 to run Elasticsearch as a standalone process. This is better anyway, because it
 frees you to design your infrastructure the way you want it. If you've got
 hardware or a VM to spare, you can separate your search infrastructure from
-Liferay and reap some performance gains by putting search on a separate box. If
+@product@ and reap some performance gains by putting search on a separate box. If
 you're more budget-conscious, you can still increase performance by running
 Elastic in a separate, individually tunable JVM on the same box. 
 
-Installing Elasticsearch for Liferay is pretty easy and takes only five steps: 
+Installing Elasticsearch for @product@ is pretty easy and takes only five steps: 
 
-1. Find the version of Elasticsearch that's embedded in the version of Liferay
+1. Find the version of Elasticsearch that's embedded in the version of @product@
    you have, and then download that version from [Elastic's](https://www.elastic.co) 
    website. 
 
@@ -22,18 +22,18 @@ Installing Elasticsearch for Liferay is pretty easy and takes only five steps:
 
 3. Name your Elastic cluster. 
 
-4. Configure Liferay to connect to your Elastic cluster. 
+4. Configure @product@ to connect to your Elastic cluster. 
 
-5. Restart Liferay and reindex your search indexes. 
+5. Restart @product@ and reindex your search indexes. 
 
 Now you'll actually perform these steps, and when you're done, you'll have a
 production-ready instance of @product@ up and running. 
 
 ### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
-If Liferay isn't running, start it. Then, using a browser, visit port 9200 of
-the machine on which Liferay's running. For example, if you're browsing from the same machine
-Liferay's running on, visit this URL: 
+If @product@ isn't running, start it. Then, using a browser, visit port 9200 of
+the machine on which @product@'s running. For example, if you're browsing from the same machine
+@product@'s running on, visit this URL: 
 
     http://localhost:9200
 
@@ -62,7 +62,7 @@ Now that you know the version of Elasticsearch you need, go to
 ### Step Two: Install Elasticsearch [](id=step-two-install-elasticsearch)
 
 Most of this step entails deciding where you want to run Elasticsearch. Do you
-want to run it on the same machine as Liferay, or do you want to run it on its
+want to run it on the same machine as @product@, or do you want to run it on its
 own hardware? The answer to this question comes down to a combination of the
 resources you have available and the size of your installation. Regardless of
 what you decide, either way you get the benefit of a separately tunable search
@@ -81,7 +81,7 @@ please refer to [Elastic's documentation](https://www.elastic.co/guide/index.htm
 
 Now that you've installed Elastic, it sits in a folder on your machine, which is
 referred to here as `[Elasticsearch Home]`. To name your cluster, you'll define
-the cluster name in both Elasticsearch and in Liferay. First, define it in
+the cluster name in both Elasticsearch and in @product@. First, define it in
 Elastic. Edit the following file: 
 
     [Elasticsearch Home]/config/elasticsearch.yml
@@ -104,12 +104,12 @@ Elastic starts, and one of its status messages includes a transport address:
 
     2016-05-03 16:33:28,358][INFO ][transport] [Hobgoblin II] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
 
-Take note of this address; you'll need to give it to your Liferay server so it
+Take note of this address; you'll need to give it to your @product@ server so it
 can find Elastic on the network. 
 
-### Step Four: Configure Liferay to Connect to your Elastic Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
+### Step Four: Configure @product@ to Connect to your Elastic Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
 
-Now you're ready to configure Liferay. Start Liferay if you haven't already, log
+Now you're ready to configure @product@. Start @product@ if you haven't already, log
 in, and then go to Control Panel &rarr; Configuration &rarr; System Settings
 &rarr; Foundation. Find *Elasticsearch* in the list of settings and click on it.
 Now you can configure it. Here are the options you need to change: 
@@ -125,9 +125,9 @@ you started.
 
 When finished, click *Save*. You're almost done. 
 
-### Step Five: Restart Liferay and Reindex [](id=step-five-restart-liferay-and-reindex)
+### Step Five: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
 
-Stop and restart Liferay. When it's back up, log in as an administrative user
+Stop and restart @product@. When it's back up, log in as an administrative user
 and go to Control Panel &rarr; Configuration &rarr; Server Administration and
 click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 

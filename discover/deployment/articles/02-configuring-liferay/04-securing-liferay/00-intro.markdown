@@ -12,7 +12,7 @@ information.
 Next, Liferay forms a
 [Community Security Team](https://dev.liferay.com/web/community-security-team).
 This team addresses community security concerns, helps with security related
-questions on the Liferay forums, and releases security patches for Liferay CE
+questions on the Liferay forums, and releases security patches for @product@
 versions. Members of the Liferay community security team attend Liferay
 conferences and engage in other individual activities.
 
@@ -27,7 +27,7 @@ Although we act on community reports, we understands that community reports
 alone are not enough. Liferay's internal security team also works on improving
 security. Liferay's internal security team conducts internal security reviews.
 They check Liferay's source code for common vulnerabilities that can be
-accidentally introduced by developers. Additionally, all Liferay security
+accidentally introduced by developers. Additionally, all @product@ security
 related code is reviewed by Liferay's application security team before it's
 committed. For every major portal release, Liferay works with external security
 partners to perform security scans and penetration testing.

@@ -2,7 +2,7 @@
 
 CAS is an authentication system originally created at Yale University. It is a
 widely used open source single sign-on solution and was the first SSO product to
-be supported by @product@. Liferay's CAS module includes the CAS client, so
+be supported by @product@. @product@'s CAS module includes the CAS client, so
 there's no need to install it separately.
 
 The CAS Server application requires your server to have a properly configured
@@ -68,13 +68,13 @@ value.
 Property Label | Property Key | Description | Type
 ----- | ----- | ----- | -----
 **Enabled** | `enabled` | Check this box to enable CAS SSO authentication. | `boolean`
-**Import from LDAP** | `importFromLDAP` | Users authenticated from CAS that do not exist in Liferay are imported from LDAP. LDAP must be enabled separately. | `boolean`
+**Import from LDAP** | `importFromLDAP` | Users authenticated from CAS that do not exist in @product@ are imported from LDAP. LDAP must be enabled separately. | `boolean`
 **Login URL** | `loginURL` | Set the CAS server login URL. | `String`
 **Logout on session expiration** | `logoutOnSessionExpiration` | If checked, browsers with expired sessions are redirected to the CAS logout URL. | `boolean`
-**Logout URL** | `logoutURL` | The CAS server logout URL. Set this if you want Liferay's logout function to trigger a CAS logout | `String`
-**Server Name** | `serverName` | The name of the Liferay instance (e.g., `liferay.com`). If the provided name includes the protocol (`https://`, for example) then this will be used together with the path `/c/portal/login` to construct the URL to which the CAS server will provide tickets. If no scheme is provided, the scheme normally used to access the Liferay login page will be used. | `String`
+**Logout URL** | `logoutURL` | The CAS server logout URL. Set this if you want @product@'s logout function to trigger a CAS logout | `String`
+**Server Name** | `serverName` | The name of the @product@ instance (e.g., `liferay.com`). If the provided name includes the protocol (`https://`, for example) then this will be used together with the path `/c/portal/login` to construct the URL to which the CAS server will provide tickets. If no scheme is provided, the scheme normally used to access the @product@ login page will be used. | `String`
 **Server URL** | `serviceURL` | If provided, this will be used as the URL to which the CAS server provides tickets. This overrides any URL constructed based on the Server Name as above. | `String`
-**No Such User Redirect URL** | `noSuchUserRedirectURL` | Set the URL to which to redirect the user if the user can authenticate with CAS but cannot be found in Liferay. If import from LDAP is enabled, the user is redirected if the user could not be found or could not be imported from LDAP. | `String`
+**No Such User Redirect URL** | `noSuchUserRedirectURL` | Set the URL to which to redirect the user if the user can authenticate with CAS but cannot be found in @product@. If import from LDAP is enabled, the user is redirected if the user could not be found or could not be imported from LDAP. | `String`
 
 To override system defaults for a particular portal instance, navigate to the
 Control Panel, click on *Configuration* &rarr; *Instance Settings*, click on

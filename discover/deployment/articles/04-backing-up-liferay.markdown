@@ -1,4 +1,4 @@
-# Backing up a Liferay Installation [](id=backing-up-a-liferay-installation)
+# Backing up a @product@ Installation [](id=backing-up-a-liferay-installation)
 
 Once you have an installation of @product@ running, you should implement a
 comprehensive backup plan. You'll be very thanking for your backup procedures
@@ -15,19 +15,19 @@ Linus Torvalds, and then tarballs are okay too (that's a joke). Your source
 code repository should be backed up on a regular basis to preserve your ongoing
 work. This probably goes without saying in your organization since nobody wants
 to lose source code that's taken months to produce. Nevertheless, it's
-important to include source code in a Liferay backup plan.
+important to include source code in a @product@ backup plan.
 
-Next, let's examine the items that need to be backed up in your Liferay
+Next, let's examine the items that need to be backed up in your @product@
 installation.
 
-## Backing up Liferay's File System [](id=backing-up-liferays-file-system)
+## Backing up @product@'s File System [](id=backing-up-liferays-file-system)
 
-Liferay's properties configuration files, such as
+@product@'s properties configuration files, such as
 `portal-setup-wizard.properties` and `portal-ext.properties`, are stored in the
 *Liferay Home* folder, which is generally one folder up from where your
 application server is installed (see the [Installation and Setup (not yet
 written)]() article for specific details for your application server). Your
-Liferay installation's properties configuration files should absolutely be
+@product@ installation's properties configuration files should absolutely be
 backed up. In fact, it's best to back up your entire application server and
 entire the contents of your Liferay Home folders.
 
@@ -46,13 +46,13 @@ your `/data` folder.
 
 The files that comprise @product@'s OSGi runtime are stored in a folder called
 `/osgi` in Liferay Home. This folder contains the JAR files for all of the apps
-and modules that you've deployed to Liferay. The `/osgi` folder also contains
+and modules that you've deployed to @product@. The `/osgi` folder also contains
 other required JAR files, configuration files, and log files. It's also
 important to back up your `/osgi` folder.
 
-The `/logs` folder in Liferay Home contains Liferay's log files. Liferay's log
-files are important to back up since if a problem occurs on Liferay, the
-information in Liferay's log files often provides valuable information for
+The `/logs` folder in Liferay Home contains @product@'s log files. @product@'s log
+files are important to back up since if a problem occurs on @product@, the
+information in @product@'s log files often provides valuable information for
 determining what went wrong. The `/data`, `/osgi`, and `/logs` folders are all
 contained in the Liferay Home folder. Thus, if you're backing up both your
 application server folder and your Liferay Home folder, you're in good shape.
@@ -60,10 +60,10 @@ application server folder and your Liferay Home folder, you're in good shape.
 Remember that if you've modified the location where the document library stores
 files, you should also back up this location.
 
-That covers the file system locations used by Liferay. Next, let's discuss how
-to back up Liferay's database.
+That covers the file system locations used by @product@. Next, let's discuss how
+to back up @product@'s database.
 
-## Backing up Liferay's Database [](id=backing-up-liferays-database)
+## Backing up @product@'s Database [](id=backing-up-liferays-database)
 
 @product@'s database is the central repository for all of the portal's
 information. It's the most important component that needs to be backed up. You
@@ -74,7 +74,7 @@ database and data into a large SQL file. This file can then be backed up. In
 case of a database failure, this file can be used to recreate the state of the
 database at the time the dump was created.
 
-If you're using Liferay's Documents and Media Library with the Jackrabbit
+If you're using @product@'s Documents and Media Library with the Jackrabbit
 JSR-170 repository to store documents in a database, the Jackrabbit database
 should also be backed up. If you've placed your search index into a database
 (not recommended; see the [(not yet written)]() article for information on
@@ -93,7 +93,7 @@ need to reindex when you bring your site back up after a catastrophic failure.
 Good, consistent backup procedures are key to successfully recovering from a
 hardware failure.
 
-If you're a Liferay EE subscriber, you should apply the patches provided by
+If you're a @product@ subscriber, you should apply the patches provided by
 Liferay whenever they're available. Liferay provides tools to make this process
 easy. See the [(not yet written)]() article to learn how to apply patches to
-your Liferay installation.
+your @product@ installation.

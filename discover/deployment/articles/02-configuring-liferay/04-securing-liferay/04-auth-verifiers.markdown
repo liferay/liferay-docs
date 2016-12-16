@@ -1,8 +1,8 @@
 # Authentication Verifiers [](id=authentication-verifiers)
 
-Liferay includes a centralized and extensible authentication layer called the
+@product@ includes a centralized and extensible authentication layer called the
 authentication verification layer. This layer is mainly used for authenticating
-remote invocations of Liferay's API.
+remote invocations of @product@'s API.
 
 The main responsibilities of the authentication verification layer are to
 
@@ -11,8 +11,8 @@ The main responsibilities of the authentication verification layer are to
 
 If no available `AuthVerifier` is able to verify request credentials, an
 authorization context supporting non-authenticated access is created for a
-guest user. This allows each Liferay API to expose only a single API endpoint.
-In contrast, legacy (prior to 6.2) versions of Liferay exposed two API
+guest user. This allows each @product@ API to expose only a single API endpoint.
+In contrast, legacy (prior to 6.2) versions of @product@ exposed two API
 endpoints for each API: the `/api/endpoint` URI was for non-authenticated
 access and the URI `/api/secure/endpoint` was for authenticated access.
 
@@ -52,11 +52,11 @@ credentials.
 
 **Step 2: Create an Authorization Context**
 
-When a request is processed by all matching `AuthVerifier`s, Liferay creates an
+When a request is processed by all matching `AuthVerifier`s, @product@ creates an
 authorization context for the resolved user.
 
 This encompasses setting the `HttpServletRequest` `remoteUser` to return the
-resolved user ID setting Liferay `ThreadLocal`s to the resolved user.
+resolved user ID setting @product@ `ThreadLocal`s to the resolved user.
 
 The resolved user can be the user returned by one of the `AuthVerifier`
 instances or a guest user if no instance was able to verify the provided
