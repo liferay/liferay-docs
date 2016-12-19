@@ -1,64 +1,56 @@
-# Metal.js Introduction
+# MetalJS [](id=metal-js)
 
-## Build UI components in a solid, flexible way.
+Metal.js is a lightweight, easy-to-use JavaScript framework that lets you create
+UI Components with ease, thanks to its integration with templating languages.
 
-Metal.js is a lightweight, easy to use JavaScript framework that intgerates with themplating languages to help you create UI Componenents easily.
+![Figure 1: You can create UI's easily, thanks to Metal.js.](../../images/metal-js-home-page.png)
 
-![](images/00-introduction_metal-js.png)
+Metal.js is built with you in mind, offering flexibility with how your rendering 
+logic is handled. You can use template languages to write your rendering logic 
+or keep your rendering logic and business logic within the same file if you 
+prefer.
 
-## Architecture
+By default, Metal.js offers integration points with Google closure templates and 
+Facebook JSX templates. The rendering layer is completely customizable though, 
+so you can add more rendering options if needed.
 
-Metal.js' main classes are State and Component. Component actually extends from State, thus containing all its features. The main difference between the two is that Component's extra features are related to rendering. So you could just use State directly if your module doesn't do any rendering. But if your module does need rendering logic, then Component will work better for you.
+Below is an example of a closure(Soy) template written for Metal.js:
 
-Many people have their own favorite way of dealing with rendering logic. Some prefer to use template languages that completely separate it from the business logic, while others like to keep both close together in the same file. Metal.js doesn't force developers to go with only one of those.
+    {template .render}
+    // ...
+    <button onClick="{$close}" type="button" class="close">
+    // ...
+    {/template}
 
-The structure visualised would look like this: 
+Metal.js has two main classes: `State`, and `Component` which extends from `State`. 
+The `Component` class adds additional rendering features for your Component. So, 
+if your Component doesn't require rendering, you can just use `State`.
 
-![](images/10-metal-js_architecture.png)
+The figure below illustrates the architecture for Metal.js:
 
-## Templates
+![Figure 2:](../../images/metal-js-architecture.png)
 
- By default Metal.js offers integration points with both closure templates from Google and JSX from Facebook, and it's possible to add more options, since the rendering layer is customizable.
+Metal.js takes full advantage of the [ECMAScript 6](http://www.ecma-international.org/ecma-262/6.0/)
+(AKA ECMAScript 2015) language, so you can use the latest features that the
+language has to offer. Below is a list of some of the great features that you
+get with ES6:
 
- A Soy template in Metal.js may look like this
-
- ```html
- {template .render}
-   // ...
-   <button onClick="{$close}" type="button" class="close">
-   // ...
- {/template}
- ```
-
-
-
-## ECMAScript 6/2015
-
-[ECMAScript 6, also known as ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/), is the latest version of the ECMAScript standard. ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Here is a short list of some of the benefits of using ES6:
-
-- Class syntax like other OO languages. Classes support prototype-based inheritance, super calls, instance and static methods and constructors.
+- Class syntax like other OO languages. Classes support prototype-based 
+  inheritance, super calls, instance and static methods and constructors.
 - Arrow method syntax. `var odds = numbers.map(v => v + 1);`
-- Language-level support for modules for component definition. Codifies patterns from popular JavaScript module loaders like AMD.
-```javascript
-export function sum(x, y) {
-  return x + y;
-}
-export var pi = 3.141593;
-```
-- And many more!
+- Language-level support for modules for Component definition. Codifies patterns 
+  from popular JavaScript module loaders like AMD(as shown below):
 
-A Metal.js component written in ES6 may look like this:
-
-```javascript
-class MyComponent extends Component {
-    created() {
-        //do some things
+    export function sum(x, y) {
+      return x + y;
     }
+    export var pi = 3.141593;
 
-    disposed() {
-        //do some other things
-    }
-}
-```
+These are just a few of the ES6 features available that you can use in your
+Metal.js Components.
 
-**These just scratch the surface of the new features in ECMASCRIPT 2015 that can be leveraged in Metal.js.**
+## Related Topics [](id=related-topics)
+
+[Creating a Soy Portlet](/develop/tutorials/-/knowledge_base/7-0/creating-a-soy-portlet)
+
+[JavaScript Module Loaders](/develop/tutorials/-/knowledge_base/7-0/javascript-module-loaders)
