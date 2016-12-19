@@ -4,7 +4,7 @@ The goal of a Unit Test is to verify the correct functionality of a class or
 method in isolation. This allows a developer to test said method or class for
 its intended behavior without needing to worry about any dependencies it might
 have. From a Liferay DXP/OSGi perspective, these dependencies effectively
-translates to services. JUnit
+translates to services.
 
 ## JUnit
 
@@ -65,6 +65,8 @@ execution* of your tests.
 Putting it all together, the methods you annotate will be run in the following
 order:
 
+![Figure x: JUnit executes the annotated methods following this algorithm.](../../images/junit-test-flow.png)
+
 To help illustrate the creation of a Unit Test, we’ll be using the following
 sample class with a few methods:
 
@@ -99,6 +101,8 @@ sample class with a few methods:
 Now let's write our actual test class. As far as where the class should go, it's
 generally a best practice to place tests within the same module as the classes
 it's testing like so:
+
+![Figure x: This example project follows the project structure for JUnit test classes.](../../images/junit-project-structure.png)
 
 Structurally, you'll want to make sure your test classes lie somewhere within
 the src/test/java/... directory of your module. As a best practice, the test
@@ -223,6 +227,8 @@ tests, and finally run your tests. Upon running the command, assuming everything
 has been set up correctly and your tests pass successfully, you should see the
 following output:
 
+![Figure x: Commandline output of successful test execution looks like this.](../../images/junit-command-output.png)
+
 However it's not very descriptive - nor is it clear that your tests were run
 and/or succeeded. Thankfully, this task also generates an HTML report for us
 that does contain more detailed information regarding the test or tests that
@@ -236,17 +242,23 @@ so we can go ahead and click through the class name. Finally, we're met with a
 list of all test methods that had been run, along with information regarding
 their results:
 
+![Figure x: JUnit produces HTML files that show test result details.](../../images/junit-results-html.png)
+
 Now we can be pretty sure that all of our test methods were, in fact, run and
 were successful. While this is certainly helpful, it's even more helpful when
 checking for failing tests. Let's go ahead and change our expected values in our
 assertions to deliberately force the tests to fail. After changing some of the
 values, running blade gw test again will yield the following results:
 
+![Figure x: Commandline output of failing tests looks like this.](../../images/junit-failure-command-output.png)
+
 The output clearly shows that the three tests are now failing, noting that the
 failure stemmed the comparison between the expected and actual values
 (org.junit.ComparisonFailure) at the line numbers indicated. Taking a look at
 the newly generated report and clicking through the test class, we now see a
 stack trace for each of the failing tests:
+
+![Figure x: Here's HTML for a failed test.](../../images/junit-failure-results-html.png)
 
 The stack traces tell us exactly why the test failed - we expected to see 21
 (the change we made to ensure it failed), but the actual result of the logic we
