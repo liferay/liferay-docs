@@ -95,7 +95,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `refreshControl` | `boolean` | Defines whether a standard [ios `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) appears when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items retrieved from the server for display on the second and subsequent pages. The default value is `25`. |
-| `customEntryQuery` | `Dictionary` | The set of keys (string) and values (string or number) to be used in the [`AssetEntryQuery` object](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/asset/kernel/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the Liferay instance. |
+| `customEntryQuery` | `Dictionary` | The set of keys (string) and values (string or number) to be used in the [`AssetEntryQuery` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the Liferay instance. |
 
 ## Methods [](id=methods)
 

@@ -1,9 +1,9 @@
 # SAML [](id=saml-0)
 
 @product@'s SAML (Security Assertion Markup Language) adapter lets you configure
-Single Sign On (SSO) and Single Log Off (SLO), using a Liferay instance as
+Single Sign On (SSO) and Single Log Off (SLO), using a @product@ instance as
 either the Service Provider (SP) or the Identity Provider (IdP). This article
-provides the conceptual framework for Liferay's SSO solution.
+provides the conceptual framework for @product@'s SSO solution.
 
 - Single Sign On
     - Identity Provider initiated SSO
@@ -15,7 +15,7 @@ provides the conceptual framework for Liferay's SSO solution.
 
 +$$$
 
-**Note:** A single Liferay instance is *either* the SP or the IdP in your SSO
+**Note:** A single @product@ instance is *either* the SP or the IdP in your SSO
 setup; it can't be both. You can, however, use separate instances for both
 purposes (for example, one instance is the SP and another is the IdP).
 
@@ -41,7 +41,7 @@ browser to the IdP.
 
 #### The SSO Request to the IdP [](id=the-sso-request-to-the-idp)
 
-If Liferay is the IdP, the IdP initiated SSO URL
+If @product@ is the IdP, the IdP initiated SSO URL
 
 - Must specify the path as `/c/portal/saml/sso`.
 - Must include the `entityId` parameter which is the identifier to a
@@ -50,7 +50,7 @@ If Liferay is the IdP, the IdP initiated SSO URL
   to which the user will be redirected upon successful authentication. This
   URL should point to a location on the desired SPC.
 
-For non-Liferay IdPs (Siteminder, ADFS, etc.), consult the vendor's
+For non-@product@ IdPs (Siteminder, ADFS, etc.), consult the vendor's
 documentation on constructing IdP initiated SSO URLs.
 
 If the IdP determines that the user isn't authenticated, it prompts the user
@@ -61,7 +61,7 @@ with the appropriate login screen.
 Upon successful authentication the IdP constructs a SAML Response. It includes
 attribute statements configured in the designated Service Provider Connection
 (SPC; see the [next article](/discover/portal/-/knowledge_base/7-0/setting-up-saml) on setting up
-the SPC in Liferay's SAML adapter).
+the SPC in @product@'s SAML adapter).
 
 The IdP sends the response to the Assertion Consumer Service URL using HTTP-POST
 or HTTP-Redirect. HTTP-POST is preferred because it reduces the risk that
@@ -114,7 +114,7 @@ in the `RelayState` parameter. If the user requested `/c/portal/login`, the
 `RelayState` can be set by providing the `redirect` parameter. Otherwise, if the
 [portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html)
 `auth.forward.by.last.path` is set to true, the last accessed path is set as the
-`RelayState`. For non-Liferay SPs, consult the vendor documentation on initiating
+`RelayState`. For non-@product@ SPs, consult the vendor documentation on initiating
 SSO.
 
 #### The AuthnRequest to the IdP [](id=the-authnrequest-to-the-idp)
@@ -122,7 +122,7 @@ SSO.
 The SP looks up the IdP's Single Sign On service URL and sends an
 `AuthnRequest`. When @product@ is the SP it looks up the configured SAML Identity
 Provider Connection and sends a SAML `AuthnRequest` to the IdP's Single Sign On
-service URL as defined in the SAML metadata XML document. Liferay supports
+service URL as defined in the SAML metadata XML document. @product@ supports
 sending and receiving the `AuthnRequest` using HTTP-Post or HTTP-Redirect
 binding. HTTP-Post is preferred.
 
@@ -150,7 +150,7 @@ whole message signature from the issuing IdP. Any responses missing the
 signature are considered unauthenticated and the response is rejected. The
 Response can be received via HTTP-Post binding or HTTP-redirect binding.
 HTTP-Post binding is preferred for the reasons mentioned in the previous
-section. For non-Liferay SP or IdP vendors, consult their documentation.
+section. For non-@product@ SP or IdP vendors, consult their documentation.
 
 The user is redirected to the requested resource or to the URL contained in the
 `RelayState` parameter (for example, the last page the user accessed before
@@ -169,7 +169,7 @@ SLO.
 #### The SLO Request to the IdP [](id=the-slo-request-to-the-idp)
 
 An IdP initiated SLO request is a SLO request sent directly to the IdP by the
-user's browser. When Liferay serves as the IdP, the IdP initiated SSO URL
+user's browser. When @product@ serves as the IdP, the IdP initiated SSO URL
 must specify the URL path as 
 
 `/c/portal/logout`
@@ -178,7 +178,7 @@ If the user is signed on to any configured SP, the SAML plugin takes over the
 logout process, displaying all the signed on services. The single logout screen
 displays the authentication status of each SP and whether any SPs can't be
 logged out of (for example, if the SP is down or doesn't support SLO). For
-non-Liferay IdPs (Siteminder, ADFS, etc.) consult the vendor's documentation on
+non-@product@ IdPs (Siteminder, ADFS, etc.) consult the vendor's documentation on
 constructing IdP initiated SLO URLs.
 
 The IdP sends a SAML `LogoutRequest` to the SP.
@@ -204,7 +204,7 @@ HTTP-Redirect, or SOAP binding.
 
 The second SP then delivers the `LogoutResponse` to the IdP using HTTP-Post,
 HTTP-Redirect, or direct response to SOAP request. The process is repeated for
-all SPs the user is logged into. When Liferay is the IdP, Liferay logs the user
+all SPs the user is logged into. When @product@ is the IdP, @product@ logs the user
 out after the last SP has delivered its `LogoutResponse` or has timed out.
 
 ### Service Provider Initiated SLO [](id=service-provider-initiated-slo)
@@ -238,16 +238,16 @@ terminates and the IdP destroys its session.
 #### The SLO Response from the SP [](id=the-slo-response-from-the-sp-0)
 
 If the user is logged in to additional SPs (beyond just the initiating SP), the
-IdP sends the SAML `LogoutRequest` to each one. When Liferay is the IdP, the
+IdP sends the SAML `LogoutRequest` to each one. When @product@ is the IdP, the
 `LogoutResponse` is sent using either HTTP-Post, HTTP-Redirect, or SOAP binding.
 
-Each SP delivers its `LogoutResponse` to the IdP. When Liferay is the SP, the
+Each SP delivers its `LogoutResponse` to the IdP. When @product@ is the SP, the
 `LogoutResponse` is sent using either HTTP-Post, HTTP-Redirect or direct
 response to SOAP request.
 
 After all additional SPs deliver their `LogoutResponse`s to the IdP, the IdP
-destroys its SSO session. When Liferay is the IdP, once the last SP has
-delivered its `LogoutResponse` or has timed out, the IdP destroys the Liferay
+destroys its SSO session. When @product@ is the IdP, once the last SP has
+delivered its `LogoutResponse` or has timed out, the IdP destroys the @product@
 session, logging out the user.
 
 Finally, the IdP sends a `LogoutResponse` to the SP that initiated SLO. The

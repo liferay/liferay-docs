@@ -1,11 +1,11 @@
-# Liferay Clustering [](id=liferay-clustering)
+# @product@ Clustering [](id=liferay-clustering)
 
 @product@ can serve everything from the smallest to the largest web sites. Out
 of the box, it's configured optimally for a single server environment. If one
-server isn't sufficient to serve the high traffic needs of your site, Liferay
+server isn't sufficient to serve the high traffic needs of your site, @product@
 scales to the size you need. 
 
-![Figure 1: Liferay is designed to scale to as large an installation as you need.](../../images-dxp/clustering-enterprise-configuration.png) 
+![Figure 1: @product@ is designed to scale to as large an installation as you need.](../../images-dxp/clustering-enterprise-configuration.png) 
 
 @product@ works well in clusters of multiple machines (horizontal cluster) or in
 clusters of multiple VMs on a single machine (vertical cluster), or any mixture
@@ -13,7 +13,7 @@ of the two. Once you have @product@ installed in more than one application
 server node, there are several optimizations that need to be made. At a minimum,
 @product@ should be configured in the following way for a clustered environment:
 
-1.  All nodes should be pointing to the same Liferay database or database cluster. 
+1.  All nodes should be pointing to the same @product@ database or database cluster. 
 
 2.  Documents and Media repositories should be accessible to all nodes of the
     cluster. 
@@ -42,7 +42,7 @@ values there.
 
 +$$$
 
-**Note:** This article documents a Liferay-specific cluster configuration
+**Note:** This article documents a @product@-specific cluster configuration
 without getting into specific implementations of third party software, such as
 Java EE application servers, HTTP servers, and load balancers. Please consult
 your documentation for those components of your cluster to configure those
@@ -54,7 +54,7 @@ $$$
 Each step defined above is covered below to give you a step by step process for
 creating your cluster.
 
-## 1. All Nodes Should Point to the Same Liferay Database [](id=all-nodes-should-point-to-the-same-liferay-database)
+## 1. All Nodes Should Point to the Same @product@ Database [](id=all-nodes-should-point-to-the-same-liferay-database)
 
 Each node should have a data source that points to one @product@ database (or a
 database cluster) that all the nodes will share. This means, of course,
@@ -68,14 +68,14 @@ configuration.
 
 ### Read-Writer Database Configuration [](id=read-writer-database-configuration)
 
-Liferay allows you to use two different data sources for reading and writing.
+@product@ allows you to use two different data sources for reading and writing.
 This enables you to split your database infrastructure into two sets: one
-optimized for reading and one optimized for writing. Since all Liferay's
+optimized for reading and one optimized for writing. Since all @product@'s
 supported databases support replication, you can use your database vendor's
 replication mechanism to keep the database nodes in sync.
 
 Enabling a read-writer database is simple. In your `portal-ext.properties` file,
-configure two different data sources for Liferay to use, one for reading, and
+configure two different data sources for @product@ to use, one for reading, and
 one for writing:
 
     jdbc.read.driverClassName=com.mysql.jdbc.Driver
@@ -102,22 +102,22 @@ Spring configuration file which enables it in your `spring.configs` property:
 You can find the full `spring.config` list in the `portal.properties`
 [documentation](https://docs.liferay.com/digital-enterprise/7.0-latest/propertiesdoc/portal.properties.html#Spring).
 
-The next time you start Liferay, it uses the two data sources you have
+The next time you start @product@, it uses the two data sources you have
 defined. Be sure you have correctly set up your two databases for replication
-before starting Liferay.
+before starting @product@.
 
 ## 2. Documents and Media Library Clustering [](id=documents-and-media-library-clustering)
 
 @product@'s Documents and Media Library can mount several repositories at a time
 while presenting a unified interface to the user. By default, users can use the
-Liferay repository, which is already mounted. This repository is built into
+@product@ repository, which is already mounted. This repository is built into
 @product@ and can use one of [several different store implementations](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration) 
 as its back-end. In addition to this, users can mount many different kinds of
 third party repositories. If you have a separate repository you've mounted, all
 nodes of the cluster point to this repository. Your avenue for improving
 performance at this point is to cluster your third party repository, using the
 documentation for the repository you have chosen. If you don't have a third
-party repository, you can configure the Liferay repository to perform well in a
+party repository, you can configure the @product@ repository to perform well in a
 clustered configuration. 
 
 The main thing to keep in mind is you need to make sure that every node of the
@@ -139,7 +139,7 @@ $$$
 
 ## 3. Clustering Search [](id=clustering-search)
 
-Search should always run on a separate environment from your Liferay server.
+Search should always run on a separate environment from your @product@ server.
 @product@ supports [Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0) 
 or [Solr](/discover/deployment/-/knowledge_base/7-0/using-solr), 
 and either of those environments can also be clustered. 
@@ -152,7 +152,7 @@ Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
 designed to replicate the cache across a cluster. 
 
-The cache is distributed across multiple Liferay nodes running concurrently.
+The cache is distributed across multiple @product@ nodes running concurrently.
 Enabling Cluster Link can increase performance dramatically. For example, if two
 users are browsing the message boards, and the first user clicks a thread,
 @product@ must grab that thread from the database, cache it, and format it for
@@ -162,7 +162,7 @@ it's retrieved from the cache, no matter what node serves that user, because the
 cache is replicated.  Because the thread is in the cache, no trip to the
 database is necessary. 
 
-![Figure 2: Liferay's cache algorithm is extremely efficient. ](../../images-dxp/clustering-cache-efficient-algorithm.png)
+![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../images-dxp/clustering-cache-efficient-algorithm.png)
 
 This is much more powerful than having a cache running separately on each node.
 The power of *distributed* caching lets common destinations be cached for
@@ -229,7 +229,7 @@ script should reflect that too.
 
 As a result of a load test, you may find that the default distributed cache
 settings aren't optimized for your site. In this case, you'll need to tweak the
-settings yourself. You can modify the Liferay installation directly or you can
+settings yourself. You can modify the @product@ installation directly or you can
 use a plugin to do it. Either way, the settings you change are the same. 
 
 Your network configuration may preclude the use of multicast over TCP, so below
@@ -261,8 +261,8 @@ your nodes or if your nodes are in different geographical locations.
     rest of these steps; the others are covered below. 
 
 3.  Download the OSGi Dependencies from the Customer Portal or access them from
-    your existing Liferay installation. In the dependencies' `marketplace`
-    folder is a Liferay package called `Liferay Foundation.lpkg` Inside this
+    your existing @product@ installation. In the dependencies' `marketplace`
+    folder is a @product@ package called `Liferay Foundation.lpkg` Inside this
     .lpkg (which is just a compressed zip file) is a .jar file called
     `com.liferay.portal.cluster.multiple-[version].jar`. Inside this .jar is a
     file called `tcp.xml`. Extract this file to a location accessible to

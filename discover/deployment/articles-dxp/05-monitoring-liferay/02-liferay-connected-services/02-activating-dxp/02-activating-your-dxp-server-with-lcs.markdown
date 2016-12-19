@@ -1,6 +1,6 @@
-# Activating Your DXP Server with LCS [](id=registering-your-dxp-server-with-lcs)
+# Activating Your @product@ Server with LCS [](id=registering-your-dxp-server-with-lcs)
 
-Once the LCS client app is deployed, you're ready to activate your DXP server 
+Once the LCS client app is deployed, you're ready to activate your @product@ server 
 with LCS. You'll use an 
 [LCS environment token](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
 to do this: 
@@ -22,7 +22,7 @@ to do this:
    property `cluster.link.enabled` to `true` in any servers that connect to a 
    clustered environment. 
 
-    ![Figure 2: You must activate your DXP server in an LCS environment. The red box in this screenshot highlights an environment.](../../../../images-dxp/lcs-registration-select-environment.png)
+    ![Figure 2: You must activate your @product@ server in an LCS environment. The red box in this screenshot highlights an environment.](../../../../images-dxp/lcs-registration-select-environment.png)
 
 3. Select the *Subscriptions* tab, and check the *Assign Subscription Type* 
    table to ensure that the environment you want to activate your server in has 
@@ -40,11 +40,11 @@ to do this:
 4. Select the environment you want to activate the server under, and then select 
    the *Registration* tab. This tab is where you can download and manage the 
    environment's token. In the Registration tab's *Services* section, first 
-   select the LCS services that you want to use with all DXP servers that 
+   select the LCS services that you want to use with all @product@ servers that 
    connect to this environment. All services are selected by default. Your 
    selections of LCS services here are embedded in the token file. 
 
-    ![Figure 4: An environment's Registration tab lets you manage the token file used to connect DXP instances to the environment.](../../../../images-dxp/lcs-registration.png) 
+    ![Figure 4: An environment's Registration tab lets you manage the token file used to connect @product@ instances to the environment.](../../../../images-dxp/lcs-registration.png) 
 
 5. Now you must use the Registration tab to generate, regenerate, and/or 
    download the token file. The actions you take here depend on two things: what 
@@ -56,7 +56,7 @@ to do this:
       Token*. 
     - **Existing token file, and changed selections of LCS services:** 
       Regenerate the token by clicking *Regenerate Token*. Note that if you 
-      regenerate the token, all DXP servers that currently use it will be 
+      regenerate the token, all @product@ servers that currently use it will be 
       disconnected from LCS and won't be able to reconnect until receiving the 
       new token. 
     - **Existing token file, and no changes to selections of LCS services:** No 
@@ -67,24 +67,24 @@ to do this:
     [Click here](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
     for more information on environment tokens.
 
-6. Shut down your DXP instance if it's running. Place the token file in your 
+6. Shut down your @product@ instance if it's running. Place the token file in your 
    instance's `[Liferay_Home]/data` folder, and then start the instance. On 
-   startup, the LCS client app uses the environment token to activate your DXP 
+   startup, the LCS client app uses the environment token to activate your @product@ 
    instance in the LCS environment that corresponds to the token. 
 
-7. Celebrate! Your DXP server is activated and connected to LCS. 
+7. Celebrate! Your @product@ server is activated and connected to LCS. 
 
-In your DXP instance, you can view your LCS connection status in the LCS client 
+In your @product@ instance, you can view your LCS connection status in the LCS client 
 app. Access the client by clicking *Control Panel* &rarr; *Configuration* &rarr; 
 *Liferay Connected Services*. Note that you can change which LCS services are 
-enabled for your DXP instance by clicking the *Configure Services* link. 
+enabled for your @product@ instance by clicking the *Configure Services* link. 
 
 Here's a full description of what a connected LCS client app displays: 
 
 - **Connection Uptime:** The duration of the client's connection with LCS.
 - **Last Message Received:** The time the latest message was received from LCS.
-- **Services:** The LCS services enabled for this DXP instance. Note that all 
-  DXP instances that connect to the same LCS environment must use the same set 
+- **Services:** The LCS services enabled for this @product@ instance. Note that all 
+  @product@ instances that connect to the same LCS environment must use the same set 
   of LCS services. LCS services can't be enabled on an instance-by-instance 
   basis. 
 - **Project Home:** This link takes you to this server's LCS project. 
@@ -94,7 +94,7 @@ Here's a full description of what a connected LCS client app displays:
 
 ![Figure 5: The server is connected to LCS.](../../../../images-dxp/lcs-server-connected.png)
 
-Awesome! Now you know how to use environment tokens in LCS to activate your DXP 
+Awesome! Now you know how to use environment tokens in LCS to activate your @product@ 
 server. 
 
 For information on using the other features of LCS, see 

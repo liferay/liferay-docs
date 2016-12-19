@@ -20,23 +20,23 @@ the data you expect from them. What kind of entity do you want to select? Do you
 want to select a user, an image, a video, or something else?
 
 Once you know the entities you want, you need *criterion* classes to represent
-them in the Item Selector. Criterion classes must implement the [`ItemSelectorCriterion` interface](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/com/liferay/item/selector/ItemSelectorCriterion.html). 
+them in the Item Selector. Criterion classes must implement the [`ItemSelectorCriterion` interface](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html). 
 The [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types)
 reference lists criterion classes Liferay's apps and app suites provide. 
 
 If there's no criterion class for your entity, you can create your
-own [`ItemSelectorCriterion` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/com/liferay/item/selector/ItemSelectorCriterion.html)
+own [`ItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html)
 (tutorial coming soon). 
 
 Then determine the type of information (return type) you expect from the
 entities when users select them. Do you expect a URL? A Universally Unique
 Identifier (UUID)? A primary key? Each return type must be represented by
-an implementation of the [`ItemSelectorReturnType` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/com/liferay/item/selector/ItemSelectorReturnType.html).
+an implementation of the [`ItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html).
 The [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types)
 reference also lists return type classes Liferay's apps and app suites provide. 
 
 If there's no return type class that meets your needs, you can implement your
-own [`ItemSelectorReturnType` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/com/liferay/item/selector/ItemSelectorReturnType.html)
+own [`ItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html)
 (tutorial coming soon). 
 
 +$$$
@@ -73,7 +73,7 @@ First, get an Item Selector OSGi Service Component using Declarative Services.
 
 The component annotations are available in the [`org.osgi.service.component.annotations` module](http://mvnrepository.com/artifact/org.osgi/org.osgi.service.component.annotations). 
 
-To get a URL to the Item Selector, you must call its [`getItemSelectorURL` method](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/item-selector/com.liferay.item.selector.api/com/liferay/item/selector/ItemSelector.html#getItemSelectorURL-com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory-java.lang.String-com.liferay.item.selector.ItemSelectorCriterion...-) 
+To get a URL to the Item Selector, you must call its [`getItemSelectorURL` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelector.html#getItemSelectorURL-com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory-java.lang.String-com.liferay.item.selector.ItemSelectorCriterion...-) 
 using the following parameters:
 
 -   `RequestBackedPortletURLFactory`: Factory that creates portlet URLs. 
@@ -270,4 +270,4 @@ item. Using Item Selector API, you can give app users the power of choice!
 
 [Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework)
 
-[Frontend Building Blocks](/develop/tutorials/-/knowledge_base/7-0/frontend-building-blocks)
+[Front-End Taglibs](/develop/tutorials/-/knowledge_base/7-0/front-end-taglibs)

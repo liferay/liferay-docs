@@ -1,6 +1,6 @@
 # Using Liferay's Language Settings [](id=using-liferays-language-settings)
 
-For a given locale, you can [override Liferay's core UI messages](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys).
+For a given locale, you can [override Liferay's core UI messages](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys).
 Modifying Language key values in Liferay provides a lot of localization
 flexibility in itself, but we're always looking for new ways to give you more
 control. There are language settings in Liferay's `Language_xx.properties` files
@@ -45,7 +45,9 @@ settings*:
 
 **Note:** To use the language settings mentioned here, you need a module, which is
 like a magic carpet on which your code and resources ride triumphantly into
-Liferay's OSGi runtime. Refer to the tutorial on [modifying Liferay's core language keys](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys) to set up a module with the following characteristics:
+Liferay's OSGi runtime. Refer to the tutorial on
+[modifying Liferay's core language keys](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys)
+to set up a module with the following characteristics:
 
 -  Contains an implementation of `ResourceBundle` that is registered in the
    OSGi runtime.
@@ -108,7 +110,7 @@ The properties for changing user name settings are those that begin with
 `lang.user.name` in the language settings section of a locale's language
 properties file.
 
-For most of the [locales enabled by default](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Languages and Time Zones) the user name properties are specifically tailored to that location.
+For most of the [locales enabled by default](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages and Time Zones) the user name properties are specifically tailored to that location.
 
     locales.enabled=ca_ES,zh_CN,nl_NL,en_US,fi_FI,fr_FR,de_DE,iw_IL,hu_HU,ja_JP,pt_BR,es_ES
 

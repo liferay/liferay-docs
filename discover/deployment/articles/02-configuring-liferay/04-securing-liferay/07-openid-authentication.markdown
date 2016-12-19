@@ -21,7 +21,7 @@ register and sign in with their OpenID accounts. Internally, the product uses
 
 ## OpenID at the System Scope [](id=openid-at-the-system-scope)
 
-OpenID is enabled by default in Liferay but can be disabled or enabled at either
+OpenID is enabled by default in @product@ but can be disabled or enabled at either
 the system scope or portal instance scope. To configure the OpenID SSO module at
 the system level, navigate to the Control Panel and click on *Configuration*
 &rarr; *System Settings*. Then click on the *Foundation* category and find
@@ -40,7 +40,7 @@ or uncheck it to disable it for the current portal instance.
 <!--
 ## Related Topics [](id=related-topics)
 
-- Liferay Security Overview
-- Signing in to Liferay
+- @product@ Security Overview
+- Signing in to @product@
 - Token-based Single Sign On Authentication
 -->

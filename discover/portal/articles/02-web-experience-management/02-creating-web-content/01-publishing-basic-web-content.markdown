@@ -31,7 +31,7 @@ of content.
 When you manage web content from the Site Administration menu, you can select
 the location where the content resides. When selecting the Site Administration
 dropdown from the Menu, you are presented with two scopes: site scope and page
-scope. The site scope can be managed by clicking the Compass icon
+scope. The site scope can be managed by clicking the *Site Selector* button
 (![Compass](../../../images/icon-compass.png)) located on the Site
 Administration dropdown menu, which is characterized by the name of the site.
 From there you can select the site for which you want your content scoped. For

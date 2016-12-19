@@ -114,7 +114,7 @@ extension point, you should follow these steps:
     Just as you can configure individual JSP pages to use a specific
     implementation of the available WYSIWYG editors, you can use those same
     implementation options for the registration process. Visit the
-    [Editors](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Editors)
+    [Editors](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Editors)
     section of `portal.properties` for more details. For example, to configure
     the Creole implementation of the CKEditor, you could use the following
     key:

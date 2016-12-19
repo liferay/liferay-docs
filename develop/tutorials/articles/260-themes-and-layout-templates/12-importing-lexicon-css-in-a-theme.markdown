@@ -157,7 +157,7 @@ Third party themes must be built with Sass to be compatible with @product@.
 
 Follow these steps to add a third party theme:
 
-1.  Follow the steps in the [Customizing Lexicon Base in @product@](/develop/tutorials/-/knowledge_base/7-0/importing-lexicon-css-in-a-theme#customizing-lexicon-base-in-liferay) section.
+1.  Follow the steps in the [Customizing Lexicon Base in @product@](/develop/tutorials/-/knowledge_base/7-0/importing-lexicon-css-into-a-theme#customizing-lexicon-base-in-liferay) section.
 
 2.  Create a folder inside `/src/css` (for legacy ant themes, `/_diff/css`) 
     that contains your third party theme (e.g. `/src/css/awesome-theme` or

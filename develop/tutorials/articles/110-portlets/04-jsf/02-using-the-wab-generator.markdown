@@ -81,7 +81,7 @@ Generator in action.
 
     These properties store your generated WAB into your @product@ instance's
     `osgi/wabs` folder. You can learn more about these properties in the
-    [Module Framework Web Application Bundles](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Module%20Framework%20Web%20Application%20Bundles)
+    [Module Framework Web Application Bundles](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework%20Web%20Application%20Bundles)
     properties section. Restart @product@ for these changes to be recognized.
 
 3.  Copy your WAR plugin in your @product@ instance's `deploy` folder.

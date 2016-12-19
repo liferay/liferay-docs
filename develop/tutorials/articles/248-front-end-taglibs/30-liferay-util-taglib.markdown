@@ -6,7 +6,7 @@ bottom or top of the HTML source.
 
 ## Using Liferay Util Tags [](id=using-liferay-util-tags)
 
-A list of the available `<liferay-util>` tags can be found [here](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/). 
+A list of the available `<liferay-util>` tags can be found [here](@platform-ref@/7.0-latest/taglibs/util-taglib/). 
 To use the Liferay-Util taglib library you must add the following declaration to
 your JSP:
 

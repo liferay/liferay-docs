@@ -63,7 +63,7 @@ In this tutorial, you'll learn how to customize the User Personal Bar.
     `ProductNavigationUserPersonalBarViewPortletProvider` class.
 
 4. Extend the
-   [BasePortletProvider](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
+   [BasePortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
    abstract class and implement `ViewPortletProvider`.
 
 5. Specify the portlet you'd like to provide in the User Personal Bar by using

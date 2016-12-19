@@ -149,11 +149,11 @@ below:
 Some of these properties may seem familiar to you, as they are the same ones
 used to develop an MVC portlet. You can find a list of all the Liferay-specific
 attributes that are available for use as properties in your portlet components
-in the [`liferay-portlet-app_7_0_0.dtd`](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html).
+in the [`liferay-portlet-app_7_0_0.dtd`](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd.html).
 
 The `javax.portlet...` properties are elements of the [portlet.xml descriptor](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd)
 
-Liferay's DTD files can be found [here](https://docs.liferay.com/portal/7.0/definitions/)
+Liferay's DTD files can be found [here](@platform-ref@/7.0-latest/definitions/)
 
 The foundation for your Soy portlet component is set. You can write the
 controller for the Soy portlet next.

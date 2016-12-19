@@ -94,12 +94,12 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
 
 5.  After you save your certificate and private key information,
     check the *Enabled* box at the top of the General tab and click *Save*.
-    You successfully set Liferay up as a SAML Identity Provider!
+    You successfully set @product@ up as a SAML Identity Provider!
 
 
 ### Changing the Identity Provider Settings [](id=changing-the-identity-provider-settings)
 
-To configure Liferay's SAML Identity Provider Settings, navigate to the Identity
+To configure @product@'s SAML Identity Provider Settings, navigate to the Identity
 Provider tab of the SAML Admin Control Panel entry.
 
 The Identity Provider tab includes these options:
@@ -118,7 +118,7 @@ should be enabled.
 in seconds. If this property is not set or is set to `0`, the SSO session has an
 unlimited duration. The SSO session maximum duration can be longer than the
 portal session maximum duration. If the portal session expires before the SSO
-session expires, the user is logged back in to Liferay automatically. SSO
+session expires, the user is logged back in to @product@ automatically. SSO
 session expiration does not trigger a single logout from all service providers.
 You can use the session maximum age, for example, to force users to sign in
 again after a certain period of time.
@@ -132,7 +132,7 @@ are used when adding new service provider connections.
 
 ### Adding a SAML Service Provider [](id=adding-a-saml-service-provider)
 
-Of course, setting up Liferay as a SAML Identity Provider is only useful if you
+Of course, setting up @product@ as a SAML Identity Provider is only useful if you
 can connect to one or more SAML Service Providers. Navigate to the Service
 Provider Connections tab of the SAML Admin Control Panel entry and click 
 the *Add Service Provider* button to add a SAML Service Provider.
@@ -168,7 +168,7 @@ any special meaning to Liferay Identity Providers. The NameID value is defined
 by the Name Identifier attribute. See the next option.
 
 **Name Identifier Attribute Name:** This specifies which attribute of the
-Liferay `User` object to use as the NameID value. Possible values include
+@product@ `User` object to use as the NameID value. Possible values include
 `emailAddress`, `screenName` and `uuid`. Additionally, you can prefix the name
 with `static:` or `expando:`. If you use the prefix `static`, the value is
 whatever comes after `static:`. If you use the prefix `expando`, the value is
@@ -193,19 +193,27 @@ useful, for example, when you have an Expando attribute that might otherwise
 create an attribute with the same name as some other attribute.
 
 If you don't have a Service Provider to add right now, that's fine. In the next
-section, you'll learn how to set Liferay up as a SAML Service Provider. After
-you set up another Liferay instance as a Service Provider, come back
+section, you'll learn how to set @product@ up as a SAML Service Provider. After
+you set up another @product@ instance as a Service Provider, come back
 to this @product@ installation and add the Service Provider: *Control Panel*
 &rarr; *SAML Admin* &rarr; *Service Provider Connections* &rarr; *Add Service
 Provider*.
 
-## Setting up Liferay as a SAML Service Provider [](id=setting-up-liferay-as-a-saml-service-provider)
+## Setting up @product@ as a SAML Service Provider [](id=setting-up-liferay-as-a-saml-service-provider)
 
 Many of these steps are similar to configuring @product@ as a SAML Identity
 Provider. A single @product@ installation can be configured as a SAML Identify
 Provider *or* as a SAML Service Provider but not as both. If you already set up
 one @product@ installation as a SAML Identity Provider, use a *different* @product@
-installation as a SAML Service Provider
+installation as a SAML Service Provider.
+
++$$$
+
+**Note:** If you're using a third party IdP with @product@ as the SP, all
+messages coming from the IdP must be signed. If they're not, an error message
+appears and communication between the IdP and @product@ fails.
+
+$$$
 
 1.  Install the Liferay SAML 2.0 Provider app. To confirm that the app was
     successfully deployed, look for the *SAML Admin* entry in the Configuration
@@ -245,7 +253,7 @@ installation as a SAML Service Provider
     - Service Provider (*not Identity Provider!*)
     - Identity Provider Connection (*not Service Provider Connections!*)
 
-    Note that these options are different than if you were setting up Liferay as
+    Note that these options are different than if you were setting up @product@ as
     an Identity Provider.
 
 5.  Next, you need to configure an Identity Provider connection. Click on the
@@ -263,7 +271,7 @@ installation as a SAML Service Provider
     a URL to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata
     XML file. The value entered in the *Metadata URL* field will only be
     persisted to the database when there is one entered metadata URL and there
-    is no specified metadata XML file. Otherwise, Liferay keeps the original
+    is no specified metadata XML file. Otherwise, @product@ keeps the original
     metadata URL in the database. This behavior ensures that once a metadata URL
     has been specified, there will always be a metadata URL saved in the
     database. This way, if a portal administrator forgets the previously entered
@@ -276,12 +284,12 @@ installation as a SAML Service Provider
     the SAML IdP metadata URL or metadata XML file fields using the Control
     Panel UI. If you really need to clear these fields, it's possible (but not
     recommended) to delete the contents of the SAML IdP metadata URL and
-    metadata XML file columns of the `SamlSpIdpConnection` table of Liferay's
+    metadata XML file columns of the `SamlSpIdpConnection` table of @product@'s
     database.
 
 6.  Finally, after you save your certificate and private key information and
     configure an Identity Provider connection, check the *Enabled* box at the top
-    of the General tab and click *Save*. Liferay is now a SAML Service Provider!
+    of the General tab and click *Save*. @product@ is now a SAML Service Provider!
 
 Note that the SAML Service Provider session is tied to the normal session on
 the application server. Session expiration on the application server terminates
@@ -342,19 +350,19 @@ XML file manually. In this case, the metadata XML file is not
 updated automatically. 
 
 **Attribute Mapping:** The attribute mapping is done from the attribute name or
-friendly name in the SAML Response to the Liferay attribute name. For example,
-if you want to map a response attribute named `mail` to the Liferay attribute
+friendly name in the SAML Response to the @product@ attribute name. For example,
+if you want to map a response attribute named `mail` to the @product@ attribute
 `emailAddress`, you'd enter the following mapping:
 
     mail=emailAddress
 
-Available Liferay attributes are: `emailAddress`, `screenName`, `firstName`,
+Available @product@ attributes are: `emailAddress`, `screenName`, `firstName`,
 `lastName`, `modifiedDate`, and `uuid`.
 
 +$$$
 
 **Note:** The previous two sections explained how to use the SAML 2.0 Provider
-EE plugin's Control Panel interface to configure Liferay as an Identity
+EE plugin's Control Panel interface to configure @product@ as an Identity
 Provider or as a Service Provider. Such configurations should only be made
 through the SAML Control Panel interface and not via properties. Some features
 of the Liferay SAML 2.0 Provider plugin are not available as properties.
@@ -368,7 +376,7 @@ SAML Service Provider, following the instructions above. If your Identity
 Provider and Service Provider have been correctly configured, navigating to
 [http://localhost:8080/c/portal/saml/sso?entityId=liferaysamlsp](http://localhost:8080/c/portal/saml/sso?entityId=liferaysamlsp)
 initiates the SAML Identity Provider based login process. To initiate the SAML
-Service Provider based login process, just navigate to the Liferay running on
+Service Provider based login process, just navigate to the @product@ running on
 port 9080 and click *Sign In*, navigate to
 [http://localhost:9080/c/portal/login](http://localhost:9080/c/portal/login), or
 try to access a protected resource URL such as a Control Panel URL.
@@ -394,14 +402,14 @@ $$$
 
 For reference, here are a few important SAML URLs.
 
-This URL is the default location of Liferay's metadata XML file:
+This URL is the default location of @product@'s metadata XML file:
 
     [host]:[port]/c/portal/saml/metadata
 
 Note that when configuring SAML for @product@, no importing of SAML certificates
-is required. Liferay reads certificates from the SAML metadata XML file. If you
+is required. @product@ reads certificates from the SAML metadata XML file. If you
 want a third-party application like Salesforce to read a Liferay SAML
-certificate, you can export the Liferay certificate from the keystore. The
+certificate, you can export the @product@ certificate from the keystore. The
 default keystore file is `[Liferay Home]/data/keystore.jks`. The exported
 certificate can be imported by a third-party application like Salesforce.
 
@@ -412,17 +420,17 @@ the Service Provider.
 
     [host]:[port]/c/portal/saml/sso?entityId=[SP entity id]&RelayState=[landing page on SP]
 
-## Setting Up Liferay as a SAML Service Provider in a Clustered Environment [](id=setting-up-liferay-as-a-saml-service-provider-in-a-clustered-environment)
+## Setting Up @product@ as a SAML Service Provider in a Clustered Environment [](id=setting-up-liferay-as-a-saml-service-provider-in-a-clustered-environment)
 
 If you want to use the Liferay SAML 2.0 Provider app as an SSO solution for a
 clustered @product@ environment, follow the steps in this section. Before
 proceeding, make sure that the following assumptions apply to your scenario.
 
 Suppose that your clustered @product@ environment consists of multiple @product@
-nodes that sit behind a load balancer. Your @product@ nodes could be Liferay
+nodes that sit behind a load balancer. Your @product@ nodes could be @product@
 Tomcat bundles, for example. Your load balancer could be software like Apache
 web server or hardware like F5 BIG-IP. Suppose further that you want want the
-nodes of your Liferay cluster to serve as SAML Service Providers. And suppose
+nodes of your @product@ cluster to serve as SAML Service Providers. And suppose
 that you have a third-party participating as the SAML Identity Provider. (For
 testing purposes, you could create a separate @product@ installation to serve as
 the SAML IdP.)
@@ -457,7 +465,7 @@ If your situation fits the scenario described above, follow these steps:
     To test your SSO solution, sign into @product@ via your load balancer,
     navigate to a few pages of a few different sites, and then log out.
 
-Now you know how to configure Liferay either as a SAML identity provider
+Now you know how to configure @product@ either as a SAML identity provider
 or a service provider. You also know how to configure SAML in a
 clustered environment.
 

@@ -1,6 +1,6 @@
 # Using the Patching Tool [](id=patching-tool)
 
-If you're using a Liferay bundle, the Patching Tool is already installed. When
+If you're using a @product@ bundle, the Patching Tool is already installed. When
 an update is necessary to install a patch, the Patching Tool automatically
 asks for an update.
 
@@ -32,7 +32,7 @@ The first thing you must do when installing patches is to shut down your server.
 On Windows operating systems, files that are in use are locked by the OS, and
 can't be patched. On Unix-style systems, you can usually replace files that are
 running, but that still leaves the old ones loaded in memory. So your best bet
-is to shut down the application server that's running Liferay before you install
+is to shut down the application server that's running @product@ before you install
 a patch. 
 
 Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
@@ -152,7 +152,7 @@ removed. If it exists, delete the *osgi/state* folder in Liferay Home.
 ## Cleaning Up [](id=cleaning-up)
 
 After you've performed your patching procedure (whether you've installed or
-removed patches), it's important to clean up Liferay's cache of deployed code.
+removed patches), it's important to clean up @product@'s cache of deployed code.
 This ensures that when you start the server, you're using the revision you've
 just installed the patches for. This is really easy to do. 
 

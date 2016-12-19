@@ -674,6 +674,6 @@ be pleased with.
 
 ## Related Topics [](id=related-topics)
 
-[Frontend Customizations](/develop/tutorials/-/knowledge_base/7-0/frontend-customizations)
+[Front-End Taglibs](/develop/tutorials/-/knowledge_base/7-0/front-end-taglibs)
 
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)

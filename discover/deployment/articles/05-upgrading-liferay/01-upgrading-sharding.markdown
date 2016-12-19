@@ -1,6 +1,6 @@
 # Upgrading a Sharded environment [](id=upgrading-sharded-environment)
 
-If you come from a sharded installation of Liferay 6.2, you can upgrade to
+If you come from a sharded installation of Liferay Portal 6.2, you can upgrade to
 @product-ver@ by following these steps. Please note that after the upgrade, your
 installation will no longer be sharded. The example below upgrades an
 installation with three shards. 
@@ -49,5 +49,5 @@ third shard's properties.
       jdbc.default.password=
 
 Once you've upgraded your last shard, you're finished! This procedure lets you
-migrate old sharded Liferay 6.2 installations to @product-ver@. 
+migrate old sharded Liferay Portal 6.2 installations to @product-ver@. 
 

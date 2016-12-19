@@ -1,11 +1,11 @@
-# Installing Liferay DXP on WebLogic 12c R2 [](id=installing-liferay-dxp-on-weblogic-12c-r2)
+# Installing @product@ on WebLogic 12c R2 [](id=installing-liferay-dxp-on-weblogic-12c-r2)
 
-Although it's possible to install Liferay DXP in a WebLogic Admin
+Although it's possible to install @product@ in a WebLogic Admin
 Server, this isn't recommended. It's best practice to install web apps,
-including Liferay DXP, in a WebLogic Managed server. By deploying to a Managed
-Server, you’ll be able to start/shutdown Liferay DXP more quickly, and you’ll
-more easily be able to extend DXP into a cluster configuration. This article
-therefore focuses on installing DXP in a Managed Server. 
+including @product@, in a WebLogic Managed server. By deploying to a Managed
+Server, you’ll be able to start/shutdown @product@ more quickly, and you’ll
+more easily be able to extend @product@ into a cluster configuration. This article
+therefore focuses on installing @product@ in a Managed Server. 
 
 Before getting started, you should take care of a few things. First, it's 
 assumed that your Admin and Managed Servers already exist. See 
@@ -13,32 +13,32 @@ assumed that your Admin and Managed Servers already exist. See
 for instructions on setting up and configuring Admin and Managed Servers. 
 
 You should also read the following articles to familiarize yourself with
-Liferay's general installation steps: 
+@product@'s general installation steps: 
 
-- [Liferay Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
-- [Installing Liferay Portal](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
-- [Installing Liferay Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
+- [@product@ Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
+- [Installing @product@](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
+- [Installing @product@ Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
 
-And lastly, download Liferay DXP's WAR file and dependencies from 
+And lastly, download @product@'s WAR file and dependencies from 
 [http://files.liferay.com/private/ee](http://files.liferay.com/private/ee), 
 or the customer portal on 
 [liferay.com](https://www.liferay.com/). 
 You'll need the following files:
 
-- `liferay-dxp-digital-enterprise-[version].war`: Liferay DXP WAR file
+- `liferay-dxp-digital-enterprise-[version].war`: @product@ WAR file
 
-- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: Liferay DXP 
+- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: @product@ 
   dependencies
 
-- `liferay-dxp-digital-enterprise-osgi-[version].zip`: Liferay DXP OSGi 
+- `liferay-dxp-digital-enterprise-osgi-[version].zip`: @product@ OSGi 
   dependencies
 
-Without any further ado, get ready to install Liferay DXP in WebLogic! 
+Without any further ado, get ready to install @product@ in WebLogic! 
 
 ## Configuring WebLogic's Node Manager [](id=configuring-weblogics-node-manager)
 
 WebLogic requires a Node Manager to start and stop managed servers. Before 
-installing Liferay, you must configure the Node Manager included with your 
+installing @product@, you must configure the Node Manager included with your 
 WebLogic installation. You'll do this via the 
 `domains/your_domain_name/nodemanager/nodemanager.properties` file. Open this 
 file, and set the `SecureListener` property to `false`: 
@@ -47,7 +47,7 @@ file, and set the `SecureListener` property to `false`:
 
 This setting disables the encryption (SSL) requirement for the Node Manager, 
 allowing it to accept unencrypted connections. Although it's possible to run 
-Liferay with this property set to `true`, you may encounter difficulties doing 
+@product@ with this property set to `true`, you may encounter difficulties doing 
 so. Also note that with `SecureListener` set to `true`, you must configure your 
 machine in the Admin Server's console to accept unencrypted connections from the 
 Node Manager. To do this, first log in to your Admin Server and select 
@@ -91,31 +91,31 @@ Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
     export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
 
 The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
-Liferay doesn't require this server. The remaining settings support Liferay's 
+@product@ doesn't require this server. The remaining settings support @product@'s 
 memory requirements, UTF-8 requirement, Lucene usage, and Aspect Oriented 
 Programming via AspectJ. Also make sure to set `MW_HOME` to the directory 
 containing your WebLogic server on your machine. For example: 
 
     export MW_HOME="/Users/ray/Oracle/wls12210"
 
-You must also ensure that the Node Manager sets Liferay DXP's memory 
+You must also ensure that the Node Manager sets @product@'s memory 
 requirements when starting the Managed Server. In the Admin Server's console UI, 
-navigate to the Managed Server you want to deploy DXP to and select the *Server 
+navigate to the Managed Server you want to deploy @product@ to and select the *Server 
 Start* tab. Enter the following into the *Arguments* field: 
 
     -Xmx2048m -XX:MaxMetaspaceSize=512m
 
 Click *Save* when you're finished. 
 
-Next, you'll set some Liferay-specific properties for your DXP installation. 
+Next, you'll set some @product@-specific properties for your @product@ installation. 
 
-## Setting Liferay Properties [](id=setting-liferay-properties)
+## Setting @product@ Properties [](id=setting-liferay-properties)
 
-Before installing Liferay DXP, you must set the 
+Before installing @product@, you must set the 
 [*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
 folder's location via the `liferay.home` property in a `portal-ext.properties` 
 file. You can also use this file to override 
-[other Liferay properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html) 
+[other @product@ properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html) 
 that you may need. 
 
 First, decide which directory you want to serve as Liferay Home. In WebLogic, 
@@ -129,22 +129,22 @@ Remember to change this file path to the location on your machine that you want
 to serve as Liferay Home. 
 
 Now that you've created your `portal-ext.properties` file, you must put it 
-inside the Liferay DXP WAR file. Expand the DXP WAR file and place 
+inside the @product@ WAR file. Expand the @product@ WAR file and place 
 `portal-ext.properties` in the `WEB-INF/classes` folder. Later, you can deploy 
 the expanded archive to WebLogic. Alternatively, you can re-WAR the expanded 
-archive for later deployment. In either case, DXP reads your property settings 
+archive for later deployment. In either case, @product@ reads your property settings 
 once it starts up. 
 
-If you need to make any changes to `portal-ext.properties` after Liferay DXP 
+If you need to make any changes to `portal-ext.properties` after @product@ 
 deploys, you can find it in your domain's `autodeploy/ROOT/WEB-INF/classes` 
-folder. Note that the `autodeploy/ROOT` folder contains the Liferay DXP 
+folder. Note that the `autodeploy/ROOT` folder contains the @product@ 
 deployment. 
 
-Next, you'll install Liferay DXP's dependencies. 
+Next, you'll install @product@'s dependencies. 
 
-## Installing Liferay Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
 
-You must now install Liferay DXP's dependencies. Recall that earlier you 
+You must now install @product@'s dependencies. Recall that earlier you 
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
@@ -155,17 +155,17 @@ now:
    place its contents in the `Liferay_Home/osgi` folder (create this folder if 
    it doesn't exist).
 
-If you don't want to use Liferay's built-in Hypersonic database, you must also 
+If you don't want to use @product@'s built-in Hypersonic database, you must also 
 add your database's driver JAR file to your domain’s `lib` folder. Note that 
 although Hypersonic is fine for testing purposes, you **should not** use it for 
-production Liferay DXP instances. 
+production @product@ instances. 
 
 Next, you'll configure your database. 
 
 ## Database Configuration [](id=database-configuration)
 
 Use the following procedure if you want WebLogic to manage your database for 
-Liferay DXP. You can skip this section if you want to use Liferay's built-in 
+@product@. You can skip this section if you want to use @product@'s built-in 
 Hypersonic database. 
 
 1. Log in to your AdminServer console.
@@ -189,7 +189,7 @@ Hypersonic database.
 
 7. Select the target for the data source and click *Finish*. 
 
-8. You must now tell Liferay about the JDBC data source. Create a 
+8. You must now tell @product@ about the JDBC data source. Create a 
    `portal-ext.propreties` file in your Liferay Home directory, and add the line 
    `jdbc.default.jndi.name=jdbc/LiferayPool`. 
 
@@ -225,7 +225,7 @@ this section.
    [WebLogic documentation](http://docs.oracle.com/middleware/1221/wls/FMWCH/pagehelp/Mailcreatemailsessiontitle.html) 
    for more information on these fields. Click *Next* when you're done. 
 
-5. Choose the Managed Server that you'll install Liferay on, and click *Finish*. 
+5. Choose the Managed Server that you'll install @product@ on, and click *Finish*. 
    Then shut down your Managed and Admin Servers. 
 
 6. With your Managed and Admin servers shutdown, add the following property to 
@@ -233,25 +233,25 @@ this section.
 
         mail.session.jndi.name=mail/MailSession
 
-    Liferay DXP references your WebLogic mail session via this property setting. 
-    If you've already deployed Liferay, you can find your 
+    @product@ references your WebLogic mail session via this property setting. 
+    If you've already deployed @product@, you can find your 
     `portal-ext.properties` file in your domain's 
     `autodeploy/ROOT/WEB-INF/classes` folder. 
 
 Your changes will take effect upon restarting your Managed and Admin servers. 
 
 Next, you'll configure the security settings in your WebLogic server to work 
-with Liferay DXP. 
+with @product@. 
 
 ## Security Configuration [](id=security-configuration)
 
 When you're ready to start using 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
-apps, you'll want to protect your DXP instance and your WebLogic server from 
+apps, you'll want to protect your @product@ instance and your WebLogic server from 
 security threats. To do so, you must enable Java Security on your WebLogic 
-server and specify a security policy to grant Liferay DXP access to your server. 
+server and specify a security policy to grant @product@ access to your server. 
 
-First, you'll grant Liferay access to your server. This configuration opens all 
+First, you'll grant @product@ access to your server. This configuration opens all 
 permissions--you can fine-tune your policy's permissions later. If it doesn't 
 already exist, create a policy file named `weblogic.policy` in your 
 `$WL_HOME/server/lib` folder. Replace its contents with the following: 
@@ -276,31 +276,31 @@ specification docs at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
 Also, see the section 
 [Understanding Plugin Security Management](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
-in the Developer's Guide to learn how to configure Liferay plugin access to
+in the Developer's Guide to learn how to configure @product@ plugin access to
 resources. 
 
-## Deploying Liferay DXP [](id=deploying-liferay-dxp)
+## Deploying @product@ [](id=deploying-liferay-dxp)
 
-As mentioned earlier, although you can deploy Liferay DXP to a WebLogic Admin 
+As mentioned earlier, although you can deploy @product@ to a WebLogic Admin 
 Server, you should instead deploy it to a WebLogic Managed Server. Dedicating 
 the Admin Server to managing other servers that run your apps is a best 
 practice. 
 
-Follow these steps to deploy DXP to a Managed Server: 
+Follow these steps to deploy @product@ to a Managed Server: 
 
-1. Make sure the Managed Server you want to deploy DXP to is shut down. 
+1. Make sure the Managed Server you want to deploy @product@ to is shut down. 
 
 2. In your Admin Server's console UI, select *Deployments* from the *Domain 
    Structure* box on the left hand side. Then click *Install* to start a new 
    deployment. 
 
-3. Select the Liferay DXP WAR file or its expanded contents on your file system. 
+3. Select the @product@ WAR file or its expanded contents on your file system. 
    Alternatively, you can upload the WAR file by clicking the *Upload your 
    file(s)* link. Click *Next*. 
 
 4. Select *Install this deployment as an application* and click *Next*.
 
-5. Select the Managed Server you want to deploy DXP to, and click *Next*. 
+5. Select the Managed Server you want to deploy @product@ to, and click *Next*. 
 
 6. If the default name is appropriate for your installation, keep it. Otherwise, 
    give it a name of your choosing and click *Next*. 
@@ -308,7 +308,7 @@ Follow these steps to deploy DXP to a Managed Server:
 7. Click *Finish*. After the deployment finishes, click *Save* if you want to 
    save the configuration.  
 
-8. Start the Managed Server you deployed DXP to. DXP precompiles all the JSPs, 
+8. Start the Managed Server you deployed @product@ to. @product@ precompiles all the JSPs, 
    and then launches. 
 
-Nice work! Now you're running Liferay DXP on WebLogic. 
+Nice work! Now you're running @product@ on WebLogic. 
