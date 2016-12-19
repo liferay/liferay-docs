@@ -3,7 +3,7 @@
 Metal.js is a lightweight, easy-to-use JavaScript framework that lets you create
 UI Components with ease, thanks to its integration with templating languages.
 
-![Figure 1: You can create UI's easily, thanks to Metal.js.](../../images/metal-js-home-page.png)
+![Figure 1: You can create UI's easily, thanks to Metal.js.](../../../../images/metal-js-home-page.png)
 
 Metal.js is built with you in mind, offering flexibility with how your rendering 
 logic is handled. You can use template languages to write your rendering logic 
@@ -28,7 +28,7 @@ if your Component doesn't require rendering, you can just use `State`.
 
 The figure below illustrates the architecture for Metal.js:
 
-![Figure 2:](../../images/metal-js-architecture.png)
+![Figure 2:](../../../../images/metal-js-architecture.png)
 
 Metal.js takes full advantage of the [ECMAScript 6](http://www.ecma-international.org/ecma-262/6.0/)
 (AKA ECMAScript 2015) language, so you can use the latest features that the
