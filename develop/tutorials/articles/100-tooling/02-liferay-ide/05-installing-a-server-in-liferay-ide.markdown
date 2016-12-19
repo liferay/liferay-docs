@@ -1,4 +1,4 @@
-# Installing a Server in Liferay @ide@
+# Installing a Server in Liferay @ide@ [](id=installing-a-server-in-liferay-ide)
 
 Installing a server in Liferay @ide@ is easy. In just a few steps you'll have
 your server up and running. Follow these steps to install your server:
