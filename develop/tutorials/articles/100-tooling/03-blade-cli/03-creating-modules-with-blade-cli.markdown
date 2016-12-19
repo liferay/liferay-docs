@@ -82,6 +82,22 @@ the following property in the workspace's `gradle.properties` file:
 Change this property if you'd like to store your modules in a different
 directory.
 
++$$$
+
+**Note:** Your modules should define a repository where external dependencies
+can be downloaded. Unlike Maven, Gradle does not define any repositories by
+default. For convenience, modules created with Blade CLI define Liferay's
+public Nexus repository as its default repository. This is defined, however, in
+different files depending on where the module was created.
+
+If you used Blade CLI to create a module outside of a workspace, your
+repository is defined in the module's `build.gradle` file. Likewise, if you
+created your module inside a workspace, your repository is defined in the
+`settings.gradle` file located in the workspace's ROOT folder. This ensures that
+all modules residing in the workspace share the same repository URL.
+
+$$$
+
 When using Blade CLI, you'll have to manually edit your project's component
 class. Blade CLI gives you the ability to specify the class's name, but all
 other contents of the class can only be edited after the class is created. See
