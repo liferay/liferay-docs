@@ -1,4 +1,4 @@
-# MetalJS [](id=metal-js)
+# Metal.js [](id=metal-js)
 
 Metal.js is a lightweight, easy-to-use JavaScript framework that lets you create
 UI Components with ease, thanks to its integration with templating languages.
