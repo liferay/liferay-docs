@@ -154,7 +154,7 @@ folder, run
 
     ./gradlew distBundle[Zip|Tar] -Pliferay.workspace.environment=<ENVIRONMENT>
 
-The `ENVIRONMENT` variable should match the configuration folder (`dev`,       
+The `ENVIRONMENT` variable should match the configuration folder (`dev`,
 `local`, `prod`, `uat`, etc.) you intend to apply.
 
 +$$$
@@ -211,12 +211,10 @@ easy ways to use external release tools with workspace. The most popular choice
 is uploading your modules into a Maven Nexus repository. You could also use
 other release tools like [Artifactory](https://www.jfrog.com/artifactory/).
 
-You may ask "Why would I want to upload my modules built with Gradle into a
-Maven repository?" Gradle artifacts are not easily distributed between multiple
-user environments. This is because Gradle artifacts stored in your local `.m2`
-directory contain user specific data that can't be transferred to other
-developers. Maven, however, stores no user-specific metadata in its artifacts,
-meaning it's easily transferrable.
+Uploading modules to a remote repository is useful if you need to share them
+with other non-workspace projects. Also, if you're ready for your modules to be
+in the spotlight, uploading them to a remote repository gives other developers
+the chance to use them.
 
 For more instructions on how to set up a Maven Nexus repository for your
 workspace's modules, see the
