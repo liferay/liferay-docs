@@ -4168,3 +4168,40 @@ This change was made as part of the modularization efforts for the Web
 Content application.
 
 ---------------------------------------
+
+### Moved Shopping File Uploads Portlet Properties to OSGi Configuration [](id=moved-shopping-file-uploads-portlet-properties-to-osgi-configuration)
+- **Date:** 2016-Dec-08
+- **JIRA Ticket:** LPS-69210
+
+#### What changed? [](id=what-changed-104)
+
+The Shopping file uploads portlet properties have been moved from Server
+Administration to an OSGI configuration named `ShoppingFileUploadsConfiguration`
+in the `shopping-api` module.
+
+#### Who is affected? [](id=who-is-affected-104)
+
+This affects anyone who is using the following portlet properties:
+
+- `shopping.image.extensions`
+- `shopping.image.large.max.size`
+- `shopping.image.medium.max.size`
+- `shopping.image.small.max.size`
+
+#### How should I update my code? [](id=how-should-i-update-my-code-104)
+
+Instead of overriding the `portal.properties` file, you can manage the
+properties from Portal's configuration administrator. This can be accessed by
+navigating to Liferay's Control Panel &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Shopping Cart Images* and editing the settings there.
+
+If you would like to include the new configuration in your application, follow
+the instructions for
+[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+
+#### Why was this change made? [](id=why-was-this-change-made-104)
+
+This change was made as part of the modularization efforts to ease portal
+configuration changes.
+
+---------------------------------------
