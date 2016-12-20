@@ -12,6 +12,10 @@ command to deploy it to @product@:
 You can also deploy all modules in a folder by running the `deploy` command from
 the parent folder (e.g., `[WORKSPACE_ROOT]/modules`).
 
+If you run into errors during the build/deploy process of your module, check to
+make sure your workspace is accounting for the
+[appropriate certificates](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
+
 Blade CLI can detect a locally running Liferay instance and automatically
 deploys your module to that Liferay instance. Blade communicates with
 @product@'s OSGi framework using Felix Gogo shell and deploys the module
