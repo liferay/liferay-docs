@@ -133,8 +133,11 @@ You're not limited to just these environments. You can create any subfolder in
 the `configs` folder (e.g., `aws`, `docker`, etc.) to simulate any environment.
 Each environment folder can supply its own database, `portal-ext.properties`,
 Elasticsearch, etc. The files in each folder overlay your @product@
-installation, which you generate from within workspace. When workspace generates
-an @product@ bundle, the following occurs:
+installation, which you generate from within workspace.
+
+![Figure 1: The `configs/common` and `configs/[environment]` overlay you @product@ bundle when it's generated.](../../../images/workspace-configs.png)
+
+When workspace generates an @product@ bundle, the following occurs:
 
 1.  Configuration files found in the `configs/common` folder are applied to the
     @product@ bundle.
