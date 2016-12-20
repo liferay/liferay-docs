@@ -1,21 +1,24 @@
 # Unit Testing with JUnit
 
-The goal of a Unit Test is to verify the correct functionality of a class or
-method in isolation. This allows a developer to test said method or class for
-its intended behavior without needing to worry about any dependencies it might
-have. From a Liferay DXP/OSGi perspective, these dependencies effectively
-translates to services.
+Unit tests verify correct functionality of classes and their methods in
+isolation. They test the intended behavior without the developer needing to
+worry about external dependencies. Unit testing in @product@ is accomplished
+using the JUnit framework. Developers create test methods that assert expected
+results. They apply annotations to methods that prepare the test environment,
+invoke tests, and clean up the test environment. The annotations dictate test
+flow execution. 
 
-## JUnit
+In this tutorial you'll do these things:
 
-Unit Testing in Liferay is accomplished using the JUnit framework. The framework
-essentially boils down to the usage of a variety of annotations that are applied
-to methods to mark what each should do. In a way, they dictate the flow of
-execution* of your tests.
+- Learn the JUnit annotations
+- Create a JUnit test class
+- Execute the JUnit tests
 
-### JUnit Java Annotations
+## JUnit Annotations
 
- Method/class signature | Description |
+The following table describes the JUnit annotations for methods.
+
+ Method signature | Description |
 :--------------------------  | :------------- |
  `@BeforeClass`<br />`public static void method()` | This method is invoked once, before the class's entire suite of tests is executed. It should prepare the general test environment. |
  `@Before`<br />`public void method()` | This method is invoked before each test. It should prepare the environment. |
@@ -25,14 +28,34 @@ execution* of your tests.
  `@AfterClass`<br />`public static void method()` | This method is invoked once, after the class's entire suite of tests is executed. It should cleanup the general test environment. |
  `@Ignore or @Ignore("Why disabled")`<br />`public void method()` | This method is skipped. Adding the `@Ignore` annotation is an easy way to skip a test. The message (optional) can explain why the test is being ignored. |
 
-
-Putting it all together, the methods you annotate will be run in the following
-order:
+JUnit executes the test class methods following the algorithm below. 
 
 ![Figure x: JUnit executes the annotated methods following this algorithm.](../../images/junit-test-flow.png)
 
-To help illustrate the creation of a Unit Test, we’ll be using the following
-sample class with a few methods:
+Let's create a class for unit testing another class's business logic. 
+
+## Creating a JUnit Test Class
+
+Create an initial test class following these steps:
+
+1.  Open the module of the class you're testing.
+
+2.  Add a `src/test/java/` folder to the module. 
+
+3.  In that folder, create a package path (ending in `test`) that mirrors the
+    package path of the class you're testing.
+
+    For example, if the class is in package `com.sample`, add a package
+    `com.sample.test`. 
+
+4.  In that package, create a test class that ends in `Test` (e.g.,
+    `SomeTest.java`). 
+
+Your new test class is ready for test methods.
+
+![Figure x: In this example structure, the JUnit test class accompanies the class it tests in the same module. The test class resides in a different source folder and package.](../../images/junit-project-structure.png)
+
+To help illustrate creating unit tests, let's refer to an example class to test:
 
     public class MySampleNameClass {
 
@@ -61,33 +84,32 @@ sample class with a few methods:
 
     }
 
+In the sections that follow, you'll see test methods that relate to this example
+class.
 
-Now let's write our actual test class. As far as where the class should go, it's
-generally a best practice to place tests within the same module as the classes
-it's testing like so:
+Let's create test methods that use the JUnit annotations per the test flow
+execution order. 
 
-![Figure x: This example project follows the project structure for JUnit test classes.](../../images/junit-project-structure.png)
+### @BeforeClass
 
-Structurally, you'll want to make sure your test classes lie somewhere within
-the src/test/java/... directory of your module. As a best practice, the test
-classes should be placed within a package path that mirrors that of your
-module's classes with an additional "test" package appended to the end. Lastly,
-all Unit Test class names should end with "Test."
+First you need to identify are resources or computationally expensive tasks that
+must be completed prior to running all the tests. Create a method that
+initializes these resources and invokes these tasks. Apply the `@BeforeClass`
+annotation to the method.
 
-## @BeforeClass
+### @Before
 
-The first thing you need to identify when writing a Unit Test is the presence of
-resources or computationally expensive tasks that must be completed prior to
-running all of the tests. The logic for which should go in a method with this
-annotation. In our example, we don't have anything that matches this description
-so we can safely skip creating this method.
+Consider what needs to be done before running each individual test. Create a
+method that makes small preparations before each test case and add the `@Before`
+annotation to it. 
 
-## @Before
+For example, each of the tests for the class `MySampleNameClass` must operate on
+a populated `MySampleNameClass` object. Implementing a method that instantiates
+such an object beforehand is appropriate. Adding the `@Before` annotation to the
+method ensures it's executed before each individual test.
 
-Now we need to consider what needs to be done prior to running each test. In our
-sample, we need to make sure we have an object of our sample class instantiated
-in order to test its methods so let's go ahead and start drafting our test
-class:
+Here's what the `MySampleNameClassTest` class might look like with such a
+method:
 
     public class MySampleNameClassTest {
 
@@ -95,41 +117,32 @@ class:
        public void setUp() {
           _mySampleNameClass = new MySampleNameClass("Brian", "Edward", "Greenwald");
        }
+
        private MySampleNameClass _mySampleNameClass;
 
     }
 
-(Note: Since our class is immutable it technically might make more sense to
-simply instantiate the object once in @BeforeClass and forgo the @Before.
-However, it's probably more typical that you'll be testing methods that do
-change an object's state, so let's pretend it needs to be instantiated anew
-before each @Test!)
+**Note**: Since this example class is immutable it technically might make more
+sense to simply instantiate the object once in the `@BeforeClass` method and
+forgo the `@Before` method. It's probably more typical, however, that you'll be
+testing methods that change an object's state; so let's pretend this example
+object needs to be instantiated anew before each `@Test` method.
 
-Now that we've instantiated our class with concrete values, we can easily move
-on to testing the expected output of our sample methods.
+Now that you've instantiated objects that each test needs, you can test the
+expected output for the methods you're testing.
 
-## @Test
+### @Test
 
-When creating your test cases, be mindful that each case should be fully
-independent of one another and thus not rely on them being run in a specific
-order - JUnit offers no guarantees in the flow of execution.Our sample class is
-entirely immutable so we don't need to worry about state. If the methods we were
-testing did alter state, we would simple need to make sure that the @Before and
-@After methods ensured a fresh state for each @Test, as is their purpose. Before
-we actually move on to writing our tests, however, we need a way for JUnit to
-recognize whether or not our tests passed or failed...
+JUnit's [`Assert` utility class](http://junit.org/junit4/javadoc/latest/org/junit/Assert.html)
+contains static methods for comparing actual test results with expected results.
+When an assertion fails, an `AssertionException` is thrown, thus failing the
+test. If a test method completes execution without throwing an exception, the
+test succeeds.
 
-## Assert
-
-To accomplish this, JUnit offers the Assert utility class. The Assert class
-contains a variety of static methods that allow you to compare the actual
-results of your test to those you expected. When an assertion fails, an
-AssertionException is thrown, thus marking the test as failing. If a test method
-completes execution without an exception, the test is considered successful. For
-tests that contain a large amount of logic it's typically a best practice to use
-multiple assertions within the test to better identify the earliest point of
-failure. Our sample class is fairly simple with only 3 methods so it makes the
-most sense to create 3 separate cases to test each one, like so:
+For tests that contain a large amount of logic it's typically a best practice to
+use multiple assertions within the test to better identify the earliest point of
+failure. But since the example class is fairly simple, let's consider creating a
+test for each of its methods:
 
     @Test
     public void testFullNameLength() {
@@ -152,95 +165,102 @@ most sense to create 3 separate cases to test each one, like so:
        Assert.assertEquals("Brian E. Greenwald", fullName);
     }
 
-Since we know what the input was for our tests (the parameters passed into the
-constructor), we can easily determine what the right answer should be. So, we
-simply take the computed value from our methods and compare them with our
-correct answer.
+Since you know the test input (e.g., the parameters passed into the
+`MySampleNameClass` constructor), you can easily determine the exepected. You
+can compare the computed value each method returns with the expected value.
 
-But let's say we need to test our method to make sure it's throwing an exception
-when given certain invalid inputs. In such a case, you would simply use the
-@Test annotation field “expected,” with the name of the exception you’re hoping
-gets thrown rather than an assertion.
+To test that a method throws a particular exception when given certain invalid
+inputs, add an `expected` attribute to the `@Test` annotation and assign the
+attribute the class name of the expected exception. Important: refrain from
+making any assertions in the test method.
 
     @Test(expected = MySampleException.class)
     public void testToString() {
        String fullName = _mySampleNamenClass.toString();
     }
 
+**Warning**: When creating your tests, make sure each is fully independent.
+Since JUnit doesn't guarantee test order in the flow of execution, you can't
+rely on tests being run in a particular order.
 
-## @After
+### @After
 
-Once each test is finished, you want to make sure you clean up anything that was
-changed or created during it. We don't really need to worry about cleaning up
-after our tests since our class doesn't affect or create any objects. Our
-@Before will take care of making sure our MySampleNameClass object always starts
-fresh.
+On finishing each individual test, you should clean up anything that was
+changed or created during it. Implement the cleanup instructions in a method and
+add the `@After` annotation to it. 
 
-## @AfterClass
+### @AfterClass
 
-Since we did not utilize a method annotated with @BeforeClass, there's nothing
-for us to do here.
+On finishing the entire set of tests, you should clean up any remaining test
+environment resources. Implement the final cleanup instructions in a method and
+add the `@AfterClass` annotation to it. 
 
-## Running Unit Tests
+Now that you've created your test methods and setup/cleanup methods, you can run
+your unit tests.
 
-Once your test classes are completed, you're ready to run them. Doing so with
-Liferay and the Blade tool is very simple. To run a specific module's Unit
-Tests, you simply need to navigate to the module's directory in a command line
-and run the command blade gw test. The command will compile your module, its
-tests, and finally run your tests. Upon running the command, assuming everything
-has been set up correctly and your tests pass successfully, you should see the
-following output:
+## Running JUnit Tests
 
-![Figure x: Commandline output of successful test execution looks like this.](../../images/junit-command-output.png)
+Once your test classes are complete, you can compile them and run their tests.
 
-However it's not very descriptive - nor is it clear that your tests were run
-and/or succeeded. Thankfully, this task also generates an HTML report for us
-that does contain more detailed information regarding the test or tests that
-were run. They can be found within your module's build/reports/ directory under
-the name "index.html." Open up the file with a web browser and you'll see a list
-of all packages that included tests that had been run, along with some overall
-testing metrics. Since we only had one package that contained tests, we can
-click through the listed package. Clicking through displays a list of test
-classes that the selected package contained. Again, we only had one test class,
-so we can go ahead and click through the class name. Finally, we're met with a
-list of all test methods that had been run, along with information regarding
-their results:
-
-![Figure x: JUnit produces HTML files that show test result details.](../../images/junit-results-html.png)
-
-Now we can be pretty sure that all of our test methods were, in fact, run and
-were successful. While this is certainly helpful, it's even more helpful when
-checking for failing tests. Let's go ahead and change our expected values in our
-assertions to deliberately force the tests to fail. After changing some of the
-values, running blade gw test again will yield the following results:
-
-![Figure x: Commandline output of failing tests looks like this.](../../images/junit-failure-command-output.png)
-
-The output clearly shows that the three tests are now failing, noting that the
-failure stemmed the comparison between the expected and actual values
-(org.junit.ComparisonFailure) at the line numbers indicated. Taking a look at
-the newly generated report and clicking through the test class, we now see a
-stack trace for each of the failing tests:
-
-![Figure x: Here's HTML for a failed test.](../../images/junit-failure-results-html.png)
-
-The stack traces tell us exactly why the test failed - we expected to see 21
-(the change we made to ensure it failed), but the actual result of the logic we
-tested was 20. Unless you're using a debugger to step through your tests, this
-output is critical in determining whether the failure is the result of your
-logic or of the expected values used in the assertions, thus giving you a
-clearer direction as to what may need to be modified.
-
-## Dependencies
-
-Our simple class was entirely self-contained so there wasn't any need for us to
-declare any dependencies in our build.gradle file. If, however, you require
-access to classes external to your module, you can declare these these
-dependencies within your build.gradle. Rather than using compile or provided,
-your test dependencies are declared by using testCompile:
+If your tests require accessing classes outside the module, declare them as
+`testCompile` dependencies in the module's `build.gradle` file. Here's an
+example  `testCompile` dependency. 
 
     testCompile group: "com.sample", name: "com.sample.external", version: "1.0.0"
 
-Note that while you can use external modules/libraries in your tests, you will
-still be unable to access any services thereof - which makes sense since we're
-running our tests independent of any Liferay instance running.
+Because unit tests run independent of any running @product@ instance, you can
+use external modules in tests but won't be able to access their services.
+
+[Workspace's](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Blade CLI](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/blade-cli)
+tool facilitates running tests. To run the tests, navigate to the module's
+folder in a terminal and execute the following command:
+
+    blade gw test
+
+The module's classes and tests are compiled and its tests are run. The
+following figure shows the command output for a successful test execution. 
+
+![Figure x: Command output of successful test execution looks like this.](../../images/junit-command-output.png)
+
+The output, however, doesn't name the tests that were run or whether they
+succeeded. Thankfully, Workspace's `test` task generates a detailed informative
+test report in an HTML file. It's named `index.html` and is in the module's
+`build/reports/` folder. 
+
+The report shows overall test metrics and organizes test results by package.
+Clicking on a package name lists test class results. Clicking on a test class
+name lists test method results.
+
+![Figure x: JUnit produces HTML files that show test result details.](../../images/junit-results-html.png)
+
+While it's certainly helpful to see successful test results, it's even more
+helpful to see results of failing tests.
+
+As an experiment, change the expected values of your assertions to deliberately
+force the tests to fail. After changing some of the values, running `blade gw
+test` again to yield the respective test failures. 
+
+![Figure x: Commandline output of failing tests looks like this.](../../images/junit-failure-command-output.png)
+
+The command output shows the class and method name of each failed test, the
+JUnit assertion type, and the assertion's line number.
+
+The generated HTML report shows each failing test's stack trace.  
+
+![Figure x: Here's a failed test's stack trace.](../../images/junit-failure-results-html.png)
+
+Stack traces show exactly why the test failed. They're essential for determining
+whether the failure is the result of faulty business logic or incorrect expected
+values in the assertions. Using this information the developer can resolve the
+issue.
+
+Congratulations on creating new unit tests using JUnit! 
+
+## Related Articles
+
+[Integration Testing with the Arquillian Extension](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/arquillian-extension-for-liferay-example)
+
+[Liferay Workspace](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+
+[Liferay @ide@](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
