@@ -15,13 +15,13 @@ your Liferay server before attempting to deploy to it.
 1.  Select the module from the Package Explorer window and drag it to your
     Liferay server in the Servers window.
 
-    ![Figure 1: You can use the drag-and-drop method to deploy your module to @product@.](../../images/starting-module-dev-drag-module.png)
+    ![Figure 1: You can use the drag-and-drop method to deploy your module to @product@.](../../../images/starting-module-dev-drag-module.png)
 
 2.  Right-click the server from the Servers window and select *Add and
     Remove...*. Add the module(s) you'd like to deploy from the Available window
     to the Configured window. Then click *Finish*.
 
-    ![Figure 2: Using the this deployment method is convenient when deploying multiple module projects.](../../images/add-and-remove-ide.png)
+    ![Figure 2: Using the this deployment method is convenient when deploying multiple module projects.](../../../images/add-and-remove-ide.png)
 
 That's it! Once your module is deployed to the Liferay server, you can verify
 its installation in @ide@'s Console window.

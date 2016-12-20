@@ -16,7 +16,7 @@ Blade CLI can detect a locally running Liferay instance and automatically
 deploys your module to that Liferay instance. Blade communicates with
 @product@'s OSGi framework using Felix Gogo shell and deploys the module
 directly to the OSGi container using Felix File Install commands. The command
-usses the default `11311` port by default.
+uses the default `11311` port by default.
 
 You can also specify a custom port to deploy your module to using the `-p`
 parameter followed by the port number. For instance, you could run `blade deploy
@@ -29,7 +29,7 @@ This parameter automatically redeploys the module when changes are detected.
 
 +$$$
 
-**Note:** The `blade deploy` command requires a gradle wrapper to successfully
+**Note:** The `blade deploy` command requires a Gradle wrapper to successfully
 execute. To ensure the availability of the Gradle wrapper, be sure to work in a
 Liferay Workspace. For more information on Liferay Workspaces, see the
 [Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)

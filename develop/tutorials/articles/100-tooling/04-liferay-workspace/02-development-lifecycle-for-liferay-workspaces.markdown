@@ -9,12 +9,10 @@ module's development lifecycle:
 - [Testing modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#testing-modules)
 - [Releasing modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#releasing-modules)
 
-Your workspace provides a flexible environment that can be used in many
-different build tools and IDEs. In this tutorial, you'll explore the development
-lifecycle phases Liferay Workspace provides for you. Then you'll be directed to
-other tutorials that go into further detail for leveraging the workspace's
-particular lifecycle phase for a specific tool (e.g., Blade CLI or Liferay
-@ide@). Let's get started!
+In this tutorial, you'll explore the development lifecycle phases Liferay
+Workspace provides for you. Then you'll be directed to other tutorials that go
+into further detail for leveraging the workspace's particular lifecycle phase
+for a specific tool (e.g., Blade CLI or Liferay @ide@). Let's get started!
 
 ## Creating Modules
 
@@ -85,7 +83,7 @@ many included subprojects like this:
     include file-server
     ...
 
-You don't have to worry about applying these subprojects becasue the workpslace
+You don't have to worry about applying these subprojects because the workpslace
 plugin does it for you. Likewise, if a folder in the `/themes` folder includes a
 `liferay-theme.json` file, the `gulp` plugin is applied to it; if a folder in
 the `/modules` folder includes a `bnd.bnd` file, the
@@ -208,13 +206,13 @@ Workspace.
 
 Liferay Workspace does not provide a built-in release mechanism, but there are
 easy ways to use external release tools with workspace. The most popular choice
-is uploading your modules into a Maven Nexus repository. You could also use
-other release tools like [Artifactory](https://www.jfrog.com/artifactory/).
+is uploading your modules to a Maven Nexus repository. You could also use other
+release tools like [Artifactory](https://www.jfrog.com/artifactory/).
 
 Uploading modules to a remote repository is useful if you need to share them
 with other non-workspace projects. Also, if you're ready for your modules to be
-in the spotlight, uploading them to a remote repository gives other developers
-the chance to use them.
+in the spotlight, uploading them to a public remote repository gives other
+developers the chance to use them.
 
 For more instructions on how to set up a Maven Nexus repository for your
 workspace's modules, see the

@@ -24,9 +24,9 @@ Likewise, to turn off a server, run
     blade server stop
 
 Once you've started your bundle, you can examine your server's OSGi container by
-using the `sh` command, which provides access to your server using Felix Gogo
-shell. For example, to check if you successfully deployed your application from
-the previous section, you could run:
+using the `sh` command, which provides access to your server using the Felix
+Gogo shell. For example, to check if you successfully deployed your application
+from the previous section, you could run:
 
     blade sh lb
 

@@ -55,6 +55,15 @@ navigate to your workspace's root folder and run the following command:
 
 Your distribution file is available from the workspace's `/build` directory.
 
++$$$
+
+**Note:** You can define different environments for your Liferay bundle for
+easy testing. You can learn more about this in the
+[Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#testing-modules)
+section.
+
+$$$
+
 Now that you know about a workspace's default folder structure and how to modify
 its Gradle properties, you'll learn how to add a Liferay bundle to your
 workspace.
@@ -70,7 +79,7 @@ generate and install by setting the download URL for the
 `liferay.workspace.bundle.url` property
 (e.g., `https://sourceforge.net/projects/lportal/files/Liferay Portal/7.0.1 GA2/liferay-ce-portal-tomcat-7.0-ga2-20160610113014153.zip`).
 You can also set the folder where your Liferay bundle is generated with the
-`liferay.workspace.home.dir` property. It's set the `bundles` by default.
+`liferay.workspace.home.dir` property. It's set to `bundles` by default.
 
 Once you've finalized your Gradle properties, navigate to your workspace's root
 folder and run
@@ -106,7 +115,7 @@ what you should consider before converting them to modules, visit the tutorial
 [Planning a Plugin Upgrade to Liferay @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7).
 
 The Blade CLI offers a command that allows a Plugins SDK environment be
-automatically generated with Liferay workspace. If you created your workspace
+automatically generated with Liferay Workspace. If you created your workspace
 from scratch, however, and want to use a Plugins SDK, follow the instructions
 below.
 
