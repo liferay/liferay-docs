@@ -13,54 +13,18 @@ essentially boils down to the usage of a variety of annotations that are applied
 to methods to mark what each should do. In a way, they dictate the flow of
 execution* of your tests.
 
-<table border="2" cellpadding="1" cellspacing="1" height="617" width="1030">
-	<caption>(src: http://www.vogella.com/tutorials/JUnit/article.html)</caption>
-	<tbody>
-		<tr>
-			<td>@Test<br />
-			public void method()&nbsp;</td>
-			<td>The @Test annotation identifies a method as a test method.</td>
-		</tr>
-		<tr>
-			<td>@Test (expected = Exception.class)</td>
-			<td>Fails if the method does not throw the named exception.</td>
-		</tr>
-		<tr>
-			<td>@Test(timeout=100)</td>
-			<td>Fails if the method takes longer than 100 milliseconds.</td>
-		</tr>
-		<tr>
-			<td>@Before<br />
-			public void method()</td>
-			<td>This method is executed before each test. It is used to prepare the test environment (e.g., read input data, initialize the class).</td>
-		</tr>
-		<tr>
-			<td>@After<br />
-			public void method()</td>
-			<td>
-			<p>This method is executed after each test. It is used to cleanup the test environment (e.g., delete temporary data, restore defaults). It can also save memory by cleaning up expensive memory structures.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>@BeforeClass<br />
-			public static void method()</td>
-			<td>
-			<p>This method is executed once, before the start of all tests. It is used to perform time intensive activities, for example, to connect to a database. Methods marked with this annotation need to be defined as static to work with JUnit.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>@AfterClass<br />
-			public static void method()&nbsp;</td>
-			<td>
-			<p>This method is executed once, after all tests have been finished. It is used to perform clean-up activities, for example, to disconnect from a database. Methods annotated with this annotation need to be defined as static to work with JUnit.</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="white-space: nowrap;">@Ignore or @Ignore("Why disabled")&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td>Ignores the test method. This is useful when the underlying code has been changed and the test case has not yet been adapted. Or if the execution time of this test is too long to be included. It is best practice to provide the optional description, why the test is disabled.</td>
-		</tr>
-	</tbody>
-</table>
+### JUnit Java Annotations
+
+ Method/class signature | Description |
+:--------------------------  | :------------- |
+ `@BeforeClass`<br />`public static void method()` | This method is invoked once, before the class's entire suite of tests is executed. It should prepare the general test environment. |
+ `@Before`<br />`public void method()` | This method is invoked before each test. It should prepare the environment. |
+ `@Test`<br />`public void method()`    | Marks the method as a test. |
+ `@Test (expected = SomeException.class)`<br />`public void method()` | The test fails if the method doesn't throw the exception. |
+ `@After`<br />`public void method()` | This method is invoked after each test. It should clean up the environment. |
+ `@AfterClass`<br />`public static void method()` | This method is invoked once, after the class's entire suite of tests is executed. It should cleanup the general test environment. |
+ `@Ignore or @Ignore("Why disabled")`<br />`public void method()` | This method is skipped. Adding the `@Ignore` annotation is an easy way to skip a test. The message (optional) can explain why the test is being ignored. |
+
 
 Putting it all together, the methods you annotate will be run in the following
 order:
