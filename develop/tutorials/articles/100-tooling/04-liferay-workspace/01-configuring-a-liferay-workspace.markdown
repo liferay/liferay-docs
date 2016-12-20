@@ -1,4 +1,4 @@
-# Configuring a Liferay Workspace
+# Configuring a Liferay Workspace [](id=configuring-a-liferay-workspace)
 
 A Liferay Workspace offers a development environment that can be configured to
 fit your development needs. You'll learn about the files/folders a workspace
@@ -68,7 +68,7 @@ Now that you know about a workspace's default folder structure and how to modify
 its Gradle properties, you'll learn how to add a Liferay bundle to your
 workspace.
 
-## Adding a Liferay Bundle to a Workspace
+## Adding a Liferay Bundle to a Workspace [](id=adding-a-liferay-bundle-to-a-workspace)
 
 Liferay Workspaces can generate and hold a Liferay Server. This lets you
 build/test your plugins against a running Liferay instance. Before generating a

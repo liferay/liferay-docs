@@ -1,4 +1,4 @@
-# Development Lifecycle for a Liferay Workspace
+# Development Lifecycle for a Liferay Workspace [](id=development-lifecycle-for-a-liferay-workspace)
 
 Liferay Workspaces provide an environment that supports all phases of a Liferay
 module's development lifecycle:
@@ -14,7 +14,7 @@ Workspace provides for you. Then you'll be directed to other tutorials that go
 into further detail for leveraging the workspace's particular lifecycle phase
 for a specific tool (e.g., Blade CLI or Liferay @ide@). Let's get started!
 
-## Creating Modules
+## Creating Modules [](id=creating-modules)
 
 The first phase of Liferay Workspace's development phase is the module creation
 process. Workspace provides a slew of templates that you can use to create many
@@ -36,7 +36,7 @@ and
 [Creating Modules with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide)
 tutorials, respectively.
 
-## Building Modules
+## Building Modules [](id=building-modules)
 
 Liferay Workspace abstracts many build requirements away so you can focus on
 developing modules instead of worrying about how to build them. Liferay
@@ -96,7 +96,7 @@ deployment process in a workspace. You can build/deploy your modules from
 workspace without ever running a Gradle command. You'll learn how to do this
 next.
 
-## Deploying Modules
+## Deploying Modules [](id=deploying-modules)
 
 Liferay Workspace provides easy-to-use deployment mechanisms that let you deploy
 your module to a Liferay server without any custom configuration. To learn more
@@ -107,7 +107,7 @@ and
 [Deploying Modules with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/deploying-modules-with-liferay-ide)
 tutorials, respectively.
 
-## Testing Modules
+## Testing Modules [](id=testing-modules)
 
 Liferay provides many different configuration settings for @product-ver@.
 Configuring several different @product@ installations to simulate/test certain
@@ -202,7 +202,7 @@ To configure these two environments in your workspace, follow the steps below:
 Awesome! You can now test various @product@ bundle environments using Liferay
 Workspace.
 
-## Releasing Modules
+## Releasing Modules [](id=releasing-modules)
 
 Liferay Workspace does not provide a built-in release mechanism, but there are
 easy ways to use external release tools with workspace. The most popular choice

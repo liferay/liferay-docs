@@ -1,4 +1,4 @@
-# Deploying Modules with Liferay @ide@
+# Deploying Modules with Liferay @ide@ [](id=deploying-modules-with-liferay-ide)
 
 Deploying modules in Liferay @ide@ is a cinch. Before deploying your module,
 make sure you have a Liferay server configured in @ide@. To see how to do this
