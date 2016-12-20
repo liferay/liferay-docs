@@ -1,17 +1,17 @@
 # Auto Login
 
 While @product@ supports a wide variety of [authentication mechanisms](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security), 
-you may use a home-grown system or some other product. If this is your
-situation, you can write an Auto Login component to support your authentication
-system. 
+you may use a home-grown system or some other product to authenticate users. If
+this is your situation, you can write an Auto Login component to support your
+authentication system. 
 
-Auto Login components can check if the request contains something (a cookie, a
-parameter) that can be associated with a user in any way. If the component can
+Auto Login components can check if the request contains something (a cookie, an
+attribute) that can be associated with a user in any way. If the component can
 make that association, it can authenticate that user to @product@. 
 
 ## Creating an Auto Login Component
 
-Create a [Declarative Services component](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide#creating-component-classes). 
+Create a [Declarative Services component](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide#creating-component-classes). 
 The component should implement the 
 `com.liferay.portal.kernel.security.auto.login.AutoLogin` interface. Here's an
 example template: 
@@ -59,13 +59,13 @@ encrypted it, and placed it as an attribute in the request. You could write code
 that reads the value, decrypts it using the same pre-shared key, and uses the
 value to look up and authenticate the user. 
 
-The `login` method is where all of this happens. This method mus return a
+The `login` method is where all of this happens. This method must return a
 `String` array with three items in this order: 
 
 - The user ID
 - The user password
 - A boolean flag that's `true` if the password is encrypted and `false` if it's
-    not. 
+    not (`Boolean.TRUE.toString()` or `Boolean.FALSE.toString()`). 
 
 An optional feature of the `AutoLogin` is to send redirections. Since
 `AutoLogin`s are part of the servlet filter chain, you have two options. Both
