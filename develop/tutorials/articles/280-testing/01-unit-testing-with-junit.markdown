@@ -166,7 +166,7 @@ test for each of its methods:
     }
 
 Since you know the test input (e.g., the parameters passed into the
-`MySampleNameClass` constructor), you can easily determine the exepected. You
+`MySampleNameClass` constructor), you can easily determine the expected. You
 can compare the computed value each method returns with the expected value.
 
 To test that a method throws a particular exception when given certain invalid
@@ -204,7 +204,7 @@ Once your test classes are complete, you can compile them and run their tests.
 
 If your tests require accessing classes outside the module, declare them as
 `testCompile` dependencies in the module's `build.gradle` file. Here's an
-example  `testCompile` dependency. 
+example `testCompile` dependency. 
 
     testCompile group: "com.sample", name: "com.sample.external", version: "1.0.0"
 
