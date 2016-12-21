@@ -195,6 +195,56 @@ On finishing the entire set of tests, you should clean up any remaining test
 environment resources. Implement the final cleanup instructions in a method and
 add the `@AfterClass` annotation to it. 
 
+## Writing good tests
+
+First, it's important to describe what an assertion is.
+
+An assertion is an executable specificacion of the expected behavior of the
+software under test (SUT), under the scenario defined by the test: setUp and
+setUpClass methods, and specific logic put in the test method. It's important to
+remark the `executable` word, because it means that you can automate checks for
+the specification, in the form of tests, which allows you to keep track of your
+requirements.
+
+Once we understand the importance of assertions, we must know some best
+practices to write good tests.
+
+### A test should have only one reason to fail
+
+This way we will know the root cause that caused our test to fail, and we could
+fix it up very quickly. Otherwise, we'll have to investigate the several reasons
+that could have caused the failure.
+
+### A test should test just one thing
+
+If we test only one thing, then the test will be simple, and simpler tests are
+easier to maintain. Testing more things adds complexity, and more causes for
+failure, so we would be breaking the previous rule.
+
+### Avoid conditional logic in tests
+
+If you add `for` or `while` loops, or `if/else` clauses, then you are adding
+complexity to the test, and this will increase the probability of failure for
+things not related to the test itself. You may find yourself creating tests
+for your test, which is insane.
+
+### A test that cannot fail has no value
+
+It creates a false sense of security, because although the test passes, it test
+nothing. This is an example of a test that cannot fail:
+
+  File f = new File ("foo");
+  Assert.assertTrue(f != null);
+
+### A test promising much more than delivers is an untrustworthy test
+A test is untrustworthy if it has no asserts, or it cannot fail, or its name
+says something different than what it actually does.
+
+  @Test
+  public void testAddUser() {
+    // do something not related to user creation
+  }
+
 Now that you've created your test methods and setup/cleanup methods, you can run
 your unit tests.
 
