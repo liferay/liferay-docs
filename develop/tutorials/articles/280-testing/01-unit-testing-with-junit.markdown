@@ -223,10 +223,8 @@ following figure shows the command output for a successful test execution.
 
 ![Figure x: Command output of successful test execution looks like this.](../../images/junit-command-output.png)
 
-The output, however, doesn't name the tests that were run or whether they
-succeeded. Thankfully, Workspace's `test` task generates a detailed informative
-test report in an HTML file. It's named `index.html` and is in the module's
-`build/reports/` folder. 
+Workspace's `test` task generates a detailed informative test report in an HTML
+file. It's named `index.html` and is in the module's `build/reports/` folder. 
 
 The report shows overall test metrics and organizes test results by package.
 Clicking on a package name lists test class results. Clicking on a test class
