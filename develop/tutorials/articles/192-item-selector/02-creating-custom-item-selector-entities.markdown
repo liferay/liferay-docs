@@ -1,11 +1,9 @@
 # Creating Custom Item Selector Entities [](id=creating-custom-item-selector-entities)
 
-So, your app requires users to select an item that the Item Selector isn't 
+Does your app require users to select an item that the Item Selector isn't 
 configured for? No problem. You can create a new entity.
 
 This tutorial explains how to create a new entity for the Item Selector.
-
-Go ahead and get started.
 
 ## Creating Item Selector Criterion [](id=creating-item-selector-criterion)
 
@@ -20,7 +18,7 @@ create an Item Selector criterion:
         BaseItemSelectorCriterion {
         
         }
-        
+ 
     This class specifies what kind of entity the user is selecting and what
     information the Item Selector should return. The methods inherited from the 
     `BaseItemSelectorCriterion` class provide the logic for obtaining this 
@@ -74,7 +72,7 @@ create an Item Selector criterion:
     +$$$
 
     **Note:** Criterion fields should be serializable and should expose a 
-    public empty constructor(as shown above).
+    public empty constructor (as shown above).
     
     $$$
 
@@ -102,8 +100,8 @@ create an Item Selector criterion:
             }
     
         }
-        
-    The @Activate and @Override tokens are required to activate this OSGi 
+ 
+    The `@Activate` and `@Override` tokens are required to activate this OSGi 
     component.
 
 Depending on the needs of your app, you may not need to create a return type. If
@@ -133,22 +131,21 @@ The example below creates a new return type called `TaskItemSelectorReturnType`:
     public class TaskItemSelectorReturnType implements ItemSelectorReturnType{
     
     }
-    
-The `*ItemSelectorReturnType` class is used as an identifier by the Item 
-Selector, and does not return any information itself. You should 
-determine the information you expect 
-returned(an ID, a URL, a more complex object, etc.), and create a return type to 
-handle that information.  The return type class is an API that connects the 
-return type to the Item Selector views. **Whenever the return type is 
-used, the view must ensure that the proper information is returned.** It's 
-recommended that you specify the information that the return type will return, 
-as well as the format, as 
-javadoc(as shown in the `TaskItemSelectorReturnType` example above).
+ 
+The `*ItemSelectorReturnType` class is used as an identifier by the Item
+Selector and does not return any information itself. You should determine the
+information you expect returned (an ID, a URL, a more complex object, etc.), and
+create a return type to handle that information.  The return type class is an
+API that connects the return type to the Item Selector views. **Whenever the
+return type is used, the view must ensure that the proper information is
+returned.** It's recommended that you specify the information that the return
+type returns, as well as the format, as Javadoc (as shown in the
+`TaskItemSelectorReturnType` example above).
 
 So far, you've created an API that you can use to create a selection view for 
-your new entity. The entity's criterion and return type classes will be 
-used by your application to create the Item Selector URL. You can follow the 
-[Selecting Entities using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector) 
+your new entity. The entity's criterion and return type classes are used by your
+application to create the Item Selector URL. You can follow the 
+[Selecting Entities using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector)
 tutorial to learn how to obtain the Item Selector URL.
 
 **The selection view is responsible for returning the proper entity information 
