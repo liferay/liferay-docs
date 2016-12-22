@@ -21,17 +21,19 @@ Views. For a detailed description of the View layer in Liferay Screens, see the
 tutorial 
 [Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android). 
 
-A View consists of the following: 
+A View consists of the following items: 
 
-- **Screenlet class:** A Java class that coordinates and implements the 
-  Screenlet's functionality. The Screenlet class contains attributes for 
-  configuring the Screenlet’s behavior, a reference to the Screenlet’s View 
-  class, methods for invoking server operations, and more. 
-- **View class:** A Java class that implements a View's behavior. This class 
-  usually listens for the UI components' events. 
-- **Layout:** An XML file that defines a View's UI components. The View class is 
-  usually this file's root element. To use a View, you must specify its layout 
-  in the Screenlet XML (you'll see an example of this shortly). 
+**Screenlet class:** A Java class that coordinates and implements the
+Screenlet's functionality. The Screenlet class contains attributes for
+configuring the Screenlet's behavior, a reference to the Screenlet's View class,
+methods for invoking server operations, and more. 
+
+**View class:** A Java class that implements a View's behavior. This class
+usually listens for the UI components' events. 
+
+**Layout:** An XML file that defines a View's UI components. The View class is
+usually this file's root element. To use a View, you must specify its layout in
+the Screenlet XML (you'll see an example of this shortly). 
 
 Note that because it contains a Screenlet class and a specific set of UI 
 components, a View can only be used with one particular Screenlet. For example, 
@@ -62,19 +64,21 @@ View Sets as dependencies:
 
 Here are the View Sets that Liferay currently provides for Screens: 
 
-- **Default:** Comes standard with a Screenlet. It's used by a Screenlet if no
-  layout ID is specified or if no View is found with the layout ID. The Default 
-  Views can be used as parent Views for your custom Views. Refer to the 
-  [architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android) 
-  for more details. 
-- **Material:** Demonstrates Views built from scratch. It follows Google's
-  [Material Design](https://developer.android.com/design/material/index.html) 
-  guidelines. Refer to the 
-  [View creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-views) 
-  for instructions on creating your own Views. 
-- **Westeros:** Customizes the behavior and appearance of the
-  [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
-  demo app. 
+**Default:** Comes standard with a Screenlet. It's used by a Screenlet if no
+layout ID is specified or if no View is found with the layout ID. The Default
+Views can be used as parent Views for your custom Views. Refer to the
+[architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
+for more details. 
+
+**Material:** Demonstrates Views built from scratch. It follows Google's
+[Material Design](https://developer.android.com/design/material/index.html)
+guidelines. Refer to the 
+[View creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-views) for
+instructions on creating your own Views. 
+
+**Westeros:** Customizes the behavior and appearance of the 
+[Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros)
+demo app. 
 
 Now that you know about Views and View Sets, you're ready to put them to use! 
 
