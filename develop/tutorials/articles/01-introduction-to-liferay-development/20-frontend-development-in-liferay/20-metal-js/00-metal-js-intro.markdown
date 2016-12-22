@@ -22,9 +22,10 @@ Below is an example of a closure(Soy) template written for Metal.js:
     // ...
     {/template}
 
-Metal.js has two main classes: `State`, and `Component` which extends from `State`. 
-The `Component` class adds additional rendering features for your Component. So, 
-if your Component doesn't require rendering, you can just use `State`.
+Metal.js has two main classes: `State`, and `Component` which extends from
+`State`.  The `Component` class adds additional rendering features for your
+Component. If your Component doesn't require rendering, you can just use
+`State`.
 
 The figure below illustrates the architecture for Metal.js:
 
@@ -39,15 +40,15 @@ get with ES6:
   inheritance, super calls, instance and static methods and constructors.
 - Arrow method syntax. `var odds = numbers.map(v => v + 1);`
 - Language-level support for modules for Component definition. Codifies patterns 
-  from popular JavaScript module loaders like AMD(as shown below):
+  from popular JavaScript module loaders like AMD (as shown below):
 
-    export function sum(x, y) {
-      return x + y;
-    }
-    export var pi = 3.141593;
+        export function sum(x, y) {
+          return x + y;
+        }
+        export var pi = 3.141593;
 
 These are just a few of the ES6 features available that you can use in your
-Metal.js Components.
+Metal.js components.
 
 ## Related Topics [](id=related-topics)
 
