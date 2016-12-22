@@ -5,8 +5,10 @@ reference documentation describes how to apply and use Liferay's Gradle plugins.
 The following Gradle plugins are documented in this section:
 
 - App Javadoc Builder
+- Baseline
 - Change Log Builder
 - CSS Builder
+- DB Support
 - Deployment Helper
 - Gulp
 - Jasper JSPC
