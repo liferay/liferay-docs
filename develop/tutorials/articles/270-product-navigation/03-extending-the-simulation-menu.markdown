@@ -120,5 +120,6 @@ a panel app for the already present hidden category.
         iframe.setAttribute('src', newUrlWithCustomParameters);
 
 Now that you know how to extend the necessary panel categories and panel apps to
-modify the Simulation Menu, go ahead and create a module of your own and
-customize the Simulation Menu so it's most helpful for your needs.
+modify the Simulation Menu, go ahead and [create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
+of your own and customize the Simulation Menu so it's most helpful for your 
+needs.

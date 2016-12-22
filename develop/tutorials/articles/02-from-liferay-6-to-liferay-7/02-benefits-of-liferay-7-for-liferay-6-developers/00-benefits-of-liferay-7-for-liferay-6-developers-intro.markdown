@@ -69,7 +69,7 @@ class loader doesn't allow for much more) and doesn't give you the freedom to
 specify any or all classes from one module to use from within another module.
 
 @product-ver@ enables greater reusability, both in code and runtime memory, several
-folds. For any desired reusable functionality you just create a module
+folds. For any desired reusable functionality you just [create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module)
 (remember, it's just a JAR file with some metadata) with the classes you want
 and deploy it. Other modules need only declare that they use the classes in that
 module (by specifying their packages) and @product-ver@ automatically wires them

@@ -38,11 +38,10 @@ $$$
 
 You've successfully requested the portlet ID/portlet URL of a portlet that
 matches your entity and action type. The portal, however, is not yet configured
-to handle this request. You'll need to create a module that can find the correct
+to handle this request. You'll need to create a module that can find the correct 
 portlet to handle the request.
 
-1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
+1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module).
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, name the class
