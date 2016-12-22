@@ -193,7 +193,7 @@ Property Name | Type | Default Value | Description
 
 The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
 
-### NpmShrinkwrapTask
+### NpmShrinkwrapTask [](id=npmshrinkwraptask)
 
 The purpose of this task is to lock down the versions of a package's
 dependencies so that you can control exactly which dependency versions are used
@@ -204,7 +204,7 @@ when your package is installed. Tasks of type `NpmShrinkwrapTask` extend
 The generated `npm-shrinkwrap.json` file is automatically sorted and formatted,
 so it's easier to see the changes with the previous version.
 
-#### Task Properties
+#### Task Properties [](id=task-properties-5a)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -214,7 +214,7 @@ Property Name | Type | Default Value | Description
 It is possible to use Closures and Callables as values for the `String`
 properties to defer evaluation until task execution.
 
-#### Task Methods
+#### Task Methods [](id=task-methods-0)
 
 Method | Description
 ------ | -----------
