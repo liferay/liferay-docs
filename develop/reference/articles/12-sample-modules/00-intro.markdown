@@ -1,12 +1,11 @@
-# Sample Modules
+# Sample Modules [](id=sample-modules)
 
 Liferay provides sample modules that target different integration points in
 @product@. These modules reside in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples)
-Github repository,
-and can be easily copy/pasted to your local environment. The sample modules are
-grouped into five different parent folders based on the build tools used to
-generate them:
+Github repository and can be easily copy/pasted to your local environment. The
+sample modules are grouped into five different parent folders based on the build
+tools used to generate them:
 
 - `bndtools`
 - `gradle`

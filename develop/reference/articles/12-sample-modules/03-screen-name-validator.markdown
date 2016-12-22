@@ -1,4 +1,4 @@
-# Screen Name Validator
+# Screen Name Validator [](id=screen-name-validator)
 
 The Screen Name Validator sample provides a way to validate a user's inputted
 screen name. During validation, the screen name is tested client-side and
@@ -20,7 +20,7 @@ the
 `com.liferay.blade.samples.screenname.validator.CustomScreenNameConfiguration`
 class.
 
-## Testing the Screen Name Validator
+## Testing the Screen Name Validator [](id=testing-the-screen-name-validator)
 
 Follow the steps below to test the Screen Name Validator sample:
 
@@ -28,8 +28,7 @@ Follow the steps below to test the Screen Name Validator sample:
 2.  Navigate to the *Control Panel* &rarr; *Users* &rarr; *Users and
     Organizations* menu.
 3.  Create a new user by selecting the *Add User*
-    (![Add User](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/icon-add.png))
-    button.
+    (![Add User](../../images/icon-add.png)) button.
 4.  Adding a screen name that contains the word *admin* or *user*.
 
 ![Figure 2: The error message displays when inputting a reserved word for the screen name.](../../images/screenname-validator-test.png)
@@ -37,7 +36,7 @@ Follow the steps below to test the Screen Name Validator sample:
 For more information on customizing the Validation sample to fit your needs, see
 the Javadoc provided in this sample's Java classes.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are five different versions of this sample, each built with a different
 build tool:

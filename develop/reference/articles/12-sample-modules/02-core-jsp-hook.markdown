@@ -1,4 +1,4 @@
-# Core JSP Hook
+# Core JSP Hook [](id=core-jsp-hook)
 
 The Core JSP Hook sample lets you override core/kernel JSPs by adding them to
 the module's `META-INF/jsps` folder. This module overrides the `bottom.jsp` file
@@ -24,7 +24,7 @@ method to return a different folder path.
 For more information on customizing the Core JSP Hook sample to fit your needs,
 see the Javadoc listed in this sample's `BladeCustomJspBag` class.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are five different versions of this sample, each built with a different
 build tool:

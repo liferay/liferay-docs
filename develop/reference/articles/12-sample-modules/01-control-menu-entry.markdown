@@ -1,4 +1,4 @@
-# Control Menu Entry
+# Control Menu Entry [](id=control-menu-entry)
 
 The Control Menu Entry sample provides a customizable button that is added to
 Liferay's default Control Menu. When deploying this sample with no
@@ -29,7 +29,7 @@ For more information on customizing the Control Menu Entry sample to fit your
 needs, see the Javadoc listed in this sample's
 `BladeProductNavigationControlMenuEntry` class.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are five different versions of this sample, each built with a different
 build tool:
