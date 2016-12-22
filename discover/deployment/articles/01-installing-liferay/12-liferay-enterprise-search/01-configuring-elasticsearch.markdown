@@ -229,6 +229,34 @@ testing under load, and tuning again, so we encourage you to examine the
 well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/setup-configuration.html#settings) 
 and go through that process once you have a working configuration. 
 
+## Configuring a Remote Elasticsearch Host
+
+In production systems Elasticsearch and @product@ are installed on different
+servers. To make @product@ aware of the Elasticsearch cluster, set
+
+    transportAddresses=[IP address of Elasticsearch Node]:9300
+
+in the Elasticsearch adapter's OSGi configuration file. List as many or as few
+Elasticsearch nodes in this property as you'd like. This tells @product@ the IP
+address or host name where search requests are to be sent. If using System
+Settings, set the value in the *Transport Addresses* property.
+
++$$$
+
+**Note:** In an Elasticsearch cluster you can list the transport addresses for
+multiple Elasticsearch nodes, if appropriate. Just use a comma-separated list in
+the `transportAddresses` property. If you set only one transport address,
+@product@ loses contact with Elasticsearch if that node goes down.
+
+$$$
+
+On the Elasticsearch side, set the `network.host` property in your
+`elaticsearch.yml` file. This property simultaneously sets both the *bind host*
+(the host Elasticsearch listens on for requests) and the *publish host* (the
+host name or IP address Elasticsearch uses to communicate with other nodes). See
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-network.html)
+for more information.
+
 ## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
 
 Clustering Elasticsearch is easy. Each time you run the Elasticsearch start
@@ -334,7 +362,7 @@ $$$
 
 ### Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
 
-If you configure the settings from the last section using a `.cfg` configuration
+If you configure the settings from the last section using an OSGi configuration
 file, you might find yourself needing to write YML snippets that span multiple
 lines. The syntax for that is straightforward and just requires appending each
 line with `\n\`, like this:
