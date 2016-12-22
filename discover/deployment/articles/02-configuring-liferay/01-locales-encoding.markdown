@@ -1,5 +1,5 @@
 # Locales and Encoding Configuration [](id=locales-encoding-configuration)
-@product@ lets you display content based on language, different time zones, "right to left" (that is, languages such as Hebrew, Arabic, and Persian), and localizing user names and titles. Administrators can localize the specific core UI messages so that the messages display in certain languages.
+@product@ lets you display content based on language, time zone, "right to left" (that is, languages such as Hebrew, Arabic, and Persian), and lets you localize user names and titles. Administrators can localize the specific core UI messages so that the messages display in certain languages.
 
 ### Time Zones [](id=time-zones)
 
@@ -8,6 +8,7 @@ Time zones can be set in the Control Panel and theoretically in the JVM (but thi
 #### Setting Time Zones in the Control Panel [](id=setting-time-zones-in-the-control-panel)
 
 To configure the time zone and customize the default language in the Control Panel, administrators can make changes at the Instance level.    
+
 1. Navigate to the *Control Panel* > *Configuration*
     
 2. Click *Instance Settings*    
