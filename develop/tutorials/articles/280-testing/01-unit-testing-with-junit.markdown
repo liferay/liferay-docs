@@ -1,10 +1,14 @@
 # Unit Testing with JUnit [](id=unit-testing-with-junit)
 
 Unit tests verify and validate functionality of classes and methods in
-isolation, disregarding external dependencies. Developers can use the JUnit
+isolation, disregarding external dependencies. Developers can use the [JUnit](http://junit.org)
 framework to unit test on @product@. They create test methods that assert
 expected results and prepare/cleanup the test environment. JUnit method
 annotations dictate test flow execution. 
+
+JUnit can be used in many build environments including Maven and Gradle. JUnit
+plugins are available in IDEs such as Eclipse, IntelliJ, and NetBeans. And of
+course, JUnit's available in [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
 
 This tutorial covers the following topics:
 
@@ -245,36 +249,42 @@ example `testCompile` dependency.
 Because unit tests run independent of any running @product@ instance, you can
 use external modules in tests but can't access their services.
 
-Follow these steps to run tests using [Workspace's](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-tool:
+Gradle and Maven commands execute module unit tests:
 
-1.  In a terminal, navigate to the module's folder.
+**Gradle**: `./gradlew test`
 
-2.  Execute the following command:
-
-    blade gw test
+**Maven**: `mvn test`
 
 The module's classes and tests compile and its tests run. The following figure
 shows command output for a successful test execution.
 
 ![Figure x: Command output of successful test execution looks like this.](../../images/junit-command-output.png)
 
-Workspace's `test` task generates a detailed informative test report in an HTML
-file named `index.html` in the module's `build/reports/` folder. 
+Reports are generated to module subfolders based on the build environment and/or
+reporting mechanism.
 
-The report shows overall test metrics and organizes test results by package.
-Clicking on a package name lists test class results. Clicking on a test class
-name lists test method results.
+**Gradle**:
 
-![Figure x: JUnit produces an HTML file named `index.html` that reports test result details.](../../images/junit-results-html.png)
+-    HTML report `build/reports/tests/index.html`
+-   XML report file in `build/test-results/`
+
+**Maven**:
+
+-   [SureFire plugin](http://maven.apache.org/surefire/maven-surefire-plugin/)
+    generates XML and text report files in `targets/surefire-reports/`
+
+Gradle's HTML report, for example, shows overall test metrics and organizes test
+results by package. Clicking on a package name lists test class results.
+Clicking on a test class name lists test method results.
+
+![Figure x: In Gradle environments, JUnit produces an HTML file named `index.html` that reports test result details.](../../images/junit-results-html.png)
 
 While it's certainly helpful to see successful test results, it's even more
 helpful to see results of failing tests.
 
 As an experiment, change the expected values of a test's assertions to
-deliberately force the test to fail. Then run `blade gw test` again to yield the
-respective test failures. 
+deliberately force the test to fail and rerun the tests to yield the respective
+failures. 
 
 ![Figure x: Command output of failing tests looks like this.](../../images/junit-failure-command-output.png)
 
