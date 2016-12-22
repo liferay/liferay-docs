@@ -37,10 +37,8 @@ extension point, you should follow these steps:
     table cells, so the table cells are removed from the options displayed to
     the user when running in Creole mode.
 
-2.  Now you'll need to create a module that can register your new JS file and
-    inject it into your editor instance. Create a generic OSGi module using your
-    favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+2.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
+    that can register your new JS file and inject it into your editor instance.
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class name

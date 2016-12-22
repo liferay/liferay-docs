@@ -14,12 +14,7 @@ To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options
 you can specify to help mold your project just the way you want it. To learn how
 to use the Blade `create` command and the many options it provides, enter `blade
-create -x` into a terminal. A list of the `create` options are listed below:
-
-<!-- The option `-x` is an arbitrary value; the only way to print create options
-in the terminal currently is to specify an option that does not exist. The
-option can be anything that doesn't already exist. When there's a specific value
-to prompt the list of options, I'll update the docs. -Cody -->
+help create` into a terminal. A list of the `create` options are listed below:
 
 - `-c, --classname <string>`: If a class is generated in the project, provide
   the name of the class to be generated. If not provided, the class name
@@ -81,6 +76,22 @@ the following property in the workspace's `gradle.properties` file:
 
 Change this property if you'd like to store your modules in a different
 directory.
+
++$$$
+
+**Note:** Your modules should define a repository where external dependencies
+can be downloaded. Unlike Maven, Gradle does not define any repositories by
+default. For convenience, modules created with Blade CLI define Liferay's
+public Nexus repository as its default repository. This is defined, however, in
+different files depending on where the module was created.
+
+If you used Blade CLI to create a module outside of a workspace, your
+repository is defined in the module's `build.gradle` file. Likewise, if you
+created your module inside a workspace, your repository is defined in the
+`settings.gradle` file located in the workspace's ROOT folder. This ensures that
+all modules residing in the workspace share the same repository URL.
+
+$$$
 
 When using Blade CLI, you'll have to manually edit your project's component
 class. Blade CLI gives you the ability to specify the class's name, but all
