@@ -16,7 +16,7 @@ for a specific tool (e.g., Blade CLI or Liferay @ide@). Let's get started!
 
 ## Creating Modules [](id=creating-modules)
 
-The first phase of Liferay Workspace's development phase is the module creation
+The first step of Liferay Workspace's development phase is the module creation
 process. Workspace provides a slew of templates that you can use to create many
 different types of Liferay modules.
 
@@ -83,7 +83,7 @@ many included subprojects like this:
     include file-server
     ...
 
-You don't have to worry about applying these subprojects because the workpslace
+You don't have to worry about applying these subprojects because the workspace
 plugin does it for you. Likewise, if a folder in the `/themes` folder includes a
 `liferay-theme.json` file, the `gulp` plugin is applied to it; if a folder in
 the `/modules` folder includes a `bnd.bnd` file, the
@@ -109,11 +109,11 @@ tutorials, respectively.
 
 ## Testing Modules [](id=testing-modules)
 
-Liferay provides many different configuration settings for @product-ver@.
-Configuring several different @product@ installations to simulate/test certain
-behaviors can become cumbersome and time consuming. With Liferay Workspace, you
-can easily organize environment settings and generate an environment
-installation with those settings.
+Liferay provides many configuration settings for @product-ver@. Configuring
+several different @product@ installations to simulate/test certain behaviors can
+become cumbersome and time consuming. With Liferay Workspace, you can easily
+organize environment settings and generate an environment installation with
+those settings.
 
 Liferay Workspace provides the `configs` folder, which lets you configure
 different environments in the same workspace. For example, you could configure
@@ -137,7 +137,7 @@ installation, which you generate from within workspace.
 
 ![Figure 1: The `configs/common` and `configs/[environment]` overlay you @product@ bundle when it's generated.](../../../images/workspace-configs.png)
 
-When workspace generates an @product@ bundle, the following occurs:
+When workspace generates a @product@ bundle, these things happen:
 
 1.  Configuration files found in the `configs/common` folder are applied to the
     @product@ bundle.
@@ -148,12 +148,12 @@ When workspace generates an @product@ bundle, the following occurs:
 To generate a @product@ bundle with a specific environment configuration to the
 workspace's `/bundles` folder, run
 
-    ./gradlew initBundle -Pliferay.workspace.environment=<ENVIRONMENT>
+    ./gradlew initBundle -Pliferay.workspace.environment=[ENVIRONMENT]
 
 To generate a distributable @product@ installation to the workspace's `/build`
 folder, run
 
-    ./gradlew distBundle[Zip|Tar] -Pliferay.workspace.environment=<ENVIRONMENT>
+    ./gradlew distBundle[Zip|Tar] -Pliferay.workspace.environment=[ENVIRONMENT]
 
 The `ENVIRONMENT` variable should match the configuration folder (`dev`,
 `local`, `prod`, `uat`, etc.) you intend to apply.
