@@ -28,3 +28,14 @@ default:
 For more information on customizing the Control Menu Entry sample to fit your
 needs, see the Javadoc listed in this sample's
 `BladeProductNavigationControlMenuEntry` class.
+
+## Where Is This Sample?
+
+There are five different versions of this sample, each built with a different
+build tool:
+
+- [Bndtools](https://github.com/liferay/liferay-blade-samples/tree/master/bndtools/blade.controlmenuentry)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.controlmenuentry)
+- [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.controlmenuentry)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.controlmenuentry)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.controlmenuentry)

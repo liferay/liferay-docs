@@ -36,3 +36,14 @@ Follow the steps below to test the Screen Name Validator sample:
 
 For more information on customizing the Validation sample to fit your needs, see
 the Javadoc provided in this sample's Java classes.
+
+## Where Is This Sample?
+
+There are five different versions of this sample, each built with a different
+build tool:
+
+- [Bndtools](https://github.com/liferay/liferay-blade-samples/tree/master/bndtools/blade.screenname.validator)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.screenname.validator)
+- [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.screenname.validator)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.screenname.validator)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.screenname.validator)
