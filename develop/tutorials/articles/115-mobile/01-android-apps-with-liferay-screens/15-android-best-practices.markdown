@@ -11,7 +11,7 @@ You should use the latest Android API level with the latest version of Android
 Studio. Although Screens *may* work with Eclipse ADT or manual Gradle builds, 
 Android Studio is the preferred IDE. 
 
-## See the Breaking Changes Document
+## See the Breaking Changes Document [](id=see-the-breaking-changes-document)
 
 When updating an app or Screenlet to a new version of Liferay Screens, make sure 
 to see the 
