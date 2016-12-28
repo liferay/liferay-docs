@@ -221,15 +221,10 @@ Creole format, as it allows for a much cleaner separation of content and code.
 
 +$$$
 
-**Note:** The MediaWiki and JSPWiki engines and formats are also available in
-respective deprecated apps on the Marketplace.
+**Note:** The MediaWiki engine and format is also available as a deprecated app 
+on the Marketplace.
 
-These apps are deprecated as of version 1.0.
-
-To install the JSPWiki engine, you must first remove the Creole engine by 
-uninstalling the `com.liferay.wiki.engine.creole` bundle from your Liferay 
-instance. The JSPWiki format will display in the format selector as *Creole*
-since it is an extension of the Creole engine. 
+This app is deprecated as of version 1.0. 
 
 $$$
 
