@@ -1,4 +1,4 @@
-# Installing Elasticsearch
+# Installing Elasticsearch [](id=installing-elasticsearch)
 
 @product@ uses Elasticsearch to index its content. By default, @product@ uses
 Elastic as an embedded service. It works, but this is not a supported

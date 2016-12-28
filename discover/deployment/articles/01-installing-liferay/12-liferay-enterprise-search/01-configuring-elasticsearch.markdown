@@ -229,7 +229,7 @@ testing under load, and tuning again, so we encourage you to examine the
 well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/setup-configuration.html#settings) 
 and go through that process once you have a working configuration. 
 
-## Configuring a Remote Elasticsearch Host
+## Configuring a Remote Elasticsearch Host [](id=configuring-a-remote-elasticsearch-host)
 
 In production systems Elasticsearch and @product@ are installed on different
 servers. To make @product@ aware of the Elasticsearch cluster, set

@@ -1,4 +1,4 @@
-# Keeping up with Fix packs and Service Packs
+# Keeping up with Fix packs and Service Packs [](id=keeping-up-with-fix-packs-and-service-packs)
 
 Liferay Subscription Services will announce on Customer Portal the location all
 fix packs and service packs. More information about the approximate release

@@ -1,4 +1,4 @@
-# Activating Liferay DXP 
+# Activating Liferay DXP [](id=activating-liferay-dxp)
 
 Liferay now offers a new way of registering its products. Beginning with
 @product-ver@, activation keys are managed through _Liferay Connected Services_
