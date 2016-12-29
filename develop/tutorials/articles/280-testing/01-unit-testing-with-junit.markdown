@@ -303,7 +303,7 @@ resolve the issue.
 
 Congratulations on creating and executing unit tests with JUnit! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Integration Testing with the Arquillian Extension](/develop/tutorials/-/knowledge_base/7-0/arquillian-extension-for-liferay-example)
 
