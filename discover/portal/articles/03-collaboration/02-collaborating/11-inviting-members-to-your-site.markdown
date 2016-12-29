@@ -2,8 +2,7 @@
 
 You've built a new site and now you need to get the word out about it. What 
 better way to get the word out about your site then to invite users to join it. 
-The Invite Members app, available on the on [Liferay Marketplace](http://liferay.com/marketplace), 
-lets you to do just that!
+The Invite Members app lets you to do just that!
 
 The Invite Members app is only visible to site administrators. It allows 
 administrators to send invitations to users to join the site. Clicking the 
@@ -27,5 +26,5 @@ invitation.
 
 ![Figure 2: You can confirm or ignore the invitation.](../../../images/invite-members-confirm.png)
 
-Once the user confirms the invitation, they're made a member of the 
-your site and assigned any roles they've been invited to.
+Once the user confirms the invitation, they're made a member of the site and 
+assigned any roles they've been invited to.
