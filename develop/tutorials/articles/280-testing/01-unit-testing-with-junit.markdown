@@ -1,14 +1,16 @@
 # Unit Testing with JUnit [](id=unit-testing-with-junit)
 
-Unit tests verify and validate functionality of classes and methods in
-isolation, disregarding external dependencies. Developers can use the [JUnit](http://junit.org)
-framework to unit test on @product@. They create test methods that assert
-expected results and prepare/cleanup the test environment. JUnit method
-annotations dictate test flow execution. 
+Test driven development is a best practice for any developer. Unit tests verify
+and validate functionality of classes and methods in isolation by "mocking" 
+external dependencies. One of the most widely-used tools for test driven
+development on the Java platform is JUnit. You can use the
+[JUnit](http://junit.org) framework to write unit tests for @product@
+applications. 
 
-JUnit can be used in many build environments including Maven and Gradle. JUnit
-plugins are available in IDEs such as Eclipse, IntelliJ, and NetBeans. And of
-course, JUnit's available in [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
+JUnit integrates with build environments such as Maven and Gradle. JUnit plugins
+are available in IDEs such as Eclipse, IntelliJ, and NetBeans. And of course,
+JUnit is available in 
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
 
 This tutorial covers the following topics:
 
@@ -24,14 +26,14 @@ You'll start by learning best practices for writing unit tests.
 
 ## Writing Good Tests [](id=writing-good-tests)
 
-To write good tests developers must understand assertions and follow best
+To write good tests, developers must understand assertions and follow best
 practices. 
 
 **Assertion**: an executable specification of the expected behavior of the
-software under test (SUT) given a scenario. The behavior in the scenario the
-tests defines using a test setup method, class setup method, and test method.
-It's *executable* in that it programmatically checks behavior and tracks
-requirements.
+software under test (SUT) given a scenario. The tests define the behavior in the
+scenario using several methods: a test setup method, a class setup method, and a
+test method.  It's *executable* because it programmatically checks behavior and
+tracks requirements.
 
 **Best Practices for Unit Tests:**
 
@@ -39,9 +41,9 @@ requirements.
 :-------------------------------------------------  | :------------- |
  A test should have only one reason to fail. | Resolving failures from a single root cause is easiest. 
  A test should check just one thing. |  Tests that verify or validate one thing are easier to understand and maintain. Focusing on multiple things can lead to multiple failure points, thus breaking the *one reason to fail* rule. 
- Avoid conditional logic in tests. | Conditional test logic that uses loops or if/else clauses increases the probability test bugs. 
+ Avoid conditional logic in tests. | Conditional test logic that uses loops or if/else clauses increases the probability of test bugs. 
  A test that asserts nothing or cannot fail is worthless. | Tests that can't fail create a false sense of security.<br />Here's example test code that can't fail:<br />`File f = new File ("foo");`<br />`Assert.assertTrue(f != null);`
- A test that inaccurately advertises what it asserts is untrustworthy | A test's name should accurately express what it tests. A name that's inacurate or that promises more that what the test does creates confusion. <br />`@Test`<br />`public void testAddUser() { // do something not related to user creation }`
+ A test that inaccurately advertises what it asserts is untrustworthy | A test's name should accurately express what it tests. A name that's inaccurate or that promises more than what the test does creates confusion. <br />`@Test`<br />`public void testAddUser() { // do something not related to user creation }`
 
 Next, you'll learn JUnit's annotations for test methods. 
 
@@ -67,10 +69,10 @@ Let's create a JUnit test class.
 
 ## Creating a JUnit Test Class [](id=creating-a-junit-test-class)
 
-In this section you'll create a JUnit test class and fill it with methods that
-setup/cleanup the test environment, and assert the software's expected behavior.
+Here you'll create a JUnit test class and fill it with methods that both 
+set up/clean up the test environment and assert the software's expected behavior.
 
-To help illustrate creating unit tests, let's refer to an example class to test:
+To help illustrate creating unit tests, here's an example class to test:
 
     public class MySampleNameClass {
 
@@ -102,7 +104,7 @@ To help illustrate creating unit tests, let's refer to an example class to test:
 In the sections that follow, you'll see setup, cleanup, and test methods that
 relate to this example class.
 
-Create a test class following these steps:
+Create a test class: 
 
 1.  Open the module of the class you're testing.
 
@@ -121,7 +123,7 @@ Your new test class is ready for test methods.
 
 ![Figure x: In this example module, the JUnit test class is in the same module of the class it tests. The test class resides in a source folder and package following standard test structure conventions.](../../images/junit-project-structure.png)
 
-Let's create methods in the order of test flow execution. 
+Now create methods in the order of test flow execution. 
 
 ### @BeforeClass [](id=beforeclass)
 
@@ -135,8 +137,8 @@ Consider what needs to be done before running each individual test. Create a
 method that makes small preparations before each test case. Add the `@Before`
 annotation to the method. 
 
-For example, each of the tests for the class `MySampleNameClass` must operate on
-a populated `MySampleNameClass` object. Implementing a method that instantiates
+For example, each of the tests for the class `MySampleNameClass` operate on a
+populated `MySampleNameClass` object. Implementing a method that instantiates
 such an object beforehand is appropriate. Adding the `@Before` annotation to the
 method ensures it's executed before each individual test.
 
@@ -154,11 +156,11 @@ method:
 
     }
 
-**Note**: Since this example class is immutable it technically might make more
-sense to simply instantiate the object once in the `@BeforeClass` method and
-forgo the `@Before` method. It's probably more typical, however, that you'll be
-testing methods that change an object's state; so let's pretend this example
-object needs to be instantiated anew before each `@Test` method.
+**Note**: Since this example class is immutable, it might make more sense to
+instantiate the object once in the `@BeforeClass` method and forgo the `@Before`
+method. It's probably more typical, however, that you'll be testing methods that
+change an object's state; so pretend this example object must be instantiated
+anew before each `@Test` method.
 
 Now that you've instantiated objects each test needs, you can add `@Test`
 methods to assert expected output from the object's methods.
@@ -173,7 +175,7 @@ succeeds.
 
 For tests that contain a large amount of logic it's typically a best practice to
 use multiple assertions within the test to better identify the earliest point of
-failure. But since the example class is fairly simple, let's consider creating a
+failure. But since the example class is fairly simple, it's better to create a
 test for each of its methods:
 
     @Test
@@ -265,7 +267,7 @@ reporting mechanism.
 
 **Gradle**:
 
--    HTML report `build/reports/tests/index.html`
+-   HTML report `build/reports/tests/index.html`
 -   XML report file in `build/test-results/`
 
 **Maven**:
@@ -283,8 +285,7 @@ While it's certainly helpful to see successful test results, it's even more
 helpful to see results of failing tests.
 
 As an experiment, change the expected values of a test's assertions to
-deliberately force the test to fail and rerun the tests to yield the respective
-failures. 
+force the test to fail and rerun the tests to yield the respective failures. 
 
 ![Figure x: Command output of failing tests looks like this.](../../images/junit-failure-command-output.png)
 
@@ -302,7 +303,7 @@ resolve the issue.
 
 Congratulations on creating and executing unit tests with JUnit! 
 
-## Related Articles [](id=related-articles)
+## Related Topics
 
 [Integration Testing with the Arquillian Extension](/develop/tutorials/-/knowledge_base/7-0/arquillian-extension-for-liferay-example)
 
