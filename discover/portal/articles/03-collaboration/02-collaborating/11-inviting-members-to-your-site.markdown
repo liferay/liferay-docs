@@ -26,5 +26,17 @@ invitation.
 
 ![Figure 2: You can confirm or ignore the invitation.](../../../images/invite-members-confirm.png)
 
++$$$
+
+**Note:** The Invitation app is also available, as a deprecated app on the 
+[Liferay Marketplace](http://liferay.com/marketplace). The Invitation app, in 
+contrast to the Invite Members app, lets you send a custom email invitation to a 
+list of specified email addresses. You can customize the email message for the 
+invitation through the portlet's Configuration menu.
+
+This app is deprecated as of version 1.0.0.
+
+$$$
+
 Once the user confirms the invitation, they're made a member of the site and 
 assigned any roles they've been invited to.
