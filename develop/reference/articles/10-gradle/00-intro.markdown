@@ -9,6 +9,7 @@ The following Gradle plugins are documented in this section:
 - Change Log Builder
 - CSS Builder
 - DB Support
+- Dependency Checker
 - Deployment Helper
 - Gulp
 - Jasper JSPC
