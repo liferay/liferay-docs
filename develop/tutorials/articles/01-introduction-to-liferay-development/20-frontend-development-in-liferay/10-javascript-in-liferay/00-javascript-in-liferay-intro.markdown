@@ -15,7 +15,7 @@ flexible enough to be built as global objects, AMD modules, or jQuery plugins.
 Metal is cutting edge JavaScript, using [ECMAScript 6 (ES6)/ ECMAScript 2015 (ES2015)](http://www.ecma-international.org/ecma-262/6.0/), 
 which provides you with clean code that's easy-to-read.
 
-![Figure 1: Metal.js is a new framework for building UI components.](../../../images/metaljs-website.png)
+![Figure 1: Metal.js is a new framework for building UI components.](../../../../images/metaljs-website.png)
 
 For more information see the [Metal.js docs](http://metaljs.com/docs/).
 
@@ -45,7 +45,7 @@ As of @product-ver@, AlloyUI has been officially sunsetted. This means that we a
 no longer developing new features for it, but it is still included in the 
 product and actively maintained.
 
-![Figure 2: AlloyUI is sunsetted as of @product-ver@.](../../../images/alloyui-website.png)
+![Figure 2: AlloyUI is sunsetted as of @product-ver@.](../../../../images/alloyui-website.png)
 
 ## jQuery [](id=jquery)
 
@@ -59,4 +59,4 @@ scalable applications like Java portals, you'll need a more robust solution.
 That being the case, we strongly recommend you to use one of our other provided 
 solutions mentioned above.
 
-![Figure 3: jQuery is a fast, small, and feature-rich JavaScript library.](../../../images/jquery-website.png)
+![Figure 3: jQuery is a fast, small, and feature-rich JavaScript library.](../../../../images/jquery-website.png)

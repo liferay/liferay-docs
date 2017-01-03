@@ -1,4 +1,4 @@
-# @product@ Deployment
+# Introduction to @product@ Deployment
 
 @product@ is one of the most flexible applications on the market today with
 respect to database and application server support. @product@ supports a wide

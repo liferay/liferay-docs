@@ -1,4 +1,4 @@
-# Configuring Liferay Marketplace [](id=configuring-liferay-marketplace)
+# Setting Up Marketplace and Portal Security [](id=configuring-liferay-marketplace)
 
 Liferay Marketplace is more than just a store for Liferay applications. Under
 the hood, it not only provides the store, it also provides @product@'s
