@@ -267,7 +267,7 @@ is a sure-fire way to verify existing module installations.
 You've fixed class imports and resolved dependencies on all the modules your
 plugin uses. Way to go!
 
-## Related Articles [](id=related-articles)
+## Related Topics [](id=related-topics)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
