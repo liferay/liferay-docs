@@ -359,7 +359,7 @@ You've leveraged Liferay's Code Upgrade Tool to start adapting your existing
 plugins to @product-ver@. As you continue upgrading your plugins you can re-open
 the Code Upgrade Tool and track progress as you wish.  
 
-## Related Articles [](id=related-articles)
+## Related Topics [](id=related-topics)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
