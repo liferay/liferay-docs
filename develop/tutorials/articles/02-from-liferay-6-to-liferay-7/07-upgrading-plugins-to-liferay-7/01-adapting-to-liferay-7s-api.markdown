@@ -124,9 +124,11 @@ folder.
 
 ![Figure 4: The Configure Project step imports the Plugins SDK projects and configures them to use a @product-ver@ bundle.](../../../images/code-upgrade-configure-project.png)
 
-In your existing Plugins SDK's `build.[username].properties` file, make sure to
-set the `app.server.parent.dir` property to refer to your Liferay Portal 6.x
-bundle. 
+If the Plugins SDK is the same version as the Liferay Portal bundle, the
+developer need only set the `app.server.parent.dir` property in the Plugins
+SDK's `build.[username].properties` file to the bundle path. Otherwise, the
+developer must additionally set the `app.server.type` and
+`app.server.[server-type].dir` properties. 
 
 If the user chooses the option *Upgrade to Liferay Workspace*, clicking the
 *Import Projects* button migrates the SDK projects to a Plugins SDK 7 in Liferay
