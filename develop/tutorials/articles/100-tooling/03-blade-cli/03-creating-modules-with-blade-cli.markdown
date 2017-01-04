@@ -3,51 +3,7 @@
 When you use Blade CLI to create a project, your project's folder structure,
 build script (`build.gradle`), Java classes, and other resources (such as JSPs)
 are created based on the chosen template. In this tutorial, you'll learn how to
-use Blade CLI standalone and from a Liferay Workspace.
-
-To create a new Liferay module project, you can run the Blade `create` command,
-which offers many available templates. There are, however, many other options
-you can specify to help mold your project just the way you want it. To learn how
-to use the Blade `create` command and the many options it provides, enter `blade
-help create` into a terminal. A list of the `create` options are listed below:
-
-- `-c, --classname <string>`: If a class is generated in the project, provide
-  the name of the class to be generated. If not provided, the class name
-  defaults to the project name.
-- `C, --contributorType <string>`: Identifies your module as a theme
-  contributor. This is also used to add the `Liferay-Theme-Contributor-Type` and
-  `Web-ContextPath` bundle headers to the BND file.
-- `-d, --dir <file>`: The directory to create the new project.
-- `-h, --hostbundlebsn <string>`: If a new JSP hook fragment needs to be
-  created, provide the name of the host bundle symbolic name.
-- `-H, --hostbundleversion <string>`: If a new JSP hook fragment needs to be
-  created, provide the name of the host bundle version.
-- `l, --listtemplates`: Prints a list of available project templates.
-- `-p, --packagename <string>`: The package name to use when creating the
-  project.
-- `-s, --service <string>`: If a new Declarative Services (DS) component needs
-  to be created, provide the name of the service to be implemented. Note that in
-  this context, the term *service* refers to an OSGi service, not to a Liferay
-  API.
-- `-t, --template <template>`: The project template to use when creating the
-  project. Run `blade create -l` for a listing of available Blade CLI templates.
-
-To create a module project, follow the following syntax:
-
-    blade create [OPTIONS] <NAME>
-
-For example, if you wanted to create an MVC portlet project, you could execute
-the following:
-
-    blade create -t mvcportlet -p com.liferay.docs.guestbook -c GuestbookPortlet
-    my-guestbook-project
-
-This command creates an MVC portlet project based on the template `mvcportlet`.
-It uses the package name `com.liferay.docs.guestbook` and creates the portlet
-class `GuestbookPortlet`. The project name is `my-guestbook-project`. Since the
-directory was not specified, it is created in the folder you executed the
-command. When generating a project using Blade CLI, there is no downloading,
-which means internet access is not required.
+use Blade CLI to create modules based on pre-existing templates and samples.
 
 Using Blade CLI gives you the flexibility to choose how you want to create your
 application. You can do so in your own standalone environment, or within a
@@ -82,6 +38,54 @@ all modules residing in the workspace share the same repository URL.
 
 $$$
 
+First, you'll learn how to create a module using a template.
+
+## Module Templates
+
+To create a new Liferay module project, you can run the Blade `create` command,
+which offers many available templates. There are, however, many other options
+you can specify to help mold your project just the way you want it. To learn how
+to use the Blade `create` command and the many options it provides, enter `blade
+help create` into a terminal. A list of the `create` options are listed below:
+
+- `-c, --classname <string>`: If a class is generated in the project, provide
+  the name of the class to be generated. If not provided, the class name
+  defaults to the project name.
+- `C, --contributorType <string>`: Identifies your module as a theme
+  contributor. This is also used to add the `Liferay-Theme-Contributor-Type` and
+  `Web-ContextPath` bundle headers to the BND file.
+- `-d, --dir <file>`: The directory to create the new project.
+- `-h, --hostbundlebsn <string>`: If a new JSP hook fragment needs to be
+  created, provide the name of the host bundle symbolic name.
+- `-H, --hostbundleversion <string>`: If a new JSP hook fragment needs to be
+  created, provide the name of the host bundle version.
+- `l, --listtemplates`: Prints a list of available project templates.
+- `-p, --packagename <string>`: The package name to use when creating the
+  project.
+- `-s, --service <string>`: If a new Declarative Services (DS) component needs
+  to be created, provide the name of the service to be implemented. Note that in
+  this context, the term *service* refers to an OSGi service, not to a Liferay
+  API.
+- `-t, --template <template>`: The project template to use when creating the
+  project. Run `blade create -l` for a listing of available Blade CLI templates.
+
+To create a module project, use the following syntax:
+
+    blade create [OPTIONS] <NAME>
+
+For example, if you wanted to create an MVC portlet project, you could execute
+the following:
+
+    blade create -t mvcportlet -p com.liferay.docs.guestbook -c GuestbookPortlet
+    my-guestbook-project
+
+This command creates an MVC portlet project based on the template `mvcportlet`.
+It uses the package name `com.liferay.docs.guestbook` and creates the portlet
+class `GuestbookPortlet`. The project name is `my-guestbook-project`. Since the
+directory was not specified, it is created in the folder you executed the
+command. When generating a project using Blade CLI, there is no downloading,
+which means internet access is not required.
+
 When using Blade CLI, you'll have to manually edit your project's component
 class. Blade CLI gives you the ability to specify the class's name, but all
 other contents of the class can only be edited after the class is created. See
@@ -93,3 +97,35 @@ Now that you know the basics on creating Liferay module projects using `blade
 create`, you can visit some of the tutorials in this section on specific
 `create` templates. The templates will be discussed further so you know exactly
 what each one has to offer.
+
+Next, you'll explore Liferay's provided module samples and how to generate them
+using Blade CLI.
+
+## Module Samples
+
+Liferay provides many sample modules that are useful for those interested in
+learning best practices on structuring their modules to accomplish specific
+tasks in @product@. These samples can be found in the
+[liferay-blade-samples](https://github.com/liferay/liferay-blade-samples) Github
+repository. You can also learn more about these samples by visiting the
+[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+article.
+
+You can generate these samples using Blade CLI for convenience, instead of
+cloning the repository and manually copy/pasting them to your environment. To do
+this, use the following syntax:
+
+    blade samples <NAME>
+
+For example, if you wanted to generate the
+[blade.portlet.ds](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.portlet.ds)
+sample, you could execute
+
+    blade samples blade.portlet.ds
+
+For a full listing of all the available Blade samples, run
+
+    blade samples
+
+Awesome! Now you know the basics on creating Liferay module projects with Blade
+CLI.
