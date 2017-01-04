@@ -40,7 +40,7 @@ $$$
 
 First, you'll learn how to create a module using a template.
 
-## Module Templates
+## Module Templates [](id=module-templates)
 
 To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options
@@ -101,7 +101,7 @@ what each one has to offer.
 Next, you'll explore Liferay's provided module samples and how to generate them
 using Blade CLI.
 
-## Module Samples
+## Module Samples [](id=module-samples)
 
 Liferay provides many sample modules that are useful for those interested in
 learning best practices on structuring their modules to accomplish specific
