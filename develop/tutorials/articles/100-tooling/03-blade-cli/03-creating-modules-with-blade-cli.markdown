@@ -2,13 +2,8 @@
 
 When you use Blade CLI to create a project, your project's folder structure,
 build script (`build.gradle`), Java classes, and other resources (such as JSPs)
-are created based on the chosen template. Once you finish developing your
-project, you can use Gradle to build your project's JAR file and use Blade CLI
-to deploy your module to @product@'s module framework. In this tutorial, you'll
-learn how to use Blade CLI standalone. You can, however, use Blade CLI from a
-Liferay Workspace, which offers additional benefits. You can learn more about
-Liferay Workspaces in its dedicated
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+are created based on the chosen template. In this tutorial, you'll learn how to
+use Blade CLI standalone and from a Liferay Workspace.
 
 To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options
@@ -56,21 +51,15 @@ which means internet access is not required.
 
 Using Blade CLI gives you the flexibility to choose how you want to create your
 application. You can do so in your own standalone environment, or within a
-Liferay Workspace. If you'd like to learn more about Liferay Workspaces see the
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
-tutorial.
-
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
 Creating Liferay modules in a workspace using Blade CLI is very similar to
-creating them in a standalone environment. You can find the details of how to
-create a Liferay Workspace using Blade CLI in the
-[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
-tutorial.
+creating them in a standalone environment.
 
-When creating modules in a workspace, you should navigate to
-the `/modules` directory to create your project. You can also provide further
-directory nesting into the `/modules` directory, if preferred. Your workspace,
-by default, sets the directory where your modules should be stored by setting
-the following property in the workspace's `gradle.properties` file:
+When creating modules in a workspace, you should navigate to the `/modules`
+directory to create your project. You can also provide further directory nesting
+into the `/modules` directory, if preferred. Your workspace, by default, sets
+the directory where your modules should be stored by setting the following
+property in the workspace's `gradle.properties` file:
 
     liferay.workspace.modules.dir=modules
 
