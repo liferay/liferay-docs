@@ -46,24 +46,6 @@ section.
 
 $$$
 
-Once you've developed and managed projects in your workspace, it could also be
-useful to bundle your workspace into a ZIP or TAR file. This provides the
-flexibility to distribute your workspace to potential consumers. To do this,
-navigate to your workspace's root folder and run the following command:
-
-    ./gradlew distBundle[Zip|Tar]
-
-Your distribution file is available from the workspace's `/build` directory.
-
-+$$$
-
-**Note:** You can define different environments for your Liferay bundle for
-easy testing. You can learn more about this in the
-[Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
-section.
-
-$$$
-
 Now that you know about a workspace's default folder structure and how to modify
 its Gradle properties, you'll learn how to add a Liferay bundle to your
 workspace.
@@ -98,6 +80,23 @@ your workspace is accounting for the
 If you want to skip the downloading process, you can create the `bundles` folder
 manually in your workspace's ROOT folder and unzip your @product@ bundle to that
 folder.
+
+You can also produce a distributable Liferay bundle (Zip or Tar) from within a
+workspace. To do this, navigate to your workspace's root folder and run the
+following command:
+
+    ./gradlew distBundle[Zip|Tar]
+
+Your distribution file is available from the workspace's `/build` directory.
+
++$$$
+
+**Note:** You can define different environments for your Liferay bundle for
+easy testing. You can learn more about this in the
+[Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
+section.
+
+$$$
 
 The Liferay Workspace is a great development environment for Liferay module
 development; however, what if you'd like to also stick with developing WAR-style
