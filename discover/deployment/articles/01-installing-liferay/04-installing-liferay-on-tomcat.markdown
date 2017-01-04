@@ -2,7 +2,7 @@
 
 If you want a fresh installation of @product@ on Tomcat 8, download a
 @product@ Tomcat bundle from
-[https://www.liferay.com/downloads/liferay-portal/available-releases](https://www.liferay.com/downloads/liferay-portal/available-releases).
+[https://www.liferay.com/downloads/liferay-portal/available-releases](https://www.liferay.com/downloads/liferay-portal/available-releases). Liferay Digital Enterprise 7.0 bundled with Tomcat is available on [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
 Even if you want to install @product@ manually on an existing Tomcat 8
 application server, it can be helpful to download a @product@ Tomcat bundle. The
 bundle contains many required dependencies and configuration files. Before
