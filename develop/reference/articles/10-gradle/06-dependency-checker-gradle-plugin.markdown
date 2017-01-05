@@ -14,15 +14,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.dependency.checker", version: "1.0.0"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.dependency.checker", version: "1.0.0"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.dependency.checker"
@@ -52,4 +52,4 @@ There are additional configurations that can help you use the Deployment Helper.
 It is possible to set the default values of the [`ignoreFailures`](#ignorefailures)
 property via the project property `dependencyCheckerIgnoreFailures`:
 
-	-PdependencyCheckerIgnoreFailures=false
+    -PdependencyCheckerIgnoreFailures=false
