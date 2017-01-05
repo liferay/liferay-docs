@@ -1,0 +1,2 @@
+include ':emailAddressAuthenticator'
+project(':emailAddressAuthenticator').projectDir = new File(settingsDir, '../com.liferay.docs.emailAddressAuthenticator')

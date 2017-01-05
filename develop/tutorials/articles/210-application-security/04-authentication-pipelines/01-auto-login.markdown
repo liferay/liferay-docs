@@ -82,3 +82,9 @@ are implemented by setting attributes in the request. Here are the attributes:
 Auto Login components are useful ways of providing an authentication mechanism
 to a system that @product@ doesn't yet support. You can write them fairly
 quickly to provide the integration you need. 
+
+## Related Topics
+
+[Password-Based Authentication Pipelines](/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
+
+
