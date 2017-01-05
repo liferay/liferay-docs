@@ -4204,3 +4204,36 @@ This change was made as part of the modularization efforts to ease portal
 configuration changes.
 
 ---------------------------------------
+
+### Moved the Expando Custom Field Tags to liferay-expando Taglib [](id=moved-the-expando-custom-field-tags-to-liferay-expando-taglib)
+- **Date:** 2016-Dec-12
+- **JIRA Ticket:** LPS-69400
+
+#### What changed? [](id=what-changed-105)
+
+The following tags have been deprecated and replaced:
+
+- `liferay-ui:custom-attribute`
+- `liferay-ui:custom-attribute-list`
+- `liferay-ui:custom-attributes-available`
+
+#### Who is affected? [](id=who-is-affected-105)
+
+Plugins and templates that are using the aforementioned tags must update their
+usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-105)
+
+You should import the `liferay-expando` tag library (if necessary) and update
+the tag namespace from `liferay-ui` to `liferay-expando`:
+
+- `liferay-ui:custom-attribute` &rarr; `liferay-expando:custom-attribute`
+- `liferay-ui:custom-attribute-list` &rarr; `liferay-expando:custom-attribute-list`
+- `liferay-ui:custom-attributes-available` &rarr; `liferay-expando:custom-attributes-available`
+
+#### Why was this change made? [](id=why-was-this-change-made-105)
+
+This change was made as part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
