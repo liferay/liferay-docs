@@ -2,24 +2,26 @@
 
 The Forms application contains a bunch of useful field types out-of-the-box, and
 a lot of configurability. Most use cases will be met with one of the existing
-fields. If you're reading this, you probably have a use case that wasn't met
-with the defualt field types. For example, perhaps you need a dedicated *time*
-field. You can use a text field and add a tip to tell users something like
-*enter the time in the format `hour:minute`*, but some users will still enter
-something indecipherable, like *8:88*. To meet this need, add a *time* field to
-@product@'s Forms application. 
+fields. If you're reading this, however, you probably have a use case that
+wasn't met with the default field types. For example, perhaps you need a
+dedicated *time* field. You can use a text field and add a tip to tell users
+something like *enter the time in the format `hour:minute`*, but some users will
+still enter something indecipherable, like *8:88*. To meet this need, add a
+*time* field to @product@'s Forms application. 
 
 <!--Once this is done successfully, take a picture-->
 
-In this tutorial, learn to create a module that adds a field type with these
-characteristics:
+In this tutorial, learn to 
 
-- Leverages an AlloyUI time picker.
-- Only uses default form field options.
-, with
-an AlloyUI time picker. just a basic input field, to @product@'s Forms
-application. In the next tutorial, get the details on configuring the field's
-behavior, using a *time-picker* JavaScript component to illustrate the process.
+- create a module that adds a form field type with a basic text input field and
+    the default field configuration options
+- add JavaScript to modify the behavior of the field type. Here you'll leverage
+    the AlloyUI `timepicker` to transform the basic input field into a dedicated
+    *Time* field type.
+
+In a separate tutorial (not yet written), learn to add custom configuration
+options to your field types. <!-- What about adding custom configuration options to the
+out-of-the-box field types? Is that possible or desirable? -->
 
 ## Anatomy of a Field Type Module
 
@@ -71,11 +73,11 @@ $$$
 
 Your field type module is nearly identical in structure to those found in
 @product@, as presented above. You won't need a `*TypeSettings` class in your
-initial module (see the next tutorial on adding settings to your form field
-types), and the `*.soy.js` is generated at compile time. These are the Java
-classes and resources you'll need to create:
+initial module (see the tutorial on adding settings to your form field types to
+learn more about `*TypeSettings`), and the `*.soy.js` is generated at compile
+time. These are the Java classes and resources you'll need to create:
 
-- `*DDMFormFieldRenderer.java`: 
+<!-- - `*DDMFormFieldRenderer.java`: 
     - Extends `BaseDDMFormFieldRenderer`, which is an abstract class
         implementing `DDMFormFieldRenderer`
     - `BaseDDMFormFieldRenderer` 
@@ -124,7 +126,7 @@ classes and resources you'll need to create:
      getTemplateResource(), method that can be used to to load template model
      given a template path. Also it automatically injects all the default field
      type configurations as template parameters to the template engine.
-
+-->
 - `*DDMFormFieldRenderer.java`: Controls the rendering of the template. Sets the
     language, declares the namespace, and loads the template resources on
     activation of the Component. Extending the abstract class that implements
@@ -153,6 +155,11 @@ developed in this tutorial can be generated with a single [Blade
 CLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli) command:
 
     blade create -t form-field -p com.liferay.docs.formfield -c Time ddm-type-time
+
+This gives you a `ddm-type-time` module with a similar structure to the one
+outlined above. The Java classes will be in the package
+`com.liferay.docs.formfield` under `src/main/java/` and the frontend resources
+(JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
 
 $$$
 
@@ -212,18 +219,10 @@ Next code the class itself.
 ## Implementing `DDMFormFieldType`
 
 Implementing the field type in Java is made easier because of
-`BaseDDMFormFieldType`, an abstract implementation you can leverage in your
-code.
+`BaseDDMFormFieldType`, an abstract class you can leverage in your code.
 
-+$$$
-
-**Note:** If you need to add custom configurations to the form field, you'll
-need to implement `DDMFormFieldType` yourself. <!--Provide more info on this-->
-
-$$$
-
-All that's left to do is override the `getName` method by specifying the name of
-your new field type:
+After extending `BaseDDMFormFieldType`, override the `getName` method by
+specifying the name of your new field type:
 
     public class TimeDDMFormFieldType extends BaseDDMFormFieldType {
         @Override
@@ -253,8 +252,10 @@ framework:
 There's another abstract class to leverage, this time
 `BaseDDMFormFieldRenderer`. It gives you a default implementation of the
 `render` method, the only required method for implementing the API. The form
-engine calls the render method for every form field type present in a form, and returns the plain HMTL of the rendered field type. The abstract implementation also includes some
-utility methods. Here's that the time field's `DDMFormFieldRenderer` looks like:
+engine calls the render method for every form field type present in a form, and
+returns the plain HMTL of the rendered field type. The abstract implementation
+also includes some utility methods. Here's what the time field's
+`DDMFormFieldRenderer` looks like:
 
     public class TimeDDMFormFieldRenderer extends BaseDDMFormFieldRenderer {
 
@@ -290,8 +291,8 @@ resources in you module will be loaded in the OSGi runtime.
 
 +$$$
 
-**Note:** Soy is the form engine's default templating language. [Say something
-intelligent about their benefit and closure templates]
+**Note:** Soy is the form engine's default template language. [Say something
+intelligent about closure templates and their benefit]
 
 If you want to use a different template language, ...
 <!-- What else is there to say about this? Is it even possible? -->
@@ -308,7 +309,6 @@ Create
 and populate it with these contents:
 
     {namespace ddm}
-    <!-- Is this read by Portal somewhere?-->
 
     /**
      * Prints the DDM form time field.
@@ -449,8 +449,9 @@ course, that's not what you want! You need a time picker.
 ## Adding Behavior to the Field
 
 If you want to do more than simply provide a text input field, you define the
-behavior in the `time_field.js` file. To add a time picker, first specify that
-your component requires the `aui-timepicker` in the `requires...` block: 
+behavior in the `time_field.js` file. To add an AlloyUI timepicker, first
+specify that your component requires the `aui-timepicker` in the `requires...`
+block: 
 
     {
         requires: ['aui-timepicker','liferay-ddm-form-renderer-field']
@@ -483,6 +484,8 @@ picker. Then instantiate the time picker, passing the field type input as a
 information](http://alloyui.com/tutorials/timepicker/). 
 
 Now when the field is rendered, there's a real time picker!
+
+<!--Add figure showing the time picker in action-->
 
 Now you know how to create a new field type and define its behavior. Currently,
 the field type only contains the default settings it inherits from its
