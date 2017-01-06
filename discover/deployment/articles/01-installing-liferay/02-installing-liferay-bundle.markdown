@@ -29,7 +29,9 @@ In the Liferay Home folder there are folders for various purposes:
         - `deploy`
         - `logs`
         - `osgi`
+        - `patching-tool` (Liferay Digital Enterprise 7.0 only)
         - [Application Server]
+        - `tools`
 
 `data`: This folder is used to store an embedded HSQL database, @product@'s
 file repository, and @product@'s search indexes. @product@ is initially configured
@@ -47,6 +49,10 @@ trying to diagnose a problem.
 `osgi`: All the JAR files and a few configuration files for @product@'s OSGi
 runtime belong in this folder.
 
+`patching-tool`: This folder contains patches for @product@ and files for installing the patches (Digital Enterprise 7.0 only). 
+
+`tools`: For portal upgrade and target platform indexer.
+
 **[Application Server]:** The name of this folder is different depending on
 the bundle you're using. This folder contains the application server in
 which @product@ has been installed.
@@ -58,7 +64,7 @@ is running @product@. In this case, the `liferay` folder becomes Liferay Home.
 For example, if the operating system user's name was jbloggs, the Liferay Home
 folder could be `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
-## Extracting a @product@ [](id=extracting-a-liferay-bundle)
+## Extracting a @product@ Bundle [](id=extracting-a-liferay-bundle)
 
 Getting a @product@ bundle up and running is as easy as uncompressing the
 archive, possibly copying a JDBC driver, and then starting the application
