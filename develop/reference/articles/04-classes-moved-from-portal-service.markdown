@@ -23,10 +23,10 @@ caption {
 <table style="width:100%">
 
   <caption>
-    <b>Classes Moved from portal-service (now renamed portal-kernel)</b>
+    <b>Classes Moved from portal-service to com.liferay.portal.kernel</b>
 	<p>
       This information was generated based on comparing classes in
-      <em>liferay-portal-src-6.2-ce-ga6.zip</em> to classes in <em>liferay-ce-portal-src-7.0-ga2.zip</em>.
+      <em>liferay-portal-src-6.2-ce-ga6.zip</em> to classes in <em>liferay-ce-portal-src-7.0-ga3.zip</em>.
     </p>
   </caption>
   <tr>
@@ -79,7 +79,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.search.internal.hits
 	</td>
     <td>com.liferay.portal.search</td>
-    <td>3.1.2</td>
+    <td>3.1.4</td>
   </tr>
   <tr>
     <td>ArticleContentException</td>
@@ -250,7 +250,7 @@ caption {
 	  <em>New:</em> com.liferay.asset.publisher.web.util
 	</td>
     <td>com.liferay.asset.publisher.web</td>
-    <td>1.1.5</td>
+    <td>1.2.0</td>
   </tr>
   <tr>
     <td>AuditMessageProcessor</td>
@@ -268,7 +268,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.4</td>
+    <td>4.0.1</td>
   </tr>
   <tr>
     <td>BackgroundTaskLocalService</td>
@@ -394,7 +394,7 @@ caption {
 	  <em>New:</em> com.liferay.dynamic.data.lists.exporter.impl
 	</td>
     <td>com.liferay.dynamic.data.lists.service</td>
-    <td>1.1.2</td>
+    <td>1.1.6</td>
   </tr>
   <tr>
     <td>BaseDDMDisplay</td>
@@ -430,7 +430,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.4</td>
+    <td>4.0.1</td>
   </tr>
   <tr>
     <td>BaseStorageAdapter</td>
@@ -529,7 +529,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.cache
 	</td>
     <td>com.liferay.portal.cache</td>
-    <td>2.1.0</td>
+    <td>2.1.1</td>
   </tr>
   <tr>
     <td>BookmarksEntry</td>
@@ -1006,7 +1006,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.search.internal.hits
 	</td>
     <td>com.liferay.portal.search</td>
-    <td>3.1.2</td>
+    <td>3.1.4</td>
   </tr>
   <tr>
     <td>CompoundSessionIdServletRequest</td>
@@ -1033,7 +1033,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>ContentException</td>
@@ -1069,7 +1069,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.4</td>
+    <td>4.0.1</td>
   </tr>
   <tr>
     <td>CouponActiveException</td>
@@ -2059,7 +2059,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.internal
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>DefaultMessageBus</td>
@@ -2131,7 +2131,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.dummy
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>DummyDirContext</td>
@@ -2140,7 +2140,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.dummy
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>DuplicateArticleIdException</td>
@@ -2194,7 +2194,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>DuplicateNodeNameException</td>
@@ -2203,7 +2203,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>DuplicatePageException</td>
@@ -2212,7 +2212,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>DuplicateRuleGroupInstanceException</td>
@@ -2329,7 +2329,7 @@ caption {
 	  <em>New:</em> com.liferay.document.library.lar.xstream
 	</td>
     <td>com.liferay.document.library.service</td>
-    <td>1.1.2</td>
+    <td>1.1.4</td>
   </tr>
   <tr>
     <td>FieldRenderer</td>
@@ -2389,10 +2389,10 @@ caption {
     <td>FlagsRequest</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.flags.messaging<br>
-	  <em>New:</em> com.liferay.flags.messaging
+	  <em>New:</em> com.liferay.flags.internal.messaging
 	</td>
     <td>com.liferay.flags.service</td>
-    <td>2.0.3</td>
+    <td>2.0.4</td>
   </tr>
   <tr>
     <td>GroupConverterKeys</td>
@@ -2401,7 +2401,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>ImportFilesException</td>
@@ -2410,7 +2410,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>ItemLargeImageNameException</td>
@@ -3193,7 +3193,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.validator
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>LDAPGroup</td>
@@ -3202,7 +3202,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>LDAPServerNameException</td>
@@ -3211,7 +3211,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>LDAPToPortalConverter</td>
@@ -3220,7 +3220,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>LDAPUser</td>
@@ -3229,7 +3229,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>LDAPUtil</td>
@@ -3238,7 +3238,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.util
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>LockLocalService</td>
@@ -3436,7 +3436,7 @@ caption {
 	  <em>New:</em> com.liferay.mobile.device.rules.service.permission
 	</td>
     <td>com.liferay.mobile.device.rules.service</td>
-    <td>1.1.2</td>
+    <td>1.2.1</td>
   </tr>
   <tr>
     <td>MDRRule</td>
@@ -3508,7 +3508,7 @@ caption {
 	  <em>New:</em> com.liferay.mobile.device.rules.service.permission
 	</td>
     <td>com.liferay.mobile.device.rules.service</td>
-    <td>1.1.2</td>
+    <td>1.2.1</td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstancePersistence</td>
@@ -3616,7 +3616,7 @@ caption {
 	  <em>New:</em> com.liferay.mobile.device.rules.service.permission
 	</td>
     <td>com.liferay.mobile.device.rules.service</td>
-    <td>1.1.2</td>
+    <td>1.2.1</td>
   </tr>
   <tr>
     <td>MDRRuleGroupPersistence</td>
@@ -3814,7 +3814,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>NoSuchActionException</td>
@@ -3832,7 +3832,7 @@ caption {
 	  <em>New:</em> com.liferay.knowledge.base.exception
 	</td>
     <td>com.liferay.knowledge.base.api</td>
-    <td>3.2.1</td>
+    <td>4.0.0</td>
   </tr>
   <tr>
     <td>NoSuchArticleImageException</td>
@@ -3931,7 +3931,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>NoSuchOrderException</td>
@@ -3958,7 +3958,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>NoSuchPageResourceException</td>
@@ -3967,7 +3967,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>NoSuchQuestionException</td>
@@ -4084,7 +4084,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>OrderDateComparator</td>
@@ -4102,7 +4102,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>PageCreateDateComparator</td>
@@ -4111,7 +4111,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.util.comparator
 	</td>
     <td>com.liferay.wiki.service</td>
-    <td>1.1.3</td>
+    <td>1.2.3</td>
   </tr>
   <tr>
     <td>PageTitleComparator</td>
@@ -4120,7 +4120,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.util.comparator
 	</td>
     <td>com.liferay.wiki.service</td>
-    <td>1.1.3</td>
+    <td>1.2.3</td>
   </tr>
   <tr>
     <td>PageTitleException</td>
@@ -4129,7 +4129,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>PageVersionComparator</td>
@@ -4138,7 +4138,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.util.comparator
 	</td>
     <td>com.liferay.wiki.service</td>
-    <td>1.1.3</td>
+    <td>1.2.3</td>
   </tr>
   <tr>
     <td>PageVersionException</td>
@@ -4147,7 +4147,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>PollsChoice</td>
@@ -4489,7 +4489,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>PortletDisplayTemplate</td>
@@ -4525,7 +4525,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.search.internal.hits
 	</td>
     <td>com.liferay.portal.search</td>
-    <td>3.1.2</td>
+    <td>3.1.4</td>
   </tr>
   <tr>
     <td>QuerySuggestionHitsProcessor</td>
@@ -4534,7 +4534,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.search.internal.hits
 	</td>
     <td>com.liferay.portal.search</td>
-    <td>3.1.2</td>
+    <td>3.1.4</td>
   </tr>
   <tr>
     <td>QueryType</td>
@@ -4750,7 +4750,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.4</td>
+    <td>4.0.1</td>
   </tr>
   <tr>
     <td>RequiredCouponException</td>
@@ -4768,7 +4768,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>RequiredTemplateException</td>
@@ -5794,7 +5794,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.search.internal
 	</td>
     <td>com.liferay.portal.search</td>
-    <td>3.1.2</td>
+    <td>3.1.4</td>
   </tr>
   <tr>
     <td>Statistics</td>
@@ -5803,7 +5803,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.monitoring.statistics
 	</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.4</td>
+    <td>4.0.1</td>
   </tr>
   <tr>
     <td>StorageAdapter</td>
@@ -5893,7 +5893,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.monitoring.statistics
 	</td>
     <td>com.liferay.portal.monitoring</td>
-    <td>3.0.4</td>
+    <td>4.0.1</td>
   </tr>
   <tr>
     <td>SynchronousMessageListener</td>
@@ -6010,7 +6010,7 @@ caption {
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
     <td>com.liferay.portal.security.ldap</td>
-    <td>2.0.4</td>
+    <td>2.0.6</td>
   </tr>
   <tr>
     <td>WikiFormatException</td>
@@ -6019,7 +6019,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNode</td>
@@ -6028,7 +6028,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeLocalService</td>
@@ -6037,7 +6037,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeLocalServiceUtil</td>
@@ -6046,7 +6046,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeLocalServiceWrapper</td>
@@ -6055,7 +6055,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeModel</td>
@@ -6064,7 +6064,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodePersistence</td>
@@ -6073,7 +6073,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeService</td>
@@ -6082,7 +6082,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeServiceUtil</td>
@@ -6091,7 +6091,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeServiceWrapper</td>
@@ -6100,7 +6100,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeSoap</td>
@@ -6109,7 +6109,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeUtil</td>
@@ -6118,7 +6118,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiNodeWrapper</td>
@@ -6127,7 +6127,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPage</td>
@@ -6136,7 +6136,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageConstants</td>
@@ -6145,7 +6145,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageDisplay</td>
@@ -6154,7 +6154,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageFinder</td>
@@ -6163,7 +6163,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageLocalService</td>
@@ -6172,7 +6172,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageLocalServiceUtil</td>
@@ -6181,7 +6181,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageLocalServiceWrapper</td>
@@ -6190,7 +6190,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageModel</td>
@@ -6199,7 +6199,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPagePersistence</td>
@@ -6208,7 +6208,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResource</td>
@@ -6217,7 +6217,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalService</td>
@@ -6226,7 +6226,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalServiceUtil</td>
@@ -6235,7 +6235,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalServiceWrapper</td>
@@ -6244,7 +6244,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResourceModel</td>
@@ -6253,7 +6253,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResourcePersistence</td>
@@ -6262,7 +6262,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResourceSoap</td>
@@ -6271,7 +6271,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResourceUtil</td>
@@ -6280,7 +6280,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageResourceWrapper</td>
@@ -6289,7 +6289,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageService</td>
@@ -6298,7 +6298,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageServiceUtil</td>
@@ -6307,7 +6307,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageServiceWrapper</td>
@@ -6316,7 +6316,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageSoap</td>
@@ -6325,7 +6325,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageUtil</td>
@@ -6334,7 +6334,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
   <tr>
     <td>WikiPageWrapper</td>
@@ -6343,7 +6343,7 @@ caption {
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
     <td>com.liferay.wiki.api</td>
-    <td>2.1.0</td>
+    <td>2.2.0</td>
   </tr>
 
 </table>

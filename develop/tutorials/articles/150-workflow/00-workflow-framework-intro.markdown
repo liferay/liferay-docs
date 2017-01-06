@@ -125,8 +125,8 @@ Thankfully, this whole process is easily done with a single call to
 `WorkflowHandlerRegistryUtil.startWorkflowInstance`. There are several methods
 of this name which take a different parameter set, so inspect the
 `WorkflowHandlerRegistryUtil`
-[class](https://docs.liferay.com/portal/7.0/javadocs/portal-service/) and decide
-which is right for your case.
+[class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/workflow/WorkflowHandlerRegistryUtil.html)
+and decide which is right for your case.
 
     WorkflowHandlerRegistryUtil.startWorkflowInstance(fooEntity.getCompanyId(),
             fooEntity.getGroupId(), fooEntity.getUserId(), FooEntity.class.getName(),

@@ -27,7 +27,7 @@ a language file and one Java class.
 ## Implementing a Resource Bundle Loader [](id=implementing-a-resource-bundle-loader)
 
 Create an implementation of
-[`com.liferay.portal.kernel.util.ResourceBundleLoader`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) and override its
+[`com.liferay.portal.kernel.util.ResourceBundleLoader`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) and override its
 `loadResourceBundle` method.
 
         public class ResourceBundleLoaderComponent implements ResourceBundleLoader {
@@ -139,4 +139,5 @@ language keys.
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
-core. Find out how to override those language keys in a [separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys).
+core. Find out how to override those language keys in a
+[separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys).

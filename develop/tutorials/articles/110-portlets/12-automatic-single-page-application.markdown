@@ -165,7 +165,7 @@ To blacklist a portlet from SPA, follow these steps:
 
         _singlePageApplication = false;
 
-3. Alternatively, you can override the [`isSinglePageApplication` method](https://docs.liferay.com/ce/portal/7.0/javadocs/portal-impl/com/liferay/portal/model/impl/PortletImpl.html#isSinglePageApplication--)
+3. Alternatively, you can override the [`isSinglePageApplication` method](@platform-ref@/7.0/javadocs/portal-impl/com/liferay/portal/model/impl/PortletImpl.html#isSinglePageApplication--)
    of the portlet to return `false`.
 
 To disable SPA for a link follow these steps:

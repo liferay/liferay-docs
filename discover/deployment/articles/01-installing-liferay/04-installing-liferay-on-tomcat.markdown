@@ -1,44 +1,44 @@
-# Installing Liferay on Tomcat 8 [](id=installing-liferay-on-tomcat-8)
+# Installing @product@ on Tomcat 8 [](id=installing-liferay-on-tomcat-8)
 
-If you want a fresh installation of Liferay on Tomcat 8, download a
-Liferay Tomcat bundle from
+If you want a fresh installation of @product@ on Tomcat 8, download a
+@product@ Tomcat bundle from
 [https://www.liferay.com/downloads/liferay-portal/available-releases](https://www.liferay.com/downloads/liferay-portal/available-releases).
-Even if you want to install Liferay manually on an existing Tomcat 8
-application server, it can be helpful to download a Liferay Tomcat bundle. The
+Even if you want to install @product@ manually on an existing Tomcat 8
+application server, it can be helpful to download a @product@ Tomcat bundle. The
 bundle contains many required dependencies and configuration files. Before
-proceeding, you should also download the latest Liferay WAR file from
+proceeding, you should also download the latest @product@ WAR file from
 [https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
 as well as the dependencies ZIP file and OSGi JARs ZIP file.
 
-Installing Liferay manually requires these basic steps:
+Installing @product@ manually requires these basic steps:
 
-- Installing Liferay dependencies to your application server
-- Configuring your application server for Liferay
-- Installing the Liferay WAR file to your application server
+- Installing @product@ dependencies to your application server
+- Configuring your application server for @product@
+- Installing the @product@ WAR file to your application server
 
 You'll see the term *Liferay Home* used in this installation guide. *Liferay
-Home* refers to the folder containing your Tomcat server folder. When Liferay
+Home* refers to the folder containing your Tomcat server folder. When @product@
 is installed on Tomcat, the Liferay Home folder contains the Tomcat server
 folder as well as `data`, `deploy`, `license`, and `osgi` folders. You'll also
 see the term `$TOMCAT_HOME` used in this guide. `$TOMCAT_HOME` refers to your
 Tomcat server folder. This folder is usually named `tomcat-[version]` or
 `apache-tomcat-[version]`.
 
-## Installing Liferay Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
 
-Liferay depends on many JARs that are included in the Liferay Tomcat bundle.
+@product@ depends on many JARs that are included in the @product@ Tomcat bundle.
 Some JARs in the bundle are not strictly required but can still be useful. If
-you don't have a Liferay Tomcat bundle, you can download the required JARs from
+you don't have a @product@ Tomcat bundle, you can download the required JARs from
 third-parties, as described below.
 
-1. If you downloaded a Liferay Tomcat bundle, extract the bundle to a temporary
+1. If you downloaded a @product@ Tomcat bundle, extract the bundle to a temporary
    location of your choosing. You'll copy a number of resources from this
-   bundle to your Tomcat server as you manually install Liferay.
+   bundle to your Tomcat server as you manually install @product@.
 
-2. If you have a Liferay Tomcat bundle, copy all the JARs from your bundle's
+2. If you have a @product@ Tomcat bundle, copy all the JARs from your bundle's
    `$TOMCAT_HOME/lib/ext` folder to your application server's
    `$TOMCAT_HOME/lib/ext` folder. If the `$TOMCAT_HOME/lib/ext` folder doesn't
-   exist on your application server, create it. If you don't have a Liferay
+   exist on your application server, create it. If you don't have a @product@
    Tomcat bundle, you'll have to individually download the JARs listed below.
 
     Here's a list of the JARs that you need to copy or download to your
@@ -68,12 +68,12 @@ third-parties, as described below.
 4. Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
    ZIP file that you downloaded into the `osgi` folder.
 
-    Liferay requires an OSGi runtime, and the `osgi` folder provides this with
+    @product@ requires an OSGi runtime, and the `osgi` folder provides this with
     many required JAR files and configuration files.
 
 ## Tomcat Configuration [](id=tomcat-configuration)
 
-Next, you need to configure Tomcat for running Liferay.
+Next, you need to configure Tomcat for running @product@.
 
 1. If you're working with a bundle, copy the `setenv.bat` and `setenv.sh` files
    from your bundle to your `$TOMCAT_HOME/bin` folder. If not, create these
@@ -84,7 +84,7 @@ Next, you need to configure Tomcat for running Liferay.
    environment. If this environment is not available on your server globally,
    you must set its location in this file so Tomcat can run. Do this by pointing
    the `JAVA_HOME` environment variable for your OS to the location of the
-   Liferay supported JRE:
+   @product@ supported JRE:
 
         export JAVA_HOME=/usr/lib/jvm/java-8-jdk
         export PATH=$JAVA_HOME/bin:$PATH
@@ -107,7 +107,7 @@ Next, you need to configure Tomcat for running Liferay.
 2. If you're working with a bundle, copy the
    `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml` file from your bundle to the
    corresponding location in your application server. If not, create this file.
-   The `ROOT.xml` file creates a web application context for Liferay.
+   The `ROOT.xml` file creates a web application context for @product@.
    `ROOT.xml` looks like this:
 
         <Context path="" crossContext="true">
@@ -164,7 +164,7 @@ Next, you need to configure Tomcat for running Liferay.
             permission java.security.AllPermission;
         };
 
-    If you want to enable PACL for Liferay, you have to enable Tomcat's
+    If you want to enable PACL for @product@, you have to enable Tomcat's
     security manager and instruct Catalina to use the
     `$TOMCAT_HOME/conf/catalina.policy` file. See the Enabling PACL section for
     more information.
@@ -203,15 +203,15 @@ Next, you need to configure Tomcat for running Liferay.
 
 ## Tomcat Database Configuration [](id=tomcat-database-configuration)
 
-The easiest way to handle your database configuration is to let Liferay manage
-your data source. If you want to use Liferay's built-in data source, you can
-skip this section. When you first Liferay, you can enter the required database
+The easiest way to handle your database configuration is to let @product@ manage
+your data source. If you want to use @product@'s built-in data source, you can
+skip this section. When you first @product@, you can enter the required database
 configuration information on the Basic Configuration page.
 
 If you want Tomcat to manage your data source, use this procedure:
 
 1. Make sure your database server is installed and working. If it's installed
-   on a different machine, make sure it's accessible from your Liferay machine.
+   on a different machine, make sure it's accessible from your @product@ machine.
 
 2. Add your data source as a resource in the context of your web application
    specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`:
@@ -242,9 +242,9 @@ mail session.
 ## Tomcat Mail Configuration [](id=tomcat-mail-configuration)
 
 As with database configuration, the easiest way to handle mail configuration is
-to let Liferay handle your mail session. If you want to use Liferay's built-in
-mail session, skip this section and use Liferay's Control Panel to configure a
-mail server after Liferay has been installed and started.
+to let @product@ handle your mail session. If you want to use @product@'s built-in
+mail session, skip this section and use @product@'s Control Panel to configure a
+mail server after @product@ has been installed and started.
 
 If you want to manage your mail session with Tomcat, use these instructions:
 
@@ -273,7 +273,7 @@ sure to replace the example mail session values with your own.
         />
     </Context>
 
-Your mail session is configured. Next, you'll make sure Liferay can 
+Your mail session is configured. Next, you'll make sure @product@ can 
 access your mail session and database.
 
 ## Configuring Tomcat-managed Database and Mail Sessions [](id=configuring-tomcat-managed-database-and-mail-sessions)
@@ -281,9 +281,9 @@ access your mail session and database.
 In this section, you'll specify appropriate properties for connecting to your
 database and mail session.
 
-1. If you will use *Liferay Portal* to manage your data source, simply follow
+1. If you will use *@product@* to manage your data source, simply follow
    the instructions on the Basic Configuration page that appears when you first
-   start Liferay.
+   start @product@.
 
     If you are using *Tomcat* to manage your data source, add the following
     line to your `portal-ext.properties` file in your *Liferay Home* folder to
@@ -291,9 +291,9 @@ database and mail session.
 
         jdbc.default.jndi.name=jdbc/LiferayPool
 
-2. If you will use *Liferay Portal* to manage your mail session, you can
-   configure the mail session once Liferay has started. That is, after starting
-   your portal as described in the *Deploying Liferay* section, go to *Control
+2. If you will use *@product@* to manage your mail session, you can
+   configure the mail session once @product@ has started. That is, after starting
+   your portal as described in the *Deploying @product@* section, go to *Control
    Panel &rarr; Server Administration &rarr; Mail* and enter the information
    required to configure your mail session.
 
@@ -303,8 +303,8 @@ database and mail session.
 
         mail.session.jndi.name=mail/MailSession
 
-It's just that easy! Before you deploy Liferay Portal, you should configure
-Portal Access Control Language (PACL) with Liferay on Tomcat.
+It's just that easy! Before you deploy @product@, you should configure
+Portal Access Control Language (PACL) with @product@ on Tomcat.
 
 ## Enabling PACL [](id=enabling-pacl)
 
@@ -353,8 +353,8 @@ There are two ways to approach using Mojarra with Tomcat: upgrading Tomcat's
 context classpath or upgrading Tomcat's global classpath. Both methods require
 adding/editing two JARs, which can be downloaded below:
 
-- [`jsf-api`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-api/2.1.21/)
-- [`jsf-impl`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-impl/2.1.21/)
+- [`jsf-api`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-api/2.1.29-08/)
+- [`jsf-impl`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-impl/2.1.29-08/)
 
 The typical approach for using Mojarra with Tomcat is to include `jsf-api.jar`
 and `jsf-impl.jar` in the `WEB-INF/lib` folder in each JSF project. You can do
@@ -364,28 +364,28 @@ with the scope set as `compile` (the default) in each JSF project:
     <dependency>
         <groupId>com.sun.faces</groupId>
         <artifactId>jsf-api</artifactId>
-        <version>2.1.21</version>
+        <version>2.1.29-08</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>com.sun.faces</groupId>
         <artifactId>jsf-impl</artifactId>
-        <version>2.1.21</version>
+        <version>2.1.29-08</version>
         <scope>compile</scope>
     </dependency>
 
 Although it is possible to install Mojarra in the Tomcat global classpath, it
 will not work properly without some small modifications to the `jsf-impl.jar`
 dependency. The problem stems from the fact that the Mojarra
-[`ConfigureListener`](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/src/main/java/com/sun/faces/config/ConfigureListener.java)
+[`ConfigureListener`](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/src/main/java/com/sun/faces/config/ConfigureListener.java)
 class is automatically registered for all contexts under `tomcat/webapps`
 because it is specified as a `<listener>` in the
-[META-INF/jsf-jsf_core.tld](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/conf/share/jsf_core.tld)
+[META-INF/jsf-jsf_core.tld](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/conf/share/jsf_core.tld)
 descriptor inside the `jsf-impl.jar` dependency.
 Additionally, the
-[META-INF/services/javax.faces.ServletContainerInitializer](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/conf/share/javax.servlet.ServletContainerInitializer)
+[META-INF/services/javax.faces.ServletContainerInitializer](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/conf/share/javax.servlet.ServletContainerInitializer)
 will cause the
-[FacesInitializer](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/src/main/java/com/sun/faces/config/FacesInitializer.java)
+[FacesInitializer](https://github.com/javaserverfaces/mojarra/blob/2.1.29-08/jsf-ri/src/main/java/com/sun/faces/config/FacesInitializer.java)
 class to auto-register the `ConfigureListener` as well. Consequently, every
 request issued in all contexts invokes the Mojarra `ConfigureListener`. This
 can be a potential performance problem in a webapp environment and causes
@@ -408,7 +408,7 @@ To upgrade Tomcat's global classpath, follow the steps below:
 
 4. Extract the Mojarra `jsf-impl.jar` dependency into the temporary folder:
 
-        jar xf ../jsf-impl-2.1.21.jar
+        jar xf ../jsf-impl-2.1.29-08.jar
 
         5. Open the `META-INF/jsf_core.tld` file and remove the following lines:
 
@@ -422,7 +422,7 @@ To upgrade Tomcat's global classpath, follow the steps below:
 
 7. Overwrite the Mojarra `jsf-impl.jar` dependency by creating a new archive:
 
-        jar cf ../jsf-impl-2.1.21.jar META-INF/ com/
+        jar cf ../jsf-impl-2.1.29-08.jar META-INF/ com/
 
 8. Remove the temporary folder:
 
@@ -438,7 +438,7 @@ To upgrade Tomcat's global classpath, follow the steps below:
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-init</artifactId>
-            <version>3.1.3-ga4</version>
+            <version>3.2.4-ga5</version>
         </dependency>
 
     9.2 Specify the Mojarra `ConfigureListener` as a listener in the
@@ -454,13 +454,13 @@ To upgrade Tomcat's global classpath, follow the steps below:
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-api</artifactId>
-            <version>2.1.21</version>
+            <version>2.1.29-08</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-impl</artifactId>
-            <version>2.1.21</version>
+            <version>2.1.29-08</version>
             <scope>provided</scope>
         </dependency>
 
@@ -472,22 +472,22 @@ Tomcat, visit the
 [Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
 section.
 
-## Deploying Liferay [](id=deploying-liferay)
+## Deploying @product@ [](id=deploying-liferay)
 
-Now you're ready to deploy Liferay using your Liferay WAR file.
+Now you're ready to deploy @product@ using your @product@ WAR file.
 
-1. If you are manually installing Liferay on a clean Tomcat server, delete the
+1. If you are manually installing @product@ on a clean Tomcat server, delete the
    contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This removes the default
    Tomcat home page.
 
-2. Extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
+2. Extract the @product@ `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
 
-    Now it's time to launch Liferay Portal on Tomcat!
+    Now it's time to launch @product@ on Tomcat!
 
 3. Start Tomcat by navigating to `$TOMCAT_HOME/bin` and executing `./startup.sh`
    or `startup.bat`. Alternatively, you can use `./catalina.sh run` or
    `catalina.bat run`. Using one of the latter commands makes your terminal or
-   command prompt tail Liferay's log file. This can be useful if you want to
-   see the startup activities performed by Liferay.
+   command prompt tail @product@'s log file. This can be useful if you want to
+   see the startup activities performed by @product@.
 
-Congratulations on successfully installing and deploying Liferay on Tomcat!
+Congratulations on successfully installing and deploying @product@ on Tomcat!

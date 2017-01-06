@@ -37,7 +37,7 @@ $$$
 
 In this tutorial, you'll learn how to create your own entries to customize the
 Control Menu. Make sure to read the
-[Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-categories
+[Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-categories)
 before beginning this tutorial. This tutorial assumes you have knowledge on
 creating a panel category. You'll begin by creating an entry for the Control
 Menu.
@@ -69,7 +69,7 @@ Menu.
     ![Figure 3: This image shows where your entry will reside depending on the category you select.](../../images/control-menu-areas.png)
 
     To specify the category, reference the appropriate key in the
-    [ProductNavigationControlMenuCategoryKeys](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/constants/ProductNavigationControlMenuCategoryKeys.html)
+    [ProductNavigationControlMenuCategoryKeys](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/constants/ProductNavigationControlMenuCategoryKeys.html)
     class. For example, the following property would place your entry in the
     middle portion of the Control Menu:
 
@@ -81,11 +81,11 @@ Menu.
     `ProductNavigationControlMenuEntry.class` service.
 
 4. Implement the
-   [ProductNavigationControlMenuEntry](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html)
+   [ProductNavigationControlMenuEntry](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html)
    interface. You can also extend the
-   [BaseProductNavigationControlMenuEntry](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.html)
+   [BaseProductNavigationControlMenuEntry](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.html)
    or
-   [BaseJSPProductNavigationControlMenuEntry](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/BaseJSPProductNavigationControlMenuEntry.html)
+   [BaseJSPProductNavigationControlMenuEntry](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/BaseJSPProductNavigationControlMenuEntry.html)
    abstract classes. Typically, the `BaseProductNavigationControlMenuEntry` is
    extended for basic entries (e.g.,
    `IndexingProductNavigationControlMenuEntry`) that only display a link with
@@ -110,11 +110,11 @@ Menu.
         }
 
     By default, Lexicon icons are expected to be returned. This is because the 
-    [`BaseProductNavigationControlMenuEntry.getMarkupView` method](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.html#getMarkupView(javax.servlet.http.HttpServletRequest))
+    [`BaseProductNavigationControlMenuEntry.getMarkupView` method](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.html#getMarkupView-javax.servlet.http.HttpServletRequest-)
     returns `lexicon`. To view all the Lexicon icons available, see
     [http://liferay.github.io/lexicon/content/icons-lexicon/](http://liferay.github.io/lexicon/content/icons-lexicon/).
     You can also return FontAwesome icons, but you must implement the
-    [ProductNavigationControlMenuEntry.getMarkupView(...)](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.menu.api/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html#getMarkupView(javax.servlet.http.HttpServletRequest))
+    [ProductNavigationControlMenuEntry.getMarkupView(...)](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html#getMarkupView-javax.servlet.http.HttpServletRequest-)
     method in your class and have it return `null`. Then you can return
     FontAwesome icons for the `getIcon(...)` method. To view all the
     FontAwesome icons available, see the

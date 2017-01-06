@@ -13,17 +13,17 @@ AntiSamy sanitizer and any existing configured sanitizers to scrub user input
 to blogs entries, calendar events, message boards posts, wiki pages, and web
 content articles.
 
-At the time of this writing, Liferay's AntiSamy module uses OWASP AntiSamy
+At the time of this writing, @product@'s AntiSamy module uses OWASP AntiSamy
 1.5.3. It's enabled by default. To configure the AntiSamy module, navigate to
-Liferay's *Control Panel*, go to *System Settings*, open the *Foundation*
+@product@'s *Control Panel*, go to *System Settings*, open the *Foundation*
 category and click on *AntiSamy Sanitizer*.
 
-![Figure 1: Liferay's AntiSamy configuration options allow you to specify both a blacklist and a whitelist.](../../../images/antisamy.png)
+![Figure 1: @product@'s AntiSamy configuration options allow you to specify both a blacklist and a whitelist.](../../../images/antisamy.png)
 
 Using both a blacklist and a whitelist allows you to easily define subsets of
 entities that should be sanitized or not sanitized. By default, everything is
 sanitized except for `JournalArticle`. `JournalArticle` is the entity name for
-web content articles in Liferay. But suppose you don't want to sanitize Liferay
+web content articles in @product@. But suppose you don't want to sanitize @product@
 entities except for message board posts. This might be reasonable if your
 portal only allows message boards posts to be created or updated by untrusted
 users.

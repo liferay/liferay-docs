@@ -76,7 +76,7 @@ will be used.
 
 There are a bunch of locales available by default in Liferay. Look in the
 `portal.properties` file
-[file](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
+[file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
 to find them.
 
     locales=ar_SA,eu_ES,bg_BG,ca_AD,ca_ES,zh_CN,zh_TW,hr_HR,cs_CZ,da_DK,nl_NL,

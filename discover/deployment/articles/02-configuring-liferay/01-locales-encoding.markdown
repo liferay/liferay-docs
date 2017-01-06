@@ -54,15 +54,14 @@ unique URLs for specific languages using the `I18nServlet` by editing
 		<servlet-name>I18n Servlet</servlet-name>
 		<url-pattern>/ar/*</url-pattern>
 	</servlet-mapping>
-	.
-	.
+    .
+    .
 	.
 	<servlet-mapping>
 		<servlet-name>I18n Servlet</servlet-name>
 		<url-pattern>/de/*</url-pattern>
 	</servlet-mapping>
 	
-
 The defaults that Liferay provides should be sufficient for nearly all
 circumstances. Because this requires stopping and possibly redeploying @product@
 (depending on your app server), test the defaults and make sure you really need

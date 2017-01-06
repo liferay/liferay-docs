@@ -209,7 +209,7 @@ The theme template for pop up dialogs for the theme's portlets.
 
 The theme template for the theme's portlets. If your theme uses Application 
 Decorators, you can modify this file to create application decorator specific 
-theme settings. See the [Application Decorators tutorial](/develop/tutorials/-/knowledge_base/7-0/application-decorators) 
+theme settings. See the [Portlet Decorators tutorial](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators) 
 for more info.
 
 ### gulpfile.js [](id=gulpfile-js)
@@ -238,10 +238,10 @@ Used for custom JavaScript.
 
 Contains basic information for the theme. If your theme has [theme settings](/develop/learning-paths/themes/-/knowledge_base/6-2/making-configurable-theme-settings)
 , they are defined in this file. For a full explanation of this file please see
-the [Definitions docs](https://docs.liferay.com/portal/7.0/definitions/liferay-look-and-feel_7_0_0.dtd.html).
+the [Definitions docs](@platform-ref@/7.0-latest/definitions/liferay-look-and-feel_7_0_0.dtd.html).
 
 ### liferay-plugin-package.properties [](id=liferay-plugin-package-properties)
 
 Contains general properties for the theme. [Resources Importer]{/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme} 
 configuration settings are also placed in this file. For a full explanation of 
-the properties available for this file please see the [7.0 Propertiesdoc](https://docs.liferay.com/portal/7.0/propertiesdoc/liferay-plugin-package_7_0_0.properties.html).
+the properties available for this file please see the [7.0 Propertiesdoc](@platform-ref@/7.0-latest/propertiesdoc/liferay-plugin-package_7_0_0.properties.html).

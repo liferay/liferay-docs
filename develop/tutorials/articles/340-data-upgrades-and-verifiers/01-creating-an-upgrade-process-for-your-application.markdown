@@ -79,12 +79,12 @@ database schema. It can execute SQL commands and DDL files to upgrade the data.
 As a developer, you can encapsulate upgrade logic in multiple upgrade step
 classes per schema version. 
 
-The upgrade class extends the [`UpgradeProcess` base class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html),
-which implements the [`UpgradeStep` interface](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeStep.html).
+The upgrade class extends the [`UpgradeProcess` base class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html),
+which implements the [`UpgradeStep` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeStep.html).
 Each upgrade step must override the `UpgradeProcess` class's method `doUpgrade`
 with instructions for modifying the database.
 
-Since `UpgradeProcess` extends the [`BaseDBProcess` class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/dao/db/BaseDBProcess.html),
+Since `UpgradeProcess` extends the [`BaseDBProcess` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/db/BaseDBProcess.html),
 you can use its `runSQL` and `runSQLTemplate*` methods to execute your SQL
 commands and SQL DDL, respectively. 
 
@@ -92,7 +92,7 @@ If you want to create, modify, or drop tables or indexes by executing DDL
 sentences from an SQL file, make sure to use ANSI SQL only. Doing this assures
 the commands work on different databases.
 
-If you need to use non-ANSI SQL, it's best to write it in the [`UpgradeProcess` class's](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html)
+If you need to use non-ANSI SQL, it's best to write it in the [`UpgradeProcess` class's](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html)
 `runSQL` or `alter` methods, along with tokens that allow porting the sentences
 to different databases. 
 
@@ -141,7 +141,7 @@ For example, consider the journal-service module's [`UpgradeSchema` upgrade step
 
 The above example class `UpgradeSchema` uses the `runSQLTemplateString` method
 to execute ANSI SQL DDL from an SQL file. To modify column names and column
-types, it uses the `alter` method and [`UpgradeProcess`'s](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html)
+types, it uses the `alter` method and [`UpgradeProcess`'s](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/upgrade/UpgradeProcess.html)
 `UpgradeProcess.AlterColumnName` and `UpgradeProcess.AlterColumnType` inner
 classes as token classes.
 
@@ -257,9 +257,9 @@ to the OSGi framework as the module's upgrade step registrator. The attribute
 `immediate = true` tells the OSGi framework to activate this module immediately
 after it's installed. 
 
-The registrator implements the [`UpgradeStepRegistrator` interface](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal/com.liferay.portal.upgrade/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html),
-which is in the [`com.liferay.portal.upgrade` module](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.upgrade/).
-The interface declares a [`register` method](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/foundation/portal/com.liferay.portal.upgrade/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html)
+The registrator implements the [`UpgradeStepRegistrator` interface](@app-ref@/foundation/latest/javadocs/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html),
+which is in the `com.liferay.portal.upgrade` module. The interface declares a
+[`register` method](@app-ref@/foundation/latest/javadocs/com/liferay/portal/upgrade/registry/UpgradeStepRegistrator.html#register-com.liferay.portal.upgrade.registry.UpgradeStepRegistrator.Registry-)
 that the registrator must override. In that method, the registrator implements
 all the module's upgrade registrations. 
 
@@ -378,7 +378,7 @@ upgraded to the latest database schema.
 
 As a convenience, configuring the Bnd header `Liferay-Require-SchemaVersion` to
 the latest schema version is all that's required to assure the database is
-upgraded for [Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+upgraded for [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 services.
 
 For all other services, the developer can assure database upgrade by specifying
@@ -390,7 +390,7 @@ Here are the target's required attributes:
 - `release.bundle.symbolic.name`: module's bundle symbolic name
 - `release.schema.version`: module's current schema version
 
-For example, the `com.liferay.comment.page.comments.web` module's [`PageCommentsPortlet` class](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/collaboration/comment/com.liferay.comment.page.comments.web/com/liferay/comment/page/comments/web/internal/portlet/PageCommentsPortlet.html)
+For example, the `com.liferay.comment.page.comments.web` module's [`PageCommentsPortlet` class](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/collaboration/comment/comment-page-comments-web/src/main/java/com/liferay/comment/page/comments/web/internal/portlet/PageCommentsPortlet.java)
 assures upgrading to schema version `1.0.0` by defining the following reference:
 
     @Reference(

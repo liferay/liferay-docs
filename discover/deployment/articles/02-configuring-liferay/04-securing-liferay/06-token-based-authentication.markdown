@@ -11,13 +11,13 @@ the basis of propagating a token via one of the following mechanisms:
 
 The authentication token contains either the @product@ user's screen name
 or email address, whichever @product@ has been configured to use for the
-particular company (portal instance). Recall that Liferay supports three authentication methods:
+particular company (portal instance). Recall that @product@ supports three authentication methods:
 
 - By email address
 - By screen name
 - By user ID
 
-Note that Liferay's token-based authentication mechanism only supports email
+Note that @product@'s token-based authentication mechanism only supports email
 address and screen name. If the portal is configured to use user ID when a
 token-based authentication is attempted, the `TokenAutoLogin` class logs this
 warning:
@@ -31,7 +31,7 @@ malicious @product@ user impersonation that otherwise might be possible by
 sending HTTP requests directly to @product@ from the client's web browser.
 
 Token based authentication is disabled by default. To manage token based SSO
-authentication, navigate to Liferay's Control Panel, click on *System
+authentication, navigate to @product@'s Control Panel, click on *System
 Settings*, then find and click on the *TokenConfiguration* module. Here are the
 configuration options for the Token SSO module:
 
@@ -58,5 +58,5 @@ earlier, the options are:
 from the specified location.
 
 @product@'s token-based SSO authentication mechanism is highly flexible
-and compatible with any SSO solution which can provide it with a valid Liferay
+and compatible with any SSO solution which can provide it with a valid @product@
 user's screen name or email address. These include Shibboleth and SiteMinder.

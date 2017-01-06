@@ -76,7 +76,7 @@ attributes for the tags. The steps are laid out in a natural order, however you
 can jump to any section you wish.
 
 For a full list of the available attributes for the form tags covered, checkout
-the API docs for the [AUI Tags](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/tld-summary.html).
+the API docs for the [AUI Tags](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/tld-summary.html).
 
 Go ahead and get started by adding the form tag next.
 
@@ -100,7 +100,7 @@ namespace in front of the `name` and `id` attributes. This is also the default
 behavior for the `aui:input` tag as well.
 
 You can find a full list of the available attributes for the `<aui:form>`
-tag in the [AUI Form Taglib Docs](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/form.html).
+tag in the [AUI Form Taglib Docs](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/form.html).
 
 Now that your form element is created, you can add your fieldsets next.
 
@@ -145,7 +145,7 @@ collapsible, using the following pattern:
     </aui:fieldset>
 
 You can find a full list of the available attributes for the `<aui:fieldset>`
-tag in the [AUI Fieldset Taglib Docs](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/fieldset.html).
+tag in the [AUI Fieldset Taglib Docs](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/fieldset.html).
 
 Next, you can add your input fields.
 
@@ -186,7 +186,7 @@ The `type` attribute supports the following types:
 - url: Adds a URL input field.
 
 For a full list of all the attributes available for the `<aui:input>` tag, check
-out the [AUI Input Taglib Docs](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/input.html).
+out the [AUI Input Taglib Docs](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/input.html).
 
 Once you've added all of your input fields, you can move onto the form's buttons
 next.
@@ -220,15 +220,14 @@ your button:
     />
 
 For a full list of the attributes available for the `<aui:button>` tag, check
-out the [AUI Button Taglib Docs](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/aui/button.html).
+out the [AUI Button Taglib Docs](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/button.html).
 
 Your form is complete!
 
 ## Related Topics [](id=related-topics)
 
-[Application Decorators](/develop/tutorials/-/knowledge_base/7-0/application-decorators)
+[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators)
 
 [Basic Forms](/discover/portal/-/knowledge_base/7-0/basic-forms)
 
 [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-

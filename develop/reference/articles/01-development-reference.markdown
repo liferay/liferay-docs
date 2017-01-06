@@ -658,5 +658,5 @@ JavaScript APIs are available within portlets, templates and themes.
 
 ## Descriptor Definitions [](id=descriptor-definitions)
 
-[**DTDs**](http://docs.liferay.com/ce/portal/7.0-latest/definitions/): Describes the XML
+[**DTDs**](@platform-ref@/7.0-latest/definitions/): Describes the XML
 files used in configuring @product@ apps, @product@ plugins, and @product-ver@.

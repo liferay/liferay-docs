@@ -7,12 +7,12 @@ it [here](http://lucene.apache.org/solr/).
 Although [Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch)
 is the default search engine that ships with @product@, it's perfectly valid to
 use Solr instead. In particular, if you've already been using Solr with a
-previous version of Liferay, or your deployment system (for example, your OS or
+previous version of @product@, or your deployment system (for example, your OS or
 JVM) [isn't supported by Elasticsearch](https://www.elastic.co/support/matrix),
-you might choose to use Solr to search and index your Liferay data.
+you might choose to use Solr to search and index your @product@ data.
 
 Liferay's support for Solr is compatible with Solr versions 5.2.x through 5.5.x.
-To make Liferay and Solr talk to each other, you'll need to install the Liferay
+To make @product@ and Solr talk to each other, you'll need to install the Liferay
 Solr adapter. There are two ways to do this:
 
 1. Navigate to the [Liferay Marketplace](https://web.liferay.com/marketplace/)
@@ -31,14 +31,14 @@ As you proceed, these terms will be useful to keep in mind:
 *Solr Home*: The center of the Solr system (pun intended). This directory is
 `solr-[version]/server/solr`.
 
-*Liferay Home*: The root folder of your Liferay installation. It contains
+*Liferay Home*: The root folder of your @product@ installation. It contains
 the `osgi`, `deploy`, `data`, and `license` folders, among others.
 
-Before configuring Liferay for Solr, you need to install and set up Solr.
+Before configuring @product@ for Solr, you need to install and set up Solr.
 
 ## Installing and Configuring Solr 5 [](id=installing-and-configuring-solr-5)
 
-To install and properly configure Solr for Liferay:
+To install and properly configure Solr for @product@:
 
 1. Download [Solr](http://archive.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.zip) and unzip it.
 
@@ -66,7 +66,7 @@ To install and properly configure Solr for Liferay:
         Solr_Home/liferay/conf
 
     This replaces the current `solrconfig.xml` and `schema.xml` files with ones
-    that tell Solr how to index data coming from Liferay.
+    that tell Solr how to index data coming from @product@.
 
 7. Create a `core.properties` file in `Solr_Home/liferay`, and add these
    contents:
@@ -103,11 +103,11 @@ To install and properly configure Solr for Liferay:
    `http://localhost:8983/solr/#/~cores` (assuming you're testing locally with
    `localhost` as your host), and confirm that the `liferay` core is available.
 
-Solr is now installed. Next install and configure Liferay's Solr adapter.
+Solr is now installed. Next install and configure @product@'s Solr adapter.
 
 ## Installing and Configuring the Liferay Solr Adapter [](id=installing-and-configuring-the-liferay-solr-adapter)
 
-Since Elasticsearch is the default search engine in Liferay, the Elasticsearch
+Since Elasticsearch is the default search engine in @product@, the Elasticsearch
 adapter is already installed and running. Stop it before configuring the Solr
 adapter.
 
@@ -128,10 +128,10 @@ Stop the Elasticsearch adapter by entering
 In the case above, the `[bundle ID]` is `239`. Now you can install and configure
 the Solr adapter:
 
-1. Start Liferay, then deploy the Solr adapter by copying the LPKG you
+1. Start @product@, then deploy the Solr adapter by copying the LPKG you
    downloaded to `Liferay_Home/deploy`.
 
-    You'll see a `STARTED` message in your Liferay log once the solr adapter is
+    You'll see a `STARTED` message in your @product@ log once the solr adapter is
     installed. Here's what the log message looks like:
 
         08:48:24,165 INFO [localhost-startStop-1][BundleStartStopLogger:35] STARTED
@@ -141,16 +141,16 @@ the Solr adapter:
    &rarr; *Server Administration*, and click *Execute* next to the *Reindex all
    search indexes* option.
 
-   ![Figure 1: Once the Solr adapter is installed, you can reindex your Liferay
+   ![Figure 1: Once the Solr adapter is installed, you can reindex your @product@
    data against your Solr server.](../../../images/solr-reindex.png)
 
 In production deployments, specify your edits to the Solr adapter's default
 configurations using a `.cfg` file deployed to the `Liferay_Home/osgi/configs`
-folder. During testing and development, the System Settings app in Liferay's
+folder. During testing and development, the System Settings app in @product@'s
 Control Panel &rarr; Configuration section is convenient for editing the default
 configurations.
 
-![Figure 2: You can configure Solr from Liferay's System Settings application.
+![Figure 2: You can configure Solr from @product@'s System Settings application.
 This is most useful during development and testing.](../../../images/solr-system-settings.png)
 
 ## High Availability with SolrCloud [](id=high-availability-with-solrcloud)
@@ -164,7 +164,7 @@ coordination service for managing distributed systems, such as your SolrCloud
 cluster.
 
 The steps included here should be considered the bare minimum of what must be
-done to configure SolrCloud with Liferay. For example, these instructions cover
+done to configure SolrCloud with @product@. For example, these instructions cover
 configuring SolrCloud on a single machine, whereas a production environment
 would feature multiple physical or virtual machines. These instructions also
 assume you've followed the earlier section on *Installing and Configuring Solr
@@ -180,7 +180,7 @@ assume you've followed the earlier section on *Installing and Configuring Solr
    folder you just created.
 
     The `configset/liferay_configs` folder is used to configure the SolrCloud
-    liferay collection, and is uploaded to ZooKeeper. By copying the `conf`
+    @product@ collection, and is uploaded to ZooKeeper. By copying the `conf`
     folder from the `liferay` server configured earlier, you're using the
     `schema.xml` and `solrconfig.xml` files provided with the Liferay Solr
     Adapter.
@@ -258,7 +258,7 @@ Liferay's Solr adapter.
 
         clientType=CLOUD
 
-2. Start Liferay if it's not running already.
+2. Start @product@ if it's not running already.
 
 +$$$
 
@@ -269,9 +269,9 @@ article](/discover/reference/-/knowledge_base/7-0/solr-settings).
 $$$
 
 
-Now you're able to configure Liferay for Solr, and Solr for Liferay. Remember
-that Elasticsearch is the default search engine for Liferay, so if you're not
+Now you're able to configure @product@ for Solr, and Solr for @product@. Remember
+that Elasticsearch is the default search engine for @product@, so if you're not
 constrained to use Solr or already a Solr expert, consider Elasticsearch for you
 search engine requirements. If you do use Solr, then you can tell all your
-colleagues that your Liferay installation's search capability is Solr powered
+colleagues that your @product@ installation's search capability is Solr powered
 (pun intended).
