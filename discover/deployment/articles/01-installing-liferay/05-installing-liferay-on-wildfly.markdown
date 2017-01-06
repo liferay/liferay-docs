@@ -2,7 +2,9 @@
 
 If you want a fresh installation of @product@ on Wildfly 10, simply download a
 @product@ Wildfly bundle from
-[https://www.liferay.com/downloads/liferay-portal/available-releases](https://www.liferay.com/downloads/liferay-portal/available-releases).  Liferay Digital Enterprise 7.0 bundled with Wildfly 10 is available on [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
+[https://www.liferay.com/downloads](https://www.liferay.com/downloads).  
+Liferay Digital Enterprise 7.0 bundled with Wildfly 10 is available on 
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
 Even if you want to manually install @product@ on an existing Wildfly 10
 application server, it can be helpful to download a @product@ Wildfly bundle. The
 bundle contains many required dependencies and configuration files. Before
