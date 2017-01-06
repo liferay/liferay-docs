@@ -113,7 +113,7 @@ plugin. It also adds three tasks to your project:
 Name | Depends On | Type | Description
 ---- | ---------- | ---- | -----------
 `appTLDDoc` | `copyAppTLDDocResources`, the [`validateTLD`](#validatetld) tasks of the subprojects | [`TLDDocTask`](#tlddoctask) | Generates tag library documentation for the app.
-`copyAppTLDDocResources` | \- | [`Copy`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Copy.html) | Copies the tag library documentation resources defined as [inputs](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/TaskInputs.html#getFiles()) for the [`copyTDLDocResources`](#copytlddocresources) tasks of the subprojects, aggregating them into the [destination directory](#destinationdir) of the `appTLDDoc` task.
+`copyAppTLDDocResources` | \- | [`Copy`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Copy.html) | Copies the tag library documentation resources defined as [inputs](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/TaskInputs.html#getFiles\(\)) for the [`copyTDLDocResources`](#copytlddocresources) tasks of the subprojects, aggregating them into the [destination directory](#destinationdir) of the `appTLDDoc` task.
 `jarAppTLDDoc` | `appTLDDoc` | [`Jar`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html) | Assembles a JAR archive containing the tag library documentation files for this app.
 
 The `appTLDDoc` task is automatically configured with sensible defaults:
@@ -144,7 +144,7 @@ Method | Description
 ### TLDDocTask [](id=tlddoctask)
 
 Tasks of type `TLDDocTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
-so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args(java.tlddoc.Iterable))
+so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.tlddoc.Iterable\))
 and [`maxHeapSize`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:maxHeapSize),
 are available. They also have the following properties set by default:
 
@@ -170,7 +170,7 @@ Property Name | Type | Default Value | Description
 `xsltDir` | `File` | `null` | The directory which contains the custom XSLT stylesheets used by the Tag Library Documentation Generator to produce the final documentation files. It sets the `-xslt` argument.
 
 The properties of type `File` support any type that can be resolved by
-[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.tlddoc.Object)).
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.tlddoc.Object\)).
 
 #### Task Methods [](id=task-methods)
 
@@ -181,8 +181,8 @@ class.
 ### ValidateSchemaTask [](id=validateschematask)
 
 Tasks of type `ValidateSchemaTask` extend [`SourceTask`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html),
-so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include(java.lang.Iterable))
-and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude(java.lang.Iterable)),
+so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include\(java.lang.Iterable\))
+and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude\(java.lang.Iterable\)),
 are available.
 
 Tasks of this type invoke the [`schemavalidate`](http://ant.apache.org/manual/Tasks/schemavalidate.html)

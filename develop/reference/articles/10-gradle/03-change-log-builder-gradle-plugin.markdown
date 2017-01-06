@@ -82,7 +82,7 @@ Property Name | Type | Default Value | Description
 `rangeStart` | `String` | `null` | The hash of the first commit to consider. If not set, it corresponds to the hash of the tip of the current branch.
 <a name="ticketidprefixes"></a>`ticketIdPrefixes` | `Set<String>` | `["CLDSVCS", "LPS", "SOS", "SYNC"]` | The valid prefix of the Git commit messages to add to the change log. For example, if a commit message is `"LPS-123 Bugfix"`, `"LPS-123"` will be added to the change log.
 
-The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
+The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
 

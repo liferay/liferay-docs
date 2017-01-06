@@ -81,7 +81,7 @@ Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `inputDir` | `File` | `null` | A directory containing XSD files from which to generate [Apache XMLBeans](https://xmlbeans.apache.org/) bindings.
 
-The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)).
+The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\)).
 
 ## Additional Configuration [](id=additional-configuration)
 

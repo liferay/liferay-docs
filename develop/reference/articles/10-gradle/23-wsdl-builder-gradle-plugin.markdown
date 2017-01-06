@@ -68,8 +68,8 @@ applied.
 ### BuildWSDLTask [](id=buildwsdltask)
 
 Tasks of type `FormatWSDLTask` extend [`SourceTask`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html),
-so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include(java.lang.Iterable))
-and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude(java.lang.Iterable)),
+so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include\(java.lang.Iterable\))
+and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude\(java.lang.Iterable\)),
 are available.
 
 #### Task Properties [](id=task-properties)
@@ -85,7 +85,7 @@ Property Name | Type | Default Value | Description
 `includeSource` | `boolean` | `true` | Whether to package the client stub Java files in the JAR file's  `OSGI-OPT/src` directory. If `buildLibs` is `false`, this property has no effect.
 `includeWSDLs` | `boolean` | `true` | Whether to configure the [`processResources`](https://docs.gradle.org/current/userguide/java_plugin.html#sec:resources) task to include the WSDL files in the project JAR's `wsdl` directory.
 
-The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)).
+The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\)).
 
 #### Task Methods [](id=task-methods)
 

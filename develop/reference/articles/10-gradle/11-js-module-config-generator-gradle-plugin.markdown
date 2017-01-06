@@ -14,7 +14,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.module.config.generator", version: "2.1.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.module.config.generator", version: "2.1.5"
     }
 
     repositories {
@@ -91,7 +91,7 @@ They also have the following properties set by default:
 
 Property Name | Default Value
 ------------- | -------------
-[`includes`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/util/PatternFilterable.html#getIncludes()) | `["**/*.es.js*", "**/*.soy.js*"]`
+[`includes`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/util/PatternFilterable.html#getIncludes\(\)) | `["**/*.es.js*", "**/*.soy.js*"]`
 `scriptFile` | `"${downloadLiferayModuleConfigGenerator.moduleDir}/bin/index.js"`
 
 The purpose of this task is to run the Liferay AMD Module Config Generator from
@@ -114,6 +114,6 @@ Property Name | Type | Default Value | Description
 <a name="outputfile"></a>`outputFile` | `File` | `null` | The file where the generated configuration is stored. It sets the `--output` argument.
 <a name="sourcedir"></a>`sourceDir` | `File` | `null` | The directory that contains the files to process.
 
-The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
+The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the `int`
 and `String` properties to defer evaluation until task execution.

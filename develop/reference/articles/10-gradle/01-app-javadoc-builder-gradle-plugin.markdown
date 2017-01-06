@@ -67,6 +67,6 @@ Property Name | Default Value
 ------------- | -------------
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html#org.gradle.api.tasks.javadoc.Javadoc:classpath) | The `javadoc.classpath` of all the subprojects.
 [`destinationDir`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html#org.gradle.api.tasks.javadoc.Javadoc:destinationDir) | `${project.buildDir}/docs/javadoc`
-[`options.encoding`](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/MinimalJavadocOptions.html#getEncoding()) | `"UTF-8"`
+[`options.encoding`](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/MinimalJavadocOptions.html#getEncoding\(\)) | `"UTF-8"`
 [`source`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html#org.gradle.api.tasks.javadoc.Javadoc:source) | The `javadoc.source` of all the subprojects.
 [`title`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html#org.gradle.api.tasks.javadoc.Javadoc:title) | `project.reporting.apiDocTitle`
