@@ -452,7 +452,7 @@ project's `service.xml` file's when you're creating your own:
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
         "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
-        <service-builder package-path="com.liferay/docs.eventlisting">
+        <service-builder package-path="com.liferay.docs.eventlisting">
             <author>Joe Bloggs</author>
             <namespace>Event</namespace>
 
