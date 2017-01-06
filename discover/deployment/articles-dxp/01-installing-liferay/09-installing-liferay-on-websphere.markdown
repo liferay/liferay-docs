@@ -11,8 +11,8 @@ intermittently to save your changes.
 
 $$$
 
-For @product@ to work correctly, WebSphere 8.5.5 Fix Pack 9 must be installed. 
-You can find more information about this fix pack 
+For @product@ to work correctly, WebSphere 8.5.5 Fix Pack 9 (or later) must be
+installed.  You can find more information about this fix pack 
 [here](http://www-01.ibm.com/support/docview.wss?uid=swg24041819). 
 
 Please also note that @product@ doesn't support the WebSphere Application
@@ -27,13 +27,13 @@ You should also read the following articles to familiarize yourself with
 
 Note that the 
 [*Liferay Home* folder](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
-is important to the operation of @product@. In Liferay Home, @product@ creates certain files 
-and folders that it needs to run. On WebSphere, Liferay Home is typically 
-`[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
+is important to the operation of @product@. In Liferay Home, @product@ creates
+certain files and folders that it needs to run. On WebSphere, Liferay Home is
+typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
 
-And lastly, download @product@'s WAR file and dependencies from the customer 
+And lastly, download @product@'s WAR file and dependencies from the customer
 portal on 
-[liferay.com](https://www.liferay.com). 
+[liferay.com](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
 You'll need the following files:
 
 - `liferay-dxp-digital-enterprise-[version].war`: @product@ WAR file
@@ -47,6 +47,7 @@ You'll need the following files:
 Without any further ado, get ready to install @product@ in WebSphere! 
 
 ## Preparing WebSphere for @product@ [](id=preparing-websphere-for-liferay-dxp)
+_Creating a Profile for Liferay_
 
 When the application server binaries have been installed, start the *Profile
 Management Tool* to create a profile appropriate for @product@. 
@@ -107,39 +108,56 @@ Management Tool* to create a profile appropriate for @product@.
 WebSphere then creates your profile and finishes with a message telling you the
 profile was created successfully. Awesome! Your profile is complete. Now there
 are a few things you need to configure in your application server. 
+ 
+![Figure 2: Example of the settings before creating the profile.](../../images-dxp/websphere-02-profile.png)
+
+### Configuring the WebSphere Application Server [](id=configuring-the-websphere-application-server)
 
 In this version of WebSphere, servlet filters are not initialized on web
-application startup, but rather on first access. This can cause problems when
-deploying certain apps to @product@. To configure servlet filters to 
-initialize on application startup (i.e., deployment), you must set the following
+application startup, but rather, on first access. This can cause problems when
+deploying certain apps to @product@. To configure servlet filters to initialize
+on application startup (i.e., deployment), you need to set the following
 `webcontainer` custom properties in your WebSphere application server: 
 
     com.ibm.ws.webcontainer.initFilterBeforeInitServlet = true
     com.ibm.ws.webcontainer.invokeFilterInitAtStartup = true 
 
-To set `webcontainer` custom properties in the WebSphere application server, 
+To set `webcontainer` custom properties in the WebSphere application server,
 follow the instructions 
 [here in WebSphere's documentation](http://www-01.ibm.com/support/docview.wss?rss=180&uid=swg21284395). 
 
-Next, in the WebSphere profile you created for @product@, you must set an argument 
-that supports @product@'s Java memory requirements. Do this now using the 
-following instructions: 
+### Setting up JVM Parameters for Liferay DXP [](id=setting-up-jvm-parameters-for-liferay-dxp)
 
-- `[Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/nodes/your-node/servers/your-server/server.xml`: 
-  Add `maximumHeapSize="1024"` inside the `jvmEntries` tag. For example:
+Next, in the WebSphere profile you created for @product@, you must set an
+argument that supports @product@'s Java memory requirements. You'll modify this
+file: 
 
-        <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ... maximumHeapSize="1024">
+    [Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/nodes/your-node/servers/your-server/server.xml
+
+Add `maximumHeapSize="2048"` inside the `jvmEntries` tag. For example:
+
+        <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ... maximumHeapSize="2048">
+
+NOTE: The JVM parameters used here are defaults intended for production systems
+development purposes. Administrators can change the settings to other values
+that best address their specific environments. These will need to be tuned
+depending on need.
+
+### Removing the secureSessionCookie Tag [](id=removing-the-securesessioncookie-tag)
 
   Note that this is just a default setting; once @product@ is installed, you
   should tune it appropriately based on your usage. 
 
 Lastly, in the same profile, you should delete a problematic 
-`secureSessionCookie` tag that can cause @product@ startup errors. You can do
-this by modifying the following file: 
+`secureSessionCookie` tag that can cause @product@ startup errors. 
 
-`[Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/cell.xml`: 
-
+In `[Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/cell.xml`, 
 Delete the `secureSessionCookie` tag containing `xmi:id="SecureSessionCookie_1"`. 
+
+If this tag is not removed, an error similar to the one below may occur:
+
+    WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
+    com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
 
 Great! Now you're ready to install @product@. 
 
@@ -158,6 +176,29 @@ now:
    place its contents in the `[Liferay Home]/osgi` folder (create this folder if 
    it doesn't exist). This is typically 
    `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
+ 
+Before starting the server, verify that all the following jars have been copied
+to the correct folders. Optional jars are available (italics) and are used to
+optimize Liferay performance which must be added to this folder. Required jars
+in bold are from the `liferay-digital-enterprise-dependencies-7.0-ga1 zip`.  The
+following files should be present within the `lib/ext` (WebSphere Application)
+folder:
+ 
+1. *activation.jar*
+2. **com.liferay.registry.api-1.0.4.jar**
+3. **hsql.jar**
+4. a JDBC database jar (e.g. MySQL, MariaDB, IBM DB2, Postgres)
+5. *persistence.jar*
+6. **portal-kernel.jar**
+7. **portlet.jar**
+
+The following folders should be present within the `/liferay/osgi` folder:
+1. `Configs`
+2. `Core`
+3. `Marketplace`
+4. `Target-platform`
+5. `Test`
+
 
 Once you've installed these dependencies, start the server profile you created 
 for @product@. Once it starts, you're ready to configure your database. 
@@ -177,7 +218,7 @@ you **should not** use it for production @product@ instances.
 
 $$$
 
-![Figure 2: WebSphere JDBC providers](../../images-dxp/websphere-jdbc-providers.png) 
+    ![Figure 3: WebSphere JDBC providers](../../images-dxp/websphere-jdbc-providers.png) 
 
 1.  Start WebSphere. 
 
@@ -190,16 +231,19 @@ $$$
 5.  Select your database type, provider type, and implementation type. If you 
     select a predefined database, the wizard fills in the name and description 
     fields for you. If the database you want to use isn't listed, select 
-    *User-defined* from the Database type field, and then fill in the 
-    *Implementation Class Name*. For example, if you're using MySQL, select 
+    *User-defined* from the *Database type* field and then fill in the 
+    *Implementation Class Name*. For example, if you are using MySQL, select 
     *Database type* &rarr; *User-defined*, and then enter 
     `com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource` in 
-    *Implementation Class Name*. Click *Next* when you're finished. 
+    *Implementation Class Name*. Click *Next* when you are finished. 
 
 6.  Clear any text in the classpath settings. You already copied the necessary 
     JARs to a location on the server's classpath. Click *Next*. 
 
-7.  Review your settings and click *Finish*. 
+7.  Review your settings and click *Finish*. The final configuration should look
+    like this:
+
+    ![Figure 4: Completed JDBC provider configurations.](../../images-dxp/websphere-03.png)
 
 8.  Click your new provider configuration when it appears in the table, and then 
     click *Data Sources* under *Additional Properties*. Click *New*.
@@ -216,9 +260,9 @@ $$$
 
 12. Type *user* into the search terms and click *Go*.
 
-    ![Figure 3: Modifying data source properties in WebSphere](../../images-dxp/websphere-database-properties.png) 
+    ![Figure 5: Modifying data source properties in WebSphere](../../images-dxp/websphere-database-properties.png) 
 
-13. Select the user property and give it the value of the user name to your
+13. Select the *user* property and give it the value of the user name to your
     database. Click *OK* and save to master configuration.
 
 14. Do another filter search for the *url* property. Give this property a value 
@@ -241,6 +285,8 @@ Once you've set up your database, you can set up your mail session.
 
 If you want WebSphere to manage your mail sessions, use the following procedure.
 If you want to use @product@'s built-in mail sessions, you can skip this section. 
+
+### Creating a WebSphere-Managed Mail Session (Optional) [](id=creating-a-websphere-managed-mail-session-optional)
 
 1. Click *Resources &rarr; Mail &rarr; Mail Providers*.
 
@@ -266,6 +312,15 @@ Note that you may also need to retrieve a SSL certificate from your mail server
 and add it to WebSphere's trust store. See WebSphere's documentation for 
 instructions on this. 
 
+### Verifying WebSphere Mail Provider [](id=verifying-websphere-mail-provider)
+
+To validate that the mail session has been configured correctly, there are a
+number of ways to test this once the WAR has been deployed, the server has
+started, and the user has signed in as the system administrator. One quick way
+to validate is to create a new user with a valid email account. The newly
+created user should receive an email notification.  The logs should display that
+the SMTP server has been pinged with the correct port number listed.
+
 ## Deploy @product@ [](id=deploy-liferay-dxp)
 
 Now you're ready to deploy @product@! 
@@ -273,7 +328,7 @@ Now you're ready to deploy @product@!
 1. In WebSphere's administrative console, click *Applications* &rarr; *New 
    Application* &rarr; *New Enterprise Application*. 
 
-2. Browse to the @product@ `.war` file and click *Next*. 
+2. Browse to the @product@ `.war` file, select it, and click *Next*. 
 
 3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
    Application* has been checked and click *Next* again. 
@@ -281,7 +336,7 @@ Now you're ready to deploy @product@!
 4. Choose the WebSphere runtimes and/or clusters where you want @product@ deployed. 
    Click *Next*. 
 
-5. Select the virtual host you're deploying @product@ on and click *Next*. 
+5. Select the virtual host to deploy @product@ on and click *Next*. 
 
 6. Map @product@ to the root context (/) and click *Next*. 
 
@@ -291,11 +346,11 @@ Now you're ready to deploy @product@!
 8. Ensure that you have made all the correct choices and click *Finish*. When
    @product@ has installed, click *Save to Master Configuration*. 
 
-    ![Figure 4: Review your deployment options before deploying.](../../images-dxp/websphere-deploy-dxp.png)
+   ![Figure 6: Review your deployment options before deploying.](../../images-dxp/websphere-deploy-dxp.png)
 
 You've now installed @product@!
 
-## Enable Security for Portal Access Control Lists [](id=enable-security-for-portal-access-control-lists)
+## Enabling Security for Portal Access Control Lists [](id=enabling-security-for-portal-access-control-lists)
 
 When you are ready to start using apps from Liferay Marketplace, you must 
 enable Liferay's Portal Access Control Lists (PACL) to enforce security policies
@@ -307,9 +362,9 @@ In WebSphere's administrative console, go to *Security* &rarr;
 *Global Security*. Check the box to enable Java 2 security, and click *Apply*. 
 Save to the master configuration. 
 
-![Figure 5: Enabling security can be done by checking one box, but it still needs to be configured.](../../images-dxp/websphere-security.png)
+![Figure 7: Enabling security can be done by checking one box, but it still needs to be configured.](../../images-dxp/websphere-security.png)
 
-Now you must configure the security policy for the IBM JRE that WebSphere runs 
+Now you must configure the security policy for the IBM JRE that WebSphere runs
 on. With your WebSphere server shut down, open the following security policy 
 file: 
 
@@ -321,10 +376,15 @@ Replace this file's contents with the following configuration:
         permission java.security.AllPermission;
     };
 
-This configuration opens all permissions. You should fine-tune your policy's 
-permissions based on your needs. 
+This configuration opens all permissions. As best practices, opening all
+permissions when starting Liferay Digital Enterprise 7.0 for the first time 
+allows for the creation of all required processes. Users can change security
+settings later and restrict which plugins have access. (Users have the options
+of using either the application server's security policies or Liferay DXP's.)
+See this article 
+[concerning a Known Issues when generating PACL](https://customer.liferay.com/documentation/knowledge-base/-/kb/156397).
 
-Great! Now you're ready to start @product@. 
+Once this permission has been set, users can start @product@. 
 
 ## Start @product@ [](id=start-liferay-dxp)
 
