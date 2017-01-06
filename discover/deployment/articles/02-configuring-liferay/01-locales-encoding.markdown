@@ -31,7 +31,7 @@ section:
 
 As an example, the above property changes the locale to English, Great Britain. 
  
-## Set the JVM Time Zone to GMT
+## Set the JVM Time Zone to GMT [](id=set-the-jvm-time-zone-to-gmt)
 
 It is possible to set time zones at the JVM level. However, users will encounter
 issues such as Calendar Events and Web Content articles displaying the wrong
@@ -68,7 +68,7 @@ circumstances. Because this requires stopping and possibly redeploying @product@
 to modify these settings. If you're clustered, you must make these changes on
 all nodes.
 
-## Modifying Language Keys
+## Modifying Language Keys [](id=modifying-language-keys)
 
 Developers can add or modify certain core UI messages (e.g. *Your request
 completed successfully.*) by 
@@ -96,7 +96,7 @@ Spanish, the `language_es.properties` file contains these values:
 For more information, see 
 [Using Liferay Language Settings](/develop/tutorials/-/knowledge_base/7-0/using-liferays-language-settings).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Using Liferay Language Settings](/develop/tutorials/-/knowledge_base/7-0/using-liferays-language-settings)
 
