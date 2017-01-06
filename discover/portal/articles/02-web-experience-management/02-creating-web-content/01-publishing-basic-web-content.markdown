@@ -138,11 +138,14 @@ use in your web content.
 
 ![Figure 3: You can access the image editor through the item selector window.](../../../images/image-editor-preview-window.png)
 
-After adding an image to the web content article, clicking it brings up controls 
-for justifying it to the left or right side of the article. Go ahead an add an 
-image to the Lunar Resort article, to spice it up a bit. Note that when adding 
-an image via the web content editor, you can either select the file from the 
-Documents and Media app or provide it via a URL.
+After adding an image to the web content article, clicking it brings up controls
+([![Image Controls](../../../images/icon-wysiwyg-image-controls.png)) for
+justifying it to the left, center, or right side of the article. You can also
+make it a link and define the `alt` HTML attribute.
+
+Go ahead an add an image to the Lunar Resort article, to spice it up a bit. Note
+that when adding an image via the web content editor, you can either select the
+file from the Documents and Media app or provide it via a URL.
 
 You can also insert a table with as many rows and columns as you see fit. When
 clicking inside the table, table editing controls appear. They let you designate
