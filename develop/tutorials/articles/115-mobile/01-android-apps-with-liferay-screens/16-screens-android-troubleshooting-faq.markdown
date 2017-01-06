@@ -19,7 +19,13 @@ Screenlets and Views:
 - [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
 - [Test App](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app) 
 
-If you get stuck, you can post your question on our 
+When updating an app or Screenlet to a new version of Liferay Screens, make sure 
+to see the 
+[Android breaking changes reference article](/develop/reference/-/knowledge_base/7-0/android-breaking-changes). 
+This article lists changes to Screens that break functionality in prior 
+versions. In most cases, updating your code is relatively straightforward. 
+
+If you get stuck at any point, you can post your question on our 
 [forum](https://www.liferay.com/community/forums/-/message_boards/category/42706063).
 We're happy to assist you! If you found a bug or want to suggest an improvement, 
 file a ticket in our 
@@ -165,3 +171,5 @@ Liferay Screens.
 [Creating Android Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)
 
 [Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk)
+
+[Android Breaking Changes](/develop/reference/-/knowledge_base/7-0/android-breaking-changes)
