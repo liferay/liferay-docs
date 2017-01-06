@@ -151,11 +151,17 @@ Certain elements of your page may require a regular navigation to work properly.
 For example, you may have downloadable content that you want to share with the 
 user. In these cases, SPA must be disabled for those specific elements.
 
+To disable SPA on a portal wide basis, you can add the following line to your 
+`portal-ext.properties`:
+
+    javascript.single.page.application.enabled = false
+
 If there is a portlet or element that you don't want to be part of the SPA, you
 have some options:
 
 -  Blacklist the portlet to disable SPA for the entire portlet
--  Use the `data-senna-off` annotation to disable SPA for a specific link
+-  Use the `data-senna-off` annotation to disable SPA for a specific form or
+   link
 
 To blacklist a portlet from SPA, follow these steps:
 
@@ -164,13 +170,18 @@ To blacklist a portlet from SPA, follow these steps:
 2. Set the `_singlePageApplication` property to false:
 
         _singlePageApplication = false;
+        
+   If you prefer, you can set this property to false in your `portlet.xml` 
+   instead by adding the following property to the `<portlet>` section:
+   
+        <single-page-application>false</single-page-application>
 
 3. Alternatively, you can override the [`isSinglePageApplication` method](@platform-ref@/7.0/javadocs/portal-impl/com/liferay/portal/model/impl/PortletImpl.html#isSinglePageApplication--)
    of the portlet to return `false`.
 
-To disable SPA for a link follow these steps:
+To disable SPA for a form or link follow these steps:
 
-1. Add the `data-senna-off` attribute to the link.
+1. Add the `data-senna-off` attribute to the element.
 
 2. Set the value to `true`.
 
