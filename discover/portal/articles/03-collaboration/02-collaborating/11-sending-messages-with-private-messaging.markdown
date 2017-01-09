@@ -5,6 +5,14 @@ interface is similar to an email client. Messages are aggregated by thread, with
 the most recent message displayed. You can mark messages as read or unread or
 delete them.
 
++$$$
+
+**Note:** There is a known issue, [LPS-69331](https://issues.liferay.com/browse/LPS-69331), 
+which causes the Private Messaging app to be treated as a brand-new module 
+during the initial upgrade process. This issue is fixed in Liferay fixpack de-10.
+
+$$$
+
 The Private Messaging app must be installed from Marketplace. Once installed,
 the app must be added to a user's private *Dashboard* page. Now that you know
 where you can get the app and where to place it, you're probably eager to write
