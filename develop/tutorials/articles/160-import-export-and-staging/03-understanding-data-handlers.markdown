@@ -80,16 +80,16 @@ pages of content. There are four main parts (tags) to a `manifest.xml` file.
   has basic information on the exported portlet and points to the generated
   `portlet.xml` for more specialized portlet information.
 - `manifest-summary`: contains information on what has been exported. The
-  entities defining a non-zero `addition-count` attribute is displayed in the
-  Import UI.
+  entities defining a non-zero `addition-count` attribute are displayed in the
+  Export/Import UI.
 
 The `manifest.xml` file also defines layout information if you've exported pages
 in your LAR. For example, your manifest could have `LayoutSet`, `Layout`, and
 `LayoutFriendlyURL` tags specifying staged models and their various references
-in the exported page.
+in an exported page.
 
 Now that you've learned about the LAR's `manifest.xml` and how it's used to
-store high-level data about your export process, you'll dive deeper in the LAR
+store high-level data about your export process, you'll dive deeper into the LAR
 file's `group` folder. The `group` folder can be broken down into two main
 parts:
 
@@ -102,7 +102,9 @@ you're exporting (e.g., `com.liferay.bookmarks.model.BookmarksEntry`) and a
 `portlet` folder holding a folder named after the portlet from which you're
 exporting (e.g., `com_liferay_bookmarks_web_portlet_BookmarksAdminPortlet`). For
 each entity/portlet you export, there are subsequent folders holding data about
-them.
+them. Entities and portlets can also be stored in a `company` folder. Although
+the majority of entities belong to a group, some exist outside of a group scope
+(e.g., users).
 
 If you open the
 `/group/20143/com.liferay.bookmarks.model.BookmarksEntry/35005.xml` file, you'll
@@ -126,16 +128,17 @@ portlet:
    this can include portlet preferences like the portlet owner, default user,
    article IDs, etc.
 
-For a summarized outline of what you've learned about LAR file construction, see
-the diagram below.
+You now know how exported entities, portlets, and pages are defined in a LAR
+file. For a summarized outline of what you've learned about LAR file
+construction, see the diagram below.
 
 ![Figure 1: Entities, Portlets, and Pages are defined in a LAR in different places.](../../images/lar-diagram.png)
 
 Excellent! You now have a fundamental understanding for how a LAR file is
 generated and how it's structured.
 
-Next, you'll learn about data handler fundamentals and prerequisites before you
-can begin implementing them.
+Next, you'll learn about data handler fundamentals and the prerequisites
+required to implement them.
 
 ## Data Handler Fundamentals
 
@@ -172,22 +175,21 @@ example, if a Bookmarks entry resides in a Bookmarks folder, the
 
 ![Figure 1: The Data Handler framework uses portlet data handlers and staged model data handlers to track and export/import portlet and staged model information, respectively.](../../images/data-handler-diagram.png)
 
-In this tutorial, you'll learn how to create a portlet data handler for your
-application. Then you'll create a staged model data handler for each entity your
-application manages. You're not required to implement a staged model data
-handler for every entity in your application, but they're necessary for any
-entity you want to export/import or have the staging framework track.
+You're not required to implement a staged model data handler for every entity in
+your application, but they're necessary for any entity you want to export/import
+or have the staging framework track.
 
 <!-- Bare bones instructions for enabling a project for Staging using Service
 Builder is outlined below. This info will go into a separate tutorial at a later
 date. -Cody -->
 
-Before beginning, make sure your application is ready for the Export/Import and
-Staging frameworks by running Service Builder in your application. Using Service
-Builder to create staged models is not required, but is recommended since it
-generates many requirements for you. To ensure Service Builder recognizes your
-entity as a staged model, you must set the `uuid` attribute to `true` in your
-`service.xml` file and have the following columns declared:
+Before implementing data handlers, make sure your application is ready for the
+Export/Import and Staging frameworks by running Service Builder in your
+application. Using Service Builder to create staged models is not required, but
+is recommended since it generates many requirements for you. To ensure Service
+Builder recognizes your entity as a staged model, you must set the `uuid`
+attribute to `true` in your `service.xml` file and have the following columns
+declared:
 
 - `companyId`
 - `groupId`
@@ -199,4 +201,8 @@ entity as a staged model, you must set the `uuid` attribute to `true` in your
 You can learn how to create a `service.xml` file for your application by
 visiting the
 [Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-0/defining-an-object-relational-map-with-service-builder)
+tutorial.
+
+To learn how to develop data handlers for your app, visit the
+[Developing Data Handlers](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/data-handlers)
 tutorial.
