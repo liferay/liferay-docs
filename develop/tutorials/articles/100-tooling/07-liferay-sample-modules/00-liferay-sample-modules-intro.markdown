@@ -8,19 +8,23 @@ Declarative Services. Therefore, each sample is developed to demonstrate a
 single extension point and includes its own build files. Liferay's sample
 modules can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples)
-repository on GitHub.
+repository on GitHub. You can find documentation for Liferay's sample modules in
+the
+[Sample Modules](/develop/reference/-/knowledge_base/7-0/sample-modules)
+reference section.
 
 If you'd like to browse the repository locally or copy sample projects into your
 own project, [fork](https://help.github.com/articles/fork-a-repo/) and
 [clone](https://help.github.com/articles/cloning-a-repository/) the
 `liferay-blade-samples` repository.
 
-At first glance, you'll notice that the repository is broken up into four
+At first glance, you'll notice that the repository is broken up into five
 primary folders:
 
 - `bndtools`
 - `gradle`
 - `liferay-gradle`
+- `liferay-workspace`
 - `maven`
 
 The provided sample modules are organized by their development toolchains to

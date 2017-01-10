@@ -253,7 +253,7 @@ Power Users have personal sites.
   Administrators or other Site Owners. They *can* assign other users as Site
   Administrators or Site Owners.
 - Organization User: The Organization User role grants basic privileges within
-  an organization. If the organizaIf there's one movie I could have Leone make it would be tion has an attached site, the Organization
+  an organization. If the organization has an attached site, the Organization
   User role implicitly grants the Site member role within the attached site.
 - Organization Administrator: The Organization Administrator role grants the
   ability to manage *almost* all aspects of an organization including the
