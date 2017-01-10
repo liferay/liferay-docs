@@ -266,8 +266,8 @@ item. Using Item Selector API, you can give app users the power of choice!
 
 ## Related Articles [](id=related-articles)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-views)
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework)
+[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-entities)
 
 [Front-End Taglibs](/develop/tutorials/-/knowledge_base/7-0/front-end-taglibs)

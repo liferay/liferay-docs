@@ -11,7 +11,7 @@ for your sorted list.
 
 **Note:** To create a new comparator, you must create a class that extends the 
 portal’s 
-[`OrderByComparator` class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/OrderByComparator.html) 
+[`OrderByComparator` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/OrderByComparator.html) 
 with your entity as a type argument. Then you must override the methods that 
 implement the sort. For example, the portal’s 
 [`EntryURLComparator` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator/EntryURLComparator.java) 

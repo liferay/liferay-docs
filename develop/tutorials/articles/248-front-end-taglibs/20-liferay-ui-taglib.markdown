@@ -16,7 +16,7 @@ them next.
 
 ## Using Liferay UI Tags [](id=using-liferay-ui-tags)
 
-A list of the available `<liferay-ui>` taglibs can be found [here](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/). 
+A list of the available `<liferay-ui>` taglibs can be found [here](@platform-ref@/7.0-latest/taglibs/util-taglib/). 
 To use the Liferay-UI taglib library you must add the following declaration to
 your JSP:
 

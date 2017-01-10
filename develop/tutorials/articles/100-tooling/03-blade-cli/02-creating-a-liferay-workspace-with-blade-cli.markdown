@@ -17,11 +17,11 @@ If you still plan on using a Plugins SDK and wish to use it in conjunction with
 a workspace, navigate to your Plugins SDK root folder and run the following
 command:
 
-    blade --update
+    blade init -u
 
 This command builds a workspace and automatically adds and configures your
 current Plugins SDK environment for use inside the workspace. See the
-[Using a Plugins SDK From Your Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+[Using a Plugins SDK From Your Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
 section for more information on how to use a Plugins SDK from within a
 workspace.
 
@@ -75,9 +75,9 @@ When configuring your SDK in a workspace, you can take advantage of all the new
 functionality workspaces provide and also use the SDK environment that you're
 used to.
 
-Running the `blade --update` command converted the Plugins SDK to a workspace
+Running the `blade init -u` command converted the Plugins SDK to a workspace
 that includes the Plugins SDK. If you created your workspace from scratch
-instead with `blade --update`, you'll need to configure your Liferay workspace's
+instead with `blade init`, you'll need to configure your Liferay workspace's
 Gradle properties.
 
 If you revisit your workspace's `gradle.properties` file, you'll notice the

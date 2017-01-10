@@ -50,11 +50,13 @@ working (e.g., unresolved dependencies, etc.)
 
 `packages <package name>`: lists all of the named package's dependencies 
 
-`scr:list`: lists all of the components registered in the module framework.
-(*scr* stands for service component runtime.)
+`scr:list`: lists all of the components registered in the module framework
+(*scr* stands for service component runtime)
 
 `services`: lists all of the services that have been registered in Liferay's
-module framework.
+module framework
+
+`inspect capability service <bundle ID>`: lists services exposed by a bundle
 
 `install <path to JAR file>`: installs the specified bundle into Liferay's
 module framework
@@ -66,5 +68,6 @@ module framework
 `uninstall <bundle ID>`: uninstalls the specified bundle from Liferay's module
 framework
 
-For more information about the Gogo shell, please visit [http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).
+`system:getproperties`: lists all of the system properties
 
+For more information about the Gogo shell, please visit [http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).

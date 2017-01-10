@@ -37,10 +37,8 @@ extension point, you should follow these steps:
     table cells, so the table cells are removed from the options displayed to
     the user when running in Creole mode.
 
-2.  Now you'll need to create a module that can register your new JS file and
-    inject it into your editor instance. Create a generic OSGi module using your
-    favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+2.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
+    that can register your new JS file and inject it into your editor instance.
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class name
@@ -114,7 +112,7 @@ extension point, you should follow these steps:
     Just as you can configure individual JSP pages to use a specific
     implementation of the available WYSIWYG editors, you can use those same
     implementation options for the registration process. Visit the
-    [Editors](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Editors)
+    [Editors](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Editors)
     section of `portal.properties` for more details. For example, to configure
     the Creole implementation of the CKEditor, you could use the following
     key:

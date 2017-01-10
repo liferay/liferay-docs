@@ -16,7 +16,7 @@ you'll look at the fields of the `ServiceContext` class.
 The `ServiceContext` class has many fields. The best field descriptions are
 found in the Javadoc: 
 
-[https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html).
+[@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html).
 
 Here, you can review a categorical listing of the fields: 
 

@@ -46,8 +46,7 @@ lifecycles.
 To begin creating your lifecycle listener, you must create a module.
 Follow the steps below:
 
-1.  Create a generic OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
+1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module). 
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the class

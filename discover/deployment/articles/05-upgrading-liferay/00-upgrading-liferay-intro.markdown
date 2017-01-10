@@ -25,7 +25,7 @@ compatible with your settings.
 
 +$$$
 
-**Important**: Before performing the upgrade, for every Liferay plugin you've
+**Important**: Before performing the upgrade, for every @product@ plugin you've
 installed from Marketplace (Kaleo, Calendar, Notifications, etc.), make sure
 you've got the latest versions installed. This will allow you to run the upgrade
 without unnecessary issues.
@@ -35,7 +35,7 @@ $$$
 After that, you'll need to look at your Documents and Media file store and make
 sure the upgrade takes your configuration into account. 
 
-Next, you'll actually install the new version of Liferay onto your server, or
+Next, you'll actually install the new version of @product@ onto your server, or
 use a bundle to jump start your installation process. 
 
 Finally, to make sure the upgrade process runs smoothly and quickly, you'll
@@ -43,7 +43,7 @@ disable indexing temporarily during the upgrade.
 
 These steps are described in detail below. 
 
-Although you can perform the upgrade in one step (if you're coming from Liferay
+Although you can perform the upgrade in one step (if you're coming from Liferay Portal
 6.0.12 or higher), you should take into account previous upgrade configurations.
 
 ### Previous upgrade configurations [](id=previous-upgrade-configurations)
@@ -109,17 +109,17 @@ the configuration.
 
 ### Install the New Version of @product@
 
-Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
-to install Liferay on your application server or use @product@ bundled with your
+Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/installation-and-setup)
+to install @product@ on your application server or use @product@ bundled with your
 application server of choice. Once you have @product@ installed, DON'T START IT! 
 
-If you've upgraded Liferay in the past, once you've prepared your system for the
+If you've upgraded @product@ in the past, once you've prepared your system for the
 upgrade, the upgrade process ran when you started the new version for the first
 time. @product@ instead ships with a tool for upgrading. You must use this tool
 to upgrade your database. Starting the server to run the upgrade is no longer
 supported. The following exception is thrown if you try to do that:
 
-    [MainServlet:237] java.lang.RuntimeException: You must first upgrade to Liferay Portal 7000
+    [MainServlet:237] java.lang.RuntimeException: You must first upgrade to @product@ 7000
 
 Apply the settings you identified above for `portal-ext.properties` and
 your Documents and Media store. Once you've finished that, you're almost ready
@@ -160,7 +160,7 @@ upgrading the core.
 
 ## Running the Upgrade [](id=running-the-upgrade)
 
-In case of the Liferay bundle, the upgrade tool can be found in the `tools`
+In case of the @product@ bundle, the upgrade tool can be found in the `tools`
 folder inside `liferay.home` directory, in a folder called
 `portal-tools-db-upgrade-client`. If you've installed @product@ manually, you
 can download the tool as standalone application from the same location where you
@@ -199,7 +199,7 @@ can be done at runtime, or you can pre-configure it in three files:
     server's location and libraries.
 - `portal-upgrade-datasource.properties`: Contains properties for connecting 
 to the database that will be upgraded.
-- `portal-upgrade-ext.properties`: Contains the rest of the Liferay
+- `portal-upgrade-ext.properties`: Contains the rest of the @product@
 properties you need to perform the upgrade.
 
 Below you'll learn about the properties that can go in these files. 
@@ -276,7 +276,7 @@ configuration that you can customize for your use:
     global.dir.lib=lib
 
 The `dir` setting is the folder where your app server is installed. The
-`portal.dir` setting is the folder where Liferay is installed in your app
+`portal.dir` setting is the folder where @product@ is installed in your app
 server. The `global.dir.lib` is the app server's library folder. 
 
 -`portal-upgrade-datasource.properties`:
@@ -414,12 +414,12 @@ This indicates that the upgrade was completed.
 
 ### Checking the upgrade status [](id=checking-the-upgrade-status)
 
-You can also browse Liferay's database to determine the upgrade status. 
+You can also browse @product@'s database to determine the upgrade status. 
 The `release_` table in the database contains upgrade status information. 
 
 There is one row for the core recognizable by the value `portal` in the 
 `servletContextName` field. If the `schemaVersion` field matches your new
-Liferay version (`7.0.1` in case of @product-ver@ CE GA2) and `verified` field
+@product@ version (`7.0.1` in case of @product-ver@ CE GA2) and `verified` field
 contains `1` (true), this means that the upgrade for the core has been completed
 successfully. 
 

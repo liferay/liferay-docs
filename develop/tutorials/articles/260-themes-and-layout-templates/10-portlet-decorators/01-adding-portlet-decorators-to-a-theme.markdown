@@ -62,7 +62,7 @@ just have to follow these steps:
 The first thing you must do is declare the Portlet Decorators in your theme's
 `liferay-look-and-feel.xml`.
 
-The [Document Type Definition for the liferay-look-and-feel.xml](https://docs.liferay.com/portal/7.0/definitions/liferay-look-and-feel_7_0_0.dtd.html#portlet-decorator)
+The [Document Type Definition for the liferay-look-and-feel.xml](@platform-ref@/7.0-latest/definitions/liferay-look-and-feel_7_0_0.dtd.html#portlet-decorator)
 in @product@ contains the information and rules to add Portlet Decorators
 (in the code referred as portlet-decorators) to your theme.
 
