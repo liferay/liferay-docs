@@ -32,7 +32,12 @@ provides a great environment for testing. You'll learn how to build one next.
 
 ## Build [](id=build)
 
-To build the Slim Runtime, execute the following top-level Ant command:
+To build the Slim Runtime, you must have the
+[liferay-portal](https://github.com/liferay/liferay-portal) Github repository
+[forked](https://help.github.com/articles/fork-a-repo/) and
+[cloned](https://help.github.com/articles/cloning-a-repository/) to your local
+machine. Navigate to the repository's root folder and execute the following Ant
+command:
 
     ant all -Dbuild.profile=slim
 
@@ -43,7 +48,7 @@ configuration.
 
 ## Launch [](id=launch)
 
-To launch the Slim Runtime, run the Tomcat start scripts found in the
+To launch the Slim Runtime, run the Tomcat start scripts found in the runtime's
 `<tomcat>/bin` directory:
 
     ./startup.[sh|bat]
@@ -51,7 +56,8 @@ To launch the Slim Runtime, run the Tomcat start scripts found in the
 ## Deploying Modules [](id=deploying-modules)
 
 You can deploy modules from any of the default directories the
-`portal.properties` file defines (see properties below) or from a custom
+[portal.properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
+file defines (see properties below) or from a custom
 auto-deploy directory you add to the `module.framework.auto.deploy.dirs`
 property.
 
