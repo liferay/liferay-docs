@@ -1,4 +1,4 @@
-# Liferay Slim Runtime
+# Liferay Slim Runtime [](id=liferay-slim-runtime)
 
 The Liferay Slim Runtime provides the bare necessities for running Service
 Builder modules. It's useful for testing applications quickly in a Liferay
@@ -30,7 +30,7 @@ Building and launching a Liferay Slim Runtime is much quicker than a typical
 @product@ bundle. Because of decreased build and startup times, the Slim Runtime
 provides a great environment for testing. You'll learn how to build one next.
 
-## Build
+## Build [](id=build)
 
 To build the Slim Runtime, execute the following top-level Ant command:
 
@@ -41,14 +41,14 @@ file's `app.server.parent.dir` property. Note that the Slim Runtime only
 supports Apache Tomcat 8+. This limitation simplifies packaging and
 configuration.
 
-## Launch
+## Launch [](id=launch)
 
 To launch the Slim Runtime, run the Tomcat start scripts found in the
 `<tomcat>/bin` directory:
 
     ./startup.[sh|bat]
 
-## Deploying Modules
+## Deploying Modules [](id=deploying-modules)
 
 You can deploy modules from any of the default directories the
 `portal.properties` file defines (see properties below) or from a custom
@@ -73,7 +73,7 @@ By default, a pristine Slim Runtime has no UI or apps. Requests to it result in
 
 The modules you add provide all the functionality.
 
-## Adding Functionality
+## Adding Functionality [](id=adding-functionality)
 
 A web endpoint is the simplest type of function.
 
@@ -119,7 +119,7 @@ requests to `http://localhost:8080[/*]`:
 
     }
 
-## The Database
+## The Database [](id=the-database)
 
 The Slim Runtime creates the database schema automatically the first time it
 runs.
@@ -146,7 +146,7 @@ Only the following core services are available:
 No other services are provided! Therefore, any service deployed to this Slim
 Runtime that depends on services other than these won't work.
 
-## Service Builder
+## Service Builder [](id=service-builder)
 
 The Service Builder runtime bootstraps all deployed Service Builder services
 (API and service modules).
@@ -168,7 +168,7 @@ database:
     +------------------+
     6 rows in set (0.00 sec)
 
-### A Basic Service Builder Web App
+### A Basic Service Builder Web App [](id=a-basic-service-builder-web-app)
 
 The servlet in the following snippet implements a simple web app that uses the
 contacts service.
