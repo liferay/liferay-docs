@@ -44,8 +44,7 @@ Great! Your theme declaration is complete. However, the Portal is not yet
 configured to handle this request. You must create a module that can
 find the portlet that fits the theme's request.
 
-1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
+1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module). 
 
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, name the class
@@ -124,10 +123,9 @@ file.
     templates: `ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the entity type and
     action in your layout's declaration.
 
-Now that your layout declaration is complete, you'll need to create a module
+Now that your layout declaration is complete, you'll need to create a module 
 that can handle this request. This process is exactly the same for themes and
-layout templates. Follow steps 1-4 in the previous section to set up your
-module.
+layout templates. Follow steps 1-4 in the previous section to set up your module.
 
 +$$$
 

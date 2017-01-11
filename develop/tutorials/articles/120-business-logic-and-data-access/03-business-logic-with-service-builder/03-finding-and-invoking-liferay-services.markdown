@@ -2,7 +2,7 @@
 
 In this tutorial, you'll learn how to search for portal services and portlet
 services. You can find Liferay's services by searching for them in the Javadocs:
-[http://docs.liferay.com/portal/7.0/javadocs/](http://docs.liferay.com/portal/7.0/javadocs/).
+[@platform-ref@/7.0-latest/javadocs/](@platform-ref@/7.0-latest/javadocs/).
 
 First, you'll learn how to find a portal service using Liferay's Javadocs. 
 
@@ -19,7 +19,7 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 *Organization* services, for example: 
 
 1. In your browser, open up the Javadocs:
-   [http://docs.liferay.com/portal/7.0/javadocs/](http://docs.liferay.com/portal/7.0/javadocs/) 
+   [@platform-ref@/7.0-latest/javadocs/](@platform-ref@/7.0-latest/javadocs/) 
    You're offered several options, which were discussed earlier. Select
    *portal-kernel*.
 

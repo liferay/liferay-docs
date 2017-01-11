@@ -189,7 +189,7 @@ Liferay specific descriptors.
 
 The descriptor `liferay-display.xml` controls the category in which your portlet
 appears in @product@'s *Add* menu. Find the complete DTD
-[here](https://docs.liferay.com/portal/7.0/definitions/liferay-display_7_0_0.dtd.html).
+[here](@platform-ref@/7.0-latest/definitions/liferay-display_7_0_0.dtd.html).
 
 Here's a simple example that just specifies the category the application will go under
 in Liferay's menu for adding applications:
@@ -203,7 +203,7 @@ in Liferay's menu for adding applications:
 The descriptor `liferay-portlet.xml` is used for specifying additional
 information about the portlet (like the location of CSS and JavaScript files or
 the portlet's icon. A complete list of the attributes you can set can be
-found [here](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html)
+found [here](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd.html)
 
     <liferay-portlet-app>
         <portlet>
@@ -239,7 +239,7 @@ defining the Liferay roles used in the portlet.
 Then there's the `liferay-plugin-package.properties`. These properties describe
 the Liferay plugin, declare its resources, and specify its security related
 parameters. The DTD is found
-[here](https://docs.liferay.com/portal/7.0/definitions/liferay-plugin-package_7_0_0.dtd.html)
+[here](@platform-ref@/7.0-latest/definitions/liferay-plugin-package_7_0_0.dtd.html)
 
     name=example-portlet
     module-group-id=liferay
@@ -256,7 +256,7 @@ In the `liferay-plugin-package.properties` file you can also add OSGi metadata,
 which is properly placed in the `MANIFEST.MF` file when you deploy your
 WAR file. 
 
-Find all of Liferay's DTDs [here](https://docs.liferay.com/portal/7.0/definitions/)
+Find all of Liferay's DTDs [here](@platform-ref@/7.0-latest/definitions/)
 
 ## Calling Services from Spring MVC [](id=calling-services-from-spring-mvc)
 

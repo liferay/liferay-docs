@@ -110,7 +110,7 @@ The properties for changing user name settings are those that begin with
 `lang.user.name` in the language settings section of a locale's language
 properties file.
 
-For most of the [locales enabled by default](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Languages and Time Zones) the user name properties are specifically tailored to that location.
+For most of the [locales enabled by default](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages and Time Zones) the user name properties are specifically tailored to that location.
 
     locales.enabled=ca_ES,zh_CN,nl_NL,en_US,fi_FI,fr_FR,de_DE,iw_IL,hu_HU,ja_JP,pt_BR,es_ES
 

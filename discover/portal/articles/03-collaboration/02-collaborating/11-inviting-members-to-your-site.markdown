@@ -13,14 +13,14 @@ invitations.
 
 Click the plus sign next to a user or click the *Add Email Address* button to 
 add a user to the invite list. Users that have already been invited but have not 
-yet responded are listed with a checkmark next to their name. You can also 
+yet responded are listed with a check mark next to their names. You can also
 invite users to the *Site Owner*, *Site Content Reviewer*, and 
 *Site Administrator* roles for your site by selecting that role under the 
-*Invite to Role* heading. Once you've added all the users you would like to 
-invite, and selected any roles you want them to have, click the 
-*Send Invitations* button to invite them.
+*Invite to Role* heading. Once you've added all the users you want to 
+invite and have selected any roles they should have, click the *Send
+Invitations* button to invite them.
 
-The site invite shows up under the *Requests List* tab of the user's 
+The site invitation shows up under the *Requests List* tab on the user's
 *Notifications* page. The user can then choose to *Confirm* or *Ignore* the 
 invitation.
 
@@ -38,5 +38,5 @@ This app is deprecated as of version 1.0.0.
 
 $$$
 
-Once the user confirms the invitation, they're made a member of the site and 
-assigned any roles they've been invited to.
+When the invitation is confirmed, the user is made a member of the site and
+assigned the roles you defined. 

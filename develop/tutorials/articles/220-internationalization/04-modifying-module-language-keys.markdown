@@ -27,7 +27,7 @@ a language file and one Java class.
 ## Implementing a Resource Bundle Loader [](id=implementing-a-resource-bundle-loader)
 
 Create an implementation of
-[`com.liferay.portal.kernel.util.ResourceBundleLoader`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) and override its
+[`com.liferay.portal.kernel.util.ResourceBundleLoader`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) and override its
 `loadResourceBundle` method.
 
         public class ResourceBundleLoaderComponent implements ResourceBundleLoader {

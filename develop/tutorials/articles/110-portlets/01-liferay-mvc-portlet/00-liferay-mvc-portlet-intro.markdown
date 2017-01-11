@@ -123,7 +123,7 @@ import, and not, for example, `com.liferay.portal.kernel.model.Portlet`.
 
 **Note:** To find a list of all the Liferay-specific attributes you can specify as
 properties in your portlet components, check out the
-[liferay-portlet-app_7_0_0.dtd](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html).
+[liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd.html).
 
 Consider the `<css-class-wrapper>` element from the above link as an example. To
 specify that property in your component, use this syntax in your property list:

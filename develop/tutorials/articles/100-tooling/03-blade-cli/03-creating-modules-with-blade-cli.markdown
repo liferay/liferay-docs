@@ -2,24 +2,51 @@
 
 When you use Blade CLI to create a project, your project's folder structure,
 build script (`build.gradle`), Java classes, and other resources (such as JSPs)
-are created based on the chosen template. Once you finish developing your
-project, you can use Gradle to build your project's JAR file and use Blade CLI
-to deploy your module to @product@'s module framework. In this tutorial, you'll
-learn how to use Blade CLI standalone. You can, however, use Blade CLI from a
-Liferay Workspace, which offers additional benefits. You can learn more about
-Liferay Workspaces in its dedicated
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+are created based on the chosen template. In this tutorial, you'll learn how to
+use Blade CLI to create modules based on pre-existing templates and samples.
+
+Using Blade CLI gives you the flexibility to choose how you want to create your
+application. You can do so in your own standalone environment, or within a
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
+Creating Liferay modules in a workspace using Blade CLI is very similar to
+creating them in a standalone environment.
+
+When creating modules in a workspace, you should navigate to the `/modules`
+directory to create your project. You can also provide further directory nesting
+into the `/modules` directory, if preferred. Your workspace, by default, sets
+the directory where your modules should be stored by setting the following
+property in the workspace's `gradle.properties` file:
+
+    liferay.workspace.modules.dir=modules
+
+Change this property if you'd like to store your modules in a different
+directory.
+
++$$$
+
+**Note:** Your modules should define a repository where external dependencies
+can be downloaded. Unlike Maven, Gradle does not define any repositories by
+default. For convenience, modules created with Blade CLI define Liferay's
+public Nexus repository as its default repository. This is defined, however, in
+different files depending on where the module was created.
+
+If you used Blade CLI to create a module outside of a workspace, your
+repository is defined in the module's `build.gradle` file. Likewise, if you
+created your module inside a workspace, your repository is defined in the
+`settings.gradle` file located in the workspace's ROOT folder. This ensures that
+all modules residing in the workspace share the same repository URL.
+
+$$$
+
+First, you'll learn how to create a module using a template.
+
+## Module Templates [](id=module-templates)
 
 To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options
 you can specify to help mold your project just the way you want it. To learn how
 to use the Blade `create` command and the many options it provides, enter `blade
-create -x` into a terminal. A list of the `create` options are listed below:
-
-<!-- The option `-x` is an arbitrary value; the only way to print create options
-in the terminal currently is to specify an option that does not exist. The
-option can be anything that doesn't already exist. When there's a specific value
-to prompt the list of options, I'll update the docs. -Cody -->
+help create` into a terminal. A list of the `create` options are listed below:
 
 - `-c, --classname <string>`: If a class is generated in the project, provide
   the name of the class to be generated. If not provided, the class name
@@ -42,7 +69,7 @@ to prompt the list of options, I'll update the docs. -Cody -->
 - `-t, --template <template>`: The project template to use when creating the
   project. Run `blade create -l` for a listing of available Blade CLI templates.
 
-To create a module project, follow the following syntax:
+To create a module project, use the following syntax:
 
     blade create [OPTIONS] <NAME>
 
@@ -59,29 +86,6 @@ directory was not specified, it is created in the folder you executed the
 command. When generating a project using Blade CLI, there is no downloading,
 which means internet access is not required.
 
-Using Blade CLI gives you the flexibility to choose how you want to create your
-application. You can do so in your own standalone environment, or within a
-Liferay Workspace. If you'd like to learn more about Liferay Workspaces see the
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
-tutorial.
-
-Creating Liferay modules in a workspace using Blade CLI is very similar to
-creating them in a standalone environment. You can find the details of how to
-create a Liferay Workspace using Blade CLI in the
-[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
-tutorial.
-
-When creating modules in a workspace, you should navigate to
-the `/modules` directory to create your project. You can also provide further
-directory nesting into the `/modules` directory, if preferred. Your workspace,
-by default, sets the directory where your modules should be stored by setting
-the following property in the workspace's `gradle.properties` file:
-
-    liferay.workspace.modules.dir=modules
-
-Change this property if you'd like to store your modules in a different
-directory.
-
 When using Blade CLI, you'll have to manually edit your project's component
 class. Blade CLI gives you the ability to specify the class's name, but all
 other contents of the class can only be edited after the class is created. See
@@ -93,3 +97,35 @@ Now that you know the basics on creating Liferay module projects using `blade
 create`, you can visit some of the tutorials in this section on specific
 `create` templates. The templates will be discussed further so you know exactly
 what each one has to offer.
+
+Next, you'll explore Liferay's provided module samples and how to generate them
+using Blade CLI.
+
+## Module Samples [](id=module-samples)
+
+Liferay provides many sample modules that are useful for those interested in
+learning best practices on structuring their modules to accomplish specific
+tasks in @product@. These samples can be found in the
+[liferay-blade-samples](https://github.com/liferay/liferay-blade-samples) Github
+repository. You can also learn more about these samples by visiting the
+[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+article.
+
+You can generate these samples using Blade CLI for convenience, instead of
+cloning the repository and manually copy/pasting them to your environment. To do
+this, use the following syntax:
+
+    blade samples <NAME>
+
+For example, if you wanted to generate the
+[blade.portlet.ds](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.portlet.ds)
+sample, you could execute
+
+    blade samples blade.portlet.ds
+
+For a full listing of all the available Blade samples, run
+
+    blade samples
+
+Awesome! Now you know the basics on creating Liferay module projects with Blade
+CLI.

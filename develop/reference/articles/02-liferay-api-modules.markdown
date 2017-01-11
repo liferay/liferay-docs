@@ -183,7 +183,7 @@ Javadoc.
 A module's Javadoc describes its Java API. 
 
 Javadoc for the modules in the latest GA release of Liferay Portal 7.0 CE are
-available online at <https://docs.liferay.com/portal/7.0/javadocs/> and for
+available online at <@platform-ref@/7.0-latest/javadocs/> and for
 download from [Liferay Downloads](https://www.liferay.com/downloads). All
 versions of modules for CE are available for download from the [Liferay CE
 artifact repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/).

@@ -90,7 +90,7 @@ Property Name | Type | Default Value | Description
 <a name="sourcedir"></a>`sourceDir` | `File` | `null` | The directory to which the [`packageinfo`](http://bnd.bndtools.org/chapters/170-versioning.html#versioning-packages) files are generated or updated.
 
 The properties of type `File` support any type that can be resolved by
-[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
 
