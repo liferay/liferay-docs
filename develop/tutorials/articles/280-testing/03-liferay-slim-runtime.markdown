@@ -26,6 +26,10 @@ It does **not** provide
 - Themes
 - etc.
 
+Building and launching a Liferay Slim Runtime is much quicker than a typical
+@product@ bundle. Because of decreased build and startup times, the Slim Runtime
+provides a great environment for testing. You'll learn how to build one next.
+
 ## Build
 
 To build the Slim Runtime, execute the following top-level Ant command:
@@ -64,8 +68,6 @@ property.
         ${module.framework.modules.dir},\
         ${module.framework.war.dir}
 
-## Running Pristine Slim Runtime
-
 By default, a pristine Slim Runtime has no UI or apps. Requests to it result in
 404 errors.
 
@@ -78,46 +80,44 @@ A web endpoint is the simplest type of function.
 The following snippet demonstrates a simple servlet that responds to all
 requests to `http://localhost:8080[/*]`:
 
-```java
-package web.sample;
+    package web.sample;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+    import java.io.IOException;
+    import java.io.PrintWriter;
 
-import javax.servlet.Servlet;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+    import javax.servlet.Servlet;
+    import javax.servlet.ServletException;
+    import javax.servlet.http.HttpServlet;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
 
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.http.whiteboard.HttpWhiteboardConstants;
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.http.whiteboard.HttpWhiteboardConstants;
 
-@Component(
-	immediate = true,
-	property = {
-		HttpWhiteboardConstants.HTTP_WHITEBOARD_SERVLET_PATTERN + "=/*"
-	},
-	service = Servlet.class
-)
-public class SampleServlet extends HttpServlet {
+    @Component(
+        immediate = true,
+        property = {
+            HttpWhiteboardConstants.HTTP_WHITEBOARD_SERVLET_PATTERN + "=/*"
+        },
+        service = Servlet.class
+    )
+    public class SampleServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void service(
-			HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
+        @Override
+        protected void service(
+                HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		response.setContentType("text/html");
+            response.setContentType("text/html");
 
-		PrintWriter writer = response.getWriter();
+            PrintWriter writer = response.getWriter();
 
-		writer.println("<h2>Hello You!</h2>");
-	}
+            writer.println("<h2>Hello You!</h2>");
+        }
 
-}
-```
+    }
 
 ## The Database
 
@@ -173,122 +173,120 @@ database:
 The servlet in the following snippet implements a simple web app that uses the
 contacts service.
 
-```java
-package web.sample;
+    package web.sample;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
+    import java.io.IOException;
+    import java.io.PrintWriter;
+    import java.util.List;
 
-import javax.servlet.Servlet;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+    import javax.servlet.Servlet;
+    import javax.servlet.ServletException;
+    import javax.servlet.http.HttpServlet;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
 
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.http.whiteboard.HttpWhiteboardConstants;
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
+    import org.osgi.service.http.whiteboard.HttpWhiteboardConstants;
 
-import com.liferay.contacts.model.Entry;
-import com.liferay.contacts.service.EntryLocalService;
-import com.liferay.counter.kernel.service.CounterLocalService;
-import com.liferay.portal.kernel.dao.orm.DynamicQuery;
-import com.liferay.portal.kernel.dao.orm.QueryUtil;
-import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
-import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.kernel.util.Validator;
+    import com.liferay.contacts.model.Entry;
+    import com.liferay.contacts.service.EntryLocalService;
+    import com.liferay.counter.kernel.service.CounterLocalService;
+    import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+    import com.liferay.portal.kernel.dao.orm.QueryUtil;
+    import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
+    import com.liferay.portal.kernel.util.ParamUtil;
+    import com.liferay.portal.kernel.util.Validator;
 
-@Component(
-	immediate = true,
-	property = {
-		HttpWhiteboardConstants.HTTP_WHITEBOARD_SERVLET_PATTERN + "=/*"
-	},
-	service = Servlet.class
-)
-public class SampleServlet extends HttpServlet {
+    @Component(
+        immediate = true,
+        property = {
+            HttpWhiteboardConstants.HTTP_WHITEBOARD_SERVLET_PATTERN + "=/*"
+        },
+        service = Servlet.class
+    )
+    public class SampleServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void service(
-			HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
+        @Override
+        protected void service(
+                HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		response.setContentType("text/html");
+            response.setContentType("text/html");
 
-		PrintWriter writer = response.getWriter();
+            PrintWriter writer = response.getWriter();
 
-		String fullNameParameter = ParamUtil.getString(request, "fullName");
+            String fullNameParameter = ParamUtil.getString(request, "fullName");
 
-		if (Validator.isNull(fullNameParameter)) {
-			writer.println("<h2>Hello You!</h2>");
-			writer.println("Do you want to sign up for this thing?<br/>");
-			writer.println("<form action='/join' method='post'>");
-			writer.println("<input type='text' name='fullName' placeholder='Full Name'><br>");
-			writer.println("<input type='text' name='emailAddress' placeholder='Email Address'><br>");
-			writer.println("<input type='submit' value='Sign Up'><br>");
-			writer.println("</form>");
+            if (Validator.isNull(fullNameParameter)) {
+                writer.println("<h2>Hello You!</h2>");
+                writer.println("Do you want to sign up for this thing?<br/>");
+                writer.println("<form action='/join' method='post'>");
+                writer.println("<input type='text' name='fullName' placeholder='Full Name'><br>");
+                writer.println("<input type='text' name='emailAddress' placeholder='Email Address'><br>");
+                writer.println("<input type='submit' value='Sign Up'><br>");
+                writer.println("</form>");
 
-			List<Entry> entries = _entryLocalService.getEntries(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+                List<Entry> entries = _entryLocalService.getEntries(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 
-			if (entries.isEmpty()) {
-				writer.println("I'm so lonely! :(<br/>");
-			}
-			else {
-				writer.println("Here's a list of others who've already signed up:<br/>");
+                if (entries.isEmpty()) {
+                    writer.println("I'm so lonely! :(<br/>");
+                }
+                else {
+                    writer.println("Here's a list of others who've already signed up:<br/>");
 
-				for (Entry entry : _entryLocalService.getEntries(QueryUtil.ALL_POS, QueryUtil.ALL_POS)) {
-					writer.println(String.format("%s &lt;%s><br/>", entry.getFullName(), entry.getEmailAddress()));
-				}
-			}
+                    for (Entry entry : _entryLocalService.getEntries(QueryUtil.ALL_POS, QueryUtil.ALL_POS)) {
+                        writer.println(String.format("%s &lt;%s><br/>", entry.getFullName(), entry.getEmailAddress()));
+                    }
+                }
 
-			return;
-		}
+                return;
+            }
 
-		String emailAddressParameter = ParamUtil.getString(request, "emailAddress");
+            String emailAddressParameter = ParamUtil.getString(request, "emailAddress");
 
-		if (Validator.isNull(emailAddressParameter)) {
-			writer.println(String.format("Ooops! %s, you forgot your emailAddress :(<br/>", fullNameParameter));
-			writer.println("<a href='/'>Retry?</a>");
+            if (Validator.isNull(emailAddressParameter)) {
+                writer.println(String.format("Ooops! %s, you forgot your emailAddress :(<br/>", fullNameParameter));
+                writer.println("<a href='/'>Retry?</a>");
 
-			return;
-		}
+                return;
+            }
 
-		DynamicQuery dynamicQuery = _entryLocalService.dynamicQuery();
+            DynamicQuery dynamicQuery = _entryLocalService.dynamicQuery();
 
-		dynamicQuery.add(RestrictionsFactoryUtil.eq("emailAddress", emailAddressParameter));
+            dynamicQuery.add(RestrictionsFactoryUtil.eq("emailAddress", emailAddressParameter));
 
-		long count = _entryLocalService.dynamicQueryCount(dynamicQuery);
+            long count = _entryLocalService.dynamicQueryCount(dynamicQuery);
 
-		if (count > 0) {
-			writer.println(String.format("Ooops! Someone already registered with the email address &lt;%s> :(<br/>", emailAddressParameter));
-			writer.println("<a href='/'>Retry?</a>");
+            if (count > 0) {
+                writer.println(String.format("Ooops! Someone already registered with the email address &lt;%s> :(<br/>", emailAddressParameter));
+                writer.println("<a href='/'>Retry?</a>");
 
-			return;
-		}
+                return;
+            }
 
-		long entryId = _counterLocalService.increment();
+            long entryId = _counterLocalService.increment();
 
-		Entry entry = _entryLocalService.createEntry(entryId);
+            Entry entry = _entryLocalService.createEntry(entryId);
 
-		entry.setFullName(fullNameParameter);
-		entry.setEmailAddress(emailAddressParameter);
+            entry.setFullName(fullNameParameter);
+            entry.setEmailAddress(emailAddressParameter);
 
-		_entryLocalService.updateEntry(entry);
+            _entryLocalService.updateEntry(entry);
 
-		writer.println(String.format("Great! Thanks for signing up %s :D<br/>", fullNameParameter));
-		writer.println("<a href='/'>Go Back!</a>");
-	}
+            writer.println(String.format("Great! Thanks for signing up %s :D<br/>", fullNameParameter));
+            writer.println("<a href='/'>Go Back!</a>");
+        }
 
-	@Reference
-	private CounterLocalService _counterLocalService;
+        @Reference
+        private CounterLocalService _counterLocalService;
 
-	@Reference
-	private EntryLocalService _entryLocalService;
+        @Reference
+        private EntryLocalService _entryLocalService;
 
-}
-```
+    }
 
 Note how it uses OSGi Declarative Services to reference an instance of Liferay
 Core's `CounterLocalService` and Contacts API's `EntryLocalService`.
