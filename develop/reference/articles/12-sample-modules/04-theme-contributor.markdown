@@ -1,4 +1,4 @@
-# Theme Contributor
+# Theme Contributor [](id=theme-contributor)
 
 The Theme Contributor sample lets you package UI resources (CSS and JS) 
 independent of a theme to include on a Liferay Portal page. For more information 
@@ -40,7 +40,7 @@ but you can write whatever JavaScript you want:
 
     console.log('Hello Blade Theme Contributor!');
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are five different versions of this sample, each built with a different
 build tool:

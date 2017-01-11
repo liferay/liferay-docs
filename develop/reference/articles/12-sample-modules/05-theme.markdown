@@ -1,4 +1,4 @@
-# Theme
+# Theme [](id=theme)
 
 The Theme sample provides the base files for a theme, using the
 [Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin).
@@ -18,7 +18,7 @@ the provided `css/_custom.scss` file. For a complete explanation of a theme's
 files, see the
 [Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide).
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are five different versions of this sample, each built with a different
 build tool:
