@@ -94,6 +94,23 @@ In the case of a single entry, just click the actions button
 (![Actions](../../../images/icon-actions.png)), then click *Export*. A `.config` file
 will be downloaded, containing any configuration changes you've saved. 
 
++$$$
+
+**Note:** If you're running Liferay DE 7.0 Fix Pack 8 or later, the `.config`
+file format is exported from System Settings. If you're on an earlier fix pack,
+the `.cfg` file format is used. 
+
+If you're on Liferay Portal 7.0 GA3 or earlier, the `.cfg` file is exported from
+System Settings.
+
+The file format was changed to fix a bug with mutli-value settings, which were
+handled improperly with the `.cfg` file format. See
+[https://issues.liferay.com/browse/LPS-67890](https://issues.liferay.com/browse/LPS-67890)
+for more information. Any @product@ system later than those listed above use the
+`.config` file format.
+
+$$$
+
 To export all of the configuration changes you've made in System Settings, click
 the System Settings options button (![Options](../../../images/icon-options.png)),
 then click *Export All Settings*. You'll get a zip file with `.config` files
