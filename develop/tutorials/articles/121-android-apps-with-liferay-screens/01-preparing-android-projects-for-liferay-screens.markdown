@@ -75,9 +75,11 @@ Sync Now link highlighted by a red box:
 Although we strongly recommend that you use Gradle to install Screens, the 
 following section shows you how to install Screens with Maven. 
 
-## Configuring Your Project with Maven [](id=configuring-your-project-with-maven)
+## Using Maven to Install Liferay Screens [](id=configuring-your-project-with-maven)
 
-Follow these steps to configure Liferay Screens in a Maven project:
+Note that we strongly recommend that you use Gradle to install Screens. It's
+possible though to use Maven to install Screens. Follow these steps to
+configure Liferay Screens in a Maven project: 
 
 1. Add the following dependency to your `pom.xml`:
 
@@ -119,8 +121,10 @@ Nice work!
 
 ## Manual Configuration in Gradle [](id=manual-configuration-in-gradle)
 
-If you're using Gradle, you can follow these steps to manually install Screens
-and its dependencies: 
+Although we strongly recommend that you use Gradle to install Screens 
+automatically, it's possible to use Gradle to install Screens manually. Follow 
+these steps to use Gradle to install Screens and its dependencies manually in 
+your Android project: 
 
 1. [Download](https://github.com/liferay/liferay-screens/releases) the latest 
    version of Liferay Screens for Android. 
@@ -199,10 +203,11 @@ the site you put the Guestbook portlet on. Then select
 The site ID is listed on the *Site Settings* tab. Copy and paste this value 
 from your portal to the `liferay_group_id` value in `server_context.xml`.
 
-If you're using Liferay 7, you must also set the `liferay_portal_version` 
-attribute in your `server_context.xml` to `70`. Supported values for this 
-attribute are `62` for Liferay 6.2, and `70` for Liferay 7.0. If you don't set 
-this attribute, it defaults to `62`. 
+If you're using version 7.0 of Liferay Portal CE or Liferay DXP, you must also 
+set the `liferay_portal_version` attribute in your `server_context.xml` to `70`. 
+Supported values for this attribute are `62` for Liferay Portal 6.2, and `70` 
+for Liferay Portal CE 7.0 or Liferay DXP 7.0. If you don't set this attribute, 
+it defaults to `62`. 
 
 You can also configure Screenlet properties in your `server_context.xml` file. 
 The example properties listed below, `liferay_recordset_id` and
