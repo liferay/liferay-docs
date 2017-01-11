@@ -11,7 +11,10 @@ operating system, and will be covered in greater detail next.
 
 After you've installed JPM, install the Blade CLI using the following command: 
 
-    (sudo) jpm install com.liferay.blade.cli
+    (sudo) jpm install https://releases.liferay.com/tools/blade-cli/2.0.1.201612161126/plugins/com.liferay.blade.cli_2.0.1.201612161126.jar
+
+<!-- Above URL should be updated to a permanent "latest" URL, once available.
+-Cody -->
 
 To check that Blade CLI is installed, make sure that the `blade` executable is
 available on your system path. Test its usage by executing `blade` in your
@@ -34,8 +37,11 @@ Now you can install Blade CLI and set its proxy settings using JPM.
 
 For Mac and Linux users, run the following command:
 		
-    (sudo) jpm install -f --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" com.liferay.blade.cli
-	
+    (sudo) jpm install -f --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" https://releases.liferay.com/tools/blade-cli/2.0.1.201612161126/plugins/com.liferay.blade.cli_2.0.1.201612161126.jar
+
+<!-- Above URL should be updated to a permanent "latest" URL, once available.
+-Cody -->
+
 Windows users may encounter a bug preventing JVM arguments from passing into
 JPM. To work around this, install Blade CLI the same way that was instructed for
 non-proxy users. Then go to your JPM installation path (e.g.,
@@ -45,13 +51,13 @@ to the end of the file.
     vmarg.1=-Dhttp(s).proxyHost=[your proxy host]
     vmarg.2=-Dhttp(s).proxyPort=[your proxy port]
 
-+$$$
+<!--+$$$
 
 **Note:** When executing `blade update`, your Blade CLI's proxy settings are
 sometimes reset. Be sure to verify your proxy settings after every Blade CLI
 update.
 
-$$$
+$$$-->
 
 Now that Blade CLI's proxy settings are configured, you'll learn how to update
 your installation.
@@ -61,6 +67,9 @@ your installation.
 If your Blade CLI version is outdated, you can run the following command to
 automatically download and install the latest version of Blade CLI:
 
+    jpm install -f https://releases.liferay.com/tools/blade-cli/2.0.1.201612161126/plugins/com.liferay.blade.cli_2.0.1.201612161126.jar
+
+<!--
     blade update
 
 For Windows users, the `blade update` command does not work because Windows
@@ -68,6 +77,7 @@ cannot update a file that is currently in use. To bypass this issue, you can use
 JPM to update your version of Blade CLI:
 
     jpm install -f com.liferay.blade.cli
+-->
 
 Blade CLI is updated frequently, so it's recommended to update your Blade CLI
 environment for new features. You can check your current installed version by
