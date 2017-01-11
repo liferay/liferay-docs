@@ -335,3 +335,5 @@ If you want to examine these projects further, you can download them
 
 [Auto Login](/develop/tutorials/-/knowledge_base/7-0/auto-login)
 
+[Writing a Custom Login Portlet](/develop/tutorials/-/knowledge_base/7-0/writing-a-custom-login-portlet)
+

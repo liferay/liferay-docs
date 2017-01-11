@@ -26,9 +26,9 @@ Here's how authentication under most circumstances works:
     the entire authentication process. 
 
 If you need to support an authentication mechanism that @product@ doesn't yet
-support, you can do that. If you don't like the user interface for signing in,
-you can replace it with your own. If you need accept credentials from a third
-party system that @product@ doesn't yet support, you can do that as well. 
+support, you can do that. If you need accept credentials from a third party
+system that @product@ doesn't yet support, you can do that as well. If you don't
+like the user interface for signing in, you can replace it with your own. 
 
 This set of tutorials guides you through these customizations. You'll discover
 three kinds of customizations: 
