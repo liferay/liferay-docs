@@ -12,6 +12,11 @@ this is an inefficient way to deploy your projects. With a small configuration
 in your Maven POMs, you can deploy a module to @product@ with one command
 execution.
 
+In previous versions of Liferay Portal, you were able to execute the
+`liferay:deploy` command to deploy your configured Maven project to a Liferay
+server. This is no longer possible since the `liferay-maven-plugin` is not
+applied to Maven projects built from Liferay archetypes.
+
 A prerequisite for this tutorial is to have your project configured to generate
 an OSGi module JAR; if you haven't done this, visit the
 [Creating a Module JAR Using Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-module-jar-using-maven)
@@ -75,6 +80,15 @@ tutorial for more information.
 
     This configures your deployment directory. Make sure to replace the
     `${liferay-bundle}` variable with your @product@ instance's file path.
+
+    +$$$
+
+    **Note:** Maven applications built for previous Liferay Portal versions
+    required the `<liferay.maven.plugin.version>` tag to do various tasks (e.g.,
+    deploying to a Liferay server). This tag is not needed since the old
+    `liferay-maven-plugin` is no longer used.
+
+    $$$
 
 3.  To invoke the Maven AntRun plugin from your project, add its configuration
     to your `pom.xml`:
