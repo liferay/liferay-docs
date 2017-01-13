@@ -4168,6 +4168,32 @@ Content application.
 
 ---------------------------------------
 
+### Deprecated the liferay-ui:captcha Tag and Replaced with liferay-captcha:captcha [](id=deprecated-the-liferay-uicaptcha-tag-and-replaced-with-liferay-captchacaptc)
+- **Date:** 2016-Nov-29
+- **JIRA Ticket:** LPS-69383
+
+#### What changed? [](id=what-changed-104a)
+
+The `liferay-ui:captcha` tag has been deprecated and replaced with the
+`liferay-captcha:captcha` tag.
+
+#### Who is affected? [](id=who-is-affected-104a)
+
+Plugins or templates that are using the `liferay-ui:captcha` tag need to update
+their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-104a)
+
+You should import the `liferay-captcha` tag library (if necessary) and update
+the tag namespace from `liferay-ui:captcha` to `liferay-captcha:captcha`.
+
+#### Why was this change made? [](id=why-was-this-change-made-104a)
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
+
 ### Moved Shopping File Uploads Portlet Properties to OSGi Configuration [](id=moved-shopping-file-uploads-portlet-properties-to-osgi-configuration)
 - **Date:** 2016-Dec-08
 - **JIRA Ticket:** LPS-69210
