@@ -1,11 +1,11 @@
-# Authentication Pipelines 
+# Authentication Pipelines [](id=authentication-pipelines)
 
 The authentication process in @product@ is a pipeline through which users can be
 validated by one or several systems. @product@'s flexibility and extensibility
-makes it possible for developers to make it authenticate users to anything they
-wish, rather than be limited by what it supports out of the box. 
+makes it possible for you to make it authenticate users to anything you wish, 
+rather than be limited by what it supports out of the box. 
 
-Here's how authentication under most circumstances works: 
+Here's how authentication works under most circumstances: 
 
 1.  Users provide their credentials to the Login Portlet to begin an
     authenticated session in a browser. 
@@ -18,23 +18,22 @@ Here's how authentication under most circumstances works:
 
 4.  Credentials are checked by default against the database, but they can be
     delegated to other systems instead of or in addition to it. This is called
-    an *Authentication Pipeline*. Developers can add `Authenticator`s to the
-    pipeline to support any system. 
+    an *Authentication Pipeline*. You can add `Authenticator`s to the pipeline 
+    to support any system. 
 
 5.  You can also customize @product@'s Login Portlet to support whatever user
     interface any of these systems need. This gives you full flexibility over
     the entire authentication process. 
 
-If you need to support an authentication mechanism that @product@ doesn't yet
-support, you can do that. If you need accept credentials from a third party
-system that @product@ doesn't yet support, you can do that as well. If you don't
-like the user interface for signing in, you can replace it with your own. 
+You can also support an authentication mechanism and/or accept credentials from 
+a system that @product@ doesn't yet support. If you don't like the user 
+interface for signing in, you can replace it with your own. 
 
 This set of tutorials guides you through these customizations. You'll discover
 three kinds of customizations: 
 
-- Auto Login: the easiest of the three, this lets you use credentials provided
-    in the HTTP header from another system to authenticate to @product@. 
+- Auto Login: the easiest of the three, this lets you authenticate to @product@ 
+    using credentials provided in the HTTP header from another system. 
 
 - Authentication Pipelines: if you need to check credentials against other
     systems instead of or in addition to @product@'s database, you can create a

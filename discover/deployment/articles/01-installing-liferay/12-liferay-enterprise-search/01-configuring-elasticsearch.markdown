@@ -169,7 +169,7 @@ familiar with System Settings, you can read about it
 [here](/discover/portal/-/knowledge_base/7-0/system-settings). Even if you need
 a configuration file so you can use the same configuration on another @product@
 system, you can still use System Settings. Just make the configuration edits you
-need, then export the `.cfg` file with your configuration.
+need, then export the `.config` file with your configuration.
 
 Here are the steps to configure the Elasticsearch adapter from the System
 Settings application:
@@ -205,15 +205,15 @@ configuration file:
 
 1. Create the following file:
     
-        [Liferay_Home]/osgi/configs/com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration.cfg
+        [Liferay_Home]/osgi/configs/com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration.config
 
-2. Add this to the `.cfg` file you just created:
+2. Add this to the configuration file you just created:
 
-        operationMode=REMOTE
+        operationMode="REMOTE"
         # If running Elasticsearch from a different computer:
-        #transportAddresses=ip.of.elasticsearch.node:9300
+        #transportAddresses="ip.of.elasticsearch.node:9300"
         # Highly recommended for all non-prodcution usage (e.g., practice, tests, diagnostics):
-        #logExceptionsOnly=false
+        #logExceptionsOnly="false"
 
 3. Start @product@ or re-index if @product@ is already running.
 
