@@ -283,6 +283,10 @@ Below is an example `*SoyPortlet` class for the
             }
 
             @Reference
+            protected void setLayoutService(final LayoutService layoutService) {
+                    this.layoutService = layoutService;
+            }
+            
             protected LayoutService layoutService;
 
     }
