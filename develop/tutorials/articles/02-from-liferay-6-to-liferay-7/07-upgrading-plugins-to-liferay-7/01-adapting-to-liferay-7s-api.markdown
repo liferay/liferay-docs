@@ -28,7 +28,7 @@ required to use the Code Upgrade Tool:
 :----- | :------ | :------------ |
 1.  | [Welcome to the Liferay Code Upgrade Tool](#step-1-welcome-to-the-liferay-code-upgrade-tool) | Introduces the Code Upgrade Tool |
 2.  | [Configure the Project](#step-2-configure-the-project) | Upgrades an existing Plugins SDK to a Plugins SDK 7 and prepares its plugins for upgrading |
-3.  | [Upgrade Descriptor Files](#step-3-upgrade-descriptor-files) | Upgrades descriptor files |
+3.  | [Upgrade Descriptor Files](#step-3-upgrade-descriptor-files) | Moves descriptor files to their new versions |
 4.  | [Find Breaking Changes](#step-4-find-breaking-changes) | Finds breaking changes, describes them, and prescribes adaptations (some of which can be applied automatically) |
 5.  | [Build Services](#step-5-build-services) | Runs Service Builder on plugins that use it |
 6.  | [Upgrade Layout Templates](#step-6-upgrade-layout-templates) | Upgrades layout templates |
@@ -74,11 +74,11 @@ This screen describes the tool's navigation and key functions.
 
  Icon | Description |
 :----- | :------------ |
- ![gears image](../../../images/icon-code-upgrade-step-gears.png) | Gears represent code upgrade steps. Clicking a step's gear takes you to that step. |
- ![check mark icon](../../../images/icon-code-upgrade-mark-done.png) | A check mark indicates step completion and takes you to the next step. |
- ![x icon](../../../images/icon-code-upgrade-mark-not-done.png) | An X indicates an incomplete step and advances you to the next step. |
- ![left arrow icon](../../../images/icon-code-upgrade-prev-step.png) | Left arrows navigate to the previous step. |
- ![right arrow icon](../../../images/icon-code-upgrade-next-step.png) | Right arrows advance to the next step. |
+ ![gears image](../../../images/icon-code-upgrade-step-gears.png) | Represents code upgrade steps. Clicking a step's gear takes you to that step. |
+ ![check mark icon](../../../images/icon-code-upgrade-mark-done.png) | Indicates step completion and takes you to the next step. |
+ ![x icon](../../../images/icon-code-upgrade-mark-not-done.png) | Indicates an incomplete step and advances you to the next step. |
+ ![left arrow icon](../../../images/icon-code-upgrade-prev-step.png) | Navigate to the previous step. |
+ ![right arrow icon](../../../images/icon-code-upgrade-next-step.png) | Advance to the next step. |
 
 Liferay @ide@ tracks each plugin's state. You can close the Code Upgrade Tool 
 view at any step and re-launch it later to resume upgrading plugins. 
@@ -116,7 +116,7 @@ prefer.
 
 ### Option 1: Upgrading to Liferay Workspace [](id=option-1-upgrading-to-liferay-workspace)
 
-Upgrading to Liferay Workspace does the following:
+Upgrading to Liferay Workspace does these things:
 
 -   Converts the SDK root folder to a new Liferay Workspace
 -   Upgrades the Plugins SDK to a Liferay Plugins SDK 7
@@ -145,7 +145,7 @@ To mark the step complete, click the check mark icon (![check mark icon](../../.
 
 ### Option 2: Upgrading to Liferay Plugins SDK 7 [](id=option-2-upgrading-to-liferay-plugins-sdk-7)
 
-Upgrading to Liferay Plugins SDK 7 does the following:
+Upgrading to Liferay Plugins SDK 7 does these things:
 
 -   Upgrades the Plugins SDK to a Liferay Plugins SDK 7
 -   Integrates the SDK with the specified @product-ver@ server
@@ -190,10 +190,6 @@ upgrading, click *Find...*.
 
 ![Figure 7: The Upgrade Descriptor File step adapts descriptor files to @product-ver@. Clicking a descriptor file opens a window that compares proposed updates to the current content.](../../../images/code-upgrade-compare-descriptor-files.png)
 
-If a plugin was imported to the Code Upgrade Tool *after* the initial 
-[upgrade project configuration](#step-2-configure-the-project)
-<!-- Where's the rest of this sentence? -->
-
 In the next step, you'll find breaking changes. 
 
 ## Step 4: Find Breaking Changes [](id=step-4-find-breaking-changes)
@@ -226,11 +222,9 @@ The following sections explain each option.
 
 ### Option 1: Correct Problems Automatically First [](id=option-1-correct-problems-automatically-first)
 
-This option (![bandage icon](../../../images/icon-bandage.png)) automatically 
-fixes problems that are clearly understood and easy to fix, leaving you to 
-address the remaining problems individually. Use this option to automatically 
-fix easy problems right away (you can fix tougher problems later). Follow these 
-steps to use this option: 
+Use this option (![bandage icon](../../../images/icon-bandage.png)) to 
+fix easy problems right away automatically (you can fix tougher problems later).
+Follow these steps to use this option: 
 
 1.  Click the *Automatically Correct Problems* icon (![bandage icon](../../../images/icon-bandage.png))
     to open the project selection window. 
@@ -388,7 +382,7 @@ module fragments. Here's a fragment's `bnd.bnd` file:
 ![Figure 20: The `Fragment-Host` header specifies the module on which to apply the fragment.](../../../images/code-upgrade-converted-jsp-hook-fragment-bnd.png)
 
 The Code Upgrade Tool also gives you a great deal of flexibility to convert 
-custom JSPs as needed. For example, if you make a mistake or aren't fond with 
+custom JSPs as needed. For example, if you make a mistake or aren't fond of 
 the results of converting a custom JSP, you can start over. Follow these steps 
 to do so: 
 
