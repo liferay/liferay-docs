@@ -1,4 +1,4 @@
-# Auto Login
+# Auto Login [](id=auto-login)
 
 While @product@ supports a wide variety of 
 [authentication mechanisms](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security), 
@@ -10,7 +10,7 @@ Auto Login components can check if the request contains something (a cookie, an
 attribute) that can be associated with a user in any way. If the component can
 make that association, it can authenticate that user to @product@. 
 
-## Creating an Auto Login Component
+## Creating an Auto Login Component [](id=creating-an-auto-login-component)
 
 Create a 
 [Declarative Services component](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide#creating-component-classes). 
@@ -85,7 +85,7 @@ Auto Login components are useful ways of providing an authentication mechanism
 to a system that @product@ doesn't yet support. You can write them fairly 
 quickly to provide the integration you need. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Password-Based Authentication Pipelines](/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
 

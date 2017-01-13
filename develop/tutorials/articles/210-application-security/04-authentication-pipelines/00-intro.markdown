@@ -1,4 +1,4 @@
-# Authentication Pipelines 
+# Authentication Pipelines [](id=authentication-pipelines)
 
 The authentication process in @product@ is a pipeline through which users can be
 validated by one or several systems. @product@'s flexibility and extensibility

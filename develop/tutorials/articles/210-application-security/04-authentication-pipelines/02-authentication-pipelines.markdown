@@ -1,4 +1,4 @@
-# Password-Based Authentication Pipelines 
+# Password-Based Authentication Pipelines [](id=password-based-authentication-pipelines)
 
 By default, once a user submits credentials to @product@, those credentials are
 checked against @product@'s database, though you can also delegate
@@ -22,7 +22,7 @@ to authenticate. In those cases, you should use an
 
 Read on to learn how to create an `Authenticator`. 
 
-## Anatomy of an Authenticator
+## Anatomy of an Authenticator [](id=anatomy-of-an-authenticator)
 
 `Authenticator`s are implemented for various steps in the authentication 
 pipeline. Here are the steps: 
@@ -92,7 +92,7 @@ example return success in all cases. If you deploy its module, it has no effect.
 Naturally, you'll want to provide more functionality. Next is an example that 
 shows you how to do that. 
 
-## Creating an Authenticator
+## Creating an Authenticator [](id=creating-an-authenticator)
 
 This example is an `Authenticator` that only allows users whose email addresses 
 end with *@liferay.com* or *@example.com*. You can implement this using one 
@@ -330,7 +330,7 @@ enforcing logins for the two domains specified in the validator.
 If you want to examine these projects further, you can download them 
 [in this ZIP file](https://dev.liferay.com/documents/10184/656312/auth-pipelines-authenticator.zip). 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Auto Login](/develop/tutorials/-/knowledge_base/7-0/auto-login)
 

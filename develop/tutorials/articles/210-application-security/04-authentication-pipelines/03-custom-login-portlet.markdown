@@ -1,4 +1,4 @@
-# Writing a Custom Login Portlet
+# Writing a Custom Login Portlet [](id=writing-a-custom-login-portlet)
 
 If you need to customize your users' authentication experience completely, you
 can write your own Login Portlet. The mechanics of this on the macro level are
@@ -126,7 +126,7 @@ want.
 Implementing your own login portlet gives you complete control over the
 authentication process. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Password-Based Authentication Pipelines](/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
 
