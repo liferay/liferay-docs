@@ -2,13 +2,12 @@
 
 By default, once a user submits credentials to @product@, those credentials are
 checked against @product@'s database, though you can also delegate
-authentication to an LDAP server. But what if there's some other system in your
-environment that should check users' credentials? What if you want to do this
-instead of or in addition to checking them against @product@'s database? You
-can do exactly this, by writing an `Authenticator` and inserting it as a step in
-@product@'s authentication pipeline. 
+authentication to an LDAP server. To use some other system in your environment 
+instead of or in addition to checking credentials against @product@'s database, 
+you can write an `Authenticator` and insert it as a step in @product@'s 
+authentication pipeline. 
 
-Because the `Authenticator` is checked by the Login Portlet, you cannot use this
+Because the `Authenticator` is checked by the Login Portlet, you can't use this
 approach if the user must be redirected to the external system or needs a token
 to authenticate. In those cases, you should use an 
 [Auto Login](/develop/tutorials/-/knowledge_base/7-0/auto-login) or an 
@@ -16,20 +15,20 @@ to authenticate. In those cases, you should use an
 
 `Authenticator`s let you do these things: 
 
-- Log into @product@ with a user name and password maintained in an external
-    system
-- Make secondary user authentication checks
-- Perform additional processing when user authentication fails
+- Log into @product@ with a username and password maintained in an external 
+    system 
+- Make secondary user authentication checks 
+- Perform additional processing when user authentication fails 
 
 Read on to learn how to create an `Authenticator`. 
 
 ## Anatomy of an Authenticator
 
-`Authenticator`s are implemented for various steps in the authentication
+`Authenticator`s are implemented for various steps in the authentication 
 pipeline. Here are the steps: 
 
-1.  `auth.pipeline.pre`: Comes before default authentication to the @product@
-    database. In this step, you can instruct @product@ to skip credential
+1.  `auth.pipeline.pre`: Comes before default authentication to the @product@ 
+    database. In this step, you can instruct @product@ to skip credential 
     validation against the @product@ database. Implemented by `Authenticator`. 
 
 2.  Default (optional) authentication to the @product@ database. 
@@ -40,7 +39,7 @@ pipeline. Here are the steps:
 4.  `auth.failure`: Perform additional processing after authentication fails.
     Implemented by `AuthFailure`. 
 
-To create an `Authenticator`, create a module and add a component that
+To create an `Authenticator`, create a module and add a component that 
 implements the interface: 
 
     @Component(
@@ -74,35 +73,35 @@ implements the interface:
         }
     }
 
-This example has been stripped down so you can see its structure. The
-`@Component` annotation causes the component to start immediately. This
-`Authenticator` runs in the `auth.pipeline.post` phase, and it's implementing
-the `Authenticator` service (which they all need to do). If you want to
-implement an `Authenticator` for the other phase in the pipeline, you'd supply
-the other key (`auth.pipeline.pre`). 
+This example has been stripped down so you can see its structure. First, note 
+the `@Component` annotation's contents: 
 
-The three methods below the annotation run based on how you have configured
-authentication: by email address (the default), by screen name, or by user ID.
-Since this is just a barebones example, it returns success in all cases, so if
-you deploy it, it'll have no effect. All the methods throw an `AuthException` in
-case the `Authenticator` is unable to perform its task for some reason--perhaps
-if the system it's authenticating against is unavailable or if some dependency
-can't be found. 
+- `immediate = true`: sets the component to start immediately
+- `key=auth.pipeline.post`: sets the `Authenticator` to run in the 
+  `auth.pipeline.post` phase. To run the `auth.pipeline.pre` phase, substitute 
+  `auth.pipeline.pre`. 
+- `service = Authenticator.class`: implements the `Authenticator` service. All 
+  `Authenticator`s must do this. 
 
-Naturally, you'll want to provide more functionality. Next is an example that
+The three methods below the annotation run based on how you've configured 
+authentication: by email address (the default), by screen name, or by user ID. 
+All the methods throw an `AuthException` in case the `Authenticator` is unable 
+to perform its task--perhaps if the system it's authenticating against is 
+unavailable or if some dependency can't be found. The methods in this barebones 
+example return success in all cases. If you deploy its module, it has no effect. 
+Naturally, you'll want to provide more functionality. Next is an example that 
 shows you how to do that. 
 
 ## Creating an Authenticator
 
-This example is an `Authenticator` that only allows users whose email
-addresses end with *@liferay.com* or *@example.com*. You can implement this
-using one module that does everything, or if you think other modules might be
-able to use the functionality that validates the email addresses, you might
-create two modules: one to implement the `Authenticator` and one to perform the
-email address validation. Since this is likely the case, this example shows the
-two module approach. 
+This example is an `Authenticator` that only allows users whose email addresses 
+end with *@liferay.com* or *@example.com*. You can implement this using one 
+module that does everything. If you think other modules might be able to use the 
+functionality that validates the email addresses, you might create two modules: 
+one to implement the `Authenticator` and one to validate email addresses. This 
+example shows the two module approach. 
 
-To create an `Authenticator`, create a module for your implementation. The most
+To create an `Authenticator`, create a module for your implementation. The most 
 appropriate Blade template for this is the 
 [service template](/develop/tutorials/-/knowledge_base/7-0/using-the-service-template). 
 Once you have the module, creating the `Activator` is straightforward: 
@@ -113,18 +112,18 @@ Once you have the module, creating the `Activator` is straightforward:
 2.  Implement the `Authenticator` interface and provide the functionality you
     need. 
 
-3.  Deploy your module. If you're using Blade CLI, this is done via `blade
-    deploy`. 
+3.  Deploy your module. If you're using 
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli), do this via 
+    `blade deploy`. 
 
 For this example, you'll do this twice: once for the email address validator
 module and once for the `Authenticator` itself. The `Authenticator` project
-contains the Interface for the validator, and the validator project contains the
+contains the interface for the validator, and the validator project contains the
 implementation. Here's what the `Authenticator` module structure looks like: 
 
 ![Figure x: The Authenticator module contains the validator's interface and the authenticator.](../../../images/auth-pipeline-authenticator-project.png)
 
-Since the `Authenticator` is the most interesting piece of code, it should be
-examined first: 
+Since the `Authenticator` is the most relevant, examine it first: 
 
     package com.liferay.docs.emailaddressauthenticator;
 
@@ -207,23 +206,23 @@ examined first:
         private static final Log _log = LogFactoryUtil.getLog(EmailAddressAuthenticator.class);
     }
 
-This time, rather than stubs, the three methods that authenticate actually have
-functionality. The `authenticateByEmailAddress` method checks the email address
-that was provided by the Login Portlet directly. The other two methods,
-`authenticateByScreenName` and `authenticateByUserId` call @product@'s
-`UserLocalService` to look up the user's email address before checking it. This
-service is injected by the OSGi container because of the `@Reference`
-annotation. Note that the validator is also injected in this same manner, though
-it's configured not to fail if the implementation cannot be found. This allows
-this module to start regardless of its dependency on the validator
-implementation. In this case, this is safe because the error is handled by
+This time, rather than stubs, the three authentication methods contain 
+functionality. The `authenticateByEmailAddress` method directly checks the email 
+address provided by the Login Portlet. The other two methods, 
+`authenticateByScreenName` and `authenticateByUserId` call @product@'s 
+`UserLocalService` to look up the user's email address before checking it. This 
+service is injected by the OSGi container because of the `@Reference` 
+annotation. Note that the validator is also injected in this same manner, though 
+it's configured not to fail if the implementation can't be found. This allows 
+this module to start regardless of its dependency on the validator 
+implementation. In this case, this is safe because the error is handled by 
 throwing an `AuthException` and logging the error. 
 
-Why would you want to do it this way? To error more gracefully. Because this is
-an `auth.pipeline.post` `Authenticator`, you presumably have other
-`Authenticator`s before this one checking credentials. If this one isn't
-working, you want to inform administrators with an error message rather than
-catastrophically failing and preventing users from logging in. 
+Why would you want to do it this way? To err gracefully. Because this is an 
+`auth.pipeline.post` `Authenticator`, you presumably have other `Authenticator`s 
+checking credentials before this one. If this one isn't working, you want to 
+inform administrators with an error message rather than catastrophically failing 
+and preventing users from logging in. 
 
 The only other Java code in this module is the Interface for the validator: 
 
@@ -239,7 +238,7 @@ The only other Java code in this module is the Interface for the validator:
 
 This defines a single method for checking the email address. 
 
-Next, you'll want to look at the validator module. 
+Next, you'll address the validator module. 
 
 ![Figure x: The validator project implements the Validator Interface and depends on the authenticator module. ](../../../images/auth-pipeline-validator-project.png)
 
@@ -263,10 +262,10 @@ This module contains only one class. It implements the Validator interface:
 
         @Override
         public boolean isValidEmailAddress(String emailAddress) {
-            
+
             if (_validEmailDomains.contains(
                 emailAddress.substring(emailAddress.indexOf('@')))) {
-            
+
                 return true;
             }
             return false;
@@ -276,19 +275,19 @@ This module contains only one class. It implements the Validator interface:
             new HashSet<String>(Arrays.asList(new String[] {"@liferay.com", "@example.com"}));
     }
 
-This code checks to make sure that the email address is from the @liferay.com or
-@example.com domains. The only other interesting part of this module is the
-Gradle build script, because it defines a compile-only dependency between the
-two projects. This is divided into two files: a `settings.gradle` and a
+This code checks to make sure that the email address is from the *@liferay.com* 
+or *@example.com* domains. The only other interesting part of this module is the 
+Gradle build script, because it defines a compile-only dependency between the 
+two projects. This is divided into two files: a `settings.gradle` and a 
 `build.gradle`. 
 
-The `settings.gradle` file defines the location of the project (the
-`Authenticator`) project the validator depends on: 
+The `settings.gradle` file defines the location of the project (the 
+`Authenticator`) the validator depends on: 
 
     include ':emailAddressAuthenticator'
     project(':emailAddressAuthenticator').projectDir = new File(settingsDir, '../com.liferay.docs.emailAddressAuthenticator')
 
-Since this project contains the Interface, it must be on the classpath at
+Since this project contains the interface, it must be on the classpath at 
 compile time, which is when `build.gradle` is running: 
 
     buildscript {
@@ -310,7 +309,7 @@ compile time, which is when `build.gradle` is running:
     dependencies {
         compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
         compileOnly group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
-        
+
         compileOnly project(":emailAddressAuthenticator")
     }
 
@@ -322,14 +321,14 @@ compile time, which is when `build.gradle` is running:
         }
     }
 
-Note the line in the dependencies section that refers to the `Authenticator`
+Note the line in the dependencies section that refers to the `Authenticator` 
 project defined in `settings.gradle`. 
 
-When these projects are deployed, the `Authenticator` you defined runs,
+When these projects are deployed, the `Authenticator` you defined runs, 
 enforcing logins for the two domains specified in the validator. 
 
 If you want to examine these projects further, you can download them 
-[here](https://dev.liferay.com/documents/10184/656312/auth-pipelines-authenticator.zip). 
+[in this ZIP file](https://dev.liferay.com/documents/10184/656312/auth-pipelines-authenticator.zip). 
 
 ## Related Topics
 
