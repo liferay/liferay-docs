@@ -1,10 +1,10 @@
 # Resolving a Plugin's Dependencies [](id=resolving-a-plugins-dependencies)
 
-Now that you've imported your plugin project to @ide@, you probably see compile
-errors for some of the Liferay classes it uses. These classes are listed as 
-undefined classes or unresolved symbols because they've been moved, renamed, or 
-removed. As a part of modularization in @product@, many of these classes reside 
-in new modules. 
+Now that you've imported your plugin project to Liferay @ide@, you probably see
+compile errors for some of the Liferay classes it uses. These classes are listed
+as undefined classes or unresolved symbols because they've been moved, renamed,
+or removed. As a part of modularization in @product@, many of these classes
+reside in new modules. 
 
 You must resolve all of these Liferay classes for your plugin. Some of the class 
 changes are quick and easy to fix. Changes involving the new modules require 
@@ -12,26 +12,26 @@ more effort to resolve, but doing so is still straightforward.
 
 Liferay class changes and required adaptations are described here: 
 
--   **Class moved to a package that's in the classpath**:  This change is 
+1.  **Class moved to a package that's in the classpath**:  This change is 
     common and easy to fix. Since the module is already on your classpath, you
     need only update the class import. You can do this by using the Liferay Code 
-    Upgrade Tool or by organizing imports via Eclipse. The Code Upgrade Tool 
+    Upgrade Tool or by organizing imports in @ide@. The Code Upgrade Tool 
     reports each moved class for you to address one by one. Organizing imports 
-    in Eclipse automatically resolves multiple classes at once. 
+    in @ide@ automatically resolves multiple classes at once. 
 
     It's typically faster to resolve moved classes using the mentioned Eclipse
     feature. Since Liferay @ide@ is based on Eclipse, you can generate imports
-    to classes in your classpath by using the *Organize Imports* keyboard
-    sequence: *Ctrl-Shift-o*. Comment out or remove any imports marked as 
-    errors, then press *Ctrl-Shift-o*. If there's only one match for the import, 
-    Eclipse automatically generates its import statement. Otherwise, a wizard 
-    appears that lets you select the correct import. 
+    of classes in your classpath with the *Organize Imports* keyboard sequence
+    *Ctrl-Shift-o*. Comment out or remove any imports marked as errors, then
+    press *Ctrl-Shift-o*. If there's only one match for the import, @ide@
+    automatically generates its import statement. Otherwise, a wizard appears
+    that lets you select the correct import. 
 
--   **Class moved to a module that's *not* in the classpath**: You must resolve
+2.  **Class moved to a module that's *not* in the classpath**: You must resolve
     the new module as a dependency for your project. This requires identifying
     the module and specifying your project's dependency on it. 
 
--   **Class replaced or removed**: The class has been replaced by another class
+3.  **Class replaced or removed**: The class has been replaced by another class
     or removed from the product. The Code Upgrade Tool (discussed later)
     explains what happened to the class, how to handle the change, and why the 
     change was made.
@@ -50,7 +50,7 @@ many benefits, as described in the article
 One such advantage is that these API modules can evolve separately from the
 platform kernel. They also simplify future upgrades. For example, instead of
 having to check all of Liferay's APIs, each module's 
-[Semantic Versioning](http://semver.org/) 
+[Semantic Versioning](http://semver.org) 
 indicates whether the module contains any backwards-incompatible changes. You
 need only adapt your code to such modules (if any). 
 
@@ -70,7 +70,7 @@ The reference article
 contains a table that maps each class moved from `portal-service.jar` to its
 new module. The table includes each class's new package and the module's version
 at the time of @product@'s latest release. For each class, the table contains 
-the following: 
+the following items: 
 
 * *Package*: The class' Java package
 * *Module Symbolic Name*: The module's unique identifier
@@ -122,7 +122,7 @@ shortly.
 **Note:** Previous versions of the Plugins SDK made `portal-service.jar` 
 available to projects. The @product-ver@ Plugins SDK similarly makes 
 `portal-kernel.jar` available. If you're using a @product@ bundle (@product@ 
-pre-installed on an app server), the Liferay utility modules are already in your 
+pre-installed on an app server), the Liferay utility modules are already on your 
 classpath. If you manually installed @product@ on your app server, the Liferay 
 utility modules might not be on your classpath. If a utility module you need is 
 not on your classpath, note its dependency elements. 
@@ -145,7 +145,7 @@ The next sections explain and demonstrate these options.
 Apache Ivy provides an elegant approach to managing dependencies. You declare
 your dependencies in an `ivy.xml` file in your plugin project's root folder. The
 Plugins SDK's Ant tasks leverage the `ivy.xml` file and the Plugins SDK's Ivy 
-scripts to download the specified modules and their dependencies, and make them 
+scripts to download the specified modules and their dependencies and make them 
 available to your plugin.
 
 +$$$
@@ -180,8 +180,8 @@ If your project doesn't already have an `ivy.xml` file, you can get one by
 creating a new plugin project in @ide@ and copying the `ivy.xml` file it 
 generates. 
 
-As an example of an `ivy.xml` file, here's the Liferay Portal 6.2 Knowledge Base 
-portlet's `ivy.xml`:
+Here's an example of an `ivy.xml` file from the Liferay Portal 6.2 Knowledge
+Base portlet:
 
     <?xml version="1.0"?>
 
@@ -209,9 +209,9 @@ project manually. You'll learn about this next.
 ## Managing Dependencies Manually [](id=managing-dependencies-manually)
 
 Managing dependencies manually is also possible. If you're already managing 
-dependencies using Ivy or some other dependency management framework, then you 
-can skip this section and continue at the section *Adapting to the API with the
-Code Upgrade Tool*. 
+dependencies using Ivy or some other dependency management framework, skip this
+section and continue at the section *Adapting to the API with the Code Upgrade
+Tool*. 
 
 Manual dependency management involves downloading dependency JAR files and 
 adding them to your project's `WEB-INF/lib` folder. Liferay JARs are available 
@@ -235,7 +235,7 @@ The easiest way to exclude such JARs from your plugin's deployment is to list
 them in a `deploy-excludes` property in your plugin's 
 `liferay-plugin-package.properties`. You must otherwise remove the JARs manually
 from the plugin WAR file. To exclude JARs in your plugin's 
-`liferay-plugin-package.properties` file, add an entry like the following, 
+`liferay-plugin-package.properties` file, add an entry like the one below, 
 replacing the square-bracketed items with the names of JAR files to exclude: 
 
     deploy-excludes=\
