@@ -4,18 +4,18 @@ If you need to customize your users' authentication experience completely, you
 can write your own Login Portlet. The mechanics of this on the macro level are
 no different from writing any other portlet, so if you need to familiarize
 yourself with that, please see the 
-[portlets](/develop/tutorials/-/knowledge_base/7-0/portlets) section. 
+[portlets section of tutorials](/develop/tutorials/-/knowledge_base/7-0/portlets). 
 
-This tutorial shows only the relevant parts of a Liferay 
-[MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) 
-that handle authenticating the user. You'll learn how to call @product@'s 
+This tutorial shows only the relevant parts of a 
+[Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) 
+that authenticates the user. You'll learn how to call @product@'s 
 [authentication pipeline](/develop/tutorials/-/knowledge_base/7-0/authentication-pipelines) 
 and then redirect the user to a location of your choice. 
 
 ## Authenticating to @product@ 
 
-You can use the 
-[example project](https://dev.liferay.com/documents/10184/656312/MyCustomLoginPortlet.zip) 
+You can use the example project 
+[in this ZIP file](https://dev.liferay.com/documents/10184/656312/MyCustomLoginPortlet.zip) 
 as a starting point for your own. 
 
 It has only one view, which is used for logging in or showing the user who is
@@ -117,10 +117,11 @@ The portlet handles all processing of this form using a single
 
     }
 
-The only tricky/unusual code here is the need to grab the `HttpServletRequest`
-and the `HttpServletResponse`. This is necessary to call @product@'s API for
-authentication. At the of the Action Command, the portlet sends a redirect that
-sends the user to the same page. You can of course make this any page you want. 
+The only tricky/unusual code here is the need to grab the `HttpServletRequest` 
+and the `HttpServletResponse`. This is necessary to call @product@'s API for 
+authentication. At the end of the Action Command, the portlet sends a redirect 
+that sends the user to the same page. You can of course make this any page you 
+want. 
 
 Implementing your own login portlet gives you complete control over the
 authentication process. 
