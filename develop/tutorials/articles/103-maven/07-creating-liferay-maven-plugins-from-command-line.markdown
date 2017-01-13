@@ -2,7 +2,7 @@
 
 To learn how to use Liferay IDE to create Liferay Maven plugins, please refer to
 the 
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial. This tutorial explains how to use Maven archetypes to generate
 Liferay plugin projects using the command line.
 
