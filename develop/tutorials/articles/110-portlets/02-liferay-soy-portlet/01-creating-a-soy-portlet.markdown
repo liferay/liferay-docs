@@ -44,7 +44,7 @@ the OSGi metadata next.
 Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND 
 configuration is shown below:
 
-    Bundle-Name: hello-soy-web
+    Bundle-Name: Liferay Hello Soy Web
     Bundle-SymbolicName: com.liferay.hello.soy.web
     Bundle-Version: 1.0.3
     Require-Capability: soy;filter:="(type=metal)"
@@ -74,8 +74,8 @@ you should have the following dependencies and configuration parameters:
         }
 
 This provides everything you need to create a Metal component based on Soy. Note 
-that the values of `name` and `version` should match the values of `Bundle-Name` and `Bundle-Version` in your `bnd.bnd` 
-file.
+that the `version` value in your `package.json` should match the value of 
+`Bundle-Version` in your `bnd.bnd` file.
 
 Next you can specify your module's build dependencies.
 
