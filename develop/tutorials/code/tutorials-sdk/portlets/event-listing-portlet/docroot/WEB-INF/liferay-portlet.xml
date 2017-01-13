@@ -5,6 +5,7 @@
 	
 	<portlet>
 		<portlet-name>event-listing</portlet-name>
+		<template-handler>com.liferay.docs.eventlisting.template.LocationListingPortletDisplayTemplateHandler</template-handler>
 		<icon>/icon.png</icon>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>
