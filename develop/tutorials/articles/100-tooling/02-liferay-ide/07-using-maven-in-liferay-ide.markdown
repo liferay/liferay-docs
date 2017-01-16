@@ -54,3 +54,29 @@ Now your Maven project is available from the Package Explorer. Next you'll learn
 about Liferay @ide@'s POM graphical editor.
 
 ### Using the POM Graphic Editor
+
+You're provided a nifty POM graphic editor when opening your Maven project's
+`pom.xml` in Liferay @ide@. This gives you several different ways to leverage
+the power of Maven in your project:
+
+- **Overview:** provides a graphical interface where you can add to and edit the
+  `pom.xml` file.
+
+- **Dependencies:** provides a graphical interface for adding and editing
+  dependencies in your project, as well as modifying the `dependencyManagement`
+  section of the `pom.xml` file.
+
+- **Effective POM:** provides a read-only version of your project POM merged
+  with its parent POM(s), `settings.xml`, and the settings in Eclipse for Maven.
+
+- **Dependency Hierarchy:** provides a hierarchical view of project dependencies
+  and an interactive listing of resolved dependencies.
+
+- **pom.xml:** provides an editor for your POM's source XML.
+
+The figure below show the `pom.xml` file editor and its modes.
+
+![Figure 4: Liferay @ide@ provides five interactive modes to help you edit and organize your POM..](../../../images/pom-editor-features.png)
+
+By taking advantage of these interactive modes, modifying and organizing your
+POM and its dependencies has never been easier!
