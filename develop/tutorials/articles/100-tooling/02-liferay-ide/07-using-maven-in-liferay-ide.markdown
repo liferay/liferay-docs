@@ -22,7 +22,7 @@ You can create a Maven project based on Liferay's provided Maven archetypes.
     ![Figure 1: The New Liferay Module Project wizard lets you generate a Maven module project.](../../../images/create-maven-ide-project.png)
 
 3.  (Optional) Click *Next* and name your component class name and package. You
-    can also specify your component class's properties  in the Properties menu.
+    can also specify your component class's properties in the Properties menu.
 
 4.  Click *Finish*.
 
@@ -34,7 +34,23 @@ learn how to do this next.
 
 ## Importing Maven Projects
 
+To import a pre-existing Maven project into Liferay @ide@, follow the steps
+outlined below:
 
+1.  Navigate to *File* &rarr; *Import* &rarr; *Maven* &rarr; *Existing Maven
+    Projects* and click *Next*.
 
+    ![Figure 2: @ide@ offers the Maven folder in the Import wizard.](../../../images/import-maven-project.png)
+
+2.  Click *Browse...* and select the root directory for your Maven project. Once
+    you've selected it, the `pom.xml` for that project should be visible in the
+    Projects menu.
+
+    ![Figure 3: Use the Import Maven Projects wizard to import your pre-existing project.](../../../images/select-maven-import.png)
+
+3.  Click *Finish*.
+
+Now your Maven project is available from the Package Explorer. Next you'll learn
+about Liferay @ide@'s POM graphical editor.
 
 ### Using the POM Graphic Editor
