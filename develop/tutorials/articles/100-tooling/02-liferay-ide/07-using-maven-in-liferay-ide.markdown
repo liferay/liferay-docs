@@ -1,4 +1,4 @@
-# Using Maven in Liferay @ide@
+# Using Maven in Liferay @ide@ [](id=using-maven-in-liferay-ide)
 
 You can take full advantage of Maven in Liferay @ide@ with its built-in Maven
 support. In this tutorial, you'll learn about the following topics:
@@ -10,7 +10,7 @@ support. In this tutorial, you'll learn about the following topics:
 
 First you'll install the necessary Maven plugins for Liferay @ide@.
 
-## Installing Maven Plugins for Liferay @ide@
+## Installing Maven Plugins for Liferay @ide@ [](id=installing-maven-plugins-for-liferay-ide)
 
 In order to properly support Maven projects in @ide@, you first need a mechanism
 to recognize Maven projects as Liferay @ide@ projects. @ide@ projects are
@@ -70,7 +70,7 @@ Awesome! Your @ide@ is ready to develop Maven projects for @product@!
 
 You'll learn about creating Maven projects in @ide@ next.
 
-## Creating Maven Projects
+## Creating Maven Projects [](id=creating-maven-projects)
 
 You can create a Maven project based on Liferay's provided Maven archetypes.
 
@@ -92,7 +92,7 @@ If you created your Maven project outside of @ide@ with another tool, you can
 still manage that project in @ide@, but you must first import it. You'll learn
 how to do this next.
 
-## Importing Maven Projects
+## Importing Maven Projects [](id=importing-maven-projects)
 
 To import a pre-existing Maven project into Liferay @ide@, follow the steps
 outlined below:
@@ -113,7 +113,7 @@ outlined below:
 Now your Maven project is available from the Package Explorer. Next you'll learn
 about Liferay @ide@'s POM graphical editor.
 
-### Using the POM Graphic Editor
+### Using the POM Graphic Editor [](id=using-the-pom-graphic-editor)
 
 You're provided a nifty POM graphic editor when opening your Maven project's
 `pom.xml` in Liferay @ide@. This gives you several different ways to leverage
