@@ -1,8 +1,8 @@
-# Configuring Dependencies
+# Configuring Dependencies [](id=configuring-dependencies)
 
-Using external modules in your project requires configuring
-dependencies on them. You look up the their attributes and plug them into
-dependency entries for your build system (e.g., [Gradle](https://gradle.org/),
+Using external modules in your project requires configuring dependencies on
+them. You look up the their attributes and plug them into dependency entries for
+your build system (e.g., [Gradle](https://gradle.org/),
 [Maven](https://maven.apache.org/), or [Ivy](http://ant.apache.org/ivy/)) to
 process.
 
@@ -13,15 +13,15 @@ Artifacts have these attributes:
 -   *Version*: Release number 
 
 The build system downloads the dependency artifacts for your project to compile
-against. 
+against.
 
 Here you'll learn how to do these things:
 
--   Find Core @product@ artifacts
--   Find @product@ app and independent artifacts
--   Configure dependencies
+-   [Find Core @product@ artifacts](#finding-core-liferay-portal-artifacts)
+-   [Find @product@ app and independent artifacts](#finding-liferay-portal-app-and-independent-artifacts)
+-   [Configure dependencies](#configuring-dependencies)
 
-## Finding Core @product@ Artifacts
+## Finding Core @product@ Artifacts [](id=finding-core-liferay-portal-artifacts)
 
 Each @product@ installation's module `jar` files contain a `MANIFEST.MF` file
 that specifies the module artifact's attributes. 
@@ -55,15 +55,15 @@ $$$
 Finding artifacts for @product@ apps and independent modules is also
 straightforward. 
 
-## Finding @product@ App and Independent Artifacts
+## Finding @product@ App and Independent Artifacts [](id=finding-liferay-portal-app-and-independent-artifacts)
 
-There are several ways to find @product@ app and independent artifact details. 
+Several resources provide @product@ app and independent artifact details. 
 
- Option | Artifact Type |
+ Resource | Artifact Type |
 :-------- | :-------------- |
-Option 1: Use the App Manager | Deployed modules |
-Option 2: Use the Reference Docs | *Liferay* modules per product release |
-Option 3: Use Maven Central | All artifact types: Liferay and third party, module and non-module |
+[App Manager](#liferay-portals-app-manager) | Deployed modules |
+[Reference Docs](#reference-docs) | *Liferay* modules per product release |
+[Maven Central](#maven-central) | All artifact types: Liferay and third party, module and non-module |
 
 +$$$
 
@@ -74,7 +74,7 @@ $$$
 
 The App Manager is the best source for information on deployed modules. 
 
-### Option 1: Use @product@'s App Manager
+### @product@'s App Manager [](id=liferay-portals-app-manager)
 
 The App Manager knows all modules deployed on the @product@ instance.
 
@@ -89,9 +89,9 @@ The module's artifact ID and version number show.
 
 The App Manager lists app modules and independent modules. 
 
-![Figure x: Developers can inspect deployed module artifact IDs and version numbers.](../../../images/intro-configuring-dependencies-search-app-manager-for-module.png)
+![Figure 1: You can inspect deployed module artifact IDs and version numbers.](../../../images/intro-configuring-dependencies-search-app-manager-for-module.png)
 
-![Figure x: The App Manager aggregates Liferay and third party independent modules.](../../../images/intro-configuring-dependencies-indep-modules-in-app-manager.png)
+![Figure 2: The App Manager aggregates Liferay and third party independent modules.](../../../images/intro-configuring-dependencies-indep-modules-in-app-manager.png)
 
 +$$$
 
@@ -142,7 +142,7 @@ $$$
 Liferay's reference documentation is the best place to look up Liferay modules
 that aren't yet deployed. 
 
-### Option 2: Use the Reference Docs
+### Reference Docs [](id=reference-docs)
 
 Liferay's app Javadoc overviews list each module's artifact ID, version number,
 and display name. 
@@ -162,7 +162,7 @@ The heading above the package name shows the module's artifact ID, version
 number, and display name. Remember, the group ID for all app modules is
 `com.liferay`. 
 
-![Figure x: @product@ app Javadoc overviews list each module's artifact ID, version number, and display name.](../../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
+![Figure 3: @product@ app Javadoc overviews list each module's artifact ID, version number, and display name.](../../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
 
 +$$$
 
@@ -174,12 +174,13 @@ $$$
 Next, discover how to look up Liferay and non-Liferay artifacts on Maven
 Central.
 
-### Option 3: Use Maven Central
+### Maven Central [](id=maven-central)
 
 Whether an artifact is a module or standard archive, from Liferay or a third
 party, chances are it's on Maven Central. 
 
-1.  Go to Maven Central at [https://search.maven.org/](https://search.maven.org/).
+1.  Go to Maven Central at
+    [https://search.maven.org/](https://search.maven.org/). 
 
 2.  Search for the artifact. 
 
@@ -194,11 +195,11 @@ For example, to find an artifact containing class
 
 $$$
 
-![Figure x: Developers can search for artifacts on Maven Central.](../../../images/intro-configuring-dependencies-search-maven-central.png)
+![Figure 4: You can search for artifacts on Maven Central.](../../../images/intro-configuring-dependencies-search-maven-central.png)
 
 Now that you have your artifact's attribute values, a dependency on it. 
 
-## Configuring Dependencies
+## Configuring Dependencies [](id=configuring-dependencies)
 
 Specifying dependencies to build systems is easy.
 
@@ -227,7 +228,7 @@ Ivy | `org` | `name` | `rev` |
 The following examples demonstrate configuring a dependency on Liferay's Journal
 API module for Gradle, Maven, and Ivy. 
 
-### Gradle
+### Gradle [](id=gradle)
 
 Here's the dependency configured in a `build.gradle` file. 
 
@@ -236,7 +237,7 @@ Here's the dependency configured in a `build.gradle` file.
 		...
 	}
 
-### Maven
+### Maven [](id=maven)
 
 Here's the dependency configured in a `pom.xml` file. 
 
@@ -246,7 +247,7 @@ Here's the dependency configured in a `pom.xml` file.
 		<version>1.0.1</version>
 	</dependency>
 
-### Ivy
+### Ivy [](id=ivy)
 
 Here's the dependency configured in an `ivy.xml` file. 
 
@@ -254,7 +255,7 @@ Here's the dependency configured in an `ivy.xml` file.
 
 You've learned how to find artifacts and configure them as dependencies. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
