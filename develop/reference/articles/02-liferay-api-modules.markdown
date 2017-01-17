@@ -226,5 +226,7 @@ You now know how to find Liferay component API modules and their Javadoc.
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+
 [Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 

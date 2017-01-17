@@ -3,7 +3,7 @@
 Using external modules in your project requires configuring dependencies on
 them. You look up the their attributes and plug them into dependency entries for
 your build system (e.g., [Gradle](https://gradle.org/),
-[Maven](https://maven.apache.org/), or [Ivy](http://ant.apache.org/ivy/)) to
+[Maven](https://maven.apache.org/), or [Ant/Ivy](http://ant.apache.org/ivy/)) to
 process.
 
 Artifacts have these attributes: 

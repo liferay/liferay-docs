@@ -100,7 +100,11 @@ The fully-qualified class name of the `Meta` class referred to above is
 the `Meta.OCD` and `Meta.AD` annotations, please refer to this bnd
 documentation:
 [http://bnd.bndtools.org/chapters/210-metatype.html](http://bnd.bndtools.org/chapters/210-metatype.html).
-In order to use the `Meta.OCD` and `Meta.AD` annotations in your modules, you must specify a dependency on the bnd library. We recommend using bnd version 3. Here's an example of how to include this dependency in a Gradle project:
+In order to use the `Meta.OCD` and `Meta.AD` annotations in your modules, you
+must [specify a
+dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) on
+the bnd library. We recommend using bnd version 3. Here's an example of how to
+include this dependency in a Gradle project:
 
     dependencies {
         compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
@@ -353,7 +357,8 @@ Note: Currently, the infrastructure used by System Settings relies on the
 `configurationPid` being the same as the class name of the interface. If they
 don't match, it will not be able to provide any information provided through
 `ExtendedObjectClassConfiguration`. This annotation is distributed through a
-module called `portal-configuration-metatype` so you must include a dependency
+module called `portal-configuration-metatype` so you must [include a
+dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
 on it in order to use it.
 
 Note: At the time of writing this, no public JAR of this library is available.

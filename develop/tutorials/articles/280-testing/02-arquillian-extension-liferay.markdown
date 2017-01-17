@@ -41,7 +41,9 @@ Follow these steps to create a Liferay portlet project using Maven.
 
 <!-- Gradle example coming soon. -Jesse -->
 
-1. Add Liferay, portlet, and OSGi dependencies to your project's `pom.xml` file:
+1.  [Add Liferay, portlet, and OSGi
+    dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+    to your project's `pom.xml` file:
 
         ...
             <dependencies>

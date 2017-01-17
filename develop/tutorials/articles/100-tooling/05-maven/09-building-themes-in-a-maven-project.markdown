@@ -121,9 +121,10 @@ build a theme. You'll learn how to do this next.
         <version>1.0.0</version>
         <packaging>war</packaging>
 
-5.  Building themes requires certain dependencies. You can configure these
-    dependenices in your project's `pom.xml` as directories or JAR files. If you
-    choose to use JARs, you must apply the
+5.  Building themes requires certain dependencies. You can [configure these
+    dependenices](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+    in your project's `pom.xml` as directories or JAR files. If you choose to
+    use JARs, you must apply the
     [maven-dependency-plugin](http://maven.apache.org/plugins/maven-dependency-plugin/)
     and have it copy JAR dependencies into your project from Maven Central:
 

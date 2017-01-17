@@ -243,8 +243,9 @@ Unit testing involves these things:
 - Analyzing test results
 
 If your tests require accessing classes outside the module, declare them as
-`testCompile` dependencies in the module's `build.gradle` file. Here's an
-example `testCompile` dependency. 
+`testCompile`
+[dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+in the module's `build.gradle` file. Here's an example `testCompile` dependency. 
 
     testCompile group: "com.sample", name: "com.sample.external", version: "1.0.0"
 

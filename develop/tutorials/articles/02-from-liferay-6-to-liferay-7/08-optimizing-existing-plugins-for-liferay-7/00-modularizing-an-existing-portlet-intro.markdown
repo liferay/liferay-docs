@@ -126,13 +126,14 @@ $$$
     [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-web/bnd.bnd)
     for a more advanced example.
 
-6.  Open the `build.gradle` file. This is used to specify all your module's
-    dependencies. The `build.gradle` file that was generated for you is
-    pre-populated with content and default dependencies related to OSGi and
-    @product@. In the `dependencies {...}` block, you need to add the web
-    client module's dependencies. To learn how to find and specify dependencies
-    on Liferay API modules, refer to the reference document 
-    [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
+6.  Open the `build.gradle` file. This is used to [specify all your module's
+    dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies).
+    The `build.gradle` file that was generated for you is pre-populated with
+    content and default dependencies related to OSGi and @product@. In the
+    `dependencies {...}` block, you need to add the web client module's
+    dependencies. To learn how to find and specify dependencies on Liferay API
+    modules, refer to the reference document [Finding Liferay API
+    Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
     When deploying your module into the OSGi container, OSGi checks if the
     dependencies are available in the container. If the dependencies are not
     available in the container, your module will be unavailable. Therefore, your
