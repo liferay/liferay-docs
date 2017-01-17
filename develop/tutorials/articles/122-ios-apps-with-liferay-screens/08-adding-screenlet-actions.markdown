@@ -43,7 +43,7 @@ Use the following steps to add an action to your your Screenlet:
    the action. For example, Add Boookmark Screenlet's XIB file needs a new 
    button for getting the URL's title: 
 
-    ![Figure 1: The sample Add Bookmark Screenlet's XIB file contains a new button next to the *Title* field for retrieving the URL's title.](../../../images/screens-ios-xcode-add-bookmark-advanced.png)
+    ![Figure 1: The sample Add Bookmark Screenlet's XIB file contains a new button next to the *Title* field for retrieving the URL's title.](../../images/screens-ios-xcode-add-bookmark-advanced.png)
 
 3. Wire the UI components in your XIB file to your View class. In your View 
    class, you must also set each component's `restorationIdentifier` to its 

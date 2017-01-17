@@ -25,7 +25,7 @@ these steps is a bit different:
     Bookmark List Screenlet's Collection Theme. It's a simple square that 
     displays the bookmark's URL and the URL's first letter. 
 
-    ![Figure 1: The XIB file for the cell in Bookmark List Screenlet's custom View.](../../../images/screens-ios-collectionview-cell.png)
+    ![Figure 1: The XIB file for the cell in Bookmark List Screenlet's custom View.](../../images/screens-ios-collectionview-cell.png)
 
 2.  Create your XIB file's class by extending `UICollectionViewCell`. Create as 
     many outlets and actions as you need for your UI components and write the 
