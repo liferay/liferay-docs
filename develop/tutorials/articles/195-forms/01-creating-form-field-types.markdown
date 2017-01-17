@@ -2,12 +2,16 @@
 
 The Forms application contains many useful field types out-of-the-box, and those
 field types are highly configurable. Most use cases will be met with one of the
-existing field types. If you're reading this, however, your use case probably
-wasn't met with the default field types. For example, perhaps you need a
-dedicated *time* field. You can use a text field and add a tip to tell users
-something like *enter the time in the format `hour:minute`*, but some users will
-still enter something indecipherable, like *8:88*. To meet this need, add a
-*time* field to @product@'s Forms application. 
+existing field types. 
+
+<!--Figure of existing field types-->
+
+If you're reading this, however, your use case probably wasn't met with the
+default field types. For example, perhaps you need a dedicated *time* field. You
+can use a text field and add a tip to tell users something like *enter the time
+in the format `hour:minute`*, but some users will still enter something
+indecipherable, like *8:88*. Instead, add a *time* field to @product@'s Forms
+application. 
 
 <!--Once this is done successfully, take a picture-->
 
@@ -119,8 +123,32 @@ outlined above. The Java classes will be in the package
 
 $$$
 
-Start by creating the OSGi Component that marks your class as an implementation
-of `DDMFormFieldType`.
+Start by setting up the project's metadata.
+
+## Specifying OSGi Metadata
+
+First specify the necessary OSGi metadata in a `bnd.bnd` file (see
+[here](https://www.google.com/url?q=http://bnd.bndtools.org/chapters/800-headers.html&sa=D&ust=1484604445554000&usg=AFQjCNHA_3LxtNcRBblsT62vG5MoEvs6PQ)
+for more information). Here's what it would look like for a module in a folder
+called `dynamic-data-mapping-type-time`:
+
+    Bundle-Name: Liferay Dynamic Data Mapping Type Time
+    Bundle-SymbolicName: com.liferay.dynamic.data.mapping.type.time
+    Bundle-Version: 1.0.0
+    Liferay-JS-Config: /META-INF/resources/config.js
+    Web-ContextPath: /dynamic-data-mapping-type-time
+
+First name the bundle with a reader-friendly `Bundle-Name` and a unique
+`Bundle-SymbolicName` (it's common to use the root package of your module's Java
+classes), then set the version. Point to the JavaScript configuration file
+(`config.js`) that defines JavaScript modules added by your module (you'll get
+to that later), and set the Web Context Path so your module's resources are made
+available upon module activation. 
+
+Next craft the OSGi Component that marks your class as an implementation of
+`DDMFormFieldType`. 
+
+<!--Probably need to show the build.gradle configuration in this case -->
 
 ## Creating a `DDMFormFieldType` Component
 
@@ -166,11 +194,11 @@ can be loaded when needed.
 Type* dialog.
 
 `ddm.form.field.type.name`
-: The name of the field type is used by the `DDMFormValuesFactory` to add all
-field types to the forms UI.
-<!-- Check this -->
+: The field type's name must be unique. Each Component in a field type module
+references the field type name. <!--It is used by OSGi trackers to filter
+capabilities.-->
 
-Next code the class itself.
+Next code the `*DDMFormFieldType` class.
 
 ## Implementing `DDMFormFieldType`
 
@@ -241,10 +269,7 @@ also includes some utility methods. Here's what the time field's
 
 Here you're declaring the templating language (Soy closure templates), the
 template namespace (`ddm.time`), and pointing to the location of the templates
-within your module (`/META-INF/resource/time.soy`). On activation of the
-Component, the static resources in you module will be loaded in the OSGi
-runtime.
-<!-- Refine that paragraph if necessary -->
+within your module (`/META-INF/resource/time.soy`).
 
 +$$$
 
@@ -311,9 +336,6 @@ There are three important things to do in the template:
     parameters as flags to display or hide some parts of the HTML (for example,
     the `$required` parameter). If you extend `BaseDDMFormFieldRenderer`, all
     the listed parameters are passed by default.
-   <!--Might be better to remove them from the template and instead just list
-   them. Also, we didn't actually need to do this step because of the abstract
-   class doing it for us, but confirm this is true-->
     <!-- A figure with a screenshot of the time configuration sidebar or one of
     the default field config sidebars would be helpful-->
 
@@ -333,9 +355,9 @@ There are three important things to do in the template:
 3.  Write the template logic (everything encapsulated by the
     `{template}...{/template}` block). In the above example the template does
     these things:
-    - Checks whether to show the label of the field, and if so, add it.
-    - Checks if the field is required, and add `icon-asterisk` if it is.
-    - Checks if a tip is provided, and display it.
+    - Checks whether to show the label of the field, and if so, adds it.
+    - Checks if the field is required, and adds `icon-asterisk` if it is.
+    - Checks if a tip is provided, and displays it.
     - Provides the markup for the time field in the `<input>` tag. In this case
     a text input field is defined.
 
@@ -367,7 +389,7 @@ default field parameters.
 
 +$$$
 
-**Note:** Extending the Java class `TimeDDMFormFieldRenderer` gave you access to
+**Note:** Extending the Java class `BaseDDMFormFieldRenderer` gave you access to
 the default parameters in the backend, and extending the JavaScript component
 `Liferay.DDM.Renderer.Field` injects the parameters into your JavaScript
 component so you can automatically refer to them in the soy template.
