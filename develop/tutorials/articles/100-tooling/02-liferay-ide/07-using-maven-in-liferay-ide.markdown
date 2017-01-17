@@ -28,7 +28,7 @@ provide this capability:
 You won't get into the technicalities of these plugins; all you need to know is
 how to install them so you can begin developing Maven projects for @product@.
 
-When first installing Liferay IDE, the installation startup screen lets you
+When first installing Liferay @ide@, the installation startup screen lets you
 select whether you'd like to install the Maven plugins automatically. Don't
 worry if you missed this during setup. You'll learn how to install the required
 Maven plugins for @ide@ manually below.
@@ -41,7 +41,7 @@ Maven plugins for @ide@ manually below.
 2.  Check the *Liferay IDE Maven Support* option. This bundles all the required
     Maven plugins you need to begin developing Maven projects for @product@.
 
-    ![Figure 1: You can install all the necessary Maven plugins.](../../../images/.png)
+    ![Figure 1: You can install all the necessary Maven plugins for @ide@ by installing the *Liferay IDE Maven Support* option.](../../../images/maven-install-ide-plugins.png)
 
     If the *Liferay IDE Maven Support* option does not appear, then it's already
     installed. To verify that it's installed, uncheck the *Hide items that are
@@ -88,9 +88,9 @@ You can create a Maven project based on Liferay's provided Maven archetypes.
 
 That's it! You've created a Liferay module project using Maven!
 
-You may have created your Maven project outside of @ide@ with another tool. You
-can still manage that project in @ide@, but you must first import it. You'll
-learn how to do this next.
+If you created your Maven project outside of @ide@ with another tool, you can
+still manage that project in @ide@, but you must first import it. You'll learn
+how to do this next.
 
 ## Importing Maven Projects
 
@@ -134,7 +134,7 @@ the power of Maven in your project:
 
 - **pom.xml:** provides an editor for your POM's source XML.
 
-The figure below show the `pom.xml` file editor and its modes.
+The figure below shows the `pom.xml` file editor and its modes.
 
 ![Figure 5: Liferay @ide@ provides five interactive modes to help you edit and organize your POM..](../../../images/pom-editor-features.png)
 
