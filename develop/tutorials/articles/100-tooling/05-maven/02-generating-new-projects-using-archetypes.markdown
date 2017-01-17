@@ -19,6 +19,14 @@ command:
 
     mvn archetype:generate -Dfilter=liferay
 
+The generated archetypes are not all intended for the latest @product@ release.
+Some are intended for earlier versions of Liferay Portal (e.g., 6.2, 6.1, etc.).
+An easy way to tell if the archetype is compatible with @product-ver@ is by
+inspecting the archetype's package name. Archetypes with the
+`com.liferay.maven.archetypes` prefix are legacy archetypes. Those prefixed with
+`com.liferay.project.templates.[TYPE]` or `com.liferay.faces.archetype:[TYPE]`
+are compatible with @product-ver@.
+
 Here's a brief list of some popular Maven archetypes provided by Liferay:
 
 - Activator
