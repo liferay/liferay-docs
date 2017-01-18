@@ -21,12 +21,12 @@ public class ScanLinks {
 
 	public static void main(String[] args) throws IOException, ParserException {
 
-		System.out.println("Checking for broken links ...");
+		System.out.println("Checking for broken LDN links ...");
 		System.out.println("This may take several minutes ...");
 		
 		String docDir = args[0];
 		
-		//Should account for DXP article links below
+		//Still need to account for DXP article links
 		
 		String dirType = "";
 
@@ -77,6 +77,13 @@ public class ScanLinks {
 							
 							String ldnUrl = extractLdnUrl(line, in.getLineNumber(), mkdFile.getName());
 							checkLdnUrl(ldnUrl, mkdFile.getName(), in.getLineNumber());
+						}
+						else if (line.contains("](develop/") || line.contains("](discover/") ||
+								line.contains("](distribute/")) {
+							
+							String ldnArticle2 = ldnArticle.substring(1, ldnArticle.length());
+							System.out.println(ldnArticle2 + " in FILENAME --- " + mkdFile.getName() + ":" + in.getLineNumber() + " is missing beginning slash");
+							resultsNumber = resultsNumber + 1;
 						}
 						
 						// Regular URL checks are unreliable. Need to investigate
