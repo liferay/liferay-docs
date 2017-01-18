@@ -17,7 +17,7 @@ convenient Shield adapter plugin.
 
 **Note:** The Shield plugin can only be used when you're running Elasticsearch
 in *remote mode*. If you're not sure what that means refer to the [Configuring
-Elasticsearch article](discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch).
+Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch).
 It's not possible to install Shield into @product@'s default embedded
 Elasticsearch--and you shouldn't be using embedded Elasticsearch in production
 anyway.
@@ -177,7 +177,7 @@ Follow these steps to configure the Shield adapter using System Settings:
    next to *Reindex all search indexes.*
 
 For a complete list of the Shield adapter's available configuration options, see
-[here](discover/reference/-/knowledge_base/7-0/shield-settings)
+[here](/discover/reference/-/knowledge_base/7-0/shield-settings)
 
 ## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
 
@@ -258,7 +258,7 @@ for the details.
 10. Start Elasticsearch and @product@.
 
 Now Shield is fully configured, with both authentication and encryption
-protecting your Elasticsearch cluster. Next, you can learn how to [install and configure Marvel](discover/deployment/-/knowledge_base/7-0/marvel),
+protecting your Elasticsearch cluster. Next, you can learn how to [install and configure Marvel](/discover/deployment/-/knowledge_base/7-0/marvel),
 Elasticsearch's
 monitoring plugin, to visualize the health and performance of your Elasticsearch
 cluster.

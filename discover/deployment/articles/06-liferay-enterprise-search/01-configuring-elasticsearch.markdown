@@ -399,8 +399,8 @@ configuring Shield to secure your Elasticsearch data.
 
 ## Related Topics [](id=related-topics)
 
-[Introduction to Liferay Search](develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
+[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
 
-[Customizing Liferay Search](develop/tutorials/-/knowledge_base/7-0/customizing-liferay-search)
+[Customizing Liferay Search](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-search)
 
 <a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 
