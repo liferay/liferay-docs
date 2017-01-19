@@ -51,9 +51,9 @@ The steps for using the client are explained in detail
 [here](https://github.com/brunofarache/liferay-push-android), 
 but the main steps are demonstrated here.
 
-In your Android application's Gradle build file, [add a new
-dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
-on the Liferay Push Client for Android:
+In your Android application's Gradle build file, 
+[add a new dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+on the Liferay Push Client for Android: 
 
 	dependencies {
 
