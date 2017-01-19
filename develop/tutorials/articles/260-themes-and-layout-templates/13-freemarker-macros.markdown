@@ -1,8 +1,8 @@
 # FreeMarker Macros [](id=freemarker-macros)
 
 Macros let you assign theme template fragments to a variable. This keeps your 
-theme templates from becoming cluttered, and makes them easier to read. The 
-syntax for a FreeMarker macro is straight forward. A macro directive is defined 
+theme templates from becoming cluttered and makes them easier to read. The 
+syntax for a FreeMarker macro is straightforward. A macro directive is defined 
 containing the template fragment. For example, below is the macro directive for 
 @product@'s Control Menu:
 
@@ -11,11 +11,11 @@ containing the template fragment. For example, below is the macro directive for
                     <@liferay_product_navigation["control-menu"] />
             </#if>
     </#macro>
-    
+ 
 +$$$
 
-**Note:** @product@'s default macro calls are namespaced with `liferay`. For 
-example, `<@liferay.macro_variable_name />`. If you create custom macros, they
+**Note:** @product@'s default macro calls are namespaced with `liferay` (for 
+example, `<@liferay.macro_variable_name />`). If you create custom macros, they
 can be called with the explicit variable name.
 
 $$$
@@ -36,20 +36,21 @@ has the parameter `key`:
     >
     ${languageUtil.get(locale, key)}
     </#macro>
-    
+ 
 You can pass an argument in the macro call like this:
 
     <@liferay.language key="powered-by" />
 
 You can read more about FreeMarker macros at 
 [freemarker.org](http://freemarker.org/docs/ref_directive_macro.html).
-    
+ 
 @product@ provides several macros that you can use in your FreeMarker theme
 templates. These are covered next.
 
 ## @product@ FreeMarker Macros
 
-There are several default macros defined in the [`FTL_Liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
+There are several default macros defined in the 
+[`FTL_Liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
 that you can use in your FreeMarker theme templates. The table below lists the
 available macros and parameters:
 
@@ -59,7 +60,7 @@ available macros and parameters:
 | control_menu | N/A | Adds the Control Menu portlet |
 | css | file_name | Adds an external stylesheet with the specified file name location |
 | date | format | Prints the date in the current locale with the given format |
-| js | file_name | Adds an external JavaScript file with the specified file name src |
+| js | file_name | Adds an external JavaScript file with the specified file name source |
 | language | key | Prints the specified language key in the current locale |
 | language_format | arguments<br/>key | Formats the given language key with the specified arguments. For example, passing `go-to-x` as the `key` and `Mars` as the `arguments` prints "Go to Mars." |
 | languages | default_preferences = "" | Adds the Languages portlet with optional preferences. |
