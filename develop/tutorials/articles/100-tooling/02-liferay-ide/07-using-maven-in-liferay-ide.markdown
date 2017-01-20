@@ -12,11 +12,11 @@ First you'll install the necessary Maven plugins for Liferay @ide@.
 
 ## Installing Maven Plugins for Liferay @ide@ [](id=installing-maven-plugins-for-liferay-ide)
 
-In order to properly support Maven projects in @ide@, you first need a mechanism
+In order to support Maven projects in @ide@ properly, you first need a mechanism
 to recognize Maven projects as Liferay @ide@ projects. @ide@ projects are
 recognized in Eclipse as faceted web projects that include the appropriate
 Liferay plugin facet. Therefore, all @ide@ projects are also Eclipse web
-projects (faceted projects with the web facet installed). In order for the @ide@
+projects (faceted projects with the web facet installed). In order for @ide@
 to recognize the Maven project and for it to be able to leverage Java EE tooling
 features (e.g., the Servers view) with the project, the project must be a
 flexible web project. Liferay @ide@ relies on the following Eclipse plugins to
@@ -25,8 +25,8 @@ provide this capability:
 - `m2e-core` (Maven integration for Eclipse)
 - `m2e-wtp` (Maven integration for WTP)
 
-You won't get into the technicalities of these plugins; all you need to know is
-how to install them so you can begin developing Maven projects for @product@.
+All you have to do is install them so you can begin developing Maven projects
+for @product@.
 
 When first installing Liferay @ide@, the installation startup screen lets you
 select whether you'd like to install the Maven plugins automatically. Don't
@@ -102,7 +102,7 @@ outlined below:
 
     ![Figure 3: @ide@ offers the Maven folder in the Import wizard.](../../../images/import-maven-project.png)
 
-2.  Click *Browse...* and select the root directory for your Maven project. Once
+2.  Click *Browse...* and select the root folder for your Maven project. Once
     you've selected it, the `pom.xml` for that project should be visible in the
     Projects menu.
 
@@ -138,5 +138,5 @@ The figure below shows the `pom.xml` file editor and its modes.
 
 ![Figure 5: Liferay @ide@ provides five interactive modes to help you edit and organize your POM..](../../../images/pom-editor-features.png)
 
-By taking advantage of these interactive modes, modifying and organizing your
-POM and its dependencies has never been easier!
+By taking advantage of these interactive modes, Liferay @ide@ makes modifying
+and organizing your POM and its dependencies a snap! 
