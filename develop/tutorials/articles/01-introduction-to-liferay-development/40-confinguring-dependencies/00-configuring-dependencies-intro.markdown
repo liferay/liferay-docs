@@ -5,18 +5,23 @@ them. To do this, look up the modules' attributes and plug them into dependency
 entries for your build system (e.g., 
 [Gradle](https://gradle.org/), 
 [Maven](https://maven.apache.org/), or 
-[Ant/Ivy](http://ant.apache.org/ivy/)). 
+[Ant/Ivy](http://ant.apache.org/ivy/)). Your build system downloads the 
+dependency artifacts for your project to compile against. 
 
-Artifacts have these attributes: 
+Before specifying a module as a dependency, you must first find its artifact 
+attributes. Artifacts have these attributes: 
 
 -   *Group ID*: Authoring organization 
 -   *Artifact ID*: Name/identifier 
 -   *Version*: Release number 
 
-The build system downloads the dependency artifacts for your project to compile
-against. 
-
-In this tutorial, you'll learn how to do these things: 
+This tutorial shows you how to find the artifacts for @product@'s core modules 
+and app modules, and concludes by showing you how to configure dependencies. 
+Click these links to jump to the corresponding section: 
+<!-- 
+Is there anywhere where we define exactly what a core module is? Or what app and 
+independent modules are?
+-->
 
 -   [Find Core @product@ artifacts](#finding-core-liferay-portal-artifacts)
 -   [Find @product@ app and independent artifacts](#finding-liferay-portal-app-and-independent-artifacts)
@@ -24,9 +29,12 @@ In this tutorial, you'll learn how to do these things:
 
 ## Finding Core @product@ Artifacts [](id=finding-core-liferay-portal-artifacts)
 
-Each @product@ installation's module `jar` files contain a `MANIFEST.MF` file
-that specifies the module artifact's attributes. The following OSGi headers in 
-each module's `MANIFEST.MF` file specify the module artifact's ID and version. 
+You can find the artifact attributes for @product@'s core modules inside each 
+module's `MANIFEST.MF` file. Each module is composed of a `jar` file that 
+contains the module's OSGi metadata in a `MANIFEST.MF` file. The manifest also 
+specifies the module's artifact attributes. For example, the following OSGi 
+headers in each module's `MANIFEST.MF` specify the module's artifact ID and 
+version: 
 
     Bundle-SymbolicName:  artifact ID
     Bundle-Version: version
@@ -35,6 +43,10 @@ For each core @product@ artifact, the following table lists the group ID,
 artifact ID, version, and origin. 
 
 *Core @product@ Artifacts*:
+<!-- 
+Isn't the com.liferay.* entry for app and independent modules, and not core 
+modules? The next section contains a note that says it is.
+-->
 
  File          | Group ID | Artifact ID | Version | Origin | 
 :------------ | :--------------- | :-------- | :--------- | :------ |
@@ -48,36 +60,51 @@ artifact ID, version, and origin.
  `util-taglibs.jar` | `com.liferay.portal` | `com.liferay.util.taglib` | (see JAR's `MANIFEST.MF`) | @product@ `.war` |
  `com.liferay.*` JAR files | `com.liferay` | (see JAR's `MANIFEST.MF`) | (see JAR's `MANIFEST.MF`) | @product@ dependencies ZIP and the OSGi ZIP |
 
-Finding artifacts for @product@ apps and independent modules is also 
-straightforward. 
+Next, you'll learn how to find artifacts for @product@ apps and independent 
+modules. 
 
 ## Finding @product@ App and Independent Artifacts [](id=finding-liferay-portal-app-and-independent-artifacts)
 
-Several resources provide @product@'s app and independent artifact details: 
+Independent modules and modules that make up @product@'s apps aren't part of the 
+@product@ core. You must still, however, find their artifact attributes if you 
+want to declare dependencies on them. The following resources provide the 
+artifact details for @product@'s apps and independent modules. To see the 
+section in this tutorial that explains the resource, click its link in the 
+table: 
 
  Resource | Artifact Type |
 :-------- | :-------------- |
 [App Manager](#liferay-portals-app-manager) | Deployed modules |
-[Reference Docs](#reference-docs) | *Liferay* modules per product release |
-[Maven Central](#maven-central) | All artifact types: Liferay and third party, module and non-module |
+[Reference Docs](#reference-docs) | @product@ modules (per release) |
+[Maven Central](#maven-central) | All artifact types: @product@ and third party, module and non-module |
 
 +$$$
 
-**Important**: `com.liferay` is the group ID for all of @product@'s apps and 
+**Important**: `com.liferay` is the group ID for all @product@'s apps and 
 independent modules. 
 
 $$$
 
-The App Manager is the best source for information on deployed modules. 
+The App Manager is the best source for information on deployed modules. You'll 
+learn about it next. 
 
 ### @product@'s App Manager [](id=liferay-portals-app-manager)
 
-The App Manager knows all modules deployed on the @product@ instance, including 
-app modules and independent modules. 
+[The App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager) 
+is sort of like Santa Claus; it knows and sees all. You can use it to find all 
+modules deployed on the @product@ instance. 
+<!-- 
+Why is this in a subsection about finding app modules and independent modules? 
+Putting it here makes it look like it doesn't also apply to core modules. Also, 
+wouldn't it be easier to use the the App Manager to find artifact attributes for 
+core modules? It seems a lot easier than hunting down and opening a manifest 
+file.
+-->
 
-To get a deployed module's information, follow these steps:
+Follow these steps to get a deployed module's information: 
 
-1.  In @product@, navigate to *Control Panel &rarr; App Manager*.
+1.  In @product@, navigate to *Control Panel* &rarr; *Apps* &rarr; *App 
+    Manager*. 
 
 2.  Search for the module by its display name, symbolic name, or related
     keywords. You can also browse for the module in its app or app suite. 
@@ -88,24 +115,26 @@ To get a deployed module's information, follow these steps:
 
 ![Figure 2: The App Manager aggregates Liferay and independent modules.](../../../images/intro-configuring-dependencies-indep-modules-in-app-manager.png)
 
-If you don't know a deployed module's group, find it by using the 
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell): 
+If you don't know a deployed module's group, use the 
+[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
+to find it: 
 
-1.  Open a Gogo Shell session:
+1.  Open a Gogo Shell session by entering the following into a command prompt: 
 
         telnet localhost 11311
 
-2.  Search for the module by its display name (e.g., `Liferay Bookmarks API`) or
-    a keyword (`g!` indicates a Felix Gogo Shell command prompt). In the 
-    results, note the module's number. You can use it in the next step. For 
-    example, these results indicate that the Liferay Bookmarks API module's 
-    number is `52`: 
+    This results in a `g!`, which denotes the Felix Gogo Shell command prompt. 
+
+2.  Search for the module by its display name (e.g., `Liferay Bookmarks API`) or 
+    a keyword. In the results, note the module's number. You can use it in the 
+    next step. For example, these results indicate that the Liferay Bookmarks 
+    API module's number is `52`: 
 
         g! lb | grep "Liferay Bookmarks API"
 
            52|Active     |   10|Liferay Bookmarks API (2.0.1)
 
-3.  To list the module's manifest headers, pass the module number to the
+3.  To list the module's manifest headers, pass the module number to the 
     `headers` command. In the results, note the `Bundle-Vendor` value--you'll 
     match it with an artifact group in a later step: 
 
@@ -138,11 +167,11 @@ Next, you'll learn how to use @product@'s reference documentation to find a
 
 ### Reference Docs [](id=reference-docs)
 
-@product@'s app Javadoc overviews list each module's artifact ID, version 
-number, and display name. This reference documentation is the best place to look 
-up @product@ modules that aren't yet deployed. 
+@product@'s app Javadoc lists each module's artifact ID, version number, and 
+display name. This is the best place to look up @product@ modules that aren't 
+yet deployed to your @product@ instance. 
 
-Follow these steps to find a @product@ app module's attributes: 
+Follow these steps to find a @product@ app module's attributes in the Javadoc: 
 
 1.  Navigate to Javadoc for an app module class. If you don't have a link to the
     class's Javadoc, find it by browsing 
@@ -154,8 +183,8 @@ Follow these steps to find a @product@ app module's attributes:
 
 4.  On the *Overview* page, search for the package name you copied in step 2. 
 
-The heading above the package name shows the module's artifact ID, version
-number, and display name. Remember, the group ID for all app modules is
+The heading above the package name shows the module's artifact ID, version 
+number, and display name. Remember, the group ID for all app modules is 
 `com.liferay`. 
 
 ![Figure 3: @product@ app Javadoc overviews list each module's artifact ID, version number, and display name.](../../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
@@ -167,7 +196,7 @@ reference docs.
 
 $$$
 
-Next, discover how to look up Liferay and non-Liferay artifacts on Maven 
+Next, you'll learn how to look up Liferay and non-Liferay artifacts on Maven 
 Central. 
 
 ### Maven Central [](id=maven-central)
