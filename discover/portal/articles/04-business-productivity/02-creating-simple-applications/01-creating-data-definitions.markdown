@@ -357,7 +357,7 @@ Set *Indexable* to *Yes* if you want Liferay to index your field for
 search.
 
 Setting *Localizable* to *No* turns off localization for a particular
-field, so that [translations](discover/portal/-/knowledge_base/6-2/localization) 
+field, so that [translations](/discover/portal/-/knowledge_base/6-2/localization) 
 cannot be made for that field.
 
 <!-- Add link to 7.0 docs on localization when they're created -->

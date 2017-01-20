@@ -5,7 +5,7 @@ just a set of site administrators) to have an account that they sign into to do
 anything in the portal, you need to know about users. If your users are at all
 divided hierarchically, like into departments, you might find Organizations
 helpful. See the article on
-[organizations](discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel)
+[organizations](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel)
 for more information.
 
 Whether or not you've ever used Liferay before, you're probably not surprised to
@@ -80,7 +80,7 @@ more information about the user. You don't have to fill anything else out right
 now. Just note that when the user account was created, a password was
 automatically generated. If Liferay was correctly installed and a mail server
 was set up (see
-[here](discover/portal/-/knowledge_base/6-2/server-administration#mail)), an
+[here](/discover/portal/-/knowledge_base/6-2/server-administration#mail)), an
 email message with the user's new password was sent to the user's email address.
 This, of course, requires that Liferay can properly communicate with your SMTP
 mail server.
