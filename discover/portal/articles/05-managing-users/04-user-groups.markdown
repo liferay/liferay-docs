@@ -184,7 +184,7 @@ To create a new site template, navigate to *Sites* &rarr; *Site Templates*. Add
 a site template called Event Coordination and save it. Rename the default Home
 page to Event Coordination. Now there's a site template, but the page is
 currently empty. Go to the Event Coordination page, and add a Message Boards and
-a Calendar application. Read the [documentation on site templates](discover/portal/-/knowledge_base/6-2/using-site-templates)
+a Calendar application. Read the [documentation on site templates](/discover/portal/-/knowledge_base/6-2/using-site-templates)
 if you need further explanation.
 
 <!--Get the 7-0 link when ready-->
