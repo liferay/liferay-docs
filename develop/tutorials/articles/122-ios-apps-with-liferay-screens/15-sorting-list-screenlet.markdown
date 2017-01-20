@@ -30,7 +30,7 @@ Screenlet property. For example, to set the sample Bookmark List Screenlet to
 sort its list of bookmarks by URL, you must set *Obc Class Name* to 
 *com.liferay.bookmarks.util.comparator.EntryURLComparator* in Interface Builder: 
 
-![Figure 1: To use a comparator, set the *Obc Class Name* property in Interface Builder to the comparator's fully qualified class name.](../../../images/screens-ios-obc-ib.png)
+![Figure 1: To use a comparator, set the *Obc Class Name* property in Interface Builder to the comparator's fully qualified class name.](../../images/screens-ios-obc-ib.png)
 
 That’s it! Note that although all list Screenlets inherit the `obcClassName` 
 property from 

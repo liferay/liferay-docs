@@ -112,7 +112,7 @@ button:
    example, the XIB file in Add Bookmark Screenlet contains an iOS 
    `UIActivityIndicatorView` over the get title button: 
 
-    ![Figure 1: The updated Add Bookmark Screenlet's XIB file contains a new activity indicator over the get title button.](../../../images/screens-ios-xcode-add-bookmark-advanced-progress.png)
+    ![Figure 1: The updated Add Bookmark Screenlet's XIB file contains a new activity indicator over the get title button.](../../images/screens-ios-xcode-add-bookmark-advanced-progress.png)
 
 2. In your View class, create an outlet for the XIB's new activity indicator. 
    For example, Add Bookmark Screenlet's View class (`AddBookmarkView_default`) 

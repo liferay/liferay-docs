@@ -43,7 +43,7 @@ For example, the following screenshot shows the XIB file
 `BookmarkCell_default-custom.xib` for Bookmark List Screenlet's custom cell. 
 This cell must show a bookmark's name and URL, so it contains two labels. 
 
-![Figure 1: The XIB file for Bookmark List Screenlet’s custom cell.](../../../images/screens-ios-xcode-custom-cell.png)
+![Figure 1: The XIB file for Bookmark List Screenlet’s custom cell.](../../images/screens-ios-xcode-custom-cell.png)
 
 This XIB's custom class, `BookmarkCell_default_custom`, contains an outlet for 
 each label. The `bookmark` variable also contains a `didSet` observer that sets 
