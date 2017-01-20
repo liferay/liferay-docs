@@ -10,7 +10,7 @@ ingredients:
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 (Workspace) boils over with all these things! It's a Gradle-based development
-environment that works perfectly in [Liferay
+environment that integrates with [Liferay
 @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide) and can be used in
 conjunction with other IDEs, such as a "vanilla" Eclipse, IntelliJ, and
 NetBeans. You can extend Workspace's Gradle environment with community-developed (or
@@ -25,10 +25,9 @@ provides all kinds of module
 to create modules for developing in any Gradle environment. 
 
 Liferay's tools also streamline the application upgrade process. Liferay @ide@'s
-[Code Upgrade
-Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-adapts Plugins SDK plugins to @product-ver@ APIs. [Liferay's Themes
-Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+adapts Plugins SDK plugins to @product-ver@ APIs. 
+[Liferay's Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 [migrates](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 themes and layout templates to the new NodeJS-based environment and
 [adapts](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#running-the-upgrade-task-for-themes-generator-themes)
@@ -41,7 +40,7 @@ and new
 and [plugins](/develop/reference/-/knowledge_base/7-0/maven) make @product@
 development with Maven easier than ever.
 
-Here are the tooling improvements .:
+Here are the tooling improvements:
 
 -   [Moving from the Plugins SDK to Liferay Workspace](#from-the-plugins-sdk-to-liferay-workspace)
 -   [Developing modules with Liferay Workspace](#developing-modules-with-liferay-workspace)
@@ -50,26 +49,23 @@ Here are the tooling improvements .:
 
 ## From the Plugins SDK to Liferay Workspace [](id=from-the-plugins-sdk-to-liferay-workspace)
 
-The Liferay Plugins SDK is deprecated as of @product-ver@. [Liferay
-Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace) succeeds
+The Liferay Plugins SDK is deprecated as of @product-ver@. 
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace) succeeds
 it as Liferay's opinionated module development environment. You should use it if
-you're not using an alternative build system, such as Maven.
+you're not using an alternative build system like Gradle or Maven.
 
 Here are Workspace's key features:
 
--   [Module and component
-    templates](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli#module-templates)
--   [Sample
-    projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+-   [Module and component templates](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli#module-templates)
+-   [Sample projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 -   Portal server configurations
 -   Folder structure flexibility
 -   [Commands](/develop/tutorials/-/knowledge_base/7-0/blade-cli) to migrate
     plugins, install @product@ bundles, and start/stop Portal instances
 
-The [plugin
-upgrade](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
-tutorials later in this series show how [Liferay
-@ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide) automatically adapts
+The [plugin upgrade](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+tutorials later in this series show how 
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide) automatically adapts
 existing plugins to @product-ver@. They also demonstrate how you can optionally
 migrate plugins to Workspace.
 
@@ -147,14 +143,14 @@ Next, learn how Workspace facilitates module development.
 
 ## Developing Modules with Liferay Workspace [](id=developing-modules-with-liferay-workspace)
 
-Workspace is an ideal Liferay module development environment because of these
+Workspace is a great Liferay module development environment because of these
 features: 
 
 -   Templates that bootstrap module creation
 -   Gradle build system for managing dependencies and assembling modules
 -   Module deployment and runtime management capabilities
 
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)(Blade), which is
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) (Blade), which is
 a part of Workspace, has over twenty module templates--and more are being added.
 The templates stub out classes and resource files for you to fill in with
 business logic and key information.
@@ -179,8 +175,7 @@ Here are some of the template's names:
 -   Simulation Panel Entry
 -   Template Context Contributor
 
-[Blade creates
-modules](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+[Blade creates modules](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 based on these templates.
 
 For example, the following Blade command creates a Liferay MVC Portlet module
@@ -188,14 +183,14 @@ called `my-module`:
 
     blade create -t mvc-portlet -p com.liferay.docs.mymodule -c MyMvcPortlet my-module
 
-Liferay @ide@'s [module project
-wizard](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide)
+Liferay @ide@'s 
+[module project wizard](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide)
 creates Workspace modules from the templates too.
 
 ![Figure 3: Liferay @ide@ lets developers select templates to stub out modules.](../../../images/improved-tooling-module-wizard.png)
 
-Liferay @ide@'s component wizard facilitates [creating component
-classes](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide#creating-component-classes)
+Liferay @ide@'s component wizard facilitates 
+[creating component classes](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide#creating-component-classes)
 for portlets, service wrappers, Struts actions, and more.
 
 ![Figure 4: Liferay @ide@'s component wizard facilitates creating component classes.](../../../images/improved-tooling-component-wizard.png)
@@ -213,9 +208,8 @@ Liferay @ide@ lets you deploy modules by dragging them onto your Portal server.
 ![Figure 5: Liferay @ide@ lets you deploy modules using drag-and-drop.](../../../images/improved-tooling-drag-n-drop-onto-server.png)
 
 In a terminal, you can deploy modules using Blade's `deploy` command. For
-example, the following command deploys the current module and ["watches" for
-module changes to redeploy
-automatically](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#redeploying-module-changes-automatically).
+example, the following command deploys the current module and 
+["watches" for module changes to redeploy automatically](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#redeploying-module-changes-automatically).
 
     blade deploy -w
 
@@ -240,7 +234,7 @@ improved features:
 -   New Maven plugins
 -   More granular dependency management
 
-@product-ver@ provides a slew of new Maven archetypes for various Liferay module
+@product-ver@ provides many new Maven archetypes for various Liferay module
 projects. There are over twenty-five Maven archetypes for @product-ver@, and
 more are in development. Here are some popular ones:
 
@@ -250,23 +244,20 @@ more are in development. Here are some popular ones:
 -   Menu Buttons
 -   Service Builder
 
-Liferay's Maven archetypes, covering many different Liferay frameworks and
-service types, make Maven a legitimate tool for creating Liferay modules and
-themes. Visit the [Generating New Projects Using
-Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
+Liferay's Maven archetypes cover many different Liferay frameworks and
+service types. These make Maven a first-class tool for creating Liferay modules
+and themes. Visit the 
+[Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
 tutorial to learn more about Liferay's Maven archetypes and how to use them.
 
-Liferay also provides several new and updated [Maven
-plugins](/develop/reference/-/knowledge_base/7-0/maven) that simplify the build
-process. The following plugins build style sheets, services, and themes
+Liferay also provides several new and updated 
+[Maven plugins](/develop/reference/-/knowledge_base/7-0/maven) that simplify the
+build process. The following plugins build style sheets, services, and themes
 respectively:
 
--   [CSS
-    Builder](/develop/tutorials/-/knowledge_base/7-0/compiling-sass-files-in-a-maven-project)
--   [Service
-    Builder](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
--   [Theme
-    Builder](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project)
+-   [CSS Builder](/develop/tutorials/-/knowledge_base/7-0/compiling-sass-files-in-a-maven-project)
+-   [Service Builder](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
+-   [Theme Builder](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project)
 
 @product-ver@'s modularity provides a more granular dependency management
 experience. You no longer need to depend on `portal-impl` or `portal-service`
@@ -275,15 +266,15 @@ depend on the Wiki module. You set dependencies on concise modules that provide
 the functionality you want without inheriting extra baggage.
 
 Liferay's new Maven archetypes, Maven plugins, and streamlined modules make
-developing on @product@ easier than ever. To learn more, see the [Maven
-tutorials](/develop/tutorials/-/knowledge_base/7-0/maven).
+developing on @product@ easier than ever. To learn more, see the 
+[Maven tutorials](/develop/tutorials/-/knowledge_base/7-0/maven).
 
 ## Using Other Build Systems and IDEs [](id=using-other-build-systems-and-ides)
 
 @product@ is tool agnostic--you can use whatever tools you like to develop on
-it. You can use any IDE and even use Gradle, Bnd, or BndTools separate from
-Workspace. The drawback is adapting the @product@ developer documentation to
-your tool set.
+it. You can use any IDE and even use Gradle, Bnd, or BndTools if you don't want
+to use Workspace. The drawback is you lose the Liferay-specific project
+templates that you get with Blade and Workspace.
 
 Blade lets you create modules to develop anywhere, not only in Liferay
 Workspace.
@@ -293,24 +284,24 @@ Workspace:
 
 -   Liferay's [Gradle plugins](/develop/reference/-/knowledge_base/7-0/gradle)
 -   Buildship plugins in Liferay @ide@
--   Liferay @ide@'s [new Gradle
-    views](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
+-   Liferay @ide@'s [new Gradle views](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
     for developing modules and working with Gradle tasks
 
-Regarding IDEs, many Liferay module developers use IntelliJ and some enjoy using
-NetBeans.
+Liferay has worked hard to make @product@ IDE-agnostic. There are Liferay module
+developers who use IntelliJ and some enjoy using NetBeans.
 
-Lastly, you can copy and modify [Liferay sample
-modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules) as you
-like. They're available for these build systems:
+Finally, you can copy and modify 
+[Liferay sample modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules) 
+to serve as templates in place of the Blade templates. They're available for
+these build systems:
 
 -   Maven
 -   BndTools
 -   Gradle
 -   Liferay's Gradle environment based on the `com.liferay.plugin` plugin
 
-The tooling improvements for @product@ are like no other. They help you upgrade
-to @product-ver@ and migrate to optimal development environments. Liferay
-Workspace and the improved Maven support facilitate module development. And
-lastly, developing on @product@ using other tools is easier than ever. You're
-tool options are wide open.
+Liferay's approach to tooling has vastly improved for @product-ver@. Our tools
+help you upgrade to @product-ver@ and migrate to optimal development
+environments. Liferay Workspace and the improved Maven support facilitate
+module development.  And developing on @product@ using other tools is easier
+than ever. Your tool options are wide open.
