@@ -1,8 +1,8 @@
 # Liferay API Modules [](id=finding-liferay-api-modules)
 
 The following table maps commonly used @product@ components to their API modules
-and key classes. You [configure
-dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+and key classes. You 
+[configure dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
 on the component API modules to use them. 
 
 ## API Modules Table [](id=api-module-names-table)
@@ -111,9 +111,10 @@ on the component API modules to use them.
 |                      | `WikiPage[Local]ServiceUtil`                     |                                      |
 | XStream Configurator | `XStreamConfigurator`          | `com.liferay.xstream.configurator.api` |
 
-For reference documentation on these APIs and others, see the the app reference
-docs at [@app-ref@](@app-ref@) and the @product@ core reference docs at
-[@platform-ref@/7.0-latest](@platform-ref@/7.0-latest).
+For reference documentation on these APIs and others, see the the app reference 
+docs at 
+[@app-ref@](@app-ref@) and the @product@ core reference docs at 
+[@platform-ref@/7.0-latest](@platform-ref@/7.0-latest). 
 
 ## Related Articles [](id=related-articles)
 
@@ -122,4 +123,3 @@ docs at [@app-ref@](@app-ref@) and the @product@ core reference docs at
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
 [Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-

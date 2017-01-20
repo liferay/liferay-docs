@@ -5646,7 +5646,7 @@ caption {
 
 </table>
 
-**Related Articles:**
+**Related Topics**
 
 [Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
