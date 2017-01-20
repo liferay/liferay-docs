@@ -187,7 +187,7 @@ add them to your project's `WEB-INF/lib` folder. Follow these steps to do this:
 
 5.  Add the JAR to your project's `WEB-INF/lib` folder.
 
-![Figure x: After searching Maven Central, download an artifact's JAR file by clicking the *jar* link.](../../../images/resolving-plugin-dependencies-using-maven-central.png)
+![Figure 2: After searching Maven Central, download an artifact's JAR file by clicking the *jar* link.](../../../images/resolving-plugin-dependencies-using-maven-central.png)
 
 As you manage module JARs, make sure **not** to deploy any OSGi framework JARs 
 or Liferay module JARs (e.g., `com.liferay.journal.api.jar`). If you deploy 

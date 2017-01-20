@@ -121,7 +121,7 @@ module and once for the `Authenticator` itself. The `Authenticator` project
 contains the interface for the validator, and the validator project contains the
 implementation. Here's what the `Authenticator` module structure looks like: 
 
-![Figure x: The Authenticator module contains the validator's interface and the authenticator.](../../../images/auth-pipeline-authenticator-project.png)
+![Figure 1: The Authenticator module contains the validator's interface and the authenticator.](../../../images/auth-pipeline-authenticator-project.png)
 
 Since the `Authenticator` is the most relevant, examine it first: 
 
@@ -240,7 +240,7 @@ This defines a single method for checking the email address.
 
 Next, you'll address the validator module. 
 
-![Figure x: The validator project implements the Validator Interface and depends on the authenticator module. ](../../../images/auth-pipeline-validator-project.png)
+![Figure 2: The validator project implements the Validator Interface and depends on the authenticator module. ](../../../images/auth-pipeline-validator-project.png)
 
 This module contains only one class. It implements the Validator interface: 
 
