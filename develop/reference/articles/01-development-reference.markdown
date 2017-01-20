@@ -442,6 +442,10 @@ caption {
 For help finding API modules for specific common classes, see [@product-ver@ API
 Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
 
+For help finding module attributes and configuring dependencies, see
+[Configuring
+Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies).
+
 ## Taglibs [](id=taglibs)
 
 Here you'll find tag library documentation for the @product-ver@, @product@
@@ -634,6 +638,10 @@ caption {
   </tr>
 
 </table>
+
+For help finding module attributes and configuring dependencies, see
+[Configuring
+Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies).
 
 ### Faces Taglibs [](id=faces-taglibs)
 
