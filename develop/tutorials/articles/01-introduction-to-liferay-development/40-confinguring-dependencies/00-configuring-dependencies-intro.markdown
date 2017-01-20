@@ -18,10 +18,6 @@ attributes. Artifacts have these attributes:
 This tutorial shows you how to find the artifacts for @product@'s core modules 
 and app modules, and concludes by showing you how to configure dependencies. 
 Click these links to jump to the corresponding section: 
-<!-- 
-Is there anywhere where we define exactly what a core module is? Or what app and 
-independent modules are?
--->
 
 -   [Find Core @product@ artifacts](#finding-core-liferay-portal-artifacts)
 -   [Find @product@ app and independent artifacts](#finding-liferay-portal-app-and-independent-artifacts)
@@ -43,10 +39,6 @@ For each core @product@ artifact, the following table lists the group ID,
 artifact ID, version, and origin. 
 
 *Core @product@ Artifacts*:
-<!-- 
-Isn't the com.liferay.* entry for app and independent modules, and not core 
-modules? The next section contains a note that says it is.
--->
 
  File          | Group ID | Artifact ID | Version | Origin | 
 :------------ | :--------------- | :-------- | :--------- | :------ |
@@ -93,13 +85,6 @@ learn about it next.
 [The App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager) 
 is sort of like Santa Claus; it knows and sees all. You can use it to find all 
 modules deployed on the @product@ instance. 
-<!-- 
-Why is this in a subsection about finding app modules and independent modules? 
-Putting it here makes it look like it doesn't also apply to core modules. Also, 
-wouldn't it be easier to use the the App Manager to find artifact attributes for 
-core modules? It seems a lot easier than hunting down and opening a manifest 
-file.
--->
 
 Follow these steps to get a deployed module's information: 
 
@@ -201,20 +186,19 @@ Central.
 
 ### Maven Central [](id=maven-central)
 
-Whether an artifact is a module or standard archive, is from Liferay or a third
-party, chances are it's on Maven Central. Use these steps to find an artifact on 
-Maven Central: 
+Most artifacts, regardless of type or origin, are on Maven Central. Use these 
+steps to find an artifact on Maven Central: 
 
 1.  Go to Maven Central at 
     [https://search.maven.org/](https://search.maven.org/). 
 
-2.  Search for the artifact. 
+2.  Search for the artifact. The search results list each artifact's attributes. 
 
 +$$$
 
 **Tip**: The best way to find an artifact on Maven Central is to search for one 
-of its Java packages. For example, to find an artifact containing class 
-`org.osgi.service.component.annotations.Component`, search for package 
+of its Java packages. For example, to find an artifact containing the class 
+`org.osgi.service.component.annotations.Component`, search for the package 
 `org.osgi.service.component.annotations`. 
 
 $$$
@@ -232,15 +216,15 @@ artifact ID, and version number.
 
 +$$$
 
-**Note**: To configure third party libraries in a module, see the tutorial 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module).
+**Note**: To configure third-party libraries in a module, see the tutorial 
+[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module). 
 
 $$$
 
 Note that different build systems use different artifact attribute names, as the 
-following table specifies.
+following table specifies. 
 
-*Artifact Terminology*:
+*Artifact Terminology*
 
 Framework | Group ID | Artifact ID | Version |
 :------------ | :----------- | :----------- | :-------- |
@@ -253,31 +237,31 @@ API module for Gradle, Maven, and Ivy.
 
 ### Gradle [](id=gradle)
 
-Here's the dependency configured in a `build.gradle` file. 
+Here's the dependency configured in a `build.gradle` file: 
 
-	dependencies {
-		compileOnly group: "com.liferay", name: "com.liferay.journal.api", version: "1.0.1"
-		...
-	}
+    dependencies {
+        compileOnly group: "com.liferay", name: "com.liferay.journal.api", version: "1.0.1"
+        ...
+    }
 
 ### Maven [](id=maven)
 
-Here's the dependency configured in a `pom.xml` file. 
+Here's the dependency configured in a `pom.xml` file: 
 
-	<dependency>
-		<groupId>com.liferay</groupId>
-		<artifactId>com.liferay.journal.api</artifactId>
-		<version>1.0.1</version>
-	</dependency>
+    <dependency>
+        <groupId>com.liferay</groupId>
+        <artifactId>com.liferay.journal.api</artifactId>
+        <version>1.0.1</version>
+    </dependency>
 
 ### Ivy [](id=ivy)
 
-Here's the dependency configured in an `ivy.xml` file. 
+Here's the dependency configured in an `ivy.xml` file: 
 
-	<dependency name="com.liferay.journal.api" org="com.liferay" rev="1.0.1" />
+    <dependency name="com.liferay.journal.api" org="com.liferay" rev="1.0.1" />
 
 Nice! Now you know how to find artifacts and configure them as dependencies. Now 
-that's something you can depend on! 
+that's a skill you can depend on! 
 
 ## Related Topics [](id=related-topics)
 
