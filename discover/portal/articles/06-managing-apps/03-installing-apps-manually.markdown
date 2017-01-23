@@ -57,3 +57,11 @@ Note that the `configs` subfolder isn't for apps: it's for configuration files
 But what happens if your app server doesn't support hot deploy? No problem! 
 Liferay's module framework (OSGi) enables hot deploy. Any app server running 
 Liferay therefore also supports Liferay's hot deploy mechanism. 
+
+### Manually Deploying a Previously Obtained LPKG
+
+When installing a previously obtained app (LPKG) on DXP by following our documentation, it may happen that installation does not complete and all you can see is a similar message in the server log:
+```
+14:00:15,789 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:252] Processing Liferay Push 2.1.0.lpkg
+```
+Check if the app (LPKG) has `restart-required=true` property set in its `liferay-marketplace.properties` (inside the *.lpkg file). If it is set the app requires a server restart to complete the installation.
