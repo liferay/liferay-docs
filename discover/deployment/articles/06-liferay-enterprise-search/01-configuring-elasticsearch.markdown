@@ -179,7 +179,7 @@ Settings application:
    &rarr; *Foundation*. 
 3. Find the *Elasticsearch* entry (scroll down and browse to it or use the
    search box) and click the Actions icon
-   (![Actions](../../../images/icon-actions.png)), then *Edit*.
+   (![Actions](../../images/icon-actions.png)), then *Edit*.
 
     ![Figure 1: Use the System Settings application in @product@'s Control Panel to
     configure the Elasticsearch

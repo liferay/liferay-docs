@@ -1,4 +1,4 @@
-# Monitoring Elasticsearch with Marvel [](id=monitoring-elasticsearch-with-marvel)
+# Installing Marvel for Elasticsearch [](id=installing-marvel-for-elasticsearch)
 
 Marvel is a monitoring tool for Elasticsearch. It lets you view the performance
 and health of your Elasticsearch cluster, so you can anticipate issues ahead of
@@ -230,7 +230,7 @@ If you've followed the steps outlined above, and you have Elasticsearch, Marvel,
 Kibana, and @product@ configured correctly, you can just add the Marvel Portlet to
 a page in @product@:
 
-1. Click the page's *Add* button (![Add](../../../images-dxp/icon-add.png)) and
+1. Click the page's *Add* button (![Add](../../images-dxp/icon-add.png)) and
    select *Applications*.
 
 2. Enter *Marvel* in the search box, and click *Add* next to the Marvel entry in
