@@ -50,7 +50,7 @@ This table shows how the template and theme components in Social Office map to
 Component | &nbsp;Social Office 3.x | &nbsp;@product-ver@ | 
 --------- | ----------------------- | ------------------- | 
 Social Office Theme | Uses Social Office theme | Uses default @product-ver@ theme, or a custom theme |
-Site Template | Uses Social Office site template | Site template is upgraded to @product-ver@. A custom site template can also be used. |
+Site Template | Uses Social Office site template | The Social Office site template is upgraded to @product-ver@. A custom site template can also be used. |
 Page Templates | Doesn't use page templates | Page templates can be used |
 
 ### Liferay Apps
@@ -125,9 +125,8 @@ users manage their favorite sites and site memberships. You can configure
 not favorites. 
 
 Great! Now you know what Social Office functionality is and isn't available in 
-@product-ver@. Next, you'll install a few modules in preparation for the 
-remaining Social Office upgrade steps. 
-<!-- Make sure it's clear this refers to the steps that remain after the portal upgrade from 6.2 to 7.0 -->
+@product-ver@. Next, you'll install a few modules in preparation for the Social 
+Office upgrade steps. 
 
 ## Installation
 
@@ -145,7 +144,7 @@ modules just as you would any other @product-ver@ module:
   of Liferay Portal, when the Social Office User role was granted to a user, 
   Social Office automatically used a site template to create public and private 
   pages for that user. The Social Office Upgrade Association module retains this 
-  behavior. 
+  behavior, since the upgrade retains the Social Office User role. 
   [Click here](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.office.upgrade.association/) 
   to get this module. 
   
@@ -196,3 +195,65 @@ entering the following command in a terminal:
     telnet localhost 11311
 
 This results in a `g!`, which indicates the Gogo shell command prompt. 
+
+![Figure x: The Gogo shell lets you execute commands, including the Social Office upgrade commands, in the OSGi runtime that runs @product-ver@. This screenshot shows the `telnet` command that enters the shell, and the resulting `g!` that indicates the Gogo shell command prompt.](../../images/gogo-prompt.png)
+
++$$$
+
+**Warning:** Unless you explicitly open port 11311, the Gogo shell is only 
+available from the same machine running @product-ver@. For security reasons, 
+**do not** expose the Gogo console to the outside world. 
+
+$$$
+
+Now you're ready to execute the Social Office upgrade commands. The following 
+sections go through these one by one. 
+
+- **Run all upgrade commands:** runs all of the following upgrade commands. 
+  Before running this command, be sure to read the description for all the 
+  commands. 
+
+        socialOffice:executeAll
+
+- **Remove the Tasks portlet from all pages:** Unless you manually upgrade the 
+  Tasks portlet's source code, this portlet is unavailable in @product-ver@. You 
+  should therefore remove it from all pages in your @product-ver@ installation. 
+  Note that doing so removes all references to it from all site pages; after 
+  executing this action, there's no way to restore it. 
+
+        socialOffice:removeTasksPortlet
+
+- **Hide Tasks portlet pages:** hides all pages that contained the Tasks 
+  portlet. 
+
+        socialOffice:hideTasksLayout
+
+- **Restore the default theme for all pages:** unless you customized the Social 
+  Office theme, you should use the default @product-ver@ theme. 
+
+        socialOffice:updateSocialSiteTheme
+
+## Administration
+
+After running the upgrade actions, there are a few administrative tasks you 
+should complete in your @product-ver@ instance. These tasks help to retain 
+Social Office functionality in @product-ver@. 
+
+- **Social Office User Role (optional):** The upgrade to @product-ver@ carries 
+  over the Social Office User role. If the optional Social Office Upgrade 
+  Association module is deployed, you can assign users to this role. Doing so 
+  gives users personal sites that function similar to those in Social Office. 
+
+- **Managing Social Sites in @product-ver@:** The upgrade to @product-ver@ 
+  carries over all Social Office sites and site templates. To create a new 
+  social site for collaboration in @product-ver@, create a new site using the 
+  default Social Office site template. For more information on building sites 
+  from templates, 
+  [click here](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates). 
+
+- **My Sites:** Social Office used a custom version of My Sites called Site 
+  Navigation. This was integrated into the Social Office Theme. Since Site 
+  Navigation isn't in @product-ver@, you should use My Sites instead. My Sites 
+  can be added to a custom theme or site template that lets users manage their 
+  site memberships. Also, site members can access the site using the new 
+  @product-ver@ site navigator in the Product Menu. 
