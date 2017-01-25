@@ -6,6 +6,7 @@ Search Elasticsearch*. The adapter is configurable through System Settings or an
 OSGi configuration file named
 `com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration.cfg`
 and deployed to `[Liferay_Home]/osgi/configs`.
+The order of precedence is: configuration options in the OSGi configuration take precedence over the options set in System Settings.
 
 The list below is all the configuration settings for Liferay's Elasticsearch
 adapter, in the order they appear in the System Settings application:
