@@ -212,5 +212,8 @@ Here's a full description of what a connected LCS client app displays:
 
 ![Figure 4.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
+One question is what happens when LCS is not reachable. Will the Liferay installation think it does not have an active registration?
+The answer is that LCS is deployed on a global cloud infrastructure set up for automatic failure recovery. Thus, the potential for non-availability is quite low. However, in the event of a system outage, registered instances maintain a local copy of their uptime information to transmit back to LCS when LCS comes online. Active subscriptions also have a grace period of 7 days to re-establish connectivity to remain valid. This grace period is more than ample for LCS to come back online. Should an extended outage exist, Liferay support can provide temporary disconnected subscription keys to mitigate any potential impacts.
+
 Awesome! Now that you've registered your server with LCS, you can dig in to the 
 features of LCS. 
