@@ -13,7 +13,7 @@ Twitter field.
 
 ![Figure 1: Register your Twitter account.](../../../images/social-network-accounts.png)
 
-It's important to note that your tweets are displayed *only* in an Activities 
+It's important to note that your tweets are displayed *only* in the Activities 
 application. If you want your tweets to show up on a page, there must be an 
 Activities application on it. Also, you need to wait a few minutes after registering 
 your Twitter username for your tweets to show up. Keep in mind that your tweets
