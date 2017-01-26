@@ -76,8 +76,7 @@ To create a module project, use the following syntax:
 For example, if you wanted to create an MVC portlet project, you could execute
 the following:
 
-    blade create -t mvcportlet -p com.liferay.docs.guestbook -c GuestbookPortlet
-    my-guestbook-project
+    blade create -t mvc-portlet -p com.liferay.docs.guestbook -c GuestbookPortlet my-guestbook-project
 
 This command creates an MVC portlet project based on the template `mvcportlet`.
 It uses the package name `com.liferay.docs.guestbook` and creates the portlet
