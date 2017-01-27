@@ -321,6 +321,21 @@ to validate is to create a new user with a valid email account. The newly
 created user should receive an email notification.  The logs should display that
 the SMTP server has been pinged with the correct port number listed.
 
+### Enable cookies for HTTP sessions [](id=enable-cookies-http-sessions)
+WebSphere 8.5.5.9 restricts cookies to only HTTPS sessions by default. When this setting is in effect, this will prevent users from signing into @product@ and will display the following error in the console:    
+
+    20:07:14,021 WARN  [WebContainer : 1][SecurityPortletContainerWrapper:341] User 0 is not allowed to access URL http://localhost:9081/web/guest/home and portlet com_liferay_login_web_portlet_LoginPortlet
+
+Because @product@ is only using HTTP, the HTTPS cookie was never used and new sessions are being created on each page refresh. To resolve this issue: 
+1. Click Application Servers &rarr; server1 &rarr; Session Management &rarr; Enable Cookies.
+ 
+2. From here, de-select *Restrict cookies to HTTPS sessions*
+
+3. Click *Apply*
+
+4. Click *Save*
+
+
 ## Deploy @product@ [](id=deploy-liferay-dxp)
 
 Now you're ready to deploy @product@! 
