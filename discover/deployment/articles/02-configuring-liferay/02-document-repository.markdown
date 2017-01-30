@@ -302,7 +302,7 @@ Property | Default | Required
 
 +$$$
 
-**Note:** Amazon S3 requires a SAXParser from the application server to operate. For some application servers (e.g. Tomcat), it will be necessary to define a SAXParser in order to prevent errors while utilizing this store. This may be set in `portal-ext.properties`. For example:
+**Note:**As stated above, Amazon S3 requires a SAXParser from the application server to operate. For some application servers (e.g. Tomcat), it will be necessary to define a SAXParser in order to prevent errors while utilizing this store. This may be set in `system-ext.properties`. For example:
     
     org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser 
 
