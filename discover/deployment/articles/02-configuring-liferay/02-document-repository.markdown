@@ -222,7 +222,7 @@ You must include this property in `system-ext.properties`:
     org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
 
 Other app servers also need this configuration if they don't contain a
-`SAXParser`. 
+`SAXParser`. Remember to place the system-ext.properties in your /WEB-INF/classes directory
 
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service. 
