@@ -8,13 +8,13 @@ property.
 By default, @product@ uses a document library store option called Simple File
 Store to store documents and media files on a file system (local or mounted).
 The store's default root folder is `[Liferay Home]/data/document_library`.
-You can specify a different root directory from within 
+You can specify a different root directory from within
 [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings). To access
 System Settings, open the *Menu*
 (![Menu](../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
 Configuration &rarr; System Settings*. From System Settings, navigate to
 *Platform* and then search for and select the entry *Simple File System Store*.
-For the store's *Root dir* value, specify a path relative to 
+For the store's *Root dir* value, specify a path relative to
 [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
 or an absolute path; then click the *Update* button. The document library store
 switches immediately to the new folder. 
@@ -151,7 +151,7 @@ can be accessed by all nodes, and so that it operates as a cluster within
 @product@'s cluster. 
 
 To move the default repository location to a shared folder, you do not need to
-edit Jackrabbit's configuration file. Instead, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#JCR). 
+edit Jackrabbit's configuration file. Instead, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#JCR).
 Change it to point to a shared folder that all the nodes can see. A new
 Jackrabbit configuration file is then generated in that location, and you'll
 have to edit that file to modify Jackrabbit's configuration. 
@@ -194,7 +194,7 @@ tables.
 
 Note that this configuration doesn't perform as well as the advanced file system
 store, because you're storing documents in a database instead of on the file
-system. But it does have the benefit of clustering well. 
+system. But it does have the benefit of clustering well.
 For example, you can store documents and media files in your @product@ instance's
 database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
 portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home):
@@ -222,10 +222,11 @@ You must include this property in `system-ext.properties`:
     org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
 
 Other app servers also need this configuration if they don't contain a
-`SAXParser`. Remember to place the system-ext.properties in your /WEB-INF/classes directory
+`SAXParser`. Remember to place the `system-ext.properties` in your @product@
+installation's `/WEB-INF/classes` directory.
 
 Consult the Amazon Simple Storage documentation for additional details on using
-Amazon's service. 
+Amazon's service.
 
 There are properties related to document library stores that have been moved
 from `portal-ext.properties` to OSGi configuration files. The following mapping
@@ -236,14 +237,14 @@ shows you how to configure those properties if needed:
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
 
 To `osgi/configs`: `com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`
- 
+
 Property | Default | Required
 ---------|---------|---------
 `repositoryUrl` | `http://localhost:8080/alfresco/service/api/cmis` | `true`
 `credentialsUsername` | none | `true`
 `credentialsPassword` | none | `true`
 `systemRootDir` | Liferay Home | `true`
- 
+
 #### File Store [](id=file-store)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore`
@@ -259,11 +260,11 @@ Property | Default | Required
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore`
 
 To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
- 
+
 Property | Default | Required
 ---------|---------|---------
 `rootDir` | `data/document_library` | `false`
- 
+
 #### JCR [](id=jcr)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
@@ -302,9 +303,12 @@ Property | Default | Required
 
 +$$$
 
-**Note:**As stated above, Amazon S3 requires a SAXParser from the application server to operate. For some application servers (e.g. Tomcat), it will be necessary to define a SAXParser in order to prevent errors while utilizing this store. This may be set in `system-ext.properties`. For example:
-    
-    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser 
+**Note:** Amazon S3 requires a SAXParser from the application server to operate.
+For some application servers (e.g. Tomcat), it's necessary to define a SAXParser
+in order to prevent errors while utilizing this store. This may be set in
+`system-ext.properties`. For example,
+
+    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
 
 **Warning:** If a database transaction rollback occurs in a Document Library
 that uses a file system based store, file system changes that have occurred
