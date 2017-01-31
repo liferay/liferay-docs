@@ -4,7 +4,7 @@ The Forms application contains many useful field types out-of-the-box, and those
 field types are highly configurable. Most use cases will be met with one of the
 existing field types. 
 
-<!--Figure of existing field types-->
+![Figure x: The Forms application has useful out-of-the-box field types, but you can add your own if you need to.](../../images/forms-field-types.png)
 
 If you're reading this, however, your use case probably wasn't met with the
 default field types. For example, perhaps you need a dedicated *time* field. You
@@ -24,8 +24,7 @@ In this tutorial, learn to
     *Time* field type.
 
 In a separate tutorial (not yet written), learn to add custom configuration
-options to your field types. <!-- What about adding custom configuration options to the
-out-of-the-box field types? Is that possible or desirable? -->
+options to your field types.
 
 ## Anatomy of a Field Type Module
 
@@ -63,19 +62,7 @@ application suite:
                     ├── paragraph.soy
                     └── paragraph.soy.js
 
-+$$$
-
-**Blade CLI Template:** There's a [Blade
-CLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli) template you can use
-to generate you the project skeleton, some basic configuration, and give you a
-head start on dependency management. To generate your form field type project
-with Blade CLI, enter
-
-    blade create -t form-field-type -p com.liferay.docs.formfieldtype -c Time ddm-type-time
-
-$$$
-
-Your field type module is nearly identical in structure to those found in
+Your field type module is nearly identical in structure to those included in
 @product@, as presented above. You won't need a `*TypeSettings` class in your
 initial module (see the tutorial on adding settings to your form field types to
 learn more about `*TypeSettings`), and the `*.soy.js` is generated from the
@@ -105,16 +92,19 @@ out, according to the form fields tutorial planning section -->
 
 In addition to the Java classes, Soy templates, and JavaScript files, @product@
 applications contain a `bnd.bnd` file to manage the module's metadata, and a
-`build.gradle` file to manage its dependencies. This example follows those
-patterns.
+`build.gradle` file to manage its dependencies and build properties. This
+example follows those patterns.
 
+<!-- UPDATE WHEN TEMPLATE PROJECT IS PUBLISHED ON repository.liferay.com
 +$$$
 
-**Form field types with Blade CLI:** If you want a head start, the basic module
-developed in this tutorial can be generated with a single [Blade
-CLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli) command:
+**Blade Template:** There's a [Blade
+CLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli) template you can use
+to generate the project skeleton, some basic configuration, and give you a head
+start on dependency management. To generate your form field type project with
+Blade CLI, enter
 
-    blade create -t form-field -p com.liferay.docs.formfield -c Time ddm-type-time
+    blade create -t form-field-type -p com.liferay.docs.formfieldtype -c Time ddm-type-time
 
 This gives you a `ddm-type-time` module with a similar structure to the one
 outlined above. The Java classes will be in the package
@@ -122,6 +112,7 @@ outlined above. The Java classes will be in the package
 (JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
 
 $$$
+-->
 
 Start by setting up the project's metadata.
 
@@ -148,7 +139,7 @@ available upon module activation.
 Next craft the OSGi Component that marks your class as an implementation of
 `DDMFormFieldType`. 
 
-<!--Probably need to show the build.gradle configuration in this case -->
+<!--Waiting for advice on the build.gradle configuration -->
 
 ## Creating a `DDMFormFieldType` Component
 
@@ -195,8 +186,8 @@ Type* dialog.
 
 `ddm.form.field.type.name`
 : The field type's name must be unique. Each Component in a field type module
-references the field type name. <!--It is used by OSGi trackers to filter
-capabilities.-->
+references the field type name, and it's used by OSGi service trackers to filter
+the field's capabilities (for example, rendering and validation).
 
 Next code the `*DDMFormFieldType` class.
 
@@ -267,7 +258,7 @@ also includes some utility methods. Here's what the time field's
 
     }
 
-Here you're declaring the templating language (Soy closure templates), the
+Here you're setting the templating language (Soy closure templates), the
 template namespace (`ddm.time`), and pointing to the location of the templates
 within your module (`/META-INF/resource/time.soy`).
 
@@ -277,8 +268,9 @@ within your module (`/META-INF/resource/time.soy`).
 are a templating system for building UI elements. @product@ developers chose to
 build the Forms UI with closure templates because they enable a smooth,
 responsive repainting of the UI as a user enters data. With closure templates
-there's no need to make calls to server side logic for rendering the field
-template when the UI is updated by the user.
+there's no need to reload the entire page from the server side when the UI is
+updated by the user: only the relevant portion of the page is updated from the
+server. This makes for a smooth user experience.
 
 $$$
 
@@ -387,14 +379,7 @@ The JavaScript above creates a component called `TimeField`. The component
 extends `Liferay.DDM.Renderer.Field`, which gives you automatic injection of the
 default field parameters. 
 
-+$$$
-
-**Note:** Extending the Java class `BaseDDMFormFieldRenderer` gave you access to
-the default parameters in the backend, and extending the JavaScript component
-`Liferay.DDM.Renderer.Field` injects the parameters into your JavaScript
-component so you can automatically refer to them in the soy template.
-
-$$$
+<!-- Figure of the default field parameters? -->
 
 All that's left to do is create the `config.js` file:
 
@@ -438,7 +423,7 @@ information about the Alloy loader please visit
 [https://github.com/liferay/liferay-amd-loader#amd-module-loader](https://github.com/liferay/liferay-amd-loader#amd-module-loader).
 
 If you build and deploy your new field type module, you'll see that you get
-exactly what you described in the `time.soy` file. A single text input field. Of
+exactly what you described in the `time.soy` file: a single text input field. Of
 course, that's not what you want! You need a time picker.
 
 ## Adding Behavior to the Field
@@ -453,7 +438,7 @@ block:
     }
 
 Since you're now changing the default rendering of the field, overwrite the base
-`render` logic and instantiate the time picker. This occurs in the `propiotype`
+`render` logic and instantiate the time picker. This occurs in the `prototype`
 block:
 
     prototype: {
