@@ -1,7 +1,7 @@
 # Activating Your @product@ Server with LCS [](id=registering-your-dxp-server-with-lcs)
 
-Once the LCS client app is deployed, you're ready to activate your @product@ server 
-with LCS. You'll use an 
+Once the LCS client app is deployed, you're ready to activate your @product@ 
+server with LCS. You'll use an 
 [LCS environment token](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
 to do this: 
 
@@ -67,38 +67,51 @@ to do this:
     [Click here](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
     for more information on environment tokens.
 
-6. Shut down your @product@ instance if it's running. Place the token file in your 
-   instance's `[Liferay_Home]/data` folder, and then start the instance. On 
-   startup, the LCS client app uses the environment token to activate your @product@ 
-   instance in the LCS environment that corresponds to the token. 
+6. Shut down your @product@ instance if it's running. Place the token file in 
+   your instance's `[Liferay_Home]/data` folder, and then start the instance. On 
+   startup, the LCS client app uses the environment token to activate your 
+   @product@ instance in the LCS environment that corresponds to the token. 
 
 7. Celebrate! Your @product@ server is activated and connected to LCS. 
 
-In your @product@ instance, you can view your LCS connection status in the LCS client 
-app. Access the client by clicking *Control Panel* &rarr; *Configuration* &rarr; 
-*Liferay Connected Services*. Note that you can change which LCS services are 
-enabled for your @product@ instance by clicking the *Configure Services* link. 
++$$$
+
+**Note:** You may be wondering what happens when your server can't reach LCS. 
+Don't worry, this won't cause a rift in the space-time continuum. Because LCS is 
+deployed on a global cloud infrastructure set up for automatic failure recovery, 
+the potential for non-availability is very low. In the event of an outage, 
+however, registered @product@ instances maintain a local copy of their uptime 
+information to transmit to LCS when it comes back online. Active @product@ 
+subscriptions also have a seven-day grace period to re-establish connectivity 
+and remain valid. This is ample time for LCS to come back online. Should an 
+extended LCS outage occur, Liferay support can provide temporary subscription 
+keys that don't require LCS. 
+
+$$$
+
+In your @product@ instance, you can view your LCS connection status in the LCS 
+client app. Access the client by clicking *Control Panel* &rarr; 
+*Configuration* &rarr; *Liferay Connected Services*. Note that you can change 
+which LCS services are enabled for your @product@ instance by clicking the 
+*Configure Services* link. 
 
 Here's a full description of what a connected LCS client app displays: 
 
 - **Connection Uptime:** The duration of the client's connection with LCS.
 - **Last Message Received:** The time the latest message was received from LCS.
-- **Services:** The LCS services enabled for this @product@ instance. Note that all 
-  @product@ instances that connect to the same LCS environment must use the same set 
-  of LCS services. LCS services can't be enabled on an instance-by-instance 
-  basis. 
+- **Services:** The LCS services enabled for this @product@ instance. Note that 
+  all @product@ instances that connect to the same LCS environment must use the 
+  same set of LCS services. LCS services can't be enabled on an 
+  instance-by-instance basis. 
 - **Project Home:** This link takes you to this server's LCS project. 
   The project home in LCS is also called the *dashboard*. 
-- **Environment:** This link takes you to this server's LCS environment.
+- **Environment:** This link takes you to this server's LCS environment. 
 - **Server Dashboard:** This link takes you to the server on LCS. 
 
 ![Figure 5: The server is connected to LCS.](../../../images-dxp/lcs-server-connected.png)
 
-Awesome! Now you know how to use environment tokens in LCS to activate your @product@ 
-server. 
-
-One question is what happens when LCS is not reachable. Will the Liferay installation think it does not have an active registration?
-The answer is that LCS is deployed on a global cloud infrastructure set up for automatic failure recovery. Thus, the potential for non-availability is quite low. However, in the event of a system outage, registered instances maintain a local copy of their uptime information to transmit back to LCS when LCS comes online. *Active subscriptions also have a grace period of 7 days to re-establish connectivity to remain valid. This grace period is more than ample for LCS to come back online. Should an extended outage exist, Liferay support can provide temporary disconnected subscription keys to mitigate any potential impacts.*
+Awesome! Now you know how to use environment tokens in LCS to activate your 
+@product@ server. 
 
 For information on using the other features of LCS, see 
 [the next article](/discover/deployment/-/knowledge_base/7-0/using-lcs). 
