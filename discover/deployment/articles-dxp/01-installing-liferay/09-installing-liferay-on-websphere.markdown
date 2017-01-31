@@ -329,16 +329,17 @@ the SMTP server has been pinged with the correct port number listed.
 
 ## Enable Cookies for HTTP Sessions [](id=enable-cookies-http-sessions)
 
-WebSphere 8.5.5.9 restricts cookies to HTTPS sessions by default. This prevents 
-users from signing in to @product@ and displays the following error in the 
-console: 
+WebSphere 8.5.5.9 restricts cookies to HTTPS sessions by default. If you're 
+using HTTP instead, this prevents users from signing in to @product@ and 
+displays the following error in the console: 
 
     20:07:14,021 WARN  [WebContainer : 1][SecurityPortletContainerWrapper:341]
     User 0 is not allowed to access URL http://localhost:9081/web/guest/home and
     portlet com_liferay_login_web_portlet_LoginPortlet
 
-Because @product@ is only using HTTP, the HTTPS cookie was never used and new 
-sessions are being created on each page refresh. To resolve this issue: 
+This occurs because @product@ can't use the HTTPS cookie when you use HTTP. The 
+end result is that new sessions are created on each page refresh. Follow these 
+steps to resolve this issue in WebSphere: 
 
 1. Click *Application Servers* &rarr; *server1* &rarr; *Session Management*
    &rarr; Enable Cookies 
