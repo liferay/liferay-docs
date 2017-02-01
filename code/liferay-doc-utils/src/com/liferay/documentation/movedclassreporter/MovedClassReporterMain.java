@@ -187,16 +187,16 @@ public class MovedClassReporterMain {
 		sortByPackageName(removedClasses);
 		removeJavaSuffix(removedClasses);
 
-		String oldZipName = oldDir.getName() + ".zip";
-		String newZipName = newDir.getName() + ".zip";
+		String oldDirName = oldDir.getName();
+		String newDirName = newDir.getName();
 		
 		TemplateProcessor movedClassesTemplateProcessor = new TemplateProcessor();
-		movedClassesTemplateProcessor.processMovedClassesTemplate(movedClasses,  movedClassesOutputFile, oldZipName, newZipName);
+		movedClassesTemplateProcessor.processMovedClassesTemplate(movedClasses,  movedClassesOutputFile, oldDirName, newDirName);
 		System.out.println("Reported moved classes to file: " + movedClassesOutputFile.getPath());
 
 		if (removedClassesOutputFile != null) {
 			TemplateProcessor removedClassesTemplateProcessor = new TemplateProcessor();
-			removedClassesTemplateProcessor.processRemovedClassesTemplate(removedClasses, removedClassesOutputFile, oldZipName, newZipName);
+			removedClassesTemplateProcessor.processRemovedClassesTemplate(removedClasses, removedClassesOutputFile, oldDirName, newDirName);
 			System.out.println("Reported removed classes to file: " + removedClassesOutputFile.getPath());
 
 		}

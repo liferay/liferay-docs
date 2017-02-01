@@ -25,7 +25,7 @@ caption {
     <b>Classes Moved from portal-service to com.liferay.portal.kernel</b>
 	<p>
       This information was generated based on comparing classes in
-      <em>${oldSrcZip}</em> to classes in <em>${newSrcZip}</em>.
+      <em>${oldSrc}</em> to classes in <em>${newSrc}</em>.
     </p>
   </caption>
   <tr>
