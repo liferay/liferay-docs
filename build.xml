@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="Properties to HTML conversion" default="build-properties-docs" basedir=".">
+<project name="Liferay Documentation" default="usage" basedir=".">
 	<property name="project.dir" value="." />
 
 	<property name="lib.dir" value="${project.dir}/lib" />
@@ -87,6 +87,10 @@
 
 	<target name="clean" description="deletes the properties directory">
 		<delete dir="${properties.dir}"/>
+	</target>
+
+	<target name="usage">
+		<echo message="Welcome to the Liferay Documentation project. To show target descriptions, run ant -projecthelp"/>
 	</target>
 
 </project>
