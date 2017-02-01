@@ -136,6 +136,52 @@ classes), then set the version. Point to the JavaScript configuration file
 to that later), and set the Web Context Path so your module's resources are made
 available upon module activation. 
 
+Next add your dependencies to a `build.gradle` file.
+
+## Specifying Dependencies
+
+If you're using Gradle to manage your dependencies (as @product@ modules do),
+add this to your `build.gradle` file:
+
+    dependencies {
+        compileOnly group: "com.liferay", name: "com.liferay.dynamic.data.mapping.api", version: "3.2.0"
+        compileOnly group: "com.liferay", name: "com.liferay.dynamic.data.mapping.form.field.type", version: "2.0.5"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+        compileOnly group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
+}
+
+    task wrapSoyTemplates
+
+    classes {
+        dependsOn buildSoy
+        dependsOn wrapSoyTemplates
+    }
+
+    transpileJS {
+        soySrcIncludes = ""
+        srcIncludes = "**/*.es.js"
+    }
+
+    wrapSoyTemplates {
+        doLast {
+            FileTree soyJsFileTree = fileTree(dir: "build", include: "**/*.soy.js")
+
+            String soyJsWrapperHeader = "AUI.add('liferay-ddm-form-field-time-template', function(A) {"
+            String soyJsWrapperFooter = "}, '', {requires: ['soyutils']});";
+
+            soyJsFileTree.each {
+                File soyJsFile ->
+
+                soyJsFile.text = soyJsWrapperHeader + soyJsFile.text.replace("(typeof ddm == 'undefined') { var ddm = {}; }", "(typeof ddm == 'undefined') { window.ddm = {}; }") + soyJsWrapperFooter
+            }
+        }
+    }
+
+Along with the regular Java `dependencies`, there's some JavaScript
+dependency configuration you need to include here. It's all boilerplate and can
+be copied directly into your module's `build.gradle` if you follow the
+conventions presented here. 
+
 Next craft the OSGi Component that marks your class as an implementation of
 `DDMFormFieldType`. 
 
@@ -419,8 +465,9 @@ So what is the `config.js` file for? It's a JavaScript file that defines the
 dependencies of the declared JavaScript components (`requires...`), and where
 the files are located (`path...`). The `config.js` is used by the Alloy loader
 when it satisfies dependencies for each JavaScript component. For more
-information about the Alloy loader please visit
-[https://github.com/liferay/liferay-amd-loader#amd-module-loader](https://github.com/liferay/liferay-amd-loader#amd-module-loader).
+information about the Alloy loader see the [tutorial on its
+usage](/developer/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader).
+
 
 If you build and deploy your new field type module, you'll see that you get
 exactly what you described in the `time.soy` file: a single text input field. Of
