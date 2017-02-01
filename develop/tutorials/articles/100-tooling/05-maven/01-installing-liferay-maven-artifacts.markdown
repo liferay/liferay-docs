@@ -23,8 +23,8 @@ than a slight delay in artifact releases between the two repositories, they're
 identical. You'll learn how to reference both of them next.
 
 Using the Central Repository to install Liferay Maven artifacts only requires
-that you [specify your module's
-dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+that you 
+[specify your module's dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
 in its `pom.xml` file. For example, the snippet below sets a dependency on
 Liferay's `com.liferay.portal.kernel` artifact:
 

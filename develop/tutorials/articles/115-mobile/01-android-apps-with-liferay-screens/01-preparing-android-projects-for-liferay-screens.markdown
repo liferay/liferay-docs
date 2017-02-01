@@ -244,4 +244,4 @@ how to do this.
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
 
-[Preparing iOS Projects for Liferay Screens](develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens)
+[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens)

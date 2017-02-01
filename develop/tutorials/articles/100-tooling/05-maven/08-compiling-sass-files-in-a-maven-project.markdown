@@ -53,11 +53,11 @@ Here's how to apply Liferay's CSS builder to your Maven project.
           [Liferay Frontend Common CSS JAR](https://mvnrepository.com/artifact/com.liferay/com.liferay.frontend.css.common)
           file.
 
-2.  If you're using [Bourbon](http://bourbon.io/) in your Sass files, you'll
-    need to [add an additional plugin
-    dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
-    to your project's POM. If you're not using Bourbon, skip this step. Add the
-    following plugin dependency:
+2.  If you're using 
+    [Bourbon](http://bourbon.io/) in your Sass files, you'll need to 
+    [add an additional plugin dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+    to your project's POM. If you're not using Bourbon, skip this step. Add the 
+    following plugin dependency: 
 
         <plugin>
             <artifactId>maven-dependency-plugin</artifactId>

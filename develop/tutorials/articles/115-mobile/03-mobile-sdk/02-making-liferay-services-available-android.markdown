@@ -17,7 +17,7 @@ Now go forth and fear no remote service!
 ## Adding the SDK to Your Gradle Project [](id=adding-the-sdk-to-your-gradle-project)
 
 If your Android project is using Gradle as the build system, you can add 
-Liferay's prebuilt Mobile SDK as a
+Liferay's prebuilt Mobile SDK as a 
 [dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
 to your project. All versions are available at the JCenter and Maven Central
 repositories. Both repositories are listed here, but you only need to have one

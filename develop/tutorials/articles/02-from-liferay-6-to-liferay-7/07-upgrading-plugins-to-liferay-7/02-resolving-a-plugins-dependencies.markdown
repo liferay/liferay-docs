@@ -65,12 +65,12 @@ a specific purpose, such as providing the app's API, implementation, or UI. The
 app modules are therefore much easier to understand. Next, you'll track down the 
 modules that now hold the classes referenced by your plugin. 
 
-The reference article [Classes Moved from
-`portal-service.jar`](/develop/reference/-/knowledge_base/7-0/classes-moved-from-portal-service-jar)
-contains a table that maps each class moved from `portal-service.jar` to its new
-module. The table includes each class's new package and the module symbolic name
-(artifact ID). You'll use this information to configure your plugin's dependencies
-on these modules. 
+The reference article 
+[Classes Moved from `portal-service.jar`](/develop/reference/-/knowledge_base/7-0/classes-moved-from-portal-service-jar) 
+contains a table that maps each class moved from `portal-service.jar` to its new 
+module. The table includes each class's new package and the module symbolic name 
+(artifact ID). You'll use this information to configure your plugin's 
+dependencies on these modules. 
 
 Your plugin might reference classes that are in Liferay utility modules such as 
 `util-java`, `util-bridges`, `util-taglib`, or `util-slf4j`. 
@@ -85,8 +85,8 @@ The following table shows each Liferay utility module's symbolic name.
  util-taglib             | `com.liferay.util.taglib` |
 
 To determine the version number of each module your plugin depends on, see the
-tutorial [Configuring
-Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies).
+tutorial 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
 +$$$
 
@@ -132,16 +132,16 @@ Here's an example dependency element for the Liferay Journal API module, version
     <dependency name="com.liferay.journal.api" org="com.liferay" rev="2.0.1" />
 
 Each dependency includes the module's name (`name`), organization (`org`), and
-revision number (`rev`). The [Configuring
-Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+revision number (`rev`). The 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
 tutorial explains how to determine the module's organization (`org`). 
 
 At compile time, Ivy downloads the dependency JAR files to a cache folder so you
 can compile against them. At deployment, @product@'s OSGi framework installs and 
 registers the dependency modules for runtime access. 
 
-If your project doesn't already have an `ivy.xml` file, you can get one by
-creating a new plugin project in Liferay @ide@ and copying the `ivy.xml` file it
+If your project doesn't already have an `ivy.xml` file, you can get one by 
+creating a new plugin project in Liferay @ide@ and copying the `ivy.xml` file it 
 generates. 
 
 Here's an example of an `ivy.xml` file from the Liferay Portal 6.2 Knowledge
@@ -173,10 +173,11 @@ about this next.
 
 ## Managing Dependencies Manually [](id=managing-dependencies-manually)
 
-Managing dependencies involves downloading dependency JAR files and adding them
-to your project's `WEB-INF/lib` folder.
+To manage dependencies manually, you must download the dependency JAR files and 
+add them to your project's `WEB-INF/lib` folder. Follow these steps to do this: 
 
-1.  Go to Maven Central at (https://search.maven.org/)[https://search.maven.org/].
+1.  Go to Maven Central at 
+    [https://search.maven.org/](https://search.maven.org/). 
 
 2.  Search for the module by its artifact ID and group ID.
 
@@ -186,7 +187,7 @@ to your project's `WEB-INF/lib` folder.
 
 5.  Add the JAR to your project's `WEB-INF/lib` folder.
 
-![Figure x: ](resolving-plugin-dependencies-using-maven-central.png)
+![Figure 2: After searching Maven Central, download an artifact's JAR file by clicking the *jar* link.](../../../images/resolving-plugin-dependencies-using-maven-central.png)
 
 As you manage module JARs, make sure **not** to deploy any OSGi framework JARs 
 or Liferay module JARs (e.g., `com.liferay.journal.api.jar`). If you deploy 

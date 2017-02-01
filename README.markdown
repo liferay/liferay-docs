@@ -82,35 +82,35 @@ LDN's pages and articles. Each repository folder under [`discover`](discover),
 [`develop`](develop), and [`distribute`](distribute) represents a section of
 LDN's articles. For example, the [`discover/portal`](discover/portal) folder
 contains Markdown files and images that are the source for LDN's
-[Discover&nbsp;&rarr;&nbsp;Portal](https://dev.liferay.com/discover/portal)
+[User & Admin&nbsp;&rarr;&nbsp;User Guide](https://dev.liferay.com/discover/portal)
 articles. 
 
 The following tables show the folder locations for articles published to LDN's
-Discover, Develop, and Deployment sections.
+User & Admin, Developer, and Marketplace sections.
 
 **Source Folders for Liferay Developer Network Articles:**
 
- ![Discover](guidelines/images/discover.png)                                                                                           |
+ ![User & Admin](guidelines/images/discover.png)                                                                                           |
  :------------------------------------------------------------------------------------------------------------------------------------ |
   &nbsp;[**liferay-docs/discover/**](discover)                                                                                         |
   &nbsp;&#8226;&nbsp;[`portal/`](discover/portal) &rarr; [Portal](https://dev.liferay.com/discover/portal)                             |
   &nbsp;&#8226;&nbsp;[`social-office/`](https://github.com/liferay/liferay-docs/tree/6.2.x/discover/social-office) &rarr; [Social Office](https://dev.liferay.com/discover/social-office) |
   &nbsp;&#8226;&nbsp;[`deployment/`](discover/deployment) &rarr; [Deployment](https://dev.liferay.com/discover/deployment)             |
   &nbsp;&#8226;&nbsp;[`reference/`](discover/reference) &rarr; [Reference](https://dev.liferay.com/discover/reference)                 |
-  &nbsp;&#8226;&nbsp;[`new-articles/`](discover/new-articles)  (You can submit new articles here for LDN's *Discover* section)         |
+  &nbsp;&#8226;&nbsp;[`new-articles/`](discover/new-articles)  (You can submit new articles here for LDN's *User & Admin* section)         |
 
-  ![Develop](guidelines/images/develop.png) |
+  ![Developer](guidelines/images/develop.png) |
  :-------------------------------------------------------------------------------------------------------------------------------------- |
   &nbsp;[**liferay-docs/develop/**](develop)                                                                                             |
   &nbsp;&#8226;&nbsp;[`learning-paths/`](develop/learning-paths) &rarr; [Learning Paths](https://dev.liferay.com/develop/learning-paths) |
   &nbsp;&#8226;&nbsp;[`tutorials/`](develop/tutorials) &rarr; [Tutorials](https://dev.liferay.com/develop/tutorials)                     |
   &nbsp;&#8226;&nbsp;[`reference/`](develop/reference) &rarr; [Reference](https://dev.liferay.com/develop/reference)                     |
-  &nbsp;&#8226;&nbsp;[`new-articles/`](develop/new-articles)  (You can submit new articles here for LDN's *Develop* section)             |
+  &nbsp;&#8226;&nbsp;[`new-articles/`](develop/new-articles)  (You can submit new articles here for LDN's *Developer* section)             |
 
-  ![Distribute](guidelines/images/distribute.png)                                                                                             |
+  ![Marketplace](guidelines/images/distribute.png)                                                                                             |
  :------------------------------------------------------------------------------------------------------------------------------------------- |
   &nbsp;[**liferay-docs/distribute/**](distribute)                                                                                            |
-  &nbsp;&#8226;&nbsp;[`distribute/new-articles/`](distribute/new-articles)  (You can submit new articles here for LDN's *Distribute* section) |
+  &nbsp;&#8226;&nbsp;[`distribute/new-articles/`](distribute/new-articles)  (You can submit new articles here for LDN's *Marketplace* section) |
 
 Now that you're familiar with the layout of the liferay-docs repository, you
 may be interested in adding and editing LDN articles in a local copy of the

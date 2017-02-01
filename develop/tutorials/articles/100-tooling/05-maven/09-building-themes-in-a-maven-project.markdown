@@ -5,7 +5,7 @@ project. You can incorporate the Theme Builder into your Maven project to
 generate WAR-style themes deployable to @product@. To learn more about theming
 in @product@, see the
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
-tutorial section.
+tutorial section. 
 
 The easiest way to create a Liferay theme with Maven is to create a new Maven
 project using Liferay's provided Theme archetype. You can learn how to generate
@@ -13,7 +13,7 @@ a Maven Theme project by visiting the
 [Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
 tutorial. In some cases, however, this may not be convenient. For instance, if
 you have a legacy theme project and don't want to start over, generating a new
-project is not ideal.
+project is not ideal. 
 
 For cases like this, you should manually configure your Maven project to
 build a theme. You'll learn how to do this next.
@@ -121,12 +121,12 @@ build a theme. You'll learn how to do this next.
         <version>1.0.0</version>
         <packaging>war</packaging>
 
-5.  Building themes requires certain dependencies. You can [configure these
-    dependenices](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
-    in your project's `pom.xml` as directories or JAR files. If you choose to
-    use JARs, you must apply the
-    [maven-dependency-plugin](http://maven.apache.org/plugins/maven-dependency-plugin/)
-    and have it copy JAR dependencies into your project from Maven Central:
+5.  Building themes requires certain dependencies. You can 
+    [configure these dependenices](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+    in your project's `pom.xml` as directories or JAR files. If you choose to 
+    use JARs, you must apply the 
+    [maven-dependency-plugin](http://maven.apache.org/plugins/maven-dependency-plugin/) 
+    and have it copy JAR dependencies into your project from Maven Central: 
 
         <plugin>
             <artifactId>maven-dependency-plugin</artifactId>
