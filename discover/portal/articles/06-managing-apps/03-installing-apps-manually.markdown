@@ -61,11 +61,11 @@ Liferay therefore also supports Liferay's hot deploy mechanism.
 ## Manually Deploying an LPKG App [](id=manually-deploying-an-lpkg-app)
 
 When manually installing an LPKG app, the installation may hang with a server 
-log message that resembles the following: 
+log message like this: 
 
     14:00:15,789 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:252] Processing Liferay Push 2.1.0.lpkg
 
-This occurs when LPKG apps have the `restart-required=true` property in their 
+This happens when LPKG apps have the `restart-required=true` property in their 
 `liferay-marketplace.properties` file (inside the LPKG file). This property 
 setting specifies that a server restart is required to complete the 
 installation. 
