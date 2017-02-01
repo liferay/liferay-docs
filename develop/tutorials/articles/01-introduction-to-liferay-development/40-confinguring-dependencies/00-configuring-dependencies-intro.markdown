@@ -1,12 +1,12 @@
 # Configuring Dependencies [](id=configuring-dependencies)
 
-Using external modules in your project requires configuring dependencies on 
-them. To do this, look up the modules' attributes and plug them into dependency 
-entries for your build system (e.g., 
+Using external modules in your project requires configuring their dependencies.
+To do this, look up the modules' attributes and plug them into dependency
+entries for your build system (either 
 [Gradle](https://gradle.org/), 
 [Maven](https://maven.apache.org/), or 
 [Ant/Ivy](http://ant.apache.org/ivy/)). Your build system downloads the 
-dependency artifacts for your project to compile against. 
+dependency artifacts your project needs to compile successfully. 
 
 Before specifying a module as a dependency, you must first find its artifact 
 attributes. Artifacts have these attributes: 
@@ -15,9 +15,8 @@ attributes. Artifacts have these attributes:
 -   *Artifact ID*: Name/identifier 
 -   *Version*: Release number 
 
-This tutorial shows you how to find the artifacts for @product@'s core modules 
-and app modules, and concludes by showing you how to configure dependencies. 
-Click these links to jump to the corresponding section: 
+This tutorial shows you how to make sure your projects have the right
+dependencies: 
 
 -   [Find Core @product@ artifacts](#finding-core-liferay-portal-artifacts)
 -   [Find @product@ app and independent artifacts](#finding-liferay-portal-app-and-independent-artifacts)
@@ -25,18 +24,17 @@ Click these links to jump to the corresponding section:
 
 ## Finding Core @product@ Artifacts [](id=finding-core-liferay-portal-artifacts)
 
-You can find the artifact attributes for @product@'s core modules inside each 
-module's `MANIFEST.MF` file. Each module is composed of a `jar` file that 
-contains the module's OSGi metadata in a `MANIFEST.MF` file. The manifest also 
-specifies the module's artifact attributes. For example, the following OSGi 
-headers in each module's `MANIFEST.MF` specify the module's artifact ID and 
-version: 
+Each module is composed of a `jar` file that contains the module's OSGi metadata
+in a `MANIFEST.MF` file. You can find the artifact attributes for @product@'s
+core modules inside this file. The manifest also specifies the module's artifact
+attributes. For example, these two OSGi headers specify the module's artifact ID
+and version: 
 
     Bundle-SymbolicName:  artifact ID
     Bundle-Version: version
 
-For each core @product@ artifact, the following table lists the group ID, 
-artifact ID, version, and origin. 
+This table lists the group ID, artifact ID, version, and origin for each core
+@product@ artifact: 
 
 *Core @product@ Artifacts*:
 
@@ -59,10 +57,8 @@ modules.
 
 Independent modules and modules that make up @product@'s apps aren't part of the 
 @product@ core. You must still, however, find their artifact attributes if you 
-want to declare dependencies on them. The following resources provide the 
-artifact details for @product@'s apps and independent modules. To see the 
-section in this tutorial that explains the resource, click its link in the 
-table: 
+want to declare dependencies on them. The resources below provide the 
+artifact details for @product@'s apps and independent modules: 
 
  Resource | Artifact Type |
 :-------- | :-------------- |
@@ -83,8 +79,8 @@ learn about it next.
 ### @product@'s App Manager [](id=liferay-portals-app-manager)
 
 [The App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager) 
-is sort of like Santa Claus; it knows and sees all. You can use it to find all 
-modules deployed on the @product@ instance. 
+knows what's deployed on your @product@ server. You can use it to find whatever
+modules you're looking for. 
 
 Follow these steps to get a deployed module's information: 
 
@@ -108,19 +104,19 @@ to find it:
 
         telnet localhost 11311
 
-    This results in a `g!`, which denotes the Felix Gogo Shell command prompt. 
+    This results in a `g!`: the Felix Gogo Shell command prompt. 
 
 2.  Search for the module by its display name (e.g., `Liferay Bookmarks API`) or 
     a keyword. In the results, note the module's number. You can use it in the 
-    next step. For example, these results indicate that the Liferay Bookmarks 
-    API module's number is `52`: 
+    next step. For example, these results show the Liferay Bookmarks API
+    module's number is `52`: 
 
         g! lb | grep "Liferay Bookmarks API"
 
            52|Active     |   10|Liferay Bookmarks API (2.0.1)
 
 3.  To list the module's manifest headers, pass the module number to the 
-    `headers` command. In the results, note the `Bundle-Vendor` value--you'll 
+    `headers` command. In the results, note the `Bundle-Vendor` value: you'll 
     match it with an artifact group in a later step: 
 
         g! headers 52
@@ -140,8 +136,7 @@ to find it:
 
         g! disconnect
 
-5.  On 
-    [Maven Central](https://search.maven.org/), search for the module by its
+5.  On [Maven Central](https://search.maven.org/), search for the module by its
     artifact ID. 
 
 6.  Determine the group ID by matching the `Bundle-Vendor` value from step 3 
@@ -210,9 +205,9 @@ dependency on it.
 
 ## Configuring Dependencies [](id=configuring-dependencies)
 
-Specifying dependencies to build systems is straightforward. Simply edit your 
-project's build file, specifying a dependency entry that includes the group ID, 
-artifact ID, and version number. 
+Specifying dependencies to build systems is straightforward. Edit your project's
+build file, specifying a dependency entry that includes the group ID, artifact
+ID, and version number. 
 
 +$$$
 
@@ -221,8 +216,8 @@ artifact ID, and version number.
 
 $$$
 
-Note that different build systems use different artifact attribute names, as the 
-following table specifies. 
+Note that different build systems use different artifact attribute names, as
+shown below: 
 
 *Artifact Terminology*
 
