@@ -10,16 +10,18 @@ Developing modules for @product@ requires:
     resources. Modules stubbed out with them let developers focus on
     implementing logic.
 
--   **Compilation**: Acquiring dependencies and building the module. Common
-    build tools that manage dependencies include Gradle, Maven, and Ant/Ivy.
+-   **Compilation**: 
+    [Acquiring dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+    and building the module. Common build tools that manage dependencies include 
+    Gradle, Maven, and Ant/Ivy. 
 
--   **Deployment**: Interacting with the runtime environment to install,
-    monitor, and modify modules.
+-   **Deployment**: Interacting with the runtime environment to install, 
+    monitor, and modify modules. 
 
-There are several good build tools for developing modules on @product@. This
-tutorial demonstrates starting a new module using Liferay Workspace. It's
-Liferay's opinionated build environment based on Gradle and BndTools that
-simplifies module development and automates much of it.
+There are several good build tools for developing modules on @product@. This 
+tutorial demonstrates starting a new module using Liferay Workspace. It's 
+Liferay's opinionated build environment based on Gradle and BndTools that 
+simplifies module development and automates much of it. 
 
 +$$$
 
@@ -155,7 +157,9 @@ Here's the module project anatomy:
 
 -   `bnd.bnd` &rarr; Specifies essential OSGi module manifest headers
 
--   `build.gradle` &rarr; Configures dependencies and more using Gradle
+-   `build.gradle` &rarr; 
+    [Configures dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+    and more using Gradle
 
 The figure below shows an MVC portlet module project.
 
@@ -299,6 +303,8 @@ the module if its output files change.
 Congratulations on a great start to developing your module!
 
 ## Related Articles [](id=related-articles)
+
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 

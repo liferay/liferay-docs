@@ -146,8 +146,8 @@ $$$
     content and default dependencies related to OSGi and @product@. In the
     `dependencies {...}` block, you need to add the web client module's
     dependencies. To learn how to find and specify dependencies on Liferay API
-    modules, refer to the reference document [Finding Liferay API
-    Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
+    modules, refer to the reference document 
+    [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules). 
     When deploying your module into the OSGi container, OSGi checks if the
     dependencies are available in the container. If the dependencies are not
     available in the container, your module will be unavailable. Therefore, your
