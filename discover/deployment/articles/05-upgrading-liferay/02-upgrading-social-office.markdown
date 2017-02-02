@@ -67,7 +67,7 @@ App | &nbsp;Social Office 3.x | &nbsp;@product-ver@ |
 Announcements | UI enhancements | Included |
 Document Library File Version Comments | Versioning Improvements | Provided as an add-on module. The [*Module Installation* section below](/discover/deployment/-/knowledge_base/7-0/upgrading-social-office#module-installation) contains a link to this module. |
 Notifications | Various enhancements | Included |
-Chat | Various enhancements | Coming soon |
+Chat | Various enhancements | [Click here](https://web.liferay.com/marketplace/-/mp/application/15184463) to get this app for Liferay DXP. Note that Chat isn't available for Liferay Portal CE. |
 Bookmarks | Various enhancements | Included |
 Activities | Various enhancements | Included |
 
@@ -155,7 +155,9 @@ other @product-ver@ module:
   to get this module. This module is the same for Liferay Portal CE and Liferay 
   DXP. 
 
-- **Chat:** Enables Social Office chat in @product-ver@ (coming soon). 
+- **Chat:** Enables Social Office chat in Liferay DXP. 
+  [Click here](https://web.liferay.com/marketplace/-/mp/application/15184463) 
+  to get this app. Note that Chat isn't available for Liferay Portal CE. 
 
 - **Private Messaging:** Enables Social Office Private Messaging in 
   @product-ver@. Although the first three GA releases (GA1, GA2, GA3) of Liferay 
