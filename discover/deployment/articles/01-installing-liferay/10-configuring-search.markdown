@@ -31,9 +31,7 @@ production-ready instance of @product@ up and running.
 
 ### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
-If @product@ isn't running, start it. Then, using a browser, visit port 9200 of
-the machine on which @product@'s running. For example, if you're browsing from the same machine
-@product@'s running on, visit this URL: 
+If @product@ isn't running, start it. If you haven't already set the ElasticSearch network host, go to Control Panel > System Settings > Foundation > Elasticsearch, then fill out the Network host field. For example, if you’re browsing from the same machine Liferay DXP’s running on, then put localhost. After doing so, you'll need to restart Liferay. Then, using a browser, visit port 9200 at the network host you've set:
 
     http://localhost:9200
 
