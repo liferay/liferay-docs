@@ -1,4 +1,4 @@
-# Installing Marvel for Elasticsearch [](id=installing-marvel-for-elasticsearch)
+# Installing Marvel for Elasticsearch [](id=monitoring-elasticsearch-with-marvel)
 
 Marvel is a monitoring tool for Elasticsearch. It lets you view the performance
 and health of your Elasticsearch cluster, so you can anticipate issues ahead of
