@@ -193,6 +193,21 @@ to do this:
 
 7. Celebrate! Your Liferay server is connected to LCS. 
 
++$$$
+
+**Note:** You may be wondering what happens when your server can't reach LCS. 
+Don't worry, this won't cause a rift in the space-time continuum. Because LCS is 
+deployed on a global cloud infrastructure set up for automatic failure recovery, 
+the potential for non-availability is very low. In the event of an outage, 
+however, registered Liferay instances maintain a local copy of their uptime 
+information to transmit to LCS when it comes back online. Active Liferay 
+subscriptions also have a seven-day grace period to re-establish connectivity 
+and remain valid. This is ample time for LCS to come back online. Should an 
+extended LCS outage occur, Liferay support can provide temporary subscription 
+keys that don't require LCS. 
+
+$$$
+
 In your Liferay instance, you can view your LCS connection status in the LCS 
 client app. Access the client by clicking *Liferay Connected Services* under the 
 *Apps* section of the *Control Panel*. 
