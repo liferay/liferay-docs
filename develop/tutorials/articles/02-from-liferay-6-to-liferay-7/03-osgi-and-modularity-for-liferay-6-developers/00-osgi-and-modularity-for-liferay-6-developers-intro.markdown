@@ -510,7 +510,7 @@ component is requested. In this way delayed activation can improve startup times
 and conserve resources. 
 
 Gogo Shell's [Service Component Runtime commands](http://felix.apache.org/documentation/subprojects/apache-felix-service-component-runtime.html#shell-command)
-let developers manage components:
+let developers manage components. Alternatively, you can use the full classname instead of the componentID (ex. com.liferay.document.library.web.webdav.DLWebDAVStorageImpl):
 
 -  `src:list [bundleID]`: Lists the module's (bundle's) components.
 
@@ -519,7 +519,7 @@ let developers manage components:
 
 -  `src:enable [componentID]`: Enables the component.
 
--  `src:disable [componentID]`: Disables the component.
+-  `src:disable [componentID]`: Disables the component. This only applies until the server is restarted, and only applies to a single node of cluster.
 
 Service references are static by default. That is, an injected service remains
 bound to the referencing component until the service is disabled.
