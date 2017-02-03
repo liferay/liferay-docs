@@ -1,4 +1,4 @@
-# Setting Proxy Requirements for Liferay Workspace
+# Setting Proxy Requirements for Liferay Workspace [](id=setting-proxy-requirements-for-liferay-workspace)
 
 Many developers are forced to work with a proxy server due to their company's
 firewall prohibiting them from downloading dependencies. For example, if you're
