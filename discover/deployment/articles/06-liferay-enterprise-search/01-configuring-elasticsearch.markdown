@@ -318,6 +318,31 @@ YAML format) that are applied to the @product@ index when it's created. For
 example, you can create custom analyzers and filters using this setting. For
 a complete list of available settings, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html).
 
+Here's an example that shows how to configure [analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro) that can be applied to a
+dynamic template (see below).
+
+    { 
+        "LiferayDocumentType": {  
+            "analysis": {
+                "analyzer": {
+                    "kuromoji_liferay_custom": {
+                        "filter": [
+                            "cjk_width",
+                            "kuromoji_baseform",
+                            "pos_filter"
+                        ],
+                        "tokenizer": "kuromoji_tokenizer"
+                    }
+                },
+                "filter": {
+                    "pos_filter": {
+                        "type": "kuromoji_part_of_speech"
+                    }
+                }
+            }
+        }
+    }
+
 `additionalTypeMappings` is used to define extra field mappings for the
 `LiferayDocumentType` type definition, which are applied when the index is
 created. Add these field mappings in using JSON syntax. For more information
@@ -325,6 +350,50 @@ see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/mapping.html)
 and
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/indices-put-mapping.html)
+
+Here's an example of a [dynamic
+template](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/dynamic-templates.html)
+that uses the analysis configuration above to analyze all string fields that end
+with `_ja`.
+
+    { 
+        "LiferayDocumentType": {
+            dynamic_templates": [
+                {
+                    "template_ja": {
+                        "mapping": {
+                            "analyzer": "kuromoji_liferay_custom",
+                            "index": "analyzed",
+                            "store": "true",
+                            "term_vector": "with_positions_offsets",
+                            "type": "string"
+                        },
+                        "match": "\\w+_ja\\b|\\w+_ja_[A-Z]{2}\\b",
+                        "match_mapping_type": "string",
+                        "match_pattern": "regex"
+                    }
+                }
+            ]
+        }
+    }
+
+As with dynamic templates, you can add sub-field mappings to @product@'s type
+mapping. These are referred to as [properties](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/properties.html) in Elasticsearch.
+
+    { 
+        "LiferayDocumentType": {  
+            "properties": {   
+                "userName": {
+                    "index": "not_analyzed",
+                    "store": "yes",
+                    "type": "string"
+                },
+            },   
+        }
+    }
+
+The above example shows how a `userName` field might be added to @product@'s
+type mapping.
 
 +$$$
 
