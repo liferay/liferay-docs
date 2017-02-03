@@ -59,7 +59,7 @@ help create` into a terminal. A list of the `create` options are listed below:
   created, provide the name of the host bundle symbolic name.
 - `-H, --hostbundleversion <string>`: If a new JSP hook fragment needs to be
   created, provide the name of the host bundle version.
-- `l, --listtemplates`: Prints a list of available project templates.
+- `-l, --listtemplates`: Prints a list of available project templates.
 - `-p, --packagename <string>`: The package name to use when creating the
   project.
 - `-s, --service <string>`: If a new Declarative Services (DS) component needs
