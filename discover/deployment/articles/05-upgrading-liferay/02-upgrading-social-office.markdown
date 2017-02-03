@@ -22,28 +22,28 @@ Social Office installation.
 
 $$$
 
-First, you'll learn how the components that made Social Office unique map to 
-@product-ver@ features. 
+First, you'll learn how Social Office's unique components map to @product-ver@
+features. 
 
 ## Social Office Components [](id=social-office-components)
 
 Social Office contained the following components: 
 
-- A custom theme, and a custom site template
+- A unique theme and site template
 - Customized Liferay Portal applications
 - Applications unique to Social Office
 - User experience (UX) enhancements
 
-The following sections describe each component and how it works in 
+The following sections describe the components and how they work in 
 @product-ver@. 
 
 ### Themes and Templates [](id=themes-and-templates)
 
-Social Office's unique look and feel was defined by its custom theme and a 
-custom site template. These don't exist in @product-ver@. In @product-ver@, 
-however, you can build custom themes and templates to fit your unique 
-requirements. The ability to customize the look, feel, and page layout of 
-@product-ver@ is one of its most powerful capabilities. 
+Social Office's unique look and feel was defined by its theme and site template.
+These don't exist in @product-ver@. In @product-ver@, however, you can build
+themes and templates to fit your requirements. The ability to customize the
+look, feel, and page layout of @product-ver@ is one of its most powerful
+capabilities. 
 
 This table shows how Social Office's theme and template components map to 
 @product-ver@. 
@@ -84,13 +84,13 @@ Microblogs | Included |
 Contacts Center | Included | 
 Private Messaging | Provided as an add-on module. The [*Module Installation* section below](/discover/deployment/-/knowledge_base/7-0/upgrading-social-office#module-installation) contains more information. | 
 Social Office User Profile | Included | 
-Events List | Provided as an add-on module. [Click here](https://web.liferay.com/marketplace/-/mp/application/83511066) to get it for Liferay Portal CE, [or here](https://web.liferay.com/marketplace/-/mp/application/83511153) for Liferay DXP. | 
-WYSIWYG | Provided as an add-on module. [Click here](https://web.liferay.com/marketplace/-/mp/application/15502123) to get it for Liferay Portal CE, [or here](https://web.liferay.com/marketplace/-/mp/application/15503342) for Liferay DXP. | 
+Events List | Provided as an add-on module. [Click here](https://web.liferay.com/marketplace/-/mp/application/83511066) to get it for Liferay Portal CE [or here](https://web.liferay.com/marketplace/-/mp/application/83511153) for Liferay DXP. | 
+WYSIWYG | Provided as an add-on module. [Click here](https://web.liferay.com/marketplace/-/mp/application/15502123) to get it for Liferay Portal CE [or here](https://web.liferay.com/marketplace/-/mp/application/15503342) for Liferay DXP. | 
 
 ### UX Enhancements [](id=ux-enhancements)
 
-The UX in @product-ver@ is very different than in previous versions. It's the 
-first version to use Liferay's new 
+The UX in @product-ver@ is different than previous versions. It's the first
+version to use Liferay's new 
 [Lexicon Design Language](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Lexicon). 
 Social Office components in @product-ver@ use Lexicon for a consistent UX. This 
 also means that certain Social Office components may not be where you expect 
@@ -139,7 +139,7 @@ other @product-ver@ module:
   DXP. 
 
 - **Social Office Upgrade Association module (optional):** When the Social 
-  Office User role was granted to a user in previous versions of Liferay Portal,  
+  Office User role was granted to a user in previous versions of Liferay Portal, 
   Social Office automatically used a site template to create public and private 
   pages for that user. The Social Office Upgrade Association module retains this 
   behavior (the upgrade retains the Social Office User role). 
@@ -168,18 +168,18 @@ other @product-ver@ module:
 
 - **Events List:** Enables Social Office Events Display in @product-ver@. 
   [Click here](https://web.liferay.com/marketplace/-/mp/application/83511066) 
-  to get this app for Liferay Portal CE, 
+  to get this app for Liferay Portal CE 
   [or here](https://web.liferay.com/marketplace/-/mp/application/83511153) 
   for Liferay DXP. 
 
 - **WYSIWYG:** Enables the Social Office WYSIWYG app. 
   [Click here](https://web.liferay.com/marketplace/-/mp/application/15502123) 
-  to get this app for Liferay Portal CE, 
+  to get this app for Liferay Portal CE 
   [or here](https://web.liferay.com/marketplace/-/mp/application/15503342) 
   for Liferay DXP. 
 
 Once you've installed these modules, you're ready to proceed with the upgrade. 
-Onwards! 
+Onward! 
 
 ## Upgrade [](id=upgrade)
 
@@ -190,13 +190,14 @@ running a set of actions that the Social Office Upgrade modules provide.
 +$$$
 
 **Warning:** Some of the Social Office upgrade actions may delete or alter 
-existing data in your database. It's essential that you properly backup your 
-system before running any of them. 
+existing data in your database. It's essential that you backup your 
+system [properly](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
+before running any of them. 
 
 $$$
 
 You'll run these actions from the 
-[Apache Felix Gogo shell](https://felix.apache.org/documentation/subprojects/apache-felix-gogo.html) 
+[Apache Felix Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
 built into @product-ver@. With @product-ver@ running, enter the Gogo shell by 
 running the following command in a terminal: 
 
@@ -247,7 +248,7 @@ Social Office functionality in @product-ver@.
 - **Social Office User Role (optional):** The upgrade to @product-ver@ carries 
   over the Social Office User role. If the optional Social Office Upgrade 
   Association module is deployed, you can assign users to this role. Doing so 
-  gives users personal sites that function similar to those in Social Office. 
+  gives users personal sites that function similarly to Social Office. 
 
 - **Managing Social Sites in @product-ver@:** The upgrade to @product-ver@ 
   carries over all Social Office sites and site templates. To create a new 
