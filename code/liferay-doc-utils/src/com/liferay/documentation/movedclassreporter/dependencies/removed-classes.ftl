@@ -5,7 +5,7 @@ Classes removed from Liferay
 <p>
 The following table lists classes formerly in <em>portal-service.jar</em> that
 have been removed from Liferay. This information was generated based on
-comparing classes in <em>${oldSrcZip}</em> to classes in <em>${newSrcZip}</em>.
+comparing classes in <em>${oldSrc}</em> to classes in <em>${newSrc}</em>.
 </p>
 
 <style>
