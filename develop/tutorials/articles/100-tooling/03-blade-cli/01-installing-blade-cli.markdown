@@ -60,7 +60,7 @@ For Windows users, the `blade update` command does not work because Windows
 cannot update a file that is currently in use. To bypass this issue, you can use
 JPM to update your version of Blade CLI:
 
-    jpm install -f com.liferay.blade.cli
+    jpm install -f https://releases.liferay.com/tools/blade-cli/latest/blade.jar
 -->
 
 Blade CLI is updated frequently, so it's recommended to update your Blade CLI
