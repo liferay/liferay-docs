@@ -18,7 +18,7 @@ installed, run `blade` in your terminal window. If Blade CLI is installed
 correctly, you'll see the Blade CLI options printed in your terminal.
 
 If you have proxy requirements, see the
-[Setting Blade CLI Proxy Requirments](/develop/tutorials/-/knowledge_base/7-0/setting-blade-cli-proxy-requirments)
+[Installing Blade CLI with Proxy Requirements](/develop/tutorials/-/knowledge_base/7-0/setting-blade-cli-proxy-requirments)
 tutorial for more information.
     
 ## MacOS and Linux [](id=macos-and-linux)
@@ -43,7 +43,7 @@ installed, run `blade` in your terminal window. If Blade CLI is installed
 correctly, you'll see the Blade CLI options printed in your terminal.
 
 If you have proxy requirements, see the
-[Setting Blade CLI Proxy Requirments](/develop/tutorials/-/knowledge_base/7-0/setting-blade-cli-proxy-requirments)
+[Installing Blade CLI with Proxy Requirements](/develop/tutorials/-/knowledge_base/7-0/setting-blade-cli-proxy-requirments)
 tutorial for more information.
 
 ## Updating Your Blade CLI Installation [](id=verifying-your-blade-cli-installation)

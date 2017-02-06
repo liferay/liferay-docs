@@ -1,4 +1,4 @@
-# Installing Blade CLI with Proxy Requirments [](id=setting-blade-cli-proxy-requirments)
+# Installing Blade CLI with Proxy Requirements [](id=setting-blade-cli-proxy-requirments)
 
 If you have proxy server requirements and want to configure your http(s) proxy
 so you can install Blade CLI, follow the instructions corresponding to your
