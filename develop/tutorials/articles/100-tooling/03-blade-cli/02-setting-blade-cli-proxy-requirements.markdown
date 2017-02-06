@@ -4,7 +4,7 @@ If you have proxy server requirements and want to configure your http(s) proxy
 so you can install Blade CLI, follow the instructions corresponding to your
 operating system.
 
-## Windows
+## Windows [](id=windows)
 
 Follow the steps below to install Blade CLI on Windows using your proxy server
 requirements.
@@ -27,7 +27,7 @@ requirements.
 Excellent! You've configured JPM with your proxy settings and installed Blade
 CLI on Windows!
 
-## MacOS and Linux
+## MacOS and Linux [](id=macos-and-linux)
 
 Follow the steps below to install Blade CLI on MacOS/Linux using your proxy
 server requirements.

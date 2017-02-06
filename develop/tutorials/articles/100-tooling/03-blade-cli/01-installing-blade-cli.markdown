@@ -4,7 +4,7 @@ The installation procedure for Blade CLI depends on your operating system (e.g.,
 Windows, MacOS, or Linux). Follow the installation instructions corresponding to
 what you're using.
 
-## Windows
+## Windows [](id=windows)
 
 You must download and install the [Java Package Manager](http://jpm4j.org)
 (JPM), which you'll use to install Blade CLI. Follow the
@@ -21,7 +21,7 @@ If you have proxy requirements, see the
 [Setting Blade CLI Proxy Requirments](/develop/tutorials/-/knowledge_base/7-0/setting-blade-cli-proxy-requirments)
 tutorial for more information.
     
-## MacOS and Linux
+## MacOS and Linux [](id=macos-and-linux)
 
 For MacOS/Linux users, you can execute a shell script that downloads and
 installs the [Java Package Manager](http://jpm4j.org) (JPM) and then installs
