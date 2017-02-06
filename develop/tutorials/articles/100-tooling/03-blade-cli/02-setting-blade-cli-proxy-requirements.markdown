@@ -1,33 +1,74 @@
-# Setting Blade CLI Proxy Requirments [](id=setting-blade-cli-proxy-requirments)
+# Installing Blade CLI with Proxy Requirments [](id=setting-blade-cli-proxy-requirments)
 
 If you have proxy server requirements and want to configure your http(s) proxy
-to work with the Blade CLI, follow the instructions below.
+so you can install Blade CLI, follow the instructions corresponding to your
+operating system.
 
-Once you've installed [JPM](http://jpm4j.org/#!/md/install), you must configure
-your http(s) proxy to work with JPM before installing Blade CLI. Run the
-following command to modify JPM's executable so you can install Blade CLI from
-Liferay's release server through a proxy:
+## Windows
 
-    (sudo) jpm command --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" jpm
+Follow the steps below to install Blade CLI on Windows using your proxy server
+requirements.
 
-Now you can install Blade CLI and set its proxy settings using JPM.
+1.  Install JPM for Windows using the
+    [Windows JPM Installer](http://jpm4j.org/#!/md/windows). Download the
+    installer using a browser that is already configured with your proxy
+    settings.
 
-For Mac and Linux users, run the following command:
-		
-    (sudo) jpm install -f --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" https://releases.liferay.com/tools/blade-cli/2.0.1.201612161126/plugins/com.liferay.blade.cli_2.0.1.201612161126.jar
+2.  You must configure your http(s) proxy to work with JPM before installing
+    Blade CLI. Run the following command to modify JPM's executable so you can
+    install Blade CLI from Liferay's release server through a proxy:
 
-<!-- Above URL should be updated to a permanent "latest" URL, once available.
--Cody -->
+        jpm command --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" jpm
 
-Windows users may encounter a bug preventing JVM arguments from passing into
-JPM. To work around this,
-[install Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
-the same way that was instructed for non-proxy users. Then go to your JPM
-installation path (e.g., `~/.jpm/windows/bin`) and open the `blade.ini`. Add the
-following lines to the end of the file.
+3.  Run the following JPM command to install Blade CLI:
 
-    vmarg.1=-Dhttp(s).proxyHost=[your proxy host]
-    vmarg.2=-Dhttp(s).proxyPort=[your proxy port]
+        jpm install -f https://releases.liferay.com/tools/blade-cli/latest/blade.jar
+
+Excellent! You've configured JPM with your proxy settings and installed Blade
+CLI on Windows!
+
+## MacOS and Linux
+
+Follow the steps below to install Blade CLI on MacOS/Linux using your proxy
+server requirements.
+
+1.  Switch to sudo shell:
+
+        sudo sh
+
+2.  Set up your proxy settings for curl:
+
+        export https_proxy=[your proxy host]:[your proxy port]
+
+    For example,
+
+        export https_proxy=http://172.16.207.1:9090
+
+3.  Execute a shell script to install JPM:
+
+        curl https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/installers/global_jpm_only | su
+
+        +$$$
+        
+        **Note:** The previous curl command installs JPM globally. You could also
+        install JPM locally by running
+        
+            curl https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/installers/local_jpm_only | su
+        
+        $$$
+
+4.  You must configure your http(s) proxy to work with JPM before installing
+    Blade CLI. Run the following command to modify JPM's executable so you can
+    install Blade CLI from Liferay's release server through a proxy:
+
+        jpm command --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" jpm
+
+5.  Run the following JPM command to install Blade CLI:
+
+        jpm install -f https://releases.liferay.com/tools/blade-cli/latest/blade.jar
+
+Excellent! You've configured JPM with your proxy settings and installed Blade
+CLI on MacOS/Linux!
 
 <!--+$$$
 
@@ -36,6 +77,3 @@ sometimes reset. Be sure to verify your proxy settings after every Blade CLI
 update.
 
 $$$-->
-
-Now that Blade CLI's proxy settings are configured, you'll learn how to update
-your installation.
