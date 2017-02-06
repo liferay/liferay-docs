@@ -24,15 +24,15 @@ tutorial for more information.
 ## MacOS and Linux [](id=macos-and-linux)
 
 For MacOS/Linux users, you can execute a shell script that downloads and
-installs the [Java Package Manager](http://jpm4j.org) (JPM) and then installs
+installs the [Java Package Manager](http://jpm4j.org) (JPM), and then installs
 Blade CLI. To do this, execute
 
     curl https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/installers/global | sudo sh
 
 +$$$
 
-**Note:** The previous curl command installs JPM globally. You could also
-install JPM locally by running
+**Note:** The previous curl command installs JPM globally. You can also install
+JPM locally by running
 
     curl https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/installers/local | sh
 
@@ -41,6 +41,10 @@ $$$
 Blade CLI is now installed on your Mac/Linux machine! To check that Blade CLI is
 installed, run `blade` in your terminal window. If Blade CLI is installed
 correctly, you'll see the Blade CLI options printed in your terminal.
+
+If you have proxy requirements, see the
+[Setting Blade CLI Proxy Requirments](/develop/tutorials/-/knowledge_base/7-0/setting-blade-cli-proxy-requirments)
+tutorial for more information.
 
 ## Updating Your Blade CLI Installation [](id=verifying-your-blade-cli-installation)
 

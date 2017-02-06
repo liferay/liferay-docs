@@ -44,18 +44,18 @@ server requirements.
 
         export https_proxy=http://172.16.207.1:9090
 
-3.  Execute a shell script to install JPM:
+3.  Execute the appropriate shell script to install JPM:
 
         curl https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/installers/global_jpm_only | su
 
-        +$$$
+    +$$$
+
+    **Note:** The previous curl command installs JPM globally. You could also
+    install JPM locally by running
         
-        **Note:** The previous curl command installs JPM globally. You could also
-        install JPM locally by running
+        curl https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/installers/local_jpm_only | su
         
-            curl https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/installers/local_jpm_only | su
-        
-        $$$
+    $$$
 
 4.  You must configure your http(s) proxy to work with JPM before installing
     Blade CLI. Run the following command to modify JPM's executable so you can
