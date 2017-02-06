@@ -150,15 +150,17 @@ below:
 
 **CE Docs**
 
-- `@product` = Liferay Portal
-- `@product-ver` = Liferay Portal CE 7.0
+- `@product@` = Liferay Portal
+- `@product-ver@` = Liferay Portal CE 7.0
+- `@ide@` = IDE
 - `@app-ref@` = https://docs.liferay.com/ce/apps
 - `@platform-ref@` = https://docs.liferay.com/ce/portal
 
 **DXP Docs**
 
-- `@product` = Liferay DXP
-- `@product-ver` = Liferay Digital Enterprise 7.0
+- `@product@` = Liferay DXP
+- `@product-ver@` = Liferay Digital Enterprise 7.0
+- `@ide@` = Developer Studio
 - `@app-ref@` = https://docs.liferay.com/dxp/apps
 - `@platform-ref@` = https://docs.liferay.com/dxp/digital-enterprise
 

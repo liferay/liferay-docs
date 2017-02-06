@@ -207,24 +207,24 @@ table td {
 		<tr>
 			<td class="first-column"> Database </td>
 			<td class="">
-				<span>For versions up to Liferay 6.2</span>
+				<span>For versions up to Liferay Portal 6.2</span>
 				<ul>
 					<li> MySQL 5.5.x </li>
 				</ul>
 
-				<span>For Liferay 7.0 CE and DXP</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> MySQL 5.6.x </li>
 				</ul>
 			</td>
 			<td class="third-column">
 				<ul>
-					<span>For versions up to Liferay 6.2</span>
+					<span>For versions up to Liferay Portal 6.2</span>
 					<ul>
 						<li> MySQL 5.5.x </li>
 					</ul>
 
-					<span>For Liferay 7.0 CE and DXP</span>
+					<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 					<ul>
 						<li> MySQL 5.6.x </li>
 					</ul>
@@ -234,14 +234,14 @@ table td {
 		<tr>
 			<td class="first-column"> Application Server* </td>
 			<td class="">
-				<span>For versions up to Liferay 6.2</span>
+				<span>For versions up to Liferay Portal 6.2</span>
 				<ul>
 					<li> Tomcat 7 </li>
 					<li> Glassfish 3.1 </li>
 					<li> JBoss AS 7.1 </li>
 				</ul>
 
-				<span>For Liferay 7.0 CE and DXP</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> Tomcat 8 </li>
 				</ul>
@@ -251,7 +251,7 @@ table td {
 					<li> Tomcat 7 </li>
 				</ul>
 
-				<span>For Liferay 7.0 CE and DXP</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> Tomcat 8 </li>
 				</ul>
@@ -260,25 +260,25 @@ table td {
 		<tr>
 			<td class="first-column"> JDK </td>
 			<td class="">
-				<span>For versions up to Liferay 6.2</span>
+				<span>For versions up to Liferay Portal 6.2</span>
 				<ul>
 					<li> Oracle JDK 6 </li>
 					<li> Oracle JDK 7 </li>
 				</ul>
 
-				<span>For Liferay 7.0 CE and DXP</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li>Oracle JDK 8</li>
 				</ul>
 			</td>
 			<td class="third-column">
-				<span>For versions up to Liferay 6.2</span>
+				<span>For versions up to Liferay Portal 6.2</span>
 				<ul>
 					<li> Oracle JDK 6 </li>
 					<li> Oracle JDK 7 </li>
 				</ul>
 
-				<span>For Liferay 7.0 CE and DXP</span>
+				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li>Oracle JDK 8</li>
 				</ul>

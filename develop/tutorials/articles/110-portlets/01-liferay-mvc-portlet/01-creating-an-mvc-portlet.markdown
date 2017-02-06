@@ -101,7 +101,7 @@ attributes you used to specify in `liferay-portlet.xml`, `liferay-display.xml`,
 and `portlet.xml`. To find a list of all the Liferay-specific
 attributes you can specify as properties in your portlet components, check out
 the
-[liferay-portlet-app_7_0_0.dtd](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html). 
+[liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd.html). 
 This is still maintained as a DTD to keep compatibility with the JSR-168 and
 JSR-286 portlet specs. 
 
@@ -113,8 +113,16 @@ specify that property in your component, use this syntax in your property list:
 The properties namespaced with `javax.portlet....` are elements of the
 [portlet.xml descriptor](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd).
 
+Also note that it is possible to create nested categories using the
+`com.liferay.portlet.display-category` property.  The format for creating these
+categories is to write out the category path starting with the root and
+separating each category in descending order by the use of `//`. Here's an
+example:
+
+    com.liferay.portlet.display-category=root//category.category1//category.category2     
+ 
 Liferay's DTD files can be found
-[here](https://docs.liferay.com/portal/7.0/definitions/).
+[here](@platform-ref@/7.0-latest/definitions/).
 
 You can publish this portlet component, but it doesn't do anything yet. You'll
 implement the Controller code next.
@@ -290,7 +298,7 @@ $$$
 
 In the portlet class's render method action methods, and even in your JSPs, you
 can use a handy utility class called
-[`ParamUtil`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html)
+[`ParamUtil`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html)
 to retrieve parameters from an `ActionRequest` or a `RenderRequest`.
 
     long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");

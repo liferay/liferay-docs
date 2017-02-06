@@ -24,44 +24,38 @@ Sections should be kept as short as possible, by breaking them up further into
 subsections. Markdown gives you six levels of headings (the same as HTML), which
 should be sufficient for all your needs. 
 
-## Chapters 
+## Tutorials 
 
-Chapters should be in the neighborhood of 15 to 40 pages in the print book. If
-you have more material than that, you'll want to consider breaking it up. A 15
-page chapter is in the neighborhood of 4500 - 5000 words (depending on the
-number of images in the chapter). A 40 page chapter is in the neighborhood of
-10000 to 15000 words, again, depending on the number of images in the chapter.
-Since we're using Markdown, word count is an easier way to determine chapter
-size than page number is. 
+Tutorials should be in the neighborhood of 1000-2000 words. If you have more
+material than that, you should consider breaking it up. 
 
-### Chapter Intro 
+### Tutorial Intro 
 
-A chapter should begin with an unlabeled section that serves as your
+A tutorial should begin with an unlabeled section that serves as your
 introduction. You can use an anecdote, a story, or industry information to
 provide your introduction. This introduction, however, needs to lead up to a
-series of bullet points that summarize what the chapter is about. This enables
-the reader to quickly glance over the chapter topics to see if the chapter
-covers information the reader is looking for. 
+series of bullet points that summarize what the tutorial is about. This enables
+the reader to quickly glance over the topics to see if the tutorial covers the 
+information the reader is looking for. 
 
 Don't end your intro with the bullet points themselves; always provide some
 summary text after the bullet points. 
 
-### Chapter Body 
+### Tutorial Body 
 
-The body of the chapter contains a set of multiple, hierarchical sections. See
+The body of the tutorial contains a set of multiple, hierarchical sections. See
 below for information on sections. 
 
-### Chapter Summary 
+### Tutorial Summary 
 
 The end of each chapter should contain a summary section that briefly recounts
-what was covered in the chapter. 
+what was covered in the tutorial. 
 
 ## Sections 
 
 If you're a programmer, think of sections like linked lists. While each section
 needs to cover its own material, at the end of a section you should point to
-what's coming next. This is called a *segue*, and it generally sounds something
-like: 
+what's coming next. This is called a *segue*, and it generally sounds like: 
 
 You can see from this how easy it is to do. Next, we'll look at this other
 thing. 
@@ -125,15 +119,13 @@ to write code or use our software. Obviously, if you are documenting something
 in a text file in the product itself, you can't do this, and the example above
 was taken from Liferay's `portal.properties` file. 
 
-This text was reformatted in the *Using Liferay* book so that it looks like
-this: 
-
+This text was reformatted in the documentation so that it looks like this: 
 
 Set this property to `false` for easier debugging for development. You can also
 disable fast loading by setting the URL parameter `css_fast_load` to `0`. 
 
 Always set off code so that it is clear it's code and not text. This makes it so
-that people can easily copy/paste from the  documentation) whatever code you are
+that people can easily copy/paste from the documentation whatever code you are
 providing. Of course, make sure your code works. 
 
 ### File Names 
@@ -227,7 +219,6 @@ use a period. If it's not a sentence, don't.
 *  Pants
 *  Shirt
 
-
 Use a period for bullets that are sentences, like: 
 
 *  Roll your mouse over the Dock and click *Sign In*. 
@@ -264,7 +255,7 @@ aren't enough. DON'T do something like this for a caption:
 
 *The Liferay setup wizard.*
 
-Instead, do something like this: 
+Instead, do this: 
 
 *The Liferay setup wizard makes connecting to your database and configuring a
 default administrator easy.*
@@ -458,6 +449,20 @@ It's also important to note that the em-dash (--) can also be used in this way:
 Em-dashes have no spaces around them and always consist of *two* dash
 characters. Our Markdown parser will convert that into a proper em-dash
 character, but it won't convert any of the other variants. 
+
+## Terminology
+
+Below is terminology and how we use it. 
+
+**Folder:** Always use folder. Never use directory, directory structure, etc. 
+
+**Command line:** Never use Terminal or Command Prompt. We're trying to stay
+OS-agnostic here, people. 
+
+**Script:** Always use script; never batch file, batch, etc. And always default
+to the Unix/Mac/Linux way of doing things (`./catalina.sh`, not `catalina` or
+`catalina.bat`) because those environments are used more often by Liferay
+developers and administrators. 
 
 ## Summary
 

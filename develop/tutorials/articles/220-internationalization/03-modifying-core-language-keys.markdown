@@ -14,7 +14,7 @@ your own application, but any messages in Liferay.
 **Note:** Much of the functionality and many of the applications in Liferay are now
 separated out into their own modules. You might need to modify the keys included
 in one of these modules. The process is different than the one described here,
-and is described in a [separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-module-language-keys).
+and is described in a [separate tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-language-keys).
 
 $$$
 

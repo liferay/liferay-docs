@@ -53,7 +53,7 @@ how to add a panel category.
     The `property` element designates two properties that should be assigned for
     your category. The `panel.category.key` specifies the parent category for
     your custom category. You can find popular parent categories to assign in
-    the [PanelCategoryKeys](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/constants/PanelCategoryKeys.html)
+    the [PanelCategoryKeys](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/constants/PanelCategoryKeys.html)
     class. For instance, if you wanted to create a child category in the Control
     Panel, you could assign `PanelCategoryKeys.CONTROL_PANEL`. Likewise, if you
     wanted to create a root category, like the Control Panel or Site
@@ -78,9 +78,9 @@ how to add a panel category.
 
 4. Implement the `PanelCategory` interface. A popular way to do this is by
    extending the
-   [BasePanelCategory](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/BasePanelCategory.html)
+   [BasePanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelCategory.html)
    or 
-   [BaseJSPPanelCategory](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/BaseJSPPanelCategory.html)
+   [BaseJSPPanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelCategory.html)
    abstract classes. Typically, the `BasePanelCategory` is extended for basic
    categories (e.g., the Control Panel category) that only display the category
    name or other simple functionality. If you'd like to provide a custom UI for
@@ -105,7 +105,7 @@ how to add a panel category.
     $$$
 
 5. Since you're implementing the
-   [PanelCategory](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/PanelCategory.html)
+   [PanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelCategory.html)
    interface, you'll need to implement its methods if you're not extending a
    base class:
 
@@ -124,7 +124,7 @@ how to add a panel category.
 
     If you'd like to provide something simple for your panel category like a
     name, extending `BasePanelCategory` is probably sufficient. For example, the
-    [ControlPanelCategory](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.control.panel/com/liferay/product/navigation/control/panel/application/list/ControlPanelCategory.html)
+    [ControlPanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/panel/internal/application/list/ControlPanelCategory.html)
     extends `BasePanelCategory` and specifies a `getLabel` method to set and
     display the panel category name.
 
@@ -136,7 +136,7 @@ how to add a panel category.
     If you'd like to provide functionality that is more complex, you can use
     JSPs or any other similar technology to render the panel category. You can
     easily do this by extending `BaseJSPPanelCategory`. For example, the
-    [SiteAdministrationPanelCategory](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.site.administration/com/liferay/product/navigation/site/administration/application/list/SiteAdministrationPanelCategory.html)
+    [SiteAdministrationPanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/site/administration/internal/application/list/SiteAdministrationPanelCategory.html)
     specifies the `getHeaderJspPath` and `getJspPath` methods. You could create
     a JSP with the UI you'd like to render and specify its path in methods like
     these:
@@ -221,7 +221,7 @@ Menu.
         "panel.category.key=" + PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT
 
     Visit the
-    [PanelCategoryKeys](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/constants/PanelCategoryKeys.html)
+    [PanelCategoryKeys](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/constants/PanelCategoryKeys.html)
     class for keys you can use to specify default panel categories in Liferay.
 
     Lastly, be sure to set the `service` attribute to `PanelApp.class`. You can
@@ -239,26 +239,26 @@ Menu.
 
 4. Implement the `PanelApp` interface. A popular way to do this is by
    extending the
-   [BasePanelApp](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/BasePanelApp.html)
+   [BasePanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelApp.html)
    abstract class. Just as you learned in the previous sub-section on panel
-   categories, if you need to create a more complex UI, you can do so. If you
-   want to use JSPs to render that UI, you can extend an additional abstract 
-   class which extends `BasePanelApp` called
-   [BaseJSPPanelApp](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/BaseJSPPanelApp.html).
+   categories, if you need to create a more complex UI to render in the panel, 
+   you can do so. If you want to use JSPs to render that UI, you can extend an 
+   additional abstract class which extends `BasePanelApp` called 
+   [BaseJSPPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html).
    This provides additional methods you can use to incorporate JSP functionality
-   into your panel apps listed in the Product Menu.
+   into your app's listing in the Product Menu. 
 
     JSPs are not the only way to provide frontend functionality to your panel
     apps. You can create your own class implementing `PanelCategory` to use 
     other technologies, such as FreeMarker.
 
 5. Since you're implementing the
-   [PanelApp](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/PanelApp.html)
-   interface, you'll need to implement its methods if you're not extending a
-   base class. The `BlogsPanelApp` is a simple example of how to specify your
-   portlet as a panel app. In this class, the `BasePanelApp` is extended, and
-   the `getPortletId` and `setPortlet` methods are overridden. These methods are
-   used to specify and set the Blogs portlet as a panel app.
+   [PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
+   interface, you must implement its methods if you're not extending a base 
+   class. The `BlogsPanelApp` is a simple example of how to specify your portlet 
+   as a panel app. This class extends the `BasePanelApp`, overriding the 
+   `getPortletId` and `setPortlet` methods. These methods specify and set the 
+   Blogs portlet as a panel app. 
 
     Each panel app must belong to a portlet and each portlet can have at most one
     panel app. If more than one panel app is needed, another custom portlet must 
@@ -281,13 +281,13 @@ Menu.
             super.setPortlet(portlet);
         }
 
-    Liferay provides full flexibility to make the UI of panel apps much more
-    complex. As you learned before, the `BaseJSPPanelApp` abstract class can be
+    @product@ also lets you customize your panel app's appearance in the Product 
+    Menu. As you learned before, the `BaseJSPPanelApp` abstract class can be 
     extended to provide further functionality with JSPs. For instance, the
     Navigation category in Site Administration offers a dynamic Pages panel app
     that provides much more than a simple link to access a portlet. This is
     accomplished by extending `BaseJSPPanelApp` in the
-    [GroupPagesPanelApp](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/layout/com.liferay.layout.admin.web/com/liferay/layout/admin/web/internal/application/list/GroupPagesPanelApp.html)
+    [GroupPagesPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/layout/admin/web/internal/application/list/GroupPagesPanelApp.html)
     class, which provides this functionality in the Product Menu.
 
     In `GroupPagesPanelApp`, notice that the portlet ID is still returned

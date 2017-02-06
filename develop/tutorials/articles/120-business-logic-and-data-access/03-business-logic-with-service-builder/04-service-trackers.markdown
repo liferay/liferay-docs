@@ -6,7 +6,7 @@ modular plugins deployed into an OSGi runtime, you have to consider how your
 own code, living in its own module, can rely on services in other modules for
 functionality. You need to account for the possibility of service
 implementations being swapped out or removed entirely if your module is to
-survive and thrive in the environment of OSGi. It's easy for Liferay 7
+survive and thrive in the environment of OSGi. It's easy for @product-ver@
 developers who need to [call services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
 from their `@Component` classes. They just use another Declarative Services
 annotation, `@Reference`, to get a service reference.
@@ -24,7 +24,7 @@ What scenarios might require the use of a service tracker?
 -  Calling OSGi services from a [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc)
 -  Calling OSGi services from a [JSF portlet](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
 -  Calling OSGi services from a [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
-  that's been upgraded to run on Liferay 7, but not
+  that's been upgraded to run on @product-ver@, but not
   [fully modularized](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
   and made into an OSGi module
 

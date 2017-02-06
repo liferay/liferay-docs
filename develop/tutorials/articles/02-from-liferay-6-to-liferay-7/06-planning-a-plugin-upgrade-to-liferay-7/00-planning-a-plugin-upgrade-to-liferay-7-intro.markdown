@@ -26,15 +26,15 @@ first. In fact before you begin converting your traditional application into
 modules, we recommend that you first migrate it to a @product-ver@ compatible
 WAR-style application. It is much easier to convert the application to modules
 after adapting to the new API and resolving [breaking changes](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/breaking-changes).
-Jumping from a 6.2 application to 7.0 modules can complicate debugging
-and figuring out which issues are related to API changes and which are related
-to the migration process.
+Jumping from a Liferay Portal 6.2 application to @product-ver@ modules can
+complicate debugging and figuring out which issues are related to API changes
+and which are related to the migration process.
 
 The standard migration process consists of two general steps: 
 
-**Step 1:  Adapting your 6.2 traditional plugins to @product-ver@'s API** <!--(/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
+**Step 1:  Adapting your Liferay Portal 6.2 traditional plugins to @product-ver@'s API**
 
-**Step 2:  Converting your traditional plugins to OSGi modules** <!--(/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)-->
+**Step 2:  Converting your traditional plugins to OSGi modules**
 
 Converting your application to modules might not always be the best choice. In
 some scenarios, it makes better sense to stick with traditional WAR model

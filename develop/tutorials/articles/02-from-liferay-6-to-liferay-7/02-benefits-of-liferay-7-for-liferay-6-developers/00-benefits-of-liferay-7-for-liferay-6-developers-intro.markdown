@@ -1,4 +1,4 @@
-# Benefits of @product-ver@ for Liferay 6 Developers [](id=benefits-of-liferay-7-for-liferay-6-developers)
+# Benefits of @product-ver@ for Liferay Portal 6 Developers [](id=benefits-of-liferay-7-for-liferay-6-developers)
 
 More than in any other Liferay release, @product-ver@ centers on you, the
 developer. Liferay's platform has been rebuilt, making it easier to build on and
@@ -69,7 +69,7 @@ class loader doesn't allow for much more) and doesn't give you the freedom to
 specify any or all classes from one module to use from within another module.
 
 @product-ver@ enables greater reusability, both in code and runtime memory, several
-folds. For any desired reusable functionality you just create a module
+folds. For any desired reusable functionality you just [create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module)
 (remember, it's just a JAR file with some metadata) with the classes you want
 and deploy it. Other modules need only declare that they use the classes in that
 module (by specifying their packages) and @product-ver@ automatically wires them
@@ -116,7 +116,7 @@ Implementing extensibility has never been easier.
 If you don't have strong preferences and are open to our suggestions, we offer
 Liferay Workspace. It provides an opinionated directory structure and build
 system based on Gradle and Bnd. Liferay Workspace can be used standalone through
-the command line or with Liferay IDE, which runs on Eclipse.
+the command line or with Liferay @ide@, which runs on Eclipse.
 
 <!-- TODO Uncomment this when the features are ready. - Jim
 If you have an investment in a specific build tool, such as Maven, developing on

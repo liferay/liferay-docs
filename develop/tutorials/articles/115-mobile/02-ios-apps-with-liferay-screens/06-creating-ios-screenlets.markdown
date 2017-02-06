@@ -80,7 +80,7 @@ parameters:
 - `description`: The new bookmark's description. 
 
 - `serviceContext`: A 
-  [Liferay `ServiceContext`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html) 
+  [Liferay `ServiceContext`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html) 
   object. 
 
 Add Bookmark Screenlet must therefore account for each of these parameters. When 

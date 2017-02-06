@@ -1,7 +1,7 @@
 # Choosing IPv4 or IPv6 [](id=choosing-ipv4-or-ipv6)
 
-Liferay Portal supports both the IPv4 and IPv6 address formats. By default,
-Liferay uses IPv4 addresses. If you're on an IPv6 network, you'll need to
+@product@ supports both the IPv4 and IPv6 address formats. By default,
+@product@ uses IPv4 addresses. If you're on an IPv6 network, you'll need to
 change the configuration. If you'd like more information on the basics of these
 protocols, you can check out the [reason](http://www.google.com/intl/en/ipv6/)
 for using IPv6 addresses, and its [technical

@@ -442,6 +442,9 @@ caption {
 For help finding API modules for specific common classes, see [@product-ver@ API
 Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
 
+For help finding module attributes and configuring dependencies, see 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+
 ## Taglibs [](id=taglibs)
 
 Here you'll find tag library documentation for the @product-ver@, @product@
@@ -635,6 +638,9 @@ caption {
 
 </table>
 
+For help finding module attributes and configuring dependencies, see 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+
 ### Faces Taglibs [](id=faces-taglibs)
 
 [**Faces 3.2 Taglibs**](https://docs.liferay.com/faces/3.2/vdldoc/): the latest
@@ -658,5 +664,5 @@ JavaScript APIs are available within portlets, templates and themes.
 
 ## Descriptor Definitions [](id=descriptor-definitions)
 
-[**DTDs**](http://docs.liferay.com/ce/portal/7.0-latest/definitions/): Describes the XML
+[**DTDs**](@platform-ref@/7.0-latest/definitions/): Describes the XML
 files used in configuring @product@ apps, @product@ plugins, and @product-ver@.

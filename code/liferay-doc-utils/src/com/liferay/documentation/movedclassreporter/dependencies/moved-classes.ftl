@@ -1,12 +1,10 @@
 
-<p>
-To leverage the benefits of modularization in Liferay 7, many classes from
-former Liferay 6 JAR file <em>portal-service.jar</em> have been moved into
-application and framework API modules. The table below provides details
-about these classes and the modules they've moved to. Package changes are noted
-and each module's symbolic name and version are included to facilitate
-configuring dependencies on them. 
-</p>
+To leverage the benefits of modularization in @product-ver@, many classes from
+former Liferay Portal 6 JAR file <em>portal-service.jar</em> have been moved
+into application and framework API modules. The table below provides details
+about these classes and the modules they've moved to. Package changes 
+and each module's symbolic name (artifact ID) are listed, to facilitate 
+<a href="/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies">configuring dependencies</a>. 
 
 <style>
 table, th, td {
@@ -24,17 +22,16 @@ caption {
 <table style="width:100%">
 
   <caption>
-    <b>Classes Moved from portal-service (now renamed portal-kernel)</b>
+    <b>Classes Moved from portal-service to com.liferay.portal.kernel</b>
 	<p>
       This information was generated based on comparing classes in
-      <em>${oldSrcZip}</em> to classes in <em>${newSrcZip}</em>.
+      <em>${oldSrc}</em> to classes in <em>${newSrc}</em>.
     </p>
   </caption>
   <tr>
     <th>Class</th>
     <th>Package</th>
-    <th>Module Symbolic Name</th>
-    <th>Module Version</th>
+    <th>Module Symbolic Name (Artifact ID)</th>
   </tr>
 
 <#list movedClasses as movedClass>
@@ -45,7 +42,6 @@ caption {
 	  <em>New:</em> ${movedClass.packageNew}
 	</td>
     <td>${movedClass.module}</td>
-    <td>${movedClass.version}</td>
   </tr>
 </#list>
 

@@ -1,7 +1,7 @@
 # Knowledge Base Configuration [](id=knowledge-base-configuration)
 
 These are the settings to configure the Knowledge Base, including the migration 
-of properties from Liferay 6.2.
+of properties from Liferay Portal 6.2.
 
 This reference doc has two sections:
 
@@ -418,12 +418,12 @@ Note that email templates can also be modified through the Knowledge Base app's
 [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
 User Guide documentation, the configuration files are located in a folder called
 `liferay-system-settings`. Within this folder you'll find the 
-configuration(.cfg) files, named after the full class name for that file.
+configuration(.config) files, named after the full class name for that file.
 
 For example, the *Knowledge Base Service* configuration file is called
-`com.liferay.knowledge.base.configuration.KBGroupServiceConfiguration.cfg` and
+`com.liferay.knowledge.base.configuration.KBGroupServiceConfiguration.config` and
 the *Knowledge Base Section* configuration file is called
-`com.liferay.knowledge.base.web.configuration.KBSectionPortletInstanceConfiguration.cfg`.
+`com.liferay.knowledge.base.web.configuration.KBSectionPortletInstanceConfiguration.config`.
 
 To override a configuration file, you must create a new configuration file with 
 the same name, specify your property values, and place it in the `osgi/config` 

@@ -1,9 +1,9 @@
 # Upgrading Themes [](id=upgrading-themes)
 
-If you've developed themes in Liferay 6.2, as part of your upgrade you'll want
+If you've developed themes in Liferay Portal 6.2, as part of your upgrade you'll want
 to use them in @product-ver@. While you're at it, you should leverage theme
 improvements, including support for Sass, Bootstrap 3, and Lexicon (Liferay's UI
-design language). This tutorial demonstrates upgrading a Liferay 6.2 theme to
+design language). This tutorial demonstrates upgrading a Liferay Portal 6.2 theme to
 @product-ver@. 
 
 Theme upgrades involve these steps:
@@ -14,9 +14,9 @@ Theme upgrades involve these steps:
 -  Updating resources importer configuration and content
 -  Applying Lexicon UI design patterns
 
-As an example, this tutorial applies the steps to a Liferay 6.2 theme called the
-Lunar Resort theme--developed in the Liferay 6.2 Learning Path [Developing a Liferay Theme](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme).
-It's similar to many Liferay 6.2 themes as it extends the [`_styled` theme](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled),
+As an example, this tutorial applies the steps to a Liferay Portal 6.2 theme called the
+Lunar Resort theme--developed in the Liferay Portal 6.2 Learning Path [Developing a Liferay Theme](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme).
+It's similar to many Liferay Portal 6.2 themes as it extends the [`_styled` theme](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled),
 adding configurable settings and incorporating a responsive design that
 leverages Font Awesome icons and Bootstrap. The theme [ZIP file](/documents/10184/656312/lunar-resort-theme-migration-6.2.zip)
 contains its original source code.
@@ -38,7 +38,7 @@ see *all* upgrade steps, in case you want to run them manually.
 
 ## Running the Upgrade Task for Themes Generator Themes [](id=running-the-upgrade-task-for-themes-generator-themes)
 
-A Liferay 6.2 theme can be upgraded to @product-ver@, regardless of its project
+A Liferay Portal 6.2 theme can be upgraded to @product-ver@, regardless of its project
 environment (Themes Generator, Plugins SDK, Maven, etc.). But a theme that's
 been migrated to the Themes Generator can leverage the theme `upgrade` Gulp task.
 If you're developing your theme in an environment other than the Themes
@@ -153,7 +153,7 @@ improvements. Start with updating CSS file names for Sass.
 
 ### Updating CSS File Names for Sass [](id=updating-css-file-names-for-sass)
 
-Although Sass was available in Liferay 6.2, only Sass partial files followed the
+Although Sass was available in Liferay Portal 6.2, only Sass partial files followed the
 Sass naming convention (using file suffix `.scss`). In @product-ver@ themes, all
 Sass files must end in `scss`. 
 
@@ -315,7 +315,7 @@ responsiveness:
 
     **Media Query Replacements**
 
-    | 6.2 Mixin                            |  &nbsp;7.0 Media Query                                     |
+    | Liferay Portal 6.2 Mixin                            |  &nbsp;@product-ver@ Media Query                                     |
     -------------------------------------- |:---------------------------------------------------------- |
     `@include respond-to(phone)`           | `@include media-query(null, $screen-xs-max)`               |
     `@include respond-to(tablet)`          | `@include media-query(sm, $screen-sm-max)`                 |
@@ -366,7 +366,7 @@ theme's design incorporates Font Awesome icons in its social media links.
 
 The icons are easy to use in themes too.
 
-In Liferay 6.2, the CSS file `aui.css`  defined the Font Awesome icon paths. In
+In Liferay Portal 6.2, the CSS file `aui.css`  defined the Font Awesome icon paths. In
 @product-ver@, the Sass file `_aui_variables.scss` defines them.
 
 +$$$
@@ -378,7 +378,7 @@ describes all the @product@ theme files.
 $$$
 
 The top of the `_aui_variables.scss` file must start with the Font Awesome Icons
-imports. If you modified the `_aui_variables.scss` file in your 6.2 theme, add
+imports. If you modified the `_aui_variables.scss` file in your Liferay Portal 6.2 theme, add
 these Font Awesome imports to the top of it:
 
 	// Icon paths
@@ -390,7 +390,7 @@ Next, you'll update the theme templates.
 
 ## Updating Theme Templates [](id=updating-theme-templates)
 
-@product-ver@ theme templates are essentially the same as Liferay 6.2 theme
+@product-ver@ theme templates are essentially the same as Liferay Portal 6.2 theme
 templates. Here are the main changes:
 
 -   Velocity templates are now deprecated in favor of FreeMarker templates
@@ -507,7 +507,7 @@ updated to use the new syntax.
     The new design enhances the user experience by providing clear and
     purposeful menus. 
 
-4.  If you used the split Dockbar in your 6.2 theme, remove `dockbar-split` from
+4.  If you used the split Dockbar in your Liferay Portal 6.2 theme, remove `dockbar-split` from
     the `body` element's `class` value.
 
     For example, remove `dockbar-split` from `<body class="... dockbar-split">`.
@@ -614,7 +614,7 @@ This section shows you how to update these components.
 
 **Note:** The example Lunar Resort theme's resources importer web content
 articles have been modified to avoid known issue [LPS-64859](https://issues.liferay.com/browse/LPS-64859).
-Articles in the 6.2 theme link to pages in the site's layout. Due to the page
+Articles in the Liferay Portal 6.2 theme link to pages in the site's layout. Due to the page
 and article import order, the links cause a null pointer exception. To avoid
 this issue with the example theme, the offending links have been removed from
 its articles.
@@ -810,7 +810,7 @@ the ZIP file's `/resources-importer/journal/articles/Basic Web Content/` folder.
 
 +$$$
 
-**Note:** Although Liferay 6.2 used AlloyUI 2.0.x, @product-ver@ uses AlloyUI 3.0.x.
+**Note:** Although Liferay Portal 6.2 used AlloyUI 2.0.x, @product-ver@ uses AlloyUI 3.0.x.
 As a result, you may need to update your code that uses AlloyUI. Refer to
 AlloyUI's [examples](http://alloyui.com/examples/) and [API docs](http://alloyui.com/api/)
 for details. 
@@ -821,7 +821,7 @@ Next, you must update your resources importer's sitemap file.
 
 ### Updating the Sitemap [](id=updating-the-sitemap)
 
-In Liferay 6.2, portlet IDs were incremental numbers. In @product-ver@, they're
+In Liferay Portal 6.2, portlet IDs were incremental numbers. In @product-ver@, they're
 explicit class names. The new IDs are intuitive and unique. But you must update
 your `sitemap.json` file with the new portlet IDs.
 
@@ -854,7 +854,7 @@ HTML and JavaScript components enable developers to build fully-realized UIs
 quickly and effectively. This section demonstrates how to apply Lexicon to a
 form. 
 
-For example, this is the 6.2 Lunar Resort's reservation form:
+For example, this is the Liferay Portal 6.2 Lunar Resort's reservation form:
 
     <p>
     Thanks for choosing to stay at the Liferay Lunar Resort! Please fill out the
