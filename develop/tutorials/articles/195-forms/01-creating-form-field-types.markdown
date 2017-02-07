@@ -1,10 +1,9 @@
-# Creating form Field Types
+# Creating form Field Types [](id=creating-form-field-types)
 
-The Forms application contains many useful field types out-of-the-box, and those
-field types are highly configurable. Most use cases will be met with one of the
+The Forms application contains many highly configurable field types out-of-the-box. Most use cases will be met with one of the
 existing field types. 
 
-![Figure x: The Forms application has useful out-of-the-box field types, but you can add your own if you need to.](../../images/forms-field-types.png)
+![Figure 1: The Forms application has useful out-of-the-box field types, but you can add your own if you need to.](../../images/forms-field-types.png)
 
 If you're reading this, however, your use case probably wasn't met with the
 default field types. For example, perhaps you need a dedicated *time* field. You
@@ -12,7 +11,6 @@ can use a text field and add a tip to tell users something like *enter the time
 in the format `hour:minute`*, but some users will still enter something
 indecipherable, like *8:88*. Instead, add a *time* field to @product@'s Forms
 application. 
-
 
 In this tutorial, learn to 
 
@@ -25,7 +23,7 @@ In this tutorial, learn to
 In a separate tutorial (not yet written), learn to add custom configuration
 options to your field types.
 
-## Anatomy of a Field Type Module
+## Anatomy of a Field Type Module [](id=anatomy-of-a-field-type-module)
 
 The `dynamic-data-mapping-type-*` modules in @product@'s source code (inside the
 *Forms and Workflow* application suite) are good templates to follow when
@@ -61,7 +59,7 @@ application suite:
                     ├── paragraph.soy
                     └── paragraph.soy.js
 
-Your field type module is nearly identical in structure to those included in
+Custom field type modules are nearly identical in structure to those included in
 @product@, as presented above. You won't need a `*TypeSettings` class in your
 initial module (see the tutorial on adding settings to your form field types to
 learn more about `*TypeSettings`), and the `*.soy.js` is generated from the
@@ -115,7 +113,7 @@ $$$
 
 Start by setting up the project's metadata.
 
-## Specifying OSGi Metadata
+## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
 
 First specify the necessary OSGi metadata in a `bnd.bnd` file (see
 [here](https://www.google.com/url?q=http://bnd.bndtools.org/chapters/800-headers.html&sa=D&ust=1484604445554000&usg=AFQjCNHA_3LxtNcRBblsT62vG5MoEvs6PQ)
@@ -137,17 +135,43 @@ available upon module activation.
 
 Next add your dependencies to a `build.gradle` file.
 
-## Specifying Dependencies
+## Specifying Dependencies [](id=specifying-dependencies)
 
 If you're using Gradle to manage your dependencies (as @product@ modules do),
 add this to your `build.gradle` file:
 
+    buildscript {
+        dependencies {
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.0.23"
+        }
+
+        repositories {
+            mavenLocal()
+
+            maven {
+                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            }
+        }
+    }
+
+    apply plugin: "com.liferay.plugin"
+
     dependencies {
-        compileOnly group: "com.liferay", name: "com.liferay.dynamic.data.mapping.api", version: "3.2.0"
-        compileOnly group: "com.liferay", name: "com.liferay.dynamic.data.mapping.form.field.type", version: "2.0.5"
+        compile group: "com.liferay", name: "com.liferay.dynamic.data.mapping.api", version: "3.2.0"
+        compile group: "com.liferay", name: "com.liferay.dynamic.data.mapping.form.field.type", version: "2.0.5"
+        compile group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
         compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
         compileOnly group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
-}
+    }
+
+    repositories {
+        mavenLocal()
+
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
+
 
     task wrapSoyTemplates
 
@@ -171,6 +195,7 @@ add this to your `build.gradle` file:
             soyJsFileTree.each {
                 File soyJsFile ->
 
+
                 soyJsFile.text = soyJsWrapperHeader + soyJsFile.text.replace("(typeof ddm == 'undefined') { var ddm = {}; }", "(typeof ddm == 'undefined') { window.ddm = {}; }") + soyJsWrapperFooter
             }
         }
@@ -184,9 +209,7 @@ conventions presented here.
 Next craft the OSGi Component that marks your class as an implementation of
 `DDMFormFieldType`. 
 
-<!--Waiting for advice on the build.gradle configuration -->
-
-## Creating a `DDMFormFieldType` Component
+## Creating a `DDMFormFieldType` Component [](id=creating-a-ddmformfieldtype-component)
 
 If you're creating a *Time* field type, define the Component at the top of your
 `*DDMFormFieldType` class like this:
@@ -236,7 +259,7 @@ the field's capabilities (for example, rendering and validation).
 
 Next code the `*DDMFormFieldType` class.
 
-## Implementing `DDMFormFieldType`
+## Implementing `DDMFormFieldType` [](id=implementing-ddmformfieldtype)
 
 Implementing the field type in Java is made easier because of
 `BaseDDMFormFieldType`, an abstract class you can leverage in your code.
@@ -254,7 +277,7 @@ specifying the name of your new field type:
 That's all there is to defining the field type. Next determine how your field
 type is rendered.
 
-## Rendering Field Types
+## Rendering Field Types [](id=rendering-field-types)
 
 Before you get to the frontend coding necessary to render your field type,
 there's another Component to define and a Java class to code.
@@ -365,7 +388,6 @@ There are three important things to do in the template:
 
 1.  Define the template namespace. The template namespace allows you to define
     multiple templates for your field type by adding the namespace as a prefix.
-    <!-- Why is this beneficial?-->
 
         {namespace ddm}
 
@@ -467,13 +489,13 @@ when it satisfies dependencies for each JavaScript component. For more
 information about the Alloy loader see the [tutorial on its
 usage](/developer/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader).
 
-[![Figure x: Add your own form field types to the Forms application.](../../images/forms-time-field-type.png)
+[![Figure 2: Add your own form field types to the Forms application.](../../images/forms-time-field-type.png)
 
 If you build and deploy your new field type module, you'll see that you get
 exactly what you described in the `time.soy` file: a single text input field. Of
 course, that's not what you want! You need a time picker.
 
-## Adding Behavior to the Field
+## Adding Behavior to the Field [](id=adding-behavior-to-the-field)
 
 If you want to do more than simply provide a text input field, define the
 behavior in the `time_field.js` file. To add an AlloyUI timepicker, first
@@ -510,9 +532,10 @@ picker. Then instantiate the time picker, passing the field type input as a
 `trigger`. See the [Alloy documentation for more
 information](http://alloyui.com/tutorials/timepicker/). 
 
-Now when the field is rendered, there's a real time picker!
+Now when the field is rendered, there's a real time picker.
 
-<!--Add figure showing the time picker in action-->
+![Figure 3: The Alloy UI Timepicker in action.](../../images/forms-timepicker.png)
+
 
 Now you know how to create a new field type and define its behavior. Currently,
 the field type only contains the default settings it inherits from its
