@@ -117,8 +117,8 @@ workflow, see Liferay's
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services From Scripts](/discover/deployment/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+[Invoking Liferay Services From Scripts](/discover/portal/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
 
-[Running Scripts From the Script Console](/discover/deployment/-/knowledge_base/7-0/running-scripts-from-the-script-console)
+[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console)
 
-[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)
+[Using Custom Java Tools in the Script Engine](/discover/portal/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)
