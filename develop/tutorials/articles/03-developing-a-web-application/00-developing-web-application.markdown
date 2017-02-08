@@ -1,21 +1,11 @@
-#Writing a Liferay Application [](id=writing-liferay-app)
+#Developing a Web Application
 
-A popular way to develop Liferay applications is to use the Model View Controller (MVC) pattern. If you’re a battle-tested developer, you’re likely
-familiar with MVC. To make things simpler, Liferay has developed its own MVC
-framework. You might now be thinking, “Simpler? How does yet another MVC
-implementation make things simpler? I’m tired of redundant frameworks!”
-Liferay’s MVC framework, however, provides many time-saving benefits that
-streamline Liferay development. Unlike many Java MVC implementations, it’s a
-lightweight framework. It also hides part of the complexity of portlets and
-makes common operations easier. What’s more, Liferay’s own developers use it to
-develop portlets. This means there are many robust examples to reference when
-you need to design or troubleshoot your applications. Liferay also provides
-tooling that makes creating Liferay MVC applications a snap. You’ll quickly
-find that learning and using Liferay MVC saves you time over trying to
-implement your application with a different MVC implementation.
+In this Learning Path, we show you the steps to create a Liferay Web Application from scratch using tools like @ide@ and BLADE tools. The application we create uses all of the best practices and standards for @product@, and completing this Learning Path will prepare you to write your own web applications that meet your needs or the needs of your organization.
 
-Here, you’ll use Liferay MVC to develop a Liferay portlet from start to finish.
-This includes installing Liferay’s development tools, generating your
-persistence layer, integrating with Liferay features like search and indexing,
-generating remote services, and much more.
-`
+To develop a web application with Liferay, we start at the beginning: setting up a Liferay development environment. Though you can use anything from a text editor and the command line to your Java IDE of choice, Liferay provides @ide@ to make it easier to write code on Liferay’s platform, and integrates Liferay's BLADE tools for modular development.
+
+Once you have a development environment setup, we move on to the main aspects of developing an application. From modeling data to Service Builder, we cover everything you need to know to create and run your base application.
+
+From there we'll cover everything from UI standards to providing remote services. Once we have everything completed and wrapped up with a bow, we distribute the application on Marketplace.
+
+Note: To follow Liferay’s learning paths, you must have a @product@ instance installed. You must also have the Java 8 JDK installed.
