@@ -29,11 +29,13 @@ You'll create the list Screenlet by following these steps:
 
 2. Creating the Screenlet's View
 
-3. Creating the Screenlet's Interactor
+3. Creating the Screenlet's Event
 
-4. Creating the Screenlet's Listener
+4. Creating the Screenlet's Interactor
 
-5. Creating the Screenlet Class
+5. Creating the Screenlet's Listener
+
+6. Creating the Screenlet Class
 
 First though, you should understand how pagination works with list Screenlets. 
 
@@ -59,6 +61,7 @@ Liferay. Although Screens's
 transforms the JSON entities into `Map` objects for you, you still must 
 convert these into proper entity objects for use in your app. You'll do this via 
 a model class. 
+<!-- BaseListCallback doesn't exist anymore -->
 
 For example, Bookmark List Screenlet needs `Bookmark` objects. Create the 
 following `Bookmark` class that you'll use to create these objects. This class 
@@ -126,7 +129,7 @@ you always need quick access to the bookmark's URL, it's extracted from the
 
     }
 
-Now that you have your model class, you can create your Screenlet's View.
+Now that you have your model class, you can create your Screenlet's View. 
 
 ## Creating the Screenlet's View [](id=creating-the-screenlets-view)
 
@@ -135,7 +138,7 @@ Screenlet, you'll first define the layout to use for each row in the list. For
 example, Bookmark List Screenlet needs to display a bookmark in each row. You 
 can therefore define its row layout as a simple `LinearLayout` that contains a 
 single `TextView` you'll use to display the bookmark's URL. Create the following 
-`bookmark_row.xml` in the `res/layout` directory:
+`bookmark_row.xml` in the `res/layout` directory: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -151,13 +154,16 @@ single `TextView` you'll use to display the bookmark's URL. Create the following
     </LinearLayout>
 
 A list Screenlet's View must also contain an 
-[adapter class](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews). 
-Your adapter class should contain a standard Android 
-[view holder](http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder) 
-to make scrolling through the list smooth. You can extend Screens's 
-[`BaseListAdapter`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java) 
-to make things simpler. If you do so, you only need to implement two methods: 
-one that instantiates your view holder, and one that fills it in for each row. 
+[Android adapter class](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews). 
+To make list scrolling smooth, your adapter class should contain a standard 
+[Android view holder](http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder). 
+To make creating your adapter class easier, you can extend Screens's 
+[`BaseListAdapter` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java). If you do so, you only need to implement two methods: 
+
+- `createViewHolder`: instantiates the view holder
+
+- `fillHolder`: fills in the view holder for each row
+
 Create this class now for Bookmark List Screenlet. Note that the view holder 
 renders the model's `url` attribute in the bookmark layout: 
 
@@ -252,15 +258,16 @@ layout you created earlier (`bookmark_row`). Create `BookmarkListView` now:
 
 Lastly, you must define your View's layout XML. To let your app efficiently 
 scroll through a potentially large list of items, your layout should use 
-Android's 
-[`RecyclerView`](http://developer.android.com/training/material/lists-cards.html#RecyclerView). 
-Apart from the styling, this layout's code is the same for all list Screenlets. 
-Create Bookmark List Screenlet's layout in `res/layout/list_bookmarks.xml` as 
-follows: 
+[Android's `RecyclerView`](http://developer.android.com/training/material/lists-cards.html#RecyclerView). 
+You should also include an 
+[Android `ProgressBar`](https://developer.android.com/reference/android/widget/ProgressBar.html) 
+to indicate progress when loading the list. Apart from the styling, this 
+layout's code is the same for all list Screenlets. Create Bookmark List 
+Screenlet's layout in `res/layout/list_bookmarks.xml` as follows: 
 
     <com.liferay.mobile.screens.listbookmark.BookmarkListView
-        android:id="@+id/liferay_list_screenlet"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/liferay_list_screenlet"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -280,84 +287,33 @@ follows:
 
 +$$$
 
-**Warning:** The `android:id` values in your View's layout XML must exactly 
+**Warning:** The `android:id` values in your View's layout XML must **exactly** 
 match the ones shown here. These values are hardcoded into the Screens framework 
 and changing them will cause your app to crash. 
 
 $$$
 
-Nice work! Now you can create your list Screenlet's Interactor. 
-
-## Creating the Screenlet's Interactor [](id=creating-the-screenlets-interactor)
-
-Recall that Screenlets use Interactors to retrieve entities from Liferay. Your 
-list Screenlet's Interactor should extend `BaseListInteractor`, parameterized 
-with your model class and `BaseListInteractorListener<YourModelClass>`. Your 
-Interactor must also define the variables it needs to make the server call. 
-Create Bookmark List Screenlet's Interactor class as follows. 
-
-Your Interactor class must contain the methods needed to make the server 
-call and process the results. You'll do this by overriding the following 
-methods: 
-
-- `createEntity`: Creates a new `Bookmark` instance.
-
-- `getPageRowsRequest`: Retrieves the specified page of entities. 
-
-- `getPageRowCountRequest`: Retrieves the number of entities. 
-
-Create `BookmarkListInteractor` now: 
-
-    import com.liferay.mobile.android.v7.bookmarksentry.BookmarksEntryService;
-    import com.liferay.mobile.screens.base.list.interactor.BaseListInteractor;
-    import com.liferay.mobile.screens.base.list.interactor.BaseListInteractorListener;
-    import com.liferay.mobile.screens.base.list.interactor.Query;
-    import com.liferay.mobile.screens.context.LiferayServerContext;
-    import java.util.Map;
-    import org.json.JSONArray;
-
-    public class BookmarkListInteractor extends BaseListInteractor<BaseListInteractorListener<Bookmark>, BookmarkEvent> {
-
-        @Override
-        protected JSONArray getPageRowsRequest(Query query, Object... args) throws Exception {
-            long folderId = (long) args[0];
-
-            if (args[1] != null) {
-                query.setComparator((String) args[1]);
-            }
-
-            if (LiferayServerContext.isLiferay7()) {
-                return new BookmarksEntryService(getSession()).getEntries(groupId, folderId, query.getStartRow(),
-                    query.getEndRow(), query.getComparatorJSONWrapper());
-            } else {
-                return new com.liferay.mobile.android.v62.bookmarksentry.BookmarksEntryService(getSession()).getEntries(
-                    groupId, folderId, query.getStartRow(), query.getEndRow(), query.getComparatorJSONWrapper());
-            }
-        }
-
-        @Override
-        protected Integer getPageRowCountRequest(Object... args) throws Exception {
-            long folderId = (long) args[0];
-
-            if (LiferayServerContext.isLiferay7()) {
-                return new BookmarksEntryService(getSession()).getEntriesCount(groupId, folderId);
-            } else {
-                return new com.liferay.mobile.android.v62.bookmarksentry.BookmarksEntryService(
-                    getSession()).getEntriesCount(groupId, folderId);
-            }
-        }
-
-        @Override
-        protected BookmarkEvent createEntity(Map<String, Object> stringObjectMap) {
-            Bookmark bookmark = new Bookmark(stringObjectMap);
-            return new BookmarkEvent(bookmark);
-        }
-    }
-
-Great! Your Interactor is finished. Next, you'll create your list Screenlet's 
-event. 
+Next, you'll create your Screenlet's event. 
 
 ## Creating the Screenlet's Event
+
+Screens uses the 
+[EventBus](http://greenrobot.org/eventbus/) 
+library to handle communication within Screenlets. Your Screenlet’s components 
+must therefore use event classes to communicate with each other. Bookmark List 
+Screenlet's event class, `BookmarkEvent`, must communicate `Bookmark` objects. 
+<!-- 
+
+1. Are there any cases where you don't have to create an event class? For 
+example, if you're just communicating JSONObject or JSONArray, do you have to 
+create a custom event object? Screens used to have the built-in classes 
+JSONObjectEvent and JSONArrayEvent for this purpose. 
+
+2. Why extend ListEvent instead of BaseListEvent?
+
+3. Explain BookmarkEvent code
+
+-->
 
     import com.liferay.mobile.screens.base.list.interactor.ListEvent;
 
@@ -384,7 +340,88 @@ event.
 	      }
     }
 
-Next, you'll create a listener for your list Screenlet. 
+Nice work! Now you can create your list Screenlet's Interactor. 
+
+## Creating the Screenlet's Interactor [](id=creating-the-screenlets-interactor)
+
+Recall that Screenlets use Interactors to retrieve entities from @product@. Your 
+list Screenlet's Interactor should extend `BaseListInteractor`, parameterized 
+with `BaseListInteractorListener<YourModelClass>` and your event class. For 
+example, Bookmark List Screenlet's Interactor class (`BookmarkListInteractor`) 
+extends `BaseListInteractor` parameterized with 
+`BaseListInteractorListener<Bookmark>` and `BookmarkEvent`: 
+
+    public class BookmarkListInteractor extends 
+        BaseListInteractor<BaseListInteractorListener<Bookmark>, BookmarkEvent> {...
+
+Your Interactor must also override the methods needed to make the server call 
+and process the results: 
+
+- `getPageRowsRequest`: Retrieves the specified page of entities. In the example 
+  `BookmarkListInteractor`, this method first uses the `args` parameter to 
+  retrieve the ID of the folder to retrieve bookmarks from. It then calls 
+  `BookmarksEntryService`'s `getEntries` method to retrieve a page of bookmarks. 
+  Note that the service call, like the service call in the 
+  [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets), 
+  uses `LiferayServerContext.isLiferay7()` to check the portal version to make 
+  sure the correct service instance is used. This isn't required if you only 
+  plan to use your Screenlet with one portal version. 
+
+        @Override
+        protected JSONArray getPageRowsRequest(Query query, Object... args) throws Exception {
+            long folderId = (long) args[0];
+
+            if (args[1] != null) {
+                query.setComparator((String) args[1]);
+            }
+
+            if (LiferayServerContext.isLiferay7()) {
+                return new BookmarksEntryService(getSession()).getEntries(groupId, folderId, query.getStartRow(),
+                    query.getEndRow(), query.getComparatorJSONWrapper());
+            } else {
+                return new com.liferay.mobile.android.v62.bookmarksentry.BookmarksEntryService(getSession()).getEntries(
+                    groupId, folderId, query.getStartRow(), query.getEndRow(), query.getComparatorJSONWrapper());
+            }
+        }
+
+- `getPageRowCountRequest`: Retrieves the number of entities, to enable 
+  pagination. In the example `BookmarkListInteractor`, this method first uses 
+  the `args` parameter to get the ID of the folder in which to count bookmarks. 
+  It then calls `BookmarksEntryService`'s `getEntriesCount` method to retrieve 
+  the number of bookmarks:
+
+        @Override
+        protected Integer getPageRowCountRequest(Object... args) throws Exception {
+            long folderId = (long) args[0];
+
+            if (LiferayServerContext.isLiferay7()) {
+                return new BookmarksEntryService(getSession()).getEntriesCount(groupId, folderId);
+            } else {
+                return new com.liferay.mobile.android.v62.bookmarksentry.BookmarksEntryService(
+                    getSession()).getEntriesCount(groupId, folderId);
+            }
+        }
+
+- `createEntity`: Returns an instance of your event that contains the server 
+  call's results. This method receives the results as `Map<String, Object>`, 
+  which it then uses to create an instance of your model class. It then uses 
+  this model instance to create the event object. In the example 
+  `BookmarkListInteractor`, this method passes the `Map<String, Object>` to the 
+  `Bookmark` constructor. It then uses the resulting `Bookmark` to create and 
+  return a `BookmarkEvent`: 
+
+        @Override
+        protected BookmarkEvent createEntity(Map<String, Object> stringObjectMap) {
+            Bookmark bookmark = new Bookmark(stringObjectMap);
+            return new BookmarkEvent(bookmark);
+        }
+    }
+
+To see the complete `BookmarkListInteractor` class, 
+[click here](https://github.com/liferay/liferay-screens/blob/master/android/samples/listbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/listbookmark/BookmarkListInteractor.java). 
+
+Great! Your Interactor is finished. Next, you'll create a listener for your 
+Screenlet. 
 
 ## Creating the Screenlet's Listener [](id=creating-the-screenlets-listener)
 
