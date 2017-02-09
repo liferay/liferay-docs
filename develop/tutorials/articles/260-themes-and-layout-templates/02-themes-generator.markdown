@@ -232,4 +232,4 @@ There you have it! You're ready to design a terrific theme!
 
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 
-[Importing Resources with a Theme](develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+[Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)

@@ -154,7 +154,7 @@ to the `/osgi/configs` folder with the following content:
 
     autoUpgrade=false
 
-To run the upgrades for the modules, you'll use the [Gogo shell](develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+To run the upgrades for the modules, you'll use the [Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
 In this case, the upgrade tool opens a Gogo shell automatically after it finishes
 upgrading the core. 
 

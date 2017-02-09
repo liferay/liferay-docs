@@ -28,7 +28,7 @@ these services remotely.
 - User permission layer
 
 Please see the
-[Service Access Policies](discover/deployment/-/knowledge_base/7-0/service-access-policies)
+[Service Access Policies](/discover/deployment/-/knowledge_base/7-0/service-access-policies)
 documentation for a description of these security layers.
 
 In the default `portal.properties` file, there is a section called **Main
@@ -198,5 +198,5 @@ local machine and then generate the client code that way, or use your tool to
 trigger @product@ to generate the document dynamically by using one of the URLs
 above. For information about developing applications that leverage @product@'s
 remote services, please see the
-[Invoking JSON Web Services](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
+[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
 documentation. <!-- Update link above to 7.0. -->

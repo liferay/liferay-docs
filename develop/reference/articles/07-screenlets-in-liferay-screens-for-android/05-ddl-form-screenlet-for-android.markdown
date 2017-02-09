@@ -219,10 +219,10 @@ DDL Form Screenlet delegates some events to an object that implements to the
 following methods:
 
 - `onDDLFormLoaded(Record record)`: Called when the form definition successfully 
-  loads.
+  loads. 
 
-- `onDDLFormRecordLoaded(Record record)`: Called when the form record data 
-  successfully loads.
+- `onDDLFormRecordLoaded(Record record, Map<String, Object> valuesAndAttributes)`: 
+  Called when the form record data successfully loads. 
 
 - `onDDLFormRecordAdded(Record record)`: Called when the form record is 
   successfully added.
@@ -230,17 +230,10 @@ following methods:
 - `onDDLFormRecordUpdated(Record record)`: Called when the form record data 
   successfully updates.
 
-- `onDDLFormLoadFailed(Exception e)`: Called when an error occurs in the load 
-  form definition request.
-
-- `onDDLFormRecordLoadFailed(Exception e)`: Called when an error occurs in the 
-  load form record request.
-
-- `onDDLFormRecordAddFailed(Exception e)`: Called when an error occurs in the 
-  request to add a new record.
-
-- `onDDLFormUpdateRecordFailed(Exception e)`: Called when an error occurs in the 
-  request to update an existing record.
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. For example, this method is called when an error occurs while loading 
+  a form definition or record, or adding or updating a record. The `userAction` 
+  variable distinguishes these events. 
 
 - `onDDLFormDocumentUploaded(DocumentField field)`: Called when a specified 
   document field's upload completes.

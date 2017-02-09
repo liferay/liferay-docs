@@ -3,11 +3,11 @@
 Liferay Workspaces provide an environment that supports all phases of a Liferay
 module's development lifecycle:
 
-- [Creating modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#creating-modules)
-- [Building modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#building-modules)
-- [Deploying modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#deploying-modules)
-- [Testing modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#testing-modules)
-- [Releasing modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-liferay-workspaces#releasing-modules)
+- [Creating modules](#creating-modules)
+- [Building modules](#building-modules)
+- [Deploying modules](#deploying-modules)
+- [Testing modules](#testing-modules)
+- [Releasing modules](#releasing-modules)
 
 In this tutorial, you'll explore the development lifecycle phases Liferay
 Workspace provides for you. Then you'll be directed to other tutorials that go

@@ -225,7 +225,7 @@ While you're developing your application, you can force your service tables to
 regenerate when you modify them by following these steps:
 
 - Drop the tables for your service.
-- Delete the row for your service in the `service_` table.
+- Delete the row for your service in the `release_` table.
 - Delete the row for your service in the `servicecomponent` table.
 
 Here's an example in SQL: 

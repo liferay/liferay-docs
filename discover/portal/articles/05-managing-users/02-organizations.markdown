@@ -27,8 +27,8 @@ your company's departments (Human Resources, for example) could be an
 organization in Liferay. Often times, organizations have their own site.
 
 Many simple portal designs don't use organizations at all; they only use sites
-(see the sections on [Web content Management](discover/portal/-/knowledge_base/6-2/web-content-management) and
-[Advanced Web Content Management](discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
+(see the sections on [Web content Management](/discover/portal/-/knowledge_base/6-2/web-content-management) and
+[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
 for more information on sites). The main purpose of organizations is to allow
 for distributed user management. Using organizations, portal administrators can
 delegate some user management responsibilities to organization administrators.

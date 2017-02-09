@@ -397,7 +397,7 @@ similar, so you'll examine how this is done for Bookmark entries.
     The display name is presented with the progress bar during the export/import
     process.
 
-    ![Figure 3: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
+    ![Figure 4: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
 
 6.  A staged model data handler should ensure everything required for its
     operation is also exported. For example, in the Bookmarks application, an

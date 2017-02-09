@@ -305,7 +305,7 @@ site and allows for users to easily find your site and its content through
 search and navigation. To take full advantage of tags and categories, you'll
 need to add pages with content to your site. For more information on using tags
 and categories, visit the
-[Organizing Content with Tags and Categories](discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
 
 #### Site Template [](id=site-template)
@@ -317,7 +317,7 @@ this section displays information about the link between the site template and
 the site. Specifically, you can see which site template was used and whether or
 not it allows modifications to the pages inherited from it by site
 administrators. To learn more about site templates and how to create your own,
-see the [Building Sites from Templates](discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
+see the [Building Sites from Templates](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
 section.
 
 #### Content Sharing [](id=content-sharing)
