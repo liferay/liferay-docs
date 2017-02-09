@@ -224,7 +224,7 @@ cause unintended system behavior as a result.
 
 +$$$
 
-**Tip:** After creating an Ext plugin, remove the files from
+**Note:** After creating an Ext plugin, remove the files from
 `docroot/WEB-INF/ext-web/docroot/WEB-INF` that you don't need to customize.
 Liferay keeps track of the files deployed by each Ext plugin and won't let you
 deploy multiple Ext plugins that override the same file. If you remove files
@@ -397,7 +397,7 @@ restarts the server, for the server to detect and publish your Ext plugin.
 
 +$$$
 
-**Tip:** If you deployed the Ext plugin using Liferay IDE, but you don't see
+**Note:** If you deployed the Ext plugin using Liferay IDE, but you don't see
 your customizations in the portal, your Ext plugin may not have successfully
 deployed. To confirm whether the Ext plugin deploys successfully, try deploying
 from the terminal; the Ant deployment targets report success or failure. 
@@ -513,12 +513,16 @@ place. See the instructions below to learn more about this process:
 **Redeployment:** If you only added to your plugin or made modifications that
 don't affect the plugin deployment process, you can redeploy using these steps: 
 
+<!--
+
 - **Using Liferay IDE:** Right-click your plugin located underneath your
   server and select *Redeploy*. 
+  
+-->
 
-- **Using the terminal:** Redeploy in the terminal using the same procedure as
-  for initial deployment. Open a terminal window in your Ext plugin project's
-  directory and execute either `ant deploy` or `ant direct-deploy`.
+Redeploy in the terminal using the same procedure as for initial deployment.
+Open a terminal window in your Ext plugin project's directory and execute either
+`ant deploy` or `ant direct-deploy`.
 
 After your plugin is published to @product@, check for the customizations it
 produces. If you implemented and deployed the example customizations for the
@@ -752,7 +756,7 @@ version of @product@ is released.
 
 +$$$
 
-**Tip:** This is an advanced technique; it may have a large impact on the
+**Note:** This is an advanced technique; it may have a large impact on the
 maintainability of your code. Seek alternatives, and if you're sure this is
 your only option, think of it as a short term solution. Follow instructions
 [here](/participate/contribute-a-feature)on contributing an improvement to
@@ -836,7 +840,7 @@ news; migrating is automated and relatively easy.
 
 +$$$
 
-**Tip:** When migrating an extension environment, first consider whether any of
+**Note:** When migrating an extension environment, first consider whether any of
 the extension environment's features can be moved into other types of plugins.
 OSGi modules are designed to meet specific needs and they're easier to learn.
 Additionally, they're easier to maintain since they often require fewer changes
