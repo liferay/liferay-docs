@@ -74,14 +74,21 @@ pages of content. There are four main parts (tags) to a `manifest.xml` file.
   and site you're exporting (if necessary). For example, this can include
   locales, build information, export date, company ID, group ID, layouts,
   themes, etc.
-- `missing-references`: entities that are validated during import. The entities
+- `missing-references`: entities that are validated during import. Staging and
+  Export/Import processes can identify references that have been previously
+  exported; these are marked as missing references. Please note that this does
+  not mean that it has been deleted or is missing, but rather, it's a marker for
+  the process indicating that the references need to be validated. The entities
   defined here must reside in the importation site.
 - `portlets`: defines the portlets exported in the LAR. Each portlet definition
   has basic information on the exported portlet and points to the generated
   `portlet.xml` for more specialized portlet information.
-- `manifest-summary`: contains information on what has been exported. The
-  entities defining a non-zero `addition-count` attribute are displayed in the
-  Export/Import UI.
+- `manifest-summary`: contains information on what has been exported. Due the
+  behavior of the Staging and Export frameworks, some entities are still
+  exported or published even though it wasn’t marked to do so. This is because
+  the process respects data integrity. This section holds information for all
+  the entities that have been processed. The entities defining a non-zero
+  `addition-count` attribute are displayed in the Export/Import UI.
 
 The `manifest.xml` file also defines layout information if you've exported pages
 in your LAR. For example, your manifest could have `LayoutSet`, `Layout`, and
