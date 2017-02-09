@@ -72,10 +72,7 @@ Follow these steps to install Blade if you don't already have it:
 2.  From a terminal, install [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
     using JPM:
 
-        (sudo) jpm install https://releases.liferay.com/tools/blade-cli/2.0.1.201612161126/plugins/com.liferay.blade.cli_2.0.1.201612161126.jar
-
-    <!-- Above URL should be updated to a permanent "latest" URL, once
-    available. -Cody -->
+        (sudo) jpm install https://releases.liferay.com/tools/blade-cli/latest/blade.jar
 
 The `blade` executable is now in the system path.
 
