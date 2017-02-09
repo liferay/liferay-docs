@@ -5,7 +5,7 @@ to access external repositories, you need to add some extra configuration to
 make Liferay Workspace work within your environment. You'll learn how to set
 proxy requirements for both Gradle and Maven environments.
 
-## Using Gradle
+## Using Gradle [](id=using-gradle)
 
 1.  Open your `~/.gradle/gradle.properties` file. Create this file if it does
 		not exist.
@@ -30,7 +30,7 @@ proxy requirements for both Gradle and Maven environments.
 Excellent! Your proxy settings are set in your Liferay Workspace's Gradle
 environment.
 
-## Using Maven
+## Using Maven [](id=using-maven)
 
 1.  Open your `~/.m2/settings.xml` file. Create this file if it does not exist.
 

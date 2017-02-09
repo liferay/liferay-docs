@@ -28,7 +28,7 @@ for more details.
 
 Awesome! You've successfully configured Liferay @ide@'s proxy settings!
 
-## Additional Proxy Settings
+## Additional Proxy Settings [](id=additional-proxy-settings)
 
 Some Eclipse plugins do not properly check the `core.net` proxy infrastructure
 when setting proxy settings via *Window* &rarr; *Preferences* &rarr; *General*
