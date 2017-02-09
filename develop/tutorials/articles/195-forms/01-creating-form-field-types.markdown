@@ -1,7 +1,7 @@
 # Creating form Field Types [](id=creating-form-field-types)
 
-The Forms application contains many highly configurable field types out-of-the-box. Most use cases will be met with one of the
-existing field types. 
+The Forms application contains many highly configurable field types
+out-of-the-box. Most use cases will be met with one of the existing field types. 
 
 ![Figure 1: The Forms application has useful out-of-the-box field types, but you can add your own if you need to.](../../images/forms-field-types.png)
 
@@ -22,6 +22,14 @@ In this tutorial, learn to
 
 In a separate tutorial (not yet written), learn to add custom configuration
 options to your field types.
+
++$$$
+
+**Example project:** The source code for the example project developed in this
+and following tutorials can be downloaded for your convenience. Click
+[here](https://dev.liferay.com/documents/10184/656312/Field+Type+Module+Source/de6203af-1bae-4c59-9f90-0ab5e58c5894) to begin downloading the source code zip file.
+
+$$$
 
 ## Anatomy of a Field Type Module [](id=anatomy-of-a-field-type-module)
 
