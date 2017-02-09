@@ -64,8 +64,8 @@ For example, Bookmark List Screenlet needs `Bookmark` objects. Create the
 following `Bookmark` class that you'll use to create these objects. This class 
 creates `Bookmark` objects that contain the bookmark's URL and other data. Since 
 you always need quick access to the bookmark's URL, it's extracted from the 
-`Map` and stored in the `_url` variable. The entire `Map` is stored in the 
-`_values` variable so you can extract any other data you need from it later: 
+`Map` and stored in the `url` variable. The entire `Map` is stored in the 
+`values` variable so you can extract any other data you need from it later: 
 
     import android.os.Parcel;
     import android.os.Parcelable;
@@ -74,8 +74,8 @@ you always need quick access to the bookmark's URL, it's extracted from the
 
     public class Bookmark implements Parcelable {
 
-        private String _url;
-        private Map _values;
+        private String url;
+        private Map values;
 
         public static final Creator<Bookmark> CREATOR = new Creator<Bookmark>() {
             @Override
@@ -89,18 +89,22 @@ you always need quick access to the bookmark's URL, it's extracted from the
             }
         };
 
+        public Bookmark() {
+            super();
+        }
+
         protected Bookmark(Parcel in) {
-            _url = in.readString();
+            url = in.readString();
         }
 
         public Bookmark(Map<String, Object> stringObjectMap) {
-            _url = (String) stringObjectMap.get("url");
-            _values = stringObjectMap;
+            url = (String) stringObjectMap.get("url");
+            values = stringObjectMap;
         }
 
         @Override
         public void writeToParcel(Parcel dest, int flags) {
-            dest.writeString(_url);
+            dest.writeString(url);
         }
 
         @Override
@@ -109,15 +113,15 @@ you always need quick access to the bookmark's URL, it's extracted from the
         }
 
         public String getUrl() {
-            return _url;
+            return url;
         }
 
         public Map getValues() {
-            return _values;
+            return values;
         }
 
         public void setValues(Map values) {
-            _values = values;
+            this.values = values;
         }
 
     }
@@ -155,7 +159,7 @@ to make scrolling through the list smooth. You can extend Screens's
 to make things simpler. If you do so, you only need to implement two methods: 
 one that instantiates your view holder, and one that fills it in for each row. 
 Create this class now for Bookmark List Screenlet. Note that the view holder 
-renders the model's `_url` attribute in the bookmark layout: 
+renders the model's `url` attribute in the bookmark layout: 
 
     import android.support.annotation.NonNull;
     import android.view.View;
@@ -183,16 +187,16 @@ renders the model's `_url` attribute in the bookmark layout:
 
         public class BookmarkViewHolder extends BaseListAdapter.ViewHolder {
 
-            private final TextView _url;
+            private final TextView url;
 
             public BookmarkViewHolder(View view, BaseListAdapterListener listener) {
                 super(view, listener);
 
-                _url = (TextView) view.findViewById(R.id.bookmark_url);
+                url = (TextView) view.findViewById(R.id.bookmark_url);
             }
 
             public void bind(Bookmark entry) {
-                _url.setText(entry.getUrl());
+                url.setText(entry.getUrl());
             }
 
         }
@@ -289,139 +293,98 @@ Nice work! Now you can create your list Screenlet's Interactor.
 Recall that Screenlets use Interactors to retrieve entities from Liferay. Your 
 list Screenlet's Interactor should extend `BaseListInteractor`, parameterized 
 with your model class and `BaseListInteractorListener<YourModelClass>`. Your 
-Interactor must also define the variables it needs to make the server call. For 
-example, Bookmark List Screenlet's Interactor class needs variables for the 
-`groupId` and `folderId`. These variables define the site and Bookmarks portlet 
-folder, respectively, to retrieve bookmarks from. Create Bookmark List 
-Screenlet's Interactor class as follows: 
+Interactor must also define the variables it needs to make the server call. 
+Create Bookmark List Screenlet's Interactor class as follows. 
 
-    public class BookmarkListInteractorImpl
-        extends BaseListInteractor<Bookmark, BaseListInteractorListener<Bookmark>> {
-        
-        private long _groupId;
-        private long _folderId;
-        
-    }
-
-Your Interactor class must also contain the methods needed to make the server 
+Your Interactor class must contain the methods needed to make the server 
 call and process the results. You'll do this by overriding the following 
 methods: 
 
-- `getCallback`: Creates a callback instance that overrides the `createEntity` 
-  method to create your model objects. The Screenlet calls this method once for 
-  each entity. 
+- `createEntity`: Creates a new `Bookmark` instance.
 
 - `getPageRowsRequest`: Retrieves the specified page of entities. 
 
 - `getPageRowCountRequest`: Retrieves the number of entities. 
 
-Add these methods to `BookmarkListInteractorImpl` now: 
+Create `BookmarkListInteractor` now: 
 
-    @Override
-    protected BaseListCallback<Bookmark> getCallback(Pair<Integer, Integer> rowsRange, Locale locale) {
-        return new BaseListCallback<Bookmark>(getTargetScreenletId(), rowsRange, locale) {
-            @Override
-            public Bookmark createEntity(Map<String, Object> stringObjectMap) {
-                return new Bookmark(stringObjectMap);
+    import com.liferay.mobile.android.v7.bookmarksentry.BookmarksEntryService;
+    import com.liferay.mobile.screens.base.list.interactor.BaseListInteractor;
+    import com.liferay.mobile.screens.base.list.interactor.BaseListInteractorListener;
+    import com.liferay.mobile.screens.base.list.interactor.Query;
+    import com.liferay.mobile.screens.context.LiferayServerContext;
+    import java.util.Map;
+    import org.json.JSONArray;
+
+    public class BookmarkListInteractor extends BaseListInteractor<BaseListInteractorListener<Bookmark>, BookmarkEvent> {
+
+        @Override
+        protected JSONArray getPageRowsRequest(Query query, Object... args) throws Exception {
+            long folderId = (long) args[0];
+
+            if (args[1] != null) {
+                query.setComparator((String) args[1]);
             }
-        };
+
+            if (LiferayServerContext.isLiferay7()) {
+                return new BookmarksEntryService(getSession()).getEntries(groupId, folderId, query.getStartRow(),
+                    query.getEndRow(), query.getComparatorJSONWrapper());
+            } else {
+                return new com.liferay.mobile.android.v62.bookmarksentry.BookmarksEntryService(getSession()).getEntries(
+                    groupId, folderId, query.getStartRow(), query.getEndRow(), query.getComparatorJSONWrapper());
+            }
+        }
+
+        @Override
+        protected Integer getPageRowCountRequest(Object... args) throws Exception {
+            long folderId = (long) args[0];
+
+            if (LiferayServerContext.isLiferay7()) {
+                return new BookmarksEntryService(getSession()).getEntriesCount(groupId, folderId);
+            } else {
+                return new com.liferay.mobile.android.v62.bookmarksentry.BookmarksEntryService(
+                    getSession()).getEntriesCount(groupId, folderId);
+            }
+        }
+
+        @Override
+        protected BookmarkEvent createEntity(Map<String, Object> stringObjectMap) {
+            Bookmark bookmark = new Bookmark(stringObjectMap);
+            return new BookmarkEvent(bookmark);
+        }
     }
 
-    @Override
-    protected void getPageRowsRequest(Session session, int startRow, int endRow, Locale locale) throws Exception {
-        new BookmarksEntryService(session).getEntries(_groupId, _folderId, startRow, endRow);
+Great! Your Interactor is finished. Next, you'll create your list Screenlet's 
+event. 
+
+## Creating the Screenlet's Event
+
+    import com.liferay.mobile.screens.base.list.interactor.ListEvent;
+
+    public class BookmarkEvent extends ListEvent<Bookmark> {
+
+	      private Bookmark bookmark;
+
+	      public BookmarkEvent() {
+		        super();
+	      }
+
+	      public BookmarkEvent(Bookmark bookmark) {
+      		  this.bookmark = bookmark;
+	      }
+
+	      @Override
+	      public String getListKey() {
+		        return bookmark.getUrl();
+	      }
+
+	      @Override
+	      public Bookmark getModel() {
+		        return bookmark;
+	      }
     }
 
-    @Override
-    protected void getPageRowCountRequest(Session session) throws Exception {
-        new BookmarksEntryService(session).getEntriesCount(_groupId, _folderId);
-    }
-
-The remaining code in the Interactor class supports offline mode. First, add an 
-enumeration that contains values for each service method you call in the 
-Interactor. For example, in Bookmark List Screenlet you call `getEntries` and 
-`getEntriesCount` to retrieve the bookmarks and number of bookmarks, 
-respectively. You can therefore define the enumeration as follows:
-
-    private enum BOOKMARK_LIST implements CachedType {
-        BOOKMARK, BOOKMARK_COUNT
-    }
-
-Next, add the constructor. This constructor calls the superclass constructor and 
-accounts for the app developer's offline mode setting via the `offlinePolicy` 
-argument. If you don't need to support offline mode, you can use `null` or 
-`OfflinePolicy.REMOTE_ONLY` in place of `offlinePolicy` in the superclass 
-constructor: 
-
-    public BookmarkListInteractorImpl(int targetScreenletId, OfflinePolicy offlinePolicy) {
-        super(targetScreenletId, offlinePolicy);
-    }
-
-You must also add a `loadRows` method that can handle offline mode. This method 
-should also set any variables you need to make the service calls. You can 
-support offline mode in `loadRows` by calling `processWithCache`. For example, 
-the `loadRows` method in `BookmarkListInteractorImpl` sets the `_groupId` and 
-`_folderId` variables, and calls `processWithCache`: 
-
-    public void loadRows(int startRow, int endRow, Locale locale, long groupId, long folderId) 
-        throws Exception {
-
-            _groupId = groupId;
-            _folderId = folderId;
-
-            processWithCache(startRow, endRow, locale);
-    }
-
-Note that if you don't need to support offline mode, you should replace the 
-`processWithCache` call with a `super.loadRows` call that uses the same 
-arguments as `processWithCache`. For example, if Bookmark List Screenlet didn't 
-support offline mode, the above `processWithCache` call could be replaced with 
-`super.loadRows(startRow, endRow, locale)`. 
-
-To support offline mode, you must also implement the `getContent` and 
-`getElement` methods. Because Screens stores offline mode data as JSON, you must 
-implement these methods to convert your data to and from JSON. The `getContent` 
-method takes your model object as its only argument. You can then create a 
-`JSONObject` from your model object. The `getElement` method takes a Screens 
-[`TableCache`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/cache/tablecache/TableCache.java) 
-object that contains the data retrieved from storage. You can then create a new 
-`JSONObject` from this data, convert it to a `Map`, and create a new model 
-object from the `Map`. For example, here are the `getContent` and `getElement` 
-methods for `BookmarkListInteractorImpl`: 
-
-    @Override
-    protected String getContent(Bookmark object) {
-        return new JSONObject(object.getValues()).toString();
-    }
-
-    @Override
-    protected Bookmark getElement(TableCache tableCache) throws JSONException {
-        return new Bookmark(JSONUtil.toMap(new JSONObject(tableCache.getContent())));
-    }
-
-Lastly, implement the `storeToCache` and `cached` methods to store and recover 
-data from the cache, respectively. Note that these methods make use of the 
-enumeration you created earlier. For example, here are the `storeToCache` and 
-`cached` methods for `BookmarkListInteractorImpl`: 
-
-    @Override
-    protected void storeToCache(BaseListEvent event, Object... args) {
-        storeRows(String.valueOf(_folderId), BOOKMARK_LIST.BOOKMARK,
-            BOOKMARK_LIST.BOOKMARK_COUNT, _groupId, null, event);
-    }
-
-    @Override
-    protected boolean cached(Object... args) throws Exception {
-        final int startRow = (int) args[0];
-        final int endRow = (int) args[1];
-        final Locale locale = (Locale) args[2];
-
-        return recoverRows(String.valueOf(_folderId), BOOKMARK_LIST.BOOKMARK,
-            BOOKMARK_LIST.BOOKMARK_COUNT, _groupId, null, locale, startRow, endRow);
-    }
-
-Great! Your Interactor is finished. Next, you'll create a listener for your list 
-Screenlet. 
+Next, you'll create a listener for your list Screenlet. 
 
 ## Creating the Screenlet's Listener [](id=creating-the-screenlets-listener)
 
@@ -442,10 +405,10 @@ like this:
 The `BaseListListener` interface defines the following methods that the app 
 developer can implement in their activity or fragment:
 
-- `void onListPageFailed(BaseListScreenlet source, int startRow, int endRow, Exception e);`: 
+- `void onListPageFailed(int startRow, int endRow, Exception e);`: 
   Respond to the Screenlet's failure to retrieve entities from the server. 
 
-- `void onListPageReceived(BaseListScreenlet source, int startRow, int endRow, List<E> entries, int rowCount);`: 
+- `void onListPageReceived(int startRow, int endRow, List<E> entries, int rowCount);`: 
   Respond to the Screenlet's success to retrieve entities from the server. 
 
 - `void onListItemSelected(E element, View view)`: Respond to a user selection 
@@ -473,16 +436,18 @@ Screenlets, you should first define any XML attributes that you want to make
 available to the app developer. For example, Bookmark List Screenlet needs to 
 make its `groupId` and `folderId` available as attributes the developer can set 
 in the Screenlet's XML. You should also add an attribute for setting the 
-Screenlet's offline policy. Do this by creating the following 
+Screenlet's 
+[cache policy](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode). Do this by creating the following 
 `bookmark_attrs.xml` file in the `res/values` folder: 
 
     <?xml version="1.0" encoding="utf-8"?>
-        <resources>
-            <declare-styleable name="BookmarkListScreenlet">
-                <attr name="groupId"/>
-                <attr name="folderId"/>
-                <attr name="offlinePolicy"/>
-            </declare-styleable>
+    <resources>
+	      <declare-styleable name="BookmarkListScreenlet">
+		        <attr name="groupId"/>
+            <attr name="folderId"/>
+            <attr format="string" name="comparator"/>
+            <attr name="cachePolicy"/>
+        </declare-styleable>
     </resources>
 
 Your Screenlet class must extend `BaseListScreenlet` with your model entity and 
@@ -492,76 +457,46 @@ leverage the superclass constructors. For example, here is the first part of
 `BookmarkListScreenlet`, the Screenlet class of Bookmark List Screenlet: 
 
     public class BookmarkListScreenlet 
-        extends BaseListScreenlet<Bookmark, BookmarkListInteractorImpl> {
+        extends BaseListScreenlet<Bookmark, BookmarkListInteractor> {
 
-        private long _groupId;
-        private long _folderId;
-        private OfflinePolicy _offlinePolicy;
+        private long folderId;
+	      private String comparator;
 
-        public BookmarkListScreenlet(Context context) {
-            super(context);
-        }
+	      public BookmarkListScreenlet(Context context) {
+		        super(context);
+	      }
 
-        public BookmarkListScreenlet(Context context, AttributeSet attributes) {
-            super(context, attributes);
-        }
+	      public BookmarkListScreenlet(Context context, AttributeSet attrs) {
+		        super(context, attrs);
+	      }
 
-        public BookmarkListScreenlet(Context context, AttributeSet attributes, int defaultStyle) {
-            super(context, attributes, defaultStyle);
-        }
+	      public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr) {
+		        super(context, attrs, defStyleAttr);
+	      }
+
+	      public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+		        super(context, attrs, defStyleAttr, defStyleRes);
+	      }
 
         ...
-
-Next, you should implement the listener methods required to support offline mode 
-in your Screenlet: `loadingFromCache`, `retrievingOnline`, and `storingToCache`. 
-These methods notify the listener when the data is loaded from the cache, 
-retrieved online, or stored to the cache, respectively. Each method retrieves a 
-listener instance and then calls the listener method it shares a name with. For 
-example, here are the methods for Bookmark List Screenlet: 
-
-    @Override
-    public void loadingFromCache(boolean success) {
-        if (getListener() != null) {
-            getListener().loadingFromCache(success);
-        }
-    }
-
-    @Override
-    public void retrievingOnline(boolean triedInCache, Exception e) {
-        if (getListener() != null) {
-            getListener().retrievingOnline(triedInCache, e);
-        }
-    }
-
-    @Override
-    public void storingToCache(Object object) {
-        if (getListener() != null) {
-            getListener().storingToCache(object);
-        }
-    }
 
 Next, add the method that reads the values of the XML attributes you defined 
 earlier and creates the Screenlet's view: the `createScreenletView` method. 
 Recall that this method assigns the attribute values to their corresponding 
 instance variables. For example, the `createScreenletView` method in 
-`BookmarkListScreenlet` assigns the `groupId`, `folderId`, and `offlinePolicy` 
-attribute values to the `_groupId`, `_folderId`, and `_offlinePolicy` variables, 
-respectively:
+`BookmarkListScreenlet` assigns the `groupId`, `folderId`, and `comparator` 
+attribute values to variables of the same name: 
 
     @Override
     protected View createScreenletView(Context context, AttributeSet attributes) {
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(
-            attributes, R.styleable.BookmarkListScreenlet, 0, 0);
-        Integer offlinePolicy = typedArray.getInteger(
-            R.styleable.BookmarkListScreenlet_offlinePolicy,
-            OfflinePolicy.REMOTE_ONLY.ordinal());
-        _offlinePolicy = OfflinePolicy.values()[offlinePolicy];
-        _groupId = typedArray.getInt(R.styleable.BookmarkListScreenlet_groupId,
-            (int) LiferayServerContext.getGroupId());
-        _folderId = typedArray.getInt(R.styleable.BookmarkListScreenlet_folderId, 0);
-        typedArray.recycle();
+	      TypedArray typedArray =
+		        context.getTheme().obtainStyledAttributes(attributes, R.styleable.BookmarkListScreenlet, 0, 0);
+	      groupId = typedArray.getInt(R.styleable.BookmarkListScreenlet_groupId, (int) LiferayServerContext.getGroupId());
+	      folderId = typedArray.getInt(R.styleable.BookmarkListScreenlet_folderId, 0);
+	      comparator = typedArray.getString(R.styleable.BookmarkListScreenlet_comparator);
+	      typedArray.recycle();
 
-        return super.createScreenletView(context, attributes);
+	      return super.createScreenletView(context, attributes);
     }
 
 Lastly, you must add the `createInteractor` and `loadRows` methods. These 
@@ -570,18 +505,17 @@ methods create an Interactor instance and load the list rows, respectively. The
 so it can call the listener's `interactorCalled` method:
 
     @Override
-    protected void loadRows(BookmarkListInteractorImpl interactor, int startRow, 
-        int endRow, Locale locale) throws Exception {
+    protected void loadRows(BookmarkListInteractor interactor) {
 
-            ((BookmarkListListener) getListener()).interactorCalled();
+		    ((BookmarkListListener) getListener()).interactorCalled();
 
-            interactor.loadRows(startRow, endRow, locale, _groupId, _folderId);
-    }
+		    interactor.start(folderId, comparator);
+	  }
 
     @Override
-    protected BookmarkListInteractorImpl createInteractor(String actionName) {
-        return new BookmarkListInteractorImpl(getScreenletId(), _offlinePolicy);
-    }
+    protected BookmarkListInteractor createInteractor(String actionName) {
+		    return new BookmarkListInteractor();
+	  }
 
 You're done! Your Screenlet is a ready-to-use component that you can use in your 
 app. You can even
@@ -601,6 +535,7 @@ You can now use the new Screenlet
             android:id="@+id/bookmarklist_screenlet"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:comparator=”PATH_TO_COMPARATOR"
             app:folderId="YOUR_FOLDER_ID"
             app:groupId="YOUR_GROUP_ID"
             app:layoutId="@layout/list_bookmarks"/>
