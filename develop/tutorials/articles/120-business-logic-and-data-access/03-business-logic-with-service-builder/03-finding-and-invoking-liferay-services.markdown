@@ -2,7 +2,7 @@
 
 In this tutorial, you'll learn how to search for portal services and portlet
 services. You can find Liferay's services by searching for them in the Javadocs:
-[http://docs.liferay.com/portal/7.0/javadocs/](http://docs.liferay.com/portal/7.0/javadocs/).
+[@platform-ref@/7.0-latest/javadocs/](@platform-ref@/7.0-latest/javadocs/).
 
 First, you'll learn how to find a portal service using Liferay's Javadocs. 
 
@@ -19,7 +19,7 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 *Organization* services, for example: 
 
 1. In your browser, open up the Javadocs:
-   [http://docs.liferay.com/portal/7.0/javadocs/](http://docs.liferay.com/portal/7.0/javadocs/) 
+   [@platform-ref@/7.0-latest/javadocs/](@platform-ref@/7.0-latest/javadocs/) 
    You're offered several options, which were discussed earlier. Select
    *portal-kernel*.
 
@@ -90,7 +90,7 @@ Here's how you find services for a user's blogs statistics:
 Now you're ready to invoke Liferay services. To invoke Liferay services
 remotely, your Liferay instance must be configured to allow remote web service
 access. Please see the
-[Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model) 
+[Service Security Layers](/develop/tutorials/-/knowledge_base/7-0/service-security-layers) 
 tutorial for details.
 -->
 <!-- The above text does not yet apply, since module Javadoc is only hosted in a
@@ -134,6 +134,10 @@ following services are available:
 - Beans created in other module app contexts
 - Services declared using Declarative Service
 - Services registered using the OSGi low level API
+
+Some types of portlets don't have access to the OSGi Registry using Declarative
+Services (e.g., Spring MVC and JSF). You can call OSGi services in these
+portlets by using [Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers).
 
 You'll learn more about referencing OSGi services next.
 
@@ -191,3 +195,4 @@ them from your application. You also learned about referencing OSGi services.
 
 [JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
 
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)

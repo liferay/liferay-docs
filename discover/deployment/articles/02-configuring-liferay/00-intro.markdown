@@ -1,4 +1,4 @@
-# Configuring Liferay [](id=configuring-liferay)
+# Configuring @product@ [](id=configuring-liferay)
 
 Once you have @product@ installed, it's time to configure it to the specifics of
 your environment. This means doing things like setting the time zone and

@@ -4,7 +4,7 @@ You've successfully created a site for your Liferay instance, but you may need
 to add new pages or edit existing pages. From the Site Administration &rarr;
 *Navigation* section of the Menu, your site pages can be accessed and
 configured. If you're not currently on the site you'd like to edit, click the
-*Compass* icon (![Compass](../../../images/icon-compass.png)) next to your
+*Site Selector* button (![Compass](../../../images/icon-compass.png)) next to your
 current site name in the Menu and select your desired site. The edits you make
 to your pages are only made to the scope you've selected in the Menu.
 
@@ -286,7 +286,7 @@ including the theme.
 <!-- Add following sentence when this section is available (App not available
 for CE) -Cody:
 The set up for this option is explained in the
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-site-pages-to-mobile-devices)
+[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-pages-on-mobile-devices)
 section.
 -->
 
@@ -438,7 +438,7 @@ from the Sitemaps and Robots tabs of the Manage Site Settings dialog box (see
 below).
 
 In previous versions of Liferay, it was possible that a single page
-could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
+could be indexed multiple times. In Liferay Portal 6.1, all URLs that direct to the
 same page will only create one entry in the index. Previously, the simple URL
 *http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
 versions of the URL which provided additional information about the referring
@@ -582,9 +582,9 @@ the Welcome page of the Lunar Resort site to be customizable. A member of the
 Lunar Resort site could take the following steps to make a personal
 customization of the Welcome page:
 
-1. Navigate to the Welcome homepage by navigating to the Site Administration
-   *Compass* (![Compass](../../../images/icon-compass.png)) and selecting the
-   Lunar Resort site.
+1. Navigate to the Welcome homepage by clicking the Site Administration's
+   *Site Selector* button (![Compass](../../../images/icon-compass.png)) and
+   selecting the Lunar Resort site.
 2. Add the Language Selector app to the right column of the page by clicking the
    *Add* icon, clicking on *Applications*, searching for *Language Selector*,
    and clicking *Add* next to its name.

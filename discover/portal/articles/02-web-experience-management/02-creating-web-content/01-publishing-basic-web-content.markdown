@@ -31,7 +31,7 @@ of content.
 When you manage web content from the Site Administration menu, you can select
 the location where the content resides. When selecting the Site Administration
 dropdown from the Menu, you are presented with two scopes: site scope and page
-scope. The site scope can be managed by clicking the Compass icon
+scope. The site scope can be managed by clicking the *Site Selector* button
 (![Compass](../../../images/icon-compass.png)) located on the Site
 Administration dropdown menu, which is characterized by the name of the site.
 From there you can select the site for which you want your content scoped. For
@@ -138,11 +138,14 @@ use in your web content.
 
 ![Figure 3: You can access the image editor through the item selector window.](../../../images/image-editor-preview-window.png)
 
-After adding an image to the web content article, clicking it brings up controls 
-for justifying it to the left or right side of the article. Go ahead an add an 
-image to the Lunar Resort article, to spice it up a bit. Note that when adding 
-an image via the web content editor, you can either select the file from the 
-Documents and Media app or provide it via a URL.
+After adding an image to the web content article, clicking it brings up controls
+([![Image Controls](../../../images/icon-wysiwyg-image-controls.png)) for
+justifying it to the left, center, or right side of the article. You can also
+make it a link and define the `alt` HTML attribute.
+
+Go ahead an add an image to the Lunar Resort article, to spice it up a bit. Note
+that when adding an image via the web content editor, you can either select the
+file from the Documents and Media app or provide it via a URL.
 
 You can also insert a table with as many rows and columns as you see fit. When
 clicking inside the table, table editing controls appear. They let you designate
@@ -183,16 +186,14 @@ functionality. For example, if you navigate to the Control Panel, click on
 this menu, you can install and enable Xuggler. Enabling Xuggler allows you to
 embed audio and video files in web content. Installing and enabling Xuggler is
 easy; you can do it right from the Control Panel. Please refer to the
-[Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
+[Publishing Files](/discover/portal/-/knowledge_base/7-0/publishing-files)
 article of this guide for more details.
-
-<!-- TODO: Replace link above with 7.0 link, when available. -Cody -->
 
 Once Xuggler has been installed and enabled, embedding audio or video files in a
 web content article is easy. By default the current WYSIWYG editor (AlloyEditor)
 does not provide audio/video files. You can extend the default AlloyEditor by
 adding an audio/video button. You can learn about doing this in the
-[Editor Configurations](/develop/tutorials/-/knowledge_base/7-0/editor-configurations)
+[WYSIWYG Editors](/develop/tutorials/-/knowledge_base/7-0/wysiwyg-editors)
 tutorials section. Another option you have is changing the WYSIWYG editor to one
 that supports embedding audio/video files in web content. The CKEditor, for
 example, is an editor that provides this functionality. To use the CKEditor,
@@ -222,7 +223,7 @@ the Edit Web Content screen, after you've created your web content article.
 ![Figure 6: The *View Source* button is available from the *Options* button.](../../../images/web-content-download.png)
 
 An XML version of an article is essential when creating content for themes using
-the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importer).
+the [Resources Importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer).
 If you'd like to learn more about importing web content with a theme, visit its
 dedicated [tutorial](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
 

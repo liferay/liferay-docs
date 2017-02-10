@@ -1,16 +1,16 @@
 # Upgrading Layout Templates [](id=upgrading-layout-templates)
 
-Layout templates for Liferay 7 differ slightly from layout templates for
-Liferay 6. The layout template's rows and columns are affected by Bootstrap's
+Layout templates for @product-ver@ differ slightly from layout templates for
+Liferay Portal 6. The layout template's rows and columns are affected by Bootstrap's
 new grid system syntax.
 
 This tutorial demonstrates the following:
 
-- How to upgrade your layout template to Liferay 7
+- How to upgrade your layout template to @product-ver@
 
 <!-- Comment out Code Upgrade Tool instructions until the tool is worth using with layout templates. Jim
 
-There are a couple ways you can upgrade your layout template to Liferay 7. If
+There are a couple ways you can upgrade your layout template to @product-ver@. If
 your project is in Liferay IDE or Liferay Developer Studio, you can use the Code 
 Upgrade Tool to start the upgrade process. The second option is to manually 
 upgrade the template files in the editor of your choice.
@@ -24,8 +24,8 @@ section.
 
 Since Liferay IDE and Liferay Developer Studio version 3.0, the Code Upgrade
 Tool has been available to use. The Code Upgrade Tool runs through your code,
-points out the Liferay 7 breaking changes, and suggest how to update it. Follow
-these steps to upgrade your layout template to Liferay 7.
+points out the breaking changes, and suggest how to update it. Follow
+these steps to upgrade your layout template to @product-ver@.
 
 1.  Right-click on your layout template project in the *Package Explorer*, and 
     select *Liferay* &rarr; *Find Liferay 7 breaking API changes*.
@@ -42,14 +42,14 @@ these steps to upgrade your layout template to Liferay 7.
     
     Now you can see the problems listed, with suggested fixes listed below.
     
-    Figure 2: Breaking changes are listed in the *Liferay 7 Migration Problems* tab. ../../../images/upgrading-layouts-list-of-breaking-changes.png
+    Figure 2: Breaking changes are listed in the Liferay 7 Migration Problems* tab. ../../../images/upgrading-layouts-list-of-breaking-changes.png
     
     In this case, there is only one problem listed.
     
 2.  Double-click the problem to open the `liferay-plugin-package.properties`
     file.
     
-    Currently the `liferay-versions` property is set to 6.2. The Code Upgrade
+    Currently the `liferay-versions` property is set to Liferay Portal 6.2. The Code Upgrade
     Tool can fix this.
     
 3.  Right-click on the problem in the *Liferay 7 Migration Problems* tab and
@@ -61,7 +61,7 @@ these steps to upgrade your layout template to Liferay 7.
     some more adjustments to make.
     
 The next section covers the rest of the changes you'll need to make to your
-layout template for Liferay 7.
+layout template for @product-ver@.
 
 ## Upgrading Your Layout Template Files [](id=upgrading-your-layout-template-files)
 
@@ -72,7 +72,7 @@ template. If you followed the steps in the last section, you can skip to step 2.
 Upgrading a layout template involves updating its Liferay version and updating
 the class syntax for its rows and columns.
 
-Follow these steps to upgrade your layout template for Liferay 7:
+Follow these steps to upgrade your layout template:
 
 1.  Open your `liferay-plugin-package.properties` file and update the 
     `liferay-versions` property to `7.0.0+`:
@@ -102,8 +102,8 @@ Follow these steps to upgrade your layout template for Liferay 7:
 
         <div class="portlet-column portlet-column-last col-md-4" id="column-3">
  
-As an example, here's Liferay 6 layout template [1_2_1_columns.tpl](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-web/docroot/layouttpl/custom/1_2_1_columns.tpl)
-upgraded to Liferay 7:
+As an example, here's Liferay Portal 6 layout template [1_2_1_columns.tpl](https://github.com/liferay/liferay-portal/blob/Portal 6.2.x/portal-web/docroot/layouttpl/custom/1_2_1_columns.tpl)
+upgraded to @product-ver@:
 
     <div class="columns-1-2-1" id="main-content" role="main">
             <div class="portlet-layout row">
@@ -137,14 +137,14 @@ upgraded to Liferay 7:
             </div>
     </div>
 
-Your layout template is ready to use in Liferay 7!
+Your layout template is ready to use in @product-ver@!
 
 **Related Topics**
 
-[Planning a Plugin Upgrade to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)
+[Planning a Plugin Upgrade to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)
 
-[Benefits of Liferay 7 for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers)
+[Benefits of @product-ver@ for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers)
 
 <!-- Uncomment this link when the referenced tutorial is published. Jim
-[Adapting to Liferay 7's API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 -->

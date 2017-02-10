@@ -55,12 +55,15 @@ Screenlet. They are listed here:
 
 ## Views [](id=views)
 
+- Default
+- Material
+
 The Default View uses a standard vertical `ScrollView` to show a scrollable list 
 of fields. Other Views may use different components, such as `ViewPager` or 
 others, to show the fields. You can find a sample of this implementation in the 
 `DDLFormScreenletPagerView` class.
 
-![Figure 1: DDL Form Screenlet's Default and Material Viewsets.](../../images/screens-android-ddlform.png)
+![Figure 1: DDL Form Screenlet's Default (left) and Material (right) Views.](../../images/screens-android-ddlform.png)
 
 ### Editor Types [](id=editor-types)
 
@@ -147,7 +150,8 @@ For more details, see the User Guide sections
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the form or record, the Screenlet supports the following offline 
 mode policies:
@@ -215,10 +219,10 @@ DDL Form Screenlet delegates some events to an object that implements to the
 following methods:
 
 - `onDDLFormLoaded(Record record)`: Called when the form definition successfully 
-  loads.
+  loads. 
 
-- `onDDLFormRecordLoaded(Record record)`: Called when the form record data 
-  successfully loads.
+- `onDDLFormRecordLoaded(Record record, Map<String, Object> valuesAndAttributes)`: 
+  Called when the form record data successfully loads. 
 
 - `onDDLFormRecordAdded(Record record)`: Called when the form record is 
   successfully added.
@@ -226,17 +230,10 @@ following methods:
 - `onDDLFormRecordUpdated(Record record)`: Called when the form record data 
   successfully updates.
 
-- `onDDLFormLoadFailed(Exception e)`: Called when an error occurs in the load 
-  form definition request.
-
-- `onDDLFormRecordLoadFailed(Exception e)`: Called when an error occurs in the 
-  load form record request.
-
-- `onDDLFormRecordAddFailed(Exception e)`: Called when an error occurs in the 
-  request to add a new record.
-
-- `onDDLFormUpdateRecordFailed(Exception e)`: Called when an error occurs in the 
-  request to update an existing record.
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. For example, this method is called when an error occurs while loading 
+  a form definition or record, or adding or updating a record. The `userAction` 
+  variable distinguishes these events. 
 
 - `onDDLFormDocumentUploaded(DocumentField field)`: Called when a specified 
   document field's upload completes.

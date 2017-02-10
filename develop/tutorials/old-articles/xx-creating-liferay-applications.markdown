@@ -177,7 +177,7 @@ you'll see an entry like this:
     333|Active     |    1|com.liferay.docs.mvcportlet (1.0.0.201602111940)
 
 Finally, log into your portal. Add your portlet to a page and confirm that it
-works correctly. Congratulations! You've created and deployed a Liferay 7 style
+works correctly. Congratulations! You've created and deployed a @product-ver@ style
 application!
 
 ## Related Topics [](id=related-topics)

@@ -279,8 +279,8 @@ keep in mind:
 - **Target the Appropriate Java JRE**: Regardless of the tools you use to 
   develop your app, your app's bytecode must be compatible with the target Java 
   JRE for your version of Liferay. Your app will be rejected if its bytecode is 
-  not compatible with the Java JRE for the intended version of Liferay. Liferay 
-  6.2 targets Java 1.7, and Liferay 7.0 targets Java 1.8. If you use the Liferay 
+  not compatible with the Java JRE for the intended version of Liferay Digital Enterprise or Liferay Portal. Liferay Portal
+  6.2 targets Java 1.7, and Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0 target Java 1.8. If you use the Liferay 
   Plugins SDK to develop your app, you can set the Java version by overriding 
   the `ant.build.javac.target` property in the Plugins SDK's `build.properties` 
   file. 
@@ -325,26 +325,26 @@ keep in mind:
     - Liferay reserves the right to replace app plugin WAR files that have
       the same deployment context as plugins built by Liferay.
 
-There are some additional requirements for uploading Liferay 7.0 apps:
+There are some additional requirements for uploading Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0 apps:
 
 - **OSGi modules in JAR (`.jar`) files**:
     - For more information, see 
-      [OSGI and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules). 
+      [OSGi and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules). 
     - The manifest file must at minimum contain the following manifest headers:
         - `Bundle-SymbolicName`: a unique name for the module
         - `Bundle-Version`: the module's version
         - `Web-ContextPath`: the servlet context path
 
 - **WAR (`.war`) files**:
-    - WAR-based plugins must be adapted to run on Liferay 7.0. See 
-      [this tutorial](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api) 
-      for information on adapting WAR plugins that run on Liferay 6.2 and 
-      earlier to run on Liferay 7.0. 
+    - WAR-based plugins must be adapted to run on Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. See 
+      [this tutorial](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool) 
+      for information on adapting WAR plugins that run on Liferay Portal 6.2 and 
+      earlier to run on Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. 
 
 - **Apps containing multiple file types:**
-    - Liferay 7.0 apps can contain a mix of WAR-based plugins and OSGi JAR-based 
+    - Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0 apps can contain a mix of WAR-based plugins and OSGi JAR-based 
       plugins. Regardless of file type, each plugin must be able to run on 
-      Liferay 7.0. 
+      Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. 
 
 +$$$
 
@@ -366,10 +366,10 @@ running on different Liferay versions.
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you want to publish version 1.0 of your app, which you're
-supporting on Liferay 6.1 and 6.2. Due to incompatibilities between these
+supporting on Liferay Portal 6.1 and 6.2. Due to incompatibilities between these
 Liferay versions, it may be impossible to create a single binary WAR or JAR file 
 that works across both Liferay versions. In this case, you must compile your app 
-twice: once against Liferay 6.1 and once against 6.2, producing 2 different
+twice: once against Liferay Portal 6.1 and once against 6.2, producing 2 different
 *packages* (also called variations) of your version 1.0 app. Each package has
 the same functionality, but they're different files. You can upload such 
 packages to support your app on different Liferay versions. With regards to 

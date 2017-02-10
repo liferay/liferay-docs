@@ -9,7 +9,7 @@ selectable? Easy! Use portlet model hints! Liferay Service Builder's model hints
 provide a single place in your application where you can specify entity data 
 restrictions. Model hints are specified in a single file called 
 `portlet-model-hints.xml` in your project. If your project is comprised of an
-API module, a service module, and a web module, as is common for Liferay 7
+API module, a service module, and a web module, as is common for @product-ver@
 applications, `portlet-model-hints.xml` should go in the service module. For
 example, in Liferay's Bookmarks application, the `portlet-model-hints.xml` file
 goes in the `bookmarks-service/src/main/resources/META-INF/` folder. Model
@@ -122,7 +122,7 @@ Name                | Value Type | Description | Default
 `auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true
 `autoSize`          | boolean | displays the field in a for scrollable text area | false
 `day-nullable`      | boolean | allows the day to be null in a date field | false
-`default-value`     | String  | sets the default value for a field | (empty String)
+`default-value`     | String  | sets the default value of the form field rendered using the aui taglib | (empty String)
 `display-height`    | integer | sets the display height of the form field rendered using the aui taglib | 15
 `display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350
 `editor`            | boolean | sets whether to provide an editor for the input | false

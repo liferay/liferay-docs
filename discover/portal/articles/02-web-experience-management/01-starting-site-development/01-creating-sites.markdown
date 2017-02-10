@@ -15,22 +15,24 @@ facilitate collaboration among team members, supporting different kinds of
 collaboration and social scenarios is a must. Liferay's sites provide three
 membership types:
 
-**Open:** Users can become members of the site at any time. Users can join
-sites from the Site Administration navigation menu
-(![Compass](../../../images/icon-compass.png)).
+**Open:** Users can become members of the site at any time.
 
 **Restricted:** Users can request site membership but site administrators must
-approve requests in order for users to become members. Requests can be made from
-the Site Administration navigation menu.
+approve requests in order for users to become members.
 
-**Private:** Users are not allowed to join the site or request site
-membership. Private sites don't appear in the Site Administration navigation
-menu. Site administrators can still manually select users and assign them as
-site members.
+**Private:** Users are not allowed to join the site or request site membership.
+Site administrators can still manually select users and assign them as site
+members.
 
 In addition to these memberships, when a site is associated with an
 organization, all the users of that organization are automatically considered
 members of the site.
+
+You can view all the available open and restricted sites by adding the My Sites
+application to a page and accessing the *Available Sites* tab. You can request
+access to any of the sites you're not already a member of by
+selecting the site's *Options* button
+(![Options](../../../images/icon-actions.png)) and clicking *Join*.
 
 Members of a site can be given additional privileges within the site by using
 @product@'s permission settings. It is also possible to assign different roles
@@ -95,7 +97,7 @@ scoped for all sites in the instance.
 
 <!-- TODO: Portal Directoy app still has "portal" name, although most other
 entities in Liferay have changes to "instance". Check back with this name before
-release of Liferay 7. -Cody -->
+release of @product-ver@. -Cody -->
 
 @product@'s sites have two categories of pages called page sets. There are two
 kinds of page sets: public pages and private pages. A site can have only public
@@ -117,7 +119,7 @@ member of the instance can access it.
 
 +$$$
 
-**Tip:** Prior to Liferay 6.1, there were two ways of creating sites:
+**Tip:** Prior to Liferay Portal 6.1, there were two ways of creating sites:
 organizations and communities. This has been simplified to provide more ease of
 use and allow for more flexibility. The main role of organizations is still to
 organize the users of the instance in a hierarchy but they can also have
@@ -163,11 +165,11 @@ sections, respectively.
 
 **Tip:** If you're signed in as an administrator, you can access all sites by
 navigating to the Site Administration menu from the Control Panel. To manage a
-single site, navigate to the site by going to the Menu and clicking the Compass
-icon (![Compass](../../../images/icon-compass.png)) from the sites dropdown menu
-and selecting the appropriate site name you'd like to manage. Once finished, the
-site administration options (i.e., Navigation, Content, Members, etc.) for that
-site are available.
+single site, navigate to the site by going to the Menu and clicking the *Site
+Selector* button (![Compass](../../../images/icon-compass.png)) from the sites
+dropdown menu and selecting the appropriate site name you'd like to manage. Once
+finished, the site administration options (i.e., Navigation, Content, Members,
+etc.) for that site are available.
 
 $$$
 
@@ -303,7 +305,7 @@ site and allows for users to easily find your site and its content through
 search and navigation. To take full advantage of tags and categories, you'll
 need to add pages with content to your site. For more information on using tags
 and categories, visit the
-[Organizing Content with Tags and Categories](discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
 
 #### Site Template [](id=site-template)
@@ -315,7 +317,7 @@ this section displays information about the link between the site template and
 the site. Specifically, you can see which site template was used and whether or
 not it allows modifications to the pages inherited from it by site
 administrators. To learn more about site templates and how to create your own,
-see the [Building Sites from Templates](discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
+see the [Building Sites from Templates](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
 section.
 
 #### Content Sharing [](id=content-sharing)

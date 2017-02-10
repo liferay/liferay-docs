@@ -34,7 +34,7 @@ Make sure to click the *Build Services* button and not the *Build WSDD* button
 that appears next to it. Building the WSDDs won't hurt anything, but you'll
 generate files for the remote service instead of the local one. For information
 about WSDDs (web service deployment descriptors), please refer to the
-[Working with SOAP Web Services](/develop/tutorials/-/knowledge_base/6-2/working-with-soap-web-services)
+[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
 tutorial. 
 
 [Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
@@ -56,7 +56,7 @@ information about the generated files appears below.
 Open a terminal window and navigate to your module project's root folder, which
 should be located in your Liferay Workspace's `modules` directory. To learn more
 about creating your module project in a Liferay Workspace, visit the
-[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
 tutorial. Liferay Workspaces use Gradle as their build tool, so this will be the
 assumed build language used in this tutorial. Liferay is tool agnostic, however,
 and you can use other tools, as well.
@@ -214,12 +214,34 @@ method signature of a `*LocalServiceImpl` class, `*ServiceImpl` class, or
 `*Impl` class, you should run Service Builder again to regenerate the affected
 interfaces and the service JAR.
 
++$$$
+
+**Note:** If you need to make changes to your objects/tables between two
+different releases of your service, you must write 
+[an upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+since Service Builder does not make these changes automatically.
+
+While you're developing your application, you can force your service tables to
+regenerate when you modify them by following these steps:
+
+- Drop the tables for your service.
+- Delete the row for your service in the `release_` table.
+- Delete the row for your service in the `servicecomponent` table.
+
+Here's an example in SQL: 
+
+    DROP TABLE LRBO_HORSE_HORSE;
+    DELETE FROM SERVICECOMPONENT WHERE BUILDNAMESPACE = 'LRBO_HORSE';
+    DELETE FROM RELEASE_ WHERE SERVLETCONTEXTNAME = 'horse-service';
+
+$$$
+
 ## Related Topics [](id=related-topics)
 
 [What is Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 
-[Understanding Service Context](/develop/tutorials/-/knowledge_base/7-0/service-context)
+[Understanding Service Context](/develop/tutorials/-/knowledge_base/7-0/understanding-servicecontext)
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/writing-local-service-classes)
+[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)

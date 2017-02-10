@@ -170,7 +170,7 @@ using the Ruby version of Sass, you must configure the theme to support Compass.
 To do so, follow these steps:
 
 1.  Open the `package.json` file found in the root folder of your theme, and
-    locate the `supportCompass` property and change it from `false` to `true`.
+    locate the `rubySass` property and change it from `false` to `true`.
 
     Now that your theme is set to support Compass, you must install the Ruby
     Sass middleware and save it as a dependency for your theme.
@@ -210,6 +210,16 @@ To deploy your theme to your configured Liferay instance, execute this command:
 
     gulp deploy
 
++$$$
+
+**Note:** By default theme images are cached by the browser. If you need to 
+update images in the theme, it is best practice to use versioning in the image 
+URL. For example, `background-image:url("../images/image.jpg?v=1")` . You can
+then just update the version each time you update the image, which will remove
+the potential for any caching issues.
+
+$$$
+    
 Now that you've created a theme and deployed it, you can use the theme project's
 gulp tasks to further develop and manage your theme. Refer to the [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 reference document to learn the Gulp tasks available to you.
@@ -220,8 +230,6 @@ There you have it! You're ready to design a terrific theme!
 
 [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 
-<!-- [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors) -->
-
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 
-<!-- [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-your-themes) -->
+[Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)

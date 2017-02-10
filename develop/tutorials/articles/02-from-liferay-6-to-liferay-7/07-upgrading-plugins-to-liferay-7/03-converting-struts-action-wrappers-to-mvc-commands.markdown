@@ -1,8 +1,8 @@
 # Converting StrutsActionWrappers to MVCCommands [](id=converting-strutsactionwrappers-to-mvccommands)
 
-Since Liferay 6.1, developers could customize the Portal and Portlet Struts 
-Actions using a Hook and `StrutsActionWrappers`. For example, the
-`liferay-hook.xml` file for a hook that overrode the login portlet's login 
+Since Liferay Portal 6.1, developers could customize the Portal and Portlet
+Struts Actions using a Hook and `StrutsActionWrappers`. For example, the
+`liferay-hook.xml` file for a hook that overrode the login portlet's login
 action had this entry:
 
     <struts-action>
@@ -19,7 +19,7 @@ The wrapper could extend either `BaseStrutsAction` or `BaseStrutsPortletAction`,
 depending on whether the struts action was a portal or portlet action 
 respectively.
 
-Starting in Liferay 7.0 and Liferay DXP, this mechanism no longer applies for 
+Starting in @product-ver@, this mechanism no longer applies for 
 most of the portal portlets because they are no longer using Struts Actions, but 
 instead use `MVCCommands`.
 
@@ -56,7 +56,7 @@ For most cases, the `MVCCommand` mapping is the same mapping defined in the
 legacy struts action.
 
 Using the beginning login example once again, the `struts-action-path` mapping, 
-`/login/login`, remains the same for the `MVCCommand` mapping in Liferay 7, but
+`/login/login`, remains the same for the `MVCCommand` mapping in @product-ver@, but
 some of the mappings may have changed. It’s best to check Liferay's source code
 to determine the correct mapping.
 

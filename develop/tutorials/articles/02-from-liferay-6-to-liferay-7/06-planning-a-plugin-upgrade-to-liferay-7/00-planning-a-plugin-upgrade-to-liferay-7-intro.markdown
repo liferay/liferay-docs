@@ -1,8 +1,8 @@
-# Planning a Plugin Upgrade to Liferay 7 [](id=migrating-existing-code-to-liferay-7)
+# Planning a Plugin Upgrade to @product-ver@ [](id=migrating-existing-code-to-liferay-7)
 
 You've probably heard the term *modularity* discussed frequently in relation to
-Liferay 7.0. With Liferay 7.0 being a modular platform, Liferay applications are
-now composed of one or more
+@product-ver@. With it being a modular platform, Liferay applications are now
+composed of one or more
 [modules](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module).
 
 A module doesn't use the traditional Liferay application structure from previous
@@ -23,18 +23,18 @@ reason, it remains backwards compatible with traditional plugin applications.
 This means two things: you can write both module and plugins, and you can easily
 upgrade your 6.2 plugins to new 7.0 APIs without converting them to modules
 first. In fact before you begin converting your traditional application into
-modules, we recommend that you first migrate it to a Liferay 7.0 compatible
+modules, we recommend that you first migrate it to a @product-ver@ compatible
 WAR-style application. It is much easier to convert the application to modules
 after adapting to the new API and resolving [breaking changes](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/breaking-changes).
-Jumping from a 6.2 application to 7.0 modules can complicate debugging
-and figuring out which issues are related to API changes and which are related
-to the migration process.
+Jumping from a Liferay Portal 6.2 application to @product-ver@ modules can
+complicate debugging and figuring out which issues are related to API changes
+and which are related to the migration process.
 
 The standard migration process consists of two general steps: 
 
-**Step 1:  Adapting your 6.2 traditional plugins to Liferay 7's API** <!--(/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
+**Step 1:  Adapting your Liferay Portal 6.2 traditional plugins to @product-ver@'s API**
 
-**Step 2:  Converting your traditional plugins to OSGi modules** <!--(/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)-->
+**Step 2:  Converting your traditional plugins to OSGi modules**
 
 Converting your application to modules might not always be the best choice. In
 some scenarios, it makes better sense to stick with traditional WAR model
@@ -87,12 +87,12 @@ troubleshoot and obscure problems. Module versions, however, can be stated
 explicitly in the dependency, eliminating these types of issues.
 
 Now that you have some ammunition to make an informed decision on whether to
-stop after adapting your application's plugins to Liferay 7, or to continue on
+stop after adapting your application's plugins to @product-ver@, or to continue on
 with modularizing them. The next tutorial takes you through the first step:
-adapting plugins to Liferay 7's API.
+adapting plugins to @product-ver@'s API.
 
 **Related Topics**
 
-<!--[Adapting to Liferay 7's API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)-->
+[Adapting to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)

@@ -222,7 +222,7 @@ instance.
 
 ### Copying Data Definitions [](id=copying-data-definitions)
 
-Liferay 6.2 introduced the ability to *Copy* the DDM structures and templates
+Liferay Portal 6.2 introduced the ability to *Copy* the DDM structures and templates
 associated with an existing data definition. You can access the Copy button by
 navigating to *Manage Data Definitions* and clicking the *Actions* button (the
 icon is a vertical ellipsis). Select *Copy* from the actions menu. The Copy menu
@@ -357,7 +357,7 @@ Set *Indexable* to *Yes* if you want Liferay to index your field for
 search.
 
 Setting *Localizable* to *No* turns off localization for a particular
-field, so that [translations](discover/portal/-/knowledge_base/6-2/localization) 
+field, so that [translations](/discover/portal/-/knowledge_base/6-2/localization) 
 cannot be made for that field.
 
 <!-- Add link to 7.0 docs on localization when they're created -->

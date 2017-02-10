@@ -2,7 +2,7 @@
 
 What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? The process
-for overriding a module's language keys is different from [the process of overriding Liferay's core language properties](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys), which are located in Liferay's `portal-impl.jar`.
+for overriding a module's language keys is different from [the process of overriding Liferay's core language properties](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys), which are located in Liferay's `portal-impl.jar`.
 
     add-blog-entry=Add Blog Entry
 
@@ -27,7 +27,7 @@ a language file and one Java class.
 ## Implementing a Resource Bundle Loader [](id=implementing-a-resource-bundle-loader)
 
 Create an implementation of
-[`com.liferay.portal.kernel.util.ResourceBundleLoader`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) and override its
+[`com.liferay.portal.kernel.util.ResourceBundleLoader`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) and override its
 `loadResourceBundle` method.
 
         public class ResourceBundleLoaderComponent implements ResourceBundleLoader {
@@ -126,7 +126,7 @@ The only thing you're missing now is the language keys you want to override.
 
 ## Providing Language Keys [](id=providing-language-keys)
 
-Create properly named [language properties files](develop/tutorials/-/knowledge_base/7-0/localizing-your-application#what-are-language-keys) for each locale whose keys
+Create properly named [language properties files](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application#what-are-language-keys) for each locale whose keys
 you want to override. These should go in `src/content`, and are the resource
 bundles that are loaded by the resource bundle loader you are implementing.
 
@@ -139,4 +139,5 @@ language keys.
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
-core. Find out how to override those language keys in a [separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys).
+core. Find out how to override those language keys in a
+[separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys).
