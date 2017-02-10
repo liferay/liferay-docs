@@ -5,7 +5,7 @@ thoughts and ideas. Integrating social media features into your site is a no
 brainer. Liferay offers several different ways for you to integrate with social 
 media.
 
-## Integrating with Facebook
+## Integrating with Facebook [](id=integrating-with-facebook)
 
 Facebook is currently the number one social network in the world with somewhere
 over 1 billion active users. If you're trying to build a community on your 
