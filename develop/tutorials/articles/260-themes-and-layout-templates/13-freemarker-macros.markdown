@@ -56,16 +56,16 @@ available macros and parameters:
 
 | Macro | Parameters | Description | 
 | --- | --- | --- |
-| breadcrumbs | default_preferences = "" | Adds the Breadcrumbs portlet with optional preferences |
+| breadcrumbs | *default_preferences = ""* | Adds the Breadcrumbs portlet with optional preferences |
 | control_menu | N/A | Adds the Control Menu portlet |
-| css | file_name | Adds an external stylesheet with the specified file name location |
-| date | format | Prints the date in the current locale with the given format |
-| js | file_name | Adds an external JavaScript file with the specified file name source |
-| language | key | Prints the specified language key in the current locale |
-| language_format | arguments<br/>key | Formats the given language key with the specified arguments. For example, passing `go-to-x` as the `key` and `Mars` as the `arguments` prints "Go to Mars." |
-| languages | default_preferences = "" | Adds the Languages portlet with optional preferences. |
-| navigation_menu | default_preferences = ""<br/>instance_id = "" | Add the Navigation Menu portlet with optional preferences and an optional instance ID. `${freeMarkerPortletPreferences}` is usually passed as the value of `default_preferences`. |
-| search | default_preferences = "" | Adds the Search portlet with optional preferences. |
+| css | *file_name* | Adds an external stylesheet with the specified file name location |
+| date | *format* | Prints the date in the current locale with the given format |
+| js | *file_name* | Adds an external JavaScript file with the specified file name source |
+| language | *key* | Prints the specified language key in the current locale |
+| language_format | *arguments*<br/>*key* | Formats the given language key with the specified arguments. For example, passing *go-to-x* as the *key* and *Mars* as the *arguments* prints *Go to Mars*. |
+| languages | *default_preferences* | Adds the Languages portlet with optional preferences |
+| navigation_menu | *default_preferences = ""*<br/>*instance_id = ""* | Adds the Navigation Menu portlet with optional preferences and instance ID. *${freeMarkerPortletPreferences}* is a common value for *default_preferences* |
+| search | *default_preferences = ""* | Adds the Search portlet with optional preferences |
 | user_personal_bar | N/A | Adds the User Personal Bar portlet |
 
 Now you know how to use @product@'s FreeMarker macros in your theme templates!
