@@ -11,9 +11,9 @@ intermittently to save your changes.
 
 $$$
 
-For @product@ to work correctly, WebSphere 8.5.5 Fix Pack 9 (or later) must be 
+For @product@ to work correctly, WebSphere 8.5.5 Fix Pack 11 (or later) must be 
 installed.  You can find more information about this fix pack 
-[here](http://www-01.ibm.com/support/docview.wss?uid=swg24041819). 
+[here](http://www-01.ibm.com/support/docview.wss?uid=swg24043005). 
 
 Please also note that @product@ doesn't support the WebSphere Application 
 Liberty Profile. 
@@ -150,10 +150,10 @@ $$$
 
 ### Removing the secureSessionCookie Tag [](id=removing-the-securesessioncookie-tag)
 
-Lastly, in the same profile, you should delete a problematic 
-`secureSessionCookie` tag that can cause @product@ startup errors. Note that 
-this is just a default setting; once @product@ is installed, you should tune it 
-appropriately based on your usage. 
+In the same profile, you should delete a problematic `secureSessionCookie` tag 
+that can cause @product@ startup errors. Note that this is just a default 
+setting; once @product@ is installed, you should tune it appropriately based on 
+your usage. 
 
 In `[Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/cell.xml`, 
 Delete the `secureSessionCookie` tag containing 
@@ -163,6 +163,13 @@ If this tag is not removed, an error similar to the one here may occur:
 
     WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
     com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
+
+### Setting the JDK Version for Compiling JSPs [](id=setting-the-jdk-version-for-compiling-jsps)
+
+@product@ requires that its JSPs are compiled on Java 8. To ensure that 
+WebSphere does this, add the following to its `ibm-web-ext.xml`: 
+
+    <jsp-attribute name="jdkSourceLevel" value="18" />
 
 Great! Now you're ready to install @product@. 
 
