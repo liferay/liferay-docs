@@ -92,10 +92,11 @@ these steps to use your library:
 
 +$$$
 
-**Note:** As of @product-ver@, it's possible to hide Liferay's AMD Loader
-through @product@'s System Settings. Open the Control Panel, navigate to 
-*Configuration* &rarr; *System Settings*, and click *JavaScript Loader* under 
-the *Foundation* tab. Finally, uncheck the `expose global` option.
+**Note:** As of @product-ver@ GA4 (when released), it's possible to hide 
+Liferay's AMD Loader through @product@'s System Settings. Open the Control 
+Panel, navigate to *Configuration* &rarr; *System Settings*, and click 
+*JavaScript Loader* under the *Foundation* tab. Finally, uncheck the 
+`expose global` option.
 
 $$$
 
