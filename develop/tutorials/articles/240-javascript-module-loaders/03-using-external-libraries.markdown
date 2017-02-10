@@ -92,8 +92,9 @@ these steps to use your library:
 
 +$$$
 
-**Note:** As of @product-ver@, it's possible to hide Liferay's AMD Loader
-through @product@'s System Settings. Open the Control Panel, navigate to 
+**Note:** With the release of Liferay Protal CE 7.0 GA4, and Liferay Digital 
+Enterprise 7.0 SP2 (Fix Pack 8), it will be possible to hide the Liferay AMD 
+Loader through @product@'s System Settings. Open the Control Panel, navigate to 
 *Configuration* &rarr; *System Settings*, and click *JavaScript Loader* under 
 the *Foundation* tab. Finally, uncheck the `expose global` option.
 
