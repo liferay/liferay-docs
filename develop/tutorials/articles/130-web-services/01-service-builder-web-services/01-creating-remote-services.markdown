@@ -93,14 +93,15 @@ services, you can move on to the tutorial
 
 ## Generating Your App's WSDD [](id=generating-your-apps-wsdd)
 
-Liferay uses Apache Axis to make SOAP web services available. Since Axis 
-requires a WSDD to make a plugin's remote services available via SOAP, you must 
-build and deploy a WSDD for your plugin. To create your WSDD, Liferay provides 
-the `buildWSDD` Gradle task as part of the WSDD Builder Gradle plugin. To use 
-this plugin, you must add it as a dependency in your `*-service` project's 
-`build.gradle` file, and then apply it to your project. For example, the 
-following part of an example `*-service` project's `build.gradle` file includes 
-Service Builder and the WSDD Builder plugin: 
+Liferay uses Apache Axis to make SOAP web services available. Since Axis
+requires a WSDD to make a plugin's remote services available via SOAP, you must
+build and deploy a WSDD for your plugin. To create your WSDD, Liferay provides
+the `buildWSDD` Gradle task as part of the WSDD Builder Gradle plugin. To use
+this plugin, you must 
+[add it as a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+in your `*-service` project's `build.gradle` file, and then apply it to your 
+project. For example, the following part of an example `*-service` project's 
+`build.gradle` file includes Service Builder and the WSDD Builder plugin: 
 
     buildscript {
         dependencies {

@@ -173,7 +173,8 @@ abbreviated (`[..]`) and some have been removed.
 You can organize and build a module's Java code and resources however you like.
 You're free to use any directory structure conventions, such as those used in
 Maven or by your development team. And you can use any build tool, such as
-Gradle or Maven, to manage dependencies.
+Gradle or Maven, to 
+[manage dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 is an environment for managing module projects (and theme projects). It provides
@@ -509,16 +510,18 @@ component is requested. In this way delayed activation can improve startup times
 and conserve resources. 
 
 Gogo Shell's [Service Component Runtime commands](http://felix.apache.org/documentation/subprojects/apache-felix-service-component-runtime.html#shell-command)
-let developers manage components:
+let you manage components:
 
--  `src:list [bundleID]`: Lists the module's (bundle's) components.
+-   `src:list [bundleID]`: Lists the module's (bundle's) components.
 
--  `src:info [componentID]`: Describes the component, including its status and
-    the services it provides.
+-   `src:info [componentID|fullClassName]`: Describes the component, including
+    its status and the services it provides.
 
--  `src:enable [componentID]`: Enables the component.
+-   `src:enable [componentID|fullClassName]`: Enables the component.
 
--  `src:disable [componentID]`: Disables the component.
+-   `src:disable [componentID|fullClassName]`: Disables the component. It's
+    disabled on the server (or current server node in a cluster) until
+    the server is restarted.
 
 Service references are static by default. That is, an injected service remains
 bound to the referencing component until the service is disabled.

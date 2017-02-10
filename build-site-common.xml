@@ -466,4 +466,18 @@
 			<arg value="${doc.dir}"/>
 		</java>
 	</target>
+
+	<target name="report-moved-portal-service-classes" depends="prepare" description="Compares two portal source trees to generate an HTML report of classes moved from the portal-service folder.">
+		<echo message="... comparing portal-service classes from ${old.src.dir} with those from ${new.src.dir}"/>
+		<java
+			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${old.src.dir}"/>
+			<arg value="${new.src.dir}"/>
+			<arg value="${build.dir}/portal-service-moved-classes.html"/>
+		</java>
+	</target>
 </project>

@@ -1,11 +1,11 @@
 # @product@ Trial Plugin Installation [](id=liferay-dxp-trial-plugin-installation)
 
-For Liferay customers who are evaluating Liferay Portal EE on a trial
+For Liferay customers who are evaluating @product@ on a trial
 basis, **the plugins can be accessed from within the Marketplace section
 of the Control Panel in the product**. 
 
 *At a later date, the Marketplace website on Liferay.COM will be accessible to
-Liferay Portal EE Trial customers. For now, please access EE Plugins through the
+@product@ Trial customers. For now, please access EE Plugins through the
 portal installation itself.*  
 
 ## The Installation Process [](id=the-installation-process)
@@ -16,7 +16,6 @@ don't have an account, please register by clicking the same link.
 ![Click the hamburger menu to sign in or create an account.](../../images-dxp/liferay-com-sign-in.png)
 
 **2)**You must be running @product@ (Trial License is OK).
-
 
 **3)** After signing in as an Admin in your @product@ Trial
 server, go to the Control Panel and configure the Liferay.COM (LRDC)

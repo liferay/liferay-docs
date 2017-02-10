@@ -27,8 +27,8 @@ portlet:
         - `resources/META-INF/resources/`
             - `content/`
                 - `Language.properties`
-            - `MyComponent.es.js` (MetalJS component)
-            - `MyComponent.soy` (Soy template)
+            - `View.es.js` (MetalJS component)
+            - `View.soy` (Soy template)
 
 <!--
 You can also use the blade template to build your initial project.
@@ -74,8 +74,8 @@ you should have the following dependencies and configuration parameters:
         }
 
 This provides everything you need to create a Metal component based on Soy. Note 
-that the values of `name` and `version` should match those in your `bnd.bnd` 
-file.
+that the `version` value in your `package.json` should match the value of 
+`Bundle-Version` in your `bnd.bnd` file.
 
 Next you can specify your module's build dependencies.
 
@@ -84,12 +84,12 @@ Next you can specify your module's build dependencies.
 Add the dependencies shown below to your `build.gradle`:
 
     dependencies {
-        provided group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-        provided group: "com.liferay.portal", name: "com.liferay.util.java", version: "2.0.0"
-        provided group: "javax.portlet", name: "portlet-api", version: "2.0"
-        provided group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-        provided group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
-        provided group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.0.0"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.util.java", version: "2.0.0"
+        compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+        compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+        compileOnly group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.0.0"
     }
 
 Now that your module build is configured, you can learn how to create the Soy 

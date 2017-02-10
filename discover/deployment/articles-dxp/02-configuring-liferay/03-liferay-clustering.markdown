@@ -146,6 +146,28 @@ and either of those environments can also be clustered.
 
 <!-- Have a Google doc for this: https://docs.google.com/document/d/19oaISXylCyKueuMkIjCKtnrNuyhbvrkMJZvyGQLPIpk/edit#heading=h.ayvbwz8pwsz0 -->
 
+For more information on how to cluster ElasticSearch, see 
+[ElasticSearch's distributed cluster setup](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html). 
+
+Once @product@ servers have been properly configured as a cluster and the same
+for ElasticSearch, change @product@ from *embedded* mode to *remote* mode. On
+the first connection, the two sets of clustered servers communicate with
+each other the list of all IP addresses; in case of a node going down, the
+proper failover protocols will enable. Queries and indices can continue to be
+sent for all nodes.
+
+For more information on how to cluster Solr, see 
+[Apache Solr Cloud](https://cwiki.apache.org/confluence/display/solr/SolrCloud)
+documentation.
+
+Once @product@ servers have been properly configured as a cluster, deploy the
+Liferay Solr 5 Adapter on all nodes. (This app is available for download from
+Liferay Marketplace
+[here](https://web.liferay.com/marketplace/-/mp/application/78803813).) Create a
+Solr Cloud (cluster) managed by _Apache Solr Zookeeper_. Connect the @product@
+cluster to Zookeeper and finish the final configurations to connect the two
+clusters.
+
 ## 4. Enable Cluster Link [](id=4-enable-cluster-link)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
