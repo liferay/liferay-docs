@@ -93,8 +93,8 @@ file name where the translated keys will be (for example,
 
 In an application with only one module that holds all your application's views
 (for example, all its JSPs) and portlet components, just create a
-`src/main/resources/content` folder in that module, and place all of your
-`Language_xx.properties` there.
+`src/main/resources/content` folder in that module, and place your
+`Language.properties` and `Language_xx.properties` files there.
 
 After that, make sure any portlet components (the `@Component` annotation
 in your `-Portlet` classes) in the module include this property:
@@ -104,7 +104,7 @@ in your `-Portlet` classes) in the module include this property:
 Providing translated language properties files and specifying the
 `javax.portlet.resource-bundle` property in your portlet component is all you
 need to do to have your language keys translated. Then, when the locale is
-changed in Liferay, your application's language keys will be automatically
+changed in @product@, your application's language keys will be automatically
 translated.
 
 In a more complicated, well-modularized application, you might have language
@@ -128,19 +128,18 @@ often called Web modules.
 
 Each of these modules can have language keys and translations to maintain, and
 there will probably be duplicate keys. You don't want to end up with different
-values for the same key, and you don't want to maintain language keys in multiple
-places. In this case, you need to go even crazier with modularity and create a
-new module, which we'll call a language module.
+values for the same key, and you don't want to maintain language keys in
+multiple places. In this case, you need to go even crazier with modularity and
+create a new module, which we'll call a language module.
 
 In the root project directory (the one that holds your service, API, and web
-modules), create a new `my-application-lang` module.
-
-Inside the module, you need a `bnd.bnd` file, a `build.gradle` file, and a
-`src/main/resource/content` directory with language properties files.
+modules), [create a new
+module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module)
+to hold your app's language keys. For example, here's the folder structure of a
+language module called `my-application-lang`.
 
     my-application-lang/
         bnd.bnd
-        build.gradle
         src/
             main/
                 resources/
@@ -150,53 +149,93 @@ Inside the module, you need a `bnd.bnd` file, a `build.gradle` file, and a
                         Language_bg.properties
                         ...
 
-
-In the manifest file (usually generated from a `bnd.bnd` file in Liferay
-applications) you need a `Bundle-Name`, `Bundle-SymbolicName`, and a
-`Bundle-Version`. A `bnd.bnd` file for a language module might look like this:
-
-    Bundle-Name: My Application Lang
-    Bundle-SymbolicName: com.liferay.docs.myapplication.lang
-    Bundle-Version: 2.0.1
-
-The `build.gradle` file can be left blank. There are no dependencies for this
-module.
-
-Next, create a `src/main/resources/content` directory in the language module.
-Put your language properties files here.
+In the language module, create a `src/main/resources/content` folder. Put your
+language properties files here. A `Language.properties` file might look like
+this: 
 
     application=My Application
     add-entity=Add Entity
 
-Create any translations you want, adding the locale for the translation into the
-file name. A `Language_es.properties` file might look like this:
+Create any translations you want, adding the translation locale ID to the language file name. File `Language_es.properties` might look like this: 
 
     my-app-title=Mi Aplicación
     add-entity=Añadir Entity
 
-Once you've done that, you're done in the language module. Now when you use the
-language key, it will automatically be translated depending on the user's locale.
+On
+[deploying](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
+the language module, @product@ detects the `content/Language.properties` file,
+adds a resource bundle
+[*capability*](http://blog.osgi.org/2015/12/using-requirements-and-capabilities.html)
+to the module, and registers a
+[ResourceBundleLoader](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
+service for that capability. A capability is a contract a module declares to
+@product@'s OSGi framework. It lets you associate services with modules that
+provide them. 
 
-## Put the Language Module in a JAR [](id=put-the-language-module-in-a-jar)
+Next, you'll configure a web module to use the language module's resource
+bundle. 
 
-How do you get the language module's language properties files into the jar
-containing your portlet components and views? 
+## Using a Language Module
 
-![Figure 2: You need to include the language properties files in the JAR of the module that contains your portlet components and your JSPs.](../../images/web-jar-localized.png)
-<!-- I worked with this open clip art:
-https://openclipart.org/detail/177364/empty-glass-jar -->
+A module can use a language module's resource bundle loader by declaring it as a
+required capability and declaring the language module's resource bundle as its
+own. 
 
-To jar up your language files, in each portlet component, you need this
-property:
+Here's how you configure a web module to use a language module's resource
+bundle.
 
-    "javax.portlet.resource-bundle=content.Language"
+1.  Open the web module's `bnd.bnd` file and add a `Require-Capability` header
+that filters on the language module's resource bundle capability. For example,
+if the language module's symbolic name is `com.liferay.docs.l10n.myapp.lang`,
+you'd specify the requirement like this: 
 
-Additionally, at compile time (and JAR building time) your Web module needs to
-be able to find the language module. The specifics of this will vary depending
-on how you're building your project. For a Liferay Workspace project, your web
-module's should have this in their `build.gradle` files:
+        Require-Capability: liferay.resource.bundle;filter:="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)"
 
-    compile project(':modules:myapplication:my-application-lang')
+2.  In the `bnd.bnd`, add a `Provide-Capability` header that adds the language
+module's resource bundle as this module's:
+
+        Provide-Capability: liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.my.editor.lang)";resource.bundle.base.name="content.Language"
+
+It might seem a bit strange that the resource bundle aggregate has only one
+bundle. Grouping together multiple resource bundles comes into play when you
+want to include your module's own resource bundle in addition to a language
+module's. 
+
+For example, you might want to use language keys specific to your module as a
+compliment the language module's keys and override some of the language module's
+keys with your own. This requires aggregating the resource bundles and
+prioritizing your module's resource bundle higher than the language module's.
+You'll learn this best by way of example.
+
+A web module called `com.liferay.docs.l10n.myapp.admin.web` uses the language
+module `com.liferay.docs.l10n.myapp.lang`'s language keys, but overrides some of
+them. The web module's `Provide-Capability` and `Web-ContextPath` OSGi headers
+accomplish this.
+
+    Provide-Capability:\
+    liferay.resource.bundle;resource.bundle.base.name:String="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)";resource.bundle.base.name="content.Language",\
+    liferay.resource.bundle;resource.bundle.aggregate:String="(&(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)(!(aggregate=true))),(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)";bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web;resource.bundle.base.name="content.Language";service.ranking:Long="1";aggregate=true;\
+    servlet.context.name=my-admin-application-web
+    
+    Web-ContextPath:/my-admin-application-web
+
+Each line is explained:
+
+1.  `Provide-Capability Line 1`: declares the web module's resource bundle. This
+module's bundle symbolic name is `com.liferay.docs.l10n.myapp.admin.web`.
+2.  `Provide-Capability Line 2`: specifies an aggregate resource bundle to
+include one from the web module and another from language module. The web
+module's ranking `service.ranking:Long="1"` prioritizes its resource bundle over
+the language module's.
+3.  `Provide-Capability Line 3`: provides the web module's servlet context name
+(see the next line description).
+4.  `Web-ContextPath Line`: @product@ uses the servlet context name and web
+context path to make the aggregated resource bundle available to the web
+module's JSPs automatically. 
+
+To aggregate a language module's keys with your own, follow this pattern. The
+example language module and web modules can be downloaded in [this ZIP
+file](https://dev.liferay.com/documents/10184/656312/l10n-my-application.zip/3bf58646-95ba-4031-bd1a-ce52cc6152f3). 
 
 Now you can add language properties files to your Liferay development toolbox,
 to provide translation of your application's user interface messages. But do you
@@ -205,10 +244,9 @@ share with Liferay's core?
 
 ## Using Liferay's Language Properties [](id=using-liferays-language-properties)
 
-If you have Liferay's source code, you can check out
-Liferay's core language properties by looking in the `portal-impl/src/main/content`
-folder. Otherwise, you can look in the `portal-impl.jar` that's in your Liferay
-bundle.
+If you have Liferay's source code, you can check out Liferay's core language
+properties by looking in the `portal-impl/src/main/content` folder. Otherwise,
+you can look in the `portal-impl.jar` that's in your Liferay bundle.
 
     liferay-portal/portal-impl/src/content/Language_xx.properties
 
@@ -221,5 +259,5 @@ time and ensures that your application follows Liferay's UI conventions.
 
 If you want to automatically generate language files for each locale Liferay
 supports, or even configure your application to generate translations
-automatically using the Microsoft Translator API, check out the article on that
-(in progress).
+automatically using the Microsoft Translator API, check out the tutorial
+[Automatically Generating Language Files](/develop/tutorials/-/knowledge_base/7-0/automatically-generating-language-files).

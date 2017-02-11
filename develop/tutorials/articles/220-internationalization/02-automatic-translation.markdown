@@ -22,7 +22,7 @@ you only have to do a little work in the build file of your application.
 by putting the plugin in build script classpath.
 
 2. Make sure you have a default `Language.properties` file in
-   `src/main/content`. 
+   `src/main/resources/content`. 
 
 3. Run the `gradle buildLang` task from your project's root directory to generate
    default translation files.
