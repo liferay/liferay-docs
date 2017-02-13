@@ -504,8 +504,8 @@ file:
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
-	      <declare-styleable name="BookmarkListScreenlet">
-		        <attr name="groupId"/>
+        <declare-styleable name="BookmarkListScreenlet">
+            <attr name="groupId"/>
             <attr name="folderId"/>
             <attr format="string" name="comparator"/>
             <attr name="cachePolicy"/>
@@ -522,24 +522,24 @@ leverage the superclass constructors. For example, here's the first part of
         extends BaseListScreenlet<Bookmark, BookmarkListInteractor> {
 
         private long folderId;
-	      private String comparator;
+        private String comparator;
 
-	      public BookmarkListScreenlet(Context context) {
-		        super(context);
-	      }
+        public BookmarkListScreenlet(Context context) {
+            super(context);
+        }
 
-	      public BookmarkListScreenlet(Context context, AttributeSet attrs) {
-		        super(context, attrs);
-	      }
+        public BookmarkListScreenlet(Context context, AttributeSet attrs) {
+            super(context, attrs);
+        }
 
-	      public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr) {
-		        super(context, attrs, defStyleAttr);
-	      }
+        public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr) {
+            super(context, attrs, defStyleAttr);
+        }
 
-	      public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr, 
+        public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr, 
             int defStyleRes) {
-		            super(context, attrs, defStyleAttr, defStyleRes);
-	      }
+                super(context, attrs, defStyleAttr, defStyleRes);
+        }
 
         ...
 
@@ -552,15 +552,15 @@ same name:
 
     @Override
     protected View createScreenletView(Context context, AttributeSet attributes) {
-	      TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributes, 
+        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributes, 
             R.styleable.BookmarkListScreenlet, 0, 0);
-	      groupId = typedArray.getInt(R.styleable.BookmarkListScreenlet_groupId, 
+        groupId = typedArray.getInt(R.styleable.BookmarkListScreenlet_groupId, 
             (int) LiferayServerContext.getGroupId());
-	      folderId = typedArray.getInt(R.styleable.BookmarkListScreenlet_folderId, 0);
-	      comparator = typedArray.getString(R.styleable.BookmarkListScreenlet_comparator);
-	      typedArray.recycle();
+        folderId = typedArray.getInt(R.styleable.BookmarkListScreenlet_folderId, 0);
+        comparator = typedArray.getString(R.styleable.BookmarkListScreenlet_comparator);
+        typedArray.recycle();
 
-	      return super.createScreenletView(context, attributes);
+        return super.createScreenletView(context, attributes);
     }
 
 Lastly, you must add the `loadRows` and `createInteractor` methods. These 
@@ -571,15 +571,15 @@ so it can call the listener's `interactorCalled` method:
     @Override
     protected void loadRows(BookmarkListInteractor interactor) {
 
-		    ((BookmarkListListener) getListener()).interactorCalled();
+        ((BookmarkListListener) getListener()).interactorCalled();
 
-		    interactor.start(folderId, comparator);
-	  }
+        interactor.start(folderId, comparator);
+    }
 
     @Override
     protected BookmarkListInteractor createInteractor(String actionName) {
-		    return new BookmarkListInteractor();
-	  }
+        return new BookmarkListInteractor();
+    }
 
 You're done! Your Screenlet is a ready-to-use component that you can use in your 
 app. You can even
