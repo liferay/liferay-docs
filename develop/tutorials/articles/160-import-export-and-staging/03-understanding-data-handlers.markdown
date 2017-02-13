@@ -175,7 +175,7 @@ framework. For example, the Bookmarks application manages
 [BookmarksEntry](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksEntry.html)s
 and
 [BookmarksFolder](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksFolder.html)s,
-and both implement the `StagedModel`interface.
+and both implement the `StagedModel` interface.
 
 A Staged Model Data Handler supplies information about a staged model (entity)
 to the Export/Import framework, defining a display name for the UI, deleting an
