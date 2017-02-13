@@ -21,7 +21,7 @@ Liberty Profile.
 You should also read the following articles to familiarize yourself with 
 @product@'s general installation steps: 
 
-- [@product@ Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
+- [Preparing for Install](/discover/deployment/-/knowledge_base/7-0/preparing-for-install)
 - [Installing @product@](/discover/deployment/-/knowledge_base/7-0/installing-liferay-dxp)
 - [Installing @product@ Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
 
