@@ -1,40 +1,38 @@
 # Creating Android List Screenlets [](id=creating-android-list-screenlets)
 
-It's very common for mobile apps to display lists of entities. Liferay Screens 
+It's very common for mobile apps to display lists. Liferay Screens 
 lets you display asset lists and DDL lists in your Android app by using 
 [Asset List Screenlet](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-android) 
 and 
 [DDL List Screenlet](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-android), 
-respectively. For your app to display a list of other entities from a Liferay 
-instance, however, you must create your own list Screenlet. You can create this 
-Screenlet to display standard Liferay entities such as `User`, or custom 
-entities that belong to custom Liferay plugins. 
+respectively. Screens also includes list Screenlets for displaying lists of 
+other Liferay entities like web content articles, images, and more. 
+[The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+lists all the Screenlets included with Liferay Screens. If there’s not a list 
+Screenlet for the entity you want to display in a list, you must create your 
+own. A list Screenlet can display any entity from a Liferay instance. For 
+example, you can create a list Screenlet that displays standard Liferay entities 
+like `User`, or custom entities from custom Liferay apps. 
 
-This tutorial shows you how to create your own list Screenlet. As an example, 
-you'll create a Screenlet that displays a list of bookmarks from Liferay's 
-Bookmarks portlet--Bookmark List Screenlet. You can find the finished 
-Screenlet's code 
+This tutorial uses code from the sample Bookmark List Screenlet to show you how 
+to create your own list Screenlet. This Screenlet displays a list of bookmarks 
+from Liferay’s Bookmarks portlet. You can find this Screenlet's complete code 
 [here in GitHub](https://github.com/liferay/liferay-screens/tree/master/android/samples/listbookmarkscreenlet). 
 
-Note that this tutorial doesn't explain the general Screenlet concepts and 
-components in detail. Focus is instead placed on creating a Screenlet that 
-displays lists of entities. Before beginning, you should therefore read the 
-[Screens architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android), 
-and the general 
-[Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets). 
+Note that because this tutorial focuses on creating a list Screenlet, it doesn’t 
+explain general Screenlet concepts and components. Before beginning, you should 
+therefore read the following tutorials: 
+
+- [Screens architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
+- [Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
 
 You'll create the list Screenlet by following these steps: 
 
 1. Creating the Model Class
-
 2. Creating the Screenlet's View
-
 3. Creating the Screenlet's Event
-
 4. Creating the Screenlet's Interactor
-
 5. Creating the Screenlet's Listener
-
 6. Creating the Screenlet Class
 
 First though, you should understand how pagination works with list Screenlets. 
@@ -42,15 +40,10 @@ First though, you should understand how pagination works with list Screenlets.
 ## Pagination [](id=pagination)
 
 To ensure that users can scroll smoothly through large lists of items, list 
-Screenlets should support fluent pagination. In cases where you only have a 
-small list of items, however, you can skip this. For example, if you want to 
-list the days of the week, you don't need to implement fluent pagination. 
+Screenlets support fluent pagination. Support for this is built into the list 
+Screenlet framework. You’ll see this as you construct your list Screenlet. 
 
-Liferay Screens gives you some tools to implement fluent pagination with 
-configurable page size. Note that Asset List Screenlet and DDL List Screenlet 
-also use this approach. 
-
-Now you're ready to start creating your list Screenlet! 
+Now you're ready to begin! 
 
 ## Creating the Model Class [](id=creating-the-model-class)
 
@@ -63,12 +56,13 @@ convert these into proper entity objects for use in your app. You'll do this via
 a model class. 
 <!-- BaseListCallback doesn't exist anymore -->
 
-For example, Bookmark List Screenlet needs `Bookmark` objects. Create the 
-following `Bookmark` class that you'll use to create these objects. This class 
-creates `Bookmark` objects that contain the bookmark's URL and other data. Since 
-you always need quick access to the bookmark's URL, it's extracted from the 
-`Map` and stored in the `url` variable. The entire `Map` is stored in the 
-`values` variable so you can extract any other data you need from it later: 
+For example, Bookmark List Screenlet's model class (`Bookmark`) creates 
+`Bookmark` objects that contain a bookmark's URL and other data. To ensure quick 
+access to the URL, the constructor that takes a `Map<String, Object>` extracts 
+it from the `Map` and sets it to the `url` variable. To allow access to any 
+other data, the same constructor sets the entire `Map` to the `values` variable. 
+Besides the getters and setter, the rest of this class implements 
+[Android's `Parcelable` interface](https://developer.android.com/reference/android/os/Parcelable.html): 
 
     import android.os.Parcel;
     import android.os.Parcelable;
@@ -134,11 +128,10 @@ Now that you have your model class, you can create your Screenlet's View.
 ## Creating the Screenlet's View [](id=creating-the-screenlets-view)
 
 Recall that a View defines a Screenlet's UI. Since you're creating a list 
-Screenlet, you'll first define the layout to use for each row in the list. For 
-example, Bookmark List Screenlet needs to display a bookmark in each row. You 
-can therefore define its row layout as a simple `LinearLayout` that contains a 
-single `TextView` you'll use to display the bookmark's URL. Create the following 
-`bookmark_row.xml` in the `res/layout` directory: 
+Screenlet, you should first define the layout to use for each row in the list. 
+For example, Bookmark List Screenlet needs to display a bookmark in each row. 
+Its row layout (`res/layout/bookmark_row.xml`) is therefore a simple 
+`LinearLayout` containing a single `TextView` that displays the bookmark's URL: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -158,21 +151,17 @@ A list Screenlet's View must also contain an
 To make list scrolling smooth, your adapter class should contain a standard 
 [Android view holder](http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder). 
 To make creating your adapter class easier, you can extend Screens's 
-[`BaseListAdapter` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java). If you do so, you only need to implement two methods: 
+[`BaseListAdapter` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java) 
+with your model class and view holder as type arguments. If you do so, you only 
+need to implement two methods: 
 
-- `createViewHolder`: instantiates the view holder
+- `createViewHolder`: instantiates the view holder 
+- `fillHolder`: fills in the view holder for each row 
 
-- `fillHolder`: fills in the view holder for each row
-
-Create this class now for Bookmark List Screenlet. Note that the view holder 
-renders the model's `url` attribute in the bookmark layout: 
-
-    import android.support.annotation.NonNull;
-    import android.view.View;
-    import android.widget.TextView;
-
-    import com.liferay.mobile.screens.base.list.BaseListAdapter;
-    import com.liferay.mobile.screens.base.list.BaseListAdapterListener;
+For example, Bookmark List Screenlet's adapter class (`BookmarkAdapter`) extends 
+`BaseListAdapter` with `Bookmark` and `BookmarkAdapter.BookmarkViewHolder` as 
+type arguments. Note that the view holder renders the model's `url` attribute in 
+the bookmark layout: 
 
     public class BookmarkAdapter extends BaseListAdapter<Bookmark, BookmarkAdapter.BookmarkViewHolder> {
 
@@ -204,9 +193,7 @@ renders the model's `url` attribute in the bookmark layout:
             public void bind(Bookmark entry) {
                 url.setText(entry.getUrl());
             }
-
         }
-
     }
 
 Now that your adapter exists, you can create your list Screenlet's View class. 
