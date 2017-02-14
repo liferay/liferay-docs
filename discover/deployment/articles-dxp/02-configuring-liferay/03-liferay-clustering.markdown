@@ -307,6 +307,8 @@ your nodes or if your nodes are in different geographical locations.
     pools. See [JGroups documentation](http://www.jgroups.org/manual-3.x/html/user-advanced.html) 
     for further information. 
 
+    Usually, _no_ further JGroups configuration are required. However, in a very specific case, if _(and only if)_ cluster nodes are deployed across multiple networks, then the parameter `external_addr` must be set on each host to the external (public IP) address of the firewall. By setting this, this will allow clustered nodes that are deployed to separate networks (e.g. separated by different firewalls) to communicate together. However, this can cause more InfoSec audits. See [JGroups documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#Transport) for more information. 
+
 6.  Save the file. Modify that node's `portal-ext.properties` file to point to
     it: 
 
