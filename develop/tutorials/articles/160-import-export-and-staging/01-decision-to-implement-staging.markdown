@@ -10,7 +10,7 @@ it's the right move?
 Not every application needs to support Staging and Export/Import. The most
 important question to consider during the decision process is
 
-*What part of your application are you primarily focused on using Staging for?
+*What part of your application are you primarily focused on using Staging for?*
 
 When Staging is enabled in @product@, all pages and applications are staged
 automatically. @product@'s architecture separates the application and its
@@ -20,8 +20,17 @@ Export/Import framework supports all applications and their configuration by
 default, not all applications' content is supported by Staging.
 
 Therefore, if you want to track your application's content, you should implement
-Staging in your application. Otherwise, implementing Staging in your application
-is unnecessary.
+Staging in your application. Here's a few other scenarios where you should
+implement Staging in your application:
+
+- You're using remote staging. When publishing to a remote live site, your
+  content must be transferred to a different @product@ instance. Therefore,
+  Staging must be able to recognize the content to facilitate the transfer.
+- You want a space where you can freely edit and test your content before
+  publishing it to a live audience.
+
+If none of these options are beneficial for you, implementing Staging in your
+application is unnecessary.
 
 When content supports Staging and Staging is enabled, it is created in a Staging
 group and is only published to a live site when that group is published. When
@@ -39,11 +48,11 @@ below:
 5. After deserialization, the entity's fields are processed.
 6. The entity is added to the database.
 
-It's not necessary for content to support Staging. You'll need to implement
-Staging for your content, however, in the following cases:
+The possibility of being able to turn on and off staging for specific content
+types is powerful, but you need to think about some implications. If you are not
+interested fine graining these options
 
-- You're using remote staging. When publishing to a remote live site, your
-content must be transferred to a different @product@ instance. Therefore,
-Staging must be able to recognize the content to facilitate the transfer.
+<!-- Need further info for paragraph above. -Cody -->
 
-<!-- Are there more cases to list above? -Cody -->
+Awesome! You should now have a good idea about whether you should implement
+Staging for your application.
