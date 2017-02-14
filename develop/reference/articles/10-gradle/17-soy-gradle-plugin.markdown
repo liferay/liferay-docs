@@ -144,14 +144,14 @@ Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `classpath` | [`FileCollection`](https://docs.gradle.org/current/javadoc/org/gradle/api/file/FileCollection.html) | [`project.configurations.soy`](#soy-dependency) | The classpath for executing the main class `com.google.template.soy.SoyToJsSrcCompiler`.
 
-### WrapSoyAlloyTemplateTask
+### WrapSoyAlloyTemplateTask [](id=wrapsoyalloytemplatetask)
 
 Tasks of type `WrapSoyAlloyTemplateTask` extend [`SourceTask`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html),
 so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include\(java.lang.Iterable\))
 and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude\(java.lang.Iterable\)),
 are available.
 
-#### Task Properties
+#### Task Properties [](id=task-properties-0)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -183,7 +183,7 @@ so all its properties and methods, such as [`include`](https://docs.gradle.org/c
 and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude\(java.lang.Iterable\)),
 are available.
 
-#### Task Properties [](id=task-properties-0)
+#### Task Properties [](id=task-properties-1)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
