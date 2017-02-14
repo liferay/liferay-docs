@@ -360,14 +360,19 @@ and process the results:
 - `getPageRowsRequest`: Retrieves the specified page of entities. In the example 
   `BookmarkListInteractor`, this method first uses the `args` parameter to 
   retrieve the ID of the folder to retrieve bookmarks from. It then sets the 
-  comparator if the app developer sets a comparator when inserting the Screenlet 
-  xml in a fragment or activity. The `getPageRowsRequest` method finishes by 
-  calling `BookmarksEntryService`'s `getEntries` method to retrieve a page of 
-  bookmarks. Note that the service call, like the service call in the 
+  comparator if the app developer sets one when inserting the Screenlet XML in a 
+  fragment or activity. The `getPageRowsRequest` method finishes by calling 
+  `BookmarksEntryService`'s `getEntries` method to retrieve a page of bookmarks. 
+  Note that the service call, like the service call in the 
   [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets), 
   uses `LiferayServerContext.isLiferay7()` to check the portal version to make 
   sure the correct service instance is used. This isn't required if you only 
-  plan to use your Screenlet with one portal version. 
+  plan to use your Screenlet with one portal version. Also note that the 
+  `groupId` variable used to make the service calls isn't set anywhere in 
+  `getPageRowsRequest` or `BookmarkListInteractor`. Interactors that extend 
+  `BaseListInteractor` inherit this variable via the Screens framework. You'll 
+  set it when you create the Screenlet class. Here's `BookmarkListInteractor`'s 
+  complete `getPageRowsRequest` method: 
 
         @Override
         protected JSONArray getPageRowsRequest(Query query, Object... args) throws Exception {
@@ -495,9 +500,6 @@ following attributes:
 - `groupId`: the ID of the site containing the Bookmarks portlet 
 - `folderId`: the ID of the Bookmarks portlet folder to retrieve bookmarks from 
 - `comparator`: the name of the comparator to use to sort the bookmarks 
-- `cachePolicy`: the 
-  [offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android) 
-  setting 
 
 The Screenlet defines these attributes in its `res/values/bookmark_attrs.xml` 
 file: 
@@ -508,47 +510,64 @@ file:
             <attr name="groupId"/>
             <attr name="folderId"/>
             <attr format="string" name="comparator"/>
-            <attr name="cachePolicy"/>
         </declare-styleable>
     </resources>
 
 Your Screenlet class must extend `BaseListScreenlet` with your model class and 
-Interactor implementation as type parameters. You must also create variables 
-for each of the XML attributes you just defined. For constructors, you can 
-leverage the superclass constructors. For example, here's the first part of 
-`BookmarkListScreenlet`, the Screenlet class of Bookmark List Screenlet: 
+Interactor implementation as type parameters. For example, Bookmark List 
+Screenlet's Screenlet class, `BookmarkListScreenlet`, extends 
+`BaseListScreenlet` parameterized with `Bookmark` and `BookmarkListInteractor`: 
 
     public class BookmarkListScreenlet 
-        extends BaseListScreenlet<Bookmark, BookmarkListInteractor> {
+        extends BaseListScreenlet<Bookmark, BookmarkListInteractor> {...
 
-        private long folderId;
-        private String comparator;
+You must also create instance variables for the XML attributes that you want to 
+pass to your Interactor. For example, recall that the request methods in 
+`BookmarkListInteractor` receive two `Object` arguments: the folder ID and the 
+comparator. The `BookmarkListScreenlet` must therefore contain variables for 
+these parameters so it can pass them to the Interactor: 
 
-        public BookmarkListScreenlet(Context context) {
-            super(context);
+    private long folderId;
+    private String comparator;
+
+For constructors, leverage the superclass constructors. For example, here are 
+`BookmarkListScreenlet`'s constructors: 
+
+    public BookmarkListScreenlet(Context context) {
+        super(context);
+    }
+
+    public BookmarkListScreenlet(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr, 
+        int defStyleRes) {
+            super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+Now you must implement the `error` method to propagate any exception that occurs 
+during the service call. This method should check for a listener and then call 
+its `error` method: 
+
+    @Override
+    public void error(Exception e, String userAction) {
+        if (getListener() != null) {
+            getListener().error(e, userAction);
         }
-
-        public BookmarkListScreenlet(Context context, AttributeSet attrs) {
-            super(context, attrs);
-        }
-
-        public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr) {
-            super(context, attrs, defStyleAttr);
-        }
-
-        public BookmarkListScreenlet(Context context, AttributeSet attrs, int defStyleAttr, 
-            int defStyleRes) {
-                super(context, attrs, defStyleAttr, defStyleRes);
-        }
-
-        ...
+    }
 
 Next, override the `createScreenletView` method to read the values of the XML 
 attributes you defined earlier and create the Screenlet's View. Recall that this 
 method assigns the attribute values to their corresponding instance variables. 
 For example, the `createScreenletView` method in `BookmarkListScreenlet` assigns 
-the `groupId`, `folderId`, and `comparator` attribute values to variables of the 
-same name: 
+the `folderId` and `comparator` attribute values to variables of the same name. 
+This method also sets the local variable `groupId`. Recall that the Screens 
+framework propagates this variable to your Interactor: 
 
     @Override
     protected View createScreenletView(Context context, AttributeSet attributes) {
@@ -566,7 +585,7 @@ same name:
 Lastly, you must add the `loadRows` and `createInteractor` methods. These 
 methods load the list rows and create an Interactor instance, respectively. The 
 `loadRows` method in `BookmarkListScreenlet` also retrieves a listener instance 
-so it can call the listener's `interactorCalled` method:
+so it can call the listener's `interactorCalled` method: 
 
     @Override
     protected void loadRows(BookmarkListInteractor interactor) {
@@ -582,7 +601,7 @@ so it can call the listener's `interactorCalled` method:
     }
 
 You're done! Your Screenlet is a ready-to-use component that you can use in your 
-app. You can even
+app. You can even 
 [package your Screenlet](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets)
 and contribute it to the Screens project, or distribute it in Maven Central or 
 jCenter. 
