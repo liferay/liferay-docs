@@ -181,11 +181,8 @@ add this to your `build.gradle` file:
     }
 
 
-    task wrapSoyTemplates
-
     classes {
         dependsOn buildSoy
-        dependsOn wrapSoyTemplates
     }
 
     transpileJS {
@@ -193,20 +190,10 @@ add this to your `build.gradle` file:
         srcIncludes = "**/*.es.js"
     }
 
-    wrapSoyTemplates {
-        doLast {
-            FileTree soyJsFileTree = fileTree(dir: "build", include: "**/*.soy.js")
-
-            String soyJsWrapperHeader = "AUI.add('liferay-ddm-form-field-time-template', function(A) {"
-            String soyJsWrapperFooter = "}, '', {requires: ['soyutils']});";
-
-            soyJsFileTree.each {
-                File soyJsFile ->
-
-
-                soyJsFile.text = soyJsWrapperHeader + soyJsFile.text.replace("(typeof ddm == 'undefined') { var ddm = {}; }", "(typeof ddm == 'undefined') { window.ddm = {}; }") + soyJsWrapperFooter
-            }
-        }
+    wrapSoyAlloyTemplate {
+        enabled = true
+        moduleName = "liferay-ddm-form-field-time-template"
+        namespace = "ddm"
     }
 
 Along with the regular Java `dependencies`, there's some JavaScript
