@@ -32,4 +32,6 @@ Under the hood, @ide@ is using
 [Blade CLI's theme project template](/develop/tutorials/-/knowledge_base/7-0/theme-template).
 If you're interested in creating Liferay themes using the
 Themes Generator, see its dedicated
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
+[tutorial](/develop/tutorials/-/knowledge_base/7-0/themes-generator). For more
+general information on Liferay themes, visit their dedicated tutorial section
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates).
