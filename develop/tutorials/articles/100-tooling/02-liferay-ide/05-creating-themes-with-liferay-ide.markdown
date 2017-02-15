@@ -1,4 +1,4 @@
-# Creating Themes with Liferay @ide@
+# Creating Themes with Liferay @ide@ [](id=creating-themes-with-liferay-ide)
 
 Liferay @ide@ provides a wizard letting you create and configure a Liferay theme
 project. You can create a theme standalone or in a
