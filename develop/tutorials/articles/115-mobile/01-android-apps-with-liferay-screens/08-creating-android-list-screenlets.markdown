@@ -28,12 +28,12 @@ therefore read the following tutorials:
 
 You'll create the list Screenlet by following these steps: 
 
-1. Creating the Model Class
-2. Creating the Screenlet's View
-3. Creating the Screenlet's Event
-4. Creating the Screenlet's Interactor
-5. Creating the Screenlet's Listener
-6. Creating the Screenlet Class
+1. [Creating the Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-model-class)
+2. [Creating the View](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view)
+3. [Creating the Event](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-event)
+4. [Creating the Interactor](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-interactor)
+5. [Creating the Listener](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-listener)
+6. [Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlet-class)
 
 First though, you should understand how pagination works with list Screenlets. 
 
@@ -50,11 +50,10 @@ Now you're ready to begin!
 Entities come back from Liferay in JSON. To work with these results efficiently 
 in your app, you must convert them to model objects that represent the entity in 
 Liferay. Although Screens's 
-[`BaseListCallback`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java) 
+[`BaseListInteractor`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
 transforms the JSON entities into `Map` objects for you, you still must 
 convert these into proper entity objects for use in your app. You'll do this via 
 a model class. 
-<!-- BaseListCallback doesn't exist anymore -->
 
 For example, Bookmark List Screenlet's model class (`Bookmark`) creates 
 `Bookmark` objects that contain a bookmark's URL and other data. To ensure quick 
@@ -197,7 +196,7 @@ the bookmark layout:
     }
 
 Now that your adapter exists, you can create your list Screenlet's View class. 
-This class should extend `BaseListScreenletView`, parameterized with your model 
+This class should extend `BaseListScreenletView` parameterized with your model 
 class, view holder, and adapter. Your View class must also override the 
 `createListAdapter` method to return an instance of your adapter. You'll also 
 create any other methods required to support your View's functionality. 
@@ -205,12 +204,12 @@ create any other methods required to support your View's functionality.
 For example, Bookmark List Screenlet's View class (`BookmarkListView`) must 
 represent `Bookmark` instances in a `BookmarkViewHolder` inside a 
 `BookmarkAdapter`. The `BookmarkListView` class must therefore extend 
-`BaseListScreenletView` with `Bookmark`, `BookmarkAdapter.BookmarkViewHolder`, 
-and `BookmarkAdapter` as type parameters. Besides overriding `createListAdapter` 
-to return a `BookmarkAdapter` instance, the only other functionality that this 
-View class needs to support is to get the layout for each row in the list. You 
-can accomplish this by overriding the `getItemLayoutId` method to return the row 
-layout you created earlier (`bookmark_row`). Create `BookmarkListView` now: 
+`BaseListScreenletView` parameterized with `Bookmark`, 
+`BookmarkAdapter.BookmarkViewHolder`, and `BookmarkAdapter`. Besides overriding 
+`createListAdapter` to return a `BookmarkAdapter` instance, the only other 
+functionality that this View class needs to support is to get the layout for 
+each row in the list. The overridden `getItemLayoutId` method does this by 
+returning the row layout `bookmark_row`: 
 
     import android.content.Context;
     import android.util.AttributeSet;
@@ -249,8 +248,8 @@ scroll through a potentially large list of items, your layout should use
 You should also include an 
 [Android `ProgressBar`](https://developer.android.com/reference/android/widget/ProgressBar.html) 
 to indicate progress when loading the list. Apart from the styling, this 
-layout's code is the same for all list Screenlets. Create Bookmark List 
-Screenlet's layout in `res/layout/list_bookmarks.xml` as follows: 
+layout's code is the same for all list Screenlets. For example, here's Bookmark 
+List Screenlet's layout `res/layout/list_bookmarks.xml`: 
 
     <com.liferay.mobile.screens.listbookmark.BookmarkListView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -282,27 +281,21 @@ $$$
 
 Next, you'll create your Screenlet's event. 
 
-## Creating the Screenlet's Event
+## Creating the Screenlet's Event [](id=creating-the-screenlets-event)
 
 Screens uses the 
 [EventBus](http://greenrobot.org/eventbus/) 
-library to handle communication within Screenlets. Your Screenlet’s components 
-must therefore use event classes to communicate with each other. Bookmark List 
-Screenlet's event class, `BookmarkEvent`, must communicate `Bookmark` objects. 
-<!-- 
-
-1. Are there any cases where you don't have to create an event class? For 
-example, if you're just communicating JSONObject or JSONArray, do you have to 
-create a custom event object? Screens used to have the built-in classes 
-JSONObjectEvent and JSONArrayEvent for this purpose. 
-
-2. Why extend ListEvent instead of BaseListEvent?
-
-3. Explain BookmarkEvent code
-
--->
-
-    import com.liferay.mobile.screens.base.list.interactor.ListEvent;
+library to handle communication within Screenlets. Screenlet components 
+therefore communicate with each other by using event classes that contain the 
+server call's results. Your list Screenlet's event class must extend 
+[the `ListEvent` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/ListEvent.java) 
+parameterized with your model class. Your event class should also contain a 
+private instance variable for the model class, a constructor that sets this 
+variable, and a no-argument constructor that calls the superclass constructor. 
+For example, Bookmark List Screenlet's event class (`BookmarkEvent`) 
+communicates `Bookmark` objects. It therefore extends `ListEvent` with 
+`Bookmark` as a type argument, and defines a private `Bookmark` variable that 
+its `BookmarkEvent(Bookmark bookmark)` constructor sets: 
 
     public class BookmarkEvent extends ListEvent<Bookmark> {
 
@@ -315,19 +308,33 @@ JSONObjectEvent and JSONArrayEvent for this purpose.
 	      public BookmarkEvent(Bookmark bookmark) {
       		  this.bookmark = bookmark;
 	      }
+        ...
 
-	      @Override
-	      public String getListKey() {
-		        return bookmark.getUrl();
-	      }
+You must also implement `ListEvent`'s abstract methods in your event class. Note 
+that these methods support 
+[offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android). 
+Although these methods are briefly described here, supporting offline mode in 
+your Screenlets is addressed in detail in a separate tutorial. 
 
-	      @Override
-	      public Bookmark getModel() {
-		        return bookmark;
-	      }
-    }
+- `getListKey`: returns the ID for the cache. This ID is typically the data 
+  each list row displays. For example, the `getListKey` method in 
+  `BookmarkEvent` returns the bookmark's URL: 
 
-Nice work! Now you can create your list Screenlet's Interactor. 
+        @Override
+        public String getListKey() {
+            return bookmark.getUrl();
+        }
+
+- `getModel`: unwraps the model entity to the cache by returning the model class 
+  instance. For example, the `getModel` method in `BookmarkEvent` method returns 
+  the bookmark: 
+
+        @Override
+        public Bookmark getModel() {
+            return bookmark;
+        }
+
+Now you can create your list Screenlet's Interactor. 
 
 ## Creating the Screenlet's Interactor [](id=creating-the-screenlets-interactor)
 
@@ -347,19 +354,19 @@ and process the results:
 - `getPageRowsRequest`: Retrieves the specified page of entities. In the example 
   `BookmarkListInteractor`, this method first uses the `args` parameter to 
   retrieve the ID of the folder to retrieve bookmarks from. It then sets the 
-  comparator if the app developer sets one when inserting the Screenlet XML in a 
-  fragment or activity. The `getPageRowsRequest` method finishes by calling 
-  `BookmarksEntryService`'s `getEntries` method to retrieve a page of bookmarks. 
-  Note that the service call, like the service call in the 
+  comparator (more on this shortly) if the app developer sets one when inserting 
+  the Screenlet XML in a fragment or activity. The `getPageRowsRequest` method 
+  finishes by calling `BookmarksEntryService`'s `getEntries` method to retrieve 
+  a page of bookmarks. Note that the service call, like the service call in the 
   [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets), 
   uses `LiferayServerContext.isLiferay7()` to check the portal version to make 
   sure the correct service instance is used. This isn't required if you only 
   plan to use your Screenlet with one portal version. Also note that the 
   `groupId` variable used to make the service calls isn't set anywhere in 
   `getPageRowsRequest` or `BookmarkListInteractor`. Interactors that extend 
-  `BaseListInteractor` inherit this variable via the Screens framework. You'll 
-  set it when you create the Screenlet class. Here's `BookmarkListInteractor`'s 
-  complete `getPageRowsRequest` method: 
+  `BaseListInteractor`, like `BookmarkListInteractor`, inherit this variable via 
+  the Screens framework. You'll set it when you create the Screenlet class. 
+  Here's `BookmarkListInteractor`'s complete `getPageRowsRequest` method: 
 
         @Override
         protected JSONArray getPageRowsRequest(Query query, Object... args) throws Exception {
@@ -384,8 +391,8 @@ and process the results:
     example, the Bookmarks portlet contains several comparators that can sort 
     entities by different criteria. 
     [Click here](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator) 
-    to see these comparators. Although not required, you can develop your list 
-    Screenlet to use a comparator to sort its entities. Since Bookmark List 
+    to see these comparators. Although it's not required, you can develop your 
+    list Screenlet to use a comparator to sort its entities. Since Bookmark List 
     Screenlet supports comparators, you'll see more of this as you progress 
     through this tutorial. 
 
@@ -409,9 +416,9 @@ and process the results:
 
 - `createEntity`: Returns an instance of your event that contains the server 
   call's results. This method receives the results as `Map<String, Object>`, 
-  which it then uses to create an instance of your model class. It then uses 
-  this model instance to create the event object. In the example 
-  `BookmarkListInteractor`, this method passes the `Map<String, Object>` to the 
+  which it uses to instantiate your model class. It then uses this model 
+  instance to create the event object. In the example `BookmarkListInteractor`, 
+  this method passes the `Map<String, Object>` to the 
   `Bookmark` constructor. It then uses the resulting `Bookmark` to create and 
   return a `BookmarkEvent`: 
 
@@ -424,19 +431,18 @@ and process the results:
 
 To see the complete `BookmarkListInteractor` class, 
 [click here](https://github.com/liferay/liferay-screens/blob/master/android/samples/listbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/listbookmark/BookmarkListInteractor.java). 
-Note that the complete class also contains the method `getIdFromArgs`. This 
+Note that the complete class also contains the `getIdFromArgs` method. This 
 method supports 
-[offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android) 
-and isn't required. Supporting offline mode in your Screenlets is addressed in a 
-separate tutorial. 
+[offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android), 
+but isn't required. Supporting offline mode in your Screenlets is addressed in 
+detail in a separate tutorial. 
 
-Great! Your Interactor is finished. Next, you'll create a listener for your 
-Screenlet. 
+Next, you'll create your Screenlet's listener. 
 
 ## Creating the Screenlet's Listener [](id=creating-the-screenlets-listener)
 
-Recall that listeners let the app developer respond to events that occur in your 
-Screenlet. For example, an app developer using Login Screenlet in an activity 
+Recall that listeners let the app developer respond to events that occur in 
+Screenlets. For example, an app developer using Login Screenlet in an activity 
 must implement `LoginListener` in that activity to respond to login success or 
 failure. When creating a list Screenlet, however, you don't have to create a 
 separate listener. Developers can use your list Screenlet in an activity or 
@@ -452,22 +458,22 @@ like this:
 The `BaseListListener` interface defines the following methods that the app 
 developer can implement in their activity or fragment: 
 
-- `void onListPageFailed(int startRow, Exception e)`: Respond to the Screenlet's 
-  failure to retrieve entities from the server. 
+- `void onListPageFailed(int startRow, Exception e)`: Responds to the 
+  Screenlet's failure to retrieve entities from the server. 
 
 - `void onListPageReceived(int startRow, int endRow, List<E> entries, int rowCount)`: 
-  Respond to the Screenlet's success to retrieve entities from the server. 
+  Responds to the Screenlet's success in retrieving entities from the server. 
 
-- `void onListItemSelected(E element, View view)`: Respond to a user selection 
+- `void onListItemSelected(E element, View view)`: Responds to a user selection 
   in the list. 
 
 If these methods meet your list Screenlet's needs, then you can move on to the 
 next section in this tutorial. If you want to let app developers respond to more 
 actions, however, you must create your own listener that extends 
-`BaseListListener` with your model class as a type parameter. For example, 
-Bookmark List Screenlet contains such a listener: `BookmarkListListener`. This 
-listener defines a single method that notifies the app developer when the 
-Interactor is called: 
+`BaseListListener` parameterized with your model class. For example, Bookmark 
+List Screenlet contains such a listener: `BookmarkListListener`. This listener 
+defines a single method that notifies the app developer when the Interactor is 
+called: 
 
     public interface BookmarkListListener extends BaseListListener<Bookmark> {
         void interactorCalled();
@@ -500,10 +506,10 @@ file:
         </declare-styleable>
     </resources>
 
-Your Screenlet class must extend `BaseListScreenlet` with your model class and 
-Interactor implementation as type parameters. For example, Bookmark List 
-Screenlet's Screenlet class, `BookmarkListScreenlet`, extends 
-`BaseListScreenlet` parameterized with `Bookmark` and `BookmarkListInteractor`: 
+Your Screenlet class must extend `BaseListScreenlet` parameterized with your 
+model class and Interactor. For example, Bookmark List Screenlet's Screenlet 
+class (`BookmarkListScreenlet`) extends `BaseListScreenlet` parameterized with 
+`Bookmark` and `BookmarkListInteractor`: 
 
     public class BookmarkListScreenlet 
         extends BaseListScreenlet<Bookmark, BookmarkListInteractor> {...
@@ -511,8 +517,8 @@ Screenlet's Screenlet class, `BookmarkListScreenlet`, extends
 You must also create instance variables for the XML attributes that you want to 
 pass to your Interactor. For example, recall that the request methods in 
 `BookmarkListInteractor` receive two `Object` arguments: the folder ID and the 
-comparator. The `BookmarkListScreenlet` must therefore contain variables for 
-these parameters so it can pass them to the Interactor: 
+comparator. The `BookmarkListScreenlet` class must therefore contain variables 
+for these parameters so it can pass them to the Interactor: 
 
     private long folderId;
     private String comparator;
@@ -549,12 +555,14 @@ its `error` method:
     }
 
 Next, override the `createScreenletView` method to read the values of the XML 
-attributes you defined earlier and create the Screenlet's View. Recall that this 
-method assigns the attribute values to their corresponding instance variables. 
-For example, the `createScreenletView` method in `BookmarkListScreenlet` assigns 
-the `folderId` and `comparator` attribute values to variables of the same name. 
-This method also sets the local variable `groupId`. Recall that the Screens 
-framework propagates this variable to your Interactor: 
+attributes you defined earlier and create the Screenlet's View. Recall from 
+[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
+that this method assigns the attribute values to their corresponding instance 
+variables. For example, the `createScreenletView` method in 
+`BookmarkListScreenlet` assigns the `folderId` and `comparator` attribute values 
+to variables of the same name. This method also sets the local variable 
+`groupId`. Recall that the Screens framework propagates this variable to your 
+Interactor: 
 
     @Override
     protected View createScreenletView(Context context, AttributeSet attributes) {
@@ -569,10 +577,12 @@ framework propagates this variable to your Interactor:
         return super.createScreenletView(context, attributes);
     }
 
-Lastly, you must add the `loadRows` and `createInteractor` methods. These 
-methods load the list rows and create an Interactor instance, respectively. The 
-`loadRows` method in `BookmarkListScreenlet` also retrieves a listener instance 
-so it can call the listener's `interactorCalled` method: 
+Next, override the `loadRows` method to retrieve the list rows from the server. 
+You do this by starting your Interactor. For example, the `loadRows` method in 
+`BookmarkListScreenlet` first retrieves a listener instance so it can call the 
+listener's `interactorCalled` method. It then starts the server operation to 
+retrieve the list rows by calling the Interactor's `start` method with 
+`folderId` and `comparator`: 
 
     @Override
     protected void loadRows(BookmarkListInteractor interactor) {
@@ -581,6 +591,13 @@ so it can call the listener's `interactorCalled` method:
 
         interactor.start(folderId, comparator);
     }
+
+Note that the Interactor inherits the `start` method via `BaseListInteractor`. 
+
+Lastly, override the `createInteractor` method to instantiate your Interactor. 
+Since that's all this method needs to do, call your Interactor's constructor and 
+return the new instance. For example, `BookmarkListScreenlet`'s 
+`createInteractor` method returns a new `BookmarkListInteractor`: 
 
     @Override
     protected BookmarkListInteractor createInteractor(String actionName) {
@@ -595,10 +612,10 @@ jCenter.
 
 ## Using the Screenlet [](id=using-the-screenlet)
 
-You can now use the new Screenlet 
+You can now use your new list Screenlet 
 [the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps): 
 
-1. Insert the Screenlet’s XML in the layout of the activity or fragment you want 
+1. Insert the Screenlet's XML in the layout of the activity or fragment you want 
    to use the Screenlet in. For example, here's Bookmark List Screenlet's XML: 
 
         <com.liferay.mobile.screens.listbookmark.BookmarkListScreenlet
@@ -613,13 +630,13 @@ You can now use the new Screenlet
     Note that to set a comparator, you must use its fully qualified class name. 
     For example, to use 
     [the Bookmarks portlet's EntryURLComparator](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator/EntryURLComparator.java), 
-    set `app:comparator` as follows: 
+    set `app:comparator` in the Screenlet XML as follows: 
 
         app:comparator="com.liferay.bookmarks.util.comparator.EntryURLComparator"
 
-2. Implement the Screenlet’s listener in the activity or fragment class. If your 
+2. Implement the Screenlet's listener in the activity or fragment class. If your 
    list Screenlet doesn't have a custom listener, then you can do this by 
-   implementing `BaseListListener` parameterized by your model class. For 
+   implementing `BaseListListener` parameterized with your model class. For 
    example:
 
         public class YourListActivity extends AppCompatActivity 
@@ -636,6 +653,8 @@ You can now use the new Screenlet
 
     See the full example of this 
     [here in GitHub](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/ListBookmarksActivity.java). 
+
+Well done! Now you know how to create list Screenlets. 
 
 ## Related Topics [](id=related-topics)
 
