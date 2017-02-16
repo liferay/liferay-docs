@@ -387,8 +387,8 @@ mapping. These are referred to as [properties](https://www.elastic.co/guide/en/e
                     "index": "not_analyzed",
                     "store": "yes",
                     "type": "string"
-                },
-            },   
+                }
+            }   
         }
     }
 
