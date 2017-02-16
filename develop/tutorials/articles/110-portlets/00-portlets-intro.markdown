@@ -30,12 +30,17 @@ traditional pain points associated with developing web apps.
 ![Figure 1: You can place multiple portlets on a single page.](../../images/portlet-applications.png)
 
 What's more, portals and portlets are standards-based. In 2003, Java Portlet 
-Specification 1.0 (JSR-168) first defined portal and portlet behavior. In 2008, 
-Java Portlet Specification 2.0 (JSR-286) refined and built on JSR-168, while 
-maintaining backwards compatibility, to define features like inter-portlet 
-communication (IPC) and more. The recently released Java Portlet Specification 
-3.0 (JSR-362) continues portal and portlet evolution. Liferay leads in this 
-space by having a member in the Expert Group. 
+Specification 1.0 
+([JSR-168](https://jcp.org/en/jsr/detail?id=168)) 
+first defined portal and portlet behavior. In 2008, Java Portlet Specification 
+2.0 
+([JSR-286](https://jcp.org/en/jsr/detail?id=286)) 
+refined and built on JSR-168, while maintaining backwards compatibility, to 
+define features like inter-portlet communication (IPC) and more. The recently 
+released Java Portlet Specification 3.0 
+([JSR-362](https://jcp.org/en/jsr/detail?id=362)) 
+continues portal and portlet evolution. Liferay leads in this space by having a 
+member in the Expert Group. 
 
 So what do these specifications define? We won't bore you with the gory details; 
 if that's what you want you can read the specifications. We will tell you, 
@@ -80,7 +85,7 @@ Modes distinguish the portlet's current function:
   portlet's main functionality. 
 - **Edit mode:** The portlet's configuration mode. Use this mode to configure a 
   custom view or behavior. For example, the Edit mode of a weather portlet could 
-  let you choose a specific location to retrieve weather data from. 
+  let you choose a location to retrieve weather data from. 
 - **Help mode:** A mode that displays the portlet's help information. 
 
 Most modern applications use View Mode only. 
@@ -96,26 +101,29 @@ Window states mimic window behavior in a traditional desktop environment:
 When you develop portlets for @product@, you can leverage all the features
 defined by the portlet specification. Depending on how you develop and package
 your portlet, however, it may not be able to run on other portal containers. You
-may now be saying, "Hold on a minute! I thought @product@ was
-standards-compliant? What gives?" @product@ is standards-compliant, but it
-contains some sweeteners in the form of APIs designed to make developers' lives
-easier. For example, @product@ contains an MVC framework that makes it simpler
-to implement MVC in your portlet. This framework, however, is only available in
-Liferay's portal. Without modification, a portlet that uses this framework won't
-run if deployed to a non-Liferay portal container. Note, though, that we don't
-force you to use @product@'s MVC framework or any of its other unique APIs. For
-example, you can develop your portlet with strictly standards-compliant
-frameworks and APIs, package it in a WAR file, and then deploy it on any
-standards-compliant portal container. 
+may now be saying, "Hold on a minute! I thought @product@ was 
+standards-compliant? What gives?" @product@ is standards-compliant, but it 
+contains some sweeteners in the form of APIs designed to make developers' lives 
+easier. For example, @product@ contains an 
+[MVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) 
+that makes it simpler to implement MVC in your portlet. This framework, however, 
+is only available in Liferay's portal. Without modification, a portlet that uses 
+this framework won't run if deployed to a non-Liferay portal container. Note, 
+though, that we don't force you to use @product@'s MVC framework or any of its 
+other unique APIs. For example, you can develop your portlet with strictly 
+standards-compliant frameworks and APIs, package it in a WAR file, and then 
+deploy it on any standards-compliant portal container. 
 
-@product@ also contains an OSGi runtime. This means that you don't have to
-develop and deploy your portlet as a traditional WAR file; you can do so as OSGi
-modules instead. We recommend the latter, so you can take advantage of the
-modularity features inherent in OSGi. For a detailed description of these
-features, see the tutorial OSGi and Modularity. Note, however, that @product@
-portlets you develop as OSGi modules won't run on other portlet containers that
-lack an OSGi runtime. Even so, the advantages of modularity are so great that we
-still recommend you develop your portlets as OSGi modules. 
+@product@ also contains an OSGi runtime. This means that you don't have to 
+develop and deploy your portlet as a traditional WAR file; you can do so as OSGi 
+modules instead. We recommend the latter, so you can take advantage of the 
+modularity features inherent in OSGi. For a detailed description of these 
+features, see the tutorial 
+[OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers). 
+Note, however, that @product@ portlets you develop as OSGi modules won't run on 
+other portlet containers that lack an OSGi runtime. Even so, the advantages of 
+modularity are so great that we still recommend you develop your portlets as 
+OSGi modules. 
 
 With that said, you can use a variety of technologies to develop portlets that
 run on @product@. Have you ever heard the saying, "There's more than one way to
@@ -132,16 +140,3 @@ how to develop portlets using the following frameworks and techniques:
 - Applying Lexicon Styles to Your App
 - Automatic Single Page Applications
 - Creating Layouts Inside Custom Portlets
-
-<!-- old list
--  Liferay's `MVCPortlet`
--  Soy Portlet
--  Spring MVC
--  JavaServer Faces
--  Alloy Portlet
--  Full Page Applications
--  Automatic Single Page Applications
--  Configuring Friendly URLS
--  Application Display Templates
--  Portlet Providers
--->
