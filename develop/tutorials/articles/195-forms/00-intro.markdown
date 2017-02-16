@@ -1,9 +1,13 @@
 # Liferay Forms [](id=liferay-forms)
 
-The Forms application ships with @product@. Explore it's [usage and
-form-building power](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users);
-you'll find it's very useful out-of-the-box. Of course, you're not limited to
-its existing functionality. The application is very extensible.
+Many modern websites rely on forms for their functionality Liferay's Forms
+application is maturing rapidly, offering [rich out-of-the-box
+functionality](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users).
+Most use cases, from the simplest to the most complex, will be met using the
+application as it is. But that doesn't mean you can't make it do even more!
 
-For example, continue reading to learn to develop your own form field types, how
-to build and configure forms using the API with Java annotations, and more.
+In this section, learn to extend the Forms application's functionality and
+leverage its APIs.
+
+- Build your own field types for Liferay's Forms application
+- Use annotations to leverage the DDM API and build reusable forms quickly
