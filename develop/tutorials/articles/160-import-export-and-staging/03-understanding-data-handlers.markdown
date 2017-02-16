@@ -63,8 +63,8 @@ single Bookmarks entry and the portlet's configuration:
     - `manifest.xml`
 
 You can tell from the LAR's generated name what information is contained in
-the LAR: the Bookmarks Admin app's data. In the root level of the LAR file is
-the `manifest.xml` file, which provides essential information about the export
+the LAR: the Bookmarks Admin app's data. The `manifest.xml` file sits at the
+root of the LAR file. It provides essential information about the export
 process. The `manifest.xml` for the sample Bookmarks LAR is pretty bare since
 it's not exporting much content, but this file can become large when exporting
 pages of content. There are four main parts (tags) to a `manifest.xml` file.
@@ -73,24 +73,24 @@ pages of content. There are four main parts (tags) to a `manifest.xml` file.
   and site you're exporting (if necessary). For example, it can include
   locales, build information, export date, company ID, group ID, layouts,
   themes, etc.
-- `missing-references`: entities that must be validated during import. For
+- `missing-references`: lists entities that must be validated during import. For
   example, suppose you're exporting a web content article that references an
   image (e.g., an embedded image residing in the document library). If the image
-  was not selected for export, the image must be available in the importation
-  site. Therefore, the image would be flagged as a missing reference in the LAR
-  file. If the missing reference does not exist in the importation site when the
-  LAR is imported, the import process fails. The Import UI notifies you which
-  missing references were not validated if this fails your LAR import.
+  was not selected for export, the image must already exist in the site where
+  the article is imported. Therefore, the image would be flagged as a missing
+  reference in the LAR file. If the missing reference does not exist in the site
+  when the LAR is imported, the import process fails. If your import fails, the
+  Import UI shows you the missing references that weren't validated. 
 - `portlets`: defines the portlets (i.e., portlet data) exported in the LAR.
   Each portlet definition has basic information on the exported portlet and
   points to the generated `portlet.xml` for more specialized portlet
   information.
-- `manifest-summary`: contains information on what has been exported. Due the
-  behavior of the Staging and Export frameworks, some entities are still
-  exported or published even though they weren't marked for it, because
-  the process respects data integrity. This section holds information for all
-  the entities that have been processed. The entities defining a non-zero
-  `addition-count` attribute are displayed in the Export/Import UI.
+- `manifest-summary`: contains information on what has been exported. The
+   Staging and Export frameworks export or publish some entities even
+   though they weren't marked for it, because the process respects data
+   integrity. This section holds information for all the entities that have
+   been processed. The entities defining a non-zero `addition-count` attribute
+   are displayed in the Export/Import UI.
 
 The `manifest.xml` file also defines layout information if you've exported pages
 in your LAR. For example, your manifest could have `LayoutSet`, `Layout`, and
