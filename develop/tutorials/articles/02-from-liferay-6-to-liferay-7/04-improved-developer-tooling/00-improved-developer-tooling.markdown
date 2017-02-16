@@ -225,7 +225,7 @@ Development](/develop/tutorials/-/knowledge_base/7-0/starting-module-development
 
 Next, you'll learn new features for developing on @product@ using Maven.
 
-## What's New in @product-ver@ for Maven Users [](id=[) [](id=whats-new-in-product-ver-for-maven-users-id) [](id=whats-new-in-product-ver-for-maven-users-id-idwhats-new-in-product-ver-for-) [](id=whats-new-in-product-ver-for-maven-users-id-idwhats-new-in-product-ver-for-) [](id=whats-new-in-product-ver-for-maven-users-id-idwhats-new-in-product-ver-for-)
+## What's New in @product-ver@ for Maven Users [](id=[) [](id=whats-new-in-product-ver-for-maven-users-id) [](id=whats-new-in-product-ver-for-maven-users-id-idwhats-new-in-product-ver-for-) [](id=whats-new-in-product-ver-for-maven-users-id-idwhats-new-in-product-ver-for-) [](id=whats-new-in-product-ver-for-maven-users-id-idwhats-new-in-product-ver-for-) [](id=whats-new-in-product-ver-for-maven-users-id-idwhats-new-in-product-ver-for-)
 
 @product-ver@ fully supports Maven development and offers several new and
 improved features: 

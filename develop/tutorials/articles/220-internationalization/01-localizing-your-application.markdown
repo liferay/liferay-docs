@@ -176,7 +176,7 @@ the detection.
 Next, you'll configure a web module to use the language module's resource
 bundle. 
 
-## Using a Language Module
+## Using a Language Module [](id=using-a-language-module)
 
 A module can use a language module's resource bundle loader by declaring it as a
 required capability and declaring the language module's resource bundle as its
