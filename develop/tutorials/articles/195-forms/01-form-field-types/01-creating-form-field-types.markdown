@@ -375,7 +375,7 @@ when it satisfies dependencies for each JavaScript component. For more
 information about the Alloy loader see the [tutorial on its
 usage](/developer/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader).
 
-[![Figure 2: Add your own form field types to the Forms application.](../../images/forms-time-field-type.png)
+[![Figure 1: Add your own form field types to the Forms application.](../../../images/forms-time-field-type.png)
 
 If you build and deploy your new field type module, you'll see that you get
 exactly what you described in the `time.soy` file: a single text input field. Of
@@ -420,7 +420,7 @@ information](http://alloyui.com/tutorials/timepicker/).
 
 Now when the field is rendered, there's a real time picker.
 
-![Figure 3: The Alloy UI Timepicker in action.](../../images/forms-timepicker.png)
+![Figure 2: The Alloy UI Timepicker in action.](../../../images/forms-timepicker.png)
 
 
 Now you know how to create a new field type and define its behavior. Currently,

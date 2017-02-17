@@ -1,9 +1,9 @@
-# Form Field Types
+# Form Field Types [](id=form-field-types)
 
 The Forms application contains many highly configurable field types
 out-of-the-box. Most use cases will be met with one of the existing field types. 
 
-![Figure 1: The Forms application has useful out-of-the-box field types, but you can add your own if you need to.](../../images/forms-field-types.png)
+![Figure 1: The Forms application has useful out-of-the-box field types, but you can add your own if you need to.](../../../images/forms-field-types.png)
 
 If you're reading this, however, your use case probably wasn't met with the
 default field types. For example, perhaps you need a color picker field. You
