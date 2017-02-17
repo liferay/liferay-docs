@@ -271,6 +271,26 @@ shards is `1`:
     index.number_of_shards: 5
     index.number_of_replicas: 1
 
++$$$
+
+**Note:** Elasticsearch uses the [Zen Discovery
+Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-discovery-zen.html)
+by default, which provides unicast discovery. Additionally, nodes in the
+cluster communicate using the [Transport
+Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-transport.html),
+through TCP. See the Elasticsearch documentation for the available properties
+(to be set in the elasticsearch.yml file), and the @product@ Elasticsearch
+Adapter’s [reference
+article](https://dev.liferay.com/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
+for the adapter’s available settings.
+
+At a minimum, provide the list of hosts to act as gossip routers during unicast
+discovery in the `elasticsearch.yml`:
+
+    discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
+
+$$$
+
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
