@@ -28,6 +28,22 @@ you could use this. Here are a few practical examples:
 - Creating an alert to be displayed in the Alerts portlet for any user assigned
   to approve content
 
++$$$
+
+**Note:** In earlier versions of @product@, a
+[bug](https://issues.liferay.com/browse/LPS-70234) made it difficult (without a
+messy workaround) to resolve classes outside of @product@'s core (for example,
+the `portal-kernel` module). That bug is fixed as of the following versions:
+
+- Liferay Digital Enterprise 7.0 Fix Pack 11
+- Liferay Portal 7.0 GA 4
+
+If your workflow script depends on services in a module outside of @product@'s
+core (for example, `JournalArticleLocalService`), make sure you are running an
+up-to-date version of @product@.
+
+$$$
+
 Of course, before you try any of this, you need to know the appropriate syntax
 for inserting a script into a workflow. In an XML workflow definition, a script
 can be used in any XML type that can contain an *actions* tag: those types are
