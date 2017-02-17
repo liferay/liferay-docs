@@ -1,4 +1,4 @@
-# Understanding Data Handlers
+# Understanding Data Handlers [](id=understanding-data-handlers)
 
 A common requirement for many data driven applications is to import and export
 data. This *could* be accomplished by accessing your database directly and
@@ -12,7 +12,7 @@ running SQL queries to export/import data; however, this has several drawbacks:
 Liferay provides a more convenient and reliable way to export/import your data
 without accessing the database.
 
-## Liferay Archive (LAR) File
+## Liferay Archive (LAR) File [](id=liferay-archive-lar-file)
 
 An easier way to export/import your application's data is to use a Liferay
 ARchive (LAR) file. Liferay provides the LAR feature to address the need to
@@ -39,7 +39,7 @@ Knowing how a LAR file is constructed, however, is beneficial to understand the
 overall purpose of your application's data handlers. Next, you'll explore a LAR
 file's anatomy.
 
-### LAR File Anatomy
+### LAR File Anatomy [](id=lar-file-anatomy)
 
 What is a LAR file? You know the general concept for *why* it's used, but you
 may want to know what lives inside to make your export/import processes work.
@@ -151,7 +151,7 @@ generated and how it's structured.
 Next, you'll learn about data handler fundamentals and the prerequisites
 required to implement them.
 
-## Data Handler Fundamentals
+## Data Handler Fundamentals [](id=data-handler-fundamentals)
 
 To leverage the Export/Import framework's ability to export/import a LAR file,
 you can implement Data Handlers in your application. There are two types of data
