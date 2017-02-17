@@ -32,6 +32,11 @@ language.
 You get the point, right? The Right to Left Language Support (RTL Support) app
 does the heavy lifting of rendering the RTL content appropriately! 
 
+Note: RTL Support has been integrated into Liferay Portal 6.2 EE with
+portal-50-6210 (or higher) and Liferay Portal 6.2 CE GA5 (or later). The
+_portal_ will contain RTL support without further configuration, and there is no
+further need to deploy this standalone app.
+
 Now that you've seen Liferay Portal and its apps rendered using RTL Support,
 have you wondered how you might leverage RTL Support in your custom plugins?
 You'll learn how to use RTL Support with your plugins next.
