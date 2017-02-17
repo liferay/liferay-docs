@@ -12,7 +12,7 @@ questions.
 - Can your network support @product@?
 - Will you enable Liferay's PACL security feature?
 
-In the next section, you'll answer these questions and learn the basic steps for installing
+Next, you'll answer these questions and learn the basic steps for installing
 @product@.
 
 ## Obtaining @product@
@@ -152,7 +152,7 @@ plugins or start upgrading @product@. Once the tables are created or the upgrade
 is complete, you can remove those rights until the next deploy or upgrade.
 Additionally, your own developers might create plugins that need to create their
 own tables. These are just like @product@'s plugins that do the same thing, and
-they cannot be installed if @product@ doesn't have the permissions to create database tables. If you wish
+they cannot be installed if @product@ can't create database tables. If you wish
 to install these plugins, you will need to grant rights to create tables in the
 database each time before you attempt to install them.
 
