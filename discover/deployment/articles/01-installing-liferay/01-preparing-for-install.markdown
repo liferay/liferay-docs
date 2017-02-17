@@ -31,7 +31,7 @@ members, plus a few commercial alternatives, in addition to the `.war` files
 for manual installation.
 
 So what is a @product@ bundle anyway? A @product@ bundle is an application server
-with @product@ preinstalled. Using a bundle is the easiest way to install
+with @product@ pre-installed. Using a bundle is the easiest way to install
 @product@. @product@ is bundled with a number of application servers; all you need
 to do is choose the one that best fits your needs. If you don't currently have
 an application server preference, consider starting with the Tomcat bundle.
@@ -54,7 +54,7 @@ application server. Next, we'll go over the steps it takes to install @product@.
 
 ## @product@ Installation Steps [](id=liferay-installation-steps)
 
-Before you begin installing @product@, You should review these basic
+Before you begin installing @product@, you should review these basic
 installation steps:
 
 1. Choose a database server to use with @product@ and create a new database.
@@ -108,7 +108,7 @@ its database automatically during upgrades or when various @product@ plugins tha
 create database tables of their own are installed. This method is by far the
 best way to set up your @product@ database.
 
-If you will set up @product@'s database with the recommended permissions
+If you choose to set up @product@'s database with the recommended permissions
 described in this section, you can skip to the next section.
 
 +$$$
@@ -118,7 +118,7 @@ installations. This procedure is documented here so that enterprises with more
 restrictive standards can install @product@ with stricter (but sub-optimal)
 database settings. If it's at all possible, we recommend that you use the
 method described in the previous section instead of the procedure outlined
-here.
+below.
 
 $$$
 
@@ -129,7 +129,7 @@ their tables. For these organizations, Select, Insert, Update and Delete are
 the only allowed permissions. Thus, in this section we explain how to set up
 the database manually. If your organization *is* willing to grant the @product@
 database user the permissions to create and drop tables in the database--and
-this is the recommended configuration--by all means, use the recommended
+this is the recommended configuration--then simply use the recommended
 configuration described in the previous section.
 
 1. Create a new, blank, database for @product@.
@@ -150,13 +150,13 @@ database user doesn't have enough rights to create/modify/drop tables in the
 database, you must grant those rights to the ID before you deploy one of these
 plugins or start upgrading @product@. Once the tables are created or the upgrade
 is complete, you can remove those rights until the next deploy or upgrade.
-Additionally, your developers might create plugins that need to create their
+Additionally, your own developers might create plugins that need to create their
 own tables. These are just like @product@'s plugins that do the same thing, and
 they cannot be installed if @product@ can't create database tables. If you wish
 to install these plugins, you will need to grant rights to create tables in the
-database before you attempt to install them.
+database each time before you attempt to install them.
 
-@product@ offers several configurations to store Documents and Media files by setting the `dl.store.impl=` property. Available options are Simple File System Store, Advanced File System Store, CMIS Store, DBStore, JCRStore, and Amazon S3Store. In addition, @product@ can be connected to various open source and enterprise level document repositories. All of the repositories are connected to @product@ through hooks available on Liferay Marketplace (see below). 
+@product@ offers several configurations to store Documents and Media files by setting the `dl.store.impl=` property. Available options are Simple File System Store, Advanced File System Store, CMIS Store, DBStore, JCRStore, and Amazon S3Store. In addition, @product@ can be connected to various open source and enterprise-level document repositories. All of the repositories are connected to @product@ through hooks available on Liferay Marketplace (see below). 
 
 Once you have your database and document repository ready, you can install @product@ on your server.
 
