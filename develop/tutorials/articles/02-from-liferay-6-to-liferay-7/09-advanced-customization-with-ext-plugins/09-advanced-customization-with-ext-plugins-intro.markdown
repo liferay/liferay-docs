@@ -831,56 +831,6 @@ Now, perform these actions on your server:
 Next, we'll show you how to migrate your extension environment (from older
 versions of @product@) into Ext plugins. 
 
-## Migrating Old Extension Environments
-
-Because Ext plugins are an evolution of the extension environment provided in
-@product@ 5.2 and earlier, you might need to migrate your extension environment
-into Ext plugins when upgrading @product@. If you need to do this, we have good
-news; migrating is automated and relatively easy. 
-
-+$$$
-
-**Note:** When migrating an extension environment, first consider whether any of
-the extension environment's features can be moved into other types of plugins.
-OSGi modules are designed to meet specific needs and they're easier to learn.
-Additionally, they're easier to maintain since they often require fewer changes
-when upgrading to a new version of @product@.
-
-$$$
-
-To successfully migrate, execute an Ant target within the `ext` directory of the
-Plugins SDK, pointing to the old extension environment and naming the new
-plugin. 
-
-    ant upgrade-ext -Dext.dir=/projects/liferay/ext -Dext.name=my-ext -Dext.display.name="My Ext"
-
-
-Remember the three parameters you saw before: 
-
-- `ext.dir`: The location of the old extension environment. 
-- `ext.name`: The name of the Ext plugin that you want to create. 
-- `ext.display.name`: The display name. 
-
-After executing the target, you should see the logs of several copy operations
-that take files from the extension environment and copy them into the equivalent
-directory within the Ext plugin (see the section *Creating an Ext plugin* for an
-explanation of the main directories within the plugin).
-
-With the migration process finished, you can upgrade your code to the new
-version of @product@ by completing a few additional tasks. Most commonly, you
-should do these things: 
-
-- Review the uses of @product@'s APIs and adapt them accordingly. 
-- Review any changes to the new version of @product@'s JSPs. Merge your changes
-  into the JSPs of the new @product@ version. 
-- Run `ant build-service` to use Service Builder. It's also recommended
-  to consider moving this code to a portlet plugin, because Service Builder is
-  deprecated in Ext, and plugins allow for greater modularity and maintainability.
-- If you implemented any portlets in the old extension environment, migrate them
-  to portlet plugins; extension environment portlets have been deprecated since
-  Liferay Portal 6.0, and support isn't guaranteed in future Liferay Portal
-  releases. 
-
 #### Licensing and Contributing
 
 Liferay Portal is Open Source software licensed under the LGPL 2.1 license
