@@ -43,20 +43,27 @@ There are a few corner cases where you may need an Ext plugin to customize a
 part of @product@ that does not provide an extension point. For example, the
 following cases would require an Ext plugin:
 
-- To specify custom classes as portal property values. For example, to specify a
-  property that needs a custom class (e.g.,
-  `global.startup.events=my.custom.MyStartupAction`), you need an Ext plugin to
-  add your custom class to the portal class loader. 
 - To provide custom implementations for any Liferay beans declared in Liferay's
   Spring files (when possible, use
   [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
-  instead of an Ext plugin).
+  instead of an Ext plugin). @product-ver@ removed many Liferay beans, so make
+  sure your overridden beans are still relevant if converting your legacy Ext
+  plugin.
 - To add JSPs referenced from portal properties that can only be changed
   from an Ext plugin.
-- To Overwrite a class (not recommended unless you have no other choice). 
+- To Overwrite a class in a @product-ver@ core JAR (e.g., `portal-impl`).
+- Modifying @product@'s `web.xml` file.
 
-<!-- These cases may no longer be accurate for Liferay 7. If so, please provide
-any relevant cases for Liferay 7/DXP -->
++$$$
+
+**Note:** In previous versions of Liferay Portal, you needed an Ext plugin to
+specify classes as portal property values (e.g.,
+`global.starup.events.my.custom.MyStartupAction`), since the custom class had to
+be added to the portal class loader. This is no longer the case in @product-ver@
+since all lifecycle events can use OSGi services with no need to edit these
+legacy properties.
+
+$$$
 
 With these use cases in mind, you'll learn how to use Ext for these things: 
 
@@ -176,7 +183,7 @@ classes you add in `ext-impl/src`.
 
 - `ext-service/src`: Contains classes that should be available to other plugins.
 In advanced scenarios, this folder can be used to hold classes that overwrite
-classes from `portal-service.jar`. Service Builder puts services' interfaces
+classes from `portal-kernel.jar`. Service Builder puts services' interfaces
 here. 
 
 - `ext-web/docroot`: Contains the web application's configuration files, including
@@ -205,7 +212,7 @@ to override a property is when specifying a custom class as a
 [portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html)
 value. You can use a `portal-ext.properties` file with each of your Ext 
 plugins, but don't override the same property from multiple 
-`portal-ext.properties` files--the loading order isn't assured and you can 
+`portal-ext.properties` files. The loading order isn't assured and you can 
 cause unintended system behavior as a result. 
 
 - `docroot/WEB-INF/ext-web/docroot/WEB-INF` files: 
@@ -240,8 +247,8 @@ customize Liferay Portal.
 ## Developing an Ext Plugin
 
 An Ext plugin changes Liferay itself when the plugin is deployed; it's not a
-separate component that can you can easily remove at any time. For this reason,
-the Ext plugin development process is different from that of other plugin types.
+separate component that you can easily remove at any time. For this reason, the
+Ext plugin development process is different from that of other plugin types.
 It's important to remember that once an Ext plugin is deployed, some of its
 files are copied *inside* the Liferay installation; the only way to remove the
 changes is by *redeploying* an unmodified Liferay application. 
