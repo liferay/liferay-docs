@@ -10,7 +10,7 @@ to do this:
    LCS project. If your company has multiple projects, select the one you want 
    to activate this server under from the user menu at the top right.
 
-    ![Figure 1: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../../images-dxp/lcs-user-menu-manage-projects.png)
+    ![Figure 1: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images-dxp/lcs-user-menu-manage-projects.png)
 
 2. Ensure that an environment exists to activate your server under. If you have 
    sufficient permissions in your company's project, you can create a new 
@@ -22,7 +22,7 @@ to do this:
    property `cluster.link.enabled` to `true` in any servers that connect to a 
    clustered environment. 
 
-    ![Figure 2: You must activate your @product@ server in an LCS environment. The red box in this screenshot highlights an environment.](../../../images-dxp/lcs-registration-select-environment.png)
+    ![Figure 2: You must activate your @product@ server in an LCS environment. The red box in this screenshot highlights an environment.](../../images-dxp/lcs-registration-select-environment.png)
 
 3. Select the *Subscriptions* tab, and check the *Assign Subscription Type* 
    table to ensure that the environment you want to activate your server in has 
@@ -35,7 +35,7 @@ to do this:
    [Click here](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions) 
    for more information on using subscriptions in LCS. 
 
-    ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../../images-dxp/lcs-environment-subscriptions.png)
+    ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images-dxp/lcs-environment-subscriptions.png)
 
 4. Select the environment you want to activate the server under, and then select 
    the *Registration* tab. This tab is where you can download and manage the 
@@ -44,7 +44,7 @@ to do this:
    connect to this environment. All services are selected by default. Your 
    selections of LCS services here are embedded in the token file. 
 
-    ![Figure 4: An environment's Registration tab lets you manage the token file used to connect @product@ instances to the environment.](../../../images-dxp/lcs-registration.png) 
+    ![Figure 4: An environment's Registration tab lets you manage the token file used to connect @product@ instances to the environment.](../../images-dxp/lcs-registration.png) 
 
 5. Now you must use the Registration tab to generate, regenerate, and/or 
    download the token file. The actions you take here depend on two things: what 
@@ -108,7 +108,7 @@ Here's a full description of what a connected LCS client app displays:
 - **Environment:** This link takes you to this server's LCS environment. 
 - **Server Dashboard:** This link takes you to the server on LCS. 
 
-![Figure 5: The server is connected to LCS.](../../../images-dxp/lcs-server-connected.png)
+![Figure 5: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
 
 Awesome! Now you know how to use environment tokens in LCS to activate your 
 @product@ server. 
