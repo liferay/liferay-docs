@@ -4,11 +4,11 @@ To activate your @product@ server and take full advantage of Liferay Connected
 Services (LCS), you must first register your server with LCS. Before doing so, 
 however, there are some configuration steps to take care of: 
 
-1. Downloading the LCS Client App
-2. Preconfiguring the LCS Client to Connect Through a Proxy
-3. Ensuring Access to LCS
-4. NTP Server Synchronization
-5. Configuring the Patching Tool
+1. [Downloading the LCS Client App](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#downloading-the-lcs-client-app)
+2. [Preconfiguring the LCS Client to Connect Through a Proxy](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+3. [Ensuring Access to LCS](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#ensuring-access-to-lcs)
+4. [NTP Server Synchronization](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#ntp-server-synchronization)
+5. [Configuring the Patching Tool](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#configuring-the-patching-tool)
 
 +$$$
 
