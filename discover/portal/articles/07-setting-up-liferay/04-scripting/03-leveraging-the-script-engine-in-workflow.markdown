@@ -148,8 +148,7 @@ you how this might look in Groovy (import statements excluded):
         }
     }
     catch(Exception e) {
-        Log _log = LogFactoryUtil.getLog("com.liferay");
-        _log.error("Handle error appropriately")  ;
+        //Handle error appropriately
     }
     finally {
         if (st != null) {
