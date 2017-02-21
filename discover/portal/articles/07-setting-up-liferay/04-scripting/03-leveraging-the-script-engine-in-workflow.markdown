@@ -125,7 +125,7 @@ please see this `legal-workflow-script.xml` file:
 
 ## Calling OSGi Services
 
-How do you call OSGi services form a workflow script, accounting for the dynamic
+How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
 disappear without notice? [Use a service
 tracker](/developer/tutorials/-/knowledge_base/7-0/service-trackers). That way
@@ -163,7 +163,9 @@ odd looking piece of the above code is the `getBundle` call--why is
 `FrameworkUtil.getBundle` call must be a class from the bundle executing the
 workflow script--this is different from the context of a plugin project, where
 you'd want to get the bundle hosting the class where you're making the call
-(using `this.getClass()`, for example).
+(using `this.getClass()`, for example). Note that for another scripting engine,
+you must pass in a concrete class from the particular bundle executing your
+script.
 
 The combination of Liferay's script and workflow engines is incredibly powerful.
 However, since it provides users with the ability to execute code, it can be
