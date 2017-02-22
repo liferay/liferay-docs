@@ -144,4 +144,4 @@ engine.
 
 [Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
 
-[Using Custom Java Tools in the Script Engine](/discover/portal/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)
+[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)
