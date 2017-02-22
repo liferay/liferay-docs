@@ -77,8 +77,7 @@ $$$
 
     If your application uses Liferay Service Builder, you'll need to run the
     following Blade CLI command as well. This command generates the service
-    implementation and service API modules along with the aforementioned web
-    client module:
+    implementation and service API modules:
 
         blade create -t service-builder -p [ROOT_PACKAGE] [APPLICATION_NAME]
 
