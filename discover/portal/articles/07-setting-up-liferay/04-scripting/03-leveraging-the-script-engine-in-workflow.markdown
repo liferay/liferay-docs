@@ -127,11 +127,11 @@ please see this `legal-workflow-script.xml` file:
 
 How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
-disappear without notice? [Use a service
-tracker](/developer/tutorials/-/knowledge_base/7-0/service-trackers). That way
-you can check to make sure your code has access to the service it needs, and if
-not, do something appropriate in response. Here's a little example code to show
-you how this might look in Groovy (import statements excluded):
+disappear without notice? 
+[Use a service tracker](/developer/tutorials/-/knowledge_base/7-0/service-trackers). 
+That way you can check to make sure your code has access to the service it
+needs, and if not, do something appropriate in response. Here's a little example
+code to show you how this might look in Groovy (import statements excluded):
 
     ServiceTracker<SomeLocalService,SomeLocalService> st;
 
@@ -156,12 +156,12 @@ you how this might look in Groovy (import statements excluded):
         }
     }
 
-If you read the article on [service
-trackers](/developer/tutorials/-/knowledge_base/7-0/service-trackers), the only
-odd looking piece of the above code is the `getBundle` call--why is
+If you read the article on 
+[service trackers](/developer/tutorials/-/knowledge_base/7-0/service-trackers), 
+the only odd looking piece of the above code is the `getBundle` call: why is
 `GroovyExecutor.class` passed as a parameter? The parameter passed to the
 `FrameworkUtil.getBundle` call must be a class from the bundle executing the
-workflow script--this is different from the context of a plugin project, where
+workflow script. This is different from the context of a plugin project, where
 you'd want to get the bundle hosting the class where you're making the call
 (using `this.getClass()`, for example). Note that for another scripting engine,
 you must pass in a concrete class from the particular bundle executing your
@@ -170,10 +170,10 @@ script.
 The combination of Liferay's script and workflow engines is incredibly powerful.
 However, since it provides users with the ability to execute code, it can be
 dangerous. When configuring your permissions, be aware of the potential
-consequences of poorly, or maliciously, written scripts inside of a workflow
+consequences of poorly or maliciously written scripts inside of a workflow
 definition. For more information on creating workflow definitions with Kaleo
-workflow, see @product@'s [workflow
-documentation](/discover/portal/-/knowledge_base/7-0/using-workflow).
+workflow, see @product@'s 
+[workflow documentation](/discover/portal/-/knowledge_base/7-0/using-workflow).
 
 ## Related Topics [](id=related-topics)
 
