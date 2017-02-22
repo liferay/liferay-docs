@@ -262,8 +262,8 @@ you'll learn how to leverage Liferay's script engine for designing workflows.
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services From Scripts](/discover/deployment/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+[Invoking Liferay Services From Scripts](/discover/portal/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
 
-[Leveraging the Script Engine in Workflow](/discover/deployment/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
+[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
 
-[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)
+[Using Custom Java Tools in the Script Engine](/discover/portal/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)
