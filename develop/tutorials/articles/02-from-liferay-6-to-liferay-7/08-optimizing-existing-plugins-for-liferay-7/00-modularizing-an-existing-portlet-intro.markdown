@@ -76,7 +76,7 @@ $$$
         blade create -t mvc-portlet [APPLICATION_NAME]-web
 
     If your application uses Liferay Service Builder, you'll need to run the
-    following Blade CLI command instead. This command generates the service
+    following Blade CLI command as well. This command generates the service
     implementation and service API modules along with the aforementioned web
     client module:
 
