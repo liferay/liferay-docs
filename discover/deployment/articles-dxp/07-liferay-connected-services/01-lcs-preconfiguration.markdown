@@ -2,7 +2,8 @@
 
 To activate your @product@ server and take full advantage of Liferay Connected 
 Services (LCS), you must first register your server with LCS. Before doing so, 
-however, there are some configuration steps to take care of: 
+however, there are some configuration steps to take care of. The sections in 
+this article take you through each of these steps: 
 
 1. [Downloading the LCS Client App](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#downloading-the-lcs-client-app)
 2. [Preconfiguring the LCS Client to Connect Through a Proxy](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
@@ -23,8 +24,7 @@ local @product@ instance's `deploy` folder.
 
 $$$
 
-The sections in this article take you through each of these steps. First, you'll 
-download the LCS client app. 
+First, you'll download the LCS client app. 
 
 ## Downloading the LCS Client App [](id=downloading-the-lcs-client-app)
 
@@ -89,8 +89,8 @@ ways:
     You must set the properties in the WAR file's `portlet-ext.properties` file. 
     Follow these steps to do so: 
 
-    a. In the LCS client's WAR file, open the 
-        `WEB-INF/classes/portlet-ext.properties` file. 
+    a. In the LCS client's WAR file, open the file 
+        `WEB-INF/classes/portlet-ext.properties`. 
 
     b. Add the following properties at the end of `portlet-ext.properties` and 
         set them to the appropriate values for your proxy: 
@@ -99,7 +99,7 @@ ways:
             proxy.host.port=
 
        If your proxy requires authentication, you should also add the following 
-       properties and set them to the appropriate values for your proxy. 
+       properties and set them to the appropriate values for your proxy: 
 
             proxy.host.login=
             proxy.host.password=
@@ -141,15 +141,13 @@ For LCS to work properly, the application server running @product@ should be
 synchronized with a time server. If it's not, you may get log errors similar to 
 these: 
 
-    ERROR [pool-6-thread-3][HandshakeTask:68] java.lang.RuntimeException: 
-    Handshake expired. Check that the server is synchronized with an NTP server. 
+    ERROR [pool-6-thread-3][HandshakeTask:68] java.lang.RuntimeException: Handshake expired. 
+    Check that the server is synchronized with an NTP server. 
 
-    WARN [liferay/hot_deploy-1][LCSHotDeployMessageListener:186] LCS portlet is 
-    not connected java.lang.RuntimeException: 
-    com.liferay.jsonwebserviceclient.JSONWebServiceInvocationException: 
-    com.fasterxml.jackson.core.JsonParseException: Unrecognized token 
-    'oauth_problem': was expecting ('true', 'false' or 'null')_ at [Source: 
-    oauth_problem=timestamp_refused&oauth_acceptable_timestamps=1477311475-1477312075; 
+    WARN [liferay/hot_deploy-1][LCSHotDeployMessageListener:186] LCS portlet is not connected 
+    java.lang.RuntimeException: com.liferay.jsonwebserviceclient.JSONWebServiceInvocationException: 
+    com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'oauth_problem': was expecting 
+    ('true', 'false' or 'null')_ at [Source: oauth_problem=timestamp_refused&oauth_acceptable_timestamps=1477311475-1477312075; 
     line: 1, column: 14] [Sanitized]
 
 For information on how to synchronize your application server with a time 
@@ -159,39 +157,36 @@ Next, you'll learn how to configure @product@'s patching tool.
 
 ## Configuring the Patching Tool [](id=configuring-the-patching-tool)
 
-LCS leverages @product@'s patching tool to apply updates. If you're running a 
-@product@ bundle, then you should already have the patching tool installed. If 
-you're not running a bundle, or your bundle doesn't have the patching tool 
-installed, 
-[click here to download it](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool). 
+LCS uses @product@'s patching tool to apply updates. The patching tool should be 
+preinstalled in @product@ bundles. If you're not running a bundle, or the 
+patching tool isn't installed in your bundle, 
+[click here to download the patching tool](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool). 
 Then see the user guide section on 
 [how to install the patching tool](/discover/deployment/-/knowledge_base/7-0/patching-liferay). 
-Once you have the patching tool installed, there are a few steps you need to 
-complete before LCS can use it. Note that the commands below apply to Linux, 
-Unix, and Mac systems. If you're running Windows, simply drop the `.sh` from 
-each command that has it. 
+Once installed, there are a few steps you must complete before LCS can use the 
+patching tool. Note that the commands below apply to Linux, Unix, and Mac. If 
+you're running Windows, drop the `.sh` from each command that has it. 
 
 1. Navigate to the `patching-tool` directory on the command line. It's typically 
    located in the Liferay Home folder.
 
-2. Let the patching tool discover your @product@ installation by running 
+2. To let the patching tool discover your @product@ installation, run 
    `patching-tool.sh auto-discovery`. 
 
-3. Configure the patching tool by running `patching-tool.sh setup`. 
+3. To configure the patching tool, run `patching-tool.sh setup`. 
 
-4. Patches downloaded through LCS are installed by the patching tool agent on 
-   server startup. For the agent to start with your server, you need to set the 
-   `javaagent` property in the JVM options. Make sure that you specify the 
-   correct file path to the `patching-tool-agent.jar`. Here's an example of 
-   setting the `javaagent` property: 
+4. On server startup, the patching tool agent installs the patches downloaded by 
+   LCS. For the agent to start with your server, you must set the `javaagent` 
+   property in the JVM options to point to the `patching-tool-agent.jar` in your 
+   patching tool installation. Be sure to specify the correct file path to your 
+   patching tool installation's `patching-tool-agent.jar`: 
 
         -javaagent:../../patching-tool/lib/patching-tool-agent.jar
 
-If your patching tool is installed in a location other than the Liferay Home 
-folder, you must specify the path of the `patching-tool` folder as a JVM 
-argument for the app server. This is done with the `patching.tool.home` 
-property. For example:
+5. If your patching tool is installed in a location other than the Liferay Home 
+   folder, you must also specify the `patching-tool` folder's path as an app 
+   server JVM argument. Do this with the `patching.tool.home` property: 
 
-    -Dpatching.tool.home=/opt/liferay-dxp-digital-enterprise-7.0/patching-tool/
+        -Dpatching.tool.home=/opt/liferay-dxp-digital-enterprise-7.0/patching-tool/
 
 Great! Now you're all set to activate your @product@ instance with LCS. 
