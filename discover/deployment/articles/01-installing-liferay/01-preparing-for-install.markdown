@@ -8,6 +8,8 @@ questions.
 - Can you install a @product@ bundle or do you need to install @product@ on an
   existing application server?
 - Which database will you use with @product@?
+- How do you plan to store your data?
+- Can your network support @product@?
 - Will you enable Liferay's PACL security feature?
 
 Next, you'll answer these questions and learn the basic steps for installing
@@ -29,7 +31,7 @@ members, plus a few commercial alternatives, in addition to the `.war` files
 for manual installation.
 
 So what is a @product@ bundle anyway? A @product@ bundle is an application server
-with @product@ preinstalled. Using a bundle is the easiest way to install
+with @product@ pre-installed. Using a bundle is the easiest way to install
 @product@. @product@ is bundled with a number of application servers; all you need
 to do is choose the one that best fits your needs. If you don't currently have
 an application server preference, consider starting with the Tomcat bundle.
@@ -46,20 +48,19 @@ the others. You'll need to follow our manual installation procedure using a
 `.war` file to install @product@ on proprietary application servers.
 
 Once you have @product@, you can plan out your installation. First, determine if
-you need @product@ Security turned on. Second, prepare your database.
-Third, install @product@. Fourth, configure search. You can install @product@
+you need @product@ Security turned on. Second, prepare your database. Third, install @product@. Fourth, configure your network. Fifth, configure search. You can install @product@
 either by using a bundle or by installing it manually on your existing
 application server. Next, we'll go over the steps it takes to install @product@.
 
 ## @product@ Installation Steps [](id=liferay-installation-steps)
 
-Before you begin installing @product@, You should review these basic
+Before you begin installing @product@, you should review these basic
 installation steps:
 
 1. Choose a database server to use with @product@ and create a new database.
    Determine whether you want @product@ to manage your database connection or your
    application server to manage your database connection. We recommend
-   that you let @product@ manage your database connection.
+   that you let @product@ manage your database connection. @product@ can connect with several open source or enterprise level document repositories.
 
 2. Gather mail credentials for sending email notifications to users. Determine
    whether you want @product@ to manage your mail session or your application
@@ -70,11 +71,13 @@ installation steps:
 3. Install either a @product@ bundle or install @product@ on an existing
    application server (further instructions below).
 
-4. Determine how you'll configure Elasticsearch. @product@'s default embedded
+4. Choose IPv4 or IPv6. Determine which address format is best for your network (further instructions below). 
+
+5. Determine how you'll configure Elasticsearch. @product@'s default embedded
    configuration is not supported for production use, so you'll have to install
    Elasticsearch separately, either on the same infrastructure or on its own. 
 
-5. Determine whether you'll use Liferay Marketplace or other third party
+6. Determine whether you'll use Liferay Marketplace or other third party
    applications. If you will, you should enable Liferay's Plugin Access Control
    List (PACL) security feature.
 
@@ -105,7 +108,7 @@ its database automatically during upgrades or when various @product@ plugins tha
 create database tables of their own are installed. This method is by far the
 best way to set up your @product@ database.
 
-If you will set up @product@'s database with the recommended permissions
+If you choose to set up @product@'s database with the recommended permissions
 described in this section, you can skip to the next section.
 
 +$$$
@@ -115,7 +118,7 @@ installations. This procedure is documented here so that enterprises with more
 restrictive standards can install @product@ with stricter (but sub-optimal)
 database settings. If it's at all possible, we recommend that you use the
 method described in the previous section instead of the procedure outlined
-here.
+below.
 
 $$$
 
@@ -126,7 +129,7 @@ their tables. For these organizations, Select, Insert, Update and Delete are
 the only allowed permissions. Thus, in this section we explain how to set up
 the database manually. If your organization *is* willing to grant the @product@
 database user the permissions to create and drop tables in the database--and
-this is the recommended configuration--by all means, use the recommended
+this is the recommended configuration--then simply use the recommended
 configuration described in the previous section.
 
 1. Create a new, blank, database for @product@.
@@ -147,13 +150,15 @@ database user doesn't have enough rights to create/modify/drop tables in the
 database, you must grant those rights to the ID before you deploy one of these
 plugins or start upgrading @product@. Once the tables are created or the upgrade
 is complete, you can remove those rights until the next deploy or upgrade.
-Additionally, your developers might create plugins that need to create their
+Additionally, your own developers might create plugins that need to create their
 own tables. These are just like @product@'s plugins that do the same thing, and
 they cannot be installed if @product@ can't create database tables. If you wish
 to install these plugins, you will need to grant rights to create tables in the
-database before you attempt to install them.
+database each time before you attempt to install them.
 
-Once you have your database ready, you can install @product@ on your server.
+@product@ offers several configurations to store Documents and Media files by setting the `dl.store.impl=` property. Available options are Simple File System Store, Advanced File System Store, CMIS Store, DBStore, JCRStore, and Amazon S3Store. In addition, @product@ can be connected to various open source and enterprise-level document repositories. All of the repositories are connected to @product@ through hooks available on Liferay Marketplace (see below). 
+
+Once you have your database and document repository ready, you can install @product@ on your server.
 
 ## Step Two: Gather Your Mail Credentials [](id=step-two-gather-your-mail-credentials)
 
@@ -181,7 +186,15 @@ By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into
 full, production-ready instances of @product@. 
 
-## Step Four: Configure Elasticsearch [](id=step-four-configure-elastic-search)
+## Step Four: Network Configurations [](id=step-four-network)
+
+@product@ supports both IPv4 and IPv6 address formats. By default, @product@ uses IPv4 addresses. If you are using IPv6, you will have to configure @product@. There are two simple steps. 
+
+1. In the application server's environment settings, set `-Djava.net.preferIPv4Stack=false`. 
+
+2. Create a `portal-ext.properties` file in your portal's Liferay Home directory (if one does not already exist) and set the `tunnel.servlet.hosts.allowed` property to the target hosts you want to allow (e.g., _0:0:0:0:0:0:0:1_). 
+
+## Step Five: Configure Elasticsearch [](id=step-five-configure-elastic-search)
 
 @product@ by default ships with an embedded version of Elasticsearch. While this
 configuration works well for demo purposes, it is not supported in a production
@@ -191,7 +204,7 @@ installation, this standalone instance of Elasticsearch can reside either on the
 same machine you have @product@ on or a different machine. For performance
 purposes, it is better to install it on a separate machine.
 
-## Step Five: Liferay Marketplace and Portal Security [](id=step-five-liferay-marketplace-and-portal-security)
+## Step Six: Liferay Marketplace and Portal Security [](id=step-six-liferay-marketplace-and-portal-security)
 
 The Liferay Marketplace is an integral part of the @product@ experience.
 The Marketplace plugin is required to be installed on @product@. The

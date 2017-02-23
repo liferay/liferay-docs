@@ -60,7 +60,7 @@ cluster](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-
 If successful you see `{"accepted":true}` in the terminal.
 
 You don't have to include all indexes in a snapshot. For example, if you're
-[using Marvel](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/monitoring-elasticsearch-with-marvel),
+[using Marvel](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-marvel-for-elasticsearch),
 you might not want to include all the Marvel indexes. In this case just
 explicitly declare the indexes you want to include in the snapshot (leaving out
 the `.marvel` indexes):
