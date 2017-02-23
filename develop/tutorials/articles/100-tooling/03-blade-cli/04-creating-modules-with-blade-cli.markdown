@@ -59,7 +59,7 @@ help create` into a terminal. A list of the `create` options are listed below:
   created, provide the name of the host bundle symbolic name.
 - `-H, --hostbundleversion <string>`: If a new JSP hook fragment needs to be
   created, provide the name of the host bundle version.
-- `l, --listtemplates`: Prints a list of available project templates.
+- `-l, --listtemplates`: Prints a list of available project templates.
 - `-p, --packagename <string>`: The package name to use when creating the
   project.
 - `-s, --service <string>`: If a new Declarative Services (DS) component needs
@@ -76,10 +76,9 @@ To create a module project, use the following syntax:
 For example, if you wanted to create an MVC portlet project, you could execute
 the following:
 
-    blade create -t mvcportlet -p com.liferay.docs.guestbook -c GuestbookPortlet
-    my-guestbook-project
+    blade create -t mvc-portlet -p com.liferay.docs.guestbook -c GuestbookPortlet my-guestbook-project
 
-This command creates an MVC portlet project based on the template `mvcportlet`.
+This command creates an MVC portlet project based on the template `mvc-portlet`.
 It uses the package name `com.liferay.docs.guestbook` and creates the portlet
 class `GuestbookPortlet`. The project name is `my-guestbook-project`. Since the
 directory was not specified, it is created in the folder you executed the

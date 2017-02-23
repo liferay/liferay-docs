@@ -179,16 +179,16 @@ Settings application:
    &rarr; *Foundation*. 
 3. Find the *Elasticsearch* entry (scroll down and browse to it or use the
    search box) and click the Actions icon
-   (![Actions](../../../images/icon-actions.png)), then *Edit*.
+   (![Actions](../../images/icon-actions.png)), then *Edit*.
 
     ![Figure 1: Use the System Settings application in @product@'s Control Panel to
     configure the Elasticsearch
-    adapter.](../../../images/elasticsearch-system-settings.png)
+    adapter.](../../images/elasticsearch-system-settings.png)
 
 4. Change Operation Mode to *Remote*, and then click *Save*.
 
     ![Figure 2: Set Operation Mode to *Remote* from System
-    Settings.](../../../images/elasticsearch-configuration.png)
+    Settings.](../../images/elasticsearch-configuration.png)
 
 5. After you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must
    trigger a re-index. Navigate to *Control Panel* &rarr; *Server
@@ -271,6 +271,26 @@ shards is `1`:
     index.number_of_shards: 5
     index.number_of_replicas: 1
 
++$$$
+
+**Note:** Elasticsearch uses the [Zen Discovery
+Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-discovery-zen.html)
+by default, which provides unicast discovery. Additionally, nodes in the
+cluster communicate using the [Transport
+Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-transport.html),
+through TCP. See the Elasticsearch documentation for the available properties
+(to be set in the elasticsearch.yml file), and the @product@ Elasticsearch
+Adapter’s [reference
+article](https://dev.liferay.com/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
+for the adapter’s available settings.
+
+At a minimum, provide the list of hosts to act as gossip routers during unicast
+discovery in the `elasticsearch.yml`:
+
+    discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
+
+$$$
+
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
@@ -298,7 +318,7 @@ the settings you need by using one or more of the `additionalConfigurations`,
 `additionalIndexConfigurations`, or `additionalTypeMappings` settings. 
 
 ![Figure 3: You can add Elasticsearch configurations to the ones currently available
-in System Settings.](../../../images/elasticsearch-additional-configs.png)
+in System Settings.](../../images/elasticsearch-additional-configs.png)
 
 `additionalConfigurations` is used to define extra settings (defined in YAML)
 for the embedded Elasticsearch or the local Elasticsearch client when running

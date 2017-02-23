@@ -1,4 +1,4 @@
-# Liferay Elasticsearch [](id=liferay-elasticsearch)
+# Preparing to Install Elasticsearch [](id=liferay-elasticsearch)
 
 By default, @product-ver@ and its embedded Elasticsearch engine run in the same 
 JVM. Although this enables out-of-the-box search in @product-ver@, it's only 

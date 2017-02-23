@@ -45,7 +45,7 @@ Here's what a configuration of the `com.liferay.lang.builder` plugin looks in a
 
         buildscript {
             dependencies {
-                classpath ;com.liferay:com.liferay.gradle.plugins.lang.builder':latest.release'
+                classpath 'com.liferay:com.liferay.gradle.plugins.lang.builder:latest.release'
             }
 
             repositories {
@@ -108,7 +108,7 @@ steps above?
 
     buildscript {
         dependencies {
-            classpath ;com.liferay:com.liferay.gradle.plugins.lang.builder':latest.release'
+            classpath 'com.liferay:com.liferay.gradle.plugins.lang.builder:latest.release'
         }
 
         repositories {
@@ -120,7 +120,7 @@ steps above?
 
     apply plugin: "com.liferay.lang.builder"
 
-     buildLang {
+    buildLang {
        translateClientId = langTranslateClientId
        translateClientSecret = langTranslateClientSecret
     }
