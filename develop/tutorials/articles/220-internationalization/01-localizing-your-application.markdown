@@ -156,7 +156,8 @@ this:
     application=My Application
     add-entity=Add Entity
 
-Create any translations you want, adding the translation locale ID to the language file name. File `Language_es.properties` might look like this: 
+Create any translations you want, adding the translation locale ID to the
+language file name. File `Language_es.properties` might look like this: 
 
     my-app-title=Mi Aplicación
     add-entity=Añadir Entity
