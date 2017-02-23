@@ -170,8 +170,7 @@ to the module, and registers a
 [ResourceBundleLoader](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
 service for that capability. A capability is a contract a module declares to
 @product@'s OSGi framework. It lets you associate services with modules that
-provide them. `ResourceBundleLoaderAnalyzerPlugin` is the plugin that performs
-the detection. 
+provide them. 
 
 Next, you'll configure a web module to use the language module's resource
 bundle. 
@@ -242,31 +241,6 @@ Now you can add language properties files to your Liferay development toolbox,
 to provide translation of your application's user interface messages. But do you
 need to translate every single key yourself? What about those keys that you
 share with Liferay's core? 
-
-Just as a side note: this is one of the ways you can use the infrastructure, but
-it is not the only one. All this is needed for the tooling to be able to find
-the appropiate `ResourceBundleLoader` without giving them any context (back in
-the days of the monolith everything was stored in the same place). While all (or
-most) of our modules are released using this I guess we can assume this is the
-default but any developer can also specify the `ResourceBundle` or
-`ResourceBundleLoader` that a JSP will have to use. In order to accomplish this
-the user only needs to get a reference to the desired
-`ResourceBundle/ResourceBundleLoader` and use standard JSP tooling for handling
-language keys. 
-
-Other option is to set a reference to a `ResourceBundleLoader` in the request
-with the attribute name `WebKeys.RESOURCE_BUNDLE_LOADER`. From that point on
-that would be the chosen resource for the JSP tooling. Also, the user can also 
-set a specific `ResourceBundle` in the JSP `PageContext` with the key
-`resourceBundle` and it will be used. 
-
-Note that the most unambiguous way for specifying the messages is by using the
-JSP standard tooling that allows to specify the `ResourceBundle` wanted for a
-translation. 
-
-Since most of the modules publish their resources in OSGi with the languge
-extender capabilities the users can get references to them just by asking for
-them as `@Reference` or by any other means. 
 
 ## Using Liferay's Language Properties [](id=using-liferays-language-properties)
 
