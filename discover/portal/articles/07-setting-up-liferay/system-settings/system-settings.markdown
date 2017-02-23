@@ -103,7 +103,7 @@ the `.cfg` file format is used.
 If you're on Liferay Portal 7.0 GA3 or earlier, the `.cfg` file is exported from
 System Settings.
 
-The file format was changed to fix a bug with mutli-value settings, which the
+The file format was changed to fix a bug with multi-value settings, which the
 `.cfg` file format did not handle properly. See
 [https://issues.liferay.com/browse/LPS-67890](https://issues.liferay.com/browse/LPS-67890)
 for more information. Any @product@ system later than those listed above use the
