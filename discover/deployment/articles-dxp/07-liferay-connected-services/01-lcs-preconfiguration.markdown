@@ -2,8 +2,7 @@
 
 To activate your @product@ server and take full advantage of Liferay Connected 
 Services (LCS), you must first register your server with LCS. Before doing so, 
-however, there are some configuration steps to take care of. The sections in 
-this article take you through each of these steps: 
+however, you must configure it. There are five steps: 
 
 1. [Downloading the LCS Client App](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#downloading-the-lcs-client-app)
 2. [Preconfiguring the LCS Client to Connect Through a Proxy](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
@@ -28,9 +27,9 @@ First, you'll download the LCS client app.
 
 ## Downloading the LCS Client App [](id=downloading-the-lcs-client-app)
 
-The LCS client app is part of @product@ bundles and autodeploys when the bundle 
-starts. The LCS client app in the @product@ bundle, however, may be outdated. 
-You should therefore download and install the latest version of the LCS client 
+The LCS client app ships with @product@ bundles and autodeploys when the bundle 
+starts. The version included, however, may be outdated. You should therefore
+download and install the latest version of the LCS client 
 app. You can download the LCS client app 
 [here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947). 
 For instructions on using Marketplace to download and install apps, see 
@@ -59,8 +58,7 @@ the LCS client app and skip this section.
 
 If your server connects to the Internet through a proxy, you must configure the 
 LCS client app **before** deploying it to your @product@ instance. You'll do 
-this by setting some properties. You can set these properties two different 
-ways: 
+this by setting some properties. There are two ways to set these properties: 
 
 1. As JVM app server arguments. Set these properties to the appropriate values 
    for your proxy: 
@@ -86,39 +84,39 @@ ways:
    inside the app's LPKG file that downloads to your machine from Marketplace. 
    In either case, the client's WAR file is `lcs-portlet-[version].war`. 
 
-    You must set the properties in the WAR file's `portlet-ext.properties` file. 
-    Follow these steps to do so: 
+   You must set the properties in the WAR file's `portlet-ext.properties` file. 
+   Follow these steps to do so: 
 
-    a. In the LCS client's WAR file, open the file 
+   a. In the LCS client's WAR file, open the file 
         `WEB-INF/classes/portlet-ext.properties`. 
 
-    b. Add the following properties at the end of `portlet-ext.properties` and 
-        set them to the appropriate values for your proxy: 
+   b. Add the following properties at the end of `portlet-ext.properties` and 
+      set them to the appropriate values for your proxy: 
    
             proxy.host.name=
             proxy.host.port=
 
-       If your proxy requires authentication, you should also add the following 
-       properties and set them to the appropriate values for your proxy: 
+      If your proxy requires authentication, you should also add the following 
+      properties and set them to the appropriate values for your proxy: 
 
             proxy.host.login=
             proxy.host.password=
 
-       If your proxy requires NTLM authentication, you must also add the 
-       following properties: 
+      If your proxy requires NTLM authentication, you must also add the 
+      following properties: 
 
             proxy.auth.type=ntlm
             proxy.domain=
             proxy.workstation=
 
-       Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
-       values for your proxy. Note that you can leave `proxy.workstation` blank 
-       if you don't need it. 
+      Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
+      values for your proxy. Note that you can leave `proxy.workstation` blank 
+      if you don't need it. 
 
-    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-        file. 
+   c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
+      file. 
 
-    d. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
+   d. Deploy the LCS client WAR or redeploy it if it's already deployed. 
 
 Next, you'll learn how to ensure that the LCS client can access LCS. 
 
@@ -157,11 +155,10 @@ Next, you'll learn how to configure @product@'s patching tool.
 
 ## Configuring the Patching Tool [](id=configuring-the-patching-tool)
 
-LCS uses @product@'s patching tool to apply updates. The patching tool should be 
-preinstalled in @product@ bundles. If you're not running a bundle, or the 
-patching tool isn't installed in your bundle, 
+LCS uses @product@'s patching tool to apply updates. In @product@ bundles, the
+patching tool is pre-installed. If you're not running a bundle, 
 [click here to download the patching tool](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool). 
-Then see the user guide section on 
+Then see 
 [how to install the patching tool](/discover/deployment/-/knowledge_base/7-0/patching-liferay). 
 Once installed, there are a few steps you must complete before LCS can use the 
 patching tool. Note that the commands below apply to Linux, Unix, and Mac. If 
