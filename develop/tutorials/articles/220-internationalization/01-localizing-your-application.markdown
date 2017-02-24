@@ -204,7 +204,7 @@ resource bundle.
 
 For example, you might want to compliment language module keys with
 module-specific keys or override language module keys with your own. This
-requires aggregating both module's resource bundles and prioritizing your
+requires aggregating both modules' resource bundles and prioritizing your
 module's resource bundle higher than the language module's. The following
 example demonstrates this. 
 
@@ -243,19 +243,18 @@ Each line is explained:
 
         Web-ContextPath:/my-admin-application-web
 
-To aggregate web module keys with language module keys, follow the pattern
+To aggregate web module keys and language module keys, follow the pattern
 demonstrated by the example above. The example language module and web modules
-can be downloaded in
-[this ZIP file](https://dev.liferay.com/documents/10184/656312/l10n-my-application.zip/3bf58646-95ba-4031-bd1a-ce52cc6152f3). 
+can be downloaded [here](https://dev.liferay.com/documents/10184/656312/l10n-my-application.zip/3bf58646-95ba-4031-bd1a-ce52cc6152f3). 
 
 Now you can add language properties files to your Liferay development toolbox,
-to provide translation of your application's user interface messages. But do you
-need to translate every single key yourself? What about those keys that you
-share with Liferay's core? 
+to provide translation of your application's user interface messages. But you
+don't need to translate every single key yourself: you can use keys that you
+share with @product@'s core. 
 
-## Using Liferay's Language Properties [](id=using-liferays-language-properties)
+## Using @product@'s Language Properties [](id=using-liferays-language-properties)
 
-If you have Liferay's source code, you can check out Liferay's core language
+If you have @product@'s source code, you can check out @product@'s core language
 properties by looking in the `portal-impl/src/main/content` folder. Otherwise,
 you can look in the `portal-impl.jar` that's in your Liferay bundle.
 
@@ -263,12 +262,12 @@ you can look in the `portal-impl.jar` that's in your Liferay bundle.
 
     [Liferay Home]/tomcat-[version]/webapps/ROOT/WEB-INF/lib/portal-impl.jar
 
-These keys are available at runtime, so just use any of Liferay's default keys
-in your user interface code, and they'll be automagically swapped out for the
-appropriately translated value. Using Liferay's keys where possible saves you
+These keys are available at runtime, so when you use any of @product@'s default
+keys in your user interface code, they're automagically swapped out for the
+appropriately translated value. Using @product@'s keys where possible saves you
 time and ensures that your application follows Liferay's UI conventions.
 
-If you want to automatically generate language files for each locale Liferay
-supports, or even configure your application to generate translations
-automatically using the Microsoft Translator API, check out the tutorial
+If you want to generate language files for each supported locale automatically,
+or to configure your application to generate translations automatically using
+the Microsoft Translator API, check out the tutorial
 [Automatically Generating Language Files](/develop/tutorials/-/knowledge_base/7-0/automatically-generating-language-files).
