@@ -123,7 +123,7 @@ For a complete example of a workflow script that uses the above Groovy script,
 please see this `legal-workflow-script.xml` file:
 [https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml](https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml).
 
-## Calling OSGi Services
+## Calling OSGi Services [](id=calling-osgi-services)
 
 How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
