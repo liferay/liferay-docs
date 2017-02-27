@@ -45,7 +45,7 @@ Also note that these Screenlets aren't just any kind of Screenlet; they're *list
 Screenlets*. List Screenlets are developed using a special framework in Liferay 
 Screens that sits on top of the core Screenlet framework. This list Screenlet 
 framework makes it much simpler for developers to write Screenlets that display 
-lists of entities from a Liferay instance. 
+lists of entities from a @product@ instance. 
 
 Awesome! You now have a basic UI design and know the type of Screenlets you'll 
 create to implement it. But where in the app can you use these Screenlets? The 

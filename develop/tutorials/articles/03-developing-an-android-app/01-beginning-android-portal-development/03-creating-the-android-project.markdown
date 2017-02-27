@@ -44,11 +44,11 @@ finished.
 ![Figure 2: The second screen of Android Studio's Create New Project wizard lets you select your app's form factors and minimum Android API level.](../../../images/android-studio-new-project-02.png)
 
 You must now specify your app's first activity. Although you'll use this 
-activity to authenticate users to your Liferay instance, don't select Login 
+activity to authenticate users to your @product@ instance, don't select Login 
 Activity in the wizard. Select *Empty Activity* instead. Later, you'll insert 
 [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
 in this activity. Login Screenlet contains everything your users need to 
-authenticate to a Liferay instance, including the UI. Click *Next*. 
+authenticate to a @product@ instance, including the UI. Click *Next*. 
 
 ![Figure 3: The third screen of Android Studio's Create New Project wizard lets you specify an activity for your app.](../../../images/android-studio-new-project-03.png)
 

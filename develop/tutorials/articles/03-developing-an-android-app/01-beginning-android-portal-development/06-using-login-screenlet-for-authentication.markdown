@@ -1,11 +1,11 @@
 # Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication)
 
 For the app to retrieve data from the Guestbook portlet, the app's user must 
-first authenticate to the Liferay instance. The other features you'll develop in 
-your app depend on successful Liferay authentication. You can implement 
-authentication using the Liferay Mobile SDK, but it takes time to write. 
-Authenticating using Liferay Screens takes about ten minutes. In this article, 
-you'll use Login Screenlet to implement authentication in your app. 
+first authenticate to the @product@ instance. The other features you'll develop 
+in your app depend on successful @product@ authentication. You can implement 
+authentication using the Liferay Mobile SDK, but it takes time to write. Using 
+Liferay Screens to authenticate takes about ten minutes. In this article, you'll 
+use Login Screenlet to implement authentication in your app. 
 
 ## Adding Login Screenlet to the App [](id=adding-login-screenlet-to-the-app)
 
@@ -44,11 +44,11 @@ to authenticate with the user's screen name. You can alternatively set this to
 `email` or `userId`. This Learning Path uses `screen_name` only because it's 
 much faster to type a screen name than a full email address when authenticating 
 in the emulator. Also, note that this value must match the authentication 
-setting in the Liferay instance. By default, Liferay instances use email address 
-for authentication. For this Learning Path, you need to set your Liferay 
-instance to authenticate by screen name instead. See 
+setting in the @product@ instance. By default, @product@ instances use email 
+address for authentication. For this Learning Path, you need to set your 
+@product@ instance to authenticate by screen name instead. See 
 [this section in Login Screenlet's reference documentation](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#basic-authentication) 
-for instructions on changing your Liferay instance's authentication setting. 
+for instructions on changing your @product@ instance's authentication setting. 
 
 The second `liferay` attribute in Login Screenlet's XML is `liferay:layoutId`. 
 This attribute sets the View to display the Screenlet with. The value 
@@ -105,13 +105,16 @@ reference. The `setListener` method then sets `MainActivity` as Login
 Screenlet's listener. 
 
 Now run the app by clicking the green *play* button in the toolbar, or by 
-selecting *Run 'app'* from the *Run* menu. If you've never run an emulator, 
-you'll have to go through the process of choosing and installing one. Unlock the 
-emulator once it launches. Your app then automatically opens to Login Screenlet. 
-Enter your credentials and click *SIGN IN*. The toast message then pops up 
-saying that the login succeeded. 
+selecting *Run 'app'* from the *Run* menu. If you've never run the emulator, 
+you'll have to go through the process of creating and choosing an Android 
+Virtual Device for your app to run on. For more information on this and running 
+the emulator in general, 
+[click here](https://developer.android.com/studio/run/emulator.html). 
+Once the emulator launches, unlock it (if necessary). Your app automatically 
+opens to Login Screenlet. Enter your credentials and click *SIGN IN*. The toast 
+message then pops up saying that the login succeeded. 
 
-![Figure 1: Login Screenlet successfully authenticated you with the Liferay instance.](../../../images/android-login-screenlet-success.png)
+![Figure 1: Login Screenlet successfully authenticated you with the @product@ instance.](../../../images/android-login-screenlet-success.png)
 
 The toast message goes away and you remain on the login screen. Nothing else 
 happens. Don't worry, this is supposed to happen; you haven't added any other 
@@ -139,7 +142,7 @@ log in when prompted. When login succeeds, the `GuestbooksActivity` opens.
 
 ![Figure 2: The app takes you to the new activity after you log in.](../../../images/android-login-success-intent.png)
 
-Nice work! You've successfully implemented Liferay authentication in the Android 
-app. It didn't take you that long, either. You only have signing in working so 
-far, though; it doesn't display any content from the Liferay instance. Next, 
-you'll develop Guestbook List Screenlet. 
+Nice work! You successfully implemented @product@ authentication in the Android 
+app. It didn't take you that long, either. So far, however, that's all your app 
+does; it doesn't display any content. Next, you'll rectify this by developing 
+Guestbook List Screenlet. 

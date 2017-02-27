@@ -4,7 +4,7 @@ For your Android app to interact with the Guestbook portlet, you must install
 the following in your Android project:
 
 - **Liferay's pre-built Mobile SDK:** This Mobile SDK contains the classes that 
-  call the remote services of Liferay's core apps. It also contains the 
+  call the remote services of @product@'s core apps. It also contains the 
   framework necessary for any Mobile SDK to make server calls. 
 
 - **The Guestbook Mobile SDK:** This Mobile SDK contains only the classes that 
@@ -13,7 +13,7 @@ the following in your Android project:
 - **Liferay Screens:** Screens contains the Screenlet framework and 
   [several built-in Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
   like Login Screenlet. Because these built-in Screenlets interact with 
-  Liferay's core apps, they make their server calls with Liferay's pre-built 
+  @product@'s core apps, they make their server calls with Liferay's pre-built 
   Mobile SDK. Note that all Screenlets, including those that make server calls 
   with a custom built Mobile SDK, must use the framework in Liferay's pre-built 
   Mobile SDK to issue those calls. 
@@ -99,18 +99,18 @@ top of the file:
 
 If Android Studio recognizes these imports, then you're good to go! Remove them 
 once you've verified that they're valid. Next, there's one final small but 
-important task to complete: point your app at the correct Liferay instance. 
+important task to complete: point your app at the correct @product@ instance. 
 
-## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
+## Configuring Communication with @product@ [](id=configuring-communication-with-liferay)
 
-For Screens to work properly with your app, you must point it to your Liferay 
+For Screens to work properly with your app, you must point it to your @product@ 
 instance. You do this by adding a `server_context.xml` file in your project's 
 `res/values` directory. Create this file and add the following code to it: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
 
-        <!-- Change these values for your Liferay instance -->
+        <!-- Change these values for your @product@ instance -->
 
         <string name="liferay_server">http://10.0.2.2:8080</string>
 
@@ -121,16 +121,16 @@ instance. You do this by adding a `server_context.xml` file in your project's
 
     </resources>
 
-As the comment indicates, change the values to match those of your Liferay 
+As the comment indicates, change the values to match those of your @product@ 
 instance. The server address `http://10.0.2.2:8080` is suitable for testing 
 with Android Studio's emulator, because it corresponds to `localhost:8080` 
-through the emulator. The Liferay instance you set up earlier should be running 
-on `localhost:8080`. 
+through the emulator. The @product@ instance you set up earlier should be 
+running on `localhost:8080`. 
 
-The `liferay_company_id` value is your Liferay instance's ID. You can find it in 
-your Liferay instance at *Control Panel* &rarr; *Configuration* &rarr; *Virtual 
-Instances*. The instance's ID is in the *Instance ID* column. Copy and paste 
-this value into the `liferay_company_id` value in `server_context.xml`. 
+The `liferay_company_id` value is your @product@ instance's ID. You can find it 
+in your @product@ instance at *Control Panel* &rarr; *Configuration* &rarr; 
+*Virtual Instances*. The instance's ID is in the *Instance ID* column. Copy and 
+paste this value into the `liferay_company_id` value in `server_context.xml`. 
 
 The `liferay_group_id` value is the ID of the site your app needs to communicate 
 with. Since the app needs to communicate with the Guestbook portlet, navigate to 

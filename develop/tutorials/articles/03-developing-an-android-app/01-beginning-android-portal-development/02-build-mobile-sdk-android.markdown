@@ -1,12 +1,12 @@
 # Building the Guestbook Mobile SDK [](id=building-the-guestbook-mobile-sdk)
 
-Once you've deployed the Guestbook portlet to your Liferay instance, you're 
+Once you've deployed the Guestbook portlet to your @product@ instance, you're 
 ready to build the Guestbook Mobile SDK. You might be asking yourself, "Why do I 
 have to build a separate Mobile SDK? Can't I just use the pre-built Mobile SDK 
 that Liferay already provides?" Fantastic question! The reason is that Liferay's 
 pre-built Mobile SDK includes only the framework necessary to make server calls, 
-and the classes required to call the remote services of Liferay's *core* apps. 
-Core apps are those included with every Liferay instance (also referred to as 
+and the classes required to call the remote services of @product@'s *core* apps. 
+Core apps are those included with every @product@ instance (also referred to as 
 *out-of-the-box* apps). Since you'll be calling the 
 [Guestbook portlet's](/develop/tutorials/-/knowledge_base/6-2/writing-your-first-liferay-application) 
 remote services, you must build a separate Mobile SDK for them. This is true of 
@@ -23,7 +23,7 @@ portlet's remote services and WSDD were generated, see the article
 [Creating Web Services for Your Application](/develop/tutorials/-/knowledge_base/6-2/creating-web-services-for-your-application). 
 Since the Guestbook portlet's web services already exist, you don't need to 
 generate them. Just remember that you must generate web services when developing 
-your own Liferay apps. 
+your own @product@ apps. 
 
 To build the Mobile SDK, you first need to download its's source code. 
 You can do so by clicking 
@@ -43,7 +43,7 @@ directory and issue the following command:
 
 The wizard launches and asks you to enter your project's properties. You must 
 first provide the `Context` property. This is the context path of the Guestbook 
-portlet's remote services. To view your Liferay instance's remote service 
+portlet's remote services. To view your @product@ instance's remote service 
 context paths, navigate to 
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws). 
 On the page's upper left, there's a menu for selecting the context path. Select 
@@ -76,7 +76,7 @@ You can find these source classes in the Mobile SDK Builder's following folder:
     modules/gb/android/src/gen/java
 
 Also note that the source classes are in the package path you specified during 
-the build, with an additional folder that denotes the Liferay version. 
+the build, with an additional folder that denotes the @product@ version. 
 Therefore, the full path to the generated source classes is: 
 
     modules/gb/android/src/gen/java/com/liferay/mobile/android/v7
