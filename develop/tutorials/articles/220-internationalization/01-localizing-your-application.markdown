@@ -117,7 +117,7 @@ module.
 
 If you're crazy about modularity (and you should be), you might have an
 application with multiple modules that provide the view layer. These modules are
-often called Web modules.
+often called web modules.
 
     my-application/
         my-application-web/
@@ -156,24 +156,24 @@ this:
     application=My Application
     add-entity=Add Entity
 
-Create any translations you want, adding the translation locale ID to the language file name. File `Language_es.properties` might look like this: 
+Create any translations you want, adding the translation locale ID to the
+language file name. File `Language_es.properties` might look like this: 
 
     my-app-title=Mi Aplicación
     add-entity=Añadir Entity
 
 On
 [deploying](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
-the language module, @product@ detects the `content/Language.properties` file,
-adds a resource bundle
+the language module, @product@'s `ResourceBundleLoaderAnalyzerPlugin` detects
+the `content/Language.properties` file and adds a resource bundle
 [*capability*](http://blog.osgi.org/2015/12/using-requirements-and-capabilities.html)
-to the module, and registers a
+to the module. A capability is a contract a module declares to @product@'s OSGi
+framework. Capabilities let you associate services with modules that provide
+them. In this case, @product@ registers a
 [ResourceBundleLoader](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
-service for that capability. A capability is a contract a module declares to
-@product@'s OSGi framework. It lets you associate services with modules that
-provide them. `ResourceBundleLoaderAnalyzerPlugin` is the plugin that performs
-the detection. 
+service for the resource bundle capability. 
 
-Next, you'll configure a web module to use the language module's resource
+Next, you'll configure a web module to use the language module resource
 bundle. 
 
 ## Using a Language Module [](id=using-a-language-module)
@@ -182,95 +182,79 @@ A module can use a language module's resource bundle loader by declaring it as a
 required capability and declaring the language module's resource bundle as its
 own. 
 
-Here's how you configure a web module to use a language module's resource
+Follow these steps to configure a web module to use a language module resource
 bundle.
 
 1.  Open the web module's `bnd.bnd` file and add a `Require-Capability` header
-that filters on the language module's resource bundle capability. For example,
-if the language module's symbolic name is `com.liferay.docs.l10n.myapp.lang`,
-you'd specify the requirement like this: 
+    that filters on the language module's resource bundle capability. For
+    example, if the language module's symbolic name is
+    `com.liferay.docs.l10n.myapp.lang`, you'd specify the requirement like this: 
 
         Require-Capability: liferay.resource.bundle;filter:="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)"
 
 2.  In the `bnd.bnd`, add a `Provide-Capability` header that adds the language
-module's resource bundle as this module's:
+    module's resource bundle as this module's own resource bundle:
 
         Provide-Capability: liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.my.editor.lang)";resource.bundle.base.name="content.Language"
 
 It might seem a bit strange that the resource bundle aggregate has only one
 bundle. Grouping together multiple resource bundles comes into play when you
-want to include your module's own resource bundle in addition to a language
-module's. 
+want to use your module's own resource bundle *in addition to* a language module
+resource bundle. 
 
-For example, you might want to use language keys specific to your module as a
-compliment the language module's keys and override some of the language module's
-keys with your own. This requires aggregating the resource bundles and
-prioritizing your module's resource bundle higher than the language module's.
-You'll learn this best by way of example.
+For example, you might want to compliment language module keys with
+module-specific keys or override language module keys with your own. This
+requires aggregating both modules' resource bundles and prioritizing your
+module's resource bundle higher than the language module's. The following
+example demonstrates this. 
 
-A web module called `com.liferay.docs.l10n.myapp.admin.web` uses the language
-module `com.liferay.docs.l10n.myapp.lang`'s language keys, but overrides some of
-them. The web module's `Provide-Capability` and `Web-ContextPath` OSGi headers
-accomplish this.
+For example, a web module called `com.liferay.docs.l10n.myapp.admin.web` uses
+keys from language module `com.liferay.docs.l10n.myapp.lang`, but overrides some
+of them. The web module's `Provide-Capability` and `Web-ContextPath` OSGi
+headers accomplish this.
 
     Provide-Capability:\
     liferay.resource.bundle;resource.bundle.base.name:String="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)";resource.bundle.base.name="content.Language",\
     liferay.resource.bundle;resource.bundle.aggregate:String="(&(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)(!(aggregate=true))),(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)";bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web;resource.bundle.base.name="content.Language";service.ranking:Long="1";aggregate=true;\
     servlet.context.name=my-admin-application-web
-    
+
     Web-ContextPath:/my-admin-application-web
 
 Each line is explained:
 
-1.  `Provide-Capability Line 1`: declares the web module's resource bundle. This
-module's bundle symbolic name is `com.liferay.docs.l10n.myapp.admin.web`.
-2.  `Provide-Capability Line 2`: specifies an aggregate resource bundle to
-include one from the web module and another from language module. The web
-module's ranking `service.ranking:Long="1"` prioritizes its resource bundle over
-the language module's.
-3.  `Provide-Capability Line 3`: provides the web module's servlet context name
-(see the next line description).
-4.  `Web-ContextPath Line`: @product@ uses the servlet context name and web
-context path to make the aggregated resource bundle available to the web
-module's JSPs automatically. 
+1.  The first `Provide-Capability` line declares the web module's resource
+    bundle. This module's bundle symbolic name is
+    `com.liferay.docs.l10n.myapp.admin.web`. 
 
-To aggregate a language module's keys with your own, follow this pattern. The
-example language module and web modules can be downloaded in [this ZIP
-file](https://dev.liferay.com/documents/10184/656312/l10n-my-application.zip/3bf58646-95ba-4031-bd1a-ce52cc6152f3). 
+        liferay.resource.bundle;resource.bundle.base.name:String="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)";resource.bundle.base.name="content.Language",\
+
+2.  The second `Provide-Capability` line aggregates the web module resource
+    bundle and the language module resource bundle, prioritizing the web module
+    resource bundle over the language module resource bundle.
+
+        liferay.resource.bundle;resource.bundle.aggregate:String="(&(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)(!(aggregate=true))),(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)";bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web;resource.bundle.base.name="content.Language";service.ranking:Long="1";aggregate=true;\
+
+3.  The last `Provide-Capability` line and the `Web-ContextPath` line provide
+    the web module's servlet context name and the web context path respectively.
+    @product@ uses them to make the aggregated resource bundle available to the
+    web module's JSPs automatically. 
+
+        servlet.context.name=my-admin-application-web
+
+        Web-ContextPath:/my-admin-application-web
+
+To aggregate web module keys and language module keys, follow the pattern
+demonstrated by the example above. The example language module and web modules
+can be downloaded [here](https://dev.liferay.com/documents/10184/656312/l10n-my-application.zip/3bf58646-95ba-4031-bd1a-ce52cc6152f3). 
 
 Now you can add language properties files to your Liferay development toolbox,
-to provide translation of your application's user interface messages. But do you
-need to translate every single key yourself? What about those keys that you
-share with Liferay's core? 
+to provide translation of your application's user interface messages. But you
+don't need to translate every single key yourself: you can use keys that you
+share with @product@'s core. 
 
-Just as a side note: this is one of the ways you can use the infrastructure, but
-it is not the only one. All this is needed for the tooling to be able to find
-the appropiate `ResourceBundleLoader` without giving them any context (back in
-the days of the monolith everything was stored in the same place). While all (or
-most) of our modules are released using this I guess we can assume this is the
-default but any developer can also specify the `ResourceBundle` or
-`ResourceBundleLoader` that a JSP will have to use. In order to accomplish this
-the user only needs to get a reference to the desired
-`ResourceBundle/ResourceBundleLoader` and use standard JSP tooling for handling
-language keys. 
+## Using @product@'s Language Properties [](id=using-liferays-language-properties)
 
-Other option is to set a reference to a `ResourceBundleLoader` in the request
-with the attribute name `WebKeys.RESOURCE_BUNDLE_LOADER`. From that point on
-that would be the chosen resource for the JSP tooling. Also, the user can also 
-set a specific `ResourceBundle` in the JSP `PageContext` with the key
-`resourceBundle` and it will be used. 
-
-Note that the most unambiguous way for specifying the messages is by using the
-JSP standard tooling that allows to specify the `ResourceBundle` wanted for a
-translation. 
-
-Since most of the modules publish their resources in OSGi with the languge
-extender capabilities the users can get references to them just by asking for
-them as `@Reference` or by any other means. 
-
-## Using Liferay's Language Properties [](id=using-liferays-language-properties)
-
-If you have Liferay's source code, you can check out Liferay's core language
+If you have @product@'s source code, you can check out @product@'s core language
 properties by looking in the `portal-impl/src/main/content` folder. Otherwise,
 you can look in the `portal-impl.jar` that's in your Liferay bundle.
 
@@ -278,12 +262,12 @@ you can look in the `portal-impl.jar` that's in your Liferay bundle.
 
     [Liferay Home]/tomcat-[version]/webapps/ROOT/WEB-INF/lib/portal-impl.jar
 
-These keys are available at runtime, so just use any of Liferay's default keys
-in your user interface code, and they'll be automagically swapped out for the
-appropriately translated value. Using Liferay's keys where possible saves you
+These keys are available at runtime, so when you use any of @product@'s default
+keys in your user interface code, they're automagically swapped out for the
+appropriately translated value. Using @product@'s keys where possible saves you
 time and ensures that your application follows Liferay's UI conventions.
 
-If you want to automatically generate language files for each locale Liferay
-supports, or even configure your application to generate translations
-automatically using the Microsoft Translator API, check out the tutorial
+If you want to generate language files for each supported locale automatically,
+or to configure your application to generate translations automatically using
+the Microsoft Translator API, check out the tutorial
 [Automatically Generating Language Files](/develop/tutorials/-/knowledge_base/7-0/automatically-generating-language-files).
