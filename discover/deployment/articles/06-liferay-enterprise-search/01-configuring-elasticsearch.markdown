@@ -420,7 +420,6 @@ you want to see the mappings that were used to create the index with that name.
 
 $$$
 
-
 Use `overrideTypeMappings` to override @product@'s default type mappings. This
 is an advanced feature that should be used only if strictly necessary. If you
 set this value, the default mappings used to define the Liferay Document Type in
@@ -444,7 +443,6 @@ Then, from the end of the mappings, delete the concluding three curly braces.
             }
         }
     }
-
 
 Now modify whatever mappings you'd like. The changes take effect once you save
 the changes and trigger a reindex from Server Administration. If you need to add
