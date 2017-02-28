@@ -10,8 +10,7 @@ with Facebook.
 
 Like many web sites you may visit, any portal running on Liferay can be set up
 to use Facebook for sign in. This makes it easier for users to sign in to your
-site, since they won't need to remember another user name and password, For more
-information on setting up Facebook sign on, see chapter 15.
+site, since they won't need to remember another user name and password. 
 
 ## Using your Portlets as Facebook Applications [](id=using-your-portlets-as-facebook-applications)
 
