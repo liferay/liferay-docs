@@ -157,7 +157,7 @@ code to show you how this might look in Groovy (import statements excluded):
     }
 
 If you read the article on 
-[service trackers](/developer/tutorials/-/knowledge_base/7-0/service-trackers), 
+[service trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers), 
 the only odd looking piece of the above code is the `getBundle` call: why is
 `GroovyExecutor.class` passed as a parameter? The parameter passed to the
 `FrameworkUtil.getBundle` call must be a class from the bundle executing the
