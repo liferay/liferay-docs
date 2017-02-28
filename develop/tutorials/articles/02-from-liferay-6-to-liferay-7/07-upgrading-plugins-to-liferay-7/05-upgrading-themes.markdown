@@ -393,7 +393,7 @@ Next, you'll update the theme templates.
 @product-ver@ theme templates are essentially the same as Liferay Portal 6.2 theme
 templates. Here are the main changes:
 
--   Velocity templates are now deprecated in favor of FreeMarker templates
+-   Velocity templates are now deprecated in favor of FreeMarker templates.
 
 -   The Dockbar has been replaced and reorganized into a set of three distinct
     menus.
@@ -412,9 +412,9 @@ are these:
 The menus that replace the Dockbar supports a more flexible and responsive
 design for creating better user experiences. 
 
-You should start by addressing the Velocity templates. Since Velocity
-templates have been deprecated and aren't compatible with @product-ver@, **you
-must convert your Velocity theme templates to FreeMarker**.
+You should start by addressing the Velocity templates. Since Velocity templates
+have been deprecated, **you should convert your Velocity theme templates to
+FreeMarker**.
 
 If you're using the Themes Generator, the `gulp upgrade` command reports the
 required theme template changes in the log. 
