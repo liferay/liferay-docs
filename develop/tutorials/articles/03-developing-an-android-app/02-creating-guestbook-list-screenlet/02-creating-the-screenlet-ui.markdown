@@ -56,7 +56,7 @@ fill a layout with content. In this Screenlet, the layout is the row layout
 make list scrolling smooth, the adapter class should use an 
 [Android view holder](https://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder). 
 To make this easier, you can extend the list Screenlet framework's 
-[`BaseListAdapter` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java) 
+[`BaseListAdapter` class](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java) 
 with your model class and view holder as type arguments. By extending 
 `BaseListAdapter`, your adapter needs only two methods: 
 
