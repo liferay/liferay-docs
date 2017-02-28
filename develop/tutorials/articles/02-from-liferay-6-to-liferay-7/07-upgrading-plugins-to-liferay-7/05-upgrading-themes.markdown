@@ -412,9 +412,9 @@ are these:
 The menus that replace the Dockbar supports a more flexible and responsive
 design for creating better user experiences. 
 
-You should start by addressing the Velocity templates. Since Velocity
-templates have been deprecated and aren't compatible with @product-ver@, **you
-must convert your Velocity theme templates to FreeMarker**.
+You should start by addressing the Velocity templates. Since Velocity templates
+have been deprecated, **you should convert your Velocity theme templates to
+FreeMarker**.
 
 If you're using the Themes Generator, the `gulp upgrade` command reports the
 required theme template changes in the log. 
