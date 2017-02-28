@@ -63,7 +63,7 @@ The following table describes the JUnit method annotations.
 
 JUnit follows the algorithm below to execute the test class's methods. 
 
-![Figure x: JUnit executes the annotated methods following this algorithm.](../../images/junit-test-flow.png)
+![Figure 1: JUnit executes the annotated methods following this algorithm.](../../images/junit-test-flow.png)
 
 Let's create a JUnit test class.
 
@@ -121,7 +121,7 @@ Create a test class:
 
 Your new test class is ready for test methods.
 
-![Figure x: In this example module, the JUnit test class is in the same module of the class it tests. The test class resides in a source folder and package following standard test structure conventions.](../../images/junit-project-structure.png)
+![Figure 2: In this example module, the JUnit test class is in the same module of the class it tests. The test class resides in a source folder and package following standard test structure conventions.](../../images/junit-project-structure.png)
 
 Now create methods in the order of test flow execution. 
 
@@ -243,8 +243,9 @@ Unit testing involves these things:
 - Analyzing test results
 
 If your tests require accessing classes outside the module, declare them as
-`testCompile` dependencies in the module's `build.gradle` file. Here's an
-example `testCompile` dependency. 
+`testCompile`
+[dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+in the module's `build.gradle` file. Here's an example `testCompile` dependency. 
 
     testCompile group: "com.sample", name: "com.sample.external", version: "1.0.0"
 
@@ -260,7 +261,7 @@ Gradle and Maven commands execute module unit tests:
 The module's classes and tests compile and its tests run. The following figure
 shows command output for a successful test execution.
 
-![Figure x: Command output of successful test execution looks like this.](../../images/junit-command-output.png)
+![Figure 3: Command output of successful test execution looks like this.](../../images/junit-command-output.png)
 
 Reports are generated to module subfolders based on the build environment and/or
 reporting mechanism.
@@ -279,7 +280,7 @@ Gradle's HTML report, for example, shows overall test metrics and organizes test
 results by package. Clicking on a package name lists test class results.
 Clicking on a test class name lists test method results.
 
-![Figure x: In Gradle environments, JUnit produces an HTML file named `index.html` that reports test result details.](../../images/junit-results-html.png)
+![Figure 4: In Gradle environments, JUnit produces an HTML file named `index.html` that reports test result details.](../../images/junit-results-html.png)
 
 While it's certainly helpful to see successful test results, it's even more
 helpful to see results of failing tests.
@@ -287,14 +288,14 @@ helpful to see results of failing tests.
 As an experiment, change the expected values of a test's assertions to
 force the test to fail and rerun the tests to yield the respective failures. 
 
-![Figure x: Command output of failing tests looks like this.](../../images/junit-failure-command-output.png)
+![Figure 5: Command output of failing tests looks like this.](../../images/junit-failure-command-output.png)
 
 The command output shows the class and method name of each failed test, the
 JUnit assertion type, and the assertion's line number.
 
 The generated HTML report shows each failing test's stack trace.  
 
-![Figure x: Here's a failed test's stack trace.](../../images/junit-failure-results-html.png)
+![Figure 6: Here's a failed test's stack trace.](../../images/junit-failure-results-html.png)
 
 Stack traces show exactly why the test failed. They're essential for determining
 whether the failure is the result of faulty business logic or an incorrect

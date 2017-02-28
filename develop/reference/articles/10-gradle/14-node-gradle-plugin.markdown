@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "1.5.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "2.0.0"
     }
 
     repositories {
@@ -95,7 +95,7 @@ This is the base task to run Node.js in a Gradle build. All tasks of type
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`args` | `List<String>` | `[]` | The arguments for the Node.js invocation.
+`args` | `List<Object>` | `[]` | The arguments for the Node.js invocation.
 `command` | `String` | `"node"` | The file name of the executable to invoke.
 `inheritProxy` | `boolean` | `true` | Whether to set the `http_proxy`, `https_proxy`, and `no_proxy` environment variables in the Node.js invocation based on the values of the system properties `https.proxyHost`, `https.proxyPort`, `https.proxyUser`, `https.proxyPassword`, `https.nonProxyHosts`, `https.proxyHost`, `https.proxyPort`, `https.proxyUser`, `https.proxyPassword`, and `https.nonProxyHosts`. If these environment variables are already set, their values will not be overwritten.
 `nodeDir` | `File` | <p>**If [`node.download`](#download) is `true`:** [`node.nodeDir`](#nodedir)</p><p>**Otherwise:** `null`</p> | The directory that contains the executable to invoke. If `null`, the executable must be available in the system `PATH`.

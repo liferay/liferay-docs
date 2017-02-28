@@ -76,9 +76,8 @@ $$$
         blade create -t mvc-portlet [APPLICATION_NAME]-web
 
     If your application uses Liferay Service Builder, you'll need to run the
-    following Blade CLI command instead. This command generates the service
-    implementation and service API modules along with the aforementioned web
-    client module:
+    following Blade CLI command as well. This command generates the service
+    implementation and service API modules:
 
         blade create -t service-builder -p [ROOT_PACKAGE] [APPLICATION_NAME]
 
@@ -146,8 +145,8 @@ $$$
     content and default dependencies related to OSGi and @product@. In the
     `dependencies {...}` block, you need to add the web client module's
     dependencies. To learn how to find and specify dependencies on Liferay API
-    modules, refer to the reference document [Finding Liferay API
-    Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
+    modules, refer to the reference document 
+    [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules). 
     When deploying your module into the OSGi container, OSGi checks if the
     dependencies are available in the container. If the dependencies are not
     available in the container, your module will be unavailable. Therefore, your

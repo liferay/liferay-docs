@@ -1,6 +1,6 @@
 # Enabling Workflow [](id=enabling-workflow)
 
-The workflow functionality bundled with the Business Productivity Suite comes
+The workflow functionality bundled with the Liferay Forms and Workflow suite comes
 with one pre-installed workflow definition called the Single Approver Workflow. This
 workflow requires one approval before an asset can be published. One of the
 conveniences of using Liferay's workflow engine is that any roles specified in
@@ -10,7 +10,7 @@ engines cannot match. The Single Approver Workflow contains three roles, each
 with different scopes. You can deduce the scope of each role by its name: Site
 Content Reviewer, Organization Content Reviewer and Portal Content Reviewer.
 
-![Figure 1: The Single Approver Definition comes included with Liferay's Business Productivity workflow functionality.](../../../images/single-approver.png)
+![Figure 1: The Single Approver Definition comes included with the Liferay Forms and Workflow suite.](../../../images/single-approver.png)
 
 In addition to the Single Approver definition, there are some workflow
 definitions that ship with Liferay but are not pre-installed, since they're

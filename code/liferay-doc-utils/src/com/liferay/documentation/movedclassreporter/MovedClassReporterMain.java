@@ -187,16 +187,16 @@ public class MovedClassReporterMain {
 		sortByPackageName(removedClasses);
 		removeJavaSuffix(removedClasses);
 
-		String oldZipName = oldDir.getName() + ".zip";
-		String newZipName = newDir.getName() + ".zip";
+		String oldDirName = oldDir.getName();
+		String newDirName = newDir.getName();
 		
 		TemplateProcessor movedClassesTemplateProcessor = new TemplateProcessor();
-		movedClassesTemplateProcessor.processMovedClassesTemplate(movedClasses,  movedClassesOutputFile, oldZipName, newZipName);
+		movedClassesTemplateProcessor.processMovedClassesTemplate(movedClasses,  movedClassesOutputFile, oldDirName, newDirName);
 		System.out.println("Reported moved classes to file: " + movedClassesOutputFile.getPath());
 
 		if (removedClassesOutputFile != null) {
 			TemplateProcessor removedClassesTemplateProcessor = new TemplateProcessor();
-			removedClassesTemplateProcessor.processRemovedClassesTemplate(removedClasses, removedClassesOutputFile, oldZipName, newZipName);
+			removedClassesTemplateProcessor.processRemovedClassesTemplate(removedClasses, removedClassesOutputFile, oldDirName, newDirName);
 			System.out.println("Reported removed classes to file: " + removedClassesOutputFile.getPath());
 
 		}
@@ -250,7 +250,6 @@ public class MovedClassReporterMain {
 
 	private static void processModuleInfo(File bndFile, FormerPortalServiceClass formerClass) {
 		String bundleName = "";
-		String bundleVersion = "";
 		try {
 
 			LineNumberReader in =
@@ -263,38 +262,8 @@ public class MovedClassReporterMain {
 						bundleName = tokens[1].trim();
 					}
 				}
-				else if (line.startsWith("Bundle-Version:")) {
-					String[] tokens = line.split(" ");
-					if (tokens.length > 1) {
-						bundleVersion = tokens[1].trim();
 
-						// Decrement the bundle version if it's last version number is greater than zero
-						int x = bundleVersion.lastIndexOf(".");
-						if (x > 0 && (x + 1) < bundleVersion.length()) {
-
-							String microVersion = bundleVersion.substring(x + 1);
-
-							try {
-								int i = Integer.parseInt(microVersion);
-								StringBuilder sb = new StringBuilder();
-								sb.append(bundleVersion.substring(0, x));
-								sb.append(".");
-
-								if (i > 0) {
-									i = i - 1;
-								}
-
-								sb.append(i);
-
-								bundleVersion = sb.toString();
-							} catch (NumberFormatException e) {
-								e.printStackTrace();
-							}
-						}
-					}
-				}
-
-				if (!bundleName.isEmpty() && !bundleVersion.isEmpty()) {
+				if (!bundleName.isEmpty()) {
 					break;
 				}
 			}
@@ -303,9 +272,8 @@ public class MovedClassReporterMain {
 			e.printStackTrace();
 		}
 
-		if (!bundleName.isEmpty() && !bundleVersion.isEmpty()) {
+		if (!bundleName.isEmpty()) {
 			formerClass.setModule(bundleName);
-			formerClass.setVersion(bundleVersion);
 		}
 		else {
 			System.out.println("ERROR: Could not fill bundle info for " + bndFile.getPath());
