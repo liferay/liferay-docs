@@ -2,7 +2,7 @@
 
 In this Learning Path's previous section, you created an Android app that 
 contains the Guestbook Mobile SDK and Liferay Screens. You also used Login 
-Screenlet to implement authentication with your Liferay instance. That's all 
+Screenlet to implement authentication with your @product@ instance. That's all 
 your app does though. It doesn't display any Guestbook portlet content. In this 
 section of the Learning Path, you'll create Guestbook List Screenlet to retrieve 
 and display the portlet's guestbooks in your app's navigation drawer. 
@@ -21,14 +21,16 @@ You'll use these steps to create Guestbook List Screenlet:
 
 2. Creating the Screenlet's UI (its View). 
 
-3. Understanding Mobile SDK calls. Recall that Screenlets use the Mobile SDK to 
+3. Creating the Screenlet's Event.
+
+4. Understanding Mobile SDK calls. Recall that Screenlets use the Mobile SDK to 
    make server calls. Before creating Guestbook List Screenlet's server call, 
    you should understand how Mobile SDK calls work. 
 
-4. Creating the Screenlet's server call. Screenlets use components called 
+5. Creating the Screenlet's server call. Screenlets use components called 
    *Interactors* to make server calls. 
 
-5. Creating the Screenlet class. The Screenlet class governs the Screenlet's 
+6. Creating the Screenlet class. The Screenlet class governs the Screenlet's 
    behavior. 
 
 Before beginning, you should read the following tutorials: 
