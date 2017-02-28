@@ -55,14 +55,13 @@ fill a layout with content. In this Screenlet, the layout is the row layout
 (`guestbook_row.xml`) and the content is each list item (a guestbook's name). To 
 make list scrolling smooth, the adapter class should use an 
 [Android view holder](https://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder). 
-To make this easier, the list Screenlet framework contains 
-[the abstract class `BaseListAdapter`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java) 
-that you can extend to create your own adapter class with a view holder. By 
-extending this class, your adapter needs only two methods: 
+To make this easier, you can extend the list Screenlet framework's 
+[`BaseListAdapter` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java) 
+with your model class and view holder as type arguments. By extending 
+`BaseListAdapter`, your adapter needs only two methods: 
 
-- `createViewHolder`: Instantiates your view holder. 
-
-- `fillHolder`: Fills each of your view holder's rows. 
+- `createViewHolder`: instantiates the view holder 
+- `fillHolder`: fills in the view holder for each row 
 
 Your view holder should also contain variables for any data each row needs to 
 display. The view holder must assign these variables to the corresponding row 
@@ -103,43 +102,42 @@ class:
 
         public class GuestbookViewHolder extends BaseListAdapter.ViewHolder {
 
-            private final TextView _name;
+            private final TextView name;
 
             public GuestbookViewHolder(View view, BaseListAdapterListener listener) {
                 super(view, listener);
 
-                _name = (TextView) view.findViewById(R.id.guestbook_name);
+                name = (TextView) view.findViewById(R.id.guestbook_name);
             }
 
             public void bind(GuestbookModel entry) {
-                _name.setText(entry.getName());
+                name.setText(entry.getName());
             }
 
         }
     }
 
-This class's view holder is an inner class that extends 
-[`BaseListAdapter`'s view holder](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java#L120-L138). 
-Since Guestbook List Screenlet only needs to display a guestbook's name in 
-each row, the view holder only needs one variable: `_name`. The view holder's 
+This class's view holder is an inner class that extends `BaseListAdapter`'s view 
+holder. Since Guestbook List Screenlet only needs to display a guestbook's name 
+in each row, the view holder only needs one variable: `name`. The view holder's 
 constructor assigns the `TextView` from `guestbook_row.xml` to this variable. 
 The `bind` method then sets the guestbook's name as the `TextView`'s text. 
 
 The other methods in `GuestbookAdapter` leverage the view holder. The 
-`createViewHolder` method calls the view holder's constructor to create new 
-`GuestbookViewHolder` instances. The `fillHolder` method calls the view holder's 
-`bind` method to set the guestbook's name as the `_name` variable's text. 
+`createViewHolder` method instantiates `GuestbookViewHolder`. The `fillHolder` 
+method calls the view holder's `bind` method to set the guestbook's name as the 
+`name` variable's text. 
 
 Next, you'll create the View class. 
 
 ## Creating the View Class [](id=creating-the-view-class)
 
 The View class is the central hub of any Screenlet's UI. It renders the UI, 
-handles user interactions, and communicates with the Screenlet class. In list 
-Screenlets, Screens provides most of this functionality for you via 
-[the `BaseListScreenletView` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java). 
-Your View class, however, must extend this class to provide your row layout ID 
-and an instance of your adapter. You'll do this by overriding 
+handles user interactions, and communicates with the Screenlet class. The list 
+Screenlet framework provides most of this functionality for you via 
+[the `BaseListScreenletView` class](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java). 
+Your View class must extend this class to provide your row layout ID and an 
+instance of your adapter. You'll do this by overriding 
 `BaseListScreenletView`'s `getItemLayoutId` and `createListAdapter` methods. 
 Note that this is the only custom functionality your View class needs. If it 
 needed more, you could provide it by creating new methods or overriding other 
@@ -148,30 +146,29 @@ needed more, you could provide it by creating new methods or overriding other
 Before creating your View class, you should understand how 
 `BaseListScreenletView` works. `BaseListScreenletView` displays the server 
 call's results by implementing the 
-[`BaseListViewModel` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/view/BaseListViewModel.java). 
+[`BaseListViewModel` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/view/BaseListViewModel.java). 
 This interface defines two methods: 
 
 - `showFinishOperation(int startRow, int endRow, List<E> entries, int rowCount)`: 
   Receives the list of objects (`List<E> entries`) that results from a 
   successful server call. 
-  [This method's implementation in `BaseListScreenletView`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L81-L133) 
+  [This method's implementation in `BaseListScreenletView`](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L94-L143) 
   fills the adapter with these objects. 
 
 - `showFinishOperation(int startRow, int endRow, Exception e)`: Receives the 
   `Exception` that results from a failed server call. 
-  [This method's implementation in `BaseListScreenletView`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L140-L145) 
+  [This method's implementation in `BaseListScreenletView`](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L150-L155) 
   sets the visibility of the View's `ProgressBar` and `RecyclerView` (you'll 
   create these shortly), and logs the `Exception`. 
 
-The list Screenlet framework's default Screenlet 
-class--`BaseListScreenlet`--calls these methods to update the View with the 
-server call's results. Later, when you extend `BaseListScreenlet` to create your 
-Screenlet class, you'll see how this works. For now, just be aware that 
-`BaseListScreenletView`'s `BaseListViewModel` implementation updates the UI. 
-Also note that every Screenlet's View requires a View Model interface to define 
-the methods that update the UI. The list Screenlet framework provides this 
-interface for you. If you were creating a non-list Screenlet, you'd need to 
-create this interface. 
+The list Screenlet framework's default Screenlet class (`BaseListScreenlet`) 
+calls these methods to update the View with the server call's results. Later, 
+when you extend `BaseListScreenlet` to create your Screenlet class, you'll see 
+how this works. For now, just be aware that these methods update the UI. Also 
+note that every Screenlet's View requires a View Model interface to define such 
+methods. The list Screenlet framework provides this interface for you in 
+`BaseListViewModel`. If you were creating a non-list Screenlet, you'd need to 
+create your own View Model interface. 
 
 ![Figure 1: In the list Screenlet framework, `BaseListScreenlet` calls `BaseListScreenletView`'s `BaseListViewModel` implementation. The implementations of the View Model's `showFinishOperation` methods update the Screenlet's UI with the server call's results.](../../../images/screens-android-list-screenlet-view.png)
 
@@ -222,9 +219,9 @@ contents with the following:
 
 Extending `BaseListScreenletView` with `GuestbookModel`, 
 `GuestbookAdapter.GuestbookViewHolder`, and `GuestbookAdapter` as type arguments 
-lets you override the `createListAdapter` method to return a `GuestbookAdapter` 
-instance. You also override the `getItemLayoutId` method to return the ID of the 
-row layout you defined earlier (`guestbook_row`). 
+lets you override the `createListAdapter` method to instantiate and return a 
+`GuestbookAdapter` instance. You also override the `getItemLayoutId` method to 
+return the ID of the row layout you defined earlier (`guestbook_row`). 
 
 Now you're ready to create your View's main layout. 
 
