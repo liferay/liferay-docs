@@ -9,7 +9,7 @@ the SDK will become increasingly difficult.
 providing a comprehensive Gradle development environment and more. A simple
 command migrates traditional plugins (such as portlets) to Gradle-based web
 application projects. From there you can build and deploy them to @product-ver@
-as a Web ARchives (WARs). 
+as Web ARchives (WARs). 
 
 ## Running the Migration Command [](id=running-the-migration-command)
 
@@ -20,7 +20,7 @@ application folder structure.
 
 **Standard Web Application Anatomy:**
 
-- `<project root>`
+- `[project root]`
     - `src`
         - `main`
             - `webapp`
@@ -35,7 +35,7 @@ application folder structure.
         - `java` &rarr; Java source
     - build files
 
-In a terminal, navigate to the Liferay Workspace root folder. Then, pass your
+In a terminal, navigate to the Liferay Workspace root folder. Then pass your
 Plugins SDK project's name to Blade's `migrateWar` command:
 
     blade migrateWar <pluginProjectName>
