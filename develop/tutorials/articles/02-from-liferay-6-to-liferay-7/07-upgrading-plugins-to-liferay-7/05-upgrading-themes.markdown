@@ -393,7 +393,7 @@ Next, you'll update the theme templates.
 @product-ver@ theme templates are essentially the same as Liferay Portal 6.2 theme
 templates. Here are the main changes:
 
--   Velocity templates are now deprecated in favor of FreeMarker templates
+-   Velocity templates are now deprecated in favor of FreeMarker templates.
 
 -   The Dockbar has been replaced and reorganized into a set of three distinct
     menus.
