@@ -343,15 +343,14 @@ dynamic template (see below).
 
 `additionalTypeMappings` is used to define extra field mappings for the
 `LiferayDocumentType` type definition, which are applied when the index is
-created. Add these field mappings in using JSON syntax. For more information
-see
+created. Add these field mappings in using JSON syntax. For more information see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/mapping.html)
 and
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/indices-put-mapping.html).
 Use `additionalTypeMappings` for new field mappings, but do not try to override
-existing mappings. If any of the mappings set here overlap with existing
-mappings, index creation will fail. Use `overrideTypeMappings` to replace the
-default mappings.
+existing `properties` mappings. If any of the `properties` mappings set here
+overlap with existing mappings, index creation will fail. Use
+`overrideTypeMappings` to replace the default `properties` mappings.
 
 Here's an example of a [dynamic
 template](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/dynamic-templates.html)
@@ -360,7 +359,7 @@ with `_ja`.
 
     { 
         "LiferayDocumentType": {
-            dynamic_templates": [
+            "dynamic_templates": [
                 {
                     "template_ja": {
                         "mapping": {
@@ -379,8 +378,11 @@ with `_ja`.
         }
     }
 
-As with dynamic templates, you can add sub-field mappings to @product@'s type
-mapping. These are referred to as [properties](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/properties.html) in Elasticsearch.
+The above will add a new `template_ja` dynamic template. This overrides the
+existing dynamic template with the same name. As with dynamic templates, you can
+add sub-field mappings to @product@'s type mapping. These are referred to as
+[properties](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/properties.html)
+in Elasticsearch.
 
     { 
         "LiferayDocumentType": {  
@@ -394,8 +396,11 @@ mapping. These are referred to as [properties](https://www.elastic.co/guide/en/e
         }
     }
 
-The above example shows how a `fooName` field might be added to @product@'s
-type mapping.
+The above example shows how a `fooName` field might be added to @product@'s type
+mapping. Because `fooName` is not an existing property in the mapping, it will
+work just fine. If you try to override an existing property mapping, index
+creation will fail. Instead use the `overrideTypeMappings` setting to override
+`properties` in the mapping.
 
 +$$$
 
@@ -422,27 +427,29 @@ set this value, the default mappings used to define the Liferay Document Type in
 @product@ source code (for example, `liferay-type-mappings.json`) are ignored
 entirely, so include the whole mappings definition in this property, not just
 the segment you're modifying. To make a modification, find the entire list of
-current mappings used to create the index, by navigating to the URL
+the current mappings being used to create the index, by navigating to the URL
 
     http://[HOST]:[ES_PORT]/liferay-[COMPANY_ID]/_mapping/LiferayDocumentType?pretty
 
-Copy the contents in as the value of this property (either into System Settings or your
-OSGi configuration file). Strip off the opening
+Copy the contents in as the value of this property (either into System Settings
+or your OSGi configuration file). Leave the opining curly brace `{`, but delete
+lines 2-4 entirely:
 
-    {
-        "liferay-[COMPANY_ID]": {
+    "liferay-[COMPANY_ID]": {
+        "mappings" : {
+            "LiferayDocumentType" : {
 
+Then, from the end of the mappings, delete the concluding three curly braces.
 
-and the concluding
-
-       }
+            }
+        }
     }
 
 
-to balance the curly braces. Now modify whatever mappings you'd like. The
-changes take effect once you save the changes and trigger a reindex from Server
-Administration. If you need to add new custom mappings without overriding any
-defaults, use `additionalTypeMappings` instead.
+Now modify whatever mappings you'd like. The changes take effect once you save
+the changes and trigger a reindex from Server Administration. If you need to add
+new custom mappings without overriding any defaults, use
+`additionalTypeMappings` instead.
 
 +$$$
 
