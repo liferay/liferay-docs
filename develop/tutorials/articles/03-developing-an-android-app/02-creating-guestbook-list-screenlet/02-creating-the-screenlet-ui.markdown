@@ -263,7 +263,5 @@ its contents with the following:
 Note that these `android:id` values are hardcoded into the Liferay Screens 
 framework. Changing them will cause your app to crash. 
 
-Great! You're done with Guestbook List Screenlet's View. You're almost ready to 
-write the Screenlet's server call. Because Screenlets use the Mobile SDK to make 
-server calls, you should first learn how Mobile SDK calls work. The next article 
-shows you this. 
+Great! You're done with Guestbook List Screenlet's View. Next, you'll create the 
+Screenlet's event. 
