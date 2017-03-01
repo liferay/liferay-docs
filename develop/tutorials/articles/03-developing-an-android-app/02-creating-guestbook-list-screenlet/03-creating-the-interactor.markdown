@@ -61,96 +61,117 @@ in the list Screenlet tutorial. The only difference is that `GuestbookEvent` is
 adapted for guestbooks. 
 
 Nice work! Your event class is done. You're almost ready to write the 
-Screenlet's server call. First, however, you should understand how server calls 
-work in Interactors. 
+Screenlet's server call. First, however, you should understand the basics of how 
+server calls work in Interactors. 
 
 ## Understanding Screenlet Server Calls
 
-<!-- Rewrite without callbacks -->
-Screenlets use *Interactors* to make server calls. Interactors are Screenlet 
-components that use the Mobile SDK to make server calls. Although Interactors 
-are also made up of several components, for now you only need to know two: the 
-Interactor class, and the Interactor's callback. The Interactor class issues the 
-Mobile SDK call, and the callback routes it asynchronously through a background 
-thread. You'll learn these components in more detail, and the others that 
-comprise an Interactor, when you create Guestbook List Screenlet's Interactor. 
-For now, though, you'll focus on Mobile SDK calls. 
+Interactor classes use the Liferay Mobile SDK to make server calls and process 
+the results. An Interactor class does this in the following sequence: 
 
-To call the Guestbook portlet's remote services, you'll use the Guestbook Mobile 
-SDK you built and installed earlier. This Mobile SDK contains the services 
-required to call the Guestbook portlet's remote services. The following diagram 
-illustrates a typical Mobile SDK call in a Screenlet: 
+1. Get the Mobile SDK session and use it to create the Mobile SDK service 
+   you want to call. 
+
+2. Call the Mobile SDK service method that makes the server call. 
+
+3. Create an event object from the JSON that the server call returns. If your 
+   Screenlet has a model class, create a model object from the JSON, then create 
+   the event object from the model object. 
 
 ![Figure 1: This diagram shows a typical Mobile SDK call made by a Screenlet's Interactor.](../../../images/android-mobile-sdk.png)
 
-This diagram is broken down into four basic steps: 
-
-1. In the Interactor class, create an instance of the Guestbook Mobile SDK 
-   service required to call the Guestbook portlet's remote services. For 
-   example, to get guestbooks from the portlet you must create a 
-   `GuestbookService` instance. The service instance contains the methods that 
-   call the Guestbook portlet's remote services. How you create this instance is 
-   also important. You must create it with an authenticated session that 
-   contains a callback instance. The callback is required to route the remote 
-   service call asynchronously through a background thread, since Android 
-   doesn't allow network requests on its main UI thread. Note that when creating 
-   a list Screenlet, you don't have to set the callback to the session manually; 
-   the list Screenlet framework does it for you. 
-
-2. In the same Interactor class, use the Guestbook Mobile SDK service instance 
-   to call the Guestbook portlet's remote services. For example, to get 
-   guestbooks from the portlet you must call the `GuestbookService` instance's 
-   `getGuestbooks` method. The service routes the call through the callback 
-   instance. 
-
-3. Receive and process the JSON that results from a successful server call. To 
-   efficiently work with these results in your app, you must transform the JSON 
-   into model objects that represent guestbooks or entries. You use model 
-   classes to do this, like the `GuestbookModel` class you created earlier. Note 
-   that in list Screenlets, 
-   [the `BaseListCallback` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java) 
-   automatically transforms the JSON into `Map` objects for you. You must still, 
-   however, use your model class to convert these `Map` objects into proper 
-   guestbook objects. 
-
-4. Receive the model objects in the Interactor class. You can then send these 
-   objects to the rest of the Screenlet for display in the app. Note that in 
-   list Screenlets, the list Screenlet framework's 
-   [`BaseListInteractor` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
-   receives the model objects for you. 
-
-You've probably noticed that in list Screenlets, the list Screenlet framework 
-handles a great deal of the work for you. You'll see this in greater detail as 
-you progress through this Learning Path. Next, you'll create Guestbook List 
-Screenlet's Interactor. 
+To call the Guestbook portlet's remote services, you'll use the Guestbook Mobile 
+SDK you built and installed earlier. This Mobile SDK contains the services 
+required to call the Guestbook portlet's remote services. Next, you'll create 
+Guestbook List Screenlet's Interactor class. 
 
 ## Creating the Interactor Class
 
-<!-- Rewrite without callbacks & drop detailed listener explanation -->
-In the previous section, you learned that Screenlets use a Mobile SDK to make 
-server calls via Interactors. Now you'll create Guestbook List Screenlet's 
-Interactor. In this Interactor, you'll use the Guestbook Mobile SDK to call the 
-Guestbook portlet's remote services. Recall that this is necessary because the 
-Guestbook Mobile SDK contains the services required to call the portlet's remote 
-services. 
+You'll create your Interactor class, `GuestbookListInteractor`, with the same 
+[steps the list Screenlet creation tutorial uses to create the Interactor class](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-interactor). 
+Guestbook List Screenlet's Interactor class must create `GuestbookService` 
+instances for calling the Guestbook portlet's remote services. This Interactor 
+class must also create `GuestbookModel` and `GuestbookEvent` objects from the 
+service call's results. Follow these steps to create `GuestbookListInteractor`: 
 
-An Interactor consists of the following components: 
+1. Create the `GuestbookListInteractor` class in the package 
+   `com.liferay.docs.guestbooklistscreenlet.interactor`. This class must extend 
+   `BaseListInteractor` with `BaseListInteractorListener<GuestbookModel>` and 
+   `GuestbookEvent` as type arguments. 
 
-1. The event. Screens uses event objects via the 
-   [EventBus](http://greenrobot.org/eventbus/) 
-   library to communicate the server call's results within a Screenlet. A 
-   Screens event class creates these event objects, which contain the server 
-   call's results. The list Screenlet framework provides 
-   [the event class `BaseListEvent`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListEvent.java), 
-   so you don't need to create an event class manually. 
+        public class GuestbookListInteractor extends 
+            BaseListInteractor<BaseListInteractorListener<GuestbookModel>, GuestbookEvent> {...
 
-2. The callback. Because Android doesn't allow network requests on its main UI 
-   thread, a callback class is required to route the server call asynchronously 
-   through a background thread. The callback also processes the JSON returned by 
-   a successful server call, and uses the event class to create event objects 
-   that contain these results. The list Screenlet framework provides 
-   [the callback class `BaseListCallback`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java), 
-   so you don't need to create one manually. 
+    This requires that you add the following imports: 
+
+        import com.liferay.docs.model.GuestbookModel;
+        import com.liferay.mobile.screens.base.list.interactor.BaseListInteractor;
+        import com.liferay.mobile.screens.base.list.interactor.BaseListInteractorListener;
+
+2. Override the `getPageRowsRequest` method to retrieve a page of Guestbooks. In 
+   `GuestbookListInteractor`, you do this by creating a `GuestbookService` 
+   instance from the session and then calling the service's `getGuestbooks` 
+   method with the `groupId`, start row, and end row: 
+
+        @Override
+        protected JSONArray getPageRowsRequest(Query query, Object... args) throws Exception {
+
+            return new GuestbookService(getSession()).getGuestbooks(groupId, query.getStartRow(), 
+                query.getEndRow());
+        }
+
+    This requires that you add the following imports: 
+
+        import com.liferay.mobile.android.v7.guestbook.GuestbookService;
+        import com.liferay.mobile.screens.base.list.interactor.Query;
+        import org.json.JSONArray;
+
+3. Override the `getPageRowCountRequest` method to retrieve the number of 
+   guestbooks. Recall that this enables pagination. In 
+   `GuestbookListInteractor`, you do this by creating a `GuestbookService` 
+   instance from the session and then calling the service's `getGuestbooksCount` 
+   method with the `groupId`: 
+
+        @Override
+	    protected Integer getPageRowCountRequest(Object... args) throws Exception {
+
+            return new GuestbookService(getSession()).getGuestbooksCount(groupId);
+        }
+
+4. Override the `createEntity` method to create and return a new 
+   `GuestbookEvent` object that contains the server call's results. Recall that 
+   `BaseListInteractor` converts the JSON that results from a successful server 
+   call into a `Map<String, Object>`. This happens in `BaseListInteractor`'s 
+   [`execute(Query query, Object... args)` method](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java#L27-L49). 
+   The `createEntity` method's only argument is this `Map`, which you use to 
+   create a `GuestbookModel` object. Then create and return a new 
+   `GuestbookEvent` object from the model object: 
+
+        @Override
+        protected GuestbookEvent createEntity(Map<String, Object> stringObjectMap) {
+            GuestbookModel guestbook = new GuestbookModel(stringObjectMap);
+            return new GuestbookEvent(guestbook);
+        }
+
+    This requires that you import `java.util.Map;`. 
+
+5. Override the `getIdFromArgs` method to return the value of the first object 
+   argument as a string. This serves as a cache key to support 
+   [offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android): 
+
+        @Override
+        protected String getIdFromArgs(Object... args) {
+            return String.valueOf(args[0]);
+        }
+
+<!-- 
+What does this method do and why is it required? I deduced that it's a cache key 
+by looking at it's use in BaseCacheReadInteractor. 
+
+Also, fix the list Screenlet tutorial with the answer, since it's required and 
+the tutorial says it isn't.
+-->
+<!-- old material...
 
 3. The listener(s). Listener interfaces define the methods the Screenlet needs 
    to communicate the event object's results within the Screenlet, and to the 
@@ -176,224 +197,6 @@ An Interactor consists of the following components:
     need to extend them. This article describes some of 
     `BaseListInteractorListener`. You'll learn the rest, and learn how 
     `BaseListListener` works, when you create the Screenlet class later. 
-
-4. The Interactor class. This class: 
-
-    - implements the method that makes the server call
-    - processes the event object that contains the call's results
-    - notifies the listener of those results
-
-    If you were creating a non-list Screenlet, you'd create the Interactor class 
-    by creating and implementing an Interactor interface. Since you're creating 
-    a list Screenlet, however, you can just extend 
-    [the `BaseListInteractor` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
-    the list Screenlet framework provides. 
-
-Since Guestbook List Screenlet is a list Screenlet, you only need to create its 
-Interactor class! The list Screenlet framework provides default implementations 
-for the event, callback, and listeners. 
-
-Now it's time to get classy! 
-
-### Creating the Interactor Class [](id=creating-the-interactor-class)
-
-To create Guestbook List Screenlet's Interactor class, you must extend the list 
-Screenlet framework's 
-[`BaseListInteractor` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java). 
-Before doing this, however, you should know how `BaseListInteractor` processes 
-the server call's results in its 
-[`onEventMainThread` method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java#L61-L75) 
-and 
-[`notifyError` method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java#L87-L91). 
-These methods take an event object (`BaseListEvent`), get the server call's 
-results from the event, and then pass these results to a 
-`BaseListInteractorListener` instance retrieved with `getListener`. Here's how 
-each method works: 
-
-- `onEventMainThread`: Called in response to a successful server call. This 
-  method first uses an `if` statement with `isValidEvent` to make sure the event 
-  is associated with the correct Screenlet and isn't `null`. For use with 
-  [offline mode](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens), 
-  `onEventMainThread` then calls `onEventWithCache` to store the event to the 
-  cache. The `onEventMainThread` method finishes with an `if` statement that 
-  calls the event's `isFailed` method to make sure the event doesn't contain an 
-  exception. This verifies that the event succeeded and therefore contains the 
-  objects the server call intended to retrieve. The `event.getEntries()` call 
-  then gets these objects from the event. Similar calls to the event's 
-  `getRowCount`, `getStartRow`, and `getEndRow` methods get the number of rows, 
-  starting row number, and ending row number, respectively. This supports 
-  pagination in the Screenlet's list. The `BaseListInteractorListener` method 
-  `onListRowsReceived` then sends this data to any classes that implement it. 
-
-- `notifyError`: Called in response to a failed server call. This method uses 
-  the event's `getStartRow`, `getEndRow`, and `getException` methods to retrieve 
-  the starting row number, ending row number, and exception, respectively. The 
-  `BaseListInteractorListener` method `onListRowsFailure` then sends this data 
-  to any classes that implement it. 
-
-There's a key point here that warrants emphasis: objects of any class that 
-implements `BaseListInteractorListener` receive the server call's results via 
-these methods and thus serve as this listener. In the list Screenlet framework, 
-this is 
-[the `BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java). 
-Later, you'll learn how `BaseListScreenlet` handles the server call's results. 
-For now, focus on the Interactor class. 
-
-![Figure 1: `BaseListInteractor` calls the `BaseListInteractorListener` implementation in `BaseListScreenlet`. This lets the Interactor propagate the server call's results throughout the Screenlet.](../../../images/screens-android-list-screenlet-interactor.png)
-
-When you extend `BaseListInteractor` to create Guestbook List Screenlet's 
-Interactor class, you can rely on the default `onEventMainThread` and 
-`notifyError` implementations. You must, however, implement 
-`BaseListInteractor`'s following abstract methods: 
-
-- `getCallback`: Returns a new `BaseListCallback` instance to use when making 
-  the service call. 
-
-- `getPageRowsRequest`: Makes the server call to get a page of guestbooks. Note 
-  that this is a page as represented in the Screenlet, not in the portlet. 
-
-- `getPageRowCountRequest`: Makes the server call to get the total number of 
-  guestbooks in the portlet. 
-
-You must also implement the methods required to support 
-[offline mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
-
-First, create a new package called `interactor` in 
-`com.liferay.docs.guestbooklistscreenlet`. Then create a new class called 
-`GuestbookListInteractorImpl` in the `interactor` package. Change the class 
-declaration to extend `BaseListInteractor` with `GuestbookModel` and 
-`BaseListInteractorListener<GuestbookModel>` as type arguments. You should also 
-add an instance variable for the group ID (site ID) of the site the Screenlet 
-retrieves guestbooks from. The class declaration and first few lines of the 
-class should now look like this: 
-
-    public class GuestbookListInteractorImpl extends BaseListInteractor<GuestbookModel, 
-        BaseListInteractorListener<GuestbookModel>> {
-
-        private long groupId;
-        ...
-
-Now you must implement `BaseListInteractor`'s abstract `getCallback` method to 
-return a new `BaseListCallback<GuestbookModel>` instance. Before implementing 
-this method, however, you should know how `BaseListCallback` processes a server 
-call's results. Recall that the list Screenlet framework converts the JSON that 
-results from a successful server call into `Map` objects, and that you must then 
-convert the `Map` objects into model objects. This all happens in 
-[a single line of `BaseListCallback`'s `transform` method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java#L52). 
-This line converts each `JSONObject` into a `Map` object, and then uses 
-`BaseListCallback`'s `createEntity` method to convert the `Map` into a model 
-object. Since 
-[`createEntity` is abstract](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java#L79), 
-you must implement it to create your model objects. 
-
-You can do all this in your `getCallback` implementation by extending 
-`BaseListCallback<GuestbookModel>` as an anonymous inner class that implements 
-`createEntity`. All your `createEntity` implementation needs to do is call the 
-`GuestbookModel` constructor with a `Map<String, Object>`. Add the following 
-`getCallback` implementation to `GuestbookListInteractorImpl`: 
-
-    @Override
-    protected BaseListCallback<GuestbookModel> getCallback(Pair<Integer, Integer> rowsRange, Locale locale) {
-        return new BaseListCallback<GuestbookModel>(getTargetScreenletId(), rowsRange, locale) {
-            @Override
-            public GuestbookModel createEntity(Map<String, Object> stringObjectMap) {
-                return new GuestbookModel(stringObjectMap);
-            }
-        };
-    }
-
-Now that your Screenlet can create a callback instance, you're ready to 
-implement the `BaseListInteractor` methods that make the server calls: 
-`getPageRowsRequest` and `getPageRowCountRequest`. Recall that to make server 
-calls, you must create a Mobile SDK service instance that contains the methods 
-you'll use to call your server's remote services. You must also create this 
-service instance with an authenticated session that contains a callback. You can 
-do all this, and make the call, with a single line of code in 
-`getPageRowsRequest` and `getPageRowCountRequest`. Add these methods to 
-`GuestbookListInteractorImpl`: 
-
-    @Override
-    protected void getPageRowsRequest(Session session, int startRow, int endRow, Locale locale) 
-        throws Exception {
-            new GuestbookService(session).getGuestbooks(groupId, startRow, endRow);
-    }
-
-    @Override
-    protected void getPageRowCountRequest(Session session) throws Exception {
-        new GuestbookService(session).getGuestbooksCount(groupId);
-    }
-
-In both methods, you create the `GuestbookService` instance with a session and 
-then call the service method. The `getGuestbooks` service method retrieves a 
-page of guestbooks from the site matching `_groupId`. The `getGuestbooksCount` 
-service method retrieves the total number of guestbooks from the same site. You 
-might now be thinking, "Hey, wait a minute! There's no callback assignment here! 
-You said a callback had to be set to the session! You're a phony!" Phony 
-accusations aside, you're partially correct: there's no callback assignment 
-*here*. 
-[`BaseListInteractor`'s `getSession` method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java#L160-L168) 
-sets the callback to the session for you. This method retrieves the current 
-session, which Login Screenlet creates when the user authenticates. A Mobile SDK 
-batch session object--`BatchSessionImpl`--is then created from the session. This 
-lets the Mobile SDK 
-[make the calls in batch](/develop/tutorials/-/knowledge_base/7-0/sending-your-android-apps-requests-using-batch-processing), 
-which is usually more efficient. The callback is created by your `getCallback` 
-implementation, and then set to the batch session by `setCallback`. This last 
-step occurs in 
-[a single line of code](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java#L165). 
-
-The rest of the code you'll add to `GuestbookListInteractorImpl`, including the 
-constructor, is boilerplate code that 
-[supports offline mode in Screens](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
-Add this code to `GuestbookListInteractorImpl` now: 
-
-    private enum GUESTBOOK_LIST implements CachedType {GUESTBOOK, GUESTBOOK_COUNT}
-
-    public GuestbookListInteractorImpl(int targetScreenletId, OfflinePolicy offlinePolicy) {
-        super(targetScreenletId, offlinePolicy);
-    }
-
-    public void loadRows(int startRow, int endRow, Locale locale, long groupId)
-            throws Exception {
-
-        this.groupId = groupId;
-
-        processWithCache(startRow, endRow, locale);
-    }
-
-    @Override
-    protected String getContent(GuestbookModel object) {
-        return new JSONObject(object.getValues()).toString();
-    }
-
-    @Override
-    protected GuestbookModel getElement(TableCache tableCache) throws JSONException {
-        return new GuestbookModel(JSONUtil.toMap(new JSONObject(tableCache.getContent())));
-    }
-
-    @Override
-    protected void storeToCache(BaseListEvent event, Object... args) {
-        storeRows(String.valueOf(groupId), GUESTBOOK_LIST.GUESTBOOK,
-                GUESTBOOK_LIST.GUESTBOOK_COUNT, groupId, null, event);
-    }
-
-    @Override
-    protected boolean cached(Object... args) throws Exception {
-        final int startRow = (int) args[0];
-        final int endRow = (int) args[1];
-        final Locale locale = (Locale) args[2];
-
-        return recoverRows(String.valueOf(groupId), GUESTBOOK_LIST.GUESTBOOK,
-                GUESTBOOK_LIST.GUESTBOOK_COUNT, groupId, null, locale, startRow, endRow);
-    }
-
-For an explanation of this code, see 
-[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets). 
-<!-- 
-Add further loadRows detail to list Screenlet tutorial: 
-processWithCache ends up calling super.loadRows (BaseListInteractor's loadRows method)
-to make the server call
 -->
-
 Nice work! You now have the Interactor required to get guestbooks from the 
 Guestbook portlet. Next, you'll create the Screenlet class. 
