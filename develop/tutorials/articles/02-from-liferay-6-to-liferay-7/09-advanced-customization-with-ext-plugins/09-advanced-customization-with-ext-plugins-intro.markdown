@@ -69,8 +69,7 @@ With these use cases in mind, you'll learn how to use Ext for these things:
 
 - Creating an Ext plugin 
 - Developing an Ext plugin 
-- Deploying in Production 
-- Migrating Old Extension Environments 
+- Deploying in Production
 
 It's time to create an Ext plugin. 
 
@@ -286,9 +285,9 @@ system:
 
     ext.work.dir=[work]
 
-    app.server.dir=[work]/liferay-portal-[version]/[app server]
+    app.server.dir=[work]/liferay-ce-portal-[version]/[app server]
 
-    app.server.zip.name=[...]/liferay-portal-[app server].zip
+    app.server.zip.name=[...]/liferay-ce-portal-[app server].zip
 
 Your `app.server.zip.name` property must specify the path to your @product@
 `.zip` file. The `work` directory that you specify for the `ext.work.dir`
@@ -320,25 +319,8 @@ Next you'll modify the Ext plugin you created and deploy it.
 
 ### Initial Deployment
 
-Your environment is set up and you're ready to start customizing. For this
-exercise, you'll customize the sections of a user profile. This example can be
-done using a hook and the `users.form.add.main` property, but for demonstration
-purposes, you'll learn how to customize it by overriding portal properties using
-an Ext plugin. To customize the `users.form.add.main` portal property, open the
-`docroot/WEB-INF/ext-impl/src/portal-ext.properties` file and enter a new
-setting, like this one: 
-
-    users.form.update.main=details,password,organizations,sites,roles
-
-In the customization above, the `users.form.add.main` property no longer
-specifies user profile page sections for user groups, personal sites, and
-categorizations. Only the sections named in the value list for the customized
-`users.form.add.main` portal property will be shown in the portal's user profile
-pages. 
-
-<!-- Change the example above to fit something for Liferay 7/DXP. -->
-
-After you've made customizations in the Ext plugin, you can deploy the plugin. 
+Your environment is set up and you're ready to start customizing. Once you're
+finished, you can deploy the plugin. 
 
 #### Deploy the Plugin
 
@@ -387,18 +369,14 @@ restarts the server, for the server to detect and publish your Ext plugin.
 
 2.  Restart the server so that it detects and publishes your Ext plugin. 
 
-    Once your server restarts, try @product@ to see the customizations you
+    Once your server restarts, open @product@ to see the customizations you
     introduced with your Ext plugin.
-
-    If you customized the `users.form.update.main` property, for example, log in
-    as an administrator and go to *Control Panel* &rarr; *Users and
-    Organizations*. Edit an existing user and verify that the right navigation
-    menu only shows the sections that you specified for the
-    `users.form.update.main` property. 
-
-    ![Figure 2: If you customized the `users.form.update.main` property, @product@'s User Information only shows the sections you specified.](../../images/ext-plugin-user-info-sections.png)
-
-<!-- Update paragraph a image above, if necessary -->
+    
+Frequently, you’ll want to add further customizations to your original Ext
+plugin. You’re able to make unlimited customizations to an Ext plugin that has
+already been deployed, but the redeployment process is a bit different than
+other Liferay project types. You’ll learn more on redeploying your Ext plugin
+next.
 
 <!--
 
@@ -413,54 +391,6 @@ $$$
 
 -->
 
-That was a simple application of an Ext plugin. You can proceed with a more
-complex customization that illustrates the proper way to redeploy an Ext
-plugin, which is different from initial deployment. 
-
-Let's customize the Details section of the user profile. Rather than override
-its JSP, you'll use a more powerful method for adding new sections or even
-merging existing ones. You can refer to custom sections from the
-`portal-ext.properties` and implement them just by creating a JSP. You'll modify
-the property `users.form.update.main` again and the property
-`users.form.add.main` to set the following properties:
-
-    users.form.add.main=basic,organizations,personal-site
-    users.form.update.main=basic,password,organizations,sites,roles
-
-You removed the original Details section and added a custom one called *basic*.
-When Liferay reads the property, it looks for the implementation of each section
-based on the following conventions:
-
--  The section is implemented in a JSP in the following directory: 
-
-        ext-web/docroot/html/portlet/users_admin/user/
-
--  The name of the JSP is the same as the name of the section with the `.jsp`
-   extension.  If the section name has a dash, (`-`), replace it with an
-   underscore (`_`).  For example, if the section is called *my-info*, the JSP
-   should be named `my_info.jsp` to comply with JSP naming standards. 
--  The section name that's shown to the user comes from the language bundles.
-   When using a key/value that is not included with @product@, add it to both
-   your Ext plugin's `Language-ext.properties` file and the language-specific
-   properties file for each language variant you're providing a translation for.
-   These files go in the `ext-impl/src` directory of your Ext plugin. 
-
-For this example, you'll create a file in the Ext plugin with the following path: 
-
-    ext-web/docroot/html/portlet/users_admin/user/basic.jsp
-
-You can write the contents of the file from scratch or just copy the
-`details.jsp` file from @product@'s [source code](https://github.com/liferay/liferay-portal)
-and modify from there. You can remove some of the fields (e.g., birthday or
-gender), leaving the screen name, email address, first name, and last name
-fields to simplify user creation and user update. Make sure to completely remove
-the tags associated with and surrounding the field. 
-
-You don't need to add a new key to `Language-ext.properties`, because an entry
-for the key named *basic* is already included in @product@'s language bundle. 
-
-Let's redeploy the Ext plugin to review the changes. 
-
 ### Redeployment
 
 So far, Ext plugin development has been similar to the development of other
@@ -468,16 +398,16 @@ plugin types. You've now reached the point of divergence. When the plugin is
 first deployed, some of its files are copied into the @product@ installation.
 After changing an Ext plugin, you'll either *redeploy* or *clean redeploy*,
 depending on the modifications you made to your plugin following the initial
-deployment. Let's talk about each redeployment method and when to use each one.
+deployment. You'll learn about each redeployment method and when to use each
+one.
 
 **Clean Redeployment:** If you removed part(s) of your plugin, if there are
 changes to your plugin that can affect plugin deployment, or if you want to
 start with a clean @product@ environment, *undeploy* your plugin and *clean*
 your application server before redeploying your Ext plugins. By cleaning the
-application server, the existing Liferay installation is removed and the
-bundle specified in your Plugins SDK environment (e.g., the value of
-`app.server.zip.name` in `build.[username].properties`) is unzipped in its
-place. See the instructions below to learn more about this process:
+application server, the existing Liferay installation is removed and the bundle
+specified in your Plugins SDK environment is unzipped in its place. See the
+instructions below to learn more about this process:
 
 <!--
 
