@@ -542,29 +542,7 @@ customizations that you can do.
 
 <!-- Is this still valid for JBoss EAP 6.4/Wildfly 10? -->
 
-### Advanced Customization Techniques
-
-With Ext plugins, you can change anything in @product@. It's time to look at
-some additional customization techniques made possible by Ext plugins. As
-always, be careful when using Ext plugins. 
-
-With each new version of @product-ver@, there can be changes to the
-implementation classes. If you change @product@'s source code directly, you'll
-have to merge your changes into the newer @product@ version. To minimize such
-conflicts, the best approach is not to change anything. Rather, you can extend
-the class you want to change and override the required methods. Then use the
-requisite @product@ configuration files to reference your subclass as a
-replacement for the original class. 
-
-Below, you'll learn about these topics:
-
-- Using advanced configuration files
-- Changing the API of a core service
-- Replacing core classes in `portal-impl`
-
-First, you'll learn to use advanced configuration files. 
-
-#### Using Advanced Configuration Files
+### Using Advanced Configuration Files
 
 @product@ uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks
@@ -591,10 +569,6 @@ to the original file in @product@:
       configure specific data sources or swap the implementation of a default
       service with a custom one.
     - **Original file in @product@:** `portal-impl/src/META-INF/*-spring.xml`
-- `ext-impl/src/content/Language-ext_*.properties`
-    - **Description:** Allow overriding the value of any key used by @product@'s
-       UI to support internationalization. 
-    - **Original file in @product@:** `portal-impl/src/content/Language-*.properties`
 - `ext-impl/src/META-INF/portal-log4j-ext.xml`
     - **Description:** Allows overriding the Log4j configuration. It's most
       commonly used to increase or decrease the log level of a given package or
@@ -639,70 +613,7 @@ to the original file in @product@:
     - **Original file in @product@:**
       `portal-web/docroot/WEB-INF/liferay-look-and-feel.xml` 
 
-You can learn how to change the API of a core service next. 
-
-#### Changing the API of a Core Service
-
-Sometimes you might need to change the API of a method provided by one of
-@product@'s services (e.g., `UserLocalService`). This is an advanced
-customization need. 
-
-Changing a core service API under normal circumstances requires modifying
-@product@'s source code directly and making manual changes to a slew of files.
-But that's not the Liferay way: there's a better way to do it. 
-
-The best way to extend an existing service is by creating a custom service
-that's complementary (e.g., a `MyUserLocalService` that includes all the new
-methods). Your code can invoke this service instead of the default service, and
-the implementation of your service can invoke the original service as needed. 
-
-This technique doesn't require an Ext plugin since it can be done from portlets
-In fact, using Service Builder for an Ext plugin is deprecated, but it's
-supported for migration from the old extension environment. 
-
-Sometimes it's desirable to change the implementation of the original service to
-call your custom one; that's when you'll need an Ext plugin. Override the Spring
-definition for `UserLocalServiceUtil` in `ext-spring.xml` and point it to your
-`MyUserLocalServiceImpl` (instead of `UserLocalServiceImpl`). Now both
-`MyUserLocalServiceUtil` and `UserLocalServiceUtil` will use the same Spring
-bean: your new implementation. 
-
-You can also replace core classes in `portal-impl`. Keep reading to find out
-how. 
-
-#### Replacing Core Classes in portal-impl
-
-If you're sure you need to change a core `portal-impl` class, and you're certain
-it can't be replaced using a configuration file, here's the best way to do it
-while avoiding conflicts when merging with a new portal version: 
-
-1.  Rename the original class (e.g., `DeployUtil` &rarr; `MyDeployUtil`). 
-
-2.  Create a new subclass with the old name (e.g., `DeployUtil extends
-    MyDeployUtil`). 
-
-3.  Override any methods you need to change. 
-
-4.  Delegate static methods. 
-
-5.  Use a logger with an appropriate class name for both classes (e.g.,
-   `DeployUtil`). 
-
-This strategy helps you determine what you'll need to merge when a new
-version of @product@ is released. 
-
-+$$$
-
-**Note:** This is an advanced technique; it may have a large impact on the
-maintainability of your code. Seek alternatives, and if you're sure this is
-your only option, think of it as a short term solution. Follow instructions
-[here](/participate/contribute-a-feature)on contributing an improvement to
-Liferay. 
-
-$$$
-
-That's it for advanced customization techniques. It's time to consider how to
-deploy Ext plugins in production. 
+You’ll learn how to deploy your Ext plugin in production next.
 
 ## Deploying in Production
 
