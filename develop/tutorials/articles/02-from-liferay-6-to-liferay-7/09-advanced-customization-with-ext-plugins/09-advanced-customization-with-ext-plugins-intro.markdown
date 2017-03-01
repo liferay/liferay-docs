@@ -13,23 +13,6 @@ extension point, you should never use an Ext plugin. See the
 [More Extensible, Easier to Maintain](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#more-extensible-easier-to-maintain)
 section for more details on the advantages of using Liferay's extension points.
 
-There are many parts of @product@ that used to require an Ext plugin that now
-provide an extension point via OSGi bundle. You can examine custom module projects
-that extend popular @product@ extension points by visiting the
-[Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
-repository. For more information on these sample projects, see the
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
-tutorial. Usable extension points are also documented throughout Liferay's
-Developer Network categorized by the @product@ section involved. For example,
-[Overriding MVC Commands](),
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu),
-and []()
-are all articles describing how to extend a @product@ extension point. Want to
-learn how to
-[override module JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
-or [@product@ core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)?
-Those processes are documented too!
-
 Before deciding to use an Ext plugin, weigh the cost. Ext plugins let you use
 internal APIs and even let you overwrite @product@ core files. When upgrading to
 a new version of @product@ (even if it's a maintenance version or a service
@@ -38,6 +21,47 @@ merge your changes with @product@'s. Additionally, Ext plugins aren't hot
 deployable. To deploy an Ext plugin, you must restart your server. Lastly, with
 Ext plugins, additional steps are required to deploy or redeploy to production
 systems.
+
+In this tutorial, you'll learn how to use Ext for these things:
+
+- Creating an Ext plugin
+- Developing an Ext plugin
+- Deploying in Production
+
+Before diving into creating an Ext plugin, however, first consider if an Ext
+plugin is even necessary at all.
+
+## Making the Decision to Use Ext Plugins
+
+There are many parts of @product@ that used to require an Ext plugin that now
+provide an extension point via OSGi bundle. You should follow this three step
+process to decide whether Ext plugins must be used for your needs:
+
+1.  Find the OSGi extension point that offers the customization abilities you
+    desire.
+2.  If an OSGi extension point does not exist, use an Ext plugin.
+3.  Research new extension points periodically. New extension points are created
+    frequently; when finding a new applicable new extension point, their usage
+    should always replace an existing Ext plugin.
+
+So how do you find an OSGi extension point?
+
+Your first step is to examine the custom module projects that extend popular
+@product@ extension points stored in the
+[Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
+repository. For
+more information on these sample projects, see the
+[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+tutorial. Usable extension points are also documented throughout Liferay's
+Developer Network categorized by the @product@ section involved. For example,
+[Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
+and
+[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu),
+are articles describing how to extend a @product@ extension point. Want to
+learn how to
+[override module JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+or [@product@ core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)?
+Those processes are documented too!
 
 There are a few corner cases where you may need an Ext plugin to customize a
 part of @product@ that does not provide an extension point. For example, the
@@ -65,13 +89,8 @@ legacy properties.
 
 $$$
 
-With these use cases in mind, you'll learn how to use Ext for these things: 
-
-- Creating an Ext plugin 
-- Developing an Ext plugin 
-- Deploying in Production
-
-It's time to create an Ext plugin. 
+Now that you know how to make an informed decision on using Ext plugins, you'll
+learn how to create one next.
 
 ## Creating an Ext Plugin
 
@@ -187,7 +206,9 @@ here.
 
 - `ext-web/docroot`: Contains the web application's configuration files, including
 `WEB-INF/struts-config-ext.xml`, which allows you to customize Liferay's core
-struts classes. Any JSPs that you're customizing also belong here. 
+struts classes. Note that for @product-ver@, there are very few entities left to
+override in the `struts-config.xml` file. Any JSPs that you're customizing also
+belong here. 
 
 - `ext-util-bridges`, `ext-util-java` and `ext-util-taglib`: These folders are
 needed only in scenarios where you need to customize classes of these Liferay
@@ -206,27 +227,28 @@ version, author, and license type.
 
 - `docroot/WEB-INF/ext-impl/src/portal-ext.properties`: Overrides Liferay's
 configuration properties. However, you should use an OSGi module to override
-properties whenever it's possible. An example where an Ext plugin is necessary
+properties or create a `portal-ext.properties` file in your Liferay Home folder whenever it's possible. An example where an Ext plugin is necessary
 to override a property is when specifying a custom class as a
 [portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html)
-value. You can use a `portal-ext.properties` file with each of your Ext 
-plugins, but don't override the same property from multiple 
-`portal-ext.properties` files. The loading order isn't assured and you can 
-cause unintended system behavior as a result. 
+value. This is only true if the business logic behind that property does not
+support OSGi services.
 
 - `docroot/WEB-INF/ext-web/docroot/WEB-INF` files: 
 
    - `portlet-ext.xml`: Used to overwrite the definition of a Liferay portlet.
      To do this, copy the complete definition of the desired portlet from
      `portlet-custom.xml` in Liferay's source code, then apply the necessary
-     changes. 
+     changes. The `portlet.xml` file is sparsely used in @product-ver@.
    - `liferay-portlet-ext.xml`: This file is similar to `portlet-ext.xml`, but
      is for additional definition elements specific to Liferay. To override
      these definition elements, copy the complete definition of the desired
      portlet from `liferay-portlet.xml` within Liferay's source code, then
-     apply the necessary changes. 
+     apply the necessary changes. The `liferay-portlet.xml` file is sparsely
+     used in @product-ver@.
    - `struts-config-ext.xml` and `tiles-defs-ext.xml`: These files are used to
-     customize the struts actions used by Liferay's core portlets. 
+     customize the struts actions used by Liferay's core portlets. The
+     `struts-config.xml` and `tiles-defs.xml` files are sparsely used in
+     @product-ver@.
 
 +$$$
 
@@ -251,6 +273,12 @@ Ext plugin development process is different from that of other plugin types.
 It's important to remember that once an Ext plugin is deployed, some of its
 files are copied *inside* the Liferay installation; the only way to remove the
 changes is by *redeploying* an unmodified Liferay application. 
+
+The @product-ver@ compatible Plugins SDK is designed to only develop/deploy one
+Ext plugin. This means that all your customizations should live inside one Ext
+plugin. The Plugins SDK does not check for conflicts among multiple Ext plugins
+stored in the `/ext` folder, so it’s not recommended to develop/deploy multiple
+Ext plugins at once.
 
 The Plugins SDK lets you deploy and redeploy Ext plugins during your development
 phase. Redeployment involves *cleaning* (i.e., removing) your application server
@@ -583,7 +611,7 @@ production system is your Ext plugin's `.war` file, produced using the `ant war`
 target. This `.war` file is usually small and easy to transport. Execute these
 steps on the server: 
 
-1.  Redeploy Liferay:
+1.  Redeploy @product@:
 
     If this is your first time deploying your Ext plugin to this server, skip
     this step. Otherwise, start by executing the same steps you first used to
