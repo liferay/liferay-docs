@@ -1,8 +1,8 @@
 # Advanced Customization with Ext Plugins
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
-absolutely necessary. They are deployable to Liferay Portal 7.0 CE GA4+ and
-Liferay Digital Enterprise 7.0 Fix Pack 8+.**
+absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
+Pack 8+.**
 
 Ext plugins are powerful tools used to extend @product@. They, however, increase
 the complexity of your @product@ instance and are not recommended unless there
@@ -54,7 +54,7 @@ repository. For
 more information on these sample projects, see the
 [Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 tutorial. Usable extension points are also documented throughout Liferay's
-Developer Network categorized by the @product@ section involved. For example,
+Customer Portal categorized by the @product@ section involved. For example,
 [Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
 and
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu),
@@ -262,7 +262,7 @@ $$$
 
 Great! You've now created an Ext plugin and are familiar with its directory
 structure and its most significant files. Next, you'll use your Ext plugin to
-customize Liferay Portal. 
+customize @product@. 
 
 ## Developing an Ext Plugin
 
@@ -293,12 +293,12 @@ Before digging in to the details, here's an overview of the Ext plugin
 development processes described below: 
 
 - How to *configure* your Plugins SDK environment to develop Ext plugins for
-  Liferay Portal on your application server. 
+  @product@ on your application server. 
 - How to *deploy* and *publish* your Ext plugins for the first time. 
 - How to *redeploy* normally or use a *clean redeployment* process after making
   changes to your Ext plugins.
 - How to package your Ext plugins for distribution. 
-- Examples of Liferay Portal customizations that require advanced customization
+- Examples of @product@ customizations that require advanced customization
   techniques. 
 
 It's time to learn each step of the development process. 
@@ -314,9 +314,9 @@ system:
 
     ext.work.dir=[work]
 
-    app.server.dir=[work]/liferay-ce-portal-[version]/[app server]
+    app.server.dir=[work]/liferay-dxp-digital-enterprise-[version]/[app server]
 
-    app.server.zip.name=[...]/liferay-ce-portal-[app server].zip
+    app.server.zip.name=[...]/liferay-dxp-digital-enterprise-[app server].zip
 
 Your `app.server.zip.name` property must specify the path to your @product@
 `.zip` file. The `work` directory that you specify for the `ext.work.dir`
@@ -327,11 +327,12 @@ to determine the value to use for your `app.server.dir` property.
 
 For example, if your work directory is `C:/work`, specify it as your
 `ext.work.dir` property's value. If your @product@ bundle `.zip` file is
-`C:/downloads/liferay-ce-portal-tomcat-7.0-ga4-[timestamp].zip`, set the
-`app.server.zip.name` property to that file's path. If the *relative path* to
-the application server *within* the @product@ bundle `.zip` file is
-`liferay-ce-portal-7.0-ga3\tomcat-8.0.32`, specify an `app.server.dir` property
-value `C:/work/liferay-ce-portal-7.0-ga4/tomcat-8.0.32`. 
+`C:/downloads/liferay-dxp-digital-enterprise-tomcat-7.0-sp2-[timestamp].zip`,
+set the `app.server.zip.name` property to that file's path. If the *relative
+path* to the application server *within* the @product@ bundle `.zip` file is
+`liferay-dxp-digital-enterprise-7.0-sp2\tomcat-8.0.32`, specify an
+`app.server.dir` property value
+`C:/work/liferay-dxp-digital-enterprise-7.0-sp2/tomcat-8.0.32`.
 
 Next you'll modify the Ext plugin you created and deploy it. 
 
@@ -553,7 +554,7 @@ to the original file in @product@:
 - `ext-web/docroot/WEB-INF/liferay-portlet-ext.xml`
     - **Description:** Allows overriding the Liferay-specific declaration of the
       core portlets included in @product@. Refer to the
-      [`liferay-portlet-app_7_0_0.dtd`](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html)
+      [liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html)
       file for details on all the available options. Use this file with care;
       the code of the portlets may be assuming some of these options to be set
       to certain values. 
@@ -596,7 +597,7 @@ steps on the server:
 
 2.  Copy the Ext plugin `.war` into the auto-deploy directory. For a bundled
     @product@ distribution, the `deploy` folder is in Liferay's *root* folder of
-    your bundle (e.g., `liferay-ce-portal-[version]/`).
+    your bundle (e.g., `liferay-dxp-digital-enterprise-[version]/`).
 
 3.  Once the Ext plugin is detected and deployed by @product@, restart your
     @product@ server. 

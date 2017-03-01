@@ -1,8 +1,7 @@
 # Advanced Customization with Ext Plugins
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
-absolutely necessary. They are deployable to Liferay Portal 7.0 CE GA4+ and
-Liferay Digital Enterprise 7.0 Fix Pack 8+.**
+absolutely necessary. They are deployable to Liferay Portal 7.0 CE GA4+.**
 
 Ext plugins are powerful tools used to extend @product@. They, however, increase
 the complexity of your @product@ instance and are not recommended unless there
@@ -65,8 +64,8 @@ or [@product@ core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core
 Those processes are documented too!
 
 There are a few corner cases where you may need an Ext plugin to customize a
-part of @product@ that does not provide an extension point. For example, the
-following cases would require an Ext plugin:
+part of @product@ that does not provide an extension point. Liferay only
+supports Ext plugins for the following use cases:
 
 - Provide custom implementations for any Liferay beans declared in Liferay's
   Spring files (when possible, use
@@ -206,8 +205,7 @@ classes you add in `ext-impl/src`.
 
 - `ext-kernel/src`: Contains classes that should be available to other plugins.
 In advanced scenarios, this folder can be used to hold classes that overwrite
-classes from `portal-kernel.jar`. Service Builder puts services' interfaces
-here. 
+classes from `portal-kernel.jar`.
 
 - `ext-web/docroot`: Contains the web application's configuration files, including
 `WEB-INF/struts-config-ext.xml`, which lets you customize Liferay's core
@@ -263,7 +261,7 @@ $$$
 
 Great! You've now created an Ext plugin and are familiar with its directory
 structure and its most significant files. Next, you'll use your Ext plugin to
-customize Liferay Portal. 
+customize @product@. 
 
 ## Developing an Ext Plugin
 
@@ -294,12 +292,12 @@ Before digging in to the details, here's an overview of the Ext plugin
 development processes described below: 
 
 - How to *configure* your Plugins SDK environment to develop Ext plugins for
-  Liferay Portal on your application server. 
+  @product@ on your application server. 
 - How to *deploy* and *publish* your Ext plugins for the first time. 
 - How to *redeploy* normally or use a *clean redeployment* process after making
   changes to your Ext plugins.
 - How to package your Ext plugins for distribution. 
-- Examples of Liferay Portal customizations that require advanced customization
+- Examples of @product@ customizations that require advanced customization
   techniques. 
 
 It's time to learn each step of the development process. 
@@ -331,7 +329,7 @@ For example, if your work directory is `C:/work`, specify it as your
 `C:/downloads/liferay-ce-portal-tomcat-7.0-ga4-[timestamp].zip`, set the
 `app.server.zip.name` property to that file's path. If the *relative path* to
 the application server *within* the @product@ bundle `.zip` file is
-`liferay-ce-portal-7.0-ga3\tomcat-8.0.32`, specify an `app.server.dir` property
+`liferay-ce-portal-7.0-ga4\tomcat-8.0.32`, specify an `app.server.dir` property
 value `C:/work/liferay-ce-portal-7.0-ga4/tomcat-8.0.32`. 
 
 Next you'll modify the Ext plugin you created and deploy it. 
@@ -554,7 +552,7 @@ to the original file in @product@:
 - `ext-web/docroot/WEB-INF/liferay-portlet-ext.xml`
     - **Description:** Allows overriding the Liferay-specific declaration of the
       core portlets included in @product@. Refer to the
-      [`liferay-portlet-app_7_0_0.dtd`](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html)
+      [liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html)
       file for details on all the available options. Use this file with care;
       the code of the portlets may be assuming some of these options to be set
       to certain values. 
@@ -630,12 +628,11 @@ Now, perform these actions on your server:
 2.  Stop the server and copy the new version of the global libraries to the
     appropriate directory in the application server. 
 
-Next, we'll show you how to migrate your extension environment (from older
-versions of @product@) into Ext plugins. 
+Next, you'll learn about Liferay's licensing and contributing standards.
 
-#### Licensing and Contributing
+## Licensing and Contributing
 
-Liferay Portal is Open Source software licensed under the LGPL 2.1 license
+@product@ is Open Source software licensed under the LGPL 2.1 license
 ([http://www.gnu.org/licenses/lgpl-2.1.html](http://www.gnu.org/licenses/lgpl-2.1.html)).
 If you reuse any code snippet and redistribute it, whether publicly or to a
 specific customer, make sure your modifications are compliant with the license.
@@ -656,7 +653,8 @@ contribute to Liferay projects.
 In summary, Ext plugins are a powerful way to extend @product@. There are no
 limits to what you can customize with them, so use them carefully. Before using
 an Ext plugin, see if you can implement all or part of the desired functionality
-through [Application Display Templates]](/develop/tutorials/-/knowledge_base/7-0/application-display-templates)
+through
+[Application Display Templates](/develop/tutorials/-/knowledge_base/7-0/application-display-templates)
 or a different plugin type. OSGi modules offer you a lot of extension
 capabilities themselves, without introducing the complexity that's inherent with
 Ext plugins. If you need to use an Ext plugin, make your customization as small
