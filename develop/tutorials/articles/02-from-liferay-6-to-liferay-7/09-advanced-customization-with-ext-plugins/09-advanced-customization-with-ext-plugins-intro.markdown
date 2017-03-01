@@ -14,19 +14,20 @@ extension point, you should never use an Ext plugin. See the
 section for more details on the advantages of using Liferay's extension points.
 
 Before deciding to use an Ext plugin, weigh the cost. Ext plugins let you use
-internal APIs and even let you overwrite @product@ core files. When upgrading to
-a new version of @product@ (even if it's a maintenance version or a service
-pack), you have to review all changes and manually modify your Ext plugin to
-merge your changes with @product@'s. Additionally, Ext plugins aren't hot
-deployable. To deploy an Ext plugin, you must restart your server. Lastly, with
-Ext plugins, additional steps are required to deploy or redeploy to production
-systems.
+internal APIs and even let you overwrite @product@ core files. This ability puts
+your deployment at risk of being incompatible with security, performance, or
+feature updates released by Liferay. When upgrading to a new version of
+@product@ (even if it's a maintenance version or a service pack), you have to
+review all changes and manually modify your Ext plugin to merge your changes
+with @product@'s. Additionally, Ext plugins aren't hot deployable. To deploy an
+Ext plugin, you must restart your server. Additional steps are also required to
+deploy or redeploy to production systems.
 
 In this tutorial, you'll learn how to use Ext for these things:
 
-- Creating an Ext plugin
-- Developing an Ext plugin
-- Deploying in Production
+- Create an Ext plugin
+- Develop an Ext plugin
+- Deploy an Ext plugin in Production
 
 Before diving into creating an Ext plugin, however, first consider if an Ext
 plugin is even necessary at all.
@@ -35,7 +36,7 @@ plugin is even necessary at all.
 
 There are many parts of @product@ that used to require an Ext plugin that now
 provide an extension point via OSGi bundle. You should follow this three step
-process to decide whether Ext plugins must be used for your needs:
+process to decide whether an Ext plugin is necessary:
 
 1.  Find the OSGi extension point that offers the customization abilities you
     desire.
@@ -67,7 +68,7 @@ There are a few corner cases where you may need an Ext plugin to customize a
 part of @product@ that does not provide an extension point. For example, the
 following cases would require an Ext plugin:
 
-- To provide custom implementations for any Liferay beans declared in Liferay's
+- Provide custom implementations for any Liferay beans declared in Liferay's
   Spring files (when possible, use
   [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
   instead of an Ext plugin). @product-ver@ removed many Liferay beans, so make
@@ -75,8 +76,13 @@ following cases would require an Ext plugin:
   plugin.
 - To add JSPs referenced from portal properties that can only be changed
   from an Ext plugin.
-- To Overwrite a class in a @product-ver@ core JAR (e.g., `portal-impl`).
+- Overwrite a class in a @product-ver@ core JAR. For a list of core JARs, see
+  the following [reference doc page](@platform-ref@/7.0-latest/javadocs)
+  (excluding `modules/`).
 - Modifying @product@'s `web.xml` file.
+- Add to @product@'s `web.xml` file.
+
+<!-- Still need to check on JSP use case for official support. -Cody -->
 
 +$$$
 
@@ -94,10 +100,10 @@ learn how to create one next.
 
 ## Creating an Ext Plugin
 
-Ext plugins are powerful tools for extending Liferay. Because they increase the
-complexity of your Liferay instance, you should only use an Ext plugin if you're
-sure you can't accomplish your goal in a different way. You can only create Ext
-plugins from a Plugins SDK. If you're using a
+Ext plugins are powerful tools for extending @product@. Because they increase
+the complexity of your Liferay instance, you should only use an Ext plugin if
+you're sure you can't accomplish your goal in a different way. You can only
+create Ext plugins from a Plugins SDK. If you're using a
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 to create your @project@ projects, you can
 [merge a Plugins SDK instance](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
@@ -188,9 +194,8 @@ is a listing of an Ext folder structure:
 
 Here are detailed explanations of the `/docroot/WEB-INF/` subdirectories: 
 
-- `ext-impl/src`: Contains the `portal-ext.properties` configuration file, custom
-implementation classes, and classes that override core classes from
-`portal-impl.jar`. 
+- `ext-impl/src`: Contains the custom implementation classes and classes that
+override core classes from `portal-impl.jar`. 
 
 - `ext-lib/global`: Contains libraries to be copied to the application server's
 global classloader upon deployment of the Ext plugin. 
@@ -199,13 +204,13 @@ global classloader upon deployment of the Ext plugin.
 application. These libraries are usually necessary because they're invoked from 
 classes you add in `ext-impl/src`. 
 
-- `ext-service/src`: Contains classes that should be available to other plugins.
+- `ext-kernel/src`: Contains classes that should be available to other plugins.
 In advanced scenarios, this folder can be used to hold classes that overwrite
 classes from `portal-kernel.jar`. Service Builder puts services' interfaces
 here. 
 
 - `ext-web/docroot`: Contains the web application's configuration files, including
-`WEB-INF/struts-config-ext.xml`, which allows you to customize Liferay's core
+`WEB-INF/struts-config-ext.xml`, which lets you customize Liferay's core
 struts classes. Note that for @product-ver@, there are very few entities left to
 override in the `struts-config.xml` file. Any JSPs that you're customizing also
 belong here. 
@@ -225,39 +230,34 @@ significant files:
 Contains plugin-specific properties, including the plugin's display name,
 version, author, and license type. 
 
-- `docroot/WEB-INF/ext-impl/src/portal-ext.properties`: Overrides Liferay's
-configuration properties. However, you should use an OSGi module to override
-properties or create a `portal-ext.properties` file in your Liferay Home folder whenever it's possible. An example where an Ext plugin is necessary
-to override a property is when specifying a custom class as a
-[portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html)
-value. This is only true if the business logic behind that property does not
-support OSGi services.
-
 - `docroot/WEB-INF/ext-web/docroot/WEB-INF` files: 
 
    - `portlet-ext.xml`: Used to overwrite the definition of a Liferay portlet.
-     To do this, copy the complete definition of the desired portlet from
-     `portlet-custom.xml` in Liferay's source code, then apply the necessary
-     changes. The `portlet.xml` file is sparsely used in @product-ver@.
+     The `portlet.xml` file contains very few portlet configurations in
+     @product-ver@ due to portlets being modularized and moved out of core. To
+     override this file, copy the complete definition of the desired portlet
+     from `portlet-custom.xml` in Liferay's source code, then apply the
+     necessary changes.
    - `liferay-portlet-ext.xml`: This file is similar to `portlet-ext.xml`, but
-     is for additional definition elements specific to Liferay. To override
-     these definition elements, copy the complete definition of the desired
-     portlet from `liferay-portlet.xml` within Liferay's source code, then
-     apply the necessary changes. The `liferay-portlet.xml` file is sparsely
-     used in @product-ver@.
+     is for additional definition elements specific to Liferay. The
+     `liferay-portlet.xml` file contains very few definition elements in
+     @product-ver@ due to portlets being modularized and moved out of core. To
+     override the remaining definition elements, copy the complete definition of
+     the desired portlet from `liferay-portlet.xml` within Liferay's source
+     code, then apply the necessary changes.
    - `struts-config-ext.xml` and `tiles-defs-ext.xml`: These files are used to
-     customize the struts actions used by Liferay's core portlets. The
-     `struts-config.xml` and `tiles-defs.xml` files are sparsely used in
-     @product-ver@.
+     customize the struts actions used by Liferay's core portlets. Due to most
+     portlets being modularized and moved out of core in @product-ver@, the
+     `struts-config.xml` and `tiles-defs.xml` files are sparsely used.
+   - `web.xml`: Used to overwrite web application configurations and servlet
+     information for @product-ver@.
 
 +$$$
 
 **Note:** After creating an Ext plugin, remove the files from
 `docroot/WEB-INF/ext-web/docroot/WEB-INF` that you don't need to customize.
-Liferay keeps track of the files deployed by each Ext plugin and won't let you
-deploy multiple Ext plugins that override the same file. If you remove files
-you're not customizing, you'll avoid collisions with Ext plugins deployed
-alongside yours. 
+Removing files you're not customizing prevents incompatibilities that could
+manifest from @product@ updates. 
 
 $$$
 
@@ -272,13 +272,15 @@ separate component that you can easily remove at any time. For this reason, the
 Ext plugin development process is different from that of other plugin types.
 It's important to remember that once an Ext plugin is deployed, some of its
 files are copied *inside* the Liferay installation; the only way to remove the
-changes is by *redeploying* an unmodified Liferay application. 
+changes is by *redeploying* an unmodified Liferay application. You’re also
+responsible for checking that patches and fix packs do not conflict with your
+Ext plugin.
 
 The @product-ver@ compatible Plugins SDK is designed to only develop/deploy one
 Ext plugin. This means that all your customizations should live inside one Ext
 plugin. The Plugins SDK does not check for conflicts among multiple Ext plugins
-stored in the `/ext` folder, so it’s not recommended to develop/deploy multiple
-Ext plugins at once.
+stored in the `/ext` folder, so do **not** develop/deploy multiple Ext plugins
+at once.
 
 The Plugins SDK lets you deploy and redeploy Ext plugins during your development
 phase. Redeployment involves *cleaning* (i.e., removing) your application server
@@ -331,17 +333,6 @@ For example, if your work directory is `C:/work`, specify it as your
 the application server *within* the @product@ bundle `.zip` file is
 `liferay-ce-portal-7.0-ga3\tomcat-8.0.32`, specify an `app.server.dir` property
 value `C:/work/liferay-ce-portal-7.0-ga4/tomcat-8.0.32`. 
-
-+$$$
-
-**Note:** Some Liferay bundles come installed with a sample website. It's useful
-for showcasing certain features of @product@, but if you removed it, you likely
-don't want it reinstalled each time you unzip the bundle. To prevent
-reinstalling the sample website, unzip the bundle, delete the
-`[work]/liferay-ce-portal-[version]/[app server]/webapps/welcome-theme` folder,
-then re-zip the bundle.
-
-$$$
 
 Next you'll modify the Ext plugin you created and deploy it. 
 
@@ -555,13 +546,6 @@ to the original file in @product@:
       class, to obtain more information, or to hide unneeded information from
       the logs. 
     - **Original file in @product@:** `portal-impl/src/META-INF/portal-log4j.xml`
-- `ext-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository-ext.xml`
-    - **Description:** Allows overriding the configuration of the Jackrabbit
-      repository. Refer to the Jackrabbit configuration documentation for
-      details 
-      ([http://jackrabbit.apache.org/jackrabbit-](http://jackrabbit.apache.org/jackrabbit-configuration.html)[configuration.html](http://jackrabbit.apache.org/jackrabbit-configuration.html)) 
-    - **Original file in @product@:**
-      `portal-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository.xml`
 - `ext-web/docroot/WEB-INF/portlet-ext.xml`
     - **Description:** Allows overriding the declaration of the core portlets
       included in @product@. It's most commonly used to change the init
@@ -582,16 +566,6 @@ to the original file in @product@:
       certain portlets, or make specific Control Panel portlets available to be
       added to a page. 
     - **Original file in @product@:** `portal-web/docroot/WEB-INF/liferay-display.xml`
-- `ext-web/docroot/WEB-INF/liferay-layout-templates-ext.xml`
-    - **Description:** Allows specifying custom template files for each of
-      @product@'s standard layout templates. This is rarely necessary. 
-    - **Original file in @product@:**
-      `portal-web/docroot/WEB-INF/liferay-layout-templates.xml`
-- `ext-web/docroot/WEB-INF/liferay-look-and-feel-ext.xml`
-    - **Description:** Allows changing the properties of @product@'s default
-      themes. This is rarely used. 
-    - **Original file in @product@:**
-      `portal-web/docroot/WEB-INF/liferay-look-and-feel.xml` 
 
 You’ll learn how to deploy your Ext plugin in production next.
 
