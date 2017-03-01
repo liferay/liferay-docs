@@ -1,10 +1,4 @@
-# Understanding Mobile SDK Calls [](id=understanding-mobile-sdk-calls)
-
-Liferay Screens uses the Mobile SDK to make server calls. To write server calls 
-in Screenlets, you must therefore understand how Mobile SDK calls work. This 
-knowledge is crucial to make these calls properly and handle their results in 
-your Screenlet. This article explains the basics of Mobile SDK calls and how to 
-make them from Screenlets. 
+# Understanding Screenlet Server Calls
 
 Screenlets use *Interactors* to make server calls. Interactors are Screenlet 
 components that use the Mobile SDK to make server calls. Although Interactors 

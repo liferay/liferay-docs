@@ -1,4 +1,4 @@
-# Creating Guestbook List Screenlet's Event
+# Creating the Event
 
 Recall that Screens uses the EventBus library to communicate the server call's 
 results between Screenlet components. Screens does this via event objects that 

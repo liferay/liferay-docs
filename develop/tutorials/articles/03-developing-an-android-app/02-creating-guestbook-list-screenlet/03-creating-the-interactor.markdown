@@ -1,6 +1,133 @@
-# Creating the Interactor Class
+# Creating the Interactor
 
-In the previous article, you learned that Screenlets use a Mobile SDK to make 
+Recall from 
+[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
+that *Interactors* are Screenlet components that make server calls and 
+process the results. Also recall that Interactors themselves are made up of 
+several components: 
+
+1. The event class
+2. The listener
+3. The Interactor class
+
+Since the list Screenlet framework already contains two listeners, you only need 
+to create the event and Interactor classes. You'll create the event class first. 
+
+## Creating the Event Class
+
+Recall that Screens uses the EventBus library to communicate the server call's 
+results between Screenlet components. Screens does this via event objects that 
+contain the server call's results. For more information and instructions on 
+creating an event class, see 
+[the section of the list Screenlet tutorial on event classes](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-event). 
+You'll follow those instructions here to create Guestbook List Screenlet's event 
+class. 
+
+First, create a new package called `interactor` in the 
+`com.liferay.docs.guestbooklistscreenlet` package. Then create the 
+`GuestbookEvent` class in the `interactor` package. Replace this class's 
+contents with the following code: 
+
+    package com.liferay.docs.guestbooklistscreenlet.interactor;
+
+    import com.liferay.docs.model.GuestbookModel;
+    import com.liferay.mobile.screens.base.list.interactor.ListEvent;
+
+    public class GuestbookEvent extends ListEvent<GuestbookModel> {
+
+        private GuestbookModel guestbook;
+
+        public GuestbookEvent() {
+            super();
+        }
+
+        public GuestbookEvent(GuestbookModel guestbook) {
+            this.guestbook = guestbook;
+        }
+
+        @Override
+        public String getListKey() {
+            return guestbook.getName();
+        }
+
+        @Override
+        public GuestbookModel getModel() {
+            return guestbook;
+        }
+    }
+
+Note that this code is almost identical to that of the example `BookmarkEvent` 
+in the list Screenlet tutorial. The only difference is that `GuestbookEvent` is 
+adapted for guestbooks. 
+
+Nice work! Your event class is done. You're almost ready to write the 
+Screenlet's server call. First, however, you should understand how server calls 
+work in Interactors. 
+
+## Understanding Screenlet Server Calls
+
+<!-- Rewrite without callbacks -->
+Screenlets use *Interactors* to make server calls. Interactors are Screenlet 
+components that use the Mobile SDK to make server calls. Although Interactors 
+are also made up of several components, for now you only need to know two: the 
+Interactor class, and the Interactor's callback. The Interactor class issues the 
+Mobile SDK call, and the callback routes it asynchronously through a background 
+thread. You'll learn these components in more detail, and the others that 
+comprise an Interactor, when you create Guestbook List Screenlet's Interactor. 
+For now, though, you'll focus on Mobile SDK calls. 
+
+To call the Guestbook portlet's remote services, you'll use the Guestbook Mobile 
+SDK you built and installed earlier. This Mobile SDK contains the services 
+required to call the Guestbook portlet's remote services. The following diagram 
+illustrates a typical Mobile SDK call in a Screenlet: 
+
+![Figure 1: This diagram shows a typical Mobile SDK call made by a Screenlet's Interactor.](../../../images/android-mobile-sdk.png)
+
+This diagram is broken down into four basic steps: 
+
+1. In the Interactor class, create an instance of the Guestbook Mobile SDK 
+   service required to call the Guestbook portlet's remote services. For 
+   example, to get guestbooks from the portlet you must create a 
+   `GuestbookService` instance. The service instance contains the methods that 
+   call the Guestbook portlet's remote services. How you create this instance is 
+   also important. You must create it with an authenticated session that 
+   contains a callback instance. The callback is required to route the remote 
+   service call asynchronously through a background thread, since Android 
+   doesn't allow network requests on its main UI thread. Note that when creating 
+   a list Screenlet, you don't have to set the callback to the session manually; 
+   the list Screenlet framework does it for you. 
+
+2. In the same Interactor class, use the Guestbook Mobile SDK service instance 
+   to call the Guestbook portlet's remote services. For example, to get 
+   guestbooks from the portlet you must call the `GuestbookService` instance's 
+   `getGuestbooks` method. The service routes the call through the callback 
+   instance. 
+
+3. Receive and process the JSON that results from a successful server call. To 
+   efficiently work with these results in your app, you must transform the JSON 
+   into model objects that represent guestbooks or entries. You use model 
+   classes to do this, like the `GuestbookModel` class you created earlier. Note 
+   that in list Screenlets, 
+   [the `BaseListCallback` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java) 
+   automatically transforms the JSON into `Map` objects for you. You must still, 
+   however, use your model class to convert these `Map` objects into proper 
+   guestbook objects. 
+
+4. Receive the model objects in the Interactor class. You can then send these 
+   objects to the rest of the Screenlet for display in the app. Note that in 
+   list Screenlets, the list Screenlet framework's 
+   [`BaseListInteractor` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
+   receives the model objects for you. 
+
+You've probably noticed that in list Screenlets, the list Screenlet framework 
+handles a great deal of the work for you. You'll see this in greater detail as 
+you progress through this Learning Path. Next, you'll create Guestbook List 
+Screenlet's Interactor. 
+
+## Creating the Interactor Class
+
+<!-- Rewrite without callbacks & drop detailed listener explanation -->
+In the previous section, you learned that Screenlets use a Mobile SDK to make 
 server calls via Interactors. Now you'll create Guestbook List Screenlet's 
 Interactor. In this Interactor, you'll use the Guestbook Mobile SDK to call the 
 Guestbook portlet's remote services. Recall that this is necessary because the 
@@ -68,7 +195,7 @@ for the event, callback, and listeners.
 
 Now it's time to get classy! 
 
-## Creating the Interactor Class [](id=creating-the-interactor-class)
+### Creating the Interactor Class [](id=creating-the-interactor-class)
 
 To create Guestbook List Screenlet's Interactor class, you must extend the list 
 Screenlet framework's 
@@ -143,7 +270,7 @@ class should now look like this:
     public class GuestbookListInteractorImpl extends BaseListInteractor<GuestbookModel, 
         BaseListInteractorListener<GuestbookModel>> {
 
-        private long _groupId;
+        private long groupId;
         ...
 
 Now you must implement `BaseListInteractor`'s abstract `getCallback` method to 
@@ -188,12 +315,12 @@ do all this, and make the call, with a single line of code in
     @Override
     protected void getPageRowsRequest(Session session, int startRow, int endRow, Locale locale) 
         throws Exception {
-            new GuestbookService(session).getGuestbooks(_groupId, startRow, endRow);
+            new GuestbookService(session).getGuestbooks(groupId, startRow, endRow);
     }
 
     @Override
     protected void getPageRowCountRequest(Session session) throws Exception {
-        new GuestbookService(session).getGuestbooksCount(_groupId);
+        new GuestbookService(session).getGuestbooksCount(groupId);
     }
 
 In both methods, you create the `GuestbookService` instance with a session and 
@@ -229,7 +356,7 @@ Add this code to `GuestbookListInteractorImpl` now:
     public void loadRows(int startRow, int endRow, Locale locale, long groupId)
             throws Exception {
 
-        _groupId = groupId;
+        this.groupId = groupId;
 
         processWithCache(startRow, endRow, locale);
     }
@@ -246,8 +373,8 @@ Add this code to `GuestbookListInteractorImpl` now:
 
     @Override
     protected void storeToCache(BaseListEvent event, Object... args) {
-        storeRows(String.valueOf(_groupId), GUESTBOOK_LIST.GUESTBOOK,
-                GUESTBOOK_LIST.GUESTBOOK_COUNT, _groupId, null, event);
+        storeRows(String.valueOf(groupId), GUESTBOOK_LIST.GUESTBOOK,
+                GUESTBOOK_LIST.GUESTBOOK_COUNT, groupId, null, event);
     }
 
     @Override
@@ -256,8 +383,8 @@ Add this code to `GuestbookListInteractorImpl` now:
         final int endRow = (int) args[1];
         final Locale locale = (Locale) args[2];
 
-        return recoverRows(String.valueOf(_groupId), GUESTBOOK_LIST.GUESTBOOK,
-                GUESTBOOK_LIST.GUESTBOOK_COUNT, _groupId, null, locale, startRow, endRow);
+        return recoverRows(String.valueOf(groupId), GUESTBOOK_LIST.GUESTBOOK,
+                GUESTBOOK_LIST.GUESTBOOK_COUNT, groupId, null, locale, startRow, endRow);
     }
 
 For an explanation of this code, see 
