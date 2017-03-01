@@ -226,7 +226,7 @@ tutorial.
 You can also use the module in a generic JavaScript:
 
     <script>
-    require('module-name', function (moduleName) {
+    Liferay.Loader.require('module-name', function (moduleName) {
       // variable `moduleName` is available here
     });
     </script>

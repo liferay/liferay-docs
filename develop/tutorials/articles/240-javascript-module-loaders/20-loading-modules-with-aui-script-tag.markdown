@@ -33,7 +33,7 @@ executed.
 In the browser, the `aui:script` translates to the full HTML shown below:
 
     <script type="text/javascript">
-        require("metal-clipboard/src/Clipboard", function(metalClipboardSrcClipboard) {
+        Liferay.Loader.require("metal-clipboard/src/Clipboard", function(metalClipboardSrcClipboard) {
             (function() {
                 new metalClipboardSrcClipboard.default();
             })()
