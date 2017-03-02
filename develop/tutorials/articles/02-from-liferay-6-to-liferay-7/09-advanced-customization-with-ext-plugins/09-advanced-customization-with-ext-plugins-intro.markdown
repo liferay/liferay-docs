@@ -3,6 +3,9 @@
 **Ext plugins are deprecated for @product-ver@ and should only be used if
 absolutely necessary. They are deployable to Liferay Portal 7.0 CE GA4+.**
 
+<!-- Highlight supported app servers in the bolded section above, when testing
+has concluded. -Cody -->
+
 Ext plugins are powerful tools used to extend @product@. They, however, increase
 the complexity of your @product@ instance and are not recommended unless there
 is absolutely no other way to accomplish your task. @product-ver@ provides many
@@ -22,11 +25,11 @@ with @product@'s. Additionally, Ext plugins aren't hot deployable. To deploy an
 Ext plugin, you must restart your server. Additional steps are also required to
 deploy or redeploy to production systems.
 
-In this tutorial, you'll learn how to use Ext for these things:
+In this tutorial, you'll learn how to
 
-- Create an Ext plugin
-- Develop an Ext plugin
-- Deploy an Ext plugin in Production
+- [Create an Ext plugin](#creating-an-ext-plugin)
+- [Develop an Ext plugin](#developing-an-ext-plugin)
+- [Deploy an Ext plugin in Production](#deploying-in-production)
 
 Before diving into creating an Ext plugin, however, first consider if an Ext
 plugin is even necessary at all.
@@ -40,9 +43,12 @@ process to decide whether an Ext plugin is necessary:
 1.  Find the OSGi extension point that offers the customization abilities you
     desire.
 2.  If an OSGi extension point does not exist, use an Ext plugin.
-3.  Research new extension points periodically. New extension points are created
-    frequently; when finding a new applicable new extension point, their usage
-    should always replace an existing Ext plugin.
+3.  Research new extension points after every release of @product@. When a new
+    version of @product@ provides a new applicable extension point, you should
+    always use the extension point to replace the existing Ext plugin.
+
+<!-- Working on something to point people to for finding extension points. Will
+add to point #3 when it's finalized. -Cody -->
 
 So how do you find an OSGi extension point?
 
@@ -56,7 +62,7 @@ tutorial. Usable extension points are also documented throughout Liferay's
 Developer Network categorized by the @product@ section involved. For example,
 [Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
 and
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu),
+[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
 are articles describing how to extend a @product@ extension point. Want to
 learn how to
 [override module JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
@@ -67,21 +73,23 @@ There are a few corner cases where you may need an Ext plugin to customize a
 part of @product@ that does not provide an extension point. Liferay only
 supports Ext plugins for the following use cases:
 
-- Provide custom implementations for any Liferay beans declared in Liferay's
+- Providing custom implementations for any Liferay beans declared in Liferay's
   Spring files (when possible, use
   [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
   instead of an Ext plugin). @product-ver@ removed many Liferay beans, so make
   sure your overridden beans are still relevant if converting your legacy Ext
   plugin.
-- To add JSPs referenced from portal properties that can only be changed
-  from an Ext plugin.
-- Overwrite a class in a @product-ver@ core JAR. For a list of core JARs, see
-  the following [reference doc page](@platform-ref@/7.0-latest/javadocs)
-  (excluding `modules/`).
+- Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
+  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
+  section.
 - Modifying @product@'s `web.xml` file.
-- Add to @product@'s `web.xml` file.
+- Adding to @product@'s `web.xml` file.
 
-<!-- Still need to check on JSP use case for official support. -Cody -->
+<!-- - To add JSPs referenced from portal properties that can only be changed
+  from an Ext plugin. -->
+
+<!-- Still need to check on JSP use case for official support. This has not been
+finalized yet. -Cody -->
 
 +$$$
 
@@ -106,7 +114,7 @@ create Ext plugins from a Plugins SDK. If you're using a
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 to create your @project@ projects, you can
 [merge a Plugins SDK instance](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
-into the workspace. You can create Ext plugins in your terminal environment.
+into the workspace.
 
 <!--
 ### Using Liferay IDE to Create an Ext Plugin
@@ -148,7 +156,7 @@ a completely new plugin or add a new plugin to an existing plugin project.
 
 -->
 
-To create a new Ext plugin from the terminal, navigate to the *ext* directory in
+To create a new Ext plugin from the terminal, navigate to the `ext` directory in
 your Liferay Plugins SDK and enter the command below that is appropriate for
 your operating system. The two arguments after the `create` command are the
 project name and display name, respectively. The examples below use the project
@@ -265,7 +273,7 @@ customize @product@.
 
 ## Developing an Ext Plugin
 
-An Ext plugin changes Liferay itself when the plugin is deployed; it's not a
+An Ext plugin changes @product@ itself when the plugin is deployed; it's not a
 separate component that you can easily remove at any time. For this reason, the
 Ext plugin development process is different from that of other plugin types.
 It's important to remember that once an Ext plugin is deployed, some of its
@@ -280,13 +288,13 @@ plugin. The Plugins SDK does not check for conflicts among multiple Ext plugins
 stored in the `/ext` folder, so do **not** develop/deploy multiple Ext plugins
 at once.
 
-The Plugins SDK lets you deploy and redeploy Ext plugins during your development
-phase. Redeployment involves *cleaning* (i.e., removing) your application server
-and unzipping your specified Liferay bundle to start from scratch. That way, any
-changes made to the Ext plugin during development are properly applied, and
-files removed from your plugin by previous changes aren't left behind in the
-Liferay application. Because of this added complexity, you should use another
-plugin type to accomplish your goals whenever possible. 
+The Plugins SDK lets you deploy and redeploy your Ext plugin during your
+development phase. Redeployment involves *cleaning* (i.e., removing) your
+application server and unzipping your specified Liferay bundle to start from
+scratch. That way, any changes made to the Ext plugin during development are
+properly applied, and files removed from your plugin by previous changes aren't
+left behind in the Liferay application. Because of this added complexity, you
+should use another plugin type to accomplish your goals whenever possible. 
 
 Before digging in to the details, here's an overview of the Ext plugin
 development processes described below: 
@@ -362,13 +370,12 @@ restarts the server, for the server to detect and publish your Ext plugin.
     appropriate directories in the Liferay application. The `deploy` target
     creates a `.war` file with your changes and then deploys it to your server.
     Either way, your server must be restarted after the deployment. Using
-    `direct-deploy` is preferred for deploying Ext plugins during
+    `direct-deploy` is preferred for deploying an Ext plugin during
     development if your application server supports it. Direct deploy 
-    doesn't work in WebLogic Server or WebSphere application server
-    environments.
+    doesn't work in WebLogic or WebSphere application server environments.
 
 	  A `BUILD SUCCESSFUL` message indicates your plugin is now being deployed.
-	  Your console window running Liferay shows a message like the following one:
+	  Your console window running @product@ shows a message like the following one:
 
 		    Extension environment for [your project]-ext has been applied. You must
 		    reboot the server and redeploy all other plugins
@@ -421,10 +428,10 @@ one.
 **Clean Redeployment:** If you removed part(s) of your plugin, if there are
 changes to your plugin that can affect plugin deployment, or if you want to
 start with a clean @product@ environment, *undeploy* your plugin and *clean*
-your application server before redeploying your Ext plugins. By cleaning the
-application server, the existing Liferay installation is removed and the bundle
-specified in your Plugins SDK environment is unzipped in its place. See the
-instructions below to learn more about this process:
+your application server before redeploying your Ext plugin. By cleaning the
+application server, the existing @product@ installation is removed and the
+bundle specified in your Plugins SDK environment is unzipped in its place. See
+the instructions below to learn more about this process:
 
 <!--
 
@@ -453,7 +460,7 @@ instructions below to learn more about this process:
  
 -->
 
-1.  Stop the Liferay server. 
+1.  Stop the @product@ server. 
 
 2.  For each Ext plugin you're deploying, enter the following commands into your
     console: 
@@ -462,10 +469,13 @@ instructions below to learn more about this process:
         ant clean-app-server
         ant direct-deploy
 
-3.  Start the Liferay server. 
+3.  Start the @product@ server. 
 
 **Redeployment:** If you only added to your plugin or made modifications that
-don't affect the plugin deployment process, you can redeploy using these steps: 
+don't affect the plugin deployment process, you can redeploy the Ext plugin from
+the terminal using the same procedure as for initial deployment. Open a terminal
+window in your Ext plugin project's directory and execute either `ant deploy` or
+`ant direct-deploy`.
 
 <!--
 
@@ -474,20 +484,10 @@ don't affect the plugin deployment process, you can redeploy using these steps:
   
 -->
 
-Redeploy in the terminal using the same procedure as for initial deployment.
-Open a terminal window in your Ext plugin project's directory and execute either
-`ant deploy` or `ant direct-deploy`.
+After your plugin is published to @product@, verify that your customizations
+available.
 
-After your plugin is published to @product@, check for the customizations it
-produces. If you implemented and deployed the example customizations for the
-User Information page, you can see the customizations by viewing an existing
-user's information in the Control Panel. 
-
-<!-- Update info above, if necessary. -->
-
-Implementing and deploying this example customization demonstrates the Ext
-plugin development process. Next you'll learn how to package an Ext plugin for
-distribution and production. 
+Next you'll learn how to package an Ext plugin for distribution and production.
 
 ### Distribution
 
@@ -560,9 +560,7 @@ to the original file in @product@:
 - `ext-web/docroot/WEB-INF/liferay-display.xml`
     - **Description:** Allows overriding the portlets that are shown in the
       interface for adding applications and the categories in which they're
-      organized. It's most commonly used to change the categorization, hide
-      certain portlets, or make specific Control Panel portlets available to be
-      added to a page. 
+      organized.
     - **Original file in @product@:** `portal-web/docroot/WEB-INF/liferay-display.xml`
 
 You’ll learn how to deploy your Ext plugin in production next.
@@ -573,7 +571,7 @@ Often, you can't use Ant to deploy web applications in production or
 pre-production environments. Additionally, some application servers such as
 WebSphere or WebLogic have their own deployment tools and don't work with
 @product@'s auto-deployment process. Here are two methods to consider for
-deploying and redeploying Ext plugins in production. 
+deploying and redeploying an Ext plugin in production. 
 
 ### Method 1: Redeploying Liferay's Web Application
 
@@ -603,10 +601,10 @@ steps on the server:
 ### Method 2: Generate an Aggregated WAR File
 
 Some application servers don't support auto-deploy; WebSphere and WebLogic are
-two examples. With an aggregated `.war` file, all Ext plugins are merged before
+two examples. With an aggregated `.war` file, the Ext plugin is merged before
 deployment to production. A single `.war` file then contains @product@ plus the
-changes from all your Ext plugins. Before you deploy the aggregated @product@
-`.war` file, copy the dependency `.jar` files for @product@ and all Ext plugins
+changes from your Ext plugin. Before you deploy the aggregated @product@
+`.war` file, copy the dependency `.jar` files for @product@ and your Ext plugin
 to the global application server class loader in the production server. The
 precise location varies from server to server; refer to
 [Deployment](/discover/deployment) to get the details for your application
@@ -619,7 +617,7 @@ down again. Now the aggregated file is ready.
 
 Create a `.war` file by zipping the Liferay web application folder from within
 the app server. Copy into your application server's global classpath all of the
-libraries on which your Ext plugins depends. 
+libraries on which your Ext plugin depends. 
 
 Now, perform these actions on your server: 
 
