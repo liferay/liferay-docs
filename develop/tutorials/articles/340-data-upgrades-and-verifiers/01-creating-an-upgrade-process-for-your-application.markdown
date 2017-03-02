@@ -58,8 +58,10 @@ Next, you'll specify your upgrade's dependencies.
 ## Declaring Dependencies [](id=declaring-dependencies)
 
 In your application's dependency management file (e.g., Maven POM, Gradle build
-file, or Ivy `ivy.xml` file), add a dependency on the [com.liferay.portal.upgrade](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.upgrade/)
-module.
+file, or Ivy `ivy.xml` file), 
+[add a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+on the 
+[`com.liferay.portal.upgrade` module](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.upgrade/). 
 
 In a `build.gradle` file, the dependency would look like this:
 

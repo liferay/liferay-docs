@@ -1,37 +1,13 @@
 # Liferay API Modules [](id=finding-liferay-api-modules)
 
-This document explains how to find Liferay API modules, specify them as
-dependencies, and find their Javadoc. 
+The following table maps commonly used @product@ components to their API modules
+and key classes. You 
+[configure dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+on the component API modules to use them. 
 
-Let's start by considering Liferay module information for specifying to Ivy,
-Gradle, and Maven dependency frameworks. This information includes the following
-dependency attributes:
+## API Modules Table [](id=api-module-names-table)
 
-- Group name
-- Module name
-- Module version
-
-The next table shows the group value to specify to Ivy, Gradle, and Maven. 
-
-## Module Group Table [](id=module-group-table)
-
-| &nbsp;**Project Dependency Type** | &nbsp;**Variable** | &nbsp;**Value**     |
-|-------------------------------------|-----------------|-----------------|
-| Ivy                                      | `org`           | `com.liferay` |
-| Gradle                                 | `group`        | `com.liferay` |
-| Maven                                 | `groupId`     | `com.liferay` |
-
-
-Specify group value `com.liferay` for all your dependencies on Liferay modules. 
-
-Next, look up the API module's name. 
-
-## API Module Names Table [](id=api-module-names-table)
-
-This table maps Liferay components to their commonly used classes and API module
-names. 
-
-| &nbsp;Component | &nbsp;Classes | &nbsp;Module<br>(Ivy `name` /<br>Gradle `name` /<br>Maven `artifactId`) |
+| Component | Classes | Module Symbolic Name (Artifact ID) |
 | :-------------------- | :---------------- | :----------------------------------------------------------------------------------- |
 | Application List    | `PanelApp`                                | `com.liferay.application.list.api` |
 |                          | `PanelCategory`                         |                                                    |
@@ -135,96 +111,15 @@ names.
 |                      | `WikiPage[Local]ServiceUtil`                     |                                      |
 | XStream Configurator | `XStreamConfigurator`          | `com.liferay.xstream.configurator.api` |
 
-## Module Version [](id=module-version)
-
-The last module dependency item to specify is the module version. The Liferay
-Portal CE artifact repository has a folder for each module version. To browse
-the version folders, visit the artifact repository at
-<https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/>
-and click on the module's folder. 
-
-Liferay module names start with `com.liferay`, followed by a dot ".", and
-the component's name. Here's the entire naming convention:
-
-    com.liferay.[component].api-[version].jar
-
-For example, the JAR file for version 1.0.1 of the Web Content (Journal)
-component's API module looks like this:
-
-    com.liferay.journal.api-1.0.1.jar
-
-Ivy, Gradle, and Maven dependencies on this JAR file are demonstrated as
-follows. 
-
-### Ivy [](id=ivy)
-
-	<dependency name="com.liferay.journal.api" org="com.liferay" rev="1.0.1" />
-
-### Gradle [](id=gradle)
-
-	dependencies {
-		provided group: "com.liferay", name: "com.liferay.journal.api", version: "1.0.1"
-		...
-	}
-
-### Maven [](id=maven)
-
-	<dependency>
-		<groupId>com.liferay.faces</groupId>
-		<artifactId>com.liferay.journal.api</artifactId>
-		<version>1.0.1</version>
-	</dependency>
-
-Now that you've specified dependencies on Liferay API modules, consider their
-Javadoc. 
-
-## Java API [](id=java-api)
-
-A module's Javadoc describes its Java API. 
-
-Javadoc for the modules in the latest GA release of Liferay Portal 7.0 CE are
-available online at <@platform-ref@/7.0-latest/javadocs/> and for
-download from [Liferay Downloads](https://www.liferay.com/downloads). All
-versions of modules for CE are available for download from the [Liferay CE
-artifact repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/).
-
-Here is the common naming convention used for the module packages:
-
-- `com.liferay.[component].constants` - Classes that specify module specific
-constant values, such as web keys
-- `com.liferay.[component].exception` - Module specific exception classes
-- `com.liferay.[component].model` - Model entity interfaces, entity wrapper
-classes, and SOAP classes 
-- `com.liferay.[component].service` - Local and remote service interfaces
-- `com.liferay.[component].service.persistence` - Entity persistence interfaces,
-entity finder interfaces, and static utilities 
-- `com.liferay.[component].util` - Utility classes
-
-+$$$
-
-**Important**: The API called *portal-service* in Liferay Portal 6.2 and previous versions is
-called *portal-kernel* in @product-ver@. 
-
-$$$
-
-Portal kernel API modules have *kernel* packages. Here is the common naming
-convention used for portal-kernel module packages: 
-
-- `com.liferay.[component].kernel.constants` - Classes that specify module
-specific constant values, such as web keys 
-- `com.liferay.[component].kernel.exception` - Module-specific exception classes
-- `com.liferay.[component].kernel.model` - Model entity interfaces, entity
-wrapper classes, and SOAP classes 
-- `com.liferay.[component].kernel.service` - Local and remote service interfaces
-- `com.liferay.[component].kernel.service.persistence` - Entity persistence
-interfaces, entity finder interfaces, and static utilities 
-- `com.liferay.[component].kernel.util` - Utility classes
-
-You now know how to find Liferay component API modules and their Javadoc. 
+For reference documentation on these APIs and others, see the the app reference 
+docs at 
+[@app-ref@](@app-ref@) and the @product@ core reference docs at 
+[@platform-ref@/7.0-latest](@platform-ref@/7.0-latest). 
 
 ## Related Articles [](id=related-articles)
+
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
 [Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-

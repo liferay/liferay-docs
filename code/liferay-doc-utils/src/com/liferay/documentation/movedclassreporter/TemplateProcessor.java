@@ -14,7 +14,7 @@ import freemarker.template.TemplateException;
 
 public class TemplateProcessor {
 
-	public void processMovedClassesTemplate(List<FormerPortalServiceClass> movedClasses, File article, String oldZipName, String newZipName) {
+	public void processMovedClassesTemplate(List<FormerPortalServiceClass> movedClasses, File article, String oldDirName, String newDirName) {
 		// Write report using FreeMarker template
 		Configuration cfg = new Configuration(Configuration.VERSION_2_3_23);
 		try {
@@ -26,8 +26,8 @@ public class TemplateProcessor {
 
 			Map root = new HashMap();
 
-			root.put("oldSrcZip", oldZipName);
-			root.put("newSrcZip", newZipName);
+			root.put("oldSrc", oldDirName);
+			root.put("newSrc", newDirName);
 			root.put("movedClasses", movedClasses);
 			
 			Template temp = cfg.getTemplate("moved-classes.ftl");
@@ -44,7 +44,7 @@ public class TemplateProcessor {
 		
 	}
 
-	public void processRemovedClassesTemplate(List<FormerPortalServiceClass> removedClasses, File article, String oldZipName, String newZipName) {
+	public void processRemovedClassesTemplate(List<FormerPortalServiceClass> removedClasses, File article, String oldDirName, String newDirName) {
 		// Write report using FreeMarker template
 		Configuration cfg = new Configuration(Configuration.VERSION_2_3_23);
 		try {
@@ -56,8 +56,8 @@ public class TemplateProcessor {
 
 			Map root = new HashMap();
 
-			root.put("oldSrcZip", oldZipName);
-			root.put("newSrcZip", newZipName);
+			root.put("oldSrc", oldDirName);
+			root.put("newSrc", newDirName);
 			root.put("removedClasses", removedClasses);
 			
 			Template temp = cfg.getTemplate("removed-classes.ftl");

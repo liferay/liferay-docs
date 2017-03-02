@@ -103,7 +103,7 @@ nest fields below each other. Nest all the fields you just added below the Text 
     **NOTE:** When you nest fields, they will not appear when the list entries
     are displayed with the default display template. For more information about
     templates, see the article on 
-    [Creating Custom Displays](/discover/portal/-/knowledge_base/7-0/creating-custom-displays).
+    [Using Templates to Display Forms and Lists](/discover/portal/-/knowledge_base/7-0/using-templates-to-display-forms-and-lists).
 
     $$$
 
@@ -255,7 +255,7 @@ definition listed with the others.
 
 ![Figure 16: You can configure the permissions on an existing data definition.](../../../images/ddl-definition-permissions.png)
 
-You can manage a data definition's templates as well.
+You can manage a data definition's templates as well. 
 
 ### Managing a Data Definition's Templates [](id=managing-a-data-definitions-templates)
 
@@ -268,7 +268,7 @@ You can copy templates if you want to create a new template that's similar to an
 existing one, or you can edit them directly. You can also configure permissions
 for a template, and delete templates. All of these are accomplished by clicking
 the actions button for a template. For more information see the article on
-[Creating Custom Displays](/discover/portal/-/knowledge_base/7-0/creating-custom-displays).
+[Using Templates to Display Forms and Lists](/discover/portal/-/knowledge_base/7-0/using-templates-to-display-forms-and-lists).
 
 ## Configuring Data Definition Fields [](id=configuring-data-definition-fields)
 
@@ -357,7 +357,7 @@ Set *Indexable* to *Yes* if you want Liferay to index your field for
 search.
 
 Setting *Localizable* to *No* turns off localization for a particular
-field, so that [translations](discover/portal/-/knowledge_base/6-2/localization) 
+field, so that [translations](/discover/portal/-/knowledge_base/6-2/localization) 
 cannot be made for that field.
 
 <!-- Add link to 7.0 docs on localization when they're created -->

@@ -236,7 +236,7 @@ your web content.
 
 **Structure and Template:** lets you customize the web content article's
 structure and template. To learn more about web content structures and
-templates, visit the [Designing Uniform Content](/discover/portal/-/knowledge_base/7-0/designing-unifrom-content)
+templates, visit the [Designing Uniform Content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content)
 section.
 
 **Small Image:** sets the image that is used for the web content article's

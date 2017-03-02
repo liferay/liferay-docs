@@ -4201,8 +4201,8 @@ Portal by means of an OSGi container.
 #### What changed? [](id=what-changed-104)
 
 The Shopping file uploads portlet properties have been moved from Server
-Administration to an OSGI configuration named `ShoppingFileUploadsConfiguration`
-in the `shopping-api` module.
+Administration to an OSGi configuration named
+`ShoppingFileUploadsConfiguration.java` in the `shopping-api` module.
 
 #### Who is affected? [](id=who-is-affected-104)
 
@@ -4217,7 +4217,7 @@ This affects anyone who is using the following portlet properties:
 
 Instead of overriding the `portal.properties` file, you can manage the
 properties from Portal's configuration administrator. This can be accessed by
-navigating to Liferay's Control Panel &rarr; *Configuration* &rarr; *System
+navigating to Liferay's *Control Panel* &rarr; *Configuration* &rarr; *System
 Settings* &rarr; *Shopping Cart Images* and editing the settings there.
 
 If you would like to include the new configuration in your application, follow
@@ -4261,5 +4261,64 @@ the tag namespace from `liferay-ui` to `liferay-expando`:
 
 This change was made as part of the ongoing strategy to modularize Liferay
 Portal by means of an OSGi container.
+
+---------------------------------------
+
+### Moved Journal File Uploads Portlet Properties to OSGi Configuration [](id=moved-journal-file-uploads-portlet-properties-to-osgi-configuration)
+- **Date:** 2017-Jan-04
+- **JIRA Ticket:** LPS-69209
+
+#### What changed? [](id=what-changed-106)
+
+The Journal File Uploads portlet properties have been moved from Server
+Administration to an OSGi configuration named
+`JournalFileUploadsConfiguration.java` in the `journal-service` module.
+
+#### Who is affected? [](id=who-is-affected-106)
+
+This affects anyone who is using the following portlet properties:
+
+- `journal.image.extensions`
+- `journal.image.small.max.size`
+
+#### How should I update my code? [](id=how-should-i-update-my-code-106)
+
+Instead of overriding the `portal.properties` file, you can manage the
+properties from Portal's configuration administrator. This can be accessed by
+navigating to Liferay's *Control Panel* &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Web Content File Uploads* and editing the settings there.
+
+If you would like to include the new configuration in your application, follow
+the instructions for
+[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+
+#### Why was this change made? [](id=why-was-this-change-made-106)
+
+This change was made as part of the modularization efforts to ease portal
+configuration changes.
+
+---------------------------------------
+
+### Deprecated the aui:tool Tag with No Direct Replacement [](id=deprecated-the-auitool-tag-with-no-direct-replacement)
+- **Date:** 2017-Feb-02
+- **JIRA Ticket:** LPS-70422
+
+#### What changed? [](id=what-changed-107)
+
+The `aui:tool` tag has been deprecated with no direct replacement.
+
+#### Who is affected? [](id=who-is-affected-107)
+
+Plugins or templates that are using the `aui:tool` tag must remove their usage
+of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-107)
+
+There is no direct replacement. You should remove all usages of the `aui:tool`
+tag.
+
+#### Why was this change made? [](id=why-was-this-change-made-107)
+
+This change was made as a part of the ongoing strategy to deprecate unused tags.
 
 ---------------------------------------
