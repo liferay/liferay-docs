@@ -23,47 +23,28 @@ First, you'll define Guestbook List Screenlet's attributes.
 
 ## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
-Before creating the Screenlet class, you should define its attributes. These are 
-the `liferay` attributes the app developer can set when inserting the 
-Screenlet's XML in a layout. For example, you inserted the following Login 
-Screenlet XML in `activity_main.xml` when you used Login Screenlet: 
-
-    <com.liferay.mobile.screens.auth.login.LoginScreenlet
-        android:id="@+id/login_screenlet"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        liferay:basicAuthMethod="email"
-        liferay:layoutId="@layout/login_default"
-        />
-
-The app developer can set the `liferay` attributes `basicAuthMethod` and 
-`layoutId` to set Login Screenlet's authentication method and View, 
-respectively. The Screenlet class reads these settings to enable the 
-corresponding functionality. 
-
-When creating a Screenlet, you can define the attributes you want to make 
-available to app developers. You'll do this now for Guestbook List Screenlet. 
-Create the file `guestbook_attrs.xml` in your app's `res/values` directory. 
+Recall from 
+[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#defining-screenlet-attributes-in-your-app) 
+that you should create a Screenlet's attributes before creating the Screenlet 
+class. These are the attributes the app developer can set when inserting the 
+Screenlet's XML in a layout. You'll define Guestbook List Screenlet's attributes 
+now. Create the file `guestbook_attrs.xml` in your app's `res/values` directory. 
 Replace the file's contents with the following code: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
-        <declare-styleable name="GuesbookListScreenlet">
+        <declare-styleable name="GuestbookListScreenlet">
             <attr name="groupId"/>
-            <attr name="offlinePolicy"/>
             <attr name="layoutId"/>
         </declare-styleable>
     </resources>
 
-This defines the attributes `groupId`, `offlinePolicy`, and `layoutId`. You'll 
-add these attributes' functionality in the Screenlet class. Here's a brief 
-description of the functionality you'll add to each: 
+This defines the attributes `groupId` and `layoutId`. You'll add these 
+attributes' functionality in the Screenlet class. Here's a brief description of 
+the functionality you'll add to each: 
 
 - `groupId`: Sets the portal site to communicate with, if the app developer 
   doesn't want to use the default `groupId` setting in `server_context.xml`. 
-
-- `offlinePolicy`: Sets the Screenlet's 
-  [offline mode policy](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode). 
 
 - `layoutId`: Sets the Screenlet's View. This functions the same as the 
   `layoutId` attribute in Liferay's existing Screenlets. 
@@ -73,57 +54,106 @@ ready to write the Screenlet class.
 
 ## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
-As you've seen, the list Screenlet framework provides basic implementations of 
-many list Screenlet components. This is also true of the Screenlet class. The 
-list Screenlet framework's 
-[`BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java) 
-provides much of your Screenlet class's code. This includes methods for 
-pagination and other default behavior. Before extending this class to meet 
-Guestbook List Screenlet's needs, you should understand how `BaseListScreenlet` 
-handles server call results for you. Buckle up; you're about to go on another 
-magical journey through the list Screenlet framework. 
+Recall from 
+[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlet-class) 
+that you must extend BaseListScreenlet to create a Screenlet class for a list 
+Screenlet. This is because 
+[`BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java) 
+provides the basic functionality for all Screenlet classes in list Screenlets. 
+This includes methods for pagination and other default behavior. Use the 
+following steps to create `GuestbookListScreenlet`; the Screenlet class for 
+Guestbook List Screenlet. Note that these steps closely follow the steps in the 
+list Screenlet creation tutorial. 
 
-### BaseListScreenlet and the Server Call's Results [](id=baselistscreenlet-and-the-server-calls-results)
+1. Create the `GuestbookListScreenlet` class in the package 
+   `com.liferay.docs.guestbooklistscreenlet`. This class must extend 
+   `BaseListScreenlet` with `GuestbookModel` and `GuestbookListInteractor` as 
+   type arguments: 
 
-Note that `BaseListScreenlet` implements the 
-[`BaseListInteractorListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractorListener.java) 
-by implementing the 
-[`onListRowsFailure` and `onListRowsReceived` methods](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java#L57-L73). 
-Recall that the 
-[`BaseListInteractor` class's](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
-`onEventMainThread` and `notifyError` methods call these methods to send the 
-server call's results to any classes that implement 
-`BaseListInteractorListener`. Therefore, by implementing 
-`BaseListInteractorListener`, `BaseListScreenlet` receives the server call's 
-results and serves as this listener. This happens in 
-[its `onListRowsFailure` and `onListRowsReceived` implementations](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java#L57-L73). 
-These method implementations then send the server call's results to the View and 
-the activity or fragment class that contains the Screenlet. Here's how these 
-implementations work: 
+        public class GuestbookListScreenlet extends 
+            BaseListScreenlet<GuestbookModel, GuestbookListInteractor> {...
 
-- `onListRowsFailure`: Sends the results of a failed server call (an 
-  `Exception`). The `BaseListViewModel` method 
-  `showFinishOperation(int startRow, int endRow, Exception e)` sends the 
-  `Exception` to the View (recall that `BaseListScreenletView` 
-  [implements this method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L140-L145)). 
-  The `BaseListListener` method `onListPageFailed` sends the same `Exception` to 
-  the activity or fragment class that contains the Screenlet. 
+    This requires you to add the following imports: 
 
-- `onListRowsReceived`: Sends the results of a successful server call (the list 
-  of objects retrieved from the server). The `BaseListViewModel` method 
-  `showFinishOperation(int startRow, int endRow, List<E> entries, int rowCount)` 
-  sends the objects to the View (recall that `BaseListScreenletView` 
-  [implements this method](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L81-L133)). 
-  The `BaseListListener` method `onListPageReceived` sends the same objects to 
-  the activity or fragment class that contains the Screenlet. 
+        import com.liferay.docs.guestbooklistscreenlet.interactor.GuestbookListInteractor;
+        import com.liferay.docs.model.GuestbookModel;
+        import com.liferay.mobile.screens.base.list.BaseListScreenlet;
 
-![Figure 1: This diagram illustrates how the list Screenlet framework handles the server call's results.](../../../images/screens-android-list-screenlet-listeners.png)
+2. Leverage the superclass constructors to create `GuestbookListScreenlet`'s 
+   constructors:
 
-The best part about all this is that you can rely on the default 
-`onListRowsFailure` and `onListRowsReceived` implementations in 
-`BaseListScreenlet` to handle the server call's results. All you have to do is 
-extend `BaseListScreenlet` when creating your Screenlet class. You'll do this 
-next. 
+        public GuestbookListScreenlet(Context context) {
+            super(context);
+        }
+
+        public GuestbookListScreenlet(Context context, AttributeSet attrs) {
+            super(context, attrs);
+        }
+
+        public GuestbookListScreenlet(Context context, AttributeSet attrs, int defStyleAttr) {
+            super(context, attrs, defStyleAttr);
+        }
+
+        public GuestbookListScreenlet(Context context, AttributeSet attrs, int defStyleAttr, 
+            int defStyleRes) {
+                super(context, attrs, defStyleAttr, defStyleRes);
+        }
+
+    This requires you to add the following imports: 
+
+        import android.content.Context;
+        import android.util.AttributeSet;
+
+3. Implement the `error` method. This method uses a listener to propagate any 
+   exception that occurs during the service call: 
+
+        @Override
+        public void error(Exception e, String userAction) {
+            if (getListener() != null) {
+                getListener().error(e, userAction);
+            }
+        }
+
+4. Override the `createScreenletView` method to read the value of the `groupId` 
+   attribute you defined and create the Screenlet's View. Note that you don't 
+   have to read the `layoutId` attribute's value here because calling the 
+   superclass's `createScreenletView` method does so for you: 
+
+        @Override
+        protected View createScreenletView(Context context, AttributeSet attributes) {
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributes, 
+                R.styleable.GuestbookListScreenlet, 0, 0);
+            groupId = typedArray.getInt(R.styleable.GuestbookListScreenlet_groupId, 
+                (int) LiferayServerContext.getGroupId());
+            typedArray.recycle();
+
+            return super.createScreenletView(context, attributes);
+        }
+
+    This requires you to add the following imports: 
+
+        import android.content.res.TypedArray;
+        import android.view.View;
+        import com.liferay.docs.liferayguestbook.R;
+        import com.liferay.mobile.screens.context.LiferayServerContext;
+
+5. Override the `loadRows` method to retrieve the list rows from the server. Do 
+   this by starting `GuestbookListInteractor`. Because you don't need to pass 
+   any data to the Interactor, you can call its `start` method with no 
+   arguments: 
+
+        @Override
+        protected void loadRows(GuestbookListInteractor interactor) {
+            interactor.start();
+        }
+
+6. Override the `createInteractor` method to instantiate and return 
+   `GuestbookListInteractor`: 
+
+        @Override
+        protected GuestbookListInteractor createInteractor(String actionName) {
+            return new GuestbookListInteractor();
+        }
 
 ### Extending BaseListScreenlet [](id=extending-baselistscreenlet)
 
