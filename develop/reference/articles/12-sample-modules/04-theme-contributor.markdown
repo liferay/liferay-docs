@@ -45,8 +45,6 @@ but you can write whatever JavaScript you want:
 There are five different versions of this sample, each built with a different
 build tool:
 
-- [Bndtools](https://github.com/liferay/liferay-blade-samples/tree/master/bndtools/blade.theme.contributor)
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.theme.contributor)
 - [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.theme.contributor)
 - [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.theme.contributor)
 - [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.theme.contributor)
