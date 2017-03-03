@@ -23,7 +23,7 @@ class.
 
 ## Where Is This Sample?
 
-There are five different versions of this sample, each built with a different
+There are three different versions of this sample, each built with a different
 build tool:
 
 - [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.portlet.springmvc)
