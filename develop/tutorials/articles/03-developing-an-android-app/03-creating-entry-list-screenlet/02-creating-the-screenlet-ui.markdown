@@ -16,7 +16,7 @@ Screenlet's View:
    and communicates with the Screenlet class. 
 
 4. Create the View's layout. This layout defines the Screenlet's UI as a whole, 
-   which in this case is a scrollable list. 
+   which for a list Screenlet is a scrollable list. 
 
 As you follow these steps, you'll see that Entry List Screenlet's View shares a 
 great deal of code with Guestbook List Screenlet's View. The biggest difference 
@@ -24,13 +24,13 @@ between these Views is that one displays guestbooks and the other displays
 entries. The mechanisms they use to display data, however, are almost identical. 
 
 To get started, create a new package named `view` inside the 
-`getentriesscreenlet` package. You'll create the row layout first. 
+`entrylistscreenlet` package. You'll create the row layout first. 
 
 ## Creating the Row Layout [](id=creating-the-row-layout)
 
 First, you must create the layout the Screenlet uses to display each row in the 
 list. Recall that in Guestbook List Screenlet, `guestbook_row.xml` serves this 
-purpose with a single `TextView` used to display a guestbook's name. You'll 
+purpose with a single `TextView` it uses to display a guestbook's name. You'll 
 create a similar layout here for Entry List Screenlet, but you'll use two 
 `TextView` elements: one for the entry, and one for the name of the person that 
 left it. Create `entry_row.xml` in your app's `res/layout` directory, and 
@@ -70,19 +70,19 @@ second `TextView` (`entry_name`) to display the name of the person that left it.
 The `padding` settings in each `TextView` element group the text closer together 
 and create extra space at the top and bottom of the row. This makes it clear 
 that the text in each row belongs together as a single list item. Of course, 
-this is only one of many possible representations. You're free to style each row 
-as you wish. 
+this is only one of many possible representations. You can style each row as you 
+wish. 
 
-Next, you'll create your Screenlet's adapter class.
+Next, you'll create your Screenlet's adapter class. 
 
 ## Creating the Adapter Class [](id=creating-the-adapter-class)
 
-Recall that an adapter class is required to fill each row with data. 
-Fortunately, Entry List Screenlet's adapter class is almost identical to that of 
-Guestbook List Screenlet. The only difference, besides working with `EntryModel` 
-instead of `GuestbookModel`, is that it needs two variables: one for the entry, 
-and one for the name of the person who left it. Guestbook List Screenlet's 
-adapter class only needs a variable for the guestbook's name. 
+Recall that an adapter class is required to fill each row with data. Entry List 
+Screenlet's adapter class is almost identical to that of Guestbook List 
+Screenlet. The only difference, besides working with `EntryModel` instead of 
+`GuestbookModel`, is that it needs two variables: one for the entry, and one for 
+the name of the person who left it. Guestbook List Screenlet's adapter class 
+only needs a variable for the guestbook's name. 
 
 Inside the Entry List Screenlet's `view` package, create the following 
 `EntryAdapter` class: 
@@ -118,26 +118,27 @@ Inside the Entry List Screenlet's `view` package, create the following
 
         public class EntryViewHolder extends BaseListAdapter.ViewHolder {
 
-            private final TextView _message;
-            private final TextView _name;
+            private final TextView message;
+            private final TextView name;
 
             public EntryViewHolder(View view, BaseListAdapterListener listener) {
                 super(view, listener);
 
-                _message = (TextView) view.findViewById(R.id.entry_message);
-                _name = (TextView) view.findViewById(R.id.entry_name);
+                message = (TextView) view.findViewById(R.id.entry_message);
+                name = (TextView) view.findViewById(R.id.entry_name);
             }
 
             public void bind(EntryModel entry) {
-                _message.setText(entry.getMessage());
-                _name.setText(entry.getName());
+                message.setText(entry.getMessage());
+                name.setText(entry.getName());
             }
 
         }
     }
 
-For an explanation of how this code works, see the section on the adapter class 
-[in the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui). 
+For an explanation of how this code works, see 
+[the section on the adapter class](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui#creating-the-adapter-class) 
+in the article on Creating Guestbook List Screenlet's UI. 
 
 Now you're ready to create the View class. 
 
@@ -146,9 +147,9 @@ Now you're ready to create the View class.
 Recall that the View class controls a Screenlet's UI. Because Entry List 
 Screenlet is so similar to Guestbook List Screenlet, their View classes are 
 almost identical. The only difference is--you guessed it--one uses entries and 
-the other uses guestbooks. For a full explanation of what the View class does, 
-how it's structured, and why, see the section on the View class in 
-[the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui). 
+the other uses guestbooks. For a full explanation of the View class, see 
+[the section on the View class](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui#creating-the-view-class) 
+in the article on Creating Guestbook List Screenlet's UI. 
 
 Create the `EntryListView` class inside Entry List Screenlet's `view` package, 
 and replace its contents with the following: 
@@ -189,11 +190,7 @@ and replace its contents with the following:
         }
     }
 
-Fabulous work! Remember, if you need an explanation of how this code works, see 
-the section on the View class in 
-[the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui). 
-
-Next, you'll create your View's main layout. 
+Fabulous work! Next, you'll create your View's main layout. 
 
 ## Creating the View's Layout [](id=creating-the-views-layout)
 

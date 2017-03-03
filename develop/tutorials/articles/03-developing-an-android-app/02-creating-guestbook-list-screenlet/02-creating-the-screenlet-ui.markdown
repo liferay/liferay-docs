@@ -1,11 +1,8 @@
 # Creating Guestbook List Screenlet's UI [](id=creating-guestbook-list-screenlets-ui)
 
-In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet 
-must have at least one View. In this article, you'll use the following steps to 
-create a View for the Guestbook List Screenlet. Note that these are the same 
-basic steps in 
-[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets) 
-for creating a list Screenlet's View: 
+Recall that in Liferay Screens for Android, Screenlet UIs are called Views and 
+every Screenlet must have at least one View. In this article, you'll use the 
+following steps to create a View for Guestbook List Screenlet: 
 
 1. Create the row layout. The Screenlet uses this layout for each row in the 
    list. 
@@ -17,7 +14,12 @@ for creating a list Screenlet's View:
    and communicates with the Screenlet class. 
 
 4. Create the View's layout. This layout defines the Screenlet's UI as a whole, 
-   which in this case is a scrollable list. 
+   which for a list Screenlet is a scrollable list. 
+
+Note that these are the same steps 
+[as those in the list Screenlet tutorial for creating a list Screenlet's View](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view). 
+Therefore, this article doesn't explain the code in detail. See the tutorial 
+for such an explanation. 
 
 You'll create the Guestbook List Screenlet's View in its own package inside the 
 `guestbooklistscreenlet` package. Create a new package named `view` inside the 
@@ -50,23 +52,10 @@ serve only as an example because they result in clean, readable text.
 
 ## Creating the Adapter Class [](id=creating-the-adapter-class)
 
-[Android adapters](https://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
-fill a layout with content. In this Screenlet, the layout is the row layout 
-(`guestbook_row.xml`) and the content is each list item (a guestbook's name). To 
-make list scrolling smooth, the adapter class should use an 
-[Android view holder](https://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder). 
-To make this easier, you can extend the list Screenlet framework's 
-[`BaseListAdapter` class](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListAdapter.java) 
-with your model class and view holder as type arguments. By extending 
-`BaseListAdapter`, your adapter needs only two methods: 
-
-- `createViewHolder`: instantiates the view holder 
-- `fillHolder`: fills in the view holder for each row 
-
-Your view holder should also contain variables for any data each row needs to 
-display. The view holder must assign these variables to the corresponding row 
-layout elements, and set the appropriate data to them. In this case, you only 
-need to do this for the guestbook's name. 
+Recall that an adapter class is required to fill each row with data. Guestbook 
+List Screenlet's adapter class, `GuestbookAdapter`, is almost identical to 
+[the adapter class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view). 
+The only difference is that `GuestbookAdapter` handles a guestbook's name. 
 
 Inside the Screenlet's `view` package, create the following `GuestbookAdapter` 
 class: 
@@ -117,65 +106,18 @@ class:
         }
     }
 
-This class's view holder is an inner class that extends `BaseListAdapter`'s view 
-holder. Since Guestbook List Screenlet only needs to display a guestbook's name 
-in each row, the view holder only needs one variable: `name`. The view holder's 
+In the view holder, the `name` variable accounts for the guestbook's name. The 
 constructor assigns the `TextView` from `guestbook_row.xml` to this variable. 
 The `bind` method then sets the guestbook's name as the `TextView`'s text. 
-
-The other methods in `GuestbookAdapter` leverage the view holder. The 
-`createViewHolder` method instantiates `GuestbookViewHolder`. The `fillHolder` 
-method calls the view holder's `bind` method to set the guestbook's name as the 
-`name` variable's text. 
 
 Next, you'll create the View class. 
 
 ## Creating the View Class [](id=creating-the-view-class)
 
-The View class is the central hub of any Screenlet's UI. It renders the UI, 
-handles user interactions, and communicates with the Screenlet class. The list 
-Screenlet framework provides most of this functionality for you via 
-[the `BaseListScreenletView` class](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java). 
-Your View class must extend this class to provide your row layout ID and an 
-instance of your adapter. You'll do this by overriding 
-`BaseListScreenletView`'s `getItemLayoutId` and `createListAdapter` methods. 
-Note that this is the only custom functionality your View class needs. If it 
-needed more, you could provide it by creating new methods or overriding other 
-`BaseListScreenletView` methods. 
-
-Before creating your View class, you should understand how 
-`BaseListScreenletView` works. `BaseListScreenletView` displays the server 
-call's results by implementing the 
-[`BaseListViewModel` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/view/BaseListViewModel.java). 
-This interface defines two methods: 
-
-- `showFinishOperation(int startRow, int endRow, List<E> entries, int rowCount)`: 
-  Receives the list of objects (`List<E> entries`) that results from a 
-  successful server call. 
-  [This method's implementation in `BaseListScreenletView`](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L94-L143) 
-  fills the adapter with these objects. 
-
-- `showFinishOperation(int startRow, int endRow, Exception e)`: Receives the 
-  `Exception` that results from a failed server call. 
-  [This method's implementation in `BaseListScreenletView`](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenletView.java#L150-L155) 
-  sets the visibility of the View's `ProgressBar` and `RecyclerView` (you'll 
-  create these shortly), and logs the `Exception`. 
-
-The list Screenlet framework's default Screenlet class (`BaseListScreenlet`) 
-calls these methods to update the View with the server call's results. Later, 
-when you extend `BaseListScreenlet` to create your Screenlet class, you'll see 
-how this works. For now, just be aware that these methods update the UI. Also 
-note that every Screenlet's View requires a View Model interface to define such 
-methods. The list Screenlet framework provides this interface for you in 
-`BaseListViewModel`. If you were creating a non-list Screenlet, you'd need to 
-create your own View Model interface. 
-
-![Figure 1: In the list Screenlet framework, `BaseListScreenlet` calls `BaseListScreenletView`'s `BaseListViewModel` implementation. The implementations of the View Model's `showFinishOperation` methods update the Screenlet's UI with the server call's results.](../../../images/screens-android-list-screenlet-view.png)
-
-Now you're ready to create your View class. You'll do this by extending 
-`BaseListScreenletView` with your model class, view holder, and adapter as type 
-arguments. This is required for your View class to represent `GuestbookModel` 
-objects in a `GuestbookViewHolder`, inside a `GuestbookAdapter`. 
+Recall that the View class controls a Screenlet's UI. Guestbook List Screenlet's 
+View class, `GuestbookListView`, is almost identical to 
+[the View class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view). 
+The only difference is that `GuestbookListView` displays guestbooks. 
 
 Create the `GuestbookListView` class inside the `view` package, and replace its 
 contents with the following: 
@@ -192,7 +134,6 @@ contents with the following:
     public class GuestbookListView extends BaseListScreenletView<GuestbookModel, 
         GuestbookAdapter.GuestbookViewHolder, GuestbookAdapter> {
 
-        // Superclass constructors
         public GuestbookListView(Context context) {
             super(context);
         }
@@ -205,7 +146,6 @@ contents with the following:
             super(context, attributes, defaultStyle);
         }
 
-        // Overridden methods
         @Override
         protected GuestbookAdapter createListAdapter(int itemLayoutId, int itemProgressLayoutId) {
             return new GuestbookAdapter(itemLayoutId, itemProgressLayoutId, this);
@@ -227,15 +167,15 @@ Now you're ready to create your View's main layout.
 
 ## Creating the View's Layout [](id=creating-the-views-layout)
 
-Although `guestbook_row.xml` defines each list row's layout, the list as a whole 
-still needs a layout. This layout should reference the View class and define the 
-list's components. Since this Screenlet lets the user scroll through a 
-multi-page list, its layout should contain 
-[an Android `ProgressBar`](https://developer.android.com/reference/android/widget/ProgressBar.html) 
-to show the user when it's loading more list items. The layout should also 
-contain 
-[an Android `RecyclerView`](https://developer.android.com/training/material/lists-cards.html) 
-to ensure the list scrolls smoothly. 
+Even though you already have a row layout (`guestbook_row.xml`), your View needs 
+a layout for the list as a whole. Recall from 
+[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view) 
+that the View layout for all list Screenlets is identical apart from the styling 
+and the referenced View class. The layout for Guestbook List Screenlet's View, 
+`list_guestbooks.xml`, must reference `GuestbookListView` and contain the same 
+`ProgressBar` and `RecyclerView` as all list Screenlet View layouts. Even the 
+`android:id` values are the same; they're hardcoded into the list Screenlet 
+framework and changing them will cause your app to crash. 
 
 Create the file `list_guestbooks.xml` in the `res/layout` directory, and replace 
 its contents with the following: 
@@ -260,8 +200,5 @@ its contents with the following:
             android:visibility="gone"/>
     </com.liferay.docs.guestbooklistscreenlet.view.GuestbookListView>
 
-Note that these `android:id` values are hardcoded into the Liferay Screens 
-framework. Changing them will cause your app to crash. 
-
 Great! You're done with Guestbook List Screenlet's View. Next, you'll create the 
-Screenlet's event. 
+Screenlet's Interactor. 

@@ -3,8 +3,7 @@
 In this Learning Path's previous section, you created Guestbook List Screenlet. 
 You still need a way to retrieve and display each guestbook's entries, though. 
 You'll do this by creating another list Screenlet: Entry List Screenlet. This 
-section in the Learning Path walks you through the steps required to create this 
-Screenlet. 
+section in the Learning Path walks you through the steps required to create it. 
 
 Because you use a consistent development model to create Screenlets, similar 
 Screenlets have similar code. As with guestbooks, it makes sense to display 
@@ -17,7 +16,7 @@ Guestbook List Screenlet:
 
 2. Creating the Screenlet's UI (its View). 
 
-3. Creating the Screenlet's server call (its Interactor). 
+3. Creating the Screenlet's Interactor. 
 
 4. Creating the Screenlet class. 
 
