@@ -22,7 +22,7 @@ you only have to do a little work in the build file of your application.
 by putting the plugin in build script classpath.
 
 2. Make sure you have a default `Language.properties` file in
-   `src/main/content`. 
+   `src/main/resources/content`. 
 
 3. Run the `gradle buildLang` task from your project's root directory to generate
    default translation files.
@@ -45,7 +45,7 @@ Here's what a configuration of the `com.liferay.lang.builder` plugin looks in a
 
         buildscript {
             dependencies {
-                classpath ;com.liferay:com.liferay.gradle.plugins.lang.builder':latest.release'
+                classpath 'com.liferay:com.liferay.gradle.plugins.lang.builder:latest.release'
             }
 
             repositories {
@@ -108,7 +108,7 @@ steps above?
 
     buildscript {
         dependencies {
-            classpath ;com.liferay:com.liferay.gradle.plugins.lang.builder':latest.release'
+            classpath 'com.liferay:com.liferay.gradle.plugins.lang.builder:latest.release'
         }
 
         repositories {
@@ -120,7 +120,7 @@ steps above?
 
     apply plugin: "com.liferay.lang.builder"
 
-     buildLang {
+    buildLang {
        translateClientId = langTranslateClientId
        translateClientSecret = langTranslateClientSecret
     }

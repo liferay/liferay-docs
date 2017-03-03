@@ -34,8 +34,9 @@ For convenience, the following steps show how to implement remote services for
 your portlet and and make them available for the SDK Builder to discover.
 
 1. Install Liferay's WSDD Builder Gradle plugin. To do this, add 
-   `com.liferay.gradle.plugins.wsdd.builder` as a dependency in your `*-service` 
-   project's `build.gradle` file, and apply the plugin 
+   `com.liferay.gradle.plugins.wsdd.builder` as a
+   [dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+   in your `*-service` project's `build.gradle` file, and apply the plugin
    `com.liferay.portal.tools.wsdd.builder` in the same file. 
 
 2. Set `remote-service="true"` in your `*-service` project's `service.xml` file 
