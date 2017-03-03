@@ -1,4 +1,4 @@
-# Creating the Interactor
+# Creating Guestbook List Screenlet's Interactor
 
 Recall from 
 [the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
