@@ -42,8 +42,6 @@ with the following:
     <resources>
         <declare-styleable name="EntryListScreenlet">
             <attr name="groupId"/>
-            <attr name="offlinePolicy"/>
-            <attr name="layoutId"/>
         </declare-styleable>
     </resources>
 
@@ -53,13 +51,12 @@ Next, you'll create the Screenlet class.
 
 Entry List Screenlet's Screenlet class must contain an instance variable for the 
 ID of the guestbook the Screenlet retrieves entries from. This is required to 
-call the Interactor method that results in the server calls. This is the only 
-significant difference between the Screenlet classes of Entry List Screenlet and 
-Guestbook List Screenlet. The remaining differences exist only because they 
-handle different entities. 
+start the Interactor. This is the only significant difference between the 
+Screenlet classes of Entry List Screenlet and Guestbook List Screenlet. The 
+remaining differences exist only because they handle different entities. 
 
 In the `entrylistscreenlet` package, create a new class called 
-`EntryListScreenlet`. Replace its content with the following:
+`EntryListScreenlet`. Replace its content with the following: 
 
     package com.liferay.docs.entrylistscreenlet;
 
@@ -68,72 +65,44 @@ In the `entrylistscreenlet` package, create a new class called
     import android.util.AttributeSet;
     import android.view.View;
 
-    import com.liferay.docs.entrylistscreenlet.interactor.EntryListInteractorImpl;
+    import com.liferay.docs.entrylistscreenlet.interactor.EntryListInteractor;
     import com.liferay.docs.liferayguestbook.R;
     import com.liferay.docs.model.EntryModel;
     import com.liferay.mobile.screens.base.list.BaseListScreenlet;
-    import com.liferay.mobile.screens.cache.OfflinePolicy;
     import com.liferay.mobile.screens.context.LiferayServerContext;
 
-    import java.util.Locale;
+    public class EntryListScreenlet extends BaseListScreenlet<EntryModel, EntryListInteractor> {
 
-
-    public class EntryListScreenlet extends BaseListScreenlet<EntryModel, EntryListInteractorImpl> {
-
-        private long _groupId;
-        private long _guestbookId;
-        private OfflinePolicy _offlinePolicy;
+        private long guestbookId;
 
         public EntryListScreenlet(Context context) {
             super(context);
         }
 
-        public EntryListScreenlet(Context context, AttributeSet attributes) {
-            super(context, attributes);
+        public EntryListScreenlet(Context context, AttributeSet attrs) {
+            super(context, attrs);
         }
 
-        public EntryListScreenlet(Context context, AttributeSet attributes, int defaultStyle) {
-            super(context, attributes, defaultStyle);
+        public EntryListScreenlet(Context context, AttributeSet attrs, int defStyleAttr) {
+            super(context, attrs, defStyleAttr);
         }
 
-        @Override
-        public void loadingFromCache(boolean success) {
-            if (getListener() != null) {
-                getListener().loadingFromCache(success);
-            }
+        public EntryListScreenlet(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+            super(context, attrs, defStyleAttr, defStyleRes);
         }
 
         @Override
-        public void retrievingOnline(boolean triedInCache, Exception e) {
+        public void error(Exception e, String userAction) {
             if (getListener() != null) {
-                getListener().retrievingOnline(triedInCache, e);
+                getListener().error(e, userAction);
             }
-        }
-
-        @Override
-        public void storingToCache(Object object) {
-            if (getListener() != null) {
-                getListener().storingToCache(object);
-            }
-        }
-
-        public long getGuestbookId() {
-            return _guestbookId;
-        }
-
-        public void setGuestbookId(long guestbookId) {
-            _guestbookId = guestbookId;
         }
 
         @Override
         protected View createScreenletView(Context context, AttributeSet attributes) {
-            TypedArray typedArray = context.getTheme().obtainStyledAttributes(
-                attributes, R.styleable.EntryListScreenlet, 0, 0);
-            Integer offlinePolicy = typedArray.getInteger(
-                R.styleable.EntryListScreenlet_offlinePolicy,
-                OfflinePolicy.REMOTE_ONLY.ordinal());
-            _offlinePolicy = OfflinePolicy.values()[offlinePolicy];
-            _groupId = typedArray.getInt(R.styleable.EntryListScreenlet_groupId,
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributes,
+                R.styleable.GuestbookListScreenlet, 0, 0);
+            groupId = typedArray.getInt(R.styleable.GuestbookListScreenlet_groupId,
                 (int) LiferayServerContext.getGroupId());
             typedArray.recycle();
 
@@ -141,24 +110,33 @@ In the `entrylistscreenlet` package, create a new class called
         }
 
         @Override
-        protected void loadRows(EntryListInteractorImpl interactor, int startRow,
-                            int endRow, Locale locale) throws Exception {
-
-            interactor.loadRows(startRow, endRow, locale, _groupId, _guestbookId);
+        protected void loadRows(EntryListInteractor interactor) {
+            interactor.start(guestbookId);
         }
 
         @Override
-        protected EntryListInteractorImpl createInteractor(String actionName) {
-            return new EntryListInteractorImpl(getScreenletId(), _offlinePolicy);
+        protected EntryListInteractor createInteractor(String actionName) {
+            return new EntryListInteractor();
+        }
+
+        public long getGuestbookId() {
+            return guestbookId;
+        }
+
+        public void setGuestbookId(long guestbookId) {
+            this.guestbookId = guestbookId;
         }
     }
 
-The instance variable for the guestbook ID is `_guestbookId`. The getter and 
+The instance variable for the guestbook ID is `guestbookId`. The getter and 
 setter methods `getGuestbookId` and `setGuestbookId` let the app developer get 
-and set this variable, respectively. The `loadRows` method calls the 
-Interactor class's `loadRows` method with `_guestbookId` as an argument. This 
-results in the call that retrieves that guestbook's entries. For a full 
-explanation of how the Screenlet class works, see 
+and set this variable, respectively. The `loadRows` method starts the Interactor 
+by calling the `start` method with `guestbookId` as an argument. Behind the 
+scenes, the list Screenlet framework passes `guestbookId` to the Interactor's 
+`getPageRowsRequest` and `getPageRowCountRequest` methods via the `args` 
+argument. This is why you were able to extract `guestbookId` from the `args` 
+argument in these methods. For an explanation of how the rest of this Screenlet 
+class works, see 
 [the article on creating Guestbook List Screenlet's Screenlet class](/develop/tutorials/-/knowledge_base/7-0/creating-the-screenlet-class). 
 
 That's it! Now you're ready to use Entry List Screenlet alongside Guestbook List 

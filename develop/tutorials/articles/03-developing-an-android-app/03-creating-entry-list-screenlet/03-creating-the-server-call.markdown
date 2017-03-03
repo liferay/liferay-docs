@@ -1,126 +1,125 @@
-# Creating Entry List Screenlet's Server Call [](id=creating-entry-list-screenlets-server-call)
+# Creating Entry List Screenlet's Interactor
 
-Recall that Interactors are components that make a Screenlet's server call. Also 
-recall that Interactors are made up of an event, a callback, one or more 
-listeners, and an Interactor class. As with Guestbook List Screenlet's 
-Interactor, you only need to create the Interactor class because the list 
-Screenlet framework provides default implementations of the other Interactor 
-components. 
+Recall that Interactors are Screenlet components that make server calls and 
+process the results. Also recall that Interactors themselves are made up of 
+several components: 
 
-This article walks you through the steps required to create Entry List 
-Screenlet's Interactor class. Because this Screenlet's Interactor class is so 
-similar to that of Guestbook List Screenlet, these steps aren't explained in 
-detail. Focus is instead placed on the few places in the code where the 
-Interactor classes diverge. For a full explanation of the code, see 
-[the article on creating Guestbook List Screenlet's server call](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-server-call). 
+1. The event class
+2. The listener
+3. The Interactor class
 
-## Creating the Interactor Class [](id=creating-the-interactor-class)
+Since the list Screenlet framework already contains two listeners, you only need 
+to create the event and Interactor classes. This article walks you through the 
+steps required do this. Because Entry List Screenlet's Interactor is so similar 
+to that of Guestbook List Screenlet, these steps aren't explained in detail. 
+Focus is instead placed on the few places in the code where the Interactors 
+diverge. For a full explanation of the code, see 
+[the article on creating Guestbook List Screenlet's Interactor](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-server-call). 
+<!-- Replace link with new header id -->
 
-First, create a new package called `interactor` in 
-`com.liferay.docs.entrylistscreenlet`. Create a new class called 
-`EntryListInteractorImpl` in the `interactor` package. Replace this class's 
-content with the following: 
+ You'll create the event class first. 
+
+## Creating the Event Class
+
+Recall that you must create an event class to communicate the server call's 
+results via [EventBus](http://greenrobot.org/eventbus/). First, create a new 
+package called `interactor` in the `com.liferay.docs.entrylistscreenlet` 
+package. Then create the `EntryEvent` class in the `interactor` package. Replace 
+this class's contents with the following code: 
 
     package com.liferay.docs.entrylistscreenlet.interactor;
 
-    import android.util.Pair;
-
     import com.liferay.docs.model.EntryModel;
-    import com.liferay.mobile.android.service.Session;
-    import com.liferay.mobile.android.v7.entry.EntryService;
-    import com.liferay.mobile.screens.base.list.interactor.BaseListCallback;
-    import com.liferay.mobile.screens.base.list.interactor.BaseListEvent;
-    import com.liferay.mobile.screens.base.list.interactor.BaseListInteractor;
-    import com.liferay.mobile.screens.base.list.interactor.BaseListInteractorListener;
-    import com.liferay.mobile.screens.cache.CachedType;
-    import com.liferay.mobile.screens.cache.OfflinePolicy;
-    import com.liferay.mobile.screens.cache.tablecache.TableCache;
-    import com.liferay.mobile.screens.util.JSONUtil;
+    import com.liferay.mobile.screens.base.list.interactor.ListEvent;
 
-    import org.json.JSONException;
-    import org.json.JSONObject;
+    public class EntryEvent extends ListEvent<EntryModel> {
 
-    import java.util.Locale;
-    import java.util.Map;
+        private EntryModel entry;
 
+        public EntryEvent() {
+            super();
+        }
 
-    public class EntryListInteractorImpl extends 
-        BaseListInteractor<EntryModel, BaseListInteractorListener<EntryModel>> {
-
-        private long _groupId;
-        private long _guestbookId;
-
-        @Override
-        protected BaseListCallback<EntryModel> getCallback(Pair<Integer, Integer> rowsRange, Locale locale) {
-            return new BaseListCallback<EntryModel>(getTargetScreenletId(), rowsRange, locale) {
-                @Override
-                public EntryModel createEntity(Map<String, Object> stringObjectMap) {
-                    return new EntryModel(stringObjectMap);
-                }
-            };
+        public EntryEvent(EntryModel entry) {
+            this.entry = entry;
         }
 
         @Override
-        protected void getPageRowsRequest(Session session, int startRow, int endRow, Locale locale) throws Exception {
-            new EntryService(session).getEntries(_groupId, _guestbookId, startRow, endRow);
+        public String getListKey() {
+            return entry.getMessage();
         }
 
         @Override
-        protected void getPageRowCountRequest(Session session) throws Exception {
-            new EntryService(session).getEntriesCount(_groupId, _guestbookId);
-        }
-
-        private enum ENTRY_LIST implements CachedType {ENTRY, ENTRY_COUNT}
-
-        public EntryListInteractorImpl(int targetScreenletId, OfflinePolicy offlinePolicy) {
-            super(targetScreenletId, offlinePolicy);
-        }
-
-        public void loadRows(int startRow, int endRow, Locale locale, long groupId, long guestbookId)
-            throws Exception {
-
-            _groupId = groupId;
-            _guestbookId = guestbookId;
-
-            processWithCache(startRow, endRow, locale);
-        }
-
-        @Override
-        protected String getContent(EntryModel object) {
-            return new JSONObject(object.getValues()).toString();
-        }
-
-        @Override
-        protected EntryModel getElement(TableCache tableCache) throws JSONException {
-            return new EntryModel(JSONUtil.toMap(new JSONObject(tableCache.getContent())));
-        }
-
-        @Override
-        protected void storeToCache(BaseListEvent event, Object... args) {
-            storeRows(String.valueOf(_groupId), ENTRY_LIST.ENTRY,
-                ENTRY_LIST.ENTRY_COUNT, _groupId, null, event);
-        }
-
-        @Override
-        protected boolean cached(Object... args) throws Exception {
-            final int startRow = (int) args[0];
-            final int endRow = (int) args[1];
-            final Locale locale = (Locale) args[2];
-
-            return recoverRows(String.valueOf(_groupId), ENTRY_LIST.ENTRY,
-                ENTRY_LIST.ENTRY_COUNT, _groupId, null, locale, startRow, endRow);
+        public EntryModel getModel() {
+            return entry;
         }
     }
 
-Besides using entries instead of guestbooks, this class is almost identical to 
-`GuestbookListInteractorImpl`. The only other differences are due to the service 
+This code is almost identical to `GuestbookEvent`. The only difference is that 
+it works with entries instead of guestbooks. 
+
+Next, you'll create the Interactor class. 
+
+## Creating the Interactor Class [](id=creating-the-interactor-class)
+
+Recall that an Interactor class issues the server call and leverages the event 
+to process the results. In the `interactor` package, create a new class called 
+`EntryListInteractor`. Replace this class's content with the following: 
+
+    package com.liferay.docs.entrylistscreenlet.interactor;
+
+    import com.liferay.docs.model.EntryModel;
+    import com.liferay.mobile.android.v7.entry.EntryService;
+    import com.liferay.mobile.screens.base.list.interactor.BaseListInteractor;
+    import com.liferay.mobile.screens.base.list.interactor.BaseListInteractorListener;
+    import com.liferay.mobile.screens.base.list.interactor.Query;
+
+    import org.json.JSONArray;
+    import java.util.Map;
+
+    public class EntryListInteractor extends
+        BaseListInteractor<BaseListInteractorListener<EntryModel>, EntryEvent> {
+
+        @Override
+        protected JSONArray getPageRowsRequest(Query query, Object... args) throws Exception {
+
+            long guestbookId = (long) args[0];
+            return new EntryService(getSession()).getEntries(groupId, guestbookId, 
+                query.getStartRow(), query.getEndRow());
+        }
+
+        @Override
+        protected Integer getPageRowCountRequest(Object... args) throws Exception {
+
+            long guestbookId = (long) args[0];
+            return new EntryService(getSession()).getEntriesCount(groupId, guestbookId);
+        }
+
+        @Override
+        protected EntryEvent createEntity(Map<String, Object> stringObjectMap) {
+            EntryModel entry = new EntryModel(stringObjectMap);
+            return new EntryEvent(entry);
+        }
+
+        @Override
+        protected String getIdFromArgs(Object... args) {
+            return String.valueOf(args[0]);
+        }
+    }
+
+Besides getting entries instead of guestbooks, this class is almost identical to 
+`GuestbookListInteractor`. The only other differences are due to the service 
 calls that retrieve the entries and number of entries from a guestbook in the 
-Guestbook portlet. These calls require a guestbook ID (`_guestbookId`) in 
-addition to the group ID (`_groupId`) that guestbook service calls require. The 
-entry service calls, made in `getPageRowsRequest` and `getPageRowCountRequest`, 
-require an `EntryService` instance. The `getEntries` method retrieves a 
-guestbook's entries, and the `getEntriesCount` method retrieves the number of 
-entries in a guestbook. 
+Guestbook portlet. The entry service calls, made in `getPageRowsRequest` and 
+`getPageRowCountRequest`, require an `EntryService` instance. The `getEntries` 
+method retrieves a guestbook's entries, and the `getEntriesCount` method 
+retrieves the number of entries in a guestbook. Note that these calls require a 
+guestbook ID (`guestbookId`) in addition to the group ID (`groupId`) that 
+guestbook service calls require. The `getPageRowsRequest` and 
+`getPageRowCountRequest` methods get the `guestbookId` from the `args` argument, 
+and then use it along with `groupId` make their service calls. You'll see how 
+the `guestbookId` gets into the `args` argument when you create the Screenlet 
+class. 
 
 Nicely done! Now that Entry List Screenlet has an Interactor, you must create 
 the Screenlet class. The next article shows you how to do this. 

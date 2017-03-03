@@ -82,7 +82,7 @@ Screenlet's adapter class is almost identical to that of Guestbook List
 Screenlet. The only difference, besides working with `EntryModel` instead of 
 `GuestbookModel`, is that it needs two variables: one for the entry, and one for 
 the name of the person who left it. Guestbook List Screenlet's adapter class 
-only needs a variable for the guestbook's name. 
+needed only one variable for the guestbook's name. 
 
 Inside the Entry List Screenlet's `view` package, create the following 
 `EntryAdapter` class: 
@@ -225,11 +225,11 @@ its contents with the following:
             android:visibility="gone"/>
     </com.liferay.docs.entrylistscreenlet.view.EntryListView>
 
-For a full explanation of this layout, see the section on creating the layout in 
-[the article on Creating Guestbook List Screenlet's UI](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui). 
-You should also be sure not to change the layout's `android:id` values. They're 
-hardcoded into the Liferay Screens framework. Changing them will cause your app 
-to crash. 
+For a full explanation of this layout, see 
+[the section on creating the layout](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui#creating-the-views-layout) 
+in the article on Creating Guestbook List Screenlet's UI. You should also be 
+sure not to change the layout's `android:id` values. They're hardcoded into the 
+list Screenlet framework and changing them will cause your app to crash. 
 
 Nice job! You're done creating Entry List Screenlet's View. Next, you'll create 
-the Screenlet's server call. 
+the Screenlet's Interactor. 
