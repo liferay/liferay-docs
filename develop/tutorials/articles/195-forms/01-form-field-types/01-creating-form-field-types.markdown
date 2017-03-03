@@ -73,7 +73,6 @@ add this to your `build.gradle` file:
         }
     }
 
-
     classes {
         dependsOn buildSoy
     }
