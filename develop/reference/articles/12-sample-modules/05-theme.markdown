@@ -20,7 +20,7 @@ files, see the
 
 ## Where Is This Sample? [](id=where-is-this-sample)
 
-There are five different versions of this sample, each built with a different
+There are three different versions of this sample, each built with a different
 build tool:
 
 - [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.theme)
