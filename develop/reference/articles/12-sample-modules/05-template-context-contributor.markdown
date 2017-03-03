@@ -1,4 +1,4 @@
-# Template Context Contributor
+# Template Context Contributor [](id=template-context-contributor)
 
 The Template Context Contributor sample injects a new variable into @product@'s
 theme context. When deploying this sample with no customizations, you can use
@@ -31,7 +31,7 @@ For more information on customizing the Template Context Contributor sample to
 fit your needs, see the Javadoc listed in this sample's
 `BladeTemplateContextContributor` class.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are three different versions of this sample, each built with a different
 build tool:

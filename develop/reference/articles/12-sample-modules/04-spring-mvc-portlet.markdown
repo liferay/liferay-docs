@@ -1,4 +1,4 @@
-# Spring MVC Portlet
+# Spring MVC Portlet [](id=spring-mvc-portlet)
 
 The Spring MVC portlet provides a way to add various different fields into the
 database and display them in a table. This project is a Spring MVC based portlet
@@ -21,7 +21,7 @@ You can easily modify this sample by customizing its
 sample, see the Javadoc listed in the `SpringMVCPortletViewController` Java
 class.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are three different versions of this sample, each built with a different
 build tool:
