@@ -398,7 +398,7 @@ with `_ja`.
         }
     }
 
-The above will add a new `template_ja` dynamic template. This overrides the
+The above code adds a new `template_ja` dynamic template. This overrides the
 existing dynamic template with the same name. As with dynamic templates, you can
 add sub-field mappings to @product@'s type mapping. These are referred to as
 [properties](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/properties.html)
@@ -446,12 +446,12 @@ set this value, the default mappings used to define the Liferay Document Type in
 @product@ source code (for example, `liferay-type-mappings.json`) are ignored
 entirely, so include the whole mappings definition in this property, not just
 the segment you're modifying. To make a modification, find the entire list of
-the current mappings being used to create the index, by navigating to the URL
+the current mappings being used to create the index by navigating to the URL
 
     http://[HOST]:[ES_PORT]/liferay-[COMPANY_ID]/_mapping/LiferayDocumentType?pretty
 
 Copy the contents in as the value of this property (either into System Settings
-or your OSGi configuration file). Leave the opining curly brace `{`, but delete
+or your OSGi configuration file). Leave the opening curly brace `{`, but delete
 lines 2-4 entirely:
 
     "liferay-[COMPANY_ID]": {
