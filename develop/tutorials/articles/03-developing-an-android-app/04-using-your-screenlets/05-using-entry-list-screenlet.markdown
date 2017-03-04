@@ -34,7 +34,7 @@ methods let the app developer respond to the Screenlet's behavior in the
 activity or fragment class that contains the Screenlet. Also recall that because 
 Guestbook List Screenlet didn't need extra listener methods, you used it in 
 `GuestbooksActivity` by implementing the 
-[`BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java) 
+[`BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java) 
 with `GuestbookModel` as a type argument. Entry List Screenlet also doesn't need 
 extra listener methods. Like Guestbook List Screenlet, you can use it by 
 implementing `BaseListListener` with its model class as a type argument. 
@@ -44,10 +44,15 @@ Change `EntriesFragment`'s class declaration to implement
 
     public class EntriesFragment extends Fragment implements BaseListListener<EntryModel> {...
 
+This requires that you add the following imports:
+
+    import com.liferay.docs.model.EntryModel;
+    import com.liferay.mobile.screens.base.list.BaseListListener;
+
 Now you must implement the listener's methods. Recall that this includes the 
-[`CacheListener` interface's methods](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java), 
-since `BaseListListener` extends `CacheListener`. For a full explanation of the 
-methods in both listeners, see 
+[`BaseCacheListener` interface's](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java), 
+`error` method, since `BaseListListener` extends `BaseCacheListener`. For a full 
+explanation of the methods in both listeners, see 
 [the article on using Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-guestbook-list-screenlet). 
 Note that in `EntriesFragment`, you don't need to take any specific actions in 
 these methods. There are no UI elements or other parts of the fragment that must 
@@ -58,13 +63,12 @@ want to add is a toast message in `onListPageFailed` to notify the user if the
 server call fails, but this isn't required. Implement these methods now: 
 
     @Override
-    public void onListPageFailed(BaseListScreenlet source, int startRow, int endRow, Exception e) {
+    public void onListPageFailed(int startRow, Exception e) {
         Toast.makeText(getActivity(), "Page request failed", Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void onListPageReceived(BaseListScreenlet source, int startRow, int endRow, 
-        List<EntryModel> entries, int rowCount) {
+    public void onListPageReceived(int startRow, int endRow, List<EntryModel> entries, int rowCount) {
 
     }
 
@@ -74,19 +78,14 @@ server call fails, but this isn't required. Implement these methods now:
     }
 
     @Override
-    public void loadingFromCache(boolean success) {
-        
-    }
-
-    @Override
-    public void storingToCache(Object object) {
+    public void error(Exception e, String userAction) {
 
     }
 
-    @Override
-    public void retrievingOnline(boolean triedInCache, Exception e) {
+This requires you to add the following imports:
 
-    }
+    import android.widget.Toast;
+    import java.util.List;
 
 Now you're ready to register `EntriesFragment` as the Screenlet's listener. 
 You'll do this the same way you registered `GuestbooksActivity` as Guestbook 
@@ -111,6 +110,9 @@ with the following updated version:
         return view;
     }
 
+This requires you to import 
+`com.liferay.docs.entrylistscreenlet.EntryListScreenlet`. 
+
 As you can see, `onCreateView` now registers `EntriesFragment` as the 
 Screenlet's listener and sets the Screenlet's guestbook ID. The rest of 
 `onCreateView` is unchanged. 
@@ -134,8 +136,8 @@ The two `TextView` elements in `nav_header_guestbooks.xml` use the
 `android:text` attribute to hardcode this text. To remove the text completely, 
 you could delete these `TextView` elements. It's better though to show text 
 relevant to your app. In the `TextView` elements, replace `"Android Studio"` 
-with `"Liferay Guestbook"`, and `"android.studio@android.com"` with `
-"Welcome!"`. Run the app again, and open the drawer after signing in. The drawer 
+with `"Liferay Guestbook"`, and `"android.studio@android.com"` with 
+`"Welcome!"`. Run the app again, and open the drawer after signing in. The drawer 
 header now shows your greeting. 
 
 ![Figure 3: The drawer displays your greeting after you change the text in `nav_header_guestbooks.xml`.](../../../images/android-guestbook-screenlet-drawer-02.png)

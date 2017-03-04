@@ -57,17 +57,17 @@ This creates the `EntriesFragment` class and its layout file
     }
 
 If you have experience with Android fragments, then you're likely familiar with 
-`EntriesFragment`'s empty constructor and `newInstance` method. When the screen 
-orientation changes or the user switches apps, Android must restore the 
-fragment. Instead of recreating the fragment from scratch, the `newInstance` 
-method lets Android restore it with the data it contained. Since this fragment 
-will contain Entry List Screenlet, its data must include the ID of the guestbook 
-the Screenlet retrieves entries from (`guestbookId`). Next, look at the 
-`onCreateView` method. This method uses the bundle arguments set in 
-`newInstance` to retrieve the `guestbookId`. For now, you don't have to do 
-anything with the `guestbookId` in `onCreateView`. You'll use this variable when 
-you add the Screenlet to the fragment. For more information on managing 
-fragments with a `newInstance` method, see 
+the empty constructor and `newInstance` method. When the screen orientation 
+changes or the user switches apps, Android must restore the fragment. Instead of 
+recreating the fragment from scratch, the `newInstance` method lets Android 
+restore it with the data it contained. Since this fragment will contain Entry 
+List Screenlet, its data must include the ID of the guestbook the Screenlet 
+retrieves entries from (`guestbookId`). Next, look at the `onCreateView` method. 
+This method uses the bundle arguments set in `newInstance` to retrieve the 
+`guestbookId`. For now, you don't have to do anything with the `guestbookId` in 
+`onCreateView`. You'll use this variable when you add the Screenlet to the 
+fragment. For more information on managing fragments with a `newInstance` 
+method, see 
 [this blog post](http://www.androiddesignpatterns.com/2012/05/using-newinstance-to-instantiate.html). 
 
 Next, you'll add this fragment to `GuestbooksActivity`. 
@@ -104,7 +104,7 @@ also shows that guestbook's entries. Replace the `showEntries` method in
 `GuestbooksActivity` with the following:
 
     public void showEntries(GuestbookModel guestbook) {
-        _actionBar.setTitle(guestbook.getName());
+        actionBar.setTitle(guestbook.getName());
 
         EntriesFragment entriesFragment = EntriesFragment.newInstance(guestbook.getGuestbookId());
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -112,8 +112,10 @@ also shows that guestbook's entries. Replace the `showEntries` method in
         transaction.commit();
     }
 
-This method's `_actionBar.setTitle` call is the same as before. Only the 
-fragment code is new. In it, you first use `newInstance` to create a new 
+This requires that you import `android.support.v4.app.FragmentTransaction`. 
+
+This method's `actionBar.setTitle` call is the same as before. Only the fragment 
+code is new. In it, you first use `newInstance` to create a new 
 `EntriesFragment` instance with the selected guestbook's ID. A fragment 
 transaction then adds this fragment to the fragment container. 
 

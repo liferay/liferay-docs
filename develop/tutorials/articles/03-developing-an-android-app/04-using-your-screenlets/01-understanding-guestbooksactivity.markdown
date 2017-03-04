@@ -89,9 +89,9 @@ Open `app_bar_guestbooks.xml`. It should look similar to this:
         android:fitsSystemWindows="true"
         tools:context="com.liferay.docs.liferayguestbook.GuestbooksActivity">
 
-        <android.support.design.widget.AppBarLayout 
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" 
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.v7.widget.Toolbar 
@@ -124,19 +124,19 @@ adds the `content_guestbooks` layout to the `app_bar_guestbooks` layout. The
 look like this: 
 
     <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout 
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto" 
+        android:id="@+id/content_guestbooks"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" 
-        tools:showIn="@layout/app_bar_guestbooks"
-        tools:context="com.liferay.docs.liferayguestbook.GuestbooksActivity">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.liferay.docs.liferayguestbook.GuestbooksActivity"
+        tools:showIn="@layout/app_bar_guestbooks">
 
     </RelativeLayout>
 
