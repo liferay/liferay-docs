@@ -338,26 +338,136 @@ YAML format) that are applied to the @product@ index when it's created. For
 example, you can create custom analyzers and filters using this setting. For
 a complete list of available settings, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html).
 
+Here's an example that shows how to configure [analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro) that can be applied to a
+dynamic template (see below).
+
+    {  
+        "analysis": {
+            "analyzer": {
+                "kuromoji_liferay_custom": {
+                    "filter": [
+                        "cjk_width",
+                        "kuromoji_baseform",
+                        "pos_filter"
+                    ],
+                    "tokenizer": "kuromoji_tokenizer"
+                }
+            },
+            "filter": {
+                "pos_filter": {
+                    "type": "kuromoji_part_of_speech"
+                }
+            }
+        }
+    }
+
 `additionalTypeMappings` is used to define extra field mappings for the
 `LiferayDocumentType` type definition, which are applied when the index is
-created. Add these field mappings in using JSON syntax. For more information
-see
+created. Add these field mappings in using JSON syntax. For more information see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/mapping.html)
 and
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/indices-put-mapping.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/indices-put-mapping.html).
+Use `additionalTypeMappings` for new field mappings, but do not try to override
+existing `properties` mappings. If any of the `properties` mappings set here
+overlap with existing mappings, index creation will fail. Use
+`overrideTypeMappings` to replace the default `properties` mappings.
+
+Here's an example of a [dynamic
+template](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/dynamic-templates.html)
+that uses the analysis configuration above to analyze all string fields that end
+with `_ja`.
+
+    { 
+        "LiferayDocumentType": {
+            "dynamic_templates": [
+                {
+                    "template_ja": {
+                        "mapping": {
+                            "analyzer": "kuromoji_liferay_custom",
+                            "index": "analyzed",
+                            "store": "true",
+                            "term_vector": "with_positions_offsets",
+                            "type": "string"
+                        },
+                        "match": "\\w+_ja\\b|\\w+_ja_[A-Z]{2}\\b",
+                        "match_mapping_type": "string",
+                        "match_pattern": "regex"
+                    }
+                }
+            ]
+        }
+    }
+
+The above code adds a new `template_ja` dynamic template. This overrides the
+existing dynamic template with the same name. As with dynamic templates, you can
+add sub-field mappings to @product@'s type mapping. These are referred to as
+[properties](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/properties.html)
+in Elasticsearch.
+
+    { 
+        "LiferayDocumentType": {  
+            "properties": {   
+                "fooName": {
+                    "index": "not_analyzed",
+                    "store": "yes",
+                    "type": "string"
+                }
+            }   
+        }
+    }
+
+The above example shows how a `fooName` field might be added to @product@'s type
+mapping. Because `fooName` is not an existing property in the mapping, it will
+work just fine. If you try to override an existing property mapping, index
+creation will fail. Instead use the `overrideTypeMappings` setting to override
+`properties` in the mapping.
 
 +$$$
 
-**Note:** To look at the `LiferayDocumentType` definition, navigate to this
-file in @product@'s source:
+**Note:** To see that your additional mappings have been added to the
+`LiferayDocumentType`, navigate to this URL after saving your additions and
+reindexing:
 
-    modules/apps/foundation/portal-search/portal-search-elasticsearch/src/main/resources/META-INF/mappings/liferay-type-mappings.json
+    http://[HOST]:[ES_PORT]/liferay-[COMPANY_ID]/_mapping/LiferayDocumentType?pretty
 
-If you don't already have the @product@ source code, navigate to [Liferay's Downloads page](https://www.liferay.com/downloads), 
-scroll to *Additional Files*, and find and click the download link next to
-*Liferay Source for [Your Version]*.
+Here's what it would look like for an Elasticsearch instance running on
+`localhost:9200`, with a @product@ Company ID of `20116`:
+
+    http://localhost:9200/liferay-20116/_mapping/LiferayDocumentType?pretty
+
+In the above URL, `liferay-20116`is the index name. Including it indicates that
+you want to see the mappings that were used to create the index with that name.
 
 $$$
+
+Use `overrideTypeMappings` to override @product@'s default type mappings. This
+is an advanced feature that should be used only if strictly necessary. If you
+set this value, the default mappings used to define the Liferay Document Type in
+@product@ source code (for example, `liferay-type-mappings.json`) are ignored
+entirely, so include the whole mappings definition in this property, not just
+the segment you're modifying. To make a modification, find the entire list of
+the current mappings being used to create the index by navigating to the URL
+
+    http://[HOST]:[ES_PORT]/liferay-[COMPANY_ID]/_mapping/LiferayDocumentType?pretty
+
+Copy the contents in as the value of this property (either into System Settings
+or your OSGi configuration file). Leave the opening curly brace `{`, but delete
+lines 2-4 entirely:
+
+    "liferay-[COMPANY_ID]": {
+        "mappings" : {
+            "LiferayDocumentType" : {
+
+Then, from the end of the mappings, delete the concluding three curly braces.
+
+            }
+        }
+    }
+
+Now modify whatever mappings you'd like. The changes take effect once you save
+the changes and trigger a reindex from Server Administration. If you need to add
+new custom mappings without overriding any defaults, use
+`additionalTypeMappings` instead.
 
 +$$$
 

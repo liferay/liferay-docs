@@ -92,6 +92,6 @@ configuration:
 
 ```gradle
 dependencies {
-    deploymentHelper group: "com.liferay", name: "com.liferay.deployment.helper", version: "1.0.3"
+    deploymentHelper group: "com.liferay", name: "com.liferay.deployment.helper", version: "1.0.4"
 }
 ```
