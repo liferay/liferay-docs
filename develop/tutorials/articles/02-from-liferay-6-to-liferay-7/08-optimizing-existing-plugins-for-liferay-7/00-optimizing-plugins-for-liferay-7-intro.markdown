@@ -1,4 +1,4 @@
-# Optimizing Plugins for @product-ver@ [](id=optimizing-plugins-for-liferay-7) 
+# Optimizing Plugins for @product-ver@ [](id=optimizing-plugins-for-liferay-7)
 
 Once you've upgraded your plugin to @product-ver@, you can optimize it to take
 advantage of all @product-ver@ offers. Here are some optimizations to consider:

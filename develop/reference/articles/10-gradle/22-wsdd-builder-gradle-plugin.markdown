@@ -111,6 +111,6 @@ manually adding a dependency to the `wsddBuilder` configuration:
 
 ```gradle
 dependencies {
-    wsddBuilder group: "com.liferay", name: "com.liferay.portal.tools.wsdd.builder", version: "1.0.6"
+    wsddBuilder group: "com.liferay", name: "com.liferay.portal.tools.wsdd.builder", version: "1.0.7"
 }
 ```

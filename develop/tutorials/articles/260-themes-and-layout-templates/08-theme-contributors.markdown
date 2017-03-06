@@ -62,15 +62,21 @@ To create a Theme Contributor module, follow these steps:
     compatibility with future developments. The `Web-ContextPath` header sets
     the context from which the Theme Contributor's resources are hosted.
 
-3.  Create a `src/main/resources/META-INF/resources` folder in your module
+3.  Because you'll often be overriding CSS of another Theme Contributor, you
+    should load your CSS after theirs. You can do this by setting a weight for
+    your Theme Contributor. In your `bnd.bnd` file, add the following header:
+
+        Liferay-Theme-Contributor-Weight: [value]
+
+    The higher the value, the higher the priority. If your Theme Contributor has
+    a weight of 100, it will be loaded after one with a weight of 99, allowing
+    your CSS to override theirs.
+
+4.  Create a `src/main/resources/META-INF/resources` folder in your module
     and place your resources (CSS and JS) in that folder.
 
-4.  Build and deploy your module to see your modifications applied to @product@
+5.  Build and deploy your module to see your modifications applied to @product@
     pages and themes.
-
-Theme Contributors do not guarantee the resource's insertion order. For example,
-if you're creating a Theme Contributor to override another module's CSS styles,
-your CSS styles must be more specific in order to take priority.
 
 That's all you need to do to create a Theme Contributor for your site. Remember,
 with great power comes great responsibility, so use Theme Contributors wisely.

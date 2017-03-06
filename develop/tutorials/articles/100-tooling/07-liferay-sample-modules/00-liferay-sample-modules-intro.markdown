@@ -18,11 +18,9 @@ own project, [fork](https://help.github.com/articles/fork-a-repo/) and
 [clone](https://help.github.com/articles/cloning-a-repository/) the
 `liferay-blade-samples` repository.
 
-At first glance, you'll notice that the repository is broken up into five
+At first glance, you'll notice that the repository is broken up into three
 primary folders:
 
-- `bndtools`
-- `gradle`
 - `liferay-gradle`
 - `liferay-workspace`
 - `maven`
@@ -30,35 +28,18 @@ primary folders:
 The provided sample modules are organized by their development toolchains to
 cater to a variety of developers. Each folder offers the same set of sample
 Liferay modules. Their only difference is that the build files are specific to
-their toolchain. For example, the `gradle` folder contains projects using
-standard OSS Gradle plugins that can be added to any Gradle composite build. The
-same concept also applies to the `bndtools` and `maven` projects.
+their toolchain. For example, the `liferay-gradle` folder contains projects
+using standard OSS Gradle plugins that can be added to any Gradle composite
+build. The same concept also applies to the `maven` and `liferay-workspace`
+projects.
 
-The `liferay-gradle` folder also contains projects built with Gradle; however,
-it uses the Liferay Gradle plugin (e.g., `com.liferay.plugin`) which encompasses
-additional functionality for various types of Liferay modules. The Liferay
-Gradle plugin is recommended for Gradle users developing for Liferay. 
-
-Some developers are unable to adopt the `liferay-gradle` plugin, because it
-takes over the standard Gradle JAR plugin, and there may be cases where it is
-incompatible with an existing Gradle build configuration. The `gradle` folder is
-therefore available for those who are unable to adopt the `liferay-gradle`
-plugin. 
+The `liferay-gradle` folder also uses the Liferay Gradle plugin (e.g.,
+`com.liferay.plugin`) which encompasses additional functionality for various
+types of Liferay modules. The Liferay Gradle plugin is recommended for Gradle
+users developing for Liferay. 
 
 The sample projects for each toolchain demonstrate how to use various frameworks
 like Declarative Services (DS) and the OSGi API.
-
-+$$$
-
-**Note:** There are two additional projects in the `/bndtools` folder that
-you'll need to build and publish modules:
-
-- `/bndtools/cnf` - the Bndtools configuration project.
-- `/bndtools/blade.run` - A Bndtools project which can push modules into an OSGi
-container and run them. The `biz.aQute.remote.agent-X.X.X.jar` must be deployed
-before this project can work properly.
-
-$$$
 
 For a list of sample template projects available, visit the
 [Liferay extension points](https://github.com/liferay/liferay-blade-samples#liferay-extension-points-and-template-projects)

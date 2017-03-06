@@ -1,4 +1,4 @@
-# Liferay Repository Types [](id=liferay-repository-types)
+# Liferay Store Types [](id=liferay-repository-types)
 
 There are several options available for configuring how Liferay's Documents and
 Media library stores files. Each option is a *store* which can be configured

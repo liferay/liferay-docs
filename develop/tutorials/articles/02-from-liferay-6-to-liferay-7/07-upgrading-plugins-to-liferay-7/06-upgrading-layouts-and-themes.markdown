@@ -141,7 +141,7 @@ Your layout template is ready to use in @product-ver@!
 
 **Related Topics**
 
-[Planning a Plugin Upgrade to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)
+<!--[Planning a Plugin Upgrade to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)-->
 
 [Benefits of @product-ver@ for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers)
 
