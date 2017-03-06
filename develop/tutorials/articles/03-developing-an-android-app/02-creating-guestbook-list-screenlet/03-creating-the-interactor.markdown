@@ -164,39 +164,5 @@ service call's results. Follow these steps to create `GuestbookListInteractor`:
             return String.valueOf(args[0]);
         }
 
-<!-- 
-What does this method do and why is it required? I deduced that it's a cache key 
-by looking at it's use in BaseCacheReadInteractor. 
-
-Also, fix the list Screenlet tutorial with the answer, since it's required and 
-the tutorial says it isn't.
--->
-<!-- old material...
-
-3. The listener(s). Listener interfaces define the methods the Screenlet needs 
-   to communicate the event object's results within the Screenlet, and to the 
-   app using the Screenlet. Any object that implements a listener interface 
-   receives the server call's results and thus serves as the listener. Non-list 
-   Screenlets usually only need a single listener. Due to the added complexity 
-   of the list Screenlet framework, however, it's a best practice that list 
-   Screenlets have two listeners: one that communicates results within the 
-   Screenlet, and one that communicates results to the app using the Screenlet. 
-   This decouples the Screenlet's implementation from the part of the Screenlet 
-   exposed to the app developer. To help you with this, the list Screenlet 
-   framework provides these listeners: 
-
-    - [`BaseListInteractorListener`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractorListener.java): 
-      Communicates results within the Screenlet. This listener is part of the 
-      Screenlet implementation and isn't exposed to the app developer. 
-
-    - [`BaseListListener`](https://github.com/liferay/liferay-screens/blob/1.4.1/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java):
-      Communicates results to the app activity or fragment that contains the 
-      Screenlet. This lets the app developer respond to the Screenlet's actions. 
-
-    You'll use these listeners as-is in Guestbook List Screenlet; there's no 
-    need to extend them. This article describes some of 
-    `BaseListInteractorListener`. You'll learn the rest, and learn how 
-    `BaseListListener` works, when you create the Screenlet class later. 
--->
 Nice work! You now have the Interactor required to get guestbooks from the 
 Guestbook portlet. Next, you'll create the Screenlet class. 

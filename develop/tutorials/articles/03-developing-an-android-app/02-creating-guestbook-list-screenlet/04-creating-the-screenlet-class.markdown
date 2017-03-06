@@ -139,11 +139,11 @@ tutorial's steps are noted.
    rows from the server by starting the Interactor. The `loadRows` method in 
    `GuestbookListScreenlet` therefore starts a `GuestbookListInteractor` 
    instance. Because you don't need to pass any data to this Interactor, you can 
-   call its `start` method with no arguments: 
+   call its `start` method with `0` as an argument: 
 
         @Override
         protected void loadRows(GuestbookListInteractor interactor) {
-            interactor.start();
+            interactor.start(0);
         }
 
 6. Override the `createInteractor` method. Recall that this method instantiates 
