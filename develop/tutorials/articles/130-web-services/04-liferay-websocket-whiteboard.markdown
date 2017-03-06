@@ -71,12 +71,19 @@ your module that defines your WebSocket endpoint, do the following:
             javax.websocket;version="1.1.0",\
             javax.websocket.server;version="1.1.0"
 
-2. In your module's build file, add a dependency to the Liferay WebSocket 
+2. Deploy the Liferay WebSocket Whiteboard module to your @product@ instance. 
+   You can download this module from several places. Click these links to 
+   download the module: 
+
+    - [JCenter](https://bintray.com/bintray/jcenter/com.liferay%3Acom.liferay.websocket.whiteboard)
+    - [Maven Central](https://search.maven.org/#search%7Cga%7C1%7Cliferay.websocket.whiteboard)
+
+3. In your module's build file, add a dependency to the Liferay WebSocket 
    Whiteboard: 
 
-        com.liferay:com.liferay.websocket.whiteboard:1.0.0
+        com.liferay:com.liferay.websocket.whiteboard:1.0.1
 
-3. Define a WebSocket server endpoint as you normally would. Note, however, that 
+4. Define a WebSocket server endpoint as you normally would. Note, however, that 
    @product@ doesn’t currently support the annotation-driven approach; only the 
    interface-driven approach is supported. To create a WebSocket server 
    endpoint, register an OSGi Service for `javax.websocket.Endpoint.class` with 
@@ -94,6 +101,9 @@ For example, the following steps show you how to define a WebSocket endpoint in
 a portlet. For the purposes of this example, the portlet also contains a client 
 that communicates with the endpoint. This example portlet, Echo Portlet, uses 
 WebSocket functionality to echo a simple message the client sends to the server. 
+
+![Figure 1: The example Echo portlet sends and receives a simple message via a WebSocket endpoint.](../../images/websocket-echo-portlet.png)
+
 Although the following steps show only code snippets, you can 
 [click here](https://github.com/cgoncas/liferay-websocket-echo) 
 to see the complete example code. 
