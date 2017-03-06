@@ -156,13 +156,17 @@ service call's results. Follow these steps to create `GuestbookListInteractor`:
     This requires that you import `java.util.Map;`. 
 
 5. Override the `getIdFromArgs` method to return the value of the first object 
-   argument as a string. This serves as a cache key to support 
-   [offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android): 
+   argument as a string: 
 
         @Override
         protected String getIdFromArgs(Object... args) {
             return String.valueOf(args[0]);
         }
+
+    This serves as a cache key for 
+    [offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android). 
+    Even though you won't add offline mode support to Guestbook List Screenlet, 
+    this method makes it easier if you decide to do so later. 
 
 Nice work! You now have the Interactor required to get guestbooks from the 
 Guestbook portlet. Next, you'll create the Screenlet class. 
