@@ -71,9 +71,10 @@ your module that defines your WebSocket endpoint, do the following:
             javax.websocket;version="1.1.0",\
             javax.websocket.server;version="1.1.0"
 
-2. Deploy the Liferay WebSocket Whiteboard module to your @product@ instance. 
-   You can download this module from several places. Click these links to 
-   download the module: 
+2. Deploy the Liferay WebSocket Whiteboard module 
+   (`com.liferay.websocket.whiteboard`) to your @product@ instance. You can 
+   download this module from several places. Click these links to download the 
+   module: 
 
     - [JCenter](https://bintray.com/bintray/jcenter/com.liferay%3Acom.liferay.websocket.whiteboard)
     - [Maven Central](https://search.maven.org/#search%7Cga%7C1%7Cliferay.websocket.whiteboard)
