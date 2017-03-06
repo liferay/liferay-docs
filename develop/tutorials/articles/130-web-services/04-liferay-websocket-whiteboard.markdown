@@ -47,7 +47,7 @@ OSGi container.
 Defining a new WebSocket server endpoint in @product@ is straightforward. In 
 your module that defines your WebSocket endpoint, do the following: 
 
-1. If you’re running Liferay Portal 7.0.2 GA3 or earlier, or Liferay Digital 
+1. If you're running Liferay Portal 7.0.2 GA3 or earlier, or Liferay Digital 
    Enterprise 7.0 Fix Pack 7 or earlier, add the following property to your 
    `portal-ext.properties` file. Otherwise, you can skip this and move on to the 
    next step. 
@@ -84,17 +84,17 @@ your module that defines your WebSocket endpoint, do the following:
         com.liferay:com.liferay.websocket.whiteboard:1.0.1
 
 4. Define a WebSocket server endpoint as you normally would. Note, however, that 
-   @product@ doesn’t currently support the annotation-driven approach; only the 
+   @product@ doesn't currently support the annotation-driven approach; only the 
    interface-driven approach is supported. To create a WebSocket server 
    endpoint, register an OSGi Service for `javax.websocket.Endpoint.class` with 
    the following properties: 
 
-    - `org.osgi.htto.websocket.endpoint.path`: the WebSocket’s path (required)
-    - `org.osgi.htto.websocket.endpoint.decoders`: the WebSocket’s decoders 
+    - `org.osgi.http.websocket.endpoint.path`: the WebSocket's path (required)
+    - `org.osgi.http.websocket.endpoint.decoders`: the WebSocket's decoders 
       (optional)
-    - `org.osgi.htto.websocket.endpoint.encoders`: the WebSocket’s encoders 
+    - `org.osgi.http.websocket.endpoint.encoders`: the WebSocket's encoders 
       (optional)
-    - `org.osgi.htto.websocket.endpoint.subprotocols`: the WebSocket’s 
+    - `org.osgi.http.websocket.endpoint.subprotocols`: the WebSocket's 
       subprotocols (optional)
 
 For example, the following steps show you how to define a WebSocket endpoint in 
@@ -119,8 +119,8 @@ Use these steps to define a WebSocket endpoint:
    the required property `org.osgi.http.websocket.endpoint.path`, which defines 
    the endpoint `/o/echo`. Also note that `service = Endpoint.class` in the 
    `@Component` annotation registers this class as an `Endpoint` service in 
-   @product@’s OSGi framework. Otherwise, there’s nothing special about the 
-   `EchoWebSocketEndpoint` class’s code; it resembles that of any other 
+   @product@'s OSGi framework. Otherwise, there's nothing special about the 
+   `EchoWebSocketEndpoint` class's code; it resembles that of any other 
    WebSocket endpoint: 
 
         @Component(
@@ -150,7 +150,7 @@ Use these steps to define a WebSocket endpoint:
         }
 
 3. Write your client code. In this example, the Echo portlet's `view.jsp` 
-   defines a WebSocket client. Again, there’s nothing special about this code; 
+   defines a WebSocket client. Again, there's nothing special about this code; 
    it resembles that of other WebSocket clients:
 
         <%@ include file="/init.jsp" %>
