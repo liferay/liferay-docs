@@ -97,5 +97,16 @@ Document referenced previously if you don't know how to fill in the CDN fields.
 Once you're finished, click *Save* and your old host is replaced with your new
 CDN host for static content. 
 
-As you can see, configuring a CDN is extremely easy, and can drastically reduce
-latency time and improve your portal's performance. 
+## Using Liferay's CDN in a Portlet Project.
+
+(How do I do this for scripts referenced in liferay-portlet.xml?)
+(How do I get the CDN path in my JSP code?)
+
+## Referencing Liferay's CDN in a Theme Project.
+
+(How do I do this?)
+
+## Publishing Liferay's static resources to the CDN.
+
+(Which JS/CSS/resource files do I need to put in my CDN? Are there built-in Liferay resource files which my CDN can host? Can I publish portlet and theme resources there? What resources are considered "dynamic content"?)
+
