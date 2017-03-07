@@ -102,7 +102,7 @@ Bookmarks application.
       are rendered in the Import UI. For the Bookmarks application, a checkbox
       is added to select Bookmarks content (entries) to import.
 
-    ![Figure 2: You can select the content types you'd like to export/import in the UI.](../../images/export-import-controls.png)
+    ![Figure 1: You can select the content types you'd like to export/import in the UI.](../../images/export-import-controls.png)
 
     For more information on these methods, visit the
     [PortletDataHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
@@ -295,7 +295,7 @@ Bookmarks application.
     Staging framework traverses the entity graph during export, the built-in
     components provide an approximate value in some cases.
 
-    ![Figure 3: The number of modified Bookmarks entities are displayed in the Export UI.](../../images/manifest-summary-count.png)
+    ![Figure 2: The number of modified Bookmarks entities are displayed in the Export UI.](../../images/manifest-summary-count.png)
 
 10. Set the XML schema version for the XML files included in your exported LAR
     file:
@@ -397,7 +397,7 @@ similar, so you'll examine how this is done for Bookmark entries.
     The display name is presented with the progress bar during the export/import
     process.
 
-    ![Figure 4: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
+    ![Figure 3: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
 
 6.  A staged model data handler should ensure everything required for its
     operation is also exported. For example, in the Bookmarks application, an

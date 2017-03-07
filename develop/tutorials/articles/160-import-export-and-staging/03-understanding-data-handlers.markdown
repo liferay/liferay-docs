@@ -184,7 +184,7 @@ example, if a Bookmarks entry resides in a Bookmarks folder, the
 `BookmarksEntry` staged model data handler invokes the export of the
 `BookmarksFolder`.
 
-![Figure 1: The Data Handler framework uses portlet data handlers and staged model data handlers to track and export/import portlet and staged model information, respectively.](../../images/data-handler-diagram.png)
+![Figure 2: The Data Handler framework uses portlet data handlers and staged model data handlers to track and export/import portlet and staged model information, respectively.](../../images/data-handler-diagram.png)
 
 You're not required to implement a staged model data handler for every entity in
 your application, but they're necessary for any entity you want to export/import
