@@ -1,6 +1,6 @@
 # Liferay APIs [](id=liferay-apis)
 
-An *Application Programing Interface* (API) is a protocol that, when invoked,
+An *Application Programming Interface* (API) is a protocol that, when invoked,
 performs an action or set of actions. You can invoke an API from your own code
 directly through a Java invocation, or through web services. This chapter
 provides an overview of several essential Liferay APIs available to you for use
