@@ -1,4 +1,4 @@
-# Generating a JSF Application
+# Generating a JSF Application [](id=generating-a-jsf-application)
 
 Liferay offers you several options to generate a JSF application without forcing
 you to manually create your own folder structure, descriptor files, etc. If
