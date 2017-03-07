@@ -27,7 +27,7 @@ dependencies are required in your JSF application before generating it.
 **Note:** Gradle developers can also use the `archetype:generate` command
 because it generates both a `build.gradle` and a `pom.xml` file for you to use.
 
-[!Figure 1: You can select the Liferay Portal version, JSF version, and component suite for your archetype generation command.](../../../images/jsf-app-generation.png)
+![Figure 1: You can select the Liferay Portal version, JSF version, and component suite for your archetype generation command.](../../../images/jsf-app-generation.png)
 
 Next, you'll generate an example JSF application (e.g., Liferay Portal 7 + JSF
 2.2 + JSF Standard) using [liferayfaces.org](http://liferayfaces.org/).
@@ -39,16 +39,16 @@ Next, you'll generate an example JSF application (e.g., Liferay Portal 7 + JSF
     - **JSF:** 2.2
     - **Component Suite:** JSF Standard
 
-2.  Copy the generated archetype generation command and execute it into your
+2.  Copy the generated archetype generation command and execute it in your
     command line tool. Make sure you've navigated to the folder in your command
     line tool that you want to generate your project.
 
 That's it! Your JSF application is generated in the current folder!
 
-You can also generate a JSF application using Maven's interactive UI. To do
-this, execute `mvn archetype:generate` and select the JSF archetype you want to
-use. Then you'll step through each option, selecting the version, group ID,
-artifact ID, etc. from the command line. To learn more about this, see the
+You can also generate a JSF application using Maven's interactive archetype UI.
+To do this, execute `mvn archetype:generate` and select the JSF archetype you
+want to use. Then you'll step through each option, selecting the version, group
+ID, artifact ID, etc. from the command line. To learn more about this, see the
 [Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
 tutorial.
 
