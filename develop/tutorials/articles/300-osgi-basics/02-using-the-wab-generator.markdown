@@ -63,17 +63,31 @@ OSGi headers directly into the `WEB-INF/liferay-plugin-package.properties` file.
 A `bnd.bnd` and/or a build-time plugin (e.g., `bnd-maven-plugin`) should not be
 provided for your WAR plugin, because the generated WAB cannot make use of them.
 
-Do you want to try this out for yourself? Follow the steps below to see the WAB
-Generator in action.
+Deploying a WAR to @product@'s WAB Generator follows the same steps as deploying
+an OSGi module JAR. Follow the steps below to deploy your WAR to @product@'s
+WAB Generator.
 
 1.  Create a WAR-style plugin that follows a similar structure to the one
     outlined above. You can download an example WAR-style portlet
     [here](https://dev.liferay.com/documents/10184/656312/com.liferay.hello.user.jsf.portlet-1.0-SNAPSHOT.war/8cdc236f-2dff-4ba6-b06a-de130c9232b6?download=true),
     for demonstration.
 
-    <!-- Attach WAR above for download. -Cody -->
+2.  Copy your WAR plugin in your @product@ instance's `deploy` folder.
 
-2.  Open your @product@ instance in a file explorer and add a
+3.  Navigate to your @product@ instance's `osgi/war` folder and verify your WAR
+    is available.
+
+Fantastic! Your WAR was deployed to the WAB Generator and converted to a WAB.
+It's now available in the OSGi registry.
+
+If you're still not satisfied and would like to examine the generated WAB JAR,
+you can configure your @product@ instance to save them. The WAB JARs are
+intermediate files that the Portal Compatibility Layer (PCL) uses to deploy to
+Liferay's OSGi runtime framework. They're typically cleaned from your @product@
+instance after they've been deployed. You'll learn how to save them for
+examination next.
+
+1.  Open your @product@ instance in a file explorer and add a
     `portal-ext.properties` file with the following properties:
 
         module.framework.web.generator.generated.wabs.store=true
@@ -84,9 +98,9 @@ Generator in action.
     [Module Framework Web Application Bundles](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework%20Web%20Application%20Bundles)
     properties section. Restart @product@ for these changes to be recognized.
 
-3.  Copy your WAR plugin in your @product@ instance's `deploy` folder.
+2.  Insert your WAR plugin in your @product@ instance's `deploy` folder.
 
-4.  Navigate to your @product@ instance's `osgi/wabs` folder and inspect the
+3.  Navigate to your @product@ instance's `osgi/wabs` folder and inspect the
     generated WAB.
 
 Awesome! You've seen the WAB Generator in action!
