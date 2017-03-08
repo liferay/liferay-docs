@@ -23,7 +23,9 @@ project you wish to associate the app with. Accept the license agreement and
 then click *Purchase* (don't worry, the app is still free). 
 
 To download the app once you've purchased it, select *Purchased Apps* from the 
-User menu at the top-right of the screen in Marketplace. 
+User menu at the top-right of the screen. Note that this menu is available 
+anywhere in liferay.com once you're logged in; you don't have to be in 
+Marketplace to access it. 
 
 ![Figure 1: To access your purchased apps, click *Purchased Apps* from the User menu.](../../images/lcs-purchased-apps.png)
 
@@ -34,7 +36,7 @@ Portal 6.2 EE, click the *App* button next to Liferay Portal 6.2 EE. Note that
 your server should always be running the latest version of the app. This ensures 
 that your server can connect to LCS and use the latest LCS features. Also note 
 that when deploying a new version of the client, you may also need to regenerate 
-[the environment token](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
+[the environment token](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
 that you use to connect. 
 
 ![Figure 2: Click the *App* button next to Liferay Portal 6.2 EE.](../../images/lcs-app-version-download.png)
@@ -157,7 +159,7 @@ you're running Windows, drop the `.sh` from each command that has it.
 1. Navigate to the `patching-tool` directory on the command line. It's typically 
    located in the Liferay Home folder.
 
-2. To let the patching tool discover your @product@ installation, run 
+2. To let the patching tool discover your Liferay Portal installation, run 
    `patching-tool.sh auto-discovery`. 
 
 3. To configure the patching tool, run `patching-tool.sh setup`. 
@@ -189,17 +191,17 @@ may see:
     java.nio.file.FileSystemException: ..\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!
     java.io.FileNotFoundException: java.io.IOException: Access refused
 
-To solve this, set the `java.io.tmpdir` system property as follows in the
-`patching.tool.agent.jvm.opts` property:
+To solve this, set the `java.io.tmpdir` system property as follows in the 
+`patching.tool.agent.jvm.opts` property: 
 
     -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF8 -Djava.io.tmpdir=%TMP%"
 
-The agent also has some flags you can set to control how it behaves:
+The agent also has some flags you can set to control how it behaves: 
 
-    - `debug`: Provides verbose output in the console.
-    - `nohalt`: Starts the portal even if the agent encounters an issue.
+- `debug`: Provides verbose output in the console. 
+- `nohalt`: Starts the portal even if the agent encounters an issue. 
 
-You can specify these as follows:
+You can specify these as follows: 
 
     -Dpatching.tool.agent.properties=debug,nohalt
 
