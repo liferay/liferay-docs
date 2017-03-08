@@ -232,4 +232,4 @@ Now that you know where you're headed, you can install @product@. If you have
 decided to install @product@ using a bundle, continue with the next section. 
 If you're installing @product@ manually, skip to the section for your 
 application server of choice. Once you have @product@ installed manually or 
-via a bundle, you can move on to [configuring search](/discover/deployment/-/knowledge_base/7-0/configuring-search). 
+via a bundle, you can move on to [configuring search](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch). 
