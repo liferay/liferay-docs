@@ -3,7 +3,7 @@
 The WSDL Builder Gradle plugin allows you to generate [Apache Axis](http://axis.apache.org/axis/)
 client stubs from Web Service Description (WSDL) files.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+The plugin has been successfully tested with Gradle 2.5 up to 3.3.
 
 ## Usage [](id=usage)
 
