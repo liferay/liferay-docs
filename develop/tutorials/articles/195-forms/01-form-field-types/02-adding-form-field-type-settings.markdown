@@ -2,15 +2,16 @@
 
 Once you develop a [Form Field
 Type](/developer/tutorials/-/knowledge_base/7-0/creating-form-field-types), you
-might want to add settings to it. To illustrate this, read here to learn to  add
-a *mask* and a *placeholder* to the Time field created in the previous tutorial. 
+might want to add settings to it, and you certainly can. Here you'll learn by
+discovering how to add a *mask* and a *placeholder* to the Time field created in
+the previous tutorial. 
 
 +$$$
 
 **Note:** 
 To learn more about using masks with the AUI Timepicker, go
 [here](http://alloyui.com/tutorials/timepicker/). The mask just sets the format
-the timepicker uses to display the choices. Use the [strftime
+the timepicker uses to display the time choices. Use the [strftime
 format](http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html) to
 pick the mask you want.
 
@@ -20,12 +21,12 @@ To add settings to form field types, use these steps:
 
 - Write an interface that extends the default field type configuration,
     `DefaultDDMFormFieldTypesettings`.
-- Update the `time_field.js` to add the new configurations and their default
-    values and a default value to the `TimeField` component.
-- Update the `FormFieldRenderer` so it passes the new configuration options to
-    the Soy template.
-- Update the Soy Template to include the new configuration options, and any
-    logic controlling their display.
+- Update the `*FormFieldRenderer` so it makes the new configuration options
+    available to the JavaScript component and/or the Soy template for rendering.
+- Update the JavaScript component (defined in `time_field.js` in our example) to
+    configure the new settings and their default values.
+- Update the Soy template to include any settings that will need to be rendered
+    in a form (the placeholder, in our example).
 
 Get started by writing the interface that controls what settings your field will
 use.
@@ -39,6 +40,8 @@ type, call it `TimeDDMFormFieldTypeSettings`.
 This class sets up the *Add [Field Type]* configuration form.
 
 ![Figure x: Like your custom field types, the text field type's settings are configured in a Java interface.](../../../images/forms-text-settings.png)
+
+Here's what it looks like:
 
     package com.liferay.docs.ddm.time;
 
@@ -96,8 +99,20 @@ Would you look at that! Most of the work you need to do is in the class's
 annotations. 
 
 In this class you're setting up a dynamic form with all the settings your form
-will need. The form layout presented here will give your form the look and feel
-of a native form field type.
+field type will need. The form layout presented here will give your form the
+look and feel of a native form field type. See the note below for more
+information on the DDM annotations used in this form.
+
+One thing to take note of is that all of the default settings must be present in
+your settings form. Note the list of settings present for each tab (each
+`@DDMFormLayoutPage`) above. If you need to make one of the default settings
+unusable in the settings form for your field type, configure a *hide rule* for
+the field. Form field rules are configured using the `@DDMFormFieldRule`
+annotation. More information on configuring form rules will be written soon.
+
+Your interface is extending the `DefaultDDMFormfieldTypeSettings` class. That's
+why the default settings are available to use in the class annotation, without
+setting them up in the class, as was necessary for the mask and placeholder.
 
 +$$$
 
@@ -136,12 +151,13 @@ default fields, it's best to follow the standard approach and use `basic` and
 `properties`. 
 
 `@DDMFormLayoutRow`
-: Use this to lay out the nuber of columns you want in the row. Most settings
-forms will have just one row and one column.
+: Use this to lay out the number of columns you want in the row. Most settings
+forms have just one row and one column.
 
 `@DDMFormLayoutColumn`
-: Use this to lay out the number of columns your settings form should have. Most
-settings forms have only one row and one column.
+: Use this to lay out the columns your settings form needs. Most
+settings forms have one row and one column. Each column accepts two argument,
+`size` and `value`.
 
 `@DDMFormField`
 : Use this annotation to add new fields to the settings form. In this example,
@@ -149,21 +165,69 @@ these will be the `mask` and `placeholder` settings.
 
 $$$
 
-One thing to take note of is that all of the default settings must be present in
-your settings form. Note the list of settings present for each tab above. If you
-need to make one of the default settings unusable, you'd need to set up a *hide
-rule* for the field. Form field rules can be configured using the
-`@DDMFormFieldRule` annotation. More information on configuring rules will be
-written soon.
+Once your `*TypeSettings` class is finished, move on to update the `*Renderer`
+class for your form field type.
 
-Once your `*TypeSettings` class is finished, move on to update the JavaScript
-component for your form field type.
+## Updating the Renderer Class
+
+To send the new configuration settings to the Soy template so they can be
+displayed to the end user, you need to modify the `*DDMFormFieldRenderer`.
+
+Add this method to `TimeDDMFormFieldRenderer`:
+
+	@Override
+	protected void populateOptionalContext(
+		Template template, DDMFormField ddmFormField,
+		DDMFormFieldRenderingContext ddmFormFieldRenderingContext) {
+
+		template.put(
+			"placeholder", (String)ddmFormField.getProperty("placeholder"));
+
+        template.put(
+            "mask", (String)ddmFormField.getProperty("mask"));	
+
+        }
+
+The `populateOptionalContext` method takes three parameters: The template
+object, the `DDMFormField`, and the `DDMFormFieldRenderingContext`. The
+`DDMFormField` represents the definition of the field type instance: you can
+use this object to access the configurations set for the field type (the mask
+and placeholder settings in our case). The `DDMFormFieldRenderingContext` object
+contains extra information about the form such as the user's locale, the HTTP
+request and response objects, the portlet namespace, and more (all of
+its included properties can be found
+[here](https://docs.liferay.com/ce/apps/forms-and-workflow/latest/javadocs/com/liferay/dynamic/data/mapping/render/DDMFormFieldRenderingContext.html).
+
+You're putting the new settings into the template object, which is just an
+extension of a Map that takes a String and an Object (in this case the Object is
+the property configured in the `@DDMFormField` in your `*TypeSettings` class,
+retrieved by the name of the field: `placeholder` and `mask`, respectively.
+
+Now the JavaScript component and the Soy template can access the new settings.
+Next, update the JavaScript Component so it handles these properties and can
+use them, whether passing them to the template context (similar to the `*Renderer`,
+only this time for client-side rendering), or using them to configure the
+behavior of the JavaScript component itself.
+
++$$$
+
+**Note:** Remember that the Soy template can be used for server side or client
+side rendering. By defining the settings you're adding in both the Java Renderer
+and the JavaScript Renderer, you're allowing for the best possible user
+experience. For example, if a form builder is in the form builder, configuring a
+form field type, the configuration they enter can be directly passed to the
+template, and become visible in the UI, almost instantly. However, when the user
+clicks into a form field initially to begin editing, the rendering occurs from
+the server side.
+
+$$$
+
+Next configure the JavaScript component to include the new settings.
 
 ## Adding Settings to the JavaScript Component
 
 The JavaScript component needs to know about the new settings. First configure
-them in the attribute of the component:
-
+them as attributes of the component:
 
     ATTRS: {
         mask: {
@@ -177,10 +241,13 @@ them in the attribute of the component:
         }
     },
 
-How do you change the JavaScript component to pass the placeholder configuration
-to the soy template on the client side? Like in the Java code, override the
-`getTemplateContext()` method to pass the extra configuration. Add this to the
-`prototype` section of the JavaScript component definition:
+The mask setting has a default value of `%I:%M %p`, and the placeholder is
+blank. Now that the new settings are declared as attributes of the component,
+make the JavaScript component pass the placeholder configuration to the Soy
+template on the client side. Just like in the Java renderer, pass the
+placeholder configuration to the template context. In this case, override the
+`getTemplateContext()` method to pass in the placeholder configuration. Add this
+to the `prototype` section of the JavaScript component definition:
 
     getTemplateContext: function() {
         var instance = this;
@@ -193,24 +260,41 @@ to the soy template on the client side? Like in the Java code, override the
         );
     },
 
-## Sending Markup to the Soy Template
 
-To send the new configuration settings to the Soy template so they can be
-displayed to the end user, you need to modify the `*DDMFormFieldRenderer` and
-add a `*DDMFormFieldTemplateContextContributor`. 
+Then in the component's render method, add the mask as an [attribute of the
+AUI Timepicker](http://alloyui.com/api/classes/A.TimePicker.html#attr_mask)
+using `mask: instance.get('mask')`. 
 
-Add this to the `TimeDDMFormFieldRenderer`:
+           render: function() {
+            var instance = this;
 
+            TimeField.superclass.render.apply(instance, arguments);
 
+            instance._timePicker = new A.TimePicker(
+                {
+                    trigger: instance.getInputSelector(),
+                    mask: instance.get('mask'),
+                    popover: {
+                        zIndex: 1
+                    }
+                }
+            );
+        }
+
+Now the field type JavaScript component is configured to include the settings.
+All you have left to do is to update the Soy template so the placeholder can be
+rendered in the form with the time field.
 
 ## Updating the Soy Template
 
-After all that, now you can add the settings to your Soy template's logic.
+After all that, adding the placeholder setting to your Soy template's logic is
+simple.
 
-The whole template is pasted below, but the only additions are in the commented
-section (adds the placeholder to the list of parameters), and then in the
-`<input>` tag, where you use the parameter value to configure the placeholder
-HTML property with the proper value.
+The whole template is included below, but the only additions are in the commented
+section (adds the placeholder to the list of parameters--the `?` indicates that
+the placeholder is not required), and then in the `<input>` tag, where you use
+the parameter value to configure the placeholder HTML property with the proper
+value.
 
 {namespace ddm}
 
@@ -219,7 +303,7 @@ HTML property with the proper value.
  *
  * @param label
  * @param name
- * @param placeholder
+ * @param? placeholder
  * @param readOnly
  * @param required
  * @param showLabel
@@ -245,3 +329,13 @@ HTML property with the proper value.
         <input class="field form-control" id="{$name}" name="{$name}" placeholder="{$placeholder}" {if $readOnly}readonly{/if} type="text" value="{$value}">
     </div>
 {/template}
+
+Why isn't the mask parameter added to the Soy template? The mask is not needed
+in the template because it's only used in the JavaScript for configuring the
+behavior of the timepicker. You don't need the dynamic rendering of the soy
+template to take the mask setting and configure it in the form. The maskv set by
+the form builder is captured in the rendering of the timepicker itself.
+
+Now when you build the project and deploy your time field, you have a fully
+developed *time* form field type, complete with the proper JavaScript behavior
+and with additional settings.
