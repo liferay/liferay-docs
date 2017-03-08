@@ -56,7 +56,7 @@ Install Elasticsearch, and then you can begin configuring it to use with
 @product@. 
 
 1.  Follow the instructions
-    [here](/discover/deployment/-/knowledge_base/7-0/configuring-search#step-one-find-the-right-version-of-elasticsearch)
+    [here](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch#step-one-find-the-right-version-of-elasticsearch)
     to find the version of Elasticsearch that matches your installation and
     download it. 
 
