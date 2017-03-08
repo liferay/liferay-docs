@@ -296,39 +296,39 @@ the placeholder is not required), and then in the `<input>` tag, where you use
 the parameter value to configure the placeholder HTML property with the proper
 value.
 
-{namespace ddm}
+    {namespace ddm}
 
-/**
- * Prints the DDM form time field.
- *
- * @param label
- * @param name
- * @param? placeholder
- * @param readOnly
- * @param required
- * @param showLabel
- * @param tip
- * @param value
- */
-{template .time autoescape="deprecated-contextual"}
-    <div class="form-group liferay-ddm-form-field-time" data-fieldname="{$name}">
-        {if $showLabel}
-            <label class="control-label">
-                {$label}
+    /**
+     * Prints the DDM form time field.
+     *
+     * @param label
+     * @param name
+     * @param? placeholder
+     * @param readOnly
+     * @param required
+     * @param showLabel
+     * @param tip
+     * @param value
+     */
+    {template .time autoescape="deprecated-contextual"}
+        <div class="form-group liferay-ddm-form-field-time" data-fieldname="{$name}">
+            {if $showLabel}
+                <label class="control-label">
+                    {$label}
 
-                {if $required}
-                    <span class="icon-asterisk text-warning"></span>
+                    {if $required}
+                        <span class="icon-asterisk text-warning"></span>
+                    {/if}
+                </label>
+
+                {if $tip}
+                    <p class="liferay-ddm-form-field-tip">{$tip}</p>
                 {/if}
-            </label>
-
-            {if $tip}
-                <p class="liferay-ddm-form-field-tip">{$tip}</p>
             {/if}
-        {/if}
 
-        <input class="field form-control" id="{$name}" name="{$name}" placeholder="{$placeholder}" {if $readOnly}readonly{/if} type="text" value="{$value}">
-    </div>
-{/template}
+            <input class="field form-control" id="{$name}" name="{$name}" placeholder="{$placeholder}" {if $readOnly}readonly{/if} type="text" value="{$value}">
+        </div>
+    {/template}
 
 Why isn't the mask parameter added to the Soy template? The mask is not needed
 in the template because it's only used in the JavaScript for configuring the
