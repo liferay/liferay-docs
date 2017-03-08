@@ -421,8 +421,7 @@ Now when the field is rendered, there's a real time picker.
 
 ![Figure 2: The Alloy UI Timepicker in action.](../../../images/forms-timepicker.png)
 
-
 Now you know how to create a new field type and define its behavior. Currently,
 the field type only contains the default settings it inherits from its
-superclasses. If that's not sufficinet, create additional settings for your
+superclasses. If that's not sufficient, create additional settings for your
 field type. See the next tutorial (not yet written) to learn how.
