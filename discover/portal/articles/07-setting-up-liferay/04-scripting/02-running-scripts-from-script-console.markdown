@@ -26,7 +26,7 @@ You'll use Groovy again. Ensure that the script type in the script console is se
 to Groovy. Then execute the following code to check the status of the
 `agreedToTermsOfUse` user attribute:
 
-    import com.liferay.portal.service.UserLocalServiceUtil
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
     userCount = UserLocalServiceUtil.getUsersCount()
     users = UserLocalServiceUtil.getUsers(0, userCount)
@@ -41,7 +41,7 @@ skip the default user as well as the default admin user that's currently logged
 in and running the script. If you're logged in as someone other than
 test@liferay.com, make sure to update the following script before running it. 
 
-    import com.liferay.portal.service.UserLocalServiceUtil
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
     userCount = UserLocalServiceUtil.getUsersCount()
     users = UserLocalServiceUtil.getUsers(0, userCount)
