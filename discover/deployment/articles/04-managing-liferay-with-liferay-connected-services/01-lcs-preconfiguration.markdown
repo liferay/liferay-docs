@@ -27,7 +27,7 @@ User menu at the top-right of the screen. Note that this menu is available
 anywhere in liferay.com once you're logged in; you don't have to be in 
 Marketplace to access it. 
 
-![Figure 1: To access your purchased apps, click *Purchased Apps* from the User menu.](../../images/lcs-purchased-apps.png)
+![Figure 4.1: To access your purchased apps, click *Purchased Apps* from the User menu.](../../images/lcs-purchased-apps.png)
 
 On the Purchased Apps screen, select the project you associated with the LCS app 
 and then select the LCS app. The screen that appears lets you choose the version 
@@ -39,7 +39,7 @@ that when deploying a new version of the client, you may also need to regenerate
 [the environment token](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
 that you use to connect. 
 
-![Figure 2: Click the *App* button next to Liferay Portal 6.2 EE.](../../images/lcs-app-version-download.png)
+![Figure 4.2: Click the *App* button next to Liferay Portal 6.2 EE.](../../images/lcs-app-version-download.png)
 
 +$$$
 

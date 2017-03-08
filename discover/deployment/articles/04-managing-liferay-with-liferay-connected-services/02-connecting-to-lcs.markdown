@@ -1,9 +1,9 @@
-# Connecting Your Liferay Portal Server to LCS [](id=connecting-your-liferay-portal-server-to-lcs)
+# Connecting to LCS [](id=connecting-to-lcs)
 
 Once you've addressed any 
 [required configuration steps](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration) 
-and deployed the LCS client app, you're ready to activate your Liferay Portal 
-server with LCS. You'll use an 
+and deployed the LCS client app, you're ready to connect your Liferay Portal 
+server to LCS. You'll use an 
 [LCS environment token](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens) 
 to do this: 
 
@@ -12,7 +12,7 @@ to do this:
    LCS project. If your company has multiple projects, select the one you want 
    to register this server under from the user menu at the top right. 
 
-    ![Figure 4.2: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images/lcs-user-menu-manage-projects.png)
+    ![Figure 4.3: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images/lcs-user-menu-manage-projects.png)
 
 2. Ensure that an environment exists to activate your server under. If you have 
    sufficient permissions in your company's project, you can create a new 
@@ -24,7 +24,7 @@ to do this:
    property `cluster.link.enabled` to `true` in any servers that connect to a 
    clustered environment. 
 
-    ![Figure 4.3: To connect to LCS, you must register your Liferay Portal server in an LCS environment. The red box in this screenshot highlights an environment.](../../images/lcs-registration-select-environment.png)
+    ![Figure 4.4: To connect to LCS, you must register your Liferay Portal server in an LCS environment. The red box in this screenshot highlights an environment.](../../images/lcs-registration-select-environment.png)
 
 3. If you don't want to use LCS's subscriptions feature to activate your Liferay 
    Portal instance, you can skip this step. Otherwise, select the 
@@ -39,7 +39,7 @@ to do this:
    [Click here](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-ee-subscriptions) 
    for more information on using subscriptions in LCS. 
 
-    ![Figure 4.4: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images/lcs-environment-subscriptions.png)
+    ![Figure 4.5: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images/lcs-environment-subscriptions.png)
 
 4. Select the environment you want to register your server under, and then 
    select the *Registration* tab. This tab is where you can download and manage 
@@ -48,7 +48,7 @@ to do this:
    that connect to this environment. All services are selected by default. Your 
    selections of LCS services here are embedded in the token file. 
 
-    ![Figure 4.5: An environment's Registration tab lets you manage the token file used to connect Liferay Portal instances to the environment.](../../images/lcs-registration.png) 
+    ![Figure 4.6: An environment's Registration tab lets you manage the token file used to connect Liferay Portal instances to the environment.](../../images/lcs-registration.png) 
 
 5. Now you must use the Registration tab to generate, regenerate, and/or 
    download the token file. The actions you take here depend on two things: what 
@@ -110,7 +110,6 @@ Here's a full description of what a connected LCS client app displays:
 - **Environment:** This link takes you to this server's LCS environment.
 - **Server Dashboard:** This link takes you to the server on LCS. 
 
-![Figure 4.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure 4.7: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
-Awesome! Now that you've registered your server with LCS, you can dig in to the 
-features of LCS. 
+Awesome! Now you're ready to use LCS. The next article shows you how to do this. 
