@@ -1,98 +1,152 @@
-# Planning a Plugin Upgrade to @product-ver@ [](id=migrating-existing-code-to-liferay-7)
+# Planning Plugin Upgrades and Optimizations [](id=migrating-existing-code-to-liferay-7)
 
-You've probably heard the term *modularity* discussed frequently in relation to
-@product-ver@. With it being a modular platform, Liferay applications are now
-composed of one or more
-[modules](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module).
+By now you've explored @product-ver@'s features and you might have created new
+portlet modules or a theme using Liferay's new  [tooling](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more)
+and  
+[techniques](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers).
+But you also have existing plugins ready to upgrade as soon as possible. The
+great thing is that Liferay's automated much of the upgrade process. In
+addition, you can continue developing the plugins in traditional ways and adopt
+new development tooling and techniques when you're ready. 
 
-A module doesn't use the traditional Liferay application structure from previous
-versions. Liferay is following a different structure for modules that you'll
-learn about in these tutorials. You, however, are not required to follow
-Liferay's standard application structure; you have the freedom to structure your
-application's modules however you wish.
+This tutorial guides you through phases of *upgrading* plugins and optionally
+*optimizing* them. 
 
-The instructions covered in this tutorial apply to both the commercial and open 
-source versions of Liferay.
+**upgrade**: A process for deploying an existing plugin on @product-ver@ with
+minimal changes. 
 
-A module in Liferay is very similar to a standard Java application with some
-additional metadata and annotations. The annotations replace the need for XML
-file descriptors and are easier to manage since everything is in one place.
+**optimization**: An optional process for modifying a plugin or migrating it to 
+a new environment to improve the plugin or facilitate developing it. 
 
-Liferay, however, is still a JSR-286, standards compliant portal. For this
-reason, it remains backwards compatible with traditional plugin applications.
-This means two things: you can write both module and plugins, and you can easily
-upgrade your 6.2 plugins to new 7.0 APIs without converting them to modules
-first. In fact before you begin converting your traditional application into
-modules, we recommend that you first migrate it to a @product-ver@ compatible
-WAR-style application. It is much easier to convert the application to modules
-after adapting to the new API and resolving [breaking changes](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/breaking-changes).
-Jumping from a Liferay Portal 6.2 application to @product-ver@ modules can
-complicate debugging and figuring out which issues are related to API changes
-and which are related to the migration process.
+Importantly, you should *upgrade* a plugin before applying any optimizations to 
+it. 
 
-The standard migration process consists of two general steps: 
+The good news is that upgrading plugins to @product-ver@ is straightforward. For
+Plugins SDK and Maven projects, Liferay @ide@'s
+[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+automates much of the process. In addition, the 
+[upgrade tutorials](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+demonstrate any remaining upgrade steps. 
 
-**Step 1:  Adapting your Liferay Portal 6.2 traditional plugins to @product-ver@'s API**
+You can deploy plugins to @product-ver@ as you have for previous releases (e.g.,
+`ant clean deploy`). Since everything in @product-ver@ runs as OSGi modules,
+however, you might wonder how traditional WAR-style plugins can run on it. The
+answer: Liferay's Plugin Compatibility Layer. 
 
-**Step 2:  Converting your traditional plugins to OSGi modules**
+The Plugin Compatibility Layer converts standard WARs to Web Application Bundles
+(WABs). WABs are full-fledged OSGi modules. The Plugin Compatibility Layer's
+[WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator) 
+supports deploying traditional plugins and web applications that contain
+Servlets, JSPs, and other Java web technologies without making any OSGi specific
+changes to them. <!--See [Plugin Compatibility Layer](TODO) for more details.-->
 
-Converting your application to modules might not always be the best choice. In
-some scenarios, it makes better sense to stick with traditional WAR model
-plugins and stop after completing Step 1. Consider the tips below as you decide
-whether and when to convert your legacy application to modules.
+Note, you can still use an application server's mechanisms to deploy regular web
+applications along with @product@, without using the Plugin Compatibility Layer.
 
-**When to convert?**
+After upgrading your plugins you can consider optimizations such as these:
 
--   If you have a very large application with many lines of code. For example, if
-    there are many developers that are collaborating on an application
-    concurrently and making changes frequently, separating the code into modules
-    increases productivity and provides agility to release more frequently.
--   If your plugin has reusable parts that you'd like to consume from elsewhere.
-    For instance, suppose you have business logic that you're reusing in
-    multiple different projects. Instead of copying that code into several
-    different WARs and deploying those WARs to different customers, you can
-    convert your application to modules and consume their services from other
-    modules.
+-   Migrating plugins to
+    [Gradle](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+    or Maven to leverage their development commands and rich
+    [Liferay plugin templates](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#developing-modules-with-liferay-workspace). 
+-   [Migrating themes to the Themes Generator](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
+    to add [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets) (new) 
+    and to leverage
+    [Node.js, Yeoman, and Gulp](/develop/tutorials/-/knowledge_base/7-0/themes-generator). 
+-   [Converting plugins to modules](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
+    to leverage Declarative Services, extendability, and more
+    [modularity benefits](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers).
+-   Using the
+    [Liferay Lexicon](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app)
+    design language to apply a clean consistent application user experience. 
 
-**When not to convert?**
+See the
+[optimization tutorials](/develop/tutorials/-/knowledge_base/7-0/optimizing-plugins-for-liferay-7)
+for more options and details. 
 
--   You have a portlet that's JSR-168/286 compatible and you still want to be
-    able to deploy it into another portlet container. If you want to retain that
-    compatibility, it's best to stay with the traditional WAR model.
--   You're using a complex web framework that is heavily tied to the Java
-    EE programming model, and the amount of work necessary to make that work
-    with OSGi is more than you feel is necessary or warranted.
--   If your plugin interacts with the app server. Module-based applications are
-    not as portable when they directly interact with the app server.
--   If your application's original intent is to have a limited-lifetime.
+Note, you can continue using the Plugins SDK to develop plugins. But the Plugins
+SDK is deprecated  as of @product-ver@. In light of the deprecation, you should
+consider migrating plugins from the Plugins SDK and to new environments, such as
+ones that use Gradle or Maven. Liferay offers  both. 
 
-Your decision to convert to modules ultimately comes down to benefits vs. costs.
-Obviously, the time to convert your application is a cost. There are, however,
-many benefits to managing your legacy application as modules.
+-   [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#from-the-plugins-sdk-to-liferay-workspace)
+    is a Gradle environment that supports developing modules and traditional
+    plugins.
+    [Blade's ](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications) 
+    [`migrateWar  command`](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+    moves Plugins SDK portlets to Liferay Workspace (Workspace) in a snap. 
+-   [Liferay's Maven](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#whats-new-in-product-ver-for-maven-users) 
+    plugins and archetypes support developing modules and traditional plugins.
+    There's also a Liferay Workspace archetype for generating a Workspace that uses Maven. 
 
-A large application can be split into many small independent, easy to manage
-modules. These small modules allow for incremental release cycles. In
-multi-module projects, this also means that a certain module can be updated
-independently. For instance, if a JSP is changed due to a security issue, the
-web (client) module can be updated while the persistence modules remain
-unchanged. This could mean applications that usually had to wait for new Liferay
-releases could see independent releases between Liferay versions.
+And [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide) completely
+supports developing in Workspaces using Gradle or [Maven](/develop/tutorials/-/knowledge_base/7-0/using-maven-in-liferay-ide).
 
-Module dependencies are explicitly listed within a module. A module refuses to
-run unless all dependencies are met, thus eliminating obscure run time errors.
-Another common deployment issue for traditional applications has to do with
-using multiple versions of the same library in an environment. The class loader
-merges classes from multiple versions of a library, leading to very hard to
-troubleshoot and obscure problems. Module versions, however, can be stated
-explicitly in the dependency, eliminating these types of issues.
+In short, there's plenty of time to move plugins out of the Plugins SDK, but you
+should at least plan for migrating to a new environment that works best for
+you. 
 
-Now that you have some ammunition to make an informed decision on whether to
-stop after adapting your application's plugins to @product-ver@, or to continue on
-with modularizing them. The next tutorial takes you through the first step:
-adapting plugins to @product-ver@'s API.
+Speaking of planning, properly planned upgrades and optimizations reduce the
+time and effort they take. To help guide you through the upgrade and
+optimization tutorials, you get these things:
 
-**Related Topics**
+-   Upgrade and optimization phase descriptions
+-   Upgrade and optimization paths
 
-[Adapting to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+## Upgrade and Optimization Phases
 
-[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
+Follow these upgrade and optimization phases:
+
+1.  Read the applicable
+    [upgrade tutorials](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+    for your plugin. Examine the upgrade and optimization paths.
+
+2.  Upgrade the plugin, making only the minimal changes necessary for it to 
+    work on @product-ver@. 
+
+3.  (Optional) Identify and apply only the most beneficial 
+    [optimizations](/develop/tutorials/-/knowledge_base/7-0/optimizing-plugins-for-liferay-7)
+    for your plugin. 
+
+4.  (Optional) Apply additional optimizations as desired. 
+
+## Upgrade and Optimization Paths
+
+The following tables provide upgrade and optimization
+paths for 6.2 plugins and features. 
+
+### Plugin Upgrade and Optimization Paths
+
+ Plugin | Upgrade path | Optimizations (optional) |
+ :----------------- | :----------- | :----------------------- |
+ Ext | [Coming soon](https://issues.liferay.com/browse/LRDOCS-3333) | [Coming soon](https://issues.liferay.com/browse/LRDOCS-3333) |
+ Hook - Language files | Coming soon | Coming soon |
+ Hook - Login/logout actions | Coming soon | Coming soon |
+ Hook - Override a @product@ Core JSP | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Convert to module that uses custom JSP bag](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps) ([automated in Workspace](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool#step-7-convert-custom-jsp-hooks)) | Same |
+ Hook - Override an app's JSP | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Convert to fragment module](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps) ([automated for Workspace](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool#step-7-convert-custom-jsp-hooks)) | Same |
+ Hook - Properties | Coming soon | Config Admin (`.cfg` files) |
+ Hook - Service Wrappers | [Coming soon](https://issues.liferay.com/browse/LRDOCS-3336) | [Coming soon](https://issues.liferay.com/browse/LRDOCS-3336) |
+ Hook - `ServicePreAction` | Coming soon | Coming soon |
+ Hook - Struts actions | - [StrutsAction &rarr; StrutsActionWrapper](/develop/tutorials/-/knowledge_base/7-0/converting-strutsactionwrappers-to-mvccommands)<br> - [processAction &rarr; MVCActionCommand](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcactioncommand)<br> - [render &rarr; MVCRenderCommand](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcrendercommand)<br> - [serveResource &rarr; MVCResourceCommand](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcresourcecommand) | Same |
+ Layout Template | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)<br>3. [Update Layout Template](/develop/tutorials/-/knowledge_base/7-0/upgrading-layout-templates) | - [Migrate to Themes Generator](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7) (Node.js/Gulp/Yeoman) |
+ Portlet - Liferay MVC | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies) | - [Migrate to Workspace/Gradle](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)<br>- [Apply Lexicon](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app)<br>- [Convert to OSGi modules](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet) |
+ Portlet - JSF | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Configure dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) | None |
+ Portlet - JSP | Coming soon | Coming soon |
+ Portlet - Spring MVC | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)<br>3. [Update Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc) | None |
+ Theme | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)<br>3. [Upgrade Theme](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes) | - [Migrate to Themes Generator](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7) (Node.js/Gulp/Yeoman)<br>- [Use Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets) |
+ Web plugin | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies) | [Convert to OSGi module](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet), e.g., `portlet-x-web` | 
+
+### Feature Upgrade and Optimization Paths
+
+ Feature | Upgrade path | Optimizations (optional) |
+ :----------------- | :----------- | :----------------------- |
+ Resources Importer | [Update the Resources Importer](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-the-resources-importer) | Same |
+ Services - Invoke a service from @product@ Core or another portlet or module | [Implement a Service Tracker](/develop/tutorials/-/knowledge_base/7-0/service-trackers) | [Invoke Liferay services from a module](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services) |
+ Services - Module dependency | Copy `x-service.jar` to `WEB-INF/lib` | - [Migrate to Gradle/Maven](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications) and [add dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) on the OSGi service |
+ Services - Service Builder | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies) | [Convert to OSGi modules](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet), e.g., `x-api` and `x-service` |
+ Services - Web services | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies) | [Use a Service Builder service with JAX-RS with a REST service in front](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs) |
+ Template - FreeMarker | - [FreeMarker](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-theme-templates) | Same |
+ Template - Velocity (deprecated) | - Velocity (deprecated) | [Convert to FreeMarker](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-theme-templates) |
+
+Now you have a game plan and a cheat sheet for upgrading and optimizing plugins
+with confidence. 
