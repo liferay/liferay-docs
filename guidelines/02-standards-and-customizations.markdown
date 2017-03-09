@@ -1,10 +1,10 @@
-# Liferay Documentation Tools
+# Standards and Customizations 
 
 Liferay's documentation is currently implemented in Markdown. We chose Markdown
 for several reasons:
 
 1. It's readable. Even if you don't know Markdown, you can read it without
-   having to filter out the syntax.  
+   having to filter out the syntax. 
 
 2. It gets out of a writer's way. You don't have to worry about mousing to
    various icons to change text into a heading or create bulleted lists. Just
@@ -26,49 +26,6 @@ then be converted to other formats for publication. We have switched to using
 Markdown for the Liferay 6.1 documentation. It's allowing us to single-source
 our documentation for the web, for ebooks, and for print.
 
-## Markdown Environment
-
-For liferay.com, we use Pegdown with our own, customized parser, which is
-included in this project. You can use this with our `convert.[sh|bat]` script in
-the `bin` folder to preview your articles.
-
-### Editing Markdown Files
-
-Most programmers have a close relationship with their text editor of choice.
-This is not an attempt to break that relationship in any way: Markdown is plain
-text, and you should use whatever tool makes you most effective. One of the
-reasons we chose it is to allow writers to use whatever tools they want.
-
-For those who are looking for some guidance on a good tool to use, you can use
-jEdit. It's a great cross-platform text editor which is highly extensible.
-Though it's written in Java, it can be configured to start in the background
-when your machine starts, which makes it pop up as fast as any native editor.
-This makes it ideal regardless of which platform (Linux, Windows, or Mac) you
-use.
-
-For Markdown, jEdit has a Markdown plugin that can render a Markdown document
-into HTML, and there's also a syntax highlighting mode file that you can
-install. The Markdown plugin is available in jEdit's plugin manager, and the
-mode file can be downloaded from
-[https://github.com/peterlynch/jEdit-modes|Github](https://github.com/peterlynch/jEdit-modes) or [http://hasseg.org/blog/post/302/markdown-and-pod-syntax-highlighting-modes-for-jedit](http://hasseg.org/blog/post/302/markdown-and-pod-syntax-highlighting-modes-for-jedit).  
-
-To install the mode file, copy it into your `.jedit/modes` folder, and edit the
-`catalog` file which is in the same folder. Add this line to the file, between
-the <MODES> tags:
-
-    <MODE NAME="markdown" FILE="markdown.xml" FILE_NAME_GLOB="*.{markdown,md}" />
-
-Save the file and restart jEdit. While editing, you now have syntax highlighting
-and can preview Markdown files in HTML using the plugin.
-
-If you're going to be doing diffing and merging using jEdit's jdiff plugin,
-you'll also need to set the width to be narrower than the 120 character default
-provided by the Markdown mode file. To do this, go to *Utilities* -> *Global
-Options* -> *Editing*. Under *Change Settings for Mode*, select *Markdown*, and
-then change the *Wrap Margin* to 80. Of course, make sure also that *Word Wrap*
-is set to *Soft*.
-
-Now you've got a great environment for editing Markdown files.
 
 ## Ant Target Quick Reference
 
@@ -652,6 +609,54 @@ used in your markdown source.
 Yes, the dependency targets (e.g. `number-headers`) executed by our distribution
 targets, `dist-ce` and `dist-dxp`, fail and report errors if the documents are
 missing IDs or have conflicting IDs.
+
+## Appendix: A Sample Markdown Environment
+
+For liferay.com, we use Pegdown with our own, customized parser, which is
+included in this project. You can use this with our `convert.[sh|bat]` script in
+the `bin` folder to preview your articles.
+
+### Editing Markdown Files
+
+Most programmers have a close relationship with their text editor of choice.
+This is not an attempt to break that relationship in any way: Markdown is plain
+text, and you should use whatever tool makes you most effective. One of the
+reasons we chose it is to allow writers to use whatever tools they want.
+
+For those who are looking for some guidance on a good tool to use, you can use
+jEdit. It's a great cross-platform text editor which is highly extensible.
+Though it's written in Java, it can be configured to start in the background
+when your machine starts, which makes it pop up as fast as any native editor.
+This makes it ideal regardless of which platform (Linux, Windows, or Mac) you
+use.
+
+For Markdown, jEdit has a Markdown plugin that can render a Markdown document
+into HTML, and there's also a syntax highlighting mode file that you can
+install. The Markdown plugin is available in jEdit's plugin manager, and the
+mode file can be downloaded from
+[https://github.com/peterlynch/jEdit-modes|Github](https://github.com/peterlynch/jEdit-modes) or [http://hasseg.org/blog/post/302/markdown-and-pod-syntax-highlighting-modes-for-jedit](http://hasseg.org/blog/post/302/markdown-and-pod-syntax-highlighting-modes-for-jedit).  
+
+To install the mode file, copy it into your `.jedit/modes` folder, and edit the
+`catalog` file which is in the same folder. Add this line to the file, between
+the <MODES> tags:
+
+    <MODE NAME="markdown" FILE="markdown.xml" FILE_NAME_GLOB="*.{markdown,md}" />
+
+Save the file and restart jEdit. While editing, you now have syntax highlighting
+and can preview Markdown files in HTML using the plugin.
+
+If you're going to be doing diffing and merging using jEdit's jdiff plugin,
+you'll also need to set the width to be narrower than the 120 character default
+provided by the Markdown mode file. To do this, go to *Utilities* -> *Global
+Options* -> *Editing*. Under *Change Settings for Mode*, select *Markdown*, and
+then change the *Wrap Margin* to 80. Of course, make sure also that *Word Wrap*
+is set to *Soft*.
+
+Now you've got a great environment for editing Markdown files.
+
+Next, you should look at our 
+[writer's guidelines](03-writers-guidelines.markdown). 
+This is how we ensure a consistent writing style throughout the documentation. 
 
 ## Contact Information
 
