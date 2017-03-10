@@ -9,14 +9,13 @@ you, so you don't need to do any portlet development prior to starting this
 Learning Path. 
 
 Since Liferay Screens uses the Liferay Mobile SDK to make remote service calls, 
-you'll build a Mobile SDK for the Guestbook portlet (the Guestbook Mobile SDK). 
-You'll then install this Mobile SDK, and Screens, in your Android project. 
-You'll also learn about the Android app's design, and implement authentication 
-with 
+you'll build a Mobile SDK capable of calling the Guestbook portlet's remote 
+services (the Guestbook Mobile SDK). You'll then install this Mobile SDK, and 
+Screens, in your Android project. You'll also learn about the Android app's 
+design, and implement authentication with 
 [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android). 
 
-The full list of topics covered in this section of the Learning Path are as 
-follows: 
+This section of the Learning Path covers these topics: 
 
 1.  Setting up the Guestbook portlet
 2.  Building the Guestbook Mobile SDK
