@@ -1,4 +1,4 @@
-# Getting Started with JSF Applications [](id=getting-started-with-jsf-applications)
+# Creating a JSF Project Manually
 
 @product@'s modular architecture lends itself well to modular applications
 created using a multitude of different technologies. JSF applications are no
