@@ -12,6 +12,24 @@ There are several steps involved in creating a form field type:
 4. Implement a `DDMFormFieldType`
 5. Render the field type
 
++$$$
+
+**Note:** To avoid manually creating your own project, use
+[BladeCLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli). If you have
+Blade CLI on your machine, there's a template for creating form fields you can
+leverage using the following command syntax:
+
+    blade create -t form-field [ADDITIONAL OPTIONS] [PROJECT NAME]
+
+See the [BladeCLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli)
+documentation for more information, such as the answer to yuor question, What
+are those additional options?"
+
+Using Blade CLI, you get a project skeleton with much of the boilerplate
+filled in, and you can focus on coding without delay.
+
+$$$
+
 Start by setting up the project's metadata.
 
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
