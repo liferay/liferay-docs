@@ -34,11 +34,11 @@ Before getting started, learn what @product@'s field types consist of.
 
 ## Anatomy of a Field Type Module [](id=anatomy-of-a-field-type-module)
 
-The `dynamic-data-mapping-type-*` modules in @product@'s source code (inside the
-*Forms and Workflow* application suite) are good templates to follow when
-developing your own field types. For example, look at the directory structure of
-the `dynamic-data-mapping-type-paragraph` module in the Forms and Workflow
-application suite:
+The `dynamic-data-mapping-type-*` modules in @product@'s source code (inside
+the *Forms and Workflow* application suite) are good templates to follow when
+developing your own field types. For example, look at the directory structure
+of the `dynamic-data-mapping-type-paragraph` module (version 2.0.7) in the
+Forms and Workflow application suite:
 
     bnd.bnd
     build.gradle
