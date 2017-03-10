@@ -1,10 +1,11 @@
-# Adding Settings to Form Field Types
+# Adding Settings to Form Field Types [](id=adding-settings-to-form-field-types)
 
 Once you develop a [Form Field
 Type](/developer/tutorials/-/knowledge_base/7-0/creating-form-field-types), you
-might want to add settings to it, and you certainly can. Here you'll learn by
-discovering how to add a *mask* and a *placeholder* to the Time field created in
-the previous tutorial. 
+might need to add settings to it. For example, your time field might need to be
+configured to accept different time formats. Here you'll learn how to add
+settings to form field types by adding a *mask* and a *placeholder* to the Time
+field type created in the previous tutorial. 
 
 +$$$
 
@@ -17,7 +18,7 @@ pick the mask you want.
 
 $$$
 
-To add settings to form field types, use these steps:
+To add settings to form field types, you'll use these steps:
 
 - Write an interface that extends the default field type configuration,
     `DefaultDDMFormFieldTypesettings`.
@@ -25,13 +26,13 @@ To add settings to form field types, use these steps:
     available to the JavaScript component and/or the Soy template for rendering.
 - Update the JavaScript component (defined in `time_field.js` in our example) to
     configure the new settings and their default values.
-- Update the Soy template to include any settings that will need to be rendered
+- Update the Soy template to include any settings that need to be rendered
     in a form (the placeholder, in our example).
 
-Get started by writing the interface that controls what settings your field will
-use.
+Get started by crafting the interface that controls what settings your field
+has.
 
-## Extending the Default Type Settings
+## Extending the Default Type Settings [](id=extending-the-default-type-settings)
 
 To add type settings, you need a `*TypeSettings` class that extends
 `DefaultDDMFormFieldTypeSettings`. Since this example works with a Time field
@@ -39,7 +40,7 @@ type, call it `TimeDDMFormFieldTypeSettings`.
 
 This class sets up the *Add [Field Type]* configuration form.
 
-![Figure x: Like your custom field types, the text field type's settings are configured in a Java interface.](../../../images/forms-text-settings.png)
+![Figure 1: Like your custom field types, the text field type's settings are configured in a Java interface.](../../../images/forms-text-settings.png)
 
 Here's what it looks like:
 
@@ -99,7 +100,7 @@ Would you look at that! Most of the work you need to do is in the class's
 annotations. 
 
 In this class you're setting up a dynamic form with all the settings your form
-field type will need. The form layout presented here will give your form the
+field type needs. The form layout presented here gives your form the
 look and feel of a native form field type. See the note below for more
 information on the DDM annotations used in this form.
 
@@ -126,9 +127,7 @@ For now, here are brief explanations for the annotations used in the above
 example:
 
 `@DDMForm`
-: Instantiates a new `DDMForm`. Creates a dynamic form from the annotation. Adds
-a new DDL Record Set to your Liferay database. <!--I don't think it does, in
-fact.-->
+: Instantiates a new `DDMForm`. Creates a dynamic form from the annotation.
 
 `@DDMFormLayout`
 : Takes two variables: `paginationMode` and `value`. The pagination mode is a
@@ -144,9 +143,9 @@ value is one or more `@DDMFormLayoutRow`s.
 **Note:** The title of the layout pages are `basic` and `properties` for all of
 @product@'s field types: in future versions of the Forms application, the
 localized value of the key you specify here will be the heading for the form
-section (the layout page is a section of the form). In the current (at the time
-of this writing, DE DXP SP1 and CE 7.0 GA4) version of the application, these
-will not be displayed.  To remain consistent with the Forms application's
+section (the layout page is a section of the form). In the current version of
+@product@ (at the time of this writing, DE DXP SP1 and CE 7.0 GA3), these
+are not displayed. To remain consistent with the Forms application's
 default fields, it's best to follow the standard approach and use `basic` and
 `properties`. 
 
@@ -161,14 +160,14 @@ settings forms have one row and one column. Each column accepts two argument,
 
 `@DDMFormField`
 : Use this annotation to add new fields to the settings form. In this example,
-these will be the `mask` and `placeholder` settings.
+the `mask` and `placeholder` settings are configured with this annotation.
 
 $$$
 
 Once your `*TypeSettings` class is finished, move on to update the `*Renderer`
 class for your form field type.
 
-## Updating the Renderer Class
+## Updating the Renderer Class [](id=updating-the-renderer-class)
 
 To send the new configuration settings to the Soy template so they can be
 displayed to the end user, you need to modify the `*DDMFormFieldRenderer`.
@@ -224,7 +223,7 @@ $$$
 
 Next configure the JavaScript component to include the new settings.
 
-## Adding Settings to the JavaScript Component
+## Adding Settings to the JavaScript Component [](id=adding-settings-to-the-javascript-component)
 
 The JavaScript component needs to know about the new settings. First configure
 them as attributes of the component:
@@ -285,7 +284,7 @@ Now the field type JavaScript component is configured to include the settings.
 All you have left to do is to update the Soy template so the placeholder can be
 rendered in the form with the time field.
 
-## Updating the Soy Template
+## Updating the Soy Template [](id=updating-the-soy-template)
 
 After all that, adding the placeholder setting to your Soy template's logic is
 simple.
