@@ -23,7 +23,7 @@ example, visit the
 [PortalOpenSearchImpl.search](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/search/PortalOpenSearchImpl.java)
 method.
 
-There are four different kinds of actions supported by the Portlet Providers
+There are five different kinds of actions supported by the Portlet Providers
 framework: `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Find the portlet ID
 or portlet URL (depending on your needs), and specify the entity type and action
 you want the portlet to handle.
