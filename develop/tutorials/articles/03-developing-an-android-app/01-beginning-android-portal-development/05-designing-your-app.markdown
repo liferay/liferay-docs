@@ -1,8 +1,8 @@
 # Designing Your App [](id=designing-your-app)
 
-As a developer, you know that developing any kind of app without an overall
-design goal and plan to implement it is a recipe for disaster. To avoid that,
-you need to decide some things upfront. The Liferay Guestbook app needs a
+As a developer, you know that developing any kind of app without an overall 
+design goal and plan to implement it is a recipe for disaster. To avoid this, 
+you need to decide some things upfront. The Liferay Guestbook app needs a 
 straightforward way to do three things: 
 
 1. Authenticate users
@@ -42,15 +42,15 @@ a guestbook's entries in a similar list. You'll display the entries by inserting
 Entry List Screenlet in the UI element you want them to appear in. 
 
 Also note that these Screenlets aren't just any kind of Screenlet; they're *list 
-Screenlets*. List Screenlets are developed using a special framework in Liferay 
+Screenlets*. You develop list Screenlets by using a special framework in Liferay 
 Screens that sits on top of the core Screenlet framework. This list Screenlet 
 framework makes it much simpler for developers to write Screenlets that display 
 lists of entities from a @product@ instance. 
 
-Awesome! You now have a basic UI design and know the type of Screenlets you'll 
-create to implement it. But where in the app can you use these Screenlets? The 
-app only contains one empty activity: `MainActivity`. You'll use this activity 
-for authentication, using Login Screenlet. To use your custom list Screenlets, 
+Awesome! Now you have a basic UI design and know the Screenlets you'll create to 
+implement it. But where in the app can you use these Screenlets? The app only 
+contains one empty activity: `MainActivity`. You'll use this activity for 
+authentication, using Login Screenlet. To use your custom list Screenlets, 
 you'll need to create an additional activity and a fragment: 
 `GuestbooksActivity` and `EntriesFragment`. You'll create the activity in a 
 moment. 
@@ -70,15 +70,14 @@ one activity, `GuestbooksActivity`, to display guestbooks and entries. The
 navigation drawer and `EntriesFragment` are part of this activity. 
 
 Now you're ready to create `GuestbooksActivity`. Fortunately, Android Studio has 
-a template for creating an activity that contains a navigation drawer. In 
-project view, right click the package `com.liferay.docs.liferayguestbook` and 
-select *New* &rarr; *Activity* &rarr; *Navigation Drawer Activity* to launch the 
-New Android Activity wizard. Name the activity `GuestbooksActivity`, accept 
-the defaults for the remaining fields, and click *Finish*. After Android 
-Studio creates the activity, the `GuestbooksActivity` class and 
-`content_guestbooks.xml` layout open in the editor. Close them. You don't need 
-to edit these files yet. 
+a template for creating an activity that contains a navigation drawer. Right 
+click the package `com.liferay.docs.liferayguestbook` and select *New* &rarr; 
+*Activity* &rarr; *Navigation Drawer Activity* to launch the New Android 
+Activity wizard. Name the activity `GuestbooksActivity`, accept the defaults for 
+the remaining fields, and click *Finish*. After Android Studio creates the 
+activity, the `GuestbooksActivity` class and `content_guestbooks.xml` layout 
+open in the editor. Close them. You don't need to edit these files yet. 
 
 Great! Now you understand the Liferay Guestbook app's basic design. You also 
 have the basic app structure in place. Next, you'll authenticate users by adding 
-Login Screenlet. 
+Login Screenlet to `MainActivity`. 
