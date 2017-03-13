@@ -1,7 +1,7 @@
 # Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication)
 
-For the app to retrieve data from the Guestbook portlet, the app's user must 
-first authenticate to the @product@ instance. The other features you'll develop 
+For the app to retrieve data from the Guestbook portlet, the user must first 
+authenticate to the @product@ instance. The other features you'll develop 
 in your app depend on successful @product@ authentication. You can implement 
 authentication using the Liferay Mobile SDK, but it takes time to write. Using 
 Liferay Screens to authenticate takes about ten minutes. In this article, you'll 
@@ -39,14 +39,14 @@ When prompted by Android Studio, add the following XML namespace to the
 
 Note the two `liferay` attributes in the Login Screenlet's XML. The 
 `liferay:basicAuthMethod` attribute tells the Screenlet to use basic 
-authentication instead of OAuth. Its value, `screen_name`, tells the Screenlet 
+authentication instead of OAuth. The `screen_name` value tells the Screenlet 
 to authenticate with the user's screen name. You can alternatively set this to 
 `email` or `userId`. This Learning Path uses `screen_name` only because it's 
-much faster to type a screen name than a full email address when authenticating 
-in the emulator. Also, note that this value must match the authentication 
-setting in the @product@ instance. By default, @product@ instances use email 
-address for authentication. For this Learning Path, you need to set your 
-@product@ instance to authenticate by screen name instead. See 
+much faster to type a screen name than a full email address in the emulator. 
+Also, this value must match the authentication setting in the @product@ 
+instance. By default, @product@ instances use email address for authentication. 
+For this Learning Path, you need to set your @product@ instance to authenticate 
+by screen name instead. See 
 [this section in Login Screenlet's reference documentation](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#basic-authentication) 
 for instructions on changing your @product@ instance's authentication setting. 
 
@@ -56,19 +56,19 @@ This attribute sets the View to display the Screenlet with. The value
 Views in Liferay Screens, see 
 [the tutorial on using Views](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets). 
 For more information on Login Screenlet's available attributes, see 
-[its reference documentation](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android). 
+[the Screenlet's reference documentation](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android). 
 
 Next, you'll implement `LoginListener` in the `MainActivity` class. Open 
 `MainActivity` and change its declaration to implement `LoginListener`. The 
-class declaration should now appear as follows:
+class declaration should now appear as follows: 
 
     public class MainActivity extends AppCompatActivity implements LoginListener {...
 
 You must also add the `com.liferay.mobile.screens.auth.login.LoginListener` 
 import. 
 
-Implementing `LoginListener` requires you to implement two methods: 
-`onLoginSuccess` and `onLoginFailure`. Add them to the class as follows: 
+Implementing `LoginListener` requires you to implement the `onLoginSuccess` and 
+`onLoginFailure` methods. Add them to the class as follows: 
 
     @Override
     public void onLoginSuccess(User user) {
@@ -105,14 +105,13 @@ reference. The `setListener` method then sets `MainActivity` as Login
 Screenlet's listener. 
 
 Now run the app by clicking the green *play* button in the toolbar, or by 
-selecting *Run 'app'* from the *Run* menu. If you've never run the emulator, 
-you'll have to go through the process of creating and choosing an Android 
-Virtual Device for your app to run on. For more information on this and running 
-the emulator in general, 
+selecting *Run 'app'* from the *Run* menu. If you've never run the emulator, you 
+must first create and choose an Android Virtual Device (AVD) to run your app. 
+For more information on this and running the emulator in general, 
 [click here](https://developer.android.com/studio/run/emulator.html). 
-Once the emulator launches, unlock it (if necessary). Your app automatically 
-opens to Login Screenlet. Enter your credentials and click *SIGN IN*. The toast 
-message then pops up saying that the login succeeded. 
+Once the emulator launches, unlock it if necessary. Your app automatically opens 
+to Login Screenlet. Enter your credentials and click *SIGN IN*. The toast 
+message pops up saying that the login succeeded. 
 
 ![Figure 1: Login Screenlet successfully authenticated you with the @product@ instance.](../../../images/android-login-screenlet-success.png)
 
