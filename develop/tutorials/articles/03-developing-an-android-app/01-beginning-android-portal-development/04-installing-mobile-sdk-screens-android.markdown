@@ -16,7 +16,7 @@ the following in your Android project:
   @product@'s core apps, they make their server calls with Liferay's pre-built 
   Mobile SDK. Note that all Screenlets, including those that make server calls 
   with a custom built Mobile SDK, must use the framework in Liferay's pre-built 
-  Mobile SDK to issue those calls. 
+  Mobile SDK to issue their calls. 
 
 Since Liferay's pre-built Mobile SDK is a dependency of Liferay Screens, 
 installing Screens automatically installs this Mobile SDK. You must, however, 
@@ -34,12 +34,12 @@ The Mobile SDK Builder generated two separate JAR files in your
 
 2. `android/build/libs/liferay-android-sdk-7.0.4.jar`
 
-The first JAR file contains the Guestbook Mobile SDK. The second JAR file 
-contains a custom built version of Liferay's pre-built Mobile SDK. Because 
-Screens includes the pre-built Mobile SDK, you don't need to install the second 
-JAR file. You must, however, install the first JAR file. To do so, copy 
+The first JAR file is the Guestbook Mobile SDK. The second JAR file is a custom 
+built version of Liferay's pre-built Mobile SDK. Because Screens includes the 
+pre-built Mobile SDK, you don't need to install the second JAR file. You must, 
+however, install the first JAR file. To do so, copy 
 `liferay-gb-android-sdk-1.0.jar` into your app's `app/libs` folder (the default 
-location for your Android app's directory is 
+location for your Android app is 
 `AndroidStudioProjects/LiferayGuestbook`). That's it! Next, you'll install 
 Liferay Screens. 
 
@@ -52,29 +52,13 @@ Studio project. This screenshot highlights the app module's `build.gradle` file:
 
 ![Figure 1: The app module's `build.gradle` file.](../../../images/android-build-gradle-app-module.png)
 
-<!--
-In the app module's `build.gradle` file, add these lines just after the closing 
-`buildTypes` brace: 
-
-    packagingOptions {
-      exclude 'META-INF/LICENSE'
-      exclude 'META-INF/NOTICE'
-    }
-
-Next, add the following code on the first level (on the same level as the 
-`android` element): 
-
-    repositories {
-      jcenter()
-    }
--->
 In the app module's `build.gradle` file, add the following line of code inside 
 the `dependencies` element: 
 
     compile 'com.liferay.mobile:liferay-screens:2.1.0'
 
 Once you edit `build.gradle`, a message appears at the top of the file that asks 
-you to *sync* your app with its Gradle files. Syncing with the Gradle files is 
+you to sync your app with its Gradle files. Syncing with the Gradle files is 
 required to incorporate any changes you make to them. Syncing also downloads and 
 installs any new dependencies, like the Liferay Screens dependency that you just
 added. Sync the Gradle files now by clicking the *Sync Now* link in the message.
@@ -82,15 +66,15 @@ The following screenshot shows the edited `build.gradle` file with the Sync Now
 link highlighted by a red box: 
 
 ![Figure 2: After editing the app module's `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../../images/android-build-gradle-sync.png)
- 
+
 Great! Now you're ready to test your Screens and Mobile SDK installations. 
 
 ## Verifying the Installations [](id=verifying-the-installations)
 
 To check your Screens and Mobile SDK installations, first open your project's 
 `MainActivity` class in Android Studio. It's in the `java` folder's
-`com.liferay.docs.liferayguestbook` package. Add the following imports at the 
-top of the file: 
+`com.liferay.docs.liferayguestbook` package. Then add the following imports at 
+the top of the file: 
 
     import com.liferay.mobile.android.service.Session;
     import com.liferay.mobile.android.v7.entry.EntryService;
