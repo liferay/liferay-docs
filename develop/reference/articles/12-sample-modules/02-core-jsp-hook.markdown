@@ -26,11 +26,9 @@ see the Javadoc listed in this sample's `BladeCustomJspBag` class.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
 
-There are five different versions of this sample, each built with a different
+There are three different versions of this sample, each built with a different
 build tool:
 
-- [Bndtools](https://github.com/liferay/liferay-blade-samples/tree/master/bndtools/blade.corejsphook)
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.corejsphook)
 - [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.corejsphook)
 - [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.corejsphook)
 - [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.corejsphook)

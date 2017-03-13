@@ -1,4 +1,4 @@
-# From Liferay Portal 6 to @product-ver@ [](id=from-liferay-6-to-liferay-7)
+# From Liferay Portal 6 to 7 [](id=from-liferay-6-to-liferay-7)
 
 Becoming familiar with a platform as large and fully featured as Liferay is 
 a big task. You learn the ins and outs of what it can do, the tips and best 

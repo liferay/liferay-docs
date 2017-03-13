@@ -123,18 +123,62 @@ For a complete example of a workflow script that uses the above Groovy script,
 please see this `legal-workflow-script.xml` file:
 [https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml](https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml).
 
-The combination of Liferay's script and workflow engines is incredibly
-powerful. However, since it provides users with the ability to execute code, it
-can be dangerous. When configuring your permissions, be aware of the potential
-consequences of poorly, or maliciously, written scripts inside of a workflow
+## Calling OSGi Services [](id=calling-osgi-services)
+
+How do you call OSGi services from a workflow script, accounting for the dynamic
+environment of the OSGi runtime, where services your script depends on can
+disappear without notice? 
+[Use a service tracker](/develop/tutorials/-/knowledge_base/7-0/service-trackers). 
+That way you can check to make sure your code has access to the service it
+needs, and if not, do something appropriate in response. Here's a little example
+code to show you how this might look in Groovy (import statements excluded):
+
+    ServiceTracker<SomeLocalService,SomeLocalService> st;
+
+    try {
+        Bundle bundle = FrameworkUtil.getBundle(GroovyExecutor.class);
+
+        st = new ServiceTracker(bundle.getBundleContext(), JournalArticleLocalService.class, null);
+        st.open();
+
+        if (!st.isEmpty()) {
+            SomeLocalService _SomeLocalService = st.getService();
+
+            //Do cool stuff with the service you retrieved
+        }
+    }
+    catch(Exception e) {
+        //Handle error appropriately
+    }
+    finally {
+        if (st != null) {
+            st.close();
+        }
+    }
+
+If you read the article on 
+[service trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers), 
+the only odd looking piece of the above code is the `getBundle` call: why is
+`GroovyExecutor.class` passed as a parameter? The parameter passed to the
+`FrameworkUtil.getBundle` call must be a class from the bundle executing the
+workflow script. This is different from the context of a plugin project, where
+you'd want to get the bundle hosting the class where you're making the call
+(using `this.getClass()`, for example). Note that for another scripting engine,
+you must pass in a concrete class from the particular bundle executing your
+script.
+
+The combination of Liferay's script and workflow engines is incredibly powerful.
+However, since it provides users with the ability to execute code, it can be
+dangerous. When configuring your permissions, be aware of the potential
+consequences of poorly or maliciously written scripts inside of a workflow
 definition. For more information on creating workflow definitions with Kaleo
-workflow, see Liferay's
-[workflow documentation (not yet written)]().
+workflow, see @product@'s 
+[workflow documentation](/discover/portal/-/knowledge_base/7-0/using-workflow).
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services From Scripts](/discover/deployment/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+[Invoking Liferay Services From Scripts](/discover/portal/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
 
-[Running Scripts From the Script Console](/discover/deployment/-/knowledge_base/7-0/running-scripts-from-the-script-console)
+[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console)
 
-[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)
+[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)

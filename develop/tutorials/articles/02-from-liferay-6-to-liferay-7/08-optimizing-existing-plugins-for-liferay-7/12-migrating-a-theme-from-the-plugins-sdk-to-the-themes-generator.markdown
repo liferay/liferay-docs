@@ -26,7 +26,7 @@ an array of  [theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gu
 that facilitate developing and managing themes. 
 
 The *upgrade* Gulp task upgrades Liferay Portal 6 themes to @product-ver@. For details,
-refer to the [Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/themelets/upgrading-themes)
+refer to the [Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes)
 tutorial. 
 
 In addition to the *upgrade* task, there are tasks for building and deploying

@@ -109,7 +109,7 @@ the configuration.
 
 ### Install the New Version of @product@
 
-Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/installation-and-setup)
+Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/preparing-for-install)
 to install @product@ on your application server or use @product@ bundled with your
 application server of choice. Once you have @product@ installed, DON'T START IT! 
 

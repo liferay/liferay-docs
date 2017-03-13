@@ -15,27 +15,29 @@ that saves bookmarks to Liferay's Bookmarks portlet.
 
 In general, you use the following steps to create Screenlets: 
 
-1. Determine your Screenlet's location. Where you create your Screenlet depends 
-   on how you'll use it. 
+1. [Determine your Screenlet's location](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#determining-your-screenlets-location). 
+   Where you create your Screenlet depends on how you'll use it. 
 
-2. Create the Screenlet's UI (its View). Although this tutorial presents all 
-   the information you need to create a View for your Screenlet, you may first 
-   want to learn how to 
+2. [Create the Screenlet's UI (its View)](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-ui). 
+   Although this tutorial presents all the information you need to create a View 
+   for your Screenlet, you may first want to learn how to 
    [create a View](/develop/tutorials/-/knowledge_base/7-0/creating-android-views). 
    For more information on Views in general, see 
    [the tutorial on using Views with Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets). 
 
-3. Create the Screenlet's Interactor. Interactors are Screenlet components that 
-   make server calls. 
+3. [Create the Screenlet's Interactor](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-Interactor-class). 
+   Interactors are Screenlet components that make server calls. 
 
-4. Define the Screenlet’s attributes. These are the XML attributes the app 
-   developer can set when inserting the Screenlet’s XML. These attributes 
-   control aspects of the Screenlet’s behavior. You'll add functionality to 
-   these attributes in the Screenlet class. 
+4. [Define the Screenlet's attributes](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#defining-screenlet-attributes-in-your-app). 
+   These are the XML attributes the app developer can set when inserting the 
+   Screenlet's XML. These attributes control aspects of the Screenlet's 
+   behavior. You'll add functionality to these attributes in the Screenlet 
+   class. 
 
-5. Create the Screenlet class. The Screenlet class is the Screenlet's central 
-   component. It controls the Screenlet's behavior and is the component the app 
-   developer interacts with when inserting a Screenlet. 
+5. [Create the Screenlet class](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlet-class). 
+   The Screenlet class is the Screenlet's central component. It controls the 
+   Screenlet's behavior and is the component the app developer interacts with 
+   when inserting a Screenlet. 
 
 To understand the components that make up a Screenlet, you should first 
 learn the
@@ -177,9 +179,9 @@ to handle user actions. Follow these steps to create this View class:
     has a reference to the Screenlet. For example, here are `AddBookmarkView`'s 
     instance variables: 
 
-        private EditText _urlText;
-        private EditText _titleText;
-        private BaseScreenlet _screenlet;
+        private EditText urlText;
+        private EditText titleText;
+        private BaseScreenlet screenlet;
 
 3.  Implement your View Model interface. Implement your View Model's getter and 
     setter methods to get and set the inner value of each component, 
@@ -187,19 +189,19 @@ to handle user actions. Follow these steps to create this View class:
     `AddBookmarkViewModel`: 
 
         public String getURL() {
-            return _urlText.getText().toString();
+            return urlText.getText().toString();
         }
 
         public void setURL(String value) {
-            _urlText.setText(value);
+            urlText.setText(value);
         }
 
         public String getTitle() {
-            return _titleText.getText().toString();
+            return titleText.getText().toString();
         }
 
         public void setTitle(String value) {
-            _titleText.setText(value);
+            titleText.setText(value);
         }
 
 4.  Implement a listener interface to handle user actions in the Screenlet. For 
@@ -221,15 +223,15 @@ to handle user actions. Follow these steps to create this View class:
     `onFinishInflate()` method. This method should also retrieve and assign any 
     other UI elements from your layout. For example, the `onFinishInflate()` 
     implementation in `AddBookmarkView` retrieves the URL and title attributes 
-    from the layout, and sets them to the `_urlText` and `_titleText` variables, 
+    from the layout, and sets them to the `urlText` and `titleText` variables, 
     respectively. This method then retrieves the button from the layout and sets 
     this View class as the button's click listener:
     
         protected void onFinishInflate() {
             super.onFinishInflate();
 
-            _urlText = (EditText) findViewById(R.id.url);
-            _titleText = (EditText) findViewById(R.id.title_bookmark);
+            urlText = (EditText) findViewById(R.id.url);
+            titleText = (EditText) findViewById(R.id.title_bookmark);
 
             Button addButton = (Button) findViewById(R.id.add_button);
             addButton.setOnClickListener(this);
@@ -262,12 +264,12 @@ to handle user actions. Follow these steps to create this View class:
 
         @Override
         public BaseScreenlet getScreenlet() {
-            return _screenlet;
+            return screenlet;
         }
 
         @Override
         public void setScreenlet(BaseScreenlet screenlet) {
-            _screenlet = screenlet;
+            this.screenlet = screenlet;
         }
 
     Note that although you must implement the `show[something]Operation`
@@ -286,7 +288,7 @@ A Screenlet's Interactor makes the service call to retrieve the data you need
 from a Liferay instance. An Interactor is made up of several components: 
 
 1. The event class. This class lets you handle communication between the 
-   Screenlet’s components via event objects that contain the server call’s 
+   Screenlet's components via event objects that contain the server call's 
    results. Screens uses the 
    [EventBus](https://greenrobot.github.io/EventBus/) 
    library for this. Screens supplies the 
@@ -476,15 +478,14 @@ For example,
 extends `BaseScreenlet<AddBookmarkViewModel, AddBookmarkInteractor>` and 
 implements `AddBookmarkListener`. It also contains instance variables for 
 `AddBookmarkListener` and the bookmark's folder ID, and getters and setters for 
-these variables. Also note the constructors call `BaseListScreenlet`'s 
-constructors: 
+these variables. Also note the constructors call `BaseScreenlet`'s constructors: 
 
     public class AddBookmarkScreenlet extends 
         BaseScreenlet<AddBookmarkViewModel, AddBookmarkInteractor>
         implements AddBookmarkListener {
 
-        private long _folderId;
-        private AddBookmarkListener _listener;
+        private long folderId;
+        private AddBookmarkListener listener;
 
         public AddBookmarkScreenlet(Context context) {
             super(context);
@@ -499,19 +500,19 @@ constructors:
         }
 
         public long getFolderId() {
-            return _folderId;
+            return folderId;
         }
 
         public void setFolderId(long folderId) {
-            _folderId = folderId;
+            this.folderId = folderId;
         }
 
         public AddBookmarkListener getListener() {
-            return _listener;
+            return listener;
         }
 
         public void setListener(AddBookmarkListener listener) {
-            _listener = listener;
+            this.listener = listener;
         }
 
         ...
@@ -525,16 +526,16 @@ For example, here are Add Bookmark Screenlet's listener method implementations:
     public void onAddBookmarkSuccess() {
         getViewModel().showFinishOperation(null);
 
-        if (_listener != null) {
-            _listener.onAddBookmarkSuccess();
+        if (listener != null) {
+            listener.onAddBookmarkSuccess();
         }
     }
 
     public void onAddBookmarkFailure(Exception e) {
         getViewModel().showFailedOperation(null, e);
 
-        if (_listener != null) {
-            _listener.onAddBookmarkFailure(e);
+        if (listener != null) {
+            listener.onAddBookmarkFailure(e);
         }
     }
 
@@ -580,7 +581,7 @@ Next, you must implement `BaseScreenlet`'s abstract methods:
 
             String defaultTitle = typedArray.getString(R.styleable.AddBookmarkScreenlet_defaultTitle);
 
-            _folderId = castToLong(typedArray.getString(R.styleable.AddBookmarkScreenlet_folderId));
+            folderId = castToLong(typedArray.getString(R.styleable.AddBookmarkScreenlet_folderId));
 
             typedArray.recycle();
 
