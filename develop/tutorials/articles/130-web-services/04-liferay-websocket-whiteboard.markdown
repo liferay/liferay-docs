@@ -44,8 +44,8 @@ OSGi container.
 
 ## Configuring a Liferay OSGi Container [](id=configuring-a-liferay-osgi-container)
 
-Defining a new WebSocket server endpoint in @product@ is straightforward. In 
-your module that defines your WebSocket endpoint, do the following: 
+Defining a new WebSocket server endpoint in @product@ is straightforward. Follow 
+these steps to do so: 
 
 1. If you're running Liferay Portal 7.0.2 GA3 or earlier, or Liferay Digital 
    Enterprise 7.0 Fix Pack 7 or earlier, add the following property to your 
@@ -73,8 +73,8 @@ your module that defines your WebSocket endpoint, do the following:
 
 2. Deploy the Liferay WebSocket Whiteboard module 
    (`com.liferay.websocket.whiteboard`) to your @product@ instance. You can 
-   download this module from several places. Click these links to download the 
-   module: 
+   download this module from JCenter or Maven Central by clicking the respective 
+   link: 
 
     - [JCenter](https://bintray.com/bintray/jcenter/com.liferay%3Acom.liferay.websocket.whiteboard)
     - [Maven Central](https://search.maven.org/#search%7Cga%7C1%7Cliferay.websocket.whiteboard)
@@ -84,11 +84,11 @@ your module that defines your WebSocket endpoint, do the following:
 
         com.liferay:com.liferay.websocket.whiteboard:1.0.1
 
-4. Define a WebSocket server endpoint as you normally would. Note, however, that 
-   @product@ doesn't currently support the annotation-driven approach; only the 
-   interface-driven approach is supported. To create a WebSocket server 
-   endpoint, register an OSGi Service for `javax.websocket.Endpoint.class` with 
-   the following properties: 
+4. In your module, define a WebSocket server endpoint as you normally would. 
+   Note, however, that @product@ doesn't currently support the annotation-driven 
+   approach; only the interface-driven approach is supported. To create a 
+   WebSocket server endpoint, register an OSGi Service for 
+   `javax.websocket.Endpoint.class` with the following properties: 
 
     - `org.osgi.http.websocket.endpoint.path`: the WebSocket's path (required)
     - `org.osgi.http.websocket.endpoint.decoders`: the WebSocket's decoders 
