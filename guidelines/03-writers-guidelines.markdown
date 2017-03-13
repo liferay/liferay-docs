@@ -472,3 +472,6 @@ to adhere to them before sending a pull request to have their text included in
 our documentation. They are evolving over time, so you may want to review them
 for changes if you haven't looked at them in a while. 
 
+Do you still have questions? Our [FAQ](04-faq.markdown) can point you in the
+right direction. 
+

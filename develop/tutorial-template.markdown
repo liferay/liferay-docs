@@ -2,7 +2,7 @@
 
 The title above is the title of the tutorial, corresponding to an `<h1>` in
 HTML. It's the top-level link in the left navigation hierarchy. This paragraph
-is an introduction to the tutorial. Tell the reader what this tutorial is for,
+is an introduction to the tutorial. Tell the reader what this tutorial is for
 and show him or her the end state of what you'll accomplish in this tutorial. 
 
 You can use multiple paragraphs if you want, of course, but get to the point as

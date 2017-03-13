@@ -128,7 +128,7 @@ please see this `legal-workflow-script.xml` file:
 How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
 disappear without notice? 
-[Use a service tracker](/developer/tutorials/-/knowledge_base/7-0/service-trackers). 
+[Use a service tracker](/develop/tutorials/-/knowledge_base/7-0/service-trackers). 
 That way you can check to make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy (import statements excluded):
@@ -157,7 +157,7 @@ code to show you how this might look in Groovy (import statements excluded):
     }
 
 If you read the article on 
-[service trackers](/developer/tutorials/-/knowledge_base/7-0/service-trackers), 
+[service trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers), 
 the only odd looking piece of the above code is the `getBundle` call: why is
 `GroovyExecutor.class` passed as a parameter? The parameter passed to the
 `FrameworkUtil.getBundle` call must be a class from the bundle executing the

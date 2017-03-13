@@ -13,11 +13,10 @@ If you'd rather use Solr, it's also supported. See [here](/discover/deployment/-
 on installing and configuring Solr.
 
 If you just want to get up and running quickly with Elasticsearch, refer to the
-[Configuring Search
-article](/discover/deployment/-/knowledge_base/7-0/configuring-search). It
-assumes that you only want to know what's necessary for the installation and
+[Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
+It assumes that you only want to know what's necessary for the installation and
 configuration of Elasticsearch in a single server environment, and it doesn't
-include all the clustering and tuning instructions found here.In this article
+include all the clustering and tuning instructions found here. In this article
 you'll learn how to configure Elasticsearch for use in @product@ production
 environments. 
 
@@ -56,7 +55,7 @@ Install Elasticsearch, and then you can begin configuring it to use with
 @product@. 
 
 1.  Follow the instructions
-    [here](/discover/deployment/-/knowledge_base/7-0/configuring-search#step-one-find-the-right-version-of-elasticsearch)
+    [here](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch#step-one-find-the-right-version-of-elasticsearch)
     to find the version of Elasticsearch that matches your installation and
     download it. 
 
@@ -220,7 +219,7 @@ configuration file:
 As you can see from the System Settings entry for Elasticsearch, there are a lot
 more configuration options available that help you tune your system for optimal
 performance. For a detailed accounting of these, refer to the reference article
-on [Elasticsearch Settings](/discover/reference/-/knowledge_base/7-0/elastic-search-setttings).
+on [Elasticsearch Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings).
 
 What follows here are some known-good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
@@ -309,7 +308,7 @@ Elasticsearch adapter in @product@.
 
 ### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
 
-@product@ has divided the [available configuration options](/discover/reference/-/knowledge_base/7-0/elasticsearch-setttings) 
+@product@ has divided the [available configuration options](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) 
 into two groups: the ones you'll use most often by default, and a catch-all for
 everything else. If you need to configure the local Elasticsearch client when
 running in remote mode, but the necessary setting isn't available by default,
@@ -328,7 +327,7 @@ in remote mode. In production, only one additional configuration can be added he
 
 The rest of the settings for the client are available as default configuration
 options in the Liferay Elasticsearch adapter. See the [Elasticsearch
-Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-setttings)
+Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
 reference article for more information. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
 for a description of all the client settings and for an example.

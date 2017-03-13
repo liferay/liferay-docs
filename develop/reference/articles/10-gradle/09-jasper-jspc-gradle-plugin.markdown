@@ -7,7 +7,7 @@ can be useful to
 - check for errors in the JSP files.
 - pre-compile the JSP files for better performance.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+The plugin has been successfully tested with Gradle 2.5 up to 3.3.
 
 ## Usage [](id=usage)
 
@@ -16,7 +16,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.jasper.jspc", version: "2.0.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.jasper.jspc", version: "2.0.1"
     }
 
     repositories {
@@ -121,6 +121,7 @@ manually adding a dependency to the `jspCTool` configuration:
 dependencies {
     jspCTool(group: "com.liferay", name: "com.liferay.jasper.jspc", version: "2.0.0") {
         exclude group: "com.liferay.portal"
+        exclude group: "javax.servlet"
     }
 
     jspCTool group: "org.apache.ant", name: "ant", version: "1.9.4"
