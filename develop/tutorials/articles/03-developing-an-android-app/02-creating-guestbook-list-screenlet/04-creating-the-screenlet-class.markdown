@@ -43,7 +43,7 @@ portal site to communicate with if they don't want to use the default `groupId`
 setting in `server_context.xml`. You'll account for this attribute's 
 functionality in the Screenlet class. 
 
-Now that you've defined these attributes and know what they need to do, you're 
+Now that you've defined this attribute and know what it needs to do, you're 
 ready to write the Screenlet class. 
 
 ## Extending BaseListScreenlet
@@ -51,10 +51,10 @@ ready to write the Screenlet class.
 Recall from 
 [the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlet-class) 
 that you must extend `BaseListScreenlet` to create a Screenlet class for a list 
-Screenlet. Use the following steps to create `GuestbookListScreenlet`; the 
+Screenlet. Use the following steps to create `GuestbookListScreenlet`, the 
 Screenlet class for Guestbook List Screenlet. Note that these steps closely 
-follow the steps in the list Screenlet creation tutorial. Departures from the 
-tutorial's steps are noted. 
+follow those in the list Screenlet creation tutorial for creating a Screenlet 
+class. Departures from the tutorial's steps are noted. 
 
 1. Create the `GuestbookListScreenlet` class in the package 
    `com.liferay.docs.guestbooklistscreenlet`. Recall that Screenlet classes for 
@@ -72,8 +72,8 @@ tutorial's steps are noted.
 
     Note that the list Screenlet tutorial also instructs you to create instance 
     variables for your Screenlet's attributes. Guestbook List Screenlet doesn't 
-    require instance variables for `groupId` and `layoutId` because Screens 
-    handles them for you. 
+    require an instance variable for `groupId` because Screens handles it for 
+    you. 
 
 2. Recall that for constructors, you can leverage the superclass constructors. 
    Do so now to create `GuestbookListScreenlet`'s constructors: 
@@ -113,8 +113,8 @@ tutorial's steps are noted.
 
 4. Override the `createScreenletView` method. Recall that this method reads the 
    Screenlet's attribute values and instantiates the View. In Guestbook List 
-   Screenlet, you only need to read the value of the `groupId` attribute. 
-   Also remember that calling the superclass's `createScreenletView` method 
+   Screenlet, you only need to read the value of the `groupId` attribute. Also 
+   remember that calling the superclass's `createScreenletView` method 
    instantiates the View for you: 
 
         @Override
