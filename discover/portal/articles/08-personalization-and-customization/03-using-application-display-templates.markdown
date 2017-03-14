@@ -102,7 +102,7 @@ access the XML source of your template. You can find these URLs by clicking the
 ADT from the menu and expanding the *Details* section. With the WebDAV URL, site
 administrators are capable of adding, browsing, editing, and deleting ADTs on a
 remote server. If you'd like to learn more about what the WebDAV URL can do,
-visit the *Document Management* chapter's [WebDAV access](discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+visit the *Document Management* chapter's [WebDAV access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
 section.
 
 +$$$

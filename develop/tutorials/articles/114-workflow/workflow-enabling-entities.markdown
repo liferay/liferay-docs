@@ -206,7 +206,7 @@ approved entities.
 				WorkflowConstants.STATUS_APPROVED);
 	}
 
-For an example of using service Builder to create a finder that takes workflow status into account, check out the appropriate section of the [Learning Path on workflow](develop/learning-paths/-/knowledge_base/6-2/displaying-approved-workflow-items).
+For an example of using service Builder to create a finder that takes workflow status into account, check out the appropriate section of the [Learning Path on workflow](/develop/learning-paths/-/knowledge_base/6-2/displaying-approved-workflow-items).
 
 If your app includes an *admin* portlet in Liferay's Site Administration
 console, consider displaying all entities, regardless of workflow status. Many
@@ -231,9 +231,9 @@ your own workflow definitions, and use scripting to make them more robust.
 
 ##  Related Topics [](id=related-topics)
 
-[Approving Content with Workflow](develop/learning-paths/-/knowledge_base/6-2/approving-content-with-workflow)
+[Approving Content with Workflow](/develop/learning-paths/-/knowledge_base/6-2/approving-content-with-workflow)
 
-[Asset Framework](develop/tutorials/-/knowledge_base/6-2/asset-framework)
+[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
 
-[Service Builder and Services](develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 

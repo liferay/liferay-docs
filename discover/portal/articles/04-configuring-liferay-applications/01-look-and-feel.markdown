@@ -31,7 +31,7 @@ portlet URLs will point to the page you selected. The current page is the
 default. Note that you can use the Asset Publisher's View in a Specific Portlet
 feature and web content articles' Display Page attribute to achieve a more
 elegant solution for displaying the full view of web content articles on
-specific pages. Please see the [Setting Up Display Pages](discover/portal/-/knowledge_base/6-1/setting-up-display-pages) article for details.
+specific pages. Please see the [Setting Up Display Pages](/discover/portal/-/knowledge_base/6-1/setting-up-display-pages) article for details.
 
 +$$$
 

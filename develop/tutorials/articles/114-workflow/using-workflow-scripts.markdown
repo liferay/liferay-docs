@@ -238,6 +238,6 @@ We need to create a valid DDL record to invoke this workflow properly. If you've
 never set up a DDL record before, or don't even know what a DDL does, don't
 fret. We've got you covered in the tutorial on [Publishing and Using Workflows](/develop/tutorials/-/knowledge_base/6-2/workflow/publishing-and-using-workflows). 
 
-Next, you might want to look at the tutorial on [leveraging template editors for notifications](develop/tutorials/-/knowledge_base/6-2/workflow/notification-templates). 
+Next, you might want to look at the tutorial on [leveraging template editors for notifications](/develop/tutorials/-/knowledge_base/6-2/workflow/notification-templates). 
 
 <!-- ## Related Topics -->

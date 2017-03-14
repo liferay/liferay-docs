@@ -112,7 +112,7 @@ for yourself and learned best practices along the way.
 
 **Related Topics**
 
-[Themes and Layout Templates](develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
 
-[Advanced Content with Structures and Layout Templates](discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
+[Advanced Content with Structures and Layout Templates](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
 
