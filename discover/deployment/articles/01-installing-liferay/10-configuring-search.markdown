@@ -36,10 +36,11 @@ installing a search engine, see [here](/discover/deployment/-/knowledge_base/7-0
 If @product@ isn't running, start it. 
 
 Then, in @product@, navigate to *Control Panel &rarr; Configuration &rarr;
-System Settings*. Find the *Elasticsearch* entry, and in the *Nework Host*
-setting, enter *localhost*.
+System Settings*. Find the Elasticsearch entry in the Foundation section,
+and set the Network Host property to *localhost*.
 
-Now you can visit port 9200 on localhost to access the embedded Elasticsearch: 
+Restart @product@ and you can visit port 9200 on localhost to access the
+embedded Elasticsearch: 
 
     http://localhost:9200
 
