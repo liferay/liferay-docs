@@ -33,9 +33,13 @@ installing a search engine, see [here](/discover/deployment/-/knowledge_base/7-0
 
 ### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
-If @product@ isn't running, start it. Then, using a browser, visit port 9200 of
-the machine on which @product@'s running. For example, if you're browsing from the same machine
-@product@'s running on, visit this URL: 
+If @product@ isn't running, start it. 
+
+Then, in @product@, navigate to *Control Panel &rarr; Configuration &rarr;
+System Settings*. Find the *Elasticsearch* entry, and in the *Nework Host*
+setting, enter *localhost*.
+
+Now you can visit port 9200 on localhost to access the embedded Elasticsearch: 
 
     http://localhost:9200
 
