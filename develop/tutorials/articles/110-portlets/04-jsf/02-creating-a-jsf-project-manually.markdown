@@ -108,10 +108,9 @@ Bridge.
             <version>1.0-SNAPSHOT</version>
             <properties>
                 <faces.api.version>2.2</faces.api.version>
-                <liferay.faces.bridge.ext.version>5.0.0-SNAPSHOT</liferay.faces.bridge.ext.version>
-                <liferay.faces.bridge.version>4.0.0-SNAPSHOT</liferay.faces.bridge.version>
+                <liferay.faces.bridge.ext.version>5.0.0</liferay.faces.bridge.ext.version>
+                <liferay.faces.bridge.version>4.0.0</liferay.faces.bridge.version>
                 <mojarra.version>2.2.13</mojarra.version>
-                <project.stage>Development</project.stage>
             </properties>
             <build>
                 <plugins>
@@ -533,7 +532,7 @@ To recap, you created your JSF application in the following steps:
 
 You can view the finished version of the Hello User JSF application by
 downloading its
-[ZIP file](https://dev.liferay.com/documents/10184/656312/hello-user-jsf-portlet.zip/8601978f-6072-4445-8e1d-86a2d5ae34ca?download=true).
+[ZIP file](https://dev.liferay.com/documents/10184/656312/hello-user-jsf-portlet.zip/4b736126-3267-46fe-8b7c-54a83e305609?download=true).
 
 Now you have the knowledge to create your own JSF applications!
 
