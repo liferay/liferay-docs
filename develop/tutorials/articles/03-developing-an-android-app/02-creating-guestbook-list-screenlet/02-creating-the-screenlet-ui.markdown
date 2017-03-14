@@ -1,11 +1,10 @@
 # Creating Guestbook List Screenlet's UI [](id=creating-guestbook-list-screenlets-ui)
 
-Recall that in Liferay Screens for Android, Screenlet UIs are called Views and 
+Recall that in Liferay Screens for Android, Screenlet UIs are called Views, and 
 every Screenlet must have at least one View. In this article, you'll use the 
 following steps to create a View for Guestbook List Screenlet: 
 
-1. Create the row layout. The Screenlet uses this layout for each row in the 
-   list. 
+1. Create the row layout. This layout defines the UI for each row in the list. 
 
 2. Create the adapter class. The adapter fills a row layout instance with the 
    data for one list item. This repeats for each list item. 
@@ -13,23 +12,25 @@ following steps to create a View for Guestbook List Screenlet:
 3. Create the View class. This class renders the UI, handles user interactions, 
    and communicates with the Screenlet class. 
 
-4. Create the View's layout. This layout defines the Screenlet's UI as a whole, 
-   which for a list Screenlet is a scrollable list. 
+4. Create the View's layout. This layout defines the Screenlet's UI as a whole. 
+   For a list Screenlet, this is a scrollable list. 
 
-Note that these are the same steps 
-[as those in the list Screenlet tutorial for creating a list Screenlet's View](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view). 
-Therefore, this article doesn't explain the code in detail. See the tutorial 
-for such an explanation. 
+Note that these are the same steps for creating a View as those in the list 
+Screenlet tutorial. Therefore, this article doesn't explain the concepts or code 
+in detail. For such an explanation, 
+[click here](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view) 
+to see the tutorial. 
 
-You'll create the Guestbook List Screenlet's View in its own package inside the 
+You'll create Guestbook List Screenlet's View in its own package inside the 
 `guestbooklistscreenlet` package. Create a new package named `view` inside the 
 `guestbooklistscreenlet` package. Now you're ready to create the row layout. 
 
 ## Creating the Row Layout [](id=creating-the-row-layout)
 
-First, you must create the Screenlet's layout for each list row. Since each row 
-displays only a single guestbook's name, this layout is very simple. Create the 
-following `guestbook_row.xml` file in the `res/layout` directory: 
+First, you must create the layout that defines the Screenlet's UI for each list 
+row. Since each row in Guestbook List Screenlet displays only a single 
+guestbook's name, its layout needs to contain only a single `TextView`. Create 
+the following layout file `res/layout/guestbook_row.xml`: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -46,15 +47,15 @@ following `guestbook_row.xml` file in the `res/layout` directory:
 
     </LinearLayout>
 
-You'll use the `TextView` to display a guestbook's name. Also note that you 
-don't have to use a `textSize` of `25sp` or a `padding` of `10dp`. These values 
-serve only as an example because they result in clean, readable text. 
+Note that the `textSize` and `padding` values result in clean, readable text for 
+this example. When you develop your own list Screenlets, you can style your row 
+layouts however you like. 
 
 ## Creating the Adapter Class [](id=creating-the-adapter-class)
 
 Recall that an adapter class is required to fill each row with data. Guestbook 
 List Screenlet's adapter class, `GuestbookAdapter`, is almost identical to 
-[the adapter class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view). 
+[the adapter class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-adapter-class). 
 The only difference is that `GuestbookAdapter` handles a guestbook's name. 
 
 Inside the Screenlet's `view` package, create the following `GuestbookAdapter` 
@@ -116,7 +117,7 @@ Next, you'll create the View class.
 
 Recall that the View class controls a Screenlet's UI. Guestbook List Screenlet's 
 View class, `GuestbookListView`, is almost identical to 
-[the View class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view). 
+[the View class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-view-class). 
 The only difference is that `GuestbookListView` displays guestbooks. 
 
 Create the `GuestbookListView` class inside the `view` package, and replace its 
@@ -169,7 +170,7 @@ Now you're ready to create your View's main layout.
 
 Even though you already have a row layout (`guestbook_row.xml`), your View needs 
 a layout for the list as a whole. Recall from 
-[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view) 
+[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-views-main-layout) 
 that the View layout for all list Screenlets is identical apart from the styling 
 and the referenced View class. The layout for Guestbook List Screenlet's View, 
 `list_guestbooks.xml`, must reference `GuestbookListView` and contain the same 
@@ -177,8 +178,8 @@ and the referenced View class. The layout for Guestbook List Screenlet's View,
 `android:id` values are the same; they're hardcoded into the list Screenlet 
 framework and changing them will cause your app to crash. 
 
-Create the file `list_guestbooks.xml` in the `res/layout` directory, and replace 
-its contents with the following: 
+Create the layout file `res/layout/list_guestbooks.xml` and replace its contents 
+with this code: 
 
     <com.liferay.docs.guestbooklistscreenlet.view.GuestbookListView
         android:id="@+id/liferay_list_screenlet"
