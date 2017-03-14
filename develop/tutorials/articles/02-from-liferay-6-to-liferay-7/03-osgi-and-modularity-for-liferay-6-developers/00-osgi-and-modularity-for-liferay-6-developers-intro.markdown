@@ -513,23 +513,24 @@ and conserve resources.
 Gogo Shell's [Service Component Runtime commands](http://felix.apache.org/documentation/subprojects/apache-felix-service-component-runtime.html#shell-command)
 let you manage components:
 
--   `src:list [bundleID]`: Lists the module's (bundle's) components.
+-   `scr:list [bundleID]`: Lists the module's (bundle's) components.
 
--   `src:info [componentID|fullClassName]`: Describes the component, including
+-   `scr:info [componentID|fullClassName]`: Describes the component, including
     its status and the services it provides.
 
--   `src:enable [componentID|fullClassName]`: Enables the component.
+-   `scr:enable [componentID|fullClassName]`: Enables the component.
 
--   `src:disable [componentID|fullClassName]`: Disables the component. It's
+-   `scr:disable [componentID|fullClassName]`: Disables the component. It's
     disabled on the server (or current server node in a cluster) until
     the server is restarted.
 
-Service references are static by default. That is, an injected service remains
-bound to the referencing component until the service is disabled.
-Alternatively, developers can specify *greedy* service policies for references.
-Every time a higher ranked matching service is registered, the framework unbinds
-the lower ranked service from the component and binds the new service in its
-place automatically. Here's a `@Reference` annotation that uses a greedy policy:
+Service references are static and reluctant by default. That is, an injected
+service remains bound to the referencing component until the service is
+disabled. Alternatively, developers can specify *greedy* service policies for
+references. Every time a higher ranked matching service is registered, the
+framework unbinds the lower ranked service from the component and binds the new
+service in its place automatically. Here's a `@Reference` annotation that uses a
+greedy policy:
 
     @Reference(policyOption = ReferencePolicyOption.GREEDY)
 
