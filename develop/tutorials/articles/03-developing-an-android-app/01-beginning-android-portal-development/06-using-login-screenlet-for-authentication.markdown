@@ -121,27 +121,23 @@ functionality yet. You'll fix this next.
 
 ## Navigating from Login Screenlet [](id=navigating-from-login-screenlet)
 
-Now you need for the app to open `GuestbooksActivity` when login succeeds. 
-You'll do this by using an intent in `MainActivity`'s `onLoginSuccess` method. 
-In short, Android intents are messaging objects that you can use to launch other 
-activities. For more information, see 
-[this guide on intents in Android's documentation](http://developer.android.com/guide/components/intents-filters.html). 
-To launch `GuestbooksActivity` when login succeeds, replace the contents of 
-`onLoginSuccess` with the following code: 
+When login succeeds, you need to open `GuestbooksActivity`. You'll do this by 
+using a standard Android intent in `MainActivity`'s `onLoginSuccess` method. 
+Replace the contents of `onLoginSuccess` with this code: 
 
     Intent intent = new Intent(this, GuestbooksActivity.class);
     startActivity(intent);
 
 When login succeeds, this code creates an `Intent` and uses it to start 
-`GuestbooksActivity`. If you haven't already, make sure you import 
+`GuestbooksActivity`. If you haven't already, make sure to import 
 `android.content.Intent` in `MainActivity`. 
 
 Now you're ready to see the intent in action! Run the app in the emulator and 
-log in when prompted. When login succeeds, the `GuestbooksActivity` opens. 
+log in when prompted. When login succeeds, `GuestbooksActivity` opens. 
 
-![Figure 2: The app takes you to the new activity after you log in.](../../../images/android-login-success-intent.png)
+![Figure 2: Upon login, the app takes you to the new activity.](../../../images/android-login-success-intent.png)
 
-Nice work! You successfully implemented @product@ authentication in the Android 
+Nice work! You successfully implemented @product@ authentication in your Android 
 app. It didn't take you that long, either. So far, however, that's all your app 
 does; it doesn't display any content. Next, you'll rectify this by developing 
 Guestbook List Screenlet. 
