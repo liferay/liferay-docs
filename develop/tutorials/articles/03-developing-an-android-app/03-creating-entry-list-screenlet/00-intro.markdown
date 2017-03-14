@@ -1,9 +1,10 @@
 # Creating Entry List Screenlet [](id=creating-entry-list-screenlet)
 
-In this Learning Path's previous section, you created Guestbook List Screenlet. 
-You still need a way to retrieve and display each guestbook's entries, though. 
-You'll do this by creating another list Screenlet: Entry List Screenlet. This 
-section in the Learning Path walks you through the steps required to create it. 
+In this Learning Path's previous section, you created Guestbook List Screenlet 
+to retrieve and display guestbooks from the Guestbook portlet. You still need a 
+way to retrieve and display each guestbook's entries, though. You'll do this by 
+creating another list Screenlet: Entry List Screenlet. This section in the 
+Learning Path walks you through the steps required to create it. 
 
 Because you use a consistent development model to create Screenlets, similar 
 Screenlets have similar code. As with guestbooks, it makes sense to display 
