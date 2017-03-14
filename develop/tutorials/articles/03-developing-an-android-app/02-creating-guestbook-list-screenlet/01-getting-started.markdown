@@ -9,13 +9,13 @@ redistribution, see the tutorial
 Since you'll use Guestbook List Screenlet in only this app, you can create it in 
 a new package inside the app's project. 
 
-Right click the *java* folder in Android Studio's project view and select 
-*New* &rarr; *Package*. Select *.../app/src/main/java* as the destination 
-directory, and click *OK*. Then enter `com.liferay.docs.guestbooklistscreenlet` 
-as the package's name and click *OK*. Android Studio now lists the new package 
-alongside the package that contains the app's activity and fragment 
-(`liferayguestbook`). If it doesn't appear at first, you may need to collapse 
-and reopen the *java* folder in project view. 
+In Android Studio, right click the *java* folder and select *New* &rarr; 
+*Package*. Select *.../app/src/main/java* as the destination directory, and 
+click *OK*. Then enter `com.liferay.docs.guestbooklistscreenlet` as the 
+package's name and click *OK*. Android Studio lists the new package alongside 
+the package that contains the app's activity and fragment (`liferayguestbook`). 
+If it doesn't appear at first, you may need to collapse and reopen the *java* 
+folder. 
 
 ![Figure 1: Guestbook List Screenlet's new package is highlighted.](../../../images/android-guestbooks-screenlet-package.png)
 
@@ -32,14 +32,12 @@ Guestbook portlet. You'll create this model class in a separate package outside
 of the `guestbooklistscreenlet` package. In this case, it makes sense to 
 organize your code this way because other Screenlets may also use the model 
 class. For example, if a Screenlet that edits guestbooks existed, it would also 
-need to use `GuestbookModel` objects. Putting the model class in a separate 
-package makes it clear that this class doesn't belong exclusively to a single 
-Screenlet. 
+need `GuestbookModel` objects. Putting the model class in a separate package 
+makes it clear that this class doesn't belong exclusively to a single Screenlet. 
 
 First, create a new package called `model` inside the `com.liferay.docs` 
 package. Inside this new `model` package, create a new class called 
-`GuestbookModel`. Replace the `GuestbookModel` class's contents with the 
-following code: 
+`GuestbookModel`. Replace `GuestbookModel`'s contents with this code: 
 
     package com.liferay.docs.model;
 
@@ -160,12 +158,13 @@ following code:
 
 This class creates `GuestbookModel` objects that represent the Guestbook 
 portlet's `Guestbook` objects. The constructor with the `Map<String, Object>` 
-argument does the heavy lifting here. Following a successful Mobile SDK call, 
-the list Screenlet framework's `BaseListInteractor` class returns this `Map`, 
-which contains the data of a guestbook retrieved from the portlet. To get the 
-guestbook's data from the `Map`, the constructor uses the `get` method with each 
-parameter of the portlet's `Guestbook` objects. To see how the portlet defines 
-these parameters, 
+argument does the heavy lifting. Following a successful Mobile SDK call, the 
+list Screenlet framework's 
+[`BaseListInteractor` class](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
+returns this `Map`, which contains the data of a guestbook retrieved from the 
+portlet. To get the guestbook's data from the `Map`, the constructor uses the 
+`get` method with each parameter of the portlet's `Guestbook` entity. To see how 
+the portlet defines these parameters, 
 [see the Liferay MVC Learning Path article on Service Builder](/develop/tutorials/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in `GuestbookModel` are 
 `guestbookId` and `name`. Because you might need the rest later, however, it's 
@@ -175,5 +174,5 @@ Besides the getters and setter, the remaining code in `GuestbookModel`
 implements Android's `Parcelable` interface. For more information on this, see 
 [Android's documentation on `Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html). 
 
-Great! Now you have a model class for guestbooks. Now you're ready to create the 
+Great! Now you have a model class for guestbooks. Next, you'll create the 
 Screenlet's UI. 
