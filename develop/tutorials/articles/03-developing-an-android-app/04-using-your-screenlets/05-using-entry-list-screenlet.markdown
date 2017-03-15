@@ -54,13 +54,13 @@ Now you must implement the listener's methods. Recall that this includes the
 `error` method, since `BaseListListener` extends `BaseCacheListener`. For a full 
 explanation of the methods in both listeners, see 
 [the article on using Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-guestbook-list-screenlet). 
-Note that in `EntriesFragment`, you don't need to take any specific actions in 
-these methods. There are no UI elements or other parts of the fragment that must 
-be updated or processed in response to the Screenlet's behavior. All this 
-Screenlet needs to do is display its content, which it does regardless of 
-anything the app developer does in the listener methods. The only thing you may 
-want to add is a toast message in `onListPageFailed` to notify the user if the 
-server call fails, but this isn't required. Implement these methods now: 
+Note that in `EntriesFragment`, you don't need to take any action in these 
+methods. There are no UI elements or other parts of the fragment that must be 
+updated or processed in response to the Screenlet's behavior. All this Screenlet 
+needs to do is display its content, which it does regardless of anything you do 
+in the listener methods. The only thing you may want to add is a toast message 
+in `onListPageFailed` to notify the user if the server call fails, but this 
+isn't required. Implement these methods now: 
 
     @Override
     public void onListPageFailed(int startRow, Exception e) {
@@ -89,12 +89,12 @@ This requires you to add the following imports:
 
 Now you're ready to register `EntriesFragment` as the Screenlet's listener. 
 You'll do this the same way you registered `GuestbooksActivity` as Guestbook 
-List Screenlet's listener in the previous article: get a reference to the 
-Screenlet and call its `setListener` method. After doing this, you'll use the 
-Entry List Screenlet reference's `setGuestbookId` method to set its guestbook 
-ID. This sets the guestbook the Screenlet retrieves entries from. You'll do 
-these things in the `onCreateView` method. Replace the `onCreateView` method 
-with the following updated version: 
+List Screenlet's listener: get a reference to the Screenlet and call its 
+`setListener` method. After doing this, you'll use the Entry List Screenlet 
+reference's `setGuestbookId` method to set its guestbook ID. This sets the 
+guestbook the Screenlet retrieves entries from. You'll do these things in the 
+`onCreateView` method. Replace the `onCreateView` method with this updated 
+version: 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -117,9 +117,9 @@ As you can see, `onCreateView` now registers `EntriesFragment` as the
 Screenlet's listener and sets the Screenlet's guestbook ID. The rest of 
 `onCreateView` is unchanged. 
 
-Awesome! Run the app in the emulator and log in with your credentials when 
-prompted. The app then presents you with the first guestbook's entries. Open the 
-navigation drawer by pressing the hamburger button, and then select a different 
+Now run the app in the emulator and log in with your credentials when prompted. 
+The app then presents you with the first guestbook's entries. Open the 
+navigation drawer by pressing the hamburger button, then select a different 
 guestbook. The drawer then closes to show the selected guestbook's entries. Nice 
 work! Your app now uses Guestbook List Screenlet and Entry List Screenlet to 
 show the same guestbooks and entries as the Guestbook portlet. The following 
@@ -137,15 +137,17 @@ The two `TextView` elements in `nav_header_guestbooks.xml` use the
 you could delete these `TextView` elements. It's better though to show text 
 relevant to your app. In the `TextView` elements, replace `"Android Studio"` 
 with `"Liferay Guestbook"`, and `"android.studio@android.com"` with 
-`"Welcome!"`. Run the app again, and open the drawer after signing in. The drawer 
-header now shows your greeting. 
+`"Welcome!"`. Run the app again, and open the drawer after signing in. The 
+drawer header now shows your greeting. 
 
 ![Figure 3: The drawer displays your greeting after you change the text in `nav_header_guestbooks.xml`.](../../../images/android-guestbook-screenlet-drawer-02.png)
 
 Congratulations! Now you know how to use Liferay Screens and create your own 
-Screenlets. This opens up a world of possibilities for developing your own apps. 
-Although you learned a great deal in this Learning Path, there's still more. You 
-can customize your Screenlet's appearance, package it for redistribution, and 
-even configure it to receive push notifications. These topics, and more, are 
-covered in 
-[the tutorials on Android apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens). 
+Screenlets. This opens up a world of possibilities for developing apps that 
+leverage @product@. Although you learned a great deal in this Learning Path, 
+there's still more. You can customize your Screenlet's appearance, package it 
+for redistribution, and even configure it to receive push notifications. These 
+topics, and more, are covered in the tutorials on Android apps with Liferay 
+Screens. 
+[Click here](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens) 
+to see these tutorials. 
