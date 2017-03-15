@@ -7,5 +7,5 @@ You've got to have a plan for how you sign it.
 ##Viewing the book
 You should also know how it should look.
 
-##Managing the data
+##Configuration API
 All that data gots to go somewhere.
