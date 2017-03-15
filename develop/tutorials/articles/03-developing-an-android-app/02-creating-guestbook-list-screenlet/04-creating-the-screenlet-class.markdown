@@ -46,7 +46,7 @@ functionality in the Screenlet class.
 Now that you've defined this attribute and know what it needs to do, you're 
 ready to write the Screenlet class. 
 
-## Extending BaseListScreenlet
+## Extending BaseListScreenlet [](id=extending-baselistscreenlet)
 
 Recall from 
 [the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlet-class) 

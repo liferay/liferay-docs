@@ -1,4 +1,4 @@
-# Creating Guestbook List Screenlet's Interactor
+# Creating Guestbook List Screenlet's Interactor [](id=creating-guestbook-list-screenlets-interactor)
 
 Recall from 
 [the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-Interactor-class) 
@@ -14,7 +14,7 @@ Since the list Screenlet framework already contains two listener interfaces, you
 only need to create the event and Interactor classes. You'll create the event 
 class first. 
 
-## Creating the Event Class
+## Creating the Event Class [](id=creating-the-event-class)
 
 Recall that Screens uses event objects via the 
 [EventBus](http://greenrobot.org/eventbus/) 
@@ -66,7 +66,7 @@ Nice work! Your event class is done. You're almost ready to write the
 Screenlet's server call. First, however, you should understand the basics of how 
 server calls work in Interactors. 
 
-## Understanding Screenlet Server Calls
+## Understanding Screenlet Server Calls [](id=understanding-screenlet-server-calls)
 
 Recall that Interactor classes use the Liferay Mobile SDK to make server calls 
 and process the results. An Interactor class does this with the following 
@@ -88,7 +88,7 @@ SDK you built and installed earlier. This Mobile SDK contains the services
 required to call the Guestbook portlet's remote services. Next, you'll create 
 Guestbook List Screenlet's Interactor class. 
 
-## Creating the Interactor Class
+## Creating the Interactor Class [](id=creating-the-interactor-class)
 
 You'll create your Interactor class, `GuestbookListInteractor`, with the same 
 steps the list Screenlet creation tutorial uses to create the example Interactor 
