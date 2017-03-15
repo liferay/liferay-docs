@@ -12,7 +12,7 @@ Recall that you used these steps to insert Login Screenlet in `MainActivity`.
 First, you'll insert Guestbook List Screenlet's XML in `GuestbooksActivity`'s 
 layout. 
 
-## Inserting the Screenlet XML in the Layout
+## Inserting the Screenlet XML in the Layout [](id=inserting-the-screenlet-xml-in-the-layout)
 
 Recall that `activity_guestbooks.xml` defines `GuestbooksActivity`'s UI. Also 
 recall that the `NavigationView` in `activity_guestbooks.xml` defines the 
