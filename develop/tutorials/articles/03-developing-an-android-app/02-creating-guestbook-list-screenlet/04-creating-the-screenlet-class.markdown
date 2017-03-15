@@ -1,4 +1,4 @@
-# Creating the Screenlet Class [](id=creating-the-screenlet-class)
+# Creating Guestbook List Screenlet's Screenlet Class [](id=creating-guestbook-list-screenlets-screenlet-class)
 
 When using a Screenlet, app developers primarily interact with its Screenlet 
 class. The Screenlet class contains attributes for configuring the Screenlet's 
@@ -16,8 +16,8 @@ You'll use these steps to create the Screenlet class:
    control aspects of the Screenlet's behavior. 
 
 2. Create the Screenlet class. This class implements the Screenlet's 
-   functionality defined in the View, listener, and Interactor. It also reads 
-   the attribute values and configures the Screenlet accordingly. 
+   functionality defined in the View and Interactor. It also reads the attribute 
+   values and configures the Screenlet accordingly. 
 
 First, you'll define Guestbook List Screenlet's attributes. 
 
