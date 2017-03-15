@@ -18,7 +18,7 @@ this:
 ![Figure 1: Create a new blank fragment for the entries.](../../../images/android-create-fragment.png)
 
 This creates the `EntriesFragment` class and its layout file 
-`fragment_entries.xml`. Replace the class's contents with the following code: 
+`fragment_entries.xml`. Replace the class's contents with this code: 
 
     package com.liferay.docs.liferayguestbook;
 
@@ -57,27 +57,25 @@ This creates the `EntriesFragment` class and its layout file
     }
 
 If you have experience with Android fragments, then you're likely familiar with 
-the empty constructor and `newInstance` method. When the screen orientation 
+the `newInstance` method and the empty constructor. When the screen orientation 
 changes or the user switches apps, Android must restore the fragment. Instead of 
 recreating the fragment from scratch, the `newInstance` method lets Android 
 restore it with the data it contained. Since this fragment will contain Entry 
 List Screenlet, its data must include the ID of the guestbook the Screenlet 
-retrieves entries from (`guestbookId`). Next, look at the `onCreateView` method. 
-This method uses the bundle arguments set in `newInstance` to retrieve the 
-`guestbookId`. For now, you don't have to do anything with the `guestbookId` in 
-`onCreateView`. You'll use this variable when you add the Screenlet to the 
-fragment. For more information on managing fragments with a `newInstance` 
-method, see 
+retrieves entries from (`guestbookId`). Also, the `onCreateView` method uses the 
+bundle arguments set in `newInstance` to retrieve the `guestbookId`. For now, 
+you don't have to do anything with the `guestbookId` in `onCreateView`. You'll 
+use this variable when you add the Screenlet to the fragment. For more 
+information on managing fragments with a `newInstance` method, see 
 [this blog post](http://www.androiddesignpatterns.com/2012/05/using-newinstance-to-instantiate.html). 
 
 Next, you'll add this fragment to `GuestbooksActivity`. 
 
 ## Adding the Fragment to GuestbooksActivity [](id=adding-the-fragment-to-guestbooksactivity)
 
-Now that `EntriesFragment` exists, you're ready to add it to 
-`GuestbooksActivity`. To do this, you must put a fragment container in the 
-layout you want the fragment to appear in. In short, a fragment container is a 
-layout used to hold a fragment. For more information, see 
+Now that `EntriesFragment` exists, you can add it to `GuestbooksActivity`. To do 
+this, you must put an Android fragment container in the layout you want the 
+fragment to appear in. For more information, see 
 [Android's documentation on adding fragments at runtime](http://developer.android.com/training/basics/fragments/fragment-ui.html#AddAtRuntime). 
 Since you want Entry List Screenlet to appear in `GuestbooksActivity`, your 
 first thought might be to put the fragment container directly in 
@@ -93,15 +91,16 @@ fragment container should be the only other element inside the `RelativeLayout`:
         android:layout_height="match_parent" />
 
 Next, you must write the `GuestbooksActivity` code that displays the fragment 
-when a guestbook is selected in Guestbook List Screenlet. You'll do this with a 
-[fragment transaction](http://developer.android.com/guide/components/fragments.html#Transactions). 
-In short, a fragment transaction adds, removes, or replaces a fragment in an 
-activity. Recall that you created `GuestbooksActivity`'s `showEntries` method to 
-process a list item selection in Guestbook List Screenlet. All `showEntries` 
-does right now is set the action bar's title to the selected guestbook's name. 
-You'll add the fragment transaction to `showEntries`, so a guestbook selection 
-also shows that guestbook's entries. Replace the `showEntries` method in 
-`GuestbooksActivity` with the following:
+when a guestbook is selected in Guestbook List Screenlet. You'll do this with an 
+Android fragment transaction. 
+[Click here](http://developer.android.com/guide/components/fragments.html#Transactions) 
+to see Android's documentation on fragment transactions. Recall that you created 
+`GuestbooksActivity`'s `showEntries` method to process a list item selection in 
+Guestbook List Screenlet. All `showEntries` does right now is set the action 
+bar's title to the selected guestbook's name. You'll add the fragment 
+transaction to `showEntries`, so a guestbook selection also shows that 
+guestbook's entries. Replace the `showEntries` method in `GuestbooksActivity` 
+with this code: 
 
     public void showEntries(GuestbookModel guestbook) {
         actionBar.setTitle(guestbook.getName());
