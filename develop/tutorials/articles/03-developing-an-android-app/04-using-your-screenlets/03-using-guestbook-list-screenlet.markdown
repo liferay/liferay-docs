@@ -1,7 +1,7 @@
 # Using Guestbook List Screenlet [](id=using-guestbook-list-screenlet)
 
 The basic steps for using Guestbook List Screenlet are the same as those for 
-using any other Screenlet: 
+using any Screenlet: 
 
 1. Insert the Screenlet's XML in the activity or fragment layout you want the 
    Screenlet to appear in. 
@@ -9,17 +9,17 @@ using any other Screenlet:
 2. Implement the Screenlet's listener in the activity or fragment class. 
 
 Recall that you used these steps to insert Login Screenlet in `MainActivity`. 
-You'll also follow these steps to insert Guestbook List Screenlet in 
-`GuestbooksActivity`. 
+First, you'll insert Guestbook List Screenlet's XML in `GuestbooksActivity`'s 
+layout. 
 
-## Inserting the Screenlet in the Layout [](id=inserting-the-screenlet-in-the-layout)
+## Inserting the Screenlet XML in the Layout
 
 Recall that `activity_guestbooks.xml` defines `GuestbooksActivity`'s UI. Also 
 recall that the `NavigationView` in `activity_guestbooks.xml` defines the 
 navigation drawer. To put Guestbook List Screenlet in the drawer, you must 
 insert the Screenlet's XML in the `NavigationView`. You must also remove the 
 placeholder content from the `NavigationView`. To do these things, replace the 
-`NavigationView` in `activity_guestbooks.xml` with the following: 
+`NavigationView` in `activity_guestbooks.xml` with this code: 
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -40,9 +40,9 @@ placeholder content from the `NavigationView`. To do these things, replace the
 
 Compared to the `NavigationView` it replaced, this `NavigationView` contains 
 Guestbook List Screenlet's XML, and lacks the `app:menu` attribute. Recall that 
-this attribute pointed to the menu resource file used to create the drawer's 
-items. Since you're using the Screenlet to display the drawer's items (the 
-guestbooks), you don't need `app:menu`. Delete the menu resource file 
+this attribute pointed to the menu resource file that creates the drawer's 
+items. Since the Screenlet now handles the drawer's items (the guestbooks), you 
+don't need `app:menu` or the menu resource file. Delete the menu resource file 
 `res/menu/activity_guestbooks_drawer.xml`. 
 
 Note that Guestbook List Screenlet's XML strongly resembles Login Screenlet's 
@@ -54,7 +54,7 @@ the `android:paddingTop` attribute. This attribute's value,
 navigation drawer's header section. This prevents the Screenlet and drawer 
 header from overlapping. 
 
-Great! You must now implement the Screenlet's listener interface in 
+Great! Next, you'll implement the Screenlet's listener interface in 
 `GuestbooksActivity`. 
 
 ## Implementing the Screenlet's Listener [](id=implementing-the-screenlets-listener)
@@ -74,16 +74,16 @@ app developers can therefore control how the Screenlet functions with their app.
 
 Before implementing Guestbook List Screenlet's listener, however, you should add 
 a method that the listener methods can use to help display a guestbook and its 
-entries. You might now be thinking, "Hey! I thought you said the Screenlets 
-contain their own UIs? Why does the activity need special methods for displaying 
-the Screenlets' entities? You're a phony!" Although a list Screenlet's UI 
-displays the list of entities, the rest of the app's UI must still account for 
-that list. Consider the action bar, for example. List Screenlets don't include 
-an action bar, but you should still change the action bar's contents to reflect 
-what's on the screen. When a guestbook is selected in Guestbook List Screenlet, 
-the action bar's title should display that guestbook's name. You can accomplish 
-this by calling a method that takes a `GuestbookModel` and sets that guestbook's 
-name as the action bar's title. Add this method now to `GuestbooksActivity`: 
+entries. You might now be thinking, "I thought you said Screenlets contain their 
+own UIs? Why does the activity need special methods for displaying the 
+Screenlets' entities?" Although a list Screenlet's UI displays the list of 
+entities, the rest of the app's UI must still account for that list. Consider 
+the action bar, for example. List Screenlets don't include an action bar, but 
+you should still change the action bar's contents to reflect what's on the 
+screen. When a guestbook is selected in Guestbook List Screenlet, the action bar 
+should display that guestbook's name. You can accomplish this by calling a 
+method that takes a `GuestbookModel` and sets that guestbook's name as the 
+action bar's title. Add this method now to `GuestbooksActivity`: 
 
     public void showEntries(GuestbookModel guestbook) {
 
@@ -96,8 +96,8 @@ entries via Entry List Screenlet (you'll add this code later). You'll call this
 method in the listener methods you'll implement to process a guestbook 
 selection. 
 
-Recall that Guestbook List Screenlet doesn't need any custom listener methods: 
-you'll use those defined in the list Screenlet framework's 
+Recall that Guestbook List Screenlet doesn't need any custom listener methods. 
+It can use the listener methods defined in the list Screenlet framework's 
 [`BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java). 
 To do this, change `GuestbooksActivity`'s class declaration to implement 
 `BaseListListener<GuestbookModel>`. The class declaration should now look like 
@@ -113,10 +113,18 @@ To implement `BaseListListener`, you must implement the following methods:
 
 - `onListPageFailed(int startRow, Exception e)`: Called when the server call to 
   retrieve a page of items fails. This method's arguments include the 
-  `Exception` generated when the server call failed. You'll implement this 
-  method to show the user a 
+  `Exception` generated when the server call failed. Implement this method to 
+  show the user a 
   [toast](https://developer.android.com/guide/topics/ui/notifiers/toasts.html) 
-  message containing an error. 
+  message containing an error: 
+
+        @Override
+        public void onListPageFailed(int startRow, Exception e) {
+
+            Toast.makeText(getApplicationContext(), "Page request failed", Toast.LENGTH_LONG).show();
+        }
+
+    This requires you to import `android.widget.Toast`. 
 
 - `onListPageReceived(int startRow, int endRow, List<E> entries, int rowCount)`: 
   Called when the server call to retrieve a page of items succeeds. Note that 
@@ -126,43 +134,31 @@ To implement `BaseListListener`, you must implement the following methods:
   entries. You'll use this method to do so because it receives the guestbooks 
   from the server. Note that because `startRow` and `endRow` change for each 
   page, a `startRow` of `0` corresponds to the first guestbook on the first 
-  page. You'll use an `if` statement to select this guestbook, and then call 
-  `showEntries`. 
+  page. Use an `if` statement to select this guestbook, and then call 
+  `showEntries`: 
+
+        @Override
+        public void onListPageReceived(int startRow, int endRow, List<GuestbookModel> guestbooks, 
+            int rowCount) {
+            
+            if (startRow == 0) {
+                showEntries(guestbooks.get(0));
+            }
+        }
+
+    This requires you to import `java.util.List`. 
 
 - `onListItemSelected(E element, View view)`: Called when the user selects an 
   item in the list. This method's arguments include the selected list item 
-  (`element`). To process the guestbook's selection, you'll call `showEntries` 
-  in this method. You'll also close the navigation drawer following the 
-  `showEntries` call. 
+  (`element`). To process the guestbook's selection, call `showEntries` in this 
+  method. Also, close the navigation drawer following the `showEntries` call: 
 
-Add these method implementations to your `GuestbooksActivity` class: 
+        @Override
+        public void onListItemSelected(GuestbookModel guestbook, View view) {
 
-    @Override
-    public void onListPageFailed(int startRow, Exception e) {
-
-        Toast.makeText(getApplicationContext(), "Page request failed", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onListPageReceived(int startRow, int endRow, List<GuestbookModel> guestbooks, 
-        int rowCount) {
-        
-        if (startRow == 0) {
-            showEntries(guestbooks.get(0));
+            showEntries(guestbook);
+            drawer.closeDrawers();
         }
-    }
-
-    @Override
-    public void onListItemSelected(GuestbookModel guestbook, View view) {
-
-        showEntries(guestbook);
-        drawer.closeDrawers();
-    }
-
-This requires that you add the following imports:
-
-    import android.widget.Toast;
-    import java.util.List;
 
 Because `BaseListListener` extends the 
 [`BaseCacheListener` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/listener/BaseCacheListener.java), 
@@ -177,15 +173,15 @@ contents empty:
     }
 
 Now that you've implemented the listener methods, you must set 
-`GuestbooksActivity` as the listener. This is where the ID 
-`guestbooklist_screenlet` that you set in the Screenlet's XML comes in handy. 
+`GuestbooksActivity` as the listener. This is where the 
+`guestbooklist_screenlet` ID that you set in the Screenlet's XML comes in handy. 
 Add the following code to the end of the activity's `onCreate` method: 
 
     GuestbookListScreenlet screenlet = 
         (GuestbookListScreenlet) findViewById(R.id.guestbooklist_screenlet);
     screenlet.setListener(this);
 
-This requires that you import 
+This requires you to import 
 `com.liferay.docs.guestbooklistscreenlet.GuestbookListScreenlet`. 
 
 This code first uses the ID `guestbooklist_screenlet` to get a reference to 
@@ -193,5 +189,5 @@ This code first uses the ID `guestbooklist_screenlet` to get a reference to
 Screenlet's listener. 
 
 Great! That's it! Your app's `GuestbooksActivity` now contains Guestbook List 
-Screenlet. Now you're almost ready to use Entry List Screenlet. Before you do 
-so, however, you must create a fragment to put it in. You'll do this next. 
+Screenlet. You're almost ready to use Entry List Screenlet. Before you do so, 
+however, you must create a fragment to put it in. You'll do this next. 
