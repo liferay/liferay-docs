@@ -164,8 +164,23 @@ Assigning tasks to Roles, Organizations, or Asset Creators is a straightforward
 concept, but what does it mean to assign a workflow task to a Resource Action?
 Imagine an *UPDATE* resource action. If your workflow definition specifies the
 UPDATE action in an assignment, then anyone who has permission to update the
-type of asset being processed in the workflow is assigned to the task.  You can
+type of asset being processed in the workflow is assigned to the task. You can
 configure multiple assignments for a task.
+
++$$$
+
+**Note:** To assign a workflow task by resource action, you need to know what
+the *resources* are, and what the *actions* are for those resources. The easiest
+way to find those To find 
+
+
+If you don't know what resource actions are, refer to the developer tutorial on
+@product@'s [permission system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources) for a more detailed explanation.
+
+$$$
+
+
+
 
 You also have the option to use a script to manage the assignment. Here's the
 script for the Review task assignment in the Scripted Single Approver workflow
