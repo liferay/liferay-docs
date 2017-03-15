@@ -1,8 +1,8 @@
 # Preparing GuestbooksActivity for Guestbook List Screenlet [](id=preparing-guestbooksactivity-for-guestbook-list-screenlet)
 
 Recall that you want `GuestbooksActivity` to display Guestbook List Screenlet 
-and Entry List Screenlet. Before using these Screenlets, however, you must do 
-the following prep work in `GuestbooksActivity`: 
+and Entry List Screenlet. Before using these Screenlets, however, you must 
+prepare `GuestbooksActivity` as follows: 
 
 1. Refactor the action bar so you can later set its title to the selected 
    guestbook's name. 
@@ -31,12 +31,12 @@ Android Studio created this code for you in the `GuestbooksActivity` class's
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-First, remove this code. Although you could modify it, you'll instead create a 
+First, remove this code. Although you could edit it, you'll instead create a 
 separate method that creates the action bar. Note that you don't need to worry 
 about the now missing `toolbar` variable in `onCreate`; you'll fix it shortly. 
 
-Next, you must create `ActionBar` and `Toolbar` instance variables. This lets 
-you refer to them anywhere in the activity. Add these variables to the 
+Next, create `ActionBar` and `Toolbar` instance variables. This lets you refer 
+to them anywhere in the activity. Add these variables to the 
 `GuestbooksActivity` class now: 
 
     private ActionBar actionBar;
@@ -53,14 +53,14 @@ Now add the following `initActionBar()` method to `GuestbooksActivity`:
         actionBar.setTitle("");
     }
 
-Like the code in `onCreate`, this method also creates a `Toolbar` and sets it as 
-the action bar. This code also sets the action bar's title to an empty string. 
-This prevents the activity's title from showing in the action bar before the app 
-retrieves guestbooks from the portlet. 
+Like the code you removed from `onCreate`, this method also creates a `Toolbar` 
+and sets it as the action bar. This code also sets the action bar's title to an 
+empty string. This prevents the activity's title from showing in the action bar 
+before the app can retrieve guestbooks from the portlet. 
 
 Now you must call `initActionBar()` in `onCreate`. Place the call immediately
-below the `setContentView` call. The first few lines of the `onCreate` method
-should now look like this: 
+below the `setContentView` call. The first few lines of `onCreate` should now 
+look like this: 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +88,10 @@ Drawer Activity template to create `GuestbooksActivity`. Delete this code from
     toggle.syncState();
 
 Instead, you'll initialize the navigation drawer in a separate method that 
-you'll then call in `onCreate`. You'll also change the `drawer` variable to be 
-an instance variable that you can refer to throughout the class. This lets you 
-use this variable to close the drawer when a guestbook is selected in Guestbook 
-List Screenlet. First, add this variable to `GuestbooksActivity`: 
+you'll call in `onCreate`. You'll also change the `drawer` variable to be an 
+instance variable that you can refer to throughout the class. This lets you use 
+this variable to close the drawer when a guestbook is selected in Guestbook List 
+Screenlet. First, add this variable to `GuestbooksActivity`: 
 
     private DrawerLayout drawer;
 
@@ -143,9 +143,9 @@ implementation.
 ## Deleting the NavigationView.OnNavigationItemSelectedListener Implementation [](id=deleting-the-navigationview-onnavigationitemselectedlistener-implementation)
 
 Since Guestbook List Screenlet handles navigation drawer item selections, you 
-don't need `GuestbooksActivity` to implement 
-`NavigationView.OnNavigationItemSelectedListener`. Delete this implementation 
-from the class declaration. The class declaration should now look like this: 
+don't need to implement `NavigationView.OnNavigationItemSelectedListener` in 
+`GuestbooksActivity`. Delete this implementation from the class declaration. The 
+class declaration should now look like this: 
 
     public class GuestbooksActivity extends AppCompatActivity {...
 
