@@ -141,13 +141,13 @@ paths for 6.2 plugins and features.
 
  Feature | Upgrade path | Optimizations (optional) |
  :----------------- | :----------- | :----------------------- |
- Resources Importer | [Update the Resources Importer](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-the-resources-importer) | Same |
+ Resources Importer | [Update the Resources Importer](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-the-resources-importer) | None |
  Services - Invoke a service from @product@ Core or another portlet or module | [Implement a Service Tracker](/develop/tutorials/-/knowledge_base/7-0/service-trackers) | [Invoke Liferay services from a module](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services) |
  Services - Module dependency | Copy `x-service.jar` to `WEB-INF/lib` | - [Migrate to Gradle/Maven](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications) and [add dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) on the OSGi service |
  Services - Service Builder | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies) | [Convert to OSGi modules](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet), e.g., `x-api` and `x-service` |
  Services - Web services | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies) | [Use a Service Builder service with JAX-RS with a REST service in front](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs) |
- Template - FreeMarker | [FreeMarker](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-theme-templates) | Same |
- Template - Velocity (deprecated) | Velocity (deprecated) | [Convert to FreeMarker](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-theme-templates) |
+ Template - FreeMarker | - [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>- [Adapt Theme templates](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-theme-templates) | None |
+ Template - Velocity (deprecated) | [Adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool) | [Convert to FreeMarker](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-theme-templates) |
 
 Now you have a game plan and a cheat sheet for upgrading and optimizing plugins
 with confidence. 
