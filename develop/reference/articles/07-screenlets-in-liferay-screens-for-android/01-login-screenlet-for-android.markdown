@@ -26,7 +26,7 @@ following types of authentication are supported:
   [OAuth 1.0a specification](http://oauth.net/core/1.0a/). 
 
 - **Cookie:** uses a cookie to log in. This lets you access documents and images 
-  in @product@'s document library without the guest view permission in the 
+  in the portal's document library without the guest view permission in the 
   portal. The other authentication types require this permission to access such 
   files. 
 
@@ -114,7 +114,7 @@ connection, you can use the `credentialsStorage` attribute together with the
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The ID of the View's layout. You can use `@layout/login_default` (Default View) or `@layout/login_material` (Material View). To use the Material View, you must first install the Material View Set. [Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets) for instructions on installing and using Views and View Sets, including the Material View Set. |
+| `layoutId` | `@layout` | The ID of the View's layout. You can set this attribute to `@layout/login_default` (Default View) or `@layout/login_material` (Material View). To use the Material View, you must first install the Material View Set. [Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets) for instructions on installing and using Views and View Sets, including the Material View Set. |
 | `companyId` | `number` | The ID of the portal instance to authenticate to. If you don't set this attribute or set it to `0`, the Screenlet uses the `companyId` setting in `LiferayServerContext`. |
 | `loginMode` | `enum` | The Screenlet's authentication type. You can set this attribute to `basic`, `oauth`, or `cookie`. If you don't set this attribute, the Screenlet defaults to basic authentication. |
 | `basicAuthMethod` | `string` | Specifies the basic authentication option to use. You can set this attribute to `email`, `screenName` or `userId`. This must match the server's authentication option. If you don't set this attribute, and don't set the `loginMode` attribute to `oauth` or `cookie`, the Screenlet defaults to basic authentication with the `email` option. |
