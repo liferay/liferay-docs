@@ -116,7 +116,7 @@ connection, you can use the `saveCredentials` attribute together with the
 | `companyId` | `number` | The ID of the portal instance to authenticate to. If you don't set this attribute or set it to `0`, the Screenlet uses the `companyId` setting in `LiferayServerContext`. |
 | `loginMode` | `string` | The Screenlet's authentication type. You can set this attribute to `basic`, `oauth`, or `cookie`. If you don't set this attribute, the Screenlet defaults to basic authentication. |
 | `basicAuthMethod` | `string` | Specifies the basic authentication option to use. You can set this attribute to `email`, `screenName` or `userId`. This must match the server's authentication option. If you don't set this attribute, and don't set the `loginMode` attribute to `oauth` or `cookie`, the Screenlet defaults to basic authentication with the `email` option. |
-| `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to used in OAuth authentication. |
+| `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to use in OAuth authentication. |
 | `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. |
 | `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadStoredCredentials()` method. |
 
@@ -129,7 +129,7 @@ following methods:
 - `- screenlet:onLoginResponseUserAttributes:`: Called when login successfully 
   completes. The user attributes are passed as a dictionary of keys (`String` or 
   `NSStrings`) and values (`AnyObject` or `NSObject`). The supported keys are 
-  the same as the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2233).
+  the same as the [portal's User entity](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/service.xml#L2575-L2737).
 
 - `- screenlet:onLoginError:`: Called when an error occurs during login. The 
   `NSError` object describes the error.
