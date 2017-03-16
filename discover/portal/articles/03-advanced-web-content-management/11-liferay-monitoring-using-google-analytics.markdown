@@ -32,6 +32,16 @@ signed up for the service) in the field and click *Save*. All the pages in the
 site you selected will now have the Google Analytics code in them and will be
 tracked. 
 
+To enable a different analytics service, navigate to *Configuration* in the
+Control Panel, and then go to *Portal Settings* &rarr; *Miscellaneous* &rarr;
+*Analytics*. You can enter the name of any additional service you would like to
+add by entering its name in the *Analytics* field provided. Once you have entered
+the name, go to the *Site Settings* &rarr; *Advanced* &rarr; *Analytics* page for
+the site to which you wish to add analytics. Copy the Javascript tracking code
+provided by your analytics platform into corresponding field for your service.
+Now all pages on the selected site contain the tracking script and will send 
+analytics data to your analytics platform. 
+
 This is a fairly simple procedure, and it gives you the ability to take
 advantage of some great tools to help you visualize who's coming to your site
 and from where. 
