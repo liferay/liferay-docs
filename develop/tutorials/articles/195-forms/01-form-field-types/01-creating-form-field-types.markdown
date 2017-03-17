@@ -1,13 +1,14 @@
 # Creating Form Field Types [](id=creating-form-field-types)
 
 Liferay's Forms application does not contain a dedicated time field
-out-of-the-box. For ease of use and to ensure proper data is collected, develop
-a time field and learn how @product@'s field types work at the same time.
+out-of-the-box. For ease of use and to ensure proper data is collected, you can
+develop a time field and learn how @product@'s field types work at the same
+time.
 
 There are several steps involved in creating a form field type:
 
 1. Specify the OSGi metadata
-2. Configure your buildscript and dependencies
+2. Configure your build script and dependencies
 3. Create a `DDMFormFieldType` component
 4. Implement a `DDMFormFieldType`
 5. Render the field type
@@ -141,8 +142,8 @@ implementing the `DDMFormFieldType` service (`service=...`).
 : Integer that defines the field type's position in the *Choose a Field Type* dialog of the form builder.
 
 `ddm.form.field.type.icon`
-: The icon to be used for the field type. Choosing one of the [Lexicon
-Experience Language icons](http://liferay.github.io/lexicon/content/icons-lexicon/) makes your form
+: The icon to be used for the field type. Choosing one of the 
+[Lexicon Experience Language icons](http://liferay.github.io/lexicon/content/icons-lexicon/) makes your form
 field blends in with the existing form field types.
 
 `ddm.form.field.type.js.class.name`

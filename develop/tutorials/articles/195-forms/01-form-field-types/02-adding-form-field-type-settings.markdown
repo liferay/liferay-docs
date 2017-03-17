@@ -1,9 +1,9 @@
 # Adding Settings to Form Field Types [](id=adding-settings-to-form-field-types)
 
-Once you develop a [Form Field
-Type](/developer/tutorials/-/knowledge_base/7-0/creating-form-field-types), you
-might need to add settings to it. For example, your time field might need to be
-configured to accept different time formats. Here you'll learn how to add
+Once you develop a 
+[Form Field Type](/developer/tutorials/-/knowledge_base/7-0/creating-form-field-types), 
+you might need to add settings to it. For example, your time field might need to
+be configured to accept different time formats. Here you'll learn how to add
 settings to form field types by adding a *mask* and a *placeholder* to the Time
 field type created in the previous tutorial. 
 
@@ -21,13 +21,13 @@ $$$
 To add settings to form field types, you'll use these steps:
 
 - Write an interface that extends the default field type configuration,
-    `DefaultDDMFormFieldTypesettings`.
+  `DefaultDDMFormFieldTypesettings`.
 - Update the `*FormFieldRenderer` so it makes the new configuration options
-    available to the JavaScript component and/or the Soy template for rendering.
+  available to the JavaScript component and/or the Soy template for rendering.
 - Update the JavaScript component (defined in `time_field.js` in our example) to
-    configure the new settings and their default values.
+  configure the new settings and their default values.
 - Update the Soy template to include any settings that need to be rendered
-    in a form (the placeholder, in our example).
+  in a form (the placeholder, in our example).
 
 Get started by crafting the interface that controls what settings your field
 has.
@@ -104,8 +104,8 @@ field type needs. The form layout presented here gives your form the
 look and feel of a native form field type. See the note below for more
 information on the DDM annotations used in this form.
 
-One thing to take note of is that all of the default settings must be present in
-your settings form. Note the list of settings present for each tab (each
+One thing to note is that all the default settings must be present in your
+settings form. Note the list of settings present for each tab (each
 `@DDMFormLayoutPage`) above. If you need to make one of the default settings
 unusable in the settings form for your field type, configure a *hide rule* for
 the field. Form field rules are configured using the `@DDMFormFieldRule`
@@ -119,9 +119,7 @@ setting them up in the class, as was necessary for the mask and placeholder.
 
 **DDM Annotations:** The `@DDMForm` annotation on this class allows the form engine to
 convert the interface definition into a dynamic form. This makes it really
-intuitive to lay out your settings form. More details on how DDM form
-annotations work and their use cases for annotatively creating forms can be
-found [here--coming soon](LINK). 
+intuitive to lay out your settings form. 
 
 For now, here are brief explanations for the annotations used in the above
 example:
@@ -137,7 +135,7 @@ Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
 
 `@DDMFormLayoutPage`
 : The sections of the type settings form. Takes two variables: `title` and
-`value`, where title is a String value that names the section of the form, and
+`value`, where title is a String value that names the section of the form and
 value is one or more `@DDMFormLayoutRow`s.
 
 **Note:** The title of the layout pages are `basic` and `properties` for all of
