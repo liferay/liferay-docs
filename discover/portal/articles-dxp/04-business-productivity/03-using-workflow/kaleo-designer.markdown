@@ -169,18 +169,70 @@ configure multiple assignments for a task.
 
 +$$$
 
-**Note:** To assign a workflow task by resource action, you need to know what
-the *resources* are, and what the *actions* are for those resources. The easiest
-way to find those To find 
+**Resource Action Assignments:** If you don't know what resource actions are, refer to the developer
+tutorial on @product@'s [permission
+system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
+for a more detailed explanation. Basically, resource actions are operations
+performed by Liferay users on an application or entity in @product@. For
+example, a user might have permission to update Message Boards Messages. This is
+called an UPDATE resource action, because the user can update the resource. 
 
+To find all the resource actions that have bee configured in @product@, you
+need access to the Roles Admin application in the Control Panel (permission for
+the VIEW action on the Roles resource). 
 
-If you don't know what resource actions are, refer to the developer tutorial on
-@product@'s [permission system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources) for a more detailed explanation.
+- Navigate to Control Panel &rarr; Users &rarr; Roles.
+- Add a new Regular Role. See the [article on managing roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) for more information.
+- Once the role is added, navigate to the Define Permissions interface for the
+    role.
+- Find the resource whose action you want to use for defining your workflow
+    assignment.
+
+So, how do you go from finding the resource action to using it in the workflow?
+Dues to a [known bug](https://issues.liferay.com/browse/LPS-70462), using Kaleo
+Designer's interface  for setting up a resource action assignment is not
+possible at the time of this writing (Digital Enterprise 7.0 SP1, Fix Pack 12).
+However, you can work around this issue. First access the XML for the workflow
+definition in the *Source* tab of Kaleo Designer. Copy the content to a file on
+your computer and save it. Now you can work with the XML definition directly.
+
+Use an `<assignments>` element in your workflow task, defined like this:
+
+    <assignments>
+        <resource-actions>
+            <resource-action>UPDATE</resource-action>
+        </resource-actions>
+    </assignments>
+
+Navigate to Control Panel &rarr; Configuration &rarr; Workflow Configuration,
+and upload your workflow definition directly. As usual, assign the workflow to
+the appropriate workflow enabled asset, then use your workflow as usual.
+
+Now, when the workflow proceeds to the task any user with `UPDATE` permissions
+on the resource (for example, Message Boards Messages) will be assigned to it.
+Specifically, the user sees the tasks in their *My Workflow Tasks* application
+under the tab *Assigned to My Roles*.
+
+The syntax to use is the name of the resource action in all upper case letters.
+Here are some common resource actions:
+
+    UPDATE
+    ADD
+    DELETE
+    VIEW
+    PERMISSIONS
+    SUBSCRIBE
+    ADD_DISCUSSION
+
+To find out the definitive name of a resource action, you must download the
+[@product@ source
+code](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
+find the project of the interested resource, then find the `default.xml` file in
+its `*-web` or `*-service` module. There you'll see the resource actions defined
+identically to the way you enter them into your workflow. Here's a portion of
+the `default.xml` file from the `message-boards-web` module:
 
 $$$
-
-
-
 
 You also have the option to use a script to manage the assignment. Here's the
 script for the Review task assignment in the Scripted Single Approver workflow
