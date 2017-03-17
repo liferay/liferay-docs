@@ -299,7 +299,7 @@ makes it easy. Have fun distributing your structures and templates!
 
 **Related Topics**
 
-[Customizing Sites and Site Templates with Application Adapters](develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters)
+[Customizing Sites and Site Templates with Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters)
 
-[Advanced Content with Structures and Templates](discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
+[Advanced Content with Structures and Templates](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
 

@@ -47,7 +47,7 @@ making them ideal to use in browsers and mobile applications.
 The Skinny JSON Provider app is available through the Liferay Marketplace.
 You'll find it categorized as a Utility app. To learn how to install it, you can
 read the section
-[Downloading and Installing Apps](discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
+[Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
 
 The app adds two new web service APIs that you can configure like other Liferay
 web services. Here is the context and the class name that you must specify to

@@ -341,5 +341,5 @@ of a deployable sample newsletter tracking action, you can download its
 
 [Creating Model Listeners](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-model-listeners)
 
-[Web Content Management](discover/portal/-/knowledge_base/6-2/web-content-management)
+[Web Content Management](/discover/portal/-/knowledge_base/6-2/web-content-management)
 

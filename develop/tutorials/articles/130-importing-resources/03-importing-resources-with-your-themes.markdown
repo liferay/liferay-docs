@@ -551,7 +551,7 @@ and which you can download from Liferay Marketplace.
 
 **Related Topics**
 
-[Themes and Layout Templates](develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
 
-[Application Display Templates](develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 

@@ -32,7 +32,7 @@ described in this section is only intended to demonstrate how to use Service
 Builder. The Calendar portlet provides many more features than the simple
 example application described here. For information about the Calendar portlet,
 please refer to the
-[Managing Events and Calendar Resources with Liferay's Calendar Portlet](discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
+[Managing Events and Calendar Resources with Liferay's Calendar Portlet](/discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
 
 $$$
 

@@ -224,4 +224,4 @@ Great! Your iOS project is ready for Liferay Screens.
 
 [Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
-[Preparing Android Projects for Liferay Screens](develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)

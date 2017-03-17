@@ -227,7 +227,7 @@ user's experience.
 
 ## Related Topics [](id=related-topics)
 
-[Using Liferay's Message Bus](develop/tutorials/-/knowledge_base/6-2/using-liferays-message-bus)
+[Using Liferay's Message Bus](/develop/tutorials/-/knowledge_base/6-2/using-liferays-message-bus)
 
 [Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

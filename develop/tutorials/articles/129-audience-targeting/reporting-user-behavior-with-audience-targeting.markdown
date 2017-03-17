@@ -78,7 +78,7 @@ page and study the folders with the `report-` prefix.
 
 **Related Topics**
 
-[User Management](discover/portal/-/knowledge_base/6-2/user-management)
+[User Management](/discover/portal/-/knowledge_base/6-2/user-management)
 
-[Customizing Liferay Portal with Hooks](develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

@@ -77,7 +77,7 @@ plugin to Liferay.
 To get some feedback from the portal on registering your plugin's services,
 configure the portal to log the plugin's informational messages (i.e., its `INFO
 ...` messages). See the section on Liferay's logging system in
-[Using Liferay Portal](discover/deployment/-/knowledge_base/6-2/liferays-logging-system) for details.
+[Using Liferay Portal](/discover/deployment/-/knowledge_base/6-2/liferays-logging-system) for details.
 
 To test Liferay's JSON web service registration process, add a simple method to
 your plugin's services. Edit your `*ServiceImpl` class and add the following

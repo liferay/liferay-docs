@@ -39,5 +39,5 @@ Liferay portlets.
 
 ## Related Topics [](id=related-topics)
 
-[Search and Indexing](develop/tutorials/-/knowledge_base/6-2/search-and-indexing)
-[User Interfaces with AlloyUI](develop/tutorials/-/knowledge_base/6-2/alloyui)
+[Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/search-and-indexing)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)

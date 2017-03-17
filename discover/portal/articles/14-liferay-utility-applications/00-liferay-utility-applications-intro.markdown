@@ -3,7 +3,7 @@
 In this chapter we'll look at some Liferay utility applications that might be
 useful for you. The Software Catalog has been replaced by Liferay Marketplace
 but can still be installed as a plugin. Refer to the chapter on 
-[Liferay Marketplace](discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace) 
+[Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace) 
 for information on downloading and managing Liferay plugins. The Reports,
 JasperReports, and Knowledge Base applications are only available to EE
 customers. In this chapter we'll discuss following applications:
