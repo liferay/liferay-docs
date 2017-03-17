@@ -1,22 +1,23 @@
 # Planning Plugin Upgrades and Optimizations [](id=migrating-existing-code-to-liferay-7)
 
-By now you've explored @product-ver@'s features and you might have created new
-portlet modules or a theme using Liferay's new  [tooling](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more)
+If you've explored @product-ver@'s features and possibly created new
+portlet modules themes with Liferay's new  [tooling](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more)
 and 
-[techniques](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers).
-But you also have existing plugins ready to upgrade as soon as possible. The
-great thing is that Liferay's automated much of the upgrade process. In
-addition, you can continue developing the plugins in traditional ways and adopt
-new development tooling and techniques when you're ready. 
+[techniques](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers),
+you may be wondering how you'd upgrade existing plugins. The great thing is that
+Liferay has automated much of the upgrade process. In addition, you can continue
+developing plugins in traditional ways and adopt new development tooling and
+techniques when you're ready. 
 
 This tutorial guides you through phases of *upgrading* plugins and optionally
 *optimizing* them. 
 
-**upgrade**: A process for deploying an existing plugin on @product-ver@ with
+**Upgrade**: A process for deploying an existing plugin on @product-ver@ with
 minimal changes. 
 
-**optimization**: An optional process for modifying a plugin or migrating it to 
-a new environment to improve the plugin or facilitate developing it. 
+**Optimization**: An optional but recommended process for modifying a plugin or
+migrating it to a new environment to improve the plugin or facilitate developing
+it. 
 
 Importantly, you should *upgrade* a plugin before applying any optimizations to 
 it. 
@@ -64,10 +65,9 @@ See the
 [optimization tutorials](/develop/tutorials/-/knowledge_base/7-0/optimizing-plugins-for-liferay-7)
 for more options and details. 
 
-Note, you can continue using the Plugins SDK to develop plugins. But the Plugins
+You *can* continue using the Plugins SDK to develop plugins. But the Plugins
 SDK is deprecated  as of @product-ver@. In light of the deprecation, you should
-consider migrating plugins from the Plugins SDK and to new environments, such as
-ones that use Gradle or Maven. Liferay offers  both. 
+consider migrating plugins from the Plugins SDK to one of the new environments:
 
 -   [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#from-the-plugins-sdk-to-liferay-workspace)
     is a Gradle environment that supports developing modules and traditional
@@ -79,7 +79,7 @@ ones that use Gradle or Maven. Liferay offers  both.
     plugins and archetypes support developing modules and traditional plugins.
     There's also a Liferay Workspace archetype for generating a Workspace that uses Maven. 
 
-And [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide) completely
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide) 
 supports developing in Workspaces using Gradle or [Maven](/develop/tutorials/-/knowledge_base/7-0/using-maven-in-liferay-ide).
 
 In short, there's plenty of time to move plugins out of the Plugins SDK, but you

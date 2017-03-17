@@ -10,6 +10,53 @@ documentation.
 For these reasons, we ask that those contributing to the documentation adhere to
 the following editorial conventions. 
 
+## Introductions
+
+Introductions are hard to write: let's get that out of the way right out of the
+box. Having written many introductions, I feel for you. Sometimes it's better to
+skip the introduction and write the rest of the article and then come back to
+the introduction when you're done. I get that. If it weren't hard, everybody
+would do it, so if you're attempting to write one, kudos to you. Because it's
+hard, there are definitely common pitfalls to writing introductions. 
+
+Avoid *Choose Your Own Adventure* introductions. If you're not as old as I am,
+[Choose Your Own Adventure](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure)
+books were short novels written in the second person (you), where the reader
+reads along and comes to decision points. For example, a Choose Your Own
+Adventure book might begin like this: 
+
+    You were late coming home and really didn't want to be grounded. All your life
+    you've avoided cutting through the forest because of the stories of the beast
+    that lurks there under cover of darkness. But this time, you really don't have a
+    choice: if you get grounded this weekend, you'll miss the dance and your
+    girlfriend will dump you, and you can't let that happen. So with a deep breath,
+    you plunge down the trail into the forest. 
+
+    It's actually not so bad. It's quiet and the path is well worn: obviously
+    somebody comes here regularly. But then you run into a problem: the path splits
+    ahead of you, with one path going right and another going left. Which path do
+    you choose? 
+
+    If you choose the right path, go to page 100. If you choose the left path, go to
+    page 50. 
+
+This is a great writing style for this genre. The reader knows it's fiction and
+the situation has been made up. It's horrible, however, for tutorial
+introductions. In real life, nobody wants to have forecasted for them by
+somebody who has no idea about them what their situation is. They don't want to
+be made to feel bad because your introduction assumed they've been through all
+the tutorials up to now and now they're ready for whatever you plan to tell
+them. Here's an example of what not to do: 
+
+    You've spent some time studying Service Builder (link) and you may even have
+    generated some services. Now you're ready for the next level! 
+
+I call this a *Choose Your Own Adventure* introduction. Arrggh! I even had
+trouble writing that. No, no, no. Don't ever do that; it's so annoying for the
+reader. You have no idea if the reader has spent time studying what you think is
+a prerequisite or what his/her situation is at all. There's no reason to
+unnecessarily offend the reader in this way. 
+
 ## Hierarchical Design 
 
 The official documentation has a hierarchical design. This means that the text
