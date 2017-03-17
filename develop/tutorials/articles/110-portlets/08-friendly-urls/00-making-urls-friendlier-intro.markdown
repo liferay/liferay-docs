@@ -29,6 +29,7 @@ applications). It's recommended to put it in a
 2. Add friendly URL routes, using as many `<route>` tags as you need friendly
 URLs, like this:
 
+```xml
     <?xml version="1.0"?>
     <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 7.0.0//EN" "http://www.liferay.com/dtd/liferay-friendly-url-routes_7_0_0.dtd">
 
@@ -55,6 +56,7 @@ URLs, like this:
         </route>
         ...
     </routes>
+```
 
 Use `<pattern>` tags to define placeholder values for the parameters that
 normally appear in the generated URL. This is just a mask. The beastly URL still
@@ -73,6 +75,7 @@ parameter comes from the `mvc.command.name` property in the `@Component` of your
 `MVCRenderCommand` implementation. Basically, this determines what will be
 rendered (for example, `view.jsp`).
 
+```java
     @Component(
         immediate = true,
         property = {
@@ -81,6 +84,7 @@ rendered (for example, `view.jsp`).
         },
         service = MVCRenderCommand.class
     )
+```
 
 ## Implementing a Friendly URL Mapper [](id=implementing-a-friendly-url-mapper)
 
@@ -93,6 +97,7 @@ specifies a `FriendlyURLMapper` service, with two properties:
 
 2. A `javax.portlet.name` property.
 
+```java
         @Component(
             property = {
                 "com.liferay.portlet.friendly-url-routes=META-INF/friendly-url-routes/routes.xml",
@@ -100,6 +105,7 @@ specifies a `FriendlyURLMapper` service, with two properties:
             },
             service = FriendlyURLMapper.class
         )
+```
 
 After that, implement the `FriendlyURLMapper` service. For your convenience,
 `DefaultFriendlyURLMapper` provides a default implementation. If you extend
@@ -108,6 +114,7 @@ After that, implement the `FriendlyURLMapper` service. For your convenience,
 the first part of your Friendly URLs. It's smart to name it after your
 application. Here's what it looks like for Liferay's Blogs application:
 
+```java
     public class BlogsFriendlyURLMapper extends DefaultFriendlyURLMapper {
 
         @Override
@@ -118,6 +125,7 @@ application. Here's what it looks like for Liferay's Blogs application:
         private static final String _MAPPING = "blogs";
 
     }
+```
 
 All of the Blogs application's friendly URLs begin with the String set here
 (`blogs`).
@@ -133,7 +141,7 @@ entry to see it. After that, look at the URL:
 As specified in the friendly URL mapper class, `blogs` is the first part of the
 friendly URL that comes after the Liferay part of the URL. The next part is
 determined by a specific URL route in `routes.xml`:
-
+```xml
 	<route>
 		<pattern>/{urlTitle}</pattern>
 		<implicit-parameter name="categoryId"></implicit-parameter>
@@ -142,19 +150,20 @@ determined by a specific URL route in `routes.xml`:
 		<implicit-parameter name="p_p_state">normal</implicit-parameter>
 		<implicit-parameter name="tag"></implicit-parameter>
 	</route>
-
+```
 Here, the `urlTitle` is a database field that's generated from the title the
 author gives their blog post, and it's meant to be used in a URL. Since it's
 already a parameter in the URL (see below), it's available for use in the
 friendly URL.
 
+```xml
     <portlet:renderURL var="viewEntryURL">
         <portlet:param name="mvcRenderCommandName" value="/blogs/view_entry" />
         <portlet:param name="urlTitle" value="<%= entry.getUrlTitle() %>" />
     </portlet:renderURL>
+```
 
 When a render URL for viewing a blog entry is invoked, the String defined in the
 friendly URL mapper teams up with the `pattern` tag in your friendly URL routes
 file, and you get a very friendly URL indeed, instead of some nasty, conceited,
 unfriendly URL that's despised by users and SEO services alike.
-
