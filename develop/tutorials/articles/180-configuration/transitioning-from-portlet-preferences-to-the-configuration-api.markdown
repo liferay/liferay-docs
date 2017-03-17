@@ -47,9 +47,9 @@ to update your application:
 
 1. Identify the existing preferences of the portlet configuration. 
 
-   For example, you could check the `configuration.jsp` (where you will find DOM
-   elements with the name `preferences--XXX--`, where `XXX` is the name of the
-   preference).
+    For example, you could check the `configuration.jsp` (where you will find
+    DOM elements with the name `preferences--XXX--`, where `XXX` is the name of
+    the preference).
 
 2. Determine the scope of the portlet configuration. The traditional way of
    specifying it is through `liferay-portlet.xml`. Look at the elements
@@ -57,50 +57,49 @@ to update your application:
    `preferences-owned-by-group` to determine the right scope. The following table
    maps out the scopes:
 
+    | liferay-portlet.xml                                                     | Scope            |
+    |-------------------------------------------------------------------------|------------------|
+    | preferences-company-wide=true                                           | Company          |
+    | preferences-owned-by-group=true AND preferences-unique-per-layout=false | Group            |
+    | preferences-owned-by-group=true AND preferences-unique-per-layout=true  | Portlet Instance |
 
-| liferay-portlet.xml                                                     | Scope            |
-|-------------------------------------------------------------------------|------------------|
-| preferences-company-wide=true                                           | Company          |
-| preferences-owned-by-group=true AND preferences-unique-per-layout=false | Group            |
-| preferences-owned-by-group=true AND preferences-unique-per-layout=true  | Portlet Instance |
+    Related to this, we make the following recommendations for the scope of the
+    configuration of a portlet:
 
-Related to this, we make the following recommendations for the scope of the
-configuration of a portlet:
+    * For any portlet that can be added to a page it should be Portlet Instance. 
 
- * For any portlet that can be added to a page it should be Portlet Instance. 
-
- * For any portlet that is accessible through the product menu and is used to
-   administer the site it should be Group.
+    * For any portlet that is accessible through the product menu and is used to
+    administer the site it should be Group.
  
 3. Create a Java interface that will represent the configuration, with one
    method per existing preference.
  
-   By Liferay's convention, the suggested names for these interfaces are
-   `[Portlet Name]PortletInstanceConfiguration` for the portlet scoped ones or
-   `[Portlet Name]GroupServiceConfiguration` for the group scoped ones. However
-   you can choose different conventions. 
+    By Liferay's convention, the suggested names for these interfaces are
+    `[Portlet Name]PortletInstanceConfiguration` for the portlet scoped ones or
+    `[Portlet Name]GroupServiceConfiguration` for the group scoped ones. However
+    you can choose different conventions. 
  
-   This interface will use two annotations (`@Meta.OCD` and
-   `@ExtendedObjectClassDefinition`) to declare that it represents a configuration
-   and to specify the desired scope. The `id` specified in the `@Meta.OCD` annotation
-   must be the fully qualified class name of the interface. 
+    This interface will use two annotations (`@Meta.OCD` and
+    `@ExtendedObjectClassDefinition`) to declare that it represents a configuration
+    and to specify the desired scope. The `id` specified in the `@Meta.OCD` annotation
+    must be the fully qualified class name of the interface. 
 
-   For example,
+    For example,
 
-    	@ExtendedObjectClassDefinition(
-			category = "[category]",
-			scope = ExtendedObjectClassDefinition.Scope.GROUP
-		)
-		@Meta.OCD(
-			id = "[package].[PortletName]GroupServiceConfiguration",
-		)
-    	public interface [PortletName]GroupServiceConfiguration {
-	  		@Meta.AD(deflt = "", required = false)
-	    	public String displayStyle();
+        @ExtendedObjectClassDefinition(
+            category = "[category]",
+            scope = ExtendedObjectClassDefinition.Scope.GROUP
+        )
+        @Meta.OCD(
+            id = "[package].[PortletName]GroupServiceConfiguration",
+        )
+        public interface [PortletName]GroupServiceConfiguration {
+            @Meta.AD(deflt = "", required = false)
+            public String displayStyle();
 	
-	    	@Meta.AD(deflt = "0", required = false)
-	    	public long displayStyleGroupId(long defaultDisplayStyleGroupId);
-    	}
+            @Meta.AD(deflt = "0", required = false)
+            public long displayStyleGroupId(long defaultDisplayStyleGroupId);
+        }
 
 4. In the code above replace [category] with a category name of your choice. Out
    of the box Liferay uses: wem, forms, collaboration and foundation. If your
@@ -141,12 +140,12 @@ configuration of a portlet:
 			portletDisplay.getPortletInstanceConfiguration(
 				[PortletName]PortletInstanceConfiguration.class);
 	
-   Once the configuration object is obtained, the individual preferences can now
-   be changed from this:
+    Once the configuration object is obtained, the individual preferences can now
+    be changed from this:
 
         String displayStyle = portletPreferences.getValue("displayStyle", defaultValue);
 
-   ... to this ...
+    ... to this ...
 
         String displayStyle = v.displayStyle();
 
@@ -156,10 +155,10 @@ configuration of a portlet:
    to obtain the configuration. The best way to access the `PortletProvider`
    depends on who is making the invocation: 
  
-   Within an OSGi Component a reference to the `ConfigurationProvider` can be
-   obtained and used as follows:
+    Within an OSGi Component a reference to the `ConfigurationProvider` can be
+    obtained and used as follows:
         	 
-     		@Component(service = Foo)
+            @Component(service = Foo)
         		public class Foo {
         			
         			protected void methodWhichNeedsConfiguration() {
@@ -171,7 +170,7 @@ configuration of a portlet:
                     private ConfigurationProvider _configurationProvider;
         		}
         		
-   Within a service created with Service Builder the code is very similar:
+    Within a service created with Service Builder the code is very similar:
         
         		public class FooServiceImpl {
         			
@@ -184,10 +183,10 @@ configuration of a portlet:
                     private ConfigurationProvider _configurationProvider;
         		}
 
-   For all other cases it is preferred to get the configuration injected or
-   passed as a parameter. As a last resort it is possible to use
-   `ConfigurationProviderUtil` to obtain the configuration, although this method
-   might have issues in highly dynamic environments:
+    For all other cases it is preferred to get the configuration injected or
+    passed as a parameter. As a last resort it is possible to use
+    `ConfigurationProviderUtil` to obtain the configuration, although this method
+    might have issues in highly dynamic environments:
             
             	[PortletName]GroupServiceConfiguration groupConfiguration 
             			ConfigurationProviderUtil.getGroupConfiguration(
