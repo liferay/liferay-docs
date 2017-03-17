@@ -35,7 +35,7 @@ component you want to configure, or click the actions button
 you'd like, then click *Save*. Now your configuration changes are saved and take
 place throughout the entire system.
 
-![Figure 3: Each System Settings entry will have a configuration Scope.](../../../images/system-settings-actions.png)
+![Figure 3: After saving changes to a configuration, actions *Reset Default Values* and *Export* are available for it.](../../../images/system-settings-actions.png)
 
 If you make some regrettable configuration decisions and can't recall exactly
 what you did, start over by clicking the actions button
@@ -123,4 +123,3 @@ Now you know what System Settings is and how to use it. All that's left is
 exploring the entries to see what configuration options you can make. If you
 aren't sure what something does, check the documentation for the feature you're
 interested in, as specific configurations will be covered there.
-
