@@ -138,7 +138,7 @@ hook in Liferay Portal.
 
 **Related Topics**
 
-[MVC Portlets](develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Overriding and Adding Struts Actions](develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
+[Overriding and Adding Struts Actions](/develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
 

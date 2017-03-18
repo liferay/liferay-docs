@@ -70,7 +70,7 @@ heading, select *Workflow*. Then, in the *Definitions* tab, click on the
 A workflow definition can be associated with publication of an asset or DDL
 record. Let's associate our ticket process workflow definition with a DDL record
 that lets a developer indicate whether she'll fix a ticket's issue. You can find
-detailed instructions for creating a DDL by visiting the section [Defining data types](discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-)
+detailed instructions for creating a DDL by visiting the section [Defining data types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-)
 in *Discover* &rarr; *Portal*. We'll demonstrate how easy it is.
 
 ## Using Dynamic Data Lists with Workflows [](id=using-dynamic-data-lists-with-workflows)

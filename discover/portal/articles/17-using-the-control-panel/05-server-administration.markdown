@@ -170,7 +170,7 @@ portal.
 Instead of using your Liferay server's `portal-ext.properties` file to configure
 a mail server, you can configure a mail server from the Mail tab of the Server
 Configuration section of the Control Panel. If your portal is to receive mail
-(see, for example, our coverage of the [Message Boards portlet](discover/portal/-/knowledge_base/6-2/discuss-ask-and-answer-using-the-message-boards)
+(see, for example, our coverage of the [Message Boards portlet](/discover/portal/-/knowledge_base/6-2/discuss-ask-and-answer-using-the-message-boards)
 ), you can connect a POP mail server. If your portal is to send mail, which is
 useful for sending notifications to users, you can connect to an SMTP server.
 We highly recommend setting up mail servers for your portal.

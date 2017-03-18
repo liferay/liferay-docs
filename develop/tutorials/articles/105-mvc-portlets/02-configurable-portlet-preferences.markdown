@@ -287,5 +287,5 @@ use Liferay's portlet preferences in the portlets you develop.
 
 ## Related Topics [](id=related-topics)
 
-[User Interfaces with AlloyUI](develop/tutorials/-/knowledge_base/6-2/alloyui)
-[User Interfaces with the Liferay UI Taglib](develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)

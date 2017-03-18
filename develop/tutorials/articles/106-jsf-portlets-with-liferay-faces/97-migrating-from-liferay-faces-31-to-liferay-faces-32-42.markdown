@@ -132,6 +132,6 @@ addition to other changes required to migrate to Liferay Faces 3.2/4.2.
 
 ## Related Topics [](id=related-topics)
 
-[Creating and Deploying JSF Portlets](develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets)
+[Creating and Deploying JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets)
 
-[Understanding Liferay Faces Alloy](develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)

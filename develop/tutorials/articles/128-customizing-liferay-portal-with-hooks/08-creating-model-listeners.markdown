@@ -1,7 +1,7 @@
 # Creating Model Listeners [](id=creating-model-listeners)
 
 Model Listeners are used to listen for events on models and do something
-in response. They're similar in concept to [custom action hooks](develop/tutorials/-/knowledge_base/6-2/performing-a-custom-action-using-a-hook),
+in response. They're similar in concept to [custom action hooks](/develop/tutorials/-/knowledge_base/6-2/performing-a-custom-action-using-a-hook),
 which perform actions in response to portal events (user login, for
 example). Model listeners implement the
 [`ModelListener`](https://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/model/ModelListener.html)
@@ -21,9 +21,9 @@ entity for illustrative purposes.
 
 ## Creating a Hook Plugin Project [](id=creating-a-hook-plugin-project)
 
-First, create a hook plugin project in a [Liferay Plugins SDK](develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
+First, create a hook plugin project in a [Liferay Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
 or with 
-[Maven](develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven).
+[Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven).
 
 Once you have a hook plugin, start developing your model listener.
 
@@ -140,13 +140,13 @@ $$$
 
 Listening for events on Liferay's entities is just one of the many interesting
 ways to customize Liferay's core functionality with hooks. Keep reading in 
-[this section](develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal) to
+[this section](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal) to
 learn about more of Liferay's extension points. 
 
 ## Related Topics [](id=related-topics)
 
-[Overriding a Portal Service Using a Hook](develop/tutorials/-/knowledge_base/6-2/overriding-a-portal-service-using-a-hook)
+[Overriding a Portal Service Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-a-portal-service-using-a-hook)
 
-[Performing a Custom Action Using a Hook](develop/tutorials/-/knowledge_base/6-2/performing-a-custom-action-using-a-hook)
+[Performing a Custom Action Using a Hook](/develop/tutorials/-/knowledge_base/6-2/performing-a-custom-action-using-a-hook)
 
-[Service Builder and Services](develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)

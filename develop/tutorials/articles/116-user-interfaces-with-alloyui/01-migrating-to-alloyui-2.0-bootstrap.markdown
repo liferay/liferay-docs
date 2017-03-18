@@ -389,5 +389,5 @@ monotonous conversion work for you.
 
 [Liferay Faces AlloyUI Components](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
 
-[Themes and Layout Templates](develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
 

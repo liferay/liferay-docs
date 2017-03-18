@@ -181,7 +181,7 @@ create!
 
 ## Related Topics [](id=related-topics)
 
-[Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
 

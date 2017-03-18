@@ -120,7 +120,7 @@ get out there and create your customizations!
 
 ## Related Topics [](id=related-topics)
 
-[Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Localization](develop/tutorials/-/knowledge_base/6-2/localization)
+[Localization](/develop/tutorials/-/knowledge_base/6-2/localization)
 

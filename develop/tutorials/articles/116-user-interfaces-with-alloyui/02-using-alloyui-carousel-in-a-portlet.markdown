@@ -145,7 +145,7 @@ You've just successfully used the `aui-carousel` in your portlet!
 
 ## Related Topics [](id=related-topics)
 
-[User Interfaces with the Liferay UI taglib](develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[User Interfaces with the Liferay UI taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[Using AlloyUI in Your Application](develop/learning-paths/-/knowledge_base/6-2/using-alloy-ui-in-your-application)
+[Using AlloyUI in Your Application](/develop/learning-paths/-/knowledge_base/6-2/using-alloy-ui-in-your-application)
 

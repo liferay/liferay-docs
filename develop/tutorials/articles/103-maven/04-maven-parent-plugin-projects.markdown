@@ -215,6 +215,6 @@ You've configured your parent plugin project.
 
 **Related Topics:**
 
-[Developing Plugins with Liferay IDE](develop/tutorials/-/knowledge_base/6-2/liferay-ide)
-[Developing with Maven](develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 
