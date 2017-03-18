@@ -955,7 +955,7 @@ your host. Suppose further that you've configured the Liferay running on port
 8080 as a SAML Identity Provider and the Liferay running on port 9080 as a SAML
 Service Provider, following the instructions above. If your Identity Provider
 and Service Provider have been correctly configured, navigating to
-[http://localhost:8080/c/portal/saml/sso?entityId=liferaysamlsp](http://localhost:8080/c/portal/saml/sso?entityId=liferaysamlsp)
+[http://localhost:8080/c/portal/saml/sso?entityId=liferaysamlsp&RelayState=http://localhost:9080](http://localhost:8080/c/portal/saml/sso?entityId=liferaysamlsp&RelayState=http://localhost:9080)
 initiates the SAML Identity Provider based login process. To initiate the SAML
 Service Provider based login process, just navigate to the Liferay running on
 port 9080 and click *Sign In*, navigate to
