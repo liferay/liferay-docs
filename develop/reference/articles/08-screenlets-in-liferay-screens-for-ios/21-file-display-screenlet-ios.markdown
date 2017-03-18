@@ -1,9 +1,9 @@
-# Audio Display Screenlet for iOS [](id=audio-display-screenlet-for-ios)
+# File Display Screenlet for iOS [](id=file-display-screenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
-- Xcode 7.2
-- iOS 9 SDK
+- Xcode 8.0
+- iOS 10 SDK
 - Liferay 7.0 CE, Liferay DXP 
 - Liferay Screens Compatibility Plugin 
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
@@ -17,8 +17,9 @@
 
 ## Features [](id=features)
 
-Audio Display Screenlet displays an audio file from a Liferay instance's 
-Documents and Media Library. 
+File Display Screenlet shows a single file from a @product@ instance's Documents 
+and Media Library. Use this Screenlet to display file types not covered by the 
+other display Screenlets (e.g., DOC, PPT, XLS). 
 
 ## Module [](id=module)
 
@@ -28,11 +29,9 @@ Documents and Media Library.
 
 - Default
 
-The Default Theme uses an iOS `AVAudioPlayer` to display the audio player. For 
-the player components, this Theme uses `UIButton`, `UISlider`, and several 
-`UILabel` instances. 
+The Default View uses an iOS `UIWebView` for displaying the file. 
 
-![Figure 1: Audio Display Screenlet using the Default Theme.](../../images/screens-ios-audiodisplay.png)
+![Figure 1: File Display Screenlet using the Default View.](../../images/screens-ios-filedisplay.png)
 
 ## Offline [](id=offline)
 
@@ -52,20 +51,19 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
-| `assetEntryId` | `number` | The primary key of the audio file. | 
-| `className` | `string` | The audio file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, their `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `classPK` | `number` | The audio file’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `autoLoad` | `boolean` | Whether the audio file automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
-| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/audio-display-screenlet-for-ios#offline) for details. |
+| `assetEntryId` | `number` | The primary key of the file. | 
+| `className` | `string` | The file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, their `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The file's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `autoLoad` | `boolean` | Whether the file automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
+| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/file-display-screenlet-for-ios#offline) for details. |
 
 ## Delegate [](id=delegate)
 
-Audio Display Screenlet delegates its events to an object that conforms to the 
-`FileDisplayScreenletDelegate` protocol. This protocol lets you implement the 
+File Display Screenlet delegates some events to an object that conforms to the  `FileDisplayScreenletDelegate` protocol. This protocol lets you implement the 
 following methods: 
 
 - `- screenlet:onFileAssetResponse:`: Called when the Screenlet receives the 
-  audio file. 
+  file. 
 
 - `- screenlet:onFileAssetError:`: Called when an error occurs in the process. 
   An `NSError` object describes the error. 
