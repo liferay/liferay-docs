@@ -9,15 +9,15 @@ in terms of how you'd solve problems most effectively using the tools the
 platform gives you. Eventually, if you use it long enough, it can seem like an
 old friend that's ready to stand by you and help you succeed in your projects. 
 
-@product-ver@ "stands by you", building off of what you already know. Its Code
-Upgrade Tool and this tutorial series--or Learning Path--help get your existing
-plugins running on @product-ver@ right away. The tool automates much of the
-process. After you upgrade your plugins, you can build and deploy them as you
-always have. 
+@product-ver@ was designed as an enhancement that builds off of what you already
+know. Its Code Upgrade Tool and this tutorial series--or Learning Path--help get
+your existing plugins running on @product-ver@ right away. The tool automates
+much of the process. After you upgrade your plugins, you can build and deploy
+them as you always have. 
 
 @product-ver@ has exciting improvements for developers too. This Learning Path
 shows you how to leverage them. Since you already know previous versions of
-Liferay, you're  several steps ahead of everybody else. 
+Liferay Portal, you're several steps ahead of everybody else. 
 
 This Learning Path describes the benefits of @product-ver@ for developers
 compared to previous versions, the architectural improvements, the benefits that
