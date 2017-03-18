@@ -43,7 +43,7 @@ like this:
 Of course you're not tied to the use of Gradle or BndTools to build your
 project. However, you do need a JAR with the proper OSGi headers defined, which
 is easily done if you provide a `bnd.bnd` file. To see Liferay MVC portlets
-built with Maven, BndTools, and Gradle, you can check out the tutorial on
+built with Maven and Gradle, you can check out the tutorial on
 [Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules).
 
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
@@ -417,4 +417,3 @@ points:
 -  [Application Security](/develop/tutorials/-/knowledge_base/7-0/application-security)
 -  [Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework)
 -  [Business Logic and Data Access (Service Builder)](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
-
