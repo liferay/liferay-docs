@@ -29,32 +29,32 @@ applications). It's recommended to put it in a
 2. Add friendly URL routes, using as many `<route>` tags as you need friendly
 URLs, like this:
 
-    <?xml version="1.0"?>
-    <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 7.0.0//EN" "http://www.liferay.com/dtd/liferay-friendly-url-routes_7_0_0.dtd">
+        <?xml version="1.0"?>
+        <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 7.0.0//EN" "http://www.liferay.com/dtd/liferay-friendly-url-routes_7_0_0.dtd">
 
-    <routes>
-        <route>
-            <pattern></pattern>
-            <implicit-parameter name="mvcRenderCommandName">/blogs/view</implicit-parameter>
-            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-            <implicit-parameter name="p_p_state">normal</implicit-parameter>
-        </route>
-        <route>
-            <pattern>/maximized</pattern>
-            <implicit-parameter name="mvcRenderCommandName">/blogs/view</implicit-parameter>
-            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-            <implicit-parameter name="p_p_state">maximized</implicit-parameter>
-        </route>
-        <route>
-            <pattern>/{entryId:\d+}</pattern>
-            <implicit-parameter name="categoryId"></implicit-parameter>
-            <implicit-parameter name="mvcRenderCommandName">/blogs/view_entry</implicit-parameter>
-            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-            <implicit-parameter name="p_p_state">normal</implicit-parameter>
-            <implicit-parameter name="tag"></implicit-parameter>
-        </route>
-        ...
-    </routes>
+        <routes>
+            <route>
+                <pattern></pattern>
+                <implicit-parameter name="mvcRenderCommandName">/blogs/view</implicit-parameter>
+                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+                <implicit-parameter name="p_p_state">normal</implicit-parameter>
+            </route>
+            <route>
+                <pattern>/maximized</pattern>
+                <implicit-parameter name="mvcRenderCommandName">/blogs/view</implicit-parameter>
+                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+                <implicit-parameter name="p_p_state">maximized</implicit-parameter>
+            </route>
+            <route>
+                <pattern>/{entryId:\d+}</pattern>
+                <implicit-parameter name="categoryId"></implicit-parameter>
+                <implicit-parameter name="mvcRenderCommandName">/blogs/view_entry</implicit-parameter>
+                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+                <implicit-parameter name="p_p_state">normal</implicit-parameter>
+                <implicit-parameter name="tag"></implicit-parameter>
+            </route>
+            ...
+        </routes>
 
 Use `<pattern>` tags to define placeholder values for the parameters that
 normally appear in the generated URL. This is just a mask. The beastly URL still
@@ -134,14 +134,14 @@ As specified in the friendly URL mapper class, `blogs` is the first part of the
 friendly URL that comes after the Liferay part of the URL. The next part is
 determined by a specific URL route in `routes.xml`:
 
-	<route>
-		<pattern>/{urlTitle}</pattern>
-		<implicit-parameter name="categoryId"></implicit-parameter>
-		<implicit-parameter name="mvcRenderCommandName">/blogs/view_entry</implicit-parameter>
-		<implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-		<implicit-parameter name="p_p_state">normal</implicit-parameter>
-		<implicit-parameter name="tag"></implicit-parameter>
-	</route>
+    <route>
+        <pattern>/{urlTitle}</pattern>
+        <implicit-parameter name="categoryId"></implicit-parameter>
+        <implicit-parameter name="mvcRenderCommandName">/blogs/view_entry</implicit-parameter>
+        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+        <implicit-parameter name="p_p_state">normal</implicit-parameter>
+        <implicit-parameter name="tag"></implicit-parameter>
+    </route>
 
 Here, the `urlTitle` is a database field that's generated from the title the
 author gives their blog post, and it's meant to be used in a URL. Since it's
@@ -157,4 +157,3 @@ When a render URL for viewing a blog entry is invoked, the String defined in the
 friendly URL mapper teams up with the `pattern` tag in your friendly URL routes
 file, and you get a very friendly URL indeed, instead of some nasty, conceited,
 unfriendly URL that's despised by users and SEO services alike.
-
