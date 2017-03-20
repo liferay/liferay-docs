@@ -15,7 +15,7 @@ leverage its APIs.
 - Build your own field types for Liferay's Forms application.
     - Create field types that look just like the built-in field types (both
         their source code and their UI appearance).
-    - Add ucsomt configuration options to your form fields types.
+    - Add custom configuration options to your form field types.
 - Use annotations to leverage the Dynamic Data Mapping (DDM) API and build
     reusable forms quickly.
     - Create forms using annotations.
