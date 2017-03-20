@@ -186,27 +186,25 @@ the "diff" command. This command has four options:
 
 For detailed usage information, run `patching-tool help store`.
 
-## Separate the patches from the @product@.
+## Separating the patches from the @product@.
 
-There is a new feature available as of Patching Tool 2.0.6 in a favor of
-reducing the size of the patched @product@ bundles. It's possible to decrease
+There is a new feature available as of Patching Tool 2.0.6 which helps to
+reduce the size of the patched @product@ bundles. It's possible to decrease
 the bundle's size if it's already been patched.
 
-To show you what's the reason behind, here are the numbers:
-1. Digital Enterprise 7.0 bundled with Tomcat ~ 430 MB
-2. Digital Enterprise 7.0 SP1 bundled with Tomcat ~ 856 MB
-     - _Fix pack: de-7 included in SP1 ~ 213 MB_
-     - _The restore file for Patching Tool ~ 219 MB_
-          - The patching files are about 432 MB.
+The patched bundles, like Service Pack, are at least doubled in size. This is 
+caused by the restore files which are stored within the WEB-INF folder of the
+web application. These files are necessary to be able to patch the @product@
+instance again.
 
-We cannot simply remove the Patching related files from the bundle because the
-upcoming patching processes would fail. Thus we added an option to the Patching
+These files cannot be removed from the bundle because the upcoming patching
+processes would fail. Thus we added an option to the Patching
 Tool to separate the patching files from the @product@ bundle in a way to be
 able to restore them safely when it comes to installing a new patch.
 
 `patching-tool separate <separation_name>`: This command produces a
 new file in the Patching Tool's `patches` folder, named as
-`liferay-patching-files-<separation-name>.zip`. 
+`liferay-patching-files-<separation-name>.zip`.
 
 This new file contains the necessary files for patching along with the
 necessary metadata for verification and validation. The listed patching
@@ -220,7 +218,7 @@ artifacts.
 the Patching Tool commands until it's not restored.
 
 $$$
- 
+
 After the separation process only the following commands can be used:
 - auto-discovery
 - info
