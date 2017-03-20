@@ -443,6 +443,27 @@ cannot access the resource."). Again, this is correct.
 Commas have several elements which can be confusing. Here are some tips to help
 you be successful with commas. 
 
+#### Oxford Commas
+
+We are an oxford comma shop. I don't want to hear any arguments about it,
+requests to review this decision, or examples of other organizations that don't
+use it. The decision has been made, and it's not changing. 
+
+For those who don't know what an oxford comma is, it's a standard for using
+commas in a series. If you have a series of three or more things, there is
+disagreement in the English language writing community on whether or not to
+include the comma for the last item in the series. Excluding the comma can lead
+to a lack of clarity, as illustrated in this example: 
+
+    I want to thank my mentors, my parents and the President for their help. 
+
+Are your mentors really your parents and the President? Or did you really mean
+this: 
+
+    I want to thank my mentors, my parents, and the President for their help. 
+
+The oxford comma makes the sentence clear. 
+
 #### Conjunctions vs. Compound Verbs 
 
 You only use a comma after a conjunction (i.e., "and," "or," "but," etc.) if it
