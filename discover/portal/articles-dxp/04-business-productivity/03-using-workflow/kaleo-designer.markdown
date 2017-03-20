@@ -169,17 +169,17 @@ configure multiple assignments for a task.
 
 +$$$
 
-**Resource Action Assignments:** If you don't know what resource actions are, refer to the developer
-tutorial on @product@'s [permission
-system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
-for a more detailed explanation. Basically, resource actions are operations
+**Resource Action Assignments:** *Resource actions* are operations
 performed by Liferay users on an application or entity in @product@. For
 example, a user might have permission to update Message Boards Messages. This is
-called an UPDATE resource action, because the user can update the resource. 
+called an UPDATE resource action, because the user can update the resource.If
+you don't know what resource actions are, refer to the developer tutorial on
+@product@'s [permission system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
+for a more detailed explanation.
 
-To find all the resource actions that have bee configured in @product@, you
-need access to the Roles Admin application in the Control Panel (permission for
-the VIEW action on the Roles resource). 
+To find all the resource actions that have been configured in @product@, you
+need access to the Roles Admin application in the Control Panel (in other words,
+you need permission for the VIEW action on the roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the [article on managing roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) for more information.
@@ -188,15 +188,18 @@ the VIEW action on the Roles resource).
 - Find the resource whose action you want to use for defining your workflow
     assignment.
 
-So, how do you go from finding the resource action to using it in the workflow?
-Dues to a [known bug](https://issues.liferay.com/browse/LPS-70462), using Kaleo
+How do you go from finding the resource action to using it in the workflow?  Due
+to a [known bug](https://issues.liferay.com/browse/LPS-70462), using Kaleo
 Designer's interface  for setting up a resource action assignment is not
 possible at the time of this writing (Digital Enterprise 7.0 SP1, Fix Pack 12).
-However, you can work around this issue. First access the XML for the workflow
-definition in the *Source* tab of Kaleo Designer. Copy the content to a file on
-your computer and save it. Now you can work with the XML definition directly.
+However, you can work around this issue. First design the workflow as completely
+as possible in Kaleo Designer. At the end, when you're ready to add resource
+action assignments, access the XML for the workflow definition in the *Source*
+tab of Kaleo Designer. Copy the contents to a file on your computer and save it.
+Now you can work with the XML definition directly.
 
-Use an `<assignments>` element in your workflow task, defined like this:
+In the `<assignments>` element in your workflow task, replace the contents with
+your resource action assignment, so it looks like this:
 
     <assignments>
         <resource-actions>
@@ -204,17 +207,18 @@ Use an `<assignments>` element in your workflow task, defined like this:
         </resource-actions>
     </assignments>
 
-Navigate to Control Panel &rarr; Configuration &rarr; Workflow Configuration,
-and upload your workflow definition directly. As usual, assign the workflow to
-the appropriate workflow enabled asset, then use your workflow as usual.
+When your workflow definition is finished, navigate to Control Panel &rarr;
+Configuration &rarr; Workflow Configuration, and upload your workflow definition
+directly. As usual, assign the workflow to the appropriate workflow enabled
+asset.
 
-Now, when the workflow proceeds to the task any user with `UPDATE` permissions
-on the resource (for example, Message Boards Messages) will be assigned to it.
-Specifically, the user sees the tasks in their *My Workflow Tasks* application
-under the tab *Assigned to My Roles*.
+Now when the workflow proceeds to the task with the resource action assignment,
+any user with `UPDATE` permissions on the resource (for example, Message Boards
+Messages) will be assigned to it.  Specifically, the user sees the tasks in
+their *My Workflow Tasks* application under the tab *Assigned to My Roles*.
 
-The syntax to use is the name of the resource action in all upper case letters.
-Here are some common resource actions:
+Use all upper case letters for resource action names. Here are some common
+resource actions:
 
     UPDATE
     ADD
@@ -224,13 +228,56 @@ Here are some common resource actions:
     SUBSCRIBE
     ADD_DISCUSSION
 
-To find out the definitive name of a resource action, you must download the
-[@product@ source
-code](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
-find the project of the interested resource, then find the `default.xml` file in
-its `*-web` or `*-service` module. There you'll see the resource actions defined
-identically to the way you enter them into your workflow. Here's a portion of
-the `default.xml` file from the `message-boards-web` module:
+To find the definitive name of a resource action, download the [@product@ source code](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
+find the project of the resource you're interested in, then find the
+`default.xml` file in its `*-web` or `*-service` module. There you'll see the
+resource actions defined the same way you'll enter them into your workflow
+definition. Because some of @product@'s entities are still defined in the core
+@product@ code (for example, message boards messages) instead of the in an
+independent module (in the `modules/apps` directory of the @product@ source
+code), you'll need to look in `portal-impl/src/resource-actions`, and instead of
+being named `default.xml`, they're named after the resource whose resource
+actions they contain:
+
+    [SOURCE ROOT]/portal-impl/src/resource-acitons/messageboards.xml
+
+The above contains the resource actions for the Message Boards application and
+its entities, including Messafe Boards Messages.
+
+Here's a portion of the `messageboards.xml`:
+
+    <model-resource>
+        <model-name>com.liferay.message.boards.kernel.model.MBMessage</model-name>
+        <portlet-ref>
+            <portlet-name>com_liferay_message_boards_web_portlet_MBAdminPortlet</portlet-name>
+            <portlet-name>com_liferay_message_boards_web_portlet_MBPortlet</portlet-name>
+        </portlet-ref>
+        <weight>4</weight>
+        <permissions>
+            <supports>
+                <action-key>DELETE</action-key>
+                <action-key>PERMISSIONS</action-key>
+                <action-key>SUBSCRIBE</action-key>
+                <action-key>UPDATE</action-key>
+                <action-key>VIEW</action-key>
+            </supports>
+            <site-member-defaults>
+                <action-key>SUBSCRIBE</action-key>
+                <action-key>VIEW</action-key>
+            </site-member-defaults>
+            <guest-defaults>
+                <action-key>VIEW</action-key>
+            </guest-defaults>
+            <guest-unsupported>
+                <action-key>SUBSCRIBE</action-key>
+                <action-key>UPDATE</action-key>
+            </guest-unsupported>
+        </permissions>
+    </model-resource>
+
+That's the XML that configures resource actions for the Message Boards Message
+entity. Since Message Boards Messages are a workflow enabled entity , you can
+configure resource action assignments for them.
 
 $$$
 
