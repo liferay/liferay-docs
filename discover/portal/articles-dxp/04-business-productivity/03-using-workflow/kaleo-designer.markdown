@@ -172,7 +172,7 @@ configure multiple assignments for a task.
 **Resource Action Assignments:** *Resource actions* are operations
 performed by Liferay users on an application or entity in @product@. For
 example, a user might have permission to update Message Boards Messages. This is
-called an UPDATE resource action, because the user can update the resource.If
+called an UPDATE resource action, because the user can update the resource. If
 you don't know what resource actions are, refer to the developer tutorial on
 @product@'s [permission system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
 for a more detailed explanation.
@@ -208,7 +208,7 @@ your resource action assignment, so it looks like this:
     </assignments>
 
 When your workflow definition is finished, navigate to Control Panel &rarr;
-Configuration &rarr; Workflow Configuration, and upload your workflow definition
+Configuration &rarr; Workflow Definition, and upload your workflow definition
 directly. As usual, assign the workflow to the appropriate workflow enabled
 asset.
 
@@ -228,21 +228,22 @@ resource actions:
     SUBSCRIBE
     ADD_DISCUSSION
 
-To find the definitive name of a resource action, download the [@product@ source code](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
+To find the definitive name of a resource action, download the [@product@ source
+code](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
 find the project of the resource you're interested in, then find the
 `default.xml` file in its `*-web` or `*-service` module. There you'll see the
 resource actions defined the same way you'll enter them into your workflow
 definition. Because some of @product@'s entities are still defined in the core
-@product@ code (for example, message boards messages) instead of the in an
-independent module (in the `modules/apps` directory of the @product@ source
-code), you'll need to look in `portal-impl/src/resource-actions`, and instead of
-being named `default.xml`, they're named after the resource whose resource
-actions they contain:
+@product@ code (for example, message boards messages) instead of in an
+independent module in the source code's `modules/apps` directory, you'll need
+to look in `portal-impl/src/resource-actions`, and instead of being named
+`default.xml`, they're named after the resource whose resource actions they
+contain:
 
     [SOURCE ROOT]/portal-impl/src/resource-acitons/messageboards.xml
 
-The above contains the resource actions for the Message Boards application and
-its entities, including Messafe Boards Messages.
+The file at the above path contains the resource actions for the Message Boards
+application and its entities, including Message Boards Messages.
 
 Here's a portion of the `messageboards.xml`:
 
