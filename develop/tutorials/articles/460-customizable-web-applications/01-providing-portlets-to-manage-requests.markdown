@@ -74,20 +74,6 @@ portlet to handle the request.
             service = EditPortletProvider.class
         )
 
-    +$$$
-
-    **Note:** Instead of setting your `model.class.name` to a single class, you
-    can set it to all classes. An example of how to set this is listed below:
-
-        property = {"model.class.name=" + PortletProvider.CLASS_NAME_ANY}
-
-    This means that the portlet can provide the specified action on any entity
-    in @product@. You can view an example of this in the
-    [AssetBrowserBrowsePortletProvider](@app-ref@/web-experience/latest/javadocs/com/liferay/asset/browser/web/internal/portlet/AssetBrowserBrowsePortletProvider.html)
-    class:
-
-    $$$
-
 4. In some cases, a default portlet is already in place to handle the entity
    and action type requested. To override the default portlet with a custom
    portlet, you can assign your portlet a higher service ranking. You can do
