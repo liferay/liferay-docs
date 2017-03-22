@@ -35,14 +35,14 @@ the applicable component next.
 
 1.  Open the App Manager by navigating to *Control Panel* &rarr; *Apps* &rarr;
     *App Manager*. The top level lists app suites, independent apps, and
-    *independent modules*.
+    independent modules.
 
 2.  Navigate the app suites, apps, and modules, or use Search to find components
     that might provide your desired extension point. Remember to check for your
     keywords in element names and descriptions. The keyword *LDAP* resides under
     the Liferay Foundation app suite; select it.
 
-        ![Figure x: The Liferay Foundation app suite contains the LDAP Authentication application.](../../images/ldap-keyword-app-manager.png)
+    ![Figure x: The Liferay Foundation app suite contains the LDAP Authentication application.](../../../images/ldap-keyword-app-manager.png)
 
 3.  Select *LDAP* from the app listing.
 
@@ -50,12 +50,12 @@ the applicable component next.
     more than one module to inspect. Select the *Liferay Portal Security LDAP*
     module.
 
-        ![Figure x: The App Manager lists the module, package name, version, and status.](../../images/app-manager-breakdown.png)
+    ![Figure x: The App Manager lists the module, package name, version, and status.](../../../images/app-manager-breakdown.png)
 
 5.  Search through the components, again applying your keywords as a guide. Copy
     the component name, which you'll inspect later using the Gogo shell.
 
-        ![Figure x: The component name can be found using the App Manager.](../../images/usermodellistener-component.png)
+    ![Figure x: The component name can be found using the App Manager.](../../../images/usermodellistener-component.png)
 
     +$$$
 
@@ -73,7 +73,7 @@ points.
 
 Once you have the component that relates to the functionality you want to
 extend, you can use the Gogo shell's Service Component Runtime (SCR) commands to
-inspect it. You can execute these commands using
+inspect it. You can execute SCR commands using
 [Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) or in
 [Gogo shell via telnet](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
 This tutorial assumes you're using the Gogo shell via telnet.
@@ -100,8 +100,23 @@ reference for the service that imports LDAP users:
     Reference Scope: bundle
     ...
 
-If none of the references satisfy what you're looking for, search other
-components from the App Manager.
+The `LDAPUserImporter` is the extension point needed to customize the process of
+importing users with LDAP! If none of the references satisfy what you're looking
+for, search other components from the App Manager. If you want to learn how to
+override a component's service reference, visit the following
+[tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-a-components-service-reference).
+
+**Important** It's important to realize that not all extension points in
+@product@ are available as referenced services. Referenced services are popular
+extension points when using Declarative Services (DS), but there are extension
+points not exposed this way. If your project does not use the DS component
+framework, you'd need to look for the API that describes its service consumption
+from the OSGi registry. Here's a brief list of other potential extension points
+in @product@:
+
+- Instances of `org.osgi.util.tracker.ServiceTracker<S, T>`
+- Uses of Liferay's `Registry.getServiceTracker`
+- Uses of Liferay's `ServiceTrackerMap` or `ServiceTrackerCollection`
 
 There you have it! You successfully formulated keywords that described the
 functionality you wanted to customize, used those keywords in the App Manager to
