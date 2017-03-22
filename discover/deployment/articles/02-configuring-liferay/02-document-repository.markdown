@@ -129,6 +129,17 @@ repository. It would be nice if that @product@ repository was connected to a
 clustered CMIS repository by the administrator without having to mount it
 through the UI. The CMIS store allows you to do just that. 
 
++$$$
+
+**Note:** CMIS Store is deprecated and can have performance issues with large
+repositories, so it's recommended that you use one of the other configurations
+listed above, such as Advanced File System Store, to store your Documents and
+Media files. This deprecation does not affect the use of external repositories. 
+You can still [connect to external repositories](/discover/portal/-/knowledge_base/7-0/using-external-repositories) 
+using CMIS.
+
+$$$
+
 If you wish to use the CMIS store, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
 to set it up. The @product@ repository is connected to CMIS via the CMIS store. As
 long as all nodes are pointing to your CMIS repository, everything in your
