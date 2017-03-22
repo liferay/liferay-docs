@@ -1,10 +1,11 @@
 # Finding Extension Points
 
-@product@ provides many features that help users accomplish their tasks. It's
-easy to **find** an area you want to customize, but it may seem like a daunting
-task to figure out **how** to customize it. @product@ was developed for easy
-customization, meaning there are many extension points you can use to add your
-own flavor.
+@product@ provides many features that help users accomplish their tasks.
+Sometimes, however, you may find it necessary to customize a built-in feature.
+It's easy to **find** an area you want to customize, but it may seem like a
+daunting task to figure out **how** to customize it. @product@ was developed for
+easy customization, meaning there are many extension points you can use to add
+your own flavor.
 
 There's a process you can follow that makes finding an extension point a breeze.
 
@@ -44,7 +45,7 @@ the applicable component next.
 
     ![Figure x: The Liferay Foundation app suite contains the LDAP Authentication application.](../../../images/ldap-keyword-app-manager.png)
 
-3.  Select *LDAP* from the app listing.
+3.  Select the *LDAP* application from the app listing.
 
 4.  The LDAP application only has one module, but typically, application's have
     more than one module to inspect. Select the *Liferay Portal Security LDAP*
@@ -53,7 +54,8 @@ the applicable component next.
     ![Figure x: The App Manager lists the module, package name, version, and status.](../../../images/app-manager-breakdown.png)
 
 5.  Search through the components, again applying your keywords as a guide. Copy
-    the component name, which you'll inspect later using the Gogo shell.
+    the component name you think best fits the functionality you want to
+    customize; you'll inspect it later using the Gogo shell.
 
     ![Figure x: The component name can be found using the App Manager.](../../../images/usermodellistener-component.png)
 
@@ -87,9 +89,10 @@ like this:
 
     scr:info com.liferay.portal.security.ldap.internal.messaging.UserImportMessageListener
 
-The resulting SCR information includes services the component references. These
-are extension points available in the component. For example, here's the
-reference for the service that imports LDAP users:
+The resulting SCR information includes a lot of information. For this exercise,
+you're interested in the services the component references. These are extension
+points. For example, here's the reference for the service that imports LDAP
+users:
 
     ...
     Reference: LdapUserImporter
