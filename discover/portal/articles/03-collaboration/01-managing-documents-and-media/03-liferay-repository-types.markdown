@@ -13,7 +13,7 @@ store's default root folder is
 folder from within 
 [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings).
 To access System Settings, open the *Menu*
-(![icon-menu.png](../../images/icon-menu.png))
+(![icon-menu.png](../../../images/icon-menu.png))
 and navigate to *Control Panel &rarr; Configuration &rarr; System Settings*. From
 System Settings, navigate to *Platform* and then search for and select
 the entry *Simple File System Store*. For the store’s *Root dir* value,

@@ -1,0 +1,33 @@
+{namespace ddm}
+
+/**
+ * Prints the DDM form time field.
+ *
+ * @param label
+ * @param name
+ * @param? placeholder
+ * @param readOnly
+ * @param required
+ * @param showLabel
+ * @param tip
+ * @param value
+ */
+{template .time autoescape="deprecated-contextual"}
+	<div class="form-group liferay-ddm-form-field-time" data-fieldname="{$name}">
+		{if $showLabel}
+			<label class="control-label">
+				{$label}
+
+				{if $required}
+					<span class="icon-asterisk text-warning"></span>
+				{/if}
+			</label>
+
+			{if $tip}
+				<p class="liferay-ddm-form-field-tip">{$tip}</p>
+			{/if}
+		{/if}
+
+		<input class="field form-control" id="{$name}" name="{$name}" placeholder="{$placeholder}" {if $readOnly}readonly{/if} type="text" value="{$value}">
+	</div>
+{/template}
