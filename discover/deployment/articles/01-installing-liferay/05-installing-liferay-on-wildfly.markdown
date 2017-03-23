@@ -1,8 +1,5 @@
 # Installing @product@ on Wildfly 10 [](id=installing-liferay-on-wildfly-10)
 
-If you want a fresh installation of @product@ on Wildfly 10, simply download a
-@product@ Wildfly bundle from
-[https://www.liferay.com/downloads](https://www.liferay.com/downloads).  
 Liferay Digital Enterprise 7.0 bundled with Wildfly 10 is available on 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
 Even if you want to manually install @product@ on an existing Wildfly 10
@@ -79,6 +76,33 @@ third-parties, as described below.
 
     @product@ requires an OSGi runtime, and the `osgi` folder provides this with
     many required JAR files and configuration files.
+
+Checkpoint: 
+1. At this point, you should have the following in the
+`$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
+
+- `com.liferay.registry.api.jar`
+
+- `portal-kernel.jar`
+
+- `portlet.jar`
+
+- a database `jar` such as the MySQL Connector.
+
+2. The `module.xml` has listed all jars in the `<resource-root-path>` elements.
+
+3. The `osgi` folder has the following subfolders:
+
+- `configs`
+
+- `core`
+
+- `marketplace`
+
+- `target-platform`
+
+- `test`
+ 
 
 Great! You have your `.jar` files ready. 
 
@@ -168,6 +192,20 @@ Make the following modifications to `standalone.xml`:
 
         <jsp-config development="true" />
 
+Checkpoint:
+Before continuing, verify the following properties have been set in the `standalone.xml` file:
+
+1. A new `<system-property>` has been created.
+
+2. The `<deployment-timeout>` has been set to `360`.
+
+3. A new `<security-domain>` has been created.
+
+4. Four tags have been removed.
+
+5. `<jsp-config development>` has been set to `true`.
+
+
 Now it's time for some changes to your configuration and startup scripts.
  
 Make the following modifications to your standalone domain's configuration
@@ -225,6 +263,19 @@ The added paths resolve issues with portal deployment exceptions and image
 uploading problems on a @product@ instance running on Wildfly 10.0.x. 
 
 $$$
+
+Checkpoint: 
+At this point, you'll have finished configuring the application
+server's JVM settings. 
+
+1. The file encoding, user time-zone, preferred protocol stack have been set in
+the `JAVA_OPTS` in the `standalone.conf.bat` file.
+
+2. The default amount of memory available has been increased.
+
+3. If using the If using IBM's JDK, the
+`sun crypto` properties have been set in the
+`$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file.
 
 The prescribed script modifications are now complete for your @product@
 installation on Wildfly. Next you'll configure mail and the database. 
