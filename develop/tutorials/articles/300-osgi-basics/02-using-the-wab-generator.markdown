@@ -28,10 +28,10 @@ plugin requires. The descriptor files include `web.xml`, `liferay-web.xml`,
 adds each package to an `Import-Package` header in the WAB's
 `META-INF/MANIFEST.MF` file.
 
-Next, the WAB Generator finds and registers the plugin's extension point
-information. It registers portlet extension points declared in `portlet.xml` and
-`liferay-portlet.xml` files. It registers extension point implementations
-declared in Hook `liferay-hook.xml` files. 
+Next, the WAB Generator finds and specifies the plugin's extension point
+information. Portlet extension points are derived from `portlet.xml` and
+`liferay-portlet.xml` files. Hook extension point implementations
+are derived from `liferay-hook.xml` files. 
 
 Throughout the process, the WAB Generator creates a WAB file based on the
 original WAR file. Consider the following folder structure of a WAR-style
