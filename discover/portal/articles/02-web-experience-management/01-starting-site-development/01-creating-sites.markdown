@@ -82,7 +82,7 @@ Hierarchy*. The My Sites Directory application is very similar to the Sites
 Directory application, except that it lists only the sites a user belongs to.
 
 Each subsite in the hierarchy has its own administrator and the Site 
-Administrator role permissions do flow down to child sites in the hierarchy.
+Administrator role permissions do not flow down to child sites in the hierarchy.
 One confusing bit of this is that if a Site Administrator creates a subsite,
 that Site Administrator will also have permissions in the subsite that they 
 created. However, this is not because of any kind of inheritance. It is only 
