@@ -131,11 +131,11 @@ through the UI. The CMIS store allows you to do just that.
 
 +$$$
 
-**Note:** CMIS Store is deprecated and can have performance issues with large
-repositories, so it's recommended that you use one of the other configurations
-listed above, such as Advanced File System Store, to store your Documents and
-Media files. This deprecation does not affect the use of external repositories. 
-You can still [connect to external repositories](/discover/portal/-/knowledge_base/7-0/using-external-repositories) 
+**Note:** CMIS Store is deprecated as of Liferay Portal CE 7.0 and Liferay DXP. 
+Because it can have performance issues with large repositories, it's recommended 
+that you use one of the other configurations listed above, such as Advanced File 
+System Store, to store your Documents and Media files. This deprecation does not 
+affect the use of external repositories. You can still [connect to external repositories](/discover/portal/-/knowledge_base/7-0/using-external-repositories) 
 using CMIS.
 
 $$$
