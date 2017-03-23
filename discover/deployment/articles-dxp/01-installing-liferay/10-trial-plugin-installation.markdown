@@ -35,11 +35,11 @@ options to update or install certain plugins. To install a plugin, click the
 
 ![Click the *Install* button to install a plugin.](../../images-dxp/dxp-store-install.png)
 
-**5)** Trial users have access to the Customer Portal during their trial, with
-the exception of our customer Knowledge Base and LESA, our support ticketing
-system. This also includes access to the @product@-specific plugins from the Liferay
+**5)** Trial users have access to the Customer Portal during their trial. This
+also includes access to the @product@-specific plugins from the Liferay
 [Marketplace website](https://www.liferay.com/marketplace) on Liferay.COM
-(LRDC).
+(LRDC). Trial users do not have access to our customer Knowledge Base and
+LESA (our support ticketing system).
 
 +$$$
 
