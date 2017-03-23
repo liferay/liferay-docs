@@ -186,56 +186,53 @@ the "diff" command. This command has four options:
 
 For detailed usage information, run `patching-tool help store`.
 
-## Separating the patches from the @product@.
+## Separating the Patches from the @product@ Installation
 
-There is a new feature available as of Patching Tool 2.0.6 which helps to
-reduce the size of the patched @product@ bundles. It's possible to decrease
-the bundle's size if it's already been patched.
+As of Patching Tool 2.0.6, there's a feature that helps reduce the patched
+@product@ bundle size. If the bundle has been patched, you can make it smaller
+by moving the restore files out of it.
 
-The patched bundles, like Service Pack, are at least doubled in size. This is 
-caused by the restore files which are stored within the WEB-INF folder of the
-web application. These files are necessary to be able to patch the @product@
-instance again.
+Patched bundles are large because the restore files by default are stored inside
+the web application's WEB-INF folder. These files are required for patching the
+@product@ instance again.
 
-These files cannot be removed from the bundle because the upcoming patching
-processes would fail. Thus we added an option to the Patching
-Tool to separate the patching files from the @product@ bundle in a way to be
-able to restore them safely when it comes to installing a new patch.
+If these files were removed, subsequent patching processes would fail. Because
+of this, Liferay added an option to separate the patching files from the
+@product@ bundle while still preserving restoring them safely when new patches
+arrive. To do this, you use this command: 
 
-`patching-tool separate <separation_name>`: This command produces a
-new file in the Patching Tool's `patches` folder, named as
-`liferay-patching-files-<separation-name>.zip`.
+    patching-tool separate [separation_name] 
+ 
+This command produces a `liferay-patching-files-[separation-name].zip`file in
+the Patching Tool's `patches` folder. It contains the necessary files and
+metadata for patching, verification, and validation. Once you create this file,
+the patch files are removed from their default location and are now only
+available in this file. You can now move the file elsewhere to make the bundle's
+size smaller. 
 
-This new file contains the necessary files for patching along with the
-necessary metadata for verification and validation. The listed patching
-related files are now only available in this file. It results that the @product@
-bundle's size will be much slimmer and can be kept separately from its patching
-artifacts.
-
-+$$$
-
-**Note:** If the product is separated from its patches, you cannot run most of
-the Patching Tool commands until it's not restored.
-
-$$$
+**WARNING:** If the product is separated from its patches in this way, you
+cannot run most of the Patching Tool commands until the patches are restored.
 
 After the separation process only the following commands can be used:
 - auto-discovery
 - info
 - setup
 
-Any other command will return an info message:
-"This installation does not include data for patching. Please copy the
-`liferay-patching-files-<separation-name>.zip` file into the 'patches' directory
-and run patching-tool setup." 
+Any other command returns this:
+
+    This installation does not include data for patching. Please copy the
+    liferay-patching-files-[separation-name].zip file into the 'patches' directory
+    and run patching-tool setup. 
  
- ### Restoring the separated patching files
+This is how you restore the patch files to your system. Details below. 
+
+ ### Restoring the Separated Patch Files
  
-In order to be able to patch the @product@ again, first you need to restore the
-separated patching artifact. To do this you only need to place the 
-`liferay-patching-files-<separation-name>.zip` back to the
+When you need to patch @product@ again, you must restore the
+separated patch artifact. To do this, copy the
+`liferay-patching-files-[separation-name].zip` back to the
 Patching Tool's `patches` folder and run `patching-tool setup` command.
 
-If the setup command finds the necessary patching artifact for the @product@
-it restores the patching files to the bundle. Once it's done you can use the
-Patching Tool's functions on the @product@ again.
+If the command finds the necessary patching artifact, it restores the patch
+files to the bundle. After that, the Patching Tool works like it did prior to
+separating the patches. 
