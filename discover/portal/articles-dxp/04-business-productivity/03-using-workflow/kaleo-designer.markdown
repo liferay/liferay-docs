@@ -233,12 +233,11 @@ code](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
 find the project of the resource you're interested in, then find the
 `default.xml` file in its `*-web` or `*-service` module. There you'll see the
 resource actions defined the same way you'll enter them into your workflow
-definition. Because some of @product@'s entities are still defined in the core
-@product@ code (for example, message boards messages) instead of in an
-independent module in the source code's `modules/apps` directory, you'll need
-to look in `portal-impl/src/resource-actions`, and instead of being named
-`default.xml`, they're named after the resource whose resource actions they
-contain:
+definition. Some of @product@'s entities are still defined in the core @product@
+code (for example, message boards messages) instead of in an independent module
+in the source code's `modules/apps` directory. For these resources you must look
+in `portal-impl/src/resource-actions`, and instead of being named `default.xml`,
+the file is named after the resource whose resource actions they contain:
 
     [SOURCE ROOT]/portal-impl/src/resource-acitons/messageboards.xml
 
