@@ -1,13 +1,13 @@
-# Video Display Screenlet for iOS [](id=video-display-screenlet-for-ios)
+# File Display Screenlet for iOS [](id=file-display-screenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
-- Xcode 7.2
-- iOS 9 SDK
+- Xcode 8.0
+- iOS 10 SDK
 - Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 - Liferay Screens Compatibility Plugin 
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
-  [DE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
   depending on your Liferay edition). This app is preinstalled in Liferay 7.0 CE 
   and Liferay DXP instances. 
 
@@ -17,8 +17,9 @@
 
 ## Features [](id=features)
 
-Video Display Screenlet displays a video file from a Liferay instance's 
-Documents and Media Library. 
+File Display Screenlet shows a single file from a Liferay Portal instance's 
+Documents and Media Library. Use this Screenlet to display file types not 
+covered by the other display Screenlets (e.g., DOC, PPT, XLS). 
 
 ## Module [](id=module)
 
@@ -28,9 +29,9 @@ Documents and Media Library.
 
 - Default
 
-The Default Theme uses an iOS `AVPlayerViewController` to display the video. 
+The Default View uses an iOS `UIWebView` for displaying the file. 
 
-![Figure 1: Video Display Screenlet using the Default Theme.](../../images/screens-ios-videodisplay.png)
+![Figure 1: File Display Screenlet using the Default View.](../../images/screens-ios-filedisplay.png)
 
 ## Offline [](id=offline)
 
@@ -50,20 +51,20 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
-| `assetEntryId` | `number` | The primary key of the video file. | 
-| `className` | `string` | The video file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, the `className` is [`com.liferay.portlet.documentlibrary.model.DLFileEntry`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/documentlibrary/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `classPK` | `number` | The video file’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `autoLoad` | `boolean` | Whether the video automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
-| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/6-2/video-display-screenlet-for-ios#offline) for details. |
+| `assetEntryId` | `number` | The primary key of the file. | 
+| `className` | `string` | The file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, their `className` is [`com.liferay.portlet.documentlibrary.model.DLFileEntry`](https://docs.liferay.com/ce/portal/6.2/javadocs/com/liferay/portlet/documentlibrary/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The file's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `autoLoad` | `boolean` | Whether the file automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
+| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/6-2/file-display-screenlet-for-ios#offline) for details. |
 
 ## Delegate [](id=delegate)
 
-Because images are files, Video Display Screenlet delegates its events to an 
-object that conforms to the `FileDisplayScreenletDelegate` protocol. This 
-protocol lets you implement the following methods: 
+File Display Screenlet delegates some events to an object that conforms to the  
+`FileDisplayScreenletDelegate` protocol. This protocol lets you implement the 
+following methods: 
 
 - `- screenlet:onFileAssetResponse:`: Called when the Screenlet receives the 
-  image file. 
+  file. 
 
 - `- screenlet:onFileAssetError:`: Called when an error occurs in the process. 
-  The `NSError` object describes the error. 
+  An `NSError` object describes the error. 

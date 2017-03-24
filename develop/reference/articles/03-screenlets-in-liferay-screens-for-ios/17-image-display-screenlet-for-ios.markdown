@@ -4,7 +4,7 @@
 
 - Xcode 7.2
 - iOS 9 SDK
-- Liferay 7.0 CE, Liferay DXP 
+- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 - Liferay Screens Compatibility Plugin 
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [DE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
@@ -62,8 +62,8 @@ Because images are files, Image Display Screenlet delegates its events to an
 object that conforms to the `FileDisplayScreenletDelegate` protocol. This 
 protocol lets you implement the following methods: 
 
-- `- screenlet:onAssetResponse:`: Called when the Screenlet receives the image 
-  file. 
+- `- screenlet:onFileAssetResponse:`: Called when the Screenlet receives the 
+  image file. 
 
 - `- screenlet:onFileAssetError:`: Called when an error occurs in the process. 
   The `NSError` object describes the error. 

@@ -16,14 +16,26 @@
 The Login Screenlet lets you authenticate portal users in your Android app. The 
 following types of authentication are supported:
 
-- Basic: uses user login and password according to 
+- **Basic:** uses user login and password according to 
   [HTTP Basic Access Authentication specification](http://tools.ietf.org/html/rfc2617). 
   Depending on the authentication method used by your Liferay instance, you need 
   to provide the user's email address, screen name, or user ID. You also need to 
   provide the user's password. 
 
-- OAuth: implements the 
-  [OAuth 1.0a specification](http://oauth.net/core/1.0a/).
+- **OAuth:** implements the 
+  [OAuth 1.0a specification](http://oauth.net/core/1.0a/). 
+
+- **Cookie:** uses a cookie to log in. This lets you access documents and images 
+  in the portal's document library without the guest view permission in the 
+  portal. The other authentication types require this permission to access such 
+  files. 
+
+For instructions on configuring the Screenlet to use these authentication types, 
+see the below 
+[Portal Configuration](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#portal-configuration) 
+and 
+[Screenlet Attributes](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#attributes) 
+sections. 
 
 When a user successfully authenticates, their attributes are retrieved for use 
 in the app. You can use the `SessionContext` class to get the current user's 
@@ -47,6 +59,9 @@ the method `SessionContext.loadStoredCredentials()`.
 - Default
 - Material
 
+For instructions on using these Views, see the `layoutId` attribute in the 
+[Attributes section below](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#attributes). 
+
 ![The Login Screenlet using the Default (left) and Material (right) Viewsets.](../../images/screens-android-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
@@ -67,12 +82,13 @@ section of the User Guide.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5-_VVAyY-0" frameborder="0" allowfullscreen></iframe>
 
-If you want to use OAuth authentication, you first need to install the 
-[OAuth Provider EE app](https://www.liferay.com/marketplace/-/mp/application/45261909) 
-from Liferay's Marketplace. Once this app is installed, go to 
-*Control Panel &rarr; Users &rarr; OAuth Admin*, and add a new application to be 
-used from Liferay Screens. Once the application is created, copy the 
-*Consumer Key* and *Consumer Secret* values for later use in Login Screenlet.
+To use OAuth authentication, first install the OAuth provider app from the 
+Liferay Marketplace. 
+[Click here](https://web.liferay.com/marketplace/-/mp/application/45261909) 
+to get this app. Once it's installed, go to *Control Panel* &rarr; *Users* 
+&rarr; *OAuth Admin*, and add a new application to be used from Liferay Screens. 
+Once the application exists, copy the *Consumer Key* and *Consumer Secret* 
+values for later use in Login Screenlet. 
 
 ![Copy the Consumer Key and Consumer Secret from OAuth Admin in your portal.](../../images/screens-portal-oauth.png)
 
@@ -91,12 +107,13 @@ connection, you can use the `credentialsStorage` attribute together with the
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout to use to show the View. |
-| `companyId` | `number` | When set, a user in the specified company is authenticated. If set to `0`, the company specified in `LiferayServerContext` is used. |
-| `basicAuthMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |
+| `layoutId` | `@layout` | The ID of the View's layout. You can set this attribute to `@layout/login_default` (Default View) or `@layout/login_material` (Material View). To use the Material View, you must first install the Material View Set. [Click here](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets) for instructions on installing and using Views and View Sets, including the Material View Set. |
+| `companyId` | `number` | The ID of the portal instance to authenticate to. If you don't set this attribute or set it to `0`, the Screenlet uses the `companyId` setting in `LiferayServerContext`. |
+| `loginMode` | `enum` | The Screenlet's authentication type. You can set this attribute to `basic`, `oauth`, or `cookie`. If you don't set this attribute, the Screenlet defaults to basic authentication. |
+| `basicAuthMethod` | `string` | Specifies the basic authentication option to use. You can set this attribute to `email`, `screenName` or `userId`. This must match the server's authentication option. If you don't set this attribute, and don't set the `loginMode` attribute to `oauth` or `cookie`, the Screenlet defaults to basic authentication with the `email` option. |
+| `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to use in OAuth authentication. |
+| `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. |
 | `credentialsStorage ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
-| `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to used in OAuth authentication. Leave this empty if you want to use Basic authentication. |
-| `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. Leave this empty if you want to use Basic authentication. |
 
 ## Listener [](id=listener)
 
@@ -106,6 +123,6 @@ methods:
 
 - `onLoginSuccess(User user)`: Called when login successfully completes. The 
   `user` parameter contains a set of the logged in user's attributes. The 
-  supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
+  supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2233-L2362).
 
 - `onLoginFailure(Exception e)`: Called when an error occurs in the process.
