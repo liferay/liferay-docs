@@ -120,6 +120,9 @@ in @product@:
 - Instances of `org.osgi.util.tracker.ServiceTracker<S, T>`
 - Uses of Liferay's `Registry.getServiceTracker`
 - Uses of Liferay's `ServiceTrackerMap` or `ServiceTrackerCollection`
+- Any other component framework or whiteboard implementation (e.g., HTTP,
+  JAX-RS) that supports tracking services; Blueprint, Apache Dependency Manager,
+  etc. could also introduce extension points.
 
 There you have it! You successfully formulated keywords that described the
 functionality you wanted to customize, used those keywords in the App Manager to
