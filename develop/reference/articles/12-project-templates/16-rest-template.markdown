@@ -32,7 +32,7 @@ or
         -DartifactId=my-rest-project \
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
-        -DclassName=Rest
+        -DclassName=Rest \
         -Dauthor=Joe Bloggs
 
 After running the command above, your project's directory structure looks like

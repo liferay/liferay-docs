@@ -31,7 +31,7 @@ or
         -DartifactId=my-form-field-project \
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
-        -DclassName=MyFormField
+        -DclassName=MyFormField \
         -Dauthor=Joe Bloggs
 
 After running the command above, your project's directory structure looks like
