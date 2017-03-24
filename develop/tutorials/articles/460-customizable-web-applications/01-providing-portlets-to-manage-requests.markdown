@@ -8,7 +8,7 @@ desired function, and you'll create a module that finds the correct application
 
 To find the portlet you need for your particular request, you'll use the
 *Portlet Providers* framework. The first thing you'll need to do is call the
-[PortletProviderUtil](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/PortletProviderUtil.java)
+[PortletProviderUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
 class and request the framework find a portlet suitable for the current task.
 You can request the portlet ID or portlet URL, depending on what you prefer.
 Here's an example declaration:
@@ -18,10 +18,7 @@ Here's an example declaration:
 
 This declaration expects two parameters: the class name of the entity type you
 want the portlet to handle and the type of action. The above code requests a
-portlet ID for a portlet that can view Recycle Bin entries. For an in-context
-example, visit the
-[PortalOpenSearchImpl.search](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/search/PortalOpenSearchImpl.java)
-method.
+portlet ID for a portlet that can view Recycle Bin entries.
 
 There are four different kinds of actions supported by the Portlet Providers
 framework: `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Find the portlet ID
@@ -47,11 +44,11 @@ portlet to handle the request.
    new Java class in that package. To follow naming conventions, name the class
    based on the element type and action type, followed by *PortletProvider*
    (e.g., `LanguageEntryViewPortletProvider`). The class should extend the
-   [`BasePortletProvider`](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/BasePortletProvider.java)
+   [`BasePortletProvider`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
    class and implement the appropriate portlet provider interface based on the
    action type you chose your portlet to handle (e.g.,
-   [ViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/ViewPortletProvider.java),
-   [BrowsePortletProvider](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/BrowsePortletProvider.java),
+   [ViewPortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/ViewPortletProvider.html),
+   [BrowsePortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BrowsePortletProvider.html),
    etc.).
 
 3. Directly above the class's declaration, insert the following annotation:
@@ -68,22 +65,14 @@ portlet to handle the request.
     `service` element should match the interface you're implementing (e.g.,
     `ViewPortletProvider.class`). You can view an example of a similar
     `@Component` annotation in the
-    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/portlet/RolesSelectorEditPortletProvider.java)
-    class.
+    [RolesSelectorEditPortletProvider](@app-ref@/foundation/latest/javadocs/com/liferay/roles/selector/web/internal/portlet/RolesSelectorEditPortletProvider.html)
+    class:
 
-    +$$$
-
-    **Note:** Instead of setting your `model.class.name` to a single class, you
-    can set it to all classes. An example of how to set this is listed below:
-
-        property = {"model.class.name=" + PortletProvider.CLASS_NAME_ANY}
-
-    This means that the portlet can provide the specified action on any entity
-    in Portal. You can view an example of this in the
-    [AssetBrowserBrowsePortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/asset/asset-browser-web/src/main/java/com/liferay/asset/browser/web/portlet/AssetBrowserBrowsePortletProvider.java)
-    class.
-
-    $$$
+        @Component(
+            immediate = true,
+            property = {"model.class.name=com.liferay.portal.kernel.model.UserGroupRole"},
+            service = EditPortletProvider.class
+        )
 
 4. In some cases, a default portlet is already in place to handle the entity
    and action type requested. To override the default portlet with a custom
