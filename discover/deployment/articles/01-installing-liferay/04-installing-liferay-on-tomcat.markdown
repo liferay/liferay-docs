@@ -1,8 +1,5 @@
 # Installing @product@ on Tomcat 8 [](id=installing-liferay-on-tomcat-8)
 
-If you want a fresh installation of @product@ on Tomcat 8, download a
-@product@ Tomcat bundle from
-[https://www.liferay.com/downloads](https://www.liferay.com/downloads). 
 Liferay Digital Enterprise 7.0 bundled with Tomcat is available on 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
 Even if you want to install @product@ manually on an existing Tomcat 8
@@ -72,6 +69,33 @@ third-parties, as described below.
 
     @product@ requires an OSGi runtime, and the `osgi` folder provides this with
     many required JAR files and configuration files.
+
+Checkout:
+1. At this point, you should have the following files in the `$TOMCAT_HOME/lib/ext` folder:
+
+- `activation.jar`   
+- `ccpp.jar`        
+- `com.liferay.osgi.service.tracker.collections.jar` 
+- `com.liferay.registry.api.jar` 
+- `hsql.jar` 
+- `jms.jar`
+- `jta.jar`
+- `jutf7.jar`
+- `mail.jar` 
+- `mysql.jar`
+- `persistence.jar`
+- `portal-kernel.jar` 
+- `portlet.jar` 
+- `postgresql.jar`
+- `support-tomcat.jar` 
+
+2. The `osgi` folder has the following subfolders:
+
+- `configs`
+- `core`
+- `marketplace`
+- `target-platform`
+- `test`
 
 ## Tomcat Configuration [](id=tomcat-configuration)
 
@@ -202,6 +226,28 @@ Next, you need to configure Tomcat for running @product@.
         chmod a+x *.sh
 
     This command makes the shell scripts in Tomcat's `bin` folder executable.
+
+Checkpoint:
+At this point, you'll have finished configuring the application
+server's JVM settings.
+
+1. The file encoding, user time-zone, preferred protocol stack have been set in the `setenv.sh` (`setenv.bat` for Windows).
+
+2. The default amount of memory available has been increased.
+
+3. The web application context has been declared in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
+
+4. The `common.loader` property which allows Catalina to access the JARs in
+`$TOMCAT_HOME/lib/ext` has been updated in
+`$TOMCAT_HOME/conf/catalina.properties`.
+
+5. All Java permissions have been granted in the `$TOMCAT_HOME/conf/catalina.policy` file.
+
+6. UTF-8 encoding has been set in `$TOMCAT_HOME/conf/server.xml`.
+
+7. If in a Unix/Linux environment, the `chmod a+x *.sh` command has been run to
+the shell scripts in Tomcat's `bin` folder executable.
+
 
 ## Tomcat Database Configuration [](id=tomcat-database-configuration)
 
@@ -473,6 +519,9 @@ you'll also need to configure Weld. For more information on configuring Weld for
 Tomcat, visit the
 [Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
 section.
+
+Checkpoint
+The previous sections contained optional settings where Tomcat manages your database and mail configurations. If you are using Mojarra with Tomcat, the `jsf-impl.jar` has been configured so that Mojarra is installed in the Tomcat global classpath.
 
 ## Deploying @product@ [](id=deploying-liferay)
 
