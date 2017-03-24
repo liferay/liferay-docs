@@ -9,7 +9,7 @@ Installing @product@ manually requires these basic steps:
 In this article, you'll step through these basic steps and install @product@ on
 your existing JBoss EAP 6.4 application server. Before proceeding, you should
 also download the latest dependencies ZIP file and OSGi JARs ZIP file from
-[https://web.liferay.com/downloads/liferay-portal/available-releases](https://web.liferay.com/downloads/liferay-portal/available-releases)
+[the available releases page](https://web.liferay.com/downloads/liferay-portal/available-releases)
 as well as the @product@ WAR file.
 
 **Liferay Home** is one folder above JBoss's install location. *Liferay Home*
@@ -30,9 +30,8 @@ download the required JARs from third-parties, as described below.
    folder. 
 
 2. Download your database driver `.jar` file and copy it into the
-   same folder. For example, for MySQL, download the MySQL Connector/J driver
-   from
-   [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
+   same folder. For example, for MySQL, 
+   [download the MySQL Connector/J driver](http://dev.mysql.com/downloads/connector/j/).
    and put its `.jar` file into the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
@@ -72,20 +71,23 @@ download the required JARs from third-parties, as described below.
     @product@ requires an OSGi runtime, and the `osgi` folder provides this with
     many required JAR files and configuration files.
 
+
 Checkpoint: 
 1. Inside the `$JBOSS_HOME/modules/com/liferay/portal/main` folder,
-verify that the following are present:    
-    a. `com.liferay.registry.api.jar`    
-    b. `portal-kernel.jar`     
-    c. `portlet.jar`     
-    d. (database of your choice `jar`) (e.g. MySQL, SQL Server...)
-2. Inside the `osgi` folder, verify the following are present:
-    a. `configs`     
-    b. `core`    
-    c. `marketplace`    
-    d. `target-platform`    
-    e. `test`
+   verify that the following are present: 
 
+   a. `com.liferay.registry.api.jar` 
+   b. `portal-kernel.jar` 
+   c. `portlet.jar` 
+   d. (database of your choice `jar`) (e.g. MySQL, SQL Server...)
+
+2. Inside the `osgi` folder, verify the following folders are present:
+
+   a. `configs` 
+   b. `core` 
+   c. `marketplace` 
+   d. `target-platform` 
+   e. `test`
 
 ## Running @product@ on JBoss EAP 6.4 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-eap-6-4-in-standalone-mode-vs-domain-mode)
 
@@ -177,12 +179,13 @@ Make the following modifications to `standalone.xml`:
         </configuration>
 
 Checkpoint:
-1. The `standalone.xml` has been modified with the following:    
-    a. `deployment-timeout="360"` has been set. (The value is in seconds.)    
-    b. The JAAS security domain has been added.    
-    c. The property `enable-welcome-root="false"` has been set.    
-    d. The property `jsp-configuration development="true"` has been set in the `<configuration>` element.
 
+1. The `standalone.xml` has been modified with the following values: 
+
+   a. `deployment-timeout="360"` has been set. The value is in seconds. 
+   b. The JAAS security domain has been added. 
+   c. The property `enable-welcome-root="false"` has been set. 
+   d. The property `jsp-configuration development="true"` has been set in the `<configuration>` element.
 
 Now it's time for some changes to your configuration and startup scripts.
  
@@ -243,17 +246,19 @@ uploading problems on a @product@ instance running on JBoss EAP 6.4.
 $$$
 
 Checkpoint:
-1. The `standalone.conf.bat` file has been updated with the following changes:    
-    a. UTF-8 file encoding    
-    b. The user time-zone    
-    c. The preferred protocol stack    
-    d. Increased the default amount of memory available.
-    
-2. If using the IBM JDK with the JBoss server, `<module name="ibm.jdk" />` has
-been added to the `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file.
 
-3. The additional IBM JDK paths have been set in the
-`$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file.
+1.  The `standalone.conf.bat` file has been updated with the following changes: 
+
+    a. UTF-8 file encoding 
+    b. The user time-zone 
+    c. The preferred protocol stack 
+    d. Increased the default amount of memory available.
+ 
+2.  If using the IBM JDK with the JBoss server, `<module name="ibm.jdk" />` has
+    been added to the `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file.
+
+3.  The additional IBM JDK paths have been set in the
+    `$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file.
 
 The prescribed script modifications are now complete for your @product@
 installation on JBoss. Next you'll configure mail and the database. 
