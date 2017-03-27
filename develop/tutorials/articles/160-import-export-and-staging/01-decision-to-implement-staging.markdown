@@ -1,4 +1,4 @@
-# Decision to Implement Staging
+# Decision to Implement Staging [](id=decision-to-implement-staging)
 
 @product@ comes pre-packaged with Staging, an advanced publication tool helping
 content creators and site administrators prepare their site before releasing it
