@@ -52,7 +52,7 @@ From a technical standpoint, publishing an entity or content follows the process
 below:
 
 1. The entity's possible references are discovered and processed.
-2. Some of the entity's fields are processed.
+2. The entity's fields are processed.
 3. The entity is serialized into a LAR file.
 4. The LAR is transferred to the live site (local or remote live).
 5. After deserialization, the entity's fields are processed.
