@@ -1,4 +1,4 @@
-# REST Template
+# REST Template [](id=rest-template)
 
 In this article, you'll learn how to create a Liferay RESTful web service
 packaged in a Liferay module. To create a Liferay RESTful web service via the

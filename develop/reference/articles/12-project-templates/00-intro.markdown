@@ -1,4 +1,4 @@
-# Project Templates
+# Project Templates [](id=project-templates)
 
 Liferay provides project templates that you can use to generate starter projects
 formatted in an opinionated way. These templates can be used by most build tools
