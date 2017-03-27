@@ -1,4 +1,4 @@
-# What's Changed and What Hasn't [](id=whats-changed-and-what-hasnt)
+# What Hasn't Changed and What Has [](id=whats-changed-and-what-hasnt)
 
 @product-ver@ is a new major version of the Liferay platform and as such it
 includes many improvements over previous versions. Having said that, most of the
@@ -6,42 +6,6 @@ characteristics from Liferay Portal 6 that you have learned to love are
 preserved, having been changed only slightly or not at all. Any experienced
 Liferay developer will be able to reuse most of his/her existing knowledge to
 developing for @product-ver@.
-
-Here are some key changes of interest to existing Liferay developers:
-
-1. Extraction of many features as modules: So far you have been used to
-working with Liferay as a large web application, of which all of it had to be
-deployed or none of it. In @product-ver@, many out of the box portlets, features,
-and associated APIs have been extracted as OSGi modules. Developers can choose
-which ones to deploy and use.
-
-2. Adoption of modern OSGi standards: OSGi is a set of standards for
-building modular systems. It's very powerful. Although it was previously
-difficult to learn and use, its modernized standards, such as Declarative
-Services, have made learning and using it much much easier.
-
-3. Core Public APIs are provided through portal-kernel (previously known
-as portal-service); all other public APIs are provided by their own modules.
-
-4. You can reuse modules and libraries, and manage the dependencies among
-them.
-
-5. Registration of classes implementing extension points is now simpler
-and more consistent; it's based on the standard @Component annotation instead of
-declarations it in portal.properties (in some cases) or portlet.xml (in some
-others). Note, previous registration mechanisms have been preserved where
-possible.
-
-6. Third party extensions and applications are now first-class citizens.
-Traditional plugins had some limitations that developments done in the core (or
-done as Ext Plugins) did not have. Modules don't have these limitations and are
-much more powerful than plugins ever were.
-
-<!-- TODO Uncomment this when these features are available. - Jim
-7. Complete integration of Liferay specific tools (such as Service
-Builder) within Maven and Gradle. Additionally we've adopted some new tools such
-as Bnd.
--->
 
 What has not changed? Even though there are many improvements in @product-ver@,
 there are also many great familiar aspects from previous versions that have been
@@ -68,8 +32,42 @@ they have in 6.2.
 6. Traditional plugins for portlets and hooks still work (once they're
 adapted to @product-ver@'s API) through a compatibility layer.
 
-7. The legacy Plugins SDK can also still be used and transition to the
+7. The Plugins SDK can also still be used and transition to the
 new Liferay Workspace, if desired, is easy.
+
+Here are some key changes of interest to existing Liferay developers:
+
+1. Extraction of many features as modules: So far you have been used to
+working with Liferay as a large web application, of which all of it had to be
+deployed or none of it. In @product-ver@, many out of the box portlets,
+features, and associated APIs have been extracted as OSGi modules. You can
+choose which ones to deploy and use.
+
+2. Adoption of modern OSGi standards: OSGi is a set of standards for
+building modular systems. It's very powerful. Although it was previously
+difficult to learn and use, its modernized standards, such as Declarative
+Services, have made learning and using it much much easier.
+
+3. Core Public APIs are provided through portal-kernel (previously known
+as portal-service); all other public APIs are provided by their own modules.
+
+4. You can reuse modules and libraries, and manage the dependencies among
+them.
+
+5. Registration of classes implementing extension points is now simpler
+and more consistent; it's based on the standard `@Component` annotation instead
+of declarations it in `portal.properties` (in some cases) or `portlet.xml` (in
+some others). Note, previous registration mechanisms have been preserved where
+possible.
+
+6. Third party extensions and applications are now first-class citizens.
+Traditional plugins had some limitations that developments done in the core (or
+done as Ext Plugins) did not have. Modules don't have these limitations and are
+much more powerful than plugins ever were.
+
+7. Complete integration of Liferay specific tools (such as Service
+Builder) within Maven and Gradle. Additionally we've adopted some new tools such
+as Bnd.
 
 Since the modularization of the Liferay web application is the change most
 relevant to you as a developer, let's dig deeper into that change and how it
@@ -155,9 +153,13 @@ The beauty of the @product-ver@ ecosystem is that it is made up of simple
 easy-to-use modules that depend on and communicate with each other. And you as a
 third-party developer can create and deploy your own modules into the mix.
 
-Let's consider the structure of a @product-ver@ app.
+You can continue developing traditional WAR-style apps for @product-ver@ too.
+@product@'s Portlet Compatibility Layer converts each plugin WAR to a Web
+Application Bundle (WAB), which is a module. 
 
-### The Structure of an App [](id=the-structure-of-an-app)
+Let's consider the structure of a @product-ver@ modular app.
+
+### The Structure of a Modular App [](id=the-structure-of-an-app)
 
 As mentioned, each app can be formed by one or more modules. This section
 explains the most common way to structure an app.
@@ -181,9 +183,9 @@ provided by this app.
 production.
 
 * **Specific purpose modules**: Other modules are also often created for
-specific purpose or to provide alternative implementations of some features of
-the app. For example the Wiki app has one module for each of the Wiki Engines
-supported.
+specific purposes or to provide alternative implementations of some of the app's
+features. For example the Wiki app has one module for each of the supported Wiki
+Engines.
 
 All the modules in an app usually sit in directories next to each other in the
 source to facilitate referencing them.

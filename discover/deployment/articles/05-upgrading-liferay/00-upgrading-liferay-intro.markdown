@@ -109,7 +109,7 @@ the configuration.
 
 ### Install the New Version of @product@
 
-Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/installation-and-setup)
+Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/preparing-for-install)
 to install @product@ on your application server or use @product@ bundled with your
 application server of choice. Once you have @product@ installed, DON'T START IT! 
 
@@ -154,7 +154,7 @@ to the `/osgi/configs` folder with the following content:
 
     autoUpgrade=false
 
-To run the upgrades for the modules, you'll use the [Gogo shell](develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+To run the upgrades for the modules, you'll use the [Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
 In this case, the upgrade tool opens a Gogo shell automatically after it finishes
 upgrading the core. 
 

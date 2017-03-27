@@ -27,13 +27,20 @@ Installing Elasticsearch for @product@ is pretty easy and takes only five steps:
 5. Restart @product@ and reindex your search indexes. 
 
 Now you'll actually perform these steps, and when you're done, you'll have a
-production-ready instance of @product@ up and running. 
+production-ready instance of @product@ up and running. For more information on
+installing a search engine, see [here](/discover/deployment/-/knowledge_base/7-0/installing-a-search-engine).
+
 
 ### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
-If @product@ isn't running, start it. Then, using a browser, visit port 9200 of
-the machine on which @product@'s running. For example, if you're browsing from the same machine
-@product@'s running on, visit this URL: 
+If @product@ isn't running, start it. 
+
+Then, in @product@, navigate to *Control Panel &rarr; Configuration &rarr;
+System Settings*. Find the Elasticsearch entry in the Foundation section,
+and set the Network Host property to *localhost*.
+
+Restart @product@ and you can visit port 9200 on localhost to access the
+embedded Elasticsearch: 
 
     http://localhost:9200
 

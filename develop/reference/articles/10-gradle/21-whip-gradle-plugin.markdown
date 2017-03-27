@@ -5,7 +5,7 @@ library in order to ensure that unit tests fully cover your project's code. See
 [here](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-whip/samples)
 for a usage sample.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+The plugin has been successfully tested with Gradle 2.5 up to 3.3.
 
 ## Usage [](id=usage)
 

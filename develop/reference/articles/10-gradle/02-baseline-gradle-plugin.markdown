@@ -10,7 +10,7 @@ the baseline. If there are any changes, it uses the OSGi semantic versioning
 rules to calculate the minimum new version. If the new bundle has a lower
 version, errors are thrown.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.2.1.
+The plugin has been successfully tested with Gradle 2.5 up to 3.3.
 
 ## Usage [](id=usage)
 
@@ -19,7 +19,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.baseline", version: "1.1.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.baseline", version: "1.1.3"
     }
 
     repositories {

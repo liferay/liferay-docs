@@ -81,6 +81,18 @@ a page, open its Configuration window, and under Display Style, select *List
 Hierarchy*. The My Sites Directory application is very similar to the Sites
 Directory application, except that it lists only the sites a user belongs to.
 
+Each subsite in the hierarchy has its own administrator, and the Site
+Administrator role permissions do not flow down to child sites in the hierarchy.
+If a Site Administrator creates a subsite, he or she has the same permissions in
+that subsite. This is not, however, because of inheritance. It is only because
+creating a site makes you the Owner of that site. A Site Administrator or a
+parent site has no default role in any subsites created by other Site
+Administrators. 
+
+If you wanted a user to have administrative access to all sites in a
+site/subsite hierarchy, you must create a role based on the Site Administrator
+role that has the permission *Manage Subsites*. 
+
 The Site Map application is another configurable app that's intended to help
 users navigate among pages within a site. When configuring this app, a site
 administrator can select a root page and a display depth. Just as sites can be
@@ -305,7 +317,7 @@ site and allows for users to easily find your site and its content through
 search and navigation. To take full advantage of tags and categories, you'll
 need to add pages with content to your site. For more information on using tags
 and categories, visit the
-[Organizing Content with Tags and Categories](discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
 
 #### Site Template [](id=site-template)
@@ -317,7 +329,7 @@ this section displays information about the link between the site template and
 the site. Specifically, you can see which site template was used and whether or
 not it allows modifications to the pages inherited from it by site
 administrators. To learn more about site templates and how to create your own,
-see the [Building Sites from Templates](discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
+see the [Building Sites from Templates](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
 section.
 
 #### Content Sharing [](id=content-sharing)
@@ -502,7 +514,8 @@ can be turned on through a simple user interface. This allows Liferay
 administrators to make use of Google Analytics on a site by site basis and turn
 it on and off when needed. You can sign up for Google Analytics at the Google
 Analytics site here:
-[http://www.google.com/analytics](http://www.google.com/analytics).
+
+[http://www.google.com/analytics](http://www.google.com/analytics)
 
 To enable Google Analytics support, navigate to the *Analytics* tab in Site
 Settings, which loads a very simple form, pictured below.
@@ -513,6 +526,16 @@ Enter your Google Analytics ID (which should have been provided to you when you
 signed up for the service) in the field and click *Save*. All the pages in the
 site you selected will now have the Google Analytics code in them and will be
 tracked. 
+
+To enable a different analytics service, navigate to *Configuration* in the
+Control Panel, and then go to *Instance Settings* &rarr; *Miscellaneous*. You
+can enter the name of any additional service you want to add in the *Analytics*
+field provided. Once you have entered the name, go to the *Site Settings*
+&rarr; *Advanced* &rarr; *Analytics* page for the site where you wish to add
+analytics. Copy the JavaScript tracking code provided by your analytics
+platform into corresponding field for your service. Now all pages on the
+selected site contain the tracking script and will send analytics data to your
+analytics platform. 
 
 This is a fairly simple procedure, and it gives you the ability to take
 advantage of some great tools to help you visualize who's coming to your site

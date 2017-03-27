@@ -24,11 +24,11 @@ application suites.
 
 ## Service Packs [](id=service-packs)
 
-Service packs for the @product@ are released about bi-monthly. The schedule
-depends on the need and security fix releases. They include the latest patches
-and updates for our customers who are just about to start their new projects.
-The service packs are built on the top of the original @product@ release and
-repackaged with the latest fix pack, Patching Tool and modules.
+Service packs for the @product@ are released about every two months. The
+schedule depends on the need and security fix releases. They include the latest
+patches and updates for our customers who are just about to start their new
+projects. The service packs are built on the top of the original @product@
+release and repackaged with the latest fix pack, Patching Tool and modules.
 
 Rather than use the service packs to keep existing systems updated, existing
 customers should

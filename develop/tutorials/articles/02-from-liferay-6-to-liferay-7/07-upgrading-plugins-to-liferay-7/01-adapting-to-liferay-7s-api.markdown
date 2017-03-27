@@ -1,418 +1,426 @@
 # Adapting to @product-ver@'s API with the Code Upgrade Tool [](id=adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
-The first upgrade process step is to adapt your existing plugin's code to
-@product-ver@'s API. @product-ver@ is a major release that contains significant API
-changes. As part of the modularization process, many packages have been renamed
-to adopt a new standard. But each API change has been carefully documented to
-explain what changed, how to adapt to the change, and why the change was made.
+The first and easiest plugin upgrade step is adapting to 
+@product-ver@'s API. @product-ver@ is a major release whose new modular 
+architecture 
+[benefits Liferay Portal 6 developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers). 
+Modularizing the product, however, required renaming many packages. Of course, 
+[we documented each API change](/develop/reference/-/knowledge_base/7-0/breaking-changes) 
+to explain what changed, why it changed, and how to adapt to it. 
 
-To go above and beyond documenting the changes, there's the Code Upgrade
-Tool: a tool that knows about these changes, analyzes your code, and suggests
-how to adapt the code to the new APIs.
+Going above and beyond documentation, Liferay provides the Code Upgrade Tool in 
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-ide) 
+(versions 3.1 milestones and newer). Here's what the Code Upgrade Tool does: 
 
-The Liferay Code Upgrade Tool (initially called the Migration Tool) is in
-Liferay @ide@. You should use the tool to adapt code to @product-ver@; you can
-switch back to your favorite tool afterwards.
+- Identifies code affected by the API changes
+- Describes each API change related to the code
+- Suggests how to adapt the code
+- Provides options, in some cases, to adapt code automatically
 
-This tutorial shows you how to adapt existing plugin code to @product-ver@'s
-API. As a prerequisite, you set up your existing traditional plugin in a
-@product-ver@ Plugins SDK, in Liferay @ide@. Then you find your plugin's
-dependencies and configure them. Finally, you use the Code Upgrade Tool to
-address upgrade issues. It's all straightforward.
+Even if you prefer tools other than Liferay @ide@ (which is based on Eclipse), 
+you should upgrade Plugins SDK plugins using the Code Upgrade Tool first--you 
+can use your favorite tools afterward. This tutorial walks you through the steps 
+required to use the Code Upgrade Tool: 
 
-+$$$
+**Code Upgrade Tool Steps**
 
-Note: Even if Liferay @ide@ (which is based on Eclipse) isn't your favorite,
-you should use it to leverage the Code Upgrade Tool. When you're done adapting
-your code, you can go back to your preferred IDE and tool chain. 
+ Step | Name | Description |
+:----- | :------ | :------------ |
+1.  | [Welcome to the Liferay Code Upgrade Tool](#step-1-welcome-to-the-liferay-code-upgrade-tool) | Introduces the Code Upgrade Tool |
+2.  | [Configure the Project](#step-2-configure-the-project) | Upgrades an existing Plugins SDK to a Plugins SDK 7 and prepares its plugins for upgrading |
+3.  | [Upgrade Descriptor Files](#step-3-upgrade-descriptor-files) | Moves descriptor files to their new versions |
+4.  | [Find Breaking Changes](#step-4-find-breaking-changes) | Finds breaking changes, describes them, and prescribes adaptations (some of which can be applied automatically) |
+5.  | [Build Services](#step-5-build-services) | Runs Service Builder on plugins that use it |
+6.  | [Upgrade Layout Templates](#step-6-upgrade-layout-templates) | Upgrades layout templates |
+7.  | [Convert Custom JSP Hooks](#step-7-convert-custom-jsp-hooks) | Converts JSP hooks to modules or module fragments |
+8.  | [Build](#step-8-build) | Compiles the plugins |
+9.  | [Summary](#step-9-summary) | Lists each upgrade step's status |
 
-$$$
+After completing 
+[step 2](#step-2-configure-the-project), you can execute the steps in any order. 
 
-Let's start by setting up your plugin in a @product-ver@ Plugins SDK using
-Liferay @ide@.
+Launch the Code Upgrade Tool now. 
 
-## Setup [](id=setup)
+## Launching the Code Upgrade Tool [](id=launching-the-code-upgrade-tool)
 
-The Code Upgrade Tool is available in Liferay @ide@ (versions 3.0 and newer). 
+Launch the Code Upgrade Tool to start new upgrades or continue previously 
+started upgrades:
 
-If you already have Liferay @ide@ (@ide@), upgrade it to version 3.0 or newer.
-Otherwise, download it from the [downloads page](https://www.liferay.com/downloads).
+1.  Upgrading plugins with the Code Upgrade Tool for first time requires a new
+    empty Eclipse workspace. Bring up the Workspace Launcher by selecting *File
+    &rarr; Launch Workspace &rarr; New...*. Then create a workspace. 
 
-Next, you need a @product-ver@ Plugins SDK for your traditional plugin. The new SDK
-is available on the [downloads page](https://www.liferay.com/downloads).
+    +$$$
 
-Then, either move your plugin into the @product-ver@ Plugins SDK or unzip the 
-@product-ver@ Plugins SDK on top of your existing Plugins SDK. This upgrades it 
-to the latest version. 
+    **Note**: The current tool requires using a new empty Eclipse workspace.
+    Future tool versions will relax this requirement. 
 
-In your `build.[username].properties` file, make sure to set the
-`app.server.type` and `app.server.parent.dir` properties to refer to your
-@product@ installation.
+    $$$
 
-In @ide@, set up your Liferay server and plugin project as follows:
+2.  Select *Project &rarr; Liferay Code Upgrade Tool...* to launch the Code
+    Upgrade Tool. 
 
-1.  Add a Liferay server and underlying runtime environment that targets your
-    @product@ installation.
+    ![Figure 1: The Code Upgrade Tool is available in the *Project* menu.](../../../images/code-upgrade-invoke-tool.png)
 
-2.  Import your plugin project. Select *File &rarr; Import &rarr; Liferay &rarr;
-    Liferay Plugins SDK Project* to bring up the wizard for importing and
-    configuring your project.
+The Welcome screen appears. 
 
-Your existing plugin project, along with its Plugins SDK, appears in @ide@.
-You're ready to adapt the plugin to @product-ver@!
+## Step 1: Welcome to the Liferay Code Upgrade Tool [](id=step-1-welcome-to-the-liferay-code-upgrade-tool)
 
-## Resolving Module Dependencies [](id=resolving-module-dependencies)
+This screen describes the tool's navigation and key functions. 
 
-Now that you've imported your plugin project to @ide@, you probably see compile
-errors for some of the Liferay classes it uses. They're listed as undefined
-classes or unresolved symbols because they've been moved, renamed, or removed.
-As a part of modularization in @product@, many of these classes reside in new
-modules.
+![Figure 2: The Welcome page introduces the tool. The developer navigates between steps by clicking the left and right arrows or a step's gear icon.](../../../images/code-upgrade-welcome.png) 
 
-You need to resolve all of these Liferay classes for your plugin. Some of the
-class changes are quick and easy to fix. Changes involving the new modules
-require more effort to resolve, but are straightforward.
+**Navigation**
 
-Liferay class changes and required adaptations are described below:
+ Icon | Description |
+:----- | :------------ |
+ ![gears image](../../../images/icon-code-upgrade-step-gears.png) | Represents code upgrade steps. Clicking a step's gear takes you to that step. |
+ ![check mark icon](../../../images/icon-code-upgrade-mark-done.png) | Indicates step completion and takes you to the next step. |
+ ![x icon](../../../images/icon-code-upgrade-mark-not-done.png) | Indicates an incomplete step and advances you to the next step. |
+ ![left arrow icon](../../../images/icon-code-upgrade-prev-step.png) | Navigate to the previous step. |
+ ![right arrow icon](../../../images/icon-code-upgrade-next-step.png) | Advance to the next step. |
 
--   **Class moved to a package that's in the classpath**:  This change is 
-    common and easy to fix. Since the module is already on your classpath, you
-    need only update the class import. Two ways of doing this are by using the
-    Code Upgrade Tool or by using an Eclipse feature. The Code Upgrade Tool
-    reports each moved class for you to address one by one. Ecplise's feature
-    automatically resolves multiple classes at once.
-
-    It's typically faster to resolve moved classes using the mentioned Eclipse
-    feature. Since Liferay @ide@ is based on Eclipse, you can generate imports
-    to classes in your classpath by using the *Organize Imports* keyboard
-    sequence: *ctrl-shift-o*.
-
-    If you have an import line
-    that's in error, comment out the line or remove it. Then press
-    *ctrl-shift-o*. If there's only one match for the class, an import statement
-    is generated for it automatically. Otherwise a wizard appears, letting you
-    select the fully qualified class name that matches the class. On selecting a
-    matching fully qualified class, Eclipse inserts a corresponding import.
-
--   **Class moved to a module that's *not* in the classpath**: You must resolve
-    the new module as a dependency for your project. This requires identifying
-    the module and specifying your project's dependency on it. 
-
--   **Class replaced or removed**: The class has been replaced by another class
-    or removed from the product. The Code Upgrade Tool (discussed later)
-    explains what happened to the class, how to handle the class change, and
-    why the change was made.
-
-As explained above, resolving a class that's moved within your classpath is
-straightforward. Consider resolving such classes first. 
-
-The remainder of this tutorial explains how to resolve the last two cases and
-starts with configuring your plugin project to declare the modules it needs. 
-
-### Identifying Module Dependencies [](id=identifying-module-dependencies)
-
-Before @product-ver@, all the platform APIs were in a single JAR file:
-`portal-service.jar`. Many of these APIs are now in independent modules. 
-Modularization has resulted in many benefits, as described in the article [Benefits of @product-ver@ for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm)
-One such advantage is that these API modules can evolve separately from the
-platform kernel. They also simplify future upgrades. For example, instead of
-having to check all of Liferay's APIs, each module's [Semantic Versioning](http://semver.org/)
-indicates whether the module contains any backwards-incompatible changes. You
-need only adapt your code to such modules (if any). 
-
-As part of the modularization, `portal-service.jar` has been renamed
-appropriately to `portal-kernel.jar`, as it continues to hold the portal
-kernel's APIs. 
-
-![Figure 1: The portal-service JAR file has been refactored. Application APIs have been extracted from it and it's been renamed *portal-kernel*.](../../../images/from-liferay-6-portal-apis-before-after.png)
-
-Each app module consists of a set of classes that are highly cohesive and have
-a specific purpose, such as providing the app's API, implementation, or web UI.
-The app modules are much easier to understand and fun to work with. So next you'll
-track down the modules that now hold the classes your plugin references.
-
-Look at [Classes Moved from portal-service.jar](/web/guest/develop/reference/-/knowledge_base/7-0/classes-moved-from-portal-service-jar),
-which is a table that maps each class moved from `portal-service.jar` to its
-new module. The table includes each class's new package and the module's version
-at the time of @product@'s latest release. 
-
-Note the following class information:
-
-* *Module Symbolic Name*: The module's unique identifier
-* *Module Version*: The module's version identifier
-* *Package*: The class' Java package
-
-You'll use this information to manage your plugin's dependencies on these modules.
-
-**IMPORTANT**: The module versions in the @product@ source code are currently
-one micro-version higher than what's actually in that @product@ release. For
-example, even though the source code for the Liferay Journal API module
-specifies version 2.0.2, version 2.0.1 is what's bundled with the @product@
-release and is therefore the version you should specify. The module versions are
-incremented for the module's next release version to make sure a new version is
-associated with all module changes. **Make sure to specify one module
-micro-version lower** than what's listed in the @product@ source code and in the
-reference table, that's based on the source code. 
-
-Your plugin might reference classes that are in Liferay utility modules, such as
-`util-java`, `util-bridges`, `util-taglib`, or `util-slf4j`. Their module
-artifacts are listed on the [MVNRepository](http://mvnrepository.com/artifact/com.liferay.portal)
-site. All versions of each module are available. When you click on a
-module version, the site shows options for the Ivy, Maven, or
-Gradle dependency elements to specify in your project. Note the Ivy dependency
-information, as the next section demonstrates using Ivy.
-
-![Figure 2: The MVNRepository site conveniently presents module dependency elements for Ivy, Maven, Gradle, and more.](../../../images/from-liferay-6-mvnrepository-entry.png)
-
-The following table shows each Liferay utility module's symbolic name, which
-links to its artifacts.
-
-**Liferay Utility Module Symbolics Names**
-
-  **Liferay Utility** |  &nbsp;**Module Symbolic Name** |
-:---------------------- | :----------------------------------------- |
- util-bridges           |  [`com.liferay.util.bridges`](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.util.bridges) |
- util-java               | [`com.liferay.util.java`](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.util.java) |
- util-slf4j               | [`com.liferay.util.slf4j`](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.util.slf4j) |
- util-taglib             | [`com.liferay.util.taglib`](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.util.taglib) |
- 
-As you inspect the module artifacts, note the *module symbolic name* and
-*version* of the modules you use. Module dependency configuration is explained
-shortly.
+Liferay @ide@ tracks each plugin's state. You can close the Code Upgrade Tool 
+view at any step and re-launch it later to resume upgrading plugins. 
 
 +$$$
 
-Note: Previous versions of the Plugins SDK made `portal-service.jar` available
-to projects; the @product-ver@ Plugins SDK similarly makes `portal-kernel.jar`
-available. If you're using a Liferay bundle (i.e., @product@ pre-installed on an
-app server), the Liferay utility modules are already in your classpath.
-
-If you manually installed @product@ on your app server, the Liferay utility
-modules might not be on your classpath. If a utility module you need is not on
-your classpath, note its dependency elements.
+**Note**: To restart upgrades from scratch, click on the Restart Code Upgrade 
+icon (![restart icon](../../../images/icon-restart-code-upgrade.png)) in the 
+view's toolbar. 
 
 $$$
 
-Now that you have the module symbolic names and versions, you can make the
-modules available to your plugin project.
 
-The modules your plugin uses must be available to it at compile time and run
-time. Here are two options for resolving module dependencies in your traditional
-plugin project:
-
-**Option 1: Use Ivy**
-
-**Option 2: Work with dependency JAR files manually**
-
-The next sections explain and demonstrate these options. Let's first consider
-using Ivy.
-
-### Managing Dependencies with Ivy [](id=managing-dependencies-with-ivy)
-
-Apache Ivy provides an elegant approach to managing dependencies. You declare
-your dependencies in an `ivy.xml` file in your plugin project's root folder. The
-Plugins SDK's Ant tasks leverage the `ivy.xml` file, along with the Plugins
-SDK's Ivy scripts, to download the specified modules and *their* dependencies,
-and make them available to your plugin.
+![Figure 3: The Code Upgrade Tool marks steps complete (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)) or incomplete (![x icon](../../../images/icon-code-upgrade-mark-not-done.png)). It also saves its state so you can resume upgrades later.](../../../images/code-upgrade-gears-done-and-not-done.png)
 
 +$$$
 
-**Note**: you can use Gradle or Maven in place of Ivy for dependency management;
-but their use is out of the scope of this tutorial.
+**Tip**: The Code Upgrade Tool view is easiest to work with when it's resizable.
+To enable resizing, minimize the view and then click its icon (![view icon](../../../images/icon-code-upgrade-tool.png)). 
 
 $$$
 
-Here's an example dependency element for the Liferay Journal API version 2.0.1
-module:
+Now you're ready to configure your project. 
 
-    <dependency name="com.liferay.journal.api" org="com.liferay" rev="2.0.1" />
+## Step 2: Configure the Project [](id=step-2-configure-the-project)
 
-Each dependency includes the module's name (`name`), organization (`org`), and
-revision number (`rev`).
+Before upgrading a plugin to @product-ver@, its Plugins SDK must be integrated
+with a @product-ver@ server. You can work with plugins in your current Plugins 
+SDK, or in a copy of the Plugins SDK in a new 
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
+Liferay Workspace offers the best of both worlds: it lets you continue to work 
+with plugins in an SDK while facilitating plugin migration to modules or 
+Workspace WAR projects. Configure the upgrade project using the option you 
+prefer. 
 
-All Liferay modules use organization (`org`) value `"com.liferay"`.
+### Option 1: Upgrading to Liferay Workspace [](id=option-1-upgrading-to-liferay-workspace)
 
-At compile time, Ivy downloads the dependency JAR files to a cache folder so you
-can compile against them. At deployment, the OSGi framework in @product@
-installs and registers the dependency modules for runtime access. 
+Upgrading to Liferay Workspace does these things:
 
-**IMPORTANT**: Make sure to specify module version numbers *one micro-version
-lower* than what's specified in the @product@ source code. The source code lists
-one micro-version higher than what's associated with the @product@ release. 
+-   Converts the SDK root folder to a new Liferay Workspace
+-   Upgrades the Plugins SDK to a Liferay Plugins SDK 7
+-   In the Workspace, migrates the Plugins SDK to a new `plugins-sdk` subfolder
+-   Installs a @product-ver@ server bundle to a new `bundles` subfolder
 
-If your project doesn't already have an `ivy.xml` file, you can get one by
-creating a new plugin project in @ide@ and copying the `ivy.xml` file it
-generates. 
+Use these steps to do this:
 
-For example, here are the Liferay Portal 6.2 Knowledge Base portlet
-application's `ivy.xml` file contents:
+1.  Configure the project: 
 
-    <?xml version="1.0"?>
+    -   *Liferay Plugins SDK Location*: Path to the Plugins SDK to upgrade 
+    -   *Select Migrate Layout*: Select *Upgrade to Liferay Workspace* 
+    -   *Server Name*: Arbitrary name for the @product-ver@ server bundle 
+    -   *Bundle URL*: Location of a server bundle to download and install 
+    -   *Backup SDK into Folder*: Whether to copy the original Plugins SDK to
+        the specified folder 
 
-    <ivy-module
-        version="2.0"
-        xmlns:m2="http://ant.apache.org/ivy/maven"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd"
-    >
-        <info module="knowledge-base-portlet" organisation="com.liferay">
-            <extends extendType="configurations,description,info" location="${sdk.dir}/ivy.xml" module="com.liferay.sdk" organisation="com.liferay" revision="latest.integration" />
-        </info>
-    
-        <dependencies defaultconf="default">
-            <dependency org="com.liferay" name="com.liferay.markdown.converter" rev="1.0.2" />
-        </dependencies>
-    </ivy-module>
+    ![Figure 4: The Configure Project step imports Plugins SDK projects and integrates them with a @product-ver@ server.](../../../images/code-upgrade-configure-project.png)
 
-The Plugins SDK works with project Ivy files to store artifacts and make them
-accessible to your plugin projects.
+2.  Click the *Import Projects* button. 
 
-If you don't want to use Ivy, you can store dependency JARs within your plugin
-project manually. Next, you'll learn about manual dependency management.
+The Liferay Workspace and the Plugins SDK projects are imported to Liferay
+@ide@. 
 
-### Managing Dependencies Manually [](id=managing-dependencies-manually)
+To mark the step complete, click the check mark icon (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)). 
 
-Managing dependencies manually is also viable. If you're already managing
-dependencies using Ivy or some other dependency management framework, then you
-can skip this section and continue at the section *Adapting to the API with the
-Code Upgrade Tool*.
+### Option 2: Upgrading to Liferay Plugins SDK 7 [](id=option-2-upgrading-to-liferay-plugins-sdk-7)
 
-Manual dependency management involves downloading dependency JAR files and
-adding them to your project's `WEB-INF/lib` folder.
+Upgrading to Liferay Plugins SDK 7 does these things:
 
-Liferay JARs are available on the MVNRepository site: [http://mvnrepository.com/artifact/com.liferay](http://mvnrepository.com/artifact/com.liferay.portal)
+-   Upgrades the Plugins SDK to a Liferay Plugins SDK 7
+-   Integrates the SDK with the specified @product-ver@ server
 
-The repository organizes modules and their artifacts in folders named after
-module *symbolic names* and *versions*. For example, the Journal API module's
-artifacts are accessible at [http://mvnrepository.com/artifact/com.liferay/com.liferay.journal.api/2.0.1](http://mvnrepository.com/artifact/com.liferay/com.liferay.journal.api/2.0.1)
+Use these steps to do this:
 
-Clicking a module's *Repository* link (e.g., link named `central`) takes you to
-the module's Maven Central repository page. To download a module's JAR file,
-click on the JAR file link from the Maven Central repository page. The Journal
-API module's JAR file, for example, is `com.liferay.journal.api-2.0.1.jar`. 
+1.  Configure the project: 
 
-As you manage module JARs, make sure to not *deploy* any OSGi framework JARs or
-Liferay module JARs (e.g., *com.liferay.journal.api.jar*). If you deploy them
-along with your plugin, they'll conflict with the JARs already installed in the
-OSGi framework. Identical JARs existing in two different classloaders can cause
-class cast exceptions.
+    -   *Liferay Plugins SDK Location*: Path to the Plugins SDK to upgrade. 
+    -   *Select Migrate Layout*: Select *Upgrade to Liferay Plugins SDK 7*. 
+    -   *Liferay Server Name*: Select or add a @product-ver@ server. 
+    -   *Backup SDK into Folder*: Whether to copy the original Plugins SDK to 
+        the specified folder. 
 
-The easiest way to exclude such JARs from your plugin's deployment is to list
-them in a `deploy-excludes` property in your plugin's
-`liferay-plugin-package.properties`. You must otherwise remove the JARs manually
-from the plugin WAR file.
+    ![Figure 5: Defining a @product@ server is straightforward.](../../../images/code-upgrade-define-new-server.png)
 
-To exclude JARs in your plugin's `liferay-plugin-package.properties` file, add
-an entry like this, replacing the square-bracketed items with the names of JAR
-files to exclude:
+2.  Click the *Import Projects* button. 
 
-    deploy-excludes=\
-        **/WEB-INF/lib/[module-artifact.jar],\
-        **/WEB-INF/lib/[another-module-artifact.jar]
+The Plugins SDK projects are imported to Liferay @ide@. 
 
-Here's an example property that excludes OSGi framework JAR `osgi.core.jar` and
-Liferay app module JAR `com.liferay.journal.api.jar`: 
++$$$
 
-    deploy-excludes=\
-        **/WEB-INF/lib/com.liferay.portal.journal.api.jar,\
-        **/WEB-INF/lib/org.osgi.core.jar
+**Note**: If the Plugins SDK is the same version as the Liferay Portal bundle, 
+the developer need only set the SDK's `app.server.parent.dir` property to the 
+bundle path. Otherwise, the developer must also set the `app.server.type` and 
+`app.server.[server-type].dir` properties. 
 
-How do you know what modules are already installed in @product@? If your
-@product@ instance has a particular Liferay App Suite installed, then don't
-deploy module JARs you know are in that App Suite. For example, if the Web
-Experience Management App Suite is already installed (which is the case for a
-@product@ bundle), then don't deploy Web Content module JARs such as
-`com.liferay.journal.api.jar`.
+$$$
 
-Searching for a module in @product@'s [App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps).
-is a sure-fire way to verify existing module installations.
+To mark the step complete, click the check mark icon (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)). 
 
-Now that you've configured your plugin project's dependencies, you can use
-Liferay's Code Upgrade Tool to adapt the rest of your plugin's code.
+## Step 3: Upgrade Descriptor Files [](id=step-3-upgrade-descriptor-files)
 
-## Adapting to the API with the Code Upgrade Tool [](id=adapting-to-the-api-with-the-code-upgrade-tool)
+The Upgrade Descriptor Files screen lists plugin descriptor files to upgrade. It 
+proposes updates for them and lets you compare proposed updates with the current 
+content. To compare a descriptor's proposed update with its current content, 
+click the descriptor entry in the list. To apply all proposed descriptor file 
+updates, click *Upgrade...*. To find plugins whose descriptor files need 
+upgrading, click *Find...*. 
 
-The Code Upgrade Tool identifies areas in your code that need to be adapted to
-Liferay's APIs changes. As @product-ver@ was being developed, some of the changes
-were unavoidable and resulted in problems that affect plugin upgrades. They're
-commonly known as *breaking changes* and are captured in @product@'s [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
-document.
+![Figure 6: The Upgrade Descriptor Files screen lists Plugins SDK project descriptor files to upgrade.](../../../images/code-upgrade-upgrade-descriptor-files.png)
 
-Liferay's Code Upgrade Tool finds and describes the upgrade issues. You can
-either resolve each issue yourself or, if the tool enables an auto-correct
-option for the issue, you can apply the tool's automatic fix. As you resolve the
-upgrade problems, mark them complete in the Code Upgrade Tool's list.
+![Figure 7: The Upgrade Descriptor File step adapts descriptor files to @product-ver@. Clicking a descriptor file opens a window that compares proposed updates to the current content.](../../../images/code-upgrade-compare-descriptor-files.png)
 
-To start the Code Upgrade Tool, follow these steps:
+In the next step, you'll find breaking changes. 
 
-1. In the *Project Explorer*, right-select your plugin project.
+## Step 4: Find Breaking Changes [](id=step-4-find-breaking-changes)
 
-2. Select *Liferay &rarr; Find Liferay 7 breaking API changes*
+*Breaking changes* are API changes that affect (and might *break*) existing API 
+consumers and implementations. The Code Upgrade Tool finds affected plugin code 
+and shows documentation that describes how to adapt it. 
 
-The following view appears.
+Breaking changes documentation contains the following information for each 
+change: 
 
-![Figure 3: This view shows you where breaking changes affect your plugin. In addition, it provides background information on each change and explains how to adapt to it.](../../../images/from-liferay-6-upgrade-problems.png)
+-   *Date*: Date the change was introduced	
+-   *JIRA Ticket*: Corresponding issue number
+-   *What Changed?*: Change summary
+-   *How should I update my code?*: Adaptation instructions
+-   *Why was the change made?*: Reasons for the change
 
-Upgrade problems are reported by file and line number. On selecting a problem
-from the list, the following information about the problem appears: 
+The tool helps users address problems. It offers to auto-correct problems that
+are clearly understood and easy to fix (e.g., package imports and @product@
+version properties). It facilitates opening affected code in an editor to check
+and modify it. Lastly, the tool lets you mark progress in resolving the 
+problems. 
 
--  **Date**: When the change was introduced to the product.
+You can use one or both of the following options to resolve problems.
 
--  **JIRA Ticket**: Corresponding issue number.
+-   **Option 1: Correct Problems Automatically First**
+-   **Option 2: Address Problems Individually**
 
--  **What Changed?**: Summary of the code change.
+The following sections explain each option. 
 
--  **How should I update my code?**: Instructions on how to adapt your code in
-    response to the change. 
-    
--  **Why was the change made?**: Reasons for the change.
+### Option 1: Correct Problems Automatically First [](id=option-1-correct-problems-automatically-first)
 
-Here's the Code Upgrade Tool workflow:
+Use this option (![bandage icon](../../../images/icon-bandage.png)) to 
+fix easy problems right away automatically (you can fix tougher problems later).
+Follow these steps to use this option: 
 
-1.  Double-click a problem in the list to go to the problem in the affected
-    file.
-                    
-2.  Correct the problem manually or automatically, if the Code Upgrade Tool
-    offers an automatic fix. 
+1.  Click the *Automatically Correct Problems* icon (![bandage icon](../../../images/icon-bandage.png))
+    to open the project selection window. 
 
-    To verify whether there is an automatic correction, right-click on the
-    problem in the problem list. If there's a *Correct Automatically* option,
-    you can select it to apply that correction. 
+2.  Select projects in which to correct problems automatically and click the 
+    *OK* button. After problems, the Find Breaking Changes window appears and 
+    lists any remaining problems. 
 
-    ![Figure 4: The Code Upgrade Tool provides auto-correction for some issues.](../../../images/from-liferay-6-correct-automatically.png)
+3.  Address any remaining problems individually (as described next). 
 
-When an auto correction is applied to the code, an information icon (i) appears
-next to the line of code. The icon identifies the affected line of code and
-displays the issue's title when you hover over the icon. 
+### Option 2: Address Problems Individually [](id=option-2-address-problems-individually)
 
-    ![Figure 5: On applying auto-correction, an information icon appears next to the affected line of code](../../../images/from-liferay-6-upgrade-tool-at-line.png)
+This option (![project selection icon](../../../images/icon-code-upgrade-tool-select-project.png)) 
+finds and describes all the problems, leaving you to address them on a 
+case-by-case basis. Problems that the tool can auto-fix have the *Correct 
+automatically* option. Follow these steps to address problems individually: 
 
-3.  Mark the problem resolved.
+1.  Click the *Find Breaking Changes* icon (![project selection icon](../../../images/icon-code-upgrade-tool-select-project.png))
+    to open the project selection window. 
 
-4.  If more unresolved problems exist, go back to step 1.
+2.  Select the projects in which to find problems and click on the *OK* button. 
+    The Find Breaking Changes window appears: 
 
-For more details on an issue, inspect its JIRA ticket by visiting
-<https://issues.liferay.com>, entering the ticket number in the search box, and
-clicking the search icon. The issue's description and comments provide relevant
-information.
+    -   Upper-left panel: lists the projects that have outstanding problems. The
+        *Code Problems* folder holds a tree of projects and project files that
+        have code problems. 
+    -   Lower-left panel: lists the currently selected project's problems. 
+    -   Right panel: shows breaking change documentation for selected problems. 
 
-Resolving all of a plugin's reported upgrade problems makes for a great start
-in adapting your plugin to @product-ver@.
+    ![Figure 8: The Finding Breaking Changes step shows users where breaking changes affect plugins. It describes each change and explains how to adapt to it.](../../../images/code-upgrade-find-breaking-changes.png)
 
-## Summary [](id=summary)
+3.  In the upper left panel's *Code Problems* tree, select a project file. The 
+    bottom left panel lists the file's problems. 
 
-Congratulations on completing the first step in upgrading your plugin to @product@
-7! Let's consider all that you've done.
+4.  Select a problem to view its description in the right side panel. 
 
-You set up your plugin in a @product-ver@ Plugins SDK, imported it into @ide@,
-and set up a @product-ver@ server in it. Then, you fixed class imports and
-resolved dependencies on all the modules your plugin uses. Finally, you
-leveraged Liferay's Code Upgrade Tool to hunt down and adapt to breaking API
-changes. Way to go!
+5.  Right click the problem to show options for handling it. 
 
-It's onward and upward with upgrading your traditional plugins on @product-ver@!
+    ![Figure 9: The Code Upgrade Tool can correct some problems automatically. There are also options to ignore the problem, ignore problems like it, or mark it done/undone.](../../../images/code-upgrade-problem-options.png)
 
-## Related Articles [](id=related-articles)
+6.  Based on the problem description, handle it using one of the following options: 
+
+    Option | Instructions |
+    :------- | :------------- |
+    Correct automatically (if available) |  1.  Right click the problem.<br>2.  Select *Correct automatically*.<br>3. Mark the problem resolved by checking its checkbox in the *Resolved* column.  |
+    Fix manually | 1.  Double click the problem to open an editor.<br>2.  Fix the problem based on the instructions in *How should I update my code?*.<br>3.  Mark the problem resolved by checking its checkbox in the *Resolved* column. |
+    Ignore | 1.  Right click the problem.<br>2.  Ignore this problem (*Ignore*) or all problems like it (*Ignore all problems of this type*). Ignoring problems marks them for you to revisit. Clicking the *Open Ignored List* icon (![ignored list icon](../../../images/icon-code-upgrade-list-ignored-problems.png)) lists ignored problems. |
+
+7.  Continue addressing problems individually or try *Correcting Problems
+    Automatically* (as explained previously). 
+
++$$$
+
+**Tip**: To use the entire Code Upgrade Tool view to show breaking change
+documentation, click the Hide Tree icon (![hide tree icon](../../../images/icon-hide-breaking-change-tree.png)). 
+
+$$$
+
+Congratulations on addressing breaking change problems! Next, you'll build your 
+project's services. 
+
+## Step 5: Build Services [](id=step-5-build-services)
+
+The Build Service step re-runs Service Builder on the projects and deletes 
+legacy Service Builder files. To do this, click *Build Service*. 
+
+![Figure 10: The Build Service step re-runs Service Builder on the projects and removes legacy Service Builder files.](../../../images/code-upgrade-build-service.png)
+
+Next, you'll upgrade any layout templates. 
+
+## Step 6: Upgrade Layout Templates [](id=step-6-upgrade-layout-templates)
+
+The Upgrade Layout Templates step proposes updates for Layout Templates. It
+lists Layout Templates for you to view and compare proposed updates with
+original content. 
+
+Follow these steps to upgrade your Layout Templates:
+
+1.  Click the *Find...* button to list Layout Templates that need updates. 
+
+2.  To compare a Layout Template's original code with proposed code updates,
+    double click its name. 
+
+3.  Click the *Upgrade...* button to apply all proposed Layout Template updates. 
+
+*Finished* shows after each upgraded Layout Template. 
+
+![Figure 11: The Upgrade Layout Templates step lists all Layout Templates to upgrade.](../../../images/code-upgrade-upgrade-layout-templates.png)
+
+Next, you'll convert any custom JSP hooks. 
+
+## Step 7: Convert Custom JSP Hooks [](id=step-7-convert-custom-jsp-hooks)
+
+This step converts custom JSP hooks to modules or module fragments. It lets you 
+compare your custom JSPs with original Liferay Portal 6.2 JSPs, and newly 
+generated module custom JSPs. 
+
+![Figure 12: The Convert Custom JSP Hooks step lets you select JSP hook plugin projects to convert to modules or module fragments. After they're converted, the originals are available for comparing with the adapted custom JSPs.](../../../images/code-upgrade-convert-custom-jsp-hooks.png)
+
+Use these steps to convert the Liferay Portal 6.2 custom JSP hooks to new 
+modules or module fragments for @product-ver@: 
+
+1.  Set the *Converted Project Location* to the Workspace's `modules` folder. 
+
+2.  Click the *Select Projects* button. The *Custom JSP Hook Project* window
+    appears. 
+
+3.  In the *Custom JSP Hook Project* window, select projects to convert and
+    click *OK*. 
+
+    ![Figure 13: The Code Upgrade Tool lets you select custom JSP hook projects to upgrade.](../../../images/code-upgrade-custom-jsp-hook-project-seclector.png)
+
+The JSP hooks are converted to new modules or module fragments in the Workspace. 
+
+![Figure 14: Custom JSP hook projects are converted to module or module fragment projects.](../../../images/code-upgrade-converted-jsp-hooks-in-modules.png)
+
+The Code Upgrade Tool helps you review the changes, so you can make any 
+additional changes. It lists the 6.2 custom JSPs and the new converted custom 
+JSPs for you to compare with the 6.2 originals: 
+
+-   To compare a 6.2 custom JSP with the original, click the custom JSP 
+    filename. 
+-   To compare a newly converted 7.x custom JSP with the original, click the 7.x 
+    custom JSP filename. 
+
+Referring to these comparisons helps you to implement new JSP customizations for 
+@product-ver@. 
+
+![Figure 15: The Code Upgrade Tool lets you compare your 6.2 and new 7.x custom JSPs with Liferay Portal 6.2 originals.](../../../images/code-upgrade-convert-jsp-hooks.png)
+
+![Figure 16: This view compares an original 6.2 JSP with a 6.2 custom JSP.](../../../images/code-upgrade-converted-jsp-hooks-compare-6.2-original.png)
+
+![Figure 17: This view compares the new module's 7.x custom JSP with the Liferay Portal 6.2 original. ](../../../images/code-upgrade-converted-jsp-hooks-compare-6.2-original-to-7.0.png)
+
+If the 6.2 hook plugin's JSP didn't customize an existing Liferay Portal 6.2 
+JSP, there's no original and the JSP is marked *unfound*. You must then decide 
+how to implement the customization for @product-ver@. It might make sense to 
+create a similar new JSP in a new or converted module project. 
+
+![Figure 18: The Code Upgrade Tool indicates whether a custom JSP is *found* or *unfound* in Liferay Portal 6.2.](../../../images/code-upgrade-converted-jsp-hooks-found-unfound.png) 
+
+The Code Upgrade Tool creates a `ConvertedCustomJspBag` class in the converted
+module project. It tells the OSGi container that the module modifies a core JSP.
+The class resides in the module's `src/main/java/codeupgrade.corejsphook/`
+folder. 
+
+![Figure 19: Each Portal core JSP customization module's `ConvertedCustomJspBag` class informs the OSGi container about the customized JSP.](../../../images/code-upgrade-converted-core-jsp-hook-module.png)  
+
+The new upgraded Portal core JSPs are under the module's 
+`src/main/resources/META-INF/resources/html/` folder. 
+
+The Code Upgrade Tool converts Liferay Portal 6.2 module custom JSP hooks to
+module fragments. Here's a fragment's `bnd.bnd` file: 
+
+![Figure 20: The `Fragment-Host` header specifies the module on which to apply the fragment.](../../../images/code-upgrade-converted-jsp-hook-fragment-bnd.png)
+
+The Code Upgrade Tool also gives you a great deal of flexibility to convert 
+custom JSPs as needed. For example, if you make a mistake or aren't fond of 
+the results of converting a custom JSP, you can start over. Follow these steps 
+to do so: 
+
+1.  Delete the converted module project(s). 
+
+2.  Click on the *Clear Results* button in the *Convert Custom JSP Hooks* view. 
+
+3.  Select the project(s) again from the *Custom JSP Hook Project* window and
+    click *OK*. 
+
+The Convert Custom JSP Hooks view lets you upgrade JSP hooks at your leisure. 
+Now you're ready to rebuild your projects. 
+
+## Step 8: Build [](id=step-8-build)
+
+You must now rebuild any Plugins SDK projects. To do so, click the *Build...* 
+button. 
+
+![Figure 21: You can build SDK projects any time.](../../../images/code-upgrade-build.png)
+
+Great, you're almost done! 
+
+## Step 9: Summary [](id=step-9-summary)
+
+The last screen in the Code Upgrade Tool lists each step's status. A check mark 
+indicates the step is done, an X indicates it's not done, and a question mark 
+indicates its status is to be determined. To revisit a step, click its name. 
+
+![Figure 22: The Summary step lists each step's status.](../../../images/code-upgrade-summary.png)
+
+You can always revisit the Liferay Code Upgrade view by selecting *Project 
+&rarr; Liferay Code Upgrade Tool...*. 
+
+Awesome! You now know how to leverage Liferay's Code Upgrade Tool to adapt 
+plugins to @product-ver@. As you continue upgrading your plugins, you can 
+re-open the Code Upgrade Tool to facilitate upgrades. 
+
+## Related Topics [](id=related-topics)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
@@ -423,4 +431,3 @@ It's onward and upward with upgrading your traditional plugins on @product-ver@!
 [Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
 
 [Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
-

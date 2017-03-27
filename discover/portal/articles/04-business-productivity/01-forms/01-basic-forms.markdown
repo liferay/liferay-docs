@@ -152,7 +152,7 @@ access from the application's Configuration menu
 export the application configuration and its data (forms and form entries). The
 file format for this type of import and export is a LAR file. For more
 information, see the article on
-[exporting and importing application content.](discover/portal/-/knowledge_base/7-0/exporting-importing-portlet-content).
+[importing and exporting application content.](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content).
 
 ![Figure 11: As with other Liferay Apps, you can import or export forms and their entries with a LAR file.](../../../images/forms-import-export-lar.png)
 

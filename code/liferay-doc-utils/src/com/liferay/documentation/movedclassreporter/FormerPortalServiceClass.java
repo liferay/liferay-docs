@@ -21,13 +21,6 @@ public class FormerPortalServiceClass {
 	public void setModule(String module) {
 		this.module = module;
 	}
-	public String getVersion() {
-		return version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
 
 	public String getName() {
 		return name;
@@ -45,5 +38,4 @@ public class FormerPortalServiceClass {
 	private String packageOld;
 	private String packageNew;
 	private String module;
-	private String version;
 }

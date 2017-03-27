@@ -8,13 +8,13 @@ property.
 By default, @product@ uses a document library store option called Simple File
 Store to store documents and media files on a file system (local or mounted).
 The store's default root folder is `[Liferay Home]/data/document_library`.
-You can specify a different root directory from within 
+You can specify a different root directory from within
 [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings). To access
 System Settings, open the *Menu*
 (![Menu](../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
 Configuration &rarr; System Settings*. From System Settings, navigate to
 *Platform* and then search for and select the entry *Simple File System Store*.
-For the store's *Root dir* value, specify a path relative to 
+For the store's *Root dir* value, specify a path relative to
 [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
 or an absolute path; then click the *Update* button. The document library store
 switches immediately to the new folder. 
@@ -96,7 +96,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 2: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
+![Figure 1: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
 systems have limitations on the number of files which can be stored in a
@@ -129,7 +129,19 @@ repository. It would be nice if that @product@ repository was connected to a
 clustered CMIS repository by the administrator without having to mount it
 through the UI. The CMIS store allows you to do just that. 
 
-If you wish to use the CMIS store, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
++$$$
+
+**Note:** CMIS Store is not suitable for production use and is deprecated as of 
+Liferay Portal CE 7.0 and Liferay DXP. Because it can have performance issues 
+with large repositories, it's recommended that you use one of the other 
+configurations listed above, such as Advanced File System Store, to store your 
+Documents and Media files. This deprecation does not affect the use of external 
+repositories. You can still [connect to external repositories](/discover/portal/-/knowledge_base/7-0/using-external-repositories) 
+using CMIS.
+
+$$$
+
+If you wish to use the CMIS store, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#cmis)
 to set it up. The @product@ repository is connected to CMIS via the CMIS store. As
 long as all nodes are pointing to your CMIS repository, everything in your
 @product@ cluster should be fine, as the CMIS protocol prevents multiple
@@ -151,7 +163,7 @@ can be accessed by all nodes, and so that it operates as a cluster within
 @product@'s cluster. 
 
 To move the default repository location to a shared folder, you do not need to
-edit Jackrabbit's configuration file. Instead, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#JCR). 
+edit Jackrabbit's configuration file. Instead, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#jcr).
 Change it to point to a shared folder that all the nodes can see. A new
 Jackrabbit configuration file is then generated in that location, and you'll
 have to edit that file to modify Jackrabbit's configuration. 
@@ -194,7 +206,7 @@ tables.
 
 Note that this configuration doesn't perform as well as the advanced file system
 store, because you're storing documents in a database instead of on the file
-system. But it does have the benefit of clustering well. 
+system. But it does have the benefit of clustering well.
 For example, you can store documents and media files in your @product@ instance's
 database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
 portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home):
@@ -213,7 +225,7 @@ documents to the cloud from all nodes, seamlessly.
 
 When you sign up for the service, Amazon assigns you unique keys that link
 you to your account. In Amazon's interface, you can create "buckets" of data
-optimized by region. Once you've created these to your specifications, use [these instructions](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration) 
+optimized by region. Once you've created these to your specifications, use [these instructions](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#s3) 
 to connect your S3 account to @product@. 
 
 If you are using Tomcat as your app server, it doesn't contain a `SAXParser`.
@@ -222,28 +234,30 @@ You must include this property in `system-ext.properties`:
     org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
 
 Other app servers also need this configuration if they don't contain a
-`SAXParser`. 
+`SAXParser`. Remember to place your `system-ext.properties` file in a folder
+that resides in your @product@ installation's class path  (e.g.,
+`/WEB-INF/classes/`).
 
 Consult the Amazon Simple Storage documentation for additional details on using
-Amazon's service. 
+Amazon's service.
 
 There are properties related to document library stores that have been moved
 from `portal-ext.properties` to OSGi configuration files. The following mapping
 shows you how to configure those properties if needed:
 
-#### CMIS [](id=cmis)
+#### CMIS Store [](id=cmis)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
 
 To `osgi/configs`: `com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`
- 
+
 Property | Default | Required
 ---------|---------|---------
 `repositoryUrl` | `http://localhost:8080/alfresco/service/api/cmis` | `true`
 `credentialsUsername` | none | `true`
 `credentialsPassword` | none | `true`
 `systemRootDir` | Liferay Home | `true`
- 
+
 #### File Store [](id=file-store)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore`
@@ -259,11 +273,11 @@ Property | Default | Required
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore`
 
 To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
- 
+
 Property | Default | Required
 ---------|---------|---------
 `rootDir` | `data/document_library` | `false`
- 
+
 #### JCR [](id=jcr)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
@@ -302,9 +316,12 @@ Property | Default | Required
 
 +$$$
 
-**Note:** Amazon S3 requires a SAXParser from the application server to operate. For some application servers (e.g. Tomcat), it will be necessary to define a SAXParser in order to prevent errors while utilizing this store. This may be set in `portal-ext.properties`. For example:
-    
-    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser 
+**Note:** Amazon S3 requires a SAXParser from the application server to operate.
+For some application servers (e.g. Tomcat), it's necessary to define a SAXParser
+in order to prevent errors while utilizing this store. This may be set in
+`system-ext.properties`. For example,
+
+    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
 
 **Warning:** If a database transaction rollback occurs in a Document Library
 that uses a file system based store, file system changes that have occurred
