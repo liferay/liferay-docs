@@ -43,6 +43,29 @@ section.
 
 Besides configuring these features for your application, Liferay also provides
 an API that allows developers to write custom code, extending Liferay's default
-functionality. In this section of tutorials, you'll learn about the various
-extension points and other options that are provided to you for export/import
-and staging.
+functionality. In this section of tutorials, you'll learn how to implement
+Staging and the Export/Import framework. The main areas of code you'll focus on
+are outlined below:
+
+1. StagedModel interface - StagedModel is the cornerstone of staging. Every
+content that needs to be handled in staging should implement this interface as
+this provides the behavior contract for the entities staging will be using
+during the process
+2. StagedModelDataHandler - these types of the data handlers are reposponsible
+for handling one specific entity class. Take an example from our collaboration
+applications - a BookmarksEntryStagedModelDataHandler will be responsible for
+handling everything the BookmarksEntry needs to do during staging: exporting,
+serializing, finding existing entries and more.
+3. PortletDataHandler - the portlet counterpart of the data handlers is a bit
+different than the StagedModel one. One thing is common: it it handling
+different aspects of a portlet publication and has a bit of configuration role
+too.
+4. ExportActionableDynamicQuery - this framework is a tremendous help for
+developers when coding staging support. Essentially it’s purpose to query data
+from the database and automatically process it for publication. It is
+automatically generated so this takes away lots of work from the developer.
+5. ExportImportContentProcessor and ExportImportPortletPreferencesProcessor -
+advanced frameworks and only needed in special cases mostly. The former is
+providing the ability to process your content during a publication process and
+the latter is doing something similar for the portlet preferences - your
+application’s configuration.

@@ -19,6 +19,12 @@ any application to display it and vice versa. Although Staging and the
 Export/Import framework supports all applications and their configuration by
 default, not all applications' content is supported by Staging.
 
+As we could see earlier writing staging support for your application mostly
+means that you are writing staging support to your content. Most of the code you
+need to implement for supporting staging means you are defining the logic on how
+the staging framework should process and serialize your content and then after
+deserializing how to insert it to the database.
+
 Therefore, if you want to track your application's content, you should implement
 Staging in your application. Here's a few other scenarios where you should
 implement Staging in your application:
@@ -28,12 +34,18 @@ implement Staging in your application:
   Staging must be able to recognize the content to facilitate the transfer.
 - You want a space where you can freely edit and test your content before
   publishing it to a live audience.
+- Your content is being referenced from an other content type which has staging
+  support. It's generally a good idea to write staging support for both of them.
+- You want to process your portlet's preferences during publication - you might
+  want to publish some content along with it, or do some extra steps
+- You want to process the content during publication. You want to write
+  validation for your content during import time
 
 If none of these options are beneficial for you, implementing Staging in your
 application is unnecessary.
 
 When content supports Staging and Staging is enabled, it is created in a Staging
-group and is only published to a live site when that group is published. When
+group and is only published to a live site when that site is published. When
 content is **not** supported by Staging, it is never added to a Staging group
 and is not reviewable during the Staging publication process; it's added and
 removed from the live site only.
@@ -47,12 +59,6 @@ below:
 4. The LAR is transferred to the live site (local or remote live).
 5. After deserialization, the entity's fields are processed.
 6. The entity is added to the database.
-
-The possibility of being able to turn on and off staging for specific content
-types is powerful, but you need to think about some implications. If you are not
-interested fine graining these options
-
-<!-- Need further info for paragraph above. -Cody -->
 
 Awesome! You should now have a good idea about whether you should implement
 Staging for your application.
