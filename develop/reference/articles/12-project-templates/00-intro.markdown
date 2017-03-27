@@ -15,13 +15,13 @@ Some popular project templates include
 - etc.
 
 If you're using [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli),
-execute the following command for a full list of project templates:
+execute the following command to display a full list of project templates:
 
     blade create -l
 
 If you're using [Maven](/develop/tutorials/-/knowledge_base/7-0/maven), you can
 view and use the project templates as Maven archetypes. Execute the following
-command to list them as Maven archetypes:
+command to list them:
 
     mvn archetype:generate -Dfilter=liferay
 
