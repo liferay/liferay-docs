@@ -19,11 +19,9 @@ any application to display it and vice versa. Although Staging and the
 Export/Import framework supports all applications and their configuration by
 default, not all applications' content is supported by Staging.
 
-As we could see earlier writing staging support for your application mostly
-means that you are writing staging support to your content. Most of the code you
-need to implement for supporting staging means you are defining the logic on how
-the staging framework should process and serialize your content and then after
-deserializing how to insert it to the database.
+Implementing Staging for your application means you're defining the logic for
+how the Staging framework should process, serialize, and deserialize your app's
+content, and how to insert it into a database.
 
 Therefore, if you want to track your application's content, you should implement
 Staging in your application. Here's a few other scenarios where you should
@@ -34,12 +32,12 @@ implement Staging in your application:
   Staging must be able to recognize the content to facilitate the transfer.
 - You want a space where you can freely edit and test your content before
   publishing it to a live audience.
-- Your content is being referenced from an other content type which has staging
-  support. It's generally a good idea to write staging support for both of them.
-- You want to process your portlet's preferences during publication - you might
-  want to publish some content along with it, or do some extra steps
-- You want to process the content during publication. You want to write
-  validation for your content during import time
+- Your content is being referenced from another content type that supports
+  Staging.
+- You want to process your portlet's preferences during publication (i.e., you
+  might want to publish some content with it, or complete extra steps).
+- You want to process the content during publication (e.g., writing validation
+  for your content during the import process).
 
 If none of these options are beneficial for you, implementing Staging in your
 application is unnecessary.
