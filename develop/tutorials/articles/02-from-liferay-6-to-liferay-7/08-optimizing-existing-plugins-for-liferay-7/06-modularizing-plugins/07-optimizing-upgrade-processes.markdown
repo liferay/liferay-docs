@@ -1,15 +1,17 @@
 # Optimizing Upgrade Processes [](id=optimizing-upgrade-processes)
 
-When you make changes to your app that affect its database, you can use an 
-*upgrade process* to upgrade any existing data to the new database schema. When 
-migrating your app from Liferay Portal 6 to @product-ver@, you must also migrate 
-your app's upgrade processes. How you do this depends on your app's development 
-framework. If you're migrating your Liferay Portal 6 app to a traditional WAR, 
-then you don't need to do anything special; you can copy your existing upgrade 
-process into your new app and it will run without any changes required. If 
-you're modularizing your app for @product-ver@, however, then you must migrate 
-your upgrade processes to use @product-ver@'s new upgrade process framework. 
-This tutorial shows you how to do this. 
+When you make changes to your app that affect its database, you can use an
+*upgrade process* to upgrade any existing data to the new database schema. When
+upgrading your app from Liferay Portal 6 to @product-ver@, you must also update
+your app's upgrade process. How you do this depends on your app's development
+framework. If your Liferay Portal 6 app is a traditional WAR, then you don't
+need to do anything special; you can use your existing upgrade process and it
+will run without requiring any changes. If you're modularizing your app for
+@product-ver@, however, then you must migrate your upgrade process to use
+@product-ver@'s new upgrade process framework. In the new framework, you
+orchestrate the app's upgrade steps from a single class--Liferay Portal 6 used
+multiple classes. Managing the steps from this one class is straightforward.
+This tutorial shows you how to migrate to the new framework. 
 
 Before beginning, make sure you know how to create an upgrade process that uses 
 the new framework. 
