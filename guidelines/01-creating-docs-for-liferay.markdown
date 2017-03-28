@@ -64,7 +64,7 @@ User & Admin, Developer, and Marketplace sections.
 
 **Source Folders for Liferay Developer Network Articles:**
 
- ![User & Admin](guidelines/images/discover.png)                                                                                           |
+ ![User & Admin](images/discover.png)                                                                                           |
  :------------------------------------------------------------------------------------------------------------------------------------ |
   &nbsp;[**liferay-docs/discover/**](discover)                                                                                         |
   &nbsp;&#8226;&nbsp;[`portal/`](discover/portal) &rarr; [Portal](https://dev.liferay.com/discover/portal)                             |
@@ -73,7 +73,7 @@ User & Admin, Developer, and Marketplace sections.
   &nbsp;&#8226;&nbsp;[`reference/`](discover/reference) &rarr; [Reference](https://dev.liferay.com/discover/reference)                 |
   &nbsp;&#8226;&nbsp;[`new-articles/`](discover/new-articles)  (You can submit new articles here for LDN's *User & Admin* section)         |
 
-  ![Developer](guidelines/images/develop.png) |
+  ![Developer](images/develop.png) |
  :-------------------------------------------------------------------------------------------------------------------------------------- |
   &nbsp;[**liferay-docs/develop/**](develop)                                                                                             |
   &nbsp;&#8226;&nbsp;[`learning-paths/`](develop/learning-paths) &rarr; [Learning Paths](https://dev.liferay.com/develop/learning-paths) |
@@ -81,7 +81,7 @@ User & Admin, Developer, and Marketplace sections.
   &nbsp;&#8226;&nbsp;[`reference/`](develop/reference) &rarr; [Reference](https://dev.liferay.com/develop/reference)                     |
   &nbsp;&#8226;&nbsp;[`new-articles/`](develop/new-articles)  (You can submit new articles here for LDN's *Developer* section)             |
 
-  ![Marketplace](guidelines/images/distribute.png)                                                                                             |
+  ![Marketplace](images/distribute.png)                                                                                             |
  :------------------------------------------------------------------------------------------------------------------------------------------- |
   &nbsp;[**liferay-docs/distribute/**](distribute)                                                                                            |
   &nbsp;&#8226;&nbsp;[`distribute/new-articles/`](distribute/new-articles)  (You can submit new articles here for LDN's *Marketplace* section) |

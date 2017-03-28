@@ -129,7 +129,19 @@ repository. It would be nice if that @product@ repository was connected to a
 clustered CMIS repository by the administrator without having to mount it
 through the UI. The CMIS store allows you to do just that. 
 
-If you wish to use the CMIS store, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
++$$$
+
+**Note:** CMIS Store is not suitable for production use and is deprecated as of 
+Liferay Portal CE 7.0 and Liferay DXP. Because it can have performance issues 
+with large repositories, it's recommended that you use one of the other 
+configurations listed above, such as Advanced File System Store, to store your 
+Documents and Media files. This deprecation does not affect the use of external 
+repositories. You can still [connect to external repositories](/discover/portal/-/knowledge_base/7-0/using-external-repositories) 
+using CMIS.
+
+$$$
+
+If you wish to use the CMIS store, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#cmis)
 to set it up. The @product@ repository is connected to CMIS via the CMIS store. As
 long as all nodes are pointing to your CMIS repository, everything in your
 @product@ cluster should be fine, as the CMIS protocol prevents multiple
@@ -151,7 +163,7 @@ can be accessed by all nodes, and so that it operates as a cluster within
 @product@'s cluster. 
 
 To move the default repository location to a shared folder, you do not need to
-edit Jackrabbit's configuration file. Instead, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#JCR).
+edit Jackrabbit's configuration file. Instead, follow the instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#jcr).
 Change it to point to a shared folder that all the nodes can see. A new
 Jackrabbit configuration file is then generated in that location, and you'll
 have to edit that file to modify Jackrabbit's configuration. 
@@ -213,7 +225,7 @@ documents to the cloud from all nodes, seamlessly.
 
 When you sign up for the service, Amazon assigns you unique keys that link
 you to your account. In Amazon's interface, you can create "buckets" of data
-optimized by region. Once you've created these to your specifications, use [these instructions](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration) 
+optimized by region. Once you've created these to your specifications, use [these instructions](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#s3) 
 to connect your S3 account to @product@. 
 
 If you are using Tomcat as your app server, it doesn't contain a `SAXParser`.
@@ -233,7 +245,7 @@ There are properties related to document library stores that have been moved
 from `portal-ext.properties` to OSGi configuration files. The following mapping
 shows you how to configure those properties if needed:
 
-#### CMIS [](id=cmis)
+#### CMIS Store [](id=cmis)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
 
