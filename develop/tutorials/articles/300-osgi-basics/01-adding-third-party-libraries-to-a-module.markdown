@@ -13,9 +13,9 @@ beginners.
 
 There are a couple different ways to add libraries to your modules:
 
-- **Expand** the library directly within the module.
-- **Embed** the library in a module folder and reference the folder path in the
-  module's `Bundle-ClassPath` header.
+- **Expand** the libraries directly within the module.
+- **Embed** the libraries in a module folder and reference the folder paths in
+    the module's `Bundle-ClassPath` header.
 
 The recommended approach is to expand the library in your module. This positions
 the third party classes with your module's classes.
@@ -33,18 +33,46 @@ You'll learn how to add libraries using both ways next.
 
 ## Expanding Libraries in a Module [](id=expanding-libraries-in-a-module)
 
-To expand a library into your module so its contents are positioned next to your
-module's existing resources, follow these steps:
+Expanding libraries into your module positions their resources alongside your
+module's existing resources. You can expand some or all of the libraries and
+their resources into your module. 
 
-1.  Open your module's `build.gradle` file and add the library as a dependency
-    so it's available in the compile classpath:
+If you're using a Gradle environment, such as a Liferay Workspace project, that
+has the Liferay Gradle plugin (i.e., `com.liferay.plugin`), you can expand *all
+resources* from *all libraries* in a module by opening the module's
+`build.gradle` file and adding this instruction: 
+
+    liferayOSGi {
+        expandCompileInclude = true
+    }
+
+Alternatively, you can expand a *subset of libraries* or a *subset of resources
+from libraries* into your module. 
+
+1.  Open your module's Gradle build file, Maven POM, or Ivy XML file and add
+    the libraries as dependencies so they're available in the compile classpath.
+
+    **Gradle:**
 
         dependencies {
             provided group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0', transitive: false
         }
 
-2.  Open your module's `bnd.bnd` file and add the library by inserting the
-    `-includeresource` instruction:
+    **Maven:**
+
+        <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-core</artifactId>
+          <version>1.1.0</version>
+          <scope>provided</scope>
+        </dependency>
+
+    **Ant/Ivy:**
+
+        <dependency conf="provided" name="shiro-core" org="org.apache.shiro" rev="1.1.0" />
+
+2.  Open your module's `bnd.bnd` file and add the libraries or specific library
+    resources by adding them to the `-includeresource` instruction:
 
         -includeresource: @shiro-core-[0-9]*.jar
 
@@ -60,21 +88,48 @@ module's existing resources, follow these steps:
 
     $$$
 
-That's it! Your third party library is configured and its contents are available
-within your module once it's built.
+That's it! Your third party libraries are configured and their contents are
+available within your module once it's built.
 
 ## Embedding Libraries in a Module [](id=embedding-libraries-in-a-module)
 
-To embed a library in your module, follow these steps:
+You can use Gradle, Maven, or Ivy to embed libraries in your module. 
 
-1.  Open your module's `build.gradle` file and add the library as a dependency
-    so it's available in the compile classpath:
+### Embedding Libraries Using Gradle
 
-        dependencies {
-            provided group: "org.apache.shiro", name: "shiro-core", version: '1.1.0', transitive: false
-        }
+To embed a library in your module, open your module's `build.gradle` file and
+add the library as a dependency so it's available in the compile classpath:
 
-2.  Open your module's `bnd.bnd` file and add the library by inserting the
+    dependencies {
+        compileOnly group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0'
+    }
+
+The `compileOnly` configuration is transitive. It embeds the artifact, and all
+of the artifact's dependencies in the module's `META-INF/lib` folder. Also, it
+adds the artifact JARs to the `Bundle-ClassPath` header in the module's
+manifest. 
+
+### Embedding Libraries Using Maven or Ivy
+
+To embed a library in your module using Maven or Ivy, follow these steps:
+
+1.  Open your module's build file and add the library as a dependency so it's
+    available in the compile classpath:
+
+    **Maven:**
+
+        <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-core</artifactId>
+          <version>1.1.0</version>
+          <scope>provided</scope>
+        </dependency>
+
+    **Ant/Ivy:**
+
+        <dependency conf="provided" name="shiro-core" org="org.apache.shiro" rev="1.1.0" />
+
+2.  Open your module's `bnd.bnd` file and add the library to the
     `-includeresource` instruction:
 
         -includeresource: META-INF/lib/shiro-core.jar=shiro-core-[0-9]*.jar
