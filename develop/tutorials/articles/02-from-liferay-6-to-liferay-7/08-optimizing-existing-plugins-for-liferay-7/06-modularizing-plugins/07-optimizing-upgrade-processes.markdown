@@ -1,17 +1,29 @@
-# Optimizing Upgrade Processes [](id=optimizing-upgrade-processes)
+# Optimizing App Upgrade Processes [](id=optimizing-app-upgrade-processes)
 
 When you make changes to your app that affect its database, you can use an
-*upgrade process* to upgrade any existing data to the new database schema. When
-upgrading your app from Liferay Portal 6 to @product-ver@, you must also update
-your app's upgrade process. How you do this depends on your app's development
-framework. If your Liferay Portal 6 app is a traditional WAR, then you don't
-need to do anything special; you can use your existing upgrade process and it
-will run without requiring any changes. If you're modularizing your app for
-@product-ver@, however, then you must migrate your upgrade process to use
-@product-ver@'s new upgrade process framework. In the new framework, you
-orchestrate the app's upgrade steps from a single class--Liferay Portal 6 used
-multiple classes. Managing the steps from this one class is straightforward.
-This tutorial shows you how to migrate to the new framework. 
+*upgrade process* to upgrade any existing data to the new database schema.
+@product-ver@ has a new upgrade process framework for modularized apps. The new
+framework lets you orchestrate the app's upgrade steps from a single class--the
+old framework required multiple classes. Managing the steps from one class
+facilitates developing upgrade processes. The upgrade process framework you use
+depends on your app's development framework.
+
+-   If your [upgraded app](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+    is a traditional WAR, then you don't need to do anything special;
+    existing upgrade processes
+    [adapted to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+    work as is. 
+
+-   If your app is modular, however, you must migrate any upgrade processes you
+    want to continue using in @product-ver@ to the new upgrade process
+    framework.
+
+For a modular app, you can migrate any number of its old upgrade processes
+(starting with the most recent ones) to the new model. For example, if your app
+has versions 1.0, 1.1, 1.2, and 1.3, but you only expect customers on versions
+1.2 and newer to upgrade to your newly modularized app, you might migrate
+upgrade processes for versions 1.2 and 1.3 only. This tutorial shows you how to
+migrate to the new framework. 
 
 Before beginning, make sure you know how to create an upgrade process that uses 
 the new framework. 
