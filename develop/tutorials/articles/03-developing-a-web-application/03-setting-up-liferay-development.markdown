@@ -1,4 +1,4 @@
-#Development Setup Overview
+# Development Setup Overview
 One of the primary goals of Liferay's development tool is making this all easy 
 to set up for the end users. The basic steps for installing @ide@ are:
 
@@ -18,18 +18,10 @@ proxy or need any other special configuration, go to Eclipse's *Window* &rarr;
 Once that's all taken care of, we can start building a web application with 
 Liferay. 
 
-
-##Liferay Workspace 
-Liferay Workspace uses BLADE CLI and Gradle in the background to manage 
-dependencies and organize your build environment. Using Liferay Workspace @ide@ 
-provides a simplified, straightforward way to develop Liferay applications. You 
-can only create one Liferay Workspace for each Eclipse Workspace, to avoid 
-configuration issues. 
-
-##Watch the video 
+## Watch the video 
 Video guide coming soon. 
 
-##Installing @ide@ Bundle
+## Installing @ide@ Bundle
 Now that we covered the basics, let's go through the steps in detail:
 
 1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java, 
@@ -49,7 +41,14 @@ so
 
 3. To run @ide@, execute the `eclipse` executable. 
 
-##Creating a Liferay Workspace 
+## Creating a Liferay Workspace 
+
+Liferay Workspace uses BLADE CLI and Gradle in the background to manage 
+dependencies and organize your build environment. Using Liferay Workspace @ide@ 
+provides a simplified, straightforward way to develop Liferay applications. You 
+can only create one Liferay Workspace for each Eclipse Workspace, to avoid 
+configuration issues. 
+
 To create a Liferay Workspace in @ide@, select *File* &rarr; *New* &rarr; 
 *Liferay Workspace Project*. 
 

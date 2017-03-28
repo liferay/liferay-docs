@@ -1,4 +1,4 @@
-#Modules 
+# Modules 
 Modules are the core building blocks of Liferay development. Every application 
 is made from one or more modules. The goal of a module is to have each 
 functional piece of an application encapsulated in a separate module. All of 
@@ -19,7 +19,7 @@ let everyone know exactly what is inside of it. In fact, technically speaking
 your module would be perfectly valid if it contained nothing but a manifest. 
 
 
-#Components 
+# Components 
 If the module is what surrounds and binds the pieces of your application, the 
 component is the object which contains the actual functionality. Component is a 
 big broad word which can define many different things from a Java and OSGi 
@@ -34,7 +34,7 @@ object is a component, and then the services of that component are registered.
 If you want to then use that component, you simply invoke the service as 
 defined in the Service Registry. 
 
-#Services 
+# Services 
 In OSGi, a service defines the specific functionality provided by a component 
 and registered with the Service Registry. So from the top down: 
 
