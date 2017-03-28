@@ -105,17 +105,29 @@ users:
 
 The `LDAPUserImporter` is the extension point needed to customize the process of
 importing users with LDAP! If none of the references satisfy what you're looking
-for, search other components from the App Manager. If you want to learn how to
+for, search other components from the App Manager.
+
+If you plan on overriding the referenced service, you'll need to understand the
+reference's policy and policy option. If the policy is `static` and the policy
+option is `reluctant`, binding a new higher ranking service in place of a bound
+service requires reactivating the component or changing the target. For more
+information on a reference's policy and policy option, visit the
+[OSGi specification](https://osgi.org/download/r6/osgi.enterprise-6.0.0.pdf), in
+particular, sections 112.3.5 and 112.3.6.
+
+<!--
+If you want to learn how to
 override a component's service reference, visit the following
 [tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-a-components-service-reference).
+-->
+<!-- Add above tutorial link when it's available on LDN. -Cody -->
 
-**Important** It's important to realize that not all extension points in
-@product@ are available as referenced services. Referenced services are popular
-extension points when using Declarative Services (DS), but there are extension
-points not exposed this way. If your project does not use the DS component
-framework, you'd need to look for the API that describes its service consumption
-from the OSGi registry. Here's a brief list of other potential extension points
-in @product@:
+**Important** Not all Extension points in @product@ are available as referenced
+services. Referenced services are popular extension points when using
+Declarative Services (DS), but there are extension points not exposed this way.
+If your project does not use the DS component framework, you'd need to look for
+the API that describes its service consumption from the OSGi registry. Here's a
+brief list of other potential extension points in @product@:
 
 - Instances of `org.osgi.util.tracker.ServiceTracker<S, T>`
 - Uses of Liferay's `Registry.getServiceTracker`
