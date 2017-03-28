@@ -1,4 +1,4 @@
-# Managing Workflows with Kaleo Designer
+# Managing Workflows with Kaleo Designer [](id=managing-workflows-with-kaleo-designer)
 
 The Kaleo Designer gives you a convenient and intuitive interface for creating
 workflow definitions, from the simplest approval processes to the most complex
@@ -16,12 +16,12 @@ So how do you add a workflow definition?
 
 Access Kaleo Designer by going to the Control Panel, then clicking
 Configuration &rarr; Kaleo Designer. Click the Add icon
-(![Add](../../../images-dxp/icon-add.png)).
+(![Add](../../../../images-dxp/icon-add.png)).
 
 Give the workflow definition a title and you're ready to start designing your
 workflow.
 
-![Figure 1: The Kaleo Designer's graphical interface makes designing workflows intuitive.](../../../images-dxp/kaleo-designer-canvas.png)
+![Figure 1: The Kaleo Designer's graphical interface makes designing workflows intuitive.](../../../../images-dxp/kaleo-designer-canvas.png)
 
 ## Saving and Publishing Workflow Definitions [](id=saving-and-publishing-workflow-definitions)
 
@@ -33,7 +33,7 @@ Publish button is clicked. Each time you save the workflow as a draft, the
 Draft Version field is incremented, and each time you publish the workflow, a
 new Version is added.
 
-![Figure 2: View a list of the current workflows that can be edited in the Kaleo Designer.](../../../images-dxp/kaleo-designer-definitions.png)
+![Figure 2: View a list of the current workflows that can be edited in the Kaleo Designer.](../../../../images-dxp/kaleo-designer-definitions.png)
 
 ## Adding Nodes [](id=adding-nodes)
 
@@ -56,7 +56,7 @@ canvas, and release it. You'll be prompted to create a node at that spot,
 because you can't have a transition without a starting point and an
 ending point on a node.
 
-![Figure 3: You can add a node by creating a transition that ends at a blank spot on your Designer canvas.](../../../images-dxp/kaleo-designer-add-node.png)
+![Figure 3: You can add a node by creating a transition that ends at a blank spot on your Designer canvas.](../../../../images-dxp/kaleo-designer-add-node.png)
 
 That's it. Of course, if you drag, say, a *Task* node onto the canvas, you'll
 want to configure it.
@@ -72,8 +72,18 @@ what's going on in each one. To name a node, just double click it, and its
 *Settings* are displayed. Then double click the value of the *Name* property
 and you can edit the name. Click *Save* when you're done. 
 
-![Figure 4: You can edit a node's settings.](../../../images-dxp/kaleo-designer-node-settings.png)
+![Figure 4: You can edit a node's settings.](../../../../images-dxp/kaleo-designer-node-settings.png)
 
 Of course, there's more you can do besides changing node names. Actions,
 Notifications, and Assignments can be used to make your workflow definition
 really useful and interactive. Keep reading to learn about these features.
+
+## Related Topics [](id=related-topics)
+
+[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+
+[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+
+[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+
+[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)

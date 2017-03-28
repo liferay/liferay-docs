@@ -1,7 +1,4 @@
-# Creating Tasks in Kaleo Designer
-
-
-## Task Nodes [](id=task-nodes)
+# Creating Tasks in Kaleo Designer [](id=creating-tasks-in-kaleo-designer)
 
 Task nodes have several parts and are the most complex parts of a workflow
 definition. Unlike other workflow nodes, task nodes have Assignments, because a
@@ -10,9 +7,9 @@ when a workflow process enters the task node: the assignment specifies who that
 user is. 
 
 Commonly, task nodes contain Notifications, Assignments, and Actions (defined in
-scripts). See more about Notifications and Actions in the article on [workflow
-nodes](LINK). Task nodes and their assignments are more complex and deserve
-their own article (this one).
+scripts). See more about Notifications and Actions in the article on [workflow nodes](/discover/portal/-/knowledge_base/7-0/workflow-definition-nodes). Task
+nodes and their assignments are more complex and deserve their own article (this
+one).
 
 To get started, drag and drop a task node on your workflow canvas if you haven't
 already. Open its settings and give it a name as described above. Then double
@@ -33,7 +30,7 @@ node is for and how they are used. Include a script. -Rich -->
 Workflow tasks need to be completed by a @product@ user. You can choose how you
 want to configure your assignments. 
 
-![Figure 6: You can add a Notification to a Task node.](../../../images-dxp/kaleo-designer-assignment.png)
+![Figure 1: You can add an Assignment to a Task node.](../../../../images-dxp/kaleo-designer-assignment.png)
 
 You can choose to add assignments to specific Roles, multiple roles of a Role
 Type (organization, site, or regular role types), to the Asset Creator, to
@@ -47,8 +44,7 @@ UPDATE action in an assignment, then anyone who has permission to update the
 type of asset being processed in the workflow is assigned to the task. You can
 configure multiple assignments for a task.
 
-
-### Resource Action Assignments
+### Resource Action Assignments [](id=resource-action-assignments)
 
 *Resource actions* are operations performed by Liferay users on an application
 or entity in @product@. For example, a user might have permission to update
@@ -159,8 +155,6 @@ That's the XML that configures resource actions for the Message Boards Message
 entity. Since Message Boards Messages are a workflow enabled entity , you can
 configure resource action assignments for them.
 
-$$$
-
 You also have the option to use a script to manage the assignment. Here's the
 script for the Review task assignment in the Scripted Single Approver workflow
 definition:
@@ -209,3 +203,13 @@ to the assignment.
 
 It's good to assign a task to a user, and it's even more useful if the user can
 get a notification that something is required in the workflow.
+
+## Related Topics [](id=related-topics)
+
+[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+
+[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+
+[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+
+[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)

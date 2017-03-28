@@ -1,4 +1,4 @@
-# Kaleo Designer
+# Kaleo Designer [](id=kaleo-designer)
 
 With the proper permissions, users can publish assets. Even if your enterprise
 has the greatest employees in the world, many of the items they'll wish to
