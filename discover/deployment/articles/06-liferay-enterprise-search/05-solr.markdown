@@ -111,6 +111,18 @@ Since Elasticsearch is the default search engine in @product@, the Elasticsearch
 adapter is already installed and running. Stop it before configuring the Solr
 adapter.
 
++$$$
+
+**Liferay Digital Enterprise:** Using the Felix Gogo shell to stop or uninstall
+the Elasticsearch adapter bundle, as described below, is easy and effective.
+However, there's a limitation related to the patching process for Liferay
+Digital Enterprise 7.0. If you install a patch that replaces the `Liferay
+Foundation.lpkg`, the Elasticsearch adapter is reinstalled and started
+automatically. Because of this, you need to stop or uninstall the Elasticsearch
+bundle after each patch, using the method described below.
+
+$$$
+
 First, open a Gogo shell and enter
 
     lb elasticsearch
