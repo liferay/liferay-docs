@@ -8,7 +8,7 @@ have to reboot the server as often in Developer Mode.
 How does Developer Mode let you see your changes more quickly? In Developer
 Mode, there are several changes to the normal order of operations. Here is a
 list of Developer Mode's key behavior changes and the
-[portal property](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
+[portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html)
 override settings that trigger them:
 
 - CSS files are loaded individually rather than being combined and loaded as a
