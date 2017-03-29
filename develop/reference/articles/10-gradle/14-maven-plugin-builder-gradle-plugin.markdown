@@ -1,4 +1,4 @@
-# Maven Plugin Builder Gradle Plugin
+# Maven Plugin Builder Gradle Plugin [](id=maven-plugin-builder-gradle-plugin)
 
 The Maven Plugin Builder Gradle Plugin lets you generate the
 [Maven plugin descriptor](https://maven.apache.org/ref/current/maven-plugin-api/plugin.html)
@@ -7,7 +7,7 @@ your project.
 
 The plugin has been successfully tested with Gradle 2.5 up to 3.3.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -27,7 +27,7 @@ buildscript {
 apply plugin: "com.liferay.maven.plugin.builder"
 ```
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds two tasks to your project:
 
@@ -81,7 +81,7 @@ Property Name | Default Value
 If running on JDK8+, the plugin also disables the [*doclint*](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/javadoc.html#BEJEFABE)
 feature in all tasks of type [`Javadoc`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html).
 
-### BuildPluginDescriptorTask
+### BuildPluginDescriptorTask [](id=buildplugindescriptortask)
 
 Tasks of type `BuildPluginDescriptorTask` work by generating a temporary
 `pom.xml` file based on the project, and then invoking the [Maven Embedder](http://maven.apache.org/ref/3.3.9/maven-embedder/)
@@ -91,7 +91,7 @@ It is possible to declare information for the plugin descriptor generation using
 either [Java 5 Annotations](https://maven.apache.org/plugin-tools/maven-plugin-tools-annotations/)
 or [Javadoc Tags](https://maven.apache.org/plugin-tools/maven-plugin-tools-java/).
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -116,7 +116,7 @@ The properties of type `File` support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-### Task Methods
+### Task Methods [](id=task-methods)
 
 Method | Description
 ------ | -----------
@@ -126,9 +126,9 @@ Method | Description
 `BuildPluginDescriptorTask pomRepositories(Map<String, ?> pomRepositories` | Adds names and URLs of remote repositories in the `pom.xml` file.
 `BuildPluginDescriptorTask pomRepository(String id, Object url)` | Adds the name and URL of a remote repository in the `pom.xml` file.
 
-### WriteMavenSettingsTask
+### WriteMavenSettingsTask [](id=writemavensettingstask)
 
-#### Task Properties
+#### Task Properties [](id=task-properties-0)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -146,12 +146,12 @@ The properties of type `File` support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-## Additional Configuration
+## Additional Configuration [](id=additional-configuration)
 
 There are additional configurations that can help you use the Maven Plugin
 Builder.
 
-### Maven Embedder Dependency
+### Maven Embedder Dependency [](id=maven-embedder-dependency)
 
 By default, the plugin creates a configuration called `mavenEmbedder` and adds a
 dependency to the 3.3.9 version of the Maven Embedder. It is possible to
