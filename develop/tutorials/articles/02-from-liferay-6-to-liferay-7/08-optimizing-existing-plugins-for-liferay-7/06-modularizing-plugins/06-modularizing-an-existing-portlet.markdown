@@ -455,7 +455,7 @@ $$$
 Once you've successfully deployed your modules, you can list them from the Gogo
 shell as shown below.
 
-![Figure 1: Once you've connected to your Liferay instance in your Gogo shell prompt, run *lb* to list your new converted modules.](../../../images/deploy-converted-modules.png)
+![Figure 1: Once you've connected to your Liferay instance in your Gogo shell prompt, run *lb* to list your new converted modules.](../../../../images/deploy-converted-modules.png)
 
 This tutorial explained how to convert your traditional application into the
 modular format of a @product-ver@ style applicaton. Specifically, you learned
