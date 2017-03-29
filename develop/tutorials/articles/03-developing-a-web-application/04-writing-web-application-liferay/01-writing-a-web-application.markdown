@@ -1,20 +1,3 @@
-#Writing a Web Application
-Now we gone write this joint.
-
-##Prep steps
-We've already:
-Setup Liferay IDE
-Created an Eclipse Workspace
-Created a Liferay Workspace in Eclipse.
-
-##Creating a Liferay Module Project
-Create the project
-With the correct settings
-
-##Starting Development
-Module structure
-Put code in important code places.
-
 # Writing Your First Liferay Application
 
 It's easy to get started with your first Liferay application. We'll guide you
@@ -35,52 +18,43 @@ Ready to write your first Liferay application?
 
 ## Creating Your First Liferay Application
 
-Let's jump right in and create your first project. Applications in Liferay
-Portal are called *portlets* so you'll create a portlet project. You'll use the
-[Blade Tools](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
-command line tool to create your application. The new Liferay application
-wizards available in Liferay IDE and Liferay Developer Studio use Blade Tools
-under the hood. Thus, new projects can be created the same way regardless of
-your specific development environment or IDE.
+Let's jump right in and create your first project. We'll create a *Liferay 
+Module Project.* Modules are the core building blocks of Liferay development. 
+Every application is made from one or more modules. The goal of a module is to 
+have each functional piece of an application encapsulated in a separate module. 
+All of the code for each part of the application is contained within each 
+discrete module, and you could swap out implementations of any module, more or 
+less at will. Each module is bundled up and package in a JAR file. The JAR can 
+then be deployed through your application server. 
 
-Blade Tools allows you to create a Liferay workspace. A Liferay workspace is a
-generated environment that contains both your Liferay projects and a Liferay
-bundle on which to test them. The recommended way to develop applications for
-Liferay 7 is to use a Liferay workspace. To create a Liferay workspace, follow
-the instructions in the Creating a Liferay Workspace article:
-[https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
-Once your Liferay workspace is created, create a
-`beginning-liferay-development` folder in your Liferay workspace's `modules`
-folder. Navigate to the new folder and then use this command to create your
-Guestbook application:
+As one example, if you use the Model View Controller design pattern, you could 
+create one module to encapsulate the Model, one for the View, and one for the 
+Controller. A new implementation of the View (or Model or Controller) could be 
+swapped in at any point, without needing to make any changes to the Model or 
+Controller, and without needing to repackage or redeploy them. 
 
-    blade create -c GuestbookPortlet -p com.liferay.docs.guestbook com.liferay.docs.guestbook
+A module can contain any combination of JSPs, Java classes, properties, or any 
+other kind of binary or text data. The module will also need a manifest file to 
+let everyone know exactly what is inside of it. In fact, technically speaking 
+your module would be perfectly valid if it contained nothing but a manifest.
+ 
+You already created your Liferay workspace so any Liferay projects you create 
+will be created inside of that workspace. Follow the instructions below to
+create your Liferay Module Project.
 
-This command creates a project named `com.liferay.docs.guestbook`. `-c
-GuestbookPortlet` specifies the name of the class to be generated. `-p
-com.liferay.docs.guestbook` specifies the package in which the class is to be
-generated. By default, the `mvcportlet` template is used. You can explicitly
-specify this using the `-t mvcportlet` option. When you use the `mvcportlet`
-template, Blade Tools creates a portlet class (the name of which can be
-specified with the `-c` option) in a package (the name of which can be
-specified by the `-p` option) in your project's `src/main/java` folder. Blade
-Tools also creates your application's JSP files and language properties file in
-your project's `src/main/resources` folder.
+1. Go to
+2. Click
+3. Enter
+4. Enter
+5. More stuff.
 
-After you've created your project, import it into Liferay IDE.
 
-Note: Two important concepts for Liferay 7 development are modules and
-components. A *module* is the one and only type of Liferay 7 plugin. A
-*component* is an implementation of an interface. In Liferay, a component is
-typically a
-[Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
-component, which means that it's a Java class that's decorated with the
-`org.osgi.service.component.annotations.Component` annotation. Please see the [Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
-tutorial for more information on Liferay modules, components, and Liferay's
-module framework. In this learning path, you're creating a single module called
-`com.liferay.docs.guestbook`. In this module, you're creating a single
-component: the `GuestbookPortlet` class which implements the `Portlet`
-interface.
+This command creates a project named `Guestbook Module`. The `mvcportlet` 
+template applied some Liferay enhancements to a standard module project. 
+Liferay IDE created a portlet class named NAME inside the package package 
+`com.liferay.docs.guestbook` in your project's `src/main/java` folder. Your
+JSP files and language properties file were also generated in your project's 
+`src/main/resources` folder.
 
 ## What is a Portlet?
 
@@ -103,23 +77,29 @@ takes this into account at every step. For example, features like
 platform-generated URLs exist to support Liferay's ability to serve multiple
 applications on the same page.
 
+## What is a Component?
+
+Portlets created in Liferay Module Projects are generated as Components. If the 
+module is what surrounds and binds the pieces of your application, the 
+component is the object which contains the actual functionality. Component is a 
+big broad word which can define many different things from a Java and OSGi 
+perspective, but the idea that ties all of those things together is that a 
+component is some object which provides a specific functionality. Components 
+are deployed inside of Modules, and they provide a well defined way to build 
+features for your application. 
+
+In this case in particular, you created a Declarative Services (DS) component. 
+With Declarative Services, you "declare" that an object is a component, and 
+then the services of that component are registered. If you want to then use 
+that component, you simply invoke the service as defined in the Service 
+Registry. 
+
 Even though all you've done is generate it, the Guestbook project that you
 created in the previous section is ready to be built and deployed to Liferay.
-Make sure your Liferay 7 instance is running. To start it from a Liferay
-workspace, use this command:
+Make sure your Liferay 7 instance is running. START LIFERAY
 
-    blade server start
+DEPLOY THE MODULE
 
-To automatically deploy your application using Blade Tools, you first need to
-install the remote agent. To install it, use this command:
-
-    blade agent install
-
-After the blade agent has been installed, run this command from your project:
-
-    blade deploy
-
-The command above both builds and deploys your project.
 
 Next, check that your application is available in Liferay. Open a browser,
 navigate to your portal ([http://localhost:8080](http://localhost:8080) by
@@ -137,7 +117,7 @@ to change the display name of your application to `Guestbook`.
 This property string should be added to the `property` array defined in the
 `@Component` annotation of your `GuestbookPortlet` class.
 
-![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that was created by Blade Tools.](../../images/default-portlet-application.png)
+![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that you created.](../../images/default-portlet-application.png)
 
 Now you're ready to jump in and start developing your Guestbook portlet.
 
@@ -159,12 +139,12 @@ project's `src/main/resources/META-INF/resources` folder. It's called
         <b><liferay-ui:message key="com_liferay_docs_guestbook_GuestbookPortlet.caption"/></b>
     </p>
 
-As you can see, this file contains some sample content since Blade Tools
-generated a fully functional sample portlet. First of all, `view.jsp` imports
-`init.jsp`. By convention, all JSP imports and tag library declarations in a
-Liferay JSP portlet application are made in an `init.jsp` file. Every other JSP
-file in the application imports `init.jsp`. This convention ensures that JSP
-dependency management can always be handled from a single fie.
+As you can see, this file contains some sample content since the project 
+template generated a fully functional sample portlet. First of all, `view.jsp` 
+imports `init.jsp`. By convention, all JSP imports and tag library declarations 
+in a Liferay JSP portlet application are made in an `init.jsp` file. Every 
+other JSP file in the application imports `init.jsp`. This convention ensures 
+that JSP dependency management can always be handled from a single fie.
 
 Besides importing `init.jsp`, `view.jsp` simply displays a message that
 corresponds to a language key. This key and its value are declared in your
@@ -373,8 +353,8 @@ URL, and you called it `addEntry`. To create a portlet action, you create a
 method in the portlet class with the same name. `MVCPortlet` calls that method
 when a user triggers its matching URL.
 
-1. Open the `GuestbookPortlet.java`. Blade Tools generated this class when you
-   created the portlet project.
+1. Open the `GuestbookPortlet.java`. The project templates generated this class 
+	when you created the portlet project.
 
 2. Create a method with the following signature:
 
