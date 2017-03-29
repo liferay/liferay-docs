@@ -1,7 +1,7 @@
 # Service Access Policies
 
 Service access policies are a layer of web service security on top of
-@product@’s remote services. Together with the permissions layer,
+@product@'s remote services. Together with the permissions layer,
 service access policies limit remote service access by remote client
 applications. This forms an additional security layer that protects user
 data from unauthorized access and modification.
@@ -10,17 +10,17 @@ To connect to a @product@ instance, remote clients must authenticate
 with credentials in that instance. This grants the remote client the
 permissions assigned to those credentials in the @product@ installation.
 Service access policies are a layer of security on top of this: they
-further limit the remote client’s access to the remote services
+further limit the remote client's access to the remote services
 specified in the policy. Without such policies, authenticated remote
 clients are treated like users: they can call any remote API and read or
 modify data on behalf of the authenticated user. Since remote clients
 are often intended for a specific use case, granting them access to
 everything the user has permissions for poses a security risk.
 
-For example, consider a mobile app (client) that displays a user’s
-appointments from the Liferay Calendar app. This client app doesn’t need
+For example, consider a mobile app (client) that displays a user's
+appointments from the Liferay Calendar app. This client app doesn't need
 access to the API that updates the user profile, even though the user
-has such permissions on the server. The client app doesn’t even need
+has such permissions on the server. The client app doesn't even need
 access to the Calendar API methods that create, update, and delete
 appointments. It only needs access to the remote service methods for
 finding and retrieving appointments. A service access policy on the
@@ -29,14 +29,14 @@ Otherwise, once authenticated it would have access to all the remote
 services the user has permission to access when logged in: services that
 create, update, and delete calendar appointments, as well as those that
 can update user data or other system entities the user can access. Since
-the client doesn’t perform these operations, having access to them is a
+the client doesn't perform these operations, having access to them is a
 security risk if the mobile device is lost or stolen or the client app
 is compromised by an attacker.
 
 ## How Service Access Policies Work
 
 When a remote client issues a request to a web service, the request
-contains the user’s credentials or an authorization token. An
+contains the user's credentials or an authorization token. An
 authentication module in @product@ recognizes the client based on the
 credentials/token and grants the appropriate service access policy to
 the request. The service access policy authorization layer then
@@ -64,11 +64,14 @@ service access policies API. For example, your app may:
   that needs to drive access to remote services based on granted
   privileges.
 
-## Overview
+## API Overview
 
-Your app can use Liferay’s service access policies API on two levels:
+Liferay provides an Interface and a `ThreadLocal` if you want to roll your own
+policies. If you don't want to get that low level, an API is provided that
+Liferay itself has used to implement 
+[Liferay Sync](/discover/portal/-/knowledge_base/7-0/administering-liferay-sync). 
 
-1. The portal level, using the 
+1. The Interface and `ThreadLocal` are available in the 
    [package `com.liferay.portal.kernel.security.service.access.policy`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/package-summary.html).
    This package provides classes for basic access to policies. For example, you can
    use the
@@ -85,12 +88,11 @@ Your app can use Liferay’s service access policies API on two levels:
    thread. When a remote client accesses an API, something must tell the
    Liferay instance which policies are assigned to this call. This
    something is in most cases an
-   [`AuthVerifier` implementation\](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/verifier/AuthVerifier.html).
+   [`AuthVerifier` implementation](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/verifier/AuthVerifier.html).
    For example, in the case of the OAuth app, an `AuthVerifier` implementation
    assigns the policy chosen by the user in the authorization step.
 
-2. The OSGi module level, using the following service access policy
-   modules:
+2. The API ships with the product as OSGi modules:
 
 - `com.liferay.portal.security.service.access.policy.api.jar`
 - `com.liferay.portal.security.service.access.policy.service.jar`
@@ -103,13 +105,12 @@ Your app can use Liferay’s service access policies API on two levels:
    Each module publishes a list of packages and services that can be
    consumed by other OSGi modules.
 
-You can use either approach to develop a token verification module your
-app can use. This is a module that implements custom security token
-verification for use in authorizing remote clients. For example, such a
-module may contain a JSON Web Token implementation for @product@'s
-remote API. A custom token verification module must use the Service
-Access Policies API during the remote API/web service call to grant the
-associated policy during the request. The module:
+You can use both tools to develop a token verification module (a module that
+implements custom security token verification for use in authorizing remote
+clients) for your app to use. For example, this module may contain a JSON Web
+Token implementation for @product@'s remote API. A custom token verification
+module must use the Service Access Policies API during the remote API/web
+service call to grant the associated policy during the request. The module:
 
 - can use `com.liferay.portal.security.service.access.policy.api.jar`
   and `com.liferay.portal.security.service.access.policy.service.jar` to
