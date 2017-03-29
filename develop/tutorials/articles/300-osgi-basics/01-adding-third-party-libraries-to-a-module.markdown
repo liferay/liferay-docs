@@ -17,14 +17,14 @@ There are a couple different ways to add libraries to your modules:
     module's classpath. 
 -   **Expand** specific parts of the libraries directly into the module.
 
-Libraries whose resources and descriptors use unique names can be *embedded*
+Libraries whose resources and descriptors use unique names can be embedded
 safely in your module.
 
 If two libraries have resources or descriptors that use the same names, those
 resources or descriptors can overwrite each other. For example, many libraries
 include Service Loader descriptors. If Service Loader descriptors with the same
 name are added inside a module's `META-INF/services/` folder, one will overwrite
-the other. In such a case, you can *expand* parts of each library into your
+the other. In such a case, you can expand parts of each library into your
 module, making sure to not add descriptors that use the same name.
 
 You'll learn how to add libraries using both ways next.
@@ -33,15 +33,16 @@ You'll learn how to add libraries using both ways next.
 
 You can use Gradle, Maven, or Ivy to embed libraries in your module. 
 
-### Embedding Libraries Using Gradle
+### Embedding Libraries Using Gradle [](id=embedding-libraries-using-gradle)
 
-Liferay's Gradle plugin `com.liferay.plugin` automates several configuration
-steps for adding third party libraries. The plugin is applied automatically to
+Liferay's Gradle plugin `com.liferay.plugin` automates several third party
+library configuration steps. The plugin is applied to
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 Gradle module projects created in
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
 or using
-[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
+[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
+automatically. 
 
 To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
 code like the listing below to your Gradle project: 
@@ -60,11 +61,13 @@ code like the listing below to your Gradle project:
 
     apply plugin: "com.liferay.plugin"
 
-If you use Gradle without the `com.liferay.plugin` plugin, you'll have to do
-steps comparable to those demonstrated in this tutorial for Maven and Ivy. 
+If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
+configure your module similar to the way this this tutorial demonstrates for
+Maven and Ivy.  
 
-To embed a library in your module, open your module's `build.gradle` file and
-add the library as a dependency so it's available in the compile classpath:
+To embed a library in your module and make it available in the module's
+classpath automatically, open your module's `build.gradle` file and add the
+library as a dependency in the `compileInclude` configuration:
 
     dependencies {
         compileInclude group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0'
@@ -72,15 +75,15 @@ add the library as a dependency so it's available in the compile classpath:
 
 The `com.liferay.plugin` plugin's `compileInclude` configuration is transitive.
 It embeds the artifact, and all of the artifact's dependencies in a `lib` folder
-in the module's JAR. Also, it adds the artifact JARs to a `Bundle-ClassPath`
+in the module's JAR. Also, it adds the artifact JARs to the `Bundle-ClassPath`
 header in the module's manifest. 
 
-### Embedding Libraries Using Maven or Ivy
+### Embedding Libraries Using Maven or Ivy [](id=embedding-libraries-using-maven-or-ivy)
 
 To embed a library in your module using Maven or Ivy, follow these steps:
 
-1.  Open your module's build file and add the library as a dependency so it's
-    available in the compile classpath:
+1.  Open your module's build file and add the library as a dependency in the
+    `provided` scope:
 
     **Maven:**
 
@@ -105,7 +108,7 @@ To embed a library in your module using Maven or Ivy, follow these steps:
     `META-INF/lib/shiro-core.jar` is your module's embedded library. The
     expression `[0-9]*` helps the build tool match the version of the library
     JAR available in the module's classpath. The `lib:=true` directive adds the
-    embedded JAR to the module's classpath via a `Bundle-Classpath` manifest
+    embedded JAR to the module's classpath via the `Bundle-Classpath` manifest
     header. 
 
 Your library is now embedded and its resources are available to use in your
@@ -165,7 +168,7 @@ Alternatively, you can expand a subset of resources from a library into your mod
     with regular expressions to specify library resources to expand into the
     module. 
 
-        -includeresource: @shiro-core-[0-9]*.jar;lib=true
+        -includeresource: @shiro-core-[0-9]*.jar
 
     This instruction adds the `shiro-core-[version].jar` as an included resource
     in the module. The `@` symbol specifies that the JAR should be expanded when
