@@ -13,15 +13,15 @@ To use the plugin, include it in your build script:
 
 ```gradle
 buildscript {
-	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.maven.plugin.builder", version: "1.1.2"
-	}
+    dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.maven.plugin.builder", version: "1.1.2"
+    }
 
-	repositories {
-		maven {
-			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-		}
-	}
+    repositories {
+        maven {
+            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        }
+    }
 }
 
 apply plugin: "com.liferay.maven.plugin.builder"
@@ -112,7 +112,7 @@ Property Name | Type | Default Value | Description
 `useSetterComments` | `boolean` | `true` | Whether to allow [Mojo Javadoc Tags](https://maven.apache.org/plugin-tools/maven-plugin-tools-java/) in the setter methods of the Mojo.
 
 The properties of type `File` support any type that can be resolved by
-[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)).
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
@@ -142,7 +142,7 @@ Property Name | Type | Default Value | Description
 <a name="repositoryurl"></a>`repositoryUrl` | `String` | `null` | The URL of the repository [mirror](https://maven.apache.org/guides/mini/guide-mirror-settings.html#Using_A_Single_Repository). It sets the value of the [`mirrors.mirror.url`](https://maven.apache.org/settings.html#Mirrors) element in the generated `settings.xml` file.
 
 The properties of type `File` support any type that can be resolved by
-[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)).
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
@@ -160,10 +160,10 @@ a dependency to the `mavenEmbedder` configuration:
 
 ```gradle
 dependencies {
-	mavenEmbedder group: "org.apache.maven", name: "maven-embedder", version: "3.3.9"
-	mavenEmbedder group: "org.apache.maven.wagon", name: "wagon-http", version: "2.10"
-	mavenEmbedder group: "org.eclipse.aether", name: "aether-connector-basic", version: "1.0.2.v20150114"
-	mavenEmbedder group: "org.eclipse.aether", name: "aether-transport-wagon", version: "1.0.2.v20150114"
-	mavenEmbedder group: "org.slf4j", name: "slf4j-simple", version: "1.7.5"
+    mavenEmbedder group: "org.apache.maven", name: "maven-embedder", version: "3.3.9"
+    mavenEmbedder group: "org.apache.maven.wagon", name: "wagon-http", version: "2.10"
+    mavenEmbedder group: "org.eclipse.aether", name: "aether-connector-basic", version: "1.0.2.v20150114"
+    mavenEmbedder group: "org.eclipse.aether", name: "aether-transport-wagon", version: "1.0.2.v20150114"
+    mavenEmbedder group: "org.slf4j", name: "slf4j-simple", version: "1.7.5"
 }
 ```
