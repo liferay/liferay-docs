@@ -13,9 +13,9 @@ beginners.
 
 There are a couple different ways to add libraries to your modules:
 
-- **Expand** the libraries directly within the module.
-- **Embed** the libraries in a module folder and reference the folder paths in
-    the module's `Bundle-ClassPath` header.
+-   **Expand** specific parts of the libraries directly into the module.
+-   **Embed** the libraries in a module folder and reference them in the
+    module's classpath. 
 
 The recommended approach is to expand the library in your module. This positions
 the third party classes with your module's classes.
@@ -37,17 +37,16 @@ Expanding libraries into your module positions their resources alongside your
 module's existing resources. You can expand some or all of the libraries and
 their resources into your module. 
 
-If you're using a Gradle environment, such as a Liferay Workspace project, that
-has the Liferay Gradle plugin (i.e., `com.liferay.plugin`), you can expand *all
-resources* from *all libraries* in a module by opening the module's
-`build.gradle` file and adding this instruction: 
+If you're using Gradle and have applied Liferay's Gradle plugin
+`com.liferay.plugin`, adding the following instruction to your `build.gradle`
+file expands all dependencies that are a part of the `compileInclude`
+configuration (and their transitive dependencies) into your module: 
 
     liferayOSGi {
         expandCompileInclude = true
     }
 
-Alternatively, you can expand a *subset of libraries* or a *subset of resources
-from libraries* into your module. 
+Alternatively, you can expand a subset of resources from a library into your module.  
 
 1.  Open your module's Gradle build file, Maven POM, or Ivy XML file and add
     the libraries as dependencies so they're available in the compile classpath.
@@ -55,7 +54,7 @@ from libraries* into your module.
     **Gradle:**
 
         dependencies {
-            provided group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0', transitive: false
+            compileOnly group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0', transitive: false
         }
 
     **Maven:**
@@ -71,10 +70,11 @@ from libraries* into your module.
 
         <dependency conf="provided" name="shiro-core" org="org.apache.shiro" rev="1.1.0" />
 
-2.  Open your module's `bnd.bnd` file and add the libraries or specific library
-    resources by adding them to the `-includeresource` instruction:
+2.  Open your module's `bnd.bnd` file and use a `-includeresource` instruction
+    with regular expressions to specify library resources to expand into the
+    module. 
 
-        -includeresource: @shiro-core-[0-9]*.jar
+        -includeresource: @shiro-core-[0-9]*.jar;lib=true
 
     This instruction adds the `shiro-core-[version].jar` as an included resource
     in the module. The `@` symbol specifies that the JAR should be expanded when
@@ -97,17 +97,42 @@ You can use Gradle, Maven, or Ivy to embed libraries in your module.
 
 ### Embedding Libraries Using Gradle
 
+Liferay's Gradle plugin `com.liferay.plugin` automates several configuration
+steps for adding third party libraries. The plugin is applied automatically to
+Liferay Workspace Gradle module projects, created from Liferay @ide@ or Liferay
+Blade CLI. 
+
+To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
+code like the listing below to your Gradle project: 
+
+    buildscript {
+        dependencies {
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.2.29"
+        }
+
+        repositories {
+            maven {
+                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            }
+        }
+    }
+
+    apply plugin: "com.liferay.plugin"
+
+If you use Gradle without the `com.liferay.plugin` plugin, you'll have to do
+steps comparable to those demonstrated in this tutorial for Maven and Ivy. 
+
 To embed a library in your module, open your module's `build.gradle` file and
 add the library as a dependency so it's available in the compile classpath:
 
     dependencies {
-        compileOnly group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0'
+        compileInclude group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0'
     }
 
-The `compileOnly` configuration is transitive. It embeds the artifact, and all
-of the artifact's dependencies in the module's `META-INF/lib` folder. Also, it
-adds the artifact JARs to the `Bundle-ClassPath` header in the module's
-manifest. 
+The `com.liferay.plugin` plugin's `compileInclude` configuration is transitive.
+It embeds the artifact, and all of the artifact's dependencies in a `lib` folder
+in the module's JAR. Also, it adds the artifact JARs to a `Bundle-ClassPath`
+header in the module's manifest. 
 
 ### Embedding Libraries Using Maven or Ivy
 
@@ -129,31 +154,18 @@ To embed a library in your module using Maven or Ivy, follow these steps:
 
         <dependency conf="provided" name="shiro-core" org="org.apache.shiro" rev="1.1.0" />
 
-2.  Open your module's `bnd.bnd` file and add the library to the
-    `-includeresource` instruction:
+2.  Open your module's `bnd.bnd` file and add the library to an
+    `-includeresource` instruction. Here's an example instruction:
 
-        -includeresource: META-INF/lib/shiro-core.jar=shiro-core-[0-9]*.jar
+        -includeresource: META-INF/lib/shiro-core.jar=shiro-core-[0-9]*.jar;lib:=true
 
     This instruction adds the `shiro-core-[version].jar` file as an included
     resource in the module's `META-INF/lib` folder. The
     `META-INF/lib/shiro-core.jar` is your module's embedded library. The
-    expression `[0-9]*` lets the build tool use the version available in the
-    classpath.
-
-3.  In the `bnd.bnd`, add the embedded library to your module's classpath:
-
-        Bundle-ClassPath: ., META-INF/lib/shiro-core.jar
-
-    There is a period (`.`) followed by a comma (`,`) before any library paths
-    in the `Bundle-ClassPath` header. This ensures that the root path of your
-    module is considered the first element of the module's classloader.
-
-    +$$$
-
-    **Note:** The `Bundle-ClassPath` header accepts a comma delimited list of
-    libraries.
-
-    $$$
+    expression `[0-9]*` helps the build tool match the version of the library
+    JAR available in the module's classpath. The `lib:=true` directive adds the
+    embedded JAR to the module's classpath via a `Bundle-Classpath` manifest
+    header. 
 
 Your library is now embedded and its resources are available to use in your
 module.
