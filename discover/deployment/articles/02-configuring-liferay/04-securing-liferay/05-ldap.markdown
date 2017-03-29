@@ -17,7 +17,7 @@ yet written) tutorial. -->
 ## Configuring @product@'s LDAP Settings [](id=configuring-liferays-ldap-settings)
 
 To access @product@'s LDAP configuration settings, navigate to *Control Panel
-&rarr; Configuration* &rarr; Instance Settings*, then scroll down and expand the
+&rarr; Configuration* &rarr; *Instance Settings*, then scroll down and expand the
 form's *Authentication* section.  Go to the *LDAP* tab. Use this form to connect
 @product@ to an LDAP directory.
 
@@ -157,6 +157,22 @@ enough data to synchronize back to the @product@ database when a user attempts t
 log in. To test the connection to your LDAP server, click the *Test LDAP
 Connection* button.
 
+#### Checkpoint [](id=checkpoint)
+
+Before proceeding to fine tune the LDAP connections with
+@product@, ensure the following steps have been taken:
+
+1. The LDAP connection has been enabled in the _Control Panel_. Depending on
+your needs, LDAP authentication may be required so that only users who have been
+bound may log in.
+
+2. *Export/Import*: for users in a clustered environment, this should be
+disabled so that there are no massive imports on every node upon start up. 
+
+3. When adding the LDAP server, the *Server Name*, *Default Values*, *Connection* values are correct. It is always a good idea to click the *Test LDAP Connection* before saving.
+
+### Security [](id=security)
+
 If you are running your LDAP directory in SSL mode to prevent credential
 information from passing through the network unencrypted, you must perform extra
 steps to share the encryption key and certificate between the two systems.
@@ -182,6 +198,8 @@ LDAP URL in the Base DN field to the secure version by changing the protocol to
     ldaps://myLdapServerHostname:636
 
 Save the changes. Your @product@ now encrypts its authentication to LDAP.
+
+## Managing LDAP Server [](id=managing-ldap-server)
 
 **Users:** This section contains settings for finding users in your LDAP
 directory.
@@ -235,7 +253,6 @@ You can also add your own mappings.
   click the *Test LDAP Users* button and @product@ will attempt to pull LDAP users
   and match them with their mappings as a preview.
 
-![Figure 1: Testing LDAP Users](../../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to @product@
 user groups.
