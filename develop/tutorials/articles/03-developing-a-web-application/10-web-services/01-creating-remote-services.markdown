@@ -253,12 +253,12 @@ describe details about the remote service methods, including the type of data
 that these methods handle. 
 
 If you'd like to make your app's services available for remote invocation via 
-SOAP, generating WSDD and WSDL files is required. If you want to use 
+SOAP, generating WSDD and WSDL files is required. For example, 
 [the Liferay Mobile SDK](https://web.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview) 
-to create a mobile client that can access your app's web services, for example, 
-you must first generate a WSDD and WSDL for your @product@ app. The Liferay 
-Mobile SDK relies on the WSDD and WSDL to discover your @product@ app's remote 
-services. 
+relies on the WSDD and WSDL to discover your @product@ app's remote services. 
+For the Liferay Mobile SDK to create a mobile client that can access your 
+@product@ app's web services, you must therefore generate a WSDD and WSDL for 
+your app. 
 
 Next, you'll learn how to secure your web services. Unless you secure your web
 services by implementing permission checks, any user can add, update, or delete
