@@ -16,7 +16,7 @@ or
         -DclassName=[className]
 
 The template for this kind of project is `form-field`. Suppose you want to
-create an form field project called `my-form-field-project` with a package name
+create a form field project called `my-form-field-project` with a package name
 of `com.liferay.docs.form.field` and a class name prefix of `MyFormField`. You
 could run one of the following commands to accomplish this:
 
