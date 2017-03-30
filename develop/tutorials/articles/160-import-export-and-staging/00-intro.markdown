@@ -51,23 +51,21 @@ on are outlined below:
 
 1.  `StagedModel` Interface: The `StagedModel` is the cornerstone of Staging.
     All content that must be handled in Staging should implement this interface;
-    it provides the behavior contract for the entities Staging will use during
+    it provides the behavior contract for the entities Staging uses during
     the Staging process.
 
 2.  `StagedModelDataHandler`: These data handlers are responsible for handling
     one specific entity class. For example, the
-    `BookmarksEntryStagedModelDataHandler` is responsible for handling the
-    `BookmarksEntry` during Staging: exporting data, serializing content,
-    finding existing entries, etc.
+    `BookmarksEntryStagedModelDataHandler` handles the `BookmarksEntry` during
+    Staging: exporting data, serializing content, finding existing entries, etc.
 
 3.  `PortletDataHandler`: These data handlers are responsible for handling
-    different aspects of the portlet's configuration and publication during
-    Staging.
+    aspects of the portlet's configuration and publication during Staging.
 
 4.  `ExportActionableDynamicQuery`: This framework is useful when developing
     Staging support. Its purpose is to query data from the database and
-    automatically process it during publication. It's automatically generated so
-    there's no need to worry about configuring it.
+    process it during publication. It's automatically generated if your entity
+    contains the right fields so there's no need to worry about configuring it.
 
 5.  `ExportImportContentProcessor` and `ExportImportPortletPreferencesProcessor`:
     Advanced frameworks only needed in special cases. The
