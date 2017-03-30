@@ -5,9 +5,9 @@ Liferay Digital Enterprise 7.0 bundled with Tomcat is available on
 Even if you want to install @product@ manually on an existing Tomcat 8
 application server, it can be helpful to download a @product@ Tomcat bundle. The
 bundle contains many required dependencies and configuration files. Before
-proceeding, you should also download the latest @product@ WAR file from
-[https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
-as well as the dependencies ZIP file and OSGi JARs ZIP file.
+proceeding, you should also [download](https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
+the latest @product@ WAR file as well as the dependencies ZIP file and OSGi JARs
+ZIP file.
 
 Installing @product@ manually requires these basic steps:
 
@@ -70,11 +70,12 @@ third-parties, as described below.
     @product@ requires an OSGi runtime, and the `osgi` folder provides this with
     many required JAR files and configuration files.
 
-Checkout:
-1. At this point, you should have the following files in the `$TOMCAT_HOME/lib/ext` folder:
+Checkpoint:
 
-- `activation.jar`   
-- `ccpp.jar`        
+1. You should have the following files in the `$TOMCAT_HOME/lib/ext` folder:
+
+- `activation.jar` 
+- `ccpp.jar` 
 - `com.liferay.osgi.service.tracker.collections.jar` 
 - `com.liferay.registry.api.jar` 
 - `hsql.jar` 
@@ -228,25 +229,29 @@ Next, you need to configure Tomcat for running @product@.
     This command makes the shell scripts in Tomcat's `bin` folder executable.
 
 Checkpoint:
-At this point, you'll have finished configuring the application
-server's JVM settings.
 
-1. The file encoding, user time-zone, preferred protocol stack have been set in the `setenv.sh` (`setenv.bat` for Windows).
+At this point, you've finished configuring the application server's JVM 
+settings.
 
-2. The default amount of memory available has been increased.
+1.  The file encoding, user time-zone, preferred protocol stack have been set in 
+    the `setenv.sh` (`setenv.bat` for Windows).
 
-3. The web application context has been declared in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
+2.  The default amount of memory available has been increased.
 
-4. The `common.loader` property which allows Catalina to access the JARs in
-`$TOMCAT_HOME/lib/ext` has been updated in
-`$TOMCAT_HOME/conf/catalina.properties`.
+3.  The web application context has been declared in 
+    `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
 
-5. All Java permissions have been granted in the `$TOMCAT_HOME/conf/catalina.policy` file.
+4.  The `common.loader` property which allows Catalina to access the JARs in
+    `$TOMCAT_HOME/lib/ext` has been updated in
+    `$TOMCAT_HOME/conf/catalina.properties`.
 
-6. UTF-8 encoding has been set in `$TOMCAT_HOME/conf/server.xml`.
+5.  All Java permissions have been granted in the 
+    `$TOMCAT_HOME/conf/catalina.policy` file.
 
-7. If in a Unix/Linux environment, the `chmod a+x *.sh` command has been run to
-the shell scripts in Tomcat's `bin` folder executable.
+6.  UTF-8 encoding has been set in `$TOMCAT_HOME/conf/server.xml`.
+
+7.  If in a Unix/Linux environment, the `chmod a+x *.sh` command has been run to
+    the shell scripts in Tomcat's `bin` folder executable.
 
 
 ## Tomcat Database Configuration [](id=tomcat-database-configuration)
@@ -521,7 +526,11 @@ Tomcat, visit the
 section.
 
 Checkpoint
-The previous sections contained optional settings where Tomcat manages your database and mail configurations. If you are using Mojarra with Tomcat, the `jsf-impl.jar` has been configured so that Mojarra is installed in the Tomcat global classpath.
+
+The previous sections contained optional settings where Tomcat manages your 
+database and mail configurations. If you are using Mojarra with Tomcat, the 
+`jsf-impl.jar` has been configured so that Mojarra is installed in the Tomcat 
+global classpath.
 
 ## Deploying @product@ [](id=deploying-liferay)
 
