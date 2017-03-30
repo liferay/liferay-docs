@@ -1,10 +1,19 @@
 # Simulation Panel Entry Template [](id=simulation-panel-entry-template)
 
-In this tutorial, you'll learn how to create a Liferay simulation panel entry as
-a Liferay module. To create a simulation panel entry as a module, use a command
-with the following parameters: 
+In this article, you'll learn how to create a Liferay simulation panel entry as
+a Liferay module. To create a simulation panel entry via the command line using
+Blade CLI or Maven, use one of the commands with the following parameters:
 
     blade create -t simulation-panel-entry [-p packageName] [-c className] projectName
+
+or
+
+    mvn archetype:generate \
+        -DarchetypeGroupId=com.liferay \
+        -DarchetypeArtifactId=com.liferay.project.templates.simulation.panel.entry \
+        -DartifactId=[projectName] \
+        -Dpackage=[packageName] \
+        -DclassName=[className]
 
 The template for this kind of project is `simulation-panel-entry`. Suppose you
 want to create a simulation panel entry project called
@@ -15,11 +24,23 @@ this:
 
     blade create -t simulation-panel-entry -p com.liferay.docs -c Sample my-simulation-panel-entry
 
+or
+
+    mvn archetype:generate \
+        -DarchetypeGroupId=com.liferay \
+        -DarchetypeArtifactId=com.liferay.project.templates.simulation.panel.entry \
+        -DgroupId=com.liferay \
+        -DartifactId=my-simulation-panel-entry \
+        -Dpackage=com.liferay.docs \
+        -Dversion=1.0 \
+        -DclassName=Sample \
+        -Dauthor=Joe Bloggs
+
 After running the command above, your project's directory structure would look
 like this
 
 - `my-simulation-panel-entry`
-    - `gradle`
+    - `gradle` (only in Blade CLI generated projects)
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -36,9 +57,9 @@ like this
                         - `simulation_panel.jsp`
     - `bnd.bnd`
     - `build.gradle`
-    - `gradlew`
+    - `[gradlew|pom.xml]`
 
-The generated module is functional and is deployable to a Liferay instance. To
+The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
 [blade.simulation.panel.app](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.simulation.panel.app)

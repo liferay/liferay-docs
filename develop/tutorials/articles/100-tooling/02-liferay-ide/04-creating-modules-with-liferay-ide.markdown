@@ -6,13 +6,12 @@ navigating to *File* &rarr; *New* &rarr; *Liferay Module Project*.
 
 ![Figure 1: When selecting *New* &rarr; *Liferay Module Project*, a Module Project Wizard appears.](../../../images/new-module-project.png)
 
-You're given options for project name, location, build type, and template
-type. Currently, you're only able to create a Gradle-based module. The project
-templates will look familiar to you if you've already read through the
-[Blade CLI tutorials](/develop/tutorials/-/knowledge_base/7-0/blade-cli). The
-same templates that are available through Blade CLI are provided through this
-wizard. Click *Next* and you're given additional configuration options for a
-component class.
+You're given options for project name, location, build type, and template type.
+You can build your project using Gradle or Maven. If you're unsure for which
+template type to choose, see the
+[Project Templates](/develop/tutorials/-/knowledge_base/7-0/project-templates)
+reference section. Click *Next* and you're given additional configuration
+options for a component class.
 
 ![Figure 2: Specify your component class's details in the Portlet Component Class Wizard.](../../../images/component-class-wizard.png)
 
