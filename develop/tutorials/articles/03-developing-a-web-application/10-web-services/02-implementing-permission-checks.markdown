@@ -10,7 +10,7 @@ Learning Path. These classes provide helper methods for checking permissions.
 The helper methods in `GuestbookModelPermission` are for checking top level 
 model permissions. For example, if you need to check whether a user has 
 permission to add a new guestbook or guestbook entry, you can use 
-`GuestbookModelPermission`s helper methods. If, on the other hand, you need to 
+`GuestbookModelPermission`'s helper methods. If, on the other hand, you need to 
 check whether a user has permission to update or delete an existing guestbook or 
 guestbook entry, you can use `GuestbookPermission` or `EntryPermission`. 
 
@@ -207,7 +207,7 @@ you ended up calling local service methods. For example, in the `addEntry`
 method of  `GuestbookMVCPortlet`, you used the following call to add a new 
 guestbook entry: 
 
-    \_entryLocalService.addEntry(serviceContext.getUserId(), guestbookId, userName, 
+    _entryLocalService.addEntry(serviceContext.getUserId(), guestbookId, userName, 
         email, message, serviceContext);
 
 Calling local services from an app's portlet layer isn't recommended. Why? 
@@ -241,8 +241,8 @@ class:
 1. Replace the `_guestbookLocalService` and `_entryLocalService` variable 
    declarations with the following: 
 
-        private GuestbookService \_guestbookService;
-        private EntryService \_entryService;
+        private GuestbookService _guestbookService;
+        private EntryService _entryService;
 
 2. Replace the `GuestbookLocalService` and `EntryLocalService` imports with the 
    following: 
@@ -309,17 +309,17 @@ refer to the following complete `GuestbookMVCPortlet` class:
     )
     public class GuestbookMVCPortlet extends MVCPortlet {
 
-        private GuestbookService \_guestbookService;
-        private EntryService \_entryService;
+        private GuestbookService _guestbookService;
+        private EntryService _entryService;
 
         @Reference(unbind = "-")
         protected void setGuestbookService(GuestbookService guestbookService) {
-            \_guestbookService = guestbookService;
+            _guestbookService = guestbookService;
         }
 
         @Reference(unbind = "-")
         protected void setEntryService(EntryService entryService) {
-            \_entryService = entryService;
+            _entryService = entryService;
         }
 
         public void addEntry(ActionRequest request, ActionResponse response)
@@ -336,7 +336,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
 
             if (entryId > 0) {
                 try {
-                    \_entryService.updateEntry(serviceContext.getUserId(),
+                    _entryService.updateEntry(serviceContext.getUserId(),
                             guestbookId, entryId, userName, email, message,
                             serviceContext);
 
@@ -355,7 +355,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
                 }
             } else {
                 try {
-                    \_entryService.addEntry(serviceContext.getUserId(),
+                    _entryService.addEntry(serviceContext.getUserId(),
                             guestbookId, userName, email, message, serviceContext);
 
                     SessionMessages.add(request, "entryAdded");
@@ -384,7 +384,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
 
                 response.setRenderParameter("guestbookId", Long.toString(guestbookId));
 
-                \_entryService.deleteEntry(entryId, serviceContext);
+                _entryService.deleteEntry(entryId, serviceContext);
             } catch (Exception e) {
 
                 SessionErrors.add(request, e.getClass().getName());
@@ -400,7 +400,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
             String name = ParamUtil.getString(request, "name");
 
             try {
-                \_guestbookService.addGuestbook(serviceContext.getUserId(),
+                _guestbookService.addGuestbook(serviceContext.getUserId(),
                         name, serviceContext);
 
                 SessionMessages.add(request, "guestbookAdded");
@@ -425,11 +425,11 @@ refer to the following complete `GuestbookMVCPortlet` class:
 
                 long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
 
-                List<Guestbook> guestbooks = \_guestbookService
+                List<Guestbook> guestbooks = _guestbookService
                         .getGuestbooks(groupId);
 
                 if (guestbooks.size() == 0) {
-                    Guestbook guestbook = \_guestbookService.addGuestbook(
+                    Guestbook guestbook = _guestbookService.addGuestbook(
                             serviceContext.getUserId(), "Main", serviceContext);
 
                     guestbookId = guestbook.getGuestbookId();
@@ -492,11 +492,11 @@ class, refer to the following complete `GuestbookAdminPortlet` class:
     )
     public class GuestbookAdminMVCPortlet extends MVCPortlet {
 
-        private GuestbookService \_guestbookService;
+        private GuestbookService _guestbookService;
 
         @Reference(unbind = "-")
         protected void setGuestbookService(GuestbookService guestbookService) {
-            \_guestbookService = guestbookService;
+            _guestbookService = guestbookService;
         }
 
         public void addGuestbook(ActionRequest request, ActionResponse response)
@@ -508,7 +508,7 @@ class, refer to the following complete `GuestbookAdminPortlet` class:
             String name = ParamUtil.getString(request, "name");
 
             try {
-                \_guestbookService.addGuestbook(serviceContext.getUserId(),
+                _guestbookService.addGuestbook(serviceContext.getUserId(),
                         name, serviceContext);
 
                 SessionMessages.add(request, "guestbookAdded");
@@ -530,7 +530,7 @@ class, refer to the following complete `GuestbookAdminPortlet` class:
             long guestbookId = ParamUtil.getLong(request, "guestbookId");
 
             try {
-                \_guestbookService.updateGuestbook(serviceContext.getUserId(), 
+                _guestbookService.updateGuestbook(serviceContext.getUserId(), 
                         guestbookId, name, serviceContext);
 
                 SessionMessages.add(request, "guestbookUpdated");
@@ -551,7 +551,7 @@ class, refer to the following complete `GuestbookAdminPortlet` class:
             long guestbookId = ParamUtil.getLong(request, "guestbookId");
 
             try {
-                \_guestbookService.deleteGuestbook(guestbookId, serviceContext);
+                _guestbookService.deleteGuestbook(guestbookId, serviceContext);
 
                 SessionMessages.add(request, "guestbookDeleted");
             } catch (PortalException pe) {
