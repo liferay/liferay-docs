@@ -1,4 +1,4 @@
-# Advanced Monitoring: APM Tools - Dynatrace [](id=advanced-monitoring-apm-tools-dynatrace-idadvanced-monitoring-apm-tools-dynatrace)  
+# Advanced Monitoring: APM Tools - Dynatrace [](id=advanced-monitoring-apm-tools-dynatrace-id)
 
 Advanced performance monitoring tools like
 [Dynatrace's](https://www.dynatrace.com) are available for system administrators
@@ -38,55 +38,73 @@ usage, memory, and more.
 
 Returning to the root level allows administrators to view performance metrics
 from other parts of the environment. For example, clicking MySQL shows database
-transactions.
+transactions, which you can do without installing an agent: deploying a 
+separate database agent is optional because the Dynatrace Collector contains 
+database management functionality out of the box (see 
+[Database Monitoring](https://community.dynatrace.com/community/display/DOCDT65/Database+Monitoring).
 
-<!-- Don't you need a separate agent on your database server for this to work?
--Rich -->
 
 ![Figure 3: Database transactions can be viewed as they happen.](../../images-dxp/dynatrace04-db.png)
 
-One available default dashboard tracks the browser-based performance. Categories
-include "satisfied" and "frustrated" visits.
-
-<!-- What do "satisfied" and "frustrated" mean? What is browser-based
-performance measuring, JavaScript or something else? -Rich --> 
+One available default dashboard tracks user experience; Dynatrace can monitor
+user activity on a web browser or mobile app. There are three categories for
+each visit: Satisfied, Tolerating, and Frustrated. According to Dynatrace, a
+satisfied visit is one in which 1) no action failed; and 2) more than 50% of all
+actions were satisfied. On the other end of the spectrum, a frustrated visit is
+one in which 1) the last action failed (the web site does not work); and 2) the 
+user's lastaction was frustrated (the web site was too slow). See 
+[How Does UEM Work?](https://community.dynatrace.com/community/pages/viewpage.action?pageId=221381305#HowDoesUEMWork) 
+for more information. 
+ 
 
 ![Figure 4: Browser metrics help you find client-side performance problems.](../../images-dxp/dynatrace05-visits.png)
 
-Click the Dashboard menu &rarr; Open. Here you can import existing dashboards
-in XML format.
+If you have created a custom dashboard (usually in XML format; more
+information is below on the FastPack developed for Liferay), you can import it
+through on this menu.
 
-<!-- Perhaps link to where this XML format is documented? -Rich --> 
+1. Click the _Dashboard_ menu &rarr; _Open_. 
 
-## Liferay Digital Enterprise FastPack [](id=liferay-digital-enterprise-fastpack)
+2. Navigate to where the dashboard has been located. 
 
-<!-- You should introduce this. What is the FastPack? Do we work directly with
-Dynatrace? -Rich -->
+3. Click _Open Dashboard_.
+
+## Liferay Digital Enterprise FastPack 
+
+The Dynatrace FastPack for Liferay provides a pre-configured Dynatrace
+profile custom-tailored for Liferay Digital Enterprise 7.0 environments. It contains
+sensors, a template system profile with measures and business transactions, and
+dashboards for the @product@ platform. If you're using UEM, you also
+get conversion and visitor tagging. 
 
 The Liferay Digital Enterprise FastPack is available for download on the 
 [Dynatrace site](https://community.dynatrace.com/community/display/DL/Liferay+Digital+Enterprise+FastPack). 
-The FastPack contains special dashboards and a profile developed specially with
-Liferay. These dashboards go beyond the out of the box dashboards already
-available through Dynatrace. To use them, open each XML file in a text editor.
-Replace the values for the elements `server://` with the server name (e.g.
-liferay-abc123); do not use the default values.
+ These dashboards go beyond the out of the box dashboards already
+available through Dynatrace. 
 
-<!-- So a FastPack contains XML files? I'm sure editing them in a text editor
-doesn't install them for use. Please document or point to Dynatrace's
-documentation on how you'd install them and use them once you've customized
-them. -Rich -->
+The fastpack is distributed as a `.dtp` file. To install the fastpack, follow 
+these steps:
 
-![Figure 5: The Liferay Digital Enterprise Fastpack contains a Liferay configuration for Dynatrace.](../../images-dxp/dynatrace06.png)
+1. In the Dynatrace Client, click _Tools_ &rarr;_ Manage Plugins_.
 
-<!-- We can't use the above image for these reasons: 1) There are no
-measurements in the dashboards. The image should show data, like it's being
-used. 2) The Activate Windows ghost image is showing; this is unprofessional and
-cannot appear in any of our screenshots. -Rich -->
+2. Click _Install Plugin..._.
 
-## Dynatrace Client Configuration [](id=dynatrace-client-configuration)
+3. Navigate to where the `.dtp` file was downloaded.
 
-As a prerequisite to running both the latest Dynatrace Client, FastPack, and
-@product@, Java JDK 1.8 (or its equivalent) must be installed.
+4. Click _OK_ in the _Import Resource Pack_ confirmation window.
+
+5. Click _OK_ to close the _Configure Plugins_ window.
+
+6. _Liferay_ now appears in the Systems Profile left control panel.
+
+7. Disable any other profile so that the Liferay profile is the only active profile.
+
+## Dynatrace Client Configuration 
+
+As a prerequisite to running both the latest Dynatrace Client and @product@,
+Java JDK 1.8 (or its equivalent) must be installed. Be sure to have enough CPU
+cores allocated in the JVM as well as for running @product@. Install the Fastpack
+plugin _after_ the Client has been configured.
 
 1.  Install the Dynatrace environment. Follow the steps from the
     [Dynatrace Installation Step 1](https://community.compuwareapm.com/community/display/EVAL/Step+1+-+Download+and+install+dynaTrace). 
@@ -107,7 +125,7 @@ As a prerequisite to running both the latest Dynatrace Client, FastPack, and
     has been downloaded. 
 
 2.  Start the Dynatrace instance and deploy the Dynatrace trial license (see
-below). 
+    below). 
 
     a. Request the Dynatrace license key; the key is available either through
     your web credentials or from a link in the welcome email. Place the file in
@@ -151,7 +169,7 @@ below).
 
 Congratulations! You have the Dynatrace client installed! 
 
-### Dynatrace Agent Configuration [](id=dynatrace-agent-configuration)
+### Dynatrace Agent Configuration 
 
 Deploy the Dynatrace agent to the @product@ servers. The agent sits on top of existing
 infrastructure (in this case, Apache Tomcat). 
@@ -201,13 +219,7 @@ infrastructure (in this case, Apache Tomcat).
 5.  Then your Liferay agent starts sending data into the newly imported profile.
 
 
-## Security 
-
-Dynatrace will mask confidential data.
-
-<!-- More detail is needed for this, or we should just remove it. -Rich -->
-
-## Resources [](id=resources)
+## Resources 
 
 1. [Dynatrace Community](https://community.compuwareapm.com) 
 2. [Dynatrace Installation Step 1](https://community.compuwareapm.com/community/display/EVAL/Step+1+-+Download+and+install+dynaTrace)
