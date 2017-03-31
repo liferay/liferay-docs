@@ -138,7 +138,7 @@ files to swap in service references on the fly.
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
 
-        [reference].target=[filter]﻿�?�
+        [reference].target=[filter]
 
     Replace `[reference]` with name of the reference you're overriding.
 
