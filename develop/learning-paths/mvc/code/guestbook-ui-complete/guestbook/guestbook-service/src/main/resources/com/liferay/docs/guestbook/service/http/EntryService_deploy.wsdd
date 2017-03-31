@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_GB_EntryService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.guestbook.docs.liferay.com" xmlns:cmp-ns="http://model.guestbook.docs.liferay.com" qname="ns:ArrayOf_tns16_EntrySoap" type="java:com.liferay.docs.guestbook.model.EntrySoap[]" innerType="cmp-ns:EntrySoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.guestbook.docs.liferay.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.guestbook.docs.liferay.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_long" type="java:long[]" innerType="cmp-ns:long" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.guestbook.docs.liferay.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://icon.configuration.portlet.kernel.portal.liferay.com" qname="ns:PortletConfigurationIconMenu" type="java:com.liferay.portal.kernel.portlet.configuration.icon.PortletConfigurationIconMenu" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://model.guestbook.docs.liferay.com" qname="ns:EntrySoap" type="java:com.liferay.docs.guestbook.model.EntrySoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://permission.service.kernel.portal.liferay.com" qname="ns:ModelPermissions" type="java:com.liferay.portal.kernel.service.permission.ModelPermissions" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://service.kernel.portal.liferay.com" qname="ns:ServiceContext" type="java:com.liferay.portal.kernel.service.ServiceContext" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://theme.kernel.portal.liferay.com" qname="ns:PortletDisplay" type="java:com.liferay.portal.kernel.theme.PortletDisplay" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://theme.kernel.portal.liferay.com" qname="ns:ThemeDisplay" type="java:com.liferay.portal.kernel.theme.ThemeDisplay" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://toolbar.portlet.kernel.portal.liferay.com" qname="ns:PortletToolbar" type="java:com.liferay.portal.kernel.portlet.toolbar.PortletToolbar" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://util.kernel.portal.liferay.com" qname="ns:StringBundler" type="java:com.liferay.portal.kernel.util.StringBundler" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://xml.apache.org/xml-soap" qname="ns:mapItem" type="java:org.apache.xml.xml_soap.MapItem" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.guestbook.docs.liferay.com" xmlns:rtns="http://model.guestbook.docs.liferay.com" name="addEntry" qname="operNS:addEntry" returnQName="addEntryReturn" returnType="rtns:EntrySoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="guestbookId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="email" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="message" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://service.kernel.portal.liferay.com" qname="serviceContext" type="tns:ServiceContext"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.guestbook.docs.liferay.com" xmlns:rtns="http://model.guestbook.docs.liferay.com" name="deleteEntry" qname="operNS:deleteEntry" returnQName="deleteEntryReturn" returnType="rtns:EntrySoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="entryId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://service.kernel.portal.liferay.com" qname="serviceContext" type="tns:ServiceContext"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.guestbook.docs.liferay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getEntriesCount" qname="operNS:getEntriesCount" returnQName="getEntriesCountReturn" returnType="rtns:int" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="guestbookId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.guestbook.docs.liferay.com" xmlns:rtns="urn:http.service.guestbook.docs.liferay.com" xmlns:tns2="http://model.guestbook.docs.liferay.com" name="getEntries" qname="operNS:getEntries" returnQName="getEntriesReturn" returnType="rtns:ArrayOf_tns16_EntrySoap" returnItemType="tns2:EntrySoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="guestbookId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.guestbook.docs.liferay.com" xmlns:rtns="urn:http.service.guestbook.docs.liferay.com" xmlns:tns2="http://model.guestbook.docs.liferay.com" name="getEntries" qname="operNS:getEntries" returnQName="getEntriesReturn" returnType="rtns:ArrayOf_tns16_EntrySoap" returnItemType="tns2:EntrySoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="guestbookId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.guestbook.docs.liferay.com" xmlns:rtns="http://model.guestbook.docs.liferay.com" name="updateEntry" qname="operNS:updateEntry" returnQName="updateEntryReturn" returnType="rtns:EntrySoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="guestbookId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="entryId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="email" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="message" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://service.kernel.portal.liferay.com" qname="serviceContext" type="tns:ServiceContext"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addEntry deleteEntry getEntries getEntriesCount updateEntry" />
+		<parameter name="className" value="com.liferay.docs.guestbook.service.http.EntryServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://icon.configuration.portlet.kernel.portal.liferay.com,http://model.guestbook.docs.liferay.com,http://permission.service.kernel.portal.liferay.com,http://service.kernel.portal.liferay.com,http://theme.kernel.portal.liferay.com,http://toolbar.portlet.kernel.portal.liferay.com,http://util.kernel.portal.liferay.com,http://xml.apache.org/xml-soap,urn:http.service.guestbook.docs.liferay.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EntryServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EntryServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_GB_EntryService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.guestbook.docs.liferay.com" />
+	</service>
+</deployment>
