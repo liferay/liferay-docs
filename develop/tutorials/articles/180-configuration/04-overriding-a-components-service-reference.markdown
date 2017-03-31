@@ -1,16 +1,14 @@
-# Overriding a Component's Service Reference
+# Overriding Service References [](id=overriding-service-references)
 
-You want to change an app's behavior. One of the app component's referenced
-services provides the behavior. You could deploy a higher ranking custom service
-to replace it everywhere, but you're not convinced your custom service would be
-right for the other apps that use the current service. Your objective: Replace
-the service in the one app only, with no app downtime.
+Overriding a Declarative Services service is straightforward. You create and
+deploy a new, higher-ranked service implementation. But how do you replace a
+component's service that's bound by a static and reluctant reference?
+Reactivating the component would bind it to the new service but would render the
+component inactive temporarily. To replace the service while keeping the
+component active, you can change the component's service reference to target
+your new service.
 
-No problem. Configuration Admin lets you override services with swift surgical
-precision. All you have to do is deploy your custom service and a configuration
-file. 
-
-Here are the steps:
+Here are the steps for overriding a component's service reference:
 
 1.  Find the component and service details
 2.  Create a custom service
@@ -19,10 +17,10 @@ Here are the steps:
 Throughout the tutorial an example of replacing a component's LDAP user importer
 service with a custom one illustrates the process. 
 
-The first step is finding the component name and service reference's name and
-interface. If you already have them, you can skip the next section. 
+The first step is finding the name of the component, service reference, and
+service interface. If you already have them, you can skip the next section. 
 
-## Find the component and service reference
+## Find the component and service reference [](id=find-the-component-and-service-reference)
 
 You must have the following information to create a custom service and configure
 the component to use it.
@@ -31,108 +29,73 @@ the component to use it.
 -   *Reference name*: Name of the component's service reference.
 -   *Service interface*: Fully qualified name of the service interface.
 
-Liferay Portal's
+You can [find the component](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points#locate-the-related-module-and-component)
+using @product@'s
 [Application Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager)
-and
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
-helps you find all of these values. You can start with using the Application
-Manager (App Manager). 
+and find the service reference information using
+[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
 
-Searching for the component using keywords or scanning app, module, and
-component names and descriptions for keywords, can help you track down the
-component. What words describe the application behavior you want to change? Use
-those words to help you find the responsible component. 
+Gogo Shell's Service Component Runtime (SCR) commands help you inspect
+components. The Gogo Shell command `scr:info [componentName]` lists the
+component's attributes, including the services it uses. Execute the command
+using
+[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) or in
+[Gogo Shell via telnet](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
 
-Consider the LDAP example. The behavior to override is importing LDAP users.
-Some candidate keywords for finding the component are "import", "user", and
-"LDAP".
+Here's an example of executing `scr:info` command in a Gogo Shell telnet
+session:
 
-Search for the component and service: 
-
-1.  Open the App Manager by selecting *Control Panel &rarr; Apps &rarr; App
-    Manager*. The top level lists app suites, independent apps, and independent
-    modules.
-
-2.  Navigate the app suites, apps, and modules or use *Search* to find
-    components that might provide the service you want to change. Hint: check 
-    for your key words in element names and descriptions.
-
-    ![Figure x: For the LDAP example, note the following component's name `com.liferay.portal.security.ldap.internal.messaging.UserImportMessageListener` includes the keywords "ldap" and "UserImport". The component is worth examining for the LDAP user input service.](../../images/overriding-bound-osgi-service-module.png)
-
-3.  If a component is a possible match, copy its name for inspecting the
-    component in Felix Gogo Shell (Gogo Shell).
-
-    ![Figure x: Each module entry lists its components. This figure shows the matching component for the LDAP example.](../../images/overriding-bound-osgi-service-component.png)
-
-4.  Gogo Shell's Service Component Runtime (SCR) commands help you inspect
-    components. The Gogo Shell command `scr:info [componentName]` lists the
-    component's attributes, including the services it uses. Execute the command
-    using
-    [Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) or in
-    [Gogo Shell via telnet](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
-
-    Here's an example of
-    [using Blade CLI to execute the Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
-    command:
-
-        blade sh scr:info com.liferay.portal.security.ldap.internal.messaging.UserImportMessageListener 
+    scr:info com.liferay.portal.security.ldap.internal.messaging.UserImportMessageListener 
         
-    The resulting SCR information includes services the component references.
+The resulting SCR information includes the component's service references.
         
-    For example, here's the reference for the service that imports LDAP users:
+For example, here's the reference for the service that imports LDAP users:
 
-        ...
-        Reference: LdapUserImporter
-        Interface Name: com.liferay.portal.security.ldap.exportimport.LDAPUserImporter
-        Cardinality: 1..1
-        Policy: static
-        Policy option: reluctant
-        Reference Scope: bundle
-        ...
+    ...
+    Reference: LdapUserImporter
+    Interface Name: com.liferay.portal.security.ldap.exportimport.LDAPUserImporter
+    Cardinality: 1..1
+    Policy: static
+    Policy option: reluctant
+    Reference Scope: bundle
+    ...
 
-    If none of the references match the service you're looking for, search other
-    components. 
+Copy the following values from the command results. You'll use them in the
+custom service and service reference configuration you create later.
 
-5.  Copy the following values from the command results. You'll use them in the
-    custom service and service reference configuration you create later.
+-   *Component*
+-   *Reference*
+-   *Interface*
 
-    -   *Component*
-    -   *Reference*
-    -   *Interface*
+Here are the values for LDAP example:
 
-    Here are the values for LDAP example:
-    
-    -   *Component*:
-        `com.liferay.portal.security.ldap.internal.model.listener.UserModelListener`
-    -   *Reference*: `LdapUserImporter`
-    -   *Interface*:
-        `com.liferay.portal.security.ldap.exportimport.LDAPUserImporter`
+-   *Component*:
+    `com.liferay.portal.security.ldap.internal.model.listener.UserModelListener`
+-   *Reference*: `LdapUserImporter`
+-   *Interface*:
+    `com.liferay.portal.security.ldap.exportimport.LDAPUserImporter`
 
 +$$$
 
-**Note**: All Declarative Services components are configurable via OSGi
-Configuration Admin (even if they don't explicitly declare anything about
-configuration).
+**Note**: OSGi Configuration Admin makes all Declarative Services components configurable, even if they don't explicitly declare anything about
+configuration. Each `@Reference` annotation in the source code has a name
+property, either *explicitly* set in the annotation or *implicitly* derived
+from the name of the member on which the annotation is used.
 
-A particularly useful aspect of this is that each Ôªø‚Å†‚Å†‚Å†‚Å†`@Reference`Ôªø‚Å†‚Å†‚Å†‚Å† has a
-name property, either *explicitly* set in the reference annotation, or
-*implicitly* derived from the name of the member on which the reference
-annotation is used.
-
--   If no reference name property is used, and the `@Reference` is on a field,
-    then the reference name is the field name.
+-   If no reference name property is used and the `@Reference` is on a field,
+    then the reference name is the field name. 
 -   If the reference is on a method, then heuristics derive the reference name.
     Method name prefixes such as `set`, `add`, and `put` are ignored. If a
     reference is on a method called
-    Ôªø‚Å†‚Å†‚Å†‚Å†`setSearchEngine(SearchEngine se)Ôªø‚Å†‚Å†‚Å†‚Å†`, for example, then the
-    reference name is Ôªø`‚Å†‚Å†‚Å†‚Å†SearchEngine`Ôªø‚Å†‚Å†‚Å†‚Å†.
+    Ôªø‚?†‚?†‚?†‚?†`setSearchEngine(SearchEngine se)Ôªø‚?†‚?†‚?†‚?†`, for example, then the
+    reference name is Ôªø`‚?†‚?†‚?†‚?†SearchEngine`. 
 
 $$$
 
 Once you've found the referenced service you need, you can implement a custom
-replacement for it. 
+replacement for it. If you've already created one, you can skip this section. 
 
-## Create a custom service
+## Create a custom service [](id=create-a-custom-service)
 
 It's time to create a custom implementation of the service interface. Refer to
 the appropriate [app, app suite](@app-ref@), and
@@ -141,7 +104,7 @@ Javadoc for service interface details.
 
 [Create a module](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/starting-module-development)
 and implement your custom service in it. Use the `@Component` annotation to make
-the service a Declarative Services component.
+the service a Declarative Services component. 
 
 For example, the declaration for a `LdapUserImporter` service implementation
 might look like this:
@@ -150,19 +113,17 @@ might look like this:
     service = LdapUserImporter.class
     )
     public class MyLdapUserImporter implements LdapUserImporter {
-
         ...
     } 
 
-To register your custom service with the Liferay Portal's OSGi runtime
-framework,
+To register your custom service with the @product@'s OSGi runtime framework,
 [deploy the module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module). 
 
-## Configure the component to use the custom service
+## Configure the component to use the custom service [](id=configure-the-component-to-use-the-custom-service)
 
-You're ready to replace the component's service reference with a reference to
-the custom service you deployed. Liferay Portal's Configuraiton Admin lets you
-use configuration files to swap in service references on the fly. 
+You're ready to change the component's service reference to target the custom
+service you deployed. @product@'s Configuration Admin lets you use configuration
+files to swap in service references on the fly. 
 
 1.  Create a configuration file named after the referencing component's fully
     qualified name. 
@@ -171,22 +132,26 @@ use configuration files to swap in service references on the fly.
 
         com.liferay.portal.security.ldap.internal.messaging.UserImportMessageListener.config
         
-    Note: For deploying to Liferay DE 7.0 Fix Pack 8 or later, use file suffix
-    `.config`. For earlier Liferay DE 7.0 Fix Packs or Liferay Portal 7.0 GA3 or
-    earlier, use suffix `.cfg`. 
+    Note: For deploying to Liferay DXP DE 7.0 Fix Pack 8 or later, use file
+    suffix `.config`. For earlier Liferay DXP DE 7.0 Fix Packs or Liferay CE
+    Portal 7.0 GA3 or earlier, use suffix `.cfg`. 
 
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
 
-       [reference].target=[filter]Ôªø‚Å†
+        [reference].target=[filter]Ôªø‚?†
 
     Replace `[reference]` with name of the reference you're overriding.
 
-    Replace `[filter]` with whatever service properties best filter on your
-    custom service component. 
-    
-    You can use an `objectClass` reference to filter on your custom service
-    class. 
+    Replace `[filter]` with service properties that filter on your custom
+    service component. 
+
+    +$$$
+
+    **Tip**: You can use an `objectClass` reference to filter on your custom
+    service class. 
+
+    $$$
 
     A configuration entry for the LDAP example might look like this:
     
@@ -200,7 +165,11 @@ use configuration files to swap in service references on the fly.
 4.  Deploy the configuration by coping the configuration file into the folder
     `[Liferay_Home]/osgi/configs`. 
 
-Liferay Portal processes the configuration file and injects the service
-reference, which in turn binds to your custom service class object!
+@product@ processes the configuration file and injects the service reference,
+which in turn binds to your custom service class object to the component! 
 
-Congratulations on overriding a Declarative Service component's service!
+## Related Topics [](id=related-topics)
+
+- [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/Finding Extension Points)
+
+- [Using Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
