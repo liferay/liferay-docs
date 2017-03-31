@@ -81,7 +81,7 @@ Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `cssFiles` | `FileCollection` | \- | The SCSS files to compile. *(Read-only)*
 `dirNames` | `List<String>` | `["/"]` | The name of the directories, relative to [`docrootDir`](#docrootdir), which contain the SCSS files to compile. All sub-directories are searched for SCSS files as well. It sets the `sass.dir` argument.
-<a name="docrootdir"></a>`docrootDir` | `File` | `null` | The base directory which contains the SCSS files to compile. It sets the `sass.docroot.dir` argument.
+<a name="docrootdir"></a>`docrootDir` | `File` | `null` | The base directory that contains the SCSS files to compile. It sets the `sass.docroot.dir` argument.
 `generateSourceMap` | `boolean` | `false` | Whether to generate [source maps](https://developers.google.com/web/tools/chrome-devtools/debug/readability/source-maps) for easier debugging. It sets the `sass.generate.source.map` argument.
 `outputDirName` | `String` | `".sass-cache/"` | The name of the sub-directories where the SCSS files are compiled to. For each directory that contains SCSS files, a sub-directory with this name is created. It sets the `sass.output.dir` argument.
 `outputDirs` | `FileCollection` | \- | The directories where the SCSS files are compiled to. Usually, these directories are ignored by the Version Control System. *(Read-only)*
@@ -118,7 +118,7 @@ manually adding a dependency to the `cssBuilder` configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.0.24"
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.0.25"
 }
 ```
 

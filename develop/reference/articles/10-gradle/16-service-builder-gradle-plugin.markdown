@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "1.0.30"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "1.0.33"
     }
 
     repositories {
@@ -98,7 +98,6 @@ Property Name | Default Value
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.portal.tools.service.builder.ServiceBuilder"`
 [`systemProperties`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:systemProperties) | `["file.encoding": "UTF-8"]`
 
-
 #### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
@@ -146,6 +145,6 @@ manually adding a dependency to the `serviceBuilder` configuration:
 
 ```gradle
 dependencies {
-    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.145"
+    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.148"
 }
 ```
