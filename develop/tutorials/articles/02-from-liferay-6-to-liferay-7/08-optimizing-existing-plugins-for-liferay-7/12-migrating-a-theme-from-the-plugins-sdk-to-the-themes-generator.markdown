@@ -1,9 +1,9 @@
 # Migrating a Theme from the Plugins SDK to the Themes Generator [](id=migrating-a-6-2-theme-to-liferay-7)
 
-After you've upgraded your existing theme to @product-ver@, the Themes Generator
-offers enhanced development features and tools for optimizing your theme and
-streamlining theme management. To introduce one of its most powerful features,
-we'll pose some questions. 
+After you've upgraded your Liferay Portal 6 theme to @product-ver@, the Themes
+Generator offers enhanced development features and tools for optimizing your
+theme and streamlining theme management. To introduce one of its most powerful
+features, we'll pose some questions. 
 
 **Questions**:
 
@@ -42,12 +42,13 @@ As you can see, the Themes Generator, Node.js, and Gulp development tools offer
 a lot to a Liferay theme developer.
 
 This tutorial assumes that you have already installed the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-and have an existing Liferay Portal 6.2 theme that was developed with the Plugins SDK.
+and that your upgraded theme was developed with the Plugins SDK.
 
-## Importing Your 6.2 Theme [](id=importing-your-6-2-theme)
+## Importing Your Theme [](id=importing-your-6-2-theme)
 
-The first thing you must do is import your 6.2 theme to use the new theme
-development tools. Follow the steps below to set up your theme:
+The Themes Generator has a Yoeman command that imports (copies) a Liferay
+Plugins SDK theme into a new project that uses the new theme development tools.
+Follow the steps below to import your theme:
 
 1.  Navigate to the directory you want to import your theme into and run the
     following command:
@@ -65,9 +66,10 @@ development tools. Follow the steps below to set up your theme:
 
     $$$
 
-    The theme's modified files are copied and migrated to a newly created 
-    `src` directory. A `gulpfile.js`, `liferay-theme.json`, `package.json` file 
-    and a `node_modules` directory are also added.
+    The theme's modified files (the files it modified from the base theme) are
+    copied and reorganized in a newly created  `src` directory. A `gulpfile.js`,
+    `liferay-theme.json`, `package.json` file  and a `node_modules` directory
+    are also added.
 
     Next, the `gulp init` task runs and prompts you with a couple questions.
 

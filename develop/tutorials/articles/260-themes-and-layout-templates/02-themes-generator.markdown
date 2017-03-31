@@ -2,9 +2,9 @@
 
 The Liferay Themes Generator is an easy-to-use command-line wizard that
 streamlines the theme creation process. It is independent of the Liferay Plugins
-SDK, and works for Liferay versions 6.2 and up. This tutorial focuses on using
-the Themes Generator to create themes. In just a few steps, you'll have a
-working Liferay theme.
+SDK, and generates themes for Liferay Portal 6.2, @product-ver@, and up. This
+tutorial focuses on using the Themes Generator to create themes. In just a few
+steps, you'll have a working Liferay theme.
 
 +$$$
 
@@ -16,9 +16,9 @@ $$$
 
 This tutorial demonstrates how to:
 
-- Install the Themes Generator
+- [Install the Themes Generator](#installing-the-theme-generator)
 
-- Generate a theme
+- [Generate a theme](#running-the-themes-generator)
 
 The first step is to install the Themes Generator.
 
@@ -27,9 +27,9 @@ The first step is to install the Themes Generator.
 The Themes Generator has several dependencies. Follow these steps to install
 them:
 
-1.  Install [Node.JS](http://nodejs.org/), if it's not already installed.
+1.  Install [Node.js](http://nodejs.org/), if it's not already installed.
 
-    To test your Node.JS installation, execute the following command:
+    To test your Node.js installation, execute the following command:
 
         node -v
 
@@ -41,7 +41,7 @@ them:
     the Long Term Support (LTS) version of Node.js--at the time of this writing,
     the LTS version is v4.2.2.
 
-    Node Package Manager (NPM) is installed along with Node.js. 
+    Node Package Manager (npm) is installed along with Node.js. 
 
 2.  Setup your npm environment. 
 
@@ -76,8 +76,8 @@ them:
 
 You've completed installing the Themes Generator's dependencies.
 
-Now you're ready to install the Themes Generator. Install it by executing this
-command:
+Now you're ready to install the Themes Generator. Install it globally by
+executing this command:
 
     npm install -g generator-liferay-theme
 
@@ -86,12 +86,12 @@ Sass.
 
 ### Installing Sass on Windows [](id=installing-sass-on-windows)
 
-On Windows, you must use either Sass from node-sass or Sass from Ruby. By
-default, the generator creates theme projects to use node-sass; but you can
-reconfigure them to use Ruby based Sass and Compass. Since node-sass indirectly
-requires Visual Studio, developers who are not already using Visual Studio may
-opt to use Ruby based Sass and Compass instead of node-sass. This section
-explains both Sass installations. 
+To use Sass on Windows, you must use either Sass from node-sass or Sass from
+Ruby. By default, the generator creates theme projects to use node-sass; but you
+can reconfigure them to use Ruby based Sass and Compass. Since node-sass
+indirectly requires Visual Studio, developers who are not already using Visual
+Studio may opt to use Ruby based Sass and Compass instead of node-sass. This
+section explains both Sass installations. 
 
 #### Installing Sass from node-sass [](id=installing-sass-from-node-sass)
 
@@ -123,11 +123,11 @@ When you installed the Liferay Theme Generator, you also installed two
 sub-generators with it: a themelet creator, and a theme importer. For the
 purposes of this tutorial, the focus will be on the default Themes Generator. 
 To learn how to use the generator to create themelets and import themes, you 
-can read the [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
-tutorial. <!-- and the Importing and Upgrading Themes tutorials. -->
+can read the tutorials on [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
+and
+[importing themes](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7).
 
-From a directory in which you want to create a 7.0 theme, run the following
-command:
+From a directory in which you want to create a theme, run the following command:
 
     yo liferay-theme
 
@@ -155,8 +155,8 @@ The Themes Generator prompts you for the following things:
     provide is added to the `liferay-theme.json` in your theme's root directory.
     you can change the path in that file if you change app servers.
 
-6.  Finally, enter your Liferay instance's URL, or press *enter* to accept the default
-    `localhost:8080`.
+6.  Finally, enter your Liferay instance's URL, or press *enter* to accept the
+    default `localhost:8080`.
 
 The generator creates a new theme project in your current directory. The theme
 inherits styles from the [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled)
@@ -222,7 +222,7 @@ $$$
     
 Now that you've created a theme and deployed it, you can use the theme project's
 gulp tasks to further develop and manage your theme. Refer to the [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
-reference document to learn the Gulp tasks available to you.
+reference document to learn the gulp tasks available to you.
 
 There you have it! You're ready to design a terrific theme!
 
