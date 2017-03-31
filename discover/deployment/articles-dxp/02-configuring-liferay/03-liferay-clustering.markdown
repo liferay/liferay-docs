@@ -239,8 +239,8 @@ address with this property:
     cluster.link.autodetect.address=www.google.com:80
 
 Set it to connect to some other host that's contactable by your server. By
-default, it points to Google, but this may not work if your server is
-firewalled. If you set the address manually using the properties above, you
+default, it points to Google, but this may not work if your server is behind a
+firewall. If you set the address manually using the properties above, you
 don't need to set the autodetect address. 
 
 Once you enable distributed caching, of course, you should do some due diligence
@@ -257,6 +257,19 @@ use a plugin to do it. Either way, the settings you change are the same.
 Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
+
+Checkpoint: 1. If you are using multicast to handle your cluster, add this
+property to `portal-ext.properties`:
+
+    `cluster.link.enabled=true`
+
+2. If you are binding the IP address instead of using `localhost`, make sure the
+right IP addresses are declared using: 
+
+    `cluster.link.bind.addr["cluster-link-control"]=localhost`    
+    `cluster.link.bind.addr["cluster-link-udp"]=localhost`
+
+3. Test your load and then optimize your settings if necessary.
 
 ### Unicast over TCP [](id=unicast-over-tcp)
 
@@ -423,7 +436,7 @@ structure:
                     - override-liferay-multi-vm-clustered.xml
 
 In the sample project, this file contains a configuration for @product@'s
-`GroupImpl` object, which handles sites. You may wish to add other objects to
+`GroupImpl` object which handles sites. You may wish to add other objects to
 the cache; in fact, the default file caches many other objects. For example, if
 you have a vibrant community, a large portion of your traffic may be directed at
 the message boards portlet, as in the example above.  To cache the threads on
@@ -458,7 +471,7 @@ while the server is running flushes the cache.
 
 ## 5. Hot Deploy to All Nodes [](id=hot-deploy)
 
-Any module or WAR file that is to run on the cluster must be deployed to all
+If you want to deploy any module or WAR file onto the cluster, it must be deployed to all
 nodes of the cluster. Because @product@ now [installs applications as OSGi bundles](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator), this means you cannot rely on your application server's means of
 installing WAR files (even if you only intend to install WAR files) to deploy an
 application to the entire cluster. Instead, the application must be placed in

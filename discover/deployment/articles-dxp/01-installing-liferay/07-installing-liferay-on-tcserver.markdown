@@ -1,9 +1,8 @@
 # Installing @product@ on tc Server [](id=installing-liferay-on-tc-server)
 
-The easiest way to get @product@ running on tc Server is to [download a bundle](https://web.liferay.com/group/customer/downloads/portal/product). If
-that's not an option, you can install @product@ onto tc Server. In addition to a
-supported version of [tc Server](https://network.pivotal.io/products/pivotal-tcserver) (version 3 or
-higher), make sure you have acquired the following items (from [Liferay's customer portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise))
+@product@ is supported on tc Server. Please see the 
+[Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
+for the supported version. 
 
 -  A @product@ WAR file
 
@@ -39,13 +38,17 @@ described below.
 
 +$$$
 
-**Note:** Many required and useful JARs are pre-installed when you build @product@ from the source code or [download a @product@ bundle](https://www.liferay.com/downloads/). If you want to acquire all of the
-JARs that ship with a @product@ bundle quickly, using one of these sources might
-save you time.
+**Note:** Many required and useful JARs are pre-installed when you build
+@product@ from the source code or 
+[download a @product@ bundle](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
+If you want to acquire all of the JARs that ship with a @product@ bundle
+quickly, using one of these sources might save you time.
 
 $$$
 
 Here are the JARs included in the dependencies zip file: 
+
+- `com.liferay.registry.api-1.0.4.jar`
 
 - `hsql.jar`
 
@@ -53,7 +56,7 @@ Here are the JARs included in the dependencies zip file:
 
 - `portlet.jar`
 
-One JAR you'll definitely need that is not included in the dependencies zip is
+One JAR you definitely need that is not included in the dependencies zip is
 your database driver. Database drivers for *MySQL* and *PostgreSQL* can be found
 in a @product@ bundle or in the @product@ source code.
 
@@ -62,33 +65,31 @@ zip. If you don't have them already on hand or have access to a @product@ bundle
 you'll have to download them yourself.
 
 - `jta.jar`: Support for Java transactions. You can get this `.jar`, which manages transactions, from
-            [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
+  [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
 
 - `mail.jar`: Support for the Java Mail API. You can get this `.jar` from
-            [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
+  [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
 
-- `persistence.jar`: Support for the Java Persistence API. You can get this
-      `.jar` from
-            [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+- `persistence.jar`: Support for the Java Persistence API. You can get this `.jar` from
+  [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
 
-- `activation.jar`: This is an implementation of the Java Activation
-      Framework. You can get this `.jar` from
-        [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
+- `activation.jar`: This is an implementation of the Java Activation Framework. 
+   You can get this `.jar` from 
+   [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com /technetwork/java/jaf11-139815.html)
 
 - `ccpp.jar`: Enables Composite Capability/Preference Profiles. You can get this `.jar` from 
-        [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
+  [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
 
 - `jms.jar`: The Java Messaging Service. You can get this `.jar` from
-        [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
+  [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
 
 - `jutf7.jar`: Provides UTF-7 and Modified UTF-7 charsets for Java. You can get this `.jar` from 
-          [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
+  [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
 
 - `junit.jar`: Lets you run unit tests. You can get this `.jar` from 
-        [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
+  [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
 
-Once you have the necessary and desired dependencies, just copy them into your
-tc Server instance's `lib` folder.
+Copy the dependencies into the tc Server instance's `lib` folder.
 
 @product@ includes an OSGi runtime. Extract the OSGi ZIP file that you downloaded
 and copy the `osgi` folder to your Liferay Home folder. The `osgi` folder
@@ -99,6 +100,49 @@ contains many required JAR files and a few configuration files.
 There are a few configuration edits to make so @product@ runs well on tc Server.
 All of these configuration changes should be made in your tc Server runtime
 instance.
+
+1. Create a folder called `servers` in the tcserver home. 
+
+2. Next, create an instance where @product@ will be deployed. Run the command: 
+
+        tcruntime-instance.bat|sh create -i servers dxp-server
+ 
+Checkpoint: 
+
+1. A new folder called `servers` has been created.    
+
+2. A new folder called `dxp-server` has been created inside the `servers`
+   folder. The following folders have been created inside the `dxp-servers` folder:    
+
+- `bin`    
+- `conf`    
+- `lib`    
+- `logs`    
+- `temp`    
+- `webapps`    
+- `work`
+
+@product@ dependencies have been placed inside the `$TCSERVER_INSTANCE_HOME/servers/dxp-server/lib` folder:
+
+- `com.liferay.registry.api-1.0.4.jar`     
+- `hsql.jar`    
+- `portal-kernel.jar`    
+- `portlet.jar`     
+- `jta.jar`    
+- `junit.jar`    
+- `jutf7.jar`    
+- `jms.jar`     
+- `mail.jar`
+- `persistence.jar`     
+- `activation.jar`    
+- `ccp.jar`    
+- a database jar for other than HSQL (e.g. mariadb, mysql, db2) 
+    
+There are a few more configuration changes for @product@ to run well on tc
+Server 3. All of these configuration changes should be made in the tc Server
+runtime instance.
+
+Navigate to the `$TCSERVER_INSTANCE_HOME/servers/dxp-server/bin` folder.
 
 1. Navigate to the `bin` folder. In `setenv.sh` replace this line
 

@@ -185,3 +185,54 @@ the "diff" command. This command has four options:
 - `rm`: Removes previously stored patch level information.
 
 For detailed usage information, run `patching-tool help store`.
+
+## Separating the Patches from the @product@ Installation
+
+As of Patching Tool 2.0.6, there's a feature that helps reduce the patched
+@product@ bundle size. If the bundle has been patched, you can make it smaller
+by moving the restore files out of it.
+
+Patched bundles are large because the restore files by default are stored inside
+the web application's WEB-INF folder. These files are required for patching the
+@product@ instance again.
+
+If these files were removed, subsequent patching processes would fail. Because
+of this, Liferay added an option to separate the patching files from the
+@product@ bundle while still preserving restoring them safely when new patches
+arrive. To do this, you use this command: 
+
+    patching-tool separate [separation_name] 
+ 
+This command produces a `liferay-patching-files-[separation-name].zip`file in
+the Patching Tool's `patches` folder. It contains the necessary files and
+metadata for patching, verification, and validation. Once you create this file,
+the patch files are removed from their default location and are now only
+available in this file. You can now move the file elsewhere to make the bundle's
+size smaller. 
+
+**WARNING:** If the product is separated from its patches in this way, you
+cannot run most of the Patching Tool commands until the patches are restored.
+
+After the separation process only the following commands can be used:
+- auto-discovery
+- info
+- setup
+
+Any other command returns this:
+
+    This installation does not include data for patching. Please copy the
+    liferay-patching-files-[separation-name].zip file into the 'patches' directory
+    and run patching-tool setup. 
+ 
+This is how you restore the patch files to your system. Details below. 
+
+ ### Restoring the Separated Patch Files
+ 
+When you need to patch @product@ again, you must restore the
+separated patch artifact. To do this, copy the
+`liferay-patching-files-[separation-name].zip` back to the
+Patching Tool's `patches` folder and run `patching-tool setup` command.
+
+If the command finds the necessary patching artifact, it restores the patch
+files to the bundle. After that, the Patching Tool works like it did prior to
+separating the patches. 
