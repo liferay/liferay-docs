@@ -159,17 +159,19 @@ Connection* button.
 
 #### Checkpoint [](id=checkpoint)
 
-Before proceeding to fine tune the LDAP connections with
-@product@, ensure the following steps have been taken:
+Before proceeding to fine tune @product@'s LDAP connections, ensure the
+following steps have been taken:
 
-1. The LDAP connection has been enabled in the _Control Panel_. Depending on
-your needs, LDAP authentication may be required so that only users who have been
-bound may log in.
+1.  The LDAP connection has been enabled in the _Control Panel_. Depending on
+    your needs, LDAP authentication may be required so that only users who have been
+    bound may log in.
 
-2. *Export/Import*: for users in a clustered environment, this should be
-disabled so that there are no massive imports on every node upon start up. 
+2.  *Export/Import*: for users in a clustered environment, this should be
+    disabled so that there are no massive imports on every node upon start up. 
 
-3. When adding the LDAP server, the *Server Name*, *Default Values*, *Connection* values are correct. It is always a good idea to click the *Test LDAP Connection* before saving.
+3.  When adding the LDAP server, the *Server Name*, *Default Values*,
+    *Connection* values are correct. It is always a good idea to click the *Test
+    LDAP Connection* before saving.
 
 ### Security [](id=security)
 
@@ -253,6 +255,7 @@ You can also add your own mappings.
   click the *Test LDAP Users* button and @product@ will attempt to pull LDAP users
   and match them with their mappings as a preview.
 
+![Figure 1: Testing LDAP Users](../../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to @product@
 user groups.
