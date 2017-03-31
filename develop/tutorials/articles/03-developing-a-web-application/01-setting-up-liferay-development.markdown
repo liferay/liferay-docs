@@ -6,23 +6,11 @@ to set up for the end users. The basic steps for installing @ide@ are:
 *Unzip the downloaded package to a location on your system. 
 *@You're ready to start developing with @ide@. 
 
-Once you have @ide@ installed, there are a few other housekeeping items that 
-you need to take care of: 
-
-*Set your Eclipse workspace location. This is the location where all of your 
-cache and configuration will be stored. 
-*@ide@ will need to download libraries from the internet. If you are behind a 
-proxy or need any other special configuration, go to Eclipse's *Window* &rarr; 
-*Preferences* &rarr; *General* &rarr; *Network Connections* 
-
-Once that's all taken care of, we can start building a web application with 
-Liferay. 
-
 ## Watch the video 
 Video guide coming soon. 
 
 ## Installing @ide@ Bundle
-Now that we covered the basics, let's go through the steps in detail:
+Now that you have the basics, let's go through the steps in detail:
 
 1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java, 
 so
