@@ -217,8 +217,9 @@ initials in the default avatars. Just enter
 
     users.image.default.use.initials=false
 
-in a `portal-ext.properties` file placed in the root of your @product@
-installation. Once you restart @product@, the new default images will be used to
+in a `portal-ext.properties` file placed your 
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+folder. Once you restart @product@, the new default images will be used to
 generate user avatars.
 
 ![Figure 7: Wolfgang Amadeus Mozart's default avatar, after disabling the use of
