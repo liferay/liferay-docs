@@ -24,15 +24,15 @@ and
 ## Locate the Related Module and Component
 
 You must first think of words that describe the application behavior you want to
-change. With the right keywords, you can easily track down the desired module,
+change. With the right keywords, you can easily track down the desired module
 and its component. Consider the example for importing LDAP users. Some candidate
 keywords for finding the component are *import*, *user*, and *LDAP*.
 
 The easiest way to discover the module responsible for a particular feature in
 @product@ is to use the Application Manager. The Application Manager lists app
 suites and their included modules/components in an easy-to-use interface. It
-even lists third party apps! You'll use the keywords you came up with to target
-the applicable component next.
+even lists third party apps! You'll use your keywords to target the applicable
+component.
 
 1.  Open the App Manager by navigating to *Control Panel* &rarr; *Apps* &rarr;
     *App Manager*. The top level lists app suites, independent apps, and
@@ -47,15 +47,15 @@ the applicable component next.
 
 3.  Select the *LDAP* application from the app listing.
 
-4.  The LDAP application only has one module, but typically, application's have
+4.  The LDAP application only has one module, but typically, applications have
     more than one module to inspect. Select the *Liferay Portal Security LDAP*
     module.
 
     ![Figure x: The App Manager lists the module, package name, version, and status.](../../../images/app-manager-breakdown.png)
 
-5.  Search through the components, again applying your keywords as a guide. Copy
-    the component name you think best fits the functionality you want to
-    customize; you'll inspect it later using the Gogo shell.
+5.  Search through the components, applying your keywords as a guide. Copy the
+    component name you think best fits the functionality you want to customize;
+    you'll inspect it later using the Gogo shell.
 
     ![Figure x: The component name can be found using the App Manager.](../../../images/usermodellistener-component.png)
 
@@ -64,7 +64,7 @@ the applicable component next.
     **Note:** When using the Gogo shell later, understand that it can take
     several tries to find the component for which you're looking; naming
     conventions should allow you to find your desired extension point in a
-    manageable timeframe.
+    manageable time frame.
 
     $$$
 
@@ -82,17 +82,16 @@ This tutorial assumes you're using the Gogo shell via telnet.
 
 Execute the following command:
 
-    scr:info <COMPONENT_NAME>
+    scr:info [COMPONENT_NAME]
 
 For the LDAP example component you copied previously, the command would look
 like this:
 
     scr:info com.liferay.portal.security.ldap.internal.messaging.UserImportMessageListener
 
-The resulting SCR information includes a lot of information. For this exercise,
-you're interested in the services the component references. These are extension
-points. For example, here's the reference for the service that imports LDAP
-users:
+The output includes a lot of information. For this exercise, you're interested
+in the services the component references. These are extension points. For
+example, here's the reference for the service that imports LDAP users:
 
     ...
     Reference: LdapUserImporter
@@ -110,8 +109,8 @@ for, search other components from the App Manager.
 If you plan on overriding the referenced service, you'll need to understand the
 reference's policy and policy option. If the policy is `static` and the policy
 option is `reluctant`, binding a new higher ranking service in place of a bound
-service requires reactivating the component or changing the target. For more
-information on a reference's policy and policy option, visit the
+service requires reactivating the component or changing the target. For 
+information on the other policies and policy options, visit the
 [OSGi specification](https://osgi.org/download/r6/osgi.enterprise-6.0.0.pdf), in
 particular, sections 112.3.5 and 112.3.6.
 
@@ -123,7 +122,7 @@ override a component's service reference, visit the following
 <!-- Add above tutorial link when it's available on LDN. -Cody -->
 
 **Important** Not all Extension points in @product@ are available as referenced
-services. Referenced services are popular extension points when using
+services. Referenced services are common extension points when using
 Declarative Services (DS), but there are extension points not exposed this way.
 If your project does not use the DS component framework, you'd need to look for
 the API that describes its service consumption from the OSGi registry. Here's a
