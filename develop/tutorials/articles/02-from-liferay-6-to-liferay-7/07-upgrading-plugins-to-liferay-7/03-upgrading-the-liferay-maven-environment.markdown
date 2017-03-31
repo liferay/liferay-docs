@@ -66,7 +66,7 @@ artifact IDs and tutorials explaining how to configure them:
 **Popular Liferay Maven Plugins**
 
 Name | Artifact ID | Tutorial |
-:----| :---------- |
+:----| :---------- | :------- |
 CSS Builder | [com.liferay.css.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.css.builder) | [Compiling SASS Files in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/compiling-sass-files-in-a-maven-project) |
 Lang Builder | [com.liferay.lang.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.lang.builder) | Coming Soon |
 Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project) |
