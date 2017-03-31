@@ -10,9 +10,9 @@ your new service.
 
 Here are the steps for overriding a component's service reference:
 
-1.  Find the component and service details
-2.  Create a custom service
-3.  Configure the component to use the custom service
+1.  [Find the component and service details](#find-the-component-and-service-reference)
+2.  [Create a custom service](#create-a-custom-service)
+3.  [Configure the component to use the custom service](#configure-the-component-to-use-the-custom-service)
 
 Throughout the tutorial an example of replacing a component's LDAP user importer
 service with a custom one illustrates the process. 
@@ -86,9 +86,8 @@ from the name of the member on which the annotation is used.
     then the reference name is the field name. 
 -   If the reference is on a method, then heuristics derive the reference name.
     Method name prefixes such as `set`, `add`, and `put` are ignored. If a
-    reference is on a method called
-    ï»¿â? â? â? â? `setSearchEngine(SearchEngine se)ï»¿â? â? â? â? `, for example, then the
-    reference name is ï»¿`â? â? â? â? SearchEngine`. 
+    reference is on a method called`setSearchEngine(SearchEngine se)ï»¿`, for example, then the
+    reference name is ï»¿`SearchEngine`. 
 
 $$$
 
@@ -139,7 +138,7 @@ files to swap in service references on the fly.
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
 
-        [reference].target=[filter]ï»¿â? 
+        [reference].target=[filter]ï»¿ï¿½?ï¿½
 
     Replace `[reference]` with name of the reference you're overriding.
 
