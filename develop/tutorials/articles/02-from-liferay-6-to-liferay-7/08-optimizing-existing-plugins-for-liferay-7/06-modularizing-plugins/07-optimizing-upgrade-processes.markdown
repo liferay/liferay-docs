@@ -2,11 +2,11 @@
 
 When you make changes to your app that affect its database, you can use an
 *upgrade process* to upgrade any existing data to the new database schema.
-@product-ver@ has a new upgrade process framework for modularized apps. The new
-framework lets you orchestrate the app's upgrade steps from a single class--the
-old framework required multiple classes. Managing the steps from one class
-facilitates developing upgrade processes. The upgrade process framework you use
-depends on your app's development framework.
+@product-ver@ has a better upgrade process framework for modularized apps. While
+the old framework required several classes, the new framework lets you
+orchestrate the app's upgrade steps from a single class. Managing the steps from
+one class facilitates developing upgrade processes. The upgrade process
+framework you use depends on your app's development framework.
 
 -   If your [upgraded app](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
     is a traditional WAR, then you don't need to do anything special;
@@ -28,13 +28,13 @@ migrate to the new framework.
 Before beginning, make sure you know how to create an upgrade process that uses 
 the new framework. 
 [Click here](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app) 
-to read the tutorial on creating such upgrade processes. 
+to read the tutorial on creating these upgrade processes. 
 
 +$$$
 
 **Note:** Your Liferay Portal 6 app may also include verify processes. Although 
 you can migrate your verify processes to @product-ver@ without any changes, it's 
-best practice to instead perform any verification in your upgrade processes. 
+a best practice to instead perform any verification in your upgrade processes. 
 
 $$$
 
@@ -44,18 +44,18 @@ First, you'll review how Liferay Portal 6 upgrade processes work.
 
 Before getting started, it's important to understand how Liferay Portal 6 
 upgrade processes are structured. As an example, you'll use the Liferay Portal 
-6.2 upgrade process for the Knowledgebase Portlet. 
+6.2 upgrade process for the Knowledge Base Portlet. 
 [Click here](https://github.com/liferay/liferay-plugins/tree/6.2.x/portlets/knowledge-base-portlet/docroot/WEB-INF/src/com/liferay/knowledgebase/hook/upgrade) 
 to access it in GitHub. 
 
-![Figure 1: The Knowledgebase Portlet's Liferay Portal 6.2 upgrade process.](../../../../images/upgrade-process-6-2.png)
+![Figure 1: The Knowledge Base Portlet's Liferay Portal 6.2 upgrade process.](../../../../images/upgrade-process-6-2.png)
 
 In Liferay Portal 6 upgrade processes, the upgrade step classes for each schema 
-version are in folders named after the schema version they apply to. For 
-example, the Knowledgebase Portlet's upgrade step classes are in folders named 
+version are in folders named after their schema version. For 
+example, the Knowledge Base Portlet's upgrade step classes are in folders named 
 `v1_0_0`, `v1_1_0`, `v1_2_0`, and so on. Each upgrade step class extends 
 `UpgradeProcess` and overrides the `doUpgrade` method. The code in `doUpgrade` 
-performs the upgrade. For example, the Knowledgebase Portlet's 
+performs the upgrade. For example, the Knowledge Base Portlet's 
 [`v1_0_0/UpgradeRatingsEntry` upgrade step](https://github.com/liferay/liferay-plugins/blob/6.2.x/portlets/knowledge-base-portlet/docroot/WEB-INF/src/com/liferay/knowledgebase/hook/upgrade/v1_0_0/UpgradeRatingsEntry.java) 
 extends `UpgradeProcess` and performs the upgrade via the 
 `updateRatingsEntries()` call in its `doUpgrade` method: 
@@ -77,14 +77,14 @@ extends `UpgradeProcess` and performs the upgrade via the
 
     }
 
-The upgrade process classes are located on the same level as the folders 
-containing the upgrade steps, and are also named after the schema version they 
-apply to. For example, the Knowledgebase Portlet's upgrade process classes are 
+The upgrade process classes are on the same level as the folders containing the
+upgrade steps and are also named after their schema version. For
+example, the Knowledge Base Portlet's upgrade process classes are 
 named `UpgradeProcess_1_0_0`, `UpgradeProcess_1_1_0`, `UpgradeProcess_1_2_0`, 
 and so on. Each upgrade process class also extends `UpgradeProcess` and runs the 
 upgrade process in the `doUpgrade` method. It runs the upgrade process by 
 passing the appropriate upgrade step to the `upgrade` method. For example, the 
-`doUpgrade` method in the Knowledgebase Portlet's 
+`doUpgrade` method in the Knowledge Base Portlet's 
 [`UpgradeProcess_1_0_0` class](https://github.com/liferay/liferay-plugins/blob/6.2.x/portlets/knowledge-base-portlet/docroot/WEB-INF/src/com/liferay/knowledgebase/hook/upgrade/UpgradeProcess_1_0_0.java) 
 runs the upgrade steps `UpgradeRatingsEntry` and `UpgradeRatingsStats` via the 
 `upgrade` method: 
@@ -107,17 +107,17 @@ upgrade processes is that upgrade process classes no longer exist. Instead, you
 must combine your upgrade process classes' functionality into a single 
 registrator class. Recall from 
 [the @product-ver@ upgrade process tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator) 
-that registrators define an upgrade process for the upgrade process framework to 
-execute. Each `registry.register` call in the registrator registers the 
+that registrators define an upgrade process that the upgrade process framework 
+executes. Each `registry.register` call in the registrator registers the 
 appropriate upgrade steps for each schema version. You must therefore transfer 
 the functionality of your old upgrade process classes' `doUpgrade` methods into 
 a registrator's `registry.register` calls. 
 
 For example, 
 [click here](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/knowledge-base/knowledge-base-service/src/main/java/com/liferay/knowledge/base/internal/upgrade) 
-to see the Knowledgebase Portlet's new @product-ver@ upgrade process in GitHub. 
+to see the Knowledge Base Portlet's new @product-ver@ upgrade process in GitHub. 
 
-![Figure 2: The Knowledgebase Portlet's new @product-ver@ upgrade process.](../../../../images/upgrade-process-7-0.png)
+![Figure 2: The Knowledge Base Portlet's new @product-ver@ upgrade process.](../../../../images/upgrade-process-7-0.png)
 
 Besides some additional upgrade step classes to handle changes made to the 
 portlet for @product-ver@, the only difference in this upgrade process is that 
