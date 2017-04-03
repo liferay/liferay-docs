@@ -66,8 +66,8 @@ service access policies API. For example, your app may:
 
 ## API Overview
 
-Liferay provides an Interface and a `ThreadLocal` if you want to roll your own
-policies. If you don't want to get that low level, an API is provided that
+Liferay provides an Interface and a `ThreadLocal` if you don't want to roll your own
+policies. If you want to get low level, an API is provided that
 Liferay itself has used to implement 
 [Liferay Sync](/discover/portal/-/knowledge_base/7-0/administering-liferay-sync). 
 
