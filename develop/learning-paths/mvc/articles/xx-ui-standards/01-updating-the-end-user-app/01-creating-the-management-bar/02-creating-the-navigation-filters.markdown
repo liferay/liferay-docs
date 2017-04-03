@@ -1,6 +1,6 @@
 # Creating the Navigation Filters [](id=creating-the-navigation-filters)
 
-In this section of the Learning Path, you'll create the Management Bar
+Now it's time to create the Management Bar
 Navigation Filters. The Navigation Filters let you filter the search container
 results by scope. For the purposes of the Guestbook app, you'll just create one 
 navigation filter for the default view. 

@@ -1,6 +1,6 @@
 # Creating the Display Style Buttons [](id=creating-the-display-style-buttons)
 
-In this section you'll add the Display Style buttons to the Management Bar for
+The next task is to add the Display Style buttons to the Management Bar for
 the Guestbook app. The Display Style buttons give you and your users control
 over how your app's search container results are displayed. There are three 
 display views: List, Descriptive, and Icon. Before you create the Display Style 

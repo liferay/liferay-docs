@@ -1,6 +1,6 @@
 # Updating the Main View [](id=updating-the-main-view)
 
-In this section, you'll update the Guestbook's main view. You'll make the
+Now, you'll update the Guestbook's main view. You'll make the
 following changes to the UI of the main view:
 
 - Create an add menu in the Guestbook's portlet toolbar to add entries and

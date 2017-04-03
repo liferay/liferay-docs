@@ -1,6 +1,6 @@
 # Updating the Edit View [](id=updating-the-edit-view)
 
-In this section, you'll update the Guestbook's edit view. You'll make the
+Next, update the Guestbook's edit view. You'll make the
 following changes to the UI:
 
 - Improve the readability and visibility of the form
