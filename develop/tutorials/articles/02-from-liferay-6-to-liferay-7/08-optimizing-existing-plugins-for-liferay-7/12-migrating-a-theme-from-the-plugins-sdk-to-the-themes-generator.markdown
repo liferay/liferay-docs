@@ -46,9 +46,9 @@ and that your upgraded theme was developed with the Plugins SDK.
 
 ## Importing Your Theme [](id=importing-your-6-2-theme)
 
-The Liferay Theme Generator has a [Yeoman](http://yeoman.io/) command that imports
-(copies) a Liferay Plugins SDK theme into a new project that uses the new theme
-development tools. Follow the steps below to import your theme:
+The Liferay Theme Generator uses [Yeoman](http://yeoman.io/) to equip theme
+projects with the new development tools. Follow the steps below to set up your
+existing theme in such a project:
 
 1.  Navigate to the directory you want to import your theme into and run the
     following command:
