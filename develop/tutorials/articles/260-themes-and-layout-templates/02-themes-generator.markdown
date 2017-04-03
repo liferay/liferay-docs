@@ -1,14 +1,14 @@
-# Themes Generator [](id=themes-generator)
+# Liferay Theme Generator [](id=themes-generator)
 
-The Liferay Themes Generator is an easy-to-use command-line wizard that
+The Liferay Liferay Theme Generator is an easy-to-use command-line wizard that
 streamlines the theme creation process. It is independent of the Liferay Plugins
 SDK, and generates themes for Liferay Portal 6.2, @product-ver@, and up. This
-tutorial focuses on using the Themes Generator to create themes. In just a few
+tutorial focuses on using the Liferay Theme Generator to create themes. In just a few
 steps, you'll have a working Liferay theme.
 
 +$$$
 
-**Note:** The [Liferay Themes Generator](https://github.com/liferay/generator-liferay-theme)
+**Note:** The [Liferay Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
 is still in development and is not guaranteed to work on all platforms and
 environments. 
 
@@ -16,15 +16,15 @@ $$$
 
 This tutorial demonstrates how to:
 
-- [Install the Themes Generator](#installing-the-theme-generator)
+- [Install the Liferay Theme Generator](#installing-the-theme-generator)
 
 - [Generate a theme](#running-the-themes-generator)
 
-The first step is to install the Themes Generator.
+The first step is to install the Liferay Theme Generator.
 
 ## Installing the Theme Generator [](id=installing-the-theme-generator)
 
-The Themes Generator has several dependencies. Follow these steps to install
+The Liferay Theme Generator has several dependencies. Follow these steps to install
 them:
 
 1.  Install [Node.js](http://nodejs.org/), if it's not already installed.
@@ -74,9 +74,9 @@ them:
 
         npm install -g yo gulp
 
-You've completed installing the Themes Generator's dependencies.
+You've completed installing the Liferay Theme Generator's dependencies.
 
-Now you're ready to install the Themes Generator. Install it globally by
+Now you're ready to install the Liferay Theme Generator. Install it globally by
 executing this command:
 
     npm install -g generator-liferay-theme
@@ -114,14 +114,14 @@ The following command installs the Sass and Compass gems.
 After creating a theme project in the next section, you'll learn how to
 configure a project to use Ruby based Sass and Compass.
 
-Now that you've installed the Themes Generator and theme dependencies, you can
+Now that you've installed the Liferay Theme Generator and theme dependencies, you can
 generate a theme.
 
-## Running the Themes Generator [](id=running-the-themes-generator)
+## Running the Liferay Theme Generator [](id=running-the-themes-generator)
 
 When you installed the Liferay Theme Generator, you also installed two
 sub-generators with it: a themelet creator, and a theme importer. For the
-purposes of this tutorial, the focus will be on the default Themes Generator. 
+purposes of this tutorial, the focus will be on the default Liferay Theme Generator. 
 To learn how to use the generator to create themelets and import themes, you 
 can read the tutorials on [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 and
@@ -138,7 +138,7 @@ have read/write access to all folders on your system.
 
 $$$
 
-The Themes Generator prompts you for the following things:
+The Liferay Theme Generator prompts you for the following things:
 
 1. Enter a name for your theme.
 

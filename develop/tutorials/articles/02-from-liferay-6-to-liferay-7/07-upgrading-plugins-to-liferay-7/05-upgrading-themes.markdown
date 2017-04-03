@@ -24,23 +24,23 @@ contains its original source code.
 ![Figure 1: The Lunar Resort example theme upgraded in this tutorial uses a clean, minimal design.](../../../images/finished-theme.png)
 
 Before upgrading a theme, consider [migrating the theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
-to use the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
-@product-ver@ doesn't require this migration, but the Themes Generator's `upgrade`
-Gulp task automates many upgrade steps. Themes Generator themes can also
+to use the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
+@product-ver@ doesn't require this migration, but the Liferay Theme Generator's `upgrade`
+Gulp task automates many upgrade steps. Liferay Theme Generator themes can also
 leverage exclusive new features, such as
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
 If you migrate your theme, return here afterward to upgrade it.
 
 No matter the environment in which you're developing your theme, this tutorial
 explains everything required to upgrade it. The easiest option is to use the
-Themes Generator's `upgrade` Gulp task, so you'll see that first. Then you'll
+Liferay Theme Generator's `upgrade` Gulp task, so you'll see that first. Then you'll
 see *all* upgrade steps, in case you want to run them manually. 
 
-## Running the Upgrade Task for Themes Generator Themes [](id=running-the-upgrade-task-for-themes-generator-themes)
+## Running the Upgrade Task for Liferay Theme Generator Themes [](id=running-the-upgrade-task-for-themes-generator-themes)
 
 A Liferay Portal 6.2 theme can be upgraded to @product-ver@, regardless of its project
-environment (Themes Generator, Plugins SDK, Maven, etc.). But a theme that's
-been migrated to the Themes Generator can leverage the theme `upgrade` Gulp task.
+environment (Liferay Theme Generator, Plugins SDK, Maven, etc.). But a theme that's
+been migrated to the Liferay Theme Generator can leverage the theme `upgrade` Gulp task.
 If you're developing your theme in an environment other than the Themes
 Generator, skip to the *Updating Project Metadata* section. 
 
@@ -114,7 +114,7 @@ file and change the `liferay-versions` property value to `7.0.0+`:
 
         liferay-versions=7.0.0+
 
-If you're using the Themes Generator, open the `liferay-look-and-feel.xml` file
+If you're using the Liferay Theme Generator, open the `liferay-look-and-feel.xml` file
 and specify `liferay-look-and-feel_7_0_0.dtd` as the DTD and `7.0.0+` as the
 compatibility version: 
 
@@ -131,7 +131,7 @@ compatibility version:
 
         </look-and-feel>
 
-3.  If your theme uses the Themes Generator and has a `package.json` file,
+3.  If your theme uses the Liferay Theme Generator and has a `package.json` file,
     update the file's Liferay version references to `7.0`.
 
 Your theme's Liferay version references are updated for @product-ver@. Next, you'll
@@ -186,11 +186,11 @@ Next, the CSS rules must be updated to use Bootstrap 3 syntax.
 @product-ver@ uses Bootstrap 3's CSS rule syntax. The new syntax lets developers
 leverage Bootstrap 3 features and improvements.
 
-If your theme does not use the Themes Generator, you can refer to the
+If your theme does not use the Liferay Theme Generator, you can refer to the
 [Migrating from 2.x to 3.0 guide](http://getbootstrap.com/migration/#migrating-from-2x-to-30)
 for updating CSS rules to Bootstrap 3. 
 
-If your theme uses the Themes Generator, the `upgrade` Gulp task reports
+If your theme uses the Liferay Theme Generator, the `upgrade` Gulp task reports
 automatic CSS updates and suggested manual updates. For example, here is part of
 the task log for the Lunar Resort theme:
 
@@ -347,7 +347,7 @@ New:
 The new media query `@include media-query(null, $breakpoint_tablet -
 1)` replaces the old mixin `@include respond-to(phone, tablet)`.
 
-The Themes Generator's `upgrade` Gulp task generates a file
+The Liferay Theme Generator's `upgrade` Gulp task generates a file
 `_deprecated_mixins.scss`. The file provides deprecated compass mixins that your
 migrated theme might be using. Consider upgrading your use of these mixins. Keep
 the `_deprecated_mixins.scss` file if you're using any of its mixins, but delete
@@ -416,7 +416,7 @@ You should start by addressing the Velocity templates. Since Velocity templates
 have been deprecated, **you should convert your Velocity theme templates to
 FreeMarker**.
 
-If you're using the Themes Generator, the `gulp upgrade` command reports the
+If you're using the Liferay Theme Generator, the `gulp upgrade` command reports the
 required theme template changes in the log. 
 
 For example, here is the command's output for the Lunar Resort theme:
@@ -550,7 +550,7 @@ updated to use the new syntax.
 
 +$$$
 
-**Note**: The `gulp upgrade` command for Themes Generator themes reports suggested
+**Note**: The `gulp upgrade` command for Liferay Theme Generator themes reports suggested
 theme template changes. 
 
 $$$
@@ -589,7 +589,7 @@ The navigation template is updated.
 That covers most, if not all, of the required theme template changes.
 If you modified any other  FreeMarker theme templates, you
 can compare them with templates in the [`_unstyled` theme](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates).
-And if your theme uses the Themes Generator, refer to the suggested
+And if your theme uses the Liferay Theme Generator, refer to the suggested
 changes that the `gulp upgrade` command reports. 
 
 After updating the theme templates, you can update your theme's resources
@@ -953,7 +953,7 @@ You can apply similar Lexicon design patterns to your theme's HTML files.
 You've updated your theme to @product-ver@! You can deploy it from your theme
 project.
 
-Themes Generator-based project:
+Liferay Theme Generator-based project:
 
     gulp deploy
 
@@ -966,7 +966,7 @@ upgraded themes.
 
 ## Related Topics [](id=related-topics)
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
 [Migrating a theme to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 

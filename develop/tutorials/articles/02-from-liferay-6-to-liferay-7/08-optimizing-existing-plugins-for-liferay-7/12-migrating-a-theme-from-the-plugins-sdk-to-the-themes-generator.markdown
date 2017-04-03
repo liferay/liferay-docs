@@ -1,4 +1,4 @@
-# Migrating a Theme from the Plugins SDK to the Themes Generator [](id=migrating-a-6-2-theme-to-liferay-7)
+# Migrating a Theme from the Plugins SDK to the Liferay Theme Generator [](id=migrating-a-6-2-theme-to-liferay-7)
 
 After you've upgraded your Liferay Portal 6 theme to @product-ver@, the Themes
 Generator offers enhanced development features and tools for optimizing your
@@ -20,8 +20,8 @@ of code that let you make changes to your theme quickly. Because they are
 modular, you can use the same themelet for multiple themes!
 
 Themelets are just one of the features you gain from migrating your
-existing Ant-based theme project to a [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-project. The Themes Generator is a Node.js-based tool that gives you access to
+existing Ant-based theme project to a [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+project. The Liferay Theme Generator is a Node.js-based tool that gives you access to
 an array of  [theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks),
 that facilitate developing and managing themes. 
 
@@ -35,18 +35,18 @@ automatically redeploy your theme as you make changes to it.
 
 Do you periodically need to make changes to your theme's settings? No problem.
 You can configure your theme's settings through the command-line wizard that the
-Themes Generator provides. All you have to do is answer a few questions about
+Liferay Theme Generator provides. All you have to do is answer a few questions about
 the settings.
 
-As you can see, the Themes Generator, Node.js, and Gulp development tools offer
+As you can see, the Liferay Theme Generator, Node.js, and Gulp development tools offer
 a lot to a Liferay theme developer.
 
-This tutorial assumes that you have already installed the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+This tutorial assumes that you have already installed the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 and that your upgraded theme was developed with the Plugins SDK.
 
 ## Importing Your Theme [](id=importing-your-6-2-theme)
 
-The Themes Generator has a [Yeoman](http://yeoman.io/) command that imports
+The Liferay Theme Generator has a [Yeoman](http://yeoman.io/) command that imports
 (copies) a Liferay Plugins SDK theme into a new project that uses the new theme
 development tools. Follow the steps below to import your theme:
 
@@ -84,7 +84,7 @@ Your theme is now set up to use the Node.js build tools and theme Gulp tasks!
 
 [Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 
