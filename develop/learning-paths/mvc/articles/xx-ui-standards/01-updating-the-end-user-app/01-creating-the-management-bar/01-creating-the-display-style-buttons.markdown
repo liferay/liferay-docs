@@ -160,8 +160,8 @@ the `liferay-frontend:management-bar-display-buttons`:
 
 The Icon view is similar to the Descriptive view, except it places the search
 container results into a vertical card, which emphasizes the icon, and displays
-a summarized message along with the guest name. You may notice that the cards in 
-the Icon view are oversized. This issue is fixed in the next section. 
+a summarized message along with the guest name. You may notice that the cards 
+in the Icon view are oversized. This issue is fixed in the next section. 
 
 ![Figure 2: The icon view emphasizes the icon and gives you a quick view of the message and guest name.](../../../../images/icon-view-with-search-iterator.png)
 
