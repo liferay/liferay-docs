@@ -43,6 +43,7 @@ third-parties, as described below.
 
     - `com.liferay.osgi.service.tracker.collections.jar` - [http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
     - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
+    (Note: To avoid problems, remove number version from JAR file name).
 
 4. Create the file `module.xml` in the
    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert the
