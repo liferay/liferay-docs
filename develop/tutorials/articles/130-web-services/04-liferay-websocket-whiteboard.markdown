@@ -2,7 +2,7 @@
 
 Modern web apps exchange large amounts of data with clients. The WebSockets 
 specification lets this exchange occur over a full-duplex connection that 
-remains open, therefore enabling real-time communication. This is much more 
+remains open, therefore enabling real-time communication. This approach is more
 efficient than techniques like long polling, which open two connections to 
 emulate a full-duplex connection. 
 [Click here](https://www.websocket.org/aboutwebsocket.html) 
@@ -11,7 +11,7 @@ for more information on WebSockets.
 Since WebSockets are ubiquitous throughout the web and in all modern browsers, 
 you need a way to register new WebSocket endpoints in @product@. The *Liferay 
 WebSocket Whiteboard* lets you define new WebSocket endpoints as regular OSGi 
-services. This tutorial shows you how to do this. Onwards! 
+services. This tutorial shows you how to do this. Onward! 
 
 ## Configuring a Non-Liferay OSGi Container [](id=configuring-a-non-liferay-osgi-container)
 
@@ -25,7 +25,7 @@ you must register a `javax.servlet.ServletContext` service with the property
 
     bundleContext.registerService(ServletContext.class, servletContext, servletContextProps);
 
-You must also configure the `ServiceLoader` of the `javax.websocket-api`. You 
+You must also configure the `javax.websocket-api`'s `ServiceLoader`. You 
 can do this by creating your own module as a `javax.websocket-api` fragment. 
 Here's an example of a manifest for such a module: 
 
@@ -45,9 +45,9 @@ OSGi container.
 ## Configuring a Liferay OSGi Container [](id=configuring-a-liferay-osgi-container)
 
 Defining a new WebSocket server endpoint in @product@ is straightforward. Follow 
-these steps to do so: 
+these steps: 
 
-1. If you're running Liferay Portal 7.0.2 GA3 or earlier, or Liferay Digital 
+1. If you're running Liferay Portal 7.0.2 GA3 or Liferay Digital 
    Enterprise 7.0 Fix Pack 7 or earlier, add the following property to your 
    `portal-ext.properties` file. Otherwise, you can skip this and move on to the 
    next step. 
