@@ -565,7 +565,7 @@ Here's an example of invoking a JSON web service using JSON RPC:
         "jsonrpc":"2.0"
     }
 
-Let's talk about paramteters that are made available to secure JSON web
+Let's talk about parameters that are made available to secure JSON web
 services by default. 
 
 ### Default parameters [](id=default-parameters)
@@ -664,7 +664,7 @@ created parameter instances!
 
 $$$
 
-Next let's see what values are returned when a JSON seb service is invoked. 
+Next let's see what values are returned when a JSON web service is invoked. 
 
 ## Returned values [](id=returned-values)
 
