@@ -86,9 +86,18 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
 
     Three more tabs now appear: 
 
-    - General
-    - Identity Provider
-    - Service Provider Connections
+    - *General*    
+    This tab enables or disables SAML IdP and manages the required keystore.  
+    
+    - *Identity Provider*     
+    This tab contains other required configurations
+such as whether to enable SSL. If SSL has been enabled, then SAML requests will
+not be approved unless they are also encrypted.
+    
+    - *Service Provider Connections*     
+    This tab manages any Service Providers
+connected to this @product@ instance. See below for more information.
+    
 
         <!-- Add something here about what these tabs do, please. -Rich --> 
 
@@ -99,10 +108,10 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
 
 ### Changing the Identity Provider Settings [](id=changing-the-identity-provider-settings)
 
-To configure @product@'s SAML Identity Provider Settings, navigate to the Identity
-Provider tab of the SAML Admin Control Panel entry.
+To configure @product@'s SAML Identity Provider Settings, navigate to the *Identity
+Provider* tab of the SAML Admin Control Panel entry.
 
-The Identity Provider tab includes these options:
+The *Identity Provider* tab includes these options:
 
 **Sign Metadata:** When this box is checked, the metadata XML file that's
 produced is signed.
@@ -129,6 +138,22 @@ the user's idle time reaches the limit set by the session timeout property.
 
 **Service Provider Defaults:** The options in this section set defaults that
 are used when adding new service provider connections.
+
+#### Checkpoint [](id=checkpoint)
+
+Before adding a Service Provider (SP), verify the following:
+
+1. A SAML keystore has been generated. It can be stored in one of two locations;
+either the `data` folder or in the Documents and Media library.
+
+2. On the *Identity Provider* tab, the following settings have been set:
+
+    a. **Sign Metadata** has been checked.    
+    b. **SSL Required** - checked if SSL is active elsewhere. SSL is disabled by default.    
+    c. **Authn Request Signature Required:** has been checked.     
+    d. **Session Maximum Age:** has been set. If set to `0`, then the SSO has an unlimited duration.     
+    e. **Session Timeout:** Specify the maximum idle time of the SAML SSO session.    
+
 
 ### Adding a SAML Service Provider [](id=adding-a-saml-service-provider)
 
@@ -189,8 +214,30 @@ are namespaced like this:
     urn:liferay:userGroups:
 
 Note that the full namespace depends on the attribute name. The namespaces are
-useful, for example, when you have an Expando attribute that might otherwise
+useful; for example, when you have an Expando attribute that might otherwise
 create an attribute with the same name as some other attribute.
+
+#### Checkpoint [](id=checkpoint-0)
+
+If a @product@ instance is the SAML IdP, it can connect to multiple SPs.
+However, the converse is not true; SPs connects to only one IdP. Verify that
+your settings are correct for the first SP before proceeding to add more SPs.
+
+1. Provide a general name for the SP.
+
+2. The `Entity ID` name must be identical to the one declared in the Service
+Provider metadata.
+
+3. Check the *Enabled* checkbox.
+
+4. Set a value for the *Assertion Lifetime*.
+
+5. The SP's metadata has been provided either as a URL or an XML file has been
+uploaded.
+
+6. *Name Identifier Format* and *Name Identifier Attribute Name* have been set.
+
+7. *Attributes Namespace Enabled* has been set.
 
 If you don't have a Service Provider to add right now, that's fine. In the next
 section, you'll learn how to set @product@ up as a SAML Service Provider. After
@@ -249,9 +296,14 @@ $$$
     created a keystore. After you create a keystore, additional options
     appear. There are three tabs:
 
-    - General
-    - Service Provider (*not Identity Provider!*)
-    - Identity Provider Connection (*not Service Provider Connections!*)
+    - General    
+    This tab enables or disables SAML IdP and manages the required keystore.
+    
+    - Service Provider (*not Identity Provider!*)    
+    This tab manages basic and advanced configurations for the SP.
+    
+    - Identity Provider Connection (*not Service Provider Connections!*)    
+    This tab manages connections to the IdP. There can be only one IdP connection.
 
     Note that these options are different than if you were setting up @product@ as
     an Identity Provider.
@@ -294,6 +346,19 @@ $$$
 Note that the SAML Service Provider session is tied to the normal session on
 the application server. Session expiration on the application server terminates
 the session on the Service Provider but does not initiate single logout. 
+
+#### Checkpoint [](id=checkpoint-1)
+
+1. A SAML keystore has been generated.
+
+2. Verify the connection to the IdP.     
+    a.  *Name* - generic name for the IdP.    
+    b.  *Entity ID* - the same name of the IdP. If the IdP is another @product@
+instance, then it is the same name as the above example.    
+    c. *Metadata URL* - The IdP's metadata as a URL or as an XML file.
+
+3. On the *General* tab, the *Enabled* checkbox has been checked.
+
 
 ### Changing the SAML Service Provider Settings [](id=changing-the-saml-service-provider-settings)
 
