@@ -273,7 +273,7 @@ Awesome! Now that you know how to configure Sync in your @product@ installation,
 it's time to look closer at a use case that warrants special attention for
 administrators: accidental file deletion. 
 
-## Protecting Against Accidental File Deletion 
+## Protecting Against Accidental File Deletion [](id=protecting-against-accidental-file-deletion)
 [](id=protecting-against-accidental-file-deletion)
 
 Liferay Sync's power rests in its ability to propagate between the server and
@@ -310,7 +310,7 @@ and securely transmit files, your @product@ server must also use SSL. The next
 section demonstrates how Sync's permissions work with your @product@
 installation's permissions. 
 
-## Liferay Sync Permissions Demonstration 
+## Liferay Sync Permissions Demonstration [](id=liferay-sync-permissions-demonstration)
 [](id=liferay-sync-permissions-demonstration)
 
 Sync uses Liferay's default permissions to determine files and folders to sync
