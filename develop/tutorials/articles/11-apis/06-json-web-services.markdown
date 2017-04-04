@@ -639,7 +639,7 @@ Find out how next.
 
 ### Inner Parameters [](id=inner-parameters)
 
-When you pass in an object paramter, you'll often need to populate its inner
+When you pass in an object parameter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
 `ServiceContext` (see the *Service Context* section in this chapter to find out
 more about this type). To make an appropriate call to JSONWS, you might need to
