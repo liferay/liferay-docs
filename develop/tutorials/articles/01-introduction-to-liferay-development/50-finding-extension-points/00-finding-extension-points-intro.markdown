@@ -1,4 +1,4 @@
-# Finding Extension Points
+# Finding Extension Points [](id=finding-extension-points)
 
 @product@ provides many features that help users accomplish their tasks.
 Sometimes, however, you may find it necessary to customize a built-in feature.
@@ -21,7 +21,7 @@ users. This will require the use of @product@'s
 and
 [Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
 
-## Locate the Related Module and Component
+## Locate the Related Module and Component [](id=locate-the-related-module-and-component)
 
 You must first think of words that describe the application behavior you want to
 change. With the right keywords, you can easily track down the desired module
@@ -71,7 +71,7 @@ component.
 Next, you'll begin using the Gogo shell to inspect the component for extension
 points.
 
-## Finding Extension Points in a Component
+## Finding Extension Points in a Component [](id=finding-extension-points-in-a-component)
 
 Once you have the component that relates to the functionality you want to
 extend, you can use the Gogo shell's Service Component Runtime (SCR) commands to
