@@ -81,7 +81,7 @@ sequence:
    Screenlet has a model class, create a model object from this JSON, then 
    use the model object to create the event object. 
 
-![Figure 1: This diagram shows a typical Mobile SDK call made by a Screenlet's Interactor. The dashed line around the model class indicates that it's optional. Although list Screenlets require model classes, non-list Screenlets don't.](../../../images/android-mobile-sdk.png)
+![Figure 1: This diagram shows a typical server call made by a Screenlet's Interactor. The dashed line around the model class indicates that it's optional. Although list Screenlets require model classes, non-list Screenlets don't.](../../../images/android-screenlet-server-call.png)
 
 To call the Guestbook portlet's remote services, you'll use the Guestbook Mobile 
 SDK you built and installed earlier. This Mobile SDK contains the services 
