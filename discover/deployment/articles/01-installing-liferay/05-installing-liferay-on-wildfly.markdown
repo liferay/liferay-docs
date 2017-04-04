@@ -339,7 +339,7 @@ If you want to use the built-in @product@ mail session, you can skip this sectio
 Specify your mail subsystem in `standalone.xml` as in the following example:
 
     <subsystem xmlns="urn:jboss:domain:mail:2.0">
-        <mail-session jndi-name="java:jboss/mail/MailSession" >
+        <mail-session jndi-name="java:jboss/mail/MailSession" name="mail-smtp">
             <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp" username="USERNAME" password="PASSWORD"/>
        </mail-session>
     </subsystem>
