@@ -43,7 +43,10 @@ third-parties, as described below.
 
     - `com.liferay.osgi.service.tracker.collections.jar` - [http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
     - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
-    (Note: To avoid problems, remove number version from JAR file name).
+
+    Be sure to remove the version number from the JAR file names, or update
+    their names where they're defined (you'll see where the
+    `com.liferay.registry.api.jar` is defined next).
 
 4. Create the file `module.xml` in the
    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert the
@@ -53,7 +56,7 @@ third-parties, as described below.
 
         <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
             <resources>
-                <resource-root path="com.liferay.registry.api.jar" />
+                <resource-root path="com.liferay.registry.api-[version].jar" />
                 <resource-root path="mysql-connector-java-[version]-bin.jar" />
                 <resource-root path="portal-kernel.jar" />
                 <resource-root path="portlet.jar" />
