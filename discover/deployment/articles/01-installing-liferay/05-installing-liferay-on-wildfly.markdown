@@ -43,6 +43,7 @@ third-parties, as described below.
 
     - `com.liferay.osgi.service.tracker.collections.jar` - [http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
     - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
+    (Note: To avoid problems, remove number version from JAR file name).
 
 4. Create the file `module.xml` in the
    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert the
@@ -338,7 +339,7 @@ If you want to use the built-in @product@ mail session, you can skip this sectio
 Specify your mail subsystem in `standalone.xml` as in the following example:
 
     <subsystem xmlns="urn:jboss:domain:mail:2.0">
-        <mail-session jndi-name="java:jboss/mail/MailSession" >
+        <mail-session jndi-name="java:jboss/mail/MailSession" name="mail-smtp">
             <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp" username="USERNAME" password="PASSWORD"/>
        </mail-session>
     </subsystem>
