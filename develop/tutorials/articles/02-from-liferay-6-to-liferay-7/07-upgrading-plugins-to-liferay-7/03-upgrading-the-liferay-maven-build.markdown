@@ -1,4 +1,4 @@
-# Upgrading the Liferay Maven Build
+# Upgrading the Liferay Maven Build [](id=upgrading-the-liferay-maven-build)
 
 If you're an avid Maven user, and have been using it for Liferay Portal 6.2
 project development, you must upgrade your Maven build to be compatible with
@@ -17,7 +17,7 @@ guided and expedited upgrade process for your Maven build, try the
 
 You'll start off by upgrading your Maven environment's Liferay Maven plugins.
 
-## Upgrading to New @product-ver@ Maven Plugins
+## Upgrading to New @product-ver@ Maven Plugins [](id=upgrading-to-new-product-ver-maven-plugins)
 
 The biggest change for your project's build plugins is the removal of the
 `liferay-maven-plugin`. Liferay now provides several individual Maven plugins
@@ -112,7 +112,7 @@ Awesome! You've learned about the new Maven plugins available to you for
 @product-ver@ development. Next, you'll learn about updating your Liferay Maven
 artifacts.
 
-## Updating Liferay Maven Artifact Dependencies
+## Updating Liferay Maven Artifact Dependencies [](id=updating-liferay-maven-artifact-dependencies)
 
 Many Liferay Portal 6.2 artifact dependencies you were using have changed in
 @product-ver@. See the table below for popular Liferay Maven artifacts that have
