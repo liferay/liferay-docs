@@ -24,5 +24,5 @@ sub-commands are callable in the Blade CLI environment:
 - *update*: Updates Blade CLI to latest version.
 - *version*: Displays version information about Blade CLI.
 
-In this set of tutorials, you'll learn how to use these commands and what
-templates are provided for you to create Liferay modules.
+In this set of tutorials, you'll learn how to use these commands to create and
+test Liferay modules.
