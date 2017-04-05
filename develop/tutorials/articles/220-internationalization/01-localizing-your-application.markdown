@@ -25,6 +25,16 @@ corresponds to the language you want to translate in your file names (for exampl
 
 <!-- Discuss adding a new locale? -->
 
+Application localization topics:
+
+-   [What are Language Keys?](#what-are-language-keys)
+-   [What Locales are Available By Default?](#what-locales-are-available-by-default)
+-   [Where do I Put Language Files?](#where-do-i-put-language-files)
+-   [Creating a Language Module](#creating-a-language-module)
+-   [Using a Language Module](#using-a-language-module)
+-   [Using Other Resource Bundles in Addition to Your Own](#using-other-resource-bundles-in-addition-to-your-own)
+-   [Using @product@'s Language Properties](#using-liferays-language-properties)
+
 ## What are Language Keys? [](id=what-are-language-keys)
 
 Each language property file holds key/value pairs. The key is the same in all
