@@ -1,5 +1,12 @@
 # Adapting to @product-ver@'s API with the Code Upgrade Tool [](id=adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
++$$$
+
+**Important:** Liferay @ide@'s Code Upgrade Tool is not officially released and
+is unsupported. It's available in @ide@ 3.1 milestones versions only.
+
+$$$
+
 The first and easiest plugin upgrade step is adapting to 
 @product-ver@'s API. @product-ver@ is a major release whose new modular 
 architecture 
