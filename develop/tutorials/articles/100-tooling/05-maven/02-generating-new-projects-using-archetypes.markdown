@@ -45,7 +45,10 @@ Here's a brief list of some popular Maven archetypes provided by Liferay:
 - Service Wrapper
 - Vaadin Liferay portlet
 
-Visit Maven's
+For documentation on the archetypes (project templates) compatible with @product-ver@,
+see the
+[Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
+reference section. Visit Maven's
 [Archetype Generation](http://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html)
 documentation for further details on how to modify the Maven archetype
 generation process.
