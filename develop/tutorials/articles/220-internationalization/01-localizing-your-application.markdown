@@ -204,7 +204,7 @@ bundle.
 2.  In the `bnd.bnd`, add a `Provide-Capability` header that adds the language
     module's resource bundle as this module's own resource bundle:
 
-        Provide-Capability: liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.my.editor.lang)";resource.bundle.base.name="content.Language"
+        Provide-Capability: liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)";resource.bundle.base.name="content.Language"
 
 In this case, the web module solely uses the language module's resource bundle. 
 
