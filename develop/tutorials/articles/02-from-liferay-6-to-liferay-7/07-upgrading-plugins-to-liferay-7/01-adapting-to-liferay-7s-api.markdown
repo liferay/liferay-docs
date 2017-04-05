@@ -120,7 +120,7 @@ The Code Upgrade Tool can upgrade Liferay 6.2 plugins built with Maven or the
 Plugins SDK. Browse to the Plugins SDK or Maven project root location to proceed
 with importing your plugin into the workspace.
 
-### Plugins SDK Plugin
+### Plugins SDK Plugin [](id=plugins-sdk-plugin)
 
 If you're upgrading a Plugins SDK plugin, you must integrate its Plugins SDK
 with a @product-ver@ server before beginning the upgrade. You can work with
@@ -207,7 +207,7 @@ $$$
 To mark the step complete, click the check mark icon
 (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)). 
 
-### Maven Plugin
+### Maven Plugin [](id=maven-plugin)
 
 To configure your Maven plugin project(s) in the Code Upgrade Tool, browse to
 the parent project in which they reside. Then select *Import Projects* to import
@@ -216,7 +216,7 @@ the Maven plugins into the Eclipse workspace.
 When upgrading a Maven plugin, there is one extra step compared to importing a
 Plugins SDK project: upgrading your POM files. You'll see how this works next.
 
-#### Upgrade POM Files
+#### Upgrade POM Files [](id=upgrade-pom-files)
 
 The Code Upgrade Tool scans through all of the POM files in your Maven project.
 An outline of the types of changes it suggests is below:
