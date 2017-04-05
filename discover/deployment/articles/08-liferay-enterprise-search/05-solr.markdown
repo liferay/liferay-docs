@@ -111,7 +111,28 @@ Since Elasticsearch is the default search engine in @product@, the Elasticsearch
 adapter is already installed and running. Stop it before configuring the Solr
 adapter.
 
-First, open a Gogo shell and enter
++$$$
+
+**Liferay Digital Enterprise:** Using the [App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps) to
+deactivate the Elasticsearch adapter bundle, as described below, is easy and
+effective. However, there's a limitation related to the patching process for
+Liferay Digital Enterprise 7.0. If you install a patch that replaces the
+`Liferay Foundation.lpkg`, the Elasticsearch adapter is reinstalled and started
+automatically. Because of this, you must deactivate the Elasticsearch bundle
+after each patch, using the method described below.
+
+$$$
+
+The best way to stop the Elasticsearch adapter bundle is through the App
+Manager. Navigate to Control Panel &rarr; Apps &rarr; App Manager.
+
+Once you're in the App Manager, search for *elasticsearch*. Find the Liferay
+Portal Search Elasticsearch module and click the edit
+((![Edit](../../../images-dxp/icon-edit.png))) button. Choose the Deactivate
+option. This leaves the bundle installed, but stops it in the OSGi runtime.
+
+Alternatively, use the [Felix Gogo shell](/developer/tutorials/-/knowledge_base/7-0/using-the-felix-gogo-shell) to
+stop the Elasticsearch adapter.  First, open a Gogo shell and enter
 
     lb elasticsearch
 
