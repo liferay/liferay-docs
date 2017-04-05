@@ -3,7 +3,7 @@
 +$$$
 
 **Important:** Liferay @ide@'s Code Upgrade Tool is not officially released and
-is unsupported. It's available in @ide@ 3.1 milestones versions only.
+is unsupported. It's available in @ide@ 3.1 milestone versions only.
 
 $$$
 
