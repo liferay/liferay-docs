@@ -196,10 +196,12 @@ bundle.
 
         Provide-Capability: liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.my.editor.lang)";resource.bundle.base.name="content.Language"
 
-It might seem a bit strange that the resource bundle aggregate has only one
-bundle. Grouping together multiple resource bundles comes into play when you
-want to use your module's own resource bundle *in addition to* a language module
-resource bundle. 
+In this case, the web module solely uses the language module's resource bundle. 
+
+## Using Other Resource Bundles in Addition to Your Own [](id=using-other-resource-bundles-in-addition-to-your-own)
+
+Aggregating resource bundles comes into play when you want to use your module's
+resource bundle *in addition to* other modules' resource bundles. 
 
 For example, you might want to compliment language module keys with
 module-specific keys or override language module keys with your own. This
