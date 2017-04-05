@@ -162,10 +162,9 @@ language file name. File `Language_es.properties` might look like this:
     my-app-title=Mi Aplicación
     add-entity=Añadir Entity
 
-On
-[deploying](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
-the language module, @product@'s `ResourceBundleLoaderAnalyzerPlugin` detects
-the `content/Language.properties` file and adds a resource bundle
+On building the language module, @product@'s
+`ResourceBundleLoaderAnalyzerPlugin` detects the `content/Language.properties`
+file and adds a resource bundle
 [*capability*](http://blog.osgi.org/2015/12/using-requirements-and-capabilities.html)
 to the module. A capability is a contract a module declares to @product@'s OSGi
 framework. Capabilities let you associate services with modules that provide
@@ -230,16 +229,15 @@ Each line is explained:
 
 2.  The second `Provide-Capability` line aggregates the web module resource
     bundle and the language module resource bundle, prioritizing the web module
-    resource bundle over the language module resource bundle.
+    resource bundle over the language module resource bundle. The last part of this capability declares the module's servlet context name. 
 
         liferay.resource.bundle;resource.bundle.aggregate:String="(&(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)(!(aggregate=true))),(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)";bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web;resource.bundle.base.name="content.Language";service.ranking:Long="1";aggregate=true;\
-
-3.  The last `Provide-Capability` line and the `Web-ContextPath` line provide
-    the web module's servlet context name and the web context path respectively.
-    @product@ uses them to make the aggregated resource bundle available to the
-    web module's JSPs automatically. 
-
         servlet.context.name=my-admin-application-web
+
+3.  The `Web-ContextPath` header declares the web module's web context path.
+    @product@ uses the web context path, and the servlet context declared int
+    the `Provide-Capability` header, to make the aggregated resource bundle
+    available to the web module's JSPs automatically.
 
         Web-ContextPath:/my-admin-application-web
 
