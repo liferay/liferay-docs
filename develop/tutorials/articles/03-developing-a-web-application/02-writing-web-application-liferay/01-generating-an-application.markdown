@@ -42,14 +42,14 @@ You already created your Liferay workspace so any Liferay projects you create
 will be created inside of that workspace. Follow the instructions below to
 create your Liferay Module Project.
 
-1. Go to
-2. Click
-3. Enter
-4. Enter
-5. More stuff.
+1. Right click on your workspace.
+2. Select `New` &rarr; `Liferay Module Project`
+3. Enter `Guestbook` for the Project name
+4. Use the `gradle-module` Build type.
+5. Select the `mvc-portlet` for Project Template Name.
 
 
-This command creates a project named `Guestbook Module`. The `mvcportlet` 
+This creates a project named `Guestbook`. The `mvcportlet` 
 template applied some Liferay enhancements to a standard module project. 
 Liferay IDE created a portlet class named NAME inside the package package 
 `com.liferay.docs.guestbook` in your project's `src/main/java` folder. Your
@@ -93,19 +93,20 @@ then the services of that component are registered. If you want to then use
 that component, you simply invoke the service as defined in the Service 
 Registry. 
 
+## Deploying the Application
+
 Even though all you've done is generate it, the Guestbook project that you
 created in the previous section is ready to be built and deployed to Liferay.
-Make sure your Liferay 7 instance is running. START LIFERAY
-
-DEPLOY THE MODULE
-
+Make sure that your server is running, and if it isn't, select it in the 
+`Servers` pane and click the start button. After Liferay starts, drag and drop 
+the `guestbook-module` to the server.
 
 Next, check that your application is available in Liferay. Open a browser,
 navigate to your portal ([http://localhost:8080](http://localhost:8080) by
 default), and add your application to a page. To add an application to a page,
 click on the *Add* button (it looks like a plus sign) and then on
 *Applications*. In this list, your application should appear in the Sample
-category. Its name should be `com.liferay.docs.guestbook JSP Portlet`. You can
+category. Its name should be `guestbook-module Portlet`. You can
 change this name by editing the `javax.portlet.display-name` property in your
 `GuestbookPortlet` class. E.g., you could use
 
