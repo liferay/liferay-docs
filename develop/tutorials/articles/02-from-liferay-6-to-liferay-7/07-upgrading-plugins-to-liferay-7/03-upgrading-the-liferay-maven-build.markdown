@@ -5,8 +5,8 @@ project development, you must upgrade your Maven build to be compatible with
 @product-ver@ development. There are two main parts of the Maven environment
 upgrade process that you must address:
 
-- Upgrading to New @product-ver@ Maven Plugins
-- Updating Liferay Maven Artifact Dependencies
+- Upgrading to new @product-ver@ Maven plugins
+- Updating Liferay Maven artifact dependencies
 
 For more information on using Maven with @product-ver@, see the
 [Maven tutorial section](/develop/tutorials/-/knowledge_base/7-0/maven). For a
@@ -62,10 +62,10 @@ Then, add the CSS Builder plugin dependency to your project's `pom.xml` file:
             </configuration>
     </plugin>
 
-Some popular Liferay Maven plugins are listed below, with their corresponding
+Some common Liferay Maven plugins are listed below, with their corresponding
 artifact IDs and tutorials explaining how to configure them:
 
-**Popular Liferay Maven Plugins**
+**Common Liferay Maven Plugins**
 
 Name | Artifact ID | Tutorial |
 :----| :---------- | :------- |
@@ -105,10 +105,11 @@ similar to these:
     </properties>
 
 This is no longer required in @product-ver@ because Liferay's Maven tools no
-longer rely on your @product@ installation's specific versions.
+longer rely on your @product@ installation's specific versions. You should
+remove them from your POM file.
 
 Awesome! You've learned about the new Maven plugins available to you for
-@product-ver@ development. Next, you'll learn about upgrading your Liferay Maven
+@product-ver@ development. Next, you'll learn about updating your Liferay Maven
 artifacts.
 
 ## Updating Liferay Maven Artifact Dependencies
@@ -130,7 +131,7 @@ For more information on resolving dependencies in @product-ver@, see the
 tutorial.
 
 Of course, you must also update the artifacts you're referencing for your
-projects. If you're using the Central Repository to to install Liferay Maven
+projects. If you're using the Central Repository to install Liferay Maven
 artifacts, you won't need to do anything further than updating the artifacts in
 your POMs. If you're, however, working behind a proxy or do not have internet
 access, you must update your company-shared or local repository with the latest
@@ -138,5 +139,5 @@ access, you must update your company-shared or local repository with the latest
 [Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
 tutorial for instructions.
 
-With these updates, you can easily upgrade your Liferay Maven Environment so you
-can begin developing traditional plugin projects for @product-ver@.
+With these updates, you can easily upgrade your Liferay Maven build so you can
+begin developing traditional plugin projects for @product-ver@.
