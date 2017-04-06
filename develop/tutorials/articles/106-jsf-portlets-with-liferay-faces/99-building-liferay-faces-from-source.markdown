@@ -89,15 +89,22 @@ is recommended to place your Maven installation's `bin` directory in your
 system's `$PATH`, so you can run the Maven executable (`mvn`) easily from your
 terminal. 
 
-1. Copy the `externalLiferayFacesRepositories` `<profile>` from
-   [`settings.xml`](https://github.com/liferay/liferay-faces/blob/master/settings.xml)
-   into your local `$HOME/.m2/settings.xml` file. If you do not already have a
-   `settings.xml` file in your Maven configuration, create a `settings.xml`
-   file in your `$HOME/.m2` folder and copy the contents of the
-   [`settings.xml`](https://github.com/liferay/liferay-faces/blob/master/settings.xml)
-   file into it. 
+1. Some Liferay Faces project should rely on Liferay's repository to download
+   Maven artifacts over using Maven Central. To configure your Liferay Faces project
+   to download from Liferay's repo, add the following code snippet to your
+   `$HOME/.m2/settings.xml` file:
 
-2. Make sure you're in the liferay-faces directory and, then, build the source with Maven by executing the following command: 
+        <repositories>
+            <repository>
+                <id>liferay-public</id>
+                <url>https://repository.liferay.com/nexus/content/groups/public</url>
+        </repository>
+
+    If a `settings.xml` file does not exist in your `$HOME/.m2` folder, create
+    it and add the code snippet.
+
+2. Make sure you're in your Liferay Faces project directory and, then, build the
+   source with Maven by executing the following command: 
 
         mvn clean package
 
