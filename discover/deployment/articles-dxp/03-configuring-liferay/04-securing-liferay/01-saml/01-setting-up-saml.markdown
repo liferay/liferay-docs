@@ -86,20 +86,17 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
 
     Three more tabs now appear: 
 
-    - *General*    
-    This tab enables or disables SAML IdP and manages the required keystore.  
+    - *General* 
+      This tab enables or disables SAML IdP and manages the required keystore.  
     
     - *Identity Provider*     
-    This tab contains other required configurations
-such as whether to enable SSL. If SSL has been enabled, then SAML requests will
-not be approved unless they are also encrypted.
+      This tab contains other required configurations such as whether to enable 
+      SSL. If SSL has been enabled, then SAML requests are not approved unless 
+      they are also encrypted.
     
     - *Service Provider Connections*     
-    This tab manages any Service Providers
-connected to this @product@ instance. See below for more information.
-    
-
-        <!-- Add something here about what these tabs do, please. -Rich --> 
+      This tab manages any Service Providers connected to this @product@ 
+      instance. See below for more information.
 
 5.  After you save your certificate and private key information,
     check the *Enabled* box at the top of the General tab and click *Save*.
@@ -141,17 +138,23 @@ are used when adding new service provider connections.
 
 #### Checkpoint [](id=checkpoint)
 
-Before adding a Service Provider (SP), verify the following:
+Before adding a Service Provider (SP), verify you've completed these tasks:
 
-1. A SAML keystore has been generated. It can be stored in one of two locations;
-either the `data` folder or in the Documents and Media library.
+1. A SAML keystore has been generated. It can be stored in one of two locations:
+   the `data` folder or in the Documents and Media library.
 
 2. On the *Identity Provider* tab, the following settings have been set:
 
     a. **Sign Metadata** has been checked.    
-    b. **SSL Required** - checked if SSL is active elsewhere. SSL is disabled by default.    
+    
+    b. **SSL Required** - checked if SSL is active elsewhere. SSL is disabled by 
+       default.    
+
     c. **Authn Request Signature Required:** has been checked.     
-    d. **Session Maximum Age:** has been set. If set to `0`, then the SSO has an unlimited duration.     
+    
+    d. **Session Maximum Age:** has been set. If set to `0`, then the SSO has an 
+       unlimited duration.     
+
     e. **Session Timeout:** Specify the maximum idle time of the SAML SSO session.    
 
 
@@ -220,24 +223,25 @@ create an attribute with the same name as some other attribute.
 #### Checkpoint [](id=checkpoint-0)
 
 If a @product@ instance is the SAML IdP, it can connect to multiple SPs.
-However, the converse is not true; SPs connects to only one IdP. Verify that
+The converse, however, is not true: SPs connect to only one IdP. Verify that
 your settings are correct for the first SP before proceeding to add more SPs.
 
 1. Provide a general name for the SP.
 
 2. The `Entity ID` name must be identical to the one declared in the Service
-Provider metadata.
+   Provider metadata.
 
 3. Check the *Enabled* checkbox.
 
 4. Set a value for the *Assertion Lifetime*.
 
-5. The SP's metadata has been provided either as a URL or an XML file has been
-uploaded.
+5. Make sure the SP's metadata has been provided either as a URL or an XML file 
+   has been uploaded.
 
-6. *Name Identifier Format* and *Name Identifier Attribute Name* have been set.
+6. Make sure *Name Identifier Format* and *Name Identifier Attribute Name* have 
+   been set.
 
-7. *Attributes Namespace Enabled* has been set.
+7. Make sure *Attributes Namespace Enabled* has been set.
 
 If you don't have a Service Provider to add right now, that's fine. In the next
 section, you'll learn how to set @product@ up as a SAML Service Provider. After
@@ -352,13 +356,14 @@ the session on the Service Provider but does not initiate single logout.
 1. A SAML keystore has been generated.
 
 2. Verify the connection to the IdP.     
-    a.  *Name* - generic name for the IdP.    
-    b.  *Entity ID* - the same name of the IdP. If the IdP is another @product@
-instance, then it is the same name as the above example.    
-    c. *Metadata URL* - The IdP's metadata as a URL or as an XML file.
+    a.  *Name*: generic name for the IdP.    
+    
+    b.  *Entity ID*: the same name of the IdP. If the IdP is another @product@
+        instance, then it is the same name as the above example.    
+
+    c. *Metadata URL*: The IdP's metadata as a URL or as an XML file.
 
 3. On the *General* tab, the *Enabled* checkbox has been checked.
-
 
 ### Changing the SAML Service Provider Settings [](id=changing-the-saml-service-provider-settings)
 
