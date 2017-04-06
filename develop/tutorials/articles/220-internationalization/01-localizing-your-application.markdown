@@ -247,8 +247,8 @@ Each line is explained:
         servlet.context.name=my-admin-application-web
 
 3.  The `Web-ContextPath` header declares the web module's web context path.
-    @product@ uses the web context path, and the servlet context declared int
-    the `Provide-Capability` header, to make the aggregated resource bundle
+    @product@ uses the web context path and the servlet context declared in
+    the `Provide-Capability` header to make the aggregated resource bundle
     available to the web module's JSPs automatically.
 
         Web-ContextPath:/my-admin-application-web
