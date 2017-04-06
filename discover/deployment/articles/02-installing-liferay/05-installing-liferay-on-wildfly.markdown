@@ -41,8 +41,12 @@ third-parties, as described below.
 
 3. Download the remaining required JARs and insert them into the same folder. 
 
-    - `com.liferay.osgi.service.tracker.collections.jar` - [http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
-    - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
+    - [`com.liferay.osgi.service.tracker.collections.jar`](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
+    - [`com.liferay.registry.api.jar`](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
+
+    Be sure to remove the version number from the JAR file names or update
+    their names where they're defined (you'll see where the
+    `com.liferay.registry.api.jar` is defined next).
 
 4. Create the file `module.xml` in the
    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert the
@@ -52,7 +56,7 @@ third-parties, as described below.
 
         <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
             <resources>
-                <resource-root path="com.liferay.registry.api.jar" />
+                <resource-root path="com.liferay.registry.api-[version].jar" />
                 <resource-root path="mysql-connector-java-[version]-bin.jar" />
                 <resource-root path="portal-kernel.jar" />
                 <resource-root path="portlet.jar" />
@@ -338,7 +342,7 @@ If you want to use the built-in @product@ mail session, you can skip this sectio
 Specify your mail subsystem in `standalone.xml` as in the following example:
 
     <subsystem xmlns="urn:jboss:domain:mail:2.0">
-        <mail-session jndi-name="java:jboss/mail/MailSession" >
+        <mail-session jndi-name="java:jboss/mail/MailSession" name="mail-smtp">
             <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp" username="USERNAME" password="PASSWORD"/>
        </mail-session>
     </subsystem>
