@@ -36,7 +36,8 @@ necessary on Windows because the server log opens in another window
 automatically.
 
 After a minute or two, Liferay finishes starting and automatically takes you to
-its initial setup page at [http://localhost:8080](http://localhost:8080). 
+its initial setup page at 
+[http://localhost:8080](http://localhost:8080). 
 On this page, you need to provide some basic information about how to set up
 your portal. Enter a name for your portal, select the default language, and then
 uncheck the *Add Sample Data* box. Then enter the first name, last name, and
@@ -56,7 +57,8 @@ to the Liferay installation you just set up.
 ## Deploying the Guestbook Portlet [](id=deploying-the-guestbook-portlet)
 
 Now that your portal is set up, you can deploy the Guestbook portlet to it. 
-Download the Guestbook portlet's `.war` package from [here](https://dev.liferay.com/documents/10184/581742/guestbook-portlet.war) 
+Download the Guestbook portlet's `.war` package from 
+[here](https://dev.liferay.com/documents/10184/598513/guestbook-portlet.war) 
 and place it in the `[Liferay Home]/deploy` directory. You should see messages 
 in your console indicating that the Guestbook portlet has been successfully 
 deployed. On your portal's default site, click the + icon on the left side 
