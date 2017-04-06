@@ -31,7 +31,7 @@ calling the theme a new module project, it is a WAR.
 Under the hood, @ide@ is using the
 [theme project template](/develop/reference/-/knowledge_base/7-0/theme-template).
 If you're interested in creating Liferay themes using the
-Themes Generator, see its dedicated
+Liferay Theme Generator, see its dedicated
 [tutorial](/develop/tutorials/-/knowledge_base/7-0/themes-generator). For more
 general information on Liferay themes, visit their dedicated tutorial section
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates).

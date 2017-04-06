@@ -17,7 +17,7 @@ Here are some common optimizations to consider:
 
 -   Migrating to environments that help you develop and test
     more quickly, such as the
-    [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
+    [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
     for themes and
     [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#from-the-plugins-sdk-to-liferay-workspace)
     for modules and web applications. 
