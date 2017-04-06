@@ -233,7 +233,7 @@ An outline of the types of changes it suggests is below:
 For more information on the upgrade process for your Maven build, see the
 [Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build)
 
-If the tool finds any necessary updates, it will list them in the view.
+If the tool finds any necessary updates, it lists them in the view.
 
 ![Figure 6: Defining a @product@ server is straightforward.](../../../images/upgrade-tool-pom-list.png)
 
