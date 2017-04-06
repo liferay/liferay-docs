@@ -1,6 +1,6 @@
 # Upgrading the Liferay Maven Build [](id=upgrading-the-liferay-maven-build)
 
-If you're an avid Maven user, and have been using it for Liferay Portal 6.2
+If you're an avid Maven user and have been using it for Liferay Portal 6.2
 project development, you must upgrade your Maven build to be compatible with
 @product-ver@ development. There are two main parts of the Maven environment
 upgrade process that you must address:
@@ -26,8 +26,8 @@ Liferay's CSS Builder, Service Builder, Theme Builder, etc. With smaller plugins
 available to accomplish specific tasks in your project, you no longer have to
 rely on one large plugin that provides many things you may not want.
 
-As an example, suppose your Liferay Portal 6.2 project was using the
-`liferay-maven-plugin` to only use Liferay CSS Builder. First, you should remove
+For example, suppose your Liferay Portal 6.2 project was using the
+`liferay-maven-plugin` for Liferay CSS Builder only. First, you should remove
 the legacy `liferay-maven-plugin` plugin dependency from your project's
 `pom.xml` file:
 
@@ -74,7 +74,7 @@ Lang Builder | [com.liferay.lang.builder](https://search.maven.org/#search%7Cga%
 Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project) |
 Theme Builder | [com.liferay.portal.tools.theme.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.theme.builder) | [Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project) |
 
-In Liferay Portal 6.2, you were also required to specify all of your app server
+In Liferay Portal 6.2, you were also required to specify all your app server
 configuration settings. For example, your parent POM probably contained settings
 similar to these:
 
@@ -89,7 +89,7 @@ similar to these:
 
         <liferay.app.server.portal.dir>
             E:\liferay-portal-6.2.0-ce-ga1\tomcat-7.0.42\webapps\root
-        </liferay.app.server.portal.dir>
+        </liferay.app.server.portal.dir> 
 
         <liferay.auto.deploy.dir>
             E:\liferay-portal-6.2.0-ce-ga1\deploy
@@ -101,7 +101,8 @@ similar to these:
 
         <liferay.maven.plugin.version>
             6.2.0
-        </liferay.maven.plugin.version>
+        </liferay.maven.plugin.version
+ 
     </properties>
 
 This is no longer required in @product-ver@ because Liferay's Maven tools no
@@ -132,8 +133,8 @@ tutorial.
 
 Of course, you must also update the artifacts you're referencing for your
 projects. If you're using the Central Repository to install Liferay Maven
-artifacts, you won't need to do anything further than updating the artifacts in
-your POMs. If you're, however, working behind a proxy or do not have internet
+artifacts, you won't need to do anything more than update the artifacts in
+your POMs. If, however, you're working behind a proxy or don't have Internet
 access, you must update your company-shared or local repository with the latest
 @product-ver@ Maven artifacts. See the
 [Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
