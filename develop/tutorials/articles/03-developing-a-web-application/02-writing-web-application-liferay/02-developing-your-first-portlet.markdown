@@ -262,7 +262,7 @@ entry.
 
 +$$$
 
-**Note:** In most cases, you'll need a more robust solution that the 
+**Note:** In most cases, you'll need a more robust solution than the 
 Configuration API for storing data. You'll learn how to implement a
 robust mechanism for saving application data in the  *Service Builder* learning path.
 
