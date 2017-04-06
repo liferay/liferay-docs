@@ -41,10 +41,10 @@ third-parties, as described below.
 
 3. Download the remaining required JARs and insert them into the same folder. 
 
-    - `com.liferay.osgi.service.tracker.collections.jar` - [http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
-    - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
+    - [`com.liferay.osgi.service.tracker.collections.jar`](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
+    - [`com.liferay.registry.api.jar`](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
 
-    Be sure to remove the version number from the JAR file names, or update
+    Be sure to remove the version number from the JAR file names or update
     their names where they're defined (you'll see where the
     `com.liferay.registry.api.jar` is defined next).
 
