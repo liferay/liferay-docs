@@ -13,7 +13,7 @@ a set of Facelet `UIComponent` tags as part of its component suite.
 For listings, demos, and code examples of Liferay Faces Alloy components, check
 out the [Liferay Faces Showcase](www.liferayfaces.org). To view a working
 example using Liferay Faces Alloy components, visit the
-[Liferay Faces 3 Portlet](https://github.com/liferay/liferay-faces/tree/3.2.5-ga6/demos/bridge/liferayfaces3-portlet). 
+[Alloy Applicant Portlet](https://github.com/liferay/liferay-faces-bridge-impl/tree/3.0.0/demo/alloy-applicant-portlet). 
 
 The Liferay Faces Alloy project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>. 
