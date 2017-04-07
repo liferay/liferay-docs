@@ -1,19 +1,18 @@
-# Creating an Upgrade Process for Your App [](id=creating-an-upgrade-process-for-your-app)
+# Creating Data Upgrade Processes for Modules [](id=creating-an-upgrade-process-for-your-app)
 
-As changes are made to your app, it's very likely that some of those changes are
-to the database. These changes bring with them the need for an upgrade process
-to move your app's database from one version to the next. Liferay has an upgrade
-framework you can use to make this easier to do. It's a feature-rich framework
-that makes upgrades safe: the system records the current state of the schema so
-that if the upgrade fails, the process can revert the app back to its previous
-version.
+Some changes you make to a module involve modifying the database. These changes
+bring with them the need for an upgrade process to move your module's database
+from one version to the next. Liferay has an upgrade framework you can use to
+make this easier to do. It's a feature-rich framework that makes upgrades safe:
+the system records the current state of the schema so that if the upgrade fails,
+the process can revert the module back to its previous version.
 
-@product@'s upgrade framework executes your app's upgrades automatically when
-the new version starts for the first time. As an app developer, you implement
+@product@'s upgrade framework executes your module's upgrades automatically when
+the new version starts for the first time. As an module developer, you implement
 concrete data schema changes in upgrade step classes and then register them with
 the upgrade framework using an upgrade step registrator. In this tutorial,
 you'll learn how to do all these things to create an upgrade process for your
-app's modules. 
+module. 
 
 Here's what's involved:
 
@@ -40,7 +39,7 @@ header for a module whose new schema is version `1.1.0`:
 +$$$
 
 **Important**: Modules that use [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
-rely on a `Liferay-Require-SchemaVersion` header  to be present in order to
+rely on a `Liferay-Require-SchemaVersion` header to be present in order to
 trigger upgrade process execution. 
 
 $$$
@@ -57,8 +56,8 @@ Next, you'll specify your upgrade's dependencies.
 
 ## Declaring Dependencies [](id=declaring-dependencies)
 
-In your application's dependency management file (e.g., Maven POM, Gradle build
-file, or Ivy `ivy.xml` file), 
+In your module's dependency management file (e.g., Maven POM, Gradle build file,
+or Ivy `ivy.xml` file), 
 [add a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
 on the 
 [`com.liferay.portal.upgrade` module](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.upgrade/). 
@@ -164,9 +163,8 @@ booking table:
 
 You can implement upgrade steps just like these for your module schemas. 
 
-How you name and organize upgrade steps in your app's modules is up to you.
-Liferay's upgrade classes are organized using a package structure similar to
-this one:
+How you name and organize upgrade steps is up to you. Liferay's upgrade classes
+are organized using a package structure similar to this one:
 
 - *some.package.structure*
     - `upgrade`
@@ -179,11 +177,11 @@ this one:
 
 The example upgrade structure shown above is for a module that has two database
 schema versions: `1.1.0` and `2.0.0`. They're represented by packages `v1_1_0`
-and `v2_0_0`. Each version package contains upgrade step classes that update
-the database. The example upgrade steps focus on fictitious data
-elements `Foo` and `Bar`. The registrator class (`MyCustomModuleUpgrade`, in this
-example) is responsible for registering the applicable upgrade steps for each
-schema version. 
+and `v2_0_0`. Each version package contains upgrade step classes that update the
+database. The example upgrade steps focus on fictitious data elements `Foo` and
+`Bar`. The registrator class (`MyCustomModuleUpgrade`, in this example) is
+responsible for registering the applicable upgrade steps for each schema
+version. 
 
 Here are some organizational tips:
 
@@ -407,10 +405,10 @@ which upgrade reference annotations are needed. For example, there's no need to
 add an upgrade reference in a dependent service, if the dependency already
 refers to the upgrade. 
  
-Now you know how to create data upgrades for all your app's modules. You specify
-the new data schema version in the `bnd.bnd` file, add a reference to your
-module and to the schema version to assure upgrade execution if the module doesn't
-use Service Builder, and add a dependency on the `com.liferay.portal.upgrade`
+Now you know how to create data upgrades for all your modules. You specify the
+new data schema version in the `bnd.bnd` file, add a reference to your module
+and to the schema version to assure upgrade execution if the module doesn't use
+Service Builder, and add a dependency on the `com.liferay.portal.upgrade`
 module. For the second part of the process, you create upgrade step classes to
 update the database schema and register the upgrade steps in a registrator
 class. That's all there is to it!

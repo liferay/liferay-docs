@@ -223,7 +223,7 @@ interfaces and the service JAR.
 
 **Note:** If you need to make changes to your objects/tables between two
 different releases of your service, you must write 
-[an upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+[a data upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
 since Service Builder does not make these changes automatically.
 
 While you're developing your application, you can force your service tables to
