@@ -106,6 +106,8 @@ things:
 [An Important Note About Core Stylesheets](/develop/tutorials/-/knowledge_base/7-0/upgrading-your-theme-from-6-1-to-7-0#an-important-note-about-core-stylesheets) 
 for advice on renaming (effectively overriding) "core" stylesheets.
 
+$$$
+
 Upgrade your theme, by running these commands:
 
     $ cd my-awesome-theme-for-62-theme
