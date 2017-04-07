@@ -55,7 +55,7 @@ Studio project. This screenshot highlights the app module's `build.gradle` file:
 In the app module's `build.gradle` file, add the following line of code inside 
 the `dependencies` element: 
 
-    compile 'com.liferay.mobile:liferay-screens:2.1.0'
+    compile 'com.liferay.mobile:liferay-screens:2.1.1'
 
 Once you edit `build.gradle`, a message appears at the top of the file that asks 
 you to sync your app with its Gradle files. Syncing with the Gradle files is 
