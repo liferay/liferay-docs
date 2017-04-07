@@ -89,10 +89,9 @@ Your next task is to review your Documents and Media configuration. Look at
 to see all the options in @product-ver@ before executing an upgrade process. There
 are, however, two important pieces of configuration that have changed: 
 
-- The way you specify the location for the file store is no longer in the
-`portal-ext.properties` file.
+- The way you specify the location for the file store is no longer in the `portal-ext.properties` file.
 
-- package names for the store implementations have changed from `com.liferay.portlet.documentlibrary.store` to `com.liferay.portal.store.*` and you'll need to configure the appropriate updated implementation name rather than copying over the name from your 6.2 portal-ext.properties.
+- Package names for the store implementations have changed from `com.liferay.portlet.documentlibrary.store` to `com.liferay.portal.store.*` and you'll need to configure the appropriate updated implementation name rather than copying over the name from your 6.2 portal-ext.properties.
 
 If you use the default store but don't want to store the files in the default
 location (`[Liferay Home]/data/document_library`), you need to create a file
