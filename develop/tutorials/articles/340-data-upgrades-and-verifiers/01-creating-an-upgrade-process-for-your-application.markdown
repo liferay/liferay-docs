@@ -8,11 +8,10 @@ the system records the current state of the schema so that if the upgrade fails,
 the process can revert the module back to its previous version.
 
 @product@'s upgrade framework executes your module's upgrades automatically when
-the new version starts for the first time. As an module developer, you implement
-concrete data schema changes in upgrade step classes and then register them with
-the upgrade framework using an upgrade step registrator. In this tutorial,
-you'll learn how to do all these things to create an upgrade process for your
-module. 
+the new version starts for the first time. You implement concrete data schema
+changes in upgrade step classes and then register them with the upgrade
+framework using an upgrade step registrator. In this tutorial, you'll learn how
+to do all these things to create an upgrade process for your module. 
 
 Here's what's involved:
 
