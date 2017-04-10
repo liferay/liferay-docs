@@ -2,31 +2,30 @@
 
 When you make changes to your plugin that affect the database, you can use a
 *data upgrade process* (upgrade process) to upgrade data to the new database
-schema. @product-ver@ has a new data upgrade framework for modules. While the
-old framework required several classes, the new framework lets you orchestrate
-the upgrade steps from a single class. Managing the steps from one class
-facilitates developing upgrade processes. The data upgrade framework you use
-depends on your development framework.
+schema. @product-ver@ has a new data upgrade framework (new framework) for
+modules. While the old framework required several classes, the new framework
+lets you orchestrate the upgrade steps from a single class. Managing the steps
+from one class facilitates developing upgrade processes. The data upgrade
+framework you use depends on your development framework.
 
 -   If your
     [upgraded plugin](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
-    is a traditional WAR, then you don't need to do anything special;
-    existing upgrade processes
+    is a traditional WAR, then you don't need to do anything special; existing
+    upgrade processes
     [adapted to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-    work as is. 
+    work as is. The new data upgrade framework is for modules only. 
 
 -   If you converted your upgraded plugin to a module or you have an upgraded
-    module, you must migrate upgrade processes you want to continue using to the
-    new data upgrade framework.
+    module, any upgrade processes you want to continue using must be migrated to
+    the new data upgrade framework. 
 
-For a module that's been converted from a traditional plugin, you can migrate
-any number of its old upgrade processes (starting with the most recent ones) to
-the new model. For example, if your module has versions 1.0, 1.1, 1.2, and 1.3,
-but you only expect customers on versions 1.2 and newer to upgrade, you might
-migrate upgrade processes for versions 1.2 and 1.3 only. This tutorial shows you
-how to migrate to the new framework. 
+You can migrate any number of old upgrade processes (starting with the most
+recent ones) to the new framework. For example, if your module has versions 1.0,
+1.1, 1.2, and 1.3, but you only expect customers on versions 1.2 and newer to
+upgrade, you might migrate upgrade processes for versions 1.2 and 1.3 only. This
+tutorial shows you how to migrate to the new framework. 
 
-Before beginning, make sure you know how to create an upgrade process that uses 
+Before beginning, make sure you know how to create an upgrade process that uses
 the new framework. 
 [Click here](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app) 
 to read the tutorial on creating these upgrade processes. 
