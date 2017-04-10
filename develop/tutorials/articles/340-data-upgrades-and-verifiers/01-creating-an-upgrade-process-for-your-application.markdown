@@ -418,4 +418,4 @@ class. That's all there is to it!
 
 [Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
 
-<!--[Upgrading Application Upgrade and Verifier Processes ](upgrading-application-upgrade-and-verifier-processes)-->
+[Migrating Data Upgrade Processes to the New Framework for Modules](/develop/tutorials/-/knowledge_base/7-0/optimizing-app-upgrade-processes)
