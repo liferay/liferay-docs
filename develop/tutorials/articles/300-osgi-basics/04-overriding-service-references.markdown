@@ -171,6 +171,6 @@ which in turn binds to your custom service class object to the component!
 
 ## Related Topics [](id=related-topics)
 
-- [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/Finding Extension Points)
+- [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points)
 
 - [Using Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
