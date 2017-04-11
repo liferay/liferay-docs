@@ -208,7 +208,7 @@ about this next.
 
 Plugins rely on their dependencies being available at compile time and run time. To compile your plugin, you must make sure the dependencies are available in the plugin's `WEB-INF/lib` folder. To run your plugin, you must the dependency Java packages must already be active in @product@'s OSGi framework or the dependency JARs must be included in the WAB generated for the plugin. Your plugin can use the JARs it currently has and packages @product@ exports. 
 
-#### Using Packages @product@ Exports
+#### Using Packages @product@ Exports [](id=using-packages-liferay-portal-exports)
 
 The Plugins SDK for Liferay Portal 6 provided a way to compile against JARs it
 had. You'd specify these JARs in  the `portal-dependency-jars` property in your
@@ -257,7 +257,7 @@ adversely affect your @product@ run time environment.
 
 $$$
 
-#### Using Packages @product@ Doesn't Export
+#### Using Packages @product@ Doesn't Export [](id=using-packages-liferay-portal-doesnt-export)
 
 You must download and install to your plugin's `WEB-INF/lib` folder JARs that
 provide packages @product@ doesn't export that your plugin requires. 
