@@ -118,6 +118,9 @@ Now you have your mail session specified and ready for Liferay to use.
 
 ## Domain Configuration - Continued [](id=domain-configuration-continued)
 
+In order for special characters and other languages to display correctly, you
+must set `-Dfile.encoding=utf8` under `JAVA_OPTIONS` in the `setDomainEnv` file.
+
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
 
