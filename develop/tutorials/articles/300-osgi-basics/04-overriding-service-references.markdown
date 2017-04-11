@@ -71,7 +71,7 @@ custom service and service reference configuration you create later.
 Here are the values for LDAP example:
 
 -   *Component*:
-    `com.liferay.portal.security.ldap.internal.model.listener.UserModelListener`
+    `com.liferay.portal.security.ldap.internal.messaging.UserImportMessageListener`
 -   *Reference*: `LdapUserImporter`
 -   *Interface*:
     `com.liferay.portal.security.ldap.exportimport.LDAPUserImporter`
