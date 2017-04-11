@@ -43,7 +43,7 @@ the request. The service access policy authorization layer then
 processes all granted policies and lets the request access the remote
 service(s) permitted by the policy.
 
-[!The authorization module maps the credentials or token to the proper Service Access Policy.](../../images/service-access-policies-arch.png)
+![The authorization module maps the credentials or token to the proper Service Access Policy.](../../images/service-access-policies-arch.png)
 
 Service Access policies are created in the Control Panel by
 administrators. If you want to start creating policies yourself, see
