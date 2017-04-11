@@ -280,7 +280,7 @@ environments.
     imagemagick.enabled=true
     imagemagick.global.search.path[apple]=/opt/local/bin:/opt/local/share/ghostscript/fonts:/opt/local/share/fonts/urw-fonts
     imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts
-    imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
+    imagemagick.global.search.path[windows]=C:\\Program Files\\gs\\bin;C:\\Program Files\\ImageMagick
 
 To enable ImageMagick from the Control Panel, navigate to the *Server
 Administration* &rarr; *External Services* page, check the *Enabled* checkbox
