@@ -14,7 +14,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.module.config.generator", version: "2.1.8"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.module.config.generator", version: "2.1.11"
     }
 
     repositories {
@@ -38,7 +38,7 @@ the extension named `jsModuleConfigGenerator`:
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-<a name="version"></a>`version` | `String` | `"1.1.10"` | The version of the Liferay AMD Module Config Generator to use.
+<a name="version"></a>`version` | `String` | `"1.2.1"` | The version of the Liferay AMD Module Config Generator to use.
 
 ## Tasks [](id=tasks)
 
@@ -104,7 +104,7 @@ files and creates a configuration file in the location specified by the
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `configVariable` | `String` | `null` | The configuration variable to which the modules should be added. It sets the `--config` argument.
-`customDefine` | `String` | `"Liferay.Loader.define"` | The custom `define(...)` call to use in the JS files.
+`customDefine` | `String` | `"Liferay.Loader"` | The namespace of the `define(...)` call to use in the JS files. It sets the `--namespace` argument.
 `ignorePath` | `boolean` | `false` | Whether not to create module `path` and `fullPath` properties. It sets the `--ignorePath` argument.
 `keepFileExtension` | `boolean` | `false` | Whether to keep the file extension when generating the module name. It sets the `--keepExtension` argument.
 `lowerCase` | `boolean` | `false` | Whether to convert file name to lower case before using it as the module name. It sets the `--lowerCase` argument.

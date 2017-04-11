@@ -230,4 +230,4 @@ Your form is complete!
 
 [Basic Forms](/discover/portal/-/knowledge_base/7-0/basic-forms)
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)

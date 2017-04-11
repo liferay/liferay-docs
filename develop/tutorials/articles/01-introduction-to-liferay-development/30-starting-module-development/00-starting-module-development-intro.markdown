@@ -27,17 +27,15 @@ simplifies module development and automates much of it.
 
 **Note**: Liferay supports developers using their build tool of choice. In
 addition to providing Liferay Workspace for those who don't already have a
-preferred build environment, Liferay provides good support for Maven, Gradle,
-and BndTools. The following tutorials and samples demonstrate developing in
-these environments.
+preferred build environment, Liferay provides good support for Maven and Gradle.
+The following tutorials and samples demonstrate developing in these
+environments.
 
 -   [Maven tutorials](/develop/tutorials/-/knowledge_base/7-0/maven)
     and [samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 
 -   [Gradle in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
     and [samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
-
--   [BndTools samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 
 $$$
 
@@ -181,7 +179,7 @@ Here's the Blade samples command syntax:
 
     blade samples <sampleName>
 
-Samples are created to the `samples` folder.
+It creates the sample project in a subfolder of the current folder. 
 
 Building a module and deploying it to @product@ is easy.
 
@@ -310,4 +308,3 @@ Congratulations on a great start to developing your module!
 [OSGi Basics for Liferay Development](/develop/tutorials/-/knowledge_base/7-0/osgi-basics-for-liferay-development)
 
 [Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
-

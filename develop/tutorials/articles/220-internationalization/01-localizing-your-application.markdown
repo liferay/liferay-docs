@@ -25,6 +25,16 @@ corresponds to the language you want to translate in your file names (for exampl
 
 <!-- Discuss adding a new locale? -->
 
+Application localization topics:
+
+-   [What are Language Keys?](#what-are-language-keys)
+-   [What Locales are Available By Default?](#what-locales-are-available-by-default)
+-   [Where do I Put Language Files?](#where-do-i-put-language-files)
+-   [Creating a Language Module](#creating-a-language-module)
+-   [Using a Language Module](#using-a-language-module)
+-   [Using Other Resource Bundles in Addition to Your Own](#using-other-resource-bundles-in-addition-to-your-own)
+-   [Using @product@'s Language Properties](#using-liferays-language-properties)
+
 ## What are Language Keys? [](id=what-are-language-keys)
 
 Each language property file holds key/value pairs. The key is the same in all
@@ -162,10 +172,9 @@ language file name. File `Language_es.properties` might look like this:
     my-app-title=Mi Aplicación
     add-entity=Añadir Entity
 
-On
-[deploying](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
-the language module, @product@'s `ResourceBundleLoaderAnalyzerPlugin` detects
-the `content/Language.properties` file and adds a resource bundle
+On building the language module, @product@'s
+`ResourceBundleLoaderAnalyzerPlugin` detects the `content/Language.properties`
+file and adds a resource bundle
 [*capability*](http://blog.osgi.org/2015/12/using-requirements-and-capabilities.html)
 to the module. A capability is a contract a module declares to @product@'s OSGi
 framework. Capabilities let you associate services with modules that provide
@@ -195,12 +204,14 @@ bundle.
 2.  In the `bnd.bnd`, add a `Provide-Capability` header that adds the language
     module's resource bundle as this module's own resource bundle:
 
-        Provide-Capability: liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.my.editor.lang)";resource.bundle.base.name="content.Language"
+        Provide-Capability: liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)";resource.bundle.base.name="content.Language"
 
-It might seem a bit strange that the resource bundle aggregate has only one
-bundle. Grouping together multiple resource bundles comes into play when you
-want to use your module's own resource bundle *in addition to* a language module
-resource bundle. 
+In this case, the web module solely uses the language module's resource bundle. 
+
+## Using Other Resource Bundles in Addition to Your Own [](id=using-other-resource-bundles-in-addition-to-your-own)
+
+Aggregating resource bundles comes into play when you want to use your module's
+resource bundle *in addition to* other modules' resource bundles. 
 
 For example, you might want to compliment language module keys with
 module-specific keys or override language module keys with your own. This
@@ -230,16 +241,15 @@ Each line is explained:
 
 2.  The second `Provide-Capability` line aggregates the web module resource
     bundle and the language module resource bundle, prioritizing the web module
-    resource bundle over the language module resource bundle.
+    resource bundle over the language module resource bundle. The last part of this capability declares the module's servlet context name. 
 
         liferay.resource.bundle;resource.bundle.aggregate:String="(&(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)(!(aggregate=true))),(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang)";bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web;resource.bundle.base.name="content.Language";service.ranking:Long="1";aggregate=true;\
-
-3.  The last `Provide-Capability` line and the `Web-ContextPath` line provide
-    the web module's servlet context name and the web context path respectively.
-    @product@ uses them to make the aggregated resource bundle available to the
-    web module's JSPs automatically. 
-
         servlet.context.name=my-admin-application-web
+
+3.  The `Web-ContextPath` header declares the web module's web context path.
+    @product@ uses the web context path and the servlet context declared in
+    the `Provide-Capability` header to make the aggregated resource bundle
+    available to the web module's JSPs automatically.
 
         Web-ContextPath:/my-admin-application-web
 

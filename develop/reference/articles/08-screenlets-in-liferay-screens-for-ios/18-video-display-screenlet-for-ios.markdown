@@ -62,8 +62,8 @@ Because images are files, Video Display Screenlet delegates its events to an
 object that conforms to the `FileDisplayScreenletDelegate` protocol. This 
 protocol lets you implement the following methods: 
 
-- `- screenlet:onAssetResponse:`: Called when the Screenlet receives the image 
-  file. 
+- `- screenlet:onFileAssetResponse:`: Called when the Screenlet receives the 
+  image file. 
 
 - `- screenlet:onFileAssetError:`: Called when an error occurs in the process. 
   The `NSError` object describes the error. 

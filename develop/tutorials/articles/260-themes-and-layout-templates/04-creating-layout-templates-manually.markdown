@@ -1,8 +1,8 @@
 # Creating Layout Templates Manually [](id=creating-layout-templates-manually)
 
-You can use the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+You can use the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 to generate Layout Templates automatically. This is covered in the 
-[Layout Templates with the Themes Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0) 
+[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0) 
 tutorial. You may, however, want to create or modify your layout templates manually.
 
 In this tutorial you'll learn how to create or modify a Layout Template manually.
@@ -134,6 +134,6 @@ templates manually!
 
 ## Related Topics [](id=related-topics)
 
-[Layout Templates with the Themes Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)
+[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)

@@ -1,6 +1,6 @@
 # Theme Gulp Tasks [](id=theme-gulp-tasks)
 
-Theme projects created using the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+Theme projects created using the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 have a `gulpfile.js` file that provides several [gulp](https://www.npmjs.com/package/gulp)
 tasks you can execute to manage and deploy your theme.
 
@@ -33,7 +33,7 @@ Here are the gulp tasks you can execute:
         gulp deploy --live -u test@liferay.com -p test
 
 *  `extend`: allows you to specify a base theme to extend. By default, themes
-    created with the [Themes Generator](https://github.com/liferay/generator-liferay-theme)
+    created with the [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
     are based off of the [styled theme](https://www.npmjs.com/package/liferay-theme-styled).
 
     You first are prompted if you want to extend a Base theme or Themelet, then
@@ -61,4 +61,4 @@ Here are the gulp tasks you can execute:
 
 **Related Topics**
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)

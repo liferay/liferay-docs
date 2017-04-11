@@ -3,7 +3,9 @@
 There are several options available for configuring how Liferay's Documents and
 Media library stores files. Each option is a *store* which can be configured
 through the `portal-ext.properties` file by setting the `dl.store.impl=`
-property. Let's consider the ramifications of the various store options. 
+property. Configuring Liferay Documents and Media stores is covered in the 
+[Document Repository Configuration](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration) 
+Deployment Guide. Let's consider the ramifications of the various store options. 
 
 By default, Liferay Portal uses a document library store option called
 Simple File Store to store documents and media files on the file system
@@ -13,7 +15,7 @@ store's default root folder is
 folder from within 
 [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings).
 To access System Settings, open the *Menu*
-(![icon-menu.png](../../images/icon-menu.png))
+(![icon-menu.png](../../../images/icon-menu.png))
 and navigate to *Control Panel &rarr; Configuration &rarr; System Settings*. From
 System Settings, navigate to *Platform* and then search for and select
 the entry *Simple File System Store*. For the store’s *Root dir* value,
@@ -41,11 +43,7 @@ files. The files are stored to the server's file system by default. You
 can optionally configure JCRStore to store files in a database.
 
 **S3Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage
-solution.
-
-There are properties related to document library stores that have been
-moved from `portal-ext.properties` to OSGI configuration files. These are
-described at the end of each store's description below. 
+solution. 
 
 ### Using the File System Store [](id=using-the-file-system-store)
 
@@ -89,16 +87,6 @@ found in the `fileEntryId` column of the same table.
 
 $$$
 
-From `portal-ext.properties`:
-`dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore`
-
-To `osgi/configs`:
-`com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
-
-  Property    Default                   Required
-  ----------- ------------------------- ----------
-  `rootDir`   `data/document_library`   `false`
-
 As you can see, the File System Store binds your documents very closely to
 @product@ and may not be exactly what you want. If you've been using the
 default settings for a while and need to migrate your documents, Liferay
@@ -133,16 +121,6 @@ system must support concurrent requests and file locking. Otherwise, you may
 experience data corruption issues if two users attempt to write to the same file
 at the same time from two different nodes. 
 
-From `portal-ext.properties`:
-`dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore`
-
-To `osgi/configs`:
-`com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
-
-  Property    Default                   Required
-  ----------- ------------------------- ----------
-  `rootDir`   `data/document_library`   `false`
-
 You may decide the advanced file system store for whatever reason doesn't serve
 your needs. If this is the case, you can of course mount other file systems into
 the documents and media library. In addition to this, you can also redefine the
@@ -158,6 +136,21 @@ well. Why? Users might want to create a folder or upload content to the Liferay
 repository. It would be nice if that Liferay repository was connected to a
 clustered CMIS repository by the administrator without having to mount it
 through the UI. The CMIS store allows you to do just that. 
+
++$$$
+
+**Note:** CMIS Store is not suitable for production use and is deprecated as of 
+Liferay Portal CE 7.0 and Liferay DXP. Because it can have performance issues 
+with large repositories, it's recommended that you use one of the other 
+configurations listed above, such as Advanced File System Store, to store your 
+Documents and Media files. This deprecation does not affect the use of external 
+repositories. You can still [connect to external repositories](/discover/portal/-/knowledge_base/7-0/using-external-repositories) 
+using CMIS.
+
+$$$
+
+Follow the Deployment Guide instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#using-the-cmis-store) 
+to use the CMIS Store.
 
 The Liferay repository is connected to CMIS via the CMIS store. As long as all 
 nodes are pointing to your CMIS repository, everything in your Liferay cluster 
@@ -187,52 +180,7 @@ method, and because of this, we don't recommend it for a production system.
 Instead, if you want to use the Java Content Repository in a cluster, you should
 redirect Jackrabbit into your database of choice. You can use the Liferay
 database or another database for this purpose. This requires editing
-Jackrabbit's configuration file.
-
-The default Jackrabbit configuration file has sections commented out for moving
-the Jackrabbit configuration into the database. This has been done to make it as
-easy as possible to enable this configuration. To move the Jackrabbit
-configuration into the database, comment out the sections relating to the
-file system and comment in the sections relating to the database. These by
-default are configured for a MySQL database. If you are using another database,
-you will need to modify the configuration, as there are changes to the
-configuration file that are necessary for specific databases. For example, the
-default configuration uses Jackrabbit's `DbFileSystem` class to mimic a file
-system in the database. While this works well in MySQL, it doesn't work for all
-databases. For example, an Oracle database requires the `OracleFileSystem`. 
-
-Modify the JDBC database URLs so they point to your database. This, of course,
-must be done on all nodes of the cluster. Don't forget to create the database
-first and grant the user ID you are specifying in the configuration file access
-to create, modify, and drop tables. After this, be sure to uncomment the
-`<Cluster/>` section at the bottom of the file. For further information, it's
-best to check out the [Jackrabbit documentation](http://jackrabbit.apache.org).
-
-Once you've configured Jackrabbit to store its repository in a database, the
-next time you bring up Liferay, the necessary database tables are created
-automatically. Jackrabbit, however, does not create indexes on these tables, and
-so over time this can be a performance penalty. To fix this, you must manually
-go into your database and index the primary key columns for all the Jackrabbit
-tables.
-
-From `portal-ext.properties`:
-`dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
-
-To `osgi/configs`:
-`com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg`
-
-  Property                          Default             Required
-  --------------------------------- ------------------- ----------
-  `initializeOnStartup`             `false`             `true`
-  `wrapSession`                     `true`              `true`
-  `moveVersionLabels`               `false`             `true`
-  `workspaceName`                   `liferay`           `true`
-  `nodeDocumentlibrary`             `documentlibrary`   `true`
-  `jackrabbitRepositoryRoot`        `data/jackrabbit`   `true`
-  `jackrabbitConfigFilePath`        `repository.xml`    `true`
-  `jackrabbitRepositoryHome`        `home`              `true`
-  `jackrabbitCredentialsUsername`   none                `true`
-  `jackrabbitCredentialsPassword`   none                `true`
+Jackrabbit's configuration file. This is covered in more detail [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#using-the-jcr-store).
 
 Note that this configuration doesn't perform as well as the advanced file system
 store, because you're storing documents in a database instead of on the file
@@ -246,25 +194,9 @@ documents to the cloud from all nodes, seamlessly.
 
 When you sign up for the service, Amazon assigns you unique keys that link
 you to your account. In Amazon's interface, you can create "buckets" of data
-optimized by region. Once you've created these to your specifications, connect 
-your repository to @product@ by using the properties below. 
-
-From `portal-ext.properties`:
-`dl.store.impl=com.liferay.portal.store.s3.S3Store`
-
-To `osgi/configs`:
-`com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg`
-
-  Property                     Default       Required
-  ---------------------------- ------------- ----------
-  `accessKey`                                `false`
-  `secretKey`                                `false`
-  `s3Region`                   `us-east-1`   `false`
-  `bucketName`                               `true`
-  `s3StorageClass`             STANDARD      `false`
-  `httpClientMaxConnections`   `50`          `false`
-  `cacheDirCleanUpExpunge`     `7`           `false`
-  `cacheDirCleanUpFrequency`   `100`         `false`
+optimized by region. Once you've created these to your specifications, follow 
+the instructions found [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#using-amazon-simple-storage-service) 
+to connect your repository to @product@.
 
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service. 
