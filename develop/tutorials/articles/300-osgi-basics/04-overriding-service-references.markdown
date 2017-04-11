@@ -71,7 +71,7 @@ custom service and service reference configuration you create later.
 Here are the values for LDAP example:
 
 -   *Component*:
-    `com.liferay.portal.security.ldap.internal.model.listener.UserModelListener`
+    `com.liferay.portal.security.ldap.internal.messaging.UserImportMessageListener`
 -   *Reference*: `LdapUserImporter`
 -   *Interface*:
     `com.liferay.portal.security.ldap.exportimport.LDAPUserImporter`
@@ -171,6 +171,6 @@ which in turn binds to your custom service class object to the component!
 
 ## Related Topics [](id=related-topics)
 
-- [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/Finding Extension Points)
+- [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points)
 
 - [Using Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
