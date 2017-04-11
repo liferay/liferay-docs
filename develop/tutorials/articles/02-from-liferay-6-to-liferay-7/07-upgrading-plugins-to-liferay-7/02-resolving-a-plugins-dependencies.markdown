@@ -207,7 +207,13 @@ about this next.
 
 ### Managing Dependencies Manually [](id=managing-dependencies-manually)
 
-Plugins rely on their dependencies being available at compile time and run time. To compile your plugin, you must make sure the dependencies are available in the plugin's `WEB-INF/lib` folder. To run your plugin, you must the dependency Java packages must already be active in @product@'s OSGi framework or the dependency JARs must be included in the WAB generated for the plugin. Your plugin can use the JARs it currently has and packages @product@ exports. 
+Plugins rely on their dependencies' availability at compile time and run time.
+To compile your plugin, you must make sure the dependencies are available in the
+plugin's `WEB-INF/lib` folder. To run your plugin, the container must be able to
+find them: either 1) the dependency Java packages must already be active in
+@product@'s OSGi framework or 2) the dependency JARs must be included in the WAB
+generated for the plugin. Your plugin can use both the JARs it currently has and
+the packages @product@ exports. 
 
 #### Using Packages @product@ Exports [](id=using-packages-liferay-portal-exports)
 
@@ -220,36 +226,44 @@ from adding the JARs to the plugin WAR. This kept the WARs small for deploying
 faster. It was especially useful for deploying WARs remotely or to cluster
 nodes. 
 
-In @product-ver@, The `portal-dependency-jars` property is deprecated and
-behaves differently necessarily. Importing and exporting Java packages has
-replaced wholesale use of JARs. Modules, and WABs, and import packages without
-concerning themselves with JARs. @product-ver@'s
-`LIFERAY_HOME/modules/core/portal-bootstrap/system.extra.bnd` file lists
-packages it exports. 
+In @product-ver@, the `portal-dependency-jars` property is deprecated and
+behaves differently from previous versions. Because importing and exporting Java
+packages has replaced wholesale use of JARs, modules and WABs can import
+packages without concerning themselves with JARs. This means that @product@
+can't make available to plugins the same Java classes it did in the past. For a
+list of packages @product-ver@ exports to modules, look at the
+`[LIFERAY_HOME]/modules/core/portal-bootstrap/system.extra.bnd` file. 
 
-The scenarios below explain how @product-ver@'s Plugins SDK handles JARs listed in a plugin's `portal-dependency-jars` property:
+If you're still using the `portal-dependency-jars` property, you may run into
+one of the scenarios below. Follow the instructions below the scenario to fix
+the issue. 
 
-1.  **@product-ver@ doesn't export any packages from the JAR**
+1.  **I've specified a JAR, but in @product-ver@ none of the classes are
+    available to my plugin.**
  
-Since Liferay Portal 6.2, some JARs have been removed. Specifying any of them in your `portal-dependency-jars` does nothing. Remove these JARs from the `portal-dependency-jars` property. Add each of the JARs to your plugin's `WEB-INF/lib` folder. 
+    Some JARs that Liferay Portal 6.2 used were removed in @product-ver@. If you
+    specify them in your `portal-dependency-jars`, @product@ can't provide them.
+    If you still need them, remove them from the `portal-dependency-jars`
+    property and add the JARs you need to your plugin's `WEB-INF/lib` folder. 
 
-2. **@product-ver@ exports all of the JAR's packages your plugin imports**
+2.  **I've specified JARs, and @product-ver@ also exports all the JAR's packages
+    my plugin imports**
 
-Keep the JAR in your `portal-dependency-jars` list. The Plugins SDK copies the
-JAR to your plugin's `WEB-INF/lib` folder at compile time but refrains from
-adding the JAR to the plugin WAB. The WAB generated for the plugin imports the
-packages from a registered provider at run time. 
+    Keep the JAR in your `portal-dependency-jars` list. The Plugins SDK copies the
+    JAR to your plugin's `WEB-INF/lib` folder at compile time but refrains from
+    adding the JAR to the plugin WAB. The WAB generated for the plugin imports the
+    packages from a registered provider at run time. 
 
-3. **@product-ver@ provides the JAR but doesn't export a package your plugin imports**
+3.  **@product-ver@ provides the JAR but doesn't export a package your plugin imports**
 
-Keep the JAR in your `portal-dependency-jars` property. The Plugins SDK copies
-the JAR to your plugin's `WEB-INF/lib` folder at compile time and adds the JAR
-to the plugin WAB at deployment. 
+    Keep the JAR in your `portal-dependency-jars` property. The Plugins SDK copies
+    the JAR to your plugin's `WEB-INF/lib` folder at compile time and adds the JAR
+    to the plugin WAB at deployment. 
 
 +$$$
 
 **Note**: The portal property `module.framework.web.generator.excluded.paths`
-declares paths of JAR files to be excluded from all @product@ generated WABs.
+declares JAR file paths that are excluded from all @product@ generated WABs.
 All JARs listed for this property are excluded from the WABs, even if the
 plugins listed the JAR in their `portal-dependency-jars` property. Exercise
 great care if you modify the `module.framework.web.generator.excluded.paths`
