@@ -64,18 +64,17 @@ you need permission for the VIEW action on the roles resource).
 - Find the resource whose action you want to use for defining your workflow
     assignment.
 
-How do you go from finding the resource action to using it in the workflow?  Due
-to a [known bug](https://issues.liferay.com/browse/LPS-70462), using Kaleo
-Designer's interface  for setting up a resource action assignment is not
-possible at the time of this writing (Digital Enterprise 7.0 SP1, Fix Pack 12).
-However, you can work around this issue. First design the workflow as completely
-as possible in Kaleo Designer. At the end, when you're ready to add resource
-action assignments, access the XML for the workflow definition in the *Source*
-tab of Kaleo Designer. Copy the contents to a file on your computer and save it.
-Now you can work with the XML definition directly.
+How do you go from finding the resource action to using it in the workflow?  If
+you're running @product@ Fix Pack 13 or greater, use Kaleo Designer's interface
+for setting up a resource action assignment.
 
-In the `<assignments>` element in your workflow task, replace the contents with
-your resource action assignment, so it looks like this:
+When configuring your task node's Assignment, simply select Resource Actions as
+the Assignment Type, then specify the Resource Actions to use for the
+assignment (for example, UPDATE).
+
+![Figure x: Configure resource action assignments in Kaleo Designer.](../../../images/kaleo-designer-resource-action-assignments.png)
+
+Here's what the assignment looks like in the Source (Kaleo XML) tab:
 
     <assignments>
         <resource-actions>
@@ -83,15 +82,13 @@ your resource action assignment, so it looks like this:
         </resource-actions>
     </assignments>
 
-When your workflow definition is finished, navigate to Control Panel &rarr;
-Configuration &rarr; Workflow Definition, and upload your workflow definition
-directly. As usual, assign the workflow to the appropriate workflow enabled
-asset.
+As usual, assign the workflow to the appropriate workflow enabled asset.
 
 Now when the workflow proceeds to the task with the resource action assignment,
 any user with `UPDATE` permissions on the resource (for example, Message Boards
-Messages) will be assigned to it.  Specifically, the user sees the tasks in
-their *My Workflow Tasks* application under the tab *Assigned to My Roles*.
+Messages) will be notified of the task, and can assign it to themselves (if the
+notification is set to Task Assignees).  Specifically, the user sees the tasks
+in their *My Workflow Tasks* application under the tab *Assigned to My Roles*.
 
 Use all upper case letters for resource action names. Here are some common
 resource actions:
@@ -155,6 +152,8 @@ That's the XML that configures resource actions for the Message Boards Message
 entity. Since Message Boards Messages are a workflow enabled entity , you can
 configure resource action assignments for them.
 
+### Scripted Assignments
+
 You also have the option to use a script to manage the assignment. Here's the
 script for the Review task assignment in the Scripted Single Approver workflow
 definition:
@@ -200,9 +199,6 @@ Note the `role = newArrayList<Role>();` line above. In a scripted assignment,
 the `roles` variable is where you specify any roles the task is assigned to. For
 example, when `roles.add(adminRole);` is called, the Administrator role is added
 to the assignment.
-
-It's good to assign a task to a user, and it's even more useful if the user can
-get a notification that something is required in the workflow.
 
 ## Related Topics [](id=related-topics)
 
