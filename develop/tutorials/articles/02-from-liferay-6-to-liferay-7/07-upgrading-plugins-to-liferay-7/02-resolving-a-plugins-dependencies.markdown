@@ -122,7 +122,8 @@ Dependency management tools such as [Ant/Ivy](http://ant.apache.org/ivy/), [Mave
 [Gradle](https://gradle.org/)
 facilitate acquiring Java artifacts that provide packages your plugins need.
 They can download artifacts from public repositories or from internal
-repositories you configure as a proxies. 
+repositories you configure as a proxies. From internal repositories you can
+audit dependencies. 
 
 +$$$
 
