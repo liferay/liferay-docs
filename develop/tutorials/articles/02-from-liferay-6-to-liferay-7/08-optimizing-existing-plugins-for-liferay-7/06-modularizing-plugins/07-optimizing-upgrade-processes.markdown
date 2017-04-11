@@ -1,22 +1,22 @@
 # Migrating Data Upgrade Processes to the New Framework for Modules [](id=optimizing-app-upgrade-processes)
 
 When you make changes to your plugin that affect the database, you can use a
-*data upgrade process* (upgrade process) to upgrade data to the new database
-schema. @product-ver@ has a new data upgrade framework (new framework) for
-modules. While the old framework required several classes, the new framework
-lets you orchestrate the upgrade steps from a single class. Managing the steps
-from one class facilitates developing upgrade processes. The data upgrade
-framework you use depends on your development framework.
+*data upgrade process* to upgrade data to the new database schema. @product-ver@
+has a new data upgrade framework for modules. While the old framework required
+several classes, the new framework lets you orchestrate the upgrade steps from a
+single class. Managing the steps from one class facilitates developing upgrade
+processes. The data upgrade framework you use depends on your development
+framework.
 
 -   If your
     [upgraded plugin](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
-    is a traditional WAR, then you don't need to do anything special; existing
+    is a traditional WAR, you don't need to do anything special; existing
     upgrade processes
     [adapted to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
     work as is. The new data upgrade framework is for modules only. 
 
 -   If you converted your upgraded plugin to a module or you have an upgraded
-    module, any upgrade processes you want to continue using must be migrated to
+    module, you must migrate any upgrade processes you want to continue using to
     the new data upgrade framework. 
 
 You can migrate any number of old upgrade processes (starting with the most
@@ -25,7 +25,7 @@ recent ones) to the new framework. For example, if your module has versions 1.0,
 upgrade, you might migrate upgrade processes for versions 1.2 and 1.3 only. This
 tutorial shows you how to migrate to the new framework. 
 
-Before beginning, make sure you know how to create an upgrade process that uses
+Before beginning, make sure you know how to create an upgrade process that uses 
 the new framework. 
 [Click here](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app) 
 to read the tutorial on creating these upgrade processes. 
@@ -34,7 +34,7 @@ to read the tutorial on creating these upgrade processes.
 
 **Note:** Liferay Portal 6 plugins may also include verify processes. Although 
 you can migrate the verify processes to @product-ver@ without any changes, it's
-a best practice to instead perform any verification in your upgrade processes. 
+a best practice to perform verification in your upgrade processes instead. 
 
 $$$
 
