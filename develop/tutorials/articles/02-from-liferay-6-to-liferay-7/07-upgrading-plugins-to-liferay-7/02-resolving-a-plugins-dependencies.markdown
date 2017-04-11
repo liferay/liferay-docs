@@ -110,15 +110,32 @@ available to your plugin project. The modules your plugin uses must be available
 to it at compile time and run time. Here are two options for resolving module
 dependencies in your traditional plugin project: 
 
-[**Option 1: Use Ivy**](#managing-dependencies-with-ivy)
+[**Option 1: Use a dependency management tool**](#managing-dependencies-with-ivy)
 
 [**Option 2: Manage dependencies manually**](#managing-dependencies-manually)
 
 The next sections explain and demonstrate these options. 
 
-### Managing Dependencies with Ivy [](id=managing-dependencies-with-ivy)
+### Using a Dependency Management Tool [](id=managing-dependencies-with-ivy)
 
-Apache Ivy provides an elegant approach to managing dependencies. You declare
+Dependency management tools such as [Ant/Ivy](http://ant.apache.org/ivy/), [Maven](/develop/tutorials/-/knowledge_base/7-0/maven), and
+[Gradle](https://gradle.org/)
+facilitate acquiring Java artifacts that provide packages your plugins need.
+They can download artifacts from public repositories or from internal
+repositories you configure as a proxies. 
+
++$$$
+
+The following links provide proxy details:
+
+- [Ant/Ivy](http://ant.apache.org/ivy/) - See documentation on proxy configuration, the `Setproxy` task, and [resolvers](http://ant.apache.org/ivy/history/latest-milestone/settings/resolvers.html)
+- [Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
+- [Liferay Workspace \(Gradle\)](/develop/tutorials/-/knowledge_base/7-0/setting-proxy-requirements-for-liferay-workspace)
+- [Setting proxies in Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/setting-proxy-requirements-for-liferay-ide)
+
+$$$
+
+The Liferay Plugins SDK provides an Ant/Ivy infrastructure. You declare
 your dependencies in an `ivy.xml` file in your plugin project's root folder. The
 Plugins SDK's Ant tasks leverage the `ivy.xml` file and the Plugins SDK's Ivy 
 scripts to download the specified modules and their dependencies and make them 
@@ -127,7 +144,14 @@ available to your plugin.
 +$$$
 
 **Note**: You can use Gradle or Maven in place of Ivy for dependency management, 
-but this isn't in this tutorial's scope. 
+but this isn't in this tutorial's scope. Liferay's
+[Maven](/develop/tutorials/-/knowledge_base/7-0/maven) and
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+tutorials demonstrate using these tools. 
+
+Additionally, Liferay Workspace provides a command for migrating Ant/Ivy
+projects to Gradle-based Liferay Workspace projects. See the tutorial
+[Migrating Traditional Plugins to Workspace Web Applications](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications).
 
 $$$
 
