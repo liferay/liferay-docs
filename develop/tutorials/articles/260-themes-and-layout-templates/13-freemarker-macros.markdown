@@ -72,7 +72,7 @@ Now you know how to use @product@'s FreeMarker macros in your theme templates!
 
 ## Related Topics [](id=related-topics)
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 

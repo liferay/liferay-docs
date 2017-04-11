@@ -20,7 +20,7 @@ that serve your needs best. Keep reading to find out how.
 In these tutorials, learn to 
 
 - create a module that adds a *Time* form field type with a timepicker
-- learn to add custom configuration options to your field types (coming soon!)
+- add custom configuration options to your field types
 
 +$$$
 

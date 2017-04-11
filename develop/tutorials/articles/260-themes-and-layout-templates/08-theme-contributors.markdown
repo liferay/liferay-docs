@@ -84,7 +84,7 @@ The UI contributions affect every page and aren't affected by theme deployments.
 
 ## Related Topics [](id=related-topics)
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 

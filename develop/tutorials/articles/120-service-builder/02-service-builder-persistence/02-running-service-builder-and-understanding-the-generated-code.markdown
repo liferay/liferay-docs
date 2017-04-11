@@ -75,6 +75,11 @@ folder, if necessary (e.g., `../../gradlew buildService`).
 
 $$$
 
+If your module project uses Maven, you can build services running the following
+command from the module project's root folder:
+
+    mvn service-builder:build
+
 When the service has been successfully generated, a `BUILD SUCCESSFUL` message
 appears in your terminal window. You should also see that a large number of
 files have been generated in your project. These files include a model layer,

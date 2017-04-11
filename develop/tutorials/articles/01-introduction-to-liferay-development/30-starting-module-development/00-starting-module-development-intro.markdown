@@ -179,7 +179,7 @@ Here's the Blade samples command syntax:
 
     blade samples <sampleName>
 
-Samples are created to the `samples` folder.
+It creates the sample project in a subfolder of the current folder. 
 
 Building a module and deploying it to @product@ is easy.
 
