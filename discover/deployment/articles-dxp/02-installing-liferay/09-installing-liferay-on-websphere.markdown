@@ -130,14 +130,7 @@ follow the instructions
 ### Setting up JVM Parameters for Liferay DXP [](id=setting-up-jvm-parameters-for-liferay-dxp)
 
 Next, in the WebSphere profile you created for @product@, you must set an 
-argument that supports @product@'s Java memory requirements. You'll modify this 
-file: 
-
-    [Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/nodes/your-node/servers/your-server/server.xml
-
-Add `maximumHeapSize="2048"` inside the `jvmEntries` tag. For example: 
-
-    <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ... maximumHeapSize="2048">
+argument that supports @product@'s Java memory requirements. In administrative console click Servers -> Server Types -> WebSphere application servers -> [Your Server] -> Process definition -> Java Virtual Machine and set Maximum heap size to 2048 MB.
 
 +$$$
 
@@ -214,6 +207,10 @@ The following folders should be present within the `/liferay/osgi` folder:
 
 Once you've installed these dependencies, start the server profile you created 
 for @product@. Once it starts, you're ready to configure your database. 
+
+**Note:** Instead of copying Liferay's dependency files to the WebSphere's global classpath folder you can copy the files to your preferred location, create a shared library in the administrative console (Environment -> Shared libraries) and refer to that library in your webapp configuration (Applications -> Application Types -> WebSphere enterprise applications -> [Liferay webapp] -> Shared library references).
+
+
 
 ## Database Configuration [](id=database-configuration)
 
