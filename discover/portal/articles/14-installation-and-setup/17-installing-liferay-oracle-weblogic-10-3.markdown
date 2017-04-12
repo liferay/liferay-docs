@@ -135,7 +135,11 @@ data source and mail session from Liferay Portal.
 
 		mail.session.jndi.name=mail/MailSession
 
-2. Lastly, you must provide WebLogic a reference to Java Server Faces (JSF) to
+2. In order for special characters and other languages to display correctly, you
+must set `-Dfile.encoding=utf8` under `JAVA_OPTIONS` in the `setDomainEnv` file.
+
+
+3. Lastly, you must provide WebLogic a reference to Java Server Faces (JSF) to
    use that library. Insert the following deployment descriptor within the
    `<weblogic-web-app>` element of `WEB-INF/weblogic.xml` found in your Liferay
    Portal `.war` :
