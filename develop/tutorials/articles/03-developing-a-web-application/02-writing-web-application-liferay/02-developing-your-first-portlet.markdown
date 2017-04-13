@@ -268,11 +268,7 @@ robust mechanism for saving application data in the  *Service Builder* learning 
 
 $$$
 
-The following method implements adding a guestbook entry to a Configuration 
-category called `guestbook-entries`:
-
-
-Create a Java interface that will represent the configuration, with one method per existing preference.
+Create a Java interface that will represent the configuration, which will define all of your configuration fields using the @Meta.OCD annotation.
 
 	@ExtendedObjectClassDefinition(
 	    category = "guestbook-entries",
@@ -282,23 +278,27 @@ Create a Java interface that will represent the configuration, with one method p
 	    id = "com.liferay.docs.guestbook.GuestbookGroupServiceConfiguration",
 	)
 	public interface GuestbookGroupServiceConfiguration {
-	    @Meta.AD(deflt = "", required = false)
-	    public String displayStyle();
+		
+	    @Meta.AD(deflt = "", required = true)
+		public string userName();
 
-	    @Meta.AD(deflt = "0", required = false)
-	    public long displayStyleGroupId(long defaultDisplayStyleGroupId);
+	    @Meta.AD(deflt = "", required = true)		
+		public string message();
+		
+	    @Meta.AD(deflt = "", required = true)
+		public string entry();
 	}
 
 
 Create one class that implements the Configuration Bean Declaration interface to let the Configuration framework know about the Configuration class.
 
 	@Component
-	public class [PortletName]GroupServiceConfigurationBeanDeclaration
+	public class GuestbookGroupServiceConfigurationBeanDeclaration
         implements ConfigurationBeanDeclaration {
 
     @Override
     public class getConfigurationBeanClass() {
-        return [[PortletName]GroupServiceConfiguration.class;
+        return GuestbookGroupServiceConfiguration.class;
     	}
 
 	}	
@@ -308,16 +308,10 @@ Change the configuration JSP to retrieve the configuration using the
 Configuration API. If the scope is “Portlet Instance” the configuration can be 
 retrieved from portletDisplay:
 
-	[PortletName]PortletInstanceConfiguration portletInstanceConfiguration = 
+	GuestbookPortletInstanceConfiguration portletInstanceConfiguration = 
     	portletDisplay.getPortletInstanceConfiguration(
-       	 [PortletName]PortletInstanceConfiguration.class);
+       	 GuestbookPortletInstanceConfiguration.class);
 
-Once the configuration object is obtained, the individual preferences can now be changed from this:
-
-	String displayStyle = portletPreferences.getValue("displayStyle", defaultValue);
-… to this …
-
-	String displayStyle = v.displayStyle();
 
 Finally it is usually necessary to read the configuration from Java classes or other JSPs. In cases where the portletDisplay is not available, or when the scope is “Group” or “Company”, the PortletProvider class offers methods to obtain the configuration. The best way to access the PortletProvider depends on who is making the invocation:
 
@@ -328,57 +322,13 @@ Within an OSGi Component a reference to the ConfigurationProvider can be obtaine
 
          protected void methodWhichNeedsConfiguration() {
                _configurationProvider.getGroupConfiguration(
-                    [PortletName]GroupServiceConfiguration.class, groupId);
+                    GuestbookGroupServiceConfiguration.class, groupId);
          }
 
             @Reference
             private ConfigurationProvider _configurationProvider;
        }
 
-
-OLD:
-    public void addEntry(ActionRequest request, ActionResponse response) {
-        try {
-            PortletPreferences prefs = request.getPreferences();
-
-            String[] guestbookEntries = prefs.getValues("guestbook-entries",
-                    new String[1]);
-
-            ArrayList<String> entries = new ArrayList<String>();
-
-            if (guestbookEntries != null) {
-                entries = new ArrayList<String>(Arrays.asList(prefs.getValues(
-                        "guestbook-entries", new String[1])));
-            }
-
-            String userName = ParamUtil.getString(request, "name");
-            String message = ParamUtil.getString(request, "message");
-            String entry = userName + "^" + message;
-
-            entries.add(entry);
-
-            String[] array = entries.toArray(new String[entries.size()]);
-
-            prefs.setValues("guestbook-entries", array);
-
-            try {
-                prefs.store();
-            }
-            catch (IOException ex) {
-                Logger.getLogger(GuestbookPortlet.class.getName()).log(
-                        Level.SEVERE, null, ex);
-            }
-            catch (ValidatorException ex) {
-                Logger.getLogger(GuestbookPortlet.class.getName()).log(
-                        Level.SEVERE, null, ex);
-            }
-
-        }
-        catch (ReadOnlyException ex) {
-            Logger.getLogger(GuestbookPortlet.class.getName()).log(
-                    Level.SEVERE, null, ex);
-        }
-    }
 
 First, the preferences are retrieved, and then the `guestbook-entries`
 preference is retrieved and converted to an `ArrayList` so that you can add an

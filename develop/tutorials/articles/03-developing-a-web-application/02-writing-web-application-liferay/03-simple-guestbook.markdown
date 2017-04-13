@@ -84,11 +84,11 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
         public void render(RenderRequest renderRequest, RenderResponse renderResponse)
                 throws PortletException, IOException {
 
-            PortletPreferences prefs = renderRequest.getPreferences();
-            String[] guestbookEntries = prefs.getValues("guestbook-entries",
-                    new String[1]);
+			GuestbookPortletInstanceConfiguration gradebookPortletInstanceConfiguration = 
+		    	portletDisplay.getPortletInstanceConfiguration(
+		       	 GuestbookPortletInstanceConfiguration.class);
 
-            if (guestbookEntries != null) {
+            if (gradebookPortletInstanceConfiguration != null) {
                 List<Entry> entries = parseEntries(guestbookEntries);
 
                 renderRequest.setAttribute("entries", entries);
