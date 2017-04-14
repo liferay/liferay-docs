@@ -85,7 +85,7 @@ You can find a complete reference for what these properties mean by viewing the
 ### Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
 
 Your next task is to review your Documents and Media configuration. Look at
-[`Document Library documentation`](/discover/portal/-/knowledge_base/7-0/repository-types#document-library-store-options)
+[Document Library documentation](/discover/portal/-/knowledge_base/7-0/liferay-repository-types)
 to see all the options in @product-ver@ before executing an upgrade process. There
 are, however, two important pieces of configuration that have changed: 
 * The way you specify the location for the file store is no longer in the
@@ -106,6 +106,8 @@ you'd call that file
 
 The name of the configuration file matches the name of the class that implements
 the configuration. 
+
+For more information about the other available stores, look at [Document Repository Configuration](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration).
 
 ### Install the New Version of @product@
 
