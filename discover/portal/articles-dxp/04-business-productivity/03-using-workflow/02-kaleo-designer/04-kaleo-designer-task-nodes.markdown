@@ -75,7 +75,7 @@ When configuring your task node's Assignment, select Resource Actions as the
 Assignment Type, then specify the Resource Actions to use for the assignment
 (for example, UPDATE).
 
-![Figure x: Configure resource action assignments in Kaleo Designer.](../../../images/kaleo-designer-resource-action-assignments.png)
+![Figure 2: Configure resource action assignments in Kaleo Designer.](../../../../images-dxp/kaleo-designer-resource-action-assignment.png)
 
 Here's what the assignment looks like in the Source (Kaleo XML) tab:
 
@@ -109,7 +109,7 @@ for that resource. For example, in Message Boards, one of the permissions
 displayed on that screen is *Add Discussion*. Convert that to all uppercase and
 replace the space with an underscore, and you have the action name. 
 
-### Scripted Assignments
+### Scripted Assignments [](id=scripted-assignments)
 
 You can also use a script to manage the assignment. Here's the
 script for the Review task assignment in the Scripted Single Approver workflow
