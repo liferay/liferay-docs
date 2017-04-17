@@ -5,7 +5,7 @@ By default, the
 is normally used to present internationalized JSF views is based on the
 web-browser's locale settings. In order to use the portal user's language
 preference, Liferay Faces Portal automatically registers the
-[`LiferayLocalePhaseListener`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/portal/src/main/java/com/liferay/faces/portal/lifecycle/LiferayLocalePhaseListener.java).
+[`LiferayLocalePhaseListener`](https://github.com/liferay/liferay-faces-portal/blob/3.0.0/portal/src/main/java/com/liferay/faces/portal/lifecycle/LiferayLocalePhaseListener.java).
 This phase listener modifies the locale inside the
 [`UIViewRoot`](http://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/javax/faces/component/UIViewRoot.html),
 based on the user's language preference, which is accessed via the

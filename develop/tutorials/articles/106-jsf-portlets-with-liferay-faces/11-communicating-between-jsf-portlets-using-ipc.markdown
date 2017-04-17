@@ -4,8 +4,8 @@ Liferay Faces Bridge supports Portlet 2.0 Inter Portlet Communication (IPC),
 using the JSR 329/378 approach for supporting Portlet 2.0 Events and Portlet 2.0
 Public Render Parameters. 
 
-You can visit the [Liferay Faces
-Demos](http://www.liferay.com/community/liferay-projects/liferay-faces/demos)
+You can visit the
+[Liferay Faces Demos](http://www.liferay.com/community/liferay-projects/liferay-faces/demos)
 home page to see portlets that demonstrate the IPC techniques described in this
 tutorial. At that location, you'll also find portlets that implement Ajax Push
 for IPC, using ICEfaces+ICEPush and PrimeFaces+PrimePush. 
@@ -48,7 +48,7 @@ JSF model managed-beans) after the `RESTORE_VIEW` phase completes. This is
 accomplished by evaluating the EL expressions found in the
 `<model-el>...</model-el>` section of the `WEB-INF/faces-config.xml` descriptor.
 The
-[`faces-config.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-pub-render-params-portlet/src/main/webapp/WEB-INF/faces-config.xml)
+[`faces-config.xml`](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-pub-render-params-portlet/src/main/webapp/WEB-INF/faces-config.xml)
 descriptor excerpt below demonstrates using this mechanism for the example
 Customers and Bookings portlets:
 
@@ -108,8 +108,8 @@ in the `WEB-INF/portlet.xml` descriptor:
 +$$$
 
 **Note:** For a complete example demonstrating public render parameters and a
-`bridgePublicRenderParameterHandler`, see the [JSF2 IPC Public Render Parameters
-Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/bridge/jsf2-ipc-pub-render-params-portlet)
+`bridgePublicRenderParameterHandler`, see the
+[JSF2 IPC Public Render Parameters Portlet](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-pub-render-params-portlet)
 demo on GitHub.
  
 $$$
@@ -137,7 +137,7 @@ the `bookingsPortlet` portlet, that portlet publishes the event and the
 `customersPortlet` portlet is notified for processing the event. 
 
 Here's a snippet from the Customers portlet's
-[`portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet/src/main/webapp/WEB-INF/portlet.xml)
+[`portlet.xml`](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-customers-portlet/src/main/webapp/WEB-INF/portlet.xml)
 descriptor: 
 
     <portlet>
@@ -159,7 +159,7 @@ descriptor:
     </event-definition>
 
 The snippet from the Bookings portlet's
-[`portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-events-bookings-portlet/src/main/webapp/WEB-INF/portlet.xml)
+[`portlet.xml`](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-bookings-portlet/src/main/webapp/WEB-INF/portlet.xml)
 is similar, except it is specified as a publisher: 
 
     <portlet>
@@ -189,7 +189,7 @@ necessary.
 When the customer's details (such as first name/last name) are edited in the
 Bookings portlet, the event named `ipc.customerEdited` is sent back to the
 Customers portlet and is processed by the following
-[`CustomerEditedEventHandler`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet/src/main/java/com/liferay/faces/demos/event/CustomerEditedEventHandler.java)
+[`CustomerEditedEventHandler`](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-customers-portlet/src/main/java/com/liferay/faces/demos/event/CustomerEditedEventHandler.java)
 class: 
 
     ...
@@ -222,7 +222,7 @@ class:
 And here's the descriptor for registering the `CustomerEditedEventHandler` class
 as a bridge event handler for the Customers portlet. The following
 `<init-param>` belongs in the Customers portlet's `<portlet>` element, in the
-[`WEB-INF/portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet/src/main/webapp/WEB-INF/portlet.xml)
+[`WEB-INF/portlet.xml`](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-customers-portlet/src/main/webapp/WEB-INF/portlet.xml)
 descriptor. 
 
     <init-param>
@@ -232,11 +232,10 @@ descriptor.
 
 +$$$
 
-**Note:** For a complete example demonstrating JSF 2 IPC events, see the [JSF2
-IPC Events -
-Customers](https://github.com/liferay/liferay-faces/tree/3.2.4-ga5/demos/bridge/jsf2-ipc-events-customers-portlet)
-and [JSF2 IPC Events -
-Bookings](https://github.com/liferay/liferay-faces/tree/3.2.4-ga5/demos/bridge/jsf2-ipc-events-bookings-portlet)
+**Note:** For a complete example demonstrating JSF 2 IPC events, see the
+[JSF2 IPC Events - Customers](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-customers-portlet)
+and
+[JSF2 IPC Events - Bookings](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-bookings-portlet)
 demo portlets on GitHub. 
 
 $$$

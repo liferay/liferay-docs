@@ -290,7 +290,7 @@ file:
 4. In order for JSF 2.1 portlets to deploy correctly in WebLogic, the
    `WEB-INF/weblogic.xml` descriptor must be configured to fine-tune how class
    loading takes place. For a working example, please refer to the
-   [weblogic.xml](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/weblogic.xml)
+   [weblogic.xml](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-applicant-portlet/src/main/webapp/WEB-INF/weblogic.xml)
    descriptor from a demo JSF portlet. 
 
 5. Due to a deficiency in the XML parser that ships with WebLogic, it is

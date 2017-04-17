@@ -124,7 +124,7 @@ implementing this permission check in the guestbook.
     entity.
     
     The method uses the
-    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces/blob/master/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
+    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces-portal/blob/3.0.0/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
     to grab the
     [`ThemeDisplay`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/theme/ThemeDisplay.java),
     and then checks if the user has the appropriate permissions to view the

@@ -58,9 +58,9 @@ Turning off the parameter namespace requirement is all you need to do to upgrade
 your JSF portlets to Liferay Faces 3.2 or 4.2, for use in Liferay Portal 6.2. 
 
 As an example JSF portlet that runs on Liferay Portal 6.2, check out the
-[demo JSF2-portlet](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet)
+[demo JSF Applicant portlet](https://github.com/liferay/liferay-faces-bridge-impl/tree/3.0.0/demo/jsf-applicant-portlet)
 and its 
-[`liferay-portlet.xml`](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/liferay-portlet.xml)
+[`liferay-portlet.xml`](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-applicant-portlet/src/main/webapp/WEB-INF/liferay-portlet.xml)
 file. 
 
 Your `liferay-portlet.xml` file is now migrated to Liferay Faces 3.2/4.2.

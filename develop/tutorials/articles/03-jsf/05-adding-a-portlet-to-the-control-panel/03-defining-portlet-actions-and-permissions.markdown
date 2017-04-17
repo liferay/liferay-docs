@@ -234,7 +234,7 @@ Guestbook Admin's `view.xhtml` file, which you'll create in the next section.
     that can be granted to users. For example, the `getUpdateable()` method
     checks if the current user has the appropriate permissions to use the Edit
     action button for the guestbook. The method uses the
-    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces/blob/master/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
+    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces-portal/blob/3.0.0/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
     to grab the
     [`ThemeDisplay`](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-service/src/com/liferay/portal/theme/ThemeDisplay.java),
     and then checks if the user has the appropriate permissions to access the

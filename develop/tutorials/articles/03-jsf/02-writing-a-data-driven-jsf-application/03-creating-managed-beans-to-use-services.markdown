@@ -73,7 +73,7 @@ Now you're ready to create  the `AbstractBacking` class.
 
     These two methods deal with the success and error messaging of your
     guestbook portlet. They both create an instance of
-    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces/blob/master/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
+    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces-portal/blob/3.0.0/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
     and add the success/error messaging to it. You'll use the
     `LiferayFacesContext` throughout your Guestbook and Entry beans, and now
     it'll be equipped with success/error messaging. 
@@ -283,7 +283,7 @@ methods to the guestbook bean.
     These methods deal directly with the `Guestbook` entities, and are triggered
     from the views, which you'll create later. Notice the `add()` and `save()`
     methods use
-    [LiferayFacesContext](https://github.com/liferay/liferay-faces/blob/master/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
+    [LiferayFacesContext](https://github.com/liferay/liferay-faces-portal/blob/3.0.0/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
     to set certain parameters. You can visit the
     [Using the LiferayFacesContext with Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/using-the-liferayfacescontext-with-liferay-faces-portal)
     tutorial for more information on how the `LiferayFacesContext` can be used.
