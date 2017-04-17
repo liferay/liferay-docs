@@ -17,7 +17,7 @@ Lastly, system administrators should also sign up for a Dynatrace account if
 they have not already done so; this way they get access to Dynatrace's support
 teams.
 
-## Dashboards [](id=dashboards)
+## Dashboards 
 
 Multiple dashboards are available to display ongoing transactions and processes.
 Because the entire @product@ stack can be analyzed, there are dashboards for
@@ -38,8 +38,10 @@ usage, memory, and more.
 
 Returning to the root level allows administrators to view performance metrics
 from other parts of the environment. For example, clicking MySQL shows database
-transactions. Deploying a separate database agent is optional because the
-Dynatrace Collector contains database management functionality out of the box. (See [Database Monitoring](https://community.dynatrace.com/community/display/DOCDT65/Database+Monitoring).)
+transactions, which you can do without installing an agent: deploying a 
+separate database agent is optional because the Dynatrace Collector contains 
+database management functionality out of the box (see 
+[Database Monitoring](https://community.dynatrace.com/community/display/DOCDT65/Database+Monitoring).
 
 
 ![Figure 3: Database transactions can be viewed as they happen.](../../images-dxp/dynatrace04-db.png)
@@ -47,16 +49,18 @@ Dynatrace Collector contains database management functionality out of the box. (
 One available default dashboard tracks user experience; Dynatrace can monitor
 user activity on a web browser or mobile app. There are three categories for
 each visit: Satisfied, Tolerating, and Frustrated. According to Dynatrace, a
-satisfied visit is defined as 1) no action failed; and 2) more than 50% of all
+satisfied visit is one in which 1) no action failed; and 2) more than 50% of all
 actions were satisfied. On the other end of the spectrum, a frustrated visit is
-defined as 1) The last action failed (the web site does not work); 2) Their last
-action was frustrated (the web site was too slow). (See [How Does UEM Work?](https://community.dynatrace.com/community/pages/viewpage.action?pageId=221381305#HowDoesUEMWork) for more information.)
+one in which 1) the last action failed (the web site does not work); and 2) the 
+user's lastaction was frustrated (the web site was too slow). See 
+[How Does UEM Work?](https://community.dynatrace.com/community/pages/viewpage.action?pageId=221381305#HowDoesUEMWork) 
+for more information. 
  
 
 ![Figure 4: Browser metrics help you find client-side performance problems.](../../images-dxp/dynatrace05-visits.png)
 
-If you have created a custom dashboard (usually in XML format; see more
-information below on the FastPack developed for Liferay), you can import them
+If you have created a custom dashboard (usually in XML format; more
+information is below on the FastPack developed for Liferay), you can import it
 through on this menu.
 
 1. Click the _Dashboard_ menu &rarr; _Open_. 
@@ -65,21 +69,21 @@ through on this menu.
 
 3. Click _Open Dashboard_.
 
-## Liferay Digital Enterprise FastPack [](id=liferay-digital-enterprise-fastpack)
+## Liferay Digital Enterprise FastPack 
 
-The Dynatrace FastPack for provides a pre-configured Dynatrace
-profile custom tailored to Liferay Digital Enterprise 7.0 environments. This FastPack contains
+The Dynatrace FastPack for Liferay provides a pre-configured Dynatrace
+profile custom-tailored for Liferay Digital Enterprise 7.0 environments. It contains
 sensors, a template system profile with measures and business transactions, and
-dashboards for the Liferay Portal platform. If you are using UEM, you will also
-get conversion and visitor tagging. The focus of the fastpack is page
-performance in relation to the portlets utilized on a page.
+dashboards for the @product@ platform. If you're using UEM, you also
+get conversion and visitor tagging. 
 
 The Liferay Digital Enterprise FastPack is available for download on the 
 [Dynatrace site](https://community.dynatrace.com/community/display/DL/Liferay+Digital+Enterprise+FastPack). 
  These dashboards go beyond the out of the box dashboards already
 available through Dynatrace. 
 
-Once downloaded from the Dynatrace site, the fastpack is a `.dtp` file. To install the fastpack:
+The fastpack is distributed as a `.dtp` file. To install the fastpack, follow 
+these steps:
 
 1. In the Dynatrace Client, click _Tools_ &rarr;_ Manage Plugins_.
 
@@ -95,32 +99,33 @@ Once downloaded from the Dynatrace site, the fastpack is a `.dtp` file. To insta
 
 7. Disable any other profile so that the Liferay profile is the only active profile.
 
-## Dynatrace Client Configuration [](id=dynatrace-client-configuration)
+## Dynatrace Client Configuration 
 
 As a prerequisite to running both the latest Dynatrace Client and @product@,
 Java JDK 1.8 (or its equivalent) must be installed. Be sure to have enough CPU
-cores allocated in the JVM as well as for running @product@. (Install the Fastpack
-plugin _after_ the Client has been configured.)
+cores allocated in the JVM as well as for running @product@. Install the Fastpack
+plugin _after_ the Client has been configured.
 
 1.  Install the Dynatrace environment. Follow the steps from the
     [Dynatrace Installation Step 1](https://community.compuwareapm.com/community/display/EVAL/Step+1+-+Download+and+install+dynaTrace). 
     The installation files are available for Windows, Unix, and Linux systems.
 
-    Windows users, download then install the full `dynatrace-full-6.5.0.1289-x86-64.msi` file found
-    [here](https://files.dynatrace.com/downloads/OnPrem/dynaTrace/6.5/6.5.0.1289/index.html)
+    Windows users, download then install the full `.msi`
+    [file](https://files.dynatrace.com/downloads/appmon/freetrial/dynatrace-full-x86-64.msi)
     (approx. 770MB). 
 
-       I. Be sure to check *Immediately activate the Dynatrace .NET agent*.    
-       II. Be sure to check *Immediately activate the Dynatrace IIS agent*.    
-       III. Be sure to start all three: Dynatrace Server, Collector, and Client. 
+       I. Be sure to check *Immediately activate the Dynatrace .NET agent*. 
+       II. Be sure to check *Immediately activate the Dynatrace IIS agent*. 
+       III. Be sure to start all three: Dynatrace Server, Collector, and Client 
 
     Linux users, the installation files are packaged as executable jar. Download
-    the full `dynatrace-full-linux-x86-64.jar` located [here](https://files.dynatrace.com/downloads/OnPrem/dynaTrace/6.5/6.5.0.1289/index.html).
+    the full
+    [jar](https://files.dynatrace.com/downloads/appmon/freetrial/dynatrace-full-linux-x86-64.jar).
     Run the command `java -jar dynatrace-full-linux-x86-64.jar` wherever the jar
     has been downloaded. 
 
 2.  Start the Dynatrace instance and deploy the Dynatrace trial license (see
-below). 
+    below). 
 
     a. Request the Dynatrace license key; the key is available either through
     your web credentials or from a link in the welcome email. Place the file in
@@ -164,7 +169,7 @@ below).
 
 Congratulations! You have the Dynatrace client installed! 
 
-### Dynatrace Agent Configuration [](id=dynatrace-agent-configuration)
+### Dynatrace Agent Configuration 
 
 Deploy the Dynatrace agent to the @product@ servers. The agent sits on top of existing
 infrastructure (in this case, Apache Tomcat). 
@@ -213,8 +218,41 @@ infrastructure (in this case, Apache Tomcat).
 
 5.  Then your Liferay agent starts sending data into the newly imported profile.
 
+## Performance Testing 
 
-## Resources [](id=resources)
+Systems administrators often have to perform load testing as part of the overall
+tuning process. The Dynatrace Client is a great tool to monitor and then analyze
+the performance testing process. For demonstration purposes, while using Jmeter
+to create a simple load test, the Dynatrace Client shows the real time results
+and offers administrators a functionality to create thread dumps.
+
+![Figure 5: Dynatrace Client can generate thread dump reports.](../../images-dxp/dynatrace10-thread-dump.png)
+
+Garbage collection monitoring is very important and the Dynatrace Client has the
+ability to watch in real time as the number of threads increase drastically
+during the load test.
+
+![Figure 6: Garbage collection statistics at the beginning of the load test.](../../images-dxp/dynatrace07.png)
+
+Here, the Dynatrace Client continues to display in real time the high
+consumption during the load test.
+
+![Figure 7: Garbage collection statistics at the middle of the load test.](../../images-dxp/dynatrace08.png)
+
+
+One more dashboard of note during a performance test is the CPU Sampling
+dashboard. The image below is a report generated to capture the CPU process in a
+100 seconds period. This is helpful during analysis if administrators unwanted
+processes that are slowing down a @product@ instance.
+
+![Figure 8: Dynatrace Client can generate a CPU Sampling report.](../../images-dxp/dynatrace09-cpu-samplings.png)
+
+All these dashboards come out of the box and even more dashboards are available
+after deploying the Dynatrace FastPack developed for @product@. Thus, you can
+see some of the advantages in using Dynatrace as part of your performance
+monitoring.
+
+## Resources 
 
 1. [Dynatrace Community](https://community.compuwareapm.com) 
 2. [Dynatrace Installation Step 1](https://community.compuwareapm.com/community/display/EVAL/Step+1+-+Download+and+install+dynaTrace)
