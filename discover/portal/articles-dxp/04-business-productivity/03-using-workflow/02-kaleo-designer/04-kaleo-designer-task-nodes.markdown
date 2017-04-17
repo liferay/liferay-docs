@@ -72,7 +72,7 @@ When configuring your task node's Assignment, simply select Resource Actions as
 the Assignment Type, then specify the Resource Actions to use for the
 assignment (for example, UPDATE).
 
-![Figure x: Configure resource action assignments in Kaleo Designer.](../../../images/kaleo-designer-resource-action-assignments.png)
+![Figure 2: Configure resource action assignments in Kaleo Designer.](../../../../images-dxp/kaleo-designer-resource-action-assignment.png)
 
 Here's what the assignment looks like in the Source (Kaleo XML) tab:
 
@@ -152,7 +152,7 @@ That's the XML that configures resource actions for the Message Boards Message
 entity. Since Message Boards Messages are a workflow enabled entity , you can
 configure resource action assignments for them.
 
-### Scripted Assignments
+### Scripted Assignments [](id=scripted-assignments)
 
 You also have the option to use a script to manage the assignment. Here's the
 script for the Review task assignment in the Scripted Single Approver workflow
