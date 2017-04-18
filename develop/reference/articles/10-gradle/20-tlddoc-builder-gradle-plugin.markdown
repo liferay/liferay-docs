@@ -198,7 +198,7 @@ Property Name | Type | Default Value | Description
 `fullChecking` | `boolean` | `true` | Whether to enable full schema checking.
 `lenient` | `boolean` | `false` | Whether to only check if the XML document is well-formed.
 <a name="xmlparserclassname"></a>`xmlParserClassName` | `String` | `null` | The class name of the XML parser to use.
-<a name="xmlparserclasspath"></a>`xmlParserClasspath` | `FileCollection` | `null` | The classpath where to find the XML parser.
+<a name="xmlparserclasspath"></a>`xmlParserClasspath` | `FileCollection` | `null` | The classpath with the XML parser.
 
 It is possible to use Closures and Callables as values for the `String`
 properties to defer evaluation until task execution.
@@ -220,12 +220,12 @@ dependencies {
 }
 ```
 
-### XML Parser Dependency
+### XML Parser Dependency [](id=xml-parser-dependency)
 
-By default, the plugin creates a configuratiokn called `xmlParser` and adds a
-dependency to the 0.12.5 version of [XML Resolver](http://xmlresolver.org/). It
-is possible to override this setting and use a specific version of the tool by
-manually adding a dependency to the `xmlParser` configuration:
+By default, the plugin creates a configuration called `xmlParser` and adds a
+dependency to the 0.12.5 version of the [XML Resolver](http://xmlresolver.org/).
+It is possible to override this setting and use a specific version of the tool
+by manually adding a dependency to the `xmlParser` configuration:
 
 ```gradle
 dependencies {
