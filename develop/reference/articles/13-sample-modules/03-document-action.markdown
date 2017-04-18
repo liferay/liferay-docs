@@ -1,4 +1,4 @@
-# Document Action
+# Document Action [](id=document-action)
 
 The Document Action sample shows how to add a context menu option to an entry in
 the Documents and Media portlet. When deploying this sample with no
@@ -36,7 +36,7 @@ There are four Java classes used in this sample:
    [GenericPortlet](https://portals.apache.org/pluto/portlet-2.0-apidocs/javax/portlet/GenericPortlet.html).
    This class generates what is shown when the context menu option is selected.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
    
 There are three different versions of this sample, each built with a different
 build tool:
