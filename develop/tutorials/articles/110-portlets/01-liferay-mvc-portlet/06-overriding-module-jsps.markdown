@@ -4,10 +4,10 @@ Liferay applications often contain JSPs. Sometimes you might need to override
 one of them. If you need to override the JSPs from a module deployed to the OSGi
 runtime, you need a fragment module that does two things:
 
--  Specifies a host module's symbolic name and version in the OSGi header `Fragment-Host` declaration.
+-  Specifies a host module's symbolic name and version in the OSGi header 
+   `Fragment-Host` declaration.
 
--  Provides a complete copy of the original JSP with any modifications you need
-   to make.
+-  includes the original JSP with any modifications you need to make.
 
 For more information about fragment modules, you can refer to section 3.14 of the [OSGi Alliance's core specification document](https://www.osgi.org/developer/downloads/release-6/).
 
@@ -45,10 +45,20 @@ an entire application.
 
 ## Provide the Overridden JSP [](id=provide-the-overridden-jsp)
 
-After declaring the host, copy the original JSP into your module. After that,
-make your modifications. Just make sure you mimic the directory structure of the
-host module when overriding its JAR. If you're overriding Liferay's login
-application's `login.jsp` for example, you'd put your own `login.jsp` in 
+There are two possible naming conventions for targeting the host original JSP: 
+`portal` or `original`. For example, if the original JSP is located in the 
+directory `/META-INF/resources/login.jsp`, then the fragment bundle should 
+contain a JSP with the same path, using the following pattern:
+
+    <liferay-util:include 
+        page="/login.original.jsp" (or login.portal.jsp) 
+        servletContext="<%= application %>" 
+    />
+
+After that, make your modifications. Just make sure you mimic the directory 
+structure of the host module when overriding its JAR. If you're overriding 
+Liferay's login application's `login.jsp` for example, you'd put your own 
+`login.jsp` in 
 
     my-jsp-fragment/src/main/resource/META-INF/resource/login.jsp
 
