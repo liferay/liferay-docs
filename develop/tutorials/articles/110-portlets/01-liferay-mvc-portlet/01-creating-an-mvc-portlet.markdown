@@ -416,4 +416,4 @@ points:
 -  [Model Listeners](/develop/tutorials/-/knowledge_base/7-0/model-listeners)
 -  [Application Security](/develop/tutorials/-/knowledge_base/7-0/application-security)
 -  [Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework)
--  [Business Logic and Data Access (Service Builder)](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
+-  [Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)

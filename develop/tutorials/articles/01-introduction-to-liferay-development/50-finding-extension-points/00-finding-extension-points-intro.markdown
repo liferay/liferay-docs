@@ -112,14 +112,9 @@ option is `reluctant`, binding a new higher ranking service in place of a bound
 service requires reactivating the component or changing the target. For 
 information on the other policies and policy options, visit the
 [OSGi specification](https://osgi.org/download/r6/osgi.enterprise-6.0.0.pdf), in
-particular, sections 112.3.5 and 112.3.6.
-
-<!--
-If you want to learn how to
+particular, sections 112.3.5 and 112.3.6. If you want to learn how to
 override a component's service reference, visit the following
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-a-components-service-reference).
--->
-<!-- Add above tutorial link when it's available on LDN. -Cody -->
+[tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-service-references).
 
 **Important** Not all Extension points in @product@ are available as referenced
 services. Referenced services are common extension points when using

@@ -94,7 +94,7 @@ classes.
 
 Now that you know the basics on creating Liferay module projects using `blade
 create`, you can visit the
-[Project Templates](/develop/tutorials/-/knowledge_base/7-0/project-templates)
+[Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
 reference section to view specific `create` templates and how they work.
 
 Next, you'll explore Liferay's provided module samples and how to generate them

@@ -107,4 +107,4 @@ Awesome! You've seen the WAB Generator in action!
 
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
 
-[Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
+[Configuration](/develop/tutorials/-/knowledge_base/7-0/configuration)
