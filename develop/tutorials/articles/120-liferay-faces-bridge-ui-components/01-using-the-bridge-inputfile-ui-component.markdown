@@ -44,7 +44,8 @@ implements handling the file upload:
 +$$$
 
  **Note:**The `bridge:inputFile` tag depends on Apache's `commons-fileupload`
- and `commons-io` modules. See the [Demo JSF2 Portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+ and `commons-io` modules. See the
+ [Demo JSF Applicant Portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf-applicant-portlet)
  for more details.
 
 $$$
