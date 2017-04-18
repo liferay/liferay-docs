@@ -167,15 +167,16 @@ If this tag is not removed, an error similar to the one here may occur:
 ### Setting the JDK Version for Compiling JSPs [](id=setting-the-jdk-version-for-compiling-jsps)
 
 @product@ requires that its JSPs are compiled on Java 8. To ensure that
-WebSphere does this, navigate to the `WEB_INF` folder and add the following to
-the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
+WebSphere does this, navigate to the `WEB_INF` folder and add the following
+setting to the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
 
     <jsp-attribute name="jdkSourceLevel" value="18" />
 
 Note that the @product@ `.war` comes pre-packaged with the `ibm-web-ext.xmi`
 file; this format is functionally the same as `.xml` and WebSphere recognizes both
 formats. For more general information on how WebSphere compiles JSPs see IBM's
-official documentation for [WebSphere Application Server for z/OS 8.5.5.x](https://www.ibm.com/support/knowledgecenter/SS7K4U_8.5.5/com.ibm.websphere.zseries.doc/ae/rweb_jspengine.html).
+official documentation for 
+[WebSphere Application Server 8.5.5.x](https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/rweb_jspengine.html).
 
 Great! Now you're ready to install @product@. 
 
