@@ -476,4 +476,4 @@ Great job!
 
 [Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
 
-[Business Logic and Data Access](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
