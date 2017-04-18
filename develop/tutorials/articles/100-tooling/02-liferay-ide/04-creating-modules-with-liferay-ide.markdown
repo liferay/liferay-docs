@@ -9,7 +9,7 @@ navigating to *File* &rarr; *New* &rarr; *Liferay Module Project*.
 You're given options for project name, location, build type, and template type.
 You can build your project using Gradle or Maven. If you're unsure for which
 template type to choose, see the
-[Project Templates](/develop/tutorials/-/knowledge_base/7-0/project-templates)
+[Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
 reference section. Click *Next* and you're given additional configuration
 options for a component class.
 

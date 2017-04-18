@@ -542,4 +542,4 @@ Now you have the knowledge to create your own JSF applications!
 
 [Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
 
-[Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
+[Configuration](/develop/tutorials/-/knowledge_base/7-0/configuration)
