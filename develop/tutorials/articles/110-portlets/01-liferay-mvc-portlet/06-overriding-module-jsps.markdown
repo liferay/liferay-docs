@@ -55,25 +55,50 @@ contain a JSP with the same path, using the following pattern:
         servletContext="<%= application %>" 
     />
 
-If you need to post process the output, you can update the pattern to include 
-@product@'s buffering mechanism:
-
-    <liferay-util:buffer var="html">
-           <liferay-util:include 
-              page="/login.original.jsp" (or login.portal.jsp)
-              servletContext="<%= application %>" 
-          />
-    </liferay-util:buffer>
-
-    ...
-    <%= html %> 
-
 After that, make your modifications. Just make sure you mimic the directory 
 structure of the host module when overriding its JAR. If you're overriding 
 Liferay's login application's `login.jsp` for example, you'd put your own 
 `login.jsp` in 
 
     my-jsp-fragment/src/main/resource/META-INF/resource/login.jsp
+
+If you need to post process the output, you can update the pattern to include 
+@product@'s buffering mechanism. Below is an example that overrides the 
+original `create_account.jsp`:
+
+    <%@ include file="/init.jsp" %>
+    
+    <liferay-util:buffer var="html">
+        <liferay-util:include page="/create_account.portal.jsp" 
+        servletContext="<%= application %>"/>
+    </liferay-util:buffer>
+    
+    <liferay-util:buffer var="openIdFieldHtml"><aui:input name="openId" 
+    type="hidden" value="<%= ParamUtil.getString(request, "openId") %>" />
+    </liferay-util:buffer>
+    
+    <liferay-util:buffer var="userNameFieldsHtml"><liferay-ui:user-name-fields />
+    </liferay-util:buffer>
+
+    <liferay-util:buffer var="errorMessageHtml">
+        <liferay-ui:error 
+        exception="<%= com.liferay.portal.kernel.exception.NoSuchOrganizationException.class %>" message="no-such-registration-code" />
+    </liferay-util:buffer>
+    
+    <liferay-util:buffer var="registrationCodeFieldHtml">
+                <aui:input name="registrationCode" type="text" value="">
+                        <aui:validator name="required" />
+                </aui:input>
+    </liferay-util:buffer>
+    
+    <%
+        html = com.liferay.portal.kernel.util.StringUtil.replace(html, 
+          openIdFieldHtml, openIdFieldHtml + errorMessageHtml);
+        html = com.liferay.portal.kernel.util.StringUtil.replace(html, 
+          userNameFieldsHtml, userNameFieldsHtml + registrationCodeFieldHtml);
+    %>
+    
+    <%=html %>
 
 Now you can easily modify the JSPs of any application in Liferay.
 
