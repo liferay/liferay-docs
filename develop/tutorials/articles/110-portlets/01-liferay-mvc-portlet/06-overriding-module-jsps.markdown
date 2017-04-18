@@ -55,6 +55,19 @@ contain a JSP with the same path, using the following pattern:
         servletContext="<%= application %>" 
     />
 
+If you need to post process the output, you can update the pattern to include 
+@product@'s buffering mechanism:
+
+    <liferay-util:buffer var="html">
+           <liferay-util:include 
+              page="/login.original.jsp" (or login.portal.jsp)
+              servletContext="<%= application %>" 
+          />
+    </liferay-util:buffer>
+
+    ...
+    <%= html %> 
+
 After that, make your modifications. Just make sure you mimic the directory 
 structure of the host module when overriding its JAR. If you're overriding 
 Liferay's login application's `login.jsp` for example, you'd put your own 
