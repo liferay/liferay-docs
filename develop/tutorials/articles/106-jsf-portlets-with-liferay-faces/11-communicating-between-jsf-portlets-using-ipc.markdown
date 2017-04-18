@@ -109,7 +109,7 @@ in the `WEB-INF/portlet.xml` descriptor:
 
 **Note:** For a complete example demonstrating public render parameters and a
 `bridgePublicRenderParameterHandler`, see the
-[JSF2 IPC Public Render Parameters Portlet](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-pub-render-params-portlet)
+[JSF IPC Public Render Parameters Portlet](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-pub-render-params-portlet)
 demo on GitHub.
  
 $$$
@@ -233,9 +233,9 @@ descriptor.
 +$$$
 
 **Note:** For a complete example demonstrating JSF 2 IPC events, see the
-[JSF2 IPC Events - Customers](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-customers-portlet)
+[JSF IPC Events - Customers](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-customers-portlet)
 and
-[JSF2 IPC Events - Bookings](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-bookings-portlet)
+[JSF IPC Events - Bookings](https://github.com/liferay/liferay-faces-bridge-impl/blob/3.0.0/demo/jsf-ipc-events-bookings-portlet)
 demo portlets on GitHub. 
 
 $$$
