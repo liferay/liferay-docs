@@ -12,17 +12,17 @@ cluster. This guide walks you through that process.
 If you'd rather use Solr, it's also supported. See [here](/discover/deployment/-/knowledge_base/7-0/using-solr) for information
 on installing and configuring Solr.
 
-If you just want to get up and running quickly with Elasticsearch, refer to the
-[Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
-It assumes that you only want to know what's necessary for the installation and
-configuration of Elasticsearch in a single server environment, and it doesn't
-include all the clustering and tuning instructions found here. In this article
-you'll learn how to configure Elasticsearch for use in @product@ production
-environments. 
+To get up and running quickly with Elasticsearch as a remote server, refer to
+the [Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
+In that article you'll find the basic instructions for the installation and
+configuration of Elasticsearch in a single server environment. This article
+includes more details and information on clustering and tuning Elasticsearch. In
+this article you'll learn to configure your existing Elasticsearch installation
+for use in @product@ production environments. 
 
 If you've come here looking for information on search engines in general, or the
-low level search infrastructure of @product@, refer to the developer tutorial
-[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
+low level search infrastructure of @product@, refer instead to the developer
+tutorial [Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
 
 These terms will be useful to understand as you read this guide:
 
@@ -46,50 +46,7 @@ drawbacks:
 You wouldn't run an embedded database like HSQL in production, and you shouldn't
 run Elasticsearch in embedded mode in production either. Instead, you want your
 @product@ installation to run alongside Elasticsearch. This is called *remote
-operation mode*, as a standalone server or cluster of server nodes. The first
-step is to install Elasticsearch.
-
-## Installing Elasticsearch [](id=installing-elasticsearch)
-
-Install Elasticsearch, and then you can begin configuring it to use with
-@product@. 
-
-1.  Follow the instructions
-    [here](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch#step-one-find-the-right-version-of-elasticsearch)
-    to find the version of Elasticsearch that matches your installation and
-    download it. 
-
-2.  Extract the contents of the compressed file you downloaded to your Liferay
-    Home folder. 
-
-3.  Before continuing, make sure you have set the [`JAVA_HOME` environment
-    variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
-
-4.  If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
-    using the same version. You can specify this in `[Elasticsearch
-    Home]/bin/elasticsearch.in.sh`:
-
-        JAVA_HOME=/path/to/java
-
-5.  Install the following required Elasticsearch plugins:
-
-    -  `analysis-icu`
-    -  `analysis-kuromoji`
-    -  `analysis-smartcn`
-    -  `analysis-stempel`
-
-    To install these plugins, navigate to Elasticsearch Home and enter
-    
-        ./bin/plugin install [plugin-name]
-
-    Replace *[plugin-name]* with the Elasticsearch plugin's name.
-
-6.  Make the `[Elasticsearch_Home]/bin/elasticsearch.sh` file executable (if
-    you're on Linux).
-
-For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/_installation.html)
-
-Once you have Elasticsearch installed, you need to configure it for @product@.
+operation mode*, as a standalone server or cluster of server nodes.
 
 ## Configuring Elasticsearch [](id=configuring-elasticsearch)
 
@@ -143,7 +100,7 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-Now that you have Elasticsearch itself installed and running, and [@product@ installed](/discover/deployment/-/knowledge_base/6-2/liferay-installation-overview)
+When you have Elasticsearch itself installed and running, and [@product@ installed](/discover/deployment/-/knowledge_base/6-2/liferay-installation-overview)
 and running (do that if you haven't already) you need to introduce @product@ and
 Elasticsearch to each other. Fortunately, Liferay provides an adapter that helps
 it find and integrate your Elasticsearch cluster.
@@ -221,7 +178,7 @@ more configuration options available that help you tune your system for optimal
 performance. For a detailed accounting of these, refer to the reference article
 on [Elasticsearch Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings).
 
-What follows here are some known-good configurations for clustering
+What follows here are some known good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
 [settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) as
@@ -278,7 +235,7 @@ by default, which provides unicast discovery. Additionally, nodes in the
 cluster communicate using the [Transport
 Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-transport.html),
 through TCP. See the Elasticsearch documentation for the available properties
-(to be set in the elasticsearch.yml file), and the @product@ Elasticsearch
+(to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 Adapter’s [reference
 article](https://dev.liferay.com/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
 for the adapter’s available settings.

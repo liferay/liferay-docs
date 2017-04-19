@@ -20,16 +20,32 @@ Installing Elasticsearch for @product@ is pretty easy and takes only five steps:
 2. Install Elasticsearch by extracting its archive to the system where you want
    it to run. 
 
+3. Install some required Elasticsearch plugins.
+
 3. Name your Elastic cluster. 
 
 4. Configure @product@ to connect to your Elastic cluster. 
 
 5. Restart @product@ and reindex your search indexes. 
 
-Now you'll actually perform these steps, and when you're done, you'll have a
-production-ready instance of @product@ up and running. For more information on
-installing a search engine, see [here](/discover/deployment/-/knowledge_base/7-0/installing-a-search-engine).
++$$$
 
+**Note:** Before continuing, make sure you have set the [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
+
+If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
+using the same version. You can specify this in `[Elasticsearch
+Home]/bin/elasticsearch.in.sh`:
+
+        JAVA_HOME=/path/to/java
+
+$$$
+
+Now you'll actually perform these steps, and when you're done, you'll have a
+production-ready instance of @product@ up and running. After you're done
+following the installation guide, refer to the [Configuring Elasticsearch](/discover/portal/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0)
+article for more details on configuring @product@ for Elasticsearch. For more
+information on installing a search engine, see
+[here](/discover/deployment/-/knowledge_base/7-0/installing-a-search-engine).
 
 ### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
@@ -74,7 +90,22 @@ Once you have a copy of the right version of Elasticsearch, extract it to a
 folder on the machine where you want it running. That's all there is to this
 step. 
 
-### Step Three: Name Your Elastic Cluster [](id=step-three-name-your-elastic-cluster)
+### Step Three: Install Elasticsearch Plugins
+
+Install the following required Elasticsearch plugins:
+
+-  `analysis-icu`
+-  `analysis-kuromoji`
+-  `analysis-smartcn`
+-  `analysis-stempel`
+
+To install these plugins, navigate to Elasticsearch Home and enter
+
+    ./bin/plugin install [plugin-name]
+
+Replace *[plugin-name]* with the Elasticsearch plugin's name.
+
+### Step Four: Name Your Elastic Cluster [](id=step-three-name-your-elastic-cluster)
 
 A *cluster* in Elasticsearch is a collection of nodes (servers) identified as a
 cluster by a shared cluster name. The nodes work together to share data and
@@ -109,7 +140,7 @@ Elastic starts, and one of its status messages includes a transport address:
 Take note of this address; you'll need to give it to your @product@ server so it
 can find Elastic on the network. 
 
-### Step Four: Configure @product@ to Connect to your Elastic Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
+### Step Five: Configure @product@ to Connect to your Elastic Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
 
 Now you're ready to configure @product@. Start @product@ if you haven't already, log
 in, and then go to Control Panel &rarr; Configuration &rarr; System Settings
@@ -123,16 +154,20 @@ standalone Elasticsearch.
 
 **Transport addresses:** Enter a delimited list of transport addresses for
 Elastic nodes. Here, you'll enter the transport address from the Elastic server
-you started. 
+you started. The default value is `localhost:9300`, which will work 
 
 When finished, click *Save*. You're almost done. 
 
-### Step Five: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
+### Step Six: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
 
 Stop and restart @product@. When it's back up, log in as an administrative user
 and go to Control Panel &rarr; Configuration &rarr; Server Administration and
 click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
 
+For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/_installation.html)
+
 You're almost done! The only thing left is to make sure Marketplace is working
 and optionally configure portal security. 
+
+<a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 
