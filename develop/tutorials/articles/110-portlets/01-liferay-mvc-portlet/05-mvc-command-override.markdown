@@ -44,7 +44,7 @@ command. If there are no additional customizations on the same command, this
 reference will be the original MVC command.
 
     @Reference(
-        target = "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + "))")
+        target = "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name=" + BlogsPortletKeys.BLOGS_ADMIN + "))")
     protected MVCRenderCommand mvcRenderCommand;
 
 If you use this approach, your extension will continue to work with new versions
