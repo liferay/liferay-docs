@@ -170,4 +170,3 @@ For more details refer to the [Elasticsearch installation guide](https://www.ela
 You're almost done! The only thing left is to make sure Marketplace is working
 and optionally configure portal security. 
 
-<a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 
