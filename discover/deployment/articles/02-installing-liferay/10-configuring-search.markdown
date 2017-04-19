@@ -90,7 +90,7 @@ Once you have a copy of the right version of Elasticsearch, extract it to a
 folder on the machine where you want it running. That's all there is to this
 step. 
 
-### Step Three: Install Elasticsearch Plugins
+### Step Three: Install Elasticsearch Plugins [](id=step-three-install-elasticsearch-plugins)
 
 Install the following required Elasticsearch plugins:
 
