@@ -52,18 +52,41 @@ Studio project. This screenshot highlights the app module's `build.gradle` file:
 
 ![Figure 1: The app module's `build.gradle` file.](../../../images/android-build-gradle-app-module.png)
 
-In the app module's `build.gradle` file, add the following line of code inside 
+In the app module's `build.gradle` file, add the following lines of code inside 
 the `dependencies` element: 
 
     compile 'com.liferay.mobile:liferay-screens:2.1.1'
+    compile 'com.liferay.mobile:liferay-material-viewset:2.1.1'
+
+This adds the `liferay-screens` and `liferay-material-viewset` dependencies. 
+Although only the `liferay-screens` dependency is necessary to install Screens, 
+adding other View Sets, like the Material View Set, gives you flexibility when 
+designing your app's look and feel. 
+[Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets) 
+for more information on Views in Liferay Screens. 
 
 Once you edit `build.gradle`, a message appears at the top of the file that asks 
 you to sync your app with its Gradle files. Syncing with the Gradle files is 
 required to incorporate any changes you make to them. Syncing also downloads and 
-installs any new dependencies, like the Liferay Screens dependency that you just
-added. Sync the Gradle files now by clicking the *Sync Now* link in the message.
-The following screenshot shows the edited `build.gradle` file with the Sync Now
-link highlighted by a red box: 
+installs any new dependencies, like the Liferay Screens dependency that you just 
+added. Sync the Gradle files now by clicking the *Sync Now* link in the message. 
+Note that your `build.gradle` may show an error similar to this: 
+
+    All com.android.support libraries must use the exact same version specification...
+
+If this occurs, you must manually add the version of the `com.android.support` 
+dependencies needed by the app. 
+[Click here](http://stackoverflow.com/questions/42374151/all-com-android-support-libraries-must-use-the-exact-same-version-specification) 
+for instructions on how to do this. For example, the app in this Learning Path 
+currently uses version `25.3.1` of the `com.android.support` libraries. This 
+requires that you manually add the following dependencies to the app's 
+`build.gradle`: 
+
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:transition:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:exifinterface:25.3.1'
 
 ![Figure 2: After editing the app module's `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../../images/android-build-gradle-sync.png)
 
