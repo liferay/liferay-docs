@@ -97,8 +97,8 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
             super.render(renderRequest, renderResponse);
         }
 
-    This method retrieves the array of guestbook entries from portlet
-    preferences, converts it to a `List` of `Entry` objects, and places that
+    This method retrieves the guestbook entries from the Configuration,
+	converts it to a `List` of `Entry` objects, and places that
     `List` into the request object. It then calls the parent class's `render`
     method.
 

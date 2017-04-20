@@ -268,7 +268,12 @@ robust mechanism for saving application data in the  *Service Builder* learning 
 
 $$$
 
-Create a Java interface that will represent the configuration, which will define all of your configuration fields using the @Meta.OCD annotation.
+Create a new sub-package under your `guestbook.module.portlet` package named 
+`com.liferay.guestbook.module.portlet.configuration.` 
+Inside of the new package, create a Java interface named 
+`GuestbookPortletInstanceConfiguration.java` that will represent the 
+configuration, which will define all of your configuration fields using the 
+@Meta.OCD annotation.
 
 	@ExtendedObjectClassDefinition(
 	    category = "guestbook-entries",
@@ -290,19 +295,23 @@ Create a Java interface that will represent the configuration, which will define
 	}
 
 
-Create one class that implements the Configuration Bean Declaration interface to let the Configuration framework know about the Configuration class.
-
-	@Component
-	public class GuestbookGroupServiceConfigurationBeanDeclaration
-        implements ConfigurationBeanDeclaration {
+Next, create a class called 
+`GradebookPortletInstanceConfigurationBeanDeclaration` that implements the 
+Configuration Bean Declaration interface to let the Configuration framework 
+know about the Configuration class. Add the method to get the configuration 
+bean class to the class body:
 
     @Override
     public class getConfigurationBeanClass() {
         return GuestbookGroupServiceConfiguration.class;
     	}
 
-	}	
 
+Your full file should look like this:
+
+	@Component
+	public class GuestbookGroupServiceConfigurationBeanDeclaration
+        implements ConfigurationBeanDeclaration {
 
 Change the configuration JSP to retrieve the configuration using the 
 Configuration API. If the scope is “Portlet Instance” the configuration can be 
@@ -313,7 +322,11 @@ retrieved from portletDisplay:
        	 GuestbookPortletInstanceConfiguration.class);
 
 
-Finally it is usually necessary to read the configuration from Java classes or other JSPs. In cases where the portletDisplay is not available, or when the scope is “Group” or “Company”, the PortletProvider class offers methods to obtain the configuration. The best way to access the PortletProvider depends on who is making the invocation:
+Finally it is usually necessary to read the configuration from Java classes or 
+other JSPs. In cases where the portletDisplay is not available, or when the 
+scope is “Group” or “Company”, the PortletProvider class offers methods to 
+obtain the configuration. The best way to access the PortletProvider depends on 
+who is making the invocation:
 
 Within an OSGi Component a reference to the ConfigurationProvider can be obtained and used as follows:
 
