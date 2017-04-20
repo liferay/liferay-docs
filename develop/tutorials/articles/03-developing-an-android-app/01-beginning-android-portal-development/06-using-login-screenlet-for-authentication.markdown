@@ -32,8 +32,7 @@ Studio when you created the project. Insert Login Screenlet's XML in its place:
         app:layoutId="@layout/login_default"
         />
 
-When prompted by Android Studio, add the following XML namespace to the 
-`<RelativeLayout>` tag: 
+To resolve the `app` namespace, add the following to the `<RelativeLayout>` tag: 
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
@@ -51,8 +50,15 @@ instead.
 for instructions on changing your @product@ instance's authentication setting. 
 
 The second `app` attribute in Login Screenlet's XML is `app:layoutId`. This 
-attribute sets the View to display the Screenlet with. The value 
-`@layout/login_default` specifies the Default view. 
+attribute sets the *View* to display the Screenlet with. Views in Liferay 
+Screens set a Screenlet's look and feel independent of the Screenlet's core 
+functionality. You can think of them as a sort of skin or theme for a Screenlet. 
+The value `@layout/login_default` specifies Login Screenlet's Default view, 
+which is part of the Default *View Set*. A View Set is a collection of Views for 
+several Screenlets. Using View Set lets you apply a consistent look and feel 
+across multiple Screenlets. 
+<!-- Set the AppTheme's parent as default_theme -->
+
 [Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
 for more information on using Views in Liferay Screens. For more information on 
 Login Screenlet's available attributes, 
