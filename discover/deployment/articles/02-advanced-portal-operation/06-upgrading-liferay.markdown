@@ -148,7 +148,7 @@ Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
 you'll find out if you have any Web Content structures to fix before upgrading. 
 
-## Find and Remove Duplicate Field Names
+## Find and Remove Duplicate Field Names [](id=find-and-remove-duplicate-field-names)
 
 If you make use of the Web Content Management system, you've probably created a
 library of structures and templates to help you manage your content. In prior
