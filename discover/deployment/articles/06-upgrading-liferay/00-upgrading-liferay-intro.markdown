@@ -62,7 +62,7 @@ information to learn about the new defaults introduced in Liferay Portal 6.2.
 
 - If you've used Web Content Management extensively, you may have structures
   that lack unique name fields. Refer to 
-  [this document](/discover/deployment/-/knowledge_base/6-2/resolving-duplicate-fields)
+  [this](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names)
   to resolve the problem before upgrading. 
 
 ### Legacy Properties [](id=legacy-properties)
