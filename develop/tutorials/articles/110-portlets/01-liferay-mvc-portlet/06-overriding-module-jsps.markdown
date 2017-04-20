@@ -4,10 +4,10 @@ Liferay applications often contain JSPs. Sometimes you might need to override
 one of them. If you need to override the JSPs from a module deployed to the OSGi
 runtime, you need a fragment module that does two things:
 
--  Specifies a host module's symbolic name and version in the OSGi header `Fragment-Host` declaration.
+-  Specifies a host module's symbolic name and version in the OSGi header 
+   `Fragment-Host` declaration.
 
--  Provides a complete copy of the original JSP with any modifications you need
-   to make.
+-  includes the original JSP with any modifications you need to make.
 
 For more information about fragment modules, you can refer to section 3.14 of the [OSGi Alliance's core specification document](https://www.osgi.org/developer/downloads/release-6/).
 
@@ -45,12 +45,59 @@ an entire application.
 
 ## Provide the Overridden JSP [](id=provide-the-overridden-jsp)
 
-After declaring the host, copy the original JSP into your module. After that,
-make your modifications. Just make sure you mimic the directory structure of the
-host module when overriding its JAR. If you're overriding Liferay's login
+There are two possible naming conventions for targeting the host original JSP: 
+`portal` or `original`. For example, if the original JSP is in the folder
+`/META-INF/resources/login.jsp`, then the fragment bundle should contain a JSP
+with the same path, using the following pattern:
+
+    <liferay-util:include 
+        page="/login.original.jsp" (or login.portal.jsp) 
+        servletContext="<%= application %>" 
+    />
+
+After that, make your modifications. Just make sure you mimic the host module's
+folder structure when overriding its JAR. If you're overriding Liferay's login
 application's `login.jsp` for example, you'd put your own `login.jsp` in 
 
     my-jsp-fragment/src/main/resource/META-INF/resource/login.jsp
+
+If you need to post-process the output, you can update the pattern to include 
+@product@'s buffering mechanism. Below is an example that overrides the 
+original `create_account.jsp`:
+
+    <%@ include file="/init.jsp" %>
+    
+    <liferay-util:buffer var="html">
+        <liferay-util:include page="/create_account.portal.jsp" 
+        servletContext="<%= application %>"/>
+    </liferay-util:buffer>
+    
+    <liferay-util:buffer var="openIdFieldHtml"><aui:input name="openId" 
+    type="hidden" value="<%= ParamUtil.getString(request, "openId") %>" />
+    </liferay-util:buffer>
+    
+    <liferay-util:buffer var="userNameFieldsHtml"><liferay-ui:user-name-fields />
+    </liferay-util:buffer>
+
+    <liferay-util:buffer var="errorMessageHtml">
+        <liferay-ui:error 
+        exception="<%= com.liferay.portal.kernel.exception.NoSuchOrganizationException.class %>" message="no-such-registration-code" />
+    </liferay-util:buffer>
+    
+    <liferay-util:buffer var="registrationCodeFieldHtml">
+                <aui:input name="registrationCode" type="text" value="">
+                        <aui:validator name="required" />
+                </aui:input>
+    </liferay-util:buffer>
+    
+    <%
+        html = com.liferay.portal.kernel.util.StringUtil.replace(html, 
+          openIdFieldHtml, openIdFieldHtml + errorMessageHtml);
+        html = com.liferay.portal.kernel.util.StringUtil.replace(html, 
+          userNameFieldsHtml, userNameFieldsHtml + registrationCodeFieldHtml);
+    %>
+    
+    <%=html %>
 
 Now you can easily modify the JSPs of any application in Liferay.
 

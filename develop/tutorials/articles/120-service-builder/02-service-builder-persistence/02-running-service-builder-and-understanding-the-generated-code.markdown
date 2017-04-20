@@ -75,6 +75,11 @@ folder, if necessary (e.g., `../../gradlew buildService`).
 
 $$$
 
+If your module project uses Maven, you can build services running the following
+command from the module project's root folder:
+
+    mvn service-builder:build
+
 When the service has been successfully generated, a `BUILD SUCCESSFUL` message
 appears in your terminal window. You should also see that a large number of
 files have been generated in your project. These files include a model layer,
@@ -218,7 +223,7 @@ interfaces and the service JAR.
 
 **Note:** If you need to make changes to your objects/tables between two
 different releases of your service, you must write 
-[an upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+[a data upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
 since Service Builder does not make these changes automatically.
 
 While you're developing your application, you can force your service tables to

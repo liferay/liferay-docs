@@ -1,9 +1,10 @@
 # SAML [](id=saml-0)
 
-@product@'s SAML (Security Assertion Markup Language) adapter lets you configure
-Single Sign On (SSO) and Single Log Off (SLO), using a @product@ instance as
-either the Service Provider (SP) or the Identity Provider (IdP). This article
-provides the conceptual framework for @product@'s SSO solution.
+The @product@'s SAML (Security Assertion Markup Language) adapter lets you
+execute Single Sign On (SSO) and Single Log Off (SLO) in your deployment. Each
+@product@ instance serves as either the Service Provider (SP) or the Identity
+Provider (IdP). This article provides the conceptual framework for @product@'s
+SSO solution.
 
 - Single Sign On
     - Identity Provider initiated SSO
@@ -29,7 +30,7 @@ life!
 
 ## Single Sign On [](id=single-sign-on)
 
-Either the IdP or the SP initiates the Single Sign On process, and the SSO flow
+Both the IdP and the SP can initiate the Single Sign On process, and the SSO flow
 is different depending on each one. Consider IdP initiated SSO first.
 
 ### Identity Provider Initiated SSO [](id=identity-provider-initiated-sso)
@@ -43,12 +44,16 @@ browser to the IdP.
 
 If @product@ is the IdP, the IdP initiated SSO URL
 
-- Must specify the path as `/c/portal/saml/sso`.
+- Must specify the path as `/c/portal/saml/sso`. 
 - Must include the `entityId` parameter which is the identifier to a
-  previously configured Service Provider Connection (SPC).
-- May include a `RelayState` parameter which contains a URL encoded value
-  to which the user will be redirected upon successful authentication. This
-  URL should point to a location on the desired SPC.
+  previously configured Service Provider Connection (SPC). 
+- May include a `RelayState` parameter which contains a URL
+  encoded value to which the user will be redirected upon successful
+  authentication. This URL should point to a location on the desired SPC
+  (according to the 
+  [SAML 2.0 standards section 3.4.3](https://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf), 
+  this value *must not* exceed 80 bytes in length). It is useful to specify a
+  landing page after SSO has been executed.
 
 For non-@product@ IdPs (Siteminder, ADFS, etc.), consult the vendor's
 documentation on constructing IdP initiated SSO URLs.

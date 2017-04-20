@@ -1,4 +1,4 @@
-# Service Access Policies
+# Service Access Policies [](id=service-access-policies)
 
 Service access policies are a layer of web service security on top of
 @product@'s remote services. Together with the permissions layer,
@@ -33,7 +33,7 @@ the client doesn't perform these operations, having access to them is a
 security risk if the mobile device is lost or stolen or the client app
 is compromised by an attacker.
 
-## How Service Access Policies Work
+## How Service Access Policies Work [](id=how-service-access-policies-work)
 
 When a remote client issues a request to a web service, the request
 contains the user's credentials or an authorization token. An
@@ -43,7 +43,7 @@ the request. The service access policy authorization layer then
 processes all granted policies and lets the request access the remote
 service(s) permitted by the policy.
 
-[!The authorization module maps the credentials or token to the proper Service Access Policy.](../../images/service-access-policies-arch.png)
+![The authorization module maps the credentials or token to the proper Service Access Policy.](../../images/service-access-policies-arch.png)
 
 Service Access policies are created in the Control Panel by
 administrators. If you want to start creating policies yourself, see
@@ -64,7 +64,7 @@ service access policies API. For example, your app may:
   that needs to drive access to remote services based on granted
   privileges.
 
-## API Overview
+## API Overview [](id=api-overview)
 
 Liferay provides an Interface and a `ThreadLocal` if you don't want to roll your own
 policies. If you want to get low level, an API is provided that
@@ -124,7 +124,7 @@ service call to grant the associated policy during the request. The module:
   supported policies when authorizing the remote application, to associate
   the token with an existing policy.
 
-## Example
+## Example [](id=example)
 
 [Liferay Sync's](https://www.liferay.com/supporting-products/liferay-sync)
 `sync-security` module is an example of such a module. It uses
