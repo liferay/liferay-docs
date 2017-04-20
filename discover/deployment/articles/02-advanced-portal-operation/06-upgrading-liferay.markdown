@@ -51,13 +51,18 @@ algorithm. If, however, you never upgraded to permissions algorithm 6 or you're
 still running a 5.x Liferay, you need to migrate to algorithm 6 before
 attempting to upgrade to Liferay 6.2. 
 
-Next, if you're upgrading from a version of Liferay older than 6.1, you'll have
-to migrate your image gallery over to Documents and Media. Finally, take note of
-all the plugins you have installed. Every plugin must be updated to run on the
-current release. This is easy to do with Marketplace: after you bring up
-Liferay 6.2, install from Marketplace any of the plugins you had installed
-previously. For custom plugins, have your development team update them to run on
-the new version of Liferay. 
+Next, if you've used Liferay's Web Content Management system, it's possible that
+you have structure with elements in them that have the same name. This is not
+supported on Liferay 6.2. To fix this, you'll have to identify the offending
+structures and fix them. Liferay provides a script to help you with that. 
+
+If you're upgrading from a version of Liferay older than 6.1, you must migrate
+your image gallery over to Documents and Media. Finally, take note of all the
+plugins you have installed. Every plugin must be updated to run on the current
+release. This is easy to do with Marketplace: after you bring up Liferay 6.2,
+install from Marketplace any of the plugins you had installed previously. For
+custom plugins, have your development team update them to run on the new version
+of Liferay. 
 
 ![Figure 2.3: Use this flowchart to determine the steps to take for your upgrade.](../../images/upgrade-decisions.png)
 
@@ -141,7 +146,93 @@ and modify the algorithm property to show that you're now using algorithm 6:
 
 Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
-might need to explicitly set your Image Gallery storage option. 
+you'll find out if you have any Web Content structures to fix before upgrading. 
+
+## Find and Remove Duplicate Field Names
+
+If you make use of the Web Content Management system, you've probably created a
+library of structures and templates to help you manage your content. In prior
+versions of Liferay, it was possible to create structures that had multiple
+fields with the same name. Because this is no longer supported in Liferay 6.2,
+these structures must be changed so none of their fields have duplicate names.
+If you try to upgrade and you have duplicated field names in your structures,
+the upgrade will fail. 
+
+To identify these structures, Liferay has provided Groovy scripts you can run in
+the script console: 
+
+- [Script for 6.0](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.0.x.groovy)
+- [Script for 6.1](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.1.x.groovy)
+- [Script for 6.2 before Fixpack 50](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.2.x.groovy)
+
+To execute the script, go to the *Control Panel* &rarr; *Server Administration*
+&rarr; *Scripts*. Make sure Groovy is the selected language and paste in the
+script for your version of Liferay. Click *Execute*. 
+
+The script produces output in the server log. Your best possible result would be
+this: 
+
+    INFO  [NormalizeDuplicateFields:?] *** RESULTS ***
+    INFO  [NormalizeDuplicateFields:?] *** There are no structures with duplicate fields. You can proceed with the upgrade ***
+
+This means you have no offending Web Content structures! Skip the rest of this
+and proceed to the next step. 
+
+If you're still reading, you saw something different in your logs, something
+similar to this: 
+
+    INFO  [NormalizeDuplicateFields] *** RESULTS ***
+    INFO  [NormalizeDuplicateFields] *** 12 structures with duplicate fields ***
+    INFO  [NormalizeDuplicateFields] *** 40 templates to modify manually ***
+    INFO  [NormalizeDuplicateFields] *** 5695 web contents automatically processed ***
+    INFO  [NormalizeDuplicateFields] *** 79 web contents can not be processed since they were out of sync prior to execute this script ***
+    INFO  [NormalizeDuplicateFields] *** 3 DDM Structures with duplicate fields automatically processed ***
+    INFO  [NormalizeDuplicateFields] Finishing NormalizeDuplicateFields process
+
+The script reports to you the total number of offending structures and the
+templates that need to be fixed manually. It does this by reporting the IDs
+(primary keys) of the offending objects: 
+
+    INFO  [NormalizeDuplicateFields] Checking Structure with ID 2274237 and Structure ID 2274236 and name Companies from group ID 2270225
+    INFO  [NormalizeDuplicateFields] Field name will be replaced by nameRev1
+    INFO  [NormalizeDuplicateFields] Field content will be replaced by contentRev1
+    INFO  [NormalizeDuplicateFields] This structure contains duplicate field names
+    INFO  [NormalizeDuplicateFields] The following associated templates have to be manually modified:
+    INFO  [NormalizeDuplicateFields] - Template ID 2274340 from Group ID 2270225
+    INFO  [NormalizeDuplicateFields] - Template ID 2274400 from Group ID 2270225
+
+Since you're not a computer, it's highly likely that you won't recognize these
+groups or templates by their IDs, so you'll have to go back to the script
+console and call the relevant Liferay APIs to figure out what they are. The APIs
+are called via utility classes in the `com.liferay.portal.service` package: 
+
+- `CompanyLocalServiceUtil`
+- `GroupLocalServiceUtil`
+
+For example, Group IDs are children of Company IDs. Company IDs are back-end
+labels for portal instances. Group IDs are back-end labels for sites, among
+other things. If you have a lot of sites with structures and templates, you'll
+need to query Liferay in the Script console to find the ones the script
+identified that needed to be fixed. To find the name of a group reported in the
+script by its ID, you can query for it in the script console: 
+
+    System.out.println(com.liferay.portal.service.GroupLocalServiceUtil.getGroup(2270225).getName());
+
+Running something like this can help you identify the group (or site) in which
+the offending template resides. To find the template name, you can run something
+similar: 
+
+    System.out.println(com.liferay.portlet.journal.service.JournalTemplateLocalServiceUtil.getTemplate(2274400).getName());
+
+Use these techniques to identify the templates and then open them in the UI to
+see if they used fields the script renamed. For example, the script output above
+says that two fields, `name` and `content`, were renamed to `nameRev1` and
+`contentRev1`. You need to open the affected templates and check to see if they
+used the old field names. If they did, you must modify them to use the new
+names before upgrading. Go through each template the script identified and
+modify them to use the new field names. 
+
+Next, you might need to explicitly set your Image Gallery storage option. 
 
 ## Migrate Your Image Gallery Images [](id=migrate-your-image-gallery-images)
 
