@@ -182,8 +182,8 @@ Create the layout file `res/layout/list_guestbooks.xml` and replace its contents
 with this code: 
 
     <com.liferay.docs.guestbooklistscreenlet.view.GuestbookListView
-        android:id="@+id/liferay_list_screenlet"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/liferay_list_screenlet"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

@@ -43,13 +43,17 @@ Guestbook List Screenlet's XML, and lacks the `app:menu` attribute. Recall that
 this attribute pointed to the menu resource file that creates the drawer's 
 items. Since the Screenlet now handles the drawer's items (the guestbooks), you 
 don't need `app:menu` or the menu resource file. Delete the menu resource file 
-`res/menu/activity_guestbooks_drawer.xml`. 
+`res/menu/activity_guestbooks_drawer.xml`. You also don't need the drawable 
+resources that Android Studio created for the navigation drawer's placeholder 
+content. Delete `res/values/drawables.xml`, and each of the `ic_menu_*.xml` 
+files in `res/drawable`.
 
-Note that Guestbook List Screenlet's XML strongly resembles Login Screenlet's 
-XML. Both contain an `android:id` value that you can use in the activity to get 
-a reference to the Screenlet. Both also use a `layoutId` attribute to specify 
-the Screenlet's View. Guestbook List Screenlet's XML, however, differs by using 
-the `android:paddingTop` attribute. This attribute's value, 
+Returning your attention to `activity_guestbooks.xml`, note that Guestbook List 
+Screenlet's XML strongly resembles Login Screenlet's XML. Both contain an 
+`android:id` value that you can use in the activity to get a reference to the 
+Screenlet. Both also use a `layoutId` attribute to specify the Screenlet's View. 
+Guestbook List Screenlet's XML, however, differs by using the 
+`android:paddingTop` attribute. This attribute's value, 
 `@dimen/nav_header_height`, pads the top of the Screenlet by the height of the 
 navigation drawer's header section. This prevents the Screenlet and drawer 
 header from overlapping. 
@@ -121,7 +125,7 @@ To implement `BaseListListener`, you must implement the following methods:
         @Override
         public void onListPageFailed(int startRow, Exception e) {
 
-            Toast.makeText(getApplicationContext(), "Page request failed", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Page request failed", Toast.LENGTH_LONG).show();
         }
 
     This requires you to import `android.widget.Toast`. 

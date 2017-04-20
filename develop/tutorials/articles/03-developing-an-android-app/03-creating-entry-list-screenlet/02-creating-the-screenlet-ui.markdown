@@ -204,10 +204,10 @@ Create the file `list_entries.xml` in the `res/layout` directory, and replace
 its contents with this code: 
 
     <com.liferay.docs.entrylistscreenlet.view.EntryListView
-        android:id="@+id/liferay_list_screenlet"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/liferay_list_screenlet"
         android:layout_width="match_parent"
-         android:layout_height="match_parent">
+        android:layout_height="match_parent">
 
         <ProgressBar
             android:id="@+id/liferay_progress"

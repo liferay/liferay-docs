@@ -28,35 +28,35 @@ Studio when you created the project. Insert Login Screenlet's XML in its place:
         android:id="@+id/login_screenlet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        liferay:basicAuthMethod="screen_name"
-        liferay:layoutId="@layout/login_default"
+        app:basicAuthMethod="screen_name"
+        app:layoutId="@layout/login_default"
         />
 
 When prompted by Android Studio, add the following XML namespace to the 
 `<RelativeLayout>` tag: 
 
-    xmlns:liferay="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-Note the two `liferay` attributes in the Login Screenlet's XML. The 
-`liferay:basicAuthMethod` attribute tells the Screenlet to use basic 
-authentication instead of OAuth. The `screen_name` value tells the Screenlet 
-to authenticate with the user's screen name. You can alternatively set this to 
-`email` or `userId`. This Learning Path uses `screen_name` only because it's 
-much faster to type a screen name than a full email address in the emulator. 
-Also, this value must match the authentication setting in the @product@ 
-instance. By default, @product@ instances use email address for authentication. 
-For this Learning Path, you need to set your @product@ instance to authenticate 
-by screen name instead. See 
-[this section in Login Screenlet's reference documentation](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#basic-authentication) 
+Note the two `app` attributes in the Login Screenlet's XML. The 
+`app:basicAuthMethod` attribute tells the Screenlet to use basic authentication 
+instead of OAuth. The `screen_name` value tells the Screenlet to authenticate 
+with the user's screen name. You can alternatively set this to `email` or 
+`userId`. This Learning Path uses `screen_name` only because it's much faster to 
+type a screen name than a full email address in the emulator. Also, this value 
+must match the authentication setting in the @product@ instance. By default, 
+@product@ instances use email address for authentication. For this Learning 
+Path, you need to set your @product@ instance to authenticate by screen name 
+instead. 
+[Click here](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#basic-authentication) 
 for instructions on changing your @product@ instance's authentication setting. 
 
-The second `liferay` attribute in Login Screenlet's XML is `liferay:layoutId`. 
-This attribute sets the View to display the Screenlet with. The value 
-`@layout/login_default` specifies the Default view. For more information on 
-Views in Liferay Screens, see 
-[the tutorial on using Views](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets). 
-For more information on Login Screenlet's available attributes, see 
-[the Screenlet's reference documentation](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android). 
+The second `app` attribute in Login Screenlet's XML is `app:layoutId`. This 
+attribute sets the View to display the Screenlet with. The value 
+`@layout/login_default` specifies the Default view. 
+[Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
+for more information on using Views in Liferay Screens. For more information on 
+Login Screenlet's available attributes, 
+[click here](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#attributes). 
 
 Next, you'll implement `LoginListener` in the `MainActivity` class. Open 
 `MainActivity` and change its declaration to implement `LoginListener`. The 

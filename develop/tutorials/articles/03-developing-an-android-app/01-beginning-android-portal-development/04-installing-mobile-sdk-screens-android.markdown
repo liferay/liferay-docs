@@ -68,16 +68,15 @@ for more information on Views in Liferay Screens.
 Once you edit `build.gradle`, a message appears at the top of the file that asks 
 you to sync your app with its Gradle files. Syncing with the Gradle files is 
 required to incorporate any changes you make to them. Syncing also downloads and 
-installs any new dependencies, like the Liferay Screens dependency that you just 
-added. Sync the Gradle files now by clicking the *Sync Now* link in the message. 
+installs any new dependencies, like those you just added. Sync the Gradle files 
+now by clicking the *Sync Now* link in the message. 
+
 Note that your `build.gradle` may show an error similar to this: 
 
     All com.android.support libraries must use the exact same version specification...
 
-If this occurs, you must manually add the version of the `com.android.support` 
-dependencies needed by the app. 
-[Click here](http://stackoverflow.com/questions/42374151/all-com-android-support-libraries-must-use-the-exact-same-version-specification) 
-for instructions on how to do this. For example, the app in this Learning Path 
+If this occurs, you must manually add the correct version of the 
+`com.android.support` dependencies. For example, the app in this Learning Path 
 currently uses version `25.3.1` of the `com.android.support` libraries. This 
 requires that you manually add the following dependencies to the app's 
 `build.gradle`: 

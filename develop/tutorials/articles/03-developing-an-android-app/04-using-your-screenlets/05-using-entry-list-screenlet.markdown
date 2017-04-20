@@ -18,11 +18,11 @@ following:
 
     <com.liferay.docs.entrylistscreenlet.EntryListScreenlet
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:liferay="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/entrylist_screenlet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        liferay:layoutId="@layout/list_entries"/>
+        app:layoutId="@layout/list_entries"/>
 
 As with Guestbook List Screenlet, you'll use the `android:id` value to get a 
 Screenlet reference. Next, you must implement the Screenlet's listener. 
@@ -135,12 +135,36 @@ navigation drawer; its header displays the text *Android Studio* and
 The two `TextView` elements in `nav_header_guestbooks.xml` use the 
 `android:text` attribute to hardcode this text. To remove the text completely, 
 you could delete these `TextView` elements. It's better though to show text 
-relevant to your app. In the `TextView` elements, replace `"Android Studio"` 
-with `"Liferay Guestbook"`, and `"android.studio@android.com"` with 
-`"Welcome!"`. Run the app again, and open the drawer after signing in. The 
+relevant to your app. To do this, first add the following to 
+`res/values/strings.xml`: 
+
+    <string name="welcome">Welcome!</string>
+    <string name="liferay_guestbook">Liferay Guestbook</string>
+
+This defines the strings `Welcome!` and `Liferay Guestbook` as string resources 
+named `welcome` and `liferay_guestbook`, respectively. Now return to 
+`nav_header_guestbooks.xml`. In the `TextView` elements, replace `Android 
+Studio` with `@string/liferay_guestbook`, and `android.studio@android.com` with 
+`@string/welcome`. Run the app again, and open the drawer after signing in. The 
 drawer header now shows your greeting. 
 
 ![Figure 3: The drawer displays your greeting after you change the text in `nav_header_guestbooks.xml`.](../../../images/android-guestbook-screenlet-drawer-02.png)
+
+There's one other not-so-subtle issue with the app's presentation: the action 
+bar is somewhere on the purple-blue spectrum, while the drawer header is green. 
+You've probably seen more attractive finger paintings. Fortunately, it's simple 
+to change the drawer header's color. In `res/drawable/side_nav_bar.xml`, replace 
+`android:centerColor`, `android:endColor`, and `android:startColor` with the 
+following: 
+
+    android:centerColor="@color/colorPrimary"
+    android:endColor="@color/colorPrimaryDark"
+    android:startColor="@color/colorPrimary"
+
+Run the app again, and open the drawer after signing in. The drawer header 
+should now look something like this: 
+
+![Figure 4: The drawer header looks much better in a color that matches the action bar.](../../../images/android-guestbook-screenlet-drawer-03.png)
 
 Congratulations! Now you know how to use Liferay Screens and create your own 
 Screenlets. This opens up a world of possibilities for developing apps that 

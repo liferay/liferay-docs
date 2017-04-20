@@ -30,11 +30,6 @@ This creates the `EntriesFragment` class and its layout file
 
     public class EntriesFragment extends Fragment {
 
-
-        public EntriesFragment() {
-            // Required empty public constructor
-        }
-
         public static EntriesFragment newInstance(long guestbookId) {
             EntriesFragment entriesFragment = new EntriesFragment();
             Bundle args = new Bundle();
@@ -57,17 +52,18 @@ This creates the `EntriesFragment` class and its layout file
     }
 
 If you have experience with Android fragments, then you're likely familiar with 
-the `newInstance` method and the empty constructor. When the screen orientation 
-changes or the user switches apps, Android must restore the fragment. Instead of 
-recreating the fragment from scratch, the `newInstance` method lets Android 
-restore it with the data it contained. Since this fragment will contain Entry 
-List Screenlet, its data must include the ID of the guestbook the Screenlet 
-retrieves entries from (`guestbookId`). Also, the `onCreateView` method uses the 
-bundle arguments set in `newInstance` to retrieve the `guestbookId`. For now, 
-you don't have to do anything with the `guestbookId` in `onCreateView`. You'll 
-use this variable when you add the Screenlet to the fragment. For more 
-information on managing fragments with a `newInstance` method, see 
-[this blog post](http://www.androiddesignpatterns.com/2012/05/using-newinstance-to-instantiate.html). 
+the static `newInstance` method. In short, using such a method instead of an 
+empty constructor lets you create the fragment and initialize its data in one 
+step. This makes it easier to create and restore the fragment. 
+[Click here](http://www.androiddesignpatterns.com/2012/05/using-newinstance-to-instantiate.html) 
+for more information. 
+
+Since this fragment will contain Entry List Screenlet, its data must include the 
+ID of the guestbook the Screenlet retrieves entries from (`guestbookId`). Also, 
+the `onCreateView` method uses the bundle arguments set in `newInstance` to 
+retrieve the `guestbookId`. For now, you don't have to do anything with the 
+`guestbookId` in `onCreateView`. You'll use this variable when you add the 
+Screenlet to the fragment. 
 
 Next, you'll add this fragment to `GuestbooksActivity`. 
 
