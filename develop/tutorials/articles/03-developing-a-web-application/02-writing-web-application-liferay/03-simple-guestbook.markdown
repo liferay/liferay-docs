@@ -154,7 +154,7 @@ Container* to make this happen.
 Save your work, deploy your application, and try adding some guestbook entries.
 
 You already know that this isn't the ideal use of portlet preferences, or the 
-best way to handle persistance of data for your application. Next you'll use Service Builder to generate your persistance classes and the methods you need to use the database.
+best way to handle persistance of data for your application. Next you'll use Service Builder to generate your persistance classes and the methods you need to store your application data in the database.
 
 # Next Steps
 
