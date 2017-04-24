@@ -28,15 +28,15 @@ your own @product@ apps.
 
 To build the Guestbook Mobile SDK, first download the Mobile SDK's source code. 
 You can do so by clicking 
-[this link](https://github.com/liferay/liferay-mobile-sdk/archive/android-7.0.4.zip). 
+[this link](https://github.com/liferay/liferay-mobile-sdk/archive/android-7.0.5.zip). 
 Unzip the file to a location on your machine where you want the Mobile SDK to 
 reside. This location is purely personal preference; the builder works the same 
 no matter where you put the Mobile SDK's source code. Once unzipped, the Mobile 
-SDK's source code is in the `liferay-mobile-sdk-android-7.0.4` folder. 
+SDK's source code is in the `liferay-mobile-sdk-android-7.0.5` folder. 
 
 Now you're ready to build the Guestbook Mobile SDK. The builder contains a 
 convenient command line wizard to assist you in building Mobile SDKs. To start 
-it, navigate to the `liferay-mobile-sdk-android-7.0.4` directory and run the 
+it, navigate to the `liferay-mobile-sdk-android-7.0.5` directory and run the 
 following command: 
 
     ./gradlew createModule
@@ -89,7 +89,7 @@ the command line and run `../../gradlew jar`. This command does two things:
     portlet's service classes. This JAR file is the Guestbook Mobile SDK. 
 
 2.  Generates a custom-built version of Liferay's pre-built Mobile SDK in 
-    `liferay-mobile-sdk-android-7.0.4/android/build/libs`. 
+    `liferay-mobile-sdk-android-7.0.5/android/build/libs`. 
 
 Congratulations! You just built the Guestbook Mobile SDK. Now that's an 
 accomplishment worth writing in a guestbook. All you need now is an Android app 
