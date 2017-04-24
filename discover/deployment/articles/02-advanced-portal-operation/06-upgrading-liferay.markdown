@@ -153,17 +153,17 @@ you'll find out if you have any Web Content structures to fix before upgrading.
 If you make use of the Web Content Management system, you've probably created a
 library of structures and templates to help you manage your content. In prior
 versions of Liferay, it was possible to create structures that had multiple
-fields with the same name. Because this is no longer supported in Liferay 6.2,
-these structures must be changed so none of their fields have duplicate names.
-If you try to upgrade and you have duplicated field names in your structures,
-the upgrade will fail. 
+fields with the same name. Because this is no longer supported in Liferay 6.2
+(EE as of Fixpack 50 or CE as of 6.2.4 GA5), these structures must be changed so
+none of their fields have duplicate names. If you try to upgrade and you have
+duplicated field names in your structures, the upgrade will fail. 
 
 To identify these structures, Liferay has provided Groovy scripts you can run in
 the script console: 
 
 - [Script for 6.0](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.0.x.groovy)
 - [Script for 6.1](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.1.x.groovy)
-- [Script for 6.2 before Fixpack 50](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.2.x.groovy)
+- [Script for 6.2](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.2.x.groovy)
 
 To execute the script, go to the *Control Panel* &rarr; *Server Administration*
 &rarr; *Scripts*. Make sure Groovy is the selected language and paste in the
