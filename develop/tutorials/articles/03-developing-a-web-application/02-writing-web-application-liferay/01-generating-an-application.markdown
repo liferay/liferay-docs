@@ -45,8 +45,9 @@ create your Liferay Module Project.
 1. Right click on your workspace.
 2. Select `New` &rarr; `Liferay Module Project`
 3. Enter `Guestbook` for the Project name
-4. Use the `gradle-module` Build type.
-5. Select the `mvc-portlet` for Project Template Name.
+4. Enter `com.liferay.docs.guestbook` for the package name.
+5. Use the `gradle-module` Build type.
+6. Select the `mvc-portlet` for Project Template Name.
 
 
 This creates a project named `Guestbook`. The `mvcportlet` 
@@ -108,14 +109,14 @@ click on the *Add* button (it looks like a plus sign) and then on
 *Applications*. In this list, your application should appear in the Sample
 category. Its name should be `guestbook-module Portlet`. You can
 change this name by editing the `javax.portlet.display-name` property in your
-`GuestbookPortlet` class. E.g., you could use
+`GuestbookModulePortlet` class. E.g., you could use
 
     "javax.portlet.display-name=Guestbook"
 
 to change the display name of your application to `Guestbook`.
 
 This property string should be added to the `property` array defined in the
-`@Component` annotation of your `GuestbookPortlet` class.
+`@Component` annotation of your `GuestbookModulePortlet` class.
 
 ![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that you created.](../../images/default-portlet-application.png)
 

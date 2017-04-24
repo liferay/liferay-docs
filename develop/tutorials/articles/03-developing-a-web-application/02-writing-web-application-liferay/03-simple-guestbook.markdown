@@ -77,16 +77,18 @@ action. To make the guestbook show the saved guestbook entries when users view
 the application, you need to customize your portlet's render functionality,
 which it's currently inheriting from its parent class, `MVCPortlet`.
 
-1. Open `GuestbookPortlet.java` and add the following method below your
+1. Open `GuestbookModulePortlet.java` and add the following method below your
    `addEntry` method:
 
         @Override
         public void render(RenderRequest renderRequest, RenderResponse renderResponse)
                 throws PortletException, IOException {
-
-			GuestbookPortletInstanceConfiguration gradebookPortletInstanceConfiguration = 
+			ThemeDisplay themeDisplay= (ThemeDisplay)renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
+			PortletDisplay portletDisplay= themeDisplay.getPortletDisplay();
+			
+			GuestbookModulePortletInstanceConfiguration gradebookPortletInstanceConfiguration = 
 		    	portletDisplay.getPortletInstanceConfiguration(
-		       	 GuestbookPortletInstanceConfiguration.class);
+		       	 GuestbookModulePortletInstanceConfiguration.class);
 
             if (gradebookPortletInstanceConfiguration != null) {
                 List<Entry> entries = parseEntries(guestbookEntries);
@@ -97,7 +99,7 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
             super.render(renderRequest, renderResponse);
         }
 
-    This method retrieves the guestbook entries from the Configuration,
+    This method retrieves the guestbook entries from the Configuration, 
 	converts it to a `List` of `Entry` objects, and places that
     `List` into the request object. It then calls the parent class's `render`
     method.
@@ -150,6 +152,9 @@ Container* to make this happen.
         </liferay-ui:search-container>
 
 Save your work, deploy your application, and try adding some guestbook entries.
+
+You already know that this isn't the ideal use of portlet preferences, or the 
+best way to handle persistance of data for your application. Next you'll use Service Builder to generate your persistance classes and the methods you need to use the database.
 
 # Next Steps
 

@@ -20,7 +20,7 @@ project's `src/main/resources/META-INF/resources` folder. It's called
     <%@ include file="/init.jsp" %>
 
     <p>
-        <b><liferay-ui:message key="com_liferay_docs_guestbook_GuestbookPortlet.caption"/></b>
+        <b><liferay-ui:message key="com_liferay_docs_guestbook_GuestbookModulePortlet.caption"/></b>
     </p>
 
 As you can see, this file contains some sample content since the project 
@@ -116,7 +116,7 @@ a variable named `addEntryURL`. The `<portlet:param>` tag defines a URL
 parameter which is appended to the generated URL. In this example, a URL
 parameter named `mvcPath` with a value of `/edit_entry` is appended to the URL.
 
-Notice that your `GuestbookPortlet` class extends `MVCPortlet`, which is
+Notice that your `GuestbookModulePortlet` class extends `MVCPortlet`, which is
 Liferay's MVC portlet class. In a Liferay MVC portlet, the `mvcPath` URL
 parameter is used to indicate a page within your portlet application. To
 navigate to another page in your portlet application, use a portal URL with the
@@ -237,7 +237,7 @@ URL, and you called it `addEntry`. To create a portlet action, you create a
 method in the portlet class with the same name. `MVCPortlet` calls that method
 when a user triggers its matching URL.
 
-1. Open the `GuestbookPortlet.java`. The project templates generated this class 
+1. Open the `GuestbookModulePortlet.java`. The project templates generated this class 
 	when you created the portlet project.
 
 2. Create a method with the following signature:
@@ -268,80 +268,51 @@ robust mechanism for saving application data in the  *Service Builder* learning 
 
 $$$
 
-Create a new sub-package under your `guestbook.module.portlet` package named 
-`com.liferay.guestbook.module.portlet.configuration.` 
-Inside of the new package, create a Java interface named 
-`GuestbookPortletInstanceConfiguration.java` that will represent the 
-configuration, which will define all of your configuration fields using the 
-@Meta.OCD annotation.
+The following method implements adding a guestbook entry to a portlet preference
+called `guestbook-entries`:
+ 
+    public void addEntry(ActionRequest request, ActionResponse response) {
+        try {
+            PortletPreferences prefs = request.getPreferences();
 
-	@ExtendedObjectClassDefinition(
-	    category = "guestbook-entries",
-	    scope = ExtendedObjectClassDefinition.Scope.GROUP
-	)
-	@Meta.OCD(
-	    id = "com.liferay.docs.guestbook.GuestbookGroupServiceConfiguration",
-	)
-	public interface GuestbookGroupServiceConfiguration {
-		
-	    @Meta.AD(deflt = "", required = true)
-		public string userName();
+            String[] guestbookEntries = prefs.getValues("guestbook-entries",
+                    new String[1]);
 
-	    @Meta.AD(deflt = "", required = true)		
-		public string message();
-		
-	    @Meta.AD(deflt = "", required = true)
-		public string entry();
-	}
+            ArrayList<String> entries = new ArrayList<String>();
 
+            if (guestbookEntries != null) {
+                entries = new ArrayList<String>(Arrays.asList(prefs.getValues(
+                        "guestbook-entries", new String[1])));
+            }
 
-Next, create a class called 
-`GradebookPortletInstanceConfigurationBeanDeclaration` that implements the 
-Configuration Bean Declaration interface to let the Configuration framework 
-know about the Configuration class. Add the method to get the configuration 
-bean class to the class body:
+            String userName = ParamUtil.getString(request, "name");
+            String message = ParamUtil.getString(request, "message");
+            String entry = userName + "^" + message;
 
-    @Override
-    public class getConfigurationBeanClass() {
-        return GuestbookGroupServiceConfiguration.class;
-    	}
+            entries.add(entry);
 
+            String[] array = entries.toArray(new String[entries.size()]);
 
-Your full file should look like this:
+            prefs.setValues("guestbook-entries", array);
 
-	@Component
-	public class GuestbookGroupServiceConfigurationBeanDeclaration
-        implements ConfigurationBeanDeclaration {
+            try {
+                prefs.store();
+            }
+            catch (IOException ex) {
+                Logger.getLogger(GuestbookModulePortlet.class.getName()).log(
+                        Level.SEVERE, null, ex);
+            }
+            catch (ValidatorException ex) {
+                Logger.getLogger(GuestbookModulePortlet.class.getName()).log(
+                        Level.SEVERE, null, ex);
+            }
 
-Change the configuration JSP to retrieve the configuration using the 
-Configuration API. If the scope is “Portlet Instance” the configuration can be 
-retrieved from portletDisplay:
-
-	GuestbookPortletInstanceConfiguration portletInstanceConfiguration = 
-    	portletDisplay.getPortletInstanceConfiguration(
-       	 GuestbookPortletInstanceConfiguration.class);
-
-
-Finally it is usually necessary to read the configuration from Java classes or 
-other JSPs. In cases where the portletDisplay is not available, or when the 
-scope is “Group” or “Company”, the PortletProvider class offers methods to 
-obtain the configuration. The best way to access the PortletProvider depends on 
-who is making the invocation:
-
-Within an OSGi Component a reference to the ConfigurationProvider can be obtained and used as follows:
-
-	@Component(service = Foo)
-       public class Foo {
-
-         protected void methodWhichNeedsConfiguration() {
-               _configurationProvider.getGroupConfiguration(
-                    GuestbookGroupServiceConfiguration.class, groupId);
-         }
-
-            @Reference
-            private ConfigurationProvider _configurationProvider;
-       }
-
+        }
+        catch (ReadOnlyException ex) {
+            Logger.getLogger(GuestbookModulePortlet.class.getName()).log(
+                    Level.SEVERE, null, ex);
+        }
+    }
 
 First, the preferences are retrieved, and then the `guestbook-entries`
 preference is retrieved and converted to an `ArrayList` so that you can add an
