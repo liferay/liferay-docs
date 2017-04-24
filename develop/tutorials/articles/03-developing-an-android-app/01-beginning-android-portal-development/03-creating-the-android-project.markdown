@@ -10,8 +10,8 @@ make sure you've installed Android's development tools.
 
 This Learning Path uses Android Studio--Android's official IDE--to develop the 
 Guestbook app. As an Android developer, you're likely very familiar with Android 
-Studio. The following links to Android Studio's documentation are provided as a 
-quick reference in case you need help setting up and using Android Studio: 
+Studio. If you need help setting up and using Android Studio, see the following 
+topics in Android Studio's documentation: 
 
 - [Android Studio Installation Instructions](https://developer.android.com/studio/install.html?pkg=studio)
 - [Meet Android Studio](https://developer.android.com/studio/intro/index.html)
