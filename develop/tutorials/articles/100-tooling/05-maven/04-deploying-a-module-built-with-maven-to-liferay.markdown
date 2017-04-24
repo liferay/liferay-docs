@@ -82,5 +82,5 @@ tutorial for more information.
 
         mvn verify
 
-That's it! Your Liferay Maven project is build and deployed automatically to
+That's it! Your Liferay Maven project is built and deployed automatically to
 your @product@ instance.
