@@ -28,11 +28,11 @@ Liferay Screens. When you finish, you'll be ready to start developing the app.
 ## Installing the Guestbook Mobile SDK [](id=installing-the-guestbook-mobile-sdk)
 
 The Mobile SDK Builder generated two separate JAR files in your
-`liferay-mobile-sdk-android-7.0.4` folder: 
+`liferay-mobile-sdk-android-7.0.5` folder: 
 
 1. `modules/gb/build/libs/liferay-gb-android-sdk-1.0.jar`
 
-2. `android/build/libs/liferay-android-sdk-7.0.4.jar`
+2. `android/build/libs/liferay-android-sdk-7.0.5.jar`
 
 The first JAR file is the Guestbook Mobile SDK. The second JAR file is a custom 
 built version of Liferay's pre-built Mobile SDK. Because Screens includes the 
@@ -71,7 +71,7 @@ required to incorporate any changes you make to them. Syncing also downloads and
 installs any new dependencies, like those you just added. Sync the Gradle files 
 now by clicking the *Sync Now* link in the message. 
 
-Note that your `build.gradle` may show an error similar to this: 
+Note that after syncing, your `build.gradle` may show an error similar to this: 
 
     All com.android.support libraries must use the exact same version specification...
 
@@ -87,6 +87,9 @@ requires that you manually add the following dependencies to the app's
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:exifinterface:25.3.1'
 
+After adding these inside the `dependencies` element, click *Sync Now* again. 
+The error message should be gone once the sync completes.
+
 ![Figure 2: After editing the app module's `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../../images/android-build-gradle-sync.png)
 
 Great! Now you're ready to test your Screens and Mobile SDK installations. 
@@ -95,8 +98,8 @@ Great! Now you're ready to test your Screens and Mobile SDK installations.
 
 To check your Screens and Mobile SDK installations, first open your project's 
 `MainActivity` class in Android Studio. It's in the `java` folder's
-`com.liferay.docs.liferayguestbook` package. Then add the following imports at 
-the top of the file: 
+`com.liferay.docs.liferayguestbook` package. Then add the following imports to 
+this file: 
 
     import com.liferay.mobile.android.service.Session;
     import com.liferay.mobile.android.v7.entry.EntryService;
@@ -116,7 +119,7 @@ instance. You do this by adding a `server_context.xml` file in your project's
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
 
-        <!-- Change these values for your @product@ instance -->
+        <!-- Change these values for your portal instance -->
 
         <string name="liferay_server">http://10.0.2.2:8080</string>
 
