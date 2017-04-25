@@ -157,7 +157,7 @@ class. Departures from the tutorial's steps are noted.
 Awesome! Your Screenlet class is finished. Your Screenlet is finished, too! 
 Before using Guestbook List Screenlet, however, you'll create Entry List 
 Screenlet to show a list of each guestbook's entries. After all, viewing 
-guestbooks without their entries doesn't make much sense; it isn't very exciting 
+guestbooks without their entries doesn't make much sense. It isn't very exciting 
 either. What's really exciting is that you can create Entry List Screenlet with 
 the same set of steps you used to create Guestbook List Screenlet. The next 
 series of articles in this Learning Path walks you through this. 
