@@ -34,10 +34,6 @@ Studio when you created the project. Insert Login Screenlet's XML in its place:
         app:layoutId="@layout/login_default"
         />
 
-To resolve the `app` namespace, add the following to the `<RelativeLayout>` tag: 
-
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
 Note the two `app` attributes in the Login Screenlet's XML. The 
 `app:basicAuthMethod` attribute tells the Screenlet to use basic authentication 
 instead of OAuth. The `screen_name` value tells the Screenlet to authenticate 
@@ -88,8 +84,7 @@ like this:
 
     public class MainActivity extends AppCompatActivity implements LoginListener {...
 
-You must also add the `com.liferay.mobile.screens.auth.login.LoginListener` 
-import. 
+You must also import `com.liferay.mobile.screens.auth.login.LoginListener`. 
 
 Implementing `LoginListener` requires you to implement the `onLoginSuccess` and 
 `onLoginFailure` methods. Add them to the class as follows: 
@@ -146,8 +141,10 @@ functionality yet. You'll fix this next.
 ## Navigating from Login Screenlet [](id=navigating-from-login-screenlet)
 
 When login succeeds, you need to open `GuestbooksActivity`. You'll do this by 
-using a standard Android intent in `MainActivity`'s `onLoginSuccess` method. 
-Replace the contents of `onLoginSuccess` with this code: 
+using an 
+[Android intent](https://developer.android.com/guide/components/intents-filters.html) 
+in `MainActivity`'s `onLoginSuccess` method. Replace the contents of 
+`onLoginSuccess` with this code: 
 
     Intent intent = new Intent(this, GuestbooksActivity.class);
     startActivity(intent);
