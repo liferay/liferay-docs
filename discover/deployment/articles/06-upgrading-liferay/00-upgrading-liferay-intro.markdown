@@ -278,9 +278,11 @@ configuration that you can customize for your use:
 
 -`app-server.properties`:
 
-    dir=/home/user/servers/liferay7/tomcat-8.0.32
-    portal.dir=webapps/ROOT
-    global.dir.lib=lib
+	dir=../../tomcat-8.0.32
+	global.lib.dir=/lib
+	portal.dir=/webapps/ROOT
+	server.detector.server.id=tomcat
+	extra.lib.dirs=/bin
 
 The `dir` setting is the folder where your app server is installed. The
 `portal.dir` setting is the folder where @product@ is installed in your app
