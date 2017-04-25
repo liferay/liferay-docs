@@ -1,136 +1,241 @@
-Adaptive Media
+# Adapting Your Media across Multiple Devices
 
-Content is viewed on all sorts of devices these days, which all have different screen sizes, bandwidths, processing capabilities, etc. Until now, media content was delivered to these devices without considering these characteristics.
+People consume content across multiple devices these days. They might be on 
+the go, browsing the web on their phone, in a coffee shop checking their 
+favorite blogs on their tablet, or at home viewing family photos on their laptop, 
+desktop, game system, streaming device, etc. All these devices have different 
+screen sizes, bandwidths, processing capabilities, etc. Media content is
+delivered to these devices without considering these characteristics. When you 
+fail to plan for these characteristics, you're planning to fail your users. 
+You and your users can rest easy though because @product@'s' Adaptive Media app 
+has you covered. 
 
-Adaptive Media is an Application for Liferay Portal CE 7.0 and Liferay DXP, available for download from the [Liferay Marketplace](https://web.liferay.com/marketplace),  that will deliver your media content in the best format, based on the channel and device that will consume it.
+Adaptive Media is an Application for Liferay Portal CE 7.0 and Liferay DXP, 
+available for download from the [Liferay Marketplace](https://web.liferay.com/marketplace),  
+that delivers your media content in the best format, based on the channel 
+and device that will consume it.
 
-This provides faster loading times for devices with a slower connection, saving you bandwidth, and also gives you administrative control over the image quality provided.
+This provides faster loading times for devices with a slower connection, saving 
+bandwidth, and also gives you administrative control over the image quality 
+provided.
 
-# How does it work?
+## How It Works
 
-Portal Administrators define a set of image resolutions that they want for their devices. Images uploaded thereafter have a copy generated that is scaled to fit each of these resolutions.
+Portal Administrators define a set of image resolutions that they want for their 
+devices. Images uploaded thereafter have a copy generated that is scaled to fit 
+each of these resolutions.
 
-Adaptive Media is integrated with Documents and Media and Blogs. Images uploaded to Documents and Media or to a Blog Entry are analyzed and processed, generating a set of images with the defined resolutions. For instance, when a user is reading a blog entry on their mobile phone that contains an image, Adaptive Media checks the screen size of the phone and delivers the image that best fits the screen. 
+Adaptive Media is integrated with Documents and Media and Blogs. Images uploaded 
+to Documents and Media or to a Blog Entry are analyzed and processed, generating 
+a set of images with the defined resolutions. For instance, when a user is 
+reading a blog entry on their mobile phone that contains an image, Adaptive 
+Media checks the screen size of the phone and delivers the image that best fits 
+the screen. 
 
-Adaptive Media also ensures that your high resolution devices receive a high resolution image for the optimal viewing experience.
+Adaptive Media also ensures that your high resolution devices receive a high 
+resolution image for the optimal viewing experience.
 
-# Adding Image Resolutions
+## Adding Image Resolutions
 
-Portal Administrators can manage Adaptive Media by opening the Control Panel and selecting the **_Adaptive Media_** link under the **_Configuration_** heading.
+Portal Administrators can manage Adaptive Media by opening the Control Panel and 
+selecting the *Adaptive Media* link under the *Configuration* heading.
 
 ![image alt text](image_0.png)
 
-Portal administrators need to specify the image resolutions to generate when a new image is uploaded. 
+Portal administrators need to specify the image resolutions to generate when a 
+new image is uploaded. 
 
-Note that new resolutions are automatically generated for all images uploaded after the resolution is created. However, this is not the case with images that have been uploaded before the resolution was created. To apply a new resolution to previously uploaded images, you must trigger the process to adapt the remaining images. This process is covered in the Generating Missing Image Resolutions section.
+Note that new resolutions are automatically generated for all images uploaded 
+after the resolution is created. However, this is not the case with images that 
+have been uploaded before the resolution was created. To apply a new resolution 
+to previously uploaded images, you must trigger the process to adapt the 
+remaining images. This process is covered in the 
+[Generating Missing Image Resolutions section](TODO). 
 
-Note: Adaptive Media configurations are scoped per virtual instance. Configurations made in an instance will apply to that instance only.
++$$$
 
-To add a new resolution, click the plus button on the bottom right corner of the application.
+**Note:** Adaptive Media configurations are scoped per virtual instance. 
+Configurations made in an instance will apply to that instance only.
+
+$$$
+
+To add a new resolution, click the plus button on the bottom right corner of the 
+application.
 
 The following fields are mandatory to create a new image resolution:
 
-* **Title**: a name used for identification purposes (needs to be unique. No two image resolutions can share the same title)
+- **Title**: a name used for identification purposes (needs to be unique. No two 
+  image resolutions can share the same title)
 
-* **Maximum Width**: the maximum width of the generated image.
+- **Maximum Width**: the maximum width of the generated image.
 
-* **Maximum Height**: the maximum height of the generated image.
+- **Maximum Height**: the maximum height of the generated image.
 
-Images generated by Adaptive Media are scaled to fit the desired resolutions, while maintaining their original aspect ratio. This ensures that the image won’t be distorted to fit a particular size. This is why resolutions are defined as "maximum" width and height, rather than a specific width and height.
+Images generated by Adaptive Media are scaled to fit the desired resolutions, 
+while maintaining their original aspect ratio. This ensures that the image won’t 
+be distorted to fit a particular size. This is why resolutions are defined as 
+*Maximum* width and height, rather than a specific width and height.
 
-By default, the identifier for the image resolution is automatically generated based on the image resolution title. You can specify a custom identifier by clicking the radio button next to *Custom*, under the *Identifier* heading and entering a new ID. This identifier can be used by third party applications to access the Adaptive Media API to obtain the images for a particular resolution.
+By default, the identifier for the image resolution is automatically generated 
+based on the image resolution title. You can specify a custom identifier by 
+clicking the radio button next to *Custom*, under the *Identifier* heading and 
+entering a new ID. The identifier can be used by third party applications to 
+obtain the images for that particular resolution via the Adaptive Media APIs.
 
 ![image alt text](image_1.png)
 
-You can also create a resolution for high density displays. If the administrator selects this option, a new resolution for these devices will be created with the same title and the suffix "-2x". This option is only available when adding new image resolutions. These resolutions will have a width and height that is double the original. This means that if the original resolution has a Max. Width of 400px and a Max. Height of 300px, the high density resolution will have a Max. Width of 800px and a Max. Height of 600px.
+You can also create a resolution for high density displays. If the administrator 
+selects this option, a new resolution for these devices will be created with the 
+same title and the suffix *-2x*. This option is only available when adding new 
+image resolutions. These resolutions will have a width and height that is double 
+the original. For example, if the original resolution has a Max. Width of 
+400px and a Max. Height of 300px, the high density resolution will have a Max. 
+Width of 800px and a Max. Height of 600px. 
 
 ### How many image resolutions should I add?
 
-The number of image resolutions and the values for each resolution depends on the use case. The more image resolutions added, the more optimal the image delivery is, but this also requires more storage and computational resources to generate these images. Portal Administrators need to find the right balance based on their needs.
+The number of image resolutions and the values for each resolution depends on 
+the use case. The more image resolutions added, the more optimal the image 
+delivery is, but this also requires more storage and computational resources to 
+generate these images. Portal Administrators need to find the right balance 
+based on their needs.
 
-To start, It’s recommended that you create 4 or 5 resolutions to cover most of the common device sizes, such as mobile phones, tablets, notebooks, desktop, etc, and name them with the device they are targeting. 
+To start, It’s recommended that you create 4 or 5 resolutions to cover most of 
+the common device sizes, such as mobile phones, tablets, laptops, desktops, etc, 
+and name them with the device they are targeting. 
 
-If you know that a big percentage of users are using a particular device (all the users of the intranet have the same company mobile phone for example), you can create a specific resolution to target that particular device.
+If you know that a big percentage of users are using a particular device 
+(all the users of the intranet have the same company mobile phone for example), 
+you can create a specific resolution to target that particular device. 
 
-# Updating Image Resolutions
+## Updating Image Resolutions
 
-Portal administrators can modify the title of an existing image resolution, if a custom identifier is defined. However, **the image resolution and identifier can’t be updated if the resolution has already been used to create Adaptive Media images**. 
+Portal administrators can modify the title of an existing image resolution if a 
+custom identifier is defined. However, **the image resolution and identifier 
+can’t be updated if the resolution has already been used to create Adaptive 
+Media images**. This prevents inconsistencies in images. Otherwise, if 
+changes were made to the resolutions, the images generated before this change 
+would have a completely different size than the images created after this 
+change. 
 
-This is a restriction to avoid inconsistencies in the images. Otherwise, if changes were made to the resolutions, the images generated before this change would have a completely different size than the images created after this change. Even though this might look like a big restriction, the benefit of having consistent images is even bigger.
+If you need to change the values of an image resolution, you can delete the 
+image resolution and create a new one with the appropriate values.
+<!-- Pending question on the above statement -->
 
-If you need to change the values of an image resolution, you can delete the image resolution and create a new one with the appropriate values.
+## Disabling, Enabling and Deleting Image Resolutions
 
-# Disabling, Enabling and Deleting Image Resolutions
-
-Image resolutions are enabled by default, which means that Adaptive Media will generate images based on the resolution every time a new image is uploaded.
+Image resolutions are enabled by default, which means that Adaptive Media will 
+generate images based on the resolution every time a new image is uploaded.
 
 ### Disabling Image Resolutions
 
-Portal Administrators can disable image resolutions at any time. Any images uploaded after the resolution is disabled will instead use the most appropriate image resolution that is still active. The images previously generated with the disabled image resolution will still be available.
+Portal Administrators can disable image resolutions at any time. Any images 
+uploaded after the resolution is disabled will instead use the most appropriate 
+image resolution that is still active. The images previously generated with the 
+disabled image resolution will still be available.
 
 ### Enabling Image Resolutions
 
-Portal Administrators can enable disabled image resolutions at any time. It’s important to keep in mind that during the time the image resolution was disabled it didn’t generate images for new uploads, so after enabling an image resolution it’s recommended to regenerate the images that may have been missed.
+Portal Administrators can enable disabled image resolutions at any time. It’s 
+important to keep in mind that during the time the image resolution was disabled 
+it didn’t generate images for new uploads, so after enabling an image resolution 
+it’s recommended to regenerate the images that may have been missed.
 
 ### Deleting Image Resolutions
 
-Finally, Portal Administrators can also delete image resolutions. **To delete a resolution, the image resolution must be disabled first**. This acts as a safety guard to ensure that image resolutions are not accidentally deleted.
+Finally, Portal Administrators can also delete image resolutions. **To delete a 
+resolution, the image resolution must be disabled first**. This acts as a safety 
+guard to ensure that image resolutions are not accidentally deleted.
 
-The deletion of an image resolution is a critical operation because it deletes all the images generated for that specific resolution. When an image resolution is deleted, no new images can be generated for that resolution, and all of the previous images will be deleted and can no longer be used or referenced in any content. **This operation can’t be undone**.
+The deletion of an image resolution is a critical operation because it deletes 
+all the images generated for that specific resolution. When an image resolution 
+is deleted, no new images can be generated for that resolution, and all of the 
+previous images will be deleted and can no longer be used or referenced in any 
+content. **This operation can’t be undone**.
 
-# Generating Missing Image Resolutions
+## Generating Missing Image Resolutions
 
-There might be some cases where an image resolution hasn’t generated all the images that you require. For example, if you disable an image resolution and upload new images. Or perhaps you add a new image resolution that hasn’t been applied to all the previously uploaded images. In these kinds of scenarios you will see that the percentage of adapted images for an image resolution is lower than 100%. 
+There might be some cases where an image resolution hasn’t generated all the 
+images that you require. For example, if you disable an image resolution and 
+upload new images, or perhaps you add a new image resolution that hasn’t been 
+applied to all the previously uploaded images. In these kinds of scenarios you 
+will see that the percentage of adapted images for an image resolution is lower 
+than 100%. 
 
-Portal Administrators can trigger the process to adapt the missing images. Each image resolution can be adapted individually, or all image resolutions can be adapted at once by selecting *Adapt All Images* from the options menu.
+Portal Administrators can trigger the process to adapt the missing images. Each 
+image resolution can be adapted individually, or all image resolutions can be 
+adapted at once by selecting *Adapt All Images* from the options menu.
 
-# Creating Content with Adaptive Media Images
+## Creating Content with Adaptive Media Images
 
-The power of Adaptive media is its ability to deliver adapted content to each user, based on the capabilities of their device.
+The power of Adaptive media is its ability to deliver adapted content to each 
+user, based on the capabilities of their device.
 
-If the content includes an Adaptive Media Image, instead of displaying a new image for everyone, Adaptive Media includes several images (one per image resolution) targeting different device capabilities. You can see the differences in the HTML of the content in the example below:
+If the content includes an Adaptive Media Image, instead of displaying a new 
+image for everyone, Adaptive Media includes several images 
+(one per image resolution) targeting different device capabilities. You can see 
+the differences in the HTML of the content in the example below:
 
 Blog entry containing an image without Adaptive Media:
 
-<img src="/documents/20140/0/photo.jpeg/1992-9143-85d2-f72ec1ff77a0 />
+    <img src="/documents/20140/0/photo.jpeg/1992-9143-85d2-f72ec1ff77a0 />
 
 Blog entry containing an image with Adaptive Media:
 
-<picture>
+    <picture>
 
-<source media="(max-width:850px)" srcset="/o/adaptive-media/image/44147/med/photo.jpeg">
+        <source media="(max-width:850px)" srcset="/o/adaptive-media/image/44147/med/photo.jpeg">
 
-<source media="(max-width:1200px) and (min-width:850px)" srcset="/o/adaptive-media/image/44147/hd/photo.jpeg">
+        <source media="(max-width:1200px) and (min-width:850px)" srcset="/o/adaptive-media/image/44147/hd/photo.jpeg">
 
-<source media="(max-width:2000px) and (min-width:1200px)" srcset="/o/adaptive-media/image/44147/ultra-hd/photo.jpeg">
+        <source media="(max-width:2000px) and (min-width:1200px)" srcset="/o/adaptive-media/image/44147/ultra-hd/photo.jpeg">
 
-<img src="/documents/20140/0/photo.jpeg/1992-9143-85d2-f72ec1ff77a0">
+        <img src="/documents/20140/0/photo.jpeg/1992-9143-85d2-f72ec1ff77a0">
 
-</picture>
+    </picture>
 
-The example above uses three different images with three different resolutions. Additionally, the original image is used as a fallback in case the Adaptive Media Images are not available at a particular moment.
+The example above uses three different images with three different resolutions. 
+Additionally, the original image is used as a fallback in case the Adaptive 
+Media Images are not available at a particular moment. 
 
 ## Deciding the Image Resolutions to Use in Your Content
 
-Adaptive Media delivers the best image possible to a device, based on the image resolutions created by the Portal Administrators. However, image resolutions can be added or deleted at any time, affecting the content that has references to those images.
+Adaptive Media delivers the best image possible to a device, based on the image 
+resolutions created by the Portal Administrators. However, image resolutions can 
+be added or deleted at any time, affecting the content that has references to 
+those images.
 
-To handle this situation, Adaptive Media provides two different approaches you can take when creating your content: Using the latest available image resolutions or using the resolutions available at the the time the content is created.
+To handle this situation, Adaptive Media provides two different approaches you 
+can take when creating your content: Using the latest available image 
+resolutions or using the resolutions available at the the time the content was 
+created. 
 
 ## Using the latest available Image Resolutions in the content
 
-This is the default scenario for Adaptive Media, but Portal Administrators can use the other scenario if they prefer.
+This is the default scenario for Adaptive Media, and ensures that your content 
+uses the latest available resolutions, even if those resolutions were not 
+available when the content was created. 
 
-This scenario ensures that the content including Adaptive Media images will always use the latest available resolutions to deliver that content, even if those resolutions were not available when the content was created.
+When a user selects an image to be included in their content we do not save the 
+links of each of the image resolutions in the content. Instead, we use an 
+attribute that identifies the image, and when the image is displayed, Adaptive 
+Media automatically updates the content to use the latest available image 
+resolutions.
+<!-- The above is more of a developer topic -->
 
-When the user selects an image to be included in a content we do not save the links of each of the image resolutions in the content. Instead, we use an attribute that identifies the image, and when the image is displayed, Adaptive Media automatically updates the content to use the latest available image resolutions.
-
-This solution requires to dynamically replace the content when it is going to be displayed to ensure that the latest resolutions are used. This could have a performance impact if there are lots of users concurrently viewing blog entries.
+Note that this solution requires your content to be dynamically replaced when it 
+is displayed to ensure that the latest resolutions are used. This could have a 
+performance impact if there are lots of users concurrently viewing blog entries.
 
 ## Using the Image Resolutions available at the time the content is created
 
-This scenario will save the image resolutions available when the image is added to the content and those are the image resolutions that will be used when the content is displayed. 
+This scenario saves the image resolutions available when the image is added 
+to the content and those are the image resolutions that will be used when the 
+content is displayed. 
 
-This solution is better in terms of performance but it has some limitations in case new image resolutions are added or deleted, because the content will not reflect the changes in the image resolutions.
+This solution is better in terms of performance but it has some limitations in 
+case new image resolutions are added or deleted, because the content will not 
+reflect the changes in the image resolutions.
 
 # Using Adaptive Images in Blogs
 
