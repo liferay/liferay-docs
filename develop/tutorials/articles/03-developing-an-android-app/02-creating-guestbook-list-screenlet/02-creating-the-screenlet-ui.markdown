@@ -27,10 +27,10 @@ You'll create Guestbook List Screenlet's View in its own package inside the
 
 ## Creating the Row Layout [](id=creating-the-row-layout)
 
-First, you must create the layout that defines the Screenlet's UI for each list 
-row. Since each row in Guestbook List Screenlet displays only a single 
-guestbook's name, its layout needs to contain only a single `TextView`. Create 
-the following layout file `res/layout/guestbook_row.xml`: 
+First, you must create the layout that defines the UI for each row in the list. 
+Since each row in Guestbook List Screenlet displays only a single guestbook's 
+name, the row layout only needs a single `TextView`. Create the following 
+layout file `res/layout/guestbook_row.xml`: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -175,7 +175,7 @@ that the View layout for all list Screenlets is identical apart from the styling
 and the referenced View class. The layout for Guestbook List Screenlet's View, 
 `list_guestbooks.xml`, must reference `GuestbookListView` and contain the same 
 `ProgressBar` and `RecyclerView` as all list Screenlet View layouts. Even the 
-`android:id` values are the same; they're hardcoded into the list Screenlet 
+`android:id` values are the same--they're hardcoded into the list Screenlet 
 framework and changing them will cause your app to crash. 
 
 Create the layout file `res/layout/list_guestbooks.xml` and replace its contents 
