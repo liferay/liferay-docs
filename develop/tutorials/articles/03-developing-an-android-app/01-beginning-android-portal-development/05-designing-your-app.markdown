@@ -42,32 +42,29 @@ a guestbook's entries in a similar list. You'll display the entries by inserting
 Entry List Screenlet in the UI element you want them to appear in. 
 
 Also note that these Screenlets aren't just any kind of Screenlet; they're *list 
-Screenlets*. You develop list Screenlets by using a special framework in Liferay 
-Screens that sits on top of the core Screenlet framework. This list Screenlet 
-framework makes it much simpler for developers to write Screenlets that display 
-lists of entities from a @product@ instance. 
+Screenlets*. You develop list Screenlets by using the list Screenlet framework, 
+which sits on top of the core Screenlet framework. The list Screenlet framework 
+makes it much simpler for developers to write Screenlets that display lists of 
+entities from a @product@ instance. 
 
 Awesome! Now you have a basic UI design and know the Screenlets you'll create to 
 implement it. But where in the app can you use these Screenlets? The app only 
-contains one empty activity: `MainActivity`. You'll use this activity for 
-authentication, using Login Screenlet. To use your custom list Screenlets, 
-you'll need to create an additional activity and a fragment: 
-`GuestbooksActivity` and `EntriesFragment`. You'll create the activity in a 
-moment. 
+contains one empty activity, `MainActivity`, which you'll use for authentication 
+with Login Screenlet. To use your custom list Screenlets, you'll need to create 
+an additional activity, and a fragment: `GuestbooksActivity` and 
+`EntriesFragment`. You'll create the activity in a moment. 
 
-The following diagram shows the app's three different screens. Each activity and
-fragment is labeled, along with the Screenlets and the navigation drawer. 
+![Figure 2: The Liferay Guestbook app's design uses two activities and a fragment. In this diagram, each activity and fragment is labeled, along with the Screenlets and the navigation drawer.](../../../images/android-app-design-screenlets.png)
 
-![Figure 2: The Liferay Guestbook app's design uses two activities and a fragment.](../../../images/android-app-design-screenlets.png)
-
-After sign in, the user transitions to `GuestbooksActivity`. This activity uses 
-Entry List Screenlet in `EntriesFragment` to display the selected guestbook's 
-entries (the first guestbook is selected by default). Pressing the hamburger 
-button at the top-left of this screen opens the navigation drawer, where 
-Guestbook List Screenlet displays the list of guestbooks. Selecting a guestbook 
-closes the drawer to reveal that guestbook's entries. Note that you only need 
-one activity, `GuestbooksActivity`, to display guestbooks and entries. The 
-navigation drawer and `EntriesFragment` are part of this activity. 
+This diagram also shows how the user navigates through the app. After sign in, 
+the user transitions to `GuestbooksActivity`. This activity uses Entry List 
+Screenlet in `EntriesFragment` to display the selected guestbook's entries (the 
+first guestbook is selected by default). Pressing the hamburger button at the 
+top-left of this screen opens the navigation drawer, where Guestbook List 
+Screenlet displays the list of guestbooks. Selecting a guestbook closes the 
+drawer to reveal that guestbook's entries. Note that you only need one activity, 
+`GuestbooksActivity`, to display guestbooks and entries. The navigation drawer 
+and `EntriesFragment` are part of this activity. 
 
 Now you're ready to create `GuestbooksActivity`. Fortunately, Android Studio has 
 a template for creating an activity that contains a navigation drawer. Right 
