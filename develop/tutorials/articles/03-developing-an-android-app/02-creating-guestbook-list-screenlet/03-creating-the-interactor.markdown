@@ -160,7 +160,7 @@ create `GuestbookListInteractor`:
             return new GuestbookEvent(guestbook);
         }
 
-    This requires you to import `java.util.Map;`. 
+    This requires you to import `java.util.Map`. 
 
 5. Override the `getIdFromArgs` method to return the value of the first object 
    argument as a string: 
