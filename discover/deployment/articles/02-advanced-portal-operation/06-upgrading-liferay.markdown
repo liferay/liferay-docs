@@ -232,6 +232,21 @@ used the old field names. If they did, you must modify them to use the new
 names before upgrading. Go through each template the script identified and
 modify them to use the new field names. 
 
+If you do not complete this step and perform the upgrade anyway, you'll get the
+following stack trace the first time your upgraded system starts: 
+
+    WARN [VerifyDynamicDataMapping:XXX] Structure with class name ID XXXXX and structure
+    key = XXXXX contains more than one element that is identified by the same name either within itself or within
+    any of its parent structures. The duplicate element names are: XXX, XXX
+    ERROR [DBUpgrader:XXX] Unable to execute verify process:
+    com.liferay.portal.verify.VerifyException: com.liferay.portal.verify.VerifyException: Duplicate element name found in structures
+    com.liferay.portal.verify.VerifyException: com.liferay.portal.verify.VerifyException: com.liferay.portal.verify.VerifyException:
+    Duplicate element name found in structures
+    Stopping the server due to unexpected startup errors
+
+At this point, you'll have to roll back to your most recent backup and perform
+the steps above. 
+
 Next, you might need to explicitly set your Image Gallery storage option. 
 
 ## Migrate Your Image Gallery Images [](id=migrate-your-image-gallery-images)
