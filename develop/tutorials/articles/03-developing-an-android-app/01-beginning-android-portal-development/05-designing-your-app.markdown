@@ -56,13 +56,14 @@ an additional activity, and a fragment: `GuestbooksActivity` and
 
 ![Figure 2: The Liferay Guestbook app's design uses two activities and a fragment. In this diagram, each activity and fragment is labeled, along with the Screenlets and the navigation drawer.](../../../images/android-app-design-screenlets.png)
 
-This diagram also shows how the user navigates through the app. After sign in, 
-the user transitions to `GuestbooksActivity`. This activity uses Entry List 
-Screenlet in `EntriesFragment` to display the selected guestbook's entries (the 
-first guestbook is selected by default). Pressing the hamburger button at the 
-top-left of this screen opens the navigation drawer, where Guestbook List 
-Screenlet displays the list of guestbooks. Selecting a guestbook closes the 
-drawer to reveal that guestbook's entries. Note that you only need one activity, 
+In addition to showing the app's components, this diagram shows how the user 
+navigates through the app. After sign in, the user transitions to 
+`GuestbooksActivity`. This activity uses Entry List Screenlet in 
+`EntriesFragment` to display the selected guestbook's entries (the first 
+guestbook is selected by default). Pressing the hamburger button at the top-left 
+of this screen opens the navigation drawer, where Guestbook List Screenlet 
+displays the list of guestbooks. Selecting a guestbook closes the drawer to 
+reveal that guestbook's entries. Note that you only need one activity, 
 `GuestbooksActivity`, to display guestbooks and entries. The navigation drawer 
 and `EntriesFragment` are part of this activity. 
 
