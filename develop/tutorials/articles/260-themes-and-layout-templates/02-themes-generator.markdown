@@ -1,6 +1,6 @@
 # Liferay Theme Generator [](id=themes-generator)
 
-The Liferay Liferay Theme Generator is an easy-to-use command-line wizard that
+The Liferay Theme Generator is an easy-to-use command-line wizard that
 streamlines the theme creation process. It is independent of the Liferay Plugins
 SDK, and generates themes for Liferay Portal 6.2, @product-ver@, and up. This
 tutorial focuses on using the Liferay Theme Generator to create themes. In just a few
@@ -8,9 +8,9 @@ steps, you'll have a working Liferay theme.
 
 +$$$
 
-**Note:** The [Liferay Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
-is still in development and is not guaranteed to work on all platforms and
-environments. 
+**Note:** The [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
+is unsupported. The tool is still in development and is not guaranteed to work
+on all platforms and environments. 
 
 $$$
 
