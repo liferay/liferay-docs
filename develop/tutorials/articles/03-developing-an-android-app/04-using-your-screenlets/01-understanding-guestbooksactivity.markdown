@@ -119,25 +119,20 @@ The `AppBarLayout` and `Toolbar` elements define the toolbar at the top of the
 activity. Following the toolbar definition, the `include` statement adds the 
 `content_guestbooks` layout to `app_bar_guestbooks`. The `content_guestbooks` 
 layout defines the content displayed in the activity's body (below the toolbar). 
-Right now, this layout only contains an empty `RelativeLayout` element. Now open 
-`content_guestbooks.xml`. Its contents should look similar to this: 
+Right now, this layout only contains an empty `ConstraintLayout` element. Now 
+open `content_guestbooks.xml`. Its contents should look similar to this: 
 
     <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/content_guestbooks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context="com.liferay.docs.liferayguestbook.GuestbooksActivity"
         tools:showIn="@layout/app_bar_guestbooks">
 
-    </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
 
 Anything you define in this layout becomes the activity's main body content. 
 Later, you'll return to `content_guestbooks.xml` to display the guestbook 

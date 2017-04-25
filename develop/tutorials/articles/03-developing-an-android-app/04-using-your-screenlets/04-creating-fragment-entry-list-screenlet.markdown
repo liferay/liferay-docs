@@ -78,8 +78,9 @@ first thought might be to put the fragment container directly in
 `activity_guestbooks.xml`. Don't do this. Recall that Android Studio's 
 Navigation Drawer Activity template created the layout `content_guestbooks.xml` 
 to hold the activity's main body content. Open `content_guestbooks.xml` and 
-place the following fragment container inside the `RelativeLayout`. This 
-fragment container should be the only other element inside the `RelativeLayout`: 
+place the following fragment container inside the `ConstraintLayout`. This 
+fragment container should be the only other element inside the 
+`ConstraintLayout`: 
 
     <FrameLayout
         android:id="@+id/fragment_container"
