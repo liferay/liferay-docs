@@ -63,7 +63,15 @@ information to learn about the new defaults introduced in Liferay Portal 6.2.
 - If you've used Web Content Management extensively, you may have structures
   that lack unique name fields. Refer to 
   [this](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names)
-  to resolve the problem before upgrading. 
+  to resolve the problem before upgrading. If you didn't follow the instructions
+  in this article before upgrading, you'll see this stack trace: 
+
+        19:29:35,298 ERROR [main][VerifyProcessTrackerOSGiCommands:221] com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
+        com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
+ 
+  If this is the case, roll back to your previous backup of Liferay 6.2 and 
+  [follow the instructions here](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names).
+
 
 ### Legacy Properties [](id=legacy-properties)
 
