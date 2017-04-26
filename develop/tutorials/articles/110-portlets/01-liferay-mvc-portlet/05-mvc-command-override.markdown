@@ -41,7 +41,7 @@ command, this reference will be the original MVC command.
 Set the `component.name` target to the MVC command class name. If you use this
 approach, your extension will continue to work with new versions of the original
 portlet, because no coupling exists between the original portlet logic and your
-customization.
+customization. The command implementation class can change. Make sure to keep your reference updated to the name of the current implementation class. 
 
 $$$
 
