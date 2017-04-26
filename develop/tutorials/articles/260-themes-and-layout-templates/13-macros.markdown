@@ -17,12 +17,12 @@ FreeMarker:
 Velocity:
 
     #macro (control_menu)
-    	#if ($themeDisplay.isImpersonated() || ($is_setup_complete && $is_signed_in))
-    		$theme.runtime(
-          "com.liferay.admin.kernel.util.PortalProductNavigationControlMenuApplicationType$ProductNavigationControlMenu",  
-          $portletProviderAction.VIEW
-        )
-    	#end
+            #if ($themeDisplay.isImpersonated() || ($is_setup_complete && $is_signed_in))
+                $theme.runtime(
+                    "com.liferay.admin.kernel.util.PortalProductNavigationControlMenuApplicationType$ProductNavigationControlMenu",  
+                    $portletProviderAction.VIEW
+                )
+            #end
     #end
 
 +$$$
