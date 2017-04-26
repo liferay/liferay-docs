@@ -14,7 +14,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "3.1.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "3.1.2"
     }
 
     repositories {
@@ -142,7 +142,7 @@ are available.
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`classpath` | [`FileCollection`](https://docs.gradle.org/current/javadoc/org/gradle/api/file/FileCollection.html) | [`project.configurations.soy`](#soy-dependency) | The classpath for executing the main class `com.google.template.soy.SoyToJsSrcCompiler`.
+`classpath` | [`FileCollection`](https://docs.gradle.org/current/javadoc/org/gradle/api/file/FileCollection.html) | [`project.configurations.soy`](#soy-dependency) | The classpath for executing the [Liferay Portal Tools Soy Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/portal-tools-soy-builder).
 
 ### WrapSoyAlloyTemplateTask [](id=wrapsoyalloytemplatetask)
 
