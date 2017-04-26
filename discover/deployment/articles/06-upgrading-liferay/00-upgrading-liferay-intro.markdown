@@ -295,9 +295,8 @@ configuration that you can customize for your use:
 The `dir` setting is the folder where your app server is installed. The 
 `global.dir.lib` is the app server's library folder. The `portal.dir` 
 setting is the folder where @product@ is installed in your app
-server. The `server.detector.server.id` is informing the tool
-of which application server is being used. The `extra.lib.dirs` 
-is the app server's binary folder.
+server. The `server.detector.server.id` defines the application server. The
+`extra.lib.dirs` is the app server's binary folder.
 
 -`portal-upgrade-datasource.properties`:
 
