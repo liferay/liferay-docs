@@ -24,19 +24,21 @@ warning:
 
     Incompatible setting for: company.security.auth.type
 
-Please note that the above sources are fully trusted. Consequently, a security
-mechanism external to @product@ must be used. For example, you could use a
+Please note that the above sources are fully trusted. 
+
+Furthermore, a security mechanism external to @product@ must be used; such as a
 fronting web server like Apache. The chosen fronting solution must prevent
 malicious @product@ user impersonation that otherwise might be possible by
 sending HTTP requests directly to @product@ from the client's web browser.
 
-Token based authentication is disabled by default. To manage token based SSO
-authentication, navigate to @product@'s Control Panel, click on *System
-Settings*, then find and click on the *TokenConfiguration* module. Here are the
-configuration options for the Token SSO module:
+Token based authentication is disabled by default. To manage token
+based SSO authentication, navigate to @product@'s Control Panel, click on
+*System Settings*, then click *Foundation*. The *Token Based SSO* is located on
+page *3*. Alternately, you can search for *Token* in the Search field. Here are
+the configuration options for the *Token Based SSO* module:
 
 **Authentication cookies:** Set this to the cookie names that must be removed
-after logout.
+after logout. (Example: SMIDENTITY, SMSESSION)
 
 **Enabled:** Check this box to enable token-based SSO authentication.
 
@@ -55,7 +57,13 @@ earlier, the options are:
 - Session attribute
 
 **User token name:** Set equal to the name of the token. This will be retrieved
-from the specified location.
+from the specified location. (Example: SM_USER)
+
+![Figure 1 shows an example from the Control Panel.](../../../images/token-based-sso.png)
+
+Remember to click *Save* to activate Token Based SSO.
+
+# Summary [](id=summary)
 
 @product@'s token-based SSO authentication mechanism is highly flexible
 and compatible with any SSO solution which can provide it with a valid @product@
