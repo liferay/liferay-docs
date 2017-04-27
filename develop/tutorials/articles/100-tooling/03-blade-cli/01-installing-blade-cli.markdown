@@ -49,9 +49,6 @@ tutorial for more information.
 If your Blade CLI version is outdated, you can run the following command to
 automatically download and install the latest version of Blade CLI:
 
-    jpm install -f https://releases.liferay.com/tools/blade-cli/latest/blade.jar
-
-<!--
     blade update
 
 For Windows users, the `blade update` command does not work because Windows
@@ -59,13 +56,14 @@ cannot update a file that is currently in use. To bypass this issue, you can use
 JPM to update your version of Blade CLI:
 
     jpm install -f https://releases.liferay.com/tools/blade-cli/latest/blade.jar
--->
 
 Blade CLI is updated frequently, so it's recommended to update your Blade CLI
 environment for new features. You can check your current installed version by
 running `blade version`.
 
 You've successfully learned how to install and update Blade CLI. Blade CLI
-offers many `create` templates to help build @product-ver@ applications, and
-also offers various ways to deploy those apps and interact with your Liferay
-server. Be sure to explore more Blade CLI tutorials to learn how.
+offers many
+[`create` templates](/develop/reference/-/knowledge_base/7-0/project-templates)
+to help build @product-ver@ applications. It also offers various ways to deploy
+those apps and interact with your Liferay server. Be sure to explore more Blade
+CLI tutorials to learn how.

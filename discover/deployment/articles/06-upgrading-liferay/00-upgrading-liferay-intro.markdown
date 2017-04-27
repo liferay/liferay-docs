@@ -52,13 +52,26 @@ If you're coming from Liferay Portal 6.2, skip this section. In any other case, 
 follow these instructions to configure your `portal-ext.properties` properly:
 
 - If you're on Liferay Portal 6.1, check the
-[6.2 upgrade properties](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)
+[6.2 upgrade properties](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)
 information to learn about the new defaults introduced in Liferay Portal 6.2. 
 
 - If you're on Liferay 6.0.12, you'll also need to
-[migrate the image gallery](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images).
+[migrate the image gallery](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images).
 
 - If you have a sharded environment, please refer to [how to configure the upgrade for sharding](./01-upgrading-sharding.markdown).
+
+- If you've used Web Content Management extensively, you may have structures
+  that lack unique name fields. Refer to 
+  [this](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names)
+  to resolve the problem before upgrading. If you didn't follow the instructions
+  in this article before upgrading, you'll see this stack trace: 
+
+        19:29:35,298 ERROR [main][VerifyProcessTrackerOSGiCommands:221] com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
+        com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
+ 
+  If this is the case, roll back to your previous backup of Liferay 6.2 and 
+  [follow the instructions here](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names).
+
 
 ### Legacy Properties [](id=legacy-properties)
 
@@ -273,13 +286,17 @@ configuration that you can customize for your use:
 
 -`app-server.properties`:
 
-    dir=/home/user/servers/liferay7/tomcat-8.0.32
-    portal.dir=webapps/ROOT
-    global.dir.lib=lib
+	dir=../../tomcat-8.0.32
+	global.lib.dir=/lib
+	portal.dir=/webapps/ROOT
+	server.detector.server.id=tomcat
+	extra.lib.dirs=/bin
 
-The `dir` setting is the folder where your app server is installed. The
-`portal.dir` setting is the folder where @product@ is installed in your app
-server. The `global.dir.lib` is the app server's library folder. 
+The `dir` setting is the folder where your app server is installed. The 
+`global.dir.lib` is the app server's library folder. The `portal.dir` 
+setting is the folder where @product@ is installed in your app
+server. The `server.detector.server.id` defines the application server. The
+`extra.lib.dirs` is the app server's binary folder.
 
 -`portal-upgrade-datasource.properties`:
 

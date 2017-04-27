@@ -119,7 +119,7 @@ manually adding a dependency to the `jspCTool` configuration:
 
 ```gradle
 dependencies {
-    jspCTool(group: "com.liferay", name: "com.liferay.jasper.jspc", version: "2.0.0") {
+    jspCTool(group: "com.liferay", name: "com.liferay.jasper.jspc", version: "1.0.10") {
         exclude group: "com.liferay.portal"
         exclude group: "javax.servlet"
     }

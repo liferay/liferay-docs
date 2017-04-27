@@ -240,6 +240,13 @@ directory.
 
     +   *Last Name* (e.g., *sn*)
 
+**Note:** If you intend to create or import users with no email addresses, then
+you must set `users.email.address.required=false` in your
+`portal-ext.properties`. With this set, Liferay auto-generates an email address
+combining the user ID plus the suffix defined in the property
+`users.email.address.auto.suffix=`. Finally, make sure to set Liferay and LDAP
+authentication to something other than email address.
+
     If you want to import LDAP groups as @product@ user groups, make sure to
     define a mapping for the @product@ group field so that membership information
     is preserved:

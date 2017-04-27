@@ -9,15 +9,6 @@ Since MVC commands are components registered in the OSGi runtime, you can simply
 publish your own component, and give it a higher service ranking. Your MVC
 command will then be invoked instead of the original one.
 
-MVC commands are implemented in an application as OSGi components with two properties:
-
--  `javax.portlet.name`: the portlet that is affected by this command. It's
-   often specified in a `-PortletKeys` class inside the application.
--  `mvc.command.name`: a key to identify the particular command 
-
-You can override the MVC commands of any portlet if you can find the values for
-these two properties.
-
 The logical way of breaking up the controller layer is to do it by portlet
 phase. The three MVC command classes you can override are
 
@@ -40,16 +31,17 @@ override logic separate form the original logic will keep the code clean,
 maintainable, and easy to understand.
 
 To do this, use the `@Reference` method to fetch a reference to the original MVC
-command. If there are no additional customizations on the same command, this
-reference will be the original MVC command.
+command component. If there are no additional customizations on the same
+command, this reference will be the original MVC command.
 
     @Reference(
-        target = "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + "))")
+        target = "(component.name=com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand)")
     protected MVCRenderCommand mvcRenderCommand;
 
-If you use this approach, your extension will continue to work with new versions
-of the original portlet, because no coupling exists between the original portlet
-logic and your customization.
+Set the `component.name` target to the MVC command class name. If you use this
+approach, your extension will continue to work with new versions of the original
+portlet, because no coupling exists between the original portlet logic and your
+customization. The command implementation class can change. Make sure to keep your reference updated to the name of the current implementation class. 
 
 $$$
 
@@ -142,7 +134,7 @@ reference to the original command and call its `render` method like this:
 	}
 
     @Reference(target = 
-          "(&(mvc.command.name=/blogs/edit_entry)(javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + "))")
+          "(component.name=com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand)")
       protected MVCRenderCommand mvcRenderCommand;
     }
 
@@ -248,8 +240,7 @@ message to the log, before continuing with the original processing:
         }
 
         @Reference(
-            target = "(&(mvc.command.name=/blogs/edit_entry)
-                (javax.portlet.name= + BlogsPortletKeys.BLOGS_ADMIN + "))")
+            target = "(component.name=com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand)")
 
         protected MVCActionCommand mvcActionCommand;
 
@@ -300,12 +291,11 @@ for the account creation screen.
             return mvcResourceCommand.serveResource(resourceRequest, resourceResponse);
         }
 
-        @Reference(target = "(&(mvc.command.name=/login/captcha)
-            (javax.portlet.name= +LoginPortletKeys.LOGIN + "))")
+        @Reference(target = "(component.name=com.liferay.login.web.internal.portlet.action.CaptchaMVCResourceCommand)")
         protected MVCResourceCommand mvcResourceCommand;
 
     }
 
 And that, as they say, is that. Even if you don't own the source code of an
-application, you can override its MVC commands just by knowing the value of two
-of its component properties: `javax.portlet.name`, and `mvc.command.name`.
+application, you can override its MVC commands just by knowing the component
+class name.
