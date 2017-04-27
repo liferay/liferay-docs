@@ -22,66 +22,54 @@ an OSGi module JAR; if you haven't done this, visit the
 [Creating a Module JAR Using Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-module-jar-using-maven)
 tutorial for more information.
 
-1.  Add the following `maven-antrun-plugin` configuration to your Liferay Maven
-    project's parent `pom.xml` file.
+1.  Add the following plugin configuration to your Liferay Maven project's
+    parent `pom.xml` file.
 
         <build>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-antrun-plugin</artifactId>
-                    <version>1.7</version>
+                    <groupId>com.liferay</groupId>
+                    <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
+                    <version>2.0.1</version>
                     <executions>
                         <execution>
-                            <id>deploy-liferay-artifacts</id>
-                            <phase>pre-integration-test</phase>
+                            <id>default-deploy</id>
                             <goals>
-                                <goal>run</goal>
+                                <goal>deploy</goal>
                             </goals>
-                            <configuration>
-                                <target name="maven-deploy">
-                                    <copy failonerror="false" file="${project.build.directory}/${project.artifactId}-${project.version}.war" quiet="true" tofile="${deploy.dir}/${project.artifactId}.war"/>
-                                    <copy failonerror="false" file="${project.build.directory}/${project.artifactId}-${project.version}.jar" quiet="true" tofile="${deploy.dir}/${project.artifactId}.jar"/>
-                                </target>
-                            </configuration>
+                            <phase>pre-integration-test</phase>
                         </execution>
                     </executions>
                 </plugin>
             </plugins>
         </build>
 
-    This POM configuration applies the
-    [Maven AntRun Plugin](http://maven.apache.org/plugins/maven-antrun-plugin/)
+    This POM configuration applies Liferay's
+    [Bundle Support plugin](https://repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.portal.tools.bundle.support/)
     by defining its `groupId`, `artifactId`, and `version`. The logic also
-    defines
+    defines the
+    [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag),
+    which configures the Bundle Support plugin to run during the
+    `pre-integration-test` phase of your Maven project's build lifecycle. The
+    `deploy`
+    [goal](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#A_Build_Phase_is_Made_Up_of_Plugin_Goals)
+    is defined for that lifecycle phase.
 
-    - The
-      [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag),
-      which configures the Maven AntRun plugin to run during the
-      `pre-integration-test` phase of your Maven project's build lifecycle. The
-      `run`
-      [goal](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#A_Build_Phase_is_Made_Up_of_Plugin_Goals)
-      is defined for that lifecycle phase.
-    - The
-      [`configuration` tag](https://maven.apache.org/pom.html#Plugins), which
-      configures and runs an Ant target from the POM. The logic above creates a
-      `build-maven-deploy.xml` file in your project's build folder (e.g.,
-      `/target`) containing the Ant target specified. That file is then
-      executed, which copies any JAR or WAR file from your Maven project's build
-      folder to your @product@ instance's deployment folder. You'll configure
-      the deployment folder next.
+2.  By default, the Bundle Support plugin deploys to the Liferay installation
+    in the `bundles` folder, located in your plugin's parent folder. If you do
+    not have your project set up this way, you must define your Liferay home
+    folder in your POM. You can do this by adding the following logic within the
+    `plugin` tags, but outside of the `execution` tags:
 
-2.  Add this `properties` tag outside the `build` tag in your project's parent
-    `pom.xml` file:
+        <configuration>
+            <liferayHome>LIFERAY_HOME_PATH</liferayHome>
+        </configuration>
 
-        <properties>
-            <deploy.dir>${liferay-bundle}/deploy</deploy.dir>
-        </properties>
+    An example configuration would look like this:
 
-    This configures your deployment directory. Make sure to replace the
-    `${liferay-bundle}` variable with your @product@ instance's file path.
-
-    +$$$
+    <configuration>
+        <liferayHome>C:/liferay/liferay-ce-portal-7.0-ga3</liferayHome>
+    </configuration>
 
     **Note:** Maven applications built for previous Liferay Portal versions
     required the `<liferay.maven.plugin.version>` tag to do various tasks (e.g.,
@@ -90,21 +78,9 @@ tutorial for more information.
 
     $$$
 
-3.  To invoke the Maven AntRun plugin from your project, add its configuration
-    to your `pom.xml`:
-
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-antrun-plugin</artifactId>
-               </plugin>
-            </plugins>
-        </build>
-
-4.  Run this command to deploy your project:
+3.  Run this command to deploy your project:
 
         mvn verify
 
-That's it! Your Liferay Maven project is copied automatically to your @product@
-instance's deployment folder and ready for use.
+That's it! Your Liferay Maven project is built and deployed automatically to
+your @product@ instance.
