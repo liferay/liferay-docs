@@ -1,9 +1,16 @@
 # Macros [](id=freemarker-macros)
 
 Macros let you assign theme template fragments to a variable. This keeps your 
-theme templates from becoming cluttered and makes them easier to read. The 
-syntax for a macro is straightforward. A macro directive is defined containing 
-the template fragment. For example, below is the macro directive for 
+theme templates from becoming cluttered and makes them easier to read. 
+
+Note that **Velocity templates are supported, but deprecated as of Liferay 
+Portal CE 7.0 and Liferay DXP**. It's recommended that you convert your Velocity 
+theme templates to FreeMarker at your earliest convenience to avoid issues. This 
+tutorial covers both FreeMarker and Velocity template macros to help with your 
+conversion process.
+
+The syntax for a macro is straightforward. A macro directive is defined 
+containing the template fragment. For example, below is the macro directive for 
 @product@'s Control Menu:
 
 FreeMarker:
