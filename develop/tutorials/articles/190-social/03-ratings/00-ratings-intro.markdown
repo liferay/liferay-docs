@@ -1,4 +1,4 @@
-# Ratings [](id=ratings)
+# Implementing Ratings Type Selection and Value Transformation [](id=ratings)
 
 Liferay has three different mechanisms for rating content: Stars, Thumbs
 Up/Down, and Likes. Prior to 7.0, there was no way for administrators to select
