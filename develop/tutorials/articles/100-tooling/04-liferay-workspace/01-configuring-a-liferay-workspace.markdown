@@ -19,8 +19,11 @@ The top-level files/folder of a Liferay workspace are outlined below:
 - `themes`: holds your custom themes which are built using the Theme Generator.
 - `wars` (generated): holds traditional WAR-style web application projects.
 - `build.gradle`: the common Gradle build file.
+- `gradle-local.properties`: sets user-specific properties for your workspace.
+  This lets multiple users use a single workspace, letting them configure
+  specific properties for the workspace on their own machine.
 - `gradle.properties`: specifies the workspace's project locations and @product@
-  server configuration.
+  server configuration globally. 
 - `gradlew`: executes the Gradle command wrapper
 - `settings.gradle`: applies plugins to the workspace and configures its
   dependencies.
@@ -36,6 +39,36 @@ If you'd like to change a variable, uncomment the variable and set it to a
 custom value. For instance, if you want to store your modules in a folder other
 than `[ROOT]/modules`, uncomment the `liferay.workspace.modules.dir` variable
 and set it to a different value.
+
+If you'd like to keep the global Gradle properties the same, but want to change
+them for yourself only (perhaps for local testing), you can override the
+`gradle.properties` file with your own `gradle-local.properties` file.
+
+<!-- The paragraph/steps below should be removed once the new Workspace project
+template is published, which includes these configs by default. -Cody -->
+
+To configure the `gradle-local.properties` file for your workspace, you must
+apply a third-party plugin in your workspace's settings. Complete the
+following steps:
+
+1.  Open your workspace's `settings.gradle` file and add the
+    `gradle-properties-plugin` as a dependency:
+
+        dependencies {
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.workspace", version: "VERSION"
+            classpath group: "net.saliman", name: "gradle-properties-plugin", version: "1.4.6"
+        }
+
+2.  Apply the `net.saliman.properties` third-party plugin at the bottom of your
+    `settings.gradle` file:
+
+        apply plugin: "net.saliman.properties"
+
+3.  Create the `gradle-local.properties` file in the root folder of your
+    workspace.
+
+You can now configure user-specific properties for your workspace!
+<!-- -->
 
 +$$$
 
