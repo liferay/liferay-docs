@@ -17,6 +17,7 @@ The following Gradle plugins are documented in this section:
 - JS Module Config Generator
 - JS Transpiler
 - Lang Builder
+- Maven Plugin Builder
 - Node
 - Service Builder
 - Source Formatter
