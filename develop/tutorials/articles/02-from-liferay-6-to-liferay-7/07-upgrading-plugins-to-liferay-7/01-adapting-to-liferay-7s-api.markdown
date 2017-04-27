@@ -2,8 +2,8 @@
 
 +$$$
 
-**Important:** Liferay @ide@'s Code Upgrade Tool is not officially released and
-is unsupported. It's available in @ide@ 3.1 milestone versions only.
+**Important:** Liferay IDE's Code Upgrade Tool is not officially released and
+is unsupported. It's available in IDE 3.1 milestone versions only.
 
 $$$
 
@@ -16,7 +16,7 @@ Modularizing the product, however, required renaming many packages. Of course,
 to explain what changed, why it changed, and how to adapt to it. 
 
 Going above and beyond documentation, Liferay provides the Code Upgrade Tool in 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-ide) 
+[Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-ide) 
 (versions 3.1 milestones and newer). Here's what the Code Upgrade Tool does: 
 
 - Identifies code affected by the API changes.
@@ -24,7 +24,7 @@ Going above and beyond documentation, Liferay provides the Code Upgrade Tool in
 - Suggests how to adapt the code.
 - Provides options, in some cases, to adapt code automatically.
 
-Even if you prefer tools other than Liferay @ide@ (which is based on Eclipse), 
+Even if you prefer tools other than Liferay IDE (which is based on Eclipse), 
 you should upgrade Plugins SDK plugins using the Code Upgrade Tool first--you 
 can use your favorite tools afterward. This tutorial walks you through the steps 
 required to use the Code Upgrade Tool: 
@@ -91,7 +91,7 @@ This screen describes the tool's navigation and key functions.
  ![left arrow icon](../../../images/icon-code-upgrade-prev-step.png) | Navigate to the previous step. |
  ![right arrow icon](../../../images/icon-code-upgrade-next-step.png) | Advance to the next step. |
 
-Liferay @ide@ tracks each plugin's state. You can close the Code Upgrade Tool 
+Liferay IDE tracks each plugin's state. You can close the Code Upgrade Tool 
 view at any step and re-launch it later to resume upgrading plugins. 
 
 +$$$
@@ -167,8 +167,7 @@ Use these steps to do this:
 
 2.  Click the *Import Projects* button. 
 
-The Liferay Workspace and the Plugins SDK projects are imported to Liferay
-@ide@. 
+The Liferay Workspace and the Plugins SDK projects are imported to Liferay IDE. 
 
 To mark the step complete, click the check mark icon (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)). 
 
@@ -193,7 +192,7 @@ Use these steps to do this:
 
 2.  Click the *Import Projects* button. 
 
-The Plugins SDK projects are imported to Liferay @ide@. 
+The Plugins SDK projects are imported to Liferay IDE. 
 
 +$$$
 
