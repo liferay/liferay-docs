@@ -208,7 +208,7 @@ button, it works! However, don't click the *Save* button yet. You haven't yet
 created the action that saves a guestbook entry, so clicking *Save* will
 produce an error.
 
-![Figure x: This is the Guestbook application's form for adding entries.](../../images/first-guestbook-portlet.png)
+![Figure x: This is the Guestbook application's form for adding entries.](../../../images/first-guestbook-portlet.png)
 
 Implementing the portlet action (what happens when the user clicks *Save*) is
 your next task.
