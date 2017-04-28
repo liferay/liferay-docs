@@ -1,17 +1,17 @@
 # Dynamic Query [](id=dynamic-query)
 
-Liferay allows you to use custom SQL queries to retrieve data from the
-database. However, it's sometimes more convenient to build queries dynamically
-at runtime than it is to invoke predefined SQL queries. Liferay allows you to
-build queries dynamically using its DynamicQuery API, which wraps Hibernate's
-Criteria API. Using Liferay's DynamicQuery API allows you to build queries
-without writing a single line of SQL. The DynamicQuery API helps you think in
-terms of objects and member variables instead of in terms of tables and
-columns. Complex queries constructed via Hibernate's Criteria API can be
-significantly easier to understand and maintain than the equivalent custom SQL
-(or HQL) queries. While you technically don't need to know SQL to construct
-queries via Hibernate's Criteria API, you still need to take care to construct
-efficient queries. For information on Hibernate's Criteria API, please see
+Liferay lets you use custom SQL queries to retrieve data from the database.
+However, it's sometimes more convenient to build queries dynamically at runtime
+than it is to invoke predefined SQL queries. Liferay allows you to build queries
+dynamically using its DynamicQuery API, which wraps Hibernate's Criteria API.
+Using Liferay's DynamicQuery API allows you to build queries without writing a
+single line of SQL. The DynamicQuery API helps you think in terms of objects and
+member variables instead of in terms of tables and columns. Complex queries
+constructed via Hibernate's Criteria API can be significantly easier to
+understand and maintain than the equivalent custom SQL (or HQL) queries. While
+you technically don't need to know SQL to construct queries via Hibernate's
+Criteria API, you still need to take care to construct efficient queries. For
+information on Hibernate's Criteria API, please see
 [Hibernate's manual](http://docs.jboss.org/hibernate/orm/5.0/userguide/html_single/chapters/query/criteria/Criteria.html).
 In this tutorial, you'll learn how to create custom finders for Liferay
 applications using Service Builder and Liferay's Dynamic Query API.
