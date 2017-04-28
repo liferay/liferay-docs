@@ -1,47 +1,48 @@
-# Preparing GuestbooksActivity for Get Guestbooks Screenlet [](id=preparing-guestbooksactivity-for-get-guestbooks-screenlet)
+# Preparing GuestbooksActivity for Guestbook List Screenlet [](id=preparing-guestbooksactivity-for-guestbook-list-screenlet)
 
-Recall that you want `GuestbooksActivity` to display Get Guestbooks Screenlet 
-and Get Entries Screenlet. Before using these Screenlets, however, you must do 
-the following prep work in `GuestbooksActivity`:
+Recall that you want `GuestbooksActivity` to display Guestbook List Screenlet 
+and Entry List Screenlet. Before using these Screenlets, however, you must 
+prepare `GuestbooksActivity` as follows: 
 
-1. Refactor the Action Bar's code so that you can later set the Action Bar's 
-   title to the selected guestbook's name. 
+1. Refactor the action bar so you can later set its title to the selected 
+   guestbook's name. 
 
-2. Refactor the navigation drawer's code so that you can later close the drawer 
-   when a guestbook is selected in Get Guestbooks Screenlet. 
+2. Refactor the navigation drawer so you can later close it when a guestbook is 
+   selected in Guestbook List Screenlet. 
 
 3. Delete the `NavigationView.OnNavigationItemSelectedListener` implementation. 
-   Since Get Guestbooks Screenlet handles guestbook selections, you don't need 
-   to use `NavigationView`. 
+   Since Guestbook List Screenlet handles guestbook selections, you don't need 
+   `NavigationView`. 
 
-When you finish, you'll be ready to use Get Guestbooks Screenlet. Note that you 
-won't always have to take steps like these before using Screenlets. You do so 
-here just to fit this particular app's design. 
+When you finish, you'll be ready to use Guestbook List Screenlet. Note that you 
+won't always have to take steps like these before using Screenlets. You only do 
+so here to fit this particular app's design. 
 
-First, you'll refactor the Action Bar's code. 
+First, you'll refactor the action bar. 
 
 ## Refactoring the Action Bar [](id=refactoring-the-action-bar)
 
-By default, the Action Bar displays the activity's name. When you use Get 
-Guestbooks Screenlet, you want the Action Bar to display the selected 
-guestbook's name instead. You'll enable this by modifying the code that creates 
-the Action Bar. Android Studio created this code for you in the 
-`GuestbooksActivity` class's `onCreate` method: 
+By default, the action bar displays the activity's name. When you use Guestbook 
+List Screenlet, you want the action bar to display the selected guestbook's name 
+instead. You'll enable this by modifying the code that creates the action bar. 
+Android Studio created this code for you in the `GuestbooksActivity` class's 
+`onCreate` method: 
 
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-First, remove these two lines. Although you could modify this code, you'll 
-instead create a separate method that creates the Action Bar. 
+First, remove this code. Although you could edit it, you'll instead create a 
+separate method that creates the action bar. Note that you don't need to worry 
+about the now missing `toolbar` variable in `onCreate`; you'll fix it shortly. 
 
-Next, you need the `ActionBar` and `Toolbar` to be instance variables that you 
-can refer to anywhere in the activity. Add these variables to the 
+Next, create `ActionBar` and `Toolbar` instance variables. This lets you refer 
+to them anywhere in the activity. Add these variables to the 
 `GuestbooksActivity` class now: 
 
     private ActionBar actionBar;
     private Toolbar toolbar;
 
-This requires that you import `android.support.v7.app.ActionBar`.
+This requires that you import `android.support.v7.app.ActionBar`. 
 
 Now add the following `initActionBar()` method to `GuestbooksActivity`: 
 
@@ -52,20 +53,20 @@ Now add the following `initActionBar()` method to `GuestbooksActivity`:
         actionBar.setTitle("");
     }
 
-Like the code in `onCreate`, this method also creates a `Toolbar` and sets it as 
-the Action Bar. This code also sets the Action Bar's title to an empty string. 
-This prevents the activity's title from showing in the Action Bar before the app
-can retrieve guestbooks from the portal. 
+Like the code you removed from `onCreate`, this method also creates a `Toolbar` 
+and sets it as the action bar. This code also sets the action bar's title to an 
+empty string. This prevents the activity's title from showing in the action bar 
+before the app can retrieve guestbooks from the portlet. 
 
-Now you need to call `initActionBar()` in `onCreate`. Place the call immediately
-below the `setContentView` call. The first few lines of the `onCreate` method
-should now look like this: 
+Now you must call `initActionBar()` in `onCreate`. Place the call immediately
+below the `setContentView` call. The first few lines of `onCreate` should now 
+look like this: 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guestbooks);
-        
+
         initActionBar();
 
         ...
@@ -78,7 +79,7 @@ Next, you'll modify the code that controls the navigation drawer.
 Currently, the navigation drawer initialization code is in the `onCreate` 
 method. Android Studio created this code for you when you used the Navigation 
 Drawer Activity template to create `GuestbooksActivity`. Delete this code from 
-`onCreate`:
+`onCreate`: 
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -87,14 +88,16 @@ Drawer Activity template to create `GuestbooksActivity`. Delete this code from
     toggle.syncState();
 
 Instead, you'll initialize the navigation drawer in a separate method that 
-you'll then call in `onCreate`. You'll also change the `drawer` variable to be 
-an instance variable that you can refer to throughout the class. This lets you 
-use this variable to close the drawer when a guestbook is selected in Get 
-Guestbooks Screenlet. First, add this variable to `GuestbooksActivity`: 
+you'll call in `onCreate`. You'll also change the `drawer` variable to be an 
+instance variable that you can refer to throughout the class. This lets you use 
+this variable to close the drawer when a guestbook is selected in Guestbook List 
+Screenlet. First, add this variable to `GuestbooksActivity`: 
 
     private DrawerLayout drawer;
 
-Next, add the following `initDrawer` method:
+Next, add the following `initDrawer` method. This method's contents match the 
+drawer initialization code you deleted in `onCreate`, except that `drawer` is 
+now an instance variable: 
 
     private void initDrawer() {
         // drawer initialization
@@ -106,9 +109,6 @@ Next, add the following `initDrawer` method:
         toggle.syncState();
     }
 
-This method's contents match the drawer initialization code you deleted in 
-`onCreate`, except that `drawer` is now an instance variable. 
-
 In the `onCreate` method, place the call to `initDrawer()` immediately below the 
 `initActionBar` call. The first few lines of `onCreate` should now look like 
 this: 
@@ -117,7 +117,7 @@ this:
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guestbooks);
-        
+
         initActionBar();
         initDrawer();
 
@@ -142,21 +142,21 @@ implementation.
 
 ## Deleting the NavigationView.OnNavigationItemSelectedListener Implementation [](id=deleting-the-navigationview-onnavigationitemselectedlistener-implementation)
 
-Since you'll handle navigation drawer item selections with Get Guestbooks 
-Screenlet, you don't need `GuestbooksActivity` to implement 
-`NavigationView.OnNavigationItemSelectedListener`. Delete this implementation 
-from the class declaration. The class declaration should now look like this: 
+Since Guestbook List Screenlet handles navigation drawer item selections, you 
+don't need to implement `NavigationView.OnNavigationItemSelectedListener` in 
+`GuestbooksActivity`. Delete this implementation from the class declaration. The 
+class declaration should now look like this: 
 
     public class GuestbooksActivity extends AppCompatActivity {...
 
 Now you must remove the code in `GuestbooksActivity` that implements 
 `NavigationView.OnNavigationItemSelectedListener`. To do this, first delete the 
-following code at the end of the `onCreate` method:
+following code at the end of the `onCreate` method: 
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
 
-Your `onCreate` method should now look like this:
+Your `onCreate` method should now look like this: 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,5 +180,5 @@ Next, delete the `onNavigationItemSelected` method, along with its `@Override`
 and `@SuppressWarnings("StatementWithEmptyBody")` statements. Lastly, remove the 
 `android.support.design.widget.NavigationView` import. 
 
-Great job! Now you're ready to insert Get Guestbooks Screenlet in 
+Great job! Now you're ready to insert Guestbook List Screenlet in 
 `GuestbooksActivity`. 
