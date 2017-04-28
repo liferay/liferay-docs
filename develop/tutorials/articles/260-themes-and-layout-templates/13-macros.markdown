@@ -4,10 +4,10 @@ Macros let you assign theme template fragments to a variable. This keeps your
 theme templates from becoming cluttered and makes them easier to read. 
 
 Note that **Velocity templates are supported, but deprecated as of Liferay 
-Portal CE 7.0 and Liferay DXP**. It's recommended that you convert your Velocity 
-theme templates to FreeMarker at your earliest convenience to avoid issues. This 
-tutorial covers both FreeMarker and Velocity template macros to help with your 
-conversion process.
+Portal CE 7.0 and Liferay DXP**. We recommend that you convert your Velocity 
+theme templates to FreeMarker at your earliest convenience to avoid future
+issues. This tutorial covers both FreeMarker and Velocity template macros to
+help with your conversion process.
 
 The syntax for a macro is straightforward. A macro directive is defined 
 containing the template fragment. For example, below is the macro directive for 
@@ -46,7 +46,7 @@ the variable name:
 FreeMarker:
 
     <@liferay.control_menu />
-    
+ 
 Velocity:
 
     #control_menu()
@@ -76,7 +76,7 @@ You can pass an argument in the macro call like this:
 FreeMarker:
 
     <@liferay.language key="powered-by" />
-    
+ 
 Velocity:
 
     #language ("powered-by")
@@ -92,7 +92,8 @@ These are covered next.
 
 There are several default macros defined in the 
 [`FTL_Liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
-that you can use in your FreeMarker theme templates. Likewise, [VM_liferay.vm](https://raw.githubusercontent.com/liferay/liferay-portal/master/modules/apps/foundation/portal-template/portal-template-velocity/src/main/resources/VM_liferay.vm) 
+that you can use in your FreeMarker theme templates. Likewise, 
+[VM_liferay.vm](https://raw.githubusercontent.com/liferay/liferay-portal/master/modules/apps/foundation/portal-template/portal-template-velocity/src/main/resources/VM_liferay.vm) 
 defines the default macros for Velocity. The table below lists the available 
 macros and parameters:
 
