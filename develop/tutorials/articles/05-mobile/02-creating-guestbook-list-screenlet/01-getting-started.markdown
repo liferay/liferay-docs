@@ -88,10 +88,10 @@ package. Inside this new `model` package, create a new class called
 
         public GuestbookModel(Map<String, Object> stringObjectMap) {
             values = stringObjectMap;
-            guestbookId = Long.parseLong((String) stringObjectMap.get("guestbookId"));
-            groupId = Long.parseLong((String) stringObjectMap.get("groupId"));
-            companyId = Long.parseLong((String) stringObjectMap.get("companyId"));
-            userId = Long.parseLong((String) stringObjectMap.get("userId"));
+            guestbookId =  ((Integer) stringObjectMap.get("guestbookId")).longValue();
+            groupId = ((Integer) stringObjectMap.get("groupId")).longValue();
+            companyId = ((Integer) stringObjectMap.get("companyId")).longValue();
+            userId = ((Integer) stringObjectMap.get("userId")).longValue();
             userName = (String) stringObjectMap.get("userName");
             createDate = (long) stringObjectMap.get("createDate");
             modifiedDate = (long) stringObjectMap.get("modifiedDate");

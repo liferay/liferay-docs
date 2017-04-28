@@ -70,17 +70,17 @@ the `com.liferay.docs.model` package:
 
         public EntryModel(Map<String, Object> stringObjectMap) {
             values = stringObjectMap;
-            entryId = Long.parseLong((String) stringObjectMap.get("entryId"));
-            groupId = Long.parseLong((String) stringObjectMap.get("groupId"));
-            companyId = Long.parseLong((String) stringObjectMap.get("companyId"));
-            userId = Long.parseLong((String) stringObjectMap.get("userId"));
+            entryId = ((Integer) stringObjectMap.get("entryId")).longValue();
+            groupId = ((Integer) stringObjectMap.get("groupId")).longValue();
+            companyId = ((Integer) stringObjectMap.get("companyId")).longValue();
+            userId = ((Integer) stringObjectMap.get("userId")).longValue();
             userName = (String) stringObjectMap.get("userName");
             createDate = (long) stringObjectMap.get("createDate");
             modifiedDate = (long) stringObjectMap.get("modifiedDate");
             name = (String) stringObjectMap.get("name");
             email = (String) stringObjectMap.get("email");
             message = (String) stringObjectMap.get("message");
-            guestbookId = Long.parseLong((String) stringObjectMap.get("guestbookId"));
+            guestbookId = ((Integer) stringObjectMap.get("guestbookId")).longValue();
         }
 
         @Override
