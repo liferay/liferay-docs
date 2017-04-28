@@ -1,13 +1,14 @@
 # Using Developer Mode with Themes [](id=using-developer-mode-with-themes)
 
-Do you want to develop Liferay resources without having to redeploy to see your
+Do you want to develop Liferay themes without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer Mode, all caches
 are removed, so any changes you make are visible right away. Also, you don't
 have to reboot the server as often in Developer Mode.
 
-How does Developer Mode let you see your changes more quickly? In Developer
-Mode, there are several changes to the normal order of operations. Here is a
-list of Developer Mode's key behavior changes and the
+How does Developer Mode let you see your changes more quickly? By default,
+@product@ is optimized for performance. Developer mode optimizes your
+configuration for development instead. Here is a list of Developer Mode's key
+behavior changes and the 
 [portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html)
 override settings that trigger them (if applicable):
 
@@ -22,7 +23,7 @@ override settings that trigger them (if applicable):
 
 Individual file loading of your styling and behaviors, combined with disabled
 caching for layout and FreeMarker templates, lets you see your changes more 
-quickly.  
+quickly. 
 
 <!-- First, you can explore how it's done in IDE. 
 
@@ -70,11 +71,11 @@ Learn how to manually set Developer Mode next.
 
 ## Setting Developer Mode for Your Server Using portal-developer.properties [](id=setting-developer-mode-for-your-server-using-portal-developer-properties)
 
-To manually set Developer Mode you must add the `portal-developer.properties`
-file to your application server's configuration file. Since each application 
+To set Developer Mode manually, you must add the `portal-developer.properties`
+file to your application server's launch configuration. Since each application 
 server has a different configuration file or UI to specify system properties, 
 you must follow your application server's specific method for adding the 
-`portal-developer.properties` file's properties to the system properties. 
+`portal-developer.properties` file to the server's launch configuration. 
 
 <!--
 +$$$
@@ -110,9 +111,26 @@ Once, you've configured your server, add the following properties to your
     layout.template.cache.enabled=false
     minifier.enabled=false
     theme.css.fast.load=false
-    
+ 
 This takes care of most of the Developer Mode properties, but you still have one 
 left to configure. This is covered next.
+
+<!-- Hey Mike, I don't think these instructions are correct. If you look in a
+bundle's tomcat[version]/webapps/ROOT/WEB-INF/classes folder, there's a
+portal-developer.properties file in there, with all the configuration you need.
+You shouldn't need to create a new one. It's on the classpath already. 
+
+The other thing is that when I use the initBundle Gradle command to pull a
+runtime into a Workspace, it pre-configures the portal-ext.properties file with
+this property: 
+
+include-and-override=portal-developer.properties
+
+This would seem to indicate that the way to do this is the same as how you did
+it for 6.2: by adding the above property to portal-ext.properties. 
+
+So my question is, where did the above instructions come from? I'm not sure
+they're right. Thanks! -Rich -->
 
 ### Configuring FreeMarker System Settings [](id=configuring-freemarker-system-settings)
 
@@ -121,12 +139,13 @@ any changes you make to your FreeMarker theme templates won't show up
 immediately. You can change this behavior through System Settings. Follow these 
 steps to update the system setting:
 
-1.  Open the Control Panel and goto *Configuration* &rarr; *System Settings*.
+1.  Open the Control Panel and go to *Configuration* &rarr; *System Settings*.
 
 2.  Click the *Foundation* tab and select *FreeMarker Engine*.
 
-3.  By default, the *Resource modification check*, the time in milliseconds that 
-    the template is cached, is set to 60. Set this value to 0 to disable caching.
+3.  By default, the *Resource modification check* (the time in milliseconds that
+    the template is cached) is set to `60`. Set this value to `0` to disable
+    caching.
 
 Great! You've set up your Liferay server for Developer Mode. Now, when you
 modify your theme's `_custom.scss` file directly in your Liferay bundle, you can
