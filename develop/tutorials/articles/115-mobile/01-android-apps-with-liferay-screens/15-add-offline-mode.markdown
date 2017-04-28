@@ -1,9 +1,9 @@
-# Adding Offline Mode Support to Your Screenlet [](id=adding-offline-mode-support-to-your-screenlet)
+# Adding Offline Mode Support to Your Android Screenlet [](id=adding-offline-mode-support-to-your-android-screenlet)
 
 Offline mode lets Screenlets function without a network connection. For offline 
 mode to work with your Screenlet, you must manually add support for it. 
 Fortunately, Liferay Screens 2.0 introduced a simpler way of implementing 
-offline mode support in Screenlets: 
+offline mode support in Android Screenlets: 
 
 - Update your Screenlet's classes to leverage the offline mode cache
 - Create an event class (if your Screenlet doesn't already have one)
@@ -36,11 +36,11 @@ differs from that of write Screenlets.
 
 To add offline mode support to write Screenlets, you'll follow these steps: 
 
-1. [Create or update the event class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-screenlet#create-or-update-the-event-class). 
-2. [Update the listener interface](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-screenlet#update-the-listener). 
-3. [Update the Interactor class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-screenlet#update-the-interactor-class). 
-4. [Update the Screenlet class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-screenlet#update-the-screenlet-class). 
-5. [Sync the cache with the server](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-screenlet#sync-the-cache-with-the-server). 
+1. [Create or update the event class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#create-or-update-the-event-class). 
+2. [Update the listener interface](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#update-the-listener). 
+3. [Update the Interactor class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#update-the-interactor-class). 
+4. [Update the Screenlet class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#update-the-screenlet-class). 
+5. [Sync the cache with the server](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#sync-the-cache-with-the-server). 
 
 Each of the sections that follow detail one of these steps. You'll begin by 
 creating or updating the event class. 
