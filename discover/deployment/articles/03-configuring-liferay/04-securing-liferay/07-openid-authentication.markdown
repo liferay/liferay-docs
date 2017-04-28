@@ -24,7 +24,7 @@ register and sign in with their OpenID accounts. Internally, the product uses
 OpenID is enabled by default in @product@ but can be disabled or enabled at either
 the system scope or portal instance scope. To configure the OpenID SSO module at
 the system level, navigate to the Control Panel and click on *Configuration*
-&rarr; *System Settings*. Then click on the *Foundation* category and find
+&rarr; *System Settings*. Then click on the *Foundation* category and search for
 *OpenID* in the list. There's only a single configuration setting. Check the
 *Enabled* box to enable OpenID at the system scope (for all portal instances),
 uncheck it to disable it at the system scope.
@@ -37,10 +37,17 @@ Control Panel and click on *Configuration* &rarr; *Instance Settings*, then on
 Check the *Enabled* box to enable OpenID for the current portal instance,
 or uncheck it to disable it for the current portal instance.
 
-<!--
+Regardless of whether OpenID is enabled at the System or Instance scope, users
+can see the OpenID icon when they sign into @product@. Click *Sign In*. The
+OpenID icon is displayed at the lower left.
+
+![Figure 1: The OpenID icon is at the bottom of the Sign In Portlet](../../../images/openid.png)
+
+
 ## Related Topics [](id=related-topics)
 
-- @product@ Security Overview
-- Signing in to @product@
-- Token-based Single Sign On Authentication
--->
+[@product@ Security Overview](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)
+[Token-based Single Sign On Authentication](/discover/deployment/-/knowledge_base/7-0/token-based-single-sign-on-authentication)
+[CAS Single Sign On Authentication](/discover/deployment/-/knowledge_base/7-0/cas-central-authentication-service-single-sign-on-authentication)
+[OpenAM Single Sign On Authentication](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/opensso-single-sign-on-authentication)
+
