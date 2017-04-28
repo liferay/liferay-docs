@@ -38,16 +38,16 @@ Check the *Enabled* box to enable OpenID for the current portal instance,
 or uncheck it to disable it for the current portal instance.
 
 Regardless of whether OpenID is enabled at the System or Instance scope, users
-will be able to see the OpenID icon when they sign into @product@. Click *Sign
-In*. The OpenID icon is displayed at the lower left.
+can see the OpenID icon when they sign into @product@. Click *Sign In*. The
+OpenID icon is displayed at the lower left.
 
-![Figure 1 shows the OpenID icon in the Sign In Portlet](../../../images/openid.png)
+![Figure 1: The OpenID icon is at the bottom of the Sign In Portlet](../../../images/openid.png)
 
 
-<!--
 ## Related Topics [](id=related-topics)
 
-- @product@ Security Overview
-- Signing in to @product@
-- Token-based Single Sign On Authentication
--->
+[@product@ Security Overview](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)
+[Token-based Single Sign On Authentication](/discover/deployment/-/knowledge_base/7-0/token-based-single-sign-on-authentication)
+[CAS Single Sign On Authentication](/discover/deployment/-/knowledge_base/7-0/cas-central-authentication-service-single-sign-on-authentication)
+[OpenAM Single Sign On Authentication](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/opensso-single-sign-on-authentication)
+
