@@ -117,7 +117,7 @@ this:
         /*
         Return null only if there was an error returning the
         desired list of entity objects in the try block
-xxx        \*/
+        */
 
     }
 
@@ -269,16 +269,16 @@ Here's the second query:
         .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
         .addOrder(order);
 
-xxx    List<Event> entries = \_eventLocalService.dynamicQuery(entryQuery);
+    List<Event> entries = _eventLocalService.dynamicQuery(entryQuery);
 
 By default, `DynamicQueryFactoryUtil.forClass(Entry.class)` returns of list of
 all guestbook entry entities. The `.add(RestrictionsFactoryUtil.eq("name",
 entryName))` restriction limits the results to only those guestbook entries
 whose names match the `entryName` parameter of the finder method.
 [PropertyFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
-is a Liferay utility class with the method, `forName(String propertyName)`,
-which returns the specified property. This property can be passed to another
-Liferay dynamic query. This is exactly what happens in the following line of our
+is a Liferay utility class with the method `forName(String propertyName)`, which
+returns the specified property. This property can be passed to another Liferay
+dynamic query. This is exactly what happens in the following line of our
 example:
 
     .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
