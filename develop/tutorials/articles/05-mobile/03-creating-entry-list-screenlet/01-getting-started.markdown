@@ -8,9 +8,9 @@ to start writing the Screenlet.
 ## Creating the Model Class for Entries [](id=creating-the-model-class-for-entries)
 
 Recall that you need a model class to represent entities retrieved from 
-@product@. The model class you'll create for guestbook entries, `EntryModel`, 
-creates `EntryModel` objects that serve as guestbook entries retrieved from 
-the Guestbook portlet. 
+Liferay Portal. The model class you'll create for guestbook entries, 
+`EntryModel`, creates `EntryModel` objects that serve as guestbook entries 
+retrieved from the Guestbook portlet. 
 
 Create the following `EntryModel` class alongside the `GuestbookModel` class in 
 the `com.liferay.docs.model` package: 

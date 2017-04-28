@@ -1,13 +1,9 @@
-# Beginning Android Development for Your @product@ Instance [](id=beginning-android-development-for-your-liferay-instance)
+# Beginning Android Development for Your Portal
 
 Getting started with Liferay Screens for Android is a straightforward process. 
 This series of Learning Path articles walks you through creating an Android app 
 and preparing it to interact with the Guestbook portlet developed in the 
 [Liferay 6.2 MVC Learning Path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application). 
-Note that this portlet has been converted to @product-ver@ and is provided for 
-you, so you don't need to do any portlet development prior to starting this 
-Learning Path. 
-
 Since Liferay Screens uses the Liferay Mobile SDK to make remote service calls, 
 you'll build a Mobile SDK capable of calling the Guestbook portlet's remote 
 services (the Guestbook Mobile SDK). You'll then install this Mobile SDK, and 

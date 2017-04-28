@@ -3,10 +3,10 @@
 In this Learning Path's previous section, you created an Android app that 
 contains the Guestbook Mobile SDK and Liferay Screens. You also used 
 [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
-to implement authentication with your @product@ instance. That's all your app 
-does though. It doesn't display any Guestbook portlet content. In this section 
-of the Learning Path, you'll create Guestbook List Screenlet to retrieve and 
-display the portlet's guestbooks in your app's navigation drawer. 
+to implement authentication with your Liferay Portal instance. That's all your
+app does though. It doesn't display any Guestbook portlet content. In this 
+section of the Learning Path, you'll create Guestbook List Screenlet to 
+retrieve and display the portlet's guestbooks in your app's navigation drawer. 
 
 Creating your own Screenlets brings additional benefits. Since you use a 
 consistent, repeatable development model to create them, you can often reuse 

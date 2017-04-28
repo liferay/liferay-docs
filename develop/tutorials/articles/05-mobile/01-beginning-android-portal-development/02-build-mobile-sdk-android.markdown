@@ -1,18 +1,18 @@
 # Building the Guestbook Mobile SDK [](id=building-the-guestbook-mobile-sdk)
 
-Once you've deployed the Guestbook portlet to your @product@ instance, you're 
-ready to build the Guestbook Mobile SDK. You might be asking yourself, "Why do I 
-have to build a separate Mobile SDK? Can't I just use the pre-built Mobile SDK 
-that Liferay already provides?" Fantastic question! The reason is that Liferay's 
-pre-built Mobile SDK doesn't have the classes it needs to call the Guestbook 
-portlet's remote services. The pre-built Mobile SDK includes only the framework 
-necessary to make server calls, and the classes required to call the remote 
-services of @product@'s *core* apps. Core apps (also referred to as 
-*out-of-the-box* apps) are those included with every @product@ instance. You 
-must build a separate Mobile SDK to call the remote services of any non-core 
-app. Since the Guestbook portlet isn't a core app, you must build a separate 
-Mobile SDK that can call its remote services. Now put on your hard hat, because 
-it's time to get building! 
+Once you've deployed the Guestbook portlet to your Liferay Portal instance,
+you're ready to build the Guestbook Mobile SDK. You might be asking yourself,
+"Why do I  have to build a separate Mobile SDK? Can't I just use the pre-built
+Mobile SDK  that Liferay already provides?" Fantastic question! The reason is
+that Liferay's  pre-built Mobile SDK doesn't have the classes it needs to call
+the Guestbook  portlet's remote services. The pre-built Mobile SDK includes only
+the framework  necessary to make server calls, and the classes required to call
+the remote  services of Liferay Portal's *core* apps. Core apps (also referred
+to as  *out-of-the-box* apps) are those included with every Liferay Portal
+instance. You  must build a separate Mobile SDK to call the remote services of
+any non-core  app. Since the Guestbook portlet isn't a core app, you must build
+a separate  Mobile SDK that can call its remote services. Now put on your hard
+hat, because  it's time to get building! 
 
 ## Building the Mobile SDK [](id=building-the-mobile-sdk)
 
@@ -44,7 +44,7 @@ following command:
 The wizard launches and asks you to enter your project's properties. You must 
 first provide the `Context` property. This is the context path of the remote 
 services the builder will generate classes and methods for. To view your 
-@product@ instance's remote service context paths, go to 
+Liferay Portal instance's remote service context paths, go to 
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws). 
 On the page's upper left, there's a menu for selecting the context path. Select 
 *guestbook-portlet*, which is the Guestbook portlet's context path. The UI 
@@ -83,7 +83,7 @@ the builder:
     modules/guestbook-portlet/android/src/gen/java
 
 Also note that the source classes are in the package path you specified when 
-generating the module, with an additional folder that denotes the @product@ 
+generating the module, with an additional folder that denotes the Liferay Portal 
 version they work with. The full path to the generated source classes is 
 therefore: 
 

@@ -25,15 +25,16 @@ Next, you'll create the model class the Screenlet needs.
 
 Recall from 
 [the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-model-class) 
-that you need a model class to represent the entity retrieved from @product@. 
-The model class you'll create for Guestbook List Screenlet, `GuestbookModel`, 
-creates `GuestbookModel` objects that represent guestbooks retrieved from the 
-Guestbook portlet. You'll create this model class in a separate package outside 
-of the `guestbooklistscreenlet` package. In this case, it makes sense to 
-organize your code this way because other Screenlets may also use the model 
-class. For example, if a Screenlet that edits guestbooks existed, it would also 
-need `GuestbookModel` objects. Putting the model class in a separate package 
-makes it clear that this class doesn't belong exclusively to a single Screenlet. 
+that you need a model class to represent the entity retrieved from Liferay
+Portal. The model class you'll create for Guestbook List Screenlet,
+`GuestbookModel`, creates `GuestbookModel` objects that represent guestbooks
+retrieved from the Guestbook portlet. You'll create this model class in a
+separate package outside of the `guestbooklistscreenlet` package. In this case,
+it makes sense to organize your code this way because other Screenlets may also
+use the model class. For example, if a Screenlet that edits guestbooks existed,
+it would also need `GuestbookModel` objects. Putting the model class in a
+separate package makes it clear that this class doesn't belong exclusively to a
+single Screenlet. 
 
 First, create a new package called `model` inside the `com.liferay.docs` 
 package. Inside this new `model` package, create a new class called 

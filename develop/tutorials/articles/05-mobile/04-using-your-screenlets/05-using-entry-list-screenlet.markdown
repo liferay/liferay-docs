@@ -158,10 +158,10 @@ drawer header now shows your greeting. It's a lot prettier too.
 
 Congratulations! Now you know how to use Liferay Screens and create your own 
 Screenlets. This opens up a world of possibilities for developing apps that 
-leverage @product@. Although you learned a great deal in this Learning Path, 
-there's still more. You can customize your Screenlet's appearance, package it 
-for redistribution, and even configure it to receive push notifications. These 
-topics, and more, are covered in the tutorials on Android apps with Liferay 
-Screens. 
+leverage Liferay Portal. Although you learned a great deal in this Learning 
+Path, there's still more. You can customize your Screenlet's appearance, package 
+it for redistribution, and even configure it to receive push notifications. 
+These topics, and more, are covered in the tutorials on Android apps with 
+Liferay Screens. 
 [Click here](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens) 
 to see these tutorials. 

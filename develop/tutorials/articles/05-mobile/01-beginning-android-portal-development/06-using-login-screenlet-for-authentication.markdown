@@ -1,11 +1,11 @@
 # Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication)
 
-For the app to retrieve data from the Guestbook portlet, the user must first 
-authenticate to the @product@ instance. The other features you'll develop 
-in your app depend on successful @product@ authentication. You can implement 
-authentication using the Liferay Mobile SDK, but it takes time to write. Using 
-Liferay Screens to authenticate takes about ten minutes. In this article, you'll 
-use Login Screenlet to implement authentication in your app. 
+For the app to retrieve data from the Guestbook portlet, the user must first
+authenticate to the Liferay Portal instance. The other features you'll develop
+in your app depend on successful Liferay Portal authentication. You can
+implement authentication using the Liferay Mobile SDK, but it takes time to
+write. Using Liferay Screens to authenticate takes about ten minutes. In this
+article, you'll use Login Screenlet to implement authentication in your app. 
 
 ## Adding Login Screenlet to the App [](id=adding-login-screenlet-to-the-app)
 
@@ -40,12 +40,13 @@ instead of OAuth. The `screen_name` value tells the Screenlet to authenticate
 with the user's screen name. You can alternatively set this to `email` or 
 `userId`. This Learning Path uses `screen_name` only because it's much faster to 
 type a screen name than a full email address in the emulator. Also, this value 
-must match the authentication setting in the @product@ instance. By default, 
-@product@ instances use email address for authentication. For this Learning 
-Path, you need to set your @product@ instance to authenticate by screen name 
-instead. 
+must match the authentication setting in the Liferay Portal instance. By 
+default, Liferay Portal instances use email address for authentication. For this 
+Learning Path, you need to set your Liferay Portal instance to authenticate by 
+screen name instead. 
 [Click here](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#basic-authentication) 
-for instructions on changing your @product@ instance's authentication setting. 
+for instructions on changing your Liferay Portal instance's authentication 
+setting. 
 
 The second `app` attribute in Login Screenlet's XML is `app:layoutId`. This 
 attribute sets the *View* to display the Screenlet with. Views in Liferay 
@@ -132,7 +133,7 @@ Once the emulator launches, unlock it if necessary. Your app automatically opens
 to Login Screenlet. Enter your credentials and click *SIGN IN*. The toast 
 message pops up saying that the login succeeded. 
 
-![Figure 1: Login Screenlet successfully authenticated you with the @product@ instance.](../../../images/android-login-screenlet-success.png)
+![Figure 1: Login Screenlet successfully authenticated you with the Liferay Portal instance.](../../../images/android-login-screenlet-success.png)
 
 The toast message goes away and you remain on the login screen. Nothing else 
 happens. Don't worry, this is supposed to happen; you haven't added any other 
@@ -158,7 +159,7 @@ log in when prompted. When login succeeds, `GuestbooksActivity` opens.
 
 ![Figure 2: Upon login, the app takes you to the new activity.](../../../images/android-login-success-intent.png)
 
-Nice work! You successfully implemented @product@ authentication in your Android 
-app. It didn't take you that long, either. So far, however, that's all your app 
-does; it doesn't display any content. Next, you'll rectify this by developing 
-Guestbook List Screenlet. 
+Nice work! You successfully implemented Liferay Portal authentication in your
+Android app. It didn't take you that long, either. So far, however, that's all
+your app does; it doesn't display any content. Next, you'll rectify this by
+developing Guestbook List Screenlet. 
