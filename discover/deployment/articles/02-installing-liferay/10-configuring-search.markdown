@@ -11,7 +11,7 @@ hardware or a VM to spare, you can separate your search infrastructure from
 you're more budget-conscious, you can still increase performance by running
 Elastic in a separate, individually tunable JVM on the same box. 
 
-Installing Elasticsearch for @product@ is pretty easy and takes only five steps: 
+Installing Elasticsearch for @product@ is pretty easy and takes only six steps: 
 
 1. Find the version of Elasticsearch that's embedded in the version of @product@
    you have, and then download that version from [Elastic's](https://www.elastic.co) 
@@ -22,11 +22,11 @@ Installing Elasticsearch for @product@ is pretty easy and takes only five steps:
 
 3. Install some required Elasticsearch plugins.
 
-3. Name your Elastic cluster. 
+4. Name your Elastic cluster. 
 
-4. Configure @product@ to connect to your Elastic cluster. 
+5. Configure @product@ to connect to your Elastic cluster. 
 
-5. Restart @product@ and reindex your search indexes. 
+6. Restart @product@ and reindex your search indexes. 
 
 +$$$
 
@@ -143,8 +143,8 @@ can find Elastic on the network.
 ### Step Five: Configure @product@ to Connect to your Elastic Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
 
 Now you're ready to configure @product@. Start @product@ if you haven't already, log
-in, and then go to Control Panel &rarr; Configuration &rarr; System Settings
-&rarr; Foundation. Find *Elasticsearch* in the list of settings and click on it.
+in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
+&rarr; *Foundation*. Find *Elasticsearch* in the list of settings and click on it.
 Now you can configure it. Here are the options you need to change: 
 
 **Cluster name:** Enter the name of the cluster as you defined it in Elastic. 
@@ -154,14 +154,14 @@ standalone Elasticsearch.
 
 **Transport addresses:** Enter a delimited list of transport addresses for
 Elastic nodes. Here, you'll enter the transport address from the Elastic server
-you started. The default value is `localhost:9300`, which will work 
+you started. The default value is `localhost:9300`, which will work. 
 
 When finished, click *Save*. You're almost done. 
 
 ### Step Six: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
 
 Stop and restart @product@. When it's back up, log in as an administrative user
-and go to Control Panel &rarr; Configuration &rarr; Server Administration and
+and click on *Control Panel* &rarr; *Configuration* &rarr; *Server Administration* and
 click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
 
