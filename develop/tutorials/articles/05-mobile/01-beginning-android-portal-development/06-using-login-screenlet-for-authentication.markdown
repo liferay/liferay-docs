@@ -44,7 +44,7 @@ must match the authentication setting in the Liferay Portal instance. By
 default, Liferay Portal instances use email address for authentication. For this 
 Learning Path, you need to set your Liferay Portal instance to authenticate by 
 screen name instead. 
-[Click here](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#basic-authentication) 
+[Click here](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#basic-authentication) 
 for instructions on changing your Liferay Portal instance's authentication 
 setting. 
 
@@ -68,10 +68,10 @@ theme declaration should now look like this:
     <style name="AppTheme" parent="default_theme">
         ...
 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
+[Click here](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 for more information on using Views in Liferay Screens. For more information on 
 Login Screenlet's available attributes, 
-[click here](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#attributes). 
+[click here](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#attributes). 
 
 Next, you'll implement `LoginListener` in the `MainActivity` class. 
 
@@ -108,7 +108,7 @@ Using them lets your app respond the Screenlet's actions. For the moment, they
 each only do one thing: display a success or failure message to the user. You'll 
 change this shortly. Note that each Screenlet has different listener methods; 
 they're listed in the Screenlet 
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android). 
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
 
 Now you need to get a reference to the Screenlet and set the `MainActivity` 
 class as its listener. To do so, add the following code to the end of the 

@@ -19,7 +19,7 @@ This page also has links to the JDK installation instructions.
 First, download a Liferay Portal Tomcat bundle from 
 [liferay.com](https://www.liferay.com/). 
 Then 
-[click here](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
+[click here](/discover/deployment/-/knowledge_base/6-2/installing-a-bundle)
 and follow the instructions to install the bundle. To follow best practices, you 
 should create a `bundles` directory and unzip it there. The bundle's root 
 directory is referred to as *Liferay Home* and is named according to the 
@@ -29,13 +29,12 @@ your machine, the path of that bundle's Liferay Home directory is:
 
     bundles/liferay-portal-6.2-ce-ga6
 
-Now you're ready to start Liferay Portal! 
-[Click here](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#running-product-for-the-first-time) 
-and follow the instructions to start the bundle. If you're on Mac or Linux you 
-should also run `tail -f ../logs/catalina.out` immediately after the 
-`./startup.sh` command executes. This ensures that the server log prints to the 
-terminal. This step isn't necessary on Windows because the server log 
-automatically opens in another window. 
+Now you're ready to start Liferay Portal! Start the bundle as described in the 
+link above. If you're on Mac or Linux you should also run 
+`tail -f ../logs/catalina.out` immediately after the `./startup.sh` command 
+executes. This ensures that the server log prints to the terminal. This step 
+isn't necessary on Windows because the server log automatically opens in another 
+window. 
 
 After a minute or two, Liferay Portal starts up and automatically takes you to 
 its initial setup page at 

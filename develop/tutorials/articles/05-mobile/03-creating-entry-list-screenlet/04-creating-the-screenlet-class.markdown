@@ -15,7 +15,7 @@ are the same.
 Therefore, this article doesn't explain all the code in detail. Focus is instead 
 placed on the few parts that differ from Guestbook List Screenlet. For a full 
 explanation of the code, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-screenlet-class) 
+[click here](/develop/tutorials/-/knowledge_base/6-2/creating-guestbook-list-screenlets-screenlet-class) 
 to see the article on creating Guestbook List Screenlet's Screenlet class. 
 
 You'll create Entry List Screenlet's Screenlet class with the same steps you 
@@ -138,7 +138,7 @@ scenes, the list Screenlet framework passes `guestbookId` to the Interactor's
 argument. This is why you were able to extract `guestbookId` from the `args` 
 argument in these methods. For an explanation of how the rest of this Screenlet 
 class works, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-screenlet-class) 
+[click here](/develop/tutorials/-/knowledge_base/6-2/creating-guestbook-list-screenlets-screenlet-class) 
 to see the article on creating Guestbook List Screenlet's Screenlet class. 
 
 That's it! Now you're ready to use Entry List Screenlet alongside Guestbook List 

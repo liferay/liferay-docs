@@ -1,7 +1,7 @@
 # Creating Guestbook List Screenlet's Interactor [](id=creating-guestbook-list-screenlets-interactor)
 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-Interactor-class) 
+[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-Interactor-class) 
 that *Interactors* are Screenlet components that make server calls and process 
 the results. Also recall that Interactors themselves are made up of several 
 components: 
@@ -21,7 +21,7 @@ Recall that Screens uses event objects via the
 library to communicate the server call's results between Screenlet components. 
 The event objects contain the server call's results. For more information and 
 instructions on creating an event class, see 
-[the section of the list Screenlet tutorial on event classes](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-event). 
+[the section of the list Screenlet tutorial on event classes](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlets-event). 
 You'll follow those instructions to create Guestbook List Screenlet's event 
 class. 
 
@@ -93,7 +93,7 @@ Guestbook List Screenlet's Interactor class.
 You'll create your Interactor class, `GuestbookListInteractor`, with the same 
 steps the list Screenlet creation tutorial uses to create the example Interactor 
 class. 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-interactor-class)
+[Click here](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-interactor-class)
 to see those steps. So how does Guestbook List Screenlet's Interactor class 
 differ from the one in the tutorial? Guestbook List Screenlet's Interactor class 
 must create `GuestbookService` instances for calling the Guestbook portlet's 
@@ -171,7 +171,7 @@ create `GuestbookListInteractor`:
         }
 
     This serves as a cache key for 
-    [offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android). 
+    [offline mode](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-android). 
     Even though you won't add offline mode support to Guestbook List Screenlet, 
     this method makes it easier if you decide to do so later. 
 

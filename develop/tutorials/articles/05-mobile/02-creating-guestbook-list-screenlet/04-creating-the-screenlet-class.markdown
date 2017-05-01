@@ -24,7 +24,7 @@ First, you'll define Guestbook List Screenlet's attributes.
 ## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#defining-screenlet-attributes-in-your-app) 
+[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#defining-screenlet-attributes-in-your-app) 
 that you should create a Screenlet's attributes before creating the Screenlet 
 class. These are the attributes the app developer can set when inserting the 
 Screenlet's XML in a layout. Guestbook List Screenlet only needs one attribute. 
@@ -49,7 +49,7 @@ ready to write the Screenlet class.
 ## Extending BaseListScreenlet [](id=extending-baselistscreenlet)
 
 Recall from 
-[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlet-class) 
+[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlet-class) 
 that you must extend `BaseListScreenlet` to create a Screenlet class for a list 
 Screenlet. Use the following steps to create `GuestbookListScreenlet`, the 
 Screenlet class for Guestbook List Screenlet. Note that these steps closely 

@@ -18,7 +18,7 @@ following steps to create a View for Guestbook List Screenlet:
 Note that these are the same steps for creating a View as those in the list 
 Screenlet tutorial. Therefore, this article doesn't explain the concepts or code 
 in detail. For such an explanation, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view) 
+[click here](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlets-view) 
 to see the tutorial. 
 
 You'll create Guestbook List Screenlet's View in its own package inside the 
@@ -55,7 +55,7 @@ layouts however you like.
 
 Recall that an adapter class is required to fill each row with data. Guestbook 
 List Screenlet's adapter class, `GuestbookAdapter`, is almost identical to 
-[the adapter class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-adapter-class). 
+[the adapter class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-adapter-class). 
 The only difference is that `GuestbookAdapter` handles a guestbook's name. 
 
 Inside the Screenlet's `view` package, create the following `GuestbookAdapter` 
@@ -117,7 +117,7 @@ Next, you'll create the View class.
 
 Recall that the View class controls a Screenlet's UI. Guestbook List Screenlet's 
 View class, `GuestbookListView`, is almost identical to 
-[the View class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-view-class). 
+[the View class in the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-view-class). 
 The only difference is that `GuestbookListView` displays guestbooks. 
 
 Create the `GuestbookListView` class inside the `view` package, and replace its 
@@ -170,7 +170,7 @@ Now you're ready to create your View's main layout.
 
 Even though you already have a row layout (`guestbook_row.xml`), your View needs 
 a layout for the list as a whole. Recall from 
-[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-views-main-layout) 
+[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-views-main-layout) 
 that the View layout for all list Screenlets is identical apart from the styling 
 and the referenced View class. The layout for Guestbook List Screenlet's View, 
 `list_guestbooks.xml`, must reference `GuestbookListView` and contain the same 

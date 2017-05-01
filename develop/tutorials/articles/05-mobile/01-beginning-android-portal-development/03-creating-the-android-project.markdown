@@ -45,7 +45,7 @@ finished.
 You must now specify your app's first activity. Although you'll use this
 activity to authenticate users to your Liferay Portal instance, don't select
 Login  Activity. Select *Empty Activity* instead. Later, you'll insert 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android)
+[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android)
 in this activity. Login Screenlet contains everything your users need to
 authenticate to a Liferay Portal instance, including the UI. Click *Next*. 
 

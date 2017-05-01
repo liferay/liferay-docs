@@ -53,7 +53,7 @@ Now you must implement the listener's methods. Recall that this includes the
 [`BaseCacheListener` interface's](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java), 
 `error` method, since `BaseListListener` extends `BaseCacheListener`. For a full 
 explanation of the methods in both listeners, see 
-[the article on using Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-guestbook-list-screenlet). 
+[the article on using Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-guestbook-list-screenlet). 
 Note that in `EntriesFragment`, you don't need to take any action in these 
 methods. There are no UI elements or other parts of the fragment that must be 
 updated or processed in response to the Screenlet's behavior. All this Screenlet 
@@ -163,5 +163,5 @@ Path, there's still more. You can customize your Screenlet's appearance, package
 it for redistribution, and even configure it to receive push notifications. 
 These topics, and more, are covered in the tutorials on Android apps with 
 Liferay Screens. 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens) 
+[Click here](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens) 
 to see these tutorials. 

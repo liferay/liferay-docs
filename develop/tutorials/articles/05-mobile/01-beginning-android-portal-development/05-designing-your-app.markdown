@@ -12,7 +12,7 @@ straightforward way to do three things:
 3. Display entries
 
 To authenticate users, all you need to do is insert and configure 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
+[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android) 
 in your app. Login Screenlet comes complete with its own UI. You must, however, 
 create the UI for displaying guestbooks and entries. What sort of UI would be 
 best for this? Although the *best* UI for any purpose is a matter of opinion, 

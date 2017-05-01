@@ -9,7 +9,7 @@ you'll build a Mobile SDK capable of calling the Guestbook portlet's remote
 services (the Guestbook Mobile SDK). You'll then install this Mobile SDK, and 
 Screens, in your Android project. You'll also learn about the Android app's 
 design, and implement authentication with 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android). 
+[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android). 
 
 This section of the Learning Path covers these topics: 
 

@@ -11,7 +11,7 @@ the following in your Android project:
   call the Guestbook portlet's remote services. 
 
 - **Liferay Screens:** Screens contains the Screenlet framework and 
-  [several built-in Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+  [several built-in Screenlets](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
   like Login Screenlet. Because these built-in Screenlets interact with Liferay
   Portal's core apps, they make their server calls with Liferay's pre-built
   Mobile SDK. Note that all Screenlets, including those that make server calls
@@ -62,7 +62,7 @@ This adds the `liferay-screens` and `liferay-material-viewset` dependencies.
 Although only the `liferay-screens` dependency is necessary to install Screens, 
 adding other View Sets, like the Material View Set, gives you flexibility when 
 designing your app's look and feel. 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets) 
+[Click here](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets) 
 for more information on Views in Liferay Screens. 
 
 Once you edit `build.gradle`, a message appears at the top of the file that asks 

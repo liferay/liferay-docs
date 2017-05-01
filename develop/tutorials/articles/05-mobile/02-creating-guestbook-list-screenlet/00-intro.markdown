@@ -2,7 +2,7 @@
 
 In this Learning Path's previous section, you created an Android app that 
 contains the Guestbook Mobile SDK and Liferay Screens. You also used 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
+[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android) 
 to implement authentication with your Liferay Portal instance. That's all your
 app does though. It doesn't display any Guestbook portlet content. In this 
 section of the Learning Path, you'll create Guestbook List Screenlet to 
@@ -30,14 +30,14 @@ You'll use these steps to create Guestbook List Screenlet:
 
 Before beginning, you should read the following tutorials: 
 
-- [Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android): 
+- [Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android): 
   Explains the components that constitute a Screenlet, and how they relate to 
   one another. 
 
-- [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets): 
+- [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets): 
   Explains the general steps for creating a Screenlet. 
 
-- [Creating Android List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets): 
+- [Creating Android List Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets): 
   Explains the general steps for creating a list Screenlet. This section of the 
   Learning Path follows this tutorial. 
 

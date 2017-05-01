@@ -5,7 +5,7 @@ use it in only one app, then you can create it in that app's project. If you
 need to use it in several apps, however, then it's best to create it in a 
 separate project for redistribution. For information on creating Screenlets for 
 redistribution, see the tutorial 
-[Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets). 
+[Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets). 
 Since you'll use Guestbook List Screenlet in only this app, you can create it in 
 a new package inside the app's project. 
 
@@ -24,7 +24,7 @@ Next, you'll create the model class the Screenlet needs.
 ## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
 Recall from 
-[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-model-class) 
+[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-model-class) 
 that you need a model class to represent the entity retrieved from Liferay
 Portal. The model class you'll create for Guestbook List Screenlet,
 `GuestbookModel`, creates `GuestbookModel` objects that represent guestbooks
