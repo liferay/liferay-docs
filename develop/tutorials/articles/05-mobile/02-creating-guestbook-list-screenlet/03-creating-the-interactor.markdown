@@ -129,7 +129,7 @@ create `GuestbookListInteractor`:
 
     This requires that you add the following imports: 
 
-        import com.liferay.mobile.android.v7.guestbook.GuestbookService;
+        import com.liferay.mobile.android.v62.guestbook.GuestbookService;
         import com.liferay.mobile.screens.base.list.interactor.Query;
         import org.json.JSONArray;
 

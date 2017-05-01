@@ -15,7 +15,7 @@ the following in your Android project:
   like Login Screenlet. Because these built-in Screenlets interact with Liferay
   Portal's core apps, they make their server calls with Liferay's pre-built
   Mobile SDK. Note that all Screenlets, including those that make server calls
-  with a custom built Mobile SDK, must use the framework in Liferay's pre-built
+  with a custom-built Mobile SDK, must use the framework in Liferay's pre-built
   Mobile SDK to issue their calls. 
 
 Since Liferay's pre-built Mobile SDK is a dependency of Liferay Screens, 

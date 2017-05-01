@@ -16,7 +16,7 @@ This page also has links to the JDK installation instructions.
 
 ## Installing and Configuring a Local Liferay Portal Bundle [](id=installing-and-configuring-a-local-liferay-bundle)
 
-First, download a Liferay Portal Tomcat bundle from 
+First, download a Liferay Portal 6.2 Tomcat bundle from 
 [liferay.com](https://www.liferay.com/). 
 Then 
 [click here](/discover/deployment/-/knowledge_base/6-2/installing-a-bundle)
@@ -47,9 +47,10 @@ purposes of this Learning Path, these don't have to be real. If you want to
 connect Liferay Portal to a separate database such as MySQL or PostgreSQL, you 
 can configure that connection here. Note that although the default embedded 
 database is fine for development on your local machine, it isn't optimized for 
-production. Click *Finish Configuration* when you're done. Then set a password 
-and a password reminder query for your administrative user. Your Liferay Portal 
-instance then takes you to its default site. 
+production. Click *Finish Configuration* when you're done. When the success 
+message appears, click *Go to My Portal*. Then set a password and a password 
+reminder query for your administrative user. Your Liferay Portal instance then 
+takes you to its default site. 
 
 Great! Next, you'll deploy the Guestbook portlet to your Liferay Portal 
 instance. 
@@ -61,13 +62,13 @@ Download the Guestbook portlet's `.war` package from
 [here](https://dev.liferay.com/documents/10184/598513/guestbook-portlet.war) 
 and place it in the `[Liferay Home]/deploy` directory. You should see messages 
 in your console indicating that the Guestbook portlet has been successfully 
-deployed. On your portal's default site, click the + icon on the left side 
-of the screen and then click *Applications* at the top of the menu that slides 
-out. Open the *Sample* category and drag *Guestbook* onto the page. The 
-Guestbook portlet should now appear with the default *Main* guestbook. Add a new 
-guestbook in the portlet and an entry or two to each. When you create the 
-Guestbook Android app, this ensures there's some content to display in it. The 
-Guestbook portlet on your site should now look like this: 
+deployed. On your portal's default site, click the + icon on the left side of 
+the screen and then click *Applications* at the top of the menu that slides out. 
+Open the *Sample* category and drag *Guestbook* onto the page. The Guestbook 
+portlet should now appear with the default *Main* guestbook. Add a new guestbook 
+in the portlet and an entry or two to each. When you create the Guestbook 
+Android app, this ensures there's some content to display in it. The Guestbook 
+portlet on your site should now look like this: 
 
 ![Figure 1: The Guestbook portlet, with a new guestbook and some entries.](../../../images/guestbook-portlet-01.png)
 

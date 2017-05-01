@@ -17,7 +17,7 @@ diverge. For a full explanation of the code,
 [click here](/develop/tutorials/-/knowledge_base/6-2/creating-guestbook-list-screenlets-interactor) 
 to see the article on creating Guestbook List Screenlet's Interactor. 
 
- You'll create the event class first. 
+You'll create the event class first. 
 
 ## Creating the Event Class [](id=creating-the-event-class)
 
@@ -70,7 +70,7 @@ via the event. In the `interactor` package, create a new class called
     package com.liferay.docs.entrylistscreenlet.interactor;
 
     import com.liferay.docs.model.EntryModel;
-    import com.liferay.mobile.android.v7.entry.EntryService;
+    import com.liferay.mobile.android.v62.entry.EntryService;
     import com.liferay.mobile.screens.base.list.interactor.BaseListInteractor;
     import com.liferay.mobile.screens.base.list.interactor.BaseListInteractorListener;
     import com.liferay.mobile.screens.base.list.interactor.Query;
