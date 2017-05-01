@@ -12,7 +12,7 @@ the following in your Android project:
 
 - **Liferay Screens:** Screens contains the Screenlet framework and 
   [several built-in Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
-  like Login Screenlet. Because these built-in Screenlets interact with  Liferay
+  like Login Screenlet. Because these built-in Screenlets interact with Liferay
   Portal's core apps, they make their server calls with Liferay's pre-built
   Mobile SDK. Note that all Screenlets, including those that make server calls
   with a custom built Mobile SDK, must use the framework in Liferay's pre-built
@@ -102,8 +102,8 @@ To check your Screens and Mobile SDK installations, first open your project's
 this file: 
 
     import com.liferay.mobile.android.service.Session;
-    import com.liferay.mobile.android.v7.entry.EntryService;
-    import com.liferay.mobile.android.v7.guestbook.GuestbookService;
+    import com.liferay.mobile.android.v62.entry.EntryService;
+    import com.liferay.mobile.android.v62.guestbook.GuestbookService;
     import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 
 If Android Studio recognizes these imports, then you're good to go! Remove them 
@@ -115,7 +115,7 @@ instance.
 
 For Screens to work properly with your app, you must point it to your Liferay
 Portal instance. You do this by adding a `server_context.xml` file in your
-project's  `res/values` directory. Create this file and add the following code
+project's `res/values` directory. Create this file and add the following code
 to it: 
 
     <?xml version="1.0" encoding="utf-8"?>
