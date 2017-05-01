@@ -148,6 +148,14 @@ tuned depending on need.
 
 $$$
 
+Administrators can set the UTF-8 properties in the `server.xml` file. This is
+required or else special characters will not be parsed correctly. Add the
+following inside the `jvmEntries` tag:
+
+    <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ...genericJvmArguments="-Dfile.encoding=UTF-8">
+
+Alternately, administrators can set the UTF-8 properties from the WebSphere Admin Console. (See below.)
+
 ### Removing the secureSessionCookie Tag [](id=removing-the-securesessioncookie-tag)
 
 In the same profile, you should delete a problematic `secureSessionCookie` tag 
@@ -363,6 +371,22 @@ steps to resolve this issue in WebSphere:
 3. Click *Apply* 
 
 4. Click *Save* 
+
+## Enable UTF-8 [](id=enable-utf-8)
+
+If you did not add the `-Dfile.encoding=UTF-8` property in the `server.xml`, you
+can do so in the Administrative Console.
+
+1. Click *Application Servers* &rarr; *server1* &rarr; *Process definition*.
+
+2. Click *Java Virtual Machine* under *Additional Properties*.
+
+3. Enter `-Dfile.encoding=UTF-8` in the *Generic JVM arguments* field.
+
+4. Click *Apply* and then *Save* to master configuration.
+
+Once the changes have been saved, @product@ can parse special characters if
+there is localized content.
 
 ## Deploy @product@ [](id=deploy-liferay-dxp)
 
