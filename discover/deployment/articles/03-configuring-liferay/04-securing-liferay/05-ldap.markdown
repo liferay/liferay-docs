@@ -195,7 +195,7 @@ The *keytool* utility ships as part of the Java SDK.
 
 Once this is done, go back to the LDAP page in the Control Panel. Modify the
 LDAP URL in the Base DN field to the secure version by changing the protocol to
-`https` and the port to `636` like the following:
+`ldaps` and the port to `636` like this:
 
     ldaps://myLdapServerHostname:636
 
