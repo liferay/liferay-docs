@@ -97,9 +97,8 @@ portlet class:
     import org.osgi.service.component.annotations.Modified;
 
     import com.liferay.docs.exampleconfig.configuration.ExampleConfiguration;
+    import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
     import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
-
-    import aQute.bnd.annotation.metatype.Configurable;
 
     @Component(
         configurationPid =
@@ -135,7 +134,7 @@ portlet class:
             @Activate
             @Modified
             protected void activate(Map<Object, Object> properties) {
-                    _exampleConfiguration = Configurable.createConfigurable(
+                    _exampleConfiguration = ConfigurableUtil.createConfigurable(
                             ExampleConfiguration.class, properties);
             }
 
@@ -198,11 +197,10 @@ example:
     import org.osgi.service.component.annotations.Modified;
 
     import com.liferay.docs.exampleconfig.configuration.ExampleConfiguration;
+    import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
     import com.liferay.portal.kernel.portlet.ConfigurationAction;
     import com.liferay.portal.kernel.portlet.DefaultConfigurationAction;
     import com.liferay.portal.kernel.util.ParamUtil;
-
-    import aQute.bnd.annotation.metatype.Configurable;
 
     @Component(
         configurationPid = "com.liferay.docs.exampleconfig.configuration.ExampleConfiguration",
@@ -242,7 +240,7 @@ example:
         @Activate
         @Modified
         protected void activate(Map<Object, Object> properties) {
-            _exampleConfiguration = Configurable.createConfigurable(
+            _exampleConfiguration = ConfigurableUtil.createConfigurable(
                 ExampleConfiguration.class, properties);
         }
 
