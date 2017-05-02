@@ -255,7 +255,7 @@ the issue.
     adding the JAR to the plugin WAB. The WAB generated for the plugin imports the
     packages from a registered provider at run time. 
 
-3.  **@product-ver@ provides the JAR but doesn't export a package your plugin imports**
+3.  **@product-ver@ provides the JAR but doesn't export a package my plugin imports**
 
     Keep the JAR in your `portal-dependency-jars` property. The Plugins SDK copies
     the JAR to your plugin's `WEB-INF/lib` folder at compile time and adds the JAR
