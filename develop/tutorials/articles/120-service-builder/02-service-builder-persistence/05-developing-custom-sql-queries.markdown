@@ -10,9 +10,6 @@ Liferay's database. But what if you'd like to do more complicated searches that
 incorporate attributes from multiple entities? You can always write your own
 custom SQL queries. You'll learn how in this tutorial.
 
-<!-- Check the sentence above "...and adds methods to your service layer that
-invoke the finder." -->
-
 For example, consider a fictitious Guestbook application. Suppose you want to
 find a guestbook entry based on its name, message, and guestbook name. In the
 Guestbook application, the entry entity refers to its guestbook by the
@@ -189,7 +186,7 @@ finder classes.
 
 +$$$
 
-**Note:** In previous versions of @product@, your finder methods were
+**Note:** In previous versions of Liferay Portal, your finder methods were
 accessible via `-FinderUtil` utility classes. Finder methods are now injected
 into your app's local services, removing the need to call finder utilities.
 
