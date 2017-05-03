@@ -337,10 +337,14 @@ module should invoke the `-Finder` class. This encourages a proper separation of
 concerns: the portlet classes in your application's web module invoke the
 business logic of the services published from your application's service module.
 The services, in turn, access the data model using the persistence layer's
-finder classes. So you'll add a method in the `-LocalServiceImpl` class that
-invokes the finder method implementation via the `-Finder` class. Then you'll
-rebuild your application's service layer so that the portlet classes and JSPs in
-your web module can access the services.
+finder classes. In previous versions of @product@, your finder methods were
+accessible via `-FinderUtil` utility classes. Finder methods are now injected
+into your app's local services, removing the need to call finder utilities.
+
+So you'll add a method in the `-LocalServiceImpl` class that invokes the finder
+method implementation via the `-Finder` class. Then you'll rebuild your
+application's service layer so that the portlet classes and JSPs in your web
+module can access the services.
 
 For example, for the Guestbook application, you'd add the following method to
 the `EntryLocalServiceImpl` class:
