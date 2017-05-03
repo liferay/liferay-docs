@@ -10,13 +10,17 @@ Note that OpenAM relies on cookie sharing between applications. Thus, in order
 for OpenAM to work, all applications that require SSO must be in the same web
 domain.
 
-You can set up OpenAM on the same server as @product@ or a different box. Follow
-the instructions at the [OpenAM site](https://forgerock.org/openam/) to install
-OpenAM. Once you have it installed, create the @product@ administrative user in
-it. Users are mapped back and forth by screen names. By default, the @product@
-administrative user has a screen name of *test*, so in OpenAM, you would
-register the user with the ID of *test* and an email address of
-*test@liferay.com*. Once you have the user set up, log in to Open SSO using
+You can set up OpenAM on the same server as @product@ or a different box. If you
+are using the same @product@ server to host your OpenAm, you will have to deploy
+the OpenAm `.war`. The `.war` is available
+[here](https://www.forgerock.com/platform/access-management/). Otherwise, follow
+the instructions at the
+[OpenAMsite](https://backstage.forgerock.com/docs/openam/12.0.4/install-guide)
+to install OpenAM. Once you have it installed, create the @product@
+administrative user in it. Users are mapped back and forth by screen names. By
+default, the @product@ administrative user has a screen name of *test*, so in
+OpenAM, you would register the user with the ID of *test* and an email address
+of *test@liferay.com*. Once you have the user set up, log in to Open SSO using
 this user.
 
 In the same browser window, log in to @product@ as the administrative user (using
@@ -52,6 +56,8 @@ To override these default settings for a particular portal instance, navigate
 to @product@'s Control Panel, click on *Configuration* &rarr; *Instance Settings*,
 and then click on *Authentication* at the right and then on *OpenSSO* at the
 top.
+
+![Figure 1 shows the OpenSSO tab with the available values.](../../../images/opensso.png)
 
 ## Summary [](id=summary)
 
