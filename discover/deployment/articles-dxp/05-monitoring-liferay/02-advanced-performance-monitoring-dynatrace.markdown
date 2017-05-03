@@ -220,17 +220,16 @@ infrastructure (in this case, Apache Tomcat).
 
 ## Performance Testing 
 
-Systems administrators often have to perform load testing as part of the overall
+Systems administrators must often perform load testing as part of an overall
 tuning process. The Dynatrace Client is a great tool to monitor and then analyze
-the performance testing process. For demonstration purposes, while using Jmeter
-to create a simple load test, the Dynatrace Client shows the real time results
-and offers administrators a functionality to create thread dumps.
+the performance of your system. For demonstration purposes, JMeter was used
+to create a simple load test, and the Dynatrace Client captured the 
+results illustrated below. 
 
 ![Figure 5: Dynatrace Client can generate thread dump reports.](../../images-dxp/dynatrace10-thread-dump.png)
 
-Garbage collection monitoring is very important and the Dynatrace Client has the
-ability to watch in real time as the number of threads increase drastically
-during the load test.
+The Dynatrace Client shows garbage collection over time as the number of threads
+increase during the load test.
 
 ![Figure 6: Garbage collection statistics at the beginning of the load test.](../../images-dxp/dynatrace07.png)
 
@@ -241,16 +240,15 @@ consumption during the load test.
 
 
 One more dashboard of note during a performance test is the CPU Sampling
-dashboard. The image below is a report generated to capture the CPU process in a
-100 seconds period. This is helpful during analysis if administrators unwanted
-processes that are slowing down a @product@ instance.
+dashboard. The image below is a report generated to capture the CPU process over
+100 seconds. This is helpful to show administrators unwanted processes slowing
+down a @product@ instance.
 
 ![Figure 8: Dynatrace Client can generate a CPU Sampling report.](../../images-dxp/dynatrace09-cpu-samplings.png)
 
-All these dashboards come out of the box and even more dashboards are available
-after deploying the Dynatrace FastPack developed for @product@. Thus, you can
-see some of the advantages in using Dynatrace as part of your performance
-monitoring.
+All these dashboards come out-of-the-box, and even more dashboards are available
+after deploying the Dynatrace FastPack developed for @product@. Using Dynatrace
+provides many advantages for performance monitoring.
 
 ## Resources 
 
