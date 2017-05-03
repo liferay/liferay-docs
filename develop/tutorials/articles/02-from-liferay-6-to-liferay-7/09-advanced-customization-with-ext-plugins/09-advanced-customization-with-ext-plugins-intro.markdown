@@ -552,12 +552,6 @@ to the original file in @product@:
       configure specific data sources or swap the implementation of a default
       service with a custom one.
     - **Original file in @product@:** `portal-impl/src/META-INF/*-spring.xml`
-- `ext-impl/src/META-INF/portal-log4j-ext.xml`
-    - **Description:** Allows overriding the Log4j configuration. It's most
-      commonly used to increase or decrease the log level of a given package or
-      class, to obtain more information, or to hide unneeded information from
-      the logs. 
-    - **Original file in @product@:** `portal-impl/src/META-INF/portal-log4j.xml`
 - `ext-web/docroot/WEB-INF/portlet-ext.xml`
     - **Description:** Allows overriding the declaration of the core portlets
       included in @product@. It's most commonly used to change the init
