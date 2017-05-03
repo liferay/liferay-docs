@@ -1,11 +1,25 @@
 # Advanced Customization with Ext Plugins
 
++$$$
+
 **Ext plugins are deprecated for @product-ver@ and should only be used if
 absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
 Pack 8+.**
 
-<!-- Highlight supported app servers in the bolded section above, when testing
+The following app servers are supported for Ext plugin development in
+@product@:
+
+- tc Server
+- Tomcat
+
+<!-- Highlight supported app servers in the bulleted section above, when testing
 has concluded. -Cody -->
+
+Visit the [App Server Configuration](#app-server-configuration) section for
+details on modifications required for certain app servers to allow Ext plugins
+to function properly in that environment.
+
+$$$
 
 Ext plugins are powerful tools used to extend @product@. They, however, increase
 the complexity of your @product@ instance and are not recommended unless there
@@ -629,6 +643,23 @@ Now, perform these actions on your server:
     appropriate directory in the application server. 
 
 Next, you'll learn about Liferay's licensing and contributing standards.
+
+## App Server Configuration
+
+If you're using the tc Server or Tomcat app servers, you'll need to make a
+modification in your app server's `catalina.properties` file. Make sure the
+`common.loader` property has the following paths set:
+
+    common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.home}/lib","${catalina.home}/lib/*.jar","${catalina.home}/lib/ext/global","${catalina.home}/lib/ext/global/*.jar","${catalina.home}/lib/ext","${catalina.home}/lib/ext/*.jar"
+
+If comparing the above property value with the default @product@ bundle, the
+following two global paths are added:
+
+- `"${catalina.home}/lib/ext/global"`
+- `"${catalina.home}/lib/ext/global/*.jar"`
+
+The folders searched by the class loader must include the `global` folder for
+Ext plugins to function properly.
 
 ## Licensing and Contributing
 
