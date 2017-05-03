@@ -20,7 +20,7 @@ This declaration expects two parameters: the class name of the entity type you
 want the portlet to handle and the type of action. The above code requests a
 portlet ID for a portlet that can view Recycle Bin entries.
 
-There are four different kinds of actions supported by the Portlet Providers
+There are five different kinds of actions supported by the Portlet Providers
 framework: `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Find the portlet ID
 or portlet URL (depending on your needs), and specify the entity type and action
 you want the portlet to handle.
