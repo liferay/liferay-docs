@@ -109,5 +109,4 @@ compiler, so expect longer compile times.
 
 $$$
 
-
 Awesome! You can now compile Sass files in your Liferay Maven project.
