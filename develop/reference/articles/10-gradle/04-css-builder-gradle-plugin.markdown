@@ -99,7 +99,7 @@ compiler for increased speed. If you're using an IBM JDK, you may experience
 issues when building your SASS files (e.g., when building a theme). It's
 recommended to switch to using the Oracle JDK, but if you prefer using the IBM
 JDK, you must use the fallback Ruby compiler. To do this, set the
-`sassCompilerClassName` property to `ruby`
+`sassCompilerClassName` property to `ruby`.
 
 Be aware that the Ruby-based compiler doesn't perform as well as the native
 compiler, so expect longer compile times.
