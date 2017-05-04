@@ -1,4 +1,4 @@
-# Viewing Guestbook Entries
+# Viewing Guestbook Entries [](id=viewing-guestbook-entries)
 
 To view guestbook entries, you have to do the reverse of what you did to store
 them: retrieve them from portlet preferences, loop through them, and present
@@ -6,7 +6,7 @@ them on the page. The best way to do this with the MVC Portlet is to use the
 Model-View-Controller paradigm. You already have the view (your JSP files) and
 your controller (your portlet class). Now you need your model.
 
-## Creating Your Model
+## Creating Your Model [](id=creating-your-model)
 
 1. Create a new package in your app called `com.liferay.docs.guestbook.model`.
    You can do this by right-clicking on your `src/main/java` folder and
@@ -70,7 +70,7 @@ the view layer. Your next step is to enhance the controller (your portlet
 class) so that guestbook entries are processed and ready to display when users
 see the guestbook application.
 
-## Customizing How Your Application is Rendered
+## Customizing How Your Application is Rendered [](id=customizing-how-your-application-is-rendered)
 
 As mentioned earlier, portlet applications have two basic phases: render and
 action. To make the guestbook show the saved guestbook entries when users view
@@ -125,7 +125,7 @@ parts based on the caret (`^`) character.
 Now that you have your controller preparing your data for display, your next
 step is to implement the view, so users can see guestbook entries.
 
-## Displaying Guestbook Entries
+## Displaying Guestbook Entries [](id=displaying-guestbook-entries)
 
 Liferay's development framework makes it easy to loop through data and display
 it nicely to the end user. You'll use a Liferay UI construct called the *Search
@@ -156,7 +156,7 @@ Save your work, deploy your application, and try adding some guestbook entries.
 You already know that this isn't the ideal use of portlet preferences, or the 
 best way to handle persistance of data for your application. Next you'll use Service Builder to generate your persistance classes and the methods you need to store your application data in the database.
 
-# Next Steps
+# Next Steps [](id=next-steps)
 
 Here are more tutorials that you might find interesting:
 

@@ -1,4 +1,4 @@
-# Development Setup Overview
+# Development Setup Overview [](id=development-setup-overview)
 
 A chief design goal for Liferay's development tools is to help you get started
 fast. The basic steps for installing @ide@ are
@@ -9,7 +9,7 @@ fast. The basic steps for installing @ide@ are
 
 * Start @ide@. 
 
-## Installing @ide@ Bundle
+## Installing @ide@ Bundle [](id=installing-ide-bundle)
 
 It's time to perform those steps. 
 
@@ -30,7 +30,7 @@ It's time to perform those steps.
 
 Nice job! Your development environment is installed. 
 
-## Creating a Liferay Workspace 
+## Creating a Liferay Workspace [](id=creating-a-liferay-workspace)
 
 Liferay Workspace uses BLADE CLI and Gradle in the background to manage 
 dependencies and organize your build environment. Liferay Workspace 
@@ -72,6 +72,6 @@ Click *Yes*, and your perspective switches to Liferay Workspace.
 
 Congratulations! Your development environment is ready! 
 
-## Next Step
+## Next Step [](id=next-step)
 
 

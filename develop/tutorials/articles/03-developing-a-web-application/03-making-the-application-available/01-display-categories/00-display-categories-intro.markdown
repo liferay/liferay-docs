@@ -1,4 +1,4 @@
-# Setting the Display Category for the Guestbook Portlet
+# Setting the Display Category for the Guestbook Portlet [](id=setting-the-display-category-for-the-guestbook-portlet)
 
 The Guestbook portlet doesn't have a display category specified yet. Apps
 without a display category will be in an "Undefined" category. This isn't
@@ -6,7 +6,7 @@ an ideal user experience if you want to add the application to a page.
 
 To fix this, you'll specify the display category for the Guestbook portlet next.
 
-## Defining the Component Metadata Properties
+## Defining the Component Metadata Properties [](id=defining-the-component-metadata-properties)
 
 The display category for a portlet is defined in its component class as a 
 metadata property. Since the Guestbook portlet is a way for users to 

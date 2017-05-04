@@ -1,4 +1,4 @@
-# Writing Your First Liferay Application
+# Writing Your First Liferay Application [](id=writing-your-first-liferay-application-0)
 
 It's easy to get started with your first Liferay application. We'll guide you
 through the step-by-step process of creating your project and deploying your
@@ -16,7 +16,7 @@ lets you enter and save a message.
 
 Ready to write your first Liferay application?
 
-## Creating Your First Liferay Application
+## Creating Your First Liferay Application [](id=creating-your-first-liferay-application)
 
 Let's jump right in and create your first project. We'll create a *Liferay 
 Module Project.* Modules are the core building blocks of Liferay development. 
@@ -57,7 +57,7 @@ Liferay IDE created a portlet class named NAME inside the package package
 JSP files and language properties file were also generated in your project's 
 `src/main/resources` folder.
 
-## What is a Portlet?
+## What is a Portlet? [](id=what-is-a-portlet)
 
 When you access a web site, you interact with an application. That application
 might be simple: it might only show you one piece of information, such as an
@@ -77,7 +77,7 @@ applications on the same page. Liferay's framework takes this into account at
 every step. For example, features like platform-generated URLs exist to support 
 Liferay's ability to serve multiple applications on the same page.
 
-## What is a Component?
+## What is a Component? [](id=what-is-a-component)
 
 Portlets created in Liferay Module Projects are generated as Components. If the 
 module is what surrounds and binds the pieces of your application, the 
@@ -94,7 +94,7 @@ then the services of that component are registered. If you want to then use
 that component, you simply invoke the service as defined in the Service 
 Registry. 
 
-## Deploying the Application
+## Deploying the Application [](id=deploying-the-application)
 
 Even though all you've done is generate it, the Guestbook project that you
 created in the previous section is ready to be built and deployed to Liferay.

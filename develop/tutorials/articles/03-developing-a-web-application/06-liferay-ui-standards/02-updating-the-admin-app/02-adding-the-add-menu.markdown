@@ -37,7 +37,7 @@ Follow these steps to create the Add menu:
 The Add Menu is complete! Your updated Admin portlet should match the figure 
 below:
 
-![Figure 1: The Add Menu keeps the UI clean and clear.](../../../images/admin-app-completed.png)
+![Figure 1: The Add Menu keeps the UI clean and clear.](../../../../images/admin-app-completed.png)
 
 The Guestbook portlet and Guestbook Admin portlet UIs are updated! You can 
 compare your code to the finished Guestbook Admin app code found [here](https://github.com/liferay/liferay-docs/tree/master/develop/learning-paths/mvc/code/guestbook-ui-complete/guestbook).

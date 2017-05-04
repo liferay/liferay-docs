@@ -4,7 +4,7 @@ Now you'll create the Guestbook Admin portlet and add it to the
 Control Menu. To create the Guestbook Admin portlet, you'll use the New Liferay 
 Module Project wizard. You used this wizard in an earlier Learning Path section when you created the `guestbook-web` module. The New Liferay Module Project wizard creates various required metadata properties for the component class such as the `display-category`, `display-name`, and `security-role-ref`. It also determines the names and locations of other required files such as the portlet class and the location of the portlet's JSP files. 
 
-![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../images/admin-app-start.png)
+![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../../images/admin-app-start.png)
 
 Get started by creating the Guestbook Admin portlet next.
 
@@ -81,7 +81,7 @@ into their proper locations.
 You have set the foundation for the Guestbook Admin portlet. Next you'll update 
 the Guestbook Admin portlet's metadata.
 
-## Updating the MVC Portlet Component Class Metadata
+## Updating the MVC Portlet Component Class Metadata [](id=updating-the-mvc-portlet-component-class-metadata)
 
 The New Liferay Module Project Wizard created the Guestbook Admin portlet's 
 component class for you and added some metadata properties with default settings. 
@@ -137,7 +137,7 @@ component class's metadata properties.
 
 Next you can configure the Panel app class.
 
-## Updating the Panel App Component Class
+## Updating the Panel App Component Class [](id=updating-the-panel-app-component-class)
 
 Follow these steps to update the class:
 

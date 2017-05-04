@@ -1,4 +1,4 @@
-# Writing Your First Liferay Application
+# Writing Your First Liferay Application [](id=writing-your-first-liferay-application)
 
 It's easy to get started with your first Liferay application. We'll guide you
 through the step-by-step process of creating your project and deploying your
@@ -8,7 +8,7 @@ deployed alongside of the applications that come with Liferay.
 Your first application is simple: you'll build a guestbook application that
 looks like this:
 
-![Figure x: You'll create this simple application.](../../images/first-guestbook-portlet.png)
+![Figure x: You'll create this simple application.](../../../images/first-guestbook-portlet.png)
 
 By default, it shows guestbook messages that various users have left on your
 website. To add a message, you click the *Add Entry* button to show a form that
@@ -16,7 +16,7 @@ lets you enter and save a message.
 
 Ready to write your first Liferay application?
 
-## Creating Your First Liferay Application
+## Creating Your First Liferay Application [](id=creating-your-first-liferay-application)
 
 Let's jump right in and create your first project. We'll create a *Liferay 
 Module Project.* Modules are the core building blocks of Liferay development. 
@@ -57,7 +57,7 @@ Liferay IDE created a portlet class named NAME inside the package package
 JSP files and language properties file were also generated in your project's 
 `src/main/resources` folder.
 
-## What is a Portlet?
+## What is a Portlet? [](id=what-is-a-portlet)
 
 When you access a web site, you interact with an application. That application
 might be simple: it might only show you one piece of information, such as an
@@ -66,7 +66,7 @@ online, inputting lots of data into an application that calculates whether you
 owe or are due a refund. These applications run on a *platform* that provides
 application developers the building blocks they need to make applications.
 
-![Figure x: Many Liferay applications can run at the same time on the same page.](../../images/portlet-applications.png)
+![Figure x: Many Liferay applications can run at the same time on the same page.](../../../images/portlet-applications.png)
 
 @product@s is a platform on which you can develop many types of applications. 
 Portlets are a common type of application that you can develop in Liferay.
@@ -77,7 +77,7 @@ applications on the same page. Liferay's framework takes this into account at
 every step. For example, features like platform-generated URLs exist to support 
 Liferay's ability to serve multiple applications on the same page.
 
-## What is a Component?
+## What is a Component? [](id=what-is-a-component)
 
 Portlets created in Liferay Module Projects are generated as Components. If the 
 module is what surrounds and binds the pieces of your application, the 
@@ -94,7 +94,7 @@ then the services of that component are registered. If you want to then use
 that component, you simply invoke the service as defined in the Service 
 Registry. 
 
-## Deploying the Application
+## Deploying the Application [](id=deploying-the-application)
 
 Even though all you've done is generate it, the Guestbook project that you
 created in the previous section is ready to be built and deployed to Liferay.
@@ -118,6 +118,6 @@ to change the display name of your application to `Guestbook`.
 This property string should be added to the `property` array defined in the
 `@Component` annotation of your `GuestbookModulePortlet` class.
 
-![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that you created.](../../images/default-portlet-application.png)
+![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
 
 Now you're ready to jump in and start developing your Guestbook portlet.

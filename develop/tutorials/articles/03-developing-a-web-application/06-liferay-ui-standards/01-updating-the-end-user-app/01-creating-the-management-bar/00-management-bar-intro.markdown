@@ -10,6 +10,6 @@ The Management Bar is separated into two key pieces: display buttons, which
 specify the type of view to display, and filters, which allow you to sort and
 filter the search results for the app. You'll add these separately.
 
-![Figure 1: The Management Bar gives you a great deal of control over organizing the search results.](../../../../images/management-bar-diagram.png)
+![Figure 1: The Management Bar gives you a great deal of control over organizing the search results.](../../../../../images/management-bar-diagram.png)
 
 You'll start by creating the Display Style buttons in the next section.

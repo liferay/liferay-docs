@@ -1,2 +1,2 @@
-#Full Page Applications
+# Full Page Applications [](id=full-page-applications)
 I don't know much about these, I need to come back later...

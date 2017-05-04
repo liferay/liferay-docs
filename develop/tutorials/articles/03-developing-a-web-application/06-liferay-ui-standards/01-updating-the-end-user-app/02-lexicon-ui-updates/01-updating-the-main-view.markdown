@@ -205,7 +205,7 @@ now that, that functionality is moved to the portlet toolbar:
 
 The updated portlet toolbar should match the figure below:
 
-![Figure 1: The Updated Add menu keeps the main UI free of clutter.](../../../../images/portlet-toolbar-add-menu.png)
+![Figure 1: The Updated Add menu keeps the main UI free of clutter.](../../../../../images/portlet-toolbar-add-menu.png)
 
 Next, you'll update the Guestbook's Navigation.
 
@@ -311,6 +311,6 @@ Follow these steps to update the Search Container:
 The updated Search Container and Actions menu should now reflect the figure 
 below:
 
-![Figure 2: The Search Container is all kinds of user-friendly now.](../../../../images/updated-search-container-nav-tabs-actions-menu-ui.png)
+![Figure 2: The Search Container is all kinds of user-friendly now.](../../../../../images/updated-search-container-nav-tabs-actions-menu-ui.png)
 
 In the next section, you'll update the Guestbook app's edit view.

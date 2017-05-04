@@ -1,11 +1,11 @@
-# Developing Your First Portlet
+# Developing Your First Portlet [](id=developing-your-first-portlet)
 
 So far, you've installed and set up @ide@, created a Liferay Workspace, 
 generated a Liferay project, and deployed it to a running Liferay bundle. Now 
 you can take the next steps to add functionality and fully develop your Liferay
 Web Application.
 
-## Creating an Add Guestbook Button
+## Creating an Add Guestbook Button [](id=creating-an-add-guestbook-button)
 
 A guestbook application is pretty simple, right? People come to your site,
 enter their names and brief messages, and then post them. Users can read the
@@ -65,7 +65,7 @@ Your application now displays a button instead of a message but the button
 currently doesn't do anything. Next, you'll learn about system-generated URLs
 since you need a URL to map to your button.
 
-### Generating URLs for Portlets
+### Generating URLs for Portlets [](id=generating-urls-for-portlets)
 
 Since portlets are designed to be placed on pages by end users, and end users
 can place multiple portlets on a page, and you as the developer have no idea
@@ -130,7 +130,7 @@ button to access your application's `edit_entry.jsp` page. This currently
 produces an error since no `edit_entry.jsp` exists yet. Creating the
 `edit_entry.jsp` page is your next step.
 
-### Creating a Page for Adding Guestbook Entries
+### Creating a Page for Adding Guestbook Entries [](id=creating-a-page-for-adding-guestbook-entries)
 
 In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
 
@@ -160,7 +160,7 @@ In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
 Next, you need to create a new URL for submitting the form. Before you do, some
 explanation is in order.
 
-### Using Portlet Actions
+### Using Portlet Actions [](id=using-portlet-actions)
 
 As has been stated already, portlets are designed to run in a portion of a
 page. A page can contain multiple portlets. Because of this, portlets have two
@@ -183,7 +183,7 @@ you'll create an action URL.
 
 You now have the two required URLs for your form.
 
-### Creating a Form
+### Creating a Form [](id=creating-a-form)
 
 Your guestbook form is pretty simple. All you need are two fields: one for the
 name of the person submitting the entry and one for the entry itself.
@@ -213,7 +213,7 @@ produce an error.
 Implementing the portlet action (what happens when the user clicks *Save*) is
 your next task.
 
-### Implementing Portlet Actions
+### Implementing Portlet Actions [](id=implementing-portlet-actions)
 
 When users submit the form, your application needs to store the form data so it
 can be displayed in the guestbook. To keep this first application simple, you'll

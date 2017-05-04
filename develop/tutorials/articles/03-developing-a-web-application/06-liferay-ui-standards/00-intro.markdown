@@ -20,7 +20,7 @@ portlets.
 The figure below shows what the finished UI for the Guestbook and Guestbook
 Admin apps will look like at the end of this portion of the Learning Path.
 
-![Figure 1: The updated Guestbook app is user-friendly and minimal.](../../images/end-user-app-completed.png)
-![Figure 2: The updated Guestbook Admin app's UI is cleaner, and easier to manage.](../../images/admin-app-completed.png)
+![Figure 1: The updated Guestbook app is user-friendly and minimal.](../../../images/end-user-app-completed.png)
+![Figure 2: The updated Guestbook Admin app's UI is cleaner, and easier to manage.](../../../images/admin-app-completed.png)
 
 go ahead and get started!

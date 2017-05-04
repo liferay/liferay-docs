@@ -124,7 +124,7 @@ condition, which organizes the search container results
 into a horizontal [card](http://liferay.github.io/lexicon/content/cards/), with
 an icon, summarized message, and guest name.
 
-![Figure 1: The descriptive view gives you a quick view of the guestbook message in a horizontal card.](../../../../images/descriptive-button-added.png)
+![Figure 1: The descriptive view gives you a quick view of the guestbook message in a horizontal card.](../../../../../images/descriptive-button-added.png)
 
 You can implement the Icon view next.
 
@@ -163,7 +163,7 @@ container results into a vertical card, which emphasizes the icon, and displays
 a summarized message along with the guest name. You may notice that the cards 
 in the Icon view are oversized. This issue is fixed in the next section. 
 
-![Figure 2: The icon view emphasizes the icon and gives you a quick view of the message and guest name.](../../../../images/icon-view-with-search-iterator.png)
+![Figure 2: The icon view emphasizes the icon and gives you a quick view of the message and guest name.](../../../../../images/icon-view-with-search-iterator.png)
 
 You have one last touch to add to the search container to complete the display
 style buttons. You'll make this change next.
@@ -185,7 +185,7 @@ The Search Container styles are updated and the display style buttons are fully
 implemented! Your app should now look like the figure below with the List view 
 selected:
 
-![Figure 3: The display style buttons provide handy styles for your app's search container results.](../../../../images/display-buttons-complete.png)
+![Figure 3: The display style buttons provide handy styles for your app's search container results.](../../../../../images/display-buttons-complete.png)
 
 In the next section of the Learning Path you'll create the Management Bar 
 Navigation Filters.

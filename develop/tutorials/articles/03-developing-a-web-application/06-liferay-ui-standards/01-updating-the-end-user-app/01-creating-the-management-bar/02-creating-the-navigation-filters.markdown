@@ -26,6 +26,6 @@ This adds the `all` option to the management bar navigation filters menu.
     
 The Management Bar should now match the figure below:
 
-![Figure 1: The Navigation Filters let you filter the guestbook entries by scope.](../../../../images/navigation-filters-added.png)
+![Figure 1: The Navigation Filters let you filter the guestbook entries by scope.](../../../../../images/navigation-filters-added.png)
 
 In the next section, you'll add the Sort Filters for the Management Bar.

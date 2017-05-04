@@ -93,7 +93,7 @@ button to the portlet title. Follow these steps to make these changes:
         
 The Edit Entry view is updated! The updated view should match the figure below:
 
-![Figure 1: The updated Edit Entry view keeps the user in mind, providing a clear and concise form.](../../../../images/updated-edit-entry-form.png)
+![Figure 1: The updated Edit Entry view keeps the user in mind, providing a clear and concise form.](../../../../../images/updated-edit-entry-form.png)
 
 The End user Guestbook app's design is completed! In the next section you'll 
 update the Guestbook Admin's design to reflect these same changes, along with a 

@@ -303,7 +303,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 Excellent! You've now finished creating a basic UI for the Guestbook Admin 
 portlet. The Guestbook Admin portlet should now match the figure below:
 
-![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../images/admin-app-start.png)
+![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../../images/admin-app-start.png)
 
 Test out the Guestbook Admin portlet! Try adding new guestbooks, editing 
 guestbooks, configuring guestbook permissions, and deleting guestbooks. In a 

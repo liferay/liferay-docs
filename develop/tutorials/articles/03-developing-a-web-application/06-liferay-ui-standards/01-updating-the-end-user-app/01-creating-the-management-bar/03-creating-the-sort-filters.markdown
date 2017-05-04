@@ -206,7 +206,7 @@ Follow these steps to configure the view to use the Comparator:
 The Management Bar Sort Filters are finished. The Management Bar is complete!
 The updated Management Bar should match the figure below:
 
-![Figure 1: The sort filters let you sort the Guestbook app's entries.](../../../../images/sort-filters-added.png)
+![Figure 1: The sort filters let you sort the Guestbook app's entries.](../../../../../images/sort-filters-added.png)
 
 In the next section, you'll make the remaining updates to the Guestbook app's UI
 to match the Lexicon guidelines.
