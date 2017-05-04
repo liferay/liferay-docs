@@ -25,22 +25,26 @@ Individual file loading of your styling and behaviors, combined with disabled
 caching for layout and FreeMarker templates, lets you see your changes more 
 quickly. 
 
+These developer settings are defined in the [`portal-developer.properties` file](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/portal-developer.properties). 
+To use these settings, you can include them in your `portal-ext.properties` file, 
+or copy them over to your `portal-ext.properties` file and override specific 
+properties as needed. These configurations are covered in this tutorial.
+
 First, you can explore how it's done in IDE. 
 
 ## Setting Developer Mode for Your Server in Liferay IDE [](id=setting-developer-mode-for-your-server-in-liferay-ide)
 
 To enable Developer Mode for your server in Liferay IDE follow these steps: 
 
-1.  Create a `portal-ext.properties` file in your bundle's root folder, if you 
+1.  Create a `portal-ext.properties` file in your bundle's root folder , if you 
     haven't already, and add the following property to the file:
 
         `include-and-override=portal-developer.properties`
     
     This gives you access to the override settings provided by the
-    [`portal-developer.properties` file](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/portal-developer.properties) 
-    covered in the intro section of this article.
+    `portal-developer.properties`, covered in the intro section of this article.
     
-2.  Double-click on your server in the *Servers* pane and open the 
+2.  Double-click on your server in the *Servers* window and open the 
     *Liferay Launch* section.
     
 3.  Select *Custom Launch Settings* and click the *Browse* button to select your 
@@ -76,25 +80,12 @@ to learn how to manually set Developer Mode in your app server.
 
 ## Setting Developer Mode for Your Server Using portal-developer.properties [](id=setting-developer-mode-for-your-server-using-portal-developer-properties)
 
-To set Developer Mode manually, You must add the `portal-developer.properties` 
-file to your application server's launch configuration. Since each application 
-server has a different configuration file or UI to specify system properties, 
-you must follow your application server's specific method for adding the 
-`portal-developer.properties` file to the server's launch configuration. 
+To set Developer Mode manually, you must point to `portal-developer.properties` 
+as shown in the last section. Add the `portal-ext.properties` file to your app 
+server's bundle and add the following line:
 
-For example, to deploy Liferay in Developer Mode on a Tomcat application server,
-you'd add `-Dexternal-properties=portal-developer.properties` to the list of
-options for your `CATALINA_OPTS` variable, in your `setenv.sh` file
-(`setenv.bat` in Windows). 
-
-+$$$
-
-**Tip:** If you're already using the system property `external-properties` to
-load other properties files, add `portal-developer.properties` to the list and
-use a comma to separate it from other entries. 
-
-$$$
-
+    include-and-override=portal.developer.properties
+    
 `portal-developer.properties` provides the majority of the settings you'll need 
 for smooth development. To disable the cache for FreeMarker templates, you must 
 update the System Setting covered in the next section. 
