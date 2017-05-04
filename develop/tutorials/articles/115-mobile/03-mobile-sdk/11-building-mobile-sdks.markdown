@@ -59,14 +59,14 @@ the same name, you can use this command:
 Alternatively, you can download the ZIP or TAR.GZ file listed under each tag on 
 GitHub. 
 
-Now you're ready to create your own module with the Mobile SDK! 
+Now you're ready to build the Mobile SDK! 
 
 ## Building a Liferay Mobile SDK [](id=building-a-liferay-mobile-sdk)
 
-After you've downloaded the Mobile SDK's source code, you need to build a module 
-for your portlet's services. The Mobile SDK Builder comes with a command line 
-wizard that helps you build your module. From the Mobile SDK's root folder, run 
-the following command to start the wizard:
+After you've downloaded the Mobile SDK's source code, you must build the module 
+in which you'll build your custom portlet's Mobile SDK. The Mobile SDK Builder 
+comes with a command line wizard that helps you build this module. To start the 
+wizard, run the following command in the Mobile SDK source code's root folder: 
 
     ./gradlew createModule
 
@@ -81,66 +81,61 @@ in square brackets with blue text:
 
 ![Figure 1: The Mobile SDK Builder's wizard lets you specify property values for building your module.](../../../images/mobile-sdk-create-module.png)
 
-So what properties are available, and what do they do? Fantastic question! The 
-following properties can be set while running `createModule`, or after you 
-create your module. After creating your module, you can set these properties in 
-your module's `gradle.properties` file. The values in parentheses are the keys 
-used in `gradle.properties`: 
+So what properties are available, and what do they do? Fantastic question! You 
+can set the following properties during or after running `createModule`. If you 
+want or need to set these properties after running `createModule`, you can do so 
+in your module's `gradle.properties` file. The values in parentheses are the 
+keys used in `gradle.properties`: 
 
 - `Context (context)`: Your portlet's web context. For example, if you're 
 generating a Mobile SDK for @product@'s Calendar portlet, which is generally 
-deployed to the `calendar` context, then you should set your context value to 
-`calendar`. Under the hood, the SDK Builder tries to access 
-`http://localhost:8080/calendar-portlet/api/jsonws?discover` to find out which 
-services are available for this portlet. Check in a browser to make sure the URL 
-for your service context is working before you run the Mobile SDK builder. If 
-there are no services available at the specified context, you may have forgotten 
-to generate your portlet's WSDD.
+deployed to the `calendar` context, then you should set the context value to 
+`calendar`. If there are no services available at the specified context, you may 
+have forgotten to generate your portlet's WSDD. 
 
 - `Platforms (platforms)`: The platforms to build the Mobile SDK for. By 
 default, you can generate code for Android and iOS (`android,ios`). 
 
-- `Server URL (url)`: The URL to your @product@ instance. The Mobile SDK Builder 
-tries to connect to this instance at the specified context to discover your 
-services.
+- `Server URL (url)`: Your @product@ instance's URL. To discover your services, 
+the Mobile SDK Builder tries to connect to this instance at the specified 
+context. 
 
-- `Filter (filter)`: Specifies your portlet's entities to access their 
-services. A blank value specifies all portlet entity services. For example, the 
-Calendar portlet's entities include `CalendarBooking` and `CalendarResource`. To 
-generate a Mobile SDK for only the `CalendarBooking` entity, set the filter's 
-value to `calendarbooking` (all lowercase). The SDK Builder then makes requests 
-to 
-`http://localhost:8080/calendar-portlet/api/jsonws?discover=/calendarbooking/*`. 
-If you don't specify a filter value, the remote services of *all* the portlet's 
-entities are made available to your Mobile SDK.
+- `Filter (filter)`: Specifies the portlet entities the Mobile SDK can access. A 
+blank value specifies all portlet entity services. For example, the Calendar 
+portlet's entities include `CalendarBooking` and `CalendarResource`. To generate 
+a Mobile SDK for only the `CalendarBooking` entity, set the filter's value to 
+`calendarbooking` (all lowercase). 
 
 - `Module Version (version)`: The version number appended to your Mobile SDK's 
-JAR and ZIP files. This is discussed further in the following sections.
+JAR (Android) and ZIP files (iOS). The sections on packaging your Mobile SDK 
+explain this further. 
 
 - `Package Name (packageName)`: On Android, this is the package your Mobile 
 SDK's classes are written to (iOS doesn't use packages). Note that the @product@ 
 version is appended to the end of the package name. For example, if you're using 
 Liferay Portal 7.0 or Liferay DXP Digital Enterprise 7.0, and specify 
-`com.liferay.mobile.android` as your package name, the Mobile SDK Builder 
-appends `v7` to the package name, yielding `com.liferay.mobile.android.v7`. This 
-prevents collisions between classes with the same names, allowing Mobile SDKs 
-for more than one portal version to be used in the same app. You can use the 
+`com.liferay.mobile.android` as the package name, the Mobile SDK Builder appends 
+`v7` to the package name, yielding `com.liferay.mobile.android.v7`. This 
+prevents collisions between classes with the same name, which lets you use 
+Mobile SDKs for more than one portal version in the same app. You can use the 
 `Portal Version` property to change the portal version. 
 
-- `POM Description (description)`: The description for your POM file. This is 
-only needed if you are building for Android and want to publish your JAR file to 
-Maven.
+- `POM Description (description)`: Your POM file's description. 
 
 Note that there's also a `destination` property that can only be set in the
 `gradle.properties` file. This property specifies the destination for the 
-generated source files. Generally, you don't need to change this.
+generated source files. You won't generally need to change this. 
 
 After you set the properties you need, the Mobile SDK Builder generates your 
 module in the folder `modules/${your_portlet_context}`. 
 
-Now you must generate your Mobile SDK. To do this, navigate to your module and 
-run `../../gradlew generate`. By default, the builder writes the source files to 
-`android/src/gen/java` and `ios/Source` in your module's folder. 
+Now you can build your Mobile SDK. To do this, navigate to your module and run 
+this command: 
+
+    ../../gradlew generate
+
+By default, the builder writes the source files to `android/src/gen/java` and 
+`ios/Source` in your module's folder. 
 
 If you update your portlet's remote services on the server side and need to 
 update your Mobile SDK, simply run `../../gradlew generate` again. 
@@ -151,8 +146,8 @@ the Android and iOS.
 
 ### Packaging Your Mobile SDK for Android [](id=packaging-your-mobile-sdk-for-android)
 
-To package your Mobile SDK in a JAR file for Android, run the following command 
-from your module's folder: 
+To package your Mobile SDK in a JAR file for use in an Android project, run the 
+following command from your module's folder: 
 
     ../../gradlew jar
 
@@ -182,8 +177,8 @@ to see the Liferay Screens documentation for Android.
 
 ### Packaging Your Mobile SDK for iOS [](id=packaging-your-mobile-sdk-for-ios)
 
-To package your Mobile SDK in a ZIP file for iOS, run the following command from 
-your module's folder: 
+To package your Mobile SDK in a ZIP file for use in an iOS project, run the 
+following command from your module's folder: 
 
     ../../gradlew zip
 
