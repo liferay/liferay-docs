@@ -61,7 +61,7 @@ sending notifications that can use templates.
 tutorials works toward building a specific project, the
 *ticket-process-definition* workflow. We started building the project in the
 tutorial on [Creating a Workflow Definition with Kaleo Designer for
-Java](/develop/tutorials/knowledge_base/6-2/creating-a-workflow-project-with-kaleo).
+Java](/develop/tutorials/-/knowledge_base/6-2/creating-a-workflow-definition-with-kaleo-designer-for-java).
 However, you can use the information you find here in your own workflow project.
 
 $$$
