@@ -5,7 +5,7 @@ different configuration options that your application should support. It's also
 important to think about how users should be able to access your application's
 configuration interface. Liferay supports a flexible mechanism for configuring
 applications. You can read about it in the
-[Making Your Applications Configurable (not yet written)]() tutorial. In this
+[Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable) tutorial. In this
 tutorial, you'll learn to implement a configuration action for your
 application. The configuration action is invoked when a user clicks on the gear
 icon of a Liferay application and selects *Configuration*.
