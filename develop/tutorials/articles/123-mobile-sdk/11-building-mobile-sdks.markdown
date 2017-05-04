@@ -56,7 +56,7 @@ of the Liferay Mobile SDK Builder, which is compatible with Liferay Portal 6.2.
 To check out this tag in a new branch of the same name, you can use this 
 command: 
 
-    git checkout tags/android-7.0.6 -b android-7.0.6
+    git checkout tags/builder-6.2.0.18 -b builder-6.2.0.18
 
 Alternatively, you can download the ZIP or TAR.GZ file listed under the builder 
 tags on GitHub. 
