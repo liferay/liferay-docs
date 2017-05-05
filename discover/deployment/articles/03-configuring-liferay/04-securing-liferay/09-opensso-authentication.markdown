@@ -10,14 +10,18 @@ Note that OpenAM relies on cookie sharing between applications. Thus, in order
 for OpenAM to work, all applications that require SSO must be in the same web
 domain.
 
-You can set up OpenAM on the same server as @product@ or a different box. Follow
-the instructions at the [OpenAM site](https://forgerock.org/openam/) to install
-OpenAM. Once you have it installed, create the @product@ administrative user in
-it. Users are mapped back and forth by screen names. By default, the @product@
-administrative user has a screen name of *test*, so in OpenAM, you would
-register the user with the ID of *test* and an email address of
-*test@liferay.com*. Once you have the user set up, log in to Open SSO using
-this user.
+You can set up OpenAM on the same or different server as @product@ . If you
+are using the same @product@ server to host your OpenAM, you must deploy
+the OpenAM `.war`. The `.war` is available
+[here](https://www.forgerock.com/platform/access-management/). Otherwise, follow
+the instructions at the
+[OpenAM site](https://backstage.forgerock.com/docs/openam/12.0.4/install-guide)
+to install OpenAM. Once you have it installed, create the @product@
+administrative user in it. Users are mapped back and forth by screen names. By
+default, the @product@ administrative user has a screen name of *test*, so if
+you were to use that account, in OpenAM, register the user with the ID of *test*
+and an email address of *test@liferay.com*. Once you have the user set up, log
+in to OpenAM using this user.
 
 In the same browser window, log in to @product@ as the administrative user (using
 the email address *test@liferay.com*). Go to the Control Panel and click
@@ -52,6 +56,8 @@ To override these default settings for a particular portal instance, navigate
 to @product@'s Control Panel, click on *Configuration* &rarr; *Instance Settings*,
 and then click on *Authentication* at the right and then on *OpenSSO* at the
 top.
+
+![Figure 1: @product@'s OpenSSO tab lets you configure OpanAM.](../../../images/opensso.png)
 
 ## Summary [](id=summary)
 

@@ -1,17 +1,17 @@
 # Dynamic Query [](id=dynamic-query)
 
-Liferay allows you to use custom SQL queries to retrieve data from the
-database. However, it's sometimes more convenient to build queries dynamically
-at runtime than it is to invoke predefined SQL queries. Liferay allows you to
-build queries dynamically using its DynamicQuery API, which wraps Hibernate's
-Criteria API. Using Liferay's DynamicQuery API allows you to build queries
-without writing a single line of SQL. The DynamicQuery API helps you think in
-terms of objects and member variables instead of in terms of tables and
-columns. Complex queries constructed via Hibernate's Criteria API can be
-significantly easier to understand and maintain than the equivalent custom SQL
-(or HQL) queries. While you technically don't need to know SQL to construct
-queries via Hibernate's Criteria API, you still need to take care to construct
-efficient queries. For information on Hibernate's Criteria API, please see
+Liferay lets you use custom SQL queries to retrieve data from the database.
+However, it's sometimes more convenient to build queries dynamically at runtime
+than it is to invoke predefined SQL queries. Liferay allows you to build queries
+dynamically using its DynamicQuery API, which wraps Hibernate's Criteria API.
+Using Liferay's DynamicQuery API allows you to build queries without writing a
+single line of SQL. The DynamicQuery API helps you think in terms of objects and
+member variables instead of in terms of tables and columns. Complex queries
+constructed via Hibernate's Criteria API can be significantly easier to
+understand and maintain than the equivalent custom SQL (or HQL) queries. While
+you technically don't need to know SQL to construct queries via Hibernate's
+Criteria API, you still need to take care to construct efficient queries. For
+information on Hibernate's Criteria API, please see
 [Hibernate's manual](http://docs.jboss.org/hibernate/orm/5.0/userguide/html_single/chapters/query/criteria/Criteria.html).
 In this tutorial, you'll learn how to create custom finders for Liferay
 applications using Service Builder and Liferay's Dynamic Query API.
@@ -21,12 +21,11 @@ for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
 application. See the
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
-learning path for more information on using Service Builder. This tutorial,
-like the learning path, assumes that you're creating a Liferay application that
-consists of a service module, and API module, and a web module. Once you've
-used Service Builder to generate model, persistence, and service layers for
-your application, you can create custom finders using Liferay's Dynamic Query
-API by following these steps:
+learning path for more information on using Service Builder. This tutorial
+assumes that you're creating a Liferay application that consists of a service
+module, an API module, and a web module. Once you've used Service Builder to
+generate model, persistence, and service layers for your application, you can
+call custom finders using Liferay's Dynamic Query API by following these steps:
 
 1. Create a custom `-FinderImpl` class and define a `findBy-` finder method in
    this class. Run Service Builder to generate the required interfaces and
@@ -46,36 +45,34 @@ your `-FinderImpl` class. Next, let's examine these steps in more detail.
 
 To define any custom query, either by specifying custom SQL or by defining a
 dynamic query, you need a finder class. Create a `[Entity]FinderImpl` class in
-the generated `[package path].service.persistence` package of your service
-module's `docroot/WEB-INF/src` folder. Recall that you specify the package path
+the generated `[package path].service.persistence.impl` package of your service
+module's `src/main/java` folder. Recall that you specify the package path
 in `service.xml`. Here's an example:
 
     <service-builder package-path="com.liferay.docs.guestbook">
-    ...
+        ...
     </service-builder>
 
 Then define a `findBy-` finder method in the class you created. Make sure to
 add any required arguments to your finder method's method signature.
 
-For example, consider a fictitous Guestbook application.
-In this application, there are two entities: guestbooks and entries. Each entry
-belongs to a guestbook so the entry entity has a `guestbookId` field as a
-foreign key. Suppose you need to create a custom finder to search for guestbook
-entries by the entry name and the guestbook name. In this case, you'd add a
-custom finder method to `GuestbookFinderImpl` and name it something like
+For example, consider a fictitious Guestbook application. In this application,
+there are two entities: guestbooks and entries. Each entry belongs to a
+guestbook so the entry entity has a `guestbookId` field as a foreign key.
+Suppose you need to create a custom finder to search for guestbook entries by
+the entry name and the guestbook name. In this case, you'd add a custom finder
+method to `GuestbookFinderImpl` and name it something like
 `findByEntryNameGuestbookName`. The full method signature would appear as
 `findByEntryNameGuestbookName(String entryName, String guestbookName)`.
 
 Once you've created a finder method with the appropriate method signature in
-your finder class, run Service Builder to generate the appropriate interface
-and utility class in the `[Package Path].service.persistence` package in the
-`service` folders of your API and service modules.
+your finder class, run Service Builder to generate the appropriate interface in
+the `[package path].service.persistence` package in the `service` folders of
+your API and service modules.
 
 For example, after adding `findByEntryNameGuestbookName(String entryName, String
 guestbookName)` to `GuestbookFinderImpl` and running Service Builder, the
-interface `com.liferay.docs.guestbook.service.persistence.GuestbookFinder` and
-the utility class
-`com.liferay.docs.guestbook.service.persistence.GuestbookFinderUtil` are
+interface `com.liferay.docs.guestbook.service.persistence.GuestbookFinder` is
 generated.
 
 Once the finder interface has been generated, make sure that the finder class
@@ -91,8 +88,10 @@ using the Dynamic Query API.
 
 Your first step in implementing your custom finder method in your `-FinderImpl`
 class is to open a new Hibernate session. Since your `-FinderImpl` class extends
-`BasePersistenceImpl<Entity>` and `BasePersistenceImpl<Entity>` contains a
-session factory object and an `openSession` method, you can simply invoke the
+`BasePersistenceImpl<Entity>`, and `BasePersistenceImpl<Entity>` contains a
+session factory object and an
+[openSession](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/persistence/impl/BasePersistenceImpl.html#openSession--)
+method, you can simply invoke the
 `openSession` method of your `-FinderImpl`'s parent class to open a new
 Hibernate session. The basic structure of your finder method should look like
 this:
@@ -161,7 +160,8 @@ specific name and that also belong to a Guestbook of a specific name:
 
 Notice that in Liferay, you don't create criteria objects directly from the
 Hibernate session. Instead, you create dynamic query objects using Liferay's
-`DynamicQueryFactoryUtil` service. Thus, instead of
+[DynamicQueryFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/DynamicQueryFactoryUtil.html)
+service. Thus, instead of
 
     Criteria entryCriteria = session.createCriteria(Entry.class);
 
@@ -177,7 +177,7 @@ You can use restrictions, for example, to cause a query to return only results
 where a certain field has a particular value, or a value in a certain range, or
 a non-null value, etc.
 
-Projections in Hibernate's Criteria API allow you to modify the kind of results
+Projections in Hibernate's Criteria API let you modify the kind of results
 returned by a query. For example, if you don't want your query to return a list
 of entity objects (the default), you can set a projection on a query so that
 only a list of the values of a certain entity field, or fields, is returned.
@@ -187,10 +187,10 @@ etc. For more information on restrictions and projections, please refer to
 Hibernate's
 [documentation](http://docs.jboss.org/hibernate/orm/3.6/reference/en-US/html/querycriteria.html).
 
-Orders, another feature of Hibernate's Criteria API, allow you to control the
-order of the elements in the list returned by a query. You can choose the
-property or properties to which an order should be applied and you can choose
-for the properties to appear in ascending or descending order in the list.
+Orders, another feature of Hibernate's Criteria API, let you control the order
+of the elements in the list returned by a query. You can choose the property or
+properties to which an order should be applied and you can choose for the
+properties to appear in ascending or descending order in the list.
 
 Like Hibernate criteria, Liferay's dynamic queries are *chainable*. This means
 that you can add criteria to, set projections on, and add orders to Liferay's
@@ -205,10 +205,10 @@ declaration:
 
 When you need to add restrictions to a dynamic query in Liferay, don't call
 Hibernate's `Restrictions` class directly. Instead, use the methods of Liferay's
-`RestrictionsFactoryUtil` service. You'll find the same methods in Liferay's
-`RestrictionsFactoryUtil` service class that you're used to from Hibernate's
-`Restrictions` class: `in`, `between`, `like`, `eq`, `ne`, `gt`, `ge`, `lt`,
-`le`, etc.
+[RestrictionsFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/RestrictionsFactoryUtil.html)
+service. You'll find the same methods in Liferay's `RestrictionsFactoryUtil`
+service class that you're used to from Hibernate's `Restrictions` class: `in`,
+`between`, `like`, `eq`, `ne`, `gt`, `ge`, `lt`, `le`, etc.
 
 Thus, instead of 
 
@@ -219,8 +219,8 @@ to specify that a guestbook must have a certain name, you use
     entryQuery.add(RestrictionsFactoryUtil.eq("name", guestbookName));
 
 Similarly, to set projections, you create properties via Liferay's
-`PropertyFactoryUtil` service instead of through Hibernate's `Property` class.
-Thus, instead of 
+[PropertyFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
+service instead of through Hibernate's `Property` class. Thus, instead of 
 
     entryCriteria.setProjection(Property.forName("guestbookId"));
 
@@ -269,16 +269,17 @@ Here's the second query:
         .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
         .addOrder(order);
 
-    List<Event> entries = EventLocalServiceUtil.dynamicQuery(entryQuery);
+    List<Event> entries = _eventLocalService.dynamicQuery(entryQuery);
 
 By default, `DynamicQueryFactoryUtil.forClass(Entry.class)` returns of list of
 all guestbook entry entities. The `.add(RestrictionsFactoryUtil.eq("name",
 entryName))` restriction limits the results to only those guestbook entries
 whose names match the `entryName` parameter of the finder method.
-`PropertyFactoryUtil` is a Liferay utility class with a single method,
-`forName(String propertyName)`, that returns the specified property. This
-property can be passed to another Liferay dynamic query. This is exactly what
-happens in the following line of our example:
+[PropertyFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
+is a Liferay utility class with the method `forName(String propertyName)`, which
+returns the specified property. This property can be passed to another Liferay
+dynamic query. This is exactly what happens in the following line of our
+example:
 
     .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
 
@@ -315,25 +316,39 @@ $$$
 To use the overloaded `dynamicQuery` methods of your `-LocalServiceBaseImpl`
 class in the (optionally overloaded) custom finders of your `-FinderImpl` class,
 just choose the appropriate methods for running the dynamic queries: 
-`EventLocalServiceUtil.dynamicQuery(eventQuery)`, or
-`EventLocalServiceUtil.dynamicQuery(eventQuery, start, end)` or
-`EventLocalServiceUtil.dynamicQuery(eventQuery, start, end, orderByComparator)`.
+`EventLocalService.dynamicQuery(eventQuery)`, or
+`EventLocalService.dynamicQuery(eventQuery, start, end)` or
+`EventLocalService.dynamicQuery(eventQuery, start, end, orderByComparator)`.
 
 Great! You've now created a custom finder method using Liferay's Dynamic Query
 API. Your last step is to add a service method that calls your finder.
 
 ## Step 3: Accessing Your Custom Finder Method from the Service Layer [](id=step-3-accessing-your-custom-finder-method-from-the-service-layer)
 
-So far, you've created a `-FinderImpl` class and generated a `-FinderUtil`
-utility class. Your portlet class, however, should not use the finder utility
-class directly: only a local or remote service implementation (i.e.,
-`-LocalServiceImpl` or `-ServiceImpl`) in your service module should invoke the
-`-FinderUtil` class. This encourages a proper separation of concerns: the
-portlet classes in your application's web module invoke the business logic of
-the services published from your application's service module. The services, in
-turn, access the data model using the persistence layer's finder classes. So
-you'll add a method in the `-LocalServiceImpl` class that invokes the finder
-method implementation via the `-FinderUtil` class. Then you'll rebuild your
+So far, you've created a `-FinderImpl` class, defined a custom `findBy-` finder
+method in that class, and implemented the custom finder method using Dynamic
+Query. Now how do you call your custom finder method from the service layer?
+
+When you ran Service Builder after defining your custom finder method, the
+`-Finder` interface was generated (e.g., `GuestbookFinder`). Your portlet class,
+however, should not call the `-Finder` interface: only a local or remote service
+implementation (i.e., `-LocalServiceImpl` or `-ServiceImpl`) in your service
+module should invoke the `-Finder` class. This encourages a proper separation of
+concerns: the portlet classes in your application's web module invoke the
+business logic of the services published from your application's service module.
+The services, in turn, access the data model using the persistence layer's
+finder classes.
+
++$$$
+
+**Note:** In previous versions of Liferay Portal, your finder methods were
+accessible via `-FinderUtil` utility classes. Finder methods are now injected
+into your app's local services, removing the need to call finder utilities.
+
+$$$
+
+So you'll add a method in the `-LocalServiceImpl` class that invokes the finder
+method implementation via the `-Finder` class. Then you'll rebuild your
 application's service layer so that the portlet classes and JSPs in your web
 module can access the services.
 
@@ -343,16 +358,16 @@ the `EntryLocalServiceImpl` class:
     public List<Entry> findByEntryNameGuestbookName(String entryName,
         String guestbookName) throws SystemException {
 
-        return EntryFinderUtil.findByEntryNameGuestbookName(String entryName,
+        return entryFinder.findByEntryNameGuestbookName(String entryName,
             String guestbookName);
     }
 
 After you've added your `findBy-` method to your `-LocalServiceImpl` class, run
 Service Builder to generate the interface and make the finder method available
-in the `EntryLocalServiceUtil` class.
+in the `EntryLocalService` class.
 
 Now you can indirectly call the finder method from your portlet class or from a
-JSP by calling `EntryLocalServiceUtil.findByEntryNameGuestbookName(...)`!
+JSP by calling `EntryLocalService.findByEntryNameGuestbookName(...)`!
 
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet!
