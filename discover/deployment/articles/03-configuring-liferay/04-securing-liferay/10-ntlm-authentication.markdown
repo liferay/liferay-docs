@@ -8,19 +8,8 @@ authentication. NTLM v2 is more secure and has a stronger authentication process
 than NTLMv1.
 
 Note that in order to use NTLM SSO, @product@'s portal instance authentication
-type must be set to screen name. To do so, there are two ways to do this. 
-
-1. Shut down the @product@ instance first then set the following in `portal-ext.properties`: 
-
-    `company.security.auth.type=screenName`
-    
-    Save the file when done. Restart the @product@ instance.
-
-2. The configuration can also be done in the GUI.     
-    a. Navigate to the *Control Panel*, click on *Configuration* &rarr; *Instance Settings*.    
-    b. Go to the *Authentication* section.     
-    c. On the *General* tab, select *By Screen Name* from the *How do users authenticate?* drop down menu.     
-    d. Click *Save*.
+type must be set to screen name as shown 
+[here](/discover/portal/-/knowledge_base/7-0/instance-settings#authentication). 
 
 +$$$
 
@@ -29,9 +18,9 @@ Consult your browser vendor's documentation for the details.
 
 $$$
 
-Most importantly, all users *must* be imported from an active directory server (e.g.
-Microsoft's ADFS or an LDAP). NTLM (and Kerberos) works only if the users are in
-the AD; otherwise any SSO requests initiated by @product@ will fail.
+Most importantly, all users *must* be imported from an Active Directory server.
+NTLM (and Kerberos) works only if the users are in the AD; otherwise any SSO
+requests initiated by @product@ will fail.
 
 
 NTLM configuration can be applied either at the system scope or at the scope of
@@ -61,11 +50,11 @@ To override system defaults for a particular portal instance, navigate to the
 Control Panel, click on *Configuration* &rarr; *Instance Settings*, click on
 *Authentication* and then on *NTLM*.
 
-![Figure 1 shows the NTLM settings on the Authentication tab.](../../../images/ntlm.png)
+![Figure 1: The NTLM settings on the Authentication tab let you configure SSO for Microsoft environments.](../../../images/ntlm.png)
 
 ## Summary [](id=summary)
 
-NTLM authentication is often highly desirable in intranet scenarios where the
+NTLM authentication is often highly desirable in Intranet scenarios where the
 IT department has control over what software is running on client devices and
 thus can ensure NTLM compatibility. In an Active Directory based network /
 domain, it is hard to beat the user experience that NTLM authentication can
