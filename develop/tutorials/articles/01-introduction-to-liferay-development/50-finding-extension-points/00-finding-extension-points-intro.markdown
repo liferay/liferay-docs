@@ -43,7 +43,7 @@ component.
     keywords in element names and descriptions. The keyword *LDAP* resides under
     the Liferay Foundation app suite; select it.
 
-    ![Figure x: The Liferay Foundation app suite contains the LDAP Authentication application.](../../../images/ldap-keyword-app-manager.png)
+    ![Figure 1: The Liferay Foundation app suite contains the LDAP Authentication application.](../../../images/ldap-keyword-app-manager.png)
 
 3.  Select the *LDAP* application from the app listing.
 
@@ -51,13 +51,13 @@ component.
     more than one module to inspect. Select the *Liferay Portal Security LDAP*
     module.
 
-    ![Figure x: The App Manager lists the module, package name, version, and status.](../../../images/app-manager-breakdown.png)
+    ![Figure 2: The App Manager lists the module, package name, version, and status.](../../../images/app-manager-breakdown.png)
 
 5.  Search through the components, applying your keywords as a guide. Copy the
     component name you think best fits the functionality you want to customize;
     you'll inspect it later using the Gogo shell.
 
-    ![Figure x: The component name can be found using the App Manager.](../../../images/usermodellistener-component.png)
+    ![Figure 3: The component name can be found using the App Manager.](../../../images/usermodellistener-component.png)
 
     +$$$
 
