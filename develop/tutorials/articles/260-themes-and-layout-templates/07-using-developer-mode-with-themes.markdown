@@ -25,35 +25,36 @@ Individual file loading of your styling and behaviors, combined with disabled
 caching for layout and FreeMarker templates, lets you see your changes more 
 quickly. 
 
-These developer settings are defined in the [`portal-developer.properties` file](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/portal-developer.properties). 
-To use these settings, you can include them in your `portal-ext.properties` file, 
+These developer settings are defined in the 
+[`portal-developer.properties` file](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/portal-developer.properties). 
+To use these settings, you can include them in your `portal-ext.properties` file 
 or copy them over to your `portal-ext.properties` file and override specific 
 properties as needed. These configurations are covered in this tutorial.
 
 First, you can explore how it's done in IDE. 
 
-## Setting Developer Mode for Your Server in Liferay IDE [](id=setting-developer-mode-for-your-server-in-liferay-ide)
+## Setting Developer Mode for Your Server in @ide@ [](id=setting-developer-mode-for-your-server-in-liferay-ide)
 
-To enable Developer Mode for your server in Liferay IDE follow these steps: 
+To enable Developer Mode for your server in @ide@, follow these steps: 
 
-1.  Create a `portal-ext.properties` file in your bundle's root folder , if you 
-    haven't already, and add the following property to the file:
+1.  Create a `portal-ext.properties` file in your bundle's root folder (if you 
+    haven't already) and add the following property to the file:
 
-        `include-and-override=portal-developer.properties`
-    
+        include-and-override=portal-developer.properties
+ 
     This gives you access to the override settings provided by the
-    `portal-developer.properties`, covered in the intro section of this article.
-    
+    `portal-developer.properties` file. 
+ 
 2.  Double-click on your server in the *Servers* window and open the 
     *Liferay Launch* section.
-    
+ 
 3.  Select *Custom Launch Settings* and click the *Browse* button to select your 
-    `portal-ext.properties` file and Save the changes.
-    
+    `portal-ext.properties` file. Save the changes.
+ 
 +$$$
 
 **Note:** The *Use developer mode* option isn't working at this time, but 
-the steps above provide a viable work around.
+the steps above provide a viable work-around.
 
 $$$
 
@@ -65,18 +66,20 @@ Liferay Launch section.
 $$$
 
 For Liferay Portal servers below version 6.2 (e.g., Liferay v6.1 CE Server,
-Liferay v6.0 CE Server), Liferay IDE enables Developer Mode by default. On
-starting your Liferay server for the first time, IDE creates a
+Liferay v6.0 CE Server), @ide@ enables Developer Mode by default. When
+starting your Liferay server for the first time, it creates a
 `portal-ide.properties` file in your Liferay Portal directory. This properties
-file has the property setting:
+file contains the property setting
 `include-and-override=portal-developer.properties`, which enables Developer
 Mode. 
 
 Most of the configuration is provided by the `portal-developer.properties` file, 
 but you still have to configure the FreeMarker template setting. Follow the 
 steps in the [Configuring FreeMarker System Settings](/develop/tutorials/-/knowledge_base/7-0/using-developer-mode-with-themes#configuring-freemarker-system-settings) 
-section to configure the FreeMarker template cache, or move to the next section 
-to learn how to manually set Developer Mode in your app server. 
+section to configure the FreeMarker template cache. 
+
+If you're not using @ide@, next you'll to learn how to set Developer Mode in
+your app server manually. 
 
 ## Setting Developer Mode for Your Server Using portal-developer.properties [](id=setting-developer-mode-for-your-server-using-portal-developer-properties)
 
@@ -85,17 +88,17 @@ as shown in the last section. Add the `portal-ext.properties` file to your app
 server's bundle and add the following line:
 
     include-and-override=portal.developer.properties
-    
+ 
 `portal-developer.properties` provides the majority of the settings you'll need 
 for smooth development. To disable the cache for FreeMarker templates, you must 
 update the System Setting covered in the next section. 
 
-### Configuring FreeMarker System Settings [](id=configuring-freemarker-system-settings)
+## Configuring FreeMarker System Settings [](id=configuring-freemarker-system-settings)
 
 FreeMarker Templates for themes and web content are cached by default. Therefore, 
-any changes you make to your FreeMarker theme templates won't show up 
-immediately. You can change this behavior through System Settings. Follow these 
-steps to update the system setting:
+any changes you make to your FreeMarker theme templates aren't immediately
+displayed. You can change this behavior through System Settings. Follow these
+steps: 
 
 1.  Open the Control Panel and go to *Configuration* &rarr; *System Settings*.
 
@@ -105,18 +108,6 @@ steps to update the system setting:
     the template is cached) is set to `60`. Set this value to `0` to disable
     caching.
 
-+$$$
-
-**Note:** When developing, you may need to unminify your JavaScript code. To do 
-this, set `javascript.fast.load=false` in your `portal-ext.properties` file. 
-Since this property is already provided by `portal-developer.properties` it's 
-best if you copy the properties from `portal-developer.properties` over to 
-your `portal-ext.properties` file, remove the 
-`include-and-override=portal-developer.properties` line, and set 
-`javascript.fast.load=false`. 
-
-$$$
-
 Great! You've set up your Liferay server for Developer Mode. Now, when you
 modify your theme's `_custom.scss` file directly in your Liferay bundle, you can
 see your changes applied immediately on redeploying your theme!
@@ -125,4 +116,4 @@ see your changes applied immediately on redeploying your theme!
 
 [Creating Layout Templates Manually](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-manually)
 
-[Creating Themes with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-liferay-ide)
+[Creating Themes with @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-liferay-ide)
