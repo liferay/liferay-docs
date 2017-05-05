@@ -12,25 +12,25 @@ Implementing these steps, however, differs somewhat depending on how your
 Screenlet communicates with the server: 
 
 - **A write Screenlet:** writes data to a server. The Add Bookmark Screenlet
-  created in the basic Screenlet creation tutorial 
-  ([click here to see this tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)) 
+  created in the 
+  [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
   is a good example of a simple write Screenlet. It asks the user to enter a URL 
-  and a title, which it then sends to the Bookmarks portlet in a @product@ 
-  instance to create a bookmark. 
+  and a title, which it then sends to the Bookmarks portlet in @product@ 
+  to create a bookmark. 
 - **A read Screenlet:** reads data from a server. The Web Content Display 
   Screenlet included with Liferay Screens is a good example of a read Screenlet. 
-  It retrieves web content from a @product@ instance for display in an Android 
+  It retrieves web content from @product@ for display in an Android 
   app. 
   [Click here](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android) 
   to see Web Content Display Screenlet's documentation. 
 
 This tutorial shows you how to add offline mode support to both kinds of 
 Screenlets. You'll start with write Screenlets, using Add Bookmark Screenlet as 
-an example. Before getting started, be sure to read the basic Screenlet creation 
-tutorial to familiarize yourself with Add Bookmark Screenlet's code 
-([click here to see this tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)). 
-You'll conclude by learning how offline mode implementation in read Screenlets 
-differs from that of write Screenlets. 
+an example. Before getting started, be sure to read 
+[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
+to familiarize yourself with Add Bookmark Screenlet's code. You'll conclude by
+learning how offline mode implementation in read Screenlets differs from that of
+write Screenlets. 
 
 ## Adding Offline Mode Support to Write Screenlets [](id=adding-offline-mode-support-to-write-screenlets)
 
@@ -55,7 +55,7 @@ class that extends `CacheEvent`
 ([click here](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/event/CacheEvent.java) 
 to see `CacheEvent`). Your event class has one primary responsibility: store and 
 provide access to the arguments passed to the Interactor. To accomplish this, 
-your event class should do the following: 
+your event class should do these things: 
 
 - Extend `CacheEvent`. For the arguments, define variables and public getter 
   methods. 
@@ -146,7 +146,7 @@ data from a server:
   [Click here](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/BaseCacheReadInteractor.java) 
   to see this class. 
 
-In either case, the type arguments are the same: the listener, and the event. 
+In either case, the type arguments are the same: the listener and the event. 
 Note, however, that the event must extend `CacheEvent` as described above. For 
 example, since Add Bookmark Screenlet is a write Screenlet, to support offline 
 mode its Interactor class must extend `BaseCacheWriteInteractor` with 
@@ -156,7 +156,7 @@ mode its Interactor class must extend `BaseCacheWriteInteractor` with
         BaseCacheWriteInteractor<AddBookmarkListener, BookmarkEvent> {...
 
 You must also make a few changes to the Interactor class's code. The main change 
-is that the `execute` method now takes the event instead of varargs. You can 
+is that the `execute` method now takes the event instead of var args. You can 
 then retrieve the data you need from the event. For example, to support offline 
 mode, the `execute` method in `AddBookmarkInteractor` takes `BookmarkEvent` as 
 an argument. The bookmark's URL, title, and folder ID are then retrieved from 
@@ -189,10 +189,10 @@ Now make the same change to the `onFailure` method, but replace the listener's
 failure method call with a call to the `error` method inherited from 
 `BaseCacheListener` (see the listener section above for an explanation of this 
 method). For the `error` method's arguments, you can retrieve the exception from 
-the event, and define a string to use as the user action. For example, to 
+the event and define a string to use as the user action. For example, to 
 support offline mode the `onFailure` method in `AddBookmarkInteractor` takes a 
 `BookmarkEvent` instead of a `BasicEvent`. Also, the method's `error` call 
-defines the “ADD_BOOKMARK” string to indicate that the error occurred while 
+defines the "ADD_BOOKMARK" string to indicate that the error occurred while 
 trying to add a bookmark to the server: 
 
     @Override public void onFailure(BookmarkEvent event) {
@@ -211,7 +211,7 @@ the server.
 
 In Add Bookmark Screenlet, for example, a bookmark's URL makes a good cache key. 
 To support offline mode, the `onUserAction` method in `AddBookmarkScreenlet` 
-creates a new `BookmarkEvent` instance with a bookmark's data, and then uses the 
+creates a new `BookmarkEvent` instance with a bookmark's data and then uses the 
 `setCacheKey` method to set the bookmark's URL as the event's cache key. The 
 Interactor's start method takes this event as its argument: 
 
@@ -236,8 +236,7 @@ Liferay Screens do this for you. However, you must do this manually when using a
 custom write Screenlet. You should do this in the activity or fragment that uses 
 the Screenlet--exactly where in this activity or fragment is up to you though. 
 
-To manually sync a write Screenlet's data with the server, you must do the 
-following:
+To sync a write Screenlet's data with the server manually, follow these steps:
 
 1. Retrieve the event that needs to be synced with the server. To do this, you
    must first get the cache key associated with the event. Then use the key as 
@@ -247,7 +246,7 @@ following:
 For example, the following code uses the `Cache.findKeys` method to retrieve all 
 `BookmarkEvent` keys in the cache. The loop that follows then retrieves the 
 event that corresponds to each key, and syncs it to the server by calling the 
-interactor: 
+Interactor: 
 
     String[] keys = Cache.findKeys(BookmarkEvent.class, groupId, userId, locale, 0, 
         Integer.MAX_VALUE); 
@@ -281,16 +280,17 @@ Next, you'll learn how to add offline mode support to read Screenlets.
 Implementing offline mode support in a read Screenlet is almost identical to 
 doing so in a write Screenlet. There are two small differences, though: 
 
-1. You can still pass arguments to the Interactor with varargs instead of an 
+1. You can still pass arguments to the Interactor with var args instead of an 
    event. 
+
 2. The Interactor class must extend `BaseCacheReadInteractor`, which forces you 
-   to implement the `getIdFromArgs` method. This method takes the varargs passed 
+   to implement the `getIdFromArgs` method. This method takes the var args passed 
    to the Interactor so you can return the argument that identifies your entity. 
-   Note that because this method requires you to return a string, you'll often 
+   Note that because this method requires you to return a `String`, you'll often 
    use `String.valueOf` to return non-string arguments as a string. For example, 
    the `getIdFromArgs` implementation in Comment Display Screenlet's 
    `CommentLoadInteractor` retrieves the comment ID (a `long`) from the first
-   argument and then returns it as a string: 
+   argument and then returns it as a `String`: 
 
         @Override 
         protected String getIdFromArgs(Object... args) { 
@@ -303,12 +303,12 @@ That's it! Next, you'll learn about list Screenlets and offline mode support.
 ### Adding Offline Mode Support to List Screenlets [](id=adding-offline-mode-support-to-list-screenlets)
 
 A list Screenlet is a special type of read Screenlet that displays entities in a 
-list. Recall from the list Screenlet creation tutorial 
-([click here](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets) 
-to see this tutorial) that list Screenlets have a model class that encapsulates 
-entities retrieved from the server. To support offline mode, a list Screenlet's 
-event class must extend `ListEvent` with the model class as a type argument. 
-This event class also needs three things: 
+list. Recall from the 
+[list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets) 
+that list Screenlets have a model class that encapsulates entities retrieved
+from the server. To support offline mode, a list Screenlet's event class must
+extend `ListEvent` with the model class as a type argument. This event class
+also needs three things: 
 
 1. A default constructor 
 2. A `getListKey` method that returns a unique ID to store the entity with 
