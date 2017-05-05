@@ -99,8 +99,8 @@ Here's how to apply Liferay's CSS builder to your Maven project.
 compiler for increased speed. If you're using an IBM JDK, you may experience
 issues when building your SASS files (e.g., when building a theme). It's
 recommended to switch to using the Oracle JDK, but if you prefer using the IBM
-JDK, you must use the fallback Ruby compiler. To do this, add the following to
-your CSS Builder configuration in your POM:
+JDK, you must use the fallback Ruby compiler. To do this, add the following
+tag to your CSS Builder configuration in your POM:
 
     <sassCompilerName>ruby</sasscompilerName>
 
