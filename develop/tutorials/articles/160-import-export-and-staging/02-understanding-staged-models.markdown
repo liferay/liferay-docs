@@ -117,15 +117,13 @@ Service Builder to define your model as a staged model:
 If you want a grouped staged model, also include the `groupId` column. If you
 want an audited staged model, include the `userId` and `userName` columns.
 
-What if you don't want to extend your model with these special attributes that
-may not be needed in your business logic? In this case, you should adapt your
-business logic to meet the Staging framework's needs. Read on to learn the
-background on building staged models that are **not** generated using Service
-Builder.
+Next, you'll learn how to build staged models from scratch.
 
 ## Building Staged Models from Scratch
 
-
+What if you don't want to extend your model with special attributes that may not
+be needed in your business logic? In this case, you should adapt your business
+logic to meet the Staging framework's needs. 
 
 
 
