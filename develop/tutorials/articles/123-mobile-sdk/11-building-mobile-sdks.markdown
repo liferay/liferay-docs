@@ -33,7 +33,7 @@ For instructions on creating a portlet's remote services and building its WSDD,
 
 Next, you'll download the Liferay Mobile SDK's source code. 
 
-## Setting Up the SDK Builder [](id=setting-up-the-sdk-builder)
+## Downloading the Liferay Mobile SDK [](id=downloading-the-liferay-mobile-sdk)
 
 To build a Mobile SDK for your custom portlet's services, you need to have the 
 [Liferay Mobile SDK's source code](https://github.com/liferay/liferay-mobile-sdk) 
@@ -63,7 +63,7 @@ tags on GitHub.
 
 Now you're ready to build the Mobile SDK! 
 
-## Creating Your Module [](id=creating-your-module)
+## Building a Liferay Mobile SDK [](id=building-a-liferay-mobile-sdk)
 
 After you've downloaded the Mobile SDK's source code, you must build the module 
 in which you'll build your custom portlet's Mobile SDK. The Mobile SDK Builder 
