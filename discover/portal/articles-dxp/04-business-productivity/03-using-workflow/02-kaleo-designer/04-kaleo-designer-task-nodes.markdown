@@ -152,7 +152,7 @@ Don't let all that code intimidate you. It's just assigning the task to the
 Organization and assigning it to the *Organization Content Reviewer* role if it
 is. If it's not, it's assigning the task to the *Site Content Reviewer* role.
 
-Note the `role = newArrayList<Role>();` line above. In a scripted assignment,
+Note the `roles = new ArrayList<Role>();` line above. In a scripted assignment,
 the `roles` variable is where you specify any roles the task is assigned to. For
 example, when `roles.add(adminRole);` is called, the Administrator role is added
 to the assignment.
