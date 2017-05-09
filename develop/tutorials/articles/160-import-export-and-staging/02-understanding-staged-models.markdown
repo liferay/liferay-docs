@@ -114,8 +114,9 @@ Service Builder to define your model as a staged model:
 - `createDate`
 - `modifiedDate`
 
-If you want a grouped staged model, also include the `groupId` column. If you
-want an audited staged model, include the `userId` and `userName` columns.
+If you want a staged grouped model, also include the `groupId` and
+`lastPublishDate` columns. If you want a staged audited model, include the
+`userId` and `userName` columns.
 
 Next, you'll learn how to build staged models from scratch.
 
