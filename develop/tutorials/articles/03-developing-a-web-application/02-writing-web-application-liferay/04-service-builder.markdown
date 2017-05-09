@@ -154,44 +154,8 @@ how you translate the user input into the data being stored in the database.
 Using Liferay and Service Builder, the implementations are typically defined in
 '*ServiceImpl' classes in the service module.
 
-Open `GuestbookLocalServiceImpl` and replace the contents of the file with this:
+Open `GuestbookLocalServiceImpl` and replace the `addGuestbook` method with this:
 
-	package com.liferay.docs.guestbook.service.impl;
-
-	import java.util.Date;
-	import java.util.List;
-
-	import com.liferay.docs.guestbook.exception.GuestbookNameException;
-	import com.liferay.docs.guestbook.model.Entry;
-	import com.liferay.docs.guestbook.model.Guestbook;
-	import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
-	import com.liferay.docs.guestbook.service.base.GuestbookLocalServiceBaseImpl;
-	import com.liferay.portal.kernel.exception.PortalException;
-	import com.liferay.portal.kernel.model.ResourceConstants;
-	import com.liferay.portal.kernel.model.User;
-	import com.liferay.portal.kernel.service.ServiceContext;
-	import com.liferay.portal.kernel.service.UserLocalServiceUtil;
-	import com.liferay.portal.kernel.util.OrderByComparator;
-	import com.liferay.portal.kernel.util.Validator;
-
-	import aQute.bnd.annotation.ProviderType;
-
-	/**
-	 * The implementation of the guestbook local service.
-	 *
-	 * <p>
-	 * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.liferay.docs.guestbook.service.GuestbookLocalService} interface.
-	 *
-	 * <p>
-	 * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
-	 * </p>
-	 *
-	 * @author liferay
-	 * @see GuestbookLocalServiceBaseImpl
-	 * @see com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil
-	 */
-	@ProviderType
-	public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		public Guestbook addGuestbook(
 				long userId, String name, ServiceContext serviceContext)
 			throws PortalException {
@@ -227,115 +191,12 @@ Open `GuestbookLocalServiceImpl` and replace the contents of the file with this:
 			return guestbook;
 		}
 
-		public Guestbook deleteGuestbook(
-				long guestbookId, ServiceContext serviceContext)
-			throws PortalException {
+The `addGuestbook` method gets the `groupId` and the `userId` from the portal, 
+gets the date from the Java service, and validates the users text entry. It then
+instantiates a `Guestbook` object, adds the necessary fields to the object, 
+creates a new resource in the database, and returns the new `guestbook`
 
-			Guestbook guestbook = getGuestbook(guestbookId);
-
-			List<Entry> entries = EntryLocalServiceUtil.getEntries(
-				serviceContext.getScopeGroupId(), guestbookId);
-
-			for (Entry entry : entries) {
-				EntryLocalServiceUtil.deleteEntry(
-					entry.getEntryId(), serviceContext);
-			}
-
-			resourceLocalService.deleteResource(
-				serviceContext.getCompanyId(), Guestbook.class.getName(),
-				ResourceConstants.SCOPE_INDIVIDUAL, guestbookId);
-
-			guestbook = deleteGuestbook(guestbook);
-
-			return guestbook;
-		}
-
-		public List<Guestbook> getGuestbooks(long groupId) {
-			return guestbookPersistence.findByGroupId(groupId);
-		}
-
-		public List<Guestbook> getGuestbooks(long groupId, int start, int end, OrderByComparator<Guestbook> obc) {
-			return guestbookPersistence.findByGroupId(groupId, start, end, obc);
-		}
-
-		public int getGuestbooksCount(long groupId) {
-			return guestbookPersistence.countByGroupId(groupId);
-		}
-
-		public Guestbook updateGuestbook(
-				long userId, long guestbookId, String name,
-				ServiceContext serviceContext)
-			throws PortalException {
-
-			Date now = new Date();
-
-			validate(name);
-
-			Guestbook guestbook = getGuestbook(guestbookId);
-
-			User user = UserLocalServiceUtil.getUser(userId);
-
-			guestbook.setUserId(userId);
-			guestbook.setUserName(user.getFullName());
-			guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
-			guestbook.setName(name);
-			guestbook.setExpandoBridgeAttributes(serviceContext);
-
-			guestbookPersistence.update(guestbook);
-
-			resourceLocalService.updateResources(
-				serviceContext.getCompanyId(), serviceContext.getScopeGroupId(),
-				Guestbook.class.getName(), guestbookId,
-				serviceContext.getGroupPermissions(),
-				serviceContext.getGuestPermissions());
-
-			return guestbook;
-		}
-
-		protected void validate(String name) throws PortalException {
-			if (Validator.isNull(name)) {
-				throw new GuestbookNameException();
-			}
-		}
-	}
-
-Now, open EntryLocalServiceImpl and replace the contents with this:
-
-	package com.liferay.docs.guestbook.service.impl;
-
-	import aQute.bnd.annotation.ProviderType;
-
-	import com.liferay.docs.guestbook.exception.EntryEmailException;
-	import com.liferay.docs.guestbook.exception.EntryMessageException;
-	import com.liferay.docs.guestbook.exception.EntryNameException;
-	import com.liferay.docs.guestbook.model.Entry;
-	import com.liferay.docs.guestbook.service.base.EntryLocalServiceBaseImpl;
-	import com.liferay.portal.kernel.exception.PortalException;
-	import com.liferay.portal.kernel.model.ResourceConstants;
-	import com.liferay.portal.kernel.model.User;
-	import com.liferay.portal.kernel.service.ServiceContext;
-	import com.liferay.portal.kernel.util.OrderByComparator;
-	import com.liferay.portal.kernel.util.Validator;
-
-	import java.util.Date;
-	import java.util.List;
-
-	/**
-	 * The implementation of the entry local service.
-	 *
-	 * <p>
-	 * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.liferay.docs.guestbook.service.EntryLocalService} interface.
-	 *
-	 * <p>
-	 * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
-	 * </p>
-	 *
-	 * @author liferay
-	 * @see EntryLocalServiceBaseImpl
-	 * @see com.liferay.docs.guestbook.service.EntryLocalServiceUtil
-	 */
-	@ProviderType
-	public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
+Now, open EntryLocalServiceImpl and replace the `addEntry` method with this:
 
 		public Entry addEntry(
 				long userId, long guestbookId, String name, String email,
@@ -376,90 +237,17 @@ Now, open EntryLocalServiceImpl and replace the contents with this:
 			return entry;
 		}
 
-		public Entry deleteEntry(long entryId, ServiceContext serviceContext)
-			throws PortalException {
-
-			Entry entry = getEntry(entryId);
-
-			resourceLocalService.deleteResource(
-				serviceContext.getCompanyId(), Entry.class.getName(),
-				ResourceConstants.SCOPE_INDIVIDUAL, entryId);
-
-			entry = deleteEntry(entryId);
-
-			return entry;
-		}
-
-		public List<Entry> getEntries(long groupId, long guestbookId) {
-			return entryPersistence.findByG_G(groupId, guestbookId);
-		}
-
-		public List<Entry> getEntries(
-			long groupId, long guestbookId, int start, int end, OrderByComparator<Entry> obc) {
-
-			return entryPersistence.findByG_G(groupId, guestbookId, start, end, obc);
-		}
-
-		public int getEntriesCount(long groupId, long guestbookId) {
-			return entryPersistence.countByG_G(groupId, guestbookId);
-		}
-
-		public Entry updateEntry(
-				long userId, long guestbookId, long entryId, String name,
-				String email, String message, ServiceContext serviceContext)
-			throws PortalException {
-
-			long groupId = serviceContext.getScopeGroupId();
-
-			User user = userLocalService.getUserById(userId);
-
-			Date now = new Date();
-
-			validate(name, email, message);
-
-			Entry entry = getEntry(entryId);
-
-			entry.setUserId(userId);
-			entry.setUserName(user.getFullName());
-			entry.setName(name);
-			entry.setEmail(email);
-			entry.setMessage(message);
-			entry.setModifiedDate(serviceContext.getModifiedDate(now));
-			entry.setExpandoBridgeAttributes(serviceContext);
-
-			entryPersistence.update(entry);
-
-			resourceLocalService.updateResources(
-				user.getCompanyId(), groupId, Entry.class.getName(), entryId,
-				serviceContext.getGroupPermissions(),
-				serviceContext.getGuestPermissions());
-
-			return entry;
-		}
-
-		protected void validate(String name, String email, String entry)
-			throws PortalException {
-
-			if (Validator.isNull(name)) {
-				throw new EntryNameException();
-			}
-
-			if (!Validator.isEmailAddress(email)) {
-				throw new EntryEmailException();
-			}
-
-			if (Validator.isNull(entry)) {
-				throw new EntryMessageException();
-			}
-		}
-
 	}
 
-This is where the business logic resides - where the magic happens - but these
-are not the classes that you access if you want to actually run any of these 
-methods. In order to use these methods, you would actually call them through the
-service class, and in order for the service class to know about these methods,
-you need to run `buildService` again.
+This method performs essentially the same operation as `addGuestbook`: it gets 
+information from the portal, gets information from user input, creates the 
+database entry, and returns the `entry` object.
+
+You've created the implementation methods, but these are not the classes that 
+you access if you want to actually run any of these methods. In order to use 
+these methods, you would actually call them through the service class, and in 
+order for the service class to know about these methods, you need to run 
+`buildService` again.
 
 1. Run `buildService`
 2. Your services will now be aware of the implementation that you created.
@@ -471,8 +259,8 @@ little bit on one end, then went to the other end and another section of the
 wall, but you haven't made them meet in the middle yet (that's a very big 
 problem for a wall). Now it's time to meet in the middle.
 
-First you need to make your web modules aware of your service modules so that 
-you can access the services from your web module.
+You need to make your web modules aware of your service modules so that 
+you can access the services from your web module. Then you need to update your `addEntry` method to use the
 
 1. Add this code to the `build.gradle` file for your guestbook-module project.
 
@@ -567,27 +355,6 @@ you can access the services from your web module.
 			}
 		}
 
-		public void deleteEntry(ActionRequest request, ActionResponse response) {
-			long entryId = ParamUtil.getLong(request, "entryId");
-			long guestbookId = ParamUtil.getLong(request, "guestbookId");
-
-			try {
-				ServiceContext serviceContext = ServiceContextFactory.getInstance(
-					Entry.class.getName(), request);
-
-				response.setRenderParameter(
-					"guestbookId", Long.toString(guestbookId));
-
-				_entryService.deleteEntry(entryId, serviceContext);
-			}
-			catch (Exception e) {
-				System.out.println(e);
-
-				Class<?> clazz = e.getClass();
-
-				SessionErrors.add(request, clazz.getName());
-			}
-		}
 
 		@Override
 		public void render(
@@ -638,3 +405,17 @@ you can access the services from your web module.
 		private EntryService _entryService;
 		private GuestbookService _guestbookService;
 
+At the bottom, you create create the `@Reference` to the service that you need 
+to call, in this case, `EntryService` and `GuestbookService.` Then you use the
+methods provided by those services (whose implementations you created earlier) 
+to connect the user action of creating a new Entry with the backend. In this way
+the portlet class does not have to be at all concerned with how the service is
+implemented.
+
+# Wrapping up the application
+
+You've done everything you need to create a working web application with 
+Liferay. In some cases, you could deploy it now and get working, but there are
+a lot of other important pieces to creating a full-featured application integrated with Liferay. Stay tuned to learn how to get your application
+properly organized in Liferay's application hierarchy, and how to create
+administrative applications for the Control Panel.
