@@ -209,6 +209,14 @@ advantages, such as nesting and variables.
 To deploy your theme to your configured Liferay instance, execute this command:
 
     gulp deploy
+    
+## Using your new theme inside of DXP
+
+If you would like, for example, to change the theme for your site's public pages, then using the side panel to the left:
+
+`Liferay DXP > Navigation > Public Pages > Configure`
+
+![How to set new Liferay theme for public pages](http://i.imgur.com/dsYbvXC.png)
 
 +$$$
 
