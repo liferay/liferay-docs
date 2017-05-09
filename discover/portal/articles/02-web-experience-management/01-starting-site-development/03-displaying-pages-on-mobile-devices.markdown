@@ -23,16 +23,14 @@ learn every detail about a device from the device type, which is included in
 each request sent to Liferay. @product@'s Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
-<!-- Liferay connects to the [DATABASE_NAME] database automatically behind the
-scenes to provide device recognition access automatically. -->
-
 +$$$
 
-**Important:** At the time of this writing, @product@ is not connected to a
-device database by default. Currently, the only way to create Mobile Device
-Families and Rules effectively is to integrate with other device databases using
-Liferay APIs. Once you have access to a device database, you can proceed with
-the instructions in this section.
+**Important:** For the features described in this article to work, you must 
+install the Liferay Mobile Device Detection (LMDD) app from the Liferay 
+Marketplace. This app provides the device detection database that's required for 
+your @product@ instance to detect which mobile devices are accessing it. 
+[Click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace) 
+for instructions on using Liferay Marketplace to find and install apps. 
 
 $$$
 
