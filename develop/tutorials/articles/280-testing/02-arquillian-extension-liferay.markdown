@@ -129,9 +129,6 @@ Here's the `BasicPortletIntegrationTest` class:
     import org.junit.Test;
     import org.junit.runner.RunWith;
 
-    /**
-     * @author Cristina González
-     */
     @RunWith(Arquillian.class)
     public class BasicPortletIntegrationTest {
 
@@ -218,14 +215,17 @@ Arquillian uses an XML configuration file called `arquillian.xml`.
 
 #### Arquillian Configuration [](id=arquillian-configuration)
 
-The Arquillian configuration file `src/testIntegration/resources/arquillian.xml` specifies the test JAR location to the Arquillian engine. 
+The `deploymentExportPath` optional engine property in  Arquillian configuration
+file `src/testIntegration/resources/arquillian.xml` sets a location for
+exporting the test as an archive (e.g., JAR, WAR, or EAR). This lets you inspect
+the test that's being deployed. 
 
     <?xml version="1.0" encoding="UTF-8"?>
     <arquillian xmlns="http://jboss.org/schema/arquillian"
     			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     			xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
 
-        <!-- More conent here -->
+        <!-- More content here -->
 
     	<engine>
     		<property name="deploymentExportPath">build/deployments</property>
@@ -237,6 +237,13 @@ tests that use Liferay's Arquillian Extension to deploy OSGi modules to
 @product@. 
 
 #### JMX Settings [](id=jmx-settings)
+
+To use JMX, Liferay's Arquillian Extension depends on these modules being installed in your OSGi container:
+
+    "org.apache.aries.jmx:org.apache.aries.jmx:1.1.5"
+    "org.apache.aries:org.apache.aries.util:1.1.3"
+
+
 
 The Arquillian Blade Example enables JMX in Apache Tomcat on port 8099 without
 authentication. It's enabled via the `setenv.*` scripts. 
@@ -298,9 +305,6 @@ Here's the `BasicPortletFunctionalTest` class:
     import org.openqa.selenium.WebElement;
     import org.openqa.selenium.support.FindBy;
 
-    /**
-     * @author Cristina González
-     */
     @RunAsClient
     @RunWith(Arquillian.class)
     public class BasicPortletFunctionalTest {
