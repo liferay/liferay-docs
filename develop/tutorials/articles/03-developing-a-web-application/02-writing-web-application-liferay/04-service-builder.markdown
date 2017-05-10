@@ -283,32 +283,6 @@ you can access the services from your web module. Then you need to update your `
 			long guestbookId = ParamUtil.getLong(request, "guestbookId");
 			long entryId = ParamUtil.getLong(request, "entryId");
 
-			if (entryId > 0) {
-				try {
-					_entryService.updateEntry(
-						serviceContext.getUserId(), guestbookId, entryId, userName,
-						email, message, serviceContext);
-
-					SessionMessages.add(request, "entryAdded");
-
-					response.setRenderParameter(
-						"guestbookId", Long.toString(guestbookId));
-				}
-				catch (Exception e) {
-					System.out.println(e);
-
-					Class<?> clazz = e.getClass();
-
-					SessionErrors.add(request, clazz.getName());
-
-					PortalUtil.copyRequestParameters(request, response);
-
-					response.setRenderParameter(
-						"mvcPath", "/html/guestbookmvcportlet/edit_entry.jsp");
-				}
-			}
-			else {
-				try {
 					_entryService.addEntry(
 						serviceContext.getUserId(), guestbookId, userName, email,
 						message, serviceContext);
@@ -317,18 +291,7 @@ you can access the services from your web module. Then you need to update your `
 
 					response.setRenderParameter(
 						"guestbookId", Long.toString(guestbookId));
-				}
-				catch (Exception e) {
-					Class<?> clazz = e.getClass();
-
-					SessionErrors.add(request, clazz.getName());
-
-					PortalUtil.copyRequestParameters(request, response);
-
-					response.setRenderParameter(
-						"mvcPath", "/html/guestbookmvcportlet/edit_entry.jsp");
-				}
-			}
+			
 		}
 
 		public void addGuestbook(ActionRequest request, ActionResponse response)
