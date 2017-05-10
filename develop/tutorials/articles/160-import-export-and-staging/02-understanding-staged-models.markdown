@@ -124,9 +124,23 @@ Next, you'll learn how to build staged models from scratch.
 
 What if you don't want to extend your model with special attributes that may not
 be needed in your business logic? In this case, you should adapt your business
-logic to meet the Staging framework's needs. 
+logic to meet the Staging framework's needs. Liferay provides the
+[ModelAdapterBuilder](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
+framework, which lets you adapt your model classes to staged models.
 
+As an example, assume you have an app that is fully developed and you want to
+configure it to work with Staging. Your app, however, does not require a UUID
+for any of its entities, and therefore, does not provide them. Instead of
+configuring your app to handle UUIDs just for the sake of generating staged
+models, you can leverage the Model Adapter Builder to build your staged models.
+You would need to 
 
+Another example for building staged models from scratch is for applications that
+use REST services to access their attributes instead of the database. Since this
+kind of app is developed to pull its attributes from a remote system, it would
+be more convenient to build your staged models yourself instead of relying on
+Service Builder, which is database driven.
 
-
-
+To step through the process for leveraging the Model Adapter Builder, visit the
+[Creating Staged Models Manually](/develop/tutorials/-/knowledge_base/7-0/creating-staged-models-manually)
+tutorial.
