@@ -95,28 +95,28 @@ services, you can move on to the tutorial
 
 @product@ uses Apache Axis to make SOAP web services available. Since Axis 
 requires a WSDD to make an app's remote services available via SOAP, you must 
-build and deploy a WSDD for your app. To create your WSDD, Liferay provides 
-the `buildWSDD` Gradle task as part of the WSDD Builder Gradle plugin. You must 
-install this plugin in your app's project. How you do this, however, depends on 
-what kind of project you have. For multi-module projects like a Service Builder 
-project in a Liferay Workspace, you'll install the plugin via the workspace's 
-`settings.gradle` file. This applies the WSDD Builder plugin in every module in 
-the workspace that uses Service Builder (typically the `*-api` and `*-service` 
-modules). If you have a standalone `*-service` module that uses Service Builder, 
-however, you'll install the WSDD Builder plugin in the module's `build.gradle` 
-file. 
+build and deploy a WSDD for your app. To create your WSDD, you must install 
+Liferay's WSDD Builder Gradle plugin in your app's project. How you do this, 
+however, depends on what kind of project you have. For multi-module projects 
+like a Service Builder project in a Liferay Workspace, you'll install the plugin 
+via the workspace's `settings.gradle` file. This applies the WSDD Builder plugin 
+to every module in the workspace that uses Service Builder (typically the 
+`*-api` and `*-service` modules). If you have a standalone `*-service` module 
+that uses Service Builder, however, you'll install the WSDD Builder plugin in 
+the module's `build.gradle` file. 
 
-The next section shows you how to install the WSDD builder in multi-module 
-projects. If you have standalone module project, skip ahead to the section 
-*Installing the WSDD Builder Plugin in a Standalone Module Project*.
+The next section shows you how to install the WSDD builder in a multi-module 
+project. If you have a standalone module project, skip ahead to the section 
+*Installing the WSDD Builder Plugin in a Standalone Module Project*. 
 
 ### Installing the WSDD Builder Plugin in a Multi-module Project [](id=installing-the-wsdd-builder-plugin-in-a-multi-module-project)
 
-To install the WSDD Builder plugin in multi-module projects like a Service 
+To install the WSDD Builder plugin in a multi-module project like a Service 
 Builder project in a Liferay Workspace, do the following in the workspace's 
 `settings.gradle` file: 
  
-1. Add these imports to the top of the file: 
+1. Add the `ServiceBuilderPlugin` and `WSDDBuilderPlugin` imports to the top of 
+   the file: 
 
         import com.liferay.gradle.plugins.service.builder.ServiceBuilderPlugin
         import com.liferay.gradle.plugins.wsdd.builder.WSDDBuilderPlugin
@@ -176,14 +176,14 @@ Builder project in a Liferay Workspace, do the following in the workspace's
 4. Refresh the Liferay Workspace's Gradle project. Close and restart Liferay IDE 
    if you're using it. 
 
-Now that you have the WSDD Builder plugin, you're ready to build and deploy the 
-WSDD. For instructions on this, proceed to the section *Building and Deploying 
-the WSDD*. 
+Now that you've installed the WSDD Builder plugin, you're ready to build and 
+deploy the WSDD. For instructions on this, proceed to the section *Building and 
+Deploying the WSDD*. 
 
 ### Installing the WSDD Builder Plugin in a Standalone Module Project [](id=installing-the-wsdd-builder-plugin-in-a-standalone-module-project)
 
 To install the WSDD Builder plugin in a standalone `*-service` module that uses 
-Service Builder, you must: 
+Service Builder, do the following in the module's `build.gradle` file: 
 
 1. Add the plugin as a dependency in your `buildscript`. 
 2. Add the Liferay CDN repository via Maven. 
@@ -222,10 +222,11 @@ module. Exactly how you do this depends on your development tools:
   wrapper (`gradlew`) may vary. For Liferay Workspace projects, it's typically 
   in the root workspace folder. 
 
-A common cause of `buildWSDD` failures is failing to satisfy the dependencies 
-needed by the WSDD Builder for your `*-service` module. Note that these 
-dependencies vary depending on your project's code--there's no standard set. 
-That said, the following are often required for portlet development:
+So what should you do if `buildWSDD` fails? A common cause of `buildWSDD` 
+failures is failing to satisfy the dependencies needed by the WSDD Builder for 
+your `*-service` module. Note that these dependencies vary depending on your 
+project's code--there's no standard set. That said, the following are often 
+required for portlet development: 
 
     compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
 	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
@@ -235,13 +236,13 @@ That said, the following are often required for portlet development:
 for more information on finding and configuring dependencies for your apps. 
 
 In your `*-service` project's `build/libs` folder, the `buildWSDD` task 
-generates a `*-service-wsdd-[version].jar` file that contains your WSDD. Deploy 
-this JAR to your @product@ instance. Your SOAP web services are then available at 
-a URL that uses the following pattern: 
+generated a `*-service-wsdd-[version].jar` file that contains your WSDD. Deploy 
+this JAR to your @product@ instance. Your SOAP web services are then available 
+at a URL that uses the following pattern: 
 
     yourportaladdress/o/your.apps.service.module.context/api/axis
 
-For example, if an app called Foo consists of the modules `foo-api`, 
+For example, if an app called *Foo* consists of the modules `foo-api`, 
 `foo-service`, and `foo-web`, then the app's service module context is 
 `foo-service`. If this app is deployed to a local @product@ instance running at 
 `http://localhost:8080`, you could access its SOAP services at: 
@@ -249,17 +250,19 @@ For example, if an app called Foo consists of the modules `foo-api`,
     http://localhost:8080/o/foo-service/api/axis
 
 If you don't know an app's `*-service` module context, you can find it by 
-searching for the app in the App Manager. For example, the following screenshot 
-shows the Foo app's modules. The name of the `*-service` module in the App 
-Manager is also its context. Also note that the app's WSDD module is grayed out 
-and listed as Resolved instead of Active. This is normal. WSDD modules are OSGi 
-fragments and can't be activated. They still work as intended, though. 
+searching for the app in the App Manager of the @product@ instance in which the 
+app is running. For example, the following screenshot shows the Foo app's 
+modules in the App Manager. The name of the `*-service` module in the App 
+Manager, `foo-service`, is also its context. Also note that the app's WSDD 
+module is grayed out and listed as Resolved instead of Active. This is normal. 
+WSDD modules are OSGi fragments, which can't be activated. They still work as 
+intended, though. 
 
-![Figure 1: To find your app's modules, including its WSDD module, search for your app in the App Manager. The `*-service` module's name in the App Manager is also its context.](../../../images/app-manager-remote-services.png)
+![Figure 1: To find your app's modules, including its WSDD module, search for your app in the App Manager. The `*-service` module's name in the App Manager is also the module's context.](../../../images/app-manager-remote-services.png)
 
-Next, you'll learn how to build the WSDD module for @product@'s built-in apps that 
-don't include a WSDD by default. If you don't need to do this, you can move on 
-to the tutorial 
+Next, you'll learn how to build the WSDD module for @product@'s built-in apps 
+that don't include a WSDD by default. If you don't need to do this, you can move 
+on to the tutorial 
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services). 
 
 ## Building the WSDD for Built-in @product@ Apps [](id=building-the-wsdd-for-built-in-liferay-apps)
