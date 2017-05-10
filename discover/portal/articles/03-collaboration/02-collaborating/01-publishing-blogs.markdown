@@ -143,9 +143,17 @@ related to your entry, you can choose it here. For example, you might want to
 write a blog entry talking about a discussion that happened on the forums. To
 link those two assets together, select the forum thread under Related Assets. 
 
-The Configuration panel is next. You can specify an abstract for the blog entry.
-Choose a 400 character text-only abstract or a custom abstract containing a
-thumbnail image and a manually written description. Below the abstract section,
+The Configuration panel is next. Here, you can specify a friendly URL for the 
+blog entry. The default selection of *Automatic* generates the URL for you based 
+on the blog entry's title. The generated URL appears in the text box shown below 
+the *Blog Entry URL* heading. Alternatively, you can select the *Custom* option 
+to write your own URL. Once published, you can view the blog entry by navigating 
+to the friendly URL. What if you decide to change the blog entry's URL later on?
+No worries. The original link will redirect to the new friendly URL.
+
+You can also specify an abstract for the blog entry within the Configuration 
+panel. Choose a 400 character text-only abstract or a custom abstract containing 
+a thumbnail image and a manually written description. Below the abstract section, 
 you can set a particular Display Date for the entry.
 
 Lastly for your blog entry's configuration, you can allow *pingbacks*. Pingbacks
