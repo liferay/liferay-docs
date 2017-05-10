@@ -169,12 +169,12 @@ the value of your remote server.
 
 **Important:** Do not share the key with any user. It is used exclusively for 
 communication between staging and production environments. Any user with 
-possesion of the key can manage the production server, execute server-side
+possession of the key can manage the production server, execute server-side
 Java code, or worse.
 
 One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
 of your Liferay instance. To do this, navigate to the Control Panel &rarr;
-*Configuration* &rarr; *System Settings* &rarr; *Platform* &rarr; *Tunnel Auth
+*Configuration* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Tunnel Auth
 Verifier*. Click */api/liferay/do* and insert the additional IP addresses you're
 using in the *Hosts allowed* field. Then select *Update*.
 
@@ -254,6 +254,29 @@ to the staged site, and then select *Staging* &rarr; *Publish to Live* from the
 top Control Menu. The changes are published to your remote staged site.
 
 $$$
+
+### Checkpoint 
+
+Before publishing *any* content, verify that **all** the necessary steps above
+have been completed. Otherwise, Remote Staging will fail.
+
+1. The `tunnel.servlet.hosts.allowed` values have been set in the `portal-
+ext.properties` file in both the staging and the production environment.    
+2. The `tunneling.servlet.shared.secret` values have been set in the `portal-
+ext.properties` file in both the staging and the production environment.    
+3. Most importantly, update the *TunnelAuthVerfierConfiguration* of your @product@
+instance. This is a major change between legacy Portal and @product@. To do
+this:
+
+    a) Navigate to the Control Panel &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Foundation*.    
+    b) Search for *Tunnel Auth Verifier*.    
+    c) Click */api/liferay/do* and insert the additional IP addresses you're using in the
+*Hosts allowed* field.    
+    d) Click *Update*.
+    
+You should proceed only when all three major steps have been completed. 
+
 
 Next, you'll learn how to enable page versioning and staged apps.
 
