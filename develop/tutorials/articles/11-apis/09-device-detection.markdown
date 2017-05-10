@@ -11,7 +11,20 @@ mobile phone request the same information from your portal?
 The Device Detection API detects the capabilities of any device making a
 request to your portal. It can also determine what mobile device or operating
 system was used to make a request, and then follows rules to make Liferay render
-pages based on the device. 
+pages based on the device. To use these features, you must first install a 
+device detection database that can detect which mobile devices are accessing the 
+portal. Liferay provides such a database in the Liferay Mobile Device Detection 
+(LMDD) app from the Liferay Marketplace. 
+[Click here](/discover/portal/-/knowledge_base/6-1/leveraging-the-liferay-marketplace) 
+for instructions on using Liferay Marketplace to find and install apps. 
+
++$$$
+
+**Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay 
+Portal 6.1. Although you can use other device detection databases, doing so 
+requires you to manually integrate the database with Liferay APIs. 
+
+$$$
 
 You can create your own plugin to use your device's database. Let's look at
 some simple uses of the Device Detection API and talk about its
