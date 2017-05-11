@@ -42,7 +42,7 @@ don't have to duplicate permissions code.
 
 $$$
 
-As an example, consider Liferay's Blogs app. Articles are represented by the 
+As an example, consider Liferay's Web Content app. Articles are represented by the 
 `JournalArticle` entity. This entity is declared in the `journal-service` 
 module's 
 [`service.xml` file](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/service.xml) 
