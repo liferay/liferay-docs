@@ -141,6 +141,21 @@ kind of app is developed to pull its attributes from a remote system, it would
 be more convenient to build your staged models yourself instead of relying on
 Service Builder, which is database driven.
 
-To step through the process for leveraging the Model Adapter Builder, visit the
+To adapt your model classes to staged models, follow the steps outlined below:
+
+1.  Create a `Staged[Entity]` interface, which extends the model specific
+    interface (e.g., `[Entity]`) and the appropriate staged model interface
+    (e.g., `StagedModel`). This class serves as the staged model adapter.
+2.  Create a `StagedAssetLinkImpl` class, which implements the
+    `StagedAssetLink` interface and provides necessary logic for your entity
+    model to be recognized as a staged model.
+3.  Create a `Staged[Entity]ModelAdapterBuilder` class that implements
+    `ModelAdapterBuilder<[Entity], Staged[Entity]>`. This class adapts the
+    original model to the newly created staged model adapter.
+4.  Adapt your existing model and call one of provided APIs to export or import
+    the entity automatically.
+
+To step through the process for leveraging the Model Adapter Builder for an
+existing app, visit the
 [Creating Staged Models Manually](/develop/tutorials/-/knowledge_base/7-0/creating-staged-models-manually)
 tutorial.
