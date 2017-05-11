@@ -11,7 +11,7 @@ A guestbook application is pretty simple, right? People come to your site,
 enter their names and brief messages, and then post them. Users can read the
 entries that others posted, and they can post entries themselves.
 
-The first thing, therefore, that we need is a landing page that displays
+The first thing that we need is a landing page that displays
 entries and that has a button on it that allows users to add an entry. This
 page was created when you created your project: you'll find it in your
 project's `src/main/resources/META-INF/resources` folder. It's called
@@ -143,7 +143,7 @@ In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
 
         <%@ include file="/init.jsp" %>
 
-    As mentioned previously, it's a best practice to add all of your JSP
+    Remember, it's a best practice to add all of your JSP
     imports and tag library declarations to a single file which is imported by
     every other JSP file in your application. For your `edit_entry.jsp` file,
     you need these imports so that you can access to the portlet tags to create
@@ -219,9 +219,8 @@ When users submit the form, your application needs to store the form data so it
 can be displayed in the guestbook. To keep this first application simple, you'll
 implement this using a part of the Portlet API called Portlet Preferences.
 Normally, of course, you'd use a database, and Liferay makes it very easy to
-work with databases using its Service Builder framework. For now, however, you
-can create the first iteration of your guestbook application using portlet
-preferences.
+work with databases using Service Builder. For now, however, you can create the 
+first iteration of your guestbook application using portlet preferences.
 
 To make your portlet do anything other than re-render itself, you must
 implement portlet actions. An action defines some processing, usually based on
@@ -237,7 +236,7 @@ URL, and you called it `addEntry`. To create a portlet action, you create a
 method in the portlet class with the same name. `MVCPortlet` calls that method
 when a user triggers its matching URL.
 
-1. Open the `GuestbookModulePortlet.java`. The project templates generated this class 
+1. Open the `GuestbookPortlet.java`. The project templates generated this class 
 	when you created the portlet project.
 
 2. Create a method with the following signature:
