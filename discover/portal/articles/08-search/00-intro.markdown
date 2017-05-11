@@ -25,10 +25,9 @@ how to use @product@'s faceted search.
 
 @product@ provides several applications that let users and administrators search
 for content. First, there's the Search application, which can be placed on a
-page to let users search for web content articles. The Search application only
-searches for web content. However, apps like Blogs, Wiki, Message Boards, and
-Documents and Media all provide search bars that let users search among the
-specific types of assets with which these applications allow users to interact.
+page so users can search for web content articles. The Search application only
+searches for web content, but apps like Blogs, Wiki, Message Boards, and
+Documents and Media all provide search bars that let users search among the assets they display.
 Note that all of these applications are accessible from Site Administration in
 the Menu. They can also be placed on site pages for end-users to use. The Web
 Content application in the Menu's Site Administration section also has a
@@ -45,9 +44,10 @@ been replaced by the Search app, which is configured to search for web content.
 
 $$$
 
-In order for content to be searchable, it must first be indexed. @product@ uses
-Lucene for indexing and searching for content. Please refer to the Lucene
-section of the portal properties file if you'd like to customize @product@'s
+In order for content to be searchable, it must first be indexed. By default,
+@product@ uses uses Elasticsearch, as searh engine built on the Lucene search
+engine library, for indexing and searching for content. Refer to the Lucene
+section of the portal properties file to customize @product@'s
 indexing and search behavior. By default, @product@ indexes blog posts, wiki
 articles, message board posts, Documents and Media files' descriptions, and web
 content articles. If a Documents and Media file is a text file, the file's
