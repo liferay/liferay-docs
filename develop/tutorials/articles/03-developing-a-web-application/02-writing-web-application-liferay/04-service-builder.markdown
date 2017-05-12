@@ -183,10 +183,6 @@ Using Liferay and Service Builder, the implementations are typically defined in
 
 			guestbookPersistence.update(guestbook);
 
-			resourceLocalService.addResources(
-				user.getCompanyId(), groupId, userId, Guestbook.class.getName(),
-				guestbookId, false, true, true);
-
 			return guestbook;
 		}
 3. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
@@ -486,6 +482,7 @@ integrated application working.
 3. Wait for the everything to finish deploying.
 4. Head over to your Liferay instance at `localhost:8080` in your browser to
     test your updated application.
+
 
 # Wrapping up the application
 
