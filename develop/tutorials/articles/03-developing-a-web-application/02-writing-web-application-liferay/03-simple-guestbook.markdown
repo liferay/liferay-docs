@@ -160,8 +160,8 @@ Liferay's development framework makes it easy to loop through data and display
 it nicely to the end user. You'll use a Liferay UI construct called the *Search
 Container* to make this happen.
 
-1. Add the these tags to your `view.jsp` below the closing
-   `</portlet:renderURL>` tag but before the opening `<aui:button-row>` tag:
+1. Add the these tags to your `view.jsp` in between the
+   `</portlet:renderURL>` and `<aui:button-row>` tags:
 
         <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
 
