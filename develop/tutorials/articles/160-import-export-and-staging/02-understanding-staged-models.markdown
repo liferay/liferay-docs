@@ -151,8 +151,8 @@ To adapt your model classes to staged models, follow the steps outlined below:
 3.  Create a `Staged[Entity]ModelAdapterBuilder` class that implements
     `ModelAdapterBuilder<[Entity], Staged[Entity]>`. This class adapts the
     original model to the newly created staged model adapter.
-4.  Adapt your existing model and call one of provided APIs to export or import
-    the entity automatically.
+4.  Adapt your existing model and call one of the provided APIs to export or
+    import the entity automatically.
 
 ![Figure 1: The Staged Model Adapter class extends your entity and staged model interfaces.](../../images/staged-model-adapter-diagram.png)
 

@@ -52,7 +52,6 @@ your application using the Asset Link framework as an example.
     as a staged model. Below is a subset of logic in the `StagedAssetLinkImpl`
     class used to populate UUIDs for asset link entries:
 
-```
         public StagedAssetLinkImpl(AssetLink assetLink) {
              _assetLink = assetLink;
 
@@ -93,7 +92,7 @@ your application using the Asset Link framework as an example.
             ...
 
             _entry1Uuid = entry1.getClassUuid();
-	}
+        }
 
         protected void populateEntry2Attributes() {
 
@@ -124,13 +123,47 @@ your application using the Asset Link framework as an example.
         private String _entry1Uuid;
         private String _entry2Uuid;
         private String _uuid;
-```
 
     This logic retrieves asset link entries and populates UUIDs for them usable
     by the Staging and Export/Import frameworks. With the newly generated UUIDs,
     asset link model classes can be converted to staged models.
 
-3.  
+3.  Create a Model Adapter Builder class and implement the
+    [ModelAdapterBuilder](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
+    interface. You should define the entity type and your Staged Model Adapter
+    class when implementing the interface:
 
+        public class StagedAssetLinkModelAdapterBuilder
+            implements ModelAdapterBuilder<AssetLink, StagedAssetLink> {
 
+            @Override
+            public StagedAssetLink build(AssetLink assetLink) {
+                return new StagedAssetLinkImpl(assetLink);
+            }
 
+        }
+
+    For the `StagedAssetLinkModelAdapterBuilder`, the entity type is `AssetLink`
+    and the Staged Model Adapter is `StagedAssetLink`. Your Model Adapter
+    Builder outputs a new instance of the `Staged[Entity]Impl` object.
+
+4.  Now you need to adapt your existing business logic to call the provided
+    APIs. You can call the
+    [ModelAdapterUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/ModelAdapterUtil.html)
+    class to create an instance of your Staged Model Adapter:
+
+        StagedAssetLink stagedAssetLink = ModelAdapterUtil.adapt(
+            assetLink, AssetLink.class, StagedAssetLink.class);
+
+    Once you've created
+    [Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-0/data-handlers),
+    you can begin exporting/importing your now Staging-compatible entities:
+
+        StagedModelDataHandlerUtil.exportStagedModel(
+            portletDataContext, stagedAssetLink);
+
+    Visit the
+    [Understanding Data Handlers](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers)
+    tutorial if you're unfamiliar with how data handlers work.
+
+Awesome! You've successfully adapted your business logic to build staged models!
