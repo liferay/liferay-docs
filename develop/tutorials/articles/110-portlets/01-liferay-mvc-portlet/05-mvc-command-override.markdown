@@ -12,10 +12,12 @@ command will then be invoked instead of the original one.
 The logical way of breaking up the controller layer is to do it by portlet
 phase. The three MVC command classes you can override are
 
--  **`MVCActionCommand`:** An interface that allows the portlet to process
-   a particular action request.
--  **`MVCRenderCommand`:** An interface that handles the render phase of the portlet.
--  **`MVCResourceCommand`:**  An interface that allows the portlet to serve a resource.
+-   **[`MVCActionCommand`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html):**
+    An interface that allows the portlet to process a particular action request.
+-   **[`MVCRenderCommand`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCRenderCommand.html):**
+    An interface that handles the render phase of the portlet.
+-   **[`MVCResourceCommand`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html):** 
+    An interface that allows the portlet to serve a resource.
 
 Find more information about implementing each of these MVC command classes in
 the tutorials on Liferay MVC Portlets<!--Add Link when these are completed-->.
@@ -65,7 +67,8 @@ You can override `MVCRenderCommand` for any portlet that uses Liferay's MVC
 framework and publishes an `MVCRenderCommand` component.
 
 For example, Liferay's Blogs application has a class called
-`EditEntryMVCRenderCommand`, with this component:
+[`EditEntryMVCRenderCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/portlet/action/EditEntryMVCRenderCommand.java),
+with this component:
 
 
     @Component(
@@ -149,7 +152,8 @@ The `render` method of `MVCRenderCommand` returns the path to a JSP as a String.
 The JSP must live in the original module, so you cannot simply specify a path to
 a custom JSP in your override module. You need to make the method skip
 dispatching to the original JSP altogether, by using the
-`MVC_PATH_VALUE_SKIP_DISPATCH` constant from the `MVCRenderConstants` class.
+`MVC_PATH_VALUE_SKIP_DISPATCH` constant from the
+[`MVCRenderConstants` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCRenderConstants.html).
 Then you need to initiate your own dispatching process, directing the request to
 your JSP path. Here's how that might look in practice:
 
@@ -196,7 +200,7 @@ for other modules by including the following line in your `bnd.bnd` file:
 
     Web-ContextPath: /custom-code-web
 
-Once we have the servlet context we just need to dispatch to the specific jsp in
+Once we have the servlet context we just need to dispatch to the specific JSP in
 our own module. 
 
 ## Overriding MVCActionCommand [](id=overriding-mvcactioncommand)
@@ -206,8 +210,10 @@ above for MVC render commands. Again, you'll register a new OSGi component with
 the same properties, but with a higher service ranking. This time the service
 you're publishing is `MVCActionCommand.class`.
 
-For MVC action command overrides, extend `BaseMVCActionCommand`, and the only method
-you'll need to override is `doProcessAction`, which must return `void`.
+For MVC action command overrides, extend the
+[`BaseMVCActionCommand` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html),
+and the only method you'll need to override is `doProcessAction`, which must
+return `void`.
 
 As with MVC render commands, you can add your logic to the original behavior of
 the action method by getting a reference to the original service, and calling it
