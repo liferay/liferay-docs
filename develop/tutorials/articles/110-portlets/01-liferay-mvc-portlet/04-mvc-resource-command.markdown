@@ -24,7 +24,9 @@ The latter may save you time, since it already implements `MVCResourceCommand`.
 Also, it's a good idea to name your `*MVCResourceCommand` class after the
 resource it handles, and suffix it with `MVCResourceCommand`. For example, the
 resource command class matching the preceding CAPTCHA resource URL in the Login
-Portlet is `CaptchaMVCResourceCommand`. In an application with several MVC
+Portlet is
+[`CaptchaMVCResourceCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/internal/portlet/action/CaptchaMVCResourceCommand.javas).
+In an application with several MVC
 command classes, this will help differentiate them.
 
 Your `*MVCResourceCommand` class must also have a `@Component` annotation like 
@@ -83,17 +85,19 @@ at
 
 In the `@Component` annotation, note that `javax.portlet.name` has two different 
 settings. This lets multiple portlets use the same component. In this example, 
-the portlet IDs are defined as constants in the `LoginPortletKeys` class. Also 
-note that the `mvc.command.name` property setting `/login/captcha` matches the 
-`resourceURL`'s `id` setting shown earlier in this tutorial, and that the 
+the portlet IDs are defined as constants in the
+[`LoginPortletKeys` class](@app-ref@/foundation/latest/javadocs/com/liferay/login/web/internal/constants/LoginPortletKeys.html).
+Also  note that the `mvc.command.name` property setting `/login/captcha` matches
+the  `resourceURL`'s `id` setting shown earlier in this tutorial, and that the
 `service` property is set to `MVCResourceCommand.class`. 
 
 The `CaptchaMVCResourceCommand` class implements the `MVCResourceCommand` 
 interface with only a single method: `serveResource`. This method processes the 
 resource request and response via the `ResourceRequest` and `ResourceResponse` 
 parameters, respectively. Note that the `try` block uses the helper class 
-`CaptchaUtil` to serve the CAPTCHA image. Though you don't have to create such a 
-helper class, doing so often simplifies your code. 
+[`CaptchaUtil`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/captcha/CaptchaUtil.html)
+to serve the CAPTCHA image. Though you don't have to create such a  helper
+class, doing so often simplifies your code. 
 
 Great! Now you know how to use `MVCResourceCommand` to process resources in your 
 Liferay MVC portlets. 
