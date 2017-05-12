@@ -115,16 +115,16 @@ Follow these steps to create a new configuration entry:
     categories and several entries:
     
         content,metadata,permissions,related-assets,schedule,small-image
-        
+
     Here is the same configuration with an `update` context:
-    
+
         update=content,metadata,permissions,related-assets,schedule,small-image    
-    
+ 
     **The order of the entry keys specifies the order in which the sections are 
     displayed in the form, from top to bottom.** To reorder sections, place the 
     comma-separated list of entry keys in the order you want the sections to 
     appear in the form. 
-    
+  
     +$$$
  
     **Note:** If you want to hide a category, enter the category followed by an 
