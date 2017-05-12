@@ -17,10 +17,11 @@ models.
 
 Asset links do not provide UUIDs by default; however, they still needed to be
 tracked in the Staging and Export/Import frameworks, and therefore, require
-staged models. Since Service Builder cannot generate staged models for this case
-since there is no UUID, the framework has to create staged models differently
-using the Model Adapter Builder. You'll leverage the Model Adapter Builder for
-your application using the Asset Link framework as an example.
+staged models. Since Service Builder cannot generate staged models for asset
+links since they don't provide a UUID, the framework has to create staged models
+differently using the Model Adapter Builder. You'll leverage the Model Adapter
+Builder for your application by referencing the Asset Link framework as an
+example.
 
 1.  Create a new interface that extends one of the
     [staged model interfaces](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#staged-model-interfaces)
@@ -39,10 +40,10 @@ your application using the Asset Link framework as an example.
         public String getEntry2Uuid();
 
     These will be implemented by a new implementation class later. The
-    naming convention for the interface typically follows the `Staged[Entity]`
+    naming convention for this interface typically follows the `Staged[Entity]`
     syntax.
 
-2.  Create an implementation class that implements your new `[StagedEntity]`:
+2.  Create an implementation class that implements your new `Staged[Entity]`:
 
         public class StagedAssetLinkImpl implements StagedAssetLink {
 

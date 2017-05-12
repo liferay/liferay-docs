@@ -19,9 +19,9 @@ tutorial for more information.
 There are two ways to create staged models for your application's entities:
 
 - Using Service Builder to generate the required Staging implementations
-  ([tutorial]()).
+  ([tutorial](/develop/tutorials/-/knowledge_base/7-0/generating-staged-models-using-service-builder)).
 - Implementing the required Staging interfaces manually
-  ([tutorial]()).
+  ([tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-staged-models-manually)).
 
 You can follow step-by-step procedures for creating staged models for your
 entities by visiting their respective tutorials.
@@ -37,8 +37,7 @@ generate Staging logic (i.e., not needed by your business logic). In this case,
 you should adapt your business logic to meet the Staging framework's needs.
 You'll learn more about this later.
 
-To aid in your understanding of staged models, you'll explore the provided
-interfaces.
+You'll explore the provided staged model interfaces next.
 
 ## Staged Model Interfaces
 
@@ -85,10 +84,10 @@ dive into the attributes used in Staging and why they're important.
 
 If you'd like to generate your staged models using
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder), you
-must define the proper attributes in your project's `service.xml`. For a full
-tutorial, see
-[Generating Staged Models using Service Builder]().
-You'll learn some general information about this process next.
+must define the proper attributes in your project's `service.xml`. If you'd like
+more detail on how this is done, see the
+[Generating Staged Models using Service Builder](/develop/tutorials/-/knowledge_base/7-0/generating-staged-models-using-service-builder)).
+tutorial. You'll learn some general information about this process next.
 
 One of the most important attributes used by the Staging framework is the UUID.
 This attribute must be set to `true` in your `service.xml` file for Service
@@ -107,8 +106,8 @@ framework must have a unique ID that stays the same across multiple systems.
 That way, Staging recognizes the existence of the original entity on the remote
 site, and updates it instead of reproducing it.
 
-There are several columns that must be defined in your `service.xml` for
-Service Builder to define your model as a staged model:
+In addition to the UUID, there are several columns that must be defined in your
+`service.xml` for Service Builder to define your model as a staged model:
 
 - `companyId`
 - `createDate`
@@ -144,13 +143,13 @@ To adapt your model classes to staged models, follow the steps outlined below:
 
 1.  Create a `Staged[Entity]` interface, which extends the model specific
     interface (e.g., `[Entity]`) and the appropriate staged model interface
-    (e.g., `StagedModel`). This class serves as the staged model adapter.
+    (e.g., `StagedModel`). This class serves as the Staged Model Adapter.
 2.  Create a `Staged[Entity]Impl` class, which implements the
     `Staged[Entity]` interface and provides necessary logic for your entity
     model to be recognized as a staged model.
 3.  Create a `Staged[Entity]ModelAdapterBuilder` class that implements
     `ModelAdapterBuilder<[Entity], Staged[Entity]>`. This class adapts the
-    original model to the newly created staged model adapter.
+    original model to the newly created Staged Model Adapter.
 4.  Adapt your existing model and call one of the provided APIs to export or
     import the entity automatically.
 
