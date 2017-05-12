@@ -62,12 +62,12 @@ The properties of type `File` support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for `String`,
 to defer evaluation until execution.
 
-Please note that setting the `global` property of the node extension via the
+Please note that setting the `global` property of the `node` extension via the
 command line is not supported. It can only be set via Gradle script, which can
 be done by adding the following code to the `build.gradle` file in the root of
 a project (e.g., Liferay Workspace):
 
-```gradle 
+```gradle
 allprojects {
     plugins.withId("com.liferay.node") {
         node.global = true
