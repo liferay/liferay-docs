@@ -14,7 +14,7 @@ or access the latest code on
 Here are the tutorial sections:
 
 -   [Examining the Example Portlet](#example-portlet)
--   [Integration and Functional Testing with Arquillian](#integration and-functional-testing-with-arquillian)
+-   [Integration and Functional Testing with Arquillian](#integration-and-functional-testing-with-arquillian)
 -   [Measuring Code Coverage with JaCoCo](#measuring-code-coverage-with-jacoco)
 -   [Running the Tests](#running-the-tests)
 
@@ -56,7 +56,7 @@ Here are the primary files:
 
 You'll examine the tests next. 
 
-## Integration and Functional Testing with Arquillian [](id=integration and-functional-testing-with-arquillian)
+## Integration and Functional Testing with Arquillian [](id=integration-and-functional-testing-with-arquillian)
 
 The Arquillian Blade Example tests the portlet via its API and UI. 
 
