@@ -246,12 +246,19 @@ The project uses  Java Management Extensions (JMX) to deploy OSGi modules to
 
 #### JMX Settings [](id=jmx-settings)
 
-To use JMX, Liferay's Arquillian Extension depends on these modules being installed in your OSGi container:
+The Arquillian Liferay Extension uses JMX to deploy OSGi modules to @product@.
+Apache Aries JMX exposes the JMX API that Arquillian uses to
+install/deploy/start the modules.
+
+Since DXP Digital Enterprise 7.0 Fix Pack 16 and Liferay CE 7.0 GA4, Liferay
+Workspace's `startTestableTomcat` Gradle task installs the Apache Aries JMX
+modules automatically. In case you're using and earlier @product@ version or
+haven't already installed the Aries modules, here's their group ID, artifact ID,
+and version information. You can install them using
+[Apache Felix GoGo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell):
 
     "org.apache.aries.jmx:org.apache.aries.jmx:1.1.5"
     "org.apache.aries:org.apache.aries.util:1.1.3"
-
-
 
 The Arquillian Blade Example enables JMX in Apache Tomcat on port 8099 without
 authentication. It's enabled via the `setenv.*` scripts. 
