@@ -132,33 +132,40 @@ Here's the `BasicPortletIntegrationTest` class:
     @RunWith(Arquillian.class)
     public class BasicPortletIntegrationTest {
 
-    	@Deployment
-    	public static JavaArchive create() throws Exception {
-    		final File tempDir = Files.createTempDir();
+        @Deployment
+        public static JavaArchive create() throws Exception {
+            final File tempDir = Files.createTempDir();
 
-    		final ProcessBuilder processBuilder = new ProcessBuilder(
-    			"./gradlew", "jar", "-Pdir=" + tempDir.getAbsolutePath());
+            String gradlew = "./gradlew";
 
-    		final Process process = processBuilder.start();
+            String osName = System.getProperty("os.name", "");
+            if (osName.toLowerCase().contains("windows")) {
+                gradlew = "./gradlew.bat";
+            }
 
-    		process.waitFor();
+            final ProcessBuilder processBuilder = new ProcessBuilder(
+                gradlew, "jar", "-Pdir=" + tempDir.getAbsolutePath());
 
-    		final File jarFile = new File(
-    			tempDir.getAbsolutePath() +
-    				"/com.liferay.arquillian.sample-1.0.0.jar");
+            final Process process = processBuilder.start();
 
-    		return ShrinkWrap.createFromZipFile(JavaArchive.class, jarFile);
-    	}
+            process.waitFor();
 
-    	@Test
-    	public void testAdd() throws IOException, PortalException {
-    		final long result = _sampleService.add(1, 3);
+            final File jarFile = new File(
+                tempDir.getAbsolutePath() +
+                    "/com.liferay.arquillian.sample-1.0.0.jar");
 
-    		Assert.assertEquals(4, result);
-    	}
+            return ShrinkWrap.createFromZipFile(JavaArchive.class, jarFile);
+        }
 
-    	@Inject
-    	private SampleService _sampleService;
+        @Test
+        public void testAdd() throws IOException, PortalException {
+            final long result = _sampleService.add(1, 3);
+
+            Assert.assertEquals(4, result);
+        }
+
+        @Inject
+        private SampleService _sampleService;
 
     }
 
@@ -210,31 +217,32 @@ The project's `build.gradle` file includes dependencies on Liferay's Arquillian 
     testIntegrationCompile group: "com.liferay.arquillian", name: "com.liferay.arquillian.arquillian-container-liferay", version: "1.0.6"
     testIntegrationCompile group: "junit", name: "junit", version: "4.12"
     testIntegrationCompile group: "org.jboss.arquillian.junit", name: "arquillian-junit-container", version: "1.1.11.Final"
-
-Arquillian uses an XML configuration file called `arquillian.xml`. 
+ 
+Arquillian tests are configurable too.  
 
 #### Arquillian Configuration [](id=arquillian-configuration)
 
-The `deploymentExportPath` optional engine property in  Arquillian configuration
-file `src/testIntegration/resources/arquillian.xml` sets a location for
-exporting the test as an archive (e.g., JAR, WAR, or EAR). This lets you inspect
-the test that's being deployed. 
+Arquillian configuration file `src/testIntegration/resources/arquillian.xml`
+uses property `deploymentExportPath` (optional) to write a test archive (e.g.,
+JAR file) to a folder before deploying the tests. You can inspect all the test
+files from this archive. To highlight the `deploymentExportPath` property,
+here's an abbreviated view of the
+[`arquillian.xml` file](https://github.com/liferay-labs/arquillian-blade-example/blob/master/src/testIntegration/resources/arquillian.xml):
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <arquillian xmlns="http://jboss.org/schema/arquillian"
-    			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    			xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
 
-        <!-- More content here -->
+    <!-- More content here -->
 
-    	<engine>
-    		<property name="deploymentExportPath">build/deployments</property>
-    	</engine>
-    </arquillian>
+    <engine>
+        <property name="deploymentExportPath">build/deployments</property>
+    </engine>
+</arquillian>
 
-Enabling Java Management Extensions (JMX) on the application server's JVM allows
-tests that use Liferay's Arquillian Extension to deploy OSGi modules to
-@product@. 
+The project uses  Java Management Extensions (JMX) to deploy OSGi modules to
+@product@. Enabling JMX for the application server is next. 
 
 #### JMX Settings [](id=jmx-settings)
 
@@ -309,73 +317,80 @@ Here's the `BasicPortletFunctionalTest` class:
     @RunWith(Arquillian.class)
     public class BasicPortletFunctionalTest {
 
-    	@Deployment
-    	public static JavaArchive create() throws Exception {
-    		final File tempDir = Files.createTempDir();
+        @Deployment
+        public static JavaArchive create() throws Exception {
+            final File tempDir = Files.createTempDir();
 
-    		final ProcessBuilder processBuilder = new ProcessBuilder(
-    			"./gradlew", "jar", "-Pdir=" + tempDir.getAbsolutePath());
+            String gradlew = "./gradlew";
 
-    		final Process process = processBuilder.start();
+            String osName = System.getProperty("os.name", "");
+            if (osName.toLowerCase().contains("windows")) {
+                gradlew = "./gradlew.bat";
+            }
 
-    		process.waitFor();
+            final ProcessBuilder processBuilder = new ProcessBuilder(
+                gradlew, "jar", "-Pdir=" + tempDir.getAbsolutePath());
 
-    		final File jarFile = new File(
-    			tempDir.getAbsolutePath() +
-    				"/com.liferay.arquillian.sample-1.0.0.jar");
+            final Process process = processBuilder.start();
 
-    		return ShrinkWrap.createFromZipFile(JavaArchive.class, jarFile);
-    	}
+            process.waitFor();
 
-    	@Test
-    	public void testAdd()
-    		throws InterruptedException, IOException, PortalException {
+            final File jarFile = new File(
+                tempDir.getAbsolutePath() +
+                    "/com.liferay.arquillian.sample-1.0.0.jar");
 
-    		_browser.get(_portlerURL.toExternalForm());
+            return ShrinkWrap.createFromZipFile(JavaArchive.class, jarFile);
+        }
 
-    		_firstParamter.clear();
+        @Test
+        public void testAdd()
+            throws InterruptedException, IOException, PortalException {
 
-    		_firstParamter.sendKeys("2");
+            _browser.get(_portlerURL.toExternalForm());
 
-    		_secondParameter.clear();
+            _firstParamter.clear();
 
-    		_secondParameter.sendKeys("3");
+            _firstParamter.sendKeys("2");
 
-    		_add.click();
+            _secondParameter.clear();
 
-    		Thread.sleep(5000);
+            _secondParameter.sendKeys("3");
 
-    		Assert.assertEquals("5", _result.getText());
-    	}
+            _add.click();
 
-    	@Test
-    	public void testInstallPortlet() throws IOException, PortalException {
-    		_browser.get(_portlerURL.toExternalForm());
+            Thread.sleep(5000);
 
-    		final String bodyText = _browser.getPageSource();
+            Assert.assertEquals("5", _result.getText());
+        }
 
-    		Assert.assertTrue(
-    			"The portlet is not well deployed",
-    			bodyText.contains("Sample Portlet is working!"));
-    	}
+        @Test
+        public void testInstallPortlet() throws IOException, PortalException {
+            _browser.get(_portlerURL.toExternalForm());
 
-    	@FindBy(css = "button[type=submit]")
-    	private WebElement _add;
+            final String bodyText = _browser.getPageSource();
 
-    	@Drone
-    	private WebDriver _browser;
+            Assert.assertTrue(
+                "The portlet is not well deployed",
+                bodyText.contains("Sample Portlet is working!"));
+        }
 
-    	@FindBy(css = "input[id$='firstParameter']")
-    	private WebElement _firstParamter;
+        @FindBy(css = "button[type=submit]")
+        private WebElement _add;
 
-    	@PortalURL("arquillian_sample_portlet")
-    	private URL _portlerURL;
+        @Drone
+        private WebDriver _browser;
 
-    	@FindBy(css = "span[class='result']")
-    	private WebElement _result;
+        @FindBy(css = "input[id$='firstParameter']")
+        private WebElement _firstParamter;
 
-    	@FindBy(css = "input[id$='secondParameter']")
-    	private WebElement _secondParameter;
+        @PortalURL("arquillian_sample_portlet")
+        private URL _portlerURL;
+
+        @FindBy(css = "span[class='result']")
+        private WebElement _result;
+
+        @FindBy(css = "input[id$='secondParameter']")
+        private WebElement _secondParameter;
 
     }
 
@@ -437,21 +452,21 @@ The client test class uses the following fields in its tests:
 Using the `*Parameter` fields, the `testAdd` method injects numbers `2` and `3`
 into the form, submits the form, and asserts the result is `5`. 
 
-	_browser.get(_portlerURL.toExternalForm());
+    _browser.get(_portlerURL.toExternalForm());
 
-	_firstParamter.clear();
+    _firstParamter.clear();
 
-	_firstParamter.sendKeys("2");
+    _firstParamter.sendKeys("2");
 
-	_secondParameter.clear();
+    _secondParameter.clear();
 
-	_secondParameter.sendKeys("3");
+    _secondParameter.sendKeys("3");
 
-	_add.click();
+    _add.click();
 
-	Thread.sleep(5000);
+    Thread.sleep(5000);
 
-	Assert.assertEquals("5", _result.getText());
+    Assert.assertEquals("5", _result.getText());
 
 Next, consider this functional test's dependencies. 
 
@@ -461,7 +476,7 @@ The `BasicPortletFunctionalTest` class requires the Graphine extension to
 Arquillian for functional client testing. Here's the dependency from the Gradle
 file `build.gradle`:
 
-	testIntegrationCompile group: "org.jboss.arquillian.graphene", name: "graphene-webdriver", version: "2.1.0.Final"
+    testIntegrationCompile group: "org.jboss.arquillian.graphene", name: "graphene-webdriver", version: "2.1.0.Final"
 
 For more information on functional testing using Graphine, see this
 [guide](http://arquillian.org/guides/functional_testing_using_graphene/)
@@ -476,20 +491,20 @@ uses `phantomjs` to specify the browser.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <arquillian xmlns="http://jboss.org/schema/arquillian"
-    			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    			xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
 
-    	<extension qualifier="webdriver">
-    		<property name="browser">phantomjs</property>
-    	</extension>
+        <extension qualifier="webdriver">
+            <property name="browser">phantomjs</property>
+        </extension>
 
-    	<extension qualifier="graphene">
-    		<property name="url">http://localhost:8080</property>
-    	</extension>
+        <extension qualifier="graphene">
+            <property name="url">http://localhost:8080</property>
+        </extension>
 
-    	<engine>
-    		<property name="deploymentExportPath">build/deployments</property>
-    	</engine>
+        <engine>
+            <property name="deploymentExportPath">build/deployments</property>
+        </engine>
     </arquillian>
 
 +$$$
@@ -574,39 +589,39 @@ instructions.
         task copyJacocoAgent(type: Copy) {
         println configurations.jacocoAgent
 
-        	configurations.jacocoAgent.asFileTree.each {
-        		from(zipTree(it))
-        	}
+            configurations.jacocoAgent.asFileTree.each {
+                from(zipTree(it))
+            }
 
-        	into "${rootDir}/build/jacoco"
+            into "${rootDir}/build/jacoco"
         }
 
 3.  Dump the code coverage data:
 
         task dumpJacoco {
-        	doLast {
-        		def serverUrl = 'service:jmx:rmi:///jndi/rmi://localhost:8099/jmxrmi'
-        		String beanName = "org.jacoco:type=Runtime"
-        		def server = JmxFactory.connect(new JmxUrl(serverUrl)).MBeanServerConnection
-        		def gmxb = new GroovyMBean(server, beanName)
+            doLast {
+                def serverUrl = 'service:jmx:rmi:///jndi/rmi://localhost:8099/jmxrmi'
+                String beanName = "org.jacoco:type=Runtime"
+                def server = JmxFactory.connect(new JmxUrl(serverUrl)).MBeanServerConnection
+                def gmxb = new GroovyMBean(server, beanName)
 
-        		println "Connected to:\n$gmxb\n"
-        		println "Executing dump()"
-        		gmxb.dump(true)
-        	}
+                println "Connected to:\n$gmxb\n"
+                println "Executing dump()"
+                gmxb.dump(true)
+            }
         }
 
 4.  Generate JaCoCo reports in HTML:
 
         jacocoTestReport {
-        	dependsOn dumpJacoco
-        	group = "Reporting"
-        	reports {
-        		xml.enabled true
-        		csv.enabled false
-        		html.destination "${buildDir}/reports/coverage"
-        	}
-        	executionData = files("${rootDir}/build/jacoco/testIntegration.exec")
+            dependsOn dumpJacoco
+            group = "Reporting"
+            reports {
+                xml.enabled true
+                csv.enabled false
+                html.destination "${buildDir}/reports/coverage"
+            }
+            executionData = files("${rootDir}/build/jacoco/testIntegration.exec")
         }
 
 JaCoCo code coverage reporting runs as part of the project's `testIntegration`
