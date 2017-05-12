@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "2.2.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "2.2.1"
     }
 
     repositories {
@@ -207,6 +207,9 @@ when your package is installed. Tasks of type `NpmShrinkwrapTask` extend
 
 The generated `npm-shrinkwrap.json` file is automatically sorted and formatted,
 so it's easier to see the changes with the previous version.
+
+`NpmShrinkwrapTask` instances are automatically disabled if the `package.json`
+file does not exist.
 
 #### Task Properties [](id=task-properties-5a)
 
