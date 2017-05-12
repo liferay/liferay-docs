@@ -57,17 +57,21 @@ Method | Description
 `NodeExtension npmArgs(Iterable<?> npmArgs)` | Adds arguments to automatically add to every task of type [`ExecuteNpmTask`](#executenpmtask).
 `NodeExtension npmArgs(Object... npmArgs)` | Adds arguments to automatically add to every task of type [`ExecuteNpmTask`](#executenpmtask).
 
-The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
+The properties of type `File` support any type that can be resolved by
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 Moreover, it is possible to use Closures and Callables as values for `String`,
 to defer evaluation until execution.
 
-Please note that it is not supported to set the global property of the node extension via command line. The only way to set it is via Gradle script, for example by adding this to the build.gradle in the root of the workspace:
+Please note that setting the `global` property of the node extension via the
+command line is not supported. It can only be set via Gradle script, which can
+be done by adding the following code to the `build.gradle` file in the root of
+a project (e.g., Liferay Workspace):
 
 ```gradle 
 allprojects {
-	plugins.withId("com.liferay.node") {
-		node.global = true
-	}
+    plugins.withId("com.liferay.node") {
+        node.global = true
+    }
 }
 ```
 
