@@ -11,7 +11,7 @@ these configuration options are possible via the *Form Navigator Configuration*
 system setting. 
 
 This tutorial covers how to use the *Form Navigator Configuration* system 
-setting to control which form sections are visible.
+setting to control which form categories and sections are visible.
 
 Get started by retrieving the available entry keys and categories next. 
 
@@ -20,9 +20,9 @@ Get started by retrieving the available entry keys and categories next.
 Form Navigator configurations contain the following information:
 
 - Form ID
-- Section entry keys
 - Category (if there is one)
 - Context (optional) 
+- Section entry keys
 
 You can retrieve this information easily, thanks to the following GoGo shell 
 command: 
@@ -78,8 +78,7 @@ To locate the Form Navigator System Setting open the *Control Panel* and go to
 *Configuration* &rarr; *System Settings*. Select *Foundation* &rarr; 
 *Form Navigator Configuration*.
 
-There are currently no configuration entries listed. Follow these steps to 
-create a new configuration entry:
+Follow these steps to create a new configuration entry: 
 
 1.  Click the Add button to bring up the Form Navigator Configuration Form.
     
@@ -93,6 +92,8 @@ create a new configuration entry:
     General tab for the Sites form:
     
         general=categorization,custom-fields,details,pages,site-template,site-url
+    
+    ![Figure 2: You can hide form categories and sections using the Form Navigator Configuration system setting.](../../images/form-navigator-configuration.png)
         
     the value below provides a configuration for the Sites form when editing a 
     site:
@@ -107,6 +108,15 @@ create a new configuration entry:
     Here is the same configuration with an `update` context:
     
         update=content,metadata,permissions,related-assets,schedule,small-image    
+    
+    +$$$
+    
+    **Note:** Individual fields within form sections cannot be hidden with the 
+    *Form Navigator Configuration* system setting. You can use a [Core JSP Hook](/develop/reference/-/knowledge_base/7-0/core-jsp-hook) to override a 
+    form's JSP if you need to customize the individual fields within a form 
+    section. 
+    
+    $$$
     
     **The order of the entry keys specifies the order in which the sections are 
     displayed in the form, from top to bottom.** To reorder sections, place the 
@@ -123,7 +133,8 @@ create a new configuration entry:
 
 4.  Save your changes.
 
-Now you know how to control the visibility of your Form Navigator form sections!
+Now you know how to control the visibility of your Form Navigator form 
+categories and sections!
 
 ## Related Topics [](id=related-topics)
 
