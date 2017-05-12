@@ -61,6 +61,16 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for `String`,
 to defer evaluation until execution.
 
+Please note that it is not supported to set the global property of the node extension via command line. The only way to set it is via Gradle script, for example by adding this to the build.gradle in the root of the workspace:
+
+```gradle 
+allprojects {
+	plugins.withId("com.liferay.node") {
+		node.global = true
+	}
+}
+```
+
 ## Tasks [](id=tasks)
 
 The plugin adds four tasks to your project:
