@@ -11,11 +11,10 @@ A guestbook application is pretty simple, right? People come to your site,
 enter their names and brief messages, and then post them. Users can read the
 entries that others posted, and they can post entries themselves.
 
-The first thing that we need is a landing page that displays
-entries and that has a button on it that allows users to add an entry. This
-page was created when you created your project: you'll find it in your
-project's `src/main/resources/META-INF/resources` folder. It's called
-`view.jsp`. Open this file:
+When you created your, it generated a file named `view.jsp` in your
+project's `src/main/resources/META-INF/resources`. This file creates the 
+default view for users when the portlet is added to the page. Right now it
+only contains some sample content:
 
     <%@ include file="/init.jsp" %>
 
@@ -23,12 +22,11 @@ project's `src/main/resources/META-INF/resources` folder. It's called
         <b><liferay-ui:message key="com_liferay_docs_guestbook_GuestbookModulePortlet.caption"/></b>
     </p>
 
-As you can see, this file contains some sample content since the project 
-template generated a fully functional sample portlet. First of all, `view.jsp` 
-imports `init.jsp`. By convention, all JSP imports and tag library declarations 
-in a Liferay JSP portlet application are made in an `init.jsp` file. Every 
-other JSP file in the application imports `init.jsp`. This convention ensures 
-that JSP dependency management can always be handled from a single fie.
+First of all, `view.jsp` imports `init.jsp`. By convention, all JSP imports and 
+tag library declarations in a Liferay JSP portlet application are made in an 
+`init.jsp` file. Every other JSP file in the application imports `init.jsp`. 
+This convention ensures that JSP dependency management can always be handled 
+from a single fie.
 
 Besides importing `init.jsp`, `view.jsp` simply displays a message that
 corresponds to a language key. This key and its value are declared in your
@@ -94,7 +92,7 @@ system-generated URL is easy:
             <portlet:param name="mvcPath" value="/edit_entry.jsp"></portlet:param>
         </portlet:renderURL>
 
-2. Add this attribute to the `<aui:button>` tag:
+2. Add this attribute to the `<aui:button>` tag after `value="Add Entry"`:
 
         onClick="<%= addEntryURL.toString() %>"
 
@@ -245,8 +243,8 @@ when a user triggers its matching URL.
 
         }
 
-3. Add the required `javax.portlet.ActionRequest` and
-   `javax.portlet.ActionResponse` imports.
+3. Press [CTRL]+[SHIFT]+O to organize imports. It will add the required
+    `javax.portlet.ActionRequest` and `javax.portlet.ActionResponse` imports.
 
 You've now created a portlet action. It doesn't do anything, but at least you
 won't get an error now if you submit your form. Next, you should make the
@@ -312,6 +310,13 @@ called `guestbook-entries`:
                     Level.SEVERE, null, ex);
         }
     }
+
+1. Replace your existing `addEntry` method with the above method.
+2. Press [CTRL]+[SHIFT]+O to organize imports and select the
+    `javax.portlet.PortletPreferences` and `java.util.logging.Logger` when
+	prompted, and not their Liferay equivalents.
+
+
 
 First, the preferences are retrieved, and then the `guestbook-entries`
 preference is retrieved and converted to an `ArrayList` so that you can add an

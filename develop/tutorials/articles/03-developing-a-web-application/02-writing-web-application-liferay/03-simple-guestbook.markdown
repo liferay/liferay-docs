@@ -9,11 +9,9 @@ your controller (your portlet class). Now you need your model.
 ## Creating Your Model [](id=creating-your-model)
 
 1. Create a new package in your app called `com.liferay.docs.guestbook.model`.
-   You can do this by right-clicking on your `src/main/java` folder and
-   selecting *New* &rarr; *Package*, and then entering the package name in the
-   dialog box that appears.
+   Right-click on your `src/main/java` folder and select *New* &rarr *Package*, and then enter the package name in the dialog box that appears.
 
-2. Next, create your model class. This is a simple Java bean that contains a
+2. Next, create your model class. This is a simple class that models a
    guestbook entry. Right-click on your new package and select *New* &rarr;
    *Class*. Give your class the name `Entry` and click *Finish*.
 
@@ -21,13 +19,46 @@ You now have a Java class for your guestbook entries, and your next task is to
 give it the fields you need to store entries.
 
 1. Create two private String variables: `name` and `message`.
+    
+	private String name;
+    private String message;
 
 2. Right-click on a blank area of the editor and select *Source* &rarr;
    *Generate Getters and Setters*.
 
 3. Next, provide two constructors: one that initializes the class with no
    values for the two fields, and one that takes the two fields as parameters
-   and sets their values. Your completed class should look like this:
+   and sets their values.
+   
+   public Entry() {
+       this.name = null;
+       this.message = null;
+   }
+
+   public Entry(String name, String message) {
+       setName(name);
+       setMessage(message);
+   }
+   
+4. Create methods for getting and setting the Name and Message.
+
+    public String getName() {
+        return name;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+   
+Your completed class will look like this:
 
         package com.liferay.docs.guestbook.model;
 
@@ -80,24 +111,22 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
 1. Open `GuestbookModulePortlet.java` and add the following method below your
    `addEntry` method:
 
-        @Override
-        public void render(RenderRequest renderRequest, RenderResponse renderResponse)
-                throws PortletException, IOException {
-			ThemeDisplay themeDisplay= (ThemeDisplay)renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
-			PortletDisplay portletDisplay= themeDisplay.getPortletDisplay();
-			
-			GuestbookModulePortletInstanceConfiguration gradebookPortletInstanceConfiguration = 
-		    	portletDisplay.getPortletInstanceConfiguration(
-		       	 GuestbookModulePortletInstanceConfiguration.class);
-
-            if (gradebookPortletInstanceConfiguration != null) {
-                List<Entry> entries = parseEntries(guestbookEntries);
-
-                renderRequest.setAttribute("entries", entries);
-            }
-
-            super.render(renderRequest, renderResponse);
-        }
+		@Override
+		         public void render(RenderRequest renderRequest, RenderResponse renderResponse)
+		                 throws PortletException, IOException {
+		 
+		             PortletPreferences prefs = renderRequest.getPreferences();
+		             String[] guestbookEntries = prefs.getValues("guestbook-entries",
+		                     new String[1]);
+		 
+		             if (guestbookEntries != null) {
+		                 List<Entry> entries = parseEntries(guestbookEntries);
+		 
+		                 renderRequest.setAttribute("entries", entries);
+		             }
+		 
+		             super.render(renderRequest, renderResponse);
+		         }
 
     This method retrieves the guestbook entries from the Configuration, 
 	converts it to a `List` of `Entry` objects, and places that

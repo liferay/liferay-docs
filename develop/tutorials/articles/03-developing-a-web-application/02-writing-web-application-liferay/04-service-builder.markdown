@@ -21,12 +21,11 @@ the service does what it does.
 You'll create a Service Builder project and use the `service.xml` file with all 
 of the necessary entities to generate this code.
 
-1. In Eclipse, right-click on your package and select New &rarr; Liferay Module
-    Project.
-2. Name the project Guestbook Service.
-3. Select service-builder for the Project Template Name.
-4. Click Next.
-5. Enter com.liferay.docs.guestbook for the Package Name.
+1. In Eclipse, right-click on your package and select *New* &rarr; *Liferay Module Project*.
+2. Name the project `guestbook`.
+3. Select `service-builder` for the Project Template Name.
+4. Click *Next*.
+5. Enter `com.liferay.docs.guestbook` for the *Package Name*.
 6. Click Finish.
 
 This will create two modules that contain the basic workings and structure of 
@@ -40,8 +39,8 @@ persistence layer: having it gives you the freedom in the future to swap out
 your persistence layer for a different implementation without modifying 
 anything but the calls in the service layer.
 
-1. Open 'service.xml' in your guestbook-service project.
-2. Add the following content to the file:
+1. Open 'service.xml' in your `guestbook-service` project.
+2. Replace the contents of the file with the following:
 
     <service-builder auto-namespace-tables="true"    
 	package-path="com.liferay.docs.guestbook">
@@ -192,11 +191,11 @@ Open `GuestbookLocalServiceImpl` and replace the `addGuestbook` method with this
 		}
 
 The `addGuestbook` method gets the `groupId` and the `userId` from the portal, 
-gets the date from the Java service, and validates the users text entry. It then
-instantiates a `Guestbook` object, adds the necessary fields to the object, 
-creates a new resource in the database, and returns the new `guestbook`
+and gets the date from the Java service It then instantiates a `Guestbook` 
+object, adds the necessary fields to the object, creates a new resource in the 
+database, and returns the new `guestbook`
 
-Now, open EntryLocalServiceImpl and replace the `addEntry` method with this:
+Now, open `EntryLocalServiceImpl` and replace the `addEntry` method with this:
 
 		public Entry addEntry(
 				long userId, long guestbookId, String name, String email,
@@ -239,9 +238,10 @@ Now, open EntryLocalServiceImpl and replace the `addEntry` method with this:
 
 	}
 
-This method performs essentially the same operation as `addGuestbook`: it gets 
-information from the portal, gets information from user input, creates the 
-database entry, and returns the `entry` object.
+The `addEntry` method gets the `groupId` and the `userId` from the portal, 
+gets the date from the Java service, and validates the users text entry. It then
+instantiates an `Entry` object, adds the necessary fields to the object, 
+creates a new resource in the database, and returns the new `entry`.
 
 You've created the implementation methods, but these are not the classes that 
 you access if you want to actually run any of these methods. In order to use 
