@@ -153,7 +153,9 @@ how you translate the user input into the data being stored in the database.
 Using Liferay and Service Builder, the implementations are typically defined in
 '*ServiceImpl' classes in the service module.
 
-Open `GuestbookLocalServiceImpl` and replace the `addGuestbook` method with this:
+1. Right-click on your project and select *Gradle* &rarr; *Refresh Gradle Project* to display all of the generated class.
+
+2. Open `com.liferay.docs.guestbook.service.imply.GuestbookLocalServiceImpl` and this `addGuestbook` method:
 
 		public Guestbook addGuestbook(
 				long userId, String name, ServiceContext serviceContext)
@@ -164,8 +166,6 @@ Open `GuestbookLocalServiceImpl` and replace the `addGuestbook` method with this
 			User user = userLocalService.getUserById(userId);
 
 			Date now = new Date();
-
-			validate(name);
 
 			long guestbookId = counterLocalService.increment();
 
@@ -189,13 +189,16 @@ Open `GuestbookLocalServiceImpl` and replace the `addGuestbook` method with this
 
 			return guestbook;
 		}
+3. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
+    `com.liferay.portal.kernel.service.ServiceContext` when prompted.
 
 The `addGuestbook` method gets the `groupId` and the `userId` from the portal, 
 and gets the date from the Java service It then instantiates a `Guestbook` 
 object, adds the necessary fields to the object, creates a new resource in the 
 database, and returns the new `guestbook`
 
-Now, open `EntryLocalServiceImpl` and replace the `addEntry` method with this:
+1. Now, open `EntryLocalServiceImpl` from the same package add the `addEntry` 
+    method:
 
 		public Entry addEntry(
 				long userId, long guestbookId, String name, String email,
@@ -207,8 +210,6 @@ Now, open `EntryLocalServiceImpl` and replace the `addEntry` method with this:
 			User user = userLocalService.getUserById(userId);
 
 			Date now = new Date();
-
-			validate(name, email, message);
 
 			long entryId = counterLocalService.increment();
 
@@ -237,20 +238,110 @@ Now, open `EntryLocalServiceImpl` and replace the `addEntry` method with this:
 		}
 
 	}
+	
+2. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
+    `com.liferay.portal.kernel.service.ServiceContext` and
+	`com.liferay.docs.guestbook.model.Entry` when prompted.
 
 The `addEntry` method gets the `groupId` and the `userId` from the portal, 
 gets the date from the Java service, and validates the users text entry. It then
 instantiates an `Entry` object, adds the necessary fields to the object, 
 creates a new resource in the database, and returns the new `entry`.
 
+This is the local service implementation, which is what you'll use, but we
+also need to create a base implementation in the GuestbookServiceImpl and
+EntryServiceImpl which both the local and remote implementations would run
+through. This is also necessary to generate the correct method signatures with
+Service Builder.
+
+1. Open `GuestbookServiceImpl`.
+2. Add the following method stubs:
+
+	public Guestbook addGuestbook(
+				long userId, String name, ServiceContext serviceContext)
+			throws PortalException {
+
+			return GuestbookLocalServiceUtil.addGuestbook(
+				userId, name, serviceContext);
+		}
+	
+		public List<Guestbook> getGuestbooks(long groupId) {
+			return guestbookPersistence.findByGroupId(groupId);
+		}
+
+		public List<Guestbook> getGuestbooks(long groupId, int start, int end) {
+			return guestbookPersistence.findByGroupId(groupId, start, end);
+		}
+
+		public int getGuestbooksCount(long groupId) {
+			return guestbookPersistence.countByGroupId(groupId);
+		}
+
+3. Organize imports. You'll want these:
+
+	import java.util.List;
+
+	import com.liferay.docs.guestbook.model.Guestbook;
+	import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
+	import com.liferay.docs.guestbook.service.base.GuestbookServiceBaseImpl;
+	import com.liferay.portal.kernel.exception.PortalException;
+	import com.liferay.portal.kernel.service.ServiceContext;
+	
+4. Open `EntryServiceImpl`.
+5. Add the `addEntry` method stubs:
+
+	public Entry addEntry(
+				long userId, long guestbookId, String name, String email,
+				String message, ServiceContext serviceContext)
+			throws PortalException {
+
+			return EntryLocalServiceUtil.addEntry(
+				userId, guestbookId, name, email, message, serviceContext);
+		}
+
+6. Organize Imports. This time you want these:
+    
+	import com.liferay.docs.guestbook.model.Entry;
+	import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
+	import com.liferay.docs.guestbook.service.base.EntryServiceBaseImpl;
+	import com.liferay.portal.kernel.exception.PortalException;
+	import com.liferay.portal.kernel.service.ServiceContext;
+
+	import aQute.bnd.annotation.ProviderType;
+    
+
 You've created the implementation methods, but these are not the classes that 
 you access if you want to actually run any of these methods. In order to use 
-these methods, you would actually call them through the service class, and in 
-order for the service class to know about these methods, you need to run 
+these methods, you would actually call them through the service class, and the
+correct service methods are generated by Service Builder when you run 
 `buildService` again.
 
 1. Run `buildService`
-2. Your services will now be aware of the implementation that you created.
+2. Your services methods will now be generated.
+
+Now you just need to make sure that the service module is making the right 
+packages available for other modules to use.
+
+1. Open the `bnd.bnd` file for the `guestbook-service` module.
+2. Add the following `Export` statement:
+	Export-Package:\
+		com.liferay.docs.guestbook.model.impl,\
+		com.liferay.docs.guestbook.service.permission,\
+		com.liferay.docs.guestbook.util
+3. Run *Gradle* &rarr; *Refresh Gradle Projects* again.
+
++$$$
+
+**Tip:** When working with Service Builder, if something isn't behaving as
+expected, before you get too far into troubleshooting:
+
+1. Run 'buildService' in your service module.
+2. Run *Gradle* &rarr; *Refresh Gradle Projects*
+
+If you've made any change to your services or any change that needs to be picked
+up by Service Builder or Gradle's dependency management, that will catch it.
+
+$$$
 
 ## Integrating generated code with the rest of the app
 
@@ -259,13 +350,22 @@ little bit on one end, then went to the other end and another section of the
 wall, but you haven't made them meet in the middle yet (that's a very big 
 problem for a wall). Now it's time to meet in the middle.
 
-You need to make your web modules aware of your service modules so that 
-you can access the services from your web module. Then you need to update your `addEntry` method to use the
+First you need to do a little housekeeping. You manually created your own model 
+earlier now that you have a generated model being managed by Service Builder, 
+you need to remove the old one to prevent any conflicts:
+
+1. Find the 'com.liferay.docs.guestbook.model' package in the `guestbook` 
+    module.
+2. Delete it - this will cause some exceptions now, but they'll all be fixed 
+    soon.
+
+Now you need to make your web modules aware of your service modules so that 
+you can access the services from your web module. Then you need to update your `addEntry` method to use the new services.
 
 1. Add this code to the `build.gradle` file for your guestbook-module project.
 
-    compileOnly project("guestbook:guestbook-api")
-	compileOnly project("guestbook:guestbook-service")
+    compileOnly project("modules:guestbook:guestbook-api")
+	compileOnly project("modules:guestbook:guestbook-service")
 
 
 2. Replace all of the methods in GuestbookPortlet with their new versions using
@@ -374,6 +474,18 @@ methods provided by those services (whose implementations you created earlier)
 to connect the user action of creating a new Entry with the backend. In this way
 the portlet class does not have to be at all concerned with how the service is
 implemented.
+
+## Deploying the application
+
+Now that you created your services, and set them all up, you'll need to deploy
+your `guestbook-service` and `guestbook-api` modules to get your complete 
+integrated application working.
+
+1. Drag and drop the `guestbook-api` module onto the server.
+2. Drag and drop the `guestbook-service` module onto the server.
+3. Wait for the everything to finish deploying.
+4. Head over to your Liferay instance at `localhost:8080` in your browser to
+    test your updated application.
 
 # Wrapping up the application
 
