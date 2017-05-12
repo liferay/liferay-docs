@@ -1,4 +1,4 @@
-# Writing an Android App for Your Portal [](id=writing-an-android-app-for-your-portal)
+# Writing an Android App with Liferay Screens [](id=writing-an-android-app-for-your-portal)
 
 Users expect to access portal content from their mobile devices. As an intrepid
 developer, you naturally want to turn these expectations into reality. 
