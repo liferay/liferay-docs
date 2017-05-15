@@ -45,7 +45,7 @@ as using the `MVCActionCommand` class, you must set the `service` property to
     }
 
 For example, this is the `@Component` annotation for the Blogs app's 
-[`EditEntryMVCActionCommand` class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/portlet/action/EditEntryMVCActionCommand.java):
+[`EditEntryMVCActionCommand` class](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/portlet/action/EditEntryMVCActionCommand.java):
 
     @Component(
         immediate = true,

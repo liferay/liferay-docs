@@ -25,7 +25,7 @@ Also, it's a good idea to name your `*MVCResourceCommand` class after the
 resource it handles, and suffix it with `MVCResourceCommand`. For example, the
 resource command class matching the preceding CAPTCHA resource URL in the Login
 Portlet is
-[`CaptchaMVCResourceCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/internal/portlet/action/CaptchaMVCResourceCommand.java).
+[`CaptchaMVCResourceCommand`](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/internal/portlet/action/CaptchaMVCResourceCommand.java).
 In an application with several MVC
 command classes, this will help differentiate them.
 
