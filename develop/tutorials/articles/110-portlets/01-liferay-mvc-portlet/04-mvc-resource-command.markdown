@@ -25,7 +25,7 @@ Also, it's a good idea to name your `*MVCResourceCommand` class after the
 resource it handles, and suffix it with `MVCResourceCommand`. For example, the
 resource command class matching the preceding CAPTCHA resource URL in the Login
 Portlet is
-[`CaptchaMVCResourceCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/internal/portlet/action/CaptchaMVCResourceCommand.javas).
+[`CaptchaMVCResourceCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/internal/portlet/action/CaptchaMVCResourceCommand.java).
 In an application with several MVC
 command classes, this will help differentiate them.
 
@@ -91,15 +91,16 @@ Also  note that the `mvc.command.name` property setting `/login/captcha` matches
 the  `resourceURL`'s `id` setting shown earlier in this tutorial, and that the
 `service` property is set to `MVCResourceCommand.class`. 
 
-The `CaptchaMVCResourceCommand` class implements the `MVCResourceCommand` 
-interface with only a single method: `serveResource`. This method processes the 
-resource request and response via the `ResourceRequest` and `ResourceResponse` 
-parameters, respectively. Note that the `try` block uses the helper class 
+The `CaptchaMVCResourceCommand` class implements the `MVCResourceCommand`
+interface with only a single method: `serveResource`. This method processes the
+resource request and response via the `javax.portlet.ResourceRequest` and
+`javax.portlet.ResourceResponse`  parameters, respectively. Note that the `try`
+block uses the helper class 
 [`CaptchaUtil`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/captcha/CaptchaUtil.html)
 to serve the CAPTCHA image. Though you don't have to create such a  helper
 class, doing so often simplifies your code. 
 
-Great! Now you know how to use `MVCResourceCommand` to process resources in your 
+Great! Now you know how to use `MVCResourceCommand` to process resources in your
 Liferay MVC portlets. 
 
 ## Related Topics [](id=related-topics)

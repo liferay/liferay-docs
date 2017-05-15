@@ -15,10 +15,10 @@ To use MVC render commands, you need these things:
 ## Implementing MVCRenderCommand [](id=implementing-mvcrendercommand)
 
 What is it you want to do when a portlet render URL is invoked? Using the
-`MVCRenderCommandName`, direct the request to an `MVCRenderCommand`
+`mvcRenderCommandName` parameter, direct the request to an `MVCRenderCommand`
 implementation. Now override the `render` method.
 
-Some `MVCRenderCommands` will simply render a particular JSP. Here's what
+Some `MVCRenderCommand`s will simply render a particular JSP. Here's what
 [`BlogsViewMVCRenderCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/portlet/action/BlogsViewMVCRenderCommand.java)
 looks like:
 

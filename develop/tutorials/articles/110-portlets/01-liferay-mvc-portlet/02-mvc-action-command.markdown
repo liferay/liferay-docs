@@ -67,10 +67,11 @@ component works with multiple portlets.
 In your `*MVCActionCommand` class, process the action by overriding the 
 `BaseMVCActionCommand` class's 
 [`doProcessAction` method](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html#doProcessAction(javax.portlet.ActionRequest,%20javax.portlet.ActionResponse)). 
-This method takes `ActionRequest` and `ActionResponse` parameters that you can 
-use to process your action. Your `*MVCActionCommand` class should also contain 
-any other code required to implement your action. For a real-world example of a 
-`*MVCActionCommand` class, see the Blogs app's `EditEntryMVCActionCommand` 
+This method takes `javax.portlet.ActionRequest` and
+`javax.portlet.ActionResponse` parameters that you can  use to process your
+action. Your `*MVCActionCommand` class should also contain  any other code
+required to implement your action. For a real-world example of a
+`*MVCActionCommand` class, see the Blogs app's `EditEntryMVCActionCommand`
 class. 
 
 ## Related Topics [](id=related-topics)
