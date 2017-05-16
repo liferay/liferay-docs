@@ -255,7 +255,7 @@ top Control Menu. The changes are published to your remote staged site.
 
 $$$
 
-### Checkpoint 
+### Checkpoint [](id=checkpoint)
 
 Before publishing *any* content, verify that **all** the necessary steps above
 have been completed. Otherwise, Remote Staging will fail.
