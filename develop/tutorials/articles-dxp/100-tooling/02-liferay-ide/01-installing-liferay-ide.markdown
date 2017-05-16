@@ -58,10 +58,8 @@ Congratulations! You've installed Liferay @ide@! It's now available in the
 folder you specified. A Liferay Workspace has also been initialized in that same
 folder. For more information on the Liferay Workspace installation related to
 this installation process, see the
-[Using @ide@'s Liferay Workspace Installer](link)
+[Using @ide@'s Liferay Workspace Installer](/develop/tutorials/-/knowledge_base/7-0/using-developer-studios-liferay-workspace-installer)
 section.
-
-<!-- TODO: Update link above when available. -Cody -->
 
 ## Install Liferay @ide@ into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
 

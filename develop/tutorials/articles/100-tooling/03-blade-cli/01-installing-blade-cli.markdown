@@ -23,10 +23,10 @@ If you need to configure proxy settings for Blade CLI, follow the
 
 Follow the steps below to download and install Blade CLI:
 
-1.  Download the [installer](link) that corresponds with your operating system
-    (e.g., Windows, MacOS, or Linux).
-
-    <!-- TODO: Update link above for installer. -Cody -->
+1.  Download the
+    [Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace)
+    that corresponds with your operating system (e.g., Windows, MacOS, or
+    Linux).
 
 2.  Run the installer. Click *Next* to step through the installer's
     introduction.
