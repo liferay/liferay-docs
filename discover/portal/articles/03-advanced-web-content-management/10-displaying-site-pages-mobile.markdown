@@ -23,6 +23,19 @@ learn every detail about a device from the device type, which is included in
 each request sent to the portal. Liferay's Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
+Liferay provides such a database in the Liferay Mobile Device Detection (LMDD) 
+app from the Liferay Marketplace. 
+[Click here](/discover/portal/-/knowledge_base/6-1/leveraging-the-liferay-marketplace) 
+for instructions on using Liferay Marketplace to find and install apps. 
+
++$$$
+
+**Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay 
+Portal 6.1. Although you can use other device detection databases, doing so 
+requires you to manually integrate the database with Liferay APIs. 
+
+$$$
+
 It's possible to develop plugins that integrate with other device databases.
 Even if you don't have a device database, you can still set up mobile device
 rules. They won't, however, be effective until a database is deployed, because
