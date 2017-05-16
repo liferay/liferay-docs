@@ -4,10 +4,33 @@ In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
 @ide@, which runs on the
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) behind the
 scenes. Liferay @ide@ gives you a graphical interface instead of the command
-prompt, which can streamline your workflow. The instructions covered in this
-tutorial apply to both the commercial and open source versions of Liferay. To
-learn more about Liferay Workspaces, visit its dedicated [tutorial
-section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+prompt, which can streamline your workflow. To learn more about Liferay
+Workspaces, visit its dedicated
+[tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+
+There are two ways to create a Liferay Workspace with Liferay @ide@. You can use
+the default installer, which is provided during the first start-up of your @ide@
+instance, or you can create one manually.
+
+## Using @ide@'s Liferay Workspace Installer
+
+This option is only available on the initial start-up of your @ide@ instance.
+See the [@ide@ installation guide](/develop/tutorials/-/knowledge_base/7-0/install-the-liferay-developer-studio-bundle)
+for details on how to download and initiate the @ide@ installation process if
+you have not already done so.
+
+Once your Liferay Workspace is installed in your @ide@ folder, your liferay.com
+username and password are stored in your `~/.gradle/gradle.properties` file.
+Therefore, anytime you decide to redownload a @product@ bundle in your Liferay
+Workspace, you won't be required to provide your credentials again.
+
+Furthermore, the @product@ bundle that was downloaded in your workspace is also
+copied to your `~/.liferay/bundles` folder, so when the `initBundle` task is
+executed, the bundle is not redownloaded. See the
+[Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
+for more information on this topic.
+
+## Creating a Liferay Workspace Manually
 
 Before creating your Liferay Workspace, you should understand the available @ide@
 perspectives specifically designed for Liferay development. You'll notice in the
@@ -58,6 +81,8 @@ information on working sets, visit
 A dialog appears prompting you to open the Liferay Workspace perspective.
 Click *Yes*, and your perspective will switch to Liferay Workspace.
 
+## Liferay Workspace Settings in @ide@
+
 The Liferay Workspace perspective is intended for Gradle development for
 @product-ver@ modules. Since Liferay Workspaces are used for Gradle based
 development and the Liferay Plugins perspective is intended for the Plugins SDK
@@ -82,11 +107,13 @@ separately from the workspace.
 ![Figure 5: The Hierarchical project presentation mode is set, by default.](../../../images/workspace-presentation.png)
 
 If you've already created a Liferay Workspace and you'd like to import it into
-your existing @ide@, you can do so by navigating to *File* &rarr; *Import* &rarr;
-*Liferay* &rarr; *Liferay Workspace Project*. Then click *Next* and browse for
-your worspace project. Once you've selected you workspace, click *Finish*.
+your existing @ide@, you can do so by navigating to *File* &rarr; *Import*
+&rarr; *Liferay* &rarr; *Liferay Workspace Project*. Then click *Next* and
+browse for your workspace project. Once you've selected you workspace, click
+*Finish*.
 
 ![Figure 6: You can import an existing Liferay Workspace into your current @ide@ session.](../../../images/liferay-workspace-import.png)
 
-Congratulations! You've learned how to create a Liferay Workspace using Liferay
-@ide@. Now that your workspace is created, you can begin creating Liferay plugins.
+Congratulations! You've learned how to create and configure a Liferay Workspace
+using Liferay @ide@. Now that your workspace is created, you can begin creating
+Liferay plugins.

@@ -8,6 +8,11 @@ tutorial, you'll learn the different methods available for installing Liferay
 [Compatibility Matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/developer-tools)
 to get acquainted with its supported Liferay versions and application servers.
 
+**Important:** If you're upgrading your Liferay @ide@ instance to version 3.1,
+you must install a new @ide@ bundle. You cannot use the Update Site for this
+upgrade. Your Liferay Workspace instance and its contents are backwards
+compatible and can be copied to the new 3.1 version.
+
 ## Install the Liferay @ide@ Bundle [](id=install-the-liferay-developer-studio-bundle)
 
 1.  Download and install [Java](http://java.oracle.com). @product@ runs on Java,
@@ -18,13 +23,45 @@ to get acquainted with its supported Liferay versions and application servers.
     [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     page. 
 
-2.  Download
-    [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools).
-    Installing it is easy: unzip it to a convenient location on your system. 
+2.  Download the
+    [Liferay @ide@ installer](https://web.liferay.com/group/customer/dxp/downloads/developer-tools).
+    Be sure to choose the installer appropriate for your operating system (e.g.,
+    Windows, MacOS, Linux).
 
-3.  To run @ide@, execute the `DeveloperStudioShortcut` executable.
+3.  Run the installer. You may need to provide access for the installer to run,
+    depending on your operating system.
 
-Congratulations! You've installed Liferay @ide@! 
+4.  Click *Next* to begin the installation process. Then select the installation
+    folder for your Liferay @ide@ instance. Then click *Next*.
+
+    ![Figure 1: Choose the folder your @ide@ instance should reside.](../../../images-dxp/dev-studio-install.png)
+
+5.  Liferay @ide@ provides
+    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+    by default, which is a developer environment used to build and manage
+    @product@ projects. The installer automatically installs Liferay Workspace
+    and its dedicated command line tool
+    ([Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)).
+
+    You'll need to choose the Liferay bundle you plan to use in your Liferay
+    Workspace: *Liferay DXP Bundle* or *Community Edition Bundle*. Then choose
+    *Next*.
+
+    ![Figure 2: Choose the Liferay bundle you plan to use.](../../../images-dxp/dev-studio-bundle-selection.png)
+
+    If you selected *Liferay DXP Bundle*, you're also required to
+    provide your liferay.com email and password.
+
+6.  Click *Next* to finish the installation process for your @ide@ instance.
+
+Congratulations! You've installed Liferay @ide@! It's now available in the
+folder you specified. A Liferay Workspace has also been initialized in that same
+folder. For more information on the Liferay Workspace installation related to
+this installation process, see the
+[Using @ide@'s Liferay Workspace Installer](link)
+section.
+
+<!-- TODO: Update link above when available. -Cody -->
 
 ## Install Liferay @ide@ into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
 
