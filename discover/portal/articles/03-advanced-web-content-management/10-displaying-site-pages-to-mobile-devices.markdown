@@ -7,17 +7,13 @@ so it's important to be able to handle different kinds of devices appropriately.
 For instance, you can configure the look and feel of Liferay pages accessed by
 smartphone or tablet users differently from those accessed by PC users.
 
-Both sites and individual pages can be configured with any number of mobile
-device families. A family is designed to describe a group of devices. It can
-contain one or more rules that describe a category of devices, such as all
-Android devices or all iOS tablets. You can define as many rules in a family as
-you need to classify all the devices for which you'd like to define actions.
-Families can be prioritized to determine which one applies to a given page
-request.
-
-<!-- According to Mike Han, Liferay is planned to have a new contract with a
-Device Database within three months. Update the material in this section when
-this is available. -Cody 5-26-16 -->
+Both sites and individual pages can be configured with any number of mobile 
+device families. A family is designed to describe a group of devices. It can 
+contain one or more rules that describe a category of devices, such as all 
+Android devices or all iOS tablets. You can define as many rules in a family as 
+you need to classify all the devices for which you'd like to define actions. 
+Families can be prioritized to determine which one applies to a given page 
+request. 
 
 In order to configure mobile device rules, you need a way to find out the
 characteristics of the device. While some of the characteristics are provided by
@@ -27,13 +23,26 @@ learn every detail about a device from the device type, which is included in
 each request sent to the portal. Liferay's Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
-It's possible to develop plugins that integrate with other device databases.
+Liferay provides such a database in the Liferay Mobile Device Detection (LMDD) 
+app from the Liferay Marketplace. 
+[Click here](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace) 
+for instructions on using Liferay Marketplace to find and install apps. 
+
++$$$
+
+**Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay 
+Portal 6.2. Although you can use other device detection databases, doing so 
+requires you to manually integrate the database with Liferay APIs. 
+
+$$$
+
+It's possible to develop plugins that integrate with other device databases. 
 Even if you don't have a device database, you can still set up mobile device
 rules. They won't, however, be effective until a database is deployed, because
 the portal won't have enough information about the devices being used to make
 page requests. To learn how to tap into Liferay's Device API, see the
 [Using the Device Recognition API](/develop/tutorials/-/knowledge_base/6-2/using-the-device-recognition-api)
-tutorial.
+tutorial. 
 
 You can access the Mobile Device Families administrative page from the
 Configuration section of Site Administration. Make sure you're on the
