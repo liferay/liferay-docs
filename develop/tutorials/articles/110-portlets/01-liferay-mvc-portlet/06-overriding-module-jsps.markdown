@@ -106,4 +106,3 @@ Now you can easily modify the JSPs of any application in Liferay.
 
 To see a sample JSP-modifying fragment in action, look at the [BLADE project
 named `blade.hook.jsp`] (https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.hook.jsp).
-

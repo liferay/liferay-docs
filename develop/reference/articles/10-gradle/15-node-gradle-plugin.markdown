@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "2.2.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "2.2.1"
     }
 
     repositories {
@@ -57,9 +57,23 @@ Method | Description
 `NodeExtension npmArgs(Iterable<?> npmArgs)` | Adds arguments to automatically add to every task of type [`ExecuteNpmTask`](#executenpmtask).
 `NodeExtension npmArgs(Object... npmArgs)` | Adds arguments to automatically add to every task of type [`ExecuteNpmTask`](#executenpmtask).
 
-The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
+The properties of type `File` support any type that can be resolved by
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 Moreover, it is possible to use Closures and Callables as values for `String`,
 to defer evaluation until execution.
+
+Please note that setting the `global` property of the `node` extension via the
+command line is not supported. It can only be set via Gradle script, which can
+be done by adding the following code to the `build.gradle` file in the root of
+a project (e.g., Liferay Workspace):
+
+```gradle
+allprojects {
+    plugins.withId("com.liferay.node") {
+        node.global = true
+    }
+}
+```
 
 ## Tasks [](id=tasks)
 
@@ -207,6 +221,9 @@ when your package is installed. Tasks of type `NpmShrinkwrapTask` extend
 
 The generated `npm-shrinkwrap.json` file is automatically sorted and formatted,
 so it's easier to see the changes with the previous version.
+
+`NpmShrinkwrapTask` instances are automatically disabled if the `package.json`
+file does not exist.
 
 #### Task Properties [](id=task-properties-5a)
 

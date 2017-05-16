@@ -28,11 +28,12 @@ your override, since overriding a module's JSPs is [done differently](/develop/t
 
 If it's *really* necessary to modify a core JSP, you need a module that satisfies these criteria: 
 
--  Includes a class that implements `CustomJspBag`.
+-   Includes a class that implements the
+    [`CustomJspBag` interface](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html).
 
--  Registers the service in the OSGi runtime.
+-   Registers the service in the OSGi runtime.
 
--  Provides the JSP you're extending.
+-   Provides the JSP you're extending.
 
 The module provides transportation for this code into Liferay's OSGi runtime.
 When configuring it to build a proper JAR, map the path of the JSPs in the JAR
@@ -59,8 +60,9 @@ this folder of your module:
 ## Implement a Custom JSP Bag [](id=implement-a-custom-jsp-bag)
 
 Create a class that implements `CustomJspBag`. The overall goal is to make sure
-that Liferay (specifically `CustomJspBagRegistryUtil`) loads the JSPs from your
-module upon activation.
+that Liferay (specifically the
+[`CustomJspBagRegistryUtil` class](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBagRegistryUtil.html))
+loads the JSPs from your module upon activation.
 
     public class MyCustomJspBag implements CustomJspBag {
 
@@ -157,4 +159,3 @@ supported at all in Liferay 8.0.
 
 If you're interested in scoping a module's JSP customization to a site, that's
 another story. See the documentation on using Dynamic Include (not yet written).
-

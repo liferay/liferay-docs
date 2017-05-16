@@ -75,7 +75,9 @@ the `javax.portlet.Portlet` service must be published. Declare this using an
     public class LiferayMVCPortlet extends MVCPortlet {
     }
 
-Since Liferay's `MVCPortlet` is itself an extension of `javax.portlet.Portlet`,
+Since Liferay's
+[`MVCPortlet` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
+is itself an extension of `javax.portlet.Portlet`,
 you've provided the right implementation. That's good in itself, but the
 component needs to be fleshed out with some properties:
 

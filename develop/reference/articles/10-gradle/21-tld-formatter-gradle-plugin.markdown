@@ -78,6 +78,6 @@ manually adding a dependency to the `tldFormatter` configuration:
 
 ```gradle
 dependencies {
-    tldFormatter group: "com.liferay", name: "com.liferay.tld.formatter", version: "1.0.2"
+    tldFormatter group: "com.liferay", name: "com.liferay.tld.formatter", version: "1.0.3"
 }
 ```

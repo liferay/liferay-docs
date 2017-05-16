@@ -79,6 +79,6 @@ manually adding a dependency to the `xmlFormatter` configuration:
 
 ```gradle
 dependencies {
-    xmlFormatter group: "com.liferay", name: "com.liferay.xml.formatter", version: "1.0.2"
+    xmlFormatter group: "com.liferay", name: "com.liferay.xml.formatter", version: "1.0.3"
 }
 ```

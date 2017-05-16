@@ -210,6 +210,10 @@ To deploy your theme to your configured Liferay instance, execute this command:
 
     gulp deploy
 
+You can apply your theme by following the instructions found in the 
+[Creating and Managing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
+User Guide. 
+
 +$$$
 
 **Note:** By default theme images are cached by the browser. If you need to 
