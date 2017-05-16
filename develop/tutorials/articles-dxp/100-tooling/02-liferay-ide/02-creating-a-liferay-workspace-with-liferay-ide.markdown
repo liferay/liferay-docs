@@ -12,7 +12,7 @@ There are two ways to create a Liferay Workspace with Liferay @ide@. You can use
 the default installer, which is provided during the first start-up of your @ide@
 instance, or you can create one manually.
 
-## Using @ide@'s Liferay Workspace Installer
+## Using @ide@'s Liferay Workspace Installer [](id=using-ides-liferay-workspace-installer)
 
 This option is only available on the initial start-up of your @ide@ instance.
 See the [@ide@ installation guide](/develop/tutorials/-/knowledge_base/7-0/install-the-liferay-developer-studio-bundle)
@@ -30,7 +30,7 @@ executed, the bundle is not redownloaded. See the
 [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
 for more information on this topic.
 
-## Creating a Liferay Workspace Manually
+## Creating a Liferay Workspace Manually [](id=creating-a-liferay-workspace-manually)
 
 Before creating your Liferay Workspace, you should understand the available @ide@
 perspectives specifically designed for Liferay development. You'll notice in the
@@ -81,7 +81,7 @@ information on working sets, visit
 A dialog appears prompting you to open the Liferay Workspace perspective.
 Click *Yes*, and your perspective will switch to Liferay Workspace.
 
-## Liferay Workspace Settings in @ide@
+## Liferay Workspace Settings in @ide@ [](id=liferay-workspace-settings-in-ide)
 
 The Liferay Workspace perspective is intended for Gradle development for
 @product-ver@ modules. Since Liferay Workspaces are used for Gradle based
