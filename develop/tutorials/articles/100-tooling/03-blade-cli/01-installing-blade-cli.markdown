@@ -34,7 +34,7 @@ Follow the steps below to download and install Blade CLI:
 3.  If you'd like to initialize a Liferay Workspace, you can set the directory
     in which it should reside.
 
-    ![Figure 1: Determine where your Liferay Workspace should reside, if you want one.](../../images/blade-installer-workspace-init.png)
+    ![Figure 1: Determine where your Liferay Workspace should reside, if you want one.](../../../images/blade-installer-workspace-init.png)
 
     Select the *Don't initialize Liferay Workspace directory* option if you only
     want to install Blade CLI. Then click *Next*.
@@ -43,7 +43,7 @@ Follow the steps below to download and install Blade CLI:
     step, you'll have an additional option to select the Liferay product type
     you'll use with your workspace. Choose the product type and click *Next*.
 
-    ![Figure 2: Select the product version you'll use with your Liferay Workspace.](../../images/installer-workspace-type.png)
+    ![Figure 2: Select the product version you'll use with your Liferay Workspace.](../../../images/installer-workspace-type.png)
 
 5.  Click *Next* to begin installing Blade CLI/Liferay Workspace on your
     computer.

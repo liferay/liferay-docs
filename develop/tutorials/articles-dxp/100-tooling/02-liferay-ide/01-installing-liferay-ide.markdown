@@ -55,9 +55,10 @@ compatible and can be copied to the new 3.1 version.
 6.  Click *Next* to finish the installation process for your @ide@ instance.
 
 Congratulations! You've installed Liferay @ide@! It's now available in the
-folder you specified. A Liferay Workspace has also been initialized in that same
-folder. For more information on the Liferay Workspace installation related to
-this installation process, see the
+folder you specified. To run @ide@, execute the `DeveloperStudio` executable. A
+Liferay Workspace has also been initialized in that same folder. For more
+information on the Liferay Workspace installation related to this installation
+process, see the
 [Using @ide@'s Liferay Workspace Installer](/develop/tutorials/-/knowledge_base/7-0/using-developer-studios-liferay-workspace-installer)
 section.
 
