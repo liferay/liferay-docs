@@ -5,15 +5,6 @@ tasks related to the portal server itself, as opposed to the resources in the
 portal. Clicking the link makes this clear: you're immediately presented with a
 graph showing the resources available in the JVM.
 
-+$$$
-
-**Note:** You can use Liferay Connected Services (LCS) to obtain additional 
-performance metrics for your portal servers. See the 
-[LCS documentation](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services) 
-for more information.
-
-$$$
-
 ## Resources [](id=resources)
 
 The first tab is called *Resources* . This tab contains the aforementioned graph

@@ -3,16 +3,7 @@
 Once you have your portal up and running, you may find a need to tune it for
 performance, especially if your site winds up generating more traffic than you'd
 anticipated. There are some definite steps you can take with regard to improving
-Liferay's performance.
-
-+$$$
-
-**Note:** You can use Liferay Connected Services (LCS) to obtain performance 
-metrics for your portal servers. See the 
-[LCS documentation](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services) 
-for more information.
-
-$$$
+Liferay's performance. 
 
 ## Memory [](id=memory)
 
