@@ -9,7 +9,7 @@ tutorial, you'll learn the different methods available for installing Liferay
 to get acquainted with its supported Liferay versions and application servers.
 
 **Important:** If you're upgrading your Liferay @ide@ instance to version 3.1,
-you must install a new @ide@ bundle. You cannot use the Update Site for this
+you must install a new @ide@ bundle. You cannot install an update for this
 upgrade. Your Liferay Workspace instance and its contents are backwards
 compatible and can be copied to the new 3.1 version.
 
@@ -108,3 +108,36 @@ You're now on the latest version of Liferay @ide@!
 
 Now that you've learned how to install and update your Liferay @ide@
 environment, you can begin developing Liferay products.
+
+<!-- The information below should be uncommented when Dev Studio 3.1 is
+available to update from original GA release. Since Dev Studio must be
+reinstalled when upgrading from 3.0 to 3.1, this should not be documented. -Cody
+-->
+
+<!--
+
+Update Liferay @ide@
+
+If you already have @ide@ installed, you can easily update it using an update
+site URL.
+
+1.  Select *Help* &rarr; *Install New Software*. 
+
+2.  In your browser, go to the
+    [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
+    page. Copy the URL to the update site.
+
+    ![Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../../images/liferay-ide-download.png)
+
+3.  Go back to Eclipse and click the *Add* button to add a repository. 
+
+4.  Type *Liferay IDE* into the Name field and paste the URL into the Location 
+    field. 
+
+5.  You'll see the Liferay @ide@ components in the list below. Check them off and
+    click *Next*. 
+
+6.  Accept the terms of the agreements and click *Next*, and Liferay @ide@ is
+    installed. Like other Eclipse plugins you'll have to restart Eclipse to
+    enable it.
+-->
