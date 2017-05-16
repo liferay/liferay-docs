@@ -83,10 +83,10 @@ and modified using a `portal-ext.properties` file. Those settings must now be
 made via System Settings.
 
 If you need to change any of these options, navigate to *Control Panel* &rarr;
-*Configuration* &rarr; *System Settings*. Go to the Foundation section and
+*Configuration* &rarr; *System Settings*. Go to the *Foundation* section and
 find the entries with LDAP in the title.
 
-- In the LDAP Auth entry, you can set the authentication method and the password
+- On the *LDAP Auth* page, you can set the authentication method and the password
 encryption algorithm. The Bind authentication method is preferred by
 most vendors so you don't have to worry about encryption strategies. Password
 compare does exactly what it sounds like: it reads the user's password out of
@@ -94,24 +94,35 @@ LDAP, decrypts it and compares it with the user's password in @product@, syncing
 the two. If you use password compare, you can also choose the encryption
 algorithm to use for the comparison.
 
-- Use the LDAP Import entry in System Settings to configure import
+- On the *LDAP Import* page, you can configure import
 settings from LDAP. One example is the import methods. If you set this to User,
 @product@ imports all users from the specified portion of the LDAP tree. If you
 set this to Group, @product@ searches all the groups and imports the users in each
 group. If you have users who do not belong to any groups, they are not imported.
+ 
+- Use the *System LDAP Configuration* entry to manage error properties
+like *Error password age keywords* which lets you set a list of phrases from
+error messages which can possibly be returned by the LDAP server. When a user
+binds to LDAP, the server returns *controls* with its response of success or
+failure. These controls contain a message describing the error or the
+information that is returned with the response. Though the controls are the same
+across LDAP servers, the messages can be different. The properties described
+here contain snippets of words from those messages and work with Red Hat's
+Fedora Directory Server. If you are not using that server, the word snippets may
+not work with your LDAP server. If they don't, you can replace the values of
+these properties with phrases from your server's error messages. This enables
+@product@ to recognize them.
 
-- Error properties like *Error password age keywords* in the System LDAP
-Configuration entry of System Settings let you set a list of phrases from error
-messages which can possibly be returned by the LDAP server. When a user binds to
-LDAP, the server returns *controls* with its response of success or failure.
-These controls contain a message describing the error or the information that is
-returned with the response. Though the controls are the same across LDAP
-servers, the messages can be different. The properties described here contain
-snippets of words from those messages and work with Red Hat's Fedora
-Directory Server. If you are not using that server, the word snippets may not
-work with your LDAP server. If they don't, you can replace the values of these
-properties with phrases from your server's error messages. This enables
-@product@ to recognize them. 
++$$$ 
+
+**Note**: Configurations made in the System Settings will control all
+virtual instances up to a certain point. If Virtual Instance A was created
+before a change (e.g. modifying *Error password history keywords*) was made in
+the System Settings, Virtual Instance A will not inherit those changes.
+Therefore, if Virtual Instance B was created after those changes, then Virtual
+Instance B (but not A) will have the updated *Error password history keywords*.
+
+$$$
 
 In summary, if there's a configuration you need to set up @product@ with LDAP, and
 you don't find it in Instance Settings, look in the LDAP System Settings
@@ -310,7 +321,18 @@ Once you set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-Now you know how to an LDAP server connection to @product@ and how to
++$$$
+
+**Note:** You may wonder what happens if a user changes a value like a password in
+@product@, how would that change be updated in the LDAP server?
+
+@product out of the box will be able to update changes made in the Control Panel
+@into the LDAP server. However, it is possible to develop a custom module that
+@will pass the information in.
+
+$$$
+
+Now you know how to connect an LDAP server to @product@ and how to
 configure user import behavior, export behavior, and other LDAP settings.
 
 <!--
