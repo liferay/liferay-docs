@@ -4,8 +4,7 @@ Once your LCS client is connected to LCS, you can get down to the business that
 LCS was designed for--managing and monitoring your Liferay instance. If you're 
 not already there, log in with your account on 
 [lcs.liferay.com](https://lcs.liferay.com). This is where you'll apply updates, 
-view server metrics, manage environments, invite external users to your project, 
-and more. 
+view server metrics, manage environments, and more. 
 
 This article's following sections each detail one or more of the features 
 available in LCS: 
@@ -154,7 +153,6 @@ Access LCS | true | true | true |
 Access Any Environment | true | false | false |
 Access a Particular Environment | true | true | true |
 Manage Users | true | false | false |
-Invite Users to LCS | true | false | false |
 Create and Delete Environments | true | false | false |
 Edit Any Environment | true | false | false |
 Edit a Particular Environment | true | true | false |
@@ -169,30 +167,15 @@ you're ready to learn how to manage the users in LCS projects.
 ### Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
 The Users section of LCS is where you manage the LCS users that are part of your 
-project. It's here that you can grant or revoke LCS roles or invite others that 
-aren't yet part of your project. To manage users, first click the *Users* tab 
-just below the Dashboard tab on the upper-left of your screen. You're presented 
-with a table of the users in your project. To the right of each is the Manage 
-button. Clicking *Manage* lets you assign or revoke LCS roles for that user. 
+project. It's here that you can grant or revoke LCS roles. To manage users, 
+first click the *Users* tab just below the Dashboard tab on the upper-left of 
+your screen. You're presented with a table of the users in your project. To the 
+right of each is the Manage button. Clicking *Manage* lets you assign or revoke 
+LCS roles for that user. Note that you can't add users to your project via the 
+LCS UI or the LCS client app. To add users to your project, you must contact 
+Liferay support. 
 
 ![Figure 4.11: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
-
-To invite external users to your project, click the *Invite* button. Here you
-can invite anyone with a valid email address. You can also search for
-Liferay.com users to invite. Once you choose some users, the *Role* selection
-box lets you preassign LCS roles for when they accept your invitation. You can
-also use the Environment selection box to preassign them to an environment in
-your project.
-
-![Figure 4.12: You can invite users to your LCS project and even preassign them roles.](../../images/lcs-invite-users.png)
-
-To view sent invitations, click the *Invitations* tab. A table displays
-invitations, listing invited users' email addresses along with who invited them
-and the date that the invitation was sent. The table also shows the preassigned
-LCS role and environment. You can cancel an invitation by clicking *Cancel* in 
-the Action column of the invitation. 
-
-![Figure 4.13: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
 Great! Now you know how to manage your LCS projects and the users in them. Now 
 it's time to get to the heart of LCS: the Dashboard.
@@ -244,7 +227,7 @@ to a clustered environment.
 
 ![Figure 4.15: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../images/lcs-new-clustered-environment.png)
 
-Next, you'll learn how to use the environment view. 
+Next, you'll learn to use the environment view. 
 
 ### Using the Environment View [](id=using-the-environment-view)
 
@@ -316,7 +299,8 @@ the selected time period up or down, respectively, by one period. For example,
 if you select *One Hour* in the *Period* field, then pressing the right arrow 
 next to *Ending At* moves the selected time period up by one hour. Note that at 
 the beginning of the current time period, it can take up to 15 minutes for data 
-to become available. 
+to become available. Also note that data is available for three months from the 
+time LCS collected it. 
 
 By default, load times and page views for all pages are plotted against time in 
 separate graphs. Below these graphs, a table displays summary statistics of 
@@ -363,6 +347,10 @@ Similarly, horizontal bar graphs are used to represent the JDBC connection
 pools. 
 
 ![Figure 4.20: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
+
+Note that in Snapshot Metrics, the application and garbage collector metrics are 
+based on data collected by LCS from server registration to the present. Memory 
+and server metrics, however, show only the current state. 
 
 To view your server's fix packs, click the Fix Packs tab near the top of the 
 page. The fix packs here are shown in separate tables for those available for 
@@ -687,8 +675,6 @@ you apply fix packs with just a single click and a server restart--a process
 that even works across a cluster. You also get a one stop shop for monitoring 
 the performance of your Liferay servers. Metrics like JVM performance, Liferay 
 page and portlet load times, and number of current threads give you an inside 
-look at how your server is running. What's more is that you can do all this 
-collaboratively by inviting others to your project and giving them specific 
-roles in LCS. 
+look at how your server is running. 
 
 Next, you'll learn about Liferay clustering. 
