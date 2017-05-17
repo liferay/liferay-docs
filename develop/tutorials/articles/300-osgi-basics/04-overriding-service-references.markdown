@@ -1,4 +1,4 @@
-# Overriding Service References [](id=overriding-service-references)
+# Overriding Reluctant Service References [](id=overriding-service-references)
 
 When there's an existing service that you want to customize or implement
 differently, you can override the existing one. To do this, you create and
