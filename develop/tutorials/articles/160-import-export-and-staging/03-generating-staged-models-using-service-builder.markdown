@@ -93,7 +93,7 @@ staged model type.
 
     Your model is now a staged grouped model! The `groupId` column is also
     required to extend the `StagedGroupedModel` interface, but it was already
-    defined in the original `service.xml`.
+    defined in the original `service.xml` file.
         
 Fantastic! You've witnessed firsthand how easy it is to generate staged models
 using Service Builder.
