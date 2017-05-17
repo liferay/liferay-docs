@@ -1,4 +1,4 @@
-# Understanding Staged Models
+# Understanding Staged Models [](id=understanding-staged-models)
 
 To track an entity of an application with the Staging framework, you must
 implement the
@@ -39,7 +39,7 @@ You'll learn more about this later.
 
 You'll explore the provided staged model interfaces next.
 
-## Staged Model Interfaces
+## Staged Model Interfaces [](id=staged-model-interfaces)
 
 The `StagedModel` interface must be implemented by your app's model classes, but
 this is typically done through inheritance by implementing one of the
@@ -80,7 +80,7 @@ bookmark entries are group models.
 Now that you have a better understanding about staged model interfaces, you'll
 dive into the attributes used in Staging and why they're important.
 
-## Important Attributes in Staging
+## Important Attributes in Staging [](id=important-attributes-in-staging)
 
 If you'd like to generate your staged models using
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder), you
@@ -120,7 +120,7 @@ If you want a staged grouped model, also include the `groupId` and
 
 Next, you'll learn how to build staged models from scratch.
 
-## Adapting Your Business Logic to Build Staged Models
+## Adapting Your Business Logic to Build Staged Models [](id=adapting-your-business-logic-to-build-staged-models)
 
 What if you don't want to extend your model with special attributes that may not
 be needed in your business logic? In this case, you should adapt your business
