@@ -19,7 +19,7 @@ only contains some sample content:
     <%@ include file="/init.jsp" %>
 
     <p>
-        <b><liferay-ui:message key="com_liferay_docs_guestbook_GuestbookModulePortlet.caption"/></b>
+        <b><liferay-ui:message key="com_liferay_docs_guestbook_GuestbookMVCPortlet.caption"/></b>
     </p>
 
 First of all, `view.jsp` imports `init.jsp`. By convention, all JSP imports and 
@@ -114,7 +114,7 @@ a variable named `addEntryURL`. The `<portlet:param>` tag defines a URL
 parameter which is appended to the generated URL. In this example, a URL
 parameter named `mvcPath` with a value of `/edit_entry` is appended to the URL.
 
-Notice that your `GuestbookModulePortlet` class extends `MVCPortlet`, which is
+Notice that your `GuestbookMVCPortlet` class extends `MVCPortlet`, which is
 Liferay's MVC portlet class. In a Liferay MVC portlet, the `mvcPath` URL
 parameter is used to indicate a page within your portlet application. To
 navigate to another page in your portlet application, use a portal URL with the
@@ -234,7 +234,7 @@ URL, and you called it `addEntry`. To create a portlet action, you create a
 method in the portlet class with the same name. `MVCPortlet` calls that method
 when a user triggers its matching URL.
 
-1. Open the `GuestbookPortlet.java`. The project templates generated this class 
+1. Open the `GuestbookMVCPortlet.java`. The project templates generated this class 
 	when you created the portlet project.
 
 2. Create a method with the following signature:

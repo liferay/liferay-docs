@@ -39,93 +39,82 @@ persistence layer: having it gives you the freedom in the future to swap out
 your persistence layer for a different implementation without modifying 
 anything but the calls in the service layer.
 
+In order to properly model the Guestbook and Entries going forward, you're going
+to need to introduce some new concepts into the application. Rather than simply
+create entries in place, you will create a guestbook object which will contain 
+the entries. You'll need to also create the various methods associated with
+guestbook management. In addition, you'll add a field for users to enter an
+email address in the guestbook.
+
 1. Open 'service.xml' in your `guestbook-service` project.
 2. Replace the contents of the file with the following:
 
-    <service-builder auto-namespace-tables="true"    
-	package-path="com.liferay.docs.guestbook">
-	<author>liferay</author>
-	<namespace>GB</namespace>
-	<entity local-service="true" name="Entry" remote-service="true" uuid="true">
+	<?xml version="1.0"?>
+	<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
 
-		<!-- PK fields -->
+	    <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
+		<author>liferay</author>
+		<namespace>GB</namespace>
+		<entity local-service="true" name="Entry" remote-service="true" uuid="true">
 
-		<column name="entryId" primary="true" type="long" />
+			<!-- PK fields -->
 
-		<!-- Group instance -->
+			<column name="entryId" primary="true" type="long" />
 
-		<column name="groupId" type="long" />
+			<!-- Group instance -->
 
-		<!-- Audit fields -->
+			<column name="groupId" type="long" />
 
-		<column name="companyId" type="long" />
-		<column name="userId" type="long" />
-		<column name="userName" type="String" />
-		<column name="createDate" type="Date" />
-		<column name="modifiedDate" type="Date" />
-		<column name="name" type="String" />
-		<column name="email" type="String" />
-		<column name="message" type="String" />
-		<column name="guestbookId" type="long" />
+			<!-- Audit fields -->
 
-		<finder name="G_G" return-type="Collection">
-			<finder-column name="groupId" />
-			<finder-column name="guestbookId" />
-		</finder>
-	</entity>
-	<entity local-service="true" name="Guestbook" remote-service="true" 
-	uuid="true">
+			<column name="companyId" type="long" />
+			<column name="userId" type="long" />
+			<column name="userName" type="String" />
+			<column name="createDate" type="Date" />
+			<column name="modifiedDate" type="Date" />
+			<column name="name" type="String" />
+			<column name="email" type="String" />
+			<column name="message" type="String" />
+			<column name="guestbookId" type="long" />
 
-		<!-- PK fields -->
+			<finder name="G_G" return-type="Collection">
+				<finder-column name="groupId" />
+				<finder-column name="guestbookId" />
+			</finder>
+		</entity>
+		<entity local-service="true" name="Guestbook" remote-service="true" uuid="true">
 
-		<column name="guestbookId" primary="true" type="long" />
+			<!-- PK fields -->
 
-		<!-- Group instance -->
+			<column name="guestbookId" primary="true" type="long" />
 
-		<column name="groupId" type="long" />
+			<!-- Group instance -->
 
-		<!-- Audit fields -->
+			<column name="groupId" type="long" />
 
-		<column name="companyId" type="long" />
-		<column name="userId" type="long" />
-		<column name="userName" type="String" />
-		<column name="createDate" type="Date" />
-		<column name="modifiedDate" type="Date" />
-		<column name="name" type="String" />
+			<!-- Audit fields -->
 
-		<finder name="GroupId" return-type="Collection">
-			<finder-column name="groupId" />
-		</finder>
-	</entity>
-	<exceptions>
-		<exception>EntryEmail</exception>
-		<exception>EntryMessage</exception>
-		<exception>EntryName</exception>
-		<exception>GuestbookName</exception>
-	</exceptions>
-    </service-builder>
+			<column name="companyId" type="long" />
+			<column name="userId" type="long" />
+			<column name="userName" type="String" />
+			<column name="createDate" type="Date" />
+			<column name="modifiedDate" type="Date" />
+			<column name="name" type="String" />
+
+			<finder name="GroupId" return-type="Collection">
+				<finder-column name="groupId" />
+			</finder>
+		</entity>
+		<exceptions>
+			<exception>EntryEmail</exception>
+			<exception>EntryMessage</exception>
+			<exception>EntryName</exception>
+			<exception>GuestbookName</exception>
+		</exceptions>
+	</service-builder>
 	
-This creates two entities, the Guestbook and the Entry. The Guestbooks fields 
-are defined here:
+This creates two entities the Entry and the Guestbook.
 
-		<column name="companyId" type="long" />
-		<column name="userId" type="long" />
-		<column name="userName" type="String" />
-		<column name="createDate" type="Date" />
-		<column name="modifiedDate" type="Date" />
-		<column name="name" type="String" />
-		<column name="email" type="String" />
-		<column name="message" type="String" />
-		<column name="guestbookId" type="long" />
-
-You also defined finders which will generate methods to locate a Guestbook 
-object based on the provided key.
-
-		<finder name="G_G" return-type="Collection">
-			<finder-column name="groupId" />
-			<finder-column name="guestbookId" />
-		</finder>
-		
 The Entry fields are defined as:
 
 		<column name="companyId" type="long" />
@@ -134,13 +123,41 @@ The Entry fields are defined as:
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
 		<column name="name" type="String" />
+		<column name="email" type="String" />
+		<column name="message" type="String" />
+		<column name="guestbookId" type="long" />
 
-With only a finder for `groupId` being generated. 
+With a finder for `groupId` and`guestbookId` being generated. 
 
-		<finder name="GroupId" return-type="Collection">
-			<finder-column name="groupId" />
-		</finder>
+			<finder name="G_G" return-type="Collection">
+				<finder-column name="groupId" />
+				<finder-column name="guestbookId" />
+			</finder>
 
+The Guestbook fields are defined as:
+
+	<column name="companyId" type="long" />
+	<column name="userId" type="long" />
+	<column name="userName" type="String" />
+	<column name="createDate" type="Date" />
+	<column name="modifiedDate" type="Date" />
+	<column name="name" type="String" />
+
+With a finder for `groupId.` 
+
+	<finder name="GroupId" return-type="Collection">
+		<finder-column name="groupId" />
+	</finder>
+
+You've also identified some associated exception types   
+
+		<exceptions>
+			<exception>EntryEmail</exception>
+			<exception>EntryMessage</exception>
+			<exception>EntryName</exception>
+			<exception>GuestbookName</exception>
+		</exceptions>
+			
 1. Go to the Gradle Tasks pane on the right side of @ide@.
 2. Open `guestbook-service` &rarr; `build`
 3. Run `buildService`
@@ -155,156 +172,191 @@ Using Liferay and Service Builder, the implementations are typically defined in
 
 1. Right-click on your project and select *Gradle* &rarr; *Refresh Gradle Project* to display all of the generated class.
 
-2. Open `com.liferay.docs.guestbook.service.imply.GuestbookLocalServiceImpl` and this `addGuestbook` method:
+2. Open `com.liferay.docs.guestbook.service.imply.EntryLocalServiceImpl` and add these methods:
 
-		public Guestbook addGuestbook(
-				long userId, String name, ServiceContext serviceContext)
-			throws PortalException {
+	public Entry addEntry(
+			long userId, long guestbookId, String name, String email,
+			String message, ServiceContext serviceContext)
+		throws PortalException {
 
-			long groupId = serviceContext.getScopeGroupId();
+		long groupId = serviceContext.getScopeGroupId();
 
-			User user = userLocalService.getUserById(userId);
+		User user = userLocalService.getUserById(userId);
 
-			Date now = new Date();
+		Date now = new Date();
 
-			long guestbookId = counterLocalService.increment();
+		validate(name, email, message);
 
-			Guestbook guestbook = guestbookPersistence.create(guestbookId);
+		long entryId = counterLocalService.increment();
 
-			guestbook.setUuid(serviceContext.getUuid());
-			guestbook.setUserId(userId);
-			guestbook.setGroupId(groupId);
-			guestbook.setCompanyId(user.getCompanyId());
-			guestbook.setUserName(user.getFullName());
-			guestbook.setCreateDate(serviceContext.getCreateDate(now));
-			guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
-			guestbook.setName(name);
-			guestbook.setExpandoBridgeAttributes(serviceContext);
+		Entry entry = entryPersistence.create(entryId);
 
-			guestbookPersistence.update(guestbook);
+		entry.setUuid(serviceContext.getUuid());
+		entry.setUserId(userId);
+		entry.setGroupId(groupId);
+		entry.setCompanyId(user.getCompanyId());
+		entry.setUserName(user.getFullName());
+		entry.setCreateDate(serviceContext.getCreateDate(now));
+		entry.setModifiedDate(serviceContext.getModifiedDate(now));
+		entry.setExpandoBridgeAttributes(serviceContext);
+		entry.setGuestbookId(guestbookId);
+		entry.setName(name);
+		entry.setEmail(email);
+		entry.setMessage(message);
 
-			return guestbook;
-		}
-3. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
-    `com.liferay.portal.kernel.service.ServiceContext` when prompted.
+		entryPersistence.update(entry);
 
-The `addGuestbook` method gets the `groupId` and the `userId` from the portal, 
-and gets the date from the Java service It then instantiates a `Guestbook` 
-object, adds the necessary fields to the object, creates a new resource in the 
-database, and returns the new `guestbook`
+		resourceLocalService.addResources(
+			user.getCompanyId(), groupId, userId, Entry.class.getName(),
+			entryId, false, true, true);
 
-1. Now, open `EntryLocalServiceImpl` from the same package add the `addEntry` 
-    method:
+		return entry;
+	}
 
-		public Entry addEntry(
-				long userId, long guestbookId, String name, String email,
-				String message, ServiceContext serviceContext)
-			throws PortalException {
+	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
+		throws PortalException {
 
-			long groupId = serviceContext.getScopeGroupId();
+		Entry entry = getEntry(entryId);
 
-			User user = userLocalService.getUserById(userId);
+		resourceLocalService.deleteResource(
+			serviceContext.getCompanyId(), Entry.class.getName(),
+			ResourceConstants.SCOPE_INDIVIDUAL, entryId);
 
-			Date now = new Date();
+		entry = deleteEntry(entryId);
 
-			long entryId = counterLocalService.increment();
+		return entry;
+	}
 
-			Entry entry = entryPersistence.create(entryId);
+	public List<Entry> getEntries(long groupId, long guestbookId) {
+		return entryPersistence.findByG_G(groupId, guestbookId);
+	}
 
-			entry.setUuid(serviceContext.getUuid());
-			entry.setUserId(userId);
-			entry.setGroupId(groupId);
-			entry.setCompanyId(user.getCompanyId());
-			entry.setUserName(user.getFullName());
-			entry.setCreateDate(serviceContext.getCreateDate(now));
-			entry.setModifiedDate(serviceContext.getModifiedDate(now));
-			entry.setExpandoBridgeAttributes(serviceContext);
-			entry.setGuestbookId(guestbookId);
-			entry.setName(name);
-			entry.setEmail(email);
-			entry.setMessage(message);
+	public List<Entry> getEntries(
+		long groupId, long guestbookId, int start, int end, OrderByComparator<Entry> obc) {
 
-			entryPersistence.update(entry);
+		return entryPersistence.findByG_G(groupId, guestbookId, start, end, obc);
+	}
 
-			resourceLocalService.addResources(
-				user.getCompanyId(), groupId, userId, Entry.class.getName(),
-				entryId, false, true, true);
-
-			return entry;
-		}
-
+	public int getEntriesCount(long groupId, long guestbookId) {
+		return entryPersistence.countByG_G(groupId, guestbookId);
 	}
 	
-2. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
-    `com.liferay.portal.kernel.service.ServiceContext` and
-	`com.liferay.docs.guestbook.model.Entry` when prompted.
+		protected void validate(String name, String email, String entry)
+				throws PortalException {
+
+				if (Validator.isNull(name)) {
+					throw new EntryNameException();
+				}
+
+				if (!Validator.isEmailAddress(email)) {
+					throw new EntryEmailException();
+				}
+
+				if (Validator.isNull(entry)) {
+					throw new EntryMessageException();
+				}
+	}
+	
+	
+	
+3. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
+    `com.liferay.portal.kernel.service.ServiceContext,`
+	`com.liferay.docs.guestbook.model.Entry,` and 
+	`com.liferay.portal.kernel.util.Validator.` when prompted.
 
 The `addEntry` method gets the `groupId` and the `userId` from the portal, 
 gets the date from the Java service, and validates the users text entry. It then
 instantiates an `Entry` object, adds the necessary fields to the object, 
-creates a new resource in the database, and returns the new `entry`.
+creates a new resource in the database, and returns the new `entry`. The 
+`deleteEntry` method removes an item based on the primary key (`entryId`.) You 
+also have the "get" methods defined as well as a utility method, `validate`, 
+that your class needs.
 
-This is the local service implementation, which is what you'll use, but we
-also need to create a base implementation in the GuestbookServiceImpl and
-EntryServiceImpl which both the local and remote implementations would run
-through. This is also necessary to generate the correct method signatures with
-Service Builder.
-
-1. Open `GuestbookServiceImpl`.
-2. Add the following method stubs:
-
-	public Guestbook addGuestbook(
-				long userId, String name, ServiceContext serviceContext)
-			throws PortalException {
-
-			return GuestbookLocalServiceUtil.addGuestbook(
-				userId, name, serviceContext);
-		}
-	
-		public List<Guestbook> getGuestbooks(long groupId) {
-			return guestbookPersistence.findByGroupId(groupId);
-		}
-
-		public List<Guestbook> getGuestbooks(long groupId, int start, int end) {
-			return guestbookPersistence.findByGroupId(groupId, start, end);
-		}
-
-		public int getGuestbooksCount(long groupId) {
-			return guestbookPersistence.countByGroupId(groupId);
-		}
-
-3. Organize imports. You'll want these:
-
-	import java.util.List;
-
-	import com.liferay.docs.guestbook.model.Guestbook;
-	import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
-	import com.liferay.docs.guestbook.service.base.GuestbookServiceBaseImpl;
-	import com.liferay.portal.kernel.exception.PortalException;
-	import com.liferay.portal.kernel.service.ServiceContext;
-	
-4. Open `EntryServiceImpl`.
-5. Add the `addEntry` method stubs:
+1. Open `com.liferay.docs.guestbook.service.imply.GuestbookLocalServiceImpl`.
+2. Add these methods:
 
 	public Entry addEntry(
-				long userId, long guestbookId, String name, String email,
-				String message, ServiceContext serviceContext)
-			throws PortalException {
+			long userId, long guestbookId, String name, String email,
+			String message, ServiceContext serviceContext)
+		throws PortalException {
 
-			return EntryLocalServiceUtil.addEntry(
-				userId, guestbookId, name, email, message, serviceContext);
-		}
+		long groupId = serviceContext.getScopeGroupId();
 
-6. Organize Imports. This time you want these:
-    
-	import com.liferay.docs.guestbook.model.Entry;
-	import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
-	import com.liferay.docs.guestbook.service.base.EntryServiceBaseImpl;
-	import com.liferay.portal.kernel.exception.PortalException;
-	import com.liferay.portal.kernel.service.ServiceContext;
+		User user = userLocalService.getUserById(userId);
 
-	import aQute.bnd.annotation.ProviderType;
-    
+		Date now = new Date();
+
+		validate(name, email, message);
+
+		long entryId = counterLocalService.increment();
+
+		Entry entry = entryPersistence.create(entryId);
+
+		entry.setUuid(serviceContext.getUuid());
+		entry.setUserId(userId);
+		entry.setGroupId(groupId);
+		entry.setCompanyId(user.getCompanyId());
+		entry.setUserName(user.getFullName());
+		entry.setCreateDate(serviceContext.getCreateDate(now));
+		entry.setModifiedDate(serviceContext.getModifiedDate(now));
+		entry.setExpandoBridgeAttributes(serviceContext);
+		entry.setGuestbookId(guestbookId);
+		entry.setName(name);
+		entry.setEmail(email);
+		entry.setMessage(message);
+
+		entryPersistence.update(entry);
+
+		resourceLocalService.addResources(
+			user.getCompanyId(), groupId, userId, Entry.class.getName(),
+			entryId, false, true, true);
+
+		return entry;
+	}
+
+	public List<Entry> getEntries(long groupId, long guestbookId) {
+		return entryPersistence.findByG_G(groupId, guestbookId);
+	}
+
+	public List<Entry> getEntries(
+		long groupId, long guestbookId, int start, int end, OrderByComparator<Entry> obc) {
+
+		return entryPersistence.findByG_G(groupId, guestbookId, start, end, obc);
+	}
+
+	public int getEntriesCount(long groupId, long guestbookId) {
+		return entryPersistence.countByG_G(groupId, guestbookId);
+	}
+	
+		protected void validate(String name, String email, String entry)
+				throws PortalException {
+
+				if (Validator.isNull(name)) {
+					throw new EntryNameException();
+				}
+
+				if (!Validator.isEmailAddress(email)) {
+					throw new EntryEmailException();
+				}
+
+				if (Validator.isNull(entry)) {
+					throw new EntryMessageException();
+				}
+	}
+	
+	
+	
+3. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
+    `com.liferay.portal.kernel.service.ServiceContext,`
+	`com.liferay.docs.guestbook.model.Entry,` and 
+	`com.liferay.portal.kernel.util.Validator.` when prompted.
+
+Again, you've added the basic operations that you'll need to manage the 
+Guestbook. The `addGuestbook` method gets the necessary information from the portal and the Java services, and validates the users text entry. It then instantiates an `Entry` object, adds the necessary fields to the object, 
+creates a new resource in the database, and returns the new `entry`. The 
+`deleteEntry` method removes an item based on the primary key (`entryId`.) You 
+also have the "get" methods defined as well as a utility method, `validate`, 
+that your class needs.    
 
 You've created the implementation methods, but these are not the classes that 
 you access if you want to actually run any of these methods. In order to use 
@@ -367,109 +419,342 @@ you can access the services from your web module. Then you need to update your `
 2. Replace all of the methods in GuestbookPortlet with their new versions using
     the services and removing the portlet preferences code.
 
-    public void addEntry(ActionRequest request, ActionResponse response)
-			throws PortalException {
+	public void addEntry(ActionRequest request, ActionResponse response)
+				throws PortalException {
 
-			ServiceContext serviceContext = ServiceContextFactory.getInstance(
-				Entry.class.getName(), request);
+				ServiceContext serviceContext = ServiceContextFactory.getInstance(
+					Entry.class.getName(), request);
 
-			String userName = ParamUtil.getString(request, "name");
-			String email = ParamUtil.getString(request, "email");
-			String message = ParamUtil.getString(request, "message");
-			long guestbookId = ParamUtil.getLong(request, "guestbookId");
-			long entryId = ParamUtil.getLong(request, "entryId");
+				String userName = ParamUtil.getString(request, "name");
+				String email = ParamUtil.getString(request, "email");
+				String message = ParamUtil.getString(request, "message");
+				long guestbookId = ParamUtil.getLong(request, "guestbookId");
+				long entryId = ParamUtil.getLong(request, "entryId");
 
-					_entryService.addEntry(
-						serviceContext.getUserId(), guestbookId, userName, email,
-						message, serviceContext);
+					try {
+						_entryService.addEntry(
+							serviceContext.getUserId(), guestbookId, userName, email,
+							message, serviceContext);
 
-					SessionMessages.add(request, "entryAdded");
+						SessionMessages.add(request, "entryAdded");
+
+						response.setRenderParameter(
+							"guestbookId", Long.toString(guestbookId));
+					}
+					catch (Exception e) {
+						Class<?> clazz = e.getClass();
+
+						SessionErrors.add(request, clazz.getName());
+
+						PortalUtil.copyRequestParameters(request, response);
+
+						response.setRenderParameter(
+							"mvcPath", "/html/guestbookmvcportlet/edit_entry.jsp");
+					}
+			
+			}
+
+			public void addGuestbook(ActionRequest request, ActionResponse response)
+				throws PortalException {
+
+				ServiceContext serviceContext = ServiceContextFactory.getInstance(
+					Guestbook.class.getName(), request);
+
+				String name = ParamUtil.getString(request, "name");
+
+				try {
+					_guestbookService.addGuestbook(
+						serviceContext.getUserId(), name, serviceContext);
+
+					SessionMessages.add(request, "guestbookAdded");
+				}
+				catch (Exception e) {
+					Class<?> clazz = e.getClass();
+
+					SessionErrors.add(request, clazz.getName());
+
+					response.setRenderParameter(
+						"mvcPath", "/html/guestbookmvcportlet/edit_guestbook.jsp");
+				}
+			}
+
+			public void deleteEntry(ActionRequest request, ActionResponse response) {
+				long entryId = ParamUtil.getLong(request, "entryId");
+				long guestbookId = ParamUtil.getLong(request, "guestbookId");
+
+				try {
+					ServiceContext serviceContext = ServiceContextFactory.getInstance(
+						Entry.class.getName(), request);
 
 					response.setRenderParameter(
 						"guestbookId", Long.toString(guestbookId));
-			
-		}
 
-		public void addGuestbook(ActionRequest request, ActionResponse response)
-			throws PortalException {
+					_entryService.deleteEntry(entryId, serviceContext);
+				}
+				catch (Exception e) {
+					System.out.println(e);
 
-			ServiceContext serviceContext = ServiceContextFactory.getInstance(
-				Guestbook.class.getName(), request);
+					Class<?> clazz = e.getClass();
 
-			String name = ParamUtil.getString(request, "name");
-
-			try {
-				_guestbookService.addGuestbook(
-					serviceContext.getUserId(), name, serviceContext);
-
-				SessionMessages.add(request, "guestbookAdded");
+					SessionErrors.add(request, clazz.getName());
+				}
 			}
-			catch (Exception e) {
-				Class<?> clazz = e.getClass();
 
-				SessionErrors.add(request, clazz.getName());
+			@Override
+			public void render(
+					RenderRequest renderRequest, RenderResponse renderResponse)
+				throws IOException, PortletException {
 
-				response.setRenderParameter(
-					"mvcPath", "/html/guestbookmvcportlet/edit_guestbook.jsp");
-			}
-		}
+				try {
+					ServiceContext serviceContext = ServiceContextFactory.getInstance(
+						Guestbook.class.getName(), renderRequest);
 
+					long groupId = serviceContext.getScopeGroupId();
 
-		@Override
-		public void render(
-				RenderRequest renderRequest, RenderResponse renderResponse)
-			throws IOException, PortletException {
+					long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
 
-			try {
-				ServiceContext serviceContext = ServiceContextFactory.getInstance(
-					Guestbook.class.getName(), renderRequest);
+					List<Guestbook> guestbooks = _guestbookService.getGuestbooks(
+						groupId);
 
-				long groupId = serviceContext.getScopeGroupId();
+					if (guestbooks.isEmpty()) {
+						Guestbook guestbook = _guestbookService.addGuestbook(
+							serviceContext.getUserId(), "Main", serviceContext);
 
-				long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+						guestbookId = guestbook.getGuestbookId();
+					}
 
-				List<Guestbook> guestbooks = _guestbookService.getGuestbooks(
-					groupId);
+					if (guestbookId == 0) {
+						guestbookId = guestbooks.get(0).getGuestbookId();
+					}
 
-				if (guestbooks.isEmpty()) {
-					Guestbook guestbook = _guestbookService.addGuestbook(
-						serviceContext.getUserId(), "Main", serviceContext);
-
-					guestbookId = guestbook.getGuestbookId();
+					renderRequest.setAttribute("guestbookId", guestbookId);
+				}
+				catch (Exception e) {
+					throw new PortletException(e);
 				}
 
-				if (guestbookId == 0) {
-					guestbookId = guestbooks.get(0).getGuestbookId();
-				}
-
-				renderRequest.setAttribute("guestbookId", guestbookId);
-			}
-			catch (Exception e) {
-				throw new PortletException(e);
+				super.render(renderRequest, renderResponse);
 			}
 
-			super.render(renderRequest, renderResponse);
-		}
+			@Reference(unbind = "-")
+			protected void setEntryService(EntryService entryService) {
+				_entryService = entryService;
+			}
 
-		@Reference(unbind = "-")
-		protected void setEntryService(EntryService entryService) {
-			_entryService = entryService;
-		}
+			@Reference(unbind = "-")
+			protected void setGuestbookService(GuestbookService guestbookService) {
+				_guestbookService = guestbookService;
+			}
 
-		@Reference(unbind = "-")
-		protected void setGuestbookService(GuestbookService guestbookService) {
-			_guestbookService = guestbookService;
-		}
-
-		private EntryService _entryService;
-		private GuestbookService _guestbookService;
-
+			private EntryService _entryService;
+			private GuestbookService _guestbookService;
+	
+		
 At the bottom, you create create the `@Reference` to the service that you need 
-to call, in this case, `EntryService` and `GuestbookService.` Then you use the
-methods provided by those services (whose implementations you created earlier) 
-to connect the user action of creating a new Entry with the backend. In this way
-the portlet class does not have to be at all concerned with how the service is
-implemented.
+to call, in this case, `EntryService`. Then you use the methods provided by 
+those services (whose implementations you created earlier) to connect the user 
+action of creating a new Entry with the backend. In this way the portlet class 
+does not have to be at all concerned with how the service is implemented.
+
+## Updating the View
+
+Since you updated more than just the basic mechanism behind creating the Entry,
+and actually completely changed the method and structure, you'll want to make
+some updates to the UI as well. To do that, you'll need to create a new JSP for
+managing Guestbooks, and update the existing JSPs.
+
+1. First you should update the dependencies that you'll need.
+2. Open `init.jsp` from `/src/main/resources/META-INF/resources/`
+3. Add the following additional dependencies:
+    
+	<%@ taglib uri="http://liferay.com/tld/frontend" prefix="liferay-frontend" %>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@ taglib uri="http://liferay.com/tld/security" prefix="liferay-security" %>
+
+	<%@ page import="java.util.List" %>
+	<%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
+	<%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
+	<%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+	<%@ page import="com.liferay.portal.kernel.model.PersistedModel" %>
+	<%@ page import="com.liferay.portal.kernel.dao.search.SearchEntry" %>
+	<%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %>
+	<%@ page import="com.liferay.docs.guestbook.model.Guestbook" %>
+	<%@ page import="com.liferay.docs.guestbook.service.EntryLocalServiceUtil" %>
+	<%@ page import="com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil" %>
+	<%@ page import="com.liferay.docs.guestbook.model.Entry" %>
+	
+
+4. Open the `view.jsp` file found in `/resources/META-INF/resources/`
+5. Replace the contents with the following code:
+
+	<%@include file="../init.jsp"%>
+
+	<%
+		long guestbookId = Long.valueOf((Long) renderRequest
+				.getAttribute("guestbookId"));
+	%>
+
+	<aui:nav cssClass="nav-tabs">
+
+		<%
+			List<Guestbook> guestbooks = GuestbookLocalServiceUtil
+						.getGuestbooks(scopeGroupId);
+				for (int i = 0; i < guestbooks.size(); i++) {
+					Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
+
+					String cssClass = StringPool.BLANK;
+
+					if (curGuestbook.getGuestbookId() == guestbookId) {
+						cssClass = "active";
+					}
+				
+				
+		%>
+
+		<portlet:renderURL var="viewPageURL">
+			<portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view.jsp" />
+			<portlet:param name="guestbookId"
+				value="<%=String.valueOf(curGuestbook.getGuestbookId())%>" />
+		</portlet:renderURL>
+
+		<aui:nav-item cssClass="<%=cssClass%>" href="<%=viewPageURL%>"
+			label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
+
+		<%
+				}
+			}
+		%>
+
+	</aui:nav>
+
+	<aui:button-row cssClass="guestbook-buttons">
+
+			<portlet:renderURL var="addGuestbookURL">
+				<portlet:param name="mvcPath"
+					value="/html/guestbookmvcportlet/edit_guestbook.jsp" />
+			</portlet:renderURL>
+		
+			<aui:button onClick="<%=addGuestbookURL.toString()%>" 
+				value="Add Guestbook" />
+
+			<portlet:renderURL var="addEntryURL">
+				<portlet:param name="mvcPath" value="/html/guestbookmvcportlet/edit_entry.jsp" />
+				<portlet:param name="guestbookId"
+					value="<%=String.valueOf(guestbookId)%>" />
+			</portlet:renderURL>
+		
+	</aui:button-row>
+
+	<liferay-ui:search-container total="<%=EntryLocalServiceUtil.getEntriesCount()%>"
+	>
+		<liferay-ui:search-container-results
+			results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId.longValue(),
+							guestbookId, searchContainer.getStart(),
+							searchContainer.getEnd())%>" />
+
+		<liferay-ui:search-container-row
+			className="com.liferay.docs.guestbook.model.Entry" modelVar="entry">
+
+			<liferay-ui:search-container-column-text property="message" />
+
+			<liferay-ui:search-container-column-text property="name" />
+		
+			<liferay-ui:search-container-column-jsp path="/html/guestbookmvcportlet/guestbook_actions.jsp" align="right" />
+
+		</liferay-ui:search-container-row>
+
+		<liferay-ui:search-iterator />
+    </liferay-ui:search-container>
+
+You've significantly expanded the `view.jsp` now. There are now buttons for both
+adding an Entry and adding a new Guestbook. You've also added the necessary 
+backend information to connect to this. Right now you're doing all of this with
+fairly generic styles to accomplish this, but later you'll learn to leverage 
+the full power of Liferay's UI tools to enhance your JSPs.
+
+Next you need to create a new `edit_guestbook.jsp` and edit the `edit_entry.jsp`
+to match our new system.
+
+1. Open `edit_entry.jsp.`
+2. Replace the existing code with this:
+
+	<%@include file="../init.jsp" %>
+
+	<% 
+
+	long entryId = ParamUtil.getLong(renderRequest, "entryId");
+
+	Entry entry = null;
+	if (entryId > 0) {
+		entry = EntryLocalServiceUtil.getEntry(entryId);
+	}
+
+	long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+
+	%>
+
+	<portlet:renderURL var="viewURL">
+
+		<portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view.jsp"></portlet:param>
+
+	</portlet:renderURL>
+
+	<portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
+
+
+	<aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
+
+	    <aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
+
+			<aui:fieldset>
+
+			    <aui:input name="name" />
+			    <aui:input name="email" />
+			    <aui:input name="message" />
+			    <aui:input name="entryId" type="hidden" />
+				<aui:input name="guestbookId" type="hidden" value='<%= entry == null ? guestbookId : entry.getGuestbookId() %>'/>
+
+			</aui:fieldset>
+		
+			<aui:button-row>
+
+	            <aui:button type="submit"></aui:button>
+	            <aui:button type="cancel" onClick="<%= viewURL.toString() %>"></aui:button>
+            
+	        </aui:button-row>
+	</aui:form>
+	
+3. Now right-click on the `resources` folder and select *New* &rarr; *File*.
+4. Name the file `edit_guestbook.jsp` and click *Finish*.
+5. Open the new file and paste in this code:
+
+	<%@include file = "../init.jsp" %>
+
+	<portlet:renderURL var="viewURL">
+	    <portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view.jsp"></portlet:param>
+	</portlet:renderURL>
+
+	<portlet:actionURL name="addGuestbook" var="addGuestbookURL"></portlet:actionURL>
+
+	<aui:form action="<%= addGuestbookURL %>" name="<portlet:namespace />fm">
+
+	        <aui:fieldset>
+
+	            <aui:input name="name" />
+
+	        </aui:fieldset>
+
+	        <aui:button-row>
+
+	            <aui:button type="submit"></aui:button>
+	            <aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
+
+	        </aui:button-row>
+	</aui:form>
+
+	
+These updates are a bit more simple. You created additional fields to be added 
+for each entry creation to match up to the fields you created on the backend, and you created a new form for creating a guestbook with one field.
 
 ## Deploying the application
 

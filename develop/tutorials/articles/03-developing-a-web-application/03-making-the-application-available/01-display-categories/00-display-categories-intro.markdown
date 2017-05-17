@@ -41,11 +41,12 @@ display category to *Social* for the Guestbook portlet. The
 portlet is non-instanceable, so only one instance of the portlet can be added 
 to a page. 
  
-Now you can add the Guestbook portlet to a page! Go ahead and try it out. All 
-@product@ apps are automatically SPA(Single Page Application) enabled by 
-default, and require no changes to your apps or workflow, so the Guestbook 
-portlet can take advantage of SPA features right away. You can read more about 
-SPA in the [Automatic Single Page Applications](/develop/tutorials/-/knowledge_base/7-0/automatic-single-page-applications) 
-tutorial.
+Now you can add the Guestbook portlet to a page! Go ahead and try it out.
+
+Another important feature that's being used behind the scenes is Liferay's 
+Single Page Applications (SPA.) All @product@ apps are automatically SPA 
+enabled by default, and require no changes to your apps or workflow, so the 
+Guestbook portlet can take advantage of SPA features right away. You can read 
+more about SPA in the [Automatic Single Page Applications](/develop/tutorials/-/knowledge_base/7-0/automatic-single-page-applications) tutorial.
 
 In the next section, you'll create the Guestbook Admin portlet.

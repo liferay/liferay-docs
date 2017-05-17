@@ -39,7 +39,7 @@ the instructions below to create your Liferay Module Project.
 
 2. Select `New` &rarr; `Liferay Module Project`
 
-3. Enter `Guestbook` for the Project name. 
+3. Enter `guestbook-mvc` for the Project name. 
 
 4. Use the `gradle-module` Build type.
 
@@ -50,8 +50,8 @@ the instructions below to create your Liferay Module Project.
 Because Gradle automatically manages dependencies for you, it may take a while
 for your project to be created the first time, as its dependencies must be
 downloaded from the Internet. Once it's done, you have a project named
-`Guestbook`. The `mvcportlet` template configured the project with the proper
-dependencies and generated all the files you need to get started: 
+`guestbook-web`. The `mvcportlet` template configured the project with the 
+proper dependencies and generated all the files you need to get started: 
 
 - The portlet class (in the package you specified)
 - JSP files (in `/src/main/resources`)
@@ -98,8 +98,8 @@ component, you simply invoke the service as defined in the Service Registry.
 ## Deploying the Application [](id=deploying-the-application)
 
 Even though all you've done is generate it, the Guestbook project is ready to be
-built and deployed to @product@.  Make sure that your server is running, and if it
-isn't, select it in the `Servers` pane and click the start button. After it
+built and deployed to @product@.  Make sure that your server is running, and if 
+it isn't, select it in the `Servers` pane and click the start button. After it
 starts, drag and drop the Guestbook project to the server.
 
 <!-- Needs an image here showing the drag and drop, because it's not intuitive
@@ -110,16 +110,16 @@ navigate to your portal ([http://localhost:8080](http://localhost:8080) by
 default), and add your application to a page. To add an application to a page,
 click on the *Add* button (it looks like a plus sign) and then on
 *Applications*. In this list, your application should appear in the Sample
-category. Its name should be `guestbook-module Portlet`. You can
+category. Its name should be `guestbook-web-module Portlet`. You can
 change this name by editing the `javax.portlet.display-name` property in your
-`GuestbookModulePortlet` class. E.g., you could use
+`GuestbookMVCPortlet` class. E.g., you could use
 
     "javax.portlet.display-name=Guestbook"
 
 to change the display name of your application to `Guestbook`.
 
 This property string should be added to the `property` array defined in the
-`@Component` annotation of your `GuestbookModulePortlet` class.
+`@Component` annotation of your `GuestbookMVCPortlet` class.
 
 ![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
 
