@@ -2,7 +2,10 @@
 
 @product@ Core and portlet module `language*.properties` files implement site
 internationalization. They're fully customizable, too. This tutorial
-demonstrates overriding language keys in the @product@ Core and in app modules. 
+demonstrates this in the following topics:
+
+-   [Modifying Liferay's Language Keys](#modifying-liferays-language-keys) 
+-   [Overriding a Portlet Module's Language Keys](#overriding-a-modules-language-keys)
 
 ## Modifying Liferay's Language Keys [](id=modifying-liferays-language-keys)
 
