@@ -28,6 +28,23 @@ for instructions on using the [SAML adapter](https://web.liferay.com/marketplace
 Use the instructions to make the conceptual magic from this article come to
 life! 
 
+
+## Important SAML URLs [](id=important-saml-urls)
+
+For reference, here are a few important SAML URLs.
+
+This URL is the default location of @product@'s metadata XML file:
+
+    [host]:[port]/c/portal/saml/metadata
+
+Note that when configuring SAML for @product@, no importing of SAML certificates
+is required. @product@ reads certificates from the SAML metadata XML file. If you
+want a third-party application like Salesforce to read a Liferay SAML
+certificate, you can export the @product@ certificate from the keystore. The
+default keystore file is `[Liferay Home]/data/keystore.jks`. The exported
+certificate can be imported by a third-party application like Salesforce.
+
+
 ## Single Sign On [](id=single-sign-on)
 
 Both the IdP and the SP can initiate the Single Sign On process, and the SSO flow
