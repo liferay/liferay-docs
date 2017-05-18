@@ -356,20 +356,11 @@ The fully qualified class name of the `@ExtendedObjectClassDefinition` class is
 Note: Currently, the infrastructure used by System Settings relies on the
 `configurationPid` being the same as the class name of the interface. If they
 don't match, it will not be able to provide any information provided through
-`ExtendedObjectClassConfiguration`. This annotation is distributed through a
-module called `portal-configuration-metatype` so you must 
-[include a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
-on it in order to use it. 
+`ExtendedObjectClassConfiguration`.
 
-Note: At the time of writing this, no public JAR of this library is available.
-In order to declare this dependency, you must create and publish your own JAR
-or refer to the project directly:
-
-    dependencies {
-        compile project(":portal-configuration:portal-configuration-metatype")
-    }
-
-By the time 7.0 is released, a public JAR will be available.
+The `@ExtendedObjectClassDefinition` annotation is distributed through the
+`com.liferay.portal.configuration.metatype` module, which you can 
+[configure as a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
 ## Supporting Different Configurations per Virtual Instance, Site, or Portlet Instance [](id=supporting-different-configurations-per-scope)
 
