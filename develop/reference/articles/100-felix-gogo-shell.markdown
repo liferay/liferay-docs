@@ -53,6 +53,10 @@ working (e.g., unresolved dependencies, etc.)
 `scr:list`: lists all of the components registered in the module framework
 (*scr* stands for service component runtime)
 
+`scr:info <component name>`: lists information about a specific component
+including the component's description, services, properties, configuration,
+references, and more.
+
 `services`: lists all of the services that have been registered in Liferay's
 module framework
 
