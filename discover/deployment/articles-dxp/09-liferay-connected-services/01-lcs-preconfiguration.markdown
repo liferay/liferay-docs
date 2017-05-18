@@ -87,8 +87,9 @@ this by setting some properties. There are two ways to set these properties:
    You must set the properties in the WAR file's `portlet-ext.properties` file. 
    Follow these steps to do so: 
 
-   a. In the LCS client's WAR file, open the file 
-        `WEB-INF/classes/portlet-ext.properties`. 
+   a. In the LCS client's WAR file, create the file 
+        `WEB-INF/classes/portlet-ext.properties` (or open this file if it 
+        already exists). 
 
    b. Add the following properties at the end of `portlet-ext.properties` and 
       set them to the appropriate values for your proxy: 
