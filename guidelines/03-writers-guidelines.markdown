@@ -294,6 +294,18 @@ spaces instead of tabs, you have three list levels to work with before your
 syntax-highlighting text editor mistakes your outline levels for preformatted
 text. 
 
+### Variable Text (brackets) 
+
+Sometimes, to avoid putting specific information (like version numbers) in the
+text, you want to specify that as a "variable" of sorts. When you do this,
+*always use straight brackets*, like this: 
+
+    Inside the bundle folder, you'll find a `tomcat-[version]` folder. 
+
+Why straight brackets? To avoid confusion with markup languages and also to
+avoid accidentally triggering the Markdown parser to pass through the text
+(because it might think it's HTML). 
+
 ## Images and Captions 
 
 Every image should have a caption, and the caption should be at least one
