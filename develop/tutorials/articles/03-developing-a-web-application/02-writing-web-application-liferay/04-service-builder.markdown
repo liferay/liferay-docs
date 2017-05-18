@@ -241,6 +241,13 @@ Using Liferay and Service Builder, the implementations are typically defined in
 		return entryPersistence.countByG_G(groupId, guestbookId);
 	}
 	
+	public List<Entry> getEntries(long groupId, long guestbookId, int start, int end)
+			     throws SystemException {
+
+			    return entryPersistence.findByG_G(groupId, guestbookId, start, end);
+			}
+	
+	
 		protected void validate(String name, String email, String entry)
 				throws PortalException {
 
@@ -275,75 +282,59 @@ that your class needs.
 1. Open `com.liferay.docs.guestbook.service.imply.GuestbookLocalServiceImpl`.
 2. Add these methods:
 
-	public Entry addEntry(
-			long userId, long guestbookId, String name, String email,
-			String message, ServiceContext serviceContext)
-		throws PortalException {
+	public Guestbook addGuestbook(
+				long userId, String name, ServiceContext serviceContext)
+			throws PortalException {
 
-		long groupId = serviceContext.getScopeGroupId();
+			long groupId = serviceContext.getScopeGroupId();
 
-		User user = userLocalService.getUserById(userId);
+			User user = userLocalService.getUserById(userId);
 
-		Date now = new Date();
+			Date now = new Date();
 
-		validate(name, email, message);
+			validate(name);
 
-		long entryId = counterLocalService.increment();
+			long guestbookId = counterLocalService.increment();
 
-		Entry entry = entryPersistence.create(entryId);
+			Guestbook guestbook = guestbookPersistence.create(guestbookId);
 
-		entry.setUuid(serviceContext.getUuid());
-		entry.setUserId(userId);
-		entry.setGroupId(groupId);
-		entry.setCompanyId(user.getCompanyId());
-		entry.setUserName(user.getFullName());
-		entry.setCreateDate(serviceContext.getCreateDate(now));
-		entry.setModifiedDate(serviceContext.getModifiedDate(now));
-		entry.setExpandoBridgeAttributes(serviceContext);
-		entry.setGuestbookId(guestbookId);
-		entry.setName(name);
-		entry.setEmail(email);
-		entry.setMessage(message);
+			guestbook.setUuid(serviceContext.getUuid());
+			guestbook.setUserId(userId);
+			guestbook.setGroupId(groupId);
+			guestbook.setCompanyId(user.getCompanyId());
+			guestbook.setUserName(user.getFullName());
+			guestbook.setCreateDate(serviceContext.getCreateDate(now));
+			guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
+			guestbook.setName(name);
+			guestbook.setExpandoBridgeAttributes(serviceContext);
 
-		entryPersistence.update(entry);
+			guestbookPersistence.update(guestbook);
 
-		resourceLocalService.addResources(
-			user.getCompanyId(), groupId, userId, Entry.class.getName(),
-			entryId, false, true, true);
+			resourceLocalService.addResources(
+				user.getCompanyId(), groupId, userId, Guestbook.class.getName(),
+				guestbookId, false, true, true);
 
-		return entry;
-	}
+			return guestbook;
+		}
 
-	public List<Entry> getEntries(long groupId, long guestbookId) {
-		return entryPersistence.findByG_G(groupId, guestbookId);
-	}
+		public List<Guestbook> getGuestbooks(long groupId) {
+			return guestbookPersistence.findByGroupId(groupId);
+		}
 
-	public List<Entry> getEntries(
-		long groupId, long guestbookId, int start, int end, OrderByComparator<Entry> obc) {
+		public List<Guestbook> getGuestbooks(long groupId, int start, int end, OrderByComparator<Guestbook> obc) {
+			return guestbookPersistence.findByGroupId(groupId, start, end, obc);
+		}
 
-		return entryPersistence.findByG_G(groupId, guestbookId, start, end, obc);
-	}
+		public int getGuestbooksCount(long groupId) {
+			return guestbookPersistence.countByGroupId(groupId);
+		}
 
-	public int getEntriesCount(long groupId, long guestbookId) {
-		return entryPersistence.countByG_G(groupId, guestbookId);
-	}
-	
-		protected void validate(String name, String email, String entry)
-				throws PortalException {
 
-				if (Validator.isNull(name)) {
-					throw new EntryNameException();
-				}
-
-				if (!Validator.isEmailAddress(email)) {
-					throw new EntryEmailException();
-				}
-
-				if (Validator.isNull(entry)) {
-					throw new EntryMessageException();
-				}
-	}
-	
+		protected void validate(String name) throws PortalException {
+			if (Validator.isNull(name)) {
+				throw new GuestbookNameException();
+			}
+		}
 	
 	
 3. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
@@ -587,7 +578,7 @@ managing Guestbooks, and update the existing JSPs.
 4. Open the `view.jsp` file found in `/resources/META-INF/resources/`
 5. Replace the contents with the following code:
 
-	<%@include file="../init.jsp"%>
+	<%@ include file="init.jsp" %>
 
 	<%
 		long guestbookId = Long.valueOf((Long) renderRequest
@@ -607,12 +598,13 @@ managing Guestbooks, and update the existing JSPs.
 					if (curGuestbook.getGuestbookId() == guestbookId) {
 						cssClass = "active";
 					}
-				
+					else	
+				 {
 				
 		%>
 
 		<portlet:renderURL var="viewPageURL">
-			<portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view.jsp" />
+			<portlet:param name="mvcPath" value="view.jsp" />
 			<portlet:param name="guestbookId"
 				value="<%=String.valueOf(curGuestbook.getGuestbookId())%>" />
 		</portlet:renderURL>
@@ -631,18 +623,20 @@ managing Guestbooks, and update the existing JSPs.
 
 			<portlet:renderURL var="addGuestbookURL">
 				<portlet:param name="mvcPath"
-					value="/html/guestbookmvcportlet/edit_guestbook.jsp" />
+					value="edit_guestbook.jsp" />
 			</portlet:renderURL>
 		
 			<aui:button onClick="<%=addGuestbookURL.toString()%>" 
 				value="Add Guestbook" />
-
+	
 			<portlet:renderURL var="addEntryURL">
-				<portlet:param name="mvcPath" value="/html/guestbookmvcportlet/edit_entry.jsp" />
+				<portlet:param name="mvcPath" value="edit_entry.jsp" />
 				<portlet:param name="guestbookId"
 					value="<%=String.valueOf(guestbookId)%>" />
 			</portlet:renderURL>
 		
+			<aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
+
 	</aui:button-row>
 
 	<liferay-ui:search-container total="<%=EntryLocalServiceUtil.getEntriesCount()%>"
@@ -659,12 +653,12 @@ managing Guestbooks, and update the existing JSPs.
 
 			<liferay-ui:search-container-column-text property="name" />
 		
-			<liferay-ui:search-container-column-jsp path="/html/guestbookmvcportlet/guestbook_actions.jsp" align="right" />
+			<liferay-ui:search-container-column-jsp path="guestbook_actions.jsp" align="right" />
 
 		</liferay-ui:search-container-row>
 
 		<liferay-ui:search-iterator />
-    </liferay-ui:search-container>
+	</liferay-ui:search-container>
 
 You've significantly expanded the `view.jsp` now. There are now buttons for both
 adding an Entry and adding a new Guestbook. You've also added the necessary 
@@ -678,7 +672,7 @@ to match our new system.
 1. Open `edit_entry.jsp.`
 2. Replace the existing code with this:
 
-	<%@include file="../init.jsp" %>
+	<%@include file="init.jsp" %>
 
 	<% 
 
@@ -695,7 +689,7 @@ to match our new system.
 
 	<portlet:renderURL var="viewURL">
 
-		<portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view.jsp"></portlet:param>
+		<portlet:param name="mvcPath" value="view.jsp"></portlet:param>
 
 	</portlet:renderURL>
 
@@ -728,10 +722,10 @@ to match our new system.
 4. Name the file `edit_guestbook.jsp` and click *Finish*.
 5. Open the new file and paste in this code:
 
-	<%@include file = "../init.jsp" %>
+	<%@include file = "init.jsp" %>
 
 	<portlet:renderURL var="viewURL">
-	    <portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view.jsp"></portlet:param>
+	    <portlet:param name="mvcPath" value="view.jsp"></portlet:param>
 	</portlet:renderURL>
 
 	<portlet:actionURL name="addGuestbook" var="addGuestbookURL"></portlet:actionURL>
