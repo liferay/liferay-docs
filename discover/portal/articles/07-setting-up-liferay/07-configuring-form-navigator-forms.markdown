@@ -123,7 +123,9 @@ Follow these steps to create a new configuration entry:
     **The order of the entry keys specifies the order in which the sections are 
     displayed in the form, from top to bottom.** To reorder sections, place the 
     comma-separated list of entry keys in the order you want the sections to 
-    appear in the form. 
+    appear in the form. You can also move a section from one category to another 
+    by adding the entry key to the category in which you want the section to 
+    appear. 
   
     +$$$
  
