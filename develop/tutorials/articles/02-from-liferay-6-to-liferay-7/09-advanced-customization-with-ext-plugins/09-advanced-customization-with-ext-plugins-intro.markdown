@@ -55,14 +55,13 @@ There are many parts of @product@ that now provide an extension point via OSGi
 bundle. You should follow this three step process to decide whether an Ext
 plugin is necessary:
 
-1.  Find the OSGi extension point that you need.
+1.  Find the OSGi extension point that you need. You can follow the
+    [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points)
+    tutorial as a guide.
 2.  If an OSGi extension point does not exist, use an Ext plugin.
 3.  Research new extension points after every release of @product@. When a new
     version of @product@ provides the extension point need, always use the
     extension point to replace the existing Ext plugin.
-
-<!-- Working on something to point people to for finding extension points. Will
-add to point #3 when it's finalized. -Cody -->
 
 So how do you find an OSGi extension point?
 
@@ -97,12 +96,6 @@ supports Ext plugins for the following use cases:
   section.
 - Modifying @product@'s `web.xml` file.
 - Adding to @product@'s `web.xml` file.
-
-<!-- - To add JSPs referenced from portal properties that can only be changed
-  from an Ext plugin. -->
-
-<!-- Still need to check on JSP use case for official support. This has not been
-finalized yet. -Cody -->
 
 +$$$
 
