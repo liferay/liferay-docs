@@ -2,25 +2,26 @@
 
 The
 [Arquillian Blade Example project](https://github.com/liferay-labs/arquillian-blade-example)
-demonstrates using the
-[Arquillian Liferay Extension](https://github.com/liferay-labs/arquillian-liferay)
-to perform integration and functional tests. Additionally it measures code
-coverage using JaCoCo. In this tutorial, you'll learn how the Arquillian
-Liferay Extension and JaCoCo work. You can download the example project
+demonstrates performing integration and functional tests using the
+[Arquillian Liferay Extension](https://github.com/liferay-labs/arquillian-liferay).
+Additionally it measures code coverage using
+[JaCoCo](http://eclemma.org/jacoco/).
+In this tutorial, you'll learn how the Arquillian Liferay Extension and JaCoCo
+work. You can download the Arquillian Blade Example project
 [here](https://dev.liferay.com/documents/10184/656312/arquillian-blade-example.zip/27250a6e-4acf-6ed3-33bb-9a8a87fd0776)
-or access the latest code on
+or access its latest code on
 [GitHub](https://github.com/liferay-labs/arquillian-blade-example). 
 
 Here are the tutorial sections:
 
--   [Examining the Example Portlet](#example-portlet)
+-   [Examining the Sample Portlet](#sample-portlet)
 -   [Integration and Functional Testing with Arquillian](#integration-and-functional-testing-with-arquillian)
 -   [Measuring Code Coverage with JaCoCo](#measuring-code-coverage-with-jacoco)
 -   [Running the Tests](#running-the-tests)
 
-## Example the Portlet [](id=example-portlet)
+## Examining the Sample Portlet [](id=sample-portlet)
 
-The example portlet calculates the sum of two numbers. 
+The sample portlet calculates the sum of two numbers. 
 
 ![Figure 1: The Arquillian Sample Portlet calculates the sum of two numbers.](../../images/arquillian-example-portlet.png)
 
@@ -32,24 +33,24 @@ build files in the project root.
 Here are the primary files:
 
 -   [`SampleService.java`](https://github.com/liferay-labs/arquillian-blade-example/blob/master/src/main/java/com/liferay/arquillian/sample/service/SampleService.java):
-    This interface defines method `public long add(final int addend1, final int
-    addend2)` for returning the sum of two numbers. 
+    Provides an interface that defines method `public long add(final int
+    addend1, final int addend2)` for returning the sum of two numbers. 
 
 -   [`SampleServiceImpl.java`](https://github.com/liferay-labs/arquillian-blade-example/blob/master/src/main/java/com/liferay/arquillian/sample/service/SampleServiceImpl.java):
     Uses OSGi Declarative Services to implement the
     `SampleService` interface. 
 
 -   [`SamplePortlet.java`](https://github.com/liferay-labs/arquillian-blade-example/blob/master/src/main/java/com/liferay/arquillian/sample/portlet/SamplePortlet.java):
-    A
+    Extends
     [Liferay `MVCPortlet`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
-    that processes portlet action commands and renders the result of executing
+    and processes portlet action commands and renders the result of executing
     the `add` service.
 
 -   [`bnd.bnd`](https://github.com/liferay-labs/arquillian-blade-example/blob/master/bnd.bnd):
     Specifies the module's name, symbolic name, and version.
 
 -   [`init.jsp`](https://github.com/liferay-labs/arquillian-blade-example/blob/master/src/main/resources/META-INF/resources/init.jsp):
-    Imports classes and tag libraries for the View. 
+    Imports classes and tag libraries for the view layer. 
 
 -   [`view.jsp`](https://github.com/liferay-labs/arquillian-blade-example/blob/master/src/main/resources/META-INF/resources/view.jsp):
     Provides a form for calculating the sum of two numbers.
@@ -58,12 +59,12 @@ You'll examine the tests next.
 
 ## Integration and Functional Testing with Arquillian [](id=integration-and-functional-testing-with-arquillian)
 
-The Arquillian Blade Example tests the portlet via its API and UI. 
+The Arquillian Blade Example tests the sample portlet using its API and UI. 
 
 -   [Integration Test](#integration-test): Invokes the `SampleService`'s `add`
     method directly. 
 -   [Functional Test](#functional-test): Invokes the `add` method indirectly
-    via a web browser. 
+    using a web browser. 
 
 The test classes are in the `src/testIntegration/java` folder and test resources
 are in the `src/testIntegration/resources` folder. The integration test is basic
@@ -72,9 +73,9 @@ and worth examining first.
 ### Integration Test [](id=integration-test)
 
 Integration tests exercise module interaction. Although the
-`BasicPortletIntegrationTest` class only demonstrates invoking the example
-module's `SampleService.add` method, an Arquillian integration test could just
-as easily invoke multiple methods in many modules. 
+`BasicPortletIntegrationTest` class demonstrates invoking the sample module's
+`SampleService.add` method only, an Arquillian integration test could just as
+easily invoke many methods to test behavior across many modules. 
 
 Here's the `BasicPortletIntegrationTest` class: 
 
@@ -142,32 +143,38 @@ JUnit annotation `@RunWith(Arquillian.class)` marks the class for Arquillian to
 execute. 
 
 The `create` method packages the test class and resources in a Java archive
-(JAR) file. By invoking the project's `jar` Gradle task it creates the test JAR
-Arquillian executes. 
+(JAR). Invoking the project's `jar` Gradle task creates the test JAR Arquillian
+executes. 
 
-    final File tempDir = Files.createTempDir();
+    @Deployment
+    public static JavaArchive create() throws Exception {
+        final File tempDir = Files.createTempDir();
 
-    final ProcessBuilder processBuilder = new ProcessBuilder(
-        "./gradlew", "jar", "-Pdir=" + tempDir.getAbsolutePath());
+        final ProcessBuilder processBuilder = new ProcessBuilder(
+            "./gradlew", "jar", "-Pdir=" + tempDir.getAbsolutePath());
 
-    final Process process = processBuilder.start();
+        final Process process = processBuilder.start();
 
-    process.waitFor();
+        process.waitFor();
 
-    final File jarFile = new File(
-        tempDir.getAbsolutePath() +
-            "/com.liferay.arquillian.sample-1.0.0.jar");
+        final File jarFile = new File(
+            tempDir.getAbsolutePath() +
+                "/com.liferay.arquillian.sample-1.0.0.jar");
 
-    return ShrinkWrap.createFromZipFile(JavaArchive.class, jarFile);
+        return ShrinkWrap.createFromZipFile(JavaArchive.class, jarFile);
+    }
 
 JUnit annotation `@Test` designates the `testAdd` method as a test. The method
 invokes the `SampleService` object's `add` method and asserts its result. 
 
-    final long result = _sampleService.add(1, 3);
+    @Test
+    public void testAdd() throws IOException, PortalException {
+        final long result = _sampleService.add(1, 3);
 
-    Assert.assertEquals(4, result);
+        Assert.assertEquals(4, result);
+    }
 
-The Liferay Arquillian Extension injects the `_sampleService` field with the
+The Liferay Arquillian Extension injects the `_sampleService` field with a
 `SampleService` implementation (i.e., a `SampleServiceImpl` instance). 
 
     @Inject
@@ -178,7 +185,7 @@ The integration test has some dependencies, of course.
 #### Dependencies [](id=dependencies)
 
 The project's `build.gradle` file specifies this test's dependencies on
-Liferay's Arquillian container, JUnit, and Arquillian's JUnit test container:
+Liferay's Arquillian container, JUnit, and an Arquillian JUnit test container:
 
     testIntegrationCompile group: "com.liferay.arquillian", name: "com.liferay.arquillian.arquillian-container-liferay", version: "1.0.6"
     testIntegrationCompile group: "junit", name: "junit", version: "4.12"
@@ -212,23 +219,20 @@ The project uses  Java Management Extensions (JMX) to deploy OSGi modules to
 
 #### JMX Settings [](id=jmx-settings)
 
-The Arquillian Liferay Extension uses JMX to deploy OSGi modules to @product@.
 Apache Aries JMX exposes the JMX API that Arquillian uses to
-install/deploy/start the modules.
-
-Since DXP Digital Enterprise 7.0 Fix Pack 16 and Liferay CE 7.0 GA4, Liferay
-Workspace's `startTestableTomcat` Gradle task installs the Apache Aries JMX
-modules automatically. In case you're using and earlier @product@ version or
-haven't already installed the Aries modules, here's their group ID, artifact ID,
-and version information. You can install them using
+install/deploy/start the modules. Since DXP Digital Enterprise 7.0 Fix Pack 16
+and Liferay CE 7.0 GA4, Liferay Workspace's `startTestableTomcat` Gradle task
+installs the Apache Aries JMX modules automatically. In case you're using and
+earlier @product@ version or haven't already installed the Aries modules, here's
+their group ID, artifact ID, and version information. You can install them using
 [Apache Felix GoGo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell):
 
     "org.apache.aries.jmx:org.apache.aries.jmx:1.1.5"
     "org.apache.aries:org.apache.aries.util:1.1.3"
 
-JMX is enabled on the application server via its Java runtime options. The
-following Apache Tomcat environment script excerpts demonstrate enabling JMX
-(without authentication) on port 8099. 
+JMX is enabled on the application server via Java runtime options. The following
+Apache Tomcat environment script excerpts demonstrate enabling JMX (without
+authentication) on port 8099. 
 
 ##### `setenv.sh` JMX Settings [](id=setenv-sh-jmx-settings)
 
@@ -243,18 +247,18 @@ following Apache Tomcat environment script excerpts demonstrate enabling JMX
     set "CATALINA_OPTS=%CATALINA_OPTS% %JMX_OPTS%"
 
 Apache Tomcat's
-[guide](https://tomcat.apache.org/tomcat-7.0-doc/monitoring.html#Enabling_JMX_Remote)
+[guide *Enabling JMX Remote*](https://tomcat.apache.org/tomcat-7.0-doc/monitoring.html#Enabling_JMX_Remote)
 has more JMX configuration details. 
 
-You've seen how the example integration test class and setup is straightforward.
-Next, you'll learn how functional browser-based tests with Arquillian are
-intricate but fun to develop. 
+You've seen how the example integration test class and its setup are
+straightforward. Next, you'll discover how fun it is to develop functional
+browser-based tests using Arquillian. 
 
 ### Functional Test [](id=functional-test)
 
 The Arquillian Blade Example's functional tests interact with the portlet UI to
-verify content and validate behavior. The tests operate on the following View
-parameters: 
+verify content and validate behavior. The example tests operate on the following
+view parameters: 
 
 -   `firstParameter`: First number to add
 -   `secondParameter`: Second number to add
@@ -290,8 +294,7 @@ parameters. Here's the `view.jsp` code:
     </aui:form>
 
 Users enter numbers in the `firstParameter` and `secondParameter` input fields
-and click on the `add` button to calculate and return the sum to the `result`
-field. 
+and click on the `add` button to show the sum to the `result` field. 
 
 Functional test class `BasicPortletFunctionalTest` uses Selenium to interact
 with the portlet's UI. Here's the `BasicPortletFunctionalTest` class:
@@ -406,19 +409,24 @@ with the portlet's UI. Here's the `BasicPortletFunctionalTest` class:
 
     }
 
-Arquillian annotation @RunAsClient and JUnit annotation @RunWith mark this class
-as a web client that runs on Arquillian.
+Arquillian annotation `@RunAsClient` and JUnit annotation `@RunWith` mark the
+class as a web client that runs on Arquillian.
 
-Similar to the integration test class, the `create` method packages the test as
-a JAR file for Arquillian to execute. 
+Similar to the integration test class, this class's `create` method packages the
+test as a JAR file for Arquillian to execute. 
 
 Method `testInstallPortlet` verifies portlet content. 
 
-    final String bodyText = _browser.getPageSource();
+    @Test
+    public void testInstallPortlet() throws IOException, PortalException {
+        _browser.get(_portlerURL.toExternalForm());
 
-    Assert.assertTrue(
-        "The portlet is not well deployed",
-        bodyText.contains("Sample Portlet is working!"));
+        final String bodyText = _browser.getPageSource();
+
+        Assert.assertTrue(
+            "The portlet is not well deployed",
+            bodyText.contains("Sample Portlet is working!"));
+    }
 
 This test class uses the following fields:
 
@@ -435,7 +443,7 @@ This test class uses the following fields:
         private URL _portlerURL;
 
 -   `_firstParamter` and `_secondParameter`: JavaScript selectors and Selenium
-    annotation `FindBy` map these fields to the form's inputs. 
+    annotation `@FindBy` map these fields to the form's inputs. 
 
         @FindBy(css = "input[id$='firstParameter']")
         private WebElement _firstParamter;
@@ -456,30 +464,35 @@ This test class uses the following fields:
 Using the `*Parameter` fields, the `testAdd` method injects numbers `2` and `3`
 into the form, submits the form, and asserts `5` as the result. 
 
-    _browser.get(_portlerURL.toExternalForm());
+    @Test
+    public void testAdd()
+        throws InterruptedException, IOException, PortalException {
 
-    _firstParamter.clear();
+        _browser.get(_portlerURL.toExternalForm());
 
-    _firstParamter.sendKeys("2");
+        _firstParameter.clear();
 
-    _secondParameter.clear();
+        _firstParameter.sendKeys("2");
 
-    _secondParameter.sendKeys("3");
+        _secondParameter.clear();
 
-    _add.click();
+        _secondParameter.sendKeys("3");
 
-    Thread.sleep(5000);
+        _add.click();
 
-    Assert.assertEquals("5", _result.getText());
+        Thread.sleep(5000);
+
+        Assert.assertEquals("5", _result.getText());
+    }
 
 Testing portlets via a web client is that simple! 
 
-Functional tests require some additional setup. 
+Functional tests typically require more setup than integration tests. 
 
 #### Dependencies
 
 The `BasicPortletFunctionalTest` class requires Arquillian's Graphine extension
-for functional client testing. Here's the dependency from the Gradle file
+to use the web client. Here's the dependency from the Gradle file
 `build.gradle`:
 
     testIntegrationCompile group: "org.jboss.arquillian.graphene", name: "graphene-webdriver", version: "2.1.0.Final"
@@ -491,7 +504,7 @@ for functional client testing. Here's the dependency from the Gradle file
 
 $$$
 
-The test has additional Arquillian configuration elements too. 
+The test requires additional Arquillian configuration elements too. 
 
 #### Arquillian Configuration
 
@@ -519,44 +532,42 @@ integration test, this functional test specifies the browser type using
 
 +$$$
 
-**Note**: you can also inject the URL of the container (e.g., Apache Tomcat)
-using the annotation `@ArquillianResource`. The Arquillian Liferay Extension
-provides these options:
+**Note**: The Arquillian Liferay Extension
+provides these options for injecting the URL of the container (e.g., Apache Tomcat):
     
-1.  In a deployment method or field in your test class, designate the URL using
-    the annotation `@ArquillianResource`.
+1.  In a test class deployment method or field, use the annotation
+    `@ArquillianResource` to designate the URL.
 
 2.  Configure Arquillian using the graphene URL property (via
     `arquillian.xml`, `arquillian.properties`, or System Properties).
 
 $$$
 
-You should use Portal properties to disable @product@ from launching a browser
+You should use Portal properties to prevent @product@ from launching a browser
 and the Setup Wizard. 
 
 #### Portal Properties
 
-The Arquillian Blade Example specifies these Portal properties in file
+The Arquillian Blade Example specifies the following Portal properties in file
 `src/testIntegration/resources/portal-ext.properties`:
 
     browser.launcher.url=
     setup.wizard.enabled=false
 
-Functional tests bring up their own browsers. Additional browsers can interfere
-with the tests. Setting `browser.launcher.url` to an empty value prevents
-@product@ from launching a browser on its own.
-
-You don't need @product@'s setup wizard either. Setting
-`setup.wizard.enabled=false` bypasses launching the Setup Wizard.
+Browsers other than the ones the functional tests launch can interfere with
+tests. Setting `browser.launcher.url` to an empty value prevents @product@ from
+launching a browser on its own. You don't need @product@'s setup wizard either.
+Setting `setup.wizard.enabled=false` bypasses launching the Setup Wizard.
 
 The example project's Gradle task `copyPortalExt`, copies the Portal properties
 file into the @product@ installation.
 
-You've explored the Arquillian Blade Example's tests. As you develop tests, you
-might want to track the parts of product code your tests cover. The example
-project uses JaCoCo to measure code coverage.  If you'd rather launch the
-Arquillian Blade Example before investigating JaCoCo, skip to [Running the
-Tests](#running-the-tests). Otherwise, jump into JaCoCo! 
+As you develop tests, you might want to track the parts of the product your
+tests cover. The example project uses JaCoCo to measure code coverage. JaCoCo is
+explained next. 
+
+If you'd rather launch the Arquillian Blade Example before investigating JaCoCo,
+skip to [Running the Tests](#running-the-tests). Otherwise, jump into JaCoCo! 
 
 ## Measuring Code Coverage with JaCoCo [](id=measuring-code-coverage-with-jacoco)
 
@@ -583,11 +594,10 @@ append the following JaCoCo options to  the Tomcat environment script's
     
     set "CATALINA_OPTS=%CATALINA_OPTS% %JACOCO_OPTS%"
 
-`PATH_TO_JACOCO_AGENT_JAR` is the path to the `jacocoagent.jar` file and
-`JACOCO_EXEC_FILE` is the path to the JaCoCo result dump. Replace these values
-with paths to those files in your local project. 
+Replace `PATH_TO_JACOCO_AGENT_JAR` with the path to the `jacocoagent.jar` file
+and `JACOCO_EXEC_FILE` with the path to the JaCoCo result dump file. 
 
-### JaCoCo Build File Instructions
+### JaCoCo Build Instructions
 
 The Gradle build file `build.gradle` specifies several JaCoCo-related
 instructions:
@@ -627,7 +637,7 @@ instructions:
             }
         }
 
-4.  Generate JaCoCo reports in HTML:
+4.  Generate JaCoCo reports:
 
         jacocoTestReport {
             dependsOn dumpJacoco
@@ -645,8 +655,8 @@ Gradle task.
 
 ## Running the Tests [](id=running-the-tests)
 
-You're ready to run the Arquillian Blade Example tests. To run the tests, open a
-terminal to the project root and execute the following command:
+You're ready to run the Arquillian Blade Example tests. Open a terminal to the
+project root and execute the following command:
 
     gradlew testIntegration
 
@@ -661,8 +671,9 @@ The command does these things:
 For `testIntegration` task details, examine the `build.gradle` file in the
 project root. 
 
-The command can take a long time to execute because of all it does.  The tests
-and JaCoCo report results:
+The command can take several minutes to execute because of all it does.  
+
+Test results are found in these locations:
 
 -   *Tests*: `build\reports\tests\testIntegration\index.html`
 -   *Code Coverage*: `build\reports\coverage\index.html`
