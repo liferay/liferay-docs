@@ -557,7 +557,7 @@ to the original file in @product@:
       specified. 
     - **Original file in @product@:** `portal-web/docroot/WEB-INF/portlet-custom.xml`
 - `ext-web/docroot/WEB-INF/liferay-portlet-ext.xml`
-    - **Description:** Overrides the Liferay-specific core portlers'
+    - **Description:** Overrides the Liferay-specific core portlets'
      declarations. Refer to the 
      [liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html)
       file for details on all the available options. Use this file with care;
