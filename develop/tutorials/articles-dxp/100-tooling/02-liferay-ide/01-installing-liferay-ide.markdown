@@ -28,10 +28,10 @@ compatible and can be copied to the new 3.1 version.
     Be sure to choose the installer appropriate for your operating system (e.g.,
     Windows, MacOS, Linux).
 
-3.  Run the installer. You may need to provide access for the installer to run,
-    depending on your operating system.
+3.  Run the installer. You may need to allow permission for the installer to run,
+    depending on your operating system and where you want to install it.
 
-4.  Click *Next* to begin the installation process. Then select the installation
+4.  Click *Next* to begin the installation process. Select the installation
     folder for your Liferay @ide@ instance. Then click *Next*.
 
     ![Figure 1: Choose the folder your @ide@ instance should reside.](../../../images-dxp/dev-studio-install.png)
