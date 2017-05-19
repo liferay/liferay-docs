@@ -28,6 +28,20 @@ compatible and can be copied to the new 3.1 version.
     Be sure to choose the installer appropriate for your operating system (e.g.,
     Windows, MacOS, Linux).
 
+    You may be prompted for your liferay.com username and password before
+    downloading the @ide@ installer. Since @ide@ includes access to @product@,
+    you must verify that you have rights to use it. After providing your
+    credentials, they're stored in your `~/.gradle/gradle.properties` file. The
+    credentials are used by your @ide@'s
+    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+    if you ever decide to redownload a @product@ bundle. Furthermore, the
+    @product@ bundle that was downloaded in your workspace is also copied to
+    your `~/.liferay/bundles` folder, so if you decide to initialize another
+    @product@ instance of the same version, the bundle is not redownloaded. See
+    the
+    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
+    for more information on this topic.
+
 3.  Run the installer. You may need to allow permission for the installer to run,
     depending on your operating system and where you want to install it.
 
