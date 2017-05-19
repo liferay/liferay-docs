@@ -1,4 +1,4 @@
-# Creating Form Navigator Contexts
+# Creating Form Navigator Contexts [](id=creating-form-navigator-contexts)
 
 Form Navigator System Settings let you specify what categories and sections are 
 visible in your forms. You can learn how to set Form Navigator 
@@ -20,9 +20,20 @@ additional contexts for users. For example, you may want to provide a custom
 configuration for a form when it's viewed by an administrator. This tutorial 
 covers how to create additional contexts for Form Navigators. 
 
-Get started by implementing the Context Provider class next. 
+Get started by managing the dependencies next.
 
-## Implementing the Context Provider Class
+## Adding the Form Navigator Dependency [](id=adding-the-form-navigator-dependency)
+
+Open your module's `build.gradle` file and add the following dependency:
+
+    dependencies {
+        compileOnly group: "com.liferay.portal", name: 
+        "com.liferay.frontend.taglib.form.navigator", version: "1.0.0"
+    }
+
+Now that you have the Form Navigator dependency added, you can create the component class next. 
+
+## Implementing the Context Provider Class [](id=implementing-the-context-provider-class)
 
 Follow these steps to create a Form Navigator Context:
 
@@ -100,7 +111,7 @@ The new context is ready to use in your Form Navigator configurations.
     
 A full `*ContextProvider` example class is provided next.
 
-## Context Provider Example class
+## Context Provider Example class [](id=context-provider-example-class)
 
 Below is an example configuration for the 
 [`com.liferay.users.admin.web.servlet.taglib.ui.UsersFormNavigatorContextProvider` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/users-admin/users-admin-web/src/main/java/com/liferay/users/admin/web/servlet/taglib/ui/UsersFormNavigatorContextProvider.java):
@@ -157,7 +168,7 @@ Below is an example configuration for the
     
 Now you know how to create a Form Navigator context!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Configuring Form Navigator Forms](/discover/portal/-/knowledge_base/7-0/configuring-form-navigator-forms)
 
