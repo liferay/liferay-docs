@@ -37,7 +37,7 @@ compatible and can be copied to the new 3.1 version.
     if you ever decide to redownload a @product@ bundle. Furthermore, the
     @product@ bundle that was downloaded in your workspace is also copied to
     your `~/.liferay/bundles` folder, so if you decide to initialize another
-    @product@ instance of the same version, the bundle is not redownloaded. See
+    @product@ instance of the same version, the bundle is not re-downloaded. See
     the
     [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.

@@ -1,9 +1,9 @@
 # Installing Liferay Workspace [](id=installing-liferay-workspace)
 
-Liferay Workspace can be installed to your machine using the Liferay Workspace
-installer. This installs JPM and
+You can install Liferay Workspace using the Liferay Workspace installer. This
+installs JPM and
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) into your user
-home folder, and optionally initializes a Liferay Workspace folder. This is the
+home folder and optionally initializes a Liferay Workspace folder. This is the
 same installer used to install Blade CLI, which is covered in the
 [Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 tutorial.

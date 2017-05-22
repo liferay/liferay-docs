@@ -1,8 +1,7 @@
 # Installing Blade CLI [](id=installing-blade-cli)
 
-Blade CLI can be installed to your machine using the Liferay Workspace
-installer. This installs JPM and Blade CLI into your user home folder, and
-optionally initializes a
+You can install Blade CLI using the Liferay Workspace installer. This installs
+JPM and Blade CLI into your user home folder and optionally initializes a
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 folder.
 
@@ -32,7 +31,7 @@ Follow the steps below to download and install Blade CLI:
     introduction.
 
 3.  If you'd like to initialize a Liferay Workspace, you can set the directory
-    in which it should reside.
+    where it should go. 
 
     ![Figure 1: Determine where your Liferay Workspace should reside, if you want one.](../../../images/blade-installer-workspace-init.png)
 
