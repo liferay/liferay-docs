@@ -49,7 +49,7 @@ application's [`edit_entry.jsp`](https://github.com/liferay/liferay-portal/blob/
     LanguageUtil.get(request, "new-blog-entry"));
 
 If you open the Blogs Admin application in the control panel and add a new
-blog entry, you'll see this behaviour in action:
+blog entry, you'll see this behavior in action:
 
 ![Figure 1: Adding a new blog entry displays the portlet title at the top, along with a back link.](../../../images/new-blog-entry-title.png)
 
@@ -58,19 +58,20 @@ learn how to leverage Liferay's taglibs in your app next.
 
 ## Leveraging Liferay's Taglibs to Create a Pleasant UI [](id=leveraging-liferays-taglibs-to-create-a-pleasant-ui)
 
-Liferay's `liferay-frontend` taglibs streamline the process of writing Lexicon
-markup, letting you focus your efforts on creating a pleasant user experience.
-The frontend taglibs give you access to several UI components that you can
-leverage in your app's design. The sections that follow outline some of the
-available components that you can use in your app's JSPs.
+Liferay's [`liferay-frontend` taglibs](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/) 
+streamline the process of writing Lexicon markup, letting you focus your efforts 
+on creating a pleasant user experience. The frontend taglibs give you access to 
+several UI components that you can leverage in your app's design. The sections 
+that follow outline some of the available components that you can use in your 
+app's JSPs. 
 
 ### Applying the Add Button Pattern [](id=applying-the-add-button-pattern)
 
 If your app requires an Actions menu, or perhaps a button that opens a different
 view (like an edit screen), you may wish to use the add button pattern. This
 pattern gives you a clean, minimal UI for such a button. You can use it in any
-of your app's screens. The add button pattern consists of an `add-menu` tag and
-at least one `add-menu-item` tag.
+of your app's screens. The add button pattern consists of an [`add-menu` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/add-menu.html) 
+and at least one [`add-menu-item` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/add-menu-item.html).
 
 ![Figure 2: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../images/add-button-diagram.png)
 
@@ -111,11 +112,11 @@ intended for administrative use, your app should use a navigation bar as well.
 Applying Lexicon to your existing navigation bar takes only one additional
 attribute.
 
-If your app already has a navigation bar implemented with the `aui:nav-bar`
+If your app already has a navigation bar implemented with the [`aui:nav-bar`](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/nav-bar.html)
 tag, you can reuse it by adding the attribute `markupView="lexicon"`.
 
 For example, the
-[Liferay's Trash app](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/trash/trash-web/src/main/resources/META-INF/resources/navigation.jsp)
+[Liferay's Trash app](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/trash/trash-web/src/main/resources/META-INF/resources/navigation.jsp)
 uses `markupView="lexicon"` with its `nav-bar`:
 
     <aui:nav-bar cssClass="collapse-basic-search" markupView="lexicon">
@@ -193,30 +194,30 @@ configuration in Liferay's Trash app:
         </liferay-frontend:management-bar-action-buttons>
     </liferay-frontend:management-bar>
 
-The `<liferay-frontend:management-bar-buttons>` tag wraps the Management Bar's
-button elements:
+The [`<liferay-frontend:management-bar-buttons>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-buttons.html) 
+wraps the Management Bar's button elements:
 
 ![Figure 4: The `management-bar-buttons` tag contains the Management Bar's main buttons.](../../../images/management-bar-buttons.png)
 
-The `<liferay-frontend:management-bar-sidenav-toggler-button>` tag implements
-slide-out navigation for the info button.
+The [`<liferay-frontend:management-bar-sidenav-toggler-button>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-sidenav-toggler-button.html) 
+implements slide-out navigation for the info button.
 
-The `<liferay-frontend:management-bar-display-buttons>` tag renders the app's
-display style options:
+The [`<liferay-frontend:management-bar-display-buttons>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-display-buttons.html) 
+renders the app's display style options:
 
 ![Figure 5: The `management-bar-display-buttons` tag contains the content's display options.](../../../images/management-bar-display-buttons.png)
 
-The `<liferay-frontend:management-bar-filters>` tag wraps the app's
-filtering options. This filter should be included in all control panel
-applications. Filtering options can include sort criteria, sort ordering, and
-more:
+The [`<liferay-frontend:management-bar-filters>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-filters.html) 
+wraps the app's filtering options. This filter should be included in all control 
+panel applications. Filtering options can include sort criteria, sort ordering, 
+and more:
 
 ![Figure 6: The `management-bar-filters` tag contains the content filtering options.](../../../images/management-bar-filters.png)
 
-Finally, the `<liferay-frontend:management-bar-action-buttons>` tag wraps the
-actions that you can execute over selected items. In @product@ 7, you can select
-multiple items between pages. The management bar keeps track of the number of
-selected items for you:
+Finally, the [`<liferay-frontend:management-bar-action-buttons>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-action-buttons.html) 
+wraps the actions that you can execute over selected items. In @product@ 7, you 
+can select multiple items between pages. The management bar keeps track of the 
+number of selected items for you:
 
 ![Figure 7: The management bar keeps track of the items selected and displays the actions to execute on them.](../../../images/management-bar-action-buttons.png)
 
@@ -406,7 +407,7 @@ provided to the liferay-ui:search-iterator taglib as shown below:
 You will need to create a java class that implements the ResultRowSplitter
 interface. The ResultRowSplitter class is responsible for dividing and
 categorizing the results based on the different entry types. See the Bookmarks
-application's [BookmarksResultRowSplitter.java](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/collaboration/bookmarks/bookmarks-web/src/main/java/com/liferay/bookmarks/web/dao/search/BookmarksResultRowSplitter.java) 
+application's [BookmarksResultRowSplitter.java](@platform-ref@/7.0-latest/javadocs/modules/apps/collaboration/bookmarks/com.liferay.bookmarks.web/com/liferay/bookmarks/web/internal/dao/search/BookmarksResultRowSplitter.html) 
 class for example.
 
 Finally, the action menu style should be changed to use the vertical ellipsis
@@ -505,17 +506,17 @@ You'll learn how to configure the actions for your app next.
 ## Configuring Your Apps Actions Menu [](id=configuring-your-apps-actions-menu)
 
 In previous versions of Liferay it was common to have a series of buttons or
-menus with actions in the different views of the app. In @product-ver@ the proposed
-pattern is to move all of these actions to the upper right menu, leaving the
-primary action(often an "Add" operation) visible in the add menu. For example,
-the web content application has the actions menu shown below:
+menus with actions in the different views of the app. In @product-ver@ the 
+proposed pattern is to move all of these actions to the upper right menu, 
+leaving the primary action(often an "Add" operation) visible in the add menu. 
+For example, the web content application has the actions menu shown below:
 
 ![Figure 11: The upper right ellipsis menu contains most of the actions for the app.](../../../images/actions-menu.png)
 
 To add an action to the upper right menu you will need to first create a 
-`PortletConfigurationIcon` component. This class specifies the portlet where the
-action will be added, the screen in which it will be shown, and the order
-(by specifying a weight).
+[`PortletConfigurationIcon` component](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html). 
+This class specifies the portlet where the action will be added, the screen in 
+which it will be shown, and the order (by specifying a weight).
 
 In this example, the action will be shown in the home page of the System
 Settings portlet. To make it appear in a secondary screen you can use the `path`
@@ -641,7 +642,8 @@ this attribute to define the icon in the management bar, inside of the
 
 To use Lexicon icons outside of the management bar, you have two options:
 
-You can use the `liferay-ui:icon` taglib. For example:
+You can use the [`liferay-ui:icon` taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/icon.html). 
+For example:
 
     <liferay-ui:icon
 
@@ -653,7 +655,8 @@ You can use the `liferay-ui:icon` taglib. For example:
 
     />
 
-You can also use the `aui:icon` taglib. For example:
+You can also use the [`aui:icon` taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/icon.html). 
+For example:
 
     <aui:icon
 
