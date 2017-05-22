@@ -265,6 +265,6 @@ Remember, language keys you want to override might actually be in Liferay's
 core. Find out how to override those language keys in a
 [separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Internationalization](internationalization)
