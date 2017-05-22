@@ -33,9 +33,8 @@ contents of your Liferay Home folders.
 
 @product@ stores configuration files, search indexes, and cache information in a
 folder called `/data` in Liferay Home. If you're using the File System store or
-the Advanced File System store, the documents and media repository (former known as
-document library) is also stored here by default. It's always important to back up
-your `/data` folder.
+the Advanced File System store, the documents and media repository is also
+stored here by default. It's always important to back up your `/data` folder.
 
 The files that comprise @product@'s OSGi runtime are stored in a folder called
 `/osgi` in Liferay Home. This folder contains the JAR files for all of the apps
@@ -73,8 +72,8 @@ should also be backed up. If you've placed your search index into a database
 (not recommended; see the [(not yet written)]() article for information on
 using Cluster Link or Solr), that database should be backed up as well
 
-Search indexes can be backed up as well, if you wish to avoid reindexing your
-entire portal after restoring your database. This is easiest to do if you have
+Search indexes can be backed up as well, if you wish to avoid re-indexing your
+content after restoring your database. This is easiest to do if you have
 a separate Elastic or Solr environment on which your index is stored. If you're in a
 clustered configuration and you're replicating indexes, you'll need to back up
 each index replica.
@@ -82,6 +81,6 @@ each index replica.
 Restoring your application server, your Liferay Home folder, the locations of
 any file system-based media repositories, and your database from a backup system
 should give you a functioning portal. Restoring search indexes should avoid the
-need to reindex when you bring your site back up after a catastrophic failure.
+need to re-index when you bring your site back up after a catastrophic failure.
 Good, consistent backup procedures are key to successfully recovering from a
 hardware failure.
