@@ -42,7 +42,12 @@ As you can see, the Liferay Theme Generator, Node.js, and Gulp development tools
 a lot to a Liferay theme developer.
 
 This tutorial assumes that you have already installed the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-and that your upgraded theme was developed with the Plugins SDK.
+and that your upgraded theme was developed with the Plugins SDK. There are two
+ways you can migrate your Plugins SDK theme to the Theme Generator: importing
+your theme manually into the Theme Generator or converting it to a Theme
+Generator project from a
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+You'll learn how to import it manually first.
 
 ## Importing Your Theme [](id=importing-your-6-2-theme)
 
@@ -79,6 +84,28 @@ existing theme in such a project:
     etc.), or press `Enter` to accept the default `http://localhost:8080`.
 
 Your theme is now set up to use the Node.js build tools and theme Gulp tasks!
+
+## Migrating Themes to the Theme Generator Using Workspace
+
+If you're a theme developer that would like to leverage Liferay Workspace to
+migrate their Plugins SDK theme to the Theme Generator, you can execute a single
+command to convert the theme project. Before beginning, make sure your Plugins
+SDK has been
+[converted to a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli#configuring-a-plugins-sdk-in-your-workspace).
+
+1.  Using a command line tool, navigate to the root folder of your workspace.
+
+2.  Execute the following command to migrate your Plugins SDK theme to a Theme
+    Generator theme:
+
+        blade convert [PLUGINS_SDK_THEME_NAME]
+
+    Blade CLI extracts the theme from the nested Plugins SDK folder and
+    reorganizes it into a standard Theme Generator project. The converted theme
+    is available in the workspace's `themes` folder.
+
+That's it! Your Plugins SDK theme is now available as a Liferay Theme Generator
+project residing in Liferay Workspace.
 
 ## Related Articles [](id=related-articles)
 
