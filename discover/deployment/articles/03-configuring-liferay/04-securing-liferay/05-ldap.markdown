@@ -115,12 +115,14 @@ these properties with phrases from your server's error messages. This enables
 
 +$$$ 
 
-**Note**: Configurations made in the System Settings will control all
-virtual instances up to a certain point. If Virtual Instance A was created
-before a change (e.g. modifying *Error password history keywords*) was made in
-the System Settings, Virtual Instance A will not inherit those changes.
-Therefore, if Virtual Instance B was created after those changes, then Virtual
-Instance B (but not A) will have the updated *Error password history keywords*.
+**Note**: When you make a change in System Settings, it takes effect for the
+virtual instance you're in. If after changing a setting you create a new
+virtual instance, that virtual instance inherits the settings of the one it was
+created from as defaults. For example, say you have virtual instances named A,
+B, and C. From A, you modify *Error password history keywords*. This change
+appears only in A, not in B or C. Then from A, you create virtual instance D.
+The change to *Error password history keywords* appears in D (not B or C),
+since D defaults to A's settings because you created it from A. 
 
 $$$
 
@@ -323,27 +325,17 @@ to all of your LDAP server connections.
 
 +$$$
 
-**Note:** You may wonder what happens if a user changes a value like a password in
-@product@, how would that change be updated in the LDAP server?
-
-@product out of the box will be able to update changes made in the Control Panel
-@into the LDAP server. However, it is possible to develop a custom module that
-@will pass the information in.
+**Note:** If a user changes a value like a password in @product@, that change is
+passed to the LDAP server, provided @product@ has enough schema access to make
+the change. 
 
 $$$
 
 Now you know how to connect an LDAP server to @product@ and how to
 configure user import behavior, export behavior, and other LDAP settings.
 
-<!--
 ## Related Topics [](id=related-topics)
 
-- @product@ Security Overview
-- Logging into @product@
-
-For a technical overview of @product@'s LDAP authentication module, please
-see the (not yet written) tutorial.
-
--->
-
+[@product@ Security Overview](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)
+[Logging into @product@](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay)
 
