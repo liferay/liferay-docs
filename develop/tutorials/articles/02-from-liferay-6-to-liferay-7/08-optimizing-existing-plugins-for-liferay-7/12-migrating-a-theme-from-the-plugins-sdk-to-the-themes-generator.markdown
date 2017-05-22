@@ -89,7 +89,7 @@ existing theme in such a project:
 
 Your theme is now set up to use the Node.js build tools and theme Gulp tasks!
 
-## Migrating Themes to the Theme Generator Using Workspace
+## Migrating Themes to the Theme Generator Using Workspace [](id=migrating-themes-to-the-theme-generator-using-workspace)
 
 If you're a theme developer that would like to leverage Liferay Workspace to
 migrate their Plugins SDK theme to the Theme Generator, you can execute a single

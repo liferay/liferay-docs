@@ -1,4 +1,4 @@
-# Migrating a Theme from the Plugins SDK to Workspace
+# Migrating a Theme from the Plugins SDK to Workspace [](id=migrating-a-theme-from-the-plugins-sdk-to-workspace)
 
 After you've adapted your Plugins SDK theme to @product@'s API, you can continue
 maintaining it in the Plugins SDK. The Plugins SDK, however, is deprecated as of
@@ -10,7 +10,7 @@ command migrates Plugins SDK (Ant-based) themes to Workspace (Gradle-based)
 themes. From there you can build and deploy them to @product-ver@ as Web
 ARchives (WARs). 
 
-## Running the Migration Command
+## Running the Migration Command [](id=running-the-migration-command)
 
 [Blade CLI's](/develop/tutorials/-/knowledge_base/7-0/blade-cli) `convert`
 command migrates Plugins SDK themes to Workspace themes in Workspace's
