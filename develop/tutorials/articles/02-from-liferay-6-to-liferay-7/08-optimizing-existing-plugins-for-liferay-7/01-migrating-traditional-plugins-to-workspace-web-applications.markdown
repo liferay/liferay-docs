@@ -43,6 +43,10 @@ Plugins SDK project's name to Blade's `convert` command:
 Blade extracts the plugin from the Plugins SDK and reorganizes it in a standard
 web application project in Workspace's `wars` folder. 
 
+**Note:** You can execute `blade convert -l` to show a list of projects that can
+be migrated in your Plugins SDK. Run `blade convert --all` to migrate all plugin
+projects in your Plugins SDK to Workspace.
+
 The image below shows the plugin files before and after they're migrated to
 Workspace. 
 
