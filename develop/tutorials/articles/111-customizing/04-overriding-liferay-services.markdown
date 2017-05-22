@@ -1,4 +1,4 @@
-# Customizing Liferay Services (Service Wrappers) [](id=customizing-liferay-services-service-wrappers)
+# Overriding Liferay Services (Service Wrappers) [](id=customizing-liferay-services-service-wrappers)
 
 Why might you need to customize Liferay services? Perhaps you've added a custom
 field to Liferay's `User` object and you want its value to be saved whenever the
