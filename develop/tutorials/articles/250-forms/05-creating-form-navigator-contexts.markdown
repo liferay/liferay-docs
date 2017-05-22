@@ -28,10 +28,11 @@ Open your module's `build.gradle` file and add the following dependency:
 
     dependencies {
         compileOnly group: "com.liferay.portal", name: 
-        "com.liferay.frontend.taglib.form.navigator", version: "1.0.0"
+        "com.liferay.frontend.taglib.form.navigator", version: "1.0.2"
     }
 
-Now that you have the Form Navigator dependency added, you can create the component class next. 
+Now that you have the Form Navigator taglib dependency added, you can create the 
+component class next. 
 
 ## Implementing the Context Provider Class [](id=implementing-the-context-provider-class)
 
