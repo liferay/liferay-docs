@@ -14,19 +14,22 @@ features, we'll pose some questions.
 -   Do you want to test a new design concept in your theme without altering its
     code?
 
-**Answer**: [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets) 
-are the answer! Themelets are small, extendable, reusable modular pieces 
-of code that let you make changes to your theme quickly. Because they are 
-modular, you can use the same themelet for multiple themes!
+**Answer**: [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets) are
+the answer! Themelets are small, extendable, reusable modular pieces  of code
+that let you make changes to your theme quickly. Because they are  modular, you
+can use the same themelet for multiple themes!
 
-Themelets are just one of the features you gain from migrating your
-existing Ant-based theme project to a [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-project. The Liferay Theme Generator is a Node.js-based tool that gives you access to
-an array of  [theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks),
+Themelets are just one of the features you gain from migrating your existing
+Ant-based theme project to a
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+project. The Liferay Theme Generator is a Node.js-based tool that gives you
+access to an array of
+[theme Gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 that facilitate developing and managing themes. 
 
 The *upgrade* Gulp task upgrades Liferay Portal 6 themes to @product-ver@. For details,
-refer to the [Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes)
+refer to the
+[Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes)
 tutorial. 
 
 In addition to the *upgrade* task, there are tasks for building and deploying
@@ -35,13 +38,14 @@ automatically redeploy your theme as you make changes to it.
 
 Do you periodically need to make changes to your theme's settings? No problem.
 You can configure your theme's settings through the command-line wizard that the
-Liferay Theme Generator provides. All you have to do is answer a few questions about
-the settings.
+Liferay Theme Generator provides. All you have to do is answer a few questions
+about the settings.
 
-As you can see, the Liferay Theme Generator, Node.js, and Gulp development tools offer
-a lot to a Liferay theme developer.
+As you can see, the Liferay Theme Generator, Node.js, and Gulp development tools
+offer a lot to a Liferay theme developer.
 
-This tutorial assumes that you have already installed the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+This tutorial assumes that you have already installed the
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 and that your upgraded theme was developed with the Plugins SDK. There are two
 ways you can migrate your Plugins SDK theme to the Theme Generator: importing
 your theme manually into the Theme Generator or converting it to a Theme
@@ -115,4 +119,4 @@ project residing in Liferay Workspace.
 
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes)
+[Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes)
