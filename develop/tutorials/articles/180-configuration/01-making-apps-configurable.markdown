@@ -165,11 +165,15 @@ Here are the most relevant aspects of this example:
 4.  The configuration is stored in a `volatile` field. Don't forget to make it
     `volatile` or you'll run into weird problems.
 
-Note: The bnd library also provides a class called `Configurable` with a
++$$$
+
+**Note:** The bnd library also provides a class called `Configurable` with a
 `createConfigurable()` method. You can use that instead of Liferay's
 `ConfigurableUtil` without any problems. Liferay's developers created the
 `ConfigurableUtil` class to improve the performance of bnd's implementation, and
-it's used in internal code. Feel free to use whichever method you prefer.
+it's used in internal code. Feel free to use whichever method you prefer.  
+
+$$$
 
 That's it. As you can see with very few lines of code, you have a configurable
 application that dynamically changes its configuration, has an auto-generated
