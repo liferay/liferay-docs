@@ -143,7 +143,7 @@ Here's a simple example:
         @Activate
         @Modified
         protected void activate(Map<String, Object> properties) {
-            _configuration = Configurable.createConfigurable(
+            _configuration = ConfigurableUtil.createConfigurable(
             ExampleConfiguration.class, properties);
         }
 
@@ -159,7 +159,7 @@ Here are the most relevant aspects of this example:
     method is invoked when the application starts (due to the `@Activate`
     annotation) and whenever the configuration is modified (due to the
     `@Modified` annotation).
-3.  The `activate()` method uses the method `Configurable.createConfigurable()`
+3.  The `activate()` method uses the method `ConfigurableUtil.createConfigurable()`
     to convert a map of properties with the configuration to our typed class,
     which is easier to handle.
 4.  The configuration is stored in a `volatile` field. Don't forget to make it
@@ -167,8 +167,9 @@ Here are the most relevant aspects of this example:
 
 Note: The bnd library also provides a class called `Configurable` with a
 `createConfigurable()` method. You can use that instead of Liferay's
-`ConfigurableUtil` without any problems. Liferay created the `ConfigurableUtil`
-class to improve the performance of bnd's implementation.
+`ConfigurableUtil` without any problems. Liferay's developers created the
+`ConfigurableUtil` class to improve the performance of bnd's implementation, and
+it's used in internal code. Feel free to use whichever method you prefer.
 
 That's it. As you can see with very few lines of code, you have a configurable
 application that dynamically changes its configuration, has an auto-generated
@@ -245,7 +246,7 @@ $$$
         @Activate
         @Modified
         protected void activate(Map<String, Object> properties) {
-            _configuration = Configurable.createConfigurable(
+            _configuration = ConfigurableUtil.createConfigurable(
             ExampleConfiguration.class, properties);
         }
 
