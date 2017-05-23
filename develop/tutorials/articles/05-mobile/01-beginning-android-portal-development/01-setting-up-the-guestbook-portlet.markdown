@@ -21,11 +21,11 @@ First, download a Liferay Portal 6.2 Tomcat bundle from
 Then 
 [click here](/discover/deployment/-/knowledge_base/6-2/installing-a-bundle)
 and follow the instructions to install the bundle. To follow best practices, you 
-should create a `bundles` directory and unzip it there. The bundle's root 
-directory is referred to as *Liferay Home* and is named according to the 
+should create a `bundles` folder and unzip it there. The bundle's root 
+folder is referred to as *Liferay Home* and is named according to the 
 version, edition, and specific Liferay Portal release. For example, if you 
-downloaded Liferay Portal 6.2 CE GA6 and unzipped it to a `bundles` directory on 
-your machine, the path of that bundle's Liferay Home directory is: 
+downloaded Liferay Portal 6.2 CE GA6 and unzipped it to a `bundles` folder on 
+your machine, that bundle's Liferay Home folder path is 
 
     bundles/liferay-portal-6.2-ce-ga6
 
@@ -60,7 +60,7 @@ instance.
 Now that your portal is set up, you can deploy the Guestbook portlet to it. 
 Download the Guestbook portlet's `.war` package from 
 [here](https://dev.liferay.com/documents/10184/598513/guestbook-portlet.war) 
-and place it in the `[Liferay Home]/deploy` directory. You should see messages 
+and place it in the `[Liferay Home]/deploy` folder. You should see messages 
 in your console indicating that the Guestbook portlet has been successfully 
 deployed. On your portal's default site, click the + icon on the left side of 
 the screen and then click *Applications* at the top of the menu that slides out. 

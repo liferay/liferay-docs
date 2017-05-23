@@ -1,18 +1,16 @@
 # Building the Guestbook Mobile SDK [](id=building-the-guestbook-mobile-sdk)
 
-Once you've deployed the Guestbook portlet to your Liferay Portal instance,
-you're ready to build the Guestbook Mobile SDK. You might be asking yourself,
-"Why do I have to build a separate Mobile SDK? Can't I just use the pre-built
-Mobile SDK that Liferay already provides?" Fantastic question! The reason is
-that Liferay's pre-built Mobile SDK doesn't have the classes it needs to call
-the Guestbook portlet's remote services. The pre-built Mobile SDK includes only
-the framework necessary to make server calls, and the classes required to call
-the remote services of Liferay Portal's *core* apps. Core apps (also referred
-to as *out-of-the-box* apps) are those included with every Liferay Portal
-instance. You must build a separate Mobile SDK to call the remote services of
-any non-core app. Since the Guestbook portlet isn't a core app, you must build
-a separate Mobile SDK that can call its remote services. Now put on your hard
-hat, because it's time to get building! 
+Once you've deployed the Guestbook portlet, you're ready to build the Guestbook
+Mobile SDK. You might be asking yourself, "Why do I have to build a separate
+Mobile SDK? Can't I just use the pre-built Mobile SDK that Liferay already
+provides?" Fantastic question! The reason is that Liferay's pre-built Mobile SDK
+doesn't have the classes it needs to call the Guestbook portlet's remote
+services. The pre-built Mobile SDK includes only the framework necessary to make
+server calls to the remote services of Liferay Portal's *core* apps. Core apps
+(also referred to as *out-of-the-box* apps) are those included with every
+Liferay Portal instance. Since you're calling services from an app the default
+Mobile SDK doesn't know about, you must build a Mobile SDK that can call its
+services. Now put on your hard hat, because it's time to get building! 
 
 ## Building the Mobile SDK [](id=building-the-mobile-sdk)
 
@@ -26,7 +24,7 @@ Since the Guestbook portlet's web services already exist, you don't need to
 generate them. Just remember that you must generate web services when developing 
 your own portlets. 
 
-To build the Guestbook Mobile SDK, first download the Mobile SDK Builder by  
+To build the Guestbook Mobile SDK, first download the Mobile SDK Builder by 
 [clicking here](https://github.com/liferay/liferay-mobile-sdk/archive/builder-6.2.0.18.zip). 
 Unzip the file to a location on your machine where you want the Mobile SDK 
 Builder to reside. This location is purely personal preference; the builder 
@@ -65,7 +63,7 @@ following screenshot shows these properties entered in the wizard:
 Once you enter the final property, the builder runs and generates a 
 `BUILD SUCCESSFUL` message. Now that the builder contains a `guestbook-portlet` 
 module, you must generate that module's remote services. To do this, first 
-navigate to the following directory on the terminal:
+navigate to the following folder:
 
     liferay-mobile-sdk-builder-6.2.0.18/modules/guestbook-portlet
 
@@ -74,11 +72,10 @@ Then run the following command:
     ../../gradlew generate
 
 As before, the builder runs and generates a `BUILD SUCCESSFUL` message. Great! 
-You're probably wondering what just happened, though. Obviously the build 
-succeeded, but it doesn't tell you much else. What happened is this: the builder 
-generated the source classes you'll use in your Android app to interact with the 
-Guestbook portlet. You can find these source classes in the following folder in 
-the builder: 
+You're probably wondering what just happened, though. The builder generated the
+source classes you'll use in your Android app to interact with the Guestbook
+portlet. You can find these source classes in the following folder in the
+builder: 
 
     modules/guestbook-portlet/android/src/gen/java
 
@@ -94,7 +91,7 @@ portlet: `guestbook` and `entry`. Each subfolder contains that entity's source
 class, `GuestbookService` and `EntryService`, respectively. 
 
 There's one last thing to do before you can use these classes in your Android 
-app: put them in a JAR file. To do this, navigate to the 
+app: put them in a JAR file. To do this, make sure you're still in the 
 `modules/guestbook-portlet` folder on the command line and run 
 `../../gradlew jar`. This command does two things: 
 
