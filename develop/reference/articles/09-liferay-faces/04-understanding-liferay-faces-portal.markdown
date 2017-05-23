@@ -26,7 +26,7 @@ it accomplishes in your JSF application.
 
 ## Related Topics [](id=related-topics)
 
-[Getting Started with JSF Applications](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-jsf-applications)
+[Creating a JSF Project Manually](/develop/tutorials/-/knowledge_base/7-0/creating-a-jsf-project-manually)
 
 [Customizing Liferay Search](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-search)
 
