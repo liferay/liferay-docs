@@ -49,8 +49,8 @@ can have:
 
 That's it for now. You are ready to get started with some code. If you already
 had a portlet or service that was configurable using the traditional mechanisms
-of Liferay Portal 6.2 and before, you might also want to read the
-[How to change your portlets and services to use the new Configuration API (not yet written)]() (not yet written) tutorial.
+of Liferay Portal 6.2 and before, refer to the
+[Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-0/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
 
 ## Making Your Application Configurable [](id=making-your-application-configurable)
 
