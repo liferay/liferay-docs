@@ -65,8 +65,8 @@ a Liferay Developer Studio instance.
 $$$
 
 Awesome! You've successfully created a Liferay Workspace in Liferay @ide@! If
-you're using Liferay Developer Studio, you can also  to create a workspace
-during initial start-up.
+you're using Liferay Developer Studio, you can also create a workspace during
+initial start-up.
 
 ## Liferay Workspace Settings in @ide@ [](id=liferay-workspace-settings-in-ide)
 
