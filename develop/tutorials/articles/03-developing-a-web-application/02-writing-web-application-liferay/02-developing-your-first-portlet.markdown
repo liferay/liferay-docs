@@ -268,7 +268,7 @@ $$$
 The following method implements adding a guestbook entry to a portlet preference
 called `guestbook-entries`:
  
-    public void addEntry(ActionRequest request, ActionResponse response) {
+	public void addEntry(ActionRequest request, ActionResponse response) {
         try {
             PortletPreferences prefs = request.getPreferences();
 
@@ -296,17 +296,17 @@ called `guestbook-entries`:
                 prefs.store();
             }
             catch (IOException ex) {
-                Logger.getLogger(GuestbookModulePortlet.class.getName()).log(
+                Logger.getLogger(GuestbookMvcPortlet.class.getName()).log(
                         Level.SEVERE, null, ex);
             }
             catch (ValidatorException ex) {
-                Logger.getLogger(GuestbookModulePortlet.class.getName()).log(
+                Logger.getLogger(GuestbookMvcPortlet.class.getName()).log(
                         Level.SEVERE, null, ex);
             }
 
         }
         catch (ReadOnlyException ex) {
-            Logger.getLogger(GuestbookModulePortlet.class.getName()).log(
+            Logger.getLogger(GuestbookMvcPortlet.class.getName()).log(
                     Level.SEVERE, null, ex);
         }
     }

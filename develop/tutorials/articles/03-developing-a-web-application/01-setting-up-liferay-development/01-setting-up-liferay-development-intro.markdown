@@ -48,7 +48,7 @@ Project*. Eclipse can be weird that way.
 A New Liferay Workspace dialog appears, presenting several configuration
 options. Follow the instructions below to create your workspace.
 
-1. Give your workspace the name *guestbook-workspace*. 
+1. Give your workspace the name *com-liferay-docs-guestbook*. 
 
 2. Next, you're asked to choose the location of your workspace. Leave the
    default setting checked; this places your Liferay Workspace inside your Eclipse
