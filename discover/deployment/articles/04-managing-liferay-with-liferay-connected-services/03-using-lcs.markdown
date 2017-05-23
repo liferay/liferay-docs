@@ -465,13 +465,23 @@ LCS also lets you use and view your Liferay EE subscriptions. By assigning an
 environment to a subscription type and then registering a Liferay server in that 
 environment, your server consumes one activation key from that subscription 
 type. You can also view your project's available subscriptions and see how 
-they're being used. You can access these features from the *Subscriptions* tab 
-on the upper-left of the LCS site. Note that to use these features, your Liferay 
-instances must be running Liferay 6.2 EE Service Pack 15 or higher. 
+they're being used. Note that to use these features, your Liferay instances must 
+be running Liferay 6.2 EE Service Pack 15 or higher. 
 
-![Figure x: The *Subscriptions* tab in LCS lets you view and manage your Liferay EE subscriptions.](../../images/lcs-subscriptions.png)
+LCS also lets you register Liferay servers via *elastic subscriptions*. Elastic 
+subscriptions let you register an unlimited number of Liferay servers, unlike 
+other subscriptions that limit you to a certain number of servers. This is 
+invaluable in auto-scaling environments, where servers are automatically created 
+and destroyed in response to server load. 
 
-There are four tables in the Subscriptions tab: 
+You can access these features from the *Subscriptions* tab on the upper-left of 
+the LCS site. The *Subscriptions* tab contains two tabs: *Details* and *Elastic 
+Subscriptions*. When you select the *Subscriptions* tab, the *Details* tab is 
+selected by default. 
+
+![Figure 4.25: The *Subscriptions* tab in LCS lets you view and manage your Liferay EE subscriptions.](../../images/lcs-subscriptions.png)
+
+There are four tables in the *Details* tab: 
 
 1. **Assign Subscription Type:** lets you assign a subscription type to an 
    environment. To do so, click the environment's *No Subscriptions* link and 
@@ -486,6 +496,13 @@ There are four tables in the Subscriptions tab:
     change an environment's subscription type**. 
 
     $$$
+
+    When assigning a subscription type, you can also designate the environment 
+    as elastic. Doing so means that all servers that register in the environment 
+    will use elastic subscriptions. To do this, check the *Elastic* checkbox, 
+    accept the terms and conditions, and click *Save*. 
+
+    ![Figure 4.26: You can also designate environments as elastic.](../../images/lcs-elastic-assign.png)
 
     Once you've assigned a subscription type to an environment, you must use an 
     *environment token* to activate a Liferay instance in the environment. For 
@@ -525,7 +542,36 @@ server normally, its activation key is immediately freed for reuse. If the
 server crashes or its shutdown is forced (e.g., kill), its activation key is 
 freed for reuse within five minutes. 
 
-The next section shows you how to use environment tokens to connect Liferay EE 
+Next, you'll learn how to use elastic subscriptions with LCS. 
+
+### Elastic Subscriptions [](id=elastic-subscriptions)
+
+Elastic subscriptions let you register an unlimited number of Liferay servers. 
+This is invaluable in auto-scaling environments, where servers are automatically 
+created and destroyed in response to server load. You can view data on your 
+elastic servers from the *Subscriptions* tab's *Elastic Subscriptions* tab. 
+
++$$$
+
+**Note:** To register elastic servers in an environment, you must first set that 
+environment as *Elastic* and accept the elastic deployment terms and conditions. 
+You can do this from the *Details* tab's *Assign Subscription Type* table, as 
+described in the previous section. 
+
+$$$
+
+![Figure 4.27: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images/lcs-elastic-subscriptions.png)
+
+This tab displays the number of online elastic servers and the uptime details 
+for each. A graph shows the number of online elastic servers per day. The 
+*Uptime details* table lists each elastic server's start time, end time, and 
+duration. The total duration for all elastic servers is below the table's 
+*Duration* column. To download a report of the table's data, click the *Download 
+Report* button. Also, you can use the *Environment* and *Month* selectors above 
+the graph to select the environment and month to show data from, respectively. 
+The data in both the graph and the table reflect your selections here. 
+
+The next section shows you how to use environment tokens to register Liferay 
 instances with LCS. 
 
 ## Using Environment Tokens [](id=using-environment-tokens)
@@ -614,7 +660,7 @@ tab. This tab contains the following sections:
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
 
-![Figure 4.25: An environment's Registration tab lets you select the LCS services to use with your Liferay servers that connect to that environment.](../../images/lcs-environment-token.png)
+![Figure 4.28: An environment's Registration tab lets you select the LCS services to use with your Liferay servers that connect to that environment.](../../images/lcs-environment-token.png)
 
 Whether you must generate or regenerate a token depends on the actions you took 
 in the Services section, and whether there's an existing token in the 
