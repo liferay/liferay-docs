@@ -79,3 +79,11 @@ their POM accordingly.
 The generated module is functional and is
 deployable to a @product@ instance. To build upon the generated app, modify the
 project by adding logic and additional files to the folders outlined above.
+
+## Related Topics  [](id=related-topics)
+
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+
+[Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
+
+[Service Builder with Maven](/develop/tutorials/-/knowledge_base/7-0//develop/reference/-/knowledge_base/7-0/service-builder-with-maven)
