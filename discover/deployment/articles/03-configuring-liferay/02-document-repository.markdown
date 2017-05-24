@@ -113,6 +113,42 @@ system must support concurrent requests and file locking. Otherwise, you may
 experience data corruption issues if two users attempt to write to the same file
 at the same time from two different nodes. 
 
++$$$
+
+**Note:** Since Liferay DXP Fix Pack 14 and Liferay Portal 7.0 CE GA4, to 
+configure the advanced file system store you must configure both the 
+`portal-ext.properties` and `.config` files.
+
++$$$
+
+Create the following file inside of your app server's `osgi/configs` folder: 
+
+    com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
+
++$$$
+
+**Note:** you can also generate the config file by exporting the 
+configurations from the Control Panel under *System Settings* &rarr; 
+*Foundation* &rarr; *Advanced File System Store*.
+
+$$$
+
+Configure the property shown below:
+
+Property | Default | Required
+---------|---------|---------
+`rootDir` | `data/document_library` | `true`
+
+**You may need to update the** `rootDir` **property to correctly reflect where 
+your document library is stored**. 
+
+Next, configure `portal-ext.properties`: 
+
+    dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+
+With both the `.config` file and `portal-ext.properties` configured, you can 
+start the portal. 
+
 You may decide the advanced file system store for whatever reason doesn't serve
 your needs. If this is the case, you can of course mount other file systems into
 the documents and media library. In addition to this, you can also redefine the
@@ -270,13 +306,17 @@ Property | Default | Required
 
 #### Advanced File Store [](id=advanced-file-store)
 
+**Since Liferay DXP Fix Pack 14 and Liferay Portal 7.0 CE GA4, both the 
+`portal-ext.properties` and `.config` files are required to configure the 
+advanced file system store.**
+
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore`
 
 To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
 
 Property | Default | Required
 ---------|---------|---------
-`rootDir` | `data/document_library` | `false`
+`rootDir` | `data/document_library` | `true`
 
 #### JCR [](id=jcr)
 
