@@ -9,6 +9,7 @@ however, you must configure it. There are five steps:
 3. [Ensuring Access to LCS](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#ensuring-access-to-lcs)
 4. [NTP Server Synchronization](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#ntp-server-synchronization)
 5. [Configuring the Patching Tool](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#configuring-the-patching-tool)
+6. Installing the LCS Client App
 
 +$$$
 
@@ -29,11 +30,43 @@ First, you'll download the LCS client app.
 
 The LCS client app ships with @product@ bundles and autodeploys when the bundle 
 starts. The version included, however, may be outdated. You should therefore
-download and install the latest version of the LCS client 
-app. You can download the LCS client app 
-[here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947). 
-For instructions on using Marketplace to download and install apps, see 
-[this user guide article](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
+download and install the latest version of the LCS client app. To do this, you 
+must first purchase the app. 
+
++$$$
+
+**Note:** Even though Liferay Marketplace and this guide use the term 
+*purchase*, the LCS client app is free of charge. The purchase process for a 
+free app in Liferay Marketplace simply adds the app to your Liferay Project, 
+much like downloading a free app in a mobile app store adds the app to your 
+account. 
+
+$$$
+
+Use these steps to purchase and download the app: 
+
+1. [Click here](https://web.liferay.com/marketplace/-/mp/application/71774947) 
+   to go to the LCS client app in Liferay Marketplace. Sign in to Marketplace, 
+   then click the the LCS client app's *Free* button. 
+
+    ![Figure x: Click the app's *Free* button to begin the purchase process.](../../images/lcs-client-app-marketplace.png)
+
+2. Select the project you want to associate the app with, accept the license 
+   agreement, and then click the *Purchase* button. Marketplace then displays 
+   your receipt. 
+
+    ![Figure x: Liferay Marketplace displays your receipt for the LCS client app.](../../images/lcs-client-app-receipt.png)
+
+3. On the receipt, click *See Purchased*. This takes you to the page where you 
+   can download the LCS client app. To download the app, click the *App* button 
+   next to the version of the app you want to download.
+
+    ![Figure x: Click the *App* button next to the version of the app you want to download.](../../images/lcs-client-download-page.png)
+
+Great! You've successfully downloaded the LCS client app to your machine. Before 
+installing it, however, there are a few additional preconfiguration steps you 
+should complete. The following sections of this guide walk you through these, 
+concluding with a section that shows you how to install the LCS client app. 
 
 +$$$
 
@@ -43,16 +76,9 @@ The following section contains instructions on this.
 
 $$$
 
-Also note that as improvements are made to LCS, older versions of the LCS client 
-app may not work. You should therefore ensure that your @product@ instance is 
-always running the latest version of the client. When upgrading the client, you 
-may also need to regenerate the 
-[environment token](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
-that you use to connect. 
-
 The next section shows you how to preconfigure the LCS client app to connect 
-through a proxy. If your server doesn't connect through a proxy, you can deploy 
-the LCS client app and skip this section. 
+through a proxy. If your server doesn't connect through a proxy, you can skip 
+this section. 
 
 ## Preconfiguring the LCS Client to Connect Through a Proxy [](id=preconfiguring-the-lcs-client-to-connect-through-a-proxy)
 
@@ -73,16 +99,9 @@ this by setting some properties. There are two ways to set these properties:
     Note that the user, password, and https properties are only needed if your 
     proxy requires authentication. 
 
-2. Inside the LCS client app's WAR file, before it deploys. If you downloaded a 
-   @product@ bundle, this means that you should set these properties prior to 
-   starting your bundle for the first time. You can find the LCS client's WAR 
-   file in the bundle's `[Liferay_Home]/deploy` folder. Starting the bundle 
-   automatically deploys the LCS client app. If you've already started your 
-   bundle, download the client app from 
-   [here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947), 
-   make your changes in its WAR file, and redeploy it. You can find the WAR file 
-   inside the app's LPKG file that downloads to your machine from Marketplace. 
-   In either case, the client's WAR file is `lcs-portlet-[version].war`. 
+2. Inside the LCS client app's WAR file, before deploying it. You can find the 
+   WAR file inside the app's LPKG file that downloads to your machine from 
+   Liferay Marketplace. The client's WAR file is `lcs-portlet-[version].war`. 
 
    You must set the properties in the WAR file's `portlet-ext.properties` file. 
    Follow these steps to do so: 
@@ -115,9 +134,9 @@ this by setting some properties. There are two ways to set these properties:
       if you don't need it. 
 
    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-      file. 
-
-   d. Deploy the LCS client WAR or redeploy it if it's already deployed. 
+      file, then repackage the LPKG file with the LCS client WAR. Make sure the 
+      repackaged LPKG file has the same name as the original LPKG file 
+      downloaded from Liferay Marketplace. 
 
 Next, you'll learn how to ensure that the LCS client can access LCS. 
 
@@ -214,4 +233,16 @@ You can specify these as follows:
 
         -Dpatching.tool.agent.properties=debug,nohalt
 
-Great! Now you're all set to activate your @product@ instance with LCS.
+## Installing the LCS Client App
+
+Once you've addressed the above preconfiguration steps, you're ready to install 
+the LCS client app. Follow these steps to install the app:
+
+1. In your @product@ bundle's Liferay Home folder (usually the parent folder 
+   of the application server's folder), delete this file: 
+
+        osgi/marketplace/Liferay Connected Services Client.lpkg
+
+2. Place the new `Liferay Connected Services Client.lpkg` in `osgi/marketplace`. 
+
+Great! Now you're all set to activate your @product@ instance with LCS. 
