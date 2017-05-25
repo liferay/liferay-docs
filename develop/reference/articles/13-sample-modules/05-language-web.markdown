@@ -1,4 +1,4 @@
-# Language Web
+# Language Web [](id=language-web)
 
 The Language Web sample is a simple JSP portlet that conveys Liferay's
 recommended approach to sharing language keys through OSGI services.
@@ -27,7 +27,7 @@ You can visit the
 more information on how language keys are used from modules and shared between
 modules.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are three different versions of this sample, each built with a different
 build tool:

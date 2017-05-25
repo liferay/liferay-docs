@@ -1,4 +1,4 @@
-# Language
+# Language [](id=language)
 
 The Language sample conveys Liferay's recommended approach to sharing
 language keys through OSGI services. This particular sample provides a resource
@@ -46,7 +46,7 @@ Visit the
 to see how the Language sample module shares its language keys with a JSP
 portlet.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are three different versions of this sample, each built with a different
 build tool:
