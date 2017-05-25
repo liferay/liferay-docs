@@ -36,10 +36,9 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
         -liferay-aggregate-resource-bundles: \
             blade.language
 
-    This approach has the advantage of easier extensibility. Only the common
-    language modules need to be built and redeployed when keys change for all
-    modules using them to automatically pick up the changes while staying clear
-    of implementation details.
+    This approach has the advantage of easier extensibility. When language keys
+    change, only the common language modules must be built and redeployed for
+    the modules referencing them to recognize their updates.
 
 Visit the
 [Language Web article](/develop/reference/-/knowledge_base/7-0/language-web)
