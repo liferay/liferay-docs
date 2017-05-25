@@ -23,7 +23,7 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
 
     You can get a reference to the registered service in your components as
     detailed in the
-		[Overriding a Module's Language Keys](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-language-keys)
+		[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-language-keys)
 		tutorial. The main disadvantage of this approach is that it forces you to
 		provide a specific implementation of the `ResourceBundleLoader`, making it
 		harder to modularize in the future.
@@ -42,11 +42,11 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
     of implementation details.
 
 Visit the
-[blade.language.web README](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.language.web/README.markdown)
+[Language Web article](/develop/reference/-/knowledge_base/7-0/language-web)
 to see how the Language sample module shares its language keys with a JSP
 portlet.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:
