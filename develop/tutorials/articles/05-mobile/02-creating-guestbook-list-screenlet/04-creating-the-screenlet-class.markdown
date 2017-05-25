@@ -3,21 +3,17 @@
 When using a Screenlet, app developers primarily interact with its Screenlet 
 class. The Screenlet class contains attributes for configuring the Screenlet's 
 behavior, a reference to the Screenlet's View, methods for invoking Interactor 
-operations, and more. To app developers, the Screenlet class is like the 
-driver's seat of a fine luxury automobile. All the controls are in just the 
-right place, do exactly what they should, and make you feel like royalty on the 
-road. Now it's your turn to craft this for Guestbook List Screenlet. Don't 
-worry, we promise you won't get a speeding ticket. 
+operations, and more. 
 
 You'll use these steps to create the Screenlet class: 
 
-1. Define the Screenlet's attributes. These are the XML attributes the app 
-   developer can set when inserting the Screenlet's XML. These attributes 
-   control aspects of the Screenlet's behavior. 
+1.  Define the Screenlet's attributes. These are the XML attributes the app 
+    developer can set when inserting the Screenlet's XML. These attributes 
+    control aspects of the Screenlet's behavior. 
 
-2. Create the Screenlet class. This class implements the Screenlet's 
-   functionality defined in the View and Interactor. It also reads the attribute 
-   values and configures the Screenlet accordingly. 
+2.  Create the Screenlet class. This class implements the Screenlet's 
+    functionality defined in the View and Interactor. It also reads the attribute 
+    values and configures the Screenlet accordingly. 
 
 First, you'll define Guestbook List Screenlet's attributes. 
 
@@ -56,10 +52,10 @@ Screenlet class for Guestbook List Screenlet. Note that these steps closely
 follow those in the list Screenlet creation tutorial for creating a Screenlet 
 class. Departures from the tutorial's steps are noted. 
 
-1. Create the `GuestbookListScreenlet` class in the package 
-   `com.liferay.docs.guestbooklistscreenlet`. Recall that Screenlet classes for 
-   list Screenlets must extend `BaseListScreenlet` with the model and Interactor 
-   as type arguments. Declare `GuestbookListScreenlet` as such: 
+1.  Create the `GuestbookListScreenlet` class in the package 
+    `com.liferay.docs.guestbooklistscreenlet`. Recall that Screenlet classes for 
+    list Screenlets must extend `BaseListScreenlet` with the model and Interactor 
+    as type arguments. Declare `GuestbookListScreenlet` as such: 
 
         public class GuestbookListScreenlet extends 
             BaseListScreenlet<GuestbookModel, GuestbookListInteractor> {...
@@ -75,8 +71,8 @@ class. Departures from the tutorial's steps are noted.
     require an instance variable for `groupId` because Screens handles it for 
     you. 
 
-2. Recall that for constructors, you can leverage the superclass constructors. 
-   Do so now to create `GuestbookListScreenlet`'s constructors: 
+2.  Recall that for constructors, you can leverage the superclass constructors. 
+    Do so now to create `GuestbookListScreenlet`'s constructors: 
 
         public GuestbookListScreenlet(Context context) {
             super(context);
@@ -100,9 +96,9 @@ class. Departures from the tutorial's steps are noted.
         import android.content.Context;
         import android.util.AttributeSet;
 
-3. Implement the `error` method. Recall that this method uses a listener in the 
-   Screenlet framework to propagate any exception that occurs during the service 
-   call: 
+3.  Implement the `error` method. Recall that this method uses a listener in the 
+    Screenlet framework to propagate any exception that occurs during the service 
+    call: 
 
         @Override
         public void error(Exception e, String userAction) {
@@ -111,11 +107,11 @@ class. Departures from the tutorial's steps are noted.
             }
         }
 
-4. Override the `createScreenletView` method. Recall that this method reads the 
-   Screenlet's attribute values and instantiates the View. In Guestbook List 
-   Screenlet, you only need to read the value of the `groupId` attribute. Also 
-   remember that calling the superclass's `createScreenletView` method 
-   instantiates the View for you: 
+4.  Override the `createScreenletView` method. Recall that this method reads the 
+    Screenlet's attribute values and instantiates the View. In Guestbook List 
+    Screenlet, you only need to read the value of the `groupId` attribute. Also 
+    remember that calling the superclass's `createScreenletView` method 
+    instantiates the View for you: 
 
         @Override
         protected View createScreenletView(Context context, AttributeSet attributes) {
@@ -135,19 +131,19 @@ class. Departures from the tutorial's steps are noted.
         import com.liferay.docs.liferayguestbook.R;
         import com.liferay.mobile.screens.context.LiferayServerContext;
 
-5. Override the `loadRows` method. Recall that this method retrieves the list 
-   rows from the server by starting the Interactor. The `loadRows` method in 
-   `GuestbookListScreenlet` therefore starts a `GuestbookListInteractor` 
-   instance. Because you don't need to pass any data to this Interactor, you can 
-   call its `start` method with `0` as an argument: 
+5.  Override the `loadRows` method. Recall that this method retrieves the list 
+    rows from the server by starting the Interactor. The `loadRows` method in 
+    `GuestbookListScreenlet` therefore starts a `GuestbookListInteractor` 
+    instance. Because you don't need to pass any data to this Interactor, you can 
+    call its `start` method with `0` as an argument: 
 
         @Override
         protected void loadRows(GuestbookListInteractor interactor) {
             interactor.start(0);
         }
 
-6. Override the `createInteractor` method. Recall that this method instantiates 
-   and returns the Interactor: 
+6.  Override the `createInteractor` method. Recall that this method instantiates 
+    and returns the Interactor: 
 
         @Override
         protected GuestbookListInteractor createInteractor(String actionName) {

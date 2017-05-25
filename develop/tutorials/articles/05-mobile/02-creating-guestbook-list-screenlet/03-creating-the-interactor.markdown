@@ -14,6 +14,11 @@ Since the list Screenlet framework already contains two listener interfaces, you
 only need to create the event and Interactor classes. You'll create the event 
 class first. 
 
+<!-- Again, here, instead of pointing to a tutorial, you may want to explain
+briefly enough about Interactors to get through the following material. It might
+actually be good to have an overview article that explains all the Screens
+constructs and how they work together in a big picture sort of way. -Rich -->
+
 ## Creating the Event Class [](id=creating-the-event-class)
 
 Recall that Screens uses event objects via the 
@@ -25,42 +30,45 @@ instructions on creating an event class, see
 You'll follow those instructions to create Guestbook List Screenlet's event 
 class. 
 
-First, create a new package called `interactor` in the 
-`com.liferay.docs.guestbooklistscreenlet` package. Then create the 
-`GuestbookEvent` class in the `interactor` package. Replace this class's 
-contents with the following code: 
+1.  Create a new package called `interactor` in the 
+`com.liferay.docs.guestbooklistscreenlet` package. 
 
-    package com.liferay.docs.guestbooklistscreenlet.interactor;
+2.  Create the `GuestbookEvent` class in the `interactor` package. Replace this
+    class's contents with the following code: 
 
-    import com.liferay.docs.model.GuestbookModel;
-    import com.liferay.mobile.screens.base.list.interactor.ListEvent;
+        package com.liferay.docs.guestbooklistscreenlet.interactor;
 
-    public class GuestbookEvent extends ListEvent<GuestbookModel> {
+        import com.liferay.docs.model.GuestbookModel;
+        import com.liferay.mobile.screens.base.list.interactor.ListEvent;
 
-        private GuestbookModel guestbook;
+        public class GuestbookEvent extends ListEvent<GuestbookModel> {
 
-        public GuestbookEvent() {
-            super();
+            private GuestbookModel guestbook;
+
+            public GuestbookEvent() {
+                super();
+            }
+
+            public GuestbookEvent(GuestbookModel guestbook) {
+                this.guestbook = guestbook;
+            }
+
+            @Override
+            public String getListKey() {
+                return guestbook.getName();
+            }
+
+            @Override
+            public GuestbookModel getModel() {
+                return guestbook;
+            }
         }
-
-        public GuestbookEvent(GuestbookModel guestbook) {
-            this.guestbook = guestbook;
-        }
-
-        @Override
-        public String getListKey() {
-            return guestbook.getName();
-        }
-
-        @Override
-        public GuestbookModel getModel() {
-            return guestbook;
-        }
-    }
 
 Note that this code is almost identical to the example event class in the list 
 Screenlet tutorial. The only difference is that `GuestbookEvent` handles 
 `GuestbookModel` objects. 
+
+<!-- Should be a link to the list screenlet tutorial above. -Rich -->
 
 Nice work! Your event class is done. You're almost ready to write the 
 Screenlet's server call. First, however, you should understand the basics of how 
@@ -101,10 +109,10 @@ remote services. This Interactor class must also create `GuestbookModel` and
 `GuestbookEvent` objects from the service call's results. Follow these steps to 
 create `GuestbookListInteractor`: 
 
-1. Create the `GuestbookListInteractor` class in the package 
-   `com.liferay.docs.guestbooklistscreenlet.interactor`. This class must extend 
-   `BaseListInteractor` with `BaseListInteractorListener<GuestbookModel>` and 
-   `GuestbookEvent` as type arguments. 
+1.  Create the `GuestbookListInteractor` class in the package 
+    `com.liferay.docs.guestbooklistscreenlet.interactor`. This class must extend 
+    `BaseListInteractor` with `BaseListInteractorListener<GuestbookModel>` and 
+    `GuestbookEvent` as type arguments. 
 
         public class GuestbookListInteractor extends 
             BaseListInteractor<BaseListInteractorListener<GuestbookModel>, GuestbookEvent> {...
@@ -115,10 +123,10 @@ create `GuestbookListInteractor`:
         import com.liferay.mobile.screens.base.list.interactor.BaseListInteractor;
         import com.liferay.mobile.screens.base.list.interactor.BaseListInteractorListener;
 
-2. Override the `getPageRowsRequest` method to retrieve a page of Guestbooks. 
-   You do this by creating a `GuestbookService` instance from the session and 
-   then calling the service's `getGuestbooks` method with the `groupId`, start 
-   row, and end row: 
+2.  Override the `getPageRowsRequest` method to retrieve a page of Guestbooks. 
+    You do this by creating a `GuestbookService` instance from the session and 
+    then calling the service's `getGuestbooks` method with the `groupId`, start 
+    row, and end row: 
 
         @Override
         protected JSONArray getPageRowsRequest(Query query, Object... args) throws Exception {
@@ -133,26 +141,26 @@ create `GuestbookListInteractor`:
         import com.liferay.mobile.screens.base.list.interactor.Query;
         import org.json.JSONArray;
 
-3. Override the `getPageRowCountRequest` method to retrieve the number of 
-   guestbooks. Recall that this enables pagination. In 
-   `GuestbookListInteractor`, you do this by creating a `GuestbookService` 
-   instance from the session and then calling the service's `getGuestbooksCount` 
-   method with the `groupId`: 
+3.  Override the `getPageRowCountRequest` method to retrieve the number of 
+    guestbooks. Recall that this enables pagination. In 
+    `GuestbookListInteractor`, you do this by creating a `GuestbookService` 
+    instance from the session and then calling the service's `getGuestbooksCount` 
+    method with the `groupId`: 
 
         @Override
-	    protected Integer getPageRowCountRequest(Object... args) throws Exception {
+        protected Integer getPageRowCountRequest(Object... args) throws Exception {
 
             return new GuestbookService(getSession()).getGuestbooksCount(groupId);
         }
 
-4. Override the `createEntity` method to create and return a new 
-   `GuestbookEvent` object containing the server call's results. Recall that 
-   `BaseListInteractor` converts the JSON that results from a successful server 
-   call into a `Map<String, Object>`. This happens in `BaseListInteractor`'s 
-   [`execute(Query query, Object... args)` method](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java#L27-L49). 
-   The `createEntity` method's only argument is this `Map`, which you use to 
-   create a `GuestbookModel` object. Then use the model object to create and 
-   return a new `GuestbookEvent` object: 
+4.  Override the `createEntity` method to create and return a new 
+    `GuestbookEvent` object containing the server call's results. Recall that 
+    `BaseListInteractor` converts the JSON that results from a successful server 
+    call into a `Map<String, Object>`. This happens in `BaseListInteractor`'s 
+    [`execute(Query query, Object... args)` method](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java#L27-L49). 
+    The `createEntity` method's only argument is this `Map`, which you use to 
+    create a `GuestbookModel` object. Then use the model object to create and 
+    return a new `GuestbookEvent` object: 
 
         @Override
         protected GuestbookEvent createEntity(Map<String, Object> stringObjectMap) {
@@ -162,8 +170,8 @@ create `GuestbookListInteractor`:
 
     This requires you to import `java.util.Map`. 
 
-5. Override the `getIdFromArgs` method to return the value of the first object 
-   argument as a string: 
+5.  Override the `getIdFromArgs` method to return the value of the first object 
+    argument as a string: 
 
         @Override
         protected String getIdFromArgs(Object... args) {

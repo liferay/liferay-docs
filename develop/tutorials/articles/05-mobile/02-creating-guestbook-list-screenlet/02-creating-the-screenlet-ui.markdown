@@ -21,6 +21,11 @@ in detail. For such an explanation,
 [click here](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlets-view) 
 to see the tutorial. 
 
+<!-- Hey Nick, this is not the way we want Learning Paths to work. They don't
+have to explain everything in detail, but they should stand alone as the
+"opinionated" way of doing things. You'll need to explain what's relevant here.
+-Rich --> 
+
 You'll create Guestbook List Screenlet's View in its own package inside the 
 `guestbooklistscreenlet` package. Create a new package named `view` inside the 
 `guestbooklistscreenlet` package. Now you're ready to create the row layout. 
@@ -29,8 +34,8 @@ You'll create Guestbook List Screenlet's View in its own package inside the
 
 First, you must create the layout that defines the UI for each row in the list. 
 Since each row in Guestbook List Screenlet displays only a single guestbook's 
-name, the row layout only needs a single `TextView`. Create the following 
-layout file `res/layout/guestbook_row.xml`: 
+name, the row layout only needs a single `TextView`. Create the layout file
+`res/layout/guestbook_row.xml` and paste in this content: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -121,7 +126,7 @@ View class, `GuestbookListView`, is almost identical to
 The only difference is that `GuestbookListView` displays guestbooks. 
 
 Create the `GuestbookListView` class inside the `view` package, and replace its 
-contents with the following: 
+contents with this code: 
 
     package com.liferay.docs.guestbooklistscreenlet.view;
 
@@ -175,7 +180,7 @@ that the View layout for all list Screenlets is identical apart from the styling
 and the referenced View class. The layout for Guestbook List Screenlet's View, 
 `list_guestbooks.xml`, must reference `GuestbookListView` and contain the same 
 `ProgressBar` and `RecyclerView` as all list Screenlet View layouts. Even the 
-`android:id` values are the same--they're hardcoded into the list Screenlet 
+`android:id` values are the same--they're hard-coded into the list Screenlet 
 framework and changing them will cause your app to crash. 
 
 Create the layout file `res/layout/list_guestbooks.xml` and replace its contents 
