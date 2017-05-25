@@ -49,19 +49,19 @@ Use these steps to purchase and download the app:
    to go to the LCS client app in Liferay Marketplace. Sign in to Marketplace, 
    then click the the LCS client app's *Free* button. 
 
-    ![Figure x: Click the app's *Free* button to begin the purchase process.](../../images/lcs-client-app-marketplace.png)
+    ![Figure x: Click the app's *Free* button to begin the purchase process.](../../images-dxp/lcs-client-app-marketplace.png)
 
 2. Select the project you want to associate the app with, accept the license 
    agreement, and then click the *Purchase* button. Marketplace then displays 
    your receipt. 
 
-    ![Figure x: Liferay Marketplace displays your receipt for the LCS client app.](../../images/lcs-client-app-receipt.png)
+    ![Figure x: Liferay Marketplace displays your receipt for the LCS client app.](../../images-dxp/lcs-client-app-receipt.png)
 
 3. On the receipt, click *See Purchased*. This takes you to the page where you 
    can download the LCS client app. To download the app, click the *App* button 
    next to the version of the app you want to download.
 
-    ![Figure x: Click the *App* button next to the version of the app you want to download.](../../images/lcs-client-download-page.png)
+    ![Figure x: Click the *App* button next to the version of the app you want to download.](../../images-dxp/lcs-client-download-page.png)
 
 Great! You've successfully downloaded the LCS client app to your machine. Before 
 installing it, however, there are a few additional preconfiguration steps you 
