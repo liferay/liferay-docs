@@ -177,7 +177,7 @@ Follow these steps to configure the Shield adapter using System Settings:
    next to *Reindex all search indexes.*
 
 For a complete list of the Shield adapter's available configuration options, see
-[here](https://customer.liferay.com/documentation/7.0/reference/-/official_documentation/reference/shield-adapter-settings)
+[here](/discover/reference/shield-adapter-settings)
 
 ## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
 
@@ -258,9 +258,9 @@ for the details.
 10. Start Elasticsearch and @product@.
 
 Now Shield is fully configured, with both authentication and encryption
-protecting your Elasticsearch cluster. Next, you can learn how to [install and configure Marvel](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/monitoring-elasticsearch-with-marvel),
-Elasticsearch's
-monitoring plugin, to visualize the health and performance of your Elasticsearch
-cluster.
+protecting your Elasticsearch cluster. Next, you can learn how to 
+[install and configure Marvel](/discover/deployment/monitoring-elasticsearch-with-marvel),
+Elasticsearch's monitoring plugin, to visualize the health and performance of
+your Elasticsearch cluster.
 
 <a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface]
