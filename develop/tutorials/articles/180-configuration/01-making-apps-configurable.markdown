@@ -167,11 +167,13 @@ Here are the most relevant aspects of this example:
 
 +$$$
 
-**Note:** The bnd library also provides a class called `Configurable` with a
-`createConfigurable()` method. You can use that instead of Liferay's
-`ConfigurableUtil` without any problems. Liferay's developers created the
-`ConfigurableUtil` class to improve the performance of bnd's implementation, and
-it's used in internal code. Feel free to use whichever method you prefer.  
+**Note:** The bnd library also provides a class called
+`aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
+method. You can use that instead of Liferay's
+`com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil` without
+any problems. Liferay's developers created the `ConfigurableUtil` class to
+improve the performance of bnd's implementation, and it's used in internal code.
+Feel free to use whichever method you prefer. 
 
 $$$
 
@@ -215,7 +217,7 @@ $$$
 
     import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
-    import aQute.bnd.annotation.metatype.Configurable;
+    import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
 
     @Component(
         configurationPid = "com.liferay.docs.exampleconfig.ExampleConfiguration",
