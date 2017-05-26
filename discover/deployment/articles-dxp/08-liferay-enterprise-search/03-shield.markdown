@@ -2,7 +2,7 @@
 
 Elasticsearch makes storing, searching, and analyzing your @product@ search data
 easy. When it comes to securing that data, use Elasticsearch's [Shield
-plugin](https://www.elastic.co/guide/en/shield/2.2/index.html). To use Shield
+plugin](https://www.elastic.co/guide/en/shield/2.4/index.html). To use Shield
 with @product@, you need the *Enterprise Search-Standard* subscription.  This
 subscription gives you access to an adapter plugin for configuring @product@ for
 Shield. 
@@ -26,9 +26,9 @@ $$$
 
 Here's the process for configuring Shield:
 
--  Install the Shield plugin on Elasticsearch
+-  Install the Shield plugin on Elasticsearch.
 -  Create a user for @product@, with user name and password.
--  Install your [Shield license](https://www.elastic.co/guide/en/shield/2.2/license-management.html).
+-  Install your [Shield license](https://www.elastic.co/guide/en/shield/current/license-management.html).
 -  Install @product@'s Shield adapter plugin and configure it.
 -  Enable Transport Layer Security (TLS) to encrypt your connection between
     @product@ and Elasticsearch.
@@ -45,7 +45,7 @@ These terms will be useful to understand as you read this guide:
 First install the Shield plugin on your Elasticsearch cluster.
 
 1. Navigate to Elasticsearch Home and install the license plugin and the Shield
-   plugin by executing
+   plugin by executing.
 
         ./bin/plugin install license
 
@@ -72,7 +72,7 @@ First install the Shield plugin on your Elasticsearch cluster.
 
     So who is the user you need to configure for Liferay? It's Liferay itself,
     and it needs the `admin` role. @product@'s Elasticsearch client sends its
-    authentication token (in other words, it's user name and password) to
+    authentication token (in other words, its user name and password) to
     Shield. Since Shield also has the authentication token stored in its user
     database, Liferay is a recognized user and has no problems communicating
     with the Elasticsearch cluster.
@@ -177,7 +177,7 @@ Follow these steps to configure the Shield adapter using System Settings:
    next to *Reindex all search indexes.*
 
 For a complete list of the Shield adapter's available configuration options, see
-[here](/discover/reference/-/knowledge_base/7-0/shield-settings)
+[here](https://customer.liferay.com/documentation/7.0/reference/-/official_documentation/reference/shield-adapter-settings)
 
 ## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
 
@@ -187,24 +187,24 @@ Transport Layer Security (TLS) encryption.
 
 These instructions set up a *wildcard* certificate to be used across the entire
 cluster. See the [Elasticsearch
-documentation](https://www.elastic.co/guide/en/shield/2.2/ssl-tls.html) for
+documentation](https://www.elastic.co/guide/en/shield/2.4/ssl-tls.html) for
 alternative configuration approaches.
 
 1. Stop @product@ and Elasticsearch.
 
-2. Set up a Certificate Authority (CA) for Shield. Refer to [Elastic's article on Setting Up a Certificate Authority](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#certificate-authority) 
+2. Set up a Certificate Authority (CA) for Shield. Refer to [Elastic's article on Setting Up a Certificate Authority](https://www.elastic.co/guide/en/shield/2.4/certificate-authority.html#certificate-authority) 
 for the details.
 
     +$$$
 
     **Note for Windows:** In step 2 of the [linked documentation on setting up a
-    certificate](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#certificate-authority),
+    certificate](https://www.elastic.co/guide/en/shield/2.4/certificate-authority.html#certificate-authority),
     ensure that the `serial` file contains *01* with no quotation marks. Otherwise
-    you'll encounter errors when you follow the step below on signing the CSR.
+    you'll encounter errors when you follow the steps below on signing the CSR.
 
     $$$
 
-3. Use the Java `keytool` command to create a new Java Keystore, importing the
+3. Use the Java `keytool` command to create a new Java Keystore, import the
    CA that will issue the wildcard certificate:
 
         keytool -importcert -keystore es-ssl.keystore.jks -file certs/cacert.pem
@@ -223,7 +223,7 @@ for the details.
         es-ssl.keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -dname
         "cn=localhost" > es-ssl.keystore.csr
 
-6. Sign the CSR using [Elastic's guide](https://www.elastic.co/guide/en/shield/2.2/certificate-authority.html#sign-csr).
+6. Sign the CSR using [Elastic's guide](https://www.elastic.co/guide/en/shield/2.4/certificate-authority.html#sign-csr).
 
 7. Once the CA has signed the CSR and returned the certificate in PEM format,
    import it into the Java Keystore:
@@ -241,7 +241,7 @@ for the details.
 
     Here you're configuring Shield's SSL properties, including pointing to the
     keystore file you just generated. For more information on these settings,
-    read [here](https://www.elastic.co/guide/en/shield/2.2/ssl-tls.html).
+    read [here](https://www.elastic.co/guide/en/shield/2.4/ssl-tls.html).
 
 9. Update the Shield adapter configuration file you created earlier in
    `Liferay_Home/osgi/configs` by adding these lines:
@@ -258,7 +258,7 @@ for the details.
 10. Start Elasticsearch and @product@.
 
 Now Shield is fully configured, with both authentication and encryption
-protecting your Elasticsearch cluster. Next, you can learn how to [install and configure Marvel](/discover/deployment/-/knowledge_base/7-0/marvel),
+protecting your Elasticsearch cluster. Next, you can learn how to [install and configure Marvel](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/monitoring-elasticsearch-with-marvel),
 Elasticsearch's
 monitoring plugin, to visualize the health and performance of your Elasticsearch
 cluster.
