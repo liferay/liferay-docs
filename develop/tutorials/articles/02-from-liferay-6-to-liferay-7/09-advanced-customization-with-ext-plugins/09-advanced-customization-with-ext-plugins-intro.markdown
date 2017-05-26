@@ -58,9 +58,11 @@ plugin is necessary:
 1.  Find the OSGi extension point that you need. You can follow the
     [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points)
     tutorial as a guide.
+
 2.  If an OSGi extension point does not exist, use an Ext plugin.
+
 3.  Research new extension points after every release of @product@. When a new
-    version of @product@ provides the extension point need, always use the
+    version of @product@ provides the extension point you need, always use the
     extension point to replace the existing Ext plugin.
 
 So how do you find an OSGi extension point?
@@ -122,8 +124,7 @@ to create your @project@ projects, you can
 [merge a Plugins SDK instance](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
 into the workspace.
 
-<!--
-### Using Liferay IDE to Create an Ext Plugin [](id=using-liferay-ide-to-create-an-ext-plugin)
+### Creating an Ext Plugin Using Liferay @ide@
 
 Follow the steps below, replacing the project name with your own, to create a
 custom Ext plugin:
@@ -131,39 +132,28 @@ custom Ext plugin:
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
 2.  Enter your project's name and its display name. In the figure below,
-    *example* is used for both. Note that the Display name field is automatically
-    filled in with the capitalized version of the Project name. 
+    *example* is used for both. Note that the Display name field is
+    automatically filled in with the capitalized version of the Project name.
 
-3.  Leave the *Use default location* checkbox checked. Since you're using Ant, 
-    the default location is set to your Liferay Plugins SDK's location. If you'd
-    like to change where your plugin project is saved, uncheck the box and
-    specify an alternate location. 
+3.  Select the *Ant (liferay-plugins-sdk)* option for your build type.
 
-4.  Select the *Ant (liferay-plugins-sdk)* option for your build type.
+4.  Select the *Ext* plugin type. Then click *Next*.
 
-5.  Your configured SDK and Liferay runtime should already be selected. If you
-    haven't yet pointed Liferay IDE to a Plugins SDK, click *Configure SDKs* to
-    open the Installed Plugin SDKs management wizard. You can also access the
-    New Server Runtime Environment wizard if you need to set up your runtime
-    server; just click the *New Liferay Runtime* button next to the Liferay
-    Portal Runtime selection box. 
+5.  If you have not yet configured a Plugins SDK, select *Next* and choose the
+    Plugins SDK for which you want to generate the Ext plugin. Once you have
+    your Plugins SDK configured, click *Finish*.
 
-6.  Select *Ext* for your Plugin type. 
-
-7.  Click *Finish*. 
-
-[Figure 1: You can create an Ext plugin project with Liferay IDE.](../../images/ext-create-an-ext-plugin-project.png)
+![Figure 1: You can create an Ext plugin project with Liferay IDE.](../../../images/ext-create-an-ext-plugin-project.png)
 
 The Plugins SDK automatically appends `-ext` to the plugin project name when it
-creates your Ext plugin's project folder. In Liferay IDE, you can either create
-a completely new plugin or add a new plugin to an existing plugin project. 
+creates your Ext plugin's project folder. Your Ext plugin project is added to
+your configured Plugins SDK instance and is also available via @ide@'s Package
+Explorer for further development.
 
-### Creating an Ext Plugin Using the Terminal [](id=creating-an-ext-plugin-using-the-terminal)
+### Creating an Ext Plugin Using the Command Line
 
--->
-
-To create a new Ext plugin from the terminal, navigate to the `ext` folder in
-your Liferay Plugins SDK and enter the command below appropriate for your
+To create a new Ext plugin from the command line, navigate to the `ext` folder
+in your Liferay Plugins SDK and enter the command below appropriate for your
 operating system. The two arguments after the `create` command are the project
 name and display name, respectively. The examples below use the project name
 *example* and the display name *Example*. Make sure to specify values you want
@@ -228,7 +218,7 @@ override in the `struts-config.xml` file. Any JSPs that you're customizing also
 belong here. 
 
 - `ext-util-bridges`, `ext-util-java` and `ext-util-taglib`: These folders are
-needed only in scenarios where you must customize classes of these Liferay
+needed only in scenarios where you must customize these Liferay
 libraries: `util-bridges.jar`, `util-java.jar` and `util-taglib.jar`,
 respectively. If you're not customizing any of these libraries, you can ignore
 these folders. 
@@ -353,18 +343,24 @@ finished, you can deploy the plugin.
 
 #### Deploy the Plugin [](id=deploy-the-plugin)
 
-Now you'll learn how to deploy your plugin from the terminal. 
+Now you'll learn how to deploy your plugin using Liferay @ide@ or the command
+line. 
 
-<!--
+##### Deploying in Liferay IDE
 
-**Deploying in Liferay IDE:** Drag your Ext plugin project from your Package
-Explorer onto your server to deploy your plugin. Liferay IDE automatically
-restarts the server, for the server to detect and publish your Ext plugin. 
+Drag your Ext plugin project from your Package Explorer onto your server to
+deploy your plugin. Liferay @ide@ automatically restarts the server for the
+server to detect and publish your Ext plugin. 
 
--->
+After deploying, if you don't see your customizations in the portal, your Ext
+plugin may not have successfully deployed. To confirm whether the Ext plugin
+deploys successfully, try deploying from the command line; the Ant deployment
+targets report success or failure. 
 
-1.  Open a terminal window in your Ext plugin project folder and enter one of
-    these commands: 
+##### Deploying via the Command Line
+
+1.  Open a command line window in your Ext plugin project folder and enter one
+    of these commands: 
 
         ant deploy
 
@@ -405,40 +401,27 @@ plugin. You can make unlimited customizations to an Ext plugin that has already
 been deployed, but the redeployment process is different from other project
 types. You’ll learn more on redeploying your Ext plugin next.
 
-<!--
-
-+$$$
-
-**Note:** If you deployed the Ext plugin using Liferay IDE, but you don't see
-your customizations in the portal, your Ext plugin may not have successfully
-deployed. To confirm whether the Ext plugin deploys successfully, try deploying
-from the terminal; the Ant deployment targets report success or failure. 
-
-$$$
-
--->
-
 ### Redeployment [](id=redeployment)
 
 So far, Ext plugin development has been similar to the development of other
 plugin types. You've now reached the point of divergence. When the plugin is
 first deployed, some of its files are copied into the @product@ installation.
-After changing an Ext plugin, you'll either *redeploy* or *clean redeploy*,
+After changing an Ext plugin, you'll either *clean redeploy* or *redeploy*,
 depending on the modifications you made to your plugin following the initial
 deployment. You'll learn about each redeployment method and when to use each
 one.
 
-**Clean Redeployment:** If you removed part(s) of your plugin, if there are
-changes to your plugin that can affect plugin deployment, or if you want to
-start with a clean @product@ environment, *undeploy* your plugin and *clean*
-your application server before redeploying your Ext plugin. By cleaning the
-application server, the existing @product@ installation is removed and the
-bundle specified in your Plugins SDK environment is unzipped in its place. See
-the instructions below to learn more about this process:
+#### Clean Redeployment
 
-<!--
+If you removed part(s) of your plugin, if there are changes to your plugin that
+can affect plugin deployment, or if you want to start with a clean @product@
+environment, *undeploy* your plugin and *clean* your application server before
+redeploying your Ext plugin. By cleaning the application server, the existing
+@product@ installation is removed and the bundle specified in your Plugins SDK
+environment is unzipped in its place. See the instructions below to learn more
+about this process.
 
-**Using Liferay IDE:**
+##### Using Liferay IDE
 
 1.  Remove the plugin from the server. While selecting the Ext plugin in the
     *Servers* view, select the plugin's *Remove* option. 
@@ -459,9 +442,7 @@ the instructions below to learn more about this process:
 5.  While selecting the Liferay server in the *Servers* view, click the
     *Publish* option. 
 
-**Using the terminal:** 
- 
--->
+##### Using the Command Line 
 
 1.  Stop the @product@ server. 
 
@@ -473,18 +454,21 @@ the instructions below to learn more about this process:
 
 3.  Start the @product@ server. 
 
-**Redeployment:** If you only added to your plugin or made modifications that
-don't affect the plugin deployment process, you can redeploy the Ext plugin from
-the terminal using the same procedure as for initial deployment. Open a terminal
-window in your Ext plugin project's directory and execute either `ant deploy` or
-`ant direct-deploy`.
+#### Redeployment
 
-<!--
+If you only added to your plugin or made modifications that don't affect the
+plugin deployment process, you can redeploy the Ext plugin. Follow the steps
+based on the tool you're using.
 
-- **Using Liferay IDE:** Right-click your plugin located underneath your
-  server and select *Redeploy*. 
-  
--->
+##### Using Liferay @ide@
+
+Right-click your plugin located underneath your server and select *Redeploy*. 
+
+##### Using the Command Line
+
+Using the same procedure as for initial deployment. Open a command line window
+in your Ext plugin project's directory and execute either `ant deploy` or `ant
+direct-deploy`.
 
 After your plugin is published to @product@, verify that your customizations are
 available.
@@ -496,13 +480,12 @@ Next you'll learn how to package an Ext plugin for distribution and production.
 Once you're finished developing an Ext plugin, you can package it in a `.war`
 file for distribution and production deployment. 
 
-<!--
+#### Using Liferay @ide@
 
-**Using Liferay IDE:** With your Ext plugin project selected in the
-*Package Explorer* view, select the project's *Liferay* &rarr; *SDK* &rarr;
-*war* option. 
+With your Ext plugin project selected in the *Package Explorer* view, select the
+project's *Liferay* &rarr; *SDK* &rarr; *war* option. 
 
--->
+#### Using the Command Line
 
 From your Ext plugin's directory execute
 
