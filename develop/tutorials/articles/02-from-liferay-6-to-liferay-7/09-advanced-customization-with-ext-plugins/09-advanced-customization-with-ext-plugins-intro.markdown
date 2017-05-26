@@ -124,7 +124,7 @@ to create your @project@ projects, you can
 [merge a Plugins SDK instance](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
 into the workspace.
 
-### Creating an Ext Plugin Using Liferay @ide@
+### Creating an Ext Plugin Using Liferay @ide@ [](id=creating-an-ext-plugin-using-liferay-ide)
 
 Follow the steps below, replacing the project name with your own, to create a
 custom Ext plugin:
@@ -150,7 +150,7 @@ creates your Ext plugin's project folder. Your Ext plugin project is added to
 your configured Plugins SDK instance and is also available via @ide@'s Package
 Explorer for further development.
 
-### Creating an Ext Plugin Using the Command Line
+### Creating an Ext Plugin Using the Command Line [](id=creating-an-ext-plugin-using-the-command-line)
 
 To create a new Ext plugin from the command line, navigate to the `ext` folder
 in your Liferay Plugins SDK and enter the command below appropriate for your
@@ -346,7 +346,7 @@ finished, you can deploy the plugin.
 Now you'll learn how to deploy your plugin using Liferay @ide@ or the command
 line. 
 
-##### Deploying in Liferay IDE
+##### Deploying in Liferay IDE [](id=deploying-in-liferay-ide)
 
 Drag your Ext plugin project from your Package Explorer onto your server to
 deploy your plugin. Liferay @ide@ automatically restarts the server for the
@@ -357,7 +357,7 @@ plugin may not have successfully deployed. To confirm whether the Ext plugin
 deploys successfully, try deploying from the command line; the Ant deployment
 targets report success or failure. 
 
-##### Deploying via the Command Line
+##### Deploying via the Command Line [](id=deploying-via-the-command-line)
 
 1.  Open a command line window in your Ext plugin project folder and enter one
     of these commands: 
@@ -411,7 +411,7 @@ depending on the modifications you made to your plugin following the initial
 deployment. You'll learn about each redeployment method and when to use each
 one.
 
-#### Clean Redeployment
+#### Clean Redeployment [](id=clean-redeployment)
 
 If you removed part(s) of your plugin, if there are changes to your plugin that
 can affect plugin deployment, or if you want to start with a clean @product@
@@ -421,7 +421,7 @@ redeploying your Ext plugin. By cleaning the application server, the existing
 environment is unzipped in its place. See the instructions below to learn more
 about this process.
 
-##### Using Liferay IDE
+##### Using Liferay IDE [](id=using-liferay-ide)
 
 1.  Remove the plugin from the server. While selecting the Ext plugin in the
     *Servers* view, select the plugin's *Remove* option. 
@@ -442,7 +442,7 @@ about this process.
 5.  While selecting the Liferay server in the *Servers* view, click the
     *Publish* option. 
 
-##### Using the Command Line 
+##### Using the Command Line [](id=using-the-command-line)
 
 1.  Stop the @product@ server. 
 
@@ -454,17 +454,17 @@ about this process.
 
 3.  Start the @product@ server. 
 
-#### Redeployment
+#### Redeployment [](id=redeployment-0)
 
 If you only added to your plugin or made modifications that don't affect the
 plugin deployment process, you can redeploy the Ext plugin. Follow the steps
 based on the tool you're using.
 
-##### Using Liferay @ide@
+##### Using Liferay @ide@ [](id=using-liferay-ide-0)
 
 Right-click your plugin located underneath your server and select *Redeploy*. 
 
-##### Using the Command Line
+##### Using the Command Line [](id=using-the-command-line-0)
 
 Using the same procedure as for initial deployment. Open a command line window
 in your Ext plugin project's directory and execute either `ant deploy` or `ant
@@ -480,12 +480,12 @@ Next you'll learn how to package an Ext plugin for distribution and production.
 Once you're finished developing an Ext plugin, you can package it in a `.war`
 file for distribution and production deployment. 
 
-#### Using Liferay @ide@
+#### Using Liferay @ide@ [](id=using-liferay-ide-1)
 
 With your Ext plugin project selected in the *Package Explorer* view, select the
 project's *Liferay* &rarr; *SDK* &rarr; *war* option. 
 
-#### Using the Command Line
+#### Using the Command Line [](id=using-the-command-line-1)
 
 From your Ext plugin's directory execute
 
