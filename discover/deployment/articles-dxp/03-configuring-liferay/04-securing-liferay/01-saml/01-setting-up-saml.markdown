@@ -8,8 +8,11 @@ provider. For more fundamental information on SAML and @product@, refer to the
 An identity provider is a trusted provider that provides single sign-on for
 users to access other websites. A service provider is a website that hosts
 applications and grants access only to identified users with proper credentials.
-SAML is maintained by the OASIS Security Services Technical Committee. See
-[https://www.oasis-open.org/committees/security/](https://www.oasis-open.org/committees/security/) for more information. Liferay Portal 6.1 EE and later versions support SAML 2.0 integration via the [Liferay Saml 2.0
+SAML is maintained by the 
+[OASIS Security Services Technical Committee](https://www.oasis-open.org/ committees/security/).
+for more information. Liferay Portal 6.1 EE and later 
+versions support SAML 2.0 integration via the 
+[Liferay SAML 2.0 
 Provider](https://web.liferay.com/marketplace/-/mp/application/15188711)
 application. It is provided from Liferay Marketplace and allows @product@ to act
 as a SAML 2.0 identity provider or as a service provider.
@@ -31,10 +34,10 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
 
     ![Figure 1: Select a SAML role for Liferay and enter an entity ID.](../../../../images-dxp/saml-initial-config.png)
 
-    Select the *Identity Provider* SAML role. 
-    Enter *liferaysamlidp* if you're setting up an example @product@ instance.
-    Alternatively, choose your own entity ID. 
-    Then click *Save*. A new section appears which is entitled Certificate and Private Key.
+    Select the *Identity Provider* SAML role. Enter *liferaysamlidp* if you're
+    setting up an example @product@ instance. Alternatively, choose your own
+    entity ID.  Then click *Save*. A new Certificate and Private Key section
+    appears. 
 
 3.  The Certificate and Private Key section lets you create a keystore for SAML.
     Enter the following information:
@@ -142,21 +145,21 @@ Before adding a Service Provider (SP), verify you've completed these tasks:
 
 2. On the *Identity Provider* tab, the following settings have been set:
 
-    a. **Sign Metadata** has been checked.    
-    
+    a. **Sign Metadata** has been checked. 
+ 
     b. **SSL Required** - checked if SSL is active elsewhere. SSL is disabled by 
-       default.    
+       default. 
 
-    c. **Authn Request Signature Required:** has been checked.     
-    
+    c. **Authn Request Signature Required:** has been checked. 
+ 
     d. **Session Maximum Age:** has been set. If set to `0`, then the SSO has an 
-       unlimited duration.     
+       unlimited duration. 
 
     e. **Session Timeout:** Specify the maximum idle time of the SAML SSO session.    
 
-3. Once the *Enabled* checkbox has been checked, the IdP is now live and you can
-generate the required metadata. This URL is the default location of @product@'s
-metadata XML file:
+3. Once the *Enabled* checkbox has been checked, the IdP is now live, and you can
+   generate the required metadata. This URL is the default location of
+   @product@'s metadata XML file:
 
         [host]:[port]/c/portal/saml/metadata 
 
@@ -275,12 +278,11 @@ $$$
     successfully deployed, look for the *SAML Admin* entry in the Configuration
     section of the Control Panel.
 
-2.  To begin configuring @product@ to use SAML, you must select a SAML role
-    for @product@ and you need to choose an entity ID. 
-    Select the *Service Provider* SAML role. 
-    Enter *liferaysamlsp* if you're setting up an example @product@
-    installation. Alternatively, choose your own entity ID. 
-    Then click *Save* and a new section entitled Certificate and Private Key appears.
+2.  To begin configuring @product@ to use SAML, you must select a SAML role for
+    @product@ and you need to choose an entity ID. Select the *Service
+    Provider* SAML role. Enter *liferaysamlsp* if you're setting up an example
+    @product@ installation. Alternatively, choose your own entity ID. Then
+    click *Save* and a new section entitled Certificate and Private Key appears.
 
 3.  The Certificate and Private Key is for creating a keystore for SAML. Enter
     the following information:
@@ -305,13 +307,13 @@ $$$
     created a keystore. After you create a keystore, additional options
     appear. There are three tabs:
 
-    - General    
+    - General 
     This tab enables or disables SAML IdP and manages the required keystore.
     
     - Service Provider (*not Identity Provider!*)    
     This tab manages basic and advanced configurations for the SP.
-    
-    - Identity Provider Connection (*not Service Provider Connections!*)    
+ 
+    - Identity Provider Connection (*not Service Provider Connections!*) 
     This tab manages connections to the IdP. There can be only one IdP connection.
 
     Note that these options are different than if you were setting up @product@ as
@@ -360,21 +362,21 @@ the session on the Service Provider but does not initiate single logout.
 
 1. A SAML keystore has been generated.
 
-2. Verify the connection to the IdP.     
-    a.  *Name*: generic name for the IdP.    
+2. Verify the connection to the IdP. 
+
+    a.  *Name*: generic name for the IdP. 
     
     b.  *Entity ID*: the same name of the IdP. If the IdP is another @product@
-        instance, then it is the same name as the above example.    
+        instance, then it is the same name as the above example. 
 
     c. *Metadata URL*: The IdP's metadata as a URL or as an XML file.
 
 3. On the *General* tab, the *Enabled* checkbox has been checked.
 
-4. Once *Enabled* checkbox has been checked, the service provider's metadata will be available:
+4. Once *Enabled* checkbox has been checked, the service provider's metadata
+   becomes available:
 
         [host]:[port]/c/portal/saml/metadata
-    
-
 
 ### Changing the SAML Service Provider Settings [](id=changing-the-saml-service-provider-settings)
 
@@ -510,8 +512,9 @@ If your situation fits the scenario described above, follow these steps:
         saml.keystore.manager.impl=com.liferay.saml.credential.FileSystemKeyStoreManagerImpl
 
 3.  Verify that the service provider metadata has been generated to be used
-    either as a URL or an XML file. The metadata will be the same for all nodes
-    because of the same database backend. The IdP's request will go through the load balancer.
+    either as a URL or an XML file. The metadata is the same for all nodes
+    because of the same database back-end. The IdP's request goes through the
+    load balancer.
 
 4.  At this point, all the @product@ nodes have the same SAML SP configuration
     and each of them can respond to web requests and handle the SAML protocol.
