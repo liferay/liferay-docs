@@ -27,13 +27,13 @@ To get started, create a new package named `view` inside the
 
 ## Creating the Row Layout [](id=creating-the-row-layout)
 
-First, you must create the layout that defines the Screenlet's UI for each list 
-row. Recall that in Guestbook List Screenlet, `guestbook_row.xml` serves this 
-purpose with a single `TextView` it uses to display a guestbook's name. You'll 
-create a similar layout here for Entry List Screenlet, but you'll use two 
-`TextView` elements: one for the entry, and one for the name of the person that 
-left it. Create `entry_row.xml` in your app's `res/layout` directory, and 
-replace its contents with this code: 
+You must create the layout that defines the Screenlet's UI for each list row.
+Recall that in Guestbook List Screenlet, `guestbook_row.xml` serves this purpose
+with a single `TextView` it uses to display a guestbook's name. You'll create a
+similar layout here for Entry List Screenlet, but you'll use two `TextView`
+elements: one for the entry and one for the name of the person that left it.
+Create `entry_row.xml` in your app's `res/layout` directory and replace its
+contents with this code: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -79,7 +79,7 @@ Next, you'll create your Screenlet's adapter class.
 Recall that an adapter class is required to fill each row with data. Entry List 
 Screenlet's adapter class is almost identical to that of Guestbook List 
 Screenlet. The only difference, besides working with `EntryModel` instead of 
-`GuestbookModel`, is that it needs two variables: one for the entry, and one for 
+`GuestbookModel`, is that it needs two variables: one for the entry and one for 
 the name of the person who left it. In contrast, Guestbook List Screenlet's 
 adapter class needed only one variable for the guestbook's name. 
 
@@ -226,7 +226,7 @@ its contents with this code:
 For a full explanation of this layout, see 
 [the section on creating the layout](/develop/tutorials/-/knowledge_base/6-2/creating-guestbook-list-screenlets-ui#creating-the-views-layout) 
 in the article on creating Guestbook List Screenlet's UI. You must also be sure 
-not to change the layout's `android:id` values. They're hardcoded into the 
+not to change the layout's `android:id` values. They're hard-coded into the 
 list Screenlet framework and changing them will cause your app to crash. 
 
 Nice job! You're done creating Entry List Screenlet's View. Next, you'll create 
