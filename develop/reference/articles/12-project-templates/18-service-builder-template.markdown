@@ -69,6 +69,21 @@ or
 
 from the `tasks` root directory. Note that `blade gw` only works if the Gradle
 wrapper can be detected. To ensure the availability of the Gradle wrapper, be
-sure to work in a Liferay Workspace. The generated module is functional and is
+sure to work in a Liferay Workspace.
+
+The `mvn service-builder:build` command only works if you're using the
+`com.liferay.portal.tools.service.builder` plugin version 1.0.145+. Maven
+projects using an earlier version of the Service Builder plugin should update
+their POM accordingly.
+
+The generated module is functional and is
 deployable to a @product@ instance. To build upon the generated app, modify the
 project by adding logic and additional files to the folders outlined above.
+
+## Related Topics  [](id=related-topics)
+
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+
+[Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
+
+[Service Builder with Maven](/develop/tutorials/-/knowledge_base/7-0//develop/reference/-/knowledge_base/7-0/service-builder-with-maven)
