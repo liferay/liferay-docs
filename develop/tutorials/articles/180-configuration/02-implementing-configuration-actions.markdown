@@ -32,17 +32,18 @@ Let's get started.
 
 ## Creating a Configuration Interface [](id=creating-a-configuration-interface)
 
-As explained in the [Making Your Applications Configurable]() tutorial, if you
-want to make your application configurable, you should create a Java interface
-to represent the configuration. Decorate your interface with the `@Meta.OCD`
-annotation and specify a unique ID using the annotation's `id` attribute. A
-common pattern is to use the fully qualified class name of the interface for the
-ID since fully qualified class names are unique. Create public methods to
-represent configuration fields and decorate the methods with the `@Meta.AD`
-annotation. The return type of the method specifies the type of the field. To
-specify a field's default value, use the annotation's `deflt` attribute. To
-specify that a field is optional, set `required=false`. For more information
-about the `Meta.OCD` and `Meta.AD` annotations, please see the
+As explained in the
+[Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable)
+tutorial, if you want to make your application configurable, you should create a
+Java interface to represent the configuration. Decorate your interface with the
+`@Meta.OCD` annotation and specify a unique ID using the annotation's `id`
+attribute. A common pattern is to use the fully qualified class name of the
+interface for the ID since fully qualified class names are unique. Create public
+methods to represent configuration fields and decorate the methods with the
+`@Meta.AD` annotation. The return type of the method specifies the type of the
+field. To specify a field's default value, use the annotation's `deflt`
+attribute. To specify that a field is optional, set `required=false`. For more
+information about the `Meta.OCD` and `Meta.AD` annotations, please see the
 [bnd](http://www.aqute.biz/Bnd/MetaType) documentation. Here's a simple example:
 
     package com.liferay.docs.exampleconfig.configuration;
@@ -72,15 +73,16 @@ This sample configuration contains a single string field called `favoriteColor`.
 
 ## Referencing Your Configuration From Your Application Class [](id=referencing-your-configuration-from-your-application-class)
 
-As was also explained in the [Making Your Applications Configurable]() tutorial,
-if you want a reference to the configuration in your application class, you need
-to declare the configuration as a `volatile` member variable, decorate your
-application class with the `@Component` annotation, specify the appropriate
-`configurationPid` in the `@Component` annotation, add an appropriately
-annotated `activate` method that instantiates the configuration variable, and
-add a public getter method for each configuration field. Here's a simple
-example that makes the sample configuration discussed earlier available to a
-portlet class:
+As was also explained in the
+[Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable)
+tutorial, if you want a reference to the configuration in your application
+class, you need to declare the configuration as a `volatile` member variable,
+decorate your application class with the `@Component` annotation, specify the
+appropriate `configurationPid` in the `@Component` annotation, add an
+appropriately annotated `activate` method that instantiates the configuration
+variable, and add a public getter method for each configuration field. Here's a
+simple example that makes the sample configuration discussed earlier available
+to a portlet class:
 
     package com.liferay.docs.exampleconfig.portlet;
 
