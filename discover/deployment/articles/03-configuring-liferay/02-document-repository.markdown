@@ -121,7 +121,7 @@ configure the advanced file system store you must configure both the
 
 +$$$
 
-Create the following file inside of your app server's `osgi/configs` folder: 
+Create the following file inside your app server's `osgi/configs` folder: 
 
     com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
 
@@ -147,7 +147,7 @@ Next, configure `portal-ext.properties`:
     dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
 
 With both the `.config` file and `portal-ext.properties` configured, you can 
-start the portal. 
+start @product@. 
 
 You may decide the advanced file system store for whatever reason doesn't serve
 your needs. If this is the case, you can of course mount other file systems into
