@@ -41,7 +41,6 @@ single Screenlet.
 
 1.  Create a new package called `model` inside the `com.liferay.docs` package.
  
- 
 2.  Inside this new `model` package, create a new class called `GuestbookModel`.
  
 3.  Replace `GuestbookModel`'s contents with this code: 

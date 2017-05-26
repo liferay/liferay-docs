@@ -8,9 +8,10 @@ doesn't have the classes it needs to call the Guestbook portlet's remote
 services. The pre-built Mobile SDK includes only the framework necessary to make
 server calls to the remote services of Liferay Portal's *core* apps. Core apps
 (also referred to as *out-of-the-box* apps) are those included with every
-Liferay Portal instance. Since you're calling services from an app the default
-Mobile SDK doesn't know about, you must build a Mobile SDK that can call its
-services. Now put on your hard hat, because it's time to get building! 
+Liferay Portal instance. Since you're calling services of an app the default
+Mobile SDK doesn't know about (the Guestbook portlet), you must build a Mobile 
+SDK that can call its services. Now put on your hard hat, because it's time to 
+get building! 
 
 ## Building the Mobile SDK [](id=building-the-mobile-sdk)
 

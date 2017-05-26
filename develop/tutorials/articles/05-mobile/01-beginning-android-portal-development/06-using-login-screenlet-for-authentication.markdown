@@ -35,15 +35,15 @@ You'll then implement Login Screenlet's listener, `LoginListener`, in the
             />
 
     Note the two `app` attributes in the Login Screenlet's XML. The 
-    `app:basicAuthMethod` attribute tells the Screenlet to use basic authentication 
-    instead of OAuth. The `screen_name` value tells the Screenlet to authenticate 
-    with the user's screen name. You can alternatively set this to `email` or 
-    `userId`. This Learning Path uses `screen_name` only because it's much faster to 
-    type a screen name than a full email address in the emulator. Also, this value 
-    must match the authentication setting in the Liferay Portal instance. By 
-    default, Liferay Portal instances use email address for authentication. For this 
-    Learning Path, you need to set your Liferay Portal instance to authenticate by 
-    screen name instead. 
+    `app:basicAuthMethod` attribute tells the Screenlet to use basic 
+    authentication instead of OAuth. The `screen_name` value tells the Screenlet 
+    to authenticate with the user's screen name. You can alternatively set this 
+    to `email` or `userId`. This Learning Path uses `screen_name` only because 
+    it's much faster to type a screen name than a full email address in the 
+    emulator. Also, this value must match the authentication setting in the 
+    Liferay Portal instance. By default, Liferay Portal instances use email 
+    address for authentication. For this Learning Path, you need to set your 
+    Liferay Portal instance to authenticate by screen name instead. 
     [Click here](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#basic-authentication) 
     for instructions on changing your Liferay Portal instance's authentication 
     setting. 
@@ -51,14 +51,14 @@ You'll then implement Login Screenlet's listener, `LoginListener`, in the
     The second `app` attribute in Login Screenlet's XML is `app:layoutId`. This 
     attribute sets the *View* to display the Screenlet with. Views in Liferay 
     Screens set a Screenlet's look and feel independent of the Screenlet's core 
-    functionality. You can think of them as a sort of skin or theme for a Screenlet. 
-    The value `@layout/login_default` specifies Login Screenlet's Default View, 
-    which is part of the Default *View Set*. A View Set is a collection of Views for 
-    several Screenlets. Using a View Set lets you apply a consistent look and feel 
-    across multiple Screenlets. To use a View that is part of a View Set, like Login 
-    Screenlet's Default View, the theme of the app or activity must inherit the 
-    theme that sets the View Set's styles. For the Default View Set, this is 
-    `default_theme`. 
+    functionality. You can think of them as a sort of skin or theme for a 
+    Screenlet. The value `@layout/login_default` specifies Login Screenlet's 
+    Default View, which is part of the Default *View Set*. A View Set is a 
+    collection of Views for several Screenlets. Using a View Set lets you apply 
+    a consistent look and feel across multiple Screenlets. To use a View that is 
+    part of a View Set, like Login Screenlet's Default View, the theme of the 
+    app or activity must inherit the theme that sets the View Set's styles. For 
+    the Default View Set, this is `default_theme`. 
 
 2.  To set the app's theme to inherit from `default_theme`, open
     `res/values/styles.xml` and set the base app theme's parent to
@@ -77,11 +77,12 @@ Next, you'll implement `LoginListener` in the `MainActivity` class.
 
 ### Implement the Screenlet's Listener [](id=implement-the-screenlets-listener)
 
-1.  To use a Screenlet in an activity or fragment, you must also implement the
-    Screenlet's listener in that activity or fragment's class. You'll do this
-    now to use Login Screenlet in `MainActivity`. Open `MainActivity` and change
-    its declaration to implement `LoginListener`. The class declaration should
-    now look like this: 
+To use a Screenlet in an activity or fragment, you must also implement the 
+Screenlet's listener in that activity or fragment's class. You'll do this now to 
+use Login Screenlet in `MainActivity`. 
+
+1.  Open `MainActivity` and change its declaration to implement `LoginListener`. 
+    The class declaration should now look like this: 
 
         public class MainActivity extends AppCompatActivity implements LoginListener {...
 
@@ -103,11 +104,11 @@ Next, you'll implement `LoginListener` in the `MainActivity` class.
     When you paste in these methods, you'll need to add the imports 
     `android.widget.Toast` and`com.liferay.mobile.screens.context.User`. 
 
-    These are listener methods called, respectively, when login succeeds or fails. 
-    Using them lets your app respond the Screenlet's actions. For the moment, they 
-    each only do one thing: display a success or failure message to the user. You'll 
-    change this shortly. Note that each Screenlet has different listener methods; 
-    they're listed in the Screenlet 
+    These are listener methods called, respectively, when login succeeds or 
+    fails. Using them lets your app respond the Screenlet's actions. For the 
+    moment, they each only do one thing: display a success or failure message to 
+    the user. You'll change this shortly. Note that each Screenlet has different 
+    listener methods; they're listed in the Screenlet 
     [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
 
 3.  Now you need to get a reference to the Screenlet and set the `MainActivity`
@@ -120,8 +121,8 @@ Next, you'll implement `LoginListener` in the `MainActivity` class.
     This also requires you to import 
     `com.liferay.mobile.screens.auth.login.LoginScreenlet`. 
 
-    The `findViewById` method uses the Screenlet's ID from the layout to create the 
-    reference. The `setListener` method then sets `MainActivity` as Login 
+    The `findViewById` method uses the Screenlet's ID from the layout to create 
+    the reference. The `setListener` method then sets `MainActivity` as Login 
     Screenlet's listener. 
 
 Now run the app by clicking the green *play* button in the toolbar, or by 

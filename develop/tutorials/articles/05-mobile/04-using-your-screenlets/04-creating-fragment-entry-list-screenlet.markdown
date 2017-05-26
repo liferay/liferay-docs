@@ -72,8 +72,8 @@ Next, you'll add this fragment to `GuestbooksActivity`.
 ## Adding the Fragment to GuestbooksActivity [](id=adding-the-fragment-to-guestbooksactivity)
 
 Now that `EntriesFragment` exists, you can add it to `GuestbooksActivity`. To do 
-this, you must put an Android fragment container in the layout where you want the 
-fragment. For more information, see 
+this, you must put an Android fragment container in the layout where you want 
+the fragment. For more information, see 
 [Android's documentation on adding fragments at runtime](http://developer.android.com/training/basics/fragments/fragment-ui.html#AddAtRuntime). 
 Since you want Entry List Screenlet to appear in `GuestbooksActivity`, your 
 first thought might be to put the fragment container directly in 

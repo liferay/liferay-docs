@@ -25,7 +25,7 @@ should create a `bundles` folder and unzip it there. The bundle's root
 folder is referred to as *Liferay Home* and is named according to the 
 version, edition, and specific Liferay Portal release. For example, if you 
 downloaded Liferay Portal 6.2 CE GA6 and unzipped it to a `bundles` folder on 
-your machine, that bundle's Liferay Home folder path is 
+your machine, that bundle's Liferay Home folder path is: 
 
     bundles/liferay-portal-6.2-ce-ga6
 

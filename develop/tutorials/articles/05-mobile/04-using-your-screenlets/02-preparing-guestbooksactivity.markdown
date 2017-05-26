@@ -54,10 +54,10 @@ Android Studio created this code for you in the `GuestbooksActivity` class's
             actionBar.setTitle("");
         }
 
-    Like the code you removed from `onCreate`, this method also creates a `Toolbar` 
-    and sets it as the action bar. It also sets the action bar's title to an 
-    empty string. This prevents the activity's title from showing in the action bar 
-    before the app can retrieve guestbooks from the portlet. 
+    Like the code you removed from `onCreate`, this method also creates a 
+    `Toolbar` and sets it as the action bar. It also sets the action bar's title 
+    to an empty string. This prevents the activity's title from showing in the 
+    action bar before the app can retrieve guestbooks from the portlet. 
 
 4.  You must call `initActionBar()` in `onCreate`. Place the call immediately
     below the `setContentView` call. The first few lines of `onCreate` should
@@ -90,9 +90,9 @@ Next, you'll modify the code that controls the navigation drawer.
 
 2.  Instead, you'll initialize the navigation drawer in a separate method that 
     you'll call in `onCreate`. You'll also change the `drawer` variable to be an 
-    instance variable that you can refer to throughout the class. This lets you use 
-    this variable to close the drawer when a guestbook is selected in Guestbook List 
-    Screenlet. Add this variable to `GuestbooksActivity`: 
+    instance variable that you can refer to throughout the class. This lets you 
+    use this variable to close the drawer when a guestbook is selected in 
+    Guestbook List Screenlet. Add this variable to `GuestbooksActivity`: 
 
         private DrawerLayout drawer;
 
@@ -139,8 +139,8 @@ Next, you'll modify the code that controls the navigation drawer.
             }
         }
 
-6.  Next, delete the `NavigationView.OnNavigationItemSelectedListener`
-    implementation. 
+Now you're ready to delete the `NavigationView.OnNavigationItemSelectedListener` 
+implementation. The next section walks you through this. 
 
 ## Deleting the NavigationView.OnNavigationItemSelectedListener Implementation [](id=deleting-the-navigationview-onnavigationitemselectedlistener-implementation)
 

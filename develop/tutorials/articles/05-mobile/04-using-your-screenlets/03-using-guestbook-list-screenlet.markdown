@@ -98,19 +98,19 @@ action bar's title.
             actionBar.setTitle(guestbook.getName());
         }
 
-    This requires you to import `com.liferay.docs.model.GuestbookModel`. This method 
-    is called `showEntries` because you'll also use it to display the guestbook's 
-    entries via Entry List Screenlet (you'll add this code later). You'll call this 
-    method in the listener methods you'll implement to process a guestbook 
-    selection. 
+    This requires you to import `com.liferay.docs.model.GuestbookModel`. This 
+    method is called `showEntries` because you'll also use it to display the 
+    guestbook's entries via Entry List Screenlet (you'll add this code later). 
+    You'll call this method in the listener methods you'll implement to process 
+    a guestbook selection. 
 
 2.  Recall that Guestbook List Screenlet doesn't need any custom listener
-    methods.  It can use the listener methods defined in the list Screenlet
+    methods. It can use the listener methods defined in the list Screenlet
     framework's 
     [`BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java). 
     To do this, change `GuestbooksActivity`'s class declaration to implement
-    `BaseListListener<GuestbookModel>`. The class declaration should now look like
-    this: 
+    `BaseListListener<GuestbookModel>`. The class declaration should now look 
+    like this: 
 
         public class GuestbooksActivity extends AppCompatActivity implements 
             BaseListListener<GuestbookModel> {...
@@ -120,10 +120,10 @@ action bar's title.
 
 3.  To implement `BaseListListener`, you must implement the following methods:
 
-    - `onListPageFailed(int startRow, Exception e)`: Called when the server call to 
-      retrieve a page of items fails. This method's arguments include the 
-      `Exception` generated when the server call failed. Implement this method to 
-      show the user a 
+    - `onListPageFailed(int startRow, Exception e)`: Called when the server call 
+      to retrieve a page of items fails. This method's arguments include the 
+      `Exception` generated when the server call failed. Implement this method 
+      to show the user a 
       [toast](https://developer.android.com/guide/topics/ui/notifiers/toasts.html) 
       message containing an error: 
 
@@ -136,15 +136,15 @@ action bar's title.
     This requires you to import `android.widget.Toast`. 
 
     - `onListPageReceived(int startRow, int endRow, List<E> entries, int rowCount)`: 
-      Called when the server call to retrieve a page of items succeeds. Note that 
-      this method's arguments include the list of objects retrieved from the server 
-      (`entries`), and the page's start row (`startRow`), and end row (`endRow`). 
-      Recall that by default, you want the activity to display the first guestbook's 
-      entries. You'll use this method to do so because it receives the guestbooks 
-      from the server. Note that because `startRow` and `endRow` change for each 
-      page, a `startRow` of `0` corresponds to the first guestbook on the first 
-      page. Use an `if` statement to select this guestbook, and then call 
-      `showEntries`: 
+      Called when the server call to retrieve a page of items succeeds. Note 
+      that this method's arguments include the list of objects retrieved from 
+      the server (`entries`), and the page's start row (`startRow`), and end row 
+      (`endRow`). Recall that by default, you want the activity to display the 
+      first guestbook's entries. You'll use this method to do so because it 
+      receives the guestbooks from the server. Note that because `startRow` and 
+      `endRow` change for each page, a `startRow` of `0` corresponds to the 
+      first guestbook on the first page. Use an `if` statement to select this 
+      guestbook, and then call `showEntries`: 
 
         @Override
         public void onListPageReceived(int startRow, int endRow, List<GuestbookModel> guestbooks, 
@@ -157,10 +157,11 @@ action bar's title.
 
     This requires you to import `java.util.List`. 
 
-    - `onListItemSelected(E element, View view)`: Called when the user selects an 
-      item in the list. This method's arguments include the selected list item 
-      (`element`). To process the guestbook's selection, call `showEntries` in this 
-      method. Also, close the navigation drawer following the `showEntries` call: 
+    - `onListItemSelected(E element, View view)`: Called when the user selects 
+      an item in the list. This method's arguments include the selected list 
+      item (`element`). To process the guestbook's selection, call `showEntries` 
+      in this method. Also, close the navigation drawer following the 
+      `showEntries` call: 
 
         @Override
         public void onListItemSelected(GuestbookModel guestbook, View view) {
@@ -172,9 +173,9 @@ action bar's title.
 4.  Because `BaseListListener` extends the 
     [`BaseCacheListener` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/listener/BaseCacheListener.java), 
     the activity must also implement `BaseCacheListener`'s `error` method. This
-    method lets you respond to an error alongside the user action that caused it. In 
-    this app, you don't need to do anything in this method, so you can leave its 
-    contents empty: 
+    method lets you respond to an error alongside the user action that caused 
+    it. In this app, you don't need to do anything in this method, so you can 
+    leave its contents empty: 
 
         @Override
         public void error(Exception e, String userAction) {
@@ -184,7 +185,7 @@ action bar's title.
 5.  Now that you've implemented the listener methods, you must set
     `GuestbooksActivity` as the listener. This is where the
     `guestbooklist_screenlet` ID that you set in the Screenlet's XML comes in
-    handy.  Add the following code to the end of the activity's `onCreate`
+    handy. Add the following code to the end of the activity's `onCreate`
     method: 
 
         GuestbookListScreenlet screenlet = 
@@ -195,8 +196,8 @@ action bar's title.
     `com.liferay.docs.guestbooklistscreenlet.GuestbookListScreenlet`. 
 
     This code first uses the ID `guestbooklist_screenlet` to get a reference to 
-    `GuestbookListScreenlet`. It then sets this `GuestbooksActivity` instance as the 
-    Screenlet's listener. 
+    `GuestbookListScreenlet`. It then sets this `GuestbooksActivity` instance as 
+    the Screenlet's listener. 
 
 Great! That's it! Your app's `GuestbooksActivity` now contains Guestbook List 
 Screenlet. You're almost ready to use Entry List Screenlet. Before you do so, 

@@ -51,16 +51,16 @@ implementing `BaseListListener` with its model class as a type argument.
 
 2.  Now you must implement the listener's methods. Recall that this includes the
     [`BaseCacheListener` interface's](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java), 
-    `error` method, since `BaseListListener` extends `BaseCacheListener`. For a full
-    explanation of the methods in both listeners, see 
+    `error` method, since `BaseListListener` extends `BaseCacheListener`. For a 
+    full explanation of the methods in both listeners, see 
     [using Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-guestbook-list-screenlet). 
     Note that in `EntriesFragment`, you don't need to take any action in these 
-    methods. There are no UI elements or other parts of the fragment that must be 
-    updated or processed in response to the Screenlet's behavior. All this Screenlet 
-    must do is display its content, which it does regardless of anything you do 
-    in the listener methods. The only thing you may want to add is a toast message 
-    in `onListPageFailed` to notify the user if the server call fails, but this 
-    isn't required. Implement these methods now: 
+    methods. There are no UI elements or other parts of the fragment that must 
+    be updated or processed in response to the Screenlet's behavior. All this 
+    Screenlet must do is display its content, which it does regardless of 
+    anything you do in the listener methods. The only thing you may want to add 
+    is a toast message in `onListPageFailed` to notify the user if the server 
+    call fails, but this isn't required. Implement these methods now: 
 
         @Override
         public void onListPageFailed(int startRow, Exception e) {
@@ -164,4 +164,3 @@ Path, there's still more. You can customize your Screenlet's appearance, package
 it for redistribution, and even configure it to receive push notifications. 
 These topics, and more, are covered in the 
 [tutorials on Android apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens). 
-

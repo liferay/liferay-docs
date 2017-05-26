@@ -12,8 +12,8 @@ You'll use these steps to create the Screenlet class:
     control aspects of the Screenlet's behavior. 
 
 2.  Create the Screenlet class. This class implements the Screenlet's 
-    functionality defined in the View and Interactor. It also reads the attribute 
-    values and configures the Screenlet accordingly. 
+    functionality defined in the View and Interactor. It also reads the 
+    attribute values and configures the Screenlet accordingly. 
 
 First, you'll define Guestbook List Screenlet's attributes. 
 
@@ -54,8 +54,8 @@ class. Departures from the tutorial's steps are noted.
 
 1.  Create the `GuestbookListScreenlet` class in the package 
     `com.liferay.docs.guestbooklistscreenlet`. Recall that Screenlet classes for 
-    list Screenlets must extend `BaseListScreenlet` with the model and Interactor 
-    as type arguments. Declare `GuestbookListScreenlet` as such: 
+    list Screenlets must extend `BaseListScreenlet` with the model and 
+    Interactor as type arguments. Declare `GuestbookListScreenlet` as such: 
 
         public class GuestbookListScreenlet extends 
             BaseListScreenlet<GuestbookModel, GuestbookListInteractor> {...
@@ -97,8 +97,8 @@ class. Departures from the tutorial's steps are noted.
         import android.util.AttributeSet;
 
 3.  Implement the `error` method. Recall that this method uses a listener in the 
-    Screenlet framework to propagate any exception that occurs during the service 
-    call: 
+    Screenlet framework to propagate any exception that occurs during the 
+    service call: 
 
         @Override
         public void error(Exception e, String userAction) {
@@ -134,8 +134,8 @@ class. Departures from the tutorial's steps are noted.
 5.  Override the `loadRows` method. Recall that this method retrieves the list 
     rows from the server by starting the Interactor. The `loadRows` method in 
     `GuestbookListScreenlet` therefore starts a `GuestbookListInteractor` 
-    instance. Because you don't need to pass any data to this Interactor, you can 
-    call its `start` method with `0` as an argument: 
+    instance. Because you don't need to pass any data to this Interactor, you 
+    can call its `start` method with `0` as an argument: 
 
         @Override
         protected void loadRows(GuestbookListInteractor interactor) {
