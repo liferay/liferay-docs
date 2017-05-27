@@ -3,16 +3,16 @@
 To track an entity of an application with the Staging framework, you must
 implement the
 [StagedModel](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
-interface in the app's model classes. It provides the behavior contract for the
-entities Staging administers during the Staging process. For example, the
-Bookmarks application manages
+interface in the app's model classes. It provides the behavior contract for 
+entities during the Staging process. For example, the Bookmarks application
+manages
 [BookmarksEntry](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksEntry.html)s
 and
 [BookmarksFolder](@app-ref/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksFolder.html)s,
 and both implement the `StagedModel` interface. Once you've configured your
-staged models, you can create staged model data handlers, which are used to
-supply information about a staged model (entity) and its referenced content to
-the Export/Import and Staging frameworks. See the
+staged models, you can create staged model data handlers, which supply
+information about a staged model (entity) and its referenced content to the
+Export/Import and Staging frameworks. See the
 [Understanding Data Handlers](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers)
 tutorial for more information.
 
@@ -43,14 +43,14 @@ You'll explore the provided staged model interfaces next.
 
 The `StagedModel` interface must be implemented by your app's model classes, but
 this is typically done through inheritance by implementing one of the
-interfaces extending the base interface:
+interfaces that extend the base interface:
 
 - [StagedAuditedModel](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedAuditedModel.html)
 - [StagedGroupedModel](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedGroupedModel.html)
 
-The implementation of these is required when you want to use certain features of
-the Staging framework like automatic group mapping or entity level *Last Publish
-Date* handling. So how do you choose which is right for you?
+You must implement these when you want to use certain features of the Staging
+framework like automatic group mapping or entity level *Last Publish Date*
+handling. So how do you choose which is right for you?
 
 The `StagedAuditedModel` interface provides all the audit fields to the model
 that implements it. You can check the
@@ -89,23 +89,22 @@ like more detail on how this is done, see the
 [Generating Staged Models using Service Builder](/develop/tutorials/-/knowledge_base/7-0/generating-staged-models-using-service-builder)
 tutorial. You'll learn some general information about this process next.
 
-One of the most important attributes used by the Staging framework is the UUID.
-This attribute must be set to `true` in your `service.xml` file for Service
-Builder to recognize your model as an eligible staged model. The UUID is used to
-differentiate entities between environments. Because the UUID always remains the
-same, it's unique across multiple systems. Why is this so important?
+One of the most important attributes used by the Staging framework is the UUID
+(Universally Unique Identifier). This attribute must be set to `true` in your
+`service.xml` file for Service Builder to recognize your model as an eligible
+staged model. The UUID is used to differentiate entities between environments.
+Because the UUID always remains the same, it's unique across multiple systems.
+Why is this so important?
 
 Suppose you're using
 [remote staging](/discover/portal/-/knowledge_base/7-0/enabling-staging#enabling-remote-live-staging)
 and you create a new entity on your local staging site and publish it to your
 remote live site. What happens when you go back to modify the entity on your
-local site and want to publish those changes? Without a UUID, the entity would
-be reproduced again instead of being updated on the live site because the
-Staging framework has no way to distinguish between the two entities. To avoid
-reproducing that entity again on the remote site, the Staging framework must
-have a unique ID that stays the same across multiple systems. That way, Staging
-recognizes the existence of the original entity on the remote site and updates
-it instead of reproducing it.
+local site and want to publish those changes? Without a UUID, the Staging
+framework has no way to know the local and remote entities are the same. To
+publish entities properly, the Staging framework needs entities uniquely
+identified across systems to recognize the original entity on the remote site
+and update it. The UUID provides that. 
 
 In addition to the UUID, there are several columns that must be defined in your
 `service.xml` file for Service Builder to define your model as a staged model:
@@ -145,12 +144,15 @@ To adapt your model classes to staged models, follow the steps outlined below:
 1.  Create a `Staged[Entity]` interface, which extends the model specific
     interface (e.g., `[Entity]`) and the appropriate staged model interface
     (e.g., `StagedModel`). This class serves as the Staged Model Adapter.
-2.  Create a `Staged[Entity]Impl` class, which implements the
-    `Staged[Entity]` interface and provides necessary logic for your entity
-    model to be recognized as a staged model.
+
+2.  Create a `Staged[Entity]Impl` class that implements the `Staged[Entity]`
+    interface and provides necessary logic for your entity model to be
+    recognized as a staged model.
+
 3.  Create a `Staged[Entity]ModelAdapterBuilder` class that implements
     `ModelAdapterBuilder<[Entity], Staged[Entity]>`. This class adapts the
     original model to the newly created Staged Model Adapter.
+
 4.  Adapt your existing model and call one of the provided APIs to export or
     import the entity automatically.
 
