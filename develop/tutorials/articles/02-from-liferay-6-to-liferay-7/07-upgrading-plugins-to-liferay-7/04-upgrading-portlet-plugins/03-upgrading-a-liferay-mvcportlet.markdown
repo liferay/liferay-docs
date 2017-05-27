@@ -1,16 +1,16 @@
 # Upgrading a Liferay MVC Portlet [](id=upgrading-a-liferay-mvc-portlet)
 
-Liferay's MVC Portlet is used extensively in Liferay's portlets and is a popular
-choice Liferay Portal 6.2 portlet developers. The
+Liferay's MVC Portlet framework is used extensively in Liferay's portlets and is
+a popular choice for Liferay Portal 6.2 portlet developers. The
 [`MVCPortlet` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
 is a lightweight extension of `javax.portlet.GenericPortlet`. Its `init` method
-saves you from writing a lot of boilerplate code. And the portlet can upgraded
+saves you from writing a lot of boilerplate code. MVC portlets can upgraded
 to @product-ver@ without a hitch. 
 
 This tutorial explains how to upgrade a Liferay MVC Portlet and refers to
 Liferay's Stocks portlet as an example.  The Stocks portlet calls on Yahoo
 Finance to retrieve stock quotes. When a user enters a stock symbol and clicks
-on the *Get Quote* button, the portlet shows the stock's statistics and
+the *Get Quote* button, the portlet shows the stock's statistics and
 performance graph. 
 
 ![Figure 1: Users enter a stock's symbol and click the *Get Quote* button to see the stock's performance details.](../../../../images/upgrading-portlets-stocks-portlet-view-6-2.png)
@@ -28,7 +28,7 @@ Here are the Stock portlet's characteristics:
 -   Extends Liferay's [`MVCPortlet` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html),
     overriding its `processAction` method 
     to retrieve stock quotes from Yahoo Finance
--   JSPs make up its view layer
+-   View layer implemented by JSPs
 -   Relies on manual dependency management
 -   Depends on third-party libraries Liferay Portal 6.2 provides 
 
@@ -39,17 +39,18 @@ The Stocks portlet uses as traditional Liferay Plugins SDK folder structure, as 
 Upgrading a Liferay MVC Portlet involves these steps:
 
 1.  [Adapt the code to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+
 2.  [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
 
-Liferay's [Code Upgrade
-Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+Liferay's 
+[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 identifies code affected by the new API, explains the API changes and how to
 adapt to them, and in many cases, provides options for adapting the code
 automatically. 
 
 As an example code upgrade, the Stocks portlet was adapted to changes in
-@product-ver@'s [`LanguageUtil`
-class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/language/LanguageUtil.html).
+@product-ver@'s 
+[`LanguageUtil` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/language/LanguageUtil.html).
 Its `get` method returns a localized version of the given `String`. In 6.2, the
 method derives the current language from the page context parameter; in 7.0, it
 derives it from the HTTP servlet request.
@@ -57,11 +58,11 @@ derives it from the HTTP servlet request.
 Old:
 
     get(javax.servlet.jsp.PageContext, java.lang.String)
-    
+ 
 New:
 
     get(javax.servlet.http.HttpServletRequest, java.lang.String)
-    
+ 
 The upgraded Stocks portlet's `view.jsp` now passes the request to new method.
 
 Regarding dependencies, the original Stocks portlet relied on Liferay Portal to

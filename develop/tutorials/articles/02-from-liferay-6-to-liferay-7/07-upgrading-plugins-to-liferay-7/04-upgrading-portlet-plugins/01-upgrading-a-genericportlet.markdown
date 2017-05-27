@@ -2,9 +2,12 @@
 
 It's common to create portlets that extend `javax.portlet.GenericPortlet`. After
 all, `GenericPortlet` provides a default `javax.portlet.Portlet` interface
-implementation. Upgrading a `GenericPortlet` extension is straightforward. As
-with upgrading most portlets, you adapt the portlet to @product-ver@'s API using
-the Code Upgrade Tool and resolve its dependencies. 
+implementation. Upgrading a `GenericPortlet` is straightforward and takes only
+two steps: 
+
+1.  Adapt the portlet to @product-ver@'s API using the Code Upgrade Tool.
+
+2.  Resolve its dependencies. 
 
 This tutorial demonstrates upgrading a Liferay Plugins SDK 6.2 sample portlet
 called *Sample DAO* (project `sample-dao-portlet`). 
@@ -20,9 +23,9 @@ and the
 The sample portlet has the following characteristics:
  
 -   Extends `GenericPortlet`
--   JSPs make up its view layer
+-   View layer implemented by JSPs 
 -   Persists models using the Data Access Object (DAO) design pattern
--   Specifies database connection information via a properties file
+-   Specifies database connection information in a properties file
 -   Manages dependencies via Ant/Ivy
 -   Developed in a Liferay Plugins SDK 6.2
 
@@ -48,11 +51,11 @@ if you need to adapt to dependency changes.
 
 $$$ 
 
-You deploy a `GenericPortlet` extension to @product-ver@ in the same way you
-deploy to  Portal 6.x. When the plugin WAR file lands in the
-`[Liferay_Home]/deploy` folder, @product@'s Plugin Compatibility Layer converts
-the WAR to a Web Application Bundle (WAB) and installs the portlet as a WAB to
-@product@'s OSGi runtime.
+You deploy a `GenericPortlet` to @product-ver@ in the same way you deploy to
+Portal 6.x. When the plugin WAR file lands in the `[Liferay_Home]/deploy`
+folder, @product@'s Plugin Compatibility Layer converts the WAR to a Web
+Application Bundle (WAB) and installs the portlet as a WAB to @product@'s OSGi
+runtime.
 
 On deploying an upgraded portlet, the server prints messages that indicate the
 following portlet status:

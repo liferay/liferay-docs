@@ -1,30 +1,36 @@
 # Upgrading a Servlet-based Portlet [](id=upgrading-a-servlet-based-portlet)
 
-Servlet-based portlets have little overhead and are easy to upgrade. 
-This tutorial shows you how to upgrade them and refers to code from before and after upgrading a sample servlet-based portlet called *Sample JSON* (project `sample-json-portlet`). The portlet shows a *Click me* link. When users click the link, the Liferay logo appears. 
+Servlet-based portlets have little overhead and are easy to upgrade. This
+tutorial shows you how to upgrade them and refers to code from before and after
+upgrading a sample servlet-based portlet called *Sample JSON* (project
+`sample-json-portlet`). The portlet shows a *Click me* link. When users click
+the link, the Liferay logo appears. 
 
 ![Figure 1: The Sample JSON portlet displays text stating *Click me* that you can click to initiate an action.](../../../../images/upgrading-portlets-sample-servlet-json-initial-view.png)
 
-To get the most from the tutorial, you can download and refer to the [original sample portlet source code](https://dev.liferay.com/documents/10184/656312/sample-json-portlet-pre-7-0-upgrade.zip)
-and the [upgraded source code](https://dev.liferay.com/documents/10184/656312/sample-json-portlet-post-7-0-upgrade.zip).
+To get the most from this tutorial, you can download and refer to the 
+[original sample portlet source code](https://dev.liferay.com/documents/10184/656312/sample-json-portlet-pre-7-0-upgrade.zip)
+and the 
+[upgraded source code](https://dev.liferay.com/documents/10184/656312/sample-json-portlet-post-7-0-upgrade.zip).
 
 Here are the sample portlet's characteristics:
 
 -   Processes requests using a servlet that extends `javax.servlet.HttpServlet`
--   JSPs make up its view layer
+-   View layer implemented by JSPs
 -   Processes data using JSON objects 
 -   Relies on manual dependency management
 -   Depends on third-party libraries that Liferay Portal 6.2 provides 
 -   Embeds additional dependencies in its `WEB-INF/lib` folder
 -   Developed in a Liferay Plugins SDK 6.2
 
-Upgrading a servlet-based portlet involves these steps:
+Follow these steps to upgrade a servlet-based portlet: 
 
 1.  [Adapt the code to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+
 2.  [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
 
-The [Code Upgrade
-Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+The 
+[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 makes adapting a portlet's code straightforward, and it automates much of the
 process. 
 
@@ -67,9 +73,8 @@ warns that the `portal-dependency-jars` property is deprecated.
 For running on @product-ver@, it's fine to specify the`portal-dependency-jars`
 property per the
 [instructions](resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
-for using packages that @portal@ exports. After upgrading, consider [using a
-dependency management
-tool](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+for using packages that @portal@ exports. After upgrading, consider 
+[using a dependency management tool](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
 in your project. This helps prepare it for future @product@ versions and
 facilitates managing dependencies.
 
