@@ -10,18 +10,20 @@ use case.
 
 In this tutorial, you'll explore the Asset Link framework (used for
 [relating assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)),
-which is an internal @product@ framework that leverages the
+which is a @product@ framework that leverages the
 [ModelAdapterBuilder](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
 framework. The Model Adapter Builder lets you adapt your model classes to staged
 models.
 
 Asset links do not provide UUIDs by default; however, they still need to be
-tracked in the Staging and Export/Import frameworks, and therefore, require
-staged models. Since Service Builder cannot generate staged models for asset
-links since they don't provide a UUID, the Asset Link framework has to create
-staged models differently using the Model Adapter Builder. You'll leverage the
-Model Adapter Builder for your application by referencing the Asset Link
-framework as an example.
+tracked in the Staging and Export/Import frameworks. Therefore, they require
+staged models. Since they don't provide a UUID, Service Builder cannot generate
+staged models for asset links. The Asset Link framework has to create staged
+models differently using the Model Adapter Builder. You'll leverage the Model
+Adapter Builder for your application by referencing the Asset Link framework as
+an example. The naming convention for this interface typically follows the
+`Staged[Entity]` syntax. The example below uses a generic entity called
+`AssetLink`. 
 
 1.  Create a new interface that extends one of the
     [staged model interfaces](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#staged-model-interfaces)
@@ -39,9 +41,7 @@ framework as an example.
 
         public String getEntry2Uuid();
 
-    These will be implemented by a new implementation class later. The
-    naming convention for this interface typically follows the `Staged[Entity]`
-    syntax.
+    These will be implemented by a new implementation class later. 
 
 2.  Create an implementation class that implements your new `Staged[Entity]`:
 
