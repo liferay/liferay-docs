@@ -206,6 +206,7 @@ Even if you're not familiar with JSON, the `sitemap.json` file is easy to
 understand. Let's examine a sample `sitemap.json` file:
 
     {
+	"themeId": "spaceprogram_WAR_spaceprogramtheme",
 	"layoutTemplateId": "2_columns_ii",
 	"privatePages": [
 	    {
@@ -375,19 +376,24 @@ understand. Let's examine a sample `sitemap.json` file:
         ]
     }
 
-The first thing you should declare in your `sitemap.json` file is a layout
-template ID so the target site or site template can reference the layout
-template to use for its pages. You can also specify different layout templates
-to use for individual pages. You can find layout templates in your Liferay
-installation's `/layouttpl` folder. Next, you have to declare the layouts, or
-pages, that your site template should use. Note that pages are called *layouts*
-in Liferay's code. You can specify a name, title, and friendly URL for a page,
-and you can set a page to be hidden. To declare that web content should be
-displayed on a page, simply specify an HTML file. You can declare portlets by
-specifying their portlet IDs, which can be found in the App Manager of the 
-Control Panel. Select the suite that the App is located in, click the App, click
-the App web link, and open the *Portlets* tab that appears. The portlet ID is 
-displayed below the name of the App. You can find a full list of the default 
+The first thing you should declare in your `sitemap.json` file is a theme ID and
+layout template ID. The theme ID is necessary so the resources importer can update
+the right theme. This ID should be [name of theme ID specified in 
+`liferay-look-and-feel.xml`] + \_WAR\_ + [name of theme war], without the hyphens. So 
+if `liferay-look-and-feel.xml` specifies your theme ID as "space-program" and the 
+name of your theme war is "space-program-theme.war," the theme ID you would put in 
+the `sitemap.json` would be "spaceprogram_WAR_spaceprogramtheme." With the template 
+ID, the target site or site template can reference the layout template to use for its 
+pages. You can also specify different layout templates to use for individual pages. 
+You can find layout templates in your Liferay installation's `/layouttpl` folder. 
+Next, you have to declare the layouts, or pages, that your site template should use. 
+Note that pages are called *layouts* in Liferay's code. You can specify a name, 
+title, and friendly URL for a page, and you can set a page to be hidden. To declare 
+that web content should be displayed on a page, simply specify an HTML file. You can 
+declare portlets by specifying their portlet IDs, which can be found in the App 
+Manager of the Control Panel. Select the suite that the App is located in, click the 
+App, click the App web link, and open the *Portlets* tab that appears. The portlet 
+ID is displayed below the name of the App. You can find a full list of the default 
 portlet IDs for Liferay in the [Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide). 
 You can also specify portlet preferences for each portlet.
 
