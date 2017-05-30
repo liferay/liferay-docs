@@ -15,7 +15,6 @@ The file structure of a Soy Portlet is similar to the structure of an MVC
 portlet: 
 
 - `my-soy-portlet`
-    - `.lfrbuild-portal`
     - `bnd.bnd`
     - `build.gradle`
     - `package.json`
@@ -24,11 +23,13 @@ portlet:
             - `MySoyPortlet.java`
             - `action/`
                 - `*MVCRenderCommand.java`
-        - `resources/META-INF/resources/`
-            - `content/`
-                - `Language.properties`
-            - `View.es.js` (MetalJS component)
-            - `View.soy` (Soy template)
+        - `resources/`
+            - `package.json`
+            - `/META-INF/resources/`
+                - `content/`
+                    - `Language.properties`
+                - `View.es.js` (MetalJS component)
+                - `View.soy` (Soy template)
 
 <!--
 You can also use the blade template to build your initial project.
@@ -76,6 +77,14 @@ you should have the following dependencies and configuration parameters:
 This provides everything you need to create a Metal component based on Soy. Note 
 that the `version` value in your `package.json` should match the value of 
 `Bundle-Version` in your `bnd.bnd` file.
+
+Also add a `package.json` file inside `src/main/resource`. You don’t need all
+the properties of the one placed at the root, just the `name`. In our example
+it would be like this:
+
+        {
+                "name": "hello-soy-web"
+        }
 
 Next you can specify your module's build dependencies.
 
