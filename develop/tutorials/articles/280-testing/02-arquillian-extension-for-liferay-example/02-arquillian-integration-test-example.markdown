@@ -153,7 +153,7 @@ The project uses  Java Management Extensions (JMX) to deploy OSGi modules to
 Apache Aries JMX exposes the JMX API that Arquillian uses to
 install/deploy/start the modules. Since DXP Digital Enterprise 7.0 Fix Pack 16
 and Liferay CE 7.0 GA4, Liferay Workspace's `startTestableTomcat` Gradle task
-installs the Apache Aries JMX modules automatically. In case you're using and
+installs the Apache Aries JMX modules automatically. In case you're using an
 earlier @product@ version or haven't already installed the Aries modules, here's
 their group ID, artifact ID, and version information. You can install them using
 [Apache Felix GoGo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell):
@@ -181,6 +181,6 @@ Apache Tomcat's guide
 [*Enabling JMX Remote*](https://tomcat.apache.org/tomcat-7.0-doc/monitoring.html#Enabling_JMX_Remote)
 has more JMX configuration details. 
 
-You've seen how the example integration test class and its setup are
+You've seen how setting up the example integration test class is
 straightforward. Next, you'll discover how fun it is to develop functional
 browser-based tests using Arquillian. 
