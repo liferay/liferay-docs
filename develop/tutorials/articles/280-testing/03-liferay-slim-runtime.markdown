@@ -297,7 +297,7 @@ contacts service.
 Note how it uses OSGi Declarative Services to reference an instance of Liferay
 Core's `CounterLocalService` and Contacts API's `EntryLocalService`.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Arquillian Extension for Liferay Example](/develop/tutorials/-/knowledge_base/7-0/arquillian-extension-for-liferay-example)
 
