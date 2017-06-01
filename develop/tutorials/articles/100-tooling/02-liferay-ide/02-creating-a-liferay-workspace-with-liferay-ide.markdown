@@ -8,6 +8,18 @@ prompt, which can streamline your workflow. To learn more about Liferay
 Workspaces, visit its dedicated
 [tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
+<div class="video-link">
+![vid-ide-thumbnail](../../../images/vid-ide-thumbnail.png)
+</div>
+
+<div class="video-tag" data-name="Getting Started with Liferay IDE">
+  <video width="100%" height="100%" controls>
+    <source src="https://dev.liferay.com/webdav/guest/document_library/Develop-videos/getting-started-with-liferay-ide.mp4" type="video/mp4">
+    <source src="https://dev.liferay.com/webdav/guest/document_library/Develop-videos/getting-started-with-liferay-ide.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+</div>
+
 Before creating your Liferay Workspace, you should understand the available
 @ide@ perspectives specifically designed for @product@ development. You'll
 notice in the Perspectives view the *Liferay Workspace* and *Liferay*
