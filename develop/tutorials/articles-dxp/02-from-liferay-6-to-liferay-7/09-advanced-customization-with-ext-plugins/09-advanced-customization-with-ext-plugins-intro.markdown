@@ -134,6 +134,8 @@ custom Ext plugin:
     *example* is used for both. Note that the Display name field is
     automatically filled in with the capitalized version of the Project name.
 
+    ![Figure 1: You can create an Ext plugin project with Liferay IDE.](../../../images-dxp/ext-create-an-ext-plugin-project.png)
+
 3.  Select the *Ant (liferay-plugins-sdk)* option for your build type.
 
 4.  Select the *Ext* plugin type. Then click *Next*.
@@ -141,8 +143,6 @@ custom Ext plugin:
 5.  If you have not yet configured a Plugins SDK, select *Next* and choose the
     Plugins SDK for which you want to generate the Ext plugin. Once you have
     your Plugins SDK configured, click *Finish*.
-
-![Figure 1: You can create an Ext plugin project with Liferay IDE.](../../../images/ext-create-an-ext-plugin-project.png)
 
 The Plugins SDK automatically appends `-ext` to the plugin project name when it
 creates your Ext plugin's project folder. Your Ext plugin project is added to
@@ -433,7 +433,7 @@ about this process.
     While selecting the Ext plugin project in the *Package Explorer* view,
     select the plugin's *Liferay* &rarr; *Clean App Server...* option. 
 
-    [Figure 3: How to clean app server](../../images/ext-plugins-clean-app-server.png)
+    ![Figure 2: How to clean your app server](../../../images-dxp/ext-plugins-clean-app-server.png)
 
 3.  Start the Liferay server. 
 
