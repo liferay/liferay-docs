@@ -115,9 +115,9 @@ Elasticsearch is running.
 
 There are two ways to configure the adapter: 
 
-1. [Use the System Settings application in the Control Panel.](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0#configuring-the-adapter-in-the-control-panel) 
+1. [Use the System Settings application in the Control Panel.](#configuring-the-adapter-in-the-control-panel) 
 
-2. [Manually create an OSGi configuration file.](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0#configuring-the-adapter-with-an-osgi-config-file) 
+2. [Manually create an OSGi configuration file.](#configuring-the-adapter-with-an-osgi-config-file) 
 
 It's convenient to configure the Elasticsearch adapter from System Settings, but
 this is often only possible during development and testing. If you're not
