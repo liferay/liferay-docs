@@ -9,7 +9,7 @@ Workspaces, visit its dedicated
 [tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
 <div class="video-link">
-<img src="http://dev-uat.liferay.com/webdav/guest/document_library/Develop-videos/Thumbnails/vid-ide-thumbnail.png" alt="video-thumbnail">
+<img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
 </div>
 
 Before creating your Liferay Workspace, you should understand the available
