@@ -31,7 +31,7 @@ Follow the steps below to download and install Liferay Workspace:
 
     +$$$
 
-    **Note:** You'll' be prompted for your liferay.com username and password
+    **Note:** You'll be prompted for your liferay.com username and password
     before downloading the Liferay DXP bundle. After providing your credentials,
     they're stored in your `~/.gradle/gradle.properties` file. The credentials
     are used by your workspace if you ever decide to redownload a DXP bundle.
