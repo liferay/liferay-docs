@@ -154,6 +154,23 @@ service to retrieve our list of volunteers:
 
     <#assign records = DDLRecordLocalService.getRecords(reserved_record_set_id)>
     
+
++$$$
+
+Note: For security purposes, some variables and classes are restricted and 
+cannot be accessed through `serviceLocator` by default. Restrictions are 
+controlled through the following properties:
+
+    velocity.engine.restricted.classes=
+    velocity.engine.restricted.variables=
+    freemarker.engine.restricted.classes=
+    freemarker.engine.restricted.variables=
+
+You can change these restrictions by providing an alternate version in a custom 
+properties file.
+
+$$$
+
 Now that we have our records, we can iterate through the list and display the
 data from each record that we want to show. To access a field from a record
 entry (such as the volunteer's name), we call the `getFieldValue` method and
