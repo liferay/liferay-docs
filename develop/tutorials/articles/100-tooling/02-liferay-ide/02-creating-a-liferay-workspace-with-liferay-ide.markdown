@@ -9,15 +9,7 @@ Workspaces, visit its dedicated
 [tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
 <div class="video-link">
-<img src="/webdav/guest/document_library/Develop-videos/Thumbnails/vid-ide-thumbnail.png">
-</div>
-
-<div class="video-tag" data-name="Getting Started with Liferay IDE">
-  <video width="100%" height="100%" controls>
-    <source src="/webdav/guest/document_library/Develop-videos/getting-started-with-liferay-ide.mp4" type="video/mp4">
-    <source src="/webdav/guest/document_library/Develop-videos/getting-started-with-liferay-ide.webm" type="video/webm">
-    Your browser does not support HTML5 video.
-  </video>
+<img src="http://dev-uat.liferay.com/webdav/guest/document_library/Develop-videos/Thumbnails/vid-ide-thumbnail.png" alt="video-thumbnail">
 </div>
 
 Before creating your Liferay Workspace, you should understand the available
@@ -116,3 +108,11 @@ browse for your workspace project. Once you've selected you workspace, click
 Congratulations! You've learned how to create and configure a Liferay Workspace
 using Liferay @ide@. Now that your workspace is created, you can begin creating
 Liferay plugins.
+
+<div class="video-tag" data-name="Getting Started with Liferay IDE">
+  <video width="100%" height="100%" controls>
+    <source src="/webdav/guest/document_library/Develop-videos/getting-started-with-liferay-ide.mp4" type="video/mp4">
+    <source src="/webdav/guest/document_library/Develop-videos/getting-started-with-liferay-ide.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+</div>
