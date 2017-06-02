@@ -10,7 +10,7 @@ they should. And sometimes, content is published that should never have seen the
 light of day.
 
 <div class="video-link">
-<img src="/webdav/guest/document_library/User-admin-videos/Thumbnails/vid-struc-temp-thumbnail.png"/ >
+<img src="/webdav/guest/document_library/User-admin-videos/Thumbnails/vid-struc-temp-thumbnail.png">
 </div>
 
 <div class="video-tag" data-name="Creating Content with Structures and Templates">
