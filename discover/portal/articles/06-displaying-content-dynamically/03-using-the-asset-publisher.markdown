@@ -134,6 +134,12 @@ the ordering and grouping settings. You can also group by *Asset*, *Type* or
 *Vocabularies*. Vocabularies are groups of categories defined by administrators
 in the *Categories* section of the Control Panel.
 
+There are also three miscellaneous display options listed as checkboxes:
+
+- **Show only assets with *Welcome* as its display page** will only display assets specifically configured for the *Welcome* page.
+- **Include tags specified in the URL?** allows you to specify tags in the URL to be displayed by the asset publisher
+- **Include tags set by other applications** enables other applications on the page to toggle tags to be displayed in the Asset Publisher.
+
 The *Ordering and Grouping* section of the Asset Publisher allows you to
 precisely control how content is ordered and grouped when displayed. You can
 order the assets displayed by Asset Publisher in ascending or descending order
