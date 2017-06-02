@@ -10,13 +10,13 @@ they should. And sometimes, content is published that should never have seen the
 light of day.
 
 <div class="video-link">
-<img src="https://dev.liferay.com/webdav/guest/document_library/User-admin-videos/Thumbnails/vid-struc-temp-thumbnail.png"/ >
+<img src="/webdav/guest/document_library/User-admin-videos/Thumbnails/vid-struc-temp-thumbnail.png"/ >
 </div>
 
 <div class="video-tag" data-name="Creating Content with Structures and Templates">
   <video width="100%" height="100%" controls>
-    <source src="https://dev.liferay.com/webdav/guest/document_library/User-admin-videos/creating-content-with-structures-and-templates.mp4" type="video/mp4">
-    <source src="https://dev.liferay.com/webdav/guest/document_library/User-admin-videos/creating-content-with-structures-and-templates.webm" type="video/webm">
+    <source src="/webdav/guest/document_library/User-admin-videos/creating-content-with-structures-and-templates.mp4" type="video/mp4">
+    <source src="/webdav/guest/document_library/User-admin-videos/creating-content-with-structures-and-templates.webm" type="video/webm">
     Your browser does not support HTML5 video.
   </video>
 </div>
