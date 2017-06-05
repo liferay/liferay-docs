@@ -176,3 +176,18 @@ section for more information.
 
 ## Updating a Maven Workspace
 
+Liferay Workspace is updated periodically with new features, so you'll want to
+update your workspace instance accordingly. To update your Maven Workspace, you
+must update the Bundle Support plugin configured in your workspace's root
+`pom.xml` file:
+
+    <plugin>
+        <groupId>com.liferay</groupId>
+        <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
+        <version>2.0.3</version>
+        ...
+    </plugin>
+
+Update the version to the latest available release. You can reference the
+available releases for the Bundle Support plugin
+[here](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.tools.bundle.support/).
