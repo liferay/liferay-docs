@@ -150,9 +150,12 @@ vocabulary. With this organizational setup, adding an Asset Publisher and
 specifying *Location* as the Asset Publisher's custom user attribute would only
 display content that had been categorized as *Moon*. Pretty cool, right?
 
-In addition, you can used advanced filters to **Show only assets with *Welcome* 
-as its display page**, which will only display assets specifically configured 
-for the *Welcome* page in that Asset Publisher, and you can also allow tags specified in the URL to be included in the filtering by activating **Include tags specified in the URL?**.
+In addition, you can use these advanced filters:
+
+-   **Show only assets with *Welcome* as its display page** displays only assets
+    specifically configured for the *Welcome* page.
+-   **Include tags specified in the URL?** lets you specify tags in the URL for
+    the Asset Publisher to display.
 
 The *Ordering and Grouping* section of the Asset Publisher lets you
 precisely control how content is ordered and grouped when displayed. You can
