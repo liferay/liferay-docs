@@ -2,10 +2,12 @@
 
 A Liferay Maven Workspace is a generated environment that is built to hold and
 manage your Liferay projects built with Maven. This workspace is intended to aid
-in the management of Liferay projects by providing various Maven build scripts
-and configured properties.
+with the management of Liferay projects by applying various Maven plugins and
+configured properties. The Liferay Maven Workspace offers a full development
+lifecycle for your Maven projects to make developing them for @product@ easier
+than ever.
 
-<!-- Continue with intro. -Cody -->
+Learn how to install a Maven Workspace next.
 
 ## Installation
 
@@ -40,20 +42,20 @@ The default Maven Workspace is broken down into the following folders/files:
         - `pom.xml`
     - `wars`
         - `pom.xml`
-    - `gradle.properties`
     - `pom.xml`
-    - `settings.gradle`
 
 For more information on the `configs` folder, see the
 [Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
 section. The proceeding folders should hold projects of that type. The
 `gradle.properties` file specifies the workspace's project locations and Liferay
-Portal server configuration globally. The `settings.gradle` file applies plugins
-to the workspace and configures its dependencies. Lastly, the parent `pom.xml`
-configures your workspace as a Maven project and applies the
+Portal server configuration globally. The parent `pom.xml` configures your
+workspace as a Maven project and applies the
 [Bundle Support plugin](https://repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.portal.tools.bundle.support/),
-which is required for your Maven workspace to properly handle @product-ver@
+which is required for your Maven Workspace to properly handle @product-ver@
 projects.
+
+Next, you'll learn how to initialize and package @product@ bundles using
+workspace.
 
 ## Adding a Liferay Bundle to a Maven Workspace
 
@@ -104,8 +106,7 @@ Your distribution file is available from the workspace's `/build` directory.
 
 ## Configuring Maven Workspace Properties
 
-There are several workspace properties you can configure in the root `pom.xml`
-file:
+There are many configurable workspace properties in the root `pom.xml` file:
 
 - `liferay.workspace.bundle.dest`: the destination folder for downloaded
    @product@ bundle ZIP files.
@@ -131,8 +132,8 @@ file:
 - `liferay.workspace.themes.dir`: the theme projects' root folder.
 - `liferay.workspace.wars.dir`: the WAR projects' root folder.
 
-Properties can be set by adding tags with the property name. See the example
-property configurations below to see how these are set: 
+Properties can be set by adding tags with the property name. See the property
+configurations below for an example on how these can be set in your POM: 
 
     <properties>
         <liferay.workspace.home.dir>${liferay.workspace.basedir}/bundles</liferay.workspace.home.dir>
@@ -143,6 +144,35 @@ property configurations below to see how these are set:
         <liferay.workspace.environment>local</liferay.workspace.environment>
     </properties>
 
+Next, you'll learn how to add and deploy modules/project in your Maven
+workspace.
 
+## Module Management
 
+Maven Workspace makes managing your Maven project easier than ever. To create
+a project, navigate to the appropriate workspace folder dedicated to that type
+of project (e.g., `modules`, `wars`, etc.). Then generate the project archetype.
+You can view a full listing of the available archetypes in the
+[Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
+reference section. Once the project is generated, it can leverage all of Maven
+workspace's functionality.
+
+Maven Workspace also lets you deploy your projects to a @product@ instance using
+Maven. See the
+[Deploying a Module Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-a-module-built-with-maven-to-liferay-portal)
+tutorial for more information.
+
+Want to leverage Maven Workspace's testing infrastructure so you can simulate
+your Maven projects in a specific environment? See the
+[Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
+section.
+
+Once you have your Maven projects solidified and ready for the limelight, it'd
+be great to release your projects to the public. Maven Workspace doesn't provide
+this functionality, but there are easy ways to use external release tools with
+workspace. See the
+[Releasing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#releasing-modules)
+section for more information.
+
+## Updating a Maven Workspace
 
