@@ -92,7 +92,7 @@ root folder. There are several configurable properties for your workspace's
 Liferay instance. You can set the version of the Liferay bundle you'd like to
 generate and install by setting the download URL for the
 `liferay.workspace.bundle.url` property
-(e.g., `https://sourceforge.net/projects/lportal/files/Liferay Portal/7.0.1 GA2/liferay-ce-portal-tomcat-7.0-ga2-20160610113014153.zip`).
+(e.g., `http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.2%20GA3/liferay-ce-portal-tomcat-7.0-ga3-20160804222206210.zip`).
 You can also set the folder where your Liferay bundle is generated with the
 `liferay.workspace.home.dir` property. It's set to `bundles` by default.
 

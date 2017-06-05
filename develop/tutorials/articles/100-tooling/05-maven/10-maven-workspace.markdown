@@ -107,28 +107,34 @@ Your distribution file is available from the workspace's `/build` directory.
 There are several workspace properties you can configure in the root `pom.xml`
 file:
 
-- `liferay.workspace.home.dir`: the @product@ bundle root folder.
 - `liferay.workspace.bundle.dest`: the destination folder for downloaded
    @product@ bundle ZIP files.
 - `liferay.workspace.bundle.url`: the URL used to download the @product@ bundle.
    For more information, see
    [Adding a Liferay Bundle to a Maven Workspace](#adding-a-liferay-bundle-to-a-maven-workspace).
+- `liferay.workspace.default.repository.enabled`: whether Liferay CDN is set as
+   the default repository in the root project.
 - `liferay.workspace.deploy.war.dir`: the deployment folder for WAR projects.
 - `liferay.workspace.deploy.modules.dir`: the deployment folder for module
    projects.
 - `liferay.workspace.environment`: the name of a `configs` subfolder holding the
-   @product@ server configuration to use. See [Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
+   @product@ server configuration to use. See
+   [Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
    for more information.
-- `liferay.workspace.modules.default.repository.enabled`: 
-- `liferay.workspace.modules.dir`: 
-- `liferay.workspace.plugins.sdk.dir`: 
-- `liferay.workspace.themes.dir`: 
-- `liferay.workspace.wars.dir`: 
+- `liferay.workspace.home.dir`: the @product@ bundle root folder.
+- `liferay.workspace.modules.default.repository.enabled`: whether the Liferay
+   CDN is set as the default repository for module projects.
+- `liferay.workspace.modules.dir`: the module projects' root folder.
+- `liferay.workspace.plugins.sdk.dir`: the converted Plugins SDK's root folder.
+   For more information, see
+   [Using a Plugins SDK from Your Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+- `liferay.workspace.themes.dir`: the theme projects' root folder.
+- `liferay.workspace.wars.dir`: the WAR projects' root folder.
 
+Properties can be set by adding tags with the property name. See the example
+property configurations below to see how these are set: 
 
-
-<properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <properties>
         <liferay.workspace.home.dir>${liferay.workspace.basedir}/bundles</liferay.workspace.home.dir>
         <liferay.workspace.bundle.dest>${user.home}/.liferay/bundles/liferay-ce-portal-tomcat-7.0-ga3-20160804222206210.zip</liferay.workspace.bundle.dest>
         <liferay.workspace.bundle.url>http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.2%20GA3/liferay-ce-portal-tomcat-7.0-ga3-20160804222206210.zip</liferay.workspace.bundle.url>
