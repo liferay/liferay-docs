@@ -149,26 +149,29 @@ done with the following line of code:
         serviceLocator.findService(
         "com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService")>
 
-In order to reference `serviceLocator` in your template, you first need to 
-enable it. For security reasons,  `serviceLocator` is on the default list of 
-restricted variables in your `portal.properties` along with `objectUtil`, 
-`staticUtil`, and `utilLocator`. You need to edit the appropriate properties 
-for Freemarker or Velocity in a custom properties file, to remove the 
-restriction. By default the properties read:
+To use the `serviceLocator` variable, you must  enable it. For security reasons,
+Liferay Portal restricts the `serviceLocator`, along with the `objectUtil`,
+`staticUtil`, and `utilLocator` variables, in  the `portal.properties` file.
+Here are the default property values:
 
     velocity.engine.restricted.variables=\
         serviceLocator,\
         utilLocator
-	
+    
     freemarker.engine.restricted.variables=\
         objectUtil,\
         serviceLocator,\
         staticUtil,\
         utilLocator
 
-You need to remove the line `serviceLocator,\` from the property, save your 
-custom properties file and restart the server to continue. You can view the 
-full list of Velocity settings at [https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#Velocity%20Engine](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#Velocity%20Engine) and the full list of Freemarker settings at [https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#FreeMarker%20Engine](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#FreeMarker%20Engine)
+To use the `serviceLocator` variable in FreeMarker templates, for example, you
+must remove it from the `freemarker.engine.restricted.variables` property value
+list, save to a custom Portal properties file (e.g.,
+`Liferay_Home/portal-ext.propeties`), and restart the server. You can view the
+full list of Velocity settings
+[here](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#Velocity%20Engine)
+and FreeMarker settings
+[here](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#FreeMarker%20Engine).
 
 Now that all that is taken care of, we store a handle to our service in `DDLRecordLocalService` so we can use the
 service to retrieve our list of volunteers:
