@@ -201,7 +201,7 @@ message appears for a server when the server is offline. Status messages also
 appear for servers when fix packs are available, monitoring is unavailable, the 
 patching tool is unavailable, or other events occur that relate to LCS. 
 
-![Figure 7: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
+![Figure 5: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
 can also create new environments here by clicking the Add Environment tab. To 
@@ -225,7 +225,7 @@ checkbox when filling out the environment's information. Note that you must set
 the portal property `cluster.link.enabled` to `true` in any servers that connect 
 to a clustered environment. 
 
-![Figure 8: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../images-dxp/lcs-new-clustered-environment.png)
+![Figure 6: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../images-dxp/lcs-new-clustered-environment.png)
 
 Next, you'll learn to use the environment view.
 
@@ -267,7 +267,7 @@ The UI is segmented into three tabs:
    delete the environment by clicking *Delete Environment*, next to the Save 
    button. 
 
-![Figure 9: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
+![Figure 7: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
 
 Regardless of the tab you're in, the left side of the screen displays a list of 
 the environment's servers. To view a server's settings, click the server's gear 
@@ -315,7 +315,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 10: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
+![Figure 8: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -329,7 +329,7 @@ portlets in your server. The Cache category lists Liferay Single VM metrics and
 Hibernate metrics. The following screenshot shows the statistics in the Portlets 
 category.
 
-![Figure 11: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images-dxp/lcs-server-metrics-application-portlets.png)
+![Figure 9: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images-dxp/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -338,7 +338,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the PS Survivor Space, PS Old Gen, PS Eden Space, Code Cache, and PS 
 Perm Gen.
 
-![Figure 12: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images-dxp/lcs-server-metrics-jvm.png)
+![Figure 10: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images-dxp/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
 additional information about how your server is running. For example, a 
@@ -346,7 +346,7 @@ horizontal bar graph shows the number of current threads running on your server.
 Similarly, horizontal bar graphs are used to represent the JDBC connection 
 pools. 
 
-![Figure 13: The LCS server metrics show current threads and JDBC connection pools.](../../images-dxp/lcs-metrics-server.png)
+![Figure 11: The LCS server metrics show current threads and JDBC connection pools.](../../images-dxp/lcs-metrics-server.png)
 
 Note that in Snapshot Metrics, the application and garbage collector metrics are 
 based on data collected by LCS from server registration to the present. Memory 
@@ -358,7 +358,7 @@ installation, and those already installed. The Available fix packs table
 functions exactly like the Fix Packs table in environment view for downloading 
 and installing fix packs. 
 
-![Figure 14: The Fix Packs tab displays your server's fix packs and alerts.](../../images-dxp/lcs-server-fix-packs.png)
+![Figure 12: The Fix Packs tab displays your server's fix packs and alerts.](../../images-dxp/lcs-server-fix-packs.png)
 
 LCS also lets you view your portal's property values. To do so, click the 
 *Portal Properties* tab near the top of the page. Your portal's properties and 
@@ -385,7 +385,7 @@ top-right of the table. For example, by checking the *Show Default Values* and
 custom property values. To show only the custom values, check only the checkbox 
 for *Show Custom Values*. 
 
-![Figure 15: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
+![Figure 13: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
 
 To view general information about your @product@ installation, click the 
 *Details* tab near the top of the screen. There are three tabs under Details: 
@@ -394,7 +394,7 @@ your @product@ installation, Java installation, and hardware. This information
 is useful to the Liferay support team in the event that you need their 
 assistance. 
 
-![Figure 16: Clicking the Details button shows information about your @product@ installation's software and hardware.](../../images-dxp/lcs-server-details.png)
+![Figure 14: Clicking the Details button shows information about your @product@ installation's software and hardware.](../../images-dxp/lcs-server-details.png)
 
 Lastly, click the *Server Settings* tab near the top of the screen to view and 
 edit your server's name, location, and description. You can also use the Server 
@@ -419,7 +419,7 @@ After marking one or more notifications as read, an *Undo* button appears. Click
 select *My Account* from your user menu in the Dockbar, and then select the 
 *Notification History* tab. 
 
-![Figure 17: LCS sends you web notifications that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images-dxp/lcs-user-web-notifications.png)
+![Figure 15: LCS sends you web notifications that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images-dxp/lcs-user-web-notifications.png)
 
 Next, you'll learn how to manage your LCS account. 
 
@@ -434,7 +434,7 @@ notifications are configured by adding *rules*. The rules define what events
 trigger a notification. There are no notification rules by default. Click the 
 *Add Rule* button to define one. 
 
-![Figure 18: You can add rules to determine the events that trigger notifications.](../../images-dxp/lcs-add-notification-rule.png)
+![Figure 16: You can add rules to determine the events that trigger notifications.](../../images-dxp/lcs-add-notification-rule.png)
 
 First specify the project, environment, and server for the notification. Note 
 that you have the option of selecting all environments and servers in a
@@ -455,7 +455,7 @@ near the top of the UI. This tab lets you change your account's language, time
 zone, and default LCS project. Your default LCS project is the one shown each 
 time you log in to LCS. 
 
-![Figure 19: You can change your LCS account's language, time zone, and default LCS project.](../../images-dxp/lcs-account-preferences.png)
+![Figure 17: You can change your LCS account's language, time zone, and default LCS project.](../../images-dxp/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. Next, you'll learn how to 
 use LCS to work with your @product@ subscriptions. 
@@ -469,7 +469,7 @@ type. You can also view your project's available subscriptions and see how
 they're being used. You can access these features from the *Subscriptions* tab 
 on the upper-left of the LCS site. 
 
-![Figure 20: The *Subscriptions* tab in LCS lets you view and manage your @product@ subscriptions.](../../images-dxp/lcs-subscriptions.png)
+![Figure 18: The *Subscriptions* tab in LCS lets you view and manage your @product@ subscriptions.](../../images-dxp/lcs-subscriptions.png)
 
 There are four tables in the Subscriptions tab: 
 
@@ -601,7 +601,7 @@ tab. This tab contains the following sections:
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
 
-![Figure 21: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
+![Figure 19: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
 
 Whether you must generate or regenerate a token depends on the actions you took 
 in the Services section, and whether there's an existing token in the 
