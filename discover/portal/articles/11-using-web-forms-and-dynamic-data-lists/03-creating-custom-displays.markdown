@@ -149,27 +149,33 @@ done with the following line of code:
         serviceLocator.findService(
         "com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService")>
 
-We store a handle to our service in `DDLRecordLocalService` so we can use the
+In order to reference `serviceLocator` in your template, you first need to 
+enable it. For security reasons,  `serviceLocator` is on the default list of 
+restricted variables in your `portal.properties` along with `objectUtil`, 
+`staticUtil`, and `utilLocator`. You need to edit the appropriate properties 
+for Freemarker or Velocity in a custom properties file, to remove the 
+restriction. By default the properties read:
+
+    velocity.engine.restricted.variables=\
+        serviceLocator,\
+        utilLocator
+	
+    freemarker.engine.restricted.variables=\
+        objectUtil,\
+        serviceLocator,\
+        staticUtil,\
+        utilLocator
+
+You need to remove the line `serviceLocator,\` from the property, save your 
+custom properties file and restart the server to continue. You can view the 
+full list of Velocity settings at [https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#Velocity%20Engine](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#Velocity%20Engine) and the full list of Freemarker settings at [https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#FreeMarker%20Engine](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#FreeMarker%20Engine)
+
+Now that all that is taken care of, we store a handle to our service in `DDLRecordLocalService` so we can use the
 service to retrieve our list of volunteers:
 
     <#assign records = DDLRecordLocalService.getRecords(reserved_record_set_id)>
     
 
-+$$$
-
-Note: For security purposes, some variables and classes are restricted and 
-cannot be accessed through `serviceLocator` by default. Restrictions are 
-controlled through the following properties:
-
-    velocity.engine.restricted.classes=
-    velocity.engine.restricted.variables=
-    freemarker.engine.restricted.classes=
-    freemarker.engine.restricted.variables=
-
-You can change these restrictions by providing an alternate version in a custom 
-properties file.
-
-$$$
 
 Now that we have our records, we can iterate through the list and display the
 data from each record that we want to show. To access a field from a record
