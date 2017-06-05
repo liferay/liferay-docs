@@ -1,118 +1,115 @@
-# Facet Settings
+# Faceted Search [](id=faceted-search)
 
-As with @product@'s other applications, you can configure the Search application
-via the configuration screen, which looks like the below illustration. 
+To get started using faceted search, enter a search term in the Search
+application's search bar. You'll see a page with results on the right and a
+collection of *facets*, with the number of search results for each facet (in
+parentheses) on the left. 
 
-![Figure 6: You have three separate tabs for choosing your search configuration: *Display Settings*, *Spell Check Settings*, and *Other Settings*.](../../../images/faceted-search-configuration.png)
+![Figure 1: *Sites* and *Asset Entries* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
 
-Your Search configuration displays the Display Settings first, by default.
-You're able to control the scope of your search and the multiple facets of that
-scope. You can configure any of the following facets by clicking the *Configure*
-button:
+Facets allow users of the Search application to filter search results. Think of
+facets as umbrellas, under which search results take shelter. You might want to
+see the results under all the umbrellas, but after scanning the results, you
+might decide that the results under just one of the umbrellas better represent
+what you're looking for. So what facets are included in @product by default?
 
-- Sites
-- Asset Type
-- Tag
-- Category
+- Site
+- Asset type
+- Asset tag
+- Asset category
 - Folder
 - User
-- Modified Date
+- Modified date
 
-<!-- Why bother with the JSON bit? -->
-The configuration you set for each facet is used to apply advanced search
-configuration settings in the form of a JSON string. If you don't know what JSON
-is, don't worry, your configurations are automatically inserted into a JSON
-object by @product@, so you only have to worry about the values for your facets'
-configuration options. You can learn more about this in the
-[Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)
-tutorial. 
+To configure the Search application's facets, click the Search application's
+options menu (![Options](../../images/icon-options.png)) and select
+*Configuration*. The tab displayed by default is *Display Settings*, and after
+the Scope setting, the Facets are listed with a Configure link you can click to
+expand the list of configurations for a given facet.
 
-<!-- Should this be a reference article? -->
-The following configuration options are available for facets:
+![Figure 2: Click a facet's *Configure* link to expand its list of settings.](../../images/search-facet-configuration.png)
 
-**Display Facet:** Specifies whether the facet appears in search results. 
+So how do users make the most of facets?
 
-**Weight:** Uses a floating point (or double) value used to determine the order
-facets appear in the search application. Facets with the largest values are
-positioned at the top.
+## Using Facets [](id=using-facets)
 
-<!-- Display Frequencies is what they're calling this now -->
-**Frequency Threshold:** Indicates the minimum frequency required for terms to
-appear in the result list. For example, if the frequency threshold of a facet is
-set to `3`, a term appearing twice won't appear in the term result list.
+After searching for a term in the Search application, clicking on a specific
+site filters the search results to only display assets within the specified
+site. Clicking on a specific user filters the search results to only display
+assets added by the specified user. The frequency with which the term was found
+for each facet is listed in parentheses after the facet. Sometimes, an [asset's
+tags or categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+may be helpful to you, and there are facets for those, too.
 
-**Max Terms:** Determines the maximum number of terms included in the search
-result regardless of how many matching terms are found for the facet.
-
-**Show Asset Count:** Displays the number of terms returned for the facet in
-the search results.
-
-**Current/Available Assets (Asset Type facet only):** Configures the asset types
-that are returned in the search results.
-
-**Display Style (Tag facet only):** Display tags as a Cloud or List (default).
-
-**Label (Modified Date facet only):** The language keyused for localizing the
-title of the facet when it's rendered.
-
-**Range (Modified Date facet only):** Define an interval within all the
-matching terms frequencies' are summed.
-
-The next configuration tab you can access is *Spell Check Settings*. In this
-tab, you can toggle the following checkboxes:
-
-**Display "Did you mean: ..." if the number of search results does not meet
-the threshold:** When the number of search results does not meet the threshold,
-"Did you mean: ..." is displayed to suggest a query with spell checked keywords.
-
-**Display Related Queries:** Displays related queries when the number of
-search results does not meet the threshold.
-
-**Add New Related Queries Based on Successful Queries:** Queries that meet the
-threshold are indexed and suggested to users as related queries or as part of
-autocomplete suggestions.
-
-Lastly, you can select the *Other Settings* tab for the Search application,
-which provides miscellaneous search options:
-
-**Display Results in Document Form:** Display results as search documents. Never use this in production. Developers
-use this feature to view search responses in their generic, Document-based
-format. Part of a developer's job when writing search indexers is to convert
-Documents (the objects that get indexed) to the actual object and back again.
-This option allows developers to see how their objects are being indexed. 
-
-<!--Different term used in new search results-->
-**View in Context:** When an asset is clicked, show it in the app to which it
-belongs. For example, if you click on a Blogs Entry in the search results,
-you'll be taken to the page where the blog is posted. Note that you will no
-longer be in the search context when you click on a search result. 
-
-The alternative behavior is to be show a snapshot of the content without leaving
-the Search portlet context. To go back to the list of search results, just click
-the back arrow. If you have the proper permissions you can even edit the content
-directly from the Search context.
-<!-- Not working right now 5/17/17. Clicking back clears the search results. -->
-
-<!-- Not available in Search Bar or Search Results as of 5/17/17 -->
-**Display Main Query:** Show the exact search query that the app generated to
-the search engine. Again, never use this in production; this is for development
-purposes only. 
-
-**Display Open Search Results:** Shows results from third party Open Search
-plugins, if they are installed. This is for backward compatibility only:
-developers are encouraged to re-design their search code, and then custom assets
-are aggregated with native @product@ assets seamlessly. 
+![Figure 3: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to see only content to which the tag has been applied.](../../images/faceted-search-tags.png)
 
 +$$$
 
-**Note:** You can identify available indexed fields by enabling the Search app's
-*Display Results in Document Form* configuration setting and then expanding
-individual results by clicking the *+* symbol to the left of their titles.
+**Example:** Pretend you're an accomplished oboe player (maybe you really are,
+but it doesn't matter, showoff), and you're visiting a site for classical
+musicians. You remember reading a great technical analysis of Johann Bach's
+compositions, but you forgot to bookmark it (or would it be a *bachmark*?).  You
+enter the term *bach* into the search bar, and, because Johann Bach was a very
+important and famous composer, you get lots of results: too many, in fact. At
+first you're discouraged but you remember that there's a site member who
+produces most of the good technical content on the site, who's named
+*back2bach*. You see that his name is listed in the User facet, and there aren't
+many results in the facet count (the number in parentheses next to the facet).
+You click into the facet and quickly find the content you were looking for.
+
+![Figure 4: When presented with lots of search results, facets are used to narrow down the results list so users can find relevant content.](../../images/search-facets1.png)
 
 $$$
 
-<!-- All of the JSON information that was documented here was removed, since
-it's no longer necessary. JSON syntax has been abstracted away from users, so
-this information was no longer relevant. The removed information may be useful
-for the faceted-search-and-customized-search-filtering tutorial. For reference,
-the JSON info in this section was removed as part of LRDOCS-2108. -Cody -->
+Clicking on a facet narrows down the search results. It's added to the filter
+list and the results to the right are refined by the selected facets. If you
+need to narrow the results further, click another facet (do this as much as you
+want to drill down into the search results). To remove any of the facets from
+the filtering of results, click the *Any...* link for the facet type.
+
+## Facet Settings [](id=facet-settings)
+
+Facets can be configured to a considerable degree. The following configuration
+options are available for facets:
+
+**Display Facet:** Specifies whether the facet appears in search results. 
+
+**Weight**
+: A floating point (or double) value used to determine the order facets appear
+in the search application. Facets with the largest values are positioned at the
+top.
+
+**Frequency Threshold**
+: The minimum frequency required for terms to appear in the result list. For
+example, if the frequency threshold of a facet is set to `3`, a term appearing
+twice won't appear in the term result list.
+
+**Max Terms**
+: The maximum number of terms included in the search result regardless of how
+many matching terms are found for the facet.
+
+**Show Asset Count**
+: Display the number of terms returned for the facet in the search results.
+
+**Current/Available Assets (Asset Type facet only)**
+: Add or remove asset types to be returned in the search results.
+
+**Display Style (Tag facet only)**
+: Display tags as a Cloud or List (default).
+
+**Label (Modified Date facet only)**
+: The language key used for localizing the title of the facet when it's
+rendered.
+
+**Range (Modified Date facet only)**
+: Define an interval within all the matching terms frequencies' are summed.
+
+## Asset Tags and Categories [](id=asset-tags-and-categories)
+
+If tags or categories have been applied to any asset that appears in the result
+set, it may be displayed in the Asset Tag or Asset Category facet, respectively.
+Similarly to asset types, not all tags necessarily appear. There may be many
+more than the 10 tags listed, but the default configuration for this facet is to
+show the top 10 most frequent terms. As with asset types, this can be modified
+by setting the `Max Terms` property, described above.
+

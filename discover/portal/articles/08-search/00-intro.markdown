@@ -17,126 +17,120 @@ remember to tag it? If you don't have this kind of information, browsing to the
 content you're looking for could be difficult. Thankfully, @product@ includes a
 powerful, faceted search function. You can access this function through the
 Search application, which lets you drill down through the different types of
-content, tags, and categories to refine your search. Next, you'll look at the
-search features @product@ provides for specific kinds of content and then examine
-how to use @product@'s faceted search.
+content, tags, and categories to refine your search. 
+
+In this introductory article you'll cover these basic concepts:
+
+- Searching for specific types of content
+- Searching for assets
+- Searching for localized content
+
+In the following articles you'll Learn how to [configure the Search
+application's display settings](/discover/portal/-/knowledge_base/7-0/configuring-the-search-application) and
+about [using facets](/discover/portal/-/knowledge_base/7-0/faceted-search) to narrow down the
+search results.
+
+For content to be searchable, it must first be indexed. By default, @product@
+uses uses Elasticsearch, a search engine built on the Lucene search engine
+library, for indexing and searching for content. Refer to the Lucene section of
+the [portal
+properties](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html#Lucene%20Search)
+file to customize @product@'s indexing and search behavior. By default,
+@product@ indexes blog posts, wiki articles, message board posts, Documents and
+Media files' descriptions, and web content articles. If a Documents and Media
+file is a text file, the file's content is indexed as well. Comments on blog
+posts, wiki articles, and Documents and Media files and text file attachments to
+wiki articles and message board posts are also indexed. @product@ automatically
+indexes content as it's added.
+
+Besides the Search application, which will return any indexed assets, many
+@product@ applications contain a native search functionality for their specific
+assets.
 
 ## Searching for Specific Types of Content [](id=searching-for-specific-types-of-content)
 
 @product@ provides several applications that let users and administrators search
-for content. First, there's the Search application, which can be placed on a
-page so users can search for web content articles. The Search application only
-searches for web content, but apps like Blogs, Wiki, Message Boards, and
-Documents and Media all provide search bars that let users search among the assets they display.
-Note that all of these applications are accessible from Site Administration in
-the Menu. They can also be placed on site pages for end-users to use. The Web
-Content application in the Menu's Site Administration section also has a
-built-in search bar, which allows for web content search. Because this
-application is only designed for administrative use (and is not available to add
-to a page), the Search application is available to allow non-administrative users
-to search for web content.
+for content. First, there's the Search application, which is deployed to a
+page so users can search for any content. The Search application searches for
+any indexed assets in @product@, but apps like Blogs, Wiki, Message Boards, and
+Documents and Media all provide search bars that let users search only the
+assets they display. Note that all of these applications are accessible from
+Site Administration in the Menu. They can also be placed on site pages for
+end users to view and interact with.
 
 +$$$
 
 **Note:** The Web Content Search application is deprecated in @product-ver@ and
-will be removed in 7.1. The Web Content Search app's functionality has
-been replaced by the Search app, which is configured to search for web content. 
+will be removed in 7.1. The Web Content Search application's functionality has
+been replaced by the Search application. 
 
 $$$
 
-In order for content to be searchable, it must first be indexed. By default,
-@product@ uses uses Elasticsearch, as searh engine built on the Lucene search
-engine library, for indexing and searching for content. Refer to the Lucene
-section of the portal properties file to customize @product@'s
-indexing and search behavior. By default, @product@ indexes blog posts, wiki
-articles, message board posts, Documents and Media files' descriptions, and web
-content articles. If a Documents and Media file is a text file, the file's
-content is indexed as well. Comments on blog posts, wiki articles, and Documents
-and Media files and text file attachments to wiki articles and message board
-posts are also indexed. @product@ automatically indexes content as it's added to
-the instance.
+To search assets of a specific type, including their comments and attachments in
+your search, use the search bar of the appropriate application. For example, if
+you'd like to search for the term *Lunar Resort* among wiki articles, enter the
+term *Lunar Resort* into the Wiki application's search bar. 
 
-If you'd like to search among assets of a specific type and you'd like to
-include comments and attachments in your search, use the search bar of the
-appropriate application. For example, if you'd like to search for the term
-*Lunar Resort* among wiki articles, enter the term *Lunar Resort* into the Wiki
-application's search bar. 
-
-![Figure 1: When using the Wiki application's search bar to search for *Lunar Resort*, wiki articles, comments, and attachments containing the words *Lunar* or *Resort* are returned.](../../../images/wiki-search.png)
+![Figure 1: When using the Wiki application's search bar to search for *Lunar Resort*, wiki articles, comments, and attachments containing the words *Lunar* or *Resort* are returned.](../../images/wiki-search.png)
 
 Wiki articles, comments, and text file attachments containing the word *Lunar*
 or *Resort* are returned as search results. The search results clearly show
 whether an individual search result is a wiki article, a comment, or an
-attachment. In the next section, you'll see how the Search application can be
-used to search through web content on @product@. Its faceted search
-feature is a powerful tool that allows users to include or not include specific
-types of assets in a search. However, the Search application does not return
-comments or attachments as search results.
+attachment. 
 
+## Searching for Assets [](id=searching-for-assets)
 
-<!-- Not applicable now, removed in published docs
-### Advanced Searching [](id=advanced-searching)
+Searching can only be done on *assets*. Most of the content types in @product@
+(for example, blog entries) are assets that can be indexed and searched. Under
+the hood, assets use the [Asset
+API](/develop/tutorials/-/knowledge_base/7-0/asset-framework) and have an
+[Indexer
+class](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search#indexersdefined).
 
-The Search application's search box is deceptively simple. Though you have only
-a single field for search, there's a search syntax inherited from
-[Lucene](http://lucene.apache.org/core/old_versioned_docs/versions/3_0_3/queryparsersyntax.html)
-that lets you create very powerful search queries. You'll take a look at some
-ways you can use search queries.
+All indexed assets can be returned as search results. Since developers can
+create assets, your @product@ instance might have additional asset types beyond
+the ones that @product@ ships with by default. If this is the case, you can
+tweak the *Frequency Threshold* and the *Max Terms* settings to increase the
+number of asset types displayed past the default of 10.
 
-**Searching for specific fields:** By default, searches are performed against a
-long list of fields. Sometimes you want results for a term within a particular
-field. This can be achieved using the field search syntax `[field]:[term]`. For
-example, to search in the *Title* field for *Liferay*, use the following
-syntax:
++$$$
 
-    title:liferay
+**User Display:** When you click an asset in the search results, it's displayed
+in an Asset Publisher (unless you use the *View in Context* option for the
+asset). Users are different, though. Think of them as invisible assets, not
+intended for display in the Asset Publisher application. While users appear as
+search results with other indexed assets, when you click one you're taken to the
+user's profile page. If [public personal
+pages](/discover/portal/-/knowledge_base/7-0/creating-sites#customizing-personal-sites)
+have been disabled, clicking on a user from the list of search results shows you a
+blank page.
 
-If you search for a phrase within a field, surround the term with double
-quotation marks: 
+$$$
 
-    title:"Liferay Portal"
++$$$
 
-**Wildcards:** You can use wildcards in exactly the way you use them with your
-operating system: for a single character wildcard, use `?`; for
-the multiple character wildcard, use `*`. 
+**Versioning Note:** If there are multiple versions of a piece of content, the
+latest approved version is the only one searched.
 
-**Boolean operators:** You can use logic operators, such as `AND`, `OR`, `NOT`,
-`+`, and `-` in your searches. The `AND` operator matches assets in which the
-terms between the `AND` operator exist. For example, to search for both Liferay
-and Kaleo Workflow, use this query: 
+$$$
 
-    "liferay" AND "kaleo workflow"
+## Searching for Localized Content [](id=searching-for-localized-content)
 
-The `OR` operator is the default; if there's no operator between two terms, the
-`OR` operator takes effect. `OR` finds matches if any term exists in an asset. 
+@product@ supports localizing some of its content types. For example, to add a
+translation of a web content article, edit the article, choose a language, add
+the translation, and click *Save*. Here's how searching for localized content
+works in @product@:
 
-The `+` operator requires that the term exists somewhere in some field in the
-asset. If you wanted to search for something that *must* contain *liferay* and
-*may* contain *portal*, use this query: 
+- Content whose default language matches the @product@ instance's
+  default language is searched.
+- Content whose default language is `en_US` (American English) is
+  searched, regardless of Liferay's default language.
+- If the language of a translation matches Liferay's default
+  language, the content is searched.
+- Content with an `en_US` translation can be searched regardless of
+  Liferay's default language.
+- A user's default language does not affect search results.
 
-    +liferay portal
-
-The `NOT` operator excludes assets that contain the term after the `NOT`
-operator. It requires that at least two terms be present: 
-
-    "Liferay Portal" NOT "Liferay Social Office" 
-
-The `-` operator is similar: it excludes assets that contain the term after the
-`-` symbol: 
-
-    "Liferay Portal" - "Liferay Social Office" 
-
-**Grouping:** You can use parentheses within your queries to form sub-queries,
-in a similar fashion to an SQL statement. For example, to search for *liferay*
-or *social office* and *website*, use this query: 
-
-    (liferay OR "social office") AND website
-
-As you can see, the search syntax is very powerful. There's more you can do with
-it than what is listed here; to view the full syntax, visit the Lucene URL
-above. 
-
-Next, you'll look at how the Search application can be configured. 
-
--->
-
+The search application allows users to search for content in your @product@.
+Keep reading to learn how to configure the Search application so users can
+easily find wwhat they're looking for. 
