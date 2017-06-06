@@ -19,12 +19,9 @@ it's time to make a sandwich.
 You'll use these steps to create Guestbook List Screenlet: 
 
 1. Getting started: creating the Screenlet's package, and model class. 
-
 2. Creating the Screenlet's UI (its View). 
-
 3. Creating the Screenlet's Interactor. Interactors are Screenlet components 
    that make server calls. 
-
 4. Creating the Screenlet class. The Screenlet class governs the Screenlet's 
    behavior. 
 
@@ -33,10 +30,8 @@ As background material, the following materials are helpful:
 - [Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android): 
   Explains the components that constitute a Screenlet, and how they relate to 
   one another. 
-
 - [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets): 
   Explains the general steps for creating a Screenlet. 
-
 - [Creating Android List Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets): 
   Explains the general steps for creating a list Screenlet. This section of the 
   Learning Path follows this tutorial. 

@@ -70,7 +70,8 @@ reveal that guestbook's entries. Note that you only need one activity,
 and `EntriesFragment` are part of this activity. 
 
 Now you're ready to create `GuestbooksActivity`. Fortunately, Android Studio has 
-a template for creating an activity that contains a navigation drawer. 
+a template for creating an activity that contains a navigation drawer. Follow 
+these steps to create `GuestbooksActivity` with the navigation drawer template: 
 
 1.  Right click the package `com.liferay.docs.liferayguestbook` and select *New*
     &rarr; *Activity* &rarr; *Navigation Drawer Activity* to launch the New

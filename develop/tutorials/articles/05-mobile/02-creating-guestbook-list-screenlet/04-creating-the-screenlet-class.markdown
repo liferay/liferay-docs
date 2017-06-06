@@ -19,13 +19,31 @@ First, you'll define Guestbook List Screenlet's attributes.
 
 ## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
-Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#defining-screenlet-attributes-in-your-app) 
-that you should create a Screenlet's attributes before creating the Screenlet 
-class. These are the attributes the app developer can set when inserting the 
-Screenlet's XML in a layout. Guestbook List Screenlet only needs one attribute. 
-You'll define it now. Create the file `guestbook_attrs.xml` in your app's 
-`res/values` directory. Replace the file's contents with the following code: 
+Before creating the Screenlet class, you should define its attributes. These are 
+the attributes the app developer can set when inserting the Screenlet's XML in 
+an activity or fragment layout. For example, to use 
+[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android), 
+the app developer could insert the following Login Screenlet XML in an activity 
+or fragment layout: 
+
+    <com.liferay.mobile.screens.auth.login.LoginScreenlet
+        android:id="@+id/login_screenlet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:basicAuthMethod="email"
+        app:layoutId="@layout/login_default"
+        />
+
+The app developer can set the `app` attributes `basicAuthMethod` and `layoutId` 
+to set Login Screenlet's authentication method and View, respectively. The 
+Screenlet class reads these settings to enable the appropriate functionality. 
+
+When creating a Screenlet, you can define the attributes you want to make 
+available to app developers. You do this in an XML file inside your Android 
+project's `res/values` directory. Guestbook List Screenlet only needs one 
+attribute. You'll define it now. Create the file `guestbook_attrs.xml` in your 
+app's `res/values` directory. Replace the file's contents with the following 
+code: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
@@ -44,18 +62,19 @@ ready to write the Screenlet class.
 
 ## Extending BaseListScreenlet [](id=extending-baselistscreenlet)
 
-Recall from 
-[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlet-class) 
-that you must extend `BaseListScreenlet` to create a Screenlet class for a list 
-Screenlet. Use the following steps to create `GuestbookListScreenlet`, the 
-Screenlet class for Guestbook List Screenlet. Note that these steps closely 
-follow those in the list Screenlet creation tutorial for creating a Screenlet 
-class. Departures from the tutorial's steps are noted. 
+Because 
+[the `BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java) 
+provides the basic functionality for all Screenlet classes in list Screenlets, 
+including methods for pagination and other default behavior, your Screenlet 
+class must extend `BaseListScreenlet` with your model class and Interactor as 
+type arguments. 
+
+Use the following steps to create the Screenlet class for Guestbook List 
+Screenlet, `GuestbookListScreenlet`:
 
 1.  Create the `GuestbookListScreenlet` class in the package 
-    `com.liferay.docs.guestbooklistscreenlet`. Recall that Screenlet classes for 
-    list Screenlets must extend `BaseListScreenlet` with the model and 
-    Interactor as type arguments. Declare `GuestbookListScreenlet` as such: 
+    `com.liferay.docs.guestbooklistscreenlet`. This class must extend 
+    `BaseListScreenlet` with the model and Interactor as type arguments: 
 
         public class GuestbookListScreenlet extends 
             BaseListScreenlet<GuestbookModel, GuestbookListInteractor> {...
@@ -66,13 +85,7 @@ class. Departures from the tutorial's steps are noted.
         import com.liferay.docs.model.GuestbookModel;
         import com.liferay.mobile.screens.base.list.BaseListScreenlet;
 
-    Note that the list Screenlet tutorial also instructs you to create instance 
-    variables for your Screenlet's attributes. Guestbook List Screenlet doesn't 
-    require an instance variable for `groupId` because Screens handles it for 
-    you. 
-
-2.  Recall that for constructors, you can leverage the superclass constructors. 
-    Do so now to create `GuestbookListScreenlet`'s constructors: 
+2.  For constructors, leverage the superclass constructors: 
 
         public GuestbookListScreenlet(Context context) {
             super(context);
@@ -96,9 +109,11 @@ class. Departures from the tutorial's steps are noted.
         import android.content.Context;
         import android.util.AttributeSet;
 
-3.  Implement the `error` method. Recall that this method uses a listener in the 
-    Screenlet framework to propagate any exception that occurs during the 
-    service call: 
+3.  Implement the `error` method. This is a boilerplate method that uses a 
+    listener in the Screenlet framework to propagate any exception, and the 
+    user action that produced it, that occurs during the service call. This 
+    method does this by checking for a listener and then calling its `error` 
+    method with the `Exception` and `userAction`: 
 
         @Override
         public void error(Exception e, String userAction) {
@@ -107,11 +122,15 @@ class. Departures from the tutorial's steps are noted.
             }
         }
 
-4.  Override the `createScreenletView` method. Recall that this method reads the 
-    Screenlet's attribute values and instantiates the View. In Guestbook List 
-    Screenlet, you only need to read the value of the `groupId` attribute. Also 
-    remember that calling the superclass's `createScreenletView` method 
-    instantiates the View for you: 
+4.  Override the `createScreenletView` method. This method reads the Screenlet's 
+    attribute values via an 
+    [Android `TypedArray`](https://developer.android.com/reference/android/content/res/TypedArray.html), 
+    and instantiates the View. In Guestbook List Screenlet, you only need to 
+    read the value of the `groupId` attribute and set it to the `groupId` 
+    variable. Recall that the Screens framework propagates this variable to your 
+    Interactor. Finish the `createScreenletView` method by calling the 
+    superclass's `createScreenletView` method. This instantiates the View for 
+    you: 
 
         @Override
         protected View createScreenletView(Context context, AttributeSet attributes) {
@@ -124,36 +143,48 @@ class. Departures from the tutorial's steps are noted.
             return super.createScreenletView(context, attributes);
         }
 
-    This requires you to add the following imports: 
+    Note that if the app developer doesn't set the `groupId` attribute, 
+    `LiferayServerContext.getGroupId()` is called to retrieve the app's default 
+    `liferay_group_id` setting from `res/values/server_context.xml`. 
+
+    This `createScreenletView` method requires you to add the following imports: 
 
         import android.content.res.TypedArray;
         import android.view.View;
         import com.liferay.docs.liferayguestbook.R;
         import com.liferay.mobile.screens.context.LiferayServerContext;
 
-5.  Override the `loadRows` method. Recall that this method retrieves the list 
-    rows from the server by starting the Interactor. The `loadRows` method in 
-    `GuestbookListScreenlet` therefore starts a `GuestbookListInteractor` 
-    instance. Because you don't need to pass any data to this Interactor, you 
-    can call its `start` method with `0` as an argument: 
+5.  Override the `loadRows` method to start your Interactor and thereby retrieve 
+    the list rows from the server. This method takes an instance of your 
+    Interactor as an argument, which you use to call the Interactor's `start` 
+    method. The `loadRows` method in `GuestbookListScreenlet` therefore starts a 
+    `GuestbookListInteractor` instance. Note that the Interactor inherits 
+    `start` from `BaseListInteractor`. Also, because you don't need to pass any 
+    data to `GuestbookListInteractor`, you can call the `start` method with `0` 
+    as an argument: 
 
         @Override
         protected void loadRows(GuestbookListInteractor interactor) {
             interactor.start(0);
         }
 
-6.  Override the `createInteractor` method. Recall that this method instantiates 
-    and returns the Interactor: 
+6.  Override the `createInteractor` method to instantiate your Interactor. Since 
+    that's all this method needs to do, call your Interactor's constructor and 
+    return the new instance: 
 
         @Override
         protected GuestbookListInteractor createInteractor(String actionName) {
             return new GuestbookListInteractor();
         }
 
-Awesome! Your Screenlet class is finished. Your Screenlet is finished, too! 
-Before using Guestbook List Screenlet, however, you'll create Entry List 
-Screenlet to show a list of each guestbook's entries. After all, viewing 
-guestbooks without their entries doesn't make much sense. It isn't very exciting 
-either. What's really exciting is that you can create Entry List Screenlet with 
-the same set of steps you used to create Guestbook List Screenlet. The next 
-series of articles in this Learning Path walks you through this. 
+Awesome! Your Screenlet class is finished. Note that this Screenlet class is 
+very similar to the one in 
+[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlet-class). 
+
+Your Screenlet is finished, too! Before using Guestbook List Screenlet, however, 
+you'll create Entry List Screenlet to show a list of each guestbook's entries. 
+After all, viewing guestbooks without their entries doesn't make much sense. It 
+isn't very exciting either. What's really exciting is that you can create Entry 
+List Screenlet with the same set of steps you used to create Guestbook List 
+Screenlet. The next series of articles in this Learning Path walks you through 
+this. 

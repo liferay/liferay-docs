@@ -6,8 +6,9 @@ need to use it in several apps, however, then it's best to create it in a
 separate project for redistribution. For information on creating Screenlets for 
 redistribution, see the tutorial 
 [Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets). 
+
 Since you'll use Guestbook List Screenlet in only this app, you can create it in 
-a new package inside the app's project. 
+a new package inside the app's project. Create this package now:
 
 1.  In Android Studio, right click the *java* folder and select *New* &rarr;
     *Package*. 
@@ -22,22 +23,39 @@ a new package inside the app's project.
 
 ![Figure 1: Guestbook List Screenlet's new package is highlighted.](../../../images/android-guestbooks-screenlet-package.png)
 
-Next, you'll create the model class the Screenlet needs. 
+Before getting started, you should understand how pagination works in in list 
+Screenlets.
+
+## Pagination [](id=pagination)
+
+To ensure that users can scroll smoothly through large lists of items, list 
+Screenlets support fluent pagination. Support for this is built into the list 
+Screenlet framework. You'll see this as you construct your list Screenlet. For 
+example, several methods have parameters for the start row and end row of a page 
+in the list. 
+
+Now you're ready to begin! 
 
 ## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
-Recall from 
-[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-model-class) 
-that you need a model class to represent the entity retrieved from Liferay
-Portal. The model class you'll create for Guestbook List Screenlet,
-`GuestbookModel`, creates `GuestbookModel` objects that represent guestbooks
-retrieved from the Guestbook portlet. You'll create this model class in a
-separate package outside of the `guestbooklistscreenlet` package. In this case,
-it makes sense to organize your code this way because other Screenlets may also
-use the model class. For example, if a Screenlet that edits guestbooks existed,
-it would also need `GuestbookModel` objects. Putting the model class in a
-separate package makes it clear that this class doesn't belong exclusively to a
-single Screenlet. 
+Entities come back from Liferay Portal in JSON. To work with these results 
+efficiently in your app, you must convert them to model objects that represent 
+the entity in the portal. Although Screens's 
+[`BaseListInteractor`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
+transforms the JSON entities into `Map` objects for you, you still must 
+convert these into proper entity objects for use in your app. You'll do this via 
+a model class. 
+
+The model class you'll create for Guestbook List Screenlet, `GuestbookModel`, 
+creates `GuestbookModel` objects that represent guestbooks retrieved from the 
+Guestbook portlet. You'll create this model class in a separate package outside 
+of the `guestbooklistscreenlet` package. In this case, it makes sense to 
+organize your code this way because other Screenlets may also use the model 
+class. For example, if a Screenlet that edits guestbooks existed, it would also 
+need `GuestbookModel` objects. Putting the model class in a separate package 
+makes it clear that this class doesn't belong exclusively to a single Screenlet. 
+
+Follow these steps to create `GuestbookModel`:
 
 1.  Create a new package called `model` inside the `com.liferay.docs` package.
  
