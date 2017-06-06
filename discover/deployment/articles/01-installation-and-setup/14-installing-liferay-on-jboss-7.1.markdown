@@ -49,8 +49,42 @@ Let's work with the dependency jar files first.
         </module>
 
     Make sure to replace `[version]` with the correct version of the MySQL JDBC
-    driver. If you are using a different database, replace the MySQL jar with 
-    the driver jar for your database. 
+    driver. 
+
+    a. If you are using a MySQL connector, make sure that you are using the
+    version that best corresponds to the right MySQL database version. For
+    example, if you are using the `mysql-connector-java-5.0.8-bin.jar`, this
+    connector is best deployed with MySQL server _5.5_. Otherwise, if you're
+    using this version with MySQL database server _5.6_, the following error
+    appears in the logs:
+
+        JBAS014775:    New missing/unsatisfied dependencies:    
+        service jboss.jdbc-driver.mysql (missing) dependents: [service jboss.data-source.java:/jdbc/LiferayPool]
+
+     b. 
+    For reference, see [https://bugs.mysql.com/bug.php?id=62038](https://bugs.mysql.com/bug.php?id=62038) and [https://bugzilla.redhat.com/show_bug.cgi?id=1002893](https://bugzilla.redhat.com/show_bug.cgi?id=1002893).
+
+    c. One solution if you are using the older `mysql-connector-java-5.0.8-bin.jar`
+    with MySQL _5.6_ is to modify the connector.        
+        i) Using a tool to open the
+    `jar`, navigate to `mysql-connector-java-5.0.8-bin.jar\META-INF` and create
+    a folder called `services`.    
+        ii) Create a file called `java.sql.Driver` and
+    enter the following: `com.mysql.jdbc.Driver`.    
+        iii) Note: You may have to
+    create this file outside the archive and then drag and drop this file inside
+    the `jar`'s `services` folder.    
+
+    d. If you are using the newer `mysql-connector-java-5.1.42-bin.jar`, this
+    version is best used with MySQL _5.6_. Like the older version, it is
+    necessary to modify the jar. The `mysql-connector-java-5.1.42-bin.jar`
+    already contains the folder `services` with the `java.sql.Driver` inside (no
+    need to create them manually). However, systems administrators still need to
+    modify this file; the additional property
+    `com.mysql.fabric.jdbc.FabricMySQLDriver` causes @product@ to fail to start.
+
+If you are using a different database, replace the MySQL jar with the
+    driver jar for your database.
 
 Great! You have your `.jar` files ready. 
 
