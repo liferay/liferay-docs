@@ -468,7 +468,7 @@ that environment, your server consumes one activation key from that subscription
 type. You can also view your project's available subscriptions and see how 
 they're being used. 
 
-LCS also lets you register a @product@ servers via *elastic subscriptions*. 
+LCS also lets you register @product@ servers via *elastic subscriptions*. 
 Elastic subscriptions let you register an unlimited number of @product@ servers, 
 unlike other subscriptions that limit you to a certain number of servers. This 
 is invaluable in auto-scaling environments, where servers are automatically 
@@ -562,14 +562,15 @@ $$$
 
 ![Figure 20: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images-dxp/lcs-elastic-subscriptions.png)
 
-This tab displays the number of online elastic servers and the uptime details 
-for each. A graph shows the number of online elastic servers per day. The 
-*Uptime details* table lists each elastic server's start time, end time, and 
-duration. The total duration for all elastic servers is below the table's 
-*Duration* column. To download a report of the table's data, click the *Download 
-Report* button. Also, you can use the *Environment* and *Month* selectors above 
-the graph to select the environment and month to show data from, respectively. 
-The data in both the graph and the table reflect your selections here. 
+The *Elastic Subscriptions* tab displays the number of online elastic servers
+and the uptime details  for each. A graph shows the number of online elastic
+servers per day. The  *Uptime details* table lists each elastic server's start
+time, end time, and  duration. The total duration for all elastic servers is
+below the table's  *Duration* column. To download a report of the table's data,
+click the *Download  Report* button. Also, you can use the *Environment* and
+*Month* selectors above  the graph to select the environment and month to show
+data from, respectively.  The data in both the graph and the table reflect your
+selections here. 
 
 The next section shows you how to use environment tokens to activate @product@ 
 instances with LCS. 
