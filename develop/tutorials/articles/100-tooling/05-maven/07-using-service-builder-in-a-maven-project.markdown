@@ -9,7 +9,7 @@ Service Builder works with your Maven modules; the answer is a resounding yes!
 The easiest way to add Service Builder to your Maven project is to create a
 new Maven project using Liferay's provided Service Builder archetype. You can
 learn how to generate a Service Builder Maven project by visiting the
-[Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
+[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)
 tutorial. In some cases, this may not be possible due to a number of reasons:
 
 - You're updating a legacy Maven project to follow OSGi modular architecture.
@@ -24,7 +24,7 @@ Time to get started!
                 <plugin>
                     <groupId>com.liferay</groupId>
                     <artifactId>com.liferay.portal.tools.service.builder</artifactId>
-                    <version>1.0.105</version>
+                    <version>1.0.155</version>
                     <configuration>
                         <apiDirName>../blade.servicebuilder.api/src/main/java</apiDirName>
                         <autoImportDefaultReferences>true</autoImportDefaultReferences>
@@ -71,7 +71,7 @@ Time to get started!
         <plugin>
             <groupId>com.liferay</groupId>
             <artifactId>com.liferay.portal.tools.wsdd.builder</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.8</version>
             <configuration>
                 <inputFileName>service.xml</inputFileName>
                 <outputDirName>src/main/java</outputDirName>

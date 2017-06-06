@@ -17,7 +17,7 @@ Lastly, system administrators should also sign up for a Dynatrace account if
 they have not already done so; this way they get access to Dynatrace's support
 teams.
 
-## Dashboards 
+## Dashboards [](id=dashboards)
 
 Multiple dashboards are available to display ongoing transactions and processes.
 Because the entire @product@ stack can be analyzed, there are dashboards for
@@ -69,7 +69,7 @@ through on this menu.
 
 3. Click _Open Dashboard_.
 
-## Liferay Digital Enterprise FastPack 
+## Liferay Digital Enterprise FastPack [](id=liferay-digital-enterprise-fastpack)
 
 The Dynatrace FastPack for Liferay provides a pre-configured Dynatrace
 profile custom-tailored for Liferay Digital Enterprise 7.0 environments. It contains
@@ -99,7 +99,7 @@ these steps:
 
 7. Disable any other profile so that the Liferay profile is the only active profile.
 
-## Dynatrace Client Configuration 
+## Dynatrace Client Configuration [](id=dynatrace-client-configuration)
 
 As a prerequisite to running both the latest Dynatrace Client and @product@,
 Java JDK 1.8 (or its equivalent) must be installed. Be sure to have enough CPU
@@ -169,7 +169,7 @@ plugin _after_ the Client has been configured.
 
 Congratulations! You have the Dynatrace client installed! 
 
-### Dynatrace Agent Configuration 
+### Dynatrace Agent Configuration [](id=dynatrace-agent-configuration)
 
 Deploy the Dynatrace agent to the @product@ servers. The agent sits on top of existing
 infrastructure (in this case, Apache Tomcat). 
@@ -218,7 +218,7 @@ infrastructure (in this case, Apache Tomcat).
 
 5.  Then your Liferay agent starts sending data into the newly imported profile.
 
-## Performance Testing 
+## Performance Testing [](id=performance-testing)
 
 Systems administrators must often perform load testing as part of an overall
 tuning process. The Dynatrace Client is a great tool to monitor and then analyze
@@ -250,7 +250,7 @@ All these dashboards come out-of-the-box, and even more dashboards are available
 after deploying the Dynatrace FastPack developed for @product@. Using Dynatrace
 provides many advantages for performance monitoring.
 
-## Resources 
+## Resources [](id=resources)
 
 1. [Dynatrace Community](https://community.compuwareapm.com) 
 2. [Dynatrace Installation Step 1](https://community.compuwareapm.com/community/display/EVAL/Step+1+-+Download+and+install+dynaTrace)

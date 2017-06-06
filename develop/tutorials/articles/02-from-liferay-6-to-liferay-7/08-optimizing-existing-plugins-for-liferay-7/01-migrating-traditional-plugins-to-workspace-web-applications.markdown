@@ -13,7 +13,7 @@ as Web ARchives (WARs).
 
 ## Running the Migration Command [](id=running-the-migration-command)
 
-[Blade CLI's](/develop/tutorials/-/knowledge_base/7-0/blade-cli) `migrateWar`
+[Blade CLI's](/develop/tutorials/-/knowledge_base/7-0/blade-cli) `convert`
 command migrates Plugins SDK plugins to web application projects in Workspace's
 `wars` folder. Plugin files are re-organized to follow the standard web
 application folder structure. 
@@ -36,17 +36,21 @@ application folder structure.
     - build files
 
 In a terminal, navigate to the Liferay Workspace root folder. Then pass your
-Plugins SDK project's name to Blade's `migrateWar` command:
+Plugins SDK project's name to Blade's `convert` command:
 
-    blade migrateWar <pluginProjectName>
+    blade convert [PLUGIN_PROJECT_NAME]
 
 Blade extracts the plugin from the Plugins SDK and reorganizes it in a standard
 web application project in Workspace's `wars` folder. 
 
+**Note:** You can execute `blade convert -l` to show a list of projects that can
+be migrated in your Plugins SDK. Run `blade convert --all` to migrate all plugin
+projects in your Plugins SDK to Workspace.
+
 The image below shows the plugin files before and after they're migrated to
 Workspace. 
 
-![Figure 1: The `migrateWar` command migrates a Plugins SDK project to a Workspace web application project. It moves Java source files to `src/main/java` and all other files/folders to `src/main/webapp`.](../../../images/migrate-war-compare-folder-structure.png)
+![Figure 1: The `convert` command migrates a Plugins SDK project to a Workspace web application project. It moves Java source files to `src/main/java` and all other files/folders to `src/main/webapp`.](../../../images/migrate-war-compare-folder-structure.png)
 
 The following table maps traditional plugin source files to the standard web
 application folder structure Workspace uses. 
