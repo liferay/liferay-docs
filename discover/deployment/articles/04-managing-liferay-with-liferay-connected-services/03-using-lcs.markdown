@@ -562,14 +562,15 @@ $$$
 
 ![Figure 4.27: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images/lcs-elastic-subscriptions.png)
 
-This tab displays the number of online elastic servers and the uptime details 
-for each. A graph shows the number of online elastic servers per day. The 
-*Uptime details* table lists each elastic server's start time, end time, and 
-duration. The total duration for all elastic servers is below the table's 
-*Duration* column. To download a report of the table's data, click the *Download 
-Report* button. Also, you can use the *Environment* and *Month* selectors above 
-the graph to select the environment and month to show data from, respectively. 
-The data in both the graph and the table reflect your selections here. 
+The *Elastic Subscriptions* tab displays the number of online elastic servers
+and the uptime details  for each. A graph shows the number of online elastic
+servers per day. The  *Uptime details* table lists each elastic server's start
+time, end time, and  duration. The total duration for all elastic servers is
+below the table's  *Duration* column. To download a report of the table's data,
+click the *Download  Report* button. Also, you can use the *Environment* and
+*Month* selectors above  the graph to select the environment and month to show
+data from, respectively.  The data in both the graph and the table reflect your
+selections here. 
 
 The next section shows you how to use environment tokens to register Liferay 
 instances with LCS. 
