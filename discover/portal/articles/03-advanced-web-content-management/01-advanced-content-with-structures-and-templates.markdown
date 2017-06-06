@@ -468,6 +468,20 @@ feature for the template editor is the autocomplete feature. It can be invoked
 by typing *${* which opens a drop-down menu of available variables. By clicking
 one of the variables, the editor inserts the variable into the template editor.
 
+
++$$$
+
+**Note:** Templates are the gateway to great power, but with that power there 
+must come great responsibility. For security reasons, several useful 
+variables and classes are restricted for use with Freemarker and Velocity. You can find these in `portal.properties` and manage them with the following properties:
+
+    velocity.engine.restricted.classes=
+    velocity.engine.restricted.variables=
+    freemarker.engine.restricted.classes=
+    freemarker.engine.restricted.variables=
+
+$$$
+
 After you've saved your template, Liferay provides a WebDAV URL and static URL.
 These values access the XML source of your structure. You can find these URLs by
 returning to your template after it's been saved and expanding the *Details*
