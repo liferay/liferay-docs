@@ -89,7 +89,7 @@ you'll have to download them yourself.
 - `junit.jar`: Lets you run unit tests. You can get this `.jar` from 
   [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
 
-Copy the dependencies into the tc Server instance's `lib` folder.
+Place these JARs inside the *Liferay Home*'s `lib` folder (not the tc Server's). (See more steps below).
 
 @product@ includes an OSGi runtime. Extract the OSGi ZIP file that you downloaded
 and copy the `osgi` folder to your Liferay Home folder. The `osgi` folder
@@ -101,18 +101,27 @@ There are a few configuration edits to make so @product@ runs well on tc Server.
 All of these configuration changes should be made in your tc Server runtime
 instance.
 
-1. Create a folder called `servers` in the tcserver home. 
+1. Download and unzip the tc Server available
+[here](https://network.pivotal.io/products/pivotal-tcserver). This will be
+referred to *$TCSERVER_INSTANCE_HOME.*
 
-2. Next, create an instance where @product@ will be deployed. Run the command: 
+2. Create a folder called `servers` inside *$TCSERVER_INSTANCE_HOME*. (e.g.
+`/opt/pivotal-tc-server-standard-3.1.8.release/servers`). This folder becomes
+*Liferay Home* (see note above) and you should not confuse the two.
+
+3. Next, create an instance called *dxp-server* where @product@ will be
+deployed. Run the command:
 
         tcruntime-instance.bat|sh create -i servers dxp-server
  
+4. Copy the dependencies `jars` inside the `lib` folder inside `$TCSERVER_INSTANCE_HOME/servers/dxp-server`.
+
 Checkpoint: 
 
 1. A new folder called `servers` has been created.    
 
 2. A new folder called `dxp-server` has been created inside the `servers`
-   folder. The following folders have been created inside the `dxp-servers` folder:    
+   folder. The following folders have been created inside the `dxp-server` folder:    
 
 - `bin`    
 - `conf`    
@@ -122,7 +131,8 @@ Checkpoint:
 - `webapps`    
 - `work`
 
-@product@ dependencies have been placed inside the `$TCSERVER_INSTANCE_HOME/servers/dxp-server/lib` folder:
+@product dependencies have been placed inside the
+ `$TCSERVER_INSTANCE_HOME/servers/dxp-server/lib` folder:
 
 - `com.liferay.registry.api-1.0.4.jar`     
 - `hsql.jar`    
@@ -142,9 +152,9 @@ There are a few more configuration changes for @product@ to run well on tc
 Server 3. All of these configuration changes should be made in the tc Server
 runtime instance.
 
-Navigate to the `$TCSERVER_INSTANCE_HOME/servers/dxp-server/bin` folder.
 
-1. Navigate to the `bin` folder. In `setenv.sh` replace this line
+1. Navigate to the `$TCSERVER_INSTANCE_HOME/servers/dxp-server/bin` folder. In
+`setenv.sh` replace this line
 
         JVM_OPTS="-Xmx512M -Xss256K"
 
@@ -161,9 +171,9 @@ Navigate to the `$TCSERVER_INSTANCE_HOME/servers/dxp-server/bin` folder.
         set JVM_OPTS=-Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m
 
 
-2. Next, you should make sure that UTF-8 URI encoding is used consistently.
-Open `conf/server.xml` and make sure the `Connector` tag includes setting the
-`URIEncoding` to `UTF-8`. 
+2. Next, you should make sure that UTF-8 URI encoding is used consistently. Open
+`$TCSERVER_INSTANCE_HOME/servers/dxp-server/conf/server.xml` and make sure the
+`Connector` tag includes setting the `URIEncoding` to `UTF-8`.
 
         <Connector acceptCount="100"
                    connectionTimeout="20000"
@@ -176,7 +186,7 @@ Open `conf/server.xml` and make sure the `Connector` tag includes setting the
 
 
 3. If you're installing @product@ and tc Server on Windows, open
-`conf/wrapper.conf` and replace
+`$TCSERVER_INSTANCE_HOME/servers/dxp-server/conf/wrapper.conf` and replace
 
         wrapper.java.additional.8=-Xmx512M
 
@@ -195,7 +205,7 @@ Open `conf/server.xml` and make sure the `Connector` tag includes setting the
         wrapper.java.additional.11="-Dfile.encoding=UTF-8"
 
 
-4. Last, open `conf/web.xml` and add the following after `<load-on-startup>3</load-on-startup>`    
+4. Last, open `$TCSERVER_INSTANCE_HOME/servers/dxp-server/conf/web.xml` and add the following after `<load-on-startup>3</load-on-startup>`    
 
 
         <init-param>
@@ -221,7 +231,7 @@ If you want tc Server to manage your data source, use this procedure:
    on a different machine, make sure it's accessible from your @product@ machine.
 
 2. Add your data source as a resource in the context of your web application
-specified in `/conf/Catalina/localhost/ROOT.xml` (create this file if you don't
+specified in `$TCSERVER_INSTANCE_HOME/servers/dxp-server/conf/Catalina/localhost/ROOT.xml` (create this file if you don't
 have it already):
 
         <Resource
@@ -252,9 +262,9 @@ mail session, skip this section and use @product@'s Control Panel to configure a
 mail server after @product@ has been installed and started.
 
 To create a mail session bound to `mail/MailSession`, edit
-`conf/Catalina/localhost/ROOT.xml` and configure your mail session in a
-`Resource` tag. Make sure to replace the example mail session values with your
-own.
+`$TCSERVER_INSTANCE_HOME/servers/dxp-server/conf/Catalina/localhost/ROOT.xml`
+and configure your mail session in a `Resource` tag. Make sure to replace the
+example mail session values with your own.
 
     <Resource
         name="mail/MailSession"
@@ -299,13 +309,13 @@ Before you deploy @product@, you should configure a Portal Access Control List
 ## Enabling PACL [](id=enabling-pacl)
 
 To enable PACL, you need to enable Tomcat’s security manager. Make sure
-`$TCSERVER_INSTANCE_HOME/conf/catalina.policy` specifies the permissions
+`$TCSERVER_INSTANCE_HOME/servers/dxp-server/conf/catalina.policy` specifies the permissions
 
     grant {
         permission java.security.AllPermission;
     };
 
-Open `$TCSERVER_INSTANCE_HOME/bin/setenv.sh` if on Linux, Unix, or Mac OS, or
+Open `$TCSERVER_INSTANCE_HOME/servers/dxp-server/bin/setenv.sh` if on Linux, Unix, or Mac OS, or
 `setenv.bat` if on Windows. Enable the security manager by inserting the
 following code into the `CATALINA_OPTS` variable (inside quotation marks):
 
@@ -318,15 +328,15 @@ Now you have PACL enabled and configured for your portal.
 Now you're ready to deploy @product@ using your @product@ WAR file.
 
 1. If you are manually installing @product@ on a clean tc Server instance, delete
-the contents of the `$TCSERVER_INSTANCE_HOME/webapps/ROOT` directory. This
+the contents of the `$TCSERVER_INSTANCE_HOME/servers/dxp-server/webapps/ROOT` directory. This
 removes the default Tomcat home page.
 
-2. Extract the @product@ `.war` file to `$TCSERVER_INSTANCE_HOME/webapps/ROOT`.
+2. Extract the @product@ `.war` file to `$TCSERVER_INSTANCE_HOME/servers/dxp-server/webapps/ROOT`.
 
     Now it's time to launch @product@!
 
 3. Start tc Server by navigating to the runtime instance's `bin` folder and
-executing `./tcruntime-tcl.sh run` or `/tcruntime-tcl.sh start`. If you're on
+executing `./tcruntime-ctl.sh run` or `/tcruntime-ctl.sh start`. If you're on
 Windows you can use the `.bat` version of the startup script only if you
 installed the tc Server instance as a Windows service. Alternatively,
 you can use `./catalina.sh run` or `catalina.bat run`.
