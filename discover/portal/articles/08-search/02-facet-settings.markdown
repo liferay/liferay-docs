@@ -33,11 +33,11 @@ So how do users make the most of facets?
 
 ## Using Facets [](id=using-facets)
 
-After searching for a term in the Search application, clicking on a specific
-site filters the search results to only display assets within the specified
-site. Clicking on a specific user filters the search results to only display
-assets added by the specified user. The frequency with which the term was found
-for each facet is listed in parentheses after the facet. Sometimes, an [asset's
+After a search is executed, clicking on a specific site from the Site facet
+filters the search results to only display assets within the specified site.
+Clicking on a specific user filters the search results to only display assets
+added by the specified user. The frequency with which the term was found for
+each facet is listed in parentheses after the facet. Sometimes, an [asset's
 tags or categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 may be helpful to you, and there are facets for those, too.
 
@@ -48,14 +48,14 @@ may be helpful to you, and there are facets for those, too.
 **Example:** Pretend you're an accomplished oboe player (maybe you really are,
 but it doesn't matter, showoff), and you're visiting a site for classical
 musicians. You remember reading a great technical analysis of Johann Bach's
-compositions, but you forgot to bookmark it (or would it be a *bachmark*?).  You
+compositions, but you forgot to bookmark it (or would it be a *bachmark*?). You
 enter the term *bach* into the search bar, and, because Johann Bach was a very
 important and famous composer, you get lots of results: too many, in fact. At
 first you're discouraged but you remember that there's a site member who
-produces most of the good technical content on the site, who's named
-*back2bach*. You see that his name is listed in the User facet, and there aren't
-many results in the facet count (the number in parentheses next to the facet).
-You click into the facet and quickly find the content you were looking for.
+produces most of the site's good technical content, who's named *back2bach*. You
+see that his name is listed in the User facet, and there aren't many results in
+the facet count (the number in parentheses next to the facet).  You click into
+the facet and quickly find the content you were looking for.
 
 ![Figure 4: When presented with lots of search results, facets are used to narrow down the results list so users can find relevant content.](../../images/search-facets1.png)
 
@@ -67,10 +67,13 @@ need to narrow the results further, click another facet (do this as much as you
 want to drill down into the search results). To remove any of the facets from
 the filtering of results, click the *Any...* link for the facet type.
 
+The default facet behavior is quite useful, but you can configure the facets to
+your liking.
+
 ## Facet Settings [](id=facet-settings)
 
 Facets can be configured to a considerable degree. The following configuration
-options are available for facets:
+options are available:
 
 **Display Facet:** Specifies whether the facet appears in search results. 
 
@@ -92,7 +95,7 @@ many matching terms are found for the facet.
 : Display the number of terms returned for the facet in the search results.
 
 **Current/Available Assets (Asset Type facet only)**
-: Add or remove asset types to be returned in the search results.
+: Add or remove asset types to be included in the Asset Type facet.
 
 **Display Style (Tag facet only)**
 : Display tags as a Cloud or List (default).
@@ -113,3 +116,7 @@ more than the 10 tags listed, but the default configuration for this facet is to
 show the top 10 most frequent terms. As with asset types, this can be modified
 by setting the `Max Terms` property, described above.
 
+There's no use in having great content if your site's users can't find it. The
+search functionality included in @product@ is robust, configurable, and easy to
+use. It accounts for cases that include an overwhelming number of results, very
+few results, and anything in between.

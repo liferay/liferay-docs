@@ -133,4 +133,4 @@ works in @product@:
 
 The search application allows users to search for content in your @product@.
 Keep reading to learn how to configure the Search application so users can
-easily find wwhat they're looking for. 
+easily find what they're looking for. 

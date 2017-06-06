@@ -7,6 +7,16 @@ with the ability to search for content quickly and easily. The out of the box
 behavior will serve you well, but the portlet can be configured to achieve just
 the right functionality for your use case.
 
+The configuration ability covered in this article includes
+
+- Configuring the display of search results
+- Configuring spell checking on user queries
+
+For information on configuring the Search application's facets, see the [next
+article](/discover/portal/-/knowledge_base/7-0/facet-settings).
+
+Start by configuring the display settings for the Search application.
+
 ## Displaying Search Results [](id=displaying-search-results)
 
 The search application has a nice format for displaying search results. It also
@@ -22,7 +32,7 @@ search is executed. To expand the scope of the search to the entire @product@
 instance, select *Everything*, To let the user choose which scope they want
 to search, select *Let the User Choose*.
 
-![Figure 1: The *Let the User Choose* scope option enables a dropdown menu in the search bar where users can set the scope of their search.](../../images/search-scope.png)
+![Figure 1: The *Let the User Choose* scope option enables a drop-down menu in the search bar where users can set the scope of their search.](../../images/search-scope.png)
 
 The list of facet settings on this page is also quite important. To learn more
 about facets and their configuration options read
@@ -42,7 +52,8 @@ see how their objects are being indexed.
 
 +$$$
 
-**Note:** You can identify available indexed fields by enabling the Search app's
+**Note:** You can identify available indexed fields by enabling the Search
+application's
 *Display Results in Document Form* configuration setting and then expanding
 individual results by clicking the *+* symbol to the left of their titles.
 
@@ -50,12 +61,13 @@ $$$
 
 **View in Context**
 : When an asset is clicked, show it in the app to which it belongs. For example,
-if you click on a Blogs Entry in the search results, you'll be taken to the page
-where the blog is posted. Note that you will no longer be in the search context
-after clicking on a search result. When this option is unchecked, the asset
-displays in an Asset Publisher window while still in the search context.  If you
-have the right permissions, can even edit the content directly from the Search
-context. Click the back arrow to return to the search results.
+if you click on a blog post in the search results, you'll be taken to the page
+where the blog is posted in the Blogs application. Note that you will no longer
+be in the search context after clicking on a search result. When this option is
+unchecked, the asset displays in an Asset Publisher window while still in the
+search context. If you have the right permissions, you can even edit the content
+directly from the Search context. Click the back arrow to return to the search
+results.
 
 **Display Main Query**
 : Show the exact search query that the app generated to the search engine. Never
@@ -101,8 +113,11 @@ behavior.
 <!--Any notes about performance or other warnings with these numbers? -->
 
 Search is a powerful component of @product@'s asset framework. Administrators
-can customize the display options for content, and enhance their search
-experience with facets and localized content. Administrators can configure the
-application to best suit their users' needs, changing the scope of the search,
-the way results are displayed, and more.
+can customize the display options for content, and configure the spell check
+settings to ensure users don't go away feeling frustrated after an unsuccessful
+search query. Facets are Another important component of @product@'s search
+functionality for the opposite situation, where users might be overwhelmed by
+the number of search results, and unable to find the proverbial needle in the
+haystack. To learn more, read the next article on how facets let users narrow
+down search results to find just what they were looking for.
 
