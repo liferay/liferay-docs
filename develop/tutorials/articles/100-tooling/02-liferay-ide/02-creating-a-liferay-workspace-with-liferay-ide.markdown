@@ -111,8 +111,8 @@ Liferay plugins.
 
 <div class="video-tag" data-name="Getting Started with Liferay IDE">
   <video width="100%" height="100%" controls>
-    <source src="/webdav/guest/document_library/Develop-videos/getting-started-with-liferay-ide.mp4" type="video/mp4">
-    <source src="/webdav/guest/document_library/Develop-videos/getting-started-with-liferay-ide.webm" type="video/webm">
+    <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.mp4" type="video/mp4">
+    <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.webm" type="video/webm">
     Your browser does not support HTML5 video.
   </video>
 </div>
