@@ -122,22 +122,22 @@ app:
             proxy.host.name=
             proxy.host.port=
 
-       If your proxy requires authentication, you should also add the following 
-       properties and set them to the appropriate values for your proxy: 
+      If your proxy requires authentication, you should also add the following 
+      properties and set them to the appropriate values for your proxy: 
 
             proxy.host.login=
             proxy.host.password=
 
-       If your proxy requires NTLM authentication, you must also add the 
-       following properties: 
+      If your proxy requires NTLM authentication, you must also add the 
+      following properties: 
 
             proxy.auth.type=ntlm
             proxy.domain=
             proxy.workstation=
 
-       Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
-       values for your proxy. Note that you can leave `proxy.workstation` blank 
-       if you don't need it. 
+      Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
+      values for your proxy. Note that you can leave `proxy.workstation` blank 
+      if you don't need it. 
 
     c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
        file, then repackage the LPKG file with the LCS client WAR. Make sure the 
