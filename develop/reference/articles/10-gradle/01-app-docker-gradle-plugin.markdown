@@ -51,7 +51,7 @@ extension named `appDocker`:
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `imageName` | `String` | `project.name` | The name of the app's Docker image (e.g., `foo` in the image named `liferay/foo`).
-`imageTags` | `List<String>` | `[`The latest Git commit's committer date`, ` The latest Git commit's hash`]` | The list of tags for the app's Docker image to push to the registry.
+`imageTags` | `List<String>` | `[`The latest Git commit's date`, ` The latest Git commit's hash`]` | The list of tags for the app's Docker image to push to the registry.
 `imageUser` | `String` | `project.group` | The user repository of the app's Docker image (e.g., `liferay` in the image named `liferay/foo`).
 `inputDir` | `File` | `"${project.projectDir}/${project.name}-docker"` | The directory that contains the `Dockerfile` and other resources to copy into the context path used to build the app's Docker image.
 `subprojects` | `Set<Project>` | `project.subprojects` | The subprojects to include in the app's Docker image.
@@ -113,7 +113,7 @@ Property Name | Default Value
 For each `imageTag` entry in the `appDocker.imageTags` collection, one task
 `pushAppDockerImage_${appDocker.imageUser}/${appDocker.imageName}:${imageTag}`
 of type [DockerPushImage](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerPushImage.html)
-is created at the end of the project evaluation. Each one of these tasks are
+is created at the end of the project evaluation. Each one of these tasks is
 automatically configured with sensible defaults:
 
 Property Name | Default Value
@@ -126,7 +126,7 @@ Property Name | Default Value
 For each `imageTag` entry in the `appDocker.imageTags` collection, one task
 `tagAppDockerImage_${appDocker.imageUser}/${appDocker.imageName}:${imageTag}` of
 type [DockerTagImage](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerTagImage.html)
-is created at the end of the project evaluation. Each one of these tasks are
+is created at the end of the project evaluation. Each one of these tasks is
 automatically configured with sensible defaults:
 
 Property Name | Default Value
