@@ -38,7 +38,6 @@ needed and has been removed. The tag now uses the following parameters to
 support the new features:
 
 - `currentLogoURL`: the URL to display the image being stored
-- `hasUpdateLogoPermission`: `true` if the current user can update the logo
 - `maxFileSize`: the size limit for the logo to be uploaded
 - `tempImageFileName`: the unique identifier to store the temporary image on
   upload
@@ -77,7 +76,6 @@ New way:
     <liferay-ui:logo-selector
         currentLogoURL="<%= selUser.getPortraitURL(themeDisplay) %>"
         defaultLogoURL="<%= UserConstants.getPortraitURL(themeDisplay.getPathImage(), selUser.isMale(), 0) %>"
-        hasUpdateLogoPermission='<%= UsersAdminUtil.hasUpdateFieldPermission(selUser, "portrait") %>'
         imageId="<%= selUser.getPortraitId() %>"
         logoDisplaySelector=".user-logo"
         maxFileSize="<%= PrefsPropsUtil.getLong(PropsKeys.USERS_IMAGE_MAX_SIZE) / 1024 %>"
