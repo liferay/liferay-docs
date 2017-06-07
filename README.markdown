@@ -16,7 +16,7 @@ HTML. In this project, you can contribute new articles, improve existing
 articles, or fix documentation bugs. To produce documentation that is
 comprehensive and stylistically consistent, the liferay-docs project provides
 <a href="guidelines/03-writers-guidelines.markdown" target="_blank">writing guidelines</a>,
-<a href="guidelines/02-standards-and-customizations.markdown" target="_blank">Markdown & tools guide</a>,
+<a href="guidelines/02-standards-and-customizations.markdown" target="_blank">standards & customizations</a>,
 and a
 <a href="develop/tutorial-template.markdown" target="_blank">tutorial template</a>.
 
@@ -79,4 +79,3 @@ own machine, [click here](guidelines/01-creating-docs-for-liferay.markdown) to g
 to our guidelines section. 
 
 Thanks for helping us out with Liferay documentation! 
-
