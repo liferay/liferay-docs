@@ -9,6 +9,8 @@ Screenlet in this fragment.
 
 ## Creating the Fragment [](id=creating-the-fragment)
 
+Follow these steps to create the fragment: 
+
 1.  To create the fragment, right click the `com.liferay.docs.liferayguestbook`
     package and select *New* &rarr; *Fragment* &rarr; *Fragment (Blank)*. In the
     wizard, check only the box to create the layout XML, name the fragment
@@ -53,19 +55,19 @@ Screenlet in this fragment.
 
         }
 
-If you have experience with Android fragments, then you're likely familiar with 
-the static `newInstance` method. In short, using such a method instead of an 
-empty constructor lets you create the fragment and initialize its data in one 
-step. This makes it easier to create and restore the fragment. 
-[Click here](http://www.androiddesignpatterns.com/2012/05/using-newinstance-to-instantiate.html) 
-for more information. 
+    If you have experience with Android fragments, then you're likely familiar 
+    with the static `newInstance` method. In short, using such a method instead 
+    of an empty constructor lets you create the fragment and initialize its data 
+    in one step. This makes it easier to create and restore the fragment. 
+    [Click here](http://www.androiddesignpatterns.com/2012/05/using-newinstance-to-instantiate.html) 
+    for more information. 
 
-Since this fragment will contain Entry List Screenlet, its data must include the 
-guestbook ID the Screenlet retrieves entries from (`guestbookId`). Also, 
-the `onCreateView` method uses the bundle arguments set in `newInstance` to 
-retrieve the `guestbookId`. For now, you don't have to do anything with the 
-`guestbookId` in `onCreateView`. You'll use this variable when you add the 
-Screenlet to the fragment. 
+    Since this fragment will contain Entry List Screenlet, its data must include 
+    the guestbook ID the Screenlet retrieves entries from (`guestbookId`). Also, 
+    the `onCreateView` method uses the bundle arguments set in `newInstance` to 
+    retrieve the `guestbookId`. For now, you don't have to do anything with the 
+    `guestbookId` in `onCreateView`. You'll use this variable when you add the 
+    Screenlet to the fragment. 
 
 Next, you'll add this fragment to `GuestbooksActivity`. 
 
@@ -79,7 +81,11 @@ Since you want Entry List Screenlet to appear in `GuestbooksActivity`, your
 first thought might be to put the fragment container directly in 
 `activity_guestbooks.xml`. Don't do this. Recall that Android Studio's 
 Navigation Drawer Activity template created the layout `content_guestbooks.xml` 
-to hold the activity's main body content. 
+to hold the activity's main body content. You'll add the fragment container to 
+this layout, then write the code in `GuestbooksActivity` that displays the 
+fragment. 
+
+Follow these steps to add the fragment to `GuestbooksActivity`: 
 
 1.  Open `content_guestbooks.xml` and place the following fragment container
     inside the `ConstraintLayout`. This fragment container should be the only
@@ -112,10 +118,10 @@ to hold the activity's main body content.
 
     This requires that you import `android.support.v4.app.FragmentTransaction`. 
 
-This method's `actionBar.setTitle` call is the same as before. Only the fragment 
-code is new. In it, you first use `newInstance` to create a new 
-`EntriesFragment` instance with the selected guestbook's ID. A fragment 
-transaction then adds this fragment to the fragment container. 
+    This method's `actionBar.setTitle` call is the same as before. Only the 
+    fragment code is new. In it, you first use `newInstance` to create a new 
+    `EntriesFragment` instance with the selected guestbook's ID. A fragment 
+    transaction then adds this fragment to the fragment container. 
 
 Fantastic! Now you have a fragment to put Entry List Screenlet in, and the code 
 that displays this fragment in `GuestbooksActivity`. Next, you'll put Entry List 

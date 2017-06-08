@@ -5,7 +5,7 @@ create `GuestbooksActivity`. Any activity this template creates contains a
 navigation drawer and all the components the activity needs. This includes 
 layout files that display content. Currently, these files contain simple 
 placeholder content. You'll replace this content shortly with content from your 
-Guestbook web application. Before doing so, however, you should know where the
+Guestbook portlet. Before doing so, however, you should know where the 
 placeholder content exists in the project's structure and how the app displays 
 it. 
 

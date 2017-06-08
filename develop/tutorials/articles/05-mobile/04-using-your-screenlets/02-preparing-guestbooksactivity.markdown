@@ -38,7 +38,7 @@ Android Studio created this code for you in the `GuestbooksActivity` class's
 
 2.  Create `ActionBar` and `Toolbar` instance variables. This lets you refer to
     them anywhere in the activity. Add these variables to the
-    `GuestbooksActivity` class now: 
+    `GuestbooksActivity` class: 
 
         private ActionBar actionBar;
         private Toolbar toolbar;
@@ -59,9 +59,9 @@ Android Studio created this code for you in the `GuestbooksActivity` class's
     to an empty string. This prevents the activity's title from showing in the 
     action bar before the app can retrieve guestbooks from the portlet. 
 
-4.  You must call `initActionBar()` in `onCreate`. Place the call immediately
-    below the `setContentView` call. The first few lines of `onCreate` should
-    now look like this: 
+4.  Call `initActionBar()` in `onCreate`. Place the call immediately below the 
+    `setContentView` call. The first few lines of `onCreate` should now look 
+    like this: 
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +77,9 @@ Next, you'll modify the code that controls the navigation drawer.
 
 ## Refactoring the Navigation Drawer [](id=refactoring-the-navigation-drawer)
 
+Before you can use Guestbook List Screenlet in the navigation drawer, you must 
+refactor the drawer's existing code. Do so now by following these steps: 
+
 1.  Currently, the navigation drawer initialization code is in the `onCreate`
     method. Android Studio created this code for you when you used the
     Navigation Drawer Activity template to create `GuestbooksActivity`. Delete
@@ -88,11 +91,13 @@ Next, you'll modify the code that controls the navigation drawer.
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-2.  Instead, you'll initialize the navigation drawer in a separate method that 
-    you'll call in `onCreate`. You'll also change the `drawer` variable to be an 
-    instance variable that you can refer to throughout the class. This lets you 
-    use this variable to close the drawer when a guestbook is selected in 
-    Guestbook List Screenlet. Add this variable to `GuestbooksActivity`: 
+    Instead, you'll initialize the navigation drawer in a separate method that 
+    you'll call in `onCreate`. You'll create this method shortly. 
+
+2.  You'll also change the `drawer` variable to be an instance variable that you 
+    can refer to throughout the class. This lets you use this variable to close 
+    the drawer when a guestbook is selected in Guestbook List Screenlet. Add 
+    this variable to `GuestbooksActivity`: 
 
         private DrawerLayout drawer;
 
@@ -146,14 +151,14 @@ implementation. The next section walks you through this.
 
 Since Guestbook List Screenlet handles navigation drawer item selections, you 
 don't need to implement `NavigationView.OnNavigationItemSelectedListener` in 
-`GuestbooksActivity`. 
+`GuestbooksActivity`. Follow these steps to remove this implementation: 
 
-1.  Delete this implementation from the class declaration. The class declaration
+1.  Delete the implementation from the class declaration. The class declaration
     should now look like this: 
 
         public class GuestbooksActivity extends AppCompatActivity {...
 
-2.  Now you must remove the code in `GuestbooksActivity` that implements
+2.  Remove the code in `GuestbooksActivity` that implements
     `NavigationView.OnNavigationItemSelectedListener`. To do this, first delete
     the following code at the end of the `onCreate` method: 
 
@@ -182,7 +187,7 @@ don't need to implement `NavigationView.OnNavigationItemSelectedListener` in
 
 3.  Delete the `onNavigationItemSelected` method, along with its `@Override` and
     `@SuppressWarnings("StatementWithEmptyBody")` statements. 
- 
+
 4.  Finally, remove the `android.support.design.widget.NavigationView` import. 
 
 Great job! Now you're ready to insert Guestbook List Screenlet in

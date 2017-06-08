@@ -2,8 +2,9 @@
 
 You'll use Entry List Screenlet by following the same steps to use any 
 Screenlet: insert the Screenlet's XML in an activity or fragment layout, and 
-then implement the Screenlet's listener in the activity or fragment class. In 
-this step, you'll do this to insert Entry List Screenlet in `EntriesFragment`. 
+then implement the Screenlet's listener in the activity or fragment class. 
+You'll follow these steps here to insert Entry List Screenlet in 
+`EntriesFragment`. 
 
 First, you'll insert Entry List Screenlet's XML in `EntriesFragment`'s layout, 
 `fragment_entries.xml`. 
@@ -37,6 +38,9 @@ Guestbook List Screenlet didn't need extra listener methods, you used it in
 with `GuestbookModel` as a type argument. Entry List Screenlet also doesn't need 
 extra listener methods. Like Guestbook List Screenlet, you can use it by 
 implementing `BaseListListener` with its model class as a type argument. 
+
+Follow these steps to implement Entry List Screenlet's listener in 
+`EntriesFragment`: 
 
 1.  Change `EntriesFragment`'s class declaration to implement
     `BaseListListener<EntryModel>`. The class declaration should now look like
@@ -113,9 +117,9 @@ implementing `BaseListListener` with its model class as a type argument.
     This requires you to import 
     `com.liferay.docs.entrylistscreenlet.EntryListScreenlet`. 
 
-As you can see, `onCreateView` now registers `EntriesFragment` as the 
-Screenlet's listener and sets the Screenlet's guestbook ID. The rest of 
-`onCreateView` is unchanged. 
+    As you can see, `onCreateView` now registers `EntriesFragment` as the 
+    Screenlet's listener and sets the Screenlet's guestbook ID. The rest of 
+    `onCreateView` is unchanged. 
 
 Now run the app in the emulator and log in with your credentials when prompted. 
 The app then presents you with the first guestbook's entries. Open the 
@@ -133,7 +137,11 @@ Although your Screenlets work, you may have noticed something odd about the
 navigation drawer's header--it's hideous. The action bar is somewhere on the 
 purple-blue spectrum, while the drawer header is green. You've probably seen 
 more attractive finger paintings. Fortunately, it's simple to change the drawer 
-header's color. 
+header's color. Also, the drawer header contains the generic text 
+*Android Studio*. You should change this to something more suitable for your 
+app, like *Liferay Guestbook*. 
+
+Follow these steps to apply these changes to the drawer header: 
 
 1.  In `res/drawable/side_nav_bar.xml`, replace `android:centerColor`,
     `android:endColor`, and `android:startColor` with the following settings: 
@@ -142,10 +150,10 @@ header's color.
         android:endColor="@color/colorPrimaryDark"
         android:startColor="@color/colorPrimary"
 
-2.  Also, the drawer header displays the generic text *Android Studio* (note
-    that Android Studio may have created additional placeholder text here as
-    well). To change this to something more suitable, like *Liferay Guestbook*,
-    first define the following string resource in `res/values/strings.xml`: 
+    This sets the drawer header's colors to match the colors used in the rest of 
+    the app.
+
+2.  Define the following string resource in `res/values/strings.xml`: 
 
         <string name="liferay_guestbook">Liferay Guestbook</string>
 

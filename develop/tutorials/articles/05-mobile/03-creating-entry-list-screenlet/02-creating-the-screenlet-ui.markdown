@@ -27,13 +27,13 @@ To get started, create a new package named `view` inside the
 
 ## Creating the Row Layout [](id=creating-the-row-layout)
 
-You must create the layout that defines the Screenlet's UI for each list row.
-Recall that in Guestbook List Screenlet, `guestbook_row.xml` serves this purpose
-with a single `TextView` it uses to display a guestbook's name. You'll create a
-similar layout here for Entry List Screenlet, but you'll use two `TextView`
-elements: one for the entry and one for the name of the person that left it.
-Create `entry_row.xml` in your app's `res/layout` directory and replace its
-contents with this code: 
+You must create the layout that defines the Screenlet's UI for each list row 
+instance. Recall that in Guestbook List Screenlet, `guestbook_row.xml` serves 
+this purpose with a single `TextView` it uses to display a guestbook's name. 
+You'll create a similar layout here for Entry List Screenlet, but you'll use two 
+`TextView` elements: one for the entry and one for the name of the person that 
+left it. Create `entry_row.xml` in your app's `res/layout` directory and replace 
+its contents with this code: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

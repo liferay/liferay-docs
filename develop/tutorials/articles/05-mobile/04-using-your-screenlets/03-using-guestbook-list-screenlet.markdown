@@ -91,7 +91,9 @@ should display that guestbook's name. You can accomplish this by calling a
 method that takes a `GuestbookModel` and sets that guestbook's name as the 
 action bar's title. 
 
-1.  Add this method now to `GuestbooksActivity`: 
+Follow these steps to add this method and implement the listener:
+
+1.  Add this `showEntries` method to `GuestbooksActivity`: 
 
         public void showEntries(GuestbookModel guestbook) {
 
@@ -108,7 +110,7 @@ action bar's title.
     methods. It can use the listener methods defined in the list Screenlet
     framework's 
     [`BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java). 
-    To do this, change `GuestbooksActivity`'s class declaration to implement
+    Change `GuestbooksActivity`'s class declaration to implement
     `BaseListListener<GuestbookModel>`. The class declaration should now look 
     like this: 
 
@@ -127,13 +129,13 @@ action bar's title.
       [toast](https://developer.android.com/guide/topics/ui/notifiers/toasts.html) 
       message containing an error: 
 
-        @Override
-        public void onListPageFailed(int startRow, Exception e) {
+            @Override
+            public void onListPageFailed(int startRow, Exception e) {
 
-            Toast.makeText(this, "Page request failed", Toast.LENGTH_LONG).show();
-        }
+                Toast.makeText(this, "Page request failed", Toast.LENGTH_LONG).show();
+            }
 
-    This requires you to import `android.widget.Toast`. 
+        This requires you to import `android.widget.Toast`. 
 
     - `onListPageReceived(int startRow, int endRow, List<E> entries, int rowCount)`: 
       Called when the server call to retrieve a page of items succeeds. Note 
@@ -146,16 +148,16 @@ action bar's title.
       first guestbook on the first page. Use an `if` statement to select this 
       guestbook, and then call `showEntries`: 
 
-        @Override
-        public void onListPageReceived(int startRow, int endRow, List<GuestbookModel> guestbooks, 
-            int rowCount) {
+            @Override
+            public void onListPageReceived(int startRow, int endRow, List<GuestbookModel> guestbooks, 
+                int rowCount) {
             
-            if (startRow == 0) {
-                showEntries(guestbooks.get(0));
+                if (startRow == 0) {
+                    showEntries(guestbooks.get(0));
+                }
             }
-        }
 
-    This requires you to import `java.util.List`. 
+        This requires you to import `java.util.List`. 
 
     - `onListItemSelected(E element, View view)`: Called when the user selects 
       an item in the list. This method's arguments include the selected list 
@@ -163,12 +165,12 @@ action bar's title.
       in this method. Also, close the navigation drawer following the 
       `showEntries` call: 
 
-        @Override
-        public void onListItemSelected(GuestbookModel guestbook, View view) {
+            @Override
+            public void onListItemSelected(GuestbookModel guestbook, View view) {
 
-            showEntries(guestbook);
-            drawer.closeDrawers();
-        }
+                showEntries(guestbook);
+                drawer.closeDrawers();
+            }
 
 4.  Because `BaseListListener` extends the 
     [`BaseCacheListener` interface](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/listener/BaseCacheListener.java), 
