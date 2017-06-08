@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
@@ -119,10 +120,16 @@ public class CheckImagesTaskDevSite extends Task {
 		
 			List<File> images = Arrays.asList(imagesArray);
 		
-			checkImages(images, imagePathsMap);
+			String imageDestination = ".." + File.separator + _docdir + File.separator + "images";
+
+			checkImages(images, imagePathsMap, _resolveImages, imageDestination);
 
 			System.out.println("Finished checking image sources in articles" + dirType);
 		}
+	}
+
+	public void setResolveImages(boolean resolveImages) {
+		_resolveImages = resolveImages;
 	}
 
 	public void setDocdir(String docdir) {
@@ -145,8 +152,15 @@ public class CheckImagesTaskDevSite extends Task {
 	 * @param imagePathsMap
 	 *            a map from each Markdown file in the document directory to a
 	 *            list of the image references in the Markdown file
+	 * @param resolveImages
+	 *            Whether to attempt to copy images from the document's
+	 *            <code>images</code> folder into the images destination folder
+	 * @param imageDestination
+	 *            Destination folder for images
 	 */
-	private static void checkImages(List<File> images, Map<File, List<String>> imagePathsMap) {
+	private static void checkImages(List<File> images, Map<File,
+			List<String>> imagePathsMap, boolean resolveImages,
+			String imageDestination) {
 		List<String> imagePaths = new ArrayList<String>();
 		
 		Collection<List<String>> imagePathsLists = imagePathsMap.values();
@@ -190,14 +204,31 @@ public class CheckImagesTaskDevSite extends Task {
 				String imageFileName = getFileName(imagePath);
 
 				if (!imageNames.contains(imageFileName)) {
-					StringBuilder sb = new StringBuilder();
-					sb.append(article.getName());
-					sb.append(": References missing image: ");
-					sb.append(imageFileName);
 
-					errors.add(sb.toString());
+					File source = new File("images" + File.separator + imageFileName);
 
-					missingImages.add(imagePath);
+					File dest = new File(imageDestination + File.separator + imageFileName);
+
+					if (resolveImages && source.exists()) {
+
+							try {
+								System.out.println("Copying " + imageFileName + " from " + source + " to " + dest);
+							    FileUtils.copyFile(source, dest);
+							} catch (IOException e) {
+							    e.printStackTrace();
+							}
+					}
+
+					if (!dest.exists()) {
+						StringBuilder sb = new StringBuilder();
+						sb.append(article.getName());
+						sb.append(": References missing image: ");
+						sb.append(imageFileName);
+
+						errors.add(sb.toString());
+
+						missingImages.add(imagePath);
+					}
 				}
 			}
 		}
@@ -230,6 +261,8 @@ public class CheckImagesTaskDevSite extends Task {
 					sb.append(imagePath);
 
 					errors.add(sb.toString());
+
+					System.out.println("image: " + image.toString());
 				}
 			}
 		}
@@ -316,6 +349,32 @@ public class CheckImagesTaskDevSite extends Task {
 				
 				imagePaths.add(line);
 			}
+
+			// Check for <img> elements
+
+			if (line.contains("<img")) {
+				int begin = line.indexOf("<img");
+				int end = line.indexOf(">", begin);
+				int src = line.indexOf("src", begin);
+				int images = line.indexOf("images");
+
+				if (src > 0 &&
+					images > src) {
+
+					if (end < 0 ||
+						(end > 1 && images < end)) {
+
+						int quote1 = line.indexOf("\"", src);
+						int quote2 = line.indexOf("\"", quote1 +1);
+
+						String srcImage = line.substring(quote1 + 1, quote2);
+
+						System.out.println("<img> tag references: " + srcImage);
+
+						imagePaths.add(srcImage);
+					}
+				}
+			}
 		}
 		
 		return imagePaths;
@@ -324,4 +383,5 @@ public class CheckImagesTaskDevSite extends Task {
 
 	private String _docdir;
 	private String _productType;
+	private boolean _resolveImages;
 }
