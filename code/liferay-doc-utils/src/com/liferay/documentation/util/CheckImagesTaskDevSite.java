@@ -23,7 +23,8 @@ import org.apache.tools.ant.Task;
 public class CheckImagesTaskDevSite extends Task {
 
 	/**
-	 * Checks for missing images, extra images, or faulty file paths in the document directory.
+	 * Checks for missing images, extra images, or faulty file paths in the
+	 * document directory.
 	 * 
 	 * Any of these problems results in a build failure.
 	 */
@@ -147,16 +148,13 @@ public class CheckImagesTaskDevSite extends Task {
 	 * Missing images, extra images, or faulty file paths result in a build
 	 * failure.
 	 * 
-	 * @param images
-	 *            the actual images in the document directory
-	 * @param imagePathsMap
-	 *            a map from each Markdown file in the document directory to a
-	 *            list of the image references in the Markdown file
-	 * @param resolveImages
-	 *            Whether to attempt to copy images from the document's
-	 *            <code>images</code> folder into the images destination folder
-	 * @param imageDestination
-	 *            Destination folder for images
+	 * @param images the actual images in the document directory
+	 * @param imagePathsMap a map from each Markdown file in the document
+	 *        directory to a list of the image references in the Markdown file
+	 * @param resolveImages whether to attempt to copy images from the
+	 *        document's <code>images</code> folder into the images destination
+	 *        folder
+	 * @param imageDestination the destination folder for images
 	 */
 	private static void checkImages(List<File> images, Map<File,
 			List<String>> imagePathsMap, boolean resolveImages,
@@ -301,8 +299,7 @@ public class CheckImagesTaskDevSite extends Task {
 	 * Returns a list of the relative paths of the images referenced in a
 	 * Markdown file.
 	 * 
-	 * @param article
-	 *            the Markdown file
+	 * @param  article the Markdown file
 	 * @return a list of the relative paths of the images referenced in a
 	 *         Markdown file (may be empty)
 	 */
