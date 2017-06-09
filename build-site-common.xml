@@ -96,7 +96,7 @@
 
 	<!-- targets -->
 
-	<target name="add-article-to-temp" depends="process-article-to-temp, check-images-dist" description="Processes the article (-Darticle=...) and adds it and its images to temp/">
+	<target name="add-article-to-temp" depends="process-article-to-temp, check-images-dist" description="Processes the article (-Darticle=...) and its parent article structure, adding the target article and all related parent articles and images to temp/">
 	</target>
 
 	<target name="article-to-html" depends="prepare, check-article-images" description="Converts a single Markdown article to an HTML file.">
@@ -300,7 +300,7 @@
 		<delete dir="${temp.dir}"/>
 	</target>
 
-	<target name="process-article-to-temp"  description="Processes the single article's tokens and copies the article only (no images) to temp/.">
+	<target name="process-article-to-temp"  description="Generates the target article's parent structure and then processes the articles' tokens. The resulting articles are copied (no images) to temp/.">
 		<property file="${project.dir}/release-site.properties" />
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
