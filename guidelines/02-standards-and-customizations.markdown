@@ -96,6 +96,10 @@ documenting. -Cody -->
     they're pointing at an existing LDN article. A list of invalid links are
     listed if any are found.
 
+-   `dist-article-ce`: Creates a ZIP file for importing the specified article
+    (``-Darticle=...``), its images, and supporting structure to a Knowledge
+    Base.
+
 -   `dist-ce`: Packages all necessary CE resources into a ZIP file deployable to
     LDN.
 

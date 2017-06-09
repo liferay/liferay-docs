@@ -290,6 +290,9 @@
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
 	</target>
 
+	<target name="dist-article-ce" depends="clean-temp, add-article-to-temp, dist-temp" description="Creates a ZIP file for importing the specified article (-Darticle=...), its images, and supporting structure to a Knowledge Base.">
+	</target>
+
 	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers" description="Processes the CE articles and images and zips them up for importing.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
