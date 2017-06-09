@@ -25,6 +25,7 @@
 	<property name="dist.dir" value="./dist"/>
 	<property name="metadata.filename" value=".METADATA"/>
 	<property name="temp.dir" value="temp"/>
+	<property name="temp.dir2" value="prepare-temp"/>
 
 	<!-- taskdefs -->
 
@@ -303,10 +304,19 @@
 		<property file="${project.dir}/release-site.properties" />
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
+		<mkdir dir="${temp.dir2}"/>
+		<java
+			classname="com.liferay.documentation.util.FindParentIntros"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${article}"/>
+			<arg value="${doc.dir}"/>
+			<arg value="${temp.dir2}"/>
+		</java>
 		<copy todir="${temp.dir}">
-			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
-				<include name="${article}"/>
-			</fileset>
+			<fileset dir="${temp.dir2}"/>
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name}"/>
@@ -317,6 +327,7 @@
 				</filterreader>
 			</filterchain>
 		</copy>
+		<delete dir="${temp.dir2}"/>
 	</target>
 	
 	<target name="dist-ce-temp" description="Processes the article tokens and copies the CE articles and images to temp/ for zipping up.">
