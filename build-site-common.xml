@@ -299,36 +299,6 @@
 
 		<delete dir="${temp.dir}"/>
 	</target>
-
-	<target name="process-article-to-temp"  description="Generates the target article's parent structure and then processes the articles' tokens. The resulting articles are copied (no images) to temp/.">
-		<property file="${project.dir}/release-site.properties" />
-		<property name="base.filepath" value="${doc.dir}" />
-		<mkdir dir="${temp.dir}"/>
-		<mkdir dir="${temp.dir2}"/>
-		<java
-			classname="com.liferay.documentation.util.FindParentIntros"
-			classpathref="project.classpath"
-			failonerror="true"
-			fork="true"
-		>
-			<arg value="${article}"/>
-			<arg value="${doc.dir}"/>
-			<arg value="${temp.dir2}"/>
-		</java>
-		<copy todir="${temp.dir}">
-			<fileset dir="${temp.dir2}"/>
-			<filterchain>
-				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
-					<param type="token" name="${product.token}" value="${product.name}"/>
-					<param type="token" name="${product.token.app.reference}" value="${product.app.reference}"/>
-					<param type="token" name="${product.token.ide}" value="${product.ide.name}"/>
-					<param type="token" name="${product.token.platform.reference}" value="${product.platform.reference}"/>
-					<param type="token" name="${product.token.version}" value="${product.name.version}"/>
-				</filterreader>
-			</filterchain>
-		</copy>
-		<delete dir="${temp.dir2}"/>
-	</target>
 	
 	<target name="dist-ce-temp" description="Processes the article tokens and copies the CE articles and images to temp/ for zipping up.">
 		<property file="${project.dir}/release-site.properties" />
@@ -512,6 +482,36 @@
 		>
 			<arg value="${doc.dir}"/>
 		</java>
+	</target>
+
+	<target name="process-article-to-temp"  description="Generates the target article's parent structure and then processes the articles' tokens. The resulting articles are copied (no images) to temp/.">
+		<property file="${project.dir}/release-site.properties" />
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<mkdir dir="${temp.dir2}"/>
+		<java
+			classname="com.liferay.documentation.util.FindParentIntros"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${article}"/>
+			<arg value="${doc.dir}"/>
+			<arg value="${temp.dir2}"/>
+		</java>
+		<copy todir="${temp.dir}">
+			<fileset dir="${temp.dir2}"/>
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
+					<param type="token" name="${product.token}" value="${product.name}"/>
+					<param type="token" name="${product.token.app.reference}" value="${product.app.reference}"/>
+					<param type="token" name="${product.token.ide}" value="${product.ide.name}"/>
+					<param type="token" name="${product.token.platform.reference}" value="${product.platform.reference}"/>
+					<param type="token" name="${product.token.version}" value="${product.name.version}"/>
+				</filterreader>
+			</filterchain>
+		</copy>
+		<delete dir="${temp.dir2}"/>
 	</target>
 
 	<target name="report-moved-portal-service-classes" depends="prepare" description="Compares two portal source trees to generate an HTML report of classes moved from the portal-service folder.">
