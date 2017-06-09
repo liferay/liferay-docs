@@ -14,11 +14,8 @@ Entry List Screenlet using the same sequence of steps you used to create
 Guestbook List Screenlet: 
 
 1. Getting started: creating the Screenlet's package and model class. 
-
 2. Creating the Screenlet's UI (its View). 
-
 3. Creating the Screenlet's Interactor. 
-
 4. Creating the Screenlet class. 
 
 Although this Learning Path section presents complete code snippets, it only 

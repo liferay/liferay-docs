@@ -68,19 +68,19 @@ Follow these steps to create Guestbook List Screenlet's event class:
       each list row displays. For example, the `getListKey` method in 
       `GuestbookEvent` returns the guestbook's name: 
 
-        @Override
-        public String getListKey() {
-            return guestbook.getName();
-        }
+            @Override
+            public String getListKey() {
+                return guestbook.getName();
+            }
 
     - `getModel`: unwraps the model entity to the cache by returning the model 
       class instance. For example, the `getModel` method in `GuestbookEvent` 
       method returns the guestbook: 
 
-        @Override
-        public GuestbookModel getModel() {
-            return guestbook;
-        }
+            @Override
+            public GuestbookModel getModel() {
+                return guestbook;
+            }
 
 Note that this code is almost identical to the example event class in 
 [the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlets-event). 
