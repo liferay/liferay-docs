@@ -52,7 +52,7 @@ documenting. -Cody -->
     Here's an example command sequence that prepares a ZIP file of two articles and their supporting files:
 
     1.  `ant clean-temp` &rarr; Deletes the `temp` folder.
-    2.  `ant add-article-to-temp -Darticle=articles/path/article_name.markdown` 
+    2.  `ant add-article-to-temp -Darticle=articles\100-tooling\02-liferay-ide\02-creating-a-liferay-workspace-with-liferay-ide.markdown` 
     3.  `ant add-article-to-temp -Darticle=articles\02-from-liferay-6-to-liferay-7\07-upgrading-plugins-to-liferay-7\04-upgrading-portlet-plugins\02-upgrading-a-servlet-based-portlet.markdown`
     4.  `ant dist-temp` &rarr; Zips up  `temp` folder's articles and images into a 
         ZIP file in the `dist` folder, for importing to a Knowledge Base portlet.
