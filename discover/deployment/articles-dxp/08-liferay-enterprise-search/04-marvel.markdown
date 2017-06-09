@@ -19,53 +19,53 @@ Elasticsearch if you want to use Marvel in production. Visit Elasticsearch's
 This article shows you how to install and configure Marvel for @product@--and
 @product@ for Marvel--with these general steps:
 
--  [Install Marvel and Kibana on Elasticsearch.](#installing-kibana-and-marvel)
+-   [Install Marvel and Kibana on Elasticsearch.](#installing-kibana-and-marvel)
 
-    +$$$
+     +$$$
 
-    **Note:** If you're wondering what
-    [Kibana](https://www.elastic.co/products/kibana) is, it's the visualization
-    piece of the equation. Elasticsearch is the search engine, and a Marvel
-    agent in Elasticsearch collects and sends data from Elasticsearch to Kibana.
-    Kibana, including a Marvel UI plugin, displays the Marvel agent's data.
+     **Note:** If you're wondering what
+     [Kibana](https://www.elastic.co/products/kibana) is, it's the visualization
+     piece of the equation. Elasticsearch is the search engine, and a Marvel
+     agent in Elasticsearch collects and sends data from Elasticsearch to
+     Kibana. Kibana, including a Marvel UI plugin, displays the Marvel agent's
+     data.
 
-    $$$
+     $$$
 
--  [Configure Kibana to work with Shield and to be accessed through the Marvel
-   Portlet.](#configuring-kibana-for-elasticsearch)
+-   [Configure Kibana to work with Shield and to be accessed through the Marvel Portlet.](#configuring-kibana-for-elasticsearch)
 
--  [Configure @product@'s Marvel adapter plugin.](#configuring-liferays-marvel-adapter)
+-   [Configure @product@'s Marvel adapter plugin.](#configuring-liferays-marvel-adapter)
 
--  [Add the Marvel portlet to a page and start monitoring your cluster.](#accessing-marvels-ui-in-liferay)
+-   [Add the Marvel portlet to a page and start monitoring your cluster.](#accessing-marvels-ui-in-liferay)
 
 These terms will be useful to understand as you read this guide:
 
--  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch 
-   installation (for example, `elasticsearch-2.2.0`).
--  *Liferay Home* refers to the root folder of your @product@ installation. It 
-   contains the `osgi`, `deploy`, `data`, and `license` folders.
--  *Kibana Home* refers to the root folder of your Kibana installation.
+-   *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch 
+    installation (for example, `elasticsearch-2.2.0`).
+-   *Liferay Home* refers to the root folder of your @product@ installation. It 
+    contains the `osgi`, `deploy`, `data`, and `license` folders.
+-   *Kibana Home* refers to the root folder of your Kibana installation.
 
-## Installing Kibana and Marvel <a id=installing-kibana-and-marvel></a>
+## Installing Kibana and Marvel [](id=installing-kibana-and-marvel)
 
 Before you install Kibana or Marvel, make sure you've read and followed the
 instructions on [installing and configuring Elasticsearch for
 @product@](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch).
 
-1. Install the `marvel-agent` plugin on Elasticsearch by navigating to
-   Elasticsearch Home and entering
+1.  Install the `marvel-agent` plugin on Elasticsearch by navigating to
+    Elasticsearch Home and entering
 
         ./bin/plugin install marvel-agent
 
-2. Download a
-   [compatible](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
-   version of [Kibana](https://www.elastic.co/downloads/kibana) and extract it
-   to your Liferay Home folder.
+2.  Download a
+    [compatible](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
+    version of [Kibana](https://www.elastic.co/downloads/kibana) and extract it
+    to your Liferay Home folder.
 
-   Note: Your Liferay Home folder should now have the usual @product@ folders, as
-   well as the `elasticsearch-[version]` (Elasticsearch Home) and
-   `kibana-[version]` (Kibana Home) folders. A Liferay Home folder for a Tomcat
-   bundle would look like this:
+    Note: Your Liferay Home folder should now have the usual @product@ folders, 
+    as well as the `elasticsearch-[version]` (Elasticsearch Home) and
+    `kibana-[version]` (Kibana Home) folders. A Liferay Home folder for a Tomcat
+    bundle would look like this:
 
         Liferay_Home/
             data/
@@ -78,99 +78,101 @@ instructions on [installing and configuring Elasticsearch for
             patching-tool
             tomcat-[version]
 
-3. Install Marvel on Kibana by navigating to Kibana Home and entering
+3.  Install Marvel on Kibana by navigating to Kibana Home and entering
 
         ./bin/kibana plugin --install elasticsearch/marvel/2.2.1
 
-   +$$$
+    +$$$
 
-   **Note:** The latest version of Marvel does not work with Kibana 4.4.2, so
-   make sure you install Marvel 2.2.1 if you're using Kibana 4.4.2. See the
-   [compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
-   to find compatible versions of Marvel and Kibana.
+    **Note:** The latest version of Marvel does not work with Kibana 4.4.2, so
+    make sure you install Marvel 2.2.1 if you're using Kibana 4.4.2. See the
+    [compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
+    to find compatible versions of Marvel and Kibana.
 
-   $$$
+    $$$
 
 The next step is to configure Kibana to connect with Elasticsearch. The
 instructions vary depending on whether you are using
 [Shield](/discover/deployment/-/knowledge_base/7-0/shield) or not.
 
-## Configuring Kibana for Elasticsearch <a id=configuring-kibana-for-elasticsearch></a>
+## Configuring Kibana for Elasticsearch [](id=configuring-kibana-for-elasticsearch)
 
-Now you need to configure Kibana. Since you'll use @product@'s Marvel Portlet as a
-proxy servlet to view the Kibana UI and Marvel, you'll start configuring that
+Now you need to configure Kibana. Since you'll use @product@'s Marvel Portlet as
+a proxy servlet to view the Kibana UI and Marvel, you'll start configuring that
 here.
 
 If you're using Shield, follow all the steps below. If not, skip the steps that
 begin with *[Shield]*.
 
-1. *[Shield]* Set the user name and password in `Kibana_Home/config/kibana.yml`,
-   by entering these lines:
+1.  *[Shield]* Set the user name and password in 
+    `Kibana_Home/config/kibana.yml`,
+    by entering these lines:
 
         elasticsearch.username: liferay
         elasticsearch.password: liferay
         elasticsearch.url: "https://<your_elasticsearch_host>:9200"
 
-2. *[Shield]* Also in `kibana.yml`, you need to add Elasticsearch's Certificate
-   Authority (CA) property. If you're using a self-signed certificate as
-   demonstrated in the Shield article, export the certificate from the JKS file
-   and use it as the CA.
+2.  *[Shield]* Also in `kibana.yml`, you need to add Elasticsearch's Certificate
+    Authority (CA) property. If you're using a self-signed certificate as
+    demonstrated in the Shield article, export the certificate from the JKS file
+    and use it as the CA.
 
-   From Elasticsearch Home, execute 
+    From Elasticsearch Home, execute 
 
         keytool -v -importkeystore -srckeystore es-ssl.keystore.jks -srcalias
         es-ssl -destkeystore es-ssl.PKCS12.p12 -deststoretype PKCS12
 
-   This command converts the JKS file to a PKCS12 file, which is more portable.
+    This command converts the JKS file to a PKCS12 file, which is more portable.
 
-   Note: You'll be prompted to enter a password for the new PKCS12 file. Enter
-   *liferay*. You'll also be prompted for the password of the JKS file, which
-   is also *liferay* if you followed the instructions from the Shield article.
+    Note: You'll be prompted to enter a password for the new PKCS12 file. Enter
+    *liferay*. You'll also be prompted for the password of the JKS file, which
+    is also *liferay* if you followed the instructions from the Shield article.
 
-3. *[Shield]* From Elasticsearch Home enter 
+3.  *[Shield]* From Elasticsearch Home enter 
 
         openssl pkcs12 -in es-ssl.PKCS12.p12 -out es-ssl.CA.pem
 
-    to export the certificate from the PKCS12 file. When prompted for the
-    password to access the PKCS12 file, enter *liferay*. Likewise, enter
-    *liferay* when prompted to create a password for the PEM file.
+     to export the certificate from the PKCS12 file. When prompted for the
+     password to access the PKCS12 file, enter *liferay*. Likewise, enter
+     *liferay* when prompted to create a password for the PEM file.
 
-4. *[Shield]* Move the PEM file created above to `Kibana_Home/config`.
+4.  *[Shield]* Move the PEM file created above to `Kibana_Home/config`.
 
-5. *[Shield]* Add the following line to `Kibana_Home/config/kibana.yml`:
+5.  *[Shield]* Add the following line to `Kibana_Home/config/kibana.yml`:
 
         elasticsearch.ssl.ca: config/es-ssl.CA.pem
 
-6. Configure Kibana to be accessed through the @product@ Marvel Portlet.
+6.  Configure Kibana to be accessed through the @product@ Marvel Portlet.
 
         server.basePath: "/o/portal-search-elasticsearch-marvel-web/marvel-proxy"
 
-    Note: the `/o` prefix is a default. Change it if you're running @product@ under
-    a different [web context path](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually#making-liferay-coexist-with-other-java-ee-applications).
+    Note: the `/o` prefix is a default. Change it if you're running @product@
+    under a different
+    [web context path](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually#making-liferay-coexist-with-other-java-ee-applications).
 
-7. Start Elasticsearch by running 
+7.  Start Elasticsearch by running 
 
         ./bin/elasticsearch
 
-   from Elasticsearch Home.
+    from Elasticsearch Home.
 
-8. Start Kibana by running 
+8.  Start Kibana by running 
 
         ./bin/kibana
 
-   from Kibana Home.
+    from Kibana Home.
 
-9. Start @product@.
+9.  Start @product@.
 
 ## Configuring SSL on Kibana [](id=configuring-ssl-on-kibana)
 
 To run Kibana with SSL encryption you'll need to do these things:
 
--  Place a proxy server in front of it.
--  Tell the proxy's firewall to allow port 5601 (Kibana's port).
--  If using a self signed certificate in the proxy server, `ProxyServlet` won't
-   be able to trust the connection, so add the certificate to the JVM
-   truststore.
+-   Place a proxy server in front of it.
+-   Tell the proxy's firewall to allow port 5601 (Kibana's port).
+-   If using a self signed certificate in the proxy server, `ProxyServlet` won't
+    be able to trust the connection, so add the certificate to the JVM
+    truststore.
 
 +$$$
 
@@ -180,7 +182,7 @@ Shield. If you try to secure Kibana with Shield, Marvel will not work inside
 
 $$$
 
-## Configuring @product@'s Marvel Adapter []<a id=configuring-liferays-marvel-adapter></a>
+## Configuring @product@'s Marvel Adapter [](id=configuring-liferays-marvel-adapter)
 
 Now that you have Marvel and Kibana configured, you can configure the Marvel
 adapter in @product@.
@@ -188,8 +190,7 @@ adapter in @product@.
 There's a *Marvel* entry in the System Settings application (*Control Panel*
 &rarr; *Configuration* &rarr; *System Settings*) under the Foundation heading. 
 
-![Figure 1: The Marvel adapter in @product@ can be configured directly from System
-Settings. This is most useful during testing and development.](../../../images-dxp/marvel-system-settings.png)
+![Figure 1: The Marvel adapter in @product@ can be configured directly from System Settings. This is most useful during testing and development.](../../images-dxp/marvel-system-settings.png)
 
 There are several configuration options for the Marvel adapter plugin. While you
 can make edits directly in System Settings, in production environments you'll
@@ -218,35 +219,31 @@ authenticating to Shield. This setting is ignored if Shield isn't installed.
 : Set the String password used for Shield authentication. This setting is
 ignored if Shield isn't configured.
 
-## Accessing Marvel's UI in @product@ []<a id=accessing-marvels-ui-in-liferay></a>
+## Accessing Marvel's UI in @product@ [](id=accessing-marvels-ui-in-liferay)
 
 As mentioned earlier, Liferay provides a Marvel Portlet that displays an
 embedded, proxied version of the Marvel UI from Kibana.
 
-![Figure 2: You can monitor your Elasticsearch cluster from @product@ using the
-Marvel Portlet.](../../../images-dxp/marvel-portlet.png)
+![Figure 2: You can monitor your Elasticsearch cluster from @product@ using the Marvel Portlet.](../../images-dxp/marvel-portlet.png)
 
 If you've followed the steps outlined above, and you have Elasticsearch, Marvel,
-Kibana, and @product@ configured correctly, you can just add the Marvel Portlet to
-a page in @product@:
+Kibana, and @product@ configured correctly, you can just add the Marvel Portlet
+to a page in @product@:
 
-1. Click the page's *Add* button (![Add](../../images-dxp/icon-add.png)) and
-   select *Applications*.
+1.  Click the page's *Add* button (![Add](../../images-dxp/icon-add.png)) and
+    select *Applications*.
 
-2. Enter *Marvel* in the search box, and click *Add* next to the Marvel entry in
-   the Tools category. First you'll see a message about Kibana loading, then the
-   Marvel UI appears.
+2.  Enter *Marvel* in the search box, and click *Add* next to the Marvel entry 
+    in the Tools category. First you'll see a message about Kibana loading, then
+    the Marvel UI appears.
 
-   ![Figure 3: When you first add the Marvel Portlet to the page, Kibana fetches
-   the Marvel content in the Marvel Portlet, and then your Marvel UI 
-   appears](../../../images-dxp/marvel-kibana-loading.png)
+    ![Figure 3: When you first add the Marvel Portlet to the page, Kibana fetches the Marvel content in the Marvel Portlet, and then your Marvel UI appears](../../images-dxp/marvel-kibana-loading.png)
 
-3. You're ready to start exploring Marvel's monitoring interface. For an
-   overview of your cluster, click on its name in the *Your Clusters* table (if
-   you left it at the default, it's `LiferayElasticsearchcluster`).
+3.  You're ready to start exploring Marvel's monitoring interface. For an
+    overview of your cluster, click on its name in the *Your Clusters* table (if
+    you left it at the default, it's `LiferayElasticsearchcluster`).
 
-   ![Figure 4: You can monitor the health of your cluster using the Marvel
-   Portlet.](../../../images-dxp/marvel-portlet-overview.png)
+   ![Figure 4: You can monitor the health of your cluster using the Marvel Portlet.](../../images-dxp/marvel-portlet-overview.png)
 
 For more information on what Marvel offers you, refer to [Elasticsearch's Marvel guide](https://www.elastic.co/guide/en/marvel/2.2/index.html).
 
