@@ -300,9 +300,9 @@ your nodes or if your nodes are in different geographical locations.
     your existing @product@ installation. In the dependencies' `marketplace`
     folder is a @product@ package called `Liferay Foundation.lpkg` Inside this
     .lpkg (which is just a compressed zip file) is a .jar file called
-    `com.liferay.portal.cluster.multiple-[version].jar`. Inside this .jar is a
-    file called `tcp.xml`. Extract this file to a location accessible to
-    @product@. You'll use this file on all your nodes. 
+    `com.liferay.portal.cluster.multiple-[version].jar`. Locate inside this .jar is
+    a file called `tcp.xml` found in the `lib` folder. Extract this file to a
+    location accessible to @product@. You'll use this file on all your nodes.
 
 4.  If you're vertically clustering (i.e., you have multiple @product@ servers
     running on the same physical or virtual system), you must change the port on
