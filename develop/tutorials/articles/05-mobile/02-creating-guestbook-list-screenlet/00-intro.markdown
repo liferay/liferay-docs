@@ -36,12 +36,12 @@ As background material, the following materials are helpful:
   Explains the general steps for creating a list Screenlet. This section of the 
   Learning Path follows this tutorial. 
 
-Note that these tutorials explain basic Screenlet and list Screenlet concepts 
-that this Learning Path doesn't cover in depth. Although it's possible to 
-complete this Learning Path without reading these tutorials, they give you an
-understanding of how Screenlets work, and you'll be better able to apply the
-Learning Path material to your own Screenlets. 
+Note that these tutorials explain Screenlet and list Screenlet concepts that 
+this Learning Path doesn't cover in depth. Although it's possible to complete 
+this Learning Path without reading these tutorials, they explain how Screenlets 
+work in more detail. By reading them you'll be better able to apply the Learning 
+Path material to your own Screenlets. 
 
-If you get confused or stuck while creating the Screenlet, refer to the finished 
-app that contains the Screenlet code 
+If you get confused or stuck while creating Guestbook List Screenlet, refer to 
+the finished app that contains the Screenlet code 
 [here in GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/04-mobile/screenlets-app/LiferayGuestbook). 
