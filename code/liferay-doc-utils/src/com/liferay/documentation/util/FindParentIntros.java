@@ -30,8 +30,6 @@ public class FindParentIntros {
 
 		while (containsIntro) {
 
-			parentDir = parentDir.getParentFile();
-
 			File[] parentFiles = parentDir.listFiles();
 
 			containsIntro = false;
@@ -45,6 +43,8 @@ public class FindParentIntros {
 					containsIntro = true;
 				}
 			}
+
+			parentDir = parentDir.getParentFile();
 		}
 
 		for (File introFile : fileList) {
