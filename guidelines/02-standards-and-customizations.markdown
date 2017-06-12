@@ -40,59 +40,83 @@ repo. For example, `/develop/tutorials`, `/discover/portal`, etc.
 <!-- compare-with-older-branch/dist-diffs process is broken. Need to fix before
 documenting. -Cody -->
 
-- `article-to-html`: Converts a Markdown article to HTML. This target requires a
-  `-Darticle` argument, which should point to your Markdown article (e.g.,
-  `ant article-to-html -Darticle=articles/100-tooling/05-maven/01-installing-liferay-maven-artifacts.markdown`).
-  The generated HTML is located in the document directory's `/build` folder.
+-   `add-article-to-temp`: Copies the specified article (e.g., 
+    `-Darticle=articles/path/article_name.markdown`) and its supporting
+    `intro.markdown` articles and images, to a folder called `temp` and prepares
+    them for
+    [importing to a Knowledge Base](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#importing-articles-from-markdown-source-files).
+    Optionally use this target
+    to add as many articles as you like  to the `temp` folder for putting in the
+    distribution.
 
-- `check-headers`: Checks all Markdown headers to ensure they properly begin
+    Here's an example command sequence that prepares a ZIP file of two articles and their supporting files:
+
+    1.  `ant clean-temp` &rarr; Deletes the `temp` folder.
+    2.  `ant add-article-to-temp -Darticle=articles\100-tooling\02-liferay-ide\02-creating-a-liferay-workspace-with-liferay-ide.markdown` 
+    3.  `ant add-article-to-temp -Darticle=articles\02-from-liferay-6-to-liferay-7\07-upgrading-plugins-to-liferay-7\04-upgrading-portlet-plugins\02-upgrading-a-servlet-based-portlet.markdown`
+    4.  `ant dist-temp` &rarr; Zips up  `temp` folder's articles and images into a 
+        ZIP file in the `dist` folder, for importing to a Knowledge Base portlet.
+        <br><br>
+
+-   `article-to-html`: Converts a Markdown article to HTML. This target requires
+    a `-Darticle` argument, which should point to your Markdown article (e.g.,
+    `ant article-to-html
+    -Darticle=articles/100-tooling/05-maven/01-installing-liferay-maven-artifacts.markdown`).
+    The generated HTML is located in the document directory's `/build` folder.
+
+-   `check-headers`: Checks all Markdown headers to ensure they properly begin
   with `#` characters.
 
-- `check`: Runs several targets at once to make sure Markdown articles follow
-  LDN standards to ensure a successful build and publishing process. This target
-  should be executed before every pull request. This target includes the
-  `check-headers`, `check-images`, `check-intros`, `number-headers`, and
-  `number-images` tasks.
+-   `check`: Runs several targets at once to make sure Markdown articles follow
+    LDN standards to ensure a successful build and publishing process. This
+    target should be executed before every pull request. This target includes
+    the `check-headers`, `check-images`, `check-intros`, `number-headers`, and
+    `number-images` tasks.
 
-- `check-article-images`: Checks a specific Markdown article's image paths.
-  If an image path (e.g., `../../images/test-pic.png`) does not point to an
-  existing image in the `/images` folder, an error is thrown. This target
-  requires a `-Darticle` argument, which should point to your Markdown article
-  (e.g., `ant check-article-images -Darticle=articles/100-tooling/05-maven/01-installing-liferay-maven-artifacts.markdown`).
+-   `check-article-images`: Checks a specific Markdown article's image paths.
+    If an image path (e.g., `../../images/test-pic.png`) does not point to an
+    existing image in the `/images` folder, an error is thrown. This target
+    requires a `-Darticle` argument, which should point to your Markdown article
+    (e.g., `ant check-article-images
+    -Darticle=articles/100-tooling/05-maven/01-installing-liferay-maven-artifacts.markdown`).
 
-- `check-images`: Checks all Markdown articles' image paths in the folder. If an
-  image path (e.g., `../../images/test-pic.png`) does not point to an existing
-  image in the `/images` folder, an error is thrown.
+-   `check-images`: Checks all Markdown articles' image paths in the folder. If
+    an image path (e.g., `../../images/test-pic.png`) does not point to an
+    existing image in the `/images` folder, an error is thrown.
 
-- `check-intros`: Checks all directories for an intro file (e.g.,
-  `00-intro.markdown`). If a folder does not have an intro article, an error is
-  thrown.
+-   `check-intros`: Checks all directories for an intro file (e.g.,
+    `00-intro.markdown`). If a folder does not have an intro article, an error 
+    is thrown.
 
-- `clean-images`: (no DXP target) Deletes images from the `images` and
-  `images-dxp` folders that are not used in their corresponding Markdown
-  articles.
+-   `clean-images`: (no DXP target) Deletes images from the `images` and
+    `images-dxp` folders that are not used in their corresponding Markdown
+    articles.
 
-- `check-links`: (no DXP target) Checks LDN links (CE articles only) to ensure
-  they're pointing at an existing LDN article. A list of invalid links are
-  listed if any are found.
+-   `check-links`: (no DXP target) Checks LDN links (CE articles only) to ensure
+    they're pointing at an existing LDN article. A list of invalid links are
+    listed if any are found.
 
-- `dist-ce`: Packages all necessary CE resources into a ZIP file deployable to
-  LDN.
+-   `dist-article-ce`: Creates a ZIP file for importing the specified article
+    (``-Darticle=...``), its images, and supporting structure to a Knowledge
+    Base.
 
-- `dist-dxp`: Packages all necessary DXP resources into a ZIP file deployable to
-  Liferay's Customer Portal.
+-   `dist-ce`: Packages all necessary CE resources into a ZIP file deployable to
+    LDN.
 
-- `number-headers`: Numbers all Markdown article headers with a unique header
-  ID. If there are any duplicate IDs, an error is thrown. See the
-  [Assigning Header IDs](#assigning-header-ids) and
-  [Markdown Header ID FAQ](#markdown-header-id-faq) sections for more
-  information.
+-   `dist-dxp`: Packages all necessary DXP resources into a ZIP file deployable 
+    to Liferay's Customer Portal.
 
-- `number-images`: Numbers all Markdown articles' images in the folder. Image
-  numbers (e.g., *\!\[Figure x:* ) are replaced with the correct image numbering if
-  they are incorrect. See the
-  [Markdown Image Numbers Tool](#markdown-image-numbers-tool) section for more
-  information.
+-   `number-headers`: Numbers all Markdown article headers with a unique header
+    ID. If there are any duplicate IDs, an error is thrown. See the
+    [Assigning Header IDs](#assigning-header-ids) and
+    [Markdown Header ID FAQ](#markdown-header-id-faq) sections for more
+    information.
+
+-   `number-images`: Numbers all Markdown articles' images in the folder. Image
+    numbers (e.g., *\!\[Figure x:* ) are replaced with the correct image
+    numbering if they are incorrect. See the
+    [Markdown Image Numbers Tool](#markdown-image-numbers-tool) section for more
+    information.
 
 ## Tokens
 

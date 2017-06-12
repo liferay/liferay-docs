@@ -129,7 +129,7 @@ for overriding a module's language keys is different from [the process of overri
 
     add-blog-entry=Add Blog Entry
 
-![Figure 1: You can override the language keys of a module deployed to Liferay's OSGi runtime.](../../images/standard-add-blogs-entry.png)
+![Figure 3: You can override the language keys of a module deployed to Liferay's OSGi runtime.](../../images/standard-add-blogs-entry.png)
 
 You can find the language keys for one of Liferay's applications in the source
 code or in the JAR file that's part of your Liferay bundle installation.
@@ -258,7 +258,7 @@ language keys.
 
     add-blog-entry=Add a blog entry.
 
-![Figure 2: The language keys in your resource bundle loader module will replace those of the target module.](../../images/localized-add-blog-entry.png)
+![Figure 4: The language keys in your resource bundle loader module will replace those of the target module.](../../images/localized-add-blog-entry.png)
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's

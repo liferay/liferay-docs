@@ -121,6 +121,9 @@ system must support concurrent requests and file locking. Otherwise, you may
 experience data corruption issues if two users attempt to write to the same file
 at the same time from two different nodes. 
 
+Follow the Deployment Guide instructions [here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#using-the-advanced-file-system-store) 
+to use the Advanced File System Store.
+
 You may decide the advanced file system store for whatever reason doesn't serve
 your needs. If this is the case, you can of course mount other file systems into
 the documents and media library. In addition to this, you can also redefine the

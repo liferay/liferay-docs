@@ -8,6 +8,10 @@ prompt, which can streamline your workflow. To learn more about Liferay
 Workspaces, visit its dedicated
 [tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
+<div class="video-link">
+<img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
+</div>
+
 Before creating your Liferay Workspace, you should understand the available
 @ide@ perspectives specifically designed for @product@ development. You'll
 notice in the Perspectives view the *Liferay Workspace* and *Liferay*
@@ -65,8 +69,8 @@ a Liferay Developer Studio instance.
 $$$
 
 Awesome! You've successfully created a Liferay Workspace in Liferay @ide@! If
-you're using Liferay Developer Studio, you can also  to create a workspace
-during initial start-up.
+you're using Liferay Developer Studio, you can also create a workspace during
+initial start-up.
 
 ## Liferay Workspace Settings in @ide@ [](id=liferay-workspace-settings-in-ide)
 
@@ -104,3 +108,11 @@ browse for your workspace project. Once you've selected you workspace, click
 Congratulations! You've learned how to create and configure a Liferay Workspace
 using Liferay @ide@. Now that your workspace is created, you can begin creating
 Liferay plugins.
+
+<div class="video-tag" data-name="Getting Started with Liferay IDE">
+  <video width="100%" height="100%" controls>
+    <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.mp4" type="video/mp4">
+    <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+</div>

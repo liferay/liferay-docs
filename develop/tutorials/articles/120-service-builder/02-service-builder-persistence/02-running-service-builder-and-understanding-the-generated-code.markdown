@@ -80,6 +80,15 @@ command from the module project's root folder:
 
     mvn service-builder:build
 
+**Important:** The `mvn service-builder:build` command only works if you're
+using the `com.liferay.portal.tools.service.builder` plugin version 1.0.145+.
+Maven projects using an earlier version of the Service Builder plugin should
+update their POM accordingly. See the
+[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)
+and
+[Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
+tutorials for more information on using Maven to run Service Builder.
+
 When the service has been successfully generated, a `BUILD SUCCESSFUL` message
 appears in your terminal window. You should also see that a large number of
 files have been generated in your project. These files include a model layer,
