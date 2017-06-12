@@ -3,8 +3,9 @@
 +$$$
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
-absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
-Pack 8+.**
+absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 SP
+4+.**
+
 
 The following app servers are supported for Ext plugin development in
 @product@:
