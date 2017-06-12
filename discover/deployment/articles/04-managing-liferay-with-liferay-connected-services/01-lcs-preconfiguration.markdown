@@ -110,9 +110,10 @@ app:
 
     $$$
 
-2. Inside the LCS client app's WAR file, before it deploys. You can find the WAR 
-   file inside the app's LPKG file that downloads to your machine from 
-   Marketplace. The client's WAR file is `lcs-portlet-[version].war`. 
+2. Inside the LCS client app's WAR file, before deploying the app. You can find 
+   this WAR file inside the app's LPKG file that downloads to your machine from 
+   Liferay Marketplace. Expand the LPKG file, then locate and expand the 
+   client's WAR file: `lcs-portlet-[version].war`. 
 
    You must set the properties in the WAR file's `portlet-ext.properties` file. 
    Follow these steps to do so: 
@@ -145,9 +146,9 @@ app:
       if you don't need it. 
 
    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-      file. 
-
-   d. Deploy the LCS client WAR or redeploy it if it's already deployed. 
+      file, then repackage the LPKG file with the LCS client WAR. Make sure the 
+      repackaged LPKG file has the same name as the original LPKG file 
+      downloaded from Liferay Marketplace. 
 
 Next, you'll learn how to ensure that the LCS client can access LCS. 
 
