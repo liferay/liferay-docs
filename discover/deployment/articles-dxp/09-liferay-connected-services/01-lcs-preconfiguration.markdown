@@ -49,7 +49,8 @@ downloading a free app in a mobile app store adds the app to your account.
 
 $$$
 
-Use these steps to purchase and download the app: 
+Use these steps to purchase and download the app (if you've already 
+purchased the app, you can skip to step three to download it): 
 
 1. [Click here](https://web.liferay.com/marketplace/-/mp/application/71774947) 
    to go to the LCS client app in Liferay Marketplace. Sign in to Marketplace, 
@@ -65,7 +66,19 @@ Use these steps to purchase and download the app:
 
 3. On the receipt, click *See Purchased*. This takes you to the page where you 
    can download the LCS client app. To download the app, click the *App* button 
-   next to the version of the app you want to download.
+   next to the version of the app you want to download. 
+
+    +$$$
+
+    **Note:** If you need to download the LCS client app later, such as when 
+    [upgrading it](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#upgrading-the-lcs-client-app), 
+    select *Purchased Apps* from the User menu at the top-right of the screen. 
+    This menu is available anywhere in liferay.com once you're logged in; you 
+    don't have to be in Marketplace to access it. On the Purchased Apps screen, 
+    select the project you associated with the LCS client app and then select 
+    the app. This takes you to the same download page shown in the screenshot. 
+
+    $$$
 
     ![Figure 3: Click the *App* button next to the version of the app you want to download.](../../images-dxp/lcs-client-download-page.png)
 
