@@ -634,14 +634,8 @@ To download an environment's token, click the *Download Token* button. Once you
 download the token, follow these steps to use it to connect and activate a 
 @product@ instance with LCS: 
 
-1. Ensure that you've deployed the LCS client app, and have configured it 
-   properly if you connect from behind a proxy. For instructions on configuring 
-   the client app to connect through a proxy, 
-   [click here](/discover/deployment/-/knowledge_base/7-0/preconfiguring-the-lcs-client-to-connect-through-a-proxy). 
-   You can download the LCS client app 
-   [here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947). 
-   For instructions on using Marketplace to download and deploy apps, 
-   [click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
+1. Ensure that you've addressed 
+   [the LCS preconfiguration steps](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration). 
 
 2. Shut down your @product@ instance if it's running. 
 

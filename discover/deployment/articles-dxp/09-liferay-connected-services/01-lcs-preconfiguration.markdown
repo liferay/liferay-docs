@@ -6,7 +6,7 @@ however, there are a few things you must take care of. The sections in this
 guide walk you through these steps: 
 
 1. [Downloading the LCS Client App](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#downloading-the-lcs-client-app)
-2. [Preconfiguring the LCS Client to Connect Through a Proxy](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+2. [Preconfiguring LCS to Connect Through a Proxy](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
 3. [Ensuring Access to LCS](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#ensuring-access-to-lcs)
 4. [NTP Server Synchronization](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#ntp-server-synchronization)
 5. [Configuring the Patching Tool](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#configuring-the-patching-tool)
@@ -83,7 +83,7 @@ If your server doesn't connect through a proxy, you can skip this section.
 
 $$$
 
-## Preconfiguring the LCS Client to Connect Through a Proxy [](id=preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+## Preconfiguring LCS to Connect Through a Proxy [](id=preconfiguring-the-lcs-client-to-connect-through-a-proxy)
 
 If your server connects to the Internet through a proxy, you must set some 
 properties in either your server or the LCS client app **before** deploying the 
@@ -103,6 +103,14 @@ app:
 
     Note that the user, password, and https properties are only needed if your 
     proxy requires authentication. 
+
+    +$$$
+
+    **Note:** If you use JVM app server arguments as instructed in this step, 
+    then you don't need to preconfigure the LCS client app to connect through 
+    the same proxy. 
+
+    $$$
 
 2. Inside the LCS client app's WAR file, before deploying the app. You can find 
    this WAR file inside the app's LPKG file that downloads to your machine from 
@@ -272,6 +280,15 @@ preconfiguration steps you followed:
     method if you don't need to configure the LCS client app (e.g., to connect 
     through a proxy) before it deploys. 
 
+    +$$$
+
+    **Note:** If you choose this method and have a clustered environment, you 
+    must perform the upgrade separately on each node in your cluster. Therefore, 
+    you may prefer to upgrade manually as detailed in step two to ensure that 
+    all your nodes are running the exact same version of the LCS client app. 
+
+    $$$
+
     To perform the upgrade, first navigate to *Control Panel* &rarr; *Apps* 
     &rarr; *Purchased*. Apps needing an update are listed first. Click *Update* 
     next to the LCS client app. Note that you may need to restart your server 
@@ -280,6 +297,14 @@ preconfiguration steps you followed:
 2.  Manually, after downloading the LCS client app's LPKG file to your machine. 
     Use this method if you need to preconfigure the LCS client app to connect 
     through a proxy. 
+
+    +$$$
+
+    **Note:** If you used JVM app server arguments to configure your server to 
+    connect through a proxy, then you don't need to preconfigure the LCS client 
+    app to connect through the same proxy. 
+
+    $$$
 
     To update the LCS client app manually, shut down your @product@ server and 
     follow the previous sections in this guide for downloading, preconfiguring, 
