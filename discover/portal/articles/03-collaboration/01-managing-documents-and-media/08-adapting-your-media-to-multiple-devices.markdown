@@ -40,7 +40,7 @@ resolution image for the optimal viewing experience.
 Portal Administrators can manage Adaptive Media by opening the Control Panel and 
 selecting the *Adaptive Media* link under the *Configuration* heading.
 
-![image alt text](image_0.png)
+![Figure 1: Add a new image resolution under the Adaptive Media Configuration. ](../../../images/adaptive-media-configuration.png)
 
 Portal administrators need to specify the image resolutions to generate when a 
 new image is uploaded. 
@@ -82,7 +82,7 @@ clicking the radio button next to *Custom*, under the *Identifier* heading and
 entering a new ID. The identifier can be used by third party applications to 
 obtain the images for that particular resolution via the Adaptive Media APIs.
 
-![image alt text](image_1.png)
+![Figure 2: Specify an Identifier for an image resolution to make it available in the APIs.](../../../images/adaptive-media-new-img-resolution.png)
 
 You can also create a resolution for high density displays. If the administrator 
 selects this option, a new resolution for these devices will be created with the 
@@ -176,11 +176,11 @@ image for everyone, Adaptive Media includes several images
 (one per image resolution) targeting different device capabilities. You can see 
 the differences in the HTML of the content in the example below:
 
-Blog entry containing an image without Adaptive Media:
+HTML for a Blog entry containing an image without Adaptive Media:
 
     <img src="/documents/20140/0/photo.jpeg/1992-9143-85d2-f72ec1ff77a0 />
 
-Blog entry containing an image with Adaptive Media:
+HTML for a Blog entry containing an image with Adaptive Media:
 
     <picture>
 
@@ -239,5 +239,5 @@ reflect the changes in the image resolutions.
 
 # Using Adaptive Images in Blogs
 
-![image alt text](image_2.png)![image alt text](image_3.png)
+![Figure 3: You can use adaptive media images in Blog entries.](../../../images/adaptive-media-blog-entry.png)![Blog entries will specify the image resolutions in the source tag and deliver the resolution that is most appropriate.](../../../images/adaptive-media-blog-source.png)
 
