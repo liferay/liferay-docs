@@ -14,12 +14,12 @@ can find more information about LCS on its
 Before going any further, you should take note of a few key terms used 
 throughout this guide: 
 
-- *Project*: Represents a group of users belonging to a company or organization. 
-  For example, a project can consist of all the users from a project team or 
-  business unit, or it can include the entire company.
-- *Environment*: Represents a physical cluster of servers or a virtual or 
-  logical aggregation of servers.
-- *Server*: Describes a concrete @product@ instance. It can be a standalone 
+- **Project:** Represents a group of users belonging to a company or 
+  organization. For example, a project can consist of all the users from a 
+  project team or business unit, or it can include the entire company. 
+- **Environment**: Represents a physical cluster of servers or a virtual or 
+  logical aggregation of servers. 
+- **Server**: Describes a concrete @product@ instance. It can be a standalone 
   server or a cluster node. 
 
 As you go through this guide, you'll cover the following topics: 

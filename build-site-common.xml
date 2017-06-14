@@ -25,6 +25,7 @@
 	<property name="dist.dir" value="./dist"/>
 	<property name="metadata.filename" value=".METADATA"/>
 	<property name="temp.dir" value="temp"/>
+	<property name="temp.dir2" value="prepare-temp"/>
 
 	<!-- taskdefs -->
 
@@ -94,6 +95,9 @@
 
 
 	<!-- targets -->
+
+	<target name="add-article-to-temp" depends="process-article-to-temp, check-images-dist" description="Processes the article (-Darticle=...) and its parent article structure, adding the target article and all related parent articles and images to temp/">
+	</target>
 
 	<target name="article-to-html" depends="prepare, check-article-images" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
@@ -190,7 +194,8 @@
 	</target>
 
 	<target name="check-images-dist" description="Verifies all images referenced in a project's Markdown articles.">
-		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<mkdir dir="${temp.dir}/images"/>
+		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist" resolveimages="true">
 		</checkimgssite>
 	</target>
 
@@ -242,6 +247,10 @@
 			</java>
 	</target>
 
+    <target name="clean-temp">
+        <delete dir="${temp.dir}"/>
+    </target>
+
 	<target name="compare-portal-source" depends="prepare" description="Generates reports comparing a Liferay 6 source directory (-DoldDir) to a Liferay 7+ source directory (-DnewDir).">
 		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
 		<property name="removedClassesFile" value="${build.dir}/removed-classes.html"/>
@@ -281,7 +290,10 @@
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
 	</target>
 
-	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers" description="Zips up the folder's CE articles and images for importing.">
+	<target name="dist-article-ce" depends="clean-temp, add-article-to-temp, dist-temp" description="Creates a ZIP file for importing the specified article (-Darticle=...), its images, and supporting structure to a Knowledge Base.">
+	</target>
+
+	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers" description="Processes the CE articles and images and zips them up for importing.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -290,8 +302,8 @@
 
 		<delete dir="${temp.dir}"/>
 	</target>
-
-	<target name="dist-ce-temp" description="Zips up the folder's CE articles and images for importing.">
+	
+	<target name="dist-ce-temp" description="Processes the article tokens and copies the CE articles and images to temp/ for zipping up.">
 		<property file="${project.dir}/release-site.properties" />
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
@@ -315,10 +327,9 @@
 				<include name="images/**"/>
 			</fileset>
 		</copy>
-	
 	</target>
 
-	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp" description="Zips up the folder's CE and DXP articles and images for importing.">
+	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -372,6 +383,15 @@
         <!-- Until the Markdown converter no longer requires intro files that need to be added manually to the diffs.zip, include ALL images in the ZIP. -->
 		<zip destfile="${dist.dir}/diffs.zip" update="true">
 			<fileset dir="./" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+	</target>
+
+	<target name="dist-temp"  depends="prepare-dist, number-headers" description="Prepares the temp files and zips them up for importing.">
+		<property file="${project.dir}/release-site.properties" />
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="${temp.dir}" includes="articles/" />
+			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
 		</zip>
 	</target>
@@ -465,6 +485,36 @@
 		>
 			<arg value="${doc.dir}"/>
 		</java>
+	</target>
+
+	<target name="process-article-to-temp"  description="Generates the target article's parent structure and then processes the articles' tokens. The resulting articles are copied (no images) to temp/.">
+		<property file="${project.dir}/release-site.properties" />
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<mkdir dir="${temp.dir2}"/>
+		<java
+			classname="com.liferay.documentation.util.FindParentIntros"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${article}"/>
+			<arg value="${doc.dir}"/>
+			<arg value="${temp.dir2}"/>
+		</java>
+		<copy todir="${temp.dir}">
+			<fileset dir="${temp.dir2}"/>
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
+					<param type="token" name="${product.token}" value="${product.name}"/>
+					<param type="token" name="${product.token.app.reference}" value="${product.app.reference}"/>
+					<param type="token" name="${product.token.ide}" value="${product.ide.name}"/>
+					<param type="token" name="${product.token.platform.reference}" value="${product.platform.reference}"/>
+					<param type="token" name="${product.token.version}" value="${product.name.version}"/>
+				</filterreader>
+			</filterchain>
+		</copy>
+		<delete dir="${temp.dir2}"/>
 	</target>
 
 	<target name="report-moved-portal-service-classes" depends="prepare" description="Compares two portal source trees to generate an HTML report of classes moved from the portal-service folder.">

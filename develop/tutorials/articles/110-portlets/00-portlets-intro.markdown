@@ -65,18 +65,19 @@ flexible than servlets. Each portlet phase executes different operations:
   AJAX requests. 
 
 Compared to servlets, portlets also have some other key differences. Since
-portlets only render a portion of a page, tags like `<html>`, `<head>`, and 
-`<body>` aren't allowed. And because you don't know the portlet's page ahead of 
-time, you can't create portlet URLs directly. Instead, the portlet API gives you 
-methods to create portlet URLs programmatically. Also, because portlets don't 
-have direct access to the `ServletRequest`, they can't read query parameters 
-directly from a URL. Portlets instead access a `PortletRequest` object. The 
-portlet specification only provides a mechanism for a portlet to read its own 
-URL parameters or those declared as public render parameters. @product@ does, 
-however, provide utility methods that can access the `ServletRequest` and query 
-parameters. Portlets also have a *portlet filter* available for each phase in 
-the portlet lifecycle. Portlet filters are similar to servlet filters in that 
-they allow request and response modification on the fly. 
+portlets only render a portion of a page, tags like `<html>`, `<head>`, and
+`<body>` aren't allowed. And because you don't know the portlet's page ahead of
+time, you can't create portlet URLs directly. Instead, the portlet API gives you
+methods to create portlet URLs programmatically. Also, because portlets don't
+have direct access to the `javax.servlet.ServletRequest`, they can't read query
+parameters  directly from a URL. Portlets instead access a
+`javax.portlet.PortletRequest` object. The  portlet specification only provides
+a mechanism for a portlet to read its own  URL parameters or those declared as
+public render parameters. @product@ does,  however, provide utility methods that
+can access the `ServletRequest` and query  parameters. Portlets also have a
+*portlet filter* available for each phase in  the portlet lifecycle. Portlet
+filters are similar to servlet filters in that  they allow request and response
+modification on the fly. 
 
 Portlets also differ from servlets by having distinct modes and window states.
 Modes distinguish the portlet's current function: 

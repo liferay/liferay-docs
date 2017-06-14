@@ -175,7 +175,7 @@ Open `conf/server.xml` and make sure the `Connector` tag includes setting the
                    URIEncoding="UTF-8" />
 
 
-4. If you're installing @product@ and tc Server on Windows, open
+3. If you're installing @product@ and tc Server on Windows, open
 `conf/wrapper.conf` and replace
 
         wrapper.java.additional.8=-Xmx512M
@@ -193,6 +193,19 @@ Open `conf/server.xml` and make sure the `Connector` tag includes setting the
         wrapper.java.additional.9="-Xss512K"
         wrapper.java.additional.10="-XX:MaxMetaspaceSize=256M"
         wrapper.java.additional.11="-Dfile.encoding=UTF-8"
+
+
+4. Last, open `conf/web.xml` and add the following after `<load-on-startup>3</load-on-startup>`    
+
+
+        <init-param>
+            <param-name>compilerSourceVM</param-name>
+            <param-value>1.8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>compilerTargetVM</param-name>
+            <param-value>1.8</param-value>
+        </init-param> 
 
 
 ## Database Configuration [](id=database-configuration)

@@ -49,8 +49,8 @@ can have:
 
 That's it for now. You are ready to get started with some code. If you already
 had a portlet or service that was configurable using the traditional mechanisms
-of Liferay Portal 6.2 and before, you might also want to read the
-[How to change your portlets and services to use the new Configuration API (not yet written)]() (not yet written) tutorial.
+of Liferay Portal 6.2 and before, refer to the
+[Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-0/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
 
 ## Making Your Application Configurable [](id=making-your-application-configurable)
 
@@ -143,7 +143,7 @@ Here's a simple example:
         @Activate
         @Modified
         protected void activate(Map<String, Object> properties) {
-            _configuration = Configurable.createConfigurable(
+            _configuration = ConfigurableUtil.createConfigurable(
             ExampleConfiguration.class, properties);
         }
 
@@ -159,16 +159,23 @@ Here are the most relevant aspects of this example:
     method is invoked when the application starts (due to the `@Activate`
     annotation) and whenever the configuration is modified (due to the
     `@Modified` annotation).
-3.  The `activate()` method uses the method `Configurable.createConfigurable()`
+3.  The `activate()` method uses the method `ConfigurableUtil.createConfigurable()`
     to convert a map of properties with the configuration to our typed class,
     which is easier to handle.
 4.  The configuration is stored in a `volatile` field. Don't forget to make it
     `volatile` or you'll run into weird problems.
 
-Note: The bnd library also provides a class called `Configurable` with a
-`createConfigurable()` method. You can use that instead of Liferay's
-`ConfigurableUtil` without any problems. Liferay created the `ConfigurableUtil`
-class to improve the performance of bnd's implementation.
++$$$
+
+**Note:** The bnd library also provides a class called
+`aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
+method. You can use that instead of Liferay's
+`com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil` without
+any problems. Liferay's developers created the `ConfigurableUtil` class to
+improve the performance of bnd's implementation, and it's used in internal code.
+Feel free to use whichever method you prefer. 
+
+$$$
 
 That's it. As you can see with very few lines of code, you have a configurable
 application that dynamically changes its configuration, has an auto-generated
@@ -210,7 +217,7 @@ $$$
 
     import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
-    import aQute.bnd.annotation.metatype.Configurable;
+    import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
 
     @Component(
         configurationPid = "com.liferay.docs.exampleconfig.ExampleConfiguration",
@@ -245,7 +252,7 @@ $$$
         @Activate
         @Modified
         protected void activate(Map<String, Object> properties) {
-            _configuration = Configurable.createConfigurable(
+            _configuration = ConfigurableUtil.createConfigurable(
             ExampleConfiguration.class, properties);
         }
 
@@ -356,20 +363,11 @@ The fully qualified class name of the `@ExtendedObjectClassDefinition` class is
 Note: Currently, the infrastructure used by System Settings relies on the
 `configurationPid` being the same as the class name of the interface. If they
 don't match, it will not be able to provide any information provided through
-`ExtendedObjectClassConfiguration`. This annotation is distributed through a
-module called `portal-configuration-metatype` so you must 
-[include a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
-on it in order to use it. 
+`ExtendedObjectClassConfiguration`.
 
-Note: At the time of writing this, no public JAR of this library is available.
-In order to declare this dependency, you must create and publish your own JAR
-or refer to the project directly:
-
-    dependencies {
-        compile project(":portal-configuration:portal-configuration-metatype")
-    }
-
-By the time 7.0 is released, a public JAR will be available.
+The `@ExtendedObjectClassDefinition` annotation is distributed through the
+`com.liferay.portal.configuration.metatype` module, which you can 
+[configure as a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
 ## Supporting Different Configurations per Virtual Instance, Site, or Portlet Instance [](id=supporting-different-configurations-per-scope)
 

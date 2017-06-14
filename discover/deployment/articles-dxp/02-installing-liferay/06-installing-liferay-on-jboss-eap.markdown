@@ -175,17 +175,20 @@ Make the following modifications to `standalone.xml`:
    step, add the following snippet above the `<connector ... />` element:
 
         <configuration>
-            <jsp-configuration development="true" />
+            <jsp-configuration source-vm="1.8" target-vm="1.8" development="true" />
         </configuration>
 
 Checkpoint:
 
 1. The `standalone.xml` has been modified with the following values: 
 
-   a. `deployment-timeout="360"` has been set. The value is in seconds. 
-   b. The JAAS security domain has been added. 
-   c. The property `enable-welcome-root="false"` has been set. 
-   d. The property `jsp-configuration development="true"` has been set in the `<configuration>` element.
+    a. `deployment-timeout="360"` has been set. The value is in seconds.    
+     b. The JAAS security domain has been added.    
+     c. The property `enable-welcome-root="false"` has been set.    
+     d. The property `jsp-configuration source-vm="1.8" target-vm="1.8" development="true"` has been set in the
+    `<configuration>` element. This is required because @product@ runs on Java
+    JDK 1.8 or else there will be a JasperException and the instance will fail
+    to start.
 
 Now it's time for some changes to your configuration and startup scripts.
  

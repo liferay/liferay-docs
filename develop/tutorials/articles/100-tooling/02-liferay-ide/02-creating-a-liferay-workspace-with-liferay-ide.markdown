@@ -4,22 +4,25 @@ In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
 @ide@, which runs on the
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) behind the
 scenes. Liferay @ide@ gives you a graphical interface instead of the command
-prompt, which can streamline your workflow. The instructions covered in this
-tutorial apply to both the commercial and open source versions of Liferay. To
-learn more about Liferay Workspaces, visit its dedicated [tutorial
-section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+prompt, which can streamline your workflow. To learn more about Liferay
+Workspaces, visit its dedicated
+[tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
-Before creating your Liferay Workspace, you should understand the available @ide@
-perspectives specifically designed for Liferay development. You'll notice in the
-Perspectives view the *Liferay Workspace* and *Liferay* perspectives. If you
-plan on using a Liferay Workspace for your @product@ development, you should
-select the *Liferay Workspace* perspective. This offers Gradle related
-development tools that are helpful when using a Liferay workspace. The *Liferay*
-perspective is geared towards developers who are using Ant-based development
-tools such as the Plugins SDK.
+<div class="video-link">
+<img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
+</div>
 
-To create a Liferay Workspace in @ide@, select *File* &rarr; *New* &rarr; *Liferay
-Workspace Project*.
+Before creating your Liferay Workspace, you should understand the available
+@ide@ perspectives specifically designed for @product@ development. You'll
+notice in the Perspectives view the *Liferay Workspace* and *Liferay*
+perspectives. If you plan on using a Liferay Workspace for your @product@
+development, you should select the *Liferay Workspace* perspective. This offers
+Gradle related development tools that are helpful when using a Liferay
+workspace. The *Liferay* perspective is geared towards developers who are using
+Ant-based development tools such as the Plugins SDK.
+
+To create a Liferay Workspace in @ide@, select *File* &rarr; *New* &rarr;
+*Liferay Workspace Project*.
 
 ![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../../images/selecting-liferay-workspace.png)
 
@@ -58,6 +61,19 @@ information on working sets, visit
 A dialog appears prompting you to open the Liferay Workspace perspective.
 Click *Yes*, and your perspective will switch to Liferay Workspace.
 
++$$$
+
+**Note:** You can also create a Liferay Workspace during the initial start-up of
+a Liferay Developer Studio instance. 
+
+$$$
+
+Awesome! You've successfully created a Liferay Workspace in Liferay @ide@! If
+you're using Liferay Developer Studio, you can also create a workspace during
+initial start-up.
+
+## Liferay Workspace Settings in @ide@ [](id=liferay-workspace-settings-in-ide)
+
 The Liferay Workspace perspective is intended for Gradle development for
 @product-ver@ modules. Since Liferay Workspaces are used for Gradle based
 development and the Liferay Plugins perspective is intended for the Plugins SDK
@@ -82,11 +98,21 @@ separately from the workspace.
 ![Figure 5: The Hierarchical project presentation mode is set, by default.](../../../images/workspace-presentation.png)
 
 If you've already created a Liferay Workspace and you'd like to import it into
-your existing @ide@, you can do so by navigating to *File* &rarr; *Import* &rarr;
-*Liferay* &rarr; *Liferay Workspace Project*. Then click *Next* and browse for
-your worspace project. Once you've selected you workspace, click *Finish*.
+your existing @ide@, you can do so by navigating to *File* &rarr; *Import*
+&rarr; *Liferay* &rarr; *Liferay Workspace Project*. Then click *Next* and
+browse for your workspace project. Once you've selected you workspace, click
+*Finish*.
 
 ![Figure 6: You can import an existing Liferay Workspace into your current @ide@ session.](../../../images/liferay-workspace-import.png)
 
-Congratulations! You've learned how to create a Liferay Workspace using Liferay
-@ide@. Now that your workspace is created, you can begin creating Liferay plugins.
+Congratulations! You've learned how to create and configure a Liferay Workspace
+using Liferay @ide@. Now that your workspace is created, you can begin creating
+Liferay plugins.
+
+<div class="video-tag" data-name="Getting Started with Liferay IDE">
+  <video width="100%" height="100%" controls>
+    <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.mp4" type="video/mp4">
+    <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+</div>

@@ -5,12 +5,12 @@ attributes--their column values. Add the column as a parameter for the finder
 in your `service.xml` file, run Service Builder, and it generates the finder
 method in your persistence layer and adds methods to your service layer that
 invoke the finder. If your queries are simple enough, you should consider using
-[Dynamic Query (not yet written)]() to access Liferay's database. But what if
-you'd like to do more complicated searches that incorporate attributes from
-multiple entities? You can always write your own custom SQL queries. You'll
-learn how in this tutorial.
+[Dynamic Query](/develop/tutorials/-/knowledge_base/7-0/dynamic-query) to access
+Liferay's database. But what if you'd like to do more complicated searches that
+incorporate attributes from multiple entities? You can always write your own
+custom SQL queries. You'll learn how in this tutorial.
 
-For example, consider a fictitous Guestbook application. Suppose you want to
+For example, consider a fictitious Guestbook application. Suppose you want to
 find a guestbook entry based on its name, message, and guestbook name. In the
 Guestbook application, the entry entity refers to its guestbook by the
 guestbook's ID, not by its name. That is, the entry entity table, `GB_Entry`,
@@ -40,11 +40,12 @@ accomplish these steps.
 ## Step 1: Specify Your Custom SQL [](id=step-1-specify-your-custom-sql)
 
 After you've tested your SQL, you must specify it in a particular file for
-Liferay to access it. Liferay's `CustomSQLUtil` class looks up custom SQL from
-a file called `default.xml` in your service module's `src/custom-sql/` folder.
-You must create the `custom-sql` folder and create the `default.xml` file in
-that `custom-sql` folder. The `default.xml` file must adhere to the following
-format:
+Liferay to access it. Liferay's
+[CustomSQLUtil](@app-ref@/foundation/latest/javadocs/com/liferay/portal/dao/orm/custom/sql/CustomSQLUtil.html)
+class looks up custom SQL from a file called `default.xml` in your service
+module's `src/custom-sql/` folder. You must create the `custom-sql` folder and
+create the `default.xml` file in that `custom-sql` folder. The `default.xml`
+file must adhere to the following format:
 
     <custom-sql>
         <sql id="[fully-qualified class name + method]">
@@ -54,8 +55,8 @@ format:
     </custom-sql>
 
 You can add a `custom-sql` element for every custom SQL query you'd like to
-include in your application, as long as each query has a unique ID. The
-convention we recommend using for the ID value is the fully-qualified class
+include in your application, as long as each query has a unique ID. The recommended
+convention to use for the ID value is the fully-qualified class
 name of the finder followed by a dot (`.`) character and the name of the finder
 method. More detail on the finder class and finder methods is provided in Step
 2.
@@ -99,14 +100,12 @@ you need to create the implementation.
 The first step is to create a `*FinderImpl` class in the service persistence
 package. For the Guestbook application, for example, you could create a
 `EntryFinderImpl` class in the
-`com.liferay.docs.guestbook.service.persistence.impl` package. Your classshould
+`com.liferay.docs.guestbook.service.persistence.impl` package. Your class should
 extend `BasePersistenceImpl<Entry>`.
 
-Run Service Builder to generate the `*Finder` interface and the `*Util` class
-for the finder. Service Builder generates the `*Finder` interface and the
-`*FinderUtil` utility class based on the `*FinderImpl` class. Modify your
-`*FinderImpl` class to have it implement the `*Finder` interface you just
-generated:
+Run Service Builder to generate the `*Finder` interface, which is based on
+the `*FinderImpl` class. Modify your `*FinderImpl` class to have it implement
+the `*Finder` interface you just generated:
 
     public class *FinderImpl extends BasePersistenceImpl<Event>
         implements EntryFinder {
@@ -158,21 +157,6 @@ how you could write the `EntryFinderImpl` class:
         EntryFinder.class.getName() +
             ".findByEntryNameEntryMessageGuestbookName";
 
-Remember to import the required classes. The following imports are required for
-`EntryFinderImpl`: 
-
-    import java.util.List;
-
-    import com.liferay.docs.guestbook.model.Event;
-    import com.liferay.docs.guestbook.model.impl.EventImpl;
-    import com.liferay.portal.kernel.dao.orm.QueryPos;
-    import com.liferay.portal.kernel.dao.orm.QueryUtil;
-    import com.liferay.portal.kernel.dao.orm.SQLQuery;
-    import com.liferay.portal.kernel.dao.orm.Session;
-    import com.liferay.portal.kernel.exception.SystemException;
-    import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
-    import com.liferay.util.dao.orm.CustomSQLUtil;
-
 The custom finder method opens a new Hibernate session and uses Liferay's
 `CustomSQLUtil.get(String id)` method to get the custom SQL to use for the
 database query. The `FIND_BY_ENTRYNAME_ENTRYMESSAGE_GUESTBOOKNAME` static field
@@ -186,41 +170,51 @@ Next, you'll call the finder method from your service.
 
 ## Step 3: Access Your Finder Method from Your Service [](id=step-3-access-your-finder-method-from-your-service)
 
-So far, you created a `*FinderImpl` class and generated a `*FinderUtil` utility
-class. However, your portlet class should not use the finder utility class
-directly; only a local or remote service implementation (i.e.,
-`*LocalServiceImpl` or `*ServiceImpl`) in your service module should invoke the
-`*FinderUtil` class. This encourages a proper separation of concerns: the
-portlet classes in your web model invoke the business logic of the services and
-the services, in turn, access the data model using the persistence layer's
-finder classes. So you'll add a method in the `*LocalServiceImpl` class that
-invokes the finder method implementation via the `*FinderUtil` class. Then
-you'll provide the portlet and JSPs in your web module with access to this
-service method by rebuilding the service.
+So far, you've created a `*FinderImpl` class, generated the `*Finder` interface,
+and created a custom finder method that gets your custom SQL. Your last step is
+to add a service method that calls your finder.
 
-The following method in `EntryLocalServiceImpl` invokes the finder method
-discussed in step 2:
+When you ran Service Builder after defining your custom finder method, the
+`-Finder` interface was generated (e.g., `GuestbookFinder`). Your portlet class,
+however, should not call the `-Finder` interface: only a local or remote service
+implementation (i.e., `-LocalServiceImpl` or `-ServiceImpl`) in your service
+module should invoke the `-Finder` class. This encourages a proper separation of
+concerns: the portlet classes in your application's web module invoke the
+business logic of the services published from your application's service module.
+The services, in turn, access the data model using the persistence layer's
+finder classes.
 
-    public List<Event> findByEntryNameEntryMessageGuestbookName(String entryName,
-        String entryMessage, String guestbookName, int begin, int end)
-    throws SystemException {
++$$$
 
-        return EntryFinderUtil.findByEntryNameEntryMessageGuestbookName(
-            entryName, entryMessage, guestbookName, begin, end);
+**Note:** In previous versions of Liferay Portal, your finder methods were
+accessible via `-FinderUtil` utility classes. Finder methods are now injected
+into your app's local services, removing the need to call finder utilities.
+
+$$$
+
+So you'll add a method in the `-LocalServiceImpl` class that invokes the finder
+method implementation via the `-Finder` class. Then you'll rebuild your
+application's service layer so that the portlet classes and JSPs in your web
+module can access the services.
+
+For example, for the Guestbook application, you'd add the following method to
+the `EntryLocalServiceImpl` class:
+
+    public List<Entry> findByEntryNameGuestbookName(String entryName,
+        String guestbookName) throws SystemException {
+
+        return entryFinder.findByEntryNameGuestbookName(String entryName,
+            String guestbookName);
     }
 
-After you've added a service method to invoke your finder method, run Service
-Builder to generate the interface and make your finder service method available
-in the `EventLocalServiceUtil` class.
+After you've added your `findBy-` method to your `-LocalServiceImpl` class, run
+Service Builder to generate the interface and make the finder method available
+in the `EntryLocalService` class.
 
 Now you can indirectly call the finder method from your portlet class or a JSP
 in your web module. For example, to call the finder method in the Guestbook
 application, just call
-`EntryLocalServiceUtil.findByEntryNameEntryMessageGuestbookName(...)`!
-
-<!-- Note, the view JSP currently does not call
-EventLocalServiceUtil.findByEventNameEventDescriptionLocationName(...). We may
-want to include this in the solution. - Jim --> 
+`EntryLocalService.findByEntryNameEntryMessageGuestbookName(...)`!
 
 Congratulations on developing a custom SQL query and custom finder for your
 application!

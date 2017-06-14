@@ -101,9 +101,13 @@ Your next task is to review your Documents and Media configuration. Look at
 [Document Library documentation](/discover/portal/-/knowledge_base/7-0/liferay-repository-types)
 to see all the options in @product-ver@ before executing an upgrade process. There
 are, however, two important pieces of configuration that have changed: 
-* The way you specify the location for the file store is no longer in the
-`portal-ext.properties` file. 
-* package names for the store implementations have changed from `com.liferay.portlet.documentlibrary.store` to `com.liferay.portal.store.*` and you'll need to configure the appropriate updated implementation name rather than copying over the name from your 6.2 portal-ext.properties.
+
+- The way you specify the location for the file store is no longer in the
+  `portal-ext.properties` file.
+- Package names for the store implementations have changed from
+  `com.liferay.portlet.documentlibrary.store` to `com.liferay.portal.store.*`
+  and you'll need to configure the appropriate updated implementation name
+  rather than copying over the name from your 6.2 `portal-ext.properties`.
 
 If you use the default store but don't want to store the files in the default
 location (`[Liferay Home]/data/document_library`), you need to create a file
@@ -212,7 +216,7 @@ can be done at runtime, or you can pre-configure it in three files:
 
 - `app-server.properties`: Contains properties that define for the tool the
     server's location and libraries.
-- `portal-upgrade-datasource.properties`: Contains properties for connecting 
+- `portal-upgrade-database.properties`: Contains properties for connecting 
 to the database that will be upgraded.
 - `portal-upgrade-ext.properties`: Contains the rest of the @product@
 properties you need to perform the upgrade.
@@ -298,7 +302,7 @@ setting is the folder where @product@ is installed in your app
 server. The `server.detector.server.id` defines the application server. The
 `extra.lib.dirs` is the app server's binary folder.
 
--`portal-upgrade-datasource.properties`:
+-`portal-upgrade-database.properties`:
 
     jdbc.default.url=jdbc:mysql://lportal62?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.default.driverClassName=com.mysql.jdbc.Driver

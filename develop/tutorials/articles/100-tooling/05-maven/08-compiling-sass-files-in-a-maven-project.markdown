@@ -93,4 +93,20 @@ Here's how to apply Liferay's CSS builder to your Maven project.
     Since the `build-css` goal is configured as a part of the `compile`
     phase, this is also invoked by running `mvn compile`.
 
++$$$
+
+**Note:** Liferay's CSS Builder is supported for Oracle's JDK and uses a native
+compiler for increased speed. If you're using an IBM JDK, you may experience
+issues when building your SASS files (e.g., when building a theme). It's
+recommended to switch to using the Oracle JDK, but if you prefer using the IBM
+JDK, you must use the fallback Ruby compiler. To do this, add the following
+tag to your CSS Builder configuration in your POM:
+
+    <sassCompilerName>ruby</sasscompilerName>
+
+Be aware that the Ruby-based compiler doesn't perform as well as the native
+compiler, so expect longer compile times.
+
+$$$
+
 Awesome! You can now compile Sass files in your Liferay Maven project.

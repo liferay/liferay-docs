@@ -67,9 +67,11 @@ tutorial for more information.
 
     An example configuration would look like this:
 
-    <configuration>
-        <liferayHome>C:/liferay/liferay-ce-portal-7.0-ga3</liferayHome>
-    </configuration>
+        <configuration>
+            <liferayHome>C:/liferay/liferay-ce-portal-7.0-ga3</liferayHome>
+        </configuration>
+
+    +$$$
 
     **Note:** Maven applications built for previous Liferay Portal versions
     required the `<liferay.maven.plugin.version>` tag to do various tasks (e.g.,

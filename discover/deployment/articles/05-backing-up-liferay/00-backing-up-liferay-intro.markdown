@@ -9,40 +9,32 @@ include in your backup plan.
 
 ## Backing up Source Code [](id=backing-up-source-code)
 
-If you have extended @product@ or have written any plugins, they should be stored
-in a source code repository such as Git, Subversion, or CVS, unless you're
-Linus Torvalds, and then tarballs are okay too (that's a joke). Your source
-code repository should be backed up on a regular basis to preserve your ongoing
-work. This probably goes without saying in your organization since nobody wants
-to lose source code that's taken months to produce. Nevertheless, it's
-important to include source code in a @product@ backup plan.
+If you have extended @product@ or have written any plugins, they should be
+stored in a source code repository such as Git, Subversion, or CVS, unless
+you're Linus Torvalds, and then tarballs are okay too (that's a joke). Your
+source code repository should be backed up on a regular basis to preserve your
+ongoing work. This probably goes without saying in your organization since
+nobody wants to lose source code that's taken months to produce. Thus you should
+include source code in a @product@ backup plan.
 
 Next, let's examine the items that need to be backed up in your @product@
 installation.
 
 ## Backing up @product@'s File System [](id=backing-up-liferays-file-system)
 
-@product@'s properties configuration files, such as
-`portal-setup-wizard.properties` and `portal-ext.properties`, are stored in the
-*Liferay Home* folder, which is generally one folder up from where your
-application server is installed (see the [Installation and Setup (not yet
-written)]() article for specific details for your application server). Your
-@product@ installation's properties configuration files should absolutely be
-backed up. In fact, it's best to back up your entire application server and
-entire the contents of your Liferay Home folders.
-
-If you've followed the non-plugin procedure (see the [(not yet written)]()
-article) to modify your Ehcache configuration, you'll have cache configuration
-files in the deploy location of @product@. You'll need to back up this location.
-If you're using the plugin procedure (i.e., the recommended procedure), your
-cache configuration settings are stored in your source code repository, which
-should be backed up separately.
+@product@'s properties configuration files, such as `portal-setup-
+wizard.properties` and `portal-ext.properties`, are stored in the *Liferay Home*
+folder, which is generally one folder up from where your application server is
+installed (see the [Installation and Setup](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
+article for specific details for your application server). Your @product@
+installation's properties configuration files should absolutely be backed up. In
+fact, it's best to back up your entire application server and entire the
+contents of your Liferay Home folders.
 
 @product@ stores configuration files, search indexes, and cache information in a
 folder called `/data` in Liferay Home. If you're using the File System store or
-the Advanced File System store, the documents and media repository (a.k.a.,
-document library) is also stored here by default. It's always import to back up
-your `/data` folder.
+the Advanced File System store, the documents and media repository is also
+stored here by default. It's always important to back up your `/data` folder.
 
 The files that comprise @product@'s OSGi runtime are stored in a folder called
 `/osgi` in Liferay Home. This folder contains the JAR files for all of the apps
@@ -80,20 +72,15 @@ should also be backed up. If you've placed your search index into a database
 (not recommended; see the [(not yet written)]() article for information on
 using Cluster Link or Solr), that database should be backed up as well
 
-Search indexes can be backed up as well, if you wish to avoid reindexing your
-entire portal after restoring your database. This is easiest to do if you have
-a separate Solr environment on which your index is stored. If you're in a
+Search indexes can be backed up as well, if you wish to avoid re-indexing your
+content after restoring your database. This is easiest to do if you have
+a separate Elastic or Solr environment on which your index is stored. If you're in a
 clustered configuration and you're replicating indexes, you'll need to back up
 each index replica.
 
 Restoring your application server, your Liferay Home folder, the locations of
 any file system-based media repositories, and your database from a backup system
 should give you a functioning portal. Restoring search indexes should avoid the
-need to reindex when you bring your site back up after a catastrophic failure.
+need to re-index when you bring your site back up after a catastrophic failure.
 Good, consistent backup procedures are key to successfully recovering from a
 hardware failure.
-
-If you're a @product@ subscriber, you should apply the patches provided by
-Liferay whenever they're available. Liferay provides tools to make this process
-easy. See the [(not yet written)]() article to learn how to apply patches to
-your @product@ installation.
