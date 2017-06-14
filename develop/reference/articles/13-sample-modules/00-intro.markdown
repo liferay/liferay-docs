@@ -7,7 +7,7 @@ Github repository and can be easily copy/pasted to your local environment. The
 sample modules are grouped into three different parent folders based on the
 build tools used to generate them:
 
-- `liferay-gradle`
+- `gradle`
 - `liferay-workspace`
 - `maven`
 

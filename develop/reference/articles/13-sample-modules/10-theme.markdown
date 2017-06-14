@@ -23,6 +23,6 @@ files, see the
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.theme)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.theme)
 - [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.theme)
 - [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.theme)

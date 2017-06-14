@@ -34,6 +34,6 @@ needs, see the Javadoc listed in this sample's
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.controlmenuentry)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.controlmenuentry)
 - [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.controlmenuentry)
 - [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.controlmenuentry)
