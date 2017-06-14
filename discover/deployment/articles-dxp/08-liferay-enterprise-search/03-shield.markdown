@@ -36,7 +36,7 @@ Here's the process for configuring Shield:
 These terms will be useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
-  installation (for example, `elasticsearch-2.2.0`).
+  installation (for example, `elasticsearch-2.4.0`).
 -  *Liferay Home* refers to the root folder of your @product@ installation. It 
   contains the `osgi`, `deploy`, `data`, and `license` folders.
 
@@ -60,8 +60,8 @@ First install the Shield plugin on your Elasticsearch cluster.
     can use the native user management system built into Shield, called
     *esusers*, or you can use an external system like LDAP.
 
-    *Roles* for Shield are defined in `[Elasticsearch_Home]/shield/roles.yml`
-    and include the following:
+    *Roles* for Shield are defined in
+    `[Elasticsearch_Home]/config/shield/roles.yml` and include the following:
 
     `admin`: Has permission to perform any cluster or index action.
 
@@ -110,16 +110,16 @@ First install the Shield plugin on your Elasticsearch cluster.
           "name" : "Amphibius",
           "cluster_name" : "LiferayElasticsearchCluster",
           "version" : {
-            "number" : "2.2.0",
+            "number" : "2.4.0",
             "build_hash" : "8ff36d139e16f8720f2947ef62c8167a888992fe",
             "build_timestamp" : "2016-01-27T13:32:39Z",
             "build_snapshot" : false,
-            "lucene_version" : "5.4.1"
+            "lucene_version" : "5.5.2"
           },
           "tagline" : "You Know, for Search"
 
 For more information on installing Shield, see the [Elasticsearch
-documentation](https://www.elastic.co/guide/en/shield/2.2/installing-shield.html).
+documentation](https://www.elastic.co/guide/en/shield/2.4/installing-shield.html).
 
 Once Shield is installed, you can configure @product@'s Shield adapter.
 
@@ -178,7 +178,7 @@ Follow these steps to configure the Shield adapter using System Settings:
    next to *Reindex all search indexes.*
 
 For a complete list of the Shield adapter's available configuration options, see
-[here](/discover/reference/shield-adapter-settings)
+[here](/reference/-/official_documentation/reference/shield-adapter-settings).
 
 ## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
 
