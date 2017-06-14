@@ -36,6 +36,6 @@ fit your needs, see the Javadoc listed in this sample's
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.template.context.contributor)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.template.context.contributor)
 - [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.template.context.contributor)
 - [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.template.context.contributor)
