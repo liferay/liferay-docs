@@ -124,11 +124,11 @@ works in @product@:
 - Content whose default language matches the @product@ instance's
   default language is searched.
 - Content whose default language is `en_US` (American English) is
-  searched, regardless of Liferay's default language.
-- If the language of a translation matches Liferay's default
+  searched, regardless of @product@'s default language.
+- If the language of a translation matches @product@'s default
   language, the content is searched.
 - Content with an `en_US` translation can be searched regardless of
-  Liferay's default language.
+  @product@'s default language.
 - A user's default language does not affect search results.
 
 The search application allows users to search for content in your @product@.
