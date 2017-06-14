@@ -37,18 +37,21 @@ These terms will be useful to understand as you read this guide:
 **Upgrading to Elasticsearch 2.4.x:** When @product-ver@ was first released,
 Elasticsearch 2.2.x was supported. However, Elasticsearch 2.2.x's [end of
 life](https://www.elastic.co/support/eol) is August 2, 2017. Because of that,
-@product@ will begin supporting 2.4.x starting with [FIX PACK?]. After that
-time, Elasticsearch 2.4.x will become the supported version for @product-ver@
-[OR MAKE IT CLEAR THAT BOTH 2.2.x AND 2.4.x ARE SUPPORTED?]. 
+@product@ will begin supporting 2.4.x starting with Liferay DE 7.0 Fix Pack 22.
+After that time, Elasticsearch 2.4.x will become the supported version for
+@product-ver@. 
 
-If you are currently running Elasticsearch 2.2.x with @product@, follow the
+If you are currently running Elasticsearch 2.2.x with @product-ver@, follow the
 [Elasticsearch documentation on upgrading to 2.4](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-upgrade.html).
 The good news is, you can do a [rolling upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/rolling-upgrades.html),
 meaning you'll be able to upgrade each node on its own, with no down time for end users.
 
-From the @product@ side, all you need to do is install Fix Pack 136
-[HYPOTHETICAL VERSION], and *be
-sure to do a full reindex of your data*, just to be on the safe side.
+From the @product@ side, all you need to do is install Liferay DE 7.0 Fix Pack
+22 and *be sure to do a full reindex of your data*, just to be on the safe side.
+If you're running Liferay Portal CE 7.0, make sure you're on the latest GA
+release. Elasticsearch 2.4.x can be installed and run successfully with a
+Liferay Portal CE 7.0 GA3 bundle, with no code changes necessary to the portal's
+Elasticsearch adapter.
 
 $$$
 
