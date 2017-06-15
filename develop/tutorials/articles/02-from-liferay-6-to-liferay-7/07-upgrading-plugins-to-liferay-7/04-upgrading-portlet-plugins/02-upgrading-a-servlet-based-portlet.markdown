@@ -78,7 +78,7 @@ for using packages that @portal@ exports. After upgrading, consider
 in your project. This helps prepare it for future @product@ versions and
 facilitates managing dependencies.
 
-$$$ 
+$$$
 
 The portlet is installed to @product@'s OSGi runtime and is available to users.
 

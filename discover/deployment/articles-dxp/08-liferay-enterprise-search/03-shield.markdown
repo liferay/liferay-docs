@@ -166,8 +166,9 @@ Follow these steps to configure the Shield adapter using System Settings:
    uncheck the *Requires SSL* box, and make sure the user name is *liferay*.
    Click *Update* when you're done.
 
-   Note: If you set a different user name and password while configuring Shield,
-   make sure those match the user name and password you configure here.
+    Note: If you set a different user name and password while configuring
+    Shield, make sure those match the user name and password you configure
+    here.
 
     ![Figure 1: You can configure the @product-ver@ Search Elasticsearch Shield plugin from System Settings.](../../images-dxp/shield-adapter-settings.png)
 

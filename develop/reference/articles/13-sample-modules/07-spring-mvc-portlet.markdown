@@ -26,6 +26,6 @@ class.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.portlet.springmvc)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.portlet.springmvc)
 - [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/wars/blade.portlet.springmvc)
 - [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.portlet.springmvc)
