@@ -12,7 +12,7 @@ Go ahead and get started by updating the form next.
 
 Follow these steps to update the edit Entry form:
 
-1.  Open the `guestbook-web` module's `edit_entry.jsp` and add the 
+1.  Open the `guestbook-mvc` module's `edit_entry.jsp` and add the 
     `container-fluid-1280` CSS class to the `<aui:form>` tag:
     
         <aui:form action="<%= addEntryURL %>" cssClass="container-fluid-1280" 
@@ -44,7 +44,7 @@ Follow these steps to update the Edit Entry form's navigation. To keep the form
 as clear and uncluttered as possible, you'll move the title and associated back 
 button to the portlet title. Follow these steps to make these changes:
 
-1.  Open the `guestbook-web` module's `init.jsp` and add the following import 
+1.  Open the `guestbook-mvc` module's `init.jsp` and add the following import 
     for the portlet URL:
 
         <%@ page import="javax.portlet.PortletURL" %>

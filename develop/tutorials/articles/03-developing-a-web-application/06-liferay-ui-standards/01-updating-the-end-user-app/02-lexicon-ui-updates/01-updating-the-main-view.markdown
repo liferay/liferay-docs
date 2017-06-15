@@ -39,7 +39,7 @@ Follow these steps to create the the class:
 4. At the moment, the Portlet Toolbar Contributor is a separate module project. 
    To keep this contained within the Guestbook portlet, you should move it into 
    that project. Copy the `toolbar` folder over to the `src/portlet/` folder of 
-   the `guestbook-web` module.
+   the `guestbook-mvc` module.
 
 5.  The blade template set up the package and class for you, but it implements 
     the `PortletToolbarContributor` class. For the purposes of the add menu, you 
