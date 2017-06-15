@@ -270,7 +270,7 @@ these imports to your `init.jsp` file:
 
 In a JSP portlet application, your full `init.jsp` file should at least have
 contents like this:
-
+@zeno
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
