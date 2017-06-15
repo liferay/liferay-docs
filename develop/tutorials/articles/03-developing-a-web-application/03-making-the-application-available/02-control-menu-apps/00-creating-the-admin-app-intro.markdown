@@ -2,7 +2,7 @@
 
 Now you'll create the Guestbook Admin portlet and add it to the 
 Control Menu. To create the Guestbook Admin portlet, you'll use the New Liferay 
-Module Project wizard. You used this wizard in an earlier Learning Path section when you created the `guestbook-web` module. The New Liferay Module Project wizard creates various required metadata properties for the component class such as the `display-category`, `display-name`, and `security-role-ref`. It also determines the names and locations of other required files such as the portlet class and the location of the portlet's JSP files. 
+Module Project wizard. You used this wizard in an earlier Learning Path section when you created the `guestbook-mvc` module. The New Liferay Module Project wizard creates various required metadata properties for the component class such as the `display-category`, `display-name`, and `security-role-ref`. It also determines the names and locations of other required files such as the portlet class and the location of the portlet's JSP files. 
 
 ![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../../images/admin-app-start.png)
 
@@ -12,12 +12,12 @@ Get started by creating the Guestbook Admin portlet next.
 
 To create the Guestbook Admin portlet, follow these steps:
 
-1.  In Eclipse, right-click on the *guestbook-web* module and select *New*
+1.  In Eclipse, right-click on the *guestbook-mvc* module and select *New*
     &rarr; *Liferay Module Project*.
    
 2.  Enter *GuestbookAdmin* for the *Project name*.
 
-3.  Uncheck *Use default location* and navigate to the `guestbook-web` module's  
+3.  Uncheck *Use default location* and navigate to the `guestbook-mvc` module's  
     root folder.
 
 4.  Leave the default settings for Build type, select *panel-app* as 
@@ -29,7 +29,7 @@ To create the Guestbook Admin portlet, follow these steps:
 
 The New Liferay Module Project wizard created a `GuestbookAdminMVCPortlet` 
 file for you in the `com.liferay.docs.guestbook.portlet` package of the 
-`guestbook-web/src/main/java` folder, as you specified. It also created 
+`guestbook-mvc/src/main/java` folder, as you specified. It also created 
 `GuestbookAdminMVCPanelApp` and `GuestbookAdminMVCPanelCategory` classes for 
 you in the `com.liferay.docs.guestbook.application.list` package. The 
 `GuestbookAdminMVCPanelApp` class sets where in the Control Menu the Guestbook 
@@ -58,18 +58,18 @@ contained within their own project. You'll need to manually move these files
 into their proper locations.
 
 1.  Move the `GuestbookAdminMVCPortlet` file over to the 
-    `com.liferay.docs.guestbook.portlet` package of the `guestbook-web` module 
+    `com.liferay.docs.guestbook.portlet` package of the `guestbook-mvc` module 
     and delete the empty `com.liferay.docs.guestbook.portlet` package left 
     behind.
     
-2.  Create a new folder in the `guestbook-web` module's 
+2.  Create a new folder in the `guestbook-mvc` module's 
     `src/main/resources/META-INF/resources/html` directory and call it 
     *guestbookadminmvcportlet*. Move the `GuestbookAdmin` module project's 
     `view.jsp` to the folder you just created.
     
 3.   Move the `GuestbookAdmin` module project's `/application` folder and 
      contents over to the `com.liferay.docs.guestbook` package of the  
-     `guestbook-web` module.
+     `guestbook-mvc` module.
      
 4.  Delete the `GuestbookAdmin` module project folder and empty directories.
 

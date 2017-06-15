@@ -225,7 +225,7 @@ create portlet actions to meet the first three requirements by opening
     parameter to point to a particular JSP if there was a problem with the
     `deleteGuestbook` service call.
 
-As a final step, add the following property to the `guestbook-web` module's 
+As a final step, add the following property to the `guestbook-mvc` module's 
 `portlet.properties` file:
 
     resource.actions.configs=resource-actions/default.xml
