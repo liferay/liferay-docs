@@ -112,20 +112,15 @@ make all of these configurations in your Liferay servers'
 `portal-ext.properties` files. Your first step should be to add the following
 lines to your current Liferay server's `portal-ext.properties` file:
 
-    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
     tunneling.servlet.shared.secret=[secret]
     tunneling.servlet.shared.secret.hex=true
-    auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
-    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
-
+     
 Then add the following lines to your remote Liferay server's
 `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
     tunneling.servlet.shared.secret=[secret]
     tunneling.servlet.shared.secret.hex=true
-    auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
-    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
 @product@'s use of a pre-shared key between your staging and production
 environments helps secure the remote publication process. It also removes the
@@ -177,6 +172,13 @@ of your Liferay instance. To do this, navigate to the Control Panel &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Tunnel Auth
 Verifier*. Click */api/liferay/do* and insert the additional IP addresses you're
 using in the *Hosts allowed* field. Then select *Update*.
+
+Alternatively, you can also write this configuration into an OSGi file in your bundle ( *osgi/configs/com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.cfg)*:
+
+    enabled=true
+    hostsAllowed=127.0.0.1,SERVER_IP,[Local server IP address]
+    serviceAccessPolicyName=SYSTEM_USER_PASSWORD
+    urlsIncludes=/api/liferay/do
 
 Remember to restart both Liferay servers after making these portal properties
 updates. After restarting, log back in to your local Liferay instance as
