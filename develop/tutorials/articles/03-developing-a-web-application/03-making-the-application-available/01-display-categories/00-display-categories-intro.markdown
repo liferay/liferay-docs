@@ -50,7 +50,7 @@ variables in one place. This way, if you need to change the name of the portlet,
 you can do it in one place, and then reference it in every other class that 
 needs it.
 
-1. In Liferay IDE, right click on the web project and select *New* &rarr; 
+1. In Liferay IDE, right click on the "guestbook-mvc" project and select *New* &rarr; 
     *Package*.
 2. Set the name as `com.liferay.docs.guestbook.constants` and click *Finish*.
 3. Right click on the new package and select *New* &rarr; *Class*.
