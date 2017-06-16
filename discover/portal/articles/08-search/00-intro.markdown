@@ -117,19 +117,31 @@ $$$
 ## Searching for Localized Content [](id=searching-for-localized-content)
 
 @product@ supports localizing some of its content types. For example, to add a
-translation of a web content article, edit the article, choose a language, add
-the translation, and click *Save*. Here's how searching for localized content
-works in @product@:
+translation of a web content article, edit the article, choose a language,
+translate the relevant fields, and click *Save*. So what happens when users
+search for that content? The short answer is, they can! The details get
+complicated because each asset in @product@ is indexed in the search engine
+differently. Searching for localized Web Content Articles will work one way, and
+Documents and Media Documents will be indexed differently, in the way seen most
+suitable by the developers of the application. The same applies to any custom
+assets added by the developers of your organization. Basically, if a developer
+makes a field localizable (for example, the title of the asset is often able to
+be localized), then a user can search for it and find the content by searching
+for a translated term.
 
-- Content whose default language matches the @product@ instance's
-  default language is searched.
-- Content whose default language is `en_US` (American English) is
-  searched, regardless of @product@'s default language.
-- If the language of a translation matches @product@'s default
-  language, the content is searched.
-- Content with an `en_US` translation can be searched regardless of
-  @product@'s default language.
-- A user's default language does not affect search results.
++$$$
+
+**Note on Eastern Languages:** Because the process called *tokenization* works
+differently for Eastern languages (for example, Japanese and Chinese), searching
+for their content works differently. The process used to tokenize these
+languages makes it difficult to search for them in @product@. There are several
+known problems, which are being improved in @product@, and will be made
+available by [fix
+pack](/documentation/7.0/deploy/-/official_documentation/deployment/keeping-up-with-fix-packs-and-service-packs)
+(Digital Enterprise customers only) or made available in a future GA release
+(for Community Edition users).
+
+$$$
 
 The search application allows users to search for content in your @product@.
 Keep reading to learn how to configure the Search application so users can
