@@ -90,22 +90,27 @@ Use the following steps to add the required Guestbook service methods:
     orphaned. Your `deleteGuestbook` service method makes a service call to
     delete all the entries associated with a guestbook before deleting the
     guestbook itself. This way, guestbook entries are never orphaned.
+	
+3.  Update your imports using [CTRL]+[SHIFT]+O.
 
-3.  Finally, update your imports using [CTRL]+[SHIFT]+O.
-<!--
-        public int getGuestbooksCount(long groupId) throws SystemException {
-                return guestbookPersistence.countByGroupId(groupId);
-        }
-        
-        Ask someone why the code above does not match the finished code. 
-        Does it need to throw a SystemException ? -->
+4. Next you need to add the corresponding methods to GuestbookServiceImpl:
 
-    `guestbookPersistence`, like `resourceLocalService`, is a Spring bean
-    declared in `GuestbookLocalServiceImpl`'s parent class,
-    `GuestbookLocalServiceBaseImpl`. The `guestbookPersistence` implementation
-    class is `GuestbookPersistenceImpl`, which is one of the classes generated
-    by Service Builder. `GuestbookPersistenceImpl` contains the `countByGroupId`
-    method that you use in the `getGuestbooksCount` service method.
+    public Guestbook deleteGuestbook(
+   				long guestbookId, ServiceContext serviceContext)
+   			throws PortalException {
+
+   			return GuestbookLocalServiceUtil.deleteGuestbook(
+   				guestbookId, serviceContext);
+   		}
+	 
+   	 public Guestbook updateGuestbook(
+   				long userId, long guestbookId, String name,
+   				ServiceContext serviceContext)
+   			throws PortalException {
+
+   			return GuestbookLocalServiceUtil.updateGuestbook(
+   				userId, guestbookId, name, serviceContext);
+	
 
 These are all the additions you need to make to the Guestbook service. Save
 `GuestbookLocalServiceImpl.java` and run Service Builder.
