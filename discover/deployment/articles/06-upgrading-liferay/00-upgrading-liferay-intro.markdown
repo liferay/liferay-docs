@@ -58,7 +58,7 @@ information to learn about the new defaults introduced in Liferay Portal 6.2.
 - If you're on Liferay 6.0.12, you'll also need to
 [migrate the image gallery](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images).
 
-- If you have a sharded environment, please refer to [how to configure the upgrade for sharding](./01-upgrading-sharding.markdown).
+- If you have a sharded environment, please refer to [how to configure the upgrade for sharding](/discover/deployment/-/knowledge_base/7-0/upgrading-sharded-environment).
 
 - If you've used Web Content Management extensively, you may have structures
   that lack unique name fields. Refer to 
