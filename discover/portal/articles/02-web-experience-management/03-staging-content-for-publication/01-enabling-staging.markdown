@@ -115,10 +115,9 @@ lines to your current Liferay server's `portal-ext.properties` file:
     tunneling.servlet.shared.secret=[secret]
     tunneling.servlet.shared.secret.hex=true
      
-Then add the following lines to your remote Liferay server's
+Then add the same lines to your remote Liferay server's
 `portal-ext.properties` file:
 
-    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
     tunneling.servlet.shared.secret=[secret]
     tunneling.servlet.shared.secret.hex=true
 
@@ -168,7 +167,7 @@ possession of the key can manage the production server, execute server-side
 Java code, or worse.
 
 One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
-of your Liferay instance. To do this, navigate to the Control Panel &rarr;
+of your remote Liferay instance. To do this, navigate to the Control Panel &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Tunnel Auth
 Verifier*. Click */api/liferay/do* and insert the additional IP addresses you're
 using in the *Hosts allowed* field. Then select *Update*.
