@@ -114,9 +114,9 @@ lines to your current Liferay server's `portal-ext.properties` file:
 
     tunneling.servlet.shared.secret=[secret]
     tunneling.servlet.shared.secret.hex=true
-     
-Then add the same lines to your remote Liferay server's
-`portal-ext.properties` file:
+
+Then add the same lines to your remote Liferay server's `portal-ext.properties`
+file:
 
     tunneling.servlet.shared.secret=[secret]
     tunneling.servlet.shared.secret.hex=true
@@ -167,12 +167,14 @@ possession of the key can manage the production server, execute server-side
 Java code, or worse.
 
 One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
-of your remote Liferay instance. To do this, navigate to the Control Panel &rarr;
-*Configuration* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Tunnel Auth
-Verifier*. Click */api/liferay/do* and insert the additional IP addresses you're
-using in the *Hosts allowed* field. Then select *Update*.
+of your remote Liferay instance. To do this, navigate to the Control Panel
+&rarr; *Configuration* &rarr; *System Settings* &rarr; *Foundation* &rarr;
+*Tunnel Auth Verifier*. Click */api/liferay/do* and insert the additional IP
+addresses you're using in the *Hosts allowed* field. Then select *Update*.
 
-Alternatively, you can also write this configuration into an OSGi file in your bundle ( *osgi/configs/com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.cfg)*:
+Alternatively, you can also write this configuration into an OSGi file (e.g.,
+`osgi/configs/com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`)
+in your @product@ instance:
 
     enabled=true
     hostsAllowed=127.0.0.1,SERVER_IP,[Local server IP address]
