@@ -91,12 +91,7 @@ Use the following steps to add the required Guestbook service methods:
     delete all the entries associated with a guestbook before deleting the
     guestbook itself. This way, guestbook entries are never orphaned.
 
-3.  Finally, add the following method for returning the number of guestbooks in 
-    a site:
-    
-        public int getGuestbooksCount(long groupId) {
-              	return guestbookPersistence.countByGroupId(groupId);
-      	}
+3.  Finally, update your imports using [CTRL]+[SHIFT]+O.
 <!--
         public int getGuestbooksCount(long groupId) throws SystemException {
                 return guestbookPersistence.countByGroupId(groupId);

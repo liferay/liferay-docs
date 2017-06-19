@@ -21,7 +21,7 @@ Your requirements for the Guestbook Admin portlet specify that the portlet must
 allow administrators to add guestbooks, update guestbooks, and delete
 guestbooks. It must also allow guestbook permissions to be configured. You can
 create portlet actions to meet the first three requirements by opening
-`GuestbookAdminMVCPortlet.java` and following these steps:
+`GuestbookAdminPortlet.java` and following these steps:
 
 1.  Add the following portlet method for adding a new guestbook:
 
@@ -47,7 +47,7 @@ create portlet actions to meet the first three requirements by opening
             SessionErrors.add(request, clazz.getName());
 
             response.setRenderParameter(
-              "mvcPath", "/html/guestbookadminmvcportlet/edit_guestbook.jsp");
+              "mvcPath", "/html/guestbookadminportlet/edit_guestbook.jsp");
           }
         }
         
@@ -69,7 +69,7 @@ create portlet actions to meet the first three requirements by opening
                         SessionErrors.add(request, e.getClass().getName());
 
                         response.setRenderParameter("mvcPath",
-                                        "/html/guestbookadminmvcportlet/edit_guestbook.jsp");
+                                        "/html/guestbookadminportlet/edit_guestbook.jsp");
                 }
         }
         -->
@@ -91,7 +91,7 @@ create portlet actions to meet the first three requirements by opening
     view. That's why you add this line in the `catch` block:
 
         response.setRenderParameter("mvcPath",
-                "/html/guestbookadminmvcportlet/edit_guestbook.jsp");
+                "/html/guestbookadminportlet/edit_guestbook.jsp");
 
     Don't worry about the fact that you haven't created
     `docroot/html/guestbookadmin/edit_guestbook.jsp` yet; you'll create it in
@@ -121,7 +121,7 @@ create portlet actions to meet the first three requirements by opening
             SessionErrors.add(request, clazz.getName());
 
             response.setRenderParameter(
-              "mvcPath", "/html/guestbookadminmvcportlet/edit_guestbook.jsp");
+              "mvcPath", "/html/guestbookadminportlet/edit_guestbook.jsp");
           }
         }
 <!--
@@ -143,7 +143,7 @@ create portlet actions to meet the first three requirements by opening
                         SessionErrors.add(request, pe.getClass().getName());
 
                         response.setRenderParameter("mvcPath",
-                                        "/html/guestbookadminmvcportlet/edit_guestbook.jsp");
+                                        "/html/guestbookadminportlet/edit_guestbook.jsp");
                 }
         }
 -->
@@ -159,7 +159,7 @@ create portlet actions to meet the first three requirements by opening
     Guestbook form again so that the user can edit the form and resubmit:
 
         response.setRenderParameter("mvcPath",
-                "/html/guestbookadminmvcportlet/edit_guestbook.jsp");
+                "/html/guestbookadminportlet/edit_guestbook.jsp");
 
     Note that the Edit Guestbook form uses the same JSP as the Add Guestbook
     form. The reason for this is to avoid duplication of code. When you're
@@ -224,11 +224,6 @@ create portlet actions to meet the first three requirements by opening
     Guestbook Admin portlet, there's no need to set the `mvcPath` render
     parameter to point to a particular JSP if there was a problem with the
     `deleteGuestbook` service call.
-
-As a final step, add the following property to the `guestbook-mvc` module's 
-`portlet.properties` file:
-
-    resource.actions.configs=resource-actions/default.xml
 
 You now have your service methods and your portlet action methods in place. Your
 last task is to implement a user interface for the Guestbook Admin portlet.

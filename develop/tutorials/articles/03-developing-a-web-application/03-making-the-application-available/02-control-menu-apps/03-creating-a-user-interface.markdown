@@ -17,7 +17,7 @@ adding or editing a guestbook.
 
 Use the following steps to create the Guestbook Admin portlet's user interface:
 
-1. Edit your guestbook-portlet project's `docroot/html/guestbookadminmvcportlet/view.jsp`
+1. Edit your guestbook-portlet project's `docroot/html/guestbookadminmportlet/view.jsp`
    file and replace its default contents with the following JSP code:
 
         <%@include file="../init.jsp"%>
@@ -114,7 +114,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     for displaying the list of possible actions for each guestbook.
 
 2. Create a new file called `guestbook_actions.jsp` in your project's
-   `/html/guestbookadminmvcportlet` directory. Then add the following code to it:
+   `/guestbookadminportlet` directory. Then add the following code to it:
 
         <%@include file="../init.jsp"%>
 
@@ -221,7 +221,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     and editing an existing one.
 
 3. Create a new file called `edit_guestbook.jsp` in your project's
-   `/html/guestbookadminmvcportlet` directory. Then add the following code to it:
+   `/html/guestbookadminportlet` directory. Then add the following code to it:
 
         <%@include file = "../init.jsp" %>
 

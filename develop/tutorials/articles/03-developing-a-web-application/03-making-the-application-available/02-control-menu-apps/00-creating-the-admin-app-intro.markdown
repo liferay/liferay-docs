@@ -15,7 +15,7 @@ To create the Guestbook Admin portlet, follow these steps:
 1.  In Eclipse, right-click on the *guestbook-mvc* module and select *New*
     &rarr; *Liferay Module Project*.
    
-2.  Enter *GuestbookAdmin* for the *Project name*.
+2.  Enter *guestbook-admin* for the *Project name*.
 
 3.  Uncheck *Use default location* and navigate to the `guestbook-mvc` module's  
     root folder.
@@ -27,27 +27,27 @@ To create the Guestbook Admin portlet, follow these steps:
     `com.liferay.docs.guestbook` for the Package Name and click 
     Finish.
 
-The New Liferay Module Project wizard created a `GuestbookAdminMVCPortlet` 
+The New Liferay Module Project wizard created a `GuestbookAdminPortlet` 
 file for you in the `com.liferay.docs.guestbook.portlet` package of the 
 `guestbook-mvc/src/main/java` folder, as you specified. It also created 
-`GuestbookAdminMVCPanelApp` and `GuestbookAdminMVCPanelCategory` classes for 
+`GuestbookAdminPanelApp` and `GuestbookAdminMVCPanelCategory` classes for 
 you in the `com.liferay.docs.guestbook.application.list` package. The 
-`GuestbookAdminMVCPanelApp` class sets where in the Control Menu the Guestbook 
+`GuestbookAdminPanelApp` class sets where in the Control Menu the Guestbook 
 Admin portlet is displayed and the `GuestbookAdminMVCPanelCategory` class is 
 responsible for creating the Control Menu category that the portlet is 
 displayed in. For the purposes of this Learning Path, you'll add the Guestbook 
 Admin portlet to an existing Control Menu category, so this class is not 
 needed. Likewise, the `GuestbookAdminMVCPanelCategoryKeys` class is not needed. 
-You'll add the portlet key for the `GuestbookAdminMVCPortlet` class to the 
+You'll add the portlet key for the `GuestbookAdminPortlet` class to the 
 existing `GuestbookPortletKeys` class, so you can delete the entire 
 `/constants` folder.
 
-The `GuestbookAdminMVCPortlet` class extends @product@'s `MVCPortlet` class, so 
+The `GuestbookAdminPortlet` class extends @product@'s `MVCPortlet` class, so 
 it works out-of-the-box. The `javax.portlet.init-param.template-path=/` 
 metadata property of the Guestbook Admin portlet's component class points to 
 the `GuestbookAdminPortlet.java` file's location.
 
-The `GuestbookAdminMVCPanelApp` class extends @product@'s `BasePanelApp` class 
+The `GuestbookAdminPanelApp` class extends @product@'s `BasePanelApp` class 
 and also works out-of-the-box. The New Liferay Module Project wizard also 
 created a `src/main/resources/META-INF/resources` folder with sample `view.jsp` 
 and `init.jsp` files. You'll use the existing `init.jsp` you created for the 
@@ -57,14 +57,14 @@ At the moment, the Guestbook Admin portlet and associated files are still
 contained within their own project. You'll need to manually move these files 
 into their proper locations.
 
-1.  Move the `GuestbookAdminMVCPortlet` file over to the 
+1.  Move the `GuestbookAdminPortlet` file over to the 
     `com.liferay.docs.guestbook.portlet` package of the `guestbook-mvc` module 
     and delete the empty `com.liferay.docs.guestbook.portlet` package left 
     behind.
     
 2.  Create a new folder in the `guestbook-mvc` module's 
     `src/main/resources/META-INF/resources/html` directory and call it 
-    *guestbookadminmvcportlet*. Move the `GuestbookAdmin` module project's 
+    *guestbookadminportlet*. Move the `GuestbookAdmin` module project's 
     `view.jsp` to the folder you just created.
     
 3.   Move the `GuestbookAdmin` module project's `/application` folder and 
@@ -73,10 +73,11 @@ into their proper locations.
      
 4.  Delete the `GuestbookAdmin` module project folder and empty directories.
 
-5.  Fix the portlet keys class import 
-    `com.liferay.docs.guestbook.constants.GuestbookPortletKeys`:
+5.  Add the following line to the `guestbook-mvc` `build.gradle` file:
 
-        com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
+	compileOnly group: "com.liferay", name: "com.liferay.application.list.api", version: "2.0.0"
+	
+6. Run *Refresh Gradle Project* to fix any dependency issues.
 
 You have set the foundation for the Guestbook Admin portlet. Next you'll update 
 the Guestbook Admin portlet's metadata.
@@ -95,7 +96,7 @@ Follow these steps to update the class:
         public static final String GUESTBOOK_ADMIN =
           "com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet";
 
-2.  Open the `guestbookadminmvcportlet` class, and replace the metadata 
+2.  Open the `guestbookadminportlet` class, and replace the metadata 
     properties in the `@Component` annotation with the properties shown below:
 
         "com.liferay.portlet.display-category=category.hidden",
@@ -104,7 +105,7 @@ Follow these steps to update the class:
         "javax.portlet.expiration-cache=0",
         "javax.portlet.init-param.portlet-title-based-navigation=true",
         "javax.portlet.init-param.template-path=/",
-        "javax.portlet.init-param.view-template=/html/guestbookadminmvcportlet/view.jsp",
+        "javax.portlet.init-param.view-template=/html/guestbookadminportlet/view.jsp",
         "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK_ADMIN,
         "javax.portlet.resource-bundle=content.Language",
         "javax.portlet.security-role-ref=administrator",
@@ -141,9 +142,9 @@ Next you can configure the Panel app class.
 
 Follow these steps to update the class:
 
-1.  Open the `GuestbookAdminMVCPanelApp` class and replace the 
+1.  Open the `GuestbookAdminPanelApp` class and replace the 
     `com.liferay.docs.guestbook.constants.GuestbookAdminMVCPanelCategoryKeys` 
-    and `com.liferay.docs.guestbook.constants.GuestbookAdminMVCPortletKeys` 
+    and `com.liferay.docs.guestbook.constants.GuestbookAdminPortletKeys` 
     imports with the ones shown below:
 
         import com.liferay.application.list.constants.PanelCategoryKeys;
@@ -162,7 +163,7 @@ Follow these steps to update the class:
 
 3.  Finally, update the class to use the proper name and portlet keys:
 
-        public class GuestbookPanelApp extends BasePanelApp {
+        public class GuestbookAdminPanelApp extends BasePanelApp {
 
         	@Override
         	public String getPortletId() {
@@ -199,5 +200,5 @@ Now that you've created the Guestbook Admin portlet and added it to the Control
 Menu, you need to add your desired functionality to it: the abilities to add, 
 edit, and delete guestbooks and to configure their permissions. You'll start by 
 adding some custom services to `GuestbookLocalServiceImpl`, then you'll add the 
-necessary action methods to `GuestbookAdminMVCPortlet`, and lastly you'll 
+necessary action methods to `GuestbookAdminPortlet`, and lastly you'll 
 create a basic user interface for the Guestbook Admin portlet. 
