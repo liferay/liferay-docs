@@ -65,7 +65,7 @@ into their proper locations.
 2.  Create a new folder in the `guestbook-mvc` module's 
     `src/main/resources/META-INF/resources/html` directory and call it 
     *guestbookadminportlet*. Move the `GuestbookAdmin` module project's 
-    `view.jsp` to the folder you just created.
+    `view.jsp` to the folder you just created. 
     
 3.   Move the `GuestbookAdmin` module project's `/application` folder and 
      contents over to the `com.liferay.docs.guestbook` package of the  
@@ -105,7 +105,7 @@ Follow these steps to update the class:
         "javax.portlet.expiration-cache=0",
         "javax.portlet.init-param.portlet-title-based-navigation=true",
         "javax.portlet.init-param.template-path=/",
-        "javax.portlet.init-param.view-template=/html/guestbookadminportlet/view.jsp",
+        "javax.portlet.init-param.view-template=/guestbookadminportlet/view.jsp",
         "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK_ADMIN,
         "javax.portlet.resource-bundle=content.Language",
         "javax.portlet.security-role-ref=administrator",

@@ -17,7 +17,7 @@ adding or editing a guestbook.
 
 Use the following steps to create the Guestbook Admin portlet's user interface:
 
-1. Edit your guestbook-portlet project's `docroot/html/guestbookadminmportlet/view.jsp`
+1. Edit your guestbook-portlet project's `docroot/guestbookadminmportlet/view.jsp`
    file and replace its default contents with the following JSP code:
 
         <%@include file="../init.jsp"%>
@@ -37,7 +37,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
                         
                         <liferay-ui:search-container-column-jsp
                             align="right" 
-                            path="/html/guestbookadminmvcportlet/guestbook_actions.jsp"
+                            path="/guestbookadminportletguestbookadminmvcportlet/guestbook_actions.jsp"
                         />
                 
                 </liferay-ui:search-container-row>
@@ -50,14 +50,13 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
                      scopeGroupId, "ADD_GUESTBOOK") %>'>
                         <portlet:renderURL var="addGuestbookURL">
                                 <portlet:param name="mvcPath"
-                                        value="/html/guestbookadminmvcportlet/edit_guestbook.jsp" />
+                                        value="/guestbookadminportlet/edit_guestbook.jsp" />
                                 <portlet:param name="redirect" value="<%= currentURL %>" />
                         </portlet:renderURL>
                 
                         <aui:button onClick="<%= addGuestbookURL.toString() %>"
                                 value="Add Guestbook" />
                                 
-<!-- Need to update existing code to use the value attribute shown above -->
                 </c:if>
         </aui:button-row>
 
@@ -98,7 +97,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     `property="name"` attribute specifies that the text to be displayed is the
     `name` attribute of the current guestbook object. The
     `<liferay-ui:search-container-column-jsp`
-    `path="/html/guestbookadminmvcportlet/guestbook_actions.jsp" align="right" />` tag
+    `path="/guestbookadminportlet/guestbook_actions.jsp" align="right" />` tag
     specifies the second, and last, column. This tag is used for displaying
     another JSP file within a search container column. Its `path` attribute
     specifies the path to the JSP file that should be displayed:
@@ -129,23 +128,16 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
         %>
 
         <liferay-ui:icon-menu>
-                <c:if
-                        test="<%=GuestbookPermission.contains(permissionChecker,
-                                                                guestbook.getGuestbookId(), ActionKeys.UPDATE)%>">
                         <portlet:renderURL var="editURL">
                                 <portlet:param name="guestbookId"
                                         value="<%=String.valueOf(guestbook.getGuestbookId()) %>" />
                                 <portlet:param name="mvcPath"
-                                        value="/html/guestbookadminmvcportlet/edit_guestbook.jsp" />
+                                        value="/guestbookadminportlet/edit_guestbook.jsp" />
                         </portlet:renderURL>
 
                         <liferay-ui:icon image="edit" message="Edit"
                                 url="<%=editURL.toString() %>" />
-                </c:if>
 
-                <c:if
-                        test="<%=GuestbookPermission.contains(permissionChecker,
-                                                                guestbook.getGuestbookId(), ActionKeys.PERMISSIONS)%>">
                         <liferay-security:permissionsURL
                                 modelResource="<%= Guestbook.class.getName() %>"
                                 modelResourceDescription="<%= guestbook.getName() %>"
@@ -153,18 +145,13 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
                                 var="permissionsURL" />
 
                         <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
-                </c:if>
-
-                <c:if
-                        test="<%=GuestbookPermission.contains(permissionChecker,
-                                                                guestbook.getGuestbookId(), ActionKeys.DELETE)%>">
                         <portlet:actionURL name="deleteGuestbook" var="deleteURL">
                                 <portlet:param name="guestbookId"
                                         value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
                         </portlet:actionURL>
 
                         <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
-                </c:if>
+
         </liferay-ui:icon-menu>
 
     In `guestbook_actions.jsp`, you are displaying a list of possible actions
@@ -221,7 +208,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     and editing an existing one.
 
 3. Create a new file called `edit_guestbook.jsp` in your project's
-   `/html/guestbookadminportlet` directory. Then add the following code to it:
+   `/guestbookadminportlet` directory. Then add the following code to it:
 
         <%@include file = "../init.jsp" %>
 
@@ -236,7 +223,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
         %>
 
         <portlet:renderURL var="viewURL">
-                <portlet:param name="mvcPath" value="/html/guestbookadminmvcportlet/view.jsp" />
+                <portlet:param name="mvcPath" value="/guestbookadminportlet/view.jsp" />
         </portlet:renderURL>
 
         <portlet:actionURL name='<%= guestbook == null ? "addGuestbook" : "updateGuestbook" %>' var="editGuestbookURL" />

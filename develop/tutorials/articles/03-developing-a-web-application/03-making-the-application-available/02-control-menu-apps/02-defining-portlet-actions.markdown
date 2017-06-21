@@ -80,23 +80,23 @@ create portlet actions to meet the first three requirements by opening
         <!-- actual code uses `_guestbookService (GuestbookService)` instead of 
         `GuestbookLocalServiceUtil` -->
 
-    This method is nearly identical to the Guestbook portlet's `addGuestbook`
-    method. Since `addGuestbook` is a portlet action method, it takes
-    `ActionRequest` and `ActionResponse` parameters. In order to make the
-    service call to add a new guestbook, the name of the Guestbook must be
-    retrieved from the request. The `serviceContext` must also be retrieved from
-    the request and passed as an argument in the service call. If there's a
-    problem with adding the Guestbook (an invalid or blank guestbook name, for
-    example), you should display the Add Guestbook form and not the default
-    view. That's why you add this line in the `catch` block:
+This method is nearly identical to the Guestbook portlet's `addGuestbook`
+method. Since `addGuestbook` is a portlet action method, it takes
+`ActionRequest` and `ActionResponse` parameters. In order to make the
+service call to add a new guestbook, the name of the Guestbook must be
+retrieved from the request. The `serviceContext` must also be retrieved from
+the request and passed as an argument in the service call. If there's a
+problem with adding the Guestbook (an invalid or blank guestbook name, for
+example), you should display the Add Guestbook form and not the default
+view. That's why you add this line in the `catch` block:
 
-        response.setRenderParameter("mvcPath",
-                "/html/guestbookadminportlet/edit_guestbook.jsp");
+    response.setRenderParameter("mvcPath",
+            "/guestbookadminportlet/edit_guestbook.jsp");
 
-    Don't worry about the fact that you haven't created
-    `docroot/html/guestbookadmin/edit_guestbook.jsp` yet; you'll create it in
-    the next section when you're designing the Guestbook Admin portlet's user
-    interface.
+Don't worry about the fact that you haven't created
+`/guestbookadminportlet/edit_guestbook.jsp` yet; you'll create it in
+the next section when you're designing the Guestbook Admin portlet's user
+interface.
 
 2.  Add the following portlet method for updating an existing guestbook's name:
 
@@ -121,7 +121,7 @@ create portlet actions to meet the first three requirements by opening
             SessionErrors.add(request, clazz.getName());
 
             response.setRenderParameter(
-              "mvcPath", "/html/guestbookadminportlet/edit_guestbook.jsp");
+              "mvcPath", "/guestbookadminportlet/edit_guestbook.jsp");
           }
         }
 <!--
@@ -159,7 +159,7 @@ create portlet actions to meet the first three requirements by opening
     Guestbook form again so that the user can edit the form and resubmit:
 
         response.setRenderParameter("mvcPath",
-                "/html/guestbookadminportlet/edit_guestbook.jsp");
+                "/guestbookadminportlet/edit_guestbook.jsp");
 
     Note that the Edit Guestbook form uses the same JSP as the Add Guestbook
     form. The reason for this is to avoid duplication of code. When you're
@@ -195,7 +195,7 @@ create portlet actions to meet the first three requirements by opening
 
 <!-- No SystemException in actual code -->
 
-<!--
+<!--/guestbookadminportlet
         public void deleteGuestbook(ActionRequest request, ActionResponse response)
                         throws PortalException, SystemException {
 
@@ -217,13 +217,13 @@ create portlet actions to meet the first three requirements by opening
         <!-- actual code uses `_guestbookService (GuestbookService)` instead of 
         `GuestbookLocalServiceUtil` -->
 
-    This method is similar to the `addGuestbook` and `updateGuestbook` methods
-    that you added above. Its service call requires only the `serviceContext`
-    and the `guestbookId`, so these are retrieved from the request. Since the
-    `deleteGuestbook` action is invoked from the default view of the
-    Guestbook Admin portlet, there's no need to set the `mvcPath` render
-    parameter to point to a particular JSP if there was a problem with the
-    `deleteGuestbook` service call.
+This method is similar to the `addGuestbook` and `updateGuestbook` methods
+that you added above. Its service call requires only the `serviceContext`
+and the `guestbookId`, so these are retrieved from the request. Since the
+`deleteGuestbook` action is invoked from the default view of the
+Guestbook Admin portlet, there's no need to set the `mvcPath` render
+parameter to point to a particular JSP if there was a problem with the
+`deleteGuestbook` service call.
 
 You now have your service methods and your portlet action methods in place. Your
 last task is to implement a user interface for the Guestbook Admin portlet.
