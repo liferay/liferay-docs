@@ -1,7 +1,7 @@
 # Creating Staged Models Manually [](id=creating-staged-models-manually)
 
 There are times when using
-[Service Builder to generate your staged models](/develop/tutorials/-/knowledge_base/7-0/#important-attributes-in-staging)
+[Service Builder to generate your staged models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#important-attributes-in-staging)
 is not practical. In these cases, you should create your staged models manually.
 Make sure to read the
 [Adapting Your Business Logic to Build Staged Models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
