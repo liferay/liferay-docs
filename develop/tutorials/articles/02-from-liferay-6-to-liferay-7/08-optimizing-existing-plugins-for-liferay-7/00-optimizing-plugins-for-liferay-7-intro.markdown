@@ -23,8 +23,8 @@ Here are some common optimizations to consider:
     for modules and web applications. 
 -   Adapting plugins to [@product-ver@'s modular architecture](/develop/tutorials/-/knowledge_base/7-0/whats-changed-and-what-hasnt#embracing-a-modular-architecture)
     and updated frameworks, such as Service Builder.
--   Styling your app consistently using Lexicon--Liferay's design language
-    standards.
+-   [Styling your app consistently using Clay](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app)
+    --the web implementation of Liferay's Lexicon design language standards.
 -   Modularizing apps to reap the
     [benefits of modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins)
     and all that @product-ver@ offers. 
