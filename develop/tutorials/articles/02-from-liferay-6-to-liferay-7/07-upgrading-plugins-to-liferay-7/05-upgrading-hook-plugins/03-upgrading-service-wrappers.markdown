@@ -1,4 +1,4 @@
-# Upgrading Service Wrappers
+# Upgrading Service Wrappers [](id=upgrading-service-wrappers)
 
 Upgrading traditional [service wrapper hook plugins](/develop/tutorials/-/knowledge_base/6-2/overriding-a-portal-service-using-a-hook) to @product-ver@ is quick and easy. 
 
