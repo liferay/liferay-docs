@@ -17,24 +17,8 @@
 <%@ include file="../init.jsp" %>
 
 <%
-long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
-String displayStyle = ParamUtil.getString(request, "displayStyle", "list");
-
-String orderByCol = ParamUtil.getString(request, "orderByCol", "name");
-
-boolean orderByAsc = false;
-
-String orderByType = ParamUtil.getString(request, "orderByType", "asc");
-
-if (orderByType.equals("asc")) {
-	orderByAsc = true;
-}
-
-OrderByComparator orderByComparator = null;
-
-if (orderByCol.equals("name")) {
-	orderByComparator = new EntryNameComparator(orderByAsc);
-}
+	long guestbookId = Long.valueOf((Long) renderRequest
+				.getAttribute("guestbookId"));
 %>
 
 <aui:nav-bar markupView="lexicon">

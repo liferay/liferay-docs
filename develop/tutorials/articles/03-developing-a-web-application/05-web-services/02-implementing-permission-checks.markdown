@@ -26,8 +26,8 @@ playing with URL parameters to access sensitive portions of your app.
 To implement permission checks for the `guestbook-service` module's remote 
 services, use the following steps: 
 
-1. In `GuestbookServiceImpl`, replace the `addGuestbook`, `deleteGuestbook`, and 
-   `updateGuestbook` methods with the following: 
+1. In `GuestbookServiceImpl`, replace the `addGuestbook`, `deleteGuestbook`, 
+    and `updateGuestbook` methods with the following: 
 
         public Guestbook addGuestbook(long userId, String name,
                         ServiceContext serviceContext) throws SystemException,
