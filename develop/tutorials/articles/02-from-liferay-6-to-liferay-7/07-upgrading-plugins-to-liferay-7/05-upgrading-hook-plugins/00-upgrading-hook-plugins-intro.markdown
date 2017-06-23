@@ -1,11 +1,8 @@
 # Upgrading Hook Plugins [](id=upgrading-hook-plugins)
 
-@product@ has more extension points than ever. @product@ and most of its apps
-are OSGi modules, comprised of components you can extend using OSGi Declarative
-Services. Additionally, @product@ and its apps can be configured using OSGi
-Configuration Administration. These standard technologies let you customize
-@product@. 
-
-@liferay-ide@'s Code Upgrade Tool helps you upgrade existing hook plugins to
-@product-ver@. It adapts them to the API and converts them, in certain cases, to
-modules or module fragments to run on @product-ver@. 
+@product@ has more extension points than ever. And connecting existing hook
+plugins to them is transparent. In most cases, after you upgraded your hook
+using
+[@liferay-ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
+it's ready to run on @product-ver@. The following tutorials show you how to
+upgrade each type of hook plugin. 
