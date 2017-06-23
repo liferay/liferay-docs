@@ -1,28 +1,28 @@
 # Upgrading App JSP Hook Plugins [](id=upgrading-app-jsp-hook-plugins)
 
 JSPs in OSGi modules are customized using module fragments. The module fragment
-attaches to the host module to customize the JSPs. To the OSGi runtime, the
+attaches to the host module to alter the JSPs. To the OSGi runtime, the
 fragment is part of the host module. Section 3.14 of the [OSGi Alliance's core
 specification document](https://www.osgi.org/developer/downloads/release-6/)
-explains module fragments in detail.
+explains module fragments in detail. This tutorial shows you how to upgrade your
+app JSP hooks to @product-ver@.
 
-@liferay-ide@'s Code Upgrade Tool's [*Convert Custom JSP Hooks*
-step](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-generates module fragments from app JSP hook plugins.
+@liferay-ide@'s Code Upgrade Tool's
+[*Convert Custom JSP Hooks* step](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+generates module fragments from app JSP hook plugins. The tool creates module
+fragments in the same folder as your Plugins SDK root if your hook's in a
+Plugins SDK or in the `[liferay_workspace]/modules` folder if your hook's in a
+Liferay Workspace.
 
-The tool creates module fragments as siblings of the Plugins SDK root if you're
-upgrading a Plugins SDK or in the `[liferay_workspace]/modules` folder if you're
-using a Liferay Workspace. Module fragments follow this name convention:
-`[plugin_name]-[app]-fragment`.
-
+Module fragments follow this name convention: `[plugin_name]-[app]-fragment`.
 For example, if the plugin's name is `app-jsp-hook` and it modifies a JSP in the
 Blogs app, the Code Upgrade Tool generates a module fragment named
 `app-jsp-hook-blogs-fragment`.
 
 Here are the steps for upgrading app JSP hook plugins:
 
-- Declare the Fragment Host
-- Update the JSP
+1.  [Declare the Fragment Host](#declare-the-fragment-host)
+2.  [Update the JSP](update-the-jsp)
 
 ## Declare the Fragment Host [](id=declare-the-fragment-host)
 
@@ -31,14 +31,14 @@ set to the host module name and version.
 
 If the host module belongs to one of @product@'s app suites, the Code Upgrade
 Tool generates a `bnd.bnd` file that specifies an appropriate `Fragment-Host`
-automatically. 
+header automatically. 
 
 For example, here's a `Fragment-Host` that attaches a module fragment to the
 Blogs Web module. 
 
     Fragment-Host: com.liferay.blogs.web;bundle-version="1.1.9"
 
-Updating the JSP is also straightforward. 
+Updating the JSP is straightforward too. 
 
 ## Update the JSP [](id=update-the-jsp)
 
@@ -85,3 +85,9 @@ Your custom JSP is live.
 ## Related Topics [](id=related-topics)
 
 [Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+
+[Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-jsp-hooks)
+
+[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+
+[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build)

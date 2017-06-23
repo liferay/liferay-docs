@@ -1,15 +1,15 @@
 # Upgrading Core Language Key Hooks [](id=upgrading-core-language-key-hooks)
 
-If you developed any core language key hooks in previous versions of @product@, you'll want to upgrade them to Liferay 7. The following steps show you how. 
+Here are the steps for upgrading a  core language key hook to @product-ver@. 
 
 1.  Create a new module based on the Blade sample `blade.resourcebundle` in     
     [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.resourcebundle)
     or [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.resourcebundle). 
 
-    Here are the module folder structure's main files:
+    Here are the main parts of the module folder structure:
 
-    - `src/main/java/[resource bundle path]/` &rarr; Custom resource bundle class here 
-    -  `src/main/resources/content/` &rarr; Language properties files here
+    - `src/main/java/[resource bundle path]` &rarr; Custom resource bundle class goes here 
+    -  `src/main/resources/content`
         - `Language.properties`
         - `Language_xx.properties`
         - ...
@@ -21,8 +21,14 @@ If you developed any core language key hooks in previous versions of @product@, 
 
 4.  [Deploy your module](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module). 
 
-Your Language key customizations are deployed to @product-ver@. 
+Your core language key customizations are deployed to @product-ver@. 
 
+**Related Topics**
 
+[Overriding Core Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys)
 
-         
+[Upgrading Portlet Language Key Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-portlet-language-key-hooks)
+
+[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+
+[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build)     

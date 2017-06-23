@@ -1,8 +1,8 @@
 # Upgrading Portal Property and Event Action Hooks [](id=upgrading-portal-property-and-event-action-hooks)
 
 All portal properties in Liferay Portal 6.2 that are also used in @product-ver@
-can be overridden. Your portal property and portal event action hooks that use
-these properties can be upgraded to @product-ver@ following these steps:
+can be overridden. Portal property and portal event action hooks that use these
+properties can be upgraded to @product-ver@ following these steps:
 
 1.  Adapt your code to @product-ver@'s API using
     [@liferay-ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool). 
@@ -11,6 +11,8 @@ these properties can be upgraded to @product-ver@ following these steps:
 
 @product@'s Plugin Compatibility Layer converts the plugin WAR to a Web
 Application Bundle (WAB) and installs it to Liferay's OSGi Runtime. 
+
+Your custom property values and actions are live.
 
 **Related Articles**
 

@@ -2,11 +2,20 @@
 
 Developers have been creating model listeners for several Liferay Portal versions. Upgrading Model Listener Hooks from previous portal versions has never been easier. 
 
-1.  Adapt your plugin to @product-ver@'s API using @liferay-ide@'s Code
-    Upgrade Tool.
+1.  Adapt your plugin to @product-ver@'s API using
+    [@liferay-ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
 2.  Deploy the plugin.
 
+@product@'s Plugin Compatibility Layer converts the plugin WAR to a Web
+Application Bundle (WAB) and installs it to Liferay's OSGi Runtime. 
 
-Your hook plugin is "all ears", listening for changes to the model so it can
-take action. 
+Your model listener hook is "all ears" and ready to act. 
+
+**Related Topics**
+
+[Creating Model Listeners](/develop/tutorials/-/knowledge_base/7-0/model-listeners)
+
+[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+
+[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build)
