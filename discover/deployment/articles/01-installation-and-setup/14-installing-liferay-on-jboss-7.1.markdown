@@ -20,12 +20,12 @@ Let's work with the dependency jar files first.
    the Liferay Portal Dependencies zip file and copy the .jar files to this
    folder. 
 
-2. Download your database driver `.jar` file and copy it into the
-   same folder. For example, for MySQL, download the MySQL Connector/J driver
-   from
-   [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
-   and put its `.jar` file into the
-   `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+2. Download your database driver `.jar` file and copy it into the same folder.
+For example, for MySQL, download the MySQL Connector/J driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
+and put its `.jar` file into the `$JBOSS_HOME/modules/com/liferay/portal/main`
+folder. Check the database vendor's documentation to be sure you're using the
+right JDBC driver version. Liferay Portal ships with default drivers that may or may
+not be matched to the version of the database you're using.
 
 3. Create the file `module.xml` in the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following
