@@ -38,10 +38,31 @@ This article shows you how to install and configure Marvel for @product@--and
 
 -  Add the Marvel portlet to a page and start monitoring your cluster.
 
++$$$
+
+**Note:** This tutorial shows you how to get Marvel up and running by installing
+it onto your Elasticsearch cluster directly. The best approach is to follow
+Elastic's guide and [set up the Marvel cluster separately from the production
+cluster](https://www.elastic.co/guide/en/marvel/2.4/installing-marvel.html#monitoring-cluster),
+so that a troublesome Elasticsearch cluster does not inhibit your ability to use
+Marvel to diagnose its problems. In short, it involves these steps:
+
+1. Install the Marvel agent and License plugins on the production Elasticsearch
+   cluster.
+2. Install a separate Elasticsearch cluster (the monitoring cluster).
+3. Configure your production cluster's nodes to send Marvel data to the
+   monitoring cluster.
+4. Download and install Kibana on the monitoring cluster's machine.
+5. Install the Marvel app into Kibana.
+6. Configure Kibana to connect to the monitoring cluster.
+7. Live long and prosper.
+
+$$$
+
 These terms will be useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch 
-   installation (for example, `elasticsearch-2.2.0`).
+   installation (for example, `elasticsearch-2.4.0`).
 -  *Liferay Home* refers to the root folder of your @product@ installation. It 
    contains the `osgi`, `deploy`, `data`, and `license` folders.
 -  *Kibana Home* refers to the root folder of your Kibana installation.
@@ -49,8 +70,11 @@ These terms will be useful to understand as you read this guide:
 ## Installing Kibana and Marvel [](id=installing-kibana-and-marvel)
 
 Before you install Kibana or Marvel, make sure you've read and followed the
-instructions on [installing and configuring Elasticsearch for
-@product@](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch).
+instructions on
+[installing](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch)
+and
+[configuring](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch)
+Elasticsearch for @product@.
 
 1. Install the `marvel-agent` plugin on Elasticsearch by navigating to
    Elasticsearch Home and entering
@@ -80,16 +104,17 @@ instructions on [installing and configuring Elasticsearch for
 
 3. Install Marvel on Kibana by navigating to Kibana Home and entering
 
-        ./bin/kibana plugin --install elasticsearch/marvel/2.2.1
+        ./bin/kibana plugin --install elasticsearch/marvel/[version]
 
-   +$$$
-
+<!-- I tested with Kibana 4.6.2  and marvel 2.4.0-->
+<!--   +$$$
    **Note:** The latest version of Marvel does not work with Kibana 4.4.2, so
    make sure you install Marvel 2.2.1 if you're using Kibana 4.4.2. See the
    [compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
    to find compatible versions of Marvel and Kibana.
 
    $$$
+-->
 
 The next step is to configure Kibana to connect with Elasticsearch. The
 instructions vary depending on whether you are using
@@ -116,10 +141,9 @@ begin with *[Shield]*.
    demonstrated in the Shield article, export the certificate from the JKS file
    and use it as the CA.
 
-   From Elasticsearch Home, execute 
+   From `Elasticsearch_Home/config/path-to-your-JKS`, execute 
 
-        keytool -v -importkeystore -srckeystore es-ssl.keystore.jks -srcalias
-        es-ssl -destkeystore es-ssl.PKCS12.p12 -deststoretype PKCS12
+        keytool -v -importkeystore -srckeystore es-ssl.keystore.jks -srcalias es-ssl -destkeystore es-ssl.PKCS12.p12 -deststoretype PKCS12
 
    This command converts the JKS file to a PKCS12 file, which is more portable.
 
@@ -127,7 +151,7 @@ begin with *[Shield]*.
    *liferay*. You'll also be prompted for the password of the JKS file, which
    is also *liferay* if you followed the instructions from the Shield article.
 
-4. *[Shield]* From Elasticsearch Home enter 
+4. *[Shield]* From `Elasticsearch_Home/config/path-to-your-PKCS12` enter 
 
         openssl pkcs12 -in es-ssl.PKCS12.p12 -out es-ssl.CA.pem
 
@@ -139,9 +163,10 @@ begin with *[Shield]*.
 
 6. *[Shield]* Add the following line to `Kibana_Home/config/kibana.yml`:
 
-        elasticsearch.ssl.ca: config/es-ssl.CA.pem
+        elasticsearch.ssl.ca: /home/russell/Documents/code/bundles/elasticsearch-2.4.0/kibana-4.6.2-linux-x86_64/config/es-ssl.CA.pem
 
-7. Configure Kibana to be accessed through the @product@ Marvel Portlet.
+7. Configure Kibana to be accessed through the @product@ Marvel Portlet by
+   adding the following to `kibana.yml`:
 
         server.basePath: "/o/portal-search-elasticsearch-marvel-web/marvel-proxy"
 
@@ -248,7 +273,7 @@ a page in @product@:
    ![Figure 4: You can monitor the health of your cluster using the Marvel
    Portlet.](../../../images-dxp/marvel-portlet-overview.png)
 
-For more information on what Marvel offers you, refer to [Elasticsearch's Marvel guide](https://www.elastic.co/guide/en/marvel/2.2/index.html).
+For more information on what Marvel offers you, refer to [Elasticsearch's Marvel guide](https://www.elastic.co/guide/en/marvel/2.4/index.html).
 
 With @product@'s *Enterprise Search-Standard* subscription, you not only have a
 powerful search engine, but you have security and monitoring tools at your
