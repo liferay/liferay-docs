@@ -50,8 +50,7 @@ to update their usage of the tag.
 #### How should I update my code? [](id=how-should-i-update-my-code)
 
 You should remove the parameter `editLogoURL` and include (if neccessary) the
-parameters `currentLogoURL`, `hasUpdateLogoPermission`, `maxFileSize`, and/or
-`tempImageFileName`.
+parameters `currentLogoURL`, `maxFileSize`, and/or `tempImageFileName`.
 
 **Example**
 
