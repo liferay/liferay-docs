@@ -39,7 +39,7 @@ Follow the steps below to download and install Liferay Workspace:
     to your `~/.liferay/bundles` folder, so if you decide to initialize another
     @product@ instance of the same version, the bundle is not re-downloaded. See
     the
-    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
+    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
     $$$
