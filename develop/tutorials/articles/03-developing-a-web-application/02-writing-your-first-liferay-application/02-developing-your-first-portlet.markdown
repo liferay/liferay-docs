@@ -1,0 +1,334 @@
+# Developing Your First Portlet [](id=developing-your-first-portlet)
+
+So far, you've installed and set up @ide@, created a Liferay Workspace, 
+generated a project, and deployed it to a running bundle. Next you'll add
+functionality and start fully developing your Liferay Web Application.
+
+## Creating an Add Guestbook Button [](id=creating-an-add-guestbook-button)
+
+A guestbook application is pretty simple, right? People come to your site,
+enter their names and brief messages, and then post them. Users can read the
+entries that others posted, and they can post entries themselves.
+
+When you created your project, it generated a file named `view.jsp` in your
+project's `src/main/resources/META-INF/resources`. This file creates the 
+default view for users when the portlet is added to the page. Right now it
+only contains some sample content:
+
+    <%@ include file="/init.jsp" %>
+
+    <p>
+        <b><liferay-ui:message key="com_liferay_docs_guestbook_GuestbookMVCPortlet.caption"/></b>
+    </p>
+
+First of all, `view.jsp` imports `init.jsp`. By convention, imports and 
+tag library declarations in Liferay portlet applications are made in an 
+`init.jsp` file. Every other JSP file in the application imports `init.jsp`. 
+This convention ensures that JSP dependency management can always be handled 
+from a single fie.
+
+Besides importing `init.jsp`, `view.jsp` displays a message defined by a
+language key. This key and its value are declared in your project's
+`src/main/resources/content/Language.properties` file. 
+
+It's time to start turning this into the Guestbook application. Add the first
+button, labeled *Add Entry*.
+
+1.  First, remove everything under the include for `init.jsp`. 
+
+2.  Next, add the following AlloyUI tags to display an Add Entry button inside
+    of a button row:
+
+        <aui:button-row>
+            <aui:button value="Add Entry"></aui:button>
+        </aui:button-row>
+
+Notice that you can use `aui` tags in `view.jsp` since `init.jsp` declares the
+AlloyUI tag library by default (as well as other important imports and two
+useful tags):
+
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+
+        <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
+        <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
+        <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+        <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+        <portlet:defineObjects />
+
+        <liferay-theme:defineObjects />
+
+Your application now displays a button instead of a message but the button
+currently doesn't do anything. Next, you'll create a URL for your button.
+
+### Generating URLs for Portlets [](id=generating-urls-for-portlets)
+
+Since portlets are designed to be placed on pages by end users, and end users
+can place multiple portlets on a page, and you as the developer have no idea
+what other portlets will share a page with yours, guess what? You can't define
+URLs for various functions in your application like you may be used to. Why? 
+
+Say you've written a Calendar application that a user puts on the same
+page as a Blog application. The Calendar allows the user to add and delete
+events. The Blog allows the user to add and delete blog entries. To implement
+the functionality for deleting, both application developers elected to append
+the *del* parameter to the URL, and give it a primary key value so the
+application can go look up the calendar event or the blog entry and delete it.
+
+Since both applications read this parameter, when a user uses the delete
+function in either one of them, both applications attempt to delete either a
+calendar event or a blog entry that matches the given ID. In other words, the
+applications are clashing because they use the same URL parameter.
+System-generated URLs prevent this from happening. Creating a system-generated
+URL is easy:
+
+1. Add these tags below the `<%@ include file="/init.jsp" %>` line but above
+   the `<aui:button-row>` tag:
+
+        <portlet:renderURL var="addEntryURL">
+            <portlet:param name="mvcPath" value="/edit_entry.jsp"></portlet:param>
+        </portlet:renderURL>
+
+2. Add this attribute to the `<aui:button>` tag after `value="Add Entry"`:
+
+        onClick="<%= addEntryURL.toString() %>"
+
+    Your `view.jsp` page should now look like this:
+
+        <%@ include file="/init.jsp" %>
+
+        <portlet:renderURL var="addEntryURL">
+            <portlet:param name="mvcPath" value="/edit_entry.jsp"></portlet:param>
+        </portlet:renderURL>
+
+        <aui:button-row>
+            <aui:button onClick="<%= addEntryURL.toString() %>" value="Add Entry"></aui:button>
+        </aui:button-row>
+
+The `<portlet:renderURL>` tag's `var` attribute creates a variable to hold the
+system-generated URL. The generated URL is stored in the `addEntryURL` variable.
+The `<portlet:param>` tag defines a URL parameter that's appended to the
+generated URL. In this example, a URL parameter named `mvcPath` with a value of
+`/edit_entry` is appended to the URL.
+
+Notice that your `GuestbookMVCPortlet` class extends Liferay's `MVCPortlet`
+class. In a Liferay MVC portlet, the `mvcPath` URL parameter indicates a page
+within your portlet application. To navigate to another page in your portlet
+application, use a portal URL with the parameter `mvcPath` to link to the
+specific page.
+
+In the example above, you created a `renderURL` that points to your
+application's `edit_entry.jsp` page, which you haven't yet created. Note that
+using an AlloyUI button to follow the generated URL is not required. You could
+have used any HTML construct that contains a link. Users can click on your
+button to access your application's `edit_entry.jsp` page. This currently
+produces an error since no `edit_entry.jsp` exists yet. Creating the
+`edit_entry.jsp` page is your next step.
+
+### Creating a Page for Adding Guestbook Entries [](id=creating-a-page-for-adding-guestbook-entries)
+
+In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
+
+1.  Right-click on your project's `src/main/resources/META-INF/resources` folder
+    and choose *New* &rarr; *File*.
+
+2.  Name the file `edit_entry.jsp` and click *Finish*.
+
+3.  Add this line to the top of the file:
+
+        <%@ include file="init.jsp" %>
+
+    Remember, it's a best practice to add all JSP imports and tag library
+    declarations to a single file that's imported by every other JSP file in
+    your application. For `edit_entry.jsp`, you need these imports to access the
+    portlet tags that create URLs and the Alloy tags that create the form.
+
+4.  You'll create two URLs: one to submit the form and one to go back to the
+    previous page: `view.jsp`. To create the URL to go back to `view.jsp`, add
+    the following tag below the first line you added:
+
+        <portlet:renderURL var="viewURL">
+            <portlet:param name="mvcPath" value="/view.jsp"></portlet:param>
+        </portlet:renderURL>
+
+Next, you must create a new URL for submitting the form. Before you do, some
+explanation is in order.
+
+### Using Portlet Actions [](id=using-portlet-actions)
+
+As already stated, portlets run in a portion of a page. A page can contain
+multiple portlets. Because of this, portlets have *phases* of operation. Here,
+you'll learn about the most important two. The first phase is the one you've
+already used: it's called the *render* phase. All this means is that the portlet
+draws itself, using the JSPs you write for it.
+
+The other phase is called the *action* phase. This phase runs once, when a user
+triggers a portlet action. The portlet performs whatever action the user
+triggered, such as performing a search or adding a record to a database. Then,
+based on what happened in the action, the portlet goes back to the render phase
+and re-renders itself according to its new state.
+
+To save a guestbook entry, you must trigger a portlet action. For this, you'll
+create an action URL.
+
+1. Add the following tag after the closing `</portlet:renderURL>` tag:
+
+        <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
+
+You now have the two required URLs for your form.
+
+### Creating a Form [](id=creating-a-form)
+
+Your guestbook form is pretty simple. All you need are two fields: one for the
+name of the person submitting the entry and one for the entry itself.
+
+1. Add the following tags to the end of your `edit_entry.jsp` file:
+
+        <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
+                <aui:fieldset>
+                    <aui:input name="name"></aui:input>
+                    <aui:input name="message"></aui:input>
+                </aui:fieldset>
+
+                <aui:button-row>
+                    <aui:button type="submit"></aui:button>
+                    <aui:button type="cancel" onClick="<%= viewURL.toString() %>"></aui:button>
+                </aui:button-row>
+        </aui:form>
+
+Save `edit_entry.jsp` and redeploy your application. If you refresh the page and
+click the *Add Entry* button, your form appears. If you click the *Cancel*
+button, it works! However, don't try the *Save* button yet. You haven't yet
+created the action that saves a guestbook entry, so clicking *Save* produces an
+error.
+
+![Figure x: This is the Guestbook application's form for adding entries.](../../../images/first-guestbook-portlet.png)
+
+Implementing the portlet action (what happens when the user clicks *Save*) is
+your next task.
+
+### Implementing Portlet Actions [](id=implementing-portlet-actions)
+
+When users submit the form, your application stores the form data so it
+can be displayed in the guestbook. To keep this first application simple, you'll
+implement this using a part of the Portlet API called Portlet Preferences.
+Normally, of course, you'd use a database, and Liferay makes it very easy to
+work with databases using Service Builder. For now, however, you can create the 
+first iteration of your guestbook application using portlet preferences.
+
+To make your portlet do anything other than re-render itself, you must
+implement portlet actions. An action defines some processing, usually based on
+user input, that the portlet must perform before it renders itself. In the case
+of the guestbook portlet, the action to implement next saves a guestbook
+entry that a user typed into the form. Saved guestbook entries can be retrieved
+and displayed later.
+
+Since you're using Liferay's MVC Portlet framework, you have an easy way to
+implement actions. Portlet actions are implemented in the portlet class,
+which acts as the controller. In the form you just created, you made an action
+URL, and you called it `addEntry`. To create a portlet action, you create a
+method in the portlet class with the same name. `MVCPortlet` calls that method
+when a user triggers its matching URL.
+
+1.  Open the `GuestbookMvcPortlet.java`. The project templates generated this class 
+	when you created the portlet project.
+
+2.  Create a method with the following signature:
+
+        public void addEntry(ActionRequest request, ActionResponse response) {
+
+        }
+
+3.  Press [CTRL]+[SHIFT]+O to organize imports and import the required
+    `javax.portlet.ActionRequest` and `javax.portlet.ActionResponse` classes.
+
+You've now created a portlet action. It doesn't do anything, but at least you
+won't get an error now if you submit your form. Next, you should make the
+action save the form data.
+
+Because of the limitations of the portlet preferences API, you must store
+each guestbook entry as a `String` in a string array. Since you have two fields
+in your form, you must use a delimiter to determine where the user name ends and
+the guestbook entry begins. The caret symbol (`^`) makes a good delimiter
+because users are highly unlikely to use that symbol in a guestbook entry.
+
++$$$
+
+**Note:** In most cases, you'll need a more robust solution than the 
+portlet preferences API for storing data. You'll learn how to implement a robust
+mechanism for saving application data later in the *Service Builder* section.
+The preferences API is used here for prototyping purposes only. 
+
+$$$
+
+The following method implements adding a guestbook entry to a portlet preference
+called `guestbook-entries`:
+ 
+	public void addEntry(ActionRequest request, ActionResponse response) {
+        try {
+            PortletPreferences prefs = request.getPreferences();
+
+            String[] guestbookEntries = prefs.getValues("guestbook-entries",
+                    new String[1]);
+
+            ArrayList<String> entries = new ArrayList<String>();
+
+            if (guestbookEntries != null) {
+                entries = new ArrayList<String>(Arrays.asList(prefs.getValues(
+                        "guestbook-entries", new String[1])));
+            }
+
+            String userName = ParamUtil.getString(request, "name");
+            String message = ParamUtil.getString(request, "message");
+            String entry = userName + "^" + message;
+
+            entries.add(entry);
+
+            String[] array = entries.toArray(new String[entries.size()]);
+
+            prefs.setValues("guestbook-entries", array);
+
+            try {
+                prefs.store();
+            }
+            catch (IOException ex) {
+                Logger.getLogger(GuestbookMvcPortlet.class.getName()).log(
+                        Level.SEVERE, null, ex);
+            }
+            catch (ValidatorException ex) {
+                Logger.getLogger(GuestbookMvcPortlet.class.getName()).log(
+                        Level.SEVERE, null, ex);
+            }
+
+        }
+        catch (ReadOnlyException ex) {
+            Logger.getLogger(GuestbookMvcPortlet.class.getName()).log(
+                    Level.SEVERE, null, ex);
+        }
+    }
+
+1.  Replace your existing `addEntry` method with the above method.
+
+2.  Press [CTRL]+[SHIFT]+O to organize imports and select the
+    `javax.portlet.PortletPreferences` and `java.util.logging.Logger` when
+	prompted, and not their Liferay equivalents.
+
+First, the preferences are retrieved, and then the `guestbook-entries`
+preference is retrieved and converted to an `ArrayList` so that you can add an
+entry without worrying about exceeding the size of the array. Next, the name
+and message fields from your form are retrieved. Note that Liferay's
+`ParamUtil` class makes it very easy to retrieve URL parameters.
+
+Finally, the fields are combined into a `String` delimited by a caret, and the
+new entry is added to the `ArrayList`, which is then converted back to an array
+so it can be stored as a preference. The try/catch blocks are required by the
+portlet preferences API.
+
+This is not the normal way to use portlet preferences, but it provides a quick
+and easy way for you to store guestbook entries in this first version of your
+application. You'll implement a robust way to store guestbook entries in a
+later step.
+
+The next and final feature to implement is a mechanism for viewing guestbook
+entries.
