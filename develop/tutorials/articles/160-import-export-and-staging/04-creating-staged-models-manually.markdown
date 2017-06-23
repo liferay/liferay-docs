@@ -8,12 +8,13 @@ Make sure to read the
 section to determine if creating staged models manually is beneficial for your
 use case.
 
-In this tutorial, you'll explore the Asset Link framework (used for
-[relating assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)),
-which is a @product@ framework that leverages the
+In this tutorial, you'll explore how the Asset Link framework (a @product@
+framework used for
+[relating assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships))
+manually creates staged models. This framework is separate from Staging and is
+referenced solely as an example for how to leverage the
 [ModelAdapterBuilder](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
-framework. The Model Adapter Builder lets you adapt your model classes to staged
-models.
+framework, which lets you adapt your model classes to staged models.
 
 Asset links do not provide UUIDs by default; however, they still need to be
 tracked in the Staging and Export/Import frameworks. Therefore, they require
