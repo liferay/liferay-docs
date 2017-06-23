@@ -149,11 +149,37 @@ done with the following line of code:
         serviceLocator.findService(
         "com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService")>
 
-We store a handle to our service in `DDLRecordLocalService` so we can use the
+To use the `serviceLocator` variable, you must  enable it. For security reasons,
+Liferay Portal restricts the `serviceLocator`, along with the `objectUtil`,
+`staticUtil`, and `utilLocator` variables, in  the `portal.properties` file.
+Here are the default property values:
+
+    velocity.engine.restricted.variables=\
+        serviceLocator,\
+        utilLocator
+    
+    freemarker.engine.restricted.variables=\
+        objectUtil,\
+        serviceLocator,\
+        staticUtil,\
+        utilLocator
+
+To use the `serviceLocator` variable in FreeMarker templates, for example, you
+must remove it from the `freemarker.engine.restricted.variables` property value
+list, save to a custom Portal properties file (e.g.,
+`Liferay_Home/portal-ext.propeties`), and restart the server. You can view the
+full list of Velocity settings
+[here](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#Velocity%20Engine)
+and FreeMarker settings
+[here](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html#FreeMarker%20Engine).
+
+Now that all that is taken care of, we store a handle to our service in `DDLRecordLocalService` so we can use the
 service to retrieve our list of volunteers:
 
     <#assign records = DDLRecordLocalService.getRecords(reserved_record_set_id)>
     
+
+
 Now that we have our records, we can iterate through the list and display the
 data from each record that we want to show. To access a field from a record
 entry (such as the volunteer's name), we call the `getFieldValue` method and
