@@ -2,7 +2,7 @@
 
 Here are the steps for upgrading a  core language key hook to @product-ver@. 
 
-1.  Create a new module based on the Blade sample `blade.resourcebundle` in     
+1.  Create a new module based on the Blade sample `blade.resourcebundle` in 
     [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.resourcebundle)
     or [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.resourcebundle). 
 
@@ -14,7 +14,7 @@ Here are the steps for upgrading a  core language key hook to @product-ver@.
         - `Language_xx.properties`
         - ...
 
-2.  Copy all of your plugin's language properties files into the module
+2.  Copy all your plugin's language properties files into the module
     folder `src/main/resources/content/`.
 
 3.  [Create a `resource bundle`](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#creating-a-resource-bundle). 
@@ -23,7 +23,7 @@ Here are the steps for upgrading a  core language key hook to @product-ver@.
 
 Your core language key customizations are deployed to @product-ver@. 
 
-**Related Topics**
+## Related Topics
 
 [Overriding Core Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys)
 

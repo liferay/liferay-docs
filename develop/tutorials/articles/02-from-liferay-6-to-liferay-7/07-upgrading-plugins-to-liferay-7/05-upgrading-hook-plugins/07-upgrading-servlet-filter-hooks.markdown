@@ -13,7 +13,7 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 Your Servlet Filter is running on @product-ver@!
 
-**Related Topics**
+## Related Topics
 
 [Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
 

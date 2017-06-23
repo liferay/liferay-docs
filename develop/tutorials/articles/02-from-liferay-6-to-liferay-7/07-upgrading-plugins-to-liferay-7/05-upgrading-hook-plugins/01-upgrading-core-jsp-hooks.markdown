@@ -1,6 +1,6 @@
 # Upgrading Core JSP Hooks [](id=upgrading-core-jsp-hooks)
 
-Getting a core JSP hook running on @product-ver@ involves these steps:
+Getting a core JSP hook running on @product-ver@ takes two steps:
 
 1.  Adapt your code to @product-ver@'s API using
     [@liferay-ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool). 
@@ -12,7 +12,7 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 It's just that easy!
 
-**Related Topics**
+## Related Topics
 
 [Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
 

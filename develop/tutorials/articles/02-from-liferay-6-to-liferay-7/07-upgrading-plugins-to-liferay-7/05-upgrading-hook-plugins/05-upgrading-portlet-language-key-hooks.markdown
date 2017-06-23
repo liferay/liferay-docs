@@ -1,10 +1,10 @@
 # Upgrading Portlet Language Key Hooks [](id=upgrading-portlet-language-key-hooks)
 
-You can upgrade your portlet language key hooks to @product-ver@ following these
-steps: 
+You can upgrade your portlet language key hooks to @product-ver@ by following
+these steps: 
 
-1.  Create a new module based on the Blade sample `blade.resourcebundle` (     
-    [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.hook.resourcebundle)
+1.  Create a new module based on the Blade sample `blade.resourcebundle` 
+    ([Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.hook.resourcebundle)
     or [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.hook.resourcebundle) project). 
 
     Here are the module folder structure's main files:
@@ -26,7 +26,7 @@ steps:
 Your portlet language key customizations are deployed in your new module on
 @product-ver@. 
 
-**Related Topics**
+## Related Topics
 
 [Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#creating-a-resource-bundle)
 

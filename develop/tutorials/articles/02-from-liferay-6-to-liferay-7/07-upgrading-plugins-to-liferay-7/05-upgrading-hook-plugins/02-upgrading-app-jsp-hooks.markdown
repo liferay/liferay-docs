@@ -2,16 +2,16 @@
 
 JSPs in OSGi modules are customized using module fragments. The module fragment
 attaches to the host module to alter the JSPs. To the OSGi runtime, the
-fragment is part of the host module. Section 3.14 of the [OSGi Alliance's core
-specification document](https://www.osgi.org/developer/downloads/release-6/)
+fragment is part of the host module. Section 3.14 of the 
+[OSGi Alliance's core specification document](https://www.osgi.org/developer/downloads/release-6/)
 explains module fragments in detail. This tutorial shows you how to upgrade your
 app JSP hooks to @product-ver@.
 
 @liferay-ide@'s Code Upgrade Tool's
 [*Convert Custom JSP Hooks* step](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 generates module fragments from app JSP hook plugins. The tool creates module
-fragments in the same folder as your Plugins SDK root if your hook's in a
-Plugins SDK or in the `[liferay_workspace]/modules` folder if your hook's in a
+fragments in the same folder as your Plugins SDK root if your hook is in a
+Plugins SDK or in the `[liferay_workspace]/modules` folder if your hook is in a
 Liferay Workspace.
 
 Module fragments follow this name convention: `[plugin_name]-[app]-fragment`.
@@ -22,7 +22,7 @@ Blogs app, the Code Upgrade Tool generates a module fragment named
 Here are the steps for upgrading app JSP hook plugins:
 
 1.  [Declare the Fragment Host](#declare-the-fragment-host)
-2.  [Update the JSP](update-the-jsp)
+2.  [Update the JSP](#update-the-jsp)
 
 ## Declare the Fragment Host [](id=declare-the-fragment-host)
 
@@ -57,8 +57,8 @@ app's `init-ext.jsp` file here:
 
     src/main/resources/META-INF/resources/blogs/init-ext.jsp
 
-The tool's [*Convert Custom JSP Hooks*
-step](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+The tool's 
+[*Convert Custom JSP Hooks* step](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 lets you compare custom JSPs with originals:
 
 - Compare your custom 6.2 JSP with the original 6.2 JSP.
@@ -66,9 +66,7 @@ lets you compare custom JSPs with originals:
 
 ![Figure x: The Code Upgrade Tools lets you compare custom JSPs with originals.](../../../../images/upgrading-app-jsp-hook-convert-custom-jsp-hook.png)
 
-Make any additional needed changes in your 7.0 custom JSP.
-
-Then
+Make any additional needed changes in your 7.0 custom JSP. Then
 [deploy](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
 your module fragment. This stops the host module momentarily, attaches the
 fragment to the host, and then restarts the host module. The console output
