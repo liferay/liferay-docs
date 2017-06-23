@@ -7,7 +7,7 @@ fragment is part of the host module. Section 3.14 of the
 explains module fragments in detail. This tutorial shows you how to upgrade your
 app JSP hooks to @product-ver@.
 
-@liferay-ide@'s Code Upgrade Tool's
+Liferay @ide@'s Code Upgrade Tool's
 [*Convert Custom JSP Hooks* step](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 generates module fragments from app JSP hook plugins. The tool creates module
 fragments in the same folder as your Plugins SDK root if your hook is in a

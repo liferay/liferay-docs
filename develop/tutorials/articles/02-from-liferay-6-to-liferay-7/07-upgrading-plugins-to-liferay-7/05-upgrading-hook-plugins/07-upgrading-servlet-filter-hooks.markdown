@@ -4,7 +4,7 @@ If you have Servlet Filter Hooks ready to be upgraded, this tutorial's for you.
 The process is quite simple:
 
 1.  Adapt your plugin to @product-ver@'s API using
-    [@liferay-ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+    [Liferay @ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
 2.  Deploy the plugin.
 

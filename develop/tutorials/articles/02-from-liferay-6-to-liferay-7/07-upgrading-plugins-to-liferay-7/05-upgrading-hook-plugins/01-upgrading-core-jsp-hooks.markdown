@@ -3,7 +3,7 @@
 Getting a core JSP hook running on @product-ver@ takes two steps:
 
 1.  Adapt your code to @product-ver@'s API using
-    [@liferay-ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool). 
+    [Liferay @ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool). 
 
 2.  Deploy your hook plugin. 
 
