@@ -4,10 +4,12 @@
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
 absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
-Pack +.**
+Pack 21+.**
 
-<!-- We must find the Fix Pack version that supports Ext plugin deployment. This
-is being currently tested. The SP5 release will support Ext plugins. -Cody -->
+<!-- We must find the specific Fix Pack version that first supports Ext plugin
+deployment. This is being currently tested. The latest FP has the needed
+changes, so I have that stated for the above note. I'll update this as soon as I
+know. Note: The SP5 release will support Ext plugins. -Cody -->
 
 The following app servers are supported for Ext plugin development in
 @product@:
@@ -614,22 +616,7 @@ Next, you'll learn about Liferay's licensing and contributing standards.
 ## App Server Configuration [](id=app-server-configuration)
 
 If you're using the Tomcat app server, you must modify your app server's
-`catalina.properties` file. Make sure the `common.loader` property has the
-following paths set:
-
-    common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.home}/lib","${catalina.home}/lib/*.jar","${catalina.home}/lib/ext/global","${catalina.home}/lib/ext/global/*.jar","${catalina.home}/lib/ext","${catalina.home}/lib/ext/*.jar"
-
-If comparing the above property value with the default @product@ bundle, the
-following two global paths are added:
-
-- `"${catalina.home}/lib/ext/global"`
-- `"${catalina.home}/lib/ext/global/*.jar"`
-
-The folders searched by the class loader must include the `global` folder for
-Ext plugins to function properly.
-
-Also, add the following code into Tomcat's `conf/Catalina/localhost/ROOT.xml`
-file:
+`conf/Catalina/localhost/ROOT.xml` file. Add the following code to that file:
 
     <Resources>
         <PreResources
