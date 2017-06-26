@@ -4,7 +4,7 @@ Upgrading traditional
 [service wrapper hook plugins](/develop/tutorials/-/knowledge_base/6-2/overriding-a-portal-service-using-a-hook) 
 to @product-ver@ is quick and easy. 
 
-1.  Use [@liferay-ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+1.  Use [Liferay @ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
     to adapt the plugin's code to @product-ver@'s API. 
 
 2.  Deploy the plugin. 
