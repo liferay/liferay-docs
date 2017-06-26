@@ -23,7 +23,7 @@ Here are the steps for upgrading a  core language key hook to @product-ver@.
 
 Your core language key customizations are deployed to @product-ver@. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Overriding Core Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys)
 

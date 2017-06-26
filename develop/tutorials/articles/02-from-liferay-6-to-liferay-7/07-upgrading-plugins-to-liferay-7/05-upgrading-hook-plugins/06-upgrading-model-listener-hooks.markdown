@@ -14,7 +14,7 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 Your model listener hook is "all ears" and ready to act. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Model Listeners](/develop/tutorials/-/knowledge_base/7-0/model-listeners)
 

@@ -14,7 +14,7 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 Your custom property values and actions are live.
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
 

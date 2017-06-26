@@ -1,4 +1,4 @@
-# Updating Blade CLI
+# Updating Blade CLI [](id=updating-blade-cli)
 
 If your Blade CLI version is outdated, you can run the following command to
 automatically download and install the latest version of Blade CLI:

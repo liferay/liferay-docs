@@ -12,7 +12,7 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 It's just that easy!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
 

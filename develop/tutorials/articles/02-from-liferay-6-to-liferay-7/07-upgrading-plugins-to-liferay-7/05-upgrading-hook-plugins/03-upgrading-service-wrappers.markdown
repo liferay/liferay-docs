@@ -12,7 +12,7 @@ to @product-ver@ is quick and easy.
 @product@'s Plugin Compatibility Layer converts the plugin WAR to a Web
 Application Bundle (WAB) and installs it to Liferay's OSGi Runtime. 
 
-## Related Articles
+## Related Articles [](id=related-articles)
 
 [Overriding Liferay Services \(Service Wrappers\)](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
 
