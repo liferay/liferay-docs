@@ -1,0 +1,135 @@
+# Persistence
+
+The persistence layer is responsible for saving and retrieving your model data. 
+The service layer is like a buffer zone between your application and your 
+persistence layer: having it gives you the freedom in the future to swap out 
+your persistence layer for a different implementation without modifying 
+anything but the calls in the service layer.
+
+In order to properly model the Guestbook and Entries going forward, you're going
+to need to introduce some new concepts into the application. Rather than simply
+create entries in place, you will create a guestbook object which will contain 
+the entries. You'll need to also create the various methods associated with
+guestbook management. In addition, you'll add a field for users to enter an
+email address in the guestbook.
+
+When you create separate entity for guestbooks, you will be able to create
+multiple guestbooks with different sets of entries. You will also separate the 
+entity data from being simply the portlet data, and instead you will have
+guestbooks and entities within those guestbooks.
+
+1. Open 'service.xml' in your `guestbook-service` project.
+2. Replace the contents of the file with the following:
+
+	<?xml version="1.0"?>
+	<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+
+	    <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
+		<author>liferay</author>
+		<namespace>GB</namespace>
+		<entity local-service="true" name="Entry" remote-service="true" uuid="true">
+
+			<!-- PK fields -->
+
+			<column name="entryId" primary="true" type="long" />
+
+			<!-- Group instance -->
+
+			<column name="groupId" type="long" />
+
+			<!-- Audit fields -->
+
+			<column name="companyId" type="long" />
+			<column name="userId" type="long" />
+			<column name="userName" type="String" />
+			<column name="createDate" type="Date" />
+			<column name="modifiedDate" type="Date" />
+			<column name="name" type="String" />
+			<column name="email" type="String" />
+			<column name="message" type="String" />
+			<column name="guestbookId" type="long" />
+
+			<finder name="G_G" return-type="Collection">
+				<finder-column name="groupId" />
+				<finder-column name="guestbookId" />
+			</finder>
+		</entity>
+		<entity local-service="true" name="Guestbook" remote-service="true" uuid="true">
+
+			<!-- PK fields -->
+
+			<column name="guestbookId" primary="true" type="long" />
+
+			<!-- Group instance -->
+
+			<column name="groupId" type="long" />
+
+			<!-- Audit fields -->
+
+			<column name="companyId" type="long" />
+			<column name="userId" type="long" />
+			<column name="userName" type="String" />
+			<column name="createDate" type="Date" />
+			<column name="modifiedDate" type="Date" />
+			<column name="name" type="String" />
+
+			<finder name="GroupId" return-type="Collection">
+				<finder-column name="groupId" />
+			</finder>
+		</entity>
+		<exceptions>
+			<exception>EntryEmail</exception>
+			<exception>EntryMessage</exception>
+			<exception>EntryName</exception>
+			<exception>GuestbookName</exception>
+		</exceptions>
+	</service-builder>
+	
+This creates two entities the Entry and the Guestbook.
+
+The Entry fields are defined as:
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="name" type="String" />
+		<column name="email" type="String" />
+		<column name="message" type="String" />
+		<column name="guestbookId" type="long" />
+
+With a finder for `groupId` and`guestbookId` being generated. 
+
+			<finder name="G_G" return-type="Collection">
+				<finder-column name="groupId" />
+				<finder-column name="guestbookId" />
+			</finder>
+
+The Guestbook fields are defined as:
+
+	<column name="companyId" type="long" />
+	<column name="userId" type="long" />
+	<column name="userName" type="String" />
+	<column name="createDate" type="Date" />
+	<column name="modifiedDate" type="Date" />
+	<column name="name" type="String" />
+
+With a finder for `groupId.` 
+
+	<finder name="GroupId" return-type="Collection">
+		<finder-column name="groupId" />
+	</finder>
+
+You've also identified some associated exception types   
+
+		<exceptions>
+			<exception>EntryEmail</exception>
+			<exception>EntryMessage</exception>
+			<exception>EntryName</exception>
+			<exception>GuestbookName</exception>
+		</exceptions>
+			
+1. Go to the Gradle Tasks pane on the right side of @ide@.
+2. Open `guestbook-service` &rarr; `build`
+3. Run `buildService`
