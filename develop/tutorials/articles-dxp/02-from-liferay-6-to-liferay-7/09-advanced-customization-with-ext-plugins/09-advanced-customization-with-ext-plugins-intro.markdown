@@ -3,9 +3,11 @@
 +$$$
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
-absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 SP
-4+.**
+absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
+Pack +.**
 
+<!-- We must find the Fix Pack version that supports Ext plugin deployment. This
+is being currently tested. The SP5 release will support Ext plugins. -Cody -->
 
 The following app servers are supported for Ext plugin development in
 @product@:
@@ -16,9 +18,12 @@ The following app servers are supported for Ext plugin development in
 - WebLogic 12.2
 - WebSphere 8.5.5
 
-Visit the [App Server Configuration](#app-server-configuration) section for
-details on modifications required for certain app servers to allow Ext plugins
-to function properly in that environment.
+If you're using the Tomcat app server, visit the
+[App Server Configuration](#app-server-configuration) section for details on
+modifications required to allow Ext plugins to function properly in that
+environment.
+
+<!-- Verify that this is only necessary for Fix Packs, not SP5. --Cody -->
 
 $$$
 
@@ -622,6 +627,19 @@ following two global paths are added:
 
 The folders searched by the class loader must include the `global` folder for
 Ext plugins to function properly.
+
+Also, add the following code into Tomcat's `conf/Catalina/localhost/ROOT.xml`
+file:
+
+    <Resources>
+        <PreResources
+            className="com.liferay.support.tomcat.webresources.ExtResourceSet"
+            base="${catalina.base}/lib/ext/portal"
+            webAppMount="/WEB-INF/lib"
+        />
+    </Resources>
+
+Be sure to place this code within the existing `<Context>` tags.
 
 ## Licensing and Contributing [](id=licensing-and-contributing)
 

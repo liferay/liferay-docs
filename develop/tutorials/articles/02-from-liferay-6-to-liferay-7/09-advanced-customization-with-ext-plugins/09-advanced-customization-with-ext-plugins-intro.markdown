@@ -14,10 +14,6 @@ The following app servers should be used for Ext plugin development in
 - WebLogic 12.2
 - WebSphere 8.5.5
 
-Visit the [App Server Configuration](#app-server-configuration) section for
-details on modifications required for certain app servers to allow Ext plugins
-to function properly in that environment.
-
 $$$
 
 Ext plugins are powerful tools used to extend @product@. They, however, increase
@@ -604,23 +600,6 @@ Now, perform these actions on your server:
     appropriate directory in the application server. 
 
 Next, you'll learn about Liferay's licensing and contributing standards.
-
-## App Server Configuration [](id=app-server-configuration)
-
-If you're using the Tomcat app servers, you must modify your app server's
-`catalina.properties` file. Make sure the `common.loader` property has the
-following paths set:
-
-    common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.home}/lib","${catalina.home}/lib/*.jar","${catalina.home}/lib/ext/global","${catalina.home}/lib/ext/global/*.jar","${catalina.home}/lib/ext","${catalina.home}/lib/ext/*.jar"
-
-If comparing the above property value with the default @product@ bundle, the
-following two global paths are added:
-
-- `"${catalina.home}/lib/ext/global"`
-- `"${catalina.home}/lib/ext/global/*.jar"`
-
-The folders searched by the class loader must include the `global` folder for
-Ext plugins to function properly.
 
 ## Licensing and Contributing [](id=licensing-and-contributing)
 
