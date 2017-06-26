@@ -39,13 +39,13 @@ the instructions below to create your Liferay Module Project.
 
 2. Select `New` &rarr; `Liferay Module Project`
 
-3. Enter `guestbook-mvc` for the Project name. 
+3. Enter `guestbook-web` for the Project name. 
 
 4. Use the `gradle-module` Build type.
 
 5. Select the `mvc-portlet` for Project Template Name. Click *Next*. 
 
-6. Enter `com.liferay.docs.guestbook` for the package name. Click *Finish*. 
+7. Enter "Guestbook" for the class name and `com.liferay.docs.guestbook` for the package name. Click *Finish*. 
 
 Because Gradle automatically manages dependencies for you, it may take a while
 for your project to be created the first time, as its dependencies must be
