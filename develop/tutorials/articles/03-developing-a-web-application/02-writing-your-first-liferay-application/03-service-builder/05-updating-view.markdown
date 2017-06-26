@@ -29,7 +29,7 @@ managing Guestbooks, and update the existing JSPs.
 4. Open the `view.jsp` file found in `/resources/META-INF/resources/`
 5. Replace the contents with the following code:
 
-	<%@ include file="init.jsp" %>
+	<%@include file="init.jsp"%>
 
 	<%
 		long guestbookId = Long.valueOf((Long) renderRequest
@@ -43,14 +43,12 @@ managing Guestbooks, and update the existing JSPs.
 						.getGuestbooks(scopeGroupId);
 				for (int i = 0; i < guestbooks.size(); i++) {
 					Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
-
 					String cssClass = StringPool.BLANK;
-
 					if (curGuestbook.getGuestbookId() == guestbookId) {
 						cssClass = "active";
 					}
-					else	
-				 {
+				
+					{
 				
 		%>
 
@@ -79,7 +77,7 @@ managing Guestbooks, and update the existing JSPs.
 		
 			<aui:button onClick="<%=addGuestbookURL.toString()%>" 
 				value="Add Guestbook" />
-	
+		
 			<portlet:renderURL var="addEntryURL">
 				<portlet:param name="mvcPath" value="/edit_entry.jsp" />
 				<portlet:param name="guestbookId"
@@ -87,11 +85,10 @@ managing Guestbooks, and update the existing JSPs.
 			</portlet:renderURL>
 		
 			<aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
-
+	
 	</aui:button-row>
 
-	<liferay-ui:search-container total="<%=EntryLocalServiceUtil.getEntriesCount()%>"
-	>
+	<liferay-ui:search-container total="<%=EntryLocalServiceUtil.getEntriesCount()%>">
 		<liferay-ui:search-container-results
 			results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId.longValue(),
 							guestbookId, searchContainer.getStart(),
@@ -103,13 +100,11 @@ managing Guestbooks, and update the existing JSPs.
 			<liferay-ui:search-container-column-text property="message" />
 
 			<liferay-ui:search-container-column-text property="name" />
-		
-			<liferay-ui:search-container-column-jsp path="guestbook_actions.jsp" align="right" />
 
 		</liferay-ui:search-container-row>
 
 		<liferay-ui:search-iterator />
-	</liferay-ui:search-container>
+	
 
 You've significantly expanded the `view.jsp` now. There are now buttons for both
 adding an Entry and adding a new Guestbook. You've also added the necessary 

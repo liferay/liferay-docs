@@ -92,26 +92,7 @@ Use the following steps to add the required Guestbook service methods:
     guestbook itself. This way, guestbook entries are never orphaned.
 	
 3.  Update your imports using [CTRL]+[SHIFT]+O.
-
-4. Next you need to add the corresponding methods to GuestbookServiceImpl:
-
-    public Guestbook deleteGuestbook(
-   				long guestbookId, ServiceContext serviceContext)
-   			throws PortalException {
-
-   			return GuestbookLocalServiceUtil.deleteGuestbook(
-   				guestbookId, serviceContext);
-   		}
-	 
-   	 public Guestbook updateGuestbook(
-   				long userId, long guestbookId, String name,
-   				ServiceContext serviceContext)
-   			throws PortalException {
-
-   			return GuestbookLocalServiceUtil.updateGuestbook(
-   				userId, guestbookId, name, serviceContext);
 	
-
 These are all the additions you need to make to the Guestbook service. Save
 `GuestbookLocalServiceImpl.java` and run Service Builder.
 

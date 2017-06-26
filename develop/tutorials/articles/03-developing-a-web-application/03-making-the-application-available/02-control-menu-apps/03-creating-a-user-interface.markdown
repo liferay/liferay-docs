@@ -17,48 +17,45 @@ adding or editing a guestbook.
 
 Use the following steps to create the Guestbook Admin portlet's user interface:
 
-1. Edit your guestbook-portlet project's `docroot/guestbookadminmportlet/view.jsp`
+1. Edit your guestbook-portlet project's `resources/guestbookadminmportlet/view.jsp`
    file and replace its default contents with the following JSP code:
 
-        <%@include file="../init.jsp"%>
+		<%@include file="../init.jsp"%>
 
-        <liferay-ui:search-container
-                      total="<%= GuestbookLocalServiceUtil.getGuestbooksCount(scopeGroupId) %>"
->
-                <liferay-ui:search-container-results
-                        results="<%= GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId,
-                                                        searchContainer.getStart(),
-                                                        searchContainer.getEnd()) %>" />
+		        <liferay-ui:search-container
+		                      total="<%= GuestbookLocalServiceUtil.getGuestbooksCount(scopeGroupId) %>"
+		>
+		                <liferay-ui:search-container-results
+		                        results="<%= GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId,
+		                                                        searchContainer.getStart(),
+		                                                        searchContainer.getEnd()) %>" />
 
-                <liferay-ui:search-container-row
-                        className="com.liferay.docs.guestbook.model.Guestbook" modelVar="guestbook">
+		                <liferay-ui:search-container-row
+		                        className="com.liferay.docs.guestbook.model.Guestbook" modelVar="guestbook">
 
-                        <liferay-ui:search-container-column-text property="name" />
+		                        <liferay-ui:search-container-column-text property="name" />
                         
-                        <liferay-ui:search-container-column-jsp
-                            align="right" 
-                            path="/guestbookadminportletguestbookadminmvcportlet/guestbook_actions.jsp"
-                        />
+		                        <liferay-ui:search-container-column-jsp
+		                            align="right" 
+		                            path="/guestbookadminportletguestbookadminmvcportlet/guestbook_actions.jsp"
+		                        />
                 
-                </liferay-ui:search-container-row>
+		                </liferay-ui:search-container-row>
 
-                <liferay-ui:search-iterator />
-        </liferay-ui:search-container>
+		                <liferay-ui:search-iterator />
+		        </liferay-ui:search-container>
 
-        <aui:button-row cssClass="guestbook-admin-buttons">
-                <c:if test='<%= GuestbookModelPermission.contains(permissionChecker,
-                     scopeGroupId, "ADD_GUESTBOOK") %>'>
-                        <portlet:renderURL var="addGuestbookURL">
-                                <portlet:param name="mvcPath"
-                                        value="/guestbookadminportlet/edit_guestbook.jsp" />
-                                <portlet:param name="redirect" value="<%= currentURL %>" />
-                        </portlet:renderURL>
+		        <aui:button-row cssClass="guestbook-admin-buttons">
+		                     scopeGroupId, "ADD_GUESTBOOK") %>'>
+		                        <portlet:renderURL var="addGuestbookURL">
+		                                <portlet:param name="mvcPath"
+		                                        value="/guestbookadminportlet/edit_guestbook.jsp" />
+		                                <portlet:param name="redirect" value="<%= currentURL %>" />
+		                        </portlet:renderURL>
                 
-                        <aui:button onClick="<%= addGuestbookURL.toString() %>"
-                                value="Add Guestbook" />
-                                
-                </c:if>
-        </aui:button-row>
+		                        <aui:button onClick="<%= addGuestbookURL.toString() %>"
+		                                value="Add Guestbook" />
+		        </aui:button-row>
 
     First, you include the `init.jsp` file since the pattern you're following
     specifies that all JSP imports go there.
@@ -115,44 +112,42 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 2. Create a new file called `guestbook_actions.jsp` in your project's
    `/guestbookadminportlet` directory. Then add the following code to it:
 
-        <%@include file="../init.jsp"%>
+		<%@include file="../init.jsp"%>
 
-        <%
-                String mvcPath = ParamUtil.getString(request, "mvcPath");
+		        <%
+		                String mvcPath = ParamUtil.getString(request, "mvcPath");
 
-                ResultRow row = (ResultRow) request
-                                .getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
-<!-- Existing code missing ResultRow code -->
+		                ResultRow row = (ResultRow) request
+		                                .getAttribute("SEARCH_CONTAINER_RESULT_ROW");
 
-                Guestbook guestbook = (Guestbook) row.getObject();
-        %>
+		                Guestbook guestbook = (Guestbook) row.getObject();
+		        %>
 
-        <liferay-ui:icon-menu>
-                        <portlet:renderURL var="editURL">
-                                <portlet:param name="guestbookId"
-                                        value="<%=String.valueOf(guestbook.getGuestbookId()) %>" />
-                                <portlet:param name="mvcPath"
-                                        value="/guestbookadminportlet/edit_guestbook.jsp" />
-                        </portlet:renderURL>
+		        <liferay-ui:icon-menu>
+		                        <portlet:renderURL var="editURL">
+		                                <portlet:param name="guestbookId"
+		                                        value="<%=String.valueOf(guestbook.getGuestbookId()) %>" />
+		                                <portlet:param name="mvcPath"
+		                                        value="/guestbookadminportlet/edit_guestbook.jsp" />
+		                        </portlet:renderURL>
 
-                        <liferay-ui:icon image="edit" message="Edit"
-                                url="<%=editURL.toString() %>" />
+		                        <liferay-ui:icon image="edit" message="Edit"
+		                                url="<%=editURL.toString() %>" />
 
-                        <liferay-security:permissionsURL
-                                modelResource="<%= Guestbook.class.getName() %>"
-                                modelResourceDescription="<%= guestbook.getName() %>"
-                                resourcePrimKey="<%= String.valueOf(guestbook.getGuestbookId()) %>"
-                                var="permissionsURL" />
+		                        <liferay-security:permissionsURL
+		                                modelResource="<%= Guestbook.class.getName() %>"
+		                                modelResourceDescription="<%= guestbook.getName() %>"
+		                                resourcePrimKey="<%= String.valueOf(guestbook.getGuestbookId()) %>"
+		                                var="permissionsURL" />
 
-                        <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
-                        <portlet:actionURL name="deleteGuestbook" var="deleteURL">
-                                <portlet:param name="guestbookId"
-                                        value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
-                        </portlet:actionURL>
+		                        <portlet:actionURL name="deleteGuestbook" var="deleteURL">
+		                                <portlet:param name="guestbookId"
+		                                        value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
+		                        </portlet:actionURL>
 
-                        <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
+		                        <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
 
-        </liferay-ui:icon-menu>
+		        </liferay-ui:icon-menu>
 
     In `guestbook_actions.jsp`, you are displaying a list of possible actions
     that can be performed on a guestbook: editing it, configuring its

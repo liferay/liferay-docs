@@ -17,7 +17,7 @@ you need to remove the old one to prevent any conflicts:
 Now you need to make your web modules aware of your service modules so that 
 you can access the services from your web module. Then you need to update your `addEntry` method to use the new services.
 
-1. Add these declarations to the `build.gradle` file for your guestbook-module 
+1. Add these declarations to the `build.gradle` file for your guestbook-web 
     project, to add the service and api modules to the classpath.
 
     compileOnly project(":modules:guestbook:guestbook-api")
@@ -145,17 +145,17 @@ you can access the services from your web module. Then you need to update your `
 			}
 
 			@Reference(unbind = "-")
-			protected void setEntryService(EntryService entryService) {
+			protected void setEntryService(EntryLocalService entryService) {
 				_entryService = entryService;
 			}
 
 			@Reference(unbind = "-")
-			protected void setGuestbookService(GuestbookService guestbookService) {
+			protected void setGuestbookService(GuestbookLocalService guestbookService) {
 				_guestbookService = guestbookService;
 			}
 
-			private EntryService _entryService;
-			private GuestbookService _guestbookService;
+			private EntryLocalService _entryService;
+			private GuestbookLocalService _guestbookService;
 	
 		
 The `addEntry` method gets the name, message, and email fields that the user 

@@ -25,8 +25,6 @@ create portlet actions to meet the first three requirements by opening
 
 1.  Add the following portlet method for adding a new guestbook:
 
-<!-- Existing code missing SystemException as well. Has this been deprecated? -->
-
         public void addGuestbook(ActionRequest request, ActionResponse response)
           throws PortalException {
 
@@ -50,36 +48,10 @@ create portlet actions to meet the first three requirements by opening
               "mvcPath", "/html/guestbookadminportlet/edit_guestbook.jsp");
           }
         }
+		
+		private GuestbookLocalService _guestbookService;
+		
         
-<!--
-        public void addGuestbook(ActionRequest request, ActionResponse response)
-                        throws PortalException, SystemException {
-
-                ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                                Guestbook.class.getName(), request);
-
-                String name = ParamUtil.getString(request, "name");
-
-                try {
-                        GuestbookLocalServiceUtil.addGuestbook(serviceContext.getUserId(),
-                                        name, serviceContext);
-                        
-                        SessionMessages.add(request, "guestbookAdded");
-                } catch (PortalException e) {
-                        SessionErrors.add(request, e.getClass().getName());
-
-                        response.setRenderParameter("mvcPath",
-                                        "/html/guestbookadminportlet/edit_guestbook.jsp");
-                }
-        }
-        -->
-        
-        <!-- Update existing code to follow best practice. It currently uses 
-        a variable called clazz. Is this acceptable?-->
-
-        <!-- actual code uses `_guestbookService (GuestbookService)` instead of 
-        `GuestbookLocalServiceUtil` -->
-
 This method is nearly identical to the Guestbook portlet's `addGuestbook`
 method. Since `addGuestbook` is a portlet action method, it takes
 `ActionRequest` and `ActionResponse` parameters. In order to make the
@@ -124,33 +96,8 @@ interface.
               "mvcPath", "/guestbookadminportlet/edit_guestbook.jsp");
           }
         }
-<!--
-        public void updateGuestbook(ActionRequest request, ActionResponse response)
-                        throws PortalException, SystemException {
 
-                ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                                Guestbook.class.getName(), request);
-
-                String name = ParamUtil.getString(request, "name");
-                long guestbookId = ParamUtil.getLong(request, "guestbookId");
-
-                try {
-                        GuestbookLocalServiceUtil.updateGuestbook(serviceContext.getUserId(), 
-                                guestbookId, name, serviceContext);
-                        
-                        SessionMessages.add(request, "guestbookUpdated");
-                } catch (PortalException pe) {
-                        SessionErrors.add(request, pe.getClass().getName());
-
-                        response.setRenderParameter("mvcPath",
-                                        "/html/guestbookadminportlet/edit_guestbook.jsp");
-                }
-        }
--->
         
-        <!-- actual code uses `_guestbookService (GuestbookService)` instead of 
-        `GuestbookLocalServiceUtil` -->
-
     This method is very similar to the `addGuestbook` method. In addition to
     retrieving the guestbook name and the `serviceContext` from the request, the
     `updateGuestbook` method also retrieves the `guestbookId` so that it can
@@ -192,30 +139,6 @@ interface.
             SessionErrors.add(request, clazz.getName());
           }
         }
-
-<!-- No SystemException in actual code -->
-
-<!--/guestbookadminportlet
-        public void deleteGuestbook(ActionRequest request, ActionResponse response)
-                        throws PortalException, SystemException {
-
-                ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                                Guestbook.class.getName(), request);
-
-                long guestbookId = ParamUtil.getLong(request, "guestbookId");
-                
-                try {
-                        GuestbookLocalServiceUtil.deleteGuestbook(guestbookId, serviceContext);
-                        
-                        SessionMessages.add(request, "guestbookDeleted");
-                } catch (PortalException pe) {
-                        SessionErrors.add(request, pe.getClass().getName());
-                }
-        }
--->
-
-        <!-- actual code uses `_guestbookService (GuestbookService)` instead of 
-        `GuestbookLocalServiceUtil` -->
 
 This method is similar to the `addGuestbook` and `updateGuestbook` methods
 that you added above. Its service call requires only the `serviceContext`

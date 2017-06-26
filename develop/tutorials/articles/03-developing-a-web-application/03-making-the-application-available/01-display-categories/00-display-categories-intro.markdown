@@ -14,7 +14,7 @@ communicate with each other, you'll add the Guestbook portlet to the Social
 category. Only one Guestbook portlet should be added to a page, so you'll also 
 define it as a non-instanceable portlet.
 
-Open the `GuestbookMVCPortlet` class and update the component class metadata 
+Open the `GuestbookPortlet` class and update the component class metadata 
 properties to match the configuration below:
 
     @Component(
@@ -26,7 +26,7 @@ properties to match the configuration below:
     		"javax.portlet.display-name=Guestbook",
     		"javax.portlet.expiration-cache=0",
     		"javax.portlet.init-param.template-path=/",
-    		"javax.portlet.init-param.view-template=/view.jsp",
+    		"javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
     		"javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK,
     		"javax.portlet.resource-bundle=content.Language",
     		"javax.portlet.security-role-ref=power-user,user",
@@ -50,7 +50,7 @@ variables in one place. This way, if you need to change the name of the portlet,
 you can do it in one place, and then reference it in every other class that 
 needs it.
 
-1. In Liferay IDE, right click on the "guestbook-mvc" project and select *New* &rarr; 
+1. In Liferay IDE, right click on the "guestbook-web" project and select *New* &rarr; 
     *Package*.
 2. Set the name as `com.liferay.docs.guestbook.constants` and click *Finish*.
 3. Right click on the new package and select *New* &rarr; *Class*.
@@ -66,7 +66,7 @@ needs it.
 	 }
 6. Save the file.
 
-Now you'll need to go back to `GuestbookMVCPortlet` and import the new class.
+Now you'll need to go back to `GuestbookPortlet` and import the new class.
 
 1. Press CTRL+SHIFT+O to organize imports.
 2. Check that the `GuestbookPortletKeys` class was added.

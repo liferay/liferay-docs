@@ -17,7 +17,7 @@ To create the Guestbook Admin portlet, follow these steps:
    
 2.  Enter *guestbook-admin* for the *Project name*.
 
-3.  Uncheck *Use default location* and navigate to the `guestbook-mvc` module's  
+3.  Uncheck *Use default location* and navigate to the `guestbook-web` module's
     root folder.
 
 4.  Leave the default settings for Build type, select *panel-app* as 
@@ -29,8 +29,8 @@ To create the Guestbook Admin portlet, follow these steps:
 
 The New Liferay Module Project wizard created a `GuestbookAdminPortlet` 
 file for you in the `com.liferay.docs.guestbook.portlet` package of the 
-`guestbook-mvc/src/main/java` folder, as you specified. It also created 
-`GuestbookAdminPanelApp` and `GuestbookAdminMVCPanelCategory` classes for 
+`guestbook-web/src/main/java` folder, as you specified. It also created 
+`GuestbookAdminPanelApp` and `GuestbookAdminPanelCategory` classes for 
 you in the `com.liferay.docs.guestbook.application.list` package. The 
 `GuestbookAdminPanelApp` class sets where in the Control Menu the Guestbook 
 Admin portlet is displayed and the `GuestbookAdminMVCPanelCategory` class is 
@@ -62,8 +62,8 @@ into their proper locations.
     and delete the empty `com.liferay.docs.guestbook.portlet` package left 
     behind.
     
-2.  Create a new folder in the `guestbook-mvc` module's 
-    `src/main/resources/META-INF/resources/html` directory and call it 
+2.  Create a new folder in the `guestbook-web` module's 
+    `src/main/resources/META-INF/resources/` directory and call it 
     *guestbookadminportlet*. Move the `GuestbookAdmin` module project's 
     `view.jsp` to the folder you just created. 
     
@@ -73,11 +73,19 @@ into their proper locations.
      
 4.  Delete the `GuestbookAdmin` module project folder and empty directories.
 
-5.  Add the following line to the `guestbook-mvc` `build.gradle` file:
+5. Create a new folder in the `src/main/resources/META-INF/resources/` folder
+    named `guestbookwebportlet`.
+
+6. Copy the `edit_entry.jsp`, `edit_guestbook.jsp`, and `view.jsp` files from
+    the root folder to /guestbookwebportlet.
+	
+7. Update all references within the JSPs to the new locations.
+
+8.  Add the following line to the `guestbook-mvc` `build.gradle` file:
 
 	compileOnly group: "com.liferay", name: "com.liferay.application.list.api", version: "2.0.0"
 	
-6. Run *Refresh Gradle Project* to fix any dependency issues.
+9. Run *Refresh Gradle Project* to fix any dependency issues.
 
 You have set the foundation for the Guestbook Admin portlet. Next you'll update 
 the Guestbook Admin portlet's metadata.
@@ -110,6 +118,8 @@ Follow these steps to update the class:
         "javax.portlet.resource-bundle=content.Language",
         "javax.portlet.security-role-ref=administrator",
         "javax.portlet.supports.mime-type=text/html"
+
+3. Reorganize imports to add the `GuestbookPortletKeys` import.
 
 Note the value of the `javax.portlet.display-name` property: `Guestbooks`. This 
 is the name that will appear in the Control Menu. Also note the value of the 
