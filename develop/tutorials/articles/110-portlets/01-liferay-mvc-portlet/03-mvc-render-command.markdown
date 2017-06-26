@@ -7,7 +7,7 @@ general, that information is in a [separate article](/develop/tutorials/-/knowle
 
 To use MVC render commands, you need these things:
 
--  An implementation of the `MVCRenderCommand` interface.
+-  An implementation of the [`MVCRenderCommand` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCRenderCommand.html).
 -  A portlet render URL in your view layer.
 -  a Component that publishes the `MVCRenderCommand` service, with two
    properties.
@@ -15,11 +15,12 @@ To use MVC render commands, you need these things:
 ## Implementing MVCRenderCommand [](id=implementing-mvcrendercommand)
 
 What is it you want to do when a portlet render URL is invoked? Using the
-`MVCRenderCommandName`, direct the request to an `MVCRenderCommand`
+`mvcRenderCommandName` parameter, direct the request to an `MVCRenderCommand`
 implementation. Now override the `render` method.
 
-Some `MVCRenderCommands` will simply render a particular JSP. Here's what
-`BlogsViewMVCRenderCommand` looks like:
+Some `MVCRenderCommand`s will simply render a particular JSP. Here's what
+[`BlogsViewMVCRenderCommand`](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/portlet/action/BlogsViewMVCRenderCommand.java)
+looks like:
 
 	@Override
 	public String render(
@@ -55,7 +56,7 @@ conditions:
         return "/hello/edit_entry.jsp";
     }
 
-If there's an error caught following the call to `ActionUtil.getEntry` in he
+If there's an error caught following the call to `ActionUtil.getEntry` in the
 code above, the `error.jsp` is rendered. If the call is returned without an
 exception being caught, `edit_entry.jsp` is rendered.
 

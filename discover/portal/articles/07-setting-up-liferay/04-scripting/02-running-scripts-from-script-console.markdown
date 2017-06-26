@@ -26,7 +26,7 @@ You'll use Groovy again. Ensure that the script type in the script console is se
 to Groovy. Then execute the following code to check the status of the
 `agreedToTermsOfUse` user attribute:
 
-    import com.liferay.portal.service.UserLocalServiceUtil
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
     userCount = UserLocalServiceUtil.getUsersCount()
     users = UserLocalServiceUtil.getUsers(0, userCount)
@@ -41,7 +41,7 @@ skip the default user as well as the default admin user that's currently logged
 in and running the script. If you're logged in as someone other than
 test@liferay.com, make sure to update the following script before running it. 
 
-    import com.liferay.portal.service.UserLocalServiceUtil
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
     userCount = UserLocalServiceUtil.getUsersCount()
     users = UserLocalServiceUtil.getUsers(0, userCount)
@@ -262,8 +262,8 @@ you'll learn how to leverage Liferay's script engine for designing workflows.
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services From Scripts](/discover/deployment/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+[Invoking Liferay Services From Scripts](/discover/portal/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
 
-[Leveraging the Script Engine in Workflow](/discover/deployment/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
+[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
 
-[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)
+[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)

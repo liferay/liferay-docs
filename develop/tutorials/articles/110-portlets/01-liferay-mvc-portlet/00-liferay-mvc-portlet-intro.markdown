@@ -68,12 +68,15 @@ In a larger application, your `-Portlet` class can become monstrous and unwieldy
 if it holds all of the controller logic. Liferay provides MVC command classes to
 break up your controller functionality.
 
--  **`MVCActionCommand`:** Use `-ActionCommand` classes to hold each of your
-   portlet actions, which are invoked by action URLs.
--  **`MVCRenderCommand`:** Use `-RenderCommand` classes to hold a `render`
-   method that dispatches to the appropriate JSP, by responding to render URLs.
--  **`MVCResourceCommand`:** Use `-ResourceCommand` classes to execute resource
-   serving in your MVC portlet, by responding to resource URLs.
+-   **[`MVCActionCommand`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html):**
+    Use `-ActionCommand` classes to hold each of your portlet actions, which are
+    invoked by action URLs.
+-   **[`MVCRenderCommand`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCRenderCommand.html):**
+    Use `-RenderCommand` classes to hold a `render` method that dispatches to
+    the appropriate JSP, by responding to render URLs.
+-   **[`MVCResourceCommand`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html):**
+    Use `-ResourceCommand` classes to execute resource serving in your MVC
+    portlet, by responding to resource URLs.
 
 There must be some confusing configuration files to keep everything wired
 together and working properly, right? Wrong: it's all easily managed in the OSGi

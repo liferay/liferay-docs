@@ -8,9 +8,10 @@ In fact, we expect you to. Liferay's development platform is standards-based,
 making it an ideal choice for applications of almost any type. 
 
 If you're already a wizard with Spring MVC, you can use it instead of Liferay's
-`MVCPortlet` with no limitations whatsoever. Since Spring MVC replaces only your
-application's web application layer, you can still use [Service
-Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder) 
+[`MVCPortlet` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
+with no limitations whatsoever. Since Spring MVC replaces only your
+application's web application layer, you can still use
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder) 
 for your service layer. 
 
 So what does it take to implement a Spring MVC application in Liferay? Start by
@@ -29,13 +30,15 @@ Because Liferay supports the OSGi WAB standard for deployment, you can deploy
 your WAR and it will run as expected in the OSGi runtime. Here are the high
 points on why that works in @product-ver@:
 
--  The Liferay auto-deploy process runs, adding the `PortletServlet` and
-`PlugincontextListener` configurations to the `WEB-INF/web.xml` file.
+-   The Liferay auto-deploy process runs, adding the `PortletServlet` and
+    `PlugincontextListener` configurations to the `WEB-INF/web.xml` file.
 
--  The [Liferay WAB Generator](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-generator) automatically creates an OSGi-ready
-`META-INF/MANIFEST.MF` file. If you want to affect the content of the manifest
-file, you can place BND directives and OSGi headers directly into the
-`WEB-INF/liferay-plugin-package.properties` file.
+-   The
+    [Liferay WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+    automatically creates an OSGi-ready `META-INF/MANIFEST.MF` file. If you want
+    to affect the content of the manifest file, you can place BND directives and
+    OSGi headers directly into the `WEB-INF/liferay-plugin-package.properties`
+    file.
 
 You'll still need to provide the Liferay descriptor files `liferay-display.xml`
 and `liferay-portlet.xml`, and you'll need a `portlet.xml` descriptor.
@@ -79,8 +82,9 @@ above), specified as you normally would for your Spring MVC portlet.
 If you're configuring a WAB yourself, the `web.xml` file in your Spring MVC
 project needs to be fully ready for deployment. In addition to any `web.xml`
 configuration for Spring MVC, you need to include a listener for
-`PluginContextListener` and a `servlet` and `servlet-mapping` for
-`PortletServlet`:
+[`PluginContextListener`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/PluginContextListener.html)
+and a `servlet` and `servlet-mapping` for
+[`PortletServlet`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/PortletServlet.html):
 
     <listener>
         <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
@@ -99,8 +103,8 @@ If you're letting Liferay generate the WAB for you (this is the recommended
 approach), the above is not necessary, as it is added automatically during
 auto-deployment.
 
-Your application must be able to convert `PortletRequest`s to `ServletRequest`s
-and back again. Add this to `web.xml`:
+Your application must be able to convert `javax.portlet.PortletRequest`s to
+`javax.servlet.ServletRequest`s and back again. Add this to `web.xml`:
 
     <servlet>
         <servlet-name>ViewRendererServlet</servlet-name>
@@ -120,9 +124,9 @@ file:
         <property name="suffix" value=".jsp" />
     </bean>
 
-Now the front controller, `DispatcherPortlet`, can get a request from the view
-layer, but there are no actual controller classes to delegate the request
-handling to.
+Now the front controller, `org.springframework.web.portlet.DispatcherPortlet`,
+can get a request from the view layer, but there are no actual controller
+classes to delegate the request handling to.
 
 With Spring MVC, your controller is conveniently separated into classes
 that handle the portlet modes (View, Edit, Help).

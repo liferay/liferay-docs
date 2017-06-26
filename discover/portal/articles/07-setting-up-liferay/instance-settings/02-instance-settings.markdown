@@ -172,9 +172,9 @@ email address is an important default for the following reasons:
     user's mind when he or she logs in to help the user keep it up to date. 
 
 If you need to use a third party authentication service or set up Single Sign On
-(SSO), see the documentation on [@product@
-Security](/discover/portal/-/knowledge_base/7-0/liferay-portal-security) to
-learn about the supported services and how to configure them.
+(SSO), see the documentation on
+[@product@ Security](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security)
+to learn about the supported services and how to configure them.
 
 ### Users [](id=users)
 

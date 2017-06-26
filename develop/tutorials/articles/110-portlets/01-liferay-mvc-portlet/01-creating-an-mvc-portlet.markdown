@@ -43,7 +43,7 @@ like this:
 Of course you're not tied to the use of Gradle or BndTools to build your
 project. However, you do need a JAR with the proper OSGi headers defined, which
 is easily done if you provide a `bnd.bnd` file. To see Liferay MVC portlets
-built with Maven, BndTools, and Gradle, you can check out the tutorial on
+built with Maven and Gradle, you can check out the tutorial on
 [Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules).
 
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
@@ -75,7 +75,9 @@ the `javax.portlet.Portlet` service must be published. Declare this using an
     public class LiferayMVCPortlet extends MVCPortlet {
     }
 
-Since Liferay's `MVCPortlet` is itself an extension of `javax.portlet.Portlet`,
+Since Liferay's
+[`MVCPortlet` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
+is itself an extension of `javax.portlet.Portlet`,
 you've provided the right implementation. That's good in itself, but the
 component needs to be fleshed out with some properties:
 
@@ -178,16 +180,18 @@ Here's what an action method might look like:
 
     }
 
-In this action method, the `ActionRequest` object is used to retrieve two pieces
-of information that are needed to call the `addGuestbook` service, which is the
-point of the method. If successful, the `SessionMessages` object is used to
-store a success message. If an exception is thrown, it's caught, and the
-appropriate `SessionErrors` object is used to store the exception message. Note
-the call to the `setRenderParameter` method on the `ActionResponse`. This is
-used to render the `edit_guestbook.jsp` if a guestbook could not be added, by
-setting the `mvcPath` parameter. This parameter is a convention in Liferay's
-`MVCPortlet` framework that denotes the next view that should be displayed to
-the user. 
+In this action method, the `javax.portlet.ActionRequest` object is used to
+retrieve two pieces of information that are needed to call the `addGuestbook`
+service, which is the point of the method. If successful, the
+[`SessionMessages` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/SessionMessages.html)
+is used to store a success message. If an exception is thrown, it's caught, and
+the appropriate
+[`SessionErrors` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/SessionErrors.html)
+is used to store the exception message. Note the call to the
+`setRenderParameter` method on the `ActionResponse`. This is used to render the
+`edit_guestbook.jsp` if a guestbook could not be added, by setting the `mvcPath`
+parameter. This parameter is a convention in Liferay's `MVCPortlet` framework
+that denotes the next view that should be displayed to the user. 
 
 ### Render Logic [](id=render-logic)
 
@@ -416,5 +420,4 @@ points:
 -  [Model Listeners](/develop/tutorials/-/knowledge_base/7-0/model-listeners)
 -  [Application Security](/develop/tutorials/-/knowledge_base/7-0/application-security)
 -  [Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework)
--  [Business Logic and Data Access (Service Builder)](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
-
+-  [Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)

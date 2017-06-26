@@ -38,7 +38,6 @@ needed and has been removed. The tag now uses the following parameters to
 support the new features:
 
 - `currentLogoURL`: the URL to display the image being stored
-- `hasUpdateLogoPermission`: `true` if the current user can update the logo
 - `maxFileSize`: the size limit for the logo to be uploaded
 - `tempImageFileName`: the unique identifier to store the temporary image on
   upload
@@ -51,8 +50,7 @@ to update their usage of the tag.
 #### How should I update my code? [](id=how-should-i-update-my-code)
 
 You should remove the parameter `editLogoURL` and include (if neccessary) the
-parameters `currentLogoURL`, `hasUpdateLogoPermission`, `maxFileSize`, and/or
-`tempImageFileName`.
+parameters `currentLogoURL`, `maxFileSize`, and/or `tempImageFileName`.
 
 **Example**
 
@@ -77,7 +75,6 @@ New way:
     <liferay-ui:logo-selector
         currentLogoURL="<%= selUser.getPortraitURL(themeDisplay) %>"
         defaultLogoURL="<%= UserConstants.getPortraitURL(themeDisplay.getPathImage(), selUser.isMale(), 0) %>"
-        hasUpdateLogoPermission='<%= UsersAdminUtil.hasUpdateFieldPermission(selUser, "portrait") %>'
         imageId="<%= selUser.getPortraitId() %>"
         logoDisplaySelector=".user-logo"
         maxFileSize="<%= PrefsPropsUtil.getLong(PropsKeys.USERS_IMAGE_MAX_SIZE) / 1024 %>"
@@ -4296,5 +4293,29 @@ the instructions for
 
 This change was made as part of the modularization efforts to ease portal
 configuration changes.
+
+---------------------------------------
+
+### Deprecated the aui:tool Tag with No Direct Replacement [](id=deprecated-the-auitool-tag-with-no-direct-replacement)
+- **Date:** 2017-Feb-02
+- **JIRA Ticket:** LPS-70422
+
+#### What changed? [](id=what-changed-107)
+
+The `aui:tool` tag has been deprecated with no direct replacement.
+
+#### Who is affected? [](id=who-is-affected-107)
+
+Plugins or templates that are using the `aui:tool` tag must remove their usage
+of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-107)
+
+There is no direct replacement. You should remove all usages of the `aui:tool`
+tag.
+
+#### Why was this change made? [](id=why-was-this-change-made-107)
+
+This change was made as a part of the ongoing strategy to deprecate unused tags.
 
 ---------------------------------------

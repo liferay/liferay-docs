@@ -28,9 +28,10 @@ learn more about using the Export/Import feature, visit the
 section of the User Guide.
 
 Staging lets you change your site behind the scenes without affecting the live
-site, and then you can publish all the changes in one fell swoop. If you include
-staging support in your application, your users can stage its content until it's
-ready.
+site, and then you can publish all the changes in one fell swoop. Keep in mind
+that Staging leverages the Export/Import framework, which is an essential part
+of the publishing process. If you include staging support in your application,
+your users can stage its content until it's ready.
 
 For example, if you have an application that provides information intended only
 during a specific holiday, supporting the Staging environment lets users save
@@ -42,6 +43,33 @@ section.
 
 Besides configuring these features for your application, Liferay also provides
 an API that allows developers to write custom code, extending Liferay's default
-functionality. In this section of tutorials, you'll learn about the various
-extension points and other options that are provided to you for export/import
-and staging.
+functionality.
+
+In this section of tutorials, you'll learn how to implement
+Staging and the Export/Import framework. The main areas of Staging code to focus
+on are outlined below:
+
+1.  `StagedModel` Interface: The `StagedModel` is the cornerstone of Staging.
+    All content that must be handled in Staging should implement this interface;
+    it provides the behavior contract for the entities Staging uses during
+    the Staging process.
+
+2.  `StagedModelDataHandler`: These data handlers are responsible for handling
+    one specific entity class. For example, the
+    `BookmarksEntryStagedModelDataHandler` handles the `BookmarksEntry` during
+    Staging: exporting data, serializing content, finding existing entries, etc.
+
+3.  `PortletDataHandler`: These data handlers are responsible for handling
+    aspects of the portlet's configuration and publication during Staging.
+
+4.  `ExportActionableDynamicQuery`: This framework is useful when developing
+    Staging support. Its purpose is to query data from the database and
+    process it during publication. It's automatically generated if your entity
+    contains the right fields so there's no need to worry about configuring it.
+
+5.  `ExportImportContentProcessor` and `ExportImportPortletPreferencesProcessor`:
+    Advanced frameworks only needed in special cases. The
+    `ExportImportContentProcessor` lets you process your content during a
+    publication process. The `ExportImportPortletPreferencesProcessor` lets you
+    process your portlet preferences (application's configuration) during a
+    publication process.

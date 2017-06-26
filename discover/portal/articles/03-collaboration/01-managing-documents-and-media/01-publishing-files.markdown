@@ -101,7 +101,7 @@ You can set permissions on the shortcut to specify who can access the original
 document through the shortcut.
 
 **Repository**: allows you to add access to an external repository. Refer to
-[Repostory Types](/discover/portal/-/knowledge_base/7-0/repository-types) to
+[Repostory Types](/discover/portal/-/knowledge_base/7-0/liferay-repository-types) to
 learn how to add access to them. 
 
 **Multiple Documents**: allows you to upload several documents at once.

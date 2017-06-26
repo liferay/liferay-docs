@@ -103,7 +103,7 @@ example shows the two module approach.
 
 To create an `Authenticator`, create a module for your implementation. The most 
 appropriate Blade template for this is the 
-[service template](/develop/tutorials/-/knowledge_base/7-0/using-the-service-template). 
+[service template](/develop/reference/-/knowledge_base/7-0/using-the-service-template). 
 Once you have the module, creating the `Activator` is straightforward: 
 
 1.  Add the `@Component` annotation to bind your `Activator` to the appropriate

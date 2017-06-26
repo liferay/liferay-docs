@@ -62,7 +62,8 @@ Because PDFs are files, PDF Display Screenlet delegates some events to an object
 that conforms to the `FileDisplayScreenletDelegate` protocol. This protocol lets 
 you implement the following methods: 
 
-- `- screenlet:onAssetResponse:`: Called when the Screenlet receives the PDF. 
+- `- screenlet:onFileAssetResponse:`: Called when the Screenlet receives the 
+  PDF. 
 
 - `- screenlet:onFileAssetError:`: Called when an error occurs in the process. 
   An `NSError` object describes the error. 

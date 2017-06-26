@@ -1,4 +1,4 @@
-# Layout Templates with the Themes Generator [](id=creating-layout-templates-with-the-themes-generator-0)
+# Layout Templates with the Liferay Theme Generator [](id=creating-layout-templates-with-the-themes-generator-0)
 
 Layout Templates specify how content is arranged on your site pages in @product@.
 For example, take a look at the *1-2-1 Columns Layout CE* layout shown below:
@@ -22,10 +22,10 @@ This tutorial demonstrates how to:
 - Create a Thumbnail for a Layout Template
 
 In order to create a layout template with the Layouts Sub-generator, you will 
-need the Node.js build tools installed. The [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+need the Node.js build tools installed. The [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 tutorial explains how to install these tools and how to create a theme.
 
-Once you have the Themes Generator installed you can go ahead and get
+Once you have the Liferay Theme Generator installed you can go ahead and get
 started.
 
 ## Creating a Layout Template with the Layouts Sub-generator [](id=creating-a-layout-template-with-the-layouts-sub-generator)
@@ -125,4 +125,4 @@ Edit a page on your site and select your new layout template to use it.
 
 [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)

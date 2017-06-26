@@ -9,14 +9,14 @@ modules. This tool set provides a host of sub-commands that help Liferay
 developers create and deploy modules to a Liferay instance. The following
 sub-commands are callable in the Blade CLI environment:
 
+- *convert*: Converts a Plugins SDK plugin project to a Gradle Workspace
+  project.
 - *create*: Creates a new Liferay module project from available templates.
 - *deploy*: Builds and deploys bundles to the Liferay module framework.
 - *gw*: Executes Gradle command using the Gradle Wrapper, if detected.
 - *help*: Gives help on a specific command.
 - *init*: Initializes a new Liferay Workspace.
 - *install*: Installs a bundle into Liferay's module framework.
-- *migrateTheme*: Migrates a Plugins SDK theme to a new workspace theme project.
-- *migrateWar*: Migrates a Plugins SDK plugin to a new workspace WAR project.
 - *open*: Opens or imports a file or project in Liferay IDE.
 - *samples*: Generates a sample project.
 - *server*: Starts or stops server defined by your Liferay project.
@@ -24,5 +24,5 @@ sub-commands are callable in the Blade CLI environment:
 - *update*: Updates Blade CLI to latest version.
 - *version*: Displays version information about Blade CLI.
 
-In this set of tutorials, you'll learn how to use these commands and what
-templates are provided for you to create Liferay modules.
+In this set of tutorials, you'll learn how to use these commands to create and
+test Liferay modules.

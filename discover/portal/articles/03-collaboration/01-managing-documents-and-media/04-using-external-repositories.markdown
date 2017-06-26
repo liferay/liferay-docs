@@ -34,7 +34,7 @@ Here are the CMIS repository integration steps:
 
 +$$$
 
-Interoperability with SharePoint and Documtum repositories is available to EE
+Interoperability with SharePoint and Documentum repositories is available to EE
 subscribers with the [Liferay SharePoint Connector](https://web.liferay.com/marketplace/-/mp/application/15188537)
 and [Liferay Documentum Connector](https://web.liferay.com/marketplace/-/mp/application/15098914)
 apps, available on the Marketplace.

@@ -29,15 +29,16 @@ Here are the topics you'll dig into:
 
 1.  [Modules as an Improvement over Traditional Plugins](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins):
     Development and customization of applications for Liferay has been done
-    traditionally in plugins (Portlet, Hook, Ext and Web). In @product-ver@,
-    plugins are replaced with (and can be automatically converted to) modules.
-    You'll see the similarities and differences of plugins and modules, and
-    you'll learn the benefits of using modules.
+    traditionally in WAR-style plugins (Portlet, Hook, Ext, and Web). In
+    @product-ver@, traditional Liferay plugins can be replaced with (or can be
+    automatically converted to) modules. You'll see the similarities and
+    differences of plugins and modules, and you'll learn the benefits of using
+    modules.
 
 2.  [Leveraging Dependencies](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#leveraging-dependencies):
-    In @product-ver@, developers can both declare dependencies among modules and
+    In @product-ver@, you can both declare dependencies among modules and
     combine modules to create applications. Since leveraging dependencies
-    provides huge benefits, it's important to devote a lot of space to it.
+    provides huge benefits, it's important to devote a large section for it.
 
 3.  [OSGi Services and Dependency Injection](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#osgi-services-and-dependency-injection-with-declarative-services):
     OSGi provides a powerful concept called OSGi Services (also known as
@@ -67,18 +68,18 @@ from all @product-ver@ and OSGi offer, however, you should use OSGi modules.
 Modules offer these benefits:
 
 - **Better Encapsulation** - The only classes a module exposes publicly are
-those it exports explicitly. This lets the developer define internal public
-classes transparent to external clients.
+those it exports explicitly. This lets you define internal public classes
+transparent to external clients.
 
 - **Dependencies by Package** - Dependencies are specified by Java package, not
-by JAR file. In traditional plugins, developers had to add *all* of a JAR file's
-classes to the classpath to use *any* of its classes. With OSGi, developers need
-only import packages containing the classes they need. Only the classes in those
+by JAR file. In traditional plugins, you had to add *all* of a JAR file's
+classes to the classpath to use *any* of its classes. With OSGi, you need only
+import packages containing the classes you need. Only the classes in those
 packages are added to the module's classpath.
 
-- **Lightweight** - A module can be as small as the developer wants it to be. In
-contrast to a traditional plugin, which may require several descriptor files, a
-module requires only a single descriptor file--a standard JAR manifest. Also,
+- **Lightweight** - A module can be as small as you want it to be. In contrast
+to a traditional plugin, which may require several descriptor files, a module
+requires only a single descriptor file--a standard JAR manifest. Also,
 traditional plugins are typically larger than modules and deployed on app server
 startup, which can slow down that process considerably. Modules deploy more
 quickly and require minimal overhead cost.
@@ -86,8 +87,8 @@ quickly and require minimal overhead cost.
 - **Easy Reuse** - Modules lend themselves well to developing small, highly
 cohesive chunks of code. They can be combined to create applications that are
 easier to test and maintain. Modules can be distributed publicly (e.g., on Maven
-Central) or privately. And since modules are versioned, developers can specify
-precisely the modules they want to use.
+Central) or privately. And since modules are versioned, you can specify
+precisely the modules you want to use.
 
 - **In-Context Descriptors** - Where plugins use descriptor files (e.g.,
 `web.xml`, `portlet.xml`, etc.) to describe classes, module classes use OSGi
@@ -95,7 +96,7 @@ annotations to describe themselves. For example, a module portlet class can use
 [OSGi Service annotation properties](/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map)
 to specify its name, display name, resource bundle, public render parameters,
 and much more. Instead of specifying that information in descriptor files
-separate from the code, they're specified in context in the code.
+separate from the code, you specify them in context in the code.
 
 These are just a few ways modules outshine traditional plugins. Note, however,
 that developers experienced with Liferay plugins have the best of both worlds.
@@ -111,14 +112,14 @@ Here are some fundamental characteristics modules share with plugins:
 
 - They're packaged as a standard Java JARs
 
-Now that you've compared and contrasted modules with plugins, it's time to take a
-tour of the module structure. 
+Now that you've compared and contrasted modules with plugins, it's time to tour
+the module anatomy. 
 
 ### Module Structure: A JAR File with a Manifest [](id=module-structure-a-jar-file-with-a-manifest)
 
 A module's structure is extremely simple. It has one mandatory file:
-`META-INF/MANIFEST.MF`. Developers add code and resources to the module and
-organize them as desired. 
+`META-INF/MANIFEST.MF`. You add code and resources to the module and organize
+them as desired. 
 
 Here's the essential structure of a module JAR file:
 
@@ -177,9 +178,12 @@ Gradle or Maven, to
 [manage dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
-is an environment for managing module projects (and theme projects). It provides
-Gradle build scripts for developing on Liferay. It can be used from the command
-line or from within [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide).
+is an environment for managing module projects (and theme projects). A default
+Workspace provides Gradle build scripts and a Workspace created from the Liferay
+Project Templates Workspace archetype provides Maven build scripts for
+developing on Liferay. Workspace can be used from the command line or from
+within
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide).
 Note also that Liferay @ide@ provides plugins for Gradle, Maven, and BndTools.
 Tooling details are covered later in this series.
 
@@ -192,7 +196,7 @@ The most common way to build modules is with a little tool called [Bnd](http://b
 It's an engine that, among other things, simplifies generating manifest
 metadata. Instead of manually creating a `MANIFEST.MF` file, developers use Bnd
 to generate it. Bnd can be used on its own or along with other build tools, such
-as Gradle or Maven. Liferay Workspace uses Gradle and Bnd together.
+as Gradle or Maven. Liferay Workspace uses Bnd together with Gradle or Maven.
 
 One of Bnd's best features is that it automatically transverses a module's code
 to identify external classes the module uses and adds them to the manifest's
@@ -229,15 +233,15 @@ manifest headers, let's explore how to use them to leverage dependencies.
 
 Using an OSGi manifest, a module declares the Java packages it consumes and
 shares. The manifest's `Import-Package` and `Export-Package` settings expose
-this information. As developers determine whether to use a particular module,
-they know up-front what it offers and what it depends on. As an improvement over
-Java EE, OSGi takes away dependency guesswork.
+this information. As you determine whether to use a particular module, you know
+up-front what it offers and what it depends on. As an improvement over Java EE,
+OSGi takes away dependency guesswork.
 
 This part of the tutorial explains:
 
-- **How dependencies work**
+- **[How dependencies work](#how-dependencies-work)**
 
-- **How to develop modular apps using dependencies**
+- **[How to develop modular apps using dependencies](#dependencies-facilitate-modular-development)**
 
 Let's start by learning how dependencies operate in @product-ver@.
 
@@ -256,12 +260,12 @@ you're developing new OSGi modules or continuing to develop traditional apps,
 you need only set dependencies on modules whose packages you need.
 
 Each module's manifest lists the packages the module depends on. Using a build
-environment such as Gradle, Maven, or Ant/Ivy, the developer can set
-dependencies on each package's module. At build time, the dependency framework
-verifies the entire dependency chain, downloading all newly specified modules.
-The same thing happens at runtime: the OSGi runtime knows exactly which modules
-depend on which other modules (failing fast if any dependency is unmet).
-Dependency management is explicit and enforced automatically upfront.
+environment such as Gradle, Maven, or Ant/Ivy, the you can set dependencies on
+each package's module. At build time, the dependency framework verifies the
+entire dependency chain, downloading all newly specified modules. The same thing
+happens at runtime: the OSGi runtime knows exactly which modules depend on which
+other modules (failing fast if any dependency is unmet). Dependency management
+is explicit and enforced automatically upfront.
 
 Versioning is independent for each Liferay module and its exported packages. You
 can use a specific package version by depending on the version of the module
@@ -295,12 +299,12 @@ modules to create apps.
 
 ### Dependencies Facilitate Modular Development [](id=dependencies-facilitate-modular-development)
 
-@product-ver@'s support of dependencies and semantic versioning facilitates modular
-development. The dependency frameworks enable you to use modules and link them
-together. You can use these modules throughout your organization and distribute
-them to others. @product-ver@'s integration with dependency management frees you to
-modularize existing apps and develop apps that combine modules. It's a powerful
-and fun way to develop apps on @product@.
+@product-ver@'s support of dependencies and semantic versioning facilitates
+modular development. The dependency frameworks enable you to use modules and
+link them together. You can use these modules throughout your organization and
+distribute them to others. @product-ver@'s integration with dependency
+management frees you to modularize existing apps and develop apps that combine
+modules. It's a powerful and fun way to develop apps on @product@.
 
 Here are some general steps to consider when modularizing an existing app:
 
@@ -317,7 +321,7 @@ separately and allows for varying implementations.
 3. **Extract non-essential features to modules**: You may have functionality or
 API extensions that need not be tied to an app's core codebase. They can be
 refactored as independent modules that implement APIs you provide. Examples
-might be connectors to 3rd party systems or support for various data
+might be connectors to third-party systems or support for various data
 export/import formats.
 
 The principles listed above also apply to developing new modular-based apps. As
@@ -332,8 +336,6 @@ described:
 **API**:
 
 -   `blogs-api` - Encapsulates the core implementation
-
--   `blogs-item-selector-api` - Encapsulates the item-selector implementation
 
 **Back-end**:
 
@@ -363,13 +365,13 @@ to design, implement, and test the modules independently.
 
 As you develop app-centered modules, you can consider bundling them with your
 app (e.g., as part of a Liferay Marketplace app). Including them as part of the
-app is a convenience for the consumer. By bundling a module with an app,
-however, you're committing to the app's release schedule. In other words, you
-can't directly deploy a new version of a module for the app--you must release it
-as part of the app's next release.
+app is convenient for the consumer. By bundling a module with an app, however,
+you're committing to the app's release schedule. In other words, you can't
+directly deploy a new version of a module for the app--you must release it as
+part of the app's next release.
 
 So far, you've learned how dependencies and Semantic Versioning work. You've
-considered guidelines for modularizing existing apps and creating modular-based
+considered guidelines for modularizing existing apps and creating new modular
 apps. Now, to add to the momentum around OSGi and modularity, you'll explore
 OSGi Services and dependency injection using OSGi Declarative Services.
 
@@ -457,8 +459,8 @@ via modules. The `MANIFEST.MF` file describes the module's physical
 characteristics, such as the packages it exports and imports. The module's
 component description files specify its functional characteristics (i.e., the
 services its components offer and consume). Also modules and their components
-have their own lifecycles and administrative APIs. Declarative Services and shell
-tools give developers fine-grained control over module and component deployment.
+have their own lifecycles and administrative APIs. Declarative Services and
+shell tools give you fine-grained control over module and component deployment.
 
 Since a module's contents depend on its activation, consider the activation
 steps: 
@@ -485,15 +487,14 @@ The figure below illustrates the module lifecycle.
 The [Apache Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
 lets developers manage the module lifecycle. They can install/uninstall modules
 and start/stop them. Developers can update a module and notify dependent modules
-to use the update. Liferay's tools, including Liferay IDE/Developer Studio,
-Liferay Workspace, and Blade CLI offer similar shell commands that use the
-OSGi Admin API. 
+to use the update. Liferay's tools, including Liferay @ide@, Liferay Workspace,
+and Blade CLI offer similar shell commands that use the OSGi Admin API. 
 
 On activating a module, its components are enabled. But only *activated*
 components can be used. Component activation requires all its referenced
 services be satisfied. That is, all services it references must be registered.
 The highest ranked service that matches a reference is bound to the component.
-When the container find and binds all the services the component references, it
+When the container finds and binds all the services the component references, it
 registers the component. It's now ready for activation. 
 
 Components can use *delayed* (default) or *immediate* activation policies. To
@@ -512,23 +513,24 @@ and conserve resources.
 Gogo Shell's [Service Component Runtime commands](http://felix.apache.org/documentation/subprojects/apache-felix-service-component-runtime.html#shell-command)
 let you manage components:
 
--   `src:list [bundleID]`: Lists the module's (bundle's) components.
+-   `scr:list [bundleID]`: Lists the module's (bundle's) components.
 
--   `src:info [componentID|fullClassName]`: Describes the component, including
+-   `scr:info [componentID|fullClassName]`: Describes the component, including
     its status and the services it provides.
 
--   `src:enable [componentID|fullClassName]`: Enables the component.
+-   `scr:enable [componentID|fullClassName]`: Enables the component.
 
--   `src:disable [componentID|fullClassName]`: Disables the component. It's
+-   `scr:disable [componentID|fullClassName]`: Disables the component. It's
     disabled on the server (or current server node in a cluster) until
     the server is restarted.
 
-Service references are static by default. That is, an injected service remains
-bound to the referencing component until the service is disabled.
-Alternatively, developers can specify *greedy* service policies for references.
-Every time a higher ranked matching service is registered, the framework unbinds
-the lower ranked service from the component and binds the new service in its
-place automatically. Here's a `@Reference` annotation that uses a greedy policy:
+Service references are static and reluctant by default. That is, an injected
+service remains bound to the referencing component until the service is
+disabled. Alternatively, developers can specify *greedy* service policies for
+references. Every time a higher ranked matching service is registered, the
+framework unbinds the lower ranked service from the component and binds the new
+service in its place automatically. Here's a `@Reference` annotation that uses a
+greedy policy:
 
     @Reference(policyOption = ReferencePolicyOption.GREEDY)
 
@@ -610,7 +612,7 @@ The `Bundle-SymbolicName` is the arbitrary name for the module. The module's
 version value `1.0.0` is appropriate.
 
 Bnd generates the module's OSGi manifest to the file `META-INF/MANIFEST.MF`
-in the module's JAR. In this project, the JAR is created in the `build/libs/`
+in the module's JAR. In this project, the JAR is created in the `build/libs`
 folder.
 
 The last file to examine is the Gradle build file `build.gradle`:
@@ -621,15 +623,15 @@ The last file to examine is the Gradle build file `build.gradle`:
 
 Since the `MyService` class uses the `@Component` annotation, the project
 depends on the OSGi service component annotations module. The build script is so
-simple because Liferay Workspace module projects leverage its Gradle build
-infrastructure.
+simple because Liferay Workspace module projects leverage the Workspace's Gradle
+build infrastructure.
 
 Although this module project was created in a Liferay Workspace, it can easily
 be modified to use in other build environments. To keep the focus on what's
 most important, it was created in a Liferay Workspace.
 
-Place the project files in a folder under the `modules/` folder (e.g.,
-`[Liferay_Workspace]/modules/my.service.project/`).
+Place the project files in a folder under the `modules` folder (e.g.,
+`[Liferay_Workspace]/modules/my.service.project`).
 
 To build the module JAR and deploy it to @product@, execute the `deploy` Gradle
 task:

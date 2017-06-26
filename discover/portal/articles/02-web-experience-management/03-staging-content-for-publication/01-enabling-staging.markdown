@@ -112,20 +112,14 @@ make all of these configurations in your Liferay servers'
 `portal-ext.properties` files. Your first step should be to add the following
 lines to your current Liferay server's `portal-ext.properties` file:
 
-    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
     tunneling.servlet.shared.secret=[secret]
     tunneling.servlet.shared.secret.hex=true
-    auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
-    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
-Then add the following lines to your remote Liferay server's
-`portal-ext.properties` file:
+Then add the same lines to your remote Liferay server's `portal-ext.properties`
+file:
 
-    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
     tunneling.servlet.shared.secret=[secret]
     tunneling.servlet.shared.secret.hex=true
-    auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
-    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
 @product@'s use of a pre-shared key between your staging and production
 environments helps secure the remote publication process. It also removes the
@@ -169,14 +163,23 @@ the value of your remote server.
 
 **Important:** Do not share the key with any user. It is used exclusively for 
 communication between staging and production environments. Any user with 
-possesion of the key can manage the production server, execute server-side
+possession of the key can manage the production server, execute server-side
 Java code, or worse.
 
 One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
-of your Liferay instance. To do this, navigate to the Control Panel &rarr;
-*Configuration* &rarr; *System Settings* &rarr; *Platform* &rarr; *Tunnel Auth
-Verifier*. Click */api/liferay/do* and insert the additional IP addresses you're
-using in the *Hosts allowed* field. Then select *Update*.
+of your remote Liferay instance. To do this, navigate to the Control Panel
+&rarr; *Configuration* &rarr; *System Settings* &rarr; *Foundation* &rarr;
+*Tunnel Auth Verifier*. Click */api/liferay/do* and insert the additional IP
+addresses you're using in the *Hosts allowed* field. Then select *Update*.
+
+Alternatively, you can also write this configuration into an OSGi file (e.g.,
+`osgi/configs/com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`)
+in your @product@ instance:
+
+    enabled=true
+    hostsAllowed=127.0.0.1,SERVER_IP,[Local server IP address]
+    serviceAccessPolicyName=SYSTEM_USER_PASSWORD
+    urlsIncludes=/api/liferay/do
 
 Remember to restart both Liferay servers after making these portal properties
 updates. After restarting, log back in to your local Liferay instance as
@@ -254,6 +257,29 @@ to the staged site, and then select *Staging* &rarr; *Publish to Live* from the
 top Control Menu. The changes are published to your remote staged site.
 
 $$$
+
+### Checkpoint [](id=checkpoint)
+
+Before publishing *any* content, verify that **all** the necessary steps above
+have been completed. Otherwise, Remote Staging will fail.
+
+1. The `tunnel.servlet.hosts.allowed` values have been set in the `portal-
+ext.properties` file in both the staging and the production environment.    
+2. The `tunneling.servlet.shared.secret` values have been set in the `portal-
+ext.properties` file in both the staging and the production environment.    
+3. Most importantly, update the *TunnelAuthVerfierConfiguration* of your @product@
+instance. This is a major change between legacy Portal and @product@. To do
+this:
+
+    a) Navigate to the Control Panel &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Foundation*.    
+    b) Search for *Tunnel Auth Verifier*.    
+    c) Click */api/liferay/do* and insert the additional IP addresses you're using in the
+*Hosts allowed* field.    
+    d) Click *Update*.
+    
+You should proceed only when all three major steps have been completed. 
+
 
 Next, you'll learn how to enable page versioning and staged apps.
 

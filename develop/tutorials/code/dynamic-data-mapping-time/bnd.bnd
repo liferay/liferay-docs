@@ -1,0 +1,5 @@
+Bundle-Name: dynamic-data-mapping-time
+Bundle-SymbolicName: com.liferay.docs.ddm.time
+Liferay-JS-Config: /META-INF/resources/config.js
+Bundle-Version: 1.0.0
+Web-ContextPath: /dynamic-data-mapping-time

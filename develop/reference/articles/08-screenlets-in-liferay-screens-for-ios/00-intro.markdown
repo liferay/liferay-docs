@@ -14,10 +14,10 @@ methods, and more. The available Screenlets are listed here with links to their
 reference documents: 
 
 - [**Login Screenlet:**](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios) 
-  Signs users in to a Liferay instance.
+  Signs users in to a @product@ instance.
   
 - [**Sign Up Screenlet:**](/develop/reference/-/knowledge_base/7-0/signupscreenlet-for-ios) 
-  Registers new users in a Liferay instance.
+  Registers new users in a @product@ instance.
   
 - [**Forgot Password Screenlet:**](/develop/reference/-/knowledge_base/7-0/forgotpasswordscreenlet-for-ios) 
   Sends emails containing a new password or password reset link to users.
@@ -29,11 +29,11 @@ reference documents:
   Presents dynamic forms to be filled out by users and submitted back to the server.
   
 - [**DDL List Screenlet:**](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-ios) 
-  Shows a list of records based on a pre-existing DDL in a Liferay instance.
+  Shows a list of records based on a pre-existing DDL in a @product@ instance.
   
 - [**Asset List Screenlet:**](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios) 
   Shows a list of assets managed by 
-  [Liferay's Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework). 
+  [@product@'s Asset Framework](/develop/tutorials/-/knowledge_base/7-0/asset-framework). 
   This includes web content, blog entries, documents, and more.
   
 - [**Web Content Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-ios) 
@@ -72,16 +72,22 @@ reference documents:
   Shows a single blogs entry. 
 
 - [**Image Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/image-display-screenlet-for-ios) 
-  Shows a single image file from a Liferay instance's Documents and Media 
+  Shows a single image file from a @product@ instance's Documents and Media 
   Library. 
 
 - [**Video Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/video-display-screenlet-for-ios) 
-  Shows a single video file from a Liferay instance's Documents and Media 
+  Shows a single video file from a @product@ instance's Documents and Media 
   Library. 
 
 - [**Audio Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/audio-display-screenlet-for-ios) 
-  Shows a single audio file from a Liferay instance's Documents and Media 
+  Shows a single audio file from a @product@ instance's Documents and Media 
   Library. 
 
 - [**PDF Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/pdf-display-screenlet-for-ios) 
-  Shows a single PDF file from a Liferay instance's Documents and Media Library. 
+  Shows a single PDF file from a @product@ instance's Documents and Media 
+  Library. 
+
+- [**File Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/file-display-screenlet-for-ios) 
+  Shows a single file from a @product@ instance's Documents and Media Library. 
+  Use this Screenlet to display file types not covered by the other display 
+  Screenlets (e.g., DOC, PPT, XLS). 
