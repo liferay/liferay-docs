@@ -114,6 +114,12 @@ or private pages to make feeds available to guests or site members,
 respectively. In these cases, make sure that only site administrators have
 permission to customize the RSS application and select feeds to be displayed.
 
++$$$
+
+**Note:** If you are behind a proxy, then you'll need to make sure to set the appropriate Java proxy settings either in your setenv script or in your system-ext.properties, such as http.proxyHost= and http.proxyPort=. Without them, the RSS Publisher application will be unable to access any RSS feeds.
+
+$$$
+
 Once you've added the RSS Publisher app to a page, open the application's
 Configuration menu by clicking on the *Options* icon
 (![Options](../../../images/icon-options.png)) at the top right corner of the
