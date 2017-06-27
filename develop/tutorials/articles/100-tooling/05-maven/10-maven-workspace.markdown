@@ -23,7 +23,8 @@ line tool:
         -Dversion=[VERSION] \
         -Dpackage=[PACKAGE]
 
-Your Maven Workspace is generated to the folder you ran the command from.
+Your Maven Workspace is generated to the folder you ran the command from. No
+other tools or CLIs are required for Maven Workspace.
 
 ## Anatomy
 

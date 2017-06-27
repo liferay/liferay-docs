@@ -46,8 +46,10 @@ tutorial for more information.
 
     This POM configuration applies Liferay's
     [Bundle Support plugin](https://repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.portal.tools.bundle.support/)
-    by defining its `groupId`, `artifactId`, and `version`. The logic also
-    defines the
+    by defining its `groupId`, `artifactId`, and `version`. You can learn more
+    about this plugin in the
+    [Maven Workspace](/develop/tutorials/-/knowledge_base/7-0/maven-workspace)
+    tutorial. The logic also defines the
     [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag),
     which configures the Bundle Support plugin to run during the
     `pre-integration-test` phase of your Maven project's build lifecycle. The
