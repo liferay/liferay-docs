@@ -1,9 +1,8 @@
 # Activating Your @product@ Server with LCS [](id=registering-your-dxp-server-with-lcs)
 
-Once you've addressed any 
-[required configuration steps](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration) 
-and deployed the LCS client app, you're ready to activate your @product@ server 
-with LCS. You'll use an 
+Once you've addressed 
+[the LCS preconfiguration steps](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration), 
+you're ready to activate your @product@ server with LCS. You'll use an 
 [LCS environment token](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
 to do this: 
 

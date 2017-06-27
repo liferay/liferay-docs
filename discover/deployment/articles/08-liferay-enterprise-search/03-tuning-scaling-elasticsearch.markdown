@@ -56,7 +56,7 @@ contain the indexed documents.
 A dedicated master-eligible Elasticsearch JVM requires only 1 GB of heap. You 
 should size a dedicated data JVM according to the 
 [guidelines](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html) 
-in Elastic’s documentation. 
+in Elastic's documentation. 
  
 As the amount of indexed data and number of search requests grow, you may add
 additional data nodes as follows: 

@@ -244,6 +244,7 @@ table td {
 				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> Tomcat 8 </li>
+					<li> Wildfly 10 </li>
 				</ul>
 			</td>
 			<td class="third-column">
@@ -254,6 +255,7 @@ table td {
 				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> Tomcat 8 </li>
+					<li> Wildfly 10 </li>
 				</ul>
 			</td>
 		</tr>

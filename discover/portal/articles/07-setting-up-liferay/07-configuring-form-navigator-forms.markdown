@@ -63,7 +63,7 @@ configurations can contain an optional context. Form contexts are covered next.
 
 A Form Navigator context refers to the context in which a form is being viewed.
 Form contexts allow you to control dynamically which form sections are displayed. 
-The following contexts are available:
+The following contexts are available by default:
 
 `add`: Denotes that the form is being viewed when new content is being created. 
 For example, you could use the `add` context to specify which form sections are 
@@ -73,12 +73,9 @@ visible when someone creates a new site.
 For example, you could use the `update` context to specify which form sections 
 are visible when someone edits a web content article.
 
-<!--  Add back once Context tutorial is published
-
-You can create additional contexts if needed following the steps covered in the
-[Creating a Form Navigator Configuration Context](TODO) tutorial.
-
- -->
+You can create additional contexts by following the steps covered 
+in the [Creating Form Navigator Contexts](/develop/tutorials/-/knowledge_base/7-0/creating-form-navigator-contexts) 
+tutorial.
 
 Now that you have the form ID(s), available categories and entry keys, and 
 you understand Form Navigator contexts, you can configure the Form Navigator

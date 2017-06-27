@@ -57,7 +57,7 @@ To use your template to create a new page, just navigate to your site's Site
 Administration dropdown menu and select the *Navigation* dropdown option. Select
 the *Actions* button (![Actions](../../../images/icon-actions.png)) for the page
 or page set you'd like to add a page to and then click the Add Page button.
-ou'll be able to select a page template and type a name for the new page.
+You'll be able to select a page template and type a name for the new page.
 
 ![Figure 3: You can choose whether or not to inherit changes made to the page template.](../../../images/automatic-application-page-template-changes.png)
 

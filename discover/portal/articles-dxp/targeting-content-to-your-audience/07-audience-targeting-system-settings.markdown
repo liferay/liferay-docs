@@ -1,4 +1,4 @@
-# Audience Targeting System Settings
+# Audience Targeting System Settings [](id=audience-targeting-system-settings)
 
 When Audience Targeting is installed on @product@, there are configuration
 options provided in
@@ -20,7 +20,7 @@ application. Some system setting groups may have more configurations than what
 are defined here; unspecified settings are generic configurations that are
 applied across many @product@ applications.
 
-## Audience Targeting Analytics Service
+## Audience Targeting Analytics Service [](id=audience-targeting-analytics-service)
 
 These settings define the general behavior of the Audience Targeting Analytics
 modules.
@@ -65,7 +65,7 @@ events on links.
 **Youtube tracking enabled:** enables tracking capabilities for YouTube
 videos.
 
-## Audience Targeting Analytics Storage
+## Audience Targeting Analytics Storage [](id=audience-targeting-analytics-storage)
 
 These settings configure the analytics engine used by Audience Targeting.
 
@@ -83,7 +83,7 @@ analytics storage.
 **External storage password:** defines the external storage password for
 analytics storage.
 
-## Audience Targeting Service
+## Audience Targeting Service [](id=audience-targeting-service)
 
 These settings define the cleaning task for the record of user assignments
 (anonymous and registered) to user segments (i.e. the `AnonymousUserUserSegment`
@@ -96,7 +96,7 @@ between data check events.
 records stored in the `AnonymousUserUserSegment` table. When a check event is
 triggered, entries older than the max age are removed.
 
-## Campaign Content Report
+## Campaign Content Report [](id=campaign-content-report)
 
 These settings configure campaign content reports.
 
@@ -105,7 +105,7 @@ These settings configure campaign content reports.
 tables is limited to the *Analytics events max age*, reports need to retrieve
 and process the latest events from Analytics with a shorter time interval.
 
-## Campaign Tracking Actions Report
+## Campaign Tracking Actions Report [](id=campaign-tracking-actions-report)
 
 These settings configure campaign tracking action reports.
 
@@ -115,7 +115,7 @@ in the Analytics tables is limited to the *Analytics events max age*, reports
 need to retrieve and process the latest events from Analytics with a shorter
 time interval.
 
-## User Segment Content Report
+## User Segment Content Report [](id=user-segment-content-report)
 
 These settings configure user segment content reports.
 
