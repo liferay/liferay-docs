@@ -5,9 +5,10 @@ manage your Liferay projects built with Maven. This workspace is intended to aid
 with the management of Liferay projects by applying various Maven plugins and
 configured properties. The Liferay Maven Workspace offers a full development
 lifecycle for your Maven projects to make developing them for @product@ easier
-than ever.
+than ever. In this tutorial, you'll learn how to leverage the development
+lifecycle of a Liferay Maven Workspace.
 
-Learn how to install a Maven Workspace next.
+First, you'll learn how to install a Maven Workspace.
 
 ## Installation [](id=installation)
 
@@ -54,7 +55,7 @@ applies the
 which is required for your Maven Workspace to properly handle @product-ver@
 projects. You can also
 [configure workspace properties](#configuring-maven-workspace-properties) in
-your POM.
+your POM, which you'll learn about later.
 
 Next, you'll learn how to initialize and package @product@ bundles using
 workspace.
@@ -83,12 +84,12 @@ root folder and run
 
     mvn bundle-support:init
 
+This command downloads the version of @product@ you specified in your POM file
+and installs your @product@ instance in the `bundles` folder.
+
 **Important:** Make sure the `com.liferay.portal.tools.bundle.support` plugin in
 your POM is configured to use version `2.0.3+`. The `bundle-support` prefixed
 commands will not work with previous versions of the Bundle Support plugin.
-
-This command downloads the version of @product@ you specified in your properties
-file and installs your @product@ instance in the `bundles` folder.
 
 If you run into errors during the bundle downloading process, check to make sure
 your workspace is accounting for the
@@ -98,7 +99,7 @@ If you want to skip the downloading process, you can create the `bundles` folder
 manually in your workspace's ROOT folder and unzip your Liferay Portal bundle to
 that folder.
 
-You can also produce a distributable Liferay bundle (Zip) from within a
+You can also produce a distributable @product@ bundle (Zip) from within a
 workspace. To do this, navigate to your workspace's root folder and run the
 following command:
 
@@ -108,7 +109,8 @@ Your distribution file is available from the workspace's `/target` folder.
 
 ## Configuring Maven Workspace Properties [](id=configuring-maven-workspace-properties)
 
-There are many configurable workspace properties in the root `pom.xml` file:
+There are many configurable workspace properties you can set in the root
+`pom.xml` file:
 
 - `liferay.workspace.bundle.dest`: the destination folder for downloaded
    @product@ bundle ZIP files.
@@ -167,7 +169,7 @@ tutorial for more information.
 Want to leverage Maven Workspace's testing infrastructure so you can simulate
 your Maven projects in a specific environment? See the
 [Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
-section.
+section for more information.
 
 Once you have your Maven projects solidified and ready for the limelight, it'd
 be great to release your projects to the public. Maven Workspace doesn't provide
@@ -175,6 +177,8 @@ this functionality, but there are easy ways to use external release tools with
 workspace. See the
 [Releasing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#releasing-modules)
 section for more information.
+
+Next, you'll learn how to update a Maven Workspace.
 
 ## Updating a Maven Workspace [](id=updating-a-maven-workspace)
 
