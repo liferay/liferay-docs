@@ -4,12 +4,10 @@
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
 absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
-Pack 21+.**
+Pack 16+.**
 
-<!-- We must find the specific Fix Pack version that first supports Ext plugin
-deployment. This is being currently tested. The latest FP has the needed
-changes, so I have that stated for the above note. I'll update this as soon as I
-know. Note: The SP5 release will support Ext plugins. -Cody -->
+<!-- The SP5 release will support Ext plugins without the additional Tomcat app
+server configurations. -Cody -->
 
 The following app servers are supported for Ext plugin development in
 @product@:
@@ -24,8 +22,6 @@ If you're using the Tomcat app server, visit the
 [App Server Configuration](#app-server-configuration) section for details on
 modifications required to allow Ext plugins to function properly in that
 environment.
-
-<!-- Verify that this is only necessary for Fix Packs, not SP5. --Cody -->
 
 $$$
 
