@@ -1,4 +1,4 @@
-# Maven Workspace
+# Maven Workspace [](id=maven-workspace)
 
 A Liferay Maven Workspace is a generated environment that is built to hold and
 manage your Liferay projects built with Maven. This workspace is intended to aid
@@ -9,7 +9,7 @@ than ever.
 
 Learn how to install a Maven Workspace next.
 
-## Installation
+## Installation [](id=installation)
 
 The Maven Workspace is installed by generating the workspace project from an
 archetype. You can do this by executing the following command with your command
@@ -26,7 +26,7 @@ line tool:
 Your Maven Workspace is generated to the folder you ran the command from. No
 other tools or CLIs are required for Maven Workspace.
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 The default Maven Workspace is broken down into the following folders/files:
 
@@ -59,7 +59,7 @@ your POM.
 Next, you'll learn how to initialize and package @product@ bundles using
 workspace.
 
-## Adding a Liferay Bundle to a Maven Workspace
+## Adding a Liferay Bundle to a Maven Workspace [](id=adding-a-liferay-bundle-to-a-maven-workspace)
 
 Liferay Maven Workspaces can generate and hold a Liferay Server. This lets you
 build/test your plugins against a running Liferay instance. Before generating a
@@ -106,7 +106,7 @@ following command:
 
 Your distribution file is available from the workspace's `/target` folder.
 
-## Configuring Maven Workspace Properties
+## Configuring Maven Workspace Properties [](id=configuring-maven-workspace-properties)
 
 There are many configurable workspace properties in the root `pom.xml` file:
 
@@ -149,7 +149,7 @@ configurations below for an example on how these can be set in your POM:
 Next, you'll learn how to add and deploy modules/projects in your Maven
 Workspace.
 
-## Module Management
+## Module Management [](id=module-management)
 
 Maven Workspace makes managing your Maven project easier than ever. To create
 a project, navigate to the appropriate workspace folder dedicated to that type
@@ -176,7 +176,7 @@ workspace. See the
 [Releasing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#releasing-modules)
 section for more information.
 
-## Updating a Maven Workspace
+## Updating a Maven Workspace [](id=updating-a-maven-workspace)
 
 Liferay Workspace is updated periodically with new features, so you'll want to
 update your workspace instance accordingly. To update your Maven Workspace, you
