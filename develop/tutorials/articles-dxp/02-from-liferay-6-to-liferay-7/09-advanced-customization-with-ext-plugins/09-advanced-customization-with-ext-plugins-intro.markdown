@@ -52,11 +52,11 @@ In this tutorial, you'll learn how to
 - [Deploy an Ext plugin in Production](#deploying-in-production)
 
 Before diving into creating an Ext plugin, however, first consider if an Ext
-plugin is even necessary at all.
+plugin is necessary.
 
 ## Making the Decision to Use Ext Plugins [](id=making-the-decision-to-use-ext-plugins)
 
-There are many parts of @product@ that now provide an extension point via OSGi
+There are many parts of @product@ that now provide extension points via OSGi
 bundle. You should follow this three step process to decide whether an Ext
 plugin is necessary:
 
@@ -113,8 +113,8 @@ legacy properties.
 
 $$$
 
-Now that you know how to make an informed decision on using Ext plugins, you'll
-learn how to create one next.
+Now that you know how to make an informed decision on using Ext plugins, if you
+still need to use them, you'll learn how to create one next.
 
 ## Creating an Ext Plugin [](id=creating-an-ext-plugin)
 
