@@ -46,13 +46,14 @@ The default Maven Workspace is broken down into the following folders/files:
 
 For more information on the `configs` folder, see the
 [Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
-section. The proceeding folders should hold projects of that type. The
-`gradle.properties` file specifies the workspace's project locations and Liferay
-Portal server configuration globally. The parent `pom.xml` configures your
-workspace as a Maven project and applies the
+section. The `modules`, `themes`, and `wars` folders should hold projects of
+that type. The parent `pom.xml` configures your workspace as a Maven project and
+applies the
 [Bundle Support plugin](https://repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.portal.tools.bundle.support/),
 which is required for your Maven Workspace to properly handle @product-ver@
-projects.
+projects. You can also
+[configure workspace properties](#configuring-maven-workspace-properties) in
+your POM.
 
 Next, you'll learn how to initialize and package @product@ bundles using
 workspace.
@@ -61,10 +62,10 @@ workspace.
 
 Liferay Maven Workspaces can generate and hold a Liferay Server. This lets you
 build/test your plugins against a running Liferay instance. Before generating a
-Liferay instance, open the `pom.xml` file located in your workspace's
-root folder. You can set the version of the Liferay bundle you'd like to
-generate and install by setting the download URL for the
-`liferay.workspace.bundle.url` property. For example,
+Liferay instance, open the `pom.xml` file located in your workspace's root
+folder and set the version of the Liferay bundle you'd like to generate and
+install by setting the download URL for the `liferay.workspace.bundle.url`
+property. For example,
 
     <properties>
         <liferay.workspace.bundle.url>
@@ -76,8 +77,8 @@ generate and install by setting the download URL for the
 You can also set the folder where your Liferay bundle is generated with the
 `liferay.workspace.home.dir` property. It's set to `bundles` by default.
 
-Once you've finalized your Gradle properties, navigate to your workspace's root
-folder and run
+Once you've finalized your workspace properties, navigate to your workspace's
+root folder and run
 
     mvn bundle-support:init
 
@@ -85,8 +86,8 @@ folder and run
 your POM is configured to use version `2.0.3+`. The `bundle-support` prefixed
 commands will not work with previous versions of the Bundle Support plugin.
 
-This command downloads the version of Liferay you specified in your properties
-file and installs your Liferay instance in the `bundles` folder.
+This command downloads the version of @product@ you specified in your properties
+file and installs your @product@ instance in the `bundles` folder.
 
 If you run into errors during the bundle downloading process, check to make sure
 your workspace is accounting for the
@@ -96,13 +97,13 @@ If you want to skip the downloading process, you can create the `bundles` folder
 manually in your workspace's ROOT folder and unzip your Liferay Portal bundle to
 that folder.
 
-You can also produce a distributable Liferay bundle (Zip or Tar) from within a
+You can also produce a distributable Liferay bundle (Zip) from within a
 workspace. To do this, navigate to your workspace's root folder and run the
 following command:
 
     mvn bundle-support:dist
 
-Your distribution file is available from the workspace's `/build` directory.
+Your distribution file is available from the workspace's `/target` folder.
 
 ## Configuring Maven Workspace Properties
 
@@ -144,8 +145,8 @@ configurations below for an example on how these can be set in your POM:
         <liferay.workspace.environment>local</liferay.workspace.environment>
     </properties>
 
-Next, you'll learn how to add and deploy modules/project in your Maven
-workspace.
+Next, you'll learn how to add and deploy modules/projects in your Maven
+Workspace.
 
 ## Module Management
 
@@ -155,7 +156,7 @@ of project (e.g., `modules`, `wars`, etc.). Then generate the project archetype.
 You can view a full listing of the available archetypes in the
 [Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
 reference section. Once the project is generated, it can leverage all of Maven
-workspace's functionality.
+Workspace's functionality.
 
 Maven Workspace also lets you deploy your projects to a @product@ instance using
 Maven. See the
@@ -184,7 +185,7 @@ must update the Bundle Support plugin configured in your workspace's root
     <plugin>
         <groupId>com.liferay</groupId>
         <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
-        <version>2.0.3</version>
+        <version>3.0.1</version>
         ...
     </plugin>
 
