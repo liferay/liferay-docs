@@ -30,21 +30,24 @@ of lightweight components. A *component* is just a class that has the
 metadata. The configuration mechanisms described here leverage the concept of
 components.
 
-- Configuration Scope: If your applications needs to support different
+- Configuration Scope: If your application must support different
 configurations at different scopes, the APIs described below handle most of the
 burden for you. It's still important, however, for you to understand the term
 *configuration scope*. Here are the most common configuration scopes that
 Liferay applications can have:
 
-    1.  **System:** configuration that is unique for the complete installation of
+   1.  **System:** configuration that is unique for the complete installation of
         the application.
-    2.  **Virtual Instance:** configuration that can vary per virtual instance.
-    3.  **Site:** configuration that can vary per Liferay site.
-    4.  **Portlet Instance:** applicable for applications that are placed on a page
+
+   2.  **Virtual Instance:** configuration that can vary per virtual instance.
+ 
+   3.  **Site:** configuration that can vary per Liferay site.
+
+   4.  **Portlet Instance:** applicable for applications that are placed on a page
         (i.e., portlets). Each placement (instance) of the application on the page
         can have a different configuration.
 
-Enoguh with the conceptual stuff. You're ready to get started with some code. If
+Enough with the conceptual stuff. You're ready to get started with some code. If
 you already had a portlet or service that was configurable using the traditional
 mechanisms of Liferay Portal 6.2 and before, refer to the
 [Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-0/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
@@ -56,8 +59,8 @@ configurable the @product@ way. First, you'll learn how to create a
 configuration at the system scope.
 
 First create a Java interface to represent the configuration and its default
-values. Using a Java interface allows for an advanced type system for each of
-the configuration options. Here is an example of such an interface:
+values. Using a Java interface allows for an advanced type system for each
+configuration option. Here is an example of such an interface:
 
     @Meta.OCD(id = "com.foo.bar.MyAppConfiguration")
     public interface MyAppConfiguration {
@@ -82,10 +85,10 @@ the configuration options. Here is an example of such an interface:
 As you can see, you are using two Java annotations to provide some metadata about
 the configuration. Here is what they do:
 
-1.  **Meta.OCD** registers this class as a configuration with a specific id.
+1.  **Meta.OCD** Registers this class as a configuration with a specific id.
     You can choose any string you want, but make sure it's unique. A common
     pattern is to use the fully qualified class name.
-2.  **Meta.AD** specifies the default value of a configuration field as well
+2.  **Meta.AD** Specifies the default value of a configuration field as well
     as whether it's required or not. Note that if you set a field as required
     and don't specify a default value, the system administrator must specify a
     value in order for your application to work properly. Use the `deflt`
@@ -325,7 +328,7 @@ when you refresh the page.
 
 ## Categorizing the Configuration [](id=categorizing-the-configuration)
 
-Because it's very easy to make any application or service configurable, there
+Because it's easy to make any application or service configurable, there
 are already lots of configuration options in @product@ by default. If you've
 deployed custom applications and services to your portal, there will be even
 more. To make it easier for portal administrators to find the right
@@ -376,11 +379,11 @@ The `@ExtendedObjectClassDefinition` annotation is distributed through the
 
 When an application is deployed to Liferay, it's common to need different
 configurations depending on the scope. That means having different
-configurations for a given application per virtual instance (a.k.a. company),
-site (a.k.a. group), or portlet instance. @product@ provides an easy way to
+configurations for a given application per virtual instance (a.k.a. Company),
+site (a.k.a. Group), or portlet instance. @product@ provides an easy way to
 achieve this with little effort through a new framework called the Configuration
-API that is based on the standard OSGi Configuration Admin API that we just
-showed in the previous section.
+API that is based on the standard OSGi Configuration Admin API shown in the
+previous section.
 
 ### Using the Configuration Provider [](id=using-the-configuration-provider)
 
@@ -396,7 +399,7 @@ to make sure it is installed in order to use it.
 
 Before using the `ConfigurationProvider`, register the configuration class by
 writing a class that implements `ConfigurationBeanDeclaration`. This class only
-has one method which returns the class of the interface you created in the
+has one method that returns the class of the interface you created in the
 previous section. By doing this, the system is able to keep track of any
 configuration changes as they happen. This makes requests for the configuration
 very fast.
@@ -508,10 +511,9 @@ Here is an example:
     ...
     }
 
-In @product@ version 7.0, the scope property is not being used for anything
-other than making it appear in System Settings so that an administrator change
-change its value. In future versions of Liferay, it will probably have more
-purposes.
+In @product@ version 7.0, the scope property isn't used for anything other than
+making it appear in System Settings so that an administrator can change its
+value. In future releases, may have more purposes.
 
 ## Summary [](id=summary)
 
