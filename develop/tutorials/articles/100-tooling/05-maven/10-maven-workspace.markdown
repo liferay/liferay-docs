@@ -71,7 +71,7 @@ property. For example,
 
     <properties>
         <liferay.workspace.bundle.url>
-            http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.2%20GA3/liferay-ce-portal-tomcat-7.0-ga3-20160804222206210.zip
+            http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.3%20GA4/liferay-ce-portal-tomcat-7.0-ga4-20170613175008905.zip
         </liferay.workspace.bundle.url>
         ...
     </properties>
