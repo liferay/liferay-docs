@@ -48,7 +48,7 @@ tutorial assumes your project is built with Gradle. The example project's
 For simplicity, you'll track the Service Builder-generated changes applied to an
 entity model file to observe how staged models are assigned to your entity. Keep
 in mind the specific
-[staged attributes](/develop/tutorials/-/knowledge_base/7-0/important-attributes-in-staging)
+[staged attributes](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#important-attributes-in-staging)
 necessary for each staged model. Depending on the attributes defined in your
 `service.xml` file, Service Builder assigns your entity model to a specific
 staged model type.

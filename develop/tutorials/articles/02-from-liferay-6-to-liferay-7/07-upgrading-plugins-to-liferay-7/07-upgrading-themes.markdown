@@ -1,4 +1,4 @@
-# Upgrading Themes [](id=upgrading-themes)
+# Upgrading Your Theme from Liferay Portal 6.2 to 7.0 [](id=upgrading-themes)
 
 If you've developed themes in Liferay Portal 6.2, as part of your upgrade you'll want
 to use them in @product-ver@. While you're at it, you should leverage theme

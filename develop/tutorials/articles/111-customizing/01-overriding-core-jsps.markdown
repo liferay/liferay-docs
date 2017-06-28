@@ -109,7 +109,7 @@ JSP paths. The `getResource` method returns one specific resource by its name
 -  **`isCustomJspGlobal`:** Return `true`.
 
 For an example of a full class that provides a working implementation of a
-custom JSP bag, refer to the [blade.corejsphook BLADE project](https://github.com/liferay/liferay-blade-samples/blob/master/liferay-gradle/blade.corejsphook/src/main/java/com/liferay/blade/samples/corejsphook/BladeCustomJspBag.java).
+custom JSP bag, refer to the [blade.corejsphook BLADE project](https://github.com/liferay/liferay-blade-samples/blob/master/gradle/blade.corejsphook/src/main/java/com/liferay/blade/samples/corejsphook/BladeCustomJspBag.java).
 
 ## Register the Custom JSP Bag [](id=register-the-custom-jsp-bag)
 
@@ -141,6 +141,17 @@ You'll see this:
     <liferay-util:include page="/html/common/themes/bottom-ext.jsp" />
 
 If you need to add something to `bottom.jsp`, override `bottom-ext.jsp`. 
+
+As of 7.0, the content from the following JSP files formerly in
+`html/common/themes` are inlined to improve performance.
+ 
+- `body_bottom-ext.jsp`
+- `body_top-ext.jsp`
+- `bottom-ext.jsp`
+- `bottom-test.jsp`
+
+They're no longer explicit files in the code base. But you can still create them
+in your module to add functionality and content. 
 
 Remember, this type of customization should be seen as a last resort. There's a
 risk that your override will break due to the nature of this implementation, and

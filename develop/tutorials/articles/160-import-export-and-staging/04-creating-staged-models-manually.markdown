@@ -1,33 +1,34 @@
 # Creating Staged Models Manually [](id=creating-staged-models-manually)
 
 There are times when using
-[Service Builder to generate your staged models](/develop/tutorials/-/knowledge_base/7-0/#important-attributes-in-staging)
+[Service Builder to generate your staged models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#important-attributes-in-staging)
 is not practical. In these cases, you should create your staged models manually.
 Make sure to read the
 [Adapting Your Business Logic to Build Staged Models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
 section to determine if creating staged models manually is beneficial for your
 use case.
 
-In this tutorial, you'll explore the Asset Link framework (used for
-[relating assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)),
-which is a @product@ framework that leverages the
+In this tutorial, you'll explore how the Asset Link framework (a @product@
+framework used for
+[relating assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships))
+manually creates staged models. This framework is separate from Staging and is
+referenced solely as an example for how to leverage the
 [ModelAdapterBuilder](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
-framework. The Model Adapter Builder lets you adapt your model classes to staged
-models.
+framework, which lets you adapt your model classes to staged models.
 
 Asset links do not provide UUIDs by default; however, they still need to be
 tracked in the Staging and Export/Import frameworks. Therefore, they require
 staged models. Since they don't provide a UUID, Service Builder cannot generate
 staged models for asset links. The Asset Link framework has to create staged
-models differently using the Model Adapter Builder. You'll leverage the Model
-Adapter Builder for your application by referencing the Asset Link framework as
-an example. The naming convention for this interface typically follows the
-`Staged[Entity]` syntax. The example below uses a generic entity called
-`AssetLink`. 
+models differently using the Model Adapter Builder. The naming convention for
+this interface typically follows the `Staged[Entity]` syntax. The Asset Link
+framework uses a generic entity called `AssetLink`.
+
+Follow the steps below to leverage the Model Adapter Builder in your app.
 
 1.  Create a new interface that extends one of the
     [staged model interfaces](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#staged-model-interfaces)
-    and your model specific interface.
+    and your model specific interface. For example,
 
         public interface StagedAssetLink extends AssetLink, StagedModel {
 
@@ -43,15 +44,16 @@ an example. The naming convention for this interface typically follows the
 
     These will be implemented by a new implementation class later. 
 
-2.  Create an implementation class that implements your new `Staged[Entity]`:
+2.  Create an implementation class that implements your new `Staged[Entity]`.
+    For example, the Asset Link framework does this:
 
         public class StagedAssetLinkImpl implements StagedAssetLink {
 
         }
 
     This class provides necessary logic for your entity model to be recognized
-    as a staged model. Below is a subset of logic in the `StagedAssetLinkImpl`
-    class used to populate UUIDs for asset link entries:
+    as a staged model. Below is a subset of logic in the example
+    `StagedAssetLinkImpl` class used to populate UUIDs for asset link entries:
 
         public StagedAssetLinkImpl(AssetLink assetLink) {
              _assetLink = assetLink;
@@ -145,13 +147,15 @@ an example. The naming convention for this interface typically follows the
         }
 
     For the `StagedAssetLinkModelAdapterBuilder`, the entity type is `AssetLink`
-    and the Staged Model Adapter is `StagedAssetLink`. Your Model Adapter
-    Builder outputs a new instance of the `Staged[Entity]Impl` object.
+    and the Staged Model Adapter is `StagedAssetLink`. Your app should follow a
+    similar design. The Model Adapter Builder outputs a new instance of the
+    `Staged[Entity]Impl` object.
 
 4.  Now you need to adapt your existing business logic to call the provided
     APIs. You can call the
     [ModelAdapterUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/ModelAdapterUtil.html)
-    class to create an instance of your Staged Model Adapter:
+    class to create an instance of your Staged Model Adapter. See how the Asset
+    Link framework does this below:
 
         StagedAssetLink stagedAssetLink = ModelAdapterUtil.adapt(
             assetLink, AssetLink.class, StagedAssetLink.class);

@@ -23,7 +23,7 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
 
     You can get a reference to the registered service in your components as
     detailed in the
-		[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-language-keys)
+		[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#overriding-a-modules-language-keys)
 		tutorial. The main disadvantage of this approach is that it forces you to
 		provide a specific implementation of the `ResourceBundleLoader`, making it
 		harder to modularize in the future.
@@ -50,6 +50,6 @@ portlet.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Liferay Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-gradle/blade.language)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.language)
 - [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.language)
 - [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.language)

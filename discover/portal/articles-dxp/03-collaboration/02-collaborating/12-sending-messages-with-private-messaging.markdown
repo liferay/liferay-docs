@@ -26,7 +26,7 @@ a message body, and add attachments. In the *To* field, an autocomplete
 recipient list of users appears that lets you select who to send your message
 to. You can select any number of users.
 
-![Figure 1: The Private Messaging Interface functions just like an email client for use within a Portal instance.](../../../images/private-messages-inbox.png)
+![Figure 1: The Private Messaging Interface functions just like an email client for use within a Portal instance.](../../../images-dxp/private-messages-inbox.png)
 
 By default, all users are available in this list. You can filter the available
 list of users by configuring the app. This is covered next.

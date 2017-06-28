@@ -9,6 +9,10 @@ can get stale, especially if those responsible for it don't maintain it like
 they should. And sometimes, content is published that should never have seen the
 light of day.
 
+<div class="video-link">
+<img alt="video thumbnail" src="../../../images/vid-struc-temp-thumbnail.png" />
+</div>
+
 Thankfully, Liferay WCM helps you handle all of those situations. You can use
 *Structures* to define which fields are available to users when they create
 content. These can be coupled with *Templates* that define how to display that
@@ -576,3 +580,11 @@ structures and templates, you can quickly add and edit content. With the Web
 Content Display, you can rapidly select and configure what content to display.
 You'll find that managing your site becomes far easier when using @product@’s Web
 Content Management system.
+
+<div class="video-tag" data-name="Creating Content with Structures and Templates">
+  <video width="100%" height="100%" controls>
+    <source src="https://dev.liferay.com/documents/10184/1058908/creating-content-with-structures-and-templates.mp4" type="video/mp4">
+    <source src="https://dev.liferay.com/documents/10184/1058908/creating-content-with-structures-and-templates.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+</div>
