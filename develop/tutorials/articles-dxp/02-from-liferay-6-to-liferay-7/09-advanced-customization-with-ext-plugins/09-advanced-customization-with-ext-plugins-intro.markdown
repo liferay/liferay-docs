@@ -24,7 +24,7 @@ The following app servers are supported for Ext plugin development in
 - WebSphere 8.5.5
 
 In most cases, Ext plugins are no longer necessary. There are, however, certain
-cases that require the use of an Ext plugin. Liferay supports the following
+cases that require the use of an Ext plugin. Liferay only supports the following
 Ext plugin use cases:
 
 - Providing custom implementations for any beans declared in @product@'s
@@ -121,7 +121,7 @@ Those processes are documented too!
 
 There are a few corner cases where you may need an Ext plugin to customize a
 part of @product@ that does not provide an extension point. Refer to the top of
-this tutorial for Ext plugin use cases supported by Liferay only.
+this tutorial for Ext plugin use cases supported by Liferay.
 
 +$$$
 

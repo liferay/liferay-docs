@@ -14,6 +14,21 @@ The following app servers should be used for Ext plugin development in
 - WebLogic 12.2
 - WebSphere 8.5.5
 
+In most cases, Ext plugins are no longer necessary. There are, however, certain
+cases that require the use of an Ext plugin. Liferay only supports the following
+Ext plugin use cases:
+
+- Providing custom implementations for any beans declared in @product@'s
+  Spring files (when possible, use
+  [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
+  instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
+  overridden beans are still relevant if converting your legacy Ext plugin.
+- Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
+  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
+  section.
+- Modifying @product@'s `web.xml` file.
+- Adding to @product@'s `web.xml` file.
+
 $$$
 
 Ext plugins are powerful tools used to extend @product@. They, however, increase
@@ -81,19 +96,8 @@ or [@product@ core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core
 Those processes are documented too!
 
 There are a few corner cases where you may need an Ext plugin to customize a
-part of @product@ that does not provide an extension point. Liferay only
-supports Ext plugins for the following use cases:
-
-- Providing custom implementations for any beans declared in @product@'s
-  Spring files (when possible, use
-  [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
-  instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
-  overridden beans are still relevant if converting your legacy Ext plugin.
-- Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
-  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
-  section.
-- Modifying @product@'s `web.xml` file.
-- Adding to @product@'s `web.xml` file.
+part of @product@ that does not provide an extension point. Refer to the top of
+this tutorial for Ext plugin use cases supported by Liferay.
 
 +$$$
 
