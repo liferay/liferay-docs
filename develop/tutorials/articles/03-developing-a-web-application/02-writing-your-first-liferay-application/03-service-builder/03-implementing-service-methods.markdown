@@ -150,7 +150,11 @@ which verifies that field data was properly entered for the fields before storin
 		public List<Guestbook> getGuestbooks(long groupId, int start, int end, OrderByComparator<Guestbook> obc) {
 			return guestbookPersistence.findByGroupId(groupId, start, end, obc);
 		}
-
+		
+		public List<Guestbook> getGuestbooks(long groupId, int start, int end) {
+				return guestbookPersistence.findByGroupId(groupId, start, end);
+			}
+		
 		public int getGuestbooksCount(long groupId) {
 			return guestbookPersistence.countByGroupId(groupId);
 		}

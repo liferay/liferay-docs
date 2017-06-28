@@ -26,9 +26,9 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 		                      total="<%= GuestbookLocalServiceUtil.getGuestbooksCount(scopeGroupId) %>"
 		>
 		                <liferay-ui:search-container-results
-		                        results="<%= GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId,
-		                                                        searchContainer.getStart(),
-		                                                        searchContainer.getEnd()) %>" />
+					results="<%= GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId, 
+					searchContainer.getStart(), searchContainer.getEnd()) %>"
+				/>
 
 		                <liferay-ui:search-container-row
 		                        className="com.liferay.docs.guestbook.model.Guestbook" modelVar="guestbook">
@@ -37,7 +37,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
                         
 		                        <liferay-ui:search-container-column-jsp
 		                            align="right" 
-		                            path="/guestbookadminportletguestbookadminmvcportlet/guestbook_actions.jsp"
+		                            path="/guestbookadminportlet/guestbook_actions.jsp"
 		                        />
                 
 		                </liferay-ui:search-container-row>
@@ -46,17 +46,16 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 		        </liferay-ui:search-container>
 
 		        <aui:button-row cssClass="guestbook-admin-buttons">
-		                     scopeGroupId, "ADD_GUESTBOOK") %>'>
 		                        <portlet:renderURL var="addGuestbookURL">
 		                                <portlet:param name="mvcPath"
 		                                        value="/guestbookadminportlet/edit_guestbook.jsp" />
-		                                <portlet:param name="redirect" value="<%= currentURL %>" />
+		                                <portlet:param name="redirect" value="<%= "currentURL" %>" />
 		                        </portlet:renderURL>
                 
 		                        <aui:button onClick="<%= addGuestbookURL.toString() %>"
 		                                value="Add Guestbook" />
 		        </aui:button-row>
-
+				
     First, you include the `init.jsp` file since the pattern you're following
     specifies that all JSP imports go there.
 
