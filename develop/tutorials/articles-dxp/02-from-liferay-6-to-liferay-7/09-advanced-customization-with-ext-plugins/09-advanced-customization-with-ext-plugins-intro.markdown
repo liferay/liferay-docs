@@ -1,4 +1,4 @@
-# Advanced Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins)
+# Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins)
 
 +$$$
 
@@ -6,8 +6,13 @@
 absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
 Pack 16+.**
 
-<!-- The SP5 release will support Ext plugins without the additional Tomcat app
-server configurations. -Cody -->
+<!-- The next SP release that supports Ext plugins should be documented above.
+We still must decide if we want to include the necessary fix pack and
+workaround. -Cody -->
+
+<!-- Add reminders in use case tutorials involving core classes about what core
+classes are, and how to find them. Use same link provided in list below. -Cody
+-->
 
 The following app servers are supported for Ext plugin development in
 @product@:
@@ -18,10 +23,37 @@ The following app servers are supported for Ext plugin development in
 - WebLogic 12.2
 - WebSphere 8.5.5
 
+In most cases, Ext plugins are no longer necessary. There are, however, certain
+cases that require the use of an Ext plugin. Liferay supports the following
+Ext plugin use cases:
+
+- Providing custom implementations for any beans declared in @product@'s
+  Spring files (when possible, use
+  [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
+  instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
+  overridden beans are still relevant if converting your legacy Ext plugin
+  ([tutorial]()).
+- Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
+  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
+  section
+  ([tutorial]()).
+- Modifying @product@'s `web.xml` file
+  ([tutorial]()).
+- Adding to @product@'s `web.xml` file
+  ([tutorial]()).
+
+Refer to each use case's linked tutorial for further information on that topic.
+
+<!--
 If you're using the Tomcat app server, visit the
 [App Server Configuration](#app-server-configuration) section for details on
 modifications required to allow Ext plugins to function properly in that
 environment.
+-->
+
+<!-- Remove the above text (and linked section) if we decide to not refer to
+fix pack support. This will not be necessary in the next SP that supports Ext
+plugins. -Cody -->
 
 $$$
 
@@ -88,19 +120,8 @@ or [@product@ core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core
 Those processes are documented too!
 
 There are a few corner cases where you may need an Ext plugin to customize a
-part of @product@ that does not provide an extension point. Liferay only
-supports Ext plugins for the following use cases:
-
-- Providing custom implementations for any beans declared in @product@'s
-  Spring files (when possible, use
-  [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
-  instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
-  overridden beans are still relevant if converting your legacy Ext plugin.
-- Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
-  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
-  section.
-- Modifying @product@'s `web.xml` file.
-- Adding to @product@'s `web.xml` file.
+part of @product@ that does not provide an extension point. Refer to the top of
+this tutorial for Ext plugin use cases supported by Liferay only.
 
 +$$$
 
@@ -609,6 +630,7 @@ Now, perform these actions on your server:
 
 Next, you'll learn about Liferay's licensing and contributing standards.
 
+<!--
 ## App Server Configuration [](id=app-server-configuration)
 
 If you're using the Tomcat app server, you must modify your app server's
@@ -623,6 +645,7 @@ If you're using the Tomcat app server, you must modify your app server's
     </Resources>
 
 Be sure to place this code within the existing `<Context>` tags.
+-->
 
 ## Licensing and Contributing [](id=licensing-and-contributing)
 

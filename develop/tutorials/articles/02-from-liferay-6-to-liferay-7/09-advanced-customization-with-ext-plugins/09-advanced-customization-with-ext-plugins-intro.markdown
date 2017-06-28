@@ -1,4 +1,4 @@
-# Advanced Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins)
+# Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins)
 
 +$$$
 
