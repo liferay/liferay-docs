@@ -96,9 +96,7 @@ resources directly in the TLD files. For example, if the project includes an
 image called `breadcrumb.png` in the `src/main/tlddoc/images` directory, you can
 reference it in a TLD file contained in the `src/main/resources` directory:
 
-```xml
-<description>Hello World <![CDATA[<img src="../images/breadcrumb.png"]]></description>
-```
+    <description>Hello World <![CDATA[<img src="../images/breadcrumb.png"]]></description>
 
 ## App TLDDoc Builder Plugin [](id=app-tlddoc-builder-plugin)
 

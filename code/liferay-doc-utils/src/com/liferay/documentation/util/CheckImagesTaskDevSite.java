@@ -349,7 +349,7 @@ public class CheckImagesTaskDevSite extends Task {
 
 			// Check for <img> elements
 
-			if (line.contains("<img")) {
+			if (line.contains("<img") && !line.contains("<![CDATA[")) {
 				int begin = line.indexOf("<img");
 				int end = line.indexOf(">", begin);
 				int src = line.indexOf("src", begin);

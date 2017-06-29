@@ -26,7 +26,7 @@ these steps:
 Your portlet language key customizations are deployed in your new module on
 @product-ver@. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#creating-a-resource-bundle)
 

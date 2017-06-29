@@ -5,7 +5,7 @@ versions. Upgrading Model Listener Hooks from previous portal versions has never
 been easier. 
 
 1.  Adapt your plugin to @product-ver@'s API using
-    [@liferay-ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+    [Liferay @ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
 2.  Deploy the plugin.
 
@@ -14,7 +14,7 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 Your model listener hook is "all ears" and ready to act. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Model Listeners](/develop/tutorials/-/knowledge_base/7-0/model-listeners)
 
