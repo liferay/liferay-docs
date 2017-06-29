@@ -21,47 +21,66 @@ permission checks.
 
 3.  Place the following code in this class: 
 
-        package com.liferay.docs.guestbook.service.permission;
+		package com.liferay.docs.guestbook.service.permission;
 
-        import com.liferay.portal.kernel.exception.PortalException;
-        import com.liferay.portal.security.auth.PrincipalException;
-        import com.liferay.portal.security.permission.PermissionChecker;
+		import org.osgi.service.component.annotations.Component;
+		import com.liferay.portal.kernel.exception.PortalException;
+		import com.liferay.portal.kernel.security.auth.PrincipalException;
+		import com.liferay.portal.kernel.security.permission.BaseResourcePermissionChecker;
+		import com.liferay.portal.kernel.security.permission.PermissionChecker;
 
-        public class GuestbookModelPermission {
 
-            public static final String RESOURCE_NAME = "com.liferay.docs.guestbook.model";
+		@Component(
+				immediate = true,
+				property = {
+					"resource.name=" + GuestbookModelPermission.RESOURCE_NAME
+				},
+				service = GuestbookModelPermission.class
+			)
 
-            public static void check(PermissionChecker permissionChecker, long groupId,
-                    String actionId) throws PortalException {
+		        public class GuestbookModelPermission extends BaseResourcePermissionChecker  {
 
-                if (!contains(permissionChecker, groupId, actionId)) {
-                    throw new PrincipalException();
-                }
-            }
+		            public static final String RESOURCE_NAME = "com.liferay.docs.guestbook";
 
-            public static boolean contains(PermissionChecker permissionChecker,
-                    long groupId, String actionId) {
+		            public static void check(PermissionChecker permissionChecker, long groupId,
+		                    String actionId) throws PortalException {
 
-                return permissionChecker.hasPermission(groupId, RESOURCE_NAME, groupId,
-                        actionId);
-            }
-        }
+		                if (!contains(permissionChecker, groupId, actionId)) {
+		                    throw new PrincipalException();
+		                }
+		            }
 
-4. Press *CTRL*+*SHIFT*+*O* to organize imports.
+		            public static boolean contains(PermissionChecker permissionChecker,
+		                    long groupId, String actionId) {
 
-This class defines two static methods (so you don't have to instantiate the
-class) that encapsulate the model that you're checking permissions for. This
-makes it easier for you to include the proper permissions check later. As
-you can see, Liferay's `PermissionChecker` class does most of the work: all
-you have to do is feed it the proper resource and and action, such as
-`ADD_ENTRY`, and it can determine whether the permission exists or not. 
+		                return permissionChecker.hasPermission(groupId, RESOURCE_NAME, groupId,
+		                        actionId);
+		            }
 
-There are two implementations here: a `check` method that throws an
-exception if the user does not have permission, and a `contains` method that
+					@Override
+					public Boolean checkResource(PermissionChecker permissionChecker, long classPK, String actionId) {
+
+						return contains(permissionChecker, classPK, actionId);
+
+					}
+		        }
+
+
+This class is a component which extends BaseResourcePermissionChecker and 
+defines two static methods (so  you don't have to instantiate the class) that 
+encapsulate the model that you're checking permissions for. This makes it 
+easier for you to include the proper permissions check later. It also contains 
+a boolean method which checks your resources. Liferay's `PermissionChecker` 
+class does most of the work: all you have to do is feed it the proper resource 
+and and action, such as `ADD_ENTRY`, and it can determine whether the 
+permission exists or not. 
+
+There are three implementations here: a `check` method that throws an
+exception if the user does not have permission, a `contains` method that
 returns a boolean that's `true` if the user has permission and `false` if he
-or she does not.
+or she does not, and a `checkResource` method which calls the `contains` method.
 
-Next, you'll do exactly the same thing for your two entities. 
+Next, we'll create helpers for your two entities. 
 
 1.  Create a class in the same package called `GuestbookPermission.java`. 
 
@@ -157,114 +176,3 @@ Congratulations! You've completed adding permissions resources to your entities,
 and have created Java helper classes for your permissions. The only thing you
 have left to do is to implement the permission checks in your user interface.
 That's the topic of the next step. 
-
-GuestbookModelPermissions
-
-	package com.liferay.docs.guestbook.service.permission;
-
-	import com.liferay.portal.kernel.exception.PortalException;
-	import com.liferay.portal.kernel.security.auth.PrincipalException;
-	import com.liferay.portal.kernel.security.permission.PermissionChecker;
-
-	/**
-	 * @author liferay
-	 */
-	public class GuestbookModelPermission {
-
-		public static final String RESOURCE_NAME =
-			"com.liferay.docs.guestbook.model";
-
-		public static void check(
-				PermissionChecker permissionChecker, long groupId, String actionId)
-			throws PortalException {
-
-			if (!contains(permissionChecker, groupId, actionId)) {
-				throw new PrincipalException();
-			}
-		}
-
-		public static boolean contains(
-			PermissionChecker permissionChecker, long groupId, String actionId) {
-
-			return permissionChecker.hasPermission(
-				groupId, RESOURCE_NAME, groupId, actionId);
-		}
-
-	}
-
-EntryPermission
-
-	package com.liferay.docs.guestbook.service.permission;
-
-	import com.liferay.docs.guestbook.model.Entry;
-	import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
-	import com.liferay.portal.kernel.exception.PortalException;
-	import com.liferay.portal.kernel.security.auth.PrincipalException;
-	import com.liferay.portal.kernel.security.permission.PermissionChecker;
-
-	/**
-	 * @author liferay
-	 */
-	public class EntryPermission {
-
-		public static void check(
-				PermissionChecker permissionChecker, long entryId, String actionId)
-			throws PortalException {
-
-			if (!contains(permissionChecker, entryId, actionId)) {
-				throw new PrincipalException();
-			}
-		}
-
-		public static boolean contains(
-				PermissionChecker permissionChecker, long entryId, String actionId)
-			throws PortalException {
-
-			Entry entry = EntryLocalServiceUtil .getEntry(entryId);
-
-			return permissionChecker.hasPermission(
-				entry.getGroupId(), Entry.class.getName(), entry.getEntryId(),
-				actionId);
-		}
-
-	}
-
-GuestbookPermission
-
-	package com.liferay.docs.guestbook.service.permission;
-
-	import com.liferay.docs.guestbook.model.Guestbook;
-	import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
-	import com.liferay.portal.kernel.exception.PortalException;
-	import com.liferay.portal.kernel.security.auth.PrincipalException;
-	import com.liferay.portal.kernel.security.permission.PermissionChecker;
-
-	/**
-	 * @author liferay
-	 */
-	public class GuestbookPermission {
-
-		public static void check(
-				PermissionChecker permissionChecker, long guestbookId,
-				String actionId)
-			throws PortalException {
-
-			if (!contains(permissionChecker, guestbookId, actionId)) {
-				throw new PrincipalException();
-			}
-		}
-
-		public static boolean contains(
-				PermissionChecker permissionChecker, long guestbookId,
-				String actionId)
-			throws PortalException {
-
-			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbook(
-				guestbookId);
-
-			return permissionChecker.hasPermission(
-				guestbook.getGroupId(), Guestbook.class.getName(),
-				guestbook.getGuestbookId(), actionId);
-		}
-
-	}

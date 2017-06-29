@@ -2,23 +2,10 @@
 Liferay's user interface can be wrapped in permission checks pretty easily. In
 this last step of this Learning Path, you'll learn how. 
 
-As you've probably noticed, Liferay's coding style differs somewhat from the
-mainstream, borrowing instead practices from other open source platforms like
-PHP. For this reason, you see scriptlets in Liferay's JSPs, both in the product
-itself and in various plugins you can check out from Github or download from
-Marketplace. You can mitigate this somewhat by using the standard JSTL tags with
-Liferay. We'll show you both the scriptlet method and the JSTL method, and that
-way you can decide which style you prefer. 
+First go to the `init.jsp` in your `guestbook-web` project.
 
-
-Now the only thing you have left to do is declare the tag library in your
-`init.jsp` file so it is made available to all your other JSPs: 
-
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-Now you're ready to use JSTL in your Liferay JSPs. While you're here, though,
-add some more imports that you'll need later: 
-
+1. Add the following imports to the file:
+ 
     <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookModelPermission" %>
     <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookPermission" %>
     <%@ page import="com.liferay.docs.guestbook.service.permission.EntryPermission" %>
@@ -41,7 +28,7 @@ The first area you want to tackle, then, is the tabs across the top. Since this
 is already implemented as a scriptlet, this is where you'll add the scriptlet
 version of the permission check. 
 
-1.  Open `view.jsp` and find the scriptlet that uses the `for` loop to process
+1.  Open `/guestbookwebportlet/view.jsp` and find the scriptlet that uses the `for` loop to process
     the list of `Guestbook` entities into tabs. Just below the `if` statement
     that checks to see if this is the active guestbook, add another `if`
     statement: 
@@ -92,30 +79,3 @@ Excellent! You've now implemented all the permission checks you'd defined for
 your application. Save the file and test your application with different users.
 Administrative users see all the buttons, regular users see the Add Entry
 button, and guests see no buttons at all (but can navigate). 
-
-Ready to move on? The next Learning Path covers action buttons. 
-
-view.jsp
-
-    <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>
-
-	</c:if>
-
-	<c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbookId, "ADD_ENTRY") %>'>
-	
-	</c:if>
-
-guestbook_actions.jsp (both)
-
-	<c:if
-	        test="<%= EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
-    </c:if>
-    
-	<c:if
-	    test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
-    </c:if>
-	
-	<c:if
-	        test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">_
-    </c:if>
-	

@@ -6,7 +6,7 @@ resource actions are defined to manage how users can interact with those
 resources. But before you can define your permissions you need to point your 
 application at the configuration file you'll use to define those permissions.
 
-1. In your `guestbook-web` `src/main/resources` folder, create a file called portlet.properties. 
+1. In your `guestbook-service` `src/main/resources` folder, create a file called portlet.properties. 
    
 2. In this file, place the following property:
 
@@ -88,7 +88,7 @@ this is an easy and straightforward way to define permissions.
 3. Place the model package permissions in the file next:
 
 	<model-resource>
-	    <model-name>com.liferay.docs.guestbook.model</model-name>
+	    <model-name>com.liferay.docs.guestbook</model-name>
 	    <portlet-ref>
 	        <portlet-name>guestbook</portlet-name>
 	    </portlet-ref>
@@ -179,7 +179,7 @@ the default permission configuration should reflect that.
 	 </model-resource>
     
 These permissions are the same as for the Guestbook entity, except for the 
-ADD_ENTRY permission. This completes your permission configuration.
+ADD_ENTRY permission. This completes your model permission configuration.
 
 Great job! You've now successfully designed and implemented a permissions 
 scheme for your application. In the next part, you'll implement supporting Java 
