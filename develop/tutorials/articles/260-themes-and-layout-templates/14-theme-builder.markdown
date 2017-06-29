@@ -3,27 +3,22 @@
 Liferay's Theme Builder gives developers who generated their @product@ theme
 using tools other than
 [Liferay's Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-(e.g., Gradle, or Maven) a way to compile and build a theme WAR file. To use the
+(e.g., Gradle or Maven) a way to compile and build a theme WAR file. To use the
 Theme Builder, you must apply it to your project. Then you can leverage it to
 build your theme. If you're unsure how to structure themes for @product@, see
 the
 [Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
 tutorial.
 
-You can also leverage the Theme Builder to
-[migrate a Plugins SDK theme to Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/migrating-a-theme-from-the-plugins-sdk-to-workspace).
-This is done using
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
-
 Follow the instructions below to apply the Theme Builder plugin and build your
 theme WAR.
 
-##  Step 1: Apply the Theme Builder Plugin to Your Theme Project
+##  Step 1: Apply the Theme Builder Plugin to Your Theme Project [](id=step-1-apply-the-theme-builder-plugin-to-your-theme-project)
 
 Liferay provides two Theme Builder plugins depending on your build tool:
 
 - [com.liferay.portal.tools.theme.builder](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.tools.theme.builder/)
-  (Maven, Ant, etc.)
+  (Ant, Maven, etc.)
 - [com.liferay.gradle.plugins.theme.builder](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.gradle.plugins.theme.builder/)
   (Gradle)
 
@@ -34,11 +29,11 @@ If you want to apply the Theme Builder plugin to an Ant project, examine the
     <!DOCTYPE project>
 
     <project>
-        <path id="css.builder.classpath">
+        <path id="theme.builder.classpath">
             <fileset dir="[PATH_TO_THEME_BUILDER_JAR]" includes="com.liferay.portal.tools.theme.builder-*.jar" />
         </path>
 
-        <taskdef classpathref="css.builder.classpath" resource="com/liferay/portal/tools/theme/builder/ant/taskdefs.properties" />
+        <taskdef classpathref="theme.builder.classpath" resource="com/liferay/portal/tools/theme/builder/ant/taskdefs.properties" />
 
         <target name="build-theme">
             <build-theme
@@ -51,9 +46,11 @@ If you want to apply the Theme Builder plugin to an Ant project, examine the
         </target>
     </project>
 
-The Theme Builder requires the CSS Builder, which is automatically applied by
-pointing to the Theme Builder JAR. Then an Ant target is created (`build-theme`)
-that configures the parameters necessary to build your theme.
+You should first supply the path to the Theme Builder JAR. The above code
+configures the literal path to the JAR on your local machine. As an alternative,
+you could configure [Ivy](http://ant.apache.org/ivy/) to do this for you behind
+the scenes. Then create an Ant target (e.g., `build-theme`) that configures the
+required parameters to build your theme.
 
 For assistance applying the Theme Builder plugin for a Gradle or Maven project,
 see the
@@ -62,7 +59,7 @@ or
 [Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project)
 articles, respectively.
 
-## Step 2: Build Your Theme
+## Step 2: Build Your Theme [](id=step-2-build-your-theme)
 
 Execute the appropriate command based on your build tool. These commands are
 listed below organized by build tool:
@@ -79,4 +76,7 @@ build tool you used:
 - *Maven:* `/target`
 
 That's it! You've successfully configured and leveraged the Theme Builder in
-your project.
+your project. You can also leverage the Theme Builder to migrate a Plugins SDK
+theme to Liferay Workspace. See the
+[Migrating a Theme from the Plugins SDK to Workspace](/develop/tutorials/-/knowledge_base/7-0/migrating-a-theme-from-the-plugins-sdk-to-workspace)
+tutorial for details.
