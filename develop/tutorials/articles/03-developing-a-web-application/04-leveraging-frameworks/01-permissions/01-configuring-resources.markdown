@@ -1,72 +1,53 @@
-# Implementing Resources
+# Configuring Your Permissions Scheme
 
-The first thing you need to do to begin defining your permissions is point your application at the configuration file you'll use to define those permissions.
+First you need to define your permissions scheme. You create this scheme in the
+`default.xml` file. Objects in your application are defined as resources and
+resource actions are defined to manage how users can interact with those
+resources. But before you can define your permissions you need to point your 
+application at the configuration file you'll use to define those permissions.
 
-1. In your application's src folder, create a file called portlet.properties. 
-    This file lets you define properties for your application in key/value 
-	pairs.
-
+1. In your `guestbook-web` `src/main/resources` folder, create a file called portlet.properties. 
+   
 2. In this file, place the following property:
 
     resource.actions.configs=resource-actions/default.xml
 
 This property defines the name and location of your permissions definition 
-file. You can, of course, call it anything you want. By convention, Liferay 
-calls this file and places it in a folder called resource-actions inside the 
-src folder of the plugin project, so by doing it this way, you're just 
-following the Liferay convention.
+file. You can, of course, call it anything you want, but this setup follows the
+Liferay convention.
 
-Next, you'll create the file itself:
+Next, create the file itself:
 
-1. Create a folder called `resource-actions` in your 'guestbook-web` src folder.
+1. Create a subfolder called `resource-actions` in the same folder.
 
-2. Create a new file in this folder called default.xml.
+2. Create a new file in this folder called `default.xml`.
 
-3. Add the following DOCTYPE declaration to the top of the file:
+3. Add the following `DOCTYPE` declaration to the top of the file:
 
     <?xml version="1.0"?>
 	<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action  
 		Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
 
+Now the question is how you're going to define your permissions.
+
 
 IMAGE
 
-In the image above, you can see three areas where you might want to protect 
-data with a security check. Two of them are outlined in red, because they have 
-to do with Guestbooks, while the Add Entry button is outlined in blue, because 
-it has to do with Entry entities. What are the security rules you want for 
-these functions?
+Look at your application and think of your use cases. For this app, define it
+like this:
 
-Certainly, you want only people with elevated permissions to access the 
-functionality for adding a guestbook. The owner(s) of the site should really be 
-the only person/people adding guestbooks. Similarly, site owners may want to 
-make certain guestbooks available only to a certain group of users. That means 
-when you're building the tab bar, you'll have to check each guestbook to make 
-sure the current user has permission to view it.
+- The Add Guestbook button should be available only to administrators.
 
-Finally, the Add Entry button deserves some consideration. When site 
-administrators place the Guestbook portlet on a page, by default, who should 
-have permission to add entries? You can go one of two ways on this: you can 
-allow anybody, even guest users, to add entries, or you can make it so that a 
-user must be logged in to add entries. For the purposes of this Learning Path, 
-you'll configure the permissions to allow site members to post, but not guests. 
-Once you see how easy this is to configure, you can change it later if you want 
-it to work the other way around.
+- The Guestbook tabs should be filtered by permissions in case administrators 
+    have limited who can see them.
 
-To summarize:
-
-The Add Guestbook button should be available only to administrators.
-
-The Guestbook tabs should be filtered by permissions in case administrators 
-have limited who can see them.
-
-The Add Entry button should be available only to site members.
+- The Add Entry button should be available only to site members.
 
 Now you're ready to create your permissions configuration. The configuration 
 file is divided into two sections: portlet permissions and various model 
 permissions sections, depending on the entities you have in your application. 
-The easiest one to configure is the portlet permissions, so you'll start with 
-that.
+First do the portlet permissions.
+
 
 1. Place the following wrapper tags into your default.xml file:
 

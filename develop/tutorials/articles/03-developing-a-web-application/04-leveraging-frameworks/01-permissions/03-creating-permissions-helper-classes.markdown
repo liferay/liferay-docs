@@ -12,15 +12,12 @@ remiss if we didn't cover it. For this reason, the next thing you need to do is
 create these helper classes so that you can use them later to make your actual
 permission checks. 
 
-1.  Create a package called `com.liferay.docs.guestbook.service.permission`.
-    This is where you'll place your helper classes. 
+1.  Right-click on your `guestbook-service` module and select *New* &rarr;
+    *Package* name it `com.liferay.docs.guestbook.service.permission`.
+	This is where you'll place your helper classes. 
 
-2.  Create a class called `GuestbookModelPermission`. The usual naming
-    convention for your model class would normally be the name of the model, but
-    in this case the name of the model (guestbook) is also the name of a
-    particular entity. To distinguish the model permission from the entity
-    permission you'll create later, this class is called
-    `GuestbookModelPermission`. 
+2.  Right-click on the new package and select *New* &rarr; *Class* and name it 
+    `GuestbookModelPermission`.
 
 3.  Place the following code in this class: 
 
@@ -49,6 +46,8 @@ permission checks.
                         actionId);
             }
         }
+
+4. Press *CTRL*+*SHIFT*+*O* to organize imports.
 
 This class defines two static methods (so you don't have to instantiate the
 class) that encapsulate the model that you're checking permissions for. This

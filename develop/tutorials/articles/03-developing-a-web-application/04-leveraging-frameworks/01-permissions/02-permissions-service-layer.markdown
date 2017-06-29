@@ -1,19 +1,18 @@
 # Permissions in the Service Layer
 
-In the back end, permissions are called resources. Liferay already provides a 
-complete API for managing resources, and it's very easy to use. If you're using 
-Service Builder, this API is injected into your implementation classes 
-automatically, so all you need to do is use it. Here's how.
+Liferay provides a complete API for managing resources that's integrated with 
+Service Builder. This API is injected into your implementation classes 
+automatically, so all you need to modify your exist add and delete methods to also manage the resource portion.
 
 1. Open GuestbookLocalServiceImpl.java and find the addGuestbook method.
 
-2. Just before the last line of the method that returns the added Guestbook, add the following code:
+2. Just before the the return statement, add the following code:
 
 	resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
 			Guestbook.class.getName(), guestbookId, false, true, true);
 
-Notice that the resourceLocalService object is already there, ready for you to 
-use. This is one of several utilities that are automatically injected by 
+Notice that the `resourceLocalService` object is already there, ready for you 
+to use. This is one of several utilities that are automatically injected by 
 Service Builder. You'll see the rest in future Learning Paths.
 
 This code adds a resource to Liferay's database to correspond with your entity 
