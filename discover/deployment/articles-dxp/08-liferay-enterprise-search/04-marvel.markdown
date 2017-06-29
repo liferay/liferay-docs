@@ -106,7 +106,6 @@ Elasticsearch for @product@.
 
         ./bin/kibana plugin --install elasticsearch/marvel/[version]
 
-
 The next step is to configure Kibana to connect with Elasticsearch. The
 instructions vary depending on whether you are using
 [Shield](/discover/deployment/-/knowledge_base/7-0/shield) or not.
@@ -117,8 +116,8 @@ Now you need to configure Kibana. Since you'll use @product@'s Marvel Portlet as
 a proxy servlet to view the Kibana UI and Marvel, you'll start configuring that
 here.
 
-If you're using Shield, follow all the steps below. If not, skip the steps that
-begin with *[Shield]*.
+If you're [using Shield](https://www.elastic.co/guide/en/shield/current/kibana.html), follow all
+the steps below. If not, skip the steps that begin with *[Shield]*.
 
 1.  *[Shield]* Set the user name and password in 
     `Kibana_Home/config/kibana.yml`,
@@ -133,9 +132,9 @@ begin with *[Shield]*.
     demonstrated in the Shield article, export the certificate from the JKS file
     and use it as the CA.
 
-   From `Elasticsearch_Home/config/path-to-your-JKS`, execute 
+    From `Elasticsearch_Home/config/path-to-your-JKS`, execute 
 
-        keytool -v -importkeystore -srckeystore es-ssl.keystore.jks -srcalias es-ssl -destkeystore es-ssl.PKCS12.p12 -deststoretype PKCS12
+        keytool -v -importkeystore -srckeystore es-ssl.keystore.jks -srcalias es-shield -destkeystore es-ssl.PKCS12.p12 -deststoretype PKCS12
 
     This command converts the JKS file to a PKCS12 file, which is more portable.
 
@@ -155,7 +154,7 @@ begin with *[Shield]*.
 
 5.  *[Shield]* Add the following line to `Kibana_Home/config/kibana.yml`:
 
-        elasticsearch.ssl.ca: /home/russell/Documents/code/bundles/elasticsearch-2.4.0/kibana-4.6.2-linux-x86_64/config/es-ssl.CA.pem
+        elasticsearch.ssl.ca: /path/to/Kibana_Home/config/es-ssl.CA.pem
 
 7. Configure Kibana to be accessed through the @product@ Marvel Portlet by
    adding the following to `kibana.yml`:

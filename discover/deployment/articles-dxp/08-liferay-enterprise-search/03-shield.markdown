@@ -192,7 +192,9 @@ documentation](https://www.elastic.co/guide/en/shield/2.4/ssl-tls.html) for
 alternative configuration approaches and more information. 
 
 Note that for Elasticsearch to access your keystore, it must be placed under the
-`config` directory, so make sure you run the following commands, which configure SSL with an Elasticsearch cluster running on `localhost`, for illustration.
+`config` directory. Run the following commands under `Elasticsearch_Home/config`
+to configure SSL with an Elasticsearch cluster running on `localhost`, for
+illustration.
 
 1. Stop @product@ and Elasticsearch.
 
