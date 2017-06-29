@@ -263,9 +263,9 @@ cluster communicate using the [Transport
 Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-transport.html),
 through TCP. See the Elasticsearch documentation for the available properties
 (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
-Adapter’s [reference
+Adapter's [reference
 article](https://dev.liferay.com/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
-for the adapter’s available settings.
+for the adapter's available settings.
 
 At a minimum, provide the list of hosts to act as gossip routers during unicast
 discovery in the `elasticsearch.yml`:
