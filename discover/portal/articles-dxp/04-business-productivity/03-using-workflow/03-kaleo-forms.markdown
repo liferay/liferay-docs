@@ -58,10 +58,27 @@ Kaleo Forms.
 
 $$$
 
-Since Kaleo Forms is accessed using a site's administration menu, make sure
-the intended users of your Kaleo Processes have access to the application. See the
-article on [roles and permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) 
-if you're unsure how that works.
+Since Kaleo Forms is accessed through a site's administration menu (under
+Content &rarr; Kaleo Forms Admin), make sure the intended users of your Kaleo
+Processes have access to the application. See the article on [roles and
+permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) if
+you're unsure how that works.
+
++$$$
+
+**Kaleo Forms Display was removed from @product-ver@:** In prior versions of
+@product@ (for example, see
+[here](/discover/portal/-/knowledge_base/6-2/kaleo-forms-display)), A Kaleo
+Forms Display portlet could be added to a site page in @product@, so users with
+access to the page and the proper permissions could add, delete, and submit
+Kaleo Processes. No capabilities have been removed from the Kaleo stack in
+@product-ver@, but the Kaleo Forms Display portlet was removed. This means that
+administrators must configure the permissions of users who need access to Kaleo
+Forms so that they can access the application in Site Administration. Users
+needing only to manage workflow tasks assigned to them or their roles can use
+the *My Workflow Tasks* section of their [personal site](/discover/portal/-/knowledge_base/7-0/creating-sites#customizing-personal-sites).
+
+$$$
 
 ## Using Kaleo Forms [](id=using-kaleo-forms)
 
