@@ -1,4 +1,4 @@
-# Running the Upgrade Process
+# Running the Upgrade Process [](id=running-the-upgrade-process)
 
 Now you're ready to run the upgrade process. This involves two steps: running
 the upgrade tool on the newly installed @product@, and starting your upgraded

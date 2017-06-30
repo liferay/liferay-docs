@@ -1,4 +1,4 @@
-# Pre upgrade - Speed up the process
+# Pre upgrade - Speed up the process [](id=pre-upgrade-speed-up-the-process)
 
 The most critical step in upgrading @product@ is running the process
 that upgrades the database from the old version to the new version. It
@@ -21,7 +21,7 @@ the upgrade.
 
 Here are more in-depth details on several of the steps above.
 
-## Analyzing Your Database (Step 2)
+## Analyzing Your Database (Step 2) [](id=analyzing-your-database-step-2)
 
 You need two things from your database to analyze it properly:
 
@@ -189,7 +189,7 @@ optimize, but be careful: objects have relationships, and some objects
 you wouldn't expect to affect performance may do so indirectly because
 of their relationships to other objects.
 
-## Remove unused data from the database using Liferay's API (Step 4)
+## Remove unused data from the database using Liferay's API (Step 4) [](id=remove-unused-data-from-the-database-using-liferays-api-step-4)
 
 Never run SQL directly on your database because you can miss
 relationships, creating orphaned objects and performance problems.
@@ -272,7 +272,7 @@ Here are some common optimizations you can make:
         different lifecycle, and aren't deleted when the portlet is
         removed from a template.
 
-## Execute the upgrade process (Step 5)
+## Execute the upgrade process (Step 5) [](id=execute-the-upgrade-process-step-5)
 
 One of the upgrade improvements made in DXP is improved upgrade time
 logging. An upgrade process now looks like this::
@@ -295,7 +295,7 @@ time.
 If you want to understand how the upgrade process works, check out our
 [tutorial on the subject.](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
 
-## Conclusion
+## Conclusion [](id=conclusion)
 
 By removing unused content from the database, you can both reduce
 upgrade time and improve your server's performance on the new version.
