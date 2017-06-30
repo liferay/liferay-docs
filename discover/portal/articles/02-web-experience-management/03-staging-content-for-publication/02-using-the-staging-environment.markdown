@@ -70,9 +70,9 @@ Subsequently, you can choose additional options:
 **Pages** gives you the option to choose which pages to include when you
 publish. You can choose the page group (Public or Private) to publish by
 selecting the *Change to Public Pages* or *Change to Private Pages*. You cannot
-publish both at the same time; you'll have to complete the publication process
-separately if you want to publish both page groups. You can also choose specific
-pages to publish, the look and feel of those pages, etc.
+publish both at the same time; you'll have to complete their publication
+processes separately if you want to publish both page groups. You can also
+choose specific pages to publish, the look and feel of those pages, etc.
 
 **Content** allows you to configure the content to be published. Clicking the
 *Choose Content* option lets you filter the content to be published, based
