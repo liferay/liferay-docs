@@ -293,7 +293,9 @@ content in your staging site is shared by all your variations. In different site
 page variations, you can have different logos, different look and feel for your
 pages, different applications on these pages, different configuration of these
 applications and even different pages. One page can exist in just one site page
-variation or in several of them.
+variation or in several of them. Modifying the layout type (e.g., Layout, Panel,
+Embedded, etc.) or friendly URL of a page, however, **does** affect every site
+page variation.
 
 You must enable page versioning when turning on Local or Remote Live staging.
 You can enable page versioning for public and private pages. When you turn
