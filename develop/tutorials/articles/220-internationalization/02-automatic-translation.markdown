@@ -6,34 +6,35 @@ or even a language module that holds these keys, you're in the right place.
 
 -  Instead of manually creating a language properties file for each locale
    that's supported by Liferay, you can get them all automatically generated for
-you with one command. The same command also propagates the keys from the default
-language file to all of the translation files.
+   you with one command. The same command also propagates the keys from the
+   default language file to all of the translation files.
 
 -  You can take a few additional steps and get automatic translations using
    Microsoft's Translator Text API.
 
 ## Generating Language Files for Supported Locales [](id=generating-language-files-for-supported-locales)
 
-If you want to automatically generate files for all of the [locales supported by Liferay](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
+If you want to automatically generate files for all of the
+[locales supported by Liferay](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
 you only have to do a little work in the build file of your application.
 
 1. Make sure your module's build includes the `com.liferay.lang.builder`
-[plugin](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-lang-builder),
-by putting the plugin in build script classpath.
+   [plugin](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-lang-builder),
+   by putting the plugin in build script classpath.
 
 2. Make sure you have a default `Language.properties` file in
    `src/main/resources/content`. 
 
-3. Run the `gradle buildLang` task from your project's root directory to generate
-   default translation files.
+3. Run the `gradle buildLang` task from your project's root directory to
+   generate default translation files.
 
     The generated files will contain automatic copies of all the keys and values
-    in your default `Language.properties` files. That way you don't have to worry
-    about manually copying your lanugage keys into all of the files. Just run the
-    `buildLang` task each time you change the default language file.
+    in your default `Language.properties` files. That way you don't have to
+    worry about manually copying your lanugage keys into all of the files. Just
+    run the `buildLang` task each time you change the default language file.
 
     When the task completes, you'll get a `BUILD SUCCESSFUL` message, and you'll
-see this log output as well:
+    see this log output as well:
 
         Translation is disabled because credentials are not specified
 
@@ -85,15 +86,16 @@ manual translation.
 $$$
 
 1. Generate a translation subscription key for the Microsoft Translator Text
-API. Follow the instructions
-[here](http://docs.microsofttranslator.com/text-translate.html).
+   API. Follow the instructions
+   [here](http://docs.microsofttranslator.com/text-translate.html).
 
 2. Make sure the `buildLang` task knows to use your subscription key for
-translation. You can do this by setting the `translateSubscriptionKey` property:
+   translation. You can do this by setting the `translateSubscriptionKey`
+   property:
 
         buildLang {
             translateSubscriptionKey = "my-key"
-        } 
+        }
 
     For security reasons you probably don't want to pass them directly in your
     application's build script. Instead, pass the credentials to a property
