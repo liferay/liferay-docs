@@ -1,12 +1,10 @@
 # Theme Builder [](id=theme-builder)
 
-Liferay's Theme Builder gives developers who generated their @product@ theme
-using tools other than
+Liferay's Theme Builder gives developers who aren't using
 [Liferay's Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 (e.g., Gradle or Maven) a way to compile and build a theme WAR file. To use the
-Theme Builder, you must apply it to your project. Then you can leverage it to
-build your theme. If you're unsure how to structure themes for @product@, see
-the
+Theme Builder, you must apply it to your project. If you're unsure how to
+structure themes for @product@, see the
 [Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
 tutorial.
 
@@ -61,22 +59,21 @@ articles, respectively.
 
 ## Step 2: Build Your Theme [](id=step-2-build-your-theme)
 
-Execute the appropriate command based on your build tool. These commands are
-listed below organized by build tool:
+Execute the appropriate command based on your build tool: 
 
 - *Ant:* `ant build-theme`
 - *Gradle:* `gradlew buildTheme`
 - *Maven:* `mvn verify`
 
-The generated WAR file can be found in the following folder, depending on the
-build tool you used:
+The WAR is generated in the following folder, depending on the build tool you
+used:
 
 - *Ant:* `/dist`
 - *Gradle:* `/build`
 - *Maven:* `/target`
 
 That's it! You've successfully configured and leveraged the Theme Builder in
-your project. You can also leverage the Theme Builder to migrate a Plugins SDK
+your project. You can also use the Theme Builder to migrate a Plugins SDK
 theme to Liferay Workspace. See the
 [Migrating a Theme from the Plugins SDK to Workspace](/develop/tutorials/-/knowledge_base/7-0/migrating-a-theme-from-the-plugins-sdk-to-workspace)
 tutorial for details.
