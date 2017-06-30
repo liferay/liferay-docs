@@ -1,15 +1,11 @@
-# Advanced Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins)
+# Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins)
 
 +$$$
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
-absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
-Pack 16+.**
+absolutely necessary. They are deployable to Liferay Portal 7.0 CE GA4+.**
 
-<!-- The SP5 release will support Ext plugins without the additional Tomcat app
-server configurations. -Cody -->
-
-The following app servers are supported for Ext plugin development in
+The following app servers should be used for Ext plugin development in
 @product@:
 
 - Tomcat 8.0
@@ -18,10 +14,20 @@ The following app servers are supported for Ext plugin development in
 - WebLogic 12.2
 - WebSphere 8.5.5
 
-If you're using the Tomcat app server, visit the
-[App Server Configuration](#app-server-configuration) section for details on
-modifications required to allow Ext plugins to function properly in that
-environment.
+In most cases, Ext plugins are no longer necessary. There are, however, certain
+cases that require the use of an Ext plugin. Liferay only supports the following
+Ext plugin use cases:
+
+- Providing custom implementations for any beans declared in @product@'s
+  Spring files (when possible, use
+  [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
+  instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
+  overridden beans are still relevant if converting your legacy Ext plugin.
+- Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
+  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
+  section.
+- Modifying @product@'s `web.xml` file.
+- Adding to @product@'s `web.xml` file.
 
 $$$
 
@@ -52,20 +58,22 @@ In this tutorial, you'll learn how to
 - [Deploy an Ext plugin in Production](#deploying-in-production)
 
 Before diving into creating an Ext plugin, however, first consider if an Ext
-plugin is necessary.
+plugin is even necessary at all.
 
 ## Making the Decision to Use Ext Plugins [](id=making-the-decision-to-use-ext-plugins)
 
-There are many parts of @product@ that now provide extension points via OSGi
+There are many parts of @product@ that now provide an extension point via OSGi
 bundle. You should follow this three step process to decide whether an Ext
 plugin is necessary:
 
 1.  Find the OSGi extension point that you need. You can follow the
     [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points)
     tutorial as a guide.
+
 2.  If an OSGi extension point does not exist, use an Ext plugin.
+
 3.  Research new extension points after every release of @product@. When a new
-    version of @product@ provides the extension point need, always use the
+    version of @product@ provides the extension point you need, always use the
     extension point to replace the existing Ext plugin.
 
 So how do you find an OSGi extension point?
@@ -77,7 +85,7 @@ repository. For
 more information on these sample projects, see the
 [Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 tutorial. Usable extension points are also documented throughout Liferay's
-Customer Portal categorized by the @product@ section involved. For example,
+Developer Network categorized by the @product@ section involved. For example,
 [Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
 and
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
@@ -88,19 +96,8 @@ or [@product@ core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core
 Those processes are documented too!
 
 There are a few corner cases where you may need an Ext plugin to customize a
-part of @product@ that does not provide an extension point. Liferay only
-supports Ext plugins for the following use cases:
-
-- Providing custom implementations for any beans declared in @product@'s
-  Spring files (when possible, use
-  [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
-  instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
-  overridden beans are still relevant if converting your legacy Ext plugin.
-- Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
-  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
-  section.
-- Modifying @product@'s `web.xml` file.
-- Adding to @product@'s `web.xml` file.
+part of @product@ that does not provide an extension point. Refer to the top of
+this tutorial for Ext plugin use cases supported by Liferay.
 
 +$$$
 
@@ -113,8 +110,8 @@ legacy properties.
 
 $$$
 
-Now that you know how to make an informed decision on using Ext plugins, if you
-still need to use them, you'll learn how to create one next.
+Now that you know how to make an informed decision on using Ext plugins, you'll
+learn how to create one next.
 
 ## Creating an Ext Plugin [](id=creating-an-ext-plugin)
 
@@ -138,7 +135,7 @@ custom Ext plugin:
     *example* is used for both. Note that the Display name field is
     automatically filled in with the capitalized version of the Project name.
 
-    ![Figure 1: You can create an Ext plugin project with Liferay IDE.](../../../images-dxp/ext-create-an-ext-plugin-project.png)
+    ![Figure 1: You can create an Ext plugin project with Liferay IDE.](../../../images/ext-create-an-ext-plugin-project.png)
 
 3.  Select the *Ant (liferay-plugins-sdk)* option for your build type.
 
@@ -237,7 +234,7 @@ version, author, and license type.
 
 - `docroot/WEB-INF/ext-web/docroot/WEB-INF` files: 
 
-   - `portlet-ext.xml`: Used to overwrite the definition of a built-in portlet.
+   - `portlet-ext.xml`: Used to overwrite the definition of a build-in portlet.
      The `portlet.xml` file contains very few portlet configurations in
      @product-ver@ because portlets were modularized and moved out of core. To
      override this file, copy the complete definition of the desired portlet
@@ -301,8 +298,8 @@ development processes described below:
   @product@ on your application server. 
 - *Deploy* and *publish* your Ext plugins for the first time. 
 - *Redeploy* normally or use a *clean redeployment* process after making
-  changes to your Ext plugin.
-- *Package* your Ext plugin for distribution. 
+  changes to your Ext plugins.
+- *Package* your Ext plugins for distribution. 
 - A list of advanced customization techniques. 
 
 It's time to learn each step of the development process. 
@@ -318,9 +315,9 @@ system:
 
     ext.work.dir=[work]
 
-    app.server.dir=[work]/liferay-dxp-digital-enterprise-[version]/[app server]
+    app.server.dir=[work]/liferay-ce-portal-[version]/[app server]
 
-    app.server.zip.name=[...]/liferay-dxp-digital-enterprise-[app server].zip
+    app.server.zip.name=[...]/liferay-ce-portal-[app server].zip
 
 Your `app.server.zip.name` property must specify the path to your @product@
 `.zip` file. The `work` folder you specify for the `ext.work.dir` property is
@@ -331,12 +328,11 @@ use for your `app.server.dir` property.
 
 For example, if your work folder is `C:/work`, specify it as your
 `ext.work.dir` property's value. If your @product@ bundle `.zip` file is
-`C:/downloads/liferay-dxp-digital-enterprise-tomcat-7.0-sp2-[timestamp].zip`,
-set the `app.server.zip.name` property to that file's path. If the *relative
-path* to the application server *within* the @product@ bundle `.zip` file is
-`liferay-dxp-digital-enterprise-7.0-sp2\tomcat-8.0.32`, specify an
-`app.server.dir` property value
-`C:/work/liferay-dxp-digital-enterprise-7.0-sp2/tomcat-8.0.32`.
+`C:/downloads/liferay-ce-portal-tomcat-7.0-ga4-[timestamp].zip`, set the
+`app.server.zip.name` property to that file's path. If the *relative path* to
+the application server *within* the @product@ bundle `.zip` file is
+`liferay-ce-portal-7.0-ga4\tomcat-8.0.32`, specify an `app.server.dir` property
+value `C:/work/liferay-ce-portal-7.0-ga4/tomcat-8.0.32`. 
 
 Next you'll modify the Ext plugin you created and deploy it. 
 
@@ -389,7 +385,7 @@ targets report success or failure.
     affect the deployment process, it's a best practice to redeploy all your
     other plugins following initial deployment of the Ext plugin. 
 
-	The `ant deploy` target builds a `.war` file with your changes and copies
+    The `ant deploy` target builds a `.war` file with your changes and copies
     them to the auto-deploy folder inside the @product@ installation. When the
     server starts, it detects the `.war` file, inspects it, and copies its
     contents to the appropriate destinations inside the deployed and running
@@ -399,7 +395,7 @@ targets report success or failure.
 
     Once your server restarts, open @product@ to see the customizations you
     made with your Ext plugin.
- 
+    
 Frequently, you'll want to add further customizations to your original Ext
 plugin. You can make unlimited customizations to an Ext plugin that has already
 been deployed, but the redeployment process is different from other project
@@ -437,7 +433,7 @@ about this process.
     While selecting the Ext plugin project in the *Package Explorer* view,
     select the plugin's *Liferay* &rarr; *Clean App Server...* option. 
 
-    ![Figure 2: How to clean your app server](../../../images-dxp/ext-plugins-clean-app-server.png)
+    ![Figure 2: How to clean your app server](../../../images/ext-plugins-clean-app-server.png)
 
 3.  Start the Liferay server. 
 
@@ -477,7 +473,7 @@ direct-deploy`.
 After your plugin is published to @product@, verify that your customizations are
 available.
 
-Next you'll learn how to package an Ext plugin for distribution and production. 
+Next you'll learn how to package an Ext plugin for distribution and production.
 
 ### Distribution [](id=distribution)
 
@@ -498,7 +494,7 @@ From your Ext plugin's directory execute
 The `.war` file is written to your `[liferay-plugins]/dist` directory.
 
 Now that you've learned the basics of Ext plugin development, you'll look at
-some advanced customizations. 
+some advanced customizations.
 
 ### Using Advanced Configuration Files [](id=using-advanced-configuration-files)
 
@@ -516,7 +512,7 @@ Ext plugin folder. Here are descriptions of what each file is for and the path
 to the original file in @product@: 
 
 - `ext-impl/src/META-INF/ext-model-hints.xml`
-    - **Description:** Overrides the default field properties of
+    - **Description:** Overrides the default properties of the fields of
       the data models used by @product@'s core portlets. These properties
       determine how the form fields for each model are rendered. 
     - **Original file in @product@:**
@@ -574,7 +570,7 @@ steps on the server:
 
 2.  Copy the Ext plugin `.war` into the auto-deploy folder. For a bundled
     @product@ distribution, the `deploy` folder is in Liferay's *root* folder of
-    your bundle (e.g., `liferay-dxp-digital-enterprise-[version]/`).
+    your bundle (e.g., `liferay-ce-portal-[version]/`).
 
 3.  Once the Ext plugin is detected and deployed by @product@, restart your
     @product@ server. 
@@ -598,7 +594,7 @@ down again. Now the aggregated file is ready.
 
 Create a `.war` file by zipping the Liferay web application folder from within
 the app server. Copy into your application server's global classpath all of the
-libraries on which your Ext plugin depends.
+libraries on which your Ext plugin depends. 
 
 Now, perform these actions on your server: 
 
@@ -608,21 +604,6 @@ Now, perform these actions on your server:
     appropriate directory in the application server. 
 
 Next, you'll learn about Liferay's licensing and contributing standards.
-
-## App Server Configuration [](id=app-server-configuration)
-
-If you're using the Tomcat app server, you must modify your app server's
-`conf/Catalina/localhost/ROOT.xml` file. Add the following code to that file:
-
-    <Resources>
-        <PreResources
-            className="com.liferay.support.tomcat.webresources.ExtResourceSet"
-            base="${catalina.base}/lib/ext/portal"
-            webAppMount="/WEB-INF/lib"
-        />
-    </Resources>
-
-Be sure to place this code within the existing `<Context>` tags.
 
 ## Licensing and Contributing [](id=licensing-and-contributing)
 
