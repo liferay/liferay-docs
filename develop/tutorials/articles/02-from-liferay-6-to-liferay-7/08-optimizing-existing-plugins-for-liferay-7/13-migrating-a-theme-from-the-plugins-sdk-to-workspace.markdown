@@ -24,8 +24,7 @@ Plugins SDK theme's name to Blade CLI's `convert` command:
 
 Blade CLI extracts the plugin from the Plugins SDK and reorganizes it in a
 standard web application project in Workspace's `wars` folder. Blade CLI uses
-the
-[Theme Builder](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin)
+the [Theme Builder](/develop/tutorials/-/knowledge_base/7-0/theme-builder)
 plugin to migrate your theme to a workspace. You can also migrate your Plugins
 SDK theme to a Liferay Theme Generator theme using Blade CLI. Follow the
 [Migrating Themes to the Theme Generator Using Workspace](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7#migrating-themes-to-the-theme-generator-using-workspace)
