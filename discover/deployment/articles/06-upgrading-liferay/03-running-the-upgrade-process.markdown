@@ -336,7 +336,7 @@ this blindly, however: by default, @product@ ships with an embedded
 configuration for Elasticsearch. This configuration works great for demo
 purposes, but is not supported in production. 
 
-To configure search, follow the [instructions](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#configuring-elastic-search) 
+To configure search, follow the [instructions](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch) 
 in the installation section to create a standalone instance of Elasticsearch to
 run in production. 
 
