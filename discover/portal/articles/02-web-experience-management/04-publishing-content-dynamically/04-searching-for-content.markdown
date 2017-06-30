@@ -21,6 +21,18 @@ content, tags, and categories to refine your search. Next, you'll look at the
 search features @product@ provides for specific kinds of content and then examine
 how to use @product@'s faceted search.
 
++$$$
+
+**Note:** In previous versions of @product@, it was possible to use an [advanced
+searching syntax](/discover/portal/-/knowledge_base/6-2/searching-for-content-in-liferay#advanced-searching)
+to create precise search queries. This is no longer possible in @product-ver@.
+However, due to customer requests for these advanced capabilities, Liferay's
+engineers are investigating approaches they can take in restoring the advanced
+syntax, while ensuring the adopted solution works with both of @product@'s
+supported search engines, Elasticsearch and Solr.
+
+$$$
+
 ## Searching for Specific Types of Content [](id=searching-for-specific-types-of-content)
 
 @product@ provides several applications that let users and administrators search
