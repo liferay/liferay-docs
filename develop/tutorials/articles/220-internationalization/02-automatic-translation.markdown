@@ -10,7 +10,7 @@ you with one command. The same command also propagates the keys from the default
 language file to all of the translation files.
 
 -  You can take a few additional steps and get automatic translations using
-   Microsoft's Translator API.
+   Microsoft's Translator Text API.
 
 ## Generating Language Files for Supported Locales [](id=generating-language-files-for-supported-locales)
 
@@ -64,12 +64,12 @@ Here's what a configuration of the `com.liferay.lang.builder` plugin looks in a
         }
 Now you can start translating your application's messages, or delegate it to
 somebody else. If you want to configure your app to generate automatic
-translations using the Microsoft Translator API, keep reading.
+translations using the Microsoft Translator Text API, keep reading.
 
 ## Translating Language Keys Automatically [](id=translating-language-keys-automatically)
 
-Generate automatic translations of your language keys using [Microsoft's
-Translator API](https://msdn.microsoft.com/en-us/library/hh454950).
+Generate automatic translations of your language keys using
+[Microsoft's Translator Text API](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/).
 
 If you've configured the `com.liferay.lang.builder` plugin in your app, there
 are only a few steps remaining.
@@ -84,23 +84,25 @@ manual translation.
 
 $$$
 
-1. Register your app with Azure DataMarket. Follow the instructions [here](https://msdn.microsoft.com/en-us/library/hh454950)
+1. Generate a translation subscription key for the Microsoft Translator Text
+API. Follow the instructions
+[here](http://docs.microsofttranslator.com/text-translate.html).
 
-2. Make sure the `buildLang` task knows to use your credentials for translation.
-For security reasons you probably don't want to pass them directly in your
-application's build script.
+2. Make sure the `buildLang` task knows to use your subscription key for
+translation. You can do this by setting the `translateSubscriptionKey` property:
 
         buildLang {
-            translateClientId = "my-id"
-            translateClientSecret = "my-secret"
+            translateSubscriptionKey = "my-key"
         } 
 
-    Instead, pass the credentials to a property that's stored in your [local build environment](https://docs.gradle.org/current/userguide/build_environment.html),
-and pass the property into your application's build script.
+    For security reasons you probably don't want to pass them directly in your
+    application's build script. Instead, pass the credentials to a property
+    that's stored in your
+    [local build environment](https://docs.gradle.org/current/userguide/build_environment.html),
+    and pass the property into your application's build script.
 
          buildLang {
-           translateClientId = langTranslateClientId
-           translateClientSecret = langTranslateClientSecret
+           translateSubscriptionKey = langTranslateSubscriptionKey
         }
 
 So what would the complete `build.gradle` file look like if you followed all the
@@ -121,8 +123,7 @@ steps above?
     apply plugin: "com.liferay.lang.builder"
 
     buildLang {
-       translateClientId = langTranslateClientId
-       translateClientSecret = langTranslateClientSecret
+       translateSubscriptionKey = langTranslateSubscriptionKey
     }
 
     repositories {
