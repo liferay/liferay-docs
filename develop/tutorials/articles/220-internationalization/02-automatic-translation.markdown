@@ -74,7 +74,7 @@ almost there. Now you have to configure
 so you can generate automatic translations of your language keys. You cannot,
 however, use Liferay's Lang Builder to automatically translate language keys
 containing HTML (e.g., `<em>`, `<b>`, `<code>`, etc.). Language keys containing
-HTML will be automatically *copied* to all supported language files.
+HTML are automatically *copied* to all supported language files.
 
 +$$$
 
