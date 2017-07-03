@@ -56,12 +56,12 @@ First install the Shield plugin on your Elasticsearch cluster.
 2. Next, you need to prepare for Shield to authenticate requests. 
 
     Users making requests to an Elasticsearch installation protected by Shield
-    need to be part of the *realm*, a user database configured for Shield. You
+    must be part of the *realm*, a user database configured for Shield. You
     can use the native user management system built into Shield, called
     *esusers*, or you can use an external system like LDAP.
 
     *Roles* for Shield are defined in
-    `[Elasticsearch_Home]/config/shield/roles.yml` and include the following:
+    `[Elasticsearch_Home]/config/shield/roles.yml` and include these:
 
     `admin`: Has permission to perform any cluster or index action.
 
@@ -194,7 +194,7 @@ alternative configuration approaches and more information.
 Note that for Elasticsearch to access your keystore, it must be placed under the
 `config` directory. Run the following commands under `Elasticsearch_Home/config`
 to configure SSL with an Elasticsearch cluster running on `localhost`, for
-illustration.
+example.
 
 1. Stop @product@ and Elasticsearch.
 
