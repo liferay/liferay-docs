@@ -175,7 +175,7 @@ persistence of data for your application, your next step is to use Service
 Builder to generate your persistence classes and the methods you need to store
 your application data in the database.
 
-# Next Steps [](id=next-steps)
+## Next Steps [](id=next-steps)
 
 Here are more tutorials that you might find interesting:
 

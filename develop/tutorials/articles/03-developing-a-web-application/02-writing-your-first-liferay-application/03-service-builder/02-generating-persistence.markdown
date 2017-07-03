@@ -1,24 +1,24 @@
 # Persistence
 
-The persistence layer is responsible for saving and retrieving your model data. 
-The service layer is like a buffer zone between your application and your 
-persistence layer: having it gives you the freedom in the future to swap out 
-your persistence layer for a different implementation without modifying 
-anything but the calls in the service layer.
+The persistence layer saves and retrieves your model data. The service layer is
+like a buffer zone between your application and your persistence layer: having
+it gives you the freedom in the future to swap out your persistence layer for a
+different implementation without modifying anything but the calls in the service
+layer.
 
-In order to properly model the Guestbook and Entries going forward, you're going
-to need to introduce some new concepts into the application. Rather than simply
-create entries in place, you will create a guestbook object which will contain 
-the entries. You'll need to also create the various methods associated with
-guestbook management. In addition, you'll add a field for users to enter an
-email address in the guestbook.
+In order to model the Guestbook and Entries properly, you must introduce some
+new concepts into the application. Rather than simply create entries in place,
+you will create a guestbook object which will contain the entries. You'll need
+to also create the various methods associated with guestbook management. In
+addition, you'll add a field for users to enter an email address in the
+guestbook.
 
 When you create separate entity for guestbooks, you will be able to create
 multiple guestbooks with different sets of entries. You will also separate the 
 entity data from being simply the portlet data, and instead you will have
 guestbooks and entities within those guestbooks.
 
-1. Open 'service.xml' in your `guestbook-service` project.
+1. Open `service.xml` in your `guestbook-service` project.
 2. Replace the contents of the file with the following:
 
 	<?xml version="1.0"?>
