@@ -1,4 +1,4 @@
-# Creating Permissions Helper Classes [](id=creating-permissions-helper-classes)
+# Creating Permissions Helper Classes
 
 Permission checking in Liferay is a straightforward process. You have a
 permission, such as `ADD_ENTRY`, and a resource, such as a `Guestbook`.

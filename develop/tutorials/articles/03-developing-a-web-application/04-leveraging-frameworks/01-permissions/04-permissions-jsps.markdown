@@ -13,7 +13,7 @@ First go to the `init.jsp` in your `guestbook-web` project.
 Recognize those? They're the permissions helper classes you just created. Now
 it's time to implement your permission checks. 
 
-## Checking Permissions in the UI [](id=checking-permissions-in-the-ui)
+## Checking Permissions in the UI
 
 Now that it comes to implementing permissions, you'll want to review exactly
 what it is you want to protect. In the first part, you identified three areas: 
