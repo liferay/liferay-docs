@@ -14,8 +14,8 @@ steps:
 
 For more detailed information on the process, refer to the [Elasticsearch administration
 guide](https://www.elastic.co/guide/en/elasticsearch/guide/current/administration.html),
-and in particular to the documentation on the [Snapshot/Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-snapshots.html)
-and on [Backing Up your cluster.](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html#_snapshotting_particular_indices)
+and in particular to the documentation on the [Snapshot/Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html)
+and on [backing up your cluster.](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html#_snapshotting_particular_indices)
 
 ## Configuring a Repository [](id=configuring-a-repository)
 
@@ -29,7 +29,7 @@ where your snapshots will be kept. Several repository types are supported:
 
 If using a shared file system repository type, first register the path to the
 shared file system in each node's `elasticsearch.yml` using 
-[the path.repo setting](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-snapshots.html#_shared_file_system_repository).
+[the path.repo setting](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html#_shared_file_system_repository).
 
     path.repo: ["path/to/shared/file/system/"]
 
@@ -60,7 +60,7 @@ cluster](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-
 If successful you see `{"accepted":true}` in the terminal.
 
 You don't have to include all indexes in a snapshot. For example, if you're
-[using Marvel](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-marvel-for-elasticsearch),
+[using Marvel](/deploy/-/official_documentation/deployment/monitoring-elasticsearch-with-marvel),
 you might not want to include all the Marvel indexes. In this case just
 explicitly declare the indexes you want to include in the snapshot (leaving out
 the `.marvel` indexes):
@@ -86,7 +86,7 @@ returns
     {"snapshots":[
         {"snapshot":"snapshot_1",
         "version_id":2020099,
-        "version":"2.2.0",
+        "version":"2.4.0",
         "indices":["liferay-0","liferay-20116"],
         "state":"SUCCESS",
         "start_time":"2016-11-29T19:50:12.375Z",

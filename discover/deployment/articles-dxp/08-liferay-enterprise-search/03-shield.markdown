@@ -36,7 +36,7 @@ Here's the process for configuring Shield:
 These terms will be useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
-  installation (for example, `elasticsearch-2.2.0`).
+  installation (for example, `elasticsearch-2.4.0`).
 -  *Liferay Home* refers to the root folder of your @product@ installation. It 
   contains the `osgi`, `deploy`, `data`, and `license` folders.
 
@@ -56,12 +56,12 @@ First install the Shield plugin on your Elasticsearch cluster.
 2. Next, you need to prepare for Shield to authenticate requests. 
 
     Users making requests to an Elasticsearch installation protected by Shield
-    need to be part of the *realm*, a user database configured for Shield. You
+    must be part of the *realm*, a user database configured for Shield. You
     can use the native user management system built into Shield, called
     *esusers*, or you can use an external system like LDAP.
 
-    *Roles* for Shield are defined in `[Elasticsearch_Home]/shield/roles.yml`
-    and include the following:
+    *Roles* for Shield are defined in
+    `[Elasticsearch_Home]/config/shield/roles.yml` and include these:
 
     `admin`: Has permission to perform any cluster or index action.
 
@@ -110,16 +110,16 @@ First install the Shield plugin on your Elasticsearch cluster.
           "name" : "Amphibius",
           "cluster_name" : "LiferayElasticsearchCluster",
           "version" : {
-            "number" : "2.2.0",
+            "number" : "2.4.0",
             "build_hash" : "8ff36d139e16f8720f2947ef62c8167a888992fe",
             "build_timestamp" : "2016-01-27T13:32:39Z",
             "build_snapshot" : false,
-            "lucene_version" : "5.4.1"
+            "lucene_version" : "5.5.2"
           },
           "tagline" : "You Know, for Search"
 
 For more information on installing Shield, see the [Elasticsearch
-documentation](https://www.elastic.co/guide/en/shield/2.2/installing-shield.html).
+documentation](https://www.elastic.co/guide/en/shield/2.4/installing-shield.html).
 
 Once Shield is installed, you can configure @product@'s Shield adapter.
 
@@ -178,7 +178,7 @@ Follow these steps to configure the Shield adapter using System Settings:
    next to *Reindex all search indexes.*
 
 For a complete list of the Shield adapter's available configuration options, see
-[here](/discover/reference/shield-adapter-settings)
+[here](/reference/-/official_documentation/reference/shield-adapter-settings).
 
 ## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
 
@@ -189,14 +189,17 @@ Transport Layer Security (TLS) encryption.
 These instructions set up a *wildcard* certificate to be used across the entire
 cluster. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/shield/2.4/ssl-tls.html) for
-alternative configuration approaches.
+alternative configuration approaches and more information. 
+
+Note that for Elasticsearch to access your keystore, it must be placed under the
+`config` directory. Run the following commands under `Elasticsearch_Home/config`
+to configure SSL with an Elasticsearch cluster running on `localhost`, for
+example.
 
 1. Stop @product@ and Elasticsearch.
 
 2. Set up a Certificate Authority (CA) for Shield. Refer to [Elastic's article on Setting Up a Certificate Authority](https://www.elastic.co/guide/en/shield/2.4/certificate-authority.html#certificate-authority) 
 for the details.
-
-    +$$$
 
     **Note for Windows:** In step 2 of the [linked documentation on setting up a
     certificate](https://www.elastic.co/guide/en/shield/2.4/certificate-authority.html#certificate-authority),
@@ -208,29 +211,23 @@ for the details.
 3. Use the Java `keytool` command to create a new Java Keystore, import the
    CA that will issue the wildcard certificate:
 
-        keytool -importcert -keystore es-ssl.keystore.jks -file certs/cacert.pem
-        -trustcacerts -storepass liferay -alias ca_cert
+        keytool -importcert -keystore es-ssl.keystore.jks -file certs/cacert.pem -trustcacerts -storepass liferay -alias ca_cert
 
 4. Create a private key in the Java Keystore:
 
-        keytool -storepass liferay -genkey -alias es-shield -keystore
-        es-ssl.keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -dname
-        "cn=localhost"
+        keytool -storepass liferay -genkey -alias es-shield -keystore es-ssl.keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -dname "cn=localhost"
 
 5. Create a certificate signing request (CSR) for requesting a certificate from
    the issuing CA:
 
-        keytool -storepass liferay -certreq -alias es-shield -keystore
-        es-ssl.keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -dname
-        "cn=localhost" > es-ssl.keystore.csr
+        keytool -storepass liferay -certreq -alias es-shield -keystore es-ssl.keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -dname "cn=localhost" > es-ssl.keystore.csr
 
 6. Sign the CSR using [Elastic's guide](https://www.elastic.co/guide/en/shield/2.4/certificate-authority.html#sign-csr).
 
 7. Once the CA has signed the CSR and returned the certificate in PEM format,
    import it into the Java Keystore:
 
-        keytool -storepass liferay -importcert -keystore es-ssl.keystore.jks
-        -alias es-shield -file certs/es-ssl.keystore.pem
+        keytool -storepass liferay -importcert -keystore es-ssl.keystore.jks -alias es-shield -file certs/01.pem
 
 8. Add the following lines to `[Elasticsearch_Home]/config/elasticsearch.yml`:
 
@@ -242,19 +239,21 @@ for the details.
 
     Here you're configuring Shield's SSL properties, including pointing to the
     keystore file you just generated. For more information on these settings,
-    read [here](https://www.elastic.co/guide/en/shield/2.4/ssl-tls.html).
+    read [here](https://www.elastic.co/guide/en/shield/2.4/ssl-tls.html) and
+    [here](https://www.elastic.co/guide/en/shield/2.4/shield-settings.html).
 
 9. Update the Shield adapter configuration file you created earlier in
    `Liferay_Home/osgi/configs` by adding these lines:
 
         requiresSSL=true
         sslKeystorePath=/path/to/es-ssl.keystore.jks
+        sslKeystorePassword=liferay
 
     Now, in addition to enabling authentication, you're enabling SSL encryption
     and pointing @product@ at the keystore file you created for Shield.
     
     Alternatively, you can configure these settings in System Settings. This
-    will be mostly useful during development and testing.
+    will be more useful during development and testing.
 
 10. Start Elasticsearch and @product@.
 
