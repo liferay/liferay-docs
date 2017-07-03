@@ -68,11 +68,13 @@ Translator Text API, keep reading.
 
 ## Translating Language Keys Automatically [](id=translating-language-keys-automatically)
 
-You can generate automatic translations of your language keys using
-[Microsoft's Translator Text API](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/).
-
 If you've configured the `com.liferay.lang.builder` plugin in your app, you're
-almost there. 
+almost there. Now you have to configure
+[Microsoft's Translator Text API](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/)
+so you can generate automatic translations of your language keys. You cannot,
+however, use Liferay's Lang Builder to automatically translate language keys
+containing HTML (e.g., `<em>`, `<b>`, `<code>`, etc.). Language keys containing
+HTML will be automatically *copied* to all supported language files.
 
 +$$$
 
