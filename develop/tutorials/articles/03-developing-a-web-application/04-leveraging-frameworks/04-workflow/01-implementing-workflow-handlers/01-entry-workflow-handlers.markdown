@@ -1,9 +1,3 @@
-# Implementing Workflow Handlers
-
-In this section you'll learn to implement workflow handlers. Workflow handlers
-are fairly simple classes that interact with both the portal's workflow classes
-and your service layer (by calling `updateStatus` on the appropriate entity).
-
 ## Creating a Workflow Handler for Guestbook Entries 
 
 Create a new package in your `docroot/WEB-INF/src` folder and call it
