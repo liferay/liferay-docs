@@ -146,6 +146,6 @@ the `DELETE` command:
 
     curl -XDELETE localhost:9200/restored_liferay-20116index_3
 
-Nobody likes catastrophic failure on a production system, but Elasticsearch’s
+Nobody likes catastrophic failure on a production system, but Elasticsearch's
 API for snapshotting and restoring indexes can help you rest easy knowing that
 your search cluster can be restored if disaster strikes.

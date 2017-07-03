@@ -1,7 +1,7 @@
-# Upgrading Your Theme from 6.1 to 7.0 [](id=upgrading-your-theme-from-6-1-to-7-0)
+# Upgrading Your Theme from Liferay Portal 6.1 to 7.0 [](id=upgrading-your-theme-from-6-1-to-7-0)
 
 This tutorial guides you through the process of upgrading your 6.1 theme to run 
-on Liferay Portal CE 7.0 and Liferay Digital Experience Platform.
+on @product-ver@.
 
 For a more in depth tutorial that covers upgrading 6.2 themes, please see the 
 [Upgrading Themes](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/upgrading-themes) 
@@ -656,4 +656,3 @@ Liferay Portal 7.0:
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 
 [Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
-

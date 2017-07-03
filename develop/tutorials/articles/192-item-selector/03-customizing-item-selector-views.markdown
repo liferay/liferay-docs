@@ -38,22 +38,14 @@ Follow these steps to prepare your module:
 1.  Add these dependencies to your module's `build.gradle`:
 
         dependencies {
-                compileOnly group: "com.liferay", 
-                name: "com.liferay.item.selector.api", version: "2.0.0"
-                compileOnly group: "com.liferay", 
-                name: "com.liferay.item.selector.criteria.api", version: "2.0.0"
-                compileOnly group: "com.liferay.portal", 
-                name: "com.liferay.portal.impl", version: "2.0.0"
-                compileOnly group: "com.liferay.portal", 
-                name: "com.liferay.portal.kernel", version: "2.0.0"
-                compileOnly group: "com.liferay.portal", 
-                name: "com.liferay.util.taglib", version: "2.0.0"
-                compileOnly group: "javax.portlet", 
-                name: "portlet-api", version: "2.0"
-                compileOnly group: "javax.servlet", 
-                name: "javax.servlet-api", version: "3.0.1"
-                compileOnly group: "org.osgi", 
-                name: "org.osgi.service.component.annotations", version: "1.3.0"
+                compileOnly group: "com.liferay", name: "com.liferay.item.selector.api", version: "2.0.0"
+                compileOnly group: "com.liferay", name: "com.liferay.item.selector.criteria.api", version: "2.0.0"
+                compileOnly group: "com.liferay.portal", name: "com.liferay.portal.impl", version: "2.0.0"
+                compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+                compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
+                compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+                compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+                compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
         }
 
 2.  Add your module's information to the `bnd.bnd` file. For example, the 
