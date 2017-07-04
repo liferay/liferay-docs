@@ -56,8 +56,7 @@ them.
 
 5. Registration of classes implementing extension points is now simpler
 and more consistent; it's based on the standard `@Component` annotation instead
-of declarations it in `portal.properties` (in some cases) or `portlet.xml` (in
-some others). Note, previous registration mechanisms have been preserved where
+of declaration's in `portal.properties` or `portlet.xml`. Note, previous registration mechanisms have been preserved where
 possible.
 
 6. Third party extensions and applications are now first-class citizens.
