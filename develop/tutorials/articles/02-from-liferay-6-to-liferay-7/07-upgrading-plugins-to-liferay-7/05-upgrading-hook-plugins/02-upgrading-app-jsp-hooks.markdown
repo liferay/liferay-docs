@@ -47,7 +47,7 @@ version of your custom app JSP.
 
 The following table shows the old and new JSP paths.
 
-@portal@ version | JSP File Path |
+Liferay Portal version | JSP File Path |
 -------------|------|
 **6.2** | `docroot/META-INF/custom_jsps/html/portlet/[jsp_file_path]`
 **7.0** | `src/main/resources/META-INF/resources/[jsp_file_path]`
