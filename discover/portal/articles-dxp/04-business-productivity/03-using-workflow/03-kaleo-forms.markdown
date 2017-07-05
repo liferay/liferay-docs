@@ -73,12 +73,11 @@ Forms Display portlet could be added to a site page in @product@, so users with
 access to the page and the proper permissions could add, delete, and submit
 Kaleo Processes. No capabilities have been removed from the Kaleo stack in
 @product-ver@, but the Kaleo Forms Display portlet was removed. This means that
-administrators must configure the permissions of users who need access to Kaleo
-Forms so that they can access the application in Site Administration. Users
-needing only to manage workflow tasks assigned to them or their roles can use
-the *My Workflow Tasks* section of their [personal
-site](/discover/portal/-/knowledge_base/7-0/creating-sites#customizing-personal-sites)
-(in the User Menu, go to My Account &rarr; My Workflow Tasks).
+administrators must grant permission for users to access Kaleo Forms in Site
+Administration. Users needing only to manage workflow tasks assigned to them or
+their roles can use the *My Workflow Tasks* section of their 
+[personal sites](/discover/portal/-/knowledge_base/7-0/creating-sites#customizing-personal-sites)
+(in the User Menu, go to *My Account* &rarr; *My Workflow Tasks*).
 
 $$$
 
