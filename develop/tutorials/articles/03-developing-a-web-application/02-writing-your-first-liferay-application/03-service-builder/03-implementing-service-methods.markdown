@@ -9,9 +9,9 @@ services.
 
 1. Right-click on your project and select *Gradle* &rarr; *Refresh Gradle Project* to display all of the generated class.
 
-2. Open `com.liferay.docs.guestbook.service.imply.EntryLocalServiceImpl` and you have several methods to add.
+2. Open `com.liferay.docs.guestbook.service.imply.EntryLocalServiceImpl` you have several methods to add.
 
-    `addEntry`:
+3. Create the `addEntry` method:
 
 	public Entry addEntry(
 			long userId, long guestbookId, String name, String email,
@@ -49,13 +49,13 @@ services.
 	}
 	
 	In this method, you retrieve all of the information provided by the service 
-	contents (like the `userId` and `groupId`) and all of the information 
-	provided by the user (like the `message` and `email`), and add those
-	as attributes to the `entry` object. The user provided info is validated
-	upon submission. You then update the status of the object and return the 
-	new `entry` object.
+	contents, just as you defined it in your `service.xml` (like the `userId` 
+	and `groupId`) and all of the information provided by the user (like the 
+	`message` and `email`), and add those as attributes to the `entry` object. 
+	The user provided info is validated upon submission. You then update the 
+	status of the object and return the new `entry` object.
 	
-	`deleteEntry`:
+4. Create the `deleteEntry` method:
 
 	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
 		throws PortalException {
@@ -69,7 +69,7 @@ services.
 	
 	This method retrieves the `entry` object based on the `entryId`, and then returns the object to be deleted.
 	
-	A few variations on `getEntries`:
+5. Add the "getters":
 
 	public List<Entry> getEntries(long groupId, long guestbookId) {
 		return entryPersistence.findByG_G(groupId, guestbookId);
@@ -97,7 +97,7 @@ services.
 	can retrieve partial list while specifying a start and end point (hint: this might be useful for a paginated list). One version of that method uses a comparator, the other does not. Then, `getEntriesCount` returns
 	the total number of entries as an integer.
 	
-	`validate`:
+6. Add the `validate` method:
 	
 	protected void validate(String name, String email, String entry)
 				throws PortalException {
@@ -121,15 +121,14 @@ services.
 	not need to be a valid address capable of receiving mail. It just needs to look like one.
 	
 	
-3. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
+7. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
     `com.liferay.portal.kernel.service.ServiceContext,`
 	`com.liferay.docs.guestbook.model.Entry,` and 
 	`com.liferay.portal.kernel.util.Validator.` when prompted.
 
-4. Open `com.liferay.docs.guestbook.service.imply.GuestbookLocalServiceImpl`.
-5. Now you need to add some methods here.
+8. Open `com.liferay.docs.guestbook.service.imply.GuestbookLocalServiceImpl` to update its methods.
 
-	`addGuestbook`:
+9. First there's `addGuestbook`:
 
 	public Guestbook addGuestbook(
 				long userId, String name, ServiceContext serviceContext)
@@ -167,7 +166,7 @@ services.
 	fields that make up the Guestbook. The method then updates the `guestbook` 
 	object and gives you that object as the return value.
 	
-    Methods for getting guestbooks:
+10. Next, the methods for getting guestbooks:
 
 		public List<Guestbook> getGuestbooks(long groupId) {
 			return guestbookPersistence.findByGroupId(groupId);
@@ -191,6 +190,7 @@ services.
 	also retrieve the same list without a comparator. The final method gives you
 	the total number of guestbooks for a given site.
 
+11. And the guestbook validator:
 
 		protected void validate(String name) throws PortalException {
 			if (Validator.isNull(name)) {
@@ -201,7 +201,7 @@ services.
 	The `validate` method simply verifies that text was entered for the 
 	guestbook name and that the value isn't "null."
 	
-6. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
+12. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
     `com.liferay.portal.kernel.service.ServiceContext,`
 	`com.liferay.docs.guestbook.model.Entry,` and 
 	`com.liferay.portal.kernel.util.Validator.` when prompted.

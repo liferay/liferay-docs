@@ -27,6 +27,8 @@ you can access the services from your web module. Then you need to update your `
 2. Replace all of the methods in GuestbookPortlet with their new versions using
     the services and removing the portlet preferences code.
 
+	`addEntry`
+
 	public void addEntry(ActionRequest request, ActionResponse response)
 				throws PortalException {
 
@@ -62,6 +64,11 @@ you can access the services from your web module. Then you need to update your `
 			
 			}
 
+    The `addEntry` method gets the name, message, and email fields that the user 
+    submits through the JSP and passes them on to the service to be stored as entry
+    data. The `addGuestbook` method does the same for a guestbook.	
+	`addGuestbook`:
+
 			public void addGuestbook(ActionRequest request, ActionResponse response)
 				throws PortalException {
 
@@ -86,6 +93,10 @@ you can access the services from your web module. Then you need to update your `
 				}
 			}
 
+    Explanation
+	
+	`deleteEntry`:
+
 			public void deleteEntry(ActionRequest request, ActionResponse response) {
 				long entryId = ParamUtil.getLong(request, "entryId");
 				long guestbookId = ParamUtil.getLong(request, "guestbookId");
@@ -107,6 +118,10 @@ you can access the services from your web module. Then you need to update your `
 					SessionErrors.add(request, clazz.getName());
 				}
 			}
+
+    Explanation
+
+    `render`
 
 			@Override
 			public void render(
@@ -144,9 +159,16 @@ you can access the services from your web module. Then you need to update your `
 				super.render(renderRequest, renderResponse);
 			}
 
+	The new `render` method checks if any guestbooks currently exist for the 
+	current site, and if none do, it creates a new one. Once some number of
+	guestbooks have either been found or one has been created, they are served 
+	up to be displayed by the JSP.
+
+    Service Reference:
+
 			@Reference(unbind = "-")
 			protected void setEntryService(EntryLocalService entryService) {
-				_entryService = entryService;
+				_entryService = entryLocalService;
 			}
 
 			@Reference(unbind = "-")
@@ -154,21 +176,14 @@ you can access the services from your web module. Then you need to update your `
 				_guestbookService = guestbookService;
 			}
 
-			private EntryLocalService _entryService;
-			private GuestbookLocalService _guestbookService;
+			private EntryLocalService _entryLocalService;
+			private GuestbookLocalService _guestbookLocalService;
 	
 		
-The `addEntry` method gets the name, message, and email fields that the user 
-submits through the JSP and passes them on to the service to be stored as entry
-data. The `addGuestbook` method does the same for a guestbook.
 
-The new `render` method checks if any guestbooks currently exist for the 
-current site, and if none do, it creates a new one. Once some number of
-guestbooks have either been found or one has been created, they are served up 
-to be displayed by the JSP.
 
 At the bottom, you create create the `@Reference` to the service that you need 
-to call, in this case, `EntryService`. Then you use the methods provided by 
+to call, in this case, `EntryLocalService`. Then you use the methods provided by 
 those services (whose implementations you created earlier) to connect the user 
 action of creating a new Entry with the backend. In this way the portlet class 
 does not have to be at all concerned with how the service is implemented.
