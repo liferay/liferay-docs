@@ -5,9 +5,9 @@ reference documentation describes how to apply and use Liferay's Gradle plugins.
 
 **Important:** If you're using
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
-to create Liferay apps, many of these Liferay Gradle plugins are already
-applied by default. The `com.liferay.workspace` plugin provides the following
-Liferay plugins to all your apps in a Liferay Workspace:
+to create Liferay apps, many Liferay Gradle plugins are already applied by
+default. The `com.liferay.workspace` plugin provides the following plugins to
+all your apps in a Liferay Workspace:
 
 - `com.liferay.css.builder`
 - `com.liferay.js.module.config.generator`
@@ -22,6 +22,8 @@ Liferay plugins to all your apps in a Liferay Workspace:
 - `com.liferay.tld.formatter`
 - `com.liferay.test.integration`
 - `com.liferay.xml.formatter`
+
+Do not apply a Liferay Gradle plugin to an app that already has access to it.
 
 Each article in this section describes how to apply the plugin, what Gradle
 tasks the plugin provides, the plugin's configuration properties, and the
