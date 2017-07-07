@@ -25,6 +25,26 @@ generate the necessary model, persistence, and service layers for your
 application all using one XML file. Then you can add the necessary business
 logic for your application.
 
+## Fitting your Application into Liferay
+
+Before you dive into service, let's take a closer look at the context that 
+you're working it. When you write a Liferay application, you can make it fit 
+into Liferay’s overall framework. All of Liferay’s core application use 
+concepts like sites, users, pages, and scopes to organize data. For example, if 
+you add a Wiki to two different sites, the data in each wiki is different for 
+each site. In other words, one site doesn’t have access to another site’s wiki, 
+yet the application they both use is the same. This is what Liferay calls scope.
+
+Scope in Liferay Portal has a hierarchy, depicted in the illustration below. 
+Here, you can see a portal instance. Two users are depicted in the portal 
+instance on the left: one user is a member of Site A, while the other user is a 
+member of Site B. A wiki portlet could be placed on a page in either of these 
+sites, and its data would be different. In other words, it would be scoped to 
+that site. You can change an application’s scope to the page, and in that case, 
+one site could host different wikis on different pages.
+
+![Figure X: Sites, users, and scope in Liferay.](../../../images/sites-users.png)
+
 ## Service Layer
 
 This application is a data-driven application. It uses services for storing and
@@ -51,4 +71,6 @@ the necessary entities to generate this code.
 
 This creates two modules: an API module and a service module. Next, you'll learn
 how to use them.
+
+
 

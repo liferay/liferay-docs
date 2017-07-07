@@ -114,4 +114,8 @@ generated, and used those references to access the service to add an entry:
 Finally you wrapped all this up in a user interface that enables users to 
 enter the information they want, and the system to retrieve the data it
 needs from the context to create your entry.
-	
+
+Each piece of the application has a function which starts with the basic idea 
+of what kind of data you need. Now that you've built the application, and you
+can see a clear picture of how it all works, it's time to actually test it all 
+out.

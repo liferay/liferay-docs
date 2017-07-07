@@ -151,8 +151,26 @@ else you need to access your database.
 2. Open `guestbook-service` &rarr; `build`
 3. Run `buildService`
 
-If this is your first time running Service Builder, you probably have a lot of questions right now, like "What just happened?" and "Why are there so many new packages and classes?" Service Builder is based on a design philosophy called loose coupling. At a macro level, you have three layers of your application: the model, the service, and the persistence layers. The application is designed in such a way that you can swap out the persistence layer with little to no change in the model and service layers. With our template, the model is contained in the `-api` module, while the service and persistence layers are contained in the `-service` module.
+If this is your first time running Service Builder, you probably have a lot of 
+questions right now, like "What just happened?" and "Why are there so many new 
+packages and classes?" Service Builder is based on a design philosophy called 
+loose coupling. At a macro level, you have three layers of your application: 
+the model, the service, and the persistence layers. The application is designed 
+in such a way that you can swap out the persistence layer with little to no 
+change in the model and service layers. With our template, the model is 
+contained in the `-api` module, while the service and persistence layers are 
+contained in the `-service` module.
 
-At a micro level, each layer is implemented using Java Interfaces and various implementations of those interfaces. Rather than have one Entry class that represents your model, Service Builder has generated a system of classes that include an `Entry` interface, an `EntryBaseImpl` abstract class for Service Builder to manage, and an `EntryImpl` class that you can customize. This gives you the flexibility of being able to customize your model, while still allowing Service Builder to generate the code it needs. That’s why Service Builder is a code generator for code generator haters: it generates the stuff that’s tedious to write, while giving you the freedom to customize anything you want.
+![Figure X: The Model, Service, and Persistence Layer.](../../../images/model-service-persistence.png)
+
+At a micro level, each layer is implemented using Java Interfaces and various 
+implementations of those interfaces. Rather than have one Entry class that 
+represents your model, Service Builder has generated a system of classes that 
+include an `Entry` interface, an `EntryBaseImpl` abstract class for Service 
+Builder to manage, and an `EntryImpl` class that you can customize. This gives 
+you the flexibility of being able to customize your model, while still allowing 
+Service Builder to generate the code it needs. That’s why Service Builder is a 
+code generator for code generator haters: it generates the stuff that’s tedious 
+to write, while giving you the freedom to customize anything you want.
 
 Next you need to create the implementations for our services.
