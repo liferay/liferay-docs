@@ -171,6 +171,6 @@ supported at all in Liferay 8.0.
 If you're interested in scoping a module's JSP customization to a site, that's
 another story. See the documentation on using Dynamic Include (not yet written).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-jsp-hooks)
