@@ -11,9 +11,10 @@ Go ahead and get started.
 
 The default filter displays all the results, you'll add this UI to the Guestbook.
 
-Open the `view.jsp`, add the  `<liferay-frontend:management-bar-filters>` 
-taglib just below the `</liferay-frontend:management-bar-buttons>` tags, and 
-give it the following configuration:
+Open the `guestbook-web` module project's `view.jsp`, add the  
+`<liferay-frontend:management-bar-filters>` taglib just below the 
+`</liferay-frontend:management-bar-buttons>` tags, and give it the following 
+configuration:
 
     <liferay-frontend:management-bar-filters>
       <liferay-frontend:management-bar-navigation

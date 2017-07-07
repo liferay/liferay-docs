@@ -13,8 +13,8 @@ Get started by adding the required dependencies to your `build.gradle` file next
 Follow these steps to add the required dependencies:
 
 1.  The `liferay-frontend` taglibs generate the markup necessary to create the
-    Lexicon UI. You must therefore add the following dependency to the frontend 
-    taglib in your `build.gradle` file:
+    Clay UI. You must therefore add the following dependency to the frontend 
+    taglib in your `guestbook-web` module project's `build.gradle` file:
 
         compileOnly group: "com.liferay", name: "com.liferay.frontend.taglib",
         version: "2.0.0"
@@ -33,8 +33,8 @@ Now that the dependencies are added, you can implement the List view next.
 
 Follow these steps to implement the List view:
 
-1.  Open up the Guestbook app's `view.jsp` and add the following variable to the 
-    java scriplet at the top of the file:
+1.  Open up the `guestbook-web` module project's `view.jsp` and add the 
+    following variable to the java scriplet at the top of the file:
 
         String displayStyle = ParamUtil.getString(request, "displayStyle", "list");
 
@@ -104,12 +104,10 @@ Follow these steps to implement the Descriptive view:
     				</c:when>
     				<c:when test='<%= Objects.equals(displayStyle, "list") %>'>
     					<liferay-ui:search-container-column-text
-    						cssClass="table-cell-content"
     						property="message"
     					/>
 
     					<liferay-ui:search-container-column-text
-    						cssClass="table-cell-content"
     						property="name"
     					/>
 
@@ -121,7 +119,7 @@ Follow these steps to implement the Descriptive view:
 
 This wraps the list view in a conditional check, and adds the descriptive view
 condition, which organizes the search container results
-into a horizontal [card](http://liferay.github.io/lexicon/content/cards/), with
+into a horizontal [card](https://liferay.github.io/clay/content/cards/), with
 an icon, summarized message, and guest name.
 
 ![Figure 1: The descriptive view gives you a quick view of the guestbook message in a horizontal card.](../../../../../images/descriptive-button-added.png)
@@ -161,7 +159,8 @@ the `liferay-frontend:management-bar-display-buttons`:
 The Icon view is similar to the Descriptive view, except it places the search
 container results into a vertical card, which emphasizes the icon, and displays
 a summarized message along with the guest name. You may notice that the cards 
-in the Icon view are oversized. This issue is fixed in the next section. 
+in the Icon view are oversized. This issue is fixed in the next section and will 
+look like the figure below when complete:
 
 ![Figure 2: The icon view emphasizes the icon and gives you a quick view of the message and guest name.](../../../../../images/icon-view-with-search-iterator.png)
 

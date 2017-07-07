@@ -71,6 +71,10 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 		attributes.put("email", getEmail());
 		attributes.put("message", getMessage());
 		attributes.put("guestbookId", getGuestbookId());
+		attributes.put("status", getStatus());
+		attributes.put("statusByUserId", getStatusByUserId());
+		attributes.put("statusByUserName", getStatusByUserName());
+		attributes.put("statusDate", getStatusDate());
 
 		return attributes;
 	}
@@ -148,6 +152,30 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 		if (guestbookId != null) {
 			setGuestbookId(guestbookId);
 		}
+
+		Integer status = (Integer)attributes.get("status");
+
+		if (status != null) {
+			setStatus(status);
+		}
+
+		Long statusByUserId = (Long)attributes.get("statusByUserId");
+
+		if (statusByUserId != null) {
+			setStatusByUserId(statusByUserId);
+		}
+
+		String statusByUserName = (String)attributes.get("statusByUserName");
+
+		if (statusByUserName != null) {
+			setStatusByUserName(statusByUserName);
+		}
+
+		Date statusDate = (Date)attributes.get("statusDate");
+
+		if (statusDate != null) {
+			setStatusDate(statusDate);
+		}
 	}
 
 	@Override
@@ -160,9 +188,39 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 		return new EntryWrapper(_entry.toUnescapedModel());
 	}
 
+	/**
+	* Returns <code>true</code> if this entry is approved.
+	*
+	* @return <code>true</code> if this entry is approved; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isApproved() {
+		return _entry.isApproved();
+	}
+
 	@Override
 	public boolean isCachedModel() {
 		return _entry.isCachedModel();
+	}
+
+	/**
+	* Returns <code>true</code> if this entry is denied.
+	*
+	* @return <code>true</code> if this entry is denied; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isDenied() {
+		return _entry.isDenied();
+	}
+
+	/**
+	* Returns <code>true</code> if this entry is a draft.
+	*
+	* @return <code>true</code> if this entry is a draft; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isDraft() {
+		return _entry.isDraft();
 	}
 
 	@Override
@@ -170,9 +228,59 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 		return _entry.isEscapedModel();
 	}
 
+	/**
+	* Returns <code>true</code> if this entry is expired.
+	*
+	* @return <code>true</code> if this entry is expired; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isExpired() {
+		return _entry.isExpired();
+	}
+
+	/**
+	* Returns <code>true</code> if this entry is inactive.
+	*
+	* @return <code>true</code> if this entry is inactive; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isInactive() {
+		return _entry.isInactive();
+	}
+
+	/**
+	* Returns <code>true</code> if this entry is incomplete.
+	*
+	* @return <code>true</code> if this entry is incomplete; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isIncomplete() {
+		return _entry.isIncomplete();
+	}
+
 	@Override
 	public boolean isNew() {
 		return _entry.isNew();
+	}
+
+	/**
+	* Returns <code>true</code> if this entry is pending.
+	*
+	* @return <code>true</code> if this entry is pending; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isPending() {
+		return _entry.isPending();
+	}
+
+	/**
+	* Returns <code>true</code> if this entry is scheduled.
+	*
+	* @return <code>true</code> if this entry is scheduled; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isScheduled() {
+		return _entry.isScheduled();
 	}
 
 	@Override
@@ -188,6 +296,16 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 	@Override
 	public int compareTo(Entry entry) {
 		return _entry.compareTo(entry);
+	}
+
+	/**
+	* Returns the status of this entry.
+	*
+	* @return the status of this entry
+	*/
+	@Override
+	public int getStatus() {
+		return _entry.getStatus();
 	}
 
 	@Override
@@ -233,6 +351,26 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 	@Override
 	public java.lang.String getName() {
 		return _entry.getName();
+	}
+
+	/**
+	* Returns the status by user name of this entry.
+	*
+	* @return the status by user name of this entry
+	*/
+	@Override
+	public java.lang.String getStatusByUserName() {
+		return _entry.getStatusByUserName();
+	}
+
+	/**
+	* Returns the status by user uuid of this entry.
+	*
+	* @return the status by user uuid of this entry
+	*/
+	@Override
+	public java.lang.String getStatusByUserUuid() {
+		return _entry.getStatusByUserUuid();
 	}
 
 	/**
@@ -296,6 +434,16 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 	}
 
 	/**
+	* Returns the status date of this entry.
+	*
+	* @return the status date of this entry
+	*/
+	@Override
+	public Date getStatusDate() {
+		return _entry.getStatusDate();
+	}
+
+	/**
 	* Returns the company ID of this entry.
 	*
 	* @return the company ID of this entry
@@ -343,6 +491,16 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 	@Override
 	public long getPrimaryKey() {
 		return _entry.getPrimaryKey();
+	}
+
+	/**
+	* Returns the status by user ID of this entry.
+	*
+	* @return the status by user ID of this entry
+	*/
+	@Override
+	public long getStatusByUserId() {
+		return _entry.getStatusByUserId();
 	}
 
 	/**
@@ -489,6 +647,56 @@ public class EntryWrapper implements Entry, ModelWrapper<Entry> {
 	@Override
 	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
 		_entry.setPrimaryKeyObj(primaryKeyObj);
+	}
+
+	/**
+	* Sets the status of this entry.
+	*
+	* @param status the status of this entry
+	*/
+	@Override
+	public void setStatus(int status) {
+		_entry.setStatus(status);
+	}
+
+	/**
+	* Sets the status by user ID of this entry.
+	*
+	* @param statusByUserId the status by user ID of this entry
+	*/
+	@Override
+	public void setStatusByUserId(long statusByUserId) {
+		_entry.setStatusByUserId(statusByUserId);
+	}
+
+	/**
+	* Sets the status by user name of this entry.
+	*
+	* @param statusByUserName the status by user name of this entry
+	*/
+	@Override
+	public void setStatusByUserName(java.lang.String statusByUserName) {
+		_entry.setStatusByUserName(statusByUserName);
+	}
+
+	/**
+	* Sets the status by user uuid of this entry.
+	*
+	* @param statusByUserUuid the status by user uuid of this entry
+	*/
+	@Override
+	public void setStatusByUserUuid(java.lang.String statusByUserUuid) {
+		_entry.setStatusByUserUuid(statusByUserUuid);
+	}
+
+	/**
+	* Sets the status date of this entry.
+	*
+	* @param statusDate the status date of this entry
+	*/
+	@Override
+	public void setStatusDate(Date statusDate) {
+		_entry.setStatusDate(statusDate);
 	}
 
 	/**
