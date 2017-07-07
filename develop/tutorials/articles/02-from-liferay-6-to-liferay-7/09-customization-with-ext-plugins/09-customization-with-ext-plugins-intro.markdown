@@ -10,10 +10,7 @@ The following app servers should be used for Ext plugin development in
 
 - Tomcat 8.0
 <!--
-- JBoss EAP 7.0
 - Wildfly 10.0
-- WebLogic 12.2
-- WebSphere 8.5.5
 -->
 
 In most cases, Ext plugins are no longer necessary. There are, however, certain
