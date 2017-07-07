@@ -23,7 +23,7 @@ portlets. However, the manager is very busy. It wouldn't be practical to put
 everything else on hold while waiting for responses from each setup task.
 Asynchronous messaging with call-backs is an ideal solution. In this example,
 the messages sent by the Tasks portlet to the Setup and Inventory portlets are
-sent in serial instead of in parallel. Now it's time to hop on the Message Bus! 
+sent in series instead of in parallel. Now it's time to hop on the Message Bus! 
 
 ![Figure 1: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
