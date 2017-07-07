@@ -265,8 +265,10 @@ have been completed. Otherwise, Remote Staging will fail.
 
 1. The `tunnel.servlet.hosts.allowed` values have been set in the `portal-
 ext.properties` file in both the staging and the production environment.    
+
 2. The `tunneling.servlet.shared.secret` values have been set in the `portal-
 ext.properties` file in both the staging and the production environment.    
+
 3. Most importantly, update the *TunnelAuthVerfierConfiguration* of your @product@
 instance. This is a major change between legacy Portal and @product@. To do
 this:
@@ -278,7 +280,15 @@ Settings* &rarr; *Foundation*.
 *Hosts allowed* field.    
     d) Click *Update*.
     
-You should proceed only when all three major steps have been completed. 
+4. The same users must exist on both remote and the staging environments. In
+addition, the users must have the same credentials (that is, same screen name,
+email, and roles, password).  
+
+**Important note:** do not simply clone the database or else the Remote
+Publication process will also fail.
+
+
+You should proceed only when all four major steps have been completed. 
 
 
 Next, you'll learn how to enable page versioning and staged apps.
