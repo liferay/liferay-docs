@@ -65,7 +65,7 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(25);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -91,6 +91,14 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 		sb.append(message);
 		sb.append(", guestbookId=");
 		sb.append(guestbookId);
+		sb.append(", status=");
+		sb.append(status);
+		sb.append(", statusByUserId=");
+		sb.append(statusByUserId);
+		sb.append(", statusByUserName=");
+		sb.append(statusByUserName);
+		sb.append(", statusDate=");
+		sb.append(statusDate);
 		sb.append("}");
 
 		return sb.toString();
@@ -155,6 +163,22 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 		}
 
 		entryImpl.setGuestbookId(guestbookId);
+		entryImpl.setStatus(status);
+		entryImpl.setStatusByUserId(statusByUserId);
+
+		if (statusByUserName == null) {
+			entryImpl.setStatusByUserName(StringPool.BLANK);
+		}
+		else {
+			entryImpl.setStatusByUserName(statusByUserName);
+		}
+
+		if (statusDate == Long.MIN_VALUE) {
+			entryImpl.setStatusDate(null);
+		}
+		else {
+			entryImpl.setStatusDate(new Date(statusDate));
+		}
 
 		entryImpl.resetOriginalValues();
 
@@ -180,6 +204,12 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 		message = objectInput.readUTF();
 
 		guestbookId = objectInput.readLong();
+
+		status = objectInput.readInt();
+
+		statusByUserId = objectInput.readLong();
+		statusByUserName = objectInput.readUTF();
+		statusDate = objectInput.readLong();
 	}
 
 	@Override
@@ -232,6 +262,19 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 		}
 
 		objectOutput.writeLong(guestbookId);
+
+		objectOutput.writeInt(status);
+
+		objectOutput.writeLong(statusByUserId);
+
+		if (statusByUserName == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(statusByUserName);
+		}
+
+		objectOutput.writeLong(statusDate);
 	}
 
 	public String uuid;
@@ -246,4 +289,8 @@ public class EntryCacheModel implements CacheModel<Entry>, Externalizable {
 	public String email;
 	public String message;
 	public long guestbookId;
+	public int status;
+	public long statusByUserId;
+	public String statusByUserName;
+	public long statusDate;
 }

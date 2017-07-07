@@ -39,7 +39,7 @@ Follow these steps to create the the class:
 4. At the moment, the Portlet Toolbar Contributor is a separate module project. 
    To keep this contained within the Guestbook portlet, you should move it into 
    that project. Copy the `toolbar` folder over to the `src/portlet/` folder of 
-   the `guestbook-mvc` module.
+   the `guestbook-web` module.
 
 5.  The blade template set up the package and class for you, but it implements 
     the `PortletToolbarContributor` class. For the purposes of the add menu, you 
@@ -203,7 +203,7 @@ now that, that functionality is moved to the portlet toolbar:
     	</c:if>
     </aui:button-row>
 
-The updated portlet toolbar should match the figure below:
+The updated portlet toolbar is shown in the figure below:
 
 ![Figure 1: The Updated Add menu keeps the main UI free of clutter.](../../../../../images/portlet-toolbar-add-menu.png)
 
@@ -211,7 +211,7 @@ Next, you'll update the Guestbook's Navigation.
 
 ## Updating the Navigation [](id=updating-the-navigation)
 
-The current navigation uses tabs. While these are effective, the Lexicon design
+The current navigation uses tabs. While these are effective, the Clay design
 guidelines minimalize this UI by placing the Guestbook navigation into a navbar
 instead.
 
@@ -235,8 +235,9 @@ The navigation is updated. Next you'll update the Actions menu.
 
 Follow these steps to update the Actions menu:
 
-1.  Open the `guestbook_actions.jsp` and update the `<liferay-ui:icon-menu>` tag
-    to match the Lexicon guidelines with the configuration below:
+1.  Open the `guestbook-web` module's `guestbook_actions.jsp` and update the 
+    `<liferay-ui:icon-menu>` tag to match the Lexicon guidelines with the 
+    configuration below:
 
         <liferay-ui:icon-menu
             direction="left-side"
@@ -246,7 +247,7 @@ Follow these steps to update the Actions menu:
             showWhenSingleIcon="<%= true %>"
         >
 
-2.  To follow the Lexicon guidelines, the Action menu should only display an icon
+2.  To follow the Clay guidelines, the Action menu should only display an icon
     if it is one action. In this case, the Actions menu contains a few different
     actions, therefore the icons should be removed. Remove the `image` attribute
     from the edit icon so that it matches the configuration shown below:
@@ -308,8 +309,7 @@ Follow these steps to update the Search Container:
             property="name"
         />
 
-The updated Search Container and Actions menu should now reflect the figure 
-below:
+The updated Search Container and Actions menu reflect the figure below:
 
 ![Figure 2: The Search Container is all kinds of user-friendly now.](../../../../../images/updated-search-container-nav-tabs-actions-menu-ui.png)
 

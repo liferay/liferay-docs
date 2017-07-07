@@ -1,7 +1,7 @@
 # Creating the Management Bar [](id=creating-the-management-bar)
 
 In this section of the Learning Path, you'll create the Management Bar for the
-Guestbook app and style the Search Container to follow the Lexicon guidelines.
+Guestbook app and style the Search Container to follow the Clay guidelines.
 The Management Bar gives you a great deal of control over how your app's
 contents are displayed. You'll configure the Management Bar to organize and sort
 the Guestbook entries.

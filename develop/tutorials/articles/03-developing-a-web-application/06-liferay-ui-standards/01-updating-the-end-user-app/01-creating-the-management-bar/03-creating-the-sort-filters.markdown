@@ -6,7 +6,8 @@ comparator class for each field that you want to sort by. You'll create a name
 sort filter in this section.
 
 The sort filters are an implementation of the standard [`Comparator` Interface](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html),
-with some additional methods provided by the [`OrderByComparator` class](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/util/OrderByComparator.java). Once the class is created you can use it in the Guestbook's main view to add the 
+with some additional methods provided by the [`OrderByComparator` class](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/util/OrderByComparator.java). 
+Once the class is created you can use it in the Guestbook's main view to add the 
 sort filters to the UI.
 
 Go ahead and get started by creating the Comparator class next.
@@ -151,14 +152,14 @@ configure the view to use the comparator next.
 Follow these steps to configure the view to use the Comparator:
 
 1.  Import the `EntryNameComparator` and `Comparator` classes into the
-    Guestbook's `init.jsp`:
+    `guestbook-web` module project's `init.jsp`:
 
         page import="com.liferay.docs.guestbook.util.comparator.EntryNameComparator"
         
         page import="com.liferay.portal.kernel.util.OrderByComparator"
 
-2.  Open the `view.jsp` and add the following code below the `displayStyle`
-    variable in the java scriplet at the top:
+2.  Open `html/guestbookmvcportlet/view.jsp` and add the following code below 
+    the `displayStyle` variable in the java scriplet at the top:
 
         String orderByCol = ParamUtil.getString(request, "orderByCol", "name");
 
@@ -178,7 +179,9 @@ Follow these steps to configure the view to use the Comparator:
 
     This sets up the configuration for the comparators.
     
-3.  Add the following portlet parameters below the `guestbookId` one:
+3.  Add the following portlet parameters below the `guestbookId` one in the 
+    `<liferay-portlet:renderURL varImpl="viewPageURL">` tag located below the 
+    closing `</aui:button-row>` tag:
 
         <portlet:param name="displayStyle" value="<%= displayStyle %>" />
         <portlet:param name="orderByCol" value="<%= orderByCol %>" />
@@ -204,7 +207,7 @@ Follow these steps to configure the view to use the Comparator:
        	/>
 
 The Management Bar Sort Filters are finished. The Management Bar is complete!
-The updated Management Bar should match the figure below:
+The updated Management Bar is shown in the figure below:
 
 ![Figure 1: The sort filters let you sort the Guestbook app's entries.](../../../../../images/sort-filters-added.png)
 

@@ -2,11 +2,12 @@
 
 In this portion of the Learning Path, you'll update the current UI and overall 
 design of the Guestbook app to match Liferay's Lexicon Design Language standards.
-
-Lexicon offers a consistent user experience and design across all of your apps. 
-Lexicon's patterns can be found on their website at [https://liferay.github.io/lexicon/](https://liferay.github.io/lexicon/).
-You'll use Liferay's Front-end taglibs to update the Guestbook's markup to 
-follow the Lexicon guidelines.
+Specifically, you'll be using the web implementation of Lexicon called 
+Clay. Clay offers a consistent user experience and design across all of your 
+apps. Clay's patterns can be found on their website at 
+[http://liferay.github.io/clay/](http://liferay.github.io/clay/). You'll use 
+Liferay's Front-end taglibs to update the Guestbook's markup to follow the Clay 
+guidelines.
 
 This portion of the Learning Path is divided into two main sections: Updating
 the end user app (The app that guests and regular users will interact with), and

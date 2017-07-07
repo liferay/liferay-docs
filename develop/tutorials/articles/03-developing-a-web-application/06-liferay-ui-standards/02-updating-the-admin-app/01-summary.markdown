@@ -15,17 +15,30 @@ The steps required for these updates are summarized next.
 
 ## Guestbook Admin Main View Updates [](id=guestbook-admin-main-view-updates)
 
-1.  Open the Guestbook Admin's `view.jsp` and add a navigation bar with the 
-    label `Guestbooks`:
+1.  Open the Guestbook Admin's `view.jsp` and add a navigation bar above the 
+    search container with the label `Guestbooks`:
     
         <aui:nav-bar markupView="lexicon">
         	<aui:nav cssClass="navbar-nav">
         		<aui:nav-item label="Guestbooks" selected="<%= true %>" />
         	</aui:nav>
-        </aui:nav-bar> 
+        </aui:nav-bar>
 
-2.  Remove the icon images from the Actions Menu in the `guestbook_actions.jsp` 
-    and update the `icon-menu` to match the Lexicon guidelines:
+2.  Update the Search Container to expand the width of the container by wrapping 
+    it with a fluid `div`:
+   
+       <div class="container-fluid-1280">
+
+3.  Add the `table-cell-content` CSS class to the Search Container `name` column 
+    to indicate it as the principal column:
+    
+        <liferay-ui:search-container-column-text
+        	cssClass="table-cell-content"
+        	property="name"
+        />
+        
+4.  Remove the icon images from the Actions Menu in the `guestbook_actions.jsp` 
+    and update the `icon-menu` to match the Clay guidelines:
 
         <liferay-ui:icon-menu
             direction="left-side"
@@ -44,19 +57,6 @@ The steps required for these updates are summarized next.
     			message="permissions"
     			url="<%= permissionsURL %>"
     		/>
-
-3.  Update the Search Container to expand the width of the container using a 
-    fluid `div`:
-   
-       <div class="container-fluid-1280">
-
-4.  Add the `table-cell-content` CSS class to the Search Container `name` column 
-    to indicate it as the principal column:
-    
-        <liferay-ui:search-container-column-text
-        	cssClass="table-cell-content"
-        	property="name"
-        />
     
 The Management Bar updates are covered next.
 
@@ -87,8 +87,9 @@ The Management Bar updates are covered next.
           </liferay-frontend:management-bar-buttons>
         </liferay-frontend:management-bar>
 
-3.  Implement the Icon, Descriptive, and List display views in between the 
-    `liferay-ui:search-container-row` tags:
+3.  Replace the content in between the `liferay-ui:search-container-row` tags 
+    with the content below to implement the Icon, Descriptive, and List display 
+    views:
 
         <c:choose>
             <c:when test='<%= Objects.equals(displayStyle, "icon") %>'>
@@ -145,8 +146,9 @@ The Management Bar updates are covered next.
             markupView="lexicon" 
         />
 
-4.  Add the Navigation Filters below the display buttons, using the
-    `<liferay-frontend:management-bar-navigation />` taglib:
+4.  Add the Navigation Filters below the closing 
+    `</liferay-frontend:management-bar-buttons>` tag in the management bar, 
+    using the `<liferay-frontend:management-bar-navigation />` taglib:
     
         <liferay-frontend:management-bar-filters>
         	<liferay-frontend:management-bar-navigation
@@ -155,10 +157,81 @@ The Management Bar updates are covered next.
         	/>
         </liferay-frontend:management-bar-filters>
 
-5.  Create the `GuestbookNameComparator` class, update the 
-    `GuestbookLocalServiceImpl`, and rebuild services.
+5.  Create the `GuestbookNameComparator` class in the 
+    `com.liferay.docs.guestbook.util.comparator` package of the `guestbook-api` 
+    module:
+    
+        package com.liferay.docs.guestbook.util.comparator;
 
-6.  Implement the Sort Filters in the `view.jsp`, using the 
+        import com.liferay.docs.guestbook.model.Guestbook;
+        import com.liferay.portal.kernel.util.OrderByComparator;
+
+        public class GuestbookNameComparator extends OrderByComparator<Guestbook> {
+
+        	public static final String ORDER_BY_ASC = "Guestbook.name ASC";
+
+        	public static final String ORDER_BY_DESC = "Guestbook.name DESC";
+
+        	public static final String[] ORDER_BY_FIELDS = {"name"};
+
+        	public GuestbookNameComparator() {
+        		this(false);
+        	}
+
+        	public GuestbookNameComparator(boolean ascending) {
+        		_ascending = ascending;
+        	}
+
+        	@Override
+        	public int compare(Guestbook guestbook1, Guestbook guestbook2) {
+        		String name1 = guestbook1.getName();
+        		String name2 = guestbook2.getName();
+
+        		int value = name1.compareTo(name2);
+
+        		if (_ascending) {
+        			return value;
+        		}
+        		else {
+        			return -value;
+        		}
+        	}
+
+        	@Override
+        	public String getOrderBy() {
+        		if (_ascending) {
+        			return ORDER_BY_ASC;
+        		}
+        		else {
+        			return ORDER_BY_DESC;
+        		}
+        	}
+
+        	@Override
+        	public String[] getOrderByFields() {
+        		return ORDER_BY_FIELDS;
+        	}
+
+        	@Override
+        	public boolean isAscending() {
+        		return _ascending;
+        	}
+
+        	private final boolean _ascending;
+
+        }
+    
+6.  Update the `guestbook-api` module project's `GuestbookLocalServiceImpl` 
+    class's method signature 
+    `public List<Guestbook> getGuestbooks(long groupId, int start, int end)` to 
+    include the orderByComparator. Then rebuild services:
+
+        public List<Guestbook> getGuestbooks(long groupId, int start, int end, 
+        OrderByComparator<Guestbook> obc) {
+        	return guestbookPersistence.findByGroupId(groupId, start, end, obc);
+        }
+
+7.  Implement the Sort Filters in the `view.jsp`, using the 
     `<liferay-frontend:management-bar-sort />` taglib:
     
         <%
@@ -180,21 +253,28 @@ The Management Bar updates are covered next.
         	orderByComparator = new GuestbookNameComparator(orderByAsc);
         }
         %>
-        ...
+    
+8.  Add the `<liferay-frontend:management-bar-sort ... />` tag below the 
+    `<liferay-frontend:management-bar-navigation ... />` tag:
+    
         <liferay-frontend:management-bar-sort
         	orderByCol="<%= orderByCol %>"
         	orderByType="<%= orderByType %>"
         	orderColumns='<%= new String[] {"name"} %>'
         	portletURL="<%= viewPageURL %>"
         />
-        ...
+    
+9.  Update the search container results to use the orderByComparator:
+    
         <liferay-ui:search-container-results
         	results="<%= GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId, 
           searchContainer.getStart(), searchContainer.getEnd(), 
           orderByComparator) %>"
         />
     
-7.  Export the `GuestbookNameComparator` class in the Guestbook's `init.jsp`.
+10.  Export the `GuestbookNameComparator` class in the Guestbook's `init.jsp`.
+
+        <%@ page import="com.liferay.docs.guestbook.util.comparator.GuestbookNameComparator" %>
 
 That sums up the steps for the Management Bar. The remaining updates are covered 
 next.
@@ -216,7 +296,7 @@ next.
         %>
         
 2.  Open the `guestbook_actions.jsp` and add the `redirect` portlet parameter to 
-    the `editURL` renderURL variable:
+    the `editURL`:
     
         <portlet:renderURL var="editURL">
     			<portlet:param name="guestbookId" value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
@@ -241,7 +321,7 @@ next.
         </aui:button-row>
 
 5.  Wrap the form field's `<aui:fieldset>` tags with an `<aui:fieldset-group>` 
-    with the Lexicon markup view:
+    with the Clay markup view:
     
         <aui:fieldset-group markupView="lexicon">
         	<aui:fieldset>

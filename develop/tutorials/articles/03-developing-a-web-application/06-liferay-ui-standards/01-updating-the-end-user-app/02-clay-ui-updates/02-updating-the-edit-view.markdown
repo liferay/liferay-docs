@@ -12,13 +12,13 @@ Go ahead and get started by updating the form next.
 
 Follow these steps to update the edit Entry form:
 
-1.  Open the `guestbook-mvc` module's `edit_entry.jsp` and add the 
+1.  Open the `guestbook-web` module's `edit_entry.jsp` and add the 
     `container-fluid-1280` CSS class to the `<aui:form>` tag:
     
         <aui:form action="<%= addEntryURL %>" cssClass="container-fluid-1280" 
         name="fm">
 
-2.  Following the Lexicon guidelines, increase the click area and text size of 
+2.  Following the Clay guidelines, increase the click area and text size of 
     the form buttons by adding the `btn-lg` CSS class:
     
         <aui:button-row>
@@ -28,7 +28,7 @@ Follow these steps to update the edit Entry form:
         </aui:button-row>
         
 3.  Wrap the form fields `<aui:fieldset>` tags with a `<aui:fieldset-group>` tag 
-    with Lexicon Markup:
+    with Clay Markup:
     
         <aui:fieldset-group markupView="lexicon">
             <aui:fieldset>
@@ -44,7 +44,7 @@ Follow these steps to update the Edit Entry form's navigation. To keep the form
 as clear and uncluttered as possible, you'll move the title and associated back 
 button to the portlet title. Follow these steps to make these changes:
 
-1.  Open the `guestbook-mvc` module's `init.jsp` and add the following import 
+1.  Open the `guestbook-web` module's `init.jsp` and add the following import 
     for the portlet URL:
 
         <%@ page import="javax.portlet.PortletURL" %>
@@ -70,8 +70,8 @@ button to the portlet title. Follow these steps to make these changes:
 
         renderResponse.setTitle((entry == null) ? "Add Entry" : entry.getName());
         
-4.  Remove the following block of code since this is now handled by the back URL 
-    logic you just added:
+4.  Remove the following blocks of code since this is now handled by the back 
+    URL logic you just added:
     
         <portlet:renderURL var="viewURL">
             <portlet:param 
@@ -79,6 +79,11 @@ button to the portlet title. Follow these steps to make these changes:
                 value="/html/guestbookmvcportlet/view.jsp" 
             />
         </portlet:renderURL>
+        
+        <liferay-ui:header
+            backURL="<%= viewURL.toString() %>"
+            title="<%= entry == null ? "Add Entry" : entry.getName() %>"
+        />
         
 5.  Update the `value` attribute for the hidden guestbookId `<aui:input>` to 
     match the configuration below:
@@ -91,7 +96,7 @@ button to the portlet title. Follow these steps to make these changes:
         <aui:button cssClass="btn-lg" onClick="<%= backURL.toString() %>" 
         type="cancel" />
         
-The Edit Entry view is updated! The updated view should match the figure below:
+The Edit Entry view is updated! The updated view is shown in the figure below:
 
 ![Figure 1: The updated Edit Entry view keeps the user in mind, providing a clear and concise form.](../../../../../images/updated-edit-entry-form.png)
 

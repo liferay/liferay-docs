@@ -1,7 +1,7 @@
 # Migrating the Add Guestbook Action [](id=migrating-the-add-guestbook-action)
 
-The action to add a guestbook is currently found through the add menu in the 
-Management Bar. To comply with the Lexicon design guidelines, and to improve the 
+Guestbooks are currently added with the *Add Guestbook* button in the Guestbook 
+Admin portlet. To comply with the Clay design guidelines, and to improve the 
 overall user-experience for the portlet, you'll move this action to an Add menu.
 
 Go ahead and Get started.
@@ -10,8 +10,9 @@ Go ahead and Get started.
 
 Follow these steps to create the Add menu:
 
-1.  Open the `view.jsp` and replace the `<aui:button-row>` tags with 
-    `<liferay-frontend:add-menu>` tags to match the configuration below:
+1.  Open the `guestbookadminmvcportlet`'s `view.jsp` and replace the 
+    `<aui:button-row>` tag and contents with `<liferay-frontend:add-menu>` tags 
+    to match the configuration below:
 
         <liferay-frontend:add-menu>
             <c:if test='<%= GuestbookModelPermission.contains(permissionChecker,

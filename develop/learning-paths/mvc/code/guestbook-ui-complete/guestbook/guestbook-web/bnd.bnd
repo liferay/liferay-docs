@@ -5,3 +5,6 @@ Bundle-Version: 1.0.0
 -plugin.bundle: com.liferay.ant.bnd.resource.bundle.ResourceBundleLoaderAnalyzerPlugin
 -plugin.jsp: com.liferay.ant.bnd.jsp.JspAnalyzerPlugin
 -sources: true
+Export-Package: \
+	com.liferay.docs.guestbook.constants,\
+	com.liferay.docs.guestbook.asset

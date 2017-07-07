@@ -50,8 +50,8 @@ import org.osgi.service.component.annotations.Reference;
 @Component(
 	immediate = true,
 	property = {
-		"com.liferay.portlet.display-category=category.sample",
-		"com.liferay.portlet.instanceable=true",
+		"com.liferay.portlet.display-category=category.social",
+		"com.liferay.portlet.instanceable=false",
 		"com.liferay.portlet.scopeable=true",
 		"javax.portlet.display-name=Guestbook",
 		"javax.portlet.expiration-cache=0",
