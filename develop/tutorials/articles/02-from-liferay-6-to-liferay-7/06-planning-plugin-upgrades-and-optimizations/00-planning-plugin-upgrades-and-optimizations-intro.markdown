@@ -123,9 +123,9 @@ paths for 6.2 plugins and features.
  Hook - Language files | - [Upgrading Core Language Key Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-language-key-hooks)<br>- [Upgrading Portlet Language Key Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-portlet-language-key-hooks) | Same |
  Hook - Override a @product@ Core JSP | [Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-jsp-hooks) | Same |
  Hook - Override an app's JSP | [Upgrading App JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-app-jsp-hook-plugins) | Same |
- Hook - Event Actions (Portal/Session/Servlet Service/Shutdown/Startup) | [Upgrading Portal Property and Event Action Hooks](upgrading-portal-property-and-event-action-hooks) | Coming soon |
+ Hook - Event Actions (Portal/Session/Servlet Service/Shutdown/Startup) | [Upgrading Portal Property and Event Action Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-portal-property-and-event-action-hooks) | Coming soon |
  Hook - Model Listeners | [Upgrading Model Listener Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-model-listener-hooks) | Same |
- Hook - Portal Properties | [Upgrading Portal Property and Event Action Hooks](upgrading-portal-property-and-event-action-hooks) | Same |
+ Hook - Portal Properties | [Upgrading Portal Property and Event Action Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-portal-property-and-event-action-hooks) | Same |
  Hook - Properties | - If the property is now a [System Setting](/discover/portal/-/knowledge_base/7-0/system-settings), edit it there and/or use a `.config` file<br>- If the property is in the [liferay-hook.xml's DTD](@platform-ref@/7.0-latest/definitions/liferay-hook_7_0_0.dtd.html), then [adapt code to API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool) and [resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies) | None |
  Hook - Service Wrappers | [Upgrading Service Wrappers](/develop/tutorials/-/knowledge_base/7-0/upgrading-service-wrappers) | Coming soon |
  Hook - Servlet Filter | [Upgrading Servlet Filter Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-servlet-filter-hooks) | Coming soon |
