@@ -107,6 +107,8 @@ wrapper module!
 
 ## Related Topics [](id=related-topics)
 
+[Upgrading Service Wrappers](/develop/tutorials/-/knowledge_base/7-0/upgrading-service-wrappers)
+
 [Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 
 [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)

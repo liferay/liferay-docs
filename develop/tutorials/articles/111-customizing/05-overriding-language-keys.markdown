@@ -269,4 +269,6 @@ core. You can find out how to override those language keys in
 
 ## Related Topics [](id=related-topics)
 
+[Upgrading Core Language Key Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-language-key-hooks)
+
 [Internationalization](internationalization)
