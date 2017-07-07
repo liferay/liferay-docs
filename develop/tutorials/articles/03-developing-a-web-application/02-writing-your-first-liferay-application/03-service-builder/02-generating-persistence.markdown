@@ -19,23 +19,35 @@ entity data from being simply the portlet data, and instead you will have
 guestbooks and entities within those guestbooks.
 
 1. Open `service.xml` in your `guestbook-service` project.
-2. Replace the contents of the file with the following:
-
-	<?xml version="1.0"?>
-	<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+2. First replace the opening contents with file with the following:
 
 	    <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
 		<author>liferay</author>
 		<namespace>GB</namespace>
 		<entity local-service="true" name="Entry" uuid="true">
 
+    This defines the author, namespace, and the basic entity data. The 
+	namespace is important for the naming of database fields so that similarly
+	named fields don't conflict. The last tag is the opening tag for the Entry
+	entity. You specify that you only need a local service, the name of the
+	entity, and that it should have a "universally unique identifier."
+
+3. Next replace the PK fields area with the following:
+
 			<!-- PK fields -->
 
 			<column name="entryId" primary="true" type="long" />
 
+    This defined the `entryId` as a `long` type and the primary key for the
+	Entry entity.
+
+4. The group instance can be left alone.
+
 			<!-- Group instance -->
 
 			<column name="groupId" type="long" />
+
+5. Next replace the Audit fields.
 
 			<!-- Audit fields -->
 
@@ -49,111 +61,91 @@ guestbooks and entities within those guestbooks.
 			<column name="message" type="String" />
 			<column name="guestbookId" type="long" />
 
+    These provide the fields for the data which will be stored in the database. 
+	The top four fields, `companyId`, `userId`, `createdDate`, and 
+	`modifiedDate` are fields that are provided by the system in the current    
+	context. The `name`, `email`, and `message` fields are  going to be defined 
+	by the user when an entry is created. The `guestbookId` will also be 
+	assigned based on the context where the entry is being created.
+
+6. Finally you can add the finder data and the closing tag for the Entry entity:
+
 			<finder name="G_G" return-type="Collection">
 				<finder-column name="groupId" />
 				<finder-column name="guestbookId" />
 			</finder>
 		</entity>
+
+	These define the fields that you can search for entries by, they will be 
+	returned in as a Java Collection. The fields that you define here will be 
+	available for the creation of "get" methods later. Be careful how you define
+	your finders because you could run into issues if they are in any way 
+	ambiguous.
+
+That takes care of the Entry entity, but you also need to create the Guestbook
+entity.
+
+1. First add the opening entity tag:
+		
 		<entity local-service="true" name="Guestbook" uuid="true">
 
-			<!-- PK fields -->
+    Again, you're declaring the name, that you want a local service, and that 
+	you need a `uuid`.
 
-			<column name="guestbookId" primary="true" type="long" />
+2. Next add the tag to define the primary key and the Group instance 
+    information:
 
-			<!-- Group instance -->
+	 <!-- PK fields -->
 
-			<column name="groupId" type="long" />
+	 <column name="guestbookId" primary="true" type="long" />
 
-			<!-- Audit fields -->
+	 <!-- Group instance -->
 
-			<column name="companyId" type="long" />
-			<column name="userId" type="long" />
-			<column name="userName" type="String" />
-			<column name="createDate" type="Date" />
-			<column name="modifiedDate" type="Date" />
-			<column name="name" type="String" />
+	 <column name="groupId" type="long" />
 
-			<finder name="GroupId" return-type="Collection">
-				<finder-column name="groupId" />
-			</finder>
-		</entity>
-		<exceptions>
-			<exception>EntryEmail</exception>
-			<exception>EntryMessage</exception>
-			<exception>EntryName</exception>
-			<exception>GuestbookName</exception>
-		</exceptions>
-	</service-builder>
-	
-This creates two entities the Entry and the Guestbook.
+3. Just like with the Entry field, you need to add the main data fields:
 
-The Entry fields are defined as:
+	 <!-- Audit fields -->
 
-		<column name="companyId" type="long" />
-		<column name="userId" type="long" />
-		<column name="userName" type="String" />
-		<column name="createDate" type="Date" />
-		<column name="modifiedDate" type="Date" />
-		<column name="name" type="String" />
-		<column name="email" type="String" />
-		<column name="message" type="String" />
-		<column name="guestbookId" type="long" />
-		
-The top four fields, `companyId`, `userId`, `createdDate`, and `modifiedDate` 
-are fields that are provided by the system in the current context. The `name`, 
-`email`, and `message` fields are  going to be defined by the user when an 
-entry is created. The `guestbookId` will also be assigned based on the context
-where the entry is being created.
+	 <column name="companyId" type="long" />
+	 <column name="userId" type="long" />
+	 <column name="userName" type="String" />
+	 <column name="createDate" type="Date" />
+	 <column name="modifiedDate" type="Date" />
+	 <column name="name" type="String" />
 
-Next you create two finders:
+	Like the Entry fields, most of these are fields defined by your context, and
+	stored in the Guestbook object. The `name` field is the only thing which the
+	user will define to add to the `Guestbook` object.
 
-			<finder name="G_G" return-type="Collection">
-				<finder-column name="groupId" />
-				<finder-column name="guestbookId" />
-			</finder>
+4. Then your finder and closing entity tag:
 
-These define the fields that you can search for entries by, they will be 
-returned in as a Java Collection. The fields that you define here will be 
-available for the creation of "get" methods later. Be careful how you define
-your finders because you could run into issues if they are in any way ambiguous.
-
-The Guestbook fields are defined as:
-
-	<column name="companyId" type="long" />
-	<column name="userId" type="long" />
-	<column name="userName" type="String" />
-	<column name="createDate" type="Date" />
-	<column name="modifiedDate" type="Date" />
-	<column name="name" type="String" />
-
-Like the Entry fields, most of these are fields defined by your context, and
-stored in the Guestbook object. The `name` field is the only thing which the
-user will define to add to the `Guestbook` object.
-
-There is only one finder column for Guestbook--`groupId`: 
-
-	<finder name="GroupId" return-type="Collection">
+	 <finder name="GroupId" return-type="Collection">
 		<finder-column name="groupId" />
-	</finder>
+	 </finder>
+     </entity>
+	 
+	 The finder enables you to create methods with which will retrieve a 
+	 Collection of Guestbooks based on the Site (identified by the `groupId`) 
+	 where the Guestbooks were created.
 
-This enables you to create methods with which will retrieve a Collection of
-Guestbooks based on the Site (identified by the `groupId`) where the Guestbooks
-were created.
+5. Finally define your exception types and close out the Service Builder tag:
+	 
+	 <exceptions>
+		<exception>EntryEmail</exception>
+		<exception>EntryMessage</exception>
+		<exception>EntryName</exception>
+		<exception>GuestbookName</exception>
+	 </exceptions>
+	 </service-builder>
+	
+	These allow you to specify specific exemptions and generate custom messages 
+	for these criteria. Providing customized exemptions is a big component of 
+	a positive user experience.
+	
 
-You've also identified some associated exception types:
-
-		<exceptions>
-			<exception>EntryEmail</exception>
-			<exception>EntryMessage</exception>
-			<exception>EntryName</exception>
-			<exception>GuestbookName</exception>
-		</exceptions>
-
-These allow you to specify specific exemptions and generate custom messages for
-these criteria. Providing customized exemptions is a big component of providing 
-a positive user experience.
-
-Once you’ve created your service.xml file, you’re ready to generate everything else you need to access your database.
+Once you’ve created your service.xml file, you’re ready to generate everything 
+else you need to access your database.
 
 1. Go to the Gradle Tasks pane on the right side of @ide@.
 2. Open `guestbook-service` &rarr; `build`
