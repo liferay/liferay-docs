@@ -271,6 +271,8 @@ you may enter it here.
 
 **Indexable:** Select *Yes* to enable Liferay to index your field for search.
 
+**Localizable:** Select *Yes* to enable Liferay to localize your filed.
+
 **Repeatable:** Select *Yes* to make your field repeatable. Your users can then
 add as many copies of this field as they like. For example, if you're creating a
 structure for articles, you might want a repeatable Author field in case you
