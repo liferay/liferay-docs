@@ -2,9 +2,9 @@
 
 Here are the steps for upgrading a  core language key hook to @product-ver@. 
 
-1.  Create a new module based on the Blade sample `blade.resourcebundle` in 
-    [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.resourcebundle)
-    or [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.resourcebundle). 
+1.  Create a new module based on the Blade sample `resource-bundle` in 
+    [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/resource-bundle)
+    or [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/extensions/resource-bundle). 
 
     Here are the main parts of the module folder structure:
 
