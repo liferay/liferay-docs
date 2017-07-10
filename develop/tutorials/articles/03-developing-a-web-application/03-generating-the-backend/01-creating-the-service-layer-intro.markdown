@@ -1,4 +1,4 @@
-# Service Builder
+# What is Service Builder?
 
 What you've got so far is a prototype. You're using Liferay's
 Model-View-Controller portlet framework. MVC is a great design pattern for web

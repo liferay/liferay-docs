@@ -1,4 +1,4 @@
-# Making the Guestbook app available [](id=making-the-guestbook-app-available)
+# Refactoring the Prototype
 
 You created a fully-functional Guestbook portlet. You wrote a 
 `service.xml` file to define your application's data model and used Service 
