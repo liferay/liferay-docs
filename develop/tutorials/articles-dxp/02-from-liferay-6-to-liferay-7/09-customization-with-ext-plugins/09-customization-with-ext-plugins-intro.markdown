@@ -3,16 +3,8 @@
 +$$$
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
-absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
-Pack 16+.**
-
-<!-- The next SP release that supports Ext plugins should be documented above.
-We still must decide if we want to include the necessary fix pack and
-workaround. -Cody -->
-
-<!-- Add reminders in use case tutorials involving core classes about what core
-classes are, and how to find them. Use same link provided in list below. -Cody
--->
+absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0
+Service Pack (SP) 4+.**
 
 The following app servers are supported for Ext plugin development in
 @product@:
@@ -43,17 +35,6 @@ Ext plugin use cases:
   ([tutorial]()).
 
 Refer to each use case's linked tutorial for further information on that topic.
-
-<!--
-If you're using the Tomcat app server, visit the
-[App Server Configuration](#app-server-configuration) section for details on
-modifications required to allow Ext plugins to function properly in that
-environment.
--->
-
-<!-- Remove the above text (and linked section) if we decide to not refer to
-fix pack support. This will not be necessary in the next SP that supports Ext
-plugins. -Cody -->
 
 $$$
 
@@ -629,23 +610,6 @@ Now, perform these actions on your server:
     appropriate directory in the application server. 
 
 Next, you'll learn about Liferay's licensing and contributing standards.
-
-<!--
-## App Server Configuration [](id=app-server-configuration)
-
-If you're using the Tomcat app server, you must modify your app server's
-`conf/Catalina/localhost/ROOT.xml` file. Add the following code to that file:
-
-    <Resources>
-        <PreResources
-            className="com.liferay.support.tomcat.webresources.ExtResourceSet"
-            base="${catalina.base}/lib/ext/portal"
-            webAppMount="/WEB-INF/lib"
-        />
-    </Resources>
-
-Be sure to place this code within the existing `<Context>` tags.
--->
 
 ## Licensing and Contributing [](id=licensing-and-contributing)
 
