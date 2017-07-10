@@ -10,10 +10,13 @@ The following app servers are supported for Ext plugin development in
 @product@:
 
 - Tomcat 8.0
+
+<!--
 - JBoss EAP 7.0
 - Wildfly 10.0
 - WebLogic 12.2
 - WebSphere 8.5.5
+-->
 
 In most cases, Ext plugins are no longer necessary. There are, however, certain
 cases that require the use of an Ext plugin. Liferay only supports the following
