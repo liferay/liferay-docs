@@ -269,9 +269,9 @@ appear in the form as defaults for those fields.
 displays helpful information. If you would like to provide text for the tooltip
 you may enter it here.
 
-**Indexable:** Select *Yes* to enable Liferay to index your field for search.
+**Indexable:** Select *Yes* to enable @product@ to index your field for search.
 
-**Localizable:** Select *Yes* to enable Liferay to localize your filed.
+**Localizable:** Select *Yes* to enable @product@ to localize your field.
 
 **Repeatable:** Select *Yes* to make your field repeatable. Your users can then
 add as many copies of this field as they like. For example, if you're creating a
