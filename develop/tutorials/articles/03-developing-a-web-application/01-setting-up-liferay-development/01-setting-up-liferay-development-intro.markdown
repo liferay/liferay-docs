@@ -28,7 +28,18 @@ It's time to perform those steps.
 
 3. To run @ide@, execute the `eclipse` executable. 
 
-Nice job! Your development environment is installed. 
+The first time you start @ide@ you'll be prompted to select an Eclipse 
+workspace. If you specify a folder where no workspace currently exists, @ide@ 
+will create a new one in the provided folder.
+
+1. When prompted, indicate the path where you want your workspace name it
+    "/guestbook-workspace" and click *OK*.
+
+2. On your first launch, you will see a welcome page. Click the 
+    icon for *Workbench* to continue.
+
+Nice job! Your development environment is installed and your workspace is 
+setup. 
 
 ## Creating a Liferay Workspace [](id=creating-a-liferay-workspace)
 
@@ -38,32 +49,29 @@ provides a simplified, straightforward way to develop Liferay applications. You
 can only create one Liferay Workspace for each Eclipse Workspace, to avoid 
 configuration issues. 
 
-To create a Liferay Workspace in @ide@, select *File* &rarr; *New* &rarr; 
-*Liferay Workspace Project*. Note: you may have to select *File* &rarr; *New*
-&rarr; *Other*, then in the *Liferay* category, choose *Liferay Workspace
-Project*. Eclipse can be weird that way. 
+First create a Liferay Workspace in @ide@.
+
+1. Select *File* &rarr; *New* &rarr; *Liferay Workspace Project*. Note: you may 
+    have to select *File* &rarr; *New* &rarr; *Other*, then in the *Liferay* 
+	category, choose *Liferay Workspace Project*. Eclipse can be weird that 
+	way. 
 
 ![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../../images/selecting-liferay-workspace.png)
 
 A New Liferay Workspace dialog appears, presenting several configuration
 options. Follow the instructions below to create your workspace.
 
-1. Give your workspace the name *com-liferay-docs-guestbook*. 
+2. Give your workspace the name *com-liferay-docs-guestbook*. 
 
-2. Next, you're asked to choose the location of your workspace. Leave the
-   default setting checked; this places your Liferay Workspace inside your Eclipse
-   workspace. 
+3. Next, you're asked to choose the location of your workspace. Leave the
+   default setting checked; this places your Liferay Workspace inside your 
+   Eclipse workspace. 
 
-3. Check the *Download Liferay bundle* checkbox to auto-generate a
+4. Check the *Download Liferay bundle* checkbox to auto-generate a
    Liferay instance in your workspace. When prompted, name the server 
    *liferay-tomcat-bundle*. 
 
-4. Click *Finish* to create your Liferay Workspace.
-
-<!-- The instructions above leave too much up to the reader. This is a Learning
-Path. Make all the decisions for them. I edited the instructions to give the
-workspace a name and to definitely leave it in the default location. If you
-would rather they do something else, feel free to change it. -Rich -->
+5. Click *Finish* to create your Liferay Workspace.
 
 ![Figure 2: Liferay @ide@ provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/new-workspace-menu.png)
 
