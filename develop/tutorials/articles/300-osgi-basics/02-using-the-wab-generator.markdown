@@ -103,8 +103,8 @@ Awesome! You've seen the WAB Generator in action!
 
 ## Related Topics [](id=related-topics)
 
-[Getting Started with JSF Applications](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-jsf-applications)
+[Generating a JSF Application](/develop/tutorials/-/knowledge_base/7-0/generating-a-jsf-application)
 
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
 
-[Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
+[Configuration](/develop/tutorials/-/knowledge_base/7-0/configuration)

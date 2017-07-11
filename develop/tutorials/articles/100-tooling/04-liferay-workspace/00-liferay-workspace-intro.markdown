@@ -5,14 +5,24 @@ manage your Liferay projects. This workspace is intended to aid in the
 management of Liferay projects by providing various Gradle build scripts and
 configured properties. This is the official way to create @product-ver@ modules
 using Gradle. For those developers that still want to develop WAR-style plugins
-using the Plugins SDK, this way is also supported using a Liferay Workspace.
+using the Plugins SDK, this way is also supported using a Liferay Workspace. Do
+you prefer Maven over Gradle? See the
+[Maven Workspace](/develop/tutorials/-/knowledge_base/7-0/maven-workspace)
+tutorial to learn about using Liferay Workspace with Maven.
 
 Liferay Workspaces can be used in many different development environments, which
-makes it flexible and applicable to many different developers. For example, a
-Liferay Workspace easily integrates with Liferay IDE, providing a seamless
-development experience. To learn more about Liferay IDE and using workspace with
-it, see the
-[Creating a Liferay Workspace with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
+makes it flexible and applicable to many different developers. You can download
+the
+[Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace)
+and run it to install
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) (default CLI for
+workspace) and initialize a new Liferay Workspace.
+
+You can also use it with other developer IDEs. For example, a Liferay Workspace
+easily integrates with Liferay @ide@, providing a seamless development
+experience. To learn more about Liferay @ide@ and using workspace with it, see
+the
+[Creating a Liferay Workspace with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
 tutorial.
 
 Your workspace also offers Gradle properties that you can modify to help manage

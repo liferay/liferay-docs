@@ -3,7 +3,7 @@
 Service Builder works the same in a JSF portlet as it would in any other
 standard WAR-style MVC portlet. To learn more about how Service Builder works in
 Liferay, visit the
-[Business Logic and Data Access](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
 tutorials. You can create a `service.xml` file and run Service Builder in your
 JSF project to build services.
 
@@ -69,4 +69,4 @@ tutorial.
 
 [Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
 
-[Application Configuration](/develop/tutorials/-/knowledge_base/7-0/application-configuration)
+[Configuration](/develop/tutorials/-/knowledge_base/7-0/configuration)

@@ -148,6 +148,14 @@ tuned depending on need.
 
 $$$
 
+Administrators can set the UTF-8 properties in the `server.xml` file. This is
+required or else special characters will not be parsed correctly. Add the
+following inside the `jvmEntries` tag:
+
+    <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ...genericJvmArguments="-Dfile.encoding=UTF-8">
+
+Alternately, administrators can set the UTF-8 properties from the WebSphere Admin Console. (See below.)
+
 ### Removing the secureSessionCookie Tag [](id=removing-the-securesessioncookie-tag)
 
 In the same profile, you should delete a problematic `secureSessionCookie` tag 
@@ -166,10 +174,17 @@ If this tag is not removed, an error similar to the one here may occur:
 
 ### Setting the JDK Version for Compiling JSPs [](id=setting-the-jdk-version-for-compiling-jsps)
 
-@product@ requires that its JSPs are compiled on Java 8. To ensure that 
-WebSphere does this, add the following to its `ibm-web-ext.xml`: 
+@product@ requires that its JSPs are compiled on Java 8. To ensure that
+WebSphere does this, navigate to the `WEB_INF` folder and add the following
+setting to the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
 
     <jsp-attribute name="jdkSourceLevel" value="18" />
+
+Note that the @product@ `.war` comes pre-packaged with the `ibm-web-ext.xmi`
+file; this format is functionally the same as `.xml` and WebSphere recognizes both
+formats. For more general information on how WebSphere compiles JSPs see IBM's
+official documentation for 
+[WebSphere Application Server 8.5.5.x](https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/rweb_jspengine.html).
 
 Great! Now you're ready to install @product@. 
 
@@ -356,6 +371,22 @@ steps to resolve this issue in WebSphere:
 3. Click *Apply* 
 
 4. Click *Save* 
+
+## Enable UTF-8 [](id=enable-utf-8)
+
+If you did not add the `-Dfile.encoding=UTF-8` property in the `server.xml`, you
+can do so in the Administrative Console.
+
+1. Click *Application Servers* &rarr; *server1* &rarr; *Process definition*.
+
+2. Click *Java Virtual Machine* under *Additional Properties*.
+
+3. Enter `-Dfile.encoding=UTF-8` in the *Generic JVM arguments* field.
+
+4. Click *Apply* and then *Save* to master configuration.
+
+Once the changes have been saved, @product@ can parse special characters if
+there is localized content.
 
 ## Deploy @product@ [](id=deploy-liferay-dxp)
 

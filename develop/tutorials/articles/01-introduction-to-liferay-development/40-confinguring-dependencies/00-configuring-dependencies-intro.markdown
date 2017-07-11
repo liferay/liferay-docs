@@ -167,7 +167,7 @@ The heading above the package name shows the module's artifact ID, version
 number, and display name. Remember, the group ID for all app modules is 
 `com.liferay`. 
 
-![Figure 3: @product@ app Javadoc overviews list each module's artifact ID, version number, and display name.](../../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
+![Figure 3: @product@ app Javadoc overviews list each module's display name, followed by its group ID, artifact ID, and version number in a colon-separated string.  It's a Gradle artifact syntax.](../../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
 
 +$$$
 

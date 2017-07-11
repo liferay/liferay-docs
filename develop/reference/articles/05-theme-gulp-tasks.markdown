@@ -1,6 +1,6 @@
 # Theme Gulp Tasks [](id=theme-gulp-tasks)
 
-Theme projects created using the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+Theme projects created using the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 have a `gulpfile.js` file that provides several [gulp](https://www.npmjs.com/package/gulp)
 tasks you can execute to manage and deploy your theme.
 
@@ -11,29 +11,18 @@ Here are the gulp tasks you can execute:
     server. 
 
 *  `deploy`: runs the `build` task and deploys the WAR file to the
-    configured local app server. 
+    configured local app server.
 
-    If you want to deploy to a live remote server, specify the `--live` flag
-    along with the `deploy` task (e.g., `gulp deploy --live`).
+    +$$$
 
-    Note that the
-    [server-manager app](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/server/server-manager)
-    must be deployed on the server you specify. The `--live` flag deploys
-    the theme to the remote server specified in the `init` task. The `init` task 
-    is explained later in this section.
+    **Note:** If you're running the [Felix Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell), 
+    you can also deploy your theme using the `gulp deploy:gogo` command. **This 
+    task will NOT work for 6.2 themes.**
 
-    If you want to deploy to a different server without changing the default
-    server specified in `init`, you may use the `--url` flag.
-
-        gulp deploy --live --url http://some-host.com
-
-    You may also specify your login credentials using flags `-u` or `--username`
-    and flags `-p` or `--password`.
-
-        gulp deploy --live -u test@liferay.com -p test
+    $$$
 
 *  `extend`: allows you to specify a base theme to extend. By default, themes
-    created with the [Themes Generator](https://github.com/liferay/generator-liferay-theme)
+    created with the [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
     are based off of the [styled theme](https://www.npmjs.com/package/liferay-theme-styled).
 
     You first are prompted if you want to extend a Base theme or Themelet, then
@@ -46,6 +35,12 @@ Here are the gulp tasks you can execute:
     added to your `package.json` file as dependencies. Run `npm install` to
     install them.
 
+*  `kickstart`: allows you to copy the css, images, js, and templates from 
+    another theme into the `src` directory of your own. While this is similar to 
+    the `extend` task, kickstarting from another theme is a one time inheritance, 
+    whereas extending from another theme is a dynamic inheritance that applies 
+    your src files on top of the base theme on every build.
+
 *  `init`: prompts you for local and remote app server information to use in
     theme deployment.
 
@@ -56,9 +51,9 @@ Here are the gulp tasks you can execute:
     save any changes to a file in your theme, applicable changes are compiled
     and they're copied directly to your app server. **Note:** In order for the
     `watch` task to work, you must have [Developer
-    Mode](/develop/tutorials/-/knowledge_base/6-2/using-developer-mode-with-themes)
-    enabled. <!--Update link to 7.0 URL once it's updated-->
+    Mode](/develop/tutorials/-/knowledge_base/7-0/using-developer-mode-with-themes)
+    enabled.
 
 **Related Topics**
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)

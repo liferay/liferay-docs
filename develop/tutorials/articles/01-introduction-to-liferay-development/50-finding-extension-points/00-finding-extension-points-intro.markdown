@@ -43,7 +43,7 @@ component.
     keywords in element names and descriptions. The keyword *LDAP* resides under
     the Liferay Foundation app suite; select it.
 
-    ![Figure x: The Liferay Foundation app suite contains the LDAP Authentication application.](../../../images/ldap-keyword-app-manager.png)
+    ![Figure 1: The Liferay Foundation app suite contains the LDAP Authentication application.](../../../images/ldap-keyword-app-manager.png)
 
 3.  Select the *LDAP* application from the app listing.
 
@@ -51,13 +51,13 @@ component.
     more than one module to inspect. Select the *Liferay Portal Security LDAP*
     module.
 
-    ![Figure x: The App Manager lists the module, package name, version, and status.](../../../images/app-manager-breakdown.png)
+    ![Figure 2: The App Manager lists the module, package name, version, and status.](../../../images/app-manager-breakdown.png)
 
 5.  Search through the components, applying your keywords as a guide. Copy the
     component name you think best fits the functionality you want to customize;
     you'll inspect it later using the Gogo shell.
 
-    ![Figure x: The component name can be found using the App Manager.](../../../images/usermodellistener-component.png)
+    ![Figure 3: The component name can be found using the App Manager.](../../../images/usermodellistener-component.png)
 
     +$$$
 
@@ -112,14 +112,9 @@ option is `reluctant`, binding a new higher ranking service in place of a bound
 service requires reactivating the component or changing the target. For 
 information on the other policies and policy options, visit the
 [OSGi specification](https://osgi.org/download/r6/osgi.enterprise-6.0.0.pdf), in
-particular, sections 112.3.5 and 112.3.6.
-
-<!--
-If you want to learn how to
+particular, sections 112.3.5 and 112.3.6. If you want to learn how to
 override a component's service reference, visit the following
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-a-components-service-reference).
--->
-<!-- Add above tutorial link when it's available on LDN. -Cody -->
+[tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-service-references).
 
 **Important** Not all Extension points in @product@ are available as referenced
 services. Referenced services are common extension points when using

@@ -4,8 +4,7 @@ Once your LCS client is connected to LCS, you can get down to the business that
 LCS was designed for--managing and monitoring your @product@ instances. If 
 you're not already there, log in with your account on 
 [lcs.liferay.com](https://lcs.liferay.com). This is where you'll apply updates, 
-view server metrics, manage environments, invite external users to your project, 
-and more. 
+view server metrics, manage environments, and more. 
 
 This article's following sections each detail one or more of the features 
 available in LCS: 
@@ -108,9 +107,9 @@ shows the My Projects tab.
 
 The *Unlinked* tab shows your @product@ projects that aren't connected with LCS. 
 For example, if you've submitted an app on Liferay Marketplace, then it's a 
-@product@ project associated with your Liferay account. A @product@ project is an 
-umbrella Liferay concept and can span over many different Liferay products. The 
-Unlinked tab gives you the opportunity to connect those projects to LCS. The 
+@product@ project associated with your Liferay account. A @product@ project is 
+an umbrella Liferay concept and can span over many different Liferay products. 
+The Unlinked tab gives you the opportunity to connect those projects to LCS. The 
 *Pending* tab shows the existing LCS projects you've requested access to. If you 
 request access to an LCS project, but the administrator hasn't yet granted your 
 request, the project appears in the Pending tab. The *Company* tab shows a table 
@@ -141,10 +140,10 @@ roles are available:
   environment.
 
 You should note that each of these LCS roles assume that the user already has 
-the LCS User role in his or her Liferay.com account. The LCS User role is 
-granted automatically the first time the user enters their LCS account. The 
-actions that can be performed by each of the LCS roles are detailed in the below
-permissions matrix. 
+the LCS User role in their Liferay.com account. The LCS User role is granted 
+automatically the first time the user enters their LCS account. The actions that 
+can be performed by each of the LCS roles are detailed in the below permissions 
+matrix. 
 
 **LCS Permissions Matrix**
 
@@ -154,7 +153,6 @@ Access LCS | true | true | true |
 Access Any Environment | true | false | false |
 Access a Particular Environment | true | true | true |
 Manage Users | true | false | false |
-Invite Users to LCS | true | false | false |
 Create and Delete Environments | true | false | false |
 Edit Any Environment | true | false | false |
 Edit a Particular Environment | true | true | false |
@@ -169,33 +167,18 @@ you're ready to learn how to manage the users in LCS projects.
 ### Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
 The Users section of LCS is where you manage the LCS users that are part of your 
-project. It's here that you can grant or revoke LCS roles or invite others that 
-aren't yet part of your project. To manage users, first click the *Users* tab 
-just below the Dashboard tab on the upper-left of your screen. You're presented 
-with a table of the users in your project. To the right of each is the Manage 
-button. Clicking *Manage* lets you assign or revoke LCS roles for that user. 
+project. It's here that you can grant or revoke LCS roles. To manage users, 
+first click the *Users* tab just below the Dashboard tab on the upper-left of 
+your screen. You're presented with a table of the users in your project. To the 
+right of each is the Manage button. Clicking *Manage* lets you assign or revoke 
+LCS roles for that user. Note that you can't add users to your project via the 
+LCS UI or the LCS client app. To add users to your project, you must contact 
+Liferay support. 
 
 ![Figure 4: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
 
-To invite external users to your project, click the *Invite* button. Here you
-can invite anyone with a valid email address. You can also search for
-Liferay.com users to invite. Once you choose some users, the *Role* selection
-box lets you preassign LCS roles for when they accept your invitation. You can
-also use the Environment selection box to preassign them to an environment in
-your project.
-
-![Figure 5: You can invite users to your LCS project and even preassign them roles.](../../images-dxp/lcs-invite-users.png)
-
-To view sent invitations, click the *Invitations* tab. A table displays
-invitations, listing invited users' email addresses along with who invited them
-and the date that the invitation was sent. The table also shoes the preassigned
-LCS role and environment. You can cancel an invitation by clicking *Cancel* in 
-the Action column of the invitation. 
-
-![Figure 6: The Invitations tab lets administrators view and cancel invitations.](../../images-dxp/lcs-invitations.png)
-
 Great! Now you know how to manage your LCS projects and the users in them. Now 
-it's time to get to the heart of LCS: the Dashboard.
+it's time to get to the heart of LCS: the Dashboard. 
 
 ## Using the Dashboard [](id=using-the-dashboard)
 
@@ -218,7 +201,7 @@ message appears for a server when the server is offline. Status messages also
 appear for servers when fix packs are available, monitoring is unavailable, the 
 patching tool is unavailable, or other events occur that relate to LCS. 
 
-![Figure 7: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
+![Figure 5: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
 can also create new environments here by clicking the Add Environment tab. To 
@@ -242,7 +225,7 @@ checkbox when filling out the environment's information. Note that you must set
 the portal property `cluster.link.enabled` to `true` in any servers that connect 
 to a clustered environment. 
 
-![Figure 8: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../images-dxp/lcs-new-clustered-environment.png)
+![Figure 6: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../images-dxp/lcs-new-clustered-environment.png)
 
 Next, you'll learn to use the environment view.
 
@@ -284,7 +267,7 @@ The UI is segmented into three tabs:
    delete the environment by clicking *Delete Environment*, next to the Save 
    button. 
 
-![Figure 9: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
+![Figure 7: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
 
 Regardless of the tab you're in, the left side of the screen displays a list of 
 the environment's servers. To view a server's settings, click the server's gear 
@@ -316,7 +299,8 @@ the selected time period up or down, respectively, by one period. For example,
 if you select *One Hour* in the *Period* field, then pressing the right arrow 
 next to *Ending At* moves the selected time period up by one hour. Note that at 
 the beginning of the current time period, it can take up to 15 minutes for data 
-to become available. 
+to become available. Also note that data is available for three months from the 
+time LCS collected it. 
 
 By default, load times and page views for all pages are plotted against time in 
 separate graphs. Below these graphs, a table displays summary statistics of 
@@ -331,7 +315,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 10: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
+![Figure 8: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -345,7 +329,7 @@ portlets in your server. The Cache category lists Liferay Single VM metrics and
 Hibernate metrics. The following screenshot shows the statistics in the Portlets 
 category.
 
-![Figure 11: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images-dxp/lcs-server-metrics-application-portlets.png)
+![Figure 9: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images-dxp/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -354,7 +338,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the PS Survivor Space, PS Old Gen, PS Eden Space, Code Cache, and PS 
 Perm Gen.
 
-![Figure 12: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images-dxp/lcs-server-metrics-jvm.png)
+![Figure 10: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images-dxp/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
 additional information about how your server is running. For example, a 
@@ -362,7 +346,11 @@ horizontal bar graph shows the number of current threads running on your server.
 Similarly, horizontal bar graphs are used to represent the JDBC connection 
 pools. 
 
-![Figure 13: The LCS server metrics show current threads and JDBC connection pools.](../../images-dxp/lcs-metrics-server.png)
+![Figure 11: The LCS server metrics show current threads and JDBC connection pools.](../../images-dxp/lcs-metrics-server.png)
+
+Note that in Snapshot Metrics, the application and garbage collector metrics are 
+based on data collected by LCS from server registration to the present. Memory 
+and server metrics, however, show only the current state. 
 
 To view your server's fix packs, click the Fix Packs tab near the top of the 
 page. The fix packs here are shown in separate tables for those available for 
@@ -370,7 +358,7 @@ installation, and those already installed. The Available fix packs table
 functions exactly like the Fix Packs table in environment view for downloading 
 and installing fix packs. 
 
-![Figure 14: The Fix Packs tab displays your server's fix packs and alerts.](../../images-dxp/lcs-server-fix-packs.png)
+![Figure 12: The Fix Packs tab displays your server's fix packs and alerts.](../../images-dxp/lcs-server-fix-packs.png)
 
 LCS also lets you view your portal's property values. To do so, click the 
 *Portal Properties* tab near the top of the page. Your portal's properties and 
@@ -397,15 +385,16 @@ top-right of the table. For example, by checking the *Show Default Values* and
 custom property values. To show only the custom values, check only the checkbox 
 for *Show Custom Values*. 
 
-![Figure 15: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
+![Figure 13: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
 
-To view general information about your @product@ installation, click the *Details* 
-tab near the top of the screen. There are three tabs under Details: *Software*, 
-*Java*, and *Hardware*. Each shows information, respectively, about your @product@ 
-installation, Java installation, and hardware. This information is useful to the 
-Liferay support team in the event that you need their assistance. 
+To view general information about your @product@ installation, click the 
+*Details* tab near the top of the screen. There are three tabs under Details: 
+*Software*, *Java*, and *Hardware*. Each shows information, respectively, about 
+your @product@ installation, Java installation, and hardware. This information 
+is useful to the Liferay support team in the event that you need their 
+assistance. 
 
-![Figure 16: Clicking the Details button shows information about your @product@ installation's software and hardware.](../../images-dxp/lcs-server-details.png)
+![Figure 14: Clicking the Details button shows information about your @product@ installation's software and hardware.](../../images-dxp/lcs-server-details.png)
 
 Lastly, click the *Server Settings* tab near the top of the screen to view and 
 edit your server's name, location, and description. You can also use the Server 
@@ -430,7 +419,7 @@ After marking one or more notifications as read, an *Undo* button appears. Click
 select *My Account* from your user menu in the Dockbar, and then select the 
 *Notification History* tab. 
 
-![Figure 17: LCS sends you web notifications that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images-dxp/lcs-user-web-notifications.png)
+![Figure 15: LCS sends you web notifications that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images-dxp/lcs-user-web-notifications.png)
 
 Next, you'll learn how to manage your LCS account. 
 
@@ -445,7 +434,7 @@ notifications are configured by adding *rules*. The rules define what events
 trigger a notification. There are no notification rules by default. Click the 
 *Add Rule* button to define one. 
 
-![Figure 18: You can add rules to determine the events that trigger notifications.](../../images-dxp/lcs-add-notification-rule.png)
+![Figure 16: You can add rules to determine the events that trigger notifications.](../../images-dxp/lcs-add-notification-rule.png)
 
 First specify the project, environment, and server for the notification. Note 
 that you have the option of selecting all environments and servers in a
@@ -466,7 +455,7 @@ near the top of the UI. This tab lets you change your account's language, time
 zone, and default LCS project. Your default LCS project is the one shown each 
 time you log in to LCS. 
 
-![Figure 19: You can change your LCS account's language, time zone, and default LCS project.](../../images-dxp/lcs-account-preferences.png)
+![Figure 17: You can change your LCS account's language, time zone, and default LCS project.](../../images-dxp/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. Next, you'll learn how to 
 use LCS to work with your @product@ subscriptions. 
@@ -474,15 +463,25 @@ use LCS to work with your @product@ subscriptions.
 ## Managing @product@ Subscriptions [](id=managing-liferay-dxp-subscriptions)
 
 LCS also lets you use and view your @product@ subscriptions. By assigning an 
-environment to a subscription type and then registering a @product@ server in that 
-environment, your server consumes one activation key from that subscription 
+environment to a subscription type and then registering a @product@ server in 
+that environment, your server consumes one activation key from that subscription 
 type. You can also view your project's available subscriptions and see how 
-they're being used. You can access these features from the *Subscriptions* tab 
-on the upper-left of the LCS site. 
+they're being used. 
 
-![Figure 20: The *Subscriptions* tab in LCS lets you view and manage your @product@ subscriptions.](../../images-dxp/lcs-subscriptions.png)
+LCS also lets you register @product@ servers via *elastic subscriptions*. 
+Elastic subscriptions let you register an unlimited number of @product@ servers, 
+unlike other subscriptions that limit you to a certain number of servers. This 
+is invaluable in auto-scaling environments, where servers are automatically 
+created and destroyed in response to server load. 
 
-There are four tables in the Subscriptions tab: 
+You can access these features from the *Subscriptions* tab on the upper-left of 
+the LCS site. The *Subscriptions* tab contains two tabs: *Details* and *Elastic 
+Subscriptions*. When you select the *Subscriptions* tab, the *Details* tab is 
+selected by default. 
+
+![Figure 18: The *Subscriptions* tab in LCS lets you view and manage your @product@ subscriptions.](../../images-dxp/lcs-subscriptions.png)
+
+There are four tables in the *Details* tab: 
 
 1. **Assign Subscription Type:** lets you assign a subscription type to an 
    environment. To do so, click the environment's *No Subscriptions* link and 
@@ -497,6 +496,13 @@ There are four tables in the Subscriptions tab:
     change an environment's subscription type**. 
 
     $$$
+
+    When assigning a subscription type, you can also designate the environment 
+    as elastic. Doing so means that all servers that register in the environment 
+    will use elastic subscriptions. To do this, check the *Elastic* checkbox, 
+    accept the terms and conditions, and click *Save*. 
+
+    ![Figure 19: You can also designate environments as elastic.](../../images-dxp/lcs-elastic-assign.png)
 
     Once you've assigned a subscription type to an environment, you must use an 
     *environment token* to activate a @product@ instance in the environment. For 
@@ -536,18 +542,49 @@ server normally, its activation key is immediately freed for reuse. If the
 server crashes or its shutdown is forced (e.g., kill), its activation key is 
 freed for reuse within five minutes. 
 
+Next, you'll learn how to use elastic subscriptions with LCS. 
+
+### Elastic Subscriptions [](id=elastic-subscriptions)
+
+Elastic subscriptions let you register an unlimited number of @product@ servers. 
+This is crucial for auto-scaling environments in which servers are created and 
+destroyed automatically. You can view data on your elastic servers from the 
+*Subscriptions* tab's *Elastic Subscriptions* tab. 
+
++$$$
+
+**Note:** To register elastic servers in an environment, you must first set that 
+environment as *Elastic* and accept the elastic deployment terms and conditions. 
+You can do this from the *Details* tab's *Assign Subscription Type* table, as 
+described in the previous section. 
+
+$$$
+
+![Figure 20: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images-dxp/lcs-elastic-subscriptions.png)
+
+The *Elastic Subscriptions* tab displays the number of online elastic servers
+and the uptime details  for each. A graph shows the number of online elastic
+servers per day. The  *Uptime details* table lists each elastic server's start
+time, end time, and  duration. The total duration for all elastic servers is
+below the table's  *Duration* column. To download a report of the table's data,
+click the *Download  Report* button. Also, you can use the *Environment* and
+*Month* selectors above  the graph to select the environment and month to show
+data from, respectively.  The data in both the graph and the table reflect your
+selections here. 
+
 The next section shows you how to use environment tokens to activate @product@ 
 instances with LCS. 
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
 When a subscription type is assigned to an environment, that environment's token 
-file lets @product@ instances connect to LCS and consume an activation key from that 
-subscription. LCS Administrators and Environment Managers can generate and 
+file lets @product@ instances connect to LCS and consume an activation key from 
+that subscription. LCS Administrators and Environment Managers can generate and 
 distribute this environment token file. It contains all the information the LCS 
-client app needs to connect and activate the @product@ instance with the environment. 
-This means that you don't need to enter this information manually whenever you 
-want to set up a @product@ instance: simply use the environment token file. 
+client app needs to connect and activate the @product@ instance with the 
+environment. This means that you don't need to enter this information manually 
+whenever you want to set up a @product@ instance: simply use the environment 
+token file. 
 
 There are a few things to keep in mind when using environment tokens:
 
@@ -556,12 +593,12 @@ There are a few things to keep in mind when using environment tokens:
 - Use caution when distributing the token file, as anyone can use it to connect 
   to your environment and consume an activation key in your subscription. 
 
-- Be careful when regenerating a token file from LCS. When this is done, @product@ 
-  instances using the old file are disconnected from LCS and can't reconnect 
-  until restarting with the new file. 
+- Be careful when regenerating a token file from LCS. When this is done, 
+  @product@ instances using the old file are disconnected from LCS and can't 
+  reconnect until restarting with the new file. 
 
-- Minimal information (server name, location, etc...) is used to activate a @product@ 
-  instance with LCS. You can change this information from 
+- Minimal information (server name, location, etc...) is used to activate a 
+  @product@ instance with LCS. You can change this information from 
   [the server view in LCS](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-the-server-view) 
   at any time. 
 
@@ -583,10 +620,10 @@ situation, having clients that configure themselves is crucial.
 @product@ instance in a system image, that instance can't require human 
 interaction during setup. When creating such an image, you must change any 
 portal property settings that can prevent automatic setup. For example, 
-@product@'s setup wizard requires human interaction to set up a @product@ instance. 
-You must therefore set the `setup.wizard.enabled` property to `false` if you 
-want your auto-scaling environment to create new server nodes from this @product@ 
-instance. 
+@product@'s setup wizard requires human interaction to set up a @product@ 
+instance. You must therefore set the `setup.wizard.enabled` property to `false` 
+if you want your auto-scaling environment to create new server nodes from this 
+@product@ instance. 
 
 $$$
 
@@ -596,13 +633,13 @@ tab. This tab contains the following sections:
 
 - **Requirements:** the basic requirements for using an environment token. 
 
-- **Activation:** tells you that registering a @product@ instance in the environment 
-  will consume an activation key from the environment's subscription type. If 
-  the environment has no subscription type, an *Assign Subscription Type* link 
-  appears instead. 
+- **Activation:** tells you that registering a @product@ instance in the 
+  environment will consume an activation key from the environment's subscription 
+  type. If the environment has no subscription type, an *Assign Subscription 
+  Type* link appears instead. 
 
-- **Services:** lets you select the LCS services to use with all @product@ servers 
-  that connect to this environment. When you generate or regenerate the 
+- **Services:** lets you select the LCS services to use with all @product@ 
+  servers that connect to this environment. When you generate or regenerate the 
   environment token file, your selections here are embedded in it. Portal 
   analytics, fix pack management, and portal property analysis are selected by 
   default. Note that although 
@@ -611,7 +648,7 @@ tab. This tab contains the following sections:
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
 
-![Figure 21: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
+![Figure 19: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
 
 Whether you must generate or regenerate a token depends on the actions you took 
 in the Services section, and whether there's an existing token in the 
@@ -632,9 +669,9 @@ The actions corresponding with the numbers in this table are described here:
 
 2. If the environment already has a token, and you made changes to your 
    selections of LCS services, then you must regenerate the token by clicking 
-   the *Regenerate Token* button. Note that if you regenerate a token, all @product@ 
-   instances in the environment are disconnected from LCS and won't be able to 
-   reconnect until receiving the new token. 
+   the *Regenerate Token* button. Note that if you regenerate a token, all 
+   @product@ instances in the environment are disconnected from LCS and won't be 
+   able to reconnect until receiving the new token. 
 
 3. If the environment already has a token, and you made no changes to your 
    selections of LCS services, then you can simply download and use the existing 
@@ -644,34 +681,26 @@ To download an environment's token, click the *Download Token* button. Once you
 download the token, follow these steps to use it to connect and activate a 
 @product@ instance with LCS: 
 
-1. Ensure that you've deployed the LCS client app, and have configured it 
-   properly if you connect from behind a proxy. For instructions on configuring 
-   the client app to connect through a proxy, 
-   [click here](/discover/deployment/-/knowledge_base/7-0/preconfiguring-the-lcs-client-to-connect-through-a-proxy). 
-   You can download the LCS client app 
-   [here in the Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947). 
-   For instructions on using Marketplace to download and deploy apps, 
-   [click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
+1. Ensure that you've addressed 
+   [the LCS preconfiguration steps](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration). 
 
 2. Shut down your @product@ instance if it's running. 
 
 3. Place the token file in your instance's `[Liferay_Home]/data` folder, and 
    then start the instance. 
 
-On startup, the LCS client app automatically connects your @product@ instance to LCS. 
-Upon connection, your @product@ instance activates by consuming an activation key from 
-the environment's subscription type. You should see this in your LCS project's 
-Subscriptions tab. 
+On startup, the LCS client app automatically connects your @product@ instance to 
+LCS. Upon connection, your @product@ instance activates by consuming an 
+activation key from the environment's subscription type. You should see this in 
+your LCS project's Subscriptions tab. 
 
 Awesome! Now you know how to use environment tokens to connect and activate your 
 @product@ instances with LCS. 
 
 As you've now seen, LCS is a powerful tool that assists you in the management of 
-your @product@ servers. In addition to activating your @product@ servers, LCS lets 
-you apply fix packs with just a single click and a server restart--a process 
-that even works across a cluster. You also get a one stop shop for monitoring 
-the performance of your @product@ servers. Metrics like JVM performance, @product@ 
-page and portlet load times, and number of current threads give you an inside 
-look at how your server is running. What's more is that you can do all this 
-collaboratively by inviting others to your project and giving them specific 
-roles in LCS. 
+your @product@ servers. In addition to activating your @product@ servers, LCS 
+lets you apply fix packs with just a single click and a server restart--a 
+process that even works across a cluster. You also get a one stop shop for 
+monitoring the performance of your @product@ servers. Metrics like JVM 
+performance, @product@ page and portlet load times, and number of current 
+threads give you an inside look at how your server is running. 

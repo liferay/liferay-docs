@@ -21,8 +21,9 @@ Internet. In these cases, you have two options:
    Then allow @product@ to auto deploy it by dropping the downloaded `.lpkg` file
    into the @product@ deploy folder.
 
-2. From an Internet-enabled computer, download the Marketplace plugin. Then use
-   the Liferay App Manager to deploy the plugin.
+2. Alternately, once you have the downloaded `.lpkg` file, use the Liferay App
+   Manager to deploy the plugin. This option is especially helpful if the
+   application server does not support hot deploy. See [Installing Apps Manually](/discover/portal/-/knowledge_base/7-0/installing-apps-manually).
 
 ## Application Server Does Not Support Hot Deploy [](id=application-server-does-not-support-hot-deploy)
 

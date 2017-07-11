@@ -68,9 +68,10 @@ parameters, but it's a best practice. If you happen to forget one, or decide not
 to define any of them, they'll just be generated as usual.
 
 The implicit parameters with the name `mvcRenderCommandName` are very
-important. If you're using an `MVCPortlet` with `MVCRenderCommand` classes, that
-parameter comes from the `mvc.command.name` property in the `@Component` of your
-`MVCRenderCommand` implementation. Basically, this determines what will be
+important. If you're
+[using an `MVCPortlet` with `MVCRenderCommand` classes](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command),
+that parameter comes from the `mvc.command.name` property in the `@Component` of
+your `MVCRenderCommand` implementation. Basically, this determines what will be
 rendered (for example, `view.jsp`).
 
     @Component(
@@ -85,8 +86,10 @@ rendered (for example, `view.jsp`).
 ## Implementing a Friendly URL Mapper [](id=implementing-a-friendly-url-mapper)
 
 Once you have your URLs mapped in a `routes.xml` file, you need to provide an
-implementation of the `FriendlyURLMapper` service. Just create a component that
-specifies a `FriendlyURLMapper` service, with two properties:
+implementation of the
+[`FriendlyURLMapper` service](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/FriendlyURLMapper.html).
+Just create a component that specifies a `FriendlyURLMapper` service, with two
+properties:
 
 1. One that sets the path to your `routes.xml` file in the property
 `com.liferay.portlet.friendly-url-routes` property.
@@ -101,12 +104,13 @@ specifies a `FriendlyURLMapper` service, with two properties:
             service = FriendlyURLMapper.class
         )
 
-After that, implement the `FriendlyURLMapper` service. For your convenience,
-`DefaultFriendlyURLMapper` provides a default implementation. If you extend
-`DefaultFriendlyURLMapper` you only need to override one method,
-`getMapping()`. In this method you just need to return a String that defines
-the first part of your Friendly URLs. It's smart to name it after your
-application. Here's what it looks like for Liferay's Blogs application:
+After that, implement the `FriendlyURLMapper` service. For your convenience, the
+[`DefaultFriendlyURLMapper` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/DefaultFriendlyURLMapper.html)
+provides a default implementation. If you extend `DefaultFriendlyURLMapper` you
+only need to override one method, `getMapping()`. In this method you just need
+to return a String that defines the first part of your Friendly URLs. It's smart
+to name it after your application. Here's what it looks like for Liferay's Blogs
+application:
 
     public class BlogsFriendlyURLMapper extends DefaultFriendlyURLMapper {
 

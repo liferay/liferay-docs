@@ -128,7 +128,7 @@ Manager. Navigate to Control Panel &rarr; Apps &rarr; App Manager.
 
 Once you're in the App Manager, search for *elasticsearch*. Find the Liferay
 Portal Search Elasticsearch module and click the edit
-((![Edit](../../../images-dxp/icon-edit.png))) button. Choose the Deactivate
+((![Edit](../../images/icon-edit.png))) button. Choose the Deactivate
 option. This leaves the bundle installed, but stops it in the OSGi runtime.
 
 Alternatively, use the [Felix Gogo shell](/developer/tutorials/-/knowledge_base/7-0/using-the-felix-gogo-shell) to

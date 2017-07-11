@@ -80,7 +80,7 @@ configured scope. By default, the available asset types include the following:
 - Marketing Banner
 - Online Training
 - Sales Presentation
-- Documents Folder 
+- Documents Folder
 - Dynamic Data Lists Record
 - Message Boards Message
 - Basic Web Content
@@ -96,7 +96,7 @@ items to display, click *Save*. Any selected assets are added to the list of
 assets that are displayed by the application. Once you have your content
 selected, you can configure the display types to configure how the content
 appears. We'll discuss the display settings in more detail after we finish
-discussing how to select assets for display. 
+discussing how to select assets for display.
 
 While manual asset selection allows you to select assets of various types from
 different scopes, it can be time-consuming to periodically update the assets
@@ -150,6 +150,13 @@ vocabulary. With this organizational setup, adding an Asset Publisher and
 specifying *Location* as the Asset Publisher's custom user attribute would only
 display content that had been categorized as *Moon*. Pretty cool, right?
 
+In addition, you can use these advanced filters:
+
+-   **Show only assets with *Welcome* as its display page** displays only assets
+    specifically configured for the *Welcome* page.
+-   **Include tags specified in the URL?** lets you specify tags in the URL for
+    the Asset Publisher to display.
+
 The *Ordering and Grouping* section of the Asset Publisher lets you
 precisely control how content is ordered and grouped when displayed. You can
 order the assets displayed by Asset Publisher in ascending or descending order
@@ -188,6 +195,13 @@ Note that grouping and ordering rules are only one mechanism to control how your
 content will be displayed. You can refine the display through many other display
 settings which you'll examine next.
 
+**Note:** The following actions will have immediate effects in your Asset Publisher:
+- Change the value of the *Asset Selection* option.
+- Change the value of the *Scope* option.
+- Select, add, sort or delete asset entries (only when selecting assets manually).
+
+Other changes in the rest of the options will come into effect after clicking *Save*.
+
 ## Configuring Display Settings [](id=configuring-display-settings)
 
 Open the *Display Settings* subtab of the Setup tab of the Asset Publisher's
@@ -220,9 +234,9 @@ default site:
     There's also the *Rich Summary* and *Map* display templates that belong to
     the global scope. The Rich Summary template provides a summary view of each
     asset along with a *Read More* link to the article's full content. The Map
-    template displays [geolocalized assets](/discover/portal/-/knowledge_base/7-0/geolocating-assets) 
+    template displays [geolocalized assets](/discover/portal/-/knowledge_base/7-0/geolocating-assets)
     in either a Google Map or an Open Street Map provider. The map provider can
-    be configured in Instance Settings, and Site Settings in the Advanced 
+    be configured in Instance Settings, and Site Settings in the Advanced
     section.
 
 **Abstract Length**: This selector lets you select the number of characters to
@@ -273,7 +287,7 @@ published assets.
 
 **Show Available Locales:** Since content can be localized, you can have
 different versions of it based on locale. Enabling this option shows the locales
-available, enabling users to view the content in their language of choice. 
+available, enabling users to view the content in their language of choice.
 
 **Set as the Default Asset Publisher for This Page**: The Asset Publisher app is
 an instanceable app; multiple Asset Publishers can be added to a page and each
@@ -321,7 +335,7 @@ social features to the view full of the asset in the Asset Publisher.
 through the *Page Flags*, *Page Comments*, and *Page Ratings* applications. Just
 add the applications in the appropriate location near the asset you'd like to
 have feedback for.
-     
+
 $$$
 
 When enabling social bookmarks, you're given sub-options to edit the display

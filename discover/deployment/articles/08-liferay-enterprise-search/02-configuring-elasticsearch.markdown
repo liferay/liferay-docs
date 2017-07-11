@@ -12,25 +12,48 @@ cluster. This guide walks you through that process.
 If you'd rather use Solr, it's also supported. See [here](/discover/deployment/-/knowledge_base/7-0/using-solr) for information
 on installing and configuring Solr.
 
-If you just want to get up and running quickly with Elasticsearch, refer to the
-[Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
-It assumes that you only want to know what's necessary for the installation and
-configuration of Elasticsearch in a single server environment, and it doesn't
-include all the clustering and tuning instructions found here. In this article
-you'll learn how to configure Elasticsearch for use in @product@ production
-environments. 
+To get up and running quickly with Elasticsearch as a remote server, refer to
+the [Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
+In that article you'll find the basic instructions for the installation and
+configuration of Elasticsearch in a single server environment. This article
+includes more details and information on clustering and tuning Elasticsearch. In
+this article you'll learn to configure your existing Elasticsearch installation
+for use in @product@ production environments. 
 
 If you've come here looking for information on search engines in general, or the
-low level search infrastructure of @product@, refer to the developer tutorial
-[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
+low level search infrastructure of @product@, refer instead to the developer
+tutorial [Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
 
 These terms will be useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
-   installation (for example, `elasticsearch-2.2.0`). 
+   installation (for example, `elasticsearch-2.4.0`). 
 
 -  *Liferay Home* refers to the root folder of your @product@ installation. It
    contains the `osgi`, `deploy`, `data`, and `license` folders, among others.
+
++$$$
+
+**Upgrading to Elasticsearch 2.4.x:** When @product-ver@ was first released,
+Elasticsearch 2.2.x was supported. However, Elasticsearch 2.2.x's [end of
+life](https://www.elastic.co/support/eol) is August 2, 2017. Because of that,
+@product@ will begin supporting 2.4.x starting with Liferay DE 7.0 Fix Pack 22.
+After that time, Elasticsearch 2.4.x will become the supported version for
+@product-ver@. 
+
+If you are currently running Elasticsearch 2.2.x with @product-ver@, follow the
+[Elasticsearch documentation on upgrading to 2.4](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-upgrade.html).
+The good news is, you can do a [rolling upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/rolling-upgrades.html),
+meaning you'll be able to upgrade each node on its own, with no down time for end users.
+
+From the @product@ side, all you need to do is install Liferay DE 7.0 Fix Pack
+22 and *be sure to do a full reindex of your data*, just to be on the safe side.
+If you're running Liferay Portal CE 7.0, make sure you're on the latest GA
+release. Elasticsearch 2.4.x can be installed and run successfully with a
+Liferay Portal CE 7.0 GA3 bundle, with no code changes necessary to the portal's
+Elasticsearch adapter.
+
+$$$
 
 ## Embedded vs. Remote Operation Mode [](id=embedded-vs-remote-operation-mode)
 
@@ -46,55 +69,12 @@ drawbacks:
 You wouldn't run an embedded database like HSQL in production, and you shouldn't
 run Elasticsearch in embedded mode in production either. Instead, you want your
 @product@ installation to run alongside Elasticsearch. This is called *remote
-operation mode*, as a standalone server or cluster of server nodes. The first
-step is to install Elasticsearch.
-
-## Installing Elasticsearch [](id=installing-elasticsearch)
-
-Install Elasticsearch, and then you can begin configuring it to use with
-@product@. 
-
-1.  Follow the instructions
-    [here](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch#step-one-find-the-right-version-of-elasticsearch)
-    to find the version of Elasticsearch that matches your installation and
-    download it. 
-
-2.  Extract the contents of the compressed file you downloaded to your Liferay
-    Home folder. 
-
-3.  Before continuing, make sure you have set the [`JAVA_HOME` environment
-    variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
-
-4.  If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
-    using the same version. You can specify this in `[Elasticsearch
-    Home]/bin/elasticsearch.in.sh`:
-
-        JAVA_HOME=/path/to/java
-
-5.  Install the following required Elasticsearch plugins:
-
-    -  `analysis-icu`
-    -  `analysis-kuromoji`
-    -  `analysis-smartcn`
-    -  `analysis-stempel`
-
-    To install these plugins, navigate to Elasticsearch Home and enter
-    
-        ./bin/plugin install [plugin-name]
-
-    Replace *[plugin-name]* with the Elasticsearch plugin's name.
-
-6.  Make the `[Elasticsearch_Home]/bin/elasticsearch.sh` file executable (if
-    you're on Linux).
-
-For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/_installation.html)
-
-Once you have Elasticsearch installed, you need to configure it for @product@.
+operation mode*, as a standalone server or cluster of server nodes.
 
 ## Configuring Elasticsearch [](id=configuring-elasticsearch)
 
 For detailed Elasticsearch configuration information, refer to the
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/setup-configuration.html#settings).
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-configuration.html#settings).
 
 The name of your Elasticsearch cluster is important. When you're running
 Elasticsearch in remote mode, the cluster name is used by @product@ to recognize
@@ -143,7 +123,7 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-Now that you have Elasticsearch itself installed and running, and [@product@ installed](/discover/deployment/-/knowledge_base/6-2/liferay-installation-overview)
+When you have Elasticsearch itself installed and running, and [@product@ installed](/discover/deployment/-/knowledge_base/6-2/liferay-installation-overview)
 and running (do that if you haven't already) you need to introduce @product@ and
 Elasticsearch to each other. Fortunately, Liferay provides an adapter that helps
 it find and integrate your Elasticsearch cluster.
@@ -158,9 +138,9 @@ Elasticsearch is running.
 
 There are two ways to configure the adapter: 
 
-1. Use the System Settings application in the Control Panel. 
+1. [Use the System Settings application in the Control Panel.](#configuring-the-adapter-in-the-control-panel) 
 
-2. Manually create an OSGi configuration file. 
+2. [Manually create an OSGi configuration file.](#configuring-the-adapter-with-an-osgi-config-file) 
 
 It's convenient to configure the Elasticsearch adapter from System Settings, but
 this is often only possible during development and testing. If you're not
@@ -169,6 +149,8 @@ familiar with System Settings, you can read about it
 a configuration file so you can use the same configuration on another @product@
 system, you can still use System Settings. Just make the configuration edits you
 need, then export the `.config` file with your configuration.
+
+### Configuring the Adapter in the Control Panel [](id=configuring-the-adapter-in-the-control-panel)
 
 Here are the steps to configure the Elasticsearch adapter from the System
 Settings application:
@@ -193,6 +175,8 @@ Settings application:
    trigger a re-index. Navigate to *Control Panel* &rarr; *Server
    Administration*, find the *Index Actions* section, and click *Execute* next
    to *Reindex all search indexes.* 
+
+### Configuring the Adapter with an OSGi `.config` File [](id=configuring-the-adapter-with-an-osgi-config-file)
 
 When preparing a system for production deployment, you want to set up a
 repeatable deployment process. Therefore, it's best to use the OSGi
@@ -221,11 +205,11 @@ more configuration options available that help you tune your system for optimal
 performance. For a detailed accounting of these, refer to the reference article
 on [Elasticsearch Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings).
 
-What follows here are some known-good configurations for clustering
+What follows here are some known good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
 [settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) as
-well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/setup-configuration.html#settings) 
+well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-configuration.html#settings) 
 and go through that process once you have a working configuration. 
 
 ## Configuring a Remote Elasticsearch Host [](id=configuring-a-remote-elasticsearch-host)
@@ -253,7 +237,7 @@ On the Elasticsearch side, set the `network.host` property in your
 `elaticsearch.yml` file. This property simultaneously sets both the *bind host*
 (the host Elasticsearch listens on for requests) and the *publish host* (the
 host name or IP address Elasticsearch uses to communicate with other nodes). See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-network.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-network.html)
 for more information.
 
 ## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
@@ -273,15 +257,15 @@ shards is `1`:
 +$$$
 
 **Note:** Elasticsearch uses the [Zen Discovery
-Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-discovery-zen.html)
+Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-discovery-zen.html)
 by default, which provides unicast discovery. Additionally, nodes in the
 cluster communicate using the [Transport
-Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-transport.html),
+Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-transport.html),
 through TCP. See the Elasticsearch documentation for the available properties
-(to be set in the elasticsearch.yml file), and the @product@ Elasticsearch
-Adapter’s [reference
+(to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
+Adapter's [reference
 article](https://dev.liferay.com/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
-for the adapter’s available settings.
+for the adapter's available settings.
 
 At a minimum, provide the list of hosts to act as gossip routers during unicast
 discovery in the `elasticsearch.yml`:
@@ -329,13 +313,13 @@ The rest of the settings for the client are available as default configuration
 options in the Liferay Elasticsearch adapter. See the [Elasticsearch
 Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
 reference article for more information. See the [Elasticsearch
-documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
+documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.4/transport-client.html)
 for a description of all the client settings and for an example.
 
 `additionalIndexConfigurations` is used to define extra settings (in JSON or
 YAML format) that are applied to the @product@ index when it's created. For
 example, you can create custom analyzers and filters using this setting. For
-a complete list of available settings, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/index-modules.html).
+a complete list of available settings, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index-modules.html).
 
 Here's an example that shows how to configure [analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro) that can be applied to a
 dynamic template (see below).
@@ -363,16 +347,16 @@ dynamic template (see below).
 `additionalTypeMappings` is used to define extra field mappings for the
 `LiferayDocumentType` type definition, which are applied when the index is
 created. Add these field mappings in using JSON syntax. For more information see
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/mapping.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/mapping.html)
 and
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/indices-put-mapping.html).
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/indices-put-mapping.html).
 Use `additionalTypeMappings` for new field mappings, but do not try to override
 existing `properties` mappings. If any of the `properties` mappings set here
 overlap with existing mappings, index creation will fail. Use
 `overrideTypeMappings` to replace the default `properties` mappings.
 
 Here's an example of a [dynamic
-template](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/dynamic-templates.html)
+template](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dynamic-templates.html)
 that uses the analysis configuration above to analyze all string fields that end
 with `_ja`.
 
@@ -400,7 +384,7 @@ with `_ja`.
 The above code adds a new `template_ja` dynamic template. This overrides the
 existing dynamic template with the same name. As with dynamic templates, you can
 add sub-field mappings to @product@'s type mapping. These are referred to as
-[properties](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/properties.html)
+[properties](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/properties.html)
 in Elasticsearch.
 
     { 

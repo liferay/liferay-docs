@@ -59,3 +59,11 @@ properties can be used with Service Builder:
 - `mergeReadOnlyPrefixes`: 
 - `mergeResourceActionsConfigs`: 
 -->
+
+## Related Topics  [](id=related-topics)
+
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+
+[Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
+
+[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)

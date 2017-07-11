@@ -10,11 +10,13 @@ learn how to
 - Install Liferay Maven artifacts.
 - Generate Liferay projects using Maven archetypes.
 - Create a Module JAR using Maven.
-- Deploy a Maven project to @product@.
+- Deploy a module built with Maven to @product@.
 - Create a remote repository for Maven projects.
 - Deploy a Maven project to a remote repository.
 - Use Service Builder in a Maven project.
 - Compile Sass files in a Maven project.
+- Build a Liferay theme in a Maven project.
+- Leverage the Maven Workspace.
 
-Because Liferay is tool agnostic, Maven is fully supported for Liferay
+Because @product@ is tool agnostic, Maven is fully supported for @product@
 development. Read on to learn more!

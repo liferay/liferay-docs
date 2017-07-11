@@ -83,10 +83,10 @@ and modified using a `portal-ext.properties` file. Those settings must now be
 made via System Settings.
 
 If you need to change any of these options, navigate to *Control Panel* &rarr;
-*Configuration* &rarr; *System Settings*. Go to the Foundation section and
+*Configuration* &rarr; *System Settings*. Go to the *Foundation* section and
 find the entries with LDAP in the title.
 
-- In the LDAP Auth entry, you can set the authentication method and the password
+- On the *LDAP Auth* page, you can set the authentication method and the password
 encryption algorithm. The Bind authentication method is preferred by
 most vendors so you don't have to worry about encryption strategies. Password
 compare does exactly what it sounds like: it reads the user's password out of
@@ -94,24 +94,37 @@ LDAP, decrypts it and compares it with the user's password in @product@, syncing
 the two. If you use password compare, you can also choose the encryption
 algorithm to use for the comparison.
 
-- Use the LDAP Import entry in System Settings to configure import
+- On the *LDAP Import* page, you can configure import
 settings from LDAP. One example is the import methods. If you set this to User,
 @product@ imports all users from the specified portion of the LDAP tree. If you
 set this to Group, @product@ searches all the groups and imports the users in each
 group. If you have users who do not belong to any groups, they are not imported.
+ 
+- Use the *System LDAP Configuration* entry to manage error properties
+like *Error password age keywords* which lets you set a list of phrases from
+error messages which can possibly be returned by the LDAP server. When a user
+binds to LDAP, the server returns *controls* with its response of success or
+failure. These controls contain a message describing the error or the
+information that is returned with the response. Though the controls are the same
+across LDAP servers, the messages can be different. The properties described
+here contain snippets of words from those messages and work with Red Hat's
+Fedora Directory Server. If you are not using that server, the word snippets may
+not work with your LDAP server. If they don't, you can replace the values of
+these properties with phrases from your server's error messages. This enables
+@product@ to recognize them.
 
-- Error properties like *Error password age keywords* in the System LDAP
-Configuration entry of System Settings let you set a list of phrases from error
-messages which can possibly be returned by the LDAP server. When a user binds to
-LDAP, the server returns *controls* with its response of success or failure.
-These controls contain a message describing the error or the information that is
-returned with the response. Though the controls are the same across LDAP
-servers, the messages can be different. The properties described here contain
-snippets of words from those messages and work with Red Hat's Fedora
-Directory Server. If you are not using that server, the word snippets may not
-work with your LDAP server. If they don't, you can replace the values of these
-properties with phrases from your server's error messages. This enables
-@product@ to recognize them. 
++$$$ 
+
+**Note**: When you make a change in System Settings, it takes effect for the
+virtual instance you're in. If after changing a setting you create a new
+virtual instance, that virtual instance inherits the settings of the one it was
+created from as defaults. For example, say you have virtual instances named A,
+B, and C. From A, you modify *Error password history keywords*. This change
+appears only in A, not in B or C. Then from A, you create virtual instance D.
+The change to *Error password history keywords* appears in D (not B or C),
+since D defaults to A's settings because you created it from A. 
+
+$$$
 
 In summary, if there's a configuration you need to set up @product@ with LDAP, and
 you don't find it in Instance Settings, look in the LDAP System Settings
@@ -195,7 +208,7 @@ The *keytool* utility ships as part of the Java SDK.
 
 Once this is done, go back to the LDAP page in the Control Panel. Modify the
 LDAP URL in the Base DN field to the secure version by changing the protocol to
-`https` and the port to `636` like the following:
+`ldaps` and the port to `636` like this:
 
     ldaps://myLdapServerHostname:636
 
@@ -239,6 +252,13 @@ directory.
     +   *First Name* (e.g., *name* or *givenName*)
 
     +   *Last Name* (e.g., *sn*)
+
+**Note:** If you intend to create or import users with no email addresses, then
+you must set `users.email.address.required=false` in your
+`portal-ext.properties`. With this set, Liferay auto-generates an email address
+combining the user ID plus the suffix defined in the property
+`users.email.address.auto.suffix=`. Finally, make sure to set Liferay and LDAP
+authentication to something other than email address.
 
     If you want to import LDAP groups as @product@ user groups, make sure to
     define a mapping for the @product@ group field so that membership information
@@ -303,18 +323,19 @@ Once you set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-Now you know how to an LDAP server connection to @product@ and how to
++$$$
+
+**Note:** If a user changes a value like a password in @product@, that change is
+passed to the LDAP server, provided @product@ has enough schema access to make
+the change. 
+
+$$$
+
+Now you know how to connect an LDAP server to @product@ and how to
 configure user import behavior, export behavior, and other LDAP settings.
 
-<!--
 ## Related Topics [](id=related-topics)
 
-- @product@ Security Overview
-- Logging into @product@
-
-For a technical overview of @product@'s LDAP authentication module, please
-see the (not yet written) tutorial.
-
--->
-
+[@product@ Security Overview](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)
+[Logging into @product@](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay)
 

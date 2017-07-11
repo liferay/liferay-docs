@@ -1,29 +1,29 @@
-# Optimizing App Upgrade Processes [](id=optimizing-app-upgrade-processes)
+# Migrating Data Upgrade Processes to the New Framework for Modules [](id=optimizing-app-upgrade-processes)
 
-When you make changes to your app that affect its database, you can use an
-*upgrade process* to upgrade any existing data to the new database schema.
-@product-ver@ has a better upgrade process framework for modularized apps. While
-the old framework required several classes, the new framework lets you
-orchestrate the app's upgrade steps from a single class. Managing the steps from
-one class facilitates developing upgrade processes. The upgrade process
-framework you use depends on your app's development framework.
+When you make changes to your plugin that affect the database, you can use a
+*data upgrade process* to upgrade data to the new database schema. @product-ver@
+has a new data upgrade framework for modules. While the old framework required
+several classes, the new framework lets you orchestrate the upgrade steps from a
+single class. Managing the steps from one class facilitates developing upgrade
+processes. The data upgrade framework you use depends on your development
+framework.
 
--   If your [upgraded app](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
-    is a traditional WAR, then you don't need to do anything special;
-    existing upgrade processes
+-   If your
+    [upgraded plugin](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+    is a traditional WAR, you don't need to do anything special; existing
+    upgrade processes
     [adapted to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-    work as is. 
+    work as is. The new data upgrade framework is for modules only. 
 
--   If your app is modular, however, you must migrate any upgrade processes you
-    want to continue using in @product-ver@ to the new upgrade process
-    framework.
+-   If you converted your upgraded plugin to a module or you have an upgraded
+    module, you must migrate any upgrade processes you want to continue using to
+    the new data upgrade framework. 
 
-For a modular app, you can migrate any number of its old upgrade processes
-(starting with the most recent ones) to the new model. For example, if your app
-has versions 1.0, 1.1, 1.2, and 1.3, but you only expect customers on versions
-1.2 and newer to upgrade to your newly modularized app, you might migrate
-upgrade processes for versions 1.2 and 1.3 only. This tutorial shows you how to
-migrate to the new framework. 
+You can migrate any number of old upgrade processes (starting with the most
+recent ones) to the new framework. For example, if your module has versions 1.0,
+1.1, 1.2, and 1.3, but you only expect customers on versions 1.2 and newer to
+upgrade, you might migrate upgrade processes for versions 1.2 and 1.3 only. This
+tutorial shows you how to migrate to the new framework. 
 
 Before beginning, make sure you know how to create an upgrade process that uses 
 the new framework. 
@@ -32,9 +32,9 @@ to read the tutorial on creating these upgrade processes.
 
 +$$$
 
-**Note:** Your Liferay Portal 6 app may also include verify processes. Although 
-you can migrate your verify processes to @product-ver@ without any changes, it's 
-a best practice to instead perform any verification in your upgrade processes. 
+**Note:** Liferay Portal 6 plugins may also include verify processes. Although 
+you can migrate the verify processes to @product-ver@ without any changes, it's
+a best practice to perform verification in your upgrade processes instead. 
 
 $$$
 
@@ -106,7 +106,7 @@ the same, so you can leave them unchanged. The big change in @product-ver@'s new
 upgrade processes is that upgrade process classes no longer exist. Instead, you 
 must combine your upgrade process classes' functionality into a single 
 registrator class. Recall from 
-[the @product-ver@ upgrade process tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator) 
+[the data upgrade process tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator) 
 that registrators define an upgrade process that the upgrade process framework 
 executes. Each `registry.register` call in the registrator registers the 
 appropriate upgrade steps for each schema version. You must therefore transfer 
@@ -149,7 +149,7 @@ including complete steps on creating a registrator,
 
 ## Related Topics [](id=related-topics)
 
-[Creating an Upgrade Process for your App](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+[Creating Data Upgrade Processes for Modules](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
 
 [Upgrading Plugins to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
 

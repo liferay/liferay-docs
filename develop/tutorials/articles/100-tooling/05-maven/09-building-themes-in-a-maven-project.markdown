@@ -181,13 +181,6 @@ build a theme. You'll learn how to do this next.
     The properties above set the versions for the CSS and Theme Builder plugins
     and their dependencies.
 
-You've successfully configured your Maven project to build a theme! You can
-generate your theme by calling the following Maven command:
-
-    mvn verify
-
-The Theme Builder generates your WAR-style theme in your Maven project's
-configured output folder (e.g., `/target`).
-
-Excellent! You configured your project to use Theme Builder and can build
-Liferay themes using Maven!
+You've successfully configured your Maven project to build a Liferay theme! For
+info on running the Theme Builder in your Maven project, see the
+[Theme Builder](/develop/tutorials/-/knowledge_base/7-0/theme-builder) tutorial.

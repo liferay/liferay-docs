@@ -211,15 +211,11 @@ Next, you need to configure Tomcat for running @product@.
 
     And
 
-        <Connector port="8080" protocol="HTTP/1.1"
-                   connectionTimeout="20000"
-                   redirectPort="8443" />
+        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
 
     should become
 
-        <Connector port="8080" protocol="HTTP/1.1"
-                   connectionTimeout="20000"
-                   redirectPort="8443" URIEncoding="UTF-8" />
+        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
 
 6. If you're on Unix, Linux, or Mac OS, navigate to your `$TOMCAT_HOME/bin`
    folder and run the following command

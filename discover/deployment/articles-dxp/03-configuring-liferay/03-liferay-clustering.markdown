@@ -15,8 +15,8 @@ server node, there are several optimizations that need to be made. At a minimum,
 
 1.  All nodes should be pointing to the same @product@ database or database cluster. 
 
-2.  Documents and Media repositories should be accessible to all nodes of the
-    cluster. 
+2.  Documents and Media repositories must have the same configuration and be
+    accessible to all nodes of the cluster. 
 
 3.  Search should be on a separate search server that is optionally clustered. 
 
@@ -113,12 +113,13 @@ while presenting a unified interface to the user. By default, users can use the
 @product@ repository, which is already mounted. This repository is built into
 @product@ and can use one of [several different store implementations](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration) 
 as its back-end. In addition to this, users can mount many different kinds of
-third party repositories. If you have a separate repository you've mounted, all
-nodes of the cluster point to this repository. Your avenue for improving
-performance at this point is to cluster your third party repository, using the
-documentation for the repository you have chosen. If you don't have a third
-party repository, you can configure the @product@ repository to perform well in a
-clustered configuration. 
+third party repositories. In a cluster, Documents and Media must have the exact
+same configuration on all nodes. If you have a separate repository you've
+mounted, all nodes of the cluster must point to this repository. Your avenue for
+improving performance at this point is to cluster your third party repository,
+using the documentation for the repository you have chosen. If you don't have a
+third party repository, you can configure the @product@ repository to perform
+well in a clustered configuration. 
 
 The main thing to keep in mind is you need to make sure that every node of the
 cluster has the same access to the file store as every other node. For this
@@ -299,9 +300,9 @@ your nodes or if your nodes are in different geographical locations.
     your existing @product@ installation. In the dependencies' `marketplace`
     folder is a @product@ package called `Liferay Foundation.lpkg` Inside this
     .lpkg (which is just a compressed zip file) is a .jar file called
-    `com.liferay.portal.cluster.multiple-[version].jar`. Inside this .jar is a
-    file called `tcp.xml`. Extract this file to a location accessible to
-    @product@. You'll use this file on all your nodes. 
+    `com.liferay.portal.cluster.multiple-[version].jar`. In this .jar's `lib`
+    folder is a file called `tcp.xml`. Extract this file to a location
+    accessible to @product@. You'll use this file on all your nodes.
 
 4.  If you're vertically clustering (i.e., you have multiple @product@ servers
     running on the same physical or virtual system), you must change the port on

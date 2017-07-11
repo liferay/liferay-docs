@@ -38,7 +38,7 @@ Of course, all of this needs to be done on the system where CAS is running.
 Once your CAS server is up and running, configure @product@ to use it.
 CAS configuration can be applied either at the system scope or at the scope of
 a portal instance. To configure the CAS SSO module at the system scope,
-navigate to the Control Panel, click on *Configuration* &rarr; *System Settings, click
+navigate to the Control Panel, click on *Configuration* &rarr; *System Settings*, click
 on the *Foundation* category, and find the CAS Module entry. The values configured
 there provide the default values for all portal instances. Enable CAS
 authentication and then modify the URL properties to point to your CAS server.
@@ -79,6 +79,8 @@ Property Label | Property Key | Description | Type
 To override system defaults for a particular portal instance, navigate to the
 Control Panel, click on *Configuration* &rarr; *Instance Settings*, click on
 *Authentication* on the right and then on *CAS* at the top.
+
+![Figure 1 shows the CAS tab on the Instance Setting's Authentication section before configuration.](../../../images/cas-control-panel-ce.png)
 
 ## Summary [](id=summary)
 
