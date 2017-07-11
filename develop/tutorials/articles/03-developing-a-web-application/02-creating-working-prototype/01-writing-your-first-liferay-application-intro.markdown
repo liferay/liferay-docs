@@ -3,7 +3,7 @@
 It's easy to get started with your first Liferay application. You'll learn
 step-by-step how to create your project and deploy your application to
 @product@.  Before you know it, you'll have your application deployed alongside
-of the applications that come with Liferay.
+of the applications that come with @product@.
 
 Your first application is simple: you'll build a guestbook application that
 looks like this:
@@ -119,7 +119,7 @@ change this name by editing the `javax.portlet.display-name` property in your
 to change the display name of your application to `Guestbook`.
 
 This property string should be added to the `property` array defined in the
-`@Component` annotation of your `GuestbookMVCPortlet` class.
+`@Component` annotation of your `GuestbookPortlet` class.
 
 ![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
 
