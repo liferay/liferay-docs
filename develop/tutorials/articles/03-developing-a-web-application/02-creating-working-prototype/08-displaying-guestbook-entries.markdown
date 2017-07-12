@@ -104,7 +104,7 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
 		             String[] guestbookEntries = prefs.getValues("guestbook-entries",
 		                     new String[1]);
 		 
-		             if (guestbookEntries != null) {
+		             if (guestbookEntries[0] != null) {
 		                 List<Entry> entries = parseEntries(guestbookEntries);
 		 
 		                 renderRequest.setAttribute("entries", entries);
