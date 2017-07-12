@@ -1,4 +1,4 @@
-# Persistence
+# Generating Model, Service, and Persistence Layers
 
 The persistence layer saves and retrieves your model data. The service layer is
 like a buffer zone between your application and your persistence layer: having

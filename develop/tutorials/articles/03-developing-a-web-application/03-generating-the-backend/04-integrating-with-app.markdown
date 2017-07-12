@@ -1,4 +1,4 @@
-# Integrating Generated Code with the Rest of the App
+# Integrating the New Backend with the Rest of the App
 
 Now you have a little problem. You've started building a wall, and you built a 
 little bit on one end, then went to the other end and another section of the 
