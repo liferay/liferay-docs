@@ -2,9 +2,9 @@
 
 Now you'll create the Guestbook Admin portlet and add it to the 
 Control Menu. To create the Guestbook Admin portlet, you'll use the New Liferay 
-Module Project wizard. You used this wizard in an earlier Learning Path section when you created the `guestbook-mvc` module. The New Liferay Module Project wizard creates various required metadata properties for the component class such as the `display-category`, `display-name`, and `security-role-ref`. It also determines the names and locations of other required files such as the portlet class and the location of the portlet's JSP files. 
+Module Project wizard. You used this wizard in an earlier Learning Path section when you created the `guestbook-web` module. The New Liferay Module Project wizard creates various required metadata properties for the component class such as the `display-category`, `display-name`, and `security-role-ref`. It also determines the names and locations of other required files such as the portlet class and the location of the portlet's JSP files. 
 
-![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../../images/admin-app-start.png)
+![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../images/admin-app-start.png)
 
 Get started by creating the Guestbook Admin portlet next.
 
@@ -12,8 +12,7 @@ Get started by creating the Guestbook Admin portlet next.
 
 To create the Guestbook Admin portlet, follow these steps:
 
-1.  In Eclipse, right-click on the *guestbook-mvc* module and select *New*
-    &rarr; *Liferay Module Project*.
+1.  In Eclipse, right-click on the *com-liferay-docs-guestbook* workspace and select *New* &rarr; *Liferay Module Project*.
    
 2.  Enter *guestbook-admin* for the *Project name*.
 
@@ -33,7 +32,7 @@ file for you in the `com.liferay.docs.guestbook.portlet` package of the
 `GuestbookAdminPanelApp` and `GuestbookAdminPanelCategory` classes for 
 you in the `com.liferay.docs.guestbook.application.list` package. The 
 `GuestbookAdminPanelApp` class sets where in the Control Menu the Guestbook 
-Admin portlet is displayed and the `GuestbookAdminMVCPanelCategory` class is 
+Admin portlet is displayed and the `GuestbookAdminPanelCategory` class is 
 responsible for creating the Control Menu category that the portlet is 
 displayed in. For the purposes of this Learning Path, you'll add the Guestbook 
 Admin portlet to an existing Control Menu category, so this class is not 
@@ -64,7 +63,7 @@ into their proper locations.
     
 2.  Create a new folder in the `guestbook-web` module's 
     `src/main/resources/META-INF/resources/` directory and call it 
-    *guestbookadminportlet*. Move the `GuestbookAdmin` module project's 
+    *guestbookadminportlet*. Move the `guestbook-admin` module project's 
     `view.jsp` to the folder you just created. 
     
 3.   Move the `GuestbookAdmin` module project's `/application` folder and 
@@ -79,128 +78,6 @@ into their proper locations.
 	
 6. Run *Refresh Gradle Project* to fix any dependency issues.
 
-You have set the foundation for the Guestbook Admin portlet. Next you'll update 
-the Guestbook Admin portlet's metadata.
-
-## Updating the MVC Portlet Component Class Metadata [](id=updating-the-mvc-portlet-component-class-metadata)
-
-The New Liferay Module Project Wizard created the Guestbook Admin portlet's 
-component class for you and added some metadata properties with default settings. 
-You'll need to update these properties with the proper values, as well as add 
-some more metadata information.
-
-Follow these steps to update the class:
-
-1.  Add the following portlet key to the `GuestbookPortletKeys` class:
-
-        public static final String GUESTBOOK_ADMIN =
-          "com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet";
-
-2.  Open the `guestbookadminportlet` class, and replace the metadata 
-    properties in the `@Component` annotation with the properties shown below:
-
-        "com.liferay.portlet.display-category=category.hidden",
-        "com.liferay.portlet.scopeable=true",
-        "javax.portlet.display-name=Guestbooks",
-        "javax.portlet.expiration-cache=0",
-        "javax.portlet.init-param.portlet-title-based-navigation=true",
-        "javax.portlet.init-param.template-path=/",
-        "javax.portlet.init-param.view-template=/guestbookadminportlet/view.jsp",
-        "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK_ADMIN,
-        "javax.portlet.resource-bundle=content.Language",
-        "javax.portlet.security-role-ref=administrator",
-        "javax.portlet.supports.mime-type=text/html"
-
-3. Reorganize imports to add the `GuestbookPortletKeys` import.
-
-Note the value of the `javax.portlet.display-name` property: `Guestbooks`. This 
-is the name that will appear in the Control Menu. Also note the value of the 
-`javax.portlet.name` property: `+ GuestbookPortletKeys.GUESTBOOK_ADMIN`. This 
-specifies the portlet's title, and uses the `GUESTBOOK_ADMIN` portlet key that 
-you just created.
-
-Pay special attention to the following metadata property:
-
-    com.liferay.portlet.display-category=category.hidden
-
-The category specified here determines where (or if) your portlet appears in the
-list of portlets that are available to be added to a portal page. When you click
-on the *Add* button at the left side of the Control Menu (the plus symbol) and 
-select *Applications*, you'll see various expandable categories of portlets 
-that you can add to a page. For example, the *Highlighted* category contains 
-commonly used portlets such as Web Content Display, Asset Publisher, and 
-Navigation. By specifying *category.hidden* as the category of the Guestbook 
-Admin portlet, you ensure that it can't be added to a portal page via the 
-Control Menu. This is fine since you added it to the Control Menu . If you 
-didn't set the Guestbook Admin portlet's category to *category.hidden* in the 
-component class, a site administrator could add the portlet to a portal page. 
-If you want a portlet to be accessible via the Control Menu and *only* via the 
-Control Menu, remember to specify its category as *category.hidden* in the 
-component class's metadata properties.
-
-Next you can configure the Panel app class.
-
-## Updating the Panel App Component Class [](id=updating-the-panel-app-component-class)
-
-Follow these steps to update the class:
-
-1.  Open the `GuestbookAdminPanelApp` class and replace the 
-    `com.liferay.docs.guestbook.constants.GuestbookAdminMVCPanelCategoryKeys` 
-    and `com.liferay.docs.guestbook.constants.GuestbookAdminPortletKeys` 
-    imports with the ones shown below:
-
-        import com.liferay.application.list.constants.PanelCategoryKeys;
-        import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
-
-2.  Update the component metadata properties to match the configuration below:
-
-        @Component(
-        	immediate = true,
-        	property = {
-        		"panel.app.order:Integer=300",
-        		"panel.category.key=" + PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT
-        	},
-        	service = PanelApp.class
-        )
-
-3.  Finally, update the class to use the proper name and portlet keys:
-
-        public class GuestbookAdminPanelApp extends BasePanelApp {
-
-        	@Override
-        	public String getPortletId() {
-        		return GuestbookPortletKeys.GUESTBOOK_ADMIN;
-        	}
-
-        	@Override
-        	@Reference(
-        		target = "(javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK_ADMIN + ")",
-        		unbind = "-"
-        	)
-        	public void setPortlet(Portlet portlet) {
-        		super.setPortlet(portlet);
-        	}
-
-        }
-
-The `panel.category.key` metadata property determines the section of the
-Control Menu to which the Guestbook Admin portlet is added. Remember that
-@product@'s' Product Menu is divided into three main sections: the Control 
-Panel, the User Menu, and the Site Administration area. Notice that the value 
-of the `panel.category.key` property is 
-*PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT*, which means that you have to 
-navigate to *Site Administration* &rarr; *Content* from the Control Menu to 
-view your portlet. The key is provided by the [`PanelCategoryKeys` 
-class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/constants/PanelCategoryKeys.java) within Portal.
-
-The `panel.app.order` value determines where the Guestbook Admin portlet 
-appears in the list of portlets in the Site Administration area's Content 
-section of the Control Menu. The higher the value, the lower it appears in the 
-Control menu.
-
-Now that you've created the Guestbook Admin portlet and added it to the Control 
-Menu, you need to add your desired functionality to it: the abilities to add, 
-edit, and delete guestbooks and to configure their permissions. You'll start by 
-adding some custom services to `GuestbookLocalServiceImpl`, then you'll add the 
-necessary action methods to `GuestbookAdminPortlet`, and lastly you'll 
-create a basic user interface for the Guestbook Admin portlet. 
+You have set the foundation for the Guestbook Admin portlet. There are still 
+errors in your project, but they'll be resolved as you continue. Next you'll 
+update the Guestbook Admin portlet's metadata.

@@ -5,16 +5,15 @@ little bit on one end, then went to the other end and another section of the
 wall, but you haven't made them meet in the middle yet (that's a very big 
 problem for a wall). Now it's time to meet in the middle.
 
-First you need to do a little housekeeping. You manually created your own model 
-earlier now that you have a generated model being managed by Service Builder, 
-you need to remove the old one to prevent any conflicts:
+First, earlier you manually created your own model. Now you have a model being 
+managed by Service Builder. Remove the old one to prevent any conflicts:
 
 1. Find the 'com.liferay.docs.guestbook.model' package in the `guestbook-web` 
     module.
 2. Delete it - this will cause some exceptions now, but they'll all be fixed 
     soon.
 
-Now you need to make your web modules aware of your service modules so that 
+You need to make your web modules aware of your service modules so that 
 you can access the services from your web module. Then you need to update your `addEntry` method to use the new services.
 
 1. In your `guestbook-web` module, open `GuestbookPortlet.java`
@@ -96,7 +95,7 @@ you can access the services from your web module. Then you need to update your `
 
     Just like the `addEntry` method, you're retrieving user entered data--in this case the `name`--and adding it to the Guestbook via the service call.
 		
-5. Then replace `deleteEntry`
+5. Then add `deleteEntry`
 
 			public void deleteEntry(ActionRequest request, ActionResponse response) {
 				long entryId = ParamUtil.getLong(request, "entryId");

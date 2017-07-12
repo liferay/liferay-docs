@@ -59,5 +59,3 @@ Single Page Applications (SPA.) All @product@ apps are automatically SPA
 enabled by default, and require no changes to your apps or workflow, so the 
 Guestbook portlet can take advantage of SPA features right away. You can read 
 more about SPA in the [Automatic Single Page Applications](/develop/tutorials/-/knowledge_base/7-0/automatic-single-page-applications) tutorial.
-
-In the next section, you'll create the Guestbook Admin portlet.

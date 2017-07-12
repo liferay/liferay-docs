@@ -34,7 +34,7 @@ create portlet actions to meet the first three requirements by opening
           String name = ParamUtil.getString(request, "name");
 
           try {
-            _guestbookService.addGuestbook(
+            _guestbookLocalService.addGuestbook(
               serviceContext.getUserId(), name, serviceContext);
 
             SessionMessages.add(request, "guestbookAdded");
@@ -49,7 +49,12 @@ create portlet actions to meet the first three requirements by opening
           }
         }
 		
-		private GuestbookLocalService _guestbookService;
+        private GuestbookLocalService _guestbookLocalService;
+	    
+		@Reference(unbind = "-")
+	    protected void setGuestbookService(GuestbookLocalService guestbookService) {
+		_guestbookLocalService = guestbookLocalService;
+	}
 		
         
 This method is nearly identical to the Guestbook portlet's `addGuestbook`
@@ -113,8 +118,8 @@ interface.
     creating the Guestbook Admin portlet user interface, you'll see how to
     distinguish between adding a guestbook and editing a guestbook in
     `edit_guestbook.jsp`. Note also that while you could have reused the
-    `edit_guestbook.jsp` from the Guestbook portlet, you created another one, with
-    almost the same functionality. Why? Because later, you'll be adding
+    `edit_guestbook.jsp` from the Guestbook portlet, you created another one, 
+	with almost the same functionality. Why? Because later, you'll be adding
     functionality to the Guestbook Admin portlet that will not be available to
     regular users adding guestbooks. 
 

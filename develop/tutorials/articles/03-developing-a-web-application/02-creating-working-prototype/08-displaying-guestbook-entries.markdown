@@ -106,10 +106,8 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
 		 
 		             if (guestbookEntries[0] != null) {
 		                 List<Entry> entries = parseEntries(guestbookEntries);
-		 
 		                 renderRequest.setAttribute("entries", entries);
 		             }
-		 
 		             super.render(renderRequest, renderResponse);
 		         }
 

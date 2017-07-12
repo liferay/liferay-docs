@@ -25,7 +25,8 @@ managing Guestbooks, and update the existing JSPs.
 	    <%@ page import="com.liferay.docs.guestbook.model.Entry" %>
 	
 
-4. Open the `view.jsp` file found in `/resources/META-INF/resources/`
+4. Open the `view.jsp` file found in 
+    `/resources/META-INF/resources/guestbookwebportlet`
 5. Replace the contents with the following code:
 
 	    <%@include file="init.jsp"%>
@@ -71,14 +72,14 @@ managing Guestbooks, and update the existing JSPs.
 
 			<portlet:renderURL var="addGuestbookURL">
 				<portlet:param name="mvcPath"
-					value="/edit_guestbook.jsp" />
+					value="/guestbookwebportlet/edit_guestbook.jsp" />
 			</portlet:renderURL>
 		
 			<aui:button onClick="<%=addGuestbookURL.toString()%>" 
 				value="Add Guestbook" />
 		
 			<portlet:renderURL var="addEntryURL">
-				<portlet:param name="mvcPath" value="/edit_entry.jsp" />
+				<portlet:param name="mvcPath" value="/guestbookwebportlet/edit_entry.jsp" />
 				<portlet:param name="guestbookId"
 					value="<%=String.valueOf(guestbookId)%>" />
 			</portlet:renderURL>
@@ -135,7 +136,7 @@ to match our new system.
 
 	    <portlet:renderURL var="viewURL">
 
-		  <portlet:param name="mvcPath" value="/view.jsp"></portlet:param>
+		  <portlet:param name="mvcPath" value="/guestbookwebportlet/view.jsp"></portlet:param>
 
 	    </portlet:renderURL>
 
@@ -170,7 +171,7 @@ to match our new system.
 	    <%@include file = "init.jsp" %>
 
 	    <portlet:renderURL var="viewURL">
-	      <portlet:param name="mvcPath" value="/view.jsp"></portlet:param>
+	      <portlet:param name="mvcPath" value="/guestbookwebportlet/view.jsp"></portlet:param>
 	    </portlet:renderURL>
 
 	    <portlet:actionURL name="addGuestbook" var="addGuestbookURL"></portlet:actionURL>

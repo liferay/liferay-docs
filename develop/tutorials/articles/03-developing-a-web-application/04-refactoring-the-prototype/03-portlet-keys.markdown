@@ -1,6 +1,6 @@
 # Creating PortletKeys
 
-You can see in the above code that we referenced the `GuestbookPortletKeys`,
+You just added a reference to `GuestbookPortletKeys`,
 but we haven't actually created that class yet. `PortletKeys` enable you to
 manage important things like the portlet name or other repeatable, commonly used
 variables in one place. This way, if you need to change the name of the portlet,
