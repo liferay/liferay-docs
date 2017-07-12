@@ -47,6 +47,8 @@ the instructions below to create your Liferay Module Project.
 7. Enter "Guestbook" for the class name and 
     `com.liferay.docs.guestbook.portlet` for the package name. Click *Finish*. 
 
+![Figure x: The structure for your new project.](../../../images/guestbook-web-project.png)
+
 Because Gradle automatically manages dependencies for you, it may take a while
 for your project to be created the first time, as its dependencies must be
 downloaded from the Internet. Once it's done, you have a project named
@@ -100,7 +102,9 @@ component, you simply invoke the service as defined in the Service Registry.
 Even though all you've done is generate it, the Guestbook project is ready to be
 built and deployed to @product@.  Make sure that your server is running, and if 
 it isn't, select it in the `Servers` pane and click the start button. After it
-starts, drag and drop the Guestbook project to the server.
+starts, drag and drop the Guestbook project to the server. If this is your first
+time starting @product@ you'll go through a short wizard to get your server 
+setup.
 
 <!-- Needs an image here showing the drag and drop, because it's not intuitive
 unless you see it. -Rich -->

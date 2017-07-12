@@ -73,7 +73,7 @@ options. Follow the instructions below to create your workspace.
 
 5. Click *Finish* to create your Liferay Workspace.
 
-![Figure 2: Liferay @ide@ provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/new-workspace-menu.png)
+![Figure 2: Liferay @ide@ provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/guestbook-workspace-menu.png)
 
 A dialog appears prompting you to open the Liferay Workspace perspective.
 Click *Yes*, and your perspective switches to Liferay Workspace.
