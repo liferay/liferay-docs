@@ -34,8 +34,6 @@ guestbooks and entities within those guestbooks.
 
 3. Next replace the PK fields area with the following:
 
-			<!-- PK fields -->
-
 			<column name="entryId" primary="true" type="long" />
 
     This defined the `entryId` as a `long` type and the primary key for the
@@ -43,13 +41,9 @@ guestbooks and entities within those guestbooks.
 
 4. The group instance can be left alone.
 
-			<!-- Group instance -->
-
 			<column name="groupId" type="long" />
 
-5. Next replace the Audit fields.
-
-			<!-- Audit fields -->
+5. Next replace the Audit fields with these:
 
 			<column name="companyId" type="long" />
 			<column name="userId" type="long" />
@@ -82,12 +76,14 @@ guestbooks and entities within those guestbooks.
 	your finders because you could run into issues if they are in any way 
 	ambiguous.
 
+7. Delete the remaining pre-generated content inside of the `<entity>` section.
+
 That takes care of the Entry entity, but you also need to create the Guestbook
 entity.
 
 1. First add the opening entity tag:
-		
-		<entity local-service="true" name="Guestbook" uuid="true">
+	
+	 <entity local-service="true" name="Guestbook" uuid="true">
 
     Again, you're declaring the name, that you want a local service, and that 
 	you need a `uuid`.
@@ -95,17 +91,11 @@ entity.
 2. Next add the tag to define the primary key and the Group instance 
     information:
 
-	 <!-- PK fields -->
-
 	 <column name="guestbookId" primary="true" type="long" />
-
-	 <!-- Group instance -->
 
 	 <column name="groupId" type="long" />
 
 3. Just like with the Entry field, you need to add the main data fields:
-
-	 <!-- Audit fields -->
 
 	 <column name="companyId" type="long" />
 	 <column name="userId" type="long" />
@@ -121,7 +111,7 @@ entity.
 4. Then your finder and closing entity tag:
 
 	 <finder name="GroupId" return-type="Collection">
-		<finder-column name="groupId" />
+	   <finder-column name="groupId" />
 	 </finder>
      </entity>
 	 
@@ -132,17 +122,16 @@ entity.
 5. Finally define your exception types and close out the Service Builder tag:
 	 
 	 <exceptions>
-		<exception>EntryEmail</exception>
-		<exception>EntryMessage</exception>
-		<exception>EntryName</exception>
-		<exception>GuestbookName</exception>
+	   <exception>EntryEmail</exception>
+	   <exception>EntryMessage</exception>
+	   <exception>EntryName</exception>
+	   <exception>GuestbookName</exception>
 	 </exceptions>
 	 </service-builder>
 	
 	These allow you to specify specific exemptions and generate custom messages 
 	for these criteria. Providing customized exemptions is a big component of 
 	a positive user experience.
-	
 
 Once you’ve created your service.xml file, you’re ready to generate everything 
 else you need to access your database.
@@ -150,6 +139,8 @@ else you need to access your database.
 1. Go to the Gradle Tasks pane on the right side of @ide@.
 2. Open `guestbook-service` &rarr; `build`
 3. Run `buildService`
+4. Right click on the `guestbook-service` module and select *Gradle* &rarr;
+    *Gradle Refresh*.
 
 If this is your first time running Service Builder, you probably have a lot of 
 questions right now, like "What just happened?" and "Why are there so many new 

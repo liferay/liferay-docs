@@ -26,7 +26,7 @@ URL is easy:
             <portlet:param name="mvcPath" value="/edit_entry.jsp"></portlet:param>
         </portlet:renderURL>
 
-2. Add this attribute to the `<aui:button>` tag after `value="Add Entry"`:
+2. Add this attribute to the `<aui:button>` tag before `value="Add Entry"`:
 
         onClick="<%= addEntryURL.toString() %>"
 

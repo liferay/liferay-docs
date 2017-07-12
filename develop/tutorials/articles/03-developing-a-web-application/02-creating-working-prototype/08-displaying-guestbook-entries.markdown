@@ -32,7 +32,7 @@ portlet class). Now you need your model.
 5.  Next, provide two constructors: one that initializes the class with no
     values for the two fields, and one that takes the two fields as parameters
     and sets their values.
- 
+
        public Entry() {
            this.name = null;
            this.message = null;
@@ -132,6 +132,9 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
 
             return entries;
         }
+
+3. Press [CTRL]+[SHIFT]+O to organize imports.
+
 
 As you can see, this method splits the entries in the `String` array into two
 parts based on the caret (`^`) character.

@@ -7,13 +7,11 @@ Using Liferay and Service Builder, the implementations are defined in
 need to create the local implementation, but later you'll implement remote 
 services.
 
-1. Right-click on your project and select *Gradle* &rarr; *Refresh Gradle Project* to display all of the generated class.
-
-2. Open `com.liferay.docs.guestbook.service.imply.EntryLocalServiceImpl` you have several methods to add.
+2. In the `guestbook-service` module, open `com.liferay.docs.guestbook.service.impl.EntryLocalServiceImpl`. You have several methods to add.
 
 3. Create the `addEntry` method:
 
-	public Entry addEntry(
+	 public Entry addEntry(
 			long userId, long guestbookId, String name, String email,
 			String message, ServiceContext serviceContext)
 		throws PortalException {
