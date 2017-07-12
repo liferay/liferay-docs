@@ -31,8 +31,8 @@ because it generates both a `build.gradle` and a `pom.xml` file for you to use.
 
 There are two ways you can generate your JSF application:
 
-- Command Line tool
-- Liferay @ide@.
+- Command line tool
+- Liferay @ide@
 
 You'll explore how to generate your app via the command line first.
 
@@ -54,10 +54,11 @@ JSF Standard) via command line using
 
 That's it! Your JSF application is generated in the current folder!
 
-You can also generate a JSF application using Maven's interactive archetype UI.
-To do this, execute `mvn archetype:generate` and select the JSF archetype you
-want to use. Then you'll step through each option and select the version, group
-ID, artifact ID, etc. To learn more about this, see the
+You can also generate a Liferay JSF application using Maven's interactive
+archetype UI. To do this, execute `mvn archetype:generate -Dfilter=liferay` and
+select the JSF archetype you want to use. Then you'll step through each option
+and select the version, group ID, artifact ID, etc. To learn more about this,
+see the
 [Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
 tutorial.
 
@@ -117,11 +118,18 @@ contains a simple portlet that you can customize.
 
 ![Figure 3: The generated JSF portlet project displays basic build information.](../../../images/jsf-ide-generated-project.png)
 
++$$$
+
 **Note:** There is another option in @ide@'s *File* &rarr; *New* menu named
 *Liferay JSF Portlet*. This is intended to add portlets to existing JSF
 projects. Currently, this is only configured to create Liferay Portal 6.2 JSF
 portlets. Do not use this option if you're developing for @product-ver@.
 
+$$$
+
 To
 [deploy the new JSF project to your @product@ instance](/develop/tutorials/-/knowledge_base/7-0/deploying-modules-with-liferay-ide),
 drag and drop it onto the Liferay server.
+
+Fantastic! You're now able to quickly generate your Liferay JSF project via
+command line tool or @ide@!
