@@ -110,16 +110,7 @@ navigate to your portal ([http://localhost:8080](http://localhost:8080) by
 default), and add your application to a page. To add an application to a page,
 click on the *Add* button (it looks like a plus sign) and then on
 *Applications*. In this list, your application should appear in the Sample
-category. Its name should be `guestbook-web-module Portlet`. You can
-change this name by editing the `javax.portlet.display-name` property in your
-`GuestbookMVCPortlet` class. E.g., you could use
-
-    "javax.portlet.display-name=Guestbook"
-
-to change the display name of your application to `Guestbook`.
-
-This property string should be added to the `property` array defined in the
-`@Component` annotation of your `GuestbookPortlet` class.
+category. Its name should be `guestbook-web-module Portlet`. 
 
 ![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
 
