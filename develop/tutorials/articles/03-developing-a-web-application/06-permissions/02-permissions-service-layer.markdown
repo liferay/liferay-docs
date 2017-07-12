@@ -8,7 +8,7 @@ automatically, so all you need to modify your exist add and delete methods to al
 
 2. Just before the the return statement, add the following code:
 
-	resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
+	    resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
 			Guestbook.class.getName(), guestbookId, false, true, true);
 
 Notice that the `resourceLocalService` object is already there, ready for you 
@@ -30,8 +30,8 @@ previous step. Since you definitely want to do this, these booleans are set to
 
 4. Add a line of code that adds resources for this entity:
 
-    resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
-		Entry.class.getName(), entryId, false, true, true);
+        resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
+		  Entry.class.getName(), entryId, false, true, true);
 
 As you can see, this does the same thing for the Entry entity.
 

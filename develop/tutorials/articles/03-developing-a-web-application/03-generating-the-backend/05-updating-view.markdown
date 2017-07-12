@@ -103,7 +103,8 @@ managing Guestbooks, and update the existing JSPs.
 		</liferay-ui:search-container-row>
 
 		<liferay-ui:search-iterator />
-	
+		
+	    </liferay-ui:search-container>
 
 You've significantly expanded the `view.jsp` now. There are now buttons for both
 adding an Entry and adding a new Guestbook. You've also added the necessary 

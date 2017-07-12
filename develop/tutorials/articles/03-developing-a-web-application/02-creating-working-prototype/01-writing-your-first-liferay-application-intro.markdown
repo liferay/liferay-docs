@@ -24,8 +24,7 @@ more modules. Each module is a functional piece of an application, encapsulated,
 and then multiple modules form a complete application. There's good reason for
 this: modules let you swap out code implementations more or less at will. This
 makes your applications easy to maintain and upgrade. Each module is packaged as
-a JAR file, which is just a .zip archive containing a particular folder
-structure that the container understands. 
+a JAR file. 
 
 Modules need a manifest file to tell the container about it. In fact,
 technically speaking your module would be perfectly valid if it contained
@@ -45,7 +44,8 @@ the instructions below to create your Liferay Module Project.
 
 5. Select the `mvc-portlet` for Project Template Name. Click *Next*. 
 
-7. Enter "Guestbook" for the class name and `com.liferay.docs.guestbook` for the package name. Click *Finish*. 
+7. Enter "Guestbook" for the class name and 
+    `com.liferay.docs.guestbook.portlet` for the package name. Click *Finish*. 
 
 Because Gradle automatically manages dependencies for you, it may take a while
 for your project to be created the first time, as its dependencies must be

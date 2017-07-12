@@ -1,9 +1,9 @@
-#Fitting it all together
+#Fitting it all together 
 
 You've created a complete data-driven application from the backend to the 
 display. Now take a look back and see how everything connects together.
 
-##The Entry
+##The Entry 
 
 Take a look at your Entry object, for an example.
 

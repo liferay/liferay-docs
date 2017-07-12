@@ -11,11 +11,12 @@ application.
 3. Copy `view.jsp` and `edit_guestbook.jsp` into the new folder.
 4. Open both files and change the `init.jsp` location at the top of the file to:
 
-	<%@include file="../init.jsp"%>
+	    <%@include file="../init.jsp"%>
     
 5. Search both files for references to `/view.jsp` and `/edit_guestbook.jsp` and
     change them to '/guestbookwebportlet/view.jsp` and
-	`/guestbookwebportlet/edit_guestbook.jsp`._
+	
+	    `/guestbookwebportlet/edit_guestbook.jsp`._ 
 
 You also need to update the resource location in your component properties. In 
 your next step you'll update all of those properties, including the one that

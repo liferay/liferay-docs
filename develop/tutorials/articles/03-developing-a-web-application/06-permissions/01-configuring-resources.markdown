@@ -24,8 +24,8 @@ Next, create the file itself:
 
 3. Add the following `DOCTYPE` declaration to the top of the file:
 
-    <?xml version="1.0"?>
-	<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action  
+        <?xml version="1.0"?>
+	    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action  
 		Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
 
 Now the question is how you're going to define your permissions.
@@ -51,32 +51,32 @@ First do the portlet permissions.
 
 1. Place the following wrapper tags into your default.xml file:
 
-    <resource-action-mapping>
+        <resource-action-mapping>
 
-    </resource-action-mapping>
+        </resource-action-mapping>
 
 All the rest of the permissions configuration is placed inside these tags.
 
 2. Next, place the portlet permissions between the `<resource-action-mapping/>` 
     tags:
 
-	<portlet-resource>
-	    <portlet-name>guestbook</portlet-name>
-	    <permissions>
-	        <supports>
-	            <action-key>ADD_TO_PAGE</action-key>
-	            <action-key>CONFIGURATION</action-key>
-	            <action-key>VIEW</action-key>
-	        </supports>
-	        <site-member-defaults>
-	            <action-key>VIEW</action-key>
-	        </site-member-defaults>
-	        <guest-defaults>
-	            <action-key>VIEW</action-key>
-	        </guest-defaults>
-	        <guest-unsupported />
-	    </permissions>
-	</portlet-resource>
+			<portlet-resource>
+			<portlet-name>guestbook</portlet-name>
+			<permissions>
+				<supports>
+					<action-key>ADD_TO_PAGE</action-key>
+					<action-key>CONFIGURATION</action-key>
+					<action-key>VIEW</action-key>
+				</supports>
+				<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+			<action-key>VIEW</action-key>
+		</guest-defaults>
+		<guest-unsupported />
+		</permissions>
+		</portlet-resource>
     
 
 This configuration defines the default permissions for the portlet itself. This 
@@ -87,26 +87,26 @@ this is an easy and straightforward way to define permissions.
 
 3. Place the model package permissions in the file next:
 
-	<model-resource>
-	    <model-name>com.liferay.docs.guestbook</model-name>
-	    <portlet-ref>
-	        <portlet-name>guestbook</portlet-name>
-	    </portlet-ref>
-	    <permissions>
-	        <supports>
-	            <action-key>ADD_GUESTBOOK</action-key>
-	            <action-key>ADD_ENTRY</action-key>
-	        </supports>
-	        <site-member-defaults>
-	            <action-key>ADD_ENTRY</action-key>
-	        </site-member-defaults>
-	        <guest-defaults />
-	        <guest-unsupported>
-	            <action-key>ADD_GUESTBOOK</action-key>
-	            <action-key>ADD_ENTRY</action-key>
-	        </guest-unsupported>
-	    </permissions>
-	</model-resource> 
+		<model-resource>
+		    <model-name>com.liferay.docs.guestbook</model-name>
+		    <portlet-ref>
+		        <portlet-name>guestbook</portlet-name>
+		    </portlet-ref>
+		    <permissions>
+		        <supports>
+		            <action-key>ADD_GUESTBOOK</action-key>
+		            <action-key>ADD_ENTRY</action-key>
+		        </supports>
+		        <site-member-defaults>
+		            <action-key>ADD_ENTRY</action-key>
+		        </site-member-defaults>
+		        <guest-defaults />
+		        <guest-unsupported>
+		            <action-key>ADD_GUESTBOOK</action-key>
+		            <action-key>ADD_ENTRY</action-key>
+		        </guest-unsupported>
+		    </permissions>
+		</model-resource> 
     
 This configuration defines the default permissions at a global level for your 
 entities. You create two permissions: ADD_GUESTBOOK and ADD_ENTRY. Site members 
@@ -116,31 +116,31 @@ them that permission in the <portlet-resource/> section above.
 
 4. Next, place the permissions for the Guestbook entity in the file:
 
-	<model-resource>
-	    <model-name>com.liferay.docs.guestbook.model.Guestbook</model-name>
-	    <portlet-ref>
-	        <portlet-name>guestbook</portlet-name>
-	    </portlet-ref>
-	    <permissions>
-	        <supports>
-	            <action-key>ADD_ENTRY</action-key>
-	            <action-key>DELETE</action-key>
-	            <action-key>PERMISSIONS</action-key>
-	            <action-key>UPDATE</action-key>
-	            <action-key>VIEW</action-key>
-	        </supports>
-	        <site-member-defaults>
-	            <action-key>ADD_ENTRY</action-key>
-	            <action-key>VIEW</action-key>
-	        </site-member-defaults>
-	        <guest-defaults>
-	            <action-key>VIEW</action-key>
-	        </guest-defaults>
-	        <guest-unsupported>
-	            <action-key>UPDATE</action-key>
-	        </guest-unsupported>
-	    </permissions>
-	</model-resource>
+		<model-resource>
+		    <model-name>com.liferay.docs.guestbook.model.Guestbook</model-name>
+		    <portlet-ref>
+		        <portlet-name>guestbook</portlet-name>
+		    </portlet-ref>
+		    <permissions>
+		        <supports>
+		            <action-key>ADD_ENTRY</action-key>
+		            <action-key>DELETE</action-key>
+		            <action-key>PERMISSIONS</action-key>
+		            <action-key>UPDATE</action-key>
+		            <action-key>VIEW</action-key>
+		        </supports>
+		        <site-member-defaults>
+		            <action-key>ADD_ENTRY</action-key>
+		            <action-key>VIEW</action-key>
+		        </site-member-defaults>
+		        <guest-defaults>
+		            <action-key>VIEW</action-key>
+		        </guest-defaults>
+		        <guest-unsupported>
+		            <action-key>UPDATE</action-key>
+		        </guest-unsupported>
+		    </permissions>
+		</model-resource>
     
 
 This is the most complicated permission scheme so far. You've defined five 
@@ -154,29 +154,29 @@ the default permission configuration should reflect that.
 
 5. Finally, place the permissions for the Entry entity in the file:
 
-	<model-resource>
-	     <model-name>com.liferay.docs.guestbook.model.Entry</model-name>
-	     <portlet-ref>
-	         <portlet-name>guestbook</portlet-name>
-	     </portlet-ref>
-	     <permissions>
-	         <supports>
-	             <action-key>DELETE</action-key>
-	             <action-key>PERMISSIONS</action-key>
-	             <action-key>UPDATE</action-key>
-	             <action-key>VIEW</action-key>
-	         </supports>
-	         <site-member-defaults>
-	             <action-key>VIEW</action-key>
-	         </site-member-defaults>
-	         <guest-defaults>
-	             <action-key>VIEW</action-key>
-	         </guest-defaults>
-	         <guest-unsupported>
-	             <action-key>UPDATE</action-key>
-	         </guest-unsupported>
-	     </permissions>
-	 </model-resource>
+		<model-resource>
+		     <model-name>com.liferay.docs.guestbook.model.Entry</model-name>
+		     <portlet-ref>
+		         <portlet-name>guestbook</portlet-name>
+		     </portlet-ref>
+		     <permissions>
+		         <supports>
+		             <action-key>DELETE</action-key>
+		             <action-key>PERMISSIONS</action-key>
+		             <action-key>UPDATE</action-key>
+		             <action-key>VIEW</action-key>
+		         </supports>
+		         <site-member-defaults>
+		             <action-key>VIEW</action-key>
+		         </site-member-defaults>
+		         <guest-defaults>
+		             <action-key>VIEW</action-key>
+		         </guest-defaults>
+		         <guest-unsupported>
+		             <action-key>UPDATE</action-key>
+		         </guest-unsupported>
+		     </permissions>
+		 </model-resource>
     
 These permissions are the same as for the Guestbook entity, except for the 
 ADD_ENTRY permission. This completes your model permission configuration.
