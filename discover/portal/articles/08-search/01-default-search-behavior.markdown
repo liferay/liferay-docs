@@ -112,8 +112,17 @@ related query for similar search queries that don't produce enough results.
 **Note:** To enable the spell checking behavior described above, you must first
 trigger a reindex of the spell check indexes. Navigate to the *Control Panel*
 &rarr; *Configuration* &rarr; *Server Administration*. Find the Index Actions
-entry for *Reindex all spell check indexes.* Click *Execute*, and your spell
-checking settings are now enabled.
+entry for *Reindex all spell check indexes.* Click *Execute*, and look for a
+message in your log your indicating that the spell checking indexes were created
+successfully:
+
+    16:19:35,793 INFO  [liferay/search_writer/SYSTEM_ENGINE-24][BaseSpellCheckIndexWriter:257] 
+        Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
+    16:19:41,932 INFO  [liferay/search_writer/SYSTEM_ENGINE-24][BaseSpellCheckIndexWriter:2910] 
+        Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
+
+Once the spell checking indexes are created, your spell check settings become
+effective.
 
 $$$
 
