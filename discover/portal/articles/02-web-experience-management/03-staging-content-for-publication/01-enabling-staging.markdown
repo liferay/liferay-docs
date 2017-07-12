@@ -263,30 +263,29 @@ $$$
 Before publishing *any* content, verify that **all** the necessary steps above
 have been completed. Otherwise, Remote Staging will fail.
 
-1.  The `tunnel.servlet.hosts.allowed` values have been set in the
+1.  The `tunnel.servlet.hosts.allowed` values are set in the
     `portal-ext.properties` file in both the staging and the production
     environment.
 
-2.  The `tunneling.servlet.shared.secret` values have been set in the
+2.  The `tunneling.servlet.shared.secret` values are set in the
     `portal-ext.properties` file in both the staging and the production
     environment.
 
-3.  Most importantly, update the *TunnelAuthVerfierConfiguration* of your
-    @product@ instance. This is a major change between legacy Portal and
-    @product@. To do this:
+3.  The *TunnelAuthVerfierConfiguration* of your @product@ instance is updated.
+    This is a major change between legacy Portal and @product@. To do this:
 
     a) Navigate to the Control Panel &rarr; *Configuration* &rarr; *System
-       Settings* &rarr; *Foundation*.    
-    b) Search for *Tunnel Auth Verifier*.    
+       Settings* &rarr; *Foundation*.
+    b) Search for *Tunnel Auth Verifier*.
     c) Click */api/liferay/do* and insert the additional IP addresses you're
-       using in the *Hosts allowed* field.    
+       using in the *Hosts allowed* field.
     d) Click *Update*.
 
-4.  The users who initiate the publishing processes must exist on both the
-    remote and staging environments. In addition, the users must have the same
-    credentials (e.g., screen name, email, roles, and password). 
+4.  The users who initiate the publishing processes exist on both the remote and
+    staging environments. In addition, the users must have the same credentials
+    (e.g., screen name, email, roles, and password). 
 
-**Important:** Never clone your @product@ database; doing so can duplicate
+**Important:** Never clone your @product@ database; doing this can duplicate
 important data used by Staging (e.g., UUID), causing the Remote Publication
 process to fail.
 
