@@ -281,13 +281,14 @@ have been completed. Otherwise, Remote Staging will fail.
     c) Click */api/liferay/do* and insert the additional IP addresses you're
        using in the *Hosts allowed* field.    
     d) Click *Update*.
-    
-4.  The same users must exist on both remote and the staging environments. In
-    addition, the users must have the same credentials (that is, same screen
-    name, email, and roles, password). 
 
-**Important note:** do not simply clone the database or else the Remote
-Publication process will also fail.
+4.  The users who initiate the publishing processes must exist on both the
+    remote and staging environments. In addition, the users must have the same
+    credentials (e.g., screen name, email, roles, and password). 
+
+**Important:** Never clone your @product@ database; doing so can duplicate
+important data used by Staging (e.g., UUID), causing the Remote Publication
+process to fail.
 
 You should proceed only when all four major steps have been completed. 
 
