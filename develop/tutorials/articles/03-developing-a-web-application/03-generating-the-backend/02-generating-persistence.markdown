@@ -83,7 +83,7 @@ entity.
 
 1. First add the opening entity tag:
 	
-	 <entity local-service="true" name="Guestbook" uuid="true">
+	    <entity local-service="true" name="Guestbook" uuid="true">
 
     Again, you're declaring the name, that you want a local service, and that 
 	you need a `uuid`.
@@ -91,18 +91,18 @@ entity.
 2. Next add the tag to define the primary key and the Group instance 
     information:
 
-	 <column name="guestbookId" primary="true" type="long" />
+	    <column name="guestbookId" primary="true" type="long" />
 
-	 <column name="groupId" type="long" />
+	    <column name="groupId" type="long" />
 
 3. Just like with the Entry field, you need to add the main data fields:
 
-	 <column name="companyId" type="long" />
-	 <column name="userId" type="long" />
-	 <column name="userName" type="String" />
-	 <column name="createDate" type="Date" />
-	 <column name="modifiedDate" type="Date" />
-	 <column name="name" type="String" />
+	    <column name="companyId" type="long" />
+    	<column name="userId" type="long" />
+	    <column name="userName" type="String" />
+	    <column name="createDate" type="Date" />
+	    <column name="modifiedDate" type="Date" />
+	    <column name="name" type="String" />
 
 	Like the Entry fields, most of these are fields defined by your context, and
 	stored in the Guestbook object. The `name` field is the only thing which the
@@ -110,10 +110,10 @@ entity.
 
 4. Then your finder and closing entity tag:
 
-	 <finder name="GroupId" return-type="Collection">
-	   <finder-column name="groupId" />
-	 </finder>
-     </entity>
+	    <finder name="GroupId" return-type="Collection">
+	      <finder-column name="groupId" />
+	    </finder>
+        </entity>
 	 
 	 The finder enables you to create methods with which will retrieve a 
 	 Collection of Guestbooks based on the Site (identified by the `groupId`) 
@@ -121,13 +121,13 @@ entity.
 
 5. Finally define your exception types and close out the Service Builder tag:
 	 
-	 <exceptions>
-	   <exception>EntryEmail</exception>
-	   <exception>EntryMessage</exception>
-	   <exception>EntryName</exception>
-	   <exception>GuestbookName</exception>
-	 </exceptions>
-	 </service-builder>
+	    <exceptions>
+	      <exception>EntryEmail</exception>
+	      <exception>EntryMessage</exception>
+	      <exception>EntryName</exception>
+	      <exception>GuestbookName</exception>
+	    </exceptions>
+	    </service-builder>
 	
 	These allow you to specify specific exemptions and generate custom messages 
 	for these criteria. Providing customized exemptions is a big component of 

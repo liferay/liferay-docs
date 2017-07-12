@@ -11,7 +11,7 @@ services.
 
 3. Create the `addEntry` method:
 
-	 public Entry addEntry(
+	    public Entry addEntry(
 			long userId, long guestbookId, String name, String email,
 			String message, ServiceContext serviceContext)
 		throws PortalException {
@@ -44,7 +44,7 @@ services.
 		entryPersistence.update(entry);
 
 		return entry;
-	}
+	    }
 	
 	In this method, you retrieve all of the information provided by the service 
 	contents, just as you defined it in your `service.xml` (like the `userId` 
@@ -55,7 +55,7 @@ services.
 	
 4. Create the `deleteEntry` method:
 
-	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
+	    public Entry deleteEntry(long entryId, ServiceContext serviceContext)
 		throws PortalException {
 
 		Entry entry = getEntry(entryId);
@@ -69,25 +69,25 @@ services.
 	
 5. Add the "getters":
 
-	public List<Entry> getEntries(long groupId, long guestbookId) {
-		return entryPersistence.findByG_G(groupId, guestbookId);
-	}
+	    public List<Entry> getEntries(long groupId, long guestbookId) {
+		  return entryPersistence.findByG_G(groupId, guestbookId);
+	    }
 
-	public List<Entry> getEntries(long groupId, long guestbookId, int start, int end)
+	    public List<Entry> getEntries(long groupId, long guestbookId, int start, int end)
 			     throws SystemException {
 
 			    return entryPersistence.findByG_G(groupId, guestbookId, start, end);
 			}
 
-	public List<Entry> getEntries(
-		long groupId, long guestbookId, int start, int end, OrderByComparator<Entry> obc) {
+	    public List<Entry> getEntries(
+		  long groupId, long guestbookId, int start, int end, OrderByComparator<Entry> obc) {
 
-		return entryPersistence.findByG_G(groupId, guestbookId, start, end, obc);
-	}
+		  return entryPersistence.findByG_G(groupId, guestbookId, start, end, obc);
+	    }
 
-	public int getEntriesCount(long groupId, long guestbookId) {
+	    public int getEntriesCount(long groupId, long guestbookId) {
 		return entryPersistence.countByG_G(groupId, guestbookId);
-	}
+	    }
 	
 	
 	These provide several options for retrieving entries. First you can 
@@ -97,7 +97,7 @@ services.
 	
 6. Add the `validate` method:
 	
-	protected void validate(String name, String email, String entry)
+	    protected void validate(String name, String email, String entry)
 				throws PortalException {
 
 				if (Validator.isNull(name)) {
@@ -111,7 +111,7 @@ services.
 				if (Validator.isNull(entry)) {
 					throw new EntryMessageException();
 				}
-	}
+	    }
 	
 	Finally, your `validate` method checks the text fields that the use filled 
 	out and checks that they are not null, and that the email address field is 
@@ -128,7 +128,7 @@ services.
 
 9. First there's `addGuestbook`:
 
-	public Guestbook addGuestbook(
+	    public Guestbook addGuestbook(
 				long userId, String name, ServiceContext serviceContext)
 			throws PortalException {
 

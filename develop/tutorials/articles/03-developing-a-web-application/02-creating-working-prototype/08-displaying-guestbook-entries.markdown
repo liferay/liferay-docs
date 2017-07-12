@@ -33,15 +33,15 @@ portlet class). Now you need your model.
     values for the two fields, and one that takes the two fields as parameters
     and sets their values.
 
-       public Entry() {
+        public Entry() {
            this.name = null;
            this.message = null;
-       }
+        }
 
-       public Entry(String name, String message) {
+        public Entry(String name, String message) {
            setName(name);
            setMessage(message);
-       }
+        }
  
 Your completed class looks like this:
 
