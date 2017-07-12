@@ -88,8 +88,11 @@ plugin does it for you. Likewise, if a folder in the `/themes` folder includes a
 `liferay-theme.json` file, the `gulp` plugin is applied to it; if a folder in
 the `/modules` folder includes a `bnd.bnd` file, the
 [liferay-gradle](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
-plugin is applied to it. Therefore, Liferay Workspace provides many plugins and
-build configurations behind the scenes.
+plugin is applied to it. See the
+[Gradle](/develop/reference/-/knowledge_base/7-0/gradle) reference article for a
+list of Liferay Gradle plugins automatically provided for all Workspace
+apps. As you can see, Liferay Workspace provides many plugins and build
+configurations behind the scenes to make your development process convenient.
 
 A good example of the Gradle build lifecycle abstraction is the module
 deployment process in a workspace. You can build/deploy your modules from

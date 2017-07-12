@@ -119,6 +119,6 @@ useful as standalone projects or inside of your application. If your application
 needs to do something (like add a custom entity) every time a User is added in
 Liferay, you can include the model listener inside your application.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Upgrading Model Listener Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-model-listener-hooks)
