@@ -107,6 +107,16 @@ user's query doesn't return a minimum number of results (0 by default).
 default). If the Display Related Queries setting is enabled, it can be used as a
 related query for similar search queries that don't produce enough results.
 
++$$$
+
+**Note:** To enable the spell checking behavior described above, you must first
+trigger a reindex of the spell check indexes. Navigate to the *Control Panel*
+&rarr; *Configuration* &rarr; *Server Administration*. Find the Index Actions
+entry for *Reindex all spell check indexes.* Click *Execute*, and your spell
+checking settings are now enabled.
+
+$$$
+
 In addition to enabling or disabling any of these settings, the thresholds for
 all of the spell check settings can also be changed to produce the desired
 behavior.
