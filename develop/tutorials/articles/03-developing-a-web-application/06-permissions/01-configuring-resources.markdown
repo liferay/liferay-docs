@@ -95,21 +95,22 @@ member's can `ADD_ENTRY` by default, and guests cannot perform either action.
 	    	</portlet-ref>
 	    	<permissions>
 	        	<supports>
-	            	<action-key>ADD_GUESTBOOK</action-key>
+	            	<action-key>ADD_ENTRY</action-key>
 	            	<action-key>DELETE</action-key>
 	            	<action-key>PERMISSIONS</action-key>
 	            	<action-key>UPDATE</action-key>
 	            	<action-key>VIEW</action-key>
 	        	</supports>
-	        	<site-member-defaults>
-	            	<action-key>VIEW</action-key>
-	        	</site-member-defaults>
-	        	<guest-defaults>
-	            	<action-key>VIEW</action-key>
-	        	</guest-defaults>
-	        	<guest-unsupported>
-	            	<action-key>UPDATE</action-key>
-	        	</guest-unsupported>
+				<site-member-defaults>
+				     <action-key>ADD_ENTRY</action-key>
+				           <action-key>VIEW</action-key>
+				     </site-member-defaults>
+				     <guest-defaults>
+				           <action-key>VIEW</action-key>
+				      </guest-defaults>
+				       <guest-unsupported>
+				            <action-key>UPDATE</action-key>
+				        </guest-unsupported>
 	    	</permissions>
 		</model-resource>
     
@@ -127,14 +128,12 @@ Guestbooks, but guests cannot update them.
 		    </portlet-ref>
 		    <permissions>
 		        <supports>
-		            <action-key>ADD_ENTRY</action-key>
 					<action-key>DELETE</action-key>
 		            <action-key>PERMISSIONS</action-key>
 		            <action-key>UPDATE</action-key>
 		            <action-key>VIEW</action-key>
 		        </supports>
 		        <site-member-defaults>
-		            <action-key>ADD_ENTRY</action-key>
 		            <action-key>VIEW</action-key>
 		        </site-member-defaults>
 		        <guest-defaults>
