@@ -97,7 +97,7 @@ Test your updated `edit_guestbook.jsp` page by navigating to your Guestbook
 Admin portlet in the Control Panel and clicking on *Add Guestbook*. You'll see a
 field for adding tags and a selector for selecting related assets.
 
-![Figure 2: Once you've updated your Guestbook Admin portlet's `edit_guestbook.jsp` page, you'll see forms for adding tags and selecting related assets.](../../../images/guestbook-tags-related-assets.png)
+![Figure 2: Once you've updated your Guestbook Admin portlet's `edit_guestbook.jsp` page, you'll see forms for adding tags and selecting related assets.](../../../../images/guestbook-tags-related-assets.png)
 
 Where is the field for selecting categories? It's been enabled but it won't
 appear until you create a vocabulary and add at least one category to it. Create

@@ -1,4 +1,4 @@
-# Updating the MVC Portlet Component Class Metadata [](id=updating-the-mvc-portlet-component-class-metadata)
+# Updating the Web Portlet Component Class Metadata [](id=updating-the-mvc-portlet-component-class-metadata)
 
 The New Liferay Module Project Wizard created the Guestbook Admin portlet's 
 component class for you and added some metadata properties with default settings. 

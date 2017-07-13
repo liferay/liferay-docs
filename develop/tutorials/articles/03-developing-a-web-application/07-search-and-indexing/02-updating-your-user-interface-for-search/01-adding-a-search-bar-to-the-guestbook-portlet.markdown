@@ -5,7 +5,7 @@ and add the following code near the top of the file, just after the scriptlet
 that grabs the `guestbookId` from the request:
 
     <liferay-portlet:renderURL varImpl="searchURL">
-              <portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view_search.jsp" />
+              <portlet:param name="mvcPath" value="/guestbookwebportlet/view_search.jsp" />
       </liferay-portlet:renderURL>
 
       <aui:form action="<%= searchURL %>" method="get" name="fm">
@@ -21,7 +21,7 @@ that grabs the `guestbookId` from the request:
       </aui:form>
 
 Your first step in creating a search bar is to create a render URL that points
-to the `/html/guestbookmvcportlet/view_search.jsp`. You haven't created this 
+to the `/guestbookwebportlet/view_search.jsp`. You haven't created this 
 file yet, but you're constructing the URL that points to it now because you have 
 to specify what happens when the user submits a search query. Note that you're
 using the `mvcPath` parameter since the Guestbook portlet is a Liferay MVC
