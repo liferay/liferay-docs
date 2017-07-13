@@ -38,9 +38,9 @@ and all of the data fields that it would need.
 	 			</finder>
 	  </entity>
 	
-Next you created an service implementation that provided the details of how
-you get the entry and store it. Each field that you needed to define the 
-entry was accounted for in the `addEntry` method.
+Next you created an service implementation in EntryLocalServiceImpl that 
+provided the details of how you get the entry and store it. Each field that you 
+needed to define the entry was accounted for in the `addEntry` method.
 	
 	public Entry addEntry(
 				long userId, long guestbookId, String name, String email,

@@ -6,7 +6,7 @@ some updates to the UI as well. To do that, you'll need to create a new JSP for
 managing Guestbooks, and update the existing JSPs.
 
 1. First you should update the dependencies that you'll need.
-2. Open `init.jsp` from `/src/main/resources/META-INF/resources/`
+2. In your `guestbook-web` module, open `init.jsp` from `/src/main/resources/META-INF/resources/`
 3. Add the following additional dependencies:
     
 	    <%@ taglib uri="http://liferay.com/tld/frontend" prefix="liferay-frontend" %>

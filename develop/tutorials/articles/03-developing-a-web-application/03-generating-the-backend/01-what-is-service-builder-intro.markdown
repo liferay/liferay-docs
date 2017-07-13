@@ -69,8 +69,9 @@ the necessary entities to generate this code.
 
 6.  Click *Finish*.
 
+![Figure X: Your current project structure.](../../../images/guestbook-service-project.png)
+
 This creates two modules: an API module and a service module. Next, you'll learn
 how to use them.
-
 
 

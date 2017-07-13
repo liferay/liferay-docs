@@ -5,10 +5,10 @@ this last step of this Learning Path, you'll learn how.
 First go to the `init.jsp` in your `guestbook-web` project.
 
 1. Add the following imports to the file:
- 
-    <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookModelPermission" %>
-    <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookPermission" %>
-    <%@ page import="com.liferay.docs.guestbook.service.permission.EntryPermission" %>
+
+        <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookModelPermission" %>
+        <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookPermission" %>
+        <%@ page import="com.liferay.docs.guestbook.service.permission.EntryPermission" %>
 
 Recognize those? They're the permissions helper classes you just created. Now
 it's time to implement your permission checks. 
@@ -40,7 +40,6 @@ version of the permission check.
     the closing scriptlet to close both `if` statements: 
 
         <%
-                }
             }
         %>
 
@@ -78,4 +77,6 @@ JSTL tags. Adding the check for the Add Entry button is very similar:
 Excellent! You've now implemented all the permission checks you'd defined for
 your application. Save the file and test your application with different users.
 Administrative users see all the buttons, regular users see the Add Entry
-button, and guests see no buttons at all (but can navigate). 
+button, and guests see no buttons at all (but can navigate).
+
+SCREENSHOTS?
