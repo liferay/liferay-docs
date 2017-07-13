@@ -22,10 +22,9 @@ permission checks.
 3.  Place the following code in this class: 
 
 		package com.liferay.docs.guestbook.service.permission;
-
 		import org.osgi.service.component.annotations.Component;
 		import com.liferay.portal.kernel.exception.PortalException;
-		import com.liferay.portal.kernel.security.auth.PrincipalException;
+        import com.liferay.portal.kernel.security.auth.PrincipalException;
 		import com.liferay.portal.kernel.security.permission.BaseResourcePermissionChecker;
 		import com.liferay.portal.kernel.security.permission.PermissionChecker;
 
@@ -38,35 +37,32 @@ permission checks.
 				service = GuestbookModelPermission.class
 			)
 
-		        public class GuestbookModelPermission extends BaseResourcePermissionChecker  {
+		 public class GuestbookModelPermission extends BaseResourcePermissionChecker  {
 
-		            public static final String RESOURCE_NAME = "com.liferay.docs.guestbook";
+		       public static final String RESOURCE_NAME = "com.liferay.docs.guestbook";
 
-		            public static void check(PermissionChecker permissionChecker, long groupId,
-		                    String actionId) throws PortalException {
+		       public static void check(PermissionChecker permissionChecker, long groupId,
+		               String actionId) throws PortalException {
 
-		                if (!contains(permissionChecker, groupId, actionId)) {
+		               if (!contains(permissionChecker, groupId, actionId)) {
 		                    throw new PrincipalException();
-		                }
+		               }
 		            }
 
-		            public static boolean contains(PermissionChecker permissionChecker,
-		                    long groupId, String actionId) {
-
-		                return permissionChecker.hasPermission(groupId, RESOURCE_NAME, groupId,
+		       public static boolean contains(PermissionChecker permissionChecker,
+		               long groupId, String actionId) {
+		               return permissionChecker.hasPermission(groupId, RESOURCE_NAME, groupId,
 		                        actionId);
 		            }
 
-					@Override
-					public Boolean checkResource(PermissionChecker permissionChecker, long classPK, String actionId) {
-
-						return contains(permissionChecker, classPK, actionId);
-
+			   @Override
+			   public Boolean checkResource(PermissionChecker permissionChecker, long classPK, String actionId) {
+					   return contains(permissionChecker, classPK, actionId);
 					}
 		        }
 
 
-This class is a component which extends BaseResourcePermissionChecker and 
+This class is a component which extends `BaseResourcePermissionChecker` and 
 defines two static methods (so  you don't have to instantiate the class) that 
 encapsulate the model that you're checking permissions for. This makes it 
 easier for you to include the proper permissions check later. It also contains 
@@ -92,31 +88,26 @@ Next, we'll create helpers for your two entities.
         import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
         import com.liferay.portal.kernel.exception.PortalException;
         import com.liferay.portal.kernel.exception.SystemException;
-        import com.liferay.portal.security.auth.PrincipalException;
-        import com.liferay.portal.security.permission.PermissionChecker;
+        import com.liferay.portal.kernel.security.auth.PrincipalException;
+        import com.liferay.portal.kernel.security.permission.PermissionChecker;
 
         public class GuestbookPermission {
             public static void check(PermissionChecker permissionChecker,
                     long guestbookId, String actionId) throws PortalException,
                     SystemException {
-
                 if (!contains(permissionChecker, guestbookId, actionId)) {
                     throw new PrincipalException();
                 }
             }
-
             public static boolean contains(PermissionChecker permissionChecker,
                     long guestbookId, String actionId) throws PortalException,
                     SystemException {
-
                 Guestbook guestbook = GuestbookLocalServiceUtil
                         .getGuestbook(guestbookId);
-
                 return permissionChecker
                         .hasPermission(guestbook.getGroupId(),
                                 Guestbook.class.getName(), guestbook.getGuestbookId(),
                                 actionId);
-
             }
         }
 
@@ -141,8 +132,8 @@ primary key of the `Entry` entity.
         import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
         import com.liferay.portal.kernel.exception.PortalException;
         import com.liferay.portal.kernel.exception.SystemException;
-        import com.liferay.portal.security.auth.PrincipalException;
-        import com.liferay.portal.security.permission.PermissionChecker;
+        import com.liferay.portal.kernel.security.auth.PrincipalException;
+        import com.liferay.portal.kernel.security.permission.PermissionChecker;
 
         public class EntryPermission {
             public static void check(PermissionChecker permissionChecker,
@@ -170,7 +161,23 @@ primary key of the `Entry` entity.
         }
 
 This class is identical to the class that handles permissions for the
-`Guestbook` entity: the only difference is that it's for the `Entry` entity. 
+`Guestbook` entity: the only difference is that it's for the `Entry` entity.
+
+Now that you created these files, you need to build services, and export the
+permissions package so that other modules can access it.
+
+1. From the build panel on the right side of the screen, run `buildService` for 
+    the `guestbook-service` module.
+
+2. Open the `bnd.bnd` file, found in the root folder of your `guestbook-service`
+    module.
+
+3. In the graphical view, under the *Export Packages* section, click the plus 
+    button to add an export.
+	
+4. Select `com.liferay.docs.guestbook.service.permission` and click `OK`.
+
+5. Save the file.
 
 Congratulations! You've completed adding permissions resources to your entities,
 and have created Java helper classes for your permissions. The only thing you

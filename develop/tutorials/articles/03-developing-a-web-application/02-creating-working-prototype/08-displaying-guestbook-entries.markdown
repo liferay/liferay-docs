@@ -32,16 +32,16 @@ portlet class). Now you need your model.
 5.  Next, provide two constructors: one that initializes the class with no
     values for the two fields, and one that takes the two fields as parameters
     and sets their values.
- 
-       public Entry() {
+
+        public Entry() {
            this.name = null;
            this.message = null;
-       }
+        }
 
-       public Entry(String name, String message) {
+        public Entry(String name, String message) {
            setName(name);
            setMessage(message);
-       }
+        }
  
 Your completed class looks like this:
 
@@ -104,12 +104,10 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
 		             String[] guestbookEntries = prefs.getValues("guestbook-entries",
 		                     new String[1]);
 		 
-		             if (guestbookEntries != null) {
+		             if (guestbookEntries[0] != null) {
 		                 List<Entry> entries = parseEntries(guestbookEntries);
-		 
 		                 renderRequest.setAttribute("entries", entries);
 		             }
-		 
 		             super.render(renderRequest, renderResponse);
 		         }
 
@@ -132,6 +130,9 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
 
             return entries;
         }
+
+3. Press [CTRL]+[SHIFT]+O to organize imports.
+
 
 As you can see, this method splits the entries in the `String` array into two
 parts based on the caret (`^`) character.

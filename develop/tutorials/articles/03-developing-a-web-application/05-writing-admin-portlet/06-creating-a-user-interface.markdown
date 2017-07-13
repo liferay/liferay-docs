@@ -17,8 +17,9 @@ adding or editing a guestbook.
 
 Use the following steps to create the Guestbook Admin portlet's user interface:
 
-1. Edit your guestbook-portlet project's `resources/guestbookadminmportlet/view.jsp`
-   file and replace its default contents with the following JSP code:
+1. Edit your guestbook-portlet project's 
+    `resources/guestbookadminmportlet/view.jsp`
+    file and replace its default contents with the following JSP code:
 
 		<%@include file="../init.jsp"%>
 
@@ -62,9 +63,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     Next, you add a button row with a single button for adding new guestbooks:
     `<aui:button-row cssClass="guestbook-admin-buttons">`. The `cssClass`
     attribute allows you to specify a custom CSS class that can be used for
-    additional styling. Note the use of the `<c:if>` tag. If the current user
-    does not have permission to add new guestbooks, the button does not appear.
-    If the user does have permission, the `<portlet:renderURL>` tag is used to
+    additional styling. The `<portlet:renderURL>` tag is used to
     construct a URL that points to the `edit_guestbook.jsp`. You haven't created
     this JSP yet, but you'll use it for both adding a new guestbook and editing 
     an existing one.
@@ -109,7 +108,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     for displaying the list of possible actions for each guestbook.
 
 2. Create a new file called `guestbook_actions.jsp` in your project's
-   `/guestbookadminportlet` directory. Then add the following code to it:
+    `/guestbookadminportlet` directory. Then add the following code to it:
 
 		<%@include file="../init.jsp"%>
 
@@ -161,9 +160,8 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 
     Most of `edit_guestbook.jsp` is taken up by the `<liferay-ui:icon-menu>` tag
     and its contents. The `<liferay-ui:icon-menu>` tag itself is a container for
-    menu items. Note the use of the three `<c:if>` tags: each menu item is only
-    displayed if the user has the appropriate guestbook permissions. The Edit
-    menu item displays the Edit icon and the message *Edit*:
+    menu items. The Edit menu item displays the Edit icon and the message 
+	*Edit*:
 
         <liferay-ui:icon image="edit" message="Edit"
                 url="<%=editURL.toString() %>" />
@@ -202,7 +200,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     and editing an existing one.
 
 3. Create a new file called `edit_guestbook.jsp` in your project's
-   `/guestbookadminportlet` directory. Then add the following code to it:
+    `/guestbookadminportlet` directory. Then add the following code to it:
 
         <%@include file = "../init.jsp" %>
 
@@ -284,11 +282,10 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
 Excellent! You've now finished creating a basic UI for the Guestbook Admin 
 portlet. The Guestbook Admin portlet should now match the figure below:
 
-![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../../images/admin-app-start.png)
+![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../images/admin-app-start.png)
 
 Test out the Guestbook Admin portlet! Try adding new guestbooks, editing 
-guestbooks, configuring guestbook permissions, and deleting guestbooks. In a 
-later section of the Learning Path, you'll improve the UI by applying Liferay's 
-Lexicon Design patterns. 
+guestbooks, and deleting guestbooks. In a later section of the Learning Path, 
+you'll improve the UI by applying Liferay's Lexicon Design patterns. 
 
 <!-- Outro to go here -->

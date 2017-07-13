@@ -3,7 +3,7 @@
 It's easy to get started with your first Liferay application. You'll learn
 step-by-step how to create your project and deploy your application to
 @product@.  Before you know it, you'll have your application deployed alongside
-of the applications that come with Liferay.
+of the applications that come with @product@.
 
 Your first application is simple: you'll build a guestbook application that
 looks like this:
@@ -24,8 +24,7 @@ more modules. Each module is a functional piece of an application, encapsulated,
 and then multiple modules form a complete application. There's good reason for
 this: modules let you swap out code implementations more or less at will. This
 makes your applications easy to maintain and upgrade. Each module is packaged as
-a JAR file, which is just a .zip archive containing a particular folder
-structure that the container understands. 
+a JAR file. 
 
 Modules need a manifest file to tell the container about it. In fact,
 technically speaking your module would be perfectly valid if it contained
@@ -45,7 +44,10 @@ the instructions below to create your Liferay Module Project.
 
 5. Select the `mvc-portlet` for Project Template Name. Click *Next*. 
 
-7. Enter "Guestbook" for the class name and `com.liferay.docs.guestbook` for the package name. Click *Finish*. 
+7. Enter "Guestbook" for the class name and 
+    `com.liferay.docs.guestbook.portlet` for the package name. Click *Finish*. 
+
+![Figure x: The structure for your new project.](../../../images/guestbook-web-project.png)
 
 Because Gradle automatically manages dependencies for you, it may take a while
 for your project to be created the first time, as its dependencies must be
@@ -100,7 +102,9 @@ component, you simply invoke the service as defined in the Service Registry.
 Even though all you've done is generate it, the Guestbook project is ready to be
 built and deployed to @product@.  Make sure that your server is running, and if 
 it isn't, select it in the `Servers` pane and click the start button. After it
-starts, drag and drop the Guestbook project to the server.
+starts, drag and drop the Guestbook project to the server. If this is your first
+time starting @product@ you'll go through a short wizard to get your server 
+setup.
 
 <!-- Needs an image here showing the drag and drop, because it's not intuitive
 unless you see it. -Rich -->
@@ -110,16 +114,7 @@ navigate to your portal ([http://localhost:8080](http://localhost:8080) by
 default), and add your application to a page. To add an application to a page,
 click on the *Add* button (it looks like a plus sign) and then on
 *Applications*. In this list, your application should appear in the Sample
-category. Its name should be `guestbook-web-module Portlet`. You can
-change this name by editing the `javax.portlet.display-name` property in your
-`GuestbookMVCPortlet` class. E.g., you could use
-
-    "javax.portlet.display-name=Guestbook"
-
-to change the display name of your application to `Guestbook`.
-
-This property string should be added to the `property` array defined in the
-`@Component` annotation of your `GuestbookMVCPortlet` class.
+category. Its name should be `guestbook-web-module Portlet`. 
 
 ![Figure x: This is the default Liferay homepage. It contains several portlet applications including the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
 

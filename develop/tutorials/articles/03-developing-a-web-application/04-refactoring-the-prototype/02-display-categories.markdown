@@ -36,16 +36,26 @@ to a page.
 You also updated the location of the main `view.jsp` to it's new location in
 `/guestbookwebportlet`.
 
+Since you edited the metadata, you'll need to remove and re-add the portlet to 
+the page before continuing
+
+1. Go to `localhost:8080` in your web browser.
+2. Sign in to your administrative account.
+3. Click on the portlet menu for the Guestbook portlet (which will be showing
+    an error), select *Remove* and click *OK* to confirm.
+4. Open the *Add* menu and select *Applications*
+5. Open the *Social* category and drag and drop the *Guestbook* application
+    onto the page.
+
+
 ### New and improved
  
 Now the Guestbook portlet will display in a category, with the name you 
 specified. While you were able to add it to the page before, it has now been
-improved and will provide a beter user experience.
+improved and will provide a beter user experience. 
 
 Another important feature that's being used behind the scenes is Liferay's 
 Single Page Applications (SPA.) All @product@ apps are automatically SPA 
 enabled by default, and require no changes to your apps or workflow, so the 
 Guestbook portlet can take advantage of SPA features right away. You can read 
 more about SPA in the [Automatic Single Page Applications](/develop/tutorials/-/knowledge_base/7-0/automatic-single-page-applications) tutorial.
-
-In the next section, you'll create the Guestbook Admin portlet.

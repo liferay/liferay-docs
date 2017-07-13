@@ -12,7 +12,7 @@ only contains some sample content:
     <%@ include file="/init.jsp" %>
 
     <p>
-        <b><liferay-ui:message key="com_liferay_docs_guestbook_GuestbookMVCPortlet.caption"/></b>
+        <b><liferay-ui:message key="guestbook-web.caption"/></b>
     </p>
 
 First of all, `view.jsp` imports `init.jsp`. By convention, imports and 
@@ -55,3 +55,5 @@ useful tags):
 
 Your application now displays a button instead of a message but the button
 currently doesn't do anything. Next, you'll create a URL for your button.
+
+![Figure x: Your new groovy button.](../../../images/guestbook-new-button.png)

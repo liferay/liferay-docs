@@ -20,13 +20,13 @@ System-generated URLs prevent this from happening. Creating a system-generated
 URL is easy:
 
 1. Add these tags below the `<%@ include file="/init.jsp" %>` line but above
-   the `<aui:button-row>` tag:
+    the `<aui:button-row>` tag:
 
         <portlet:renderURL var="addEntryURL">
             <portlet:param name="mvcPath" value="/edit_entry.jsp"></portlet:param>
         </portlet:renderURL>
 
-2. Add this attribute to the `<aui:button>` tag after `value="Add Entry"`:
+2. Add this attribute to the `<aui:button>` tag before `value="Add Entry"`:
 
         onClick="<%= addEntryURL.toString() %>"
 
