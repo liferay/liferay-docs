@@ -17,9 +17,9 @@ portlet's required dependencies for @product-ver@:
   article to find the project dependencies corresponding to the @product@
   versions.
 
-In this tutorial, you'll see just how easy it is to upgrade a Liferay JSF
-portlet by exploring the upgrade process for the sample JSF Applicant portlet.
-This portlet provides fields for a job application.
+In this tutorial, you'll see how easy it is to upgrade a Liferay JSF portlet by
+exploring the upgrade process for the sample JSF Applicant portlet. This portlet
+provides fields for a job application.
 
 ![Figure 1: The JSF Applicant portlet provides a job application for users to submit.](../../../../images/jsf-applicant-6-2.png)
 
@@ -38,7 +38,7 @@ Follow the steps below to upgrade your Liferay JSF portlet.
 
     ![Figure 2: The Liferay Faces site gives you options to generate many combinations of dependencies.](../../../../images/jsf-dependency-generation.png)
 
-    Compare the generated dependencies with your portlet's dependencies and make
+3.  Compare the generated dependencies with your portlet's dependencies and make
     any necessary updates. For the sample JSF Applicant portlet, only one
     Liferay Faces dependency requires an update:
 
@@ -80,9 +80,7 @@ Deploying a Liferay JSF portlet produces messages like these:
     ...
     13:42:05,169 INFO  [fileinstall-C:/liferay-ce-portal-7.0-ga4/osgi/war][PortletHotDeployListener:293] 1 portlet for com.liferay.faces.demo.jsf.applicant.portlet-1.0 is available for use
 
-The portlet is now available on @product@.
-
-![Figure 3: The JSF Applicant portlet displayed in @product-ver@.](../../../../images/jsf-applicant-6-2.png)
+After the portlet deployment is complete, it's available on @product@.
 
 You've learned how to upgrade and deploy a Liferay JSF portlet. You resolve
 dependencies and deploy the portlet as you always have. It's just that easy!
