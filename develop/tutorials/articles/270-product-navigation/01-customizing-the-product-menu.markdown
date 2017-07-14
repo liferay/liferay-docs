@@ -124,7 +124,7 @@ how to add a panel category.
 
     If you'd like to provide something simple for your panel category like a
     name, extending `BasePanelCategory` is probably sufficient. For example, the
-    [ControlPanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/panel/internal/application/list/ControlPanelCategory.html)
+    [ControlPanelCategory](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/web-experience/product-navigation/product-navigation-control-panel/src/main/java/com/liferay/product/navigation/control/panel/internal/application/list/ControlPanelCategory.java)
     extends `BasePanelCategory` and specifies a `getLabel` method to set and
     display the panel category name.
 
@@ -136,7 +136,7 @@ how to add a panel category.
     If you'd like to provide functionality that is more complex, you can use
     JSPs or any other similar technology to render the panel category. You can
     easily do this by extending `BaseJSPPanelCategory`. For example, the
-    [SiteAdministrationPanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/site/administration/internal/application/list/SiteAdministrationPanelCategory.html)
+    [SiteAdministrationPanelCategory](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/web-experience/product-navigation/product-navigation-site-administration/src/main/java/com/liferay/product/navigation/site/administration/internal/application/list/SiteAdministrationPanelCategory.java)
     specifies the `getHeaderJspPath` and `getJspPath` methods. You could create
     a JSP with the UI you'd like to render and specify its path in methods like
     these:
