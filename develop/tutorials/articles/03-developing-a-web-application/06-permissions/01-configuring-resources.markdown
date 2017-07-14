@@ -10,7 +10,7 @@ application at the configuration file you'll use to define those permissions.
    
 2. In this file, place the following property:
 
-        resource.actions.configs=resource-actions/default.xml
+        resource.actions.configs=META-INF/resource-actions/default.xml
 
 This property defines the name and location of your permissions definition 
 file. You can, of course, call it anything you want, but this setup follows the
@@ -18,7 +18,7 @@ Liferay convention.
 
 Next, create the file itself:
 
-1. Create a subfolder called `resource-actions` in the same folder.
+1. In the `META-INF` folder, create a subfolder called `resource-actions`.
 
 2. Create a new file in this folder called `default.xml`.
 
@@ -160,7 +160,7 @@ define permissions for the portlet in particular. These are managed in the
    
 2. Just like in the `guestbook-service` version, in this file, place the following property:
 
-        resource.actions.configs=resource-actions/default.xml
+        resource.actions.configs=META-INF/resource-actions/default.xml
 
 3. Create a subfolder called `resource-actions` in the same folder.
 

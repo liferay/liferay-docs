@@ -32,7 +32,7 @@ previous step. Since you definitely want to do this, these booleans are set to
     package.
 
 4. Add a line of code that adds resources for this entity, near the end of the 
-    method, just below the return statement:
+    method, just before the return statement:
 
         resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
 		  Entry.class.getName(), entryId, false, true, true);

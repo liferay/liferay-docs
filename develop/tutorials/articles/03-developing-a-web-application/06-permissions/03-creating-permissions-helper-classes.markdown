@@ -22,6 +22,7 @@ permission checks.
 3.  Place the following code in this class: 
 
 		package com.liferay.docs.guestbook.service.permission;
+        
 		import org.osgi.service.component.annotations.Component;
 		import com.liferay.portal.kernel.exception.PortalException;
         import com.liferay.portal.kernel.security.auth.PrincipalException;
