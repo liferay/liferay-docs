@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "2.2.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "2.3.0"
     }
 
     repositories {
@@ -77,13 +77,14 @@ allprojects {
 
 ## Tasks [](id=tasks)
 
-The plugin adds four tasks to your project:
+The plugin adds a series of tasks to your project:
 
 Name | Depends On | Type | Description
 ---- | ---------- | ---- | -----------
 `cleanNPM` | \- | [`Delete`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Delete.html) | Deletes the `node_modules` directory and the `npm-shrinkwrap.json` file from the project, if present.
 <a name="downloadnode"></a>`downloadNode` | \- | [`DownloadNodeTask`](#downloadnodetask) | Downloads and unpacks the local Node.js distribution for the project. If `node.download` is `false`, this task is disabled.
-`npmInstall` | `downloadNode` | [`NpmInstallTask`](#npminstalltask) | Runs `npm install` to install the dependencies declared in the project's `package.json` file, if present.
+`npmInstall` | `downloadNode` | [`NpmInstallTask`](#npminstalltask) | Runs `npm install` to install the dependencies declared in the project's `package.json` file, if present. By default, the task is [configured](#npminstallretries) to run `npm install` two more times if it fails.
+[`npmRun${script}`](#tasks-npmrunscript) | `npmInstall` | [`ExecuteNpmTask`](#executenpmtask) | Runs the `${script}` NPM script.
 `npmShrinkwrap` | `cleanNPM`, `npmInstall` | [`NpmShrinkwrapTask`](#npmshrinkwraptask) | Locks down the versions of a package's dependencies in order to control which dependency versions are used.
 
 ### DownloadNodeTask [](id=downloadnodetask)
@@ -270,3 +271,20 @@ Property Name | Type | Default Value | Description
 `npmEmailAddress` | `String` | `null` | The email address of the npmjs.com user that publishes the package.
 `npmPassword` | `String` | `null` | The password of the npmjs.com user that publishes the package.
 `npmUserName` | `String` | `null` | The name of the npmjs.com user that publishes the package.
+
+### npmRun${script} Task
+
+For each [script](https://docs.npmjs.com/misc/scripts) declared in the
+`package.json` file of the project, one task `npmRun${script}` of type
+[`ExecuteNpmTask`](#executenpmtask) is added. Each of these tasks is
+automatically configured with sensible defaults:
+
+Property Name | Default Value
+------------- | -------------
+`args` | `["run-script", "${script}"]`
+
+If the [`java`](https://docs.gradle.org/current/userguide/java_plugin.html)
+plugin is applied and the `package.json` file declares a script named `"build"`,
+then the script is executed before the `classes` task but after the
+[`processResources`](https://docs.gradle.org/4.0/userguide/java_plugin.html#sec:java_resources)
+task.

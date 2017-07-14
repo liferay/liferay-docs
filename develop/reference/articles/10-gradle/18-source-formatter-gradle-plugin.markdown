@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "2.0.24"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "2.0.35"
     }
 
     repositories {
@@ -70,6 +70,9 @@ subprojects {
 }
 ```
 
+The tasks `checkSourceFormatting` and `formatSource` are automatically skipped
+if another task with the same name is being executed in a parent project.
+
 ### FormatSourceTask [](id=formatsourcetask)
 
 Tasks of type `FormatSourceTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
@@ -116,7 +119,7 @@ manually adding a dependency to the `sourceFormatter` configuration:
 
 ```gradle
 dependencies {
-    sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.412"
+    sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.424"
 }
 ```
 
