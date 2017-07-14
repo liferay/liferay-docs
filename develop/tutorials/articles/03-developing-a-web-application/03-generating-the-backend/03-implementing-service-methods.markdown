@@ -1,15 +1,17 @@
 # Implementing Service Methods
 
-Using Liferay and Service Builder, the implementations are defined in 
+Using @product@ and Service Builder, you define the service implementationsin 
 `*ServiceImpl` classes in the service module. The 
 `*LocalServiceImpl` contains the local service implementation, and the 
 `*ServiceImpl` provides the remote service implementation. For now you only
 need to create the local implementation, but later you'll implement remote 
 services.
 
-2. In the `guestbook-service` module, open `com.liferay.docs.guestbook.service.impl.EntryLocalServiceImpl`. You have several methods to add.
+1. From the `guestbook-service` module, in the 
+    `com.liferay.docs.guestbook.service.impl` package, open 
+    `EntryLocalServiceImpl`. You have several methods to add.
 
-3. Create the `addEntry` method:
+2. Create the `addEntry` method:
 
 	    public Entry addEntry(
 			long userId, long guestbookId, String name, String email,
@@ -53,7 +55,7 @@ services.
 	The user provided info is validated upon submission. You then update the 
 	status of the object and return the new `entry` object.
 	
-4. Create the `deleteEntry` method:
+3. Below that, create the `deleteEntry` method:
 
 	    public Entry deleteEntry(long entryId, ServiceContext serviceContext)
 		throws PortalException {
@@ -67,7 +69,7 @@ services.
 	
 	This method retrieves the `entry` object based on the `entryId`, and then returns the object to be deleted.
 	
-5. Add the "getters":
+4. Then add the "getters":
 
 	    public List<Entry> getEntries(long groupId, long guestbookId) {
 		  return entryPersistence.findByG_G(groupId, guestbookId);
@@ -95,7 +97,7 @@ services.
 	can retrieve partial list while specifying a start and end point (hint: this might be useful for a paginated list). One version of that method uses a comparator, the other does not. Then, `getEntriesCount` returns
 	the total number of entries as an integer.
 	
-6. Add the `validate` method:
+5. Below that is where the `validate` method goes:
 	
 	    protected void validate(String name, String email, String entry)
 				throws PortalException {
@@ -119,14 +121,16 @@ services.
 	not need to be a valid address capable of receiving mail. It just needs to look like one.
 	
 	
-7. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
+6. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
     `com.liferay.portal.kernel.service.ServiceContext,`
 	`com.liferay.docs.guestbook.model.Entry,` and 
 	`com.liferay.portal.kernel.util.Validator.` when prompted.
 
-8. Open `com.liferay.docs.guestbook.service.imply.GuestbookLocalServiceImpl` to update its methods.
+Those are all the methods that you need for your Entry. Next, create the methods for the Guestbook.
 
-9. First there's `addGuestbook`:
+1. From the same package, open GuestbookLocalServiceImpl` to update its methods.
+
+2. First there's `addGuestbook`:
 
 	    public Guestbook addGuestbook(
 				long userId, String name, ServiceContext serviceContext)
@@ -160,11 +164,11 @@ services.
 		}
     
 	Like the `addEntry` method, `addGuestbook` retrieves a mix of user provided
-	input and information provided by the Liferay's context to populate the 
+	input and information provided by the context to populate the 
 	fields that make up the Guestbook. The method then updates the `guestbook` 
-	object and gives you that object as the return value.
+	object and returns it.
 	
-10. Next, the methods for getting guestbooks:
+3. Next, the methods for getting guestbooks:
 
 		public List<Guestbook> getGuestbooks(long groupId) {
 			return guestbookPersistence.findByGroupId(groupId);
@@ -188,7 +192,7 @@ services.
 	also retrieve the same list without a comparator. The final method gives you
 	the total number of guestbooks for a given site.
 
-11. And the guestbook validator:
+4. And the guestbook validator:
 
 		protected void validate(String name) throws PortalException {
 			if (Validator.isNull(name)) {
@@ -199,15 +203,15 @@ services.
 	The `validate` method simply verifies that text was entered for the 
 	guestbook name and that the value isn't "null."
 	
-12. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
+5. Press [CTRL]+[SHIFT]+O to organize imports and select `java.util.Date` and
     `com.liferay.portal.kernel.service.ServiceContext,`
 	`com.liferay.docs.guestbook.model.Entry,` and 
 	`com.liferay.portal.kernel.util.Validator.` when prompted.
 
 These local service methods provide the implementation for the services that 
 you will reference in your portlet class. You should never directly call a
-`*LocalServiceImpl` method, instead you use a service reference the 
-`*LocalServiceUtil` method which these methods implement. 
+`*LocalServiceImpl` method, instead you will create a service reference to the 
+`*LocalServiceUtil` class, and the call those methods.
 
 ## Updating Generated Classes
  
