@@ -34,15 +34,15 @@ Ext plugin use cases:
   [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
   instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
   overridden beans are still relevant if converting your legacy Ext plugin
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255605)).
 - Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
   the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
   section
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255575)).
 - Modifying @product@'s `web.xml` file
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255591)).
 - Adding to @product@'s `web.xml` file
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255563)).
 
 Refer to each use case's linked tutorial for further information on that topic.
 
