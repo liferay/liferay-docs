@@ -1,12 +1,12 @@
 # Upgrading Portlets that use Service Builder [](id=upgrading-portlets-that-use-service-builder)
 
-@product-ver@ lets you continue developing portlets that use [Service
-Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder). You can focus
-on your application's business logic instead of its persistence details. And
-Service Builder still generates model classes, local and remote services, and
-permissioned services. 
+@product-ver@ continues to use 
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder), so
+you can focus on your application's business logic instead of its persistence
+details. It still generates model classes, local and remote services, and
+persistence. 
 
-This tutorial demonstrates upgrading a Liferay Plugins SDK 6.2 sample portlet
+This tutorial demonstrates upgrading a Liferay Plugins SDK 6.2 portlet
 called Guestbook portlet (project `guestbook-portlet`). It's from the
 [Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
 section of the Liferay Portal 6.2 Learning Path
@@ -22,8 +22,8 @@ and the
 The Guestbook portlet has the following characteristics:
 
 -   Extends `MVCPortlet`
--   Separate Model, View, and Control layers
--   Persistence by Hibernate
+-   Separate Model, View, and Controller layers
+-   Persistence by Hibernate under Service Builder
 -   View layer implemented by JSPs
 -   Manages dependencies via Ant/Ivy
 -   Developed in a Liferay Plugins SDK 6.2
