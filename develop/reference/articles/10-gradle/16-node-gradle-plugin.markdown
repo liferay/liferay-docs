@@ -272,7 +272,7 @@ Property Name | Type | Default Value | Description
 `npmPassword` | `String` | `null` | The password of the npmjs.com user that publishes the package.
 `npmUserName` | `String` | `null` | The name of the npmjs.com user that publishes the package.
 
-### npmRun${script} Task
+### npmRun${script} Task [](id=npmrunscript-task)
 
 For each [script](https://docs.npmjs.com/misc/scripts) declared in the
 `package.json` file of the project, one task `npmRun${script}` of type
