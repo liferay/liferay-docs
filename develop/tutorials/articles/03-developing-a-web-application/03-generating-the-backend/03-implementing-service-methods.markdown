@@ -167,6 +167,7 @@ Those are all the methods that you need for your Entry. Next, create the methods
 	input and information provided by the context to populate the 
 	fields that make up the Guestbook. The method then updates the `guestbook` 
 	object and returns it.
+    
 	
 3. Next, the methods for getting guestbooks:
 
