@@ -1,12 +1,12 @@
 # Upgrading a Liferay JSF Portlet
 
 Liferay JSF portlets are easy to upgrade and require very few changes. The ease
-of upgrading JSF portlets is caused by the way JSF portlets run in @product@.
+of upgrading JSF portlets is due to the way JSF portlets run in @product@.
 Since they leverage the
 [Liferay Faces](/develop/reference/-/knowledge_base/7-0/liferay-faces) project,
 your JSF portlet does not directly deal with @project@ code, but rather, it
-leverages the Faces JARs that map the JSF lifecycle to the @product@ portlet
-lifecycle. Because of this, the only modifications you need to make in your
+leverages the Faces JARs that encapsulate @product@ Java API and JavaScript
+differences. Because of this, the only modifications you need to make in your
 legacy portlet are dependency updates. There are two ways you can find your JSF
 portlet's required dependencies for @product-ver@:
 
