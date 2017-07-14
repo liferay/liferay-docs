@@ -16,16 +16,14 @@ managed by Service Builder. Remove the old one to prevent any conflicts:
 You need to make your web modules aware of your service modules so that 
 you can access the services from your web module. Then you need to update your `addEntry` method to use the new services.
 
-1. In your `guestbook-web` module, open `GuestbookPortlet.java`
-
-2. Add these declarations to the `build.gradle` file for your guestbook-web 
-    project, to add the service and api modules to the classpath.
+1. First, open the `build.gradle` file for your guestbook-web 
+    project, and add these imports to the file:
 
         compileOnly project(":modules:guestbook:guestbook-api")
 	    compileOnly project(":modules:guestbook:guestbook-service")
 
 
-3. First replace the `addEntry` method with the new version:
+2. Now open `GuestbookPortlet.java` and replace the `addEntry` method with the new version:
 
 	public void addEntry(ActionRequest request, ActionResponse response)
 				throws PortalException {
@@ -64,8 +62,7 @@ you can access the services from your web module. Then you need to update your `
 
     The `addEntry` method gets the name, message, and email fields that the 
 	user submits through the JSP and passes them on to the service to be stored 
-	as entry data. This is all done in a `try...catch` statement to provide
-	appropriate feedback if the entry cannot be added.
+	as entry data. This is all done in a `try...catch` statement.
 	
 4. Next do `addGuestbook`:
 

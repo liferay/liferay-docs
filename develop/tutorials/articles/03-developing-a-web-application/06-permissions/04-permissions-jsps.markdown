@@ -80,6 +80,42 @@ JSTL tags. Adding the check for the Add Entry button is very similar:
 
         </c:if>
 
+The last check we need to do is in the `entry_actions.jsp`. This will determine
+what options appear for logged in users who can see the actions menu in the 
+portlet. Just like before, you'll wrap each `renderURL` in a "if" statement
+that checks the permissions against available actions.
+
+1. Open `entry_actions.jsp`.
+
+2. Just above the `<portlet:renderURL var="editURL">` add a tag to check for
+    `UPDATE` permissions:
+           
+        <c:if test="<%= EntryPermission.contains(permissionChecker,
+             entry.getEntryId(), ActionKeys.UPDATE) %>">
+
+3. Close it off with a `</c:if>` just below `...url="<%=editURL.toString() %>" />`
+
+4. Below that add this block, which checks for permission to change permissions
+    and displays the *Permissions* link if the user has permission to use it.
+    
+        <c:if test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(),
+            ActionKeys.PERMISSIONS) %>">
+        
+            <liferay-security:permissionsURL modelResource="<%= Entry.class.getName() %>"
+              modelResourceDescription="<%= entry.getMessage() %>" resourcePrimKey="<%=
+              String.valueOf(entry.getEntryId()) %>" var="permissionsURL" />
+            <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
+        </c:if>
+
+5. Add this block that checks for `DELETE` permissions above the 
+    `<portlet:actionURL name="deleteEntry" var="deleteURL">` tag:
+    
+        <c:if test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(),
+           ActionKeys.DELETE) %>">
+
+6. And finally, close it off with a `</c:if>` just below the 
+    `<liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />` tag. 
+
 Excellent! You've now implemented all the permission checks you'd defined for
 your application. Save the file and test your application with different users.
 Administrative users see all the buttons, regular users see the Add Entry
