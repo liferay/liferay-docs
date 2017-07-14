@@ -7,19 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.liferay.docs.getentriesscreenlet.GetEntriesListener;
-import com.liferay.docs.getentriesscreenlet.GetEntriesScreenlet;
+import com.liferay.docs.entrylistscreenlet.EntryListScreenlet;
 import com.liferay.docs.model.EntryModel;
+import com.liferay.mobile.screens.base.list.BaseListListener;
 
 import java.util.List;
 
-public class EntriesFragment extends Fragment implements GetEntriesListener {
-
-    private long _guestbookId;
-
-    public EntriesFragment() {
-        // Required empty public constructor
-    }
+public class EntriesFragment extends Fragment implements BaseListListener<EntryModel> {
 
     public static EntriesFragment newInstance(long guestbookId) {
         EntriesFragment entriesFragment = new EntriesFragment();
@@ -35,27 +29,33 @@ public class EntriesFragment extends Fragment implements GetEntriesListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_entries, container, false);
-        _guestbookId = getArguments().getLong("guestbookId");
+        long guestbookId = getArguments().getLong("guestbookId");
 
-        GetEntriesScreenlet getEntriesScreenlet =
-                (GetEntriesScreenlet) view.findViewById(R.id.getentries_screenlet);
-        getEntriesScreenlet.setListener(this);
-        getEntriesScreenlet.setGuestbookId(_guestbookId);
+        EntryListScreenlet screenlet = (EntryListScreenlet) view.findViewById(R.id.entrylist_screenlet);
+        screenlet.setListener(this);
+        screenlet.setGuestbookId(guestbookId);
 
         return view;
     }
 
     @Override
-    public void onGetEntriesSuccess(List<EntryModel> entries) {
+    public void onListPageFailed(int startRow, Exception e) {
+        Toast.makeText(getActivity(), "Page request failed", Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void onGetEntriesFailure(Exception e) {
-        Toast.makeText(getActivity(), "Couldn't get entries " + e.getMessage(), Toast.LENGTH_LONG).show();
+    public void onListPageReceived(int startRow, int endRow, List<EntryModel> entries, int rowCount) {
+
     }
 
     @Override
-    public void onItemClicked(final EntryModel entry) {
+    public void onListItemSelected(EntryModel entry, View view) {
+
+    }
+
+    @Override
+    public void error(Exception e, String userAction) {
+
     }
 
 }

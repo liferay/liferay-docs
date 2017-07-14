@@ -1,99 +1,141 @@
 package com.liferay.docs.model;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-import java.io.Serializable;
 import java.util.Date;
+import java.util.Map;
 
-public class EntryModel implements Serializable {
+public class EntryModel implements Parcelable {
 
-    private long _entryId;
-    private long _groupId;
-    private long _companyId;
-    private long _userId;
-    private String _userName;
-    private long _createDate;
-    private long _modifiedDate;
-    private String _name;
-    private String _email;
-    private String _message;
-    private long _guestbookId;
+    private Map values;
+    private long entryId;
+    private long groupId;
+    private long companyId;
+    private long userId;
+    private String userName;
+    private long createDate;
+    private long modifiedDate;
+    private String name;
+    private String email;
+    private String message;
+    private long guestbookId;
 
-    public EntryModel(JSONObject json) throws JSONException {
-
-        _entryId = json.getLong("entryId");
-        _groupId = json.getLong("groupId");
-        _companyId = json.getLong("companyId");
-        _userId = json.getLong("userId");
-        _userName = json.getString("userName");
-        _createDate = json.getLong("createDate");
-        _modifiedDate = json.getLong("modifiedDate");
-        _name = json.getString("name");
-        _email = json.getString("email");
-        _message = json.getString("message");
-        _guestbookId = json.getLong("guestbookId");
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof EntryModel)) {
-            return false;
+    public static final Creator<EntryModel> CREATOR = new Creator<EntryModel>() {
+        @Override
+        public EntryModel createFromParcel(Parcel in) {
+            return new EntryModel(in);
         }
 
-        EntryModel entry = (EntryModel) obj;
+        @Override
+        public EntryModel[] newArray(int size) {
+            return new EntryModel[size];
+        }
+    };
 
-        return (_entryId == entry.getEntryId());
+    public EntryModel() {
+        super();
+    }
+
+    protected EntryModel(Parcel in) {
+        entryId = in.readLong();
+        groupId = in.readLong();
+        companyId = in.readLong();
+        userId = in.readLong();
+        userName = in.readString();
+        createDate = in.readLong();
+        modifiedDate = in.readLong();
+        name = in.readString();
+        email = in.readString();
+        message = in.readString();
+        guestbookId = in.readLong();
+    }
+
+    public EntryModel(Map<String, Object> stringObjectMap) {
+        values = stringObjectMap;
+        entryId = ((Integer) stringObjectMap.get("entryId")).longValue();
+        groupId = ((Integer) stringObjectMap.get("groupId")).longValue();
+        companyId = ((Integer) stringObjectMap.get("companyId")).longValue();
+        userId = ((Integer) stringObjectMap.get("userId")).longValue();
+        userName = (String) stringObjectMap.get("userName");
+        createDate = (long) stringObjectMap.get("createDate");
+        modifiedDate = (long) stringObjectMap.get("modifiedDate");
+        name = (String) stringObjectMap.get("name");
+        email = (String) stringObjectMap.get("email");
+        message = (String) stringObjectMap.get("message");
+        guestbookId = ((Integer) stringObjectMap.get("guestbookId")).longValue();
     }
 
     @Override
-    public String toString() {
-        return _message;
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(entryId);
+        dest.writeLong(groupId);
+        dest.writeLong(companyId);
+        dest.writeLong(userId);
+        dest.writeString(userName);
+        dest.writeLong(createDate);
+        dest.writeLong(modifiedDate);
+        dest.writeString(name);
+        dest.writeString(email);
+        dest.writeString(message);
+        dest.writeLong(guestbookId);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public Map getValues() {
+        return values;
+    }
+
+    public void setValues(Map values) {
+        this.values = values;
     }
 
     public long getEntryId() {
-        return _entryId;
+        return entryId;
     }
 
     public long getGroupId() {
-        return _groupId;
+        return groupId;
     }
 
     public long getCompanyId() {
-        return _companyId;
+        return companyId;
     }
 
     public long getUserId() {
-        return _userId;
+        return userId;
     }
 
     public String getUserName() {
-        return _userName;
+        return userName;
     }
 
     public Date getCreateDate() {
-        Date createDate = new Date(_createDate);
-        return createDate;
+        return new Date(createDate);
     }
 
     public Date getModifiedDate() {
-        Date modifiedDate = new Date(_modifiedDate);
-        return modifiedDate;
+        return new Date(modifiedDate);
     }
 
     public String getName() {
-        return _name;
+        return name;
     }
 
     public String getEmail() {
-        return _email;
+        return email;
     }
 
     public String getMessage() {
-        return _message;
+        return message;
     }
 
     public long getGuestbookId() {
-        return _guestbookId;
+        return guestbookId;
     }
+
 }

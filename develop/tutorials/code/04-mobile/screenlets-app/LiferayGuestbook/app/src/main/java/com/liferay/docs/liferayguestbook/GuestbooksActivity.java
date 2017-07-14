@@ -15,13 +15,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.liferay.docs.getguestbooksscreenlet.GetGuestbooksListener;
-import com.liferay.docs.getguestbooksscreenlet.GetGuestbooksScreenlet;
+import com.liferay.docs.guestbooklistscreenlet.GuestbookListScreenlet;
 import com.liferay.docs.model.GuestbookModel;
+import com.liferay.mobile.screens.base.list.BaseListListener;
 
 import java.util.List;
 
-public class GuestbooksActivity extends AppCompatActivity implements GetGuestbooksListener {
+public class GuestbooksActivity extends AppCompatActivity implements
+        BaseListListener<GuestbookModel> {
 
     private ActionBar actionBar;
     private Toolbar toolbar;
@@ -44,31 +45,16 @@ public class GuestbooksActivity extends AppCompatActivity implements GetGuestboo
             }
         });
 
-        GetGuestbooksScreenlet getGuestbooksScreenlet = (GetGuestbooksScreenlet)
-                findViewById(R.id.getguestbooks_screenlet);
-        getGuestbooksScreenlet.setListener(this);
+        GuestbookListScreenlet screenlet =
+                (GuestbookListScreenlet) findViewById(R.id.guestbooklist_screenlet);
+        screenlet.setListener(this);
     }
 
-    @Override
-    public void onItemClicked(final GuestbookModel guestbook) {
-        actionBar.setTitle(guestbook.getName());
-
-        EntriesFragment entriesFragment = EntriesFragment.newInstance(guestbook.getGuestbookId());
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, entriesFragment);
-        transaction.commit();
-
-        drawer.closeDrawers();
-    }
-
-    @Override
-    public void onGetGuestbooksSuccess(List<GuestbookModel> guestbooks) {
-        onItemClicked(guestbooks.get(0));
-    }
-
-    @Override
-    public void onGetGuestbooksFailure(Exception e) {
-        Toast.makeText(this, "Couldn't get guestbooks " + e.getMessage(), Toast.LENGTH_LONG).show();
+    private void initActionBar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("");
     }
 
     private void initDrawer() {
@@ -81,11 +67,40 @@ public class GuestbooksActivity extends AppCompatActivity implements GetGuestboo
         toggle.syncState();
     }
 
-    private void initActionBar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        actionBar = getSupportActionBar();
-        actionBar.setTitle("");
+    public void showEntries(GuestbookModel guestbook) {
+        actionBar.setTitle(guestbook.getName());
+
+        EntriesFragment entriesFragment = EntriesFragment.newInstance(guestbook.getGuestbookId());
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, entriesFragment);
+        transaction.commit();
+    }
+
+    @Override
+    public void onListPageFailed(int startRow, Exception e) {
+
+        Toast.makeText(this, "Page request failed", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onListPageReceived(int startRow, int endRow, List<GuestbookModel> guestbooks,
+                                   int rowCount) {
+
+        if (startRow == 0) {
+            showEntries(guestbooks.get(0));
+        }
+    }
+
+    @Override
+    public void onListItemSelected(GuestbookModel guestbook, View view) {
+
+        showEntries(guestbook);
+        drawer.closeDrawers();
+    }
+
+    @Override
+    public void error(Exception e, String userAction) {
+
     }
 
     @Override

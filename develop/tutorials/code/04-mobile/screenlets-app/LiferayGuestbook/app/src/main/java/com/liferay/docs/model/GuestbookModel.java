@@ -1,80 +1,116 @@
 package com.liferay.docs.model;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-import java.io.Serializable;
 import java.util.Date;
+import java.util.Map;
 
-public class GuestbookModel implements Serializable {
+public class GuestbookModel implements Parcelable {
 
-    private long _guestbookId;
-    private long _groupId;
-    private long _companyId;
-    private long _userId;
-    private String _userName;
-    private long _createDate;
-    private long _modifiedDate;
-    private String _name;
+    private Map values;
+    private long guestbookId;
+    private long groupId;
+    private long companyId;
+    private long userId;
+    private String userName;
+    private long createDate;
+    private long modifiedDate;
+    private String name;
 
-    public GuestbookModel(JSONObject json) throws JSONException {
-        _guestbookId = json.getLong("guestbookId");
-        _groupId = json.getLong("groupId");
-        _companyId = json.getLong("companyId");
-        _userId = json.getLong("userId");
-        _userName = json.getString("userName");
-        _createDate = json.getLong("createDate");
-        _modifiedDate = json.getLong("modifiedDate");
-        _name = json.getString("name");
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof GuestbookModel)) {
-            return false;
+    public static final Creator<GuestbookModel> CREATOR = new Creator<GuestbookModel>() {
+        @Override
+        public GuestbookModel createFromParcel(Parcel in) {
+            return new GuestbookModel(in);
         }
 
-        GuestbookModel guestbook = (GuestbookModel) obj;
+        @Override
+        public GuestbookModel[] newArray(int size) {
+            return new GuestbookModel[size];
+        }
+    };
 
-        return (_guestbookId == guestbook.getGuestbookId());
+    public GuestbookModel() {
+        super();
+    }
+
+    protected GuestbookModel(Parcel in) {
+        guestbookId = in.readLong();
+        groupId = in.readLong();
+        companyId = in.readLong();
+        userId = in.readLong();
+        userName = in.readString();
+        createDate = in.readLong();
+        modifiedDate = in.readLong();
+        name = in.readString();
+    }
+
+    public GuestbookModel(Map<String, Object> stringObjectMap) {
+        values = stringObjectMap;
+        guestbookId =  ((Integer) stringObjectMap.get("guestbookId")).longValue();
+        groupId = ((Integer) stringObjectMap.get("groupId")).longValue();
+        companyId = ((Integer) stringObjectMap.get("companyId")).longValue();
+        userId = ((Integer) stringObjectMap.get("userId")).longValue();
+        userName = (String) stringObjectMap.get("userName");
+        createDate = (long) stringObjectMap.get("createDate");
+        modifiedDate = (long) stringObjectMap.get("modifiedDate");
+        name = (String) stringObjectMap.get("name");
     }
 
     @Override
-    public String toString() {
-        return _name;
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(guestbookId);
+        dest.writeLong(groupId);
+        dest.writeLong(companyId);
+        dest.writeLong(userId);
+        dest.writeString(userName);
+        dest.writeLong(createDate);
+        dest.writeLong(modifiedDate);
+        dest.writeString(name);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public long getGuestbookId() {
-        return _guestbookId;
+        return guestbookId;
     }
 
     public long getGroupId() {
-        return _groupId;
+        return groupId;
     }
 
     public long getCompanyId() {
-        return _companyId;
+        return companyId;
     }
 
     public long getUserId() {
-        return _userId;
+        return userId;
     }
 
     public String getUserName() {
-        return _userName;
+        return userName;
     }
 
     public Date getCreateDate() {
-        Date createDate = new Date(_createDate);
-        return createDate;
+        return new Date(createDate);
     }
 
     public Date getModifiedDate() {
-        Date modifiedDate = new Date(_modifiedDate);
-        return modifiedDate;
+        return new Date(modifiedDate);
     }
 
     public String getName() {
-        return _name;
+        return name;
+    }
+
+    public Map getValues() {
+        return values;
+    }
+
+    public void setValues(Map values) {
+        this.values = values;
     }
 }
