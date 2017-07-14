@@ -5,7 +5,7 @@ similar to enabling them for guestbooks. As with guestbooks, you'll separate the
 page where users comment on and rate guestbook entries from the page where users
 actually edit the guestbook entries. 
 
-Open your guestbook-portlet project's `docroot/html/guestbook/edit_entry.jsp`
+Open your guestbook-portlet project's `guestbook/edit_entry.jsp`
 file. Replace the existing contents with the following contents:
 
     <%@ include file="../init.jsp" %>

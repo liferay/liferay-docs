@@ -69,7 +69,7 @@ Test out your new JSPs by clicking on one of the titles of the guestbook or
 guestbook entry asset. Your `full_content.jsp` should be rendered by the Asset 
 Publisher portlet:
 
-![Figure 1: When you click on the title for a guestbook or guestbook entry that's displayed by the Asset Publisher, your `full_content.jsp` should be displayed.](../../../images/asset-publisher-full-content.png)
+![Figure 1: When you click on the title for a guestbook or guestbook entry that's displayed by the Asset Publisher, your `full_content.jsp` should be displayed.](../../../../images/asset-publisher-full-content.png)
 
 By default, when displaying the full view of an asset, the Asset Publisher
 displays additional links for Twitter, Facebook, and Google Plus. These links
