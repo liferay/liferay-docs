@@ -109,7 +109,7 @@ current entry.
 
 <!-- Need to check if the info below is true... -->
 
-![Figure 3: The Breadcrumb portlet appears on regular portal pages, by default. It appears just beneath the main page navigation menu and displays the path to the current page or portlet.](../../../images/portlet-breadcrumb.png)
+![Figure 3: The Breadcrumb portlet appears on regular portal pages, by default. It appears just beneath the main page navigation menu and displays the path to the current page or portlet.](../../../../images/portlet-breadcrumb.png)
 
 At the end of the scriptlet, you add the names of the existing asset tags for
 the current entry as keywords to the portal page. These tag names appear in

@@ -302,7 +302,7 @@ entries. Edit a few of them too. Then check the Asset Publisher portlet. By
 default, the Asset Publisher is configured to dynamically display assets of any
 kind from the current site.
 
-![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../../images/custom-entities-asset-publisher.png)
+![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../../../images/custom-entities-asset-publisher.png)
 
 Confirm that the Asset Publisher is displaying the guestbooks and guestbook
 entries that you added.

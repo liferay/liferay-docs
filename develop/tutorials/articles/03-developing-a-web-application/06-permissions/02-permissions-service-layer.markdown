@@ -4,7 +4,9 @@ Liferay provides a complete API for managing resources that's integrated with
 Service Builder. This API is injected into your implementation classes 
 automatically, so all you need to modify your exist add and delete methods to also manage the resource portion.
 
-1. Open GuestbookLocalServiceImpl.java and find the addGuestbook method.
+1. Open `GuestbookLocalServiceImpl.java` from your `guestbook-service` module 
+    in the `com.liferay.docs.guestbook.service.impl` package, and find the 
+	`addGuestbook` method.
 
 2. Just before the the return statement, add the following code:
 
@@ -26,9 +28,11 @@ configured in the permissions configuration file that you created in the
 previous step. Since you definitely want to do this, these booleans are set to 
 `true.`
 
-3. Save the file and then open EntryLocalServiceImpl.java.
+3. Save the file and then open `EntryLocalServiceImpl.java` from the same 
+    package.
 
-4. Add a line of code that adds resources for this entity:
+4. Add a line of code that adds resources for this entity, near the end of the 
+    method, just before the return statement:
 
         resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
 		  Entry.class.getName(), entryId, false, true, true);

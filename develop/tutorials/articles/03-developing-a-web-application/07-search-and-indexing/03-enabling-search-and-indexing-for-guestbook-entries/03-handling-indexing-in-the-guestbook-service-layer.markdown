@@ -3,14 +3,16 @@
 You need to make sure that whenever a guestbook is added, updated, or deleted,
 its index is updated accordingly. To accomplish this, you need to update each of
 the `addGuestbook`, `updateGuestbook`, and `deleteGuestbook` service methods for
-guestbooks. Open `GuestbookLocalServiceImpl` and add the following annotation to 
-the top of the `addEntry` and `updateEntry` methods:
+guestbooks.
 
-    @Indexable(type = IndexableType.REINDEX)
+1. Open `GuestbookLocalServiceImpl` and add the following annotation to 
+    the top of the `addEntry` and `updateEntry` methods:
 
-Finally, add the following annotation to the top of the `deleteGuestbook` method:
+        @Indexable(type = IndexableType.REINDEX)
 
-    @Indexable(type = IndexableType.DELETE)
+2. Finally, add the following annotation to the top of the `deleteGuestbook` method:
+
+        @Indexable(type = IndexableType.DELETE)
 
 These updates are virtually identical to the ones you made to the Guestbook 
 entry service layer. If you have questions about them, please refer to the 

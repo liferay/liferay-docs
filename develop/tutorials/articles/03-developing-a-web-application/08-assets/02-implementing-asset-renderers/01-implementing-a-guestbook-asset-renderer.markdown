@@ -119,7 +119,7 @@ the contents of your `GuestbookAssetRenderer` class with the following code:
     			PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
     				getControlPanelPlid(liferayPortletRequest),
     				"com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
-    			portletURL.setParameter("mvcRenderCommandName", "/html/guestbookmvcportlet/edit_guestbook");
+    			portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
     			portletURL.setParameter(
     				"guestbookId", String.valueOf(_guestbook.getGuestbookId()));
     			portletURL.setParameter("showback", Boolean.FALSE.toString());
@@ -151,7 +151,7 @@ the contents of your `GuestbookAssetRenderer` class with the following code:
     				}
     				
     				portletURL.setParameter(
-    						"mvcRenderCommandName", "/html/guestbookmvcportlet/view");
+    						"mvcRenderCommandName", "/guestbookwebportlet/view");
     				portletURL.setParameter(
     					"guestbookId", String.valueOf(_guestbook.getGuestbookId()));
     				
@@ -288,7 +288,7 @@ class called `GuestbookAssetRendererFactory` that extends Liferay's
     	  	  portletURL = liferayPortletResponse.createLiferayPortletURL(
     			  getControlPanelPlid(themeDisplay),
     			  "com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
-    		  portletURL.setParameter("mvcRenderCommandName", "/html/guestbookmvcportlet/edit_guestbook");
+    		  portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
     		  portletURL.setParameter("showback", Boolean.FALSE.toString());
     		}
     		catch (PortalException e) {

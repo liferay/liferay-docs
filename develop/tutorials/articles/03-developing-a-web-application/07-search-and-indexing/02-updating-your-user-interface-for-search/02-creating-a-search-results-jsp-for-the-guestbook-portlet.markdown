@@ -6,10 +6,10 @@ each guestbook entry in the results. The Search bar should also appear on the
 search results JSP so that users can edit their queries and resubmit them
 without having to click the back link to go to the portlet's default view.
 
-![Figure 1: The search results should appear in a Search Container and the Actions button should appear for each entry. The search bar should also be displayed.](../../../images/guestbook-portlet-search-results.png)
+![Figure 1: The search results should appear in a Search Container and the Actions button should appear for each entry. The search bar should also be displayed.](../../../../images/guestbook-portlet-search-results.png)
 
 Create a new file called `view_search.jsp` in your guestbook-web module 
-project's `/html/guestbookmvcportlet` folder. Add the following contents to it:
+project's `/guestbookwebportlet` folder. Add the following contents to it:
 
     <%@include file="../init.jsp"%>
 
@@ -20,13 +20,13 @@ project's `/html/guestbookmvcportlet` folder. Add the following contents to it:
     %>
 
     <liferay-portlet:renderURL varImpl="searchURL">
-            <portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view_search.jsp" />
+            <portlet:param name="mvcPath" value="/guestbookwebportlet/view_search.jsp" />
     </liferay-portlet:renderURL>
 
     <portlet:renderURL var="viewURL">
         <portlet:param 
             name="mvcPath" 
-            value="/html/guestbookmvcportlet/view.jsp" 
+            value="/guestbookwebportlet/view.jsp" 
         />
     </portlet:renderURL>
 
@@ -106,7 +106,7 @@ project's `/html/guestbookmvcportlet` folder. Add the following contents to it:
                     <liferay-ui:search-container-column-text property="name" />
                     
                     <liferay-ui:search-container-column-jsp
-                path="/html/guestbookmvcportlet/guestbook_actions.jsp"
+                path="/guestbookwebportlet/guestbook_actions.jsp"
                 align="right" />
             </liferay-ui:search-container-row>
 
@@ -122,11 +122,11 @@ project's `/html/guestbookmvcportlet` folder. Add the following contents to it:
     %>
 
     <%!
-            private static Log _log = LogFactoryUtil.getLog("html.guestbookmvcportlet.view_search_jsp");
+            private static Log _log = LogFactoryUtil.getLog("html.guestbookwebportlet.view_search_jsp");
     %>
 
 Your `view_search.jsp` requires some extra imports. Add the following imports to
-`docroot/html/init.jsp`:
+`init.jsp`:
 
     <%@ page import="com.liferay.portal.kernel.dao.search.SearchContainer" %>
     <%@ page import="com.liferay.portal.kernel.exception.PortalException" %>
