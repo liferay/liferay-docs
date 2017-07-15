@@ -14,36 +14,26 @@ and their entries to a database.
 
 *Service Builder* is Liferay's code generation tool for defining object models
 and mapping those models to SQL databases. By defining your model in a single
-XML file, with Service Builder you can generate your object model (the M in
-MVC), your service layer, and your persistence layer all in one shot. At the
-same time, you can generate web services (more on that later) and support every
-database Liferay supports. 
+XML file, you can generate your object model (the M in MVC), your service layer,
+and your persistence layer all in one shot. At the same time, you can generate
+web services (more on that later) and support every database Liferay supports. 
 
-Now you will use Service Builder to generate create, read, update, delete, and
+![Figure x: Service Builder generates the shaded layers of your application.](../../../images/application-layers.png)
+
+Now you'll use Service Builder to generate create, read, update, delete, and
 find operations for your application. You'll also use Service Builder to
 generate the necessary model, persistence, and service layers for your
 application all using one XML file. Then you can add the necessary business
-logic for your application.
+logic for your application. 
 
-## Fitting your Application into Liferay
+## Guestbook Application Design
 
-Before you dive into service, let's take a closer look at the context that 
-you're working it. When you write a Liferay application, you can make it fit 
-into Liferay’s overall framework. All of Liferay’s core application use 
-concepts like sites, users, pages, and scopes to organize data. For example, if 
-you add a Wiki to two different sites, the data in each wiki is different for 
-each site. In other words, one site doesn’t have access to another site’s wiki, 
-yet the application they both use is the same. This is what Liferay calls scope.
+In the prototype, you defined Guestbook entries and displayed them in a list.
+The full application can handle multiple Guestbooks and their entries. To make
+this work, you'll create two tables in the database: one to store Guestbooks,
+and one to store Guestbook entries. 
 
-Scope in Liferay Portal has a hierarchy, depicted in the illustration below. 
-Here, you can see a portal instance. Two users are depicted in the portal 
-instance on the left: one user is a member of Site A, while the other user is a 
-member of Site B. A wiki portlet could be placed on a page in either of these 
-sites, and its data would be different. In other words, it would be scoped to 
-that site. You can change an application’s scope to the page, and in that case, 
-one site could host different wikis on different pages.
-
-![Figure X: Sites, users, and scope in Liferay.](../../../images/sites-users.png)
+<!-- Insert screenshot of final application here. --> 
 
 ## Service Layer
 
@@ -73,5 +63,4 @@ the necessary entities to generate this code.
 
 This creates two modules: an API module and a service module. Next, you'll learn
 how to use them.
-
 
