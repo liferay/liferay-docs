@@ -1,4 +1,4 @@
-# Upgrading a Liferay JSF Portlet
+# Upgrading a Liferay JSF Portlet [](id=upgrading-a-liferay-jsf-portlet)
 
 Liferay JSF portlets are easy to upgrade and require very few changes. The ease
 of upgrading JSF portlets is due to the way JSF portlets run in @product@.
@@ -19,8 +19,8 @@ portlet's required dependencies for @product-ver@:
 
 In this tutorial, you'll see how easy it is to upgrade a Liferay Portal 6.2 JSF
 portlet (JSF 2.2) to @product-ver@ by exploring the upgrade process for the
-sample JSF Applicant portlet. This portlet provides fields for a job
-application.
+sample JSF Applicant portlet. This portlet provides a job application users can
+submit.
 
 ![Figure 1: The JSF Applicant portlet provides a job application for users to submit.](../../../../images/jsf-applicant-6-2.png)
 
