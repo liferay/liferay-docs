@@ -11,7 +11,7 @@ application.
 3. Copy `view.jsp` and `edit_guestbook.jsp` into the new folder.
 4. Open both files and change the `init.jsp` location at the top of the file to:
 
-	    <%@include file="../init.jsp"%>
+        <%@include file="../init.jsp"%>
 
 As you update your view layer to take full advantage of the new backend, you'll
 update any references to the old paths. In addition, you need to update the 

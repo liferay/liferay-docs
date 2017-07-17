@@ -25,8 +25,8 @@ Next, create the file itself:
 3. Add the following `DOCTYPE` declaration to the top of the file:
 
         <?xml version="1.0"?>
-	    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action  
-		Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
+        <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action  
+        Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
 
 Now the question is how you're going to define your permissions.
 
@@ -59,27 +59,27 @@ All the rest of the permissions configuration is placed inside these tags.
 2. Next, place the portlet permissions between the `<resource-action-mapping/>` 
     tags:
 
-			<model-resource>
-		    	<model-name>com.liferay.docs.guestbook.model</model-name>
-		    	<portlet-ref>
-		        	<portlet-name>com_liferay_docs_guestbook_portlet_GuestbookPortlet</portlet-name>
-		        	<portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
-		    	</portlet-ref>
-		    	<permissions>
-		        	<supports>
-		            	<action-key>ADD_GUESTBOOK</action-key>
-		            	<action-key>ADD_ENTRY</action-key>
-		        	</supports>
-		        	<site-member-defaults>
-		            	<action-key>ADD_ENTRY</action-key>
-		        	</site-member-defaults>
-		        	<guest-defaults />
-		        	<guest-unsupported>
-		            	<action-key>ADD_GUESTBOOK</action-key>
-		            	<action-key>ADD_ENTRY</action-key>
-		        	</guest-unsupported>
-		    	</permissions>
-			</model-resource>
+            <model-resource>
+                <model-name>com.liferay.docs.guestbook.model</model-name>
+                <portlet-ref>
+                    <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookPortlet</portlet-name>
+                    <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
+                </portlet-ref>
+                <permissions>
+                    <supports>
+                        <action-key>ADD_GUESTBOOK</action-key>
+                        <action-key>ADD_ENTRY</action-key>
+                    </supports>
+                    <site-member-defaults>
+                        <action-key>ADD_ENTRY</action-key>
+                    </site-member-defaults>
+                    <guest-defaults />
+                    <guest-unsupported>
+                        <action-key>ADD_GUESTBOOK</action-key>
+                        <action-key>ADD_ENTRY</action-key>
+                    </guest-unsupported>
+                </permissions>
+            </model-resource>
     
 This configuration defines the baseline configuration for the Guestbook and 
 Entry entities. The supported actions are `ADD_GUESTBOOK` and `ADD_ENTRY`. Site
@@ -87,32 +87,32 @@ member's can `ADD_ENTRY` by default, and guests cannot perform either action.
 
 3. Below that, but above the closing `</resource-action-mapping>` place the model package permissions in the file:
 
-		<model-resource>
-	    	<model-name>com.liferay.docs.guestbook.model.Guestbook</model-name>
-	    	<portlet-ref>
-	        	<portlet-name>com_liferay_docs_guestbook_portlet_GuestbookPortlet</portlet-name>
-	        	<portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
-	    	</portlet-ref>
-	    	<permissions>
-	        	<supports>
-	            	<action-key>ADD_ENTRY</action-key>
-	            	<action-key>DELETE</action-key>
-	            	<action-key>PERMISSIONS</action-key>
-	            	<action-key>UPDATE</action-key>
-	            	<action-key>VIEW</action-key>
-	        	</supports>
-				<site-member-defaults>
-				     <action-key>ADD_ENTRY</action-key>
-				           <action-key>VIEW</action-key>
-				     </site-member-defaults>
-				     <guest-defaults>
-				           <action-key>VIEW</action-key>
-				      </guest-defaults>
-				       <guest-unsupported>
-				            <action-key>UPDATE</action-key>
-				        </guest-unsupported>
-	    	</permissions>
-		</model-resource>
+        <model-resource>
+            <model-name>com.liferay.docs.guestbook.model.Guestbook</model-name>
+            <portlet-ref>
+                <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookPortlet</portlet-name>
+                <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
+            </portlet-ref>
+            <permissions>
+                <supports>
+                    <action-key>ADD_ENTRY</action-key>
+                    <action-key>DELETE</action-key>
+                    <action-key>PERMISSIONS</action-key>
+                    <action-key>UPDATE</action-key>
+                    <action-key>VIEW</action-key>
+                </supports>
+                <site-member-defaults>
+                     <action-key>ADD_ENTRY</action-key>
+                           <action-key>VIEW</action-key>
+                     </site-member-defaults>
+                     <guest-defaults>
+                           <action-key>VIEW</action-key>
+                      </guest-defaults>
+                       <guest-unsupported>
+                            <action-key>UPDATE</action-key>
+                        </guest-unsupported>
+            </permissions>
+        </model-resource>
     
 This defines the Guestbook specific actions, including adding, deleting, 
 updating, viewing, and updating. By default site members and guests can view 
@@ -121,29 +121,29 @@ Guestbooks, but guests cannot update them.
 4. Under that in the file, still above the closing `</resource-action-mapping>` 
     place the permissions for the Entry entity:
 
-		<model-resource>
-		    <model-name>com.liferay.docs.guestbook.model.Entry</model-name>
-		    <portlet-ref>
-		        <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookPortlet</portlet-name>
-		    </portlet-ref>
-		    <permissions>
-		        <supports>
-					<action-key>DELETE</action-key>
-		            <action-key>PERMISSIONS</action-key>
-		            <action-key>UPDATE</action-key>
-		            <action-key>VIEW</action-key>
-		        </supports>
-		        <site-member-defaults>
-		            <action-key>VIEW</action-key>
-		        </site-member-defaults>
-		        <guest-defaults>
-		            <action-key>VIEW</action-key>
-		        </guest-defaults>
-		        <guest-unsupported>
-		            <action-key>UPDATE</action-key>
-		        </guest-unsupported>
-		    </permissions>
-		</model-resource>
+        <model-resource>
+            <model-name>com.liferay.docs.guestbook.model.Entry</model-name>
+            <portlet-ref>
+                <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookPortlet</portlet-name>
+            </portlet-ref>
+            <permissions>
+                <supports>
+                    <action-key>DELETE</action-key>
+                    <action-key>PERMISSIONS</action-key>
+                    <action-key>UPDATE</action-key>
+                    <action-key>VIEW</action-key>
+                </supports>
+                <site-member-defaults>
+                    <action-key>VIEW</action-key>
+                </site-member-defaults>
+                <guest-defaults>
+                    <action-key>VIEW</action-key>
+                </guest-defaults>
+                <guest-unsupported>
+                    <action-key>UPDATE</action-key>
+                </guest-unsupported>
+            </permissions>
+        </model-resource>
 
 This defines Entry specific actions. You have a similar list of actions as 
 Guestbook. By default a site member can add or view an entry, and a guest can 
@@ -169,8 +169,8 @@ define permissions for the portlet in particular. These are managed in the
 5. Add the following `DOCTYPE` declaration to the top of the file:
 
         <?xml version="1.0"?>
-	    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action  
-		Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
+        <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action  
+        Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
 
 6. Place the following wrapper tags into your default.xml file:
 
@@ -178,33 +178,33 @@ define permissions for the portlet in particular. These are managed in the
 
         </resource-action-mapping>
 
-	Just like in the other `default.xml` you'll place a few blocks of tags 
-	defining your permissions. The service version defined entity permissions.
-	These will define portlet permissions.
-	
+    Just like in the other `default.xml` you'll place a few blocks of tags 
+    defining your permissions. The service version defined entity permissions.
+    These will define portlet permissions.
+    
 7. First insert this block:
 
-	    <portlet-resource>
-		  <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
-		  <permissions>
-			<supports>
-				<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-				<action-key>CONFIGURATION</action-key>
-				<action-key>VIEW</action-key>
-			</supports>
-			<site-member-defaults>
-				<action-key>VIEW</action-key>
-			</site-member-defaults>
-			<guest-defaults>
-				<action-key>VIEW</action-key>
-			</guest-defaults>
-			<guest-unsupported>
-				<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-				<action-key>CONFIGURATION</action-key>
-			</guest-unsupported>
-		  </permissions>
-	    </portlet-resource>
-	    
+        <portlet-resource>
+          <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
+          <permissions>
+            <supports>
+                <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+                <action-key>CONFIGURATION</action-key>
+                <action-key>VIEW</action-key>
+            </supports>
+            <site-member-defaults>
+                <action-key>VIEW</action-key>
+            </site-member-defaults>
+            <guest-defaults>
+                <action-key>VIEW</action-key>
+            </guest-defaults>
+            <guest-unsupported>
+                <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+                <action-key>CONFIGURATION</action-key>
+            </guest-unsupported>
+          </permissions>
+        </portlet-resource>
+        
 
 This configuration defines the default permissions for the admin portlet. It
 supports the actions `ACCESS_IN_CONTROL_PANEL`, `CONFIGURATION`, and `VIEW`.
@@ -215,22 +215,22 @@ by default.
 8. Below that, insert this one:
 
         <portlet-resource>
-    	<portlet-name>com_liferay_docs_guestbook_portlet_GuestbookWebPortlet</portlet-name>
-    	<permissions>
-        	<supports>
-            	<action-key>ADD_TO_PAGE</action-key>
-            	<action-key>CONFIGURATION</action-key>
-            	<action-key>VIEW</action-key>
-        	</supports>
-        	<site-member-defaults>
-            	<action-key>VIEW</action-key>
-        	</site-member-defaults>
-        	<guest-defaults>
-            	<action-key>VIEW</action-key>
-        	</guest-defaults>
-        	<guest-unsupported />
-    	</permissions>
-	    </portlet-resource>
+        <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookWebPortlet</portlet-name>
+        <permissions>
+            <supports>
+                <action-key>ADD_TO_PAGE</action-key>
+                <action-key>CONFIGURATION</action-key>
+                <action-key>VIEW</action-key>
+            </supports>
+            <site-member-defaults>
+                <action-key>VIEW</action-key>
+            </site-member-defaults>
+            <guest-defaults>
+                <action-key>VIEW</action-key>
+            </guest-defaults>
+            <guest-unsupported />
+        </permissions>
+        </portlet-resource>
 
 
 This defines the permissions for the regular Guestbook portlet. You're defining 

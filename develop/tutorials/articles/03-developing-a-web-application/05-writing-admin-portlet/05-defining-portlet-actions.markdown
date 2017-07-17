@@ -48,14 +48,14 @@ create portlet actions to meet the first three requirements by opening
               "mvcPath", "/html/guestbookadminportlet/edit_guestbook.jsp");
           }
         }
-		
+        
         private GuestbookLocalService _guestbookLocalService;
-	    
-		@Reference(unbind = "-")
-	    protected void setGuestbookService(GuestbookLocalService guestbookService) {
-		_guestbookLocalService = guestbookLocalService;
-	}
-		
+        
+        @Reference(unbind = "-")
+        protected void setGuestbookService(GuestbookLocalService guestbookService) {
+        _guestbookLocalService = guestbookLocalService;
+    }
+        
         
 This method is nearly identical to the Guestbook portlet's `addGuestbook`
 method. Since `addGuestbook` is a portlet action method, it takes
@@ -119,7 +119,7 @@ interface.
     distinguish between adding a guestbook and editing a guestbook in
     `edit_guestbook.jsp`. Note also that while you could have reused the
     `edit_guestbook.jsp` from the Guestbook portlet, you created another one, 
-	with almost the same functionality. Why? Because later, you'll be adding
+    with almost the same functionality. Why? Because later, you'll be adding
     functionality to the Guestbook Admin portlet that will not be available to
     regular users adding guestbooks. 
 

@@ -6,12 +6,12 @@ automatically, so all you need to modify your exist add and delete methods to al
 
 1. Open `GuestbookLocalServiceImpl.java` from your `guestbook-service` module 
     in the `com.liferay.docs.guestbook.service.impl` package, and find the 
-	`addGuestbook` method.
+    `addGuestbook` method.
 
 2. Just before the the return statement, add the following code:
 
-	    resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
-			Guestbook.class.getName(), guestbookId, false, true, true);
+        resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
+            Guestbook.class.getName(), guestbookId, false, true, true);
 
 Notice that the `resourceLocalService` object is already there, ready for you 
 to use. This is one of several utilities that are automatically injected by 
@@ -35,7 +35,7 @@ previous step. Since you definitely want to do this, these booleans are set to
     method, just before the return statement:
 
         resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
-		  Entry.class.getName(), entryId, false, true, true);
+          Entry.class.getName(), entryId, false, true, true);
 
 As you can see, this does the same thing for the Entry entity.
 

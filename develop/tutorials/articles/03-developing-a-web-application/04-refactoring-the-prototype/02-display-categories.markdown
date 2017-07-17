@@ -10,21 +10,21 @@ Open the `GuestbookPortlet` class and update the component class metadata
 properties to match the configuration below:
 
     @Component(
-    	immediate = true,
-    	property = {
-    		"com.liferay.portlet.display-category=category.social",
-    		"com.liferay.portlet.instanceable=false",
-    		"com.liferay.portlet.scopeable=true",
-    		"javax.portlet.display-name=Guestbook",
-    		"javax.portlet.expiration-cache=0",
-    		"javax.portlet.init-param.template-path=/",
-    		"javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
-    		"javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK,
-    		"javax.portlet.resource-bundle=content.Language",
-    		"javax.portlet.security-role-ref=power-user,user",
-    		"javax.portlet.supports.mime-type=text/html"
-    	},
-    	service = Portlet.class
+        immediate = true,
+        property = {
+            "com.liferay.portlet.display-category=category.social",
+            "com.liferay.portlet.instanceable=false",
+            "com.liferay.portlet.scopeable=true",
+            "javax.portlet.display-name=Guestbook",
+            "javax.portlet.expiration-cache=0",
+            "javax.portlet.init-param.template-path=/",
+            "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
+            "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK,
+            "javax.portlet.resource-bundle=content.Language",
+            "javax.portlet.security-role-ref=power-user,user",
+            "javax.portlet.supports.mime-type=text/html"
+        },
+        service = Portlet.class
     )
     
 The `com.liferay.portlet.display-category=category.social` property sets the 

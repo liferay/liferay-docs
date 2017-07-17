@@ -14,13 +14,13 @@ needs it.
 4. Name the class `GuestbookPortletKeys` and click *Finish*.
 5. Open `GuestbookPortletKeys` and create a public, static, final String -
     "GUESTBOOK" with a value of 
-	"com_liferay_docs_guestbook_portlet_GuestbookPortlet"
+    "com_liferay_docs_guestbook_portlet_GuestbookPortlet"
  
-	 public class GuestbookPortletKeys {
+     public class GuestbookPortletKeys {
 
-	 	public static final String GUESTBOOK =
-	 		"com_liferay_docs_guestbook_portlet_GuestbookPortlet";
-	 }
+         public static final String GUESTBOOK =
+             "com_liferay_docs_guestbook_portlet_GuestbookPortlet";
+     }
 6. Save the file.
 
 Now you'll need to go back to `GuestbookPortlet` and import the new class.

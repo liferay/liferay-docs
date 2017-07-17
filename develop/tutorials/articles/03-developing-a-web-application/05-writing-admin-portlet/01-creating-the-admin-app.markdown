@@ -74,8 +74,8 @@ into their proper locations.
 
 5.  Add the following line to the `guestbook-mvc` `build.gradle` file:
 
-	compileOnly group: "com.liferay", name: "com.liferay.application.list.api", version: "2.0.0"
-	
+    compileOnly group: "com.liferay", name: "com.liferay.application.list.api", version: "2.0.0"
+    
 6. Run *Refresh Gradle Project* to fix any dependency issues.
 
 You have set the foundation for the Guestbook Admin portlet. There are still 

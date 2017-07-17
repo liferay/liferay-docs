@@ -33,23 +33,23 @@ the contents of your `GuestbookAssetRenderer` class with the following code:
     import javax.servlet.http.HttpServletRequest;
     import javax.servlet.http.HttpServletResponse;
     public class GuestbookAssetRenderer extends BaseJSPAssetRenderer<Guestbook> {
-    		public GuestbookAssetRenderer(Guestbook guestbook) {
+            public GuestbookAssetRenderer(Guestbook guestbook) {
 
                     _guestbook = guestbook;
             }
 
             @Override
             public boolean hasEditPermission(PermissionChecker permissionChecker) 
-            		throws PortalException {
+                    throws PortalException {
 
-            		long guestbookId = _guestbook.getGuestbookId();
-            		return GuestbookPermission.contains(permissionChecker,
+                    long guestbookId = _guestbook.getGuestbookId();
+                    return GuestbookPermission.contains(permissionChecker,
                             guestbookId, ActionKeys.UPDATE);
             }
 
             @Override
             public boolean hasViewPermission(PermissionChecker permissionChecker)
-            		throws PortalException { 
+                    throws PortalException { 
 
                     long guestbookId = _guestbook.getGuestbookId();
                     return GuestbookPermission.contains(permissionChecker,
@@ -57,7 +57,7 @@ the contents of your `GuestbookAssetRenderer` class with the following code:
             }
             @Override
             public Guestbook getAssetObject() {
-            		return _guestbook;
+                    return _guestbook;
             }
             @Override
             public long getGroupId() {
@@ -87,101 +87,101 @@ the contents of your `GuestbookAssetRenderer` class with the following code:
                     return _guestbook.getGuestbookId();
             }
 
-    		@Override
-    		public String getSummary(PortletRequest portletRequest, PortletResponse portletResponse) {
-    			return "Name: " + _guestbook.getName();
-    		}
+            @Override
+            public String getSummary(PortletRequest portletRequest, PortletResponse portletResponse) {
+                return "Name: " + _guestbook.getName();
+            }
             @Override
             public String getTitle(Locale locale) {
                     return _guestbook.getName();
             }
 
-    		@Override
-    		public boolean include(HttpServletRequest request, HttpServletResponse response, String template)
-    				throws Exception {
-    				request.setAttribute("GUESTBOOK", _guestbook);
-    				request.setAttribute("HtmlUtil", HtmlUtil.getHtml());
-    				request.setAttribute("StringUtil", new StringUtil());
-    			return super.include(request, response, template);
-    		}
+            @Override
+            public boolean include(HttpServletRequest request, HttpServletResponse response, String template)
+                    throws Exception {
+                    request.setAttribute("GUESTBOOK", _guestbook);
+                    request.setAttribute("HtmlUtil", HtmlUtil.getHtml());
+                    request.setAttribute("StringUtil", new StringUtil());
+                return super.include(request, response, template);
+            }
 
 
-    		@Override
-    		public String getJspPath(HttpServletRequest request, String template) {
-    			return "/html/asset/guestbook/" + template + ".jsp";
-    		}
-    		
-    		@Override
-    		public PortletURL getURLEdit(
-    				LiferayPortletRequest liferayPortletRequest,
-    				LiferayPortletResponse liferayPortletResponse)
-    			throws Exception {
-    			PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
-    				getControlPanelPlid(liferayPortletRequest),
-    				"com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
-    			portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
-    			portletURL.setParameter(
-    				"guestbookId", String.valueOf(_guestbook.getGuestbookId()));
-    			portletURL.setParameter("showback", Boolean.FALSE.toString());
-    			
-    			return portletURL;
-    		}	
-    		@Override
-    		public String getURLViewInContext(
-    				LiferayPortletRequest liferayPortletRequest,
-    				LiferayPortletResponse liferayPortletResponse, 
-    				String noSuchEntryRedirect)
-    			throws Exception {
-    			try {
-    				long plid = PortalUtil.getPlidFromPortletId(
-    					_guestbook.getGroupId(), 
-    					"com_liferay_docs_guestbook_portlet_GuestbookPortlet");
-    				
-    				PortletURL portletURL;
-    				if (plid == LayoutConstants.DEFAULT_PLID) {
-    					portletURL = liferayPortletResponse.createLiferayPortletURL(
-    						getControlPanelPlid(liferayPortletRequest),
-    						"com_liferay_docs_guestbook_portlet_GuestbookPortlet", 
-    						PortletRequest.RENDER_PHASE);
-    				}
-    				else {
-    					portletURL = PortletURLFactoryUtil.create(
-    						liferayPortletRequest, "com_liferay_docs_guestbook_portlet_GuestbookPortlet", 
-    						plid, PortletRequest.RENDER_PHASE);
-    				}
-    				
-    				portletURL.setParameter(
-    						"mvcRenderCommandName", "/guestbookwebportlet/view");
-    				portletURL.setParameter(
-    					"guestbookId", String.valueOf(_guestbook.getGuestbookId()));
-    				
-    				String currentUrl = PortalUtil.getCurrentURL(liferayPortletRequest);
-    				
-    				portletURL.setParameter("redirect", currentUrl);
-    				
-    				return portletURL.toString();
-    			
-    			}
-    			catch (PortalException e) {
-    				
-    			} 
-    			catch (SystemException e) {
-    			} 
-    			
-    			return noSuchEntryRedirect;
-    		}
-    		
-    		@Override
-    		public String getURLView(
-    				LiferayPortletResponse liferayPortletResponse, 
-    				WindowState windowState) 
-    			throws Exception {
-    			
-    			return super.getURLView(liferayPortletResponse, windowState);
-    		}
-    			
-    		private Guestbook _guestbook;
-    	}
+            @Override
+            public String getJspPath(HttpServletRequest request, String template) {
+                return "/html/asset/guestbook/" + template + ".jsp";
+            }
+            
+            @Override
+            public PortletURL getURLEdit(
+                    LiferayPortletRequest liferayPortletRequest,
+                    LiferayPortletResponse liferayPortletResponse)
+                throws Exception {
+                PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
+                    getControlPanelPlid(liferayPortletRequest),
+                    "com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
+                portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
+                portletURL.setParameter(
+                    "guestbookId", String.valueOf(_guestbook.getGuestbookId()));
+                portletURL.setParameter("showback", Boolean.FALSE.toString());
+                
+                return portletURL;
+            }    
+            @Override
+            public String getURLViewInContext(
+                    LiferayPortletRequest liferayPortletRequest,
+                    LiferayPortletResponse liferayPortletResponse, 
+                    String noSuchEntryRedirect)
+                throws Exception {
+                try {
+                    long plid = PortalUtil.getPlidFromPortletId(
+                        _guestbook.getGroupId(), 
+                        "com_liferay_docs_guestbook_portlet_GuestbookPortlet");
+                    
+                    PortletURL portletURL;
+                    if (plid == LayoutConstants.DEFAULT_PLID) {
+                        portletURL = liferayPortletResponse.createLiferayPortletURL(
+                            getControlPanelPlid(liferayPortletRequest),
+                            "com_liferay_docs_guestbook_portlet_GuestbookPortlet", 
+                            PortletRequest.RENDER_PHASE);
+                    }
+                    else {
+                        portletURL = PortletURLFactoryUtil.create(
+                            liferayPortletRequest, "com_liferay_docs_guestbook_portlet_GuestbookPortlet", 
+                            plid, PortletRequest.RENDER_PHASE);
+                    }
+                    
+                    portletURL.setParameter(
+                            "mvcRenderCommandName", "/guestbookwebportlet/view");
+                    portletURL.setParameter(
+                        "guestbookId", String.valueOf(_guestbook.getGuestbookId()));
+                    
+                    String currentUrl = PortalUtil.getCurrentURL(liferayPortletRequest);
+                    
+                    portletURL.setParameter("redirect", currentUrl);
+                    
+                    return portletURL.toString();
+                
+                }
+                catch (PortalException e) {
+                    
+                } 
+                catch (SystemException e) {
+                } 
+                
+                return noSuchEntryRedirect;
+            }
+            
+            @Override
+            public String getURLView(
+                    LiferayPortletResponse liferayPortletResponse, 
+                    WindowState windowState) 
+                throws Exception {
+                
+                return super.getURLView(liferayPortletResponse, windowState);
+            }
+                
+            private Guestbook _guestbook;
+        }
 
 Your `GuestbookAssetRenderer` class contains a private `_guestbook` variable.
 Most of the methods in this class are simply getters that return fields from
@@ -231,27 +231,27 @@ class called `GuestbookAssetRendererFactory` that extends Liferay's
 
 
     @Component(
-    	immediate = true,
-    	property = {
-    		"javax.portlet.name=" + "com_liferay_docs_guestbook_portlet_GuestbookPortlet"
+        immediate = true,
+        property = {
+            "javax.portlet.name=" + "com_liferay_docs_guestbook_portlet_GuestbookPortlet"
     }, service = AssetRendererFactory.class)
     public class GuestbookAssetRendererFactory extends 
-    		BaseAssetRendererFactory<Guestbook> {
-    	public GuestbookAssetRendererFactory() {
-    		setClassName(CLASS_NAME);
-    		setLinkable(_LINKABLE);
-    		setPortletId("com_liferay_docs_guestbook_portlet_GuestbookPortlet");
-    		setSearchable(true);
-    	}
+            BaseAssetRendererFactory<Guestbook> {
+        public GuestbookAssetRendererFactory() {
+            setClassName(CLASS_NAME);
+            setLinkable(_LINKABLE);
+            setPortletId("com_liferay_docs_guestbook_portlet_GuestbookPortlet");
+            setSearchable(true);
+        }
             @Override
             public AssetRenderer<Guestbook> getAssetRenderer(long classPK, int type)
                     throws PortalException {
                     Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
 
-    		GuestbookAssetRenderer guestbookAssetRenderer =
-    			new GuestbookAssetRenderer(guestbook);
+            GuestbookAssetRenderer guestbookAssetRenderer =
+                new GuestbookAssetRenderer(guestbook);
 
-    		guestbookAssetRenderer.setAssetRendererType(type);
+            guestbookAssetRenderer.setAssetRendererType(type);
                     return guestbookAssetRenderer;
             }
 
@@ -271,43 +271,43 @@ class called `GuestbookAssetRendererFactory` that extends Liferay's
                     throws Exception {
 
                     Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
-    				return GuestbookPermission.contains(permissionChecker, classPK, actionId);
+                    return GuestbookPermission.contains(permissionChecker, classPK, actionId);
             }
 
-    	@Override
-    	public PortletURL getURLAdd(
-    		LiferayPortletRequest liferayPortletRequest,
-    		LiferayPortletResponse liferayPortletResponse, long classTypeId) {
-    		PortletURL portletURL = null;
+        @Override
+        public PortletURL getURLAdd(
+            LiferayPortletRequest liferayPortletRequest,
+            LiferayPortletResponse liferayPortletResponse, long classTypeId) {
+            PortletURL portletURL = null;
 
-    		try {
-    		  ThemeDisplay themeDisplay =
-    			  (ThemeDisplay)liferayPortletRequest.getAttribute(
-    			  	WebKeys.THEME_DISPLAY);
+            try {
+              ThemeDisplay themeDisplay =
+                  (ThemeDisplay)liferayPortletRequest.getAttribute(
+                      WebKeys.THEME_DISPLAY);
 
-    	  	  portletURL = liferayPortletResponse.createLiferayPortletURL(
-    			  getControlPanelPlid(themeDisplay),
-    			  "com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
-    		  portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
-    		  portletURL.setParameter("showback", Boolean.FALSE.toString());
-    		}
-    		catch (PortalException e) {
-    		}
-    		
-    		return portletURL;
-    	}
+                portletURL = liferayPortletResponse.createLiferayPortletURL(
+                  getControlPanelPlid(themeDisplay),
+                  "com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
+              portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
+              portletURL.setParameter("showback", Boolean.FALSE.toString());
+            }
+            catch (PortalException e) {
+            }
+            
+            return portletURL;
+        }
 
             @Override
             public boolean isLinkable() {
                     return _LINKABLE;
             }
 
-    	@Reference(target = "(osgi.web.symbolicname=guestbook.web)")
-    	private ServletContext _servletContext;
-    	@Reference
-    	private GuestbookLocalService _guestbookLocalService;
+        @Reference(target = "(osgi.web.symbolicname=guestbook.web)")
+        private ServletContext _servletContext;
+        @Reference
+        private GuestbookLocalService _guestbookLocalService;
         private static final boolean _LINKABLE = true;
-    	public static final String CLASS_NAME = Guestbook.class.getName();
+        public static final String CLASS_NAME = Guestbook.class.getName();
         public static final String TYPE = "guestbook";
 
     }
