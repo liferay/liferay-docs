@@ -57,7 +57,7 @@ Once you have your JSF application generated, you can
 [import it into Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-maven-in-liferay-ide#importing-maven-projects)
 and develop it further. To
 [deploy it to your @product@ instance](/develop/tutorials/-/knowledge_base/7-0/deploying-modules-with-liferay-ide),
-drag and drop it onth the @product@ server.
+drag and drop it onto the @product@ server.
 
 You can build the project and deploy it to @product@ from the command line too!
 If you're using Gradle, run the following command to build your JSF application:

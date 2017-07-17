@@ -1,4 +1,4 @@
-# Generating a JSF Project Using @ide@
+# Generating a JSF Project Using @ide@ [](id=generating-a-jsf-project-using-ide)
 
 You can generate a Liferay Faces application without having to create your own
 folder structure and descriptor files manually using Liferay @ide@. If you're
@@ -16,7 +16,7 @@ Open your @ide@ instance to get started.
 2.  Select the *Liferay* project and choose *Liferay JSF Project* from the
     listed subprojects. Then click *Next*.
 
-    ![Figure 2: Choose the *Liferay JSF Project* option to begin creating a JSF project in @ide@.](../../../images/jsf-project-ide.png)
+    ![Figure 1: Choose the *Liferay JSF Project* option to begin creating a JSF project in @ide@.](../../../images/jsf-project-ide.png)
 
 3.  Assign your JSF project a name, build framework (Gradle or Maven), and
     Component Suite. You have five component suites to choose from:
@@ -27,7 +27,7 @@ Open your @ide@ instance to get started.
     - PrimeFaces
     - RichFaces
 
-    ![Figure 3: Choose your preferred options for your JSF project.](../../../images/new-jsf-project-ide.png)
+    ![Figure 2: Choose your preferred options for your JSF project.](../../../images/new-jsf-project-ide.png)
 
 4.  Click *Finish* to generate your Liferay JSF project.
 
