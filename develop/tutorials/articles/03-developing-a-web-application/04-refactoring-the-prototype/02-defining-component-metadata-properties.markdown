@@ -1,10 +1,16 @@
 # Defining the Component Metadata Properties [](id=defining-the-component-metadata-properties)
 
+When users add applications to a page, they pick them from a list of *display
+categories* (see figure below). 
+
+![Figure x: Users choose applications from a list of display categories.](../../../images/display-categories.png)
+
 The display category for a portlet is defined in its component class as a 
 metadata property. Since the Guestbook portlet is a way for users to 
 communicate with each other, you'll add the Guestbook portlet to the Social 
 category. Only one Guestbook portlet should be added to a page, so you'll also 
-define it as a non-instanceable portlet.
+define it as a non-instanceable--a portlet that can appear once on a page or
+site depending on its scope--portlet.
 
 Open the `GuestbookPortlet` class and update the component class metadata 
 properties to match the configuration below:
@@ -18,44 +24,38 @@ properties to match the configuration below:
             "javax.portlet.display-name=Guestbook",
             "javax.portlet.expiration-cache=0",
             "javax.portlet.init-param.template-path=/",
-            "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
-            "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK,
+            "javax.portlet.init-param.view-template=/guestbookweb/view.jsp",
             "javax.portlet.resource-bundle=content.Language",
             "javax.portlet.security-role-ref=power-user,user",
             "javax.portlet.supports.mime-type=text/html"
         },
         service = Portlet.class
     )
-    
+ 
 The `com.liferay.portlet.display-category=category.social` property sets the 
 display category to *Social* for the Guestbook portlet. The 
 `com.liferay.portlet.instanceable=false` property specifies that the Guestbook 
 portlet is non-instanceable, so only one instance of the portlet can be added 
 to a page.
 
-You also updated the location of the main `view.jsp` to it's new location in
-`/guestbookwebportlet`.
+You also updated the location of the main `view.jsp` to its new location in
+`/guestbookweb`.
 
 Since you edited the metadata, you'll need to remove and re-add the portlet to 
-the page before continuing
+the page before continuing. 
 
-1. Go to `localhost:8080` in your web browser.
-2. Sign in to your administrative account.
-3. Click on the portlet menu for the Guestbook portlet (which will be showing
+1.  Go to `localhost:8080` in your web browser.
+
+2.  Sign in to your administrative account.
+
+3.  Click on the portlet menu for the Guestbook portlet (which will be showing
     an error), select *Remove* and click *OK* to confirm.
-4. Open the *Add* menu and select *Applications*
-5. Open the *Social* category and drag and drop the *Guestbook* application
+
+4.  Open the *Add* menu and select *Applications*
+
+5.  Open the *Social* category and drag and drop the *Guestbook* application
     onto the page.
 
+Now the Guestbook portlet appears a category. While you were able to add it to
+the page before, the user experience has now been improved.
 
-### New and improved
- 
-Now the Guestbook portlet will display in a category, with the name you 
-specified. While you were able to add it to the page before, the user 
-experience has now been improved.
-
-Another important feature that's being used behind the scenes is Liferay's 
-Single Page Applications (SPA.) All @product@ apps are automatically SPA 
-enabled by default, and require no changes to your apps or workflow, so the 
-Guestbook portlet can take advantage of SPA features right away. You can read 
-more about SPA in the [Automatic Single Page Applications](/develop/tutorials/-/knowledge_base/7-0/automatic-single-page-applications) tutorial.
