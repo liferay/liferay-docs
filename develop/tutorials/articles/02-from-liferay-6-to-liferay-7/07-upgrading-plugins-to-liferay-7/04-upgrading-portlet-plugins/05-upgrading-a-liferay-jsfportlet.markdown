@@ -17,15 +17,18 @@ portlet's required dependencies for @product-ver@:
   article to find the project dependencies corresponding to the @product@
   versions.
 
-In this tutorial, you'll see how easy it is to upgrade a Liferay JSF portlet by
-exploring the upgrade process for the sample JSF Applicant portlet. This portlet
-provides fields for a job application.
+In this tutorial, you'll see how easy it is to upgrade a Liferay Portal 6.2 JSF
+portlet (JSF 2.2) to @product-ver@ by exploring the upgrade process for the
+sample JSF Applicant portlet. This portlet provides fields for a job
+application.
 
 ![Figure 1: The JSF Applicant portlet provides a job application for users to submit.](../../../../images/jsf-applicant-6-2.png)
 
 For reference, you can download the
-[pre-upgraded portlet code]() and the
-[upgrade portlet code](). This sample project uses Maven.
+[pre-upgraded portlet code](/documents/10184/656312/jsf-applicant-portlet-6.2/b5e38053-229c-98db-a05e-ebccbcc6ce6b)
+and the
+[upgrade portlet code](/documents/10184/656312/jsf-applicant-portlet-7.0/10e4c0d3-51a0-4605-e7e9-5b306f9701fc).
+This sample project uses Maven.
 
 Follow the steps below to upgrade your Liferay JSF portlet.
 
