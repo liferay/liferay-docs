@@ -51,8 +51,8 @@ the page before continuing
 ### New and improved
  
 Now the Guestbook portlet will display in a category, with the name you 
-specified. While you were able to add it to the page before, it has now been
-improved and will provide a beter user experience. 
+specified. While you were able to add it to the page before, the user 
+experience has now been improved.
 
 Another important feature that's being used behind the scenes is Liferay's 
 Single Page Applications (SPA.) All @product@ apps are automatically SPA 
