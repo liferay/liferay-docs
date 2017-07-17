@@ -1,26 +1,23 @@
 # Upgrading a Liferay JSF Portlet [](id=upgrading-a-liferay-jsf-portlet)
 
-Liferay JSF portlets are easy to upgrade and require very few changes. The ease
-of upgrading JSF portlets is due to the way JSF portlets run in @product@.
-Since they leverage the
-[Liferay Faces](/develop/reference/-/knowledge_base/7-0/liferay-faces) project,
-your JSF portlet does not directly deal with @project@ code, but rather, it
-leverages the Faces JARs that encapsulate @product@ Java API and JavaScript
-differences. Because of this, the only modifications you need to make in your
-legacy portlet are dependency updates. There are two ways you can find your JSF
-portlet's required dependencies for @product-ver@:
+Liferay JSF portlets are easy to upgrade and require few changes. They interface
+with the [Liferay Faces](/develop/reference/-/knowledge_base/7-0/liferay-faces)
+project, which encapsulates @product@'s' Java API and JavaScript code. Because
+of this, upgrading JSF portlets to @product-ver@ requires only updating
+dependencies.
 
-- Visit [http://liferayfaces.org/](http://liferayfaces.org/). This site lets you
-  generate the necessary dependencies for a JSF portlet based on a chosen
-  @product@ version, JSF version, and component suite.
-- Reference the [Liferay Faces Version Scheme](/develop/reference/-/knowledge_base/7-0/liferay-faces-version-scheme)
-  article to find the project dependencies corresponding to the @product@
-  versions.
+There are two ways to find a JSF portlet's dependencies for @product-ver@:
+
+-   The [http://liferayfaces.org/](http://liferayfaces.org/) home page lets you
+    look up the dependencies (Gradle or Maven) by @product@ version, JSF
+    version, and component suites. 
+-   The [Liferay Faces Version Scheme](/develop/reference/-/knowledge_base/7-0/liferay-faces-version-scheme)
+    article's tables list artifacts by @product@ version, JSF version, portlet
+    version, and AlloyUI and Metal component suite version. 
 
 In this tutorial, you'll see how easy it is to upgrade a Liferay Portal 6.2 JSF
-portlet (JSF 2.2) to @product-ver@ by exploring the upgrade process for the
-sample JSF Applicant portlet. This portlet provides a job application users can
-submit.
+portlet (JSF 2.2) to @product-ver@ by upgrading the sample JSF Applicant
+portlet. This portlet provides a job application users can submit.
 
 ![Figure 1: The JSF Applicant portlet provides a job application for users to submit.](../../../../images/jsf-applicant-6-2.png)
 
@@ -30,20 +27,20 @@ and the
 [upgrade portlet code](/documents/10184/656312/jsf-applicant-portlet-7.0/10e4c0d3-51a0-4605-e7e9-5b306f9701fc).
 This sample project uses Maven.
 
-Follow the steps below to upgrade your Liferay JSF portlet.
+Follow these steps to upgrade your Liferay JSF portlet.
 
 1.  Open your Liferay JSF portlet's build file (e.g., `pom.xml`, `build.gradle`)
-    and navigate to where the dependencies are configured.
+    to where the dependencies are configured.
 
 2.  Navigate to the [http://liferayfaces.org/](http://liferayfaces.org/) site
     and generate a dependency list by choosing the environment to which you want
     to upgrade your portlet.
 
-    ![Figure 2: The Liferay Faces site gives you options to generate many combinations of dependencies.](../../../../images/jsf-dependency-generation.png)
+    ![Figure 2: The Liferay Faces site gives you options to generate dependencies for many environments.](../../../../images/jsf-dependency-generation.png)
 
 3.  Compare the generated dependencies with your portlet's dependencies and make
     any necessary updates. For the sample JSF Applicant portlet, only one
-    Liferay Faces dependency requires an update:
+    Liferay Faces dependency requires updating:
 
         <dependency>
             <groupId>com.liferay.faces</groupId>
@@ -51,8 +48,8 @@ Follow the steps below to upgrade your Liferay JSF portlet.
             <version>3.0.0</version>
         </dependency>
 
-    The Liferay Faces Bridge EXT dependency should be updated to version 5.0.0
-    for @product-ver@. Therefore, the updated dependency should look like this:
+    The Liferay Faces Bridge EXT dependency must be updated to version 5.0.0
+    for @product-ver@. The updated dependency should look like this:
 
         <dependency>
             <groupId>com.liferay.faces</groupId>
@@ -85,5 +82,5 @@ Deploying a Liferay JSF portlet produces messages like these:
 
 After the portlet deployment is complete, it's available on @product@.
 
-You've learned how to upgrade and deploy a Liferay JSF portlet. You resolve
-dependencies and deploy the portlet as you always have. It's just that easy!
+You've learned how to upgrade and deploy a Liferay JSF portlet. You resolved
+dependencies and deployed the portlet as you always have. It's just that easy!
