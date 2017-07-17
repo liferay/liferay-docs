@@ -232,8 +232,16 @@ packages has replaced wholesale use of JARs, modules and WABs can import
 packages without concerning themselves with JARs. This means that @product@
 can't make available to plugins the same Java classes it did in the past. For a
 list of packages @product-ver@ exports to modules, look at the
-`META-INF/system.packages.extra.bnd` file in
-`[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. 
+`modules/core/portal-bootstrap/system.packages.extra.bnd` file in the
+@product-ver@ source code, on
+[GitHub](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/core/portal-bootstrap/system.packages.extra.bnd),
+or in the  `META-INF/system.packages.extra.mf` file in
+`[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. The exported
+packages are easy to read in the
+`modules/core/portal-bootstrap/system.packages.extra.bnd` file as it lists the
+packages on separate lines. The packages are harder to read in
+`com.liferay.portal.bootstrap.jar`'s `META-INF/system.packages.extra.mf` file
+as it lists them in a paragraph that wraps at 70 columns.
 
 If you're still using the `portal-dependency-jars` property, you may run into
 one of the scenarios below. Follow the instructions below the scenario to fix
