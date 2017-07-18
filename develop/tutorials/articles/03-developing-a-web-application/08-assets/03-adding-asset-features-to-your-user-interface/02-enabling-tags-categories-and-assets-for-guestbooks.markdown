@@ -13,59 +13,39 @@ a guestbook. For simplicity's sake, you'll leave the Guestbook portlet's
 adding tags and categories functionality to the Guestbook portlet's
 `edit_guestbook.jsp` except a design decision.)
 
-Open the guestbook admin portlet project's
-`/html/guestbookadminmvcportlet/edit_guestbook.jsp` file. Replace the existing
-contents with the following contents:
+Follow these steps to enable tags, categories, and related assets for guestbooks:
 
-    <%@ include file="../init.jsp" %>
-    
-    <%
-
-    long guestbookId = ParamUtil.getLong(request, "guestbookId");
-
-    Guestbook guestbook = null;
-
-    if (guestbookId > 0) {
-    	guestbook = GuestbookLocalServiceUtil.getGuestbook(guestbookId);
-    }
-    %>
-    
-    <portlet:renderURL var="viewURL">
-        <portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view.jsp" />
-    </portlet:renderURL>
-
-    <portlet:actionURL name="addGuestbook" var="addGuestbookURL" />
-    
-    <aui:form action="<%= addGuestbookURL %>" name="fm">
-        <aui:fieldset>
-            <aui:input name="name" />
-        </aui:fieldset>
+1.  Open the guestbook admin portlet project's 
+    `/guestbookadminmvcportlet/edit_guestbook.jsp` file and add the
+    `<liferay-ui:asset-categories-error />` and `<liferay-ui:asset-tags-error/>` 
+    tags to the form. These tags are responsible for displaying custom error 
+    messages that appear if an error occurs with the categories or tags that are
+    submitted on the form. Add the following code to the `aui:form` below 
+    the closing `</aui:fieldset>` tag:
 
     <liferay-ui:asset-categories-error />
                         <liferay-ui:asset-tags-error />
-                        <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="guestbookCategorizationPanel" persistState="<%= true %>" title="categorization">
-                                <aui:fieldset>
-                                        <aui:input name="categories" type="assetCategories" />
+                        
+2.  Next add a `<liferay-ui:panel>` tag with several
+attributes set. The `<liferay-ui:panel>` tag generates a collapsible section
+inside which you add the input fields for tags and categories.
 
-                                        <aui:input name="tags" type="assetTags" />
-                                </aui:fieldset>
-                        </liferay-ui:panel>
+<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="guestbookCategorizationPanel" persistState="<%= true %>" title="categorization">
+        <aui:fieldset>
+                <aui:input name="categories" type="assetCategories" />
 
-                        <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="guestbookAssetLinksPanel" persistState="<%= true %>" title="related-assets">
-                                <aui:fieldset>
-                                        <liferay-ui:input-asset-links
-                                                className="<%= Guestbook.class.getName() %>"
-                                                classPK="<%= guestbookId %>"
-                                        />
-                                </aui:fieldset>
-                        </liferay-ui:panel>
+                <aui:input name="tags" type="assetTags" />
+        </aui:fieldset>
+</liferay-ui:panel>
 
-      <aui:button-row>
-    		<aui:button type="submit" />
-
-    		<aui:button onClick="<%= viewURL %>" type="cancel" />
-    	</aui:button-row>
-    </aui:form>
+<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="guestbookAssetLinksPanel" persistState="<%= true %>" title="related-assets">
+        <aui:fieldset>
+                <liferay-ui:input-asset-links
+                        className="<%= Guestbook.class.getName() %>"
+                        classPK="<%= guestbookId %>"
+                />
+        </aui:fieldset>
+</liferay-ui:panel>
 
 Here, you're using Liferay and AUI JSP tags to add tags, categories, and related
 assets to the form for adding or updating a guestbook. First, you add the
