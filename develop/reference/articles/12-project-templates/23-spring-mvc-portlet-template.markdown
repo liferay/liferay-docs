@@ -1,0 +1,2 @@
+# Spring MVC Portlet Template
+

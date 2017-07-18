@@ -1,0 +1,2 @@
+# FreeMarker Portlet Template
+
