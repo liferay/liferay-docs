@@ -94,3 +94,12 @@ For more information on using a resource bundle to override an application's
 language keys, see the
 [Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#overriding-a-modules-language-keys)
 tutorial.
+
+## Where Is This Sample? [](id=where-is-this-sample)
+
+There are three different versions of this sample, each built with a different
+build tool:
+
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/overrides/resource-bundle-override)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/overrides/resource-bundle-override)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/overrides/resource-bundle-override)

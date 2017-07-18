@@ -69,3 +69,12 @@ accomplished by the following annotation (if using Declarative Services):
 For more information on model listeners, see the
 [Creating Model Listeners](/develop/tutorials/-/knowledge_base/7-0/model-listeners)
 tutorial.
+
+## Where Is This Sample? [](id=where-is-this-sample)
+
+There are three different versions of this sample, each built with a different
+build tool:
+
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/model-listener)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/extensions/model-listener)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/extensions/model-listener)

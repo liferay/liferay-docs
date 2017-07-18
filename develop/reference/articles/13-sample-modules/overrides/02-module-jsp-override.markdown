@@ -48,3 +48,12 @@ For more information on using fragment bundles to override application JSPs, see
 the
 [Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
 tutorial.
+
+## Where Is This Sample? [](id=where-is-this-sample)
+
+There are three different versions of this sample, each built with a different
+build tool:
+
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/overrides/module-jsp-override)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/overrides/module-jsp-override)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/overrides/module-jsp-override)

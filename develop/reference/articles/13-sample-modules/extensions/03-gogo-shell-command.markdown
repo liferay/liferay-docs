@@ -53,3 +53,12 @@ number of users currently in the system.
 For more information on using the Gogo shell, see the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
 tutorial on Liferay's Developer Network.
+
+## Where Is This Sample? [](id=where-is-this-sample)
+
+There are three different versions of this sample, each built with a different
+build tool:
+
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/gogo)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/extensions/gogo)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/extensions/gogo)

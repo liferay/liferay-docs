@@ -36,7 +36,16 @@ class implementing `PanelApp` to use other technologies, such as FreeMarker.
 
 To learn more about Liferay Portal's product navigation using panel categories
 and panel apps, see the
-[Customizing the Product Menu](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
+[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
 tutorial. For more information on extending the Simulation Menu, see the
-[Extending the Simulation Menu](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/extending-the-simulation-menu)
+[Extending the Simulation Menu](/develop/tutorials/-/knowledge_base/7-0/extending-the-simulation-menu)
 tutorial.
+
+## Where Is This Sample? [](id=where-is-this-sample)
+
+There are three different versions of this sample, each built with a different
+build tool:
+
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/simulation-panel-app)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/simulation-panel-app)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/apps/simulation-panel-app)
