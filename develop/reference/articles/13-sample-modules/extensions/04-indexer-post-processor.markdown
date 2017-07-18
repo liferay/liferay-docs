@@ -1,6 +1,6 @@
-# Indexer Post Processor
+# Indexer Post Processor [](id=indexer-post-processor)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Indexer Post Processor sample demonstrates using the `IndexerPostProcessor`
 interface, which is provided to customize search queries and documents before
@@ -23,13 +23,13 @@ publish the blog, the following message is logged in the console:
 
     18:27:30,737 INFO  [http-nio-8080-exec-8][BlogsIndexerPostProcessor:76] postProcessDocument
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
 [IndexerPostProcessor](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/search/IndexerPostProcessor.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 This sample contains four implementations of the `IndexerPostProcessor`
 interface:

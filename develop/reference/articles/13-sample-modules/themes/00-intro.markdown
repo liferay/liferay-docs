@@ -1,4 +1,4 @@
-# Themes
+# Themes [](id=themes)
 
 This section focuses on Liferay sample themes. You can view these sample themes
 by visiting the `themes` folder corresponding to your preferred build tool:

@@ -1,4 +1,4 @@
-# Module JSP Override
+# Module JSP Override [](id=module-jsp-override)
 
 The Module JSP Override sample conveys Liferay's recommended approach to
 override an application's JSP by leveraging OSGi fragment modules. This example

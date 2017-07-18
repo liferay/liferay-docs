@@ -1,4 +1,4 @@
-# Gogo Shell Command
+# Gogo Shell Command [](id=gogo-shell-command)
 
 The Gogo Shell Command sample demonstrates adding a custom command to Liferay
 Portal's Gogo shell environment. All Liferay Portal installations have a Gogo

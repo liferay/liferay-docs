@@ -1,6 +1,6 @@
 # Control Menu Entry [](id=control-menu-entry)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Control Menu Entry sample provides a customizable button that is added to
 Liferay Portal's default Control Menu. When deploying this sample with no
@@ -11,13 +11,13 @@ of the Control Menu.
 
 The button navigates the user to Liferay's website: https://www.liferay.com.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
 [ProductNavigationControlMenuEntry](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 This sample first leverages the `ProductNavigationControlMenuEntry` interface as
 an OSGi service via the `@Component` annotation:

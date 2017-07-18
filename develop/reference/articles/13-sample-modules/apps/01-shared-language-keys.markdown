@@ -1,4 +1,4 @@
-# Shared Language Keys
+# Shared Language Keys [](id=shared-language-keys)
 
 The Shared Language Keys sample is broken into two modules:
 
@@ -9,7 +9,7 @@ The Language Web module provides a JSP portlet that displays language keys. The
 Language module shares language keys with the portlet. You'll explore the web
 module first.
 
-## Language Web
+## Language Web [](id=language-web)
 
 The Language Web module is a simple JSP portlet that conveys Liferay's
 recommended approach to sharing language keys through OSGI services.
@@ -36,7 +36,7 @@ for this example goes
 Next, you'll examine the `language` module and learn how language keys are used
 from modules and shared between modules.
 
-## Language
+## Language [](id=language)
 
 The Language module conveys Liferay's recommended approach to sharing language
 keys through OSGI services. This particular module provides a resource module

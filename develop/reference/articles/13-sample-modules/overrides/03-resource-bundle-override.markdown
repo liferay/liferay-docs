@@ -1,4 +1,4 @@
-# Resource Bundle Override
+# Resource Bundle Override [](id=resource-bundle-override)
 
 The Resource Bundle Override sample conveys the recommended approach to override
 an application's language keys file for any module that is deployed to Liferay

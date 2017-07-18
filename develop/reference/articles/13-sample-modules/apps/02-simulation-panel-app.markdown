@@ -1,4 +1,4 @@
-# Simulation Panel App
+# Simulation Panel App [](id=simulation-panel-app)
 
 The Simulation Panel app provides new functionality in Liferay Portal's
 Simulation Menu. When deploying this sample with no customizations, the
