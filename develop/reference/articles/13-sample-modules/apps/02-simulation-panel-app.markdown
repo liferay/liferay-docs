@@ -5,7 +5,7 @@ Simulation Menu. When deploying this sample with no customizations, the
 *Simulation Sample* feature is provided in the Simulation Menu with four
 options.
 
-![Figure 1: A simulation panel app adds new functionality to the Simulation Menu.](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/simulation-panel-app.png)
+![Figure 1: A simulation panel app adds new functionality to the Simulation Menu.](../../../images/simulation-panel-app.png)
 
 This sample leverages the `PanelApp` extension point (OSGi service) in a Java
 class. It also specifies two properties in the `@Component` annotation:

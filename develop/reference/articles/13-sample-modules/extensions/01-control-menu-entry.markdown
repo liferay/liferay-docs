@@ -4,10 +4,10 @@ The Control Menu Entry sample provides a customizable button that is added to
 Liferay's default Control Menu. When deploying this sample with no
 customizations, an additional button is added to the User portion of the Control
 Menu. For more information on how to customize Liferay's Control Menu, visit the
-[Customizing the Control Menu](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/customizing-the-control-menu)
+[Customizing the Control Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-control-menu)
 tutorial.
 
-![Figure 1: The User area of the Control Menu is provided an additional link button when the Control Menu Entry Blade sample is deployed to Liferay.](../../images/controlmenuentry.png)
+![Figure 1: The User area of the Control Menu is provided an additional link button when the Control Menu Entry Blade sample is deployed to Liferay.](../../../images/controlmenuentry.png)
 
 You can easily modify this sample by customizing its
 `BladeProductNavigationControlMenuEntry` Java class. For example, the default

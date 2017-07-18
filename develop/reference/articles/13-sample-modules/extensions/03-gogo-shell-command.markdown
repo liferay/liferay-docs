@@ -17,12 +17,12 @@ To test this sample, follow the instructions below:
 3.  Run `help` to view all the available commands. The sample Gogo shell command
     is listed.
 
-    ![Figure 1: The sample Gogo shell command is listed with all the available commands.](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/gogo-shell-1.png)
+    ![Figure 1: The sample Gogo shell command is listed with all the available commands.](../../../images/gogo-shell-1.png)
 
 4.  Execute `usercount` to execute the new custom command. The number of users
     on your running Liferay Portal installation is printed.
 
-    ![Figure 2: The outcome of executing the `usercount` command.](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/gogo-shell-2.png)
+    ![Figure 2: The outcome of executing the `usercount` command.](../../../images/gogo-shell-2.png)
 
 To add this new Gogo shell command, you must implement the logic in a Java
 class with the following two properties:
@@ -51,5 +51,5 @@ This method uses *Declarative Services* to get a reference for the
 number of users currently in the system.
 
 For more information on using the Gogo shell, see the
-[Using the Felix Gogo Shell](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+[Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
 tutorial on Liferay's Developer Network.

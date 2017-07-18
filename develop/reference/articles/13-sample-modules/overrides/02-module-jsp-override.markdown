@@ -5,7 +5,7 @@ override an application's JSP by leveraging OSGi fragment modules. This example
 overrides the default `login.jsp` file in the `com.liferay.login.web` bundle by
 adding the red text *changed* to the Sign In form.
 
-![Figure 1: The customized Sign In form with the new *changed* text.](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/hook-jsp.png)
+![Figure 1: The customized Sign In form with the new *changed* text.](../../../images/hook-jsp.png)
 
 You can create your own JSP override by
 
@@ -46,5 +46,5 @@ sample.
 
 For more information on using fragment bundles to override application JSPs, see
 the
-[Overriding App JSPs](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
 tutorial.

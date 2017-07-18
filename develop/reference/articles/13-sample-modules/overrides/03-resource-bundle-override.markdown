@@ -11,7 +11,7 @@ display *Overriden Add Blog Entry*. If you change the Portal's default language
 to Spanish, the modified language key is translated to display in that language.
 For example, the text changes to *Añadir entrada sobreescrita*.
 
-![Figure 1: The customized Blogs application displays the new `add-blog-entry` language key in English.](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/hook-resourcebundle.png)
+![Figure 1: The customized Blogs application displays the new `add-blog-entry` language key in English.](../../../images/hook-resourcebundle.png)
 
 For reference, the Blogs application's language keys are stored in the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repo's
@@ -87,10 +87,10 @@ example's goal is to only override the English and Spanish keys, the
 This approach can be used to override any application's language keys (i.e.,
 `language.properties` files that are inside a module deployed to Portal's OSGi
 runtime). If you need to override Portal's core language keys, see the
-[Modifying Liferay's Language Keys](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#modifying-liferays-language-keys)
+[Modifying Liferay's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#modifying-liferays-language-keys)
 tutorial.
 
 For more information on using a resource bundle to override an application's
 language keys, see the
-[Overriding a Module's Language Keys](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#overriding-a-modules-language-keys)
+[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#overriding-a-modules-language-keys)
 tutorial.

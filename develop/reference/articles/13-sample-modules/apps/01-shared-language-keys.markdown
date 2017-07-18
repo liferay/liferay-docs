@@ -19,7 +19,7 @@ portlet uses language keys shared by the Language module. When you place
 this sample portlet on a @product@ page, you're presented with the portlet's
 name followed by three language keys.
 
-![Figure 1: The Language Web portlet displays three phrases, two of which are shared from a different module.](../../images/language-web-portlet.png)
+![Figure 1: The Language Web portlet displays three phrases, two of which are shared from a different module.](../../../images/language-web-portlet.png)
 
 The first message is provided by the Language Web module. The second message is
 from the Language module. The third message is provided by both modules; as you
