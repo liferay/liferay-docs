@@ -41,6 +41,6 @@ the Javadoc provided in this sample's Java classes.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.screenname.validator)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.screenname.validator)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.screenname.validator)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/screen-name-validator)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/extensions/screen-name-validator)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/extensions/screen-name-validator)
