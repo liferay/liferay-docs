@@ -41,32 +41,28 @@ the `addEntry` method to use the new services.
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
                 long entryId = ParamUtil.getLong(request, "entryId");
 
-                    try {
-                        _entryLocalService.addEntry(
-                            serviceContext.getUserId(), guestbookId, userName, email,
-                            message, serviceContext);
-
+                     try {
+                        _entryService.addEntry(serviceContext.getUserId(), guestbookId, userName,
+                        email, message, serviceContext);
+                          
                         SessionMessages.add(request, "entryAdded");
-
-                        response.setRenderParameter(
-                            "guestbookId", Long.toString(guestbookId));
-                    }
-                    catch (Exception e) {
-                        Class<?> clazz = e.getClass();
-
-                        SessionErrors.add(request, clazz.getName());
-
+                        response.setRenderParameter("guestbookId", Long.toString(guestbookId));
+                     }
+                     
+                     catch (Exception e) {
+                        
+                        SessionErrors.add(request, e.getClass().getName());
                         PortalUtil.copyRequestParameters(request, response);
-
-                        response.setRenderParameter(
-                            "mvcPath", "edit_entry.jsp");
-                    }
-            
+                        response.setRenderParameter("mvcPath", "/guestbookwebportlet/edit_entry.jsp");
+                        }
             }
 
-    The `addEntry` method gets the name, message, and email fields that the 
-    user submits through the JSP and passes them on to the service to be stored 
-    as entry data. This is all done in a `try...catch` statement.
+    First, the `addEntry` method gets the name, message, and email fields that 
+    the user submits through the JSP and passes them on to the service to be 
+    stored as entry data. The method then calls the `addEntry` service method 
+    to add a new entry. If this fails, the method will output relevant 
+    exception data.
+    
     
 4. Next do `addGuestbook`:
 
@@ -85,10 +81,9 @@ the `addEntry` method to use the new services.
                     SessionMessages.add(request, "guestbookAdded");
                 }
                 catch (Exception e) {
-                    Class<?> clazz = e.getClass();
 
-                    SessionErrors.add(request, clazz.getName());
-
+                    SessionErrors.add(request, e.getClass().getName());
+                    PortalUtil.copyRequestParameters(request, response);
                     response.setRenderParameter(
                         "mvcPath", "edit_guestbook.jsp");
                 }
