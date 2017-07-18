@@ -13,31 +13,31 @@ Follow these steps to update the class:
 2.  Update the component metadata properties to match the configuration below:
 
         @Component(
-        	immediate = true,
-        	property = {
-        		"panel.app.order:Integer=300",
-        		"panel.category.key=" + PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT
-        	},
-        	service = PanelApp.class
+            immediate = true,
+            property = {
+                "panel.app.order:Integer=300",
+                "panel.category.key=" + PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT
+            },
+            service = PanelApp.class
         )
 
 3.  Finally, update the class to use the proper name and portlet keys:
 
         public class GuestbookAdminPanelApp extends BasePanelApp {
 
-        	@Override
-        	public String getPortletId() {
-        		return GuestbookPortletKeys.GUESTBOOK_ADMIN;
-        	}
+            @Override
+            public String getPortletId() {
+                return GuestbookPortletKeys.GUESTBOOK_ADMIN;
+            }
 
-        	@Override
-        	@Reference(
-        		target = "(javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK_ADMIN + ")",
-        		unbind = "-"
-        	)
-        	public void setPortlet(Portlet portlet) {
-        		super.setPortlet(portlet);
-        	}
+            @Override
+            @Reference(
+                target = "(javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK_ADMIN + ")",
+                unbind = "-"
+            )
+            public void setPortlet(Portlet portlet) {
+                super.setPortlet(portlet);
+            }
 
         }
 

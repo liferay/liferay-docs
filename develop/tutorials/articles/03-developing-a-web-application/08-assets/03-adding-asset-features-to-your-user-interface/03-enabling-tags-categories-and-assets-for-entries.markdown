@@ -16,7 +16,7 @@ file. Replace the existing contents with the following contents:
     Entry entry = null;
 
     if (entryId > 0) {
-    	entry = EntryLocalServiceUtil.getEntry(entryId);
+        entry = EntryLocalServiceUtil.getEntry(entryId);
     }
 
     long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
@@ -30,26 +30,26 @@ file. Replace the existing contents with the following contents:
     </portlet:renderURL>
 
     <liferay-ui:header
-    	backURL="<%= viewURL.toString() %>"
+        backURL="<%= viewURL.toString() %>"
         title="<%= entry == null ? "Add Entry" : entry.getName() %>"
     />
 
     <portlet:actionURL name="addEntry" var="addEntryURL" />
 
     <aui:form action="<%= addEntryURL %>" name="fm">
-    	<aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
+        <aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
 
-    		<aui:fieldset>
-    			<aui:input name="name" />
+            <aui:fieldset>
+                <aui:input name="name" />
 
-    			<aui:input name="email" />
+                <aui:input name="email" />
 
-    			<aui:input name="message" />
+                <aui:input name="message" />
 
-    			<aui:input name="entryId" type="hidden" />
+                <aui:input name="entryId" type="hidden" />
 
-    			<aui:input name="guestbookId" type="hidden" value="<%= entry == null ? guestbookId : entry.getGuestbookId() %>" />
-    		</aui:fieldset>
+                <aui:input name="guestbookId" type="hidden" value="<%= entry == null ? guestbookId : entry.getGuestbookId() %>" />
+            </aui:fieldset>
 
     <liferay-ui:asset-categories-error />
                         <liferay-ui:asset-tags-error />
@@ -70,11 +70,11 @@ file. Replace the existing contents with the following contents:
                                 </aui:fieldset>
                         </liferay-ui:panel>
 
-    	<aui:button-row>
-    		<aui:button type="submit" />
+        <aui:button-row>
+            <aui:button type="submit" />
 
-    		<aui:button onClick="<%= viewURL.toString() %>" type="cancel" />
-    	</aui:button-row>
+            <aui:button onClick="<%= viewURL.toString() %>" type="cancel" />
+        </aui:button-row>
     </aui:form>
 
 Test your JSP by using the Guestbook portlet to add and update Guestbook

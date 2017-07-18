@@ -27,9 +27,9 @@ long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
 Entry entry = null;
 
 if (entryId > 0) {
-	entry = EntryLocalServiceUtil.getEntry(entryId);
+    entry = EntryLocalServiceUtil.getEntry(entryId);
 
-	entryId = entry.getEntryId();
+    entryId = entry.getEntryId();
 }
 
 entry = EntryLocalServiceUtil.getEntry(entryId);
@@ -52,8 +52,8 @@ PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"),
 %>
 
 <liferay-portlet:renderURL varImpl="viewEntryURL">
-	<portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view_entry.jsp" />
-	<portlet:param name="entryId" value="<%= String.valueOf(entryId) %>" />
+    <portlet:param name="mvcPath" value="/html/guestbookmvcportlet/view_entry.jsp" />
+    <portlet:param name="entryId" value="<%= String.valueOf(entryId) %>" />
 </liferay-portlet:renderURL>
 
 <liferay-portlet:renderURL varImpl="viewURL">
@@ -62,7 +62,7 @@ PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"),
 
 <liferay-ui:header
     backURL="<%= viewURL.toString() %>"
-   	title="<%= entry.getName() %>"
+       title="<%= entry.getName() %>"
 />
 
     <dl>

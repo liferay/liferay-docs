@@ -14,53 +14,53 @@ permission checks.
 
 1.  Right-click on your `guestbook-service` module and select *New* &rarr;
     *Package* name it `com.liferay.docs.guestbook.service.permission`.
-	This is where you'll place your helper classes. 
+    This is where you'll place your helper classes. 
 
 2.  Right-click on the new package and select *New* &rarr; *Class* and name it 
     `GuestbookModelPermission`.
 
 3.  Place the following code in this class: 
 
-		package com.liferay.docs.guestbook.service.permission;
+        package com.liferay.docs.guestbook.service.permission;
         
-		import org.osgi.service.component.annotations.Component;
-		import com.liferay.portal.kernel.exception.PortalException;
+        import org.osgi.service.component.annotations.Component;
+        import com.liferay.portal.kernel.exception.PortalException;
         import com.liferay.portal.kernel.security.auth.PrincipalException;
-		import com.liferay.portal.kernel.security.permission.BaseResourcePermissionChecker;
-		import com.liferay.portal.kernel.security.permission.PermissionChecker;
+        import com.liferay.portal.kernel.security.permission.BaseResourcePermissionChecker;
+        import com.liferay.portal.kernel.security.permission.PermissionChecker;
 
 
-		@Component(
-				immediate = true,
-				property = {
-					"resource.name=" + GuestbookModelPermission.RESOURCE_NAME
-				},
-				service = GuestbookModelPermission.class
-			)
+        @Component(
+                immediate = true,
+                property = {
+                    "resource.name=" + GuestbookModelPermission.RESOURCE_NAME
+                },
+                service = GuestbookModelPermission.class
+            )
 
-		 public class GuestbookModelPermission extends BaseResourcePermissionChecker  {
+         public class GuestbookModelPermission extends BaseResourcePermissionChecker  {
 
-		       public static final String RESOURCE_NAME = "com.liferay.docs.guestbook";
+               public static final String RESOURCE_NAME = "com.liferay.docs.guestbook";
 
-		       public static void check(PermissionChecker permissionChecker, long groupId,
-		               String actionId) throws PortalException {
+               public static void check(PermissionChecker permissionChecker, long groupId,
+                       String actionId) throws PortalException {
 
-		               if (!contains(permissionChecker, groupId, actionId)) {
-		                    throw new PrincipalException();
-		               }
-		            }
+                       if (!contains(permissionChecker, groupId, actionId)) {
+                            throw new PrincipalException();
+                       }
+                    }
 
-		       public static boolean contains(PermissionChecker permissionChecker,
-		               long groupId, String actionId) {
-		               return permissionChecker.hasPermission(groupId, RESOURCE_NAME, groupId,
-		                        actionId);
-		            }
+               public static boolean contains(PermissionChecker permissionChecker,
+                       long groupId, String actionId) {
+                       return permissionChecker.hasPermission(groupId, RESOURCE_NAME, groupId,
+                                actionId);
+                    }
 
-			   @Override
-			   public Boolean checkResource(PermissionChecker permissionChecker, long classPK, String actionId) {
-					   return contains(permissionChecker, classPK, actionId);
-					}
-		        }
+               @Override
+               public Boolean checkResource(PermissionChecker permissionChecker, long classPK, String actionId) {
+                       return contains(permissionChecker, classPK, actionId);
+                    }
+                }
 
 
 This class is a component which extends `BaseResourcePermissionChecker` and 
@@ -175,7 +175,7 @@ permissions package so that other modules can access it.
 
 3. In the graphical view, under the *Export Packages* section, click the plus 
     button to add an export.
-	
+    
 4. Select `com.liferay.docs.guestbook.service.permission` and click `OK`.
 
 5. Save the file.

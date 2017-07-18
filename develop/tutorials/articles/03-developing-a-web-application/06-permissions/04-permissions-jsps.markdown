@@ -35,8 +35,8 @@ version of the permission check.
     guestbook, and above the `%>` that closes the scriplet add another `if` 
     statement: 
 
-		if (GuestbookPermission.contains(
-			permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
+        if (GuestbookPermission.contains(
+            permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
 
 2.  Then, after the `<portlet:renderURL />` and `<aui:nav-item />` tags, add
     an additonal `}` to the closing scriptlet to close both `if` statements.
