@@ -23,8 +23,8 @@ Use the following steps to add the required Guestbook service methods:
 
 1.  Go to the `guestbook-service` project and open 
      `GuestbookLocalServiceImpl.java` found in the 
-     `com.liferay.docs.gradebook.service.impl` packageand add the following 
-     method for updating a guestbook:
+	 `com.liferay.docs.gradebook.service.impl` package and add the following 
+	 method for updating a guestbook:
 
         public Guestbook updateGuestbook(long userId, long guestbookId,
         String name, ServiceContext serviceContext) throws PortalException,

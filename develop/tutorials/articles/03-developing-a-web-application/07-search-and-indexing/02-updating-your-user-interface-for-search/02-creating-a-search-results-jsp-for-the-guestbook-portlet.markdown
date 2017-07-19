@@ -8,44 +8,67 @@ without having to click the back link to go to the portlet's default view.
 
 ![Figure 1: The search results should appear in a Search Container and the Actions button should appear for each entry. The search bar should also be displayed.](../../../../images/guestbook-portlet-search-results.png)
 
-Create a new file called `view_search.jsp` in your guestbook-web module 
-project's `/guestbookwebportlet` folder. Add the following contents to it:
+Follow these steps to create the view search JSP:
 
-    <%@include file="../init.jsp"%>
+1.  Create a new file called `view_search.jsp` in your guestbook-web module 
+    project's `/guestbookwebportlet` folder and include the `init.jsp`:
 
-    <%
-      String keywords = ParamUtil.getString(request, "keywords");
-      long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+        <%@include file="../init.jsp"%>
 
-    %>
+2.  Next, extract the `keywords` parameter from the request. This is a very 
+    important parameter for `view_search.jsp` since it determines what the 
+    search results will be:
 
-    <liferay-portlet:renderURL varImpl="searchURL">
-            <portlet:param name="mvcPath" value="/guestbookwebportlet/view_search.jsp" />
-    </liferay-portlet:renderURL>
+        <%
+          String keywords = ParamUtil.getString(request, "keywords");
+          long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+        %>
 
-    <portlet:renderURL var="viewURL">
-        <portlet:param 
-            name="mvcPath" 
-            value="/guestbookwebportlet/view.jsp" 
+3.  Next, define two URLs: `searchURL` and `viewURL`. Both of these URLs use the 
+    `mvcPath` parameter that's available to you since the Guestbook portlet is a 
+    Liferay MVC portlet. `searchURL` points to the current JSP: `view_search.jsp`. 
+    `viewURL` points back to the Guestbook portlet's default view JSP. These two 
+    URLs are used in the AUI form that follows:
+
+        <liferay-portlet:renderURL varImpl="searchURL">
+                <portlet:param name="mvcPath" 
+                value="/guestbookwebportlet/view_search.jsp" />
+        </liferay-portlet:renderURL>
+
+        <portlet:renderURL var="viewURL">
+            <portlet:param 
+                name="mvcPath" 
+                value="/guestbookwebportlet/view.jsp" 
+            />
+        </portlet:renderURL>
+
+4.  Add an AUI form. This form is identical to the one that you added to the 
+    Guestbook portlet's `view.jsp` except that this one contains a 
+    `<liferay-ui:header>` tag. The `<liferay-ui:header>` tag displays the Back 
+    icon next to the word "Search." Note how the `backURL` attribute uses the 
+    `viewURL` that you defined above. Submitting the form invokes the `searchURL` 
+    with the search query entered by the user added to the URL in the `keywords` 
+    parameter:
+
+        <aui:form action="<%= searchURL %>" method="get" name="fm">
+            <liferay-portlet:renderURLParams varImpl="searchURL" />
+
+        <liferay-ui:header
+            backURL="<%= viewURL.toString() %>"
+            title="search"
         />
-    </portlet:renderURL>
-
-    <aui:form action="<%= searchURL %>" method="get" name="fm">
-        <liferay-portlet:renderURLParams varImpl="searchURL" />
-
-    <liferay-ui:header
-        backURL="<%= viewURL.toString() %>"
-        title="search"
-    />
-        
-        <div class="search-form">
-            <span class="aui-search-bar">
-                <aui:input inlineField="<%= true %>" label="" name="keywords" size="30" title="search-entries" type="text" />
             
-                <aui:button type="submit" value="search" />
-            </span>
-        </div>
-    </aui:form>
+            <div class="search-form">
+                <span class="aui-search-bar">
+                    <aui:input inlineField="<%= true %>" label="" name="keywords" 
+                    size="30" title="search-entries" type="text" />
+                
+                    <aui:button type="submit" value="search" />
+                </span>
+            </div>
+        </aui:form>
+
+5.  
 
     <%
             SearchContext searchContext = SearchContextFactory
@@ -144,31 +167,13 @@ Your `view_search.jsp` requires some extra imports. Add the following imports to
     <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
     <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
     <%@ page import="com.liferay.portal.kernel.util.Validator" %>
-    <%@ page import="com.liferay.portal.util.PortalUtil" %>
+    <%@ page import="com.liferay.portal.kernel.util.PortalUtil" %>
 
     <%@ page import="java.util.ArrayList" %>
     <%@ page import="java.util.Map" %>
     <%@ page import="java.util.HashMap" %>
 
     <%@ page import="javax.portlet.PortletURL" %>
-
-As with the rest of the guestbook-portlet project's JSPs, `init.jsp` is imported
-at the top of `view_search.jsp`. After that, the `keywords` parameter is
-extracted from the request. This is a very important parameter for
-`view_search.jsp` since it determines what the search results will be!
-
-Next, you define two URLs: `searchURL` and `viewURL`. Both of these URLs use the 
-`mvcPath` parameter that's available to you since the Guestbook portlet is a 
-Liferay MVC portlet. `searchURL` points to the current JSP: `view_search.jsp`. 
-`viewURL` points back to the Guestbook portlet's default view JSP. These two 
-URLs are used in the AUI form that follows.
-
-This AUI form is identical to the one that you added to the Guestbook portlet's
-`view.jsp` except that this one contains a `<liferay-ui:header>` tag. The 
-`<liferay-ui:header>` tag displays the Back icon next to the word "Search." Note 
-how the `backURL` attribute uses the `viewURL` that you defined above. 
-Submitting the form invokes the `searchURL` with the search query entered by the 
-user added to the URL in the `keywords` parameter.
 
 After the AUI form comes a scriplet. In this scriptlet, you use the `keywords`
 URL parameter to actually run a search and retrieve the corresponding guestbook

@@ -1,32 +1,36 @@
-# Integrating the New Backend with the Rest of the App
+# Integrating the New Back-end 
 
-Now you have a little problem. You've started building a wall, and you built a 
-little bit on one end, then went to the other end and another section of the 
-wall, but you haven't made them meet in the middle yet (that's a very big 
-problem for a wall). Now it's time to meet in the middle.
+It's a good practice to start with a working prototype as a proof of concept,
+but eventually that prototype must transform into a real application. Up to this
+point, you've made all the preparations to do that, and now it's time to replace
+the prototype back-end with the real, database-driven back-end you created with
+Service Builder. 
 
-First, earlier you manually created your own model. Now you have a model being 
-managed by Service Builder. Remove the old one to prevent any conflicts:
+For the prototype, you manually created the application's model. The first thing
+you want to do is remove it, because Service Builder generated a new one:
 
-1. Find the 'com.liferay.docs.guestbook.model' package in the `guestbook-web` 
+1.  Find the `com.liferay.docs.guestbook.model` package in the `guestbook-web` 
     module.
-2. Delete it - this will cause some exceptions now, but they'll all be fixed 
-    soon.
 
-You need to make your web modules aware of your service modules so that 
-you can access the services from your web module. Then you need to update your `addEntry` method to use the new services.
+2.  Delete it. You'll see errors in your project, but that's because you haven't
+    replaced the model yet. 
 
-1. First, open the `build.gradle` file for your guestbook-web 
-    project, and add these imports to the file:
+Now you get to do some dependency management. You must make the web module aware
+of the service modules so the web can access their services. Then you can update
+the `addEntry` method to use the new services.
+
+1.  First, open `guestbook-web`'s `build.gradle` file and add these dependencies:
 
         compileOnly project(":modules:guestbook:guestbook-api")
         compileOnly project(":modules:guestbook:guestbook-service")
 
+2.  Right-click on the `guestbook-web` project and select *Gradle* &rarr;
+    *Refresh Gradle Project*. 
 
-2. Now open `GuestbookPortlet.java` and replace the `addEntry` method with the new version:
+3.  Open `GuestbookPortlet.java` and replace the `addEntry` method with the new version:
 
-    public void addEntry(ActionRequest request, ActionResponse response)
-                throws PortalException {
+        public void addEntry(ActionRequest request, ActionResponse response)
+                    throws PortalException {
 
                 ServiceContext serviceContext = ServiceContextFactory.getInstance(
                     Entry.class.getName(), request);
@@ -37,32 +41,28 @@ you can access the services from your web module. Then you need to update your `
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
                 long entryId = ParamUtil.getLong(request, "entryId");
 
-                    try {
-                        _entryLocalService.addEntry(
-                            serviceContext.getUserId(), guestbookId, userName, email,
-                            message, serviceContext);
-
+                     try {
+                        _entryService.addEntry(serviceContext.getUserId(), guestbookId, userName,
+                        email, message, serviceContext);
+                          
                         SessionMessages.add(request, "entryAdded");
-
-                        response.setRenderParameter(
-                            "guestbookId", Long.toString(guestbookId));
-                    }
-                    catch (Exception e) {
-                        Class<?> clazz = e.getClass();
-
-                        SessionErrors.add(request, clazz.getName());
-
+                        response.setRenderParameter("guestbookId", Long.toString(guestbookId));
+                     }
+                     
+                     catch (Exception e) {
+                        
+                        SessionErrors.add(request, e.getClass().getName());
                         PortalUtil.copyRequestParameters(request, response);
-
-                        response.setRenderParameter(
-                            "mvcPath", "edit_entry.jsp");
-                    }
-            
+                        response.setRenderParameter("mvcPath", "/guestbookwebportlet/edit_entry.jsp");
+                        }
             }
 
-    The `addEntry` method gets the name, message, and email fields that the 
-    user submits through the JSP and passes them on to the service to be stored 
-    as entry data. This is all done in a `try...catch` statement.
+    First, the `addEntry` method gets the name, message, and email fields that 
+    the user submits through the JSP and passes them on to the service to be 
+    stored as entry data. The method then calls the `addEntry` service method 
+    to add a new entry. If this fails, the method will output relevant 
+    exception data.
+    
     
 4. Next do `addGuestbook`:
 
@@ -81,10 +81,9 @@ you can access the services from your web module. Then you need to update your `
                     SessionMessages.add(request, "guestbookAdded");
                 }
                 catch (Exception e) {
-                    Class<?> clazz = e.getClass();
 
-                    SessionErrors.add(request, clazz.getName());
-
+                    SessionErrors.add(request, e.getClass().getName());
+                    PortalUtil.copyRequestParameters(request, response);
                     response.setRenderParameter(
                         "mvcPath", "edit_guestbook.jsp");
                 }

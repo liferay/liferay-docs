@@ -41,6 +41,6 @@ There are four Java classes used in this sample:
 There are three different versions of this sample, each built with a different
 build tool:
    
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.document.action)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.document.action)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.document.action)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/document-action)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/extensions/document-action)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/extensions/document-action)

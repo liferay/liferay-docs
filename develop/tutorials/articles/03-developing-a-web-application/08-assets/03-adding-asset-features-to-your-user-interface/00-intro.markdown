@@ -9,14 +9,14 @@ provided by Liferay. Your only task is to update your applications' user
 interfaces to use these features.
 
 In this section, you'll be creating several new JSPs that require new imports.
-Add the following imports to your guestbook-portlet project's
-`docroot/html/init.jsp` file:
+Add the following imports to your `guestbook-web` module project's
+`init.jsp` file:
 
     <%@ page import="java.util.Map" %>
     <%@ page import="java.util.HashMap" %>
 
     <%@ page import="com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil" %>
-    <%@ page import="com.liferay.asset.kernel.AssetTagLocalServiceUtil" %>
+    <%@ page import="com.liferay.asset.kernel.service.AssetTagLocalServiceUtil" %>
 
     <%@ page import="com.liferay.asset.kernel.model.AssetEntry" %>
     <%@ page import="com.liferay.asset.kernel.model.AssetTag" %>
