@@ -32,6 +32,6 @@ modules.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.language.web)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.language.web)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.language.web)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/shared-language-keys/language-web)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/shared-language-keys/language-web)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/apps/shared-language-keys/language-web)

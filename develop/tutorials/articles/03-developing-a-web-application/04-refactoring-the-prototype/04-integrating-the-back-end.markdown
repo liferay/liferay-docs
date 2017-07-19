@@ -79,11 +79,8 @@ the `addEntry` method to use the new services.
                         Level.SEVERE, null, e);
 
                         PortalUtil.copyRequestParameters(request, response);
-
-                        response.setRenderParameter(
-                            "mvcPath", "edit_entry.jsp");
-                    }
-            
+                        response.setRenderParameter("mvcPath", "/guestbookwebportlet/edit_entry.jsp");
+                        }
             }
 
     The `addEntry` method gets the name, message, and email fields that the 

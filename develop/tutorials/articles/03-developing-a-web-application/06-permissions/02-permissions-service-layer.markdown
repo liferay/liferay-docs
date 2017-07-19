@@ -13,31 +13,63 @@ automatically, so all you need to modify your exist add and delete methods to al
         resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
             Guestbook.class.getName(), guestbookId, false, true, true);
 
-Notice that the `resourceLocalService` object is already there, ready for you 
-to use. This is one of several utilities that are automatically injected by 
-Service Builder. You'll see the rest in future Learning Paths.
+    Notice that the `resourceLocalService` object is already there, ready for 
+    you to use. This is one of several utilities that are automatically 
+    injected by Service Builder. You'll see the rest in future Learning Paths.
 
-This code adds a resource to Liferay's database to correspond with your entity 
-(notice that the guestbookId is included in the call). The three booleans at 
-the end are settings. The first is whether to add portlet action permissions. 
-This should only be true if the permission is for a portlet resource. Since 
-this permission is for a model resource (an entity), it's false. The other two 
-are settings for adding group permissions and adding guest permissions. If you 
-set these to true as has been done here, you'll add the default permissions 
-configured in the permissions configuration file that you created in the 
-previous step. Since you definitely want to do this, these booleans are set to 
-`true.`
+    This code adds a resource to Liferay's database to correspond with your 
+    entity (notice that the guestbookId is included in the call). The three 
+    booleans at the end are settings. The first is whether to add portlet 
+    action permissions. This should only be true if the permission is for a 
+    portlet resource. Since this permission is for a model resource (an 
+    entity), it's false. The other two are settings for adding group 
+    permissions and adding guest permissions. If you set these to true as has 
+    been done here, you'll add the default permissions configured in the 
+    permissions configuration file that you created in the previous step. Since 
+    you definitely want to do this, these booleans are set to `true.`
 
-3. Save the file and then open `EntryLocalServiceImpl.java` from the same 
+3. Next go to the `updateGuestbook` method. Add a similar bit of code in between
+    the `guestbookPersistence.update(guestbook)` line and the `return` 
+    statement:
+    
+        resourceLocalService.updateResources(serviceContext.getCompanyId(),
+                        serviceContext.getScopeGroupId(), 
+                        Guestbook.class.getName(), guestbookId,
+                        serviceContext.getGroupPermissions(),
+                        serviceContext.getGuestPermissions());
+
+4. Do the same for `deleteGuestbook`, this in between `guestbook = 
+    deleteGuestbook(guestbook);` and the `return` statement:
+    
+        resourceLocalService.deleteResource(serviceContext.getCompanyId(),
+                        Guestbook.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
+                        guestbookId);
+
+4. Save the file and then open `EntryLocalServiceImpl.java` from the same 
     package.
 
-4. Add a line of code that adds resources for this entity, near the end of the 
+5. Add a line of code that adds resources for this entity, near the end of the 
     method, just before the return statement:
 
         resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
           Entry.class.getName(), entryId, false, true, true);
 
-As you can see, this does the same thing for the Entry entity.
+6. Again, you need to do the same for `updateEntry` and `deleteEntry`. First
+    Find `deleteEntry` and add this code above the `return` statement:
+    
+        resourceLocalService.deleteResource(
+                       serviceContext.getCompanyId(), Entry.class.getName(),
+                       ResourceConstants.SCOPE_INDIVIDUAL, entryId);
+            
+
+7. Finally find `updateEntry` and add it's resource action:
+
+        resourceLocalService.updateResources(
+                      user.getCompanyId(), groupId, Entry.class.getName(), entryId,
+                      serviceContext.getGroupPermissions(),
+                      serviceContext.getGuestPermissions());
+
+    As you can see, this does the same thing for the Entry entity.
 
 That's all it takes to add permissions resources. Note that at this point, any 
 entities you've already added to your Guestbook don't have corresponding 

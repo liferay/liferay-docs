@@ -9,6 +9,7 @@ The following app servers should be used for Ext plugin development in
 @product@:
 
 - Tomcat 8.0
+
 <!--
 - Wildfly 10.0
 -->

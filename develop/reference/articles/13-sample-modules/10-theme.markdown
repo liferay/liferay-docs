@@ -1,6 +1,6 @@
-# Theme [](id=theme)
+# Simple Theme [](id=theme)
 
-The Theme sample provides the base files for a theme, using the
+The Simple Theme sample provides the base files for a theme, using the
 [Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin).
 
 When deploying this sample with no customizations, a theme based off of the 
@@ -23,6 +23,6 @@ files, see the
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.theme)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.theme)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/blade.theme)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/themes/simple-theme)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/wars/simple-theme)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/themes/simple-theme)
