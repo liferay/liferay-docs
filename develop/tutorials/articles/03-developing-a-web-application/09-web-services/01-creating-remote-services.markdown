@@ -36,7 +36,7 @@ and examine the tags for the `Guestbook` and `Entry` entities:
     <entity name="Entry" local-service="true" uuid="true">
 
 As described in the `service.xml` 
-[DTD](https://docs.liferay.com/ce/portal/7.0-ga3/definitions/), 
+[DTD](https://docs.liferay.com/ce/portal/7.0-ga4/definitions/liferay-service-builder_7_0_0.dtd.html), 
 `local-service` defaults to `false` and `remote-service` defaults to `true`. 
 However, it's best to specify explicitly whether Service Builder should 
 generate local and remote services. Other developers who read your 
@@ -63,10 +63,11 @@ Similarly, running Service Builder with `remote-service="true"` set on your
 entities generates `*ServiceImpl` classes in which you must implement your
 remote service layer. In the `guestbook-service` module, these classes are
 `GuestbookServiceImpl` and `EntryServiceImpl`. To get remote services working
-for the Guestbook app, use the following steps:
+for the Guestbook app, do the following in your service module: 
 
-1. Create a new class in the `com.liferay.docs.guestbook.util` package called
-   `ActionKeys`. Add the following code to this class:
+1.  In the `src/main/java` folder, create the new package 
+    `com.liferay.docs.guestbook.util`. In this new package, create this 
+    `ActionKeys` class:
 
         package com.liferay.docs.guestbook.util;
 
@@ -87,7 +88,8 @@ for the Guestbook app, use the following steps:
     These include strings for common permissions such as `VIEW`, `UPDATE`, 
     `DELETE`, and so on. 
 
-2. Open the `GuestbookServiceImpl` class and add the following methods: 
+2.  Add the following methods to the `GuestbookServiceImpl` class, then organize 
+    the imports by selecting *Source* &rarr; *Organize Imports*. 
 
         public Guestbook addGuestbook(long userId, String name,
             ServiceContext serviceContext) throws SystemException,
@@ -122,7 +124,7 @@ for the Guestbook app, use the following steps:
 
             return guestbookLocalService.updateGuestbook(userId, guestbookId,
                 name, serviceContext);
-        }
+        } 
 
     Here, you add a remote service method for each existing guestbook local 
     service method. For now, the remote service method implementations simply 
@@ -136,7 +138,8 @@ for the Guestbook app, use the following steps:
     want to create remote services, confirm that they're accessible, and confirm 
     that they work. 
 
-3. Open the `EntryServiceImpl` class and add the following methods: 
+3.  Add the following methods to the `EntryServiceImpl` class, then organize the 
+    imports as you did in step 2. 
 
         public Entry addEntry(long userId, long guestbookId, String name,
                 String email, String message, ServiceContext serviceContext)
@@ -185,7 +188,8 @@ for the Guestbook app, use the following steps:
     call the local service methods. You'll add permission checks in the next
     section. 
 
-4. Run Service Builder and redeploy the `guestbook-*` modules. 
+4.  Run Service Builder and then refresh the api and service modules. Then 
+    redeploy the `guestbook-*` modules. 
 
 Now navigate to @product@'s JSONWS page 
 (`http://[host name]:[port number]/api/jsonws`) and click the *Context Path* 
@@ -209,9 +213,9 @@ remote services to make them available via SOAP (Simple Object Access Protocol).
 
 Follow these steps to do so:
 
-1. In your Liferay workspace's `settings.gradle` file, add imports for 
-   `ServiceBuilderPlugin` and `WSDDBuilderPlugin`. Then add the 
-   `gradle.beforeProject` closure at the bottom of the file: 
+1.  In your Liferay workspace's `settings.gradle` file, add imports for 
+    `ServiceBuilderPlugin` and `WSDDBuilderPlugin`. Then add the 
+    `gradle.beforeProject` closure at the bottom of the file: 
 
         import com.liferay.gradle.plugins.service.builder.ServiceBuilderPlugin
         import com.liferay.gradle.plugins.wsdd.builder.WSDDBuilderPlugin
@@ -230,26 +234,46 @@ Follow these steps to do so:
     the Project Explorer and then selecting *Gradle* &rarr; *Refresh Gradle 
     Project*. 
 
-2. In the `guestbook-service` module's `build.gradle` file, add the following 
-   inside `dependencies{...}`: 
+2.  In the `guestbook-service` module's `build.gradle` file, add the following 
+    inside `dependencies{...}`: 
 
         compileOnly group: "com.liferay", name: "com.liferay.registry.api", version: "1.0.0"
         compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
         compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
 
-3. In the *Gradle Tasks* window on the right-hand side of Liferay IDE, expand 
-   your service module's build folder. Build the WSDD by double-clicking 
-   *buildWSDD*. 
+    Save the file, then refresh the service module's Gradle project. 
 
-In the `guestbook-service` module's `build/libs` folder, the WSDD build
-generates `guestbook.service-wsdd-1.0.0.jar`. This JAR file contains the WSDD
-and WSDL files. To access your app's SOAP web services, you must deploy this
-JAR file to your @product@ instance. Do so now by copying and pasting the file
-into your @product@ instance's `deploy` folder. When the deploy completes,
-navigate to `http://[host name]:[port number]/o/guestbook.service/api/axis` in
-your browser to view the Guestbook app's SOAP web services. If you're running
-@product@ locally on port 8080, this is
-[http://localhost:8080/o/guestbook.service/api/axis](http://localhost:8080/o/guestbook.service/api/axis). 
+3.  In the *Gradle Tasks* window on the right-hand side of Liferay IDE, expand 
+    your service module's build folder. Build the WSDD by double-clicking 
+    *buildWSDD*. Note that if `buildWSDD` is missing, shut down your server and 
+    then restart Liferay IDE. The `buildWSDD` command should then appear as 
+    described. 
+
+    The WSDD builder generates a WSDD JAR file in the `guestbook-service` 
+    module's `build/libs` folder. Because this folder isn't visible in Liferay 
+    IDE, you must access it from your file system. Your project's modules are in 
+    your Eclipse workspace on your file system. Here's the full file path to the 
+    WSDD JAR in your Eclipse workspace: 
+
+        com-liferay-docs-guestbook/modules/guestbook/guestbook-service/build/libs/com.liferay.docs.guestbook.service-wsdd-1.0.0.jar
+
+    If this file is missing, run `buildWSDD` again to generate it. 
+
+4.  Use your file system to deploy the WSDD JAR file to your @product@ instance. 
+    Your @product@ instance resides in your Eclipse workspace's `bundles` 
+    folder. In your Eclipse workspace on your file system, copy and paste the 
+    WSDD JAR file into this folder: 
+
+        com-liferay-docs-guestbook/bundles/deploy
+
+    Return to Liferay IDE and check the console to make sure deployment 
+    completes successfully. 
+
+5.  Go to 
+    `http://[host name]:[port number]/o/com.liferay.docs.guestbook.service/api/axis` 
+    in your browser to view the Guestbook app's SOAP web services. If you're 
+    running @product@ locally on port 8080, this is 
+    [http://localhost:8080/o/com.liferay.docs.guestbook.service/api/axis](http://localhost:8080/o/com.liferay.docs.guestbook.service/api/axis). 
 
 This page contains links to the WSDL (Web Services Description Language) 
 documents for the Guestbook and Entry remote service methods. WSDL files 
