@@ -96,13 +96,11 @@ the `addEntry` method to use the new services.
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
 
                 try {
-                    ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                        Entry.class.getName(), request);
 
                     response.setRenderParameter(
                         "guestbookId", Long.toString(guestbookId));
 
-                    _entryLocalService.deleteEntry(entryId, serviceContext);
+                    _entryLocalService.deleteEntry(entryId);
                 }
 
                 catch (Exception e) {
@@ -130,11 +128,11 @@ the `addEntry` method to use the new services.
 
                     long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
 
-                    List<Guestbook> guestbooks = _guestbookService.getGuestbooks(
+                    List<Guestbook> guestbooks = _guestbookLocalService.getGuestbooks(
                         groupId);
 
                     if (guestbooks.isEmpty()) {
-                        Guestbook guestbook = _guestbookService.addGuestbook(
+                        Guestbook guestbook = _guestbookLocalService.addGuestbook(
                             serviceContext.getUserId(), "Main", serviceContext);
 
                         guestbookId = guestbook.getGuestbookId();
@@ -156,6 +154,10 @@ the `addEntry` method to use the new services.
     The new `render` method checks if any guestbooks currently exist for the 
     current site. If there aren't any, it creates one. Either way, it grabs the
     first one so its entries can be displayed by your view layer. 
+
+7.  Remove the `parseEntries` method. 
+
+8.  Hit Ctrl-Shift-O to fix your imports. 
 
 Awesome! You've updated your controller. Next, you'll tackle the view. 
 
