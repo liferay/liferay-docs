@@ -1,13 +1,12 @@
-## Securing Service Calls at the Portlet Layer [](id=securing-service-calls-at-the-portlet-layer)
+# Securing Service Calls at the Portlet Layer [](id=securing-service-calls-at-the-portlet-layer)
 
 Your remote services are now secure, but you still have some work to do. In a
 previous section of the learning path, you implemented portlet action methods
 such as `addGuestbook`, `addEntry`, `deleteEntry`, and so on in your
-`GuestbookMVCPortlet` and `GuestbookAdminMVCPortlet` classes. When you did
+`GuestbookWebPortlet` and `GuestbookAdminPortlet` classes. When you did
 this, you ended up calling local service methods. For example, in the
-`addEntry` method of `GuestbookMVCPortlet`, you used the following call to add
+`addEntry` method of `GuestbookWebPortlet`, you used the following call to add
 a new guestbook entry:
-
 
     _entryLocalService.addEntry(serviceContext.getUserId(), guestbookId, userName, 
         email, message, serviceContext);
@@ -39,30 +38,33 @@ you have followed in this Learning Path.
 
 $$$
 
-Use the following steps to secure the service calls in the `GuestbookMVCPortlet` 
+Use the following steps to secure the service calls in the `GuestbookWebPortlet` 
 class: 
 
-1. Replace the `_guestbookLocalService` and `_entryLocalService` variable 
-   declarations with the following: 
+1.  Replace the `_guestbookLocalService` and `_entryLocalService` variable 
+    declarations with the following: 
 
         private GuestbookService _guestbookService;
         private EntryService _entryService;
 
-2. Replace the `GuestbookLocalService` and `EntryLocalService` imports with the 
-   following: 
+2.  Replace the `GuestbookLocalService` and `EntryLocalService` imports with the 
+    following: 
 
         import com.liferay.docs.guestbook.service.GuestbookService;
         import com.liferay.docs.guestbook.service.EntryService;
 
-3. Replace all instances of `_guestbookLocalService` and `_entryLocalService` 
-   with `_guestbookService` and `_entryService`, respectively. 
+3.  Replace all instances of `_guestbookLocalService` and `_entryLocalService` 
+    with `_guestbookService` and `_entryService`, respectively. Also make sure 
+    to replace any `GuestbookLocalService` and `EntryLocalService` method 
+    arguments with `GuestbookService` and `EntryService`, respectively. 
 
 Now follow the same steps to change guestbook services in 
-`GuestbookAdminMVCPortlet`. Note that service calls and variables for guestbook 
-entries aren't necessary in `GuestbookAdminMVCPortlet`. 
+`GuestbookAdminPortlet`. Note that service calls and variables for guestbook 
+entries aren't necessary in `GuestbookAdminPortlet`. 
 
-To check that you haven't made a mistake in your `GuestbookMVCPortlet` class, 
-refer to the following complete `GuestbookMVCPortlet` class: 
+To check that you haven't made a mistake in your `GuestbookWebPortlet` class, 
+refer to the following complete `GuestbookWebPortlet` class: 
+<!-- Replace these finished example classes with the ones from the final review app -->
 
     package com.liferay.docs.guestbook.portlet;
 
@@ -103,7 +105,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
             "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK,
             "javax.portlet.display-name=Guestbook",
             "javax.portlet.init-param.template-path=/",
-            "javax.portlet.init-param.view-template=/html/guestbookmvcportlet/view.jsp",
+            "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
             "javax.portlet.resource-bundle=content.Language",
             "javax.portlet.security-role-ref=power-user,user",
             "javax.portlet.supports.mime-type=text/html",
@@ -111,7 +113,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
         },
         service = Portlet.class
     )
-    public class GuestbookMVCPortlet extends MVCPortlet {
+    public class GuestbookWebPortlet extends MVCPortlet {
 
         private GuestbookService _guestbookService;
         private EntryService _entryService;
@@ -155,7 +157,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
                     PortalUtil.copyRequestParameters(request, response);
 
                     response.setRenderParameter("mvcPath",
-                            "/html/guestbookmvcportlet/edit_entry.jsp");
+                            "/guestbookwebportlet/edit_entry.jsp");
                 }
             } else {
                 try {
@@ -172,7 +174,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
                     PortalUtil.copyRequestParameters(request, response);
 
                     response.setRenderParameter("mvcPath",
-                            "/html/guestbookmvcportlet/edit_entry.jsp");
+                            "/guestbookwebportlet/edit_entry.jsp");
                 }
             }
         }
@@ -212,7 +214,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
                 SessionErrors.add(request, e.getClass().getName());
 
                 response.setRenderParameter("mvcPath",
-                        "/html/guestbookmvcportlet/edit_guestbook.jsp");
+                        "/guestbookwebportlet/edit_guestbook.jsp");
             }
 
         }
@@ -253,7 +255,7 @@ refer to the following complete `GuestbookMVCPortlet` class:
         }
     }
 
-To check that you haven't made a mistake in your `GuestbookAdminMVCPortlet` 
+To check that you haven't made a mistake in your `GuestbookAdminPortlet` 
 class, refer to the following complete `GuestbookAdminPortlet` class: 
 
     package com.liferay.docs.guestbook.portlet;
@@ -283,7 +285,7 @@ class, refer to the following complete `GuestbookAdminPortlet` class:
             "com.liferay.portlet.display-category=category.hidden",
             "com.liferay.portlet.scopeable=true",
             "javax.portlet.init-param.template-path=/",
-            "javax.portlet.init-param.view-template=/html/guestbookadminmvcportlet/view.jsp",
+            "javax.portlet.init-param.view-template=/guestbookadminportlet/view.jsp",
             "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK_ADMIN,
             "javax.portlet.display-name=Guestbooks",
             "javax.portlet.init-param.portlet-title-based-navigation=true",
@@ -294,7 +296,7 @@ class, refer to the following complete `GuestbookAdminPortlet` class:
         },
         service = Portlet.class
     )
-    public class GuestbookAdminMVCPortlet extends MVCPortlet {
+    public class GuestbookAdminPortlet extends MVCPortlet {
 
         private GuestbookService _guestbookService;
 
@@ -320,7 +322,7 @@ class, refer to the following complete `GuestbookAdminPortlet` class:
                 SessionErrors.add(request, e.getClass().getName());
 
                 response.setRenderParameter("mvcPath",
-                        "/html/guestbookadminmvcportlet/edit_guestbook.jsp");
+                        "/guestbookadminportlet/edit_guestbook.jsp");
             }
         }
 
@@ -342,7 +344,7 @@ class, refer to the following complete `GuestbookAdminPortlet` class:
                 SessionErrors.add(request, pe.getClass().getName());
 
                 response.setRenderParameter("mvcPath",
-                        "/html/guestbookadminmvcportlet/edit_guestbook.jsp");
+                        "/guestbookadminportlet/edit_guestbook.jsp");
             }
         }
 
