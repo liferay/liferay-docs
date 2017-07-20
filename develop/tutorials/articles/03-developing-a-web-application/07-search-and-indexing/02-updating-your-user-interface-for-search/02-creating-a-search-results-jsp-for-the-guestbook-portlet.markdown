@@ -10,7 +10,7 @@ without having to click the back link to go to the portlet's default view.
 
 Follow these steps to create the view search JSP:
 
-1.  Create a new file called `view_search.jsp` in your guestbook-web module 
+1.  Create a new file called `view_search.jsp` in your `guestbook-web` module 
     project's `/guestbookwebportlet` folder and include the `init.jsp`:
 
         <%@include file="../init.jsp"%>
@@ -68,7 +68,13 @@ Follow these steps to create the view search JSP:
             </div>
         </aui:form>
 
-5.  
+5.  Next, add a scriplet. You'll use the `keywords` URL parameter to run a 
+    search and retrieve the corresponding guestbook entries. To execute a search 
+    in Liferay, you need a `SearchContext` object. Liferay's 
+    `SearchContextFactory` lets you create a `SearchContext` from the request 
+    object. Add the search query entered by the user to the `SearchContext` 
+    using `searchContext.setKeywords(keywords);`. Then specify details about 
+    pagination and how the search results should be displayed:
 
     <%
             SearchContext searchContext = SearchContextFactory
@@ -78,12 +84,23 @@ Follow these steps to create the view search JSP:
             searchContext.setAttribute("paginationType", "more");
             searchContext.setStart(0);
             searchContext.setEnd(10);
-            
-            Indexer indexer = IndexerRegistryUtil.getIndexer(Entry.class);
 
-            Hits hits = indexer.search(searchContext);
-            
-            List<Entry> entries = new ArrayList<Entry>();
+6.  Now that your `SearchContext` has been prepared, you need to obtain an 
+    indexer to run a search. Indexers in Liferay's indexer registry are stored 
+    in a map and can be retrieved by specifying the indexer's class or class 
+    name:
+          
+        Indexer indexer = IndexerRegistryUtil.getIndexer(Entry.class);
+
+7.  After you've retrieved the guestbook entry indexer, you need to use it, 
+    along with your search context, to run a search. Then return the search 
+    results as `Hits` objects containing pointers to documents that correspond 
+    to guestbook entries. Finally, loop through the hit documents, retrieve the 
+    corresponding guestbook entries, and add them to a list:
+
+        Hits hits = indexer.search(searchContext);
+
+        List<Entry> entries = new ArrayList<Entry>();
 
             for (int i = 0; i < hits.getDocs().length; i++) {
                     Document doc = hits.doc(i);
@@ -104,162 +121,113 @@ Follow these steps to create the view search JSP:
                     entries.add(entry);
             }
 
-            List<Guestbook> guestbooks = GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId);
-            
-            Map<String, String> guestbookMap = new HashMap<String, String>();
-            
-            for (Guestbook guestbook : guestbooks) {
-                    guestbookMap.put(Long.toString(guestbook.getGuestbookId()), guestbook.getName());
-            }
-    %>
+8.  At the very end of the scriptlet, retrieve a list of all the guestbooks that
+    exist in the current site and create a map between the guestbook IDs and the
+    guestbook names. Making this single service call and creating a map is more
+    efficient than making separate service calls for each guestbook entry to
+    retrieve the corresponding guestbook name:
 
-    <liferay-ui:search-container delta="10" emptyResultsMessage="no-entries-were-found" total="<%= entries.size() %>">
-            <liferay-ui:search-container-results
-                    results="<%= entries %>"
-            />
+                List<Guestbook> guestbooks = GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId);
+                
+                Map<String, String> guestbookMap = new HashMap<String, String>();
+                
+                for (Guestbook guestbook : guestbooks) {
+                        guestbookMap.put(Long.toString(guestbook.getGuestbookId()), guestbook.getName());
+                }
+        %>
 
-            <liferay-ui:search-container-row
-                    className="com.liferay.docs.guestbook.model.Entry"
-                    keyProperty="entryId" modelVar="entry" escapedModel="<%=true%>">
-                    <liferay-ui:search-container-column-text name="guestbook"
-                            value="<%=guestbookMap.get(Long.toString(entry.getGuestbookId()))%>" />
+9.  Next, display the search results using the `<liferay-ui:search-container>` 
+    tag. Specify three attributes for the `<liferay-ui:search-container>` tag: 
+    `delta="10"` which specifies at most 10 entries can appear per page, an 
+    `emptyResultsMessage` attribute which specifies the message that appears when 
+    there are no results, and the `total` attribute which specifies the number 
+    of search results. Specify the search results in the `results` attribute of 
+    the `<liferay-ui:search-container-results>` tag. This is easy since you 
+    stored the entries resulting from the search in the `entries` list:
+    
+        <liferay-ui:search-container delta="10" 
+        emptyResultsMessage="no-entries-were-found" 
+        total="<%= entries.size() %>">
+                <liferay-ui:search-container-results
+                        results="<%= entries %>"
+                />
 
-                    <liferay-ui:search-container-column-text property="message" />
+10.  Next, use the `<liferay-ui:search-container-row>` tag, and specify the name 
+    of the class for which properties will displayed in each row. Use the 
+    `className` attribute for this. Also specify the `keyProperty` to indicate 
+    the primary key attribute of the entity. Use the `modelVar` property to 
+    specify the name of the `Entry` variable that's available to each search 
+    container row. Set `escapedModel` to `true` to ensure that each field of the 
+    `Entry` variable has been escaped (sanitized). This prevents potential hacks 
+    that could occur if users submitted malicious code into the Add Guestbook 
+    form, for example:
 
-                    <liferay-ui:search-container-column-text property="name" />
-                    
-                    <liferay-ui:search-container-column-jsp
-                path="/guestbookwebportlet/guestbook_actions.jsp"
-                align="right" />
-            </liferay-ui:search-container-row>
+                <liferay-ui:search-container-row
+                        className="com.liferay.docs.guestbook.model.Entry"
+                        keyProperty="entryId" modelVar="entry" escapedModel="<%=true%>">
 
-            <liferay-ui:search-iterator />
-    </liferay-ui:search-container>
+11.  Inside the `<liferay-ui:search-container-row>` tag, specify the four
+    columns to display: the guestbook entry's guestbook name, message, 
+    entry name, and the actions JSP. The guestbook name is retrieved from the 
+    map created in the scriptlet:
 
-    <%
-            if (Validator.isNotNull(keywords)) {
-                    String thisURL = PortalUtil.getCurrentURL(request);
-                    PortalUtil.addPortletBreadcrumbEntry(request, LanguageUtil.get(
-                        request, "search") + ": " + keywords, thisURL);
-            }
-    %>
+                        <liferay-ui:search-container-column-text name="guestbook"
+                        value="
+                        <%=guestbookMap.get(Long.toString(entry.getGuestbookId()))%>" />
+
+                        <liferay-ui:search-container-column-text property="message" />
+
+                        <liferay-ui:search-container-column-text property="name" />
+                        
+                        <liferay-ui:search-container-column-jsp
+                    path="/guestbookwebportlet/entry_actions.jsp"
+                    align="right" />
+                </liferay-ui:search-container-row>
+
+12.  Use the `<liferay-ui:search-iterator>` tag to iterate through the search 
+    results and handle the pagination so the results are displayed properly:
+
+                <liferay-ui:search-iterator />
+        </liferay-ui:search-container>
+
+13.  Add a declaration at the bottom of `view_search.jsp` that declares a `Log` 
+    object for the JSP. You used this log in the `catch` clauses of the `try` 
+    clause that calls the `EntryLocalServiceUtil.getEntry` method to retrieve 
+    the guestbook entries. If this service call throws an exception, it's best 
+    to log the error so a server administrator can review the information to try 
+    to determine what went wrong. Liferay's convention is to declare custom logs 
+    for individual classes or JSPs at the bottom of the file:
 
     <%!
             private static Log _log = LogFactoryUtil.getLog("html.guestbookwebportlet.view_search_jsp");
     %>
 
-Your `view_search.jsp` requires some extra imports. Add the following imports to
-`init.jsp`:
+14.  Finally, your `view_search.jsp` requires some extra imports. Add the 
+    following imports to `init.jsp`:
 
-    <%@ page import="com.liferay.portal.kernel.dao.search.SearchContainer" %>
-    <%@ page import="com.liferay.portal.kernel.exception.PortalException" %>
-    <%@ page import="com.liferay.portal.kernel.exception.SystemException" %>
-    <%@ page import="com.liferay.portal.kernel.language.LanguageUtil" %>
-    <%@ page import="com.liferay.portal.kernel.log.Log" %>
-    <%@ page import="com.liferay.portal.kernel.log.LogFactoryUtil" %>
-    <%@ page import="com.liferay.portal.kernel.search.Indexer" %>
-    <%@ page import="com.liferay.portal.kernel.search.IndexerRegistryUtil" %>
-    <%@ page import="com.liferay.portal.kernel.search.SearchContext" %>
-    <%@ page import="com.liferay.portal.kernel.search.SearchContextFactory" %>
-    <%@ page import="com.liferay.portal.kernel.search.Hits" %>
-    <%@ page import="com.liferay.portal.kernel.search.Document" %>
-    <%@ page import="com.liferay.portal.kernel.search.Field" %>
-    <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
-    <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
-    <%@ page import="com.liferay.portal.kernel.util.Validator" %>
-    <%@ page import="com.liferay.portal.kernel.util.PortalUtil" %>
+        <%@ page import="com.liferay.portal.kernel.dao.search.SearchContainer" %>
+        <%@ page import="com.liferay.portal.kernel.exception.PortalException" %>
+        <%@ page import="com.liferay.portal.kernel.exception.SystemException" %>
+        <%@ page import="com.liferay.portal.kernel.language.LanguageUtil" %>
+        <%@ page import="com.liferay.portal.kernel.log.Log" %>
+        <%@ page import="com.liferay.portal.kernel.log.LogFactoryUtil" %>
+        <%@ page import="com.liferay.portal.kernel.search.Indexer" %>
+        <%@ page import="com.liferay.portal.kernel.search.IndexerRegistryUtil" %>
+        <%@ page import="com.liferay.portal.kernel.search.SearchContext" %>
+        <%@ page import="com.liferay.portal.kernel.search.SearchContextFactory" %>
+        <%@ page import="com.liferay.portal.kernel.search.Hits" %>
+        <%@ page import="com.liferay.portal.kernel.search.Document" %>
+        <%@ page import="com.liferay.portal.kernel.search.Field" %>
+        <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+        <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
+        <%@ page import="com.liferay.portal.kernel.util.Validator" %>
+        <%@ page import="com.liferay.portal.kernel.util.PortalUtil" %>
 
-    <%@ page import="java.util.ArrayList" %>
-    <%@ page import="java.util.Map" %>
-    <%@ page import="java.util.HashMap" %>
+        <%@ page import="java.util.ArrayList" %>
+        <%@ page import="java.util.Map" %>
+        <%@ page import="java.util.HashMap" %>
 
-    <%@ page import="javax.portlet.PortletURL" %>
-
-After the AUI form comes a scriplet. In this scriptlet, you use the `keywords`
-URL parameter to actually run a search and retrieve the corresponding guestbook
-entries. To execute a search in Liferay, you need a `SearchContext` object.
-Liferay's `SearchContextFactory` allows you to create a `SearchContext` from the
-request object. You need to add the search query entered by the user to the
-`SearchContext`. This is done by the following line:
-
-    searchContext.setKeywords(keywords);
-
-The subsequent three lines specify details about pagination and how the search
-results should be displayed.
-
-Once your `SearchContext` has been prepared, you need to obtain an indexer to
-run a search. This is done by the following line:
-
-    Indexer indexer = IndexerRegistryUtil.getIndexer(Entry.class);
-
-Indexers in Liferay's indexer registry are stored in a map and can be retrieved
-by specifying the indexer's class or class name. After you've retrieved the
-guestbook entry indexer, you use it, along with your search context, to run a
-search. The search results are returned as `Hits` objects containing pointers to
-documents that correspond to guestbook entries.
-
-    Hits hits = indexer.search(searchContext);
-
-Toward the end of the scriptlet, you loop through the hit documents, retrieve
-the corresponding guestbook entries, and add them to a list. That's how easy it
-is to obtain search results!
-
-At the very end of the scriptlet, you retrieve a list of all the guestbooks that
-exist in the current site and create a map between the guestbook IDs and the
-guestbook names. Making this single service call and creating a map is more
-efficient than making separate service calls for each guestbook entry to
-retrieve the corresponding guestbook name.
-
-Your next task is to display the search results. To display the search results,
-you use the search container construct from Liferay's `<liferay-ui>` tag
-library. You've used the search container twice already in earlier Learning
-Paths: once in the Guestbook portlet's default view JSP and again in the
-Guestbook Admin portlet's default view JSP. This is the third time.
-
-You specify two attributes for the `<liferay-ui:search-container>` tag:
-`delta="10"` specifies that at most 10 entries can appear per page. The
-`emptyResultsMessage` attributes specifies the message that appears when there
-are no results. The `<liferay-ui:search-container>` tag contains three subtags:
-`<liferay-ui:search-container-results>`, `<liferay-ui:search-container-row>`,
-and `<liferay-ui:search-iterator>`. You have to specify the search results and
-the number of search results in the `results` and `total` attributes of the
-`<liferay-ui:search-container-results>` tag. This is easy since you stored the
-entries resulting from the search in the `entries` list.
-
-For the `<liferay-ui:search-container-row>`, you have to specify the name of the
-class for which properties will displayed in each row. You use the `className`
-attribute for this. You also specify the `keyProperty` to indicate the primary
-key attribute of the entity. The `modelVar` property specifies the name of the
-`Entry` variable that's available to each search container row. Setting
-`escapedModel` to `true` ensures that each field of the `Entry` variable has
-been escaped (sanitized). This prevents potential hacks that could occur if
-users submitted malicious code into the Add Guestbook form, for example.
-
-Inside the `<liferay-ui:search-container-row>` tag, you specify the four
-columns to display: the guestbook entry's guestbook name, message, entry name,
-and the actions JSP. The guestbook name is retrieved from the map created in the
-scriptlet. Finally, you use the `<liferay-ui:search-iterator>` tag to iterate
-through the search results and handle the pagination so the results are
-displayed properly.
-
-The last two elements on the `view_search.jsp` page are a scriplet and a
-declaration. The scriplet checks to see if the search query entered by the user
-is not null. If it's not null, it calls the
-`PortalUtil.addPortletBreadCrumbEntry` method to add the search query to the
-portlet breadcrumb. The breadcrumb looks like this:
-
-<!-- Can't get this to work
-
-![Figure 2: You can customize the portlet breadcrumb so that it displays the search query entered by the user.](../../../images/guestbook-portlet-search-breadcrumb.png)
--->
-
-The declaration at the bottom of `view_search.jsp` declares a `Log` object for
-the JSP. You used this log in the `catch` clauses of the `try` clause that calls
-the `EntryLocalServiceUtil.getEntry` method to retrieve the guestbook entries.
-If this service call throws an exception, it's best to log the error so a server
-administrator can review the information to try to determine what went wrong.
-Liferay's convention is to declare custom logs for individual classes or JSPs at
-the bottom of the file.
+        <%@ page import="javax.portlet.PortletURL" %>
 
 Good work! Your Guestbook portlet now supports search! In the next section,
 you'll implement back-end search and indexing support for guestbook entities
