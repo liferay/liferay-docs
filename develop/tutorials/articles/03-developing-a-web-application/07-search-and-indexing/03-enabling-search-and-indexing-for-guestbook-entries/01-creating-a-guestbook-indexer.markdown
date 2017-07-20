@@ -73,11 +73,12 @@ these steps to create the class:
 
 2.  Note that the main searchable field for guestbooks is the guestbook name. 
     Since the guestbook name is stored in the title field of a guestbook 
-    document, it's searchable by default. Remember that Liferay's `LuceneIndexSearcher` only searches the title, content, and description 
+    document, it's searchable by default. Remember that Liferay's 
+    `LuceneIndexSearcher` only searches the title, content, and description 
     fields. Guestbook entries index the entry message, entry name (the name 
     entered by the user who created the entry), and entry email. However, only 
-    the entry name and entry user fields are searchable by default. Add the 
-    override for the `doGetDocument` method:
+    the entry name and entry user fields are searchable by default. With that in 
+    mind, add the override for the `doGetDocument` method:
   
         @Override
         protected Document doGetDocument(Guestbook guestbook) throws Exception {
@@ -90,12 +91,10 @@ these steps to create the class:
           return document;
         }
 
-    The rest of the `GuestbookIndexer` class is very similar to the 
-    `EntryIndexer` class. Please refer to the explanation for the 
-    `EntryIndexer` class in the earlier section of this Learning Path if you 
-    have questions.
-
-3.  Add the remaining code for the guestbook indexer:
+3.  The rest of the `GuestbookIndexer` class is very similar to the 
+    `EntryIndexer` class. Please refer to the explanation for the `EntryIndexer` 
+    class in the earlier section of this Learning Path for more details. Add the 
+    remaining code for the guestbook indexer:
       
         @Override
         protected Summary doGetSummary(Document document, Locale locale, String snippet, PortletRequest portletRequest,
