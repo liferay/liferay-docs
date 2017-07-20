@@ -14,9 +14,9 @@ content article contains the primary key of the web content article in the
 
 Your first step in asset-enabling your guestbook and guestbook entry entities is
 to make Liferay's asset services available to your entities' service layers.
-Open your guestbook-portlet project's `docroot/WEB-INF/service.xml` file and add
-the following references just above the closing `</entity>` tag corresponding to
-the guestbook entity:
+Open your `guestbook-service` module's `service.xml` file and add the following 
+references just above the closing `</entity>` tag corresponding to the guestbook 
+entity:
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
     <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />

@@ -5,7 +5,7 @@ similar to enabling them for guestbooks. As with guestbooks, you'll separate the
 page where users comment on and rate guestbook entries from the page where users
 actually edit the guestbook entries. 
 
-Open your guestbook-portlet project's `guestbook/edit_entry.jsp`
+Open your guestbook-web module's `guestbookwebportlet/edit_entry.jsp`
 file. Replace the existing contents with the following contents:
 
     <%@ include file="../init.jsp" %>
@@ -25,7 +25,7 @@ file. Replace the existing contents with the following contents:
     <portlet:renderURL var="viewURL">
         <portlet:param 
             name="mvcPath" 
-            value="/html/guestbookmvcportlet/view.jsp" 
+            value="/guestbookwebportlet/view.jsp" 
         />
     </portlet:renderURL>
 
@@ -48,23 +48,31 @@ file. Replace the existing contents with the following contents:
 
                 <aui:input name="entryId" type="hidden" />
 
-                <aui:input name="guestbookId" type="hidden" value="<%= entry == null ? guestbookId : entry.getGuestbookId() %>" />
+                <aui:input name="guestbookId" type="hidden" 
+                value=
+                "<%= entry == null ? guestbookId : entry.getGuestbookId() %>" />
             </aui:fieldset>
 
     <liferay-ui:asset-categories-error />
                         <liferay-ui:asset-tags-error />
-                        <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryCategorizationPanel" persistState="<%= true %>" title="categorization">
+                        <liferay-ui:panel defaultState="closed" 
+                        extended="<%= false %>" id="entryCategorizationPanel" 
+                        persistState="<%= true %>" title="categorization">
                                 <aui:fieldset>
-                                        <aui:input name="categories" type="assetCategories" />
+                                        <aui:input name="categories" 
+                                        type="assetCategories" />
 
                                         <aui:input name="tags" type="assetTags" />
                                 </aui:fieldset>
                         </liferay-ui:panel>
 
-                        <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="entryAssetLinksPanel" persistState="<%= true %>" title="related-assets">
+                        <liferay-ui:panel defaultState="closed" 
+                        extended="<%= false %>" id="entryAssetLinksPanel" 
+                        persistState="<%= true %>" title="related-assets">
                                 <aui:fieldset>
                                         <liferay-ui:input-asset-links
-                                                className="<%= Entry.class.getName() %>"
+                                                className=
+                                                "<%= Entry.class.getName() %>"
                                                 classPK="<%= entryId %>"
                                         />
                                 </aui:fieldset>
@@ -78,5 +86,5 @@ file. Replace the existing contents with the following contents:
     </aui:form>
 
 Test your JSP by using the Guestbook portlet to add and update Guestbook
-entries. Try add and removing tags, categories, and related assets. All these
+entries. Try adding and removing tags, categories, and related assets. All these
 operations should work.

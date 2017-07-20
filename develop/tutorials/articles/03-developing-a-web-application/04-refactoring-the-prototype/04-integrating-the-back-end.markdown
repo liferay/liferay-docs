@@ -27,7 +27,32 @@ the `addEntry` method to use the new services.
 2.  Right-click on the `guestbook-web` project and select *Gradle* &rarr;
     *Refresh Gradle Project*. 
 
-3.  Open `GuestbookPortlet.java` and replace the `addEntry` method with the new version:
+3.  The first thing you'll do is add a *reference* to the Service Builder
+    services you need. To do this, you need only add them as class variables
+    with an `@Reference` annotation. Open `GuestbookPortlet.java` and add these
+    references to the bottom of the file: 
+
+            @Reference(unbind = "-")
+            protected void setEntryService(EntryLocalService entryLocalService) {
+                _entryLocalService = entryLocalService;
+            }
+
+            @Reference(unbind = "-")
+            protected void setGuestbookService(GuestbookLocalService guestbookLocalService) {
+                _guestbookLocalService = guestbookLocalService;
+            }
+
+            private EntryLocalService _entryLocalService;
+            private GuestbookLocalService _guestbookLocalService;
+
+    Note that it's Liferay's code style to add class variables this way. The
+    `@Reference` annotation on the setters allows Liferay's OSGi container to
+    inject references to your generated services so you can use them. The
+    `unbind` parameter tells the container there's no method for unbinding these
+    services: the references can die with the class during garbage collection
+    when they're no longer needed. 
+
+4.  Now you can modify the `addEntry` method: 
 
         public void addEntry(ActionRequest request, ActionResponse response)
                     throws PortalException {
@@ -41,57 +66,30 @@ the `addEntry` method to use the new services.
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
                 long entryId = ParamUtil.getLong(request, "entryId");
 
-                     try {
-                        _entryService.addEntry(serviceContext.getUserId(), guestbookId, userName,
-                        email, message, serviceContext);
-                          
-                        SessionMessages.add(request, "entryAdded");
-                        response.setRenderParameter("guestbookId", Long.toString(guestbookId));
-                     }
-                     
-                     catch (Exception e) {
-                        
-                        SessionErrors.add(request, e.getClass().getName());
+                    try {
+                        _entryLocalService.addEntry(
+                            serviceContext.getUserId(), guestbookId, userName, email,
+                            message, serviceContext);
+
+                        response.setRenderParameter(
+                            "guestbookId", Long.toString(guestbookId));
+                    }
+                    catch (Exception e) {
+                        Logger.getLogger(GuestbookPortlet.class.getName()).log(
+                        Level.SEVERE, null, e);
+
                         PortalUtil.copyRequestParameters(request, response);
                         response.setRenderParameter("mvcPath", "/guestbookwebportlet/edit_entry.jsp");
                         }
             }
 
-    First, the `addEntry` method gets the name, message, and email fields that 
-    the user submits through the JSP and passes them on to the service to be 
-    stored as entry data. The method then calls the `addEntry` service method 
-    to add a new entry. If this fails, the method will output relevant 
-    exception data.
-    
-    
-4. Next do `addGuestbook`:
-
-            public void addGuestbook(ActionRequest request, ActionResponse response)
-                throws PortalException {
-
-                ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    Guestbook.class.getName(), request);
-
-                String name = ParamUtil.getString(request, "name");
-
-                try {
-                    _guestbookLocalService.addGuestbook(
-                        serviceContext.getUserId(), name, serviceContext);
-
-                    SessionMessages.add(request, "guestbookAdded");
-                }
-                catch (Exception e) {
-
-                    SessionErrors.add(request, e.getClass().getName());
-                    PortalUtil.copyRequestParameters(request, response);
-                    response.setRenderParameter(
-                        "mvcPath", "edit_guestbook.jsp");
-                }
-            }
-
-    Just like the `addEntry` method, you're retrieving user entered data--in this case the `name`--and adding it to the Guestbook via the service call.
-        
-5. Then add `deleteEntry`
+    The `addEntry` method gets the name, message, and email fields that the 
+    user submits through the JSP and passes them on to the service to be stored 
+    as entry data. It also sets a render parameter with the Guestbook ID so the
+    application can display the guestbook's entries after this one has been
+    added. This is all done in a `try...catch` statement.
+ 
+5. Now add `deleteEntry`, which you didn't have before: 
 
             public void deleteEntry(ActionRequest request, ActionResponse response) {
                 long entryId = ParamUtil.getLong(request, "entryId");
@@ -106,18 +104,18 @@ the `addEntry` method to use the new services.
 
                     _entryLocalService.deleteEntry(entryId, serviceContext);
                 }
+
                 catch (Exception e) {
-                    System.out.println(e);
-
-                    Class<?> clazz = e.getClass();
-
-                    SessionErrors.add(request, clazz.getName());
+                    Logger.getLogger(GuestbookPortlet.class.getName()).log(
+                        Level.SEVERE, null, e);
+   
                 }
             }
 
-    This method retrieves the entry object and calls the service to delete it.
+    This method retrieves the entry object (using its ID from the request) and
+    calls the service to delete it.
 
-6. Next you need to replace `render`.
+6. Next you must replace `render`.
 
             @Override
             public void render(
@@ -156,31 +154,8 @@ the `addEntry` method to use the new services.
             }
 
     The new `render` method checks if any guestbooks currently exist for the 
-    current site, and if none do, it creates a new one. Once some number of
-    guestbooks have either been found or one has been created, they are served 
-    up to be displayed by the JSP.
+    current site. If there aren't any, it creates one. Either way, it grabs the
+    first one so its entries can be displayed by your view layer. 
 
-7. Finally you add your service references at the bottom of the file.
+Awesome! You've updated your controller. Next, you'll tackle the view. 
 
-            @Reference(unbind = "-")
-            protected void setEntryService(EntryLocalService entryLocalService) {
-                _entryLocalService = entryLocalService;
-            }
-
-            @Reference(unbind = "-")
-            protected void setGuestbookService(GuestbookLocalService guestbookLocalService) {
-                _guestbookLocalService = guestbookLocalService;
-            }
-
-            private EntryLocalService _entryLocalService;
-            private GuestbookLocalService _guestbookLocalService;
-    
-        
-
-    At the bottom, you create create the `@Reference` to the service that you 
-    need to call, in this case, `EntryLocalService`. Then you use the methods 
-    provided by those services (whose implementations you created earlier) to 
-    connect the user action of creating a new Entry with the backend. In this 
-    way the portlet class does not have to be at all concerned with how the 
-    service is implemented.
-    
