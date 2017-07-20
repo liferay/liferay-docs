@@ -12,7 +12,7 @@ Get started by creating the `*AssetRenderer` class first.
 Follow these steps to create the class:
 
 1.  Create a new package called `com.liferay.docs.guestbook.asset` in your
-    `guestbook-web` module's `src/main/java` folder. In this package, create a 
+    `guestbook-service` module's `src/main/java` folder. In this package, create a 
     `GuestbookAssetRenderer` class that extends Liferay's `BaseJSPAssetRenderer` 
     class. You gain a head-start on implementing the `AssetRenderer` interface 
     by having your `GuestbookAssetRenderer` extend `BaseJSPAssetRenderer`:
@@ -31,6 +31,7 @@ Follow these steps to create the class:
         import com.liferay.portal.kernel.util.HtmlUtil;
         import com.liferay.portal.kernel.util.PortalUtil;
         import com.liferay.portal.kernel.util.StringUtil;
+        import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
         import com.liferay.docs.guestbook.model.Guestbook;
         import com.liferay.docs.guestbook.service.permission.GuestbookPermission;
         import java.util.Locale;
@@ -43,13 +44,10 @@ Follow these steps to create the class:
 
         public class GuestbookAssetRenderer extends 
         BaseJSPAssetRenderer<Guestbook> {
-
-        }
       
-2.  Add the constructor function. Your `GuestbookAssetRenderer` class contains a 
-    private `_guestbook` variable. Most of the methods in this class are simply 
-    getters that return fields from this private guestbook object:
-      
+2.  Add the constructor function next. Your `GuestbookAssetRenderer` class 
+    contains a private `_guestbook` variable. Most of the methods in this class 
+    are simply getters that return fields from this private guestbook object:  
       
         public GuestbookAssetRenderer(Guestbook guestbook) {
 
@@ -62,26 +60,23 @@ Follow these steps to create the class:
     actual permission checks using the `GuestbookPermission` class that you 
     created in an earlier Learning Path:
 
-            @Override
-            public boolean hasEditPermission(PermissionChecker permissionChecker) 
+        @Override
+        public boolean hasEditPermission(PermissionChecker permissionChecker) 
+        throws PortalException {
 
-                throws PortalException {
+          long guestbookId = _guestbook.getGuestbookId();
+          return GuestbookPermission.contains(permissionChecker, guestbookId, 
+          ActionKeys.UPDATE);
+        }
 
-                long guestbookId = _guestbook.getGuestbookId();
-                return GuestbookPermission.contains(permissionChecker,
+        @Override
+        public boolean hasViewPermission(PermissionChecker permissionChecker) 
+        throws PortalException {
 
-                            guestbookId, ActionKeys.UPDATE);
-            }
-
-            @Override
-            public boolean hasViewPermission(PermissionChecker permissionChecker)
-
-                throws PortalException { 
-
-                    long guestbookId = _guestbook.getGuestbookId();
-                    return GuestbookPermission.contains(permissionChecker,
-                            guestbookId, ActionKeys.VIEW);
-            }
+          long guestbookId = _guestbook.getGuestbookId();
+          return GuestbookPermission.contains(permissionChecker, guestbookId, 
+          ActionKeys.VIEW);
+        }
             
 4.  Add the following getter methods to retrieve information about the guestbook 
     asset:  
@@ -123,7 +118,8 @@ Follow these steps to create the class:
         }
 
         @Override
-        public String getSummary(PortletRequest portletRequest, PortletResponse portletResponse) {
+        public String getSummary(PortletRequest portletRequest, PortletResponse 
+        portletResponse) {
           return "Name: " + _guestbook.getName();
         }
 
@@ -133,7 +129,8 @@ Follow these steps to create the class:
         }
 
         @Override
-        public boolean include(HttpServletRequest request, HttpServletResponse response, String template) throws Exception {
+        public boolean include(HttpServletRequest request, HttpServletResponse 
+        response, String template) throws Exception {
           request.setAttribute("GUESTBOOK", _guestbook);
           request.setAttribute("HtmlUtil", HtmlUtil.getHtml());
           request.setAttribute("StringUtil", new StringUtil());
@@ -151,7 +148,7 @@ Follow these steps to create the class:
 
           @Override
           public String getJspPath(HttpServletRequest request, String template) {
-
+            
             if (template.equals(TEMPLATE_FULL_CONTENT)) {
               request.setAttribute("gb_guestbook", _guestbook);
 
@@ -165,7 +162,7 @@ Follow these steps to create the class:
           public PortletURL getURLEdit(LiferayPortletRequest liferayPortletRequest,
               LiferayPortletResponse liferayPortletResponse) throws Exception {
             PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
-                getControlPanelPlid(liferayPortletRequest), "com_liferay_docs_guestbook_portlet_GuestbookPortlet",
+                getControlPanelPlid(liferayPortletRequest), GuestbookPortletKeys.GUESTBOOK,
                 PortletRequest.RENDER_PHASE);
             portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
             portletURL.setParameter("guestbookId", String.valueOf(_guestbook.getGuestbookId()));
@@ -174,21 +171,20 @@ Follow these steps to create the class:
             return portletURL;
           }
 
-
           @Override
           public String getURLViewInContext(LiferayPortletRequest liferayPortletRequest,
               LiferayPortletResponse liferayPortletResponse, String noSuchEntryRedirect) throws Exception {
             try {
               long plid = PortalUtil.getPlidFromPortletId(_guestbook.getGroupId(),
-                  "com_liferay_docs_guestbook_portlet_GuestbookPortlet");
+                  GuestbookPortletKeys.GUESTBOOK);
 
               PortletURL portletURL;
               if (plid == LayoutConstants.DEFAULT_PLID) {
                 portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(liferayPortletRequest),
-                    "com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
+                    GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
               } else {
                 portletURL = PortletURLFactoryUtil.create(liferayPortletRequest,
-                    "com_liferay_docs_guestbook_portlet_GuestbookPortlet", plid, PortletRequest.RENDER_PHASE);
+                    GuestbookPortletKeys.GUESTBOOK, plid, PortletRequest.RENDER_PHASE);
               }
 
               portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/view");
@@ -209,7 +205,8 @@ Follow these steps to create the class:
           }
 
           @Override
-          public String getURLView(LiferayPortletResponse liferayPortletResponse, WindowState windowState) throws Exception {
+          public String getURLView(LiferayPortletResponse liferayPortletResponse, 
+          WindowState windowState) throws Exception {
 
             return super.getURLView(liferayPortletResponse, windowState);
           }
@@ -223,7 +220,7 @@ Next you can create the `*AssetRendererFactory` class.
 
 Follow these steps to create the `*AssetRendererFactory`:
 
-1.  Create a Component class called `GuestbookAssetRendererFactory` that use the 
+1.  Create a Component class called `GuestbookAssetRendererFactory` that uses the 
     `AssetRendererFactory` service and extends Liferay's  
     `BaseAssetRendererFactory` class:
 
@@ -233,11 +230,11 @@ Follow these steps to create the `*AssetRendererFactory`:
         import com.liferay.asset.kernel.model.AssetRendererFactory;
         import com.liferay.asset.kernel.model.BaseAssetRendererFactory;
         import com.liferay.docs.guestbook.model.Guestbook;
-        import com.liferay.docs.guestbook.model.GuestbookModel;
+        import com.liferay.docs.guestbook.service.EntryLocalService;
         import com.liferay.docs.guestbook.service.GuestbookLocalService;
-        import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
         import com.liferay.docs.guestbook.service.permission.GuestbookPermission;
-        import com.liferay.portal.kernel.util.WebKeys
+        import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
+        import com.liferay.portal.kernel.util.WebKeys;
         import com.liferay.portal.kernel.exception.PortalException;
         import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
         import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
@@ -251,13 +248,18 @@ Follow these steps to create the `*AssetRendererFactory`:
         import org.osgi.service.component.annotations.Component;
         import org.osgi.service.component.annotations.Reference;
 
-        @Component(immediate = true, property = { "javax.portlet.name="
-            + "com_liferay_docs_guestbook_portlet_GuestbookPortlet" }, service = AssetRendererFactory.class)
-        public class GuestbookAssetRendererFactory extends BaseAssetRendererFactory<Guestbook> {
+
+        @Component(immediate = true, 
+          property = {"javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK}, 
+          service = AssetRendererFactory.class
+          )
+        public class GuestbookAssetRendererFactory extends 
+        BaseAssetRendererFactory<Guestbook> {
+
           public GuestbookAssetRendererFactory() {
             setClassName(CLASS_NAME);
             setLinkable(_LINKABLE);
-            setPortletId("com_liferay_docs_guestbook_portlet_GuestbookPortlet");
+            setPortletId(GuestbookPortletKeys.GUESTBOOK);
             setSearchable(true);
           }
 
@@ -267,15 +269,20 @@ Follow these steps to create the `*AssetRendererFactory`:
     database. Then it calls the `GuestbookAssetRenderer`'s constructor, passing 
     the retrieved guestbook as an argument:
 
-          @Override
-          public AssetRenderer<Guestbook> getAssetRenderer(long classPK, int type) throws PortalException {
-            Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
+        @Override
+        public AssetRenderer<Guestbook> getAssetRenderer(long classPK, int type) 
+        throws PortalException {
+          
+          Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
 
-            GuestbookAssetRenderer guestbookAssetRenderer = new GuestbookAssetRenderer(guestbook);
+          GuestbookAssetRenderer guestbookAssetRenderer = 
+          new GuestbookAssetRenderer(guestbook);
 
-            guestbookAssetRenderer.setAssetRendererType(type);
-            return guestbookAssetRenderer;
-          }
+          guestbookAssetRenderer.setAssetRendererType(type);
+          guestbookAssetRenderer.setServletContext(_servletContext);
+
+          return guestbookAssetRenderer;
+        }
 
 2.  You're extending `BaseAssetRendererFactory` which is an abstract class that 
     implements the `AssetRendererFactory` interface. Each asset renderer factory 
@@ -306,41 +313,57 @@ Follow these steps to create the `*AssetRendererFactory`:
 4.  Add the remaining code to create the portlet URL for the asset and specify 
     whether it's linkable:
 
-        @Override
-        public PortletURL getURLAdd(LiferayPortletRequest liferayPortletRequest,
-            LiferayPortletResponse liferayPortletResponse, long classTypeId) {
-          PortletURL portletURL = null;
+          @Override
+          public PortletURL getURLAdd(LiferayPortletRequest liferayPortletRequest,
+              LiferayPortletResponse liferayPortletResponse, long classTypeId) {
+            PortletURL portletURL = null;
 
-          try {
-            ThemeDisplay themeDisplay = (ThemeDisplay) 
-            liferayPortletRequest.getAttribute(WebKeys.THEME_DISPLAY);
+            try {
+              ThemeDisplay themeDisplay = (ThemeDisplay) 
+              liferayPortletRequest.getAttribute(WebKeys.THEME_DISPLAY);
 
-            portletURL = 
-            liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(themeDisplay),
-                "com_liferay_docs_guestbook_portlet_GuestbookPortlet", 
-                PortletRequest.RENDER_PHASE);
-            portletURL.setParameter("mvcRenderCommandName", 
-            "/guestbookwebportlet/edit_guestbook");
-            portletURL.setParameter("showback", Boolean.FALSE.toString());
-          } catch (PortalException e) {
+              portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(themeDisplay),
+                  GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
+              portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
+              portletURL.setParameter("showback", Boolean.FALSE.toString());
+            } catch (PortalException e) {
+            }
+
+            return portletURL;
           }
 
-          return portletURL;
-        }
+          @Override
+          public boolean isLinkable() {
+            return _LINKABLE;
+          }
+          
+          @Override
+          public String getIconCssClass() {
+              return "bookmarks";
+          }
 
-        @Override
-        public boolean isLinkable() {
-          return _LINKABLE;
-        }
 
-        @Reference(target = "(osgi.web.symbolicname=guestbook.web)")
-        private ServletContext _servletContext;
-        @Reference
-        private GuestbookLocalService _guestbookLocalService;
-        private static final boolean _LINKABLE = true;
-        public static final String CLASS_NAME = Guestbook.class.getName();
-        public static final String TYPE = "guestbook";
+          @Reference(
+              target = "(osgi.web.symbolicname=com.liferay.docs.guestbook)",
+              unbind = "-"
+          )
+          public void setServletContext(ServletContext servletContext) {
+            _servletContext = servletContext;
+          }
+          
+          @Reference(unbind = "-")
+          protected void setGuestbookLocalService(GuestbookLocalService 
+          guestbookLocalService) {
 
+            _guestbookLocalService = guestbookLocalService;
+          }
+          
+          private ServletContext _servletContext;
+          private GuestbookLocalService _guestbookLocalService;
+          
+          private static final boolean _LINKABLE = true;
+          public static final String CLASS_NAME = Guestbook.class.getName();
+          public static final String TYPE = "guestbook";
         }
 
 The guestbook asset renderer is complete. Next you'll create the entry asset 
