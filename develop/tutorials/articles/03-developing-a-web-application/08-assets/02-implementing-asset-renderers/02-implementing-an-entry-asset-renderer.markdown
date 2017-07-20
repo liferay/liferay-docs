@@ -25,6 +25,7 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
     import com.liferay.portal.kernel.util.HtmlUtil;
     import com.liferay.portal.kernel.util.PortalUtil;
     import com.liferay.portal.kernel.util.StringUtil;
+    import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
     import com.liferay.docs.guestbook.model.Entry;
     import com.liferay.docs.guestbook.service.permission.EntryPermission;
     import java.util.Locale;
@@ -40,14 +41,15 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
       public EntryAssetRenderer(Entry entry) {
 
         _entry = entry;
-
       }
 
       @Override
-      public boolean hasViewPermission(PermissionChecker permissionChecker) throws PortalException {
+      public boolean hasViewPermission(PermissionChecker permissionChecker) 
+      throws PortalException {
 
         long entryId = _entry.getEntryId();
-        return EntryPermission.contains(permissionChecker, entryId, ActionKeys.VIEW);
+        return EntryPermission.contains(permissionChecker, entryId, 
+        ActionKeys.VIEW);
       }
 
       @Override
@@ -87,7 +89,8 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
       }
 
       @Override
-      public String getSummary(PortletRequest portletRequest, PortletResponse portletResponse) {
+      public String getSummary(PortletRequest portletRequest, 
+      PortletResponse portletResponse) {
         return "Name: " + _entry.getName() + ". Message: " + _entry.getMessage();
       }
 
@@ -97,7 +100,8 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
       }
 
       @Override
-      public boolean include(HttpServletRequest request, HttpServletResponse response, String template) throws Exception {
+      public boolean include(HttpServletRequest request, 
+      HttpServletResponse response, String template) throws Exception {
         request.setAttribute("ENTRY", _entry);
         request.setAttribute("HtmlUtil", HtmlUtil.getHtml());
         request.setAttribute("StringUtil", new StringUtil());
@@ -106,7 +110,7 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
 
       @Override
       public String getJspPath(HttpServletRequest request, String template) {
-
+        
         if (template.equals(TEMPLATE_FULL_CONTENT)) {
           request.setAttribute("gb_entry", _entry);
 
@@ -120,7 +124,7 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
       public PortletURL getURLEdit(LiferayPortletRequest liferayPortletRequest,
           LiferayPortletResponse liferayPortletResponse) throws Exception {
         PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
-            getControlPanelPlid(liferayPortletRequest), "com_liferay_docs_guestbook_portlet_GuestbookPortlet",
+            getControlPanelPlid(liferayPortletRequest), GuestbookPortletKeys.GUESTBOOK,
             PortletRequest.RENDER_PHASE);
         portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_entry");
         portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
@@ -131,18 +135,19 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
 
       @Override
       public String getURLViewInContext(LiferayPortletRequest liferayPortletRequest,
-          LiferayPortletResponse liferayPortletResponse, String noSuchEntryRedirect) throws Exception {
+          LiferayPortletResponse liferayPortletResponse, String noSuchEntryRedirect) 
+          throws Exception {
         try {
           long plid = PortalUtil.getPlidFromPortletId(_entry.getGroupId(),
-              "com_liferay_docs_guestbook_portlet_GuestbookPortlet");
+              GuestbookPortletKeys.GUESTBOOK);
 
           PortletURL portletURL;
           if (plid == LayoutConstants.DEFAULT_PLID) {
             portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(liferayPortletRequest),
-                "com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
+                GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
           } else {
             portletURL = PortletURLFactoryUtil.create(liferayPortletRequest,
-                "com_liferay_docs_guestbook_portlet_GuestbookPortlet", plid, PortletRequest.RENDER_PHASE);
+                GuestbookPortletKeys.GUESTBOOK, plid, PortletRequest.RENDER_PHASE);
           }
 
           portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/view");
@@ -156,7 +161,6 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
 
         } catch (PortalException e) {
 
-
         } catch (SystemException e) {
         }
 
@@ -164,7 +168,8 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
       }
 
       @Override
-      public String getURLView(LiferayPortletResponse liferayPortletResponse, WindowState windowState) throws Exception {
+      public String getURLView(LiferayPortletResponse liferayPortletResponse, 
+      WindowState windowState) throws Exception {
 
         return super.getURLView(liferayPortletResponse, windowState);
       }
@@ -194,13 +199,10 @@ called `EntryAssetRendererFactory` that extends Liferay's
     import com.liferay.asset.kernel.model.AssetRendererFactory;
     import com.liferay.asset.kernel.model.BaseAssetRendererFactory;
     import com.liferay.docs.guestbook.model.Entry;
-    import com.liferay.docs.guestbook.model.EntryModel;
-    import com.liferay.docs.guestbook.model.Guestbook;
     import com.liferay.docs.guestbook.service.EntryLocalService;
-    import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
-    import com.liferay.docs.guestbook.service.GuestbookLocalService;
     import com.liferay.docs.guestbook.service.permission.EntryPermission;
-    import com.liferay.portal.kernel.util.WebKeys
+    import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
+    import com.liferay.portal.kernel.util.WebKeys;
     import com.liferay.portal.kernel.exception.PortalException;
     import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
     import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
@@ -217,87 +219,100 @@ called `EntryAssetRendererFactory` that extends Liferay's
 
     @Component(
       immediate = true,
-      property = {
-        "javax.portlet.name=" + "com_liferay_docs_guestbook_portlet_GuestbookPortlet"
-    }, service = AssetRendererFactory.class)
-    public class EntryAssetRendererFactory extends 
-    BaseAssetRendererFactory<Entry> {
-    public EntryAssetRendererFactory() {
-    setClassName(CLASS_NAME);
-    setLinkable(_LINKABLE);
-    setPortletId("com_liferay_docs_guestbook_portlet_GuestbookPortlet");
-    setSearchable(true);
-    }
-    @Override
-    public AssetRenderer<Entry> getAssetRenderer(long classPK, int type)
-            throws PortalException {
-            Entry entry = _entryLocalService.getEntry(classPK);
+      property = {"javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK}, 
+      service = AssetRendererFactory.class
+      )
+    public class EntryAssetRendererFactory extends BaseAssetRendererFactory<Entry> {
 
-    EntryAssetRenderer entryAssetRenderer =
+      public EntryAssetRendererFactory() {
+        setClassName(CLASS_NAME);
+        setLinkable(_LINKABLE);
+        setPortletId(GuestbookPortletKeys.GUESTBOOK);
+        setSearchable(true);
+      }
 
-      new EntryAssetRenderer(entry);
+      @Override
+      public AssetRenderer<Entry> getAssetRenderer(long classPK, int type) 
+      throws PortalException {
+        
+        Entry entry = _entryLocalService.getEntry(classPK);
 
-    entryAssetRenderer.setAssetRendererType(type);
-            return entryAssetRenderer;
-    }
+        EntryAssetRenderer entryAssetRenderer = new EntryAssetRenderer(entry);
 
-    @Override
-    public String getClassName() {
-            return CLASS_NAME;
-    }
+        entryAssetRenderer.setAssetRendererType(type);
+        entryAssetRenderer.setServletContext(_servletContext);
+        
+        return entryAssetRenderer;
+      }
 
-    @Override
-    public String getType() {
-            return TYPE;
-    }
+      @Override
+      public String getClassName() {
+        return CLASS_NAME;
+      }
 
-    @Override
-    public boolean hasPermission(
-                    PermissionChecker permissionChecker, long classPK, String actionId)
-            throws Exception {
+      @Override
+      public String getType() {
+        return TYPE;
+      }
 
-            Entry entry = _entryLocalService.getEntry(classPK);
+      @Override
+      public boolean hasPermission(PermissionChecker permissionChecker, 
+      long classPK, String actionId) throws Exception {
 
+        Entry entry = _entryLocalService.getEntry(classPK);
         return EntryPermission.contains(permissionChecker, classPK, actionId);
+      }
 
-    }
+      @Override
+      public PortletURL getURLAdd(LiferayPortletRequest liferayPortletRequest,
+          LiferayPortletResponse liferayPortletResponse, long classTypeId) {
+        
+        PortletURL portletURL = null;
 
-    @Override
-    public PortletURL getURLAdd(
-    LiferayPortletRequest liferayPortletRequest,
-    LiferayPortletResponse liferayPortletResponse, long classTypeId) {
-    PortletURL portletURL = null;
+        try {
+          ThemeDisplay themeDisplay = (ThemeDisplay) 
+          liferayPortletRequest.getAttribute(WebKeys.THEME_DISPLAY);
 
-    try {
-      ThemeDisplay themeDisplay =
+          portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(themeDisplay),
+              GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
+          portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_entry");
+          portletURL.setParameter("showback", Boolean.FALSE.toString());
+        } catch (PortalException e) {
+        }
 
-        (ThemeDisplay)liferayPortletRequest.getAttribute(
-          WebKeys.THEME_DISPLAY);
+        return portletURL;
+      }
 
-        portletURL = liferayPortletResponse.createLiferayPortletURL(
-        getControlPanelPlid(themeDisplay),
-        "com_liferay_docs_guestbook_portlet_GuestbookPortlet", PortletRequest.RENDER_PHASE);
-      portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_entry");
-      portletURL.setParameter("showback", Boolean.FALSE.toString());
-    }
-    catch (PortalException e) {
-    }
+      @Override
+      public boolean isLinkable() {
+        return _LINKABLE;
+      }
+      
+      @Override
+      public String getIconCssClass() {
+          return "pencil";
+      }
+      
+      @Reference(
+          target = "(osgi.web.symbolicname=com.liferay.docs.guestbook)",
+          unbind = "-"
+      )
+      public void setServletContext(ServletContext servletContext) {
+        _servletContext = servletContext;
+      }
+      
+      @Reference(unbind = "-")
+      protected void setEntryLocalService(EntryLocalService entryLocalService) {
 
-    return portletURL;
-    }
+        _entryLocalService = entryLocalService;
+      }
 
-    @Override
-    public boolean isLinkable() {
-            return _LINKABLE;
-    }
-
-    @Reference(target = "(osgi.web.symbolicname=guestbook.web)")
-    private ServletContext _servletContext;
-    @Reference
-    private EntryLocalService _entryLocalService;
-    private static final boolean _LINKABLE = true;
-    public static final String CLASS_NAME = Entry.class.getName();
-    public static final String TYPE = "entry";
+      private ServletContext _servletContext;  
+      private EntryLocalService _entryLocalService;
+      
+      private static final boolean _LINKABLE = true;
+      public static final String CLASS_NAME = Entry.class.getName();
+      public static final String TYPE = "entry";
 
     }
 

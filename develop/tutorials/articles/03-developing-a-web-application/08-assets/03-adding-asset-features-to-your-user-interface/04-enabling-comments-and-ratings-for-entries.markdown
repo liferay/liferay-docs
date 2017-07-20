@@ -15,7 +15,7 @@ Follow these steps to enable comments and ratings on guestbook entries:
 
 1.  Create a new file called `view_entry.jsp` in your `guestbook-web` module 
     project's `/guestbookwebportlet` folder. You'll edit the 
-    `/guestbookwebportlet/guestbook_actions.jsp` to include a new *View* option 
+    `/guestbookwebportlet/entry_actions.jsp` to include a new *View* option 
     in the Actions Menu that points to the new `view_entry.jsp` file.
     
 2.  Add a java scriptlet to the file you just created. Use an `entryId` 
@@ -64,8 +64,11 @@ Follow these steps to enable comments and ratings on guestbook entries:
           PortalUtil.setPageSubtitle(entry.getMessage(), request);
           PortalUtil.setPageDescription(entry.getMessage(), request);
 
-          List<AssetTag> assetTags = AssetTagLocalServiceUtil.getTags(Entry.class.getName(), entry.getEntryId());
-          PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"), request);
+          List<AssetTag> assetTags = 
+          AssetTagLocalServiceUtil.getTags(Entry.class.getName(), 
+          entry.getEntryId());
+          PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"), 
+          request);
         %>
 
 5.  After the scriptlet, specify the URLs for the page and back link:
@@ -121,7 +124,8 @@ Follow these steps to enable comments and ratings on guestbook entries:
 
             <br />
 
-            <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
+            <portlet:actionURL name="invokeTaglibDiscussion" 
+            var="discussionURL" />
 
             <liferay-ui:discussion className="<%=Entry.class.getName()%>"
               classPK="<%=entry.getEntryId()%>"
@@ -168,11 +172,11 @@ Follow these steps to enable comments and ratings on guestbook entries:
 
 Next, you'll update the guestbook actions to use the new view. 
 
-## Updating the Guestbook Actions JSP
+## Updating the Entry Actions JSP
 
 Your `view_entry.jsp` page is currently orphaned. Fix this by adding the
 *View* option to the Actions Menu. Open your 
-`/guestbookwebportlet/guestbook_actions.jsp` and find the following line:
+`/guestbookwebportlet/entry_actions.jsp` and find the following line:
 
     <liferay-ui:icon-menu>
 
