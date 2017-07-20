@@ -245,8 +245,8 @@ Follow these steps to do so:
 
 3.  In the *Gradle Tasks* window on the right-hand side of Liferay IDE, expand 
     your service module's build folder. Build the WSDD by double-clicking 
-    *buildWSDD*. Note that if `buildWSDD` is missing, shut down your server and 
-    then restart Liferay IDE. The `buildWSDD` command should then appear as 
+    *buildWSDD*. If `buildWSDD` is missing, shut down your server and then 
+    restart Liferay IDE. The `buildWSDD` command should then appear as 
     described. 
 
     The WSDD builder generates a WSDD JAR file in the `guestbook-service` 
@@ -275,10 +275,18 @@ Follow these steps to do so:
     running @product@ locally on port 8080, this is 
     [http://localhost:8080/o/com.liferay.docs.guestbook.service/api/axis](http://localhost:8080/o/com.liferay.docs.guestbook.service/api/axis). 
 
-This page contains links to the WSDL (Web Services Description Language) 
-documents for the Guestbook and Entry remote service methods. WSDL files 
-describe details about the remote service methods, including the type of data 
-that these methods handle. 
+    This page contains links to the WSDL (Web Services Description Language) 
+    documents for the Guestbook and Entry remote service methods. WSDL files 
+    describe details about the remote service methods, including the type of 
+    data that these methods handle. 
+
++$$$
+
+**Note:** When your service module redeploys after building the WSDD, you may 
+see a `java.io.IOException` in the console. This is a benign error in the WSDD 
+extender that should be resolved in a future @product@ update. 
+
+$$$
 
 If you'd like to make your app's services available for remote invocation via 
 SOAP, generating WSDD and WSDL files is required. For example, 
