@@ -343,22 +343,9 @@ Follow these steps to create the `*AssetRendererFactory`:
           }
 
 
-          @Reference(
-              target = "(osgi.web.symbolicname=com.liferay.docs.guestbook)",
-              unbind = "-"
-          )
-          public void setServletContext(ServletContext servletContext) {
-            _servletContext = servletContext;
-          }
-          
-          @Reference(unbind = "-")
-          protected void setGuestbookLocalService(GuestbookLocalService 
-          guestbookLocalService) {
-
-            _guestbookLocalService = guestbookLocalService;
-          }
-          
+          @Reference(target = "(osgi.web.symbolicname=com.liferay.docs.guestbook)")
           private ServletContext _servletContext;
+          @Reference
           private GuestbookLocalService _guestbookLocalService;
           
           private static final boolean _LINKABLE = true;

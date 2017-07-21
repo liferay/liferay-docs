@@ -293,21 +293,9 @@ called `EntryAssetRendererFactory` that extends Liferay's
           return "pencil";
       }
       
-      @Reference(
-          target = "(osgi.web.symbolicname=com.liferay.docs.guestbook)",
-          unbind = "-"
-      )
-      public void setServletContext(ServletContext servletContext) {
-        _servletContext = servletContext;
-      }
-      
-      @Reference(unbind = "-")
-      protected void setEntryLocalService(EntryLocalService entryLocalService) {
-
-        _entryLocalService = entryLocalService;
-      }
-
-      private ServletContext _servletContext;  
+      @Reference(target = "(osgi.web.symbolicname=com.liferay.docs.guestbook)")
+      private ServletContext _servletContext;
+      @Reference
       private EntryLocalService _entryLocalService;
       
       private static final boolean _LINKABLE = true;
