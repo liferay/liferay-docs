@@ -30,9 +30,9 @@ compatible and can be copied to the new 3.1 version.
 
     You may be prompted for your liferay.com username and password before
     downloading the @ide@ installer. Since @ide@ includes access to @product@,
-    you must verify that you have rights to use it. After providing your
-    credentials, they're stored in your `~/.gradle/gradle.properties` file. The
-    credentials are used by your @ide@'s
+    you must verify that you have rights to use it. Your credentials are not
+    saved locally; they're saved as a token in the `~/.liferay` folder. The
+    token is used by your @ide@'s
     [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
     if you ever decide to redownload a @product@ bundle. Furthermore, the
     @product@ bundle that was downloaded in your workspace is also copied to
