@@ -21,8 +21,7 @@ line tool:
         -DarchetypeArtifactId=com.liferay.project.templates.workspace \
         -DgroupId=[GROUP_ID] \
         -DartifactId=[WORKSPACE_NAME] \
-        -Dversion=[VERSION] \
-        -Dpackage=[PACKAGE]
+        -Dversion=[VERSION]
 
 A Maven Workspace is generated in the current folder. No other tools or CLIs are
 required for Maven Workspace.
