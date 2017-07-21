@@ -9,7 +9,7 @@ configured in the *Control Panel* &rarr; *Configuration* &rarr; *System
 Settings* &rarr; *Foundation* &rarr; *ScreenName Validator* menu. The default
 values for the screen name validator's reserved words are *admin* and *user*.
 
-![Figure 1: Enter reserved words for the screen name validator.](../../images/screenname-validator-config.png)
+![Figure 1: Enter reserved words for the screen name validator.](../../../images/screenname-validator-config.png)
 
 To customize this sample, modify the
 `com.liferay.blade.samples.screenname.validator.internal.CustomScreenNameValidator`
@@ -28,10 +28,10 @@ Follow the steps below to test the Screen Name Validator sample:
 2.  Navigate to the *Control Panel* &rarr; *Users* &rarr; *Users and
     Organizations* menu.
 3.  Create a new user by selecting the *Add User*
-    (![Add User](../../images/icon-add.png)) button.
+    (![Add User](../../../images/icon-add.png)) button.
 4.  Adding a screen name that contains the word *admin* or *user*.
 
-![Figure 2: The error message displays when inputting a reserved word for the screen name.](../../images/screenname-validator-test.png)
+![Figure 2: The error message displays when inputting a reserved word for the screen name.](../../../images/screenname-validator-test.png)
 
 For more information on customizing the Validation sample to fit your needs, see
 the Javadoc provided in this sample's Java classes.

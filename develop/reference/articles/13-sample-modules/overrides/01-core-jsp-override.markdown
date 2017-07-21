@@ -7,10 +7,10 @@ file by inserting the `bottom-ext.jsp` file in the
 customizations, sample text is added to the bottom of Liferay's default theme.
 For more information on how to customize Liferay's Core using JSP overrides,
 visit the
-[Overriding Core JSPs](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
+[Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
 tutorial.
 
-![Figure 1: Deploying a core JSP override overrides core functionality, like @product@'s default theme.](../../images/blade-core-jsp-hook.png)
+![Figure 1: Deploying a core JSP override overrides core functionality, like @product@'s default theme.](../../../images/blade-core-jsp-hook.png)
 
 **Note:** Using core JSP overrides should be a last resort option only when
 there is no other way to customize functionality in your Liferay installation.

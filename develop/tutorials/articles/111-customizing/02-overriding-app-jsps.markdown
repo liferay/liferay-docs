@@ -33,7 +33,7 @@ module:
 
 Both are declared using the OSGi header `Fragment-Host`.
 
-    Fragment-Host: com.liferay.login.web;bundle-version="1.0.0"
+    Fragment-Host: com.liferay.login.web;bundle-version="[1.0.0,1.0.1)"
 
 Supplying a specific host module version is important. If that version of the
 module isn't present, your fragment won't attach itself to a host, and that's a
