@@ -44,32 +44,6 @@ If you'd like to keep the global Gradle properties the same, but want to change
 them for yourself only (perhaps for local testing), you can override the
 `gradle.properties` file with your own `gradle-local.properties` file.
 
-<!-- The paragraph/steps below should be removed once the new Workspace project
-template is published, which includes these configs by default. -Cody -->
-
-To configure the `gradle-local.properties` file for your workspace, you must
-apply a third-party plugin in your workspace's settings. Complete the
-following steps:
-
-1.  Open your workspace's `settings.gradle` file and add the
-    `gradle-properties-plugin` as a dependency:
-
-        dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.workspace", version: "VERSION"
-            classpath group: "net.saliman", name: "gradle-properties-plugin", version: "1.4.6"
-        }
-
-2.  Apply the `net.saliman.properties` third-party plugin at the bottom of your
-    `settings.gradle` file:
-
-        apply plugin: "net.saliman.properties"
-
-3.  Create the `gradle-local.properties` file in the root folder of your
-    workspace.
-
-You can now configure user-specific properties for your workspace!
-<!-- -->
-
 +$$$
 
 **Note:** Liferay Workspace provides many subprojects for you behind the scenes,
