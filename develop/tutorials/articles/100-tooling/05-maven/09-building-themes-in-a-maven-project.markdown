@@ -30,7 +30,7 @@ build a theme. You'll learn how to do this next.
                         <execution>
                             <phase>generate-resources</phase>
                             <goals>
-                                <goal>build-theme</goal>
+                                <goal>build</goal>
                             </goals>
                             <configuration>
                                 <diffsDir>${maven.war.src}</diffsDir>
@@ -54,7 +54,7 @@ build a theme. You'll learn how to do this next.
     - The
       [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
       configures the Theme Builder to run during the `generate-resources` phase
-      of your Maven project's build lifecycle. The `build-theme`
+      of your Maven project's build lifecycle. The `build`
       [goal](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#A_Build_Phase_is_Made_Up_of_Plugin_Goals)
       is defined for that lifecycle phase.
     - The
@@ -78,10 +78,10 @@ build a theme. You'll learn how to do this next.
             <version>${com.liferay.css.builder.version}</version>
             <executions>
                 <execution>
-                    <id>default-build-css</id>
+                    <id>default-build</id>
                     <phase>compile</phase>
                     <goals>
-                        <goal>build-css</goal>
+                        <goal>build</goal>
                     </goals>
                 </execution>
             </executions>
