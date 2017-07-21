@@ -25,35 +25,31 @@ The Guestbook portlet has the following characteristics:
 -   Separate Model, View, and Controller layers
 -   Persistence by Hibernate under Service Builder
 -   View layer implemented by JSPs
--   Manages dependencies via Ant/Ivy
+-   Relies on manual dependency management
 -   Developed in a Liferay Plugins SDK 6.2
 
 Upgrading most Service Builder Portlets involves these steps: 
 
-1.  [Adapt the code to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-2.  [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
-3.  [Build the services](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+1.  [Adapt the code to @product-ver@'s API](#1-adapt-the-code-to-product-vers-api)
+2.  [Resolve dependencies](#2-resolve-dependencies)
+3.  [Build the services](#3-build-the-services)
 
-Since the Guestbook portlet's dependencies haven't changed, upgrading it
-involves only adapting the code to @product-ver@'s API and building the
-services. The
+Start by adapting the code. 
+
+## 1. Adapt the code to @product-ver@'s API [](id=1-adapt-the-code-to-product-vers-api)
+
+Use the
 [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-facilitates updating the code and resolving compilation issues quickly. 
-
-+$$$
-
-**Note**: Refer to tutorial
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
-if you need to adapt to dependency changes. 
-
-$$$
+to update the code and resolve compilation issues quickly. Then fix any
+remaining compilation errors manually. 
 
 The Guestbook portlet has the following compilation error:
 
     /html/guestbook/view.jsp(58,1) PWC6131: Attribute total invalid for tag search-container-results according to TLD
 
 The `view.jsp` file specifies a tag library attribute `total` that doesn't exist
-in @product-ver@'s `liferay-ui` tag library.
+in @product-ver@'s `liferay-ui` tag library. Notice the second attribute
+`total`. 
 
     <liferay-ui:search-container-results
         results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
@@ -62,30 +58,64 @@ in @product-ver@'s `liferay-ui` tag library.
         total="<%=EntryLocalServiceUtil.getEntriesCount(scopeGroupId,
                         guestbookId)%>" />
 
-Remove the `total` attribute declaration to make the tag like this:
+Remove the `total` attribute assignment to make the tag like this:
 
     <liferay-ui:search-container-results
         results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
                         guestbookId, searchContainer.getStart(),
                         searchContainer.getEnd())%>" />
 
-If you specify exception classes in the `service.xml` file, they're generated in
-a folder called `exceptions` in the Service Builder `package-path`. 
+That's the Guestbook portlet's only compilation error you need to fix manually. 
 
-For example, the Micro Blogs portlet's exception class for `exception` element
-`UnsupportedMicroblogsEntry` is generated to
-`docroot/WEB-INF/service/com/liferay/microblogs/exception`. Here's an excerpt
-from its `service.xml` file:
+## 2. Resolve dependencies [](id=2-resolve-dependencies)
 
-    <service-builder auto-namespace-tables="false" package-path="com.liferay.microblogs">
+Since the Guestbook portlet's dependencies haven't changed, there aren't any
+dependencies to resolve.  
+
+If you need to adapt a portlet's dependencies, refer to tutorial
+[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies).
+
+## 3. Build the services [](id=3-build-the-services)
+
+[Build the services](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+as you did in Liferay Portal 6.2.
+
+The Guestbook portlet's `service.xml` file specifies exception class names in
+`exception` elements.  
+
+    <service-builder package-path="com.liferay.docs.guestbook">
         ...
         <exceptions>
-            <exception>UnsupportedMicroblogsEntry</exception>
+            <exception>GuestbookName</exception>
+            <exception>EntryName</exception>
+            <exception>EntryMessage</exception>
+            <exception>EntryEmail</exception>
         </exceptions>
     </service-builder>
 
-On deploying an upgraded portlet, the server prints messages indicating the
-following portlet status:
+In Liferay Portal 6.2, Service Builder generates exception classes to the path
+attribute `package-path` specifies. In @product-ver@, Service Builder generates
+them to `[package-path]/exception`. 
+
+Old path:
+
+    [package-path]
+
+New path:
+
+    [package-path]/exception 
+
+For example, the Guestbook portlet's package path is
+`com.liferay.docs.guestbook`. Its exception class for `exception` element
+`GuestbookName` is generated to
+`docroot/WEB-INF/service/com/liferay/docs/guestbook/exception`. Classes that use
+the exception must import
+`com.liferay.docs.guestbook.exception.GuestbookNameException`. 
+
+Update references to your portlet's exception classes. 
+
+Deploy the portlet as you normally would. The server prints messages indicating
+the following portlet status:
 
 -   WAR processing
 -   WAB startup
