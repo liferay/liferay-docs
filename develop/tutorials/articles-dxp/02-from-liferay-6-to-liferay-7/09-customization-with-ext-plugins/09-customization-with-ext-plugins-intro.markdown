@@ -6,6 +6,13 @@
 absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0
 Service Pack (SP) 4+.**
 
+**For those upgrading via fix packs, Ext plugins are deployable to Liferay
+Digital Enterprise 7.0 Fix Pack 16+. If you haven't upgraded to SP4+ and are
+using a Tomcat app server, visit the		
+[App Server Configuration](#app-server-configuration) section for details on		
+modifications required to allow Ext plugins to function properly in that		
+environment.**
+
 The following app servers are supported for Ext plugin development in
 @product@:
 
@@ -27,15 +34,15 @@ Ext plugin use cases:
   [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
   instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
   overridden beans are still relevant if converting your legacy Ext plugin
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255605)).
 - Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
   the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
   section
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255575)).
 - Modifying @product@'s `web.xml` file
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255591)).
 - Adding to @product@'s `web.xml` file
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255563)).
 
 Refer to each use case's linked tutorial for further information on that topic.
 
@@ -613,6 +620,22 @@ Now, perform these actions on your server:
     appropriate directory in the application server. 
 
 Next, you'll learn about Liferay's licensing and contributing standards.
+
+## App Server Configuration [](id=app-server-configuration)
+
+If you're using the Tomcat app server and have not upgraded to Liferay DE SP4+,
+you must modify your app server's `conf/Catalina/localhost/ROOT.xml` file. Add
+the following code to that file:
+
+    <Resources>
+        <PreResources
+            className="com.liferay.support.tomcat.webresources.ExtResourceSet"
+            base="${catalina.base}/lib/ext/portal"
+            webAppMount="/WEB-INF/lib"
+        />
+    </Resources>
+
+Be sure to place this code within the existing `<Context>` tags.
 
 ## Licensing and Contributing [](id=licensing-and-contributing)
 

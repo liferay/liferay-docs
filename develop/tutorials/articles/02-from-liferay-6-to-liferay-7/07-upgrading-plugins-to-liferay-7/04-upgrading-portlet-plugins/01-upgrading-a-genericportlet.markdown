@@ -49,7 +49,7 @@ facilitates updating the code and resolving compilation issues quickly.
 [Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
 if you need to adapt to dependency changes. 
 
-$$$ 
+$$$
 
 You deploy a `GenericPortlet` to @product-ver@ in the same way you deploy to
 Portal 6.x. When the plugin WAR file lands in the `[Liferay_Home]/deploy`
