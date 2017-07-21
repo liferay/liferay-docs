@@ -230,18 +230,18 @@ In @product-ver@, the `portal-dependency-jars` property is deprecated and
 behaves differently from previous versions. Because importing and exporting Java
 packages has replaced wholesale use of JARs, modules and WABs can import
 packages without concerning themselves with JARs. This means that @product@
-can't make available to plugins the same Java classes it did in the past. For a
-list of packages @product-ver@ exports to modules, look at the
-`modules/core/portal-bootstrap/system.packages.extra.bnd` file in the
-@product-ver@ source code, on
-[GitHub](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/core/portal-bootstrap/system.packages.extra.bnd),
-or in the  `META-INF/system.packages.extra.mf` file in
-`[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. The exported
-packages are easy to read in the
-`modules/core/portal-bootstrap/system.packages.extra.bnd` file as it lists the
-packages on separate lines. The packages are harder to read in
-`com.liferay.portal.bootstrap.jar`'s `META-INF/system.packages.extra.mf` file
-as it lists them in a paragraph that wraps at 70 columns.
+can't make available to plugins the same Java classes it did in the past. 
+
+These files list the packages @product-ver@ exports:
+
+-   `modules/core/portal-bootstrap/system.packages.extra.bnd` file in the
+    [GitHub repository](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/core/portal-bootstrap/system.packages.extra.bnd).
+    It lists exported packages on separate lines, making them easy to read.
+-   `META-INF/system.packages.extra.mf` file in
+    `[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. The file is
+    available in @product@ bundles. It lists exported packages in a paragraph
+    wrapped at 70 columns--they're harder to read here than in the
+    `system.packages.extra.bnd` file. 
 
 If you're still using the `portal-dependency-jars` property, you may run into
 one of the scenarios below. Follow the instructions below the scenario to fix
