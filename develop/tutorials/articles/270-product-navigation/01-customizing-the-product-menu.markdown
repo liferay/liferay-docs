@@ -12,9 +12,9 @@ of these child panel categories, you're presented with panel apps.
 
 **Note:** The Product Menu cannot be changed by applying a new theme. To change
 the layout/style of the Product Menu, you must create and deploy a theme
-contributor. <!--See the
+contributor. See the
 [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
-tutorial for more details.-->
+tutorial for more details.
 
 $$$
 
@@ -32,7 +32,10 @@ display what is most helpful in your particular situation. First, you'll learn
 how to add a panel category.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
+   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). Blade CLI
+   offers a
+   [Panel App](/develop/reference/-/knowledge_base/7-0/panel-app-template)
+   template, which you can use to generate a basic panel category and panel app.
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, give your
@@ -194,7 +197,10 @@ Follow the steps below to add a panel app to your Liferay instance's Product
 Menu.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
+   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). Blade CLI
+   offers a
+   [Panel App](/develop/reference/-/knowledge_base/7-0/panel-app-template)
+   template, which you can use to generate a basic panel category and panel app.
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, give your class
