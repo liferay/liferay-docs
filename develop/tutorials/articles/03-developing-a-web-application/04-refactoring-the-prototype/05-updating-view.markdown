@@ -39,48 +39,8 @@ managing Guestbooks, and update the existing JSPs.
                 .getAttribute("guestbookId"));
         %>
 
-        <aui:nav cssClass="nav-tabs">
-
-        <%
-            List<Guestbook> guestbooks = GuestbookLocalServiceUtil
-                        .getGuestbooks(scopeGroupId);
-                for (int i = 0; i < guestbooks.size(); i++) {
-                    Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
-                    String cssClass = StringPool.BLANK;
-                    if (curGuestbook.getGuestbookId() == guestbookId) {
-                        cssClass = "active";
-                    }
-                
-                    {
-                
-        %>
-
-        <portlet:renderURL var="viewPageURL">
-            <portlet:param name="mvcPath" value="/view.jsp" />
-            <portlet:param name="guestbookId"
-                value="<%=String.valueOf(curGuestbook.getGuestbookId())%>" />
-        </portlet:renderURL>
-
-        <aui:nav-item cssClass="<%=cssClass%>" href="<%=viewPageURL%>"
-            label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
-
-        <%
-                }
-            }
-        %>
-
-        </aui:nav>
-
         <aui:button-row cssClass="guestbook-buttons">
 
-            <portlet:renderURL var="addGuestbookURL">
-                <portlet:param name="mvcPath"
-                    value="/guestbookwebportlet/edit_guestbook.jsp" />
-            </portlet:renderURL>
-        
-            <aui:button onClick="<%=addGuestbookURL.toString()%>" 
-                value="Add Guestbook" />
-        
             <portlet:renderURL var="addEntryURL">
                 <portlet:param name="mvcPath" value="/guestbookwebportlet/edit_entry.jsp" />
                 <portlet:param name="guestbookId"
@@ -110,18 +70,18 @@ managing Guestbooks, and update the existing JSPs.
         
         </liferay-ui:search-container>
 
-You've significantly expanded the `view.jsp` now. There are now buttons for both
-adding an Entry and adding a new Guestbook. You've also added the necessary 
-backend information to connect to this. Right now you're doing all of this with
-fairly generic styles to accomplish this, but later you'll learn to leverage 
-the full power of Liferay's UI tools to enhance your JSPs.
+Your `view.jsp` now retrieves the entries from the guestbook the `render` method
+gives it. It does this inside a Liferay construct called a *Search Container*.
+This is a front-end component that makes it easy to display data in rows and
+columns. The call to `EntryLocalServiceUtil` retrieves the data from your new
+Service Builder-based back-end. Otherwise, this JSP is much the same: you still
+have an *Add Entry* button with its corresponding URL. 
 
-Next you need to create a new `edit_guestbook.jsp` and edit the `edit_entry.jsp`
-to match our new system.
+Next you need to edit the `edit_entry.jsp`.
 
-1. Open `edit_entry.jsp.`
+1.  Open `edit_entry.jsp.`
 
-2. Replace the existing code with this:
+2.  Replace the existing code with this:
 
         <%@include file="../init.jsp" %>
 
@@ -167,77 +127,14 @@ to match our new system.
             
             </aui:button-row>
         </aui:form>
-    
-3. Now right-click on the `guestbookwebportlet` folder and select *New* &rarr; *File*.
 
-4. Name the file `edit_guestbook.jsp` and click *Finish*.
+    You still have much the same form, though there are more fields now. Using
+    some AlloyUI tags, the form is linked to your `Entry` entity. The two hidden
+    fields contain the new `entryId` and the `guestbookId` for the guestbook the
+    new entry belongs to. The submit button is an `ActionURL` that executes the
+    `addEntry` method in the controller (your portlet class). 
 
-5. Open the new file and paste in this code:
+Congratulations! You've now successfully replaced your prototype back-end with a
+real, database-driven back-end. Next, you'll do a quick review and deploy your
+application. 
 
-        <%@include file = "../init.jsp" %>
-
-        <portlet:renderURL var="viewURL">
-          <portlet:param name="mvcPath" value="/guestbookwebportlet/view.jsp"></portlet:param>
-        </portlet:renderURL>
-
-        <portlet:actionURL name="addGuestbook" var="addGuestbookURL"></portlet:actionURL>
-
-        <aui:form action="<%= addGuestbookURL %>" name="<portlet:namespace />fm">
-
-            <aui:fieldset>
-
-                <aui:input name="name" />
-
-            </aui:fieldset>
-
-            <aui:button-row>
-
-                <aui:button type="submit"></aui:button>
-                <aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
-
-            </aui:button-row>
-        </aui:form>
-
-These updates are a bit more simple. You created additional fields to be added 
-for each entry creation to match up to the fields you created on the backend,
-and you created a new form for creating a guestbook with one field.
-
-Finally we need an `entry_actions.jsp` which will handle editing and deletion 
-of guestbook entries.
-
-1. Right click on the `guestbookwebportlet` folder and select *New* &rarr; *File*.
-
-2. Name the file `entry_actions.jsp` and click *Finish*.
-
-3. Open the new file and paste in this code:
-
-        <%@include file="../init.jsp"%>
-
-          <% String mvcPath = ParamUtil.getString(request, "mvcPath"); ResultRow row =
-             (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW); Entry
-             entry = (Entry)row.getObject(); %>
-
-          <liferay-ui:icon-menu>
-
-             <portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>"
-             />
-             <portlet:param name="mvcPath" value="/html/guestbookmvcportlet/edit_entry.jsp" />
-             </portlet:renderURL>
-
-           <liferay-ui:icon image="edit" message="Edit" url="<%=editURL.toString() %>" />
-
-           <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
-
-           <portlet:actionURL name="deleteEntry" var="deleteURL">
-             <portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>" />
-
-           <portlet:param name="guestbookId" value="<%=
-            String.valueOf(entry.getGuestbookId()) %>" /> </portlet:actionURL>
-
-           <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" /> </c:if>
-
-         </liferay-ui:icon-menu>
-
-The `entry_actions.jsp` creates the urls and actions for the menu which appears
-on the right side of the search container in the portlet display. This provides 
-access to edit or delete a guestbook entry.
