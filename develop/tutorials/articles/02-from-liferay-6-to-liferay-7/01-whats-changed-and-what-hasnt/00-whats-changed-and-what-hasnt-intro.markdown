@@ -56,7 +56,7 @@ them.
 
 5. Registration of classes implementing extension points is now simpler and more
 consistent; it's based on the standard `@Component` annotation instead of
-declaration's in `portal.properties` or `portlet.xml`. Note, previous
+declarations in `portal.properties` or `portlet.xml`. Note, previous
 registration mechanisms have been preserved where possible. See the
 [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
 article to examine where extensions and configurations that have not kept
