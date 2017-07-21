@@ -1,4 +1,4 @@
-# Layout Template
+# Layout Template [](id=layout-template)
 
 In this article, you'll learn how to create a Liferay layout template as a WAR
 project. To create a Liferay layout template via the command line using Blade

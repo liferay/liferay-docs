@@ -1,4 +1,4 @@
-# Spring MVC Portlet Template
+# Spring MVC Portlet Template [](id=spring-mvc-portlet-template)
 
 In this article, you'll learn how to create a Liferay Spring MVC portlet
 application as a WAR. To create a Liferay Spring MVC portlet via the command

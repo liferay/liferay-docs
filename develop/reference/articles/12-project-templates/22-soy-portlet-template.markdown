@@ -1,4 +1,4 @@
-# Soy Portlet Template
+# Soy Portlet Template [](id=soy-portlet-template)
 
 In this article, you'll learn how to create a Soy portlet application as
 a Liferay module. To create a Soy portlet as a module via the command
