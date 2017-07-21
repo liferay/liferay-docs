@@ -25,7 +25,7 @@ managing Guestbooks, and update the existing JSPs.
         <%@ page import="com.liferay.docs.guestbook.service.EntryLocalServiceUtil" %>
         <%@ page import="com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil" %>
         <%@ page import="com.liferay.docs.guestbook.model.Entry" %>
-    
+ 
 
 4. Open the `view.jsp` file found in 
     `/resources/META-INF/resources/guestbookwebportlet`

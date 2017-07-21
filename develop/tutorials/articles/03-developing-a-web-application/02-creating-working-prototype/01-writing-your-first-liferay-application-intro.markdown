@@ -44,7 +44,7 @@ the instructions below to create your Liferay Module Project.
 
 5. Select the `mvc-portlet` for Project Template Name. Click *Next*. 
 
-7. Enter "Guestbook" for the class name and 
+7. Enter "Guestbook" for the component class name and 
     `com.liferay.docs.guestbook.portlet` for the package name. Click *Finish*. 
 
 ![Figure x: The structure for your new project.](../../../images/guestbook-web-project.png)
@@ -85,17 +85,17 @@ ability to serve multiple applications on the same page.
 
 Portlets created in Liferay Module Projects are generated as Components. If the
 module (sometimes also called a *bundle*) encapsulates pieces of your
-application, the component is the object that contains the core
-functionality. *Component* is a big broad word which can define many different
-things from a Java and OSGi perspective, but the idea that ties all of those
-things together is that a component is some object which provides specific
-functionality. Components are deployed inside modules, and they provide a
-well defined way to build features for your application. 
+application, the component is the object that contains the core functionality. A
+*Component* is an object that is managed by a component framework or container.
+Components are deployed inside modules, and they're created, started, stopped,
+and destroyed as needed by the container. What a perfect model for a web
+application! It can be made available only when needed, and when it's not, the
+container can make sure it doesn't use any resources needed by other components. 
 
 In this case, you created a Declarative Services (DS) component. With
-Declarative Services, you "declare" that an object is a component, and then the
-services of that component are registered. If you want to then use that
-component, you simply invoke the service as defined in the Service Registry. 
+Declarative Services, you "declare" that an object is a component, and you
+define some data about the component so the container knows how to manage it. A
+default configuration was created for you; you'll examine it later. 
 
 ## Deploying the Application [](id=deploying-the-application)
 

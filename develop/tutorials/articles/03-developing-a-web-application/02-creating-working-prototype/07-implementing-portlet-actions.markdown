@@ -21,7 +21,7 @@ URL, and you called it `addEntry`. To create a portlet action, you create a
 method in the portlet class with the same name. `MVCPortlet` calls that method
 when a user triggers its matching URL.
 
-1.  Open the `GuestbookPortlet.java`. The project templates generated this class 
+1.  Open the `GuestbookPortlet.java`. The project template generated this class 
 	when you created the portlet project.
 
 2.  Create a method with the following signature:
@@ -64,7 +64,7 @@ called `guestbook-entries`:
 
             ArrayList<String> entries = new ArrayList<String>();
 
-            if (guestbookEntries != null) {
+            if (guestbookEntries[0] != null) {
                 entries = new ArrayList<String>(Arrays.asList(prefs.getValues(
                         "guestbook-entries", new String[1])));
             }

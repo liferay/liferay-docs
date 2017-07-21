@@ -238,3 +238,6 @@ expected, before you get too far into troubleshooting:
 
 $$$
 
+Excellent! Your new back-end has been generated. Now it's time to refactor your
+prototype to use it. 
+

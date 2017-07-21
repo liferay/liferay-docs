@@ -14,41 +14,22 @@ component property, and then as a class.
     Note that you need the trailing comma if you've added the property to the
     middle of the list. If you've added it to the end of the last, leave it off. 
 
-2.  Save `GuestbookPortlet`. It now shows an error because you haven't created
-    the class yet. 
+2.  Save `GuestbookPortlet`. It now shows an error because you haven't added the
+    key to the class.
 
-3.  In Liferay IDE, right click on the "guestbook-web" project and select *New* &rarr; 
-    *Package*.
+3.  Open the `com.liferay.docs.guestbook.constants` package. 
 
-4.  Set the name as `com.liferay.docs.guestbook.constants` and click *Finish*.
-
-5.  Right click on the new package and select *New* &rarr; *Class*.
-
-6.  Name the class `GuestbookPortletKeys` and click *Finish*.
-
-7.  Open `GuestbookPortletKeys` and create a public, static, final String called
+4.  Open `GuestbookPortletKeys` and create a public, static, final String called
     `GUESTBOOK` with a value of 
     `com_liferay_docs_guestbook_portlet_GuestbookPortlet`:
  
-        public class GuestbookPortletKeys {
-
              public static final String GUESTBOOK =
                  "com_liferay_docs_guestbook_portlet_GuestbookPortlet";
-         }
 
-6. Save the file.
+5. Save the file.
 
-Now you must go back to `GuestbookPortlet` and import the new class.
-
-1.  Open `GuestbookPortlet` again. 
-
-2.  Press CTRL+SHIFT+O to organize imports.
-
-3.  Check that the `GuestbookPortletKeys` class was added.
-
-4.  Save your file.
-
-The error is now gone, and your application can be deployed again. Nice job! 
+Now `GuestbookPortlet`'s error has disappeared, and your application can be
+deployed again. Nice job! 
 
 Your next step is to integrate your application with the new back-end you
 generated with Service Builder. 
