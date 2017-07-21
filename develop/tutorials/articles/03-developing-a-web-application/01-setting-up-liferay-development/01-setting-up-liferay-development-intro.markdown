@@ -71,7 +71,8 @@ options. Follow the instructions below to create your workspace.
    Liferay instance in your workspace. When prompted, name the server 
    *liferay-tomcat-bundle*. 
 
-5. Click *Finish* to create your Liferay Workspace.
+5. Click *Finish* to create your Liferay Workspace. It make take a while because
+   the bundle is downloaded in the background. 
 
 ![Figure 2: Liferay @ide@ provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/guestbook-workspace-menu.png)
 

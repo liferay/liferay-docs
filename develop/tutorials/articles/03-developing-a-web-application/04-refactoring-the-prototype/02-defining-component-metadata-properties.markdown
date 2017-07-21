@@ -24,7 +24,7 @@ properties to match the configuration below:
             "javax.portlet.display-name=Guestbook",
             "javax.portlet.expiration-cache=0",
             "javax.portlet.init-param.template-path=/",
-            "javax.portlet.init-param.view-template=/guestbookweb/view.jsp",
+            "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
             "javax.portlet.resource-bundle=content.Language",
             "javax.portlet.security-role-ref=power-user,user",
             "javax.portlet.supports.mime-type=text/html"
@@ -39,7 +39,7 @@ portlet is non-instanceable, so only one instance of the portlet can be added
 to a page.
 
 You also updated the location of the main `view.jsp` to its new location in
-`/guestbookweb`.
+`/guestbookwebportlet`.
 
 Since you edited the metadata, you'll need to remove and re-add the portlet to 
 the page before continuing. 

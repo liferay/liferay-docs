@@ -15,7 +15,7 @@ and re-renders itself according to its new state.
 To save a guestbook entry, you must trigger a portlet action. For this, you'll
 create an action URL.
 
-1. Add the following tag after in `edit_entry.jsp` the closing `</portlet:renderURL>` tag:
+Add the following tag in `edit_entry.jsp` after the closing `</portlet:renderURL>` tag:
 
         <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
 
