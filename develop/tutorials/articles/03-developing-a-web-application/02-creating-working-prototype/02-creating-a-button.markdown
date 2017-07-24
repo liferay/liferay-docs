@@ -1,13 +1,13 @@
-# Creating an Add Guestbook Button [](id=creating-an-add-guestbook-button)
+# Creating an Add Entry Button [](id=creating-an-add-guestbook-button)
 
-A guestbook application is pretty simple, right? People come to your site,
-enter their names and brief messages, and then post them. Users can read the
-entries that others posted, and they can post entries themselves.
+A guestbook application is pretty simple, right? People come to your site, 
+enter their names and brief messages, and then post them. Users can read the 
+entries that others posted, and can post entries themselves. 
 
 When you created your project, it generated a file named `view.jsp` in your
 project's `src/main/resources/META-INF/resources`. This file creates the 
 default view for users when the portlet is added to the page. Right now it
-only contains some sample content:
+only contains some sample content: 
 
     <%@ include file="/init.jsp" %>
 
@@ -15,11 +15,10 @@ only contains some sample content:
         <b><liferay-ui:message key="guestbook-web.caption"/></b>
     </p>
 
-First of all, `view.jsp` imports `init.jsp`. By convention, imports and 
-tag library declarations in Liferay portlet applications are made in an 
-`init.jsp` file. Every other JSP file in the application imports `init.jsp`. 
-This convention ensures that JSP dependency management can always be handled 
-from a single fie.
+First, `view.jsp` imports `init.jsp`. By convention, imports and tag library 
+declarations in @product@ portlet applications are made in an `init.jsp` file. 
+Every other JSP file in the application imports `init.jsp`. This ensures that 
+JSP dependency management can always be handled from a single file.
 
 Besides importing `init.jsp`, `view.jsp` displays a message defined by a
 language key. This key and its value are declared in your project's

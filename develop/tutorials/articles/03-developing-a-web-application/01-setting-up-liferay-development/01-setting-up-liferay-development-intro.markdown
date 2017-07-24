@@ -9,6 +9,9 @@ for installing @ide@ are
 
 * Start @ide@. 
 
+You'll follow these steps, and then generate an environment for developing your 
+first @product@ application. 
+
 ## Installing @ide@ Bundle [](id=installing-ide-bundle)
 
 To install @ide@, follow these steps: 
