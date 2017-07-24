@@ -1,4 +1,4 @@
-# Generating a JSF Application [](id=generating-a-jsf-application)
+# Generating a JSF Project from the Command Line [](id=generating-a-jsf-application)
 
 You can generate a Liferay Faces application without having to create your own
 folder structure, descriptor files, and such manually. If you really want to do
@@ -29,8 +29,9 @@ because it generates both a `build.gradle` and a `pom.xml` file for you to use.
 
 ![Figure 1: You can select the Liferay Portal version, JSF version, and component suite for your archetype generation command.](../../../images/jsf-app-generation.png)
 
-Next, you'll generate an example JSF application (e.g., Liferay Portal 7 + JSF
-2.2 + JSF Standard) using [liferayfaces.org](http://liferayfaces.org/).
+Next you'll generate an example JSF application (e.g., Liferay Portal 7 + JSF
+2.2 + JSF Standard) via command line using
+[liferayfaces.org](http://liferayfaces.org/).
 
 1.  Navigate to [liferayfaces.org](http://liferayfaces.org/) and select the
     following options:
@@ -44,10 +45,11 @@ Next, you'll generate an example JSF application (e.g., Liferay Portal 7 + JSF
 
 That's it! Your JSF application is generated in the current folder!
 
-You can also generate a JSF application using Maven's interactive archetype UI.
-To do this, execute `mvn archetype:generate` and select the JSF archetype you
-want to use. Then you'll step through each option and select the version, group
-ID, artifact ID, etc. To learn more about this, see the
+You can also generate a Liferay JSF application using Maven's interactive
+archetype UI. To do this, execute `mvn archetype:generate -Dfilter=liferay` and
+select the JSF archetype you want to use. Then you'll step through each option
+and select the version, group ID, artifact ID, etc. To learn more about this,
+see the
 [Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
 tutorial.
 
@@ -55,7 +57,7 @@ Once you have your JSF application generated, you can
 [import it into Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-maven-in-liferay-ide#importing-maven-projects)
 and develop it further. To
 [deploy it to your @product@ instance](/develop/tutorials/-/knowledge_base/7-0/deploying-modules-with-liferay-ide),
-drag and drop it onto the Liferay server.
+drag and drop it onto the @product@ server.
 
 You can build the project and deploy it to @product@ from the command line too!
 If you're using Gradle, run the following command to build your JSF application:
@@ -70,5 +72,5 @@ Then copy the generated WAR to @product@'s `deploy` folder:
 
     [cp|copy] ./com.mycompany.my.jsf.portlet.war LIFERAY_HOME/deploy
 
-Awesome! You've generated your JSF application and deployed it using either
-@ide@ or the command line.
+Awesome! You've generated your JSF application and deployed it using the command
+line.
