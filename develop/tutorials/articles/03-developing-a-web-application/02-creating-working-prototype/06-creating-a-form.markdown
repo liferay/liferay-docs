@@ -1,5 +1,9 @@
 # Creating a Form [](id=creating-a-form)
 
+<div class="learn-path-step">
+    <p>Developing Your First Portlet<br>Step 6 of 8</p>
+</div>
+
 The form for creating guestbook entries is pretty simple. All you need are two 
 fields: one for the name of the person submitting the entry, and one for the 
 entry itself. 

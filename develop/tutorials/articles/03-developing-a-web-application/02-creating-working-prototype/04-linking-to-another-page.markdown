@@ -1,5 +1,9 @@
 # Linking to Another Page
 
+<div class="learn-path-step">
+    <p>Developing Your First Portlet<br>Step 4 of 8</p>
+</div>
+
 In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
 
 1.  Right-click your project's `src/main/resources/META-INF/resources` folder

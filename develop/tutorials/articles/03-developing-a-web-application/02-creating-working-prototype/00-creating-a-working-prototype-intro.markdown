@@ -13,3 +13,5 @@ Here's what you'll do:
 
 At the end, you'll have a fully functional prototype application ready to be
 enhanced later! There's no time like now to get started. 
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/writing-your-first-liferay-application">Let's Go!<span class="icon-circle-arrow-right"></span></a>
