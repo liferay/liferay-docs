@@ -1,92 +1,96 @@
 # Generating Model, Service, and Persistence Layers
 
 The persistence layer saves and retrieves your model data. The service layer is
-a buffer between your application and your persistence layer: having it gives
-you the freedom in the future to swap out your persistence layer for a different
-implementation without modifying anything but the calls in the service layer.
+a buffer between your application and persistence layers: having it lets you 
+swap out your persistence layer for a different implementation without modifying 
+anything but the calls in the service layer. 
+<!-- What? What does having a service layer have to do with swapping out a persistence layer? -->
 
-In order to model the Guestbook and Entries, you'll create a guestbook object to
-contain the entry objects, but you won't do this in Java. Instead, you'll define
-them in Service Builder, which not only generates your object model, but also
-maps that model to all the SQL databases @product@ supports. 
+To model the guestbooks and entries, you'll create guestbook and entry model 
+classes. But you won't do this directly in Java. Instead, you'll define them in 
+Service Builder, which generates your object model and maps it to all the SQL 
+databases @product@ supports. 
 
-The design of this application lets you create multiple guestbooks with
-different sets of entries. Administrative users can add as many guestbooks and
-users can add as many entries as the database can hold. 
+This application's design lets you create multiple guestbooks, each containing 
+different sets of entries. All users with permission to access the application 
+can add entries, but only administrative users can add guestbooks. 
 
-It's time to get started. You'll create the Guestbook entity first. 
+It's time to get started. You'll create the `Guestbook` entity first: 
 
-1.  Open `service.xml` in your `guestbook-service` project.
+1.  In your `guestbook-service` project, open `service.xml`. 
 
-2.  When @ide@ generated your project, it filled this file with dummy entities,
-    which you'll replace. First replace the opening contents of the file with
-    the following code:
+2.  When @ide@ generated your project, it filled this file with dummy entities, 
+    which you'll replace. First replace the file's opening contents (below the 
+    `DOCTYPE`) with the following code: 
 
         <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
-        <author>liferay</author>
-        <namespace>GB</namespace>
-        <entity local-service="true" name="Guestbook" uuid="true">
+            <author>liferay</author>
+            <namespace>GB</namespace>
+            <entity local-service="true" name="Guestbook" uuid="true">
 
-    This defines the author, namespace, and the entity name. The namespace
-    database field names from conflicting. The last tag is the opening tag for
-    the Entry entity. You specify that you only need a local service, the name
-    of the entity, and that it should have a 
-    [universally unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+    This defines the author, namespace, and the entity name. The namespace keeps 
+    the database field names from conflicting. The last tag is the opening tag 
+    for the `Guestbook` entity definition. In this tag, you enable local 
+    services for the entity, define its name, and specify that it should have a 
+    [universally unique identifier (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier). 
 
-3.  Next replace the PK fields section:
+3.  Next, replace the PK fields section: 
 
         <column name="guestbookId" primary="true" type="long" />
 
-    This defined the `guestbookId` as a `long` type and the primary key for the
-    Guestbook entity.
+    This defines `guestbookId` as the entity's primary key, of the type `long`. 
 
 4.  The group instance can be left alone.
 
         <column name="groupId" type="long" />
 
-5.  Leave the Audit Fields section alone. In the Other fields section, remove all
-    the generated fields and this one in their place:
+    This defines the ID of the site in @product@ that the entity instance 
+    belongs to (more on this in a moment). 
+
+5.  Leave the Audit Fields section alone. In the Other fields section, remove 
+    all the generated fields and put this one in their place: 
 
         <column name="name" type="String" />
 
-    The Audit section defines Liferay metadata. `companyId` is the primary key of a 
+    The Audit section defines @product@ metadata. The `companyId` is the primary 
+    key of a 
     [portal instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance). 
-    `userId` is the primary key of a user. `createDate`, and `modifiedDate`
-    store the create and modified dates. 
+    The `userId` is the primary key of a user. The `createDate` and 
+    `modifiedDate` store the respective dates on which the entity instance is 
+    created and modified. 
 
-6.  Next, remove everything else from the Guestbook entity. Before its closing tag,
-    add a finder definition:
+6.  Next, remove everything else from the Guestbook entity. Before the closing 
+    `</entity>` tag, add this finder definition: 
 
             <finder name="GroupId" return-type="Collection">
                 <finder-column name="groupId" />
             </finder>
-        </entity>
 
     This defines a finder that generates a `get` method you'll use to retrieve
     Guestbook entities. The fields used by the finder define the scope of the
     data retrieved. This finder gets all Guestbooks by their `groupId`, which
     corresponds to the
     [site](/discover/portal/-/knowledge_base/7-0/starting-site-development) the
-    application is on. This allows administrators to put Guestbooks on multiple
-    sites, and each Guestbook has its own data scoped to its site. 
+    application is on. This lets administrators put Guestbooks on multiple 
+    sites, and each `Guestbook` has its own data scoped to its site. 
 
-The Guestbook entity is finished for now; next, you'll create the Entry entity.
+The `Guestbook` entity is finished for now. Next, you'll create the `Entry` 
+entity: 
 
-1.  First add the opening entity tag:
-	
+1.  Add the opening entity tag:
+
         <entity local-service="true" name="Entry" uuid="true">
 
-    Again, you're declaring the name, that you want a local service, and that 
-	you need a `uuid`.
+    As with the `Guestbook` entity, you enable local services, define the 
+    entity's name, and specify that it should have a UUID. 
 
-2.  Next add the tag to define the primary key and the Group instance 
-    information:
+2.  Add the tag to define the primary key and the `groupId`: 
 
         <column name="entryId" primary="true" type="long" />
 
         <column name="groupId" type="long" />
 
-3.  Add the audit fields as you did with the Guestbook entity:
+3.  Add the audit fields as you did with the `Guestbook` entity:
 
         <column name="companyId" type="long" />
         <column name="userId" type="long" />
@@ -94,22 +98,20 @@ The Guestbook entity is finished for now; next, you'll create the Entry entity.
         <column name="createDate" type="Date" />
         <column name="modifiedDate" type="Date" />
 
-4.  Add the fields that define a Guestbook entry: 
+4.  Add the fields that define an `Entry`: 
 
         <column name="name" type="String" />
         <column name="email" type="String" />
         <column name="message" type="String" />
         <column name="guestbookId" type="long" />
 
-    The `name`, `email`, and `message` fields comprise a Guestbook entry: the
-    name of the person creating the entry, his/her email address, and the
-    Guestbook message. The `guestbookId` is assigned automatically by code
-    you'll write, and is a foreign key to the Guestbook to which particular
-    entries belong. Note that the design of the Guestbook application allows
-    users to be anonymous, so they can enter their names and email address
-    manually. 
+    The `name`, `email`, and `message` fields comprise an `Entry`. These fields 
+    define the name of the person creating the entry, their email address, and 
+    the Guestbook message, respectively. The `guestbookId` is assigned 
+    automatically by code you'll write, and is a `Guestbook` foreign key. This 
+    ties the `Entry` to a specific `Guestbook`. 
 
-5.  Then add your finder and closing entity tag:
+5.  Add your finder and closing entity tag:
 
             <finder name="G_G" return-type="Collection">
                 <finder-column name="groupId" />
@@ -117,24 +119,23 @@ The Guestbook entity is finished for now; next, you'll create the Entry entity.
             </finder>
         </entity>
 
-    In this example, you've defined a finder that gets Guestbook entries by
-    `groupId` and `guestbookId`. The `groupId` corresponds to the
+    Here, you define a finder that gets guestbook entries by `groupId` and 
+    `guestbookId`. As before, the `groupId` corresponds to the
     [site](/discover/portal/-/knowledge_base/7-0/starting-site-development) the
-    application is on, and the `guestbookId` defines which guestbook the entries
-    come from. It returns a Collection of Guestbooks based on the Site
-    (identified by the `groupId`) where the Guestbooks were created.
+    application is on. The `guestbookId` defines the guestbook the entries come 
+    from. This finder returns a `Collection` of entries. 
 
-6.  Finally define your exception types and close out the Service Builder tag:
-	 
+6.  Define your exception types outside the `<entity>` tags, just before the 
+    closing `</service-builder>` tag: 
+
         <exceptions>
-          <exception>EntryEmail</exception>
-          <exception>EntryMessage</exception>
-          <exception>EntryName</exception>
-          <exception>GuestbookName</exception>
+            <exception>EntryEmail</exception>
+            <exception>EntryMessage</exception>
+            <exception>EntryName</exception>
+            <exception>GuestbookName</exception>
         </exceptions>
-        </service-builder>
-	
-	These generate exception classes you'll use later in try/catch statements. 
+
+    These generate exception classes you'll use later in try/catch statements. 
 
 7.  Save your `service.xml` file.
 
@@ -146,27 +147,33 @@ persistence layers!
 
 2.  Run `buildService` by right-clicking it and selecting *Run Gradle Tasks*.
     Make sure you're connected to the Internet, as Gradle downloads dependencies
-    if this is the first time you're running it. 
+    the first time you run it. 
 
-4.  Right click on the `guestbook-service` module and select *Gradle* &rarr;
-    *Refresh Gradle Project*.
+3.  In the Project Explorer, right-click the `guestbook-service` module and 
+    select *Refresh*. Repeat this step for the `guestbook-api` module. This 
+    ensures that the new classes and interfaces generated by Service Builder 
+    show up in @ide@.
+
+4.  In the Project Explorer, right-click the `guestbook-service` module and 
+    select *Gradle* &rarr; *Refresh Gradle Project*. Repeat this step for the 
+    `guestbook-api` module. This ensures that your modules' Gradle dependencies 
+    are up to date. 
 
 Service Builder is based on a design philosophy called loose coupling. It
 generates three layers of your application: the model, the service, and the
 persistence layers. Loose coupling means you can swap out the persistence layer
-with little to no change in the model and service layers. The model is contained
-in the `-api` module, and the service and persistence layers are contained in
-the `-service` module.
+with little to no change in the model and service layers. The model is in the 
+`-api` module, and the service and persistence layers are in the `-service` 
+module. 
 
 ![Figure X: The Model, Service, and Persistence Layer.](../../../images/model-service-persistence.png)
 
 Each layer is implemented using Java Interfaces and implementations of those
-interfaces. Rather than have one Entry class that represents your model, Service
-Builder generates a system of classes that include an `Guestbook` interface, an
-`GuestbookBaseImpl` abstract class for Service Builder to manage, and an
-`GuestbookImpl` class that you can customize. This design gains you the
-flexibility to customize your model, while Service Builder can generate code
-that's tedious for you to write. That's why Service Builder is a code generator
-for code generator haters. 
+interfaces. Rather than have one `Entry` class that represents your model, 
+Service Builder generates a system of classes that include a `Guestbook` 
+interface, a `GuestbookBaseImpl` abstract class that Service Builder manages, 
+and a `GuestbookImpl` class that you can customize. This design lets you 
+customize your model, while Service Builder generates code that's tedious to 
+write. That's why Service Builder is a code generator for code generator haters. 
 
-Next you need to create the service implementations.
+Next, you'll create the service implementations. 
