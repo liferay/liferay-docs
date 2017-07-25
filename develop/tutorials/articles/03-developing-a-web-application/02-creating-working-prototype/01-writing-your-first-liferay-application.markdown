@@ -42,7 +42,7 @@ instructions to create your first Liferay Module Project:
 2.  Complete the first screen of the wizard with the following information: 
 
     - Enter `guestbook-web` for the Project name. 
-    - Use the `gradle-module` Build type.
+    - Use the *Gradle* Build type.
     - Select `mvc-portlet` for the Project Template. 
 
     Click *Next*. 
