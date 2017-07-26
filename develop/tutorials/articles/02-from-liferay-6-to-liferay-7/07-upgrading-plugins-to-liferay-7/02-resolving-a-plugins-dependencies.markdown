@@ -332,8 +332,18 @@ Experience Management App Suite is already installed (which is the case for a
 [App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps) 
 is a sure-fire way to verify existing module installations. 
 
+## Using @product@'s Tag Library Definitions [](id=using-portals-tag-library-definitions)
+
+Before adding Tag Library Definition (TLD) files to your plugin, check @product@
+for them. The @product@ web application folder `WEB-INF/TLD` has over twenty
+TLDs, including Struts TLDs. 
+
+You can use @product@'s TLDs in a traditional plugin by adding them to the
+`portal-dependency-tlds` property in the plugin's
+`liferay-plugin-package.properties` file. 
+
 Way to go! You've fixed class imports and resolved dependencies on all the 
-modules your plugin uses. 
+modules and tag libraries your plugin uses. 
 
 ## Related Topics [](id=related-topics)
 
