@@ -78,6 +78,15 @@ public class CheckLinks {
 		System.out.println("\nTotal Broken Links: " + resultsNumber);
 	}
 
+	/**
+	 * Returns <code>true</code> if the URL is valid.
+	 *
+	 * @param  line the line containing the URL
+	 * @param  primaryHeader the primary header ID
+	 * @param  secondaryHeader the secondary header ID
+	 * @return <code>true</code> if the URL is valid; <code>false</code>
+	 *         otherwise
+	 */
 	private static boolean isURLValid(String line, String primaryHeader, String secondaryHeader) {
 
 		boolean validURL = false;
@@ -109,6 +118,33 @@ public class CheckLinks {
 		return validURL;
 	}
 
+	/**
+	 * Returns the header ID contained in the given line. For example, the
+	 * following line:
+	 * 
+	 * <p>
+	 * <pre>
+	 * <code>
+	 * [here](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+	 * </code>
+	 * </pre>
+	 * </p>
+	 *
+	 * returns
+	 *
+	 * <p>
+	 * <pre>
+	 * <code>
+	 * installing-liferay-portal#liferay-home
+	 * </code>
+	 * </pre>
+	 * </p>
+	 *
+	 * @param  line the line from which to extract the header
+	 * @param  article the article containing the line
+	 * @param  in the line number reader
+	 * @return the header ID
+	 */
 	private static String extractHeader(String line, File article, LineNumberReader in) {
 
 		int begIndex = line.lastIndexOf("/") + 1;
@@ -129,6 +165,15 @@ public class CheckLinks {
 		return header;
 	}
 
+	/**
+	 * Returns the headers (primary and secondary) of the given articles. The
+	 * headers are returned as an array list: primary headers contained in index
+	 * <code>0</code> and secondary headers contained in index <code>1</code>.
+	 *
+	 * @param  articles the articles for which to find headers
+	 * @return the primary and secondary headers
+	 * @throws IOException if an IO exception occurred
+	 */
 	private static ArrayList<List<String>> findHeaders(List<File> articles) throws IOException {
 
 		List<String> primaryHeaders2 = new ArrayList<String>();
@@ -166,6 +211,13 @@ public class CheckLinks {
 		return headers;
 	}
 
+	/**
+	 * Returns the Markdown articles contained in the given path.
+	 *
+	 * @param  path the partial path for the articles (e.g.,
+	 *         <code>develop/tutorials</code>
+	 * @return the Markdown articles
+	 */
 	private static List<File> findArticles(String path) {
 
 		File dir = new File("../../" + path + "/articles");
@@ -230,6 +282,13 @@ public class CheckLinks {
 		}
 	}
 
+	/**
+	 * Returns the Markdown articles located in the current directory.
+	 *
+	 * @param  articleDir the current directory from which the Ant task was
+	 *         executed
+	 * @return the current directory's Markdown articles
+	 */
 	private static List<File> findCurrentDirArticles(File articleDir) {
 
 		File[] articleDirFiles = articleDir.listFiles();
@@ -260,6 +319,13 @@ public class CheckLinks {
 		return articles;
 	}
 
+	/**
+	 * Returns all the possible referenced headers. This method scans the
+	 * current line and assigns it to the appropriate header list.
+	 *
+	 * @param  line the line containing a relative URL
+	 * @return the referenced headers
+	 */
 	private static ArrayList<List<String>> setDirHeaders(String line) {
 
 		ArrayList<List<String>> headers = new ArrayList<List<String>>();
