@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "2.2.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "3.0.0"
     }
 
     repositories {
@@ -77,13 +77,14 @@ allprojects {
 
 ## Tasks [](id=tasks)
 
-The plugin adds four tasks to your project:
+The plugin adds a series of tasks to your project:
 
 Name | Depends On | Type | Description
 ---- | ---------- | ---- | -----------
 `cleanNPM` | \- | [`Delete`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Delete.html) | Deletes the `node_modules` directory and the `npm-shrinkwrap.json` file from the project, if present.
 <a name="downloadnode"></a>`downloadNode` | \- | [`DownloadNodeTask`](#downloadnodetask) | Downloads and unpacks the local Node.js distribution for the project. If `node.download` is `false`, this task is disabled.
-`npmInstall` | `downloadNode` | [`NpmInstallTask`](#npminstalltask) | Runs `npm install` to install the dependencies declared in the project's `package.json` file, if present.
+`npmInstall` | `downloadNode` | [`NpmInstallTask`](#npminstalltask) | Runs `npm install` to install the dependencies declared in the project's `package.json` file, if present. By default, the task is [configured](#npminstallretries) to run `npm install` two more times if it fails.
+[`npmRun${script}`](#tasks-npmrunscript) | `npmInstall` | [`ExecuteNpmTask`](#executenpmtask) | Runs the `${script}` NPM script.
 `npmShrinkwrap` | `cleanNPM`, `npmInstall` | [`NpmShrinkwrapTask`](#npmshrinkwraptask) | Locks down the versions of a package's dependencies in order to control which dependency versions are used.
 
 ### DownloadNodeTask [](id=downloadnodetask)
@@ -206,7 +207,6 @@ Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `nodeModulesCacheDir` | `File` | `null` | <p>The directory where `node_modules` directories are cached. By setting this property, it is possible to cache the `node_modules` directory of a project and avoid unnecessary invocations of `npm install`, useful especially in Continuous Integration environments.</p><p>The `node_modules` directory is cached based on the content of the project's `npm-shrinkwrap.json` (or `package.json` if absent). Therefore, if `NpmInstallTask` tasks in multiple projects are configured with the same `nodeModulesCacheDir`, and their `npm-shrinkwrap.json` or `package.json` declare the same dependencies, their `node_modules` caches will be shared.</p><p>This feature is not available if the [`com.liferay.cache`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-cache) plugin is applied.</p>
 `nodeModulesCacheNativeSync` | `boolean` | `true` | Whether to use `rsync` (on Linux/macOS) or `robocopy` (on Windows) to cache and restore the `node_modules` directory. If `nodeModulesCacheDir` is not set, this property has no effect.
-`nodeModulesCacheRemoveBinDirs` | `boolean` | `true` | Whether to remove `.bin` directories while caching and restoring the `node_modules` directory. If `nodeModulesCacheDir` is not set, this property has no effect.
 `removeShrinkwrappedUrls` | `boolean` | `true` if the [registry](#registry) property has a value, `false` otherwise. | Whether to temporarily remove all the hard-coded URLs in the `from` and `resolved` fields of the `npm-shinkwrap.json` file before invoking `npm install`. This way, it is possible to force NPM to download all dependencies from a custom registry declared in the [`registry`](#registry) property.
 
 The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
@@ -270,3 +270,20 @@ Property Name | Type | Default Value | Description
 `npmEmailAddress` | `String` | `null` | The email address of the npmjs.com user that publishes the package.
 `npmPassword` | `String` | `null` | The password of the npmjs.com user that publishes the package.
 `npmUserName` | `String` | `null` | The name of the npmjs.com user that publishes the package.
+
+### npmRun${script} Task [](id=npmrunscript-task)
+
+For each [script](https://docs.npmjs.com/misc/scripts) declared in the
+`package.json` file of the project, one task `npmRun${script}` of type
+[`ExecuteNpmTask`](#executenpmtask) is added. Each of these tasks is
+automatically configured with sensible defaults:
+
+Property Name | Default Value
+------------- | -------------
+`args` | `["run-script", "${script}"]`
+
+If the [`java`](https://docs.gradle.org/current/userguide/java_plugin.html)
+plugin is applied and the `package.json` file declares a script named `"build"`,
+then the script is executed before the `classes` task but after the
+[`processResources`](https://docs.gradle.org/4.0/userguide/java_plugin.html#sec:java_resources)
+task.

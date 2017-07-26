@@ -1,5 +1,9 @@
 # Writing Your First @product@ Application [](id=writing-your-first-liferay-application)
 
+<div class="learn-path-step">
+    <p>Developing Your First Portlet<br>Step 1 of 8</p>
+</div>
+
 It's easy to get started developing your first @product@ application. Here, 
 you'll learn step-by-step how to create your project and deploy your application 
 to @product@. Before you know it, you'll have your application deployed 

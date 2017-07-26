@@ -18,6 +18,7 @@ portlets:
 -   [GenericPortlet](upgrading-a-genericportlet)
 -   [Servlet-based portlet](upgrading-a-servlet-based-portlet)
 -   [Liferay MVC Portlet](upgrading-a-liferay-mvc-portlet)
+-   [Liferay JSF Portlet](upgrading-a-liferay-jsf-portlet)
 
 <!-- Uncomment each of the following bullets when their tutorial's available
 -   Upgrading a Service Builder Portlet

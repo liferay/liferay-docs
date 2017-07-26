@@ -1,5 +1,9 @@
 # Displaying Guestbook Entries [](id=viewing-guestbook-entries)
 
+<div class="learn-path-step">
+    <p>Developing Your First Portlet<br>Step 8 of 8</p>
+</div>
+
 To display guestbook entries, you must do the reverse of what you did to store
 them: retrieve them from portlet preferences, loop through them, and present
 them on the page. The best way to do this with MVC Portlet is to use the 
