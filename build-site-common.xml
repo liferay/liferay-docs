@@ -478,7 +478,7 @@
 
 	<target name="check-links" description="Checks URL links to see if they're broken.">
 		<java
-			classname="com.liferay.documentation.util.ScanLinks"
+			classname="com.liferay.documentation.util.CheckLinks"
 			classpathref="project.classpath"
 			failonerror="false"
 			fork="true"
