@@ -21,7 +21,7 @@ public class CheckLinks {
 
 		List<File> currentArticles = findCurrentDirArticles(currentArticleDir);
 
-		findReferencedDirArticles(articleDirs);
+		assignReferencedDirArticles(articleDirs);
 
 		userGuideHeaders = findHeaders(userGuideArticles);
 		adminGuideHeaders = findHeaders(adminGuideArticles);
@@ -43,33 +43,33 @@ public class CheckLinks {
 
 					String primaryHeader = null;
 					validURL = true;
-					
+
 					if (header.contains("#")) {
 						String[] splitHeaders = header.split("#");
-						
+
 						primaryHeader = splitHeaders[0];
 						String secondaryHeader = splitHeaders[1];
-						
+
 						validURL = isURLValid(line, primaryHeader, secondaryHeader);
 					}
 					else if (header.equals("")) {
 						continue;
 					}
 					else {
-						
+
 						primaryHeader = header;
 						validURL = isURLValid(line, primaryHeader, null);
 					}
 
 					if (!validURL) {
 						resultsNumber = resultsNumber + 1;
-						
+
 						System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
 								article.getName() + ":" + in.getLineNumber() + "\n" +
 								" Line: " + line);
-						
+
 					}
-					
+
 				}
 			}
 
@@ -79,43 +79,70 @@ public class CheckLinks {
 	}
 
 	/**
-	 * Returns <code>true</code> if the URL is valid.
+	 * Returns all the possible referenced headers. This method scans the
+	 * current line and assigns it to the appropriate header list.
 	 *
-	 * @param  line the line containing the URL
-	 * @param  primaryHeader the primary header ID
-	 * @param  secondaryHeader the secondary header ID
-	 * @return <code>true</code> if the URL is valid; <code>false</code>
-	 *         otherwise
+	 * @param  line the line containing a relative URL
+	 * @return the referenced headers
 	 */
-	private static boolean isURLValid(String line, String primaryHeader, String secondaryHeader) {
+	private static ArrayList<List<String>> assignDirHeaders(String line) {
 
-		boolean validURL = false;
 		ArrayList<List<String>> headers = new ArrayList<List<String>>();
 
-		headers = setDirHeaders(line);
-
-		// Only check 7.0 links at this time
-
-		if (line.contains("7-0")) {
-
-			if (Validator.isNull(secondaryHeader)) {
-
-				if (headers.get(0).contains(primaryHeader)) {
-					validURL = true;
-				}
-			}
-			else {
-				if (headers.get(0).contains(primaryHeader) &&
-						headers.get(1).contains(secondaryHeader)) {
-					validURL = true;
-				}
-			}
-		}
-		else {
-			validURL = true;
+		if (line.contains(userGuideDir)) {
+			headers = userGuideHeaders;
 		}
 
-		return validURL;
+		if (line.contains(adminGuideDir)) {
+			headers = adminGuideHeaders;
+		}
+
+		if (line.contains(userGuideReferenceDir)) {
+			headers = userGuideReferenceHeaders;
+		}
+
+		if (line.contains(tutorialDir)) {
+			headers = tutorialHeaders;
+		}
+
+		if (line.contains(devGuideReferenceDir)) {
+			headers = devGuideReferenceHeaders;
+		}
+
+		return headers;
+	}
+
+	/**
+	 * Finds the articles from other possible referenced directories and sets
+	 * them to the appropriate local variables.
+	 * 
+	 * @param dirs the popular directories residing in the
+	 *        <code>liferay-docs</code> repository
+	 */
+	private static void assignReferencedDirArticles(String[] dirs) {
+
+		for (String articleDir : articleDirs) {
+
+			if (articleDir.equals(userGuideDir)) {
+				userGuideArticles = findArticles(userGuideDir);
+			}
+
+			if (articleDir.equals(adminGuideDir)) {
+				adminGuideArticles = findArticles(adminGuideDir);
+			}
+
+			if (articleDir.equals(userGuideReferenceDir)) {
+				userGuideReferenceArticles = findArticles(userGuideReferenceDir);
+			}
+
+			if (articleDir.equals(tutorialDir)) {
+				tutorialArticles = findArticles(tutorialDir);
+			}
+
+			if (articleDir.equals(devGuideReferenceDir)) {
+				devGuideReferenceArticles = findArticles(devGuideReferenceDir);
+			}
+		}
 	}
 
 	/**
@@ -166,52 +193,6 @@ public class CheckLinks {
 	}
 
 	/**
-	 * Returns the headers (primary and secondary) of the given articles. The
-	 * headers are returned as an array list: primary headers contained in index
-	 * <code>0</code> and secondary headers contained in index <code>1</code>.
-	 *
-	 * @param  articles the articles for which to find headers
-	 * @return the primary and secondary headers
-	 * @throws IOException if an IO exception occurred
-	 */
-	private static ArrayList<List<String>> findHeaders(List<File> articles) throws IOException {
-
-		List<String> primaryHeaders2 = new ArrayList<String>();
-		List<String> secondaryHeaders2 = new ArrayList<String>();
-
-		for (File article : articles) {
-
-			LineNumberReader in = new LineNumberReader(new FileReader(article));
-			String line = null;
-
-			while ((line = in.readLine()) != null) {
-
-				if (line.contains("#") && line.contains("[](id=")) {
-
-					int begIndex = line.indexOf("[](id=") + 6;
-					int endIndex = line.lastIndexOf(")");
-					String header = line.substring(begIndex, endIndex);
-
-					if (line.contains("##")) {
-						secondaryHeaders2.add(header);
-					}
-					else {
-						primaryHeaders2.add(header);
-					}
-				}
-
-			}
-			in.close();
-		}
-
-		ArrayList<List<String>> headers = new ArrayList<List<String>>();
-		headers.add(primaryHeaders2);
-		headers.add(secondaryHeaders2);
-
-		return headers;
-	}
-
-	/**
 	 * Returns the Markdown articles contained in the given path.
 	 *
 	 * @param  path the partial path for the articles (e.g.,
@@ -247,39 +228,6 @@ public class CheckLinks {
 		}
 
 		return articles;
-	}
-
-	/**
-	 * Finds the articles from other possible referenced directories and sets
-	 * them to the appropriate local variables.
-	 * 
-	 * @param dirs the popular directories residing in the
-	 *        <code>liferay-docs</code> repository
-	 */
-	private static void findReferencedDirArticles(String[] dirs) {
-
-		for (String articleDir : articleDirs) {
-
-			if (articleDir.equals(userGuideDir)) {
-				userGuideArticles = findArticles(userGuideDir);
-			}
-
-			if (articleDir.equals(adminGuideDir)) {
-				adminGuideArticles = findArticles(adminGuideDir);
-			}
-
-			if (articleDir.equals(userGuideReferenceDir)) {
-				userGuideReferenceArticles = findArticles(userGuideReferenceDir);
-			}
-
-			if (articleDir.equals(tutorialDir)) {
-				tutorialArticles = findArticles(tutorialDir);
-			}
-
-			if (articleDir.equals(devGuideReferenceDir)) {
-				devGuideReferenceArticles = findArticles(devGuideReferenceDir);
-			}
-		}
 	}
 
 	/**
@@ -320,37 +268,89 @@ public class CheckLinks {
 	}
 
 	/**
-	 * Returns all the possible referenced headers. This method scans the
-	 * current line and assigns it to the appropriate header list.
+	 * Returns the headers (primary and secondary) of the given articles. The
+	 * headers are returned as an array list: primary headers contained in index
+	 * <code>0</code> and secondary headers contained in index <code>1</code>.
 	 *
-	 * @param  line the line containing a relative URL
-	 * @return the referenced headers
+	 * @param  articles the articles for which to find headers
+	 * @return the primary and secondary headers
+	 * @throws IOException if an IO exception occurred
 	 */
-	private static ArrayList<List<String>> setDirHeaders(String line) {
+	private static ArrayList<List<String>> findHeaders(List<File> articles) throws IOException {
+
+		List<String> primaryHeaders = new ArrayList<String>();
+		List<String> secondaryHeaders = new ArrayList<String>();
+
+		for (File article : articles) {
+
+			LineNumberReader in = new LineNumberReader(new FileReader(article));
+			String line = null;
+
+			while ((line = in.readLine()) != null) {
+
+				if (line.contains("#") && line.contains("[](id=")) {
+
+					int begIndex = line.indexOf("[](id=") + 6;
+					int endIndex = line.lastIndexOf(")");
+					String header = line.substring(begIndex, endIndex);
+
+					if (line.contains("##")) {
+						secondaryHeaders.add(header);
+					}
+					else {
+						primaryHeaders.add(header);
+					}
+				}
+
+			}
+			in.close();
+		}
 
 		ArrayList<List<String>> headers = new ArrayList<List<String>>();
-
-		if (line.contains(userGuideDir)) {
-			headers = userGuideHeaders;
-		}
-
-		if (line.contains(adminGuideDir)) {
-			headers = adminGuideHeaders;
-		}
-
-		if (line.contains(userGuideReferenceDir)) {
-			headers = userGuideReferenceHeaders;
-		}
-
-		if (line.contains(tutorialDir)) {
-			headers = tutorialHeaders;
-		}
-
-		if (line.contains(devGuideReferenceDir)) {
-			headers = devGuideReferenceHeaders;
-		}
+		headers.add(primaryHeaders);
+		headers.add(secondaryHeaders);
 
 		return headers;
+	}
+
+	/**
+	 * Returns <code>true</code> if the URL is valid.
+	 *
+	 * @param  line the line containing the URL
+	 * @param  primaryHeader the primary header ID
+	 * @param  secondaryHeader the secondary header ID
+	 * @return <code>true</code> if the URL is valid; <code>false</code>
+	 *         otherwise
+	 */
+	private static boolean isURLValid(String line, String primaryHeader, String secondaryHeader) {
+
+		boolean validURL = false;
+		ArrayList<List<String>> headers = new ArrayList<List<String>>();
+
+		headers = assignDirHeaders(line);
+
+		// Only check 7.0 links at this time
+
+		if (line.contains("7-0")) {
+
+			if (Validator.isNull(secondaryHeader)) {
+
+				if (headers.get(0).contains(primaryHeader)) {
+					validURL = true;
+				}
+			}
+			else {
+				if (headers.get(0).contains(primaryHeader) &&
+						headers.get(1).contains(secondaryHeader)) {
+					validURL = true;
+				}
+			}
+		}
+		else {
+			validURL = true;
+		}
+
+		return validURL;
 	}
 
 	private static boolean validURL;
@@ -371,7 +371,7 @@ public class CheckLinks {
 	private static ArrayList<List<String>> userGuideReferenceHeaders = new ArrayList<List<String>>();
 
 	// Dev Guide
-	
+
 	private static String tutorialDir = "develop/tutorials";
 	private static List<File> tutorialArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> tutorialHeaders = new ArrayList<List<String>>();
