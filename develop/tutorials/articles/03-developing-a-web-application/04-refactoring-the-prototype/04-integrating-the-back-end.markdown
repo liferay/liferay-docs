@@ -1,6 +1,6 @@
 # Integrating the New Back-end 
 
-It's a good practice to start with a working prototype as a proof of concept,
+It's a good practice to start with a working prototype as a proof of concept, 
 but eventually that prototype must transform into a real application. Up to this
 point, you've made all the preparations to do that, and now it's time to replace
 the prototype back-end with the real, database-driven back-end you created with
@@ -15,11 +15,13 @@ you want to do is remove it, because Service Builder generated a new one:
 2.  Delete it. You'll see errors in your project, but that's because you haven't
     replaced the model yet. 
 
-Now you get to do some dependency management. You must make the web module aware
-of the service modules so the web can access their services. Then you can update
-the `addEntry` method to use the new services.
+Now you get to do some dependency management. For the web module to access the 
+generated services, you must make it aware of the api and service modules. Then 
+you can update the `addEntry` method in `GuestbookWebPortlet` to use the new 
+services: 
 
-1.  First, open `guestbook-web`'s `build.gradle` file and add these dependencies:
+1.  First, open `guestbook-web`'s `build.gradle` file and add these 
+    dependencies:
 
         compileOnly project(":modules:guestbook:guestbook-api")
         compileOnly project(":modules:guestbook:guestbook-service")
@@ -27,10 +29,10 @@ the `addEntry` method to use the new services.
 2.  Right-click on the `guestbook-web` project and select *Gradle* &rarr;
     *Refresh Gradle Project*. 
 
-3.  The first thing you'll do is add a *reference* to the Service Builder
-    services you need. To do this, you need only add them as class variables
-    with an `@Reference` annotation. Open `GuestbookPortlet.java` and add these
-    references to the bottom of the file: 
+3.  Now you must add *references* to the Service Builder services you need. To 
+    do this, add them as class variables with `@Reference` annotations on their 
+    setter methods. Open `GuestbookWebPortlet` and add these references to the 
+    bottom of the file: 
 
             @Reference(unbind = "-")
             protected void setEntryService(EntryLocalService entryLocalService) {
@@ -52,7 +54,7 @@ the `addEntry` method to use the new services.
     services: the references can die with the class during garbage collection
     when they're no longer needed. 
 
-4.  Now you can modify the `addEntry` method: 
+4.  Now you can modify the `addEntry` method to use these service references: 
 
         public void addEntry(ActionRequest request, ActionResponse response)
                     throws PortalException {
@@ -66,32 +68,32 @@ the `addEntry` method to use the new services.
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
                 long entryId = ParamUtil.getLong(request, "entryId");
 
-                    try {
-                        _entryLocalService.addEntry(
-                            serviceContext.getUserId(), guestbookId, userName, email,
-                            message, serviceContext);
+                try {
+                    _entryLocalService.addEntry(
+                        serviceContext.getUserId(), guestbookId, userName, email,
+                        message, serviceContext);
 
                         response.setRenderParameter(
                             "guestbookId", Long.toString(guestbookId));
-                    }
-                    catch (Exception e) {
-                        Logger.getLogger(GuestbookPortlet.class.getName()).log(
-                        Level.SEVERE, null, e);
+                }
+                catch (Exception e) {
+                    Logger.getLogger(GuestbookPortlet.class.getName()).log(
+                    Level.SEVERE, null, e);
 
-                        PortalUtil.copyRequestParameters(request, response);
-                        response.setRenderParameter("mvcPath", "/guestbookwebportlet/edit_entry.jsp");
-                        }
-            }
+                    PortalUtil.copyRequestParameters(request, response);
+                    response.setRenderParameter("mvcPath", "/guestbookwebportlet/edit_entry.jsp");
+                }
+        }
 
-    The `addEntry` method gets the name, message, and email fields that the 
-    user submits through the JSP and passes them on to the service to be stored 
-    as entry data. It also sets a render parameter with the Guestbook ID so the
+    This `addEntry` method gets the name, message, and email fields that the 
+    user submits in the JSP and passes them to the service to be stored as entry 
+    data. It also sets a render parameter with the Guestbook ID so the 
     application can display the guestbook's entries after this one has been
     added. This is all done in a `try...catch` statement.
  
-5. Now add `deleteEntry`, which you didn't have before: 
+5.  Now add `deleteEntry`, which you didn't have before: 
 
-            public void deleteEntry(ActionRequest request, ActionResponse response) {
+        public void deleteEntry(ActionRequest request, ActionResponse response) {
                 long entryId = ParamUtil.getLong(request, "entryId");
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
 
@@ -106,18 +108,16 @@ the `addEntry` method to use the new services.
                 catch (Exception e) {
                     Logger.getLogger(GuestbookPortlet.class.getName()).log(
                         Level.SEVERE, null, e);
-   
                 }
-            }
+        }
 
     This method retrieves the entry object (using its ID from the request) and
     calls the service to delete it.
 
-6. Next you must replace `render`.
+6.  Next you must replace the `render` method: 
 
-            @Override
-            public void render(
-                    RenderRequest renderRequest, RenderResponse renderResponse)
+        @Override
+        public void render(RenderRequest renderRequest, RenderResponse renderResponse)
                 throws IOException, PortletException {
 
                 try {
@@ -149,15 +149,16 @@ the `addEntry` method to use the new services.
                 }
 
                 super.render(renderRequest, renderResponse);
-            }
+        }
 
-    The new `render` method checks if any guestbooks currently exist for the 
-    current site. If there aren't any, it creates one. Either way, it grabs the
-    first one so its entries can be displayed by your view layer. 
+    This new `render` method checks for any guestbooks in the current site. If 
+    there aren't any, it creates one. Either way, it grabs the first guestbook 
+    so its entries can be displayed by your view layer. 
 
-7.  Remove the `parseEntries` method. 
+7.  Remove the `parseEntries` method. It's a remnant of the prototype 
+    application. 
 
-8.  Hit Ctrl-Shift-O to fix your imports. 
+8.  Hit Ctrl-Shift-O to organize your imports. 
 
-Awesome! You've updated your controller. Next, you'll tackle the view. 
-
+Awesome! You've updated your controller to use services. Next, you'll tackle the 
+view. 
