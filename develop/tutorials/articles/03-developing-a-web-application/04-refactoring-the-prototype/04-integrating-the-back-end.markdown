@@ -1,5 +1,9 @@
 # Integrating the New Back-end 
 
+<div class="learn-path-step">
+    <p>Refactoring the Prototype<br>Step 4 of 6</p>
+</div>
+
 It's a good practice to start with a working prototype as a proof of concept, 
 but eventually that prototype must transform into a real application. Up to this
 point, you've made all the preparations to do that, and now it's time to replace

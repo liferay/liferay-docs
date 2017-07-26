@@ -26,3 +26,5 @@ application, you'll make these changes:
 -   Update the view so it can display multiple Guestbooks in tabs
 
 Ready to begin? 
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/organizing-folders-for-larger-applications">Let's Go!<span class="icon-circle-arrow-right"></span></a>

@@ -1,5 +1,9 @@
 # Creating Portlet Keys
 
+<div class="learn-path-step">
+    <p>Refactoring the Prototype<br>Step 3 of 6</p>
+</div>
+
 `PortletKeys` let you manage important things like the portlet name or other 
 repeatable, commonly used variables in one place. This way, if you need to 
 change the portlet's name, you can do it in one place, and then reference it in 
