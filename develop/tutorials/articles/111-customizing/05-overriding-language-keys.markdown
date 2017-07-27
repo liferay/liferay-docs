@@ -194,11 +194,6 @@ from the method's parameter to instantiate the
 
 Register the resource bundle loader in the OSGi runtime with three properties:
 
-    -  The symbolic name of the target module (the module whose keys you're
-       overriding).
-        
-            bundle.symbolic.name=com.liferay.blogs.web
-
     -  The resource bundle base name that points to your language files.
 
             resource.bundle.base.name=content.Language
@@ -210,7 +205,6 @@ Register the resource bundle loader in the OSGi runtime with three properties:
         @Component(
             immediate = true,
             property = {
-                "bundle.symbolic.name=com.liferay.blogs.web",
                 "resource.bundle.base.name=content.Language",
                 "servlet.context.name=blogs-web"
             }
