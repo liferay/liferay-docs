@@ -35,6 +35,10 @@ tutorial for more information.
 
 $$$
 
+You can reference a sample Control Menu Entry by visiting the
+[Control Menu Entry](/develop/reference/-/knowledge_base/7-0/control-menu-entry)
+article.
+
 In this tutorial, you'll learn how to create your own entries to customize the
 Control Menu. Make sure to read the
 [Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-categories)
@@ -43,7 +47,10 @@ creating a panel category. You'll begin by creating an entry for the Control
 Menu.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
+   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). Your module
+   must contain a Java class, `bnd.bnd` file, and build file (e.g.,
+   `build.gradle` or `pom.xml`). You'll create your Java class next if your
+   project does not already define one.
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, give your
@@ -98,11 +105,13 @@ Menu.
 5. Define your Control Menu entry. You'll explore two examples to discover some
    options you have available for defining your entry. First, let's take a look
    at a simple example for providing text and an icon. The
-   `IndexingProductNavigationControlMenuEntry` extends the
+   [IndexingProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/internal/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java)
+   extends the
    `BaseProductNavigationControlMenuEntry` class and is used when Liferay is
    indexing. For this process, the indexing entry is displayed in the *Tools*
    (middle) area of the Control Menu with a *Refresh* icon and text stating *The
-   Portal is currently indexing*. This is done by calling the following methods:
+   Portal is currently indexing*. The icon is defined by calling the following
+   method:
 
         @Override
         public String getIcon(HttpServletRequest request) {
@@ -134,6 +143,8 @@ Menu.
             return LanguageUtil.get(
                 resourceBundle, "the-portal-is-currently-reindexing");
         }
+
+    To do this, you'll need to create a `Language.properties` for your module.
 
     You also have the option to provide a Lexicon or CSS icon in your
     `*ControlMenuEntry`. To use a Lexicon icon, you should override the methods
@@ -172,9 +183,9 @@ Menu.
     [icons-font-awesome](http://liferay.github.io/lexicon/content/icons-font-awesome/)
     components, respectively.
 
-    The `ProductMenuProductNavigationControlMenuEntry` is a more advanced
-    example. This entry displays in the *Sites* (left) area of the Control Menu,
-    but unlike the previous example, it extends the
+    The [ProductMenuProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/java/com/liferay/product/navigation/product/menu/web/internal/product/navigation/control/menu/ProductMenuProductNavigationControlMenuEntry.java)
+    is a more advanced example. This entry displays in the *Sites* (left) area
+    of the Control Menu, but unlike the previous example, it extends the
     `BaseJSPProductNavigationControlMenuEntry` class. This provides several more
     methods that lets you use JSPs to define your entry's UI. There are two
     methods to pay special attention to:
@@ -200,8 +211,7 @@ Menu.
 
     Lastly, if you're planning on providing functionality that will stay
     exclusively inside the Control Menu, the
-    `StagingProductNavigationControlMenuEntry` class class calls its JSP like
-    this:
+    `StagingProductNavigationControlMenuEntry` class calls its JSP like this:
 
         @Override
         public String getIconJspPath() {
@@ -279,6 +289,22 @@ Menu.
 
             return true;
         }
+
+7. Define the dependencies for your Control Menu Entry. This should be completed
+   in your build file (e.g., `build.grade` or `pom.xml`). For example, some
+   popular dependencies (in Gradle format) are defined below:
+
+        dependencies {
+            compileOnly group: "com.liferay", name: "com.liferay.product.navigation.control.menu.api", version: "[VERSION]"
+            compile group: "com.liferay", name: "com.liferay.product.navigation.taglib", version: "[VERSION]"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "[VERSION]"
+            compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "[VERSION]"
+            compile group: "javax.servlet.jsp", name: "javax.servlet.jsp-api", version: "[VERSION]"
+            compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "[VERSION]"
+        }
+
+    Your project may require more dependencies, depending on your module's
+    functionality.
 
 Excellent! You've created your entry in one of the three default panel
 categories in the Control Menu. You learned a basic way and an advanced way of

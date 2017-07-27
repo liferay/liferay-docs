@@ -13,7 +13,7 @@ sample to work properly. For more information on using Spring MVC portlets in
 @product@, visit the
 [Spring MVC](/develop/tutorials/-/knowledge_base/7-0/spring-mvc) tutorial.
 
-![Figure 1: Click *Add* and fill out the sample fields to generate a custom entry in the portlet's table.](../../images/spring-mvc-portlet.png)
+![Figure 1: Click *Add* and fill out the sample fields to generate a custom entry in the portlet's table.](../../../images/spring-mvc-portlet.png)
 
 You can easily modify this sample by customizing its
 `SpringMVCPortletViewController` Java class or any of its JSPs stored in the
