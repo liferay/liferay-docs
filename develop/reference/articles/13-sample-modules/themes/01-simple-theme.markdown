@@ -8,7 +8,7 @@ When deploying this sample with no customizations, a theme based off of the
 [Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
 tutorial.
 
-![Figure 1: A theme based off of the Styled base theme is created when the Theme Blade sample is deployed to Liferay Portal.](../../images/theme.png)
+![Figure 1: A theme based off of the Styled base theme is created when the Theme Blade sample is deployed to Liferay Portal.](../../../images/theme.png)
 
 To modify this sample, add the `images`, `js`, or `templates` directory, along
 with your modified files, to the `src/main/webapp` directory. The sample already

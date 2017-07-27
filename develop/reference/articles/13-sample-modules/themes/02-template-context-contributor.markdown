@@ -9,7 +9,7 @@ but don't have access to the common objects offered to those working with JSPs.
 Context contributors allow non-JSP developers an easy way to inject variables
 into their Liferay templates. For more information on context contributors and
 how to create them in @product@, visit the
-[Context Contributors](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/context-contributors)
+[Context Contributors](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
 tutorial.
 
 You can easily modify this sample by customizing its

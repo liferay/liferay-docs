@@ -8,21 +8,21 @@ Media Admin portlet and the Documents and Media portlet. This sample creates a
 file name, type, version, etc.). For example, the Admin portlet provides the new
 option as illustrated in the images below:
 
-![Figure 1: The new *Blade Basic Info* option is available from the entry's Options menu.](../../images/documents-and-media-admin-portlet.png)
+![Figure 1: The new *Blade Basic Info* option is available from the entry's Options menu.](../../../images/documents-and-media-admin-portlet.png)
 
-![Figure 2: The new option is also available from the portlet's Document Details.](../../images/documents-and-media-admin-portlet-detail.png)
+![Figure 2: The new option is also available from the portlet's Document Details.](../../../images/documents-and-media-admin-portlet-detail.png)
 
 Likewise, the Documents and Media portlet provides the same option after
 selecting `Show Actions` from the portlet's `Configuration` menu.
 
-![Figure 3: You can access the new *Blade Basic Info* option from the Documents and Media portlet added to a page.](../../images/documents-and-media-portlet.png)
+![Figure 3: You can access the new *Blade Basic Info* option from the Documents and Media portlet added to a page.](../../../images/documents-and-media-portlet.png)
 
-![Figure 4: The Documents And Media portlet provides the option from its Document Detail too.](../../images/documents-and-media-portlet-detail.png)
+![Figure 4: The Documents And Media portlet provides the option from its Document Detail too.](../../../images/documents-and-media-portlet-detail.png)
 
 There are four Java classes used in this sample:
 
 - `BladeActionConfigurationIcon`: Adds the new context menu option to the
-   Document Detail screen options (![Options](../../images/icon-options.png))
+   Document Detail screen options (![Options](../../../images/icon-options.png))
    (top right corner) of the Documents and Media Admin portlet. See the
    [Configuring Your App's Actions Menu](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app#configuring-your-apps-actions-menu)
    tutorial for more details.

@@ -46,7 +46,7 @@ choose which ones to deploy and use.
 2. Adoption of modern OSGi standards: OSGi is a set of standards for
 building modular systems. It's very powerful. Although it was previously
 difficult to learn and use, its modernized standards, such as Declarative
-Services, have made learning and using it much much easier.
+Services, have made learning and using it much easier.
 
 3. Core Public APIs are provided through portal-kernel (previously known
 as portal-service); all other public APIs are provided by their own modules.
@@ -54,11 +54,13 @@ as portal-service); all other public APIs are provided by their own modules.
 4. You can reuse modules and libraries, and manage the dependencies among
 them.
 
-5. Registration of classes implementing extension points is now simpler
-and more consistent; it's based on the standard `@Component` annotation instead
-of declarations it in `portal.properties` (in some cases) or `portlet.xml` (in
-some others). Note, previous registration mechanisms have been preserved where
-possible.
+5. Registration of classes implementing extension points is now simpler and more
+consistent; it's based on the standard `@Component` annotation instead of
+declarations in `portal.properties` or `portlet.xml`. Note, previous
+registration mechanisms have been preserved where possible. See the
+[Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
+article to examine where extensions and configurations that have not kept
+backwards compatibility.
 
 6. Third party extensions and applications are now first-class citizens.
 Traditional plugins had some limitations that developments done in the core (or
