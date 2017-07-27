@@ -44,32 +44,32 @@ upgrade:
 
 Here's the Sample Struts portlet's folder structure:
 
-`sample-struts-portlet`
--   `docroot/`
-    -   `html/portlet/sample_struts_portlet/` &rarr; JSPs
-    -   `WEB-INF/`
-        -   `lib/` &rarr; Required third-party libraries unavailable in the @product@ system
-        -   `src/`
-            -   `com/liferay/samplestruts/model/` &rarr; Model classes
-            -   `com/liferay/samplestruts/servlet/` &rarr; Test servlet and servlet context listener
-            -   `com/liferay/samplestruts/struts/`
-                -   `action/` &rarr; `Action` classes that return View pages to the client
-                -   `form/` &rarr; `ActionForm` classes for model interaction
-                -   `render/` &rarr; `Action` classes that present additional pages and handle input
-                -   `SampleException.java` &rarr; Exception class
-            -   `content/test/` &rarr; Resource bundles
-            -   `META-INF/` &rarr; Javadoc
-        -   `tld/` &rarr; Tag library definitions
-        -   `liferay-display.xml` &rarr; Sets the application category
-        -   `liferay-plugin-package.properties` &rarr; Sets metadata and portal dependencies
-        -   `liferay-portlet.xml` &rarr; Maps descriptive role names to roles 
-        -   `liferay-releng.properties` &rarr; (internal) Release properties
-        -   `portlet.xml` &rarr; Defines the portlet and its initialization parameters and security roles
-        -   `struts-config.xml` &rarr; Struts configuration
-        -   `tiles-defs.xml` &rarr; Struts Tile definitions
-        -   `validation.xml` &rarr; Defines form inputs for validation
-        -   `validation-rules.xml` &rarr; Struts validation rules
-        -   `web.xml` &rarr; Web application descriptor
+-   `sample-struts-portlet`
+    -   `docroot/`
+        -   `html/portlet/sample_struts_portlet/` &rarr; JSPs
+        -   `WEB-INF/`
+            -   `lib/` &rarr; Required third-party libraries unavailable in the @product@ system
+            -   `src/`
+                -   `com/liferay/samplestruts/model/` &rarr; Model classes
+                -   `com/liferay/samplestruts/servlet/` &rarr; Test servlet and servlet context listener
+                -   `com/liferay/samplestruts/struts/`
+                    -   `action/` &rarr; `Action` classes that return View pages to the client
+                    -   `form/` &rarr; `ActionForm` classes for model interaction
+                    -   `render/` &rarr; `Action` classes that present additional pages and handle input
+                    -   `SampleException.java` &rarr; Exception class
+                -   `content/test/` &rarr; Resource bundles
+                -   `META-INF/` &rarr; Javadoc
+            -   `tld/` &rarr; Tag library definitions
+            -   `liferay-display.xml` &rarr; Sets the application category
+            -   `liferay-plugin-package.properties` &rarr; Sets metadata and portal dependencies
+            -   `liferay-portlet.xml` &rarr; Maps descriptive role names to roles 
+            -   `liferay-releng.properties` &rarr; (internal) Release properties
+            -   `portlet.xml` &rarr; Defines the portlet and its initialization parameters and security roles
+            -   `struts-config.xml` &rarr; Struts configuration
+            -   `tiles-defs.xml` &rarr; Struts Tile definitions
+            -   `validation.xml` &rarr; Defines form inputs for validation
+            -   `validation-rules.xml` &rarr; Struts validation rules
+            -   `web.xml` &rarr; Web application descriptor
     -   `build.xml` &rarr; Apache Ant build file
 
 Upgrading a Struts portlet involves these steps:
