@@ -74,9 +74,9 @@ Here's the Sample Struts portlet's folder structure:
 
 Upgrading a Struts portlet involves these steps:
 
-1.  [Adapt the code to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+1.  [Adapt the code to @product-ver@'s API](#adapting-the-code-to-liferay-portal-7-0s-api)
 
-2.  [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+2.  [Resolve dependencies](#resolving-dependencies)
 
 ## Adapting the code to Liferay Portal 7.0's API [](id=adapting-the-code-to-liferay-portal-7-0s-api)
 
@@ -215,6 +215,9 @@ for @product-ver@ uses
 to manage dependencies.
 
 $$$
+
+For more details on resolving dependencies, see the tutorial
+[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies).
 
 You've resolved the Sample Struts portlet's dependencies. It's ready to deploy. 
 
