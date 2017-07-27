@@ -65,14 +65,25 @@ Next, you'll configure the Sync client.
 Now that you've installed Sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. 
 
-1. Open Sync and enter your Liferay instance's address along with your account 
-   credentials. Click *Sign In* when you're finished. 
+1.  Open Sync and enter your Liferay instance's address along with your account 
+    credentials. Click *Sign In* when you're finished. 
 
     ![Figure 5.16: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../images/sync-setup-01.png)
 
-2. Select the sites you want to sync with. You can search for a site in the 
-   *Search* bar above the site list. If you want to sync all the subfolders of 
-   your selected sites, click *Proceed* and move on to the next step. 
+    When connecting to a server via HTTPS, an error appears if the certificate 
+    can't be verified. Choosing *Proceed Anyway* bypasses verification and 
+    leaves the connection open to compromise. Liferay Sync attempts to read the 
+    certificates specified in the Java Control Panel 
+    ([see section 20.4.5](https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/jcp.html#A1152831)). 
+    If Java isn't installed, you can also put your certificates in 
+    [user.home]/.liferay-sync-3/certificates. Liferay Sync will trust all 
+    certificates. 
+
+    ![Figure 5.x: When connecting over HTTPS, Liferay Sync produces an error if it can't verify the security certificate. Choosing *Proceed Anyway* bypasses verification and leaves the connection open to compromise.](../../images/sync-certificate-error.png)
+
+2.  Select the sites you want to sync with. You can search for a site in the 
+    *Search* bar above the site list. If you want to sync all the subfolders of 
+    your selected sites, click *Proceed* and move on to the next step. 
 
     ![Figure 5.17: Select the sites you want to sync with. Clicking a site's gear icon opens another window where you can choose to sync with only specific subfolders in that site.](../../images/sync-setup-02.png) 
 
@@ -88,26 +99,26 @@ steps for Sync on Windows and Mac are identical.
 
     ![Figure 5.18: Choose the site's subfolders that you want to sync with. The checkbox with the minus sign indicates that not all of the *registration* folder's subfolders are selected.](../../images/sync-select-folders.png)
 
-3. Specify the local folder your Liferay instance will sync with. This folder 
-   will be used exclusively for Sync: Sync creates it and it must not conflict 
-   with any existing local folder. The Sync folder's default name is the 
-   instance's host name, and its default location is the user's documents 
-   folder. For example, since the instance in the following screenshots runs 
-   locally at the address `http://localhost:8080/`, Sync creates a Sync folder 
-   named *localhost* in the user's documents folder. You can, of course, specify 
-   any unique name and location for the Sync folder. Click *Start Syncing* to 
-   begin syncing files. 
+3.  Specify the local folder your Liferay instance will sync with. This folder 
+    will be used exclusively for Sync: Sync creates it and it must not conflict 
+    with any existing local folder. The Sync folder's default name is the 
+    instance's host name, and its default location is the user's documents 
+    folder. For example, since the instance in the following screenshots runs 
+    locally at the address `http://localhost:8080/`, Sync creates a Sync folder 
+    named *localhost* in the user's documents folder. You can, of course, 
+    specify any unique name and location for the Sync folder. Click *Start 
+    Syncing* to begin syncing files. 
 
     ![Figure 5.19: Specify your local Sync folder's name and location.](../../images/sync-setup-03.png)
 
-4. Celebrate! You've successfully set up Liferay Sync! Sync congratulates you on 
-   setting it up and begins to sync files from the sites you selected to your 
-   local Sync folder. Note, completing the initial synchronization may take a 
-   significant amount of time, depending on the amount of data being 
-   transferred. You can safely close the window as syncing continues in the 
-   background. To view the local Sync folder, click *Open Folder*. To open 
-   Sync's preferences, click the small gray text *advanced setup* near the 
-   top-right. 
+4.  Celebrate! You've successfully set up Liferay Sync! Sync congratulates you 
+    on setting it up and begins to sync files from the sites you selected to 
+    your local Sync folder. Note, completing the initial synchronization may 
+    take a significant amount of time, depending on the amount of data being 
+    transferred. You can safely close the window as syncing continues in the 
+    background. To view the local Sync folder, click *Open Folder*. To open 
+    Sync's preferences, click the small gray text *advanced setup* near the 
+    top-right. 
 
     ![Figure 5.20: Congratulations, you've successfully set up Liferay Sync!](../../images/sync-setup-04.png)
 
