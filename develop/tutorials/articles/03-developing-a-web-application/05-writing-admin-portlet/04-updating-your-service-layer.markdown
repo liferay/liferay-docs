@@ -1,30 +1,24 @@
 # Updating Your Service Layer [](id=updating-your-service-layer)
 
-In an earlier learning path, you wrote an `addGuestbook` service method in
-`GuestbookLocalServiceImpl`. The `addGuestbook` method of `GuestbookPortlet`
-calls this service method. You can reuse the `addGuestbook` method of
-`GuestbookLocalServiceImpl` by calling it from `GuestbookAdminPortlet` too.
-However, you need to add a new service method for updating a guestbook and a new
-service method for deleting a guestbook. You also need to add a service method
-that returns the number of guestbooks in a site. You'll use this service method
-when you're implementing your user interface since you'll use a Liferay tag
-library construct called Search Container. Your search container needs to know
-how many guestbooks to display.
+In an earlier section, you wrote an `addGuestbook` service method in
+`GuestbookLocalServiceImpl`, but you never used it anywhere. To have full
+functionality over Guestbooks, you must also add methods for updating and
+deleting Guestbooks, as well as for returning the number of Guestbooks in a
+site. 
 
 ## Adding Guestbook Service Methods [](id=adding-guestbook-service-methods)
 
-Remember that when working with Service Builder, the `*Impl` classes are your
-extension points. After you add or remove a method from an `*Impl` class or
-change a method signature of an `*Impl` class, you must run Service Builder.
-Service Builder updates the affected interfaces and any other affected generated
-code.
+Remember that when working with Service Builder, the `*Impl` classes are where
+you define your service. After you add or remove a method from an `*Impl` class
+or change a method signature of an `*Impl` class, you must run Service Builder.
+Service Builder updates the affected interfaces and any other generated code.
 
-Use the following steps to add the required Guestbook service methods:
+Follow these steps to add the required Guestbook service methods:
 
 1.  Go to the `guestbook-service` project and open 
-     `GuestbookLocalServiceImpl.java` found in the 
-	 `com.liferay.docs.gradebook.service.impl` package and add the following 
-	 method for updating a guestbook:
+    `GuestbookLocalServiceImpl.java` in the 
+    `com.liferay.docs.gradebook.service.impl` package. Add the following 
+    method for updating a guestbook:
 
         public Guestbook updateGuestbook(long userId, long guestbookId,
         String name, ServiceContext serviceContext) throws PortalException,
@@ -46,20 +40,12 @@ Use the following steps to add the required Guestbook service methods:
 
                 guestbookPersistence.update(guestbook);
 
-                resourceLocalService.updateResources(serviceContext.getCompanyId(),
-                                serviceContext.getScopeGroupId(), name, guestbookId,
-                                serviceContext.getGroupPermissions(),
-                                serviceContext.getGuestPermissions());
-
                 return guestbook;
         }
 
-    The `updateGuestbook` service method is similar to the `updateEntry`
-    service method in `EntryLocalServiceImpl`. As with guestbook entries, you
-    not only must update the guestbook model itself, but also must update
-    the guestbook's resources. If your `updateGuestbook` service method didn't
-    update a guestbook's resources, permissions updates for guestbooks would not
-    be possible.
+    The `updateGuestbook` retrieves the `Guestbook` by its ID, replaces its data
+    with what the user entered, and then calls the persistence layer to save it
+    back to the database. 
 
 2.  Next, add the following method for deleting a guestbook:
 
@@ -73,26 +59,21 @@ Use the following steps to add the required Guestbook service methods:
                                 serviceContext.getScopeGroupId(), guestbookId);
 
                 for (Entry entry : entries) {
-                        EntryLocalServiceUtil.deleteEntry(entry.getEntryId(),
-                                        serviceContext);
+                        EntryLocalServiceUtil.deleteEntry(entry.getEntryId());
                 }
-
-                resourceLocalService.deleteResource(serviceContext.getCompanyId(),
-                                Guestbook.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
-                                guestbookId);
 
                 guestbook = deleteGuestbook(guestbook);
 
                 return guestbook;
         }
 
-    It's important to consider what should happen if you delete a guestbook for
-    which there are existing entries. If you just deleted the guestbook, the
-    guestbook's entries would still exist in the database, but they would be
-    orphaned. Your `deleteGuestbook` service method makes a service call to
-    delete all the entries associated with a guestbook before deleting the
-    guestbook itself. This way, guestbook entries are never orphaned.
-    
+    It's important to consider what should happen if you delete a guestbook that
+    has existing entries. If you just deleted the guestbook, the guestbook's
+    entries would still exist in the database, but they'd be orphaned. Your
+    `deleteGuestbook` service method makes a service call to delete all the
+    entries associated with a guestbook before deleting the guestbook itself.
+    This way, guestbook entries are never orphaned.
+ 
 3.  Update your imports using [CTRL]+[SHIFT]+O.
 
 4. Save `GuestbookLocalServiceImpl.java` and run Service Builder by opening
