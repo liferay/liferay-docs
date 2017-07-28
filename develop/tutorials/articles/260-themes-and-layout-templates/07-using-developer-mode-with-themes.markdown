@@ -21,6 +21,14 @@ override settings that trigger them (if applicable):
 - Minification of CSS and JavaScript resources is disabled
   (`minifier.enabled=false`).
 
++$$$
+
+**Note:** A known issue [LPS-71350](https://issues.liferay.com/browse/LPS-71350) 
+causes CSS changes not to be applied to the page when using Developer Mode. This 
+issue is fixed in Liferay Portal CE 7.0.3 GA4 and Liferay DXP Fixpack DE 13.
+
+$$$
+
 Individual file loading of your styling and behaviors, combined with disabled
 caching for layout and FreeMarker templates, lets you see your changes more 
 quickly. 
