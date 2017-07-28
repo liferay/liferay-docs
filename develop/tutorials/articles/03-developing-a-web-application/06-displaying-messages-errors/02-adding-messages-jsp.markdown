@@ -2,7 +2,7 @@
 
 Using `SessionMessages` makes it easy to provide clear, useful feedback to 
 users. Now you're going to add the necessary tags to the JSPs to make these 
-messages appear.
+messages appear. In this application, you don't have useful feedback to provide users when an action failed, so the default message provided by the portal will suffice for those. Let's focus on the positive and providing success messages.
 
 1. In your `guestbook-web` module, open `guestbookwebportlet/view.jsp`.
 
