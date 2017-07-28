@@ -139,7 +139,7 @@ You're now on the latest version of Liferay @ide@!
 Now that you've learned how to install and update your Liferay @ide@
 environment, you can begin developing Liferay products.
 
-## Generating a Workspace Token Manually
+## Generating a Workspace Token Manually [](id=generating-a-workspace-token-manually)
 
 The Liferay @ide@ 3.1 release contains a few issues with generating a token
 used to store your Liferay credentials. If you run into an issue with generating
