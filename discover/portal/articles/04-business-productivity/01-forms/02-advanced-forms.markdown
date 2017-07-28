@@ -2,7 +2,7 @@
 
 Liferay's built-in Forms application supports your most basic form building
 needs (something like a one question survey), and your most advanced (like a
-mortgage application, or conference sign-up form). In [a separate article](discover/portal/-/knowledge_base/7-0/basic-forms), learn
+mortgage application, or conference sign-up form). In [a separate article](/discover/portal/-/knowledge_base/7-0/basic-forms), learn
 about the basics of form creation:
 
 -  Navigating to the Forms application
@@ -377,7 +377,7 @@ Fill out the Data Providers form, passing in the following values:
 
 You're probably wondering what the *URL*, *Displayed JSON Attribute*, and
 *Stored JSON Attribute* fields are all about. First, it's good to understand
-that what you're doing when setting up a data provider is accessing a [REST web service](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&cad=rja&uact=8&ved=0ahUKEwj5xqa_nOLMAhWDYpoKHXCSAl8QFgg-MAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRepresentational_state_transfer&usg=AFQjCNEbs7wls7WPYkz8WvaaxEkpyhJdeQ&sig2=_HSCpCVSb_gzRMpEwKm3mw). You can use the [JSON web services registered in Liferay](develop/tutorials/-/knowledge_base/7-0/registering-json-web-services),
+that what you're doing when setting up a data provider is accessing a [REST web service](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&cad=rja&uact=8&ved=0ahUKEwj5xqa_nOLMAhWDYpoKHXCSAl8QFgg-MAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRepresentational_state_transfer&usg=AFQjCNEbs7wls7WPYkz8WvaaxEkpyhJdeQ&sig2=_HSCpCVSb_gzRMpEwKm3mw). You can use the [JSON web services registered in Liferay](/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services),
 or any other REST web service you have access to. To find a list of the
 ready-to-use registered JSON web services in Liferay, navigate to
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) (assuming you're running Liferay locally). If
@@ -468,7 +468,7 @@ you'll use during or after form entry submission.
 ## Enabling CAPTCHA on Form Submissions [](id=enabling-captcha-on-form-submissions)
 
 You're probably familiar with CAPTCHA, the program used to prevent a bot from
-submitting forms. It's often used in [Login applications](discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay),
+submitting forms. It's often used in [Login applications](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay),
 but you can use it in the Forms application, too. 
 
 ![Figure 12: You can enable CAPTCHA for your form in the Form Settings window.](../../../images/forms-settings-captcha.png)
@@ -491,7 +491,7 @@ the form, then it goew to an HR rep, tehn to a lower management person, then an
 upper management person, and sends emails to the applicant along the way.
 Something like that.-->
 
-To enable [workflow](discover/portal/-/knowledge_base/7-0/using-workflow) for a form, open the Form Settings window (click the *Options*
+To enable [workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) for a form, open the Form Settings window (click the *Options*
 (![Options](../../../images/icon-options.png)) button &rarr; *Settings*). In the
 Select a Workflow field, select the workflow you want to use for the form, then
 click *Done* and save the form.

@@ -18,7 +18,7 @@ and know how to create them, continue on in this tutorial.
 There are few differences between the Simulation Menu and Product Menu, mostly
 because they extend the same base classes. The Simulation Menu, by default, is
 made up of only one panel category and one panel app. Liferay provides the
-[SimulationPanelCategory](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.simulation/com/liferay/product/navigation/simulation/application/list/SimulationPanelCategory.html)
+[SimulationPanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/simulation/application/list/SimulationPanelCategory.html)
 class, which is a hidden category needed to hold the `DevicePreviewPanelApp`.
 This is the app and functionality you see in the Simulation Menu by default.
 
@@ -36,6 +36,12 @@ a panel app for the already present hidden category.
    your panel app, move on to learn how to tweak it so it customizes the
    Simulation Menu.
 
+   You can easily generate a Simulation Panel App by using Blade CLI's
+   [Simulation Panel Entry template](/develop/reference/-/knowledge_base/7-0/simulation-panel-entry-template).
+   You can also refer to the
+   [Simulation Panel App sample](/develop/reference/-/knowledge_base/7-0/simulation-panel-app)
+   for a working example.
+
 2. Since this tutorial assumes you're providing more functionality to the
    existing simulation category, set the simulation category in the
    `panel.category.key` of the `@Component` annotation:
@@ -50,9 +56,9 @@ a panel app for the already present hidden category.
     section.
 
 3. This tutorial assumes you're using JSPs for creating a complex UI. Therefore,
-   you should extend the [BaseJSPPanelApp](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/BaseJSPPanelApp.html)
+   you should extend the [BaseJSPPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html)
    abstract class. This class implements the
-   [PanelApp](https://docs.liferay.com/portal/7.0/javadocs/modules/apps/web-experience/application-list/com.liferay.application.list.api/com/liferay/application/list/PanelApp.html)
+   [PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
    interface and also provides additional methods necessary for specifying JSPs
    to render your panel app's UI. Remember that you can also implement your own
    `include()` method to use any frontend technology you want, if you'd like to
@@ -120,5 +126,6 @@ a panel app for the already present hidden category.
         iframe.setAttribute('src', newUrlWithCustomParameters);
 
 Now that you know how to extend the necessary panel categories and panel apps to
-modify the Simulation Menu, go ahead and create a module of your own and
-customize the Simulation Menu so it's most helpful for your needs.
+modify the Simulation Menu, go ahead and [create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
+of your own and customize the Simulation Menu so it's most helpful for your 
+needs.

@@ -36,7 +36,7 @@ can configure security settings for the Axis Servlet, the Liferay Tunnel
 Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service 
 Servlet, and the WebDAV Servlet. The `portal.properties` file (online version is 
 available at 
-[http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html))
+[@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html))
 describes these properties. 
 
 $$$

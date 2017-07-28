@@ -1,19 +1,19 @@
 # Understanding Liferay's Module Framework [](id=understanding-liferays-module-framework)
 
 At a basic level, Liferay Portal is a web application that runs on a Java EE
-application server or servlet container. In Liferay 6.2 and prior versions,
+application server or servlet container. In Liferay Portal 6.2 and prior versions,
 Liferay plugins were deployed as separate web applications. Thus, both Liferay
 and its plugins were installed alongside each other in the running application
-server or servlet container. Liferay 7 introduces a major improvement: an
+server or servlet container. @product-ver@ introduces a major improvement: an
 OSGi-based module framework to which plugins are deployed. Liferay's module
 framework makes it easier than ever for developers to create Liferay
 applications and to customize Liferay!
 
 +$$$
 
-**Note:** Liferay 6.2 included a module framework that provided limited
+**Note:** Liferay Portal 6.2 included a module framework that provided limited
 functionality. Although plugins *could* be developed and installed as modules,
-this method was not recommended or supported. Liferay 7 includes a more mature
+this method was not recommended or supported. @product-ver@ includes a more mature
 module framework and developers are encouraged to create modules. Moreover, much
 of Liferay's core functionality has been extracted into modules and installed
 into Liferay's module framework.
@@ -53,33 +53,33 @@ As a developer, you benefit from Liferay's module framework in many ways:
   context of another project such as Eclipse, NetBeans, IntelliJ, GlassFish,
   JBoss, JOnAS, or JIRA, you can apply your knowledge to Liferay.
 
-Liferay 7 still supports the deployment of WAR-style plugins, but its underlying
+@product-ver@ still supports the deployment of WAR-style plugins, but its underlying
 implementation converts them into one or more modules that are installed into
-the module framework. Thus, there are two basic mechanisms that Liferay 7
+the module framework. Thus, there are two basic mechanisms that @product-ver@
 supports for developing and deploying modules into its module framework:
 
-1. Create a Liferay 7 style plugin. A Liferay 7 style plugin is called a
+1. Create a @product-ver@ style plugin. A @product-ver@ style plugin is called a
    *module*. Architecturally, a module is a JAR file. When a module is deployed,
    Liferay installs it into its module framework. Liferay modules are *only*
    supported by Liferay's module framework. This is the recommended approach for
    new application development.
 
-2. Create a traditional Liferay 6.2 style plugin. Architecturally, a 6.2 style
+2. Create a traditional Liferay Portal 6.2 style plugin. Architecturally, a 6.2 style
    plugin is a WAR file. This is the output of the traditional Liferay Plugins
    SDK. This approach is still fully supported and allows for backwards
    compatibility both with Liferay and the JSR-286 portlet standard. When a 6.2
    style plugin is deployed, Liferay converts the WAR file into one or more
    modules which are deployed into Liferay's module framework. This approach
    represents the path of least resistance for delivering existing plugins to
-   Liferay 7.
+   @product-ver@.
 
-If you want to develop a Liferay 6.2 style plugin, please see the
-[Liferay 6.2 tutorials](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/tutorials).
-If you want to develop a Liferay 7 style plugin, you're in the right
-place. You need not be familiar with OSGi to create applications for Liferay 7.
+If you want to develop a Liferay Portal 6.2 style plugin, please see the
+[Liferay Portal 6.2 tutorials](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/tutorials).
+If you want to develop a @product-ver@ style plugin, you're in the right
+place. You need not be familiar with OSGi to create applications for @product-ver@.
 You only need to understand two concepts: *modules* and *components*.
 
-- A *module* is the one and only type of Liferay 7 plugin. Architecturally, a
+- A *module* is the one and only type of @product-ver@ plugin. Architecturally, a
   module is simply a group of Java classes, additional optional resources,
   and a `MANIFEST.MF` file, packaged together as a JAR file. Liferay
   applications usually consist of at least two or three modules. Note that
@@ -105,7 +105,7 @@ $$$
 
 Liferay's new development model gives developers more flexibility than before.
 All components are loosely coupled. The lifecycle of modules and components is
-managed by Liferay's OSGi-based module framework. Liferay 7 applications should
+managed by Liferay's OSGi-based module framework. @product-ver@ applications should
 be designed as a compilation of lightweight components.
 
 The flexibility doesn't end there, though. Previously, Liferay development had
@@ -117,14 +117,14 @@ Studio) can still be used. But now you have options.
 
 [Blade Tools](https://github.com/gamerson/liferay-blade-tools) is a new Liferay
 tool that provides templates for creating a variety of types of modules. It's
-the recommended (but not required) way to get started with Liferay 7 application
+the recommended (but not required) way to get started with @product-ver@ application
 development. Since it's a command-line tool,
 [Blade Tools](https://github.com/gamerson/liferay-blade-tools) can be invoked
 directly or from other applications like Liferay IDE or Liferay Developer
 Studio.
 
 Although it's no longer required, the Liferay Plugins SDK can still be used to
-create Liferay 7 modules. It has been updated for the Liferay 7 release to
+create @product-ver@ modules. It has been updated for the @product-ver@ release to
 support both traditional Liferay development and development using the new
 model. 
 

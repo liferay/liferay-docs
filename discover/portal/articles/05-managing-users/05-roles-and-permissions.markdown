@@ -164,6 +164,12 @@ you can take the following steps:
 
 ![Figure 4: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
 
+Once you create the role, assign it to its intended users. To assign roles to
+Users, Sites, Organizations, and User Groups, click on the role, then click on
+the Add button (![Add](../../images/icon-add.png)). Choose the users and/or
+groups you want to assigned to the role. If assigning a group, note that all
+users assigned to that group will inherit the role as well. 
+
 You might expect that the role has all the permissions necessary for adding
 users to user groups. After all, user group managers can view user groups,
 assign members, and access User Groups in the Control Panel. However, we're
@@ -247,7 +253,7 @@ Power Users have personal sites.
   Administrators or other Site Owners. They *can* assign other users as Site
   Administrators or Site Owners.
 - Organization User: The Organization User role grants basic privileges within
-  an organization. If the organizaIf there's one movie I could have Leone make it would be tion has an attached site, the Organization
+  an organization. If the organization has an attached site, the Organization
   User role implicitly grants the Site member role within the attached site.
 - Organization Administrator: The Organization Administrator role grants the
   ability to manage *almost* all aspects of an organization including the
@@ -285,8 +291,8 @@ your ability to configure @product@ to suit your organizational needs.
 <!--
 ## Note About the Power Users Role [](id=note-about-the-power-users-role)
 
-Prior to Liferay 6.0, the default configurations of many Liferay portlets
-allowed power users, but not regular users, to access them. Liferay 6.0 and
+Prior to Liferay Portal 6.0, the default configurations of many Liferay portlets
+allowed power users, but not regular users, to access them. Liferay Portal 6.0 and
 subsequent versions grant the same default permissions to both power users and
 regular users. This way, portal administrators are not forced to use the power
 users role. However, Liferay encourages those who do to create their own custom

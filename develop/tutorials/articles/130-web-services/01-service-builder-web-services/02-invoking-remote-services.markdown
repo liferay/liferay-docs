@@ -106,7 +106,7 @@ please refer to the
 tutorial. 
 
 For more information on Liferay services, see the Liferay Portal CE Javadocs at
-[http://docs.liferay.com/portal/7.0/javadocs/](http://docs.liferay.com/portal/7.0/javadocs/).
+[@platform-ref@/7.0-latest/javadocs/](@platform-ref@/7.0-latest/javadocs/).
 
 ## Related Topics [](id=related-topics)
 

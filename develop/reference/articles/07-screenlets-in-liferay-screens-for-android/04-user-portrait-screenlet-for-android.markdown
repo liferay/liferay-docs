@@ -12,9 +12,9 @@
 
 ## Features [](id=features)
 
-The `UserPortraitScreenlet` shows the users' profile pictures. If a user
+The User Portrait Screenlet shows the users' profile pictures. If a user
 doesn't have a profile picture, a placeholder image is shown. The Screenlet
-allows the profile picture to be edited via the `editable` property.
+allows the profile picture to be edited via the `editable` property. 
 
 ## Module [](id=module)
 
@@ -25,7 +25,7 @@ allows the profile picture to be edited via the `editable` property.
 - Default
 - Material
 
-![The `UserPortraitScreenlet` using the Default and Material Viewsets.](../../images/screens-android-userportrait.png)
+![The User Portrait Screenlet using the Default (left) and Material (right) Views.](../../images/screens-android-userportrait.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -33,14 +33,14 @@ No additional steps required.
 
 ## Activity Configuration [](id=activity-configuration)
 
-The `UserPortraitScreenlet` needs the following user permissions:
+The User Portrait Screenlet needs the following user permissions:
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 Both are used by the `editable` property to take a picture with the phone's 
 camera and store it locally before uploading it to the portal. The activity 
-using `UserPortraitScreenlet` also needs to override the `onActivityResult` 
+using User Portrait Screenlet also needs to override the `onActivityResult` 
 method to send the picture information to the Screenlet. Here's an example 
 implementation:
 
@@ -56,7 +56,8 @@ implementation:
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the portrait, the Screenlet supports the following offline mode 
 policies:
@@ -104,7 +105,7 @@ policies:
 
 ## Listener [](id=listener)
 
-The `UserPortraitScreenlet` delegates some events to an object that implements 
+The User Portrait Screenlet delegates some events to an object that implements 
 the `UserPortraitListener` interface. This interface lets you implement the 
 following methods:
 

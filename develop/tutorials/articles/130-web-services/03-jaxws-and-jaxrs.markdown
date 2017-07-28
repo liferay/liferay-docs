@@ -189,22 +189,32 @@ configuration sets the `ConfigurationPath` to
     Bundle-Name: Liferay Export Import Service JAX-WS
     Bundle-SymbolicName: com.liferay.exportimport.service.jaxws
     Bundle-Version: 1.0.0
-    ConfigurationPath: /configuration
+    Liferay-Configuration-Path: /configuration
     Include-Resource: configuration=src/main/resources/configuration
     Liferay-Releng-Module-Group-Description:
     Liferay-Releng-Module-Group-Title: Data Management
 
++$$$
+
+**Note:** If you're using any version before Liferay CE GA4 or Liferay DXP
+Fixpack 22, the `Liferay-Configuration-Path` directive above is
+`Configuration-Path`. As of 
+[LPS-62571](https://issues.liferay.com/browse/LPS-62571), Liferay-specific Bnd
+instructions are prefixed with `Liferay` to avoid conflicts. 
+
+$$$
+
 There are two different configuration types in 
 [OSGi's `ConfigurationAdmin`](https://osgi.org/javadoc/r4v42/org/osgi/service/cm/ConfigurationAdmin.html): 
 single, and factory. Factory configurations can have several configuration 
-instances per factory name. The examples here use factory configurations. You 
+instances per factory name. @product@ uses factory configurations. You 
 must provide a factory configuration's default values in a `*.properties` file. 
 In this properties file, use a suffix on the end of the PID (persistent 
 identifier) and then provide your settings. For example, the following code uses 
 the `-staging` suffix on the PID and creates a CXF endpoint at the context path 
 `/staging-ws`: 
 
-    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-staging:
+    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-staging.properties:
 
     contextPath=/staging-ws
 
@@ -213,7 +223,7 @@ PID and creates a SOAP extender at the context path `/staging-ws`. This code
 also includes settings for the configuration fields `jaxWsHandlerFilterStrings` 
 and `jaxWsServiceFilterStrings`: 
 
-    com.liferay.portal.remote.soap.extender.configuration.SoapExtenderConfiguration-stagingjaxws:
+    com.liferay.portal.remote.soap.extender.configuration.SoapExtenderConfiguration-stagingjaxws.properties:
 
     contextPaths=/staging-ws
     jaxWsHandlerFilterStrings=(staging.jax.ws.handler=true)
@@ -256,7 +266,7 @@ Next, you'll learn how to publish JAX-WS web services.
 
 ## Publishing JAX-WS Web Services [](id=publishing-jax-ws-web-services)
 
-To publish JAX-WS web services via SOAP in a Liferay 7 module, annotate the 
+To publish JAX-WS web services via SOAP in a @product-ver@ module, annotate the 
 class and its methods with standard JAX-WS annotations, and then register it as 
 a service in the OSGi framework. For example, the following class uses the 
 `@WebService` annotation for the class and `@WebMethod` annotations for its 

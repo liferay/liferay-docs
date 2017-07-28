@@ -5,7 +5,7 @@ just a set of site administrators) to have an account that they sign into to do
 anything in the portal, you need to know about users. If your users are at all
 divided hierarchically, like into departments, you might find Organizations
 helpful. See the article on
-[organizations](discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel)
+[organizations](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel)
 for more information.
 
 Whether or not you've ever used Liferay before, you're probably not surprised to
@@ -19,7 +19,7 @@ do if
   and Luxury Spa.
 - an employee joins the resort as a new Mechanical Crew member.
 - an employee is promoted from Crew Supervisor to Department Head, and needs the requisite
-permissions within the portal.
+permissions within @product@.
 - you need to organize the users by department.
 - a new department is added to the Lunar Resort and the employees need their own
 internal website.
@@ -80,7 +80,7 @@ more information about the user. You don't have to fill anything else out right
 now. Just note that when the user account was created, a password was
 automatically generated. If Liferay was correctly installed and a mail server
 was set up (see
-[here](discover/portal/-/knowledge_base/6-2/server-administration#mail)), an
+[here](/discover/portal/-/knowledge_base/6-2/server-administration#mail)), an
 email message with the user's new password was sent to the user's email address.
 This, of course, requires that Liferay can properly communicate with your SMTP
 mail server.
@@ -192,5 +192,40 @@ not appear.
 Note that most users can't perform most of the above actions. In fact, most
 users won't have access to the Control Panel at all. You can perform all of the
 above functions because you have administrative access.
+
+## User Images [](id=user-images)
+
+Users in @product@ have avatars. Administrative users can upload images in the
+Edit User form. 
+
+![Figure 5: Upload images for user avatars in the Edit User form.](../../images/users-ray-avatar.png)
+
+If no image is explicitly uploaded for a user's avatar, a default image is
+assigned, using the initials of the user (First Name then Last Name) over a
+random color.
+
+![Figure 6: If Johannes Bach was a user in your @product@ instance, his default avatar might look like this.](../../images/users-default-user-image.png)
+
+For many locales, the default approach for generating user images is perfectly
+suitable. For some locales, though, the default user image is misleading or
+confusing. For example, there are locales where the order of the initials is
+reversed (Last Name then First Name), and there are locales where the use of one
+character of the first name and one character of the last name produces
+meaningless results to the reader (especially languages not based on the Latin
+alphabet). If that's true for your locale, disable the inclusion of users'
+initials in the default avatars. Just enter
+
+    users.image.default.use.initials=false
+
+in a `portal-ext.properties` file placed in your 
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+folder. Once you restart @product@, the new default images will be used to
+generate user avatars.
+
+![Figure 7: Wolfgang Amadeus Mozart's default avatar, after disabling the use of
+user initials.](../../images/users-alternate-default-image.png)
+
+Learn how to take advantage of more localization strategies by leveraging
+[language settings](/developer/tutorials/-/knowledge_base/7-0/using-liferays-language-settings).
 
 Next, learn about collecting users in organizations.

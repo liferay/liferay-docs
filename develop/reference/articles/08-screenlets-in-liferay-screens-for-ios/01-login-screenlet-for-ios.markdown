@@ -14,17 +14,29 @@
 
 ## Features [](id=features)
 
-The `LoginScreenlet` authenticates portal users in your iOS app. The following
+The Login Screenlet authenticates portal users in your iOS app. The following
 authentication methods are supported:
 
-- Basic: uses user login and password according to 
-  [HTTP Basic Access Authenication specification](http://tools.ietf.org/html/rfc2617). 
+- **Basic:** uses user login and password according to 
+  [HTTP Basic Access Authentication specification](http://tools.ietf.org/html/rfc2617). 
   Depending on the authentication method used by your Liferay instance, you need 
   to provide the user's email address, screen name, or user ID. You also need to 
   provide the user's password. 
 
-- OAuth: implements the 
+- **OAuth:** implements the 
   [OAuth 1.0a specification](http://oauth.net/core/1.0a/).
+
+- **Cookie:** uses a cookie to log in. This lets you access documents and images 
+  in the portal's document library without the guest view permission in the 
+  portal. The other authentication types require this permission to access such 
+  files. 
+
+For instructions on configuring the Screenlet to use these authentication types, 
+see the below 
+[Portal Configuration](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#portal-configuration) 
+and 
+[Screenlet Attributes](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#attributes) 
+sections. 
 
 When a user successfully authenticates, their attributes are retrieved for use 
 in the app. You can use the `SessionContext` class to get the current user's 
@@ -48,13 +60,16 @@ the method `SessionContext.loadStoredCredentials()` method.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The `LoginScreenlet` using the Default and Flat7 Themes.](../../images/screens-ios-login.png)
+For instructions on using Themes, 
+[click here](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets). 
+
+![The Login Screenlet using the Default and Flat7 Themes.](../../images/screens-ios-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 ### Basic Authentication [](id=basic-authentication)
 
-Before using `LoginScreenlet`, you should make sure your portal is configured 
+Before using Login Screenlet, you should make sure your portal is configured 
 with the authentication option you want to use. You can choose email address, 
 screen name, or user ID. You can set this in the Control Panel by selecting 
 *Configuration* &rarr; *Instance Settings*, and then selecting the 
@@ -79,13 +94,13 @@ $$$
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fo18U3SHhiI" frameborder="0" allowfullscreen></iframe>
 
-If you want to use OAuth authentication, you first need to install the OAuth 
-Provider app from 
-[Liferay's Marketplace](https://web.liferay.com/marketplace). 
-Once this app is installed, go to 
-*Control Panel &rarr; Users &rarr; OAuth Admin*, and add a new application to be 
-used from Liferay Screens. Once the application is created, copy the *Consumer 
-Key* and *Consumer Secret* values for later use in `LoginScreenlet`. 
+To use OAuth authentication, first install the OAuth provider app from the 
+Liferay Marketplace. 
+[Click here](https://web.liferay.com/marketplace/-/mp/application/45261909) 
+to get this app. Once it's installed, go to *Control Panel* &rarr; *Users* 
+&rarr; *OAuth Admin*, and add a new application to be used from Liferay Screens. 
+Once the application exists, copy the *Consumer Key* and *Consumer Secret* 
+values for later use in Login Screenlet. 
 
 ## Offline [](id=offline)
 
@@ -98,22 +113,23 @@ connection, you can use the `saveCredentials` attribute together with the
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
+| `companyId` | `number` | The ID of the portal instance to authenticate to. If you don't set this attribute or set it to `0`, the Screenlet uses the `companyId` setting in `LiferayServerContext`. |
+| `loginMode` | `string` | The Screenlet's authentication type. You can set this attribute to `basic`, `oauth`, or `cookie`. If you don't set this attribute, the Screenlet defaults to basic authentication. |
+| `basicAuthMethod` | `string` | Specifies the basic authentication option to use. You can set this attribute to `email`, `screenName` or `userId`. This must match the server's authentication option. If you don't set this attribute, and don't set the `loginMode` attribute to `oauth` or `cookie`, the Screenlet defaults to basic authentication with the `email` option. |
+| `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to use in OAuth authentication. |
+| `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. |
 | `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadStoredCredentials()` method. |
-| `companyId` | `number` | When set, authentication is done for a user in the specified company. If the value is `0`, the company specified in `LiferayServerContext` is used. |
-| `basicAuthMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. |
-| `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to used in OAuth authentication. Leave this empty if you want to use Basic authentication. |
-| `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. Leave this empty if you want to use Basic authentication. |
 
 ## Delegate [](id=delegate)
 
-The `LoginScreenlet` delegates some events to an object that conforms to the 
+The Login Screenlet delegates some events to an object that conforms to the 
 `LoginScreenletDelegate` protocol. This protocol lets you implement the 
 following methods:
 
 - `- screenlet:onLoginResponseUserAttributes:`: Called when login successfully 
   completes. The user attributes are passed as a dictionary of keys (`String` or 
   `NSStrings`) and values (`AnyObject` or `NSObject`). The supported keys are 
-  the same as the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2233).
+  the same as the [portal's User entity](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/service.xml#L2575-L2737).
 
 - `- screenlet:onLoginError:`: Called when an error occurs during login. The 
   `NSError` object describes the error.

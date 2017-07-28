@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 
-<project name="Properties to HTML conversion" default="build-properties-docs" basedir=".">
+<project name="Liferay Documentation" default="usage" basedir=".">
 	<property name="project.dir" value="." />
 
+	<property name="build.dir" value="${project.dir}/build"/>
 	<property name="lib.dir" value="${project.dir}/lib" />
 
 	<property name="liferay.portal.dir" value="${project.dir}/../liferay-portal" />
@@ -19,7 +20,12 @@
 	<property name="liferay-plugin-package_6_2_0.properties.file.path" value="${liferay.portal.dir}/definitions/liferay-plugin-package_6_2_0.properties" />
 
 	<path id="lib.classpath">
-		<fileset dir="${lib.dir}" includes="*.jar" />
+		<fileset dir="${project.dir}/lib" includes="*.jar" />
+		<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+	</path>
+
+	<path id="project.classpath">
+		<path refid="lib.classpath" />
 	</path>
 
 	<taskdef name="bundle-properties" classname="com.liferay.portal.tools.PropertiesBundlerTask"
@@ -87,6 +93,27 @@
 
 	<target name="clean" description="deletes the properties directory">
 		<delete dir="${properties.dir}"/>
+	</target>
+
+	<target name="compare-portal-source" description="Generates reports comparing a Liferay 6 source directory (-Dlr6Dir) to a Liferay 7+ source directory (-Dlr7Dir).">
+		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
+		<property name="removedClassesFile" value="${build.dir}/removed-classes.html"/>
+		<mkdir dir="${build.dir}"/>
+		<java
+			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${lr6Dir}"/>
+			<arg value="${lr7Dir}"/>
+			<arg value="${movedClassesFile}"/>
+			<arg value="${removedClassesFile}"/>
+		</java>
+	</target>
+
+	<target name="usage">
+		<echo message="Welcome to the Liferay Documentation project. To show target descriptions, run ant -projecthelp"/>
 	</target>
 
 </project>

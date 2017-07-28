@@ -45,9 +45,9 @@ appears.
 +$$$
 
 **Note**: To administer a message board for a particular page scope, click the
-*Compass* icon (![Compass](../../../images/icon-compass.png)) to list the available
-scopes, and select the scope with the page's name. Finally, select *Message
-Boards* from under the *Content* heading.
+*Site Selector* button (![Compass](../../../images/icon-compass.png)) to list
+the available scopes, and select the scope with the page's name. Finally, select
+*Message Boards* from under the *Content* heading.
 
 $$$
 

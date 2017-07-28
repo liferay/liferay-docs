@@ -202,7 +202,7 @@ a new Indexer by extending `com.liferay.portal.kernel.search.BaseIndexer<T>`.
 
 For more information, consult the Javadocs for
 `com.liferay.portal.kernel.search.Indexer<T>` and
-`com.liferay.portal.kernel.search.BaseIndexer<T>`: [https://docs.liferay.com/portal/7.0/javadocs](https://docs.liferay.com/portal/7.0/javadocs)
+`com.liferay.portal.kernel.search.BaseIndexer<T>`: [@platform-ref@/7.0-latest/javadocs](@platform-ref@/7.0-latest/javadocs)
 
 ### IndexerPostProcessor [](id=indexerpostprocessor)
 

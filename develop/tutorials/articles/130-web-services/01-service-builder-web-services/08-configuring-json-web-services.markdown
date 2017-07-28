@@ -8,7 +8,7 @@ them, specify this portal property setting in a `portal-ext.properties` file:
 This tutorial presents other such properties that you can use to fine-tune 
 exactly how JSON web services work in your Liferay instance. You can find these, 
 and other properties, in 
-[the portal properties reference documentation](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html). 
+[the portal properties reference documentation](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html). 
 As with the preceding property, you should set portal properties in a 
 `portal-ext.properties` file. 
 

@@ -55,6 +55,8 @@ Screenlet. They are listed here:
 
 ## Themes [](id=themes)
 
+- Default
+
 The Default Theme uses a standard `UITableView` to show a scrollable list of 
 fields. Other Themes may use a different component, such as `UICollectionView` 
 or others, to show the fields.
@@ -113,7 +115,8 @@ and
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
-connection. 
+connection. For more information on how offline mode works, see the 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the form or record, the Screenlet supports the following offline 
 mode policies:

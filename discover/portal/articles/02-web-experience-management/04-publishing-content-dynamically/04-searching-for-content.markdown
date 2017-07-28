@@ -21,6 +21,18 @@ content, tags, and categories to refine your search. Next, you'll look at the
 search features @product@ provides for specific kinds of content and then examine
 how to use @product@'s faceted search.
 
++$$$
+
+**Note:** In previous versions of @product@, it was possible to use an [advanced
+searching syntax](/discover/portal/-/knowledge_base/6-2/searching-for-content-in-liferay#advanced-searching)
+to create precise search queries. This is no longer possible in @product-ver@.
+However, due to customer requests for these advanced capabilities, Liferay's
+engineers are investigating approaches they can take in restoring the advanced
+syntax, while ensuring the adopted solution works with both of @product@'s
+supported search engines, Elasticsearch and Solr.
+
+$$$
+
 ## Searching for Specific Types of Content [](id=searching-for-specific-types-of-content)
 
 @product@ provides several applications that let users and administrators search
@@ -39,8 +51,8 @@ to search for web content.
 
 +$$$
 
-**Note:** The Web Content Search application is deprecated in @product@ 7.0 and
-will be removed in Liferay 7.1. The Web Content Search app's functionality has
+**Note:** The Web Content Search application is deprecated in @product-ver@ and
+will be removed in 7.1. The Web Content Search app's functionality has
 been replaced by the Search app, which is configured to search for web content. 
 
 $$$
@@ -216,71 +228,6 @@ they may be displayed in the Asset Categories facet. Asset categories work just
 like asset tags. As with asset tags, you can modify the number of categories
 listed in the search by setting the `Max Terms` property, which is described
 later in this section.
-
-You'll learn about advanced searching next. 
-
-### Advanced Searching [](id=advanced-searching)
-
-The Search application's search box is deceptively simple. Though you have only
-a single field for search, there's a search syntax inherited from
-[Lucene](http://lucene.apache.org/core/old_versioned_docs/versions/3_0_3/queryparsersyntax.html)
-that lets you create very powerful search queries. You'll take a look at some
-ways you can use search queries.
-
-**Searching for specific fields:** By default, searches are performed against a
-long list of fields. Sometimes you want results for a term within a particular
-field. This can be achieved using the field search syntax `[field]:[term]`. For
-example, to search in the *Title* field for *Liferay*, use the following
-syntax:
-
-    title:liferay
-
-If you search for a phrase within a field, surround the term with double
-quotation marks: 
-
-    title:"Liferay Portal"
-
-**Wildcards:** You can use wildcards in exactly the way you use them with your
-operating system: for a single character wildcard, use `?`; for
-the multiple character wildcard, use `*`. 
-
-**Boolean operators:** You can use logic operators, such as `AND`, `OR`, `NOT`,
-`+`, and `-` in your searches. The `AND` operator matches assets in which the
-terms between the `AND` operator exist. For example, to search for both Liferay
-and Kaleo Workflow, use this query: 
-
-    "liferay" AND "kaleo workflow"
-
-The `OR` operator is the default; if there's no operator between two terms, the
-`OR` operator takes effect. `OR` finds matches if any term exists in an asset. 
-
-The `+` operator requires that the term exists somewhere in some field in the
-asset. If you wanted to search for something that *must* contain *liferay* and
-*may* contain *portal*, use this query: 
-
-    +liferay portal
-
-The `NOT` operator excludes assets that contain the term after the `NOT`
-operator. It requires that at least two terms be present: 
-
-    "Liferay Portal" NOT "Liferay Social Office" 
-
-The `-` operator is similar: it excludes assets that contain the term after the
-`-` symbol: 
-
-    "Liferay Portal" - "Liferay Social Office" 
-
-**Grouping:** You can use parentheses within your queries to form sub-queries,
-in a similar fashion to an SQL statement. For example, to search for *liferay*
-or *social office* and *website*, use this query: 
-
-    (liferay OR "social office") AND website
-
-As you can see, the search syntax is very powerful. There's more you can do with
-it than what is listed here; to view the full syntax, visit the Lucene URL
-above. 
-
-Next, you'll look at how the Search application can be configured. 
 
 ## Setting Options for Detailed Search Results [](id=setting-options-for-detailed-search-results)
 

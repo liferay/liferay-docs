@@ -292,7 +292,7 @@ Here are a few things to note about this example:
   It's simply used for convenience in this example. In production, you should
   set `company.security.auth.requires.https=false` in a `portal.properties` 
   file. Refer to Liferay's
-  [`portal.properties`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html)
+  [`portal.properties`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
   file for more information. 
 - The screen name and password are passed in the URL as credentials. 
 - The name of the service (e.g. `Portal_UserGroupService`) is specified at the

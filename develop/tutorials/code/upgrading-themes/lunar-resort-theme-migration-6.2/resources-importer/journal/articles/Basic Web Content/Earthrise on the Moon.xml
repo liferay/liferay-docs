@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+		<dynamic-content language-id="en_US">
+			<![CDATA[
+				<p>An earthrise viewed from the Moon's surface is quite unlike moonrises on Earth. Because one side of the Moon always faces the Earth, the Earth's position is relatively fixed in the lunar sky. However, the Moon librates slightly, which makes the Earth appear to wobble a little bit in the sky.</p>
+			]]>
+		</dynamic-content>
+	</dynamic-element>
+</root>

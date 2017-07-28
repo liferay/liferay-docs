@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+		<dynamic-content language-id="en_US">
+			<![CDATA[
+				<div style="border-bottom: 1px solid black; border-top: 1px solid black;">
+<h2 style="text-align: center;"><span style="color:#df5946;">Lunar Resort Opening</span></h2>
+
+<p><span style="font-size:14px;"><span style="color: rgb(105, 105, 105);">We are pleased to announce the opening of the first-of-its-kind Lunar Resort. The Lunar Resort is the work of a partnership between the Space Program and private investors with the goal of making your next vacation a space vacation!</span></span></p>
+
+<p><span style="font-size:14px;"><span style="color: rgb(105, 105, 105);">What might have been unimaginable just a few years ago has become a reality. You and your family can travel on a space shuttle to the moon, where you will stay in our five star accommodations engineered to give you a perfect view of the earthrise.</span></span></p>
+
+<p><span style="font-size:14px;"><span style="color: rgb(105, 105, 105);">You can enjoy activities like moon rover races, moon golf, and low gravity basketball or enjoy tours of the dark and light sides of the moon. Be on the lookout for more details and pricing soon!</span></span></p>
+</div>
+			]]>
+		</dynamic-content>
+	</dynamic-element>
+</root>

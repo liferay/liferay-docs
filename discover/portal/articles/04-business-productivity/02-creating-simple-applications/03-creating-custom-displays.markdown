@@ -5,7 +5,7 @@ to your users, and how the resulting list of records is displayed. You do this
 by creating templates for each view (form view and record display view) and
 selecting them in the DDL Display portlet. You might realize you need to create
 a sign-up sheet with a subset of the fields provided by the Activity Entry
-data definition created in the [article on data definitions](discover/portal/-/knowledge_base/7-0/creating-data-definitions) last two articles. Instead of creating a new
+data definition created in the [article on data definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) last two articles. Instead of creating a new
 definition and list, just customize the data definition's templates.
 Another use case would be a situation where one of the preexisting data
 definitions that Liferay offers suits your list needs, but you need it laid out
@@ -76,7 +76,7 @@ form. But what if you just want a quick sign-up form to find out who's coming to
 the Lunar Luau dinner tonight? Using a form template for an existing data
 definition, you can customize the display of the Activity Entry definition's
 form. If you don't know what the Activity Entry data definition is, refer to
-the [article on data definitions](discover/portal/-/knowledge_base/7-0/creating-data-definitions), where it was created.
+the [article on data definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions), where it was created.
 
 You can access and create new form templates from the Product Menu:
 
@@ -209,7 +209,7 @@ $$$
 There's a lot you can do with your templates. Maybe there's a Lunar Luau dinner
 scheduled at the Lunar Resort, and the kitchen staff wants a count of the
 guests. You could create a list based on the Activity Entry data definition you
-[created earlier](discover/portal/-/knowledge_base/7-0/creating-data-definitions), make a
+[created earlier](/discover/portal/-/knowledge_base/7-0/creating-data-definitions), make a
 form template that just shows the *Full Name* field and the *Tell us something
 interesting about yourself.* field. Then write a FreeMarker template that gives
 a summary of who is attending, displaying just the fields form the form

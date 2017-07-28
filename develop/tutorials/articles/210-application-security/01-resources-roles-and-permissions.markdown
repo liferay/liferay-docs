@@ -89,7 +89,7 @@ and then for the *model* resources.
 
 **Note:** For each resource, there are four scopes to which the permissions can
 be applied: company, group, group-template, or individual. See the Javadoc of
-[ResourcePermissionImpl](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/)
+[ResourcePermissionImpl](@platform-ref@/7.0-latest/javadocs/portal-impl/)
 for more information.
 
 $$$

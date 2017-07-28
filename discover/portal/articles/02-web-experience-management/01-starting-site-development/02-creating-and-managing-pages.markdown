@@ -4,7 +4,7 @@ You've successfully created a site for your Liferay instance, but you may need
 to add new pages or edit existing pages. From the Site Administration &rarr;
 *Navigation* section of the Menu, your site pages can be accessed and
 configured. If you're not currently on the site you'd like to edit, click the
-*Compass* icon (![Compass](../../../images/icon-compass.png)) next to your
+*Site Selector* button (![Compass](../../../images/icon-compass.png)) next to your
 current site name in the Menu and select your desired site. The edits you make
 to your pages are only made to the scope you've selected in the Menu.
 
@@ -165,6 +165,13 @@ yet, you'll use the default theme for your pages.
 
 ![Figure 5: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/look-and-feel-pages.png)
 
+You can apply themes to individual pages as well by selecting the 
+*Configure Page* option for a page and selecting the 
+*Define a specific look and feel for this page* option under the *Look and Feel* 
+category. 
+
+![Figure 6: You can define a specific look and feel for a page.](../../../images/define-a-specific-look-and-feel.png)
+
 Many themes include more than one color scheme. This allows you to keep the
 existing look and feel while giving your site a different flavor. The *Color
 Schemes* option is not available for the default theme.
@@ -286,7 +293,7 @@ including the theme.
 <!-- Add following sentence when this section is available (App not available
 for CE) -Cody:
 The set up for this option is explained in the
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-site-pages-to-mobile-devices)
+[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-pages-on-mobile-devices)
 section.
 -->
 
@@ -438,7 +445,7 @@ from the Sitemaps and Robots tabs of the Manage Site Settings dialog box (see
 below).
 
 In previous versions of Liferay, it was possible that a single page
-could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
+could be indexed multiple times. In Liferay Portal 6.1, all URLs that direct to the
 same page will only create one entry in the index. Previously, the simple URL
 *http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
 versions of the URL which provided additional information about the referring
@@ -496,7 +503,7 @@ Collaboration apps to the Lunar Resort site.
 See how easy it is to add applications to your pages? You've added the Wiki
 app and Blogs Aggregator app to a page. 
 
-![Figure 6: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../images/app-layout-design.png)
+![Figure 7: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../images/app-layout-design.png)
 
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
@@ -523,7 +530,7 @@ from the *Options* button next to the Page you'd like to let site members
 modify. Then select the *Advanced* tab at the top of the page, expand the
 *Customization Settings* area, and click on the *Customizable* selector button. 
 
-![Figure 7: To enable page customizations, click on the *Configure Page* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../images/page-customizations.png)
+![Figure 8: To enable page customizations, click on the *Configure Page* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../images/page-customizations.png)
 
 Once you've enabled the *Customizable* selector, you can select the sections of
 the page you'd like to enable customization for, depending on the layout
@@ -537,7 +544,7 @@ toggle whether to view or hide the customizable regions. If you toggle the
 selector to view customizable regions, the regions on the page are color-coded
 to help distinguish customizable vs. non-customizable sections of the page.
 
-![Figure 8: Customizable regions are colored green and non-customizable regions are colored red.](../../../images/color-coded-customizable-regions.png)
+![Figure 9: Customizable regions are colored green and non-customizable regions are colored red.](../../../images/color-coded-customizable-regions.png)
 
 Site members can also choose between viewing their customized page and viewing
 the default page by selecting the *Options* button
@@ -568,7 +575,7 @@ Users can make two kinds of customizations to customizable regions. First, they
 can configure applications within the customizable regions. Second, they can add
 apps to or remove apps from the customizable regions.
 
-![Figure 9: Customizable areas are highlighted green when organizing apps on the page.](../../../images/customizable-regions.png)
+![Figure 10: Customizable areas are highlighted green when organizing apps on the page.](../../../images/customizable-regions.png)
 
 @product@ doesn't allow users to change a non-instanceable app's configuration
 inside a customizable region since those kinds of apps are tied to the site to
@@ -582,9 +589,9 @@ the Welcome page of the Lunar Resort site to be customizable. A member of the
 Lunar Resort site could take the following steps to make a personal
 customization of the Welcome page:
 
-1. Navigate to the Welcome homepage by navigating to the Site Administration
-   *Compass* (![Compass](../../../images/icon-compass.png)) and selecting the
-   Lunar Resort site.
+1. Navigate to the Welcome homepage by clicking the Site Administration's
+   *Site Selector* button (![Compass](../../../images/icon-compass.png)) and
+   selecting the Lunar Resort site.
 2. Add the Language Selector app to the right column of the page by clicking the
    *Add* icon, clicking on *Applications*, searching for *Language Selector*,
    and clicking *Add* next to its name.
@@ -595,7 +602,7 @@ select their language in the Language Selector app to view a translation of your
 site into their native language. After closing the Configuration dialog box of
 the Language Selector app, the customized Welcome page looks like this:
 
-![Figure 10: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../images/customized-portal-homepage.png)
+![Figure 11: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../images/customized-portal-homepage.png)
 
 To allow users to customize a page, administrators must grant users permission
 to *Customize* pages under the Site section. This can be achieved by assigning
@@ -638,7 +645,7 @@ this with the following procedure:
    role.
 5. Click the *Save* button.
 
-![Figure 11: The Permissions offer a plethora of options for each role.](../../../images/web-content-page-permissions.png)
+![Figure 12: The Permissions offer a plethora of options for each role.](../../../images/web-content-page-permissions.png)
 
 Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.

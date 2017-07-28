@@ -76,14 +76,14 @@ implementation-specific options prefixed with the `com.liferay.faces.bridge`
 namespace. 
 
 Liferay Faces Bridge is an essential part of the JSF development process for
-@product@. Visit the
+@product@. <!--Visit the
 [JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
-section of tutorials for more information on JSF development for @product@.
+section of tutorials for more information on JSF development for @product@.-->
 
 ## Related Topics [](id=related-topics)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-alloy)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/7-0/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-portal)
 
 [What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)

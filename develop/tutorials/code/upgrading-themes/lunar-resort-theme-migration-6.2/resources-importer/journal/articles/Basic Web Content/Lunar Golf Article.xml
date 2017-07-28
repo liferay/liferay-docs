@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+		<dynamic-content language-id="en_US">
+			<![CDATA[
+				<p><img alt="" src="[$FILE=lunar-golf-banner-2.jpg$]" /></p>
+<br />
+<h2>Lunar Golf Course</h2>
+
+<p>Play golf like you never have before. The Moon has 1/6th the gravity of Earth. What does this mean for you and your game? Your drive will be much further than you are use to, and take far less power than you think. Due to this new and exciting challenge you might imagine that it would be quite common to shoot your ball into space. Rest assured my fine golf friend, we have you covered. For one, you'll be wearing your stylish new lunar golf gear. This will help to weigh you down a bit and bring your swing back to a more realistic strength. It does not return your drive back to normal though. This is where the challenge comes in. Because the gravity is so much lower than Earth's, you'll notice that we have the tees much further away from the holes than you may be use to. We've also incorporated some fun&nbsp; obstacles and guides to make your playing experience that much more memorable.</p>
+
+<p>So come play a round of golf that you won't soon forget. Tell your buddy that your new drive distance is 800 yds, we won't tell him that it was on the Moon if you don't...</p>
+			]]>
+		</dynamic-content>
+	</dynamic-element>
+</root>

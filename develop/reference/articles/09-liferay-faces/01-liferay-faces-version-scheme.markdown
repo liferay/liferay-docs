@@ -50,7 +50,7 @@ Provides a suite of JSF components that utilize
 
 |Branch|Example Artifact|&nbsp;&nbsp;MetalJS&nbsp;&nbsp;|&nbsp;&nbsp;JSF API&nbsp;&nbsp;|Additional Info|
 |------|----------------|:---------:|:-------:|---------------|
-|[master (1.0.x)](https://github.com/liferay/liferay-faces-metal/tree/master)|com.liferay.faces.metal-1.0.0.jar|1.0.x|2.2+|*CrystalUI 1.0.x is the version that comes bundled with Liferay Portal 7.0.*|
+|[master (1.0.x)](https://github.com/liferay/liferay-faces-metal/tree/master)|com.liferay.faces.metal-1.0.0.jar|1.0.x|2.2+|*Metal.js 1.0.x is the version that comes bundled with Liferay Portal 7.0.*|
 
 ## Liferay Faces Portal [](id=liferay-faces-portal)
 

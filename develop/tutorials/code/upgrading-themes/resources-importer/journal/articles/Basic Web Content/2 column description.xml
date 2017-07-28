@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+		<dynamic-content language-id="en_US">
+			<![CDATA[
+				<div class="container-fluid">
+	<div class="col-md-4" id="columnLeft">Out of This World</div>
+	<div class="col-md-8" id="columnRight">Come to the Lunar Resort and live out your childhood dream of being an astronaut on the Moon. If that's not enough incentive, you'll enjoy a luxurious 3 day 2 night stay in our fabulous Lunar accomodations. Enjoy a round of Lunar Golf on our one of a kind course. Have a blast on our Rover Racing track. Make your reservation now. The rest of your life starts today!</div>
+</div>			]]>
+		</dynamic-content>
+	</dynamic-element>
+</root>

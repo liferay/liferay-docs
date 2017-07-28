@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="image" type="document_library" index-type="" index="0">
+		<dynamic-element name="content" index="0" type="text_area" index-type="">
+			<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element name="link" index="0" type="text" index-type="">
+			<dynamic-content language-id="en_US"><![CDATA[http://localhost:8080/web/guest/lunar-golf]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content language-id="en_US"><![CDATA[[$FILE=lunarGolfPromo.png$]]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element name="image" type="document_library" index-type="" index="1">
+		<dynamic-element name="content" index="1" type="text_area" index-type="">
+			<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element name="link" index="1" type="text" index-type="">
+			<dynamic-content language-id="en_US"><![CDATA[http://localhost:8080/web/guest/rover-racing]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content language-id="en_US"><![CDATA[[$FILE=roverRacingFam.png$]]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element name="image" type="document_library" index-type="" index="2">
+		<dynamic-element name="content" index="2" type="text_area" index-type="">
+			<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element name="link" index="2" type="text" index-type="">
+			<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content language-id="en_US"><![CDATA[[$FILE=earthrise.png$]]]></dynamic-content>
+	</dynamic-element>
+</root>

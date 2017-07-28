@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+		<dynamic-content language-id="en_US">
+			<![CDATA[
+				<div class="row"><div class="col-md-12"></div></div>
+<div class="row-fluid">
+		 		<div class="col-md-4">
+						<img alt="" class="img img-rounded" id="img3" src="[$FILE=LunarGolfLink.png$]" />
+		 		</div>
+		 		<div class="col-md-4">
+						<img alt="" class="img img-rounded" id="img2" src="[$FILE=RoverRaceLink.png$]" />
+		 		</div>
+		 		<div class="col-md-4">
+						<img alt="" class="img img-rounded" id="img1" src="[$FILE=LunarSpelunking.png$]" />
+		 		</div>
+</div>
+<div class="row"><div class="col-md-12"></div></div>
+			]]>
+		</dynamic-content>
+	</dynamic-element>
+</root>

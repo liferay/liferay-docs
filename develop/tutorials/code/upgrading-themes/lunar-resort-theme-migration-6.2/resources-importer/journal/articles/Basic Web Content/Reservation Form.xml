@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+		<dynamic-content language-id="en_US">
+			<![CDATA[
+				<p>Thanks for choosing to stay at the Liferay Lunar Resort! Please fill out the form below to book your stay. We know you have a choice in where to stay on the Moon... oh wait no you don't. Thanks for picking us anyways. We'll see you soon on the Moon!</p>
+<form role="form-horizontal">
+	<fieldset>
+	  <legend>Reservation Form</legend>
+	  <div class="form-group">
+	      <label for="inputName">Name</label>
+	      <input type="text" id="inputName" class="form-control" placeholder="Enter your Name here" required="required">
+	  </div>
+	  <div class="form-group">
+	      <label for="inputEmail">Email</label>
+	      <input type="email" id="inputEmail" class="form-control" placeholder="Enter your E-Mail here" required="required">
+	  </div>
+	  <div class="form-group">
+	          <button type="submit" class="btn btn-primary">Submit</button>
+	  </div>
+	</fieldset>
+</form>
+
+<p style="padding-bottom:25px;">Thanks again for booking with Liferay. When you book with Liferay, you remember your stay. Please take a moment to fill out our guestbook below.</p>
+			]]>
+		</dynamic-content>
+	</dynamic-element>
+</root>

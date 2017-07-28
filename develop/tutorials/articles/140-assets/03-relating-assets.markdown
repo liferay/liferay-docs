@@ -96,7 +96,7 @@ fully qualified class name as the key's name and the new simplified name as the
 key's value. Put the language key in file
 `docroot/WEB-INF/src/content/Language.properties` in your portlet. You can refer
 to the
-[Modifying Liferay's Language Keys](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys)
+[Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys)
 tutorial for more documentation on using language properties.
 
 Upon redeploying your portlet, the value you assigned to the fully qualified

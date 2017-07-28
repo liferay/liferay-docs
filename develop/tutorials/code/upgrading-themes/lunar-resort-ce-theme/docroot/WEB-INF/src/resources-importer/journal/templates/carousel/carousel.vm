@@ -1,0 +1,72 @@
+## Define variables
+#set ($portletNamespace = $request.portlet-namespace)
+
+<style type="text/css">
+
+	## CSS selectors are not namespaced in this example and could potentially affect other elements on the page that have the same css class names
+	
+	.carousel {
+		height: 370px;
+		width: 963px;
+	}
+
+	.aui-carousel-item {
+		height: 370px;
+	    width: 963px;
+	}
+
+</style>
+<style type="text/css">
+
+	#set ($count = 1)
+	#foreach ($each-image in $image.siblings)
+
+		.aui-carousel-item-$count {
+			background-image: url($each-image.data);
+		}
+
+		#set ($count = $count + 1)	
+	#end
+</style>
+
+<div class="carousel" id="${request.portlet-namespace}carousel">
+	#set ($count = 1)
+	#set ($activeClass = '')
+
+	#foreach ($each-image in $image.siblings)
+		#if ($count == 1)
+			#set ($activeClass = 'aui-carousel-item-active')
+		#end
+
+		<a href="$each-image.link.data" class="display-b aui-carousel-item aui-carousel-item-$count $activeClass callout u-12-12 h-14-12 u-9-9 h-10-9">
+			<div class="aui-helper-hidden-accessible">
+				$each-image.content.data
+			</div>
+		</a>
+		#set ($activeClass = '')
+
+		#set ($count = $count + 1)
+	#end
+</div>
+
+<script>
+
+	AUI().ready('aui-carousel', function(A) {
+		var carousel = new A.Carousel({
+			intervalTime: 5,
+			contentBox: '#${request.portlet-namespace}carousel',
+			activeIndex: 0,
+			after: {
+				render: function(e) {
+					var carouselInstance = e.currentTarget;
+					var contentBox = carouselInstance.get('contentBox');
+					var firstItem = contentBox.one('.aui-carousel-item-1');
+					
+					firstItem.setStyle('opacity' , 1);
+				}
+			}
+		})
+		.render();
+	});
+
+</script>

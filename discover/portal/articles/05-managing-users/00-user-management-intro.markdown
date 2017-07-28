@@ -49,9 +49,7 @@ it's tough to wrap your head around it all. Maybe a limerick can help:
 <!-- Work Monitoring into the limerick? Delete the limerick and fire its author?
 You be the judge. -->
 
-![Figure 2: The Users section of the Control Panel. This screenshot shows a
-portal that doesn't have the EE Audit plugin
-installed.](../../images/usrmgmt-users.png)
+![Figure 2: The Users section of the Control Panel. This screenshot shows a portal that doesn't have the EE Audit plugin installed.](../../images/usrmgmt-users.png)
 
 Begin exploring Liferay's User Management functionality by reading about
 adding and editing users. 
