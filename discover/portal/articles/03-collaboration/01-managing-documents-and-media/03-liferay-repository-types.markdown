@@ -20,7 +20,7 @@ and navigate to *Control Panel &rarr; Configuration &rarr; System Settings*. Fro
 System Settings, navigate to *Platform* and then search for and select
 the entry *Simple File System Store*. For the store’s *Root dir* value,
 specify a path relative to the 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
 or an absolute path; then click the *Update* button. The document
 library store switches immediately to the new root folder.
 
