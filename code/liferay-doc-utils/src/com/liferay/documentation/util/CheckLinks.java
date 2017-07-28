@@ -200,6 +200,40 @@ public class CheckLinks {
 	}
 
 	/**
+	 * Returns the fully qualified LDN URL from the given line.
+	 *
+	 * @param  line the line from which to extract the URL
+	 * @param  lineNumber the line number
+	 * @param  fileName the article's name
+	 * @return the LDN URL
+	 */
+	private static String extractLdnUrl(String line, int lineNumber, String fileName) {
+
+		int begIndex = line.indexOf("](/") + 2;
+		int endIndex = line.indexOf(")", begIndex);
+		String endLdnUrl = null;
+
+		try{
+			endLdnUrl = line.substring(begIndex, endIndex);
+		} catch (StringIndexOutOfBoundsException e) {
+			endLdnUrl = line.substring(begIndex, line.length());
+			resultsNumber = resultsNumber + 1;
+
+			System.out.println(resultsNumber + ". " + "**CORRUPT URL FORMATTING**\n"
+					+ "File: " + fileName + ":" + lineNumber + "\n" +
+					" Line: " + line);
+		}
+
+		ldnArticle = endLdnUrl;
+
+		String begLdnUrl = "https://dev.liferay.com";
+
+		String ldnUrl = begLdnUrl.concat(endLdnUrl);
+
+		return ldnUrl;
+	}
+
+	/**
 	 * Returns the Markdown articles contained in the given path.
 	 *
 	 * @param  path the partial path for the articles (e.g.,
@@ -321,10 +355,65 @@ public class CheckLinks {
 	}
 
 	/**
-	 * Returns <code>true</code> if the URL is valid.
+	 * Returns <code>true</code> if the LDN URL is valid. This method is used to
+	 * check legacy URLs hosted on LDN.
+	 *
+	 * @param  url the URL to check
+	 * @param  fileName the article's name
+	 * @param  lineNumber the line number
+	 * @return <code>true</code> if the LDN URL is valid; <code>false</code>
+	 *         otherwise
+	 */
+	private static boolean isLdnUrlValid(String url, String fileName, int lineNumber) {
+
+		NodeList list = new NodeList();
+		boolean validLDNURL = false;
+
+		try {
+			Parser htmlParser = new Parser(url);
+			list = htmlParser.extractAllNodesThatMatch(new NodeClassFilter(LinkTag.class));
+		} catch (ParserException e) {
+			resultsNumber = resultsNumber + 1;
+
+			System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
+					fileName + ":" + lineNumber + "\n" +
+					" Line: " + ldnArticle);	
+		}
+
+		List<String> results = new LinkedList<String>();
+
+		for (int i = 0; i < list.size(); i++) {
+
+			LinkTag link = (LinkTag) list.elementAt(i);
+			String linkString = link.getLink();
+			results.add(linkString);
+		}
+
+		for (String x : results) {
+			if (x.contains("2Fsearch&#x25;2Fsearch&#x26;_3_redirect&#x3d;")) {
+
+				resultsNumber = resultsNumber + 1;
+
+				System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
+						fileName + ":" + lineNumber + "\n" +
+						" Line: " + ldnArticle);
+			}
+			else {
+				validLDNURL = true;
+			}
+		}
+
+		return validLDNURL;
+	}
+
+	/**
+	 * Returns <code>true</code> if the URL is valid. This method is used to
+	 * check the current version of documentation by matching URLs with their
+	 * header IDs contained in the local repo.
 	 *
 	 * @param  line the line containing the URL
-	 * @param  article
+	 * @param  article the article containing the URL
+	 * @param  in the line number reader
 	 * @param  primaryHeader the primary header ID
 	 * @param  secondaryHeader the secondary header ID
 	 * @return <code>true</code> if the URL is valid; <code>false</code>
@@ -374,78 +463,10 @@ public class CheckLinks {
 
 		return validURL;
 	}
-	
-	private static String extractLdnUrl(String line, int lineNumber, String fileName) {
-		
-		int begIndex = line.indexOf("](/") + 2;
-		int endIndex = line.indexOf(")", begIndex);
-		String endLdnUrl = null;
-		
-		try{
-			endLdnUrl = line.substring(begIndex, endIndex);
-		} catch (StringIndexOutOfBoundsException e) {
-			endLdnUrl = line.substring(begIndex, line.length());
-			resultsNumber = resultsNumber + 1;
 
-			System.out.println(resultsNumber + ". " + "**CORRUPT URL FORMATTING**\n"
-					+ "File: " + fileName + ":" + lineNumber + "\n" +
-					" Line: " + line);
-		}
-		
-		ldnArticle = endLdnUrl;
-		
-		String begLdnUrl = "https://dev.liferay.com";
-
-		String ldnUrl = begLdnUrl.concat(endLdnUrl);
-
-		return ldnUrl;
-}
-	
-	private static boolean isLdnUrlValid(String url, String fileName, int lineNumber) {
-		
-		NodeList list = new NodeList();
-		boolean validLDNURL = false;
-		
-		try {
-			Parser htmlParser = new Parser(url);
-			list = htmlParser.extractAllNodesThatMatch(new NodeClassFilter(LinkTag.class));
-		} catch (ParserException e) {
-			resultsNumber = resultsNumber + 1;
-
-			System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-					fileName + ":" + lineNumber + "\n" +
-					" Line: " + ldnArticle);	
-		}
-		
-		List<String> results = new LinkedList<String>();
-		
-		for (int i = 0; i < list.size(); i++) {
-
-			LinkTag link = (LinkTag) list.elementAt(i);
-			String linkString = link.getLink();
-            results.add(linkString);
-        }
-		
-		for (String x : results) {
-			if (x.contains("2Fsearch&#x25;2Fsearch&#x26;_3_redirect&#x3d;")) {
-
-				resultsNumber = resultsNumber + 1;
-
-				System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-						fileName + ":" + lineNumber + "\n" +
-						" Line: " + ldnArticle);
-			}
-			else {
-				validLDNURL = true;
-			}
-		}
-		
-		return validLDNURL;
-	}
-
-	private static boolean validUrl;
-	private static int resultsNumber = 0;
 	private static String ldnArticle;
+	private static int resultsNumber = 0;
+	private static boolean validUrl;
 
 	// User Guide
 
