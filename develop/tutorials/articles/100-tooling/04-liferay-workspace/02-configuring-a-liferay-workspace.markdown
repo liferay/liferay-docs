@@ -70,6 +70,26 @@ generate and install by setting the download URL for the
 You can also set the folder where your Liferay bundle is generated with the
 `liferay.workspace.home.dir` property. It's set to `bundles` by default.
 
+You can download a Liferay DXP bundle for your workspace if you're a DXP
+subscriber. Do this by setting the `liferay.workspace.bundle.url` property to a
+ZIP hosted on *api.liferay.com*. For example,
+
+`liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.0.10.4/liferay-dxp-digital-enterprise-tomcat-7.0-sp4-20170705142422877.zip`
+
+<!-- I formatted the above snippet differently to avoid providing a link.
+-Cody-->
+
+It can be tricky to find the fully qualified ZIP name/number for the DXP bundle
+you want. You cannot access Liferay's API site directly to find it, so you must
+navigate to
+[http://files.liferay.com/private/ee/portal/](http://files.liferay.com/private/ee/portal/)
+to find the fully qualified ZIP name/number. Copy the version and ZIP name part
+(e.g., `7.0.10.4/liferay-dxp-digital-enterprise-tomcat-7.0-sp4-20170705142422877.zip`)
+and append it to `https://api.liferay.com/downloads/portal/`.
+
+You must also set the `liferay.workspace.bundle.token.download` property to
+`true` to allow your workspace to access Liferay's API site.
+
 Once you've finalized your Gradle properties, navigate to your workspace's root
 folder and run
 
