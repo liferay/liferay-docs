@@ -76,8 +76,8 @@ steps for Sync on Windows and Mac are identical.
     certificates specified in the Java Control Panel 
     ([see section 20.4.5](https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/jcp.html#A1152831)). 
     If Java isn't installed, you can also put your certificates in 
-    [user.home]/.liferay-sync-3/certificates. Liferay Sync will trust all 
-    certificates. 
+    `[user.home]/.liferay-sync-3/certificates`. Liferay Sync will trust all 
+    certificates in this folder. 
 
     ![Figure 5.17: When connecting over HTTPS, Liferay Sync produces an error if it can't verify the security certificate. Choosing *Proceed Anyway* bypasses verification and leaves the connection open to compromise.](../../images/sync-certificate-error.png)
 
