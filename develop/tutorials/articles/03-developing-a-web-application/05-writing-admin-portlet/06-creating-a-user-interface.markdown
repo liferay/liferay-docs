@@ -1,25 +1,26 @@
 # Creating a User Interface [](id=creating-a-user-interface)
 
 It's time to create the Guestbook Admin portlet's user interface. The default
-view of the portlet should have a button for adding new guestbooks. It should
-also display a list of all the guestbooks that have already been added to the
-current site.
+view of the portlet has a button for adding new guestbooks. It must also
+display the guestbooks that have already been added.
 
-Each guestbook's name should be displayed along with an Actions button. The 
-Actions button should display options for editing the guestbook, configuring its
-permissions, or deleting it. 
+Each guestbook's name is displayed along with an Actions button. The Actions
+button reveals options for editing the guestbook, configuring its permissions,
+or deleting it. 
 
 ## Creating JSPs for the Guestbook Admin Portlet's User Interface [](id=creating-jsps-for-the-guestbook-admin-portlets-user-interface)
 
-You'll use three JSPs to construct the Guestbook Admin portlet's user interface:
-one for the default view, one for the Actions button, and one for the form for
-adding or editing a guestbook.
+The Guestbook Admin portlet's user interface is made up of three JSPs: the
+default view, the Actions button, and the form for adding or editing a
+guestbook.
 
-Use the following steps to create the Guestbook Admin portlet's user interface:
+The first one to create is the default view: 
 
-1. Edit your guestbook-portlet project's 
-    `resources/guestbookadminmportlet/view.jsp`
-    file and replace its default contents with the following JSP code:
+1.  Create a folder to store the Guestbook Admin portlet's JSPs. In
+    `src/main/resources/META-INF/resources`, create a folder called
+    `guestbookadminportlet`. 
+ 
+2.  Create a file in this folder called `view.jsp` and fill it with this code: 
 
         <%@include file="../init.jsp"%>
 
@@ -56,59 +57,52 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
                                 <aui:button onClick="<%= addGuestbookURL.toString() %>"
                                         value="Add Guestbook" />
                 </aui:button-row>
-                
-    First, you include the `init.jsp` file since the pattern you're following
-    specifies that all JSP imports go there.
+ 
+    First is the standard `init.jsp` include to gain access to the imports.
 
-    Next, you add a button row with a single button for adding new guestbooks:
+    Next is a button row with a single button for adding new guestbooks:
     `<aui:button-row cssClass="guestbook-admin-buttons">`. The `cssClass`
     attribute allows you to specify a custom CSS class that can be used for
-    additional styling. The `<portlet:renderURL>` tag is used to
-    construct a URL that points to the `edit_guestbook.jsp`. You haven't created
-    this JSP yet, but you'll use it for both adding a new guestbook and editing 
-    an existing one.
+    additional styling. The `<portlet:renderURL>` tag constructs a URL that
+    points to the `edit_guestbook.jsp`. You haven't created this JSP yet, but
+    you'll use it for both adding a new guestbook and editing an existing one.
 
-    The final part of the `view.jsp` file contains the Liferay search container
-    construct that's created by the `<liferay-ui:search-container>` tag. To make
-    the search container display all the guestbooks from the current site, three
-    sub-tags need to be added inside of it:
-    `<liferay-ui:search-container-results>`,
-    `<liferay-ui:search-container-row>`, and `<liferay-ui:search-iterator>`. The
-    `<liferay-ui:search-container-results>` tag's `results` attribute uses a
-    service call to retrieve a list of all the guestbooks from the current site.
-    The `total` attribute uses another service call to get the total number of
-    guestbooks in the current site.
+    Finally, a Liferay search container is used to display the list of guestbooks. 
+    Three sub-tags define the search container: 
 
-    The `<liferay-ui:search-container-row>` tag determines the structure of each
-    row of search container objects. You have to indicate the type of object in
-    the list with the `className` attribute:
-    `className="com.liferay.docs.guestbook.model.Guestbook"`. You also have to
-    declare a variable to represent your Guestbook model:
-    `modelVar="guestbook"`. Within the search container row, you are defining
-    two columns with two subtags. The two subtags are different, since they're
-    defining different types of columns. The
-    `<liferay-ui:search-container-column-text property="name" />` tag specifies
-    the first column. This tag is used for displaying text. Its
+    - `<liferay-ui:search-container-results>`
+    - `<liferay-ui:search-container-row>` 
+    - `<liferay-ui:search-iterator>` 
+
+    The `<liferay-ui:search-container-results>` tag's `results` attribute uses a
+    service call to retrieve all the guestbooks for the scope.  The `total`
+    attribute uses another service call to get a count of guestbooks.
+
+    The `<liferay-ui:search-container-row>` tag defines what rows contain. In
+    this case, the `className` attribute defines `com.liferay.docs.guestbook.model.Guestbook"`, and
+    the `modelVar` attribute defines `guestbook` as the variable for the
+    currently iterated guestbook. In the search container row, two columns are
+    defined. The `<liferay-ui:search-container-column-text property="name" />`
+    tag specifies the first column. This tag displays text. Its
     `property="name"` attribute specifies that the text to be displayed is the
     `name` attribute of the current guestbook object. The
     `<liferay-ui:search-container-column-jsp`
     `path="/guestbookadminportlet/guestbook_actions.jsp" align="right" />` tag
-    specifies the second, and last, column. This tag is used for displaying
-    another JSP file within a search container column. Its `path` attribute
-    specifies the path to the JSP file that should be displayed:
-    `guestbook_actions.jsp`.
-    
-    Lastly, the `<liferay-ui:search-iterator />` tag is responsible for actually
-    iterating through and displaying the list of guestbooks. Using Liferay's
-    search container makes the Guestbook Admin portlet look like a native
-    Liferay portlet. It also provides built-in pagination so that your portlet
-    can automatically display large numbers of guestbooks on one site.
+    specifies the second, and last, column. This tag includes another JSP file
+    within a search container column. Its `path` attribute specifies the path to
+    the JSP file that should be displayed: `guestbook_actions.jsp`.
+ 
+    Finally, the `<liferay-ui:search-iterator />` tag iterates through and
+    displays the list of guestbooks. Using Liferay's search container makes
+    the Guestbook Admin portlet look like a native Liferay portlet. It also
+    provides built-in pagination so that your portlet can automatically display
+    large numbers of guestbooks on one site.
 
     Your next step is to add the `guestbook_actions.jsp` file that's responsible
     for displaying the list of possible actions for each guestbook.
 
-2. Create a new file called `guestbook_actions.jsp` in your project's
-    `/guestbookadminportlet` directory. Then add the following code to it:
+2.  Create a new file called `guestbook_actions.jsp` in your project's
+    `/guestbookadminportlet` folder. Paste in its code: 
 
         <%@include file="../init.jsp"%>
 
