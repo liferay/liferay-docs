@@ -1,5 +1,9 @@
 # Generating Portlet URLs
 
+<div class="learn-path-step">
+    <p>Developing Your First Portlet<br>Step 3 of 8</p>
+</div>
+
 Recall that users can place multiple portlets on a single page. As a developer, 
 you have no idea what other portlets will share a page with yours. This means 
 that you can't define URLs for various functions in your application like you 

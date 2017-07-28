@@ -1,5 +1,9 @@
 # Development Setup Overview [](id=development-setup-overview)
 
+<div class="learn-path-step">
+    <p>Development Setup Overview<br>Step 1 of 1</p>
+</div>
+
 Liferay's development tools aim to help you get started fast. The basic steps 
 for installing @ide@ are
 

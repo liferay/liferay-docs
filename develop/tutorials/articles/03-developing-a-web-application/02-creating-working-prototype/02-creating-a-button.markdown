@@ -1,5 +1,9 @@
 # Creating an Add Entry Button [](id=creating-an-add-guestbook-button)
 
+<div class="learn-path-step">
+    <p>Developing Your First Portlet<br>Step 2 of 8</p>
+</div>
+
 A guestbook application is pretty simple, right? People come to your site and 
 post their names and brief messages. Other users can read these entries and post 
 their own. 

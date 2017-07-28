@@ -1,5 +1,9 @@
 # Implementing Portlet Actions [](id=implementing-portlet-actions)
 
+<div class="learn-path-step">
+    <p>Developing Your First Portlet<br>Step 7 of 8</p>
+</div>
+
 When users submit the form, your application stores the form data for display in 
 the guestbook. To keep this first application simple, you'll implement this 
 using a part of the Portlet API called Portlet Preferences. Normally, of course, 

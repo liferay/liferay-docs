@@ -1,48 +1,47 @@
-# Fitting it all together 
+# Fitting it All Together
 
 You've created a complete data-driven application from the back-end to the 
-display. It's a great time to review how everything connects together.
+display. It's a great time to review how everything connects together. 
 
 ## The Entry 
 
-First, you defined your model in Service Builder's configuration file. The main
-part of this is your Entry object: 
+First, you defined your model in Service Builder's configuration file, 
+`service.xml`. The main part of this is your `Entry` object: 
 
-     <entity local-service="true" name="Entry" uuid="true">
+    <entity local-service="true" name="Entry" uuid="true">
 
-                 <!-- PK fields -->
+        <!-- PK fields -->
 
-                 <column name="entryId" primary="true" type="long" />
+        <column name="entryId" primary="true" type="long" />
 
-                 <!-- Group instance -->
+        <!-- Group instance -->
 
-                 <column name="groupId" type="long" />
+        <column name="groupId" type="long" />
 
-                 <!-- Audit fields -->
+        <!-- Audit fields -->
 
-                 <column name="companyId" type="long" />
-                 <column name="userId" type="long" />
-                 <column name="userName" type="String" />
-                 <column name="createDate" type="Date" />
-                 <column name="modifiedDate" type="Date" />
-                 <column name="name" type="String" />
-                 <column name="email" type="String" />
-                 <column name="message" type="String" />
-                 <column name="guestbookId" type="long" />
+        <column name="companyId" type="long" />
+        <column name="userId" type="long" />
+        <column name="userName" type="String" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+        <column name="name" type="String" />
+        <column name="email" type="String" />
+        <column name="message" type="String" />
+        <column name="guestbookId" type="long" />
 
-                 <finder name="G_G" return-type="Collection">
-                     <finder-column name="groupId" />
-                     <finder-column name="guestbookId" />
-                 </finder>
-      </entity>
+        <finder name="G_G" return-type="Collection">
+            <finder-column name="groupId" />
+            <finder-column name="guestbookId" />
+        </finder>
+    </entity>
  
-Next you created a service implementation in `EntryLocalServiceImpl` that 
-defined how to get and store the entry. Every field you defined was accounted
-for in the `addEntry` method.
-    
-    public Entry addEntry(
-                long userId, long guestbookId, String name, String email,
-                String message, ServiceContext serviceContext)
+Next, you created a service implementation in `EntryLocalServiceImpl` that 
+defined how to get and store the entry. Every field you defined was accounted 
+for in the `addEntry` method. 
+
+    public Entry addEntry(long userId, long guestbookId, String name, String email,
+            String message, ServiceContext serviceContext)
             throws PortalException {
 
             long groupId = serviceContext.getScopeGroupId();
@@ -73,10 +72,10 @@ for in the `addEntry` method.
             entryPersistence.update(entry);
 
             return entry;
-        }
- 
-Notice that all the fields that you described in service builder (including
-things like the `uuid`) are present here.
+    }
+
+Notice that all the fields you described in Service Builder (including things 
+like the `uuid`) are present here. 
  
 You also added ways to get entries:
 
@@ -89,32 +88,32 @@ You also added ways to get entries:
 
             return entryPersistence.findByG_G(groupId, guestbookId, start, end, obc);
         }
-    
+
         public List<Entry> getEntries(long groupId, long guestbookId, int start, int end)
             throws SystemException {
 
             return entryPersistence.findByG_G(groupId, guestbookId, start, end);
         }
- 
+
 In `service.xml` you defined `groupId` and `guestbookId` as the two finder 
-fields, and in these methods you called methods generated to the persistence
-layer.
+fields, and in these methods you called methods generated to the persistence 
+layer. 
 
 After you implemented all that, Service Builder propagated your implementation
 to the interfaces, so they could be called. Then, in the portlet class, you
-created references to the service classes that Service Builder generated and
-used those references to access the service to add an entry:
+created references to the service classes that Service Builder generated, and
+used those references to access the service to add an entry: 
     
-        _entryLocalService.addEntry( serviceContext.getUserId(), guestbookId, 
+    _entryLocalService.addEntry( serviceContext.getUserId(), guestbookId, 
         userName, email,message, serviceContext);
  
-Finally you wrapped all this up in a user interface that enables users to 
-enter the information they want and displays the data they've entered. 
+Finally, you wrapped all this up in a user interface that lets users enter the 
+information they want, and displays the data they've entered. 
 
-Now that you've built the application, and you can see a clear picture of how it
-all works, it's time to test it.
+Now that you've built the application, and you can see a clear picture of how it 
+all works, it's time to test it. 
 
-# Deploying and testing the application
+## Deploying and Testing the Application
 
 1.  Drag and drop the `guestbook-api` module onto the server.
 
@@ -122,8 +121,8 @@ all works, it's time to test it.
 
 3.  Look for the STARTED messages from the console. 
 
-4.  Go to your Liferay instance at `localhost:8080` in your browser to test your
-    updated application.
+4.  Go to your @product@ instance at `localhost:8080` in your browser to test 
+    your updated application. 
 
 8.  Click *Add Entry*.
 
@@ -133,13 +132,12 @@ all works, it's time to test it.
 
 11. Verify that your entry appears.
 
-![Figure x: A new Guestbook and Entry created.](../../../images/guestbook-entry-test.png)
+![Figure x: A new guestbook and entry.](../../../images/guestbook-entry-test.png)
 
-# What's Next?
+## What's Next?
 
-You've created a working web application and deployed it on
-@product@. If you've created web applications before, though, you know that it's
-missing some important features: security, front-end validation, and an
-interface for administrators to create multiple guestbooks per portlet. In the
-next section, you'll begin adding these (and more) features. 
-
+You've created a working web application and deployed it on @product@. If you've 
+created web applications before, though, you know that it's missing some 
+important features: security, front-end validation, and an interface for 
+administrators to create multiple guestbooks per portlet. In the next section, 
+you'll begin adding these (and more) features. 

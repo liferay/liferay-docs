@@ -1,5 +1,9 @@
 # Triggering Portlet Actions
 
+<div class="learn-path-step">
+    <p>Developing Your First Portlet<br>Step 5 of 8</p>
+</div>
+
 Recall that portlets run in a portion of a page, and a page can contain multiple 
 portlets. Because of this, portlets have *phases* of operation. Here, you'll 
 learn about the most important two. The first phase is the one you've already 
