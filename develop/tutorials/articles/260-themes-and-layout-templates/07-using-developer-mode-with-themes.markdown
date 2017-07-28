@@ -23,10 +23,10 @@ override settings that trigger them (if applicable):
 
 +$$$
 
-**Note:** There are a couple known issues [LPS-71350](https://issues.liferay.com/browse/LPS-71350) 
-and [LPS-70364](https://issues.liferay.com/browse/LPS-70364) that causes CSS 
-changes not to be applied to the page and the Control Panel and Product Menu to 
-break when using Developer Mode. Both these issues are fixed in Liferay Portal 
+**Note:** There are two known issues [LPS-71350](https://issues.liferay.com/browse/LPS-71350) 
+and [LPS-70364](https://issues.liferay.com/browse/LPS-70364) that prevent CSS 
+changes from being applied to the page and the Control Panel and Product Menu to
+break when using Developer Mode. Both these issues are fixed in Liferay Portal
 CE 7.0.3 GA4 and Liferay DXP Fixpack DE 13.
 
 $$$
