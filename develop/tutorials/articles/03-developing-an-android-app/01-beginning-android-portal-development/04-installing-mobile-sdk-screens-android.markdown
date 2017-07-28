@@ -1,11 +1,11 @@
 # Installing the Guestbook Mobile SDK and Liferay Screens for Android [](id=installing-the-guestbook-mobile-sdk-and-liferay-screens-for-android)
 
 For your Android app to interact with the Guestbook portlet, you must install 
-the following in your Android project:
+the following libraries in your Android project:
 
 - **Liferay's pre-built Mobile SDK:** This Mobile SDK contains the classes that 
-  call the remote services of @product@'s core apps. It also contains the 
-  framework necessary for any Mobile SDK to make server calls. 
+  call @product@'s core remotes services. It also contains the framework 
+  necessary for any Mobile SDK to make server calls. 
 
 - **The Guestbook Mobile SDK:** This Mobile SDK contains only the classes that 
   call the Guestbook portlet's remote services. 
@@ -15,7 +15,7 @@ the following in your Android project:
   like Login Screenlet. Because these built-in Screenlets interact with 
   @product@'s core apps, they make their server calls with Liferay's pre-built 
   Mobile SDK. Note that all Screenlets, including those that make server calls 
-  with a custom built Mobile SDK, must use the framework in Liferay's pre-built 
+  with a custom-built Mobile SDK, must use the framework in Liferay's pre-built 
   Mobile SDK to issue their calls. 
 
 Since Liferay's pre-built Mobile SDK is a dependency of Liferay Screens, 
@@ -28,11 +28,11 @@ Liferay Screens. When you finish, you'll be ready to start developing the app.
 ## Installing the Guestbook Mobile SDK [](id=installing-the-guestbook-mobile-sdk)
 
 The Mobile SDK Builder generated two separate JAR files in your
-`liferay-mobile-sdk-android-7.0.5` folder: 
+`liferay-mobile-sdk-android-7.0.6` folder: 
 
 1. `modules/gb/build/libs/liferay-gb-android-sdk-1.0.jar`
 
-2. `android/build/libs/liferay-android-sdk-7.0.5.jar`
+2. `android/build/libs/liferay-android-sdk-7.0.6.jar`
 
 The first JAR file is the Guestbook Mobile SDK. The second JAR file is a custom 
 built version of Liferay's pre-built Mobile SDK. Because Screens includes the 
@@ -145,7 +145,7 @@ The `liferay_group_id` value is the ID of the site your app needs to communicate
 with. Since the app needs to communicate with the Guestbook portlet, navigate to 
 the site you put the Guestbook portlet on. In the *Site Administration* menu, 
 select *Configuration* &rarr; *Site Settings*. The site ID is listed at the top 
-of the *General* tab. Copy and paste this value into the `liferay_group_id` 
-value in `server_context.xml`. 
+of the *General* tab. Copy and paste this value from your portal to the 
+`liferay_group_id` value in `server_context.xml`. 
 
 Awesome! Next, you'll learn the app's basic design. 

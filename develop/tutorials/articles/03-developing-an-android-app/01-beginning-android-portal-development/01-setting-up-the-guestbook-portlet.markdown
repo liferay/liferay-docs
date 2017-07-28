@@ -9,8 +9,7 @@ Guestbook portlet in a @product@ instance. To do this, follow these steps:
 
 ## Installing the JDK [](id=installing-the-jdk)
 
-To run @product-ver@ and develop Android apps, you must have JDK 8 installed. 
-This JDK is required on all operating systems. You can download and install the 
+To get started, you must have JDK 8 installed. You can download and install the 
 Java SE JDK from the 
 [Java downloads page](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 This page also has links to the JDK installation instructions. 
@@ -22,21 +21,20 @@ First, download a @product@ Tomcat bundle from
 Then 
 [click here](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
 and follow the instructions to install the bundle. To follow @product@ best 
-practices, you should create a `bundles` directory and unzip it there. The 
-bundle's root directory is referred to as *Liferay Home* and is named according 
-to the version, edition, and specific @product@ release. For example, if you 
-downloaded Liferay Portal 7.0 CE GA3 and unzipped it to a `bundles` directory on 
-your machine, the path of that bundle's Liferay Home directory is: 
+practices, you should create a `bundles` folder and unzip it there. The bundle's 
+root folder is referred to as *Liferay Home* and is named according to the 
+version, edition, and specific @product@ release. For example, if you downloaded 
+Liferay Portal 7.0 CE GA4 and unzipped it to a `bundles` folder on your machine, 
+that bundle's Liferay Home folder path is: 
 
-    bundles/liferay-ce-portal-7.0-ga3
+    bundles/liferay-ce-portal-7.0-ga4
 
-Now you're ready to start @product@! 
-[Click here](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#running-product-for-the-first-time) 
-and follow the instructions to start the bundle. If you're on Mac or Linux you 
-should also run `tail -f ../logs/catalina.out` immediately after the 
-`./startup.sh` command executes. This ensures that the server log prints to the 
-terminal. This step isn't necessary on Windows because the server log 
-automatically opens in another window. 
+Now you're ready to start @product@! Start the bundle as described in the link 
+above. If you're on Mac or Linux you should also run 
+`tail -f ../logs/catalina.out` immediately after the `./startup.sh` command 
+executes. This ensures that the server log prints to the terminal. This step 
+isn't necessary on Windows because the server log automatically opens in another 
+window. 
 
 After a minute or two, @product@ starts up and automatically takes you to its 
 initial setup page at 
@@ -49,9 +47,9 @@ purposes of this Learning Path, these don't have to be real. If you want to
 connect @product@ to a separate database such as MySQL or PostgreSQL, you can 
 configure that connection here. Note that although the default embedded database 
 is fine for development on your local machine, it isn't optimized for 
-production. Click *Finish Configuration* when you're done. Then set a password 
-and a password reminder query for your administrative user. Your @product@ 
-instance then takes you to its default site. 
+production. Click *Finish Configuration* when you're done. Then accept the terms 
+of use and set a password and a password reminder query for your administrative 
+user. Your @product@ instance then takes you to its default site. 
 
 Great! Next, you'll deploy the Guestbook portlet to your @product@ instance. 
 
@@ -59,28 +57,25 @@ Great! Next, you'll deploy the Guestbook portlet to your @product@ instance.
 
 Now that your @product@ instance is set up, you can deploy the Guestbook portlet 
 to it. First, 
-[click here](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/mobile/android/) 
-and download the Guestbook portlet's modules: 
+[click here](https://www.liferay.com/) and download the Guestbook portlet's 
+modules: 
 
-- `guestbook.api-1.0.0.jar`
-- `guestbook.service-1.0.0.jar`
-- `guestbook.web-1.0.0.jar`
+- `com.liferay.docs.guestbook.api-1.0.0.jar`
+- `com.liferay.docs.guestbook.service-1.0.0.jar`
+- `com.liferay.docs.guestbook-1.0.0.jar`
 
-Place these modules in your @product@ instance's `[Liferay Home]/deploy` 
-directory. You should then see console messages indicating that the modules have 
-successfully deployed and started. 
-
-Now you'll add the Guestbook portlet to a page and create some guestbooks and 
-entries. On your @product@ instance's default site, click the *Add* button 
-(![Add](../../../images/icon-control-menu-add.png)) on the upper-right corner of 
-the screen. Then click the *Applications* &rarr; *Sample* category and drag 
-*Guestbook* onto the page. The Guestbook portlet should now appear containing 
-the default guestbook (Main). In the portlet, add a new guestbook and an entry 
-or two each from the *Add* menu 
+Place these modules in your @product@ instance's `[Liferay Home]/deploy` folder. 
+You should then see console messages indicating that the modules have 
+successfully deployed and started. On your @product@ instance's default site, 
+click the *Add* button (![Add](../../../images/icon-control-menu-add.png)) on 
+the upper-right corner of the screen. Then click the *Applications* &rarr; 
+*Sample* category and drag *Guestbook* onto the page. The Guestbook portlet 
+should now appear with the default guestbook (Main). In the portlet, add a new 
+guestbook and an entry or two each from the *Add* menu 
 (![Add](../../../images/icon-app-add.png)) that appears in the top right of the 
-portlet's border when you mouse over the portlet. This ensures there's some 
-content for the Android app to display. The Guestbook portlet on your site 
-should now resemble this: 
+portlet's border when you mouse over the portlet. When you create the Guestbook 
+Android app, this ensures there's some content to display in it. The Guestbook 
+portlet on your site should now look like this: 
 
 ![Figure 1: The Guestbook portlet, with a new guestbook and some entries.](../../../images/guestbook-portlet-01.png)
 
