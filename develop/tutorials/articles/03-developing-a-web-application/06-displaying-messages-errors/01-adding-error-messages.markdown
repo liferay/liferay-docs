@@ -37,7 +37,7 @@ For the `deleteEntry` method, do the same.
 
 1. After the logic to delete the entry, add a success message:
 
-        SessionMessages.add(request, "entryDeleted");
+        SessionMessages.add(request, "entryDeleted");å
 
 2. Find the same `Logger...` block of code in the `deleteEntry` method and, just like you did with `addEntry` replace it with:
 
@@ -63,6 +63,6 @@ That covers the methods that need to provide more feedback in the main
 
 		SessionErrors.add(request, e.getClass().getName());
 
-Congratulation! Your application is now configured to provide more relevant and 
-detailed feedback. Later when you configure Liferay's UI features, you will use these keys to provide feedback to your users. 
+Your Controller is now configured to provide more relevant and 
+detailed feedback. Now it's time to configure your View layer to display these message.
 
