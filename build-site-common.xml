@@ -483,6 +483,7 @@
 			failonerror="false"
 			fork="true"
 		>
+			<arg value="${legacy.links}"/>
 			<arg value="${doc.dir}"/>
 		</java>
 	</target>

@@ -22,7 +22,10 @@ public class CheckLinks {
 
 	public static void main(String[] args) throws IOException {
 
-		String docDir = args[0];
+		String legacyLinks = args[0];
+		checkLegacyLinks = Boolean.parseBoolean(legacyLinks);
+
+		String docDir = args[1];
 
 		File currentArticleDir = new File("../" + docDir + "/articles");
 
@@ -448,10 +451,10 @@ public class CheckLinks {
 				}
 			}
 		}
-		
+
 		// Check legacy URLs by checking remote LDN site. These links must be
 		// published to LDN before this tool can verify them.
-		else if (line.contains("/6-2/") || line.contains("/6-1/") &&
+		else if (checkLegacyLinks && (line.contains("/6-2/") || line.contains("/6-1/")) &&
 				(count2 < 2 && count3 < 2)) {
 
 			String ldnUrl = extractLdnUrl(line, in.getLineNumber(), article.getName());
@@ -464,6 +467,7 @@ public class CheckLinks {
 		return validURL;
 	}
 
+	private static boolean checkLegacyLinks;
 	private static String ldnArticle;
 	private static int resultsNumber = 0;
 	private static boolean validUrl;
