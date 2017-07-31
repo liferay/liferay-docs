@@ -282,8 +282,8 @@ also deletes the file on the server and in any other connected clients.
 Likewise, if a user deletes a file on the server, Sync also deletes the file
 in all connected clients. In other words, anywhere a user deletes a file, Sync
 deletes it *everywhere*. You're probably thinking, "This is a disaster waiting
-to happen!" Don't fret! Liferay's Recycle Bin is enabled by default and lets you
-recover deleted files. You can access the Recycle Bin from each site's *Site
+to happen!" Don't fret! @product@'s Recycle Bin is enabled by default and lets 
+you recover deleted files. You can access the Recycle Bin from each site's *Site
 Administration* menu. 
 
 +$$$
@@ -295,7 +295,7 @@ recovered.
 
 $$$
 
-Liferay instance and site administrators can, of course, disable the Recycle 
+@product@ instance and site administrators can, of course, disable the Recycle 
 Bin. Disabling the Recycle Bin in a site, however, leaves the site vulnerable to
 accidental file deletions that propagate through Sync. 
 
@@ -313,11 +313,10 @@ installation's permissions.
 ## Liferay Sync Permissions Demonstration [](id=liferay-sync-permissions-demonstration)
 [](id=liferay-sync-permissions-demonstration)
 
-Sync uses Liferay's default permissions to determine files and folders to sync
+Sync uses @product@'s default permissions to determine files and folders to sync
 with the user's devices. It can only sync files a user can access in the 
-Liferay 
-instance. After installing the desktop Sync client, you can follow the steps 
-below to test this functionality. 
+@product@ instance. After installing the desktop Sync client, you can follow the 
+steps below to test this functionality. 
 
 First, enter the text `classified information` into a new text file and save it
 on your desktop as `secret.txt`. Then use your browser to sign into your
@@ -335,7 +334,7 @@ Next, configure your Liferay Sync client to sign in with the secretagent user's
 credentials and sync with the Secret Site. Open the Liferay Sync menu from the
 system tray and select *Preferences*. In the *Accounts* tab, click the plus icon
 at the window's bottom left to add an account. Provide the secretagent user's
-credentials and uncheck all Liferay sites except the Secret Site. Now confirm
+credentials and uncheck all @product@ sites except the Secret Site. Now confirm
 that Sync downloaded the `secret.txt` file to your new Sync folder. Open it and
 check that it contains the text `classified information`. Next, use Sync to
 connect to your @product@ installation with the user that doesn't belong to the
@@ -369,10 +368,10 @@ their files, even when the site's default file permissions are set to View Only.
 
 Congratulations! You've successfully set up a Liferay Sync folder that can only 
 be accessed by site members and administrators. You've also seen how Sync's 
-default file permissions work. By using Liferay's permissions alongside Sync 
+default file permissions work. By using @product@'s permissions alongside Sync 
 Admin's default file permissions, Sync gives administrators two levels of 
 control over files in their sites. 
 
-Great! Now you know how to enable and configure Liferay Sync in your Liferay 
+Great! Now you know how to enable and configure Liferay Sync in your @product@ 
 instance. The next article explains how end users can install and configure the 
 Sync desktop client. 
