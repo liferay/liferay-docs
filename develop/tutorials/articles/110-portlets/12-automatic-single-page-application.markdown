@@ -269,7 +269,7 @@ Now you know how to configure and use SPA in @product@!
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
 
 [Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
 
