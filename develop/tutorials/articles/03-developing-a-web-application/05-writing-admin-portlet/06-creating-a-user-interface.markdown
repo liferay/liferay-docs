@@ -25,9 +25,8 @@ The first one to create is the default view:
         <%@include file="../init.jsp"%>
 
                 <liferay-ui:search-container
-                              total="<%= GuestbookLocalServiceUtil.getGuestbooksCount(scopeGroupId) %>"
-        >
-                        <liferay-ui:search-container-results
+                              total="<%= GuestbookLocalServiceUtil.getGuestbooksCount(scopeGroupId) %>">
+                <liferay-ui:search-container-results
                     results="<%= GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId, 
                     searchContainer.getStart(), searchContainer.getEnd()) %>"
                 />
@@ -115,85 +114,65 @@ The first one to create is the default view:
                         Guestbook guestbook = (Guestbook) row.getObject();
                 %>
 
-                <liferay-ui:icon-menu>
-                                <portlet:renderURL var="editURL">
-                                        <portlet:param name="guestbookId"
-                                                value="<%=String.valueOf(guestbook.getGuestbookId()) %>" />
-                                        <portlet:param name="mvcPath"
-                                                value="/guestbookadminportlet/edit_guestbook.jsp" />
-                                </portlet:renderURL>
+            <liferay-ui:icon-menu>
 
-                                <liferay-ui:icon image="edit" message="Edit"
-                                        url="<%=editURL.toString() %>" />
+                <portlet:renderURL var="editURL">
+                   <portlet:param name="guestbookId"
+                       value="<%=String.valueOf(guestbook.getGuestbookId()) %>" />
+                   <portlet:param name="mvcPath"
+                       value="/guestbookadminportlet/edit_guestbook.jsp" />
+                </portlet:renderURL>
 
-                                <liferay-security:permissionsURL
-                                        modelResource="<%= Guestbook.class.getName() %>"
-                                        modelResourceDescription="<%= guestbook.getName() %>"
-                                        resourcePrimKey="<%= String.valueOf(guestbook.getGuestbookId()) %>"
-                                        var="permissionsURL" />
+                <liferay-ui:icon image="edit" message="Edit"
+                            url="<%=editURL.toString() %>" />
 
-                                <portlet:actionURL name="deleteGuestbook" var="deleteURL">
-                                        <portlet:param name="guestbookId"
-                                                value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
-                                </portlet:actionURL>
+                <portlet:actionURL name="deleteGuestbook" var="deleteURL">
+                    <portlet:param name="guestbookId"
+                            value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
+                </portlet:actionURL>
 
-                                <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
+                <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
 
-                </liferay-ui:icon-menu>
+             </liferay-ui:icon-menu>
 
-    In `guestbook_actions.jsp`, you are displaying a list of possible actions
-    that can be performed on a guestbook: editing it, configuring its
-    permsisions, or deleting it. As with all of your portlet's JSPs, you need to
-    include `init.jsp`, since you're following the pattern of adding all JSP
-    imports to one file. In order to get the particular guestbook selected by
-    the user, you have to use the search container result row selected by the
-    user. This is what you're doing in the initial scriptlet at the top of the
-    file. You also need the `mvcPath` URL parameter for the *edit guestbook*
-    action so the portlet knows the path to the form to display for editing a
-    guestbook: `edit_guestbook.jsp`. Creating this JSP will be your last step.
+    This JSP comprises the pop-up actions menu that shows the possible actions
+    users can perform on a guestbook: editing it or deleting it. First,
+    `init.jsp` is included because all JSP imports are in one file. Because this
+    JSP is included for every Search Container row, it retrieves the guestbook
+    in the current iteration. The scriptlet grabs that guestbook so its ID can
+    be supplied to the menu tags. 
 
-    Most of `edit_guestbook.jsp` is taken up by the `<liferay-ui:icon-menu>` tag
-    and its contents. The `<liferay-ui:icon-menu>` tag itself is a container for
-    menu items. The Edit menu item displays the Edit icon and the message 
-    *Edit*:
+    The `<liferay-ui:icon-menu` tag dominates `guestbook_actions.jsp`. It's a
+    container for menu items, of which there are currently only two (you'll add
+    more later). 
+ 
+    The Edit menu item displays the Edit icon and the message *Edit*:
 
         <liferay-ui:icon image="edit" message="Edit"
                 url="<%=editURL.toString() %>" />
 
-    The `editURL` variable is created via the `<portlet:renderURL
+    The `editURL` variable comes from the `<portlet:renderURL
     var="editURL">` tag with two parameters: `guestbookId` and `mvcPath`. The
     `guestbookId` parameter specifies the guestbook to edit (it's the one from
     the selected search container result row), and the `mvcPath` parameter
     specifies the path the Edit Guestbook form.
 
-    The Permissions menu item displays the Permissions icon and the default
-    message *Permissions*:
-
-        <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
-
-    The `permissionsURL` variable is created via the
-    `<liferay-security:permissionsURL>` tag. You supply the model resource class
-    name and the primary key of the specific resource for which you'd like to
-    display the permissions configuration menu, and the tag does the rest.
-    Another benefit of using Service Builder and defining your guestbook
-    permissions in `src/main/resources/resource-actions/default.xml` is that
-    your application seamlessly integrates with Liferay's permissions system.
-
-    The Delete menu item displays a default delete icon and the default message
+    The Delete menu item displays a delete icon and the default message
     *Delete*:
     
         <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
 
-    Unlike the `editURL`, which is just a render URL that displays the
-    form for editing a guestbook, the `deleteURL` is an action URL. It invokes
-    the portlet's `deleteGuestbook` action and you create it via the
-    `<portlet:actionURL name="deleteGuestbook" var="deleteURL">` tag. This
-    action URL only takes one parameter, the `guestbookId` of the guestbook to
-    be deleted. Now there's just one more JSP file left to create: the
+    Unlike the `editURL`, which is just a render URL that links to the
+    `edit_guestbook.jsp`, the `deleteURL` is an action URL. It invokes the
+    portlet's `deleteGuestbook` action and the `<portlet:actionURL
+    name="deleteGuestbook" var="deleteURL">` tag creates it. This action URL
+    only takes one parameter: the `guestbookId` of the guestbook to be deleted. 
+    
+    Now there's just one more JSP file left to create: the
     `edit_guestbook.jsp` that contains the form for both adding a new guestbook
     and editing an existing one.
 
-3. Create a new file called `edit_guestbook.jsp` in your project's
+3.  Create a new file called `edit_guestbook.jsp` in your project's
     `/guestbookadminportlet` directory. Then add the following code to it:
 
         <%@include file = "../init.jsp" %>
@@ -219,31 +198,29 @@ The first one to create is the default view:
                 <aui:model-context bean="<%= guestbook %>" model="<%= Guestbook.class %>" />
 
                 <aui:input type="hidden" name="guestbookId"
-                        value='<%= guestbook == null ? "" : guestbook.getGuestbookId() %>' />
+                    value='<%= guestbook == null ? "" : guestbook.getGuestbookId() %>' />
 
                 <aui:fieldset>
-                                <aui:input name="name" />
+                     <aui:input name="name" />
                 </aui:fieldset>
 
                 <aui:button-row>
-                                <aui:button type="submit" />
-                                <aui:button onClick="<%= viewURL %>" type="cancel"  />
+                     <aui:button type="submit" />
+                     <aui:button onClick="<%= viewURL %>" type="cancel"  />
                 </aui:button-row>
         </aui:form>
 
-    You begin, of course, by importing `init.jsp`. Then you declare a `null`
-    guestbook variable. If there's a `guestbookId` parameter in the request,
-    then you know that you're editing an existing guestbook, and you use the
-    `guestbookId` to retrieve the corresponding guestbook via a service call.
-    Otherwise, you know that you're adding a new guestbook.
+    After the `init.jsp` import, you declare a `null` guestbook variable. If
+    there's a `guestbookId` parameter in the request, then you know that you're
+    editing an existing guestbook, and you use the `guestbookId` to retrieve the
+    corresponding guestbook via a service call.  Otherwise, you know that you're
+    adding a new guestbook.
 
-    Next, you create a view URL that points to the default view of the Guestbook
-    Admin portlet. This URL is invoked if the user clicks *Cancel* on the Add
-    Guestbook or Edit Guestbook form. After that, you create an action URL that
-    invokes either the Guestbook Admin portlet's `addGuestbook` method or its
-    `updateGuestbook` method. If no guestbook could be retrieved from the
-    request, `addGuestbook` is invoked. Otherwise, `updateGuestbook` is invoked
-    with the required parameter: the guestbook's `guestbookId`.
+    Next, is a view URL that points to the Guestbook Admin portlet's default
+    view. This URL is invoked if the user clicks *Cancel* on the Add Guestbook
+    or Edit Guestbook form. After that, you create an action URL that invokes
+    either the Guestbook Admin portlet's `addGuestbook` method or its
+    `updateGuestbook` method based on whether the `guestbook` variable is null. 
 
     If a guestbook is being edited, the current guestbook's name should appear
     in the name field of the form. You use the following tag to define a model
@@ -259,7 +236,7 @@ The first one to create is the default view:
     the Guestbook Admin portlet's `addGuestbook` or `updateGuestbook` method, as
     discussed above.
     
-    The `guestbookId` needs to appear on the form so that it can be submitted.
+    The `guestbookId` must appear on the form so that it can be submitted.
     The user, however, doesn't need to see it. Thus, you specify `type="hidden"`:
 
         <aui:input type="hidden" name="guestbookId"
@@ -269,17 +246,19 @@ The first one to create is the default view:
 
     The last item on the form is a button row with two buttons. The *Submit*
     button submits the form, invoking the `editGuestbookURL` which, in turn,
-    invokes either the `addGuestbook` or `updateGuestbook` method of the
-    Guestbook Admin portlet. The *Cancel* button invokes the `viewURL` which
-    displays the default view of the Guestbook Admin portlet.
+    invokes either the `addGuestbook` or `updateGuestbook` method. The *Cancel*
+    button invokes the `viewURL` which displays the default view.
 
-Excellent! You've now finished creating a basic UI for the Guestbook Admin 
-portlet. The Guestbook Admin portlet should now match the figure below:
+Excellent! You've now finished creating the UI for the Guestbook Admin portlet.
+It should now match the figure below:
 
 ![Figure 1: The Guestbook Admin portlet allows administrators to add new guestbooks or to edit existing guestbooks, configure their permissions, or delete them.](../../../images/admin-app-start.png)
 
-Test out the Guestbook Admin portlet! Try adding new guestbooks, editing 
-guestbooks, and deleting guestbooks. In a later section of the Learning Path, 
-you'll improve the UI by applying Liferay's Lexicon Design patterns. 
+Test out the Guestbook Admin portlet! Try adding new guestbooks, editing
+guestbooks, and deleting guestbooks. 
 
-<!-- Outro to go here -->
+Now all the Guestbook application's primary functions work. There are still many
+missing features, however. For example, if there's ever an error, users never
+see it: all the code written so far just prints messages in the logs. Next,
+you'll learn how to surface those errors to the user. 
+
