@@ -7,25 +7,44 @@ separate project for redistribution. For information on creating Screenlets for
 redistribution, see the tutorial 
 [Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets). 
 Since you'll use Guestbook List Screenlet in only this app, you can create it in 
-a new package inside the app's project. 
+a new package inside the app's project. Create this package now:
 
-In Android Studio, right click the *java* folder and select *New* &rarr; 
-*Package*. Select *.../app/src/main/java* as the destination directory, and 
-click *OK*. Then enter `com.liferay.docs.guestbooklistscreenlet` as the 
-package's name and click *OK*. Android Studio lists the new package alongside 
-the package that contains the app's activity and fragment (`liferayguestbook`). 
-If it doesn't appear at first, you may need to collapse and reopen the *java* 
-folder. 
+1.  In Android Studio, right click the *java* folder and select *New* &rarr;
+    *Package*. 
+
+2.  Select *.../app/src/main/java* as the destination directory, and click *OK*. 
+
+3.  Enter `com.liferay.docs.guestbooklistscreenlet` as the package's name and
+    click *OK*. Android Studio lists the new package alongside the package that
+    contains the app's activity and fragment (`liferayguestbook`).  If it
+    doesn't appear at first, you may need to collapse and reopen the *java*
+    folder. 
 
 ![Figure 1: Guestbook List Screenlet's new package is highlighted.](../../../images/android-guestbooks-screenlet-package.png)
 
-Next, you'll create the model class the Screenlet needs. 
+Before getting started, you should understand how pagination works in list 
+Screenlets.
+
+## Pagination [](id=pagination)
+
+To ensure that users can scroll smoothly through large lists of items, list 
+Screenlets support fluent pagination. Support for this is built into the list 
+Screenlet framework. You'll see this as you construct your list Screenlet. For 
+example, several methods have parameters for the start row and end row of a page 
+in the list. 
+
+Now you're ready to begin! 
 
 ## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
-Recall from 
-[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-model-class) 
-that you need a model class to represent the entity retrieved from @product@. 
+Entities come back from Liferay Portal in JSON. To work with these results 
+efficiently in your app, you must convert them to model objects that represent 
+the entity in the portal. Although Screens's 
+[`BaseListInteractor`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) 
+transforms the JSON entities into `Map` objects for you, you still must 
+convert these into proper entity objects for use in your app. You'll do this via 
+a model class. 
+
 The model class you'll create for Guestbook List Screenlet, `GuestbookModel`, 
 creates `GuestbookModel` objects that represent guestbooks retrieved from the 
 Guestbook portlet. You'll create this model class in a separate package outside 
@@ -35,126 +54,130 @@ class. For example, if a Screenlet that edits guestbooks existed, it would also
 need `GuestbookModel` objects. Putting the model class in a separate package 
 makes it clear that this class doesn't belong exclusively to a single Screenlet. 
 
-First, create a new package called `model` inside the `com.liferay.docs` 
-package. Inside this new `model` package, create a new class called 
-`GuestbookModel`. Replace `GuestbookModel`'s contents with this code: 
+Follow these steps to create `GuestbookModel`:
 
-    package com.liferay.docs.model;
+1.  Create a new package called `model` inside the `com.liferay.docs` package.
+ 
+2.  Inside this new `model` package, create a new class called `GuestbookModel`.
+ 
+3.  Replace `GuestbookModel`'s contents with this code: 
 
-    import android.os.Parcel;
-    import android.os.Parcelable;
+        package com.liferay.docs.model;
 
-    import java.util.Date;
-    import java.util.Map;
+        import android.os.Parcel;
+        import android.os.Parcelable;
 
-    public class GuestbookModel implements Parcelable {
+        import java.util.Date;
+        import java.util.Map;
 
-        private Map values;
-        private long guestbookId;
-        private long groupId;
-        private long companyId;
-        private long userId;
-        private String userName;
-        private long createDate;
-        private long modifiedDate;
-        private String name;
+        public class GuestbookModel implements Parcelable {
 
-        public static final Creator<GuestbookModel> CREATOR = new Creator<GuestbookModel>() {
-            @Override
-            public GuestbookModel createFromParcel(Parcel in) {
-                return new GuestbookModel(in);
+            private Map values;
+            private long guestbookId;
+            private long groupId;
+            private long companyId;
+            private long userId;
+            private String userName;
+            private long createDate;
+            private long modifiedDate;
+            private String name;
+
+            public static final Creator<GuestbookModel> CREATOR = new Creator<GuestbookModel>() {
+                @Override
+                public GuestbookModel createFromParcel(Parcel in) {
+                    return new GuestbookModel(in);
+                }
+
+                @Override
+                public GuestbookModel[] newArray(int size) {
+                    return new GuestbookModel[size];
+                }
+            };
+
+            public GuestbookModel() {
+                super();
+            }
+
+            protected GuestbookModel(Parcel in) {
+                guestbookId = in.readLong();
+                groupId = in.readLong();
+                companyId = in.readLong();
+                userId = in.readLong();
+                userName = in.readString();
+                createDate = in.readLong();
+                modifiedDate = in.readLong();
+                name = in.readString();
+            }
+
+            public GuestbookModel(Map<String, Object> stringObjectMap) {
+                values = stringObjectMap;
+                guestbookId = Long.parseLong((String) stringObjectMap.get("guestbookId"));
+                groupId = Long.parseLong((String) stringObjectMap.get("groupId"));
+                companyId = Long.parseLong((String) stringObjectMap.get("companyId"));
+                userId = Long.parseLong((String) stringObjectMap.get("userId"));
+                userName = (String) stringObjectMap.get("userName");
+                createDate = (long) stringObjectMap.get("createDate");
+                modifiedDate = (long) stringObjectMap.get("modifiedDate");
+                name = (String) stringObjectMap.get("name");
             }
 
             @Override
-            public GuestbookModel[] newArray(int size) {
-                return new GuestbookModel[size];
+            public void writeToParcel(Parcel dest, int flags) {
+                dest.writeLong(guestbookId);
+                dest.writeLong(groupId);
+                dest.writeLong(companyId);
+                dest.writeLong(userId);
+                dest.writeString(userName);
+                dest.writeLong(createDate);
+                dest.writeLong(modifiedDate);
+                dest.writeString(name);
             }
-        };
 
-        public GuestbookModel() {
-            super();
-        }
+            @Override
+            public int describeContents() {
+                return 0;
+            }
 
-        protected GuestbookModel(Parcel in) {
-            guestbookId = in.readLong();
-            groupId = in.readLong();
-            companyId = in.readLong();
-            userId = in.readLong();
-            userName = in.readString();
-            createDate = in.readLong();
-            modifiedDate = in.readLong();
-            name = in.readString();
-        }
+            public long getGuestbookId() {
+                return guestbookId;
+            }
 
-        public GuestbookModel(Map<String, Object> stringObjectMap) {
-            values = stringObjectMap;
-            guestbookId = Long.parseLong((String) stringObjectMap.get("guestbookId"));
-            groupId = Long.parseLong((String) stringObjectMap.get("groupId"));
-            companyId = Long.parseLong((String) stringObjectMap.get("companyId"));
-            userId = Long.parseLong((String) stringObjectMap.get("userId"));
-            userName = (String) stringObjectMap.get("userName");
-            createDate = (long) stringObjectMap.get("createDate");
-            modifiedDate = (long) stringObjectMap.get("modifiedDate");
-            name = (String) stringObjectMap.get("name");
-        }
+            public long getGroupId() {
+                return groupId;
+            }
 
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            dest.writeLong(guestbookId);
-            dest.writeLong(groupId);
-            dest.writeLong(companyId);
-            dest.writeLong(userId);
-            dest.writeString(userName);
-            dest.writeLong(createDate);
-            dest.writeLong(modifiedDate);
-            dest.writeString(name);
-        }
+            public long getCompanyId() {
+                return companyId;
+            }
 
-        @Override
-        public int describeContents() {
-            return 0;
-        }
+            public long getUserId() {
+                return userId;
+            }
 
-        public long getGuestbookId() {
-            return guestbookId;
-        }
+            public String getUserName() {
+                return userName;
+            }
 
-        public long getGroupId() {
-            return groupId;
-        }
+            public Date getCreateDate() {
+                return new Date(createDate);
+            }
 
-        public long getCompanyId() {
-            return companyId;
-        }
+            public Date getModifiedDate() {
+                return new Date(modifiedDate);
+            }
 
-        public long getUserId() {
-            return userId;
-        }
+            public String getName() {
+                return name;
+            }
 
-        public String getUserName() {
-            return userName;
-        }
+            public Map getValues() {
+                return values;
+            }
 
-        public Date getCreateDate() {
-            return new Date(createDate);
+            public void setValues(Map values) {
+                this.values = values;
+            }
         }
-
-        public Date getModifiedDate() {
-            return new Date(modifiedDate);
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public Map getValues() {
-            return values;
-        }
-
-        public void setValues(Map values) {
-            this.values = values;
-        }
-    }
 
 This class creates `GuestbookModel` objects that represent the Guestbook 
 portlet's `Guestbook` objects. The constructor with the `Map<String, Object>` 
