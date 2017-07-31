@@ -8,9 +8,8 @@ Screenlet's Screenlet class.
 
 As with most of Entry List Screenlet, its Screenlet class is almost identical to 
 that of Guestbook List Screenlet. Besides working with entries instead of 
-guestbooks, the only difference is that it must account for the guestbook ID of 
-the guestbook the entries are retrieved from. Even the Screenlets' attributes 
-are the same. 
+guestbooks, the only difference is that it must know its entries' guestbook ID. 
+Even the Screenlets' attributes are the same. 
 
 Therefore, this article doesn't explain all the code in detail. Focus is instead 
 placed on the few parts that differ from Guestbook List Screenlet. For a full 
@@ -18,8 +17,8 @@ explanation of the code,
 [click here](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-screenlet-class) 
 to see the article on creating Guestbook List Screenlet's Screenlet class. 
 
-You'll create Entry List Screenlet's Screenlet class with the same steps you 
-used to create Guestbook List Screenlet's Screenlet class: 
+You'll create Entry List Screenlet's class with the same steps you used to
+create Guestbook List Screenlet's class: 
 
 1. Define the Screenlet's attributes. These are the XML attributes the app 
    developer can set when inserting the Screenlet's XML. These attributes 
@@ -50,11 +49,11 @@ Next, you'll create the Screenlet class.
 
 ## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
-Entry List Screenlet's Screenlet class must contain an instance variable for the 
-ID of the guestbook the Screenlet retrieves entries from. This is required to 
-start the Interactor. This is the only significant difference between the 
-Screenlet classes of Entry List Screenlet and Guestbook List Screenlet. The 
-remaining differences exist only because they handle different entities. 
+Entry List Screenlet's class must contain an instance variable for the ID of the
+guestbook the Screenlet retrieves entries from. This is required to start the
+Interactor. This is the only significant difference between the Screenlet
+classes of Entry List Screenlet and Guestbook List Screenlet. The remaining
+differences exist only because they handle different entities. 
 
 Create the `EntryListScreenlet` class in the `entrylistscreenlet` package. 
 Replace the class's content with this code: 
