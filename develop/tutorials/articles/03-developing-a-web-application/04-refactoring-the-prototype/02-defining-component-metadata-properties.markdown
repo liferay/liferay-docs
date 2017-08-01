@@ -1,5 +1,9 @@
 # Defining the Component Metadata Properties [](id=defining-the-component-metadata-properties)
 
+<div class="learn-path-step">
+    <p>Refactoring the Prototype<br>Step 2 of 6</p>
+</div>
+
 When users add applications to a page, they pick them from a list of *display
 categories*. 
 

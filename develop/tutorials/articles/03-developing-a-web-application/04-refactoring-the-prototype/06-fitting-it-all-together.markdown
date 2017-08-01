@@ -1,5 +1,9 @@
 # Fitting it All Together
 
+<div class="learn-path-step">
+    <p>Refactoring the Prototype<br>Step 6 of 6</p>
+</div>
+
 You've created a complete data-driven application from the back-end to the 
 display. It's a great time to review how everything connects together. 
 
