@@ -164,7 +164,13 @@ workspace's root folder:
 The Workspace and Plugins SDK's artifacts are downloaded, and the available
 tasks are listed in the terminal. Since the download process takes time,
 invoking it at a convenient time such as before a work break can be
-worthwhile. Once the downloading is complete, your Plugins SDK is ready to use
+worthwhile.
+
+If you need a new Plugins SDK or need to upgrade your legacy one, execute this task:
+
+    ./gradlew upgradePluginsSDK
+
+Once the downloading is complete, your Plugins SDK is ready to use
 in your workspace. It's as simple as that!
 
 ## Certification Issues in Liferay Workspace [](id=certification-issues-in-liferay-workspace)
