@@ -1,4 +1,8 @@
-# Organizing Folders for Larger Applications
+# Organizing Folders for Larger Applications [](id=organizing-folders-for-larger-applications)
+
+<div class="learn-path-step">
+    <p>Refactoring the Prototype<br>Step 1 of 6</p>
+</div>
 
 Currently, all your JSPs sit in your web module's 
 `src/main/resources/META-INF/resources` folder, which serves as the context root 
