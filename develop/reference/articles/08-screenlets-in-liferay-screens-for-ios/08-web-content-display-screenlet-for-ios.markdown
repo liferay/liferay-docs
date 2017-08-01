@@ -58,6 +58,14 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet loads the content from the portal. If this succeeds, the Screenlet shows the content to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the content from the local cache. If the content doesn't exist there, the Screenlet uses the delegate to notify the developer about the error. | Use this policy to show the most recent version of the content when connected, but show a possibly outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the content from the local cache. If the content isn't there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) content. |
 
+## Required Attributes
+
+- `articleId`
+
+If you have 
+[structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content), 
+you can also use `templateId` with `articleId`.
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
