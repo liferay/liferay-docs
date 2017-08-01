@@ -26,7 +26,7 @@ As described in the
 [product menu tutorial](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu), 
 there are three sections of the product menu as illustrated below. 
 
-![Figure x: The product menu is split into three sections: the Control Panel, the User menu, and the Sites menu.](../../images/product-menu-parts.png)
+![Figure x: The product menu is split into three sections: the Control Panel, the User menu, and the Sites menu.](../../../images/product-menu-parts.png)
 
 Each section is called a *panel category*. A panel category can hold various 
 menu items called *panel apps*. In the illustration above, the Sites menu is 
