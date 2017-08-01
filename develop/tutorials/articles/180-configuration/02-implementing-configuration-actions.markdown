@@ -28,6 +28,17 @@ configuration action, follow these steps:
    configuration in your configuration action class
 4. Implement the user interface for configuring your application
 
++$$$
+
+**Note:** To quickly see a working configuration action, deploy the
+`configuration-action` [Blade
+sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
+and add the *Blade Message Portlet* to a page. Click the *Options* button
+(![Options](../../images/icon-app-options.png)) and select *Configuration*.
+Change the configuration options and save them to see them in action.
+
+$$$
+
 Let's get started.
 
 ## Creating a Configuration Interface [](id=creating-a-configuration-interface)
@@ -387,7 +398,7 @@ This JSP uses the `<liferay-portlet:actionURL />` and
 `configurationActionURL` and `configurationRenderURL`. The JSP presents a simple
 form that allows the user to select a favorite color. When the user submits the
 form, the `configurationActionURL` is invoked and the application's
-`processAction` method is invoked with the `favoriteAction` included as a
+`processAction` method is invoked with the `favoriteColor` included as a
 request parameter:
 
     <aui:form action="<%= configurationActionURL %>" method="post" name="fm">
@@ -407,13 +418,12 @@ the value of the `cmd` parameter is `update` (`Constants.CMD` equals `update`):
 Many Liferay applications read the value of the `cmd` parameter and perform some
 processing depending on its value.
 
-You can find a complete example project on Github here:
-[(not yet written)]()
-
-To test this example project, deploy the application to Liferay, add it to a
-page, click on the gear icon, and select *Configuration*. Select a favorite
-color and click *Save*. To confirm that your selection was saved as a portlet
-configuration setting, look for the application to display a message like this:
+If you're developing an application using the example code from this tutorial,
+deploy the application to Liferay, add it to a page,  and click on the *Options*
+button (![Options](../../images/icon-app-options.png)), then select
+*Configuration*. Select a favorite color and click *Save*. To confirm that your
+selection was saved as a portlet configuration setting, look for the application
+to display a message like this:
 
     Favorite color: blue!
 
