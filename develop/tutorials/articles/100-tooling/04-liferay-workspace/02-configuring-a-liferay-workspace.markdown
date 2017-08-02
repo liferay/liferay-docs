@@ -154,7 +154,7 @@ of the two options:
 
 Follow the appropriate section based on the option you want to follow.
 
-### Copying an Existing Plugins SDK into Workspace
+### Copying an Existing Plugins SDK into Workspace [](id=copying-an-existing-plugins-sdk-into-workspace)
 
 If you open your workspace's `gradle.properties` file, you'll notice the
 `liferay.workspace.plugins.sdk.dir` property sets the Plugins SDK folder to
@@ -172,7 +172,7 @@ root folder:
 The Plugins SDK's artifacts are downloaded. The Plugins SDK is now ready for
 use!
 
-### Generating a New Plugins SDK in Workspace
+### Generating a New Plugins SDK in Workspace [](id=generating-a-new-plugins-sdk-in-workspace)
 
 You can easily generate a new Plugins SDK for your workspace by executing a
 single Gradle command in your workspace's root folder:
