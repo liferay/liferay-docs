@@ -38,21 +38,6 @@ The User Portrait Screenlet needs the following user permissions:
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-Both are used by the `editable` property to take a picture with the phone's 
-camera and store it locally before uploading it to the portal. The activity 
-using User Portrait Screenlet also needs to override the `onActivityResult` 
-method to send the picture information to the Screenlet. Here's an example 
-implementation:
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    
-        if (resultCode == Activity.RESULT_OK) {
-            _userPortraitScreenlet.upload(requestCode, data);
-        }
-    }
-
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
@@ -83,6 +68,9 @@ policies:
 
 - None
 
+Note that if you don't set any attributes, the Screenlet loads the logged-in 
+user's portrait. 
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
@@ -107,18 +95,17 @@ policies:
 
 The User Portrait Screenlet delegates some events to an object that implements 
 the `UserPortraitListener` interface. This interface lets you implement the 
-following methods:
+following methods: 
 
-- `onUserPortraitReceived(UserPortraitScreenlet source, Bitmap bitmap)`: Called 
-  when an image is received from the server. You can then apply image filters 
-  (grayscale, for example) and return the new image. You can return `null` or 
-  the original image supplied as the argument if you don't want to modify it.
-  
-- `onUserPortraitFailure(UserPortraitScreenlet source, Exception e)`: Called 
-  when an error occurs in the process.
+- `onUserPortraitLoadReceived(Bitmap bitmap)`: Called when an image is received 
+  from the server. You can then apply image filters (grayscale, for example) and 
+  return the new image. You can return `null` or the original image supplied as 
+  the argument if you don't want to modify it. 
 
-- `onUserPortraitUploaded(UserPortraitScreenlet source)`: Called when the user 
-  portrait upload service finishes.
+- `onUserPortraitUploaded()`: Called when the user portrait upload service 
+  finishes. 
 
-- `onUserPortraitUploadFailure(UserPortraitScreenlet source, Exception e)`: 
-  Called when an error occurs uploading the user portrait.
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. For example, an error can occur when receiving or uploading a user 
+  portrait. The `userAction` argument distinguishes the specific action in which 
+  the error occurred. 
