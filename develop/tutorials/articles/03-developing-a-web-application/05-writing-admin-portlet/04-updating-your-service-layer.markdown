@@ -1,5 +1,9 @@
 # Updating Your Service Layer [](id=updating-your-service-layer)
 
+<div class="learn-path-step">
+    <p>Writing the Guestbook Admin App<br>Step 3 of 5</p>
+</div>
+
 In an earlier section, you wrote an `addGuestbook` service method in
 `GuestbookLocalServiceImpl`, but you never used it anywhere. To have full
 functionality over Guestbooks, you must also add methods for updating and
