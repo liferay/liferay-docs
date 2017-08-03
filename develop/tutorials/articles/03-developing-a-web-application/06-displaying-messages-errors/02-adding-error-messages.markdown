@@ -8,11 +8,11 @@ tag.
 You'll add these messages to code that runs when the user triggers a system 
 function that can succeed or fail, such as creating, editing, or deleting an
 entry or guestbook. This generally happens in action methods. You must update 
-these methods to handle failure and success states in `GuestbookWebPortlet.java` 
+these methods to handle failure and success states in `GuestbookPortlet.java` 
 and `GuestbookAdminPortlet.java`. Start by updating `addEntry` and `deleteEntry` 
-in `GuestbookWebPortlet.java`: 
+in `GuestbookPortlet.java`: 
 
-1.  Find the `addEntry` method in `GuestbookWebPortlet.java`. In the 
+1.  Find the `addEntry` method in `GuestbookPortlet.java`. In the 
     `try...catch` block's `try` section, add a success message just before the 
     closing `}`: 
     
@@ -49,8 +49,8 @@ Next, do the same for the `deleteEntry` method:
 3.  Hit Ctrl-Shift-O to import `SessionErrors` and `SessionMessages`. Save the
     file. 
 
-Well done! You've added the messages to `GuestbookWebPortlet`. Now you must 
-update `GuestbookAdminPortlet.java`:
+Well done! You've added the messages to `GuestbookPortlet`. Now you must update 
+`GuestbookAdminPortlet.java`:
 
 1.  Open `GuestbookAdminPortlet.java` and look for the same cues.
 

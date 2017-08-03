@@ -54,7 +54,7 @@ variable to hold the system-generated URL. The `<portlet:param>` tag defines a
 URL parameter to append to the URL. In this example, a URL parameter named 
 `mvcPath` with a value of `/edit_entry` is appended to the URL. 
 
-Note that your `GuestbookWebPortlet` class (located in your `guestbook-web` 
+Note that your `GuestbookPortlet` class (located in your `guestbook-web` 
 module's `com.liferay.docs.guestbook.portlet` package) extends Liferay's 
 `MVCPortlet` class. In a 
 [Liferay MVC portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet), 

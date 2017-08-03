@@ -1,4 +1,4 @@
-# Creating the Classes  
+# Creating the Classes
 
 Because the Guestbook and Guestbook Admin applications should be bundled
 together, you'll create the new application manually inside the `guestbook-web`

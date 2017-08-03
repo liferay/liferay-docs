@@ -97,7 +97,7 @@ action. To make the guestbook show the saved guestbook entries when users view
 the application, you need to customize your portlet's render functionality,
 which it's currently inheriting from its parent class, `MVCPortlet`. 
 
-1.  Open `GuestbookWebPortlet` and add the following method below your `addEntry` 
+1.  Open `GuestbookPortlet` and add the following method below your `addEntry` 
     method: 
 
         @Override

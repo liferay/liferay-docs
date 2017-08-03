@@ -25,7 +25,7 @@ and you called it `addEntry`. To create a portlet action, you create a method in
 the portlet class with the same name. `MVCPortlet` calls that method when a user 
 triggers its matching URL. 
 
-1.  Open `GuestbookWebPortlet`. The project template generated this class when 
+1.  Open `GuestbookPortlet`. The project template generated this class when 
     you created the portlet project. 
 
 2.  Create a method with the following signature:
