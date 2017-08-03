@@ -638,8 +638,8 @@ In addition to moving the field, you can edit the field or delete it.
 time to build the second page of the form (Very Personal Details). Combining
 your form building knowledge with your ability to customize the form layout,
 build the form to match the screenshot below. It will use form text, date,
-radio, text, and single checkbox (multiple selection on Liferay Portal CE)
-fields, laid out in two columns.
+single selection, text, and single checkbox (multiple selection on Liferay
+Portal CE) fields, laid out in two columns.
 
 ![Figure 22: The second page of The Lunar Resort employment application.](../../../images/forms-page2.png)
 
