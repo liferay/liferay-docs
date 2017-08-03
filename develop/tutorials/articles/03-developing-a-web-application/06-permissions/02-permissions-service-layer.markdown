@@ -1,5 +1,10 @@
 # Permissions in the Service Layer
 
+In the last step, we started throwing the word "resources" around. What are
+resources? In short, resources are data stored with your entities that define
+how they can be accessed. It's the configuration from your XML files applied to
+the database. 
+
 Liferay provides a complete API for managing resources that's integrated with 
 Service Builder. This API is injected into your implementation classes 
 automatically, so all you need to modify your exist add and delete methods to also manage the resource portion.

@@ -1,10 +1,13 @@
 # Permissions
 
-So far you've created a robust application which uses the database for data 
-storage, and then expanded that application to include multiple components for
-managing and accessing that data. What comes next? You need to protect that data
-and ensure that no one can create or access it without the correct credentials.
+You now have an application that uses the database for data storage. This is a
+great foundation upon which to build. What comes next? What if users want a
+Guestbook that's limited only to certain trusted people? To do that, you have to
+implement permissions. 
 
-You'll implement a permissions scheme that only allows signed in users to create
-guestbook entries, and enables only administrators to create new guestbooks.
+Thankfully with @product@, you don't have to do this yourself: the framework
+provides a robust and well-tested permissions system that you can implement
+quickly. 
+
+Ready to start? 
 
