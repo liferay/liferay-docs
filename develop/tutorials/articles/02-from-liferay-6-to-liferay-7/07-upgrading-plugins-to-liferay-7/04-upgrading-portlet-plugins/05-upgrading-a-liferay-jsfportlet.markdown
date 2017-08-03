@@ -2,7 +2,7 @@
 
 Liferay JSF portlets are easy to upgrade and require few changes. They interface
 with the [Liferay Faces](/develop/reference/-/knowledge_base/7-0/liferay-faces)
-project, which encapsulates @product@'s' Java API and JavaScript code. Because
+project, which encapsulates @product@'s Java API and JavaScript code. Because
 of this, upgrading JSF portlets to @product-ver@ requires only updating
 dependencies.
 

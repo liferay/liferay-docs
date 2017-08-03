@@ -1,9 +1,22 @@
 # Displaying Messages and Errors
 
-When creating an application, you often need to communicate with users outside 
-of the bounds of the User Interface. You want to display useful error messages 
-and also confirmation messages for users when they interact with the 
-application. When a user takes an action, you confirm that the action was 
-successful. If the action fails, you provide a useful error message letting the
-user know what went wrong. Previously, you left some placeholder code for error
-messages. Now go back through them and add the appropriate messaging for users.
+When users interact with your application, they perform tasks defined by the
+application, like saving or editing things. The Guestbook application is no
+different. It's good if your application can provide feedback on these
+operations so users know whatever option they clicked either worked successfully
+or resulted in an error. Up to now, you've been placing this information in logs
+that only administrators can access. Wouldn't it be better to surface these
+messages to the users? 
+
+<!-- add screenshot here --> 
+
+That's exactly what you'll do next, in three steps: 
+
+1.  Create language keys for your messages
+
+2.  Add the error messages in your action methods
+
+3.  Report those error messages in your JSPs
+
+Ready to get started? 
+
