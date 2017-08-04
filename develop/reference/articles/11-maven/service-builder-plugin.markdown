@@ -6,7 +6,7 @@ The Service Builder Gradle lets you generate a service layer defined in a
 [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
 tutorial to learn more about applying Service Builder to your Maven project.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your `pom.xml` file:
 
@@ -24,7 +24,7 @@ To use the plugin, include it in your `pom.xml` file:
         </plugins>
     </build>
 
-## Goals
+## Goals [](id=goals)
 
 The plugin adds one Maven goal to your project:
 
@@ -32,7 +32,7 @@ Name | Description
 ---- | -----------
 `service-builder:build` |  Runs the Liferay Service Builder.
 
-## Available Parameters
+## Available Parameters [](id=available-parameters)
 
 You can set the following parameters in the `<configuration>` section of the
 POM:

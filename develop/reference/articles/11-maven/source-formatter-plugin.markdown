@@ -1,10 +1,10 @@
-# Source Formatter Plugin
+# Source Formatter Plugin [](id=source-formatter-plugin)
 
 The Source Formatter plugin lets you format project files using the
 [Liferay Source Formatter](https://github.com/liferay/liferay-portal/blob/master/modules/util/source-formatter)
 tool.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your `pom.xml` file:
 
@@ -30,7 +30,7 @@ To use the plugin, include it in your `pom.xml` file:
         </plugins>
     </build>
 
-## Goals
+## Goals [](id=goals)
 
 The plugin adds one Maven goal to your project:
 
@@ -38,7 +38,7 @@ Name | Description
 ---- | -----------
 `source-formatter:format` |  Runs the Liferay Source Formatter to format source formatting errors.
 
-## Available Parameters
+## Available Parameters [](id=available-parameters)
 
 You can set the following parameters in the `<configuration>` section of the
 POM:
