@@ -88,7 +88,7 @@ configuration option. Here is an example of such an interface:
            deflt = "red|green|blue",
            required = false
         )
-        public String[] validLanguages();
+        public String[] validColors();
 
         @Meta.AD(required = false)
         public int itemsPerPage();
