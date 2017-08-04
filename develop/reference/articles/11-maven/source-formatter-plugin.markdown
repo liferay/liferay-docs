@@ -36,7 +36,7 @@ The plugin adds one Maven goal to your project:
 
 Name | Description
 ---- | -----------
-`format` |  Runs the Liferay Source Formatter to format source formatting errors.
+`source-formatter:format` |  Runs the Liferay Source Formatter to format source formatting errors.
 
 ## Available Parameters
 
