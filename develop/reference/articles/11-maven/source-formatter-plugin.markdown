@@ -1,7 +1,8 @@
 # Source Formatter Plugin
 
-The Source Formatter Gradle plugin lets you format project files using the
-Liferay Source Formatter tool.
+The Source Formatter plugin lets you format project files using the
+[Liferay Source Formatter](https://github.com/liferay/liferay-portal/blob/master/modules/util/source-formatter)
+tool.
 
 ## Usage
 
@@ -44,9 +45,9 @@ POM:
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`autoFix` | `boolean` | `false` | Whether to automatically fix source formatting errors.
-`baseDir` | `File` |  | The Source Formatter base directory. *(Read-only)*
-`fileNames` | `List<String>` | `null` | The file names to format, relative to the project directory. If `null`, all files contained in `baseDir` will be formatted.
+`autoFix` | `boolean` | `true` | Whether to automatically fix source formatting errors.
+`baseDir` | `String` | `"./"` | The Source Formatter base directory. *(Read-only)*
+`fileNames` | `String[]` | `null` | The file names to format, relative to the project directory. If `null`, all files contained in `baseDir` will be formatted.
 `formatCurrentBranch` | `boolean` | `false` | Whether to format only the files contained in `baseDir` that are added or modified in the current Git branch.
 `formatLatestAuthor` | `boolean` | `false` | Whether to format only the files contained in `baseDir` that are added or modified in the latest Git commits of the same author.
 `formatLocalChanges` | `boolean` | `false` | Whether to format only the unstaged files contained in `baseDir`.
@@ -55,26 +56,5 @@ Parameter Name | Type | Default Value | Description
 `maxLineLength` | `int` | `80` | The maximum number of characters allowed in Java files.
 `printErrors` | `boolean` | `true` | Whether to print formatting errors on the Standard Output stream.
 `processorThreadCount` | `int` | `5` | The number of threads used by Source Formatter.
-`showDocumentation` | `boolean` | `true` | Whether to show the documentation for the source formatting issues, if present.
+`showDocumentation` | `boolean` | `false` | Whether to show the documentation for the source formatting issues, if present.
 `throwException` | `boolean` | `false` | Whether to fail the build if formatting errors are found.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
