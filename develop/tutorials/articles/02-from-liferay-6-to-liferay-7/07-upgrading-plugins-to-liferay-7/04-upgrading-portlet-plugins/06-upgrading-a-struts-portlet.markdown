@@ -1,24 +1,21 @@
 # Upgrading a Struts Portlet [](id=upgrading-a-struts-portlet)
 
 Struts is a stable, widely adopted framework that implements the Model View
-Controller (MVC) design pattern. It lets you persist models using DBCP or
-whatever persistence framework you like. You can design views using JSPs, Struts
-Tiles, and tag libraries. And Struts `ActionForm` and `Action` Controller
-classes allow you to focus on handling requests and responses to each View. It's
-no wonder why developers want to upgrade their Liferay Portal 6.2 portlets that
-use Struts to @product-ver@.
+Controller (MVC) design pattern. If you have a Struts portlet for Liferay Portal
+6.2,  you can upgrade it to @product-ver@.
 
 Upgrading Struts portlets to @product-ver@ is easier than you might think.
 @product@ lets you continue working with Struts portlets as Java EE web
 applications. On deploying a Struts portlet Web Application aRchive (WAR),
 @product@'s Web Application Bundle (WAB) Generator creates an OSGi module
 (bundle) for the portlet and installs it to Liferay's OSGi framework. The Struts
-portlet behaves just as it did in 6.2 on your @product-ver@ site!
+portlet behaves just as it did in 6.2 on your @product-ver@ site.
 
 This tutorial demonstrates how to upgrade a portlet that uses the Struts 1
-Framework and refers to Liferay's Sample Struts portlet (Sample Struts) as an
-example. Sample Struts uses several Struts features show page navigation,
-`Action` and `ActionForm` Controller classes, exceptions, and more. 
+Framework and refers to Liferay's Sample Struts portlet (Sample Struts) as
+an example. Sample Struts uses several Struts features to show page
+navigation, `Action` and `ActionForm` Controller classes, exceptions, and
+more.
 
 ![Figure 1: The Sample Struts portlet's charts compare fictitious soft drink survey results.](../../../../images/upgrading-struts-portlets.png)
 
@@ -138,10 +135,10 @@ folder.
 
 Third-party libraries listed as `portal-dependency-jars` in a 6.x portlet's
 `liferay-plugin-package.properties` file might not be provided by @product-ver@.
-Providing less libraries streamlines @product@. Note also, @product@ has
-replaced some of its libraries with newer ones.
+Providing fewer libraries streamlines @product@. @product@ has replaced some of
+its libraries with newer ones.
 
-@product-ver@ exposes (exports) Java packages instead of sharing a JAR contents
+@product-ver@ exposes (exports) Java packages instead of sharing JAR content
 wholesale. If you need packages @product@ doesn't export, you can find and
 download the artifact (JAR) that provides them and add it to your portlet's
 `docroot/WEB-INF/lib` folder. 
@@ -228,7 +225,7 @@ You've resolved the Sample Struts portlet's dependencies. It's ready to deploy.
 [JSP section](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JSP)) 
 to `true` (default) forces calls to `com.liferay.taglib.servlet.
 PageContextWrapper#findAttribute(String)` to use `getAttribute(String)`.
-Although this improves performance by avoiding unnecessary fallbacks, it can
+Although this improves performance by avoiding unnecessary fall-backs, it can
 cause attribute lookup problems in Struts portlets. To use Struts portlets in
 your sites, makes sure to set the Portal property
 `jsp.page.context.force.get.attribute` to `false` in a file
@@ -238,7 +235,8 @@ your sites, makes sure to set the Portal property
 
 $$$
 
-Deploy the Struts portlet as you normally would. The server prints messages indicating the following portlet status:
+Deploy the Struts portlet as you normally would. The server prints messages
+indicating the following portlet status:
 
 -   WAR processing
 -   WAB startup
