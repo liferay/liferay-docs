@@ -22,12 +22,11 @@ Liferay releases a new version of the app.
 
 **Note:** These steps show how to preconfigure LCS and your @product@ servers 
 for use in production environments. To activate @product@ on a local workstation 
-for testing or development purposes, you don't need to use LCS. Instead, create 
-a ticket in 
-[LESA](https://web.liferay.com/group/customer/support/-/support/ticket) 
-to request an activation key. When creating this ticket, select *Activation Key* 
-in the *Select a component* field. When you receive your key, place it in your 
-local @product@ instance's `deploy` folder. 
+for testing or development purposes, you don't need to use LCS. Instead, 
+navigate to 
+[@product@'s activation page](https://web.liferay.com/group/customer/dxp/getting-started/activation) 
+and select your subscription project. After downloading your key, place it in 
+your local @product@ instance's `deploy` folder. 
 
 $$$
 
