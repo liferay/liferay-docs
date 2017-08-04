@@ -64,7 +64,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 If you have 
 [structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content), 
-you can also use `templateId` with `articleId`.
+you can alternatively use `templateId` or `structureId` with `articleId`. 
 
 ## Attributes [](id=attributes)
 

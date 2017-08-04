@@ -68,6 +68,9 @@ If you don't use `entryId`, you must use both of the following attributes:
 | `placeHolder` | `@resource` | Image to load until the final image loads. |
 | `placeHolderScaleType` | `number` | Lets you set a scale image type for the placeholder like `CENTER`, `CENTER_CROP`, `CENTER_INSIDE`, `FIT_CENTER`, `FIT_END`, `FIT_START`, `FIT_XY`, `MATRIX`. |
 
+Note that the values for `imageScaleType` and `placeHolderScaleType` match those 
+[described in Android's `ImageView.ScaleType`](https://developer.android.com/reference/android/widget/ImageView.ScaleType.html). 
+
 ## Listener [](id=listener)
 
 Because images are assets, Image Display Screenlet delegates its events to a 

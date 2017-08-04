@@ -39,7 +39,7 @@ The Default View uses different UI elements to show each asset type. For
 example, it displays images with `ImageView` and blogs with `TextView`. Note 
 that other Views may use different UI elements. 
 
-This Screenlet can also render other Screenlets: 
+This Screenlet can also render other Screenlets as inner Screenlets: 
 
 - Images: Image Display Screenlet
 - Videos: Video Display Screenlet
@@ -100,7 +100,7 @@ attribute:
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
-| `load(AssetEntry assetEntry)` | `void` | Loads the given `AssetEntry` in the Screenlet. If there is no inner Screenlet created, the method tries to load it based on a custom asset listener method. If this returns `null`, a new `Intent` is called to display it. |
+| `load(AssetEntry assetEntry)` | `void` | Loads the given `AssetEntry` in the Screenlet. If no inner Screenlet is instantiated, the method tries to load the asset with a custom asset listener method. If this returns `null`, a new `Intent` is called to display the asset. |
 | `loadAsset()` | `void` | Searches for the `AssetEntry` defined by the required attributes and loads it in the Screenlet. |
 
 ## Listener [](id=listener)
