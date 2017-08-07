@@ -173,6 +173,19 @@ available actions.
     permissions check. If the current user cannot perform the specified action,
     the action does not appear. 
 
+5.  Finally, in `view.jsp`, you must add the `entry_actions.jsp` as the last
+    column in the Search Container. Find the line defining the Search Container
+    row. It looks like this: 
+
+        <liferay-ui:search-container-row
+            className="com.liferay.docs.guestbook.model.Entry" modelVar="entry">
+
+    Below that line are two columns. After the second column, add a third: 
+
+        <liferay-ui:search-container-column-jsp path="/guestbookwebportlet/entry_actions.jsp" align="right" />
+
+6.  Save all JSP files. 
+
 Excellent! You've now implemented all the permission checks you'd defined for
 the Guestbook portlet. Save the file. 
 
