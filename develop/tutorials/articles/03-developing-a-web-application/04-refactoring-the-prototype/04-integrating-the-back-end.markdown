@@ -97,16 +97,19 @@ services:
  
 5.  Now add `deleteEntry`, which you didn't have before: 
 
-        public void deleteEntry(ActionRequest request, ActionResponse response) {
+        public void deleteEntry(ActionRequest request, ActionResponse response) throws PortalException {
                 long entryId = ParamUtil.getLong(request, "entryId");
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
+
+                ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                    Entry.class.getName(), request);
 
                 try {
 
                     response.setRenderParameter(
                         "guestbookId", Long.toString(guestbookId));
 
-                    _entryLocalService.deleteEntry(entryId);
+                    _entryLocalService.deleteEntry(entryId, serviceContext);
                 }
 
                 catch (Exception e) {
