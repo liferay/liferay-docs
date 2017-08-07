@@ -1,11 +1,7 @@
 # Greedy Policy Option Portlet
 
-## Greedy and Reluctant Service Reference Policy Option Portlets
-
-These modules demonstrate how to reference services using greedy and reluctant
-policy options.
-
-Here are the modules:
+The Greedy Policy Option portlet sample is broken into two modules that
+demonstrate how to reference services using greedy and reluctant policy options:
 
 -   `service-reference`: Provides an OSGi service interface called
     `SomeService`, a default implementation of it, and portlets that refer to
@@ -48,7 +44,7 @@ Here are the things you can learn using the sample modules:
 
 Let's walk through the demonstration.
 
-### <a name="initial-binding"></a>Binding a newly deployed component's service reference to the highest ranking service instance that's available initially
+## Binding a newly deployed component's service reference to the highest ranking service instance that's available initially
 
 On deploying a component that references a service, it binds to the highest
 ranking service instance that matches its target filter (if specified).
@@ -156,7 +152,7 @@ It's time to see this module's portlets and service in action.
     latter part comes from the render request attribute set by the
     `DefaultService` instance.
 
-    ![*Reluctant Portlet* displays the message "SomeService says I am default!"](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/reluctant-portlet-using-default.png)
+    ![Figure 1: *Reluctant Portlet* displays the message "SomeService says I am default!"](../../../images/reluctant-portlet-using-default.png)
 
 4.  Add the *Greedy Portlet* from the *Add* &rarr; *Applications* &rarr;
     *Sample* category to a site page.
@@ -164,7 +160,7 @@ It's time to see this module's portlets and service in action.
     The portlet displays the message "SomeService says I am better, use me!".
     Both portlets are referencing a `DefaultService` instance.
 
-    ![*Greedy Portlet* displays the message "SomeService says I am better, use me!"](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/greedy-portlet-using-default.png)
+    ![Figure 2: *Greedy Portlet* displays the message "SomeService says I am better, use me!"](../../../images/greedy-portlet-using-default.png)
 
 Since `DefaultService` is the only active `SomeService` instance in the system,
 the portlets refer to it for their `SomeService` fields.
@@ -173,7 +169,7 @@ The `DefaultService` and portlets *Reluctant Portlet* and *Greedy Portlet* are
 active. Let's activate a higher ranked `SomeService` instance and see how the
 portlets react to it.
 
-### <a name="higher-ranked-service"></a>Deploying a module with a higher ranked service instance for binding to greedy references immediately
+## Deploying a module with a higher ranked service instance for binding to greedy references immediately
 
 Module `higher-ranked-service` provides a `SomeService` implementation called
 `HigherRankedService`. `HigherRankedService`'s service ranking is `100`--that's
@@ -191,12 +187,12 @@ the `String` "I am better, use me!".
 *The part of the message "I am better, use me!" comes from the
 *`HigherRankedService` instance to which it refers.
 
-![The *Greedy Portlet* is using a `HigherRankedService` instance](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/greedy-portlet-using-higher-ranked-service.png)
+![Figure 3: The *Greedy Portlet* is using a `HigherRankedService` instance](../../../images/greedy-portlet-using-higher-ranked-service.png)
 
 Next, learn how to bind the *Reluctant Portlet* to a `HigherRankedService`
 instance.
 
-### <a name="configuration"></a>Configuring a component to reference a different service instance dynamically
+## Configuring a component to reference a different service instance dynamically
 
 The *Reluctant Portlet* is currently bound to a `DefaultService` instance. It's
 "reluctant" to unbind from it and bind to a different service. OSGi
@@ -227,18 +223,17 @@ Here are the steps to reconfigure `ReluctantPortlet` to use
 *Reluctant Portlet* displays a new message "SomeService says I am better, use
 *me!".
 
-![*Reluctant Portlet* is using `HigherRankedService` instance instead of a `DefaultService` instance.](https://github.com/codyhoag/liferay-docs/blob/blade-sample-images/develop/tutorials/blade-images/reluctant-portlet-using-higher-ranked-service.png)
+![Figure 4: *Reluctant Portlet* is using `HigherRankedService` instance instead of a `DefaultService` instance.](../../../images/reluctant-portlet-using-higher-ranked-service.png)
 
 *Reluctant Portlet* is using `HigherRankedService` instance instead of a
 *`DefaultService` instance. You've configured *Reluctant Portlet* to use a
 *`HigherRankedService` instance!
 
-### Related Topics
+## Where Is This Sample?
 
-[Overriding Reluctant Service References](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-service-references)
+There are three different versions of this sample, each built with a different
+build tool:
 
-## Higher Ranked Service
-
-This module provides a `SomeService` implementation that has a service ranking of `100`. The module is meant to be used along with module `service-reference`.
-
-See the `service-reference/README` file for instructions on using this module.
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/greedy-policy-option-portlet)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/greedy-policy-option-portlet)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/apps/greedy-policy-option-portlet)
