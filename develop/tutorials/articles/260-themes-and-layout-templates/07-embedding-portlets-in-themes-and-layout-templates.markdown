@@ -45,21 +45,6 @@ This declares that the theme is requesting to view language entries. Liferay
 determines which deployed portlet to use in this case by providing the portlet
 with the highest service ranking.
 
-If you'd like to embed a specific portlet in the theme, you can hardcode it by
-providing its instance ID and name:
-
-    <@liferay_portlet["runtime"]
-        portletProviderAction=portletProviderAction.VIEW
-        instanceId="INSTANCE_ID"
-        portletName="PORTLET_NAME"
-    />
-
-If your portlet is instanceable, an instance ID must be provided; otherwise, you
-can remove this line. To set your portlet to non-instanceable, set the property
-`com.liferay.portlet.instanceable` in the component annotation of your portlet
-to `false`. The portlet name must be the same as the property
-`javax.portlet.name`.
-
 There are five different kinds of actions supported by the Portlet Providers
 framework: `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Specify the entity
 type and action in your theme's runtime declaration.
@@ -125,15 +110,21 @@ embeds it in your theme.
 
 ### Embedding a Portlet by Portlet Name
 
-To embed a portlet by portlet name, insert the following declaration wherever 
-you want to embed the portlet:
+If you'd like to embed a specific portlet in the theme, you can hardcode it by
+providing its instance ID and name:
 
     <@liferay_portlet["runtime"]
+        portletProviderAction=portletProviderAction.VIEW
+        instanceId="INSTANCE_ID"
         portletName="PORTLET_NAME"
     />
-    
-This declaration only expects the `portletName`, the application id, written as 
-the string reference of the application class path. You can optionally pass the `defaultPreferences` attribute to set the default preferences for the portlet. 
+
+If your portlet is instanceable, an instance ID must be provided; otherwise, you
+can remove this line. To set your portlet to non-instanceable, set the property
+`com.liferay.portlet.instanceable` in the component annotation of your portlet
+to `false`. The portlet name must be the same as the property
+`javax.portlet.name`.
+ 
 Here's an example of an embedded portlet declaration that uses the portlet name 
 to embed a web content portlet:
 
