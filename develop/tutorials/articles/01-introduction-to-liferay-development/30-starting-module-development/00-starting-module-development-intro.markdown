@@ -220,9 +220,14 @@ $$$
 
 Blade can deploy modules to any local @product@ server. It communicates with
 @product@'s OSGi framework using Felix Gogo shell and deploys modules directly
-to the OSGi container using Felix File Install commands. Unless the developer
+to the OSGi container using Felix File Install commands. The command uses the
+default port `11311`.
+
+<!-- Unless the developer
 specifies a Gogo shell port explicitly (e.g., `blade deploy -p <port>`), the
-command uses the default port `11311`.
+command uses the default port `11311`.-->
+
+<!-- Add the sentence above back when the -p option is re-added. -Cody -->
 
 To deploy the module, execute this command:
 

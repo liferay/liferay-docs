@@ -152,7 +152,7 @@ Do so now by following these steps:
 	
 2.  Add this `deleteEntry` method: 
 
-        public Entry deleteEntry (long entryId)
+        public Entry deleteEntry (long entryId, serviceContext ServiceContext)
             throws PortalException {
 
             Entry entry = getEntry(entryId);
