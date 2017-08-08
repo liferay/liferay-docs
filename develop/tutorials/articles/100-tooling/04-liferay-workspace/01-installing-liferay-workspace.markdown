@@ -44,12 +44,6 @@ Follow the steps below to download and install Liferay Workspace:
 
     $$$
 
-    **Important:** The `~/.liferay` folder must exist on your machine before
-    installing Liferay Workspace. The installer expects this folder to exist,
-    and without it, the installer cannot create your token to store your Liferay
-    credentials. This is a bug and will be fixed in the next release of the
-    Workspace installer.
-
 5.  Click *Next* to begin installing Liferay Workspace on your machine.
 
 That's it! Liferay Workspace is now installed on your machine!
