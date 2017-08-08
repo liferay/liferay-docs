@@ -34,6 +34,16 @@ portlet declaration:
         portletProviderAction=portletProviderAction.VIEW
         portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
     />
+    
+Alternative: Using portlet id/name
+
+    <@liferay_portlet["runtime"]
+      portletProviderAction=portletProviderAction.VIEW
+      instanceId="the.instance.id"
+      portletName="portlet.name"
+      />
+
+If your portlet is instanceable, an instance-id must be provided else you can remove this line. To set your portlet to non-instanceable, set the property 'com.liferay.portlet.instanceable' in the component-annotation of your portlet to 'false'. The portlet-name must be the same as the property 'javax.portlet.name'.
 
 This declares that the theme is requesting to view language entries. There are
 five different kinds of actions supported by the Portlet Providers framework:
