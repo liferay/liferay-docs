@@ -195,6 +195,22 @@ Entries to test your application with different users. Administrative users see
 all the buttons, regular users see the Add Entry button, and guests see no
 buttons at all (but can navigate).
 
++$$$
+
+You may see an error where the Guestbook portlet doesn't appear at all, and you
+see this error in the log: 
+
+    Someone may be trying to circumvent the permission checker. 
+
+This is because any data you currently have in the Guestbook application doesn't
+have resources. In this case, you must drop and re-create your database. To do
+this, find your Liferay Workspace on your file system (it should be inside your
+Eclipse workspace). Inside the `bundles/data` folder is a `hypersonic` folder.
+Shut down @product@, remove everything from this folder, and then restart. After
+adding Guestbook to a page, it will work normally. 
+
+$$$
+
 Now see if you can do the same for the Guestbook Admin portlet. Don't worry if
 you can't: at the end of this Learning Path is a link to the completed project
 for you to examine. 
