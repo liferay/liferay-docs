@@ -77,16 +77,10 @@ application:
                       serviceContext.getGroupPermissions(),
                       serviceContext.getGuestPermissions());
 
-That's all it takes to add permissions resources. Note that at this point, any 
-entities you've already added to your Guestbook don't have resources and thus 
-can't be protected by permissions. It's probably wise to delete them. You'll 
-have to do this via SQL commands in the database, since you haven't implemented 
-delete functionality in your application yet (though that's coming). Future 
-entities added to the database are fully permissions-enabled.
-<!-- 
-The learning path doesn't use SQL... add instructions for deleting default 
-database 
--->
+That's all it takes to add permissions resources. Future entities added to the 
+database are fully permissions-enabled. Note, however, that any entities you've 
+already added to your Guestbook application in the portal don't have resources 
+and thus can't be protected by permissions. You'll fix this at the end of this 
+section. 
 
-Your next task is to create helper classes to make it easier to check 
-permissions. 
+Next, you'll create helper classes to make it easier to check permissions. 

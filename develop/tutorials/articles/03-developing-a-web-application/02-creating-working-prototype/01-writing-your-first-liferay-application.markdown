@@ -110,11 +110,13 @@ configuration was created for you; you'll examine it later.
 ## Deploying the Application [](id=deploying-the-application)
 
 Even though all you've done is generate it, the `guestbook-web` project is ready 
-to be built and deployed to @product@. Make sure that your server is running, and if 
-it isn't, select it in @ide@'s Servers pane and click the start button. After it
-starts, drag and drop the `guestbook-web` project from the Project Explorer to 
-the server. If this is your first time starting @product@, you'll go through a 
-short wizard to set up your server.
+to be built and deployed to @product@. Make sure that your server is running, 
+and if it isn't, select it in @ide@'s Servers pane and click the start button. 
+After it starts, drag and drop the `guestbook-web` project from the Project 
+Explorer to the server. If this is your first time starting @product@, you'll go 
+through a short wizard to set up your server. In this wizard, make sure you use 
+the default database (Hypersonic). Although this database isn't intended for 
+production use, it works fine for development and testing. 
 
 <!-- Needs an image here showing the drag and drop, because it's not intuitive
 unless you see it. -Rich -->
