@@ -1,0 +1,204 @@
+# Permissions in JSPs
+
+User interface components can be wrapped in permission checks pretty easily. In
+this last step of this Learning Path, you'll learn how. 
+
+First go to the `init.jsp` in your `guestbook-web` project.
+
+Add the following imports to the file:
+
+        <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookModelPermission" %>
+        <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookPermission" %>
+        <%@ page import="com.liferay.docs.guestbook.service.permission.EntryPermission" %>
+        <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
+        <%@ page import="com.liferay.portal.kernel.security.permission.ActionKeys" %>
+
+Recognize the first three? They're the permissions helper classes you just
+created. Now it's time to implement permission checks. 
+
+## Checking Permissions in the UI
+
+Now you want to review exactly what to protect. In the first part, you
+identified three areas: 
+
+- The tabs across the top of your application
+
+- The Add Guestbook button
+
+- The Add Entry button
+
+The first area you want to tackle, then, is the tabs across the top, which
+you'll implement with permissions in place. Since this is already implemented as
+a scriptlet, this is where you'll add the scriptlet version of the permission
+check. 
+
+1.  Open `/guestbookwebportlet/view.jsp` and find the scriptlet that gets the
+    `guestbookId` from the request. Just below this, add the code below: 
+
+        <aui:nav cssClass="nav-tabs">
+
+            <%
+                List<Guestbook> guestbooks = GuestbookLocalServiceUtil
+                            .getGuestbooks(scopeGroupId);
+                    for (int i = 0; i < guestbooks.size(); i++) {
+                        Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
+                        String cssClass = StringPool.BLANK;
+                        if (curGuestbook.getGuestbookId() == guestbookId) {
+                            cssClass = "active";
+                        }
+                        if (GuestbookPermission.contains(
+                            permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
+                                                
+            %>
+
+            <portlet:renderURL var="viewPageURL">
+                <portlet:param name="mvcPath" value="/guestbookwebportlet/view.jsp" />
+                <portlet:param name="guestbookId"
+                    value="<%=String.valueOf(curGuestbook.getGuestbookId())%>" />
+            </portlet:renderURL>
+
+                
+            <aui:nav-item cssClass="<%=cssClass%>" href="<%=viewPageURL%>"
+                label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
+
+            <%  
+                        }
+                    
+                    }
+            %>
+
+        </aui:nav>
+
+    This code gets the list of possible guestbooks from the database, iterates
+    through them, checks the permission for each one against the current user's
+    roles, and adds the guestbooks the user can access to a list of tabs. 
+
+    You've now implemented your first permission check. As you can see, it's pretty
+    straightforward to do, thanks to the static methods in your helper classes. The
+    code above shows the tab if the current user has the `VIEW` permission for the
+    guestbook and omits it if the user does not. 
+
+    Next, you'll add permission checks to the Add Entry button. 
+
+2.  Scroll down in the file to the line that reads `<aui:button-row
+    cssClass="guestbook-buttons">`. Add the following line of code to check for
+    the `ADD_ENTRY` permission: 
+
+        <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbookId, "ADD_ENTRY") %>'>
+
+3.  After this is the code that creates the URL and the button. After the button
+    tag and above the `</aui:button-row>` tag, add the closing tag for the 
+    `<c:if>` statement: 
+
+        </c:if>
+
+    You've now implemented your permission check for the Add Guestbook button using
+    JSTL tags. 
+
+Next, you'll implement an `entry_actions.jsp` that's much like the one in the
+Guestbook Admin portlet. This will determine what options appear for logged in
+users who can see the actions menu in the portlet. Just like before, you'll wrap
+each `renderURL` in a "if" statement that checks the permissions against
+available actions.
+
+1.  In `src/main/resources/META-INF/resources/guestbookwebportlet`, create a
+    file called `entry_actions.jsp`.
+
+2.  Paste in the following code: 
+
+        <%@include file="../init.jsp"%>
+
+        <%
+        String mvcPath = ParamUtil.getString(request, "mvcPath");
+
+        ResultRow row = (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
+
+        Entry entry = (Entry)row.getObject(); 
+        %>
+
+        <liferay-ui:icon-menu>
+
+            <portlet:renderURL var="viewEntryURL">
+                <portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>" />
+                <portlet:param name="mvcPath" value="/guestbookwebportlet/view_entry.jsp" />
+            </portlet:renderURL>
+
+            <liferay-ui:icon
+              message="View"
+              url="<%= viewEntryURL.toString() %>"
+            />
+
+            <c:if
+                test="<%= EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
+                <portlet:renderURL var="editURL">
+                    <portlet:param name="entryId"
+                        value="<%= String.valueOf(entry.getEntryId()) %>" />
+                    <portlet:param name="mvcPath" value="/guestbookwebportlet/edit_entry.jsp" />
+                </portlet:renderURL>
+
+                <liferay-ui:icon image="edit" message="Edit"
+                    url="<%=editURL.toString() %>" />
+            </c:if>
+            
+            <c:if
+            test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
+
+                <liferay-security:permissionsURL
+                    modelResource="<%= Entry.class.getName() %>"
+                    modelResourceDescription="<%= entry.getMessage() %>"
+                    resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
+                    var="permissionsURL" />
+            
+                <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
+
+            </c:if>
+            
+            <c:if
+                test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">
+
+                <portlet:actionURL name="deleteEntry" var="deleteURL">
+                    <portlet:param name="entryId"
+                        value="<%= String.valueOf(entry.getEntryId()) %>" />
+                    <portlet:param name="guestbookId"
+                        value="<%= String.valueOf(entry.getGuestbookId()) %>" />
+                </portlet:actionURL>
+
+                <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
+            </c:if>
+
+        </liferay-ui:icon-menu>
+
+    This code defines several action buttons for viewing, updating, setting
+    permissions on, and deleting entities. Each button is protected by a
+    permissions check. If the current user cannot perform the specified action,
+    the action does not appear. 
+
+5.  Finally, in `view.jsp`, you must add the `entry_actions.jsp` as the last
+    column in the Search Container. Find the line defining the Search Container
+    row. It looks like this: 
+
+        <liferay-ui:search-container-row
+            className="com.liferay.docs.guestbook.model.Entry" modelVar="entry">
+
+    Below that line are two columns. After the second column, add a third: 
+
+        <liferay-ui:search-container-column-jsp path="/guestbookwebportlet/entry_actions.jsp" align="right" />
+
+6.  Save all JSP files. 
+
+Excellent! You've now implemented all the permission checks you'd defined for
+the Guestbook portlet. Save the file. 
+
+When testing the application, remember that any guestbook entries you created
+without resources won't work with permissions. Add new Guestbooks and Guestbook
+Entries to test your application with different users. Administrative users see
+all the buttons, regular users see the Add Entry button, and guests see no
+buttons at all (but can navigate).
+
+Now see if you can do the same for the Guestbook Admin portlet. Don't worry if
+you can't: at the end of this Learning Path is a link to the completed project
+for you to examine. 
+
+The next step is to integrate search and indexing into your application. This is
+a prerequisite for the much more powerful stuff to come. 
+
