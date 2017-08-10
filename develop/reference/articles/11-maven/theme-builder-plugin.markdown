@@ -46,16 +46,10 @@ POM:
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`diffsDir` |  |  | 
-`name` |  |  | 
-`outputDir` |  |  | 
-`parentDir` |  |  | 
-`parentName` |  |  | 
-`templateExtension` |  |  | 
-`unstyledDir` |  |  | 
-
-
-
-
-
-
+`diffsDir` | `File` | `${maven.war.src}` | The directory that contains the files to copy over the parent theme.
+`name` | `String` | `${project.artifactId}` | The name of the new theme.
+`outputDir` | `File` | `${project.build.directory}/${project.build.finalName}` | The directory where to build the theme.
+`parentDir` | `File` | `null` | The directory of the parent theme.
+`parentName` | `String` | `null` | The name of the parent theme.
+`templateExtension` | `String` | `"ftl"` |  The extension of the template files, usually `"ftl"` or `"vm"`.
+`unstyledDir` | `File` | `null` | The directory of [Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled).
