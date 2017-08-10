@@ -8,6 +8,19 @@ applications configurable using any other mechanism that you're already
 familiar with. We have found, however, that the method described below provides
 the greatest benefit with the least amount of effort.
 
++$$$
+
+**Note:** To quickly see a working application configuration, deploy the
+`configuration-action` [Blade
+sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
+and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
+*System Settings*). In the Other category, click the *Message display
+configuration* entry.
+
+Add the *Blade Message Portlet* to a page to test your configuration choices.
+
+$$$
+
 ## Fundamentals [](id=fundamentals)
 
 While you don't need to know much to make your applications configurable,
@@ -313,8 +326,6 @@ configuration value from it. Here's an example `view.jsp` file that does this:
 
 ![Figure 2: Here, the Example Configuration portlet's `view.jsp` is rendered. This JSP reads the value of the `favoriteColor` configuration and displays it.](../../images/example-configuration-portlet.png)
 
-<!-- Update the link below when the example has been completed and the name
-finalized. -->
 The example code here would make the application display a message like this:
 
     Favorite color: blue

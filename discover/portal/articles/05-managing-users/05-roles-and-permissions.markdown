@@ -55,7 +55,7 @@ described as follows:
 - Team: Permissions are defined within a *specific site* and are assigned within
   that *specific site*.
 
-Read [here](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management) For more information about teams.
+Read [here](/discover/portal/-/knowledge_base/7-0/creating-teams-for-advanced-site-membership-management) For more information about teams.
 
 $$$
 
