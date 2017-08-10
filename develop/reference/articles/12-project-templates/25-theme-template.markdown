@@ -50,10 +50,10 @@ this:
     - `build.gradle`
     - `[gradlew|pom.xml]`
 
-The generated theme is functional and is deployable to a @product@ instance. To build upon the generated app,
-modify the project by adding logic and additional files to the folders outlined
-above. You can visit the
-[Theme sample project](/develop/reference/-/knowledge_base/7-0/theme) for a more
+The generated theme is functional and is deployable to a @product@ instance. To
+build upon the generated app, modify the project by adding logic and additional
+files to the folders outlined above. You can visit the
+[simple-theme](/develop/reference/-/knowledge_base/7-0/theme) project for a more
 expanded sample of a theme. Likewise, see the
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
 tutorial section for more information on creating themes.
