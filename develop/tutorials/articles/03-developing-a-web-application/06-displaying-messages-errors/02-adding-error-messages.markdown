@@ -1,5 +1,9 @@
 # Adding Failure and Success Messages  
 
+<div class="learn-path-step">
+    <p>Displaying Messages and Errors<br>Step 2 of 3</p>
+</div>
+
 To display correct feedback to users properly, you must edit your portlet 
 classes to use @product@'s `SessionMessages` and `SessionErrors` classes. These 
 classes collect messages that the view layer shows to the user by using a simple 

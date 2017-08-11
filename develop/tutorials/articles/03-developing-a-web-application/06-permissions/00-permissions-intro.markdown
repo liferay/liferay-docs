@@ -10,3 +10,5 @@ from scratch: the framework provides a robust and well-tested permissions system
 that you can implement quickly. 
 
 Ready to start? 
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/configuring-your-permissions-scheme">Let's Go!<span class="icon-circle-arrow-right"></span></a>

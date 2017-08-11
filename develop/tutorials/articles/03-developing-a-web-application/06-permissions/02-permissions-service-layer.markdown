@@ -1,5 +1,9 @@
 # Permissions in the Service Layer
 
+<div class="learn-path-step">
+    <p>Implementing Permissions<br>Step 2 of 4</p>
+</div>
+
 The last step introduced the concept of *resources*. Resources are data stored 
 with your entities that define how they can be accessed. For example, when the 
 configuration in your `default.xml` files is applied to your application's 
