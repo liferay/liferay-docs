@@ -1,7 +1,7 @@
 # Resolving Bundle Requirements [](id=resolving-bundle-requirements)
 
-If one of your bundles imports a package that no other bundle in your Liferay
-OSGi runtime exports, you’ll get a bundle exception. Here’s an example
+If one of your bundles imports a package that no other bundle in the Liferay
+OSGi runtime exports, you get a bundle exception. Here's an example
 exception:
 
     ! could not resolve the bundles: [com.liferay.messaging.client.command-1.0.0.201707261701 org.osgi.framework.BundleException: Could not resolve module: com.liferay.messaging.client.command [1]
@@ -28,11 +28,13 @@ The bundle exception message follows this general pattern:
 -   etc.
 -   Module Z provides `www.xxx` but has an unresolved  requirement `yyy.zzz`.
 
-The pattern stops at the final requirement no module provides. The dependencies
-of the last module listed are key to resolving the bundle exception. There are two possible causes:
+The pattern stops at the final requirement no module provides. The last module's
+dependencies are key to resolving the bundle exception. There are two possible
+causes:
 
 1.  A dependency that satisfies the final requirement might be missing from the
     build file.
+
 2.  A dependency that satisfies the final requirement might not be deployed.
 
 Both cases require deploying a bundle that provides the missing requirement. 
@@ -40,7 +42,7 @@ Both cases require deploying a bundle that provides the missing requirement.
 The example bundle exception concludes that module `com.liferay.petra.io`
 requires capability `osgi.extender;
 filter:="(osgi.extender=osgi.serviceloader.processor)"`. To resolve the
-requirement, let's make sure all of `com.liferay.petra.io`'s dependencies are
+requirement, make sure all of `com.liferay.petra.io`'s dependencies are
 deployed. 
 
 First, note the module's dependencies. Here is the `dependencies` section of the
@@ -91,8 +93,9 @@ You can follow these similar steps to resolve your bundle exceptions.
 
 +$$$
 
-Note: Bndtools' *Resolve* button can resolve bundle dependencies automatically.
-You specify the bundles your application requires and Bndtools adds transitive dependencies from your configured artifact repository.
+Note: Bndtools's *Resolve* button can resolve bundle dependencies automatically.
+You specify the bundles your application requires and Bndtools adds transitive
+dependencies from your configured artifact repository.
 
 $$$
 

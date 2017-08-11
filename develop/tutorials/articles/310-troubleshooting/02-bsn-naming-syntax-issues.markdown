@@ -29,7 +29,7 @@ space in it (e.g., `space-program-theme v1.war`) an
     org.apache.catalina.core.ApplicationContext.log The context name 'space-program-theme v1' does not follow Bundle-SymbolicName syntax.
     org.eclipse.equinox.http.servlet.internal.error.IllegalContextNameException: The context name 'space-program-theme v1' does not follow Bundle-SymbolicName syntax.
 
-To avoid using spaces, and to follow naming best practices, you can use  a
+To avoid using spaces and to follow naming best practices, you can use a
 reverse-domain name in your `Bundle-SymbolicName`.
 
 Here's an example domain name and reverse domain name:
