@@ -1,11 +1,10 @@
 # Theme Reference Guide [](id=theme-reference-guide)
 
 A theme is made up of several files. Although most of the files are named after 
-their matching component, you may be unsure of the function of some of these 
-files.
+their matching components, their function may be unclear. 
 
-This document explains each file's usage in more detail, so that you will know
-which files to modify and which files to leave untouched.
+This document explains each file's usage to make clear which files to modify 
+and which files to leave untouched.
 
 ## Theme Anatomy [](id=theme-anatomy)
 
@@ -14,10 +13,10 @@ built using the Node.js build tools with the [theme generator](/develop/tutorial
 and [themes built using @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-liferay-ide).
 <!-- themes built using the Plugins SDK -->
 
-For themes developed with the theme generator, your theme anatomy is organized
-with the structure shown below. Although themes developed with @ide@ have a 
-slightly different anatomy built with the [theme project template](/develop/reference/-/knowledge_base/7-0/theme-template), 
-the core theme files are the same.  Note that the `build` directory is shown for 
+Themes developed with the theme generator have the anatomy shown below. Although 
+themes developed with @ide@ have a slightly different anatomy built with the
+[theme project template](/develop/reference/-/knowledge_base/7-0/theme-template), 
+the core theme files are the same. Note that the `build` folder is shown for 
 reference, and is generated when the theme is compiled.
 
 - `theme-name/`
