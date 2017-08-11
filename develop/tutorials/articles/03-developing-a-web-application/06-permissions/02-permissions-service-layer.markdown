@@ -1,36 +1,44 @@
 # Permissions in the Service Layer
 
-Liferay provides a complete API for managing resources that's integrated with 
+The last step introduced the concept of *resources*. Resources are data stored 
+with your entities that define how they can be accessed. For example, when the 
+configuration in your `default.xml` files is applied to your application's 
+entities in the database, resources are created. These resources are then used 
+in conjunction with @product@'s permissions system to determine who can do what 
+to the entities. 
+
+@product@ provides a complete API for managing resources that's integrated with 
 Service Builder. This API is injected into your implementation classes 
-automatically, so all you need to modify your exist add and delete methods to also manage the resource portion.
+automatically. To manage the resources, all you must do is call the API in the 
+service's add and delete methods. Follow these steps to do this in your 
+application: 
 
-1. Open `GuestbookLocalServiceImpl.java` from your `guestbook-service` module 
-    in the `com.liferay.docs.guestbook.service.impl` package, and find the 
-    `addGuestbook` method.
+1.  In your `guestbook-service` module, open `GuestbookLocalServiceImpl.java` 
+    from the `com.liferay.docs.guestbook.service.impl` package. 
 
-2. Just before the the return statement, add the following code:
+2.  Just before the `addGuestbook` method's `return` statement, add this code: 
 
         resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
             Guestbook.class.getName(), guestbookId, false, true, true);
 
-    Notice that the `resourceLocalService` object is already there, ready for 
-    you to use. This is one of several utilities that are automatically 
-    injected by Service Builder. You'll see the rest in future Learning Paths.
+    Note that the `resourceLocalService` object is already there, ready for you 
+    to use. This is one of several utilities that are injected automatically
+    by Service Builder. You'll see the rest in the future.
 
-    This code adds a resource to Liferay's database to correspond with your 
-    entity (notice that the guestbookId is included in the call). The three 
+    This code adds a resource to @product@'s database to correspond with your 
+    entity (note that the `guestbookId` is included in the call). The three 
     booleans at the end are settings. The first is whether to add portlet 
     action permissions. This should only be true if the permission is for a 
-    portlet resource. Since this permission is for a model resource (an 
-    entity), it's false. The other two are settings for adding group 
-    permissions and adding guest permissions. If you set these to true as has 
-    been done here, you'll add the default permissions configured in the 
-    permissions configuration file that you created in the previous step. Since 
-    you definitely want to do this, these booleans are set to `true.`
+    portlet resource. Since this permission is for a model resource (an entity), 
+    it's `false`. The other two are settings for adding group and guest 
+    permissions. If you set these to `true`, you'll add the default permissions 
+    you defined in the permissions configuration file (`default.xml`) in the 
+    previous step. Since you definitely want to do this, these booleans are set 
+    to `true`. 
 
-3. Next go to the `updateGuestbook` method. Add a similar bit of code in between
-    the `guestbookPersistence.update(guestbook)` line and the `return` 
-    statement:
+3.  Next, go to the `updateGuestbook` method. Add a similar bit of code in 
+    between `guestbookPersistence.update(guestbook);` and the `return` 
+    statement: 
     
         resourceLocalService.updateResources(serviceContext.getCompanyId(),
                         serviceContext.getScopeGroupId(), 
@@ -38,46 +46,41 @@ automatically, so all you need to modify your exist add and delete methods to al
                         serviceContext.getGroupPermissions(),
                         serviceContext.getGuestPermissions());
 
-4. Do the same for `deleteGuestbook`, this in between `guestbook = 
-    deleteGuestbook(guestbook);` and the `return` statement:
+4.  Now you'll do the same for `deleteGuestbook`. Add this code in between 
+    `guestbook = deleteGuestbook(guestbook);` and the `return` statement:
     
         resourceLocalService.deleteResource(serviceContext.getCompanyId(),
                         Guestbook.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
                         guestbookId);
 
-4. Save the file and then open `EntryLocalServiceImpl.java` from the same 
-    package.
+5.  Hit Ctrl-Shift-O to organize the imports and save the file. 
 
-5. Add a line of code that adds resources for this entity, near the end of the 
-    method, just before the return statement:
+6.  Now you'll add resources for the `Entry` entity. Open 
+    `EntryLocalServiceImpl.java` from the same package. For `addEntry`, add a 
+    line of code that adds resources for this entity, just before the return 
+    statement: 
 
         resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
-          Entry.class.getName(), entryId, false, true, true);
+            Entry.class.getName(), entryId, false, true, true);
 
-6. Again, you need to do the same for `updateEntry` and `deleteEntry`. First
-    Find `deleteEntry` and add this code above the `return` statement:
+7.  For `deleteEntry`, add this code just before the `return` statement:
     
         resourceLocalService.deleteResource(
                        serviceContext.getCompanyId(), Entry.class.getName(),
                        ResourceConstants.SCOPE_INDIVIDUAL, entryId);
-            
 
-7. Finally find `updateEntry` and add it's resource action:
+8.  Finally, find `updateEntry` and add its resource action, also just before 
+    the `return` statement: 
 
         resourceLocalService.updateResources(
                       user.getCompanyId(), groupId, Entry.class.getName(), entryId,
                       serviceContext.getGroupPermissions(),
                       serviceContext.getGuestPermissions());
 
-    As you can see, this does the same thing for the Entry entity.
+That's all it takes to add permissions resources. Future entities added to the 
+database are fully permissions-enabled. Note, however, that any entities you've 
+already added to your Guestbook application in the portal don't have resources 
+and thus can't be protected by permissions. You'll fix this at the end of this 
+section. 
 
-That's all it takes to add permissions resources. Note that at this point, any 
-entities you've already added to your Guestbook don't have corresponding 
-resources, and thus can't be protected by permissions. It's probably wise to 
-delete them, which at this point, you'll have to do via SQL commands in the 
-database, since you haven't implemented delete functionality in your 
-application yet (though that's coming). Future entities added to the database 
-are fully permissions-enabled.
-
-Your next task is to create permissions helper classes to make it easier to 
-check permissions.
+Next, you'll create helper classes to make it easier to check permissions. 

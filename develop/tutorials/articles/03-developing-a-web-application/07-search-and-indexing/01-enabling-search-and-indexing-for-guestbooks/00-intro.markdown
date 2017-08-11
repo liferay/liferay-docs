@@ -1,16 +1,16 @@
 # Enabling Search and Indexing for Guestbook Entries [](id=enabling-search-and-indexing-for-guestbook-entries)
 
-To enable search in the Guestbook portlet for guestbook entries, you need to
-follow these four steps:
+To enable search in the Guestbook portlet for guestbook entries, you must follow
+these four steps:
 
-1. Create an `EntryIndexer` class that extends Liferay's `BaseIndexer` abstract
-   class.
+1.  Create an `EntryIndexer` class that extends Liferay's `BaseIndexer` abstract
+    class.
 
-2. Update the `addEntry`, `updateEntry`, and `deleteEntry` methods of
-   `EntryLocalServiceImpl` to invoke the guestbook entry indexer.
+2.  In `EntryLocalServiceImpl`, update the `addEntry`, `updateEntry`, and
+    `deleteEntry` methods to invoke the guestbook entry indexer.
 
-3.  Add status fields to the `service.xml` to notify the indexer and Asset 
-    Publisher whether an asset can be published.
+3.  Add status fields to `service.xml` to notify the indexer and Asset Publisher
+    that an asset can be published.
 
 4.  Update the Guestbook portlet's user interface to display a search bar into
     which users can enter search terms and a JSP to display search results after

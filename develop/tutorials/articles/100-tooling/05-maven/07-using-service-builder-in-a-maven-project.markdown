@@ -24,7 +24,7 @@ Time to get started!
                 <plugin>
                     <groupId>com.liferay</groupId>
                     <artifactId>com.liferay.portal.tools.service.builder</artifactId>
-                    <version>1.0.155</version>
+                    <version>1.0.160</version>
                     <configuration>
                         <apiDirName>../blade.servicebuilder.api/src/main/java</apiDirName>
                         <autoImportDefaultReferences>true</autoImportDefaultReferences>
