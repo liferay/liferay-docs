@@ -74,18 +74,18 @@ publish both at the same time; you'll have to complete their publication
 processes separately if you want to publish both page groups. You can also
 choose specific pages to publish, the look and feel of those pages, etc.
 
-**Content** allows you to configure the content to be published. Selecting the
-*Choose Content* option from the dropdown field lets you filter the content to
-be published, based mainly on the date range and content type. If you choose a
-page to be published from the Pages menu, the portlets and their references will
-always be published, even if you specified differently in the Content section.
+**Content** lets you configure the content to be published. Selecting the
+*Choose Content* option lets you filter the content to be published, based
+mainly on the date range and content type. If you choose a page to be published
+from the Pages menu, the portlets and their references are always published,
+even if you specified differently in the Content section.
 
 There are other filtering sub-options for certain content types. Next, you'll
 look at these content filtering options.
 
-The first choice to make is what content to publish based on date. Specifying a
+You first must choose what content to publish based on date. Specifying a
 date range lets you choose content to publish based on when it was created or
-last modified. Select the option that best fits your workflow; the available
+last modified. Select the option that best fits your workflow. The available
 options are described in more detail below:
 
 **All:** publishes content regardless of its creation or last modification date.
@@ -101,12 +101,11 @@ window of time is published.
 time.  For example, you can set the date range to the past 48 hours,
 starting from the current time.
 
-Under the date options, you have a section that shows the different types of
-content that can be published. This list is populated based on the provided date
-range. For example, if at least one article has been created or modified in the
-given date range, a Web Content section appears in the list, and the number of
-articles is shown next to the Web Content label. Otherwise, the Web Content
-section is absent.
+Under the date options are the different types of content that can be published.
+This list is populated based on the provided date range. For example, if at
+least one article has been created or modified in the given date range, a Web
+Content section appears in the list, and the number of articles is shown next to
+the Web Content label. Otherwise, the Web Content section is absent.
 
 *Categories* and *Page Ratings* content types are not dependent on the date
 range, and are always shown in the list.
