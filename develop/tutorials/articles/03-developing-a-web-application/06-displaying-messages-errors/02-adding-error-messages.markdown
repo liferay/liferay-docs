@@ -1,6 +1,6 @@
 # Adding Failure and Success Messages  
 
-To properly display correct feedback to users, you must edit your portlet 
+To display correct feedback to users properly, you must edit your portlet 
 classes to use @product@'s `SessionMessages` and `SessionErrors` classes. These 
 classes collect messages that the view layer shows to the user by using a simple 
 tag. 

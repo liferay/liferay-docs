@@ -28,7 +28,7 @@ application (such as `Guestbook` and `Entry`) are defined as *resources*, and
 *resource actions* manage how users can interact with those resources. There are 
 therefore two kinds of permissions: portlet permissions and resource (or model) 
 permissions. Portlet permissions protect access to global functions, such as 
-*Add Entry*. If a user doesn't have permission to access that global function, 
+*Add Entry*. If users don't have permission to access that global function, 
 they're missing a portlet permission. Resource permissions protect access to 
 objects, such as `Guestbook` and `Entry`. A user may have permission to view one 
 `Entry`, view and edit another `Entry`, and may not be able to access another 
