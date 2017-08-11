@@ -28,6 +28,9 @@ Note that themes created in @ide@ follow a WAR-style layout. This is the default
 layout of themes in @product-ver@. Although the wizard can be misleading by
 calling the theme a new module project, it is a WAR.
 
+To modify a theme created in @ide@, mirror the folder structure of the files 
+you wish to change and copy them into your theme's `webapp` folder.
+
 Under the hood, @ide@ is using the
 [theme project template](/develop/reference/-/knowledge_base/7-0/theme-template).
 If you're interested in creating Liferay themes using the
