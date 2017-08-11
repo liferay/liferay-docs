@@ -1,5 +1,9 @@
 # Adding Metadata
 
+<div class="learn-path-step">
+    <p>Writing the Guestbook Admin App<br>Step 2 of 5</p>
+</div>
+
 Now that you've generated the classes, you must turn them into OSGi components.
 Remember that because components are container-managed objects, you must provide 
 metadata that tells @product@'s OSGi container how to manage their lifecycles. 

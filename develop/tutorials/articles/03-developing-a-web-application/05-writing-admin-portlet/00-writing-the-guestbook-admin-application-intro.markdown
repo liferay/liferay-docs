@@ -16,3 +16,5 @@ In short, this is a simple application with a simple interface:
 ![Figure x: The Guestbook Admin portlet lets administrators manage Guestbooks.](../../../images/admin-app-start.png)
 
 Are you ready to begin? 
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/creating-the-classes">Let's Go!<span class="icon-circle-arrow-right"></span></a>

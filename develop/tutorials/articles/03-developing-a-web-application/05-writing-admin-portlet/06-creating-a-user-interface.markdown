@@ -1,5 +1,9 @@
 # Creating a User Interface [](id=creating-a-user-interface)
 
+<div class="learn-path-step">
+    <p>Writing the Guestbook Admin App<br>Step 5 of 5</p>
+</div>
+
 It's time to create the Guestbook Admin portlet's user interface. The portlet's 
 default view has a button for adding new guestbooks. It must also display the 
 guestbooks that already exist. 

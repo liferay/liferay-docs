@@ -1,5 +1,9 @@
 # Defining Portlet Actions [](id=defining-portlet-actions)
 
+<div class="learn-path-step">
+    <p>Writing the Guestbook Admin App<br>Step 4 of 5</p>
+</div>
+
 The Guestbook Admin portlet now needs action methods for adding, updating, and
 deleting guestbooks. As with the Guestbook portlet, action methods call the
 corresponding service methods. Note that since your services and applications 
