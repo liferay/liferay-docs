@@ -12,7 +12,7 @@ The first thing you must do is configure the Web module for your Soy
 portlet.
 
 The file structure of a Soy Portlet is similar to the structure of an MVC
-portlet: 
+portlet:
 
 - `my-soy-portlet`
     - `bnd.bnd`
@@ -40,7 +40,7 @@ the OSGi metadata next.
 
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
 
-Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND 
+Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND
 configuration is shown below:
 
     Bundle-Name: Liferay Hello Soy Web
@@ -51,16 +51,13 @@ configuration is shown below:
 
 In addition to the standard metadata, notice the `Require-Capability`
 property. This specifies that this bundle requires modules that provide the
-capability `soy` with a `type` of `metal` to work.
-
-Also very important is the `Include-Resource` property which let the file
-named _package.json_ to be inlcuded in the final JAR.
-
-Next you can specify your module's JavaScript dependencies.
+capability `soy` with a `type` of `metal` to work. Also note the
+`Include-Resource` property. **You must include your** `package.json` **file, to
+load the Soy Portlet's JavaScript files.**
 
 ## Specifying JavaScript Dependencies [](id=specifying-javascript-dependencies)
 
-Specify the JavaScript module dependencies in your `package.json`. At a minimum, 
+Specify the JavaScript module dependencies in your `package.json`. At a minimum,
 you should have the following dependencies and configuration parameters:
 
         {
@@ -76,8 +73,8 @@ you should have the following dependencies and configuration parameters:
                 "version": "1.0.3"
         }
 
-This provides everything you need to create a Metal component based on Soy. Note 
-that the `version` value in your `package.json` should match the value of 
+This provides everything you need to create a Metal component based on Soy. Note
+that the `version` value in your `package.json` should match the value of
 `Bundle-Version` in your `bnd.bnd` file.
 
 Next you can specify your module's build dependencies.
@@ -95,7 +92,7 @@ Add the dependencies shown below to your `build.gradle`:
         compileOnly group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.0.0"
     }
 
-Now that your module build is configured, you can learn how to create the Soy 
+Now that your module build is configured, you can learn how to create the Soy
 portlet component next.
 
 ## Creating a Soy Portlet Component [](id=creating-a-soy-portlet-component)
@@ -167,7 +164,7 @@ controller for the Soy portlet next.
 
 ## Writing Controller Code [](id=writing-controller-code)
 
-Soy portlets extend MVC portlets, so they use the same Model-View-Controller 
+Soy portlets extend MVC portlets, so they use the same Model-View-Controller
 framework to operate.
 
 Your controller receives requests from the front-end, and it receives data from
