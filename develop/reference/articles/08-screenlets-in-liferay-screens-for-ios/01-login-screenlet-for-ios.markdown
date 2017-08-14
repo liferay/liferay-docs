@@ -31,6 +31,14 @@ authentication methods are supported:
   portal. The other authentication types require this permission to access such 
   files. 
 
++$$$
+
+**Note:** Cookie authentication with Login Screenlet is broken in fix packs 14 
+through 18 of Liferay Digital Enterprise 7.0. This issue is fixed in newer fix 
+packs for Liferay Digital Enterprise 7.0. 
+
+$$$
+
 For instructions on configuring the Screenlet to use these authentication types, 
 see the below 
 [Portal Configuration](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#portal-configuration) 
