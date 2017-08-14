@@ -15,7 +15,6 @@ The file structure of a Soy Portlet is similar to the structure of an MVC
 portlet: 
 
 - `my-soy-portlet`
-    - `.lfrbuild-portal`
     - `bnd.bnd`
     - `build.gradle`
     - `package.json`
@@ -48,10 +47,14 @@ configuration is shown below:
     Bundle-SymbolicName: com.liferay.hello.soy.web
     Bundle-Version: 1.0.3
     Require-Capability: soy;filter:="(type=metal)"
+    Include-Resource: package.json
 
 In addition to the standard metadata, notice the `Require-Capability`
 property. This specifies that this bundle requires modules that provide the
 capability `soy` with a `type` of `metal` to work.
+
+Also very important is the `Include-Resource` property which let the file
+named _package.json_ to be inlcuded in the final JAR.
 
 Next you can specify your module's JavaScript dependencies.
 
