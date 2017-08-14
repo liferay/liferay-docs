@@ -1,5 +1,9 @@
 # Creating Permissions Helper Classes
 
+<div class="learn-path-step">
+    <p>Implementing Permissions<br>Step 3 of 4</p>
+</div>
+
 You've now defined your permissions and made sure resources are added to the 
 database so permissions can be checked. Now you'll create the helper classes 
 needed to check permissions. 

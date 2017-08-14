@@ -1,4 +1,8 @@
-# Configuring Your Permissions Scheme
+# Configuring Your Permissions Scheme [](id=configuring-your-permissions-scheme)
+
+<div class="learn-path-step">
+    <p>Implementing Permissions<br>Step 1 of 4</p>
+</div>
 
 @product@'s permissions framework is configured declaratively, like Service 
 Builder. You define all your permissions in an XML file that by convention is 

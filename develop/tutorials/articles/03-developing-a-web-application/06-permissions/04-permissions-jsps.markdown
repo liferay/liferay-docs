@@ -1,5 +1,9 @@
 # Permissions in JSPs
 
+<div class="learn-path-step">
+    <p>Implementing Permissions<br>Step 4 of 4</p>
+</div>
+
 User interface components can be wrapped in permission checks pretty easily. In
 this step, you'll learn how. 
 

@@ -1,4 +1,8 @@
-# Creating Language Keys
+# Creating Language Keys [](id=creating-language-keys)
+
+<div class="learn-path-step">
+    <p>Displaying Messages and Errors<br>Step 1 of 3</p>
+</div>
 
 Any modern application should place its messages and form field labels in a 
 language keys file that can be duplicated and then translated into multiple 

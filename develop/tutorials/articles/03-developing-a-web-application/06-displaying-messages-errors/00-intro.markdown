@@ -16,3 +16,5 @@ That's exactly what you'll do next, in three steps:
 3.  Report those error messages in your JSPs.
 
 Ready to get started? 
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/creating-language-keys">Let's Go!<span class="icon-circle-arrow-right"></span></a>

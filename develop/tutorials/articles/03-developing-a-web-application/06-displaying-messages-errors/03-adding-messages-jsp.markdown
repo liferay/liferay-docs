@@ -1,5 +1,9 @@
 # Adding Messages to JSPs
 
+<div class="learn-path-step">
+    <p>Displaying Messages and Errors<br>Step 3 of 3</p>
+</div>
+
 Any messages the user should see are now stored in either `SessionMessages` or
 `SessionErrors`. Next, you'll make these messages appear in your JSPs. 
 
