@@ -1,4 +1,8 @@
-# Creating the Classes  
+# Creating the Classes [](id=creating-the-classes)
+
+<div class="learn-path-step">
+    <p>Writing the Guestbook Admin App<br>Step 1 of 5</p>
+</div>
 
 Because the Guestbook and Guestbook Admin applications should be bundled
 together, you'll create the new application manually inside the `guestbook-web`

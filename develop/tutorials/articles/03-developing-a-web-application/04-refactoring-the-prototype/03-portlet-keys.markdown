@@ -12,7 +12,7 @@ property, and then as a class.
 
 Follow these steps to create your application's `PortletKeys`:
 
-1.  In your `guestbook-web` module, open the `GuestbookWebPortlet` class and 
+1.  In your `guestbook-web` module, open the `GuestbookPortlet` class and 
     update the component class metadata properties by adding one new property: 
 
         "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK,
@@ -20,7 +20,7 @@ Follow these steps to create your application's `PortletKeys`:
     Note that you need the trailing comma if you've added the property to the
     middle of the list. If you've added it to the end of the last, leave it off. 
 
-2.  Save `GuestbookWebPortlet`. It now shows an error because you haven't added 
+2.  Save `GuestbookPortlet`. It now shows an error because you haven't added 
     the key to the class. 
 
 3.  Open the `com.liferay.docs.guestbook.constants` package. 
@@ -39,7 +39,7 @@ any instructions for creating them.
 
 5. Save the file.
 
-Now `GuestbookWebPortlet`'s error has disappeared, and your application can be
+Now `GuestbookPortlet`'s error has disappeared, and your application can be
 deployed again. Nice job! 
 
 Next, you'll integrate your application with the new back-end you generated with 

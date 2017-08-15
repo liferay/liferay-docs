@@ -1,21 +1,24 @@
 # Adding Failure and Success Messages  
 
-To display the correct feedback to users properly, you must edit your portlet
-classes to make use of @product@'s `SessionMessages` and `SessionErrors` classes.
-These classes collect feedback messages that are shown to the user in the view
-layer using a simple tag. 
+<div class="learn-path-step">
+    <p>Displaying Messages and Errors<br>Step 2 of 3</p>
+</div>
 
-The primary places you'll add these messages are when the user triggers a system
+To display correct feedback to users properly, you must edit your portlet 
+classes to use @product@'s `SessionMessages` and `SessionErrors` classes. These 
+classes collect messages that the view layer shows to the user by using a simple 
+tag. 
+
+You'll add these messages to code that runs when the user triggers a system 
 function that can succeed or fail, such as creating, editing, or deleting an
-Entry or Guestbook. This generally happens in action methods. 
+entry or guestbook. This generally happens in action methods. You must update 
+these methods to handle failure and success states in `GuestbookPortlet.java` 
+and `GuestbookAdminPortlet.java`. Start by updating `addEntry` and `deleteEntry` 
+in `GuestbookPortlet.java`: 
 
-You must update these methods to handle failure and success states in both
-`GuestbookPortlet.java` and `GuestbookAdminPortlet.java`. Start by updating 
-`addEntry` and `deleteEntry` in `GuestbookPortlet.java`:
-
-1.  Find the `addEntry` method in `GuestbookPortlet.java`. In the `try` section
-    of the `try...catch` block just before the closing `}` add a success
-    message:
+1.  Find the `addEntry` method in `GuestbookPortlet.java`. In the 
+    `try...catch` block's `try` section, add a success message just before the 
+    closing `}`: 
     
         SessionMessages.add(request, "entryAdded");
 
@@ -33,10 +36,10 @@ You must update these methods to handle failure and success states in both
     
 		SessionErrors.add(request, e.getClass().getName());
 
-    Now you not only log the message to the console, you also show the message
-    to the user, using the `SessionErrors` object.
+    Now you not only log the message to the console, you also use the 
+    `SessionErrors` object to show the message to the user. 
  
-For the `deleteEntry` method, do the same.
+Next, do the same for the `deleteEntry` method: 
 
 1.  After the logic to delete the entry, add a success message:
 
@@ -50,29 +53,28 @@ For the `deleteEntry` method, do the same.
 3.  Hit Ctrl-Shift-O to import `SessionErrors` and `SessionMessages`. Save the
     file. 
 
-Well done! You've added the messages to `GuestbookPortlet`; now you must update
-`GuestbookAdminPortlet.java`.
+Well done! You've added the messages to `GuestbookPortlet`. Now you must update 
+`GuestbookAdminPortlet.java`:
 
 1.  Open `GuestbookAdminPortlet.java` and look for the same cues.
 
 2.  Add the appropriate success messages to the `try` section of the
-    `try...catch` in `addGuestbook`, `updateGuestbook`, and `deleteGuestbook`
-    respectively:
- 
+    `try...catch` in `addGuestbook`, `updateGuestbook`, and `deleteGuestbook`, 
+    respectively: 
+
          SessionMessages.add(request, "guestbookAdded");
-         
+
          SessionMessages.add(request, "guestbookUpdated");
-         
+
          SessionMessages.add(request, "guestbookDeleted");
 
-3. In those same methods, in the `catch` section, find `Logger.getlogger...` and
-    beneath it paste the `SessionErrors` block:
+3.  In the `catch` section of those same methods, find `Logger.getlogger...` and 
+    paste the `SessionErrors` block beneath it: 
 
 		SessionErrors.add(request, pe.getClass().getName());
 
-4.  Hit Ctrl-Shift-O to import `SessionErrors` and `SessionMessages`. Save the
+4.  Hit Ctrl-Shift-O to import `SessionErrors` and `SessionMessages`. Save the 
     file. 
 
-The controller now makes relevant and detailed feedback available. Now all you
-need to do is publish this feedback in the view layer. 
-
+Great! The controller now makes relevant and detailed feedback available. Now 
+all you need to do is publish this feedback in the view layer. 

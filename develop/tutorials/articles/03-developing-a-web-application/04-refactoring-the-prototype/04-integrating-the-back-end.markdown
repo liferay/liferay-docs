@@ -21,7 +21,7 @@ you want to do is remove it, because Service Builder generated a new one:
 
 Now you get to do some dependency management. For the web module to access the 
 generated services, you must make it aware of the api and service modules. Then 
-you can update the `addEntry` method in `GuestbookWebPortlet` to use the new 
+you can update the `addEntry` method in `GuestbookPortlet` to use the new 
 services: 
 
 1.  First, open `guestbook-web`'s `build.gradle` file and add these 
@@ -35,7 +35,7 @@ services:
 
 3.  Now you must add *references* to the Service Builder services you need. To 
     do this, add them as class variables with `@Reference` annotations on their 
-    setter methods. Open `GuestbookWebPortlet` and add these references to the 
+    setter methods. Open `GuestbookPortlet` and add these references to the 
     bottom of the file: 
 
             @Reference(unbind = "-")
