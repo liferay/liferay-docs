@@ -2,52 +2,20 @@
 
 Follow these steps to create the entry indexer:
 
-1.  Create a new package in your guestbook-api module project's `src/main/java` 
+In the `com.liferay.docs.guestbook.search` package of your guestbook-api module 
+project's `src/main/java` folder, create a new class called `GuestbookIndexer` 
+that extends `com.liferay.portal.kernel.search.BaseIndexer`. Replace the default
+contents of `GuestbookIndexer.java` with the following code. This class is 
+nearly identical to the `EntryIndexer` class that you created earlier. Follow 
+these steps to create the class:
+
+1.  replace the contents with the following code:
+OLD STEP 1.  Create a new package in your guestbook-api module project's `src/main/java` 
     folder called `com.liferay.docs.guestbook.search`. In this package, create a 
     new class called `EntryIndexer` that extends 
     `com.liferay.portal.kernel.search.BaseIndexer` and includes the following 
     imports:
 
-        package com.liferay.docs.guestbook.search;
-    <!-- perhaps move the imports to last step and say resolve all imports... -->
-        import com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery;
-        import com.liferay.portal.kernel.dao.orm.IndexableActionableDynamicQuery;
-        import com.liferay.portal.kernel.exception.PortalException;
-        import com.liferay.portal.kernel.log.Log;
-        import com.liferay.portal.kernel.log.LogFactoryUtil;
-        import com.liferay.portal.kernel.search.BaseIndexer;
-        import com.liferay.portal.kernel.search.Document;
-        import com.liferay.portal.kernel.search.Field;
-        import com.liferay.portal.kernel.search.IndexWriterHelperUtil;
-        import com.liferay.portal.kernel.search.Indexer;
-        import com.liferay.portal.kernel.search.SearchContext;
-        import com.liferay.portal.kernel.search.Summary;
-        import com.liferay.portal.kernel.search.filter.BooleanFilter;
-        import com.liferay.portal.kernel.security.permission.ActionKeys;
-        import com.liferay.portal.kernel.security.permission.PermissionChecker;
-        import com.liferay.portal.kernel.util.GetterUtil;
-        import com.liferay.portal.kernel.util.HtmlUtil;
-        import com.liferay.portal.kernel.util.StringPool;
-        import com.liferay.docs.guestbook.model.Entry;
-        import com.liferay.docs.guestbook.service.EntryLocalService;
-        import java.util.Locale;
-        import javax.portlet.PortletRequest;
-        import javax.portlet.PortletResponse;
-        import org.osgi.service.component.annotations.Component;
-        import org.osgi.service.component.annotations.Reference;
-
-        @Component(
-          immediate = true,
-          service = Indexer.class)
-        public class EntryIndexer extends BaseIndexer<Entry> {
-          
-        }
-
-2.  Next add the `EntryIndexer` constructor to the class. This constructor calls 
-    `setPermissionAware(true)` so that the indexer takes permissions into 
-    account when returning search results. Without this call, the indexer would 
-    return *all* guestbook entries that match a search query, regardless of the 
-    guestbook entry permissions:
 
         public EntryIndexer() {
           setDefaultSelectedFieldNames(
@@ -58,10 +26,6 @@ Follow these steps to create the entry indexer:
           setPermissionAware(true);
         }
     
-    Next, since you're extending the `BaseIndexer` abstract class which, in turn,
-    implements the `Indexer` interface, you need to override or provide 
-    implementations for the following methods.
-
 3.  Override the `getClassName` method. This returns the `CLASS_NAME` constants. 
     You'll define this at the bottom of the class in a later step.
       
@@ -85,7 +49,6 @@ Follow these steps to create the entry indexer:
             entry.getEntryId(), ActionKeys.VIEW);
       }
       
-5.  Next, override the `postProcessContextBooleanFilter` method:
       
       @Override
       public void postProcessContextBooleanFilter(
@@ -94,12 +57,6 @@ Follow these steps to create the entry indexer:
         addStatus(contextBooleanFilter, searchContext);
       }
       
-6.  Override the `doDelete()` method. `doDelete` is responsible for deleting the 
-    document that corresponds to the object parameter. To implement it, you have 
-    to cast the object to a guestbook entry and then call the `deleteDocument` 
-    method of `BaseIndexer`, passing the entry's company ID and entry ID as 
-    parameters:
-
       @Override
       protected void doDelete(Entry entry)
         throws Exception {
@@ -252,7 +209,7 @@ Follow these steps to create the entry indexer:
         compile group: "javax.portlet", name: "portlet-api", version: "2.0"
         compile group: "javax.servlet", name: "servlet-api", version: "2.5"
 
-15.  Finally, export the the `com.liferay.docs.guestbook.search` package in the
+15.  Finally, export the `com.liferay.docs.guestbook.search` package in the
     `guestbook-api` module's `bnd.bnd` file.
 
 Your entry indexer class in complete! Next you can update the service layer.

@@ -3,7 +3,7 @@
 To enable search and indexing for guestbook entities, you need to follow these
 four steps:
 
-1. Create an `GuestbookIndexer` class that extends Liferay's `BaseIndexer`
+1. Create a `GuestbookIndexer` class that extends Liferay's `BaseIndexer`
    abstract class.
 
 2. Update the `addGuestbook`, `updateGuestbook`, and `deleteGuestbook` methods
@@ -19,5 +19,5 @@ four steps:
 In this section, you'll follow the first three steps: creating an indexer, 
 updating the service layer to invoke the indexer, and adding status fields to 
 notify the indexer. You'll follow the last step, updating the Guestbook 
-portlet's user interface, in the next section.
+portlet's user interface, in the next section. <!--Explain why -->
 
