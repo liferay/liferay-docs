@@ -30,7 +30,7 @@ methods.
         @Indexable(type = IndexableType.DELETE)
         public Guestbook deleteGuestbook(...)
 
-    When a guestbook is deleted from the database, it's document shouldn't
+    When a guestbook is deleted from the database, its document shouldn't
     remain in the search index. This ensures that it will be deleted.
 
 3.  Finally, add the necessary imports:

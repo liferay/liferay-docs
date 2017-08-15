@@ -1,9 +1,9 @@
 # Handling Indexing in the Entry Service Layer [](id=handling-indexing-in-the-entry-service-layer)
 
-Whenever a guestbook entry is added, updated, or deleted, the guestbook entry
-index should also be updated. To accomplish this, you'll update each of the
+Whenever a guestbook entry is added, updated, or deleted, the corresponding
+document should also be updated or deleted. A minor update to each of the
 `addEntry`, `updateEntry`, and `deleteEntry` service methods for guestbook
-entries.
+entries is all it takes.
 
 Follow these steps to update the methods:
 
@@ -18,13 +18,11 @@ Follow these steps to update the methods:
         @Indexable(type = IndexableType.REINDEX)
         public Entry updateEntry(...)
 
-    The `@Indexable` annotation indicates that the method should result in an 
-    index update. Your `EntryIndexer` class has a `getClassName` method which 
-    returns a `String` containing `Entry.class.getName()`. So
-    `IndexerRegistryUtil.nullSafeGetIndexer(Entry.class)` unambiguously 
-    specifies your indexer. Setting the `@Indexable` annotation `type` to 
-    `IndexableType.REINDEX` updates the document in the index that corresponds 
-    to the updated guestbook entry.
+    The `@Indexable` annotation indicates that an index update is required
+    following the method execution. Your `EntryIndexer` controls exactly
+    how the indexing happens, of course. Setting the `@Indexable` annotation
+    type to `IndexableType.REINDEX` updates the document in the index that
+    corresponds to the updated entry.
 
 2.  Add the `@Indexable(type = IndexableType.DELETE)` annotation above the 
     method signature for the `deleteEntry` method. Here, you want to remove the 
@@ -33,10 +31,13 @@ Follow these steps to update the methods:
 
         @Indexable(type = IndexableType.DELETE)
         public Entry deleteEntry(...)
-    
-3.  Finally, add the following imports:
+
+    When an entry is deleted from the database, its document should be deleted
+    from the search index. This ensures that it will.
+
+3.  Finally, add the required imports:
 
         import com.liferay.portal.kernel.search.Indexable;
         import com.liferay.portal.kernel.search.IndexableType;
-        
+
 Next you can update your service XML.
