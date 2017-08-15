@@ -1,9 +1,11 @@
 # Handling Indexing in the Guestbook Service Layer [](id=handling-indexing-in-the-guestbook-service-layer)
 
-You need to make sure that whenever a guestbook is added, updated, or deleted,
-its index is updated accordingly. To accomplish this, you need to update each of
-the `addGuestbook`, `updateGuestbook`, and `deleteGuestbook` service methods for
-guestbooks.
+Whenever a guestbook database entity is added, updated, or deleted, the search
+index must be updated accordingly. There's a convenient set of annotations in
+@product@, `@Indexable` and `@IndexableType`, that mark your service methods, so
+that documents can be updated or deleted. For the guestbook, you need to update
+each of the `addGuestbook`, `updateGuestbook`, and `deleteGuestbook` service
+methods.
 
 1.  Open `GuestbookLocalServiceImpl` in the `guestbook-service` module's 
     `com.liferay.docs.guestbook.service.impl` package and add the following 
@@ -11,25 +13,29 @@ guestbooks.
     `updateGuestbook` methods:
 
         @Indexable(type = IndexableType.REINDEX)
-        public Entry addGuestbook(...)
+        public Guestbook addGuestbook(...)
 
         @Indexable(type = IndexableType.REINDEX)
-        public Entry updateGuestbook(...)
+        public Guestbook updateGuestbook(...)
 
-2.  Add the following annotation above the method signature for the  
+    The `@Indexable` annotation indicates that an index update is required
+    following the method execution. Your `GuestbbokIndexer` controls exactly
+    how the indexing happens, of course. Setting the `@Indexable` annotation
+    type to `IndexableType.REINDEX` updates the document in the index that
+    corresponds to the updated guestbook.
+
+2.  Add the following annotation above the method signature for the 
     `deleteGuestbook` method:
 
         @Indexable(type = IndexableType.DELETE)
-        public Entry deleteGuestbook(...)
+        public Guestbook deleteGuestbook(...)
 
-3.  Finally, add the following imports:
+    When a guestbook is deleted from the database, it's document shouldn't
+    remain in the search index. This ensures that it will be deleted.
+
+3.  Finally, add the necessary imports:
 
         import com.liferay.portal.kernel.search.Indexable;
         import com.liferay.portal.kernel.search.IndexableType;
-
-These updates are virtually identical to the ones you made to the Guestbook 
-entry service layer. If you have questions about them, please refer to the 
-explanation for the Guestbook entry service layer update that appeared earlier 
-in this Learning Path.
 
 Next you can update your service XML.
