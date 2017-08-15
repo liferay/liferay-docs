@@ -2,38 +2,42 @@
 
 Follow these steps to create the search bar UI for the Guestbook portlet:
 
-1.  Open the guestbook-portlet project's `resources/guestbookwebportlet/view.jsp` 
-    file. Your first step in creating a search bar is to create a render URL 
-    that points to the `/guestbookwebportlet/view_search.jsp`. You haven't 
-    created this file yet, but you're constructing the URL that points to it now 
-    because you have to specify what happens when the user submits a search 
-    query. Note that you're using the `mvcPath` parameter since the Guestbook 
-    portlet is a Liferay MVC portlet. Add the following code near the top of the 
-    file, just after the scriptlet that grabs the `guestbookId` from the request:
+1.  Open the `guestbook` project's `resources/guestbookwebportlet/view.jsp`
+    file. Add the following render URL near the top of the file, just after the
+    scriptlet that grabs the `guestbookId` from the request:
 
         <liferay-portlet:renderURL varImpl="searchURL">
             <portlet:param name="mvcPath" 
             value="/guestbookwebportlet/view_search.jsp" />
         </liferay-portlet:renderURL>
 
-2.  Next, add the following code to create an AUI form. When submitted, the form 
-    directs the user to the `view_search.jsp` page which displays the search 
-    results. The `<liferay-portlet:renderURLParams varImpl="searchURL" />` tag 
-    includes the URL parameters of the `searchURL` as hidden input fields in the 
-    AUI form. This is important since the parameters of the `searchURL` are 
-    overwritten when the search query is submitted as a URL parameter:
+    The render URL points to `/guestbookwebportlet/view_search.jsp` (created in
+    the next step). You're constructing the URL first because you have to
+    specify what happens when the user submits a search query. Note that you're
+    using the `mvcPath` parameter since the Guestbook portlet is a Liferay MVC
+    portlet.
 
-      <aui:form action="<%= searchURL %>" method="get" name="fm">
-          <liferay-portlet:renderURLParams varImpl="searchURL" />
-          
-          <div class="search-form">
-              <span class="aui-search-bar">
-                  <aui:input inlineField="<%= true %>" label="" name="keywords" size="30" title="search-entries" type="text" />
+2.  Create an AUI form that directs the user to the `view_search.jsp` page for
+    viewing search results:
 
-                  <aui:button type="submit" value="search" />
-              </span>
-          </div>
-      </aui:form>
+        <aui:form action="<%= searchURL %>" method="get" name="fm">
+            <liferay-portlet:renderURLParams varImpl="searchURL" />
+
+            <div class="search-form">
+                <span class="aui-search-bar">
+                    <aui:input inlineField="<%= true %>" label="" 
+                    name="keywords" size="30" title="search-entries" type="text"
+                    />
+
+                    <aui:button type="submit" value="search" />
+                </span>
+            </div>
+        </aui:form>
+
+    The `<liferay-portlet:renderURLParams varImpl="searchURL" />` tag includes
+    the URL parameters of the `searchURL` as hidden input fields in the AUI
+    form. This is important since the parameters of the `searchURL` are
+    overwritten when the search query is submitted as a URL parameter.
 
     The body of the search form consists of a `<div>` containing a `<span>` that
     contains two elements: the search bar itself and the Search button. The 
