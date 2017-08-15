@@ -37,14 +37,16 @@
     - Set the default selected localized field names, which ensures that the
     localized version of the field is searched and returned at search time.
     - Make the search results permissions aware, so permissions are taken into
-    account at search time. Without this call, *all* guestbooks that
-    match a search query are returned, regardless of the user's permissions on
-    the guestbook resource.
-    - Set filter search to true, enabling a second check on the permissions of
-    returned documents. This is redundant most of the time, but it's a safeguard
-    against unexpected problems like the search index becoming stale, or if
-    permission inheritance doesn't happen quickly enough. Most of @product@'s
-    internal apps leverage this setting.
+    account at search time, and checked against the permissions in the index.
+    Without this call, *all* guestbooks that match a search query are returned,
+    regardless of the user's permissions on the guestbook resource.
+    - Set filter search to true, enabling a last document-by-document hard check
+    on the `VIEW` permissions of search results. This is redundant most of the time,
+    but it's a safeguard against unexpected problems like the search index
+    becoming stale, or if permission inheritance doesn't happen quickly enough.
+    Most of @product@'s internal apps leverage this setting. If not set, the
+    indexer just relies on the permissions information indexed in the search
+    engine.
 
 4. Since you're extending the abstract class `BaseIndexer` instead of
    implementing the `Indexer` interface directly, you must override its abstract
