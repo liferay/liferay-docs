@@ -13,10 +13,14 @@ explains why. As you've probably guessed, manually adding Screens to your
 project is more challenging; don't worry, though! It's still not horribly 
 complicated. 
 
-Note: since Screens for iOS is written in Swift, you need to use CocoaPods
++$$$
+
+**Note:** Since Screens for iOS is written in Swift, you need to use CocoaPods
 version 0.36 or higher. Refer to 
 [this article](http://blog.cocoapods.org/CocoaPods-0.36/) 
 for more details about how CocoaPods works with Swift dependencies. 
+
+$$$
 
 This tutorial specifies Screens's requirements, shows you both configuration
 methods, and shows how to set up communication with @product@. Onward! 
@@ -214,8 +218,11 @@ Great! You've completed installing Liferay Screens and its dependencies in your
 project. It's time to configure its communication with your @product@ instance. 
 
 ## Configuring Communication with @product@ [](id=configuring-communication-with-liferay)
-
+<!--
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5aCELB1Lq80" frameborder="0" allowfullscreen></iframe>
+
+video is outdated
+-->
 
 Configuring communication between Screenlets and @product@ is easy. Liferay
 Screens uses a property list (`.plist`) file to access your @product@ instance.
