@@ -181,11 +181,13 @@ arguments:
 
         //MARK: Initializer
 
-        public init(startRow: Int, endRow: Int, computeRowCount: Bool, groupId: Int64, folderId: Int64) {
-            self.groupId = groupId
-            self.folderId = folderId
+        public init(startRow: Int, endRow: Int, computeRowCount: Bool, groupId: Int64, 
+            folderId: Int64) {
+            
+                self.groupId = groupId
+                self.folderId = folderId
 
-            super.init(startRow: startRow, endRow: endRow, computeRowCount: computeRowCount)
+                super.init(startRow: startRow, endRow: endRow, computeRowCount: computeRowCount)
         }
         ...
 
@@ -228,10 +230,15 @@ Lastly, you must override the following two methods in the Connector class:
                                                   end: Int32(endRow))
             }
             catch  {
-                // ignore error: the method returns nil (converted to an error) because
-                // the request is not actually sent
+                // ignore error: the service method returns nil because
+                // the request is sent later, in batch
             }
         }
+
+    Note that you don't need to do anything in the `catch` statement because the 
+    request is sent later, in batch. The `session` type `LRBatchSession` handles 
+    this for you. You'll receive the request's results elsewhere, once the 
+    request completes. 
 
 - `doAddRowCountServiceCall`: calls the Liferay Mobile SDK service method that 
   retrieves the total number of entities. This supports pagination. Make the 
@@ -247,8 +254,8 @@ Lastly, you must override the following two methods in the Connector class:
                 try service.getEntriesCountWithGroupId(groupId, folderId: folderId)
             }
             catch  {
-                // ignore error: the method returns nil (converted to an error) because
-                // the request is not actually sent
+                // ignore error: the service method returns nil because
+                // the request is sent later, in batch
             }
         }
 
