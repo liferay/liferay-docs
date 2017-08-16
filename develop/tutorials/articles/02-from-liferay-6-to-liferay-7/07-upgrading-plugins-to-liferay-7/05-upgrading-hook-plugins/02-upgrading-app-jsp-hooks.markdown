@@ -64,7 +64,7 @@ lets you compare custom JSPs with originals:
 - Compare your custom 6.2 JSP with the original 6.2 JSP.
 - Compare your custom 7.0 JSP with your custom 6.2 JSP.
 
-![Figure x: The Code Upgrade Tools lets you compare custom JSPs with originals.](../../../../images/upgrading-app-jsp-hook-convert-custom-jsp-hook.png)
+![Figure 1: The Code Upgrade Tools lets you compare custom JSPs with originals.](../../../../images/upgrading-app-jsp-hook-convert-custom-jsp-hook.png)
 
 Make any additional needed changes in your 7.0 custom JSP. Then
 [deploy](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
