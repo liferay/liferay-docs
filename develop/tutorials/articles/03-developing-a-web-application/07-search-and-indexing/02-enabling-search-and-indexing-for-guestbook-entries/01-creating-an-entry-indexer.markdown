@@ -54,6 +54,7 @@ contents of `EntryIndexer.java` with the following code:
                 SearchContext searchContext)
                 throws Exception {
 
+                addSearchLocalizedTerm(searchQuery, searchContext, "guestbookName", false);
                 addSearchLocalizedTerm(searchQuery, searchContext, Field.TITLE, false);
                 addSearchLocalizedTerm(searchQuery, searchContext, Field.CONTENT, false);
             }
@@ -83,6 +84,14 @@ contents of `EntryIndexer.java` with the following code:
                 document.addText(localizedTitle, entry.getName());
                 document.addText(localizedMessage, entry.getMessage());
 
+                long guestbookId = entry.getGuestbookId();
+                Guestbook guestbook = _guestbookLocalService.getGuestbook(guestbookId);
+                String guestbookName= guestbook.getName();
+                String localizedGbName = LocalizationUtil.getLocalizedName(
+                    "guestbookName", defaultLocale.toString());
+
+                document.addText(localizedGbName, guestbookName);
+
                 return document;
             }
 
@@ -90,10 +99,10 @@ contents of `EntryIndexer.java` with the following code:
     behavior for entries is defined, so look at the above method for a moment.
     You're indexing the email and date fields as usual, then providing the
     localized title and message fields (based on the site's default language).
-    The analysis of the text of those fields should be different if
-    they're entered in languages other than English. Always support localization
-    where it's possible, and you'll ensure your entities are searchable in any
-    language.
+    Last, you're getting the guestbook associated with the entry and indexing
+    the localized version of the `guestbookName` field. Always support
+    localization where it's possible, and you'll ensure your entities are
+    searchable in any language.
 
 2. The rest of the code is quite similar to the code for the `GuestbookIndexer`.
    Paste in the following code to finish the entry indexer class:
