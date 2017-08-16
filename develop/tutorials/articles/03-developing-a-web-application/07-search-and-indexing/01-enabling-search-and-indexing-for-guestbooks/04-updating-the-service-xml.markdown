@@ -1,5 +1,6 @@
 # Updating the Service XML
 
+<!-- Trying to get confirmation but I think this entire step is unnecessary. Add the status columns earlier in the LP and add the finders when we implement workflow -->
 Just as with the guestbook entity, you must add status columns to indicate the 
 asset's status to the indexer.
 

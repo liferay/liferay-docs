@@ -1,5 +1,6 @@
 # Updating the Service XML
 
+<!-- Trying to get confirmation but I think this entire step is unnecessary. Add the status columns earlier in the LP and add the finders when we implement workflow -->
 To properly index assets and display assets in the Asset Publisher you must 
 indicate the asset's status. To do this, you'll add status columns to the 
 database. Follow these steps:
