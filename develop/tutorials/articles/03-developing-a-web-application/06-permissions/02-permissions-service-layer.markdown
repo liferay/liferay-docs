@@ -77,9 +77,9 @@ application:
     the `return` statement: 
 
         resourceLocalService.updateResources(
-                      user.getCompanyId(), groupId, Entry.class.getName(), entryId,
-                      serviceContext.getGroupPermissions(),
-                      serviceContext.getGuestPermissions());
+              user.getCompanyId(), serviceContext.getScopeGroupId(), 
+              Entry.class.getName(), entryId, serviceContext.getGroupPermissions(),
+              serviceContext.getGuestPermissions());
 
 That's all it takes to add permissions resources. Future entities added to the 
 database are fully permissions-enabled. Note, however, that any entities you've 
