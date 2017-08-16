@@ -8,9 +8,6 @@ Enable search and indexing for guestbook entities in two steps:
 2. Update the `addGuestbook`, `updateGuestbook`, and `deleteGuestbook` methods
    of `GuestbookLocalServiceImpl` to invoke the guestbook indexer.
 
-<!-- 3. Add status fields to the `service.xml` to notify the indexer and Asset 
-   Publisher whether an asset can be published. -->
-
 In this section, you're just making sure that guestbook documents are indexed
 with the proper fields, and updating the service layer so that the search index
 is updated when the entity's database table is updated. Since there's not real
