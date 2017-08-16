@@ -150,6 +150,34 @@ Do so now by following these steps:
     context along with data the user entered, validates it, and creates a model 
     object. That object is then persisted to the database and returned. 
 	
+2. Add this `updateEntry` method:
+
+        public Entry updateEntry(
+            long userId, long guestbookId, long entryId, String name, String email,
+            String message, ServiceContext serviceContext)
+            throws PortalException, SystemException {
+
+            Date now = new Date();
+
+            validate(name, email, message);
+
+            Entry entry = getEntry(entryId);
+
+            User user = userLocalService.getUserById(userId);
+
+            entry.setUserId(userId);
+            entry.setUserName(user.getFullName());
+            entry.setModifiedDate(serviceContext.getModifiedDate(now));
+            entry.setName(name);
+            entry.setEmail(email);
+            entry.setMessage(message);
+            entry.setExpandoBridgeAttributes(serviceContext);
+
+            entryPersistence.update(entry);
+
+            return entry;
+        }
+
 2.  Add this `deleteEntry` method: 
 
         public Entry deleteEntry (long entryId, serviceContext ServiceContext)
