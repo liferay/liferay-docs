@@ -15,9 +15,10 @@ index is searched, a *hits* object is returned that contains pointers to the
 documents that match the search query. Searching for entities with a search
 engine, via an index, is faster than searching for entities in the database, and
 Elasticsearch provides some additional features like relevancy scoring and fuzzy
-search queries. Along with the search engine, Liferay has its own search
-infrastructure. Why does Liferay adds to the existing Elasticsearch API? There
-are a few reasons:
+search queries. 
+
+Along with the search engine, Liferay has its own search infrastructure. Why
+does Liferay add to the existing Elasticsearch API? There are a few reasons:
 
 - Ensure indexed documents include the fields needed by @product@
     (for example, `entryClassName`, `entryClassPK`, `assetTagNames`, `assetCategories`,
