@@ -119,7 +119,7 @@ at the same time from two different nodes.
 configure the advanced file system store you must configure both the 
 `portal-ext.properties` and `.config` files.
 
-+$$$
+$$$
 
 Create the following file inside your app server's `osgi/configs` folder: 
 

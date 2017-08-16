@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "1.0.43"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "1.0.45"
     }
 
     repositories {
@@ -145,6 +145,6 @@ manually adding a dependency to the `serviceBuilder` configuration:
 
 ```gradle
 dependencies {
-    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.159"
+    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.161"
 }
 ```

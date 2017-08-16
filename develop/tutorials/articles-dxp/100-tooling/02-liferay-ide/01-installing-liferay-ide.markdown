@@ -43,12 +43,10 @@ compatible and can be copied to the new 3.1 version.
     [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
-    **Important:** The `~/.liferay` folder must exist on your machine before
-    installing @ide@. @ide@ expects this folder to exist, and without it, the
-    installer cannot create your token to store your Liferay credentials. Also,
-    the token generator has problems with certain special characters contained
-    in a password, which fails the token generation. These are bugs and will be
-    fixed in the next release of Liferay @ide@. Visit the
+    **Important:** The token generator currently has problems with certain
+    special characters contained in a password, which fails the token
+    generation. This is a bug and will be fixed in the next release of Liferay
+    @ide@. Visit the
     [Generating a Workspace Token Manually](#generating-a-workspace-token-manually)
     section to follow a manual process to generate a token if you're unable to
     complete it automatically using the installer.

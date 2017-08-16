@@ -81,4 +81,6 @@ this:
 
 The generated WAR is a working application and is deployable to a @product@
 instance. To build upon the generated app, modify the project by adding logic
-and additional files to the folders outlined above.
+and additional files to the folders outlined above. You can visit the
+[springmvc-portlet](/develop/reference/-/knowledge_base/7-0/spring-mvc-portlet)
+sample project for a more expanded sample of a Spring MVC portlet.
