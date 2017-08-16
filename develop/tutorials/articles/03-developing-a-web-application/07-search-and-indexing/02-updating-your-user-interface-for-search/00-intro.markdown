@@ -8,4 +8,4 @@ Updating the Guestbook portlet's user interface for search involves two steps:
 2. Creating a new JSP for the Guestbook portlet that reads the search query
    entered by the user and uses it to retrieve and display search results.
 
-You'll start by updating the Guestbook portlet's default view JSP.
+You'll start by updating the Guestbook portlet's view JSP.

@@ -2,9 +2,10 @@
 
 Follow these steps to create the search bar UI for the Guestbook portlet:
 
-1.  Open the `guestbook` project's `resources/guestbookwebportlet/view.jsp`
-    file. Add the following render URL near the top of the file, just after the
-    scriptlet that grabs the `guestbookId` from the request:
+1.  Open `src/main/resources/META-INF/resources/guestbookwebportlet/view.jsp`
+    file in `guestbook-web`. Add a render URL near the top of the
+    file, just after the scriptlet that grabs the `guestbookId` from the
+    request:
 
         <liferay-portlet:renderURL varImpl="searchURL">
             <portlet:param name="mvcPath" 
