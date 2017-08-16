@@ -65,7 +65,12 @@ can be done at runtime, or you can pre-configure it in three files:
 - `portal-upgrade-database.properties`: Contains properties for connecting 
 to the database that will be upgraded.
 - `portal-upgrade-ext.properties`: Contains the rest of the @product@
-properties you need to perform the upgrade.
+properties you need to perform the upgrade. You may wish to copy the properties
+from your old `portal-ext.properties` file here, except for your database
+properties. Note, however, that properties belonging to functionality that has
+been modularized in @product@ are moved to 
+[config files](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations)
+and must be deployed separately. 
 
 Below you'll learn about the properties that can go in these files. 
 
