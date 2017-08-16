@@ -19,7 +19,7 @@ this attribute to define the icon in the management bar, inside of the
 
 To use Clay icons outside of the management bar, you have two options:
 
-You can use the [`liferay-ui:icon` taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/icon.html). 
+You can use the [`liferay-ui:icon` taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/icon.html).
 For example:
 
     <liferay-ui:icon
@@ -32,7 +32,7 @@ For example:
 
     />
 
-Or you can use the [`aui:icon` taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/icon.html). 
+Or you can use the [`aui:icon` taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/icon.html).
 For example:
 
     <aui:icon
