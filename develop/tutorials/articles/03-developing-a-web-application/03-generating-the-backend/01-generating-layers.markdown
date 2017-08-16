@@ -63,6 +63,15 @@ It's time to get started. You'll create the `Guestbook` entity first:
     `modifiedDate` store the respective dates on which the entity instance is 
     created and modified. 
 
+6.  Add status fields:
+
+        <!-- Status fields -->
+
+        <column name="status" type="int" />
+        <column name="statusByUserId" type="long" />
+        <column name="statusByUserName" type="String" />
+        <column name="statusDate" type="Date" />
+
 6.  Next, remove everything else from the Guestbook entity. Before the closing 
     `</entity>` tag, add this finder definition: 
 
@@ -114,6 +123,15 @@ entity:
     the Guestbook message, respectively. The `guestbookId` is assigned 
     automatically by code you'll write, and is a `Guestbook` foreign key. This 
     ties the `Entry` to a specific `Guestbook`. 
+
+5. Add status fields like you did for the guestbook:
+
+        <!-- Status fields -->
+
+        <column name="status" type="int" />
+        <column name="statusByUserId" type="long" />
+        <column name="statusByUserName" type="String" />
+        <column name="statusDate" type="Date" />
 
 5.  Add your finder and closing entity tag:
 
