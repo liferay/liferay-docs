@@ -10,9 +10,7 @@ users don't have to remember an extra set of credentials for @product@.  Importi
 LDAP user information to @product@ also means that administrators don't have to
 create a whole new set of user accounts for @product@. In this article, you'll
 learn how to connect @product@ to an LDAP server and how to configure import
-settings, export settings, and related LDAP configuration settings. <!-- For a
-technical overview of @product@'s LDAP authentication module, please see the (not
-yet written) tutorial. -->
+settings, export settings, and related LDAP configuration settings. 
 
 ## Configuring @product@'s LDAP Settings [](id=configuring-liferays-ldap-settings)
 
@@ -63,12 +61,13 @@ This can be configured on the Control Panel's Password Policies page. Check the
 *Use LDAP Password Policy* box if you want to use the password policies defined
 by your LDAP directory. Once this is enabled, the Password Policies tab states
 that you are not using a local password policy. You must now use your LDAP
-directory's mechanism for setting password policies. @product@ does this by
-parsing the messages in the LDAP controls returned by your LDAP server. By
-default, the messages in the LDAP controls that @product@ is looking for are the
-messages returned by the Fedora Directory Server. If you are using a different
-LDAP server, you will need to customize the messages in *System Settings &rarr;
-Foundation &rarr; System LDAP Configuration*. 
+directory's mechanism for setting password policies. @product@ cannot enforce
+these policies; the best it can do is pass through the messages returned by your
+LDAP server. It does this by parsing the messages in the LDAP controls the
+server returns. By default, @product@ is configured to parse the messages
+returned by the Fedora Directory Server. If you use a different LDAP server, you
+must customize the messages in *System Settings &rarr; Foundation &rarr; System
+LDAP Configuration*. 
 
 Once you've finished configuring LDAP, click the *Save* button. 
 
