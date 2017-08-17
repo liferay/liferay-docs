@@ -29,11 +29,11 @@ code each time, you can use the same themelet in each theme.
 Liferay has its own set of base themes, called 
 [styled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-styled) 
 and 
-[unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/ foundation/frontend-theme/frontend-theme-unstyled) 
+[unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled) 
 that create the default look and feel you see at first start. The *styled* theme 
 inherits from the *unstyled* theme, and simply adds some additional styling on 
 top. These same base themes are used to create a custom theme. See the 
-[User Profile Theme](https://github.com/liferay/liferay-portal/tree/ 1ec7ef30e409de8b53dc8342e8ba7e7540bceef8/modules/apps/foundation/frontend-theme/ frontend-theme-user-profile),
+[User Profile Theme](https://github.com/liferay/liferay-portal/tree/1ec7ef30e409de8b53dc8342e8ba7e7540bceef8/modules/apps/foundation/frontend-theme/frontend-theme-user-profile),
 which uses the *styled* theme as its base. Using a base theme as your 
 foundation, you can then make your customizations to the theme files. To modify 
 the theme, mirror the folder structure of the files you wish to change 
