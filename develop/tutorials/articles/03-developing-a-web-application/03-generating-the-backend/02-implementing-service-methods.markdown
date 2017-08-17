@@ -150,9 +150,9 @@ Do so now by following these steps:
     context along with data the user entered, validates it, and creates a model 
     object. That object is then persisted to the database and returned. 
 	
-2. Add this `updateEntry` method:
+2.  Add this `updateEntry` method:
 
-        public Entry updateEntry(
+        public Entry updateEntry (
             long userId, long guestbookId, long entryId, String name, String email,
             String message, ServiceContext serviceContext)
             throws PortalException, SystemException {
@@ -177,6 +177,9 @@ Do so now by following these steps:
 
             return entry;
         }
+
+    This method first retrieves the entry and updates its data to reflect what
+    the user submitted, including its date modified. 
 
 2.  Add this `deleteEntry` method: 
 
