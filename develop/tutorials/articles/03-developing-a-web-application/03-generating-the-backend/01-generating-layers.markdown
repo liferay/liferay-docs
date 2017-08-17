@@ -8,7 +8,6 @@ The persistence layer saves and retrieves your model data. The service layer is
 a buffer between your application and persistence layers: having it lets you 
 swap out your persistence layer for a different implementation without modifying 
 anything but the calls in the service layer. 
-<!-- What? What does having a service layer have to do with swapping out a persistence layer? -->
 
 To model the guestbooks and entries, you'll create guestbook and entry model 
 classes. But you won't do this directly in Java. Instead, you'll define them in 
@@ -51,19 +50,7 @@ It's time to get started. You'll create the `Guestbook` entity first:
     This defines the ID of the site in @product@ that the entity instance 
     belongs to (more on this in a moment). 
 
-5.  Leave the Audit Fields section alone. In the Other fields section, remove 
-    all the generated fields and put this one in their place: 
-
-        <column name="name" type="String" />
-
-    The Audit section defines @product@ metadata. The `companyId` is the primary 
-    key of a 
-    [portal instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance). 
-    The `userId` is the primary key of a user. The `createDate` and 
-    `modifiedDate` store the respective dates on which the entity instance is 
-    created and modified. 
-
-6.  Add status fields:
+5.  Leave the Audit Fields section alone. Add status fields:
 
         <!-- Status fields -->
 
@@ -72,7 +59,20 @@ It's time to get started. You'll create the `Guestbook` entity first:
         <column name="statusByUserName" type="String" />
         <column name="statusDate" type="Date" />
 
-6.  Next, remove everything else from the Guestbook entity. Before the closing 
+    The Audit section defines @product@ metadata. The `companyId` is the primary
+    key of a 
+    [portal instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance).
+    The `userId` is the primary key of a user. The `createDate` and
+    `modifiedDate` store the respective dates on which the entity instance is
+    created and modified. The Status section is used later to implement
+    workflow. 
+
+6. In the Other fields section, remove all the generated fields and put this one
+   in their place: 
+
+        <column name="name" type="String" />
+
+7.  Next, remove everything else from the Guestbook entity. Before the closing 
     `</entity>` tag, add this finder definition: 
 
             <finder name="GroupId" return-type="Collection">
@@ -111,7 +111,16 @@ entity:
         <column name="createDate" type="Date" />
         <column name="modifiedDate" type="Date" />
 
-4.  Add the fields that define an `Entry`: 
+4. Add status fields like you did for the guestbook:
+
+        <!-- Status fields -->
+
+        <column name="status" type="int" />
+        <column name="statusByUserId" type="long" />
+        <column name="statusByUserName" type="String" />
+        <column name="statusDate" type="Date" />
+
+5.  Add the fields that define an `Entry`: 
 
         <column name="name" type="String" />
         <column name="email" type="String" />
@@ -124,16 +133,7 @@ entity:
     automatically by code you'll write, and is a `Guestbook` foreign key. This 
     ties the `Entry` to a specific `Guestbook`. 
 
-5. Add status fields like you did for the guestbook:
-
-        <!-- Status fields -->
-
-        <column name="status" type="int" />
-        <column name="statusByUserId" type="long" />
-        <column name="statusByUserName" type="String" />
-        <column name="statusDate" type="Date" />
-
-5.  Add your finder and closing entity tag:
+6.  Add your finder and closing entity tag:
 
             <finder name="G_G" return-type="Collection">
                 <finder-column name="groupId" />
@@ -147,7 +147,7 @@ entity:
     application is on. The `guestbookId` defines the guestbook the entries come 
     from. This finder returns a `Collection` of entries. 
 
-6.  Define your exception types outside the `<entity>` tags, just before the 
+7.  Define your exception types outside the `<entity>` tags, just before the 
     closing `</service-builder>` tag: 
 
         <exceptions>
@@ -159,7 +159,7 @@ entity:
 
     These generate exception classes you'll use later in try/catch statements. 
 
-7.  Save your `service.xml` file.
+8.  Save your `service.xml` file.
 
 Now you're ready to run Service Builder to generate your model, service, and
 persistence layers!
