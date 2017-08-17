@@ -114,16 +114,20 @@ If you'd like to embed a specific portlet in the theme, you can hardcode it by
 providing its instance ID and name:
 
     <@liferay_portlet["runtime"]
-        portletProviderAction=portletProviderAction.VIEW
         instanceId="INSTANCE_ID"
         portletName="PORTLET_NAME"
     />
 
-If your portlet is instanceable, an instance ID must be provided; otherwise, you
-can remove this line. To set your portlet to non-instanceable, set the property
-`com.liferay.portlet.instanceable` in the component annotation of your portlet
-to `false`. The portlet name must be the same as the property
-`javax.portlet.name`.
++$$$
+
+**Note:** If your portlet is instanceable, an instance ID must be provided; 
+otherwise, you can remove this line. To set your portlet to non-instanceable, 
+set the property `com.liferay.portlet.instanceable` in the component annotation 
+of your portlet to `false`.
+
+$$$
+
+The portlet name must be the same as the property `javax.portlet.name`.
  
 Here's an example of an embedded portlet declaration that uses the portlet name 
 to embed a web content portlet:
@@ -153,7 +157,7 @@ Follow these steps to set default portlet preferences for an embedded portlet:
             portletName="com_liferay_login_web_portlet_LoginPortlet"
         />
 
-3.  Once the preferences have been set and passed to your portlet, you can reset
+3.  Once the preferences have been set and passed to your portlet, reset the 
     `freeMarkerPortletPreferences` object, so it can be fresh for the next 
     portlet:
 
@@ -169,7 +173,7 @@ Below are some additional attributes you can define for embedded portlets:
 **defaultPreferences**: A string of Portlet Preferences for the application. 
 This includes look and feel configurations.
 
-**instanceId**: The instance id for the app, if the application is instanceable.
+**instanceId**: The instance ID for the app, if the application is instanceable.
 
 **persistSettings**: Whether to have an application use its default settings, 
 which will persist across layouts. The default value is *true*.
@@ -197,7 +201,10 @@ file.
     of action. An example of an embedded portlet declaration can be viewed
     below:
 
-        $processor.processPortlet("com.liferay.portal.kernel.servlet.taglib.ui.BreadcrumbEntry", $portletProviderAction.VIEW)
+        $processor.processPortlet(
+          "com.liferay.portal.kernel.servlet.taglib.ui.BreadcrumbEntry", 
+          $portletProviderAction.VIEW
+        )
 
     This declares that the layout is requesting to view breadcrumb entries. The
     Portlet Providers framework offers four different actions for layout
