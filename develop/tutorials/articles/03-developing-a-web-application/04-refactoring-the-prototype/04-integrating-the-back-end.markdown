@@ -72,28 +72,63 @@ services:
                 long guestbookId = ParamUtil.getLong(request, "guestbookId");
                 long entryId = ParamUtil.getLong(request, "entryId");
 
-                try {
-                    _entryLocalService.addEntry(
-                        serviceContext.getUserId(), guestbookId, userName, email,
-                        message, serviceContext);
+            if (entryId > 0) {
 
-                        response.setRenderParameter(
-                            "guestbookId", Long.toString(guestbookId));
+                try {
+
+                    _entryLocalService.updateEntry(
+                        serviceContext.getUserId(), guestbookId, entryId, name,
+                        email, message, serviceContext);
+
+                    SessionMessages.add(request, "entryAdded");
+
+                    response.setRenderParameter(
+                        "guestbookId", Long.toString(guestbookId));
+
                 }
                 catch (Exception e) {
-                    Logger.getLogger(GuestbookPortlet.class.getName()).log(
-                    Level.SEVERE, null, e);
+                    System.out.println(e);
+
+                    SessionErrors.add(request, e.getClass().getName());
 
                     PortalUtil.copyRequestParameters(request, response);
-                    response.setRenderParameter("mvcPath", "/guestbookwebportlet/edit_entry.jsp");
+
+                    response.setRenderParameter(
+                        "mvcPath", "/html/guestbookmvcportlet/edit_entry.jsp");
                 }
+
+            }
+            else {
+
+                try {
+                    _entryLocalService.addEntry(
+                        serviceContext.getUserId(), guestbookId, name, email,
+                        message, serviceContext);
+
+                    SessionMessages.add(request, "entryAdded");
+
+                    response.setRenderParameter(
+                        "guestbookId", Long.toString(guestbookId));
+
+                }
+                catch (Exception e) {
+                    SessionErrors.add(request, e.getClass().getName());
+
+                    PortalUtil.copyRequestParameters(request, response);
+
+                    response.setRenderParameter(
+                        "mvcPath", "/html/guestbookmvcportlet/edit_entry.jsp");
+                }
+            }
         }
 
-    This `addEntry` method gets the name, message, and email fields that the 
-    user submits in the JSP and passes them to the service to be stored as entry 
-    data. It also sets a render parameter with the Guestbook ID so the 
-    application can display the guestbook's entries after this one has been
-    added. This is all done in a `try...catch` statement.
+    This `addEntry` method gets the name, message, and email fields that the
+    user submits in the JSP and passes them to the service to be stored as entry
+    data. The `if-else` logic checks whether there's an existing `entryId`. If
+    there is , the update service method is called, and if not, the add service
+    method is called. In both cases, it sets a render parameter with the
+    Guestbook ID so the application can display the guestbook's entries after
+    this one has been added. This is all done in `try...catch` statements.
  
 5.  Now add `deleteEntry`, which you didn't have before: 
 
