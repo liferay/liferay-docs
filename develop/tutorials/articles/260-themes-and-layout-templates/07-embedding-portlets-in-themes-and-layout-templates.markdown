@@ -22,7 +22,7 @@ is a popular place to declare embedded portlets. There are two ways two embed a
 portlet in a theme: by class name, or by portlet name. Both methods are covered 
 in this section.
 
-### Embedding a Portlet by Class Name
+### Embedding a Portlet by Class Name [](id=embedding-a-portlet-by-class-name)
 
 To embed a portlet by class name, insert the following declaration wherever you 
 want to embed the portlet:
@@ -108,7 +108,7 @@ You successfully requested a portlet based on the entity and action types
 required, and created and deployed a module that retrieves the portlet and
 embeds it in your theme. 
 
-### Embedding a Portlet by Portlet Name
+### Embedding a Portlet by Portlet Name [](id=embedding-a-portlet-by-portlet-name)
 
 If you'd like to embed a specific portlet in the theme, you can hardcode it by
 providing its instance ID and name:
@@ -135,7 +135,7 @@ to embed a web content portlet:
 You can also set default preferences for an application. This process is covered 
 next.
 
-### Setting Default Preferences for an Embedded Portlet
+### Setting Default Preferences for an Embedded Portlet [](id=setting-default-preferences-for-an-embedded-portlet)
 
 Follow these steps to set default portlet preferences for an embedded portlet:
 
@@ -162,7 +162,7 @@ Follow these steps to set default portlet preferences for an embedded portlet:
 Now you know how to set default preferences for embedded portlets! Next you can 
 see the additional attributes you can use for your embedded portlets.
     
-### Additional attributes for Portlets
+### Additional Attributes for Portlets [](id=additional-attributes-for-portlets)
 
 Below are some additional attributes you can define for embedded portlets:
 
