@@ -20,7 +20,7 @@ you want to do is remove it, because Service Builder generated a new one:
     replaced the model yet. 
 
 Now you get to do some dependency management. For the web module to access the 
-generated services, you must make it aware of the api and service modules. Then 
+generated services, you must make it aware of the API and service modules. Then 
 you can update the `addEntry` method in `GuestbookPortlet` to use the new 
 services: 
 
@@ -77,7 +77,7 @@ services:
                 try {
 
                     _entryLocalService.updateEntry(
-                        serviceContext.getUserId(), guestbookId, entryId, name,
+                        serviceContext.getUserId(), guestbookId, entryId, userName,
                         email, message, serviceContext);
 
                     SessionMessages.add(request, "entryAdded");
@@ -102,7 +102,7 @@ services:
 
                 try {
                     _entryLocalService.addEntry(
-                        serviceContext.getUserId(), guestbookId, name, email,
+                        serviceContext.getUserId(), guestbookId, userName, email,
                         message, serviceContext);
 
                     SessionMessages.add(request, "entryAdded");
