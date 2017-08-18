@@ -1,4 +1,4 @@
-# Resolving ClassNotFoundException and NoClassDefFoundError in OSGi Bundles
+# Resolving ClassNotFoundException and NoClassDefFoundError in OSGi Bundles [](id=resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles)
 
 Understanding a `ClassNotFoundException` or `NoClassDefFoundError` in non-OSGi
 environments is straightforward. 
@@ -17,7 +17,7 @@ common cases:
 
 This tutorial explains how to handle each case.
 
-## Case 1: Bundle doesn't import the class' package
+## Case 1: Bundle doesn't import the class' package [](id=case-1-bundle-doesnt-import-the-class-package)
 
 For a bundle (module or WAB) to consume a another bundle's exported class, the consuming bundle
 must import (e.g., in an
@@ -29,7 +29,7 @@ In the consuming bundle, make sure to import the correct package--check the
 package name. If the package import is correct but you still get the exception
 or error, the class might no longer exist in the package.
 
-## Case 2: Class no longer exists in the package
+## Case 2: Class no longer exists in the package [](id=case-2-class-no-longer-exists-in-the-package)
 
 In OSGi runtime environments, bundles can change and come and go. If you
 reference or look up another bundle's class and that class has been removed, a
