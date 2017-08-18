@@ -6,11 +6,10 @@ permissions for guestbook entries. The Guestbook Admin portlet allows site
 administrators to create, edit, delete, and configure permissions for
 guestbooks. In the case of a very popular event (maybe a *Lunar Luau* dinner at
 the Lunar Resort), there could be lots of guestbook entries in the portlet, and
-users might want to search for only the entries that mentioned the delicious
-low-gravity ham that was served. They should be able to search for the word
-*ham* so they can peruse the pertinent entries. In short, guestbook entries need
-to be searchable, and the Guestbook portlet needs a search bar where users enter
-search queries. 
+users might want to search for entries that mentioned the delicious low-gravity
+ham that was served (melts in your mouth). They should be able to search for the
+word *ham* so they can peruse the pertinent entries. In short, guestbook entries
+must be searchable, and the Guestbook portlet needs a search bar for queries. 
 
 You'll not only add an indexer for guestbook entries, but also for guestbooks
 themselves. Although you don't anticipate having so many guestbooks in a single
