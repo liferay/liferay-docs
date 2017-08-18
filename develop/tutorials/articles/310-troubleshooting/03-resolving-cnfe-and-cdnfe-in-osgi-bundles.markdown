@@ -3,29 +3,30 @@
 Understanding a `ClassNotFoundException` or `NoClassDefFoundError` in non-OSGi
 environments is straightforward. 
 
--   `ClassNotFoundException`: thrown when looking up a class that isn't in the
+-   `ClassNotFoundException`: thrown when looking up a class that isn't on the
     classpath or using an invalid name to look up a class.
 -   `NoClassDefFoundError`: occurs when a compiled class references
     another class that isn't in the run time classpath.
 
-In OSGi environments, there are additional cases in which a
+In OSGi environments, however, there are additional cases in which a
 `ClassNotFoundException` or `NoClassDefFoundError` can occur. Here are two
 common cases:
 
-1.  Bundle doesn't import the class' package.
+1.  Bundle doesn't import the class's package.
+
 2.  Class no longer exists in the imported package.
 
 This tutorial explains how to handle each case.
 
-## Case 1: Bundle doesn't import the class' package [](id=case-1-bundle-doesnt-import-the-class-package)
+## Case 1: Bundle doesn't import the class's package [](id=case-1-bundle-doesnt-import-the-class-package)
 
-For a bundle (module or WAB) to consume a another bundle's exported class, the consuming bundle
-must import (e.g., in an
-`Import-Package` header in your bundle's `bnd.bnd` file) the exported package to which the class belongs. If the consumer
-accesses the class without importing it, a `ClassNotFoundException` or
+For a bundle (module or WAB) to consume a another bundle's exported class, the
+consuming bundle must import (e.g., in an `Import-Package` header in your
+bundle's `bnd.bnd` file) the exported package containing the class. If the
+consumer accesses the class without importing it, a `ClassNotFoundException` or
 `NoClassDefFoundError` occurs.
 
-In the consuming bundle, make sure to import the correct package--check the
+In the consuming bundle, make sure to import the correct package. Check the
 package name. If the package import is correct but you still get the exception
 or error, the class might no longer exist in the package.
 
@@ -34,7 +35,7 @@ or error, the class might no longer exist in the package.
 In OSGi runtime environments, bundles can change and come and go. If you
 reference or look up another bundle's class and that class has been removed, a
 `NoClassDefFoundError` or `ClassNotFoundException` occurs.
-[Semantic Versioning](http://semver.org/) guards against this scenario. It
+[Semantic Versioning](http://semver.org) guards against this scenario. It
 dictates that removing a class from an exported package constitutes a new major
 version for that package. Neglecting to increment the package's major version
 breaks dependent bundles. 
@@ -56,10 +57,9 @@ bundles look up or reference that class.
 
 Here are two ways to resolve the issue:
 
-1.  Request that the providing bundle owner 
-    increment the bundle's major version, and as a result honor Semantic
-    Versioning. This solution is ideal because it can resolve the issue for all
-    consumers. 
+1.  Request that the providing bundle owner increment the bundle's major
+    version, and as a result honor Semantic Versioning. This solution is ideal
+    because it can resolve the issue for all consumers. 
 
 2.  Refine the consuming bundle's package import to a range up to but not 
     including the broken version. For example, if you're consuming a package
