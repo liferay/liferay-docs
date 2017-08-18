@@ -76,14 +76,29 @@ Here are the offline mode policies that you can use with this Screenlet:
 ## Listener [](id=listener)
 
 Comment List Screenlet delegates some events to a class that implements 
-`CommentDisplayListener`. This interface lets you implement the following 
+`CommentListListener`. This interface lets you implement the following 
 methods: 
-
-- `onLoadCommentSuccess(CommentEntry commentEntry)`: Called when the Screenlet 
-  successfully loads the comment. 
 
 - `onDeleteCommentSuccess(CommentEntry commentEntry)`: Called when the Screenlet 
   successfully deletes the comment. 
 
 - `onUpdateCommentSuccess(CommentEntry commentEntry)`: Called when the Screenlet 
   successfully updates the comment. 
+
+- `onListPageFailed(int startRow, Exception e)`: Called when the server call to 
+  retrieve a page of items fails. This method's arguments include the 
+  `Exception` generated when the server call fails. 
+
+- `onListPageReceived(int startRow, int endRow, List<CommentEntry> entries, int rowCount)`: 
+  Called when the server call to retrieve a page of items succeeds. Note that 
+  this method may be called more than once; once for each page received. Because 
+  `startRow` and `endRow` change for each page, a `startRow` of `0` corresponds 
+  to the first item on the first page. 
+
+- `onListItemSelected(CommentEntry element, View view)`: Called when an item is 
+  selected in the list. This method's arguments include the selected list item 
+  (`CommentEntry`). 
+
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. The `userAction` argument distinguishes the specific action in which 
+  the error occurred. 
