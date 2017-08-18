@@ -1,4 +1,4 @@
-# Detecting Unresolved OSGi Components
+# Detecting Unresolved OSGi Components [](id=detecting-unresolved-osgi-components)
 
 @product@ includes 
 [Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
@@ -96,7 +96,9 @@ To get diagnostic information about Service Builder components, use the
 Builder components, their required services, and whether each required service 
 is available. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
+
+[Calling Non-OSGi Code that Uses OSGi Services](/develop/tutorials/-/knowledge_base/7-0/calling-non-osgi-code-that-uses-osgi-services)
 
 [Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
 
