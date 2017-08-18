@@ -11,8 +11,7 @@ Plugins SDK's `spring_mvc` template.
 
 ![Figure 1: My Spring MVC portlet shows its name and @product@'s information.](../../../../images/upgraded-spring-mvc-portlet.png)
 
-To follow along with upgrading My Spring MVC portlet, you can download and
-refer to the
+To follow along, download and refer to the
 [original source code](https://dev.liferay.com/documents/10184/656312/my-spring-mvc-portlet-pre-7-0-upgrade.zip)
 and the 
 [upgraded source code](https://dev.liferay.com/documents/10184/656312/my-spring-mvc-portlet-post-7-0-upgrade.zip).
@@ -21,7 +20,7 @@ The figure below shows the `my-spring-mvc-portlet` project.
 
 ![Figure 2: The `my-spring-mvc-portlet` project has traditional Liferay plugin files, Spring Portlet MVC application contexts (in `spring-context/`), and a controller class `MySpringMVCPortletviewController`. ](../../../../images/upgrading-spring-mvc-portlets-folder-structure.png)
 
-The following files have Spring-related content:
+These files have Spring-related content:
 
 -   `view.jsp` &rarr; Shows the portlet's name and @product@'s release
     information.
@@ -51,21 +50,18 @@ The
 [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 facilitates updating the code and resolving compilation issues quickly.
 
-The Code Upgrade Tool detects that the `my-spring-mvc-portlet` project's
-`liferay-versions` value in the `liferay-plugin-package.properties` file  needs
-updating, and provides an option to fix it automatically. This is the only code
-adaptation `my-spring-mvc-portlet` requires. 
+The Code Upgrade Tool detects that `liferay-versions` value in the
+`liferay-plugin-package.properties` file needs updating and provides an option
+to fix it automatically. This is the only code adaptation
+`my-spring-mvc-portlet` requires. 
 
 ## Resolve Dependencies [](id=resolve-dependencies)
 
 In Liferay Portal 6.2, `my-spring-mvc-portlet` leveraged Portal's JARs by
 specifying them in the `liferay-plugin-package.properties` file's
 `portal-dependency-jars` property. Since the property is deprecated in
-@product-ver@, it's worthwhile to consider using a dependency management
-framework to acquire dependencies. 
-
-Let's use Apache Ant/Ivy to manage all of `my-spring-mvc-portlet` project's
-dependencies.
+@product-ver@, you should acquire dependencies using a dependency management
+framework, such as Apache Ant/Ivy.
 
 Here's the updated `dependency` element for `my-spring-mvc-portlet`'s `ivy.xml`
 file:
@@ -97,18 +93,17 @@ Some of `my-spring-mvc-portlet`'s dependency artifacts have new names.
 
 +$$$
 
-**Note**: If a dependency is an OSGi module JAR and @product@ exports packages
-you need from it, you should *exclude* the JAR from your plugin WAR file. This
-prevents class loader collisions. To exclude a JAR from deployment, add its name
-to the portlet's `liferay-plugin-package.properties` file's `deploy-excludes`
-property.
+**Note**: If a dependency is an OSGi module JAR and @product@ exports your
+needed packages, *exclude* the JAR from your plugin WAR file. This prevents
+class loader collisions. To exclude a JAR from deployment, add its name to the
+portlet's `liferay-plugin-package.properties` file's `deploy-excludes` property.
 
     deploy-excludes=\
         **/WEB-INF/lib/module-a.jar,\ 
         **/WEB-INF/lib/module-b.jar
 
 Since `my-spring-mvc-portlet`'s dependencies aren't OSGi modules, no JARs
-need to be excluded.
+must be excluded.
 
 $$$
 
