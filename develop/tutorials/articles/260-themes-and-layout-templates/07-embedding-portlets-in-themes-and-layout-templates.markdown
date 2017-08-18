@@ -3,11 +3,11 @@
 One thing developers often want to do is embed a portlet in a theme or layout
 template. This makes the portlet visible on all pages where the theme/layout is
 used. In the past, this was only possible by hard-coding a specific portlet into
-place, which has many drawbacks. Liferay now provides the *Portlet Providers*
+place, which has many drawbacks. @product@ provides the *Portlet Providers*
 framework that requires you only specify the entity type and action to be
-displayed. Based on the given entity type and action, Liferay determines which
+displayed. Based on the given entity type and action, @product@ determines which
 deployed portlet to use. This increases the flexibility and modularity of
-embedding portlets in Liferay Portal.
+embedding portlets in @product@.
 
 In this tutorial, you'll learn how to declare an entity type and action in a
 custom theme/layout, and you'll create a module that finds the correct portlet
@@ -19,7 +19,7 @@ into a theme.
 The first thing you should do is open the template file for which you want to
 declare an embedded portlet. For example, the `portal_normal.ftl` template file
 is a popular place to declare embedded portlets. There are two ways two embed a 
-portlet in a theme: by class name, or by portlet name. Both methods are covered 
+portlet in a theme: by class name or by portlet name. Both methods are covered 
 in this section.
 
 ### Embedding a Portlet by Class Name [](id=embedding-a-portlet-by-class-name)
@@ -41,7 +41,7 @@ portlet declaration that uses the class name:
         portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
     />
 
-This declares that the theme is requesting to view language entries. Liferay
+This declares that the theme is requesting to view language entries. @product@
 determines which deployed portlet to use in this case by providing the portlet
 with the highest service ranking.
 
@@ -110,7 +110,7 @@ embeds it in your theme.
 
 ### Embedding a Portlet by Portlet Name [](id=embedding-a-portlet-by-portlet-name)
 
-If you'd like to embed a specific portlet in the theme, you can hardcode it by
+If you'd like to embed a specific portlet in the theme, you can hard code it by
 providing its instance ID and name:
 
     <@liferay_portlet["runtime"]
@@ -127,7 +127,7 @@ of your portlet to `false`.
 
 $$$
 
-The portlet name must be the same as the property `javax.portlet.name`.
+The portlet name must be the same as `javax.portlet.name`'s value.
  
 Here's an example of an embedded portlet declaration that uses the portlet name 
 to embed a web content portlet:
@@ -148,7 +148,7 @@ Follow these steps to set default portlet preferences for an embedded portlet:
 
         <#assign VOID = freeMarkerPortletPreferences.setValue(
         "portletSetupPortletDecoratorId", "barebone") />
-    
+ 
 2.  Set the `defaultPreferences` attribute to use the 
     `freeMarkerPortletPreferences` object you just configured:
 
@@ -157,15 +157,15 @@ Follow these steps to set default portlet preferences for an embedded portlet:
             portletName="com_liferay_login_web_portlet_LoginPortlet"
         />
 
-3.  Once the preferences have been set and passed to your portlet, reset the 
-    `freeMarkerPortletPreferences` object, so it can be fresh for the next 
+3.  Once the preferences are set and passed to your portlet, reset the
+    `freeMarkerPortletPreferences` object so it can be fresh for the next 
     portlet:
 
         <#assign VOID = freeMarkerPortletPreferences.reset() />
 
 Now you know how to set default preferences for embedded portlets! Next you can 
 see the additional attributes you can use for your embedded portlets.
-    
+ 
 ### Additional Attributes for Portlets [](id=additional-attributes-for-portlets)
 
 Below are some additional attributes you can define for embedded portlets:
@@ -188,7 +188,7 @@ process to embed a portlet in your layout template.
 ## Adding a Portlet to a Custom Layout Template [](id=adding-a-portlet-to-a-custom-layout-template)
 
 The process for embedding portlets in layout templates is similar to that for 
-the theme. The only change is the declaration you insert in your template's TPL
+themes. The only change is the declaration you insert in your template's TPL
 file.
 
 1. Open your layout template's TPL file (e.g., `docroot/1_2_1-columns.tpl`).
@@ -218,8 +218,8 @@ section to set up your module.
 
 +$$$
 
-**Note:** In some cases, a default portlet is already provided by Liferay to
-fulfill certain requests. You can override the default portlet with your custom
+**Note:** In some cases, a default portlet is already provided to fulfill
+certain requests. You can override the default portlet with your custom
 portlet by specifying a higher service rank. To do this, set the following
 property in your class' `@Component` declaration:
 
@@ -229,7 +229,7 @@ Make sure you set the service ranking higher than the default portlet being used
 
 $$$
 
-Lastly, generate the module's JAR file and deploy it to Liferay Portal. Now when
+Lastly, generate the module's JAR file and deploy it to @product@. Now when
 you assign your layout to a page, the portlet that fulfills the layout's request
 is embedded on the page.
 
