@@ -14,7 +14,7 @@ You can request the portlet ID or portlet URL, depending on what you prefer.
 Here's an example declaration:
 
     String portletId = PortletProviderUtil.getPortletId(
-        "com.liferay.portlet.trash.model.TrashEntry, PortletProvider.Action.VIEW);
+        "com.liferay.portlet.trash.model.TrashEntry", PortletProvider.Action.VIEW);
 
 This declaration expects two parameters: the class name of the entity type you
 want the portlet to handle and the type of action. The above code requests a
