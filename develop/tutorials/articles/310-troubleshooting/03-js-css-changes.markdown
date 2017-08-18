@@ -6,12 +6,12 @@ effect in your browser, perform these checks:
 1.  If you're developing a portlet module, check that your portlet class has the 
     correct properties specified in its `@Component` annotation: 
 
-    - Make sure that the resources referred to by the properties of your portlet 
-    class's `@Component` annotation exist in the correct location in your module 
-    project. 
+    - Make sure the resources referred to by the properties of your portlet 
+      class's `@Component` annotation exist in the correct location in your module 
+      project. 
     - Make sure that you're using a portlet CSS wrapper class to prevent 
-    potential CSS ID and class name conflicts with other applications your 
-    portlet may share a page with. 
+      potential CSS ID and class name conflicts with other applications on the
+      page. 
 
     For example, consider this sample portlet class: 
 
@@ -38,18 +38,18 @@ effect in your browser, perform these checks:
 
     As described in the first item above, the portlet's CSS file is specified by 
     the property `com.liferay.portlet.header-portlet-css`. Paths specified as 
-    values of this property are relative to your module's 
-    `src/main/resources/META-INF/resources` folder. So when you specify a value 
-    of `css/main.css`, the actual path to the CSS file in your module should be 
+    values of this property are relative to the module's 
+    `src/main/resources/META-INF/resources` folder. So if you specify a value 
+    of `css/main.css`, the actual path to the CSS file in the module is 
     `src/main/resources/META-INF/resources/css/main.css`. The path to your 
     portlet's JavaScript file is specified by the property 
     `com.liferay.portlet.header-portlet-js`. Values for this property work the 
-    same way as the values for the CSS property. 
+    same as the values for the CSS property. 
 
     Also note that the property `com.liferay.portlet.css-class-wrapper` 
     specifies the CSS class wrapper `example-portlet`. Thus, you should use 
     subclasses of `example-portlet` in your portlet's actual CSS file. For 
-    example, in `main.css` you would do something like this: 
+    example, in `main.css` you'd do this to change the background to green: 
 
         .example-portlet {
             .greenBackground {
@@ -60,8 +60,8 @@ effect in your browser, perform these checks:
 
         }
 
-    In other words, to avoid CSS class and ID name conflicts, all of the CSS 
-    properties you specify should be subclasses of the class specified via the 
+    In other words, to avoid CSS class and ID name conflicts, all the CSS
+    properties you specify must be subclasses of the class specified via the
     `com.liferay.portlet.css-class-wrapper` property. @product@ wraps your 
     portlet's HTML content with a `<div>`. The class specified by 
     `com.liferay.portlet.css-class-wrapper` (`example-portlet`, in this example) 
