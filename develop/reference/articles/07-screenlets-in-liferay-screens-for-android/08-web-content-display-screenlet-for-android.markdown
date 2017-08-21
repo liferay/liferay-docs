@@ -58,6 +58,10 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 - `articleId`
 
+Note that if your web content uses 
+[structures and templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content), 
+you can use `templateId` or `structureId` in conjunction with `articleId`. 
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
@@ -71,6 +75,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `labelFields` | `string` | A comma-delimited list of `DDMStructure` fields to display in the Screenlet. |
 | `autoLoad` | `boolean` | Whether the content should be retrieved from the portal as soon as the screenlet appears. Default value is `true`. |
 | `javascriptEnabled` | `boolean` | Enables support for JavaScript. This is disabled by default. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android#offline) for details. |
 
 ## Methods [](id=methods)
 
@@ -83,13 +88,21 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 The Web Content Display Screenlet delegates some events to an object that 
 implements the `WebContentDisplayListener` interface. This interface lets you 
-implement the following methods:
+implement the following methods: 
 
-- `onWebContentReceived(WebContentDisplayScreenlet source, WebContent webContent)`: 
-  Called when the web content's HTML or `DDMStructure` is received. The HTML is 
-  available by calling the `getHtml` method. To make some adaptations, the 
-  listener may return a modified version of the HTML. The original HTML is 
-  rendered if the listener returns `null`. 
+- `onWebContentReceived(WebContent webContent)`: Called when the web content's 
+  HTML or `DDMStructure` is received. The HTML is available by calling the 
+  `getHtml` method. To make some adaptations, the listener may return a modified 
+  version of the HTML. The original HTML is rendered if the listener returns 
+  `null`. 
 
-- `onWebContentFailure(WebContentDisplayScreenlet source, Exception e)`: Called 
-  when an error occurs in the process. 
+- `onUrlClicked(String url)`: Called when a URL is clicked. Return `true` to 
+  replace the default behavior, or `false` to load the url. 
+
+- `onWebContentTouched(View view, MotionEvent event)`: Called when something is 
+  touched in the web content. Return `true` to replace the default behavior, or 
+  `false` to keep processing the event. 
+
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. The `userAction` argument distinguishes the specific action in which 
+  the error occurred. 

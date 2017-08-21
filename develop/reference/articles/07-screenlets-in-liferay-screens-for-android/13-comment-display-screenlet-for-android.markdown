@@ -71,14 +71,18 @@ Here are the offline mode policies that you can use with this Screenlet:
 ## Listener [](id=listener)
 
 Comment Display Screenlet delegates some events to a class that implements 
-`CommentDisplayInteractorListener`. This interface lets you implement the 
-following methods: 
+`CommentDisplayListener`. This interface lets you implement the following 
+methods: 
 
 - `onLoadCommentSuccess(CommentEntry commentEntry)`: Called when the Screenlet 
   successfully loads the comment. 
 
-- `onDeleteCommentSuccess()`: Called when the Screenlet successfully deletes the 
-  comment. 
+- `onDeleteCommentSuccess(CommentEntry commentEntry)`: Called when the Screenlet 
+  successfully deletes the comment. 
 
 - `onUpdateCommentSuccess(CommentEntry commentEntry)`: Called when the Screenlet 
   successfully updates the comment. 
+
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. The `userAction` argument distinguishes the specific action in which 
+  the error occurred. 

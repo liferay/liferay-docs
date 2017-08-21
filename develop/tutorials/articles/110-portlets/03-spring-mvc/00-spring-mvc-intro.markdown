@@ -352,3 +352,9 @@ If you are not required to use a Spring MVC portlet, consider using Liferay's
 MVC framework to design your portlets instead. Then you can take advantage of
 the Declarative Services `@Component` and `@Reference` annotations, which let
 you avoid the boilerplate code associated with service trackers.
+
+## Related Topics [](id=related-topics)
+
+[Upgrading a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-a-spring-mvc-portlet)
+
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)

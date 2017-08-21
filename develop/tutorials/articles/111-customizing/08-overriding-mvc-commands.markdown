@@ -246,7 +246,7 @@ message to the log, before continuing with the original processing:
         }
 
         @Reference(
-            target = "(component.name=com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand)")
+            target = "(component.name=com.liferay.blogs.web.internal.portlet.action.EditEntryMVCActionCommand)")
 
         protected MVCActionCommand mvcActionCommand;
 

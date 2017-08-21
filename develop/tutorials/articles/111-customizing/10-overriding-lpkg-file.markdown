@@ -1,4 +1,4 @@
-# Overriding lpkg files 
+# Overriding lpkg files [](id=overriding-lpkg-files)
 
 Applications are delivered through Liferay Marketplace as *lpkg* files. This is
 a simple compressed file format that contains .jar files to be deployed to

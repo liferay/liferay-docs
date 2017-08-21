@@ -95,8 +95,9 @@ instance:
 
 ## Listener [](id=listener)
 
-Image Gallery Screenlet delegates some events to an object or class that implements 
-[its `ImageGalleryListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/imagegallery/ImageGalleryListener.java). 
+Image Gallery Screenlet delegates some events to an object or class that 
+implements its 
+[`ImageGalleryListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/imagegallery/ImageGalleryListener.java). 
 This interface extends 
 [the `BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java). 
 Therefore, Image Gallery Screenlet's listener methods are as follows: 
@@ -149,3 +150,7 @@ Therefore, Image Gallery Screenlet's listener methods are as follows:
   upload View. To inflate the default View, return `0` in this method. 
   Alternatively, display this View with a custom layout by returning its layout 
   ID. Such a layout must have `DefaultUploadDetailView` as its root class. 
+
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. The `userAction` argument distinguishes the specific action in which 
+  the error occurred. 
