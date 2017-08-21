@@ -1,9 +1,35 @@
 # Debugging with an IDE [](id=debugging-with-an-ide)
 
-To debug @product@ or its modules, you must first start it in debug mode. One 
-way to do this is to configure your application server to start in debug mode. 
-To do this in Tomcat, edit your `setenv.sh` or `setenv.bat` file to adjust the 
-value of the `CATALINA_OPTS` variable: 
+To debug @product@ or its modules, you must first start it in debug mode. There 
+are two ways to do this, depending on how you're running your @product@ server. 
+If you're running your server inside Liferay @ide@, then you can simply click 
+the button to start the server in debug mode. If you're running the server 
+outside of Liferay @ide@, however, then things are a bit more complicated. This 
+article shows you both ways of starting the server in debug mode. 
+
+## Running the Server in Liferay @ide@
+
+If you're running the @product@ server inside Liferay @ide@, follow these 
+instructions to start it in debug mode:
+
+1.  If you need instructions on setting up a @product@ server to run in Liferay 
+    @ide@, see 
+    [this tutorial](/develop/tutorials/-/knowledge_base/7-0/installing-a-server-in-liferay-ide). 
+
+2.  Start the server in debug mode. To do this, click the debug button in the 
+    Servers pane of Liferay @ide@. 
+
+    ![Figure 1: The red box in this screenshot highlights the debug button. Click this button to start the server in debug mode.](../../troubleshooting-debug.png)
+
+That's it! The next section shows you how to start the server in debug mode if 
+you're running it outside of Liferay @ide@.
+
+## Running the Server Outside of Liferay @ide@
+
+If you're running the @product@ server outside of Liferay @ide@, starting it in 
+debug mode is a bit more complicated. To do this in Tomcat, first edit your 
+`setenv.sh` or `setenv.bat` file to adjust the value of the `CATALINA_OPTS` 
+variable: 
 
     CATALINA_OPTS="$CATALINA_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
@@ -60,3 +86,5 @@ in debug mode.
 ## Related Topics [](id=related-topics)
 
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+
+[Installing a Server in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/installing-a-server-in-liferay-ide)
