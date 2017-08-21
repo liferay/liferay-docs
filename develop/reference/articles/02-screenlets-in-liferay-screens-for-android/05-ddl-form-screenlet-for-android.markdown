@@ -110,7 +110,7 @@ picture/video information. Here's an example implementation:
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
     
-        _screenlet.startUploadByPosition(requestCode);
+        screenlet.startUploadByPosition(requestCode);
     }
 
 ## Portal Configuration [](id=portal-configuration)
@@ -188,7 +188,7 @@ policies:
 | `selectFieldLayoutId` | `@layout` | The layout to use to show the view for Select fields. |
 | `textFieldLayoutId` | `@layout` | The layout to use to show the view for Text fields. |
 | `textAreaFieldLayoutId` | `@layout` | The layout to use to show the view for Text Box fields. |
-| `textDocumentFieldLayoutId` | `@layout` | The layout to use to show the view for Documents & Media fields. |
+| `documentFieldLayoutId` | `@layout` | The layout to use to show the view for Documents & Media fields. |
 | `structureId` | `number` | The ID of a data definition in your Liferay site. To find the IDs for your data definitions, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left and click the *Manage Data Definitions* button. The ID of each data definition is in the ID column of the table. |
 | `groupId` | `number` | The ID of the site (group) where the record is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `recordSetId` | `number` | A dynamic data list's ID. To find your dynamic data lists' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each dynamic data list's ID is in the ID column of the table. |
@@ -199,6 +199,7 @@ policies:
 | `autoLoad` | `boolean` | Sets whether the form loads when the Screenlet is shown. If `recordId` is set, the record value is loaded together with the form definition. The default value is `false`. |
 | `autoScrollOnValidation` | `boolean` | Sets whether the form automatically scrolls to the first failed field when validation is used. The default value is `true`. |
 | `showSubmitButton` | `boolean` | Sets whether the form shows a submit button at the bottom. If this is set to `false`, you should call the `submitForm()` method. The default value is `true`. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/6-2/ddlformscreenlet-for-android#offline) for details. |
 
 ## Methods [](id=methods)
 
@@ -212,8 +213,8 @@ policies:
 ## Listener [](id=listener)
 
 DDL Form Screenlet delegates some events to an object that implements to the 
-`DDLFormScreenletListener` interface. This interface lets you implement the 
-following methods:
+`DDLFormListener` interface. This interface lets you implement the following 
+methods:
 
 - `onDDLFormLoaded(Record record)`: Called when the form definition successfully 
   loads. 
