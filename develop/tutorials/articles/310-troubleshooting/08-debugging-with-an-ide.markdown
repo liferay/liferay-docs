@@ -7,7 +7,7 @@ the button to start the server in debug mode. If you're running the server
 outside of Liferay @ide@, however, then things are a bit more complicated. This 
 article shows you both ways of starting the server in debug mode. 
 
-## Running the Server in Liferay @ide@
+## Running the Server in Liferay @ide@ [](id=running-the-server-in-liferay-ide)
 
 If you're running the @product@ server inside Liferay @ide@, follow these 
 instructions to start it in debug mode:
@@ -24,7 +24,7 @@ instructions to start it in debug mode:
 That's it! The next section shows you how to start the server in debug mode if 
 you're running it outside of Liferay @ide@.
 
-## Running the Server Outside of Liferay @ide@
+## Running the Server Outside of Liferay @ide@ [](id=running-the-server-outside-of-liferay-ide)
 
 If you're running the @product@ server outside of Liferay @ide@, starting it in 
 debug mode is a bit more complicated. To do this in Tomcat, first edit your 
