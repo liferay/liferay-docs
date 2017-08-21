@@ -19,7 +19,7 @@ instructions to start it in debug mode:
 2.  Start the server in debug mode. To do this, click the debug button in the 
     Servers pane of Liferay @ide@. 
 
-    ![Figure 1: The red box in this screenshot highlights the debug button. Click this button to start the server in debug mode.](../../troubleshooting-debug.png)
+    ![Figure 1: The red box in this screenshot highlights the debug button. Click this button to start the server in debug mode.](../../images/troubleshooting-debug.png)
 
 That's it! The next section shows you how to start the server in debug mode if 
 you're running it outside of Liferay @ide@.
