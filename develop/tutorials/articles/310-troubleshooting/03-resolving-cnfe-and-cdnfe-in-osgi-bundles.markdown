@@ -55,18 +55,22 @@ a class being removed. If the authoring developer removes class `Bar` from
 `2.0.0`), a `ClassNotFoundException` or `NoClassDefFoundError` occurs when other
 bundles look up or reference that class.
 
-Here are two ways to resolve the issue:
+Here are a couple options to consider since the class no longer exists in the package:
 
-1.  Request that the providing bundle owner increment the bundle's major
-    version, and as a result honor Semantic Versioning. This solution is ideal
-    because it can resolve the issue for all consumers. 
+-   Adapt to the new API. To learn how to adapt, read the package's/module's Javadoc, release notes, and or formal documentation. You can ask the author or investigate forums.  
 
-2.  Refine the consuming bundle's package import to a range up to but not 
-    including the broken version. For example, if you're consuming a package
-    starting at version `1.0.0` but version `1.3.0` breaks you, specify the
-    range `[1.0.0, 1.3.0)`.
+-   Revert to the module version you used previously. Deployed module versions
+    reside in `[Liferay_Home]/osgi/`. See
+    [Backing up Liferay Installations](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation#backing-up-liferays-file-system)
+    for details. 
+
+Do what you think is best to get your module working properly. 
 
 Now you know how to resolve common situations involving `ClassNotFoundException`
 or `NoClassDefFoundError`. For additional information on `NoClassDefFoundError`
 see OSGi Enroute's article
 [What is NoClassDefFoundError?](http://enroute.osgi.org/faq/class-not-found-exception.html).
+
+## Related Topics
+
+[Backing up Liferay Installations](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
