@@ -7,7 +7,7 @@ entries is all it takes.
 
 Follow these steps to update the methods:
 
-1.  Open `EntryLocalServiceImpl` in your `guestbook-service` module's 
+1.  Open `EntryLocalServiceImpl` in the `guestbook-service` module's 
     `com.liferay.docs.guestbook.service.impl` package and add the 
     `@Indexable(type = IndexableType.REINDEX)` annotation above the method 
     signature for the `addEntry` and `updateEntry` methods:
@@ -19,10 +19,10 @@ Follow these steps to update the methods:
         public Entry updateEntry(...)
 
     The `@Indexable` annotation indicates that an index update is required
-    following the method execution. Your `EntryIndexer` controls exactly
-    how the indexing happens, of course. Setting the `@Indexable` annotation
-    type to `IndexableType.REINDEX` updates the document in the index that
-    corresponds to the updated entry.
+    following the method execution. The `EntryIndexer` controls exactly how the
+    indexing happens. Setting the `@Indexable` annotation type to
+    `IndexableType.REINDEX` updates the document in the index that corresponds
+    to the updated entry.
 
 2.  Add the `@Indexable(type = IndexableType.DELETE)` annotation above the 
     method signature for the `deleteEntry` method. Here, you want to remove the 
@@ -32,8 +32,7 @@ Follow these steps to update the methods:
         @Indexable(type = IndexableType.DELETE)
         public Entry deleteEntry(...)
 
-    When an entry is deleted from the database, its document should be deleted
-    from the search index. This ensures that it will.
+    When an entry is deleted from the database, this deletes it from the index.
 
 3.  Finally, add the required imports:
 
