@@ -4,10 +4,13 @@ You already create the `GuestbookIndexer` class, so the following will not cover
 
 Follow these steps to create the entry indexer:
 
-1. In the `com.liferay.docs.guestbook.search` package of your guestbook-api module
-project's `src/main/java` folder, create a new class called `GuestbookIndexer`
-that extends `com.liferay.portal.kernel.search.BaseIndexer`. Replace the default
-contents of `EntryIndexer.java` with the following code:
+1.  In the `com.liferay.docs.guestbook.search` package of your guestbook-api
+    module project's `src/main/java` folder, create a new class called
+    `EntryIndexer` that extends
+    `com.liferay.portal.kernel.search.BaseIndexer`. Replace the default contents
+    of `EntryIndexer.java` with the following code:
+
+        package com.liferay.docs.guestbook.search;
 
         @Component(immediate = true, service = Indexer.class)
         public class EntryIndexer extends BaseIndexer<Entry> {
@@ -95,17 +98,16 @@ contents of `EntryIndexer.java` with the following code:
                 return document;
             }
 
-    This is not all the code, but the `doGetDocument` method is where indexing
-    behavior for entries is defined, so look at the above method for a moment.
-    You're indexing the email and date fields as usual, then providing the
-    localized title and message fields (based on the site's default language).
-    Last, you're getting the guestbook associated with the entry and indexing
-    the localized version of the `guestbookName` field. Always support
-    localization where it's possible, and you'll ensure your entities are
-    searchable in any language.
+    This is not all the code, but it contains the heart of the functionality:
+    `doGetDocument` method and its helper methods. The email and date fields are
+    indexed, and the localized title and message fields (based on the site's
+    default language) too. Finally, you get the guestbook associated with the
+    entry and index the localized version of the `guestbookName` field. Always
+    support localization where it's possible, and you'll ensure your entities
+    are searchable in any language.
 
-2. The rest of the code is quite similar to the code for the `GuestbookIndexer`.
-   Paste in the following code to finish the entry indexer class:
+2.  The rest of the code is quite similar to the code for the `GuestbookIndexer`.
+    Paste in the following code to finish the entry indexer class:
 
             @Override
             protected Summary doGetSummary(
@@ -185,7 +187,10 @@ contents of `EntryIndexer.java` with the following code:
             @Reference
             private EntryLocalService _entryLocalService;
 
+            @Reference
+            private GuestbookLocalService _guestbookLocalService;
+
         }
 
-As with the guestbook, you need to update the entry's service layer to support
-indexing when its service methods are called.
+As with the guestbook, you must update the entry's service layer to support
+indexing when its service methods are called. That's your next step. 
