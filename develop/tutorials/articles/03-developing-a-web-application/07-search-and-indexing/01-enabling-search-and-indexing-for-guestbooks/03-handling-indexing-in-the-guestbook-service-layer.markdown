@@ -2,10 +2,9 @@
 
 Whenever a guestbook database entity is added, updated, or deleted, the search
 index must be updated accordingly. There's a convenient set of annotations in
-@product@, `@Indexable` and `@IndexableType`, that mark your service methods, so
-that documents can be updated or deleted. For the guestbook, you need to update
-each of the `addGuestbook`, `updateGuestbook`, and `deleteGuestbook` service
-methods.
+@product@ that mark your service methods so documents can be updated or deleted: 
+`@Indexable` and `@IndexableType`. For the guestbook, you must update the
+`addGuestbook`, `updateGuestbook`, and `deleteGuestbook` service methods.
 
 1.  Open `GuestbookLocalServiceImpl` in the `guestbook-service` module's 
     `com.liferay.docs.guestbook.service.impl` package and add the following 
@@ -19,10 +18,10 @@ methods.
         public Guestbook updateGuestbook(...)
 
     The `@Indexable` annotation indicates that an index update is required
-    following the method execution. Your `GuestbbokIndexer` controls exactly
-    how the indexing happens, of course. Setting the `@Indexable` annotation
-    type to `IndexableType.REINDEX` updates the document in the index that
-    corresponds to the updated guestbook.
+    following the method execution. The `GuestbbokIndexer` controls exactly
+    how the indexing happens. Setting the `@Indexable` annotation type to
+    `IndexableType.REINDEX` updates the document in the index that corresponds
+    to the updated guestbook.
 
 2.  Add the following annotation above the method signature for the 
     `deleteGuestbook` method:
@@ -31,7 +30,7 @@ methods.
         public Guestbook deleteGuestbook(...)
 
     When a guestbook is deleted from the database, its document shouldn't
-    remain in the search index. This ensures that it will be deleted.
+    remain in the search index. This ensures that it is deleted.
 
 3.  Finally, add the necessary imports:
 
