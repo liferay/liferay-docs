@@ -2,7 +2,7 @@
 
 Follow these steps to create the search bar UI for the Guestbook portlet:
 
-1.  Open `src/main/resources/META-INF/resources/guestbookwebportlet/view.jsp`
+1.  Open the `src/main/resources/META-INF/resources/guestbookwebportlet/view.jsp`
     file in `guestbook-web`. Add a render URL near the top of the
     file, just after the scriptlet that grabs the `guestbookId` from the
     request:
@@ -13,13 +13,11 @@ Follow these steps to create the search bar UI for the Guestbook portlet:
         </liferay-portlet:renderURL>
 
     The render URL points to `/guestbookwebportlet/view_search.jsp` (created in
-    the next step). You're constructing the URL first because you have to
-    specify what happens when the user submits a search query. Note that you're
-    using the `mvcPath` parameter since the Guestbook portlet is a Liferay MVC
-    portlet.
+    the next step). You're constructing the URL first because you must specify
+    what happens when the user submits a search query. 
 
-2.  Create an AUI form that directs the user to the `view_search.jsp` page for
-    viewing search results:
+2.  Right after the URL, create an AUI form that directs the user to the
+    `view_search.jsp` page for viewing search results:
 
         <aui:form action="<%= searchURL %>" method="get" name="fm">
             <liferay-portlet:renderURLParams varImpl="searchURL" />
@@ -50,7 +48,7 @@ Follow these steps to create the search bar UI for the Guestbook portlet:
     specifies the name that appears on the button.
 
 That's all there is to the search form! When the form is submitted, the
-`mvcPath` parameter pointing to the `view_search.jsp` will be included in the
+`mvcPath` parameter pointing to the `view_search.jsp` is included in the
 URL along with the `keywords` parameter containing the search query. Now it's
 time to create the `view_search.jsp` form so that the search results can be
 displayed.
