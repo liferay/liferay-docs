@@ -6,40 +6,8 @@ these steps to make the updates:
 1.  You must update the add, update, and delete methods of your project's
     `GuestbookLocalServiceImpl` and `EntryLocalServiceImpl` classes. Open your
     project's `GuestbookLocalServiceImpl` class and find the `addGuestbook` 
-    method. Replace it with the following method:
-
-        @Indexable(type = IndexableType.REINDEX)
-        public Guestbook addGuestbook(
-            long userId, String name, ServiceContext serviceContext)
-          throws PortalException {
-
-          long groupId = serviceContext.getScopeGroupId();
-
-          User user = userLocalService.getUserById(userId);
-
-          Date now = new Date();
-
-          validate(name);
-
-          long guestbookId = counterLocalService.increment();
-
-          Guestbook guestbook = guestbookPersistence.create(guestbookId);
-
-          guestbook.setUuid(serviceContext.getUuid());
-          guestbook.setUserId(userId);
-          guestbook.setGroupId(groupId);
-          guestbook.setCompanyId(user.getCompanyId());
-          guestbook.setUserName(user.getFullName());
-          guestbook.setCreateDate(serviceContext.getCreateDate(now));
-          guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
-          guestbook.setName(name);
-          guestbook.setExpandoBridgeAttributes(serviceContext);
-
-          guestbookPersistence.update(guestbook);
-
-          resourceLocalService.addResources(
-            user.getCompanyId(), groupId, userId, Guestbook.class.getName(),
-            guestbookId, false, true, true);
+    method. Add the call to add the asset entries below the call that adds
+    resources: 
 
           AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
                               groupId, guestbook.getCreateDate(),
@@ -50,71 +18,34 @@ these steps to make the updates:
                               ContentTypes.TEXT_HTML, guestbook.getName(), null, null, null,
                               null, 0, 0, null);
 
-              assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+          assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
                               serviceContext.getAssetLinkEntryIds(),
                               AssetLinkConstants.TYPE_RELATED);
 
 
-          return guestbook;
-        }
+    Calling `assetEntryLocalService.updateEntry` adds a new row (corresponding
+    to the guestbook that's being added) to the `AssetEntry` table in
+    @product@'s database. `AssetEntryLocalServiceImpl`'s `updateEntry` method
+    is used for both adding and updating asset entries, because it checks if the
+    asset entry already exists in the database and takes the appropriate action.
+    If you check @product@'s
+    [Javadocs](https://docs.liferay.com/portal/7.0-latest/javadocs/) for
+    `AssetEntryLocalServiceUtil.updateEntry`, you'll see that this method is
+    overloaded. Why did you use a version of this method with such a long
+    method signature? There's only one version of the `updateEntry` method that
+    takes a `title` parameter (to set the asset entry's title). Since you want
+    to set the asset title to `guestbook.getName()`, that's the version you use.
 
-    Your call to `assetEntryLocalService.updateEntry` is responsible for adding 
-    a new row (corresponding to the guestbook that's being added) to the 
-    `AssetEntry` table in Liferay's database. The `updateEntry` method of
-    `AssetEntryLocalServiceImpl` can be used for both adding and updating asset
-    entries. It checks whether or not the asset entry already exists in the
-    database. If it does not, it adds it. If it does, it updates it. If you 
-    check Liferay's [Javadocs](https://docs.liferay.com/portal/7.0-latest/javadocs/) 
-    for `AssetEntryLocalServiceUtil.updateEntry`, you'll see that this method is
-    overloaded. Why did you use a version of this method with such a long 
-    message signature? There's only one version of the `updateEntry` method that 
-    takes a `title` parameter (to set the asset entry's title). Since you want 
-    to set the asset title, that's the version you use. In your call to
-    `AssetEntryLocalServiceUtil.updateEntry`, you're setting the asset entry's 
-    title to `guestbook.getName()`, i.e., to the name of the guestbook entity.
+    Later, you'll update the Guestbook Admin portlet's form for adding
+    guestbooks to allow related assets to be selected. Related assets are stored
+    in the database's `AssetLink` table. `assetLinkLocalService.updateLinks`
+    adds the appropriate entries to the table so the related assets feature
+    works for your guestbook entities. Just as the `updateEntry` method is used
+    for both adding and updating asset entries, the `updateLink` method is used
+    for both adding and updating asset links.
 
-    Later in this Learning Path, you'll update the Guestbook Admin portlet's 
-    form for adding guestbooks to allow related assets to be selected. Related 
-    assets are stored in the `AssetLink` table of Liferay's database. Your call 
-    to `assetLinkLocalService.updateLinks` is responsible for adding the 
-    appropriate entries to Liferay's `AssetLink` table so that the related 
-    assets feature works for your guestbook entities. Just as the `updateEntry` 
-    method of `AssetEntryLocalServiceImpl` can be used for both adding and 
-    updating asset entries, the `updateLink` method of 
-    `AssetLinkLocalServiceImpl` can be used for both adding and updating asset 
-    links.
-
-2.  Next, replace the `updateGuestbook` method of `GuestbookLocalServiceImpl` 
-    with the following one:
-
-        @Indexable(type = IndexableType.REINDEX)
-        public Guestbook updateGuestbook(
-            long userId, long guestbookId, String name,
-            ServiceContext serviceContext)
-          throws PortalException {
-
-          Date now = new Date();
-
-          validate(name);
-
-          Guestbook guestbook = getGuestbook(guestbookId);
-
-          User user = UserLocalServiceUtil.getUser(userId);
-
-          guestbook.setUserId(userId);
-          guestbook.setUserName(user.getFullName());
-          guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
-          guestbook.setName(name);
-          guestbook.setExpandoBridgeAttributes(serviceContext);
-
-          guestbookPersistence.update(guestbook);
-
-          resourceLocalService.updateResources(
-            serviceContext.getCompanyId(), serviceContext.getScopeGroupId(),
-            Guestbook.class.getName(), guestbookId,
-            serviceContext.getGroupPermissions(),
-            serviceContext.getGuestPermissions());
-
+2.  Next, add the asset calls to `GuestbookLocalServiceImpl`'s `updateGuestbook`
+    method, just after the resource call:
 
           AssetEntry assetEntry = assetEntryLocalService.updateEntry(guestbook.getUserId(),
                               guestbook.getGroupId(), guestbook.getCreateDate(),
@@ -125,58 +56,32 @@ these steps to make the updates:
                               null, null, null, ContentTypes.TEXT_HTML, guestbook.getName(), null, null, 
                               null, null, 0, 0, serviceContext.getAssetPriority());
 
-              assetLinkLocalService.updateLinks(serviceContext.getUserId(),
+          assetLinkLocalService.updateLinks(serviceContext.getUserId(),
                               assetEntry.getEntryId(), serviceContext.getAssetLinkEntryIds(),
                               AssetLinkConstants.TYPE_RELATED);
 
-          return guestbook;
-        }
+    Here, you're using `assetEntryLocalService.updateEntry` to update an
+    existing asset entry and `assetLinkLocalService.updateLinks` to add or
+    update that entry's asset links (related assets). As mentioned above, you
+    can use the `updateEntry` and `updateLink` methods for adding and updating
+    asset entries and links. 
 
-    Here, you're using `assetEntryLocalService.updateEntry` to update an 
-    existing asset entry and `assetLinkLocalService.updateLinks` to add or 
-    update that entry's asset links (related assets). As mentioned above, you 
-    can use the `updateEntry` method of `AssetEntryLocalServiceImpl` for both 
-    adding and updating asset entries. `assetLinkLocalService.updateLinks` works 
-    the same way.
-
-3.  Next, replace the `deleteGuestbook` method of `GuestbookLocalServiceImpl` 
-    with the following one:
-
-        @Indexable(type = IndexableType.DELETE)
-        public Guestbook deleteGuestbook(
-            long guestbookId, ServiceContext serviceContext)
-          throws PortalException {
-
-          Guestbook guestbook = getGuestbook(guestbookId);
-
-          List<Entry> entries = EntryLocalServiceUtil.getEntries(
-            serviceContext.getScopeGroupId(), guestbookId);
-
-          for (Entry entry : entries) {
-            EntryLocalServiceUtil.deleteEntry(
-              entry.getEntryId(), serviceContext);
-          }
-
-          resourceLocalService.deleteResource(
-            serviceContext.getCompanyId(), Guestbook.class.getName(),
-            ResourceConstants.SCOPE_INDIVIDUAL, guestbookId);
+3.  Next, add the asset calls to the `deleteGuestbook` method, just after the
+    resource calls:
 
           AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
                               Guestbook.class.getName(), guestbookId);
 
-              assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+          assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 
-              assetEntryLocalService.deleteEntry(assetEntry);
+          assetEntryLocalService.deleteEntry(assetEntry);
 
-          guestbook = deleteGuestbook(guestbook);
 
-          return guestbook;
-        }
-
-    Here, you use the guestbook's classname and guestbook ID to retrieve the
+    Here, you use the guestbook's class name and guestbook ID to retrieve the
     corresponding asset entry. Then you delete the asset links corresponding to 
-    the asset entry and, finally, the asset entry itself. As you might expect, 
-    the method signatures of the methods for deleting asset entries and asset 
-    links are shorter than the ones for adding/updating!
-    
-4.  Finally, Organize your imports and run service builder to apply the changes.
+    the asset entry and, finally, the asset entry itself. 
+ 
+4.  Finally, Organize your imports, save the file, and run Service Builder to
+    apply the changes.
+
+Next, you'll do the same for guestbook entries. 
