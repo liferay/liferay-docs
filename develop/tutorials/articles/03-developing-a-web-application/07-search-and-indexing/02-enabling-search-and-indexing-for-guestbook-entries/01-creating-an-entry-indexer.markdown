@@ -1,10 +1,13 @@
 # Creating an Entry Indexer [](id=creating-an-entry-indexer)
 
-You already create the `GuestbookIndexer` class, so the following will not cover the redundant details, but only point out differences between the indexing of guestbooks and entries. 
+The `EntryIndexer` class you'll complete here is very similar to the 
+`GuestbookIndexer` class you completed in the previous section. Therefore, the 
+instructions here only point out differences between the indexing of guestbooks 
+and entries. 
 
 Follow these steps to create the entry indexer:
 
-1.  In the `com.liferay.docs.guestbook.search` package of your guestbook-api
+1.  In the `com.liferay.docs.guestbook.search` package of your `guestbook-api`
     module project's `src/main/java` folder, create a new class called
     `EntryIndexer` that extends
     `com.liferay.portal.kernel.search.BaseIndexer`. Replace the default contents
@@ -98,16 +101,15 @@ Follow these steps to create the entry indexer:
                 return document;
             }
 
-    This is not all the code, but it contains the heart of the functionality:
-    `doGetDocument` method and its helper methods. The email and date fields are
-    indexed, and the localized title and message fields (based on the site's
-    default language) too. Finally, you get the guestbook associated with the
-    entry and index the localized version of the `guestbookName` field. Always
-    support localization where it's possible, and you'll ensure your entities
-    are searchable in any language.
+    This is not all the code, but it contains the heart of the functionality: 
+    the `doGetDocument` method and its helper methods. The email, date, 
+    localized title, and message fields (based on the site's default language) 
+    are indexed. Finally, you get the entry's guestbook and index the localized 
+    version of the `guestbookName` field. Always support localization where 
+    possible--this ensures your entities are searchable in any language. 
 
-2.  The rest of the code is quite similar to the code for the `GuestbookIndexer`.
-    Paste in the following code to finish the entry indexer class:
+2.  The rest of the code is very similar `GuestbookIndexer`. Paste in the 
+    following code to finish the entry indexer class: 
 
             @Override
             protected Summary doGetSummary(
