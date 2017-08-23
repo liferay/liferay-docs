@@ -6,12 +6,12 @@ feature across the web today. You've probably seen it in some of @product@'s
 built-in apps, such as Blogs. @product@'s taglibs provide you with the markup 
 you need to add this feature to your app.
 
-![Figure 1: Social bookmarks are enabled in the built-in Blogs portlet](../../../images/social-bookmarks-icons.png)
+![Figure 1: Social bookmarks are enabled in the built-in Blogs portlet](../../images/social-bookmarks-icons.png)
 
 This tutorial shows you how to add social bookmarks for your application's
 content. The Guestbook app from the MVC Learning Path is used as an example:
 The completed Guestbook app code that uses this feature is on
-[Github](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/guestbook-social-features/guestbook).
+[Github](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/guestbook-social-features/social-bookmarks/guestbook).
 
 Follow these steps to add social bookmarks to your app:
 
@@ -25,7 +25,7 @@ Follow these steps to add social bookmarks to your app:
    from the render request. Then you can create an entity object using your
    `-LocalServiceUtil` class. Below is an example configuration for the
    Guestbook app's `guestbook-web` module's view entry JSP file
-   [`view_entry.jsp`](https://github.com/liferay/liferay-docs/develop/tutorials/code/osgi/modules/guestbook-social-features/guestbook/guestbook-web/src/main/resources/META-INF/resources/html/guestbookmvcportlet/view_entry.jsp):
+   [`view_entry.jsp`](https://github.com/liferay/liferay-docs/develop/tutorials/code/osgi/modules/guestbook-social-features/social-bookmarks/guestbook/guestbook-web/src/main/resources/META-INF/resources/html/guestbookmvcportlet/view_entry.jsp):
 
         <%
         long entryId = ParamUtil.getLong(renderRequest, "entryId");
@@ -53,16 +53,16 @@ Follow these steps to add social bookmarks to your app:
 
     A `simple` `displayStyle` displays the share buttons with no share stats. 
 
-    ![Figure 2: Here are the share buttons with `displayStyle` set to `"simple"`.](../../../images/social-bookmarks-icons-simple.png)
+    ![Figure 2: Here are the share buttons with `displayStyle` set to `"simple"`.](../../images/social-bookmarks-icons-simple.png)
 
     Setting `displayStyle` to `vertical` positions the flags above each share button. 
 
-    ![Figure 3: Here are the share buttons with `displayStyle` set to `"vertical"`.](../../../images/social-bookmarks-icons-vertical.png)
+    ![Figure 3: Here are the share buttons with `displayStyle` set to `"vertical"`.](../../images/social-bookmarks-icons-vertical.png)
 
     When `displayStyle` is set to `horizontal`, the flags indicating the number of 
     shares for each button are positioned to the right.
 
-    ![Figure 4: Here are the share buttons with `displayStyle` set to `"horizontal"`.](../../../images/social-bookmarks-icons-horizontal.png)
+    ![Figure 4: Here are the share buttons with `displayStyle` set to `"horizontal"`.](../../images/social-bookmarks-icons-horizontal.png)
 
 If you haven't already connected your portlet's view to the JSP for your entity,
 you can refer [here](/develop/tutorials/-/knowledge_base/7-0/relating-assets#creating-a-url-to-your-new-jsp)
@@ -70,7 +70,7 @@ to see how to connect your portlet's main view JSP to your entity's view JSP.
 
 The social bookmarks UI component now shows in your entity's view. 
 
-![Figure 5: The new JSP lets users share content in your portlet.](../../../images/social-guestbook-social-bookmarks.png)
+![Figure 5: The new JSP lets users share content in your portlet.](../../images/social-guestbook-social-bookmarks.png)
 
 Great! Now you know how to let users share content in your asset enabled apps. 
 
@@ -91,7 +91,7 @@ their contents to users that are signed in to the portal:
 
     </c:if>
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
 
