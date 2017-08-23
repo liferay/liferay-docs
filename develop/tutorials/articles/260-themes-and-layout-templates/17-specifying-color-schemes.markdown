@@ -27,7 +27,7 @@ Follow these steps to create color schemes for your theme:
 
     +$$$
     
-    **Note:** The `Default` color scheme does not require a prefix, as it uses 
+    **Note:** The default color scheme does not require a prefix, as it uses 
     your theme's `_custom.scss` for styling.
     
     $$$
@@ -38,11 +38,14 @@ Follow these steps to create color schemes for your theme:
         @import "color_schemes/day";
         @import "color_schemes/night";
 
-5. Open your theme's `liferay-look-and-feel.xml` file and follow the pattern 
-   below to specify the default color scheme:
+5. Open your theme's `liferay-look-and-feel.xml` file and add the default color 
+   scheme for your theme. Pass the default color scheme's CSS class name 
+   (the name of the CSS file) in the `<css-class>` element. If the default color 
+   scheme styling is in your theme's `_custom.scss` file, use `default` 
+   for the `<css-class>`:
 
         <theme id="my-theme-id" name="My Theme Name">
-           <color-scheme id="01" name="Default">
+           <color-scheme id="01" name="My Default Color Scheme Name">
                <default-cs>true</default-cs>
                <css-class>default</css-class>
                
@@ -54,18 +57,20 @@ Follow these steps to create color schemes for your theme:
         </theme>
 
     Specifying a default color scheme lets you return to the default look and 
-    feel for your theme.
-    
+    feel for your theme. Note that the color scheme's `name` is arbitrary. Only
+    the color scheme's `css-class` element must match the name of the color 
+    scheme's CSS class.
+        
     Note that color schemes are sorted alphabetically by `name` rather than `id`. 
     For example, a color scheme named `Day` and `id` `02` would be selected by 
-    default over the `Default` color scheme with `id` `01`. The `<default-cs>` 
+    default over a color scheme named `Clouds` with `id` `01`. The `<default-cs>` 
     element overrides the alphabetical sorting and sets the color scheme that is 
     selected by default, when the theme is chosen. Adding this element to the 
     default color scheme ensures that it is selected when the theme is chosen.
     
     The `<color-scheme-images-path>` element specifies where theme thumbnail 
-    images are located (you only have to place this element in one color scheme 
-    for it to affect all of them). For example you could use the folders 
+    images are located (place this element in the first color scheme to affect 
+    all of them). For example you could use the folders 
     `/images/color_schemes/default`, `/images/color_schemes/day`, and 
     `/images/color_schemes/night`. 
  
