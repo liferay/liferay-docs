@@ -21,7 +21,11 @@ Follow these steps to add social bookmarks to your app:
    your portlet's view, or if you've implemented [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset),
    you can display it in the full content view in the Asset Publisher portlet.
 
-3. In your entity's view, use `ParamUtil` to get the ID of the entity
+3.  Include the Liferay-UI taglib declaration in your JSP:
+
+        <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
+
+4. In your entity's view, use `ParamUtil` to get the ID of the entity
    from the render request. Then you can create an entity object using your
    `-LocalServiceUtil` class. Below is an example configuration for the
    Guestbook app's `guestbook-web` module's view entry JSP file
@@ -32,7 +36,7 @@ Follow these steps to add social bookmarks to your app:
         entry = EntryLocalServiceUtil.getEntry(entryId);
         %>
 
-4. Add the implementation of the social bookmark component itself with the
+5. Add the implementation of the social bookmark component itself with the
    [`liferay-ui:social-bookmarks` tag](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/social-bookmarks.html). 
    Pass the content's URL in the `url` attribute. You can use `PortalUtil` to 
    retrieve this. The `target` attribute refers to the HTML target. The `title` 
