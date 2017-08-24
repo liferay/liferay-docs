@@ -1,4 +1,4 @@
-# Declaring Optional Import Package Requirements
+# Declaring Optional Import Package Requirements [](id=declaring-optional-import-package-requirements)
 
 When developing @product@ modules, it's possible declare *optional* 
 dependencies. An optional dependency is a dependency that your module can use 
@@ -83,6 +83,6 @@ command:
 For more information about optional dependencies, see 
 [OSGi Enroute's documentation](http://enroute.osgi.org/tutorial_wrap/220-optional-dependencies). 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
