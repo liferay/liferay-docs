@@ -91,10 +91,27 @@ missing a `Foo` service. Now you can focus on why `Foo` is unavailable. The
 solution may be as simple as starting or deploying a bundle that provides the 
 `Foo` service. 
 
-To get diagnostic information about Service Builder components, use the 
-`dependencymanager:dm` command. This command lists all of @product@'s Service 
-Builder components, their required services, and whether each required service 
-is available. 
+## Service Builder Components [](id=service-builder-components)
+
+@product@'s Service Builder modules are implemented using Spring. @product@ uses 
+[the Apache Felix Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager.html) 
+to manage Service Builder modules' OSGi components via the 
+[Portal Spring Extender](https://github.com/liferay/com-liferay-portal/tree/master/portal-spring-extender) 
+module. When developing a Liferay Service Builder application, you might 
+encounter a situation where your application has an unresolved Spring-related 
+OSGi component. This could occur, for example, if you update your application's 
+database schema but forget to trigger an upgrade (for information on creating 
+database upgrade processes for your @product@ applications, see the tutorial 
+[Creating an Upgrade Process for Your App](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)). 
+To check your Service Builder modules for unresolved Spring components, you can 
+use the Dependency Manager's `dm` Gogo shell command, which is explained here:  
+
+- [Dependency Manager - Leveraging the shell](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager/tutorials/leveraging-the-shell.html)
+
+For example, to get diagnostic information about Service Builder components, use 
+the `dependencymanager:dm` command. This command lists all of @product@'s 
+Service Builder components, their required services, and whether each required 
+service is available. 
 
 ## Related Topics [](id=related-topics)
 
