@@ -1,5 +1,9 @@
 # Adding a Search Bar to the Guestbook Portlet [](id=adding-a-search-bar-to-the-guestbook-portlet)
 
+<div class="learn-path-step">
+    <p>Updating Your User Interface for Search<br>Step 1 of 2</p>
+</div>
+
 Follow these steps to create the search bar UI for the Guestbook portlet:
 
 1.  In `guestbook-web`, open the file 

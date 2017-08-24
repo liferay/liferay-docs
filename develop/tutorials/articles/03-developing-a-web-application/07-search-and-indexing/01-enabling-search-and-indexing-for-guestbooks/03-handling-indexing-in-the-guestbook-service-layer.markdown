@@ -1,5 +1,9 @@
 # Handling Indexing in the Guestbook Service Layer [](id=handling-indexing-in-the-guestbook-service-layer)
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 3 of 3</p>
+</div>
+
 Whenever a guestbook database entity is added, updated, or deleted, the search 
 index must be updated accordingly. The @product@ annotations `@Indexable` and 
 `@IndexableType` mark your service methods so documents can be updated or 

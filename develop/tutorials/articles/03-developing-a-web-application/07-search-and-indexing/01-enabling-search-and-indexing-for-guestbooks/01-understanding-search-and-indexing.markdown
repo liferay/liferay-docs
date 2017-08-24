@@ -1,4 +1,8 @@
-# Understanding Search and Indexing
+# Understanding Search and Indexing [](id=understanding-search-and-indexing)
+
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 1 of 3</p>
+</div>
 
 By default, @product@ uses Elasticsearch, a search engine backed by the popular
 Lucene search library, to implement its search and indexing functionality. To 

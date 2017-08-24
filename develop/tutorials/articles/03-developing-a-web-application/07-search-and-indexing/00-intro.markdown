@@ -20,3 +20,5 @@ prerequisite for this--you must index any entity that you want to make an asset.
 But assets are for later. Right now it's time to create those indexers. Ready? 
 
 ![Figure 1: You'll add a search bar to the Guestbook portlet so that users can search for guestbook entries. If a guestbook entry's message or name matches the search query, the entry is displayed in the search results.](../../../images/guestbook-portlet-search.png)
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/enabling-search-and-indexing-for-guestbooks">Let's Go!<span class="icon-circle-arrow-right"></span></a>

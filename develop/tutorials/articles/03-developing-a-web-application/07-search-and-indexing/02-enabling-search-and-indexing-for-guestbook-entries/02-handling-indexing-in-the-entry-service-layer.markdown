@@ -1,5 +1,9 @@
 # Handling Indexing in the Entry Service Layer [](id=handling-indexing-in-the-entry-service-layer)
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbook Entries<br>Step 2 of 2</p>
+</div>
+
 Whenever a guestbook entry is added, updated, or deleted, the corresponding
 document should also be updated or deleted. A minor update to each of the
 `addEntry`, `updateEntry`, and `deleteEntry` service methods for guestbook

@@ -1,5 +1,9 @@
 # Creating an Entry Indexer [](id=creating-an-entry-indexer)
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbook Entries<br>Step 1 of 2</p>
+</div>
+
 The `EntryIndexer` class you'll complete here is very similar to the 
 `GuestbookIndexer` class you completed in the previous section. Therefore, the 
 instructions here only point out differences between the indexing of guestbooks 

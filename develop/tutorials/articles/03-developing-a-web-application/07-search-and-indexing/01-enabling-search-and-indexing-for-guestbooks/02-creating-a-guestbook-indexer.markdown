@@ -1,5 +1,9 @@
 # Creating a Guestbook Indexer [](id=creating-a-guestbook-indexer)
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 2 of 3</p>
+</div>
+
 Follow these steps to create the indexer for guestbooks:
 
 1.  Create a new package in the `guestbook-service` module project's
