@@ -380,5 +380,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
           public static final String TYPE = "guestbook";
         }
 
+5.  Organize imports (Ctrl-Shift-O) and save the file. 
+
 The guestbook asset renderer is complete. Next you'll create the entry asset 
 renderer.

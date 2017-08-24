@@ -1,14 +1,15 @@
 # Implementing an Entry Asset Renderer [](id=implementing-an-entry-asset-renderer)
 
 The classes you'll create in this section are nearly identical to the 
-`*AssetRenderer` and `*AssetRendererFactory` classes you created for guestbooks 
-in the last section. This section provides the code needed for guestbook entries. 
-For more information on these methods, please review the last section.
+`GuestbookAssetRenderer` and `GuestbookAssetRendererFactory` classes you created
+for guestbooks in the last section. This section provides the code needed for
+guestbook entries. For more information on these methods, please review the
+previous section.
 
-## Creating the Entry AssetRenderer Class
+## Creating the Entry `AssetRenderer` Class
 
 In the `com.liferay.docs.guestbook.asset` package, create an 
-`EntryAssetRenderer` class that extends Liferay's `BaseJSPAssetRenderer` class.
+`EntryAssetRenderer` class that extends @product@'s `BaseJSPAssetRenderer` class.
 Replace the contents of your `EntryAssetRenderer` class with the following code:
 
     package com.liferay.docs.guestbook.asset;
@@ -25,7 +26,7 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
     import com.liferay.portal.kernel.util.HtmlUtil;
     import com.liferay.portal.kernel.util.PortalUtil;
     import com.liferay.portal.kernel.util.StringUtil;
-    import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
+    import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
     import com.liferay.docs.guestbook.model.Entry;
     import com.liferay.docs.guestbook.service.permission.EntryPermission;
     import java.util.Locale;
@@ -177,20 +178,20 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
       private Entry _entry;
     }
 
-This class is very similar to the `GuestbookAssetRenderer` class. For the
-`EntryAssetRenderer.getSummary` method, you're returning a summary that displays
+This class is similar to the `GuestbookAssetRenderer` class. For the
+`EntryAssetRenderer.getSummary` method, you return a summary that displays
 both the entry name (the name of the user who created the entry) and the entry
-message. `GuestbookAssetRenderer.getSummary` just returned a summary that
-displayed the guestbook name. `EntryAssetRenderer.getTitle` returns the entry
-message. `GuestbookAssetRenderer.getTitle` returned the guestbook name. The rest
-of the methods of `EntryAssetRenderer` are nearly identical to those of
+message. `GuestbookAssetRenderer.getSummary` returned a summary that displayed
+the guestbook name. `EntryAssetRenderer.getTitle` returns the entry message.
+`GuestbookAssetRenderer.getTitle` returned the guestbook name. The rest of the
+methods of `EntryAssetRenderer` are nearly identical to those of
 `GuestbookAssetRenderer`.
 
 ## Creating the Entry AssetRendererFactory Class
 
-Next, you need to create the factory class for the guestbook entry asset
+Next, you must create the factory class for the guestbook entry asset
 renderer. In the `com.liferay.docs.guestbook.asset` package, create a class
-called `EntryAssetRendererFactory` that extends Liferay's
+called `EntryAssetRendererFactory` that extends @product@'s
 `BaseAssetRendererFactory` class. Replace its contents with the following code:
 
     package com.liferay.docs.guestbook.asset;
@@ -201,7 +202,7 @@ called `EntryAssetRendererFactory` that extends Liferay's
     import com.liferay.docs.guestbook.model.Entry;
     import com.liferay.docs.guestbook.service.EntryLocalService;
     import com.liferay.docs.guestbook.service.permission.EntryPermission;
-    import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
+    import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
     import com.liferay.portal.kernel.util.WebKeys;
     import com.liferay.portal.kernel.exception.PortalException;
     import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
@@ -304,18 +305,17 @@ called `EntryAssetRendererFactory` that extends Liferay's
 
     }
 
-Now your guestbook project's entities have been fully asset-enabled. To test the
-functionality that you added, add the Asset Publisher portlet to a page of your
-locally running Liferay Portal instance. Then add a few guestbooks and guestbook
-entries. Edit a few of them too. Then check the Asset Publisher portlet. By
-default, the Asset Publisher is configured to dynamically display assets of any
-kind from the current site.
+Now your guestbook project's entities are fully asset-enabled. To test the
+functionality, add the Asset Publisher portlet to a page and add a few
+guestbooks and guestbook entries. Edit a few of them too. Then check the Asset
+Publisher portlet. By default, the Asset Publisher is configured to dynamically
+display assets of any kind from the current site.
 
 ![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../../../images/custom-entities-asset-publisher.png)
 
-Confirm that the Asset Publisher is displaying the guestbooks and guestbook
-entries that you added.
+Confirm that the Asset Publisher displays the guestbooks and guestbook entries
+that you added.
 
 Great! In the next section, you'll update your portlets' user interfaces to use
-several features of Liferay's asset framework: comments, ratings, tags,
+several features of @product@'s asset framework: comments, ratings, tags,
 categories, and related assets.
