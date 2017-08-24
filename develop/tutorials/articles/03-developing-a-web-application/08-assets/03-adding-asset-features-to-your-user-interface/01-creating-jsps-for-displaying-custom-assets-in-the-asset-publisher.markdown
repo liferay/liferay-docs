@@ -1,6 +1,6 @@
 # Creating JSPs for Displaying Custom Assets in the Asset Publisher [](id=creating-jsps-for-displaying-custom-assets-in-the-asset-publisher)
 
-Before you proceed, you need to tie up one loose end from the previous section.
+Before you proceed, you must tie up one loose end from the previous section.
 Remember that you implemented `getJspPath` methods in your 
 `GuestbookAssetRenderer` and `EntryAssetRenderer` classes. These classes return 
 strings containing the paths to the JSPs that the Asset Publisher should use for 
@@ -11,12 +11,12 @@ the `getJspPath` method of `EntryAssetRenderer` returns
 
 Follow these steps:
 
-1.  In your `guestbook-web` module project, create a new directory called 
-    `asset` under the `resources/META-INF/resources` folder and add two folders: 
-    `entry` and `guestbook`.
+1.  In the `guestbook-web` module project, create a new folder called 
+    `asset` under the `resources/META-INF/resources` folder and add two folders
+    under it: `entry` and `guestbook`.
 
 2.  Create a new file called `full_content.jsp` in the `/asset/guestbook` folder. 
-    This JSP will display the full content of a guestbook asset. Add the 
+    This JSP displays the full content of a guestbook asset. Add the 
     following contents to this file:
 
         <%@include file="../../init.jsp"%>
@@ -32,10 +32,9 @@ Follow these steps:
                 <dd><%= guestbook.getName() %></dd>
         </dl>
 
-    In this simple JSP, you grab the guestbook object which was added as a 
-    request attribute. Then you display the guestbook name. The `getJspPath` 
-    method of `GuestbookAssetRenderer` added the `gb_guestbook` request 
-    attribute with the following line:
+    This simple JSP grabs the guestbook object from the request and displays the
+    guestbook name. The `getJspPath` method of `GuestbookAssetRenderer` added
+    the `gb_guestbook` request attribute with the following line:
 
         request.setAttribute("gb_guestbook", _guestbook);
 
@@ -48,7 +47,7 @@ Follow these steps:
 
 3.  Next, create a `full_content.jsp` for for displaying the full content of a 
     guestbook entry asset. Create a new file called `full_content.jsp` in the 
-    `/asset/entry` folder. Add the following contents to this file:
+    `/asset/entry` folder. Add the following code to this file:
 
         <%@include file="../../init.jsp"%>
 
@@ -71,13 +70,13 @@ This JSP is almost as simple as the one for guestbooks. The only difference is
 that you're displaying three fields of the guestbook entry entity as opposed to
 one field of the guestbook entity.
 
-Test out your new JSPs by clicking on one of the titles of the guestbook or 
-guestbook entry asset in the Asset Publisher. Your `full_content.jsp` should be 
-rendered by the Asset Publisher portlet:
+Test out your new JSPs by clicking on one of the titles of the guestbook or
+guestbook entry asset in the Asset Publisher. The `full_content.jsp` is rendered
+by the Asset Publisher portlet:
 
 ![Figure 1: When you click on the title for a guestbook or guestbook entry that's displayed by the Asset Publisher, your `full_content.jsp` should be displayed.](../../../../images/asset-publisher-full-content.png)
 
 By default, when displaying the full view of an asset, the Asset Publisher
 displays additional links for Twitter, Facebook, and Google Plus. These links
-allow you to publicize your asset on social media. The *Back* icon and the *View
-in Context* link return you to the Asset Publisher's default view.
+publicize your asset on social media. The *Back* icon and the *View in Context*
+link return you to the Asset Publisher's default view.
