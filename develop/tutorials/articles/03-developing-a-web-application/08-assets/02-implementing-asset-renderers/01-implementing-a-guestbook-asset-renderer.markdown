@@ -1,21 +1,21 @@
 # Implementing a Guestbook Asset Renderer [](id=implementing-a-guestbook-asset-renderer)
 
-Liferay's asset renderers follow the factory pattern so you'll have to create a 
-`GuestbookAssetRendererFactory` that will be responsible for instantiating the 
-`GuestbookAssetRenderer`'s private guestbook object. You'll create both classes 
-in this section.
+@product@'s asset renderers follow the factory pattern, so you must create a 
+`GuestbookAssetRendererFactory` that instantiates the `GuestbookAssetRenderer`'s
+private guestbook object. You'll create both classes in this section.
 
-Get started by creating the `*AssetRenderer` class first.
+Get started by creating the Asset Renderer class first.
 
-## Creating the AssetRenderer Class
+## Creating the `AssetRenderer` Class
 
 Follow these steps to create the class:
 
-1.  Create a new package called `com.liferay.docs.guestbook.asset` in your
-    `guestbook-service` module's `src/main/java` folder. In this package, create a 
-    `GuestbookAssetRenderer` class that extends Liferay's `BaseJSPAssetRenderer` 
-    class. You gain a head-start on implementing the `AssetRenderer` interface 
-    by having your `GuestbookAssetRenderer` extend `BaseJSPAssetRenderer`:
+1.  Create a new package called `com.liferay.docs.guestbook.asset` in the
+    `guestbook-service` module's `src/main/java` folder. In this package, create
+    a `GuestbookAssetRenderer` class that extends Liferay's
+    `BaseJSPAssetRenderer` class. You gain a head-start on implementing the
+    `AssetRenderer` interface by having your `GuestbookAssetRenderer` extend
+    `BaseJSPAssetRenderer`. Start with this code: 
 
         package com.liferay.docs.guestbook.asset;
 
@@ -31,7 +31,7 @@ Follow these steps to create the class:
         import com.liferay.portal.kernel.util.HtmlUtil;
         import com.liferay.portal.kernel.util.PortalUtil;
         import com.liferay.portal.kernel.util.StringUtil;
-        import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
+        import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
         import com.liferay.docs.guestbook.model.Guestbook;
         import com.liferay.docs.guestbook.service.permission.GuestbookPermission;
         import java.util.Locale;
@@ -44,21 +44,23 @@ Follow these steps to create the class:
 
         public class GuestbookAssetRenderer extends 
         BaseJSPAssetRenderer<Guestbook> {
-      
-2.  Add the constructor function next. Your `GuestbookAssetRenderer` class 
-    contains a private `_guestbook` variable. Most of the methods in this class 
-    are simply getters that return fields from this private guestbook object:  
+ 
+2.  Add the constructor and the guestbook class variable next.  Most of the
+    methods in this class are simply getters that return fields from this
+    private guestbook object: 
       
         public GuestbookAssetRenderer(Guestbook guestbook) {
 
                     _guestbook = guestbook;
         }
-            
+        
+        private Guestbook _guestbook;
+ 
 3.  The `BaseJSPAssetRenderer` abstract class that you're extending contains
     dummy implementations of the `hasEditPermission` and `hasViewPermission`
     methods that you must override. Override these dummy implementations with 
     actual permission checks using the `GuestbookPermission` class that you 
-    created in an earlier Learning Path:
+    created earlier:
 
         @Override
         public boolean hasEditPermission(PermissionChecker permissionChecker) 
@@ -77,9 +79,9 @@ Follow these steps to create the class:
           return GuestbookPermission.contains(permissionChecker, guestbookId, 
           ActionKeys.VIEW);
         }
-            
+
 4.  Add the following getter methods to retrieve information about the guestbook 
-    asset:  
+    asset: 
             
         @Override
         public Guestbook getAssetObject() {
@@ -137,14 +139,17 @@ Follow these steps to create the class:
           return super.include(request, response, template);
         }
 
-5.  Override the `getJspPath` method. This method just returns a string that 
-    represents the path to the JSP that should be used to render the guestbook 
-    asset. When Liferay's Asset Publisher portlet tries to display the full 
-    content of an asset, it invokes the asset renderer class's getJspPath method 
-    and passes a string parameter called `template` that equals `"full_content"`. 
-    This returns `"/asset/guestbook/full_content.jsp` when the `"full_content"` 
-    template string is passed as a parameter. You'll create this JSP later when 
-    you're updating your application's user interface:
+    That final method makes several utilities, as well as the `Guestbook`
+    entity, available to @product@ in the `HttpServletRequest` object. 
+
+5.  Override the `getJspPath` method. This method returns a string that 
+    represents the path to the JSP that renders the guestbook asset. When
+    the Asset Publisher displays the full content of an asset, it invokes the
+    asset renderer class's getJspPath method and passes a string parameter
+    called `template` that equals `"full_content"`. This returns
+    `/asset/guestbook/full_content.jsp` when the `full_content` template
+    string is passed as a parameter. You'll create this JSP later when you're
+    updating your application's user interface:
 
           @Override
           public String getJspPath(HttpServletRequest request, String template) {
@@ -158,6 +163,9 @@ Follow these steps to create the class:
             }
           }
 
+6.  Override the `getURLEdit` method. This method returns a URL for editing the
+    asset. 
+
           @Override
           public PortletURL getURLEdit(LiferayPortletRequest liferayPortletRequest,
               LiferayPortletResponse liferayPortletResponse) throws Exception {
@@ -170,6 +178,9 @@ Follow these steps to create the class:
 
             return portletURL;
           }
+
+7.  Override the `getURLViewInContext` method. This method returns a URL to view the
+    asset in its native application. 
 
           @Override
           public String getURLViewInContext(LiferayPortletRequest liferayPortletRequest,
@@ -204,6 +215,9 @@ Follow these steps to create the class:
             return noSuchEntryRedirect;
           }
 
+8.  Override the `getURLView` method. This method returns a URL to view the
+    asset from within the Asset Publisher. 
+
           @Override
           public String getURLView(LiferayPortletResponse liferayPortletResponse, 
           WindowState windowState) throws Exception {
@@ -211,18 +225,26 @@ Follow these steps to create the class:
             return super.getURLView(liferayPortletResponse, windowState);
           }
 
-          private Guestbook _guestbook;
+9.  Close the class and save it: 
+
         }
 
-Next you can create the `*AssetRendererFactory` class.
+10. You have an error in your class, because the `guestbook-service` project
+    doesn't have access to the `GuestbookPortletKeys` object that's in the
+    `guestbook-web` project. Open `guestbook-service`'s `build.gradle` file and
+    add this dependency: 
 
-## Creating the AssetRendererFactory Class
+        compileOnly project(":modules:guestbook-web")
 
-Follow these steps to create the `*AssetRendererFactory`:
+Next you can create the `AssetRendererFactory` class.
 
-1.  Create a Component class called `GuestbookAssetRendererFactory` that uses the 
-    `AssetRendererFactory` service and extends Liferay's  
-    `BaseAssetRendererFactory` class:
+## Creating the `GuestbookAssetRendererFactory` Class
+
+Follow these steps to create the `GuestbookAssetRendererFactory`:
+
+1.  Create a class in the `com.liferay.docs.guestbook.asset` package called
+    `GuestbookAssetRendererFactory` that extends @product@'s
+    `BaseAssetRendererFactory` class. Replace its code with this starter code:
 
         package com.liferay.docs.guestbook.asset;
 
@@ -263,11 +285,16 @@ Follow these steps to create the `*AssetRendererFactory`:
             setSearchable(true);
           }
 
-2.  Implement the `getAssetRenderer` method. This method is responsible for 
-    constructing new `GuestbookAssetRenderer`s for specific guestbooks. It uses 
-    the `classPK` (primary key) parameter to retrieve the guestbook from the 
-    database. Then it calls the `GuestbookAssetRenderer`'s constructor, passing 
-    the retrieved guestbook as an argument:
+    This code contains the class declaration and the constructor. It sets the
+    class name it creates an `AssetRenderer` for, a portlet ID, and a boolean
+    (`_LINKABLE`) set to `true`. The boolean denotes that the methods that
+    provide URLs in the generated `AssetRenderer` are implemented. 
+
+2.  Implement the `getAssetRenderer` method, which constructs new
+    `GuestbookAssetRenderer`s for specific guestbooks. It uses the `classPK`
+    (primary key) parameter to retrieve the guestbook from the database. Then it
+    calls the `GuestbookAssetRenderer`'s constructor, passing the retrieved
+    guestbook as an argument:
 
         @Override
         public AssetRenderer<Guestbook> getAssetRenderer(long classPK, int type) 
@@ -284,10 +311,10 @@ Follow these steps to create the `*AssetRendererFactory`:
           return guestbookAssetRenderer;
         }
 
-2.  You're extending `BaseAssetRendererFactory` which is an abstract class that 
-    implements the `AssetRendererFactory` interface. Each asset renderer factory 
-    class must implement `getClassName` and `getType` methods (among others) 
-    which ensure that your custom asset is associated with the correct entity:
+2.  You're extending `BaseAssetRendererFactory`, an abstract class that
+    implements the `AssetRendererFactory` interface. Each asset renderer factory
+    must implement `getClassName` and `getType` methods (among others) to
+    ensure that your custom asset is associated with the correct entity:
 
           @Override
           public String getClassName() {
