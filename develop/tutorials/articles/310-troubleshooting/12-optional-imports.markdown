@@ -1,0 +1,88 @@
+# Declaring Optional Import Package Requirements
+
+When developing @product@ modules, it's possible declare *optional* 
+dependencies. An optional dependency is a dependency that your module can use 
+but doesn't require. A module with an optional dependency can use the dependency 
+if it's available, but can still function without it. 
+
++$$$
+
+**Important:** You should try to avoid optional dependencies. The simplest 
+module designs rely on normal dependencies. If an optional dependency seems 
+desirable, it's often the case that your module is trying to provide distinct 
+types of functionality. In such a situation, it's best to split your module into 
+multiple modules that each provide smaller, more focused functionality. 
+
+$$$
+
+If you decide that your module requires an optional dependency, follow these 
+steps to add it: 
+
+1.  Declare the package that your module optionally requires as an optional 
+    dependency in your module's `bnd.bnd` file:
+
+        Import-Package: com.liferay.demo.foo;resolution:="optional"
+
+    <!-- 
+    Replace the blog article link with a link to actual documentation. Need to 
+    find actual documentation explaining the difference between optional imports 
+    and dynamic imports. 
+    -->
+    Note that you can use either an optional or dynamic import. The differences 
+    are explained 
+    [in this blog post](http://web.ist.utl.pt/ist162500/?p=65). 
+
+2.  Create a component to use the optional package: 
+
+        import com.liferay.demo.foo.Foo; // A class from the optional package
+
+        @Component(
+            enabled = false // instruct declarative services to ignore this component by default
+        )
+        public class OptionalPackageConsumer implements Foo {...}
+
+3.  Create a second component to act as a controller of the first component. The 
+    second component checks the classloader to determine whether the optional 
+    class exists on the classpath. It handles both cases appropriately. If the 
+    optional class isn't on the classpath, this means catching any 
+    `ClassNotFoundException`. For example: 
+
+        @Component
+        public class OptionalPackageConsumerStarter {
+   	        @Activate
+   	        void activate(ComponentContext componentContext) {
+                try {
+                    Class.forName(com.liferay.demo.foo.Foo.class.getName());
+
+                    componentContext.enableComponent(OptionalPackageConsumer.class.getName());
+                }
+                catch (Throwable t) {
+                    _log.warn("Could not find {}", t.getMessage()); // Could use _log.info instead
+                }
+            }
+        }
+
+If the classloader check in the controller component is successful, the client 
+component is enabled. This check is automatically performed whenever there are 
+any wiring changes to the module containing these components (Declarative 
+Services components are always restarted when there are wiring changes). 
+
+As above, if you install the module when the optional dependency is missing from 
+@product@'s OSGi runtime, your controller component catches a 
+`ClassNotFoundException` and logs a warning or info message (or takes whatever 
+other action you implement to handle this case). If you install the optional 
+dependency, refreshing your module triggers the OSGi bundle lifecycle events 
+that trigger your controller's `activate` method and your check for the optional 
+dependency. Since your dependency exists, your client component uses it. 
+
+Note that you can refresh a bundle from @product@'s Gogo shell with this 
+command: 
+
+    equinox:refresh [bundle ID]
+
+For more information about optional dependencies, see 
+[OSGi Enroute's documentation](http://enroute.osgi.org/tutorial_wrap/220-optional-dependencies). 
+
+## Related Topics
+
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
