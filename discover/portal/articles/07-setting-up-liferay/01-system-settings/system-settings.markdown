@@ -75,20 +75,34 @@ overridden from each application instance.
 
     ![Figure 7: Some System Settings entries have a Default Configuration for All Instances scope.](../../../images/system-settings-instance-scope.png)
 
+If an application is configurable from Instance Settings and System Settings,
+use System Settings to configure it whenever possible. If you use Instance
+Settings and later want to revert to using the System Settings default
+configurations, look for the *Reset Values* button from the Instance Settings
+entry.
+
+![Figure x: Some Instance Settings entries have a *Reset Values* button so you can safely revert your configuration changes, falling back to the System Settings defaults.](../../../images/instance-settings-reset-values.png)
+
+The Reset Values button removes configuration values from the @product@ database
+so you can rely on the defaults specified in System Settings. If there is no
+Reset Values button for an Instance Settings entry, once you use Instance
+Settings to configure the application, you cannot later decide to use System
+Settings. Only changes to Instance Settings will be recognized.
+
 <!-- Perhaps show a proof-of-concept example here? -->
 
 <!-- Need a Lunar Resort example? -->
 
 ## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
 
-What if you change a lot of default configurations in System Settings, and then you
-need to make the same configurations in another Liferay installation <!--Another
-cluster?-->? Don't worry, you won't need to remember every choice you make, then
-manually duplicate all the configurations. The System Settings application lets
-you export individual configurations (for example, just the configurations made
-to the Dynamic Data Lists entry), or export all of the settings you've made in
-the System Settings interface. Then you can just deploy them in the target
-Liferay installation.
+What if you change a lot of default configurations in System Settings, and then
+you need to make the same configurations in another Liferay installation? Don't
+worry, you won't need to remember every choice you make, then manually duplicate
+all the configurations. The System Settings application lets you export
+individual configurations (for example, just the configurations made to the
+Dynamic Data Lists entry), or export all of the settings you've made in the
+System Settings interface. Then you can just deploy them in the target Liferay
+installation.
 
 In the case of a single entry, just click the actions button
 (![Actions](../../../images/icon-actions.png)), then click *Export*. A `.config` file
@@ -106,7 +120,7 @@ System Settings.
 The file format was changed to fix a bug with multi-value settings, which the
 `.cfg` file format did not handle properly. See
 [https://issues.liferay.com/browse/LPS-67890](https://issues.liferay.com/browse/LPS-67890)
-for more information. Any @product@ system later than those listed above use the
+for more information. Any @product@ system later than those listed above uses the
 `.config` file format.
 
 $$$
