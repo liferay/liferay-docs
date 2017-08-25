@@ -1,28 +1,33 @@
-# Understanding Search and Indexing
+# Understanding Search and Indexing [](id=understanding-search-and-indexing)
 
-By default, Liferay uses Elasticsearch, a search engine backed by the popular
-Lucene Java search library, to implement its search and indexing functionality.
-To avoid the resource-hogging table merges that would be necessary to just
-search the relevant fields in the database, using a search engine like
-Elasticsearch lets you convert searchable entities into *documents*. Documents
-are not documents in the ordinary English sense of the word. In Elasticsearch,
-they are your searchable database entities converted into JSON objects. After
-you implement an indexer for guestbook entries, a document will be created for
-each guestbook entry. When you implement the guestbook entry indexer, you'll
-specify which guestbook entry fields should be added to each guestbook entry
-document. All the guestbook entry documents are added to an index. When the
-index is searched, a *hits* object is returned that contains pointers to the
-documents that match the search query. Searching for entities with a search
-engine, via an index, is faster than searching for entities in the database, and
-Elasticsearch provides some additional features like relevancy scoring and fuzzy
-search queries. 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 1 of 3</p>
+</div>
 
-Along with the search engine, Liferay has its own search infrastructure. Why
-does Liferay add to the existing Elasticsearch API? There are a few reasons:
+By default, @product@ uses Elasticsearch, a search engine backed by the popular
+Lucene search library, to implement its search and indexing functionality. To 
+avoid the resource-hogging table merges necessary to search the database, using 
+a search engine like Elasticsearch lets you convert searchable entities into 
+*documents*. In Elasticsearch, documents are searchable database entities 
+converted into JSON objects. After you implement an indexer for guestbook 
+entries, @product@ creates a document for each entry. This indexer specifies 
+which guestbook entry fields to add to each guestbook entry document. All the 
+guestbook entry documents are then added to an index. When the index is 
+searched, a *hits* object is returned that contains pointers to the documents 
+matching the search query. Searching for entities with a search engine via an 
+index is faster than searching for entities in the database. Elasticsearch 
+provides some additional features like relevancy scoring and fuzzy search 
+queries. 
 
-- Ensure indexed documents include the fields needed by @product@
-    (for example, `entryClassName`, `entryClassPK`, `assetTagNames`, `assetCategories`,
-    `companyId`, `groupId`, staging status).
-- Ensure the scope of returned search results is appropriate by applying the
-  right filters to search requests.
-- Provide permission checking and hit summaries to display in the search portlet.
+Along with the search engine, @product@ has its own search infrastructure. 
+@product@ adds to the existing Elasticsearch API for a few reasons: 
+
+-   To ensure indexed documents include the fields needed by @product@ (e.g., 
+    `entryClassName`, `entryClassPK`, `assetTagNames`, `assetCategories`, 
+    `companyId`, `groupId`, staging status). 
+-   To ensure the scope of returned search results is appropriate by applying 
+    the right filters to search requests. 
+-   To provide permission checking and hit summaries to display in the search 
+    portlet. 
+
+Next, you'll create the indexer for guestbooks. 

@@ -1,27 +1,32 @@
 # Creating a Guestbook Indexer [](id=creating-a-guestbook-indexer)
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 2 of 3</p>
+</div>
+
+Follow these steps to create the indexer for guestbooks:
+
 1.  Create a new package in the `guestbook-service` module project's
     `src/main/java` folder called `com.liferay.docs.guestbook.search`. In this
     package, create a new class called `GuestbookIndexer` that extends
-    `com.liferay.portal.kernel.search.BaseIndexer`. Add an `@Component`
-    annotation to declare that the `GuestbookIndexer` class provides an
-    implementation of the `Indexer` service. Then extend `BaseIndexer`, passing
-    in the `Guestbook` model interface as a type parameter:
+    `com.liferay.portal.kernel.search.BaseIndexer` with `Guestbook` as a type 
+    argument. Add an `@Component` annotation to declare that the 
+    `GuestbookIndexer` class provides an implementation of the `Indexer` 
+    service. Also, define the `CLASS_NAME` variable by getting the name of the 
+    `Guestbook` model class. This is necessary to override the `getClassName` 
+    method from `BaseIndexer`. @product@ uses this method to determine the 
+    object this Indexer indexes: 
 
         @Component(
             immediate = true,
-            service = Indexer.class)
+            service = Indexer.class
+        )
         public class GuestbookIndexer extends BaseIndexer<Guestbook> {
-          
+
             public static final String CLASS_NAME = Guestbook.class.getName();
         }
 
-    While you're at it, define the `CLASS_NAME` variable by getting the name of
-    the `Guestbook` model class. This is necessary to override the
-    `getClassName` method from `BaseIndexer`. @product@ uses this method to
-    determine the object this Indexer indexes. 
-
-2.  Add the `GuestbookIndexer` constructor. 
+2.  Add the `GuestbookIndexer` constructor: 
 
         public GuestbookIndexer() {
             setDefaultSelectedFieldNames(
@@ -32,37 +37,37 @@
             setFilterSearch(true);
         }
 
-    The constructor does several things:
-    - It sets the default selected field names. These fields are used to
-    - retrieve results documents from the search engine at search time.
-    - It sets the default selected localized field names, which ensures that the
-      localized version of the field is searched and returned at search time.
-    - It makes the search results permissions aware at search time, as well as 
-      in the index. Without this call, *all* guestbooks that match a search 
-      query are returned, regardless of the user's permissions on the resource.
-    - It sets filter search to true, enabling a last document-by-document hard check
-      on the `VIEW` permissions of search results. This is redundant most of the time,
-      but it's a safeguard against unexpected problems like the search index
-      becoming stale, or if permission inheritance doesn't happen quickly enough.
-      Most of @product@'s internal apps use this setting. If not set, the
-      indexer relies on the permissions information indexed in the search
-      engine.
+    This constructor does several things:
 
-3.  Since you're extending the abstract class `BaseIndexer` instead of
-    implementing the `Indexer` interface directly, you must override its abstract
-    methods. In the `getClassName` method, return the `CLASS_NAME` constant
-    defined at the top of the class.
+    - Sets the default selected field names. These fields are used to retrieve 
+      results documents from the search engine. 
+    - Sets the default selected localized field names. This ensures that the 
+      localized version of the field is searched and returned. 
+    - Makes the search results permissions-aware at search time, as well as in 
+      the index. Without this, a search query returns *all* matching guestbooks 
+      regardless of the user's permissions on the resource. 
+    - Sets filter search to true, enabling a document-by-document check of the 
+      search results' `VIEW` permissions. This is redundant most of the time, 
+      but safeguards against unexpected problems like the search index becoming 
+      stale, or if permission inheritance doesn't happen fast enough. Most of 
+      @product@'s internal apps use this setting. If not set, the indexer relies 
+      on the permissions information indexed in the search engine. 
+
+3.  Since you extend the abstract class `BaseIndexer` instead of implementing 
+    the `Indexer` interface directly, you must override its abstract methods. In 
+    the `getClassName` method, return the `CLASS_NAME` constant defined at the 
+    top of the class: 
 
         @Override
         public String getClassName() {
             return CLASS_NAME;
         }
 
-    This returns `com.liferay.docs.guestbook.model.Guestbook`.
+    This returns `com.liferay.docs.guestbook.model.Guestbook`. 
 
 4.  Next, you must override `hasPermission`. Call the `contains` method of the
     `GuestbookPermission` helper class that you created in an earlier Learning
-    Path:
+    Path section: 
 
         @Override
         public boolean hasPermission(
@@ -74,10 +79,10 @@
                 permissionChecker, entryClassPK, ActionKeys.VIEW);
         }
 
-    Here you're ensuring that the `VIEW` permission on guestbooks can be used to
-    find and display appropriate search results.
+    Here, you ensure that the `VIEW` permission on guestbooks can be used to
+    find and display appropriate search results. 
 
-5.  Override the `postProcessContextBooleanFilter` method:
+5.  Override the `postProcessContextBooleanFilter` method: 
 
         @Override
         public void postProcessContextBooleanFilter(
@@ -86,17 +91,17 @@
             addStatus(contextBooleanFilter, searchContext);
         }
 
-    This method is invoked while the main search query is being constructed. The
-    base implementation of `addStatus` in `BaseIndexer` adds the workflow status
-    to the filter, to ensure that entities that have the status
-    `STATUS_IN_TRASH` aren't added to the query. You'll learn more about
-    workflow later. 
+    This method is invoked while the main search query is being constructed. The 
+    base implementation of `addStatus` in `BaseIndexer` adds the workflow status 
+    to the filter. This ensures that entities with the status `STATUS_IN_TRASH` 
+    aren't added to the query. You'll learn more about workflow later. 
 
-6.  Override `postProcessSearchQuery` to add clauses to the ongoing search query.
-    It's best to add the localized value of any full text fields that might
-    contribute to search relevance. By specifying the localized search term, you
-    ensure that the regular search term has the locale appended (`title_en_US`, for
-    example). For the guestbook entity, just add the title field here.
+6.  Override `postProcessSearchQuery` to add clauses to the ongoing search 
+    query. It's best to add the localized value of any full text fields that 
+    might contribute to search relevance. By specifying the localized search 
+    term, you ensure that the regular search term has the locale appended (e.g., 
+    `title_en_US`). For the guestbook entity, add the title field 
+    (`Field.TITLE`): 
 
         @Override
         public void postProcessSearchQuery(
@@ -107,19 +112,19 @@
             addSearchLocalizedTerm(searchQuery, searchContext, Field.TITLE, false);
         }
 
-7.  Override the `doDelete()` method, which deletes the document corresponding to
-    the `Guestbook` object parameter. Call `BaseIndexer`'s `deleteDocument`
-    method, passing the guestbook's company ID and guestbook ID as parameters:
+7.  Override the `doDelete()` method, which deletes the document corresponding 
+    to the `Guestbook` object parameter. Call `BaseIndexer`'s `deleteDocument` 
+    method with the guestbook's company ID and guestbook ID: 
 
         @Override
         protected void doDelete(Guestbook guestbook) throws Exception {
             deleteDocument(guestbook.getCompanyId(), guestbook.getGuestbookId());
         }
 
-8.  Implement the `doGetDocument` method, which is where you select the fields
-    from the entity to build a search document that's indexed by the search
-    engine. The main searchable field for guestbooks is the guestbook name,
-    which is stored in the title field of a guestbook search document: 
+8.  Implement the `doGetDocument` method to select the entity's fields to build 
+    a search document that's indexed by the search engine. The main searchable 
+    field for guestbooks is the guestbook name, which is stored in a guestbook 
+    search document's title field: 
 
         @Override
         protected Document doGetDocument(Guestbook guestbook)
@@ -138,21 +143,22 @@
             return document;
         }
 
-    Because @product@ supports localization, you should too. The above code gets
-    the default locale from the site by passing in the `Guestbook`'s group ID to
+    Because @product@ supports localization, you should too. The above code gets 
+    the default locale from the site by passing the `Guestbook`'s group ID to 
     the `getSiteDefaultLocale` method, then using it to get the localized name
     of the guestbook's title field. The retrieved site locale is appended to the
-    field (`title_en_US` for example) so the field gets passed to the search
+    field (e.g., `title_en_US`), so the field gets passed to the search
     engine and goes through the right analysis and
-    [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html).
+    [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
 
-9.  Implement `doGetSummary`. A summary is a text-based condensed version of the 
-    entity that can be displayed generically. You create it by combining key parts 
-    of the entity's data so users can browse through search results to find the 
-    entity they want. Call `BaseIndexer`'s `createSummary` method. Set the maximum 
-    size of the summary content using `summary.setMaxContentLength`. Most 
-    @product@ applications use a value of `200`, so it's a good idea to use the 
-    same, so the result summaries returned to users are uniform.
+9.  Implement the `doGetSummary` method to return a *summary*. A summary is a 
+    condensed, text-based version of the entity that can be displayed 
+    generically. You create it by combining key parts of the entity's data so 
+    users can browse through search results to find the entity they want. Call 
+    `BaseIndexer`'s `createSummary` method, then use 
+    `summary.setMaxContentLength` to set the summary content's maximum size. 
+    Most @product@ applications use a value of `200`, so it's a good idea to use 
+    the same to ensure uniform result summaries: 
       
         @Override
         protected Summary doGetSummary(
@@ -164,13 +170,12 @@
             return summary;
         }
 
-10. Override the overloaded `doReindex` method, which gets called whenever an
-    entity is updated or a user explicitly triggers a reindex. The first
-    `doReindex` method takes a single object argument. Retrieve the associated
-    document with `BaseIndexer`'s `getDocument` method; then invoke
-    `IndexWriterHelper`'s `updateDocument` method to update (reindex) the
-    document:
-      
+10. Override the overloaded `doReindex` method, which gets called when an entity 
+    is updated or a user explicitly triggers a reindex. The first `doReindex` 
+    method takes a single object argument. Retrieve the associated document with 
+    `BaseIndexer`'s `getDocument` method, then invoke `IndexWriterHelper`'s 
+    `updateDocument` method to update (reindex) the document:
+
         @Override
         protected void doReindex(Guestbook guestbook)
             throws Exception {
@@ -181,12 +186,11 @@
                 isCommitImmediately());
         }
 
-11. The second `doReindex` method takes two arguments: a String, `className`,
-    and a long, `classPK`. To implement this method, you retrieve the guestbook
-    corresponding to the primary key by calling `GuestbookLocalService`'s
-    `getGuestbook` method, passing in the `classPK` parameter. Once you've
-    retrieved the guestbook, pass it to the first `doReindex` method (see
-    above):
+11. The second `doReindex` method takes two arguments: a `className` string, and 
+    a `classPK` long. In this method, you retrieve the guestbook corresponding 
+    to the primary key by calling `GuestbookLocalService`'s `getGuestbook` 
+    method, passing in the `classPK` parameter. Then pass the guestbook to the 
+    first `doReindex` method (see above): 
 
         @Override
         protected void doReindex(String className, long classPK)
@@ -195,13 +199,12 @@
             Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
             doReindex(guestbook);
         }
- 
-12. The third (and final) `doReindex` method indexes all entities that exist in
-    the current instance (`companyId`). It takes an array of `String`s
-    (`ids`), as an argument. `GetterUtil.getLong(ids[0])` retrieves the first
-    String in the array and casts it to a `long`, stores it in a `companyId`
-    variable, and passes it as an argument to the `reindexGuestbooks` helper
-    method.
+
+12. The third (and final) `doReindex` method indexes all entities in the current 
+    @product@ instance (`companyId`). It takes a string array (`ids`) as an 
+    argument. `GetterUtil.getLong(ids[0])` retrieves the first string in the 
+    array, casts it to a `long`, stores it in a `companyId` variable, and passes 
+    it as an argument to the `reindexGuestbooks` helper method: 
 
         @Override
         protected void doReindex(String[] ids)
@@ -211,11 +214,11 @@
             reindexGuestbooks(companyId);
         }
 
-<!-- NEEDS DESCRIPTION -->
-13. Provide the `reindexGuestbooks` helper method. You use an actionable dynamic
-    query helper method to retrieve all the guestbooks in the specified company.
-    Each guestbook's document is added to a collection. This query was generated
-    for you when you built the services with Service Builder. 
+13. To reindex guestbooks, provide the helper method `reindexGuestbooks`. In 
+    this method, use an actionable dynamic query helper method to retrieve all 
+    the guestbooks in the @product@ instance. Service Builder generated this 
+    query method for you when you built the services. Each guestbook's document 
+    is then retrieved and added to a collection: 
       
         protected void reindexGuestbooks(long companyId)
           throws PortalException {
@@ -248,8 +251,8 @@
           indexableActionableDynamicQuery.performActions();
         }
 
-13. Get the log for the guestbook model and add the necessary service
-    references at the bottom of the file:
+13. Get the log for the guestbook model and add the necessary service references 
+    at the bottom of the file:
  
         private static final Log _log =
           LogFactoryUtil.getLog(GuestbookIndexer.class);
@@ -269,13 +272,11 @@
         compile group: "javax.portlet", name: "portlet-api", version: "2.0"
         compile group: "javax.servlet", name: "servlet-api", version: "2.5"
 
-16. Export the `com.liferay.docs.guestbook.search` package in the
+16. Export the `com.liferay.docs.guestbook.search` package in the 
     `guestbook-api` module's `bnd.bnd` file. The export section should look
     like this: 
 
         Export-Package: com.liferay.docs.guestbook.service.permission,\
-				 com.liferay.docs.guestbook.search
+                 com.liferay.docs.guestbook.search
 
-The guestbook indexer class is complete! Next you can update the service
-layer.
-
+The guestbook indexer class is complete! Next, you can update the service layer. 
