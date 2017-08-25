@@ -6,23 +6,22 @@ environments is straightforward.
 -   `ClassNotFoundException`: thrown when looking up a class that isn't on the
     classpath or using an invalid name to look up a class.
 -   `NoClassDefFoundError`: occurs when a compiled class references
-    another class that isn't in the run time classpath.
+    another class that isn't on the run time classpath.
 
-In OSGi environments, however, there are additional cases in which a
-`ClassNotFoundException` or `NoClassDefFoundError` can occur. Here are two
-common cases:
+In OSGi environments, however, there are additional cases where a
+`ClassNotFoundException` or `NoClassDefFoundError` can occur. Here are two:
 
-1.  Bundle doesn't import the class's package.
+1.  The bundle doesn't import the class's package.
 
-2.  Class no longer exists in the imported package.
+2.  The class no longer exists in the imported package.
 
 This tutorial explains how to handle each case.
 
-## Case 1: Bundle doesn't import the class's package [](id=case-1-bundle-doesnt-import-the-class-package)
+## Case 1: The Bundle doesn't import the class's package [](id=case-1-bundle-doesnt-import-the-class-package)
 
 For a bundle (module or WAB) to consume a another bundle's exported class, the
-consuming bundle must import (e.g., in an `Import-Package` header in your
-bundle's `bnd.bnd` file) the exported package containing the class. If the
+consuming bundle must import the exported package containing the class (for
+example, in an `Import-Package` header in the bundle's `bnd.bnd` file). If the
 consumer accesses the class without importing it, a `ClassNotFoundException` or
 `NoClassDefFoundError` occurs.
 
@@ -57,7 +56,9 @@ bundles look up or reference that class.
 
 Here are a couple options to consider since the class no longer exists in the package:
 
--   Adapt to the new API. To learn how to adapt, read the package's/module's Javadoc, release notes, and or formal documentation. You can ask the author or investigate forums.  
+-   Adapt to the new API. To learn how to adapt, read the package's/module's
+    Javadoc, release notes, and or formal documentation. You can ask the author
+    or investigate forums. 
 
 -   Revert to the module version you used previously. Deployed module versions
     reside in `[Liferay_Home]/osgi/`. See
