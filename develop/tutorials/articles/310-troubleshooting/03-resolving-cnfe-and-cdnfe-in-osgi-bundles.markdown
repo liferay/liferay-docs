@@ -72,6 +72,6 @@ or `NoClassDefFoundError`. For additional information on `NoClassDefFoundError`
 see OSGi Enroute's article
 [What is NoClassDefFoundError?](http://enroute.osgi.org/faq/class-not-found-exception.html).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Backing up Liferay Installations](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
