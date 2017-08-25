@@ -31,10 +31,12 @@ The steps for doing so are shown here:
 
         pod 'Liferay-iOS-SDK'
 
-3. Run `$ pod install` from your project's directory. This downloads the latest 
+3. Run `pod install` from your project's directory. This downloads the latest 
    version of the Liferay iOS Mobile SDK and creates a `.xcworkspace` file. 
    CocoaPods also downloads all the necessary dependencies and configures your 
-   workspace.
+   workspace. Note that you may have to run `pod repo update` before running 
+   `pod install`; this ensures you have the latest version of the CocoaPods 
+   repository on your machine.
 
 4. Use the `.xcworkspace` file to open your project in Xcode.
 
@@ -72,8 +74,6 @@ prebuilt Mobile SDK manually if you don't want to use CocoaPods.
 5. If you're manually installing Liferay's prebuilt Mobile SDK, it also requires 
    [AFNetworking 2.5.3](https://github.com/AFNetworking/AFNetworking/releases/tag/2.5.3).
    Add its source code to your project.
-   
-6. Start using it!
 
 Great! Now you know how to manually install a Mobile SDK in your iOS apps. 
 

@@ -6,7 +6,7 @@ released as an
 [AAR](http://tools.android.com/tech-docs/new-build-system/aar-format) file 
 hosted in jCenter. 
 
-There are three different ways to install Screens: 
+There are three different ways to install Screens. This tutorial shows you each: 
 
 1. With Gradle: Gradle is the build system Android Studio uses to build Android 
    projects. We therefore recommend that you use it to install Screens. 
@@ -15,9 +15,13 @@ There are three different ways to install Screens:
 
 3. Manually
 
-This tutorial shows you each installation method and concludes by demonstrating 
-how to configure Screens to communicate with your Liferay instance. Let the 
-preparations begin! 
++$$$
+
+**Note:** After installation, you must configure Liferay Screens to communicate 
+with your Liferay Portal instance. The last section in this tutorial shows you 
+how to do this. 
+
+$$$
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ABxCUUg7zhs" frameborder="0" allowfullscreen></iframe>
 
