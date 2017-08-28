@@ -203,13 +203,16 @@ service references on the fly.
 
 1.  Create a configuration file named after the referencing component.
 
-    Here's the configuration file name for the example component:
+    Here's a configuration file name for the example component:
 
-        override.my.service.reference.OverrideMyServiceReference.config
+        override.my.service.reference.OverrideMyServiceReference.cfg
  
-    Note: For deploying to Liferay DXP DE 7.0 Fix Pack 8 or later, use file
-    suffix `.config`. For earlier Liferay DXP DE 7.0 Fix Packs or Liferay CE
-    Portal 7.0 GA3 or earlier, use suffix `.cfg`. 
+    Note: Liferay DXP DE 7.0 Fix Pack 8 and later and Liferay CE Portal 7.0 GA
+    and later support the Apache Felix ConfigAdmin implementation of OSGi
+    Configuration Admin files. Felix ConfigAdmin uses the file suffix `.config`
+    and supports additional types, such as arrays and vectors. The syntax for
+    `.cfg` and `.config` files can be found
+    [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html). 
 
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
@@ -228,10 +231,17 @@ service references on the fly.
 
     $$$
 
-    The example configuration file specifies the following reference target
-    entry:
+    A `.cfg` file reference target entry for the example looks like this:
     
         _someService.target=(component.name=overriding.service.reference.service.CustomServiceImpl)
+
+    A `.config` file entry for the example looks like this:
+
+        _someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)"
+
+    The [`.config` file syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
+    requires surrounding the value in double quotes and escaping the value's
+    equals sign. 
 
 3.  Optionally, you can add a `cardinality.minimum` entry to specify the
     number of services the reference can use. Here's the format:
