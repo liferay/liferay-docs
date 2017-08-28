@@ -209,7 +209,7 @@ service references on the fly.
     +$$$
 
     **Note:** Liferay DXP DE 7.0 Fix Pack 8 and later, and Liferay CE Portal 7.0 
-    GA and later support the Apache Felix ConfigAdmin implementation of OSGi 
+    GA4 and later support the Apache Felix ConfigAdmin implementation of OSGi 
     Configuration Admin files. Felix ConfigAdmin uses the file suffix `.config` 
     and supports additional types, such as arrays and vectors. The syntax for 
     `.cfg` and `.config` files can be found 
