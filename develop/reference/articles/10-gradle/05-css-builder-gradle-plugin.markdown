@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.0.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.1"
     }
 
     repositories {
@@ -79,6 +79,7 @@ Property Name | Default Value
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
+`appendCssImportTimestamps` | `boolean` | `true` | Whether to append the current timestamp to the URLs in the `@import` CSS at-rules. It sets the `sass.append.css.import.timestamps` argument.
 `cssFiles` | `FileCollection` | \- | The SCSS files to compile. *(Read-only)*
 `dirNames` | `List<String>` | `["/"]` | The name of the directories, relative to [`docrootDir`](#docrootdir), which contain the SCSS files to compile. All sub-directories are searched for SCSS files as well. It sets the `sass.dir` argument.
 <a name="docrootdir"></a>`docrootDir` | `File` | `null` | The base directory that contains the SCSS files to compile. It sets the `sass.docroot.dir` argument.
@@ -132,7 +133,7 @@ manually adding a dependency to the `cssBuilder` configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.0.28"
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.1.1"
 }
 ```
 
