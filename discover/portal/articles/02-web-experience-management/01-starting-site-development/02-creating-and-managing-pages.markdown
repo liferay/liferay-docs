@@ -375,14 +375,21 @@ The first option you're given (and the default option selected when customizing
 an indiviual page) is *Details*. This option lets you name the page for any
 localizations you need, set whether the page is hidden on the navigation menu,
 set an easy to remember, friendly URL for the page, and select the page type.
-Plus you can specify how apps are arranged on a page. Choose from the
-available installed templates to modify the layout. It's very easy for
-developers to define custom layouts and add them to the list. This is covered
-more thoroughly in the
-[Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
-tutorial.
+Plus you can specify how apps are arranged on a page. Choose from the available 
+installed templates to modify the layout.
 
-<!-- TODO: Update tutorial link to 7.0, when available. -Cody -->
++$$$
+
+**Note:** If you require a more complex page layout, you can install the Liferay 
+Layout Templates app from the [Marketplace](https://web.liferay.com/marketplace) 
+to access four additional layout templates.
+
+$$$
+
+It's very easy for developers to define custom layouts and add them to the list. 
+This is covered more thoroughly in the
+[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)
+tutorial.
 
 #### Look and Feel [](id=look-and-feel)
 
@@ -508,10 +515,8 @@ app and Blogs Aggregator app to a page.
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
 To find more information about developing custom layout templates, please refer
-to the [Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
+to the [Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)
 tutorial. 
-
-<!-- TODO: Replace link above. -Cody -->
 
 Next, you'll practice personalizing pages using page customizations!
 
