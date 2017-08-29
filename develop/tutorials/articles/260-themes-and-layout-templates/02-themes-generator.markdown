@@ -107,9 +107,19 @@ you might want to consider using Ruby Sass instead of node-sass.
 As an alternative to using Sass from node-sass, you can use Sass from Ruby.
 Liferay themes require using Compass along with Ruby based Sass. In order to
 install and use Sass and Compass, you must install Ruby via the [Ruby installer](http://rubyinstaller.org/).
-The following command installs the Sass and Compass gems.
 
-    gem install sass compass
++$$$
+
+**Note:** Sass version 3.5 has compatibility issues with Compass. We recommend 
+that you install Sass version 3.4.0 as shown in the command below.  
+
+$$$
+
+The following commands install the Sass and Compass gems:
+
+    gem install sass -v "=3.4.0"
+    
+    gem install compass
 
 After creating a theme project in the next section, you'll learn how to
 configure a project to use Ruby based Sass and Compass.

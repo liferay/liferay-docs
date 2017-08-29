@@ -33,6 +33,14 @@ downloaded @product@. Use the following command to start it:
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar
 
++$$$
+
+**Warning**: To prevent the tool's expanded command from growing too large for
+Windows, execute the initial command in the
+`com.liferay.portal.tools.db.upgrade.client.jar` file's folder.
+
+$$$
+
 By default, the tool is executed with the following Java parameters:
     
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
