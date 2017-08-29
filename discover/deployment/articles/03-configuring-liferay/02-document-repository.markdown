@@ -194,8 +194,8 @@ configuration file, called `repository.xml`.
 
 +$$$
 
-**Note:** JCR Store is deprecated as of Liferay DXP Fix Pack 14 and Liferay 
-Portal CE 7.0 GA4.
+**Note:** JCR Store is deprecated as of Liferay DXP Digital Enterprise Fix Pack
+14 and Liferay Portal CE 7.0 GA4.
 
 $$$
 
