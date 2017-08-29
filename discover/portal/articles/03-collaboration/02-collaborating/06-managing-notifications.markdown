@@ -1,4 +1,4 @@
-# Managing Notifications and Requests
+# Managing Notifications and Requests [](id=managing-notifications-and-requests)
 
 Have you subscribed to a blog, message board, or another piece of content? Has 
 someone mentioned you in a post, or sent you a private message, invitation, or 
@@ -9,20 +9,20 @@ notifications and requests you have.
 
 ![Figure 1: The number of notifications and requests are displayed above your profile image](../../../images/notifications-icon.png)
 
-To access notifications and requests, you can either click the 
-notifications icon on your user profile image, or open the Control Menu and 
-select *My Account* &rarr; *Notifications* under the user menu. The 
+To access notifications and requests, you can either click the notifications 
+icon on your user profile image, or open the Control Menu and select 
+*My Account* &rarr; *Notifications* under the user menu. The 
 *Notifications List* section is selected by default. This is where all your 
 notifications are displayed. Click the *Requests List* link in the navbar to 
 view and manage your requests. 
 
 ![Figure 2: The *Notifications List* section displays all your notifications in a paginated list.](../../../images/notifications-list.png)
 
-## Managing Notifications
+## Managing Notifications [](id=managing-notifications)
 
 Notifications can start to pile up after some time, especially if you've been 
-away for a few days. No worries though, since Liferay Portal 7.0 DE 14 the 
-Management Bar gives you several ways to filter and sort your notifications.
+away for a few days. Since Liferay DXP SP5 and Liferay Portal CE 7.0 GA5, the 
+Management Bar gives you several ways to filter and sort your notifications. 
 
 The following filters are available for notifications:
 
@@ -34,15 +34,15 @@ notification.
 
 You can also sort your notifications by *Date*. By default notifications are 
 listed by date in descending order. Click the up arrow icon in the management 
-bar to sort notifications by ascending order instead. The down arrow icons lets 
+bar to sort notifications by ascending order instead. The down arrow icon lets 
 you sort notifications by descending order. 
 
 To mark a notification as read, select *Mark as read* from the actions menu for 
 the notification. Select the *Mark as unread* action for a notification to set 
-the type back to read. Select the *Delete* action to permanently delete the 
+the type back to unread. Select the *Delete* action to permanently delete the 
 notification.
 
-### Managing Multiple Notifications
+### Managing Multiple Notifications [](id=managing-multiple-notifications)
 
 You can also manage multiple notifications at once. Select the checkbox next to 
 each notification that you want to manage and choose an option from the 
@@ -72,7 +72,7 @@ $$$
 the notifications and either bulk mark them as unread for the page, or 
 individually mark the notifications as unread if you wish to change the state.
 
-## Managing Requests
+## Managing Requests [](id=managing-requests)
 
 Upon receiving a request, the request appears under the *Requests List* section. 
 You then have the option to *Confirm* or *Ignore* the request. Click *Confirm* 
@@ -81,8 +81,3 @@ permanently delete the request by choosing *Delete* in the actions menu for the
 request.
 
 ![Figure 3: You can confirm, ignore, or delete requests.](../../../images/notifications-requests-list.png)
-
-<!-- Need to confirm statement below on slack
-Clicking ignore does reset the request and makes the connection option available 
-again. 
--->
