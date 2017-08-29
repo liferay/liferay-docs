@@ -147,7 +147,7 @@ Follow these steps to update services:
 
 4.  Export the comparator package in the API module's BND.
 
-Now that the services are updated and your exports are in order, you can
+Now that the services are updated and your exports are in order, you can 
 configure the view to use the comparator next.
 
 ## Configuring the View [](id=configuring-the-view)
@@ -209,9 +209,9 @@ Follow these steps to configure the view to use the Comparator:
           portletURL="<%= viewPageURL %>"
         />
 
-5.  Finally, pass the `orderByComparator` in as an argument in the search
-    container results to match the updated method signature you modified in step . Below is the configuration for the example 
-    EntryNameComparator:
+5.  Finally, pass the `orderByComparator` in as an argument in the search 
+    container results to match the updated method signature you modified. Below 
+    is the configuration for the example EntryNameComparator:
 
         <liferay-ui:search-container-results
        		results="<%= EntryLocalServiceUtil.getEntries(scopeGroupId,
@@ -222,3 +222,7 @@ Follow these steps to configure the view to use the Comparator:
 The Management Bar Sort Filters are finished!
 
 ## Related Topics
+
+[Implementing a Management Bar Navigation Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-navigation-filter)
+
+[Disabling the Management Bar](/develop/tutorials/-/knowledge_base/7-0/disabli g-the-management-bar)

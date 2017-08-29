@@ -8,8 +8,8 @@ and at least one [`add-menu-item` tag](@platform-ref@/7.0-latest/taglibs/modules
 
 ![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../images/add-button-diagram.png)
 
-If there's only one item, the plus icon acts as a button that triggers the item.
-If there's more than one item, clicking the plus icon displays a menu containing
+If there's only one item, the plus icon acts as a button that triggers the item. 
+If there's more than one item, clicking the plus icon displays a menu containing 
 them.
 
 Just add a `<liferay-frontend:add-menu-item>` tag for every menu item you have. 
@@ -20,7 +20,7 @@ Here's an example of the add button pattern with a single item:
         "titleName") %>' url="<%= nameURL.toString() %>" />
     </liferay-frontend:add-menu>
 
-You can also find the add button pattern in Liferay's built-in apps. For
+You can also find the add button pattern in Liferay's built-in apps. For 
 example, the [Message Boards Admin application](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/message-boards/message-boards-web/src/main/resources/META-INF/resources/message_boards_admin/add_button.jsp)
 uses the following add button pattern:
 
@@ -39,3 +39,7 @@ uses the following add button pattern:
 There you have it! Now you know how to use the add button pattern
 
 ## Related Topics
+
+[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
+
+[Adding the Management Bar](/develop/tutorials/-/knowledge_base/7-0/adding-the-management-bar)
