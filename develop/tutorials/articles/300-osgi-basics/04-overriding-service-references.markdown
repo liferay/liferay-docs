@@ -205,13 +205,13 @@ service references on the fly.
 
     Here's a configuration file name for the example component:
 
-        override.my.service.reference.OverrideMyServiceReference.cfg
+        override.my.service.reference.OverrideMyServiceReference.config
  
     Note: Liferay DXP DE 7.0 Fix Pack 8 and later and Liferay CE Portal 7.0 GA
     and later support the Apache Felix ConfigAdmin implementation of OSGi
     Configuration Admin files. Felix ConfigAdmin uses the file suffix `.config`
     and supports additional types, such as arrays and vectors. The syntax for
-    `.cfg` and `.config` files can be found
+    `.config` and `.cfg` files can be found
     [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html). 
 
 2.  In the configuration file, add a reference target entry that filters on your
@@ -231,17 +231,17 @@ service references on the fly.
 
     $$$
 
-    A `.cfg` file reference target entry for the example looks like this:
-    
-        _someService.target=(component.name=overriding.service.reference.service.CustomServiceImpl)
-
-    A `.config` file entry for the example looks like this:
+    A `.config` file reference target entry for the example looks like this:
 
         _someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)"
 
     The [`.config` file syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
     requires surrounding the value in double quotes and escaping the value's
     equals sign. 
+    
+    A `.cfg` file entry for the example looks like this:
+    
+        _someService.target=(component.name=overriding.service.reference.service.CustomServiceImpl)
 
 3.  Optionally, you can add a `cardinality.minimum` entry to specify the
     number of services the reference can use. Here's the format:
