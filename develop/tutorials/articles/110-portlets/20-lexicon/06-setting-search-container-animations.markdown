@@ -28,7 +28,7 @@ that you can choose from for the animation:
 
 ![Figure 3: ](../../../images/no-web-content-found-search.png)
 
-"taglib-empty-result-message-header-has-plus-btn" used when there is a plus
+"taglib-empty-result-message-header-has-plus-btn" used when there is a plus 
 button:
 
 ![Figure 4: ](../../../images/no-tags-found-plus-button.png)
@@ -37,7 +37,7 @@ To use these animations in your app you can use the following method:
 
     SearchContainer.setEmptyResultsMessageCssClass()
 
-For example, the Roles Admin application uses the following code to set its
+For example, the Roles Admin application uses the following code to set its 
 animation in its [`edit_role_assignments_sites.jsp` file](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/roles/roles-admin-web/src/main/resources/META-INF/resources/edit_role_assignments_sites.jsp#L46-L48):
 
     if (!searchTerms.isSearch()) {
@@ -70,7 +70,7 @@ There are two approaches you can take:
 - Create new styles to make the animation available to the search container
 
 Regardless of the approach you choose, you must provide the CSS styles in a 
-[Theme](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes), 
+[Theme](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes),  
 [Themelet](/develop/tutorials/-/knowledge_base/7-0/themelets), or 
 [Theme Contributor](/develop/tutorials/-/knowledge_base/7-0/theme-contributors). 
 These styles point to the animation's source. You can provide the animation 
@@ -171,3 +171,7 @@ container animation:
 Now you know how to set search container animations in your app!
 
 ## Related Topics
+
+[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0/using-the-liferay-ui-taglib)
+
+[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)

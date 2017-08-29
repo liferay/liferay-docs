@@ -1,14 +1,13 @@
 # Adding the Management Bar [](id=adding-the-management-bar)
 
 The Management Bar lets users configure display options for search container 
-results. For example, a user can use the Management Bar to display content in a 
-list or a grid, or display only a specific type of content. You can also 
-customize your app's Management Bar. The Management Bar in Liferay's Message 
-Boards Admin application is shown here:
+results. The Management Bar lets you display content in a list or a grid, or 
+display only a specific type of content. You can also customize your app's 
+Management Bar. 
 
 ![Figure 1: The Management Bar lets the user customize how the app displays content.](../../../images/message-boards-management-bar.png)
 
-The Management Bar is divided into a few key sections. Each section is grouped
+The Management Bar is divided into a few key sections. Each section is grouped 
 and configured using different taglibs:
 
 The [`<liferay-frontend:management-bar-buttons>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-buttons.html) 
@@ -40,48 +39,48 @@ the number of selected items for you:
 
 For example, here's the Management Bar configuration in Liferay's Trash app:
 
-    <liferay-frontend:management-bar
-        includeCheckBox="<%= true %>"
-        searchContainerId="trash"
-    >
-        <liferay-frontend:management-bar-buttons>
-            <liferay-frontend:management-bar-sidenav-toggler-button />
+   <liferay-frontend:management-bar
+       includeCheckBox="<%= true %>"
+       searchContainerId="trash"
+   >
+       <liferay-frontend:management-bar-buttons>
+           <liferay-frontend:management-bar-sidenav-toggler-button />
 
-            <liferay-portlet:actionURL name="changeDisplayStyle"
-            varImpl="changeDisplayStyleURL">
-                <portlet:param name="redirect" value="<%= currentURL %>" />
-            </liferay-portlet:actionURL>
+           <liferay-portlet:actionURL name="changeDisplayStyle"
+           varImpl="changeDisplayStyleURL">
+               <portlet:param name="redirect" value="<%= currentURL %>" />
+           </liferay-portlet:actionURL>
 
-            <liferay-frontend:management-bar-display-buttons
-                displayViews='<%= new String[] {"descriptive", "icon",
-                "list"} %>'
-                portletURL="<%= changeDisplayStyleURL %>"
-                selectedDisplayStyle="<%= trashDisplayContext.getDisplayStyle()
-                %>"
-            />
-        </liferay-frontend:management-bar-buttons>
+           <liferay-frontend:management-bar-display-buttons
+               displayViews='<%= new String[] {"descriptive", "icon",
+               "list"} %>'
+               portletURL="<%= changeDisplayStyleURL %>"
+               selectedDisplayStyle="<%= trashDisplayContext.getDisplayStyle()
+               %>"
+           />
+       </liferay-frontend:management-bar-buttons>
 
-        <liferay-frontend:management-bar-filters>
-            <liferay-frontend:management-bar-navigation
-                navigationKeys='<%= new String[] {"all"} %>'
-                portletURL="<%= trashDisplayContext.getPortletURL() %>"
-            />
+       <liferay-frontend:management-bar-filters>
+           <liferay-frontend:management-bar-navigation
+               navigationKeys='<%= new String[] {"all"} %>'
+               portletURL="<%= trashDisplayContext.getPortletURL() %>"
+           />
 
-            <liferay-frontend:management-bar-sort
-                orderByCol="<%= trashDisplayContext.getOrderByCol() %>"
-                orderByType="<%= trashDisplayContext.getOrderByType() %>"
-                orderColumns='<%= new String[] {"removed-date"} %>'
-                portletURL="<%= trashDisplayContext.getPortletURL() %>"
-            />
-        </liferay-frontend:management-bar-filters>
+           <liferay-frontend:management-bar-sort
+               orderByCol="<%= trashDisplayContext.getOrderByCol() %>"
+               orderByType="<%= trashDisplayContext.getOrderByType() %>"
+               orderColumns='<%= new String[] {"removed-date"} %>'
+               portletURL="<%= trashDisplayContext.getPortletURL() %>"
+           />
+       </liferay-frontend:management-bar-filters>
 
-        <liferay-frontend:management-bar-action-buttons>
-            <liferay-frontend:management-bar-sidenav-toggler-button />
+       <liferay-frontend:management-bar-action-buttons>
+           <liferay-frontend:management-bar-sidenav-toggler-button />
 
-            <liferay-frontend:management-bar-button href="javascript:;"
-            icon="trash" id="deleteSelectedEntries" label="delete" />
-        </liferay-frontend:management-bar-action-buttons>
-    </liferay-frontend:management-bar>
-    
-Now that you have a better understanding of the Management Bar's anatomy, you 
-can start building the UI.
+           <liferay-frontend:management-bar-button href="javascript:;"
+           icon="trash" id="deleteSelectedEntries" label="delete" />
+       </liferay-frontend:management-bar-action-buttons>
+   </liferay-frontend:management-bar>
+
+In this section of tutorials, you'll learn how to add a management bar to your 
+application. 
