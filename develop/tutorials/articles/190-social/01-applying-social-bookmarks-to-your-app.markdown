@@ -6,19 +6,14 @@ you with the markup you need to add this feature to your app.
 
 ![Figure 1: Social bookmarks are enabled in the built-in Blogs portlet](../../images/social-bookmarks-icons.png)
 
-This tutorial shows you how to add social bookmarks to your application's
-content. The Guestbook app from the MVC Learning Path is used as an example:
-The completed Guestbook app code that uses this feature is on
-[Github](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/guestbook-social-features/social-bookmarks/guestbook).
-
 Follow these steps to add social bookmarks to your app:
 
 1.  Make sure your entity is 
     [asset enabled](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities).
 
-2.  Choose a view to show the social bookmarks. You can display them in 
-    your portlet's view, or if you've implemented [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset),
-    you can display it in the full content view in the Asset Publisher portlet.
+2.  Choose a view to show the social bookmarks. You can display them in your 
+    portlet's view, or if you've implemented [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset), you 
+    can display it in the full content view in the Asset Publisher portlet.
 
 3.  Include the Liferay-UI taglib declaration in your JSP:
 
@@ -26,9 +21,7 @@ Follow these steps to add social bookmarks to your app:
 
 4.  In your entity's view, use `ParamUtil` to get the entity's ID from the
     render request. Then you can create an entity object using your
-    `-LocalServiceUtil` class. Below is an example configuration for the
-    Guestbook app's `guestbook-web` module's view entry JSP file
-    [`view_entry.jsp`](https://github.com/liferay/liferay-docs/develop/tutorials/code/osgi/modules/guestbook-social-features/social-bookmarks/guestbook/guestbook-web/src/main/resources/META-INF/resources/html/guestbookmvcportlet/view_entry.jsp):
+    `-LocalServiceUtil` class. Below is an example configuration:
 
         <%
         long entryId = ParamUtil.getLong(renderRequest, "entryId");
@@ -67,33 +60,22 @@ Follow these steps to add social bookmarks to your app:
 
     ![Figure 4: Here are the share buttons with `displayStyle` set to `"horizontal"`.](../../images/social-bookmarks-icons-horizontal.png)
 
-If you haven't already connected your portlet's view to the JSP for your entity,
-you can refer
-[here](/develop/tutorials/-/knowledge_base/7-0/relating-assets#creating-a-url-to-your-new-jsp)
-to see how to connect your portlet's main view JSP to your entity's view JSP.
-
 The social bookmarks UI component now shows in your entity's view. 
 
-![Figure 5: The new JSP lets users share content in your portlet.](../../images/social-guestbook-social-bookmarks.png)
+![Figure 5: The new JSP lets users share content in your portlet.](../../images/social-guestbook-social-bookmarks.png) 
+
++$$$
+
+**Note:** You can install the Social Bookmarks app from the Marketplace 
+(available for [CE](https://web.liferay.com/marketplace/-/mp/application/15194315) 
+and [DXP](https://web.liferay.com/marketplace/-/mp/application/15188453)) to let 
+your users share your app's content across more social networks. For more 
+information, see the [Integrating with Facebook, Twitter, and More](/discover/portal/-/knowledge_base/7-0/integrating-with-facebook-twitter-and-more#using-social-bookmarks)
+article.  
+
+$$$
 
 Great! Now you know how to let users share content in your asset enabled apps. 
-
-You can install the Social Bookmarks app from the Marketplace (available for 
-[CE](https://web.liferay.com/marketplace/-/mp/application/15194315) and 
-[DXP](https://web.liferay.com/marketplace/-/mp/application/15188453)) to let your 
-users share your app's content across more social networks. For more information, 
-see the [Integrating with Facebook, Twitter, and More](/discover/portal/-/knowledge_base/7-0/integrating-with-facebook-twitter-and-more#using-social-bookmarks)
-article. 
-
-You can also perform permissions checks to control who can share content: 
-
-    <c:if test="<%=themeDisplay.isSignedIn()%>">
-
-        [Social Bookmarks Here]
-
-    </c:if>
-
-This example would only show social bookmarks for logged in users. 
 
 ## Related Topics [](id=related-topics)
 
