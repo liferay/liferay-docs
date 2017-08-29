@@ -45,7 +45,7 @@ you must create a module and ensure it has the necessary Content Targeting API
 dependencies.
 
 1.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
-    project for deploying a rule. A Blade CLI [contenttargetingrule](/develop/tutorials/-/knowledge_base/7-0/content-targeting-rule-template)
+    project for deploying a rule. A Blade CLI [content-targeting-rule](/develop/reference/-/knowledge_base/7-0/content-targeting-rule-template)
     template is available to help you get started quickly. It sets the default
     configuration for you, and it contains boilerplate code so you can skip the
     file creation steps and get started right away.
@@ -124,7 +124,7 @@ In this section, you'll begin defining the weather rule's Java class. This
 assumes that you followed the instructions above, creating the `WeatherRule`
 class and extending
 [BaseJSPRule](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html).
-If you used the `contenttargetingrule` Blade CLI template, your project is
+If you used the `content-targeting-rule` Blade CLI template, your project is
 already extending `BaseJSPRule` and has a default `view.jsp` file already
 created. 
 
