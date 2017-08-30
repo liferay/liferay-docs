@@ -1,8 +1,10 @@
-# Understanding System Configuration Files
+# Understanding System Configuration Files [](id=understanding-system-configuration-files)
 
 Use the [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings)
 application to make system scoped configuration changes and set default
-configurations for other scopes in @product@. 
+configurations for other
+[scopes](/discover/portal/-/knowledge_base/7-0/configuring-liferay#configuration-scope)
+in @product@. 
 
 The System Settings application has an *Export* option. Once a configuration
 entry is modified, the export option becomes available, letting you download a
@@ -55,7 +57,7 @@ in @product@.
 
 $$$
 
-## Creating and Deploying a Configuration File
+## Creating and Deploying a Configuration File [](id=creating-and-deploying-a-configuration-file)
 
 Configuration files consist of two things: 
 
@@ -78,9 +80,9 @@ the Web Content entry with a configuration file is to to create a file named
 
     com.liferay.journal.configuration.JournalServiceConfiguration.config
 
-![Figure x: The Web Content System Settings entry has a backend ID of `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../images/config-web-content-entry.png)
+![Figure 1: The Web Content System Settings entry has a backend ID of `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../images/config-web-content-entry.png)
 
-### Finding the Configuration ID
+### Finding the Configuration ID [](id=finding-the-configuration-id)
 
 The backend ID for the configuration is not intuitive from the reader-friendly
 entry name you see in the System Settings UI. For example, the Web Content
@@ -94,7 +96,7 @@ file](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-import
 After that, you'll have a properly named and formatted configuration file with
 all the keys and their current values. 
 
-### Key/Value Syntax
+### Key/Value Syntax [](id=key-value-syntax)
 
 The general syntax for all keys and values is the same: 
 
@@ -104,12 +106,12 @@ For single value configurations without special characters, that's all there is
 to know. Settings with multiple values and certain characters require slight
 modifications. 
 
-### Multi-Value Settings
+### Multi-Value Settings [](id=multi-value-settings)
 
 Open the Web Content entry from System Settings and you'll see what looks like
 multiple single value entries for *Charactersblacklist*: 
 
-![Figure x: The Web Content System Settings entry has a bunch of *Charactersblacklist* fields.](../../../images/config-web-content-blacklist.png)
+![Figure 2: The Web Content System Settings entry has a bunch of *Charactersblacklist* fields.](../../../images/config-web-content-blacklist.png)
 
 In the configuration file this is really a single key with an array of
 comma-separated values: 
@@ -120,7 +122,7 @@ In generalized fashion, here's how to write a multi-value setting:
 
     multiValueSetting=["Value 1", "Value 2", ...]
 
-### Escaping Characters
+### Escaping Characters [](id=escaping-characters)
 
 According to the [Apache Sling
 documentation](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config),
@@ -136,7 +138,7 @@ characters in the `.config` file:
 The above setting illustrates a multi-value setting with a regular, unescaped
 character (`&`), and two escaped ones (`\"` and `\=`). 
 
-### Deploying a Configuration File
+### Deploying a Configuration File [](id=deploying-a-configuration-file)
 
 Once you have a configuration file, deploy it so @product@ recognizes it and
 updates the targeted configuration values. 

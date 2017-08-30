@@ -81,7 +81,7 @@ Settings and later want to revert to using the System Settings default
 configurations, look for the *Reset Values* button from the Instance Settings
 entry. 
 
-![Figure x: Some Instance Settings entries have a *Reset Values* button so you can safely revert your configuration changes, falling back to the System Settings defaults.](../../../images/instance-settings-reset-values.png)
+![Figure 8: Some Instance Settings entries have a *Reset Values* button so you can safely revert your configuration changes, falling back to the System Settings defaults.](../../../images/instance-settings-reset-values.png)
 
 The Reset Values button removes configuration values from the @product@ database
 so you can rely on the defaults specified in System Settings. If there is no
