@@ -48,7 +48,7 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
         private GuestbookLocalService _guestbookLocalService;
         
         @Reference(unbind = "-")
-            protected void setGuestbookService(GuestbookLocalService guestbookLocalService) {
+        protected void setGuestbookService(GuestbookLocalService guestbookLocalService) {
             _guestbookLocalService = guestbookLocalService;
         }
  

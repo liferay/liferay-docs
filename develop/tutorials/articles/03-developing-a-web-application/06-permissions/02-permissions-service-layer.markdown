@@ -32,7 +32,7 @@ application:
     This code adds a resource to @product@'s database to correspond with your 
     entity (note that the `guestbookId` is included in the call). The three 
     booleans at the end are settings. The first is whether to add portlet 
-    action permissions. This should only be true if the permission is for a 
+    action permissions. This should only be `true` if the permission is for a 
     portlet resource. Since this permission is for a model resource (an entity), 
     it's `false`. The other two are settings for adding group and guest 
     permissions. If you set these to `true`, you'll add the default permissions 

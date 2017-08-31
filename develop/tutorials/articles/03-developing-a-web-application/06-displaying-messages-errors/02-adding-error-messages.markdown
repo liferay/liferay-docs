@@ -50,8 +50,8 @@ Next, do the same for the `deleteEntry` method:
 
 		SessionErrors.add(request, e.getClass().getName());
 
-3.  Hit Ctrl-Shift-O to import `SessionErrors` and `SessionMessages`. Save the
-    file. 
+3.  Hit Ctrl-Shift-O to import `com.liferay.portal.kernel.servlet.SessionErrors`
+    and `com.liferay.portal.kernel.servlet.SessionMessages`. Save the file. 
 
 Well done! You've added the messages to `GuestbookPortlet`. Now you must update 
 `GuestbookAdminPortlet.java`:

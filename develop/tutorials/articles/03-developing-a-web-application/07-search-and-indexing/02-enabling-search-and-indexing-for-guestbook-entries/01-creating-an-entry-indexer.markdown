@@ -112,7 +112,7 @@ Follow these steps to create the entry indexer:
     version of the `guestbookName` field. Always support localization where 
     possible--this ensures your entities are searchable in any language. 
 
-2.  The rest of the code is very similar `GuestbookIndexer`. Paste in the 
+2.  The rest of the code is very similar to the `GuestbookIndexer`. Paste in the 
     following code to finish the entry indexer class: 
 
             @Override
