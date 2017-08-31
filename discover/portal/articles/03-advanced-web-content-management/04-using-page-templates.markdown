@@ -68,8 +68,7 @@ template, any future changes to the template are automatically propagated to
 those pages. Site administrators can disable this behavior by unchecking the
 *Automatically apply changes done to the page template* box. Occasionally,
 propagation for page templates fails due to unintended errors. To learn how to
-manage a failed page template propagation, visit the *Propagating Changes from
-Site Templates to Sites* section of this chapter.
+manage a failed page template propagation, visit the [Propagating Changes from Site Templates to Sites](/discover/portal/-/knowledge_base/6-2/using-site-templates#propagating-changes-from-site-templates-to-sites) section of this chapter.
 
 If staging has been enabled, changes to the page template are automatically
 propagated to the staged page. These changes still need to be approved before
