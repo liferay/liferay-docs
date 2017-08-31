@@ -57,7 +57,7 @@ application:
                         Guestbook.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
                         guestbookId);
 
-5.  Hit Ctrl-Shift-O to organize the imports and save the file. 
+5.  Hit [CTRL]+[SHIFT]+O to organize the imports and save the file. 
 
 6.  Now you'll add resources for the `Entry` entity. Open 
     `EntryLocalServiceImpl.java` from the same package. For `addEntry`, add a 

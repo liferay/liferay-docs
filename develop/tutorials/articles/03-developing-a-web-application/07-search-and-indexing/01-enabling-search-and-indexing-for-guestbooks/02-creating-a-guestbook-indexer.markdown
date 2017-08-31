@@ -263,7 +263,7 @@ Follow these steps to create the indexer for guestbooks:
         @Reference
         private GuestbookLocalService _guestbookLocalService;
 
-14. Organize your imports (Ctrl-Shift-O), and save the file. It will have
+14. Organize your imports ([CTRL]+[SHIFT]+O), and save the file. It will have
     errors. 
 
 15. Include the following dependencies in the `guestbook-api` module's 

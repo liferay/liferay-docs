@@ -131,7 +131,7 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
     to a particular JSP if there was a problem with the `deleteGuestbook` 
     service call. 
 
-4.  Hit Ctrl-Shift-O to organize imports. Save the file. 
+4.  Hit [CTRL]+[SHIFT]+O to organize imports. Save the file. 
 
 You now have your service methods and portlet action methods in place. Your last 
 task is to implement the Guestbook Admin portlet's user interface. 
