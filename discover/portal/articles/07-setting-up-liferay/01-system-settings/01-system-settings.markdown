@@ -24,7 +24,7 @@ the Control Panel, in *Configuration* &rarr; *System Settings*.
 
 Once you navigate to System Settings, you'll see that the configuration options
 are categorized into logical groupings based on their functionality, and that
-there's a Search box to make finding the app you want to configure easier.
+there's a Search box to make finding the app you want to configure easier. 
 
 ![Figure 2: System Settings are organized by component.](../../../images/system-settings-nav-search.png)
 
@@ -33,14 +33,14 @@ difficult. Once you find what you're looking for, simply click the name of the
 component you want to configure, or click the actions button
 (![Actions](../../../images/icon-actions.png)), then click *Edit*. Make any changes
 you'd like, then click *Save*. Now your configuration changes are saved and take
-place throughout the entire system.
+place throughout the entire system. 
 
 ![Figure 3: After saving changes to a configuration, actions *Reset Default Values* and *Export* are available for it.](../../../images/system-settings-actions.png)
 
 If you make some regrettable configuration decisions and can't recall exactly
 what you did, start over by clicking the actions button
 (![Actions](../../../images/icon-actions.png)), then clicking *Reset Default
-Values*.
+Values*. 
 
 ## Configuration Scope [](id=configuration-scope)
 
@@ -50,30 +50,44 @@ application configuration scope discussed in the introduction to this section.
 This is the System Settings application after all, so all of the configuration
 done here affects the System scope. So what is the Scope field here referring
 to? It's the scope at which this default, system-wide configuration can be
-overridden. There are four values that you'll see under Scope:
+overridden. There are four values that you'll see under Scope: 
 
 - *System:* Any configuration made at the system scope here becomes the final
   value for the application in a system wide fashion. It affects the whole
-system and cannot be overridden anywhere else.
+system and cannot be overridden anywhere else. 
 
     ![Figure 4: Some System Settings entries have a System scope.](../../../images/system-settings-system-scope.png)
 
 - *Default Configuration for Application:* Making configuration changes at this
   level affects the application in a system-wide fashion as well. However, while
 these become the system wide defaults for the application, they can be
-overridden from each application instance.
+overridden from each application instance. 
 
     ![Figure 5: Some System Settings entries have a Default Configuration for Application scope.](../../../images/system-settings-application-scope.png)
 
 - *Default Configuration for All Sites:* Configuration at this scope can be
-  overridden in each site.
+  overridden in each site. 
 
     ![Figure 6: Some System Settings entries have a Default Configuration for All Sites scope.](../../../images/system-settings-site-scope.png)
 
 - *Default Settings for All Instances:* Configuration at this scope can be
-  overridden in each instance (usually via Instance Settings).
+  overridden in each instance (usually via Instance Settings). 
 
     ![Figure 7: Some System Settings entries have a Default Configuration for All Instances scope.](../../../images/system-settings-instance-scope.png)
+
+If an application is configurable from Instance Settings and System Settings,
+use System Settings to configure it whenever possible. If you use Instance
+Settings and later want to revert to using the System Settings default
+configurations, look for the *Reset Values* button from the Instance Settings
+entry. 
+
+![Figure 8: Some Instance Settings entries have a *Reset Values* button so you can safely revert your configuration changes, falling back to the System Settings defaults.](../../../images/instance-settings-reset-values.png)
+
+The Reset Values button removes configuration values from the @product@ database
+so you can rely on the defaults specified in System Settings. If there is no
+Reset Values button for an Instance Settings entry, once you use Instance
+Settings to configure the application, you cannot later decide to use System
+Settings. Only changes to Instance Settings will be recognized. 
 
 <!-- Perhaps show a proof-of-concept example here? -->
 
@@ -81,14 +95,14 @@ overridden from each application instance.
 
 ## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
 
-What if you change a lot of default configurations in System Settings, and then you
-need to make the same configurations in another Liferay installation <!--Another
-cluster?-->? Don't worry, you won't need to remember every choice you make, then
-manually duplicate all the configurations. The System Settings application lets
-you export individual configurations (for example, just the configurations made
-to the Dynamic Data Lists entry), or export all of the settings you've made in
-the System Settings interface. Then you can just deploy them in the target
-Liferay installation.
+What if you change a lot of default configurations in System Settings, and then
+you need to make the same configurations in another Liferay installation? Don't
+worry, you won't need to remember every choice you make, then manually duplicate
+all the configurations. The System Settings application lets you export
+individual configurations (for example, just the configurations made to the
+Dynamic Data Lists entry), or export all of the settings you've made in the
+System Settings interface. Then you can just deploy them in the target Liferay
+installation. 
 
 In the case of a single entry, just click the actions button
 (![Actions](../../../images/icon-actions.png)), then click *Export*. A `.config` file
@@ -101,25 +115,30 @@ file format is exported from System Settings. If you're on an earlier fix pack,
 the `.cfg` file format is used. 
 
 If you're on Liferay Portal 7.0 GA3 or earlier, the `.cfg` file is exported from
-System Settings.
+System Settings. 
 
 The file format was changed to fix a bug with multi-value settings, which the
 `.cfg` file format did not handle properly. See
-[https://issues.liferay.com/browse/LPS-67890](https://issues.liferay.com/browse/LPS-67890)
-for more information. Any @product@ system later than those listed above use the
-`.config` file format.
+[the bug report](https://issues.liferay.com/browse/LPS-67890)
+for more information. Any @product@ system later than those listed above uses the
+`.config` file format. 
+
+While `.config` files are now the default file type exported by System Settings
+for the reason described above, you're free to continue using `.cfg` files.
+They're still supported by the underlying configuration framework used by System
+Settings. 
 
 $$$
 
 To export all of the configuration changes you've made in System Settings, click
 the System Settings options button (![Options](../../../images/icon-options.png)),
 then click *Export All Settings*. You'll get a zip file with `.config` files
-corresponding to all of the entries that you edited.
+corresponding to all of the entries that you edited. 
 
 To make these configurations active in the destination Liferay system, simply
-unzip and place the `.config` files in the `[Liferay_Home]/osgi/modules` folder.
+unzip and place the `.config` files in the `[Liferay_Home]/osgi/modules` folder. 
 
 Now you know what System Settings is and how to use it. All that's left is
 exploring the entries to see what configuration options you can make. If you
 aren't sure what something does, check the documentation for the feature you're
-interested in, as specific configurations will be covered there.
+interested in, as specific configurations will be covered there. 
