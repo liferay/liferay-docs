@@ -19,17 +19,17 @@ an OSGi configuration file.
 
 There are several things to understand about configuration files: 
 
-- They're part of the [Apache Felix Configuration
-    Admin](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html)
+-   They're part of the
+    [Apache Felix Configuration Admin](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html)
     framework. Find out more about their syntax
     [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config). 
-- The `.config` file format supports a richer encoding format than the `.cfg`
+-   The `.config` file format supports a richer encoding format than the `.cfg`
     file type, which only allows Strings. 
-- If the default values from System Settings are desirable, no configuration
+-   If the default values from System Settings are desirable, no configuration
     file is necessary. 
-- System Settings exports all configurations keys and values for an entry, even if only one
-    of the values has been modified. 
-- If you place a configuration file in your @product@ installation's
+-   System Settings exports all configuration keys and values for an entry,
+    even if only one of the values has been modified. 
+-   If you place a configuration file in your @product@ installation's
     `osgi/configs` folder, any changes you make to the entry in System Settings
     will be automatically propagated to the configuration file. 
 
@@ -37,10 +37,10 @@ There are several things to understand about configuration files:
 
 **Note:** Because the `.config` file supports types, under certain conditions
 special type marker characters are inserted into the files. For example, a
-configuration with a boolean type might have a `B` inserted just before the value
-to mark the type. 
+configuration with a boolean type might have a `B` just before the value to mark
+the boolean type. 
 
-These type markers are neither necessary nor problematic. You can safely ignore
+The type markers are neither necessary nor problematic. You can safely ignore
 them. @product@ doesn't rely on the configuration marker to determine what type
 the configuration is, because the backend code creating the setting already
 knows what the type must be. 
@@ -63,20 +63,19 @@ Configuration files consist of two things:
 
 1.  A file name. 
 
-2.  One or more keys and values, with the value enclosed in double quotes. 
+2.  One or more key/value pairs, with the value enclosed in double quotes. 
 
         configurationName="value" 
 
-The name of the file uses the `id` of the configuration object specified in the
-backend Java code that creates the configuration (the class name will be
-`*Configuration.java` for readers interested in exploring the code). For
-example, 
-    
-    com.liferay.journal.configuration.JournalServiceConfiguration
+Components have configuration objects that end in `*Configuration.java`. The object's ID is the component name followed by `Configuration`. 
 
-Is the backend ID for the *Web Content* configuration entry. The file name will
-also include the extension, which is `.config`, so the proper way to configure
-the Web Content entry with a configuration file is to to create a file named 
+For example, here's the backend ID for the *Web Content* configuration entry:
+    
+    com.liferay.journal.configuration.JournalServiceConfiguration 
+
+The configuration file name must use the ID as its prefix and `.config` as its
+suffix. So the proper way to configure the Web Content entry with a
+configuration file is to create a file named 
 
     com.liferay.journal.configuration.JournalServiceConfiguration.config
 
@@ -91,10 +90,10 @@ entry's ID is
     com.liferay.journal.configuration.JournalServiceConfiguration
 
 The easiest way to find the ID is to make a change in the System Settings entry,
-then [export the configuration
-file](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations).
-After that, you'll have a properly named and formatted configuration file with
-all the keys and their current values. 
+then
+[export the configuration file](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations).
+The exported configuration file is named properly and has all the entry's keys
+and their current values. 
 
 ### Key/Value Syntax [](id=key-value-syntax)
 
@@ -124,8 +123,8 @@ In generalized fashion, here's how to write a multi-value setting:
 
 ### Escaping Characters [](id=escaping-characters)
 
-According to the [Apache Sling
-documentation](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config),
+According to the
+[Apache Sling documentation](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config),
 double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files.
 Escaping is using another character to denote that a character shouldn't be used
 in its normal way. Since double quotes and equals signs are already used in
