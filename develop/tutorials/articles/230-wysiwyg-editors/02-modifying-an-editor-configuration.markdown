@@ -50,8 +50,8 @@ provided below.
         @Component(
             property = {
                 "editor.config.key=contentEditor", "editor.name=alloyeditor",
-                "editor.name=ckeditor", "javax.portlet.name=" + BlogsPortletKeys.BLOGS,
-                "javax.portlet.name=" + BlogsPortletKeys.BLOGS_ADMIN, "service.ranking:Integer=100"
+                "editor.name=ckeditor", "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+                "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", "service.ranking:Integer=100"
             },
 			
             service = EditorConfigContributor.class
