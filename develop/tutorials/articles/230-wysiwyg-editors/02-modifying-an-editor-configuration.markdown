@@ -100,7 +100,7 @@ provided below.
     this, extract the *Add* buttons out of your toolbar configuration object as
     a
     [JSONArray](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONArray.html),
-    and then add the button to that `JSONArray`. The following code would add a
+    and then add the button to that `JSONArray`. The following code adds a
     *Camera* button to the editor's toolbar:
 
         if (toolbars != null) {
