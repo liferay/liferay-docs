@@ -44,9 +44,6 @@ provided below.
     [EditorConfigContributor](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html)
     interface.
 
-    <!-- Change the Javadoc link above to the Javadoc listed on
-    docs.liferay.com, when 7.0 Javadoc is available. -Cody -->
-
     The following code is a sample of what the `@Component` annotation could
     look like when modifying an editor's configuration:
 
@@ -67,8 +64,8 @@ provided below.
     which prioritizes this service over others that are currently deployed in
     Portal.
 
-4.  Now that you've specified which editor configurations you want to modify, you
-    need to specify what about them you'd like to change. Add the following
+4.  Now that you've specified which editor configurations you want to modify,
+    you need to specify what about them you'd like to change. Add the following
     method to your new class:
 
         @Override
@@ -79,6 +76,13 @@ provided below.
 
         }
 
+    This method updates the original configuration JSON object with a new
+    configuration. It can even update or delete the original configuration, or
+    any other configuration introduced by another `EditorConfigContributor`.
+    The configuration object contains the configuration to be directly used by
+    the editor. This means that the configuration object used for this editor
+    may differ from other editors used in @product@.
+    
     Currently, this method does nothing. You need to add some logic, which
     you'll do next.
 
@@ -89,13 +93,15 @@ provided below.
 
         JSONObject toolbars = jsonObject.getJSONObject("toolbars");
 
-6.  Now that the `JSONObject` holds your editor's configuration, you can modify
-    the configuration. For instance, suppose you'd like to add a button to your
-    editor's toolbar. To complete this, you'd need to extract the *Add* buttons
-    out of your toolbar configuration object as a
+    This gets the editor's toolbar. Now that you've retrieved the toolbar, you
+    can modify it. You'll do this next.
+
+6.  You'll modify the editor's toolbar by adding a camera button. To complete
+    this, extract the *Add* buttons out of your toolbar configuration object as
+    a
     [JSONArray](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONArray.html),
-    and then add the button to that `JSONArray`. For example, the following code 
-    would add a *Camera* button to the editor's toolbar:
+    and then add the button to that `JSONArray`. The following code would add a
+    *Camera* button to the editor's toolbar:
 
         if (toolbars != null) {
             JSONObject toolbarAdd = toolbars.getJSONObject("add");
