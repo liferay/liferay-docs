@@ -1,0 +1,4 @@
+Bundle-Name: guestbook-web
+Bundle-SymbolicName: com.liferay.docs.guestbook
+Bundle-Version: 1.0.0
+-metatype: *
