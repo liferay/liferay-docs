@@ -110,8 +110,10 @@ learn how to add access to them.
 default document type, "Basic Document," to apply to. By default, basic
 documents are not described by any metadata sets.
 
-**Google Docs**: lets you create a file entry that links to a Google document.
-The section [Accessing Google Docs](/discover/portal/-/knowledge_base/7-0/publishing-files#accessing-google-docs)
+**Google Docs**: available through an additional Liferay Google Drive™ Plugin 
+from the [Marketplace](https://web.liferay.com/marketplace). This option lets 
+you create a file entry that links to a Google document. The section 
+[Accessing Google Docs](/discover/portal/-/knowledge_base/7-0/publishing-files#accessing-google-docs)
 explains how to use this feature.
 
 The remaining items in the Add menu are default [document types](/participate/liferaypedia/-/wiki/Main/document+types)
@@ -535,8 +537,18 @@ libraries.
 
 The Document Library not only lets you upload files but also allows you to
 access files stored in Google applications, such as Google Drive and Google
-Photos. This integration with Google and other external repositories enables you
-to access all of your documents from your Liferay sites. 
+Photos. This integration isn't available by default. You can enable this feature 
+by installing the Liferay Google Drive™ Plugin from the [Marketplace](https://web.liferay.com/marketplace). 
+
+**Important:** The Liferay Google Drive™ Plugin is a "Labs" application. Any app
+designated as "Labs" includes experimental features and is not supported by
+Liferay. This status may change without notice. Labs apps allow us to accelerate
+the availability of useful and cutting-edge features, but these apps are not yet
+hardened like standard Liferay EE apps. Please download and use Labs apps at
+your own discretion. 
+
+This integration with Google and other external repositories enables you to 
+access all of your documents from your Liferay sites. 
 
 As a Liferay administrator, you must configure your Liferay instance's access to
 Google's API Picker. @product@ calls on it to access files stored in

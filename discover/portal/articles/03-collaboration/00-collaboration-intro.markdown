@@ -31,9 +31,10 @@ and respond to them. Collaboration is enhanced in all these applications through
 users--tagging them by name to get their attention or give them kudos. 
 
 As you produce digital assets--documents, videos, audio--you can store and share
-them using the suite's [Documents and Media
-Library](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Documents+and+Media).
-It both provides its own repository and connects to external CMIS repositories and [Google Docs](/discover/portal/-/knowledge_base/7-0/publishing-files#accessing-google-docs). 
+them using the suite's [Documents and Media Library](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Documents+and+Media).
+It both provides its own repository and connects to external CMIS repositories 
+and even [Google Docs](/discover/portal/-/knowledge_base/7-0/publishing-files#accessing-google-docs) 
+via the Liferay Google Drive™ Plugin from the [Marketplace](https://web.liferay.com/marketplace). 
 
 Finally, you can collaborate on and publish content in a number of different
 ways.  You and your colleagues can build a wealth of information using
