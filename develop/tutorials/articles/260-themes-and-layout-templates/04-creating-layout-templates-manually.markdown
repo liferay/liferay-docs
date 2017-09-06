@@ -129,8 +129,50 @@ Place the completed layout in your theme's `src/layouttpl` folder if you created
 your theme with Theme's Generator, or place it in your theme's 
 `docroot/layouttpl/custom` folder if using the Plugins SDK.
 
-There you have it. Now you know how to create and modify layout
-templates manually!
+
+Next you can learn how to include layout templates in a theme.
+
+## Including Layout Templates with a Theme [](id=including-layout-templates-with-a-theme)
+
+You can deploy a layout template with a theme by specifying it in the theme's 
+`liferay-look-and-feel.xml` file.
+
+Add your custom layout template to your `liferay-look-and-feel.xml` using the 
+`<layout-templates>` tag. Below is an example configuration for the 
+[Porygon theme](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/frontend-theme-porygon/frontend-theme-porygon/src/WEB-INF/liferay-look-and-feel.xml#L16-L27)'s layout templates:
+
+  <theme id="porygon" name="Porygon">
+      ...
+        <layout-templates>
+          <custom>
+            <layout-template id="porygon_70_30_width_limited" 
+            name="Porygon 2 Columns (70/30) width limited">
+              <template-path>
+                  /layoutttpl/custom/porygon_70_30_width_limited.tpl
+              </template-path>
+              <thumbnail-path>
+                  /layoutttpl/custom/porygon_70_30_width_limited.png
+              </thumbnail-path>
+            </layout-template>
+            <layout-template id="porygon_50_50_width_limited" 
+            name="Porygon 2 Columns (50/50) width limited">
+              <template-path>
+                  /layoutttpl/custom/porygon_50_50_width_limited.tpl
+              </template-path>
+              <thumbnail-path>
+                  /layoutttpl/custom/porygon_50_50_width_limited.png
+              </thumbnail-path>
+            </layout-template>
+          </custom>
+        </layout-templates
+      ...
+  </theme>
+
+The `<layout-template>` tag's `id` attribute must match the layout template's 
+filename. 
+
+There you have it. Now you know how to create and modify layout templates 
+manually and how to include them with a theme!
 
 ## Related Topics [](id=related-topics)
 
