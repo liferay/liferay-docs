@@ -1,17 +1,14 @@
 # Enabling Tags, Categories, and Related Assets for Guestbooks [](id=enabling-tags-categories-and-related-assets-for-guestbooks)
 
-Since you've already asset-enabled guestbooks at the service layer, your
-guestbook entities are all set to take advantage of @product@'s back-end support
-for tags and categories. The only thing left is to update the user interface to
-allow access to these features. In this section, you'll update the form on the
-Guestbook Admin portlet's `edit_guestbook.jsp` page to allow admins to add,
-edit, or remove tags and categories when adding or updating a guestbook. You'll
-use Liferay-UI and AUI JSP tags to quickly create the UIfor adding tags,
-categories, and related assets to the form for adding or updating a guestbook.
+Since you've already asset-enabled guestbooks at the service layer, guestbook
+entities can now use @product@'s back-end support for tags and categories. All
+that's left is to enable the interface for users. In this section, you'll
+update the Guestbook Admin portlet's `edit_guestbook.jsp` so admins can add,
+edit, or remove tags and categories when adding or updating a guestbook. 
 
 ## Enabling Asset Features
 
-Follow these steps to enable these features: 
+Follow these steps: 
 
 1.  Open the `guestbook-web` module's 
     `/guestbookadminportlet/edit_guestbook.jsp` file and add the
@@ -72,36 +69,37 @@ field for adding tags and a selector for selecting related assets.
 
 ## Testing Asset Features
 
-Now that you've enabled some asset features for guestbooks. You can try them out.
-When you create or edit a guestbook in the admin portlet, where is the field for 
-selecting categories? It's been enabled but it won't appear until you create a 
-vocabulary and add at least one category to it.
-
-Follow these steps to create a vocabulary:
+Now you can try using tags and categories in the Guestbook Admin portlet.
+Before you begin with categories, you must create a vocabulary and add at least
+one category to it, or the interface doesn't appear. Follow these steps to
+create a vocabulary:
 
 1.  Open the *Control Menu* and select *Content* &rarr; *Categories* under the 
     site menu.
 
-2.  Click the Add button to create a new vocabulary.
+2.  Click the *Add* button to create a new vocabulary. Call it *Guestbook
+    Types*. 
 
 3.  Once you've created a new vocabulary, it appears in the table on the main 
-    page. Click the Actions Menu next to the vocabulary and select 
+    page. Click the *Actions Menu* next to the vocabulary and select 
     *Add Category*.
-    
-4.  Fill in the form and click *Save*.
+ 
+4.  Call the category *Weddings* and click *Save*. 
 
-5.  Now go back to the Guestbook Admin portlet, click on *Add Guestbook* or 
+5.  Click the *Add* button to add another category. Call it *Graduations*.
+    Click *Save*. 
+
+6.  Now go back to the Guestbook Admin portlet, click on *Add Guestbook* or 
     *Actions* &rarr; *Edit* next to a guestbook and confirm that categories are 
     selectable.
 
-Follow these steps to further test your entities' integration with Liferay's 
-asset framework:
+Now it's time to try tags:
 
 1.  Add the Tags Navigation, Tag Cloud, and Categories Navigation portlets to 
     the page with the Asset Publisher portlet. All of tags that you've created 
     appear in the Tags Navigation and Tag Cloud portlet. All of the categories 
     that you've created appear in the Categories Navigation portlet.
-    
+ 
 2.  Click on a tag name or category name in any of the portlets that you added. 
 
 3.  Check that the Asset Publisher dynamically displays only assets with the 
