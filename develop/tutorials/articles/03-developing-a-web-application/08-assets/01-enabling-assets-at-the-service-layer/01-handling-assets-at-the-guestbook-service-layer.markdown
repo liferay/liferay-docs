@@ -1,7 +1,7 @@
 # Handling Assets at the Guestbook Service Layer [](id=handling-assets-at-the-guestbook-service-layer)
 
-In this section, you'll update the guestbook service layer to use assets. Use 
-the following steps to make the updates:
+In this section, you'll update the guestbook service layer to use assets. Follow 
+these steps to make the updates:
 
 1.  You must update the add, update, and delete methods of your project's
     `GuestbookLocalServiceImpl` and `EntryLocalServiceImpl` classes. Open your
@@ -28,7 +28,7 @@ the following steps to make the updates:
     @product@'s database. `AssetEntryLocalServiceImpl`'s `updateEntry` method
     both adds and updates asset entries because it checks to see whether the
     asset entry already exists in the database and then takes the appropriate action.
-    [Javadocs](https://docs.liferay.com/portal/7.0-latest/javadocs/) for
+    [Javadocs](https://docs.liferay.com/portal/7.0-latest/javadocs/) 
     If you check @product@'s
     `AssetEntryLocalServiceUtil.updateEntry`, you'll see that this method is
     overloaded. Now, why did you use a version of this method with such a long

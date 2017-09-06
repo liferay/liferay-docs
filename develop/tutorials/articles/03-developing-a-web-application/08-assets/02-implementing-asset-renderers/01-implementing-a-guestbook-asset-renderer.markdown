@@ -146,7 +146,7 @@ Follow these steps to create the class:
     represents the path to the JSP that renders the guestbook asset. When
     the Asset Publisher displays the full content of an asset, it invokes the
     asset renderer class's getJspPath method and passes a string parameter
-    called `template` that equals `"full_content"`. This action returns
+    called `template` that equals `"full_content"`. This returns
     `/asset/guestbook/full_content.jsp` when the `full_content` template
     string is passed as a parameter. You'll create this JSP later when you're
     updating your application's user interface:
@@ -225,7 +225,7 @@ Follow these steps to create the class:
             return super.getURLView(liferayPortletResponse, windowState);
           }
 
-9.  Close the class and save it.
+9.  Close the class and save it: 
 
         }
 
@@ -285,14 +285,14 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
             setSearchable(true);
           }
 
-    This code contains the class declaration and the constructor. The code sets the
-    class name that it creates an `AssetRenderer` for, a portlet ID, and a boolean
+    This code contains the class declaration and the constructor. It sets the
+    class name it creates an `AssetRenderer` for, a portlet ID, and a boolean
     (`_LINKABLE`) set to `true`. The boolean denotes that the methods that
     provide URLs in the generated `AssetRenderer` are implemented. 
 
 2.  Implement the `getAssetRenderer` method, which constructs new
     `GuestbookAssetRenderer`s for specific guestbooks. It uses the `classPK`
-    (primary key) parameter to retrieve the guestbook from the database. The method then 
+    (primary key) parameter to retrieve the guestbook from the database. Then it
     calls the `GuestbookAssetRenderer`'s constructor, passing the retrieved
     guestbook as an argument:
 
@@ -314,7 +314,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
 2.  You're extending `BaseAssetRendererFactory`, an abstract class that
     implements the `AssetRendererFactory` interface. Each asset renderer factory
     must implement `getClassName` and `getType` methods (among others) to
-    ensure that the correct entity associates with your custom asset:
+    ensure that your custom asset is associated with the correct entity:
 
           @Override
           public String getClassName() {

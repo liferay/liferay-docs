@@ -12,7 +12,7 @@ article.) An asset entry row's `classPK` represents the primary key of the
 entity represented by the asset. 
 
 1.  Make Liferay's asset services available to your entities'
-    service layers. Open the `guestbook-service` module's `service.xml` file
+    service layers.  Open the `guestbook-service` module's `service.xml` file
     and add the following references directly above the `Guestbook`'s and the
     `Entry`'s closing `</entity>` tags:
 
