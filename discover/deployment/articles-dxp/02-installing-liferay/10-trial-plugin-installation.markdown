@@ -2,11 +2,11 @@
 
 For Liferay customers who are evaluating @product@ on a trial
 basis, **the plugins can be accessed from within the Marketplace section
-of the Control Panel in the product**. 
+of the Control Panel in the product**. 
 
 *At a later date, the Marketplace website on Liferay.COM will be accessible to
 @product@ Trial customers. For now, please access EE Plugins through the
-portal installation itself.*  
+portal installation itself.* 
 
 ## The Installation Process [](id=the-installation-process)
 

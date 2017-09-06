@@ -403,6 +403,14 @@ Dependencies between OSGi services can reduce the number of service classes in
 which upgrade reference annotations are needed. For example, there's no need to
 add an upgrade reference in a dependent service, if the dependency already
 refers to the upgrade. 
+
++$$$
+
+**Note**: Data verifications using the class `VerifyProcess` are deprecated.
+Verifications should be tied schema versions. Upgrade processes are associated
+with schema versions but `VerifyProcess` instances are not.   
+
+$$$
  
 Now you know how to create data upgrades for all your modules. You specify the
 new data schema version in the `bnd.bnd` file, add a reference to your module

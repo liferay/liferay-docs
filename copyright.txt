@@ -1,5 +1,5 @@
 <!-- 
-Copyright (c) 2011 Liferay, Inc. All rights reserved. 
+Copyright (c) 2017 Liferay, Inc. All rights reserved. 
 
 Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA-3.0)
 

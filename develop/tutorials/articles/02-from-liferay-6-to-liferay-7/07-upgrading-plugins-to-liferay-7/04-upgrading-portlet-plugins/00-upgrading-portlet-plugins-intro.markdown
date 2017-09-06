@@ -21,6 +21,7 @@ portlets:
 -   [Portlet that uses Service Builder](upgrading-portlets-that-use-service-builder)
 -   [Liferay JSF Portlet](upgrading-a-liferay-jsf-portlet)
 -   [Struts Portlet](upgrading-a-struts-portlet)
+-   [Spring MVC Portlet](upgrading-a-spring-mvc-portlet)
 
 The tutorials provide example portlet source code from before and after
 upgrading the example portlet. Each tutorial's steps were applied to the example

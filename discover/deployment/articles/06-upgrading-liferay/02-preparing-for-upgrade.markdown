@@ -68,6 +68,15 @@ to keep the defaults from your old version or accept the defaults of the new.
 Here's a list of the 6.2 properties that have changed in 7.0: 
     
     users.image.check.token=false
+    organizations.types=regular-organization,location
+    organizations.rootable[regular-organization]=true
+    organizations.children.types[regular-organization]=regular-organization,location
+    organizations.country.enabled[regular-organization]=false
+    organizations.country.required[regular-organization]=false
+    organizations.rootable[location]=false
+    #organizations.children.types[location]=
+    organizations.country.enabled[location]=true
+    organizations.country.required[location]=true
     layout.set.prototype.propagate.logo=true
     editor.wysiwyg.portal-web.docroot.html.taglib.ui.discussion.jsp=simple
     web.server.servlet.check.image.gallery=true

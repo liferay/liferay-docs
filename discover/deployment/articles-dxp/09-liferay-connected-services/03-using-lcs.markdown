@@ -595,7 +595,13 @@ There are a few things to keep in mind when using environment tokens:
 
 - Be careful when regenerating a token file from LCS. When this is done, 
   @product@ instances using the old file are disconnected from LCS and can't 
-  reconnect until restarting with the new file. 
+  reconnect until they receive the new file. If the @product@ instance 
+  disconnects due to token regeneration and is running version 4.0.2 or later 
+  of the LCS client app, the instance enters a 7-day grace period during which 
+  it functions normally. This gives the administrator time to use the new token 
+  file to reconnect to LCS. @product@ instances running earlier versions of 
+  the LCS client app present users with an error page until the administrator 
+  reconnects with the new token. 
 
 - Minimal information (server name, location, etc...) is used to activate a 
   @product@ instance with LCS. You can change this information from 

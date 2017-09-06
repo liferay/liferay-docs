@@ -82,10 +82,10 @@ exist, load the stored session from `CredentialsStorage` with
 `loadStoredCredentials(StorageType storageType)`. The following code shows a 
 typical implementation of this:
 
-    LiferayScreensContext.init(this); // If you haven't called a screenlet yet
+    LiferayScreensContext.init(this); // If you haven't called a Screenlet yet
     SessionContext.loadStoredCredentials(SHARED_PREFERENCES);
 
-    if (SessionContext.hasSession()) {
+    if (SessionContext.isLoggedIn()) {
         // logged in
         // consider doing a relogin here (see next section)
     } else {
