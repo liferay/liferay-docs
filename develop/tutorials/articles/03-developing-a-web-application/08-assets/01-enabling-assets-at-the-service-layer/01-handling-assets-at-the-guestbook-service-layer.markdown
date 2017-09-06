@@ -1,7 +1,7 @@
 # Handling Assets at the Guestbook Service Layer [](id=handling-assets-at-the-guestbook-service-layer)
 
-In this section, you'll update the guestbook service layer to use assets. Follow 
-these steps to make the updates:
+In this section, you'll update the guestbook service layer to use assets. Use 
+the following steps to make the updates:
 
 1.  You must update the add, update, and delete methods of your project's
     `GuestbookLocalServiceImpl` and `EntryLocalServiceImpl` classes. Open your
@@ -26,26 +26,26 @@ these steps to make the updates:
     Calling `assetEntryLocalService.updateEntry` adds a new row (corresponding
     to the guestbook that's being added) to the `AssetEntry` table in
     @product@'s database. `AssetEntryLocalServiceImpl`'s `updateEntry` method
-    is used for both adding and updating asset entries, because it checks if the
-    asset entry already exists in the database and takes the appropriate action.
-    If you check @product@'s
+    both adds and updates asset entries because it checks to see whether the
+    asset entry already exists in the database and then takes the appropriate action.
     [Javadocs](https://docs.liferay.com/portal/7.0-latest/javadocs/) for
+    If you check @product@'s
     `AssetEntryLocalServiceUtil.updateEntry`, you'll see that this method is
-    overloaded. Why did you use a version of this method with such a long
-    method signature? There's only one version of the `updateEntry` method that
+    overloaded. Now, why did you use a version of this method with such a long
+    method signature? Because there's only one version of the `updateEntry` method that
     takes a `title` parameter (to set the asset entry's title). Since you want
     to set the asset title to `guestbook.getName()`, that's the version you use.
 
     Later, you'll update the Guestbook Admin portlet's form for adding
-    guestbooks to allow related assets to be selected. Related assets are stored
+    guestbooks to allow the selection of related assets, which are stored
     in the database's `AssetLink` table. `assetLinkLocalService.updateLinks`
     adds the appropriate entries to the table so the related assets feature
-    works for your guestbook entities. Just as the `updateEntry` method is used
-    for both adding and updating asset entries, the `updateLink` method is used
-    for both adding and updating asset links.
+    works for your guestbook entities. In the same way that the `updateEntry` method
+    both adds and updates asset entries, the `updateLink` method 
+    both adds and updates asset links.
 
 2.  Next, add the asset calls to `GuestbookLocalServiceImpl`'s `updateGuestbook`
-    method, just after the resource call:
+    method, directly after the resource call:
 
           AssetEntry assetEntry = assetEntryLocalService.updateEntry(guestbook.getUserId(),
                               guestbook.getGroupId(), guestbook.getCreateDate(),
@@ -66,7 +66,7 @@ these steps to make the updates:
     can use the `updateEntry` and `updateLink` methods for adding and updating
     asset entries and links. 
 
-3.  Next, add the asset calls to the `deleteGuestbook` method, just after the
+3.  Next, add the asset calls to the `deleteGuestbook` method, directly after the
     resource calls:
 
           AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
@@ -81,7 +81,7 @@ these steps to make the updates:
     corresponding asset entry. Then you delete the asset links corresponding to 
     the asset entry and, finally, the asset entry itself. 
  
-4.  Finally, Organize your imports, save the file, and run Service Builder to
+4.  Finally, organize your imports, save the file, and run Service Builder to
     apply the changes.
 
-Next, you'll do the same for guestbook entries. 
+Next, you'll do the same thing for guestbook entries. 

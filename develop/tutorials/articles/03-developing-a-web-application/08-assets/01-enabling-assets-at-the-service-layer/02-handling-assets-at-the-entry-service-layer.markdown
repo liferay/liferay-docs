@@ -1,6 +1,6 @@
 # Handling Assets at the Entry Service Layer [](id=handling-assets-at-the-entry-service-layer)
 
-You've updated the guestbook entity's service methods. Now it's time to update
+You updated the guestbook entity's service methods. Now it's time to update
 the guestbook entry entity's service methods. The calls you need to make to
 `assetEntryLocalService` and `assetLinkLocalService` in the guestbook entry
 entity's service methods are identical to the ones you made in the guestbook
@@ -53,6 +53,6 @@ entity's service methods. Follow these steps:
 
 Excellent! You've asset-enabled your guestbook and guestbook entry entities at
 the service layer. Your next step is to implement asset renderers for these
-entities so that they can be fully integrated into @product@'s asset framework.
+entities so they can be fully integrated into @product@'s asset framework.
 Every asset needs an asset renderer class so the Asset Publisher portlet can
 display it.

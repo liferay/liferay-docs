@@ -3,8 +3,7 @@
 The classes you'll create in this section are nearly identical to the 
 `GuestbookAssetRenderer` and `GuestbookAssetRendererFactory` classes you created
 for guestbooks in the last section. This section provides the code needed for
-guestbook entries. For more information on these methods, please review the
-previous section.
+guestbook entries. Please review the previous sections for more information on these methods.
 
 ## Creating the Entry `AssetRenderer` Class
 
@@ -181,9 +180,11 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
 This class is similar to the `GuestbookAssetRenderer` class. For the
 `EntryAssetRenderer.getSummary` method, you return a summary that displays
 both the entry name (the name of the user who created the entry) and the entry
-message. `GuestbookAssetRenderer.getSummary` returned a summary that displayed
+message. 
+
+`GuestbookAssetRenderer.getSummary` returns a summary that displays
 the guestbook name. `EntryAssetRenderer.getTitle` returns the entry message.
-`GuestbookAssetRenderer.getTitle` returned the guestbook name. The rest of the
+`GuestbookAssetRenderer.getTitle` returns the guestbook name. The rest of the
 methods of `EntryAssetRenderer` are nearly identical to those of
 `GuestbookAssetRenderer`.
 
@@ -307,9 +308,8 @@ called `EntryAssetRendererFactory` that extends @product@'s
 
 Now your guestbook project's entities are fully asset-enabled. To test the
 functionality, add the Asset Publisher portlet to a page and add a few
-guestbooks and guestbook entries. Edit a few of them too. Then check the Asset
-Publisher portlet. By default, the Asset Publisher is configured to dynamically
-display assets of any kind from the current site.
+guestbooks and guestbook entries. Edit a few of them, too. Then, check the Asset
+Publisher portlet. The Asset Publisher, by default, dynamically displays assets of any kind from the current site.
 
 ![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../../../images/custom-entities-asset-publisher.png)
 
