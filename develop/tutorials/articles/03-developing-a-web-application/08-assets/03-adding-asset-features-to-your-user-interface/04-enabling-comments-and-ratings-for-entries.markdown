@@ -1,24 +1,18 @@
 # Enabling Comments and Ratings for Guestbook Entries [](id=enabling-comments-and-ratings-for-guestbook-entries)
 
-Liferay's asset framework allows users to comment on and rate assets. As with
-tags, categories, and related assets, since you already asset-enabled guestbook 
-entries in the service layer, your only remaining task is to update your user 
-interface to allow access to these features. It's best to separate the page 
-where users comment on and rate assets from the page where users actually edit 
-the assets themselves. If you added the commenting and rating functionality to 
-the Guestbook portlet's `edit_entry.jsp` page, users might confuse the
-collaboration fields with the content fields. It's easy to imagine scenarios
-where users should be able to view, comment on, and rate assets without being
-able to actually edit the assets.
+Liferay's asset framework includes comments and ratings features. As with tags,
+categories, and related assets, all you must do is update the user interface to
+expose these features. It's best to separate the page where users comment on and
+rate assets from the page where users edit the assets. You shouldn't have to
+edit an entry just to comment on it; that not only makes no sense, but also is a
+security problem. Comments and ratings should be added in a view mode only. 
 
 Follow these steps to enable comments and ratings on guestbook entries:
 
 1.  Create a new file called `view_entry.jsp` in your `guestbook-web` module 
-    project's `/guestbookwebportlet` folder. You'll edit the 
-    `/guestbookwebportlet/entry_actions.jsp` to include a new *View* option 
-    in the Actions Menu that points to the new `view_entry.jsp` file.
-    
-2.  Add a java scriptlet to the file you just created. Use an `entryId` 
+    project's `/guestbookwebportlet` folder. 
+
+2.  Add a Java scriptlet to the file you just created. Use an `entryId` 
     request attribute to get an entry object and convert it to an escaped 
     model for security reasons, as discussed in the 
     [Creating JSPs for Displaying Customs Assets in the Asset Publisher](/develop/tutorials/-/knowledge_base/7.0/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher) 
@@ -45,14 +39,13 @@ Follow these steps to enable comments and ratings on guestbook entries:
           AssetEntry assetEntry = 
           AssetEntryLocalServiceUtil.getEntry(Entry.class.getName(), 
           entry.getEntryId());
-    
-3.  Next, update your portlet's breadcrumb entry with the name of the current 
-    entry:
+ 
+3.  Next, update the breadcrumb entry with the name of the current entry:
 
         String currentURL = PortalUtil.getCurrentURL(request);
         PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
         currentURL);
-        
+ 
     ![Figure 1: The Breadcrumb portlet appears on regular portal pages, by default. It appears just beneath the main page navigation menu and displays the path to the current page or portlet.](../../../../images/portlet-breadcrumb.png)
 
 4.  At the end of the scriptlet, add the names of the existing asset tags for
@@ -87,9 +80,9 @@ Follow these steps to enable comments and ratings on guestbook entries:
         <liferay-ui:header backURL="<%=viewURL.toString()%>"
           title="<%=entry.getName()%>" 
         />
-        
-6.  Next, define the main content of your page. Display your guestbook's name, 
-    and entry's name and message  with `<dl>`, `<dt>`, and `<dd>` tags the same 
+ 
+6.  Next, define the page's main content. Display the guestbook's name, 
+    the entry's name, and message  with `<dl>`, `<dt>`, and `<dd>` tags the same 
     way you did in `/guestbookwebportlet/full_content.jsp`:
 
         <dl>
@@ -116,8 +109,7 @@ Follow these steps to enable comments and ratings on guestbook entries:
     implemented via the `<liferay-ui:discussion>` tag. The 
     `<liferay-ui:discussion>` tag requires an action URL for its `formAction` 
     attribute, `invokeTaglibDiscussion` action URL in this case. The action URL 
-    is responsible for adding the comment after the user clicks *Add Comment*, 
-    enters a comment, and clicks *Reply*:
+    adds the comment after the user clicks enters a comment and clicks *Reply*:
     
             <liferay-ui:ratings className="<%=Entry.class.getName()%>"
               classPK="<%=entry.getEntryId()%>" type="stars" />
@@ -135,35 +127,34 @@ Follow these steps to enable comments and ratings on guestbook entries:
 
           </liferay-ui:panel>
         </liferay-ui:panel-container>
-        
+ 
 9.  Wrap the whole panel container in a `<c:if>` tag that test if the user is 
     logged in. This restricts access to comments and ratings to users who have 
     signed in with a portal account. Add the following expression to check for 
     this:
     
         <c:if test="<%= themeDisplay.isSignedIn() %>">
-        
+ 
     Make sure you add the closing `</c:if>` tag after the closing 
     `</liferay-ui:panel-container>` tag.
     
     +$$$
 
     **Note:** Discussions (comments) are implemented as message board messages 
-    in Liferay. In Liferay's `MBMessage` table, there's a `classPK` column. This
+    in @product@. In the `MBMessage` table, there's a `classPK` column. This
     `classPK` represents the `entryId` of the guestbook entry to which the 
-    comment was added. Ratings are stored in Liferay's `RatingsEntry` table. The 
+    comment was added. Ratings are stored in the `RatingsEntry` table. The 
     `RatingsEntry` table contains a `classPK` column where the `classPK` 
     represents the `entryId` of the guestbook entry to which the rating was 
     added. Using a `classPK` foreign key in one table to represent the primary 
-    key of another table is a common pattern that's used throughout Liferay.
+    key of another table is a common pattern that's used throughout @product@.
 
     $$$
 
-10.  Finally, display the related assets of the current entry at the end of the 
-    page. Note that you're using the `<liferay-ui:asset-links>` tag to display 
-    related assets. This tag is distinct from the
-    `<liferay-ui:input-asset-links>` that you used in `edit_guestbook.jsp` that
-    allowed the user to select related assets:
+10. Finally, display the current entry's related assets at the end of the page.
+    Note that you're using the `<liferay-ui:asset-links>` tag to display related
+    assets. This tag is distinct from the `<liferay-ui:input-asset-links>` that
+    you used in `edit_guestbook.jsp` for selecting related assets:
     
         <liferay-ui:asset-links
           assetEntryId="<%=(assetEntry != null) ? assetEntry.getEntryId() : 0%>"
@@ -174,13 +165,13 @@ Next, you'll update the guestbook actions to use the new view.
 
 ## Updating the Entry Actions JSP
 
-Your `view_entry.jsp` page is currently orphaned. Fix this by adding the
-*View* option to the Actions Menu. Open your 
+Your `view_entry.jsp` page is currently orphaned, because nothing links to it.
+Fix this by adding the *View* option to the Actions Menu. Open the
 `/guestbookwebportlet/entry_actions.jsp` and find the following line:
 
     <liferay-ui:icon-menu>
 
-Add the following lines below:
+Add the following lines below it:
 
     <portlet:renderURL var="viewEntryURL">
       <portlet:param name="entryId"
@@ -191,10 +182,13 @@ Add the following lines below:
 
     <liferay-ui:icon message="View" url="<%= viewEntryURL.toString() %>" />
 
-Here, you're simply creating a URL that points to the `view_entry.jsp` that
-you created and adding a `url` attribute that points to this URL. Test this
-link by selecting the *View* option in the Actions Menu for a guestbook entry. 
-Then test that comments and ratings work as expected. Excellent! You've
-asset-enabled your guestbook and guestbook entry entities! And you've enabled
-tags, categories, related assets, for both entities, and comments and ratings 
-for guestbook entry entities!
+Here, you create a URL that points to `view_entry.jsp`. Test this link by
+selecting the *View* option in the Actions Menu for a guestbook entry.  Then
+test that comments and ratings work as expected. 
+
+Excellent! You've asset-enabled the guestbook and guestbook entry entities, and 
+you've enabled tags, categories, related assets, for both entities, and comments
+and ratings for guestbook entry entities! Great job! 
+
+Your next task is to generate web services. This makes it possible to write
+other clients (such as mobile applications) for the Guestbook. 
