@@ -1,12 +1,10 @@
 # Enabling Tags, Categories, and Related Assets for Guestbook Entries [](id=enabling-tags-categories-and-related-assets-for-guestbook-entries)
 
-Enabling tags, categories, and related assets for guestbook entries is very
-similar to enabling them for guestbooks. As with guestbooks, you'll separate the
-page where users comment on and rate guestbook entries from the page where users
-actually edit the guestbook entries. 
+Enabling tags, categories, and related assets for guestbook entries is similar
+to enabling them for guestbooks. 
 
 Open your guestbook-web module's `guestbookwebportlet/edit_entry.jsp`
-file. Replace the existing contents with the following contents:
+file. Replace its content with the following code:
 
     <%@ include file="../init.jsp" %>
 
