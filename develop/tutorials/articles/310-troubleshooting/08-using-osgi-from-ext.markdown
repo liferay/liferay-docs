@@ -15,12 +15,12 @@ examples. Here's a very simple example:
 
 Remember that OSGi services can come and go at any time. @product@ services, 
 including `UserService`, aren't an exception to this rule. Although it's 
-unlikely that `UserService` will become unavailable, you must still account for 
+unlikely that `UserService` becomes unavailable, you must still account for 
 that possibility. @product@'s registry API provides `ServiceReference` and 
 `ServiceTracker`, which you can use to simplify dealing with OSGi services. If 
-you're familiar with OSGi development, you'll be familiar with these classes 
-because the OSGi framework provides its own versions of them. @product@'s 
-versions of these classes wrap the OSGi ones, so you can use them the same way. 
+you're familiar with OSGi development, you've heard of these classes because the
+OSGi framework provides them. @product@'s versions of these classes wrap the
+OSGi ones, so you can use them the same way. 
 
 Here's a smarter version of the above example. Using service trackers takes away 
 much of the pain of having to deal with services that can appear and disappear 
@@ -37,8 +37,8 @@ dynamically:
     }
     tracker.close();
 
-Remember to open your service trackers before use, and close them after use. If 
-you need to use @product@'s OSGi services in a servlet, for example, it's a good 
+Remember to open your service trackers before use and close them after use. If 
+you must use @product@'s OSGi services in a servlet, for example, it's a good 
 idea to open your service trackers in `Servlet.init()` and close them in 
 `Servlet.destroy()`. 
 

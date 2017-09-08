@@ -2,34 +2,32 @@
 
 To debug @product@ or its modules, you must first start it in debug mode. There 
 are two ways to do this, depending on how you're running your @product@ server. 
-If you're running your server inside Liferay @ide@, then you can simply click 
-the button to start the server in debug mode. If you're running the server 
-outside of Liferay @ide@, however, then things are a bit more complicated. This 
+If you're running your server inside @ide@, click the button to start the server
+in debug mode. If you don't use @ide@, things are a bit more complicated. This
 article shows you both ways of starting the server in debug mode. 
 
-## Running the Server in Liferay @ide@ [](id=running-the-server-in-liferay-ide)
+## Running the Server in @ide@ [](id=running-the-server-in-liferay-ide)
 
-If you're running the @product@ server inside Liferay @ide@, follow these 
-instructions to start it in debug mode:
+If you use @ide@, follow these instructions to start it in debug mode:
 
-1.  If you need instructions on setting up a @product@ server to run in Liferay 
+1.  If you need instructions on setting up a @product@ server to run in 
     @ide@, see 
     [this tutorial](/develop/tutorials/-/knowledge_base/7-0/installing-a-server-in-liferay-ide). 
 
 2.  Start the server in debug mode. To do this, click the debug button in the 
-    Servers pane of Liferay @ide@. 
+    Servers pane of @ide@. 
 
     ![Figure 1: The red box in this screenshot highlights the debug button. Click this button to start the server in debug mode.](../../images/troubleshooting-debug.png)
 
 That's it! The next section shows you how to start the server in debug mode if 
-you're running it outside of Liferay @ide@.
+you're running it outside of @ide@.
 
-## Running the Server Outside of Liferay @ide@ [](id=running-the-server-outside-of-liferay-ide)
+## Running the Server Outside of @ide@ [](id=running-the-server-outside-of-liferay-ide)
 
-If you're running the @product@ server outside of Liferay @ide@, starting it in 
-debug mode is a bit more complicated. To do this in Tomcat, first edit your 
-`setenv.sh` or `setenv.bat` file to adjust the value of the `CATALINA_OPTS` 
-variable: 
+If you're running the @product@ server outside @ide@, starting it in debug mode
+requires a command switch that differs depending on app server. To do this in
+Tomcat, edit `setenv.sh` or `setenv.bat` to adjust the value of the
+`CATALINA_OPTS` variable: 
 
     CATALINA_OPTS="$CATALINA_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
