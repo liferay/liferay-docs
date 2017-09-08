@@ -30,7 +30,7 @@ For example, the Control Menu, Product Menu, and Simulation Panel are packaged
 as Theme Contributor modules in Liferay, separating them from the theme. This
 means that these UI components must be handled outside the theme.
 
-![Figure 1: The Control Menu, Product Menu, and Simulation Panel are packaged as Theme Contributor modules.](../../images/theme-contributor-menus-diagram.png)
+![Figure 1: The Control Menu, Product Menu, and Simulation Panel are packaged as Theme Contributor modules.](../../../images/theme-contributor-menus-diagram.png)
 
 If you want to edit or style these standard UI components, you'll need to create
 your own Theme Contributor and add your modifications on top. You can also add
