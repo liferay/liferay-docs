@@ -68,7 +68,7 @@ to see how to connect a portlet's main view JSP to an entity's view JSP.
 Great! Now you know how to let users comment on content in your asset enabled
 portlets.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
 
