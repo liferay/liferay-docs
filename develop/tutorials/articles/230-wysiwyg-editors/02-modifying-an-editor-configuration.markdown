@@ -57,16 +57,16 @@ provided below.
             service = EditorConfigContributor.class
         )
 
-    This annotation declares that the following service will be applied for the
+    This annotation declares that the following service is applied for the
     AlloyEditor and CKEditor identified by their `contentEditor` configuration
     key. Two portlet names are specified (Blogs and Blogs Admin), which means
-    that the service applies to all editors in those portlets. Lastly, the
-    service ranking is listed, which prioritizes this service over others that
-    are currently deployed in Portal.
+    the service applies to all editors in those portlets. Lastly, the service
+    ranking is listed, which prioritizes this service over others that are
+    currently deployed in @product@.
 
 4.  Now that you've specified which editor configurations you want to modify,
-    you need to specify what about them you'd like to change. Add the following
-    method to your new class:
+    you must specify what about them must change. Add the following method to
+    your new class:
 
         @Override
         public void populateConfigJSONObject(
