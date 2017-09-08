@@ -7,7 +7,7 @@
 Liferay's development tools aim to help you get started fast. The basic steps 
 for installing @ide@ are
 
-* Download an @ide@ bundle. 
+* Download a @ide@ bundle. 
 
 * Unzip the downloaded package to a location on your system. 
 
@@ -16,18 +16,18 @@ for installing @ide@ are
 You'll follow these steps, and then generate an environment for developing your 
 first @product@ application. 
 
-## Installing @ide@ Bundle [](id=installing-ide-bundle)
+## Installing a @ide@ Bundle [](id=installing-ide-bundle)
 
 To install @ide@, follow these steps: 
 
 1.  Download and install 
     [the Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
     @product@ runs on Java. The JDK is required because you'll be developing 
-    @product@ apps in Liferay @ide@. The JDK is an enhanced version of the Java 
+    @product@ apps in @ide@. The JDK is an enhanced version of the Java 
     Environment used for developing new Java technology. 
 
 2.  Download 
-    [Liferay @ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
+    [@ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
     Installing it is easy: unzip it to a convenient location on your system. 
 
 3. To run @ide@, execute the `eclipse` executable. 
@@ -80,7 +80,7 @@ Follow these steps to create a Liferay Workspace in @ide@:
 5.  Click *Finish* to create your Liferay Workspace. This may take a while 
     because @ide@ downloads the @product@ bundle in the background. 
 
-    ![Figure 2: Liferay @ide@ provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/guestbook-workspace-menu.png)
+    ![Figure 2: @ide@ provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/guestbook-workspace-menu.png)
 
 A dialog appears prompting you to open the Liferay Workspace perspective. Click 
 *Yes*, and your perspective switches to Liferay Workspace. 
