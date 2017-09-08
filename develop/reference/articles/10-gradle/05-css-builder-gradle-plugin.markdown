@@ -147,6 +147,6 @@ configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
+    portalCommonCSS group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
 }
 ```
