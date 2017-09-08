@@ -1,31 +1,31 @@
 # Enabling Assets at the Service Layer [](id=enabling-assets-at-the-service-layer)
 
-Every row represents an asset in the `AssetEntry` table. Each row in this
-table has an `entryId` primary key and `classNameId` and `classPK` foreign keys.
-An asset entry row's `classNameId` specifies the type of asset represented by
-the asset entry. 
+Each row in the `AssetEntry` table represents an asset and has an `entryId` 
+primary key, and `classNameId` and `classPK` foreign keys. The `classNameId` 
+specifies the asset's type. For example, an asset with a `classNameId` of 
+`JournalArticle` means that the asset represents a web content article (in 
+@product@, `JournalArticle` is the back-end name for a web content article). An 
+asset's `classPK` is the primary key of the entity represented by the asset. 
 
-For example a row that has a `classNameId` corresponding to
-`JournalArticle` means that the asset entry row represents a web content
-article. (In Liferay, `JournalArticle` is the back-end name for web content
-article.) An asset entry row's `classPK` represents the primary key of the
-entity represented by the asset. 
+Follow these steps to make @product@'s asset services available to your 
+entities' service layers: 
 
-1.  Make Liferay's asset services available to your entities'
-    service layers.  Open the `guestbook-service` module's `service.xml` file
-    and add the following references directly above the `Guestbook`'s and the
-    `Entry`'s closing `</entity>` tags:
+1.  In the `guestbook-service` module's `service.xml` file, add the following 
+    references directly above the closing `</entity>` tags for `Guestbook` and 
+    `Entry`: 
 
         <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
         <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 
-    As mentioned above, you must use Liferay's `AssetEntry` service so that your
-    application can add asset entries that correspond to guestbooks and guestbook
-    entries. You also use Liferay's `AssetLink` service so that your application
-    can support related assets. *Asset links* are Liferay's back-end term for
+    As mentioned above, you must use @product@'s `AssetEntry` service for your 
+    application to add asset entries that correspond to guestbooks and guestbook
+    entries. You also use @product@'s `AssetLink` service for your application
+    to support related assets. *Asset links* are @product@'s back-end term for
     related assets. 
 
-2.  Run the `buildService` Gradle task. This task causes the objects referenced above
-    to be injected into your services for use. 
+2.  In the Gradle Tasks pane on the right-hand side of @ide@, double-click 
+    `buildService` in `guestbook-service` &rarr; `build`. This runs Service 
+    Builder, which causes the objects referenced above to be injected into your 
+    services for use. 
 
-Great! Next, you'll add assets to your service layer. 
+Great! Next, you'll handle assets in your service layer. 

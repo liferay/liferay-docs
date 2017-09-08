@@ -1,16 +1,14 @@
 # Adding Asset Features to Your User Interface [](id=adding-asset-features-to-your-user-interface)
 
-Now that your guestbook and guestbook entry entities have been asset-enabled,
-you're ready to use @product@'s asset functionality in your application. You'll
-start by implementing comments, ratings, tags, categories, and related assets
-for guestbooks. Then you'll circle back and implement this same functionality
-for guestbook entries. All the back-end support for these features is
-provided by @product@. Your only task is to update your applications' user
-interfaces to use these features.
+Now that your guestbook and guestbook entry entities are asset-enabled, you're 
+ready to use @product@'s asset functionality in your application. You'll start 
+by implementing comments, ratings, tags, categories, and related assets for 
+guestbooks. Then you'll do the same for guestbook entries. All the back-end 
+support for these features is provided by @product@. Your only task is to update 
+your applications' user interfaces to use these features. 
 
-In this section, you'll be creating several new JSPs that require new imports.
-Add the following imports to the `guestbook-web` module project's
-`init.jsp` file:
+In this section, you'll create several new JSPs that need new imports. Add the 
+following imports to the `guestbook-web` module project's `init.jsp` file: 
 
     <%@ page import="java.util.Map" %>
     <%@ page import="java.util.HashMap" %>
@@ -23,5 +21,5 @@ Add the following imports to the `guestbook-web` module project's
 
     <%@ page import="com.liferay.portal.kernel.util.ListUtil" %>
 
-It's simpler to add these imports now (rather than as you go) so that you don't
-run into errors as you're working through this section.
+It's simpler to add these imports now so you don't run into errors as you're 
+working through this section. 

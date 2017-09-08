@@ -1,15 +1,17 @@
 # Implementing an Entry Asset Renderer [](id=implementing-an-entry-asset-renderer)
 
-The classes you'll create in this section are nearly identical to the 
+The classes you'll create here are nearly identical to the 
 `GuestbookAssetRenderer` and `GuestbookAssetRendererFactory` classes you created
-for guestbooks in the last section. This section provides the code needed for
-guestbook entries. Please review the previous sections for more information on these methods.
+for guestbooks in the previous step. This step provides the code needed for 
+guestbook entries. Please review the previous sections for more information on 
+this code. 
 
-## Creating the Entry `AssetRenderer` Class
+## Creating the Entry AssetRenderer Class
 
 In the `com.liferay.docs.guestbook.asset` package, create an 
-`EntryAssetRenderer` class that extends @product@'s `BaseJSPAssetRenderer` class.
-Replace the contents of your `EntryAssetRenderer` class with the following code:
+`EntryAssetRenderer` class that extends @product@'s `BaseJSPAssetRenderer` 
+class. Replace the contents of your `EntryAssetRenderer` class with the 
+following code: 
 
     package com.liferay.docs.guestbook.asset;
 
@@ -178,22 +180,21 @@ Replace the contents of your `EntryAssetRenderer` class with the following code:
     }
 
 This class is similar to the `GuestbookAssetRenderer` class. For the
-`EntryAssetRenderer.getSummary` method, you return a summary that displays
-both the entry name (the name of the user who created the entry) and the entry
-message. 
+`EntryAssetRenderer.getSummary` method, you return a summary that displays the 
+entry name (the name of the user who created the entry) and the entry message. 
 
-`GuestbookAssetRenderer.getSummary` returns a summary that displays
-the guestbook name. `EntryAssetRenderer.getTitle` returns the entry message.
+`GuestbookAssetRenderer.getSummary` returns a summary that displays the 
+guestbook name. `EntryAssetRenderer.getTitle` returns the entry message. 
 `GuestbookAssetRenderer.getTitle` returns the guestbook name. The rest of the
 methods of `EntryAssetRenderer` are nearly identical to those of
-`GuestbookAssetRenderer`.
+`GuestbookAssetRenderer`. 
 
 ## Creating the Entry AssetRendererFactory Class
 
-Next, you must create the factory class for the guestbook entry asset
-renderer. In the `com.liferay.docs.guestbook.asset` package, create a class
-called `EntryAssetRendererFactory` that extends @product@'s
-`BaseAssetRendererFactory` class. Replace its contents with the following code:
+Next, you must create the guestbook entry asset renderer's factory class. In the 
+`com.liferay.docs.guestbook.asset` package, create a class called 
+`EntryAssetRendererFactory` that extends @product@'s `BaseAssetRendererFactory` 
+class. Replace its contents with the following code: 
 
     package com.liferay.docs.guestbook.asset;
 
@@ -308,14 +309,15 @@ called `EntryAssetRendererFactory` that extends @product@'s
 
 Now your guestbook project's entities are fully asset-enabled. To test the
 functionality, add the Asset Publisher portlet to a page and add a few
-guestbooks and guestbook entries. Edit a few of them, too. Then, check the Asset
-Publisher portlet. The Asset Publisher, by default, dynamically displays assets of any kind from the current site.
+guestbooks and guestbook entries. Edit a few of them, too. Then, check the Asset 
+Publisher portlet. The Asset Publisher, by default, dynamically displays assets 
+of any kind from the current site. 
 
 ![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../../../images/custom-entities-asset-publisher.png)
 
 Confirm that the Asset Publisher displays the guestbooks and guestbook entries
-that you added.
+that you added. 
 
 Great! In the next section, you'll update your portlets' user interfaces to use
-several features of @product@'s asset framework: comments, ratings, tags,
-categories, and related assets.
+several features of @product@'s asset framework: comments, ratings, tags, 
+categories, and related assets. 
