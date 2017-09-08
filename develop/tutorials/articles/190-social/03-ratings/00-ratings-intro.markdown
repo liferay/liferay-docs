@@ -1,6 +1,6 @@
 # Implementing Ratings Type Selection and Value Transformation [](id=ratings)
 
-Liferay has three different mechanisms for rating content: Stars, Thumbs
+@product@ has three different mechanisms for rating content: Stars, Thumbs
 Up/Down, and Likes. Prior to 7.0, there was no way for administrators to select
 a ratings type as it was hard-coded. Now, portal and site admins can select the
 ratings type for portlet entities through the Control Panel and Site
