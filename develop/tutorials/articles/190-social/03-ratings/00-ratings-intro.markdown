@@ -142,5 +142,20 @@ changes are not reversible.
     
     }
 
-In this tutorial, you have learned how to set a ratings type for an entity and how
-to implement a ratings data transformer. Liferay salutes you with a Thumbs Up! 
+Once you've implemented ratings type selection and value type transformation for 
+your app's entities, you can configure the default ratings type values through 
+the Control Panel by going to *Configuration* &rarr; *Instance Settings* and 
+selecting the *Social* tab. To override the default values for a site, go to 
+Site Administration &rarr; *Configuration* &rarr; *Site Settings* and select the 
+*Social* tab. 
+
+In this tutorial, you have learned how to set a ratings type for an entity and 
+how to implement a ratings data transformer. Liferay salutes you with a Thumbs 
+Up! 
+
+## Related Topics [](id=related-topics)
+
+[Rating Assets](/develop/tutorials/-/knowledge_base/7-0/rating-assets)
+
+[Enabling Comments on Your App's Contents](/develop/tutorials/-/knowledge_base/7-0/enabling-comments-on-your-apps-contents)
+
