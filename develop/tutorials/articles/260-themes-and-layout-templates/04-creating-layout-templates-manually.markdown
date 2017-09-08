@@ -129,8 +129,41 @@ Place the completed layout in your theme's `src/layouttpl` folder if you created
 your theme with Theme's Generator, or place it in your theme's 
 `docroot/layouttpl/custom` folder if using the Plugins SDK.
 
-There you have it. Now you know how to create and modify layout
-templates manually!
+
+Next you can learn how to include layout templates in a theme.
+
+## Including Layout Templates with a Theme [](id=including-layout-templates-with-a-theme)
+
+You can deploy a layout template with a theme by specifying it in the theme's 
+`liferay-look-and-feel.xml` file.
+
+Add your custom layout template to your `liferay-look-and-feel.xml` using the 
+`<layout-templates>` tag. Below is an example configuration using the basic 
+layout template example shown above:
+
+  <theme id="my-theme-name" name="My Theme Name">
+      ...
+        <layout-templates>
+          <custom>
+            <layout-template id="my_liferay_layout_template" 
+            name="My Liferay Layout Template">
+              <template-path>
+                  /layoutttpl/custom/my_liferay_layout_template.tpl
+              </template-path>
+              <thumbnail-path>
+                  /layoutttpl/custom/my_liferay_layout_template.png
+              </thumbnail-path>
+            </layout-template>
+          </custom>
+        </layout-templates>
+      ...
+  </theme>
+
+The `<layout-template>` tag's `id` attribute must match the layout template's 
+filename. 
+
+There you have it. Now you know how to create and modify layout templates 
+manually and how to include them with a theme!
 
 ## Related Topics [](id=related-topics)
 
