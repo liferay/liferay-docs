@@ -6,7 +6,7 @@ a new look for your users to enjoy. You specify color schemes with a CSS class
 name, which also lets you choose different background images, different border
 colors, and more.
  
-![Figure 1: You can offer eye-pleasing color schemes for your themes.](../../images/theme-color-schemes.png)
+![Figure 1: You can offer eye-pleasing color schemes for your themes.](../../../images/theme-color-schemes.png)
 
 Follow these steps to create color schemes for your theme:
 
