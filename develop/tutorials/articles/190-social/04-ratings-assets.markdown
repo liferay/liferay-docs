@@ -5,7 +5,7 @@ feature appears in many core apps, such as the Blogs portlet. Ratings give your
 users a voice, and you can benefit from their feedback.  Thanks to @product@'s
 taglibs, you can enable ratings for your app in only a few lines of code.
 
-![Figure 1: Ratings let users quickly provide feedback on content.](../../../images/social-ratings-thumbs.png)
+![Figure 1: Ratings let users quickly provide feedback on content.](../../images/social-ratings-thumbs.png)
 
 Follow these steps: 
 

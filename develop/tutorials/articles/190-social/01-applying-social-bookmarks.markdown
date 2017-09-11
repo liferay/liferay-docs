@@ -4,7 +4,7 @@ When you enable social bookmarks, icons for sharing on Twitter, Facebook, and
 Google Plus appear below your app's content. @product@'s taglibs provide the 
 markup you need to add this feature to your app. 
 
-![Figure 1: Social bookmarks are enabled in the built-in Blogs portlet](../../../images/social-bookmarks-icons.png)
+![Figure 1: Social bookmarks are enabled in the built-in Blogs portlet](../../images/social-bookmarks-icons.png)
 
 Follow these steps to add social bookmarks to your app:
 
