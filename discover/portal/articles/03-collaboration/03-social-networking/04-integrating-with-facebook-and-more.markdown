@@ -82,7 +82,7 @@ feature is enabled by default in the Blogs portlet, and can be enabled for other
 asset-enabled portlets through the *configuration* menu of the portlet or in 
 System Settings.
 
-![Figure 1: Social Bookmarks are enabled by default in the Blogs portlet.](../../../images/social-bookmarks.png)
+![Figure 2: Social Bookmarks are enabled by default in the Blogs portlet.](../../../images/social-bookmarks.png)
 
 If you want more social bookmarks than come out of the box, be sure to install 
 the Social Bookmarks app from the Marketplace (available for [CE](https://web.liferay.com/marketplace/-/mp/application/15194315) and 
