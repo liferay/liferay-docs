@@ -99,8 +99,11 @@ Property Name | Type | Default Value | Description
 compiler for increased speed. If you're using an IBM JDK, you may experience
 issues when building your SASS files (e.g., when building a theme). It's
 recommended to switch to using the Oracle JDK, but if you prefer using the IBM
-JDK, you must use the fallback Ruby compiler. To do this, set the
-`sassCompilerClassName` property to `ruby`.
+JDK, you must use the fallback Ruby compiler. You can do this two ways:
+
+- Set `sass.compiler.class.name=ruby` in your `gradle.properties` file.
+- Set `buildCSS.sassCompilerClassName='ruby'` in the plugin's `build.gradle`
+  file within the `buildCSS` task definition.
 
 Be aware that the Ruby-based compiler doesn't perform as well as the native
 compiler, so expect longer compile times.
@@ -147,6 +150,6 @@ configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
+    portalCommonCSS group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
 }
 ```

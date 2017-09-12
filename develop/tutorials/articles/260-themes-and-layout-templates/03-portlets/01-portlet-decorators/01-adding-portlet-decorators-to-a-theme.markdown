@@ -13,20 +13,20 @@ includes three Portlet Decorators:
     wrapped in a white box with a border and the portlet title is displayed at
     the top.
 
-    ![Figure 1: The Classic theme's Decorate Application Decorator wraps the portlet in a white box.](../../../images/application-decorator-decorate.png)
+    ![Figure 1: The Classic theme's Decorate Application Decorator wraps the portlet in a white box.](../../../../images/application-decorator-decorate.png)
 
 -   Borderless: when this decorator is applied, the portlet is no
     longer wrapped in a white box, but the portlet title is displayed at the
     top.
 
-    ![Figure 2: The Classic theme's Borderless Application Decorator displays the application's custom title.](../../../images/application-decorator-borderless.png)
+    ![Figure 2: The Classic theme's Borderless Application Decorator displays the application's custom title.](../../../../images/application-decorator-borderless.png)
 
 -   Barebone: when this decorator is applied, neither the wrapping box
     nor the custom portlet title are shown. This option is
     recommended when you only want to display the bare portlet
     content.
 
-    ![Figure 3: The Classic theme's Barebone Application Decorator displays only the application's content.](../../../images/application-decorator-barebone.png)
+    ![Figure 3: The Classic theme's Barebone Application Decorator displays only the application's content.](../../../../images/application-decorator-barebone.png)
 
 +$$$
 
