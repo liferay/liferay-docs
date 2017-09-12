@@ -236,7 +236,7 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
 Next you can create the `AssetRendererFactory` class. 
 
-## Creating the `GuestbookAssetRendererFactory` Class
+## Creating the GuestbookAssetRendererFactory Class
 
 Follow these steps to create the `GuestbookAssetRendererFactory`:
 

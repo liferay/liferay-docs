@@ -46,6 +46,7 @@ Follow these steps to enable comments and ratings on guestbook entries:
         currentURL);
 
     ![Figure 1: The Breadcrumb portlet appears on regular portal pages by default. It appears just below the main page navigation menu and displays the path to the current page or portlet.](../../../../images/portlet-breadcrumb.png)
+    <!-- Missing image -->
 
 4.  At the end of the scriptlet, add the names of the current entry's existing 
     asset tags as keywords to the portal page. These tag names appear in a 
