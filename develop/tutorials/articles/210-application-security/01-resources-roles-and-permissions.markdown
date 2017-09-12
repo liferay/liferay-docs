@@ -59,8 +59,9 @@ entry* are associated with the `com.liferay.bookmarks.model.BookmarksFolder`
 and `com.liferay.bookmarks.model.BookmarksEntry` entities, respectively.
 
 There are two kinds of resources in Liferay: *portlet resources* and *model
-resources*. Portlet resources represent portlet applications. The names of
-portlet resources typically correspond to the IDs of the portlets themselves.
+resources*. Portlet resources represent portlet applications. The names of portlet
+resources are the portlet IDs from the portlets' `portlet.xml` files (or in the
+case of core portlets, Liferay's `portlet-custom.xml`. These names typically correspond to the IDs of the portlets themselves.
 For example, the fully qualified name of the Bookmarks portlet class is
 `com.liferay.bookmarks.web.portlet.BookmarksPortlet`. Its ID is defined in the `BookmarksPortletKeys` class like this:
 
@@ -69,15 +70,6 @@ For example, the fully qualified name of the Bookmarks portlet class is
 
 This `BOOKMARKS` string is used when declaring portlet resources in
 `default.xml` files, as discussed below.
-
-There are two kinds of resources in Liferay: *portlet resources* and *model
-resources*. Portlet resources represent portlets. The names of portlet
-resources are the portlet IDs from the portlets' `portlet.xml` files (or in the
-case of core portlets, Liferay's `portlet-custom.xml`. Model resources
-refer to entities within Liferay. The names of model resources are the fully
-qualified class names of the entities they represent. In the XML displayed
-below, permission implementations are first defined for the *portlet* resource
-and then for the *model* resources.
 
 Model resources represent entities within Liferay, such as bookmarks folders or
 bookmarks entries. The names of model resources are the fully qualified class
@@ -337,6 +329,9 @@ bookmark folder resources as top-level actions:
     <supports>
         <action-key>ADD_ENTRY</action-key>
         <action-key>ADD_FOLDER</action-key>
+        <action-key>PERMISSIONS</action-key>
+        <action-key>SUBSCRIBE</action-key>
+        <action-key>VIEW</action-key>
     </supports>
 
 The second and third `<model-resource>` tags define resource actions that can
