@@ -6,8 +6,8 @@ you've installed JPM and Blade CLI using a Liferay Workspace installer. Read the
 [Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 tutorial for more details.
 
-Once Blade CLI and JPM are installed, execute the following command to add your
-proxy to Blade CLI:
+Once Blade CLI and JPM are installed, execute the following command to configure
+your proxy requirements for Blade CLI:
 
     jpm command --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" jpm
 
