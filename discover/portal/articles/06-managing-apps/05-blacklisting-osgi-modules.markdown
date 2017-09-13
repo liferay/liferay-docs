@@ -10,7 +10,7 @@ blacklist file into a directory.
 +$$$
 
 **Note**: The blacklisting capability was introduced in DXP Digital Enterprise
-Fix Pack 30 and Liferay CE Portal GA5.
+Fix 7.0 Pack 30 and Liferay CE Portal 7.0 GA5.
 
 $$$  
 
