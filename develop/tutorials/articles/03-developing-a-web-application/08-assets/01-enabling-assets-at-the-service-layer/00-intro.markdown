@@ -25,7 +25,17 @@ entity represented by the asset.
     can support related assets. *Asset links* are Liferay's back-end term for
     related assets. 
 
-2.  Run the `buildService` Gradle task. This task causes the objects referenced above
+2.  Open the `build.gradle` file. Add these dependencies: 
+
+        compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+        compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+
+    Save both files. 
+
+3.  Right-click `build.gradle` and select *Gradle* &rarr; *Refresh Gradle
+    Project*. 
+
+4.  Run the `buildService` Gradle task. This task causes the objects referenced above
     to be injected into your services for use. 
 
 Great! Next, you'll add assets to your service layer. 

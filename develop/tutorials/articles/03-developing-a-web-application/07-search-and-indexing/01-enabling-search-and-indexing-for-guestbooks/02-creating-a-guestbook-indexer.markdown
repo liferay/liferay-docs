@@ -266,13 +266,7 @@ Follow these steps to create the indexer for guestbooks:
 14. Organize your imports (Ctrl-Shift-O), and save the file. It will have
     errors. 
 
-15. Include the following dependencies in the `guestbook-api` module's 
-    `build.gradle`:
-    
-        compile group: "javax.portlet", name: "portlet-api", version: "2.0"
-        compile group: "javax.servlet", name: "servlet-api", version: "2.5"
-
-16. Export the `com.liferay.docs.guestbook.search` package in the 
+15. Export the `com.liferay.docs.guestbook.search` package in the 
     `guestbook-api` module's `bnd.bnd` file. The export section should look
     like this: 
 
