@@ -213,4 +213,4 @@ search results!
 
 [Configuring Your Application's Title and Back Link](/develop/tutorials/-/knowledge_base/7-0/configuring-your-applications-title-and-back-link)
 
-[Using lexicon Icons in Your App](/develop/tutorials/-/knowledge_base/7-0/using-lexicon-icons-in-your-app)
+[Using Lexicon Icons in Your App](/develop/tutorials/-/knowledge_base/7-0/using-lexicon-icons-in-your-app)

@@ -432,7 +432,7 @@ create [cards](http://liferay.github.io/lexicon/content/cards/):
     
 The configuration above renders the UI shown in the figure below:
 
-![Figure 3: The Layouts Item Selector view uses the Lexicon design language and Liferay Layout taglibs to create the UI.](../../images/layouts-item-selector-view.png)
+![Figure 3: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../images/layouts-item-selector-view.png)
 
 This portion of the `aui:script` returns the path for the page:
 

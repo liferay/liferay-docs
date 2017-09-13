@@ -1,15 +1,13 @@
 # Applying Lexicon Styles to your App [](id=applying-lexicon-styles-to-your-app)
 
 It's important to have a consistent user experience across your apps. Liferay's 
-built-in apps achieve this by using the 
-[Liferay Lexicon Experience Language](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Lexicon).
-Lexicon is optimized to provide you with a consistent, user-friendly UI for your 
-Liferay apps.
+built-in apps achieve this by utilizing Liferay's 
+[Lexicon Experience Language](https://lexicondesign.io/) and it's web 
+implementation, [Lexicon](https://liferay.github.io/clay/).
 
-Lexicon is included in all themes based on the `_styled` base theme. The 
-`_styled` base theme uses Bootstrap with a Lexicon base, giving you access to 
-all the components documented on the [Clay site](http://liferay.github.io/clay/).
-<!-- Explain why Lexicon is on the Clay site -->
+Lexicon is optimized to provide you with a consistent, user-friendly UI for your 
+Liferay apps, and is included in all themes that are based on the `_styled` base theme. Giving you access to all the components documented on the [Lexicon site](https://liferay.github.io/clay/).
+
 This means that you can use Lexicon markup and components in your custom Liferay 
 apps. These tutorials explain how to apply Liferay Lexicon design patterns to 
 your app to achieve the same look and feel as @product@'s built-in apps. 
