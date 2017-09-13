@@ -15,12 +15,16 @@ instructions.
 
 ![Figure 2: A form text field.](../images/forms-form-text.png)
 
-Text Field : Users enter text into these fields. For example, a Full Name field
+Text Field
+: Users enter text into these fields. For example, a Full Name field
 will often be a text field. By default, a text field keeps all input on a single
-line of text. To accommodate longer responses, choose the multiline setting when
-configuring the text field. Place limits on the text users can enter (numbers
-from 1-10, or email addresses, for example) by using the Text field's validation
-options.
+line of text (as in [this
+example](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#adding-placeholder-text-and-predefined-values)).
+To accommodate longer responses, choose the multiline setting when configuring
+the text field [as in this
+example](/discover/portal/-/knowledge_base/7-0/basic-forms#building-a-form).
+Place limits on the text users can enter (numbers from 1-10, or email addresses,
+for example) by using the Text field's validation options.
 
 ![Figure 3: A multiline text form.](../images/forms-multiline.png)
 
