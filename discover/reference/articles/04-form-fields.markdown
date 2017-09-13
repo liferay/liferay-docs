@@ -2,7 +2,7 @@
 
 A form without fields is no form at all. To meet your form-building needs,
 Liferay Forms gives you many useful and highly configurable field types. To see
-examples of the form fields listed here, visit the [Collecting Information from
+examples of the form fields describedlisted here, visit the [Collecting Information from
 Users](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users)
 section of the User Guide.
 
@@ -46,7 +46,10 @@ probably use the Date field type.
 
 Multiple Selection/Single Checkbox
 : Users select one or more options from check boxes (or switchers, if
-configured).
+configured). The Single Checkbox field is only available to Digital Enterprise
+subscribers, but its functionality can be obtained with the Multiple
+Selection field. The Single Checkbox field will be removed in the next version
+of @product@.
 
 ![Figure 7: A multiple selection field using a switcher.](../images/forms-switcher.png)
 
