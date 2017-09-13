@@ -1,10 +1,10 @@
 # Implementing Permission Checks at the Service Layer [](id=implementing-permission-checks-at-the-service-layer)
 
-To implement permission checks for the `guestbook-service` module's remote 
-services, use the following steps: 
+First, you'll add permission checks to `GuestbookServiceImpl`: 
 
 1.  In `GuestbookServiceImpl`, replace the `addGuestbook`, `deleteGuestbook`, 
-    and `updateGuestbook` methods with the following: 
+    and `updateGuestbook` methods with these versions that contain the
+    permission checks: 
 
         public Guestbook addGuestbook(long userId, String name,
                         ServiceContext serviceContext) throws SystemException,
@@ -41,36 +41,33 @@ services, use the following steps:
     classes. 
 
     These methods add permission checks to the remote service methods by calling 
-    the `check` helper methods of `GuestbookModelPermission` and 
+    the `check` helper methods in `GuestbookModelPermission` and 
     `GuestbookPermission`. Remember that these methods throw exceptions, so if 
     the user doesn't have permission, processing stops at the permission check. 
-    The `GuestbookModelPermission.check` method takes the following three 
-    parameters: 
+    The `GuestbookModelPermission.check` method takes three parameters: 
 
     - a `PermissionChecker` object
     - a `groupId`
     - an `actionId` string
 
     The `GuestbookModelPermission.check` and `EntryModelPermission.check` 
-    methods take the following three parameters: 
+    methods take three parameters: 
 
     - a `PermissionChecker` object
     - an entity ID (either `guestbookId` or `entryId`)
     - an `actionId` string
 
-    `BaseServiceImpl` contains a `getPermissionChecker` method which you can 
-    invoke to get a `PermissionChecker` object. This is possible since 
-    `GuestbookServiceImpl` extends `GuestbookServiceBaseImpl`, which extends 
-    `BaseServiceImpl`. Getting a `groupId` can be easily done using the 
-    `serviceContext` method `getScopeGroupId`. The `actionId` string determines 
-    the particular action for which you're checking permissions. For this, you 
-    use a specific field of your `ActionKeys` class. Choosing an `ActionKeys` 
-    field is less error prone than than manually typing the name of the string 
-    every time you want to check a permission. Also, by using a string from 
-    `ActionKeys`, you avoid creating a duplicate string. 
+    `BaseServiceImpl` contains a `getPermissionChecker` method that returns a
+    `PermissionChecker` object. This is possible since `GuestbookServiceImpl`
+    extends `GuestbookServiceBaseImpl`, which extends `BaseServiceImpl`. The
+    `serviceContext` method `getScopeGroupId` returns a `groupId`. The
+    `actionId` string comes from your `ActionKeys` class. Using an
+    `ActionKeys` field is less error prone than than manually typing the name of
+    the string every time you want to check a permission. Also, by using a
+    string from `ActionKeys`, you avoid creating a duplicate string. 
 
 2.  Open `EntryServiceImpl` and replace the `addEntry`, `deleteEntry`, and
-    `updateEntry` methods with the following: 
+    `updateEntry` methods with ones that contain permission checks: 
 
         public Entry addEntry(long userId, long guestbookId, String name,
                         String email, String message, ServiceContext serviceContext)
@@ -105,11 +102,11 @@ services, use the following steps:
     As in step 1, organize imports to add the imports for the `*Permissions` and 
     `ActionKeys` classes. 
 
-    The permission checks in these methods work the same way as the permissions 
-    checks that you added to `GuestbookServiceImpl`. For `addEntry`, you use 
-    `GuestbookModelPermission.check` for the permission check since adding a 
-    guestbook entry is a top level model action. For `deleteEntry` and 
-    `updateEntry`, you use `EntryPermission.check` since these operations each 
+    The permission checks in these methods work the same as those in
+    `GuestbookServiceImpl`. For `addEntry`, you use
+    `GuestbookModelPermission.check` for the permission check since adding a
+    guestbook entry is a top level model action. For `deleteEntry` and
+    `updateEntry`, you use `EntryPermission.check` since these operations each
     require a specific permission on a specific entity. 
 
 3.  Open `GuestbookServiceImpl` and replace both `getGuestbooks` methods (this
@@ -151,7 +148,7 @@ services, use the following steps:
                 return entryPersistence.filterCountByG_G(groupId, guestbookId);
         }
 
-5.  Run Service Builder, then refresh the api and service modules. 
+5.  Run Service Builder and refresh the API and service modules. 
 
 All remote service methods should include permission checks. In steps 1 and 2,
 you directly invoked permission checks for the remote service methods
@@ -183,3 +180,7 @@ permission checks. Instances of the `*PersistenceImpl` classes are made
 available as Spring beans in the `*ServiceImpl` classes. These beans are named 
 `guestbookPersistence` and `entryPersistence` in `GuestbookServiceImpl` and 
 `EntryServiceImpl`, respectively. 
+
+Awesome! You're almost done. The only thing left is to secure the service calls
+you make in the web client. 
+
