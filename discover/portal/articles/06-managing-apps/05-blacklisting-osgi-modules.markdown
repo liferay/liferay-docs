@@ -7,6 +7,13 @@ modules. Rather than uninstalling them one at a time using the Application
 Manager or Apache Felix Gogo Shell, you can uninstall them by dropping the
 blacklist file into a directory. 
 
++$$$
+
+**Note**: The blacklisting capability was introduced in DXP Digital Enterprise
+Fix Pack 30 and Liferay CE Portal GA5.
+
+$$$  
+
 Follow these steps to blacklist a module:
 
 1.  Create a configuration file for the component 
