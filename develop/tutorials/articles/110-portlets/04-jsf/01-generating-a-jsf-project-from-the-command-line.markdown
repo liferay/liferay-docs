@@ -7,6 +7,10 @@ from scratch in the
 [Creating a JSF Project Manually](/develop/tutorials/-/knowledge_base/7-0/creating-a-jsf-project-manually.markdown)
 tutorial.
 
+<div class="video-link">
+<img src="../../../images/jsf-vid-thumbnail.png" alt="video-thumbnail"/>
+</div>
+
 Before generating your JSF application, you should first visit
 [liferayfaces.org](http://liferayfaces.org/), a great reference spot for JSF
 application development targeted for @product@. This site lets you choose the
@@ -74,3 +78,11 @@ Then copy the generated WAR to @product@'s `deploy` folder:
 
 Awesome! You've generated your JSF application and deployed it using the command
 line.
+
+<div class="video-tag" data-name="Developing a New JSF Portlet">
+  <video width="100%" height="100%" controls>
+    <source src="https://dev.liferay.com/documents/10184/367132/developing-a-new-jsf-portlet.mp4" type="video/mp4">
+    <source src="https://dev.liferay.com/documents/10184/367132/developing-a-new-jsf-portlet.mkv" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+</div>

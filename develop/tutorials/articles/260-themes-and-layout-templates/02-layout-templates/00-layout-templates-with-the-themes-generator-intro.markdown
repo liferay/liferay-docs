@@ -3,14 +3,14 @@
 Layout Templates specify how content is arranged on your site pages in @product@.
 For example, take a look at the *1-2-1 Columns Layout CE* layout shown below:
 
-![Figure 1: The *1-2-1 Columns Layout CE* page layout creates a nice flow for your content.](../../images/layout-template-1-2-1-columns.png)
+![Figure 1: The *1-2-1 Columns Layout CE* page layout creates a nice flow for your content.](../../../images/layout-template-1-2-1-columns.png)
 
 @product-ver@ and DXP provide several layout templates out-of-the-box for you to 
 choose from. You can change the layout for your page, and view the installed 
 layout templates, by opening the `Edit` menu for your page, under the `Navigation`
 heading of the `Product Menu` and scrolling down to the *Layouts* heading.
 
-![Figure 2: Liferay provides several layout templates out-of-the-box for you to use.](../../images/layout-templates.png)
+![Figure 2: Liferay provides several layout templates out-of-the-box for you to use.](../../../images/layout-templates.png)
 
 If you'd like to create your own custom layout templates, you've come to the
 right place.
@@ -37,7 +37,7 @@ Follow these steps to create a layout template:
 
 2.  Run `yo liferay-theme:layout` to start the layouts sub-generator.
 
-    ![Figure 3: The Layout Template sub-generator automates the layout creation process.](../../images/layout-prompt.png)
+    ![Figure 3: The Layout Template sub-generator automates the layout creation process.](../../../images/layout-prompt.png)
     
     **Note:** If you run the layout sub-generator from the root directory of a 
     theme created with the themes generator, it will add the layout template as 
@@ -73,19 +73,19 @@ Follow these steps to create a layout template:
     choose where to insert your row, highlighted in blue, then press Enter to 
     insert the row.
     
-    ![Figure 4: Rows can be inserted using the layout vi.](../../images/insert-row.png)
+    ![Figure 4: Rows can be inserted using the layout vi.](../../../images/insert-row.png)
 
     - Remove row: Displays a vi to remove your row. Use your arrow keys to
     select the row you want to remove, highlighted in red, then press Enter to
     remove the row.
     
-    ![Figure 5: Rows are removed using the layout vi.](../../images/remove-row.png)
+    ![Figure 5: Rows are removed using the layout vi.](../../../images/remove-row.png)
 
     Once you are done designing your layout you can move onto the next step.
     
 7.  Select *Finish layout* to complete your layout's design.
 
-    ![Figure 6: Select the *Finish layout* option to complete your design.](../../images/finish-layout.png)
+    ![Figure 6: Select the *Finish layout* option to complete your design.](../../../images/finish-layout.png)
 
     Your layout template files are generated for you in the current directory.
     

@@ -198,11 +198,12 @@ the project:
             classpath group: "com.liferay", name: "com.liferay.gradle.plugins.wsdd.builder", version: "1.0.9"
         }
 
-    repositories {
-        maven {
-            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        repositories {
+            maven {
+                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            }
         }
-	}
+    }
 
     apply plugin: "com.liferay.portal.tools.wsdd.builder"
 

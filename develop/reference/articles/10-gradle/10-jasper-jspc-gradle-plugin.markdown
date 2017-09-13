@@ -16,7 +16,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.jasper.jspc", version: "2.0.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.jasper.jspc", version: "2.0.2"
     }
 
     repositories {
@@ -119,11 +119,7 @@ manually adding a dependency to the `jspCTool` configuration:
 
 ```gradle
 dependencies {
-    jspCTool(group: "com.liferay", name: "com.liferay.jasper.jspc", version: "1.0.10") {
-        exclude group: "com.liferay.portal"
-        exclude group: "javax.servlet"
-    }
-
+    jspCTool group: "com.liferay", name: "com.liferay.jasper.jspc", version: "1.0.11"
     jspCTool group: "org.apache.ant", name: "ant", version: "1.9.4"
 }
 ```
