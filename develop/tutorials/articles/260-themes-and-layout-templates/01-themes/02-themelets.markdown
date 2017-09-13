@@ -15,7 +15,7 @@ themelet that uses a custom JavaScript component for responsive embedded videos.
 For example, take a look at the [Liferay Product Menu Animation Themelet](https://www.npmjs.com/package/lfr-product-menu-animation-themelet).
 This themelet simply alters the animation for Liferay's Product Menu.
 
-![Figure 1: Themelets can be used to modify one aspect of the UI, that you can then reuse in your other themes.](../../images/product-menu-animation-themelet.png)
+![Figure 1: Themelets can be used to modify one aspect of the UI, that you can then reuse in your other themes.](../../../images/product-menu-animation-themelet.png)
 
 If there is something you find yourself coding over and over again for themes,
 it's a good candidate for a themelet.
@@ -40,7 +40,7 @@ Follow these steps to create a themelet:
 2.  Run `yo liferay-theme:themelet` and follow the prompts to generate the
     themelet.
 
-    ![Figure 2: The Themelet sub-generator automates the themelet creation process, making it quick and easy.](../../images/themelet-prompt.png)
+    ![Figure 2: The Themelet sub-generator automates the themelet creation process, making it quick and easy.](../../../images/themelet-prompt.png)
    
     The generated themelet contains a `package.json` file with configuraion
     information and a `src/css` directory that contains a `_custom.scss` file.
@@ -73,7 +73,7 @@ your theme.
 
 3.  Select *Search globally installed npm modules*.
 
-    ![Figure 3: You can extend your theme using globally installed npm modules or published npm modules.](../../images/install-themelet.png)
+    ![Figure 3: You can extend your theme using globally installed npm modules or published npm modules.](../../../images/install-themelet.png)
 
 4.  Highlight your themelet, press spacebar to activate it, and press *Enter* to
     install it. 
