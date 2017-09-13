@@ -1,7 +1,10 @@
 # Form Field Types [](id=form-field-types)
 
 A form without fields is no form at all. To meet your form-building needs,
-Liferay Forms gives you many useful and highly configurable field types.
+Liferay Forms gives you many useful and highly configurable field types. To see
+examples of the form fields listed here, visit the [Collecting Information from
+Users](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users)
+section of the User Guide.
 
 ![Figure 1: Out of the box form field types.](../images/forms-field-types.png)
 
