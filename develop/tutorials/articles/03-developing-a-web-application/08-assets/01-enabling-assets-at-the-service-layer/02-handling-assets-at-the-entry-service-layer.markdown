@@ -1,13 +1,12 @@
 # Handling Assets at the Entry Service Layer [](id=handling-assets-at-the-entry-service-layer)
 
-You updated the guestbook entity's service methods. Now it's time to update
-the guestbook entry entity's service methods. The calls you need to make to
-`assetEntryLocalService` and `assetLinkLocalService` in the guestbook entry
-entity's service methods are identical to the ones you made in the guestbook
-entity's service methods. Follow these steps:
+Now you must update the guestbook entry entity's service methods. In these 
+methods, the calls you'll make to `assetEntryLocalService` and 
+`assetLinkLocalService` are identical to the ones you made in the guestbook 
+entity's service methods. Follow these steps: 
 
-1.  Open `EntryLocalServiceImpl` and add the asset calls to the `addEntry`
-    method after the resource calls:
+1.  Open `EntryLocalServiceImpl` and add the asset calls to the `addEntry` 
+    method after the resource calls: 
 
           AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
                               groupId, entry.getCreateDate(), entry.getModifiedDate(),
@@ -21,9 +20,8 @@ entity's service methods. Follow these steps:
                               serviceContext.getAssetLinkEntryIds(),
                               AssetLinkConstants.TYPE_RELATED);
 
-2.  Next, add the asset calls to the `updateEntry` method after the resource
+2.  Next, add the asset calls to the `updateEntry` method after the resource 
     calls: 
-
 
               AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
                               serviceContext.getScopeGroupId,
@@ -49,7 +47,7 @@ entity's service methods. Follow these steps:
 
         assetEntryLocalService.deleteEntry(assetEntry);
 
-4.  Finally, organize your imports, save the file, and run Service Builder.
+4.  Finally, organize your imports, save the file, and run Service Builder. 
 
 Excellent! You've asset-enabled your guestbook and guestbook entry entities at
 the service layer. Your next step is to implement asset renderers for these
