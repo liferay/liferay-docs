@@ -6,7 +6,7 @@ everything standard HTML elements have, as well as some additional attributes
 that are Liferay specific. For a full list of all the available taglibs and
 attributes, look at Liferay's API docs on [docs.liferay.com](@platform-ref@/7.0-latest/taglibs/util-taglib)
 
-Using a combination of Liferay's `AUI` taglibs and [Lexicon](http://liferay.github.io/lexicon/)
+Using a combination of Liferay's `AUI` taglibs and [Lexicon](https://liferay.github.io/clay/)
 classes, you can create forms in your app's JSPs. You can learn how to create
 an MVC portlet project in the [using-the-mvc-portlet-template](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/using-the-mvc-portlet-template) tutorial.
 

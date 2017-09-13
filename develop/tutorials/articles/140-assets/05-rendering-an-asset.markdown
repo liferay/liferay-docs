@@ -662,7 +662,7 @@ renderer factory.
         }
 
     You can find a list of all available Lexicon icons at
-    [http://liferay.github.io/lexicon/content/icons-lexicon/](http://liferay.github.io/lexicon/content/icons-lexicon/).
+    [https://liferay.github.io/clay/content/icons-lexicon/](https://liferay.github.io/clay/content/icons-lexicon/).
 
 7.  Add methods that generate URLs to add and view the asset.
 
