@@ -895,7 +895,7 @@ For example, this is the Liferay Portal 6.2 Lunar Resort's reservation form:
     remember your stay. Please take a moment to fill out our guestbook below.
     </p>
 
-The HTML code above uses Bootstrap 2's design language.
+The HTML code above uses Bootstrap 2's markup and CSS classes.
 
 Lexicon extends Bootstrap 3. Here's the Lunar Resort form updated to Lexicon:
 

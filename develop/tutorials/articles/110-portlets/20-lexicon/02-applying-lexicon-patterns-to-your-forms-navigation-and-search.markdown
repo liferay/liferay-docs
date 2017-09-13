@@ -99,7 +99,7 @@ tutorial. Follow these steps to update Actions menu for your entities
 (such as the ones listed next to search results):
 
 1.  Open your module's actions JSP (`guestbook_actions.jsp` for example) and 
-    update the `<liferay-ui:icon-menu>` to use Lexicon's Lexicon markup with the 
+    update the `<liferay-ui:icon-menu>` to use Lexicon's markup with the 
     `markupView` attribute:
 
         <liferay-ui:icon-menu
