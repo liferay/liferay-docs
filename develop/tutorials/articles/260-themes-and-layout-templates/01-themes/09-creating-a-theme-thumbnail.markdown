@@ -19,7 +19,7 @@ Here's how to create a proper thumbnail image for your theme:
 Now, when you apply the theme, its thumbnail displays along with the other
 themes that are available to your site.
 
-![Figure 1: Your theme thumbnail is displayed with the rest of the available themes.](../../images/available-themes-thumbnail.png)
+![Figure 1: Your theme thumbnail is displayed with the rest of the available themes.](../../../images/available-themes-thumbnail.png)
 
 Congrats! Now you know how to create a thumbnail image for your theme!
 

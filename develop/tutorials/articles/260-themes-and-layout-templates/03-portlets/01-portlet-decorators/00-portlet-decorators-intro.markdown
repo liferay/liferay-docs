@@ -20,11 +20,11 @@ Portlet Decorator is applied, including its wrapper.
 The figure below shows the markup of the layers wrapping a Liferay application
 when the *Decorate* Portlet Decorator is applied:
 
-![Figure 1: Portlet Decorators add the decorator's CSS class to the application's wrapper](../../../images/portlet-application-markup.png)
+![Figure 1: Portlet Decorators add the decorator's CSS class to the application's wrapper](../../../../images/portlet-application-markup.png)
 
 Once your Portlet Decorator is complete, apply it to your applications
 through the [Look and Feel Configuration menu](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/look-and-feel-configuration).
 
-![Figure 2: Portlet Decorators can be applied through the Look and Feel Configuration menu](../../../images/app-decor-look-and-feel.png)
+![Figure 2: Portlet Decorators can be applied through the Look and Feel Configuration menu](../../../../images/app-decor-look-and-feel.png)
 
 Your portlet's decor is now in your hands.
