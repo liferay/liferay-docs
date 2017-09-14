@@ -24,11 +24,6 @@ Follow these steps to create your application's `PortletKeys`:
     the key to the class. 
 
 3.  Open the `com.liferay.docs.guestbook.constants` package. 
-<!-- 
-Should this package be in the -api module, and exported in that module's bnd 
-file? Also, is it (and GuestbookPortletKeys) created automatically? There aren't 
-any instructions for creating them. 
--->
 
 4.  Open `GuestbookPortletKeys` and create a public, static, final String called
     `GUESTBOOK` with a value of 
