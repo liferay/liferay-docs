@@ -87,8 +87,27 @@ section.
 
 ## Install Liferay @ide@ into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
 
-To install Liferay @ide@ into an existing Eclipse environment, follow these
-steps:
+You have two options to install Liferay @ide@ into an existing Eclipse
+environment: update URL or update Zip.
+
+To install @ide@ using an update URL, follow these steps:
+
+1.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
+
+2.  In the *Work with* field, copy in the URL
+    http://releases.liferay.com/tools/ide/latest/stable/.
+
+3.  You'll see the @ide@ components in the list below. Check them off and click
+    *Next*.
+
+    ![Figure 3: Make sure to check all the @ide@ components you wish to install.](../../../images-dxp/dev-studio-zip-install.png)
+
+4.  Accept the terms of the agreements and click *Next*, and Developer Studio is
+    installed. Like other Eclipse plugins, you must restart Eclipse to use them.
+
+Liferay @ide@ is now installed in your existing Eclipse environment.
+
+To install @ide@ using a Zip file, follow these steps:
 
 1.  Go to the
     [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
@@ -105,8 +124,6 @@ steps:
 
 4.  You'll see the @ide@ components in the list below. Check them off and click
     *Next*.
-
-    ![Figure 3: Make sure to check all the @ide@ components you wish to install.](../../../images-dxp/dev-studio-zip-install.png)
 
 5.  Accept the terms of the agreements and click *Next*, and Developer Studio is
     installed. Like other Eclipse plugins, you must restart Eclipse to use them.
