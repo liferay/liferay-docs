@@ -46,9 +46,9 @@ all the activity that occurs in your @product@. Using this, you can quickly find
 out what changes were made and by whom. If you've delegated permission granting
 to any group of people, this is an essential feature you're likely to use. 
 
-We'll come back to Tom, Dick and Harry's story later in the chapter. For now,
-let's look at how to configure and use Liferay's Audit application so you can do
-the same thing Harry's about to do. 
+We'll come back to Tom, Dick and Harry's story later. For now, let's look at
+how to configure and use Liferay's Audit application so you can do the same
+thing Harry's about to do. 
 
 ## Using Audit Events [](id=using-audit-events)
 
@@ -159,6 +159,118 @@ As you can see, Liferay's Audit application give you a lot of power to see what'
 happening in your @product@. You can use this information to troubleshoot problems,
 determine ownership of particular actions, or, as Harry is about to do, find out
 who made permission changes they weren't supposed to make. 
+
+## Configuring Audits
+
+In Liferay DXP, audits are enabled by default. As described above, audit events
+can be viewed from the Control Panel. Additionally, audit events can be
+configured to appear in Liferay's logs or console. Audits can also be enabled
+for scheduled jobs. Of course, audits can be disabled entirely, if so desired.
+
+There are two main ways to configure Liferay:
+
+1. Edit a configuration via Liferay's Control Panel and the configuration is saved to Liferay's database.
+
+2. Edit a configuration via an OSGi configuration file (`.config` file) in your `[LIFERAY_HOME]/osgi/modules` folder.
+
+These methods apply to each of the audit configuration options explained below
+so we'll explain how to specify each configuration both ways.
+
+### Configuring Audit Events to Appear in Liferay's Logs and Console
+
+To configure audit events to appear in Liferay's logs and console via the
+Control Panel, go to *Control Panel* &rarr; *System Settings* &rarr;
+*Foundation* &rarr; *Logging Message Audit Message Processor*.
+
+Check *Enabled* if you want audit events to appear in Liferay's log and check
+*Output to Console* if you also want the audit events to appear in the console.
+Audit events can be written in one of two text formats, either CSV or JSON.
+Select the format you prefer, then click *Update*.
+
+To configure audit events to appear in Liferay's logs and console via an OSGi
+configuration file, create a file called
+`com.liferay.portal.security.audit.router.configuration.LoggingAuditMessageProcessorConfiguration.config`
+in your `[LIFERAY_HOME]/osgi/modules` folder with this contents:
+
+	enabled="true"
+	logMessageFormat="CSV"
+	#logMessageFormat="JSON"
+	outputToConsole="true"
+
+As you can see, these are the same options that appear in the Control Panel.
+Edit these values as you see fit.
+
+Regardless of whether you took the Control Panel configuration approach or the
+OSGi configuration file approach, you also need to extend Liferay's
+`log4j-ext.xml` file to configure Log4J (Liferay's logging implementation) to
+log the appropriate level of messages produced by the appropriate class to the
+appropriate file. To do so, create a `portal-log4j-ext.xml` file in your
+Liferay's
+[LIFERAY_HOME]/tomcat-[version]/webapps/ROOT/WEB-INF/classes/META-INF` folder
+with this contents:
+
+	<?xml version="1.0"?>
+	 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+	<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+		<!-- additional audit logging -->
+
+		<appender name="auditFile" class="org.apache.log4j.rolling.RollingFileAppender">
+			 <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+				 <param name="FileNamePattern" value="@liferay.home@/logs/audit.%d{yyyy-MM-dd}.log" />
+			 </rollingPolicy>
+			 <layout class="org.apache.log4j.EnhancedPatternLayout">
+				 <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%t][%c{1}:%L] %m%n" />
+			 </layout>
+		 </appender>
+
+		<category name="com.liferay.portal.security.audit.router.internal.LoggingAuditMessageProcessor">
+			 <priority value="INFO" />
+			 <appender-ref ref="auditFile"/>
+		 </category>
+	</log4j:configuration>
+
+In this example, we are configuring Log4J to record INFO level messages from
+the
+`com.liferay.portal.security.audit.router.internal.LoggingAuditMessageProcessor`
+class to a file called `audit.yyyy-MM-dd.log` in the `[LIFERAY_HOME]/logs`
+folder. Feel free to adjust the audit file properties or log level as you see
+fit.
+
+### Configuring Audit Events for Scheduled Liferay Jobs
+
+By default, audit events are not configured for scheduled Liferay jobs. To
+enable audit events for Liferay jobs via the Control Panel, go to *Control
+Panel* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Scheduler Engine
+Helper*. Check the *Audit scheduler job enabled* box and click *Save*.
+
+To enable audit events for scheduled jobs via an OSGi configuration file,
+create a
+`com.liferay.portal.scheduler.configuration.SchedulerEngineHelperConfiguration.config`
+file in your `[LIFERAY_HOME]/osgi/modules` folder with this contents:
+
+	auditSchedulerJobEnabled=true
+
+Of course, set the property above to `false` to disable audit events for
+scheduled jobs via configuration file. Enabling auditing for scheduled jobs can
+be a very smart choice if there's any chance that someone with a dubious
+competence level might try to schedule jobs for your Liferay instance. (E.g.,
+imagine if Melvin Dooitwrong learned about Liferay's job scheduler...)
+
+### Enabling or Disabling Audit Events Entirely
+
+Audit events are enabled by default. To disable them via the Control Panel, go
+to *Control Panel* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Audit*.
+Uncheck the *Enabled* box. Note that for when auditing is enabled, you can
+adjust the audit message max queue size from its default value.
+
+To enable or disable auditing entirely from an OSGi configuration file, create a file called `com.liferay.portal.scheduler.configuration.SchedulerEngineHelperConfiguration.config` in your `[LIFERAY_HOME]/osgi/modules` folder with this contents:
+
+	enabled="true"
+	auditMessageMaxQueueSize="200"
+
+These are the default values which you can adjust as desired.
 
 ## Conclusion of the Story [](id=conclusion-of-the-story)
 
