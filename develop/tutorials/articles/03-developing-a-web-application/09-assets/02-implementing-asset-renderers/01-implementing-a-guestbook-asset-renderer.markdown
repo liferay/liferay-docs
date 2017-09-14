@@ -6,7 +6,7 @@ private guestbook object. Here, you'll create both classes.
 
 Get started by creating the Asset Renderer class first. 
 
-## Creating the AssetRenderer Class
+## Creating the AssetRenderer Class [](id=creating-the-assetrenderer-class)
 
 Follow these steps to create the `GuestbookAssetRenderer` class: 
 
@@ -247,7 +247,7 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
 Next you can create the `AssetRendererFactory` class. 
 
-## Creating the GuestbookAssetRendererFactory Class
+## Creating the GuestbookAssetRendererFactory Class [](id=creating-the-guestbookassetrendererfactory-class)
 
 Follow these steps to create the `GuestbookAssetRendererFactory`:
 

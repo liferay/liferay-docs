@@ -1,4 +1,4 @@
-# Triggering Portlet Actions
+# Triggering Portlet Actions [](id=triggering-portlet-actions)
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 5 of 8</p>

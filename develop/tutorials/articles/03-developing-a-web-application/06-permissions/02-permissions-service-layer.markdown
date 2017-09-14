@@ -1,4 +1,4 @@
-# Permissions in the Service Layer
+# Permissions in the Service Layer [](id=permissions-in-the-service-layer)
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 2 of 4</p>

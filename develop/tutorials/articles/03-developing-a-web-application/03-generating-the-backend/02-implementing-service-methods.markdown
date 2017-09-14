@@ -1,4 +1,4 @@
-# Implementing Service Methods
+# Implementing Service Methods [](id=implementing-service-methods)
 
 <div class="learn-path-step">
     <p>Generating the Backend<br>Step 3 of 3</p>
@@ -257,7 +257,7 @@ Do so now by following these steps:
 Nice work! These local service methods implement the services that are 
 referenced in the portlet class. 
 
-## Updating Generated Classes
+## Updating Generated Classes [](id=updating-generated-classes)
 
 Now that you've implemented the service methods, you must make them available to 
 the rest of your application. To do this, run `buildService` again: 

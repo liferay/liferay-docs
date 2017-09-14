@@ -1,4 +1,4 @@
-# Permissions in JSPs
+# Permissions in JSPs [](id=permissions-in-jsps)
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 4 of 4</p>
@@ -19,7 +19,7 @@ imports to the file:
 The first three are the permissions helper classes you just created. Now it's 
 time to implement permission checks. 
 
-## Checking Permissions in the UI
+## Checking Permissions in the UI [](id=checking-permissions-in-the-ui)
 
 Recall that you want to restrict access to three areas in your application: 
 

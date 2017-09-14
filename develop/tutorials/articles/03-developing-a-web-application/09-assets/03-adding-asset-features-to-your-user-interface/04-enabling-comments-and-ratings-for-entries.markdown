@@ -162,7 +162,7 @@ Follow these steps to enable comments and ratings on guestbook entries:
 
 Next, you'll update the guestbook actions to use the new view. 
 
-## Updating the Entry Actions JSP
+## Updating the Entry Actions JSP [](id=updating-the-entry-actions-jsp)
 
 Nothing links to your `view_entry.jsp` page--it's currently orphaned. Fix this 
 by adding the *View* option to the Actions Menu. Open the 

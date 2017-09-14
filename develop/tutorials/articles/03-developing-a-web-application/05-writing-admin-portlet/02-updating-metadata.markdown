@@ -1,4 +1,4 @@
-# Adding Metadata
+# Adding Metadata [](id=adding-metadata)
 
 <div class="learn-path-step">
     <p>Writing the Guestbook Admin App<br>Step 2 of 5</p>

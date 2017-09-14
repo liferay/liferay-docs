@@ -1,4 +1,4 @@
-# Updating the View
+# Updating the View [](id=updating-the-view)
 
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 5 of 6</p>

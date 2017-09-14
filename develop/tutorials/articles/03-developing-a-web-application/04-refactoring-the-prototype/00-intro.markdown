@@ -1,4 +1,4 @@
-# Refactoring the Prototype
+# Refactoring the Prototype [](id=refactoring-the-prototype)
 
 In an earlier section of this Learning Path, you created a Guestbook portlet 
 prototype. Then you wrote a `service.xml` file to define your application's data 

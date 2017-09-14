@@ -1,4 +1,4 @@
-# Displaying Messages and Errors
+# Displaying Messages and Errors [](id=displaying-messages-and-errors)
 
 When users interact with your application, they perform tasks it defines, like 
 saving or editing things. The Guestbook application is no different. Your 
