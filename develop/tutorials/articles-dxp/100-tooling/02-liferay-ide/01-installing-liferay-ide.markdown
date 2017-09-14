@@ -102,7 +102,7 @@ To install @ide@ using an update URL, follow these steps:
 
 Liferay @ide@ is now installed in your existing Eclipse environment.
 
-## Install Liferay @ide@ into Eclipse from a ZIP File
+## Install Liferay @ide@ into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
 
 To install @ide@ using a Zip file, follow these steps:
 

@@ -1,4 +1,4 @@
-# Updating Liferay @ide@
+# Updating Liferay @ide@ [](id=updating-liferay-ide)
 
 If you're already using Liferay @ide@ but need to update your environment,
 follow the steps below:
