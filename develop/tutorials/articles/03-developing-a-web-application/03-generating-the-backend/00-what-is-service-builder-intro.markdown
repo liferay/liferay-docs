@@ -39,7 +39,7 @@ one for guestbooks, and one for guestbook entries.
 
 ## Service Layer
 
-This application is a data-driven. It uses services for storing and retrieving 
+This application is data-driven. It uses services for storing and retrieving 
 data. The application asks for data, and the service fetches it. The application 
 can then display this data to the user, who reads or modifies it. If the data is 
 modified, the application passes it back to the service, and the service stores 
