@@ -1,4 +1,4 @@
-# Asset Enabling Custom Entities [](id=asset-enabling-custom-entities)
+# Assets: Integrating with Liferay's Framework 
 
 @product@'s asset framework transforms entities into a common format that can be 
 published anywhere in your site. Web content articles, blog posts, wiki

@@ -1,4 +1,4 @@
-# Enabling Search and Indexing [](id=enabling-search-and-indexing)
+# Leveraging Search 
 
 Now you have working Guestbook and Guestbook Admin portlets. The Guestbook 
 portlet lets users add, edit, delete, and configure permissions for guestbook 
