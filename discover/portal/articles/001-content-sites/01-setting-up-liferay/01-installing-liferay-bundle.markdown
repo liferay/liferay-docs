@@ -4,7 +4,7 @@ The easiest way to start using @product for testing or development is to
 download a standalone bundle. You can download @product from 
 [https://www.liferay.com/downloads](https://www.liferay.com/downloads).
 
-1. Once it finishes download, unzip your @product bundle to your local 
+1. Once it finishes downloading, unzip your @product bundle to your local 
     filesystem.
     
 2. Using a command line application, navigate to 

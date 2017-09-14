@@ -1,9 +1,9 @@
-# Installing @product
+# Setting up @product
 
 The Liferay Basic Configuration has several options. First, you can configure 
 you Portal Name, the name and email address of your default Administrator. You 
 can also configure the Default Language as well as if you want to autogenerate 
-sample data for demo purposes. Finally, you can configure your database here.
+sample data for demo purposes. Finally, you can configure your database here. Let's start configuring!
 
 1. Set the *Portal Name* to "The Lunar Resort".
 
