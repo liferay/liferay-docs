@@ -117,10 +117,10 @@ this, use the following syntax:
     blade samples <NAME>
 
 For example, if you wanted to generate the
-[blade.portlet.ds](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.portlet.ds)
+[portlet-ds](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/ds-portlet)
 sample, you could execute
 
-    blade samples blade.portlet.ds
+    blade samples ds-portlet
 
 For a full listing of all the available Blade samples, run
 

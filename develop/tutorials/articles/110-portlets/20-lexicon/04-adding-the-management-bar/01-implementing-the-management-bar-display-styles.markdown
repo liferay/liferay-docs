@@ -91,7 +91,7 @@ responsive to different devices.
 <!-- Explain under what scenario you would use each type of card -->
 
 
-1.  Use [cards](http://liferay.github.io/clay/content/cards/) to display the 
+1.  Use [cards](https://liferay.github.io/clay/content/cards/) to display the 
     information:
 
     For vertical cards use the following pattern:

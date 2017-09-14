@@ -1,10 +1,10 @@
-# Upgrading Themes [](id=upgrading-themes)
+# Upgrading Your Theme from Liferay Portal 6.2 to 7.0 [](id=upgrading-themes)
 
-If you've developed themes in Liferay Portal 6.2, as part of your upgrade you'll want
-to use them in @product-ver@. While you're at it, you should leverage theme
-improvements, including support for Sass, Bootstrap 3, and Lexicon (Liferay's UI
-design language). This tutorial demonstrates upgrading a Liferay Portal 6.2 theme to
-@product-ver@. 
+If you've developed themes in Liferay Portal 6.2, as part of your upgrade 
+you'll want to use them in @product-ver@. While you're at it, you should 
+leverage theme improvements, including support for Sass, Bootstrap 3, and 
+Lexicon (a web implementation of Liferay's Lexicon Experience Language). This 
+tutorial demonstrates upgrading a Liferay Portal 6.2 theme to @product-ver@. 
 
 Theme upgrades involve these steps:
 
@@ -12,7 +12,7 @@ Theme upgrades involve these steps:
 -  Updating CSS
 -  Updating theme templates
 -  Updating resources importer configuration and content
--  Applying Lexicon UI design patterns
+-  Applying Lexicon design patterns
 
 As an example, this tutorial applies the steps to a Liferay Portal 6.2 theme called the
 Lunar Resort theme--developed in the Liferay Portal 6.2 Learning Path [Developing a Liferay Theme](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme).
@@ -846,13 +846,14 @@ lists all the default portlet IDs.
 Next, you can learn how to update your theme's UI to follow Lexicon design
 patterns.
 
-## Applying Lexicon UI Design Patterns [](id=applying-lexicon-ui-design-patterns)
+## Applying Lexicon Design Patterns [](id=applying-lexicon-ui-design-patterns)
 
-@product-ver@ uses a design language called [Lexicon](http://liferay.github.io/lexicon/).
-It provides styling guidelines and best practices for application UIs. Lexicon's
-HTML and JavaScript components enable developers to build fully-realized UIs
-quickly and effectively. This section demonstrates how to apply Lexicon to a
-form. 
+@product-ver@ uses [Lexicon](https://liferay.github.io/clay/), a web 
+implementation of Liferay's [Lexicon Experience Language](https://lexicondesign.io/).
+The Lexicon Experience Language provides styling guidelines and best practices 
+for application UIs. While Lexicon's CSS, HTML, and JavaScript components enable 
+developers to build fully-realized UIs quickly and effectively. This section 
+demonstrates how to apply Lexicon to a form. 
 
 For example, this is the Liferay Portal 6.2 Lunar Resort's reservation form:
 
@@ -894,7 +895,7 @@ For example, this is the Liferay Portal 6.2 Lunar Resort's reservation form:
     remember your stay. Please take a moment to fill out our guestbook below.
     </p>
 
-The HTML code above uses Bootstrap 2's design language.
+The HTML code above uses Bootstrap 2's markup and CSS classes.
 
 Lexicon extends Bootstrap 3. Here's the Lunar Resort form updated to Lexicon:
 

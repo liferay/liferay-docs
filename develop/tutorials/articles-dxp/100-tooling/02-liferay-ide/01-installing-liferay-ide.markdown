@@ -30,9 +30,10 @@ compatible and can be copied to the new 3.1 version.
 
     You may be prompted for your liferay.com username and password before
     downloading the @ide@ installer. Since @ide@ includes access to @product@,
-    you must verify that you have rights to use it. After providing your
-    credentials, they're stored in your `~/.gradle/gradle.properties` file. The
-    credentials are used by your @ide@'s
+    you must verify that you have rights to use it.
+
+    Your credentials are not saved locally; they're saved as a token in the
+    `~/.liferay` folder. The token is used by your @ide@'s
     [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
     if you ever decide to redownload a @product@ bundle. Furthermore, the
     @product@ bundle that was downloaded in your workspace is also copied to
@@ -41,6 +42,14 @@ compatible and can be copied to the new 3.1 version.
     the
     [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
+
+    **Important:** The token generator currently has problems with certain
+    special characters contained in a password, which fails the token
+    generation. This is a bug and will be fixed in the next release of Liferay
+    @ide@. Visit the
+    [Generating a Workspace Token Manually](#generating-a-workspace-token-manually)
+    section to follow a manual process to generate a token if you're unable to
+    complete it automatically using the installer.
 
 3.  Run the installer. You may need to allow permission for the installer to run,
     depending on your operating system and where you want to install it.
@@ -127,6 +136,43 @@ You're now on the latest version of Liferay @ide@!
 
 Now that you've learned how to install and update your Liferay @ide@
 environment, you can begin developing Liferay products.
+
+## Generating a Workspace Token Manually [](id=generating-a-workspace-token-manually)
+
+The Liferay @ide@ 3.1 release contains a few issues with generating a token
+used to store your Liferay credentials. If you run into an issue with generating
+your token automatically, you can follow the steps below to manually create one.
+
+1.  Navigate to [www.liferay.com](https://www.liferay.com/) and log in to your
+    account.
+
+2.  Click the Options button (![Options](../../../images-dxp/icon-liferay-options.png))
+    and select *Account Home*.
+
+3.  Select *Account Settings* from the left menu.
+
+4.  Click *Authorization Tokens* from the right menu under the Miscellaneous
+    heading.
+
+    ![Figure 4: You can manually create your workspace token in the Authorization Tokens menu.](../../../images-dxp/authorization-tokens-option.png)
+
+5.  Select *Add Token*, give it a device name, and click *Generate*. The device
+    name can be set to any string; it's for bookkeeping purposes only.
+
+6.  Create a file named `~/.liferay/token` and copy the generated token into
+    that file.
+
+    ![Figure 5: The generated token is available to copy.](../../../images-dxp/generated-token.png)
+
+    Make sure there are no new lines or white space in the file. It should only
+    be one line.
+
+You've successfully generated your token manually and it's now available for
+your installer to access. If you haven't run the installer, you can do so now.
+If you've already run the installer, you can set the DXP bundle to download
+in the `gradle.properties` file of your workspace. See the
+[Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
+tutorial for details.
 
 <!-- The information below should be uncommented when Dev Studio 3.1 is
 available to update from original GA release. Since Dev Studio must be

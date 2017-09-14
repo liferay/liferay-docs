@@ -33,7 +33,7 @@ module:
 
 Both are declared using the OSGi header `Fragment-Host`.
 
-    Fragment-Host: com.liferay.login.web;bundle-version="1.0.0"
+    Fragment-Host: com.liferay.login.web;bundle-version="[1.0.0,1.0.1)"
 
 Supplying a specific host module version is important. If that version of the
 module isn't present, your fragment won't attach itself to a host, and that's a
@@ -104,5 +104,9 @@ Now you can easily modify the JSPs of any application in Liferay.
 ![Figure 1: Liferay's applications are swimming in the OSGi runtime, waiting for your fragment modules to clean their teeth, so to speak.](../../images/sharks.jpg)
 <!--https://commons.wikimedia.org/wiki/File:Carcharhinus_perezi_bahamas_feeding.jpg-->
 
-To see a sample JSP-modifying fragment in action, look at the [BLADE project
-named `blade.hook.jsp`] (https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/modules/blade.hook.jsp).
+To see a sample JSP-modifying fragment in action, look at the
+[BLADE project named `module-jsp-override`](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/overrides/module-jsp-override).
+
+## Related Topics [](id=related-topics)
+
+[Upgrading App JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-app-jsp-hook-plugins)

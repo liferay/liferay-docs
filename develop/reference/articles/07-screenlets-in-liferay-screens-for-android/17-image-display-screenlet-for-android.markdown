@@ -64,6 +64,12 @@ If you don't use `entryId`, you must use both of the following attributes:
 | `className` | `string` | The image's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, their `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The image’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/image-display-screenlet-for-android#offline) for details. |
+| `imageScaleType` | `number` | Lets you set a scale image type like `CENTER`, `CENTER_CROP`, `CENTER_INSIDE`, `FIT_CENTER`, `FIT_END`, `FIT_START`, `FIT_XY`, `MATRIX`. |
+| `placeHolder` | `@resource` | Image to load until the final image loads. |
+| `placeHolderScaleType` | `number` | Lets you set a scale image type for the placeholder like `CENTER`, `CENTER_CROP`, `CENTER_INSIDE`, `FIT_CENTER`, `FIT_END`, `FIT_START`, `FIT_XY`, `MATRIX`. |
+
+Note that the values for `imageScaleType` and `placeHolderScaleType` match those 
+[described in Android's `ImageView.ScaleType`](https://developer.android.com/reference/android/widget/ImageView.ScaleType.html). 
 
 ## Listener [](id=listener)
 
@@ -73,3 +79,7 @@ the following methods:
 
 - `onRetrieveAssetSuccess(AssetEntry assetEntry)`: Called when the Screenlet 
   successfully loads the image. 
+
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. The `userAction` argument distinguishes the specific action in which 
+  the error occurred. 

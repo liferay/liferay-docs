@@ -2,7 +2,8 @@
 
 Whether you're updating your app to @product-ver@, or writing a new 
 @product-ver@ app, follow the process here to use Lexicon's icons in your app. 
-You can find the list of available Lexicon icons on the [Clay site](http://liferay.github.io/clay/content/icons-lexicon/).
+You can find the list of available Lexicon icons on the 
+[Lexicon site](https://liferay.github.io/clay/content/icons-lexicon/).
 
 Lexicon icons are defined with the `icon` attribute. For example, you can use 
 this attribute to define the icon in the management bar, inside of the `liferay-frontend:management-bar-sidenav-toggler-button` taglib:

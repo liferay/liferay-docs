@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "2.0.13"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "2.1.10"
     }
 
     repositories {
@@ -70,6 +70,9 @@ subprojects {
 }
 ```
 
+The tasks `checkSourceFormatting` and `formatSource` are automatically skipped
+if another task with the same name is being executed in a parent project.
+
 ### FormatSourceTask [](id=formatsourcetask)
 
 Tasks of type `FormatSourceTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
@@ -100,7 +103,8 @@ Property Name | Type | Default Value | Description
 `maxLineLength` | `int` | `80` | The maximum number of characters allowed in Java files. It sets the `max.line.length` argument.
 `printErrors` | `boolean` | `true` | Whether to print formatting errors on the Standard Output stream. It sets the `source.print.errors` argument.
 `processorThreadCount` | `int` | `5` | The number of threads used by Source Formatter. It sets the `processor.thread.count` argument.
-`showDocumentation` | `boolean` | `true` | Whether to show the documentation for the source formatting issues, if present. It sets the `show.documentation` argument.
+`showDocumentation` | `boolean` | `false` | Whether to show the documentation for the source formatting issues, if present. It sets the `show.documentation` argument.
+`showStatusUpdates` | `boolean` | `false` | Whether to show status updates during source formatting, if present. It sets the `show.status.updates` argument.
 `throwException` | `boolean` | `false` | Whether to fail the build if formatting errors are found. It sets the `source.throw.exception` argument.
 
 ## Additional Configuration [](id=additional-configuration)
@@ -116,7 +120,7 @@ manually adding a dependency to the `sourceFormatter` configuration:
 
 ```gradle
 dependencies {
-    sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.403"
+    sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.455"
 }
 ```
 

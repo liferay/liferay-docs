@@ -44,32 +44,6 @@ If you'd like to keep the global Gradle properties the same, but want to change
 them for yourself only (perhaps for local testing), you can override the
 `gradle.properties` file with your own `gradle-local.properties` file.
 
-<!-- The paragraph/steps below should be removed once the new Workspace project
-template is published, which includes these configs by default. -Cody -->
-
-To configure the `gradle-local.properties` file for your workspace, you must
-apply a third-party plugin in your workspace's settings. Complete the
-following steps:
-
-1.  Open your workspace's `settings.gradle` file and add the
-    `gradle-properties-plugin` as a dependency:
-
-        dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.workspace", version: "VERSION"
-            classpath group: "net.saliman", name: "gradle-properties-plugin", version: "1.4.6"
-        }
-
-2.  Apply the `net.saliman.properties` third-party plugin at the bottom of your
-    `settings.gradle` file:
-
-        apply plugin: "net.saliman.properties"
-
-3.  Create the `gradle-local.properties` file in the root folder of your
-    workspace.
-
-You can now configure user-specific properties for your workspace!
-<!-- -->
-
 +$$$
 
 **Note:** Liferay Workspace provides many subprojects for you behind the scenes,
@@ -92,9 +66,26 @@ root folder. There are several configurable properties for your workspace's
 Liferay instance. You can set the version of the Liferay bundle you'd like to
 generate and install by setting the download URL for the
 `liferay.workspace.bundle.url` property
-(e.g., `https://sourceforge.net/projects/lportal/files/Liferay Portal/7.0.1 GA2/liferay-ce-portal-tomcat-7.0-ga2-20160610113014153.zip`).
+(e.g., `http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.2%20GA3/liferay-ce-portal-tomcat-7.0-ga3-20160804222206210.zip`).
 You can also set the folder where your Liferay bundle is generated with the
 `liferay.workspace.home.dir` property. It's set to `bundles` by default.
+
+You can download a Liferay DXP bundle for your workspace if you're a DXP
+subscriber. Do this by setting the `liferay.workspace.bundle.url` property to a
+ZIP hosted on *api.liferay.com*. For example,
+
+`liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.0.10.4/liferay-dxp-digital-enterprise-tomcat-7.0-sp4-20170705142422877.zip`
+
+<!-- I formatted the above snippet differently to avoid providing a link.
+-Cody-->
+
+It can be tricky to find the fully qualified ZIP name/number for the DXP bundle
+you want. You cannot access Liferay's API site directly to find it, so you must
+start to download DXP manually, take note of the file name, and append it to
+`https://api.liferay.com/downloads/portal/`.
+
+You must also set the `liferay.workspace.bundle.token.download` property to
+`true` to allow your workspace to access Liferay's API site.
 
 Once you've finalized your Gradle properties, navigate to your workspace's root
 folder and run
@@ -137,41 +128,65 @@ applications? Liferay Workspace can handle that request too!
 
 ## Using a Plugins SDK from Your Workspace [](id=using-a-plugins-sdk-from-your-workspace)
 
-<!-- This section should be moved to Migration tooling section once it's
-available. -Cody -->
-
 Because @product-ver@ uses a module-based framework, the current structure of a
 Liferay Workspace is centered around module development. There are still,
 however, many situations where you must create WAR-style plugins using the
 Plugins SDK. Because of this, your workspace can also work with the Plugins SDK.
 When configuring your SDK in a workspace, you can take advantage of all the new
 functionality workspaces provide and also use the SDK environment that you're
-used to. <!--To learn more about upgrading legacy applications to @product-ver@ and
+used to. To learn more about upgrading legacy applications to @product-ver@ and
 what you should consider before converting them to modules, visit the tutorial
-[Planning a Plugin Upgrade to Liferay @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7).-->
+[Planning Plugin Upgrades and Optimizations](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7).
 
-The Blade CLI offers a command that allows a Plugins SDK environment be
-automatically generated with Liferay Workspace. If you created your workspace
-from scratch, however, and want to use a Plugins SDK, follow the instructions
-below.
+The Blade CLI offers a command that adds and configures your
+current Plugins SDK environment automatically for use inside a newly generated
+workspace (e.g., `blade init -u`). You can learn more about this in the
+[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
+tutorial. If you created your workspace from scratch and want to use a Plugins
+SDK, however, you can add one to your workspace by completing one of the two
+options:
 
-If you revisit your workspace's `gradle.properties` file, you'll notice the
-Plugins SDK folder is set to `plugins-sdk`. This folder was not generated by
-default, so you must create it yourself. In your workspace's root
-folder, create the `plugins-sdk` folder. Then copy your legacy Plugins SDK
-files into the `plugins-sdk` folder.
+1.  Copy your existing Plugins SDK's files into the workspace.
 
-Liferay Workspace and the Plugins SDK require many build related artifacts. To
-start the artifact download process, execute the following command in your
-workspace's root folder:
+2.  Generate a new Plugins SDK to use in the workspace.
 
-    ./gradlew tasks
+Follow the appropriate section based on the option you want to follow.
 
-The Workspace and Plugins SDK's artifacts are downloaded, and the available
-tasks are listed in the terminal. Since the download process takes time,
-invoking it at a convenient time such as before a work break can be
-worthwhile. Once the downloading is complete, your Plugins SDK is ready to use
-in your workspace. It's as simple as that!
+### Copying an Existing Plugins SDK into Workspace [](id=copying-an-existing-plugins-sdk-into-workspace)
+
+If you open your workspace's `gradle.properties` file, you'll notice the
+`liferay.workspace.plugins.sdk.dir` property sets the Plugins SDK folder to
+`plugins-sdk`. This is where the workspace expects any Plugins SDK files to
+reside. This folder was not generated by default, so you must create it
+yourself. In your workspace's root folder, create the `plugins-sdk` folder. Then
+copy your legacy Plugins SDK files into the `plugins-sdk` folder.
+
+The copied Plugins SDK requires many build-related artifacts. To start the
+artifact download process, execute the following command in your workspace's
+root folder:
+
+    ./gradlew upgradePluginsSDK
+
+The Plugins SDK's artifacts are downloaded. The Plugins SDK is now ready for
+use!
+
+### Generating a New Plugins SDK in Workspace [](id=generating-a-new-plugins-sdk-in-workspace)
+
+You can easily generate a new Plugins SDK for your workspace by executing a
+single Gradle command in your workspace's root folder:
+
+    ./gradlew upgradePluginsSDK
+
+This generates a new @product-ver@ Plugins SDK into the folder set by the
+`liferay.workspace.plugins.sdk.dir` property, which is configured to
+`plugins-sdk` by default in the workspace's `gradle.properties` file. You can
+change the folder name by updating the property. The downloaded Plugins SDK
+version is the latest release at the time of execution. You can reference the
+latest Plugins SDK releases
+[here](https://repository.liferay.com/nexus/content/groups/public/com/liferay/portal/com.liferay.portal.plugins.sdk/).
+
+Once the downloading is complete, your Plugins SDK is ready to use
+in your workspace!
 
 ## Certification Issues in Liferay Workspace [](id=certification-issues-in-liferay-workspace)
 

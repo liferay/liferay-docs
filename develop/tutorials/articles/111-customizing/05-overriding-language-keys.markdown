@@ -23,7 +23,7 @@ your own application, but any messages in Liferay.
 **Note:** Much of the functionality and many of the applications in Liferay are now
 separated out into their own modules. You might need to modify the keys included
 in one of these modules. The process is different than the one described here,
-and is described in a [separate tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-language-keys).
+and is described later in [Overriding a Module's Language Keys](#overriding-a-modules-language-keys).
 
 $$$
 
@@ -125,7 +125,9 @@ That's all there is to overriding Liferay's core language keys.
 
 What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? The process
-for overriding a module's language keys is different from [the process of overriding Liferay's core language properties](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys), which are located in Liferay's `portal-impl.jar`.
+for overriding a module's language keys is different from
+[the process of overriding Liferay's core language properties](#modifying-liferays-language-keys),
+which are located in Liferay's `portal-impl.jar`.
 
     add-blog-entry=Add Blog Entry
 
@@ -262,9 +264,11 @@ language keys.
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
-core. Find out how to override those language keys in a
-[separate tutorial](/develop/tutorials/-/knowledge_base/7-0/modifying-liferays-language-keys).
+core. You can find out how to override those language keys in
+[Modifying Liferay's Language Keys](#modifying-liferays-language-keys).
 
 ## Related Topics [](id=related-topics)
+
+[Upgrading Core Language Key Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-language-key-hooks)
 
 [Internationalization](internationalization)

@@ -55,7 +55,7 @@ pages/content that will be included in the publication, manage permissions, etc.
 You're presented a custom publication menu, where you can perform advanced
 editing to your publication process.
 
-You have two initial options to choose from for the Date category:
+You have two options to choose from for the Date category:
 
 **Now:** immediately pushes any changes to the Live Site.
 
@@ -63,23 +63,30 @@ You have two initial options to choose from for the Date category:
 publishing. You could use this, for example, to publish all changes made during
 the week every Monday morning without any further intervention.
 
-The *Publish to Live* button also gives you options to select pages, content,
-deletions, and permissions to publish.
+Subsequently, you can choose additional options:
+
+![Figure 2: You're given additional publication options for your pages, content, deletions, and permissions.](../../../images/staging-advanced-publication.png)
 
 **Pages** gives you the option to choose which pages to include when you
-publish. You can see the default settings in the gray text below the header.
-Click the *Change* button to configure these options to suit your needs.
+publish. You can choose the page group (Public or Private) to publish by
+selecting the *Change to Public Pages* or *Change to Private Pages*. You cannot
+publish both at the same time; you'll have to complete their publication
+processes separately if you want to publish both page groups. You can also
+choose specific pages to publish, the look and feel of those pages, etc.
 
-**Content** allows you to configure the content to be published. Clicking the
+**Content** lets you configure the content to be published. Selecting the
 *Choose Content* option lets you filter the content to be published, based
-mainly on the date range and content type. There are other filtering sub-options
-for certain content types. Next, you'll look at these content filtering options.
+mainly on the date range and content type. If you choose a page to be published
+from the Pages menu, the portlets and their references are always published,
+even if you specified differently in the Content section.
 
-The *Date Range* feature provides you with another way to select specific
-content to publish. Specifying a date range allows you to choose content to
-publish based on when it was created or last modified. You can change the date
-range by clicking the *Change* button next to it. You have several options to
-choose from:
+There are other filtering sub-options for certain content types. Next, you'll
+look at these content filtering options.
+
+You first must choose what content to publish based on date. Specifying a
+date range lets you choose content to publish based on when it was created or
+last modified. Select the option that best fits your workflow. The available
+options are described in more detail below:
 
 **All:** publishes content regardless of its creation or last modification date.
 
@@ -94,12 +101,11 @@ window of time is published.
 time.  For example, you can set the date range to the past 48 hours,
 starting from the current time.
 
-Under the *Date Range* section, you have a section that shows the different
-types of content that can be published. This list is populated based on the
-provided date range. For example, if at least one article has been created or
-modified in the given date range, a Web Content section appears in the list,
-and the number of articles is shown next to the Web Content label. Otherwise,
-the Web Content section is absent.
+Under the date options are the different types of content that can be published.
+This list is populated based on the provided date range. For example, if at
+least one article has been created or modified in the given date range, a Web
+Content section appears in the list, and the number of articles is shown next to
+the Web Content label. Otherwise, the Web Content section is absent.
 
 *Categories* and *Page Ratings* content types are not dependent on the date
 range, and are always shown in the list.
@@ -129,7 +135,7 @@ published. If you disable this option, only the last **approved** version of
 each web content article is published to Live. This can significantly speed up
 the publication process.
 
-![Figure 2: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../../images/web-content-version-history-box.png)
+![Figure 3: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../../images/web-content-version-history-box.png)
 
 You can set this option globally. If you navigate to the Control Panel &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Web Content Administration*,
@@ -161,7 +167,7 @@ until you publish it to the live site. If workflow is enabled for any new
 resource, the resource needs to go through the workflow process before it can be
 published to the live site.
 
-![Figure 3: The staging toolbar indicates whether you're able to publish to the live site.](../../../images/staging-publish-bar.png)
+![Figure 4: The staging toolbar indicates whether you're able to publish to the live site.](../../../images/staging-publish-bar.png)
 
 You can also manage your staging processes. Once staging is enabled, you can
 navigate back to the *Staging* option located in the Menu's Publishing tab. From
@@ -293,7 +299,9 @@ content in your staging site is shared by all your variations. In different site
 page variations, you can have different logos, different look and feel for your
 pages, different applications on these pages, different configuration of these
 applications and even different pages. One page can exist in just one site page
-variation or in several of them.
+variation or in several of them. Modifying the layout type (e.g., Layout, Panel,
+Embedded, etc.) or friendly URL of a page, however, **does** affect every site
+page variation.
 
 You must enable page versioning when turning on Local or Remote Live staging.
 You can enable page versioning for public and private pages. When you turn
@@ -306,7 +314,7 @@ variation option. For example, select the *Site Pages Variation* option. This
 brings you to a list of the existing site page variations for your site. Click
 *Add Site Pages Variation* to create a new one.
 
-![Figure 4: When selecting the *Site Pages Variation* link from the staging toolbar, you're able to add and manage your site pages variations.](../../../images/staging-page-variations.png)
+![Figure 5: When selecting the *Site Pages Variation* link from the staging toolbar, you're able to add and manage your site pages variations.](../../../images/staging-page-variations.png)
 
 From the *Add Site Pages Variation* screen, you can set a Name, Description, and
 also set your new variation to copy the content from an existing variation.
@@ -376,7 +384,7 @@ For example, you could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 5: This is an example of a Thanksgiving page variation.](../../../images/page-variation-thanksgiving.png)
+![Figure 6: This is an example of a Thanksgiving page variation.](../../../images/page-variation-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Site Pages Variation

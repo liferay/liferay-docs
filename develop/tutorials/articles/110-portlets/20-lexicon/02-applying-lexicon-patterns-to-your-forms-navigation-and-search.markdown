@@ -99,7 +99,7 @@ tutorial. Follow these steps to update Actions menu for your entities
 (such as the ones listed next to search results):
 
 1.  Open your module's actions JSP (`guestbook_actions.jsp` for example) and 
-    update the `<liferay-ui:icon-menu>` to use Lexicon's Lexicon markup with the 
+    update the `<liferay-ui:icon-menu>` to use Lexicon's markup with the 
     `markupView` attribute:
 
         <liferay-ui:icon-menu
@@ -213,4 +213,4 @@ search results!
 
 [Configuring Your Application's Title and Back Link](/develop/tutorials/-/knowledge_base/7-0/configuring-your-applications-title-and-back-link)
 
-[Using lexicon Icons in Your App](/develop/tutorials/-/knowledge_base/7-0/using-lexicon-icons-in-your-app)
+[Using Lexicon Icons in Your App](/develop/tutorials/-/knowledge_base/7-0/using-lexicon-icons-in-your-app)

@@ -138,7 +138,6 @@ module's name. Liferay includes a
 and a build tool-specific plugins such as the
 [Gradle Service Builder plugin](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/util/portal-tools-service-builder).
 The Gradle Service Builder plugins includes Liferay's Service Builder plugin as
-a dependency. The `blade.servicebuilder.api`, `blade.servicebuilder.svc`,
-`blade.servicebuilder.web`, and `blade.servicebuilder.test` modules in the
-[Blade Samples](https://github.com/liferay/liferay-blade-samples) project serve
-as example Service Builder projects.
+a dependency. The `foo-api`, `foo-service`, `foo-web` modules in the
+[Service Builder Blade Sample](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/service-builder)
+project serve as example Service Builder projects.

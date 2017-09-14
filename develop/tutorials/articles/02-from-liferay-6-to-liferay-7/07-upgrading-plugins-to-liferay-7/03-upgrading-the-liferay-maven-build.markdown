@@ -50,10 +50,10 @@ Then, add the CSS Builder plugin dependency to your project's `pom.xml` file:
         <version>1.0.21</version>
         <executions>
             <execution>
-                <id>default-build-css</id>
+                <id>default-build</id>
                 <phase>generate-sources</phase>
                 <goals>
-                    <goal>build-css</goal>
+                    <goal>build</goal>
                 </goals>
             </execution>
         </executions>
