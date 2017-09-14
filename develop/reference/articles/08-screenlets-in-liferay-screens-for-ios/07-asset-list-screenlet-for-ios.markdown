@@ -83,13 +83,21 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet loads the list from the portal. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the delegate to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
+## Required Attributes [](id=required-attributes)
+
+- `classNameId`
+
+If you don’t use `classNameId`, you must use this attribute: 
+
+- `portletItemName`
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
 | `classNameId` | `number` | The ID of the asset's class name. Use values from the `AssetClassNameId` class or the Liferay Instance's `classname_` database table. |
-| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-0/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name in this attribute. |
+| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-0/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name as this attribute's value. |
 | `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Defines whether a standard [ios `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) appears when the user does the pull to refresh gesture. The default value is `true`. |

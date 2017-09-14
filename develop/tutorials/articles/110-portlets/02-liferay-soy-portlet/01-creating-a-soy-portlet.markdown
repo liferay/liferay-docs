@@ -8,14 +8,12 @@ To create a Soy portlet, you'll need these key components:
 
 ## Configuring a Web Module [](id=configuring-a-web-module)
 
-The first thing you must do is configure the Web module for your Soy
-portlet.
+The first thing you must do is configure the Web module for your Soy portlet.
 
-The file structure of a Soy Portlet is similar to the structure of an MVC
-portlet: 
+The file structure of a Soy Portlet is similar to the structure of an MVC 
+portlet:
 
 - `my-soy-portlet`
-    - `.lfrbuild-portal`
     - `bnd.bnd`
     - `build.gradle`
     - `package.json`
@@ -36,7 +34,7 @@ You can also use the blade template to build your initial project.
 Remove this info and add to separate text file.
 -->
 
-Now that you know the basic structure of a Soy portlet module, you can specify
+Now that you know the basic structure of a Soy portlet module, you can specify 
 the OSGi metadata next.
 
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
@@ -48,12 +46,13 @@ configuration is shown below:
     Bundle-SymbolicName: com.liferay.hello.soy.web
     Bundle-Version: 1.0.3
     Require-Capability: soy;filter:="(type=metal)"
+    Include-Resource: package.json
 
 In addition to the standard metadata, notice the `Require-Capability`
 property. This specifies that this bundle requires modules that provide the
-capability `soy` with a `type` of `metal` to work.
-
-Next you can specify your module's JavaScript dependencies.
+capability `soy` with a `type` of `metal` to work. Also note the 
+`Include-Resource` property. **You must include your** `package.json` **file, to 
+load the Soy Portlet's JavaScript files.**
 
 ## Specifying JavaScript Dependencies [](id=specifying-javascript-dependencies)
 
@@ -150,16 +149,16 @@ below:
             service = Portlet.class
     )
 
-Some of these properties may seem familiar to you, as they are the same ones
-used to develop an MVC portlet. You can find a list of all the Liferay-specific
-attributes that are available for use as properties in your portlet components
+Some of these properties may seem familiar to you, as they are the same ones 
+used to develop an MVC portlet. You can find a list of all the Liferay-specific 
+attributes that are available for use as properties in your portlet components 
 in the [`liferay-portlet-app_7_0_0.dtd`](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd.html).
 
 The `javax.portlet...` properties are elements of the [portlet.xml descriptor](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd)
 
 Liferay's DTD files can be found [here](@platform-ref@/7.0-latest/definitions/)
 
-The foundation for your Soy portlet component is set. You can write the
+The foundation for your Soy portlet component is set. You can write the 
 controller for the Soy portlet next.
 
 ## Writing Controller Code [](id=writing-controller-code)
@@ -167,17 +166,17 @@ controller for the Soy portlet next.
 Soy portlets extend MVC portlets, so they use the same Model-View-Controller 
 framework to operate.
 
-Your controller receives requests from the front-end, and it receives data from
-the back-end. It's responsible for sending that data to the right front-end view
-so it can be displayed to the user, and it's responsible for taking data the
-user entered in the front-end and passing it to the right back-end service. For
-this reason, it needs a way to process requests from the front-end and respond
-to them appropriately, and it needs a way to determine the appropriate front-end
+Your controller receives requests from the front-end, and it receives data from 
+the back-end. It's responsible for sending that data to the right front-end view 
+so it can be displayed to the user, and it's responsible for taking data the 
+user entered in the front-end and passing it to the right back-end service. For 
+this reason, it needs a way to process requests from the front-end and respond 
+to them appropriately, and it needs a way to determine the appropriate front-end 
 view to pass data back to the user.
 
 ### Render Logic [](id=render-logic)
 
-The render logic is where all the magic happens. After all, what's the use of a
+The render logic is where all the magic happens. After all, what's the use of a 
 portlet if you can't see it?
 
 Note the `init-param` properties you set in your Component:
@@ -185,10 +184,10 @@ Note the `init-param` properties you set in your Component:
     "javax.portlet.init-param.template-path=/",
     "javax.portlet.init-param.view-template=View",
 
-This directs the default rendering to View (`View.soy`). The `template-path`
-property tells the framework the location of your Soy templates. The `/`
-above means that the Soy files are located in your project's root `resources`
-folder. That's why it's important to follow Liferay's standard folder structure,
+This directs the default rendering to View (`View.soy`). The `template-path` 
+property tells the framework the location of your Soy templates. The `/` 
+above means that the Soy files are located in your project's root `resources` 
+folder. That's why it's important to follow Liferay's standard folder structure, 
 outlined above. Here's the path of a hypothetical web module's resource folder:
 
     docs.liferaysoy.web/src/main/resources/META-INF/resources
@@ -197,18 +196,18 @@ In this case, the `View.soy` file is found at:
 
     docs.liferaysoy.web/src/main/resources/META-INF/resources/View.soy
 
-and that's the default view of the application. When the `init` method is
-called, the initialization parameters you specify are read and used to direct
-rendering to the default template. Throughout this framework, you can render a
-different view (Soy template) by setting the `mvcRenderCommandName` parameter of
+and that's the default view of the application. When the `init` method is 
+called, the initialization parameters you specify are read and used to direct 
+rendering to the default template. Throughout this framework, you can render a 
+different view (Soy template) by setting the `mvcRenderCommandName` parameter of 
 the `javax.portlet.PortletURL` to the Soy template like this:
 
     navigationURL.setParameter("mvcRenderCommandName", "View");
 
-Each view, excluding the default template view, **must have an implementation of
-`MVCRenderCommand`**. The `*MVCRenderCommand` implementation must declare itself
-as a component with the `MVCRenderCommand` service, and it must specify the
-portlet's name and MVC command name using the `javax.portlet.name` and
+Each view, excluding the default template view, **must have an implementation of 
+`MVCRenderCommand`**. The `*MVCRenderCommand` implementation must declare itself 
+as a component with the `MVCRenderCommand` service, and it must specify the 
+portlet's name and MVC command name using the `javax.portlet.name` and 
 `mvc.command.name` properties respectively.
 
 More info on the `MVCRenderCommand` can be found [here](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/mvc-render-command)
@@ -245,22 +244,22 @@ Below is an example `MVCRenderCommand` implementation for the
 
     }
 
-With render logic, you’re providing the view layer with information to display
-the data properly to the user. In this case the MVC command name is set to
-`Navigation`. The MVC render command name for the `PortletURL` `navigationURL`
-is set to `View`, using the `mvcRenderCommandName` attribute. The `navigationURL`
-is then passed to the `Navigation.soy` template as the variable `navigationURL`
-using the `template.put` method. Finally, the `*MVCRenderCommand` class returns
+With render logic, you’re providing the view layer with information to display 
+the data properly to the user. In this case the MVC command name is set to 
+`Navigation`. The MVC render command name for the `PortletURL` `navigationURL` 
+is set to `View`, using the `mvcRenderCommandName` attribute. The `navigationURL` 
+is then passed to the `Navigation.soy` template as the variable `navigationURL` 
+using the `template.put` method. Finally, the `*MVCRenderCommand` class returns 
 the MVC render command name as a `String`.
 
 +$$$
 
-**Note:** Variables declared in the main `*SoyPortlet` class can be used in
-any of the Soy templates. **This can be overwritten with a variable with the
+**Note:** Variables declared in the main `*SoyPortlet` class can be used in 
+any of the Soy templates. **This can be overwritten with a variable with the 
 same name in the `*MVCRenderCommand` implementation class.**
 
-For example `navigationURL` is declared as a variable for the `hello-soy-web`
-module in both its `HelloSoyNavigationExampleMVCRenderCommand` class and
+For example `navigationURL` is declared as a variable for the `hello-soy-web` 
+module in both its `HelloSoyNavigationExampleMVCRenderCommand` class and 
 `HelloSoyPortlet` class, each pointing to a different MVC render command.
 
 $$$
@@ -288,45 +287,42 @@ Below is an example `*SoyPortlet` class for the
 
     }
 
-The `navigationURL` is set to link to the `Navigation.soy` template when
-rendered. The `navigationURL` and `releaseInfo` are then passed as variables to
-the Soy templates with the `template.put()` method. Since this logic should be
-executed before the default `render` method, the method concludes by calling
+The `navigationURL` is set to link to the `Navigation.soy` template when 
+rendered. The `navigationURL` and `releaseInfo` are then passed as variables to 
+the Soy templates with the `template.put()` method. Since this logic should be 
+executed before the default `render` method, the method concludes by calling 
 `super.render`.
 
-Now that you understand the render logic, you can learn how the
-view layer works.
+Now that you understand the render logic, you can learn how the view layer works.
 
 ## Configuring the View Layer [](id=configuring-the-view-layer)
 
-Your portlet also requires a view layer, and for that you’ll use Soy templates,
+Your portlet also requires a view layer, and for that you’ll use Soy templates, 
 which is the whole point of developing a Soy portlet, isn't it?
 
-This section briefly covers how to get your view layer working, from
-including other Soy templates, to creating a MetalJS component for rendering
-your views.
+This section briefly covers how to get your view layer working, from including 
+other Soy templates, to creating a MetalJS component for rendering your views.
 
-Soy templates are defined in a file with the extension `.soy`. The filename is
-arbitrary. The Soy template's name is specified at the top of the template using
+Soy templates are defined in a file with the extension `.soy`. The filename is 
+arbitrary. The Soy template's name is specified at the top of the template using 
 the `namespace` declaration. For example, this template has the namespace `View`:
 
     {namespace View}
 
-It can be accessed in another Soy template by calling the `render` method on the
+It can be accessed in another Soy template by calling the `render` method on the 
 namespace as shown below:
 
     {call View.render data="all"}{/call}
 
-If needed, you can access some Java theme object variables from within the Soy
-template. For example, to access the
-[`ThemeDisplay` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html)
+If needed, you can access some Java theme object variables from within the Soy 
+template. For example, to access the [`ThemeDisplay` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html)
 in a Soy template, use the following syntax:
 
     $themeDisplay
 
 You can also access the `Locale` object by using `locale`.
 
-Here is the full [`View.soy` template]() for the
+Here is the full [`View.soy` template]() for the 
 [`com.liferay.hello.soy.web` portlet](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/hello-soy/hello-soy-web)
 which demonstrates the features covered in this section:
 
@@ -372,10 +368,10 @@ which demonstrates the features covered in this section:
             </div>
     {/template}
 
-If your view has JavaScript logic associated with it, you must create a
-corresponding `*es.js` file (usually with the same name) that imports
-the Soy templates the view requires and registers the view as a MetalJS
-component. For example, here is the [`View.es.js` component](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/hello-soy/hello-soy-web/src/main/resources/META-INF/resources/View.es.js)
+If your view has JavaScript logic associated with it, you must create a 
+corresponding `*es.js` file (usually with the same name) that imports the Soy 
+templates the view requires and registers the view as a MetalJS component. For 
+example, here is the [`View.es.js` component](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/hello-soy/hello-soy-web/src/main/resources/META-INF/resources/View.es.js)
 for `com.liferay.hello.soy.web` portlet's `View.soy` template:
 
     import Component from 'metal-component/src/Component';

@@ -9,6 +9,7 @@ apps by visiting the `apps` folder corresponding to your preferred build tool:
 
 The following samples are documented:
 
+- [Greedy Policy Option Portlet](greedy-policy-option-portlet)
 - [Shared Language Keys](shared-language-keys)
 - [Simulation Panel App](simulation-panel-app)
 - [Spring MVC Portlet](spring-mvc-portlet)

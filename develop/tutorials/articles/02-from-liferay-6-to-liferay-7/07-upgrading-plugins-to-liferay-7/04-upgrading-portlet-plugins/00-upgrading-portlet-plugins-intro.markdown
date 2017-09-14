@@ -18,13 +18,10 @@ portlets:
 -   [GenericPortlet](upgrading-a-genericportlet)
 -   [Servlet-based portlet](upgrading-a-servlet-based-portlet)
 -   [Liferay MVC Portlet](upgrading-a-liferay-mvc-portlet)
+-   [Portlet that uses Service Builder](upgrading-portlets-that-use-service-builder)
 -   [Liferay JSF Portlet](upgrading-a-liferay-jsf-portlet)
-
-<!-- Uncomment each of the following bullets when their tutorial's available
--   Upgrading a Service Builder Portlet
--   Upgrading a Struts Portlet
--   Upgrading a JSF Portlet
--->
+-   [Struts Portlet](upgrading-a-struts-portlet)
+-   [Spring MVC Portlet](upgrading-a-spring-mvc-portlet)
 
 The tutorials provide example portlet source code from before and after
 upgrading the example portlet. Each tutorial's steps were applied to the example

@@ -15,7 +15,7 @@ Here's how to apply Liferay's CSS builder to your Maven project.
         <plugin>
             <groupId>com.liferay</groupId>
             <artifactId>com.liferay.css.builder</artifactId>
-            <version>${com.liferay.css.builder.version}</version>
+            <version>1.0.28</version>
             <executions>
                 <execution>
                     <id>default-build</id>
@@ -72,7 +72,7 @@ Here's how to apply Liferay's CSS builder to your Maven project.
                             <artifactItem>
                                 <groupId>com.liferay</groupId>
                                 <artifactId>com.liferay.frontend.css.common</artifactId>
-                                <version>${com.liferay.frontend.css.common.version}</version>
+                                <version>2.0.4</version>
                             </artifactItem>
                         </artifactItems>
                         <outputDirectory>${project.build.directory}/deps</outputDirectory>
@@ -99,7 +99,7 @@ recommended to switch to using the Oracle JDK, but if you prefer using the IBM
 JDK, you must use the fallback Ruby compiler. To do this, add the following
 tag to your CSS Builder configuration in your POM:
 
-    <sassCompilerName>ruby</sasscompilerName>
+    <sassCompilerClassName>ruby</sasscompilerClassName>
 
 Be aware that the Ruby-based compiler doesn't perform as well as the native
 compiler, so expect longer compile times.
