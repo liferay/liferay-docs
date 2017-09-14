@@ -1,4 +1,4 @@
-#Building Web Pages and Content with Liferay Web Experience Management
+# Building Web Pages and Content with Liferay Web Experience Management
 
 Liferay Web Experience Management is a set of tools for building websites with
 @product. It provides web content Management, document management, and a 
