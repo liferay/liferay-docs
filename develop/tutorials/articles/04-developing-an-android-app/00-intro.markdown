@@ -16,9 +16,9 @@ If you're an experienced Android developer but need a start-to-finish guide on
 how to integrate Android apps with @product@, you're in the right place. This 
 Learning Path walks you through the creation of an Android app that interacts 
 with the Guestbook portlet developed in the 
-[Liferay MVC learning path](https://www.liferay.com/). 
-Since this is a custom portlet, you'll write your own Screenlets that let your 
-app retrieve and display guestbooks and their entries. 
+[Developing a Web Application](/develop/tutorials/-/knowledge_base/7-0/developing-a-web-application) 
+Learning Path. Since this is a custom portlet, you'll write your own Screenlets 
+that let your app retrieve and display guestbooks and their entries. 
 
 You should note that although this Learning Path provides complete code snippets 
 of the app, not every aspect of Android development is explained in detail. 

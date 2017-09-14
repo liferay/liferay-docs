@@ -3,7 +3,8 @@
 Getting started with Liferay Screens for Android is a straightforward process. 
 This series of Learning Path articles walks you through creating an Android app 
 and preparing it to work with the Guestbook portlet developed in the 
-[Liferay MVC Learning Path](https://www.liferay.com/). 
+[Developing a Web Application](/develop/tutorials/-/knowledge_base/7-0/developing-a-web-application) 
+Learning Path. 
 
 Since Liferay Screens uses the Liferay Mobile SDK to make remote service calls, 
 you'll build a Mobile SDK capable of calling the Guestbook portlet's remote 

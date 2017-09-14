@@ -18,11 +18,11 @@ In the Mobile SDK source code, Liferay provides a Mobile SDK Builder that you
 can use to build your own Mobile SDKs. For the builder to generate the classes 
 that can call a non-core app's remote services, those services must be available 
 and accompanied by a Web Service Deployment Descriptor (WSDD). To learn how the 
-Guestbook portlet's remote services and WSDD were generated, see the article 
-[Creating Web Services for Your Application](https://www.liferay.com/). 
-Since the Guestbook portlet's web services already exist, you don't need to 
-generate them. Just remember that you must generate web services when developing 
-your own portlets. 
+Guestbook portlet's remote services and WSDD were generated, see the section 
+[Creating Your App's Web Services](/develop/tutorials/-/knowledge_base/7-0/creating-your-apps-web-services) 
+in the web application Learning Path. Since the Guestbook portlet's web services 
+already exist, you don't need to generate them. Just remember that you must 
+generate web services when developing your own portlets. 
 
 To build the Guestbook Mobile SDK, first download the Mobile SDK's source code 
 [by clicking here](https://github.com/liferay/liferay-mobile-sdk/archive/android-7.0.6.zip). 
