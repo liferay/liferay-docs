@@ -1,5 +1,9 @@
 # Handling Assets at the Entry Service Layer [](id=handling-assets-at-the-entry-service-layer)
 
+<div class="learn-path-step">
+    <p>Enabling Assets at the Service Layer<br>Step 3 of 3</p>
+</div>
+
 Now you must update the guestbook entry entity's service methods. In these 
 methods, the calls you'll make to `assetEntryLocalService` and 
 `assetLinkLocalService` are identical to the ones you made in the guestbook 

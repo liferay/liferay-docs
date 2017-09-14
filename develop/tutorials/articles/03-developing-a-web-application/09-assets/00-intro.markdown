@@ -25,3 +25,5 @@ and guestbook entries. You'll implement comments and ratings in guestbook
 entries. You'll also learn how asset-enabled guestbooks and guestbook entries
 integrate with @product@ core portlets like the Asset Publisher, Tags 
 Navigation, Tag Cloud, and Categories Navigation portlets. 
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/enabling-assets-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>

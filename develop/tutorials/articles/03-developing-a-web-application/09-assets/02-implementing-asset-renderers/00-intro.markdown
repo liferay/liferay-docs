@@ -9,3 +9,5 @@ Without these classes, @product@ can't display your entities in Asset Publisher,
 Notifications, Activities, or anywhere else that displays assets. 
 
 Your next task is to create these Asset Renderers. Ready to begin? 
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/implementing-a-guestbook-asset-renderer">Let's Go!<span class="icon-circle-arrow-right"></span></a>

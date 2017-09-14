@@ -1,5 +1,9 @@
 # Creating JSPs for Displaying Custom Assets in the Asset Publisher [](id=creating-jsps-for-displaying-custom-assets-in-the-asset-publisher)
 
+<div class="learn-path-step">
+    <p>Adding Asset Features to Your UI<br>Step 2 of 5</p>
+</div>
+
 Before proceeding, you must tie up a loose end from the previous step. Remember 
 that you implemented `getJspPath` methods in your `GuestbookAssetRenderer` and `EntryAssetRenderer` classes. These methods return paths to the JSPs the Asset 
 Publisher uses to display the assets' full content. The `getJspPath` method of 

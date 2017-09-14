@@ -1,5 +1,9 @@
 # Implementing a Guestbook Asset Renderer [](id=implementing-a-guestbook-asset-renderer)
 
+<div class="learn-path-step">
+    <p>Implementing Asset Renderers<br>Step 1 of 2</p>
+</div>
+
 @product@'s asset renderers follow the factory pattern, so you must create a 
 `GuestbookAssetRendererFactory` that instantiates the `GuestbookAssetRenderer`'s
 private guestbook object. Here, you'll create both classes. 

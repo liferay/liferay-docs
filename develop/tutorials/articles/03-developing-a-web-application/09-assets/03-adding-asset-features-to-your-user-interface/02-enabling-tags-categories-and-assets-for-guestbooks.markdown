@@ -1,5 +1,9 @@
 # Enabling Tags, Categories, and Related Assets for Guestbooks [](id=enabling-tags-categories-and-related-assets-for-guestbooks)
 
+<div class="learn-path-step">
+    <p>Adding Asset Features to Your UI<br>Step 3 of 5</p>
+</div>
+
 Since you already asset-enabled guestbooks at the service layer, guestbook 
 entities can now use @product@'s back-end support for tags and categories. All
 that's left is to enable tags and categories in the UI. In this step, you'll 
