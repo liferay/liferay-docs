@@ -30,4 +30,27 @@ application, and added that to the page to display your content. You could have 
     
 ![Figure X: Your content on a page.](../../../images/001-basic-content-on-page.png)
 
+## Cleanup
 
+You probably noticed a couple things - the way the title of the content is 
+displaying is a little awkward, and the "Hello World" portlet is unnecessary at 
+this point. You can fix that.
+
+1. Mouseover your content to reveal the portlet bar.
+
+2. Click on the portlet menu icon and select *Look and Feel Configuration*.
+
+3. Under *Application Decorators* select *Barebone*. This will remove the 
+    content title, background, and border from the content display.
+
+![Figure X: Your content on a page.](../../../images/001-select-barebone.png)
+
+4. Scroll down to the bottom of the page and mouseover the *Hello World* 
+    portlet.
+    
+5. Open the menu and select *Remove*.
+
+6. When prompted "Are you sure you want to remove this component?" click *OK*.
+
+Great work! You've created content, displayed it on a page, and done some basic 
+page management to make sure that it's displaying properly. Get ready to 
