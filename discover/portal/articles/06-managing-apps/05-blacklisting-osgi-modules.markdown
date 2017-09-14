@@ -1,11 +1,11 @@
 # Blacklisting OSGi Modules
 
-In society, the term "blacklist" typically carries a negative connotation.
-People on blacklists are usually treated unfavorably. Regarding OSGi modules, a
-blacklist is a convenience. It's a file that lets you uninstall multiple
-modules. Rather than uninstalling them one at a time using the Application
-Manager or Apache Felix Gogo Shell, you can uninstall them by dropping the
-blacklist file into a directory. 
+In society, the term "blacklist" carries a negative connotation. People on
+blacklists are usually mistreated. Regarding OSGi modules, a blacklist is a
+convenience. It's a file that lets you uninstall one or more specific modules.
+Rather than uninstalling them one at a time using the Application Manager or
+Apache Felix Gogo Shell, you can uninstall them simultaneously by dropping a
+blacklist file into a folder. 
 
 +$$$
 
@@ -17,7 +17,8 @@ $$$
 Follow these steps to blacklist a module:
 
 1.  Create a configuration file for the component 
-    `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration`, if you haven't already created one.
+    `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration`,
+    if you haven't already created one.
 
         com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
 
@@ -28,18 +29,27 @@ Follow these steps to blacklist a module:
 3.  To deploy the configuration file, copy it into the 
     `[Liferay_Home]/osgi/configs` folder. 
 
-Blacklisted modules currently installed on the Portal instance are uninstalled.
-Blacklisted modules that have not yet been installed remain uninstalled. The
-@product@ log reports each module uninstallation. 
+Installed modules on the blacklist are uninstalled. Blacklisted modules that
+have not yet been installed remain uninstalled. The @product@ log reports each
+module uninstallation. 
 
-When you're ready to reinstall the modules, you have two options: 
+To reinstall specific blacklisted modules, follow these steps:
 
-1.  In the configuration file, remove the module's symbolic name from the list 
-    of `blacklistBundleSymbolicNames` values.
+1.  Open the configuration file
+    `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration`.
 
-2.  Use the Application Manager or Felix Gogo Shell to uninstall the blacklist 
-    module `com.liferay.portal.bundle.blacklist`.
+2.  Remove the symbolic names of the modules from the
+    `blacklistBundleSymbolicNames` list.
+
+To reinstall *all* the blacklisted modules execute one of these options:
+
+-   Remove the configuration file.
+-   Uninstall the module `com.liferay.portal.bundle.blacklist` using the
+    [Application Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager)
+    or
+    [Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
 
 The @product@ log reports each module installation. 
 
-Now you know how helpful blacklisting is for uninstalling multiple modules.
+Now you know how to use the blacklisting feature to uninstall and reinstall
+modules.
