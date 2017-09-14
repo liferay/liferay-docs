@@ -115,20 +115,24 @@ Awesome! You've installed Liferay @ide@ in your existing Eclipse environment.
 
 ## Update Liferay @ide@ [](id=update-liferay-developer-studio)
 
-**Important:** This is not available for the latest 3.1 version of @ide@.
-
 If you're already using Liferay @ide@ but need to update your environment,
 follow the steps below:
 
 1.  Go to the
     [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
-    downloads page. From the selector, choose *Archived Product Update Site* and
-    click *Download*.
+    downloads page. From the selector, choose *Developer Studio Update Site Zip*
+    and click *Download*.
 
 2.  Navigate to *Help* &rarr; *Update Liferay Developer Studio...*.
 
-3.  Select *Browse* and select the `.zip` file you downloaded in step 1. Then
-    select *Update*.
+3.  Select *Add* &rarr; *Archive* and select the `.zip` file you downloaded in step 1. Then
+    press *OK*.
+    
+4.  You'll see the @ide@ components in the list below. Check them off and click
+    *Next*.
+    
+5.  Accept the terms of the agreements and click *Next*, and Developer Studio is
+    updated. Like other Eclipse plugins, you must restart Eclipse to use them.
 
 You're now on the latest version of Liferay @ide@!
 
