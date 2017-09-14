@@ -1,5 +1,9 @@
 # Implementing Permission Checks at the Service Layer [](id=implementing-permission-checks-at-the-service-layer)
 
+<div class="learn-path-step">
+    <p>Implementing Permission Checks<br>Step 1 of 2</p>
+</div>
+
 First, you'll add permission checks to `GuestbookServiceImpl`: 
 
 1.  In `GuestbookServiceImpl`, replace the `addGuestbook`, `deleteGuestbook`, 

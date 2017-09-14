@@ -1,5 +1,9 @@
 # Securing Service Calls at the Portlet Layer [](id=securing-service-calls-at-the-portlet-layer)
 
+<div class="learn-path-step">
+    <p>Implementing Permission Checks<br>Step 2 of 2</p>
+</div>
+
 Your remote services are now secure for those who want to use them directly.
 Your web application, however, is another story, because it's still calling the
 local services. In a perfect world, that would be fine, but this isn't a perfect
