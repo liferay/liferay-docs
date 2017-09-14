@@ -11,9 +11,9 @@ follow the steps below:
 3.  You'll see the @ide@ components in the list below. Check them off and click
     *Next*.
 
-    ![Figure 3: Make sure to check all the @ide@ components you wish to install.](../../../images/ide-zip-install.png)
+    ![Figure 1: Make sure to check all the @ide@ components you wish to install.](../../../images/ide-zip-install.png)
 
-4.  Accept the terms of the agreements and click *Next*, and @ide@ is installed.
-    Like other Eclipse plugins, you must restart Eclipse to use them.
+4.  Accept the terms of the agreements and click *Next*, and @ide@ is updated.
+    You must restart @ide@ for the updates to take effect.
 
 You're now on the latest version of Liferay @ide@!
