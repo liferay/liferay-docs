@@ -63,6 +63,23 @@ from the specified location. (Example: SM_USER)
 
 Remember to click *Save* to activate Token Based SSO.
 
+## Required Siteminder Configuration
+
+If you're using SiteMinder with Liferay, note that Liferay sometimes uses the
+tilde character in its URLs. By default, SiteMinder treats the tilde character,
+and others, as bad characters and returns an HTTP 500 error if it processes a
+URL containing any of them. To avoid this issue, change this default setting in
+the SiteMinder configuration
+
+	BadUrlChars       //,./,/.,/*,*.,~,\,%00-%1f,%7f-%ff,%25
+
+to this one:
+
+	BadUrlChars       //,./,/.,/*,*.,\,%00-%1f,%7f-%ff,%25
+
+Note that the `~` has been removed from the list of bad URL characters. Restart
+SiteMinder to make your configuration update take effect. For more information, please refer to SiteMinder's [documentation](https://support.ca.com/cadocs/0/CA%20SiteMinder%20r6%200%20SP6-ENU/Bookshelf_Files/HTML/index.htm?toc.htm?258201.html)
+
 # Summary [](id=summary)
 
 @product@'s token-based SSO authentication mechanism is highly flexible
