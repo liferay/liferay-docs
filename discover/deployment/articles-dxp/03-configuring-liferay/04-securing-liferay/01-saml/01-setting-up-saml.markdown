@@ -10,21 +10,37 @@ users to access other websites. A service provider is a website that hosts
 applications and grants access only to identified users with proper credentials.
 SAML is maintained by the 
 [OASIS Security Services Technical Committee](https://www.oasis-open.org/ committees/security/).
-for more information. Liferay Portal 6.1 EE and later 
-versions support SAML 2.0 integration via the 
-[Liferay SAML 2.0 
-Provider](https://web.liferay.com/marketplace/-/mp/application/15188711)
+Liferay Portal 6.1 EE and later versions support SAML 2.0 integration via the 
+[Liferay SAML 2.0 Provider](https://web.liferay.com/marketplace/-/mp/application/15188711)
 application. It is provided from Liferay Marketplace and allows @product@ to act
 as a SAML 2.0 identity provider or as a service provider.
-
-**Important:** You can set @product@ up as an Identity Provider or as a Service
-Provider. Each single @product@ instance can serve as an identity provider or as a
+**Important:** You can set @product@ up as an Identity Provider or as a Service Provider. Each single @product@ instance can serve as an identity provider or as a
 service provider, but **not both**. Both configurations are covered in this
 article.
 
 ## Setting up @product@ as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-provider)
 
-To set @product@ up to act as a SAML Identity Provider, follow these steps:
+To set @product@ up to act as a SAML Identity Provider, follow the steps below.
+Before proceeding, note that in step 3 below, you generate a keystore for SAML.
+This keystore has two storage options:
+
+    - In the file system
+    - In the Documents and Media library
+ 
+The file system keystore manager is used by default and the default location is
+the `[Liferay Home]/data` directory. To use Documents and Media library storage
+for your keystore instead of file system storage, use the document library
+keystore manager.
+
+To select a keystore manager, to to *Control Panel* &rarr; *System Settings*
+&rarr; *SAML KeyStoreManager Implementation Configuration. There, the options are *Filesystem Keystore Manager* and *Document Library Keystore Manager.
+
+The great thing about using Document Library storage is that you can use any number
+of [back end file stores](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration).
+These are protected not only by the system in which you're storing the key, but
+also by @product@'s permissions system.
+
+Here are the steps for setting up @product@ to act as a SAML Identity Provider:
 
 1.  Install the Liferay SAML 2.0 Provider app. To access the SAML Admin
     interface, click on *Control Panel* &rarr; *Configuration* and then on *SAML Admin*.
@@ -36,11 +52,11 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
 
     Select the *Identity Provider* SAML role. Enter *liferaysamlidp* if you're
     setting up an example @product@ instance. Alternatively, choose your own
-    entity ID.  Then click *Save*. A new Certificate and Private Key section
-    appears. 
+	entity ID. Then click *Save*. A new Certificate and Private Key section
+	appears. 
 
 3.  The Certificate and Private Key section lets you create a keystore for SAML.
-    Enter the following information:
+    Click on *Create Certificate* and enter the following information:
     
     - Your common name (your first and last name)
     - The name of your organization
@@ -54,29 +70,12 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
     - The key length in bits (2048 is the default)
     - The key password
 
-    If you're making a test configuration, use the password *liferay*. When
+	If you're making a test configuration, use the password *liferay*. When
     you enter all the required information, click *Save*.
 
-    Note that the SAML keystore is created by the SAML plugin's keystore
-    manager. This keystore has two storage options: 
-
-    - In the file system
-    - In the Documents and Media library
- 
-    File system storage is used by default: 
-
-        saml.keystore.manager.impl=com.liferay.saml.credential.FileSystemKeyStoreManagerImpl
-
-    The default location is the `[Liferay Home]/data` directory. 
-    
-    To use the Documents and Media library, use this property: 
-
-        saml.keystore.manager.impl=com.liferay.saml.credential.DLKeystoreManagerImpl
-
-    The great thing about the Docs and Media storage is that you can use any
-    number of [back end file stores](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration). 
-    These are protected not only by the system in which you're storing the key,
-    but also by @product@'s permissions system.
+	Note that the SAML keystore is created by the SAML app's keystore
+	manager. As described above, this keystore has two storage options, file
+	system storage (the default) and documents and media storage. 
  
 4.  After you click *Save*, you can click *Replace Certificate* at any time to
     replace the current certificate with a new one if your old one has expired
@@ -86,22 +85,25 @@ To set @product@ up to act as a SAML Identity Provider, follow these steps:
 
     Three more tabs now appear: 
 
-    - *General* 
-      This tab enables or disables SAML IdP and manages the required keystore.  
+	- *General*:
+	  This tab lets you enable or disable a SAML IdP and lets you manage the
+required keystore.
     
-    - *Identity Provider*     
+    - *Identity Provider*:
       This tab contains other required configurations such as whether to enable 
       SSL. If SSL has been enabled, then SAML requests are not approved unless 
       they are also encrypted.
     
-    - *Service Provider Connections*     
+    - *Service Provider Connections*:
       This tab manages any Service Providers connected to this @product@ 
-      instance. See below for more information.
+      instance.
+	  
+	  See below for more information on the Identity Provider and Service
+	  Provider Connections tabs.
 
 5.  After you save your certificate and private key information,
     check the *Enabled* box at the top of the General tab and click *Save*.
     You successfully set @product@ up as a SAML Identity Provider!
-
 
 ### Changing the Identity Provider Settings [](id=changing-the-identity-provider-settings)
 
@@ -110,13 +112,13 @@ Provider* tab of the SAML Admin Control Panel entry.
 
 The *Identity Provider* tab includes these options:
 
-**Sign Metadata:** When this box is checked, the metadata XML file that's
+**Sign Metadata?:** When this box is checked, the metadata XML file that's
 produced is signed.
 
 **SSL Required:** When this box is checked, any SAML messages that are *not*
 sent over SSL are rejected. This does not affect how URLs are generated.
 
-**Authn Request Signature Required:** When this box is checked, each Authn
+**Require Authn Request Signature?:** When this box is checked, each Authn
 Request must be signed by the sending Service Provider. In most cases, this
 should be enabled. 
 
@@ -132,9 +134,6 @@ again after a certain period of time.
 **Session Timeout:** Specify the maximum idle time of the SAML SSO session.
 Even if the session maximum age is unlimited, the SSO session expires whenever
 the user's idle time reaches the limit set by the session timeout property.
-
-**Service Provider Defaults:** The options in this section set defaults that
-are used when adding new service provider connections.
 
 #### Checkpoint [](id=checkpoint)
 
@@ -211,6 +210,8 @@ whatever comes after `static:`. If you use the prefix `expando`, the value is
 whatever custom field is specified after `expando:`. For example, `expando:SSN`
 would look up the `User` custom field with the name `SSN`.
 
+**Attributes Enabled:** <!-- TODO -->
+
 **Attributes Namespace Enabled:** When this box is checked, the attribute names
 are namespaced like this:
 
@@ -224,9 +225,14 @@ are namespaced like this:
     urn:liferay:userGroupRole:
     urn:liferay:userGroups:
 
-Note that the full namespace depends on the attribute name. The namespaces are
-useful; for example, when you have an Expando attribute that might otherwise
-create an attribute with the same name as some other attribute.
+**Attributes:** <!-- TODO -->
+
+**Keep Alive URL:** <!-- TODO -->
+
+Note that the full namespace depends on the attribute name. Attribute
+namespaces can be very useful. Use them, for example, when you have an Expando
+attribute that might otherwise create an attribute with the same name as some
+other attribute.
 
 #### Checkpoint [](id=checkpoint-0)
 
@@ -307,13 +313,13 @@ $$$
     created a keystore. After you create a keystore, additional options
     appear. There are three tabs:
 
-    - General 
+	- *General*:
     This tab enables or disables SAML IdP and manages the required keystore.
     
-    - Service Provider (*not Identity Provider!*)    
+    - *Service Provider*: (*not Identity Provider!*)    
     This tab manages basic and advanced configurations for the SP.
  
-    - Identity Provider Connection (*not Service Provider Connections!*) 
+    - *Identity Provider Connection*: (*not Service Provider Connections!*) 
     This tab manages connections to the IdP. There can be only one IdP connection.
 
     Note that these options are different than if you were setting up @product@ as
@@ -327,10 +333,15 @@ $$$
 
     - Name: *Liferay IdP*
     - Entity ID: *liferaysamlidp*
+	- Clock Skew
+	- Force Authn
     - Metadata URL: http://localhost:8080/c/portal/saml/metadata (test this URL
       first)
+	- Name Identifier Format
+	- Attribute Mapping
+	- Keep Alive URL
 
-    **Important**: The Liferay SAML 2.0 Provider plugin supports using *either*
+    **Important**: The Liferay SAML 2.0 Provider app supports using *either*
     a URL to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata
     XML file. The value entered in the *Metadata URL* field will only be
     persisted to the database when there is one entered metadata URL and there
@@ -343,7 +354,7 @@ $$$
     overwrite the previously saved metadata URL by specifying a metadata XML
     file.
 
-    Currently, the SAML Provider plugin does not provide a way to "clear"
+    Currently, the SAML Provider app does not provide a way to "clear"
     the SAML IdP metadata URL or metadata XML file fields using the Control
     Panel UI. If you really need to clear these fields, it's possible (but not
     recommended) to delete the contents of the SAML IdP metadata URL and
@@ -385,7 +396,7 @@ the Service Provider tab of the SAML Admin portlet.
 
 The Service Provider tab includes these options:
 
-**Assertion Signature Required:** When this box is checked, SAML assertions
+**Require Assertion Signature?:** When this box is checked, SAML assertions
 must be individually signed in addition to the entire SAML message.
 
 **Clock Skew:** Clock skew is a tolerance in milliseconds used by the Service
@@ -432,6 +443,8 @@ Provider connection. If the metadata is inaccessible via URL, you can upload the
 XML file manually. In this case, the metadata XML file is not 
 updated automatically. 
 
+**Name Identifier Format:** <!-- TODO -->
+
 **Attribute Mapping:** The attribute mapping is done from the attribute name or
 friendly name in the SAML Response to the @product@ attribute name. For example,
 if you want to map a response attribute named `mail` to the @product@ attribute
@@ -442,15 +455,17 @@ if you want to map a response attribute named `mail` to the @product@ attribute
 Available @product@ attributes are: `emailAddress`, `screenName`, `firstName`,
 `lastName`, `modifiedDate`, and `uuid`.
 
+**Keep Alive URL:** <!-- TODO -->
+
 Save your changes when you are finished configuring the @product@ instance as a
 service provider. There is no need to restart the server and the changes will be
 applied immediately.
 
 The previous two sections explained how to use the SAML 2.0 Provider
-EE plugin's Control Panel interface to configure @product@ as an Identity
+app's Control Panel interface to configure @product@ as an Identity
 Provider or as a Service Provider. Such configurations should only be made
 through the SAML Control Panel interface and not via properties. Some features
-of the Liferay SAML 2.0 Provider plugin are not available as properties.
+of the Liferay SAML 2.0 Provider app are not available as properties.
 
 
 +$$$
@@ -494,13 +509,13 @@ If your situation fits the scenario described above, follow these steps:
 
 2.  Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
     the first @product@ node to the remaining @product@ nodes. This file is the
-    Java keystore that's created by the SAML Provider plugin. The keystore
+    Java keystore that's created by the SAML Provider app. The keystore
     contains the valid or self-signed certificate managed by the SAML Provider
-    plugin.
+    app.
 
     Note: The keystore file and its default location can vary according to the
     keystore manager defined by the `saml.keystore.manager.impl` property.
-    Here's the relevant section of the Liferay SAML 2.0 Provider plugin's
+    Here's the relevant section of the Liferay SAML 2.0 Provider app's
     `portlet.properties` file:
 
         #
@@ -525,3 +540,74 @@ Now you know how to configure @product@ either as a SAML identity provider
 or a service provider. You also know how to configure SAML in a
 clustered environment.
 
+## What's New in SAML Provider for Liferay 7
+
+The biggest update to the SAML Provider app for Liferay was to refactor it from
+a Liferay 6.2 plugin to a Liferay 7.0 modular application. Apart from this
+architectural change, here are some of the major changes in the SAML Provider
+app:
+
+The Liferay 6.2 SAML Provider's Identity Provider configuration screen had a
+*Service Provider Defaults* section which listed values read from
+`portal-ext.properties`. This section has been removed in Liferay 7's SAML
+Provider since Liferay 7.0 no longer supports connection defaults. The
+connection defaults in Liferay 6.2 were used for two purposes:
+
+1. When `saml.metadata.paths` was specified in `portal-ext.properties` (this
+   property did not appear in the UI), the defaults provided the runtime
+configuration for each peer entity represented by the paths (URLs). This
+completed the peer configuration, enabling each peer to be used immediately.
+Each peer connection could be tweaked using filtered properties like
+`saml.idp.metadata.name.id.attribute[peerEntityId]` if needed. 
+
+2. When the Liferay 6.2 SAML Admin UI was used add a peer connection, the
+   fields were pre-populated with the defaults, saving time for the SAML
+administrator.
+
+Starting with Liferay 7, anything related to configuring SP connections must be
+done through the SAML Admin UI where configurations are saved to Liferay's
+database. SP connections can no longer be made via properties files.
+
+This enabled Liferay to migrate to a company-scoped configuration which can be
+managed via OSGi Configuration Admin. The affected properties are those in the `SAMLProviderConfiguration` metatype:
+
+    - `saml.keystore.credential.password`
+    - `saml.sp.assertion.signature.required`
+    - `saml.idp.authn.request.signature.required`
+    - `saml.sp.clock.skew`
+    - `saml.default.assertion.lifetime`
+    - `saml.sp.default.idp.entity.id`
+	- `saml.enabled`
+	- `saml.entity.id`
+	- `saml.sp.ldap.import.enabled`
+	- `saml.role`
+	- `saml.idp.session.maximum.age`
+    - `saml.idp.session.timeout`
+    - `saml.sp.sign.authn.request`
+    - `saml.sign.metadata`
+    - `saml.ssl.required`
+    - `saml.idp.metadata.name.id.attribute`
+
+The SAML Admin UI remains the place for creating the company-scoped
+configuration instances.
+
+Note that there is also a system wide configuration, represented by the
+`SamlConfiguration` metatype. This uses the Configuration API which means
+defaults values for those properties can still be specified via
+`portal-ext.properties`, though this is discouraged. `.config` files (or `.cfg`
+files) should be used instead.
+
+Finally, please note that the following system wide properties which existed
+for Liferay 6.2 have been removed for Liferay 7:
+
+    `saml.metadata.paths` (served no purpose after removal of SP connection defaults)
+    `saml.runtime.metadata.max.refresh.delay`
+    `saml.runtime.metadata.min.refresh.delay`
+
+The latter two properties have been replaced with the single property
+`saml.runtime.metadata.refresh.interval`.
+
+Note also the introduction of the *SAML KeyStoreManager Implementation
+Configuration* in *Control Panel* &rarr; *System Settings*. The options for
+this configuration are explained above in the Setting up @product@ as a SAML
+Identity Provider section.
