@@ -4,7 +4,7 @@ When you enable social bookmarks, icons for sharing on Twitter, Facebook, and
 Google Plus appear below your app's content. @product@'s taglibs provide the 
 markup you need to add this feature to your app. 
 
-![Figure 1: Social bookmarks are enabled in the built-in Blogs portlet](../../../images/social-bookmarks-icons.png)
+![Figure 1: Social bookmarks are enabled in the built-in Blogs portlet](../../images/social-bookmarks-icons.png)
 
 Follow these steps to add social bookmarks to your app:
 
@@ -53,22 +53,22 @@ Follow these steps to add social bookmarks to your app:
     Setting `displayStyle` to `simple` displays the share buttons in a simple 
     row without share stats. 
 
-    ![Figure 2: Here are the share buttons with `displayStyle` set to `simple`.](../../../images/social-bookmarks-icons-simple.png)
+    ![Figure 2: Here are the share buttons with `displayStyle` set to `simple`.](../../images/social-bookmarks-icons-simple.png)
 
     Setting `displayStyle` to `vertical` displays the share buttons in a column, 
     with share stats above each (share stats show the number of times the asset 
     has been shared on the corresponding social network). 
 
-    ![Figure 3: Here are the share buttons with `displayStyle` set to `vertical`.](../../../images/social-bookmarks-icons-vertical.png)
+    ![Figure 3: Here are the share buttons with `displayStyle` set to `vertical`.](../../images/social-bookmarks-icons-vertical.png)
 
     Setting `displayStyle` to `horizontal` displays the share buttons in a row 
     with share stats to the right of each. 
 
-    ![Figure 4: Here are the share buttons with `displayStyle` set to `horizontal`.](../../../images/social-bookmarks-icons-horizontal.png)
+    ![Figure 4: Here are the share buttons with `displayStyle` set to `horizontal`.](../../images/social-bookmarks-icons-horizontal.png)
 
 The social bookmarks UI component now shows in your entity's view. 
 
-![Figure 5: The new JSP lets users share app content to social networks.](../../../images/social-guestbook-social-bookmarks.png) 
+![Figure 5: The new JSP lets users share app content to social networks.](../../images/social-guestbook-social-bookmarks.png) 
 
 +$$$
 
