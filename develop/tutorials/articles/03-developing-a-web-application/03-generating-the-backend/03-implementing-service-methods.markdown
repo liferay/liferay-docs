@@ -1,7 +1,7 @@
 # Implementing Service Methods [](id=implementing-service-methods)
 
 <div class="learn-path-step">
-    <p>Generating the Backend<br>Step 3 of 3</p>
+    <p>Generating the Back-end<br>Step 3 of 3</p>
 </div>
 
 When you use Service Builder, you implement the services in the service module.
