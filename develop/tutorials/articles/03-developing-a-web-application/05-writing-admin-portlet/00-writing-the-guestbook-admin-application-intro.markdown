@@ -13,7 +13,7 @@ and users can use the Guestbook portlet to create entries.
 
 In short, this is a simple application with a simple interface: 
 
-![Figure x: The Guestbook Admin portlet lets administrators manage Guestbooks.](../../../images/admin-app-start.png)
+![Figure 1: The Guestbook Admin portlet lets administrators manage Guestbooks.](../../../images/admin-app-start.png)
 
 Are you ready to begin? 
 

@@ -7,7 +7,7 @@
 When users add applications to a page, they pick them from a list of *display
 categories*. 
 
-![Figure x: Users choose applications from a list of display categories.](../../../images/display-categories.png)
+![Figure 1: Users choose applications from a list of display categories.](../../../images/display-categories.png)
 
 A portlet's display category is defined in its component class as a metadata 
 property. Since the Guestbook portlet lets users communicate with each other, 

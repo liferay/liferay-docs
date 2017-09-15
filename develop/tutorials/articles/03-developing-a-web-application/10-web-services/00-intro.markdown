@@ -17,7 +17,7 @@ front-end clients on multiple platforms that access the same back-end. This
 makes it possible to build *headless* applications on @product@, with multiple 
 front-ends elsewhere. 
 
-![Figure x: @product@ makes it easy to write multi-client applications.](../../../images/multi-client-application.png)
+![Figure 1: @product@ makes it easy to write multi-client applications.](../../../images/multi-client-application.png)
 
 Next, you'll use Service Builder to create the Guestbook app's web services. 
 When you finish, authorized clients can then consume these web services. 

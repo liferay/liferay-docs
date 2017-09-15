@@ -38,7 +38,7 @@ objects, such as `Guestbook` and `Entry`. A user may have permission to view one
 `Entry`, view and edit another `Entry`, and may not be able to access another 
 `Entry` at all. This is due to a resource permission. 
 
-![Figure x: Portlet permissions and resource permissions cover different parts of the application.](../../../images/permission-types.png)
+![Figure 1: Portlet permissions and resource permissions cover different parts of the application.](../../../images/permission-types.png)
 
 The first thing you must do is tell the framework where your permissions are 
 defined. You'll define resource and model permissions in the module where your 

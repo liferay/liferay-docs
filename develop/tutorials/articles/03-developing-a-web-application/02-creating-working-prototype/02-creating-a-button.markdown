@@ -59,4 +59,4 @@ library by default (as well as other important imports and tags):
 Your application now displays a button instead of a message, but the button 
 doesn't do anything. Next, you'll create a URL for your button. 
 
-![Figure x: Your new button is awesome, but it doesn't work yet.](../../../images/guestbook-new-button.png)
+![Figure 1: Your new button is awesome, but it doesn't work yet.](../../../images/guestbook-new-button.png)

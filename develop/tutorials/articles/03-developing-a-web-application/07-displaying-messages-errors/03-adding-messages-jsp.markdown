@@ -32,7 +32,7 @@ Any messages the user should see are now stored in either `SessionMessages` or
     Note that one of the `message` values is the same for both portlets. There's 
     no need to write redundant messages--language keys are reusable. 
 
-![Figure x: Now the message will display the value you specified in `Language.properties`.](../../../images/message-complete.png)
+![Figure 1: Now the message will display the value you specified in `Language.properties`.](../../../images/message-complete.png)
 
 Congratulations! You've added useful feedback for operations in your 
 application. Next, you'll add permission checking for your guestbooks and 

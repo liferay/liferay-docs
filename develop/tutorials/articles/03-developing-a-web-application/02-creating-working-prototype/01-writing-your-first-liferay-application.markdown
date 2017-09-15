@@ -12,7 +12,7 @@ alongside those that come with @product@.
 Your first application is simple: you'll build a guestbook application that 
 looks like this: 
 
-![Figure x: You'll create this simple application.](../../../images/first-guestbook-portlet.png)
+![Figure 1: You'll create this simple application.](../../../images/first-guestbook-portlet.png)
 
 By default, it shows guestbook messages that various users leave on your 
 website. To add a message, you click the *Add Entry* button to show a form that
@@ -65,7 +65,7 @@ the files you need to get started:
 - JSP files (in `/src/main/resources`)
 - Language properties (also in `/src/main/resources`)
 
-![Figure x: Your new module project appears in your Liferay Workspace's `modules` folder.](../../../images/guestbook-web-project.png)
+![Figure 2: Your new module project appears in your Liferay Workspace's `modules` folder.](../../../images/guestbook-web-project.png)
 
 Your new module project is a *portlet* application. Next, you'll learn exactly 
 what a portlet is. 
@@ -79,7 +79,7 @@ entering lots of data into an application that calculates whether you owe or
 are due a refund. These applications run on a *platform* that provides
 application developers the building blocks they need to make applications.
 
-![Figure x: Many Liferay applications can run at the same time on the same page.](../../../images/portlet-applications.png)
+![Figure 3: Many Liferay applications can run at the same time on the same page.](../../../images/portlet-applications.png)
 
 @product@ provides a platform that contains common features needed by today's
 applications, including user management, security, user interfaces, services, 
@@ -129,6 +129,6 @@ sign), and then select *Applications*. In the Applications list, your
 application should appear in the Sample category. Its name should be 
 `guestbook-web-module Portlet`. 
 
-![Figure x: This is the default Liferay homepage. It contains several portlets, including the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
+![Figure 4: This is the default Liferay homepage. It contains several portlets, including the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
 
 Now you're ready to jump in and start developing your Guestbook portlet. 

@@ -136,7 +136,7 @@ all works, it's time to test it.
 
 11. Verify that your entry appears.
 
-![Figure x: A new guestbook and entry.](../../../images/guestbook-entry-test.png)
+![Figure 1: A new guestbook and entry.](../../../images/guestbook-entry-test.png)
 
 ## What's Next? [](id=whats-next)
 

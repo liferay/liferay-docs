@@ -65,7 +65,7 @@ Test the updated `edit_guestbook.jsp` page by navigating to the Guestbook Admin
 portlet in the Control Panel and clicking *Add Guestbook*. You'll see a field 
 for adding tags and a selector for selecting related assets.
 
-![Figure 2: Once you've updated your Guestbook Admin portlet's `edit_guestbook.jsp` page, you'll see forms for adding tags and selecting related assets.](../../../../images/guestbook-tags-related-assets.png)
+![Figure 1: Once you've updated your Guestbook Admin portlet's `edit_guestbook.jsp` page, you'll see forms for adding tags and selecting related assets.](../../../../images/guestbook-tags-related-assets.png)
 
 Don't do anything with these fields yet, because you're not done implementing 
 assets. Next, you'll enable tags and categories for guestbook entries. 
