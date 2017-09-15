@@ -1,6 +1,6 @@
 # Rating Assets [](id=rating-assets)
 
-@Product@'s asset framework supports a system for rating content in apps. This
+@product@'s asset framework supports a system for rating content in apps. This
 feature appears in many core apps, such as the Blogs portlet. Ratings give your
 users a voice, and you can benefit from their feedback.  Thanks to @product@'s
 taglibs, you can enable ratings for your app in only a few lines of code.
@@ -50,7 +50,7 @@ Great! Now you know how to let users rate content in your asset-enabled portlets
 
 ## Related Topics [](id=related-topics)
 
-[Enabling Comments on Your App's Contents](/develop/tutorials/-/knowledge_base/7-0/enabling-comments-on-your-apps-contents)
+[Adding Comments to Your App](/develop/tutorials/-/knowledge_base/7-0/adding-comments-to-your-app)
 
 [Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-0/applying-social-bookmarks)
 

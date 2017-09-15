@@ -157,5 +157,5 @@ Up!
 
 [Rating Assets](/develop/tutorials/-/knowledge_base/7-0/rating-assets)
 
-[Enabling Comments on Your App's Contents](/develop/tutorials/-/knowledge_base/7-0/enabling-comments-on-your-apps-contents)
+[Adding Comments to Your App](/develop/tutorials/-/knowledge_base/7-0/adding-comments-to-your-app)
 
