@@ -188,7 +188,7 @@ with little to no change in the model and service layers. The model is in the
 `-api` module, and the service and persistence layers are in the `-service` 
 module. 
 
-![Figure X: The Model, Service, and Persistence Layer.](../../../images/model-service-persistence.png)
+![Figure x: The Model, Service, and Persistence Layer.](../../../images/model-service-persistence.png)
 
 Each layer is implemented using Java Interfaces and implementations of those
 interfaces. Rather than have one `Entry` class that represents your model, 
