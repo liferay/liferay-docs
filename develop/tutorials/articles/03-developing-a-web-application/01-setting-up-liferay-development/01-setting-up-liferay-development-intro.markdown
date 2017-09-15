@@ -5,9 +5,9 @@
 </div>
 
 Liferay's development tools aim to help you get started fast. The basic steps 
-for installing @ide@ are
+for installing Liferay @ide@ are
 
-* Download a @ide@ bundle. 
+* Download a Liferay @ide@ bundle. 
 
 * Unzip the downloaded package to a location on your system. 
 
@@ -16,7 +16,7 @@ for installing @ide@ are
 You'll follow these steps, and then generate an environment for developing your 
 first @product@ application. 
 
-## Installing a @ide@ Bundle [](id=installing-ide-bundle)
+## Installing a Liferay @ide@ Bundle [](id=installing-ide-bundle)
 
 To install @ide@, follow these steps: 
 

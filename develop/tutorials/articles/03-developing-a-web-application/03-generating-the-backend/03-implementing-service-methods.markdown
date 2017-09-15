@@ -268,7 +268,7 @@ the rest of your application. To do this, run `buildService` again:
 
 2.  In the Project Explorer, right-click the `guestbook-service` module and 
     select *Refresh*. Repeat this step for the `guestbook-api` module. This 
-    ensures that the changes made by Service Builder show up in @ide@.
+    ensures that the changes made by Service Builder show up in Liferay @ide@.
 
 3.  In the Project Explorer, right-click the `guestbook-service` module and 
     select *Gradle* &rarr; *Refresh Gradle Project*. Repeat this step for the 
