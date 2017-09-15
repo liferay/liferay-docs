@@ -168,7 +168,7 @@ permissions package so that other modules can access it. Follow these steps to
 do so: 
 
 1.  Save the permissions helper classes you just created. From the Gradle Tasks 
-    panel on the right side of @ide@, run `buildService` from the 
+    panel on the right side of Liferay @ide@, run `buildService` from the 
     `guestbook-service` module's `build` folder. 
 
 2.  In the Project Explorer, open the `bnd.bnd` file from the root folder of the 

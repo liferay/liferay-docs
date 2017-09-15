@@ -22,9 +22,9 @@ It's time to get started. You'll create the `Guestbook` entity first:
 
 1.  In your `guestbook-service` project, open `service.xml`. 
 
-2.  When @ide@ generated your project, it filled this file with dummy entities, 
-    which you'll replace. First replace the file's opening contents (below the 
-    `DOCTYPE`) with the following code: 
+2.  When Liferay @ide@ generated your project, it filled this file with dummy 
+    entities, which you'll replace. First replace the file's opening contents 
+    (below the `DOCTYPE`) with the following code: 
 
         <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
             <author>liferay</author>

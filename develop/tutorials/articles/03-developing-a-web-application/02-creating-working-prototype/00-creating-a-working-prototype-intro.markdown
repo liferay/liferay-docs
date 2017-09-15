@@ -1,8 +1,8 @@
 # Developing Your First Portlet [](id=developing-your-first-portlet)
 
-So far, you've installed and set up @ide@, and created a Liferay Workspace. 
-Next, you'll create your application and start adding basic features to it. 
-Here's what you'll do: 
+So far, you've installed and set up Liferay @ide@, and created a Liferay 
+Workspace. Next, you'll create your application and start adding basic features 
+to it. Here's what you'll do: 
 
 -   Create your application and deploy it to your @product@ instance. 
 -   Create a functional button for adding and removing guestbook entries. 

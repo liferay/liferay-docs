@@ -243,7 +243,7 @@ Follow these steps to do so:
 
     Save the file and refresh the service module's Gradle project. 
 
-3.  In the *Gradle Tasks* window on the right-hand side of @ide@, expand 
+3.  In the *Gradle Tasks* window on the right-hand side of Liferay @ide@, expand 
     the service module's *build* folder. Build the WSDD by double-clicking 
     *buildWSDD*. If `buildWSDD` is missing, shut down your server and then 
     restart Liferay IDE. The `buildWSDD` command appears as described. 

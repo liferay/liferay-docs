@@ -40,8 +40,8 @@ Now you'll create your first module. For the purpose of this Learning Path,
 you'll create your modules inside your Liferay Workspace. Follow these 
 instructions to create your first Liferay Module Project: 
 
-1.  In the Project Explorer in @ide@, right click on your Liferay Workspace and 
-    select *New* &rarr; *Liferay Module Project*. 
+1.  In the Project Explorer in Liferay @ide@, right click on your Liferay 
+    Workspace and select *New* &rarr; *Liferay Module Project*. 
 
 2.  Complete the first screen of the wizard with the following information: 
 

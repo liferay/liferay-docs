@@ -43,8 +43,9 @@ deleted. You must update the `addGuestbook`, `updateGuestbook`, and
 
     Save the file. 
 
-4.  In the Gradle Tasks pane on the right-hand side of @ide@, double-click 
-    `buildService` in `guestbook-service` &rarr; `build`. This re-runs Service 
-    Builder to incorporate your changes to `GuestbookLocalServiceImpl`. 
+4.  In the Gradle Tasks pane on the right-hand side of Liferay @ide@, 
+    double-click `buildService` in `guestbook-service` &rarr; `build`. This 
+    re-runs Service Builder to incorporate your changes to 
+    `GuestbookLocalServiceImpl`. 
 
 Great! Next, you'll enable search and indexing for guestbook entries. 

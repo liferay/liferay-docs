@@ -30,7 +30,7 @@ what it does.
 To get started, you'll create a Service Builder project and populate its 
 `service.xml` file with all the necessary entities to generate this code: 
 
-1.  In @ide@, click *File* &rarr; *New* &rarr; *Liferay Module Project*.
+1.  In Liferay @ide@, click *File* &rarr; *New* &rarr; *Liferay Module Project*.
 
 2.  Name the project `guestbook`.
 
