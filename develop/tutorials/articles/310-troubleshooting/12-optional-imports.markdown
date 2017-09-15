@@ -1,17 +1,16 @@
 # Declaring Optional Import Package Requirements [](id=declaring-optional-import-package-requirements)
 
-When developing @product@ modules, it's possible declare *optional* 
-dependencies. An optional dependency is a dependency that your module can use 
-but doesn't require. A module with an optional dependency can use the dependency 
-if it's available, but can still function without it. 
+When developing @product@ modules, you can declare *optional* dependencies. An
+optional dependency is one your module can use if it's available, but can still
+function without it. 
 
 +$$$
 
-**Important:** You should try to avoid optional dependencies. The simplest 
-module designs rely on normal dependencies. If an optional dependency seems 
-desirable, it's often the case that your module is trying to provide distinct 
-types of functionality. In such a situation, it's best to split your module into 
-multiple modules that each provide smaller, more focused functionality. 
+**Important:** Try to avoid optional dependencies. The best module designs
+rely on normal dependencies. If an optional dependency seems desirable, your
+module may be trying to provide distinct types of functionality. In such a
+situation, it's best to split it into multiple modules that provide smaller,
+more focused functionality. 
 
 $$$
 
@@ -42,10 +41,9 @@ steps to add it:
         public class OptionalPackageConsumer implements Foo {...}
 
 3.  Create a second component to act as a controller of the first component. The 
-    second component checks the classloader to determine whether the optional 
-    class exists on the classpath. It handles both cases appropriately. If the 
-    optional class isn't on the classpath, this means catching any 
-    `ClassNotFoundException`. For example: 
+    second component checks the classloader for the optional class on the
+    classpath. It handles both cases appropriately. If it's not there, this
+    means you must catch any `ClassNotFoundException`. For example: 
 
         @Component
         public class OptionalPackageConsumerStarter {
@@ -72,8 +70,8 @@ As above, if you install the module when the optional dependency is missing from
 `ClassNotFoundException` and logs a warning or info message (or takes whatever 
 other action you implement to handle this case). If you install the optional 
 dependency, refreshing your module triggers the OSGi bundle lifecycle events 
-that trigger your controller's `activate` method and your check for the optional 
-dependency. Since your dependency exists, your client component uses it. 
+that trigger your controller's `activate` method and the check for the optional 
+dependency. Since the dependency exists, your client component uses it. 
 
 Note that you can refresh a bundle from @product@'s Gogo shell with this 
 command: 
