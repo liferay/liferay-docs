@@ -45,4 +45,4 @@ To get started, you'll create a Service Builder project and populate its
 This creates two modules: an API module (`guestbook-api`) and a service module 
 (`guestbook-service`). Next, you'll learn how to use them. 
 
-![Figure X: Your current project structure.](../../../images/guestbook-service-project.png)
+![Figure 1: Your current project structure.](../../../images/guestbook-service-project.png)
