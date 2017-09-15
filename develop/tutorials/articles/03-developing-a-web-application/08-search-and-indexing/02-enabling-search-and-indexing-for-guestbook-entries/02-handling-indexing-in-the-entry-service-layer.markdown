@@ -42,9 +42,10 @@ Follow these steps to update the methods:
 
     Save the file. 
 
-4.  In the Gradle Tasks pane on the right-hand side of @ide@, double-click 
-    `buildService` in `guestbook-service` &rarr; `build`. This re-runs Service 
-    Builder to incorporate your changes to `EntryLocalServiceImpl`. 
+4.  In the Gradle Tasks pane on the right-hand side of Liferay @ide@, 
+    double-click `buildService` in `guestbook-service` &rarr; `build`. This 
+    re-runs Service Builder to incorporate your changes to 
+    `EntryLocalServiceImpl`. 
 
 Awesome! Both guestbooks and their entries now have search and indexing support 
 in the back-end. Next, you'll enable search in the Guestbook portlet's 

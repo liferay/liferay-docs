@@ -81,8 +81,9 @@ Follow these steps to add the required guestbook service methods:
 3.  Use [CTRL]+[SHIFT]+O to update your imports, then save 
     `GuestbookLocalServiceImpl.java`.
 
-4.  In the Gradle Tasks pane on the right side in @ide@, run Service Builder by 
-    opening the `guestbook-service` module and double-clicking `buildService`. 
+4.  In the Gradle Tasks pane on the right side in Liferay @ide@, run Service 
+    Builder by opening the `guestbook-service` module and double-clicking 
+    `buildService`. 
 
 Now that you've finished updating the service layer, it's time to work on the
 Guestbook Admin portlet itself. 
