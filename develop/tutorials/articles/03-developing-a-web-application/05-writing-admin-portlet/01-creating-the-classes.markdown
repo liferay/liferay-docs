@@ -24,7 +24,7 @@ the process manually to learn how it all works:
 You now have your Guestbook Admin application's portlet class. For an 
 administrative application, however, you need at least one more component. 
 
-## Panels and Categories 
+## Panels and Categories [](id=panels-and-categories)
 
 As described in the 
 [product menu tutorial](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu), 

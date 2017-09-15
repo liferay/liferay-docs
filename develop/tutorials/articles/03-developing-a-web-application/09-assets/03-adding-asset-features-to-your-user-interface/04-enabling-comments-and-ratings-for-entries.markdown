@@ -49,9 +49,6 @@ Follow these steps to enable comments and ratings on guestbook entries:
         PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
         currentURL);
 
-    ![Figure 1: The Breadcrumb portlet appears on regular portal pages by default. It appears just below the main page navigation menu and displays the path to the current page or portlet.](../../../../images/portlet-breadcrumb.png)
-    <!-- Missing image -->
-
 4.  At the end of the scriptlet, add the names of the current entry's existing 
     asset tags as keywords to the portal page. These tag names appear in a 
     `<meta content="[tag names here]" lang="en-US" name="keywords" />` element 
@@ -169,7 +166,7 @@ Follow these steps to enable comments and ratings on guestbook entries:
 
 Next, you'll update the guestbook actions to use the new view. 
 
-## Updating the Entry Actions JSP
+## Updating the Entry Actions JSP [](id=updating-the-entry-actions-jsp)
 
 Nothing links to your `view_entry.jsp` page--it's currently orphaned. Fix this 
 by adding the *View* option to the Actions Menu. Open the 

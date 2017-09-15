@@ -10,7 +10,7 @@ private guestbook object. Here, you'll create both classes.
 
 Get started by creating the Asset Renderer class first. 
 
-## Creating the AssetRenderer Class
+## Creating the AssetRenderer Class [](id=creating-the-assetrenderer-class)
 
 Follow these steps to create the `GuestbookAssetRenderer` class: 
 
@@ -233,14 +233,25 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
 10. You have an error in your class, because the `guestbook-service` project
     doesn't have access to the `GuestbookPortletKeys` object that's in the
-    `guestbook-web` project. Open `guestbook-service`'s `build.gradle` file and
-    add this dependency: 
+    `guestbook-web` project. 
+    
+    It is logical to think this could be corrected by including the project as a
+    dependency in `guestbook-service`'s `build.gradle` file, but that creates a
+    circular dependency. `guestbook-web` already depends on `guestbook-service`,
+    so you can't make `guestbook-service` depend circularly on `guestbook-web`. 
 
-        compileOnly project(":modules:guestbook-web")
+    So now what do you do? 
+
+    Make sure you've opened both `guestbook-api` and `guestbook-web` projects.
+    Drag the `com.liferay.docs.guestbook.portlet.constants` package from the
+    `guestbook-web` project and drop it on the `guestbook-api` project's
+    `src/main/java` folder. Blamo! You fixed the problem. `guestbook-service`
+    depends on `guestbook-api` and implements its interfaces. `guestbook-web`
+    depends on both. Now you have only linear dependencies. 
 
 Next you can create the `AssetRendererFactory` class. 
 
-## Creating the GuestbookAssetRendererFactory Class
+## Creating the GuestbookAssetRendererFactory Class [](id=creating-the-guestbookassetrendererfactory-class)
 
 Follow these steps to create the `GuestbookAssetRendererFactory`:
 

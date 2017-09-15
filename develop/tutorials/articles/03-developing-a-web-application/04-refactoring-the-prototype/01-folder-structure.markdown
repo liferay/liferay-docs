@@ -23,5 +23,5 @@ in separate folders:
 
 As you update your view layer to take full advantage of the new back-end, you'll
 update any references to the old paths. In addition, you must update the 
-resource location in your component properties. In the next step you'll update 
+resource location in your component properties. In the next step, you'll update 
 all of those properties, including the one that defines the resource location. 

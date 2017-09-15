@@ -1,4 +1,4 @@
-# Creating Permissions Helper Classes
+# Creating Permissions Helper Classes [](id=creating-permissions-helper-classes)
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 3 of 4</p>

@@ -1,13 +1,13 @@
-# Updating the View
+# Updating the View [](id=updating-the-view)
 
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 5 of 6</p>
 </div>
 
 You updated more than just the basic mechanism behind creating the entry--you 
-completely changed its method and structure. You must therefore update the UI as 
-well. To do that, you must create a new JSP for managing guestbooks, and update 
-the existing JSPs. 
+completely changed its method and structure. You must, therefore, update the UI 
+as well. To do that, you must create a new JSP for managing guestbooks, and
+update the existing JSPs. 
 
 1.  First, you must update your dependencies. In your `guestbook-web` module, 
     open `init.jsp` from `/src/main/resources/META-INF/resources/`. In this 

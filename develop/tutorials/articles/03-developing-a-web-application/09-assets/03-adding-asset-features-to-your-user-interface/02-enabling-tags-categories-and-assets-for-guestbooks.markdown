@@ -10,7 +10,7 @@ that's left is to enable tags and categories in the UI. In this step, you'll
 update the Guestbook Admin portlet's `edit_guestbook.jsp` so admins can add,
 edit, or remove tags and categories when adding or updating a guestbook. 
 
-## Enabling Asset Features
+## Enabling Asset Features [](id=enabling-asset-features)
 
 Follow these steps: 
 

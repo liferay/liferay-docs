@@ -1,4 +1,4 @@
-# Linking to Another Page
+# Linking to Another Page [](id=linking-to-another-page)
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 4 of 8</p>

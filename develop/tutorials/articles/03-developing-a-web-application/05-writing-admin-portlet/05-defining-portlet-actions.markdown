@@ -14,7 +14,7 @@ service is published, it can be used via `@Reference`. You'll take advantage of
 this here in the Guestbook Admin portlet to consume one of the same services 
 consumed by the Guestbook portlet (the `addGuestbook` service). 
 
-## Adding Three Portlet Actions
+## Adding Three Portlet Actions [](id=adding-three-portlet-actions)
 
 The Guestbook Admin portlet must let administrators add, update, and delete 
 `Guestbook` objects. You'll create portlet actions to meet these requirements. 
@@ -48,7 +48,7 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
         private GuestbookLocalService _guestbookLocalService;
         
         @Reference(unbind = "-")
-            protected void setGuestbookService(GuestbookLocalService guestbookLocalService) {
+        protected void setGuestbookService(GuestbookLocalService guestbookLocalService) {
             _guestbookLocalService = guestbookLocalService;
         }
  
@@ -131,7 +131,7 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
     to a particular JSP if there was a problem with the `deleteGuestbook` 
     service call. 
 
-4.  Hit Ctrl-Shift-O to organize imports. Save the file. 
+4.  Hit [CTRL]+[SHIFT]+O to organize imports. Save the file. 
 
 You now have your service methods and portlet action methods in place. Your last 
 task is to implement the Guestbook Admin portlet's user interface. 

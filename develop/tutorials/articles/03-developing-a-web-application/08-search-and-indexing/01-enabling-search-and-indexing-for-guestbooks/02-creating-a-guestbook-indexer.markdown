@@ -46,7 +46,7 @@ Follow these steps to create the indexer for guestbooks:
     - Makes the search results permissions-aware at search time, as well as in 
       the index. Without this, a search query returns *all* matching guestbooks 
       regardless of the user's permissions on the resource. 
-    - Sets filter search to true, enabling a document-by-document check of the 
+    - Sets filter search to `true`, enabling a document-by-document check of the 
       search results' `VIEW` permissions. This is redundant most of the time, 
       but safeguards against unexpected problems like the search index becoming 
       stale, or if permission inheritance doesn't happen fast enough. Most of 
@@ -147,8 +147,8 @@ Follow these steps to create the indexer for guestbooks:
     the default locale from the site by passing the `Guestbook`'s group ID to 
     the `getSiteDefaultLocale` method, then using it to get the localized name
     of the guestbook's title field. The retrieved site locale is appended to the
-    field (e.g., `title_en_US`), so the field gets passed to the search
-    engine and goes through the right analysis and
+    field (e.g., `title_en_US`), so the field gets passed to the search engine
+    and goes through the right analysis and
     [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
 
 9.  Implement the `doGetSummary` method to return a *summary*. A summary is a 
@@ -263,7 +263,7 @@ Follow these steps to create the indexer for guestbooks:
         @Reference
         private GuestbookLocalService _guestbookLocalService;
 
-14. Organize your imports (Ctrl-Shift-O), and save the file. It will have
+14. Organize your imports ([CTRL]+[SHIFT]+O), and save the file. It will have
     errors. 
 
 15. Export the `com.liferay.docs.guestbook.search` package in the 

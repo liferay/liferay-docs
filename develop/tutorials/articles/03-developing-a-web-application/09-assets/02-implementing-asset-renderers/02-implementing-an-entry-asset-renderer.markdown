@@ -10,7 +10,7 @@ for guestbooks in the previous step. This step provides the code needed for
 guestbook entries. Please review the previous sections for more information on 
 this code. 
 
-## Creating the EntryAssetRenderer Class
+## Creating the EntryAssetRenderer Class [](id=creating-the-entryassetrenderer-class)
 
 In the `com.liferay.docs.guestbook.asset` package, create an 
 `EntryAssetRenderer` class that extends @product@'s `BaseJSPAssetRenderer` 
@@ -193,7 +193,7 @@ guestbook name. `EntryAssetRenderer.getTitle` returns the entry message.
 methods of `EntryAssetRenderer` are nearly identical to those of
 `GuestbookAssetRenderer`. 
 
-## Creating the EntryAssetRendererFactory Class
+## Creating the EntryAssetRendererFactory Class [](id=creating-the-entryassetrendererfactory-class)
 
 Next, you must create the guestbook entry asset renderer's factory class. In the 
 `com.liferay.docs.guestbook.asset` package, create a class called 

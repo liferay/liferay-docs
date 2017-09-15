@@ -1,4 +1,4 @@
-# Adding Metadata
+# Adding Metadata [](id=adding-metadata)
 
 <div class="learn-path-step">
     <p>Writing the Guestbook Admin App<br>Step 2 of 5</p>
@@ -37,7 +37,7 @@ Follow these steps:
             service = Portlet.class
         )
 
-3.  Hit Ctrl-Shift-O to add the `javax.portlet.Portlet` and other imports. 
+3.  Hit [CTRL]+[SHIFT]+O to add the `javax.portlet.Portlet` and other imports. 
 
 There are only a few new things here. Note the value of the
 `javax.portlet.display-name` property: `Guestbooks`. This is the name that
@@ -99,7 +99,7 @@ Next, you can configure the Panel app class. Follow these steps:
 
         }
 
-3.  Hit *Ctrl-Shift-O* to organize imports. This time, import
+3.  Hit [CTRL]+[SHIFT]+O to organize imports. This time, import
     `com.liferay.portal.kernel.model.Portlet` instead of 
     `javax.portlet.Portlet`. 
 

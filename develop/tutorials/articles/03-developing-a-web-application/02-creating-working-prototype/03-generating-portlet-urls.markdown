@@ -1,4 +1,4 @@
-# Generating Portlet URLs
+# Generating Portlet URLs [](id=generating-portlet-urls)
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 3 of 8</p>
