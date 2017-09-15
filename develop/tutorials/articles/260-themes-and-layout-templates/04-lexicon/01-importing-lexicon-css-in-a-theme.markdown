@@ -1,15 +1,5 @@
 # Importing Lexicon CSS into a Theme [](id=importing-lexicon-css-into-a-theme)
 
-Lexicon is an extension of Bootstrap's CSS Framework. Bootstrap is by far the 
-most popular CSS framework on the web. Also, it's open source, so anyone can use 
-it. Built with Sass, Lexicon fills the front-end gaps between Bootstrap and the 
-specific needs of @product@.
-
-This tutorial looks briefly at Lexicon and shows you how to use it in your
-@product@ themes.
-
-## Lexicon Features [](id=lexicon-features)
-
 As mentioned before, Lexicon fills the gaps between Bootstrap and the specific 
 needs of @product@. Bootstrap features have been extended to cover more 
 use cases. Here are some of the new components added by Lexicon:
