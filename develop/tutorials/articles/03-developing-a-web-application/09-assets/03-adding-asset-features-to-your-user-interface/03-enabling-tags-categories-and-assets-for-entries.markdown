@@ -1,5 +1,9 @@
 # Enabling Tags, Categories, and Related Assets for Guestbook Entries [](id=enabling-tags-categories-and-related-assets-for-guestbook-entries)
 
+<div class="learn-path-step">
+    <p>Adding Asset Features to Your UI<br>Step 4 of 5</p>
+</div>
+
 Enabling tags, categories, and related assets for guestbook entries is similar 
 to enabling them for guestbooks. It's so similar, you can refer back to the 
 previous step for a detailed explanation. 

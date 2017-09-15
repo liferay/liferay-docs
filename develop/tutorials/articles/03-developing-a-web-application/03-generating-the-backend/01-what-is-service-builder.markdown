@@ -1,7 +1,7 @@
 # What is Service Builder? [](id=what-is-service-builder-0)
 
 <div class="learn-path-step">
-    <p>Generating the Backend<br>Step 1 of 3</p>
+    <p>Generating the Back-end<br>Step 1 of 3</p>
 </div>
 
 Now you'll use Service Builder to generate create, read, update, delete, and

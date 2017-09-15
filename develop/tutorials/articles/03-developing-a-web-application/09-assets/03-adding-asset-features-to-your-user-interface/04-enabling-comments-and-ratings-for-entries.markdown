@@ -1,5 +1,9 @@
 # Enabling Comments and Ratings for Guestbook Entries [](id=enabling-comments-and-ratings-for-guestbook-entries)
 
+<div class="learn-path-step">
+    <p>Adding Asset Features to Your UI<br>Step 5 of 5</p>
+</div>
+
 @product@'s asset framework lets users comment on and rate assets. As with tags, 
 categories, and related assets, you must update the user interface to expose 
 these features. It's best to separate the page where users comment on and rate 

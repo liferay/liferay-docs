@@ -1,5 +1,9 @@
 # Implementing an Entry Asset Renderer [](id=implementing-an-entry-asset-renderer)
 
+<div class="learn-path-step">
+    <p>Implementing Asset Renderers<br>Step 2 of 2</p>
+</div>
+
 The classes you'll create here are nearly identical to the 
 `GuestbookAssetRenderer` and `GuestbookAssetRendererFactory` classes you created
 for guestbooks in the previous step. This step provides the code needed for 

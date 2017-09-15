@@ -1,5 +1,9 @@
 # Handling Assets at the Guestbook Service Layer [](id=handling-assets-at-the-guestbook-service-layer)
 
+<div class="learn-path-step">
+    <p>Enabling Assets at the Service Layer<br>Step 2 of 3</p>
+</div>
+
 In this section, you'll update the guestbook service layer to use assets. You 
 must update the add, update, and delete methods of your project's 
 `GuestbookLocalServiceImpl`. Follow these steps to do so: 

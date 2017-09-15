@@ -1,5 +1,9 @@
 # Enabling Assets at the Service Layer [](id=enabling-assets-at-the-service-layer)
 
+<div class="learn-path-step">
+    <p>Enabling Assets at the Service Layer<br>Step 1 of 3</p>
+</div>
+
 Each row in the `AssetEntry` table represents an asset and has an `entryId` 
 primary key, and `classNameId` and `classPK` foreign keys. The `classNameId` 
 specifies the asset's type. For example, an asset with a `classNameId` of 

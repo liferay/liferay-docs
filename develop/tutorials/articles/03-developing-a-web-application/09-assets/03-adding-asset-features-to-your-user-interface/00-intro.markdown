@@ -1,5 +1,9 @@
 # Adding Asset Features to Your User Interface [](id=adding-asset-features-to-your-user-interface)
 
+<div class="learn-path-step">
+    <p>Adding Asset Features to Your UI<br>Step 1 of 5</p>
+</div>
+
 Now that your guestbook and guestbook entry entities are asset-enabled, you're 
 ready to use @product@'s asset functionality in your application. You'll start 
 by implementing comments, ratings, tags, categories, and related assets for 

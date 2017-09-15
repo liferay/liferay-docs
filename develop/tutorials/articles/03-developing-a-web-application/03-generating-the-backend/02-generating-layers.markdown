@@ -1,7 +1,7 @@
 # Generating Model, Service, and Persistence Layers [](id=generating-model-service-and-persistence-layers)
 
 <div class="learn-path-step">
-    <p>Generating the Backend<br>Step 2 of 3</p>
+    <p>Generating the Back-end<br>Step 2 of 3</p>
 </div>
 
 The persistence layer saves and retrieves your model data. The service layer is
