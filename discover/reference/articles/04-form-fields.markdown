@@ -1,7 +1,7 @@
 # Form Field Types [](id=form-field-types)
 
 A form without fields is no form at all. To meet your form-building needs,
-Liferay Forms gives you many useful and highly configurable field types. To see
+Liferay Forms provides useful and highly configurable field types. To see
 examples of the form fields described here, visit the [Collecting Information from
 Users](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users)
 section of the User Guide.
@@ -9,18 +9,18 @@ section of the User Guide.
 ![Figure 1: Out of the box form field types.](../images/forms-field-types.png)
 
 Form Text
-: Users do not enter data into Form Text fields. The form creator enters text
-that form users see displayed on the form. This is useful for longer
-instructions.
+: This is static text on the form. Users do not enter data into Form Text
+fields. The form creator enters text that form users see displayed on the form.
+This is useful for longer instructions.
 
 ![Figure 2: A form text field.](../images/forms-form-text.png)
 
 Text Field
-: Users enter text into these fields. For example, a Full Name field will often
-be a text field. By default, a text field keeps all input on a single line of
-text. To accommodate longer responses, choose the multiline setting when
-configuring the text field [as in this
-example](/discover/portal/-/knowledge_base/7-0/basic-forms#building-a-form).
+: Users enter text into these fields. For example, a Full Name field is a text
+field. By default, a text field keeps all input on a single line of text. To
+accommodate longer responses, choose the multi-line setting when
+configuring the text field 
+[as in this example](/discover/portal/-/knowledge_base/7-0/basic-forms#building-a-form).
 Place limits on the text users can enter (numbers from 1-10, or email addresses,
 for example) by using the Text field's validation options (as in [this
 example](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#validating-text-fields)).
@@ -28,9 +28,9 @@ example](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#validatin
 ![Figure 3: A multiline text form.](../images/forms-multiline.png)
 
 Select from List
-: Users select one (or more, if configured to allow it) options from a dropdown
-list of choices. Choices can be entered manually or automatically populated by
-a data provider. For example, a Country of Residence field would probably be a
+: Users select one (or more, if configured to allow it) options from a 
+list of choices. Choices are entered manually or automatically populated by
+a data provider. For example, a Country of Residence field can be a
 select from list field populated by a Countries of the World data provider. 
 
 ![Figure 4: A select from list field.](../images/forms-select-list.png)
@@ -42,8 +42,8 @@ on the form.
 ![Figure 5: A single selection field.](../images/forms-single-selection.png)
 
 Date
-: Users select a date using a datepicker. For example, a Birth Date field would
-probably use the Date field type.
+: Users select a date using a date picker. For example, a Birth Date field uses
+the Date field type.
 
 ![Figure 6: A date field.](../images/forms-date.png)
 
