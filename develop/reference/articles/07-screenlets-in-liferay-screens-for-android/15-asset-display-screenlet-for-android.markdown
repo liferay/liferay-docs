@@ -39,7 +39,7 @@ The Default View uses different UI elements to show each asset type. For
 example, it displays images with `ImageView` and blogs with `TextView`. Note 
 that other Views may use different UI elements. 
 
-This Screenlet can also render other Screenlets: 
+This Screenlet can also render other Screenlets as inner Screenlets: 
 
 - Images: Image Display Screenlet
 - Videos: Video Display Screenlet
@@ -66,13 +66,17 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 ## Required Attributes [](id=required-attributes)
 
-- `entryId` or `assetEntry`
+- `entryId`
 
-If you don't use `entryId` or `assetEntry`, you must use both of the following 
-attributes: 
+Instead of `entryId`, you can use both of the following attributes: 
 
 - `className`
 - `classPK`
+
+If you don't use `entryId`, `className`, or `classPK`, you must use this 
+attribute: 
+
+- `portletItemName`
 
 ## Attributes [](id=attributes)
 
@@ -83,7 +87,7 @@ attributes:
 | `entryId` | `number` | The primary key of the asset. | 
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The asset’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `assetEntry` | `Asset` | The `Asset` object to display, selected from a list of assets. Note that if you use this attribute, the Screenlet doesn't need to call the server. |
+| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-0/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name in this attribute. If there is more than one asset in the configuration, the Screenlet displays only the first one. |
 | `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/asset-display-screenlet-for-android#offline) for details. |
 | `imageLayoutId` | `@layout` | The layout to use to show an image (`DLFileEntry`). |
 | `videoLayoutId` | `@layout` | The layout to use to show a video (`DLFileEntry`). |
@@ -91,6 +95,13 @@ attributes:
 | `pdfLayoutId` | `@layout` | The layout to use to show a PDF (`DLFileEntry`). |
 | `blogsLayoutId` | `@layout` | The layout to use to show a blog entry (`BlogsEntry`). |
 | `webDisplayLayoutId` | `@layout` | The layout to use to show a web content article (`WebContent`). |
+
+## Methods [](id=methods)
+
+| Method | Return | Explanation |
+|-----------|-----------|-------------| 
+| `load(AssetEntry assetEntry)` | `void` | Loads the given `AssetEntry` in the Screenlet. If no inner Screenlet is instantiated, the method tries to load the asset with a custom asset listener method. If this returns `null`, a new `Intent` is called to display the asset. |
+| `loadAsset()` | `void` | Searches for the `AssetEntry` defined by the required attributes and loads it in the Screenlet. |
 
 ## Listener [](id=listener)
 

@@ -71,9 +71,9 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 
 ## Listener [](id=listener)
 
-The `LoginScreenlet` delegates some events to an object that implements the 
-`LoginListener` interface. This interface lets you implement the following 
-methods:
+The Sign Up Screenlet delegates some events to an object that implements the 
+`SignUpListener` interface. This interface lets you implement the following 
+methods: 
 
 - `onSignUpSuccess(User user)`: Called when sign up successfully completes. The 
   `user` parameter contains a set of the created user's attributes. The 

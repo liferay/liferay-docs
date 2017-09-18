@@ -1,23 +1,25 @@
 # Preparing Android Projects for Liferay Screens [](id=preparing-android-projects-for-liferay-screens)
 
 To use Liferay Screens, you must install it in your Android project and then 
-configure it to communicate with your Liferay instance. Note that Screens is 
+configure it to communicate with your @product@ instance. Note that Screens is 
 released as an 
 [AAR](http://tools.android.com/tech-docs/new-build-system/aar-format) file 
 hosted in jCenter. 
 
-There are three different ways to install Screens: 
+There are three different ways to install Screens. This tutorial shows you each: 
 
 1. With Gradle: Gradle is the build system Android Studio uses to build Android 
    projects. We therefore recommend that you use it to install Screens. 
-
 2. With Maven
-
 3. Manually
 
-This tutorial shows you each installation method and concludes by demonstrating 
-how to configure Screens to communicate with your Liferay instance. Let the 
-preparations begin! 
++$$$
+
+**Note:** After installation, you must configure Liferay Screens to communicate 
+with your @product@ instance. The last section in this tutorial shows you how to 
+do this. 
+
+$$$
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ABxCUUg7zhs" frameborder="0" allowfullscreen></iframe>
 
@@ -150,21 +152,21 @@ You can also configure the `.aar` binary files (in `Android/dist`) as local
 To check your configuration, you can compile and execute a blank activity and
 import a Liferay Screens class (like Login Screenlet). 
 
-Next, you'll set up communication with Liferay. 
+Next, you'll set up communication with @product@. 
 
-## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
+## Configuring Communication with @product@ [](id=configuring-communication-with-liferay)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QEJPEicgle8" frameborder="0" allowfullscreen></iframe>
 
 Before using Liferay Screens, you must configure it to communicate with your 
-Liferay instance. To do this, you must provide Screens the following
+@product@ instance. To do this, you must provide Screens the following
 information:
 
-- Your Liferay instance's ID
+- Your @product@ instance's ID
 
 - The ID of the site your app needs to communicate with
 
-- Your Liferay instance's version
+- Your @product@ instance's version
 
 - Any other information required by specific Screenlets
 
@@ -175,7 +177,7 @@ the new file:
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
 
-        <!-- Change these values for your Liferay Portal installation -->
+        <!-- Change these values for your @product@ installation -->
 
         <string name="liferay_server">http://10.0.2.2:8080</string>
 
@@ -187,36 +189,36 @@ the new file:
     </resources>
  
 As the above comment indicates, make sure to change these values to match
-your Liferay instance. The server address `http://10.0.2.2:8080` is suitable 
+your @product@ instance. The server address `http://10.0.2.2:8080` is suitable 
 for testing with Android Studio's emulator, because it corresponds to 
 `localhost:8080` through the emulator. If you're using the Genymotion emulator,
 you should, however, use address `192.168.56.1` instead of `localhost`. 
 
-The `liferay_company_id` value is your Liferay instance's ID. You can find it in 
-your Liferay instance at *Control Panel* &rarr; *Configuration* &rarr; *Virtual 
-Instances*. The instance's ID is in the *Instance ID* column. Copy and paste 
-this value into the `liferay_company_id` value in `server_context.xml`. 
+The `liferay_company_id` value is your @product@ instance's ID. You can find it 
+in your @product@ instance at *Control Panel* &rarr; *Configuration* &rarr; 
+*Virtual Instances*. The instance's ID is in the *Instance ID* column. Copy and 
+paste this value into the `liferay_company_id` value in `server_context.xml`. 
 
 The `liferay_group_id` value is the ID of the site your app needs to communicate 
-with. To find this value, first go to the site in your Liferay instance that you 
-want your app to communicate with. In the *Site Administration* menu, select 
+with. To find this value, first go to the site in your @product@ instance that 
+you want your app to communicate with. In the *Site Administration* menu, select 
 *Configuration* &rarr; *Site Settings*. The site ID is listed at the top of the 
 *General* tab. Copy and paste this value into the `liferay_group_id` value in 
 `server_context.xml`. 
 
 The `liferay_portal_version` value `70` tells Screens that it's communicating 
-with a @product@ 7 instance. Supported values for are `62` for Liferay 6.2, and 
-`70` for @product@ 7.0. Note that if you leave `liferay_portal_version` out of 
-your `server_context.xml`, it defaults to `62`. 
+with a @product-ver@ instance. Supported values for are `62` for Liferay Portal 
+6.2, and `70` for @product-ver@. Note that if you leave `liferay_portal_version` 
+out of your `server_context.xml`, it defaults to `62`. 
 
 You can also configure Screenlet properties in your `server_context.xml` file. 
 The example properties listed below, `liferay_recordset_id` and
 `liferay_recordset_fields`, enable DDL Form Screenlet and DDL List Screenlet to
-interact with a Liferay instance's DDLs. You can see an additional example
+interact with a @product@ instance's DDLs. You can see an additional example
 `server_context.xml` file
 [here](https://github.com/liferay/liferay-screens/blob/master/android/samples/bankofwesteros/src/main/res/values/server_context.xml).
 
-    <!-- Change these values for your Liferay Portal installation -->
+    <!-- Change these values for your @product@ installation -->
     
     <integer name="liferay_recordset_id">20935</integer>
     <string name="liferay_recordset_fields">Title</string>

@@ -62,8 +62,9 @@ Use the following steps to implement your Connector class:
             super.init()
         }
 
-3.  Override the `validateData` method to implement validation for each property 
-    that needs it. You can use the 
+3.  If you want to validate any of your Screenlet's properties, override the 
+    `validateData` method to implement validation for those properties. You can 
+    use the 
     [`ValidationError` class](https://github.com/liferay/liferay-screens/blob/develop/ios/Framework/Core/Extensions/NSError%2BScreens.swift) 
     to encapsulate the errors. For example, the following `validateData` 
     implementation in `AddBookmarkLiferayConnector` ensures that `folderId` is 
