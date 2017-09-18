@@ -11,9 +11,11 @@ tutorial.
 Follow the steps below to download and install Liferay Workspace:
 
 1.  Download the
-    [Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace)
-    that corresponds with your operating system (e.g., Windows, MacOS, or
-    Linux).
+    [Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace).
+    Make sure to select the version folder (e.g., 1.5.0.1) and then select the
+    Workspace version corresponding to your operating system (e.g., Windows,
+    MacOS, or Linux). Do **not** select the large green download button; this
+    will download Liferay Portal instead.
 
 2.  Run the installer. Click *Next* to step through the installer's
     introduction.
