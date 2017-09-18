@@ -97,13 +97,17 @@ Property Name | Type | Default Value | Description
 
 **Note:** Liferay's CSS Builder is supported for Oracle's JDK and uses a native
 compiler for increased speed. If you're using an IBM JDK, you may experience
-issues when building your SASS files (e.g., when building a theme). It's
+issues when building your Sass files (e.g., when building a theme). It's
 recommended to switch to using the Oracle JDK, but if you prefer using the IBM
 JDK, you must use the fallback Ruby compiler. You can do this two ways:
 
-- Set `sass.compiler.class.name=ruby` in your `gradle.properties` file.
-- Set `buildCSS.sassCompilerClassName='ruby'` in the plugin's `build.gradle`
-  file within the `buildCSS` task definition.
+- If you're working in a
+  [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+  or using the
+  [Liferay Gradle Plugins](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins)
+  plugin, set `sass.compiler.class.name=ruby` in your `gradle.properties` file.
+- Otherwise, set `buildCSS.sassCompilerClassName='ruby'` in the project's
+  `build.gradle` file.
 
 Be aware that the Ruby-based compiler doesn't perform as well as the native
 compiler, so expect longer compile times.
