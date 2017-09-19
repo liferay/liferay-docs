@@ -14,7 +14,7 @@ public class NumberImagesDiscover {
 		File markdownfile = new File(markdownFilePath);
 
 		String source = FileUtils.readFileToString(markdownfile);
-		String find = "\\!\\[Figure x:";
+		String find = "\\!\\[Figure [x|X]:";
 		System.out.println("find: " + find);
 		int fignum = 1;
 		String replace = "\\!\\[Figure " + fignum + ":";
