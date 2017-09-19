@@ -81,16 +81,23 @@ $$$
 
 Configuration files consist of two things: 
 
-1.  A file name. 
-2.  One or more key/value pairs, with the value enclosed in double quotes: 
+1.  A file name that identifies the configurations as belonging to a specific
+    entry. 
+2.  One or more key/value configuration pairs, with the value enclosed in double
+    quotes: 
 
         configurationName="value"
 
-Components have configuration objects that end in `*Configuration`. The object's 
-ID is the component name followed by `Configuration`. 
+The name of the file is important. It's how the configuration system knows what
+entry (for example, *Web Content*) the keys and values are supposed to
+target. So how do you know what to name the file?
 
-For example, here's the backend ID for the *Web Content* configuration entry:
-    
+### Finding the Configuration ID [](id=finding-the-configuration-id)
+
+The configuration's backend ID isn't intuitive from the reader-friendly entry 
+name you see in the System Settings UI. For example, here's the Web Content 
+entry's ID: 
+
     com.liferay.journal.configuration.JournalServiceConfiguration
 
 The configuration file name must use the ID as its prefix and `.config` as its 
@@ -100,14 +107,6 @@ configuration file is to create this file:
     com.liferay.journal.configuration.JournalServiceConfiguration.config
 
 ![Figure 1: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../images/config-web-content-entry.png)
-
-### Finding the Configuration ID [](id=finding-the-configuration-id)
-
-The configuration's backend ID isn't intuitive from the reader-friendly entry 
-name you see in the System Settings UI. For example, here's the Web Content 
-entry's ID: 
-
-    com.liferay.journal.configuration.JournalServiceConfiguration
 
 The easiest way to find the ID is to make a change in the System Settings entry, 
 then 
