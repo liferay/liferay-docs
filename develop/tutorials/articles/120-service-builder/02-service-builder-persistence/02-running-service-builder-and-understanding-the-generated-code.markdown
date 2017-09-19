@@ -30,11 +30,10 @@ deployment descriptors), please refer to the
 [SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
 tutorial. 
 
-![Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
+![Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../../images/service-xml-overview.png)
 
 Another simple way to run Service Builder is to right-click on your project's
-name in the Package Explorer and then to select *Liferay* &rarr;
-*build-service*.
+name in the Package Explorer and then select *Liferay* &rarr; *build-service*.
 
 After running Service Builder, your generated files are available. More
 information about the generated files appears below.
@@ -78,10 +77,8 @@ command from the module project's root folder:
 using the `com.liferay.portal.tools.service.builder` plugin version 1.0.145+.
 Maven projects using an earlier version of the Service Builder plugin should
 update their POM accordingly. See the
-[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)
-and
 [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
-tutorials for more information on using Maven to run Service Builder.
+tutorial for more information on using Maven to run Service Builder.
 
 When the service has been successfully generated, a `BUILD SUCCESSFUL` message
 appears in your terminal window. You should also see that a large number of
