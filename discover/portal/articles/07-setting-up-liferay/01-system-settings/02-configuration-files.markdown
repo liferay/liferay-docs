@@ -1,18 +1,51 @@
 # Understanding System Configuration Files [](id=understanding-system-configuration-files)
 
-To make system-scoped configuration changes and set default configurations for 
-other 
-[scopes](/discover/portal/-/knowledge_base/7-0/configuring-liferay#configuration-scope) 
-in @product@, use the 
-[System Settings app](/discover/portal/-/knowledge_base/7-0/system-settings). 
-This app's *Export* option becomes available once you modify a configuration 
-entry. This lets you download a `.config` file with all of the settings in a 
-`key=value` format. Export is available for either a single configuration entry 
-or the entire set of modified configurations in @product@. 
+To make system-scoped configuration changes and set default configurations for
+other
+[scopes](/discover/portal/-/knowledge_base/7-0/configuring-liferay#configuration-scope)
+in @product@, use the [System Settings
+application](/discover/portal/-/knowledge_base/7-0/system-settings). The
+*Export* option becomes available once you modify a configuration entry, letting
+you download a `.config` file with all of the settings in a `key=value` format.
+Export is available for either a single configuration entry (for example, the
+*Blogs* system scoped configuration) or the entire set of modified
+configurations in @product@. 
 
-If you don't have direct access to System Settings, or if you need portable
+If you don't have direct access to System Settings or if you need portable
 configurations that can be deployed to multiple @product@ systems quickly and
 easily, configure @product@ with an OSGi configuration file. 
+
+There's no need to worry about crossing the streams.<sup>[1](#footnote1)</sup>
+You can mix your configuration strategy at will, switching between configuration
+files and the System Settings application as you please. That's because
+configuration values are always saved to the @product@ database, whether set in
+System Settings or in a `.config` file. 
+
+Because configurations are saved in the database, this order of events is
+entirely acceptable:
+
+1. Make some configuration changes in System Settings and click *Save*. They're
+   persisted to the database. 
+2. Deploy a `.config ` file. The database updates and the new values overwrite
+   the values previously set in System Settings. The System Settings UI
+   updates automatically to reflect the values in the database. 
+3. Go back to System Settings and change the configuration again. Again, the new
+   value is persisted in the database. The `.config` file is automatically
+   updated to reflect the change in the database. 
+
+## Configuration Files and Clustering
+
+In a clustered environment, each node needs the same configuration values for
+each entry. For example, all nodes should use the same *Blogs* configuration
+settings. To accomplish this, deploy a `.config` file to *one* node. @product@
+uses an internal system for making sure all the nodes in the cluster hear about
+the configuration change and apply it.
+
+<!-- What happens if you deploy a .config file for the same configuration entry
+to a different node? -->
+
+
+
 
 There are several things to understand about configuration files: 
 
@@ -22,7 +55,7 @@ There are several things to understand about configuration files:
     [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config). 
 -   The `.config` file format supports richer encoding than `.cfg` files, which 
     allow only strings. 
--   If the System Settings app's default values are desirable, no configuration
+-   If the System Settings application's default values are desirable, no configuration
     file is necessary. 
 -   System Settings exports all configuration keys and values for an entry,
     even if only one value has been modified. 
@@ -136,3 +169,8 @@ To deploy the `.config` file, place it in your
 
 Great! Now you know the basics of configuring @product@ using portable, 
 deployable configuration files. 
+
+<a name="footnote1">1</a> For those too young or otherwise uncultured, this is a
+reference to the dire warning in [the movie Ghostbusters over crossing proton
+beams](http://ghostbusters.wikia.com/wiki/Cross_the_Streams).
+
