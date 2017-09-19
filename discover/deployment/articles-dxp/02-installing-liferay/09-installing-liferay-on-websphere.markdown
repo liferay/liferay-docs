@@ -172,22 +172,6 @@ If this tag is not removed, an error similar to the one here may occur:
     WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
     com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
 
-### Setting the JDK Version for Compiling JSPs [](id=setting-the-jdk-version-for-compiling-jsps)
-
-@product@ requires that its JSPs are compiled on Java 8. To ensure that
-WebSphere does this, navigate to the `WEB_INF` folder and add the following
-setting to the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
-
-    <jsp-attribute name="jdkSourceLevel" value="18" />
-
-Note that the @product@ `.war` comes pre-packaged with the `ibm-web-ext.xmi`
-file; this format is functionally the same as `.xml` and WebSphere recognizes both
-formats. For more general information on how WebSphere compiles JSPs see IBM's
-official documentation for 
-[WebSphere Application Server 8.5.5.x](https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/rweb_jspengine.html).
-
-Great! Now you're ready to install @product@. 
-
 ## Installing @product@'s Dependencies [](id=installing-liferay-dxps-dependencies)
 
 You must now install @product@'s dependencies. Recall that earlier you 
@@ -416,6 +400,27 @@ Now you're ready to deploy @product@!
    ![Figure 6: Review your deployment options before deploying.](../../images-dxp/websphere-deploy-dxp.png)
 
 You've now installed @product@! 
+
+## Setting the JDK Version for Compiling JSPs [](id=setting-the-jdk-version-for-compiling-jsps)
+
+@product@ requires that its JSPs are compiled on Java 8. To ensure that
+WebSphere does this, shut down WebSphere after you've deployed the @product@
+`.war` file. Navigate to the `WEB_INF` folder and add the following setting to
+the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
+
+    <jsp-attribute name="jdkSourceLevel" value="18" />
+
+The exact path to the `ibm-web-ext.xmi` file depends on your WebSphere installation location and Liferay version but here's an example:
+
+	/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/localhostNode01Cell/applications/liferayXX.ear/deployments/liferayXX/liferayXX.war/WEB-INF/ibm-web-ext.xmi
+
+Note that the @product@ `.war` comes pre-packaged with the `ibm-web-ext.xmi`
+file; this format is functionally the same as `.xml` and WebSphere recognizes both
+formats. For more general information on how WebSphere compiles JSPs see IBM's
+official documentation for 
+[WebSphere Application Server 8.5.5.x](https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/rweb_jspengine.html).
+
+Now restart WebSphere. 
 
 ## Enabling Security for Portal Access Control Lists [](id=enabling-security-for-portal-access-control-lists)
 
