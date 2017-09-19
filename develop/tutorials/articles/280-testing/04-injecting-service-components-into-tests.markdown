@@ -35,13 +35,7 @@ Here's an example test class that injects a `DDLServiceUpgrade` object into an `
         )
         private static UpgradeStepRegistrator _upgradeStepRegistrator;
 
-    }
-
-Field `aggregateTestRule` applies a `LiferayIntegrationTestRule` instance to the class. 
-
-The `@Test` annotation marks method `testSomething` to be a test method. Test code belongs in it. 
-
-The `@Inject` annotation and its filter string parameter mark field `_upgradeStepRegistrator` to be injected with a `DDLServiceUpgrade` object. `DDLServiceUpgrade` implements the interface `UpgradeStepRegistrator`. 
+    } 
 
 Here are the steps for injecting a service component into a test class:
 
