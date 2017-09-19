@@ -62,10 +62,10 @@ managed service factory, use the file name form `<PID>-<subname>.config` or
 `<PID>-<subname>.cfg`. @product@'s convention for a managed service's default 
 configuration is `<PID>-default.config`. 
 
-For example, a managed service configuration file `com.foo.bar.config` specifies 
-a singleton configuration for a component with the PID `com.foo.bar`. Likewise, 
-a managed service factory configuration file `com.foo.bar-default.config` 
-specifies a default configuration for a component with the PID `com.foo.bar`. 
+For example, the configuration file `com.foo.bar.config` specifies a 
+configuration for a managed service with the PID `com.foo.bar`. Likewise, the 
+configuration file `com.foo.bar-default.config` specifies a default 
+configuration for a managed service factory with the PID `com.foo.bar`. 
 
 [Click here](http://enroute.osgi.org/services/org.osgi.service.cm.html) 
 for more detailed information about Configuration Admin, managed services, and 
