@@ -39,18 +39,24 @@ name in the Package Explorer and then to select *Liferay* &rarr;
 After running Service Builder, your generated files are available. More
 information about the generated files appears below.
 
-### Using the terminal [](id=using-the-terminal)
+### Using the Terminal [](id=using-the-terminal)
 
 Open a terminal window and navigate to your module project's root folder, which
 should be located in your Liferay Workspace's `modules` directory. To learn more
-about creating your module project in a Liferay Workspace, visit the
-[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
-tutorial. Liferay Workspaces use Gradle as their build tool, so this will be the
-assumed build language used in this tutorial. Liferay is tool agnostic, however,
-and you can use other tools, as well.
+about creating your module project in a
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace),
+visit the
+[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+tutorial. You can leverage the
+[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)
+to create your own predefined Service Builder project.
 
-Enter the following command in your module project's root folder to build your
-services:
+Liferay Workspace offers a Gradle or Maven build environment; this tutorial
+shows how to use both. Liferay is tool agnostic, however, and you can use other
+tools, as well.
+
+For Gradle projects, enter the following command in your module project's root
+folder to build your services:
 
     gradlew buildService
 
