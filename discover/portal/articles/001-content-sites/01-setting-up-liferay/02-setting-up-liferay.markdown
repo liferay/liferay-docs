@@ -1,4 +1,4 @@
-# Setting up @product
+# Setting up @product@
 
 The Liferay Basic Configuration has several options. First, you can configure 
 you Portal Name, the name and email address of your default Administrator. You 
