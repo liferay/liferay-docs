@@ -144,8 +144,8 @@ Discussion, and Update Discussion permissions determine whether a role can add,
 delete, or update a comment on an event. The Permissions permission determines
 whether a role can update an event's permissions.
 
-In the Invitations collapsible section, you can invite users, organizations, or
-other calendar resources to an event. To invite a user, group, or resource,
+In the Invitations collapsible section, you can invite users, sites, or
+other calendar resources to an event. To invite a user, site, or resource,
 start typing the name of the entity you'd like to invite and a list of matches
 will appear. Select the one you want or hit *Enter* if the entity you'd like to
 invite is at the top of the list. All the entities you've invited to your event
