@@ -1,8 +1,8 @@
 # Injecting Service Components into Tests [](id=injecting-service-components-into-tests)
 
 Similar to using OSGi's `@Reference` annotation to inject service components
-into a module component, you can use an @product@'s `@Inject` annotation to
-inject them into a test.
+into a module component, you can use @product@'s `@Inject` annotation to inject
+them into a test.
 
 `@Inject` uses reflection to inject a field with a service component object
 matching the field's interface.
@@ -36,6 +36,12 @@ Here's an example test class that injects a `DDLServiceUpgrade` object into an `
         private static UpgradeStepRegistrator _upgradeStepRegistrator;
 
     }
+
+Field `aggregateTestRule` applies a `LiferayIntegrationTestRule` instance to the class. 
+
+The `@Test` annotation marks method `testSomething` to be a test method. Test code belongs in it. 
+
+The `@Inject` annotation and its filter string parameter mark field `_upgradeStepRegistrator` to be injected with a `DDLServiceUpgrade` object. `DDLServiceUpgrade` implements the interface `UpgradeStepRegistrator`. 
 
 Here are the steps for injecting a service component into a test class:
 
