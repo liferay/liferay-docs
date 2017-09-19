@@ -1,12 +1,13 @@
 # Basic Liferay Administration
 
-Before you can do anything in Liferay, it will help to have a quick tour of the
-where everything is and what all the icons mean. There are four icons that run 
-across the top of the page which you will need to use for most administrative 
-functions.
+Before you can do anything in Liferay, it will help to have a quick tour of
+where everything is and what all the icons mean. We'll cover some of the most
+common interface elements that you interact with while managing sites and
+creating content.
 
-The icon on the far left opens the main menu which gives you access to the
-Control Panel and Site Administration.
+There are four icons that run across the top of the page which you will need to use
+for most administrative functions. The icon on the far left opens the main menu
+which gives you access to the Control Panel and Site Administration.
 
 ![Figure X: The basic configuration page.](../../../images/001-menu.png)
 
