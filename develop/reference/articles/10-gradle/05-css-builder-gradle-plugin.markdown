@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.3"
     }
 
     repositories {
@@ -136,7 +136,7 @@ manually adding a dependency to the `cssBuilder` configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.1.1"
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.1.3"
 }
 ```
 
