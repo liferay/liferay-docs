@@ -162,7 +162,7 @@ Follow these steps to configure your theme settings:
    *Define a Specific look and feel for this page* option under the 
    *Look and Feel* section.
 
-![Figure 1: Here are examples of configurable settings for the site Admin.](../../images/theme-settings-look-and-feel.png)
+![Figure 1: Here are examples of configurable settings for the site Admin.](../../../images/theme-settings-look-and-feel.png)
 
 Now you know how to make configurable theme settings for your themes!
 
