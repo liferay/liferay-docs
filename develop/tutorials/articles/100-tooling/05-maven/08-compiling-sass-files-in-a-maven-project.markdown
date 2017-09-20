@@ -99,7 +99,7 @@ recommended to switch to using the Oracle JDK, but if you prefer using the IBM
 JDK, you must use the fallback Ruby compiler. To do this, add the following
 tag to your CSS Builder configuration in your POM:
 
-    <sassCompilerName>ruby</sasscompilerName>
+    <sassCompilerClassName>ruby</sasscompilerClassName>
 
 Be aware that the Ruby-based compiler doesn't perform as well as the native
 compiler, so expect longer compile times.

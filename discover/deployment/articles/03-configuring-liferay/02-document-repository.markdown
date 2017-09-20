@@ -192,6 +192,13 @@ documents on the local file system where @product@ is installed, in the
 `[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is Jackrabbit's
 configuration file, called `repository.xml`. 
 
++$$$
+
+**Note:** JCR Store is deprecated as of Liferay DXP Digital Enterprise Fix Pack
+14 and Liferay Portal CE 7.0 GA4.
+
+$$$
+
 Using the default settings, the JCR store is not very different from the file
 system stores, except you can use any JCR client to access the files. You can,
 however, modify Jackrabbit's configuration so it stores files in a database that

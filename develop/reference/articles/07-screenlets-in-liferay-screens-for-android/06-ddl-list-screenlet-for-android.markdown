@@ -111,3 +111,7 @@ This interface lets you implement the following methods:
 - `onListItemSelected(Record records, View view)`: Called when an item is 
   selected in the list. This method's arguments include the selected list item 
   (`Record`). 
+
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. The `userAction` argument distinguishes the specific action in which 
+  the error occurred. 

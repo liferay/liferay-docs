@@ -58,7 +58,7 @@ like this:
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
-[blade.controlmenuentry](/develop/reference/-/knowledge_base/7-0/control-menu-entry)
+[control-menu-entry](/develop/reference/-/knowledge_base/7-0/control-menu-entry)
 sample project for a more expanded sample of a Control Menu entry. Likewise, see
 the
 [Customizing the Control Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-control-menu)
