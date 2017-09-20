@@ -48,7 +48,7 @@ a boolean type has *B* just before the value to mark it as a boolean type:
 
     addDefaultStructures=B"true"
 
-If you see type markers in `.config` files (the![Figure 2: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../images/config-web-content-entry.png)y'll show up under certain
+If you see type markers in `.config` files (they'll show up under certain
 conditions), you can safely ignore them. @product@ includes the type characters
 only for informational purposes, since it already knows the correct type for
 each configuration property. The example included above functions identically
