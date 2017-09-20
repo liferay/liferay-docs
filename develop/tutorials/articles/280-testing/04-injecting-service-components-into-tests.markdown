@@ -2,12 +2,18 @@
 
 Similar to using OSGi's `@Reference` annotation to inject service components
 into a module component, you can use @product@'s `@Inject` annotation to inject
-them into a test.
+them into a test.  
 
 `@Inject` uses reflection to inject a field with a service component object
 matching the field's interface.
 [Test rule `LiferayIntegrationTestRule`](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-test-integration/com/liferay/portal/test/rule/LiferayIntegrationTestRule.html)
 provides this annotation. The annotation accepts `filter` and `type` parameters, which you can use separately or together.
+
++$$$
+
+DXP Digital Enterprise 7.0 Fix Pack 30 and Liferay CE Portal 7.0 GA5 introduced the `@Inject` annotation. 
+
+$$$
 
 To fill a field of a with a particular implementation or sub-class object, set
 the `type` with it. 
