@@ -1,118 +1,60 @@
 # Understanding System Configuration Files [](id=understanding-system-configuration-files)
 
-To make system-scoped configuration changes and set default configurations for
-other
-[scopes](/discover/portal/-/knowledge_base/7-0/configuring-liferay#configuration-scope)
-in @product@, use the [System Settings
-application](/discover/portal/-/knowledge_base/7-0/system-settings). The
-*Export* option becomes available once you modify a configuration entry, letting
-you download a `.config` file with all of the settings in a `key=value` format.
-Export is available for either a single configuration entry (for example, the
-*Blogs* system scoped configuration) or the entire set of modified
-configurations in @product@. 
+@product@'s [System Settings
+application](/discover/portal/-/knowledge_base/7-0/system-settings) is
+convenient for making system-scoped configuration changes and setting default
+configurations for other
+[scopes](/discover/portal/-/knowledge_base/7-0/configuring-liferay#configuration-scope).
+But there's another supported configuration approach: configuration files.
+Configuration files are useful for transferring configurations from
+pre-production systems to production systems, or between any other @product@
+systems. Sometimes application developers might even choose to distribute the
+default configuration for their application via configuration file. Whatever the
+reason, configuration files are a straightforward way of configuring @product@.
 
-If you don't have direct access to System Settings or if you need portable
-configurations that can be deployed to multiple @product@ systems quickly and
-easily, configure @product@ with an OSGi configuration file. 
+## Creating Configuration Files [](id=creating-configuration-files)
 
-There's no need to worry about crossing the streams.<sup>[1](#footnote1)</sup>
-You can mix your configuration strategy at will, switching between configuration
-files and the System Settings application as you please. That's because
-configuration values are always saved to the @product@ database, whether set in
-System Settings or in a `.config` file. 
+System Settings provides an
+[*Export*](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations)
+option that becomes available once you modify a configuration entry. Exporting
+lets you download a `.config` file with all of the entry's settings in a
+`key=value` format, and it's the recommended way to create `.config` files for
+@product@. All available configuration keys and values are exported for an entry,
+even if only one value was changed. It's possible to export either a single
+configuration entry or the entire set of modified configurations in @product@.
 
-Because configurations are saved in the database, this order of events is
-entirely acceptable:
-
-1. Make some configuration changes in System Settings and click *Save*. They're
-   persisted to the database. 
-2. Deploy a `.config ` file. The database updates and the new values overwrite
-   the values previously set in System Settings. The System Settings UI
-   updates automatically to reflect the values in the database. 
-3. Go back to System Settings and change the configuration again. Again, the new
-   value is persisted in the database. The `.config` file is automatically
-   updated to reflect the change in the database. 
-
-## Configuration Files and Clustering
-
-In a clustered environment, each node needs the same configuration values for
-each entry. For example, all nodes should use the same *Blogs* configuration
-settings. To accomplish this, deploy a `.config` file to *one* node. @product@
-uses an internal system for making sure all the nodes in the cluster hear about
-the configuration change and apply it.
-
-<!-- What happens if you deploy a .config file for the same configuration entry
-to a different node? -->
-
-
-
-
-There are several things to understand about configuration files: 
-
--   They're part of the
-    [Apache Felix Configuration Admin](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html)
-    framework. Find out more about their syntax
-    [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config). 
--   The `.config` file format supports richer encoding than `.cfg` files, which 
-    allow only strings. 
--   If the System Settings application's default values are desirable, no configuration
-    file is necessary. 
--   System Settings exports all configuration keys and values for an entry,
-    even if only one value has been modified. 
--   If you place a configuration file in your @product@ installation's 
-    `osgi/configs` folder, any changes you make to the entry in System Settings
-    are automatically propagated to the configuration file. 
-
-+$$$
-
-**Note:** Because the `.config` file supports types, special type marker 
-characters are inserted into the files under certain conditions. For example, a
-configuration with a boolean type might have a `B` just before the value to mark
-the boolean type. The type markers aren't necessary or problematic--you can 
-safely ignore them. @product@ doesn't rely on the configuration marker to 
-determine what type the configuration is, because the backend code that creates 
-the setting already knows what the type must be. In short, a `.config` file with 
-`addDefaultStructures=B"true"` functions no different than one with 
-`addDefaultStructures="true"`. 
-
-$$$
-
-## Creating and Deploying a Configuration File [](id=creating-and-deploying-a-configuration-file)
-
-Configuration files consist of two things: 
-
-1.  A file name that identifies the configurations as belonging to a specific
-    entry. 
-2.  One or more key/value configuration pairs, with the value enclosed in double
-    quotes: 
-
-        configurationName="value"
-
-The name of the file is important. It's how the configuration system knows what
-entry (for example, *Web Content*) the keys and values are supposed to
-target. So how do you know what to name the file?
-
-### Finding the Configuration ID [](id=finding-the-configuration-id)
-
-The configuration's backend ID isn't intuitive from the reader-friendly entry 
-name you see in the System Settings UI. For example, here's the Web Content 
-entry's ID: 
-
-    com.liferay.journal.configuration.JournalServiceConfiguration
-
-The configuration file name must use the ID as its prefix and `.config` as its 
-suffix. So the proper way to configure the Web Content entry with a 
-configuration file is to create this file: 
+Configuration files in @product@ must be named using a unique identifier so that
+configuration files for different entries don't conflict. For example, this is
+the name of the configuration file for the Journal Service entry, which backs
+Liferay's Web Content capabilities:
 
     com.liferay.journal.configuration.JournalServiceConfiguration.config
 
 ![Figure 1: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../images/config-web-content-entry.png)
 
-The easiest way to find the ID is to make a change in the System Settings entry, 
-then 
-[export the configuration file](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations). 
-The exported configuration file is named properly and has all the entry's keys
-and their current values. 
+Configuration files use `.config` property value format defined by the [Apache
+Felix Configuration Admin
+framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
+
+@product@ also supports the `.cfg` file format, which is common in some OSGi
+environments. However, `.config` files are preferable, as they allow for
+multi-valued properties and the ability to specify the configuration's type. 
+
+### Typed Values [](id=typed-values)
+
+The `.config` file format supports specifying the type of a configuration value
+by inserting a special type marker character. For example, a configuration with
+a boolean type has *B* just before the value to mark it as a boolean type:
+
+    addDefaultStructures=B"true"
+
+If you see type markers in `.config` files (the![Figure 2: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../images/config-web-content-entry.png)y'll show up under certain
+conditions), you can safely ignore them. @product@ includes the type characters
+only for informational purposes, since it already knows the correct type for
+each configuration property. The example included above functions identically
+without the type marker: 
+
+    addDefaultStructures="true"
 
 ### Key/Value Syntax [](id=key-value-syntax)
 
@@ -129,7 +71,7 @@ modifications.
 Open the Web Content entry from System Settings and you'll see what looks like
 multiple single value entries for *Charactersblacklist*: 
 
-![Figure 2: The Web Content System Settings entry has many *Charactersblacklist* fields.](../../../images/config-web-content-blacklist.png)
+![Figure 3: The Web Content System Settings entry has many *Charactersblacklist* fields.](../../../images/config-web-content-blacklist.png)
 
 In the configuration file, this is really a single key with an array of 
 comma-separated values: 
@@ -166,10 +108,13 @@ To deploy the `.config` file, place it in your
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 
+## Configuration Files and Clustering [](id=configuration-files-and-clustering)
+
+In a clustered environment, each node needs the same configuration values for
+each entry. For example, all nodes should use the same *Blogs* configuration
+settings. To accomplish this, deploy a `.config` file to *one* node. @product@
+uses an internal system for making sure all the nodes in the cluster hear about
+the configuration change and apply it.
+
 Great! Now you know the basics of configuring @product@ using portable, 
 deployable configuration files. 
-
-<a name="footnote1">1</a> For those too young or otherwise uncultured, this is a
-reference to the dire warning in [the movie Ghostbusters over crossing proton
-beams](http://ghostbusters.wikia.com/wiki/Cross_the_Streams).
-
