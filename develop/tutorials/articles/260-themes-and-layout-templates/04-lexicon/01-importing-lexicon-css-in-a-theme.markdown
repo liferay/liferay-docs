@@ -1,8 +1,8 @@
 # Importing Lexicon CSS into a Theme [](id=importing-lexicon-css-into-a-theme)
 
-As mentioned before, Lexicon fills the gaps between Bootstrap and the specific 
+As mentioned before, Lexicon CSS fills the gaps between Bootstrap and the specific 
 needs of @product@. Bootstrap features have been extended to cover more 
-use cases. Here are some of the new components added by Lexicon:
+use cases. Here are some of the new components added by Lexicon CSS:
 
 - Aspect Ratio
 - Cards
@@ -31,9 +31,9 @@ consuming tasks such as these:
 
 Next you can learn more about Lexicon's structure.
 
-## Lexicon Structure [](id=lexicon-structure)
+## Lexicon Structure CSS[](id=lexicon-css-structure)
 
-Lexicon is bundled with two sub-themes: Lexicon Base and Atlas. Lexicon Base is 
+Lexicon CSS is bundled with two sub-themes: Lexicon Base and Atlas. Lexicon Base is 
 @product@'s Bootstrap API extension. It is also the theme that is used in 
 @product@'s Styled Theme. It adds all the features and components you need and 
 inherits Bootstrap's styles. As a result, Lexicon Base is fully compatible with 
