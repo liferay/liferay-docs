@@ -14,7 +14,7 @@ the fly.
 schema changes upon rebuilding services and redeploying the portlets. As of 
 @product-ver@, this property is deprecated. 
 
-Liferay Digital Enterprise 7.0 Fix Pack 30, and Liferay CE Portal 7.0.4 GA5
+Liferay Digital Enterprise 7.0 Fix Pack 28, and Liferay CE Portal 7.0.4 GA5
 reintroduce  Build Auto Upgrade in a new global property
 `schema.module.build.auto.upgrade`  in the file
 `[Liferay_Home]/portal-developer.properties`. 
