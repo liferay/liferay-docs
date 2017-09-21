@@ -37,7 +37,11 @@ these file formats, including their syntax, see the following:
 -   [Configurations](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
 
 ## Managed Services vs Managed Service Factories
-
+ <!-- Do we have an article on managed service and managed service factories?
+ 
+ How to know whether a service is a singleton or managed by a factory? Is it the service's cardinality attribute?
+  -->
+ 
 With configuration files, you can define configurations for the following: 
 
 -   **Managed Service:** A service that implements the interface 
