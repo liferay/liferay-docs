@@ -37,7 +37,12 @@ these file formats, including their syntax, see the following:
 -   [Configurations](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
 
 ## Managed Services vs Managed Service Factories
- <!-- Do we have an article on managed service and managed service factories?
+ <!-- 
+ New section header: Configuring a service whose configuration is managed 
+ 
+ New section header: Configuring a services created by factories
+ 
+ Do we have an article on managed service and managed service factories?
  
  How to know whether a service is a singleton or managed by a factory? Is it the service's cardinality attribute?
   -->
