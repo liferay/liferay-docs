@@ -1,11 +1,12 @@
-# Using JNDI from Service Builder
+# Using JNDI from Service Builder [](id=using-jndi-from-service-builder)
 
 There may be cases in which @product@'s application server defines a JNDI data 
-source that you want to use from a Liferay Service Builder module. To use such 
-a data source, follow these steps: 
+source that you want to use from a 
+[Liferay Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder) 
+module. Follow these steps to use such a data source: 
 
 1.  In your Service Builder module's `service.xml` file, specify a data source 
-    at the entity level. Here's an example: 
+    for the entity. Here's an example: 
 
         <?xml version="1.0"?>
         <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN"
@@ -69,11 +70,11 @@ a data source, follow these steps:
 
         </beans>
 
-3.  Run Service Builder. To do this for a Gradle project, you can navigate to 
-    your module project's root folder on the terminal and run 
-    `gradlew buildService`. 
-    [Click here](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code) 
-    for more information on running Service Builder. 
+3.  Run Service Builder. To do this via the command line for a Gradle project, 
+    navigate to your Service Builder module project's root folder and run 
+    `gradlew buildService`. Note that you can also run Service Builder from 
+    within Liferay @ide@. For more information on this, see 
+    [the tutorial on running Service Builder](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code). 
 
 4.  Now you can access the JNDI data source and use it however you wish. Here's 
     an example: 
@@ -119,7 +120,7 @@ a data source, follow these steps:
     Note the use of `fooPersistence.getDataSource()`. Invoking this method is 
     how to take advantage of Service Builder's data source integration. Service 
     Builder injects the Spring data source bean that you defined in your 
-    `ext-spring.xml` file into your application’s persistence layer. Of course, 
+    `ext-spring.xml` file into your application's persistence layer. Of course, 
     replace the example data source code with your own. Here are the fully 
     qualified class names of the classes used in the example: 
 
@@ -130,17 +131,28 @@ a data source, follow these steps:
         import java.sql.Statement;
         import javax.sql.DataSource;
 
-    The basic idea in the example above is that the `javax.naming` API comes 
-    from the application server. @product@ allows its OSGi runtime to access 
-    this API. Thus, if you want to create a context reflecting what @product@ 
-    has access to, you create a `javax.naming.InititalContext` using @product@'s 
-    classloader. This is done by setting the thread's context classloader to 
-    @product@'s classloader.
+    In the example above, the `javax.naming` API comes from the application 
+    server. @product@ lets its OSGi runtime access this API. Thus, to create a 
+    context reflecting what @product@ can access, create a 
+    `javax.naming.InititalContext` using @product@'s class loader. You can do 
+    this by setting the thread's context class loader to @product@'s class 
+    loader. 
 
-    Note that the technique shown here is very similar to that used in the 
-    tutorial 
-    [Connecting to Data Sources Using JNDI](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi). 
-    The main difference is that in a Service Builder module, the data source is 
-    built into the persistence layer. 
+Note that the technique shown here is very similar to that used in the tutorial 
+[Connecting to Data Sources Using JNDI](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi). 
+The main difference is that in a Service Builder module, the data source is 
+built into the persistence layer. 
 
-<!-- insert jndi data source link -->
+Also note that exactly how to define a JNDI data source depends on your 
+application server. If you need help defining a JNDI data source, see the 
+documentation for your application server. If you're running Tomcat, for 
+example, see 
+[Tomcat's JNDI Datasource HOW-TO](https://tomcat.apache.org/tomcat-8.0-doc/jndi-datasource-examples-howto.html). 
+
+## Related Topics [](id=related-topics)
+
+[Connecting to Data Sources Using JNDI](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi)
+
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
