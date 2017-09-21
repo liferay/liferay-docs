@@ -71,10 +71,8 @@ comma-separated values:
 
 ### Escaping Characters [](id=escaping-characters)
 
-According to the 
-[Apache Sling documentation](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config), 
-double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files. 
-Escaping is using another character to denote that a character shouldn't be used 
+Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files. 
+*Escaping* is using another character to denote that a character shouldn't be used 
 in its normal way. Since double quotes and equals signs are already used in 
 `.config` files, escaping them tells the framework not to read them the normal 
 way, but to pass them through as part of the value. Use a `\` to escape 
