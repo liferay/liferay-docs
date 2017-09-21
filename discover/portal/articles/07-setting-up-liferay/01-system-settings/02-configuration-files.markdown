@@ -95,16 +95,16 @@ To deploy the `.config` file, place it in your
 ### Typed Values [](id=typed-values)
 
 The `.config` file format supports specifying the type of a configuration value
-by inserting a special type marker character. For example, a configuration with
-a boolean type has *B* just before the value to mark it as a boolean type:
+by inserting a special type marker character. Because @product@ already knows
+the correct type for each configuration property, the type characters are only
+useful for informational purposes. For example, a configuration with a boolean
+type has *B* just before the value to mark it as a boolean type:
 
     addDefaultStructures=B"true"
 
 If you see type markers in `.config` files (they'll show up under certain
-conditions), you can safely ignore them. @product@ includes the type characters
-only for informational purposes, since it already knows the correct type for
-each configuration property. The example included above functions identically
-without the type marker: 
+conditions), you can safely ignore them. The example included above functions
+identically without the type marker: 
 
     addDefaultStructures="true"
 
