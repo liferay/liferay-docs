@@ -7,7 +7,7 @@ available to work with, it's tough to know where to start. This is a step by
 step guide to creating content, pages, and sites, starting with the most basic
 elements, and ending with a full-featured website.
 
-![Figure X: A preview of the final site.](../../images/001-final-site-preview.png)
+![Figure x: A preview of the final site.](../../images/001-final-site-preview.png)
 
 You'll start by creating simple content with an empty Liferay bundle, but the 
 final site uses the full suite of tools including the web content display, 
