@@ -52,6 +52,13 @@ modifications.
 
 ### Multi-Value Settings [](id=multi-value-settings)
 
+Some configuration entries have properties that accept multiple values. For
+example, a configuration property for specifying supported file extensions needs
+more than one value. Here's how to write a multi-value setting in a `.config`
+file: 
+
+    multiValueSetting=["Value 1", "Value 2", ...]
+
 Open the Web Content entry from System Settings and you'll see what looks like
 multiple single value entries for *Charactersblacklist*: 
 
@@ -61,10 +68,6 @@ In the configuration file, this is really a single key with an array of
 comma-separated values: 
 
     charactersblacklist=["&","'","@","\\","]","}",":","\=",">","/","<","[","{","%","+","#","`","?","\"",";","*","~"]
-
-In generalized fashion, here's how to write a multi-value setting: 
-
-    multiValueSetting=["Value 1", "Value 2", ...]
 
 ### Escaping Characters [](id=escaping-characters)
 
