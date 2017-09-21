@@ -38,23 +38,7 @@ framework](http://felix.apache.org/documentation/subprojects/apache-felix-config
 
 @product@ also supports the `.cfg` file format, which is common in some OSGi
 environments. However, `.config` files are preferable, as they allow for
-multi-valued properties and the ability to specify the configuration's type. 
-
-### Typed Values [](id=typed-values)
-
-The `.config` file format supports specifying the type of a configuration value
-by inserting a special type marker character. For example, a configuration with
-a boolean type has *B* just before the value to mark it as a boolean type:
-
-    addDefaultStructures=B"true"
-
-If you see type markers in `.config` files (they'll show up under certain
-conditions), you can safely ignore them. @product@ includes the type characters
-only for informational purposes, since it already knows the correct type for
-each configuration property. The example included above functions identically
-without the type marker: 
-
-    addDefaultStructures="true"
+multi-valued properties and the ability to specify a property value's type. 
 
 ### Key/Value Syntax [](id=key-value-syntax)
 
@@ -107,6 +91,22 @@ To deploy the `.config` file, place it in your
 [Liferay Home's](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
+
+### Typed Values [](id=typed-values)
+
+The `.config` file format supports specifying the type of a configuration value
+by inserting a special type marker character. For example, a configuration with
+a boolean type has *B* just before the value to mark it as a boolean type:
+
+    addDefaultStructures=B"true"
+
+If you see type markers in `.config` files (they'll show up under certain
+conditions), you can safely ignore them. @product@ includes the type characters
+only for informational purposes, since it already knows the correct type for
+each configuration property. The example included above functions identically
+without the type marker: 
+
+    addDefaultStructures="true"
 
 ## Configuration Files and Clustering [](id=configuration-files-and-clustering)
 
