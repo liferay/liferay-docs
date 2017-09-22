@@ -4,13 +4,15 @@
   <auxiliary>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-      <group/>
-    </open-files>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/home/sezovr/eclipse-workspace/com-liferay-docs-guestbook/modules/guestbook/guestbook-service/src/main/java/com/liferay/docs/guestbook/search/GuestbookIndexer.java</file>
-        <file>file:/home/sezovr/eclipse-workspace/com-liferay-docs-guestbook/modules/guestbook/guestbook-service/build.gradle</file>
+        <file>file:/home/sezovr/eclipse-workspace/com-liferay-docs-guestbook/modules/guestbook/guestbook-service/src/main/java/com/liferay/docs/guestbook/service/permission/GuestbookModelPermission.java</file>
+        <file>file:/home/sezovr/eclipse-workspace/com-liferay-docs-guestbook/modules/guestbook/guestbook-service/src/main/java/com/liferay/docs/guestbook/service/permission/GuestbookPermission.java</file>
+        <file>file:/home/sezovr/eclipse-workspace/com-liferay-docs-guestbook/modules/guestbook/guestbook-service/src/main/resources/META-INF/resource-actions/default.xml</file>
       </group>
+    </open-files>
+    <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+      <group/>
     </open-files>
   </auxiliary>
 </gradle-project-properties>
