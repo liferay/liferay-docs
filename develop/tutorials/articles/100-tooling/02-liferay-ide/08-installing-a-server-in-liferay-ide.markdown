@@ -43,8 +43,8 @@ your server up and running. Follow these steps to install your server:
 
 Your server is now available in Liferay @ide@!
 
-For reference, here's some popular @ide@ server buttons to use with your
-@product@ instance:
+For reference, here's how the @ide@ server buttons work with your @product@
+instance:
 
 - *Start* (![Start Server](../../../images/icon-start-server.png)): Starts the
   server.
