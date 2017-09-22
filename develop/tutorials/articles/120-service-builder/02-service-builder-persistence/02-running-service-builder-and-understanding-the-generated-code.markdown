@@ -228,27 +228,23 @@ method signature of a `*LocalServiceImpl` class, `*ServiceImpl` class, or
 `*Impl` class, you should run Service Builder again to regenerate the affected
 interfaces and the service JAR.
 
-+$$$
+During the course of development, you're likely to need to add fields to your
+database. This is a normal process of iterative development: you get an idea for
+a new feature, or it's suggested to you, and that feature requires additional
+data in the database. It's important to note, then, that **new fields added to
+`service.xml` are not automatically added to the database.** To add the fields,
+you must do one of two things: 
 
-**Note:** If you need to make changes to your objects/tables between two
-different releases of your service, you must write 
-[a data upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
-since Service Builder does not make these changes automatically.
+1.  Write an [upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app) 
+    to modify the tables and preserve the data, or
 
-While you're developing your application, you can force your service tables to
-regenerate when you modify them by following these steps:
+2.  Run the `cleanServiceBuilder` task (supported on Gradle, Maven, and Ant),
+    which drops your tables so they get re-created the next time your app is
+    deployed. 
 
-- Drop the tables for your service.
-- Delete the row for your service in the `release_` table.
-- Delete the row for your service in the `servicecomponent` table.
-
-Here's an example in SQL: 
-
-    DROP TABLE LRBO_HORSE_HORSE;
-    DELETE FROM SERVICECOMPONENT WHERE BUILDNAMESPACE = 'LRBO_HORSE';
-    DELETE FROM RELEASE_ WHERE SERVLETCONTEXTNAME = 'horse-service';
-
-$$$
+Use the first option when you have a released application and you must preserve
+your users' data. Use the second option when you're in the middle of development
+and you're adding new columns during that process. 
 
 ## Related Topics [](id=related-topics)
 
