@@ -410,7 +410,8 @@ the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
 
     <jsp-attribute name="jdkSourceLevel" value="18" />
 
-The exact path to the `ibm-web-ext.xmi` file depends on your WebSphere installation location and Liferay version but here's an example:
+The exact path to the `ibm-web-ext.xmi` file depends on your WebSphere
+installation location and @product@ version, but here's an example:
 
 	/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/localhostNode01Cell/applications/liferayXX.ear/deployments/liferayXX/liferayXX.war/WEB-INF/ibm-web-ext.xmi
 
