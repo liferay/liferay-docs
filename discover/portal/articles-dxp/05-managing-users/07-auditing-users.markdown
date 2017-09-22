@@ -162,52 +162,48 @@ who made permission changes they weren't supposed to make.
 
 ## Configuring Audits
 
-In Liferay DXP, audits are enabled by default. As described above, audit events
-can be viewed from the Control Panel. Additionally, audit events can be
-configured to appear in Liferay's logs or console. Audits can also be enabled
-for scheduled jobs. Of course, audits can be disabled entirely, if so desired.
+@product@, enables audits by default. As described above, the Control Panel
+app reports audit events, but you can also report them in Liferay's logs or
+console, enable them for scheduled jobs, or disable them entirely. 
 
-There are two main ways to configure Liferay:
+There are two main ways to configure @product@:
 
-1. Edit a configuration via Liferay's Control Panel and the configuration is saved to Liferay's database.
+1.  Edit a configuration via Liferay's Control Panel and the configuration is
+    saved to Liferay's database.
 
-2. Edit a configuration via an OSGi configuration file (`.config` file) in your `[LIFERAY_HOME]/osgi/modules` folder.
+2.  Edit a configuration via an OSGi configuration file (`.config` file) in your
+    `[LIFERAY_HOME]/osgi/modules` folder.
 
-These methods apply to each of the audit configuration options explained below
-so we'll explain how to specify each configuration both ways.
+These methods apply to each of the audit configuration options explained below.
 
-### Configuring Audit Events to Appear in Liferay's Logs and Console
+### Reporting Audit Events in Liferay's Logs and Console
 
-To configure audit events to appear in Liferay's logs and console via the
-Control Panel, go to *Control Panel* &rarr; *System Settings* &rarr;
+**In the Control Panel:** Go to *Control Panel* &rarr; *System Settings* &rarr;
 *Foundation* &rarr; *Logging Message Audit Message Processor*.
 
-Check *Enabled* if you want audit events to appear in Liferay's log and check
-*Output to Console* if you also want the audit events to appear in the console.
-Audit events can be written in one of two text formats, either CSV or JSON.
-Select the format you prefer, then click *Update*.
+Check *Enabled* to report audit events in Liferay's log. Check *Output to
+Console* if you also want them in the console. Audit events are available in
+either CSV or JSON formats. Select the one you prefer and click *Update*.
 
-To configure audit events to appear in Liferay's logs and console via an OSGi
-configuration file, create a file called
+To report audit events in Liferay's logs and console via an OSGi configuration
+file, create a file called
 `com.liferay.portal.security.audit.router.configuration.LoggingAuditMessageProcessorConfiguration.config`
-in your `[LIFERAY_HOME]/osgi/modules` folder with this contents:
+in `[LIFERAY_HOME]/osgi/modules` folder containing these properties:
 
 	enabled="true"
 	logMessageFormat="CSV"
 	#logMessageFormat="JSON"
 	outputToConsole="true"
 
-As you can see, these are the same options that appear in the Control Panel.
-Edit these values as you see fit.
+As you can see, these are the same options from the Control Panel. Edit them
+you see fit.
 
-Regardless of whether you took the Control Panel configuration approach or the
-OSGi configuration file approach, you also need to extend Liferay's
-`log4j-ext.xml` file to configure Log4J (Liferay's logging implementation) to
-log the appropriate level of messages produced by the appropriate class to the
-appropriate file. To do so, create a `portal-log4j-ext.xml` file in your
-Liferay's
-[LIFERAY_HOME]/tomcat-[version]/webapps/ROOT/WEB-INF/classes/META-INF` folder
-with this contents:
+Regardless of configuration approach, you must also extend Liferay's
+`log4j-ext.xml` file to configure Log4J (@product@'s logging implementation) to
+log messages produced by the appropriate class to the appropriate file. To do
+so, create a `portal-log4j-ext.xml` file in 
+`[LIFERAY_HOME]/tomcat-[version]/webapps/ROOT/WEB-INF/classes/META-INF` 
+with this configuration:
 
 	<?xml version="1.0"?>
 	 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
@@ -231,32 +227,28 @@ with this contents:
 		 </category>
 	</log4j:configuration>
 
-In this example, we are configuring Log4J to record INFO level messages from
-the
+This configures Log4J to record INFO level messages from the
 `com.liferay.portal.security.audit.router.internal.LoggingAuditMessageProcessor`
 class to a file called `audit.yyyy-MM-dd.log` in the `[LIFERAY_HOME]/logs`
-folder. Feel free to adjust the audit file properties or log level as you see
-fit.
+folder. Adjust the audit file properties or log level to your liking.
 
 ### Configuring Audit Events for Scheduled Liferay Jobs
 
-By default, audit events are not configured for scheduled Liferay jobs. To
-enable audit events for Liferay jobs via the Control Panel, go to *Control
-Panel* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Scheduler Engine
-Helper*. Check the *Audit scheduler job enabled* box and click *Save*.
+By default, scheduled jobs don't trigger audit events. To enable them via the
+Control Panel, go to *Control Panel* &rarr; *System Settings* &rarr;
+*Foundation* &rarr; *Scheduler Engine Helper*. Check the *Audit scheduler job
+enabled* box and click *Save*.
 
 To enable audit events for scheduled jobs via an OSGi configuration file,
 create a
 `com.liferay.portal.scheduler.configuration.SchedulerEngineHelperConfiguration.config`
-file in your `[LIFERAY_HOME]/osgi/modules` folder with this contents:
+file in your `[LIFERAY_HOME]/osgi/modules` folder with this configuration:
 
 	auditSchedulerJobEnabled=true
 
-Of course, set the property above to `false` to disable audit events for
-scheduled jobs via configuration file. Enabling auditing for scheduled jobs can
-be a very smart choice if there's any chance that someone with a dubious
-competence level might try to schedule jobs for your Liferay instance. (E.g.,
-imagine if Melvin Dooitwrong learned about Liferay's job scheduler...)
+Auditing scheduled jobs is a smart choice if there's a chance someone with a
+dubious competence level would try to schedule jobs, as you'll find out below in
+the conclusion of our story. 
 
 ### Enabling or Disabling Audit Events Entirely
 
@@ -265,7 +257,10 @@ to *Control Panel* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Audit*.
 Uncheck the *Enabled* box. Note that for when auditing is enabled, you can
 adjust the audit message max queue size from its default value.
 
-To enable or disable auditing entirely from an OSGi configuration file, create a file called `com.liferay.portal.scheduler.configuration.SchedulerEngineHelperConfiguration.config` in your `[LIFERAY_HOME]/osgi/modules` folder with this contents:
+To enable or disable auditing entirely from an OSGi configuration file, create a
+file called
+`com.liferay.portal.scheduler.configuration.SchedulerEngineHelperConfiguration.config`
+in your `[LIFERAY_HOME]/osgi/modules` folder with this configuration:
 
 	enabled="true"
 	auditMessageMaxQueueSize="200"
@@ -278,8 +273,8 @@ These are the default values which you can adjust as desired.
 figure out what happened." 
 
 You and Dick stand behind Harry's chair and watch as he enters a query into a
-form on the audit portlet. Clicking *search*, the screen fills up with audit
-events. 
+form on the audit portlet. After clicking *search*, the screen fills up with
+audit events. 
 
 "Wow, that's a lot of unassign events." Harry says. "And look who the culprit
 is," he adds sarcastically. 
