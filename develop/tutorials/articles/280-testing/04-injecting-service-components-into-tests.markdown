@@ -1,13 +1,14 @@
 # Injecting Service Components into Tests [](id=injecting-service-components-into-tests)
 
-Similar to using OSGi's `@Reference` annotation to inject service components
-into a module component, you can use @product@'s `@Inject` annotation to inject
-them into a test.  
+You can use @product@'s `@Inject` annotation to inject service components into a
+test, like you use the `@Reference` annotation to inject service components
+into a module component.
 
 `@Inject` uses reflection to inject a field with a service component object
 matching the field's interface.
 [Test rule `LiferayIntegrationTestRule`](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-test-integration/com/liferay/portal/test/rule/LiferayIntegrationTestRule.html)
-provides this annotation. The annotation accepts `filter` and `type` parameters, which you can use separately or together.
+provides this annotation. The annotation accepts `filter` and `type` parameters,
+which you can use separately or together.
 
 +$$$
 
@@ -15,8 +16,8 @@ DXP Digital Enterprise 7.0 Fix Pack 30 and Liferay CE Portal 7.0 GA5 introduced 
 
 $$$
 
-To fill a field of a with a particular implementation or sub-class object, set
-the `type` with it. 
+To fill a field with a particular implementation or sub-class object, set the
+`type` with it. 
 
     `@Inject(type = SubClass.class)`
 
@@ -43,7 +44,7 @@ Here's an example test class that injects a `DDLServiceUpgrade` object into an `
 
     } 
 
-Here are the steps for injecting a service component into a test class:
+Here's how to inject a service component into a test class:
 
 1.  In your test class, add a rule field of
     [type `com.liferay.portal.test.rule.LiferayIntegrationTestRule`](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-test-integration/com/liferay/portal/test/rule/LiferayIntegrationTestRule.html).
@@ -55,12 +56,12 @@ Here are the steps for injecting a service component into a test class:
             new LiferayIntegrationTestRule();
 
 2.  Add a field to hold a service component. Making the field static improves
-    efficiency. Static fields are injected once before test runs and nulled out
-    after all tests run. Non-static fields are injected before each test run
-    and are nulled out after each test.
+    efficiency, because the container injects static fields once before test
+    runs and nulls them after all tests run. Non-static fields are injected
+    before each test run but stay in memory till all tests finish. 
 
-3.  Annotate the field with an `@Inject` annotation. By default, the field is
-    injected with a service component object matching the field's type.
+3.  Annotate the field with an `@Inject` annotation. By default, the container
+    injects the field with a service component object matching the field's type.
 
 4.  Optionally add a `filter` string or `type` parameter to further specify the
     service component object to inject.
@@ -71,15 +72,14 @@ regarding the test's unavailable dependencies.
 
 +$$$
 
-**Important**: If you're publishing the service component you are injecting with
-`@Inject` annotation, the test might never be run. If you must publish the
-service component from the test class, use
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+**Important**: If you're publishing the service component you are injecting, the
+test might never run. If you must publish the service component from the test
+class, use [Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
 to access service components.
 
 $$$
 
-You've learned how easy it is to inject service components into your tests.
+Great! Now you can inject service components into your tests.
 
 ## Related Articles [](id=related-articles)
 
