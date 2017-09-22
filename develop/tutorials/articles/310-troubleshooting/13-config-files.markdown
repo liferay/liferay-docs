@@ -1,21 +1,19 @@
 # Using Files to Configure @product@ Modules
 
-@product@ lets you configure modules via the following: 
+@product@ lets you use files to configure module service components. It uses the
+[Felix OSGi implementation](http://felix.apache.org/)
+of
+[Configuration Admin](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html)
+to support using files to configure components and
+[Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
+to monitor file system folders for new/updated configuration files. 
 
--   [Felix Configuration Admin](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html): 
-    Lets you use configuration files to configure service components. These 
-    files contain the configuration as a list of name-value pairs. 
+Using configuration files involves these things:
 
--   [Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html): 
-    Monitors a folder in the file system for new/updated modules and 
-    configuration files. 
-
-You can use File Install in conjunction with Configuration Admin to deploy 
-configuration files for your modules. For example, you can set File Install to 
-monitor a specific folder, and then deploy a configuration file to that folder. 
-Since @product@ runs on the 
-[Felix OSGi implementation](http://felix.apache.org/), 
-Configuration Admin and File Install are available out-of-the-box. 
+-   [Understanding configuration files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+-   [Choosing a file format](#configuration-file-formats)
+-   [Naming and creating configuration files](#naming-configuration-files)
+-   [Resolving deployment failures](#resolving-configuration-file-deployment-failures)
 
 ## Configuration File Formats [](id=configuration-file-formats)
 
@@ -37,11 +35,13 @@ these file formats, including their syntax, see the following:
 -   [Configuration file (`.config`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
 -   [Properties file(`.cfg`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#property-files-cfg)
 
-## Configuration Files [](id=configuration-files)
+## Naming Configuration Files [](id=naming-configuration-files)
 
-Before you create a configuration file, you should determine whether multiple
-instances of the component can be created or whether the component is intended
-to be a singleton. Follow these steps to make that determination:
+Before you
+[create a configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files#creating-and-deploying-a-configuration-file),
+you should determine whether multiple instances of the component can be created
+or whether the component is intended to be a singleton. Follow these steps to
+make that determination:
 
 1.  Deploy the component's module if you haven't done so already. 
 2.  In the @product@ UI, go to *Control Panel* &rarr; *Configuration* &rarr;
