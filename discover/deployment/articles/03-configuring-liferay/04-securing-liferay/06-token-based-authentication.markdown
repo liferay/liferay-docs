@@ -63,7 +63,7 @@ from the specified location. (Example: SM_USER)
 
 Remember to click *Save* to activate Token Based SSO.
 
-## Required SiteMinder Configuration
+## Required SiteMinder Configuration [](id=required-siteminder-configuration)
 
 If you use SiteMinder, note that @product@ sometimes uses the tilde character in
 its URLs. By default, SiteMinder treats the tilde character (and others) as bad
