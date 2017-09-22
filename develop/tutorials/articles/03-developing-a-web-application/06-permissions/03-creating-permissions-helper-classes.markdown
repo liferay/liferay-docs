@@ -38,7 +38,7 @@ Now you'll create these classes for the Guestbook application:
             property = {
                 "resource.name=" + GuestbookModelPermission.RESOURCE_NAME
             },
-            service = GuestbookModelPermission.class
+            service = ResourcePermissionChecker.class
         )
         public class GuestbookModelPermission extends BaseResourcePermissionChecker  {
 
