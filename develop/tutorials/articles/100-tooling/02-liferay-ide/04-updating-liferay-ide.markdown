@@ -13,7 +13,7 @@ follow the steps below:
 
     ![Figure 1: Make sure to check all the @ide@ components you wish to install.](../../../images/ide-zip-install.png)
 
-4.  Accept the terms of the agreements and click *Next*, and @ide@ is updated.
-    You must restart @ide@ for the updates to take effect.
+4.  Accept the terms of the agreements. Click *Next*, and @ide@ is updated. You
+    must restart @ide@ for the updates to take effect.
 
 You're now on the latest version of Liferay @ide@!

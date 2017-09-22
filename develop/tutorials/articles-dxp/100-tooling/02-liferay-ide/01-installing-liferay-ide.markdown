@@ -97,7 +97,7 @@ To install @ide@ using an update URL, follow these steps:
 3.  You'll see the @ide@ components in the list below. Check them off and click
     *Next*.
 
-4.  Accept the terms of the agreements and click *Next*, and @ide@ is installed.
+4.  Accept the terms of the agreements. Click *Next*, and @ide@ is installed.
     Like other Eclipse plugins, you must restart Eclipse to use them.
 
 Liferay @ide@ is now installed in your existing Eclipse environment.
