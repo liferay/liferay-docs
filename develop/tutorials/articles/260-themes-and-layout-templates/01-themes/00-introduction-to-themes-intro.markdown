@@ -1,9 +1,9 @@
-# Introduction to Themes [](id=introduction-to-themes)
+# Themes [](id=introduction-to-themes)
 
 A Liferay Theme is the overall look and feel for a site. Themes are a 
 combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the
 default themes are nice, you may wish to create your own custom look and feel
-for your site.
+for your site. 
 
 Liferay provides an easy-to-use tool called the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
 that helps automate the theme development process, but you can use other tools 

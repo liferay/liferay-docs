@@ -3,7 +3,8 @@
 Collecting information from your site's Users is important, whether you're
 asking them to submit a brief survey or apply for a mortgage. In either case,
 you need to design a form. Liferay gives you almost limitless form building
-capability with the Forms application.
+capability with the Forms application. For a complete list of form fields
+available in @product@, visit the [form fields reference article](/discover/reference/-/knowledge_base/7-0/form-field-types)
 
 Because the complexity of use cases for the Forms application varies from
 needing only one basic input field, to needing many pages of fields with many
