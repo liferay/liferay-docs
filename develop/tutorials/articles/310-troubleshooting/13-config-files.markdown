@@ -8,12 +8,13 @@ to support using files to configure components and
 [Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
 to monitor file system folders for new/updated configuration files. 
 
-Using configuration files involves these things:
+After
+[understanding configuration files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files),
+you have these options: 
+-   [File format](#configuration-file-formats)
+-   [Configuration file names](#naming-configuration-files)
 
--   [Understanding configuration files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
--   [Choosing a file format](#configuration-file-formats)
--   [Naming and creating configuration files](#naming-configuration-files)
--   [Resolving deployment failures](#resolving-configuration-file-deployment-failures)
+Lastly, you should know how to resolve [common deployment failures](#resolving-configuration-file-deployment-failures).
 
 ## Configuration File Formats [](id=configuration-file-formats)
 
