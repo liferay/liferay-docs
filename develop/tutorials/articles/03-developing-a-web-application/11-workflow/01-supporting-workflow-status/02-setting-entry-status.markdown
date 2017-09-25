@@ -1,4 +1,4 @@
-# Setting the Workflow Fields in EntryLocalServiceImpl 
+# Setting the Entry Workflow Status
 
 Set the status fields, introduce entries tot eh workflow framework, and add the
 `updateStatus` method to the `EntryLocalServiceImpl`. It works the same as it

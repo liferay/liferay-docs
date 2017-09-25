@@ -1,4 +1,4 @@
-# Setting the Workflow Fields in GuestbookLocalServiceImpl 
+# Setting the Guestbook Status 
 
 Before now, the status of all added guestbooks was automatically set to
 approved. Open `GuestbookLocalServiceImpl` and set the status to `STATUS_DRAFT`
