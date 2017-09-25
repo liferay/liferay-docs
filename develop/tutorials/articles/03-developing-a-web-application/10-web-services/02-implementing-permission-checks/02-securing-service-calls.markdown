@@ -156,7 +156,7 @@ to the following complete class:
                         PortalUtil.copyRequestParameters(request, response);
 
                         response.setRenderParameter(
-                            "mvcPath", "/html/guestbookmvcportlet/edit_entry.jsp");
+                            "mvcPath", "/guestbookwebportlet/edit_entry.jsp");
                     }
 
                 }
@@ -179,7 +179,7 @@ to the following complete class:
                         PortalUtil.copyRequestParameters(request, response);
 
                         response.setRenderParameter(
-                            "mvcPath", "/html/guestbookmvcportlet/edit_entry.jsp");
+                            "mvcPath", "/guestbookwebportlet/edit_entry.jsp");
                     }
                 }
             }
@@ -332,7 +332,7 @@ refer to the following complete class:
 
 
                   response.setRenderParameter(
-                    "mvcPath", "/html/guestbookadminportlet/edit_guestbook.jsp");
+                    "mvcPath", "/guestbookadminportlet/edit_guestbook.jsp");
                 }
               }
 

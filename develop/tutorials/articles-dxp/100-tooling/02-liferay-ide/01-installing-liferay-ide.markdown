@@ -87,23 +87,35 @@ section.
 
 ## Install Liferay @ide@ into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
 
-**Important:** This is not available for the latest 3.1 version of @ide@.
+To install @ide@ using an update URL, follow these steps:
 
-To install Liferay @ide@ into an existing Eclipse environment, follow these
-steps:
+1.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
+
+2.  In the *Work with* field, copy in the URL
+    http://releases.liferay.com/tools/ide/latest/stable/.
+
+3.  You'll see the @ide@ components in the list below. Check them off and click
+    *Next*.
+
+4.  Accept the terms of the agreements. Click *Next*, and @ide@ is installed.
+    Like other Eclipse plugins, you must restart Eclipse to use them.
+
+Liferay @ide@ is now installed in your existing Eclipse environment.
+
+## Install Liferay @ide@ into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
+
+To install @ide@ using a Zip file, follow these steps:
 
 1.  Go to the
     [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
-    downloads page. From the drop-down menu, select *Archived Feature Update
-    Site* and click *Download*.
-
-    The Archived Product Update Site is used to update an existing @ide@
-    environment to the most recent release. You'll cover this later.
+    downloads page. From the drop-down menu, select *Developer Studio Update
+    Site Zip* and click *Download*.
 
 2.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
-3.  In the *Add Site* dialog, click the *Archive* button and browse to the
-    location of the downloaded Liferay @ide@ `.zip` file. Then press *OK*.
+3.  In the *Add* dialog, click the *Archive* button and browse to the
+    location of the downloaded Liferay @ide@ Update Site `.zip` file. Then press
+    *OK*.
 
 4.  You'll see the @ide@ components in the list below. Check them off and click
     *Next*.
@@ -114,28 +126,6 @@ steps:
     installed. Like other Eclipse plugins, you must restart Eclipse to use them.
 
 Awesome! You've installed Liferay @ide@ in your existing Eclipse environment.
-
-## Update Liferay @ide@ [](id=update-liferay-developer-studio)
-
-**Important:** This is not available for the latest 3.1 version of @ide@.
-
-If you're already using Liferay @ide@ but need to update your environment,
-follow the steps below:
-
-1.  Go to the
-    [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
-    downloads page. From the selector, choose *Archived Product Update Site* and
-    click *Download*.
-
-2.  Navigate to *Help* &rarr; *Update Liferay Developer Studio...*.
-
-3.  Select *Browse* and select the `.zip` file you downloaded in step 1. Then
-    select *Update*.
-
-You're now on the latest version of Liferay @ide@!
-
-Now that you've learned how to install and update your Liferay @ide@
-environment, you can begin developing Liferay products.
 
 ## Generating a Workspace Token Manually [](id=generating-a-workspace-token-manually)
 
@@ -173,36 +163,3 @@ If you've already run the installer, you can set the DXP bundle to download
 in the `gradle.properties` file of your workspace. See the
 [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
 tutorial for details.
-
-<!-- The information below should be uncommented when Dev Studio 3.1 is
-available to update from original GA release. Since Dev Studio must be
-reinstalled when upgrading from 3.0 to 3.1, this should not be documented. -Cody
--->
-
-<!--
-
-Update Liferay @ide@
-
-If you already have @ide@ installed, you can easily update it using an update
-site URL.
-
-1.  Select *Help* &rarr; *Install New Software*. 
-
-2.  In your browser, go to the
-    [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
-    page. Copy the URL to the update site.
-
-    [Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../../images/liferay-ide-download.png)
-
-3.  Go back to Eclipse and click the *Add* button to add a repository. 
-
-4.  Type *Liferay IDE* into the Name field and paste the URL into the Location 
-    field. 
-
-5.  You'll see the Liferay @ide@ components in the list below. Check them off and
-    click *Next*. 
-
-6.  Accept the terms of the agreements and click *Next*, and Liferay @ide@ is
-    installed. Like other Eclipse plugins you'll have to restart Eclipse to
-    enable it.
--->
