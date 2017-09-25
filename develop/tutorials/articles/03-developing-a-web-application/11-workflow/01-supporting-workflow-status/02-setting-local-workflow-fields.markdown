@@ -7,9 +7,18 @@ below the existing setter methods
 method:
 
     guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
+    guestbook.setStatusByUserId(userId);
+    guestbook.setStatusByUserName(user.getFullName());
+    guestbook.setStatusDate(serviceContext.getModifiedDate(null));
 
-Still in the `addGuestbook` method, place the following code right before
-the `return` statement:
+This manually sets the status of the workflow as a draft in the `GB_Entry`
+database table, and populates the other status fields with the proper current
+values. At this point they're identical to their non-status-related counterparts
+(for example, `setUserId` and `setStatusByUserId` both use the current ID of the
+as passed to the method in its parameters).
+
+Still in the `addGuestbook` method, place the following code right before the
+`return` statement:
 
     WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
 				guestbook.getGroupId(), guestbook.getUserId(), Guestbook.class.getName(), 
@@ -49,8 +58,9 @@ following the `deleteGuestbook` method. Here';s the first half of it:
 		guestbookPersistence.update(guestbook);
 
 If this method is being called, it's because your entity is returning from the
-workflow framework. This is where you set the status fields, then persist the
-updated entity to the database.
+workflow framework, and it's time to update the status values in the database.
+This is where you set the status fields, then persist the updated entity to the
+database. Before saving, finish the method:
 
 		if (status == WorkflowConstants.STATUS_APPROVED) {
 
@@ -73,7 +83,7 @@ Publisher and in the search results. Otherwise (`else`) it sets the visibility
 to `false` to ensure that unapproved guestbooks aren't displayed to users in the
 Asset Publisher or the Search portlet.
 
-Run the `buildService` Gradle task.
+Save your changes then run the `buildService` Gradle task.
 
 Now the guestbook entity's service layer populates the status fields in the
 database and sends the entity into the workflow framework. Do the same thing for

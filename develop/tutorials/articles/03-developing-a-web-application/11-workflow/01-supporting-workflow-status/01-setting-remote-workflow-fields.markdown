@@ -1,14 +1,16 @@
 # Setting the Workflow Fields in EntryLocalServiceImpl 
 
-Open `EntryLocalServiceImpl` and add the following line in the
-`addGuestbookEntry` method, immediately following the current setter methods
-(e.g., `entry.setMessage(message)`):
+Set the status fields, introduce entries tot eh workflow framework, and add the
+`updateStatus` method to the `EntryLocalServiceImpl`. It works the same as it
+did for guestbooks.
+
+Add the following line in the `addGuestbookEntry` method, immediately following
+the current setter methods (e.g., `entry.setMessage(message)`):
 
     entry.setStatus(WorkflowConstants.STATUS_DRAFT);
-
-This manually sets the status of the workflow as a draft; in the `GB_Entry`
-database table, you'll now see the `status` field of an added `Entry` with the
-value `2`. But you still haven't set the rest of the values.
+    entry.setStatusByUserId(userId);
+    entry.setStatusByUserName(user.getFullName());
+    entry.setStatusDate(serviceContext.getModifiedDate(null));
 
 Still in the `addGuestbookEntry` method, place the following code right before
 the `return` statement:
@@ -16,11 +18,6 @@ the `return` statement:
     WorkflowHandlerRegistryUtil.startWorkflowInstance(entry.getCompanyId(), 
 				entry.getGroupId(), entry.getUserId(), Entry.class.getName(), 
 				entry.getPrimaryKey(), entry, serviceContext);
-
-Add these imports:
-
-    import com.liferay.portal.kernel.workflow.WorkflowConstants;
-    import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
 
 The call to `startWorkflowInstance` detects whether workflow is installed and
 enabled. If it isn't, the added entity is automatically marked as approved. The
@@ -57,14 +54,8 @@ following method to the bottom of `EntryLocalServiceImpl`:
 		return entry;
 	}
 
-Run Service Builder.
+Organize imports (*[CTRL]+[SHIFT]+O*), save your work, and run Service Builder.
 
-The `updateStatus` method is responsible for setting the status fields, then
-persisting the information to the database. The `if` block checks the entity's
-workflow status and does one of two things:
-
-- If the entity has an approved status, it is marked as visible and can be
-  displayed in the Asset Publisher portlet.
-- If the entity is not approved, it is marked as not visible and can't be
-  displayed in the Asset Publisher portlet.
-
+Now both entities support the status of the entity. However, the new
+`updateStatus` method will never be called, because you're not yet handling the
+entity after it returns from the workflow framework. You'll do that next.
