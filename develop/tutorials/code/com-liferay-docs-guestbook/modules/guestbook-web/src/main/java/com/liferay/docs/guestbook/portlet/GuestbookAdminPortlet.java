@@ -64,7 +64,7 @@ public class GuestbookAdminPortlet extends MVCPortlet {
 
 
               response.setRenderParameter(
-                "mvcPath", "/html/guestbookadminportlet/edit_guestbook.jsp");
+                "mvcPath", "/guestbookadminportlet/edit_guestbook.jsp");
             }
           }
     

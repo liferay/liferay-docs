@@ -75,11 +75,11 @@ Next, create the permissions file:
 
     You'll define your resource and model permissions inside these tags. 
 
-5.  Next, place the permissions for your `com.liferay.docs.guestbook.model` 
+5.  Next, place the permissions for your `com.liferay.docs.guestbook` 
     package between the `<resource-action-mapping>` tags: 
 
         <model-resource>
-            <model-name>com.liferay.docs.guestbook.model</model-name>
+            <model-name>com.liferay.docs.guestbook</model-name>
             <portlet-ref>
                 <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookPortlet</portlet-name>
                 <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
@@ -88,11 +88,14 @@ Next, create the permissions file:
                 <supports>
                     <action-key>ADD_GUESTBOOK</action-key>
                     <action-key>ADD_ENTRY</action-key>
+				    <action-key>VIEW</action-key>
                 </supports>
                 <site-member-defaults>
                     <action-key>ADD_ENTRY</action-key>
                 </site-member-defaults>
-                <guest-defaults />
+                <guest-defaults>
+				    <action-key>VIEW</action-key>
+			    </guest-defaults>
                 <guest-unsupported>
                     <action-key>ADD_GUESTBOOK</action-key>
                     <action-key>ADD_ENTRY</action-key>
@@ -103,7 +106,7 @@ Next, create the permissions file:
     This defines the baseline configuration for the `Guestbook` and `Entry` 
     entities. The supported actions are `ADD_GUESTBOOK` and `ADD_ENTRY`. Site 
     members can `ADD_ENTRY` by default, while guests can't perform either 
-    action. 
+    action (but they can view). 
 
 6.  Below that, but above the closing `</resource-action-mapping>`, place the
     `Guestbook` model permissions: 
