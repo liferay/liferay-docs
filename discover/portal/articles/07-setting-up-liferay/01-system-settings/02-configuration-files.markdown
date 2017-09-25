@@ -29,6 +29,9 @@ There are several things to understand about configuration files:
 -   If you place a configuration file in your @product@ installation's 
     `osgi/configs` folder, any changes you make to the entry in System Settings
     are automatically propagated to the configuration file. 
+-   @product@ uses
+    [Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
+    to dynamically apply configuration files to your @product@ instance. 
 
 +$$$
 
@@ -39,7 +42,7 @@ the boolean type. The type markers aren't necessary or problematic--you can
 safely ignore them. @product@ doesn't rely on the configuration marker to 
 determine what type the configuration is, because the backend code that creates 
 the setting already knows what the type must be. In short, a `.config` file with 
-`addDefaultStructures=B"true"` functions no different than one with 
+`addDefaultStructures=B"true"` functions no differently than one with 
 `addDefaultStructures="true"`. 
 
 $$$
@@ -104,7 +107,7 @@ comma-separated values:
 
     charactersblacklist=["&","'","@","\\","]","}",":","\=",">","/","<","[","{","%","+","#","`","?","\"",";","*","~"]
 
-In generalized fashion, here's how to write a multi-value setting: 
+In general, here's how to write a multi-value setting: 
 
     multiValueSetting=["Value 1", "Value 2", ...]
 
