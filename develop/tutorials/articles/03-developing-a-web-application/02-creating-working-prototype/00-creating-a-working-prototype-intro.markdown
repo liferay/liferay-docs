@@ -1,4 +1,4 @@
-# Developing Your First Portlet [](id=developing-your-first-portlet)
+# Creating a Working Prototype [](id=creating-a-working-prototype)
 
 So far, you've installed and set up Liferay @ide@, and created a Liferay 
 Workspace. Next, you'll create your application and start adding basic features 
