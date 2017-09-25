@@ -19,7 +19,7 @@ $$$
 To fill a field with a particular implementation or sub-class object, set the
 `type` with it. 
 
-    `@Inject(type = SubClass.class)`
+    @Inject(type = SubClass.class)
 
 Replace `SubClass` with the name of the service interface to inject.
 
