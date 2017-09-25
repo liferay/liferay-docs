@@ -1,4 +1,4 @@
-# Setting up @product
+# Setting up @product@
 
 The Liferay Basic Configuration has several options. First, you can configure 
 you Portal Name, the name and email address of your default Administrator. You 
@@ -27,6 +27,6 @@ sample data for demo purposes. Finally, you can configure your database here. Le
 7. Finally, choose a security question and answer to complete the setup.
 
 After you finish the startup, you are brought to the *Welcome* page. If you see 
-the screen below, you have successfully set up your @product bundle. Now let's go over some Liferay basic.
+the screen below, you have successfully set up your Liferay server. Now let's go over some Liferay basics.
 
 ![Figure X: The basic configuration page.](../../../images/001-hello-world.png)

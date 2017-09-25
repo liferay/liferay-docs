@@ -9,7 +9,7 @@ content to a page, you first need to create it.
 
 3. Select *Web Content*.
 
-![Figure X: The Web Content page.](../../../images/001-basic-configuration.png)
+![Figure X: The Web Content page.](../../../images/001-web-content-page.png)
 
 This page serves as the hub for all of the content that you create for the 
 Lunar Resort site. This is where you go to create content, and as you create 

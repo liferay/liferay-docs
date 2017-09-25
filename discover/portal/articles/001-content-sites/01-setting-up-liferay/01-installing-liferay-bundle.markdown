@@ -1,10 +1,10 @@
-# Installing @product 
+# Installing @product@ 
 
-The easiest way to start using @product for testing or development is to 
-download a standalone bundle. You can download @product from 
+The easiest way to start using @product@ for testing or development is to 
+download a standalone bundle. You can download @product@ from 
 [https://www.liferay.com/downloads](https://www.liferay.com/downloads).
 
-1. Once it finishes downloading, unzip your @product bundle to your local 
+1. Once it finishes downloading, unzip your bundle to your local 
     filesystem.
     
 2. Using a command line application, navigate to 
@@ -22,7 +22,7 @@ download a standalone bundle. You can download @product from
         ./catalina.sh run
 
 After you launch it, watch the log for a message that reads `Server startup in 
-77777 ms`` (the actual number will vary), and Liferay will launch a new browser 
+77777 ms` (the actual number will vary), and Liferay will launch a new browser 
 window with the *Basic Configuration* page. Next you need to take care of some 
 basic configuration.
 

@@ -53,4 +53,6 @@ this point. You can fix that.
 6. When prompted "Are you sure you want to remove this component?" click *OK*.
 
 Great work! You've created content, displayed it on a page, and done some basic 
-page management to make sure that it's displaying properly. Get ready to 
+page management to make sure that it's displaying properly. Now that you know
+the basics, we'll dig deeper and create some pages that you can fill with
+content.
