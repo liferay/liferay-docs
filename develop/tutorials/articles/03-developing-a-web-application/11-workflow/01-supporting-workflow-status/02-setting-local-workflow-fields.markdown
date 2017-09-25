@@ -1,31 +1,38 @@
 # Setting the Workflow Fields in GuestbookLocalServiceImpl 
 
-You need to repeat the above steps to enable the service layer of the
-`Guestbook` entity to set the necessary status fields needed for workflow.
-Open `GuestbookLocalServiceImpl` and add the following line in the
-`addGuestbook` method, immediately after the current setter methods (e.g.,
-`guestbook.setExpandoBridgeAttributes(serviceContext)`):
+Before now, the status of all added guestbooks was automatically set to
+approved. Open `GuestbookLocalServiceImpl` and set the status to `STATUS_DRAFT`
+below the existing setter methods
+(`guestbook.setExpandoBridgeAttributes(serviceContext)`) in the `addGuestbook`
+method:
 
     guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
 
-Still in the `addGuestbookEntry` method, place the following code right before
+Still in the `addGuestbook` method, place the following code right before
 the `return` statement:
 
     WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
 				guestbook.getGroupId(), guestbook.getUserId(), Guestbook.class.getName(), 
 				guestbook.getPrimaryKey(), guestbook, serviceContext);
 
-Add these imports:
+<!-- addBlogEntry:
+		return WorkflowHandlerRegistryUtil.startWorkflowInstance(
+			entry.getCompanyId(), entry.getGroupId(), userId,
+			BlogsEntry.class.getName(), entry.getEntryId(), entry,
+			serviceContext, workflowContext);
+        Investigate adding WorkflowContext here
+-->
 
-    import com.liferay.portal.kernel.workflow.WorkflowConstants;
-    import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
+Organize imports (*[CTRL]+[SHIFT]+O*) and save your work.
 
-The `startWorkflowInstance` calls the `GuestbookWorkflowHandler` class that you
-created in the previous step. 
+The `startWorkflowInstance` method is where your entity enters the workflow
+framework, but you're not finished yet. Just like you wouldn't drop your child
+off at college and then change your number and move to a new address, you're
+not going to abandon your `Guestbook` entity (yet). 
 
-The service layer must be able to update the workflow status fields you added to
-`Guestbook` entity's database table. Add the following method to the bottom of
-`GuestbookLocalServiceImpl`:
+Exert control over how the status fields are updated in the database.
+Create an `updateStatus` method in `GuestbookLocalServiceImpl`, immediately
+following the `deleteGuestbook` method. Here';s the first half of it:
 
      public Guestbook updateStatus(long userId, long guestbookId, int status,
 			ServiceContext serviceContext) throws PortalException,
@@ -39,7 +46,11 @@ The service layer must be able to update the workflow status fields you added to
 		guestbook.setStatusByUserName(user.getFullName());
 		guestbook.setStatusDate(new Date());
 
-		entryPersistence.update(entry);
+		guestbookPersistence.update(guestbook);
+
+If this method is being called, it's because your entity is returning from the
+workflow framework. This is where you set the status fields, then persist the
+updated entity to the database.
 
 		if (status == WorkflowConstants.STATUS_APPROVED) {
 
@@ -55,8 +66,20 @@ The service layer must be able to update the workflow status fields you added to
 		return guestbook;
 	}
 
-Run Service Builder after saving the changes you made.
+This `if` statement determines the visibility of the asset based on its workflow
+status. If it's approved, the `assetEntryLocalService.updateVisible` method sets
+the guestbook in question to `true` so it can be displayed in the Asset
+Publisher and in the search results. Otherwise (`else`) it sets the visibility
+to `false` to ensure that unapproved guestbooks aren't displayed to users in the
+Asset Publisher or the Search portlet.
 
+Run the `buildService` Gradle task.
+
+Now the guestbook entity's service layer populates the status fields in the
+database and sends the entity into the workflow framework. Do the same thing for
+guestbook entries next.
+
+<!--
 Now you're almost done. The status fields can be set appropriately and
 persisted to the database. If you test the workflow by adding an `Entry` to one
 of the Guestbooks, your portal's administrative user receives a
@@ -64,4 +87,5 @@ notification for reviewing the submission. The entity, however, is still visible
 in the portlet's search container! Why even bother having a review process if
 the entity gets published anyway? Taking workflow status into account while
 displaying entities in the Guestbook Portlet is the final task of this Learning
-Path. 
+Path.
+-->
