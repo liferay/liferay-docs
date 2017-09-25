@@ -100,8 +100,8 @@ a component's first instance. The file name pattern is therefore:
     [PID]-default.properties
 
 A singleton component's configuration file must also start with `[PID]` and end
-with `.config` or `.cfg`. Here is the common pattern used for singleton
-component configuration file names: 
+with `.config` or `.cfg`. Here's the common pattern used for singleton component 
+configuration file names: 
 
     [PID].config
 
