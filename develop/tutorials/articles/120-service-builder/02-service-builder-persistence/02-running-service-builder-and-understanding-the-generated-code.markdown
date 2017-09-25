@@ -8,61 +8,54 @@ tutorial and then come back to this one.
 
 ## Running Service Builder [](id=running-service-builder)
 
-To build a service from a `service.xml` file, you can use *Liferay IDE*,
-*Liferay Developer Studio*, or use a terminal window. In this tutorial, you'll
-refer to the Event Listing example project that's referenced throughout the
-Liferay Service Builder tutorials. 
+To build a service from a `service.xml` file, you can use Liferay @ide@ or a
+terminal window. In this tutorial, you'll refer to the Event Listing example
+project that's referenced throughout the Liferay Service Builder tutorials. 
 
 Now let's learn how to run Service Builder.
 
-### Using Liferay IDE or Developer Studio [](id=using-liferay-ide-or-developer-studio)
+### Using Liferay @ide@ [](id=using-liferay-ide-or-developer-studio)
 
-From the Package Explorer, right click your parent project's folder and select
-*Liferay* &rarr; *Gradle* &rarr; *build-service*. As you can see, the IDE
-support Gradle by default. You can, however, use any build tool you'd like for
-building your services.
-
-<!--
-From the Package Explorer, open the
-`service.xml` file from your `*-service` module's root folder. By
-default, the file opens up in the Service Builder Editor. Make sure you are in
-Overview mode. Then click the *Build Services* button near the top-right corner
-of the view. The Build Services button has an image of a document with the
-numerical sequence *010* in front of it. 
+From the Package Explorer, open the `service.xml` file from your `*-service`
+module's root folder. By default, the file opens up in the Service Builder
+Editor. Make sure you are in Overview mode. Then click the *Build Services*
+button (![Build Services](../../../images/icon-build-services.png)) near the
+top-right corner of the view. 
 
 Make sure to click the *Build Services* button and not the *Build WSDD* button
-that appears next to it. Building the WSDDs won't hurt anything, but you'll
-generate files for the remote service instead of the local one. For information
-about WSDDs (web service deployment descriptors), please refer to the
+(![Build WSDD](../../../images/icon-build-wsdd.png)) that appears next to it.
+Building the WSDDs won't hurt anything, but you'll generate files for the remote
+service instead of the local one. For information about WSDDs (web service
+deployment descriptors), please refer to the
 [SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
 tutorial. 
 
-[Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
+![Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../../images/service-xml-overview.png)
 
 Another simple way to run Service Builder is to right-click on your project's
-name in the Package Explorer and then to select *Liferay* &rarr; *Build
-Services* (or, equivalently, *Liferay* &rarr; *SDK* &rarr; *build-service*).
--->
-
-<!-- The text above does not currently work because Service Builder feature is
-not fully functional in IDE 3.0. IDE 3.1 is planned to have this functionality
-available. -Cody -->
+name in the Package Explorer and then select *Liferay* &rarr; *build-service*.
 
 After running Service Builder, your generated files are available. More
 information about the generated files appears below.
 
-### Using the terminal [](id=using-the-terminal)
+### Using the Terminal [](id=using-the-terminal)
 
 Open a terminal window and navigate to your module project's root folder, which
 should be located in your Liferay Workspace's `modules` directory. To learn more
-about creating your module project in a Liferay Workspace, visit the
-[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
-tutorial. Liferay Workspaces use Gradle as their build tool, so this will be the
-assumed build language used in this tutorial. Liferay is tool agnostic, however,
-and you can use other tools, as well.
+about creating your module project in a
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace),
+visit the
+[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+tutorial. You can leverage the
+[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)
+to create your own predefined Service Builder project.
 
-Enter the following command in your module project's root folder to build your
-services:
+Liferay Workspace offers a Gradle or Maven build environment; this tutorial
+shows how to use both. Liferay is tool agnostic, however, and you can use other
+tools, as well.
+
+For Gradle projects, enter the following command in your module project's root
+folder to build your services:
 
     gradlew buildService
 
@@ -84,10 +77,8 @@ command from the module project's root folder:
 using the `com.liferay.portal.tools.service.builder` plugin version 1.0.145+.
 Maven projects using an earlier version of the Service Builder plugin should
 update their POM accordingly. See the
-[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)
-and
 [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
-tutorials for more information on using Maven to run Service Builder.
+tutorial for more information on using Maven to run Service Builder.
 
 When the service has been successfully generated, a `BUILD SUCCESSFUL` message
 appears in your terminal window. You should also see that a large number of

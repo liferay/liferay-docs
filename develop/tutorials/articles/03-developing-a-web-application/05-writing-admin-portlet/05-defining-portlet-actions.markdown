@@ -41,7 +41,7 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
                     Level.SEVERE, null, pe);
 
                 response.setRenderParameter(
-                    "mvcPath", "/html/guestbookadminportlet/edit_guestbook.jsp");
+                    "mvcPath", "/guestbookadminportlet/edit_guestbook.jsp");
             }
         }
         
