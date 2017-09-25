@@ -1,24 +1,22 @@
-# Blacklisting OSGi Modules
+# Blacklisting OSGi Modules [](id=blacklisting-osgi-modules)
 
-In society, the term "blacklist" carries a negative connotation. People on
-blacklists are usually mistreated. Regarding OSGi modules, a blacklist is a
-convenience. It's a file that lets you uninstall one or more specific modules.
-Rather than uninstalling them one at a time using the Application Manager or
-Apache Felix Gogo Shell, you can uninstall them simultaneously by dropping a
-blacklist file into a folder. 
+Blacklists are used for good and evil. An evil blacklist penalizes unfairly; a
+good blacklist protects. @product@'s OSGi module blacklist is a file that's
+dropped in a folder to prevent particular modules from installing, saving you
+from the uninstalling them individually with the Application Manager or Gogo
+shell. 
 
 +$$$
 
-**Note**: The blacklisting capability was introduced in DXP Digital Enterprise
-Fix 7.0 Pack 30 and Liferay CE Portal 7.0 GA5.
+**Note**: Blacklisting appears in DXP Digital Enterprise Fix 7.0 Pack 30 and
+Liferay CE Portal 7.0 GA5.
 
-$$$  
+$$$
 
 Follow these steps to blacklist a module:
 
 1.  Create a configuration file for the component 
-    `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration`,
-    if you haven't already created one.
+    `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration`:
 
         com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
 
@@ -26,14 +24,13 @@ Follow these steps to blacklist a module:
     the symbolic names of OSGi modules to uninstall or to keep from installing.
     The modules can be from LPKG, JAR, WAR, or WAR wrapper files. 
 
-3.  To deploy the configuration file, copy it into the 
-    `[Liferay_Home]/osgi/configs` folder. 
+3.  Copy the configuration file into the 
+    `[Liferay_Home]/osgi/configs` folder to deploy it. 
 
-Installed modules on the blacklist are uninstalled. Blacklisted modules that
-have not yet been installed remain uninstalled. The @product@ log reports each
-module uninstallation. 
+@product@ removes installed modules on the blacklist. Blacklisted modules can't
+be installed. The @product@ log reports each module uninstallation. 
 
-To reinstall specific blacklisted modules, follow these steps:
+To reinstall blacklisted modules, follow these steps:
 
 1.  Open the configuration file
     `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration`.
