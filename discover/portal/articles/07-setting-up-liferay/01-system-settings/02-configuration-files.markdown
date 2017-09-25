@@ -29,12 +29,9 @@ There are several things to understand about configuration files:
 -   If you place a configuration file in your @product@ installation's 
     `osgi/configs` folder, any changes you make to the entry in System Settings
     are automatically propagated to the configuration file. 
--   Since @product@ uses
-	[Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
-	to monitor file system folders for new/updated configuration files, updates
-	are dynamically applied to your @product@ instance. No restart is required
-	(unlike for `portal-ext.properties` file updates, which do require a
-	restart).
+-   @product@ uses
+    [Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
+    to dynamically apply configuration files to your @product@ instance. 
 
 +$$$
 
