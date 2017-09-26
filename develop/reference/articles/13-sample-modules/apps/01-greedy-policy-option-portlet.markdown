@@ -2,7 +2,7 @@
 
 ## What does this sample do when it's deployed?
 
-The Greedy Policy Option app provides two portlets that can be added to a
+The Greedy Policy Option sample provides two portlets that can be added to a
 @product@ page: Greedy Portlet and Reluctant Portlet.
 
 ![Figure 1: The Greedy Policy Option app provides two portlets that only print text. You'll dive deeper later to discover their interesting capabilities involving services.](../../../images/greedy-policy-app.png)
