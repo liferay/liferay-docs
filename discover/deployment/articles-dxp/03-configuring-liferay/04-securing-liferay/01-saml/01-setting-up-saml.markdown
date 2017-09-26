@@ -210,7 +210,7 @@ whatever comes after `static:`. If you use the prefix `expando`, the value is
 whatever custom field is specified after `expando:`. For example, `expando:SSN`
 would look up the `User` custom field with the name `SSN`.
 
-**Attributes Enabled:** <!-- TODO -->
+**Attributes Enabled:** Include and resolve assertion attributes.
 
 **Attributes Namespace Enabled:** When this box is checked, the attribute names
 are namespaced like this:
@@ -225,9 +225,21 @@ are namespaced like this:
     urn:liferay:userGroupRole:
     urn:liferay:userGroups:
 
-**Attributes:** <!-- TODO -->
+**Attributes:** Enter a list of attributes to include in the assertion, one per
+line. Each line is an expression that gets parsed. Examples: 
 
-**Keep Alive URL:** <!-- TODO -->
+    organizations
+    organizationRoles
+    roles
+    siteRoles
+    userGroups
+    static:[attributeName]=[attributeValue]
+    expando:[userCustomFieldName] 
+
+**Keep Alive URL:** If users are logged into several @product@ SP instances via
+a @product@ IdP, their sessions can be kept alive as long as they keep a
+browser window open to one of them. Configure this only if the SP is @product@.
+The URL is `https://[host name]/c/portal/saml/keep_alive`. 
 
 Note that the full namespace depends on the attribute name. Attribute
 namespaces can be very useful. Use them, for example, when you have an Expando
@@ -455,7 +467,11 @@ if you want to map a response attribute named `mail` to the @product@ attribute
 Available @product@ attributes are: `emailAddress`, `screenName`, `firstName`,
 `lastName`, `modifiedDate`, and `uuid`.
 
-**Keep Alive URL:** <!-- TODO -->
+**Keep Alive URL:** If users are logged into several @product@ SP instances via
+a @product@ IdP, their sessions can be kept alive as long as they keep a
+browser window open to one of them. Configure this only if the SP is @product@.
+The URL is `https://[host name]/c/portal/saml/keep_alive`. On the @product@ SP,
+configure this URL the same way, but point back to this IdP. 
 
 Save your changes when you are finished configuring the @product@ instance as a
 service provider. There is no need to restart the server and the changes will be
