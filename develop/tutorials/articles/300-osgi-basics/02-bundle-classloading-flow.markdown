@@ -1,10 +1,10 @@
 # Bundle Classloading Flow
 
-The OSGi container looks in many places for classes bundles import. It's
-worthwhile to know where it looks and in what order. @product@'s classloading
-flow follows the OSGi Core specification. It isn't trivial, but it's
-straightforward. The figure below illustrates the flow and this tutorial walks
-you through it.
+The OSGi container searches several places for imported classes. It's important
+to know where it looks and in what order. @product@'s classloading flow for OSGi
+bundles follows the OSGi Core specification. It's straightforward, but not
+trivial. The figure below illustrates the flow and this tutorial walks you
+through it.
 
 ![Figure 1.0: This flow chart illustrates classloading in a bundle.](../../images/bundle-classloading-flow-chart.png)
 
@@ -17,12 +17,12 @@ Here is the algorithm for classloading in a bundle:
     loading to the parent classloader. Otherwise, continue.
 
 3.  If the class is in one of the packages the bundle imports from a wired
-    exporter, the exporting bundle's classloader loads it. A wired exporter is
+    exporter, the exporting bundle's classloader loads it. A *wired exporter* is
     another bundle's classloader that's previously loaded the package. If the
     class isn't found, continue.
 
-4.  If the class is imported by one of the bundle's required bundles, that
-    bundle's classloader loads it.
+4.  If the class is imported by one of the bundle's required bundles, the
+    required bundle's classloader loads it.
 
 5.  If the class is in the bundle's classpath (manifest header
     `Bundle-ClassPath`), the bundle's classloader loads it. Otherwise, continue.
@@ -32,7 +32,8 @@ Here is the algorithm for classloading in a bundle:
 
 7.  If the class is in a package that's dynamically imported using
     `DynamicImport-Package` and a wire is established with the exporting bundle,
-    that bundle's classloader loads it. Otherwise, the class isn't found.
+    the exporting bundle's classloader loads it. Otherwise, the class isn't
+    found.
 
-Congratulations! You now know how @product@ finds and loads classes OSGi bundles
+Congratulations! Now you know how @product@ finds and loads classes OSGi bundles
 use. 
