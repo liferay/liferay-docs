@@ -35,6 +35,8 @@ import com.liferay.portal.kernel.service.UserLocalServiceUtil;
 import com.liferay.portal.kernel.util.ContentTypes;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.kernel.workflow.WorkflowConstants;
+import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
 
 /**
  * The implementation of the guestbook local service. <p> All custom service
@@ -77,6 +79,11 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
 		guestbook.setName(name);
 		guestbook.setExpandoBridgeAttributes(serviceContext);
+		guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
+		System.out.println(guestbook.getStatus());
+		guestbook.setStatusByUserId(userId);
+		guestbook.setStatusByUserName(user.getFullName());
+		guestbook.setStatusDate(new Date());
 
 		guestbookPersistence.update(guestbook);
 
@@ -96,6 +103,11 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 			userId, assetEntry.getEntryId(),
 			serviceContext.getAssetLinkEntryIds(),
 			AssetLinkConstants.TYPE_RELATED);
+		
+		
+		WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
+				guestbook.getGroupId(), guestbook.getUserId(), Guestbook.class.getName(), 
+				guestbook.getPrimaryKey(), guestbook, serviceContext);
 
 		return guestbook;
 
@@ -120,7 +132,8 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
 		guestbook.setName(name);
 		guestbook.setExpandoBridgeAttributes(serviceContext);
-
+		guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
+		
 		guestbookPersistence.update(guestbook);
 
 		resourceLocalService.updateResources(
@@ -143,6 +156,11 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 			serviceContext.getUserId(), assetEntry.getEntryId(),
 			serviceContext.getAssetLinkEntryIds(),
 			AssetLinkConstants.TYPE_RELATED);
+
+		WorkflowHandlerRegistryUtil.startWorkflowInstance(
+			guestbook.getCompanyId(), guestbook.getGroupId(),
+			guestbook.getUserId(), Guestbook.class.getName(),
+			guestbook.getPrimaryKey(), guestbook, serviceContext);
 
 		return guestbook;
 	}
@@ -199,6 +217,13 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
 		return guestbookPersistence.countByGroupId(groupId);
 
+	} 
+
+	public List<Guestbook> getGuestbooks(long groupId, int status)
+		throws SystemException {
+		
+		return guestbookPersistence.findByG_S(
+			groupId, WorkflowConstants.STATUS_APPROVED);
 	}
 
 	protected void validate(String name)
@@ -209,4 +234,32 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		}
 	}
 
+	public Guestbook updateStatus(
+		long userId, long guestbookId, int status,
+		ServiceContext serviceContext)
+		throws PortalException, SystemException {
+
+		User user = userLocalService.getUser(userId);
+		Guestbook guestbook = getGuestbook(guestbookId);
+
+		guestbook.setStatus(status);
+		guestbook.setStatusByUserId(userId);
+		guestbook.setStatusByUserName(user.getFullName());
+		guestbook.setStatusDate(new Date());
+
+		guestbookPersistence.update(guestbook);
+
+		if (status == WorkflowConstants.STATUS_APPROVED) {
+
+			assetEntryLocalService.updateVisible(Guestbook.class.getName(),
+					guestbookId, true);
+
+		} else {
+
+			assetEntryLocalService.updateVisible(Guestbook.class.getName(),
+					guestbookId, false);
+		}
+
+		return guestbook;
+	}
 }

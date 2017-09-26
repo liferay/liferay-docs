@@ -160,6 +160,10 @@ public interface EntryLocalService extends BaseLocalService,
 		java.lang.String message, ServiceContext serviceContext)
 		throws PortalException, SystemException;
 
+	public Entry updateStatus(long userId, long guestbookId, long entryId,
+		int status, ServiceContext serviceContext)
+		throws PortalException, SystemException;
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
 
