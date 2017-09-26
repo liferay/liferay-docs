@@ -16,23 +16,23 @@ demonstrate how to reference services using greedy and reluctant policy options:
 Here are each module's file structures:
 
 `service-reference/`
--   `bnd.bnd`
--   `configs/`
-    -   `com.liferay.blade.reluctant.vs.greedy.portlet.portlet.ReluctantPortlet.config` &rarr; `ReluctantPortlet` configuration file for Liferay DXP DE 7.0 Fix Pack 8 or later and Liferay CE Portal 7.0 GA4 or later
-    -   `com.liferay.blade.reluctant.vs.greedy.portlet.portlet.ReluctantPortlet.cfg` &rarr; `ReluctantPortlet` configuration file for Liferay DXP DE 7.0 Fix Packs earlier than Fix Pack 8 and Liferay CE Portal 7.0 GA3 or earlier
--   `src/main/java/com/liferay/blade/reluctant/vs/greedy/portlet/`
-    -   `api/`
-        -   `SomeService.java` &rarr; Service interface
-    -   `constants/`
-        -   `ReluctantPortletVsGreedyPortletKeys.java` &rarr; Portlet constants
-    -   `portlet/`
-        -   `DefaultSomeService.java` &rarr; Zero ranked service implementation
-        -   `GreedyPortlet.java` &rarr; Refers to `SomeService` using a greedy service policy option
-        -   `ReluctantPortletPortlet.java` &rarr; Refers to `SomeService` using a reluctant service policy option by default.
+- `bnd.bnd`
+- `configs/`
+    - `com.liferay.blade.reluctant.vs.greedy.portlet.portlet.ReluctantPortlet.config` &rarr; `ReluctantPortlet` configuration file for Liferay DXP DE 7.0 Fix Pack 8 or later and Liferay CE Portal 7.0 GA4 or later
+    - `com.liferay.blade.reluctant.vs.greedy.portlet.portlet.ReluctantPortlet.cfg` &rarr; `ReluctantPortlet` configuration file for Liferay DXP DE 7.0 Fix Packs earlier than Fix Pack 8 and Liferay CE Portal 7.0 GA3 or earlier
+- `src/main/java/com/liferay/blade/reluctant/vs/greedy/portlet/`
+    - `api/`
+        - `SomeService.java` &rarr; Service interface
+    - `constants/`
+        - `ReluctantPortletVsGreedyPortletKeys.java` &rarr; Portlet constants
+    - `portlet/`
+        - `DefaultSomeService.java` &rarr; Zero ranked service implementation
+        - `GreedyPortlet.java` &rarr; Refers to `SomeService` using a greedy service policy option
+        - `ReluctantPortletPortlet.java` &rarr; Refers to `SomeService` using a reluctant service policy option by default.
 
 `higher-ranked-service/`
--   `bnd.bnd`
--   `src/main/java/com/liferay/blade/reluctant/vs/greedy/svc/HigherRankedService.java` &rarr; Service implementation with service ranking value of `100`
+- `bnd.bnd`
+- `src/main/java/com/liferay/blade/reluctant/vs/greedy/svc/HigherRankedService.java` &rarr; Service implementation with service ranking value of `100`
 
 Here are the things you can learn using the sample modules:
 
