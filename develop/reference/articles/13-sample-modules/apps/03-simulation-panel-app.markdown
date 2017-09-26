@@ -11,7 +11,7 @@ feature is provided in the Simulation Menu with four options.
 ## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
-[PanelApp](https://docs.liferay.com/ce/apps/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
+[PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component?
