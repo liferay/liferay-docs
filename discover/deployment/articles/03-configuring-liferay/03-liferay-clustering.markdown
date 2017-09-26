@@ -5,6 +5,12 @@ of the box, it's configured optimally for a single server environment. If one
 server isn't sufficient to serve the high traffic needs of your site, @product@
 scales to the size you need. 
 
++$$$
+
+**Note:** Clustering is available in @product-ver@ GA5+. 
+
+$$$
+
 ![Figure 1: @product@ is designed to scale to as large an installation as you need.](../../images/clustering-enterprise-configuration.png) 
 
 @product@ works well in clusters of multiple machines (horizontal cluster) or in
@@ -183,13 +189,14 @@ The cache is distributed across multiple @product@ nodes running concurrently.
 Enabling Cluster Link can increase performance dramatically. For example, if two
 users are browsing the message boards, and the first user clicks a thread,
 @product@ must grab that thread from the database, cache it, and format it for
-display in the browser.  When Cluster Link is enabled, the cache is replicated
-to the other nodes in the cluster. If another user wants to read that thread,
-it's retrieved from the cache, no matter what node serves that user, because the
-cache is replicated.  Because the thread is in the cache, no trip to the
-database is necessary. 
+display in the browser. When Cluster Link is enabled, the cache is replicated to 
+the other nodes in the cluster. If another user wants to read that thread, it's 
+retrieved from the cache, no matter what node serves that user, because the 
+cache is replicated. Because the thread is in the cache, no trip to the database 
+is necessary. 
 
 ![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../images/clustering-cache-efficient-algorithm.png)
+<!-- Image contains reference to UDP Multicast... remove? -->
 
 This is much more powerful than having a cache running separately on each node.
 The power of *distributed* caching lets common destinations be cached for
