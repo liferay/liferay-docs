@@ -1,8 +1,8 @@
 # Liferay Portal Classloader Hierarchy [](id=liferay-portal-classloader-hierarchy)
 
 All @product@ applications live in Liferay Portal's OSGi container.  Portal is a
-web application deployed on your application server. Portal's Module Framework
-and bundles (modules) life in the OSGi container and have class loaders. All the
+web application deployed on your application server. Portal's Module Framework 
+bundles (modules) live in the OSGi container and have class loaders. All the
 classloaders from Java's Bootstrap classloader to classloaders for bundle
 classes and JSPs are part of a hierarchy. 
 
@@ -10,7 +10,7 @@ This tutorial explains @product@'s classloader hierarchy and describes how it
 works in the following contexts: 
 
 -   Web application, such as Liferay Portal, deployed on the app server
--   OSGi bundle deployed on the the Module Framework
+-   OSGi bundle deployed in the Module Framework
 
 The following diagram shows @product@'s classloader hierarchy.
 
@@ -31,7 +31,8 @@ Here are the classloader descriptions:
 -   **Web Application**: Classes in the application's `WEB-INF/classes` folder
     and `WEB-INF/lib/*.jar`. 
 
--   **Module Framework**: @product@'s OSGi module framework's classes. 
+-   **Module Framework**: @product@'s OSGi module framework classloader which 
+    is used to provide controlled isolation for the module framework bundles. 
 
 -   **bundle**: Classes from a bundle's packages or from packages other
     bundles export.  
@@ -71,7 +72,7 @@ JARs, it searches the hierarchy in parent-first order.
 
 Application servers such as
 [Oracle WebLogic](https://docs.oracle.com/cd/E19501-01/819-3659/beadf/index.html)
-and IBM WebSphere have additional classloaders. They have may also have a
+and IBM WebSphere have additional classloaders. They may also have a
 different classloader hierarchy and search order. Consult your application
 server's documentation for classloading details. 
 
@@ -80,8 +81,8 @@ server's documentation for classloading details.
 An OSGi bundle searches classloaders in this order:
 
 1.  Bootstrap classes
-2.  Bundle's class loader and classloaders of bundles that export packages
-2.  Module Framework's classloaders
+2.  Bundle's class loader and classloaders of the packages imported by the bundle
+2.  Module Framework's classloader
 3.  \[Web application's classloader order\]
 
 Again, the Boostrap classloader is searched first. Then searching continues
