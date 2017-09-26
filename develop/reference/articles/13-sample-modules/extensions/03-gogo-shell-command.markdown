@@ -1,5 +1,7 @@
 # Gogo Shell Command [](id=gogo-shell-command)
 
+## What does this sample do when it's deployed?
+
 The Gogo Shell Command sample demonstrates adding a custom command to Liferay
 Portal's Gogo shell environment. All Liferay Portal installations have a Gogo
 shell environment, which lets system administrators interact with Liferay
@@ -23,6 +25,13 @@ To test this sample, follow the instructions below:
     on your running Liferay Portal installation is printed.
 
     ![Figure 2: The outcome of executing the `usercount` command.](../../../images/gogo-shell-2.png)
+
+## What API(s) and/or code components does this sample highlight?
+
+This sample demonstrates creating a new Gogo shell command by leveraging
+`osgi.command.*` properties in a Java class.
+
+## How does this sample leverage the API(s) and/or code component?
 
 To add this new Gogo shell command, you must implement the logic in a Java
 class with the following two properties:
@@ -52,7 +61,7 @@ number of users currently in the system.
 
 For more information on using the Gogo shell, see the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
-tutorial on Liferay's Developer Network.
+tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
 
