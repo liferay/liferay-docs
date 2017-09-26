@@ -87,7 +87,7 @@ Next, you'll create helpers for your two entities. Follow these steps to do so:
         package com.liferay.docs.guestbook.service.permission;
 
         import com.liferay.docs.guestbook.model.Guestbook;
-        import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
+        import com.liferay.docs.guestbook.service.GuestbookLocalService;
         import com.liferay.portal.kernel.exception.PortalException;
         import com.liferay.portal.kernel.exception.SystemException;
         import com.liferay.portal.kernel.security.auth.PrincipalException;
@@ -106,11 +106,18 @@ Next, you'll create helpers for your two entities. Follow these steps to do so:
             public static boolean contains(PermissionChecker permissionChecker, long guestbookId, 
                 String actionId) throws PortalException, SystemException {
 
-                Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbook(guestbookId);
+                Guestbook guestbook = _guestbookLocalService.getGuestbook(guestbookId);
 
                 return permissionChecker.hasPermission(guestbook.getGroupId(), Guestbook.class.getName(), 
                     guestbook.getGuestbookId(), actionId);
             }
+
+            @Reference (unbind = "-")
+            protected void setGuestbookLocalService (GuestbookLocalService guestbookLocalService) {
+                _guestbookLocalService = guestbookLocalService;
+            }
+
+            private static GuestbookLocalService _guestbookLocalService;
         }
 
 As you can see, this class is similar to `GuestbookModelPermission`. The 
@@ -134,7 +141,7 @@ Your final class is almost identical to `GuestbookPermission`, but it's for the
         package com.liferay.docs.guestbook.service.permission;
 
         import com.liferay.docs.guestbook.model.Entry;
-        import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
+        import com.liferay.docs.guestbook.service.EntryLocalService;
         import com.liferay.portal.kernel.exception.PortalException;
         import com.liferay.portal.kernel.exception.SystemException;
         import com.liferay.portal.kernel.security.auth.PrincipalException;
@@ -153,11 +160,18 @@ Your final class is almost identical to `GuestbookPermission`, but it's for the
             public static boolean contains(PermissionChecker permissionChecker, long entryId, 
                 String actionId) throws PortalException, SystemException {
 
-                Entry entry = EntryLocalServiceUtil.getEntry(entryId);
+                Entry entry = _entryLocalService.getEntry(entryId);
 
                 return permissionChecker.hasPermission(entry.getGroupId(), Entry.class.getName(), 
                     entry.getEntryId(), actionId);
             }
+            @Reference(unbind = "-")
+             protected void setEntryLocalService (EntryLocalService entryLocalService) {
+
+                 _entryLocalService = entryLocalService;
+             }
+
+             private static EntryLocalService _entryLocalService; 
         }
 
 This class is almost identical to `GuestbookPermission`. The only difference is 
