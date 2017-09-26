@@ -11,7 +11,6 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-
 package com.liferay.docs.guestbook.service.impl;
 
 import java.util.Date;
@@ -22,7 +21,6 @@ import com.liferay.asset.kernel.model.AssetLinkConstants;
 import com.liferay.docs.guestbook.exception.GuestbookNameException;
 import com.liferay.docs.guestbook.model.Entry;
 import com.liferay.docs.guestbook.model.Guestbook;
-import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
 import com.liferay.docs.guestbook.service.base.GuestbookLocalServiceBaseImpl;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -31,17 +29,18 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.search.Indexable;
 import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.service.ServiceContext;
-import com.liferay.portal.kernel.service.UserLocalServiceUtil;
 import com.liferay.portal.kernel.util.ContentTypes;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.Validator;
 
 /**
- * The implementation of the guestbook local service. <p> All custom service
- * methods should be put in this class. Whenever methods are added, rerun
- * ServiceBuilder to copy their definitions into the
+ * The implementation of the guestbook local service.
+ * <p>
+ * All custom service methods should be put in this class. Whenever methods are
+ * added, rerun ServiceBuilder to copy their definitions into the
  * {@link com.liferay.docs.guestbook.service.GuestbookLocalService} interface.
- * <p> This is a local service. Methods of this service will not have security
+ * <p>
+ * This is a local service. Methods of this service will not have security
  * checks based on the propagated JAAS credentials because this service can only
  * be accessed from within the same VM. </p>
  *
@@ -113,7 +112,7 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
 		Guestbook guestbook = getGuestbook(guestbookId);
 
-		User user = UserLocalServiceUtil.getUser(userId);
+		User user = userLocalService.getUser(userId);
 
 		guestbook.setUserId(userId);
 		guestbook.setUserName(user.getFullName());
@@ -154,11 +153,11 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
 		Guestbook guestbook = getGuestbook(guestbookId);
 
-		List<Entry> entries = EntryLocalServiceUtil.getEntries(
+		List<Entry> entries = entryLocalService.getEntries(
 			serviceContext.getScopeGroupId(), guestbookId);
 
 		for (Entry entry : entries) {
-			EntryLocalServiceUtil.deleteEntry(entry.getEntryId());
+			entryLocalService.deleteEntry(entry.getEntryId());
 		}
 
 		guestbook = deleteGuestbook(guestbook);
@@ -166,13 +165,13 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		resourceLocalService.deleteResource(
 			serviceContext.getCompanyId(), Guestbook.class.getName(),
 			ResourceConstants.SCOPE_INDIVIDUAL, guestbookId);
-		
-        AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
-            Guestbook.class.getName(), guestbookId);
 
-        assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+		AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
+			Guestbook.class.getName(), guestbookId);
 
-        assetEntryLocalService.deleteEntry(assetEntry);
+		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+
+		assetEntryLocalService.deleteEntry(assetEntry);
 
 		return guestbook;
 	}

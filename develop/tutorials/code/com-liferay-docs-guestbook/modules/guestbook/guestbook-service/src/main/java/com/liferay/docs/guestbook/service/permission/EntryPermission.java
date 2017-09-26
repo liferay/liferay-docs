@@ -2,11 +2,12 @@
 package com.liferay.docs.guestbook.service.permission;
 
 import com.liferay.docs.guestbook.model.Entry;
-import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
+import com.liferay.docs.guestbook.service.EntryLocalService;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.security.auth.PrincipalException;
 import com.liferay.portal.kernel.security.permission.PermissionChecker;
+import org.osgi.service.component.annotations.Reference;
 
 public class EntryPermission {
 
@@ -23,11 +24,19 @@ public class EntryPermission {
 		PermissionChecker permissionChecker, long entryId, String actionId)
 		throws PortalException, SystemException {
 
-		Entry entry = EntryLocalServiceUtil.getEntry(entryId);
+		Entry entry = _entryLocalService.getEntry(entryId);
 
 		return permissionChecker.hasPermission(
 			entry.getGroupId(), Entry.class.getName(), entry.getEntryId(),
 			actionId);
 
 	}
+
+	@Reference(unbind = "-")
+	protected void setEntryLocalService (EntryLocalService entryLocalService) {
+
+		_entryLocalService = entryLocalService;
+	}
+
+	private static EntryLocalService _entryLocalService; 
 }
