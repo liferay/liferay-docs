@@ -83,8 +83,11 @@ Menu.
         "product.navigation.control.menu.category.key=" + ProductNavigationControlMenuCategoryKeys.TOOLS
 
     Similar to panel categories, you'll also need to specify an integer for the
-    order in which your entry will be displayed in the category. Lastly, your
-    `service` element should specify the
+    order in which your entry will be displayed in the category. Entries are
+    ordered from left to right. For example, an entry with order `1` will be
+    listed to the left of an entry with order `2`. If the order is not
+    specified, it's chosen at random based on which service was registered first
+    in the OSGi container. Lastly, your `service` element should specify the
     `ProductNavigationControlMenuEntry.class` service.
 
 4. Implement the
