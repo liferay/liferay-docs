@@ -1,4 +1,4 @@
-# Blacklisting OSGi Modules
+# Blacklisting OSGi Modules [](id=blacklisting-osgi-modules)
 
 Blacklists are used for good and evil. An evil blacklist penalizes unfairly; a
 good blacklist protects. @product@'s OSGi module blacklist is a file that's
