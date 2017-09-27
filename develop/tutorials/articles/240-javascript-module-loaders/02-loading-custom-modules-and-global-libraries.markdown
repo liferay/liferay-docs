@@ -231,6 +231,16 @@ You can also use the module in a generic JavaScript:
     });
     </script>
 
++$$$
+
+**Note:** Using `Liferay.Loader.require`, rather than just `require`, is safer. 
+For instance, if you plan to hide the Loader, by choosing to disable the 
+`exposeGlobal` option. 
+
+In @product@ 7.1, `exposeGlobal` will be disabled by default.
+
+$$$
+
 Now you know how to load your custom JavaScript modules and global libraries in 
 @product@!
 
