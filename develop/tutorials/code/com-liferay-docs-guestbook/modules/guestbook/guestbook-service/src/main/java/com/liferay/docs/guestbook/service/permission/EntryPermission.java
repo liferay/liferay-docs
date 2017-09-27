@@ -6,10 +6,16 @@ import com.liferay.docs.guestbook.service.EntryLocalService;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.security.auth.PrincipalException;
+import com.liferay.portal.kernel.security.permission.BaseModelPermissionChecker;
 import com.liferay.portal.kernel.security.permission.PermissionChecker;
+import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-public class EntryPermission {
+@Component(
+	immediate = true,
+	property = {"model.class.name=com.liferay.docs.guestbook.model.Entry"}
+)
+public class EntryPermission implements BaseModelPermissionChecker {
 
 	public static void check(
 		PermissionChecker permissionChecker, long entryId, String actionId)
@@ -39,4 +45,9 @@ public class EntryPermission {
 	}
 
 	private static EntryLocalService _entryLocalService; 
+
+	@Override
+	public void checkBaseModel(PermissionChecker permissionChecker, long groupId, long primaryKey, String actionId) throws PortalException {
+		check(permissionChecker, primaryKey, actionId);
+	}
 }
