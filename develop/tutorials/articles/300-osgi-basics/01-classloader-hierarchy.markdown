@@ -76,21 +76,14 @@ and IBM WebSphere have additional classloaders. They may also have a
 different classloader hierarchy and search order. Consult your application
 server's documentation for classloading details. 
 
-## OSGi Bundle Classloading Perspective [](id=osgi-bundle-classloading-perspective)
+## Other Classloading Perspectives [](id=other-classloading-perspectives)
 
-An OSGi bundle searches classloaders in this order:
+The
+[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-0/bundle-classloading-flow)
+tutorial explains classloading from an OSGi bundle perspective. 
 
-1.  Bootstrap classes
-2.  Bundle's class loader and classloaders of the packages imported by the bundle
-2.  Module Framework's classloader
-3.  \[Web application's classloader order\]
-
-Again, the Boostrap classloader is searched first. Then searching continues
-bottom-up from the bundle classloader. If the class isn't found in the bundle
-classloader, the search continues as described previously for web applications.
-
-Classloader search order for JSPs and Service Builder classes is similar to that
+Classloading for JSPs and Service Builder classes is similar to that
 of web applications and OSGi bundle classes. 
 
-You now know @product@'s classloading hierarchy and understand it in context web
-application and OSGi bundle classes and resources. 
+You now know @product@'s classloading hierarchy, understand it in context of web
+applications, and have references to information on other classloading perspectives. 
