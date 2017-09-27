@@ -1,4 +1,4 @@
-# Bundle Classloading Flow
+# Bundle Classloading Flow [](id=bundle-classloading-flow)
 
 The OSGi container searches several places for imported classes. It's important
 to know where it looks and in what order. @product@'s classloading flow for OSGi
