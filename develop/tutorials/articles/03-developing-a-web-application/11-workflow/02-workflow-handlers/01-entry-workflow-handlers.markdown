@@ -1,64 +1,66 @@
 ## Creating a Workflow Handler for Guestbook Entries 
 
-Create a new package in your `docroot/WEB-INF/src` folder and call it
-`com.liferay.docs.guestbook.workflow`. Create a new class in the package
-called `EntryWorkflowHandler`. Populate it with the following code:
+The entry's workflow handler is almost identical to the guestbook's, so let's
+get right to it. Create a new class in the `com.liferay.docs.guestbook.workflow`
+package of the `guestbook-service` module. Name it `EntryWorkflowHandler` and
+extend `BaseWorkflowHandler`. Decorate it with a Component annotation and
+implement the same three methods as those you implemented for guestbooks. Paste
+this in as the class body:
 
-    public class EntryWorkflowHandler extends BaseWorkflowHandler {
+    @Component(immediate = true, service = WorkflowHandler.class)
+    public class EntryWorkflowHandler extends BaseWorkflowHandler<Entry> {
 
         @Override
         public String getClassName() {
-            
-            return CLASS_NAME;
+
+            return Entry.class.getName();
+
         }
 
         @Override
         public String getType(Locale locale) {
-            return ResourceActionsUtil.getModelResource(locale, getClassName());
+
+            return _resourceActions.getModelResource(locale, getClassName());
+
         }
 
         @Override
-        public Object updateStatus(int status,
-                Map<String, Serializable> workflowContext) throws PortalException,
-                SystemException {
+        public Entry updateStatus(
+            int status, Map<String, Serializable> workflowContext)
+            throws PortalException {
 
-                long userId = GetterUtil.getLong(
-                    (String)workflowContext.get(WorkflowConstants.CONTEXT_USER_ID));
-                long entryId = GetterUtil.getLong(
-                    (String)workflowContext.get(
-                        WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
+            long userId = GetterUtil.getLong(
+                (String) workflowContext.get(WorkflowConstants.CONTEXT_USER_ID));
+            long resourcePrimKey = GetterUtil.getLong(
+                (String) workflowContext.get(
+                    WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
 
-                ServiceContext serviceContext = (ServiceContext)workflowContext.get(
-                    "serviceContext");
+            ServiceContext serviceContext =
+                (ServiceContext) workflowContext.get("serviceContext");
 
-                return EntryLocalServiceUtil.updateStatus(
-                    userId, entryId, status, serviceContext);
-
+            return _entryLocalService.updateStatus(
+                userId, resourcePrimKey, status, serviceContext);
         }
 
-        public static final String CLASS_NAME = Entry.class.getName();
+        @Reference(unbind = "-")
+        protected void setEntryLocalService(EntryLocalService entryLocalService) {
 
+            _entryLocalService = entryLocalService;
+        }
+
+        @Reference(unbind = "-")
+        protected void setResourceActions(ResourceActions resourceActions) {
+
+            _resourceActions = resourceActions;
+        }
+
+        private EntryLocalService _entryLocalService;
+        private ResourceActions _resourceActions;
     }
 
-Organize imports:
+There is nothing unique about this code as compared with the guestbook's workflow
+handler. See the last article for the implementation details.
 
-    import java.io.Serializable;
-    import java.util.Locale;
-    import java.util.Map;
+Organize imports with *CTRL+SHIFT+O* and save the file.
 
-    import com.liferay.docs.guestbook.model.Entry;
-    import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
-    import com.liferay.portal.kernel.exception.PortalException;
-    import com.liferay.portal.kernel.exception.SystemException;
-    import com.liferay.portal.kernel.language.LanguageUtil;
-    import com.liferay.portal.kernel.util.GetterUtil;
-    import com.liferay.portal.kernel.workflow.BaseWorkflowHandler;
-    import com.liferay.portal.kernel.workflow.WorkflowConstants;
-    import com.liferay.portal.service.ServiceContext;
-
-Your workflow handler class extends the abstract class `BaseWorkflowHandler`,
-which implements the `WorkflowHandler` interface. The methods included in the
-workflow handler are methods with no implementation in `BaseWorkflowHandler`.
-The most important thing to note is that this class calls `updateStatus` from
-`EntryLocalServiceUtil`. You'll add that method later.
-
+Next update the Guestbook Application's UI to handle workflow status. 
