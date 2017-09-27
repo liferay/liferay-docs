@@ -6,43 +6,43 @@ and modify them to work with @product@'s [Liferay AMD Loader](https://github.com
 The liferay-npm-bundler automates this process for you, creating a bundle 
 similar to the one below:
 
-    - `my-bundle/`
-        - `META-INF/`
-            - `resources/`
-                - `package.json`
-                    name: my-bundle-package
-                    version: 1.0.0
-                    main: lib/index
-                    dependencies:
-                        isarray: 2.0.0
-                        isobject: 2.1.0
-                    ...
-                - `lib/`
-                    -`index.js`
-                    ...
+- `my-bundle/`
+    - `META-INF/`
+        - `resources/`
+            - `package.json`
+                name: my-bundle-package
+                version: 1.0.0
+                main: lib/index
+                dependencies:
+                    isarray: 2.0.0
+                    isobject: 2.1.0
                 ...
-                - `node_modules/`
-                    - `isobject@2.1.0/`
-                        - `package.json`
-                            name: isobject
-                            version: 2.1.0
-                            main: lib/index
-                            dependencies:
-                                isarray: 1.0.0
-                            ...
+            - `lib/`
+                -`index.js`
+                ...
+            ...
+            - `node_modules/`
+                - `isobject@2.1.0/`
+                    - `package.json`
+                        name: isobject
+                        version: 2.1.0
+                        main: lib/index
+                        dependencies:
+                            isarray: 1.0.0
                         ...
-                    - `isarray@1.0.0/`
-                        - `package.json`
-                            name: isarray
-                            version: 1.0.0
-                            ...
+                    ...
+                - `isarray@1.0.0/`
+                    - `package.json`
+                        name: isarray
+                        version: 1.0.0
                         ...
-                    - `isarray@2.0.0/`
-                        - `package.json`
-                            name: isarray
-                            version: 2.0.0
-                            ...
+                    ...
+                - `isarray@2.0.0/`
+                    - `package.json`
+                        name: isarray
+                        version: 2.0.0
                         ...
+                    ...
 
 The packages inside `node_modules` have the same format followed by the npm tool, 
 and can be copied (after a little processing) from a standard `node_modules` 
