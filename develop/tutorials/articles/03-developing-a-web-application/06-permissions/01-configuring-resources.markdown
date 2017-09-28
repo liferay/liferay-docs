@@ -84,6 +84,7 @@ Next, create the permissions file:
                 <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookPortlet</portlet-name>
                 <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
             </portlet-ref>
+            <root>true</root>
             <permissions>
                 <supports>
                     <action-key>ADD_GUESTBOOK</action-key>
