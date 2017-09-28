@@ -1,12 +1,12 @@
 # Template Context Contributor [](id=template-context-contributor)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Template Context Contributor sample injects a new variable into @product@'s
 theme context. When deploying this sample with no customizations, you can use
 the `${sample_text}` variable from any theme.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 Many developers prefer using templating frameworks like FreeMarker and Velocity,
 but don't have access to the common objects offered to those working with JSPs.
@@ -17,7 +17,7 @@ This sample leverages the
 [TemplateContextContributor](@product-ref@/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 You can easily modify this sample by customizing its
 `BladeTemplateContextContributor.java` Java class. For example, the default

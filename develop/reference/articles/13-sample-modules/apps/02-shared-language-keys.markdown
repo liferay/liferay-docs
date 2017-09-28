@@ -1,6 +1,6 @@
 # Shared Language Keys [](id=shared-language-keys)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Shared Language Keys sample provides a JSP portlet that displays language
 keys.
@@ -9,7 +9,7 @@ keys.
 
 The language keys displayed in the portlet come from two different modules.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample is broken into two modules:
 
@@ -22,7 +22,7 @@ language keys. Its sole purpose is to share language keys with the JSP portlet
 provided in `language-web`. This sample conveys Liferay's recommended approach
 to sharing language keys through OSGi services.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 You must deploy both `language-web` and `language` modules to simulate this
 sample's targeted demonstration.

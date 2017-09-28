@@ -1,6 +1,6 @@
 # Document Action [](id=document-action)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Document Action sample shows how to add a context menu option to an entry in
 the Documents and Media portlet. When deploying this sample with no
@@ -21,13 +21,13 @@ selecting *Show Actions* from the portlet's Configuration menu.
 
 ![Figure 4: The Documents And Media portlet provides the option from its Document Detail too.](../../../images/documents-and-media-portlet-detail.png)
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
 [PortletConfigurationIcon](@product-ref@/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 There are four Java classes used in this sample:
 

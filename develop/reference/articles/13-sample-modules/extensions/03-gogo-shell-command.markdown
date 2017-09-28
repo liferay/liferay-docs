@@ -1,6 +1,6 @@
 # Gogo Shell Command [](id=gogo-shell-command)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Gogo Shell Command sample demonstrates adding a custom command to
 @product@'s Gogo shell environment. All @product@ installations have a Gogo
@@ -26,12 +26,12 @@ To test this sample, follow the instructions below:
 
     ![Figure 2: The outcome of executing the `usercount` command.](../../../images/gogo-shell-2.png)
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample demonstrates creating a new Gogo shell command by leveraging
 `osgi.command.*` properties in a Java class.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 To add this new Gogo shell command, you must implement the logic in a Java
 class with the following two properties:

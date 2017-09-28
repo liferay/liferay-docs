@@ -1,6 +1,6 @@
 # Simple Theme [](id=theme)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Simple Theme sample provides the base files for a theme, using the
 [Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin).
@@ -13,11 +13,11 @@ For more information on themes, visit the
 [Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
 tutorial.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample demonstrates a way to create a simple theme in @product@.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 To modify this sample, add the `images`, `js`, or `templates` folder, along with
 your modified files, to the `src/main/webapp` folder. The sample already

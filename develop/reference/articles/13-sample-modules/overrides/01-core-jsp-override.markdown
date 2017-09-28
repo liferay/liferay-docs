@@ -1,6 +1,6 @@
 # Core JSP Override [](id=core-jsp-hook)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Core JSP Override sample lets you override core/kernel JSPs by adding them
 to the module's `META-INF/jsps` folder. This module overrides the @product@'s
@@ -15,7 +15,7 @@ visit the
 [Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
 tutorial.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
 [CustomJspBag](@portal-ref@/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
@@ -26,7 +26,7 @@ there is no other way to customize functionality in your Liferay installation.
 It's up to the maintainer of this JSP override to properly maintain and adapt to
 changes in the underlying JSP implementation.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 You can easily modify this sample by customizing its
 `com.liferay.blade.samples.corejsphook.BladeCustomJspBag` Java class or adding

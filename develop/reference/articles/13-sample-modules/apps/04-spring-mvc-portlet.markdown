@@ -1,6 +1,6 @@
 # Spring MVC Portlet [](id=spring-mvc-portlet)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Spring MVC portlet provides a way to add various different fields into the
 database and display them in a table. This project is a Spring MVC based portlet
@@ -19,12 +19,12 @@ must build and deploy the `service-builder/foo-api` and
 information on using Spring MVC portlets in @product@, visit the
 [Spring MVC](/develop/tutorials/-/knowledge_base/7-0/spring-mvc) tutorial.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample demonstrates a @product@ portlet built using the
 [Spring Web MVC framework](https://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html).
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 You can easily modify this sample by customizing its
 `SpringMVCPortletViewController` Java class or any of its JSPs stored in the

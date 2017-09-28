@@ -1,6 +1,6 @@
 # Greedy Policy Option Application [](id=greedy-policy-option-portlet)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Greedy Policy Option sample provides two portlets that can be added to a
 @product@ page: Greedy Portlet and Reluctant Portlet.
@@ -11,7 +11,7 @@ These two portlets do not provide anything useful out-of-the-box. They are,
 however, very effective at demonstrating the ability to reference services using
 greedy and reluctant policy options. You'll learn how to do this later.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample provides two modules referencing services using greedy and reluctant
 policy options.
@@ -47,7 +47,7 @@ Here are each module's file structures:
 - `bnd.bnd`
 - `src/main/java/com/liferay/blade/reluctant/vs/greedy/svc/HigherRankedService.java` &rarr; Service implementation with service ranking value of `100`
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 Here are the things you can learn using the sample modules:
 

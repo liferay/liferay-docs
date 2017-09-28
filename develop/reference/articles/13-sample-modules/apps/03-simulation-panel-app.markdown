@@ -1,6 +1,6 @@
 # Simulation Panel App [](id=simulation-panel-app)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Simulation Panel App provides new functionality in @product's Simulation
 Menu. When deploying this sample with no customizations, the *Simulation Sample*
@@ -8,13 +8,13 @@ feature is provided in the Simulation Menu with four options.
 
 ![Figure 1: A simulation panel app adds new functionality to the Simulation Menu.](../../../images/simulation-panel-app.png)
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
 [PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 This sample leverages the `PanelApp` interface as an OSGi service via the
 `@Component` annotation:

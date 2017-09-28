@@ -1,6 +1,6 @@
 # Theme Contributor [](id=theme-contributor)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Theme Contributor sample contributes updates to the UI of the theme
 body, Control Menu, Product Menu, and Simulation Panel. When deploying this
@@ -14,13 +14,13 @@ to the browser's console window that states *Hello Blade Theme Contributor!*.
 
 ![Figure 2: The message is printed to your browser's console window using JavaScript.](../../../images/theme-contributor-console-output.png)
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample demonstrates a way to contribute updates to a @product@ theme. Theme
 Contributors let you package UI resources (e.g., CSS and JS) independent of a
 theme to include on a @product@ page.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 To modify this sample, replace the corresponding JS or SCSS file with the
 JavaScript or styles that you want, or add your own JS or SCSS files. For

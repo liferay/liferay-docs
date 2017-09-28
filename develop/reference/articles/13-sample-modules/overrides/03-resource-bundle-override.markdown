@@ -1,6 +1,6 @@
 # Resource Bundle Override [](id=resource-bundle-override)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 This example overrides the default `add-blog-entry` language key (English and
 Spanish) for @product@'s default Blogs application. After deploying this sample
@@ -15,13 +15,13 @@ For reference, the Blogs application's language keys are stored in the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repo's
 `modules/apps/collaboration/blogs/blogs-web/src/main/resources/content` folder.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
 [ResourceBundleLoader](@product-ref@/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 This sample conveys the recommended approach to override an application's
 language keys file for any module that is deployed to @product@'s OSGi runtime
