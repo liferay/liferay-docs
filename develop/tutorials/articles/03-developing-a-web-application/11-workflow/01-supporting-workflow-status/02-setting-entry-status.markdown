@@ -1,6 +1,6 @@
 # Setting the Entry Workflow Status
 
-Set the status fields, introduce entries tot eh workflow framework, and add the
+Set the status fields, introduce entries to the workflow framework, and add the
 `updateStatus` method to the `EntryLocalServiceImpl`. It works the same as it
 did for guestbooks.
 
@@ -56,6 +56,7 @@ following method to the bottom of `EntryLocalServiceImpl`:
 
 Organize imports (*[CTRL]+[SHIFT]+O*), save your work, and run Service Builder.
 
-Now both entities support the status of the entity. However, the new
-`updateStatus` method will never be called, because you're not yet handling the
-entity after it returns from the workflow framework. You'll do that next.
+Now both entities support the status of the entity. There's one more update to
+make in the local service implementation classes: adding getter methods that
+take the status as a parameter. Later you'll use these methods in the view layer
+so you can display only approved guestbooks and entries. 
