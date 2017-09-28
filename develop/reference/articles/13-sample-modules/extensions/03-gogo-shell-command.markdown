@@ -2,18 +2,18 @@
 
 ## What does this sample do when it's deployed?
 
-The Gogo Shell Command sample demonstrates adding a custom command to Liferay
-Portal's Gogo shell environment. All Liferay Portal installations have a Gogo
-shell environment, which lets system administrators interact with Liferay
-Portal's module framework on a local server machine.
+The Gogo Shell Command sample demonstrates adding a custom command to
+@product@'s Gogo shell environment. All @product@ installations have a Gogo
+shell environment, which lets system administrators interact with @product@'s
+module framework on a local server machine.
 
 This example adds a new custom Gogo shell command called `usercount` under the
-`blade` scope. It prints out the number of registered users on your Liferay
-Portal installation.
+`blade` scope. It prints out the number of registered users on your @product@
+installation.
 
 To test this sample, follow the instructions below:
 
-1.  Start a Liferay Portal installation.
+1.  Start a @product@ installation.
 2.  Using a command line tool, connect to your local Gogo shell. For example,
     you can do this by executing `telnet localhost 11311`.
 3.  Run `help` to view all the available commands. The sample Gogo shell command
