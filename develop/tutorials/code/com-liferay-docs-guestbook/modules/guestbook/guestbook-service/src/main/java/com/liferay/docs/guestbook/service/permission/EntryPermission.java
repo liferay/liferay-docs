@@ -32,10 +32,15 @@ public class EntryPermission implements BaseModelPermissionChecker {
 
 		Entry entry = _entryLocalService.getEntry(entryId);
 
-		return permissionChecker.hasPermission(
-			entry.getGroupId(), Entry.class.getName(), entry.getEntryId(),
-			actionId);
+		return contains (permissionChecker, entry, actionId);
 
+	}
+
+	public static boolean contains(
+		PermissionChecker permissionChecker, Entry entry, String actionId) throws
+		PortalException, SystemException {
+
+		return permissionChecker.hasPermission(entry.getGroupId(), Entry.class.getName(), entry.getEntryId(), actionId);
 	}
 
 	@Reference(unbind = "-")

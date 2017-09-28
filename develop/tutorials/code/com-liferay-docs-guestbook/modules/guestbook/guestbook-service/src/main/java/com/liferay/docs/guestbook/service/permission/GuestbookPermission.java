@@ -49,9 +49,14 @@ public class GuestbookPermission implements BaseModelPermissionChecker {
 
 		Guestbook guestbook
 			= _guestbookLocalService.getGuestbook(guestbookId);
+		return contains(permissionChecker, guestbook, actionId);
+	}
+
+	public static boolean contains(PermissionChecker permissionChecker, Guestbook guestbook, String actionId) throws PortalException, SystemException {
+
 		return permissionChecker.hasPermission(
-			guestbook.getGroupId(), Guestbook.class.getName(),
-			guestbook.getGuestbookId(), actionId);
+		guestbook.getGroupId(), Guestbook.class.getName(), guestbook.getGuestbookId(), actionId);
+
 	}
 
 	@Reference(unbind = "-")
