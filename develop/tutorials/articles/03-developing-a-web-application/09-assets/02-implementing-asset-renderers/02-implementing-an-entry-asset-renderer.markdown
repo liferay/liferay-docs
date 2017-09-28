@@ -341,7 +341,7 @@ class. Replace its contents with the following code:
 
     }
 
-## Exporting the Asset Package
+## Exporting the Asset Package [](id=exporting-the-asset-package)
 
 The container needs to make the asset renderers and their factories available to
 @product@ when it needs them. To do this, you must export the package. 
