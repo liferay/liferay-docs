@@ -4320,11 +4320,11 @@ This change was made as a part of the ongoing strategy to deprecate unused tags.
 
 ---------------------------------------
 
-### Build Auto Upgrade
+### Build Auto Upgrade [](id=build-auto-upgrade)
 - **Date:** 2017-Aug-17
 - **JIRA Ticket:** LPS-73967
 
-#### What changed?
+#### What changed? [](id=what-changed-108)
 
 The `build.auto.upgrade` property in `service.properties` for Liferay Portal 6.x
 Service Builder portlets applies Liferay Service schema changes on rebuilding
@@ -4341,21 +4341,21 @@ module schema changes  for redeployed modules whose service build numbers have
 incremented. The `build.number` property in the module's `service.properties`
 file indicates the service build number.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-108)
 
 This feature is available for developers to use in development only.
 
 **WARNING**: DO NOT USE the Build Auto Upgrade feature in production. Liferay
 DOES NOT support Build Auto Upgrade in production.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-108)
 
 To use this feature in development, set  global property
 `schema.module.build.auto.upgrade` in
 `[Liferay_Home]/portal-developer.properties` to `true`, increment your module's
 `build.number` in the `service.properties` file, and deploy the module.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-108)
 
 This change was made so that 7.0 developers could test database schema changes
 on the fly, without having to write upgrade processes.
