@@ -1,8 +1,9 @@
 # The Structure of OSGi Bundles Containing npm Packages [](id=the-structure-of-osgi-bundles-containing-npm-packages)
 
 To deploy JavaScript modules to @product@ you must create an OSGi bundle with 
-all the npm dependencies extracted from the project's `node_modules` folder, 
-and modify them to work with @product@'s [Liferay AMD Loader](https://github.com/liferay/liferay-amd-loader). 
+all the npm dependencies extracted from the project's `node_modules` folder 
+and modify them to work with the 
+[Liferay AMD Loader](https://github.com/liferay/liferay-amd-loader). 
 The liferay-npm-bundler automates this process for you, creating a bundle 
 similar to the one below:
 
@@ -44,13 +45,13 @@ similar to the one below:
                         ...
                     ...
 
-The packages inside `node_modules` have the same format followed by the npm tool, 
+The packages inside `node_modules` are the same format as the npm tool
 and can be copied (after a little processing) from a standard `node_modules` 
 folder. The `node_modules` folder can hold any number of npm packages (even 
 different versions of the same package), or no npm packages at all.
 
 Now that you know the structure for OSGi bundles containing npm packages, you 
-can learn how the liferay-npm-bundler handles inline JavaScript packages next. 
+can learn how the liferay-npm-bundler handles inline JavaScript packages. 
 
 ## Inline JavaScript packages
 
@@ -66,7 +67,7 @@ The inline package is optional, but only one inline package is allowed per OSGi
 bundle. The inline package usually provides the JavaScript code for a portlet, 
 when the OSGi bundle contains one. Note that the architecture does not 
 differentiate between inline and npm packages once they are published. The 
-inline package is just used for organizational purposes. 
+inline package is only used for organizational purposes. 
 
 Now you know the liferay-npm-bundler creates OSGi bundles for npm packages!
 

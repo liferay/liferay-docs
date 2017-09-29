@@ -1,9 +1,10 @@
 # Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD [](id=understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
 
-Liferay AMD Loader is based on the [AMD specification](https://github.com/amdjs/amdjs-api/wiki/AMD). 
+Liferay AMD Loader is based on the 
+[AMD specification](https://github.com/amdjs/amdjs-api/wiki/AMD). 
 All modules inside an npm OSGi bundle must be in AMD format. This is done for 
 [CommonJS](http://www.commonjs.org/) modules by wrapping the module code 
-inside a `define` call. The liferay-npm-bundler helps automate this process, by 
+inside a `define` call. The liferay-npm-bundler helps automate this process by 
 wrapping the module for you. This tutorial references the OSGi structure below 
 as an example. You can learn more about this structure in 
 [The Structure of OSGi Bundles Containing NPM Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages) 
@@ -58,7 +59,7 @@ following code:
         return val != null && typeof val === 'object' && isArray(val) === false;
     };
 
-The updated module code, configured for AMD format, is shown below:
+The updated module code configured for AMD format is shown below:
 
     define(
         'isobject@2.1.0/index', 
@@ -78,19 +79,18 @@ The updated module code, configured for AMD format, is shown below:
 +$$$
 
 **Note:** The module's name must be based on its package, version, and file path 
-(for example `isobject@2.1.0/index`), otherwise Liferay AMD Loader can not find 
+(for example `isobject@2.1.0/index`), otherwise Liferay AMD Loader can't find 
 it.
 
 $$$
 
 Note the module's dependencies: `['module', 'require', 'isarray']`.
 
-`module` and `require` are always required to get a reference to the 
-`module.exports` object and the local `require` function, as defined in the AMD 
-specification.
+`module` and `require` must be used to get a reference to the `module.exports`
+object and the local `require` function, as defined in the AMD specification.
 
 The subsequent dependencies state the modules on which this module depends. Note 
-that `isarray`, in the example, is not a package, but rather an alias of the 
+that `isarray` in the example is not a package, but rather an alias of the 
 `isarray` package's main module (thus, it is equivalent to `isarray/index`).
 
 Also note that @product@ has enough information in the `package.json` files 

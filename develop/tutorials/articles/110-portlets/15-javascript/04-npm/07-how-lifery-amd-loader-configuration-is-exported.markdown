@@ -5,9 +5,9 @@ the hood. You can learn more about Liferay AMD Loader in the
 [Liferay AMD Module Loader](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader) 
 tutorial.
 
-With [deduplication](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-publishes-npm-packages#package-deduplication) 
-in place, the JavaScript modules are made available to Liferay AMD Loader, by 
-means of the configuration returned by the `/o/js_loaded_modules` URL.
+With [de-duplication](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-publishes-npm-packages#package-deduplication) 
+in place, JavaScript modules are made available to Liferay AMD Loader through
+the configuration returned by the `/o/js_loaded_modules` URL.
 
 The OSGi bundle shown below is used for reference in this tutorial:
 
@@ -96,16 +96,13 @@ consume:
       ...
     }
 
-Note the following:
+Note:
 
-- The paths to the JavaScript module files are described inside the 
-`Liferay.PATHS` property.
+- The `Liferay.PATHS` property describes paths to the JavaScript module files.
 
-- The dependency names and version of each module are described inside the 
-`Liferay.MODULES` property.
+- The `Liferay.MODULES` property describes the dependency names and versions of each module.
 
-- The aliases of the package's main modules are described inside the 
-`Liferay.MAPS` property.
+- The `Liferay.MAPS` property describes the aliases of the package's main modules.
 
 Now you know how @product@ exposes configuration for Liferay AMD Loader!
 

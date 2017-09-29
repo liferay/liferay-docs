@@ -1,7 +1,7 @@
 # How @product@ Publishes npm Packages [](id=how-liferay-portal-publishes-npm-packages)
 
-Once you have deployed an OSGi bundle with the specified structure, as explained 
-in [The Structure of OSGi Bundles Containing NPM Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages)  
+When you deploy an OSGi bundle with the specified structure, as explained 
+in [The Structure of OSGi Bundles Containing NPM Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages) 
 tutorial, its modules are made available for consumption through canonical URLs.
 The example OSGi bundle used in the previously mentioned tutorial is shown below:
 
@@ -60,22 +60,22 @@ available (one for each module):
 
 $$$
 
-You can learn about package deduplication next.
+You can learn about package de-duplication next.
 
-## Package Deduplication [](id=package-deduplication)
+## Package De-duplication [](id=package-deduplication)
 
-Given that two or more OSGi modules may export multiple copies of the same 
-package and version, @product@ needs to deduplicate such collisions. To 
-accomplish deduplication a new concept named *resolved module* was created.
+Since two or more OSGi modules may export multiple copies of the same 
+package and version, @product@ must de-duplicate such collisions. To 
+accomplish de-duplication, a new concept called *resolved module* was created.
 
-A resolved module is the reference package exported to @product@'s frontend, 
-when multiple copies of the same package and version exists. It is randomly 
+A resolved module is the reference package exported to @product@'s front-end, 
+when multiple copies of the same package and version exist. It's randomly 
 referenced from one of the several bundles exporting the same copies of the 
 package.
 
 Using the example from the previous section, for each group of canonical URLs 
 referring to the same module inside different OSGi bundles, there's another 
-canonical URL for the resolved module. In this example, you would have:
+canonical URL for the resolved module. In this example, you have:
 
 - [http://localhost/o/js/resolved-module/my-bundle-package@1.0.0/lib/index.js](http://localhost/o/js/resolved-module/my-bundle-package@1.0.0/lib/index.js)
 

@@ -1,21 +1,18 @@
 # Configuring liferay-npm-bundler [](id=configuring-liferay-npm-bundler)
 
-The liferay-npm-bundler is configured using a `.npmbundlerrc` file in the 
-portlet project's root folder. You can manually configure the `.npmbundlerrc` 
-file, or you can use a configuration preset. You can use the configuration 
-presets linked to in this section as a guide to create your own custom 
-configurations.
+A `.npmbundlerrc` file in the portlet project's root folder is the configuration
+file for the liferay-npm-bundler. You can create the configuration manually or
+use a configuration preset. Use the configuration presets described here as a
+guide to create your own custom configurations.
 
-This tutorial explains the `.npmbundlerrc` file's structure, and shows how to 
+This tutorial explains the `.npmbundlerrc` file's structure and shows how to 
 use the available presets to configure the liferay-npm-bundler.
-
-You can start by learning the `.npmbundlerrc` file's structure next.
 
 ## Understanding the .npmbundlerrc File's Structure [](id=understanding-the-npmbundlerrc-file-structure)
 
-The `.npmbundlerrc` file is broken down into three possible phase definitions: 
-*pre-process*, *post-process*, and *babel*. These phase definitions are 
-explained in more detail below:
+The `.npmbundlerrc` file has three possible phase definitions: *pre-process*,
+*post-process*, and *babel*. These phase definitions are explained in more
+detail below:
 
 **Pre-Process Phase Definition:** Defined with the `plugins` property. Specifies 
 plugins to run before the Babel phase is run.
@@ -25,10 +22,9 @@ the `.babelrc` file to use when running Babel through the package's `.js` files.
 
 +$$$
 
-**Note:** During this phase, Babel is used to transform package files 
-(for example, to convert them to AMD format, if necessary) and not to transpile 
-them. Though, in theory, you could transpile them too, if you wanted, by 
-configuring the proper plugins.
+**Note:** During this phase, Babel transforms package files (for example, to
+convert them to AMD format, if necessary) but doesn't transpile them. In
+theory, you could also transpile them by configuring the proper plugins.
 
 $$$
 
@@ -36,7 +32,7 @@ $$$
 alternative to using the *pre-process* phase, this specifies plugins to run 
 after the Babel phase has completed. 
 
-An example `.npmbundlerrc` file configuration is shown below:
+Here's an example `.npmbundlerrc` configuration:
 
     {
       "exclude":{
@@ -75,48 +71,48 @@ An example `.npmbundlerrc` file configuration is shown below:
 +$$$
 
 **Note:** Not all definition formats (`*`, `some-package-name`, and 
-`some-package-name@version`) shown in the file above, are required. In most 
-cases, the wildcard definition (`*`) is enough. The non-wildcard formats 
-(`some-package-name` and `some-package-name@version`) are for rare exceptions 
-for packages that require a more specific configuration than the wildcard 
-definition can provide.
+`some-package-name@version`) shown above are required. In most cases, the
+wildcard definition (`*`) is enough. The non-wildcard formats
+(`some-package-name` and `some-package-name@version`) are rare exceptions
+for packages that require a more specific configuration than the wildcard
+definition provides.
 
 $$$
 
-Below is an explanation of the `.npmbundlerrc` file's configuration:
+Below are the options possible in the `.npmbundlerrc` file:
 
 *exclude:* defines files to exclude from bundling from all or specific packages.
 
-*output:* by default the bundled packages are written to the standard Gradle 
-resources folder: `build/resources/main/META-INF/resources`. Set this value to 
+*output:* by default the bundler writes packages to the standard Gradle
+resources folder: `build/resources/main/META-INF/resources`. Set this value to
 override the default output folder.
 
-*process-serially:* Sets whether to process dependency packages in parallel, 
+*process-serially:* Process packages in parallel, 
 leveraging Node.js asynchronous model, or one by one. The default value is 
-`false`, so that everything gets processed in parallel, but you can disable this 
-in case you get EMFILE errors due to opening too many files at the same time.
+`false`, (parallel), but if you get EMFILE errors, you can disable this.
 
-*list of plugins:* a comma separated list of strings defining the 
-liferay-npm-bundler plugins to call.
+*list of plugins:* a comma separated call list of liferay-npm-bundler
+plugins to call.
 
-*standard .babelrc file:* a `.babelrc` file, as defined in [Babel's documentation](https://babeljs.io/docs/usage/babelrc/), that gets passed to 
-Babel when called by liferay-npm-bundler.
+*standard .babelrc file:* a `.babelrc` file as defined in 
+[Babel's documentation](https://babeljs.io/docs/usage/babelrc/) that
+liferay-npm-bundler passes to Babel when called.
 
 *package name:* The npm package's name. The configuration under its scope is 
 only applied to packages with this name and *any* version.
 
-*version:* The npm package's version. The configuration under its 
-`some-package name@version` scope is only applied to packages with the specified 
-*package name* and *version*.
+*version:* The npm package's version. The configuration under its `some-package
+name@version` scope is only applied to packages with the specified *package
+name* and *version*.
 
 Now that you know the structure of the `.npmbundlerrc` file, you can learn 
-about the available configuration presets next.
+about the available configuration presets.
 
 ## liferay-npm-bundler Configuration Presets [](id=liferay-npm-bundler-configuration-presets)
 
 The liferay-npm-bundler comes with default configuration presets that bundle 
 several plugin types. You can use these presets to quickly configure your 
-`.npmbundlerrc` file. The following configuration presets are available: 
+`.npmbundlerrc` file: 
 
 -  [Liferay-npm-bundler-preset-amd](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-amd)
 
@@ -130,7 +126,7 @@ several plugin types. You can use these presets to quickly configure your
 
 -  [Liferay-npm-bundler-preset-vue](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-vue)
 
-Below is an example `.npmbundlerrc` file, that uses the *standard* 
+Below is an example `.npmbundlerrc` file that uses the *standard* 
 configuration preset:
 
     {
@@ -144,8 +140,9 @@ name in your `.npmbundlerrc` file.
 
 $$$
 
-If you run liferay-npm-bundler with this file, it applies the [config file](https://github.com/liferay/liferay-npm-build-tools/blob/master/packages/liferay-npm-bundler-preset-standard/config.json) 
-found in `liferay-npm-bundler-preset-standard`:
+If you run liferay-npm-bundler with this file, it applies the 
+[config file](https://github.com/liferay/liferay-npm-build-tools/blob/master/packages/liferay-npm-bundler-preset-standard/config.json) 
+from `liferay-npm-bundler-preset-standard`:
 
     {
       "*": {
@@ -158,9 +155,11 @@ found in `liferay-npm-bundler-preset-standard`:
       }
     }
 
-The [`replace-browser-modules` plugin ](https://github.com/liferay/liferay-npm-build-tools/blob/master/packages/liferay-npm-bundler-plugin-replace-browser-modules/README.md) runs during the pre-process phase, replacing the 
-server side files, for each of the project's dependencies that has a browser 
-section in its `package.json`, with their browser version counterparts.
+The 
+[`replace-browser-modules` plugin ](https://github.com/liferay/liferay-npm-build-tools/blob/master/packages/liferay-npm-bundler-plugin-replace-browser-modules/README.md) 
+runs during the pre-process phase and replaces the server side files for each
+dependency that has a browser section in its `package.json` with its browser
+version counterpart.
 
 +$$$
 
@@ -171,7 +170,8 @@ configuration preset example above, you can define your own `.babelrc` value in
 
 $$$
 
-The [`liferay-standard` preset] (https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 
+The 
+[`liferay-standard` preset] (https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 
 applies the following plugins:
 
 -  [babel-plugin-normalize-requires](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-normalize-requires)
@@ -184,11 +184,11 @@ applies the following plugins:
 
 -  [babel-plugin-namespace-amd-define](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-namespace-amd-define)
 
-Babel uses the plugins above to do the following:
+Babel uses the plugins above to perform these tasks: 
 
 - Remove trailing JavaScript strings from `require()` calls in the npm packages.
 
-- Replace occurrences of `process.env.NODE_ENV` with its literal value.
+- Replace occurrences of `process.env.NODE_ENV` with their literal values.
 
 - Wrap modules with an `AMD define()` call.
 
@@ -198,7 +198,7 @@ Babel uses the plugins above to do the following:
 - Prefix `define()` calls with `Liferay.Loader`.
 
 Now you know the available configuration presets for `.npmbundlerrc` and 
-how they work. Next you can learn how to configure your `.npmbundlerrc` file to 
+how they work. Next you can learn how to configure your `.npmbundlerrc` file to
 use a configuration preset.
 
 ## Using liferay-npm-bundler Configuration Presets [](id=using-liferay-npm-bundler-configuration-presets)
