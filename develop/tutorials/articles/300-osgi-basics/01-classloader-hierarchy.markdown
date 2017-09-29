@@ -1,7 +1,7 @@
 # Liferay Portal Classloader Hierarchy [](id=liferay-portal-classloader-hierarchy)
 
-All @product@ applications live in Liferay Portal's OSGi container.  Portal is a
-web application deployed on your application server. Portal's Module Framework 
+All @product@ applications live in its OSGi container. Portal is a web
+application deployed on your application server. Portal's Module Framework
 bundles (modules) live in the OSGi container and have class loaders. All the
 classloaders from Java's Bootstrap classloader to classloaders for bundle
 classes and JSPs are part of a hierarchy. 
@@ -25,8 +25,8 @@ Here are the classloader descriptions:
 -   **System**: Classes configured on the `CLASSPATH` and or passed in via the
     application server's Java classpath (`-cp` or `-classpath`) parameter. 
 
--   **Common**: Classes shared globally to web applications on the application
-    server.
+-   **Common**: Classes accessible globally to web applications on the
+    application server.
 
 -   **Web Application**: Classes in the application's `WEB-INF/classes` folder
     and `WEB-INF/lib/*.jar`. 
@@ -35,7 +35,7 @@ Here are the classloader descriptions:
     is used to provide controlled isolation for the module framework bundles. 
 
 -   **bundle**: Classes from a bundle's packages or from packages other
-    bundles export.  
+    bundles export. 
 
 -   **JSP**: A classloader that aggregates the following bundle and
     classloaders:
@@ -46,15 +46,17 @@ Here are the classloader descriptions:
 
 -   **Service Builder**: Service Builder classes
 
-The classloader used depends on context. Classloading rules vary between application servers. Classloading in web applications and OSGi bundles
-differs too. In all contexts, however, the Bootstrap classloader loads classes from `java.*` packages. 
+The classloader used depends on context. Classloading rules vary between
+application servers. Classloading in web applications and OSGi bundles differs
+too. In all contexts, however, the Bootstrap classloader loads classes from
+`java.*` packages. 
 
 Classloading from a web application perspective is up next. 
 
 ## Web Application Classloading Perspective [](id=web-application-classloading-perspective)
 
 Application servers dictate where and in what order web applications, such as
-Liferay Portal, search for classes and resources. Application servers such as
+@product@, search for classes and resources. Application servers such as
 [Apache Tomcat](https://tomcat.apache.org/tomcat-7.0-doc/class-loader-howto.html)
 enforce the following default search order:
 
