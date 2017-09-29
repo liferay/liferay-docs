@@ -53,7 +53,7 @@ different versions of the same package), or no npm packages at all.
 Now that you know the structure for OSGi bundles containing npm packages, you 
 can learn how the liferay-npm-bundler handles inline JavaScript packages. 
 
-## Inline JavaScript packages
+## Inline JavaScript packages [](id=inline-javascript-packages)
 
 The resulting OSGi bundle that the liferay-npm-bundler creates lets you deploy 
 one inline JavaScript package (named `my-bundle-package` in the example) with 

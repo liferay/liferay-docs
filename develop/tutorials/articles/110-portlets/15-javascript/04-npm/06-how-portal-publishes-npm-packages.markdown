@@ -94,7 +94,7 @@ $$$
 
 Now you know how @product@ publishes npm packages!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD](/develop/tutorials/-/knowledge_base/7-0/understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
 

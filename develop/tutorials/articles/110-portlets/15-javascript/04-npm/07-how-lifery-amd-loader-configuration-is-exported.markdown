@@ -106,7 +106,7 @@ Note:
 
 Now you know how @product@ exposes configuration for Liferay AMD Loader!
 
-# Related Topics
+# Related Topics [](id=related-topics)
 
 [How @product@ Publishes npm Packages](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-publishes-npm-packages)
 

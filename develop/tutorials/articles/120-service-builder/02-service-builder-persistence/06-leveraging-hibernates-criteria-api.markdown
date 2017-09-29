@@ -372,7 +372,7 @@ JSP by calling `EntryLocalService.findByEntryNameGuestbookName(...)`!
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet!
 
-## Actionable Dynamic Queries
+## Actionable Dynamic Queries [](id=actionable-dynamic-queries)
 
 Suppose you have over a million users on your portal, and you want to perform
 some kind of mass update to a large portion of them. One approach might be
