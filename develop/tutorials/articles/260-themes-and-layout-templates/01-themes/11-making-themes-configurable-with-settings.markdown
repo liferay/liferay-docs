@@ -16,13 +16,13 @@ Making configurable theme settings involves a multi-step process:
 - Use the settings variables in your theme templates
 <!-- Create a language key for the setting(s) (optional)-->
 
-Follow these steps to configure your theme settings:
+Follow these steps to create theme settings:
 
-1. Open your `liferay-look-and-feel.xml` located in your theme's `WEB-INF` 
-   folder. Settings placed here appear in the *Look and Feel* menu of 
-   @product@'s *Site Administration*. If your project doesn't have this file, 
-   create it in the `WEB-INF` folder and add the following XML content (make 
-   sure to replace the theme `id` and `name` with your theme's info):
+1. Open `liferay-look-and-feel.xml` from the theme's `WEB-INF` folder. Settings
+   placed here appear in the *Look and Feel* menu of @product@'s *Site
+   Administration*. If your project doesn't have this file, create it in the
+   `WEB-INF` folder and add the following XML content (make sure to replace the
+   theme `id` and `name` with your theme's):
 
         <?xml version="1.0"?>
         <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 7.0.0//EN" 
@@ -58,7 +58,7 @@ Follow these steps to configure your theme settings:
         options="true,false" type="select" value="false" />
 
     The following attributes are available for theme settings:
-    
+
     **configurable:** whether the setting is configurable or static. 
     **key:** the language key that identifies the theme setting. 
     **options:** sets the options for the select menu if the `type` is `select`. 
@@ -67,10 +67,11 @@ Follow these steps to configure your theme settings:
     **value:** sets the default value for the theme setting.
     
     You can find more information about setting attributes and all other 
-    configurations for the `liferay-look-and-feel.xml` in its [DTD docs](@platform-ref@/7.0-latest/definitions/liferay-look-and-feel_7_0_0.dtd.html#settings).
-    
-4. Open `init_custom.ftl` and assign the settings to variables using the 
-   patterns below:
+    configurations for the `liferay-look-and-feel.xml` in its 
+    [DTD docs](@platform-ref@/7.0-latest/definitions/liferay-look-and-feel_7_0_0.dtd.html#settings).
+ 
+4.  Open `init_custom.ftl` and assign the settings to variables using the 
+    patterns below.
 
     Use the following pattern for settings that return a `Boolean` (for example 
     a select box with the options `true` and `false` or a toggle-switch checkbox 
@@ -84,25 +85,24 @@ Follow these steps to configure your theme settings:
     
         <#assign footer_text = 
         getterUtil.getString(theme_settings["theme-setting-key"])/>
-        
-5. Use the theme setting variable in the theme template you need to modify. For 
-   example, you can use the variable to check a condition, print a value, or 
-   even display a theme template. Examples of each case are shown below:
-   
-   The example configuration below is used in `portal_normal.ftl` to show the 
-   navigation breadcrumbs element if the `show_breadcrumbs` theme setting is 
-   `true`:
+ 
+5.  Use the theme setting variable in the theme template. For example, you can
+    use the variable to check a condition, print a value, or even display a
+    theme template. Examples of each case are shown below.
+ 
+    This configuration is used in `portal_normal.ftl` to show the navigation
+    breadcrumbs element if the `show_breadcrumbs` theme setting is `true`:
 
    `liferay-look-and-feel.xml`:
    
         <setting configurable="true" key="show-breadcrumbs" type="checkbox" 
         value="false" />
-   
+ 
    `init_custom.ftl`:
    
        <#assign show_breadcrumbs =
        getterUtil.getBoolean(theme_settings["show-breadcrumbs"])>
-   
+ 
    `portal_normal.ftl`:
    
         <#if show_breadcrumbs>
@@ -128,7 +128,7 @@ Follow these steps to configure your theme settings:
     
         <p>${custom_text}</p>
 
-    The example below renders the brief header template or detailed header 
+    This example renders the brief header template or detailed header 
     template based on the theme setting:
 
     `liferay-look-and-feel.xml`:
@@ -140,7 +140,7 @@ Follow these steps to configure your theme settings:
 
         <#assign header_type = 
         getterUtil.getString(theme_settings["header-type"])/>
-        
+
     `header_brief.ftl`: brief header template
     
     `header_detailed.ftl`: detailed header template
@@ -153,14 +153,13 @@ Follow these steps to configure your theme settings:
           <#include "${full_templates_path}/header_detailed.ftl" />
         </#if>
 
-6. Make sure the theme is installed, and open the Control Menu and go to 
-   *Site Administration* &rarr; *Navigation* &rarr; *Public Pages* and select 
-   the *Configure* option. Configure the theme settings from the *Look and Feel* 
-   section to see your changes. Likewise you can set the theme settings for an 
-   individual page by selecting the *Configure Page* option from the page's 
-   Actions menu and selecting the 
-   *Define a Specific look and feel for this page* option under the 
-   *Look and Feel* section.
+6.  Make sure the theme is installed. Open the *Control Menu* &rarr; *Site
+    Administration* &rarr; *Navigation* &rarr; *Public Pages* and select the
+    *Configure* option. Configure the theme settings from the *Look and Feel*
+    section to see your changes. You can set the theme settings for an
+    individual page by selecting the *Configure Page* option from the page's
+    Actions menu and selecting the *Define a Specific look and feel for this
+    page* option under the *Look and Feel* section.
 
 ![Figure 1: Here are examples of configurable settings for the site Admin.](../../../images/theme-settings-look-and-feel.png)
 
