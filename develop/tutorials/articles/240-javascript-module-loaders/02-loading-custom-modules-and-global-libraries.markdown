@@ -233,9 +233,8 @@ You can also use the module in a generic JavaScript:
 
 +$$$
 
-**Note:** Using `Liferay.Loader.require`, rather than just `require`, is safer. 
-For instance, if you plan to hide the Loader, by choosing to disable the 
-`exposeGlobal` option. 
+**Note:** Using `Liferay.Loader.require` rather than just `require` is safer if
+you plan to hide the Loader by disabling the `exposeGlobal` option. 
 
 In @product@ 7.1, `exposeGlobal` will be disabled by default.
 
