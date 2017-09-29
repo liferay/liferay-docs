@@ -1,19 +1,18 @@
 # Displaying Approved Workflow Items 
 
 There's not much left to do. Both entities in the guestbook project's backend
-are workflow-enabled. Now the UI for the Guestbook Admin application and the
+are workflow enabled. Now the UI for the Guestbook Admin application and the
 Guestbook Application need to be updated, each with its own display strategy.
 
 The Guestbook Admin application is accessed by administrators, so it can display
 all guestbooks that have been submitted, even if they're not marked as approved.
 However, adding a *Status* field to the search container makes sense. That way
-admins can see which guestbooks are published, which are drafts, which are
-pending, etc.
+admins can see which guestbooks are already approved, which are drafts, which
+are pending, etc.
 
 The Guestbook application is meant to be viewed by site members and even guests
 (unauthenticated users of your site). Here it's smart to display only approved
 guestbooks and approved entries.
 
 Start by updating the Guestbook Admin UI.
-
 

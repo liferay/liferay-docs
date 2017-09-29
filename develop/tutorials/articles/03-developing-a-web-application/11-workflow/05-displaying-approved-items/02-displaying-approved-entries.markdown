@@ -5,9 +5,17 @@ entries with a status of *approved* appear in the UI.
 
 Change the getters used to retrieve both entities in the view layer.
 
-Open 
+You're going to need a new import, so first open
 
-    guestbook-web/src/main/reosurces/META-INF/resources/guestbookwebportlet/view.jsp
+    guestbook-web/src/main/resources/META-INF/resources/init.jsp
+
+and add this line: 
+
+    <%@ page import="com.liferay.portal.kernel.workflow.WorkflowConstants"%>
+
+Now open 
+
+    guestbook-web/src/main/resources/META-INF/resources/guestbookwebportlet/view.jsp
 
 Find the scriptlet that retrieves guestbooks:
 
@@ -25,7 +33,7 @@ Find the scriptlet that retrieves guestbooks:
 										
 	%>
 
-Change it so it calls the getter you added that takes workflow status into account. All you need to do is change s method call 
+Change it so it calls the getter you added that takes workflow status into account. All you need to do is change this method call 
 
     List<Guestbook> guestbooks = GuestbookLocalServiceUtil
                 .getGuestbooks(scopeGroupId);
