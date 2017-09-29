@@ -1,21 +1,30 @@
 # Simple Theme [](id=theme)
 
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
+
 The Simple Theme sample provides the base files for a theme, using the
 [Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin).
-
 When deploying this sample with no customizations, a theme based off of the 
-`_styled` base theme is created. For more information on themes, visit the 
-[Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
-tutorial.
+`_styled` base theme is created.
 
 ![Figure 1: A theme based off of the Styled base theme is created when the Theme Blade sample is deployed to Liferay Portal.](../../../images/theme.png)
 
-To modify this sample, add the `images`, `js`, or `templates` directory, along
-with your modified files, to the `src/main/webapp` directory. The sample already
+For more information on themes, visit the 
+[Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
+tutorial.
+
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+
+This sample demonstrates a way to create a simple theme in @product@.
+
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+
+To modify this sample, add the `images`, `js`, or `templates` folder, along with
+your modified files, to the `src/main/webapp` folder. The sample already
 provides the `src/main/resources/resources-importer`, `src/main/webapp/WEB-INF`,
-and `src/main/webapp/css` directories for you. Add your style modifications to
-the provided `css/_custom.scss` file. For a complete explanation of a theme's
-files, see the
+and `src/main/webapp/css` folders for you. Add your style modifications to the
+provided `css/_custom.scss` file. For a complete explanation of a theme's files,
+see the
 [Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide).
 
 ## Where Is This Sample? [](id=where-is-this-sample)
