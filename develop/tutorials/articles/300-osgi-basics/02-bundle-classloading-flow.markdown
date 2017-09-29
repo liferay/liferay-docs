@@ -2,9 +2,8 @@
 
 The OSGi container searches several places for imported classes. It's important
 to know where it looks and in what order. @product@'s classloading flow for OSGi
-bundles follows the OSGi Core specification. It's straightforward, but not
-trivial. The figure below illustrates the flow and this tutorial walks you
-through it.
+bundles follows the OSGi Core specification. It's straightforward, but complex.
+The figure below illustrates the flow and this tutorial walks you through it.
 
 ![Figure 1.0: This flow chart illustrates classloading in a bundle.](../../images/bundle-classloading-flow-chart.png)
 
@@ -18,7 +17,7 @@ Here is the algorithm for classloading in a bundle:
 
 3.  If the class is in one of the packages the bundle imports from a wired
     exporter, the exporting bundle's classloader loads it. A *wired exporter* is
-    another bundle's classloader that's previously loaded the package. If the
+    another bundle's classloader that previously loaded the package. If the
     class isn't found, continue.
 
 4.  If the class is imported by one of the bundle's required bundles, the
