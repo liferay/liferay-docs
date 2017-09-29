@@ -4,8 +4,8 @@ The entry's workflow handler is almost identical to the guestbook's, so let's
 get right to it. Create a new class in the `com.liferay.docs.guestbook.workflow`
 package of the `guestbook-service` module. Name it `EntryWorkflowHandler` and
 extend `BaseWorkflowHandler`. Decorate it with a Component annotation and
-implement the same three methods as those you implemented for guestbooks. Paste
-this in as the class body:
+implement the same three methods you implemented in the
+`GuestbookWorkflowHandler`. Paste this in as the class body:
 
     @Component(immediate = true, service = WorkflowHandler.class)
     public class EntryWorkflowHandler extends BaseWorkflowHandler<Entry> {
@@ -63,4 +63,5 @@ handler. See the last article for the implementation details.
 
 Organize imports with *CTRL+SHIFT+O* and save the file.
 
-Next update the Guestbook Application's UI to handle workflow status. 
+The backend of the guestbook project is fully workflow enabled. All that's left
+is to update the Guestbook Application's UI to handle workflow status. 

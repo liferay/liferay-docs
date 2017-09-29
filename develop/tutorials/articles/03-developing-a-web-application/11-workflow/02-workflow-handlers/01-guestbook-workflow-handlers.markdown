@@ -28,8 +28,8 @@ There are three abstract methods to implement: `getClassName`, `getType`, and
         }
 
 `getType` returns the model resource name
-(`model.resource.com.liferay.docs.guestbook.model.Guestbook`) <!--WHAT DO THESE
-METHODS DO? --> Make sure you inject the `ResourceActions` service into a local
+(`model.resource.com.liferay.docs.guestbook.model.Guestbook`) <!--WHERE ARE THESE
+METHODS USED? --> Make sure you inject the `ResourceActions` service into a local
 variable at the end of the class, using the `@Reference` annotation:
 
         @Reference(unbind = "-")
@@ -61,7 +61,7 @@ The meat of the workflow handler is in the `updateStatus` method:
 
 When you crafted the service layer's `updateStatus` method (see the last section
 for more details), you specified parameters that must be passed to the method.
-Now you need to make sure that those parameters are available to pass to the
+Here you're just making sure that those parameters are available to pass to the
 service call. Here's the method signature from `GuestbookLocalServiceImpl`:
 
 	public Guestbook updateStatus(long userId, long guestbookId, int status,
@@ -89,9 +89,9 @@ annotation.
 
 Now the Guestbook Application is updating the database with the necessary
 status information and interacting with Liferay's workflow classes to make sure
-each entity is properly handled by the portal. At this point you can enable
-workflow for the Guestbook inside @product@ and see how it works. Navigate tot
-he *Control Panel &rarr; Workflow Configuration*. The Guestbook entity is listed
+each entity is properly handled by @product@. At this point you can enable
+workflow for the Guestbook inside @product@ and see how it works. Navigate to
+the *Control Panel &rarr; Workflow Configuration*. The Guestbook entity is listed
 alongside @product@'s native entities. Enable the Single Approver Workflow for
 Guestbooks, then go to the Guestbook Admin portlet and add a new Guestbook.
 You'll see a notification appear. You receive a notification from the workflow
