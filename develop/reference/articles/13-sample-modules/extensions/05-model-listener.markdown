@@ -23,7 +23,7 @@ looks like this:
 
 This sample leverages the
 [ModelListener](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
-extension point.
+API.
 
 ## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 

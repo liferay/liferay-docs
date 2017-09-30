@@ -1,21 +1,23 @@
 # Simulation Panel App [](id=simulation-panel-app)
 
-The Simulation Panel app provides new functionality in Liferay Portal's
-Simulation Menu. When deploying this sample with no customizations, the
-*Simulation Sample* feature is provided in the Simulation Menu with four
-options.
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
+
+The Simulation Panel App provides new functionality in @product's Simulation
+Menu. When deploying this sample with no customizations, the *Simulation Sample*
+feature is provided in the Simulation Menu with four options.
 
 ![Figure 1: A simulation panel app adds new functionality to the Simulation Menu.](../../../images/simulation-panel-app.png)
 
-This sample leverages the `PanelApp` extension point (OSGi service) in a Java
-class. It also specifies two properties in the `@Component` annotation:
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
-- `panel.app.order`: the order in which the panel app is displayed among other
-   panel apps in the chosen category.
-- `panel.category.key`: the host panel category for your panel app, which
-   should be the Simulation Menu category.
+This sample leverages the
+[PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
+API.
 
-These configurations are set using the following logic:
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+
+This sample leverages the `PanelApp` interface as an OSGi service via the
+`@Component` annotation:
 
     @Component(
         immediate = true,
@@ -25,6 +27,16 @@ These configurations are set using the following logic:
         },
         service = PanelApp.class
     )
+
+There are also two properties provided via the `@Component` annotation:
+
+- `panel.app.order`: the order in which the panel app is displayed among other
+   panel apps in the chosen category. Entries are ordered from top to bottom.
+   For example, an entry with order `1` will be listed above an entry with order
+   `2`. If the order is not specified, it's chosen at random based on which
+   service was registered first in the OSGi container.
+- `panel.category.key`: the host panel category for your panel app, which
+   should be the Simulation Menu category.
 
 The simulation panel app extends the
 [BaseJSPPanelApp](https://docs.liferay.com/ce/apps/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html),

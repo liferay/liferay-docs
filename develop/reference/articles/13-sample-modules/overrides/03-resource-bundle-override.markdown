@@ -1,21 +1,31 @@
 # Resource Bundle Override [](id=resource-bundle-override)
 
-The Resource Bundle Override sample conveys the recommended approach to override
-an application's language keys file for any module that is deployed to Liferay
-Portal's OSGi runtime (not applicable to Liferay Portal's core language keys).
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 This example overrides the default `add-blog-entry` language key (English and
-Spanish) for Portal's default Blogs application. After deploying this sample
-hook to Portal, the Blogs application's *Add Blog Entry* button is modified to
-display *Overriden Add Blog Entry*. If you change the Portal's default language
-to Spanish, the modified language key is translated to display in that language.
-For example, the text changes to *Añadir entrada sobreescrita*.
+Spanish) for @product@'s default Blogs application. After deploying this sample
+hook to @product@, the Blogs application's *Add Blog Entry* button is modified
+to display *Overriden Add Blog Entry*. If you change @product@'s default
+language to Spanish, the modified language key is translated to display in that
+language. For example, the text changes to *Añadir entrada sobreescrita*.
 
 ![Figure 1: The customized Blogs application displays the new `add-blog-entry` language key in English.](../../../images/hook-resourcebundle.png)
 
 For reference, the Blogs application's language keys are stored in the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repo's
 `modules/apps/collaboration/blogs/blogs-web/src/main/resources/content` folder.
+
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+
+This sample leverages the
+[ResourceBundleLoader](@product-ref@/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
+API.
+
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+
+This sample conveys the recommended approach to override an application's
+language keys file for any module that is deployed to @product@'s OSGi runtime
+(not applicable to @product@'s core language keys).
 
 The steps to override applications' language keys are
 
@@ -85,8 +95,8 @@ example's goal is to only override the English and Spanish keys, the
 `Language_en.properties` and `Language_es.properties` are added.
 
 This approach can be used to override any application's language keys (i.e.,
-`language.properties` files that are inside a module deployed to Portal's OSGi
-runtime). If you need to override Portal's core language keys, see the
+`language.properties` files that are inside a module deployed to @product@'s
+OSGi runtime). If you need to override @product@'s core language keys, see the
 [Modifying Liferay's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#modifying-liferays-language-keys)
 tutorial.
 
