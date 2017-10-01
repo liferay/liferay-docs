@@ -131,8 +131,13 @@ the System Settings options button
 Settings*. The `.config` files for all the entries you edited then download in a 
 ZIP file. 
 
+Before importing into a new system you will need to edit eventual factory based 
+configurations because they will be exported as `<factoryPid>-<UUID>.config` which is
+not importable. The id after the dash needs to not contain any additional dashes
+so for example the above exported string would become `<factoryPid>-<any_alfanumeric_string>.config`.
+
 To make these configurations active in the destination @product@ system, simply 
-unzip and place the `.config` files in the `[Liferay_Home]/osgi/modules` folder. 
+unzip and place the `.config` files in the `[Liferay_Home]/osgi/configs` folder.
 
 Awesome! Now you know what System Settings is and how to use it. All that's left 
 is to explore the entries to see what configuration options you can make. If you 
