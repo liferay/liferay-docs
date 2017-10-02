@@ -13,12 +13,41 @@ and
 [Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager.html) 
 are Apache Felix projects. 
 
-Start with DS, since most @product@ components, apart from Service Builder 
-components, are DS components. Suppose one of your bundles includes a component 
-that has a missing service reference. How can you detect this (other than 
-observing an error from your bundle)? One way is to invoke the `scr:list` 
-command in @product@'s Gogo shell. When you invoke this command, you’ll probably 
-see a list of entries like this: 
+Start with DS, since most @product@ components, apart from Service Builder
+components, are DS components. Suppose one of your bundle's component has an
+unsatisfied service reference. How can you detect this? You can enable an
+unsatisfied component scanner to report unsatisfied references automatically or
+check for them manually.
+
+Here are the steps for enabling the unsatisfied component scanner:
+
+1.  Create a file
+    `com.liferay.portal.osgi.debug.declarative.service.internal.configuration.UnsatisfiedComponentScannerConfiguration.cfg`. 
+2.  Add the following file content:
+
+        unsatisfiedComponentScanningInterval=5
+
+3.  Copy the file into folder `[LIFERAY_HOME]/osgi/configs`.
+
+The scanner detects and logs unsatisfied service component references. The log message includes the class that contains the reference, the bundle's ID, and the component type being referenced. 
+
+Here's an example scanner message
+
+    11:18:28,881 WARN  [Declarative Service Unsatisfied Component Scanner][UnsatisfiedComponentScanner:91]
+    Bundle {id: 631, name: com.liferay.blogs.web, version: 2.0.0}
+        Declarative Service {id: 3333, name: com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand, unsatisfied references:
+            {name: ItemSelectorHelper, target: null}
+        }
+
+The example message warns that service component
+`com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand` has an
+unsatisfied reference to a component of type `ItemSelectorHelper`. The
+referencing component's ID (SCR ID) is `3333` and the component belongs to
+bundle `631`. 
+
+Alternatively, you can invoke the `scr:list`  command in @product@'s Gogo shell
+to find unsatisfied component references. When you invoke this command, you’ll
+probably  see a list of entries like this: 
 
     [ 507]   org.foo.bar  enabled
         [1701] [satisfied   ]
@@ -85,10 +114,10 @@ command does this for the component ID `1701`:
             osgi.command.function = foo
             osgi.command.scope = bar
 
-In the `Component Configuration` section, `UnsatisfiedReference` lists the 
-unsatisfied reference's type. This bundle's component isn't working because it's 
-missing a `Foo` service. Now you can focus on why `Foo` is unavailable. The 
-solution may be as simple as starting or deploying a bundle that provides the 
+In the `Component Configuration` section, `UnsatisfiedReference` lists the
+unsatisfied reference's type. This bundle's component isn't working because it's
+missing a `Foo` service. Now you can focus on why `Foo` is unavailable. The
+solution may be as simple as starting or deploying a bundle that provides the
 `Foo` service. 
 
 ## Service Builder Components [](id=service-builder-components)
