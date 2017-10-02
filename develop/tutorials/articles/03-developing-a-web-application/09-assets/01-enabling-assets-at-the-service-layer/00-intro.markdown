@@ -27,17 +27,40 @@ entities' service layers:
     to support related assets. *Asset links* are @product@'s back-end term for
     related assets. 
 
-2.  Open the `build.gradle` file. Add these dependencies: 
+2.  You must add finders--two for `Guestbook`s and two for `Entity`s--so your
+    assets show in Asset Publisher. Add these below the existing finders for the
+    `Guestbook` entity: 
+
+        <finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
+    Add these below the existing finders for the `Entry` entity: 
+
+        <finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
+3.  Open the `build.gradle` file. Add these dependencies: 
 
         compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
         compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
 
     Save both files. 
 
-3.  Right-click `build.gradle` and select *Gradle* &rarr; *Refresh Gradle
+4.  Right-click `build.gradle` and select *Gradle* &rarr; *Refresh Gradle
     Project*. 
 
-4.  Run the `buildService` Gradle task. This task causes the objects referenced above
+5.  Run the `buildService` Gradle task. This task causes the objects referenced above
     to be injected into your services for use. 
 
 Great! Next, you'll handle assets in your service layer. 

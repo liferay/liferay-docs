@@ -1,5 +1,7 @@
 # Screen Name Validator [](id=screen-name-validator)
 
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
+
 The Screen Name Validator sample provides a way to validate a user's inputted
 screen name. During validation, the screen name is tested client-side and
 server-side.
@@ -11,18 +13,7 @@ values for the screen name validator's reserved words are *admin* and *user*.
 
 ![Figure 1: Enter reserved words for the screen name validator.](../../../images/screenname-validator-config.png)
 
-To customize this sample, modify the
-`com.liferay.blade.samples.screenname.validator.internal.CustomScreenNameValidator`
-class.
-
-You can also customize this sample's configuration by adding more properties in
-the
-`com.liferay.blade.samples.screenname.validator.CustomScreenNameConfiguration`
-class.
-
-## Testing the Screen Name Validator [](id=testing-the-screen-name-validator)
-
-Follow the steps below to test the Screen Name Validator sample:
+You can test this sample by following the following steps:
 
 1.  Deploy the Screen Name Validator to your portal installation.
 2.  Navigate to the *Control Panel* &rarr; *Users* &rarr; *Users and
@@ -32,6 +23,23 @@ Follow the steps below to test the Screen Name Validator sample:
 4.  Adding a screen name that contains the word *admin* or *user*.
 
 ![Figure 2: The error message displays when inputting a reserved word for the screen name.](../../../images/screenname-validator-test.png)
+
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+
+This sample leverages the
+[ScreenNameValidator](@product-ref@/portal-kernel/com/liferay/portal/kernel/security/auth/ScreenNameValidator.html)
+API.
+
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+
+To customize this sample, modify its
+`com.liferay.blade.samples.screenname.validator.internal.CustomScreenNameValidator`
+class.
+
+You can also customize this sample's configuration by adding more properties in
+its
+`com.liferay.blade.samples.screenname.validator.CustomScreenNameConfiguration`
+class.
 
 For more information on customizing the Validation sample to fit your needs, see
 the Javadoc provided in this sample's Java classes.

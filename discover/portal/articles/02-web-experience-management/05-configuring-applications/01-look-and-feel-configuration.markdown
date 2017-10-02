@@ -29,13 +29,14 @@ displayed in the selected language.
 ![Figure 1: To illustrate using a custom title, the Asset Publisher's default title has been replaced with a more appropriate heading.](../../../images/look-and-feel-portlet-configuration.png)
 
 If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
-app URLs will point to the page you selected. The current page is the
-default. Note that you can use the Asset Publisher's View in a Specific Portlet
-feature and web content articles' Display Page attribute to achieve a more
-elegant solution for displaying the full view of web content articles on
-specific pages. Please see the
+URLs inside the portlet link to the context of the page you selected. This
+includes pagination links created by the portlet. The current page is the
+default. This is intended to be an elegant way to show web content articles'
+full view from the Asset Publisher. If you use the View in a Specific Portlet
+feature or web content articles' Display Page attribute, you must be careful
+since it redirects all links and not just links to assets. See the 
 [Configuring Display Settings](/discover/portal/-/knowledge_base/7-0/publishing-assets#configuring-display-settings)
-article for details.
+article for more details.
 
 <!--
 Check that below note is valid for 7.0. This functionality is still available.

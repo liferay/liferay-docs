@@ -1,11 +1,20 @@
 # Module JSP Override [](id=module-jsp-override)
 
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
+
 The Module JSP Override sample conveys Liferay's recommended approach to
 override an application's JSP by leveraging OSGi fragment modules. This example
 overrides the default `login.jsp` file in the `com.liferay.login.web` bundle by
 adding the red text *changed* to the Sign In form.
 
 ![Figure 1: The customized Sign In form with the new *changed* text.](../../../images/hook-jsp.png)
+
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+
+This sample demonstrates how to create a fragment host module and configure it
+to override an existing module's JSP.
+
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 You can create your own JSP override by
 
@@ -41,7 +50,8 @@ or
     />
 
 This approach can be used to override any application JSP (i.e., JSPs residing
-in a module). If you need to override a core JSP, see the `blade.corejsphook`
+in a module). You can also add new JSPs to an existing module with this
+technique. If you need to override a core JSP, see the `core-jsp-override`
 sample.
 
 For more information on using fragment bundles to override application JSPs, see

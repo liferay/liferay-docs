@@ -2,7 +2,7 @@
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
 
 <service-builder auto-namespace-tables="true"
-	package-path="com.liferay.docs.guestbook">
+		 package-path="com.liferay.docs.guestbook">
 	<author>liferay</author>
 	<namespace>GB</namespace>
 	<entity local-service="true" remote-service="true" name="Guestbook" uuid="true">
@@ -23,12 +23,12 @@
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
 		
-	    <!-- Status fields -->
+		<!-- Status fields -->
 
-        <column name="status" type="int" />
-        <column name="statusByUserId" type="long" />
-        <column name="statusByUserName" type="String" />
-        <column name="statusDate" type="Date" />
+		<column name="status" type="int" />
+		<column name="statusByUserId" type="long" />
+		<column name="statusByUserName" type="String" />
+		<column name="statusDate" type="Date" />
 		
 
 		<!-- Other fields -->
@@ -38,9 +38,18 @@
 		<finder name="GroupId" return-type="Collection">
 			<finder-column name="groupId" />
 		</finder>
+
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
 		
 		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
-    	<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 		
 
 	</entity>
@@ -56,10 +65,10 @@
 		<column name="userName" type="String" />
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
-        <column name="status" type="int" />
-        <column name="statusByUserId" type="long" />
-        <column name="statusByUserName" type="String" />
-        <column name="statusDate" type="Date" />
+		<column name="status" type="int" />
+		<column name="statusByUserId" type="long" />
+		<column name="statusByUserName" type="String" />
+		<column name="statusDate" type="Date" />
 
 		<column name="name" type="String" />
 		<column name="email" type="String" />
@@ -71,8 +80,16 @@
 			<finder-column name="guestbookId" />
 		</finder>
 
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
 		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
-	    <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 		
 
 	</entity>
