@@ -19,6 +19,13 @@ unsatisfied service reference. How can you detect this? You can enable an
 unsatisfied component scanner to report unsatisfied references automatically or
 check for them manually.
 
++$$$
+
+**Note**: The unsatisfied component scanner appears in DXP Digital Enterprise
+Fix 7.0 Pack 31 and Liferay CE Portal 7.0 GA5.
+
+$$$
+
 Here are the steps for enabling the unsatisfied component scanner:
 
 1.  Create a file
