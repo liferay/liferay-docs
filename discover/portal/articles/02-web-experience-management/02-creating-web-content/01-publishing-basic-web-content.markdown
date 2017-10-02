@@ -542,20 +542,20 @@ the Asset Publisher, or from the Site Administration interface.
 
 +$$$ 
 
-**Note:** If you're using a mobile device or tablet and you'd like to view your
-page the way your users will see it (i.e., without all the app controls and
-icons), go up to the top Control Menu and select the *Edit Controls* icon
-(![Edit Controls](../../../images/icon-edit-controls.png)). This makes all those
-extra controls you see as a Liferay administrator disappear. You'll also notice
-the icon is crossed out when the Edit Controls are disabled. If you need to use
-the controls again, just select the icon again to return to the original format.
+**Note:** If you're using a mobile device or tablet and you'd like to view your 
+page the way your users will see it (i.e., without all the app controls and 
+icons), go up to the top Control Menu and select the *Toggle Controls* icon
+(![Toggle Controls](../../../images/icon-edit-controls.png)). This makes all 
+those extra controls you see as a Liferay administrator disappear. You'll also 
+notice the icon is crossed out when the Toggle Controls are disabled. If you 
+need to use the controls again, just select the icon again to return to the 
+original format.
 
-This button is not displayed when viewing the page from a desktop computer.
-This is because apps displayed from a desktop computer hide their controls by
-default, and can be rendered by hovering over the app. To test out your page
-from different devices, select the *Simulation* button
-(![Simulation](../../../images/icon-simulation.png)) from the right corner of
-the top Control Menu.
+This button is not displayed when viewing the page from a desktop computer. This 
+is because apps displayed from a desktop computer hide their controls by 
+default, and can be rendered by hovering over the app. To test out your page 
+from different devices, select the *Simulation* button (![Simulation](../../../images/icon-simulation.png)) 
+from the right corner of the top Control Menu.
 
 $$$
 

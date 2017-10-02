@@ -161,6 +161,11 @@
         return super.getURLView(liferayPortletResponse, windowState);
       }
 
+      @Override
+      public boolean isPrintable() {
+	      return true;
+      }
+
       private Entry _entry;
     }
 
