@@ -1,4 +1,4 @@
-# Introduction [](id=introduction)
+# Using npm in Your Portlets [](id=introduction)
 
 Since Liferay DXP Fix Pack 30 and Liferay Portal 7.0 CE GA5, you can use 
 npm as your JavaScript package manager tool--including npm and npm

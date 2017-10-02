@@ -46,7 +46,7 @@ Follow the steps below to use your exposed modules in your portlets.
 Thanks to the `aui:script` tag and its `require` attribute, using your modules
 in your portlet is a piece of cake!
 
-**Related Topics**
+## Related Topics [](id=related-topics)
 
 [Overriding a Module's JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
 
