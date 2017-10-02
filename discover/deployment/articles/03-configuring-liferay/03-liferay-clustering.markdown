@@ -195,9 +195,6 @@ retrieved from the cache, no matter what node serves that user, because the
 cache is replicated. Because the thread is in the cache, no trip to the database 
 is necessary. 
 
-![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../images/clustering-cache-efficient-algorithm.png)
-<!-- Image contains reference to UDP Multicast... remove? -->
-
 This is much more powerful than having a cache running separately on each node.
 The power of *distributed* caching lets common destinations be cached for
 multiple users. The first user can post a message to the thread he or she was
