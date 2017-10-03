@@ -130,8 +130,9 @@ public class EntryModelImpl extends BaseModelImpl<Entry> implements EntryModel {
 	public static final long COMPANYID_COLUMN_BITMASK = 1L;
 	public static final long GROUPID_COLUMN_BITMASK = 2L;
 	public static final long GUESTBOOKID_COLUMN_BITMASK = 4L;
-	public static final long UUID_COLUMN_BITMASK = 8L;
-	public static final long ENTRYID_COLUMN_BITMASK = 16L;
+	public static final long STATUS_COLUMN_BITMASK = 8L;
+	public static final long UUID_COLUMN_BITMASK = 16L;
+	public static final long ENTRYID_COLUMN_BITMASK = 32L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -508,7 +509,19 @@ public class EntryModelImpl extends BaseModelImpl<Entry> implements EntryModel {
 
 	@Override
 	public void setStatus(int status) {
+		_columnBitmask |= STATUS_COLUMN_BITMASK;
+
+		if (!_setOriginalStatus) {
+			_setOriginalStatus = true;
+
+			_originalStatus = _status;
+		}
+
 		_status = status;
+	}
+
+	public int getOriginalStatus() {
+		return _originalStatus;
 	}
 
 	@JSON
@@ -843,6 +856,10 @@ public class EntryModelImpl extends BaseModelImpl<Entry> implements EntryModel {
 
 		entryModelImpl._setModifiedDate = false;
 
+		entryModelImpl._originalStatus = entryModelImpl._status;
+
+		entryModelImpl._setOriginalStatus = false;
+
 		entryModelImpl._originalGuestbookId = entryModelImpl._guestbookId;
 
 		entryModelImpl._setOriginalGuestbookId = false;
@@ -1084,6 +1101,8 @@ public class EntryModelImpl extends BaseModelImpl<Entry> implements EntryModel {
 	private Date _modifiedDate;
 	private boolean _setModifiedDate;
 	private int _status;
+	private int _originalStatus;
+	private boolean _setOriginalStatus;
 	private long _statusByUserId;
 	private String _statusByUserName;
 	private Date _statusDate;

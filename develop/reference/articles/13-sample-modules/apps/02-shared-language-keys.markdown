@@ -1,50 +1,60 @@
 # Shared Language Keys [](id=shared-language-keys)
 
-The Shared Language Keys sample is broken into two modules:
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
+
+The Shared Language Keys sample provides a JSP portlet that displays language
+keys.
+
+![Figure 1: The sample JSP portlet displays three language keys.](../../../images/language-web-portlet.png)
+
+The language keys displayed in the portlet come from two different modules.
+
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+
+This sample is broken into two modules:
 
 - `language`
 - `language-web`
 
-The Language Web module provides a JSP portlet that displays language keys. The
-Language module shares language keys with the portlet. You'll explore the web
-module first.
+The `language-web` module provides a JSP portlet with unique language keys that
+it displays. The `language` module provides a resource module which only holds
+language keys. Its sole purpose is to share language keys with the JSP portlet
+provided in `language-web`. This sample conveys Liferay's recommended approach
+to sharing language keys through OSGi services.
 
-## Language Web [](id=language-web)
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
-The Language Web module is a simple JSP portlet that conveys Liferay's
-recommended approach to sharing language keys through OSGI services.
+You must deploy both `language-web` and `language` modules to simulate this
+sample's targeted demonstration.
 
-You must deploy this module with the `language` sample module. The Language Web
-portlet uses language keys shared by the Language module. When you place
-this sample portlet on a @product@ page, you're presented with the portlet's
-name followed by three language keys.
+First, note the language keys provided by each module:
 
-![Figure 1: The Language Web portlet displays three phrases, two of which are shared from a different module.](../../../images/language-web-portlet.png)
+`language-web`
+- `blade_language_web_LanguageWebPortlet.caption=Hello from BLADE Language Web!`
+- `blade_language_web_override_LanguageWebPortlet.caption=I have overridden the key from BLADE Language Module!`
 
-The first message is provided by the Language Web module. The second message is
-from the Language module. The third message is provided by both modules; as you
-can see, the Language Web's message is used, overriding the Language module's
-identically named language key.
+`language`
+- `blade_language_LanguageWebPortlet.caption=Hello from the BLADE Language Module!`
+- `blade_language_web_override_LanguageWebPortlet.caption=Hello from the BLADE Language Module but you won't see me!`
+
+When you place the sample BLADE Language Web portlet on a @product@ page, you're
+presented with three language keys.
+
+![Figure 2: The Language Web portlet displays three phrases, two of which are shared from a different module.](../../../images/shared-language-keys.png)
+
+The first message is provided by the `language-web` module. The second message
+is from the `language` module. The third message is provided by both modules; as
+you can see, the `language-web`'s message is used, overriding the `language`
+module's identically named language key.
 
 This sample shows what takes precedence when displaying language keys. The order
 for this example goes
 
-1.  Language Web module language keys
-2.  Language module language keys
-3.  Liferay Portal language keys
+1.  `language-web` module language keys
+2.  `language` module language keys
+3.  @product@ language keys
 
-Next, you'll examine the `language` module and learn how language keys are used
-from modules and shared between modules.
-
-## Language [](id=language)
-
-The Language module conveys Liferay's recommended approach to sharing language
-keys through OSGI services. This particular module provides a resource module
-which only holds language keys.
-
-You should deploy this module with the `language-web` sample module. The
-Language module shares language keys with the Language Web module. How does this
-work?
+So how does sharing language keys work?
 
 By default, the `ResourceBundleLoaderAnalyzerPlugin` expands modules with
 `/content/Language.properties` files to add provided capabilities:

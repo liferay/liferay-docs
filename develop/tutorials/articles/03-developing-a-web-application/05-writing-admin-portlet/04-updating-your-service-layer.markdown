@@ -34,7 +34,7 @@ Follow these steps to add the required guestbook service methods:
 
                 Guestbook guestbook = getGuestbook(guestbookId);
 
-                User user = UserLocalServiceUtil.getUser(userId);
+                User user = userLocalService.getUser(userId);
 
                 guestbook.setUserId(userId);
                 guestbook.setUserName(user.getFullName());
@@ -59,11 +59,11 @@ Follow these steps to add the required guestbook service methods:
 
                 Guestbook guestbook = getGuestbook(guestbookId);
 
-                List<Entry> entries = EntryLocalServiceUtil.getEntries(
+                List<Entry> entries = entryLocalService.getEntries(
                                 serviceContext.getScopeGroupId(), guestbookId);
 
                 for (Entry entry : entries) {
-                        EntryLocalServiceUtil.deleteEntry(entry.getEntryId());
+                        entryLocalService.deleteEntry(entry.getEntryId());
                 }
 
                 guestbook = deleteGuestbook(guestbook);
