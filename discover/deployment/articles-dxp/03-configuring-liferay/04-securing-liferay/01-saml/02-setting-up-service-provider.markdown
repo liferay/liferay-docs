@@ -177,7 +177,12 @@ Provider connection. If the metadata is inaccessible via URL, you can upload the
 XML file manually. In this case, the metadata XML file is not 
 updated automatically. 
 
-**Name Identifier Format:** <!-- TODO -->
+**Name Identifier Format:** Choose the Name Identifier Format used in the SAML
+Response. This should be set according to what the Service Provider expects to
+receive. For Liferay Service Providers, any selection other than email address
+indicates that the Name Identifier refers to screen name. The formats don't have
+any special meaning to Liferay Identity Providers. The NameID value is defined
+by the Name Identifier attribute.
 
 **Attribute Mapping:** The attribute mapping is done from the attribute name or
 friendly name in the SAML Response to the @product@ attribute name. For example,
