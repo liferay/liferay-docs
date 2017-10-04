@@ -51,7 +51,7 @@ permissions, and folders in Documents and Media.
 
 Since the Lunar Resort's *Souvenir and Memorabilia* staff members must be able
 to upload and organize guest media, let's enable a role for these purposes. Sign
-in as the Liferay admin and open the *Menu* (![Product
+in as the @product@ admin and open the *Menu* (![Product
 Menu](../../../images/icon-menu.png)). Then navigate to *Control Panel &rarr; Users
 &rarr; Roles*. If the staff group is a part of an Organization, and that
 organization has a site, create an Organization Role. Otherwise, create it as a
@@ -248,7 +248,7 @@ back to the folder you're adding files to.
 
 Documents and Media lists your current folder's subfolders and file entries. A
 *file entry* is the Document Library's representation of a file. It wraps the
-file to better leverage it within Liferay and to associate additional
+file to better leverage it within @product@ and to associate additional
 information and metadata with the file. File entries are displayed using icons,
 by default. You can select either icon
 (![Icon](../../../images/icon-icon-style.png)), descriptive
@@ -309,21 +309,21 @@ name. The screen's central viewing area displays a preview image of the file. If
 the file is an image file, its image is displayed. If a preview plugin for the
 file type is installed, the plugin displays an image (e.g., the opening scene of
 a video file or a presentation's first slide) for the file. If there are no
-preview plugins for the file, Liferay displays a generic image based on the
+preview plugins for the file, @product@ displays a generic image based on the
 file's type. Let's take a moment and consider file preview plugins and some of
 the powerful features they offer. 
 
-Whenever possible, Liferay generates previews of documents added to the Document
+Whenever possible, @product@ generates previews of documents added to the Document
 Library. Out of the box, @product@ only ships with Java-based APIs to
 generate previews for documents. The only tool available that is 100% Java and
-has a compatible license to be distributed with Liferay is PDFBox. If you upload
-a PDF file to Documents and Media, Liferay generates a preview for the PDF in a
+has a compatible license to be distributed with @product@ is PDFBox. If you upload
+a PDF file to Documents and Media, @product@ generates a preview for the PDF in a
 separate thread. This process may last only a few seconds for a small file. The
 larger the file, the longer it takes.
 
 While a default implementation of image generation for document previews and
 thumbnails is provided via PDFBox, you must install and configure some
-additional tools to harness the full power of Liferay's Documents and Media
+additional tools to harness the full power of @product@'s Documents and Media
 library. These tools include [*OpenOffice*](http://www.openoffice.org) or
 [*LibreOffice*](http://www.libreoffice.org),
 [*ImageMagick*](http://www.imagemagick.org), which requires
@@ -340,7 +340,7 @@ extracts thumbnails from video files. You can configure the tools via portal
 properties you can set in the Control Panel's Server Administration screen or in
 a `portal-ext.properties` file. To learn how to use these tools, refer to
 [Configuring
-Liferay](/discover/portal/-/knowledge_base/7-0/configuring-liferay).
+@product@](/discover/portal/-/knowledge_base/7-0/configuring-liferay).
 
 You can view a document with a customized viewer that allows you to navigate
 through the different pages of the document and read its content. In addition,
@@ -348,7 +348,7 @@ you can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the browser's native player. Otherwise it falls
 back to a Flash player.
 
-![Figure 7: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside Liferay's Documents and Media app.](../../../images/dm-file-entry-video-preview.png)
+![Figure 7: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside @product@'s Documents and Media app.](../../../images/dm-file-entry-video-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for.
@@ -435,16 +435,16 @@ this image requires.
 
 What else can you do? 
 
-Lucky for you, Liferay now comes with its own built-in image editor. 
+Lucky for you, @product@ now comes with its own built-in image editor. 
 
 A crop here and there, a little bit more contrast, and some adjustments in 
 saturation, and boom! The image is ready to go.   
 
 Since Liferay Portal CE 7.0 GA2 and Liferay DXP 7.0, users have been able to
-edit images within Liferay. To access the image editor, go to the Documents and
-Media repository and locate the image you want to edit. Click the Actions icon
-(![Actions](../../../images/icon-actions.png)) and select *Edit With Image
-Editor*.
+edit images within portal instances. To access the image editor, go to the 
+Documents and Media repository and locate the image you want to edit. Click the 
+Actions icon (![Actions](../../../images/icon-actions.png)) and select 
+*Edit With Image Editor*.
 
 ![Figure 8: You can access the image editor through the Documents and Media repository.](../../../images/image-editor-docs-and-media.png)
 
@@ -550,12 +550,12 @@ your own discretion.
 This integration with Google and other external repositories enables you to 
 access all of your documents from your Liferay sites. 
 
-As a Liferay administrator, you must configure your Liferay instance's access to
-Google's API Picker. @product@ calls on it to access files stored in
-Google's apps. Your @product@ instance must use a unique API keys and
-client ID to invoke the Google API Picker. The API key is used for accessing
-public data and the client ID is for authenticating and authorizing user access
-to non-public data. You must use a Google developer project to access the API
+As a @product@ administrator, you must configure your @product@ instance's 
+access to Google's API Picker. @product@ calls on it to access files stored in
+Google's apps. Your @product@ instance must use a unique API keys and client ID 
+to invoke the Google API Picker. The API key is used for accessing public data 
+and the client ID is for authenticating and authorizing user access to 
+non-public data. You must use a Google developer project to access the API 
 picker using an API key and client ID. The three basic steps are as follows:
 
 - **Step 1: Enable the Google API Picker**
@@ -570,39 +570,43 @@ Let's start by enabling the Google API Picker in a Google developer project.
 
 @product@ uses the *Google API Picker* to access files in Google. 
 
-1. Create a Google account (or use an existing one). 
+1.  Create a Google account (or use an existing one). 
 
-2. Open the Google Developer Console at <https://console.developers.google.com>.
+2.  Open the Google Developer Console at  
+    [https://console.developers.google.com](https://console.developers.google.com).
 
-3. Create a new project (or use an existing one). 
+3.  Create a new project or use an existing one. 
 
-4. In the console's product and services menu, click on the API Manager. An
-overview screen lists the Google APIs. 
+4.  In the console's product and services menu, click on the API Manager. An
+    overview screen lists the Google APIs. 
 
-5. In the list of Google APIs, find the *Google API Picker* and enable it.
-Liferay uses the API to access Google documents. 
+5.  In the list of Google APIs, find the *Google API Picker* and enable it.
+    @product@ uses the API to access Google documents. 
 
 Next we'll create credentials to use with the Google API. 
 
 ### Step 2: Create Credentials [](id=step-2-create-credentials)
 
-1. In the API Manager navigation, click on *Credentials*. 
+1.  In the API Manager navigation, click on *Credentials*. 
 
-2. Create a new OAuth client ID for a *Web application*. Specify the following
-attributes: 
-    -   **Name**: `Google Docs Hook`
-    -   **Authorized JavaScript origins**: `[liferay-instance-URL]` (for
-        example, `http://localhost:8080` for development machines) 
-    -   **Authorized redirect URIs**: `[liferay-instance-URL]/oath2callback`
+2.  Create a new OAuth client ID for a *Web application*. Specify the following
+    attributes:
+     
+    - **Name**: `Google Docs Hook`
+    
+    - **Authorized JavaScript origins**: `[liferay-instance-URL]` (for
+    example, `http://localhost:8080` for development machines)
+     
+    - **Authorized redirect URIs**: `[liferay-instance-URL]/oath2callback`
 
-3. Create a new API key of type *Browser key*. Specify your @product@
-instance's URL in the field listing sites from which your Google project should
-accept requests.
+3.  Create a new API key of type *Browser key*. Specify your @product@ 
+    instance's URL in the field listing sites from which your Google project 
+    should accept requests.
 
 Your new OAuth client ID and public API access key are listed in your Google
 project's credentials. Keep the credentials screen open so you can easily
 reference these values as you specify them in @product@. All that's left is
-to enter the API key and client ID into your Liferay instance's Google Apps
+to enter the API key and client ID into your @product@ instance's Google Apps
 configuration. 
 
 ### Step 3: Configure @product@'s Google Apps Settings [](id=step-3-configure-liferays-google-apps-settings)
@@ -610,19 +614,18 @@ configuration.
 To call Google's APIs, you must configure your @product@ instance with your
 Google project's OAuth client ID and public API access key.
 
-1. From @product@'s *Control Panel*, navigate to *Configuration &rarr;
-Instance Settings*.
+1.  From @product@'s *Control Panel*, navigate to *Configuration &rarr;
+    *Instance Settings*.
 
-2. Click on the *Miscellaneous* tab and expand the *Google Apps*
-section.
+2.  Click on the *Miscellaneous* tab and expand the *Google Apps* section.
 
-3. For *Google Apps API Key*, enter your Google project's API key.
+3.  For *Google Apps API Key*, enter your Google project's API key.
 
-4. For *Google Client ID*, enter your Google project's OAuth client ID. 
+4.  For *Google Client ID*, enter your Google project's OAuth client ID. 
 
-5. *Save* your changes. 
+5.  *Save* your changes. 
 
-Your Liferay instance is ready to access Google documents from the Document
+Your @product@ instance is ready to access Google documents from the Document
 Library. 
 
 ### Linking to Google Docs [](id=linking-to-google-docs)
@@ -772,7 +775,7 @@ documents. There are many common collaboration scenarios. For example, you might
 have a spreadsheet that you and your peers need to populate, or a proposal that
 you and other stakeholders must produce. You might be asked to review and edit a
 document. All these cases involve multiple users modifying documents and require
-an environment that helps manage document changes. Liferay's Documents and Media
+an environment that helps manage document changes. @product@'s Documents and Media
 provides these capabilities. 
 
 @product@'s document management apps support accessing apps on different
