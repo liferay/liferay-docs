@@ -1,17 +1,14 @@
 # Flagging Inappropriate Asset Content [](id=flagging-inappropriate-asset-content)
 
-In a perfect World, people would post nice, kind, and decent content. They would 
+In a perfect world, people would post nice, kind, and decent content. They would 
 reply to comments with constructive feedback and never lash out at one another. 
 Unfortunately, sometimes people have a bad day and decide to take their 
-frustration out on Joe Bloggs, in the form of an inappropriate post. No worries 
+frustration out on Joe Bloggs in the form of an inappropriate post. No worries 
 though, @product@'s asset framework supports a system for flagging content in 
-apps. Giving users the ability to flag inappropriate content takes much of the 
-work off of site administrators. Users can click a flag which opens a small form 
-they can fill out, letting administrators know why they find the content 
-objectionable. This feature appears in many core apps, such as the Message 
-Boards portlet. 
+apps. Letting users flag inappropriate content takes much of the work off site
+administrators. 
 
-![Figure 1: Flags for letting users mark objectionable content are enabled in the Message Boards portlet](../../images/social-flags.png)
+![Figure 1: Flags for letting users mark objectionable content are enabled in the Message Boards portlet.](../../images/social-flags.png)
 
 This tutorial shows you how to enable flagging of content in a portlet.
 
@@ -22,7 +19,7 @@ Follow these steps:
 
 2.  Choose a read-only view of the entity for the flags. You can display 
     them in one of your portlet's views, or if you've implemented 
-    [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset) 
+    [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset), 
     you can display them in the full content view in the Asset Publisher 
     portlet. 
 
@@ -30,8 +27,7 @@ Follow these steps:
 
         <%@ taglib prefix="liferay-flags" uri="http://liferay.com/tld/flags" %>
 
-4.  Use `ParamUtil` to get the entity's ID from the render request. Then use 
-    the `-LocalServiceUtil` class to create an entity object:
+4.  Use the `-LocalServiceUtil` class to get the entity:
 
         <%
         long entryId = ParamUtil.getLong(renderRequest, "entryId");
@@ -49,8 +45,7 @@ Follow these steps:
         	reportedUserId="<%= reportedUserId %>"
         />
 
-    The `reportedUserId` attribute specifies the user ID of the user who flagged 
-    the asset.
+    The `reportedUserId` attribute specifies the user who flagged the asset.
 
 Great! Now you know how to let users flag content in your asset-enabled portlets. 
 
