@@ -187,6 +187,12 @@ commit to Git) patches to the DXP source code.
 
 If you're applying patches one at a time, repeat the above steps for each patch. 
 
++$$$
+
+**Note**: The patching tool's `diff` command shows patch source code changes, modified files, and fixed issues (LPS/LPE tickets). 
+
+$$$
+
 Now you're ready to debug DXP. Attach your favorite debugger to your DXP
 instance and start the server. See your debugger's documentation for
 configuration details.
