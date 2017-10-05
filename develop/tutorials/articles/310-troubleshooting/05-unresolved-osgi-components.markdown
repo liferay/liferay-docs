@@ -55,11 +55,8 @@ bundle `631`.
 Another way to detect unsatisfied component references is to invoke the Gogo
 shell command `ds:unsatisfied`. 
 
-Here's the command usage:
-
 -   `ds:unsatisfied` shows all unsatisfied services
-
--   `ds:unsatisfied BUNDLE_ID` shows the bundle's unsatisfied services
+-   `ds:unsatisfied [BUNDLE_ID]` shows the bundle's unsatisfied services
 
 +$$$
 
