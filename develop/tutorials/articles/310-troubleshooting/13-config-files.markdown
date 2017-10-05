@@ -29,8 +29,8 @@ Although @product@ supports both formats, we recommend you use `.config` files
 for their flexibility. A `.cfg` file lacks type information and usually needs a 
 properties utility class with functions like `getInt(String)`, 
 `getDouble(String)`, and so on. Since `.config` files can include type 
-information, using them eliminates this need. For a detailed explanation of 
-these file formats, including their syntax, see the following: 
+information, using them eliminates this need. The articles below provide
+a detailed explanation of these file formats, including their syntax: 
 
 -   [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
 -   [Configuration file (`.config`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
@@ -45,9 +45,12 @@ or if the component is intended to be a singleton. Follow these steps to make
 that determination:
 
 1.  Deploy the component's module if you haven't done so already. 
+
 2.  In @product@'s UI, go to *Control Panel* &rarr; *Configuration* &rarr; 
     *System Settings*. 
+
 3.  Find the component's settings by searching or browsing for the component. 
+
 4.  If the component's settings page has a section called *Configuration 
     Entries*, you can create multiple instances of the component configured 
     however you like. Otherwise, you should treat the component as a singleton. 
