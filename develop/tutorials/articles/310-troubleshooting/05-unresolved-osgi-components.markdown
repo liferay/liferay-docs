@@ -52,37 +52,24 @@ unsatisfied reference to a component of type `ItemSelectorHelper`. The
 referencing component's ID (SCR ID) is `3333` and the component belongs to
 bundle `631`. 
 
-Another way to detect unsatisfied component references is to invoke the
-`scr:list`  command in @product@'s Gogo shell. The command shows entries like
-this: 
+Another way to detect unsatisfied component references is to invoke the Gogo
+shell command `ds:unsatisfied`. 
 
-    [ 507]   org.foo.bar  enabled
-        [1701] [satisfied   ]
-    [ 507]   org.foo.baz  enabled
-        [1702] [satisfied   ]
+Here's the command usage:
 
-The left-most (non-indented) lines provide information about the bundles that 
-provide components, and the indented lines provided information about the 
-components themselves. From left to right, each bundle line lists the bundle's 
-ID, name, and status (enabled or disabled). Similarly, each component line lists 
-the component's ID and status (satisfied or unsatisfied reference). If you 
-invoke the `scr:list` command when some of your bundle's components have 
-unsatisfied references, you'll see some entries like this: 
+-   `ds:unsatisfied` shows all unsatisfied services
 
-    [ 507]   org.foo.bar  enabled
-        [1701] [unsatisfied reference]
-    [ 507]   org.foo.baz  enabled
-        [1702] [unsatisfied reference]
+-   `ds:unsatisfied BUNDLE_ID` shows the bundle's unsatisfied services
 
 +$$$
 
-**Tip:** You can use `grep` to find only the components with unsatisfied 
-references: `scr:list | grep "unsatisfied reference"`. 
+**Note**: The Gogo shell command `ds:unsatisfied` appears in DXP Digital
+Enterprise Fix 7.0 Pack 31 and Liferay CE Portal 7.0 GA5.
 
 $$$
 
 To view more detailed information about the component with the unsatisfied 
-reference, use the command `scr:info <component ID>`. For example, the following 
+reference, use the command `scr:info [component ID]`. For example, the following 
 command does this for the component ID `1701`: 
 
     g! scr:info 1701
