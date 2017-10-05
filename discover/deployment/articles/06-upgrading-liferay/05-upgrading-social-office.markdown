@@ -233,7 +233,7 @@ its description:
 - `socialOffice:hideTasksLayout`: hides all pages that contained the Tasks 
   portlet. 
 
-- `socialOffice:updateSocialSiteTheme`: restores the default theme for all 
+- `socialOffice:updateTheme`: restores the default theme for all 
   pages. Unless you customized the Social Office theme, you should use the 
   default @product-ver@ theme. 
 
