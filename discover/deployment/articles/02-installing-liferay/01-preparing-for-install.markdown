@@ -15,7 +15,7 @@ questions.
 Next, you'll answer these questions and learn the basic steps for installing
 @product@.
 
-## Obtaining @product@
+## Obtaining @product@ [](id=obtaining-product)
 
 Anyone can download @product@ from [https://www.liferay.com](https://www.liferay.com).
 Click Platform &rarr; *Downloads*, and you'll be able to download either the
