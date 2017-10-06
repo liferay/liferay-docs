@@ -1,8 +1,8 @@
 # Displaying Approved Workflow Items 
 
 There's not much left to do. Both entities in the guestbook project's backend
-are workflow enabled. Now the UI for the Guestbook Admin application and the
-Guestbook Application need to be updated, each with its own display strategy.
+are workflow enabled, so it's time to update the UI. The Guestbook Admin portlet
+and the Guestbook portlet each requires its own display strategy.
 
 The Guestbook Admin application is accessed by administrators, so it can display
 all guestbooks that have been submitted, even if they're not marked as approved.

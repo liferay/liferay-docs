@@ -5,7 +5,7 @@ entries with a status of *approved* appear in the UI.
 
 Change the getters used to retrieve both entities in the view layer.
 
-You're going to need a new import, so first open
+You need a new import, so first open
 
     guestbook-web/src/main/resources/META-INF/resources/init.jsp
 
@@ -57,16 +57,16 @@ that set the search container's total and its results:
 
 Replace the getters to use the ones that take workflow status as a parameter,
 and pass `WorkflowConstants.STATUS_APPROVED` as the status. Here's what it looks
-like:
+like when you're finished:
 
     <liferay-ui:search-container total="<%=EntryLocalServiceUtil.
                     getEntriesCount(scopeGroupId.longValue(), 
                     guestbookId, WorkflowConstants.STATUS_APPROVED)%>">
     <liferay-ui:search-container-results results=
-                    "<%=EntryLocalServiceUtil.getEntries(scopeGroupId.longValue(), guestbookId, 
+                    "<%=EntryLocalServiceUtil.getEntries(
+                    scopeGroupId.longValue(), guestbookId, 
                     WorkflowConstants.STATUS_APPROVED, 
-                    searchContainer.getStart(), 
-                    searchContainer.getEnd())%>" />
+                    searchContainer.getStart(), searchContainer.getEnd())%>" />
 
 Now only approved entries are displayed, and the search container's counter only
 counts the approved entries. If you update the `getEntries` call but not the
@@ -78,4 +78,8 @@ search container.
 ![Figure 1: If you don't update the counter method to account for workflow status, it
 displays an incorrect count in the search container.](../../../../images/lp-workflow-entries-count.png)
 
-Now Guestbooks and Entries are fully workflow enabled.
+Now Guestbooks and Entries are now fully workflow enabled, to the great relief
+of the Lunar Resort's site administrators. You've saved them a lot of headaches
+dealing with inappropriate content, primarily submitted by visitors from Mars.
+Those Martians really need some lessons in netiquette (made up word for
+*etiquette on the internet*).
