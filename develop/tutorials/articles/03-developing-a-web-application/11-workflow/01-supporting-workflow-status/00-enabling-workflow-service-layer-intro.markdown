@@ -1,4 +1,4 @@
-# Enabling Workflow at the Service Layer 
+# Supporting Workflow at the Service Layer 
 
 When you [asset enabled the Guestbook
 Application](/develop/tutorials/-/knowledge_base/7-0/assets-integrating-with-liferays-framework),
@@ -15,7 +15,7 @@ in the `service.xml` file of the `guestbook-service` module.
     <column name="statusDate" type="Date" />
 
 The `status` field, (defaults to `0`,which evaluates to *approved*) tells you
-what the current status of the entity is. The other status fields will be used
+what the current status of the entity is. The other status fields are used
 to store the ID and name of the user (`statusByUserId` and `statusByUserName`)
 who last caused an update to the status of the entity, and when it occurred
 (`statusDate`).

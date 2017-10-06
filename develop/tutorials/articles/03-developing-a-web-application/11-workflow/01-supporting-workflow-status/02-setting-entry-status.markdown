@@ -22,9 +22,9 @@ the `return` statement:
 The call to `startWorkflowInstance` detects whether workflow is installed and
 enabled. If it isn't, the added entity is automatically marked as approved. The
 `startWorkflowInstance` also calls your `EntryWorkflowHandler` class, which
-you'll create later in this Learning Path. The service layer must also update
-the workflow status fields you added to `service.xml`. For this purpose, add the
-following method to the bottom of `EntryLocalServiceImpl`:
+you'll create later. Make the service layer update when they return from the
+workflow framework by adding the following method to the bottom of
+`EntryLocalServiceImpl`:
 
      public Entry updateStatus(long userId, long guestbookId, long entryId, int status,
 			ServiceContext serviceContext) throws PortalException,

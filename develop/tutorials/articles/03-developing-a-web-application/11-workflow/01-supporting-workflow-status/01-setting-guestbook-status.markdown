@@ -11,9 +11,9 @@ below the existing setter methods in the `addGuestbook` method:
 
 This manually sets the status of the workflow as a draft in the `GB_Entry`
 database table, and populates the other status fields with the proper current
-values. At this point they're identical to their non-status-related counterparts
-(like `setUserId` and `setStatusByUserId`), but they'll be updated independently
-in the `updateStatus` method you write later.
+values. At this point they're identical to the similarly named non-status
+counterparts (like `setUserId` and `setStatusByUserId`), but they'll be updated
+independently in the `updateStatus` method you write later.
 
 Still in the `addGuestbook` method, place the following code right before the
 `return` statement:
