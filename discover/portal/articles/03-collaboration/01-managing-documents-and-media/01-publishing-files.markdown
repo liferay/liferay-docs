@@ -289,7 +289,7 @@ From the list view, Documents and Media lets you act on one or more files at
 once. When you select a checkbox for one or more files, the following action
 icons appear: ![Action Icons](../../../images/dm-action-icons.png). Describing
 them from left to right, the X is for canceling file checkout, the secured lock
-is for file check-in, the unsecured lock is for file check-out, the arrows are
+is for file check-out, the unsecured lock is for file check-in, the arrows are
 for moving the files, and the trash can is for moving files to the Recycle Bin.
 You can also move selected files to a subfolder via drag and drop. File
 check-out and check-in is explained later in [Collaborating on
@@ -567,7 +567,7 @@ The Setup tab's Display Settings section provides checkboxes to enable showing e
 actions, gallery navigation links (for paging through media files), and a search
 field. File search is enabled by default. The Media Type selector lets you
 filter on media file types; all supported types are filtered on by default. And
-the Media Gallery uses a [Display Template](/https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
+the Media Gallery uses a [Display Template](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
 You can create your own Display Templates for the Media Gallery or select an
 existing display template, like the *Carousel* display template. **Important**:
 To access the Carousel display template in Media Gallery, your role must have
@@ -611,8 +611,7 @@ Actions* checkbox. Since we only want to show the Spacey's files, expand the
 *Folders Listing* section, then click the *Select* button to browse and select
 the *Spacey Party* folder. Then click *Save*.
 
-The Media
-Gallery now shows all of the Spacey party's files. This app enables the Lunar
+The Media Gallery now shows all of the Spacey party's files. This app enables the Lunar
 Resort media team to act on individual files. If Mrs. Spacey likes particular
 files, the staff member can download them locally and add notes in each file
 entry's comments.
