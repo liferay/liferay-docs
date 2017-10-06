@@ -165,7 +165,7 @@ The following is the XML file for a basic web content article:
     </root>
 
 You can view an article's XML by going to its source.
-    
+ 
 When you create a new theme using the Liferay Theme Generator, a default 
 `sitemap.json` file is created and a default
 `liferay-plugin-package.properties` file is created in the `WEB-INF` folder.
@@ -400,8 +400,8 @@ You can also specify portlet preferences for each portlet.
 
 The following properties are available in the `sitemap.json`: 
 
-**colorSchemeId:** Specifies a different color scheme to use (by ID) for the 
-layout than the default color scheme.
+**colorSchemeId:** Specifies a different color scheme (by ID) than the default
+color scheme to use for the layout.
 
 **columns:** Specifies the column contents for the layout.
 
@@ -415,15 +415,15 @@ layout than the default color scheme.
 the page template (if the layout has one).
 
 **layoutPrototypeName:** Specifies the page template (by name) to use for the 
-layout. If this is defined, the page template's UUID is retrieved using the 
-name and *layoutPrototypeUuid* is not required. 
+layout. If this is defined, the page template's UUID is retrieved using the
+name, and `layoutPrototypeUuid` is not required. 
 
 **layoutPrototypeUuid:** Specifies the page template (by UUID) to use for the 
-layout. If *layoutPrototypeName* is defined, this is not required.
+layout. If `layoutPrototypeName` is defined, this is not required.
 
-**layoutTemplateId:** When defined outside the scope of a portlet, this sets the 
+**layoutTemplateId:** When defined outside the scope of a portlet, sets the 
 default layout template for the theme's layouts. When placed inside a layout, 
-this sets the layout template for the layout. 
+sets the layout template for the layout. 
 
 **layouts:** Specifies child pages for a layout set (`publicPages` || 
 `privatePages`).
@@ -450,8 +450,8 @@ for the `com_liferay_nested_portlets_web_portlet_NestedPortletsPortlet` portlet.
 
 **publicPages:** Specifies public layouts.
 
-**themeId:** Specifies a different theme to use (by ID) for the layout than the 
-default theme bundled with the `sitemap.json`.
+**themeId:** Specifies a different theme (by ID) than the default theme bundled
+with the `sitemap.json` to use for the layout.
 
 **title:** The layout's title.
 
@@ -673,7 +673,7 @@ and which you can download from Liferay Marketplace.
 
 ## Related Topics
 
-<!--[Creating Themes with the Theme Generator](URL goes here)-->
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
 [Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
 
