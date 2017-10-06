@@ -296,6 +296,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
             setLinkable(_LINKABLE);
             setPortletId(GuestbookPortletKeys.GUESTBOOK);
             setSearchable(true);
+            setSelectable(true);
           }
 
     This code contains the class declaration and the constructor. It sets the
@@ -346,51 +347,58 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
         long classPK, String actionId) throws Exception {
 
           Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
-          return GuestbookPermission.contains(permissionChecker, classPK, 
+          return GuestbookPermission.contains(permissionChecker, guestbook, 
           actionId);
         }
 
 4.  Add the remaining code to create the portlet URL for the asset and specify 
     whether it's linkable:
 
-          @Override
-          public PortletURL getURLAdd(LiferayPortletRequest liferayPortletRequest,
-              LiferayPortletResponse liferayPortletResponse, long classTypeId) {
-            PortletURL portletURL = null;
+              @Override
+              public PortletURL getURLAdd(LiferayPortletRequest liferayPortletRequest,
+                  LiferayPortletResponse liferayPortletResponse, long classTypeId) {
+                PortletURL portletURL = null;
 
-            try {
-              ThemeDisplay themeDisplay = (ThemeDisplay) 
-              liferayPortletRequest.getAttribute(WebKeys.THEME_DISPLAY);
+                try {
+                  ThemeDisplay themeDisplay = (ThemeDisplay) 
+                  liferayPortletRequest.getAttribute(WebKeys.THEME_DISPLAY);
 
-              portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(themeDisplay),
-                  GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
-              portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
-              portletURL.setParameter("showback", Boolean.FALSE.toString());
-            } catch (PortalException e) {
+                  portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(themeDisplay),
+                      GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
+                  portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
+                  portletURL.setParameter("showback", Boolean.FALSE.toString());
+                } catch (PortalException e) {
+                }
+
+                return portletURL;
+              }
+
+              @Override
+              public boolean isLinkable() {
+                return _LINKABLE;
+              }
+              
+              @Override
+              public String getIconCssClass() {
+                  return "bookmarks";
+              }
+     
+            @Reference(target = "(osgi.web.symbolicname=com.liferay.docs.guestbook.portlet)",
+                    unbind = "-")
+            public void setServletContext(ServletContext servletContext) {
+                    _servletContext = servletContext;
+                }
+                private ServletContext _servletContext;
+
+            @Reference(unbind = "-")
+                protected void setGuestbookLocalService(GuestbookLocalService guestbookLocalService) {
+                    _guestbookLocalService = guestbookLocalService; 
             }
 
-            return portletURL;
-          }
-
-          @Override
-          public boolean isLinkable() {
-            return _LINKABLE;
-          }
-          
-          @Override
-          public String getIconCssClass() {
-              return "bookmarks";
-          }
-
-
-          @Reference(target = "(osgi.web.symbolicname=com.liferay.docs.guestbook)")
-          private ServletContext _servletContext;
-          @Reference
-          private GuestbookLocalService _guestbookLocalService;
-          
-          private static final boolean _LINKABLE = true;
-          public static final String CLASS_NAME = Guestbook.class.getName();
-          public static final String TYPE = "guestbook";
+            private GuestbookLocalService _guestbookLocalService;
+            private static final boolean _LINKABLE = true;
+            public static final String CLASS_NAME = Guestbook.class.getName();
+            public static final String TYPE = "guestbook";
         }
 
 5.  Organize imports (Ctrl-Shift-O) and save the file. 

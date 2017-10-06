@@ -51,12 +51,12 @@ permissions, and folders in Documents and Media.
 
 Since the Lunar Resort's *Souvenir and Memorabilia* staff members must be able
 to upload and organize guest media, let's enable a role for these purposes. Sign
-in as the Liferay admin and open the *Menu* (![Product
-Menu](../../../images/icon-menu.png)). Then navigate to *Control Panel &rarr; Users
-&rarr; Roles*. If the staff group is a part of an Organization, and that
-organization has a site, create an Organization Role. Otherwise, create it as a
-Site Role. Name the role *Resort Guest Media Manager*. Once you've created it,
-click the role's Actions icon
+in as the Liferay admin and open the *Menu*
+(![Product Menu](../../../images/icon-menu.png)). Then navigate to
+*Control Panel &rarr; Users &rarr; Roles*. If the staff group is a part of an
+Organization, and that organization has a site, create an Organization Role.
+Otherwise, create it as a Site Role. Name the role *Resort Guest Media
+Manager*. Once you've created it, click the role's Actions icon
 (![Actions](../../../images/icon-actions.png)) and select *Define
 Permissions*. A screen appears for you to define the role's permissions.
 
@@ -72,8 +72,9 @@ Media Manager* role.
 
 +$$$
 
-To learn how to create a role and define a role's permissions, refer to [Roles
-and Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
+**Note:** To learn how to create a role and define a role's permissions, refer
+to
+[Roles and Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
 
 $$$
 
@@ -89,10 +90,10 @@ files and folders to the document library, they're listed here.
 
 ![Figure 2: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload and add all kinds of documents to the library.](../../../images/dm-admin-add-menu.png)
 
-Click the *Add* icon (![Add](../../../images/icon-add.png)) to show what you can add
-to the Document Library. You can add documents, folders, and shortcuts the same as you do
-on your local file system. You can even configure access to an entirely different
-repository. Here are the Add menu's options:
+Click the *Add* icon (![Add](../../../images/icon-add.png)) to show what you can
+add to the Document Library. You can add documents, folders, and shortcuts the
+same as you do on your local file system. You can even configure access to an
+entirely different repository. Here are the Add menu's options:
 
 **Folder**: lets you create a new location in the app's file system.
 
@@ -101,8 +102,8 @@ You can set permissions on the shortcut to specify who can access the original
 document through the shortcut.
 
 **Repository**: allows you to add access to an external repository. Refer to
-[Repostory Types](/discover/portal/-/knowledge_base/7-0/liferay-repository-types) to
-learn how to add access to them. 
+[Repostory Types](/discover/portal/-/knowledge_base/7-0/liferay-repository-types)
+to learn how to add access to them. 
 
 **Multiple Documents**: allows you to upload several documents at once.
 
@@ -110,12 +111,14 @@ learn how to add access to them.
 default document type, "Basic Document," to apply to. By default, basic
 documents are not described by any metadata sets.
 
-The remaining items in the Add menu are default [document types](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/document+types)
-that are each described by a unique [metadata set](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Metadata+Set).
-When you add a document belonging to a specific document type, you're presented
-with a form to not only specify the file to upload but also to fill out the
-fields defined by the document type's metadata set. We describe the "Contract"
-document type by way of example.
+The remaining items in the Add menu are default
+[document types](/participate/liferaypedia/-/wiki/Main/document+types)
+that are each described by a unique
+[metadata set](/participate/liferaypedia/-/wiki/Main/Metadata+Set). When you add
+a document belonging to a specific document type, you're presented with a form
+to not only specify the file to upload but also to fill out the fields defined
+by the document type's metadata set. We describe the "Contract" document type by
+way of example.
 
 **Contract**: lets you upload a file that you would like the "Contract" document
 type to apply to. This document type is intended to be used to describe legal
@@ -228,8 +231,8 @@ Multiple Documents screen lists them. On the side of the screen, the *All
 Selected Files* section lists several options for the files. You can fill in a
 common *Description* for the files. You can also specify a *Document Type* to
 apply. Since we're uploading image files, we'll use the *Basic Document* type,
-which is the default type. There are also options for [categorizing and
-tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+which is the default type. There are also options for
+[categorizing and tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 the selected files, and assigning them default permissions. We'll tighten up
 permissions by clicking the *More Options* link and deselecting all the
 permissions. When you're ready to upload the files, click *Publish*. The Add
@@ -289,11 +292,11 @@ From the list view, Documents and Media lets you act on one or more files at
 once. When you select a checkbox for one or more files, the following action
 icons appear: ![Action Icons](../../../images/dm-action-icons.png). Describing
 them from left to right, the X is for canceling file checkout, the secured lock
-is for file check-in, the unsecured lock is for file check-out, the arrows are
+is for file check-out, the unsecured lock is for file check-in, the arrows are
 for moving the files, and the trash can is for moving files to the Recycle Bin.
 You can also move selected files to a subfolder via drag and drop. File
-check-out and check-in is explained later in [Collaborating on
-Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
+check-out and check-in is explained later in
+[Collaborating on Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
 
 ![Figure 6: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../images/dm-file-entry-details.png)
 
@@ -413,10 +416,10 @@ history actions are explained later in the section *Collaborating on Files*.
 Let's review what you've done so far. First, you created a role to manage a
 specific set of files for your site. You assigned users to the role and created
 a Documents and Media folder named *Resort Guest Media* for them to add and
-organize files. Then as a member of the role, you added a subfolder named *Spacey
-Party* and added files to it. And just now, you viewed individual file entry
-information and actions. Next, let's see how you can make adjustments to images 
-in the document library.
+organize files. Then as a member of the role, you added a subfolder named
+*Spacey Party* and added files to it. And just now, you viewed individual file
+entry information and actions. Next, let's see how you can make adjustments to
+images  in the document library.
 
 ## Editing Images [](id=editing-images)
 
@@ -563,17 +566,19 @@ the *Spacey Party* folder. Click the app's Options icon
 (![Options](../../../images/icon-app-options.png)) and select *Configuration*.
 The Configuration window appears and shows the *Setup* tab.
 
-The Setup tab's Display Settings section provides checkboxes to enable showing each file's
-actions, gallery navigation links (for paging through media files), and a search
-field. File search is enabled by default. The Media Type selector lets you
-filter on media file types; all supported types are filtered on by default. And
-the Media Gallery uses a [Display Template](/https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
+The Setup tab's Display Settings section provides checkboxes to enable showing
+each file's actions, gallery navigation links (for paging through media files),
+and a search field. File search is enabled by default. The Media Type selector
+lets you filter on media file types; all supported types are filtered on by
+default. And the Media Gallery uses a
+[Display Template](/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
 You can create your own Display Templates for the Media Gallery or select an
-existing display template, like the *Carousel* display template. **Important**:
-To access the Carousel display template in Media Gallery, your role must have
-*View* access for that template. Since the Carousel template is in the Global
-scope, a Global scope administrator must grant the role permission to view the
-template.
+existing display template, like the *Carousel* display template.
+
+**Important**: To access the Carousel display template in Media Gallery, your
+role must have *View* access for that template. Since the Carousel template is
+in the Global scope, a Global scope administrator must grant the role permission
+to view the template.
 
 The Folders Listing section lets you select a Document Library folder to serve
 as the root folder from which to display files. The root folder is the
@@ -611,11 +616,10 @@ Actions* checkbox. Since we only want to show the Spacey's files, expand the
 *Folders Listing* section, then click the *Select* button to browse and select
 the *Spacey Party* folder. Then click *Save*.
 
-The Media
-Gallery now shows all of the Spacey party's files. This app enables the Lunar
-Resort media team to act on individual files. If Mrs. Spacey likes particular
-files, the staff member can download them locally and add notes in each file
-entry's comments.
+The Media Gallery now shows all of the Spacey party's files. This app enables
+the Lunar Resort media team to act on individual files. If Mrs. Spacey likes
+particular files, the staff member can download them locally and add notes in
+each file entry's comments.
 
 ![Figure 14: The Media Gallery renders large thumbnail images of media files. It gives users quick access to download files that interest them.](../../../images/dm-media-gallery.png)
 
@@ -654,21 +658,21 @@ site via your browser, but you can also access them from your native file
 browser and use Liferay Sync to access them from your tablet or mobile device.
 And Liferay Sync makes sure you're you can access the latest document versions. 
 
-To demonstrate using these features, we'll join the Lunar Resort
-Recreation Department members collaboration on an important document: the Lunar
-Resort's upcoming activities newsletter. Resort representatives from each activity
-group must contribute content to entice resort guests to sign up for activities.
-Staff members involved include Chip Shot (golf instructor), Wilma Carwin (lunar
-rover race instructor), and Tenzing Nepal (lunar sherpa). Each of them use
-different devices and bring their own style and attitude to the collaboration.
-So perhaps you'll be able to relate to their effort.
+To demonstrate using these features, we'll join the Lunar Resort Recreation
+Department members collaboration on an important document: the Lunar Resort's
+upcoming activities newsletter. Resort representatives from each activity group
+must contribute content to entice resort guests to sign up for activities. Staff
+members involved include Chip Shot (golf instructor), Wilma Carwin (lunar rover
+race instructor), and Tenzing Nepal (lunar sherpa). Each of them use different
+devices and bring their own style and attitude to the collaboration. So perhaps
+you'll be able to relate to their effort.
 
 Before the group leads can start working on the newsletter, the department
 director (who's associated with the organization's content administrator Role)
 creates a folder called *Newsletters* in the organization's document library. To
 follow along with the example, create the *Newsletters* folder in an
-organization's document library on your site. This folder will hold all of the department's
-newsletters.
+organization's document library on your site. This folder will hold all of the
+department's newsletters.
 
 Next, open your favorite document editor, enter the title "Upcoming Lunar
 Activities", and save the document as `upcoming-activities.docx`. Upload the
@@ -707,7 +711,8 @@ file, move the file entry to another Document Library folder, check it in, or
 cancel checkout. Tenzing proceeds with the next step towards contributing to the
 file.
 
-Unless you're using [Liferay Sync](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop)
+Unless you're using
+[Liferay Sync](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop)
 or a local drive mapped to the file's WebDAV (explained in the next section)
 URL, you'll typically follow the basic workflow below to edit a Document Library
 file from your machine:
@@ -716,7 +721,7 @@ file from your machine:
 2. Download the file and edit it locally.
 3. Edit the file locally.
 4. From the file's Edit screen in Documents and Media, browse to and select the
-local file. Save and Checkin
+   local file. Save and Checkin
 5. Check in the file.
 
 Let's continue as Tenzing, following the above worklow. (1) You've already
@@ -807,8 +812,8 @@ your file browser, you need to use log in credentials for the @product@
 instance and the WebDAV URL of the folder you'd like to access.
 
 Navigate to the Documents and Media app hosting the folder you'd like to access.
-Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png) and
-select *Access from Desktop*.
+Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png)
+and select *Access from Desktop*.
 
 ![Figure 17: Select *Access from Desktop* to get the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
 
@@ -839,9 +844,9 @@ Prix. She saves the file and closes it. The file in Documents and Media is now
 "Approved" and its minor version is incremented. Voila! She's done her part
 collaborating on the newsletter.
 
-Following Wilma Carwin's demonstration, you've learned how to map your local file
-manager to a Document Library folder and collaborate on files from your desktop
-environment. 
+Following Wilma Carwin's demonstration, you've learned how to map your local
+file manager to a Document Library folder and collaborate on files from your
+desktop environment. 
 
 ## Summary [](id=summary)
 
