@@ -105,14 +105,14 @@ The predefined variables can all be very useful when you're creating scripts.
 The `actionRequest` variable can be especially useful, as this script
 demonstrates:
 
-    import com.liferay.portal.util.*
+    import com.liferay.portal.kernel.util.*
 
     company = PortalUtil.getCompany(actionRequest)
-    out.println("Current company: ${company.getName()}\n")
+    out.println("Current Company:${company.getName()}")
 
-    out.println("User info:")
-    userInfo.each{ 
-            k, v -> out.println("${k}:${v}") 
+    out.println("User Info")
+    userInfo.each {
+        k,v -> out.println("${k}:${v}")
     }
 
 ![Figure 1: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the current user.](../../../images/groovy-script-current-user-info.png)
