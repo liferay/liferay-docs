@@ -1,15 +1,15 @@
 # Creating a Workflow Handler for Guestbooks 
 
 Each workflow enabled entity needs a `WorkflowHandler`. Create a new package in
-the `guestboook-service` module called `com.liferay.docs/guestbook.workflow`.
-Then create the `GuestbokWorkflowHandler` class in it. Make it a Component
+the `guestboook-service` module called `com.liferay.docs.guestbook.workflow`,
+then create the `GuestbokWorkflowHandler` class in it. Make it a Component
 class:
 
     @Component(immediate = true, service = WorkflowHandler.class)
 
 Extend `BaseWorkflowHandler` and pass in `Guestbook` as the type parameter:
 
-    public class GuestbookWorkflowHandler  extends BaseWorkflowHandler {
+    public class GuestbookWorkflowHandler extends BaseWorkflowHandler<Guestbook> {
 
 There are three abstract methods to implement: `getClassName`, `getType`, and
 `updateStatus`.
@@ -28,15 +28,16 @@ There are three abstract methods to implement: `getClassName`, `getType`, and
         }
 
 `getType` returns the model resource name
-(`model.resource.com.liferay.docs.guestbook.model.Guestbook`) <!--WHERE ARE THESE
-METHODS USED? --> Make sure you inject the `ResourceActions` service into a local
-variable at the end of the class, using the `@Reference` annotation:
+(`model.resource.com.liferay.docs.guestbook.model.Guestbook`). Make sure you
+inject the `ResourceActions` service into a private variable at the end of the
+class, using the `@Reference` annotation:
 
         @Reference(unbind = "-")
         protected void setResourceActions(ResourceActions resourceActions) {
 
             _resourceActions = resourceActions;
         }
+
         private ResourceActions _resourceActions;
 
 The meat of the workflow handler is in the `updateStatus` method: 
@@ -62,18 +63,12 @@ The meat of the workflow handler is in the `updateStatus` method:
 When you crafted the service layer's `updateStatus` method (see the last section
 for more details), you specified parameters that must be passed to the method.
 Here you're just making sure that those parameters are available to pass to the
-service call. Here's the method signature from `GuestbookLocalServiceImpl`:
+service call. Get the `userId` and `resourcePrimKey` from `GetterUtil`. Its
+`getLong` method takes a `String`, which you can get from the `workflowContext`
+`Map` using `WorkflowConstants` for the context user ID and the context
+entry class PK.
 
-	public Guestbook updateStatus(long userId, long guestbookId, int status,
-		ServiceContext serviceContext)
-
-In the workflow handler get the `long`s, `userId` and `resourcePrimKey`, from
-`GetterUtil`. Its `getLong` method takes a `String` parameter. Get the context
-user ID and context entry class PK from teh `workflowContext` `Map`, cast them
-to `String`s, and use `GetterUtil.getLong` to cast them to `long`s. <!-- HUH?
--->
-
-Inject a `GuestbookLocalService` into a local variable, using the `@Reference`
+Inject a `GuestbookLocalService` into a private variable using the `@Reference`
 annotation.
 
         @Reference(unbind = "-")
@@ -87,17 +82,28 @@ annotation.
 
     }
 
-Now the Guestbook Application is updating the database with the necessary
-status information and interacting with Liferay's workflow classes to make sure
-each entity is properly handled by @product@. At this point you can enable
-workflow for the Guestbook inside @product@ and see how it works. Navigate to
-the *Control Panel &rarr; Workflow Configuration*. The Guestbook entity is listed
+Organize imports (*[CTRL]+[SHIFT]+O*) and save your work.
+
+Now the Guestbook Application is updating the database with the necessary status
+information and interacting with Liferay's workflow classes to make sure each
+entity is properly handled by @product@. At this point you can enable workflow
+for the Guestbook inside @product@ and see how it works. Navigate to the
+*Control Panel &rarr; Workflow Configuration*. The Guestbook entity is listed
 alongside @product@'s native entities. Enable the Single Approver Workflow for
 Guestbooks, then go to the Guestbook Admin portlet and add a new Guestbook.
-You'll see a notification appear. You receive a notification from the workflow
-that a task is ready for review. Click it and you're taken to the My Workflow
-Tasks portlet, where you can complete the review task.
+You'll see a notification appear next to your user name in the product menu. You
+receive a notification from the workflow that a task is ready for review. Click
+it and you're taken to the My Workflow Tasks portlet, where you can complete the
+review task.
 
-Right now the workflow process is functional, but the UI isn't adapted for it.
-First write the workflow handler for guestbook entries, then update the UI to
-account for each entity's workflow status.
+![Figure x: Click the workflow notification in the Notifications portlet to review the guestbook submitted to the workflow.](../../../../images/workflow-notification.png)
+
+To complete the review, click the actions button
+(![Actions](../../../../images/icon-actions.png)) from My Workflow Tasks and
+select *Assign to Me*. Click the actions button again and select *Approve*.
+
+![Figure x: Click the workflow notification in the Notifications portlet to review the guestbook submitted to the workflow.](../../../../images/workflow-assign-to-me.png)
+
+Right now the workflow process for guestbookds is functional, but the UI isn't
+adapted for it. Write the workflow handler for guestbook entries next, then
+update the UI to account for each entity's workflow status.

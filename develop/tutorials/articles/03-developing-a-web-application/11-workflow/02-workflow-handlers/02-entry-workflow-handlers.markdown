@@ -29,6 +29,9 @@ implement the same three methods you implemented in the
             int status, Map<String, Serializable> workflowContext)
             throws PortalException {
 
+            long guestbookId =
+                _entryLocalService.getEntry(resourcePrimKey).getGuestbookId();
+
             long userId = GetterUtil.getLong(
                 (String) workflowContext.get(WorkflowConstants.CONTEXT_USER_ID));
             long resourcePrimKey = GetterUtil.getLong(
@@ -58,8 +61,11 @@ implement the same three methods you implemented in the
         private ResourceActions _resourceActions;
     }
 
-There is nothing unique about this code as compared with the guestbook's workflow
-handler. See the last article for the implementation details.
+There is nothing unique about this code as compared with the guestbook's
+workflow handler, except that we need the `gustbookId` for the entry. That's
+easily obtained by getting the `Entry` object with `entryLocalService`, then
+getting its `guestbookId`. See the last article for the rest of the handler's
+implementation details.
 
 Organize imports with *CTRL+SHIFT+O* and save the file.
 
