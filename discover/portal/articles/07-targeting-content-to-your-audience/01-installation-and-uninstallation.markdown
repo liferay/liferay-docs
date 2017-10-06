@@ -32,7 +32,8 @@ manually uninstall it, follow these steps:
    you're running Liferay on Tomcat, delete your `[Liferay
    Home]/tomcat-[version]/work` and `[Liferay Home]/tomcat-[version]/temp`
    folders.
-   
-3. Delete in `[Liferay Home]/tomcat-[version]/webapps/` following directories `analytics-hook`, `portal-6-2-x-compat-hook` and `simulator-hook`.
+
+3. Delete the `analytics-hook`, `portal-6-2-x-compat-hook`, and `simulator-hook`
+   files located in the `[Liferay Home]/tomcat-[version]/webapps/` folder.
 
 4. Restart your app server.
