@@ -8,8 +8,8 @@ import java.util.Map;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-import com.liferay.docs.guestbook.model.Guestbook;
-import com.liferay.docs.guestbook.service.GuestbookLocalService;
+import com.liferay.docs.guestbook.model.Entry;
+import com.liferay.docs.guestbook.service.EntryLocalService;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.security.permission.ResourceActions;
 import com.liferay.portal.kernel.service.ServiceContext;
@@ -19,22 +19,24 @@ import com.liferay.portal.kernel.workflow.WorkflowConstants;
 import com.liferay.portal.kernel.workflow.WorkflowHandler;
 
 @Component(immediate = true, service = WorkflowHandler.class)
-public class GuestbookWorkflowHandler extends BaseWorkflowHandler<Guestbook> {
+public class EntryWorkflowHandler extends BaseWorkflowHandler<Entry> {
 
 	@Override
 	public String getClassName() {
 
-		return Guestbook.class.getName();
+		return Entry.class.getName();
+
 	}
 
 	@Override
 	public String getType(Locale locale) {
 
 		return _resourceActions.getModelResource(locale, getClassName());
+
 	}
 
 	@Override
-	public Guestbook updateStatus(
+	public Entry updateStatus(
 		int status, Map<String, Serializable> workflowContext)
 		throws PortalException {
 
@@ -47,8 +49,17 @@ public class GuestbookWorkflowHandler extends BaseWorkflowHandler<Guestbook> {
 		ServiceContext serviceContext =
 			(ServiceContext) workflowContext.get("serviceContext");
 
-		return _guestbookLocalService.updateStatus(
-			userId, resourcePrimKey, status, serviceContext);
+		long guestbookId =
+			_entryLocalService.getEntry(resourcePrimKey).getGuestbookId();
+		
+		return _entryLocalService.updateStatus(
+			userId, guestbookId, resourcePrimKey, status, serviceContext);
+	}
+
+	@Reference(unbind = "-")
+	protected void setEntryLocalService(EntryLocalService entryLocalService) {
+
+		_entryLocalService = entryLocalService;
 	}
 
 	@Reference(unbind = "-")
@@ -56,15 +67,7 @@ public class GuestbookWorkflowHandler extends BaseWorkflowHandler<Guestbook> {
 
 		_resourceActions = resourceActions;
 	}
+
+	private EntryLocalService _entryLocalService;
 	private ResourceActions _resourceActions;
-
-	@Reference(unbind = "-")
-	protected void setGuestbookLocalService(
-		GuestbookLocalService guestbookLocalService) {
-
-		_guestbookLocalService = guestbookLocalService;
-	}
-
-	private GuestbookLocalService _guestbookLocalService;
-
 }

@@ -79,7 +79,6 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		guestbook.setName(name);
 		guestbook.setExpandoBridgeAttributes(serviceContext);
 		guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
-		System.out.println(guestbook.getStatus());
 		guestbook.setStatusByUserId(userId);
 		guestbook.setStatusByUserName(user.getFullName());
 		guestbook.setStatusDate(new Date());
@@ -104,7 +103,7 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 			AssetLinkConstants.TYPE_RELATED);
 		
 		
-		WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
+    WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
 				guestbook.getGroupId(), guestbook.getUserId(), Guestbook.class.getName(), 
 				guestbook.getPrimaryKey(), guestbook, serviceContext);
 
@@ -233,10 +232,9 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		}
 	}
 
-	public Guestbook updateStatus(
-		long userId, long guestbookId, int status,
-		ServiceContext serviceContext)
-		throws PortalException, SystemException {
+     public Guestbook updateStatus(long userId, long guestbookId, int status,
+			ServiceContext serviceContext) throws PortalException,
+			SystemException {
 
 		User user = userLocalService.getUser(userId);
 		Guestbook guestbook = getGuestbook(guestbookId);

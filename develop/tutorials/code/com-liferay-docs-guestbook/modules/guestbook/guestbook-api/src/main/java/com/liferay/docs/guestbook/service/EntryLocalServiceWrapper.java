@@ -229,6 +229,12 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 		return _entryLocalService.getEntriesCount(groupId, guestbookId);
 	}
 
+	@Override
+	public int getEntriesCount(long groupId, long guestbookId, int status)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntriesCount(groupId, guestbookId, status);
+	}
+
 	/**
 	* Returns the OSGi service identifier.
 	*
@@ -328,6 +334,14 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 		com.liferay.portal.kernel.util.OrderByComparator<com.liferay.docs.guestbook.model.Entry> obc) {
 		return _entryLocalService.getEntries(groupId, guestbookId, start, end,
 			obc);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId, int status, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntries(groupId, guestbookId, status,
+			start, end);
 	}
 
 	/**

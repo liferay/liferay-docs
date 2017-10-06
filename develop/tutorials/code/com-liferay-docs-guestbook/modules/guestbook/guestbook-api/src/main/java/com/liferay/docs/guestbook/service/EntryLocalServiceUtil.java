@@ -225,6 +225,11 @@ public class EntryLocalServiceUtil {
 		return getService().getEntriesCount(groupId, guestbookId);
 	}
 
+	public static int getEntriesCount(long groupId, long guestbookId, int status)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEntriesCount(groupId, guestbookId, status);
+	}
+
 	/**
 	* Returns the OSGi service identifier.
 	*
@@ -315,6 +320,12 @@ public class EntryLocalServiceUtil {
 		long groupId, long guestbookId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<com.liferay.docs.guestbook.model.Entry> obc) {
 		return getService().getEntries(groupId, guestbookId, start, end, obc);
+	}
+
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId, int status, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEntries(groupId, guestbookId, status, start, end);
 	}
 
 	/**

@@ -82,6 +82,10 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		entry.setName(name);
 		entry.setEmail(email);
 		entry.setMessage(message);
+		entry.setStatus(WorkflowConstants.STATUS_DRAFT);
+		entry.setStatusByUserId(userId);
+		entry.setStatusByUserName(user.getFullName());
+		entry.setStatusDate(serviceContext.getModifiedDate(null));
 
 		entryPersistence.update(entry);
 
@@ -101,6 +105,11 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 			userId, assetEntry.getEntryId(),
 			serviceContext.getAssetLinkEntryIds(),
 			AssetLinkConstants.TYPE_RELATED);
+
+		WorkflowHandlerRegistryUtil.startWorkflowInstance(
+			entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
+			Entry.class.getName(), entry.getPrimaryKey(), entry,
+			serviceContext);
 
 		return entry;
 	}
@@ -208,6 +217,21 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		return entryPersistence.countByG_G(groupId, guestbookId);
 	}
 
+	public List<Entry> getEntries(
+		long groupId, long guestbookId, int status, int start, int end)
+		throws SystemException {
+
+		return entryPersistence.findByG_G_S(
+			groupId, guestbookId, WorkflowConstants.STATUS_APPROVED);
+	}
+
+	public int getEntriesCount(
+		long groupId, long guestbookId, int status)
+		throws SystemException {
+
+		return entryPersistence.countByG_G_S(
+			groupId, guestbookId, WorkflowConstants.STATUS_APPROVED);
+	}
 	protected void validate(String name, String email, String entry)
 		throws PortalException {
 
@@ -224,10 +248,9 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		}
 	}
 
-	public Entry updateStatus(
-		long userId, long guestbookId, long entryId, int status,
-		ServiceContext serviceContext)
-		throws PortalException, SystemException {
+     public Entry updateStatus(long userId, long guestbookId, long entryId, int status,
+			ServiceContext serviceContext) throws PortalException,
+			SystemException {
 
 		User user = userLocalService.getUser(userId);
 		Entry entry = getEntry(entryId);
@@ -241,14 +264,13 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 
 		if (status == WorkflowConstants.STATUS_APPROVED) {
 
-			assetEntryLocalService.updateVisible(
-				Entry.class.getName(), entryId, true);
+			assetEntryLocalService.updateVisible(Entry.class.getName(),
+					entryId, true);
 
-		}
-		else {
+		} else {
 
-			assetEntryLocalService.updateVisible(
-				Entry.class.getName(), entryId, false);
+			assetEntryLocalService.updateVisible(Entry.class.getName(),
+					entryId, false);
 		}
 
 		return entry;
