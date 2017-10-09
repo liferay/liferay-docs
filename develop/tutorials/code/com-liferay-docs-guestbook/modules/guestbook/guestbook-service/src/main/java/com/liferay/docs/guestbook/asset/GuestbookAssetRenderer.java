@@ -125,7 +125,7 @@ public class GuestbookAssetRenderer extends BaseJSPAssetRenderer<Guestbook> {
       PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
           getControlPanelPlid(liferayPortletRequest), GuestbookPortletKeys.GUESTBOOK,
           PortletRequest.RENDER_PHASE);
-      portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
+      portletURL.setParameter("mvcRenderCommandName", "/guestbookadminportlet/edit_guestbook");
       portletURL.setParameter("guestbookId", String.valueOf(_guestbook.getGuestbookId()));
       portletURL.setParameter("showback", Boolean.FALSE.toString());
 

@@ -28,7 +28,11 @@ device databases so that you can use their device characteristics in your rules.
 **Important:** For the features described in this article to work, you must 
 install the Liferay Mobile Device Detection (LMDD) app from the Liferay 
 Marketplace. This app provides the device detection database that's required for 
-your @product@ instance to detect which mobile devices are accessing it. 
+your @product@ instance to detect which mobile devices are accessing it. Note 
+that if you're running Liferay DXP, you must install 
+[the lite version of LMDD](https://web.liferay.com/marketplace/-/mp/application/92831494) 
+before you can install 
+[the enterprise version](https://web.liferay.com/marketplace/-/mp/application/35419014). 
 [Click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace) 
 for instructions on using Liferay Marketplace to find and install apps. 
 

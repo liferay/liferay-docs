@@ -2,14 +2,16 @@
 package com.liferay.docs.guestbook.service.permission;
 
 import org.osgi.service.component.annotations.Component;
+
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.security.auth.PrincipalException;
 import com.liferay.portal.kernel.security.permission.BaseResourcePermissionChecker;
 import com.liferay.portal.kernel.security.permission.PermissionChecker;
+import com.liferay.portal.kernel.security.permission.ResourcePermissionChecker;
 
 @Component(immediate = true, property = {
 	"resource.name=" + GuestbookModelPermission.RESOURCE_NAME
-}, service = GuestbookModelPermission.class)
+}, service = ResourcePermissionChecker.class)
 
 public class GuestbookModelPermission extends BaseResourcePermissionChecker {
 
@@ -20,7 +22,8 @@ public class GuestbookModelPermission extends BaseResourcePermissionChecker {
 		throws PortalException {
 
 		if (!contains(permissionChecker, groupId, actionId)) {
-			throw new PrincipalException();
+			throw new PrincipalException.MustHavePermission(
+				permissionChecker, RESOURCE_NAME, groupId, actionId);
 		}
 	}
 

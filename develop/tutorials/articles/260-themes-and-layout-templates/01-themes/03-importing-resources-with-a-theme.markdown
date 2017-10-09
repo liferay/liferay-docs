@@ -165,7 +165,7 @@ The following is the XML file for a basic web content article:
     </root>
 
 You can view an article's XML by going to its source.
-    
+ 
 When you create a new theme using the Liferay Theme Generator, a default 
 `sitemap.json` file is created and a default
 `liferay-plugin-package.properties` file is created in the `WEB-INF` folder.
@@ -219,25 +219,25 @@ understand. Let's examine a sample `sitemap.json` file:
                 "columns": [
                     [
                         {
-                            "portletId": "com_liferay_login_web_internal_portlet_LoginPortlet"
+                            "portletId": "com_liferay_login_web_portlet_LoginPortlet"
                         },
                         {
-                            "portletId": "com_liferay_site_navigation_menu_web_internal_portlet_SiteNavigationMenuPortlet"
+                            "portletId": "com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet"
                         },
                         {
-                            "portletId": "com_liferay_journal_content_web_internal_portlet_JournalContentPortlet",
+                            "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet",
                             "portletPreferences": {
                                 "articleId": "Without Border.html",
                                 "groupId": "${groupId}",
-                                "portletSetupShowBorders": "false"
+                                "portletSetupPortletDecoratorId": "borderless"
                             }
                         },
                         {
-                            "portletId": "com_liferay_journal_content_web_internal_portlet_JournalContentPortlet",
+                            "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet",
                             "portletPreferences": {
                                 "articleId": "Custom Title.html",
                                 "groupId": "${groupId}",
-                                "portletSetupShowBorders": "true",
+                                "portletSetupPortletDecoratorId": "decorate",
                                 "portletSetupTitle_en_US": "Web Content Display with Custom Title",
                                 "portletSetupUseCustomTitle": "true"
                             }
@@ -245,10 +245,10 @@ understand. Let's examine a sample `sitemap.json` file:
                     ],
                     [
                         {
-                            "portletId": "com_liferay_hello_world_web_internal_portlet_HelloWorldPortlet"
+                            "portletId": "com_liferay_hello_world_web_portlet_HelloWorldPortlet"
                         },
                         {
-                            "portletId": "com_liferay_site_navigation_menu_web_internal_portlet_SiteNavigationMenuPortlet_INSTANCE_${groupId}",
+                            "portletId": "com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_${groupId}",
                             "portletPreferences": {
                                 "displayStyle": "[custom]",
                                 "headerType": "root-layout",
@@ -260,16 +260,16 @@ understand. Let's examine a sample `sitemap.json` file:
                         },
                         "Web Content with Image.html",
                         {
-                            "portletId": "com_liferay_nested_portlets_web_internal_portlet_NestedPortletsPortlet",
+                            "portletId": "com_liferay_nested_portlets_web_portlet_NestedPortletsPortlet",
                             "portletPreferences": {
                                 "columns": [
                                     [
                                         {
-                                            "portletId": "com_liferay_journal_content_web_internal_portlet_JournalContentPortlet",
+                                            "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet",
                                             "portletPreferences": {
                                             "articleId": "Child Web Content 1.xml",
                                             "groupId": "${groupId}",
-                                            "portletSetupShowBorders": "true",
+                                            "portletSetupPortletDecoratorId": "decorate",
                                             "portletSetupTitle_en_US": "Web Content Display with Child Structure 1",
                                                 "portletSetupUseCustomTitle": "true"
                                             }
@@ -277,11 +277,11 @@ understand. Let's examine a sample `sitemap.json` file:
                                     ],
                                     [
                                         {
-                                            "portletId": "com_liferay_journal_content_web_internal_portlet_JournalContentPortlet",
+                                            "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet",
                                             "portletPreferences": {
                                             "articleId": "Child Web Content 2.xml",
                                             "groupId": "${groupId}",
-                                            "portletSetupShowBorders": "true",
+                                            "portletSetupPortletDecoratorId": "decorate",
                                             "portletSetupTitle_en_US": "Web Content Display with Child Structure 2",
                                                 "portletSetupUseCustomTitle": "true"
                                             }
@@ -304,12 +304,12 @@ understand. Let's examine a sample `sitemap.json` file:
                 "columns": [
                     [
                         {
-                            "portletId": "com_liferay_login_web_internal_portlet_LoginPortlet"
+                            "portletId": "com_liferay_login_web_portlet_LoginPortlet"
                         }
                     ],
                     [
                         {
-                            "portletId": "com_liferay_hello_world_web_internal_portlet_HelloWorldPortlet"
+                            "portletId": "com_liferay_hello_world_web_portlet_HelloWorldPortlet"
                         }
                     ]
                 ],
@@ -335,12 +335,12 @@ understand. Let's examine a sample `sitemap.json` file:
                 "columns": [
                     [
                         {
-                            "portletId": "com_liferay_login_web_internal_portlet_LoginPortlet"
+                            "portletId": "com_liferay_login_web_portlet_LoginPortlet"
                         }
                     ],
                     [
                         {
-                            "portletId": "com_liferay_hello_world_web_internal_portlet_HelloWorldPortlet"
+                            "portletId": "com_liferay_hello_world_web_portlet_HelloWorldPortlet"
                         }
                     ]
                 ],
@@ -367,6 +367,13 @@ understand. Let's examine a sample `sitemap.json` file:
                 "type": "url"
             },
             {
+                "friendlyURL": "/link-page",
+                "name": "Link to another Page",
+                "title": "Link to another Page",
+                "type": "link_to_layout"
+                "typeSettings": "linkToLayoutId=1"
+            },
+            {
                 "friendlyURL": "/hidden-page",
                 "name": "Hidden Page",
                 "title": "Hidden Page",
@@ -375,15 +382,15 @@ understand. Let's examine a sample `sitemap.json` file:
         ]
     }
 
-The first thing you should declare in your `sitemap.json` file is a layout
-template ID so the target site or site template can reference the layout
+The first thing you should declare in your `sitemap.json` file is a default 
+layout template ID so the target site or site template can reference the layout
 template to use for its pages. You can also specify different layout templates
 to use for individual pages. You can find layout templates in your Liferay
 installation's `/layouttpl` folder. Next, you have to declare the layouts, or
 pages, that your site template should use. Note that pages are called *layouts*
-in Liferay's code. You can specify a name, title, and friendly URL for a page,
+in @product@'s code. You can specify a name, title, and friendly URL for a page,
 and you can set a page to be hidden. To declare that web content should be
-displayed on a page, simply specify an HTML file. You can declare portlets by
+displayed on a page, simply specify an XML file. You can declare portlets by
 specifying their portlet IDs, which can be found in the App Manager of the 
 Control Panel. Select the suite that the App is located in, click the App, click
 the App web link, and open the *Portlets* tab that appears. The portlet ID is 
@@ -391,13 +398,105 @@ displayed below the name of the App. You can find a full list of the default
 portlet IDs for Liferay in the [Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide). 
 You can also specify portlet preferences for each portlet.
 
+The following properties are available in the `sitemap.json`: 
+
+**colorSchemeId:** Specifies a different color scheme (by ID) than the default
+color scheme to use for the layout.
+
+**columns:** Specifies the column contents for the layout.
+
+**friendlyURL:** Sets the layout's friendly URL.
+
+**hidden:** Sets whether the layout is hidden.
+
+**layoutCss:** Sets custom CSS for the layout to load after the theme.
+
+**layoutPrototypeLinkEnabled:** Sets whether the layout inherits changes made to 
+the page template (if the layout has one).
+
+**layoutPrototypeName:** Specifies the page template (by name) to use for the 
+layout. If this is defined, the page template's UUID is retrieved using the
+name, and `layoutPrototypeUuid` is not required. 
+
+**layoutPrototypeUuid:** Specifies the page template (by UUID) to use for the 
+layout. If `layoutPrototypeName` is defined, this is not required.
+
+**layoutTemplateId:** When defined outside the scope of a portlet, sets the 
+default layout template for the theme's layouts. When placed inside a layout, 
+sets the layout template for the layout. 
+
+**layouts:** Specifies child pages for a layout set (`publicPages` || 
+`privatePages`).
+
+**name:** The layout's name.
+
+**nameMap:** Passes a name object with multiple name key/value pairs. As shown 
+in the example sitemap above, you can use this to pass language keys for layout 
+names.
+
+**portletPreferences:** Specifies the portlet's preferences. See note below for 
+more information. 
+
+**portletSetupPortletDecoratorId:** Specifies the portlet decorator to use 
+for the portlet (`borderless` || `barebone` || `decorate`). See the 
+[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators) 
+tutorial for more info.
+
+**portlets:** specifies the portlets to display in the layout's column. To nest 
+portlets, recursively use columns as shown in the example `sitemap.json` above 
+for the `com_liferay_nested_portlets_web_portlet_NestedPortletsPortlet` portlet. 
+
+**privatePages:** Specifies private layouts.
+
+**publicPages:** Specifies public layouts.
+
+**themeId:** Specifies a different theme (by ID) than the default theme bundled
+with the `sitemap.json` to use for the layout.
+
+**title:** The layout's title.
+
+**type:** Sets the layout type. The default value is `portlet` (empty page). 
+Possible values are `copy` (copy of a page of this site), 
+`embedded`, `full_page_application`, `link_to_layout`, `node` (page set), 
+`panel`, `portlet`, and `url` (link to URL).
+
+**typeSettings:** Specifies settings (using key/value pairs) for the layout 
+`type`.
+
++$$$
+
+**Note:** Portlet preferences set in `sitemap.json` are saved in the database to 
+the column: `portletPreferences.preferences`. To determine the proper key:value 
+pair for a portlet preference, there are a couple approaches you can take.
+
+You can manually set the portlet preference in @product@, and then check the 
+values in this column of the database as a hint for what to configure in your 
+`sitemap.json`. For example, you can configure the Asset Publisher to display 
+assets that match the specified asset tags, using the following configuration:
+
+    "queryName0": "assetTags",
+    "queryValues0": "MyAssetTagName"
+
+Alternatively, you can search each app in your @product@ bundle for the keyword 
+`preferences--`. This returns some of the app's JSPs that have the portlet 
+preferences defined for the portlet.
+
+You can use a combination of both of these approaches to determine the key/value 
+pairs for the portlet preferences. 
+
+Note that portlet preferences that require an existing configuration, such as a 
+tag or category, may require you to create the configuration on the Global site 
+first, so that the Resources Importer finds a match when deployed with the theme.  
+
+$$$
+
 +$$$
 
 **Tip:** You can specify an application display template (ADT) for a portlet in
 the `sitemap.json` file by setting the `displayStyle` and `displayStyleGroupId`
 portlet preferences. For example:
 
-    "portletId": "com_liferay_asset_publisher_web_internal_portlet_AssetPublisherPortlet",
+    "portletId": "com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet",
         "portletPreferences": {
             "displayStyleGroupId": "10197",
             "displayStyle": "ddmTemplate_6fe4851b-53bc-4ca7-868a-c836982836f4",
@@ -405,7 +504,7 @@ portlet preferences. For example:
 
 To learn more about ADTs, visit the
 [Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
-chapter.
+chapter. 
 
 $$$
 
@@ -572,9 +671,9 @@ please examine the Zoe themes which you can find on Github here
 and which you can download from Liferay Marketplace.
 -->
 
-**Related Topics**
+## Related Topics
 
-<!--[Creating Themes with the Theme Generator](URL goes here)-->
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
 [Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
 
