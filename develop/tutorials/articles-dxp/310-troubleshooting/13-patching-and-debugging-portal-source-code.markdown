@@ -1,7 +1,7 @@
 # Patching DXP Source Code [](id=patching-dxp-source-code)
 
-Auto mechanics, car enthusiasts, and concerned car owners commonly ask "What's
-under the hood?" Their reasons for asking could be as follows:
+Regarding cars, auto mechanics, car enthusiasts, and concerned car owners ask
+"What's under the hood?" Here are some common reasons for asking that question:
 
 -   Concern about an issue.
 -   Curiosity about the car's capability and inner-workings.
@@ -9,9 +9,9 @@ under the hood?" Their reasons for asking could be as follows:
 
 As a developer, you might have similar reasons for asking "What's under the
 *DXP's* hood?" Since DXP Digital Enterprise (DXP) is open-source, you can
-examine its code and see it in action! Setting up the DXP source code for
-debugging is your ticket to investigating issues, exploring DXP, making
-improvements and customizations.
+examine its code and see it in action! Setting up the DXP source code, applying
+desired patches, and debugging it is your ticket to investigating issues,
+exploring DXP, making improvements and customizations.
 
 Here are the setup steps:
 
@@ -25,7 +25,7 @@ From the
 [customer portal](https://web.liferay.com/group/customer/dxp),
 download a DXP bundle (or DXP JARs), and the DXP source code for the version
 you're using. For example, here are ZIP files for a DXP / Tomcat bundle and DXP
-code:
+source code:
 
 -   `liferay-dxp-digital-enterprise-tomcat-7.0-sp4-20170705142422877.zip`
 -   `liferay-dxp-digital-enterprise-src-7.0-sp4-20170814143552654.zip`
@@ -38,15 +38,15 @@ For example, this ZIP file contains a fix pack and source code:
 
 +$$$
 
-**Tip**: Fix pack `-src.zip` files contain both the fix pack and its source
+**Tip**: A fix pack `-src.zip` file contains both the fix pack and its source
 code.  
 
 $$$
 
-Next, you'll install and configure DXP since it has the patching tool. If
-you have a patched DXP installation already and want to debug it, skip to the
-section on
-[patching the DXP source code](#patch-the-dxp-source-code).
+Next, you'll install and configure DXP. The patching tool is required for
+installing fix packs and fix pack source code. If you have a patched DXP
+installation already and want to debug it, skip to the section on
+[Patching the DXP Source Code](#patch-the-dxp-source-code).
 
 ## Step 2: Prepare DXP [](id=prepare-dxp)
 
@@ -54,7 +54,7 @@ Setting up DXP locally is straightforward.
 
 ### Install and Configure DXP [](id=install-and-configure-dxp)
 
-Follow these steps to install and configure DXP: 
+Here are the steps: 
 
 1.   [Install and Deploy DXP](/discover/deployment/-/knowledge_base/7-0/deploying-liferay-portal)
 locally. 
@@ -71,14 +71,15 @@ It's time apply the DXP patches you want.
 
 Here are the steps for patching DXP:
 
-1.  Copy the patch ZIP files to the folder
-    `[LIFERAY_HOME]/patching-tool/patches`.
+1.  Copy all the patch ZIP files to the folder
+    `[LIFERAY_HOME]/patching-tool/patches`. The `-src.zip` fix pack  files are
+    good to use because contain both the fix pack binaries and source code. 
 
-2.  Open a terminal to the folder `[LIFERAY_HOME]/patching-tool`.
+2.  Open a terminal window to the folder `[LIFERAY_HOME]/patching-tool`.
 
-3.  Generate a default patching profile called `default.properties` by running
-    `patching-tool.sh auto-discovery`. Make sure the profile's properties
-    refer to your DXP installation. See the
+3.  Run the command `patching-tool.sh auto-discovery` to generate a default
+    patching profile called `default.properties`. Make sure the profile's
+    properties refer to your DXP installation. See the
     [patching tool documentation](/discover/deployment/-/knowledge_base/7-0/patching-tool)
     for more details.
 
@@ -89,37 +90,72 @@ Here are the steps for patching DXP:
     	global.lib.path=../tomcat-8.0.32/lib/ext/
     	liferay.home=../
 
-4.  Execute the command `patching-tool.sh info` to list the installed
-    patches and patches available in your `patches` folder.
+4.  To list all the patches available in your patches folder 
+    `[LIFERAY_HOME]/patching-tool/patches`, execute the following
+    command:
 
-5.  Install all patches available in the folder
-    `[LIFERAY_HOME]/patching-tool/patches` by executing this command:
+        patching-tool.sh info
+
+5.  Install all the patches available in the patches folder by executing this
+    command:
 
         patching-tool.sh install
 
     The
     [patching tool documentation](/discover/deployment/-/knowledge_base/7-0/patching-tool)
-    explains additional steps, such as creating database indexes, that might
-    apply to your situation.
+    explains additional steps that might apply to your situation, such as
+    creating database indexes.
 
-It's time to prepare the DXP source code for debugging. 
+It's time to prepare the DXP source code and patches for debugging. 
 
 ## Step 3: Patch the DXP Source Code [](id=patch-the-dxp-source-code)
 
-This step involves preparing the DXP source code locally for patching,
-examining, and attaching a debugger. Committing the code to a version control
-system, such as [Git](https://git-scm.com/), facilitates reverting back to
-different patch levels. It's completely optional, but can be helpful. 
+This step involves preparing the DXP source code locally and patching it. 
 
-No matter whether you're going to use version control, unzip the DXP source code
-to where you want to work with it. 
+First, unzip the DXP source code to where you want to work with it. 
 
-If you want to manage the DXP and patch source code using version control, read
-the next section. Otherwise, skip it. 
+Next, you'll create a patching tool profile for your DXP source code. 
 
-### Commit the Source Code to a Git repository
+### Create a Patching Tool Profile for the Source Code [](id=create-a-patching-tool-profile-for-the-source-code)
 
-Here are commands for committing the source code:
+Here are steps for creating a patching tool profile that refers to your source
+code.  
+
+1.  Execute the following command to create a profile. Replace `[profile]` with
+    a name for your profile. 
+
+        patching-tool.sh auto-discovery [profile]
+      
+2.  In the profile properties file generated in the previous step, set the
+    `patching.mode` property to `source` and set the `source.path` property to
+    your source code path:
+
+        patching.mode=source
+	    source.path=[location of the DXP source code]
+
+It's time to apply the DXP patches you downloaded earlier. 
+
+## Patch the Source Code [](id=patch-the-source-code)
+
+DXP's patching tool is safe and easy to use. Not only does it let you install
+patches, but it also can do these things for any patch:
+
+-   Lists code changes
+-   List fixed issues (LPS/LPE tickets)
+-   Revert the patch
+
+See the following patching tool documentation for more details:
+
+-   [Comparing Patch Levels](/discover/deployment/-/knowledge_base/7-0/patching-tool#comparing-patch-levels)
+-   [Removing or Reverting Patches](/discover/deployment/-/knowledge_base/7-0/patching-tool#removing-or-reverting-patches)
+
++$$$
+
+Optionally you can manage DXP source code in a version control system such as
+[Git](https://git-scm.com/)
+in addition to using the patching tool. 
+
+Here are commands for setting up the DXP source code in Git:
 
     cd [path to source code root folder]
     git init
@@ -133,69 +169,32 @@ Here's are the command descriptions:
 -   `add` stages the root folder and its contents.
 -   `commit` checks in the staged files.
 
-+$$$
-
-Note, you can use Git's `branch` command to create branches for various patch
-levels and use the `reset` command to go back to earlier patch levels. 
+You can commit any code changes (e.g., DXP patches) to your Git repository. 
 
 $$$
 
-Next, you'll create a patching tool profile for your source code. 
+The patching tool installs all patches and patch source code from the ZIP files
+in your folder `[LIFERAY_HOME]/patching-tool/patches`. ZIP files for All patches
+you're using and want to continue to use must be in the patches folder for the
+patching tool to apply. 
 
-### Create a Patching Tool Profile for the Source Code [](id=create-a-patching-tool-profile-for-the-source-code)
+1.  Copy all the patch source ZIP files to the folder   
+    `[LIFERAY_HOME]/patching-tool/patches`, if you haven't already copied them
+    there. 
 
-Here are steps for creating a patching tool profile that referes to your source
-code.  
-
-1.  Execute the following command to create a profile. Replace `[profile]` with
-    a name for your profile. 
-
-        patching-tool.sh auto-discovery [profile]
-      
-2.  In the profile properties file generated in the previous step, set the
-    `patching.mode` property to `source` and set the `source.path` property to
-    your source code path:
-
-        patching.mode=source
-	    source.path=[location of the Liferay source code]
-
-It's time to apply the DXP patches you downloaded at the start of this tutorial. 
-
-## Patch the Source Code [](id=patch-the-source-code)
-
-You're ready to apply patches. You can apply any number of patches at the same
-time. If you're using Git, committing patches separately facilitates switching
-between different patch levels. Use the following steps to apply (and optionally
-commit to Git) patches to the DXP source code.  
-
-1.  Copy the patch source ZIP file(s) to the folder   
-    `[LIFERAY_HOME]/patching-tool/patches`.
-
-2.  Execute the `info` command to make sure your patch(es) is listed. Replace
+2.  Execute the `info` command to make sure your patches are listed. Replace
     `[profile]` with your DXP source code profile name:
 
         patching-tool.sh [profile] info
 
-3.  Apply the patch(es) by executing the `install` command on your profile:
+3.  Apply the patches by executing the `install` command on your profile:
 
         patching-tool.sh [profile] install
 
-4.  Optionally, commit the patch source code to Git by executing the following
-    command. Replace `[message]` with your commit's description. 
+You're DXP installation and source code is patched and ready to debug!
 
-        git commit -a -m "[message]"
-
-If you're applying patches one at a time, repeat the above steps for each patch. 
-
-+$$$
-
-**Note**: The patching tool's `diff` command shows patch source code changes, modified files, and fixed issues (LPS/LPE tickets). 
-
-$$$
-
-Now you're ready to debug DXP. Attach your favorite debugger to your DXP
-instance and start the server. See your debugger's documentation for
-configuration details.
+Attach your favorite debugger to your DXP instance and start the server. See
+your debugger's documentation for configuration details.
 
 Congratulations! You're free to explore DXP inside and out!
 
