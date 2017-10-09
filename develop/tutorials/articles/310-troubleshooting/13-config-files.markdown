@@ -100,7 +100,7 @@ For example, these configuration files are just as valid as the two above:
 Using the subname `default`, however, is @product@'s convention for configuring 
 a component's first instance. The file name pattern is therefore: 
 
-    [PID]-default.properties
+    [PID]-default.config
 
 A singleton component's configuration file must also start with `[PID]` and end
 with `.config` or `.cfg`. Here's the common pattern used for singleton component 
