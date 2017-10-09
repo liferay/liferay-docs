@@ -124,7 +124,7 @@ configuration is available for use.
 @product@ supports several different types of WYSIWYG editors, which include
 (among others):
 
-- [AlloyEditor](http://alloyeditor.com/api/)
+- [AlloyEditor](https://alloyeditor.com/api/1.4.1/)
 - [CKEditor](http://docs.ckeditor.com/#!/api/CKEDITOR.config)
 - [TinyMCE](http://www.tinymce.com/wiki.php/Configuration)
 
