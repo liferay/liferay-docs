@@ -261,20 +261,6 @@ tag and the `data-fileentryid` attribute are added to the image.
 **Important:** Adaptive Media is only applied to the blog entry's content. 
 Currently Adaptive Media does not apply to the cover image of the blog entry.
 
-### Using the Source View of the editor
-<!-- Does this require you to know how to use the APIs to get the file entry ID? -->
-You can also add Adaptive Media images to a blog entry or web content article by 
-manually writing the HTML code in the source view of the editor. To do this you 
-have to include an `<img>` tag with a `data-fileentryid` attribute containing 
-the image's file entry ID. An example snippet is shown below:
-
-    <img data-fileentryid="37308" 
-    src="/documents/20143/0/photo.jpeg/85140258-1c9d-89b8-4e45-d79d5e262318?t=1518425" />
-
-Adaptive Media automatically replaces the `<img>` tag and obtains the 
-information from the file entry identifier when the blog entry or web content 
-article is displayed.
-
 ## Using Staging with Adaptive Media
 
 Adaptive Media is fully integrated with Staging and Export/Import functionality 
