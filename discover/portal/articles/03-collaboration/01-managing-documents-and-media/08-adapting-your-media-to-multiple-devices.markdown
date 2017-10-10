@@ -37,9 +37,7 @@ resolution image for the optimal viewing experience.
 Portal Administrators can manage Adaptive Media by opening the Control Panel and 
 selecting *Adaptive Media* under the *Configuration* heading. 
 
-![Figure 1: Add a new image resolution under the Adaptive Media Configuration. ](../../../images/adaptive-media-configuration.png)
-
-Portal administrators must specify the image resolutions to generate when a new 
+Portal Administrators must specify the image resolutions to generate when a new 
 image is uploaded. New resolutions are automatically generated for all images 
 uploaded after the resolution is created. Images uploaded prior to the new 
 resolution's creation are not updated. To apply a new resolution to previously 
@@ -72,7 +70,7 @@ next to *Custom* under the *Identifier* heading, and entering a new ID. Third
 party applications can use the identifier to obtain images for the resolution, 
 via Adaptive Media's APIs.
 
-![Figure 2: Specify an Identifier for an image resolution to make it available in the APIs.](../../../images/adaptive-media-new-img-resolution.png)
+![Figure 1: Specify an Identifier for an image resolution to make it available in the APIs.](../../../images/adaptive-media-new-img-resolution.png)
 
 You can also create a resolution for high density displays. If the administrator 
 selects this option, a new resolution for these devices is created with the 
@@ -153,7 +151,7 @@ images, or perhaps you add a new image resolution that hasn't been applied to
 existing images. In these scenarios the adapted images for an image resolution 
 is less than 100%. 
 
-![Figure 3: A resolution's coverage of adapted images is shown under the *Adapted Images* column.](../../../images/adaptive-media-coverage.png)
+![Figure 2: A resolution's coverage of adapted images is shown under the *Adapted Images* column.](../../../images/adaptive-media-coverage.png)
 
 Portal Administrators can trigger the process to adapt the missing images. Each 
 image resolution can be adapted individually by selecting the 
@@ -198,7 +196,8 @@ image field to the matching template, by selecting it on the left side of the
 editor. Below is an example snippet for an image:
 
     <#if Imagecrrf.getData()?? && Imagecrrf.getData() !="">
-        <img data-fileentryid="${Imagecrrf.getAttribute("fileEntryId")}" alt="${Imagecrrf.getAttribute("alt")}" src="${Imagecrrf.getData()}" />
+      <img data-fileentryid="${Imagecrrf.getAttribute("fileEntryId")}" 
+      alt="${Imagecrrf.getAttribute("alt")}" src="${Imagecrrf.getData()}" />
     </#if>
 
 This snippet includes the `data-fileentryid` attribute to ensure that the image 
@@ -297,7 +296,7 @@ Latest version:
     /o/adaptive-media/image/[file-entry-id]/[image-resolution-id]/[image title]
     
 This relative URL points to the latest version of the adapted image generated 
-with the file entry ID *34798* and image resolution ID *thumbnail*:
+with the file entry ID `34798` and image resolution ID `thumbnail`:
 
     /o/adaptive-media/image/34798/thumbnail/beach.jpeg
 
@@ -306,8 +305,8 @@ Specific version:
 
     /o/adaptive-media/image/[file-entry-id]/[file-version-id]/[image-resolution-id]/[image title]
 
-This URL points to the adapted image generated with the file entry ID *34798*, 
-file version ID *34803*, and image resolution ID *thumbnail*:
+This URL points to the adapted image generated with the file entry ID `34798`, 
+file version ID `34803`, and image resolution ID `thumbnail`:
 
     /o/adaptive-media/image/34798/34803/thumbnail/beach.jpeg
 
@@ -347,7 +346,7 @@ The following configuration options are available:
 media. The default value is 10 workers.
 
 **Workers core size:** The size of core workers that can process adaptive media. 
-This size should always be smaller or equal to *Workers Max Size*. This size can 
+This size should always be smaller or equal to `Workers Max Size`. This size can 
 be modified to improve performance for specific environments and use cases. The 
 default value is 5 workers.
 
