@@ -13,7 +13,7 @@ that delivers your media content in the best format, based on the channel
 and device that consumes it. 
 
 This provides faster loading times for devices with a slower connection, saving 
-bandwidth, and also gives administrative control over the image quality provided. 
+bandwidth, and also gives administrative control over the image quality. 
 
 ## How It Works [](id=how-it-works)
 
@@ -26,8 +26,8 @@ Adaptive Media is integrated with Documents and Media, Blogs, and Web Content.
 Images uploaded to Documents and Media or to a Blog Entry are analyzed and 
 processed, generating a set of images with the defined resolutions. For 
 instance, when a user is reading a blog entry on their mobile phone that 
-contains an image, Adaptive Media checks the screen size of the phone and 
-delivers the copy of the image that best fits the screen. 
+contains an image, Adaptive Media checks the phone's screen size and delivers 
+the copy of the image that best fits the screen. 
 
 Adaptive Media also ensures that your high resolution devices receive a high 
 resolution image for the optimal viewing experience. 
@@ -41,9 +41,10 @@ selecting *Adaptive Media* under the *Configuration* heading.
 
 Portal administrators must specify the image resolutions to generate when a new 
 image is uploaded. New resolutions are automatically generated for all images 
-uploaded after the resolution is created. Existing images are not updated. To 
-apply a new resolution to previously uploaded images, you must trigger the 
-process to adapt the remaining images. This process is covered in the 
+uploaded after the resolution is created. Images uploaded prior to the new 
+resolution's creation are not updated. To apply a new resolution to previously 
+uploaded images, you must trigger the process to adapt the remaining images. 
+This process is covered in the 
 [Generating Missing Image Resolutions section](#generating-missing-image-resolutions). 
 
 +$$$
@@ -56,30 +57,30 @@ $$$
 To add a new resolution, click the plus button on the bottom right corner of the 
 application. Fill in the following fields for the new image resolution:
 
-**Title**: A name used for identification purposes (must be unique. No two image 
-resolutions can share the same title.)
+**Name**: A name used for identification purposes (must be unique. No two image 
+resolutions can share the same name.)
 
 **Maximum Width**: The maximum width of the generated image. If a 
-*Maximum Height* is given, this field is optional. This value must be at least 1.
+`Maximum Height` is given, this field is optional. This value must be at least 1.
 
 **Maximum Height**: the maximum height of the generated image. If a 
-*Maximum Width* is given, this field is optional. This value must be at least 1.
+`Maximum Width` is given, this field is optional. This value must be at least 1.
 
-By default, the image resolution's *identifier* is automatically generated based 
-on the image resolution's *Title*. You can specify a custom identifier by 
-clicking the radio button next to *Custom* under the *Identifier* heading, and 
-entering a new ID. The identifier can be used by third party applications to 
-obtain the images for that particular resolution, via the Adaptive Media APIs.
+By default, the image resolution's `Identifier` is automatically generated from 
+its `Name`. You can specify a custom identifier by clicking the radio button 
+next to *Custom* under the *Identifier* heading, and entering a new ID. Third 
+party applications can use the identifier to obtain images for the resolution, 
+via Adaptive Media's APIs.
 
 ![Figure 2: Specify an Identifier for an image resolution to make it available in the APIs.](../../../images/adaptive-media-new-img-resolution.png)
 
 You can also create a resolution for high density displays. If the administrator 
 selects this option, a new resolution for these devices is created with the 
-same title and the suffix *-2x*. This option is only available when adding new 
+same `name` and the suffix `-2x`. This option is only available when adding new 
 image resolutions. These resolutions have a width and height that is double the 
-original. For example, if the original resolution has a *Maximum Width* of 400px 
-and a *Maximum Height* of 300px, the high density resolution will have a 
-*Maximum Width* of 800px and a *Maximum Height* of 600px. 
+original. For example, if the original resolution has a `Maximum Width` of 
+`400px` and a `Maximum Height` of `300px`, the high density resolution will have 
+a `Maximum Width` of `800px` and a `Maximum Height` of `600px`. 
 
 ### How many image resolutions should I add? [](id=how-many-image-resolutions-should-i-add)
 
@@ -88,8 +89,8 @@ the use case. The more image resolutions added, the more optimal the image
 delivery is, but this also requires more storage and computational resources to 
 generate these images.
 
-To start, It’s recommended that you create resolutions to cover the common 
-device sizes, such as mobile phones, tablets, laptops, desktops, etc, and name 
+To start, It's recommended that you create resolutions to cover the common 
+device sizes, such as mobile phones, tablets, laptops, desktops, etc., and name 
 them with the device they target. 
 
 If a majority of users are using a particular device 
@@ -98,10 +99,10 @@ you can create a resolution to target that device.
 
 ## Updating Image Resolutions [](id=updating-image-resolutions)
 
-Portal administrators can modify the title of an existing image resolution if a 
-custom identifier is defined. **The image resolution and identifier can’t be 
-updated if the resolution has been used to create Adaptive Media images**. This 
-prevents inconsistencies in the images. Otherwise, if changes were made to the 
+Portal administrators can modify the name of an existing image resolution if a 
+custom identifier is defined. **The image resolution and identifier can't be 
+updated if the resolution has been used to adapt images**. This prevents 
+inconsistencies in the images. Otherwise, if changes were made to the 
 resolutions, the images generated before this change would have a completely 
 different size than the images created after this change. 
 
@@ -127,7 +128,7 @@ previously generated with the disabled image resolution are still available.
 To enable a disabled image resolution, open the Actions menu next to the image 
 resolution and select *Enable*. Note that while an image resolution is disabled 
 it doesn’t generate images for new uploads. After enabling an image resolution, 
-it’s recommended to generate the images that may have been missed. To generate 
+it's recommended to generate the images that may have been missed. To generate 
 any missing images for an enabled resolution, follow the instructions in the 
 [Generating Missing Image Resolutions](#generating-missing-image-resolutions) 
 section.
@@ -150,18 +151,18 @@ There may be cases where an image resolution hasn't generated all the images
 that you require. For example, if you disable an image resolution and upload new 
 images, or perhaps you add a new image resolution that hasn't been applied to 
 existing images. In these scenarios the adapted images for an image resolution 
-isn't 100%. 
+is less than 100%. 
 
-<!-- Include screenshot of less than 100% adapted images -->
+![Figure 3: A resolution's coverage of adapted images is shown under the *Adapted Images* column.](../../../images/adaptive-media-coverage.png)
 
 Portal Administrators can trigger the process to adapt the missing images. Each 
 image resolution can be adapted individually by selecting the 
-*Optimize Remaining* option from the Actions menu next to the resolution. 
+*Adapt Remaining* option from the Actions menu next to the resolution. 
 Alternatively You can adapt all image resolutions at once by selecting the 
-*Optimize All Images* option from the Actions menu in the Control Menu at the 
+*Adapt All Images* option from the Actions menu in the Control Menu at the 
 top of the page. 
 
-## Creating Content with Adaptive Media Images [](id=creating-content-with-adaptive-media-images)
+## Creating Content with Adapted Images [](id=creating-content-with-adaptive-media-images)
 
 Adaptive Media works in Blog entries and Web Content Articles directly out of 
 the box. Just add your image(s) to your content using the Image Selector and 
@@ -191,15 +192,15 @@ the *Blog Images*, *Documents and Media*, and *Upload* tabs**. Likewise,
 Media for either content because the image is linked directly from the URL, and 
 therefore provides no image file for Adaptive Media to copy.
 
-You can also use Adaptive Media images in Advanced Web Content. Just be sure to 
-include an image field in the web content Structure. Then you can add the image 
-field to the matching template, by selecting it on the left side of the editor. 
-If you select it, the following snippet is included in the template:
+You can also use adapted images in Advanced Web Content. Just be sure to 
+include an image field in the web content's Structure. Then you can add the 
+image field to the matching template, by selecting it on the left side of the 
+editor. Below is an example snippet for an image:
 
     <#if Imagecrrf.getData()?? && Imagecrrf.getData() !="">
-        <img alt="${Imagecrrf.getAttribute("alt")}" src="${Imagecrrf.getData()}" />
+        <img data-fileentryid="${Imagecrrf.getAttribute("fileEntryId")}" alt="${Imagecrrf.getAttribute("alt")}" src="${Imagecrrf.getData()}" />
     </#if>
-    
+
 This snippet includes the `data-fileentryid` attribute to ensure that the image 
 is dynamically replaced by Adaptive Media with the available image resolutions.
 
@@ -211,12 +212,12 @@ like this:
     src="/documents/20143/0/photo.jpeg/85140258-1c9d-89b8-4e45-d79d5e262318?t=1518425" />
 
 Note that there is an `<img>` tag with a `data-fileentryid` attribute. Adaptive 
-Media uses the identifier of the attribute to automatically replace the `<img>` 
-element with a `<picture>` element that contains all the available Adaptive 
-Media images and the optimal device for each of them.
+Media uses the file entry ID to automatically replace the `<img>` element with a 
+`<picture>` element containing all the available adapted images and the optimal 
+device for each of them.
 
-While editing a blog entry or web content article, the HTML of the content uses 
-the format described before: an `<img>` tag with a `data-fileentryid` attribute. 
+While editing a blog entry or web content article, the content's HTML uses the 
+format described before: an `<img>` tag with a `data-fileentryid` attribute. 
 When the blog entry or web content article is displayed in the Blogs application, 
 or in the Asset Publisher application, the HTML is automatically replaced and 
 looks similar to this:
@@ -244,7 +245,7 @@ media images are not available.
 
 Users can also include an image in a blog entry by dragging and dropping the 
 image into the content. These images are automatically uploaded to the Blog 
-images repository when the blog entry is published.
+Images repository when the blog entry is published.
 
 +$$$
 
@@ -253,13 +254,12 @@ articles.
 
 $$$
 
-The respective Adaptive Media image versions are automatically created for each 
-of the blog images uploaded, and they are automatically used in the entry's 
-content. You can see this by inspecting the HTML and checking that the `<img>` 
-tag and the `data-fileentryid` attribute are added to the image.
+Each of the blog images uploaded is automatically adapted and used in the 
+entry's content. You can see this by inspecting the HTML and checking that the 
+`<img>` tag and the `data-fileentryid` attribute are added to the image.
 
 **Important:** Adaptive Media is only applied to the blog entry's content. 
-Currently Adaptive Media does not apply to the cover image of the blog entry.
+Currently Adaptive Media does not apply to blog entry cover images. 
 
 ## Using Staging with Adaptive Media
 
@@ -267,17 +267,17 @@ Adaptive Media is fully integrated with Staging and Export/Import functionality
 in @product@.
 
 When a blog entry or a web content article is published from staging, Adaptive 
-Media scans the content for adaptive media images and publishes them to the live 
-environment. The content is updated to match the new published adaptive media 
-images in the live environment.
+Media scans the content for images that can be adapted, adapts them, and 
+publishes them to the live environment. The content is updated to match the new 
+published adapted images in the live environment.
 
-When blog entries or web content articles are exported, Adaptive Media images 
-are exported in the LAR file as well. When a LAR file is imported that includes 
-Adaptive Media images, the blog entry or web content article is updated to use 
-the new imported adaptive media images.
+When blog entries or web content articles are exported, adapted images are 
+exported in the LAR file as well. When a LAR file is imported that includes 
+adapted images, the blog entry or web content article is updated to use the new 
+imported adapted images.
 
-Adaptive media images are not regenerated during the export/import process or 
-staging publication process. Instead, Adaptive Media reuses the existing images 
+Adapted images are not regenerated during the export/import process or staging 
+publication process. Instead, Adaptive Media reuses the existing adapted images 
 to improve the process's performance.
 
 ## Image Versioning with Adaptive Media
@@ -286,9 +286,9 @@ Users can modify existing images in Documents and Media by uploading a new
 image. They can also edit existing images using the Image Editor. In both cases 
 a version history with all the changes is preserved in Documents and Media.
 
-There are two different kinds of URLs that are supported for Adaptive Media 
-Images, depending on whether the URL points to a specific version of the image, 
-or whether it points to the latest version.
+There are two different kinds of URLs that are supported for adapted images, 
+depending on whether the URL points to a specific version of the image, or 
+whether it points to the latest version.
 
 An example pattern of each type of URL is shown below:
 
@@ -296,8 +296,8 @@ Latest version:
 
     /o/adaptive-media/image/[file-entry-id]/[image-resolution-id]/[image title]
     
-This relative URL points to the latest version of the adaptive media image 
-generated with the file entry ID *34798* and image resolution ID *thumbnail*:
+This relative URL points to the latest version of the adapted image generated 
+with the file entry ID *34798* and image resolution ID *thumbnail*:
 
     /o/adaptive-media/image/34798/thumbnail/beach.jpeg
 
@@ -306,33 +306,32 @@ Specific version:
 
     /o/adaptive-media/image/[file-entry-id]/[file-version-id]/[image-resolution-id]/[image title]
 
-This URL points to the adaptive media image generated with the file entry ID 
-*34798*, file version ID *34803*, and image resolution ID *thumbnail*:
+This URL points to the adapted image generated with the file entry ID *34798*, 
+file version ID *34803*, and image resolution ID *thumbnail*:
 
     /o/adaptive-media/image/34798/34803/thumbnail/beach.jpeg
 
 ## How the Recycle Bin Handles Adaptive Media
 
-Adaptive Media images are not displayed in the Recycle Bin because they can't be 
-moved there explicitly. Instead, images in Documents and Media can be moved to 
+Adapted images are not displayed in the Recycle Bin because they can't be moved 
+there explicitly. Instead, images in Documents and Media can be moved to 
 the Recycle Bin. If the original image is in the Recycle Bin, the corresponding 
-Adaptive Media images behave as if they are in the Recycle Bin. While they 
-remain in the Recycle Bin, the original image and Adaptive Media images can't be 
-viewed by users.
+adapted images behave as if they are in the Recycle Bin. While they remain in 
+the Recycle Bin, the original image and adapted images can't be viewed by users.
 
 +$$$
 
-**Note:** Adaptive Media URLs that point to Adaptive Media images whose original 
-image is in the Recycle Bin return an error code of *404 Not Found*.
+**Note:** Adaptive Media URLs that point to adapted images, whose original image 
+is in the Recycle Bin, return an error code of *404 Not Found*.s
 
 $$$
 
-When the original image is restored from the Recycle Bin, the Adaptive Media 
-images are available and accessible again.
+When the original image is restored from the Recycle Bin, the adapted images are 
+available and accessible again.
 
 ## Advanced Configuration
 
-Adaptive Media can be configured by Portal Administrators via System Settings in 
+Adaptive Media can be configured by portal administrators via System Settings in 
 the Control Panel, under the *Collaboration* tab. There are two configurations 
 for Adaptive Media: *Adaptive Media* and *Adaptive Media Image*.
 
