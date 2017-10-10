@@ -32,17 +32,18 @@ Liferay's Web Content capabilities:
 
 ![Figure 1: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../images/config-web-content-entry.png)
 
-Configuration files use `.config` property value format defined by the [Apache
+Configuration files use the `.config` property value format defined by the [Apache
 Felix Configuration Admin
 framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
 
 @product@ also supports the `.cfg` file format, which is common in some OSGi
 environments. However, `.config` files are preferable, as they allow for
-multi-valued properties and the ability to specify a property value's type. 
+multi-valued properties and the ability to specify a property value's type. The
+syntax described below is for `.config` files.
 
 ### Key/Value Syntax [](id=key-value-syntax)
 
-The general syntax for all keys and values is the same: 
+The general syntax for all keys and values in a `.config` file is the same: 
 
     configurationName="value"
 
@@ -117,5 +118,35 @@ settings. To accomplish this, deploy a `.config` file to *one* node. @product@
 uses an internal system for making sure all the nodes in the cluster hear about
 the configuration change and apply it.
 
-Great! Now you know the basics of configuring @product@ using portable, 
-deployable configuration files. 
+## Multiple Configuration Files
+
+The Apache Felix Configuration Admin framework supports multiple configuration
+files per component. Such situations are called *factory configurations* because
+providing multiple configuration files guarantees the creation of multiple
+instances of the configured service. To avoid naming conflicts, a subname is
+included in each file name. @product@'s naming convention uses `-default` as the
+subname for the first instance. Any additional instances can use whatever
+subname you like. There are a few default configurations shipped with @product@.
+Here's an example:
+
+    com.liferay.portal.security.auth.verifier.basic.auth.header.module.configuration.BasicAuthHeaderAuthVerifierConfiguration-default.cfg
+
+Because this configuration supports factory configuration, its initial instance
+uses the `-default` subname. To change the configuration of a `*-default.config`
+file, make the changes as you would for any other `*.config` file. Do not create
+a new configuration file yourself if you simply want to make a configuration
+change. This will create a new service instance, and that decision is best left
+to the developer of the service.
+
+What if you must configure a service, and you find that there are already
+mutliple configuration files present in the `Liferay_Home/osgi/configs` folder?
+For example:
+
+    my.service.ServiceConfiguration-default.config
+    my.service.ServiceConfiguration-alternate.config
+
+If it's not clear which one to modify, consult the creator of the service
+configurations to determine which service instance is used for your situation.
+
+Now you know the basics of configuring @product@ using portable, deployable
+configuration files. 
