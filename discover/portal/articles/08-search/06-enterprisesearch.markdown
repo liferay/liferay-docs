@@ -1,0 +1,5 @@
+# Liferay Enterprise Search
+
+
+Article 7: Liferay Enterprise Search
+What is it?  What makes it different from just using DXP w/ the Search Engine Adapters
