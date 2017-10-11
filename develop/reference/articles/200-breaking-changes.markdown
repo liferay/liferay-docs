@@ -305,6 +305,43 @@ configuration changes.
 
 ---------------------------------------
 
+### Moved Three DL File Properties to OSGi Configuration [](id=moved-three-dl-file-properties-to-osgi-configuration)
+- **Date:** 2017-Aug-01
+- **JIRA Ticket:** LPS-69208
+
+#### What changed? [](id=what-changed-6a)
+
+Two DL File properties have been moved from Server Administration to the OSGi
+configuration `DLConfiguration`, and one to `DLFileEntryConfiguration`. Both
+configurations are located in the `document-library-api` module.
+
+#### Who is affected? [](id=who-is-affected-6a)
+
+This affects anyone who is using the following portal properties:
+
+- `dl.file.extensions`
+- `dl.file.max.size`
+- `dl.file.entry.previewable.processor.max.size`
+
+#### How should I update my code? [](id=how-should-i-update-my-code-6a)
+
+Instead of overriding the `portal.properties` file, you can manage the
+properties from Portal's configuration administrator. This can be accessed by
+navigating to Portal's *Control Panel* &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Collaboration* &rarr; *Documents & Media Service* or
+*Documents & Media File Entries* and editing the settings there.
+
+If you would like to include the new configuration in your application, follow
+the instructions for
+[making your applications configurable](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+
+#### Why was this change made? [](id=why-was-this-change-made-6a)
+
+This change was made as part of the modularization efforts to ease portal
+configuration changes.
+
+---------------------------------------
+
 ### Removed the soyutils Module [](id=removed-the-soyutils-module)
 - **Date:** 2017-Aug-28
 - **JIRA Ticket:** LPS-69102
@@ -328,41 +365,6 @@ the `Metal.js` provided `Component` classes.
 The removed module exposed a legacy version of `soyutils`. This caused
 interoperability issues between applications using different versions of the
 Closure Template library.
-
----------------------------------------
-
-### Moved three DL File Properties to OSGi Configurations [](id=moved-three-dl-file-properties-to-osgi-configurations)
-- **Date:** 2017-August-01
-- **JIRA Ticket:** LPS-69208
-
-#### What changed? [](id=what-changed-7)
-
-Two DL File properties have been moved from Server Administration to the OSGi
-configuration `DLConfiguration`, and one to `DLFileEntryConfiguration`. Both configurations are located in the `document-library-api` module.
-
-#### Who is affected? [](id=who-is-affected-7)
-
-This affects anyone who is using the following portal properties:
-
-- `dl.file.extensions`
-- `dl.file.max.size`
-- `dl.file.entry.previewable.processor.max.size`
-
-#### How should I update my code? [](id=how-should-i-update-my-code-7)
-
-Instead of overriding the `portal.properties` file, you can manage the
-properties from Portal's configuration administrator. This can be accessed by
-navigating to Liferay's *Control Panel* &rarr; *Configuration* &rarr; *System
-Settings* &rarr; *Configuration* &rarr; *Documents & Media Service* or *Documents & Media File Entries* and editing the settings there.
-
-If you would like to include the new configuration in your application, follow
-the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
-
-#### Why was this change made? [](id=why-was-this-change-made-7)
-
-This change was made as part of the modularization efforts to ease portal
-configuration changes.
 
 ---------------------------------------
 
