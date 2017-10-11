@@ -91,8 +91,9 @@ responsive to different devices.
 <!-- Explain under what scenario you would use each type of card -->
 
 
-1.  Use [cards](https://liferay.github.io/clay/content/cards/) to display the 
-    information:
+1.  Use [cards](https://lexicondesign.io/docs/patterns/cards.html) to display 
+    the information. Use a vertical card to display assets like files or web 
+    content. Use horizontal cards to display folders or directories.
 
     For vertical cards use the following pattern:
 
@@ -106,12 +107,14 @@ responsive to different devices.
         row.setCssClass("col-md-3 col-sm-4 col-xs-12");
         %>
 
-2.  Once your cards are responsive, you'll need to add search container column 
-    text, using the pattern below: <!-- include more relevant example code -->
+2.  Once your cards are responsive, you must add search container column 
+    text using the pattern below: <!-- include more relevant dummy example code -->
 
         <liferay-ui:search-container-column-text>
             <%-- include your vertical card or horizontal card here --%>
         </liferay-ui:search-container-column-text>
+
+3.  Add 
 
 3.  Use one of the following tags for your vertical card:
 
@@ -120,6 +123,24 @@ responsive to different devices.
         <liferay-frontend:user-vertical-card/>
 
         <liferay-frontend:icon-vertical-card/>
+        
+    Below is an example:
+
+        <liferay-ui:search-container-column-text>
+          <liferay-frontend:vertical-card
+            cssClass="entry-display-style"
+            imageUrl="<%= (userDisplay != null) ? userDisplay.getPortraitURL(themeDisplay) : UserConstants.getPortraitURL(themeDisplay.getPathImage(), true, 0, null) %>"
+            resultRow="<%= row %>"
+          >
+            <liferay-frontend:vertical-card-header>
+              <liferay-ui:message arguments="<%= new String[] {LanguageUtil.getTimeDescription(locale, System.currentTimeMillis() - mbMessage.getModifiedDate().getTime(), true), HtmlUtil.escape(mbMessage.getUserName())} %>" key="x-ago-by-x" translateArguments="<%= false %>" />
+            </liferay-frontend:vertical-card-header>
+
+            <liferay-frontend:vertical-card-footer>
+              <%= HtmlUtil.extractText(content) %>
+            </liferay-frontend:vertical-card-footer>
+          </liferay-frontend:vertical-card>
+        </liferay-ui:search-container-column-text>
 
     For horizontal cards you can use the tag below:
 

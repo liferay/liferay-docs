@@ -32,6 +32,8 @@ rather than the default pages. For example, using
 
 $$$
 
+Alternatively, you can use non-bordered tabs with the `liferay-ui:tabs` taglib as the [Lexicon Guidelines](https://lexicondesign.io/docs/patterns/nav%20tabs.html) state. 
+
 Sweet! Now you know how to style a navigation bar with Lexicon. Next, you'll 
 learn how to apply Lexicon to your forms. 
 

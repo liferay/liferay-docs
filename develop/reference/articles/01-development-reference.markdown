@@ -656,9 +656,8 @@ a system for building applications in and outside of @product@, designed to be
 fluid and extensible, as well as provide a consistent and documented API.
 
 [**Bootstrap**](http://getbootstrap.com/): The base CSS library onto which
-Lexicon is built on. @product@ uses Bootstrap natively and all of its CSS 
-classes and JavaScript features are available within portlets, templates, and 
-themes.
+Lexicon is built. @product@ uses Bootstrap natively and all of its CSS classes 
+and JavaScript features are available within portlets, templates, and themes.
 
 [**AlloyUI**](http://alloyui.com): Liferay includes AlloyUI and all of its
 JavaScript APIs are available within portlets, templates and themes.
