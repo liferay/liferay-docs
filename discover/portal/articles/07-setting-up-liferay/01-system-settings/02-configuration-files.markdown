@@ -118,16 +118,28 @@ settings. To accomplish this, deploy a `.config` file to *one* node. @product@
 uses an internal system for making sure all the nodes in the cluster hear about
 the configuration change and apply it.
 
-## Multiple Configuration Files
+## Factory Configurations
 
 The Apache Felix Configuration Admin framework supports multiple configuration
 files per component. Such situations are called *factory configurations* because
 providing multiple configuration files guarantees the creation of multiple
-instances of the configured service. To avoid naming conflicts, a subname is
-included in each file name. @product@'s naming convention uses `-default` as the
-subname for the first instance. Any additional instances can use whatever
-subname you like. There are a few default configurations shipped with @product@.
-Here's an example:
+instances of the configured service. Be careful! While any component can be
+forced into a factory configuration scenario, they aren't all designed to do so.
+It's best to rely on the developer of the service to determine if a service
+should support multiple instances with differing configurations. So how can you
+tell, without getting into the code? Developers of components that support
+configuration can mark their configurations as supporting factory configurations
+if they intend the service to be used this way. Once they mark the service as
+supporting factory configuration, it's visible in the System Settings UI, if you
+know what to look for. See the System Settings [Factory Configurations
+documentation](LINK WHEN WRITTEN) documentation for more information.
+
+Because factory configurations use multiple `.config` files, a subname is
+included in each file name to avoid naming conflicts. @product@'s naming
+convention uses `-default` as the subname for the first instance. Any additional
+instances use a different subname. There are a few `*-default` configurations
+shipped with @product@, which you can see in your installation's `osgi/configs`
+folder. Here's an example:
 
     com.liferay.portal.security.auth.verifier.basic.auth.header.module.configuration.BasicAuthHeaderAuthVerifierConfiguration-default.cfg
 
@@ -135,8 +147,15 @@ Because this configuration supports factory configuration, its initial instance
 uses the `-default` subname. To change the configuration of a `*-default.config`
 file, make the changes as you would for any other `*.config` file. Do not create
 a new configuration file yourself if you simply want to make a configuration
-change. This will create a new service instance, and that decision is best left
-to the developer of the service.
+change. This will create a new service instance, which might or might not be used
+by consumers of the service, depending on the implementation details of the
+consumer.
+
++$$$
+
+**Factory Configuration Example Use Case:** 
+
+$$$
 
 What if you must configure a service, and you find that there are already
 mutliple configuration files present in the `Liferay_Home/osgi/configs` folder?
@@ -145,8 +164,10 @@ For example:
     my.service.ServiceConfiguration-default.config
     my.service.ServiceConfiguration-alternate.config
 
-If it's not clear which one to modify, consult the creator of the service
-configurations to determine which service instance is used for your situation.
+If the configuration change makes sense for both instances, make the change in
+both files. It's helpful to know the use cases for each instance of the
+configured serrvice so you can better determine whether all configuration files
+need the configuration change.
 
 Now you know the basics of configuring @product@ using portable, deployable
 configuration files. 
