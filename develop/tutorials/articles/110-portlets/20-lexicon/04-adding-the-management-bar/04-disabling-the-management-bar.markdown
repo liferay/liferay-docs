@@ -1,7 +1,7 @@
-# Disabling the Management Bar
+# Disabling the Management Bar [](id=disabling-the-management-bar)
 
-When there's no content in the app, the Management Bar disables all the buttons 
-except the info button.
+When there's no content in the app, you should disable all the Management Bar's 
+buttons, except the info button. 
 
 You can disable the Management Bar by adding the `disabled` attribute to the 
 `liferay-frontend:management-bar` tag:
@@ -25,7 +25,7 @@ buttons when the search container displays 0 results:
     
 Now you know how to disable the Management Bar!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Implementing a Management Bar Sort Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-sort-filter)
 

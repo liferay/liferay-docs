@@ -1,4 +1,4 @@
-## Using Lexicon Icons in Your App [](id=using-lexicon-icons-in-your-app)
+# Using Lexicon Icons in Your App [](id=using-lexicon-icons-in-your-app)
 
 Whether you're updating your app to @product-ver@, or writing a new 
 @product-ver@ app, follow the process here to use Lexicon's icons in your app. 
@@ -45,12 +45,12 @@ For example:
 
     />
 
-Note the addition of the `markupView="lexicon"` attribute. This ensures that 
-Lexicon markup renders the HTML.
+Note the addition of the `markupView="lexicon"` attribute. This ensures that the
+HTML is rendered with Lexicon markup.
 
 That's it! Now you know how to use Lexicon icons in your apps.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
 

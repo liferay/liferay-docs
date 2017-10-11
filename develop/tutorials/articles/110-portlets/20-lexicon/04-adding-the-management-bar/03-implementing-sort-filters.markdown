@@ -2,7 +2,7 @@
 
 The Management Bar Sort Filters let you compare entries for a search container 
 field, and sort them by ascending or descending. To do this, you must create a 
-comparator class for each field that you want to sort by.
+comparator class for each field that you want to sort.
 
 The sort filters are an implementation of the standard [`Comparator` Interface](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html),
 with some additional methods provided by the [`OrderByComparator` class](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/util/OrderByComparator.java). 
@@ -124,9 +124,8 @@ to use it.
 
 Follow these steps to update services:
 
-1.  Open your `*.service.impl.EntryLocalServiceImpl.java` 
-    class in your service module and import the `OrderByComparator` 
-    class:
+1.  Open your `*EntryLocalServiceImpl` class in your service module and import 
+    the `OrderByComparator` class:
 
         import com.liferay.portal.kernel.util.OrderByComparator;
 
@@ -142,8 +141,8 @@ Follow these steps to update services:
         		groupId, guestbookId, start, end, obc);
         }
 
-3.  Rebuild services for your App. Right-click the service module in the 
-    Project Explorer and select *Liferay* &rarr; *build-service*.
+3.  Rebuild services for your App. Right-click the service module in the Project 
+    Explorer and select *Liferay* &rarr; *build-service*.
 
 4.  Export the comparator package in the API module's BND.
 
@@ -221,7 +220,7 @@ Follow these steps to configure the view to use the Comparator:
 
 The Management Bar Sort Filters are finished!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Implementing a Management Bar Navigation Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-navigation-filter)
 

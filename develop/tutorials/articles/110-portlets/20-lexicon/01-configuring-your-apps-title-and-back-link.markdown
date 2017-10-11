@@ -14,10 +14,8 @@ as an example.
 
 Follow these steps to configure your app's title and back URL:
 
-1.  Inside of a Java scriplet, Use `ParamUtil` to retrieve the redirect for the 
-    URL:
+1.  Use `ParamUtil` to retrieve the redirect for the URL:
 
-        <%
         String redirect = ParamUtil.getString(request, "redirect");
 
 2.  Display the back icon and set the back URL to the `redirect`:
@@ -44,7 +42,7 @@ example the `edit_entry.jsp` form's cancel button redirects the user:
 
 Now you know how to configure your app's title and back URL!
 
-## Related topics
+## Related topics [](id=related-topics)
 
 [Applying Lexicon Patterns to your Forms, Navigation, and Search](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-patterns-to-forms-navigation-and-search)
 

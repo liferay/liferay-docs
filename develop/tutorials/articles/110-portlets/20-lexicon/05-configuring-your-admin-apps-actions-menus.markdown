@@ -1,9 +1,9 @@
 # Configuring Your Admin App's Actions Menu [](id=configuring-your-admin-apps-actions-menu)
 
-In previous versions of Liferay it was common to have a series of buttons or 
+In versions prior to @product-ver@, it was common to have a series of buttons or 
 menus with actions in the different views of the app. In @product-ver@ the 
 proposed pattern is to move all of these actions to the upper right menu of the 
-administrative portlet, leaving the primary action(often an "Add" operation) 
+administrative portlet, leaving the primary action (often an "Add" operation) 
 visible in the add menu, [using the Add Button pattern](/develop/tutorials/-/knowledge_base/7-0/applying-the-add-button-pattern).
 For example, the web content application has the actions menu shown below:
 
@@ -17,7 +17,7 @@ tutorial to learn how to apply Lexicon to entity actions menus.
 This tutorial shows how to configure the actions menu in your admin app. Get 
 started by creating the `PortletConfigurationIconFactory` class next.
 
-## Creating the Icon Factory Class
+## Creating the Icon Factory Class [](id=creating-the-icon-factory-class)
 
 To add an action to the upper right menu of the Admin portlet you must first 
 create a [`PortletConfigurationIcon` Component class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html).
@@ -65,7 +65,7 @@ where the actions should be displayed
 Now that your `PortletConfigurationIconFactory` class is written, you can write 
 the `PortletConfigurationIcon` class next.
 
-## Writing the Configuration Icon Class
+## Writing the Configuration Icon Class [](id=writing-the-configuration-icon-class)
 
 The second class that you must write is a class that extends the 
 [`BasePortletConfigurationIcon` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/BasePortletConfigurationIcon.html).
@@ -131,7 +131,7 @@ to the portlet:
 
 Now you know how to configure your admin app's actions!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Applying Lexicon Patterns to your Forms, Navigation, and Search](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-patterns-to-forms-navigation-and-search)
 

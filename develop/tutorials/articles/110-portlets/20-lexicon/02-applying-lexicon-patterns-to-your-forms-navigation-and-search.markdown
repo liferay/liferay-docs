@@ -1,6 +1,6 @@
 # Applying Lexicon Patterns to Your Forms, Navigation, and Search [](id=applying-lexicon-patterns-to-forms-navigation-and-search)
 
-This tutorial covers how you can leverage Lexicon patterns in your app's forms, 
+This tutorial covers how to leverage Lexicon patterns in your app's forms, 
 navigation, and search results, to make them more user-friendly.
 
 You can learn how to update your navigation next.
@@ -15,7 +15,7 @@ If your app already has a navigation bar implemented with the [`aui:nav-bar`](@p
 tag, you can reuse it by adding the attribute `markupView="lexicon"`.
 
 For example, [Liferay's Trash app](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/trash/trash-web/src/main/resources/META-INF/resources/navigation.jsp)
-uses `markupView="lexicon"` with its `nav-bar`:
+has the configuration below:
 
     <aui:nav-bar cssClass="collapse-basic-search" markupView="lexicon">
 
@@ -32,12 +32,14 @@ rather than the default pages. For example, using
 
 $$$
 
-Alternatively, you can use non-bordered tabs with the `liferay-ui:tabs` taglib as the [Lexicon Guidelines](https://lexicondesign.io/docs/patterns/nav%20tabs.html) state. 
+Alternatively, you can use non-bordered tabs with the `liferay-ui:tabs` taglib 
+as the [Lexicon Guidelines](https://lexicondesign.io/docs/patterns/nav%20tabs.html) 
+state. 
 
 Sweet! Now you know how to style a navigation bar with Lexicon. Next, you'll 
 learn how to apply Lexicon to your forms. 
 
-## Applying Lexicon Patterns to the Application Body
+## Applying Lexicon Patterns to the Application Body [](id=applying-lexicon-patterns-to-the-application-body)
 
 To ensure that your application is using all the available screen real state, 
 from left to right, you should make the application body fluid in all portlet 
@@ -92,7 +94,7 @@ Follow these steps to apply Lexicon to your forms:
 Your forms are now configured to use Lexicon! Next, you can learn how to apply 
 Lexicon to the Actions menu for your entities. 
 
-## Applying Lexicon to Your Entity's Actions Menus
+## Applying Lexicon to Your Entity's Actions Menus [](id=applying-lexicon-to-your-entitys-actions-menus)
 
 Your Actions menus can also benefit from Lexicon patterns. You can learn how 
 to apply Lexicon patterns to your Admin app's actions in the 
@@ -124,7 +126,7 @@ tutorial. Follow these steps to update Actions menu for your entities
 
 Next you can update your search iterator.
 
-## Applying Lexicon to your Search iterator
+## Applying Lexicon to your Search iterator [](id=applying-lexicon-to-your-search-iterator)
 
 To apply Lexicon to your search iterator, add the `markupView="lexicon"` 
 attribute:
@@ -142,12 +144,12 @@ management bar. You can learn how to configure display styles in the
 tutorial.
 
 If the results contain different sets of entries (folders and documents, 
-categories and threads, etc.) you must use a `*ResultRowSplitter` to divide the 
-results. This is covered next. <!-- Is this a Lexicon Design pattern? -->
+categories and threads, etc.), you must use a class that implements 
+`*ResultRowSplitter` to divide the results. This is covered next.
 
-### Creating a Results Row Splitter
+### Creating a Results Row Splitter [](id=creating-a-results-row-splitter)
 
-The `*ResultRowSplitter` class is responsible for dividing and categorizing the 
+Classes that implement the `*ResultRowSplitter` class are responsible for dividing and categorizing the 
 results based on the different entry types. Follow these steps to create a 
 result row splitter:
 
@@ -211,7 +213,7 @@ For example, the `com.liferay.bookmarks.web` module has the following
 Now you know how to apply Lexicon patterns to your app's forms, navigation, and 
 search results!
 
-## Related topics
+## Related topics [](id=related-topics)
 
 [Configuring Your Application's Title and Back Link](/develop/tutorials/-/knowledge_base/7-0/configuring-your-applications-title-and-back-link)
 

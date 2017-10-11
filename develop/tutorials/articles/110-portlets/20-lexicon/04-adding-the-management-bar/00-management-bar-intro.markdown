@@ -1,11 +1,10 @@
 # Adding the Management Bar [](id=adding-the-management-bar)
 
-The Management Bar lets users configure display options for search container 
-results. The Management Bar lets you display content in a list or a grid, or 
-display only a specific type of content. You can also customize your app's 
-Management Bar. 
+The Management Bar controls display options for search container results. You 
+can use it to display content in a list or a grid, or to display a specific type 
+of content. You can also customize your app's Management Bar. 
 
-![Figure 1: The Management Bar lets the user customize how the app displays content.](../../../images/message-boards-management-bar.png)
+![Figure 1: The Management Bar lets the user customize how the app displays content.](../../../../images/message-boards-management-bar.png)
 
 The Management Bar is divided into a few key sections. Each section is grouped 
 and configured using different taglibs:
@@ -13,7 +12,7 @@ and configured using different taglibs:
 The [`<liferay-frontend:management-bar-buttons>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-buttons.html) 
 wraps the Management Bar's button elements:
 
-![Figure 2: The `management-bar-buttons` tag contains the Management Bar's main buttons.](../../../images/management-bar-buttons.png)
+![Figure 2: The `management-bar-buttons` tag contains the Management Bar's main buttons.](../../../../images/management-bar-buttons.png)
 
 The [`<liferay-frontend:management-bar-sidenav-toggler-button>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-sidenav-toggler-button.html) 
 implements slide-out navigation for the info button.
@@ -21,21 +20,21 @@ implements slide-out navigation for the info button.
 The [`<liferay-frontend:management-bar-display-buttons>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-display-buttons.html) 
 renders the app's display style options:
 
-![Figure 3: The `management-bar-display-buttons` tag contains the content's display options.](../../../images/management-bar-display-buttons.png)
+![Figure 3: The `management-bar-display-buttons` tag contains the content's display options.](../../../../images/management-bar-display-buttons.png)
 
 The [`<liferay-frontend:management-bar-filters>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-filters.html) 
 wraps the app's filtering options. This filter should be included in all control 
 panel applications. Filtering options can include sort criteria, sort ordering, 
 and more:
 
-![Figure 4: The `management-bar-filters` tag contains the content filtering options.](../../../images/management-bar-filters.png)
+![Figure 4: The `management-bar-filters` tag contains the content filtering options.](../../../../images/management-bar-filters.png)
 
 Finally, the [`<liferay-frontend:management-bar-action-buttons>` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/management-bar-action-buttons.html) 
 wraps the actions that you can execute over selected items. In @product-ver@, 
 you can select multiple items between pages. The management bar keeps track of 
 the number of selected items for you:
 
-![Figure 5: The management bar keeps track of the items selected and displays the actions to execute on them.](../../../images/management-bar-action-buttons.png)
+![Figure 5: The management bar keeps track of the items selected and displays the actions to execute on them.](../../../../images/management-bar-action-buttons.png)
 
 For example, here's the Management Bar configuration in Liferay's Trash app:
 

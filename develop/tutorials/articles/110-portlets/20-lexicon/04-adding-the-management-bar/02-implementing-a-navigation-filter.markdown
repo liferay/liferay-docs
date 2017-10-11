@@ -1,13 +1,12 @@
-# Implementing a Management Bar Navigation Filter
+# Implementing a Management Bar Navigation Filter [](id=implementing-a-management-bar-navigation-filter)
 
 Navigation filters are used to create navigation menus in the Management Bar. 
 You can add as many navigation filters to the Management Bar as your app 
 requires.
-<!-- Can you nest navigation filters to create a nested navigation menu with
-child pages? -->
+
 You can learn how to configure the navigation filter next.
 
-## Configuring the Navigation Filter
+## Configuring the Navigation Filter [](id=configuring-the-navigation-filter)
 
 Follow these steps to configure the navigation filter:
 
@@ -18,19 +17,17 @@ Follow these steps to configure the navigation filter:
 2.  Use the `<liferay-frontend:management-bar-navigation>` tag to add as many 
     navigation menus as your app requires. Use the `navigationKeys` attribute to 
     set the navigation menu options. The `navigationParam` attribute identifies 
-    the parameter to use for the navigation filter value. If you're only using 
-    one navigation filter, this attribute is not required. Finally, use the 
-    `portletURL` attribute to set the URL for the page. Below is an example 
-    configuration:
-
-    <!-- How, when, and why do I need to use navigationParam? I'm guessing this
-    is needed when you use multiple navigation filters -->
+    the parameter to use for the navigation filter value. The default value is 
+    `navigation`. If you have more than one navigation menu, you can specify a 
+    unique variable with the `navigationParam` to identify each menu. Finally, 
+    use the `portletURL` attribute to set the URL for the page. Below is an 
+    example configuration with one navigation menu:
 
         <liferay-frontend:management-bar-filters>
 
             <liferay-frontend:management-bar-navigation
             navigationKeys='<%= new String[] {"all", ["navigation-title"]...} %>'
-            navigationParam="navigation"
+            navigationParam="myCustomNavigationVariable"
             portletURL="<%= portletURL %>"
             />
         </liferay-frontend:management-bar-filters>
@@ -45,11 +42,12 @@ Follow these steps to configure the navigation filter:
 
         String navigation = ParamUtil.getString(request, "navigation", "all");
 
-4.  If your app has multiple navigation options, check the value of the 
-    navigation parameter to render the appropriate JSP page. Below is an example 
-    code snippet from `com.liferay.wiki.web` module's [`page_iterator.jsp`](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/wiki/wiki-web/src/main/resources/META-INF/resources/wiki/page_iterator.jsp)
-    that controls the navigation between its JSP pages using a `navigation` 
-    parameter:
+4.  If your app has multiple options in a navigation menu, use the 
+    `navigationParam` to check the current value. Below is an example code 
+    snippet from `com.liferay.wiki.web` module's [`page_iterator.jsp`](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/wiki/wiki-web/src/main/resources/META-INF/resources/wiki/page_iterator.jsp)
+    that checks the navigation menu's value to render the proper JSP content. 
+    Note that it uses the `navigationParam`'s default value `navigation` to 
+    check the current value:
 
         if (navigation.equals("all-pages")) {
         	portletURL.setParameter("mvcRenderCommandName", "/wiki/view_pages");
@@ -72,7 +70,7 @@ Follow these steps to configure the navigation filter:
 
 Now you know how to add navigation filters to a management bar!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Implementing a Management Bar Sort Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-sort-filter)
 

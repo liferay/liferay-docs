@@ -6,28 +6,27 @@ control panel apps. While you are not required to implement all these display
 styles in your app's management bar, they provide some additional control over 
 how your app's information is displayed.
 
-![Figure 1: The `management-bar-display-buttons` tag contains the content's display options.](../../../images/management-bar-display-buttons.png)
+![Figure 1: The `management-bar-display-buttons` tag contains the content's display options.](../../../../images/management-bar-display-buttons.png)
 
 To provide these views in your app, you must make some updates to your search 
 result columns. Follow the patterns covered in this tutorial to configure your 
 app.
 
 **Note:** You are not required to implement all the display views in your app. 
-You must just at least have one display style implemented (list is the default). 
+You must just at least have one display style implemented (`list` is the default). 
 Views that are disabled in your app will render as greyed out buttons.
 
 Start by configuring the Management Bar Display Buttons tag next.
 
-## Configuring the Management Bar Display Buttons tag
+## Configuring the Management Bar Display Buttons Tag [](id=configuring-the-management-bar-display-buttons-tag)
 
 Follow these steps to configure the management bar display button tags:
 
 1.  Add the `<liferay-frontend:management-bar>` taglib to your app's main view 
-    (`view.jsp` for example). You can optionally provide a search container ID 
-    with the `searchContainerId` attribute, and a checkbox with the 
-    `includeCheckBox` attribute.
-    <!-- Why would I include either one of these optional attributes? Since the
-    ID is not required, what extra benefit does it provide? -->
+    (`view.jsp` for example). If the management bar has a checkbox that needs to 
+    stay selected while the navigation is used, you can optionally provide a 
+    search container ID with the `searchContainerId` attribute and set the 
+    `includeCheckBox` attribute to `true`.
 
 2.  Add the management bar buttons using the 
     `<liferay-frontend:management-bar-buttons>` and 
@@ -51,7 +50,7 @@ Follow these steps to configure the management bar display button tags:
 Your taglibs are configured for your display styles, but at the moment they 
 don't do anything. You'll configure the views next.
 
-## Configuring the Display Views
+## Configuring the Display Views [](id=configuring-the-display-views)
 
 Note that your management bar may not contain all three views. You only need to 
 implement the views that you defined in your 
@@ -81,19 +80,21 @@ attribute. Follow these steps to set the display views for the management bar:
                 </c:when>
         </c:choose>
 
-You can add the display style configurations for each view next.
+Use [cards](https://lexicondesign.io/docs/patterns/cards.html) to display the 
+information. Use a vertical card to display assets like files or web content. 
+Use horizontal cards to display folders or directories. You can add the display 
+style configurations for each view next. 
 
+### Implementing the Icon View [](id=implementing-the-icon-view)
 
-## Implementing the Icon View
+The icon view prominently displays an icon for the content, along with its name, 
+status, and a condensed description.
 
-Follow the patterns below to create your icon view. Your icon view should be 
-responsive to different devices.
-<!-- Explain under what scenario you would use each type of card -->
+![Figure 2: The Management Bar's icon display view gives a quick summary of the content's description and status.](../../../../images/lexicon-icon-view.png)
 
+Follow the steps below to create your icon view:
 
-1.  Use [cards](https://lexicondesign.io/docs/patterns/cards.html) to display 
-    the information. Use a vertical card to display assets like files or web 
-    content. Use horizontal cards to display folders or directories.
+1.  First, make your icon view responsive to different devices.
 
     For vertical cards use the following pattern:
 
@@ -107,16 +108,16 @@ responsive to different devices.
         row.setCssClass("col-md-3 col-sm-4 col-xs-12");
         %>
 
-2.  Once your cards are responsive, you must add search container column 
-    text using the pattern below: <!-- include more relevant dummy example code -->
+2.  Once your cards are responsive, you must add search container column text 
+    using the pattern below:
 
         <liferay-ui:search-container-column-text>
             <%-- include your vertical card or horizontal card here --%>
         </liferay-ui:search-container-column-text>
 
-3.  Add 
+3.  Add the card to the `<liferay-ui:search-container-column-text>`:
 
-3.  Use one of the following tags for your vertical card:
+    Use one of the following tags for your vertical card:
 
         <liferay-frontend:vertical-card/>
 
@@ -124,7 +125,7 @@ responsive to different devices.
 
         <liferay-frontend:icon-vertical-card/>
         
-    Below is an example:
+    Below is an example from the `com.liferay.journal.web` module's [`view_comments.jsp`](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/journal/journal-web/src/main/resources/META-INF/resources/view_comments.jsp):
 
         <liferay-ui:search-container-column-text>
           <liferay-frontend:vertical-card
@@ -146,12 +147,15 @@ responsive to different devices.
 
         <liferay-frontend:horizontal-card/>
 
-<!-- example figure of icon view -->
-
 Now that your icon view is configured, you can move onto your descriptive view 
 next.
 
-## Implementing the Descriptive View
+### Implementing the Descriptive View [](id=implementing-the-descriptive-view)
+
+The descriptive view displays the complete description, along with a small icon 
+for the content, and its name. 
+
+![Figure 3: The Management Bar's descriptive display view gives the content's full description.](../../../../images/lexicon-descriptive-view.png)
 
 Your descriptive view should have three columns.
 
@@ -198,15 +202,17 @@ Your descriptive view should have three columns.
             path="/edit_team_assignments_user_groups_action.jsp"
         />
 
-<!-- example figure of descriptive view -->
-
 Now that your descriptive view is configured you can implement your list view 
 next.
 
-## Implementing the List View
+### Implementing the List View [](id=implementing-the-list-view)
 
-The list view is the default view that is shown for most applications. For 
-example, the [mobile device rules application](https://github.com/liferay/liferay-portal/blob/fe808e45473fc1491ac79b396b822629df5b052c/modules/apps/foundation/mobile-device-rules/mobile-device-rules-web/src/main/resources/META-INF/resources/rule_columns.jspf)
+The list view is the default view that is shown for most applications. This view 
+lists the content's information in individual columns. 
+
+![Figure 4: The Management Bar's list display view list the content's information in individual columns.](../../../../images/lexicon-list-view.png)
+
+For example, the [mobile device rules application](https://github.com/liferay/liferay-portal/blob/fe808e45473fc1491ac79b396b822629df5b052c/modules/apps/foundation/mobile-device-rules/mobile-device-rules-web/src/main/resources/META-INF/resources/rule_columns.jspf)
 configures its list view using the pattern below:
 
     <liferay-ui:search-container-column-text
@@ -241,8 +247,6 @@ configures its list view using the pattern below:
             path="/rule_actions.jsp"
     />
 
-<!-- example figure of list view -->
-
 Finally, set the display style in your `liferay-ui:search-iterator` tag with the 
 `displayStyle` attribute:
 
@@ -258,7 +262,7 @@ the management bar display style buttons.
 
 Your display views are configured!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Implementing a Management Bar Sort Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-sort-filter)
 
