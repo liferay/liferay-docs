@@ -12,6 +12,19 @@ available for download from the [Liferay Marketplace](https://web.liferay.com/ma
 that delivers your media content in the best format, based on the channel 
 and device that consumes it. 
 
++$$$
+
+**Note:** Once Adaptive Media is installed, all content from that point onwards 
+uses adapted images, but content that existed previously will still use original 
+images. To adapt these old content entries you must manually edit each of them. 
+This can be time consuming. To automate this process, you can deploy the [`adaptive-media-image-content-transformer-backwards-compaitibility` module](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-content-transformer-backwards-compatibility).
+
+Note that all transformations are performed at runtime and each time the content 
+is viewed. This can affect the performance. Therefore we recommend that you run 
+some performance test before using this module in production.
+
+$$$
+
 This provides faster loading times for devices with a slower connection, saving 
 bandwidth, and also gives administrative control over the image quality. 
 
