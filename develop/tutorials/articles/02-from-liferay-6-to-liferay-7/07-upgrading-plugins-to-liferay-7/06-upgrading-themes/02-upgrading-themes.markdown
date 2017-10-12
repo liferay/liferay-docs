@@ -1,10 +1,10 @@
 # Upgrading Your Theme from Liferay Portal 6.2 to 7.0 [](id=upgrading-themes)
 
-If you've developed themes in Liferay Portal 6.2, as part of your upgrade you'll want
-to use them in @product-ver@. While you're at it, you should leverage theme
-improvements, including support for Sass, Bootstrap 3, and Lexicon (Liferay's UI
-design language). This tutorial demonstrates upgrading a Liferay Portal 6.2 theme to
-@product-ver@. 
+This tutorial guides you through the process of upgrading your 6.2 theme to run 
+on @product-ver@. While you're at it, you should leverage theme improvements, 
+including support for Sass, Bootstrap 3, and Lexicon (Liferay's 
+UI design language). This tutorial demonstrates upgrading a Liferay Portal 6.2 
+theme to @product-ver@. 
 
 Theme upgrades involve these steps:
 
@@ -21,7 +21,7 @@ adding configurable settings and incorporating a responsive design that
 leverages Font Awesome icons and Bootstrap. The theme [ZIP file](/documents/10184/656312/lunar-resort-theme-migration-6.2.zip)
 contains its original source code.
 
-![Figure 1: The Lunar Resort example theme upgraded in this tutorial uses a clean, minimal design.](../../../images/finished-theme.png)
+![Figure 1: The Lunar Resort example theme upgraded in this tutorial uses a clean, minimal design.](../../../../images/finished-theme.png)
 
 Before upgrading a theme, consider [migrating the theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 to use the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
@@ -362,7 +362,7 @@ settings.
 @product@ uses Font Awesome icons extensively. For example, the Lunar Resort
 theme's design incorporates Font Awesome icons in its social media links. 
 
-![Figure 2: Font Awesome icons facilitate creating social media links.](../../../images/lunar-resort-social-media-links.png)
+![Figure 2: Font Awesome icons facilitate creating social media links.](../../../../images/lunar-resort-social-media-links.png)
 
 The icons are easy to use in themes too.
 
@@ -502,7 +502,7 @@ updated to use the new syntax.
     -  *The User Personal Bar*: Display notifications and the user's avatar and
         name. 
 
-    ![Figure 3: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../images/upgrading-themes-dockbar.png)
+    ![Figure 3: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../../images/upgrading-themes-dockbar.png)
 
     The new design enhances the user experience by providing clear and
     purposeful menus. 
@@ -832,13 +832,13 @@ You can also retrieve a portlet's ID from the UI:
 
 1.  In the portlet's *Options* menu, select *Look and Feel Configuration*.
  
-    ![Figure 4: You can find the portlet ID in the the *Look and Feel Configuration* menu.](../../../images/upgrading-themes-look-and-feel-menu.png)
+    ![Figure 4: You can find the portlet ID in the the *Look and Feel Configuration* menu.](../../../../images/upgrading-themes-look-and-feel-menu.png)
 
 2.  Select the *Advanced Styling* tab.
 
     The `Portlet ID` value is listed in the blue box.
 
-![Figure 5: The portlet ID is listed within the blue box in the *Advanced Styling* tab.](../../../images/upgrading-themes-portlet-id.png)
+![Figure 5: The portlet ID is listed within the blue box in the *Advanced Styling* tab.](../../../../images/upgrading-themes-portlet-id.png)
 
 The [Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide)
 lists all the default portlet IDs.
