@@ -272,10 +272,11 @@ the issue.
 #### Understanding Excluded JARs [](id=understanding-excluded-jars)
 
 [Portal property `module.framework.web.generator.excluded.paths`](http://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module Framework)
-declares JARs that are stripped from all @product@ generated WABs. All JARs
-listed for this property are excluded from the WABs, even if the plugins listed
-the JAR in their `portal-dependency-jars` property. Typically @product@ exports
-specific package versions from these JARs. Excluding the JARs from WABs avoids classloading conflicts. 
+declares JARs that are stripped from all @product@ generated WABs. These JARs
+are excluded from WABs because @product@ provides them already. All JARs listed
+for this property are excluded from the WABs, even if the plugins listed the JAR
+in their `portal-dependency-jars` property. Typically @product@ exports specific
+package versions from these JARs. 
 
 If your plugin requires different versions of the packages @product@ exports,
 you must include them in JARs named differently from the ones
