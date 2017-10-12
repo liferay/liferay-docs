@@ -5,7 +5,10 @@
 The Angular npm Portlet sample provides a portlet that uses the
 [Angular](https://angular.io/) framework to render its output.
 
-![Screenshot of Angular npm Portlet](../../../../images/angular-npm-sample.png)
+![Figure 1: Type custom text in the field and watch it instantaneously displayed in the portlet.](../../../../images/angular-npm-sample.png)
+
+This portlet showcases Angular's speed and performance when rendering a user
+interface.
 
 ## What API(s) and/or code components does this sample highlight?
 

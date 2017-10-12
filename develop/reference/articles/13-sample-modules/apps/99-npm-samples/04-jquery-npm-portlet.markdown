@@ -5,7 +5,9 @@
 The jQuery npm Portlet sample provides a portlet that uses the
 [jQuery](https://jquery.com/) framework to render its output.
 
-![Screenshot of jQuery npm Portlet](../../../../images/jquery-npm-sample.png)
+![Clicking on the portlet's hand symbol displays a message.](../../../../images/jquery-npm-sample.png)
+
+This portlet showcases the fast HTML document traversal jQuery offers.
 
 ## What API(s) and/or code components does this sample highlight?
 

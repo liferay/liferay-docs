@@ -5,7 +5,10 @@
 The Metal.js npm Portlet sample provides a portlet that uses the
 [Metal.js](https://metaljs.com/) framework to render its output.
 
-![Screenshot of Metal.js npm Portlet](../../../../images/metaljs-npm-sample.png)
+![Clicking the button returns displays a dialog window.](../../../../images/metaljs-npm-sample.png)
+
+This portlet displays a Metal.js based dialog that has been rendered using SOY
+templates.
 
 ## What API(s) and/or code components does this sample highlight?
 

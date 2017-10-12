@@ -5,7 +5,10 @@
 The React npm Portlet sample provides a portlet that uses the
 [React](https://reactjs.org/) framework to render its output.
 
-![Screenshot of React npm Portlet](../../../../images/react-npm-sample.png)
+![You can play the game Tic-tac-toe with this sample portlet.](../../../../images/react-npm-sample.png)
+
+This portlet showcases the how efficiently React can render components based on
+user interaction.
 
 ## What API(s) and/or code components does this sample highlight?
 

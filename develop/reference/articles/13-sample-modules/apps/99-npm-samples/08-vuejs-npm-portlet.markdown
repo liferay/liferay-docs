@@ -5,7 +5,10 @@
 The Vue.js npm Portlet sample provides a portlet that uses the
 [Vue.js](https://vuejs.org/) framework to render its output.
 
-![Screenshot of Vue.js npm Portlet](../../../../images/vuejs-npm-sample.png)
+![Clicking the portlet's button reverses the message.](../../../../images/vuejs-npm-sample.png)
+
+This portlet showcases Vue.js's speed and performance when rendering a user
+interface.
 
 ## What API(s) and/or code components does this sample highlight?
 

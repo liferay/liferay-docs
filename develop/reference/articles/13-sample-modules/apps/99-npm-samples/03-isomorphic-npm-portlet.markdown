@@ -2,10 +2,13 @@
 
 ## What does this sample do when it's deployed?
 
-The Isomorphic npm Portlet sample provides a portlet that uses isomorphic code
-(which runs both client and server side) to render its output.
+The Isomorphic npm Portlet sample provides a portlet that uses
+[isomorphic](http://isomorphic.net/) code (which runs both client and server
+side) to render its output.
 
-![Screenshot of Isomorphic npm Portlet](../../../../images/isomorphic-npm-sample.png)
+![This sample portlet displays code retrieved from the client and server side.](../../../../images/isomorphic-npm-sample.png)
+
+This portlet showcases the ability to run both client and server side code.
 
 ## What API(s) and/or code components does this sample highlight?
 

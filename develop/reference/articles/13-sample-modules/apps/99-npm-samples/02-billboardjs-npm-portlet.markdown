@@ -6,7 +6,10 @@ The Billboard.js npm Portlet sample provides a portlet that uses the
 [Billboard.js](https://naver.github.io/billboard.js/) framework to render its
 output.
 
-![Screenshot of Billboard.js npm Portlet](../../../../images/billboardjs-npm-sample.png)
+![Figure 1: The Billboard.js npm Portlet shows off some nice looking graphs using Billboard.js.](../../../../images/billboardjs-npm-sample.png)
+
+This portlet showcases the power of graphing by displaying a set of default
+charts and a more advanced custom chart. These are all built using Billboard.js.
 
 ## What API(s) and/or code components does this sample highlight?
 

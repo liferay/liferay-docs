@@ -6,7 +6,7 @@ The Simple npm Portlet sample provides a portlet that uses the
 [isarray npm package](https://www.npmjs.com/package/isarray) when rendering its
 output.
 
-![Screenshot of Simple npm Portlet](../../../../images/simple-npm-sample.png)
+![The portlet's status and actions are displayed as output.](../../../../images/simple-npm-sample.png)
 
 ## What API(s) and/or code components does this sample highlight?
 
