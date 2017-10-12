@@ -275,8 +275,7 @@ the issue.
 declares JARs that are stripped from all @product@ generated WABs. These JARs
 are excluded from WABs because @product@ provides them already. All JARs listed
 for this property are excluded from the WABs, even if the plugins listed the JAR
-in their `portal-dependency-jars` property. Typically @product@ exports specific
-package versions from these JARs. 
+in their `portal-dependency-jars` property. 
 
 If your plugin requires different versions of the packages @product@ exports,
 you must include them in JARs named differently from the ones
