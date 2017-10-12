@@ -162,7 +162,7 @@ public class CheckLinks {
 	 * <p>
 	 * <pre>
 	 * <code>
-	 * [here](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+	 * [here](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal#liferay-home)
 	 * </code>
 	 * </pre>
 	 * </p>
@@ -431,12 +431,12 @@ public class CheckLinks {
 		headers = assignDirHeaders(line);
 		
 		// Prevents tables with multiple links from being invalidated
-		int count1 = StringUtils.countMatches(line, "/7-0/");
-		int count2 = StringUtils.countMatches(line, "/6-2/");
-		int count3 = StringUtils.countMatches(line, "/6-1/");
+		int count1 = StringUtils.countMatches(line, "/7-1/");
+		int count2 = StringUtils.countMatches(line, "/7-0/");
+		int count3 = StringUtils.countMatches(line, "/6-2/");
 
-		// Check 7.0 links from local liferay-docs repo
-		if (line.contains("/7-0/") && count1 < 2) {
+		// Check 7.1 links from local liferay-docs repo
+		if (line.contains("/7-1/") && count1 < 2) {
 
 			if (Validator.isNull(secondaryHeader)) {
 
@@ -454,7 +454,7 @@ public class CheckLinks {
 
 		// Check legacy URLs by checking remote LDN site. These links must be
 		// published to LDN before this tool can verify them.
-		else if (checkLegacyLinks && (line.contains("/6-2/") || line.contains("/6-1/")) &&
+		else if (checkLegacyLinks && (line.contains("/7-0/") || line.contains("/6-2/")) &&
 				(count2 < 2 && count3 < 2)) {
 
 			String ldnUrl = extractLdnUrl(line, in.getLineNumber(), article.getName());
