@@ -51,11 +51,11 @@ packages to an `Import-Package` header in the
 
 Here's an example `Import-Package` header:
 
-    Import-Package:\ 
-        org.springframework.beans.factory.xml.UtilNamespaceHandler,\
-        org.springframework.context.config.ContextNamespaceHandler,\
-        org.springframework.security.config.SecurityNamespaceHandler,\
-        org.springframework.web.servlet.config.MvcNamespaceHandler
+    Import-Package:\
+        org.springframework.beans.factory.xml,\
+        org.springframework.context.config,\
+        org.springframework.security.config,\
+        org.springframework.web.servlet.config
 
 The auto-deploy process and Liferay's WAB generator convert your project to a
 Liferay-ready WAB. The WAB generator detects your class's `import` statements
