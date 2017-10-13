@@ -58,10 +58,10 @@ Here's an example `Import-Package` header:
         org.springframework.web.servlet.config.MvcNamespaceHandler
 
 The auto-deploy process and Liferay's WAB generator convert your project to a
-Liferay-ready WAB. The WAB generator produces the WAB manifest's
-`Import-Package` header by merging the packages declared in your plugin's
-`liferay-plugin-package.properties` file with the packages that contain your
-project's classes.
+Liferay-ready WAB. The WAB generator detects your class's `import` statements
+and adds all external packages to the WAB's `Import-Package` header. The
+generator merges packages from your plugin's `liferay-plugin-package.properties`
+into the header also. 
 
 If you depend on a package from Java's `rt.jar` other than a `java.*` package,
 override
