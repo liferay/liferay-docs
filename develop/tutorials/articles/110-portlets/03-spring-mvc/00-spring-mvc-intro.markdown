@@ -117,7 +117,7 @@ $$$
 +$$$
 
 **Note**: If you want to use a Spring Framework version different from the
-version @product@ provides, you must rename your Spring Framework JARs
+version @product@ provides, you must name your Spring Framework JARs
 differently from the ones
 [portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
 excludes. If you don't rename your Spring Framework JARs, the WAB generator
