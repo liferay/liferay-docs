@@ -50,10 +50,10 @@ The
 [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 facilitates updating the code and resolving compilation issues quickly.
 
-The Code Upgrade Tool detects that `liferay-versions` value in the
-`liferay-plugin-package.properties` file needs updating and provides an option
-to fix it automatically. This is the only code adaptation
-`my-spring-mvc-portlet` requires. 
+The Code Upgrade Tool detects the value of the `liferay-versions` property in
+your plugin's `liferay-plugin-package.properties` file needs updating and it
+provides an option to fix it automatically. This is the only code adaptation
+required by `my-spring-mvc-portlet`. 
 
 ## Resolve Dependencies [](id=resolve-dependencies)
 
@@ -99,7 +99,7 @@ information.
 @product@'s Spring Framework JARs. If you don't rename your JARs, @product@
 assumes you're using its Spring Framework JARs and excludes yours from the
 generated WAB (Web Application Bundle).
-[Portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+Portal property [`module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
 lists @product@'s Spring Framework JARs. 
 [Understanding Excluded JARs](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#understanding-excluded-jars)
 explains how to detect the Spring Framework version @product@ uses. 
@@ -108,10 +108,12 @@ $$$
 
 +$$$
 
-**Note**: If a dependency is an OSGi module JAR and @product@ exports your
-needed packages, *exclude* the JAR from your plugin WAR file. This prevents
-class loader collisions. To exclude a JAR from deployment, add its name to the
-portlet's `liferay-plugin-package.properties` file's `deploy-excludes` property.
+**Note**: If a dependency is an OSGi module JAR and @product@ already exports
+your plugin's required packages, *exclude* the JAR from your plugin's WAR file.
+This prevents your plugin from exporting the same package(s) that Liferay is
+already exporting. This prevents class loader collisions. To exclude a JAR from
+deployment, add its name to the your project's
+`liferay-plugin-package.properties` file's `deploy-excludes` property.
 
     deploy-excludes=\
         **/WEB-INF/lib/module-a.jar,\ 
@@ -122,7 +124,7 @@ must be excluded.
 
 $$$
 
-Import class packages your portlet's descriptor files reference by adding the
+To import class packages referenced by your portlet's descriptor files, add the
 packages to an `Import-Package` header in the
 `liferay-plugin-package.properties` file. See 
 [Packaging a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#packaging-a-spring-mvc-portlet)
@@ -150,8 +152,10 @@ $$$
 
 The portlet is ready to deploy. Deploy it as you always have.
 
-@product@'s WAB Generator converts the portlet WAR to a Web Application Bundle
-(WAB) and installs the WAB to Liferay's OSGi Runtime Framework. 
+@product@'s
+[WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+converts the portlet WAR to a Web Application Bundle (WAB) and installs the WAB
+to Liferay's OSGi Runtime Framework. 
 
     21:12:23,775 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:252] Processing my-spring-mvc-portlet-7.0.0.1.war
     ...
