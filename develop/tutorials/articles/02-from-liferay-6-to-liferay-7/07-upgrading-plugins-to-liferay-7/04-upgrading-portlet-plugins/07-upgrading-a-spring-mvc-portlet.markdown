@@ -99,7 +99,7 @@ information.
 @product@'s Spring Framework JARs. If you don't rename your JARs, @product@
 assumes you're using its Spring Framework JARs and excludes yours from the
 generated WAB (Web Application Bundle).
-Portal property [`module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+[Portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
 lists @product@'s Spring Framework JARs. 
 [Understanding Excluded JARs](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#understanding-excluded-jars)
 explains how to detect the Spring Framework version @product@ uses. 
