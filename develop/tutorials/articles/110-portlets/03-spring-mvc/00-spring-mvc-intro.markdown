@@ -58,9 +58,10 @@ Here's an example `Import-Package` header:
         org.springframework.web.servlet.config.MvcNamespaceHandler
 
 The auto-deploy process and Liferay's WAB generator convert your project to a
-Liferay-ready WAB. The WAB generator producees the WAB manifest's
-`Import-Package` header by merging `liferay-plugin-package.properties`'s
-packages with the packages your portlet's classes import.
+Liferay-ready WAB. The WAB generator produces the WAB manifest's
+`Import-Package` header by merging the packages declared in your plugin's
+`liferay-plugin-package.properties` file with the packages that contain your
+project's classes.
 
 If you depend on a package from Java's `rt.jar` other than a `java.*` package,
 override
@@ -77,14 +78,16 @@ by issue
 The last JAR that has properties files is the only JAR whose properties are
 added to the resulting WAB's classpath. Properties in other JARs aren't added. 
 
-For example, a portlet has several JARs containing these properties files:
+For example, suppose that a portlet has several JARs containing these
+properties files:
 
 -   `WEB-INF/src/META-INF/spring.handlers`
 -   `WEB-INF/src/META-INF/spring.schemas`
 -   `WEB-INF/src/META-INF/spring.tooling`
 
 The properties from the last JAR processed are the only ones added to the
-classpath. The properties files must be on the classpath for the module to use.
+classpath. The properties files must be on the classpath in order for the
+module to use them.
 
 To add all the properties files to the classpath, you can combine them into one
 of each type (e.g., one `spring.handlers`, one `spring.schemas`, and one
@@ -321,7 +324,7 @@ defining the Liferay roles used in the portlet.
 Then there's the `liferay-plugin-package.properties`. These properties describe
 the Liferay plugin, declare its resources, and specify its security related
 parameters. The DTD is found
-[here](@platform-ref@/7.0-latest/definitions/liferay-plugin-package_7_0_0.dtd.html)
+[here](@platform-ref@/7.0-latest/definitions/liferay-plugin-package_7_0_0.dtd.html).
 
     name=example-portlet
     module-group-id=liferay
@@ -334,11 +337,12 @@ parameters. The DTD is found
     licenses=LGPL
     version=1
 
-In the `liferay-plugin-package.properties` file you can also add OSGi metadata,
-which is properly placed in the `MANIFEST.MF` file when you deploy your
-WAR file. 
+In the `liferay-plugin-package.properties` file, you can also add OSGi metadata
+which the
+[Liferay WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+adds to the `MANIFEST.MF` file when you deploy your WAR file. 
 
-Find all of Liferay's DTDs [here](@platform-ref@/7.0-latest/definitions/)
+Find all of Liferay's DTDs [here](@platform-ref@/7.0-latest/definitions/).
 
 ## Calling Services from Spring MVC [](id=calling-services-from-spring-mvc)
 
