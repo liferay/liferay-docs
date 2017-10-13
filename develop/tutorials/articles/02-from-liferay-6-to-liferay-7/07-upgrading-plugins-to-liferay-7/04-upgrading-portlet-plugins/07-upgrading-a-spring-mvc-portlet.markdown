@@ -95,14 +95,14 @@ information.
 +$$$
 
 **Note**: If the Spring Framework version you're using differs from the version
-@product@ uses, you must rename your Spring Framework JARs differently from the
-ones
-[portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
-excludes. If you don't rename your Spring Framework JARs, @product@ assumes
-you're using its Spring Framework JARs and excludes yours from the generated
-WAB (Web Application Bundle).
+@product@ uses, you must rename your Spring Framework JARs differently from
+@product@'s Spring Framework JARs. If you don't rename your JARs, @product@
+assumes you're using its Spring Framework JARs and excludes yours from the
+generated WAB (Web Application Bundle).
+[Portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+lists @product@'s Spring Framework JARs. 
 [Understanding Excluded JARs](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#understanding-excluded-jars)
-explains how to detect @product@'s Spring Framework version. 
+explains how to detect the Spring Framework version @product@ uses. 
 
 $$$
 
@@ -122,29 +122,29 @@ must be excluded.
 
 $$$
 
-Make sure to import class packages the descriptor files reference by adding the
-packages to an `Import-Package` header in the portlet's
+Import class packages your portlet's descriptor files reference by adding the
+packages to an `Import-Package` header in the
 `liferay-plugin-package.properties` file. See 
 [Packaging a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#packaging-a-spring-mvc-portlet)
 for details.
 
-If you depend on a package from Java's `rt.jar` other than a `java.*` packages,
-override
+If you depend on a package from Java's `rt.jar` other than its `java.*`
+packages, override
 [portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
 and add it to the property's list. Go [here](/develop/tutorials/-/knowledge_base/7-0/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
 for details. 
 
 +$$$
 
-**Note**: Spring MVC portlets whose embedded JARs contain properties files (e.g., `spring.handlers`, `spring.schemas`, `spring.tooling`) might
-be affected by issue
+**Note**: Spring MVC portlets whose embedded JARs contain properties files
+(e.g., `spring.handlers`, `spring.schemas`, `spring.tooling`) might be affected
+by issue
 [LPS-75212](https://issues.liferay.com/browse/LPS-75212).
 The last JAR that has properties files is the only JAR whose properties are
 added to the resulting WAB's classpath. Properties in other JARs aren't added.
 
-See 
 [Packaging a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#packaging-a-spring-mvc-portlet)
-for a workaround and details.
+explains how to add all the embedded JAR properties.
 
 $$$
 
