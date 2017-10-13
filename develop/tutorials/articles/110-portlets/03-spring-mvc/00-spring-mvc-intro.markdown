@@ -26,9 +26,9 @@ flexibility. Spring MVC portlets must be packaged as WAR artifacts because the
 Spring MVC framework is designed for Java EE. Therefore, it expects a WAR layout
 and requires Java EE resources such as the `WEB-INF/web.xml` descriptor. 
 
-Because Liferay supports the OSGi WAB standard for deployment, you can deploy
-your WAR and it will run as expected in the OSGi runtime. Here are the high
-points on why that works in @product-ver@:
+Because Liferay supports the OSGi WAB (Web Application Bundler) standard for
+deployment, you can deploy your WAR and it will run as expected in the OSGi
+runtime. Here are the high points on why that works in @product-ver@:
 
 -   The Liferay auto-deploy process runs, adding the `PortletServlet` and
     `PlugincontextListener` configurations to the `WEB-INF/web.xml` file.
@@ -43,9 +43,86 @@ points on why that works in @product-ver@:
 You'll still need to provide the Liferay descriptor files `liferay-display.xml`
 and `liferay-portlet.xml`, and you'll need a `portlet.xml` descriptor.
 
-Develop a Spring MVC portlet WAR file with the appropriate descriptor files, and
-let the auto-deploy process and Liferay's WAB generator take care of converting
-your project to a Liferay-ready WAB.
+Develop a Spring MVC portlet WAR file with the appropriate descriptor files. 
+
+Make sure to import class packages the descriptor files reference by adding the
+packages to an `Import-Package` header in the portlet's
+`liferay-plugin-package.properties` file. 
+
+Here's an example `Import-Package` header:
+
+    Import-Package:\ 
+        org.springframework.beans.factory.xml.UtilNamespaceHandler,\
+        org.springframework.context.config.ContextNamespaceHandler,\
+        org.springframework.security.config.SecurityNamespaceHandler,\
+        org.springframework.web.servlet.config.MvcNamespaceHandler
+
+The auto-deploy process and Liferay's WAB generator convert your project to a
+Liferay-ready WAB. The WAB generator merges
+`liferay-plugin-package.properties`'s packages with the packages the portlet's
+classes import to produce the WAB manifest's `Import-Package` header.
+
+If you depend on a package from Java's `rt.jar` other than a `java.*` packages,
+override
+[portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+and add it to the property's list. Go [here](/develop/tutorials/-/knowledge_base/7-0/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
+for details. 
+
++$$$
+
+**Note**: Spring MVC portlets whose embedded JARs contain properties files might
+be affected by issue
+[LPS-75212](https://issues.liferay.com/browse/LPS-75212).
+The last JAR that has properties files is the only JAR whose properties are
+added to the module's classpath. Properties in other JARs aren't added. 
+
+For example, a portlet has several JARs containing these properties files:
+
+-   `WEB-INF/src/META-INF/spring.handlers`
+-   `WEB-INF/src/META-INF/spring.schemas`
+-   `WEB-INF/src/META-INF/spring.tooling`
+
+The properties from the last JAR processed are the only ones added to the
+classpath. The module can only use properties whose files are in the classpath.
+
+To add all the properties files to the classpath, you can combine them into one
+of each type (e.g., one `spring.handlers`, one `spring.schemas`, and one
+`spring.tooling`) and add them to `WEB-INF/src`. 
+
+Here's a shell script that combines these files:
+
+    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.handlers
+    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.schemas
+    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.tooling
+    for jar in $(find docroot/WEB-INF/lib/ -name '*.jar'); do
+    for file in $(unzip -l $jar | grep -F META-INF/spring. | awk '
+    { print $4 } 
+    '); do
+    if [ "META-INF/spring.tld" != "$file" ]; then
+    unzip -p $jar $file >> docroot/WEB-INF/src/$file
+    echo >> docroot/WEB-INF/src/$file
+    fi
+    done
+    done
+
+You can modify and use the shell script to add your JAR's properties files to
+the classpath. 
+
+$$$
+
++$$$
+
+**Note**: If you want to use a Spring Framework version different from the
+version @product@ provides, you must rename your Spring Framework JARs
+differently from the ones
+[portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+excludes. If you don't rename your Spring Framework JARs, the WAB generator
+assumes you're using @product@'s Spring Framework JARs and excludes yours from
+the generated WAB.
+[Understanding Excluded JARs](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#understanding-excluded-jars)
+explains how to detect @product@'s Spring Framework version. 
+
+$$$
 
 Now get into the details of configuring a Spring MVC portlet for Liferay.
 
