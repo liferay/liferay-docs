@@ -116,14 +116,14 @@ already be be exported if Liferay intended for it to be available.
 In this case, the class belongs to Java's `rt.jar` but the package isn't
 specified in the OSGi Framework's boot delegation list. `rt.jar`'s `java.*`
 packages are its only ones available on the classpath automatically; its other
-packages must be specified in the boot delegation list be on the classpath.
+packages must be specified in the boot delegation list to get on the classpath.
 
 Here's how to add packages to the boot delegation list:
 
 1.  In a `portal-ext.properties` file, override
     [portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework).
-    Preserve its current list. 
-2.  Add the missing class's package to the list. 
+    Preserve the property's current list. 
+2.  Add the missing package to the list. 
 
 ## Related Topics [](id=related-topics)
 

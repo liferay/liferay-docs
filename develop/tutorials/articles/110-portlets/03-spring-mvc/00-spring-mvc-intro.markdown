@@ -45,8 +45,8 @@ and `liferay-portlet.xml`, and you'll need a `portlet.xml` descriptor.
 
 Develop a Spring MVC portlet WAR file with the appropriate descriptor files. 
 
-Make sure to import class packages the descriptor files reference by adding the
-packages to an `Import-Package` header in the portlet's
+Import class packages your portlet's descriptor files reference by adding the
+packages to an `Import-Package` header in the
 `liferay-plugin-package.properties` file. 
 
 Here's an example `Import-Package` header:
@@ -58,11 +58,11 @@ Here's an example `Import-Package` header:
         org.springframework.web.servlet.config.MvcNamespaceHandler
 
 The auto-deploy process and Liferay's WAB generator convert your project to a
-Liferay-ready WAB. The WAB generator merges
-`liferay-plugin-package.properties`'s packages with the packages the portlet's
-classes import to produce the WAB manifest's `Import-Package` header.
+Liferay-ready WAB. The WAB generator producees the WAB manifest's
+`Import-Package` header by merging `liferay-plugin-package.properties`'s
+packages with the packages your portlet's classes import.
 
-If you depend on a package from Java's `rt.jar` other than a `java.*` packages,
+If you depend on a package from Java's `rt.jar` other than a `java.*` package,
 override
 [portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
 and add it to the property's list. Go [here](/develop/tutorials/-/knowledge_base/7-0/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
@@ -70,11 +70,12 @@ for details.
 
 +$$$
 
-**Note**: Spring MVC portlets whose embedded JARs contain properties files might
-be affected by issue
+**Note**: Spring MVC portlets whose embedded JARs contain properties files
+(e.g., `spring.handlers`, `spring.schemas`, `spring.tooling`) might be affected
+by issue
 [LPS-75212](https://issues.liferay.com/browse/LPS-75212).
 The last JAR that has properties files is the only JAR whose properties are
-added to the module's classpath. Properties in other JARs aren't added. 
+added to the resulting WAB's classpath. Properties in other JARs aren't added. 
 
 For example, a portlet has several JARs containing these properties files:
 
@@ -83,7 +84,7 @@ For example, a portlet has several JARs containing these properties files:
 -   `WEB-INF/src/META-INF/spring.tooling`
 
 The properties from the last JAR processed are the only ones added to the
-classpath. The module can only use properties whose files are in the classpath.
+classpath. The properties files must be on the classpath for the module to use.
 
 To add all the properties files to the classpath, you can combine them into one
 of each type (e.g., one `spring.handlers`, one `spring.schemas`, and one
