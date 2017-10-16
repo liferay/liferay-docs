@@ -1,32 +1,42 @@
 # Setting up @product@
 
-The Liferay Basic Configuration has several options. First, you can configure 
-you Portal Name, the name and email address of your default Administrator. You 
-can also configure the Default Language as well as if you want to autogenerate 
-sample data for demo purposes. Finally, you can configure your database here. Let's start configuring!
+The Basic Configuration page lets you set the following for your portal:
 
-1. Set the *Portal Name* to "The Lunar Resort".
+- Portal name
+- Portal administrator
+- Default language
+- Whether to autogenerate sample data for demo purposes
+- Database configuration
 
-2. If you prefer to work in a language other than the system default, change the
-    *Default Language* to your preferred language.
+Follow these steps to configure your portal for the Lunar Resort:
 
-2. Enter your name and email address for the *Administrator User*. The *Email* 
-    will also serve as the user name for signing in.
+1.  Enter *The Lunar Resort* for the *Portal Name*. 
+
+2.  If you prefer to work in a language other than the system default, change 
+    the *Default Language* to your preferred language. 
+
+3.  Enter your name and email address for the *Administrator User*. You'll use 
+    this email address to sign in to the @product@ instance as the 
+    administrator. Note that for testing purposes, this doesn't have to be a 
+    real email address. 
     
-3. Uncheck the box labeled *Add Sample Data*.
+4.  Uncheck *Add Sample Data*. 
 
-4. Click Finish Configuration.
+5.  Leave the default database (Hypersonic) selected, and click *Finish 
+    Configuration*. Note that the default database is fine for testing and 
+    development, but should **never** be used in production. 
 
-![Figure X: The basic configuration page.](../../../images/001-starting-configuration.png)
+![Figure X: @product@'s Basic Configuration page.](../../../images/001-starting-configuration.png)
 
-5. On the next page, click *I Agree* at the bottom of the terms of use to 
-    continue.
-    
-6. Create a password, and then click *Save*.
+6.  At the bottom of the next page, click *I Agree* to accept the terms of use 
+    and continue. 
 
-7. Finally, choose a security question and answer to complete the setup.
+7. Create a password for the administrative user, and then click *Save*.
 
-After you finish the startup, you are brought to the *Welcome* page. If you see 
-the screen below, you have successfully set up your Liferay server. Now let's go over some Liferay basics.
+8. Finally, choose a security question and answer to complete the setup.
 
-![Figure X: The basic configuration page.](../../../images/001-hello-world.png)
+@product@ now presents the *Welcome* page. If you see the screen below, you have 
+successfully set up your @product@ server. Next, you'll learn some @product@ 
+basics.
+
+![Figure X: @product@'s Welcome page.](../../../images/001-hello-world.png)

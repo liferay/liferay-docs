@@ -1,8 +1,9 @@
-# Setting Up Liferay
+# Setting Up @product@
 
-Before you create web content structures or Freemarker templates, you should 
-get familiar with the basic tools for creating basic web content. But before 
-you can use the basic tools, you need to have @product up and running. In this 
-section, you'll install @product and perform the basic setup.
+To get started, you must first set up your @product@ instance. This section 
+shows you how to do this. You'll set up a portal called *The Lunar Resort*, 
+which you'll later add content to. As you create the content for this 
+hypothetical resort on the moon, you'll see why @product@ is well-suited for 
+creating websites that are truly out of this world. 
 
-If you already have a @product server up and running, you can skip ahead to *Creating Basic Web Content*.
+![Figure 1: Fancy staying at Liferay's Lunar Resort?](../../../images/001-lunar-resort-logo.png)
