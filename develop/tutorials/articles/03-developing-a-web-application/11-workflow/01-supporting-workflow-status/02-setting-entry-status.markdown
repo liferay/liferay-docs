@@ -19,12 +19,12 @@ the `return` statement:
 				entry.getGroupId(), entry.getUserId(), Entry.class.getName(), 
 				entry.getPrimaryKey(), entry, serviceContext);
 
-The call to `startWorkflowInstance` detects whether workflow is installed and
-enabled. If it isn't, the added entity is automatically marked as approved. The
-`startWorkflowInstance` also calls your `EntryWorkflowHandler` class, which
-you'll create later. Make the service layer update when they return from the
-workflow framework by adding the following method to the bottom of
-`EntryLocalServiceImpl`:
+The `startWorkflowInstance` call eventually directs the workflow processing to
+your `EntryWorkflowHandler` class, which you'll create later. That class is
+responsible for making sure the entity is updated in the database (via an
+`updateStatus` method), but it's best practice to make persistence calls in the
+service layer. Thus you'll need a corresponding `updateStatus` method here in
+`EntryLocalServiceImpl`. Add this method to the bottom of the class:
 
      public Entry updateStatus(long userId, long guestbookId, long entryId, int status,
 			ServiceContext serviceContext) throws PortalException,

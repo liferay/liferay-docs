@@ -1,7 +1,8 @@
 # Setting the Guestbook Status 
 
 Before now, the status of all added guestbooks was set automatically to
-approved. Now you'll set it to draft. 
+approved. Now you'll set it to draft, because that's what @product@'s workflow
+framework needs. 
 
 1.  From `guestbook-service`, open `GuestbookLocalServiceImpl` and add the
     status fields below the existing setter methods in the `addGuestbook`
@@ -24,6 +25,11 @@ approved. Now you'll set it to draft.
         WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
                     guestbook.getGroupId(), guestbook.getUserId(), Guestbook.class.getName(), 
                     guestbook.getPrimaryKey(), guestbook, serviceContext);
+
+    The call to `startWorkflowInstance` detects whether workflow is installed
+    and enabled. If it isn't, the added entity is automatically marked as
+    approved. The `startWorkflowInstance` call also calls your
+    `GuestbookWorkflowHandler` class, which you'll create later. 
 
 3.  Organize imports (*[CTRL]+[SHIFT]+O*), and save your work.
 
