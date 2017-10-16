@@ -1,28 +1,31 @@
 # Setting the Guestbook Status 
 
-Before now, the status of all added guestbooks was automatically set to
-approved. Open `GuestbookLocalServiceImpl` and set the status to `STATUS_DRAFT`
-below the existing setter methods in the `addGuestbook` method:
+Before now, the status of all added guestbooks was set automatically to
+approved. Now you'll set it to draft. 
 
-    guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
-    guestbook.setStatusByUserId(userId);
-    guestbook.setStatusByUserName(user.getFullName());
-    guestbook.setStatusDate(serviceContext.getModifiedDate(null));
+1.  From `guestbook-service`, open `GuestbookLocalServiceImpl` and add the
+    status fields below the existing setter methods in the `addGuestbook`
+    method:
 
-This manually sets the status of the workflow as a draft in the `GB_Entry`
-database table, and populates the other status fields with the proper current
-values. At this point they're identical to the similarly named non-status
-counterparts (like `setUserId` and `setStatusByUserId`), but they'll be updated
-independently in the `updateStatus` method you write later.
+        guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
+        guestbook.setStatusByUserId(userId);
+        guestbook.setStatusByUserName(user.getFullName());
+        guestbook.setStatusDate(serviceContext.getModifiedDate(null));
 
-Still in the `addGuestbook` method, place the following code right before the
-`return` statement:
+    This manually populates the status fields and sets the workflow status as
+    a draft in the `GB_Entry` database table. At this point they're identical to
+    the similarly named non-status counterparts (like `setUserId` and
+    `setStatusByUserId`), but they'll be updated independently in the
+    `updateStatus` method you write later.
 
-    WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
-				guestbook.getGroupId(), guestbook.getUserId(), Guestbook.class.getName(), 
-				guestbook.getPrimaryKey(), guestbook, serviceContext);
+2.  Still in the `addGuestbook` method, place the following code right before
+    the `return` statement:
 
-Organize imports (*[CTRL]+[SHIFT]+O*) and save your work.
+        WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
+                    guestbook.getGroupId(), guestbook.getUserId(), Guestbook.class.getName(), 
+                    guestbook.getPrimaryKey(), guestbook, serviceContext);
+
+3.  Organize imports (*[CTRL]+[SHIFT]+O*), and save your work.
 
 The `startWorkflowInstance` method is where your entity enters the workflow
 framework, but you're not finished yet. Just like you wouldn't drop your child
