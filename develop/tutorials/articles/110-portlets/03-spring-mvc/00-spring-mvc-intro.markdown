@@ -51,11 +51,11 @@ packages to an `Import-Package` header in the
 
 Here's an example `Import-Package` header:
 
-    Import-Package:\ 
-        org.springframework.beans.factory.xml.UtilNamespaceHandler,\
-        org.springframework.context.config.ContextNamespaceHandler,\
-        org.springframework.security.config.SecurityNamespaceHandler,\
-        org.springframework.web.servlet.config.MvcNamespaceHandler
+    Import-Package:\
+        org.springframework.beans.factory.xml,\
+        org.springframework.context.config,\
+        org.springframework.security.config,\
+        org.springframework.web.servlet.config
 
 The auto-deploy process and Liferay's WAB generator convert your project to a
 Liferay-ready WAB. The WAB generator detects your class's `import` statements
@@ -117,7 +117,7 @@ $$$
 +$$$
 
 **Note**: If you want to use a Spring Framework version different from the
-version @product@ provides, you must rename your Spring Framework JARs
+version @product@ provides, you must name your Spring Framework JARs
 differently from the ones
 [portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
 excludes. If you don't rename your Spring Framework JARs, the WAB generator

@@ -50,7 +50,7 @@ The
 [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 facilitates updating the code and resolving compilation issues quickly.
 
-The Code Upgrade Tool detects the value of the `liferay-versions` property in
+The Code Upgrade Tool detects if the value of the `liferay-versions` property in
 your plugin's `liferay-plugin-package.properties` file needs updating and it
 provides an option to fix it automatically. This is the only code adaptation
 required by `my-spring-mvc-portlet`. 
@@ -95,7 +95,7 @@ information.
 +$$$
 
 **Note**: If the Spring Framework version you're using differs from the version
-@product@ uses, you must rename your Spring Framework JARs differently from
+@product@ uses, you must name your Spring Framework JARs differently from
 @product@'s Spring Framework JARs. If you don't rename your JARs, @product@
 assumes you're using its Spring Framework JARs and excludes yours from the
 generated WAB (Web Application Bundle).
