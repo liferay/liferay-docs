@@ -83,7 +83,13 @@ exposing the ADT functionality to users. You'll walk through these steps now:
 
         </resource-action-mapping>
 
-3. Now that your portlet officially supports ADTs, you'll want to expose the
+3. The resource actions that we added in step two need to be picked up when the module is deployed so that Liferay will read the file and create the necessary records. In order to ensure that the resource actions are found during the deployment process we add a `portlet.properties` file to the /resources folder with the details of where to fine the resource actioncs configuration file. 
+
+	include-and-override=portlet-ext.properties
+
+	resource.actions.configs=resource-actions/default.xml
+
+4. Now that your portlet officially supports ADTs, you'll want to expose the
    ADT option to your users. Just include the
    `<liferay-ui:ddm-template-selector>` tag in the JSP file you're using to
    control your portlet's configuration.
