@@ -120,54 +120,60 @@ the configuration change and apply it.
 
 ## Factory Configurations
 
-The Apache Felix Configuration Admin framework supports multiple configuration
-files per component. Such situations are called *factory configurations* because
-providing multiple configuration files guarantees the creation of multiple
-instances of the configured service. Be careful! While any component can be
-forced into a factory configuration scenario, they aren't all designed to do so.
-It's best to rely on the developer of the service to determine if a service
-should support multiple instances with differing configurations. So how can you
-tell, without getting into the code? Developers of components that support
-configuration can mark their configurations as supporting factory configurations
-if they intend the service to be used this way. Once they mark the service as
-supporting factory configuration, it's visible in the System Settings UI, if you
-know what to look for. See the System Settings [Factory Configurations
-documentation](LINK WHEN WRITTEN) documentation for more information.
+Some configurable services in @product@ support the concept of *factory
+configuration*. In these cases, providing multiple configuration files
+guarantees the creation of multiple service instances (each configured by
+separate files). This becomes much clearer with an example:
 
-Because factory configurations use multiple `.config` files, a subname is
-included in each file name to avoid naming conflicts. @product@'s naming
-convention uses `-default` as the subname for the first instance. Any additional
-instances use a different subname. There are a few `*-default` configurations
-shipped with @product@, which you can see in your installation's `osgi/configs`
-folder. Here's an example:
+A service has the following configuration property: 
 
-    com.liferay.portal.security.auth.verifier.basic.auth.header.module.configuration.BasicAuthHeaderAuthVerifierConfiguration-default.cfg
+    port="8080"
 
-Because this configuration supports factory configuration, its initial instance
-uses the `-default` subname. To change the configuration of a `*-default.config`
-file, make the changes as you would for any other `*.config` file. Do not create
-a new configuration file yourself if you simply want to make a configuration
-change. This will create a new service instance, which might or might not be used
-by consumers of the service, depending on the implementation details of the
-consumer.
+Maybe this service is useful in most cases, but what if another consumer of the
+service is created, and it needs to have the service configured with a different
+port specified? Because the first configuration instance is still necessary, you
+can't just change the existing `.config` file to 
 
-+$$$
+    port="9080"
 
-**Factory Configuration Example Use Case:** 
+What you really need is for both services to exist simultaneously, each with a
+different configuration. Creating a second configuration file ensures that both
+service instances are available.
 
-$$$
+Be careful! Any configurable component can be forced into a factory
+configuration scenario, but they aren't all designed for it. If a service is
+safe for factory configuration, its configuration class is marked for it during
+development. You don't have to look in the code though: it's clear in the System
+Settings entry for the configuration. The presence of an Add button
+(![Add](../../../images/icon-add.png)) in the configuration's System Settings
+entry means the service supports factory configuration.
 
-What if you must configure a service, and you find that there are already
-mutliple configuration files present in the `Liferay_Home/osgi/configs` folder?
-For example:
+![Figure x: If a System Settings entry has an Add button, it's suitable
+for factory configuration.](../../../images/factory-configuration-entry.png)
+
+Once you determine that you need to write a factory configuration file, how do
+you do it? It's all in the name. A standard single-instance
+configuration file is named like this:
+
+    my.service.ServiceConfiguration.config
+
+If this service supported factory configuration, how would you name it
+differently? Liferay uses a convention of calling the first instance of the
+configuration `-default.config`:
 
     my.service.ServiceConfiguration-default.config
-    my.service.ServiceConfiguration-alternate.config
 
-If the configuration change makes sense for both instances, make the change in
-both files. It's helpful to know the use cases for each instance of the
-configured serrvice so you can better determine whether all configuration files
-need the configuration change.
+The next instance would contain a unique *subname* (something other than
+*default*). It's smart to use a descriptive name:
 
-Now you know the basics of configuring @product@ using portable, deployable
-configuration files. 
+    my.service.ServiceConfiguration-port9080.config
+
+To follow the example described above, the default instance would use
+`port="8080` and the `-port9080.config` would specify `port="9080"`.
+
+Keep in mind that all this talk of factory configurations might be more
+information than you need. If you are just changing the existing service
+configuration, it doesn't matter if it supports factory configuration or not:
+just change the configuration through System Settings or a configuration file
+(exported from System Settings, as usual).
+
