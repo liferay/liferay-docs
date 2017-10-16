@@ -1,4 +1,4 @@
-# Using Files to Configure @product@ Modules
+# Using Files to Configure @product@ Modules [](id=using-files-to-configure-product-modules)
 
 @product@ uses the
 [Felix OSGi implementation](http://felix.apache.org/)

@@ -671,7 +671,7 @@ please examine the Zoe themes which you can find on Github here
 and which you can download from Liferay Marketplace.
 -->
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
