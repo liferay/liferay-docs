@@ -2,11 +2,8 @@
 
 Your application server's Java Naming and Directory Interface (JNDI)
 implementation lets you access data outside @product@'s default data source.
-@product-ver@'s OSGi runtime requires using @product@'s classloader to access
-JNDI data sources. This tutorial demonstrates how:
-
--   [Using JNDI to connect to a data source](using-jndi-to-connect-to-a-data-source)
--   [Configuring a JNDI Data source](configuring-a-jndi-data-source)
+@product-ver@'s OSGi runtime requires using @product@'s class loader to access
+JNDI data sources. This tutorial demonstrates how. 
 
 ## Using JNDI to Connect to a Data Source [](id=using-jndi-to-connect-to-a-data-source)
 
@@ -89,4 +86,4 @@ statements and result set code with your own.
 
 ## Related Topics [](id=related-topics)
 
--   [Using Data Sources](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually#using-data-sources)
+[Using Data Sources](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually#using-data-sources)
