@@ -42,7 +42,7 @@ $$$
 
 Now you'll actually perform these steps, and when you're done, you'll have a
 production-ready instance of @product@ up and running. After you're done
-following the installation guide, refer to the [Configuring Elasticsearch](/discover/portal/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0)
+following the installation guide, refer to the [Configuring Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0)
 article for more details on configuring @product@ for Elasticsearch. For more
 information on installing a search engine, see
 [here](/discover/deployment/-/knowledge_base/7-0/installing-a-search-engine).

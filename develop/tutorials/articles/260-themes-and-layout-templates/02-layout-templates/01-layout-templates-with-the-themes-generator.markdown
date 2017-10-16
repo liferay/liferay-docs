@@ -118,19 +118,19 @@ Follow these steps to create a layout template:
                   <layout-template id="porygon_70_30_width_limited" 
                   name="Porygon 2 Columns (70/30) width limited">
                     <template-path>
-                        /layoutttpl/custom/porygon_70_30_width_limited.tpl
+                        /layouttpl/custom/porygon_70_30_width_limited.tpl
                     </template-path>
                     <thumbnail-path>
-                        /layoutttpl/custom/porygon_70_30_width_limited.png
+                        /layouttpl/custom/porygon_70_30_width_limited.png
                     </thumbnail-path>
                   </layout-template>
                   <layout-template id="porygon_50_50_width_limited" 
                   name="Porygon 2 Columns (50/50) width limited">
                     <template-path>
-                        /layoutttpl/custom/porygon_50_50_width_limited.tpl
+                        /layouttpl/custom/porygon_50_50_width_limited.tpl
                     </template-path>
                     <thumbnail-path>
-                        /layoutttpl/custom/porygon_50_50_width_limited.png
+                        /layouttpl/custom/porygon_50_50_width_limited.png
                     </thumbnail-path>
                   </layout-template>
                 </custom>

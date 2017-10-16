@@ -12,7 +12,7 @@ that authenticates the user. You'll learn how to call @product@'s
 [authentication pipeline](/develop/tutorials/-/knowledge_base/7-0/authentication-pipelines) 
 and then redirect the user to a location of your choice. 
 
-## Authenticating to @product@ 
+## Authenticating to @product@ [](id=authenticating-to-product)
 
 You can use the example project 
 [in this ZIP file](https://dev.liferay.com/documents/10184/656312/MyCustomLoginPortlet.zip) 

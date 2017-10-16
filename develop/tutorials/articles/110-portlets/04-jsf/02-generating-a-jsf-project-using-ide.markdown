@@ -4,7 +4,7 @@ You can generate a Liferay Faces application without having to create your own
 folder structure and descriptor files manually using Liferay @ide@. If you're
 interested in creating the structure of a JSF application manually or if you
 want to examine a basic JSF application structure, visit the
-[Creating a JSF Project Manually](/develop/tutorials/-/knowledge_base/7-0/creating-a-jsf-project-manually.markdown)
+[Creating a JSF Project Manually](/develop/tutorials/-/knowledge_base/7-0/creating-a-jsf-project-manually)
 tutorial.
 
 In this tutorial, you'll generate an example JSF project using Liferay @ide@.
