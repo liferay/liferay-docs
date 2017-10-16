@@ -1,45 +1,48 @@
 # Basic Liferay Administration
 
-Before you can do anything in Liferay, it will help to have a quick tour of
-where everything is and what all the icons mean. We'll cover some of the most
-common interface elements that you interact with while managing sites and
-creating content.
+Before doing anything in @product@, you need to learn its basic UI. This article 
+gives you a guided tour of the most common UI elements that you'll interact with 
+while managing sites and creating content. 
 
-There are four icons that run across the top of the page which you will need to use
-for most administrative functions. The icon on the far left opens the main menu
-which gives you access to the Control Panel and Site Administration.
+For most administrative functions, you'll use the four icons that run across the 
+top of the screen. Clicking the icon on the far left opens the main menu, which 
+gives you access to the Control Panel and Site Administration. 
+<!-- 
+Instead of individual images, provide a labeled screenshot of the entire top bar
+that contains the 4 icons
+-->
 
-![Figure X: The basic configuration page.](../../../images/001-menu.png)
+![Figure X: The main menu.](../../../images/001-menu.png)
 
-When you click on *Menu*, a dynamic menu with a variety of options from content
-creation to server configuration will pop out.
+The main menu contains a variety of options for content creation, server 
+configuration, site administration, and more. 
 
-![Figure X: The basic configuration page.](../../../images/001-pop-out-menu.png)
+![Figure X: The main menu.](../../../images/001-pop-out-menu.png)
 
-The set of three icons on the right side give you access to other options
+Returning to the bar that runs across the top of the screen, the three icons on 
+the right give you access to options for the current page:
 
-* *Page Configuration* allows you to mange settings for the page setup and 
-    display.
+-   **Configure Page:** lets you mange page setup and display settings.
+-   **Add:** opens the menu that lets you add content and applications to the 
+    page.
+-   **Simulation:** lets you preview your page at different sizes and 
+    resolutions, like those common for mobile devices.
 
-![Figure X: The basic configuration page.](../../../images/001-configure-page.png)
+![Figure X: The Configure Page menu.](../../../images/001-configure-page.png)
 
-* *Add* opens the menu for adding content and applications to the current page.
+![Figure X: The Add menu.](../../../images/001-add.png)
 
-![Figure X: The basic configuration page.](../../../images/001-add.png)
+![Figure X: The Simulation menu.](../../../images/001-simulation.png)
 
-* The *Simulator* allows you to view your page as it would display at different 
-    resolutions like those common for tablets or smartphones.
+The final UI element to be aware of is the *portlet bar*, which appears when you 
+mouse-over an application on a page. To reposition an application on the page, 
+click and drag its portlet bar. You can also open the application's 
+configuration menu by clicking the icon on the right side of the portlet bar. 
 
-![Figure X: The basic configuration page.](../../../images/001-simulation.png)
+![Figure X: The portlet bar appears at the top of an application. Here, the red box highlights it.](../../../images/001-portlet-bar.png)
 
-The last important element to be aware of is the Portlet Bar. When you 
-mouse-over an application on a page it's portlet bar will appear. You can click 
-on the portlet bar to drag it around the page, or you can open the configuration
-menu on the right side.
-
-![Figure X: The basic configuration page.](../../../images/001-portlet-bar.png)
-
-All of these options are only available to you because you're an administrative 
-user. If you log out, all of the portlet bars and menu options are gone. If 
-this all seemed like a whirlwind tour, don't worry. By the time you're finished
-this will all seem like second nature. Now, on to content creation!
+Note that all of these options are only available to you because you're an 
+administrator. Upon logging out, the menu options and portlet bars disappear. 
+Don't worry if you don't understand all this. By the time you're finished with 
+this Learning Path, @product@'s UI will be second nature. Now you're ready to 
+create some content!

@@ -120,7 +120,7 @@ the configuration.
 
 For more information about the other available stores, look at [Document Repository Configuration](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration).
 
-## Install the New Version of @product@
+## Install the New Version of @product@ [](id=install-the-new-version-of-product)
 
 Next, [follow the instructions](/discover/deployment/-/knowledge_base/7-0/preparing-for-install)
 to install @product@ on your application server or use @product@ bundled with your
