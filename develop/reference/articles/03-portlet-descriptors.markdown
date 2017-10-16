@@ -112,7 +112,7 @@ this document for simplicity.
 |`/liferay-portlet-app/portlet/use-default-template`|`com.liferay.portlet.use-default-template=<boolean>`|
 |`/liferay-portlet-app/portlet/show-portlet-access-denied`|`com.liferay.portlet.show-portlet-access-denied=<boolean>`|
 |`/liferay-portlet-app/portlet/show-portlet-inactive`|`com.liferay.portlet.show-portlet-inactive=<boolean>`|
-|`/liferay-portlet-app/portlet/action-url-redirect`|`com.liferay.portlet.show-portlet-inactive=<boolean>`|
+|`/liferay-portlet-app/portlet/action-url-redirect`|`com.liferay.portlet.action-url-redirect=<boolean>`|
 |`/liferay-portlet-app/portlet/restore-current-view`|`com.liferay.portlet.restore-current-view=<boolean>`|
 |`/liferay-portlet-app/portlet/maximize-edit`|`com.liferay.portlet.maximize-edit=<boolean>`|
 |`/liferay-portlet-app/portlet/maximize-help`|`com.liferay.portlet.maximize-help=<boolean>`|

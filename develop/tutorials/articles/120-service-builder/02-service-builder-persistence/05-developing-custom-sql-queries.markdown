@@ -43,9 +43,9 @@ After you've tested your SQL, you must specify it in a particular file for
 Liferay to access it. Liferay's
 [CustomSQLUtil](@app-ref@/foundation/latest/javadocs/com/liferay/portal/dao/orm/custom/sql/CustomSQLUtil.html)
 class looks up custom SQL from a file called `default.xml` in your service
-module's `src/custom-sql/` folder. You must create the `custom-sql` folder and
-create the `default.xml` file in that `custom-sql` folder. The `default.xml`
-file must adhere to the following format:
+module's `src/main/resources/META-INF/custom-sql/` folder. You must create the
+`custom-sql` folder and create the `default.xml` file in that `custom-sql`
+folder. The `default.xml` file must adhere to the following format:
 
     <custom-sql>
         <sql id="[fully-qualified class name + method]">

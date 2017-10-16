@@ -1,4 +1,4 @@
-# Installing @product@
+# Installing @product@ [](id=installing-product)
 
 Now that you've performed the steps needed to prepare for your installation,
 you're ready to install @product@! Since bundles are the easiest way to complete

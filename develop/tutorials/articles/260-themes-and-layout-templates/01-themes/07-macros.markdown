@@ -88,7 +88,7 @@ You can read more about FreeMarker macros and Velocity macros at
 @product@ provides several macros that you can use in your theme templates. 
 These are covered next.
 
-## @product@ Macros
+## @product@ Macros [](id=product-macros)
 
 There are several default macros defined in the 
 [`FTL_Liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
