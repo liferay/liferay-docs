@@ -1,5 +1,8 @@
 # React npm Portlet
 
+**Important:** This sample works for Liferay DXP Fix Pack 30+ and Liferay Portal
+CE GA5+.
+
 ## What does this sample do when it's deployed?
 
 The React npm Portlet sample provides a portlet that uses the
@@ -28,3 +31,16 @@ script inside its `package.json` file:
     "scripts": {
         "build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
     },
+
+## Where Is This Sample?
+
+This sample is built with the following build tool:
+
+<!--
+There are three different versions of this sample, each built with a different
+build tool:
+
+TODO: Replace above when tool is available for other build tools. -Cody
+-->
+
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/react-npm-portlet)
