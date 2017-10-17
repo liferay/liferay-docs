@@ -1,4 +1,4 @@
-# NPM Samples
+# NPM Samples [](id=npm-samples)
 
 This section focuses on Liferay NPM sample applications built with Gradle. You
 can view these sample apps by visiting the

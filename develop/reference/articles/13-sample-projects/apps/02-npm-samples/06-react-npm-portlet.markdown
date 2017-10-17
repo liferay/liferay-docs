@@ -1,9 +1,9 @@
-# React npm Portlet
+# React npm Portlet [](id=react-npm-portlet)
 
 **Important:** This sample works for Liferay DXP Fix Pack 30+ and Liferay Portal
 CE GA5+.
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The React npm Portlet sample provides a portlet that uses the
 [React](https://reactjs.org/) framework to render its output.
@@ -13,12 +13,12 @@ The React npm Portlet sample provides a portlet that uses the
 This portlet showcases the how efficiently React can render components based on
 user interaction.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
 [npm development workflow support](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction).
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 This sample uses the [npm registry](https://www.npmjs.com/) to download project
 dependencies and uses the
@@ -32,7 +32,7 @@ script inside its `package.json` file:
         "build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
     },
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 This sample is built with the following build tool:
 
