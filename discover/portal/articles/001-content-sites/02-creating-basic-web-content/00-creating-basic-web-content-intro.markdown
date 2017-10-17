@@ -1,8 +1,8 @@
 # Creating Basic Web Content
 
-All the tools you need to build sites and create content are included with the
-basic @product@ installation, so now that everything is setup and you have a 
-basic idea of how to manage Liferay, you're ready to start building your site. 
-Before you dive in too deep though, let's dip your toes in the water. It's time
-to get some hands on experience with Liferay's tools and create your first piece
-of content.
+In this Learning Path's previous steps, you set up your @product@ instance. 
+Since every @product@ installation contains all the tools you need to build 
+sites and create content, this means you can start building your site. Before 
+taking the plunge, however, you should dip your toes in the water. Next, you'll 
+get some hands on experience with @product@'s web content tools by creating your 
+first piece of content. 
