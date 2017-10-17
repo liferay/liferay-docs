@@ -8,7 +8,7 @@ CE GA5+.
 The Metal.js npm Portlet sample provides a portlet that uses the
 [Metal.js](https://metaljs.com/) framework to render its output.
 
-![Clicking the button returns displays a dialog window.](../../../../images/metaljs-npm-sample.png)
+![Figure 1: Clicking the button returns displays a dialog window.](../../../../images/metaljs-npm-sample.png)
 
 This portlet displays a Metal.js based dialog that has been rendered using SOY
 templates.

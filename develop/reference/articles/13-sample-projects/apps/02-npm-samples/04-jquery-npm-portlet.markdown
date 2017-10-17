@@ -8,7 +8,7 @@ CE GA5+.
 The jQuery npm Portlet sample provides a portlet that uses the
 [jQuery](https://jquery.com/) framework to render its output.
 
-![Clicking on the portlet's hand symbol displays a message.](../../../../images/jquery-npm-sample.png)
+![Figure 1: Clicking on the portlet's hand symbol displays a message.](../../../../images/jquery-npm-sample.png)
 
 This portlet showcases the fast HTML document traversal jQuery offers.
 

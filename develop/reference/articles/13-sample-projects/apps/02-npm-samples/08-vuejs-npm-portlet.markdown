@@ -8,7 +8,7 @@ CE GA5+.
 The Vue.js npm Portlet sample provides a portlet that uses the
 [Vue.js](https://vuejs.org/) framework to render its output.
 
-![Clicking the portlet's button reverses the message.](../../../../images/vuejs-npm-sample.png)
+![Figure 1: Clicking the portlet's button reverses the message.](../../../../images/vuejs-npm-sample.png)
 
 This portlet showcases Vue.js's speed and performance when rendering a user
 interface.

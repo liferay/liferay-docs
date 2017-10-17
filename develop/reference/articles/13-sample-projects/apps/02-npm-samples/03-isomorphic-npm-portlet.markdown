@@ -9,7 +9,7 @@ The Isomorphic npm Portlet sample provides a portlet that uses
 [isomorphic](http://isomorphic.net/) code (which runs both client and server
 side) to render its output.
 
-![This sample portlet displays the results of running code designed for the server in the browser.](../../../../images/isomorphic-npm-sample.png)
+![Figure 1: This sample portlet displays the results of running code designed for the server in the browser.](../../../../images/isomorphic-npm-sample.png)
 
 This portlet showcases the ability to run code designed for the server in the
 browser.

@@ -8,7 +8,7 @@ CE GA5+.
 The React npm Portlet sample provides a portlet that uses the
 [React](https://reactjs.org/) framework to render its output.
 
-![You can play the game Tic-tac-toe with this sample portlet.](../../../../images/react-npm-sample.png)
+![Figure 1: You can play the game Tic-tac-toe with this sample portlet.](../../../../images/react-npm-sample.png)
 
 This portlet showcases the how efficiently React can render components based on
 user interaction.
