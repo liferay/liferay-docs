@@ -102,7 +102,7 @@ using Blade CLI.
 
 ## Module Samples [](id=module-samples)
 
-Liferay provides many sample projects that are useful for those interested in
+Liferay provides many sample modules that are useful for those interested in
 learning best practices on structuring their modules to accomplish specific
 tasks in @product@. These samples can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples) Github
