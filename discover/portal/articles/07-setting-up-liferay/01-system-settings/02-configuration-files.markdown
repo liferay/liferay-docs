@@ -120,40 +120,38 @@ the configuration change and apply it.
 
 ## Factory Configurations
 
-Some configurable services in @product@ support the concept of *factory
-configuration*. In these cases, providing multiple configuration files
-guarantees the creation of multiple service instances (each configured by
-separate files). This becomes much clearer with an example:
+Configurations supporting multiple independent occurrences of the same
+configuration entry are known as *factory configurations*.
 
-A service has the following configuration property: 
++$$$
 
-    port="8080"
+**Factory Configuration Example:** @product@ supports the publication of [JAX-WS
+and JAX-RS web
+services](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs). These
+services must use a [CXF
+Endpoint](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#cxf-endpoints),
+which is a context path where the web services are deployed and accessible.
+Endpoints can be created via factory configuration by navigating to the CXF
+Endpoints System Settings Entry (System Settings &rarr; Foundation &rarr; CXF
+Endpoints). Using the Add button (![Add](../../../images/icon-add.png)), the
+administrator enters the desired configuration values and repeats the process,
+adding as many CXF Endpoint configurations as needed. The creation of CXF
+Endpoint configurations also creates CXF Endpoints themselves. This is how
+factory configuration works. 
 
-Maybe this service is useful in most cases, but what if another consumer of the
-service is created, and it needs to have the service configured with a different
-port specified? Because the first configuration instance is still necessary, you
-can't just change the existing `.config` file to 
+$$$
 
-    port="9080"
-
-What you really need is for both services to exist simultaneously, each with a
-different configuration. Creating a second configuration file ensures that both
-service instances are available.
-
-Be careful! Any configurable component can be forced into a factory
-configuration scenario, but they aren't all designed for it. If a service is
-safe for factory configuration, its configuration class is marked for it during
-development. You don't have to look in the code though: it's clear in the System
-Settings entry for the configuration. The presence of an Add button
-(![Add](../../../images/icon-add.png)) in the configuration's System Settings
-entry means the service supports factory configuration.
+If a service is meant to support factory configuration, its System Settings
+entry has an Add button (![Add](../../../images/icon-add.png)).
 
 ![Figure x: If a System Settings entry has an Add button, it's suitable
 for factory configuration.](../../../images/factory-configuration-entry.png)
 
-Once you determine that you need to write a factory configuration file, how do
-you do it? It's all in the name. A standard single-instance
-configuration file is named like this:
+As with regular old single-instance configurations, you can accomplish factory
+configuration in the System Settings interface (as described in the example
+above) or via configuration files. Once you determine that you need to write a
+factory configuration file, how do you do it? It's all in the name. A standard
+single-instance configuration file is named like this:
 
     my.service.ServiceConfiguration.config
 
@@ -168,12 +166,36 @@ The next instance would contain a unique *subname* (something other than
 
     my.service.ServiceConfiguration-port9080.config
 
-To follow the example described above, the default instance would use
-`port="8080` and the `-port9080.config` would specify `port="9080"`.
+To follow the CXF Endpoints example described above, if Liferay's developers had
+shipped an initial CXF Endpoint `.config` file with @product@, it would have
+been named
 
-Keep in mind that all this talk of factory configurations might be more
-information than you need. If you are just changing the existing service
-configuration, it doesn't matter if it supports factory configuration or not:
-just change the configuration through System Settings or a configuration file
-(exported from System Settings, as usual).
+    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-default.config
 
+Perhaps the `-default.config` configuration specifies a context path for *REST*
+web services, and then you create another endpoint with a different context path
+for *SOAP* web services. Your second configuration file could be named
+
+    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-soap.config
+
++$$$
+
+**Note:** Some System Settings entries (like the CXF Endpoints entry) don't ship
+with a configuration file, so anything you create is the first occurrence.
+However, if you configure one and export it to obtain the `.config` file, it's
+not named `-default.config`. Instead it's given a guaranteed unique identifier
+for its subname, like
+
+    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-a6f67e48-6dca-49c6-bf6b-8fd5e6016b2d.config
+
+This is simply to guarantee that the file has a unique name. It's recommended to
+rename the exported file to use a more descriptive subname. 
+
+$$$
+
+Now a note of warning. In many cases, configuration files can be used to force a
+factory configuration scenario, but not all configurations are designed to be
+used this way. It's best to stick to the intended use cases. Use System Settings
+as described above to determine if factory configuration is a good idea. If not,
+stick to the single occurrence mode of configuration (specifying only one
+configuration file for the service). 
