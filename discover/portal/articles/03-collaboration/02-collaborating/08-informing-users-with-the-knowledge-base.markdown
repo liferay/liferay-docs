@@ -14,8 +14,7 @@ your users.
 
 **Note:** [Staging](/discover/portal/-/knowledge_base/7-0/staging-content-for-publication) 
 is supported in both Knowledge Base content and portlet configurations since 
-Liferay DXP Fix Pack 13 and Liferay Portal CE GA5?.
-<!-- Update with proper version information -->
+Liferay DXP Fix Pack 14 and Liferay Portal CE GA4.
 
 $$$
 
