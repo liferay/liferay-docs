@@ -116,7 +116,10 @@ permission to customize the RSS application and select feeds to be displayed.
 
 +$$$
 
-**Note:** If you are behind a proxy, then you'll need to make sure to set the appropriate Java proxy settings either in your setenv script or in your system-ext.properties, such as http.proxyHost= and http.proxyPort=. Without them, the RSS Publisher application will be unable to access any RSS feeds.
+**Note:** If you are running your server behind a proxy, you must set the 
+appropriate Java proxy settings (such as `http.proxyHost=` and `http.proxyPort=`) 
+in your `setenv` script, or in your `system-ext.properties`. Without these 
+properties, the RSS Publisher application can't access any RSS feeds.
 
 $$$
 
