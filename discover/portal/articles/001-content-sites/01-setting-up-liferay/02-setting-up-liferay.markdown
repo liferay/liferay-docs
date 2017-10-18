@@ -35,6 +35,14 @@ Follow these steps to configure your portal for the Lunar Resort:
 
 8. Finally, choose a security question and answer to complete the setup.
 
+$$$
+
+Note: At this stage for Liferay DXP you will need to deploy an activation key 
+or activate through LCS. You can obtain a trial key from Liferay's 
+[Enterprise Trial page](https://web.liferay.com/c/portal/register_trial_license?redirect=/digital-experience-platform/30-day-trial).
+
+$$$
+
 @product@ now presents the *Welcome* page. If you see the screen below, you have 
 successfully set up your @product@ server. Next, you'll learn some @product@ 
 basics.

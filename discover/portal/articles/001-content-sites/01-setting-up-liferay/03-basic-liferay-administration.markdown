@@ -15,7 +15,11 @@ that contains the 4 icons
 ![Figure X: The main menu.](../../../images/001-menu.png)
 
 The main menu contains a variety of options for content creation, server 
-configuration, site administration, and more. 
+configuration, site administration, and more. Clicking on *Control Panel* will 
+open various administration functions for users, sites, and server 
+configuration. Below that, you can manage your personal user information. Your 
+regular site management and content creation tasks, where you'll be spending 
+most of your time in this exercise, are found under the name of the site. 
 
 ![Figure X: The main menu.](../../../images/001-pop-out-menu.png)
 
