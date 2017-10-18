@@ -1,10 +1,10 @@
 # Configuring Your Application's Title and Back Link [](id=configuring-your-applications-title-and-back-link)
 
 For @product-ver@ administration applications, the title should be moved to the 
-inner views of the app, and the associated back link should be moved to the 
+inner views of the app and the associated back link should be moved to the 
 portlet titles. 
 
-If you open the Blogs Admin application in the control panel and add a new blog 
+If you open the Blogs Admin application in the Control Panel and add a new blog 
 entry, you'll see this behavior in action:
 
 ![Figure 1: Adding a new blog entry displays the portlet title at the top, along with a back link.](../../../images/new-blog-entry-title.png)
@@ -30,10 +30,11 @@ Follow these steps to configure your app's title and back URL:
         LanguageUtil.get(request, "new-blog-entry"));
         %>
 
-The example above provides a title for two scenarios. If an existing blog entry 
-is being updated, the blog's title is displayed, otherwise it defaults to 
-*New Blog Entry* since a new blog entry is being created. 
-    
+The example above provides a title for two scenarios: 
+
+- If an existing blog entry is being updated, the blog's title is displayed.
+- Otherwise it defaults to *New Blog Entry* since a new blog entry is being created. 
+ 
 You should also update any back links in the view to use the `redirect`. For 
 example the `edit_entry.jsp` form's cancel button redirects the user:
 

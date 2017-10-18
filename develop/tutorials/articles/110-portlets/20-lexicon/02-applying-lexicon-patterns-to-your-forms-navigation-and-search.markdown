@@ -1,14 +1,13 @@
 # Applying Lexicon Patterns to Your Forms, Navigation, and Search [](id=applying-lexicon-patterns-to-forms-navigation-and-search)
 
 This tutorial covers how to leverage Lexicon patterns in your app's forms, 
-navigation, and search results, to make them more user-friendly.
+navigation, and search results to make them more user-friendly.
 
 You can learn how to update your navigation next.
 
 ## Applying Lexicon to the Navigation Bar [](id=applying-lexicon-to-the-navigation-bar)
 
-All administration apps in @product-ver@ have a navigation bar. If your app is 
-intended for administrative use, you can use a navigation bar as well. Applying 
+All administration apps in @product-ver@ have a navigation bar. Applying 
 Lexicon to your existing navigation bar takes only one additional attribute. 
 
 If your app already has a navigation bar implemented with the [`aui:nav-bar`](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/nav-bar.html)
@@ -23,11 +22,11 @@ has the configuration below:
 
 **Note:** The `markupView="lexicon"` attribute ensures that the Lexicon markup 
 is used for the UI components, rather than the standard markup. This attribute 
-tells the app to use the `lexicon` folder for the taglib to render the HTML, 
-rather than the default pages. For example, using 
-`<aui:fieldset markupView="lexicon" />` tells your app to render the HTML with 
-`/portal/portal-web/docroot/html/taglib/aui/fieldset/lexicon/`, instead of the 
-`end.jsp` and `start.jsp` files found in 
+tells the app to use the `lexicon` folder in the taglib to render the HTML, 
+rather than the default rendering. For example, 
+`<aui:fieldset markupView="lexicon" />` renders the HTML using 
+`/portal/portal-web/docroot/html/taglib/aui/fieldset/lexicon/` instead of the 
+`end.jsp` and `start.jsp` files in 
 `/portal/portal-web/docroot/html/taglib/aui/fieldset/`.
 
 $$$
@@ -41,17 +40,16 @@ learn how to apply Lexicon to your forms.
 
 ## Applying Lexicon Patterns to the Application Body [](id=applying-lexicon-patterns-to-the-application-body)
 
-To ensure that your application is using all the available screen real state, 
-from left to right, you should make the application body fluid in all portlet 
-views. This helps provide a consistent user-experience across all views of your 
-app.
+To ensure that your application uses all available screen real state from left
+to right, make the application body fluid in all portlet views. This helps
+provide a consistent user-experience across all app views. 
 
-To make your app's content fluid add the `container-fluid-1280` class in a 
-`<div>` (or equivalent) element that contains all the content of the portlet 
-(excluding the nav bar and management bar).
+To make your app's content fluid, add the `container-fluid-1280` class in a 
+`<div>` (or equivalent) element that contains all the portlet's content
+(excluding the Nav Bar and Management Bar).
 
-If your app's view (or views) are already contained within a `<div>` element 
-just add the `container-fluid-1280` class to it. Otherwise add an uppermost 
+If your app's view (or views) are already contained within a `<div>` element, 
+add the `container-fluid-1280` class to it. Otherwise add an uppermost 
 `<div>` element for this purpose:
 
     <div class="container-fluid-1280">
@@ -64,13 +62,13 @@ Next, you can learn how to apply Lexicon to your forms.
 
 Follow these steps to apply Lexicon to your forms:
 
-1.  Encapsulate your fieldsets with the following taglib:
+1.  Encapsulate your `fieldset`s with the following taglib:
 
         <aui:fieldset-group markupView="lexicon">
 
         </aui:fieldset-group>
 
-2.  The fieldset inside `fieldset-group` should be collapsible, so you can hide 
+2.  The `fieldset` inside `fieldset-group` should be collapsible, so you can hide 
     it when it's not being used. Add the `collapsed` and `collapsible` 
     attributes to your `aui:fieldset` taglib:
 
@@ -96,11 +94,10 @@ Lexicon to the Actions menu for your entities.
 
 ## Applying Lexicon to Your Entity's Actions Menus [](id=applying-lexicon-to-your-entitys-actions-menus)
 
-Your Actions menus can also benefit from Lexicon patterns. You can learn how 
+Your Actions menus can also benefit from Lexicon patterns. Learn how 
 to apply Lexicon patterns to your Admin app's actions in the 
 [Configuring Your Admin app's Actions Menu](/develop/tutorials/-/knowledge_base/7-0/configuring-your-admin-apps-actions-menu) 
-tutorial. Follow these steps to update Actions menu for your entities 
-(such as the ones listed next to search results):
+tutorial. For regular apps, follow these steps:
 
 1.  Open your module's actions JSP (`guestbook_actions.jsp` for example) and 
     update the `<liferay-ui:icon-menu>` to use Lexicon's markup with the 
@@ -147,13 +144,13 @@ If the results contain different sets of entries (folders and documents,
 categories and threads, etc.), you must use a class that implements 
 `*ResultRowSplitter` to divide the results. This is covered next.
 
-### Creating a Results Row Splitter [](id=creating-a-results-row-splitter)
+### Creating a Result Row Splitter [](id=creating-a-result-row-splitter)
 
-Classes that implement the `*ResultRowSplitter` class are responsible for dividing and categorizing the 
-results based on the different entry types. Follow these steps to create a 
-result row splitter:
+Classes that implement the `*ResultRowSplitter` class divide and categorize
+the results based on the different entry types. Follow these steps to create
+a result row splitter:
 
-1.  Create a java class that implements the [`ResultRowSplitter` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/search/ResultRowSplitter.html).
+1.  Create a Java class that implements the [`ResultRowSplitter` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/search/ResultRowSplitter.html).
 For example, the `com.liferay.bookmarks.web` module has the following 
 `BookmarksResultRowSplitter` class to split its folder and bookmark results:
 
@@ -161,43 +158,43 @@ For example, the `com.liferay.bookmarks.web` module has the following
 
 2.  Override the `split()` method:
 
-    	@Override
-    	public List<ResultRowSplitterEntry> split(List<ResultRow> resultRows) {
-    		List<ResultRowSplitterEntry> resultRowSplitterEntries =
-    			new ArrayList<>();
+            @Override
+            public List<ResultRowSplitterEntry> split(List<ResultRow> resultRows) {
+                List<ResultRowSplitterEntry> resultRowSplitterEntries =
+                    new ArrayList<>();
 
 3.  Create an `ArrayList` for each type of entity, as shown in the example below:
 
-    		List<ResultRow> entryResultRows = new ArrayList<>();
-    		List<ResultRow> folderResultRows = new ArrayList<>();
+                List<ResultRow> entryResultRows = new ArrayList<>();
+                List<ResultRow> folderResultRows = new ArrayList<>();
 
 4.  Loop through the results and add your entities to the proper `ArrayList`:
 
-        for (ResultRow resultRow : resultRows) {
-        	Object object = resultRow.getObject();
+                for (ResultRow resultRow : resultRows) {
+                    Object object = resultRow.getObject();
 
-        	if (object instanceof BookmarksFolder) {
-        		folderResultRows.add(resultRow);
-        	}
-        	else {
-        		entryResultRows.add(resultRow);
-        	}
-        }
+                    if (object instanceof BookmarksFolder) {
+                        folderResultRows.add(resultRow);
+                    }
+                    else {
+                        entryResultRows.add(resultRow);
+                    }
+            }
 
 5.  Create a new `ResultRowSplitterEntry` for each entity, passing the name of 
     the entity and the ArrayList:
 
-        if (!folderResultRows.isEmpty()) {
-        	resultRowSplitterEntries.add(
-        		new ResultRowSplitterEntry("folders", folderResultRows));
-        }
+            if (!folderResultRows.isEmpty()) {
+                resultRowSplitterEntries.add(
+                    new ResultRowSplitterEntry("folders", folderResultRows));
+            }
 
-        if (!entryResultRows.isEmpty()) {
-        	resultRowSplitterEntries.add(
-        		new ResultRowSplitterEntry("bookmarks", entryResultRows));
-        }
+            if (!entryResultRows.isEmpty()) {
+                resultRowSplitterEntries.add(
+                    new ResultRowSplitterEntry("bookmarks", entryResultRows));
+            }
 
-6.  Return the List of resultRowSplitter Entries.
+6.  Return the List of `resultRowSplitter` Entries.
 
 7.  Use the `resultRowSplitter` attribute in your `liferay-ui:search-iterator` 
     taglib to create a new instance of your `*ResultRowSplitter` as shown in the 

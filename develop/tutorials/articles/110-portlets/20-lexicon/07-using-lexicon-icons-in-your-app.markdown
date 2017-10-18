@@ -1,12 +1,12 @@
 # Using Lexicon Icons in Your App [](id=using-lexicon-icons-in-your-app)
 
-Whether you're updating your app to @product-ver@, or writing a new 
-@product-ver@ app, follow the process here to use Lexicon's icons in your app. 
+Whether you're updating your app to @product-ver@ or writing a new 
+@product-ver@ app, follow the process here to use Lexicon's icons. 
 You can find the list of available Lexicon icons on the 
 [Lexicon site](https://liferay.github.io/clay/content/icons-lexicon/).
 
-Lexicon icons are defined with the `icon` attribute. For example, you can use 
-this attribute to define the icon in the management bar, inside of the 
+Lexicon icons are defined with the `icon` attribute. For example, you define the
+icon in the management bar, inside the
 `liferay-frontend:management-bar-sidenav-toggler-button` taglib:
 
     <liferay-frontend:management-bar-sidenav-toggler-button
@@ -17,33 +17,35 @@ this attribute to define the icon in the management bar, inside of the
             sidenavId='<%= liferayPortletResponse.getNamespace() + "infoPanelId" %>'
     />
 
-To use Lexicon icons outside of the management bar, you have two options:
+To use Lexicon icons outside the management bar, you have two options:
 
-You can use the [`liferay-ui:icon` taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/icon.html). 
-For example:
+1.  You can use the [`liferay-ui:icon`
+    taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/icon.html).
+    For example:
 
-    <liferay-ui:icon
+        <liferay-ui:icon
 
-        icon="icon-name"
+            icon="icon-name"
 
-        markupView="lexicon"
+            markupView="lexicon"
 
-        message="message-goes-here"
+            message="message-goes-here"
 
-    />
+        />
 
-Or you can use the [`aui:icon` taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/icon.html). 
-For example:
+2.  You can use the [`aui:icon`
+    taglib](@platform-ref@/7.0-latest/taglibs/util-taglib/aui/icon.html). For
+    example:
 
-    <aui:icon
+        <aui:icon
 
-         cssClass="icon-monospaced"
+             cssClass="icon-monospaced"
 
-         image="times"
+             image="times"
 
-         markupView="lexicon"
+             markupView="lexicon"
 
-    />
+        />
 
 Note the addition of the `markupView="lexicon"` attribute. This ensures that the
 HTML is rendered with Lexicon markup.

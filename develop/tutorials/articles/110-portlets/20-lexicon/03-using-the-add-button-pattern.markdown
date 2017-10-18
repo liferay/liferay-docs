@@ -1,9 +1,9 @@
 # Applying the Add Button Pattern [](id=applying-the-add-button-pattern)
 
-If your app has actions for adding entities (For example a new blog entry 
-button), you may wish to use the add button pattern. This pattern gives you a 
-clean, minimal UI for such a button. You can use it in any of your app's screens. 
-The add button pattern consists of an [`add-menu` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/add-menu.html) 
+Lexicon's add button pattern is for actions that add entities (for example
+a new blog entry button): it gives you a clean, minimal UI. You can use it in
+any of your app's screens. The add button pattern consists of an 
+[`add-menu` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/add-menu.html) 
 and at least one [`add-menu-item` tag](@platform-ref@/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/liferay-frontend/add-menu-item.html).
 
 ![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../images/add-button-diagram.png)
@@ -20,7 +20,7 @@ Here's an example of the add button pattern with a single item:
         "titleName") %>' url="<%= nameURL.toString() %>" />
     </liferay-frontend:add-menu>
 
-You can also find the add button pattern in Liferay's built-in apps. For 
+You can also find the add button pattern in @product@'s built-in apps. For 
 example, the [Message Boards Admin application](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/message-boards/message-boards-web/src/main/resources/META-INF/resources/message_boards_admin/add_button.jsp)
 uses the following add button pattern:
 
@@ -36,7 +36,7 @@ uses the following add button pattern:
         ...
     </liferay-frontend:add-menu>
 
-There you have it! Now you know how to use the add button pattern
+There you have it! Now you know how to use the add button pattern. 
 
 ## Related Topics [](id=related-topics)
 
