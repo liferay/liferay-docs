@@ -1,14 +1,11 @@
 # Creating a Site
 
-So far you set up a server and created some basic content. You could call that 
-a "web site" but most of you probably want something a little bit more 
-intricate than a single page with a line of text and an image. In order to 
-accomplish this, you'll need to create pages, with different layouts to match 
-the content and style of that page. Once you're done creating the pages, you
-need to create the content that will go on those pages, and use the appropriate
-applications for displaying or managing that content.
+In the previous steps of this Learning Path, you set up a @product@ server and 
+created some basic web content. Although you *could* call that a web site, most 
+users want something a bit more intricate than a single page with a line of text 
+and an image. In this part of the Learning Path, you'll create more pages 
+(including nested pages) and use page layouts to customize how those pages 
+display applications and content. You'll also learn more about adding 
+applications to pages, and how to manage site navigation. 
 
-![Figure x: A reminder of what some of our final site looks like.](../../images/001-final-site-preview.png)
-
-In this section, you'll focus on the sites and pages, with a quick peak into 
-the content which will come next.
+![Figure x: A preview of part of the site you'll create.](../../../images/001-final-site-preview.png)

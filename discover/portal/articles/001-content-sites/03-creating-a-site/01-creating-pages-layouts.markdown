@@ -1,22 +1,24 @@
 # Creating Pages with Layouts
 
-The Welcome page has the simplest possible layout - 1 Column.
-Everything that you add to the page takes up the full width of the page and 
-if you add a new application to the page, it will be placed 
-above or below the current content. Other layouts allow you to add items side by
-side, or in some cases, have multiple row types, with some some sections having 
-only one column, while others have multiple columns.
+Up to this point, you haven't concerned yourself with arranging content and 
+applications on a page. Everything on the Welcome page stretches the width of 
+the entire page. But what if we told you that this is something you can control? 
+You'd undoubtedly dance a jig of happiness and joy. Well put on your dancing 
+shoes, because @product@ lets you use *page layouts* to control how content and 
+applications fill each page. For example, the Welcome page has the simplest 
+possible layout--1 Column. The entire page is composed of a single column, 
+therefore any applications or content in that column take up its full width. You 
+can place anything on the page above or below, but not to the side of, any 
+existing content or applications. @product@ contains other layouts that arrange 
+content into different numbers of columns and rows. This gives you a great deal 
+of control over how the applications and content appear in your site. 
 
-Now you need to create two pages. First, you'll create the *Activities* page, 
-which will contain information about the various activities that you can do at 
-the Lunar Resort.
+Now you'll stop dancing, and create the Activities and About Us pages for the 
+Lunar Resort. 
 
 ![Figure x: The final Activities page.](../../../images/001-final-activities.png)
 
-After that you'll create the *About Us* page, which contains more information 
-about organizations related to the Lunar Resort.
-
-![Figure x: Final About page.](../../../images/001-final-about-us.png)
+![Figure x: The Final About Us page.](../../../images/001-final-about-us.png)
 
 ## Creating the Activities Page
 
