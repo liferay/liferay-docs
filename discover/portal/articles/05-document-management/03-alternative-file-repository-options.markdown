@@ -30,6 +30,14 @@ limitation.
 
 $$$
 
++$$$
+
+**Warning:** DBStore's file (stored as a blob) size limit is 1 gigabyte. To
+store such large files, use Simple File System Store or Advanced File System
+Store.
+
+$$$
+
 For example, you can store documents and media files in your Liferay instance's
 database using DBStore. To enable DStore, add the following line to your
 `portal-ext.properties` file:
