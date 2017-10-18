@@ -332,7 +332,7 @@ but there's more to the view layer than that.
 
 You now know how to extend Liferay's `MVCPortlet` to write controller code and
 register a Component in the OSGi runtime. You also need a view layer, of course,
-and for that, you'll use JSPs. Liferay's Lexicon Experience Language can be used
+and for that, you'll use JSPs. Lexicon can be used
 to guide your app's styling so it matches Liferay's. To learn about Lexicon and
 about some of Liferay's taglibs, refer to the tutorial [Applying Lexicon Styles to Your App](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app).
 This section will briefly cover how to get your view layer working, from

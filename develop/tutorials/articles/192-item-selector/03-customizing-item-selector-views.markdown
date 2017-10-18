@@ -407,8 +407,8 @@ tutorial.
 
 This snippet creates the UI to display the layout entities. It uses the 
 [`liferay-layout:layouts-tree` taglib](@platform-ref@/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/layouts-tree.html) 
-along with the [Lexicon](http://liferay.github.io/lexicon/) design language to 
-create [cards](http://liferay.github.io/lexicon/content/cards/):
+along with the [Lexicon](https://liferay.github.io/clay/) design language to 
+create [cards](https://liferay.github.io/clay/content/cards/):
 
     <div class="container-fluid-1280 layouts-selector">
             <div class="card-horizontal main-content-card">
@@ -432,7 +432,7 @@ create [cards](http://liferay.github.io/lexicon/content/cards/):
     
 The configuration above renders the UI shown in the figure below:
 
-![Figure 3: The Layouts Item Selector view uses the Lexicon design language and Liferay Layout taglibs to create the UI.](../../images/layouts-item-selector-view.png)
+![Figure 3: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../images/layouts-item-selector-view.png)
 
 This portion of the `aui:script` returns the path for the page:
 

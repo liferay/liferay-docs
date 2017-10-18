@@ -650,14 +650,14 @@ VDL docs for all versions of Liferay Faces are available
 
 ## JavaScript and CSS [](id=javascript-and-css)
 
-[**Lexicon**](http://liferay.github.io/lexicon/): The Liferay Experience
-Language is a system for building applications in and outside of Liferay,
-designed to be fluid and extensible, as well as provide a consistent and
-documented API.
+[**Lexicon**](https://liferay.github.io/clay/): The web implementation of 
+Liferay's [Lexicon Experience Language](https://lexicondesign.io/). Lexicon is 
+a system for building applications in and outside of @product@, designed to be 
+fluid and extensible, as well as provide a consistent and documented API.
 
 [**Bootstrap**](http://getbootstrap.com/): The base CSS library onto which
-Lexicon is added. Liferay uses Bootstrap natively and all of its CSS classes are
-available within portlets, templates, and themes.
+Lexicon is built. @product@ uses Bootstrap natively and all of its CSS classes 
+and JavaScript features are available within portlets, templates, and themes.
 
 [**AlloyUI**](http://alloyui.com): Liferay includes AlloyUI and all of its
 JavaScript APIs are available within portlets, templates and themes.
