@@ -637,7 +637,7 @@ the following code to that file:
 
 Be sure to place this code within the existing `<Context>` tags.
 
-## Summary
+## Summary [](id=summary)
 
 An Ext plugin is a powerful way to extend @product@. There are no limits to what
 you can customize, so use it carefully. Before using an Ext plugin, see if you
